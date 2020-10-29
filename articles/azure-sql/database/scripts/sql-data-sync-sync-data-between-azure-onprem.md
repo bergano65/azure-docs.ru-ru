@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 194c2466e29c15ac35cf0bd88b90bf9f816e9035
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 443232bb41ba73b5bd02d45c542e555904f539db
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91284471"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792877"
 ---
 # <a name="use-powershell-to-sync-data-between-sql-database-and-sql-server"></a>Использование PowerShell для синхронизации данных между Базой данных SQL и SQL Server
 
@@ -299,7 +299,7 @@ Remove-AzResourceGroup -ResourceGroupName $syncDatabaseResourceGroupName
 | [Get-AzSqlSyncAgentLinkedDatabase](/powershell/module/az.sql/Get-azSqlSyncAgentLinkedDatabase) |  Получает всю информацию для агента синхронизации. |
 | [New-AzSqlSyncMember](/powershell/module/az.sql/New-azSqlSyncMember) |  Добавляет нового участника в группу синхронизации. |
 | [Update-AzSqlSyncSchema](/powershell/module/az.sql/Update-azSqlSyncSchema) |  Обновляет сведения о схеме базы данных. |
-| [Get-AzSqlSyncSchema](https://docs.microsoft.com/powershell/module/az.sql/Get-azSqlSyncSchema) |  Извлекает сведения о схеме базы данных. |
+| [Get-AzSqlSyncSchema](/powershell/module/az.sql/Get-azSqlSyncSchema) |  Извлекает сведения о схеме базы данных. |
 | [Update-AzSqlSyncGroup](/powershell/module/az.sql/Update-azSqlSyncGroup) |  Обновляет группу синхронизации. |
 | [Start-AzSqlSyncGroupSync](/powershell/module/az.sql/Start-azSqlSyncGroupSync) | Активирует синхронизацию. |
 | [Get-AzSqlSyncGroupLog](/powershell/module/az.sql/Get-azSqlSyncGroupLog) |  Проверяет журнал синхронизации. |
@@ -319,7 +319,7 @@ Remove-AzResourceGroup -ResourceGroupName $syncDatabaseResourceGroupName
     - Использование PowerShell: [Использование PowerShell для синхронизации данных между несколькими базами данных в службе "База данных SQL Azure"](sql-data-sync-sync-data-between-sql-databases.md)
 - Data Sync Agent: [Data Sync Agent для службы "Синхронизация данных SQL" в Azure](../sql-data-sync-agent-overview.md)
 - Рекомендации: [Рекомендации для службы "Синхронизация данных SQL" в Azure](../sql-data-sync-best-practices.md)
-- Мониторинг: [Мониторинг синхронизации данных SQL с помощью журналов Azure Monitor](../sql-data-sync-monitor-sync.md)
+- Мониторинг: [Мониторинг синхронизации данных SQL с помощью журналов Azure Monitor](../monitor-tune-overview.md)
 - Устранение неполадок: [Устранение неполадок службы "Синхронизация данных SQL" в Azure](../sql-data-sync-troubleshoot.md)
 - Обновление схемы синхронизации
     - Использование Transact-SQL: [Автоматическая репликация изменений схемы в службе "Синхронизация данных SQL" в Azure](../sql-data-sync-update-sync-schema.md)
@@ -328,4 +328,4 @@ Remove-AzResourceGroup -ResourceGroupName $syncDatabaseResourceGroupName
 Дополнительные сведения о Базе данных SQL Azure см. в статьях:
 
 - [Функции службы базы данных SQL Azure](../sql-database-paas-overview.md)
-- [Управление жизненным циклом базы данных](https://msdn.microsoft.com/library/jj907294.aspx)
+- [Управление жизненным циклом базы данных](/previous-versions/sql/sql-server-guides/jj907294(v=sql.110))

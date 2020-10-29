@@ -10,13 +10,13 @@ ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
-ms.custom: devx-track-csharp
-ms.openlocfilehash: 661622b296a7a81a8d4c203e86a7c8d61c386e5e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-csharp, devx-track-azurecli
+ms.openlocfilehash: 0da0a56a64aa9b4500d36da2f6c86fc4c07f4c0f
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843232"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92786060"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с одним набором учетных данных для аутентификации
 
@@ -44,7 +44,7 @@ ms.locfileid: "91843232"
 
 [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json)
 
-1. Для параметра **Группа ресурсов** выберите **Создать**. Присвойте группе имя **akvrotation**.
+1. Для параметра **Группа ресурсов** выберите **Создать** . Присвойте группе имя **akvrotation** .
 1. В разделе **Sql Admin Login** (Имя входа администратора SQL) введите имя для входа администратора SQL. 
 1. Выберите **Review + create** (Просмотреть и создать).
 1. Нажмите кнопку **Создать**
@@ -78,20 +78,20 @@ akvrotation-sql/master  akvrotation      eastus      Microsoft.Sql/servers/datab
 - Приложение-функция с функциями смены пароля SQL с триггером события и триггером HTTP. 
 - Учетная запись хранения, которая нужна для управления триггерами приложения-функции.
 - Политика доступа для получения доступа к секретам в Key Vault с помощью удостоверения приложения-функции.
-- Подписка на событие Сетки событий **SecretNearExpiry**.
+- Подписка на событие Сетки событий **SecretNearExpiry** .
 
 1. Щелкните ссылку для развертывания шаблона в Azure: 
 
    [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json)
 
-1. В списке **Группа ресурсов** выберите **avkrotation**.
+1. В списке **Группа ресурсов** выберите **avkrotation** .
 1. В поле **Sql Server Name** (Имя SQL Server) введите имя SQL Server и пароль для смены.
 1. В поле **Имя Key Vault** введите имя хранилища ключей.
 1. В поле **Имя приложения-функции** введите имя приложения-функции.
 1. В поле **Secret Name** (Имя секрета) введите имя секрета, где будет храниться пароль.
 1. В поле **URL-адрес репозитория** введите расположение кода для функции на сайте GitHub ( **https://github.com/jlichwa/KeyVault-Rotation-SQLPassword-Csharp.git** ).
 1. Выберите **Review + create** (Просмотреть и создать).
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **создания** .
 
    ![Выбор параметра Review+create (Просмотр и создание)](../media/rotate-3.png)
 
@@ -115,7 +115,7 @@ akvrotation-fnapp        akvrotation       eastus      Microsoft.Web/sites
 akvrotation-fnapp        akvrotation       eastus      Microsoft.insights/components
 ```
 
-Дополнительные сведения о создании приложения-функции и использовании управляемого удостоверения для доступа к Key Vault см. в статьях [Создание приложения-функции на портале Azure](/azure/azure-functions/functions-create-function-app-portal), [Использование управляемых удостоверений в Службе приложений и Функциях Azure](/azure/app-service/overview-managed-identity) и [Назначение политики доступа к Key Vault с помощью портала Azure](../general/assign-access-policy-portal.md).
+Дополнительные сведения о создании приложения-функции и использовании управляемого удостоверения для доступа к Key Vault см. в статьях [Создание приложения-функции на портале Azure](../../azure-functions/functions-create-function-app-portal.md), [Использование управляемых удостоверений в Службе приложений и Функциях Azure](../../app-service/overview-managed-identity.md) и [Назначение политики доступа к Key Vault с помощью портала Azure](../general/assign-access-policy-portal.md).
 
 ### <a name="rotation-function"></a>Функция ротации
 Развернутая на предыдущем шаге функция использует событие, чтобы активировать ротацию секрета путем обновления Key Vault и базы данных SQL. 
@@ -190,7 +190,7 @@ public static class SimpleRotationEventHandler
 Полный пример кода можно найти на сайте [GitHub](https://github.com/jlichwa/KeyVault-Rotation-SQLPassword-Csharp).
 
 ## <a name="add-the-secret-to-key-vault"></a>Добавление секрета в хранилище ключей
-Настройте политику доступа, предоставив пользователям разрешение на *управление секретами*.
+Настройте политику доступа, предоставив пользователям разрешение на *управление секретами* .
 
 ```azurecli
 az keyvault set-policy --upn <email-address-of-user> --name akvrotation-kv --secret-permissions set delete get list
@@ -207,7 +207,7 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
 
 ## <a name="test-and-verify"></a>Тестирование и проверка
 
-Чтобы убедиться в ротации секрета, перейдите в раздел **Key Vault** > **Секреты**:
+Чтобы убедиться в ротации секрета, перейдите в раздел **Key Vault** > **Секреты** :
 
 ![Переход к секретам](../media/rotate-8.png)
 
@@ -227,13 +227,13 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
 
    [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp-WebApp%2Fmaster%2Farm-templates%2FWeb-App%2Fazuredeploy.json)
 
-1. Выберите группу ресурсов **akvrotation**.
+1. Выберите группу ресурсов **akvrotation** .
 1. В поле **Sql Server Name** (Имя SQL Server) введите имя SQL Server и пароль для смены.
 1. В поле **Имя Key Vault** введите имя хранилища ключей.
 1. В поле **Secret Name** (Имя секрета) введите имя секрета, где будет храниться пароль.
 1. В поле **Repo Url** (URL-адрес репозитория) введите расположение кода для веб-приложения на сайте GitHub ( **https://github.com/jlichwa/KeyVault-Rotation-SQLPassword-Csharp-WebApp.git** ).
 1. Выберите **Review + create** (Просмотреть и создать).
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **создания** .
 
 
 ### <a name="open-the-web-app"></a>Открытие веб-приложения
@@ -242,7 +242,7 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
  
 https://akvrotation-app.azurewebsites.net/
 
-Когда приложение откроется в браузере, вы увидите **созданное секретное значение** и **подключенную базу данных** со значением *true*.
+Когда приложение откроется в браузере, вы увидите **созданное секретное значение** и **подключенную базу данных** со значением *true* .
 
 ## <a name="learn-more"></a>Дополнительные сведения
 

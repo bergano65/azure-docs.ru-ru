@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: common
 ms.topic: sample
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2cf1b643caef515411842d6aaf668708e873e96d
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: de587483f5dc15b17fa32e044b569ef9d7f007f7
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367896"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92792962"
 ---
 # <a name="azure-storage-samples"></a>Примеры для службы хранилища Azure
 
@@ -60,15 +60,15 @@ ms.locfileid: "92367896"
 Чтобы ознакомиться с примерами Azure CLI, сначала [установите его](/cli/azure/install-azure-cli).
 
 * [Начало работы с Azure CLI](/cli/azure/get-started-with-azure-cli)
-* [Примеры для службы хранилища Azure с использованием Azure CLI](/azure/storage/blobs/storage-samples-blobs-cli)
+* [Примеры для службы хранилища Azure с использованием Azure CLI](../blobs/storage-samples-blobs-cli.md)
 * [Популярные статьи по использованию Azure CLI со службой хранилища Azure](/cli/azure/popular-articles-using-the-azure-cli#storage)
 
 ## <a name="api-reference-and-source-code"></a>Справочник по API и исходный код
 
 | Язык | Справочник по API | Исходный код |
 |----------|---------------|-------------|
-| .NET | [Справочник по клиентской библиотеке .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища .NET](https://github.com/Azure/azure-storage-net) |
-| Java | [Справочник по клиентской библиотеке Java](https://docs.microsoft.com/java/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища Java](https://github.com/azure/azure-storage-java) |
+| .NET | [Справочник по клиентской библиотеке .NET](/dotnet/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища .NET](https://github.com/Azure/azure-storage-net) |
+| Java | [Справочник по клиентской библиотеке Java](/java/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища Java](https://github.com/azure/azure-storage-java) |
 | Python | [Справочник по клиентской библиотеке Python](https://azure-storage.readthedocs.io/) | [Исходный код для клиентской библиотеки хранилища Python](https://github.com/Azure/azure-storage-python) |
 | Node.js | [Справочник по клиентской библиотеке Node.js](https://azure.github.io/azure-storage-node) | [Исходный код для клиентской библиотеки хранилища Node.js](https://github.com/Azure/azure-storage-node) |
 | C++ | [Справочник по клиентской библиотеке C++](https://azure.github.io/azure-sdk-for-cpp/) | [Исходный код для клиентской библиотеки хранилища C++](https://github.com/Azure/azure-sdk-for-cpp/tree/master/sdk/storage)|
@@ -83,4 +83,4 @@ ms.locfileid: "92367896"
 * [Примеры для службы хранилища Azure с использованием JavaScript](storage-samples-javascript.md)
 * [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)
 * [Примеры для службы хранилища Azure с использованием C++](storage-samples-c-plus-plus.md)
-* [Примеры для службы хранилища Azure с использованием Azure CLI](/azure/storage/blobs/storage-samples-blobs-cli)
+* [Примеры для службы хранилища Azure с использованием Azure CLI](../blobs/storage-samples-blobs-cli.md)
