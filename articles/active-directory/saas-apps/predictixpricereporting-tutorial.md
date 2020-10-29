@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: e9bcdfeb983138046792313c018c386eb69136fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 801197a171b5be2cfe46c249398381e1b25857ff
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88553694"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92515361"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Руководство по Интеграция Azure Active Directory с Predictix Price Reporting
 
@@ -28,7 +28,7 @@ ms.locfileid: "88553694"
 * Вы можете включить автоматический вход пользователей в Predictix Price Reporting (единый вход) с использованием учетных записей Azure AD.
 * Вы можете управлять учетными записями централизованно — через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -49,11 +49,11 @@ ms.locfileid: "88553694"
 
 Чтобы настроить интеграцию Predictix Price Reporting с Azure AD, необходимо добавить Predictix Price Reporting из коллекции в список управляемых приложений SaaS.
 
-1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**.
+1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory** .
 
     ![Выберите Azure Active Directory.](common/select-azuread.png)
 
-2. Выберите **Корпоративные приложения** > **Все приложения**.
+2. Выберите **Корпоративные приложения** > **Все приложения** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -61,7 +61,7 @@ ms.locfileid: "88553694"
 
     ![Выбор элемента "Новое приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Predictix Price Reporting**. Выберите **Predictix Price Reporting** в результатах поиска, а затем щелкните **Добавить**.
+4. В поле поиска введите **Predictix Price Reporting** . Выберите **Predictix Price Reporting** в результатах поиска, а затем щелкните **Добавить** .
 
      ![Результаты поиска](common/search-new-app.png)
 
@@ -85,15 +85,15 @@ ms.locfileid: "88553694"
 
 Чтобы настроить единый вход Azure AD в Predictix Price Reporting, сделайте следующее.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Predictix Price Reporting** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Predictix Price Reporting** щелкните **Единый вход** .
 
     ![Выбор пункта "Единый вход"](common/select-sso.png)
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed** , чтобы включить единый вход.
 
     ![Выбор метода единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить** , чтобы открыть диалоговое окно **Базовая конфигурация SAML** .
 
     ![Значок "Изменить"](common/edit-urls.png)
 
@@ -119,15 +119,15 @@ ms.locfileid: "88553694"
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-6. Требуемые URL-адреса можно скопировать из раздела **Настройка Predictix Price Reporting**.
+6. Требуемые URL-адреса можно скопировать из раздела **Настройка Predictix Price Reporting** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    1. **URL-адрес входа**.
+    1. **URL-адрес входа** .
 
     1. **Идентификатор Azure AD**
 
-    1. **URL-адрес выхода**.
+    1. **URL-адрес выхода** .
 
 ### <a name="configure-predictix-price-reporting-single-sign-on"></a>Настройка единого входа в Predictix Price Reporting
 
@@ -137,11 +137,11 @@ ms.locfileid: "88553694"
 
 В этом разделе описано, как создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи** .
 
     ![Выбор "Все пользователи"](common/users.png)
 
-2. В верхней части экрана выберите **Новый пользователь**.
+2. В верхней части экрана выберите **Новый пользователь** .
 
     ![Выбор "Новый пользователь"](common/new-user.png)
 
@@ -149,39 +149,39 @@ ms.locfileid: "88553694"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    1. В поле **Имя** введите **BrittaSimon**.
+    1. В поле **Имя** введите **BrittaSimon** .
   
     1. В поле **Имя пользователя** введите **BrittaSimon@\<yourcompanydomain>.\<extension>** . (Например, BrittaSimon@contoso.com).
 
-    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль** .
 
-    1. Нажмите кнопку **создания**.
+    1. Нажмите кнопку **создания** .
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как позволить пользователю Britta Simon использовать единый вход Azure AD, предоставив этому пользователю доступ к Predictix Price Reporting.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Predictix Price Reporting**.
+1. На портале Azure выберите **Корпоративные приложения** , **Все приложения** , а затем — **Predictix Price Reporting** .
 
     ![корпоративные приложения.](common/enterprise-applications.png)
 
-2. Из списка приложений выберите **Predictix Price Reporting**.
+2. Из списка приложений выберите **Predictix Price Reporting** .
 
     ![Список приложений](common/all-applications.png)
 
-3. В области слева выберите **Пользователи и группы**.
+3. В области слева выберите **Пользователи и группы** .
 
     ![Выбор параметра "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** — **Пользователи и группы**.
+4. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  — **Пользователи и группы** .
 
     ![Выбор элемента "Добавить пользователя"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** выберите **Britta Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** выберите **Britta Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать** .
 
-6. Если ожидается, что в утверждении SAML будет получено значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка. В нижней части экрана нажмите кнопку **Выбрать**.
+6. Если ожидается, что в утверждении SAML будет получено значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка. В нижней части экрана нажмите кнопку **Выбрать** .
 
-7. В диалоговом окне **Добавление назначения** выберите **Назначить**.
+7. В диалоговом окне **Добавление назначения** выберите **Назначить** .
 
 ### <a name="create-a-predictix-price-reporting-test-user"></a>Создание тестового пользователя Predictix Price Reporting
 
@@ -191,12 +191,12 @@ ms.locfileid: "88553694"
 
 Теперь необходимо проверить конфигурацию единого входа Azure AD с помощью Панели доступа.
 
-Щелкнув элемент "Predictix Price Reporting" на Панели доступа, вы автоматически войдете в приложение Predictix Price Reporting, для которого настроили единый вход. Дополнительные сведения см. в разделе [Доступ и использование приложений на портале "Мои приложения"](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув элемент "Predictix Price Reporting" на Панели доступа, вы автоматически войдете в приложение Predictix Price Reporting, для которого настроили единый вход. Дополнительные сведения см. в разделе [Доступ и использование приложений на портале "Мои приложения"](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
