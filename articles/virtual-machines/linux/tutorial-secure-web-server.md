@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/30/2018
 ms.author: cynthn
-ms.custom: mvc
-ms.openlocfilehash: 7964f96afc59464c28cabb9e1d5c7961fc765a3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 4a790c51cd0caa2c81275e7eafdd663f2f2f0116
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86501778"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92740203"
 ---
 # <a name="tutorial-secure-a-web-server-on-a-linux-virtual-machine-in-azure-with-tlsssl-certificates-stored-in-key-vault"></a>Руководство по защите веб-сервера на виртуальной машине Linux в Azure с помощью TLS/SSL-сертификатов, хранимых в Key Vault
 Чтобы защитить веб-серверы, для шифрования веб-трафика можно использовать протокол TLS, который ранее назывался протоколом SSL. TLS/SSL-сертификаты могут храниться в Azure Key Vault и разрешать безопасное развертывание сертификатов на виртуальных машинах Linux в Azure. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -42,7 +42,7 @@ Azure Key Vault защищает криптографические ключи �
 
 
 ## <a name="create-an-azure-key-vault"></a>создать Azure Key Vault;
-Прежде чем создать Key Vault и сертификаты, выполните командлет [az group create](/cli/azure/group), чтобы создать группу ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroupSecureWeb* в расположении *eastus*:
+Прежде чем создать Key Vault и сертификаты, выполните командлет [az group create](/cli/azure/group), чтобы создать группу ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroupSecureWeb* в расположении *eastus* :
 
 ```azurecli-interactive 
 az group create --name myResourceGroupSecureWeb --location eastus

@@ -9,13 +9,13 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
-ms.custom: devx-track-csharp
-ms.openlocfilehash: e537bb74655bce5c8438e22fb9b990b72eab73d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-csharp, devx-track-azurecli
+ms.openlocfilehash: 77845a91ed2d185c0fe05e2f40e53b2edf3d1ca7
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91336689"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92741398"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-with-net"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к веб-приложению в .NET
 
@@ -81,11 +81,11 @@ dotnet run
 
 Откройте веб-браузер и перейдите к приложению в `http://localhost:5000`.
 
-На странице отобразится сообщение **Hello World**, созданное примером приложения.
+На странице отобразится сообщение **Hello World** , созданное примером приложения.
 
 ### <a name="initialize-the-git-repository"></a>Инициализация репозитория Git
 
-В окне терминала нажмите клавиши **CTRL+C**, чтобы выйти из веб-сервера.  Инициализируйте репозиторий Git для проекта .NET Core.
+В окне терминала нажмите клавиши **CTRL+C** , чтобы выйти из веб-сервера.  Инициализируйте репозиторий Git для проекта .NET Core.
 
 ```bash
 git init
@@ -95,7 +95,7 @@ git commit -m "first commit"
 
 ### <a name="configure-a-deployment-user"></a>Настойка пользователя развертывания
 
-Для развертывания в веб-приложение Azure из FTP и локального репозитория Git можно использовать *пользователя развертывания*. Настроив один раз пользователя развертывания, вы сможете использовать его для всех последующих развертываний в Azure. Имя пользователя и пароль учетной записи развертывания отличаются от учетных данных подписки Azure. 
+Для развертывания в веб-приложение Azure из FTP и локального репозитория Git можно использовать *пользователя развертывания* . Настроив один раз пользователя развертывания, вы сможете использовать его для всех последующих развертываний в Azure. Имя пользователя и пароль учетной записи развертывания отличаются от учетных данных подписки Azure. 
 
 Чтобы настроить пользователя для развертывания, выполните команду [az webapp deployment user set](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Выберите имя пользователя и пароль, которые соответствуют следующим рекомендациям: 
 
@@ -112,7 +112,7 @@ az webapp deployment user set --user-name "<username>" --password "<password>"
 
 ### <a name="create-an-app-service-plan"></a>Создание плана службы приложений
 
-Создайте план службы приложений, выполнив команду Azure CLI [az appservice plan create](/cli/azure/appservice/plan?view=azure-cli-latest). В следующем примере создается план службы приложений с именем `myAppServicePlan` и ценовой категорией **Бесплатный**.
+Создайте план службы приложений, выполнив команду Azure CLI [az appservice plan create](/cli/azure/appservice/plan?view=azure-cli-latest). В следующем примере создается план службы приложений с именем `myAppServicePlan` и ценовой категорией **Бесплатный** .
 
 ```azurecli-interactive
 az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku FREE
@@ -323,7 +323,7 @@ git push azure master
 http://<your-webapp-name>.azurewebsites.net
 ```
 
-Вместо надписи **Hello World**, которую мы видели раньше, отобразится значение секрета: **Готово!**
+Вместо надписи **Hello World** , которую мы видели раньше, отобразится значение секрета: **Готово!**
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

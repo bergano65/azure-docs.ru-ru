@@ -4,13 +4,13 @@ description: Сведения об обеспечении безопасного
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
-ms.custom: devx-track-csharp, mvc, cli-validate
-ms.openlocfilehash: 19e1d71cd766a99a32e90e2f83dc717ba56b795f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-csharp, mvc, cli-validate, devx-track-azurecli
+ms.openlocfilehash: 633e3a6386b9e6098e167c7fdd542d98c16fae48
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90984048"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92737880"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -75,9 +75,9 @@ az sql server ad-admin create --resource-group myResourceGroup --server-name <se
 ## <a name="set-up-visual-studio"></a>Настройка Visual Studio
 
 ### <a name="windows-client"></a>Клиент Windows
-Версия Visual Studio для Windows интегрирована с проверкой подлинности Azure AD. Чтобы включить разработку и отладку в Visual Studio, добавьте своего пользователя Azure AD в Visual Studio, выбрав в меню **Файл** > **Параметры учетной записи** и нажмите **Добавить учетную запись**.
+Версия Visual Studio для Windows интегрирована с проверкой подлинности Azure AD. Чтобы включить разработку и отладку в Visual Studio, добавьте своего пользователя Azure AD в Visual Studio, выбрав в меню **Файл** > **Параметры учетной записи** и нажмите **Добавить учетную запись** .
 
-Чтобы настроить пользователя Azure AD для службы аутентификации Azure, выберите в меню **Инструменты** > **Параметры**, а затем выберите **Служба аутентификация Azure** > **Выбор учетной записи**. Выберите добавленного пользователя Azure AD и нажмите **ОК**.
+Чтобы настроить пользователя Azure AD для службы аутентификации Azure, выберите в меню **Инструменты** > **Параметры** , а затем выберите **Служба аутентификация Azure** > **Выбор учетной записи** . Выберите добавленного пользователя Azure AD и нажмите **ОК** .
 
 Теперь вы готовы разрабатывать и отлаживать свое приложение с базой данных SQL в качестве серверной части, используя аутентификацию Azure AD.
 
@@ -107,7 +107,7 @@ az login --allow-no-subscriptions
 Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.4.0
 ```
 
-Работая в верхней части файла в *Web.config*, внесите следующие изменения:
+Работая в верхней части файла в *Web.config* , внесите следующие изменения:
 
 - В `<configSections>` добавьте следующее объявление разделов в
 
@@ -194,7 +194,7 @@ az webapp identity assign --resource-group myResourceGroup --name <app-name>
 ### <a name="grant-permissions-to-managed-identity"></a>Предоставление разрешений управляемому удостоверению
 
 > [!NOTE]
-> При необходимости можно добавить удостоверение в [группу Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md), а затем предоставить доступ к Базе данных SQL группе Azure AD, а не удостоверению. Например, следующие команды добавляют управляемое удостоверение из предыдущего шага в новую группу с именем _myAzureSQLDBAccessGroup_:
+> При необходимости можно добавить удостоверение в [группу Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md), а затем предоставить доступ к Базе данных SQL группе Azure AD, а не удостоверению. Например, следующие команды добавляют управляемое удостоверение из предыдущего шага в новую группу с именем _myAzureSQLDBAccessGroup_ :
 > 
 > ```azurecli-interactive
 > groupid=$(az ad group create --display-name myAzureSQLDBAccessGroup --mail-nickname myAzureSQLDBAccessGroup --query objectId --output tsv)
@@ -220,7 +220,7 @@ ALTER ROLE db_ddladmin ADD MEMBER [<identity-name>];
 GO
 ```
 
-*\<identity-name>*  — имя управляемого удостоверения в Azure AD. Если удостоверение назначено системой, имя всегда совпадает с именем приложения Службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup*).
+*\<identity-name>*  — имя управляемого удостоверения в Azure AD. Если удостоверение назначено системой, имя всегда совпадает с именем приложения Службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup* ).
 
 Введите `EXIT`, чтобы вернуться в командную строку Cloud Shell.
 
@@ -229,7 +229,7 @@ GO
 
 ### <a name="modify-connection-string"></a>Изменение строки подключения
 
-Помните, что те же изменения, которые вы внесли в файл *Web.config* или *appsettings.json*, работают с управляемым удостоверением, поэтому единственное, что нужно сделать, — это удалить существующую строку подключения в Службе приложений, которую было создано Visual Studio во время первого развертывая вашего приложения. Используйте в следующих командах, но замените *\<app-name>* именем вашего приложения.
+Помните, что те же изменения, которые вы внесли в файл *Web.config* или *appsettings.json* , работают с управляемым удостоверением, поэтому единственное, что нужно сделать, — это удалить существующую строку подключения в Службе приложений, которую было создано Visual Studio во время первого развертывая вашего приложения. Используйте в следующих командах, но замените *\<app-name>* именем вашего приложения.
 
 ```azurecli-interactive
 az webapp config connection-string delete --resource-group myResourceGroup --name <app-name> --setting-names MyDbConnection
@@ -239,11 +239,11 @@ az webapp config connection-string delete --resource-group myResourceGroup --nam
 
 Теперь требуется опубликовать изменения в Azure.
 
-**Если ранее вы изучали [руководство по созданию приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md)** , опубликуйте изменения в Visual Studio. В **обозревателе решений** щелкните правой кнопкой мыши проект **DotNetAppSqlDb** и выберите **Опубликовать**.
+**Если ранее вы изучали [руководство по созданию приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md)** , опубликуйте изменения в Visual Studio. В **обозревателе решений** щелкните правой кнопкой мыши проект **DotNetAppSqlDb** и выберите **Опубликовать** .
 
 ![Публикация в обозревателе решений](./media/app-service-web-tutorial-dotnet-sqldatabase/solution-explorer-publish.png)
 
-На странице публикации щелкните **Опубликовать**. 
+На странице публикации щелкните **Опубликовать** . 
 
 **Если ранее вы изучали [руководство по созданию приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](tutorial-dotnetcore-sqldb-app.md)** , опубликуйте свои изменения с помощью Git, выполнив следующие команды:
 

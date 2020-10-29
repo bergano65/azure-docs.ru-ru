@@ -107,7 +107,7 @@
           href: how-to-integrate-maps.md
         - name: Интеграция со службой "Аналитика временных рядов Azure"
           href: how-to-integrate-time-series-insights.md
-    - name: Диагностика
+    - name: Мониторинг и устранение неполадок
       items:
         - name: Просмотр метрик в Azure Monitor
           href: troubleshoot-metrics.md
@@ -115,6 +115,8 @@
           href: troubleshoot-diagnostics.md
         - name: Включение оповещений
           href: troubleshoot-alerts.md
+        - name: Общие сведения о работоспособности ресурсов
+          href: troubleshoot-resource-health.md
         - name: Известные проблемы
           href: troubleshoot-known-issues.md
         - name: Решение проблем
@@ -144,7 +146,7 @@
             - name: "Пакет SDK для Java\_— справочник"
               href: /java/api/overview/azure/digitaltwins/management?view=azure-java-preview
             - name: "Пакет SDK для Java\_— источник"
-              href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins'
+              href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/mgmt-v2020_10_31'
             - name: Пакет SDK для JavaScript
               href: 'https://www.npmjs.com/package/@azure/arm-digitaltwins'
             - name: "Пакет SDK для JavaScript\_— источник"
@@ -152,9 +154,11 @@
             - name: Пакет SDK для Python
               href: 'https://pypi.org/project/azure-mgmt-digitaltwins/'
             - name: "Пакет SDK для Python\_— источник"
-              href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-mgmt-digitaltwins'
+              href: 'https://github.com/Azure/azure-sdk-for-python/tree/release/v3/sdk/digitaltwins/azure-mgmt-digitaltwins'
             - name: Пакет SDK для GO
               href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt/2020-10-31/digitaltwins'
+            - name: "Go\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/digitaltwins/mgmt/2020-10-31/digitaltwins'
         - name: Плоскость данных
           items:
             - name: Swagger

@@ -3,13 +3,13 @@ title: Учебник. Многоэтапная задача ACR
 description: Из этого руководства вы узнаете, как настроить задачу Реестра контейнеров Azure, чтобы автоматически активировать многошаговый рабочий процесс для сборки, запуска и отправки в облако образов контейнера при фиксации исходного кода в репозитории Git.
 ms.topic: tutorial
 ms.date: 05/09/2019
-ms.custom: seodec18, mvc
-ms.openlocfilehash: ff32b3095638af6b2b246b99a5dc9219e0020782
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seodec18, mvc, devx-track-azurecli
+ms.openlocfilehash: 6ba3b276c68885a0811ee445d965c486f158d193
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78402298"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92739605"
 ---
 # <a name="tutorial-run-a-multi-step-container-workflow-in-the-cloud-when-you-commit-source-code"></a>Руководство по Запуск многошагового рабочего процесса в облаке при фиксации исходного кода
 
@@ -31,7 +31,7 @@ ms.locfileid: "78402298"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы хотите использовать Azure CLI локально, установите Azure CLI **2.0.62** или более поздней версии и выполните вход с помощью команды [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
+Если вы хотите использовать Azure CLI локально, установите Azure CLI  **2.0.62** или более поздней версии и выполните вход с помощью команды [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
 
 [!INCLUDE [container-registry-task-tutorial-prereq.md](../../includes/container-registry-task-tutorial-prereq.md)]
 
@@ -332,7 +332,7 @@ az acr task create \
 
 Чтобы передать образы в реестр, указанный в значении `regDate`, выполните команду [az acr task credential add][az-acr-task-credential-add], которая добавляет в задачу учетные данные для входа в этот реестр.
 
-В этом примере мы рекомендуем создать [субъект-службу](container-registry-auth-service-principal.md) с доступом к реестру, ограниченным ролью *AcrPush*. Чтобы создать субъект-службу, воспользуйтесь [этим скриптом Azure CLI](https://github.com/Azure-Samples/azure-cli-samples/blob/master/container-registry/service-principal-create/service-principal-create.sh).
+В этом примере мы рекомендуем создать [субъект-службу](container-registry-auth-service-principal.md) с доступом к реестру, ограниченным ролью *AcrPush* . Чтобы создать субъект-службу, воспользуйтесь [этим скриптом Azure CLI](https://github.com/Azure-Samples/azure-cli-samples/blob/master/container-registry/service-principal-create/service-principal-create.sh).
 
 Передайте идентификатор приложения и пароль субъекта-службы с помощью команды `az acr task credential add`:
 

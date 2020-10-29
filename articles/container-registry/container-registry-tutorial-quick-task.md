@@ -3,13 +3,13 @@ title: Учебник. Быстрая сборка образов контейн
 description: В этом руководстве описывается, как создать образ контейнеров Docker в Azure с помощью службы "Задачи Реестра контейнеров Azure" ("Задачи ACR"), а затем развернуть его в службу "Экземпляры контейнеров Azure".
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.custom: seodec18, mvc
-ms.openlocfilehash: 7178d7171d4c9c0183eb744f19776f6b2fac09ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seodec18, mvc, devx-track-azurecli
+ms.openlocfilehash: 43d2c277fe3297c7e5ee55046118add352853640
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86259485"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92739539"
 ---
 # <a name="tutorial-build-and-deploy-container-images-in-the-cloud-with-azure-container-registry-tasks"></a>Руководство по Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"
 
@@ -30,7 +30,7 @@ ms.locfileid: "86259485"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы хотите использовать Azure CLI локально, установите Azure CLI **2.0.46** или более поздней версии и выполните вход с помощью команды [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
+Если вы хотите использовать Azure CLI локально, установите Azure CLI  **2.0.46** или более поздней версии и выполните вход с помощью команды [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -87,7 +87,7 @@ az group create --resource-group $RES_GROUP --location eastus
 az acr create --resource-group $RES_GROUP --name $ACR_NAME --sku Standard --location eastus
 ```
 
-Теперь, когда у вас есть реестр, используйте решение "Задачи ACR" для создания образа контейнера из примера кода. Выполните команду [az acr build][az-acr-build], чтобы запустить *быструю задачу*:
+Теперь, когда у вас есть реестр, используйте решение "Задачи ACR" для создания образа контейнера из примера кода. Выполните команду [az acr build][az-acr-build], чтобы запустить *быструю задачу* :
 
 ```azurecli-interactive
 az acr build --registry $ACR_NAME --image helloacrtasks:v1 .
@@ -203,9 +203,9 @@ az keyvault secret set \
                 --output tsv)
 ```
 
-Аргумент `--role` в предыдущей команде настраивает субъект-службу с ролью *acrpull*, которая предоставляет доступ только для извлечения к реестру. Чтобы предоставить доступ для отправки и извлечения данных, измените аргумент `--role` на *acrpush*.
+Аргумент `--role` в предыдущей команде настраивает субъект-службу с ролью *acrpull* , которая предоставляет доступ только для извлечения к реестру. Чтобы предоставить доступ для отправки и извлечения данных, измените аргумент `--role` на *acrpush* .
 
-Затем сохраните в хранилище *appId* субъекта-службы, который является **именем пользователя**, переданным в реестр контейнеров Azure для проверки подлинности:
+Затем сохраните в хранилище *appId* субъекта-службы, который является **именем пользователя** , переданным в реестр контейнеров Azure для проверки подлинности:
 
 ```azurecli-interactive
 # Store service principal ID in AKV (the registry *username*)

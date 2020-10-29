@@ -6,13 +6,13 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/08/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 3f54139bc22ef85b016aabd2512bdf030efee91c
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: b3505f8bf31c2e700ce1cc57e106c33a13e0aa9b
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088590"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92737170"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-spring-cloud-app"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
 
@@ -167,7 +167,7 @@ az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENT
 
 ## <a name="build-sample-spring-boot-app-with-java-sdk"></a>Создание примера приложения Spring Boot с помощью пакета SDK для Java
 
-Этот пример может определять и получать секреты из Azure Key Vault. [Клиентская библиотека секретов Azure Key Vault для Java](/java/api/overview/azure/security-keyvault-secrets-readme?preserve-view=true&view=azure-java-stablelibrary) поддерживает проверку подлинности Azure Active Directory на основе токенов в пакете SDK Azure. Она предоставляет набор реализаций **TokenCredential**, которые можно использовать для создания клиентов пакета SDK Azure и включения поддержки проверки подлинности AAD на основе токенов.
+Этот пример может определять и получать секреты из Azure Key Vault. [Клиентская библиотека секретов Azure Key Vault для Java](/java/api/overview/azure/security-keyvault-secrets-readme?preserve-view=true&view=azure-java-stablelibrary) поддерживает проверку подлинности Azure Active Directory на основе токенов в пакете SDK Azure. Она предоставляет набор реализаций **TokenCredential** , которые можно использовать для создания клиентов пакета SDK Azure и включения поддержки проверки подлинности AAD на основе токенов.
 
 Эта библиотека позволяет безопасно хранить токены, пароли, ключи API и другие секреты, а также контролировать доступ к этой информации. Библиотека предоставляет операции для создания, извлечения, обновления, удаления, очистки, резервного копирования, восстановления и перечисления секретов и их версий.
 
@@ -184,7 +184,7 @@ az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENT
     vim src/main/resources/application.properties
     ```
 
-    Чтобы использовать управляемое удостоверение для приложений Azure Spring Cloud, добавьте свойства со следующим содержимым в *src/main/resources/application.properties*.
+    Чтобы использовать управляемое удостоверение для приложений Azure Spring Cloud, добавьте свойства со следующим содержимым в *src/main/resources/application.properties* .
 
     ```
     azure.keyvault.enabled=true
