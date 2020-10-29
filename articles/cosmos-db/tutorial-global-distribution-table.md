@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.topic: tutorial
 ms.date: 01/30/2020
 ms.reviewer: sngun
-ms.openlocfilehash: f0d62ae3909bc886fa6a56ba7ed32d55d27302dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c2497a1fe5bfd3618246c9590685d08894e897f3
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568654"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92476524"
 ---
 # <a name="set-up-azure-cosmos-db-global-distribution-using-the-table-api"></a>Настройка глобального распределения Azure Cosmos DB с помощью API таблицы
 
@@ -28,7 +28,7 @@ ms.locfileid: "91568654"
 
 ## <a name="connecting-to-a-preferred-region-using-the-table-api"></a>Подключение к предпочтительному региону с помощью API таблицы
 
-Чтобы воспользоваться преимуществами [глобального распределения](distribute-data-globally.md), клиентские приложения должны указать текущее расположение, в котором выполняется приложение. Это можно сделать, задав свойство `CosmosExecutorConfiguration.CurrentRegion`. Свойство `CurrentRegion` должно содержать одно расположение. Каждый экземпляр клиента может указывать собственный регион для чтения с минимальной задержкой. Региону необходимо присвоить имя, используя их [отображаемые имена](https://msdn.microsoft.com/library/azure/gg441293.aspx) например "Западная часть США". 
+Чтобы воспользоваться преимуществами [глобального распределения](distribute-data-globally.md), клиентские приложения должны указать текущее расположение, в котором выполняется приложение. Это можно сделать, задав свойство `CosmosExecutorConfiguration.CurrentRegion`. Свойство `CurrentRegion` должно содержать одно расположение. Каждый экземпляр клиента может указывать собственный регион для чтения с минимальной задержкой. Региону необходимо присвоить имя, используя их [отображаемые имена](/previous-versions/azure/reference/gg441293(v=azure.100)) например "Западная часть США". 
 
 Пакет SDK для API таблиц в Azure Cosmos DB автоматически выбирает лучшую конечную точку для взаимодействия на основе конфигурации учетной записи и текущей доступности региона. Он назначает приоритет для ближайшего региона, чтобы обеспечить минимальную задержку для клиентов. После задания текущего свойства `CurrentRegion` запросы на чтение и запись направляются следующим образом:
 
@@ -47,4 +47,3 @@ ms.locfileid: "91568654"
 > [!div class="checklist"]
 > * настроили глобальное распределение на портале Azure;
 > * настроили глобальное распределение с помощью API таблиц в Azure Cosmos DB.
-

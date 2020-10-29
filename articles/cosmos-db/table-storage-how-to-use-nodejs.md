@@ -9,12 +9,12 @@ ms.date: 07/23/2020
 author: sakash279
 ms.author: akshanka
 ms.custom: devx-track-js
-ms.openlocfilehash: 6ce4354faec73f8fe42a936e677bee473796701d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43ac175e2c1caa39bfe88a7c1a5f42318db343fb
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318778"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92477289"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
 
@@ -115,7 +115,7 @@ tableSvc.createTableIfNotExists('mytable', function(error, result, response){
 function handle (requestOptions, next)
 ```
 
-Выполнив предварительную обработку параметров запроса, метод должен вызвать функцию **next**, передав ему обратный вызов со следующей сигнатурой.
+Выполнив предварительную обработку параметров запроса, метод должен вызвать функцию **next** , передав ему обратный вызов со следующей сигнатурой.
 
 ```javascript
 function (returnObject, finalCallback, next)
@@ -132,12 +132,12 @@ var tableSvc = azure.createTableService().withFilter(retryOperations);
 
 ## <a name="add-an-entity-to-a-table"></a>Добавление сущности в таблицу
 
-Чтобы добавить сущность, сначала создайте объект, который определяет свойства сущности. Все сущности должны содержать ключи **PartitionKey** и **RowKey**, которые выступают ее уникальными идентификаторами.
+Чтобы добавить сущность, сначала создайте объект, который определяет свойства сущности. Все сущности должны содержать ключи **PartitionKey** и **RowKey** , которые выступают ее уникальными идентификаторами.
 
 * **PartitionKey** — определяет секцию, в которой хранится сущность.
 * **RowKey** — уникально определяет сущность в секции.
 
-**PartitionKey** и **RowKey** должны быть строковыми значениями. Дополнительные сведения см. в статье [Understanding the Table Service Data Model](https://msdn.microsoft.com/library/azure/dd179338.aspx) (Общие сведения о модели данных службы таблиц).
+**PartitionKey** и **RowKey** должны быть строковыми значениями. Дополнительные сведения см. в статье [Understanding the Table Service Data Model](/rest/api/storageservices/Understanding-the-Table-Service-Data-Model) (Общие сведения о модели данных службы таблиц).
 
 Ниже приводится пример задания сущности. Параметр **dueDate** определяется как тип `Edm.DateTime`. Задание типа необязательно, типы будут выведены, если они не заданы.
 
@@ -268,7 +268,7 @@ tableSvc.executeBatch('mytable', batch, function (error, result, response) {
 
 ## <a name="retrieve-an-entity-by-key"></a>Получение сущности по ключу
 
-Чтобы возвратить определенную сущность на основе значений ключей **PartitionKey** и **RowKey**, используйте метод **retrieveEntity**.
+Чтобы возвратить определенную сущность на основе значений ключей **PartitionKey** и **RowKey** , используйте метод **retrieveEntity** .
 
 ```javascript
 tableSvc.retrieveEntity('mytable', 'hometasks', '1', function(error, result, response){
@@ -287,8 +287,8 @@ tableSvc.retrieveEntity('mytable', 'hometasks', '1', function(error, result, res
 * **select** — поля, возвращаемые из запроса.
 * **where** — предложение where.
 
-  * **and** — условие `and` в предложении where.
-  * **or** — условие `or` в предложении where.
+  * **and**  — условие `and` в предложении where.
+  * **or**  — условие `or` в предложении where.
 * **top** — количество извлекаемых элементов.
 
 Следующий пример собирает запрос, который возвращает первые пять элементов с использованием ключа PartitionKey со значением "hometasks".
@@ -299,7 +299,7 @@ var query = new azure.TableQuery()
   .where('PartitionKey eq ?', 'hometasks');
 ```
 
-Так как параметр **select** не используется, возвращаются все поля. Чтобы выполнить запрос сущности в таблице, используйте **queryEntities**. В следующем примере используется запрос для возврата сущностей из таблицы 'mytable'.
+Так как параметр **select** не используется, возвращаются все поля. Чтобы выполнить запрос сущности в таблице, используйте **queryEntities** . В следующем примере используется запрос для возврата сущностей из таблицы 'mytable'.
 
 ```javascript
 tableSvc.queryEntities('mytable',query, null, function(error, result, response) {
@@ -314,7 +314,7 @@ tableSvc.queryEntities('mytable',query, null, function(error, result, response) 
 ### <a name="query-a-subset-of-entity-properties"></a>Запрос подмножества свойств сущности
 
 Запрос к таблице может получить лишь несколько полей сущности.
-Этот позволяет снизить потребление пропускной способности и может повысить производительность запросов, особенно для крупных сущностей. С помощью предложения **select** передайте имена возвращаемых полей. Например, следующий запрос возвратит только поля **description** и **dueDate**.
+Этот позволяет снизить потребление пропускной способности и может повысить производительность запросов, особенно для крупных сущностей. С помощью предложения **select** передайте имена возвращаемых полей. Например, следующий запрос возвратит только поля **description** и **dueDate** .
 
 ```javascript
 var query = new azure.TableQuery()
@@ -357,13 +357,13 @@ tableSvc.deleteTable('mytable', function(error, response){
 });
 ```
 
-Если неизвестно, существует ли таблица, используйте **deleteTableIfExists**.
+Если неизвестно, существует ли таблица, используйте **deleteTableIfExists** .
 
 ## <a name="use-continuation-tokens"></a>Использование маркеров продолжения
 
 При выполнении запросов к таблицам для получения больших объемов результатов следует искать маркеры продолжения. По вашему запросу может быть найден большой объем данных, который, возможно, не удастся реализовать, если не создать метод определения наличия маркера продолжения.
 
-При наличии такого маркера объект **results**, возвращаемый при запросе сущностей, задает свойство `continuationToken`. В последствии его можно использовать при выполнении запроса для продолжения и перемещения между разделами и сущностями таблицы.
+При наличии такого маркера объект **results** , возвращаемый при запросе сущностей, задает свойство `continuationToken`. В последствии его можно использовать при выполнении запроса для продолжения и перемещения между разделами и сущностями таблицы.
 
 При выполнении запросов для экземпляра объекта запроса и функции обратного вызова можно указать параметр `continuationToken`.
 
@@ -455,7 +455,7 @@ var sharedAccessPolicy = {
 };
 ```
 
-В этом примере код получает текущий список ACL для таблицы **hometasks**, а затем добавляет новые политики с помощью **setTableAcl**. Такой подход допускает выполнение:
+В этом примере код получает текущий список ACL для таблицы **hometasks** , а затем добавляет новые политики с помощью **setTableAcl** . Такой подход допускает выполнение:
 
 ```javascript
 var extend = require('extend');
@@ -483,6 +483,6 @@ tableSAS = tableSvc.generateSharedAccessSignature('hometasks', { Id: 'user2' });
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 * Репозиторий [пакета SDK службы хранилища Azure для Node](https://github.com/Azure/azure-storage-node) на сайте GitHub.
-* [Azure для разработчиков Node.js](https://docs.microsoft.com/azure/developer/javascript/)
+* [Azure для разработчиков Node.js](/azure/developer/javascript/)
 * [Создание веб-приложений Node.js в Azure](../app-service/quickstart-nodejs.md)
 * [Создание и развертывание приложения Node.js в облачной службе Azure](../cloud-services/cloud-services-nodejs-develop-deploy-app.md) (с помощью Windows PowerShell)

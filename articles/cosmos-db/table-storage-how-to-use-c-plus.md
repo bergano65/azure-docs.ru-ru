@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 10/07/2019
 author: sakash279
 ms.author: akshanka
-ms.openlocfilehash: ed3ea64bf76eafd965e13f4dab1911840ed8139a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50a34f2572e5e9feea0b5adc3e12f72451e5728b
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282856"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92477340"
 ---
 # <a name="how-to-use-azure-table-storage-and-azure-cosmos-db-table-api-with-c"></a>Как использовать хранилище таблиц Azure и API таблиц Azure Cosmos DB в C++
 
@@ -78,7 +78,7 @@ ms.locfileid: "91282856"
 const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=<your_storage_account>;AccountKey=<your_storage_account_key>"));
 ```
 
-Используйте имя учетной записи хранения для `<your_storage_account>`. Для <your_storage_account_key> используйте ключ доступа для учетной записи хранения, указанной на [портале Azure](https://portal.azure.com). Сведения об учетных записях хранения и ключах доступа см. в статье [Create a storage account](../storage/common/storage-create-storage-account.md) (Создание учетной записи хранения).
+Используйте имя учетной записи хранения для `<your_storage_account>`. Для <your_storage_account_key> используйте ключ доступа для учетной записи хранения, указанной на [портале Azure](https://portal.azure.com). Сведения об учетных записях хранения и ключах доступа см. в статье [Create a storage account](../storage/common/storage-account-create.md) (Создание учетной записи хранения).
 
 ### <a name="set-up-an-azure-cosmos-db-connection-string"></a>Настройка строки подключения к Azure Cosmos DB
 
@@ -98,7 +98,7 @@ const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=ht
 const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 ```
 
-Чтобы запустить Эмулятор службы хранилища Azure с рабочего стола Windows, нажмите кнопку **Пуск** или клавишу Windows. Введите и запустите *эмулятор хранения Microsoft Azure*. Дополнительные сведения см. в статье [Использование Эмулятора службы хранилища Azure для разработки и тестирования](../storage/common/storage-use-emulator.md).
+Чтобы запустить Эмулятор службы хранилища Azure с рабочего стола Windows, нажмите кнопку **Пуск** или клавишу Windows. Введите и запустите *эмулятор хранения Microsoft Azure* . Дополнительные сведения см. в статье [Использование Эмулятора службы хранилища Azure для разработки и тестирования](../storage/common/storage-use-emulator.md).
 
 ### <a name="retrieve-your-connection-string"></a>Получить строку подключения
 
@@ -138,7 +138,7 @@ table.create_if_not_exists();
 
 ### <a name="add-an-entity-to-a-table"></a>Добавление сущности в таблицу
 
-Чтобы добавить сущность в таблицу, создайте объект `table_entity` и передайте его в `table_operation::insert_entity`. Следующий код использует имя пользователя в качестве ключа строки, а фамилию клиента — как ключ раздела. Вместе ключ раздела и ключ строки сущности уникальным образом идентифицируют сущность в таблице. Сущности с одним ключом раздела можно запрашивать быстрее, чем сущности с разными ключами раздела. Использование различных ключей разделов позволяет повысить масштабируемость параллельных операций. Дополнительные сведения см. в статье [Производительность хранилища Microsoft Azure и контрольный список масштабируемости](../storage/common/storage-performance-checklist.md).
+Чтобы добавить сущность в таблицу, создайте объект `table_entity` и передайте его в `table_operation::insert_entity`. Следующий код использует имя пользователя в качестве ключа строки, а фамилию клиента — как ключ раздела. Вместе ключ раздела и ключ строки сущности уникальным образом идентифицируют сущность в таблице. Сущности с одним ключом раздела можно запрашивать быстрее, чем сущности с разными ключами раздела. Использование различных ключей разделов позволяет повысить масштабируемость параллельных операций. Дополнительные сведения см. в статье [Производительность хранилища Microsoft Azure и контрольный список масштабируемости](../storage/blobs/storage-performance-checklist.md).
 
 Следующий код создает экземпляр `table_entity` с подлежащими сохранению данными клиента. Затем код вызывает `table_operation::insert_entity`, чтобы создать объект `table_operation` для вставки сущности в таблицу, и связывает с ним новую сущность таблицы. В завершение код вызывает метод `execute` для объекта `cloud_table`. Новый `table_operation` отправляет запрос в службу таблиц для вставки сущности нового клиента в таблицу `people`.  
 
@@ -499,11 +499,11 @@ else
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Для выпуска Visual Studio Community: если сборка проекта завершается ошибкой из-за включаемых файлов *storage_account.h* и *table.h*, удалите параметр компилятора **/permissive-** :
+Для выпуска Visual Studio Community: если сборка проекта завершается ошибкой из-за включаемых файлов *storage_account.h* и *table.h* , удалите параметр компилятора **/permissive-** :
 
-1. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите **Свойства**.
-1. В диалоговом окне **Страницы свойств** разверните узел **Свойства конфигурации**, затем разверните **C/C++** и выберите **Язык**.
-1. Для параметра **Режим совместимости** установите значение **Нет**.
+1. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите **Свойства** .
+1. В диалоговом окне **Страницы свойств** разверните узел **Свойства конфигурации** , затем разверните **C/C++** и выберите **Язык** .
+1. Для параметра **Режим совместимости** установите значение **Нет** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
