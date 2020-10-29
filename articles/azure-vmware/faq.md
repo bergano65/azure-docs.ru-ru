@@ -4,12 +4,12 @@ description: Содержит ответы на некоторые распро�
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: dikamath
-ms.openlocfilehash: 91be1c51639aa3ae8acbf0c37f5c4a8174b5a592
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 64b2955b1417d6931172b41f83f05d5f1b560708
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92779447"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92911891"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
@@ -76,7 +76,7 @@ VMware HCX Enterprise Edition (EE) предоставляется в соста�
 #### <a name="is-vmware-hcx-supported-on-vpns"></a>Поддерживается ли VMware ХККС в VPN?
 Нет, из-за требований к пропускной способности и задержкам.
 
-#### <a name="can-azure-bastion-be-used-for-connecting-to-avs-vms"></a>Можно ли использовать Azure бастиона для подключения к виртуальным машинам AVS?
+#### <a name="can-azure-bastion-be-used-for-connecting-to-azure-vmware-solution-vms"></a>Можно ли использовать Azure бастиона для подключения к виртуальным машинам Azure VMware?
 Azure бастиона — это служба, рекомендуемая для подключения к полю перехода, чтобы предотвратить предоставление доступа к решению VMware для Azure через Интернет. Вы не можете использовать Azure бастиона для подключения к виртуальным машинам Azure VMware, так как они не являются объектами Azure IaaS.
 
 #### <a name="can-an-existing-expressroute-gateway-be-used-to-connect-to-azure-vmware-solution"></a>Можно ли использовать существующий шлюз ExpressRoute для подключения к решению Azure VMware?

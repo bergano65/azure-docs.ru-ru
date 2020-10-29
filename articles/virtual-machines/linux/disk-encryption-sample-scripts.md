@@ -8,34 +8,43 @@ ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurepowershell
-ms.openlocfilehash: dcfae72d5f15399dc4c759ab859ad8059134f11d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d178ae39d3af6b39047501f0bc47acbc6e792f48
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91279796"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92911500"
 ---
 # <a name="azure-disk-encryption-sample-scripts-for-linux-vms"></a>Примеры сценариев шифрования дисков Azure для виртуальных машин Linux
 
-В этой статье приводятся примеры сценариев для подготовки предварительно зашифрованных виртуальных жестких дисков и других задач.
+В этой статье приводятся примеры сценариев для подготовки предварительно зашифрованных виртуальных жестких дисков и других задач.  
 
- 
+> [!NOTE]
+> Все скрипты относятся к последней версии файла ADE, отличной от AAD, за исключением указанных выше.
 
 ## <a name="sample-powershell-scripts-for-azure-disk-encryption"></a>Примеры сценариев PowerShell для шифрования дисков Azure 
 
 - **Вывод списка всех зашифрованных виртуальных машин в подписке**
+  
+  Все виртуальные машины, зашифрованные с помощью ADE, и версия расширения во всех группах ресурсов, имеющихся в подписке, можно найти с помощью [этого сценария PowerShell](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/Find_1passAdeVersion_VM.ps1).
 
-     ```azurepowershell-interactive
-     $osVolEncrypted = {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).OsVolumeEncrypted}
-     $dataVolEncrypted= {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).DataVolumesEncrypted}
-     Get-AzVm | Format-Table @{Label="MachineName"; Expression={$_.Name}}, @{Label="OsVolumeEncrypted"; Expression=$osVolEncrypted}, @{Label="DataVolumesEncrypted"; Expression=$dataVolEncrypted}
-     ```
+  Кроме того, эти командлеты будут показывать все виртуальные машины, зашифрованные с помощью ADE (но не версия расширения):
+
+   ```azurepowershell-interactive
+   $osVolEncrypted = {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).OsVolumeEncrypted}
+   $dataVolEncrypted= {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).DataVolumesEncrypted}
+   Get-AzVm | Format-Table @{Label="MachineName"; Expression={$_.Name}}, @{Label="OsVolumeEncrypted"; Expression=$osVolEncrypted}, @{Label="DataVolumesEncrypted"; Expression=$dataVolEncrypted}
+   ```
+
+- **Вывод списка всех зашифрованных экземпляров VMSS в вашей подписке**
+    
+    Все экземпляры VMSS, зашифрованные с помощью ADE, и версия расширения во всех группах ресурсов, имеющихся в подписке, можно найти с помощью [этого сценария PowerShell](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/Find_1passAdeVersion_VMSS.ps1).
 
 - **Вывод списка всех секретов шифрования дисков, используемых для шифрования виртуальных машин в хранилище ключей** 
 
-     ```azurepowershell-interactive
-     Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('DiskEncryptionKeyFileName')} | format-table @{Label="MachineName"; Expression={$_.Tags['MachineName']}}, @{Label="VolumeLetter"; Expression={$_.Tags['VolumeLetter']}}, @{Label="EncryptionKeyURL"; Expression={$_.Id}}
-     ```
+   ```azurepowershell-interactive
+   Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('DiskEncryptionKeyFileName')} | format-table @{Label="MachineName"; Expression={$_.Tags['MachineName']}}, @{Label="VolumeLetter"; Expression={$_.Tags['VolumeLetter']}}, @{Label="EncryptionKeyURL"; Expression={$_.Id}}
+   ```
 
 ### <a name="using-the-azure-disk-encryption-prerequisites-powershell-script"></a> Выполнение сценария PowerShell для установки компонентов, необходимых при шифровании дисков Azure
 Если вы уже знакомы с предварительными требованиями для шифрования дисков Azure, можно использовать [соответствующий сценарий PowerShell предварительных требований](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Пример использования этого сценария PowerShell см. в статье [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md). Вы можете удалить комментарии из раздела сценария, начиная со строки 211, чтобы шифровать все диски имеющихся виртуальных машин в имеющейся группе ресурсов. 
@@ -45,14 +54,13 @@ ms.locfileid: "91279796"
 
 |Параметр|Описание|Обязательное?|
 |------|------|------|
-|$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| True|
-|$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| True|
-|$location|Расположение хранилища ключей. Убедитесь, что хранилище ключей и виртуальные машины, которые предстоит зашифровать, находятся в одном расположении. Получите список расположений с помощью команды `Get-AzLocation`.|True|
-|$subscriptionId|Идентификатор подписки Azure для использования.  Вы можете получить идентификатор подписки с помощью команды `Get-AzSubscription`.|True|
-|$aadAppName|Имя приложения Azure AD, которое будет использоваться для записи секретов в хранилище ключей. Будет создано приложение с таким именем (если оно еще не создано). Если это приложение уже есть, передайте параметр aadClientSecret в сценарий.|False|
-|$aadClientSecret|Секрет клиента приложения Azure AD, который был создан ранее.|False|
-|$keyEncryptionKeyName|Имя дополнительного ключа шифрования ключа в хранилище ключей. При отсутствии ключа с таким именем — он будет создан.|False|
-
+|$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| Верно|
+|$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| Верно|
+|$location|Расположение хранилища ключей. Убедитесь, что хранилище ключей и виртуальные машины, которые предстоит зашифровать, находятся в одном расположении. Получите список расположений с помощью команды `Get-AzLocation`.|Верно|
+|$subscriptionId|Идентификатор подписки Azure для использования.  Вы можете получить идентификатор подписки с помощью команды `Get-AzSubscription`.|Верно|
+|$aadAppName|Имя приложения Azure AD, которое будет использоваться для записи секретов в хранилище ключей. Будет создано приложение с таким именем (если оно еще не создано). Если это приложение уже есть, передайте параметр aadClientSecret в сценарий.|Неверно|
+|$aadClientSecret|Секрет клиента приложения Azure AD, который был создан ранее.|Неверно|
+|$keyEncryptionKeyName|Имя дополнительного ключа шифрования ключа в хранилище ключей. При отсутствии ключа с таким именем — он будет создан.|Неверно|
 
 ### <a name="encrypt-or-decrypt-vms-without-an-azure-ad-app"></a>Шифрование или расшифровка виртуальных машин без приложения Azure AD
 
@@ -60,7 +68,7 @@ ms.locfileid: "91279796"
 - [Отключение шифрования на работающей виртуальной машине Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-linux-vm-without-aad) 
     - Для виртуальных машин Linux отключение шифрования возможно только для томов данных.  
 
-### <a name="encrypt-or-decrypt-vms-with-an-azure-ad-app-previous-release"></a>Шифрование или расшифровка виртуальных машин с приложением Azure AD (предыдущий выпуск) 
+### <a name="encrypt-or-decrypt-vms-with-an-azure-ad-app-previous-release"></a>Шифрование или расшифровка виртуальных машин с приложением Azure AD (предыдущий выпуск)
  
 - [Включение шифрования дисков на существующей или работающей виртуальной машине Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-linux-vm)    
 
@@ -71,10 +79,6 @@ ms.locfileid: "91279796"
 
 - [Создание нового зашифрованного управляемого диска из предварительно зашифрованного виртуального жесткого диска или большого двоичного объекта хранилища](https://github.com/Azure/azure-quickstart-templates/tree/master/201-create-encrypted-managed-disk)
     - Создает зашифрованный управляемый диск на основе предварительно зашифрованного виртуального жесткого диска и его соответствующих параметров шифрования.
-
-
-
-
 
 ## <a name="encrypting-an-os-drive-on-a-running-linux-vm"></a>Шифрование диска ОС на работающей виртуальной машине Linux
 
@@ -227,7 +231,7 @@ ms.locfileid: "91279796"
     fi
    ```
 
-2. Измените настройки шифрования в */etc/crypttab*. Он должен выглядеть так:
+2. Измените настройки шифрования в */etc/crypttab* . Он должен выглядеть так:
    ```
     xxx_crypt uuid=xxxxxxxxxxxxxxxxxxxxx none luks,discard,keyscript=/usr/local/sbin/azure_crypt_key.sh
     ```
@@ -236,7 +240,7 @@ ms.locfileid: "91279796"
    ```
     chmod +x /usr/local/sbin/azure_crypt_key.sh
    ```
-5. Измените */etc/initramfs-tools/modules*, добавив приведенные ниже строки.
+5. Измените */etc/initramfs-tools/modules* , добавив приведенные ниже строки.
    ```
     vfat
     ntfs
@@ -327,7 +331,7 @@ ms.locfileid: "91279796"
 
    ![Установка назначения при настройке CentOS 7](./media/disk-encryption/centos-encrypt-fig1.png)
 
-2. Включите шифрование для корневого раздела (параметр **Encrypt**).
+2. Включите шифрование для корневого раздела (параметр **Encrypt** ).
 
    ![Выбор шифрования для корневого раздела при настройке CentOS 7](./media/disk-encryption/centos-encrypt-fig2.png)
 
@@ -371,7 +375,7 @@ ms.locfileid: "91279796"
    ```bash
     if [ -z "$DRACUT_SYSTEMD" ]; then
    ```
-   значение
+   в
    ```bash
     if [ 1 ]; then
    ```

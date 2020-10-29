@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/29/2020
 ms.author: memildin
-ms.openlocfilehash: bde4b21f9dfff62ef43afc9c9d8e5a858631d304
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1837d84c97227ba3d8743c3717e2f68dafd6b95
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91447379"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92911398"
 ---
 # <a name="prevent-dangling-dns-entries-and-avoid-subdomain-takeover"></a>Предотвращение висячих записей DNS и избежание поддоменного перенаправление
 
@@ -51,7 +51,7 @@ ms.locfileid: "91447379"
 
     1. Субъект угрозы подготавливает ресурс Azure с тем же полным доменным именем ранее управляемого ресурса. В этом примере — `app-contogreat-dev-001.azurewebsites.net`.
 
-    1. Трафик, отправляемый в поддомен, `myapp.contoso.com` теперь направляется в ресурс вредоносного субъекта, где они управляют содержимым.
+    1. Трафик, отправляемый в поддомен, `greatapp.contoso.com` теперь направляется в ресурс вредоносного субъекта, где они управляют содержимым.
 
 
 
@@ -100,7 +100,7 @@ ms.locfileid: "91447379"
 
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 
 Запустите запрос от имени пользователя, который:
 
@@ -119,7 +119,7 @@ ms.locfileid: "91447379"
 
 ### <a name="run-the-script"></a>Выполнение скрипта
 
-Дополнительные сведения о скрипте PowerShell **Get-DanglingDnsRecords.ps1**и его загрузке с сайта GitHub: https://aka.ms/DanglingDNSDomains .
+Дополнительные сведения о скрипте PowerShell **Get-DanglingDnsRecords.ps1** и его загрузке с сайта GitHub: https://aka.ms/DanglingDNSDomains .
 
 ## <a name="remediate-dangling-dns-entries"></a>Исправление висячих записей DNS 
 
@@ -198,7 +198,7 @@ ms.locfileid: "91447379"
     - Удалите запись DNS, если она больше не используется, или укажите правильный ресурс Azure (FQDN), принадлежащий вашей организации.
  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о связанных службах и функциях Azure, которые можно использовать для защиты от перенаправление поддоменов, см. на следующих страницах.
 

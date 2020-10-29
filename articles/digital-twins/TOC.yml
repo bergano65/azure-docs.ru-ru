@@ -23,8 +23,6 @@
   items:
     - name: Настраиваемые модели
       href: concepts-models.md
-    - name: Преобразование стандартных отраслевых моделей
-      href: concepts-convert-models.md
     - name: Цифровые двойники и граф двойника
       href: concepts-twins-graph.md
     - name: Язык запросов
@@ -63,6 +61,8 @@
       items:
         - name: Управление пользовательскими моделями
           href: how-to-manage-model.md
+        - name: Преобразование стандартных отраслевых моделей
+          href: how-to-convert-models.md
         - name: Анализ и проверка моделей
           href: how-to-parse-models.md
         - name: Добавление тегов
@@ -176,11 +176,15 @@
             - name: "Пакет SDK для Java\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core'
             - name: Пакет SDK для JavaScript (npm)
-              href: 'https://www.npmjs.com/package/@azure/digital-twins/'
+              href: 'https://www.npmjs.com/package/@azure/digital-twins-core'
             - name: Справочник по пакету SDK для JavaScript
               href: /javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest
+            - name: "Пакет SDK для JavaScript\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core'
             - name: "Пакет SDK для Python\_— PyPi"
               href: 'https://pypi.org/project/azure-digitaltwins-core/1.0.0b1/'
+            - name: "Пакет SDK для Python\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core'
     - name: CLI Digital Twins
       items:
         - name: Справочник по CLI Digital Twins

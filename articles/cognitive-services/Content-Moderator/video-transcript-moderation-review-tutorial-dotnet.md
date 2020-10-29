@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 08/05/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1f5a68bcf0069663d8ef1101407bea7ee26e9e8b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1648bd9a073bca696299e9ed703536db745e7edb
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88919296"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92912843"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Руководство по Модерация видео и расшифровок речи
 
@@ -35,7 +35,7 @@ ms.locfileid: "88919296"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Зарегистрируйтесь на сайте Средства проверки [Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и создайте пользовательские теги. Если на этом этапе вам нужна помощь, ознакомьтесь со статьей [Создание и использование тегов для модерации](Review-Tool-User-Guide/tags.md).
+- Зарегистрируйтесь на сайте Средства проверки [Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и создайте пользовательские теги. Если на этом этапе вам нужна помощь, ознакомьтесь со статьей [Создание и использование тегов для модерации](./review-tool-user-guide/configure.md#tags).
 
     ![Снимок экрана пользовательских тегов для модерации видео](images/video-tutorial-custom-tags.png)
 - Для запуска примера приложения необходимы учетная запись Azure, ресурс Служб мультимедиа Azure, ресурс Azure Content Moderator и учетные данные Azure Active Directory. Инструкции по получению этих ресурсов см. в руководстве по [API модерации видео](video-moderation-api.md).
@@ -83,7 +83,7 @@ ms.locfileid: "88919296"
 Если аргументов командной строки нет, `Main()` вызывает `GetUserInputs()`. Этот метод предлагает пользователю ввести путь к одному видеофайлу и указать, нужно ли создать расшифровку текста.
 
 > [!NOTE]
-> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
+> В консольном приложении используется [API индексатора мультимедийных данных Azure](../../media-services/previous/legacy-components.md) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
 
 ### <a name="initialize-and-processvideo-methods"></a>Инициализация и методы ProcessVideo
 
@@ -224,7 +224,7 @@ ms.locfileid: "88919296"
 Если флаг `GenerateVTT` установлен, также выполняется транскрибирование аудиофайла.
 
 > [!NOTE]
-> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
+> В консольном приложении используется [API индексатора мультимедийных данных Azure](../../media-services/previous/legacy-components.md) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
 
 ## <a name="create-a-human-review"></a>Создание пользовательской проверки
 
@@ -249,7 +249,7 @@ ms.locfileid: "88919296"
 
 ## <a name="process-the-transcript"></a>Обработка расшифровки
 
-До этого момента код, представленный в этом руководстве, ориентирован на визуальное содержимое. Проверка речевого содержимого — это отдельный и необязательный процесс, для которого, как упоминалось выше, используется расшифровка, созданная из аудио. Теперь рассмотрим создание расшифровки и использование ее в процессе проверки. Задача создания расшифровки отводится службе [индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-index-content).
+До этого момента код, представленный в этом руководстве, ориентирован на визуальное содержимое. Проверка речевого содержимого — это отдельный и необязательный процесс, для которого, как упоминалось выше, используется расшифровка, созданная из аудио. Теперь рассмотрим создание расшифровки и использование ее в процессе проверки. Задача создания расшифровки отводится службе [индексатора мультимедийных данных Azure](../../media-services/previous/media-services-index-content.md).
 
 Приложение выполняет такие задачи:
 

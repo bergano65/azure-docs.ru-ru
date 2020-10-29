@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 4f381e2f2e9f85422bd5f4fb89ec684f4bc99f91
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c9287e9661172480292a2214b231e7e5dac9c32f
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970815"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92912249"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Новые возможности Распознавателя документов
 
@@ -28,13 +28,13 @@ ms.locfileid: "91970815"
 
 
 - **Ссылка на REST API доступна** — просмотрите [Справочник по версии 2.1-Preview. 1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync) 
-- Поддерживаются **новые языки, кроме английского**, теперь поддерживаются следующие [языки](language-support.md) : для `Layout` и `Train Custom Model` : Английский ( `en` ), китайский (упрощенное письмо) ( `zh-Hans` ), голландский ( `nl` ), французский ( `fr` ), немецкий ( `de` ), итальянский ( `it` ), португальский () `pt` и испанский ( `es` ).
+- Поддерживаются **новые языки, кроме английского** , теперь поддерживаются следующие [языки](language-support.md) : для `Layout` и `Train Custom Model` : Английский ( `en` ), китайский (упрощенное письмо) ( `zh-Hans` ), голландский ( `nl` ), французский ( `fr` ), немецкий ( `de` ), итальянский ( `it` ), португальский () `pt` и испанский ( `es` ).
 - **Обнаружение метки флажка/выделения** — распознаватель форм поддерживает обнаружение и извлечение меток выделения, таких как флажки и переключатели. Метки выделения извлекаются в `Layout` , и теперь можно также пометить и обучить метки, `Train Custom Model`  -  _Train with Labels_ чтобы извлечь пары "ключ — значение" для меток выбора. 
-- **Создание модели** позволяет составить несколько моделей и вызывать их с одним идентификатором модели. При отправке документа для анализа с ИДЕНТИФИКАТОРом составной модели сначала выполняется шаг классификации для его направления в правильную пользовательскую модель. Создание модели доступно для `Train Custom Model`  -  _обучения с метками_.
+- **Создание модели** позволяет составить несколько моделей и вызывать их с одним идентификатором модели. При отправке документа для анализа с ИДЕНТИФИКАТОРом составной модели сначала выполняется шаг классификации для его направления в правильную пользовательскую модель. Создание модели доступно для `Train Custom Model`  -  _обучения с метками_ .
 - **Имя модели** добавьте понятное имя в пользовательские модели для упрощения управления и отслеживания.
 - **[Новая предварительно созданная модель для визитных карточек](concept-business-cards.md)** для извлечения общих полей на английском и языковом визитных карточках.
 - **[Новые языковые стандарты для предварительно созданных поступлений](concept-receipts.md)** в дополнение к EN-US теперь поддерживаются для EN-Au, en-CA, EN-GB, ru-in.
-- **Улучшение качества** для `Layout` , `Train Custom Model`  -  _обучение без меток_ и _обучение с помощью меток_.
+- **Улучшение качества** для `Layout` , `Train Custom Model`  -  _обучение без меток_ и _обучение с помощью меток_ .
 
 
 **Версия 2.0** включает следующее обновление:
@@ -45,7 +45,7 @@ ms.locfileid: "91970815"
 **Новые образцы** доступны на сайте GitHub. 
 - Инструкции по [извлечению набора знаний — Forms сборник тренировочных заданий](https://github.com/microsoft/knowledge-extraction-recipes-forms) собирает рекомендации от участия клиентов распознавателя в реальных формах и предоставляют пригодные для использования примеры кода, контрольные списки и примеры конвейеров, используемые при разработке этих проектов. 
 - [Пример средства создания меток](https://github.com/microsoft/OCR-Form-Tools) был обновлен для поддержки новой функциональности версии 2.1. Ознакомьтесь с этим [кратким](quickstarts/label-tool.md) руководством по началу работы с инструментом. 
-- В примере с интеллектуальным распознавательм [киосков](https://github.com/microsoft/Cognitive-Samples-IntelligentKiosk/blob/master/Documentation/FormRecognizer.md) показано, как интегрировать `Analyze Receipt` и `Train Custom Model`  -  _обучать без меток_.
+- В примере с интеллектуальным распознавательм [киосков](https://github.com/microsoft/Cognitive-Samples-IntelligentKiosk/blob/master/Documentation/FormRecognizer.md) показано, как интегрировать `Analyze Receipt` и `Train Custom Model`  -  _обучать без меток_ .
 
 
 
@@ -53,14 +53,14 @@ ms.locfileid: "91970815"
 
 ### <a name="new-features"></a>Новые функции
 
-* **доступна ссылка на версии 2.0** Ознакомьтесь со [справочником по API версии 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) и обновленными пакетами SDK для [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme?view=azure-dotnet), [Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python), [Java](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview)и [JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest).
-* Улучшения **таблиц и улучшений извлечения** включают улучшения точности и улучшения извлечения таблиц, в частности, возможность изучения заголовков и структур таблиц в _пользовательском обучении без меток_. 
+* **доступна ссылка на версии 2.0** Ознакомьтесь со [справочником по API версии 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) и обновленными пакетами SDK для [.NET](/dotnet/api/overview/azure/ai.formrecognizer-readme?view=azure-dotnet), [Python](/python/api/overview/azure/?view=azure-python), [Java](/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview)и [JavaScript](/javascript/api/overview/azure/?view=azure-node-latest).
+* Улучшения **таблиц и улучшений извлечения** включают улучшения точности и улучшения извлечения таблиц, в частности, возможность изучения заголовков и структур таблиц в _пользовательском обучении без меток_ . 
 
 * **Поддержка валюты** Обнаружение и извлечение символов глобальной валюты.
 * **Azure gov** Средство распознавания форм теперь также доступно в Azure gov.
-* **Улучшенные функции безопасности**: 
-   * **Приведите свой собственный ключ**  Средство распознавания форм автоматически шифрует ваши данные при сохранении в облаке, чтобы защитить их и обеспечить соответствие требованиям к безопасности и соответствию Организации. По умолчанию в подписке используются ключи шифрования, управляемые корпорацией Майкрософт. Теперь вы можете управлять подпиской с помощью собственных ключей шифрования. [Ключи, управляемые клиентом (CMK), также известные как собственный ключ (BYOK)](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/form-recognizer-encryption-of-data-at-rest), обеспечивают большую гибкость при создании, повороте, отключении и отмене контроля доступа. Они также дают возможность выполнять аудит ключей шифрования, используемых для защиты ваших данных.  
-   * **Частные конечные точки** — позволяет использовать виртуальную сеть для [безопасного доступа к данным по частной ссылке. ](https://docs.microsoft.com/azure/private-link/private-link-overview)
+* **Улучшенные функции безопасности** : 
+   * **Приведите свой собственный ключ**  Средство распознавания форм автоматически шифрует ваши данные при сохранении в облаке, чтобы защитить их и обеспечить соответствие требованиям к безопасности и соответствию Организации. По умолчанию в подписке используются ключи шифрования, управляемые корпорацией Майкрософт. Теперь вы можете управлять подпиской с помощью собственных ключей шифрования. [Ключи, управляемые клиентом (CMK), также известные как собственный ключ (BYOK)](./form-recognizer-encryption-of-data-at-rest.md), обеспечивают большую гибкость при создании, повороте, отключении и отмене контроля доступа. Они также дают возможность выполнять аудит ключей шифрования, используемых для защиты ваших данных.  
+   * **Частные конечные точки** — позволяет использовать виртуальную сеть для [безопасного доступа к данным по частной ссылке.](../../private-link/private-link-overview.md)
 
 
 ## <a name="june-2020"></a>Июнь 2020 г.
@@ -78,10 +78,10 @@ ms.locfileid: "91970815"
 
 ### <a name="new-features"></a>Новые функции
 * **Поддержка пакета SDK для API распознавателя форм (общедоступная Предварительная версия 2.0** ) В этом месяце мы расширили поддержку службы, включив в нее предварительную версию пакета SDK для выпуска распознавателя версии 2.0 (Предварительная версия). Воспользуйтесь приведенными ниже ссылками, чтобы начать работу с выбранным языком: 
-   * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme?view=azure-dotnet)
-   * [пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview)
-   * [Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ai-formrecognizer-readme?view=azure-python-preview)
-   * [Пакет SDK для JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/ai-form-recognizer-readme?view=azure-node-preview)
+   * [Пакет SDK для .NET](/dotnet/api/overview/azure/ai.formrecognizer-readme?view=azure-dotnet)
+   * [пакет SDK для Java](/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview)
+   * [Пакет SDK для Python](/python/api/overview/azure/ai-formrecognizer-readme?view=azure-python-preview)
+   * [Пакет SDK для JavaScript](/javascript/api/overview/azure/ai-form-recognizer-readme?view=azure-node-preview)
 
   Новый пакет SDK поддерживает все функции REST API версии 2.0 для распознавателя форм. Например, можно обучить модель с метками или без них, а также извлечь текст, пары "ключ-значение" и таблицы из форм, извлечь данные из чеков с помощью предварительно построенной службы получения и извлечь текст и таблицы со службой макета из документов. Вы можете поделиться своими отзывами о [пакетах SDK в форме отзывов SDK](https://aka.ms/FR_SDK_v1_feedback).
  
@@ -91,8 +91,8 @@ ms.locfileid: "91970815"
 
 ### <a name="security-improvements"></a>Усовершенствования системы безопасности
 
-* Управляемые клиентом ключи теперь доступны для Формрекогнизер. Дополнительные сведения см. [в разделе Шифрование неактивных данных для распознавателя форм](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/form-recognizer-encryption-of-data-at-rest).
-* Используйте управляемые удостоверения для доступа к ресурсам Azure с помощью Azure Active Directory. Дополнительные сведения см. [в разделе Авторизация доступа к управляемым удостоверениям](https://docs.microsoft.com/azure/cognitive-services/authentication#authorize-access-to-managed-identities).
+* Управляемые клиентом ключи теперь доступны для Формрекогнизер. Дополнительные сведения см. [в разделе Шифрование неактивных данных для распознавателя форм](./form-recognizer-encryption-of-data-at-rest.md).
+* Используйте управляемые удостоверения для доступа к ресурсам Azure с помощью Azure Active Directory. Дополнительные сведения см. [в разделе Авторизация доступа к управляемым удостоверениям](../authentication.md#authorize-access-to-managed-identities).
 
 ## <a name="march-2020"></a>Март 2020 г. 
 

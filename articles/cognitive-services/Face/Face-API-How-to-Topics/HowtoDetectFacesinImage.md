@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: sbowles
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 500099753ee4fe47f02e7f09d9732b71aa3bae36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7a740b1015bda80000f65180eda2c5e618670da
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91856371"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92911245"
 ---
 # <a name="get-face-detection-data"></a>Получение данных обнаружения лиц
 
@@ -30,25 +30,25 @@ ms.locfileid: "91856371"
 
 ## <a name="setup"></a>Настройка
 
-В этом учебнике предполагается, что вы уже создавали объект [фацеклиент](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) `faceClient` с именем с ключом подписки лица и URL-адресом конечной точки. Здесь можно использовать функцию обнаружения лиц, вызвав либо [детектвисурласинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync?view=azure-dotnet), которая используется в этом руководством, либо [детектвисстреамасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync?view=azure-dotnet). Инструкции по настройке этой функции см. в одном из кратких руководств.
+В этом учебнике предполагается, что вы уже создавали объект [фацеклиент](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) `faceClient` с именем с ключом подписки лица и URL-адресом конечной точки. Здесь можно использовать функцию обнаружения лиц, вызвав либо [детектвисурласинк](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync?view=azure-dotnet), которая используется в этом руководством, либо [детектвисстреамасинк](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync?view=azure-dotnet). Инструкции по настройке этой функции см. в одном из кратких руководств.
 
 В этом разделе рассматриваются особенности вызова метода обнаружения, например, какие аргументы можно передавать и что можно делать с возвращаемыми данными. Рекомендуется запрашивать только необходимые компоненты. Для выполнения каждой операции требуется дополнительное время.
 
 ## <a name="get-basic-face-data"></a>Получение основных данных о грани
 
-Чтобы найти лица и получить их расположения в изображении, вызовите метод [детектвисурласинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync?view=azure-dotnet) или [детектвисстреамасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync?view=azure-dotnet) с параметром _ретурнфацеид_ , имеющим значение **true**. Это значение по умолчанию.
+Чтобы найти лица и получить их расположения в изображении, вызовите метод [детектвисурласинк](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync?view=azure-dotnet) или [детектвисстреамасинк](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync?view=azure-dotnet) с параметром _ретурнфацеид_ , имеющим значение **true** . Это значение по умолчанию.
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="basic1":::
 
-Вы можете запросить возвращенные объекты [детектедфаце](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface?view=azure-dotnet) для их уникальных идентификаторов и прямоугольника, который дает координаты точки.
+Вы можете запросить возвращенные объекты [детектедфаце](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface?view=azure-dotnet) для их уникальных идентификаторов и прямоугольника, который дает координаты точки.
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="basic2":::
 
-Сведения о том, как анализировать расположение и размеры лица, см. в разделе [фацеректангле](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.facerectangle?view=azure-dotnet). Обычно этот прямоугольник содержит глаза, бровей, нос и рот. Верхняя часть Head, ушки и Чин не обязательно включена. Чтобы использовать прямоугольник лицевой стороны для обрезки полного заголовка или получения середины рисунка книжной ориентации, возможно, для изображения типа "идентификатор фотографии", можно развернуть прямоугольник в каждом направлении.
+Сведения о том, как анализировать расположение и размеры лица, см. в разделе [фацеректангле](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.facerectangle?view=azure-dotnet). Обычно этот прямоугольник содержит глаза, бровей, нос и рот. Верхняя часть Head, ушки и Чин не обязательно включена. Чтобы использовать прямоугольник лицевой стороны для обрезки полного заголовка или получения середины рисунка книжной ориентации, возможно, для изображения типа "идентификатор фотографии", можно развернуть прямоугольник в каждом направлении.
 
 ## <a name="get-face-landmarks"></a>Получение ориентиров для лиц
 
-[Ориентиры](../concepts/face-detection.md#face-landmarks) — это набор удобных для поиска точек на лицевой стороне, например пупилс или Совет нос. Чтобы получить данные ориентиров, установите для параметра _детектионмодел_ значение **детектионмодел. Detection01** , а для параметра _ретурнфацеландмаркс_ — **значение true**.
+[Ориентиры](../concepts/face-detection.md#face-landmarks) — это набор удобных для поиска точек на лицевой стороне, например пупилс или Совет нос. Чтобы получить данные ориентиров, установите для параметра _детектионмодел_ значение **детектионмодел. Detection01** , а для параметра _ретурнфацеландмаркс_ — **значение true** .
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="landmarks1":::
 
@@ -66,7 +66,7 @@ ms.locfileid: "91856371"
 
 Помимо прямоугольников и ориентиров, API обнаружения лиц может анализировать несколько концептуальных атрибутов лица. Полный список см. в разделе Общие сведения о [атрибутах лиц](../concepts/face-detection.md#attributes) .
 
-Чтобы проанализировать атрибуты лиц, задайте для параметра _детектионмодел_ значение **детектионмодел. Detection01** , а параметр _Ретурнфацеаттрибутес_ — список значений [перечисления фацеаттрибутетипе](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype?view=azure-dotnet) .
+Чтобы проанализировать атрибуты лиц, задайте для параметра _детектионмодел_ значение **детектионмодел. Detection01** , а параметр _Ретурнфацеаттрибутес_ — список значений [перечисления фацеаттрибутетипе](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype?view=azure-dotnet) .
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="attributes1":::
 
@@ -76,7 +76,7 @@ ms.locfileid: "91856371"
 
 Дополнительные сведения о каждом из атрибутов см. в разделе Общие сведения об [обнаружении и атрибутах лиц](../concepts/face-detection.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство вы узнали, как использовать различные функции обнаружения лиц. Затем интегрируйте эти функции в приложение, выполнив подробное руководство.
 
@@ -85,4 +85,4 @@ ms.locfileid: "91856371"
 ## <a name="related-topics"></a>Связанные темы
 
 - [Справочная документация (ОСТАВШАЯся)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
-- [Справочная документация (пакет SDK для .NET)](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet)
+- [Справочная документация (пакет SDK для .NET)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet)

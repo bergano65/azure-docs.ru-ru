@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 10/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: ce922e3ce39bc3df9f4c242558644922e5713300
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 2ea8840a4c66ff05bea22c5c7c063e31d09f9dc8
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92494810"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92911755"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -46,7 +46,7 @@ ms.locfileid: "92494810"
 
 В следующем примере показано, как создать конечную точку типа "Сетка событий" с помощью Azure CLI. Вы можете использовать [Azure Cloud Shell](https://shell.azure.com)или [установить интерфейс командной строки локально](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 
-Сначала создайте раздел "Сетка событий". Вы можете использовать следующую команду или просмотреть действия более подробно, перейдя [к разделу *Создание пользовательского раздела* ](../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic) краткого руководства по *событиям* сетки событий.
+Сначала создайте раздел "Сетка событий". Вы можете использовать следующую команду или просмотреть действия более подробно, перейдя [к разделу *Создание пользовательского раздела*](../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic) краткого руководства по *событиям* сетки событий.
 
 ```azurecli-interactive
 az eventgrid topic create -g <your-resource-group-name> --name <your-topic-name> -l <region>
@@ -64,15 +64,15 @@ az eventgrid topic create -g <your-resource-group-name> --name <your-topic-name>
 az dt endpoint create eventgrid --endpoint-name <Event-Grid-endpoint-name> --eventgrid-resource-group <Event-Grid-resource-group-name> --eventgrid-topic <your-Event-Grid-topic-name> -n <your-Azure-Digital-Twins-instance-name>
 ```
 
-Теперь раздел "Сетка событий" доступен в качестве конечной точки в Azure Digital двойников с именем, указанным в `--endpoint-name` аргументе. Обычно это имя используется в качестве цели для **маршрута события**, который будет создан [Далее в этой статье](#create-an-event-route) с помощью API службы Digital двойников.
+Теперь раздел "Сетка событий" доступен в качестве конечной точки в Azure Digital двойников с именем, указанным в `--endpoint-name` аргументе. Обычно это имя используется в качестве цели для **маршрута события** , который будет создан [Далее в этой статье](#create-an-event-route) с помощью API службы Digital двойников.
 
 ### <a name="create-an-event-hubs-or-service-bus-endpoint"></a>Создание концентраторов событий или конечной точки служебной шины
 
 Процесс создания концентраторов событий или конечных точек служебной шины аналогичен процессу сетки событий, показанному выше.
 
 Сначала создайте ресурсы, которые будут использоваться в качестве конечной точки. Вот что требуется:
-* Служебная шина: _пространство имен служебной шины_, _раздел служебной шины_, _правило авторизации_
-* Концентраторы событий: _пространство имен концентраторов событий_, _концентратор событий_, _правило авторизации_
+* Служебная шина: _пространство имен служебной шины_ , _раздел служебной шины_ , _правило авторизации_
+* Концентраторы событий: _пространство имен концентраторов событий_ , _концентратор событий_ , _правило авторизации_
 
 Затем используйте следующие команды для создания конечных точек в Azure Digital двойников: 
 
@@ -88,7 +88,7 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 ### <a name="create-an-endpoint-with-dead-lettering"></a>Создание конечной точки с недоставленным письмом
 
-Если конечная точка не может доставить событие в течение определенного периода времени или после попытки доставить событие определенное количество раз, оно может отправить недоставленное событие в учетную запись хранения. Этот процесс называется **недоставленным**.
+Если конечная точка не может доставить событие в течение определенного периода времени или после попытки доставить событие определенное количество раз, оно может отправить недоставленное событие в учетную запись хранения. Этот процесс называется **недоставленным** .
 
 Чтобы создать конечную точку с поддержкой недоставленных сообщений, необходимо использовать [API ARM](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) для создания конечной точки. 
 
@@ -152,11 +152,11 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 ## <a name="create-an-event-route"></a>Создание маршрута события
 
-Чтобы фактически передавать данные из Azure Digital двойников в конечную точку, необходимо определить **маршрут события**. **API-интерфейсы** Azure Digital двойников евентраутес позволяют разработчикам связывать потоки событий во всей системе и в подчиненных службах. Дополнительные сведения о маршрутах событий см. в статье [*Маршрутизация событий цифровых двойников Azure*](concepts-route-events.md).
+Чтобы фактически передавать данные из Azure Digital двойников в конечную точку, необходимо определить **маршрут события** . **API-интерфейсы** Azure Digital двойников евентраутес позволяют разработчикам связывать потоки событий во всей системе и в подчиненных службах. Дополнительные сведения о маршрутах событий см. в статье [*Маршрутизация событий цифровых двойников Azure*](concepts-route-events.md).
 
 В примерах в этом разделе используется [пакет SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true).
 
-**Предварительные требования**. прежде чем можно будет перейти к созданию маршрута, необходимо создать конечные точки, как описано ранее в этой статье. После завершения настройки конечных точек можно перейти к созданию маршрута события.
+**Предварительные требования** . прежде чем можно будет перейти к созданию маршрута, необходимо создать конечные точки, как описано ранее в этой статье. После завершения настройки конечных точек можно перейти к созданию маршрута события.
 
 >[!NOTE]
 >Если вы недавно развернули конечные точки, убедитесь, что они завершили развертывание, **прежде чем** пытаться использовать их для нового маршрута событий. Если развертывание маршрута завершается сбоем из-за неготовности конечных точек, подождите несколько минут и повторите попытку.
@@ -179,27 +179,29 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 `CreateEventRoute` — Это вызов пакета SDK, который используется для добавления маршрута события. Ниже приведен пример использования.
 
 ```csharp
-EventRoute er = new EventRoute("endpointName");
+EventRoute er = new EventRoute("<your-endpointName>");
 er.Filter = "true"; //Filter allows all messages
-await client.CreateEventRoute("routeName", er);
+await CreateEventRoute(client, "routeName", er);
 ```
-
+    
 > [!TIP]
 > Все функции пакета SDK имеют синхронные и асинхронные версии.
 
 ### <a name="event-route-sample-code"></a>Пример кода для маршрута события
 
-В следующем примере кода показано, как создать, перечислить и удалить маршрут события.
+В следующем примере метода показано, как создать, перечислить и удалить маршрут события.
 ```csharp
-try
+private async static Task CreateEventRoute(DigitalTwinsClient client, String routeName, EventRoute er)
 {
+  try
+  {
     Console.WriteLine("Create a route: testRoute1");
-    EventRoute er = new EventRoute("< your - endpoint - name >");
+            
     // Make a filter that passes everything
     er.Filter = "true";
-    client.CreateEventRoute("< your - route - name >", er);
+    await client.CreateEventRouteAsync(routeName, er);
     Console.WriteLine("Create route succeeded. Now listing routes:");
-    Pageable <EventRoute> result = client.GetEventRoutes();
+    Pageable<EventRoute> result = client.GetEventRoutes();
     foreach (EventRoute r in result)
     {
         Console.WriteLine($"Route {r.Id} to endpoint {r.EndpointName} with filter {r.Filter} ");
@@ -210,11 +212,12 @@ try
         Console.WriteLine($"Deleting route {r.Id}:");
         client.DeleteEventRoute(r.Id);
     }
-}
-catch (RequestFailedException e)
-{
-    Console.WriteLine($"*** Error in event route processing ({e.ErrorCode}):\n${e.Message}");
-}
+  }
+    catch (RequestFailedException e)
+    {
+        Console.WriteLine($"*** Error in event route processing ({e.ErrorCode}):\n${e.Message}");
+    }
+  }
 ```
 
 ## <a name="filter-events"></a>События фильтра

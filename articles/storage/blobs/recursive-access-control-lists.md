@@ -5,16 +5,16 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/15/2020
+ms.date: 10/27/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: eb227ab955ca2ec9ec72b4a86fd321a45dee997f
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 247742cac3dc24b062fc8e1cb5eceb6c1a6f3f8b
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107663"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92911619"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Рекурсивное задание списков управления доступом (ACL) для Azure Data Lake Storage 2-го поколения
 
@@ -25,7 +25,7 @@ ms.locfileid: "92107663"
 
 [Библиотеки](#libraries)  |  [Примеры](#code-samples)  |  [Рекомендации](#best-practice-guidelines)  |  [Отправить отзыв](#provide-feedback)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -72,6 +72,17 @@ ms.locfileid: "92107663"
    ```
 
    Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) .
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+1. Откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) или, если вы [установили](https://docs.microsoft.com/cli/azure/install-azure-cli) Azure CLI локально, командное консольное приложение (например, Windows PowerShell).
+
+2. Убедитесь, что установлена версия Azure CLI`2.14.0` или выше, выполнив следующую команду.
+
+   ```azurecli
+    az --version
+   ```
+   Если ваша версия Azure CLI ниже чем `2.14.0`, установите более позднюю версию. Подробнее см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
@@ -190,6 +201,31 @@ $ctx = New-AzStorageContext -StorageAccountName '<storage-account-name>' -UseCon
 $storageAccount = Get-AzStorageAccount -ResourceGroupName "<resource-group-name>" -AccountName "<storage-account-name>"
 $ctx = $storageAccount.Context
 ```
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+1. Если вы используете Azure CLI локально, выполните команду для входа.
+
+   ```azurecli
+   az login
+   ```
+
+   Если в CLI можно запустить браузер по умолчанию, откроется браузер со страницей входа.
+
+   В противном случае самостоятельно откройте в браузере страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin) и введите код авторизации, отображаемый в терминале. Затем выполните вход в браузере с помощью учетных данных.
+
+   Дополнительные сведения о различных методах аутентификации см. на странице [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](../common/authorize-data-operations-cli.md).
+
+2. Если удостоверение связано с несколькими подписками, установите активную подписку в качестве подписки учетной записи хранения, в которой будет размещен статический веб-сайт.
+
+   ```azurecli
+   az account set --subscription <subscription-id>
+   ```
+
+   Замените значение заполнителя `<subscription-id>` идентификатором своей подписки.
+
+> [!NOTE]
+> В примере этой статьи показана авторизация Azure Active Directory. Дополнительные сведения о методах аутентификации см. на странице [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](../common/authorize-data-operations-cli.md).
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
@@ -369,7 +405,7 @@ except Exception as e:
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Рекурсивно задайте список ACL с помощью `Set-AzDataLakeGen2AclRecursive` командлета.
+Рекурсивно задайте список ACL с помощью командлета **Set-AzDataLakeGen2AclRecursive** .
 
 В этом примере задается список ACL для каталога с именем `my-parent-directory` . Эти записи предоставляют владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ. Последняя запись ACL в этом примере предоставляет пользователю с ИДЕНТИФИКАТОРом "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" разрешения на чтение и выполнение.
 
@@ -390,11 +426,24 @@ Set-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $
 > [!NOTE]
 > Если вы хотите задать запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`.
 
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Настройте список ACL рекурсивно с помощью команды [AZ Storage FS Set-recursive](https://docs.microsoft.com/cli/azure/storage/fs/access#az_storage_fs_access_set_recursive) .
+
+В этом примере задается список ACL для каталога с именем `my-parent-directory` . Эти записи предоставляют владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ. Последняя запись ACL в этом примере предоставляет пользователю с ИДЕНТИФИКАТОРом "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" разрешения на чтение и выполнение.
+
+```azurecli
+az storage fs access set-recursive --acl "user::rwx,group::r-x,other::---,user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:r-x" -p my-parent-directory/ -f my-container --account-name mystorageaccount --auth-mode login
+```
+
+> [!NOTE]
+> Если вы хотите задать запись ACL **по умолчанию** , добавьте префикс `default:` в каждую запись. Например, `default:user::rwx` или `default:user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:r-x`. 
+
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
 Настройте список ACL рекурсивно, вызвав метод **даталакедиректориклиент. сетакцессконтролрекурсивеасинк** . Передайте этот метод [List](/dotnet/api/system.collections.generic.list-1) в список [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem). Каждый [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) определяет запись ACL. 
 
-Если вы хотите задать запись ACL **по умолчанию** , можно установить свойство [пасакцессконтролитем. DefaultScope](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem.defaultscope#Azure_Storage_Files_DataLake_Models_PathAccessControlItem_DefaultScope) для [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) в **значение true**. 
+Если вы хотите задать запись ACL **по умолчанию** , можно установить свойство [пасакцессконтролитем. DefaultScope](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem.defaultscope#Azure_Storage_Files_DataLake_Models_PathAccessControlItem_DefaultScope) для [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) в **значение true** . 
 
 В этом примере задается список ACL для каталога с именем `my-parent-directory` . Этот метод принимает логический параметр с именем `isDefaultScope` , указывающий, следует ли ЗАДАВАТЬ ACL по умолчанию. Этот параметр используется в конструкторе объекта [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem). Записи списка управления доступом предоставляют владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ. Последняя запись списка управления доступом в этом примере предоставляет конкретному пользователю с ИДЕНТИФИКАТОРом объекта "" XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX "разрешения на чтение и выполнение.
 
@@ -436,7 +485,7 @@ public async void SetACLRecursively(DataLakeServiceClient serviceClient, bool is
 
 Настройте список ACL рекурсивно, вызвав метод **даталакедиректориклиент. сетакцессконтролрекурсиве** . Передайте этот метод в [список](https://docs.oracle.com/javase/8/docs/api/java/util/List.html) объектов [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) . Каждый [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) определяет запись ACL. 
 
-Если вы хотите задать запись ACL **по умолчанию** , то можно вызвать метод **сетдефаултскопе** объекта [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) и передать значение **true**. 
+Если вы хотите задать запись ACL **по умолчанию** , то можно вызвать метод **сетдефаултскопе** объекта [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) и передать значение **true** . 
 
 В этом примере задается список ACL для каталога с именем `my-parent-directory` . Этот метод принимает логический параметр с именем `isDefaultScope` , указывающий, следует ли ЗАДАВАТЬ ACL по умолчанию. Этот параметр используется в каждом вызове метода **сетдефаултскопе** объекта [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html). Записи списка управления доступом предоставляют владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ. Последняя запись ACL в этом примере предоставляет пользователю с ИДЕНТИФИКАТОРом "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" разрешения на чтение и выполнение.
 
@@ -564,11 +613,24 @@ Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Pat
 > [!NOTE]
 > Если вы хотите обновить запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission rwx -DefaultScope`.
 
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Рекурсивно обновите список ACL с помощью команды  [AZ Storage FS доступ Update-recursive](https://docs.microsoft.com/cli/azure/storage/fs/access#az_storage_fs_access_update_recursive) . 
+
+В этом примере обновляется запись ACL с разрешением на запись. 
+
+```azurecli
+az storage fs access update-recursive --acl "user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:rwx" -p my-parent-directory/ -f my-container --account-name mystorageaccount --auth-mode login
+```
+
+> [!NOTE]
+> Если вы хотите обновить запись ACL **по умолчанию** , добавьте префикс `default:` в каждую запись. Например, `default:user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:r-x`.
+
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
 Рекурсивно обновите список ACL, вызвав метод **даталакедиректориклиент. упдатеакцессконтролрекурсивеасинк** .  Передайте этот метод [List](/dotnet/api/system.collections.generic.list-1) в список [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem). Каждый [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) определяет запись ACL. 
 
-Если требуется обновить запись ACL **по умолчанию** , можно установить свойство [пасакцессконтролитем. DefaultScope](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem.defaultscope#Azure_Storage_Files_DataLake_Models_PathAccessControlItem_DefaultScope) для [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) в **значение true**. 
+Если требуется обновить запись ACL **по умолчанию** , можно установить свойство [пасакцессконтролитем. DefaultScope](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem.defaultscope#Azure_Storage_Files_DataLake_Models_PathAccessControlItem_DefaultScope) для [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) в **значение true** . 
 
 В этом примере обновляется запись ACL с разрешением на запись. Этот метод принимает логический параметр с именем `isDefaultScope` , указывающий, следует ли обновлять ACL по умолчанию. Этот параметр используется в конструкторе объекта [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem).
 
@@ -599,7 +661,7 @@ public async void UpdateACLsRecursively(DataLakeServiceClient serviceClient, boo
 
 Рекурсивно обновите список ACL, вызвав метод **даталакедиректориклиент. упдатеакцессконтролрекурсиве** .  Передайте этот метод в [список](https://docs.oracle.com/javase/8/docs/api/java/util/List.html) объектов [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) . Каждый [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) определяет запись ACL. 
 
-Если вы хотите обновить запись ACL **по умолчанию** , то можете использовать метод **сетдефаултскопе** [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) и передать значение **true**. 
+Если вы хотите обновить запись ACL **по умолчанию** , то можете использовать метод **сетдефаултскопе** [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) и передать значение **true** . 
 
 В этом примере обновляется запись ACL с разрешением на запись. Этот метод принимает логический параметр с именем `isDefaultScope` , указывающий, следует ли обновлять ACL по умолчанию. Этот параметр используется в вызове метода **сетдефаултскопе** объекта [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html). 
 
@@ -686,11 +748,24 @@ Remove-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName  -Ac
 > [!NOTE]
 > Если вы хотите удалить запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission "---" -DefaultScope`.
 
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Удалите записи списков ACL с помощью команды [AZ Storage FS доступ recurs-recursive](https://docs.microsoft.com/cli/azure/storage/fs/access#az_storage_fs_access_remove_recursive) . 
+
+В этом примере удаляется запись ACL из корневого каталога контейнера.  
+
+```azurecli
+az storage fs access remove-recursive --acl "user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -p my-parent-directory/ -f my-container --account-name mystorageaccount --auth-mode login
+```
+
+> [!NOTE]
+> Если вы хотите удалить запись ACL **по умолчанию** , добавьте префикс `default:` в каждую запись. Например, `default:user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
+
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
 Удалите записи ACL, вызвав метод **даталакедиректориклиент. ремовеакцессконтролрекурсивеасинк** . Передайте этот метод [List](/dotnet/api/system.collections.generic.list-1) в список [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem). Каждый [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) определяет запись ACL. 
 
-Если требуется удалить запись ACL **по умолчанию** , можно установить свойство [пасакцессконтролитем. DefaultScope](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem.defaultscope#Azure_Storage_Files_DataLake_Models_PathAccessControlItem_DefaultScope) для [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) в **значение true**. 
+Если требуется удалить запись ACL **по умолчанию** , можно установить свойство [пасакцессконтролитем. DefaultScope](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem.defaultscope#Azure_Storage_Files_DataLake_Models_PathAccessControlItem_DefaultScope) для [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem) в **значение true** . 
 
 В этом примере удаляется запись ACL из списка ACL каталога с именем `my-parent-directory` . Этот метод принимает логический параметр с именем `isDefaultScope` , который указывает, следует ли удалить запись из ACL по умолчанию. Этот параметр используется в конструкторе объекта [пасакцессконтролитем](/dotnet/api/azure.storage.files.datalake.models.pathaccesscontrolitem).
 
@@ -718,7 +793,7 @@ public async void RemoveACLsRecursively(DataLakeServiceClient serviceClient, isD
 
 Удалите записи ACL, вызвав метод **даталакедиректориклиент. ремовеакцессконтролрекурсиве** . Передайте этот метод в [список](https://docs.oracle.com/javase/8/docs/api/java/util/List.html) объектов [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) . Каждый [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) определяет запись ACL. 
 
-Если вы хотите удалить запись ACL **по умолчанию** , то можете использовать метод **сетдефаултскопе** [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) и передать значение **true**.  
+Если вы хотите удалить запись ACL **по умолчанию** , то можете использовать метод **сетдефаултскопе** [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html) и передать значение **true** .  
 
 В этом примере удаляется запись ACL из списка ACL каталога с именем `my-parent-directory` . Этот метод принимает логический параметр с именем `isDefaultScope` , который указывает, следует ли удалить запись из ACL по умолчанию. Этот параметр используется в вызове метода **сетдефаултскопе** объекта [пасакцессконтролентри](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.3.0-beta.1/index.html).
 
@@ -796,6 +871,14 @@ $result.FailedEntries | ft
 $result = Set-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl -ContinuationToken $result.ContinuationToken
 $result
 
+```
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+В случае сбоя можно вернуть токен продолжения, задав `--continue-on-failure` для параметра значение `true` . После устранения ошибок можно возобновить процесс с точки сбоя, выполнив команду еще раз, а затем присвоив `--continuation` параметру маркер продолжения. 
+
+```azurecli
+az storage fs access set-recursive --acl "user::rw-,group::r-x,other::---" --continue-on-failure true --continuation xxxxxxx -p my-parent-directory/ -f my-container --account-name mystorageaccount --auth-mode login  
 ```
 
 ## <a name="net"></a>[.NET](#tab/dotnet)
@@ -900,6 +983,7 @@ def resume_set_acl_recursive(continuation_token):
 #### <a name="libraries"></a>Библиотеки
 
 - [PowerShell](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.powershellgallery.com%2Fpackages%2FAz.Storage%2F2.5.2-preview&data=02%7C01%7Cnormesta%40microsoft.com%7Ccdabce06132c42132b4008d849a2dfb1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637340311173215017&sdata=FWynO9UKTt7ESMCFgkWaL7J%2F%2BjODaRo5BD6G6yCx9os%3D&reserved=0)
+- [Azure CLI](https://docs.microsoft.com/cli/azure/storage/fs/access)
 - [.NET](https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-net/nuget/v3/index.json)
 - [Java](/java/api/overview/azure/storage-file-datalake-readme)
 - [Python](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2Fazure_storage_file_datalake-12.1.0b99-py2.py3-none-any.whl%3Fsv%3D2019-02-02%26st%3D2020-08-24T07%253A47%253A01Z%26se%3D2021-08-25T07%253A47%253A00Z%26sr%3Db%26sp%3Dr%26sig%3DH1XYw4FTLJse%252BYQ%252BfamVL21UPVIKRnnh2mfudA%252BfI0I%253D&data=02%7C01%7Cnormesta%40microsoft.com%7C95a5966d938a4902560e08d84912fe32%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637339693209725909&sdata=acv4KWZdzkITw1lP0%2FiA3lZuW7NF5JObjY26IXttfGI%3D&reserved=0)
@@ -907,6 +991,8 @@ def resume_set_acl_recursive(continuation_token):
 #### <a name="code-samples"></a>Примеры кода
 
 - PowerShell: [образец файла readme](https://recursiveaclpr.blob.core.windows.net/privatedrop/README.txt?sv=2019-02-02&st=2020-08-24T17%3A03%3A18Z&se=2021-08-25T17%3A03%3A00Z&sr=b&sp=r&sig=sPdKiCSXWExV62sByeOYqBTqpGmV2h9o8BLij3iPkNQ%3D)  |  [Sample](https://recursiveaclpr.blob.core.windows.net/privatedrop/samplePS.ps1?sv=2019-02-02&st=2020-08-24T17%3A04%3A44Z&se=2021-08-25T17%3A04%3A00Z&sr=b&sp=r&sig=dNNKS%2BZcp%2F1gl6yOx6QLZ6OpmXkN88ZjBeBtym1Mejo%3D)
+
+- Azure CLI: [Пример](https://github.com/Azure/azure-cli/blob/2a55a5350696a3a93a13f364f2104ec8bc82cdd3/src/azure-cli/azure/cli/command_modules/storage/docs/ADLS%20Gen2.md)
 
 - NET: [образец файла readme](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2FREADME%2520for%2520net%3Fsv%3D2019-02-02%26st%3D2020-08-25T23%253A20%253A42Z%26se%3D2021-08-26T23%253A20%253A00Z%26sr%3Db%26sp%3Dr%26sig%3DKrnHvasHoSoVeUyr2g%252FSc2aDVW3De4A%252Fvx0lFWZs494%253D&data=02%7C01%7Cnormesta%40microsoft.com%7Cda902e4fe6c24e6a07d908d8494fd4bd%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637339954503767961&sdata=gd%2B2LphTtDFVb7pZko9rkGO9OG%2FVvmeXprHB9IOEYXE%3D&reserved=0)  |  [Sample](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2FRecursive-Acl-Sample-Net.zip%3Fsv%3D2019-02-02%26st%3D2020-08-24T07%253A45%253A28Z%26se%3D2021-09-25T07%253A45%253A00Z%26sr%3Db%26sp%3Dr%26sig%3D2GI3f0KaKMZbTi89AgtyGg%252BJePgNSsHKCL68V6I5W3s%253D&data=02%7C01%7Cnormesta%40microsoft.com%7C6eae76c57d224fb6de8908d848525330%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637338865714571853&sdata=%2FWom8iI3DSDMSw%2FfYvAaQ69zbAoqXNTQ39Q9yVMnASA%3D&reserved=0)
 

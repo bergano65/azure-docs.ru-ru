@@ -13,6 +13,7 @@
     - name: "Создание общедоступной подсистемы балансировки нагрузки\_— Azure\_СLI"
       href: quickstart-load-balancer-standard-public-cli.md
     - name: "Создание общедоступной подсистемы балансировки нагрузки\_— шаблон ARM"
+      displayName: Resource Manager
       href: quickstart-load-balancer-standard-public-template.md
     - name: "Создание внутренней подсистемы балансировки нагрузки\_— портал"
       href: quickstart-load-balancer-standard-internal-portal.md
@@ -21,6 +22,7 @@
     - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure\_CLI"
       href: quickstart-load-balancer-standard-internal-cli.md
     - name: "Создание внутренней подсистемы балансировки нагрузки\_— шаблон ARM"
+      displayName: Resource Manager
       href: quickstart-load-balancer-standard-internal-template.md
   expanded: true
 - name: Учебники
@@ -53,6 +55,8 @@
       items:
         - name: Пробы работоспособности
           href: load-balancer-custom-probe-overview.md
+        - name: Аналитика Azure Monitor для Load Balancer
+          href: load-balancer-insights.md
         - name: Метрики и диагностика Load Balancer ценовой категории "Стандартный"
           href: load-balancer-standard-diagnostics.md
         - name: Журналы Azure Monitor для Load Balancer ценовой категории "Базовый"

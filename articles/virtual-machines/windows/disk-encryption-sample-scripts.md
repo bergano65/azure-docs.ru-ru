@@ -8,48 +8,60 @@ ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: e9dc6acf33208de44eec2b5b9706b9f0b176f0d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 255e284cf8d54a9be59f09f5613cb2728417d234
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87284478"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92912044"
 ---
 # <a name="azure-disk-encryption-sample-scripts"></a>Примеры скриптов шифрования дисков Azure 
 
 В этой статье приводятся примеры сценариев для подготовки предварительно зашифрованных виртуальных жестких дисков и других задач.
 
+> [!NOTE]
+> Все скрипты относятся к последней версии файла ADE, отличной от AAD, за исключением указанных выше.
+
+## <a name="sample-powershell-scripts-for-azure-disk-encryption"></a>Примеры сценариев PowerShell для шифрования дисков Azure 
+
+
+- **Вывод списка всех зашифрованных виртуальных машин в подписке**
+
+  Все виртуальные машины, зашифрованные с помощью ADE, и версия расширения во всех группах ресурсов, имеющихся в подписке, можно найти с помощью [этого сценария PowerShell](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/Find_1passAdeVersion_VM.ps1).
+
+  Кроме того, эти командлеты будут показывать все виртуальные машины, зашифрованные с помощью ADE (но не версия расширения):
+
+    ```azurepowershell-interactive
+    $osVolEncrypted = {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).OsVolumeEncrypted}
+    $dataVolEncrypted= {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).DataVolumesEncrypted}
+    Get-AzVm | Format-Table @{Label="MachineName"; Expression={$_.Name}}, @{Label="OsVolumeEncrypted"; Expression=$osVolEncrypted}, @{Label="DataVolumesEncrypted"; Expression=$dataVolEncrypted}
+    ```
+
+- **Вывод списка всех зашифрованных экземпляров VMSS в вашей подписке**
+    
+    Все экземпляры VMSS, зашифрованные с помощью ADE, и версия расширения во всех группах ресурсов, имеющихся в подписке, можно найти с помощью [этого сценария PowerShell](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/Find_1passAdeVersion_VMSS.ps1).
  
-
-## <a name="list-vms-and-secrets"></a>Вывод списка виртуальных машин и секретов
-
-Перечисление всех зашифрованных виртуальных машин в подписке:
-
-```azurepowershell-interactive
-$osVolEncrypted = {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).OsVolumeEncrypted}
-$dataVolEncrypted= {(Get-AzVMDiskEncryptionStatus -ResourceGroupName $_.ResourceGroupName -VMName $_.Name).DataVolumesEncrypted}
-Get-AzVm | Format-Table @{Label="MachineName"; Expression={$_.Name}}, @{Label="OsVolumeEncrypted"; Expression=$osVolEncrypted}, @{Label="DataVolumesEncrypted"; Expression=$dataVolEncrypted}
-```
-Список всех секретов шифрования дисков, используемых для шифрования виртуальных машин в хранилище ключей:
+- **Вывод списка всех секретов шифрования дисков, используемых для шифрования виртуальных машин в хранилище ключей**
 
 ```azurepowershell-interactive
 Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('DiskEncryptionKeyFileName')} | format-table @{Label="MachineName"; Expression={$_.Tags['MachineName']}}, @{Label="VolumeLetter"; Expression={$_.Tags['VolumeLetter']}}, @{Label="EncryptionKeyURL"; Expression={$_.Id}}
 ```
 
-## <a name="the-azure-disk-encryption-prerequisites-scripts"></a>Сценарии предварительных требований для шифрования дисков Azure
+### <a name="using-the-azure-disk-encryption-prerequisites-powershell-script"></a> Выполнение сценария PowerShell для установки компонентов, необходимых при шифровании дисков Azure
+
 Если вы уже знакомы с предварительными требованиями для шифрования дисков Azure, можно использовать [соответствующий сценарий PowerShell предварительных требований](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Пример использования этого сценария PowerShell см. в статье [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md). Вы можете удалить комментарии из раздела сценария, начиная со строки 211, чтобы шифровать все диски имеющихся виртуальных машин в имеющейся группе ресурсов. 
 
 В следующей таблице показано, какие параметры могут использоваться в сценарии PowerShell: 
 
 |Параметр|Описание|Обязательное?|
 |------|------|------|
-|$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| True|
-|$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| True|
-|$location|Расположение хранилища ключей. Убедитесь, что хранилище ключей и виртуальные машины, которые предстоит зашифровать, находятся в одном расположении. Получите список расположений с помощью команды `Get-AzLocation`.|True|
-|$subscriptionId|Идентификатор подписки Azure для использования.  Вы можете получить идентификатор подписки с помощью команды `Get-AzSubscription`.|True|
-|$aadAppName|Имя приложения Azure AD, которое будет использоваться для записи секретов в хранилище ключей. Будет создано приложение с таким именем (если оно еще не создано). Если это приложение уже есть, передайте параметр aadClientSecret в сценарий.|False|
-|$aadClientSecret|Секрет клиента приложения Azure AD, который был создан ранее.|False|
-|$keyEncryptionKeyName|Имя дополнительного ключа шифрования ключа в хранилище ключей. При отсутствии ключа с таким именем — он будет создан.|False|
+|$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| Верно|
+|$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| Верно|
+|$location|Расположение хранилища ключей. Убедитесь, что хранилище ключей и виртуальные машины, которые предстоит зашифровать, находятся в одном расположении. Получите список расположений с помощью команды `Get-AzLocation`.|Верно|
+|$subscriptionId|Идентификатор подписки Azure для использования.  Вы можете получить идентификатор подписки с помощью команды `Get-AzSubscription`.|Верно|
+|$aadAppName|Имя приложения Azure AD, которое будет использоваться для записи секретов в хранилище ключей. Будет создано приложение с таким именем (если оно еще не создано). Если это приложение уже есть, передайте параметр aadClientSecret в сценарий.|Неверно|
+|$aadClientSecret|Секрет клиента приложения Azure AD, который был создан ранее.|Неверно|
+|$keyEncryptionKeyName|Имя дополнительного ключа шифрования ключа в хранилище ключей. При отсутствии ключа с таким именем — он будет создан.|Неверно|
 
 ## <a name="resource-manager-templates"></a>Шаблоны Resource Manager
 
@@ -69,7 +81,7 @@ Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('Disk
 В следующем разделе приведены инструкции по подготовке предварительно зашифрованного виртуального жесткого диска Windows к развертыванию в качестве зашифрованного виртуального жесткого диска в IaaS Azure. Используйте эти сведения, чтобы подготовить и загрузить новую виртуальную машину Windows (VHD) в Azure Site Recovery Azure или Azure. Дополнительные сведения о подготовке и отправке виртуального жесткого диска см. в статье [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](upload-generalized-managed.md).
 
 ### <a name="update-group-policy-to-allow-non-tpm-for-os-protection"></a>Обновление групповой политики с целью разрешить защиту ОС без TPM
-Настройте параметр групповой политики BitLocker, который называется **Шифрование дисков BitLocker**. Для этого выберите **Политика локального компьютера** > **Конфигурация компьютера** > **Административные шаблоны** > **Компоненты Windows**. Измените этот параметр на **диски операционной системы**,  >  **требующие дополнительной проверки подлинности при запуске**  >  ,**Разрешить BitLocker без совместимого доверенного платформенного модуля**, как показано на следующем рисунке:
+Настройте параметр групповой политики BitLocker, который называется **Шифрование дисков BitLocker** . Для этого выберите **Политика локального компьютера** > **Конфигурация компьютера** > **Административные шаблоны** > **Компоненты Windows** . Измените этот параметр на **диски операционной системы** ,  >  **требующие дополнительной проверки подлинности при запуске**  >  , **Разрешить BitLocker без совместимого доверенного платформенного модуля** , как показано на следующем рисунке:
 
 ![Антивредоносное ПО Майкрософт в Azure](../media/disk-encryption/disk-encryption-fig8.png)
 
