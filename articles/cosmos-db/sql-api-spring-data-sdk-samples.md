@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 09/23/2020
 ms.custom: devx-track-java
 ms.author: anfeldma
-ms.openlocfilehash: aaa9a78342cf64461d85d7542c7ed8a69186906b
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: f49b7a2b4acc42724616121186093b112867d2b5
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275120"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487727"
 ---
 # <a name="azure-cosmos-db-sql-api-spring-data-azure-cosmos-db-v3-examples"></a>API SQL для Azure Cosmos DB. Примеры Spring Data Azure Cosmos DB версии 3
 
@@ -34,9 +34,9 @@ ms.locfileid: "92275120"
 > Spring Data Azure Cosmos DB поддерживает только API SQL.
 >
 > Сведения о Spring Data в других API-интерфейсах Azure Cosmos DB см. в этих статьях:
-> * [Как использовать API Apache Cassandra Spring Data с Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db)
-> * [Как использовать API MongoDB Spring Data с Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db)
-> * [Использование начального приложения Spring Data Gremlin с API SQL Azure Cosmos DB](https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db)
+> * [Как использовать API Apache Cassandra Spring Data с Azure Cosmos DB](/azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db)
+> * [Как использовать API MongoDB Spring Data с Azure Cosmos DB](/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db)
+> * [Использование начального приложения Spring Data Gremlin с API SQL Azure Cosmos DB](/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db)
 >
 
 > [!IMPORTANT]  
@@ -59,7 +59,7 @@ ms.locfileid: "92275120"
 * комплект разработчика Java 8;
 * Spring Data Azure Cosmos DB версии 3.
 
-При необходимости можно использовать Maven, чтобы получить последние двоичные файлы Spring Data Azure Cosmos DB версии 3 для использования в этом проекте. Maven автоматически добавляет все необходимые зависимости. В противном случае можно непосредственно скачать зависимости, которые перечислены в файле **pom.xml**, и добавить их в путь сборки.
+При необходимости можно использовать Maven, чтобы получить последние двоичные файлы Spring Data Azure Cosmos DB версии 3 для использования в этом проекте. Maven автоматически добавляет все необходимые зависимости. В противном случае можно непосредственно скачать зависимости, которые перечислены в файле **pom.xml** , и добавить их в путь сборки.
 
 ```bash
 <dependency>
@@ -80,7 +80,7 @@ $ cd azure-spring-data-cosmos-java-sql-api-samples
 
 Примеры можно запустить, используя интегрированною среду разработки (Eclipse, IntelliJ или VSCODE), или с помощью командной строки в Maven.
 
-Необходимо задать эти переменные среды в **application.properties**.
+Необходимо задать эти переменные среды в **application.properties** .
 
 ```xml
 cosmos.uri=${ACCOUNT_HOST}
@@ -115,7 +115,7 @@ mvn spring-boot:run
 | [Запрос документов](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-samples/blob/main/src/main/java/com/azure/cosmos/springexamples/quickstart/sync/SampleApplication.java#L73-L77) | CosmosRepository.derivedQueryMethod |
 
 ## <a name="custom-query-examples"></a>Примеры пользовательских запросов
-В файле [samples](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-samples/blob/main/src/main/java/com/azure/cosmos/springexamples/quickstart/sync/SampleApplication.java) показано, как выполнять следующие задачи с помощью грамматики SQL-запроса. Чтобы узнать больше об SQL-запросах в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь со статьей о [примерах SQL-запросов для Azure Cosmos DB](how-to-sql-query.md). 
+В файле [samples](https://github.com/Azure-Samples/azure-spring-data-cosmos-java-sql-api-samples/blob/main/src/main/java/com/azure/cosmos/springexamples/quickstart/sync/SampleApplication.java) показано, как выполнять следующие задачи с помощью грамматики SQL-запроса. Чтобы узнать больше об SQL-запросах в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь со статьей о [примерах SQL-запросов для Azure Cosmos DB](./sql-query-getting-started.md). 
 
 
 | Задача | Справочник по API |

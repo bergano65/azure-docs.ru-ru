@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: sample
 ms.date: 12/06/2019
-ms.openlocfilehash: 097323b4566daeda737428121bee4d64e9f7248b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69e7551fbf5b2f38dbc080a468baf81849e4372e
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74951570"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92490957"
 ---
 # <a name="azure-hdinsight-net-samples"></a>Azure HDInsight. Примеры .NET
 
@@ -33,7 +33,7 @@ ms.locfileid: "74951570"
 
 ## <a name="prerequisite"></a>Предварительные требования
 
-[Пакет SDK Azure HDInsight для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight#sdk-installation)
+[Пакет SDK Azure HDInsight для .NET](/dotnet/api/overview/azure/hdinsight#sdk-installation)
 
 ## <a name="cluster-management---creation"></a>Управление кластерами: создание кластера
 
@@ -46,4 +46,4 @@ ms.locfileid: "74951570"
 
 [!INCLUDE [hdinsight-sdk-additional-functionality](../../includes/hdinsight-sdk-additional-functionality.md)]
 
-Фрагменты кода для этой дополнительной функции пакета SDK см. в [справочной документации по пакету SDK HDInsight для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet).
+Фрагменты кода для этой дополнительной функции пакета SDK см. в [справочной документации по пакету SDK HDInsight для .NET](/dotnet/api/overview/azure/hdinsight&preserve-view=true).
