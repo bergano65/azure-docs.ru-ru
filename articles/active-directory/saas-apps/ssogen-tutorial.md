@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 72b91be9875abf07e5f6f828ed32483a5d61eadd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b00aaabb68da13840cc167e235a7cedea4aabe97
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88524445"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92522008"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ssogen---azure-ad-sso-gateway-for-oracle-e-business-suite---ebs-peoplesoft-and-jde"></a>Учебник. Интеграция единого входа Azure Active Directory с приложением "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE"
 
@@ -26,7 +26,7 @@ ms.locfileid: "88524445"
 * Пользователи смогут автоматически входить в приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" с учетными записями Azure Active Directory (AAD).
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -39,8 +39,8 @@ ms.locfileid: "88524445"
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE поддерживает вход, инициированный **поставщиком услуг или поставщиком удостоверений**.
-* После настройки SSOGEN — шлюза единого входа Azure AD для Oracle E-Business Suite — EBS, PeopleSoft и JDE, вы сможете применять средства управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE поддерживает вход, инициированный **поставщиком услуг или поставщиком удостоверений** .
+* После настройки SSOGEN — шлюза единого входа Azure AD для Oracle E-Business Suite — EBS, PeopleSoft и JDE, вы сможете применять средства управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
 
 > [!NOTE]
 > Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
@@ -50,15 +50,15 @@ ms.locfileid: "88524445"
 Чтобы настроить интеграцию приложения "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE", его нужно добавить из коллекции в список управляемых приложений SaaS.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
-1. В области навигации слева выберите службу **Azure Active Directory**.
-1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
-1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В области навигации слева выберите службу **Azure Active Directory** .
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения** .
+1. Чтобы добавить новое приложение, выберите **Новое приложение** .
 1. В разделе **Добавление из коллекции** введите **Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE** в поле поиска.
 1. Выберите **Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE** на панели результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-ssogen---azure-ad-sso-gateway-for-oracle-e-business-suite---ebs-peoplesoft-and-jde"></a>Настройка и проверка единого входа в AAD на стороне приложения "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE"
 
-Настройте и проверьте единый вход AAD в приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE", используя тестового пользователя с именем **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в приложении "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE".
+Настройте и проверьте единый вход AAD в приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE", используя тестового пользователя с именем **B.Simon** . Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в приложении "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE".
 
 Чтобы настроить и проверить единый вход AAD для приложения "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE", выполните действия в следующих блоках.
 
@@ -73,24 +73,24 @@ ms.locfileid: "88524445"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE** найдите раздел **Управление** и выберите **Единый вход**.
-1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE** найдите раздел **Управление** и выберите **Единый вход** .
+1. На странице **Выбрать метод единого входа** выберите **SAML** .
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
+1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений** , в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer_name>.ssogen.com/ssogen/login?client_name=<customer_name>`.
 
-1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
+1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг** , щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<customer_name>.ssogen.com/ssogen/login?client_name=<customer_name>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в службу поддержки приложения [Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE](mailto:support@ssogen.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" ожидает, что **nameidentifier** будет сопоставляться с **user.onpremisessamaccountname**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
+1. Приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname** . Приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" ожидает, что **nameidentifier** будет сопоставляться с **user.onpremisessamaccountname** , поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить** .
 
     ![Изображение](common/edit-attribute.png)
 
@@ -102,35 +102,35 @@ ms.locfileid: "88524445"
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-1. В верхней части экрана выберите **Новый пользователь**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи** .
+1. В верхней части экрана выберите **Новый пользователь** .
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
    1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
-   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-   1. Нажмите кнопку **Создать**.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль** .
+   1. Нажмите кнопку **Создать** .
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к приложению "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE".
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
-1. В списке приложений выберите **Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE**.
-1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
+1. На портале Azure выберите **Корпоративные приложения** , а затем — **Все приложения** .
+1. В списке приложений выберите **Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE** .
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы** .
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  выберите **Пользователи и группы** .
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать** .
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить** .
 
 ## <a name="configure-ssogen-azure-ad-sso-gateway-for-oracle-e-business-suite-ebs-peoplesoft-and-jde-sso"></a>Настройка приложения "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE"
 
-Чтобы настроить единый вход на стороне приложения **Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE**, изучите предложенную ниже документацию по регистрации единого входа для каждого отдельного приложения.
+Чтобы настроить единый вход на стороне приложения **Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE** , изучите предложенную ниже документацию по регистрации единого входа для каждого отдельного приложения.
 
 * Интеграция единого входа AAD для Oracle EBS: [https://www.ssogen.com/oracle-ebs-sso-ldap/](https://www.ssogen.com/oracle-ebs-sso-ldap/)
 * Интеграция единого входа AAD для PeopleSoft: [https://www.ssogen.com/peoplesoft-sso/](https://www.ssogen.com/peoplesoft-sso/)
@@ -147,18 +147,18 @@ ms.locfileid: "88524445"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" на Панели доступа, вы автоматически войдете в приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE", для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" на Панели доступа, вы автоматически войдете в приложение "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE", для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Проверка работы приложения "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" с Azure Active Directory](https://aad.portal.azure.com/)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
 
-- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](/cloud-app-security/proxy-intro-aad)

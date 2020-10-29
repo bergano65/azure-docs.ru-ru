@@ -8,17 +8,17 @@ ms.subservice: managed-hsm
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 846153dd482130bbb3b35c38a3dbb791e0d0d32e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3f054638e09061c652946c9c2db1a32db73c23d9
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448270"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92521039"
 ---
 # <a name="manage-a-managed-hsm-using-the-azure-cli"></a>Управление Управляемым устройством HSM с помощью Azure CLI
 
 > [!NOTE]
-> Key Vault поддерживает два типа ресурсов: хранилища и управляемые устройства HSM. Эта статья посвящена **Управляемому устройству HSM**. Если вы хотите узнать, как управлять хранилищем, см. статью [Управление Key Vault с помощью Azure CLI](../general/manage-with-cli2.md).
+> Key Vault поддерживает два типа ресурсов: хранилища и управляемые устройства HSM. Эта статья посвящена **Управляемому устройству HSM** . Если вы хотите узнать, как управлять хранилищем, см. статью [Управление Key Vault с помощью Azure CLI](../general/manage-with-cli2.md).
 
 Общие сведения об Управляемом устройстве HSM см. в статье [Что собой представляет служба "Управляемое устройство HSM"?](overview.md)
 
@@ -45,7 +45,7 @@ az login
 Дополнительные сведения о вариантах входа с помощью Azure CLI см. в [этой статье](/cli/azure/authenticate-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 > [!NOTE]
-> В каждой из представленных ниже команд демонстрируются два метода использования. В одном из них передаются параметры **--hsm-name** и **--name** (имя ключа), а в другом применяется параметр **--id**, в котором можно указать полный URL-адрес с именем ключа (если оно используется). Второй метод полезен в тех случаях, когда вызывающая сторона (пользователь или приложение) не имеет доступа на чтение к плоскости управления и имеет только ограниченный доступ к плоскости данных.
+> В каждой из представленных ниже команд демонстрируются два метода использования. В одном из них передаются параметры **--hsm-name** и **--name** (имя ключа), а в другом применяется параметр **--id** , в котором можно указать полный URL-адрес с именем ключа (если оно используется). Второй метод полезен в тех случаях, когда вызывающая сторона (пользователь или приложение) не имеет доступа на чтение к плоскости управления и имеет только ограниченный доступ к плоскости данных.
 
 ## <a name="create-an-hsm-key"></a>Создание ключа HSM
 
@@ -53,7 +53,7 @@ az login
 
 ### <a name="create-an-rsa-key"></a>Создание ключа RSA
 
-В следующем примере показано, как создать 3072-битный ключ **RSA**, который будет использоваться только для операций **wrapKey и unwrapKey** (задаются параметром --ops). 
+В следующем примере показано, как создать 3072-битный ключ **RSA** , который будет использоваться только для операций **wrapKey и unwrapKey** (задаются параметром --ops). 
 
 
 ```azurecli-interactive
@@ -69,7 +69,7 @@ az keyvault key create --id https://ContosoMHSM.managedhsm.azure.net/keys/myrsak
 
 ### <a name="create-an-ec-key"></a>Создание ключа EC
 
-В приведенном ниже примере показано, как создать ключ **EC** с кривой P-256, который будет использоваться только для операций **sign и verify** (задаются параметром --ops) и имеет два тега: **usage** и **appname**. Эти теги помогают добавлять в ключ дополнительные метаданные для отслеживания и управления.
+В приведенном ниже примере показано, как создать ключ **EC** с кривой P-256, который будет использоваться только для операций **sign и verify** (задаются параметром --ops) и имеет два тега: **usage** и **appname** . Эти теги помогают добавлять в ключ дополнительные метаданные для отслеживания и управления.
 
 ```azurecli-interactive
 az keyvault key create --hsm-name ContosoMHSM --name myec256key --ops sign verify  --tags ‘usage=signing] appname=myapp’ --kty EC-HSM --curve P-256
@@ -90,7 +90,7 @@ az keyvault key create --hsm-name ContosoMHSM --name myaeskey --ops encrypt decr
 ## OR
 # Note the key name (myaeskey) in the URI
 
-az keyvault key create --id https://ContosoMHSM.managedhsm.azure.net/keys/myaeskey --ops sign verify  --tags ‘usage=signing] appname=myapp’ --kty EC-HSM --curve P-256
+az keyvault key create --id https://ContosoMHSM.managedhsm.azure.net/keys/myaeskey --ops encrypt decrypt  --tags ‘usage=signing] appname=myapp’ --kty oct-HSM --size 256
 ```
 
 ## <a name="view-key-attributes-and-tags"></a>Просмотр атрибутов и тегов ключа
