@@ -4,19 +4,19 @@ description: Дополнительные сведения о создании �
 services: sql-database
 ms.service: sql-database
 ms.subservice: scale-out
-ms.custom: seo-lt-2019, sqldbrb=1, devx-track-azurepowershell
+ms.custom: seo-lt-2019, devx-track-azurepowershell
 ms.devlang: ''
 ms.topic: tutorial
 author: johnpaulkee
 ms.author: joke
 ms.reviwer: sstein
-ms.date: 03/13/2019
-ms.openlocfilehash: aaf749708b49c57d08a63581f3d911b04aba2103
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/21/2020
+ms.openlocfilehash: 27cd35eba7320022ea9b137a7b8bb079a1226751
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91408673"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427287"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell-preview"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "91408673"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-Установите модуль **Az.Sql**, чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
+Установите модуль **Az.Sql** , чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
 
 ```powershell
 # installs the latest PackageManagement and PowerShellGet packages
@@ -53,7 +53,7 @@ Find-Package PowerShellGet | Install-Package -Force
 # Restart your powershell session with administrative access
 
 # Install and import the Az.Sql module, then confirm
-Install-Module -Name Az.Sql
+Install-Module -Name Az.Sql
 Import-Module Az.Sql
 
 Get-Module Az.Sql
@@ -135,7 +135,7 @@ Register-AzProviderFeature -FeatureName sqldb-JobAccounts -ProviderNamespace Mic
 
 Агент заданий обработки эластичных баз данных является ресурсом Azure для создания, запуска заданий и управления ими. Агент выполняет запланированные или разовые задания.
 
-Командлет **New-AzSqlElasticJobAgent** требует наличия базы данных в службе "База данных SQL Azure", поэтому параметры *resourceGroupName*, *serverName* и *databaseName* должны указывать на существующие ресурсы.
+Командлет **New-AzSqlElasticJobAgent** требует наличия базы данных в службе "База данных SQL Azure", поэтому параметры *resourceGroupName* , *serverName* и *databaseName* должны указывать на существующие ресурсы.
 
 ```powershell
 Write-Output "Creating job agent..."
@@ -165,12 +165,12 @@ $params = @{
   'username' = $adminLogin
   'password' = $adminPassword
   'outputSqlErrors' = $true
-  'query' = "CREATE LOGIN masteruser WITH PASSWORD='password!123'"
+  'query' = 'CREATE LOGIN masteruser WITH PASSWORD=''password!123'''
 }
 Invoke-SqlCmd @params
 $params.query = "CREATE USER masteruser FROM LOGIN masteruser"
 Invoke-SqlCmd @params
-$params.query = "CREATE LOGIN jobuser WITH PASSWORD='password!123'"
+$params.query = 'CREATE LOGIN jobuser WITH PASSWORD=''password!123'''
 Invoke-SqlCmd @params
 
 # for each target database
@@ -192,7 +192,7 @@ $targetDatabases | % {
 
 # create job credential in Job database for master user
 Write-Output "Creating job credentials..."
-$loginPasswordSecure = (ConvertTo-SecureString -String "password!123" -AsPlainText -Force)
+$loginPasswordSecure = (ConvertTo-SecureString -String 'password!123' -AsPlainText -Force)
 
 $masterCred = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList "masteruser", $loginPasswordSecure
 $masterCred = $jobAgent | New-AzSqlElasticJobCredential -Name "masteruser" -Credential $masterCred
@@ -205,7 +205,7 @@ $jobCred = $jobAgent | New-AzSqlElasticJobCredential -Name "jobuser" -Credential
 
 [Целевая группа](job-automation-overview.md#target-group) определяет набор из одной или нескольких баз данных, в которых будет выполняться шаг задания.
 
-Следующий фрагмент кода позволяет создать две целевые группы: *serverGroup* и *serverGroupExcludingDb2*. *serverGroup* охватывает все базы данных, имеющиеся на сервере во время выполнения, а *serverGroupExcludingDb2* охватывает все базы данных сервера, за исключением *targetDb2*:
+Следующий фрагмент кода позволяет создать две целевые группы: *serverGroup* и *serverGroupExcludingDb2* . *serverGroup* охватывает все базы данных, имеющиеся на сервере во время выполнения, а *serverGroupExcludingDb2* охватывает все базы данных сервера, за исключением *targetDb2* :
 
 ```powershell
 Write-Output "Creating test target groups..."
@@ -221,7 +221,7 @@ $serverGroupExcludingDb2 | Add-AzSqlElasticJobTarget -ServerName $targetServerNa
 
 ### <a name="create-a-job-and-steps"></a>Создание задания и шагов
 
-В этом примере определяется задание и два шага для выполнения задания. Первый шаг задания (*step1*) позволяет создать таблицу (*Step1Table*) в каждой базе данных целевой группы *ServerGroup*. Второй шаг задания (*step2*) позволяет создать таблицу (*Step2Table*) в каждой базе данных, за исключением *TargetDb2*, так как целевая группа, определенная ранее, предназначена для исключения этой базы данных.
+В этом примере определяется задание и два шага для выполнения задания. Первый шаг задания ( *step1* ) позволяет создать таблицу ( *Step1Table* ) в каждой базе данных целевой группы *ServerGroup* . Второй шаг задания ( *step2* ) позволяет создать таблицу ( *Step2Table* ) в каждой базе данных, за исключением *TargetDb2* , так как целевая группа, определенная ранее, предназначена для исключения этой базы данных.
 
 ```powershell
 Write-Output "Creating a new job..."
