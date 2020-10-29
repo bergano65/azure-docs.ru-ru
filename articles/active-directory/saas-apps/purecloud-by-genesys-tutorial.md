@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/03/2019
 ms.author: jeedes
-ms.openlocfilehash: ab63e54589f68516b0106a1c96edced38539d252
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: d7aa43a94c7b49eef5b3273617ad9038fd1202e4
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108547"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92505750"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-purecloud-by-genesys"></a>Руководство по интеграции единого входа Azure Active Directory с PureCloud от Genesys
 
@@ -26,7 +26,7 @@ ms.locfileid: "92108547"
 * Вы можете включить автоматический вход (единый вход) для пользователей в PureCloud от Genesys с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -215,14 +215,14 @@ ms.locfileid: "92108547"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку **PureCloud от Genesys** на Панели доступа, вы автоматически войдете в приложение PureCloud от Genesys, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку **PureCloud от Genesys** на Панели доступа, вы автоматически войдете в приложение PureCloud от Genesys, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [ Руководства по интеграции приложений SaaS с Azure AD ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [ Руководства по интеграции приложений SaaS с Azure AD ](./tutorial-list.md)
 
-- [Доступ к приложениям и единый вход в Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Доступ к приложениям и единый вход в Azure AD](../manage-apps/what-is-single-sign-on.md)
 
-- [Условный доступ в Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Условный доступ в Azure AD](../conditional-access/overview.md)
 
 - [Попробуйте использовать приложение PureCloud от Genesys с Azure AD](https://aad.portal.azure.com/)
