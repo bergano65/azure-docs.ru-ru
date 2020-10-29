@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 8a8a9587fd50b63dc862f8b74bc99548699fa6e2
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 99ee85c569340d8f1d3cff27112436465238c05f
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91760679"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92455890"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clickup-productivity-platform"></a>Руководство по Интеграция Azure Active Directory с ClickUp Productivity Platform
 
@@ -27,7 +27,7 @@ ms.locfileid: "91760679"
 * Вы можете включить автоматический вход пользователей в ClickUp Productivity Platform (единый вход) с использованием учетной записи Azure AD.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -41,7 +41,7 @@ ms.locfileid: "91760679"
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* ClickUp Productivity Platform поддерживает единый вход, инициированный **поставщиком услуг**.
+* ClickUp Productivity Platform поддерживает единый вход, инициированный **поставщиком услуг** .
 
 ## <a name="adding-clickup-productivity-platform-from-the-gallery"></a>Добавление ClickUp Productivity Platform из коллекции
 
@@ -49,25 +49,25 @@ ms.locfileid: "91760679"
 
 **Чтобы добавить ClickUp Productivity Platform из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory** .
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение** .
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **ClickUp Productivity Platform**, выберите **ClickUp Productivity Platform** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **ClickUp Productivity Platform** , выберите **ClickUp Productivity Platform** на панели результатов и нажмите кнопку **Добавить** , чтобы добавить это приложение.
 
      ![ClickUp Productivity Platform в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в ClickUp Productivity Platform с использованием тестового пользователя **Britta Simon**.
+В этом разделе описана настройка и проверка единого входа Azure AD в ClickUp Productivity Platform с использованием тестового пользователя **Britta Simon** .
 Чтобы обеспечить работу единого входа, нужно установить связь между пользователем Azure AD и соответствующим пользователем в ClickUp Productivity Platform.
 
 Чтобы настроить и проверить единый вход Azure AD в ClickUp Productivity Platform, вам потребуется выполнить действия в следующих стандартных блоках:
@@ -85,15 +85,15 @@ ms.locfileid: "91760679"
 
 Чтобы настроить единый вход Azure AD в ClickUp Productivity Platform, выполните следующие действия:
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **ClickUp Productivity Platform** выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **ClickUp Productivity Platform** выберите **Единый вход** .
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed** , чтобы включить единый вход.
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить** , чтобы открыть диалоговое окно **Базовая конфигурация SAML** .
 
     ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
@@ -142,11 +142,11 @@ ms.locfileid: "91760679"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи** .
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-2. В верхней части экрана выберите **Новый пользователь**.
+2. В верхней части экрана выберите **Новый пользователь** .
 
     ![Кнопка "Новый пользователь"](common/new-user.png)
 
@@ -154,40 +154,40 @@ ms.locfileid: "91760679"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon** .
   
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
-    d. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать** .
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к ClickUp Productivity Platform.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения** и **ClickUp Productivity Platform**.
+1. На портале Azure выберите **Корпоративные приложения** , **Все приложения** и **ClickUp Productivity Platform** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **ClickUp Productivity Platform**.
+2. В списке приложений выберите **ClickUp Productivity Platform** .
 
     ![Ссылка на ClickUp Productivity Platform в списке приложений](common/all-applications.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+3. В меню слева выберите **Пользователи и группы** .
 
     ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя** , а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы** .
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon** , а затем в верхней части экрана нажмите кнопку **Выбрать** .
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить** .
 
 ### <a name="create-clickup-productivity-platform-test-user"></a>Создание тестового пользователя ClickUp Productivity Platform
 
@@ -210,13 +210,12 @@ ms.locfileid: "91760679"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку ClickUp Productivity Platform на Панели доступа, вы автоматически войдете в приложение ClickUp Productivity Platform, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку ClickUp Productivity Platform на Панели доступа, вы автоматически войдете в приложение ClickUp Productivity Platform, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
