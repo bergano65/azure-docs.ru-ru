@@ -8,19 +8,19 @@ ms.topic: tutorial
 ms.devlang: php
 ms.date: 9/21/2020
 ms.custom: mvc
-ms.openlocfilehash: 1bad9a7da6f0604f910ce1095b734043be8cf3c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38665cdf42450b09d14211f7ed44d62e4adb75b1
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90929764"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92537938"
 ---
 # <a name="tutorial-build-a-php-laravel-and-mysql-flexible-server-preview-app-in-azure-app-service"></a>Руководство по созданию приложения PHP (Laravel) и гибкого сервера MySQL (предварительная версия) в Службе приложений Azure
 
 
 :::image type="content" source="media/tutorial-php-database-app/complete-checkbox-published.png" alt-text="Веб-приложение PHP в Azure с гибким сервером":::
 
-[Служба приложений Azure](https://docs.microsoft.com/azure/app-service/overview) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать приложение PHP в Azure и подключить его к базе данных MySQL. По завершении вы получите приложение [Laravel](https://laravel.com/), работающее в Службе приложений Azure в Linux.
+[Служба приложений Azure](../../app-service/overview.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать приложение PHP в Azure и подключить его к базе данных MySQL. По завершении вы получите приложение [Laravel](https://laravel.com/), работающее в Службе приложений Azure в Linux.
 
 В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
@@ -31,7 +31,7 @@ ms.locfileid: "90929764"
 > * Обновление модели данных и повторное развертывание приложения.
 > * Управление приложением на портале Azure.
 
-Если у вас еще нет [подписки Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
+Если у вас еще нет [подписки Azure](../../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -96,7 +96,7 @@ composer install
 
 ### <a name="configure-mysql-connection"></a>Настройка подключения к MySQL
 
-В корне репозитория создайте файл *.env*. Скопируйте в файл *.env* приведенные ниже переменные. Замените заполнитель _&lt;root_password >_ паролем привилегированного пользователя MySQL.
+В корне репозитория создайте файл *.env* . Скопируйте в файл *.env* приведенные ниже переменные. Замените заполнитель _&lt;root_password >_ паролем привилегированного пользователя MySQL.
 
 ```txt
 APP_ENV=local
@@ -110,7 +110,7 @@ DB_USERNAME=root
 DB_PASSWORD=<root_password>
 ```
 
-Сведения о том, как Laravel использует файл _.env_, см. в разделе [Environment Configuration](https://laravel.com/docs/5.4/configuration#environment-configuration) (Конфигурация среды).
+Сведения о том, как Laravel использует файл _.env_ , см. в разделе [Environment Configuration](https://laravel.com/docs/5.4/configuration#environment-configuration) (Конфигурация среды).
 
 ### <a name="run-the-sample-locally"></a>Локальный запуск примера
 
@@ -139,14 +139,14 @@ php artisan serve
 Чтобы остановить приложение PHP, введите `Ctrl + C` в окне терминала.
 
 ## <a name="create-a-mysql-flexible-server-preview"></a>Создание гибкого сервера MySQL (предварительная версия).
-На этом шаге вы создадите базу данных MySQL в режиме развертывания [База данных Azure для MySQL (Гибкий сервер)](/azure/mysql), который предоставляется в общедоступной предварительной версии. Позже вы настроите приложение PHP для подключения к этой базе данных. Запустите [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) и создайте сервер, выполнив команду [`az flexible-server create`](/cli/azure/mysql/server#az-mysql-flexible-server-create).
+На этом шаге вы создадите базу данных MySQL в режиме развертывания [База данных Azure для MySQL (Гибкий сервер)](../index.yml), который предоставляется в общедоступной предварительной версии. Позже вы настроите приложение PHP для подключения к этой базе данных. Запустите [Azure Cloud Shell](../../cloud-shell/overview.md) и создайте сервер, выполнив команду [`az flexible-server create`](/cli/azure/mysql/server#az-mysql-flexible-server-create).
 
 ```azurecli-interactive
 az mysql flexible-server create  --resource-group myResourceGroup --public-access <IP-Address>
 ```
 
 > [!IMPORTANT]
-> - Запишите значения **имени сервера** и **строки подключения**, чтобы применить их на следующем шаге для подключения к Laravel и запуска переноса данных.
+> - Запишите значения **имени сервера** и **строки подключения** , чтобы применить их на следующем шаге для подключения к Laravel и запуска переноса данных.
 > - Для аргумента **IP-Address** укажите IP-адрес клиентского компьютера. Созданный сервер сразу блокируется, и для локального управления этим сервером необходимо разрешить доступ клиентскому компьютеру.
 
 ### <a name="configure-server-firewall-to-allow-web-app-to-connect-to-the-server"></a>Настройка брандмауэра сервера для подключения веб-приложения к серверу
@@ -175,7 +175,7 @@ CREATE DATABASE sampledb;
 
 ### <a name="create-a-user-with-permissions"></a>Создание пользователя с разрешениями
 
-Создайте пользователя базы данных с именем _phpappuser_ и предоставьте ему все привилегии в базе данных `sampledb`. Для простоты в этом руководстве используется пароль _MySQLAzure2020_.
+Создайте пользователя базы данных с именем _phpappuser_ и предоставьте ему все привилегии в базе данных `sampledb`. Для простоты в этом руководстве используется пароль _MySQLAzure2020_ .
 
 ```sql
 CREATE USER 'phpappuser' IDENTIFIED BY 'MySQLAzure2020';
@@ -196,7 +196,7 @@ quit
 
 ### <a name="configure-the-database-connection"></a>Настройка подключения к базе данных
 
-В корневой папке репозитория создайте файл _.env.production_ и скопируйте в него следующие переменные. Замените заполнитель _&lt;mysql-server-name>_ в значениях *DB_HOST* и *DB_USERNAME*.
+В корневой папке репозитория создайте файл _.env.production_ и скопируйте в него следующие переменные. Замените заполнитель _&lt;mysql-server-name>_ в значениях *DB_HOST* и *DB_USERNAME* .
 
 ```
 APP_ENV=production
@@ -219,7 +219,7 @@ MYSQL_SSL=true
 
 ### <a name="configure-tlsssl-certificate"></a>Настройка TLS/SSL-сертификата
 
-По умолчанию гибкий сервер MySQL требует, чтобы клиенты использовали подключения по протоколу TLS. Чтобы подключиться к базе данных MySQL в Azure, вам потребуется сертификат с расширением [_PEM_, предоставленный службой "База данных Azure для MySQL (Гибкий сервер)"](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem). Скачайте [этот сертификат](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) и поместите его в папку **ssl** в локальной копии репозитория с примером приложения.
+По умолчанию гибкий сервер MySQL требует, чтобы клиенты использовали подключения по протоколу TLS. Чтобы подключиться к базе данных MySQL в Azure, вам потребуется сертификат с расширением [_PEM_ , предоставленный службой "База данных Azure для MySQL (Гибкий сервер)"](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem). Скачайте [этот сертификат](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) и поместите его в папку **ssl** в локальной копии репозитория с примером приложения.
 
 Откройте файл _config/database.php_ и добавьте в `connections.mysql` параметры `sslmode` и `options`, как показано в следующем коде.
 
@@ -235,7 +235,7 @@ MYSQL_SSL=true
 
 ### <a name="test-the-application-locally"></a>Локальное тестирование приложения
 
-Выполните перенос базы данных Laravel с помощью файла _.env.production_, указав его как файл среды, чтобы создать таблицы в базе данных MySQL, размещенной в Базе данных Azure для MySQL. Помните, что файл _.env.production_ содержит сведения о подключении к базе данных MySQL в Azure.
+Выполните перенос базы данных Laravel с помощью файла _.env.production_ , указав его как файл среды, чтобы создать таблицы в базе данных MySQL, размещенной в Базе данных Azure для MySQL. Помните, что файл _.env.production_ содержит сведения о подключении к базе данных MySQL в Azure.
 
 ```bash
 php artisan migrate --env=production --force
@@ -280,7 +280,7 @@ git commit -m "database.php updates"
 
 Для развертывания в веб-приложение Azure из FTP и локального репозитория Git можно использовать пользователя развертывания. Настроив один раз пользователя развертывания, вы сможете использовать его для всех последующих развертываний в Azure. Имя пользователя и пароль учетной записи развертывания отличаются от учетных данных подписки Azure.
 
-Чтобы настроить пользователя развертывания, выполните в Azure Cloud Shell команду [az webapp deployment user set](https://docs.microsoft.com/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set). Вместо _&lt;username>_ и _&lt;password>_ укажите имя пользователя и пароль для вашего развертывания.
+Чтобы настроить пользователя развертывания, выполните в Azure Cloud Shell команду [az webapp deployment user set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set). Вместо _&lt;username>_ и _&lt;password>_ укажите имя пользователя и пароль для вашего развертывания.
 
 Имя пользователя должно быть уникальным в Azure. Кроме того, чтобы отправка в локальный репозиторий Git работала, имя пользователя не должно содержать символ @.
 Пароль должен содержать не менее восьми символов и включать два из трех следующих элементов: буквы, цифры и символы.
@@ -293,7 +293,7 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 
 ### <a name="create-an-app-service-plan"></a>Создание плана службы приложений
 
-В Cloud Shell создайте план службы приложений в группе ресурсов, выполнив команду [az appservice plan create](https://docs.microsoft.com/cli/azure/appservice/plan#az-appservice-plan-create). В следующем примере создается план Службы приложений с именем myAppServicePlan в ценовой категории "Бесплатный" (--sku F1) в контейнере Linux (--is-linux).
+В Cloud Shell создайте план службы приложений в группе ресурсов, выполнив команду [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create). В следующем примере создается план Службы приложений с именем myAppServicePlan в ценовой категории "Бесплатный" (--sku F1) в контейнере Linux (--is-linux).
 
 az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku F1 --is-linux
 
@@ -301,9 +301,9 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 
 ### <a name="create-a-web-app"></a>Создание веб-приложения
 
-Создайте [веб-приложение](https://docs.microsoft.com/azure/app-service/overview#app-service-on-linux) в плане Службы приложений myAppServicePlan.
+Создайте [веб-приложение](../../app-service/overview.md#app-service-on-linux) в плане Службы приложений myAppServicePlan.
 
-В Cloud Shell для этого можно использовать команду [az webapp create](https://docs.microsoft.com/cli/azure/webapp#az-webapp-create). В следующем примере замените _&lt;app-name>_ глобальным уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`). Для среды выполнения установлено значение `PHP|7.0`. Чтобы просмотреть все поддерживаемые среды выполнения, выполните команду [az webapp list-runtimes --linux](https://docs.microsoft.com/cli/azure/webapp#az-webapp-list-runtimes).
+В Cloud Shell для этого можно использовать команду [az webapp create](/cli/azure/webapp#az-webapp-create). В следующем примере замените _&lt;app-name>_ глобальным уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`). Для среды выполнения установлено значение `PHP|7.0`. Чтобы просмотреть все поддерживаемые среды выполнения, выполните команду [az webapp list-runtimes --linux](/cli/azure/webapp#az-webapp-list-runtimes).
 
 ```bash
 az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app-name> --runtime "PHP|7.3" --deployment-local-git
@@ -359,7 +359,7 @@ az webapp config appsettings set --name <app-name> --resource-group myResourceGr
 
 В среде Laravel требуется ключ приложения из службы приложений. Его можно настроить с помощью параметров приложения.
 
-В окне терминала на локальном компьютере используйте `php artisan` для создания ключа приложения без сохранения в файле _.env_.
+В окне терминала на локальном компьютере используйте `php artisan` для создания ключа приложения без сохранения в файле _.env_ .
 
 ```bash
 php artisan key:generate --show
@@ -377,7 +377,7 @@ az webapp config appsettings set --name <app-name> --resource-group myResourceGr
 
 [Жизненный цикл приложения Laravel](https://laravel.com/docs/5.4/lifecycle) начинается в _общем_ каталоге, а не в корневом каталоге приложения. Образ PHP Docker по умолчанию для службы приложений использует Apache и не позволяет настраивать `DocumentRoot` для Laravel. Тем не менее вы можете использовать `.htaccess` для повторного создания всех запросов к точке в каталоге _/public_ вместо корневого каталога. В корне репозитория для этой цели уже добавлен `.htaccess`. С ним приложение Laravel будет готово к развертыванию.
 
-См. подробнее об [изменении корневого каталога сайта](https://docs.microsoft.com/azure/app-service/configure-language-php?pivots=platform-linux#change-site-root).
+См. подробнее об [изменении корневого каталога сайта](../../app-service/configure-language-php.md?pivots=platform-linux#change-site-root).
 
 ### <a name="push-to-azure-from-git"></a>Публикация в Azure из Git
 
@@ -466,11 +466,11 @@ public function down()
 php artisan migrate
 ```
 
-В соответствии с условиями [соглашения об именовании Laravel](https://laravel.com/docs/5.4/eloquent#defining-models) модель `Task` (см. _app/Task.php_) сопоставляется с таблицей `tasks` по умолчанию.
+В соответствии с условиями [соглашения об именовании Laravel](https://laravel.com/docs/5.4/eloquent#defining-models) модель `Task` (см. _app/Task.php_ ) сопоставляется с таблицей `tasks` по умолчанию.
 
 ### <a name="update-application-logic"></a>Обновление логики приложения
 
-Откройте файл *routes/web.php*. В нем приложение определяет свои маршруты и бизнес-логику.
+Откройте файл *routes/web.php* . В нем приложение определяет свои маршруты и бизнес-логику.
 
 В конце файла добавьте маршрут с помощью следующего кода.
 
@@ -493,7 +493,7 @@ Route::post('/task/{id}', function ($id) {
 
 ### <a name="update-the-view"></a>Обновление представления
 
-Откройте файл *resources/views/tasks.blade.php*. Найдите открывающий тег `<tr>` и замените его приведенным ниже значением.
+Откройте файл *resources/views/tasks.blade.php* . Найдите открывающий тег `<tr>` и замените его приведенным ниже значением.
 
 ```html
 <tr class="{{ $task->complete ? 'success' : 'active' }}" >
@@ -572,6 +572,6 @@ az group delete --name myResourceGroup
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Управление ресурсами с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resources-portal) <br/>
+> [Управление ресурсами с помощью портала Azure](../../azure-resource-manager/management/manage-resources-portal.md) <br/>
 > [!div class="nextstepaction"]
 > [Управление сервером](how-to-manage-server-cli.md)

@@ -8,19 +8,19 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 9/21/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 9cbcbeb9d9e216a0b686cba258288db8439e0a9c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7b673dc8dfeb2ebf86aec5b7449df91c2ffd635
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90929720"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92534062"
 ---
 # <a name="tutorial-create-an-azure-database-for-mysql---flexible-server-preview-with-app-services-web-app-in-virtual-network"></a>Руководство по созданию гибкого сервера Базы данных Azure для MySQL (предварительная версия) с веб-приложением Службы приложений в той же виртуальной сети
 
 > [!IMPORTANT]
 > Сейчас предоставляется общедоступная предварительная версия Гибкого сервера Базы данных Azure для MySQL.
 
-В этом учебнике показано, как создать веб-приложение Службы приложений Azure и гибкий сервер Базы данных Azure для MySQL (предварительная версия) в [виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
+В этом учебнике показано, как создать веб-приложение Службы приложений Azure и гибкий сервер Базы данных Azure для MySQL (предварительная версия) в [виртуальной сети](../../virtual-network/virtual-networks-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -28,7 +28,7 @@ ms.locfileid: "90929720"
 
 Для этой статьи требуется запустить локально Azure CLI версии 2.0 или более поздней. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login). Запишите свойство **id** из выходных данных команды для соответствующего имени подписки.
+Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/reference-index#az-login). Запишите свойство **id** из выходных данных команды для соответствующего имени подписки.
 
 ```azurecli
 az login
@@ -52,7 +52,7 @@ az mysql flexible-server create --resource-group myresourcegroup --location west
 - Создается имя сервера, если оно не предоставлено.
 - Создайте виртуальную сеть для нового сервера MySQL. Запишите имя виртуальной сети и имя подсети, которые созданы для этого сервера, так как веб-приложение нужно будет добавить в ту же виртуальную сеть.
 - Создается имя пользователя и пароль администратора для этого сервера, если они не предоставлены.
-- Создается пустая база данных с именем **flexibleserverdb**.
+- Создается пустая база данных с именем **flexibleserverdb** .
 
 > [!NOTE]
 > Если вы не указали пароль, запишите тот, который будет создан автоматически. Если вы забудете пароль, вам придется сбросить его с помощью команды ``` az mysql flexible-server update```.
@@ -81,7 +81,7 @@ az webapp up --resource-group myresourcegroup --location westus2 --plan testapps
 
 ## <a name="add-the-web-app-to-the-virtual-network"></a>Добавление веб-приложения в виртуальную сеть
 
-Используйте команду **az webapp vnet-integration**, чтобы добавить в веб-приложение региональную интеграцию с виртуальной сетью. Замените _&lt;vnet-name>_ и _&lt;subnet-name_ именем виртуальной сети и подсети, которые использует гибкий сервер.
+Используйте команду **az webapp vnet-integration** , чтобы добавить в веб-приложение региональную интеграцию с виртуальной сетью. Замените _&lt;vnet-name>_ и _&lt;subnet-name_ именем виртуальной сети и подсети, которые использует гибкий сервер.
 
 ```azurecli
 az webapp vnet-integration add -g myresourcegroup -n  mywebapp --vnet <vnet-name> --subnet <subnet-name>
@@ -111,4 +111,4 @@ az group delete -n myresourcegroup
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../../app-service/app-service-web-tutorial-custom-domain.md)

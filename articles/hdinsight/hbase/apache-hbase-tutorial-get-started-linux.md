@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 04/14/2020
-ms.openlocfilehash: 7ce183595ed8e20c4b5cf4afe9ac1174882dc392
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d24c63e3a2989173e718cd27fa43cecc50181047
+ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370327"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92533501"
 ---
 # <a name="tutorial-use-apache-hbase-in-azure-hdinsight"></a>Руководство по использованию Apache HBase в Azure HDInsight
 
@@ -32,7 +32,7 @@ ms.locfileid: "92370327"
 
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* Bash. В примерах, приведенных в этой статье, для команд curl используется оболочка Bash в Windows 10. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  Другие [оболочки Unix](https://www.gnu.org/software/bash/) также будут работать.  Примеры curl с некоторыми небольшими изменениями могут работать в командной строке Windows.  Либо можете использовать командлет Windows PowerShell [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod).
+* Bash. В примерах, приведенных в этой статье, для команд curl используется оболочка Bash в Windows 10. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  Другие [оболочки Unix](https://www.gnu.org/software/bash/) также будут работать.  Примеры curl с некоторыми небольшими изменениями могут работать в командной строке Windows.  Либо можете использовать командлет Windows PowerShell [Invoke-RestMethod](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
 ## <a name="create-apache-hbase-cluster"></a>Создание кластера Apache HBase
 
