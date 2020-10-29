@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/03/2019
-ms.openlocfilehash: 893ea607b322c2f9b2d8a4e8b5b087e21c476d98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0f28d8f82796f54002312514b1a34e3dd8b666a3
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87497177"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675255"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database-and-sql-managed-instance"></a>Примеры Azure CLI для Базы данных SQL Azure и Управляемого экземпляра SQL 
  
@@ -73,7 +73,7 @@ ms.locfileid: "87497177"
 | [Настройка группы отработки отказа для Управляемого экземпляра SQL](../../sql-database/scripts/sql-database-add-managed-instance-to-failover-group-cli.md) | Создает два Управляемых экземпляра SQL, добавляет их в группу отработки отказа, а затем проверяет отработку отказа с основного на дополнительный Управляемый экземпляр SQL. |
 |||
 
-Дополнительные примеры работы с Управляемым экземпляром SQL см. в сценариях [создание](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../create-azure-sql-managed-instance-using-azure-cli/), [обновление](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../modify-azure-sql-database-managed-instance-using-azure-cli/), [перемещение базы данных](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance/), [работа с](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44).
+Дополнительные примеры работы с Управляемым экземпляром SQL см. в сценариях [создание](/archive/blogs/sqlserverstorageengine/create-azure-sql-managed-instance-using-azure-cli), [обновление](/archive/blogs/sqlserverstorageengine/modify-azure-sql-database-managed-instance-using-azure-cli), [перемещение базы данных](/archive/blogs/sqlserverstorageengine/cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance), [работа с](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44).
 
 См. дополнительные сведения об [API управления Управляемым экземпляром SQL с помощью Azure CLI](../managed-instance/api-references-create-manage-instance.md#azure-cli-create-and-configure-managed-instances).
 

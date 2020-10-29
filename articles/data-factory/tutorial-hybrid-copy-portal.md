@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 06/08/2020
-ms.openlocfilehash: fad9584f663675e9bf534a56bb223094479f39c5
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 19a0446cc0e69b860d6238ef7d7823cfa0afbb7c
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148035"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92636227"
 ---
 # <a name="copy-data-from-a-sql-server-database-to-azure-blob-storage"></a>Копирование из базы данных SQL Server в хранилище BLOB-объектов Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "92148035"
 ### <a name="sql-server-2014-2016-and-2017"></a>SQL Server 2014, 2016 и 2017
 В этом руководстве используйте базу данных SQL Server в качестве *исходного* хранилища данных. Конвейер фабрики данных, созданный в рамках этого руководства, копирует данные из этой базы данных SQL Server (источника) в хранилище BLOB-объектов (приемник). Затем создайте таблицу с именем **emp** в базе данных SQL Server и вставьте в нее несколько примеров записей.
 
-1. Запустите среду SQL Server Management Studio. Если она еще не установлена на вашем компьютере, скачайте ее со страницы [Скачивание SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
+1. Запустите среду SQL Server Management Studio. Если она еще не установлена на вашем компьютере, скачайте ее со страницы [Скачивание SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
 
 1. Подключитесь к экземпляру SQL Server с помощью учетных данных.
 
