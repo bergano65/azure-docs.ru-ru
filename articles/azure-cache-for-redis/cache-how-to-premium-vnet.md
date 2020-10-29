@@ -7,12 +7,12 @@ ms.service: cache
 ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 10/09/2020
-ms.openlocfilehash: eb70e7cfec4e6f3e7e55fa74bbdd6cee43493576
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a55db6a9db8cc53da15ba6e818db7b78b72cefc9
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92537887"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92927742"
 ---
 # <a name="how-to-configure-virtual-network-support-for-a-premium-azure-cache-for-redis"></a>Настройка поддержки виртуальной сети для кэша Azure для Redis ценовой категории "Премиум"
 Кэш Azure для Redis предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции ценовой категории "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. Виртуальная сеть — это частная сеть в облаке. Если экземпляр кэша Azure для Redis настроен в виртуальной сети, он не является общедоступным, а доступен только для виртуальных машин и приложений в этой виртуальной сети. В этой статье описана настройка поддержки виртуальных сетей для экземпляра кэша Azure для Redis ценовой категории "Премиум".
@@ -87,7 +87,7 @@ public static ConnectionMultiplexer Connection
 | Порты | Направление | Транспортный протокол | Назначение | Локальный IP-адрес | Удаленный IP-адрес |
 | --- | --- | --- | --- | --- | --- |
 | 80, 443 |Исходящие |TCP |Зависимости Redis в службе хранилища Azure или PKI (Интернет) | (Подсеть Redis) |* |
-| 443 | Исходящие | TCP | Зависимость Redis от Azure Key Vault | (Подсеть Redis) | AzureKeyVault <sup>1</sup> |
+| 443 | Исходящие | TCP | Зависимость Redis от Azure Key Vault и Azure Monitor | (Подсеть Redis) | AzureKeyVault, Азуремонитор <sup>1</sup> |
 | 53 |Исходящий трафик |TCP/UDP |Зависимости Redis в DNS (Интернет/виртуальная сеть) | (Подсеть Redis) | 168.63.129.16 и 169.254.169.254 <sup>2</sup> , а также любой пользовательский DNS-сервер для подсети <sup>3</sup> |
 | 8443 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) | (Подсеть Redis) |
 | 10221-10231 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) | (Подсеть Redis) |
@@ -96,7 +96,7 @@ public static ConnectionMultiplexer Connection
 | 15000-15999 |Исходящие |TCP |Внутренние коммуникации для Redis и Geo-Replication | (Подсеть Redis) |(Подсеть Redis) (Геореплика одноранговая подсеть) |
 | 6379-6380 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
 
-<sup>1</sup> вы можете использовать тег службы "AzureKeyVault" с диспетчер ресурсов группами безопасности сети.
+<sup>1</sup> можно использовать теги службы "AzureKeyVault" и "азуремонитор" с диспетчер ресурсов группами безопасности сети.
 
 <sup>2</sup> эти IP-адреса, принадлежащие корпорации Майкрософт, используются для адресации виртуальной машины узла, которая обслуживает Azure DNS.
 
@@ -128,9 +128,9 @@ public static ConnectionMultiplexer Connection
 Существуют требования к сетевому подключению кэша Azure для Redis, которым виртуальная сеть изначально может не соответствовать. Чтобы кэш Azure для Redis в виртуальной сети работал правильно, нужно выполнить все перечисленные ниже требования.
 
 * Исходящие сетевые подключения к конечным точкам хранилища Azure по всему миру. Это относится к конечным точкам, находящимся в одном регионе с экземпляром кэша Azure для Redis, а также к конечным точкам хранилища, расположенным в **других** регионах Azure. Конечные точки службы хранилища Azure разрешаются в следующих доменах DNS: *Table.Core.Windows.NET* , *BLOB.Core.Windows.NET* , *Queue.Core.Windows.NET* и *File.Core.Windows.NET* . 
-* Исходящие сетевые подключения к *ocsp.msocsp.com* , *mscrl.microsoft.com* и *crl.microsoft.com* . Это подключение требуется для поддержки функций TLS/SSL.
+* Исходящее сетевое подключение к *OCSP.DigiCert.com* , *crl4.DigiCert.com* , *OCSP.msocsp.com* , *mscrl.Microsoft.com* , *crl3.DigiCert.com* , *cacerts.DigiCert.com* , *oneocsp.Microsoft.com* и *CRL.Microsoft.com* . Это подключение требуется для поддержки функций TLS/SSL.
 * Конфигурация DNS для виртуальной сети должна поддерживать разрешение всех конечных точек и доменов, указанных в предыдущих точках. Эти требования DNS обеспечиваются за счет настройки допустимой инфраструктуры DNS и ее поддержания для виртуальной сети.
-* Исходящие сетевые подключения к следующим конечным точкам мониторинга Azure, которые разрешаются в таких DNS-доменах: shoebox2-black.shoebox2.metrics.nsatc.net, north-prod2.prod2.metrics.nsatc.net, azglobal-black.azglobal.metrics.nsatc.net, shoebox2-red.shoebox2.metrics.nsatc.net, east-prod2.prod2.metrics.nsatc.net, azglobal-red.azglobal.metrics.nsatc.net.
+* Исходящее сетевое подключение к следующим Azure Monitor конечным точкам, которые разрешаются в следующих доменах DNS: *shoebox2-Black.shoebox2.Metrics.nsatc.NET* , *North-prod2.prod2.Metrics.nsatc.NET* , *azglobal-Black.azglobal.Metrics.nsatc.NET* , *shoebox2-Red.shoebox2.Metrics.nsatc.NET* , *East-prod2.prod2.Metrics.nsatc.NET* , *azglobal-Red.azglobal.Metrics.nsatc.NET* .
 
 ### <a name="how-can-i-verify-that-my-cache-is-working-in-a-vnet"></a>Как проверить, что кэш работает в виртуальной сети?
 
@@ -143,7 +143,7 @@ public static ConnectionMultiplexer Connection
 
 - [Перезагрузите](cache-administration.md#reboot) все узлы кэша. Если не установить все необходимые зависимости кэша (как описано в разделах [Обязательные порты для входящего трафика](cache-how-to-premium-vnet.md#inbound-port-requirements) и [Обязательные порты для исходящего трафика](cache-how-to-premium-vnet.md#outbound-port-requirements)), то кэш не сможет перезапускаться.
 - После перезапуска узлов кэша (по данным о состоянии кэша на портале Azure) можно выполнить следующие поверки:
-  - проверить связь с конечной точкой кэша (через порт 6380) с компьютера, который находится с кэшем в одной виртуальной сети, используя инструмент [tcping](https://www.elifulkerson.com/projects/tcping.php). Пример:
+  - проверить связь с конечной точкой кэша (через порт 6380) с компьютера, который находится с кэшем в одной виртуальной сети, используя инструмент [tcping](https://www.elifulkerson.com/projects/tcping.php). Пример.
     
     `tcping.exe contosocache.redis.cache.windows.net 6380`
     
@@ -166,7 +166,7 @@ public static ConnectionMultiplexer Connection
 
 `10.128.2.84:6380,password=xxxxxxxxxxxxxxxxxxxx,ssl=True,abortConnect=False`
 
-Если не удается разрешить имя DNS, некоторые клиентские библиотеки содержат параметры конфигурации, например `sslHost`, которые предоставляет клиент StackExchange.Redis. Это позволяет переопределить имя узла, используемое для проверки сертификата. Пример:
+Если не удается разрешить имя DNS, некоторые клиентские библиотеки содержат параметры конфигурации, например `sslHost`, которые предоставляет клиент StackExchange.Redis. Это позволяет переопределить имя узла, используемое для проверки сертификата. Пример.
 
 `10.128.2.84:6380,password=xxxxxxxxxxxxxxxxxxxx,ssl=True,abortConnect=False;sslHost=[mycachename].redis.windows.net`
 

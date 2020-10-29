@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: e9341ff9a2ee0a6bfc79d94eea99bfb9aebceadf
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: ea746d67b23422243685347d1fe7a7fbaf03a4fe
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637043"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92927963"
 ---
 # <a name="eav4-and-easv4-series"></a>Серии Eav4 и Easv4
 
@@ -25,7 +25,7 @@ ms.locfileid: "92637043"
 [Кэширование хранилища класса Premium](premium-storage-performance.md): не поддерживается<br>
 [Динамическая миграция](maintenance-and-updates.md): поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
-[Поддержка создания виртуальных машин](generation-2.md): поколение 1<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколения 1 и 2<br>
 <br>
 
 Размеры серии Eav4 основаны на процессоре AMD ЕПИК<sup>TM</sup> 7452 с тактовой частотой 2.35 ГГц, который может обеспечить повышенный максимум в 3.35 ГГц и использовать SSD уровня "Премиум". Размеры серии Eav4 идеально подходят для корпоративных приложений с большим объемом памяти. Хранилище данных диска оплачивается отдельно от виртуальных машин. Чтобы использовать SSD уровня "Премиум", используйте размеры серии Easv4. Показатели ценообразования и выставления счетов для размеров Easv4 совпадают с серией Eav3.
@@ -49,7 +49,7 @@ ms.locfileid: "92637043"
 [Кэширование хранилища класса Premium](premium-storage-performance.md): поддерживается<br>
 [Динамическая миграция](maintenance-and-updates.md): поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
-[Поддержка создания виртуальных машин](generation-2.md): поколение 1<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколения 1 и 2<br>
 <br>
 
 Размеры серии Easv4 основаны на процессоре AMD ЕПИК<sup>TM</sup> 7452 с тактовой частотой 2.35 ГГц, который может обеспечить повышенный максимум в 3.35 ГГц и использовать SSD уровня "Премиум". Размеры серии Easv4 идеально подходят для корпоративных приложений с большим объемом памяти.
