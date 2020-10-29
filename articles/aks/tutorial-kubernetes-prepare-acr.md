@@ -4,13 +4,13 @@ description: С помощью этого руководства Azure Kubernete
 services: container-service
 ms.topic: tutorial
 ms.date: 09/30/2020
-ms.custom: mvc
-ms.openlocfilehash: bf2ea5c7ea0c2f3ae90f9d98d8009915d5ced6f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: b0f78c3969f3d02c19824fdb6d1e3b786dceb43c
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576290"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747062"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство. Развертывание Реестра контейнеров Azure и его использование
 
@@ -34,7 +34,7 @@ ms.locfileid: "91576290"
 
 Для создания Реестра контейнеров Azure сначала необходимо создать группу ресурсов. Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-Создайте группу ресурсов с помощью команды [az group create][az-group-create]. В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*.
+Создайте группу ресурсов с помощью команды [az group create][az-group-create]. В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus* .
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -74,13 +74,13 @@ tiangolo/uwsgi-nginx-flask                     python3.6           a16ce562e863 
 
 Чтобы использовать образ контейнера *azure-vote-front* с ACR, образ нужно отметить тегом с адресом сервера входа в реестр. Данный тег используется для маршрутизации при отправке образов контейнеров в реестр образов.
 
-Чтобы получить адрес сервера входа, используйте команду [az acr list][az-acr-list] и запросите *loginServer*, как показано ниже:
+Чтобы получить адрес сервера входа, используйте команду [az acr list][az-acr-list] и запросите *loginServer* , как показано ниже:
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
 ```
 
-Теперь пометьте тегом локальный образ *azure-vote-front*, используя адрес *acrLoginServer* реестра контейнеров. Чтобы указать номер версии образа, добавьте *:v1* в конец имени образа:
+Теперь пометьте тегом локальный образ *azure-vote-front* , используя адрес *acrLoginServer* реестра контейнеров. Чтобы указать номер версии образа, добавьте *:v1* в конец имени образа:
 
 ```console
 docker tag mcr.microsoft.com/azuredocs/azure-vote-front:v1 <acrLoginServer>/azure-vote-front:v1
@@ -134,7 +134,7 @@ azure-vote-front
 az acr repository show-tags --name <acrName> --repository azure-vote-front --output table
 ```
 
-В следующем примере показан образ *v1*, отмеченный на предыдущем шаге:
+В следующем примере показан образ *v1* , отмеченный на предыдущем шаге:
 
 ```
 Result

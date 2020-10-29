@@ -3,13 +3,13 @@ title: Учебник. Подготовка реестра контейнеро�
 description: Руководство по службе "Экземпляры контейнеров Azure" — часть 2 из 3. Подготовка реестра контейнеров Azure и отправка образа
 ms.topic: tutorial
 ms.date: 12/18/2019
-ms.custom: seodec18, mvc
-ms.openlocfilehash: 44a7f21c067897b046413851ef5a2c73bfccc24f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seodec18, mvc, devx-track-azurecli
+ms.openlocfilehash: 2eda960c53fc7ba851ffcfbe96bd8e9a48844910
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90708042"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746953"
 ---
 # <a name="tutorial-create-an-azure-container-registry-and-push-a-container-image"></a>Руководство по Создание реестра контейнеров Azure и отправка образа контейнера
 
@@ -40,7 +40,7 @@ ms.locfileid: "90708042"
 az acr show --name <acrName> --query loginServer --output table
 ```
 
-Например, если имя реестра — *mycontainerregistry082*:
+Например, если имя реестра — *mycontainerregistry082* :
 
 ```azurecli
 az acr show --name mycontainerregistry082 --query loginServer --output table
@@ -58,7 +58,7 @@ mycontainerregistry082.azurecr.io
 docker images
 ```
 
-Вместе с другими образами, присутствующими на компьютере, появится образ *aci-tutorial-app*, созданный вами при работе с [предыдущим руководством](container-instances-tutorial-prepare-app.md).
+Вместе с другими образами, присутствующими на компьютере, появится образ *aci-tutorial-app* , созданный вами при работе с [предыдущим руководством](container-instances-tutorial-prepare-app.md).
 
 ```console
 $ docker images

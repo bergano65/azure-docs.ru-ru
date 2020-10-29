@@ -4,13 +4,13 @@ description: В этом руководстве по Службе Azure Kubernet
 services: container-service
 ms.topic: tutorial
 ms.date: 09/30/2020
-ms.custom: mvc
-ms.openlocfilehash: c41f6dbd3b85125ef290539040819ffa1833ef6f
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 2e9af5dcc00d8cadd0528d56ee73bc6aeba149d7
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91629648"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747734"
 ---
 # <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Руководство по Обновление Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -37,7 +37,7 @@ ms.locfileid: "91629648"
 az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster
 ```
 
-В следующем примере текущей является версия *1.15.11*, а доступные версии представлены в разделе *upgrades*.
+В следующем примере текущей является версия *1.15.11* , а доступные версии представлены в разделе *upgrades* .
 
 ```json
 {
@@ -80,9 +80,9 @@ az aks upgrade \
 ```
 
 > [!NOTE]
-> Одновременно можно выполнить только одно обновление дополнительного номера версии. Например, вы можете обновить версию *1.14.x* до *1.15.x*, но нельзя обновить версию *1.14.x* сразу до *1.16.x*. Чтобы обновить версию *1.14.x* до *1.16.x*, сначала обновите версию *1.14.x* до *1.15.x*, а затем выполните обновление с версии *1.15.x* до *1.16.x*.
+> Одновременно можно выполнить только одно обновление дополнительного номера версии. Например, вы можете обновить версию *1.14.x* до *1.15.x* , но нельзя обновить версию *1.14.x* сразу до *1.16.x* . Чтобы обновить версию *1.14.x* до *1.16.x* , сначала обновите версию *1.14.x* до *1.15.x* , а затем выполните обновление с версии *1.15.x* до *1.16.x* .
 
-В следующем кратком примере выходных данных показан результат обновления до версии *1.16.8*. Обратите внимание, что теперь для *kubernetesVersion* указан номер *1.16.8*.
+В следующем кратком примере выходных данных показан результат обновления до версии *1.16.8* . Обратите внимание, что теперь для *kubernetesVersion* указан номер *1.16.8* .
 
 ```json
 {
@@ -115,7 +115,7 @@ az aks upgrade \
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-В следующем примере выходных данных показано, что на кластере AKS выполняется *KubernetesVersion 1.16.8*.
+В следующем примере выходных данных показано, что на кластере AKS выполняется *KubernetesVersion 1.16.8* .
 
 ```
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn

@@ -5,13 +5,13 @@ author: georgewallace
 ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
-ms.custom: mvc, devcenter
-ms.openlocfilehash: aad0da53dc667039a62d2115c1afe4e2c6662bff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devcenter, devx-track-azurecli
+ms.openlocfilehash: df28083a0522178b7327d9f6d24029d303e417a1
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840172"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747861"
 ---
 # <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство по Масштабирование приложения, работающего в Сетке Service Fabric
 
@@ -56,7 +56,7 @@ az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-n
 az mesh service show --resource-group myResourceGroup --name ToDoService --app-name todolistapp --query "replicaCount"
 ```
 
-В шаблоне развертывания ресурса приложения для каждой службы определено свойство *replicaCount*, с помощью которого можно настроить число развертываний этой службы. Приложение может состоять из нескольких служб с уникальными номерами *replicaCount*, развертывание которых и управление которыми осуществляется вместе. Чтобы изменить количество реплик службы, в шаблоне развертывания или файле параметров измените значение *replicaCount* для каждой службы, для которой необходимо горизонтально уменьшить масштаб.  Затем обновите приложение.
+В шаблоне развертывания ресурса приложения для каждой службы определено свойство *replicaCount* , с помощью которого можно настроить число развертываний этой службы. Приложение может состоять из нескольких служб с уникальными номерами *replicaCount* , развертывание которых и управление которыми осуществляется вместе. Чтобы изменить количество реплик службы, в шаблоне развертывания или файле параметров измените значение *replicaCount* для каждой службы, для которой необходимо горизонтально уменьшить масштаб.  Затем обновите приложение.
 
 ### <a name="modify-the-deployment-template-parameters"></a>Изменение параметров шаблона развертывания
 
@@ -88,7 +88,7 @@ az mesh service show --resource-group myResourceGroup --name ToDoService --app-n
     }
 ```
 
-Свойство *replicaCount* службы WebFrontEnd ссылается на параметр *frontEndReplicaCount*, а свойство *replicaCount* службы ToDoService — на параметр *serviceReplicaCount*.
+Свойство *replicaCount* службы WebFrontEnd ссылается на параметр *frontEndReplicaCount* , а свойство *replicaCount* службы ToDoService — на параметр *serviceReplicaCount* .
 
 ```json
     "services": [

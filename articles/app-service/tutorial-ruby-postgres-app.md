@@ -4,13 +4,13 @@ description: Узнайте, как создать приложение Ruby в 
 ms.devlang: ruby
 ms.topic: tutorial
 ms.date: 06/18/2020
-ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: c2baccec75c7b525c0837cebd9d828dff3a79543
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: mvc, cli-validate, seodec18, devx-track-azurecli
+ms.openlocfilehash: 7d6c0d13e440beb9a934adba3908cc9a08f396f1
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150181"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747144"
 ---
 # <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux
 
@@ -125,7 +125,7 @@ rails server
 az extension add --name db-up
 ```
 
-Создайте базу данных Postgres в Azure с помощью команды [`az postgres up`](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up), как показано в приведенном ниже примере. Замените заполнитель *\<postgresql-name>* *уникальным* именем (конечная точка сервера — *https://\<postgresql-name>.postgres.database.azure.com*). Для значений *\<admin-username>* и *\<admin-password>* укажите учетные данные, чтобы создать пользователя с правами администратора для сервера Postgres.
+Создайте базу данных Postgres в Azure с помощью команды [`az postgres up`](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up), как показано в приведенном ниже примере. Замените заполнитель *\<postgresql-name>* *уникальным* именем (конечная точка сервера — *https://\<postgresql-name>.postgres.database.azure.com* ). Для значений *\<admin-username>* и *\<admin-password>* укажите учетные данные, чтобы создать пользователя с правами администратора для сервера Postgres.
 
 <!-- Issue: without --location -->
 ```azurecli
@@ -157,7 +157,7 @@ az postgres up --resource-group myResourceGroup --location westeurope --server-n
 
 ### <a name="configure-the-database-connection"></a>Настройка подключения к базе данных
 
-В репозитории откройте файл _config/database.yml_. В нижней части файла замените рабочие переменные следующим кодом. 
+В репозитории откройте файл _config/database.yml_ . В нижней части файла замените рабочие переменные следующим кодом. 
 
 ```txt
 production:
@@ -336,7 +336,7 @@ remote: Running deployment command...
 rails generate migration AddDoneToTasks Done:boolean
 ```
 
-Эта команда создает файл миграции в каталоге _db/migrate_.
+Эта команда создает файл миграции в каталоге _db/migrate_ .
 
 
 В окне терминала выполните перенос базы данных Rails, чтобы внести изменения в локальную базу данных.
@@ -347,7 +347,7 @@ rake db:migrate
 
 ### <a name="update-application-logic"></a>Обновление логики приложения
 
-Откройте файл *app/controllers/tasks_controller.rb*. В конце файла найдите следующую строку:
+Откройте файл *app/controllers/tasks_controller.rb* . В конце файла найдите следующую строку:
 
 ```rb
 params.require(:task).permit(:Description)
@@ -361,7 +361,7 @@ params.require(:task).permit(:Description, :Done)
 
 ### <a name="update-the-views"></a>Обновление представлений
 
-Откройте файл *app/views/tasks/_form.html.erb*, который является формой редактирования.
+Откройте файл *app/views/tasks/_form.html.erb* , который является формой редактирования.
 
 Найдите строку `<%=f.error_span(:Description) %>` и вставьте непосредственно под ней следующий код:
 
@@ -372,7 +372,7 @@ params.require(:task).permit(:Description, :Done)
 </div>
 ```
 
-Откройте файл *app/views/tasks/show.html.erb*, который является страницей представления с одной записью. 
+Откройте файл *app/views/tasks/show.html.erb* , который является страницей представления с одной записью. 
 
 Найдите строку `<dd><%= @task.Description %></dd>` и вставьте непосредственно под ней следующий код:
 
@@ -381,7 +381,7 @@ params.require(:task).permit(:Description, :Done)
   <dd><%= check_box "task", "Done", {:checked => @task.Done, :disabled => true}%></dd>
 ```
 
-Откройте файл *app/views/tasks/index.html.erb*, который является страницей индекса для всех записей.
+Откройте файл *app/views/tasks/index.html.erb* , который является страницей индекса для всех записей.
 
 Найдите строку `<th><%= model_class.human_attribute_name(:Description) %></th>` и вставьте непосредственно под ней следующий код:
 
@@ -439,7 +439,7 @@ git push azure master
 
 Перейдите на [портал Azure](https://portal.azure.com), чтобы управлять созданным приложением.
 
-В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
+В меню слева щелкните **Службы приложений** , а затем — имя своего приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/tutorial-php-mysql-app/access-portal.png)
 

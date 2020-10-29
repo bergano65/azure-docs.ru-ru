@@ -5,13 +5,13 @@ author: georgewallace
 ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
-ms.custom: mvc, devcenter
-ms.openlocfilehash: eea00fe80b71f97ea280a3a76de5012175bcd61c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devcenter, devx-track-azurecli
+ms.openlocfilehash: 331830c50206d14f7894aa837b483656de4222f2
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91841991"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747849"
 ---
 # <a name="tutorial-upgrade-a-service-fabric-application-running-in-service-fabric-mesh"></a>Руководство. Обновление приложения Service Fabric, работающего в Сетке Service Fabric
 
@@ -50,7 +50,7 @@ ms.locfileid: "91841991"
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp
 ```
 
-В шаблоне развертывания ресурса приложения для каждой службы определено свойство *cpu*, с помощью которого можно установить запрашиваемые ресурсы ЦП. Приложение может состоять из нескольких служб с уникальными параметрами *cpu*, развертывание и управление которыми осуществляется совместно. Чтобы увеличить ресурсы ЦП службы веб-интерфейса, измените значение *cpue* в шаблоне развертывания или файле параметров.  Затем обновите приложение.
+В шаблоне развертывания ресурса приложения для каждой службы определено свойство *cpu* , с помощью которого можно установить запрашиваемые ресурсы ЦП. Приложение может состоять из нескольких служб с уникальными параметрами *cpu* , развертывание и управление которыми осуществляется совместно. Чтобы увеличить ресурсы ЦП службы веб-интерфейса, измените значение *cpue* в шаблоне развертывания или файле параметров.  Затем обновите приложение.
 
 ### <a name="modify-the-deployment-template-parameters"></a>Изменение параметров шаблона развертывания
 
@@ -80,7 +80,7 @@ az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-n
 }
 ```
 
-Свойство службы WebFrontEnd *codePackages -> resources -> requests-> cpu* ссылается на параметр *frontEndCpu*:
+Свойство службы WebFrontEnd *codePackages -> resources -> requests-> cpu* ссылается на параметр *frontEndCpu* :
 
 ```json
     "services": [

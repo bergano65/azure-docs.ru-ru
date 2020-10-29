@@ -3,13 +3,13 @@ title: Отрисовка сцены в облаке
 description: Руководство. Отрисовка сцены Autodesk 3ds Max с Arnold с помощью пакетной службы рендеринга и интерфейса командной строки Azure
 ms.topic: tutorial
 ms.date: 03/05/2020
-ms.custom: mvc
-ms.openlocfilehash: e78580cc2f95f14be53c0432df4eb4bd38450832
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 516f5a3f80f1252dbf63e3b254f0c7200de16e11
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82117137"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747058"
 ---
 # <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство по Отрисовка сцены с помощью пакетной службы Azure 
 
@@ -38,7 +38,7 @@ ms.locfileid: "82117137"
 
 Создайте в своей подписке группу ресурсов, учетную запись пакетной службы и связанную учетную запись хранения. 
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus2*.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus2* .
 
 ```azurecli-interactive 
 az group create \
@@ -55,7 +55,7 @@ az storage account create \
     --location eastus2 \
     --sku Standard_LRS
 ```
-Создайте учетную запись пакетной службы с помощью команды [az batch account create](/cli/azure/batch/account#az-batch-account-create). В следующем примере создается учетная запись пакетной службы с именем *mybatchaccount* в группе ресурсов *myResourceGroup*. Она связывается с созданной учетной записью хранения.  
+Создайте учетную запись пакетной службы с помощью команды [az batch account create](/cli/azure/batch/account#az-batch-account-create). В следующем примере создается учетная запись пакетной службы с именем *mybatchaccount* в группе ресурсов *myResourceGroup* . Она связывается с созданной учетной записью хранения.  
 
 ```azurecli-interactive 
 az batch account create \
@@ -83,7 +83,7 @@ export AZURE_STORAGE_KEY=$(az storage account keys list --account-name mystorage
 export AZURE_STORAGE_ACCOUNT=mystorageaccount
 ```
 
-Теперь создайте контейнер больших двоичных объектов в учетной записи хранения для файлов сцены. В следующем примере используется команда [az storage container create](/cli/azure/storage/container#az-storage-container-create) для создания контейнера больших двоичных объектов с именем *scenefiles*, который разрешает доступ на чтение.
+Теперь создайте контейнер больших двоичных объектов в учетной записи хранения для файлов сцены. В следующем примере используется команда [az storage container create](/cli/azure/storage/container#az-storage-container-create) для создания контейнера больших двоичных объектов с именем *scenefiles* , который разрешает доступ на чтение.
 
 ```azurecli-interactive
 az storage container create \
@@ -195,7 +195,7 @@ az batch job create \
 
 С помощью команды [az batch task create](/cli/azure/batch/task#az-batch-task-create) создайте задачи рендеринга в задании. В этом примере вы задаете параметры задачи в файле JSON. В текущей оболочке создайте файл *myrendertask.json* и скопируйте в него следующее содержимое. Убедитесь, что весь текст скопирован правильно. (Вы можете скачать файл с сайта [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-cli-python-samples/master/batch/render-scene/json/myrendertask.json).)
 
-Задача определяет команду 3ds Max для рендеринга сцены с одним кадром *MotionBlur-DragonFlying.max*.
+Задача определяет команду 3ds Max для рендеринга сцены с одним кадром *MotionBlur-DragonFlying.max* .
 
 Измените элементы `blobSource` и `containerURL` в файле JSON так, чтобы они включали имя вашей учетной записи хранения и токен SAS. 
 
@@ -276,7 +276,7 @@ az storage blob download \
 
 ## <a name="scale-the-pool"></a>Масштабирование пула
 
-Теперь измените пул, чтобы подготовиться к большему заданию отрисовки с несколькими кадрами. Пакетная служба Azure предоставляет несколько способов масштабирования вычислительных ресурсов, включая [автомасштабирование](batch-automatic-scaling.md). При этом узлы добавляются или удаляются по мере изменения требований к задаче. В этом примере с помощью команды [az batch pool resize](/cli/azure/batch/pool#az-batch-pool-resize) количество низкоприоритетных узлов в пуле увеличивается до *6*:
+Теперь измените пул, чтобы подготовиться к большему заданию отрисовки с несколькими кадрами. Пакетная служба Azure предоставляет несколько способов масштабирования вычислительных ресурсов, включая [автомасштабирование](batch-automatic-scaling.md). При этом узлы добавляются или удаляются по мере изменения требований к задаче. В этом примере с помощью команды [az batch pool resize](/cli/azure/batch/pool#az-batch-pool-resize) количество низкоприоритетных узлов в пуле увеличивается до *6* :
 
 ```azurecli-interactive
 az batch pool resize --pool-id myrenderpool --target-dedicated-nodes 0 --target-low-priority-nodes 6
@@ -286,7 +286,7 @@ az batch pool resize --pool-id myrenderpool --target-dedicated-nodes 0 --target-
 
 ## <a name="render-a-multiframe-scene"></a>Отрисовка многокадровой сцены
 
-Как и в примере с одним кадром, с помощью команды [az batch task create](/cli/azure/batch/task#az-batch-task-create) создайте задачи рендеринга в задании с именем *myrenderjob*. Задайте параметры задачи в JSON-файле с именем *myrendertask_multi.json*. (Вы можете скачать файл с сайта [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-cli-python-samples/master/batch/render-scene/json/myrendertask_multi.json).) Каждая из шести задач указывает командную строку Arnold для рендеринга одного кадра сцены 3ds Max *MotionBlur-DragonFlying.max* .
+Как и в примере с одним кадром, с помощью команды [az batch task create](/cli/azure/batch/task#az-batch-task-create) создайте задачи рендеринга в задании с именем *myrenderjob* . Задайте параметры задачи в JSON-файле с именем *myrendertask_multi.json* . (Вы можете скачать файл с сайта [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-cli-python-samples/master/batch/render-scene/json/myrendertask_multi.json).) Каждая из шести задач указывает командную строку Arnold для рендеринга одного кадра сцены 3ds Max *MotionBlur-DragonFlying.max* .
 
 Создайте файл в текущей оболочке с именем *myrendertask_multi.json* и скопируйте содержимое из скачанного файла. Измените элементы `blobSource` и `containerURL` в файле JSON, указав имя своей учетной записи хранения и токен SAS. Обязательно измените настройки для каждой из шести задач. Сохраните файл и создайте очередь задач, выполнив следующую команду:
 

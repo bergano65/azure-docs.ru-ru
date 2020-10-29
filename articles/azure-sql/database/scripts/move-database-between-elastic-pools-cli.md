@@ -4,19 +4,19 @@ description: Используйте пример сценария Azure CLI, ч�
 services: sql-database
 ms.service: sql-database
 ms.subservice: elastic-pools
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, devx-track-azurecli
 ms.devlang: azurecli
 ms.topic: sample
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 06/25/2019
-ms.openlocfilehash: a71e3e05e486c09d148062eed210c9f4b21e8226
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9fcb23750137c8286efbc0e1fb7446e324c572dd
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319356"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92747347"
 ---
 # <a name="use-the-azure-cli-to-move-a-database-in-sql-database-in-a-sql-elastic-pool"></a>Перемещение базы данных в службе "База данных SQL" в эластичном пуле SQL с помощью интерфейса командной строки Azure
 
