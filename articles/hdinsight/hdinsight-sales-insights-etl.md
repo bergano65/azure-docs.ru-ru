@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 04/15/2020
-ms.openlocfilehash: a0f081e0f8df00bbc99d2163fb54a2f15d92a159
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1031c34a44a253c7458ef78c6371b88014e882ed
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87006438"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746474"
 ---
 # <a name="tutorial-create-an-end-to-end-data-pipeline-to-derive-sales-insights-in-azure-hdinsight"></a>Руководство по созданию сквозного конвейера данных для получения аналитических сведений о продажах в Azure HDInsight
 
@@ -27,13 +27,13 @@ ms.locfileid: "87006438"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Azure CLI — версия не раньше 2.2.0. Подробнее см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* Azure CLI — версия не раньше 2.2.0. Подробнее см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
 * jq — обработчик командной строки JSON.  См. раздел [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 
 * Член [встроенной роли Azure — владелец](../role-based-access-control/built-in-roles.md).
 
-* Если для активации конвейера Фабрики данных используется PowerShell, вам понадобится [модуль Az](https://docs.microsoft.com/powershell/azure/).
+* Если для активации конвейера Фабрики данных используется PowerShell, вам понадобится [модуль Az](/powershell/azure/).
 
 * [Power BI Desktop](https://aka.ms/pbiSingleInstaller) для визуализации бизнес-аналитики в конце этого руководства.
 
@@ -93,7 +93,7 @@ ms.locfileid: "87006438"
     ./scripts/resources.sh $resourceGroup LOCATION
     ```
 
-    Если вы не знаете, какой регион необходимо задать, можете получить список поддерживаемых регионов для своей подписки, выполнив команду [az account list-locations](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-list-locations).
+    Если вы не знаете, какой регион необходимо задать, можете получить список поддерживаемых регионов для своей подписки, выполнив команду [az account list-locations](/cli/azure/account#az-account-list-locations).
 
     Команда развернет следующие ресурсы:
 
@@ -110,7 +110,7 @@ ms.locfileid: "87006438"
 
 ### <a name="verify-deployment-and-collect-resource-information"></a>Проверка развертывания и получение сведений о ресурсах
 
-1. Если вы хотите проверить состояние развертывания, перейдите к группе ресурсов на портале Azure. В разделе **Параметры** выберите элемент **Развертывания**, а затем выберите нужное развертывание. Здесь можно просмотреть ресурсы, которые уже успешно развернуты и те ресурсы, которые еще выполняются.
+1. Если вы хотите проверить состояние развертывания, перейдите к группе ресурсов на портале Azure. В разделе **Параметры** выберите элемент **Развертывания** , а затем выберите нужное развертывание. Здесь можно просмотреть ресурсы, которые уже успешно развернуты и те ресурсы, которые еще выполняются.
 
 1. Чтобы просмотреть имена кластеров, введите следующую команду:
 
@@ -252,19 +252,19 @@ cat resourcesoutputs_adf.json | jq -r '.properties.outputs.factoryName.value'
 
 1. Откройте Power BI Desktop.
 
-1. В меню выберите **Получить данные** > **Другие...**  > **Azure** > **HDInsight Interactive Query**.
+1. В меню выберите **Получить данные** > **Другие...**  > **Azure** > **HDInsight Interactive Query** .
 
-1. Выберите **Подключиться**.
+1. Выберите **Подключиться** .
 
 1. В диалоговом окне **HDInsight Interactive Query** сделайте следующее:
     1. В текстовом поле **Сервер** введите имя кластера LLAP в формате `https://LLAPCLUSTERNAME.azurehdinsight.net`.
     1. В текстовом поле **База данных** введите `default`.
-    1. Щелкните **ОК**.
+    1. Щелкните **ОК** .
 
 1. В диалоговом окне **AzureHive** сделайте следующее:
     1. В текстовом поле **Имя пользователя** введите `admin`.
     1. В текстовом поле **Пароль** введите `Thisisapassword1`.
-    1. Выберите **Подключиться**.
+    1. Выберите **Подключиться** .
 
 1. В поле **Навигатор** выберите `sales` и (или) `sales_raw` для предварительного просмотра данных. После загрузки данных можно поэкспериментировать с информационной панелью, которую вы хотите создать. Дополнительные сведения о начале работы с информационными панелями Power BI см. по следующим ссылкам:
 

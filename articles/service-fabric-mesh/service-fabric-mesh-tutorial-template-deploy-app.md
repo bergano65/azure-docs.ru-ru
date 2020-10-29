@@ -5,13 +5,13 @@ author: georgewallace
 ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
-ms.custom: mvc, devcenter
-ms.openlocfilehash: cc4912545bedb650268b3d8e4a3e9820b70b5fe2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devcenter, devx-track-azurecli
+ms.openlocfilehash: 3727e9a83827261bf9e8a526ffedb6d3fc644afa
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842535"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92745978"
 ---
 # <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
 
@@ -61,7 +61,7 @@ az account set --subscription "<subscriptionName>"
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. С помощью следующей команды создайте группу ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. С помощью следующей команды создайте группу ресурсов с именем *myResourceGroup* в расположении *eastus* .
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -69,7 +69,7 @@ az group create --name myResourceGroup --location eastus
 
 ### <a name="create-the-container-registry"></a>Создание реестра контейнеров
 
-Создайте экземпляр ACR с помощью команды `az acr create`. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В следующем примере используется имя *myContainerRegistry*. Если отобразится сообщение о том, что это имя уже используется, выберите другое имя.
+Создайте экземпляр ACR с помощью команды `az acr create`. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В следующем примере используется имя *myContainerRegistry* . Если отобразится сообщение о том, что это имя уже используется, выберите другое имя.
 
 ```azurecli
 az acr create --resource-group myResourceGroup --name myContainerRegistry --sku Basic
@@ -156,7 +156,7 @@ seabreeze/azure-mesh-todo-webfrontend
 seabreeze/azure-mesh-todo-service
 ```
 
-В следующем примере перечисляются теги в репозитории **azure-mesh-todo-service**.
+В следующем примере перечисляются теги в репозитории **azure-mesh-todo-service** .
 
 ```azurecli
 az acr repository show-tags --name myContainerRegistry --repository seabreeze/azure-mesh-todo-service --output table
@@ -196,9 +196,9 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
 В этом руководстве используется пример приложения списка дел.  Вместо создания новых файлов шаблона и параметров скачайте файлы [шаблона развертывания mesh_rp.windows.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.json) и [параметров mesh_rp.windows.parameter.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.parameters.json).
 
 ### <a name="parameters"></a>Параметры
-Если в шаблоне есть значения, которые изменятся после развертывания приложения или которые вы хотели бы изменять для разных развертываний (если планируете повторно использовать этот шаблон), рекомендуется параметризировать эти значения. Лучше всего создать раздел "parameters" в верхней части шаблона развертывания и указать в нем имена и свойства параметров, которые встречаются ниже в шаблоне развертывания. Каждое определение параметра включает *type*, *defaultValue* и дополнительный раздел *metadata* с *description*.
+Если в шаблоне есть значения, которые изменятся после развертывания приложения или которые вы хотели бы изменять для разных развертываний (если планируете повторно использовать этот шаблон), рекомендуется параметризировать эти значения. Лучше всего создать раздел "parameters" в верхней части шаблона развертывания и указать в нем имена и свойства параметров, которые встречаются ниже в шаблоне развертывания. Каждое определение параметра включает *type* , *defaultValue* и дополнительный раздел *metadata* с *description* .
 
-Раздел параметров определяется в верхней части шаблона развертывания, сразу над разделом *recources*:
+Раздел параметров определяется в верхней части шаблона развертывания, сразу над разделом *recources* :
 
 ```json
 {

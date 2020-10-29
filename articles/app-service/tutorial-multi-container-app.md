@@ -6,13 +6,13 @@ author: msangapu-msft
 ms.topic: tutorial
 ms.date: 04/29/2019
 ms.author: msangapu
-ms.custom: cli-validate
-ms.openlocfilehash: 9c984daa380f1d4f0a7b067604ab66ba14a0b70b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: cli-validate, devx-track-azurecli
+ms.openlocfilehash: 7945c6c6f834de068665e3400440d2be5dd713ff
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88082467"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92743453"
 ---
 # <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство по Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
 
@@ -63,7 +63,7 @@ cd multicontainerwordpress
 
 [!INCLUDE [resource group intro text](../../includes/resource-group.md)]
 
-В Cloud Shell создайте группу ресурсов с помощью команды [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *Центрально-южная часть США*. Чтобы просмотреть все поддерживаемые расположения для службы приложений в Linux на уровне **Стандартный**, выполните команду [`az appservice list-locations --sku S1 --linux-workers-enabled`](/cli/azure/appservice?view=azure-cli-latest#az-appservice-list-locations).
+В Cloud Shell создайте группу ресурсов с помощью команды [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *Центрально-южная часть США* . Чтобы просмотреть все поддерживаемые расположения для службы приложений в Linux на уровне **Стандартный** , выполните команду [`az appservice list-locations --sku S1 --linux-workers-enabled`](/cli/azure/appservice?view=azure-cli-latest#az-appservice-list-locations).
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location "South Central US"
@@ -474,7 +474,7 @@ az webapp config container set --resource-group myResourceGroup --name <app-name
 
 ![Активация Redis][3]
 
-Щелкните **Параметры**.
+Щелкните **Параметры** .
 
 ![Щелкните Settings (Параметры).][4]
 
@@ -486,7 +486,7 @@ WordPress подключится к серверу Redis. **Состояние**
 
 ![WordPress подключится к серверу Redis. **Состояние** подключения, отображаемое на той же странице][6]
 
-**Поздравляем!** Вы подключили WordPress к Redis. Сейчас в готовом для рабочей среды приложении используется **база данных Azure для MySQL, постоянное хранилище и Redis**. Теперь вы можете горизонтального увеличивать масштаб плана службы приложений до нескольких экземпляров.
+**Поздравляем!** Вы подключили WordPress к Redis. Сейчас в готовом для рабочей среды приложении используется **база данных Azure для MySQL, постоянное хранилище и Redis** . Теперь вы можете горизонтального увеличивать масштаб плана службы приложений до нескольких экземпляров.
 
 ## <a name="find-docker-container-logs"></a>Поиск журналов контейнера Docker
 

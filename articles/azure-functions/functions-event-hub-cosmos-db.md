@@ -5,13 +5,13 @@ author: KarlErickson
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: karler
-ms.custom: devx-track-java
-ms.openlocfilehash: 8ba15047d04d3af25518e8c55a50c55bcacf9037
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: d0c4a6fcdddddc77d4072c2d0d11fe78837d84bc
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92103940"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92743386"
 ---
 # <a name="tutorial-create-a-function-in-java-with-an-event-hub-trigger-and-an-azure-cosmos-db-output-binding"></a>Руководство по созданию функции на языке Java с триггером Центра событий и выходной привязкой Azure Cosmos DB
 
@@ -412,7 +412,7 @@ mvn azure-functions:run
 [10/22/19 4:01:38 AM] Executed 'Functions.processSensorData' (Succeeded, Id=1cf0382b-0c98-4cc8-9240-ee2a2f71800d)
 ```
 
-Теперь вы можете перейти на [портал Azure](https://portal.azure.com) и в учетную запись Azure Cosmos DB. Выберите **Data Explorer**, разверните узел **TelemetryInfo** и щелкните **Элементы**, чтобы просмотреть поступающие данные.
+Теперь вы можете перейти на [портал Azure](https://portal.azure.com) и в учетную запись Azure Cosmos DB. Выберите **Data Explorer** , разверните узел **TelemetryInfo** и щелкните **Элементы** , чтобы просмотреть поступающие данные.
 
 ![Обозреватель данных Cosmos DB](media/functions-event-hub-cosmos-db/data-explorer.png)
 
