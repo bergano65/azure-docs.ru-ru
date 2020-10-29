@@ -16,6 +16,7 @@
     - name: Python
       href: quick-create-python.md
     - name: Шаблон ARM
+      displayName: Resource Manager
       href: quick-create-template.md
 - name: Учебники
   items:

@@ -655,6 +655,9 @@
         - name: Диспетчер брандмауэра
           tocHref: /azure/firewall-manager/
           topicHref: /azure/firewall-manager/
+        - name: Защита от атак DDoS уровня "Стандартный"
+          tocHref: /azure/ddos-protection/
+          topicHref: /azure/ddos-protection/
         - name: Front Door Service
           tocHref: /azure/frontdoor/
           topicHref: /azure/frontdoor/

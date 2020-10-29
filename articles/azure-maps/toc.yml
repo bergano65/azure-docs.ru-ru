@@ -132,6 +132,8 @@
           href: how-to-request-transit-data.md
         - name: Запрос данных о работе общественного транспорта в реальном времени
           href: how-to-request-real-time-data.md
+        - name: Запрос текущих погодных данных и прогноза погоды
+          href: how-to-request-weather-data.md
     - name: Разработка с помощью веб-пакета SDK
       items:
         - name: Элемент управления картой
@@ -281,55 +283,55 @@
     - name: REST
       items:
         - name: Служба данных
-          href: 'https://docs.microsoft.com/rest/api/maps/data'
+          href: /rest/api/maps/data
         - name: Служба геолокации
-          href: 'https://docs.microsoft.com/rest/api/maps/geolocation'
+          href: /rest/api/maps/geolocation
         - name: Служба Mobility Service
-          href: 'https://docs.microsoft.com/rest/api/maps/mobility'
+          href: /rest/api/maps/mobility
         - name: Служба отрисовки
-          href: 'https://docs.microsoft.com/rest/api/maps/render'
+          href: /rest/api/maps/render
         - name: Служба отрисовки версии 2
-          href: 'https://docs.microsoft.com/rest/api/maps/renderv2'
+          href: /rest/api/maps/renderv2
         - name: Служба построения маршрутов
-          href: 'https://docs.microsoft.com/rest/api/maps/route'
+          href: /rest/api/maps/route
         - name: Служба поиска
-          href: 'https://docs.microsoft.com/rest/api/maps/search'
+          href: /rest/api/maps/search
         - name: Служба пространственных данных
-          href: 'https://docs.microsoft.com/rest/api/maps/spatial'
+          href: /rest/api/maps/spatial
         - name: Служба часового пояса
-          href: 'https://docs.microsoft.com/rest/api/maps/timezone'
+          href: /rest/api/maps/timezone
         - name: Служба отслеживания дорожного движения
-          href: 'https://docs.microsoft.com/rest/api/maps/traffic'
+          href: /rest/api/maps/traffic
         - name: Служба погоды
-          href: 'https://docs.microsoft.com/rest/api/maps/weather'
+          href: /rest/api/maps/weather
         - name: Служба Maps Creator
           items:
             - name: Служба псевдонимов
-              href: 'https://docs.microsoft.com/rest/api/maps/alias'
+              href: /rest/api/maps/alias
             - name: Служба преобразования
-              href: 'https://docs.microsoft.com/rest/api/maps/conversion'
+              href: /rest/api/maps/conversion
             - name: Служба набора данных
-              href: 'https://docs.microsoft.com/rest/api/maps/dataset'
+              href: /rest/api/maps/dataset
             - name: Служба состояний функций
-              href: 'https://docs.microsoft.com/rest/api/maps/featurestate'
+              href: /rest/api/maps/featurestate
             - name: Служба набора фрагментов
-              href: 'https://docs.microsoft.com/rest/api/maps/tileset'
+              href: /rest/api/maps/tileset
             - name: Служба WFS
-              href: 'https://docs.microsoft.com/rest/api/maps/wfs'
+              href: /rest/api/maps/wfs
         - name: Управление учетными записями службы Maps
-          href: 'https://docs.microsoft.com/rest/api/maps-management'
+          href: /rest/api/maps-management
     - name: JavaScript
       items:
         - name: Элемент управления картой
-          href: 'https://docs.microsoft.com/javascript/api/azure-maps-javascript/'
+          href: /javascript/api/azure-maps-javascript/
         - name: Инструменты для рисования
-          href: 'https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/'
+          href: /javascript/api/azure-maps-drawing-tools/
         - name: Модуль службы
-          href: 'https://docs.microsoft.com/javascript/api/azure-maps-rest/'
+          href: /javascript/api/azure-maps-rest/
         - name: Модуль пространственного ввода-вывода
-          href: 'https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/'
+          href: /javascript/api/azure-maps-spatial-io/
         - name: Модуль для помещений
-          href: 'https://aka.ms/am-indoor-module-websdk/'
+          href: /javascript/api/azure-maps-indoor/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.maps/accounts
     - name: Azure CLI
@@ -337,31 +339,31 @@
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
-      href: /azure/iot-fundamentals/iot-support-help
+      href: ../iot-fundamentals/iot-support-help.md
     - name: Службы Azure IoT
       items:
         - name: Центр Интернета вещей
-          href: /azure/iot-hub
+          href: ../iot-hub/index.yml
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
+          href: ../iot-dps/index.yml
         - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+          href: /microsoft-iot-central/
         - name: IoT Edge
-          href: /azure/iot-edge
+          href: ../iot-edge/index.yml
         - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-accelerators
+          href: ../iot-accelerators/index.yml
         - name: IoT Plug and Play
-          href: /azure/iot-pnp
+          href: ../iot-pnp/index.yml
         - name: Azure Maps
-          href: /azure/azure-maps
+          href: ./index.yml
         - name: Аналитика временных рядов
-          href: /azure/time-series-insights
+          href: ../time-series-insights/index.yml
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-hub-service-sdks
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-hub-device-sdks
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks
     - name: Условия использования Azure Maps
       href: 'https://azure.microsoft.com/support/legal/'
     - name: Цены на Azure Maps

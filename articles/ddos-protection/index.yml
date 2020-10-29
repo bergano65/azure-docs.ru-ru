@@ -1,0 +1,59 @@
+### YamlMime:Landing
+title: Документация по службе "Защита от атак DDoS Azure" (цен. категория "Стандартный")
+summary: Узнайте, как служба "Защита от атак DDoS Azure" обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.
+metadata:
+  description: Узнайте, как служба "Защита от атак DDoS Azure" обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.
+  keywords: azure ddos protection standard
+  author: yitoh
+  ms.author: yitoh
+  ms.date: 09/04/2019
+  ms.service: ddos-protection
+  ms.topic: landing-page
+  ms.custom: azure-ddos-protection
+  ms.openlocfilehash: cfc0a8c4856711c4f011805322e2b28942866573
+  ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/28/2020
+  ms.locfileid: "92904726"
+landingContent:
+- title: Сведения о службе "Защита от атак DDoS Azure" (цен. категория "Стандартный")
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Защита от атак DDoS Azure (цен. категория "Стандартный")?
+      url: ddos-protection-overview.md
+  - linkListType: architecture
+    links:
+    - text: Функции службы "Защита от атак DDoS Azure" (цен. категория "Стандартный")
+      url: ddos-protection-standard-features.md
+    - text: Эталонные архитектуры
+      url: ddos-protection-reference-architectures.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание плана защиты от атак DDoS (портал)
+      url: manage-ddos-protection.md
+- title: Настройка аналитики атак
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии
+      url: telemetry-monitoring-alerting.md
+    - text: Настройка журналов потоков и отчетов об устранении рисков атак DDoS
+      url: reports-and-flow-logs.md
+- title: Реагирование на атаки DDoS
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Типы атак
+      url: types-of-attacks.md
+    - text: Основные рекомендации
+      url: fundamental-best-practices.md
+    - text: Компоненты стратегии реагирования на атаки DDoS
+      url: ddos-response-strategy.md
+  - linkListType: how-to-guide
+    links:
+    - text: Задействование группы быстрого реагирования на атаки DDoS (DRR)
+      url: ddos-rapid-response.md

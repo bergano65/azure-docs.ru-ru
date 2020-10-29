@@ -1,5 +1,5 @@
 ---
-title: Подключение к Power BI Professional
+title: Подключение к Synapse SQL с помощью Power BI Professional
 description: В этом руководстве описаны действия по подключению Power BI Desktop к SQL по запросу (предварительная версия).
 services: synapse-analytics
 author: azaricstefan
@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 48b6639ad8228347737669fffca06eb660a25874
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d88406646099a136d196a104f9cf4352a367f6d2
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91288704"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92899112"
 ---
 # <a name="connect-to-synapse-sql-with-power-bi-professional"></a>Подключение к Synapse SQL с помощью Power BI Professional
 
@@ -75,7 +75,7 @@ DROP DATABASE IF EXISTS demo;
 > [!NOTE]
 > Для доступа к учетной записи хранения необходимо создать учетные данные. Хотя SQL по запросу может получать доступ к хранилищу из разных регионов, наличие хранилища и рабочей области Azure Synapse в одном регионе обеспечит лучшую производительность.
 
-**Фрагмент кода для создания учетных данных для контейнеров данных Census**, выполните:
+**Фрагмент кода для создания учетных данных для контейнеров данных Census** , выполните:
 
 ```sql
 IF EXISTS (SELECT * FROM sys.credentials WHERE name = 'https://azureopendatastorage.blob.core.windows.net/censusdatacontainer')
@@ -92,13 +92,13 @@ GO
 
 ## <a name="create-a-power-bi-desktop-report"></a>Создание отчета Power BI Desktop
 
-Откройте приложение Power BI Desktop и выберите вариант **Получить данные**.
+Откройте приложение Power BI Desktop и выберите вариант **Получить данные** .
 
 ![Открытие приложения Power BI Desktop и выбор раздела "Получить данные"](./media/get-started-power-bi-professional/step-0-open-powerbi.png)
 
 ### <a name="step-1---select-data-source"></a>Шаг 1. Выбор источника данных
 
-Выберите в меню **Azure**, а затем — **База данных SQL Azure**.
+Выберите в меню **Azure** , а затем — **База данных SQL Azure** .
 ![Выберите источник данных.](./media/get-started-power-bi-professional/step-1-select-data-source.png)
 
 ### <a name="step-2---select-database"></a>Шаг 2. Выбор базы данных

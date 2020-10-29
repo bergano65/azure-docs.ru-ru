@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 03/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 540da4103c3f7800521407441d645070e1e3e7ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5cd518828668ed20a4fa7be0cd6c9798a013055a
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84790217"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92909596"
 ---
 # <a name="create-or-update-azure-custom-roles-using-azure-powershell"></a>Создание или изменение настраиваемых ролей Azure с помощью Azure PowerShell
 
@@ -34,7 +34,7 @@ ms.locfileid: "84790217"
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для создания пользовательских ролей в Azure требуются:
 
@@ -63,7 +63,7 @@ API Management Service Contributor                   False
 В следующем примере перечислены только пользовательские роли, доступные для назначения в выбранной подписке.
 
 ```azurepowershell
-Get-AzRoleDefinition | ? {$_.IsCustom -eq $true} | FT Name, IsCustom
+Get-AzRoleDefinition -Custom | FT Name, IsCustom
 ```
 
 ```Example
@@ -133,7 +133,7 @@ PS C:\> (Get-AzRoleDefinition "Virtual Machine Operator").Actions
 "Microsoft.Support/*"
 ```
 
-## <a name="create-a-custom-role"></a>Создание настраиваемой роли
+## <a name="create-a-custom-role"></a>Создание пользовательской роли
 
 Чтобы создать пользовательскую роль, используется команда [New-AzRoleDefinition](/powershell/module/az.resources/new-azroledefinition). Существует два способа структурирования роли: с помощью объекта `PSRoleDefinition` или шаблона JSON. 
 
@@ -163,7 +163,7 @@ Start Virtual Machine                          Microsoft.Compute/virtualMachines
 
 При использовании PowerShell для создания пользовательской роли можно использовать одну из [встроенных ролей](built-in-roles.md) в качестве отправной точки, а можно начать и с нуля. Первый пример в этом разделе начинается со встроенной роли, и затем производится ее настройка для добавления дополнительных разрешений. Измените атрибуты для добавления нужных параметров (`Actions`, `NotActions` или `AssignableScopes`), а затем сохраните изменения в качестве новой роли.
 
-В следующем примере сначала используется встроенная роль [Участник виртуальной машины](built-in-roles.md#virtual-machine-contributor) для создания пользовательской роли под названием *Оператор виртуальной машины*. Новая роль предоставляет доступ ко всем операциям чтения поставщиков ресурсов *Microsoft.Compute*, *Microsoft.Storage* и *Microsoft.Network*, а также доступ для запуска, перезапуска и мониторинга виртуальных машин. Настраиваемую роль можно использовать в двух подписках.
+В следующем примере сначала используется встроенная роль [Участник виртуальной машины](built-in-roles.md#virtual-machine-contributor) для создания пользовательской роли под названием *Оператор виртуальной машины* . Новая роль предоставляет доступ ко всем операциям чтения поставщиков ресурсов *Microsoft.Compute* , *Microsoft.Storage* и *Microsoft.Network* , а также доступ для запуска, перезапуска и мониторинга виртуальных машин. Настраиваемую роль можно использовать в двух подписках.
 
 ```azurepowershell
 $role = Get-AzRoleDefinition "Virtual Machine Contributor"
@@ -187,7 +187,7 @@ $role.AssignableScopes.Add("/subscriptions/11111111-1111-1111-1111-111111111111"
 New-AzRoleDefinition -Role $role
 ```
 
-В следующем примере показан другой способ создания пользовательской роли *Оператор виртуальной машины*. Сначала создается новый объект `PSRoleDefinition`. Действия операции указаны в переменной `perms`, для которой задано свойство `Actions`. Свойство `NotActions` устанавливается путем считывания `NotActions` из встроенной роли [Оператор виртуальной машины](built-in-roles.md#virtual-machine-contributor). Так как в роли [Оператор виртуальной машины](built-in-roles.md#virtual-machine-contributor) нет `NotActions`, эта строка необязательна, но в ней показано, как можно получить сведения из другой роли.
+В следующем примере показан другой способ создания пользовательской роли *Оператор виртуальной машины* . Сначала создается новый объект `PSRoleDefinition`. Действия операции указаны в переменной `perms`, для которой задано свойство `Actions`. Свойство `NotActions` устанавливается путем считывания `NotActions` из встроенной роли [Оператор виртуальной машины](built-in-roles.md#virtual-machine-contributor). Так как в роли [Оператор виртуальной машины](built-in-roles.md#virtual-machine-contributor) нет `NotActions`, эта строка необязательна, но в ней показано, как можно получить сведения из другой роли.
 
 ```azurepowershell
 $role = [Microsoft.Azure.Commands.Resources.Models.Authorization.PSRoleDefinition]::new()
