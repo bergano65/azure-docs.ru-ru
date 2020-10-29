@@ -1,14 +1,14 @@
 ---
 title: Подключение гибридных компьютеров к Azure с помощью PowerShell
 description: Из этой статьи вы узнаете, как установить агент и подключить компьютер к Azure с помощью серверов с поддержкой ARC в Azure с помощью PowerShell.
-ms.date: 10/27/2020
+ms.date: 10/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: bb114ec3e279a7ea696d834af8eb7240cb892dc1
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 0755846ef02377edade98b69e478908a111ab247
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/28/2020
-ms.locfileid: "92891947"
+ms.locfileid: "92901535"
 ---
 # <a name="connect-hybrid-machines-to-azure-using-powershell"></a>Подключение гибридных компьютеров к Azure с помощью PowerShell
 
@@ -44,21 +44,21 @@ Install-Module -Name Az.ConnectedMachine
 
     * Чтобы установить агент подключенного компьютера на целевом компьютере, который может напрямую взаимодействовать с Azure, выполните:
 
-    ```azurepowershell
-    Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -SubscriptionId 978ab182-6cf0-4de3-a58b-53c8d0a3235e
-    ```
+        ```azurepowershell
+        Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -SubscriptionId 978ab182-6cf0-4de3-a58b-53c8d0a3235e
+        ```
     
     * Чтобы установить агент подключенного компьютера на целевом компьютере, который обменивается данными через прокси-сервер, выполните:
-    
-    ```azurepowershell
-    Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -SubscriptionId 978ab182-6cf0-4de3-a58b-53c8d0a3235e -proxy http://<proxyURL>:<proxyport>
-    ```
+        
+        ```azurepowershell
+        Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -SubscriptionId 978ab182-6cf0-4de3-a58b-53c8d0a3235e -proxy http://<proxyURL>:<proxyport>
+        ```
 
 Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. В Windows по адресу *%програмдата%\азуреконнектедмачинеажент\лог\химдс.лог* и в Linux по адресу */Вар/ОПТ/азкмажент/лог/химдс.лог* .
 
 ## <a name="install-and-connect-using-powershell-remoting"></a>Установка и подключение с помощью удаленного взаимодействия PowerShell
 
-Выполните следующие действия, чтобы настроить целевой сервер Windows Server или компьютер с серверами с поддержкой дуги Azure. На удаленном компьютере должна быть включена служба удаленного взаимодействия PowerShell. Это можно сделать с помощью командлета `Enable-PSRemoting`.
+Выполните следующие действия, чтобы настроить один или несколько серверов Windows с серверами с поддержкой дуги Azure. На удаленном компьютере должна быть включена служба удаленного взаимодействия PowerShell. Это можно сделать с помощью командлета `Enable-PSRemoting`.
 
 1. Откройте консоль PowerShell с правами администратора.
 
@@ -66,25 +66,32 @@ Install-Module -Name Az.ConnectedMachine
 
 3. Чтобы установить агент подключенного компьютера, используйте параметр `Connect-AzConnectedMachine` с `-Name` `-ResourceGroupName` параметрами, и `-Location` . Используйте `-SubscriptionId` параметр, чтобы переопределить подписку по умолчанию в результате создания контекста Azure после входа.
 
-Чтобы установить агент подключенного компьютера на целевом компьютере, который может напрямую взаимодействовать с Azure, выполните следующую команду:
+    * Чтобы установить агент подключенного компьютера на целевом компьютере, который может напрямую взаимодействовать с Azure, выполните следующую команду:
+    
+        ```azurepowershell
+        $session = Connect-PSSession -ComputerName myMachineName
+        Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -PSSession $session
+        ```
+    
+    * Чтобы установить агент подключенного компьютера одновременно на нескольких удаленных компьютерах, добавьте список имен удаленных компьютеров, разделенных запятыми.
 
-```azurepowershell
-$session = Connect-PSSession -ComputerName myMachineName
-Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -PSSession $session
-```
+        ```azurepowershell
+        $session = Connect-PSSession -ComputerName myMachineName1, myMachineName2, myMachineName3
+        Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -PSSession $session
+        ```
 
-Ниже приведен пример результатов выполнения команды:
-
-```azurepowershell
-time="2020-08-07T13:13:25-07:00" level=info msg="Onboarding Machine. It usually takes a few minutes to complete. Sometimes it may take longer depending on network and server load status."
-time="2020-08-07T13:13:25-07:00" level=info msg="Check network connectivity to all endpoints..."
-time="2020-08-07T13:13:29-07:00" level=info msg="All endpoints are available... continue onboarding"
-time="2020-08-07T13:13:50-07:00" level=info msg="Successfully Onboarded Resource to Azure" VM Id=f65bffc7-4734-483e-b3ca-3164bfa42941
-
-Name           Location OSName   Status     ProvisioningState
-----           -------- ------   ------     -----------------
-myMachineName  eastus   windows  Connected  Succeeded
-```
+    В следующем примере приведены результаты выполнения команды, предназначенной для одного компьютера:
+    
+    ```azurepowershell
+    time="2020-08-07T13:13:25-07:00" level=info msg="Onboarding Machine. It usually takes a few minutes to complete. Sometimes it may take longer depending on network and server load status."
+    time="2020-08-07T13:13:25-07:00" level=info msg="Check network connectivity to all endpoints..."
+    time="2020-08-07T13:13:29-07:00" level=info msg="All endpoints are available... continue onboarding"
+    time="2020-08-07T13:13:50-07:00" level=info msg="Successfully Onboarded Resource to Azure" VM Id=f65bffc7-4734-483e-b3ca-3164bfa42941
+    
+    Name           Location OSName   Status     ProvisioningState
+    ----           -------- ------   ------     -----------------
+    myMachineName  eastus   windows  Connected  Succeeded
+    ```
 
 ## <a name="verify-the-connection-with-azure-arc"></a>Проверка подключения с помощью Azure Arc
 

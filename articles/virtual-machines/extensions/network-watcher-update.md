@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 09/23/2020
 ms.author: damendo
-ms.openlocfilehash: 640b148dc22aa87592a6adcfca99c8ed35731934
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 23520a0249e22b3f81c7f7c598ef10d8c3acb550
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220607"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92900191"
 ---
 # <a name="update-the-network-watcher-extension-to-the-latest-version"></a>Обновление расширения наблюдателя за сетями до последней версии
 
@@ -25,7 +25,7 @@ ms.locfileid: "92220607"
 
 [Наблюдатель за сетями Azure](../../network-watcher/network-watcher-monitoring-overview.md) — это служба наблюдения за производительностью сети, диагностики и аналитики, которая наблюдает за сетями Azure. Расширение виртуальной машины агента наблюдателя за сетями — это требование для записи сетевого трафика по требованию и использования других расширенных функций на виртуальных машинах Azure. Расширение наблюдателя за сетями используется такими функциями, как монитор подключения, монитор подключения (Предварительная версия), устранение неполадок подключения и запись пакетов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что на виртуальной машине установлено расширение наблюдателя за сетями.
 
@@ -79,10 +79,10 @@ Get-AzVM -ResourceGroupName "SampleRG" -Name "Sample-VM" -Status
 
 ```powershell
 #Linux command
-Set-AzVMExtension `  -ResourceGroupName "myResourceGroup1" `  -Location "WestUS" `  -VMName "myVM1" `  -Name "AzureNetworkWatcherExtension" `  -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentLinux"   
+Set-AzVMExtension -ResourceGroupName "myResourceGroup1" -Location "WestUS" -VMName "myVM1" -Name "AzureNetworkWatcherExtension" -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentLinux"
 
 #Windows command
-Set-AzVMExtension `  -ResourceGroupName "myResourceGroup1" `  -Location "WestUS" `  -VMName "myVM1" `  -Name "AzureNetworkWatcherExtension" `  -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentWindows"   
+Set-AzVMExtension -ResourceGroupName "myResourceGroup1" -Location "WestUS" -VMName "myVM1" -Name "AzureNetworkWatcherExtension" -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentWindows"
 ```
 
 Если это не сработает. Удалите и снова установите расширение, выполнив приведенные ниже действия. При этом будет автоматически добавлена последняя версия.
@@ -130,10 +130,10 @@ az vm extension delete --resource-group "myResourceGroup1" --vm-name "myVM1" -n 
 
 ```azurecli
 #Linux command
-az vm extension set --resource-group "DALANDEMO" --vm-name "Linux-01" --name "NetworkWatcherAgentLinux" --publisher "Microsoft.Azure.NetworkWatcher"  
+az vm extension set --resource-group "DALANDEMO" --vm-name "Linux-01" --name "NetworkWatcherAgentLinux" --publisher "Microsoft.Azure.NetworkWatcher"
 
 #Windows command
-az vm extension set --resource-group "DALANDEMO" --vm-name "Linux-01" --name "NetworkWatcherAgentWindows" --publisher "Microsoft.Azure.NetworkWatcher" 
+az vm extension set --resource-group "DALANDEMO" --vm-name "Linux-01" --name "NetworkWatcherAgentWindows" --publisher "Microsoft.Azure.NetworkWatcher"
 
 ```
 
@@ -143,4 +143,4 @@ az vm extension set --resource-group "DALANDEMO" --vm-name "Linux-01" --name "Ne
 
 ## <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, см. документацию по расширению наблюдателя за сетями для [Linux](./network-watcher-linux.md) или [Windows](./network-watcher-windows.md). Вы также можете обратиться к экспертам Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, см. документацию по расширению наблюдателя за сетями для [Linux](./network-watcher-linux.md) или [Windows](./network-watcher-windows.md). Вы также можете обратиться к экспертам Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку** . Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

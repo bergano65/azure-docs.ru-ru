@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
-ms.openlocfilehash: 608694c07894c8bdff8b1101d607e07ea4383764
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1970709dea67111bfd8b90f9fc315a3b044b2ab9
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279859"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92900261"
 ---
 # <a name="copy-data-from-an-sap-table-by-using-azure-data-factory"></a>Копирование данных из таблицы SAP с помощью фабрики данных Azure
 
@@ -51,12 +51,13 @@ ms.locfileid: "89279859"
 - Получение данных с помощью по умолчанию или пользовательского RFC.
 
 Версия 7,01 или более поздняя относится к версии SAP NetWeaver вместо SAP ECC. Например, SAP ECC 6,0 EHP 7 в целом имеет версию NetWeaver >= 7,4. Если вы не уверены в своей среде, выполните следующие действия для подтверждения версии из системы SAP:
-1.  Используйте графический интерфейс SAP для подключения к системе SAP. 
-2.  Перейдите к **System**  ->  **состоянию**системы. 
-3.  Проверьте выпуск SAP_BASIS, убедитесь, что он больше или равен 701.  
+
+1. Используйте графический интерфейс SAP для подключения к системе SAP. 
+2. Перейдите к **System**  ->  **состоянию** системы. 
+3. Проверьте выпуск SAP_BASIS, убедитесь, что он больше или равен 701.  
       ![Проверка SAP_BASIS](./media/connector-sap-table/sap-basis.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы использовать этот соединитель таблиц SAP, необходимо выполнить следующие действия:
 

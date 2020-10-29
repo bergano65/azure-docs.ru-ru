@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/03/2020
-ms.openlocfilehash: 9088b36acead9f47e94949ee102d66a8aff2d226
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/28/2020
+ms.openlocfilehash: 1f3ab61c6030c2871356f494db228711305e5466
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87529608"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92901590"
 ---
 # <a name="copy-data-from-sap-ecc-by-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью Фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -47,6 +47,13 @@ ms.locfileid: "87529608"
 
 - копирование данных с помощью базовой проверки подлинности.
 
+Версия 7,0 или более поздняя относится к версии SAP NetWeaver вместо SAP ECC. Например, SAP ECC 6,0 EHP 7 в целом имеет версию NetWeaver >= 7,4. Если вы не уверены в своей среде, выполните следующие действия для подтверждения версии из системы SAP:
+
+1. Используйте графический интерфейс SAP для подключения к системе SAP. 
+2. Перейдите к **System**  ->  **состоянию** системы. 
+3. Проверьте выпуск SAP_BASIS, убедитесь, что он больше или равен 701.  
+      ![Проверка SAP_BASIS](./media/connector-sap-table/sap-basis.png)
+
 >[!TIP]
 >Чтобы скопировать данные из SAP ECC посредством таблицы или представления SAP, используйте соединитель [Таблица SAP](connector-sap-table.md), который быстрее и обеспечивает масштабирование.
 
@@ -54,9 +61,9 @@ ms.locfileid: "87529608"
 
 Чтобы использовать этот соединитель SAP ECC, необходимо предоставить сущности SAP ECC через службы OData через шлюз SAP. В частности:
 
-- **Настройте шлюз SAP**. Для серверов с SAP NetWeaver версии выше 7.4 шлюз SAP уже установлен. Для более ранних версий необходимо установить встроенный шлюз SAP или систему концентратора шлюза SAP, прежде чем предоставлять данные SAP ECC через службы OData. Сведения о том, как настроить шлюз SAP, см. в [руководстве по установке](https://help.sap.com/saphelp_gateway20sp12/helpdata/en/c3/424a2657aa4cf58df949578a56ba80/frameset.htm).
+- **Настройте шлюз SAP** . Для серверов с SAP NetWeaver версии выше 7.4 шлюз SAP уже установлен. Для более ранних версий необходимо установить встроенный шлюз SAP или систему концентратора шлюза SAP, прежде чем предоставлять данные SAP ECC через службы OData. Сведения о том, как настроить шлюз SAP, см. в [руководстве по установке](https://help.sap.com/saphelp_gateway20sp12/helpdata/en/c3/424a2657aa4cf58df949578a56ba80/frameset.htm).
 
-- **Активируйте и настройте службу SAP OData**. Активировать службы OData можно через TCODE SICF за считаные секунды. Также можно указать, какие объекты требуется предоставлять. Дополнительные сведения см. в [пошаговом руководстве](https://blogs.sap.com/2012/10/26/step-by-step-guide-to-build-an-odata-service-based-on-rfcs-part-1/).
+- **Активируйте и настройте службу SAP OData** . Активировать службы OData можно через TCODE SICF за считаные секунды. Также можно указать, какие объекты требуется предоставлять. Дополнительные сведения см. в [пошаговом руководстве](https://blogs.sap.com/2012/10/26/step-by-step-guide-to-build-an-odata-service-based-on-rfcs-part-1/).
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -147,7 +154,7 @@ ms.locfileid: "87529608"
 | `type` | Свойство `type` в разделе `source` действия копирования должно иметь значение `SapEccSource`. | Да |
 | `query` | Параметры запроса OData для фильтрации данных. Пример:<br/><br/>`"$select=Name,Description&$top=10"`<br/><br/>Соединитель SAP ECC копирует данные из объединенного URL-адреса:<br/><br/>`<URL specified in the linked service>/<path specified in the dataset>?<query specified in the copy activity's source section>`<br/><br/>Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 | `sapDataColumnDelimiter` | Единственный символ, используемый в качестве разделителя, передаваемый в SAP RFC для разделения выходных данных. | Нет |
-| `httpRequestTimeout` | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | Нет |
+| `httpRequestTimeout` | Время ожидания (значение **Временной диапазон** ) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | Нет |
 
 ### <a name="example"></a>Пример
 

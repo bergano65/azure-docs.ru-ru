@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 10/23/2020
+ms.date: 10/27/2020
 ms.custom: generated
-ms.openlocfilehash: ed5d7c3007cf8471da453db93be0ab716805908c
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 60e9ec88fd07d8b04254c5d3917aab09d671f517
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742950"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92900866"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -9225,12 +9225,12 @@ ms.locfileid: "92742950"
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/евентраутес/* |  |
-> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/* |  |
-> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/коммандс/* |  |
-> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/релатионшипс/* |  |
-> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/Моделс/* |  |
-> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/куери/* |  |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/евентраутес/* | Чтение, удаление, создание или обновление любого маршрута событий |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/* | Чтение, создание, обновление или удаление любых цифровых двойника |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/коммандс/* | Вызов любой команды в цифровом двойника |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/дигиталтвинс/релатионшипс/* | Чтение, создание, обновление или удаление связи Digital двойника |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/Моделс/* | Чтение, создание, обновление или удаление любой модели |
+> | [Microsoft. дигиталтвинс](resource-provider-operations.md#microsoftdigitaltwins)/куери/* | Запрос любого цифрового двойников графа |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 

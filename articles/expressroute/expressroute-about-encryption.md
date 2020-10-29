@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/12/2020
 ms.author: duau
-ms.openlocfilehash: 83fa16265106e1033cb77ab4175b606714ec66d7
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 693d2304324bdfcac298b3e20ddd0d882a16533c
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996842"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92899873"
 ---
 # <a name="expressroute-encryption"></a>Шифрование ExpressRoute
  
@@ -31,7 +31,7 @@ ExpressRoute поддерживает несколько технологий ш
 ### <a name="will-enabling-macsec-on-expressroute-direct-degrade-network-performance"></a>Включает ли Максек в ExpressRoute прямую производительность сети?
 Шифрование и расшифровка Максек происходят в оборудовании на используемых маршрутизаторах. На наши стороны не влияет на производительность. Тем не менее следует обратиться к поставщику сети для устройств, которые вы используете, и узнать, не имеет ли Максек производительность.
 ### <a name="which-cipher-suites-are-supported-for-encryption"></a>Какие комплекты шифров поддерживаются для шифрования?
-Поддерживается только версия [расширенной нумерации пакетов](https://1.ieee802.org/security/802-1aebw/) AES128 и AES256. Кроме того, отключите [идентификатор Secure Channel (SCI)](https://en.wikipedia.org/wiki/IEEE_802.1AE) в конфигурации максек на устройстве. 
+Поддерживается только версия [расширенной нумерации пакетов](https://1.ieee802.org/security/802-1aebw/) aes-128 и aes-256. Кроме того, необходимо отключить [безопасный идентификатор канала (SCI)](https://wikipedia.org/wiki/IEEE_802.1AE) в конфигурации максек на устройстве. 
 
 ## <a name="end-to-end-encryption-by-ipsec-faq"></a>Полное шифрование по протоколу IPsec: вопросы и ответы
 Протокол IPsec является [стандартом IETF](https://tools.ietf.org/html/rfc6071). Он шифрует данные на уровне протокола Интернета (IP) или уровня сети 3. Протокол IPsec можно использовать для шифрования сквозного подключения между локальной сетью и виртуальной сетью в Azure. См. другие вопросы и ответы ниже.

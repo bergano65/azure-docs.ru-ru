@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 08/13/2020
-ms.openlocfilehash: 47e2211be478a16238d35eeb5219cf6e785a6979
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 282f13c89c527b096573b67b5d539de821e89032
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547577"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92900807"
 ---
 # <a name="apache-components-and-versions-available-for-azure-hdinsight"></a>Компоненты и версии Apache, доступные в Azure HDInsight
 
@@ -88,11 +88,11 @@ Azure HDInsight поддерживает несколько версий кла�
 | HDInsight 3,6 Spark             | 2.3               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | HDInsight 3,6 Spark             | 2.2               | Прекращено 30 июня 2020 г.          |                             |
 | HDInsight 3,6 Spark             | 2.1               | Прекращено 30 июня 2020 г.          |                             |
-| HDInsight 3,6 Kafka             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6 Kafka             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | HDInsight 3,6 Kafka             | 1.0               | Прекращено 30 июня 2020 г.         |                             |
-| HDInsight 3,6 HBase             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6 HBase             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | Интерактивный запрос HDInsight 3,6 | 2.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
-| HDInsight 3,6             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | Службы машинного обучения HDInsight 3,6      | 9.3               | 31 декабря 2020 г.                      | 31 декабря 2020 г.                |
 
 > [!NOTE]
@@ -133,6 +133,6 @@ _Дата прекращения использования_  — это дат
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md)
-- [Работа в экосистеме Hadoop в HDInsight на компьютере с Windows](hdinsight-hadoop-windows-tools.md)
-- [Заметки о выпуске Hortonworks, связанные с версиями Azure HDInsight](./hortonworks-release-notes.md)
 - [Пакет безопасности корпоративного уровня](./enterprise-security-package.md)
+- [Заметки о выпуске Hortonworks, связанные с версиями Azure HDInsight](./hortonworks-release-notes.md)
+- [Работа в экосистеме Hadoop в HDInsight на компьютере с Windows](hdinsight-hadoop-windows-tools.md)

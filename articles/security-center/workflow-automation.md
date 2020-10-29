@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 10/27/2020
 ms.author: memildin
-ms.openlocfilehash: cbe6adc37025f0b727fa5f5d3ace46ed34afaa9e
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: a7341362183aee4a23556a164677bc320babdfec
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895228"
+ms.locfileid: "92900844"
 ---
 # <a name="automate-responses-to-security-center-triggers"></a>Автоматизация ответов на триггеры центра безопасности
 
@@ -24,7 +24,7 @@ ms.locfileid: "92895228"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Free|
@@ -66,7 +66,7 @@ ms.locfileid: "92895228"
 1. В новом приложении логики можно выбрать встроенные стандартные шаблоны из категории безопасность. Или можно определить пользовательский поток событий, который будет происходить при активации этого процесса.
 
     > [!TIP]
-    > Иногда в приложении логики параметры включаются в соединитель как часть строки, а не в собственное поле. Пример извлечения параметров с помощью EAN см. в разделе Step #14 of [Working with Logic App Parameters in site Automation автоматизации рабочих процессов центра безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/working-with-logic-app-parameters-while-building-azure-security/ba-p/1342121).
+    > Иногда в приложении логики параметры включаются в соединитель как часть строки, а не в собственное поле. Пример извлечения параметров см. в разделе Шаг #14 [работы с параметрами приложения логики при создании автоматизации рабочих процессов центра безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/working-with-logic-app-parameters-while-building-azure-security/ba-p/1342121).
 
     Конструктор приложений логики поддерживает следующие триггеры центра безопасности:
 
