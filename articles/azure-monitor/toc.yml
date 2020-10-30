@@ -212,8 +212,6 @@
           href: log-query/get-started-portal.md
         - name: Область запроса
           href: log-query/scope.md
-        - name: Простой интерфейс журналов
-          href: log-query/simple-logs.md
         - name: Отправка запросов с помощью Azure Data Explorer
           href: platform/azure-data-explorer-monitor-proxy.md
         - name: Запросы журнала

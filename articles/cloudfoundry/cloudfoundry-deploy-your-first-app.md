@@ -7,12 +7,12 @@ ms.subservice: workloads
 ms.topic: article
 ms.date: 06/14/2017
 ms.author: seanmck
-ms.openlocfilehash: 793a8f291be4fcca6fad19d486849253dddc089f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18f9f62ba28595289d37975200352c26788e69cc
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84754324"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93040038"
 ---
 # <a name="deploy-your-first-app-to-cloud-foundry-on-microsoft-azure"></a>Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 
@@ -41,7 +41,7 @@ cf login -a https://api.SYSTEMDOMAINURL --skip-ssl-validation
 
 Вам будет предложено войти в Cloud Controller. Используйте учетные данные учетной записи администратора, полученные при развертывании из Marketplace.
 
-Для изоляции команд и сред в общей среде Cloud Foundry предоставляет *организации* и *пространства*, используемые в качестве пространств имен. Развертывание PCF Marketplace содержит *системную* организацию по умолчанию и несколько пространств, созданных для хранения основных компонентов, таких как служба автомасштабирования и Azure Service Broker. Сейчас выберите *системное* пространство.
+Для изоляции команд и сред в общей среде Cloud Foundry предоставляет *организации* и *пространства* , используемые в качестве пространств имен. Развертывание PCF Marketplace содержит *системную* организацию по умолчанию и несколько пространств, созданных для хранения основных компонентов, таких как служба автомасштабирования и Azure Service Broker. Сейчас выберите *системное* пространство.
 
 
 ## <a name="create-an-org-and-space"></a>Создание организации и пространства
@@ -79,7 +79,7 @@ git clone https://github.com/cloudfoundry-samples/hello-spring-cloud
 cd hello-spring-cloud
 ```
 
-### <a name="build-the-application"></a>создание приложения;
+### <a name="build-the-application"></a>Построение приложения
 
 Создайте приложение с помощью [Apache Maven](https://maven.apache.org).
 
@@ -95,7 +95,7 @@ mvn clean package
 cf push
 ```
 
-При *принудительной передаче* приложения Cloud Foundry определяет его тип (в данном случае — приложение Java) и зависимости (в данном случае — Spring Framework). Затем это решение упаковывает все необходимые для выполнения кода компоненты в автономный образ контейнера, известный как *дроплет*. Наконец, Cloud Foundry планирует приложение на одном из компьютеров, доступных в среде, и создает URL-адрес, по которому к нему можно получить доступ. Этот URL-адрес доступен в выходных данных команды.
+При *принудительной передаче* приложения Cloud Foundry определяет его тип (в данном случае — приложение Java) и зависимости (в данном случае — Spring Framework). Затем это решение упаковывает все необходимые для выполнения кода компоненты в автономный образ контейнера, известный как *дроплет* . Наконец, Cloud Foundry планирует приложение на одном из компьютеров, доступных в среде, и создает URL-адрес, по которому к нему можно получить доступ. Этот URL-адрес доступен в выходных данных команды.
 
 ![Выходные данные команды cf push][cf-push-output]
 
@@ -114,7 +114,7 @@ cf push
 cf logs hello-spring-cloud
 ```
 
-По умолчанию команда logs использует *заключительный фрагмент*, который позволяет просмотреть новые записываемые журналы. Чтобы просмотреть новые отображаемые журналы, обновите приложение Hello Spring Cloud в браузере.
+По умолчанию команда logs использует *заключительный фрагмент* , который позволяет просмотреть новые записываемые журналы. Чтобы просмотреть новые отображаемые журналы, обновите приложение Hello Spring Cloud в браузере.
 
 Чтобы просмотреть записанные журналы, добавьте параметр `recent`:
 
@@ -146,7 +146,7 @@ cf scale -i 2 hello-spring-cloud
 [oss-cf-bosh]: https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/tree/master/docs
 [pcf-azuremarketplace-pivotaldocs]: https://docs.pivotal.io/pivotalcf/customizing/pcf_azure.html
 [cf-cli]: https://github.com/cloudfoundry/cli
-[cloudshell-docs]: https://docs.microsoft.com/azure/cloud-shell/overview
+[cloudshell-docs]: ../cloud-shell/overview.md
 [cf-orgs-spaces-docs]: https://docs.cloudfoundry.org/concepts/roles.html
 [spring-boot]: https://projects.spring.io/spring-boot/
 [spring-framework]: https://spring.io

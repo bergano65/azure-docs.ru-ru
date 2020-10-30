@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 05/13/2019
 ms.author: kenwith
-ms.openlocfilehash: 00c4dec329456409bc8d5b77dca72f25daf9f5c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cecdda27139aa1dd0733b50898db9db70aa34dc3
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84781079"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93040989"
 ---
 # <a name="sync-an-attribute-from-your-on-premises-active-directory-to-azure-ad-for-provisioning-to-an-application"></a>Синхронизация атрибута из локального Active Directory с Azure AD для подготовки приложения
 
@@ -27,13 +27,13 @@ ms.locfileid: "84781079"
  
 ## <a name="sync-an-attribute"></a>Синхронизация атрибута 
 
-1. Откройте мастер Azure AD Connect, выберите задачи, а затем выберите **настроить параметры синхронизации**.
+1. Откройте мастер Azure AD Connect, выберите задачи, а затем выберите **настроить параметры синхронизации** .
 
    ![Страница "дополнительные задачи" мастера Azure Active Directory Connect](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-customize.png)
  
 2. Войдите в систему как глобальный администратор Azure AD. 
 
-3. На странице **Дополнительные компоненты** выберите **синхронизировать атрибут расширения каталога**.
+3. На странице **Дополнительные компоненты** выберите **синхронизировать атрибут расширения каталога** .
  
    ![Страница дополнительных компонентов мастера Azure Active Directory Connect](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-directory-extension-attribute-sync.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "84781079"
    > [!NOTE]
    > При поиске в списке **Доступные атрибуты** учитывается регистр.
 
-   ![Страница выбора расширений каталога мастера Azure Active Directory Connect](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-directory-extensions.png)
+   ![Снимок экрана, на котором показана страница выбора "расширения каталога"](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-directory-extensions.png)
 
 5. Завершите работу мастера Azure AD Connect и дождитесь выполнения цикла полной синхронизации. По завершении цикла схема расширяется, а новые значения синхронизируются между локальной службой AD и Azure AD.
  
@@ -50,7 +50,7 @@ ms.locfileid: "84781079"
    ![Страница выбора расширений каталога мастера Azure Active Directory Connect](./media/user-provisioning-sync-attributes-for-mapping/attribute-mapping-extensions.png)
 
 > [!NOTE]
-> Возможность подготавливать ссылочные атрибуты из локальной службы AD, например **ManagedBy** или **DN/distinguishedName**, сейчас не поддерживается. Эту функцию можно запросить на [голоса пользователя](https://feedback.azure.com/forums/169401-azure-active-directory). 
+> Возможность подготавливать ссылочные атрибуты из локальной службы AD, например **ManagedBy** или **DN/distinguishedName** , сейчас не поддерживается. Эту функцию можно запросить на [голоса пользователя](https://feedback.azure.com/forums/169401-azure-active-directory). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

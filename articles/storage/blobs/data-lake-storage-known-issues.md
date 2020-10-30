@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 10/08/2020
+ms.date: 10/28/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 1c887093972507904b007c696214708eb0e2b039
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: bffe69dd5b7d3cdfcba1df3420d494dcffc33f9a
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282207"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93042661"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -68,13 +68,13 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 ## <a name="azcopy"></a>AzCopy
 
-Всегда используйте только последнюю версию AzCopy ([AzCopy 10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)). Более старые версии AzCopy, например AzCopy 8.1, не поддерживаются.
+Всегда используйте только последнюю версию AzCopy ([AzCopy 10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)).  Более старые версии AzCopy, например AzCopy 8.1, не поддерживаются.
 
 <a id="storage-explorer"></a>
 
 ## <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
 
-Используйте только версии `1.6.0` или выше.
+Используйте только версии `1.6.0` или выше.
 
 <a id="explorer-in-portal"></a>
 
@@ -84,7 +84,7 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 <a id="third-party-apps"></a>
 
-## <a name="thirdpartyapplications"></a>Сторонние приложения
+## <a name="third-party-applications"></a>Сторонние приложения
 
 Сторонние приложения, использующие REST API, скорее всего, будут успешно работать в сочетании с приложениями Data Lake Storage 2-го поколения, которые вызывают API больших двоичных объектов.
 
@@ -92,38 +92,15 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 Если для контейнера предоставлен [анонимный доступ на чтение](storage-manage-access-to-resources.md), то списки управления доступом не влияют на этот контейнер и (или) файлы в нем.
 
-### <a name="diagnostic-logs"></a>Журналы диагностики
+## <a name="diagnostic-logs"></a>Журналы диагностики
 
 Настройка дней хранения еще не поддерживается, но можно удалить журналы вручную с помощью любого поддерживаемого средства, такого как Обозреватель службы хранилища Azure, RESTFUL или пакет SDK.
 
-## <a name="issues-specific-to-premium-performance-blockblobstorage-storage-accounts"></a>Проблемы, связанные с учетными записями хранения Premium-Performance Блоккблобстораже
+## <a name="lifecycle-management-policies-with-premium-tier-for-azure-data-lake-storage"></a>Политики управления жизненным циклом с уровнем "Премиум" для Azure Data Lake Storage
 
-### <a name="diagnostic-logs"></a>Журналы диагностики
+Данные, хранящиеся на уровне Premium, нельзя перемещать между уровнями горячий, холодного и архивный. Однако можно скопировать данные с уровня "Премиум" на уровень "горячего" доступа в другой учетной записи.
 
-Журналы диагностики пока нельзя включить с помощью портала Azure. Их можно включить только с помощью PowerShell. Пример:
-
-```powershell
-#To login
-Connect-AzAccount
-
-#Set default block blob storage account.
-Set-AzCurrentStorageAccount -Name premiumGen2Account -ResourceGroupName PremiumGen2Group
-
-#Enable logging
-Set-AzStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays 14
-```
-
-### <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
-
-- Политики управления жизненным циклом поддерживаются только для учетных записей общего назначения версии 2. Они пока не поддерживаются в учетных записях хранения Premium Блоккблобстораже.
-- Перемещение данных с уровня "Премиум" на более низкие уровни не поддерживается.
-
-
-### <a name="hdinsight-support"></a>Поддержка HDInsight
-
-При создании кластера HDInsight вы не сможете выбрать учетную запись BlockBlobStorage, если для нее включена функция иерархического пространства имен. Но такую учетную запись можно подключить к кластеру после его создания.
-
-### <a name="dremio-support"></a>Поддержка Dremio
+## <a name="dremio-support-with-premium-performance-blockblobstorage-storage-accounts"></a>Поддержка дремио с учетными записями хранения Premium-Performance Блоккблобстораже
 
 Dremio пока невозможно подключить к учетной записи BlockBlobStorage, если для нее включена функция иерархического пространства имен. 
 

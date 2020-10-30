@@ -8,12 +8,12 @@ ms.date: 01/04/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 17531c6e38447fba7fe8761a963be39ecfc8f489
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 4064acd6d2857ebc00a38ea7f6ff5d5e30bbd699
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044162"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93041383"
 ---
 # <a name="prepare-your-development-and-test-environment-for-iot-edge"></a>Подготовка среды разработки и тестирования для IoT Edge
 
@@ -35,7 +35,7 @@ Azure IoT Edge работает в определенном наборе [по
 
 Единственным поддерживаемым модулем контейнеров для устройств IoT Edge в рабочей среде является Moby. Тем не менее любой модуль контейнеров, совместимый с Open Container Initiative, например Docker, может создавать образы модулей IoT Edge.
 
-## <a name="development-tools"></a>Инструменты разработки
+## <a name="development-tools"></a>Средства разработки
 
 Visual Studio и Visual Studio Code включают дополнительные расширения для разработки решений IoT Edge. Эти расширения предоставляют шаблоны для конкретного языка, которые помогают создавать и развертывать новые сценарии IoT Edge. Расширения Azure IoT Edge для Visual Studio и Visual Studio Code позволяют писать код, создавать, развертывать и отлаживать решения IoT Edge. Вы можете создать полное решение IoT Edge, которое содержит несколько модулей, и расширения будут автоматически изменять шаблон манифеста развертывания при добавлении каждого нового модуля. С помощью расширений вы также можете управлять устройствами Интернета вещей из Visual Studio или Visual Studio Code. Вы можете развертывать модули на устройстве, отслеживать состояние и просматривать сообщения по мере их поступления в Центр Интернета вещей. Оба расширения используют [средство разработки IoT EdgeHub](#iot-edgehub-dev-tool) для включения локального запуска и отладки модулей на компьютере разработки.
 
@@ -53,7 +53,7 @@ Visual Studio и Visual Studio Code включают дополнительн
 
 Шаблоны модулей для некоторых языков и служб включают предварительные требования, необходимые для создания папок проекта на компьютере разработки с Visual Studio Code.
 
-| Шаблон модуля | Необходимое условие |
+| Шаблон модуля | Предварительное требование |
 | --------------- | ------------ |
 | Функции Azure | [Пакет SDK для .NET Core 2,1](https://www.microsoft.com/net/download) |
 | C | [Git](https://git-scm.com/); |
@@ -83,7 +83,7 @@ Visual Studio и Visual Studio Code включают дополнительн
 | Средство | Другое название | Поддерживаемые платформы | Сценарии применения |
 | ---- | ------------- | ------------------- | --------- |
 | Средство разработки IoT EdgeHub  | iotedgehubdev | Windows, Linux, macOS | Имитация устройства для отладки модулей. |
-| Контейнер разработки IoT Edge | microsoft/iotedgedev | Windows, Linux, macOS | Разработка без установки зависимостей. |
+| Контейнер разработки IoT Edge | иотеджедев | Windows, Linux, macOS | Разработка без установки зависимостей. |
 | Среда выполнения IoT Edge в контейнере | iotedgec | Windows, Linux, macOS, ARM | Тестирование на устройстве, которое может не поддерживать среду выполнения. |
 | Контейнер устройств IoT Edge | toolboc/azure-iot-edge-device-container | Windows, Linux, macOS, ARM | Тестирование сценария с несколькими устройствами IoT Edge в нужном масштабе. |
 
@@ -99,7 +99,7 @@ Visual Studio и Visual Studio Code включают дополнительн
 
 Контейнер разработки Azure IoT Edge представляет собой контейнер Docker, который содержит все зависимости, необходимые для разработки IoT Edge. Этот контейнер позволяет легко приступить к работе с любым языком разработки, включая C#, Python, Node.js и Java. Вам нужно лишь установить модуль контейнеров, например Docker или Moby, для передачи контейнеров на компьютер разработки.
 
-Дополнительные сведения см. в разделе [Контейнер разработки Azure IoT Edge](https://hub.docker.com/r/microsoft/iotedgedev/).
+Дополнительные сведения см. в разделе [Контейнер разработки Azure IoT Edge](https://github.com/Azure/iotedgedev/wiki/quickstart-with-iot-edge-dev-container).
 
 ### <a name="iot-edge-runtime-in-a-container"></a>Среда выполнения IoT Edge в контейнере
 

@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 18260867f0258ebe3cc885c5a1b1754f143bfccc
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: fd95de8033fc5a986ac30677a4272336b1e17244
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541610"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93041565"
 ---
 # <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Настройка VPN-подключения типа "точка — сеть" к виртуальной сети с помощью собственной аутентификации Azure Certificate: портал Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "92541610"
 
 ![Схема соединения компьютера с виртуальной сетью Azure через подключение типа "точка — сеть"](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/p2snativeportal.png)
 
-## <a name="architecture"></a>Architecture
+## <a name="architecture"></a>Архитектура
 
 Для собственной аутентификации Azure на основе сертификата при подключениях "точка — сеть" необходимы следующие компоненты, которые можно настроить в этом руководстве:
 
@@ -73,11 +73,11 @@ ms.locfileid: "92541610"
 
 Сертификаты используются в Azure для проверки подлинности клиентов, подключающихся к виртуальной сети с помощью подключения "точка — сеть". После получения корневого сертификата необходимо [отправить](#uploadfile) сведения об открытом ключе в Azure. После этого действия корневой сертификат считается "доверенным" в Azure для подключения к виртуальной сети через подключение типа "точка — сеть". Необходимо также создать сертификат клиента на основе доверенного корневого сертификата, а затем установить их на каждом клиентском компьютере. Сертификат клиента используется для проверки подлинности клиента, когда он инициирует подключение к виртуальной сети. 
 
-### <a name="1-obtain-the-cer-file-for-the-root-certificate"></a><a name="getcer"></a>1. получите CER файл для корневого сертификата.
+### <a name="1-root-certificate"></a><a name="getcer"></a>1. корневой сертификат
 
 [!INCLUDE [root-certificate](../../includes/vpn-gateway-p2s-rootcert-include.md)]
 
-### <a name="2-generate-a-client-certificate"></a><a name="generateclientcert"></a>2. Создание сертификата клиента
+### <a name="2-client-certificate"></a><a name="generateclientcert"></a>2. сертификат клиента
 
 [!INCLUDE [generate-client-cert](../../includes/vpn-gateway-p2s-clientcert-include.md)]
 
@@ -142,21 +142,7 @@ ms.locfileid: "92541610"
 
 ### <a name="to-connect-from-a-windows-vpn-client"></a>Подключение из VPN-клиента для Windows
 
->[!NOTE]
->Вам потребуются права администратора для клиентского компьютера Windows, с которого устанавливается подключение.
->
->
-
-1. Чтобы подключиться к виртуальной сети, откройте VPN-подключения на клиентском компьютере и найдите созданное VPN-подключение. Его имя совпадает с названием вашей виртуальной сети. Выберите **Подключиться** . Может появиться всплывающее сообщение об использовании сертификата. Выберите **продолжить** , чтобы использовать повышенные привилегии.
-
-2. На странице состояния **подключения** щелкните **Подключить** . При отображении экрана **Выбор сертификата** убедитесь, что отображается именно тот сертификат клиента, который предполагается использовать для соединения. Если это не так, используйте стрелку раскрывающегося списка, чтобы выбрать правильный сертификат, а затем нажмите кнопку **ОК** .
-
-   ![Подключение VPN-клиента к Azure](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/clientconnect.png "подключение")
-3. Теперь подключение установлено.
-
-   ![Подключение установлено](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/connected.png "подключение установлено")
-
-#### <a name="troubleshoot-windows-p2s-connections"></a>Устранение неполадок с подключением Windows типа "точка — сеть"
+[!INCLUDE [Connect from a Windows client](../../includes/vpn-gateway-p2s-connect-windows-client.md)]
 
 [!INCLUDE [verifies client certificates](../../includes/vpn-gateway-certificates-verify-client-cert-include.md)]
 

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: ril
 ms.reviewer: juliako
-ms.openlocfilehash: 5fdec829ceeefce2426a5fd08b4245e66bd0a08c
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 1a106874277f64a006584f9deb98fb9729263b1b
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92016677"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93040710"
 ---
 # <a name="redact-faces-with-azure-media-analytics-walkthrough"></a>Пошаговое руководство скрытия лиц с помощью аналитики мультимедиа Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "92016677"
 
 ## <a name="overview"></a>Обзор
 
-**Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure ](./legacy-components.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом](https://azure.microsoft.com/blog/azure-media-redactor/) блоге.
+**Редактор мультимедиа Azure**  — это обработчик [медиа-аналитики Azure](./legacy-components.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом](https://azure.microsoft.com/blog/azure-media-redactor/) блоге.
 
 Подробные сведения о **Azure Media Redactor** см. в разделе [Скрытие лиц с помощью медиа-аналитики Azure](media-services-face-redaction.md).
 
@@ -47,7 +47,7 @@ ms.locfileid: "92016677"
 
     Чтобы получить имя учетной записи и сведения о ключе, перейдите на [портал Azure](https://portal.azure.com/) и выберите свою учетную запись AMS. Последовательно выберите "Параметры" > "Ключи". В окне "Управление ключами" отображается имя учетной записи, а также первичный и вторичный ключи. Скопируйте значения имени учетной записи и первичного ключа.
 
-![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough001.png)
+![На снимке экрана показаны Cлужбы мультимедиа Microsoft Azure, где можно ввести имя и ключ учетной записи.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough001.png)
 
 ### <a name="first-pass--analyze-mode"></a>Первый цикл — режим анализа
 
@@ -55,32 +55,32 @@ ms.locfileid: "92016677"
 1. Щелкните правой кнопкой мыши файла мультимедиа и обработайте его, выбрав "Media Analytics" (Медиа-аналитика) > "Azure Media Redactor" > "Analyze mode" (Режим анализа). 
 
 
-![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough002.png)
+![На снимке экрана показано меню с Azure Media Redactorами процессов.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough002.png)
 
-![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough003.png)
+![На снимке экрана показан Azure Media Redactor с первым проходом: режим анализа выбран.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough003.png)
 
 Выходные данные будут содержать JSON-файл аннотаций с данными расположения лиц и JPG-файл каждого обнаруженного лица. 
 
-![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough004.png)
+![На снимке экрана показаны выходные данные анализа.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough004.png)
 
 ### <a name="second-pass--redact-mode"></a>Второй цикл — режим скрытия
 
 1. Передайте первоначальный ресурс видео в выходные данные из первого цикла и укажите в качестве основного ресурса. 
 
-    ![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough005.png)
+    ![На снимке экрана показаны основные кнопки отправки и установки.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough005.png)
 
 2. (Необязательно.) Передайте файл Dance_idlist.txt, содержащий разделенный символами новой строки список идентификаторов, который нужно скрыть. 
 
-    ![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough006.png)
+    ![На снимке экрана показан параметр для отправки текстового файла.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough006.png)
 
 3. (Необязательно.) Внесите необходимые изменения в файл annotations.json, например, увеличьте ограничивающую рамку. 
 4. Щелкните правой кнопкой мыши выходной ресурс из первого цикла, выберите "Redactor" и запустите Azure Media Redactor в режиме **Redact** (Скрытие). 
 
-    ![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough007.png)
+    ![Снимок экрана показывает Azure Media Redactor со вторым проходом: режим исправления выбран.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough007.png)
 
 5. Скачайте окончательный отредактированный выходной ресурс или поделитесь им. 
 
-    ![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough008.png)
+    ![На снимке экрана показана кнопка загрузки.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough008.png)
 
 ## <a name="azure-media-redactor-visualizer-open-source-tool"></a>Инструмент с открытым кодом Azure Media Redactor Visualizer
 
@@ -94,12 +94,12 @@ ms.locfileid: "92016677"
 
 1.  Скачайте полное решение и выполните его сборку. 
 
-    ![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough009.png)
+    ![На снимке экрана показано решение сборки, выбранное в меню.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough009.png)
 
 2.  Скачайте компонент FFMPEG [отсюда](https://ffmpeg.org/download.html). Данный проект первоначально был разработан с использованием версии be1d324 (2016-10-04) со статическим связыванием. 
 3.  Скопируйте файлы ffmpeg.exe и ffprobe.exe в ту же папку выходных данных, что и AzureMediaRedactor.exe. 
 
-    ![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough010.png)
+    ![На снимке экрана показано содержимое папки, включая FFmpeg и ффпробе.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough010.png)
 
 4. Запустите AzureMediaRedactor.exe. 
 
@@ -109,11 +109,11 @@ ms.locfileid: "92016677"
 2. Скачайте первоначальный видеофайл и выходные данные задания Redaction - Analyze. 
 3. Запустите приложение визуализатора и выберите указанные выше файлы. 
 
-    ![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough011.png)
+    ![На снимке экрана показано, Azure Media Redactor отправкой файлов.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough011.png)
 
 4. Воспользуйтесь предварительным просмотром файла. Выберите лица, которые следует размыть, с помощью боковой панели справа. 
     
-    ![Скрытие лиц](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough012.png)
+    ![Снимок экрана показывает Azure Media Redactor, где можно просмотреть и выбрать грани для размытия.](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough012.png)
 
 5.  В текстовом поле внизу появятся идентификаторы лиц. Создайте файл idlist.txt, содержащий эти идентификаторы в виде списка, разделенного символами новой строки. 
 

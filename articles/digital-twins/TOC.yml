@@ -45,12 +45,12 @@
           href: how-to-use-cli.md
         - name: Настройка экземпляра и проверки подлинности
           items:
-            - name: Версия в виде скрипта
-              href: how-to-set-up-instance-scripted.md
-            - name: Версия интерфейса командной строки
-              href: how-to-set-up-instance-cli.md
             - name: Версия для портала
               href: how-to-set-up-instance-portal.md
+            - name: Версия интерфейса командной строки
+              href: how-to-set-up-instance-cli.md
+            - name: Версия в виде скрипта
+              href: how-to-set-up-instance-scripted.md
         - name: Написание кода проверки подлинности приложения
           href: how-to-authenticate-client.md
         - name: Регистрация приложения

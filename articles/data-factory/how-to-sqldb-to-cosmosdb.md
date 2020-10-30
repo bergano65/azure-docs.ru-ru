@@ -8,12 +8,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/29/2020
 ms.author: makromer
-ms.openlocfilehash: 3d2ef6fb0cd7af444b9bff755eee4eee70d03d15
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d93cb49c77a4c8164a8b4e9bca349a805f39678
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82691903"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93041638"
 ---
 # <a name="migrate-normalized-database-schema-from-azure-sql-database-to-azure-cosmosdb-denormalized-container"></a>Перенос нормализованной схемы базы данных из базы данных SQL Azure в денормализованный контейнер Azure CosmosDB
 
@@ -50,7 +50,7 @@ FROM SalesLT.SalesOrderHeader o;
 
 2. Добавление действия потока данных
 
-3. В действии поток данных выберите **создать сопоставление поток данных**.
+3. В действии поток данных выберите **создать сопоставление поток данных** .
 
 4. Эта диаграмма потока данных будет построена ниже
 
@@ -96,11 +96,11 @@ FROM SalesLT.SalesOrderHeader o;
 
 19. В разделе параметры приемника, ключ секции ```\SalesOrderID``` и действие сбора — "повторное создание". Убедитесь, что вкладка Сопоставление выглядит следующим образом:
 
-![Параметры приемника](media/data-flow/cosmosb7.png)
+![На снимке экрана показана вкладка Сопоставление.](media/data-flow/cosmosb7.png)
 
 20. Щелкните Предварительный просмотр данных, чтобы убедиться, что следующие 32 строк отображаются в качестве новых документов в новом контейнере.
 
-![Параметры приемника](media/data-flow/cosmosb8.png)
+![На снимке экрана показана вкладка Предварительный просмотр данных.](media/data-flow/cosmosb8.png)
 
 Если все выглядит хорошо, теперь все готово для создания нового конвейера, добавления этого действия потока данных в этот конвейер и его выполнения. Можно выполнить из отладки или запуска триггера. Через несколько минут в базе данных CosmosDB должен быть новый Денормализованный контейнер заказов, именуемый "заказы".
 

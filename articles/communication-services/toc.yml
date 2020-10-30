@@ -74,6 +74,8 @@
       href: concepts/sdk-options.md
     - name: Модель ценообразования
       href: concepts/pricing.md
+    - name: Конфиденциальность
+      href: concepts/privacy.md
     - name: Аутентификация
       href: concepts/authentication.md
     - name: Обработка событий
@@ -84,7 +86,7 @@
       href: concepts/logging-and-diagnostics.md
     - name: Метрики
       href: concepts/metrics.md
-    - name: Диагностика
+    - name: Устранение неполадок
       href: concepts/troubleshooting-info.md
 - name: Примеры
   items:
