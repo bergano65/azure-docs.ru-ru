@@ -679,6 +679,8 @@
           href: data-lake-storage-best-practices.md
         - name: Ускорение запросов
           href: data-lake-storage-query-acceleration.md
+        - name: Уровень "Премиум" для Data Lake Storage
+          href: premium-tier-for-data-lake-storage.md
         - name: Architecture
           items:
             - name: Драйвер Azure Blob File System для Hadoop

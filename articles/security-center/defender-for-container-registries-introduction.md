@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 0c504ebdec524390d9deb22088979199f80e4f13
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 05d7316ceccd67a8eeb1d081843307162ff210c1
+ms.sourcegitcommit: d3c3f2ded72bfcf2f552e635dc4eb4010491eb75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275963"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92558641"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Общие сведения об Azure Defender для реестров контейнеров
 
@@ -71,6 +71,12 @@ ms.locfileid: "92275963"
 Список типов реестров контейнеров, поддерживаемых Azure Defender, см. в разделе [Доступность](defender-for-container-registries-usage.md#availability).
 
 Если вы подключите неподдерживаемые реестры к своей подписке Azure, они не будут проверяться (плата за них также не взимается).
+
+### <a name="can-i-customize-the-findings-from-the-vulnerability-scanner"></a>Можно ли настроить результаты проверки уязвимостей?
+Да. Если правила вашей организации требуют игнорировать обнаруженную проблему, а не исправлять ее, вы можете исключить ее из результатов поиска. Отключенные результаты не учитываются в оценке безопасности и не создают нежелательный шум.
+
+См. сведения о [создании правил для отключения результатов из встроенного средства оценки уязвимостей](defender-for-container-registries-usage.md#disable-specific-findings-preview).
+
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

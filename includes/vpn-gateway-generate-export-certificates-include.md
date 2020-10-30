@@ -5,22 +5,24 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/19/2020
+ms.date: 10/29/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: e85dc8c079205484db9b7b7c43a0086f69feb3be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8e3df77df53b887c4367e46b05d8a7ea4eed2f6
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80059939"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93061650"
 ---
 ## <a name="create-a-self-signed-root-certificate"></a><a name="rootcert"></a>Создание самозаверяющего корневого сертификата
 
 Используйте командлет New-SelfSignedCertificate для создания самозаверяющего корневого сертификата. Дополнительные сведения о параметре см. в разделе [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
 
 1. На компьютере под управлением Windows 10 или Windows Server 2016 откройте консоль Windows PowerShell с повышенными привилегиями. Эти примеры не запускаются через кнопку "Попробовать" в Azure Cloud Shell. Их нужно запустить локально.
-2. Используйте следующий пример для создания самозаверяющего корневого сертификата. Следующий пример создает самозаверяющий корневой сертификат P2SRootCert, который автоматически устанавливается в папку Certificates-Current User\Personal\Certificates. Этот сертификат можно просмотреть, открыв файл *certmgr.msc* или раздел *Управление сертификатами пользователей*.
+1. Используйте следующий пример для создания самозаверяющего корневого сертификата. Следующий пример создает самозаверяющий корневой сертификат P2SRootCert, который автоматически устанавливается в папку Certificates-Current User\Personal\Certificates. Этот сертификат можно просмотреть, открыв файл *certmgr.msc* или раздел *Управление сертификатами пользователей* .
+
+   Выполните вход с помощью `Connect-AzAccount` командлета. Затем выполните следующий пример с любыми необходимыми изменениями.
 
    ```powershell
    $cert = New-SelfSignedCertificate -Type Custom -KeySpec Signature `
@@ -28,7 +30,8 @@ ms.locfileid: "80059939"
    -HashAlgorithm sha256 -KeyLength 2048 `
    -CertStoreLocation "Cert:\CurrentUser\My" -KeyUsageProperty Sign -KeyUsage CertSign
    ```
- 3. Если вы хотите создать сертификат клиента сразу после создания этого корневого сертификата, Оставьте консоль PowerShell открытой.
+
+1. Оставьте консоль PowerShell открытой и перейдите к следующим шагам, чтобы создать сертификаты клиента.
 
 ## <a name="generate-a-client-certificate"></a><a name="clientcert"></a>Создание сертификата клиента
 
@@ -61,7 +64,8 @@ New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature 
    ```powershell
    Get-ChildItem -Path "Cert:\CurrentUser\My"
    ```
-2. Найдите имя субъекта в полученном списке, а затем скопируйте отпечаток, расположенный рядом с ним, в текстовый файл. В следующем примере указано два сертификата. CN-имя — это имя самозаверяющего корневого сертификата, на основе которого требуется создать дочерний сертификат. В данном случае это P2SRootCert.
+
+1. Найдите имя субъекта в полученном списке, а затем скопируйте отпечаток, расположенный рядом с ним, в текстовый файл. В следующем примере указано два сертификата. CN-имя — это имя самозаверяющего корневого сертификата, на основе которого требуется создать дочерний сертификат. В данном случае это P2SRootCert.
 
    ```
    Thumbprint                                Subject
@@ -69,7 +73,8 @@ New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature 
    AED812AD883826FF76B4D1D5A77B3C08EFA79F3F  CN=P2SChildCert4
    7181AA8C1B4D34EEDB2F3D3BEC5839F3FE52D655  CN=P2SRootCert
    ```
-3. Объявите переменную для корневого сертификата, используя отпечаток из предыдущего шага. Замените THUMBPRINT отпечатком корневого сертификата, на основе которого требуется создать дочерний сертификат.
+
+1. Объявите переменную для корневого сертификата, используя отпечаток из предыдущего шага. Замените THUMBPRINT отпечатком корневого сертификата, на основе которого требуется создать дочерний сертификат.
 
    ```powershell
    $cert = Get-ChildItem -Path "Cert:\CurrentUser\My\THUMBPRINT"
@@ -80,7 +85,8 @@ New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature 
    ```powershell
    $cert = Get-ChildItem -Path "Cert:\CurrentUser\My\7181AA8C1B4D34EEDB2F3D3BEC5839F3FE52D655"
    ```
-4. Измените и запустите пример, чтобы создать сертификат клиента. Если выполнить этот пример, не изменив его, то будет создан сертификат клиента P2SChildCert. Если требуется указать другое имя дочернего сертификата, измените значение CN. Не изменяйте TextExtension при выполнении данного примера. Сертификат клиента, который создается, автоматически устанавливается в папку Certificates - Current User\Personal\Certificates на компьютере.
+
+1. Измените и запустите пример, чтобы создать сертификат клиента. Если выполнить этот пример, не изменив его, то будет создан сертификат клиента P2SChildCert. Если требуется указать другое имя дочернего сертификата, измените значение CN. Не изменяйте TextExtension при выполнении данного примера. Сертификат клиента, который создается, автоматически устанавливается в папку Certificates - Current User\Personal\Certificates на компьютере.
 
    ```powershell
    New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature `

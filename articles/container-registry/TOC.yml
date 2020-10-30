@@ -59,6 +59,8 @@
           href: container-registry-geo-replication.md
         - name: Рекомендации по использованию реестра
           href: container-registry-best-practices.md
+        - name: Управление общедоступными образами
+          href: buffer-gate-public-content.md
     - name: Практические руководства
       expanded: false
       items:

@@ -5,32 +5,34 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 02/10/2020
+ms.date: 10/29/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 50ce8530aca40eed07741f35be1a57bbd7cc1868
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 24d146da7946176c92902698d0f52ae01baf79ee
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77133604"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93061652"
 ---
-Откройте консоль PowerShell с повышенными привилегиями.
+Если вы используете PowerShell локально, откройте консоль PowerShell с повышенными привилегиями и подключитесь к учетной записи Azure. Командлет *Connect-AzAccount* запросит учетные данные. После проверки подлинности он загрузит параметры учетной записи, чтобы они были доступны в Azure PowerShell.
 
-Если вы используете Azure PowerShell локально, подключитесь к своей учетной записи Azure. Командлет *Connect-AzAccount* запросит учетные данные. После проверки подлинности он загрузит параметры учетной записи, чтобы они были доступны в Azure PowerShell. Если вместо этого используется Azure Cloud Shell, не нужно выполнять команду *Connect-азаккаунт*. Azure Cloud Shell автоматически подключается к учетной записи Azure.
+Если вы используете Azure Cloud Shell вместо запуска PowerShell локально, вы заметите, что не нужно выполнять команду *Connect-азаккаунт* . Azure Cloud Shell автоматически подключается к учетной записи Azure после нажатия на кнопку " **попробовать** ".
 
-```azurepowershell
-Connect-AzAccount
-```
+1. Если вы используете PowerShell локально, выполните вход.
 
-Если у вас есть несколько подписок Azure, запросите их список.
+   ```azurepowershell
+   Connect-AzAccount
+   ```
 
-```azurepowershell-interactive
-Get-AzSubscription
-```
+1. Если у вас есть несколько подписок Azure, запросите их список.
 
-Укажите подписку, которую нужно использовать.
+   ```azurepowershell-interactive
+   Get-AzSubscription
+   ```
 
-```azurepowershell-interactive
-Select-AzSubscription -SubscriptionName "Name of subscription"
-```
+1. Укажите подписку, которую нужно использовать.
+
+   ```azurepowershell-interactive
+   Select-AzSubscription -SubscriptionName "Name of subscription"
+   ```

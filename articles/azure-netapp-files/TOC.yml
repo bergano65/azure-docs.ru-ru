@@ -11,7 +11,8 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Настройка Azure NetApp Files и создание тома NFS
+    - name: 'Настройка Azure NetApp Files и создание тома NFS, шаблон Resource Manager'
+      displayName: Resource Manager
       href: azure-netapp-files-quickstart-set-up-account-create-volumes.md
 - name: Основные понятия
   items:

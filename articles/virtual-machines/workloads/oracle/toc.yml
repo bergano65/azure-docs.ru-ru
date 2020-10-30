@@ -6,6 +6,8 @@
       href: oracle-vm-solutions.md
     - name: Что такое решения для запуска Oracle WebLogic Server в Виртуальных машинах Azure?
       href: oracle-weblogic.md
+    - name: Что такое решения для запуска Oracle WebLogic Server в Службе Azure Kubernetes?
+      href: weblogic-aks.md
     - name: Решения с использованием OCI
       href: oracle-oci-overview.md
 - name: Краткие руководства
