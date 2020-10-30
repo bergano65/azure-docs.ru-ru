@@ -5,12 +5,12 @@ services: container-service
 ms.custom: fasttrack-edit, references_regions, devx-track-azurecli
 ms.topic: article
 ms.date: 09/04/2020
-ms.openlocfilehash: 7d91491a2f521d974f15878791739a70a31c1bbe
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 2f7132ffa1fa55d1dfd8043677bf9695a589b7af
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745806"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93043025"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Создание кластера Службы Azure Kubernetes (AKS), который использует зоны доступности
 
@@ -52,7 +52,7 @@ ms.locfileid: "92745806"
 
 Тома, использующие управляемые диски Azure, в настоящее время не являются ресурсами, избыточными между зонами. Тома не могут быть присоединены между зонами и должны размещаться в той же зоне, что и данный узел, на котором размещен целевой модуль.
 
-Если необходимо запустить рабочие нагрузки с отслеживанием состояния, используйте допуски и элементы taint пула узлов в спецификациях pod для группировки расписания модулей pod в той же зоне, что и диски. Кроме того, можно использовать сетевое хранилище, например Файлы Azure, которые могут подключаться к модулям pod, так как они планируются между зонами.
+Kubernetes учитывает зоны доступности Azure с версии 1,12. Вы можете развернуть объект Персистентволумеклаим, ссылающийся на управляемый диск Azure в кластере AKS с несколькими зонами, и [Kubernetes позаботится о планировании](https://kubernetes.io/docs/setup/best-practices/multiple-zones/#storage-access-for-zones) любого модуля, который заявляет эту PVC в правильной зоне доступности.
 
 ## <a name="overview-of-availability-zones-for-aks-clusters"></a>Общие сведения о зонах доступности для кластеров AKS
 
@@ -120,7 +120,20 @@ Name:       aks-nodepool1-28993262-vmss000002
 
 При добавлении дополнительных узлов в пул агентов платформа Azure автоматически распределяет базовые виртуальные машины в указанных зонах доступности.
 
-Обратите внимание, что в более новых версиях Kubernetes (начиная с 1.17.0) AKS использует более новую метку `topology.kubernetes.io/zone` в дополнение к устаревшей `failure-domain.beta.kubernetes.io/zone`.
+Обратите внимание, что в более новых версиях Kubernetes (начиная с 1.17.0) AKS использует более новую метку `topology.kubernetes.io/zone` в дополнение к устаревшей `failure-domain.beta.kubernetes.io/zone`. Результат можно получить, выполнив следующий скрипт:
+
+```console
+kubectl get nodes -o custom-columns=NAME:'{.metadata.name}',REGION:'{.metadata.labels.topology\.kubernetes\.io/region}',ZONE:'{metadata.labels.topology\.kubernetes\.io/zone}'
+```
+
+Это обеспечит более сжатые выходные данные:
+
+```console
+NAME                                REGION   ZONE
+aks-nodepool1-34917322-vmss000000   eastus   eastus-1
+aks-nodepool1-34917322-vmss000001   eastus   eastus-2
+aks-nodepool1-34917322-vmss000002   eastus   eastus-3
+```
 
 ## <a name="verify-pod-distribution-across-zones"></a>Проверка распределения узлов между зонами
 

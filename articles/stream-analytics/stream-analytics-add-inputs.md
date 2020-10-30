@@ -6,13 +6,13 @@ ms.author: krishmam
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 09/23/2020
-ms.openlocfilehash: b58a2b4cb5cd083f837eb598d4e5f330783181c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/29/2020
+ms.openlocfilehash: f49ba8a907a65180061ef3973ae30b4438a945a2
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91280000"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93043006"
 ---
 # <a name="understand-inputs-for-azure-stream-analytics"></a>Общие сведения о входных данных Azure Stream Analytics
 
@@ -22,7 +22,7 @@ Stream Analytics имеет интеграцию первого класса с 
 - [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/)
 - [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/) 
 - [Хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) 
-- [Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) 
+- [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md) 
 
 Эти входные ресурсы могут находиться в той же подписке Azure, что и ваше задание Stream Analytics, либо в другой подписке.
 
@@ -37,7 +37,7 @@ Stream Analytics имеет интеграцию первого класса с 
 Дополнительные сведения о входных потоковых данных см. в статье [Подключение данных: узнайте о потоках входных данных из событий в Stream Analytics](stream-analytics-define-inputs.md).
 
 ### <a name="reference-data-input"></a>Входные справочные данные
-Stream Analytics также поддерживает входные данные, называемые *ссылочными данными*. Справочные данные являются полностью статическими и изменяются крайне редко. Они обычно используются для осуществления корреляции и поисков. Например, можно соединить входные потоковые данные со ссылочными данными так же, как вы бы выполнили соединение SQL для поиска статических значений. В настоящее время хранилище BLOB-объектов Azure, Azure Data Lake Storage 2-го поколения и база данных SQL Azure поддерживаются в качестве входных источников для ссылочных данных. Размер BLOB-объектов источника эталонных данных ограничен до 300 МБ в зависимости от сложности запроса и выделенных единиц потоковой передачи (Дополнительные сведения см. в разделе " [ограничение размера](stream-analytics-use-reference-data.md#size-limitation) " документации по ссылочным данным).
+Stream Analytics также поддерживает входные данные, называемые *ссылочными данными* . Справочные данные являются полностью статическими и изменяются крайне редко. Они обычно используются для осуществления корреляции и поисков. Например, можно соединить входные потоковые данные со ссылочными данными так же, как вы бы выполнили соединение SQL для поиска статических значений. В настоящее время хранилище BLOB-объектов Azure, Azure Data Lake Storage 2-го поколения и база данных SQL Azure поддерживаются в качестве входных источников для ссылочных данных. Размер BLOB-объектов источника эталонных данных ограничен до 300 МБ в зависимости от сложности запроса и выделенных единиц потоковой передачи (Дополнительные сведения см. в разделе " [ограничение размера](stream-analytics-use-reference-data.md#size-limitation) " документации по ссылочным данным).
 
 Дополнительные сведения о входных справочных данных см. в статье [Использование эталонных данных для уточняющих запросов в Stream Analytics](stream-analytics-use-reference-data.md).
 

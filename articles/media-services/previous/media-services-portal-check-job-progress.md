@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 879b9f965a5ee76131a65bf3151be5c6114cd20c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ba8ccf3534cbb4a93983f81095b4ef2c20d6498
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89260889"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93042780"
 ---
 # <a name="monitor-encoding-job-progress-with-the-azure-portal"></a>Мониторинг выполнения задания кодирования с помощью портала Azure
 
@@ -32,15 +32,15 @@ ms.locfileid: "89260889"
 
 При выполнении заданий часто требуется способ отслеживания хода выполнения задачи. 
 
-Чтобы отслеживать выполнение задания кодирования, в верхней части страницы щелкните элемент **Параметры**, а затем выберите пункт **Задания**.
+Чтобы отслеживать выполнение задания кодирования, в верхней части страницы щелкните элемент **Параметры** , а затем выберите пункт **Задания** .
 
-![Задания](./media/media-services-portal-vod-get-started/media-services-jobs.png)
+![Снимок экрана, показывающий "задания", выбранные в меню "Параметры".](./media/media-services-portal-vod-get-started/media-services-jobs.png)
 
 Можно щелкнуть задание для получения дополнительных сведений.
 
 ![Задания](./media/media-services-portal-vod-get-started/media-services-job-progress2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После выполнения задания кодирования можно опубликовать и воспроизвести свои ресурсы-контейнеры, как описано [здесь](media-services-portal-publish.md).
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа

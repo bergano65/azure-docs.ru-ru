@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: alzam
-ms.openlocfilehash: 57fd36366eef284e2975633fbb34549f4316cde6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8fcc79991918aecfc26933f2ef5b6e80ea7fa88c
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90988262"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93043436"
 ---
 # <a name="create-an-azure-active-directory-ad-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory (AD) для подключений по протоколу Опенвпн P2S
 
@@ -53,15 +53,15 @@ ms.locfileid: "90988262"
 
 2. Выберите концентратор, с которым вы хотите связать конфигурацию vpn-сервера, и нажмите кнопку с многоточием (...).
 
-    ![новый сайт](media/openvpn-azure-ad-tenant-multi-app/p2s4.jpg)
+    ![На снимке экрана показано, как изменить виртуальный концентратор, выбранный в меню.](media/openvpn-azure-ad-tenant-multi-app/p2s4.jpg)
 
-3. Нажмите **Изменение виртуального концентратора**.
+3. Нажмите **Изменение виртуального концентратора** .
 
-4. Установите флажок **Включить шлюз "точка — сеть"** и выберите нужную **единицу масштабирования шлюза**.
+4. Установите флажок **Включить шлюз "точка — сеть"** и выберите нужную **единицу масштабирования шлюза** .
 
-    ![новый сайт](media/openvpn-azure-ad-tenant-multi-app/p2s2.jpg)
+    ![Снимок экрана: диалоговое окно "Изменение виртуального концентратора", в котором можно выбрать единицу масштабирования шлюза.](media/openvpn-azure-ad-tenant-multi-app/p2s2.jpg)
 
-5. Введите **пул адресов**, с которого VPN клиентам будут назначаться IP адреса.
+5. Введите **пул адресов** , с которого VPN клиентам будут назначаться IP адреса.
 
 6. Щелкните **Confirm** (Подтвердить).
 
@@ -71,9 +71,9 @@ ms.locfileid: "90988262"
 
 Используйте профиль VPN для настройки клиентов.
 
-1. На странице Виртуальной глобальной сети щелкните **Конфигурация VPN пользователя**.
+1. На странице Виртуальной глобальной сети щелкните **Конфигурация VPN пользователя** .
 
-2. В верхней части страницы щелкните **Загрузить конфигурацию пользователя VPN**.
+2. В верхней части страницы щелкните **Загрузить конфигурацию пользователя VPN** .
 
 3. После завершения создания файла вы можете скачать его, щелкнув ссылку.
 
@@ -101,51 +101,51 @@ ms.locfileid: "90988262"
 
 1. На странице выберите **Import** (Импорт).
 
-    ![импорт](./media/openvpn-azure-ad-tenant-multi-app/import/import1.jpg)
+    ![Снимок экрана: импорт, выбранный из меню "плюс".](./media/openvpn-azure-ad-tenant-multi-app/import/import1.jpg)
 
 2. Перейдите к XML-файлу профиля и выберите его. Выбрав файл, выберите **Open** (Открыть).
 
-    ![импорт](./media/openvpn-azure-ad-tenant-multi-app/import/import2.jpg)
+    ![На снимке экрана показано открытое диалоговое окно, в котором можно выбрать файл.](./media/openvpn-azure-ad-tenant-multi-app/import/import2.jpg)
 
 3. Укажите имя профиля и выберите **Save** (Сохранить).
 
-    ![импорт](./media/openvpn-azure-ad-tenant-multi-app/import/import3.jpg)
+    ![На снимке экрана показано имя добавляемого подключения и выбранная кнопка Сохранить.](./media/openvpn-azure-ad-tenant-multi-app/import/import3.jpg)
 
 4. Выберите **Connect** (Подключиться), чтобы подключиться к VPN.
 
-    ![импорт](./media/openvpn-azure-ad-tenant-multi-app/import/import4.jpg)
+    ![На снимке экрана показана кнопка подключения для только что созданного подключения.](./media/openvpn-azure-ad-tenant-multi-app/import/import4.jpg)
 
 5. После подключения значок станет зеленым и выдаст **Connected** (Подключено).
 
-    ![импорт](./media/openvpn-azure-ad-tenant-multi-app/import/import5.jpg)
+    ![На снимке экрана показано подключение в состоянии "подключено" с параметром "отключить".](./media/openvpn-azure-ad-tenant-multi-app/import/import5.jpg)
 
 #### <a name="to-delete-a-client-profile"></a><a name="delete"></a>Удаление профиля клиента
 
 1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    !["Удалить"](./media/openvpn-azure-ad-tenant-multi-app/delete/delete1.jpg)
+    ![На снимке экрана показано удаление, выбранное в меню.](./media/openvpn-azure-ad-tenant-multi-app/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    !["Удалить"](./media/openvpn-azure-ad-tenant-multi-app/delete/delete2.jpg)
+    ![На снимке экрана отображается диалоговое окно подтверждения с параметром удаления или отмены.](./media/openvpn-azure-ad-tenant-multi-app/delete/delete2.jpg)
 
 #### <a name="to-diagnose-connection-issues"></a><a name="diagnose"></a>Диагностика проблем с подключением
 
 1. Для диагностики проблем с подключением можно использовать средство **Diagnose** (Диагностика). Нажмите кнопку с многоточием (...) рядом с VPN-подключением, которое нужно диагностировать, чтобы открыть меню. Затем выберите **Diagnose** (Диагностика).
 
-    ![diagnose](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose1.jpg)
+    ![На снимке экрана показана диагностика, выбранная в меню.](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose1.jpg)
 
 2. На странице **Connection Properties** (Свойства подключения) выберите **Run Diagnosis** (Выполнить диагностику).
 
-    ![diagnose](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose2.jpg)
+    ![На снимке экрана показана кнопка запустить диагностику для соединения.](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose2.jpg)
 
 3. Войдите с помощью своих учетных данных.
 
-    ![diagnose](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose3.jpg)
+    ![Снимок экрана, показывающий диалоговое окно входа для этого действия.](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose3.jpg)
 
 4. Просмотр результатов диагностики.
 
-    ![diagnose](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose4.jpg)
+    ![На снимке экрана показаны результаты диагностики.](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose4.jpg)
 
 ## <a name="10-view-your-virtual-wan"></a><a name="viewwan"></a>10. Просмотр виртуальной глобальной сети
 
