@@ -7,18 +7,19 @@ ms.topic: how-to
 ms.date: 06/11/2019
 ms.author: tvoellm
 ms.reviewer: sngun
-ms.openlocfilehash: 3f787840422e61d6f43081d991ffc3ef28da6976
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: a25cd2c0a9205dc184640e95f122c770b29cf24a
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92486537"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93073253"
 ---
 # <a name="certificate-based-authentication-for-an-azure-ad-identity-to-access-keys-from-an-azure-cosmos-db-account"></a>Проверка подлинности на основе сертификата для удостоверения Azure AD для доступа к ключам из учетной записи Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Проверка подлинности на основе сертификатов позволяет выполнить проверку подлинности клиентского приложения с помощью Azure Active Directory (Azure AD) на основе сертификата клиента. Вы можете выполнить проверку подлинности на основе сертификатов на компьютере, где требуется идентификатор, например на локальном компьютере или виртуальной машине в Azure. После этого приложение сможет считывать ключи Azure Cosmos DB без ключей непосредственно в приложении. В этой статье описывается, как создать пример приложения Azure AD, настроить его для проверки подлинности на основе сертификата, войти в Azure с помощью нового удостоверения приложения, а затем получить ключи из учетной записи Azure Cosmos. В этой статье используется Azure PowerShell для настройки удостоверений и предоставляется пример приложения на C#, которое проверяет подлинность ключей и обращается к ключам из учетной записи Azure Cosmos.  
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите [последнюю версию](/powershell/azure/install-az-ps) Azure PowerShell.
 
@@ -30,7 +31,7 @@ ms.locfileid: "92486537"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. Откройте панель **Active Directory** Azure, перейдите в область **Регистрация приложений** и выберите **Новая регистрация**. 
+1. Откройте панель **Active Directory** Azure, перейдите в область **Регистрация приложений** и выберите **Новая регистрация** . 
 
    :::image type="content" source="./media/certificate-based-authentication/new-app-registration.png" alt-text="Регистрация нового приложения в Active Directory":::
 
@@ -44,7 +45,7 @@ ms.locfileid: "92486537"
 
 1. Нажмите кнопку **зарегистрировать** после заполнения формы.
 
-1. После регистрации приложения запишите **идентификатор приложения (клиента)** и **идентификатор объекта**. Эти сведения будут использоваться в следующих шагах. 
+1. После регистрации приложения запишите **идентификатор приложения (клиента)** и **идентификатор объекта** . Эти сведения будут использоваться в следующих шагах. 
 
    :::image type="content" source="./media/certificate-based-authentication/get-app-object-ids.png" alt-text="Регистрация нового приложения в Active Directory":::
 
@@ -107,7 +108,7 @@ New-AzureADApplicationKeyCredential -ObjectId $application.ObjectId -CustomKeyId
 
 1. Перейдите к своей учетной записи Azure Cosmos, откройте колонку **управления доступом (IAM)** .
 
-1. Выберите **Добавить** и **добавить назначение ролей**. Добавьте sampleApp, созданный на предыдущем шаге, с ролью **участника** , как показано на следующем снимке экрана:
+1. Выберите **Добавить** и **добавить назначение ролей** . Добавьте sampleApp, созданный на предыдущем шаге, с ролью **участника** , как показано на следующем снимке экрана:
 
    :::image type="content" source="./media/certificate-based-authentication/configure-cosmos-account-with-identify.png" alt-text="Регистрация нового приложения в Active Directory":::
 
@@ -123,9 +124,9 @@ New-AzureADApplicationKeyCredential -ObjectId $application.ObjectId -CustomKeyId
 
 1. Откройте панель **Active Directory** Azure, перейдите в область **Регистрация приложений** и откройте пример приложения, созданного на предыдущем шаге. 
 
-1. Выберите **сертификаты & секреты** , а затем **отправьте сертификат**. Просмотрите файл сертификата, созданный на предыдущем шаге, чтобы отправить его.
+1. Выберите **сертификаты & секреты** , а затем **отправьте сертификат** . Просмотрите файл сертификата, созданный на предыдущем шаге, чтобы отправить его.
 
-1. Выберите **Добавить**. После отправки сертификата отображаются отпечаток, Дата начала и срок действия.
+1. Выберите **Добавить** . После отправки сертификата отображаются отпечаток, Дата начала и срок действия.
 
 ## <a name="access-the-keys-from-powershell"></a>Доступ к ключам из PowerShell
 
@@ -243,7 +244,7 @@ namespace TodoListDaemonWithCert
 Как и в предыдущем разделе, журнал действий учетной записи Azure Cosmos можно просмотреть, чтобы убедиться, что событие запроса GET Keys инициировано приложением "sampleApp". 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Защита ключей Azure Cosmos с помощью Azure Key Vault](access-secrets-from-keyvault.md)
 

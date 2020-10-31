@@ -7,14 +7,15 @@ ms.author: sngun
 ms.topic: how-to
 ms.date: 05/23/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 986db85ddbf741dc459625dbd763b9cbbba1c429
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ccd9f10bcf8be5539528be1f513f7e7dd74549e7
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85263353"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93073695"
 ---
 # <a name="connect-qlik-sense-to-azure-cosmos-db-and-visualize-your-data"></a>Подключение Qlik Sense к Azure Cosmos DB и визуализация данных
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
 
 Средство визуализации данных Qlik Sense позволяет объединить данные из разных источников в одно представление. Qlik Sense индексирует все связи в данных, чтобы вы могли оперативно получить аналитические сведения. С помощью Qlik Sense вы можете визуализировать данные из Azure Cosmos DB. В этой статье описываются шаги, необходимые для подключения Azure Cosmos DB к Qlik Sense и визуализации данных. 
 
@@ -58,7 +59,7 @@ ms.locfileid: "85263353"
 
 2. После успешного создания нового приложения выберите **Open app** (Открыть приложение) и щелкните **Add data from files and other sources** (Добавить данные из файлов и других источников). 
 
-3. В списке источников данных выберите **ODBC**, чтобы открыть окно настройки нового подключения. 
+3. В списке источников данных выберите **ODBC** , чтобы открыть окно настройки нового подключения. 
 
 4. Переключитесь в режим **User DSN** (Пользовательский DSN) и выберите созданное ранее подключение ODBC. Укажите имя подключения и щелкните **Create** (Создать). 
 

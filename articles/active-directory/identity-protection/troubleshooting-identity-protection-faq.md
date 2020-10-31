@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b8fdabc3f4f33627936eead9dda57e67c7b0da8
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 42b1c0ef42454b085c5d4dbcdc14162b2c829c6a
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040511"
+ms.locfileid: "93074820"
 ---
 # <a name="frequently-asked-questions-identity-protection-in-azure-active-directory"></a>Часто задаваемые вопросы о защите идентификации в Azure Active Directory
 
@@ -36,9 +36,6 @@ ms.locfileid: "93040511"
 
 **Отклонить все события** в классической защите идентификации задает состояние **закрытия (разрешено)** для обнаружений рисков.
 
-## <a name="risky-sign-ins-report-known-issues"></a>Рискованные входы в отчет об известных проблемах
-
-**Устранение** при обнаружении рисков устанавливает состояние для **пользователей, которые передавали MFA, управляемые политикой на основе рисков** .
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 

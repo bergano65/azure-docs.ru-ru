@@ -8,14 +8,15 @@ ms.topic: conceptual
 ms.date: 04/08/2020
 ms.reviewer: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 4cd0ad1553f04a781349a4664fbb408108015632
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d0ae81177ca8488c410e40ca56642199694c08c
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88510289"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93072658"
 ---
 # <a name="change-feed-in-azure-cosmos-db"></a>Канал изменений в Azure Cosmos DB
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Канал изменений, поддерживаемый в Azure Cosmos DB, прослушивает изменения в контейнере Azure Cosmos. Затем он выводит отсортированный список документов в порядке, в котором они были изменены. Изменения сохраняются и обрабатываются асинхронно и пошагово, а выходные данные могут распределяться в один или несколько объектов-получателей для параллельной обработки.
 
@@ -25,7 +26,7 @@ ms.locfileid: "88510289"
 
 Этот компонент сейчас поддерживается следующими API Cosmos DB и клиентскими пакетами SDK:
 
-| **Клиентские драйверы**; | **API SQL**; | **API Azure Cosmos DB для Cassandra** | **API Azure Cosmos DB для MongoDB** | **API Gremlin**;|**API таблицы**; |
+| **Клиентские драйверы** ; | **API SQL** ; | **API Azure Cosmos DB для Cassandra** | **API Azure Cosmos DB для MongoDB** | **API Gremlin** ;|**API таблицы** ; |
 | --- | --- | --- | --- | --- | --- | --- |
 | .NET | Да | Да | Да | Да | нет |
 |Java|Да|Да|Да|Да|нет|

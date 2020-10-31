@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 04/24/2020
 ms.author: maquaran
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 62a31750fe0c058624c4f69848abb56e7b5095b4
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: f7f51f6944de48e58ff53e7685164df3a04afe56
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92491025"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93075591"
 ---
 # <a name="migrate-from-the-bulk-executor-library-to-the-bulk-support-in-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки NET выполнителя в пакетную поддержку в Azure Cosmos DB пакете SDK для .NET v3
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье описываются действия, необходимые для переноса кода существующего приложения, использующего [библиотеку .NET NET выполнителя](bulk-executor-dot-net.md) , в функцию [пакетной поддержки](tutorial-sql-api-dotnet-bulk-import.md) в последней версии пакета SDK для .NET.
 
@@ -34,15 +35,15 @@ ms.locfileid: "92491025"
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="Model":::
 
-Если требуется выполнить групповое импорт (аналогично использованию BulkExecutor. Булкимпортасинк), необходимо иметь одновременные вызовы `CreateItemAsync` . Например:
+Если требуется выполнить групповое импорт (аналогично использованию BulkExecutor. Булкимпортасинк), необходимо иметь одновременные вызовы `CreateItemAsync` . Пример:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkImport":::
 
-Если требуется выполнить групповое *Обновление* (аналогично использованию [BulkExecutor. булкупдатеасинк](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkupdateasync)), необходимо иметь одновременные вызовы `ReplaceItemAsync` метода после обновления значения элемента. Например:
+Если требуется выполнить групповое *Обновление* (аналогично использованию [BulkExecutor. булкупдатеасинк](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkupdateasync)), необходимо иметь одновременные вызовы `ReplaceItemAsync` метода после обновления значения элемента. Пример:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkUpdate":::
 
-Если вы хотите выполнить групповое *Удаление* (аналогично использованию [BulkExecutor. булкделетеасинк](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkdeleteasync)), необходимо иметь одновременные вызовы `DeleteItemAsync` с `id` ключом раздела и для каждого элемента. Например:
+Если вы хотите выполнить групповое *Удаление* (аналогично использованию [BulkExecutor. булкделетеасинк](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkdeleteasync)), необходимо иметь одновременные вызовы `DeleteItemAsync` с `id` ключом раздела и для каждого элемента. Пример:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkDelete":::
 
@@ -88,7 +89,7 @@ ms.locfileid: "92491025"
 > [!NOTE]
 > В тех случаях, когда подготовленные единицы запроса значительно ниже, чем ожидалось, в зависимости от объема данных, может потребоваться задать для них высокие значения. Эта операция требует больше времени, но она имеет более высокую шансы на полное успешное завершение из-за более высоких повторных попыток.
 
-## <a name="performance-improvements"></a>Улучшения производительности
+## <a name="performance-improvements"></a>Усовершенствования в области производительности
 
 Как и в случае с другими операциями с пакетом SDK для .NET, использование интерфейсов API потока приводит к повышению производительности и позволяет избежать ненужной сериализации. 
 

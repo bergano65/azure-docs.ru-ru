@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 7/29/2020
 ms.author: tisande
-ms.openlocfilehash: 4f5e88e7201c4097e2f8d654b8780ea12816b15d
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c7d47b0bb167b3211b3859a47b0c8e11876b1614
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92485109"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93075407"
 ---
 # <a name="linq-to-sql-translation"></a>Трансляция из LINQ в SQL
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Поставщик запросов Azure Cosmos DB выполняет наилучшее сопоставление запроса LINQ с запросом на Cosmos DB SQL. Если требуется получить SQL-запрос, преобразованный из LINQ, используйте `ToString()` метод для созданного `IQueryable` объекта. Следующее описание предполагает базовое знание [LINQ](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries).
 
@@ -23,7 +24,7 @@ ms.locfileid: "92485109"
 
 - Постоянные значения, включая постоянные значения типов данных-примитивов во время оценки запроса.
   
-- Выражения индекса свойства или массива, которые ссылаются на свойство объекта или элемента массива. Например:
+- Выражения индекса свойства или массива, которые ссылаются на свойство объекта или элемента массива. Пример:
   
   ```
     family.Id;
@@ -79,19 +80,19 @@ using (FeedIterator<Book> setIterator = container.GetItemLinqQueryable<Book>()
 
 Поставщик LINQ, входящий в состав пакета SDK для SQL .NET, поддерживает следующие операторы:
 
-- **SELECT**: проекции, переводимые в [SELECT](sql-query-select.md), включая создание объектов.
-- **Где**: [фильтрует и поддерживает](sql-query-where.md)преобразование между `&&` , и `||` `!` в операторы SQL
-- **SelectMany**: позволяет очищать массивы в предложении [Join](sql-query-join.md) . Используйте, чтобы связать или вложить выражения для фильтрации элементов массива.
-- **OrderBy** и **OrderByDescending**: преобразование для [упорядочивания](sql-query-order-by.md) с ASC или DESC.
-- Операторы **Count**, **Sum**, **min**, **Max**и **Average** для [агрегирования](sql-query-aggregates.md)и их асинхронные эквиваленты **каунтасинк**, **сумасинк**, **минасинк**, **максасинк**и **аверажеасинк**.
-- **CompareTo**: выполняет преобразование в сравнение диапазонов. Обычно используется для строк, так как они не сравнимы в .NET.
-- **Пропустить** и **выполнить**: преобразуется в [смещение и ограничивает](sql-query-offset-limit.md) ограничение результатов запроса и выполнение разбиения на страницы.
-- **Математические функции**: поддерживают преобразование из .NET,,,,,,,,,,,,,,, `Abs` `Acos` `Asin` `Atan` `Ceiling` `Cos` `Exp` `Floor` `Log` `Log10` `Pow` `Round` `Sign` `Sin` `Sqrt` `Tan` и `Truncate` в эквивалентные [встроенные математические функции](sql-query-mathematical-functions.md).
-- **Строковые функции**: поддерживает преобразование из .NET,,,,,,,,,,, `Concat` `Contains` `Count` `EndsWith` `IndexOf` `Replace` `Reverse` `StartsWith` `SubString` `ToLower` `ToUpper` `TrimEnd` и `TrimStart` в эквивалентные [встроенные строковые функции](sql-query-string-functions.md).
-- **Функции массивов**: поддерживает преобразование из .NET `Concat` , `Contains` и `Count` в эквивалентные [встроенные функции массивов](sql-query-array-functions.md).
-- **Функции геопространственных расширений**: поддерживает преобразование из методов-заглушек `Distance` ,, `IsValid` `IsValidDetailed` и `Within` в эквивалентные [встроенные геопространственные функции](sql-query-geospatial-query.md).
-- **Определяемая пользователем функция расширения функции**: поддерживает преобразование из метода-заглушки `UserDefinedFunctionProvider.Invoke` в соответствующую [определяемую пользователем функцию](sql-query-udfs.md).
-- **Разное**: поддерживает преобразование `Coalesce` и условные [Операторы](sql-query-operators.md). Может преобразовывать `Contains` в строку Contains, ARRAY_CONTAINS или IN в зависимости от контекста.
+- **SELECT** : проекции, переводимые в [SELECT](sql-query-select.md), включая создание объектов.
+- **Где** : [фильтрует и поддерживает](sql-query-where.md)преобразование между `&&` , и `||` `!` в операторы SQL
+- **SelectMany** : позволяет очищать массивы в предложении [Join](sql-query-join.md) . Используйте, чтобы связать или вложить выражения для фильтрации элементов массива.
+- **OrderBy** и **OrderByDescending** : преобразование для [упорядочивания](sql-query-order-by.md) с ASC или DESC.
+- Операторы **Count** , **Sum** , **min** , **Max** и **Average** для [агрегирования](sql-query-aggregates.md)и их асинхронные эквиваленты **каунтасинк** , **сумасинк** , **минасинк** , **максасинк** и **аверажеасинк** .
+- **CompareTo** : выполняет преобразование в сравнение диапазонов. Обычно используется для строк, так как они не сравнимы в .NET.
+- **Пропустить** и **выполнить** : преобразуется в [смещение и ограничивает](sql-query-offset-limit.md) ограничение результатов запроса и выполнение разбиения на страницы.
+- **Математические функции** : поддерживают преобразование из .NET,,,,,,,,,,,,,,, `Abs` `Acos` `Asin` `Atan` `Ceiling` `Cos` `Exp` `Floor` `Log` `Log10` `Pow` `Round` `Sign` `Sin` `Sqrt` `Tan` и `Truncate` в эквивалентные [встроенные математические функции](sql-query-mathematical-functions.md).
+- **Строковые функции** : поддерживает преобразование из .NET,,,,,,,,,,, `Concat` `Contains` `Count` `EndsWith` `IndexOf` `Replace` `Reverse` `StartsWith` `SubString` `ToLower` `ToUpper` `TrimEnd` и `TrimStart` в эквивалентные [встроенные строковые функции](sql-query-string-functions.md).
+- **Функции массивов** : поддерживает преобразование из .NET `Concat` , `Contains` и `Count` в эквивалентные [встроенные функции массивов](sql-query-array-functions.md).
+- **Функции геопространственных расширений** : поддерживает преобразование из методов-заглушек `Distance` ,, `IsValid` `IsValidDetailed` и `Within` в эквивалентные [встроенные геопространственные функции](sql-query-geospatial-query.md).
+- **Определяемая пользователем функция расширения функции** : поддерживает преобразование из метода-заглушки `UserDefinedFunctionProvider.Invoke` в соответствующую [определяемую пользователем функцию](sql-query-udfs.md).
+- **Разное** : поддерживает преобразование `Coalesce` и условные [Операторы](sql-query-operators.md). Может преобразовывать `Contains` в строку Contains, ARRAY_CONTAINS или IN в зависимости от контекста.
 
 ## <a name="examples"></a>Примеры
 

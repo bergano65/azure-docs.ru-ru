@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 10/23/2020
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: be37ab43db9b5b696a619cb1539981c064b4cb0e
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 9260f2892bdcc6a694e1e54e29cb06bae90298eb
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92537802"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93074477"
 ---
 # <a name="manage-azure-cosmos-db-resources-by-using-azure-storage-explorer"></a>Управление ресурсами Azure Cosmos DB с помощью Обозреватель службы хранилища Azure
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Для подключения к Azure Cosmos DB можно использовать обозреватель службы хранилища Azure. Она позволяет подключаться к учетным записям Azure Cosmos DB, размещенным в облаках Azure и независимых, из Windows, macOS или Linux.
 

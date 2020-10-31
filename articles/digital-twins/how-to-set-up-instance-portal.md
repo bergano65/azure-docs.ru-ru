@@ -8,12 +8,12 @@ ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperfq
-ms.openlocfilehash: 2dc19432d2185b95376717c570cd3165ebc85075
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: da0eb80352409bbbbe29a80fe18a52f54540ae62
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027299"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071493"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -36,7 +36,7 @@ ms.locfileid: "93027299"
 
 :::image type="content" source= "media/how-to-set-up-instance/portal/create-resource.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
-Найдите *Azure Digital двойников* в поле поиска и выберите в результатах службу **Azure Digital двойников (Предварительная версия)** . Нажмите кнопку _создать_ , чтобы создать новый экземпляр службы.
+Найдите *Azure Digital двойников* в поле поиска и выберите службу **Digital двойников** в результатах. Нажмите кнопку _создать_ , чтобы создать новый экземпляр службы.
 
 :::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
