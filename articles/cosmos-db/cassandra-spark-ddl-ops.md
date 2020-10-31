@@ -8,14 +8,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 10/07/2020
-ms.openlocfilehash: 589114fa004c8b4479e1a14c5a99161dd972c5bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 73d31fff362807937cbd87b8e1313cf601909802
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91841107"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93092183"
 ---
 # <a name="ddl-operations-in-azure-cosmos-db-cassandra-api-from-spark"></a>Операции DDL в API Cassandra для Azure Cosmos DB из Spark
+[!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 В этой статье описывается пространство ключей и операции DDL с таблицей в API Cassandra для Azure Cosmos DB из Spark.
 
@@ -135,7 +136,7 @@ USE books_ks;
 DESCRIBE tables;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания пространства ключей и таблицы перейдите к следующим статьям об операциях CRUD и других аспектах:
  

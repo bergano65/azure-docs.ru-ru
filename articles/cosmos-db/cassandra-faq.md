@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/12/2020
 ms.author: thvankra
-ms.openlocfilehash: e38096a0c5de266be6be6a58e09a251ce28a55df
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: b467e191a8f009b85abb4866821dd64fc87ce657
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92482610"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93092387"
 ---
 # <a name="frequently-asked-questions-about-the-cassandra-api-in-azure-cosmos-db"></a>Часто задаваемые вопросы о API Cassandra в Azure Cosmos DB
+[!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 В этой статье описаны различия в функциональных возможностях Apache Cassandra и API Cassandra в Azure Cosmos DB. Здесь также содержатся ответы на часто задаваемые вопросы о API Cassandra в Azure Cosmos DB.
 
@@ -133,7 +134,7 @@ Azure Cosmos DB предоставляет гарантии производит
 
 ### <a name="how-can-i-monitor-infrastructure-along-with-throughput"></a>Как можно отслеживать инфраструктуру и пропускную способность?
 
-Служба платформы Azure Cosmos DB помогает повысить производительность и не беспокоиться об управлении инфраструктурой и ее мониторинге. Например, вам не нужно отслеживать состояние узла, состояние реплики, GC и параметры ОС ранее с помощью различных средств. Вам нужно просто проделать пропускную способность, доступную в метриках портала, чтобы узнать, выполняется ли регулирование, а затем увеличить или уменьшить эту пропускную способность. Вы можете выполнить следующие действия:
+Служба платформы Azure Cosmos DB помогает повысить производительность и не беспокоиться об управлении инфраструктурой и ее мониторинге. Например, вам не нужно отслеживать состояние узла, состояние реплики, GC и параметры ОС ранее с помощью различных средств. Вам нужно просто проделать пропускную способность, доступную в метриках портала, чтобы узнать, выполняется ли регулирование, а затем увеличить или уменьшить эту пропускную способность. Вы можете:
 
 - Мониторинг [соглашений об уровне обслуживания](./monitor-cosmos-db.md)
 - Использование [метрик](use-metrics.md)

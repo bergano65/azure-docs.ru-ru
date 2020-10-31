@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f6d5a9da238c520e2e0ec70ac312dd112aad2fe8
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 335cc707cb1192d3dbf08f51e78d4e82441dd05a
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789987"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93094474"
 ---
 # <a name="configure-a-sql-server-always-on-availability-group-across-different-azure-regions"></a>Настройка группы доступности Always On SQL Server в разных регионах Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "92789987"
 
 На следующем рисунке показано типичное развертывание группы доступности на виртуальных машинах Azure.
 
-   ![Группа доступности](./media/availability-group-manually-configure-multiple-regions/00-availability-group-basic.png)
+   ![На схеме показана подсистема балансировки нагрузки Azure и группа доступности с "отказоустойчивым кластером Windows Server" и "Always On группы доступности".](./media/availability-group-manually-configure-multiple-regions/00-availability-group-basic.png)
 
 В таком развертывании все виртуальные машины находятся в одном регионе Azure. Реплики группы доступности могут использовать синхронную фиксацию с автоматической отработкой отказа на SQL-1 и SQL-2. Для создания этой архитектуры ознакомьтесь с [шаблоном группы доступности или соответствующим руководством](availability-group-overview.md).
 
@@ -53,7 +53,7 @@ ms.locfileid: "92789987"
 
 На следующей схеме показано взаимодействие сетей между центрами обработки данных.
 
-   ![Группа доступности](./media/availability-group-manually-configure-multiple-regions/01-vpngateway-example.png)
+   ![На этой схеме показаны две виртуальные сети в разных регионах Azure, взаимодействующие с помощью шлюзов V P N.](./media/availability-group-manually-configure-multiple-regions/01-vpngateway-example.png)
 
 >[!IMPORTANT]
 >Эта архитектура влечет за собой оплату исходящего трафика для данных, реплицируемых между регионами Azure. Ознакомьтесь с разделом [Сведения о стоимости пропускной способности](https://azure.microsoft.com/pricing/details/bandwidth/).  
@@ -98,7 +98,7 @@ ms.locfileid: "92789987"
 
    Для этого можно использовать диспетчер отказоустойчивости кластеров. Выберите имя кластера, затем щелкните правой кнопкой мыши имя кластера в разделе **Основные ресурсы кластера** и выберите **Свойства** . 
 
-   ![Свойства кластера](./media/availability-group-manually-configure-multiple-regions/cluster-name-properties.png)
+   ![Снимок экрана, на котором показано "диспетчер отказоустойчивости кластеров" с именем кластера, именем сервера и выбранным свойством.](./media/availability-group-manually-configure-multiple-regions/cluster-name-properties.png)
 
    В диалоговом окне **Свойства** нажмите кнопку **Добавить** внизу поля **IP-адрес** , а затем добавьте IP-адрес имени кластера из удаленного региона сети. Нажмите кнопку **ОК** в диалоговом окне **IP-адрес** , а затем еще раз нажмите кнопку **ОК** в диалоговом окне **Свойства кластера** , чтобы сохранить новый IP-адрес. 
 

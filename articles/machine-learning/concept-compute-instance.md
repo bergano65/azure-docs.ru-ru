@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: d840fe5b6fde72149893a15ab9096d3880c1c8ea
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: d4ae18b335453f3e1d3512951675afe10c804c8d
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425679"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93094427"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -25,6 +25,8 @@ ms.locfileid: "92425679"
 Используйте вычислительный экземпляр в качестве полностью настроенной и управляемой среды разработки в облаке для машинного обучения. Их также можно использовать в качестве целевого объекта вычислений для обучения и для целей разработки и тестирования.  
 
 Для обучения модели производственного уровня используйте [кластер машинное обучение Azure COMPUTE](how-to-create-attach-compute-cluster.md) с возможностями масштабирования с несколькими узлами. Для развертывания модели производственного класса используйте [кластер службы Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
+
+Для работы функциональности Jupyter экземпляра вычислительных ресурсов необходимо убедиться, что связь через веб-сокет не отключена. Убедитесь, что сеть допускает подключения WebSocket к *. instances.azureml.net и *. instances.azureml.ms.
 
 ## <a name="why-use-a-compute-instance"></a>Зачем использовать вычислительный экземпляр?
 
@@ -82,7 +84,7 @@ ms.locfileid: "92425679"
 |Пакеты ONNX|`keras2onnx`</br>`onnx`</br>`onnxconverter-common`</br>`skl2onnx`</br>`onnxmltools`|
 |Образцы SDK Python и R для Машинного обучения Azure||
 
-Все пакеты Python устанавливаются в среде **Python 3.6 — AzureML**.  
+Все пакеты Python устанавливаются в среде **Python 3.6 — AzureML** .  
 
 ## <a name="accessing-files"></a>Доступ к файлам
 
@@ -100,7 +102,7 @@ ms.locfileid: "92425679"
 
 ## <a name="managing-a-compute-instance"></a>Управление вычислительным экземпляром
 
-В рабочей области в студии Машинного обучения Azure выберите **Вычисление**, а затем вверху выберите **Вычислительный экземпляр**.
+В рабочей области в студии Машинного обучения Azure выберите **Вычисление** , а затем вверху выберите **Вычислительный экземпляр** .
 
 ![Управление вычислительным экземпляром](./media/concept-compute-instance/manage-compute-instance.png)
 

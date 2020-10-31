@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 08/21/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 66314155a8de5036009b8e42bf84a8ae8860d0ea
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 25c171cf20d86244958dbeb4565760115d6d7075
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92278958"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93092421"
 ---
 # <a name="migrate-data-from-cassandra-to-azure-cosmos-db-cassandra-api-account-using-blitzz"></a>Перенос данных из Cassandra в учетную запись API Cassandra Azure Cosmos DB с помощью Блитзз
+[!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 API Cassandra в Azure Cosmos DB стали отличным выбором для корпоративных рабочих нагрузок, работающих на Apache Cassandra, по различным причинам: 
 
@@ -96,7 +97,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
    Уменьшите пропускную способность после завершения миграции. В зависимости от объема хранимых данных и числа получателей, необходимых для каждой операции, можно оценить пропускную способность, необходимую после переноса данных. Дополнительные сведения о том, как оценить требуемый метод RUs, см. в статьях [предоставление пропускной способности для контейнеров и баз данных](set-throughput.md) и [Оценка единиц запросов в секунду с помощью планировщика ресурсов Azure Cosmos DB](estimate-ru-with-capacity-planner.md) .
 
-1. Получите **контактную точку, порт, имя пользователя**и **первичный пароль** учетной записи Azure Cosmos на панели **строка подключения** . Эти значения будут использоваться в файле конфигурации.
+1. Получите **контактную точку, порт, имя пользователя** и **первичный пароль** учетной записи Azure Cosmos на панели **строка подключения** . Эти значения будут использоваться в файле конфигурации.
 
 1. В окне терминала CLI настройте конфигурацию целевой базы данных. Откройте файл конфигурации с помощью **`vi conf/conn/cosmosdb.yml`** команды и добавьте разделенный запятыми список URI узла, номер порта, имя пользователя, пароль и другие необходимые параметры. В следующем примере показано содержимое файла конфигурации:
 

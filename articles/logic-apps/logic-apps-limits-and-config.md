@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 10/09/2020
-ms.openlocfilehash: 0235b8350e21fa51d1b3fed747a11b681f125e67
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: f722345b5be91a09bc513064b476f0b94eda765d
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540726"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93094512"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -81,7 +81,7 @@ ms.locfileid: "92540726"
 
 1. По завершении на панели инструментов **Параметры рабочего процесса** нажмите кнопку **Сохранить** .
 
-При создании шаблона Azure Resource Manager для приложения логики этот параметр отображается как свойство в определении ресурса рабочего процесса, которое описывается в [справочнике по шаблонам рабочих процессов Microsoft. Logic](/templates/microsoft.logic/workflows):
+При создании шаблона Azure Resource Manager для приложения логики этот параметр отображается как свойство в определении ресурса рабочего процесса, которое описывается в [справочнике по шаблонам рабочих процессов Microsoft. Logic](/azure/templates/microsoft.logic/workflows):
 
 ```json
 {

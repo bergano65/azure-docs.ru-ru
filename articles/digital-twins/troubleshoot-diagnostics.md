@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/28/2020
 ms.topic: troubleshooting
 ms.service: digital-twins
-ms.openlocfilehash: f4abf78c153bd3d61068e4b7607794d6ccf1ed04
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 11a7b4876c773922d4b0ed28f7047912b738ee6a
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047681"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93091741"
 ---
 # <a name="troubleshooting-azure-digital-twins-diagnostics-logging"></a>Устранение неполадок в Azure Digital двойников: ведение журнала диагностики
 
@@ -26,13 +26,13 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 
 1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к своему экземпляру Azure Digital двойников. Его можно найти, введя его имя на панели поиска портала. 
 
-2. Выберите **параметры диагностики** в меню и **добавьте параметр диагностики**.
+2. Выберите **параметры диагностики** в меню и **добавьте параметр диагностики** .
 
     :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой &quot;Добавить&quot;":::
 
 3. На следующей странице введите следующие значения:
-     * **Имя параметра диагностики**: задайте имя для параметров диагностики.
-     * **Сведения о категории**: выберите операции, которые требуется отслеживать, и установите флажки, чтобы включить диагностику для этих операций. Ниже перечислены операции, для которых доступны параметры диагностики:
+     * **Имя параметра диагностики** : задайте имя для параметров диагностики.
+     * **Сведения о категории** : выберите операции, которые требуется отслеживать, и установите флажки, чтобы включить диагностику для этих операций. Ниже перечислены операции, для которых доступны параметры диагностики:
         - дигиталтвинсоператион
         - евентраутесоператион
         - моделсоператион
@@ -40,7 +40,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
         - AllMetrics
         
         Дополнительные сведения об этих параметрах см. в разделе [*сведения о категории*](#category-details) ниже.
-     * **Сведения о назначении**: выберите, куда вы хотите отправить журналы. Можно выбрать любое сочетание трех параметров:
+     * **Сведения о назначении** : выберите, куда вы хотите отправить журналы. Можно выбрать любое сочетание трех параметров:
         - Отправка в Log Analytics
         - "Архивировать в учетной записи хранения";
         - "Передать в концентратор событий";
@@ -70,7 +70,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 | --- | --- |
 | запись | РАЗМЕЩЕНИЕ и исправление |
 | Чтение | GET |
-| DELETE | DELETE |
+| Удалить | DELETE |
 | Действие | POST |
 
 Ниже приведен полный список операций и соответствующих [вызовов Azure Digital двойников REST API](/rest/api/azure-digitaltwins/) , зарегистрированных в каждой категории. 
@@ -132,7 +132,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
   "time": "2020-03-14T21:11:14.9918922Z",
   "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
   "operationName": "Microsoft.DigitalTwins/digitaltwins/write",
-  "operationVersion": "2020-05-31-preview",
+  "operationVersion": "2020-10-31",
   "category": "DigitalTwinOperation",
   "resultType": "Success",
   "resultSignature": "200",
@@ -142,7 +142,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
   "correlationId": "2f6a8e64-94aa-492a-bc31-16b9f0b16ab3",
   "level": "4",
   "location": "southcentralus",
-  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/digitaltwins/factory-58d81613-2e54-4faa-a930-d980e6e2a884?api-version=2020-05-31-preview"
+  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/digitaltwins/factory-58d81613-2e54-4faa-a930-d980e6e2a884?api-version=2020-10-31"
 }
 ```
 
@@ -153,7 +153,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
   "time": "2020-10-29T21:12:24.2337302Z",
   "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
   "operationName": "Microsoft.DigitalTwins/models/write",
-  "operationVersion": "2020-05-31-preview",
+  "operationVersion": "2020-10-31",
   "category": "ModelsOperation",
   "resultType": "Success",
   "resultSignature": "201",
@@ -163,7 +163,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
   "correlationId": "9dcb71ea-bb6f-46f2-ab70-78b80db76882",
   "level": "4",
   "location": "southcentralus",
-  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/Models?api-version=2020-05-31-preview",
+  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/Models?api-version=2020-10-31",
 }
 ```
 
@@ -174,7 +174,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
   "time": "2020-12-04T21:11:44.1690031Z",
   "resourceId": "/SUBSCRIPTIONS/BBED119E-28B8-454D-B25E-C990C9430C8F/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.DIGITALTWINS/DIGITALTWINSINSTANCES/MYINSTANCENAME",
   "operationName": "Microsoft.DigitalTwins/query/action",
-  "operationVersion": "2020-05-31-preview",
+  "operationVersion": "2020-10-31",
   "category": "QueryOperation",
   "resultType": "Success",
   "resultSignature": "200",
@@ -184,7 +184,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
   "correlationId": "1ee2b6e9-3af4-4873-8c7c-1a698b9ac334",
   "level": "4",
   "location": "southcentralus",
-  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/query?api-version=2020-05-31-preview",
+  "uri": "https://myinstancename.api.scus.digitaltwins.azure.net/query?api-version=2020-10-31",
 }
 ```
 

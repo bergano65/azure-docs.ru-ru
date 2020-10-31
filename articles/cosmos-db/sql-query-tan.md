@@ -7,14 +7,16 @@ ms.topic: conceptual
 ms.date: 03/04/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 9d7187ba116067445e835769fc33aa70677ef80b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 39bca0406b6e2f70de67a4fbbd48f346a6207ad0
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78301987"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93094036"
 ---
 # <a name="tan-azure-cosmos-db"></a>TAN (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
+
  Возвращает тангенс заданного угла в радианах для указанного выражения.  
   
 ## <a name="syntax"></a>Синтаксис

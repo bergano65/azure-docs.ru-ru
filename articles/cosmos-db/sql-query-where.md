@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/06/2020
 ms.author: tisande
-ms.openlocfilehash: ceffb203ccc2cca1ff6e1c53644cde955c2e0acb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f1698390e759a4f347ed37157ca6b7073c44607
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86523508"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93093526"
 ---
 # <a name="where-clause-in-azure-cosmos-db"></a>Предложение WHERE в Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Необязательное предложение WHERE ( `WHERE <filter_condition>` ) указывает условия, которым должны соответствовать исходные элементы JSON, чтобы запрос включал их в результаты. Элемент JSON должен оценивать указанные условия, чтобы `true` считаться результатом. Слой индекса использует предложение WHERE для определения наименьшего подмножества исходных элементов, которые могут быть частью результата.
   
@@ -35,7 +36,7 @@ WHERE <filter_condition>
   
    Выражение, представляющее вычисляемое значение. Дополнительные сведения см. в разделе [скалярные выражения](sql-query-scalar-expressions.md) .  
   
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
   
   Чтобы вернуть документ, выражение, указанное в качестве условия фильтра, должно иметь значение true. Условие будет соответствовать только логическому значению `true` , любое другое значение: undefine, null, false, Number, Array или Object не будет соответствовать условию.
 

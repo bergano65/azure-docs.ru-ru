@@ -4,12 +4,12 @@ description: Создание первого приложения-контейн
 ms.topic: conceptual
 ms.date: 1/4/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: b9e22ada3da572d5025f56fca824089bb6e20465
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d085f8704850cdbb03e21b15b3cca7c8998b96fb
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90563715"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93092948"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -64,7 +64,7 @@ CMD ["python", "app.py"]
 Дополнительные сведения см. в [справочнике по Dockerfile](https://docs.docker.com/engine/reference/builder/).
 
 ## <a name="create-a-basic-web-application"></a>Создание базового веб-приложения
-Создайте веб-приложение Flask, ожидающее передачи данных в порт 80, возвращающее строку Hello, World!. В том же каталоге создайте файл *requirements.txt*. Добавьте следующее и сохраните изменения:
+Создайте веб-приложение Flask, ожидающее передачи данных в порт 80, возвращающее строку Hello, World!. В том же каталоге создайте файл *requirements.txt* . Добавьте следующее и сохраните изменения:
 ```
 Flask
 ```
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 ```
 
 ## <a name="build-the-image"></a>Создание образа
-Выполните команду `docker build`, чтобы создать образ, который запускает веб-приложение. Откройте окно PowerShell и перейдите в каталог *c:\temp\helloworldapp*. Выполните следующую команду:
+Выполните команду `docker build`, чтобы создать образ, который запускает веб-приложение. Откройте окно PowerShell и перейдите в каталог *c:\temp\helloworldapp* . Выполните следующую команду:
 
 ```bash
 docker build -t helloworldapp .
@@ -156,7 +156,7 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 ```
 
 ## <a name="package-the-docker-image-with-yeoman"></a>Упаковка образа Docker с помощью Yeoman
-Пакет SDK Service Fabric для Linux включает в себя генератор [Yeoman](https://yeoman.io/), который упрощает создание приложения и добавление образа контейнера. Воспользуемся Yeoman, чтобы создать приложение с одним контейнером Docker — *SimpleContainerApp*.
+Пакет SDK Service Fabric для Linux включает в себя генератор [Yeoman](https://yeoman.io/), который упрощает создание приложения и добавление образа контейнера. Воспользуемся Yeoman, чтобы создать приложение с одним контейнером Docker — *SimpleContainerApp* .
 
 Чтобы создать приложение-контейнер Service Fabric, откройте окно терминала и выполните `yo azuresfcontainer`. 
 
@@ -209,11 +209,11 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 
 ## <a name="configure-docker-healthcheck"></a>Настройка инструкции HEALTHCHECK в Docker 
 
-Начиная с версии 6.1 Service Fabric автоматически интегрирует события [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) в отчеты о работоспособности системы. Это означает, что если в вашем контейнере включена инструкция **HEALTHCHECK**, то Service Fabric будет отправлять отчет о работоспособности при каждом изменении состояния контейнера согласно сведениям Docker. В [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) будет отображаться состояние работоспособности **ОК**, если значение *health_status* равно *healthy*. Если же значение *health_status* равно *unhealthy*, отобразится **предупреждение**. 
+Начиная с версии 6.1 Service Fabric автоматически интегрирует события [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) в отчеты о работоспособности системы. Это означает, что если в вашем контейнере включена инструкция **HEALTHCHECK** , то Service Fabric будет отправлять отчет о работоспособности при каждом изменении состояния контейнера согласно сведениям Docker. В [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) будет отображаться состояние работоспособности **ОК** , если значение *health_status* равно *healthy* . Если же значение *health_status* равно *unhealthy* , отобразится **предупреждение** . 
 
 Начиная с последнего обновления версии 6.4, вы можете указать, что оценки DOCKER HEALTHCHECK должны выводиться как ошибки. Если этот параметр включен, появится отчет о работоспособности **ОК** , если *health_status* *работоспособен* и при *неработоспособности* *health_status* появится **сообщение об ошибке** .
 
-В файле Dockerfile, который используется при создании образа контейнера, должна содержаться инструкция **HEALTHCHECK**, указывающая на фактическую проверку для отслеживания работоспособности контейнера.
+В файле Dockerfile, который используется при создании образа контейнера, должна содержаться инструкция **HEALTHCHECK** , указывающая на фактическую проверку для отслеживания работоспособности контейнера.
 
 ![На снимке экрана показаны сведения о развернутом пакете службы Нодесервицепаккаже.][1]
 
@@ -235,13 +235,13 @@ docker push myregistry.azurecr.io/samples/helloworldapp
     </Policies>
 </ServiceManifestImport>
 ```
-По умолчанию *инклудедоккерхеалсстатусинсистемхеалсрепорт* имеет значение **true**, *RestartContainerOnUnhealthyDockerHealthStatus* имеет значение **false**, а *треатконтаинерунхеалсистатусасеррор* — **значение false**. 
+По умолчанию *инклудедоккерхеалсстатусинсистемхеалсрепорт* имеет значение **true** , *RestartContainerOnUnhealthyDockerHealthStatus* имеет значение **false** , а *треатконтаинерунхеалсистатусасеррор* — **значение false** . 
 
-Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true**, контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
+Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true** , контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
 
-Если для *треатконтаинерунхеалсистатусасеррор* задано **значение true**, отчеты о работоспособности **ошибок** отобразятся, когда *health_status* контейнера *неработоспособен*.
+Если для *треатконтаинерунхеалсистатусасеррор* задано **значение true** , отчеты о работоспособности **ошибок** отобразятся, когда *health_status* контейнера *неработоспособен* .
 
-Если вы хотите отключить интеграцию с **HEALTHCHECK** во всем кластере Service Fabric, задайте для [EnableDockerHealthCheckIntegration](service-fabric-cluster-fabric-settings.md) значение **false**.
+Если вы хотите отключить интеграцию с **HEALTHCHECK** во всем кластере Service Fabric, задайте для [EnableDockerHealthCheckIntegration](service-fabric-cluster-fabric-settings.md) значение **false** .
 
 ## <a name="deploy-the-application"></a>Развертывание приложения
 Созданное приложение можно развернуть в локальном кластере с помощью интерфейса командной строки Service Fabric.
@@ -413,7 +413,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
           },
           {
                 "name": "ContainerImagesToSkip",
-                "value": "microsoft/windowsservercore|microsoft/nanoserver|microsoft/dotnet-frameworku|..."
+                "value": "mcr.microsoft.com/windows/servercore|mcr.microsoft.com/windows/nanoserver|mcr.microsoft.com/dotnet/framework/aspnet|..."
           }
           ...
           }
@@ -442,7 +442,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ## <a name="set-container-retention-policy"></a>Настройка политики хранения контейнера
 
-Чтобы упростить процесс диагностики сбоев при запуске контейнеров, Service Fabric (версии 6.1 и выше) поддерживает хранение контейнеров, работа которых завершилась или при запуске которых произошел сбой. Эту политику можно настроить в файле **ApplicationManifest.xml**, как показано в следующем фрагменте кода:
+Чтобы упростить процесс диагностики сбоев при запуске контейнеров, Service Fabric (версии 6.1 и выше) поддерживает хранение контейнеров, работа которых завершилась или при запуске которых произошел сбой. Эту политику можно настроить в файле **ApplicationManifest.xml** , как показано в следующем фрагменте кода:
 
 ```xml
  <ContainerHostPolicies CodePackageRef="NodeService.Code" Isolation="process" ContainersRetentionCount="2"  RunInteractive="true"> 
@@ -452,7 +452,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ## <a name="start-the-docker-daemon-with-custom-arguments"></a>Запуск управляющей программы Docker с пользовательскими аргументами
 
-Используя среду выполнения Service Fabric версии 6.2 и выше, можно запустить управляющую программу Docker с пользовательскими аргументами. Если пользовательские аргументы указаны, Service Fabric не передает никакие другие аргументы модулю Docker, кроме аргумента `--pidfile`. Таким образом, не нужно передавать `--pidfile` в качестве аргумента. Кроме того, аргумент должен поддерживать прослушивание модулем Docker стандартного конвейера имен Windows (или сокета домена Unix в Linux), обеспечивая обмен данными между Service Fabric и управляющей программой. Пользовательские аргументы определяются в манифесте кластера в блоке **Размещение** раздела **ContainerServiceArguments**, как показано в следующем фрагменте: 
+Используя среду выполнения Service Fabric версии 6.2 и выше, можно запустить управляющую программу Docker с пользовательскими аргументами. Если пользовательские аргументы указаны, Service Fabric не передает никакие другие аргументы модулю Docker, кроме аргумента `--pidfile`. Таким образом, не нужно передавать `--pidfile` в качестве аргумента. Кроме того, аргумент должен поддерживать прослушивание модулем Docker стандартного конвейера имен Windows (или сокета домена Unix в Linux), обеспечивая обмен данными между Service Fabric и управляющей программой. Пользовательские аргументы определяются в манифесте кластера в блоке **Размещение** раздела **ContainerServiceArguments** , как показано в следующем фрагменте: 
  
 
 ```json
@@ -468,7 +468,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).
 * Ознакомьтесь с руководством [Развертывание приложения-контейнера .NET в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

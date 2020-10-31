@@ -7,14 +7,15 @@ ms.topic: conceptual
 ms.date: 08/18/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 9d4b5179ea08d5d6eca03422db7dfc7c8c4b5c3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c4a37206187d4b042bb69c065310f3a55fd51e37
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88608840"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93093849"
 ---
 # <a name="timestamptodatetime-azure-cosmos-db"></a>Тиместамптодатетиме (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Преобразует указанное значение метки времени в дату и время.
   
@@ -41,14 +42,14 @@ TimestampToDateTime (<Timestamp>)
   |DD|четырехзначный день месяца (от 01 до 31)|
   |T|обозначает начало элементов времени|
   |hh|час с двумя цифрами (от 00 до 23)|
-  |ММ|двузначное число минут (от 00 до 59)|
-  |сс|двузначное число секунд (от 00 до 59)|
+  |mm|двузначное число минут (от 00 до 59)|
+  |ss|двузначное число секунд (от 00 до 59)|
   |. fffffff|семь цифр в долях секунды|
   |Z|Обозначение времени в формате UTC (Универсальное координированное время)||
   
   Дополнительные сведения о формате ISO 8601 см. в разделе [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Тиместамптодатетиме будет возвращать `undefined` значение, если указана недопустимая метка времени.
 

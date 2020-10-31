@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: sngun
-ms.openlocfilehash: 08cc3b08611947ac32973b2dfb01060140dc0798
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 683fc553e7712e2a760a0af1b601207cb20f2f55
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743902"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93092812"
 ---
 # <a name="how-to-audit-azure-cosmos-db-control-plane-operations"></a>Аудит операций Azure Cosmos DB плоскости управления
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Плоскость управления в Azure Cosmos DB — это служба RESTFUL, которая позволяет выполнять различные операции с учетной записью Azure Cosmos. Она предоставляет доступ к модели открытого ресурса (например, базе данных, учетной записи) и различным операциям конечным пользователям для выполнения действий с моделью ресурсов. Операции плоскости управления включают изменения в учетную запись или контейнер Azure Cosmos. Например, такие операции, как создание учетной записи Azure Cosmos, добавление региона, пропускная способность обновления, регион отработки отказа, Добавление виртуальной сети и т. д. — это некоторые операции плоскости управления. В этой статье объясняется, как выполнять аудит операций плоскости управления в Azure Cosmos DB. Вы можете выполнять операции плоскости управления в учетных записях Cosmos Azure с помощью Azure CLI, PowerShell или портал Azure, в то время как контейнеры используют Azure CLI или PowerShell.
 
@@ -170,29 +171,29 @@ ms.locfileid: "91743902"
 Ниже приведены некоторые примеры получения журналов диагностики для операций управления плоскостью.
 
 ```kusto
-AzureDiagnostics 
-| where Category startswith "ControlPlane"
+AzureDiagnostics 
+| where Category startswith "ControlPlane"
 | where OperationName contains "Update"
-| project httpstatusCode_s, statusCode_s, OperationName, resourceDetails_s, activityId_g
+| project httpstatusCode_s, statusCode_s, OperationName, resourceDetails_s, activityId_g
 ```
 
 ```kusto
-AzureDiagnostics 
-| where Category =="ControlPlaneRequests"
+AzureDiagnostics 
+| where Category =="ControlPlaneRequests"
 | where TimeGenerated >= todatetime('2020-05-14T17:37:09.563Z')
-| project TimeGenerated, OperationName, apiKind_s, apiKindResourceType_s, operationType_s, resourceDetails_s
+| project TimeGenerated, OperationName, apiKind_s, apiKindResourceType_s, operationType_s, resourceDetails_s
 ```
 
 ```kusto
-AzureDiagnostics 
-| where Category =="ControlPlaneRequests"
-| where  OperationName startswith "SqlContainersUpdate"
+AzureDiagnostics 
+| where Category =="ControlPlaneRequests"
+| where  OperationName startswith "SqlContainersUpdate"
 ```
 
 ```kusto
-AzureDiagnostics 
-| where Category =="ControlPlaneRequests"
-| where  OperationName startswith "SqlContainersThroughputUpdate"
+AzureDiagnostics 
+| where Category =="ControlPlaneRequests"
+| where  OperationName startswith "SqlContainersThroughputUpdate"
 ```
 
 Выполните запрос, чтобы получить идентификатор activityId и вызывающий объект, который инициировал операцию удаления контейнера:
@@ -226,7 +227,7 @@ AzureDiagnostics
 {id:skewed,indexingPolicy:{automatic:true,indexingMode:consistent,includedPaths:[{path:/*,indexes:[]}],excludedPaths:[{path:/_etag/?}],compositeIndexes:[],spatialIndexes:[]},partitionKey:{paths:[/pk],kind:Hash},defaultTtl:1000000,uniqueKeyPolicy:{uniqueKeys:[]},conflictResolutionPolicy:{mode:LastWriterWins,conflictResolutionPath:/_ts,conflictResolutionProcedure:}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Изучите Azure Monitor для Azure Cosmos DB](../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json)
 * [Monitor and debug with metrics in Azure Cosmos DB](use-metrics.md) (Мониторинг и отладка с помощью метрик в Azure Cosmos DB)

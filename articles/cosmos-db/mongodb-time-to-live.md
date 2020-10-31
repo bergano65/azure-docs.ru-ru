@@ -8,14 +8,15 @@ ms.devlang: javascript
 ms.topic: how-to
 ms.date: 12/26/2018
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: ec7f233db34b00ad3904a0bb117b2a97c6512e34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 415fed38490000cecf1eeb916c557b8b17ea70da
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322722"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93094801"
 ---
 # <a name="expire-data-with-azure-cosmos-dbs-api-for-mongodb"></a>Завершение срока действия данных с помощью API Azure Cosmos DB для MongoDB
+[!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Функция срока жизни позволяет автоматически прекращать хранение данных в базе данных. API Azure Cosmos DB для MongoDB использует основные возможности срока жизни Cosmos DB. Поддерживаются два режима: установка срока жизни по умолчанию для всей коллекции и выбор отдельных значений срока жизни для каждого документа. В API Cosmos DB для MongoDB индексы срока жизни и значения срока жизни для документов управляются с помощью [той же логики, что и в Cosmos DB](../cosmos-db/mongodb-indexing.md).
 

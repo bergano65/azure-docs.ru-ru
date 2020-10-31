@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: 358fccec56f81ee41acc2898751b8848beaeb168
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: fc60ca462a2891cc022847e056e32239f2675f70
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905640"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93094580"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard"></a>Краткое руководство. Создание и Настройка службы защиты Azure от атак DDoS Standard
 
@@ -39,7 +39,7 @@ ms.locfileid: "92905640"
 
 1. Выберите **создать ресурс** в левом верхнем углу портал Azure.
 2. Найдите термин *от атак DDoS* . Когда в результатах поиска появится **план защиты от атак DDoS** , выберите его.
-3. Нажмите кнопку **создания** .
+3. Нажмите кнопку **Создать** .
 4. Введите или выберите следующие значения, а затем щелкните **создать** :
 
     |Параметр        |Значение                                              |
@@ -85,8 +85,6 @@ ms.locfileid: "92905640"
 
 Должна быть указана виртуальная сеть _MyVnet_ . 
 
-Тестирование с помощью симуляций
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Вы можете разместить ресурсы для следующего руководства. Удалите группу ресурсов _MyResourceGroup_ , если она больше не нужна. При удалении группы ресурсов также удаляется план защиты от атак DDoS и все связанные с ним ресурсы. Если вы не планируете использовать этот план защиты от атак DDoS, следует удалить ресурсы, чтобы избежать ненужных расходов.
@@ -114,4 +112,4 @@ ms.locfileid: "92905640"
 Чтобы узнать, как просмотреть и настроить данные телеметрии для плана защиты от атак DDoS, перейдите к руководствам.
 
 > [!div class="nextstepaction"]
-> [Просмотр и настройка телеметрии защиты от атак DDoS](telemetry-monitoring-alerting.md)
+> [Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии](telemetry-monitoring-alerting.md)

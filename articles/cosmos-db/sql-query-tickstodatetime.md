@@ -7,14 +7,15 @@ ms.topic: conceptual
 ms.date: 08/18/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 89a8dba97725049b86fc6b38c09e0dd125bb48d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12d286fb5c8cf6d602d95da53ef8de376f9a49cf
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88608845"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93093866"
 ---
 # <a name="tickstodatetime-azure-cosmos-db"></a>Тиккстодатетиме (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Преобразует указанное значение тактов в тип DateTime.
   
@@ -41,14 +42,14 @@ TicksToDateTime (<Ticks>)
   |DD|четырехзначный день месяца (от 01 до 31)|
   |T|обозначает начало элементов времени|
   |hh|час с двумя цифрами (от 00 до 23)|
-  |ММ|двузначное число минут (от 00 до 59)|
-  |сс|двузначное число секунд (от 00 до 59)|
+  |mm|двузначное число минут (от 00 до 59)|
+  |ss|двузначное число секунд (от 00 до 59)|
   |. fffffff|семь цифр в долях секунды|
   |Z|Обозначение времени в формате UTC (Универсальное координированное время)||
   
   Дополнительные сведения о формате ISO 8601 см. в разделе [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Тиккстодатетиме будет возвращать, `undefined` Если указанное значение тактов недопустимо.
 

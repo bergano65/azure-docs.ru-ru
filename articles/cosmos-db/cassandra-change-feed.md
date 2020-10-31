@@ -7,14 +7,15 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 11/25/2019
 ms.author: thvankra
-ms.openlocfilehash: 16110c8f48330d60d4d0b6a2affb870ffa5e349c
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 5252993c560b30836c65bf2d395173513993c307
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92482678"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93092404"
 ---
 # <a name="change-feed-in-the-azure-cosmos-db-api-for-cassandra"></a>Веб-канал изменений в Azure Cosmos DB API для Cassandra
+[!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 Поддержка [веб-канала изменений](change-feed.md) в Azure Cosmos DB API для Cassandra доступна в предикатах запросов на языке запросов Cassandra (CQL). Используя эти условия предиката, можно запросить API веб-канала изменений. Приложения могут получать изменения, внесенные в таблицу с помощью первичного ключа (также известного как ключ секции), как это требуется в CQL. Затем можно выполнить дальнейшие действия на основе результатов. Изменения в строках таблицы фиксируются в порядке их изменения и порядке сортировки по ключу секции.
 
