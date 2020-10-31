@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/31/2017
 ms.author: mathoma
-ms.openlocfilehash: 46adbfee24ab463acdc4687c0465bbf50527a329
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: f681c6c453c9c0955092c4f1574a54ea2c9973f5
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790650"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93126657"
 ---
 # <a name="application-patterns-and-development-strategies-for-sql-server-on-azure-virtual-machines"></a>Шаблоны приложений и стратегии разработки для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -191,11 +191,11 @@ ms.locfileid: "92790650"
 
 Как показано на схеме, балансировщик нагрузки Azure распределяет трафик по нескольким виртуальным машинам, а также определяет, к какому веб-серверу или серверу приложений необходимо подключиться. Наличие нескольких экземпляров веб-серверов и серверов приложений за балансировщиком нагрузки обеспечивает высокий уровень доступности уровня представления и бизнес-уровня. Дополнительные сведения см. в разделе [Рекомендации для моделей приложений, требующих HADR SQL](#best-practices-for-application-patterns-requiring-sql-hadr).
 
-![Модели приложений с использованием облачных служб](./media/application-patterns-development-strategies/IC728013.png)
+![На схеме показаны локальные физические или виртуальные машины, подключенные к экземплярам веб-роли в виртуальной сети Azure через балансировщик нагрузки Azure.](./media/application-patterns-development-strategies/IC728013.png)
 
 Другой подход к реализации этой модели приложения состоит в использовании консолидированной веб-роли, содержащей компоненты уровня представления и бизнес-уровня, как показано на схеме ниже. Эта модель приложения подходит для приложений, которым требуется конструкция с отслеживанием состояния. Так как для веб-ролей и рабочих ролей Azure предоставляет вычислительные узлы без отслеживания состояния, мы рекомендуем реализовать логику для хранения состояний сеансов с помощью одной из следующих технологий: [Кэширование Azure](https://azure.microsoft.com/documentation/services/azure-cache-for-redis/), [Табличное хранилище Azure](../../../cosmos-db/tutorial-develop-table-dotnet.md) или [База данных SQL Azure](../../database/sql-database-paas-overview.md).
 
-![Модели приложений с использованием облачных служб](./media/application-patterns-development-strategies/IC728014.png)
+![На схеме показаны локальные физические или виртуальные машины, подключенные к объединенным экземплярам веб-роли или рабочей ролей в виртуальной сети Azure.](./media/application-patterns-development-strategies/IC728014.png)
 
 ## <a name="pattern-with-azure-virtual-machines-azure-sql-database-and-azure-app-service-web-apps"></a>Шаблон с виртуальными машинами Azure, базой данных SQL Azure и службой приложений Azure (веб-приложения)
 Основная цель этой модели приложения — показать, как в вашем решении можно объединить компоненты "инфраструктура как услуга" в Azure с компонентами "платформа как услуга" в Azure. Эта модель предназначена для базы данных SQL Azure, хранящей реляционные данные. Она не включает SQL Server на виртуальной машине Azure, который является частью предложения "инфраструктура как услуга" в Azure.

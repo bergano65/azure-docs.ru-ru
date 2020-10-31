@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 09/22/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: e791e4ca3481bc0aea931abe946751415f1e1614
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4e184f827875ebebd40ab976ef63e77ee702d49
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311824"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93126045"
 ---
 # <a name="use-a-tlsssl-certificate-in-your-code-in-azure-app-service"></a>Использование TLS/SSL-сертификата в коде в Службе приложений Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "91311824"
 
 На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
-В левой области навигации приложения выберите **Параметры TLS/SSL**, а затем выберите **Сертификаты закрытого ключа (PFX)** или **Сертификаты открытого ключа (CER)**.
+В левой области навигации приложения выберите **Параметры TLS/SSL** , а затем выберите **Сертификаты закрытого ключа (PFX)** или **Сертификаты открытого ключа (CER)** .
 
 Найдите сертификат, который вы хотите использовать, и скопируйте отпечаток.
 
@@ -49,10 +49,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ## <a name="load-certificate-in-windows-apps"></a>Загрузка сертификата в приложениях Windows
 
-`WEBSITE_LOAD_CERTIFICATES`Параметр приложения делает указанные сертификаты доступными для размещенного в Windows приложения в хранилище сертификатов Windows, и расположение зависит от [ценовой](overview-hosting-plans.md)категории:
-
-- **Изолированный** уровень в [локальной мачине\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores). 
-- Все остальные уровни — в [текущем усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores).
+`WEBSITE_LOAD_CERTIFICATES`Параметр приложения делает указанные сертификаты доступными для размещенного в Windows приложения в хранилище сертификатов Windows в [текущем усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores).
 
 В коде C# вы обращаетесь к сертификату по отпечатку сертификата. Следующий код загружает сертификат с отпечатком `E661583E8FABEF4C0BEF694CBC41C28FB81CD870`.
 
@@ -151,7 +148,7 @@ var cert = new X509Certificate2(bytes);
 > Служба приложений внедряет пути к сертификатам в контейнеры Windows в виде следующих переменных среды: `WEBSITE_PRIVATE_CERTS_PATH` `WEBSITE_INTERMEDIATE_CERTS_PATH` ,, `WEBSITE_PUBLIC_CERTS_PATH` и `WEBSITE_ROOT_CERTS_PATH` . Лучше сослаться на путь к сертификату с помощью переменных среды, а не прописано путь к сертификату в случае, если пути сертификатов изменятся в будущем.
 >
 
-Кроме того, [контейнеры Windows Server Core](configure-custom-container.md#supported-parent-images) автоматически загружают сертификаты в хранилище сертификатов в **LocalMachine\My**. Чтобы загрузить сертификаты, используйте тот же шаблон, что и для [загрузки сертификата в приложениях Windows](#load-certificate-in-windows-apps). Для контейнеров на основе Windows Nano используйте приведенные выше пути к файлам, чтобы [загрузить сертификат непосредственно из файла](#load-certificate-from-file).
+Кроме того, [контейнеры Windows Server Core](configure-custom-container.md#supported-parent-images) автоматически загружают сертификаты в хранилище сертификатов в **LocalMachine\My** . Чтобы загрузить сертификаты, используйте тот же шаблон, что и для [загрузки сертификата в приложениях Windows](#load-certificate-in-windows-apps). Для контейнеров на основе Windows Nano используйте приведенные выше пути к файлам, чтобы [загрузить сертификат непосредственно из файла](#load-certificate-from-file).
 
 В следующем коде C# показано, как загрузить открытый сертификат в приложение Linux.
 

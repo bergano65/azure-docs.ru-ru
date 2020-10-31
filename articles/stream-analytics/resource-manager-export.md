@@ -7,12 +7,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: c421c730321213a9adbf0a0043874a21ba26bb05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2afebe61c4b2998692c823e66d8fc73584ec1dc2
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906238"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93125654"
 ---
 # <a name="export-an-azure-stream-analytics-job-azure-resource-manager-template"></a>Экспорт шаблона Azure Resource Manager задания Azure Stream Analytics
 
@@ -24,7 +24,7 @@ ms.locfileid: "90906238"
 
 Перед экспортом шаблона необходимо сначала открыть существующее задание Stream Analytics в Visual Studio Code. 
 
-Чтобы экспортировать задание в локальный проект, выберите задание, которое необходимо экспортировать, в **Stream Analytics Explorer** в портал Azure. На странице **запрос** выберите **Открыть в Visual Studio**. Затем выберите **Visual Studio Code**.
+Чтобы экспортировать задание в локальный проект, выберите задание, которое необходимо экспортировать, в **Stream Analytics Explorer** в портал Azure. На странице **запрос** выберите **Открыть в Visual Studio** . Затем выберите **Visual Studio Code** .
 
 ![Открыть задание Stream Analytics в Visual Studio Code](./media/resource-manager-export/open-job-vs-code.png)
 
@@ -58,15 +58,15 @@ ms.locfileid: "90906238"
 
 Вы можете развернуть задание Azure Stream Analytics с помощью шаблонов Azure Resource Manager, созданных в предыдущем разделе.
 
-В окне PowerShell выполните следующую команду. Не забудьте реаплце *ResourceGroupName*, *TemplateFile*и *TemplateParameterFile* с фактическим именем группы ресурсов, а также полный путь к файлам *JobTemplate.js* и *JobTemplate.parameters.js* файлов в **папке развертывание** рабочей области задания.
+В окне PowerShell выполните следующую команду. Не забудьте реаплце *ResourceGroupName* , *TemplateFile* и *TemplateParameterFile* с фактическим именем группы ресурсов, а также полный путь к файлам *JobTemplate.js* и *JobTemplate.parameters.js* файлов в **папке развертывание** рабочей области задания.
 
-Если вы не настроили Azure PowerShell, выполните действия, описанные в разделе [установка Azure PowerShell модуля](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+Если вы не настроили Azure PowerShell, выполните действия, описанные в разделе [установка Azure PowerShell модуля](/powershell/azure/install-Az-ps).
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName "<your resource group>" -TemplateFile "<path to JobTemplate.json>" -TemplateParameterFile "<path to JobTemplate.parameters.json>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Тестирование Azure Stream Analytics заданий локально с входными данными в режиме реального времени с помощью Visual Studio Code](visual-studio-code-local-run-live-input.md)
 

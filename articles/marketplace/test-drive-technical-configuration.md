@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/13/2019
 author: keferna
 ms.author: keferna
-ms.openlocfilehash: 1772a61f45d88e0b63346c41d557cfddf35ab4a7
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: bf253c4e3b273bc1500e5abbd4dfc045a7909ffd
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92892627"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93125688"
 ---
 # <a name="test-drive-technical-configuration"></a>Техническая конфигурация тестового выпуска
 
@@ -50,7 +50,7 @@ ms.locfileid: "92892627"
 
 - **Продолжительность тестового выпуска** (обязательно) — укажите время, в течение которого тестовый выпуск будет оставаться активным, в часах. Тестовый выпуск автоматически завершит работу по истечении этого периода.
 
-- **Имя группы ресурсов Azure** (обязательно) — введите имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md#resource-groups), в которой будет сохранен тестовый диск приложения логики.
+- **Имя группы ресурсов Azure** (обязательно) — введите имя [группы ресурсов Azure](../azure-resource-manager/management/overview.md#resource-groups), в которой будет сохранен тестовый диск приложения логики.
 
 - **Имя приложения логики Azure** (обязательно) — введите имя приложения логики, которое назначает пользователю тестовый выпуск. Это приложение логики должно быть сохранено в группе ресурсов Azure выше.
 
@@ -60,7 +60,7 @@ ms.locfileid: "92892627"
 
 Продукты, в которых должен содержаться визуальный объект Power BI, могут использовать встроенную ссылку для совместного использования настраиваемой панели мониторинга в качестве тестового выпуска. Дополнительная техническая конфигурация не требуется. Вам нужно всего лишь отправить URL-адрес внедренного Power BI.
 
-Дополнительные сведения о настройке Power BI приложений см. в статье [что такое Power BI приложения?](https://docs.microsoft.com/power-bi/service-template-apps-overview)
+Дополнительные сведения о настройке Power BI приложений см. в статье [что такое Power BI приложения?](/power-bi/service-template-apps-overview)
 
 ## <a name="deployment-subscription-details"></a>Сведения о подписке для развертывания
 
@@ -101,6 +101,6 @@ ms.locfileid: "92892627"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-## <a name="feedback"></a>Отзывы
+## <a name="feedback"></a>Обратная связь
 
 Отправка и Просмотр отзывов для [этого продукта](https://feedback.azure.com/forums/216369-azure-marketplace)

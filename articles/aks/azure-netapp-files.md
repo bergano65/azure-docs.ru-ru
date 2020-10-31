@@ -4,12 +4,12 @@ description: Узнайте, как интегрировать Azure NetApp File
 services: container-service
 ms.topic: article
 ms.date: 10/23/2020
-ms.openlocfilehash: 78119d3d7ff83ca237c1e668785439d943dcfd14
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: bc65c3dfad4c27c1650054c6836fbbbf07a7dbf2
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900414"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93126259"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Интеграция Azure NetApp Files со службой Kubernetes Azure
 
@@ -29,7 +29,6 @@ ms.locfileid: "92900414"
 
 * Azure NetApp Files доступен только [в выбранных регионах Azure][anf-regions].
 * Прежде чем можно будет использовать Azure NetApp Files, необходимо предоставить доступ к службе Azure NetApp Files. Для применения к Access можно использовать [форму Azure NetApp Files отправки ваитлист][anf-waitlist]. Вы не можете получить доступ к службе Azure NetApp Files, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
-* Служба Azure NetApp Files должна быть создана в той же виртуальной сети, что и кластер AKS.
 * После первоначального развертывания кластера AKS поддерживается только статическая подготовка для Azure NetApp Files.
 * Чтобы использовать динамическую подготовку с Azure NetApp Files, установите и настройте [NetApp Trident](https://netapp-trident.readthedocs.io/) версии 19,07 или более поздней.
 

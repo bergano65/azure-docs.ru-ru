@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 09/11/2020
-ms.openlocfilehash: 879ea141a4621fac9e1774df64a63e9e56549012
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: a5c5d7ae4dbf1126d171c78bbd4e353f11402260
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93026961"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93126725"
 ---
 # <a name="common-questions-about-the-microsoft-commercial-marketplace"></a>Распространенные вопросы о коммерческом магазине Майкрософт
 
@@ -46,7 +46,7 @@ ms.locfileid: "93026961"
 
 ### <a name="is-there-a-listing-fee-for-the-microsoft-commercial-marketplace"></a>Предусмотрена ли оплата за публикацию предложения на коммерческой платформе Майкрософт?
 
-Нет, на нашей коммерческой платформе нет никаких затрат на публикацию предложений. Мы оставляем небольшую долю от продаж в качестве плату за транзакцию и инвестируем ее в программу вознаграждений Marketplace Rewards, инновации платформы и операции платформы. Эта плата за транзакции сокращается для предложений выгодно [Azure для совместной продажи](https://docs.microsoft.com/azure/marketplace/marketplace-co-sell) и платных предложений SaaS на AppSource, связанных с одним приложением Microsoft Teams или по крайней мере двумя надстройками Microsoft 365 (Excel, PowerPoint, Word, Outlook и SharePoint).
+Нет, на нашей коммерческой платформе нет никаких затрат на публикацию предложений. Мы оставляем небольшую долю от продаж в качестве плату за транзакцию и инвестируем ее в программу вознаграждений Marketplace Rewards, инновации платформы и операции платформы. Эта плата за транзакции сокращается для предложений выгодно [Azure для совместной продажи](./marketplace-co-sell.md) и платных предложений SaaS на AppSource, связанных с одним приложением Microsoft Teams или по крайней мере двумя надстройками Microsoft 365 (Excel, PowerPoint, Word, Outlook и SharePoint).
 
 ### <a name="how-do-i-sign-up-to-be-a-publisher-in-the-microsoft-commercial-marketplace"></a>Как зарегистрироваться для размещения предложений на коммерческой платформе Майкрософт?
 
@@ -106,7 +106,7 @@ ms.locfileid: "93026961"
 
 Разрешения *глобального администратора* Azure Active Directory (Azure AD) необходимы для создания учетных записей пользователей или прилашения гостевых учетных записей в базовый каталог. Центр партнеров применяет Azure AD к модели идентификации, а экземпляр Azure AD организации обычно управляется ИТ-специалистом или группами безопасности.
 
-Дополнительные сведения см. в статье [Назначение пользователям ролей и разрешений](https://docs.microsoft.com/partner-center/permissions-overview).
+Дополнительные сведения см. в статье [Назначение пользователям ролей и разрешений](/partner-center/permissions-overview).
 
 ### <a name="do-customers-need-a-subscription-for-microsoft-azure-cloud-services"></a>Требуется ли клиентам подписка на облачные службы Microsoft Azure?
 

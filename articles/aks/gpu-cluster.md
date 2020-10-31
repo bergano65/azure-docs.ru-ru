@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 08/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 52fd4867532832e0304a27317b21950bf131de79
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: f631f8ee022f501cb30af4aae5cf48294b9ca3c2
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900780"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93125841"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "92900780"
 
 В настоящее время использование пулов узлов с поддержкой GPU доступно только для пулов узлов Linux.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 
 В этой статье предполагается, что у вас есть кластер AKS с узлами, поддерживающими процессоры GPU. Кластер AKS должен работать на платформе Kubernetes 1.10 или более поздней версии. Если вам нужен кластер AKS, соответствующий этим требованиям, обратитесь к первой части этой статьи, чтобы [создать кластер AKS](#create-an-aks-cluster).
 
@@ -272,7 +272,7 @@ spec:
     spec:
       containers:
       - name: samples-tf-mnist-demo
-        image: microsoft/samples-tf-mnist-demo:gpu
+        image: mcr.microsoft.com/azuredocs/samples-tf-mnist-demo:gpu
         args: ["--max_steps", "500"]
         imagePullPolicy: IfNotPresent
         resources:
