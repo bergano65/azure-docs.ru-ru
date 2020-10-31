@@ -8,14 +8,15 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: ea9ab661fce1cd88bf1bdc065c2b26ccad73c30d
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 8393fb431c5148d3f4885135c90fe4d0b8970d52
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490719"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93082017"
 ---
 # <a name="find-the-request-unit-charge-for-operations-executed-in-azure-cosmos-db-gremlin-api"></a>Поиск затрат единиц запросов для операций, выполненных в Azure Cosmos DB API Gremlin
+[!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
 
 Azure Cosmos DB поддерживает многие интерфейсы API, такие как SQL, MongoDB, Cassandra, Gremlin и Таблицы. У каждого API есть собственный набор операций базы данных, начиная от простого считывания и записи точек и заканчивая сложными запросами. Каждая операция базы данных потребляет системные ресурсы. Потребление зависит от сложности операции.
 
@@ -33,9 +34,9 @@ Azure Cosmos DB поддерживает многие интерфейсы API, 
 
 1. Перейдите на панель **обозревателя данных** и выберите контейнер, с которым собираетесь работать.
 
-1. Введите допустимый запрос и нажмите кнопку **выполнить запрос Gremlin**.
+1. Введите допустимый запрос и нажмите кнопку **выполнить запрос Gremlin** .
 
-1. Выберите **Статистика запросов**, чтобы отобразилось количество ЕЗ, фактически затраченных на выполненный запрос.
+1. Выберите **Статистика запросов** , чтобы отобразилось количество ЕЗ, фактически затраченных на выполненный запрос.
 
 :::image type="content" source="./media/find-request-unit-charge/portal-gremlin-query.png" alt-text="Снимок экрана для получения Gremlin запроса на запрос в портал Azure":::
 

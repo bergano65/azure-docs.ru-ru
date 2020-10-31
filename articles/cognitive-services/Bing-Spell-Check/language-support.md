@@ -10,14 +10,19 @@ ms.subservice: bing-spell-check
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: 5ffd9f05bb429ba611a08d7985dbc9d509a9df0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b4e4eb84cecf2f68c50f0a40630cc2e6f34554f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "66390163"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93084213"
 ---
 # <a name="language-and-region-support-for-bing-spell-check-api"></a>Поддержка языков и регионов в API проверки орфографии Bing
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 В API проверки орфографии Bing поддерживаются перечисленные ниже языки (только в режиме `spell`).
 
@@ -57,7 +62,7 @@ ms.locfileid: "66390163"
 | Польский      | `pl`          |
 | Португальский (Бразилия)   | `pt-BR`|
 | Португальский (Португалия) | `pt-PT`|
-| Русский     | `ru`          |
+| русском языке     | `ru`          |
 | Испанский (Аргентина)    | `es-AR`          |
 | Испанский (Чили)     | `es-CL`          |
 | Испанский (Мексика)    | `es-MX`          |
@@ -66,7 +71,7 @@ ms.locfileid: "66390163"
 | Шведский     | `sv`          |
 | Турецкий     | `tr`          |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Страница документации по службам Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/)
 - [Страница продукта Cognitive Services](https://azure.microsoft.com/services/cognitive-services/)

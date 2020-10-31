@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: mjbrown
-ms.openlocfilehash: f8c98915ad3b682af00492acc7bc51672ec874a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c40916d975b8acabaa7083cf57259291f09b40a9
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74870740"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93082612"
 ---
 # <a name="scalar-expressions-in-azure-cosmos-db-sql-queries"></a>Скалярные выражения в запросах SQL Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 [Предложение SELECT](sql-query-select.md) поддерживает скалярные выражения. Скалярное выражение — это сочетание символов и операторов, в результате вычисления которых возвращается одно значение. Примерами скалярных выражений могут быть константы, ссылки на свойства, ссылки на элементы массива, ссылки на псевдонимы или вызовы функций. Скалярные выражения можно объединять в сложные выражения с помощью операторов.
 
@@ -55,7 +56,7 @@ ms.locfileid: "74870740"
 - `input_alias`  
   
    Представляет значение, определяемое аргументом `input_alias` в предложении `FROM`.  
-  Выражение гарантировано не может принять значение **undefined**. Значения **undefined** пропускаются.  
+  Выражение гарантировано не может принять значение **undefined** . Значения **undefined** пропускаются.  
   
 - `<scalar_expression>.property_name`  
   

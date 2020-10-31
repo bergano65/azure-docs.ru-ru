@@ -11,14 +11,19 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: scottwhi
-ms.openlocfilehash: f84c6329c2a4dd0a9ad9e81f3700c9e31de95a2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb5da2e3009ca1c50cac05d1bd1f4a8eb55d97d2
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "68883429"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93084295"
 ---
 # <a name="get-image-insights-with-the-bing-image-search-api"></a>Получение аналитических сведений об изображениях с помощью API Bing для поиска изображений
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 > [!IMPORTANT]
 > В случае использования конечной точки /images/details для получения аналитических сведений об изображении вы должны использовать [Визуальный поиск](../bing-visual-search/overview.md), так как он предоставляет более подробные аналитические сведения.

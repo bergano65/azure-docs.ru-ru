@@ -11,16 +11,21 @@ ms.topic: conceptual
 ms.date: 04/24/2018
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 862a7f6c31df7395fe225cf89ad83425e917394e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bcfd711f0a38d5993447823c31cbf7f27226ad6b
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84169990"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93084346"
 ---
 # <a name="search-for-gif-images"></a>Поиск GIF-изображений 
 
-API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.Разработчики могут интегрировать привлекательные GIF-файлы в различные сценарии общения. 
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+
+API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.  Разработчики могут интегрировать привлекательные GIF-файлы в различные сценарии общения. 
 
 Приведенный ниже URL-адрес является запросом анимационных GIF-изображений.
 ```

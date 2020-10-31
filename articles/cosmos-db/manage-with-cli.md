@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: 0b19d7681925296936fee5823f7df32e131f8bb8
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: e5e5a057d6c88e0963ab674aa7dbf2d420ff21b8
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92482661"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93083941"
 ---
 # <a name="manage-azure-cosmos-core-sql-api-resources-using-azure-cli"></a>Управление ресурсами API Azure Cosmos Core (SQL) с помощью Azure CLI
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этом руководстве приведены команды Azure CLI, позволяющие автоматизировать управление учетными записями, базами данных и контейнерами Azure Cosmos DB. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](/cli/azure/cosmosdb). Вы также можете найти несколько примеров в [Экземплярах Azure CLI для Azure Cosmos DB](cli-samples.md), в том числе и сведения о том, как создавать и управлять учетными записями, базами данных и контейнерами Cosmos DB для MongoDB, Gremlin, Cassandra и Table API.
 
@@ -21,7 +22,7 @@ ms.locfileid: "92482661"
 
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.12.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Примеры для Azure CLI для других API см. в статьях [примеры CLI для Cassandra](cli-samples-cassandra.md), [примеры CLI для API MongoDB](cli-samples-mongodb.md), примеры CLI [для Gremlin](cli-samples-gremlin.md), [примеры CLI для таблицы](cli-samples-table.md)
+Примеры Azure CLI для других интерфейсов API см. в статьях [Примеры CLI для Cassandra](cli-samples-cassandra.md), [Примеры CLI для API MongoDB](cli-samples-mongodb.md), [Примеры CLI для Gremlin](cli-samples-gremlin.md) и [Примеры CLI для таблиц](cli-samples-table.md).
 
 > [!IMPORTANT]
 > Azure Cosmos DB ресурсы не могут быть переименованы, так как это нарушает работу Azure Resource Manager с URI ресурсов.

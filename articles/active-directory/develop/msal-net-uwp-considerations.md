@@ -13,12 +13,12 @@ ms.date: 07/16/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: f716af1d50eb8a24d8ab70f784cba31f65795cb7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c71c55adbf79af780169380269b5081322f94baf
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88165912"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93083445"
 ---
 # <a name="considerations-for-using-universal-windows-platform-with-msalnet"></a>Рекомендации по использованию универсальная платформа Windows с MSAL.NET
 Разработчики приложений, использующих универсальная платформа Windows (UWP) с MSAL.NET, должны учитывать концепции, представленные в этой статье.
@@ -58,10 +58,10 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
 
 Дополнительные сведения см. в разделе [посредник веб-проверки подлинности — Fiddler](/windows/uwp/security/web-authentication-broker#fiddler).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих примерах содержатся дополнительные сведения.
 
-Образец | Платформа | Описание 
+Пример | Платформа | Описание 
 |------ | -------- | -----------|
 |[Active-Directory-DotNet-Native-UWP-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) | UWP | Клиентское приложение UWP, использующее MSAL.NET. Он обращается к Microsoft Graph для пользователя, который выполняет проверку подлинности с помощью конечной точки Azure AD 2,0. <br>![Топология](media/msal-net-uwp-considerations/topology-native-uwp.png)|
-|[Active-Directory-Xamarin-Native-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через конечную точку Azure AD 2,0. Здесь также показано, как получить доступ к Microsoft Graph и показать получившийся маркер. <br>![Топология](media/msal-net-uwp-considerations/topology-xamarin-native.png)|
+|[Active-Directory-Xamarin-Native-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Приложение Xamarin Forms, которое показывает, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через платформу Microsoft Identity. Здесь также показано, как получить доступ к Microsoft Graph и показать получившийся маркер. <br>![На этой схеме показано, как использовать MSAL для проверки подлинности личных учетных записей Майкрософт и Azure AD через платформу Microsoft Identity.](media/msal-net-uwp-considerations/topology-xamarin-native.png)|

@@ -10,14 +10,19 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 19c5c5280b8ff4fb997366375b4300958d694d6c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dbed826757e397b036a6a54ae5ee8ac493c1cc25
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89293665"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93084523"
 ---
 # <a name="frequently-asked-questions-faq-about-the-bing-image-search-api"></a>Часто задаваемые вопросы об API Bing для поиска изображений
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 Найдите ответы на часто задаваемые вопросы о понятиях, коде и сценариях, связанных с API Bing для поиска изображений для служб Microsoft Cognitive Services в Azure.
 
@@ -62,7 +67,7 @@ cors-proxy-server
 
 Такой подход также защищает ключ API от общего доступа, так как он необходим только серверному сценарию. Чтобы обеспечить авторизацию запроса, сценарий может использовать другой метод (такой как источник ссылки HTTP).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 У вас есть вопрос об отсутствующей функции или компоненте? Вы можете отправить запрос или проголосовать за них на нашем [веб-сайте User Voice](https://cognitive.uservoice.com/forums/555907-bing-search).
 

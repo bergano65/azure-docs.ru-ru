@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 57d077e1631fa89058d67ba54d72e7713db17371
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 65a19910c9aa1ed78154fb77ee86d22d40ea5b49
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747374"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93082136"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mysql"></a>Основные сведения об изменениях в корневом ЦС для базы данных Azure для MySQL
 
@@ -104,7 +104,7 @@ ms.locfileid: "92747374"
 ### <a name="4-what-is-the-impact-if-using-app-service-with-azure-database-for-mysql"></a>4. Каковы последствия использования службы приложений с базой данных Azure для MySQL?
 Для служб приложений Azure, подключающихся к базе данных Azure для MySQL, возможны два сценария, которые зависят от того, как вы используете SSL с приложением.
 *   Этот новый сертификат добавлен в службу приложений на уровне платформы. Если в приложении используются SSL-сертификаты, включенные в платформу службы приложений, никаких действий не требуется.
-*   Если вы явно включаете путь к файлу SSL-сертификата в коде, необходимо скачать новый сертификат и обновить код для использования нового сертификата. Хорошим примером этого сценария является использование пользовательских контейнеров в службе приложений в качестве общих в [документации по службе приложений](/app-service/tutorial-multi-container-app#configure-database-variables-in-wordpress.md) .
+*   Если вы явно включаете путь к файлу SSL-сертификата в коде, необходимо скачать новый сертификат и обновить код для использования нового сертификата. Хорошим примером этого сценария является использование пользовательских контейнеров в службе приложений в качестве общих в [документации по службе приложений](/azure/app-service/tutorial-multi-container-app#configure-database-variables-in-wordpress) .
 
 ### <a name="5-what-is-the-impact-if-using-azure-kubernetes-services-aks-with-azure-database-for-mysql"></a>5. Каковы последствия использования Azure Kubernetes Services (AKS) с базой данных Azure для MySQL?
 Если вы пытаетесь подключиться к базе данных Azure для MySQL с помощью Azure Kubernetes Services (AKS), она похожа на доступ из выделенной среды размещения клиентов. Инструкции см. [здесь](../aks/ingress-own-tls.md).
