@@ -7,32 +7,32 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/15/2019
-ms.openlocfilehash: 175abe54ce5476bece309bbfaf7858cd2e214f52
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c05db2d9ba184da89665a236994c851355cc2644
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187665"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93127439"
 ---
 # <a name="use-the-azure-stream-analytics-cicd-nuget-package-for-integration-and-development"></a>Использование пакета NuGet Azure Stream Analytics CI/CD для интеграции и разработки 
 В этой статье описывается, как использовать пакет NuGet Azure Stream Analytics CI/CD для настройки процесса непрерывной интеграции и развертывания.
 
-Чтобы получить поддержку MSBuild, используйте [инструменты Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio) версии 2.3.0000.0 или выше.
+Чтобы получить поддержку MSBuild, используйте [инструменты Stream Analytics для Visual Studio](./stream-analytics-quick-create-vs.md) версии 2.3.0000.0 или выше.
 
 Доступен пакет NuGet [Microsoft.Azure.Stream Analytics.CICD](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/). Он предоставляет средства MSBuild, Local Run и Deployment Tools, которые поддерживают процесс непрерывной интеграции и развертывания [Stream Analytics проектов Visual Studio](stream-analytics-vs-tools.md). 
 > [!NOTE]
 > Пакет NuGet может использоваться только с версией 2.3.0000.0 или более поздней версией средств Stream Analytics для Visual Studio. При наличии проектов, созданных в предыдущих версиях средств Visual Studio, откройте его с помощью версии 2.3.0000.0 или более поздней версии и сохраните. После этого будут включены новые возможности. 
 
-Дополнительные сведения см. в статье [Использование инструментов Azure Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio).
+Дополнительные сведения см. в статье [Использование инструментов Azure Stream Analytics для Visual Studio](./stream-analytics-quick-create-vs.md).
 
 ## <a name="msbuild"></a>MSBuild
-Как и в стандартном интерфейсе Visual Studio MSBuild, для выполнения сборки проекта имеются две возможности. Можно щелкнуть правой кнопкой мыши проект и выбрать **Собрать**. Можно также использовать **MSBuild** в пакете NuGet из командной строки.
+Как и в стандартном интерфейсе Visual Studio MSBuild, для выполнения сборки проекта имеются две возможности. Можно щелкнуть правой кнопкой мыши проект и выбрать **Собрать** . Можно также использовать **MSBuild** в пакете NuGet из командной строки.
 ```
 ./build/msbuild /t:build [Your Project Full Path] /p:CompilerTaskAssemblyFile=Microsoft.WindowsAzure.StreamAnalytics.Common.CompileService.dll  /p:ASATargetsFilePath="[NuGet Package Local Path]\build\StreamAnalytics.targets"
 
 ```
 
-При успешном выполнении сборки проекта Stream Analytics Visual Studio создаются два файла шаблона Azure Resource Manager в папке **bin/[Debug/Retail]/Deploy**: 
+При успешном выполнении сборки проекта Stream Analytics Visual Studio создаются два файла шаблона Azure Resource Manager в папке **bin/[Debug/Retail]/Deploy** : 
 
 * файл шаблона Resource Manager;
 
@@ -52,7 +52,7 @@ ms.locfileid: "86187665"
       "value": null
     },
 ```
-Узнайте, как [развернуть файл шаблона Resource Manager с помощью Azure PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy). Узнайте, как [использовать объект в качестве параметра в шаблоне Resource Manager](https://docs.microsoft.com/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
+Узнайте, как [развернуть файл шаблона Resource Manager с помощью Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md). Узнайте, как [использовать объект в качестве параметра в шаблоне Resource Manager](/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
 
 Чтобы в качестве приемника выходных данных использовать управляемое удостоверение для Azure Data Lake Storage 1-го поколения, предоставите доступ субъекту-службе с помощью PowerShell перед развертыванием в Azure. Дополнительные сведения см. в разделе о [развертывании ADLS 1-го поколения с управляемым удостоверением с помощью шаблона Resource Manager](stream-analytics-managed-identities-adls.md#resource-manager-template-deployment).
 
@@ -60,7 +60,7 @@ ms.locfileid: "86187665"
 ## <a name="command-line-tool"></a>Программа командной строки
 
 ### <a name="build-the-project"></a>Сборка проекта
-В пакете NuGet есть служебная программа командной строки, которая называется **SA.exe**. Она поддерживает сборку проекта и локальное тестирование на произвольном компьютере, которое можно использовать в процессе непрерывной интеграции и непрерывной доставки. 
+В пакете NuGet есть служебная программа командной строки, которая называется **SA.exe** . Она поддерживает сборку проекта и локальное тестирование на произвольном компьютере, которое можно использовать в процессе непрерывной интеграции и непрерывной доставки. 
 
 Файлы развертывания по умолчанию помещаются в текущем каталоге. С помощью параметра -OutputPath можно указать выходной путь.
 
@@ -70,7 +70,7 @@ ms.locfileid: "86187665"
 
 ### <a name="test-the-script-locally"></a>Тестирование сценария локально
 
-Если в проекте указаны локальные входные файлы Visual Studio, можно выполнить автоматическое тестирование сценария с помощью команды *localrun*. Выходной результат помещается в текущий каталог.
+Если в проекте указаны локальные входные файлы Visual Studio, можно выполнить автоматическое тестирование сценария с помощью команды *localrun* . Выходной результат помещается в текущий каталог.
  
 ```
 localrun -Project [ProjectFullPath]
@@ -83,7 +83,7 @@ localrun -Project [ProjectFullPath]
 ```powershell
 arm -JobTemplate <templateFilePath> -JobParameterFile <jobParameterFilePath> [-OutputFile <asaArmFilePath>]
 ```
-Пример.
+Пример
 ```powershell
 ./tools/SA.exe arm -JobTemplate "ProjectA.JobTemplate.json" -JobParameterFile "ProjectA.JobTemplate.parameters.json" -OutputFile "JobDefinition.json" 
 ```

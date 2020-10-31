@@ -11,12 +11,12 @@ author: lobrien
 ms.date: 8/25/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
-ms.openlocfilehash: 46a5f4036be2d670689f7e936a31dc63e0690ddc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de2b12bca10382d7e885626222fe463af27f9953
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91302389"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93128781"
 ---
 # <a name="publish-and-track-machine-learning-pipelines"></a>Публикация и мониторинг конвейеров машинного обучения
 
@@ -95,9 +95,148 @@ response = requests.post(published_pipeline1.endpoint,
 | `DataSetDefinitionValueAssignments` | Словарь, используемый для изменения наборов данных без повторного обучения (см. обсуждение ниже) | 
 | `DataPathAssignments` | Словарь, используемый для изменения путей к контурам без повторного обучения (см. обсуждение ниже) | 
 
+### <a name="run-a-published-pipeline-using-c"></a>Запуск опубликованного конвейера с помощью C # 
+
+В следующем коде показано, как асинхронно вызывать конвейер из C#. Частичный фрагмент кода просто показывает структуру вызова и не является частью примера Microsoft. В нем не отображаются полные классы и обработка ошибок. 
+
+```csharp
+[DataContract]
+public class SubmitPipelineRunRequest
+{
+    [DataMember]
+    public string ExperimentName { get; set; }
+
+    [DataMember]
+    public string Description { get; set; }
+
+    [DataMember(IsRequired = false)]
+    public IDictionary<string, string> ParameterAssignments { get; set; }
+}
+
+// ... in its own class and method ... 
+const string RestEndpoint = "your-pipeline-endpoint";
+
+using (HttpClient client = new HttpClient())
+{
+    var submitPipelineRunRequest = new SubmitPipelineRunRequest()
+    {
+        ExperimentName = "YourExperimentName", 
+        Description = "Asynchronous C# REST api call", 
+        ParameterAssignments = new Dictionary<string, string>
+        {
+            {
+                // Replace with your pipeline parameter keys and values
+                "your-pipeline-parameter", "default-value"
+            }
+        }
+    };
+
+    string auth_key = "your-auth-key"; 
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth_key);
+
+    // submit the job
+    var requestPayload = JsonConvert.SerializeObject(submitPipelineRunRequest);
+    var httpContent = new StringContent(requestPayload, Encoding.UTF8, "application/json");
+    var submitResponse = await client.PostAsync(RestEndpoint, httpContent).ConfigureAwait(false);
+    if (!submitResponse.IsSuccessStatusCode)
+    {
+        await WriteFailedResponse(submitResponse); // ... method not shown ...
+        return;
+    }
+
+    var result = await submitResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+    var obj = JObject.Parse(result);
+    // ... use `obj` dictionary to access results
+}
+```
+
+### <a name="run-a-published-pipeline-using-java"></a>Запуск опубликованного конвейера с помощью Java
+
+В следующем коде показан вызов конвейера, требующего проверки подлинности (см. раздел [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](how-to-setup-authentication.md)). Если конвейер развернут в общедоступном виде, вызовы, создающие, не нужны `authKey` . В частичном фрагменте кода не показан стандартный класс Java и шаблон обработки исключений. Код использует `Optional.flatMap` для объединения функций, которые могут возвращать пустое значение `Optional` . Использование `flatMap` сокращений и разъяснений кода, но обратите внимание, что `getRequestBody()` поглощает исключения.
+
+```java
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.Optional;
+// JSON library
+import com.google.gson.Gson;
+
+String scoringUri = "scoring-endpoint";
+String tenantId = "your-tenant-id";
+String clientId = "your-client-id";
+String clientSecret = "your-client-secret";
+String resourceManagerUrl = "https://management.azure.com";
+String dataToBeScored = "{ \"ExperimentName\" : \"My_Pipeline\", \"ParameterAssignments\" : { \"pipeline_arg\" : \"20\" }}";
+
+HttpClient client = HttpClient.newBuilder().build();
+Gson gson = new Gson();
+
+HttpRequest tokenAuthenticationRequest = tokenAuthenticationRequest(tenantId, clientId, clientSecret, resourceManagerUrl);
+Optional<String> authBody = getRequestBody(client, tokenAuthenticationRequest);
+Optional<String> authKey = authBody.flatMap(body -> Optional.of(gson.fromJson(body, AuthenticationBody.class).access_token);;
+Optional<HttpRequest> scoringRequest = authKey.flatMap(key -> Optional.of(scoringRequest(key, scoringUri, dataToBeScored)));
+Optional<String> scoringResult = scoringRequest.flatMap(req -> getRequestBody(client, req));
+// ... etc (`scoringResult.orElse()`) ... 
+
+static HttpRequest tokenAuthenticationRequest(String tenantId, String clientId, String clientSecret, String resourceManagerUrl)
+{
+    String authUrl = String.format("https://login.microsoftonline.com/%s/oauth2/token", tenantId);
+    String clientIdParam = String.format("client_id=%s", clientId);
+    String resourceParam = String.format("resource=%s", resourceManagerUrl);
+    String clientSecretParam = String.format("client_secret=%s", clientSecret);
+
+    String bodyString = String.format("grant_type=client_credentials&%s&%s&%s", clientIdParam, resourceParam, clientSecretParam);
+
+    HttpRequest request = HttpRequest.newBuilder()
+        .uri(URI.create(authUrl))
+        .POST(HttpRequest.BodyPublishers.ofString(bodyString))
+        .build();
+    return request;
+}
+
+static HttpRequest scoringRequest(String authKey, String scoringUri, String dataToBeScored)
+{
+    HttpRequest request = HttpRequest.newBuilder()
+        .uri(URI.create(scoringUri))
+        .header("Authorization", String.format("Token %s", authKey))
+        .POST(HttpRequest.BodyPublishers.ofString(dataToBeScored))
+        .build();
+    return request;
+
+}
+
+static Optional<String> getRequestBody(HttpClient client, HttpRequest request) {
+    try {
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        if (response.statusCode() != 200) {
+            System.out.println(String.format("Unexpected server response %d", response.statusCode()));
+            return Optional.empty();
+        }
+        return Optional.of(response.body());
+    }catch(Exception x)
+    {
+        System.out.println(x.toString());
+        return Optional.empty();
+    }
+}
+
+class AuthenticationBody {
+    String access_token;
+    String token_type;
+    int expires_in;
+    String scope;
+    String refresh_token;
+    String id_token;
+    
+    AuthenticationBody() {}
+}
+```
+
 ### <a name="changing-datasets-and-datapaths-without-retraining"></a>Изменение наборов данных и путей к ним без повторного обучения
 
-Может потребоваться обучение и вывод для различных наборов данных и путей к ним. Например, вы можете пожелать обучить меньший, более плотный набор данных, но выводить его в полном наборе данных. Вы можете переключать наборы данных с помощью `DataSetDefinitionValueAssignments` ключа в `json` аргументе запроса. Пути к данным переключаются с помощью `DataPathAssignments` . Метод для обоих методов аналогичен:
+Может потребоваться обучение и вывод для различных наборов данных и путей к ним. Например, вы можете обучить набор данных меньшего размера, но выводить его в полном наборе данных. Вы можете переключать наборы данных с помощью `DataSetDefinitionValueAssignments` ключа в `json` аргументе запроса. Пути к данным переключаются с помощью `DataPathAssignments` . Метод для обоих методов аналогичен:
 
 1. В скрипте определения конвейера создайте `PipelineParameter` для набора данных. Создайте `DatasetConsumptionConfig` или `DataPath` из `PipelineParameter` :
 
@@ -155,7 +294,7 @@ response = requests.post(published_pipeline1.endpoint,
 
 ## <a name="create-a-versioned-pipeline-endpoint"></a>Создание конечной точки конвейера с версией
 
-Вы можете создать конечную точку конвейера с несколькими опубликованными конвейерами. Это позволяет получить фиксированную конечную точку RESTFUL при итерации и обновлении конвейеров машинного обучения.
+Вы можете создать конечную точку конвейера с несколькими опубликованными конвейерами. Эта методика предоставляет фиксированную конечную точку RESTFUL при итерации и обновлении конвейеров машинного обучения.
 
 ```python
 from azureml.pipeline.core import PipelineEndpoint
@@ -201,9 +340,9 @@ response = requests.post(rest_endpoint,
 
 1. [Просмотрите рабочую область](how-to-manage-workspace.md#view).
 
-1. В левой части выберите **конечные точки**.
+1. В левой части выберите **конечные точки** .
 
-1. В верхней части окна выберите **конечные точки конвейера**.
+1. В верхней части окна выберите **конечные точки конвейера** .
  ![Список опубликованных конвейеров машинного обучения](./media/how-to-create-your-first-pipeline/pipeline-endpoints.png)
 
 1. Выберите конкретный конвейер для выполнения, использования или просмотра результатов предыдущих запусков конечной точки конвейера.
@@ -220,7 +359,7 @@ p.disable()
 
 Его можно включить снова с помощью `p.enable()` . Дополнительные сведения см. в разделе Справочник по [классам публишедпипелине](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.publishedpipeline?view=azure-ml-py&preserve-view=true) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Используйте [эти записные книжки Jupyter на сайте GitHub](https://aka.ms/aml-pipeline-readme), чтобы подробнее изучить конвейеры машинного обучения.
 - См. справочную справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py&preserve-view=true) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py&preserve-view=true) .

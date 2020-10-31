@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 11/26/2019
-ms.openlocfilehash: a40f92e88d2d8e5ca253446b9c67ad30df538a5b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 311aca139220622a0436d490e73a536c3fc898c9
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86043433"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93129020"
 ---
 # <a name="process-real-time-iot-data-streams-with-azure-stream-analytics"></a>Обработка потоков данных IoT в режиме реального времени с помощью Azure Stream Analytics
 
@@ -44,13 +44,13 @@ ms.locfileid: "86043433"
 
 ## <a name="create-a-stream-analytics-job"></a>Создание задания Stream Analytics
 
-1. В [портал Azure](https://portal.azure.com)выберите **+ создать ресурс** в меню навигации слева. Затем выберите **Stream Analytics задание** из **аналитики**.
+1. В [портал Azure](https://portal.azure.com)выберите **+ создать ресурс** в меню навигации слева. Затем выберите **Stream Analytics задание** из **аналитики** .
    
     ![Создание нового задания Stream Analytics](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-02.png)
 
 1. Введите уникальное имя задания и убедитесь, что отображается правильная подписка. Создайте новую группу ресурсов или выберите существующую из подписки.
 
-1. Выберите расположение для задания. Используйте то же расположение для группы ресурсов и всех ресурсов, чтобы увеличить скорость обработки и снизить затраты. После завершения настройки нажмите кнопку **создать**.
+1. Выберите расположение для задания. Используйте то же расположение для группы ресурсов и всех ресурсов, чтобы увеличить скорость обработки и снизить затраты. После завершения настройки нажмите кнопку **создать** .
    
     ![Создание нового задания Stream Analytics](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03.png)
 
@@ -60,7 +60,7 @@ ms.locfileid: "86043433"
 Скачайте [HelloWorldASA-InputStream.jsна](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/GettingStarted/HelloWorldASA-InputStream.json
 ) сайте GitHub. Затем перейдите к заданию Azure Stream Analytics в портал Azure.
 
-Выберите **запрос** в разделе **топология задания** в меню слева. Затем выберите **отправить образец входных данных**. Отправьте `HelloWorldASA-InputStream.json` файл и нажмите кнопку **ОК**.
+Выберите **запрос** в разделе **топология задания** в меню слева. Затем выберите **отправить образец входных данных** . Отправьте `HelloWorldASA-InputStream.json` файл и нажмите кнопку **ОК** .
 
 ![Плитка "Запрос" на панели мониторинга Stream Analytics](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-05.png)
 
@@ -125,7 +125,7 @@ HAVING Avg(temp)>100
 
 ![Запрос с 30-секундным фильтром](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-10.png)
 
-Должны отобразиться результаты, содержащие только 245 строк и имен датчиков, в которых среднее значение температур больше 100. В этом запросе поток событий сгруппирован по свойству **dspl**, представляющему собой имя датчика, в **"переворачивающемся" окне** длительностью 30 секунд. Временные запросы должны указать, как должно выполняться время выполнения. С помощью предложения **timestamp by** вы указали столбец **аутпуттиме** , чтобы связать время со всеми временными вычислениями. Подробные сведения см. в статье [Управление временем](https://docs.microsoft.com/stream-analytics-query/time-management-azure-stream-analytics) и [функции для окон](https://docs.microsoft.com/stream-analytics-query/windowing-azure-stream-analytics).
+Должны отобразиться результаты, содержащие только 245 строк и имен датчиков, в которых среднее значение температур больше 100. В этом запросе поток событий сгруппирован по свойству **dspl** , представляющему собой имя датчика, в **"переворачивающемся" окне** длительностью 30 секунд. Временные запросы должны указать, как должно выполняться время выполнения. С помощью предложения **timestamp by** вы указали столбец **аутпуттиме** , чтобы связать время со всеми временными вычислениями. Подробные сведения см. в статье [Управление временем](/stream-analytics-query/time-management-azure-stream-analytics) и [функции для окон](/stream-analytics-query/windowing-azure-stream-analytics).
 
 ### <a name="query-detect-absence-of-events"></a>Запрос: обнаружение отсутствия событий
 
@@ -148,9 +148,8 @@ WHERE t2.dspl IS NULL
 
 ![Обнаружение отсутствия событий](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-11.png)
 
-Здесь используется **LEFT OUTER JOIN** (левое внешнее соединение) для одного и того же потока данных (самосоединение). При **внутреннем соединении** результат возвращается, только если обнаружено совпадение.  Но если событие с левой стороны соединения не сопоставлено при использовании **левого внешнего соединения**, для всех столбцов справа возвращается строка со значением NULL. Этот метод очень удобно использовать для поиска отсутствия событий. Дополнительные сведения см. в разделе [Join](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics).
+Здесь используется **LEFT OUTER JOIN** (левое внешнее соединение) для одного и того же потока данных (самосоединение). При **внутреннем соединении** результат возвращается, только если обнаружено совпадение.  Но если событие с левой стороны соединения не сопоставлено при использовании **левого внешнего соединения** , для всех столбцов справа возвращается строка со значением NULL. Этот метод очень удобно использовать для поиска отсутствия событий. Дополнительные сведения см. в разделе [Join](/stream-analytics-query/join-azure-stream-analytics).
 
 ## <a name="conclusion"></a>Заключение
 
 В этой статье показано, как писать различные запросы на языке Stream Analytics запросов и просматривать результаты в браузере. Однако это просто приступить к работе. Обработчик Stream Analytics поддерживает разнообразные входные и выходные данные и может даже использовать функции машинного обучения Azure. Благодаря этому он является надежным средством для анализа потоков данных. Дополнительные сведения о написании запросов см. в статье [Примеры запросов для распространенных шаблонов использования Stream Analytics](stream-analytics-stream-analytics-query-patterns.md).
-

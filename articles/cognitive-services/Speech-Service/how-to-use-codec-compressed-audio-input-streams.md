@@ -12,18 +12,24 @@ ms.date: 03/30/2020
 ms.author: amishu
 ms.custom: devx-track-csharp
 zone_pivot_groups: programming-languages-set-twenty-two
-ms.openlocfilehash: 4585538e552e73f8f7a4b7b105153a9d26eeb4c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d6a0388507d836050550a3a98255deabb826cde
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934108"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93128337"
 ---
 # <a name="use-codec-compressed-audio-input-with-the-speech-sdk"></a>Использование сжатых звуковых данных кодека с помощью пакета SDK для распознавания речи
 
 **Сжатый потоковый вход** пакета SDK службы речевого ввода предоставляет способ потоковой передачи сжатого звука в службу распознавания речи с помощью `PullStream` или `PushStream` .
 
-В настоящее время поддерживается потоковая передача сжатых аудио-данных в C#, C++, Java и Python в Windows (приложения UWP не поддерживаются) и Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9, RHEL 7/8, CentOS 7/8). Он также поддерживается для Java в Android.
+Платформа | Языки | Поддерживаемая версия Гстреамер
+| :--- | ---: | :---:
+Windows (за исключением UWP)  | C++, C#, Java, Python | [1.15.1](https://gstreamer.freedesktop.org/data/pkg/windows/1.15.1/)
+Linux  | C++, C#, Java, Python | [Поддерживаемые дистрибутивы Linux и целевые архитектуры](~/articles/cognitive-services/speech-service/speech-sdk.md)
+Android  | Java | [1.14.4](https://gstreamer.freedesktop.org/data/pkg/android/1.14.4/)
+
+## <a name="speech-sdk-version-required-for-compressed-audio-input"></a>Версия пакета SDK для речи, необходимая для сжатого звукового ввода
 * Требуется пакет SDK для распознавания речи версии 1.10.0 или более поздней для RHEL 8 и CentOS 8
 * Для Windows требуется пакет SDK для распознавания речи версии 1.11.0 или более поздней.
 

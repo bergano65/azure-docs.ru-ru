@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: 78a81a2d392363ac45979fd28138f838653a2358
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d84e1508dec4d4a5802f7a2ac8c0e6ada5a8044c
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89381183"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93128697"
 ---
 # <a name="how-to-add-technical-details-for-your-saas-offer"></a>Как добавить технические сведения о предложении SaaS
 
@@ -38,10 +38,10 @@ ms.locfileid: "89381183"
 
 - **Azure Active Directory идентификатор клиента** (обязательно) — чтобы найти идентификатор клиента для приложения Azure Active Directory (Azure AD), перейдите в колонку [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в Azure Active Directory. В столбце **Отображаемое имя** выберите приложение. Затем найдите **идентификатор каталога (клиента)** в списке (например, `50c464d3-4930-494c-963c-1e951d15360e` ).
 
-- **Azure Active Directory идентификатор приложения** (обязательно) — чтобы найти [идентификатор приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in), перейдите в колонку [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в Azure Active Directory. В столбце **Отображаемое имя** выберите приложение. Затем найдите идентификатор приложения (клиента) в списке (например, `50c464d3-4930-494c-963c-1e951d15360e` ).
+- **Azure Active Directory идентификатор приложения** (обязательно) — чтобы найти [идентификатор приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in), перейдите в колонку [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в Azure Active Directory. В столбце **Отображаемое имя** выберите приложение. Затем найдите идентификатор приложения (клиента) в списке (например, `50c464d3-4930-494c-963c-1e951d15360e` ).
 
 Выберите **Сохранить черновик** , прежде чем перейти к следующей вкладке: Общие сведения о плане.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание планов для предложения SaaS](create-new-saas-offer-plans.md).
