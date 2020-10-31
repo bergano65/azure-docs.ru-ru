@@ -38,6 +38,8 @@
   items:
     - name: Пакет SDK для JavaScript
       href: reference.md
+    - name: Заметки о выпуске
+      href: release-notes.md
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки

@@ -9,12 +9,12 @@ metadata:
   author: yegu-ms
   ms.author: yegu
   ms.date: 12/16/2019
-  ms.openlocfilehash: cbf495563a6d3a9000778d8980a506b6726fb658
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 2655c1a5b3a99422a71a2acc18671d9fdd31baa5
+  ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "88006015"
+  ms.lasthandoff: 10/30/2020
+  ms.locfileid: "93100003"
 landingContent:
 - title: Общие сведения о кэше Redis для Azure
   linkLists:
@@ -24,22 +24,22 @@ landingContent:
       url: cache-overview.md
   - linkListType: video
     links:
-    - text: Варианты администрирования
-      url: https://azure.microsoft.com/resources/videos/azure-redis-cache-administration-options/
-    - text: Кэширование безопасности
-      url: https://azure.microsoft.com/resources/videos/azure-redis-security-cacheing/
     - text: Рекомендации
       url: https://azure.microsoft.com/resources/videos/azure-redis-cache-best-practices/
     - text: Повышение производительности
       url: https://azure.microsoft.com/resources/videos/increase-performance-through-redis-cluster-in-azure-redis-cache/
+    - text: Кэширование безопасности
+      url: https://azure.microsoft.com/resources/videos/azure-redis-security-cacheing/
+    - text: Варианты администрирования
+      url: https://azure.microsoft.com/resources/videos/azure-redis-cache-administration-options/
   - linkListType: whats-new
     links:
-    - text: Часто задаваемые вопросы
-      url: cache-faq.md
+    - text: Создание кэша уровня Enterprise
+      url: quickstart-create-redis-enterprise.md
     - text: Рекомендации по использованию Кэша Azure для Redis
       url: cache-best-practices.md
-    - text: Поставщик состояний сеансов ASP.NET для кэша Azure для Redis
-      url: cache-aspnet-session-state-provider.md
+    - text: Часто задаваемые вопросы
+      url: cache-faq.md
 - title: 'Краткие руководства: Кэш Redis для Azure'
   linkLists:
   - linkListType: quickstart
@@ -58,8 +58,12 @@ landingContent:
       url: cache-python-get-started.md
   - linkListType: tutorial
     links:
-    - text: Создание списка лидеров с применением шаблона "Кэш на стороне" в ASP.NET
-      url: cache-web-app-cache-aside-leaderboard.md
+    - text: Использование поставщика состояний сеанса
+      url: cache-aspnet-session-state-provider.md
+    - text: Использование поставщика кэша вывода
+      url: cache-aspnet-output-cache-provider.md
+    - text: Использование приложения Spring Boot Initializer
+      url: /azure/developer/java/spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache
   - linkListType: get-started
     links:
     - text: Примеры

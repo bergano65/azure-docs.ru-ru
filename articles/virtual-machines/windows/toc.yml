@@ -322,7 +322,7 @@
         - name: Проектирование для обеспечения высокой производительности
           href: ../premium-storage-performance.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Всплеск активности диска
-          href: disk-bursting.md
+          href: ../disk-bursting.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Целевые показатели масштабируемости для дисков
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков

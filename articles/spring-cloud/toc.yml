@@ -39,8 +39,6 @@
       href: spring-cloud-tutorial-custom-domain.md
     - name: Подготовка экземпляра Azure Spring Cloud с помощью Terraform
       href: spring-cloud-tutorial-provision-azure-spring-cloud-instance-terraform.md
-    - name: Использование CI/CD с Jenkins
-      href: /azure/developer/jenkins/deploy-to-azure-spring-cloud-using-azure-cli
     - name: Использование управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
       href: spring-cloud-tutorial-managed-identities-key-vault.md
     - name: Развертывание Azure Spring Cloud в виртуальной сети
@@ -65,53 +63,72 @@
       href: disaster-recovery.md
 - name: Практические руководства
   items:
-    - name: Подготовка приложения к развертыванию
-      href: spring-cloud-tutorial-prepare-app-deployment.md
-    - name: Запуск приложения Java из исходного кода
-      href: spring-cloud-howto-launch-from-source.md
-    - name: Настройка сервера конфигурации
-      href: spring-cloud-tutorial-config-server.md
-    - name: Поддержка регистрации служб
-      href: spring-cloud-service-registration.md
-    - name: Привязка приложения к Azure CosmosDB
-      href: spring-cloud-tutorial-bind-cosmos.md
-    - name: Привязка приложения к Кэшу Azure для Redis
-      href: spring-cloud-tutorial-bind-redis.md
-    - name: Привязка приложения к Azure MySQL
-      href: spring-cloud-tutorial-bind-mysql.md
-    - name: 'Запуск, остановка и удаление приложения'
-      href: spring-cloud-howto-start-stop-delete.md
-    - name: Настройка промежуточной среды
-      href: spring-cloud-howto-staging-environment.md
-    - name: Использование постоянного хранилища
-      href: spring-cloud-howto-persistent-storage.md
-    - name: Интеграция с решениями Azure Load Balancer
-      href: spring-cloud-howto-integrate-azure-load-balancers.md
-    - name: 'Включение управляемого удостоверения, назначаемого системой'
-      href: spring-cloud-howto-enable-system-assigned-managed-identity.md
-    - name: Самостоятельная диагностика и устранение проблем
-      href: spring-cloud-howto-self-diagnose-solve.md
+    - name: Разработка
+      items:
+        - name: Подготовка приложения Java Spring к развертыванию
+          href: spring-cloud-tutorial-prepare-app-deployment.md
+        - name: Настройка сервера конфигурации
+          href: spring-cloud-tutorial-config-server.md
+        - name: Поддержка регистрации служб
+          href: spring-cloud-service-registration.md
+    - name: Развертывание
+      items:
+        - name: Настройка промежуточной среды
+          href: spring-cloud-howto-staging-environment.md
+        - name: Запуск приложения Java из исходного кода
+          href: spring-cloud-howto-launch-from-source.md
+    - name: Configure
+      items:
+        - name: 'Запуск, остановка и удаление приложения'
+          href: spring-cloud-howto-start-stop-delete.md
+        - name: Использование постоянного хранилища
+          href: spring-cloud-howto-persistent-storage.md
     - name: Монитор
-    - name: Создание ролей и разрешений
-      href: spring-cloud-howto-permissions.md
-    - name: Распределенная трассировка и App Insights
-      href: spring-cloud-tutorial-distributed-tracing.md
-    - name: Анализ журналов и метрик
-      href: diagnostic-services.md
-    - name: Потоковая передача журналов в реальном времени
-      href: spring-cloud-howto-log-streaming.md
-- name: Развертывание DevOps
-  items:
-    - name: CI/CD и Azure DevOps
-      href: spring-cloud-howto-cicd.md
-    - name: CI/CD и GitHub Actions
-      href: spring-cloud-howto-github-actions.md
-    - name: Аутентификация с помощью Key Vault в GitHub Actions
-      href: spring-cloud-github-actions-key-vault.md
-- name: Диагностика
-  items:
-    - name: Руководство по устранению неполадок
-      href: spring-cloud-troubleshoot.md
+      items:
+        - name: Распределенная трассировка и App Insights
+          href: spring-cloud-tutorial-distributed-tracing.md
+        - name: Анализ журналов и метрик
+          href: diagnostic-services.md
+        - name: Потоковая передача журналов в реальном времени
+          href: spring-cloud-howto-log-streaming.md
+    - name: Безопасность
+      items:
+        - name: 'Включение управляемого удостоверения, назначаемого системой'
+          href: spring-cloud-howto-enable-system-assigned-managed-identity.md
+        - name: Создание ролей и разрешений
+          href: spring-cloud-howto-permissions.md
+    - name: Интеграция
+      items:
+        - name: Привязка приложения к Azure CosmosDB
+          href: spring-cloud-tutorial-bind-cosmos.md
+        - name: Привязка приложения к Кэшу Azure для Redis
+          href: spring-cloud-tutorial-bind-redis.md
+        - name: Привязка приложения к Azure MySQL
+          href: spring-cloud-tutorial-bind-mysql.md
+        - name: Интеграция с решениями Azure Load Balancer
+          href: spring-cloud-howto-integrate-azure-load-balancers.md
+    - name: Автоматизация
+      items:
+        - name: CI/CD и Azure DevOps
+          href: spring-cloud-howto-cicd.md
+        - name: CI/CD и GitHub Actions
+          href: spring-cloud-howto-github-actions.md
+        - name: Аутентификация с помощью Key Vault в GitHub Actions
+          href: spring-cloud-github-actions-key-vault.md
+    - name: Диагностика
+      items:
+        - name: Самостоятельная диагностика и устранение проблем
+          href: spring-cloud-howto-self-diagnose-solve.md
+        - name: Руководство по устранению неполадок
+          href: spring-cloud-troubleshoot.md
+    - name: Миграция
+      items:
+        - name: Spring Cloud
+          href: 'https://docs.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-cloud'
+        - name: Spring Boot
+          href: 'https://docs.microsoft.com/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud'
+        - name: Tomcat
+          href: 'https://docs.microsoft.com/azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud'
 - name: Справочник
   items:
     - name: "Подключаемый модуль Azure\_CLI"

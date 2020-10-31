@@ -62,6 +62,8 @@
       href: 'https://docs.microsoft.com/azure/azure-resource-manager/management/overview'
 - name: Ресурсы
   items:
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: ddos-faq.md
     - name: Цены
       href: 'https://azure.microsoft.com/en-us/pricing/details/ddos-protection/'
     - name: Доступность по регионам

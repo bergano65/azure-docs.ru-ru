@@ -22,6 +22,8 @@
       href: resources-without-resource-group-limit.md
     - name: Безопасность
       items:
+        - name: Базовые средства безопасности
+          href: ./security-baseline.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md

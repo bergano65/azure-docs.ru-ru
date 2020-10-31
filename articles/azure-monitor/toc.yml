@@ -123,8 +123,6 @@
           href: platform/data-platform-metrics.md
         - name: Потоковая передача данных в Центры событий
           href: platform/stream-monitoring-data-event-hubs.md
-    - name: Аналитика
-      href: insights/insights-overview.md
     - name: Безопасность данных
       items:
         - name: Данные журнала
@@ -1062,7 +1060,7 @@
               href: insights/container-insights-optout-hybrid.md
         - name: Устранение неполадок
           href: insights/container-insights-troubleshoot.md
-    - name: Другие полезные сведения
+    - name: Аналитика
       items:
         - name: Кэш Azure для Redis (предварительная версия)
           href: insights/redis-cache-insights-overview.md
@@ -1079,61 +1077,61 @@
           href: insights/resource-group-insights.md
         - name: Устранение неполадок при использовании аналитических сведений
           href: insights/troubleshoot-workbooks.md
-    - name: Решения
-      items:
-        - name: Обзор
-          href: insights/solutions.md
-          displayName: 'Azure CLI, az monitor log-analytics'
-        - name: Целевые решения
-          href: insights/solution-targeting.md
-        - name: Доступные решения
+        - name: Решения
           items:
-            - name: Оценка работоспособности AD
-              href: insights/ad-assessment.md
-            - name: Состояние репликации AD
-              href: insights/ad-replication-status.md
-            - name: Решение "Емкость и производительность"
-              href: insights/capacity-performance.md
-            - name: Мониторинг контейнеров Docker и Windows
-              href: insights/containers.md
-            - name: Сети
+            - name: Обзор
+              href: insights/solutions.md
+              displayName: 'Azure CLI, az monitor log-analytics'
+            - name: Целевые решения
+              href: insights/solution-targeting.md
+            - name: Доступные решения
               items:
-                - name: Анализ сетевой активности
-                  href: insights/azure-networking-analytics.md
-                - name: DNS
-                  href: insights/dns-analytics.md
-                - name: Монитор производительности сети
+                - name: Оценка работоспособности AD
+                  href: insights/ad-assessment.md
+                - name: Состояние репликации AD
+                  href: insights/ad-replication-status.md
+                - name: Решение "Емкость и производительность"
+                  href: insights/capacity-performance.md
+                - name: Мониторинг контейнеров Docker и Windows
+                  href: insights/containers.md
+                - name: Сети
                   items:
-                    - name: Обзор решения
-                      href: insights/network-performance-monitor.md
-                    - name: Системный монитор
-                      href: insights/network-performance-monitor-performance-monitor.md
-                    - name: Монитор подключений службы
-                      href: insights/network-performance-monitor-service-connectivity.md
-                    - name: ExpressRoute
-                      href: insights/network-performance-monitor-expressroute.md
-                    - name: Цены
-                      href: insights/network-performance-monitor-pricing-faq.md
-                    - name: ВОПРОСЫ И ОТВЕТЫ
-                      href: insights/network-performance-monitor-faq.md
-            - name: Office 365
-              href: insights/solution-office-365.md
-            - name: Решение "Сопоставление служб"
-              href: insights/service-map.md
-            - name: Сопоставление служб и Operations Manager
-              href: insights/service-map-scom.md
-            - name: Azure SQL
-              href: insights/azure-sql.md
-            - name: "SQL\_Server"
-              href: insights/sql-assessment.md
-            - name: Surface Hub
-              href: insights/surface-hubs.md
-            - name: Решение "Аналитика в VMware"
-              href: insights/vmware.md
-            - name: Решение Wire Data
-              href: insights/wire-data.md
-            - name: Решение по управлению оповещениями
-              href: platform/alert-management-solution.md
+                    - name: Анализ сетевой активности
+                      href: insights/azure-networking-analytics.md
+                    - name: DNS
+                      href: insights/dns-analytics.md
+                    - name: Монитор производительности сети
+                      items:
+                        - name: Обзор решения
+                          href: insights/network-performance-monitor.md
+                        - name: Системный монитор
+                          href: insights/network-performance-monitor-performance-monitor.md
+                        - name: Монитор подключений службы
+                          href: insights/network-performance-monitor-service-connectivity.md
+                        - name: ExpressRoute
+                          href: insights/network-performance-monitor-expressroute.md
+                        - name: Цены
+                          href: insights/network-performance-monitor-pricing-faq.md
+                        - name: ВОПРОСЫ И ОТВЕТЫ
+                          href: insights/network-performance-monitor-faq.md
+                - name: Office 365
+                  href: insights/solution-office-365.md
+                - name: Решение "Сопоставление служб"
+                  href: insights/service-map.md
+                - name: Сопоставление служб и Operations Manager
+                  href: insights/service-map-scom.md
+                - name: Azure SQL
+                  href: insights/azure-sql.md
+                - name: "SQL\_Server"
+                  href: insights/sql-assessment.md
+                - name: Surface Hub
+                  href: insights/surface-hubs.md
+                - name: Решение "Аналитика в VMware"
+                  href: insights/vmware.md
+                - name: Решение Wire Data
+                  href: insights/wire-data.md
+                - name: Решение по управлению оповещениями
+                  href: platform/alert-management-solution.md
     - name: Workbooks
       items:
         - name: Обзор

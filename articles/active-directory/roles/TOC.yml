@@ -11,14 +11,14 @@
 - name: Учебники
   items:
     - name: Создание динамической группы
-      href: /azure/active-directory/enterprise-users/users-revoke-access.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+      href: /azure/active-directory/enterprise-users/users-revoke-access
 - name: Основные понятия
   expanded: true
   items:
     - name: "Делегирование ролей администратора Azure\_AD"
       href: concept-delegation.md
     - name: Сравнение разрешений пользователей по умолчанию
-      href: /azure/active-directory/fundamentals/users-default-permissions.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+      href: /azure/active-directory/fundamentals/users-default-permissions
     - name: "Сравнение ролей в Azure и Azure\_AD"
       href: ../../role-based-access-control/rbac-and-directory-admin-roles.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
     - name: "Общие сведения об административных единицах в Azure\_AD"
@@ -29,13 +29,13 @@
     - name: Пользователи и роли
       items:
         - name: Назначение пользователям ролей администратора
-          href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+          href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal
         - name: Отзыв доступа пользователя
-          href: /azure/active-directory/enterprise-users/users-revoke-access.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+          href: /azure/active-directory/enterprise-users/users-revoke-access
         - name: Назначение роли гостевому пользователю
           href: /azure/active-directory/b2b/add-guest-to-role?context=azure/active-directory/roles/context/ugr-context
         - name: Ограничение доступа гостевых пользователей
-          href: /azure/active-directory/enterprise-users/users-restrict-guest-permissions.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+          href: /azure/active-directory/enterprise-users/users-restrict-guest-permissions?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
         - name: Динамические группы и гости
           href: /azure/active-directory/b2b/use-dynamic-groups?context=azure/active-directory/roles/context/ugr-context
     - name: Роли и разрешения
@@ -57,7 +57,7 @@
         - name: Просмотр назначений пользовательских ролей
           href: custom-view-assignments.md
         - name: Назначение настраиваемых ролей на портале Azure
-          href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+          href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal
         - name: Назначение настраиваемых ролей в PowerShell
           href: custom-assign-powershell.md
         - name: Назначение настраиваемых ролей для корпоративных приложений
@@ -111,7 +111,7 @@
     - name: Диагностика
       items:
         - name: "Получение поддержки для Azure\_AD"
-          href: /azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+          href: /azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto
 - name: Справочник
   items:
     - name: Минимальные привилегии ролей для выполнения заданий
@@ -125,4 +125,4 @@
     - name: "Azure\_AD PowerShell для Graph"
       href: /powershell/azure/active-directory/install-adv2?view=azureadps-2.0
     - name: "Ограничения службы Azure\_AD"
-      href: /azure/active-directory/fundamentals/directory-service-limits-restrictions.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context
+      href: /azure/active-directory/enterprise-users/directory-service-limits-restrictions
