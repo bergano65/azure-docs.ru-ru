@@ -7,12 +7,12 @@ ms.service: api-management
 ms.topic: conceptual
 ms.date: 10/09/2020
 ms.author: apimpm
-ms.openlocfilehash: c37224a3a455abcf3de62998cb65e1d66a1bb0f2
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 92d108304f788279a636b1dc5e1c4e6c103ede3d
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92910718"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93088885"
 ---
 # <a name="cicd-for-api-management-using-azure-resource-manager-templates"></a>CI/CD для управления API с помощью шаблонов Azure Resource Manager
 
@@ -67,7 +67,8 @@ ms.locfileid: "92910718"
 
 * Издатели API могут проверить запрос на вытягивание и убедиться, что изменения являются надежными и совместимыми. Например, они могут проверять, разрешено ли подключение только по протоколу HTTPS к API. Большинство проверок можно автоматизировать как шаг в конвейере CI/CD.
 
-* После того как изменения утверждены и успешно объединены, издатели API могут развернуть их в рабочем экземпляре по расписанию или по запросу. Они могут автоматизировать развертывание шаблонов с помощью [действий GitHub](https://github.com/Azure/apimanagement-devops-samples), [Azure pipelines](/devops/pipelines/), [Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md), [Azure CLI](../azure-resource-manager/templates/deploy-cli.md)или других средств.
+* После того как изменения утверждены и успешно объединены, издатели API могут развернуть их в рабочем экземпляре по расписанию или по запросу. Развертывание шаблонов можно автоматизировать с помощью [действий GitHub](https://github.com/Azure/apimanagement-devops-samples), [Azure pipelines](/azure/devops/pipelines), [Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md), [Azure CLI](../azure-resource-manager/templates/deploy-cli.md)или других средств.
+
 
 При таком подходе Организация может автоматизировать развертывание изменений API в экземплярах управления API, а изменения из одной среды в другую легко повысить. Поскольку разные группы разработчиков API будут работать с различными наборами шаблонов и файлов API, это предотвращает помехи между разными командами.
 

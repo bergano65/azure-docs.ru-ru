@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: tisande
-ms.openlocfilehash: 24acd1e9c13320244ff4c27abd13abeda6f70b2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8d71b9b888c47847dd4a5f5c40504190e5c1ec84
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79464467"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93090942"
 ---
 # <a name="aggregate-functions-in-azure-cosmos-db"></a>Агрегатные функции в Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Агрегатные функции выполняют вычисление для набора значений в `SELECT` предложении и возвращают одно значение. Например, следующий запрос возвращает количество элементов в `Families` контейнере:
 
@@ -63,7 +64,7 @@ ms.locfileid: "79464467"
 
 API SQL поддерживает следующие агрегатные функции. `SUM` и `AVG` используют числовые значения, и `COUNT` , и `MIN` `MAX` работают с числами, строками, логическими значениями и значениями NULL.
 
-| Функция | Описание |
+| Компонент | Описание |
 |-------|-------------|
 | COUNT | Возвращает число элементов в выражении. |
 | SUM   | Возвращает сумму всех элементов в выражении. |

@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/19/2020
 ms.author: mjbrown
-ms.openlocfilehash: 8e6a6d1c557a765e55152685f08e80ad54bbd903
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c206c89bf8e9abae219ce863a8b08f4b0e7041c3
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362016"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93089922"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-with-a-web-app-from-github-using-an-azure-resource-manager-template"></a>Развертывание Azure Cosmos DB и службы приложений Azure с помощью веб-приложения из GitHub с использованием шаблона Azure Resource Manager
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этом руководстве показано, как выполнить развертывание веб-приложения без касания, которое подключается к Azure Cosmos DB при первом запуске без необходимости вырезания и вставки сведений о подключении из Azure Cosmos DB в `appsettings.json` Параметры приложения служб приложений Azure в портал Azure. Все эти действия выполняются с помощью шаблона Azure Resource Manager в одной операции. В этом примере мы развернем [Azure Cosmos DB TODO Sample](https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app) из [учебника по веб-приложению](sql-api-dotnet-application.md).
 

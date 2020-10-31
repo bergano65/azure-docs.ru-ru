@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a917ade5da6938487076b983bd42ce9b27672c49
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 09c35ff8c045fa7d912324886fb31b02e606d2f8
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637009"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93089089"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Базовый план безопасности Azure для фабрики данных Azure
 
@@ -656,7 +656,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
-* [Ведение журнала Аналитики Службы хранилища Azure](../storage/common/storage-analytics-logging.md)
+* [Ведение журнала аналитики службы хранилища Azure](../storage/common/storage-analytics-logging.md)
 
 **Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
 
@@ -688,9 +688,9 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-* [Решение для управления обновлениями в Azure](https://docs.microsoft.com/azure/automation/automation-update-management)
+* [Решение для управления обновлениями в Azure](https://docs.microsoft.com/azure/automation/update-management/overview)
 
-* [Управление обновлениями и исправлениями для виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-update-management)
+* [Управление обновлениями и исправлениями для виртуальных машин Azure](https://docs.microsoft.com/azure/automation/update-management/manage-updates-for-vm)
 
 * [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
@@ -702,9 +702,9 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Рекомендации** . Если вы используете Integration Runtime на виртуальной машине Azure, вы можете использовать стороннее решение для управления исправлениями. Решение Azure Управление обновлениями можно использовать для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-* [Решение для управления обновлениями в Azure](https://docs.microsoft.com/azure/automation/automation-update-management)
+* [Решение для управления обновлениями в Azure](https://docs.microsoft.com/azure/automation/update-management/overview)
 
-* [Управление обновлениями и исправлениями для виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-update-management)
+* [Управление обновлениями и исправлениями для виртуальных машин Azure](https://docs.microsoft.com/azure/automation/update-management/manage-updates-for-vm)
 
 **Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
 

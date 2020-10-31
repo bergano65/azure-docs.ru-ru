@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: mjbrown
-ms.openlocfilehash: b23fb22a99705e1bf37de7a7982513ff692d8f6a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6db7bbf03b023a80032a4ed15f2f4f82dd2b0b98
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91771055"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93088375"
 ---
 # <a name="prevent-azure-cosmos-db-resources-from-being-deleted-or-changed"></a>Предотвращение удаления или изменения Azure Cosmos DB ресурсов
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В качестве администратора может потребоваться заблокировать учетную запись Azure Cosmos, базу данных или контейнер, чтобы предотвратить случайное удаление и изменение критических ресурсов другими пользователями в Организации. Можно установить уровень блокировки CanNotDelete или ReadOnly.
 
@@ -112,6 +113,6 @@ az lock create --name $lockName \
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о блокировках Azure Resource Manager](../azure-resource-manager/management/lock-resources.md)

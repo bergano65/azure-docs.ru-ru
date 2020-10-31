@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: c40f1762ea7c87ea73ec20e47b0398e0d3e364b4
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 69c8f9f01241100a81ddd1707dbd226e6bf56c2f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677129"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93089021"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -36,7 +36,7 @@ ms.locfileid: "92677129"
 
 Выполните указанные ниже предварительные требования.
 
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#adding-the-it-service-management-connector-solution) (Добавление решения "Соединитель управления ИТ-услугами").
+- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
 - Разверните и настройте веб-приложение Service Manager. Дополнительные сведения о веб-приложении см. [здесь](#create-and-deploy-service-manager-web-app-service).
 - Создайте и настройте гибридное подключение. Дополнительные сведения: [Настройка гибридного подключения](#configure-the-hybrid-connection).
 - Поддерживаемые версии Service Manager:  2012 R2 или 2016.
@@ -184,7 +184,7 @@ ms.locfileid: "92677129"
 
 ### <a name="prerequisites"></a>Предварительные требования
 Выполните указанные ниже предварительные требования.
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#adding-the-it-service-management-connector-solution) (Добавление решения "Соединитель управления ИТ-услугами").
+- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
 - Поддерживаемые версии ServiceNow: Орландо, Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки, Geneva.
 > [!NOTE]
 > ITSMC поддерживает только официальное предложение SaaS из Service Now. Закрытые развертывания Service Now не поддерживаются. 
@@ -316,7 +316,7 @@ ms.locfileid: "92677129"
 Выполните указанные ниже предварительные требования.
 
 
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#adding-the-it-service-management-connector-solution) (Добавление решения "Соединитель управления ИТ-услугами").
+- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
 - Приложение Provance необходимо зарегистрировать с помощью Azure AD, а идентификатор клиента должен быть доступен. Дополнительные сведения см. в статье [Настройка приложения службы приложений для использования службы входа Azure Active Directory](../../app-service/configure-authentication-provider-aad.md).
 
 - Роль пользователя:  Администратор.
@@ -373,7 +373,7 @@ ms.locfileid: "92677129"
 
 Выполните указанные ниже предварительные требования.
 
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#adding-the-it-service-management-connector-solution) (Добавление решения "Соединитель управления ИТ-услугами").
+- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
 - Создайте идентификатор клиента. Дополнительные сведения: [Создание идентификатора клиента для Cherwell](#generate-client-id-for-cherwell).
 - Роль пользователя:  Администратор.
 

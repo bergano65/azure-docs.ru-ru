@@ -6,14 +6,15 @@ ms.author: tisande
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/29/2020
-ms.openlocfilehash: 2e899e76a1e68e120e0419926f8169785146bbfc
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 08f8095670b48fcefccb0a9adf477b83ce2537d3
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92485041"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93089242"
 ---
 # <a name="pagination-in-azure-cosmos-db"></a>Разбиение на страницы в Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В Azure Cosmos DB запросы могут содержать несколько страниц результатов. В этом документе описываются условия, которые обработчик запросов Azure Cosmos DB использует, чтобы решить, следует ли разбивать результаты запроса на несколько страниц. При необходимости можно использовать маркеры продолжения для управления результатами запросов, охватывающими несколько страниц.
 
@@ -45,12 +46,13 @@ ms.locfileid: "92485041"
 
 ## <a name="continuation-tokens"></a>Маркеры продолжения
 
-В пакете SDK для .NET и пакета SDK для Java можно при необходимости использовать маркеры продолжения в качестве закладки для хода выполнения запроса. Azure Cosmos DB выполнения запросов не имеют состояния на стороне сервера и могут возобновляться в любое время с помощью токена продолжения. Маркеры продолжения не поддерживаются в пакете SDK для Node.js или Python.
+В пакете SDK для .NET и пакета SDK для Java можно при необходимости использовать маркеры продолжения в качестве закладки для хода выполнения запроса. Azure Cosmos DB выполнения запросов не имеют состояния на стороне сервера и могут возобновляться в любое время с помощью токена продолжения. Маркеры продолжения не поддерживаются в пакете SDK для Node.js. Для пакета SDK для Python поддерживается односекционные запросы, и значение PK должно быть указано в объекте Options, так как его не хватает в самом запросе.
 
 Ниже приведен пример использования маркеров продолжения.
 
 - [Пакет SDK для .NET](https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/samples/code-samples/Queries/Program.cs#L699-L734)
 - [пакет SDK для Java](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/src/main/java/com/azure/cosmos/examples/queries/sync/QueriesQuickstart.java#L216)
+- [Пакет SDK для Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/cosmos/azure-cosmos/test/test_query.py#L533)
 
 Если запрос возвращает токен продолжения, то имеются дополнительные результаты запроса.
 

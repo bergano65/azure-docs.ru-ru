@@ -7,14 +7,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 17c01188f783664747b7c20b9703ee5d33a8ab3f
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: c1ecd3a3d29d6876a59a2fa039802966f348a09d
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92278731"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93089837"
 ---
 # <a name="transactions-and-optimistic-concurrency-control"></a>Управление транзакциями и оптимистической блокировкой
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Транзакции базы данных обеспечивают безопасную и предсказуемую модель программирования для работы с одновременными изменениями данных. Традиционные реляционные базы данных, например SQL Server, позволяют писать бизнес-логику с помощью хранимых процедур и/или триггеров, отправляйте их на сервер для выполнения непосредственно в ядре СУБД. В традиционных реляционных базах данных необходимо иметь дело с двумя различными языками программирования (без транзакций), такими как JavaScript, Python, C#, Java и т. д., а также с языком программирования транзакций (например, T-SQL), который изначально исполняется базой данных.
 

@@ -8,14 +8,15 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/16/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 613e0dbfc90586475fe0ba9820ede1359a99d3a6
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: d986106337eb1ede2f6d61303d8a4c487bbed276
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92482219"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93088477"
 ---
 # <a name="understanding-the-differences-between-nosql-and-relational-databases"></a>Основные сведения о различиях между NoSQL и реляционными базами данных
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 В этой статье будут перечислены некоторые ключевые преимущества баз данных NoSQL в реляционных базах данных. Мы также поговорим о некоторых проблемах, возникающих при работе с NoSQL. Подробные сведения о различных существующих хранилищах данных см. в статье Выбор подходящего [хранилища](/azure/architecture/guide/technology-choices/data-store-overview)данных.
 
@@ -88,7 +89,7 @@ Azure Cosmos DB — это многомодельная служба базы д
 
 Опять же, Azure Cosmos DB предлагает больше гибкости, чем реляционные базы данных, для различных компромиссов, которые важны здесь, но для небольших реализаций такой подход может добавить дополнительные рекомендации по проектированию. Дополнительные сведения по этой теме см. в нашей статье о [согласованности, доступности и компромиссах производительности](./consistency-levels.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как управлять учетной записью Azure Cosmos и другими концепциями:
 

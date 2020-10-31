@@ -3,12 +3,12 @@ title: Руководство. Развертывание многоконтей
 description: Из этого руководства вы узнаете, как развернуть группу с несколькими контейнерами в службе "Экземпляры контейнеров Azure" с помощью YAML-файла и Azure CLI.
 ms.topic: article
 ms.date: 07/01/2020
-ms.openlocfilehash: f6ba9152003c68192ddc0fdffa5652bc0b6daa86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f1f13d4fa7e32b76988cdf356d5d1bb0528f824
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88750902"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93091299"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-a-yaml-file"></a>Руководство по развертыванию многоконтейнерной группы с использованием YAML-файла
 
@@ -29,15 +29,15 @@ ms.locfileid: "88750902"
 > [!NOTE]
 > Многоконтенерные группы сейчас ограничены контейнерами Linux.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 ## <a name="configure-a-yaml-file"></a>Настройка YAML-файла.
 
 Чтобы развернуть многоконтейнерную группу с помощью команды [az container create][az-container-create] в Azure CLI, вы должны указать конфигурацию группы контейнеров в YAML-файле. Затем передайте YAML-файл в качестве параметра в команду.
 
-Сначала скопируйте следующий YAML-файл в новый файл с именем **deploy-aci.yaml**. В Azure Cloud Shell для создания файла в рабочей папке можно применить Visual Studio Code.
+Сначала скопируйте следующий YAML-файл в новый файл с именем **deploy-aci.yaml** . В Azure Cloud Shell для создания файла в рабочей папке можно применить Visual Studio Code.
 
 ```
 code deploy-aci.yaml
@@ -115,7 +115,7 @@ az container show --resource-group myResourceGroup --name myContainerGroup --out
 
 Если вы хотите просмотреть запущенное приложение, перейдите к его IP-адресу в своем браузере. Например, в этом примере выходных данных используется IP-адрес `52.168.26.124`:
 
-```bash
+```console
 Name              ResourceGroup    Status    Image                                                                                               IP:ports              Network    CPU/Memory       OsType    Location
 ----------------  ---------------  --------  --------------------------------------------------------------------------------------------------  --------------------  ---------  ---------------  --------  ----------
 myContainerGroup  danlep0318r      Running   mcr.microsoft.com/azuredocs/aci-tutorial-sidecar,mcr.microsoft.com/azuredocs/aci-helloworld:latest  20.42.26.114:80,8080  Public     1.0 core/1.5 gb  Linux     eastus

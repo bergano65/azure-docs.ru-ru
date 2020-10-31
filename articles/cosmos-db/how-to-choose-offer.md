@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: dech
-ms.openlocfilehash: f7fd40c48f94b4337c5ec342499203f83763299b
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: d8a6471d53ad4b2428504f9c53cbec6bc1967c49
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909936"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93089646"
 ---
 # <a name="how-to-choose-between-standard-manual-and-autoscale-provisioned-throughput"></a>Как сделать выбор между стандартной (ручной) и автомасштабируемой подготовленной пропускной способностью 
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Azure Cosmos DB поддерживает два типа (или предложения) подготовленной пропускной способности: стандартный (ручной) и автомасштабируемый. Оба типа пропускной способности подходят для критически важных рабочих нагрузок, требующих высокой производительности и масштабирования, и поддерживаются одними и теми же соглашениями об уровне обслуживания Azure Cosmos DB в отношении пропускной способности, доступности, задержки и согласованности.
 
