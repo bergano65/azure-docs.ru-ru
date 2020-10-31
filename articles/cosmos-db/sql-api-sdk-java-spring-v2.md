@@ -9,14 +9,16 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 15d3b5eb0dfd5eb35b81da1c0c1ef629aa0def63
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: d5c85095e767c0e92c22410054ac4f8fc5267660
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92477425"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097147"
 ---
 # <a name="spring-data-azure-cosmos-db-v2-for-core-sql-api-release-notes-and-resources"></a>Пружинные данные Azure Cosmos DB v2 для API ядра (SQL): заметки о выпуске и ресурсы
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
+
 > [!div class="op_single_selector"]
 > * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
 > * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
@@ -76,12 +78,12 @@ ms.locfileid: "92477425"
 ## <a name="release-history"></a>История выпусков
 
 ### <a name="230-may-21-2020"></a>2.3.0 (21 мая, 2020)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Обновляет версию пружинной загрузки до 2.3.0.
 
 
 ### <a name="225-may-19-2020"></a>2.2.5 (19 мая, 2020)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Обновляет версию Azure Cosmos DB до 3.7.3.
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
 * Содержит исправления утечки памяти и NETTY обновления версий из пакета SDK 3.7.3 для Azure Cosmos DB.
@@ -92,7 +94,7 @@ ms.locfileid: "92477425"
 * Исправление `TTL` свойства в контейнере.
 
 ### <a name="223-february-25-2020"></a>2.2.3 (25 февраля 2020 г.)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Добавляет новый `findAll` с помощью API ключа секции.
 * Обновляет версию Azure Cosmos DB до 3.7.0.
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
@@ -105,12 +107,12 @@ ms.locfileid: "92477425"
 * Обратные порты исправляются для "коллекция возвращаемых сущностей, сохраненных репозиторием вместо входной сущности".
 
 ### <a name="222-january-15-2020"></a>2.2.2 (15 января, 2020)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Обновляет версию Azure Cosmos DB до 3.6.0.
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
 
 ### <a name="221-december-31-2019"></a>2.2.1 (31 декабря 2019 г.)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Обновляет Azure Cosmos DB версии пакета SDK до 3.5.0.
 * Добавляет поле заметки для включения или отключения автоматического создания коллекции.
 * Улучшает обработку исключений. Предоставляет `CosmosClientException` через `CosmosDBAccessException` .
@@ -121,13 +123,13 @@ ms.locfileid: "92477425"
 * Исправляет ошибку, при которой сортировка не была применена на следующей странице при `CosmosPageRequest` использовании.
 
 ### <a name="219-december-26-2019"></a>2.1.9 (26 декабря 2019 г.)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Добавляет поле заметки для включения или отключения автоматического создания коллекции.
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
 *  Исправляет `findById` поведение метода. Ранее этот метод возвращает значение Empty, если сущность не найдена вместо создания исключения.
 
 ### <a name="220-october-21-2019"></a>2.2.0 (21 октября, 2019)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Завершите поддержку реактивного репозитория Cosmos.
 * Azure Cosmos DB поддержки метрик запросов и строк диагностики.
 * Azure Cosmos DB обновление версии пакета SDK для 3.3.1.
@@ -140,7 +142,7 @@ ms.locfileid: "92477425"
 * Исправления "при сортировке возникает исключение, когда pageSize меньше общего количества элементов в репозитории".
 
 ### <a name="218-october-18-2019"></a>2.1.8 (18 октября, 2019)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Не рекомендуется использовать API DocumentDB.
 * Добавляет `findByIdAndPartitionKey` `deleteByIdAndPartitionKey` API-интерфейсы и.
 * Добавляет оптимистичную блокировку на основе `_etag` .
@@ -148,7 +150,7 @@ ms.locfileid: "92477425"
 * Добавляет `ObjectMapper` улучшения.
 
 ### <a name="217-october-18-2019"></a>2.1.7 (18 октября, 2019)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Добавляет зависимость Azure Cosmos DB SDK версии 3.
 * Добавляет реактивный репозиторий Cosmos.
 * Обновляет реализацию `DocumentDbTemplate` для использования пакета SDK для Azure Cosmos DB версии 3.
@@ -169,19 +171,19 @@ ms.locfileid: "92477425"
     * Предотвращение потенциального влияния на производительность ЦП и/или памяти.
 
 ### <a name="211-march-7-2019"></a>от – 7 марта 2019 г.
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Обновляет основную версию до версии.
 
 ### <a name="206-march-7-2019"></a>2.0.6 (7 марта 2019 г.)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Игнорировать все исключения из телеметрии.
 
 ### <a name="210-december-17-2018"></a>2.1.0 (17 декабря, 2018)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Обновляет версию до 2.1.0, чтобы устранить проблему.
 
 ### <a name="205-september-13-2018"></a>2.0.5 (13 сентября 2018 г.)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Добавляет ключевые слова `exists` и `startsWith` .
 * Файл сведений об обновлениях.
 #### <a name="key-bug-fixes"></a>Исправления основных ошибок
@@ -189,7 +191,7 @@ ms.locfileid: "92477425"
 * Исправления "findAll завершится ошибкой, если коллекция не будет создана".
 
 ### <a name="204-prerelease-august-23-2018"></a>2.0.4 (Предварительная версия) (23 августа 2018)
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Переименовывает пакет из documentdb в cosmosdb.
 * Добавляет новую функцию ключевого слова метода запроса. Теперь поддерживаются 16 ключевых слов из API SQL.
 * Добавляет новую функцию запроса с разбиением на страницы и сортировкой.

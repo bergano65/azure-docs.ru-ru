@@ -1,6 +1,6 @@
 ---
 title: Создание настраиваемой роли Azure с помощью шаблона Azure Resource Manager — Azure RBAC
-description: Узнайте, как создать настраиваемую роль Azure с помощью шаблонов Azure Resource Manager и управления доступом на основе ролей Azure (Azure RBAC).
+description: Узнайте, как создать настраиваемую роль Azure с помощью шаблона Azure Resource Manager (шаблон ARM) и управления доступом на основе ролей Azure (Azure RBAC).
 services: role-based-access-control,azure-resource-manager
 author: rolyon
 manager: mtillman
@@ -10,47 +10,49 @@ ms.custom: subject-armqs
 ms.workload: identity
 ms.date: 06/25/2020
 ms.author: rolyon
-ms.openlocfilehash: bcf1966ffc326291448cb611d99390fe0d652151
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96dfdc0a1c32237c55d4e65bb25989656e2a4ad2
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85398043"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097028"
 ---
-# <a name="create-an-azure-custom-role-using-an-azure-resource-manager-template"></a>Создание настраиваемой роли Azure с помощью шаблона Azure Resource Manager
+# <a name="create-an-azure-custom-role-using-an-arm-template"></a>Создание настраиваемой роли Azure с помощью шаблона ARM
 
-Если [встроенные роли Azure](built-in-roles.md) не отвечают конкретным потребностям Организации, можно создать собственные [пользовательские роли](custom-roles.md). В этой статье описывается создание пользовательской роли с помощью шаблона Azure Resource Manager.
+Если [встроенные роли Azure](built-in-roles.md) не отвечают конкретным потребностям Организации, можно создать собственные [пользовательские роли](custom-roles.md). В этой статье описывается создание пользовательской роли с помощью шаблона Azure Resource Manager (шаблон ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Чтобы создать пользовательскую роль, необходимо указать имя роли, разрешения и место, где можно использовать эту роль. В этой статье вы создадите роль _Custom Role-RG читатель_ с разрешениями ресурсов, которые могут быть назначены в области действия подписки или ниже.
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsubscription-deployments%2Fcreate-role-def%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать настраиваемую роль, необходимо иметь следующее:
 
-- разрешения на создание пользовательских ролей, такие как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователя](built-in-roles.md#user-access-administrator);
+- Разрешения на создание пользовательских ролей, таких как [владелец](built-in-roles.md#owner) или [администратор доступа пользователей](built-in-roles.md#user-access-administrator).
 
-## <a name="create-a-custom-role"></a>Создание настраиваемой роли
+## <a name="review-the-template"></a>Изучение шаблона
 
-Чтобы создать пользовательскую роль, необходимо указать имя роли, разрешения и место, где можно использовать эту роль. В этой статье вы создадите роль с именем "Custom Role-RG Reader" с разрешениями ресурсов, которые могут быть назначены в области действия подписки или ниже.
+Шаблон, используемый в этой статье, относится к [шаблонам](https://azure.microsoft.com/resources/templates/create-role-def)быстрого запуска Azure. Шаблон содержит четыре параметра и раздел ресурсов. Четыре параметра:
 
-### <a name="review-the-template"></a>Изучение шаблона
-
-Шаблон, используемый в этой статье, относится к [шаблонам](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-deployments/create-role-def)быстрого запуска Azure. Шаблон содержит четыре параметра и раздел ресурсов. Четыре параметра:
-
-- Массив действий со значением по умолчанию ["Microsoft. Resources/Subscriptions/resourceGroups/Read"]
-- Массив неизменений с пустым значением по умолчанию
-- Имя роли со значением по умолчанию "Настраиваемая роль — RG Reader"
-- Описание роли со значением по умолчанию "развертывание определения роли на уровне подписки"
-
-В шаблоне определен следующий ресурс:
-
-- [Microsoft. Authorization/roleDefinitions](/azure/templates/Microsoft.Authorization/roleDefinitions)
+- Массив действий со значением по умолчанию `["Microsoft.Resources/subscriptions/resourceGroups/read"]` .
+- Массив `notActions` с пустым значением по умолчанию.
+- Имя роли со значением по умолчанию `Custom Role - RG Reader` .
+- Описание роли со значением по умолчанию `Subscription Level Deployment of a Role Definition` .
 
 Областью, в которой можно назначить эту настраиваемую роль, назначается текущая подписка.
 
 :::code language="json" source="~/quickstart-templates/subscription-deployments/create-role-def/azuredeploy.json":::
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+В шаблоне определен следующий ресурс:
+
+- [Microsoft. Authorization/roleDefinitions](/azure/templates/Microsoft.Authorization/roleDefinitions)
+
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 Выполните следующие действия, чтобы развернуть предыдущий шаблон.
 
@@ -60,7 +62,7 @@ ms.locfileid: "85398043"
 
 1. Скопируйте и вставьте следующий скрипт в Cloud Shell.
 
-    ```azurepowershell
+    ```azurepowershell-interactive
     $location = Read-Host -Prompt "Enter a location (i.e. centralus)"
     [string[]]$actions = Read-Host -Prompt "Enter actions as a comma-separated list (i.e. action1,action2)"
     $actions = $actions.Split(',')
@@ -70,19 +72,19 @@ ms.locfileid: "85398043"
     New-AzDeployment -Location $location -TemplateUri $templateUri -actions $actions
     ```
 
-1. Введите расположение для развертывания, например *centralus*.
+1. Введите расположение для развертывания, например *centralus* .
 
-1. Введите список действий для пользовательской роли в виде списка с разделителями-запятыми *, например Microsoft. Resources/Resources/Read, Microsoft. Resources/Subscriptions/resourceGroups/Read*.
+1. Введите список действий для пользовательской роли в виде списка с разделителями-запятыми *, например Microsoft. Resources/Resources/Read, Microsoft. Resources/Subscriptions/resourceGroups/Read* .
 
-1. При необходимости нажмите клавишу ВВОД, чтобы выполнить команду New-AzDeployment.
+1. При необходимости нажмите клавишу ВВОД, чтобы выполнить `New-AzDeployment` команду.
 
     Команда [New-аздеплоймент](/powershell/module/az.resources/new-azdeployment) развертывает шаблон для создания настраиваемой роли.
 
     Выходные данные должны иметь следующий вид.
 
-    ```azurepowershell
+    ```azurepowershell-interactive
     PS> New-AzDeployment -Location $location -TemplateUri $templateUri -actions $actions
-    
+
     Id                      : /subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/azuredeploy
     DeploymentName          : azuredeploy
     Location                : centralus
@@ -92,7 +94,7 @@ ms.locfileid: "85398043"
     TemplateLink            :
                               Uri            : https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/subscription-deployments/create-role-def/azuredeploy.json
                               ContentVersion : 1.0.0.0
-    
+
     Parameters              :
                               Name               Type                       Value
                               =================  =========================  ==========
@@ -103,7 +105,7 @@ ms.locfileid: "85398043"
                               notActions         Array                      []
                               roleName           String                     Custom Role - RG Reader
                               roleDescription    String                     Subscription Level Deployment of a Role Definition
-    
+
     Outputs                 :
     DeploymentDebugLogLevel :
     ```
@@ -114,13 +116,13 @@ ms.locfileid: "85398043"
 
 1. Выполните команду [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) , чтобы получить список настраиваемой роли.
 
-    ```azurepowershell
+    ```azurepowershell-interactive
     Get-AzRoleDefinition "Custom Role - RG Reader" | ConvertTo-Json
     ```
 
     Вы должны увидеть результат, аналогичный приведенному ниже:
 
-    ```azurepowershell
+    ```azurepowershell-interactive
     {
       "Name": "Custom Role - RG Reader",
       "Id": "11111111-1111-1111-1111-111111111111",
@@ -141,11 +143,11 @@ ms.locfileid: "85398043"
 
 1. В портал Azure откройте подписку.
 
-1. В меню слева щелкните **Управление доступом (IAM)** .
+1. В меню слева выберите **Управление доступом (IAM)** .
 
 1. Перейдите на вкладку **роли** .
 
-1. Задайте для списка **типов** значение **кустомроле**.
+1. Задайте для списка **типов** значение **кустомроле** .
 
 1. Убедитесь, что в списке указана **пользовательская роль читателя RG** .
 
@@ -157,7 +159,7 @@ ms.locfileid: "85398043"
 
 1. Выполните следующую команду, чтобы удалить настраиваемую роль.
 
-    ```azurepowershell
+    ```azurepowershell-interactive
     Get-AzRoleDefinition -Name "Custom Role - RG Reader" | Remove-AzRoleDefinition
     ```
 

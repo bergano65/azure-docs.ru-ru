@@ -7,16 +7,17 @@ ms.topic: conceptual
 ms.date: 07/09/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: b90b45072128252e8abc22d3422c84c813808119
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d51c8774a8646a4b961906ee77913d8edbe752ee
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87446375"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93095838"
 ---
 # <a name="datetimediff-azure-cosmos-db"></a>Датетимедифф (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Возвращает число (как целое число со знаком) указанных границ Датетимепарт, пересекающихся между заданными *StartDate* и *EndDate*.
+Возвращает число (как целое число со знаком) указанных границ Датетимепарт, пересекающихся между заданными *StartDate* и *EndDate* .
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -26,13 +27,13 @@ DateTimeDiff (<DateTimePart> , <StartDate> , <EndDate>)
 
 ## <a name="arguments"></a>Аргументы
   
-*DateTimePart*  
+*датетимепарт*  
    Часть даты, до которой Датетимеадд добавляет целое число. В этой таблице перечислены все допустимые аргументы Датетимепарт:
 
 | DateTimePart | сокращения;        |
 | ------------ | -------------------- |
 | Year;         | "Year", "гггг", "гг" |
-| Месяц        | "month", "mm", "m"   |
+| Month        | "month", "mm", "m"   |
 | День          | "Day", "DD", "d"     |
 | Час         | "Hour", "HH"         |
 | Минута       | "Minute", "MI", "n"  |
@@ -51,8 +52,8 @@ DateTimeDiff (<DateTimePart> , <StartDate> , <EndDate>)
   |DD|четырехзначный день месяца (от 01 до 31)|
   |T|обозначает начало элементов времени|
   |hh|час с двумя цифрами (от 00 до 23)|
-  |ММ|двузначное число минут (от 00 до 59)|
-  |сс|двузначное число секунд (от 00 до 59)|
+  |mm|двузначное число минут (от 00 до 59)|
+  |ss|двузначное число секунд (от 00 до 59)|
   |. fffffff|семь цифр в долях секунды|
   |Z|Обозначение времени в формате UTC (Универсальное координированное время)||
   
@@ -65,7 +66,7 @@ DateTimeDiff (<DateTimePart> , <StartDate> , <EndDate>)
 
 Возвращает целочисленное значение со знаком.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Датетимедифф будет возвращать `undefined` по следующим причинам:
 

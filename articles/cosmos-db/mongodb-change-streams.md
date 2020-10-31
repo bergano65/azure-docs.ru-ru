@@ -8,14 +8,15 @@ ms.topic: how-to
 ms.date: 06/04/2020
 ms.author: rosouz
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 97a887b9fbb0edd4b1574d3e68399ea83fe11451
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46164a5cd96941609c8a6484470fff863680f9d3
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326751"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096603"
 ---
 # <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Потоки изменений в API Azure Cosmos DB для MongoDB
+[!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Поддержка [канала изменений](change-feed.md) в API Azure Cosmos DB для MongoDB доступна с помощью API потоков изменений. С помощью API потоков изменений приложения могут получать изменения, внесенные в коллекцию или элементы в пределах одного сегмента. На основе полученных результатов можно будет выполнять дальнейшие действия. Изменения элементов в коллекции фиксируются в порядке времени их изменения, и в каждом ключе сегмента обязательно соблюдается порядок сортировки.
 
@@ -146,7 +147,7 @@ var cursor = db.coll.watch(
 
 При использовании потоков изменений поддерживаются следующие коды ошибок и сообщения.
 
-* **Код ошибки HTTP: 16500** — когда поток изменений регулируется, он возвращает пустую страницу.
+* **Код ошибки HTTP: 16500**  — когда поток изменений регулируется, он возвращает пустую страницу.
 
 * **NamespaceNotFound (OperationType Invalidate)**  — при запуске потока изменений в несуществующей коллекции или при удалении коллекции возвращается ошибка `NamespaceNotFound`. Так как свойство `operationType` не может быть возвращено в выходном документе, вместо ошибки `operationType Invalidate` возвращается ошибка `NamespaceNotFound`.
 

@@ -8,18 +8,18 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.custom: contperfq1
 ms.date: 10/2/2020
-ms.openlocfilehash: 5f109ad719ada9728938f6e37d4ec854d3950a24
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95607b78ff80566b76b8e6aa20462957249015b4
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708441"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097657"
 ---
 # <a name="outputs-from-azure-stream-analytics"></a>Выходные данные из Azure Stream Analytics
 
 Задание Azure Stream Analytics состоит из входных данных, запроса и выходных данных. Существует несколько типов выходных данных, для которых можно отправить преобразованные данные. В этой статье перечислены поддерживаемые выходные данные Stream Analytics. При составлении запроса Stream Analytics укажите имя выходных данных с помощью [предложения INTO](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics). Можно использовать один выход для каждого задания или несколько выходных данных для задания потоковой передачи (если они необходимы), добавив несколько предложений INTO в запрос.
 
-Для создания, изменения и проверки выходных данных задания Stream Analytics можно использовать [портал Azure](stream-analytics-quick-create-portal.md#configure-job-output), [Azure PowerShell](stream-analytics-quick-create-powershell.md#configure-output-to-the-job), [API .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.streamanalytics.ioutputsoperations?view=azure-dotnet), [REST API](https://docs.microsoft.com/rest/api/streamanalytics/stream-analytics-output) и [Visual Studio](stream-analytics-quick-create-vs.md).
+Для создания, изменения и проверки выходных данных задания Stream Analytics можно использовать [портал Azure](stream-analytics-quick-create-portal.md#configure-job-output), [Azure PowerShell](stream-analytics-quick-create-powershell.md#configure-output-to-the-job), [API .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.streamanalytics.ioutputsoperations?view=azure-dotnet), [REST API](https://docs.microsoft.com/rest/api/streamanalytics/) и [Visual Studio](stream-analytics-quick-create-vs.md).
 
 Некоторые типы выходных данных поддерживают [секционирование](#partitioning), и [размер выходного пакета](#output-batch-size) изменяется для оптимизации пропускной способности. В следующей таблице приведены функции, поддерживаемые для каждого типа выходных данных.
 
@@ -59,7 +59,7 @@ Stream Analytics поддерживает секции для всех выхо�
 
    Количество минимальных строк на пакет. Для Parquet каждый пакет создает новый файл. Текущее значение по умолчанию — 2000 строк, а допустимое максимальное — 10 000 строк.
 
-Эти свойства окна пакетной обработки поддерживаются только API версии **2017-04-01-Preview**. Ниже приведен пример полезных данных JSON для вызова REST API.
+Эти свойства окна пакетной обработки поддерживаются только API версии **2017-04-01-Preview** . Ниже приведен пример полезных данных JSON для вызова REST API.
 
 ```json
 "type": "stream",

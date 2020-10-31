@@ -9,14 +9,16 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 4ee7e180094c1584995e5d734adbe589a112754b
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 7ff75bf9d45803dd96927bcf7c70e7c7912db979
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92477578"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097164"
 ---
 # <a name="azure-cosmos-db-apache-spark-connector-for-core-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Apache Spark соединителя для API Core (SQL): заметки о выпуске и ресурсы
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
+
 > [!div class="op_single_selector"]
 > * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
 > * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
@@ -42,7 +44,7 @@ ms.locfileid: "92477578"
 
 | Компонент | Версия |
 |---------|-------|
-| Apache Spark | 2,4.*x*, 2,3. *x*, 2,2. *x*и 2,1. *x* |
+| Apache Spark | 2,4. *x* , 2,3. *x* , 2,2. *x* и 2,1. *x* |
 | Scala | 2,11 |
 | Azure Databricks (версия среды выполнения) | Позже 3,4 |
 
@@ -64,7 +66,7 @@ ms.locfileid: "92477578"
 ## <a name="release-history"></a>История выпусков
 
 ### <a name="330"></a>3.3.0
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 - Добавляет новый параметр конфигурации, `changefeedstartfromdatetime` который можно использовать для указания времени начала обработки пр. Дополнительные сведения см. в разделе [Параметры конфигурации](https://github.com/Azure/azure-cosmosdb-spark/wiki/Configuration-references).
 
 ### <a name="320"></a>3.2.0
@@ -76,7 +78,7 @@ ms.locfileid: "92477578"
 * Исправляет промежуточный вариант контрольной точки потоковой передачи, в котором параметр `ID` содержит символ вертикальной черты (|) с `ChangeFeedMaxPagesPerBatch` примененной конфигурацией.
 
 ### <a name="310"></a>3.1.0
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Добавляет поддержку для выполнения массовых обновлений при использовании вложенных ключей секционирования.
 * Добавляет поддержку типов данных Decimal и float во время операций записи в Azure Cosmos DB.
 * Добавляет поддержку типов меток времени, если в качестве значения используется Long (эпоха UNIX).
@@ -86,7 +88,7 @@ ms.locfileid: "92477578"
 * Исправляет исключение приведения, возникающее при `WriteThroughputBudget` использовании конфигурации.
 
 ### <a name="307"></a>3.0.7
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Добавляет сведения об ошибке для массовых сбоев в исключения и журнал.
 
 ### <a name="306"></a>3.0.6
@@ -114,7 +116,7 @@ ms.locfileid: "92477578"
 * Устраняет проблему зависимости, которая приводит к сбою прямого транспорта по протоколу TCP с Рекуесттимеаутексцептион.
 
 ### <a name="300"></a>3.0.0
-#### <a name="new-features"></a>новые функции;
+#### <a name="new-features"></a>Новые функции
 * Улучшает управление подключениями и объединение соединений, чтобы сократить количество вызовов метаданных.
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/04/2018
-ms.openlocfilehash: ed11488f397704be782a092d6cdc6463449cc71e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18817a426bacc1ddf144c1d64b611c55245cc21e
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86039081"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097793"
 ---
 # <a name="implement-cicd-for-stream-analytics-on-iot-edge-using-apis"></a>Реализация CI/CD для Stream Analytics на IoT Edge с использованием API
 
@@ -55,11 +55,11 @@ echo $response
  
 Чтобы создать задание Stream Analytics, вызовите метод PUT с помощью API-интерфейса Stream Analytics.
 
-|Метод|Request URL (URL-адрес запроса)|
+|Метод|URL-адрес запроса|
 |------|-----------|
-|PUT|`https://management.azure.com/subscriptions/{\**subscription-id**}/resourcegroups/{**resource-group-name**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**job-name**}?api-version=2017-04-01-preview`|
+|ОТПРАВКА|`https://management.azure.com/subscriptions/{\**subscription-id**}/resourcegroups/{**resource-group-name**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**job-name**}?api-version=2017-04-01-preview`|
  
-Пример использования команды **curl**:
+Пример использования команды **curl** :
 
 ```curl
 curl -u { <username:password> } -H "Content-Type: application/json" -X { <method> } -d "{ <request body> }" https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/Microsoft.StreamAnalytics/streamingjobs/{jobname}?api-version=2017-04-01-preview  
@@ -136,19 +136,19 @@ curl -u { <username:password> } -H "Content-Type: application/json" -X { <method
 } 
 ```
  
-Дополнительные сведения см. в [документации по API-интерфейсам](/rest/api/streamanalytics/stream-analytics-job).  
+Дополнительные сведения см. в [документации по API-интерфейсам](/rest/api/streamanalytics/).  
  
 ## <a name="publish-edge-package"></a>Публикация пакета Edge 
  
 Чтобы опубликовать задание Stream Analytics в IoT Edge, вызовите метод POST с помощью API-интерфейса Edge Package Publish.
 
-|Метод|Request URL (URL-адрес запроса)|
+|Метод|URL-адрес запроса|
 |------|-----------|
 |POST|`https://management.azure.com/subscriptions/{\**subscriptionid**}/resourceGroups/{**resourcegroupname**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**jobname**}/publishedgepackage?api-version=2017-04-01-preview`|
 
 Эта асинхронная операция возвращает состояние 202 до того, как задание будет успешно опубликовано. Заголовок ответа расположения содержит универсальный код ресурса (URI), который используется для получения состояния процесса. Во время выполнения процесса вызов универсального кода ресурса (URI) в заголовке расположения возвращает состояние 202. После того как процесс завершится, универсальный код ресурса (URI) возвращает состояние 200. 
 
-Пример вызова публикации пакета Edge с помощью команды **curl**: 
+Пример вызова публикации пакета Edge с помощью команды **curl** : 
 
 ```bash
 curl -d -X POST https://management.azure.com/subscriptions/{subscriptionid}/resourceGroups/{resourcegroupname}/providers/Microsoft.StreamAnalytics/streamingjobs/{jobname}/publishedgepackage?api-version=2017-04-01-preview
@@ -163,7 +163,7 @@ https://management.azure.com/subscriptions/{**subscriptionid**}/resourcegroups/{
 ```
 Подождите одну-две минуты, прежде чем запускать следующую команду, чтобы выполнить вызов API с помощью URL-адреса, который вы взяли из заголовка ответа. Повторите запрос, если не удалось получить ответ 200.
  
-Пример вызова API с возвращаемым URL-адресом с помощью команды **curl**:
+Пример вызова API с возвращаемым URL-адресом с помощью команды **curl** :
 
 ```bash
 curl -d –X GET https://management.azure.com/subscriptions/{subscriptionid}/resourceGroups/{resourcegroupname}/providers/Microsoft.StreamAnalytics/streamingjobs/{resourcename}/publishedgepackage?api-version=2017-04-01-preview 

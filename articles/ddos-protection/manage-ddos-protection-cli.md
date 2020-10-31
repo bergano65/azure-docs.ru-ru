@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 0307fcee207f045c2808b3c66e9911623391d486
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 47733f4b141b0064e966d0c083fd6414405f65f9
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905663"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93095549"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard-using-azure-cli"></a>Краткое руководство. Создание и Настройка стандарта защиты от атак DDoS Azure с помощью Azure CLI
 
@@ -107,8 +107,6 @@ az network ddos-protection show \
 
 Убедитесь, что команда возвращает правильные сведения о плане защиты от атак DDoS.
 
-Тестирование с помощью симуляций
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Вы можете разместить ресурсы для следующего руководства. Удалите группу ресурсов _MyResourceGroup_ , если она больше не нужна. При удалении группы ресурсов также удаляется план защиты от атак DDoS и все связанные с ним ресурсы. 
@@ -136,4 +134,4 @@ az network vnet update \
 Чтобы узнать, как просмотреть и настроить данные телеметрии для плана защиты от атак DDoS, перейдите к руководствам.
 
 > [!div class="nextstepaction"]
-> [Просмотр и настройка телеметрии защиты от атак DDoS](telemetry-monitoring-alerting.md)
+> [Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии](telemetry-monitoring-alerting.md)

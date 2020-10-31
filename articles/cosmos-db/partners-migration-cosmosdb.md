@@ -6,14 +6,15 @@ ms.author: sngun
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
-ms.openlocfilehash: bd0ec4cf085fb19c89c6be48d4f4534383560fd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a105df6b27be943b14a29bb25fd048bfd294c867
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91707784"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097436"
 ---
 # <a name="azure-cosmos-db-nosql-migration-and-application-development-partners"></a>Партнеры по разработке миграции и приложения Azure Cosmos DB для NoSQL
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 От миграции NoSQL до разработки приложений вы можете выбрать из множества опытных партнеров и инструментов для системного интегратора для поддержки ваших решений Azure Cosmos DB. В этой статье перечислены партнеры, у которых есть решения или службы, использующие Azure Cosmos DB. Этот список меняется со временем, корпорация Майкрософт не несет ответственности за любые изменения или обновления решений этих партнеров.
 
@@ -25,7 +26,7 @@ ms.locfileid: "91707784"
 | [10thMagnitude](https://www.10thmagnitude.com/) | IoT, розница (Инвентаризация), операционная аналитика (Spark), бессерверная архитектура, разработка приложений | США |
 |[Altoros Development LLC](https://www.altoros.com/)  |  IoT, розница для персонализации (Инвентаризация), бессерверные архитектуры NoSQL миграция, разработка приложений|   США |
 |[Avanade](https://www.avanade.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений | Австрия, Германия, Швейцария, Италия, Норвегия, Испания, Великобритания, Канада |
-|[Accenture](https://www.accenture.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений |Global|
+|[Accenture](https://www.accenture.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений |Глобальный|
 |[Capax Global LLC](https://www.capaxglobal.com/) | IoT, персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), бессерверная архитектура, разработка приложений|    США     |  
 | [Capgemini](https://www.capgemini.com/) | Розничная торговля (Инвентаризация), IoT, операционная аналитика (Spark), разработка приложений | США, Франция, Великобритания, Нидерланды, Финляндия  |
 | [Cognizant](https://www.cognizant.com/) | IoT, персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), разработка приложений |США, Канада, Великобритания, Дания, Нидерланды, Швейцария, Австралия, Япония |
@@ -34,7 +35,7 @@ ms.locfileid: "91707784"
 | [Lambda3 Informatics](https://www.lambda3.com.br/) | Персонализация в реальном времени, розничные запасы, разработка приложений | Бразилия|
 |[Neal Analytics](https://www.nealanalytics.com/)    |     Персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), разработка приложений  |    США     |  
 |[Pragmatic Works Software Inc.](https://www.pragmaticworks.com/)    |   Миграция NoSQL      |   США      |
-| [Рикох Digital Services](https://www.ricoh.com/) | IoT, персонализация в режиме реального времени, розничная торговля, NoSQLная миграция | Великобритания  |
+| [Рикох Digital Services](https://www.ricoh.com/) | IoT, персонализация в режиме реального времени, розничная торговля, NoSQLная миграция | Соединенное Королевство  |
 |[SNP Technologies](https://www.snp.com/) | Миграция NoSQL| США |
 | [Solidsoft Reply](https://www.reply.com/solidsoft-reply/) | Миграция NoSQL | Хорватия, Швеция, Дания, Ирландия, Болгария, Словения, Кипр, Мальта, Литва, Чешская Республика, Исландия, Швейцария и Лихтенштейн|
 | [Spanish Point Technologies](https://www.spanishpoint.ie/) | Миграция NoSQL| Ирландия|
@@ -46,9 +47,9 @@ ms.locfileid: "91707784"
 | [Xpand IT](https://www.xpand-it.com/) | разработка новых приложений. | Португалия, Соединенное Королевство|
 | [Hanu](https://hanu.com/) | IoT, разработка приложений | США|
 | [Нециклическое программное обеспечение](https://www.incyclesoftware.com/) | NoSQL миграция, бессерверная архитектура, разработка приложений| США|
-| [Orion](https://www.orioninc.com/) | Персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), IoT, разработка приложений| США, Канада|
+| [Орион](https://www.orioninc.com/) | Персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), IoT, разработка приложений| США, Канада|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о других партнерах Майкрософт можно получить [на сайте партнеров Майкрософт](https://partner.microsoft.com/).
 

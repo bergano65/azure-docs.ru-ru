@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: aecc64c5fa923bc29d34efd3969c2c12f30153c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 351a9742e9d839a8e217fdea35cad922acc3339f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87320108"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93095678"
 ---
 # <a name="handling-review-feedback-for-azure-application-offers"></a>Работа с отзывами о предложениях для приложений Azure после проверки
 
@@ -43,7 +43,7 @@ ms.locfileid: "87320108"
 
 1. В левой части домашней страницы выберите в меню элемент **Files** (Файлы), чтобы получить список файлов с техническими ресурсами для этого предложения. Рецензенты Майкрософт обычно добавляют комментарии с описанием обнаруженных критических проблем. В следующем примере обнаружены две проблемы.
 
-    [![Домашняя страница запроса на включение внесенных изменений](./media/pr-files-page-thumb.png)](./media/pr-files-page.png)
+    [![Снимок экрана с выделенными файлами и двумя обнаруженными проблемами.](./media/pr-files-page-thumb.png)](./media/pr-files-page.png)
     <br/> *Щелкните это изображение, чтобы развернуть сведения.*
 
 1. Выберите каждый узел комментария в дереве слева, чтобы перейти к соответствующему комментарию в контексте фрагмента кода. Исправьте исходный код приложения в командном проекте, чтобы устранить описанную проблему.

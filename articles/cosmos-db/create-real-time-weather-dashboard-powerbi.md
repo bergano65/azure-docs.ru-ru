@@ -7,14 +7,15 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: f44a8d82ea2588abad6855fd8eaf7aed34256d87
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: fc285599176057c57621dc6bfefbe9188d3badd7
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370769"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096892"
 ---
 # <a name="create-a-real-time-dashboard-using-azure-cosmos-db-and-power-bi"></a>Создание панели мониторинга в режиме реального времени с помощью Azure Cosmos DB и Power BI
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье описываются шаги, необходимые для создания панели мониторинга "динамический Погода" в Power BI с помощью Azure Cosmos DB и Azure Analysis Services. На панели мониторинга Power BI отобразятся диаграммы для отображения сведений о температуре и лавины в регионе в режиме реального времени.
 
@@ -63,7 +64,7 @@ Azure Analysis Services предоставляет полностью управ
    В зависимости от того, какой столбец и тип данных есть в исходном наборе данных, можно соответствующим образом изменить поля RangeStart и RangeEnd
 
    
-   |Свойство  |Тип данных  |Filter  |
+   |Свойство  |Тип данных  |Фильтр  |
    |---------|---------|---------|
    |_ts     |   Числовой      |  [_ts] > Duration. Тоталсекондс (RangeStart-#datetime (1970, 1, 1, 0, 0, 0)) и [_ts] < Duration. Тоталсекондс (RangeEnd-#datetime (1970, 1, 1, 0, 0, 0)))       |
    |Дата (например,-2019-08-19).     |   Строка      | [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд")        |
@@ -74,7 +75,7 @@ Azure Analysis Services предоставляет полностью управ
 
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/define-refresh-policy.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
 
-   Игнорируйте предупреждение, сообщающее, что *запрос M не может быть подтвержден для свертывания*. Соединитель Azure Cosmos DB растрет запросы фильтра.
+   Игнорируйте предупреждение, сообщающее, что *запрос M не может быть подтвержден для свертывания* . Соединитель Azure Cosmos DB растрет запросы фильтра.
 
 1. **Загрузите данные и создайте отчеты** — используя ранее загруженные данные, создайте диаграммы для создания отчетов о температуре и лавины.
 
@@ -105,7 +106,7 @@ Azure Analysis Services предоставляет полностью управ
 
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/add-data-source.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
 
-   Подключитесь к Azure Cosmos DB, указав **URI учетной записи**, **имя базы данных**и **имя контейнера**. Теперь вы можете увидеть данные из контейнера Azure Cosmos, импортированные в Power BI.
+   Подключитесь к Azure Cosmos DB, указав **URI учетной записи** , **имя базы данных** и **имя контейнера** . Теперь вы можете увидеть данные из контейнера Azure Cosmos, импортированные в Power BI.
 
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/preview-cosmosdb-data.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
 
@@ -140,7 +141,7 @@ Azure Analysis Services предоставляет полностью управ
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/create-analysis-services-partitions.png" alt-text="Соединитель Power BI Azure Cosmos DB" = Table.SelectRows(#"Sorted Rows", each [Document.month] = "2019-07")`
    * **Исторических** -  `#"Filtered Rows" = Table.SelectRows(#"Sorted Rows", each [Document.month] <> "2019-07")`
 
-1. **Разверните модель в сервер анализа данных Azure** . Щелкните правой кнопкой мыши проект Azure Analysis Services и выберите пункт **развернуть**. Добавьте имя сервера в области **Свойства сервера развертывания** .
+1. **Разверните модель в сервер анализа данных Azure** . Щелкните правой кнопкой мыши проект Azure Analysis Services и выберите пункт **развернуть** . Добавьте имя сервера в области **Свойства сервера развертывания** .
 
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/analysis-services-deploy-model.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
 
@@ -156,7 +157,7 @@ Azure Analysis Services предоставляет полностью управ
 
    :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/load-data-generate-report.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Power BI см. в статье [Приступая к работе с Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 

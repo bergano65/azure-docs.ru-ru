@@ -7,14 +7,15 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 12/12/2019
 ms.author: thvankra
-ms.openlocfilehash: 3aec6cf2fa515d71b93d84cf8c4fc901fc847162
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 53a3317f38cc22ffa3745f5f0e58cc01a54b825c
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487438"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096756"
 ---
 # <a name="migrate-one-to-few-relational-data-into-azure-cosmos-db-sql-api-account"></a>Миграция реляционных данных "один к нескольким" в учетную запись SQL API Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Чтобы выполнить миграцию из реляционной базы данных в Azure Cosmos DB API SQL, может потребоваться внести изменения в модель данных для оптимизации.
 
@@ -54,7 +55,7 @@ FROM Orders o;
 
 Мы можем обойти это текущее ограничение одним из следующих способов:
 
-* **Используйте фабрику данных Azure с двумя действиями копирования**: 
+* **Используйте фабрику данных Azure с двумя действиями копирования** : 
   1. Получение данных в формате JSON из SQL в текстовый файл в промежуточном расположении хранилища BLOB-объектов и 
   2. Загрузка данных из текстового файла JSON в контейнер в Azure Cosmos DB.
 
@@ -333,6 +334,6 @@ pool.map(writeOrder, orderids)
 
 :::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/databricks4.png" alt-text="Снимок экрана, на котором показаны таблицы Orders и OrderDetails в базе данных SQL.":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о [моделировании данных в Azure Cosmos DB](./modeling-data.md)
 * Сведения [о том, как моделировать и секционировать данные на Azure Cosmos DB](./how-to-model-partition-example.md)

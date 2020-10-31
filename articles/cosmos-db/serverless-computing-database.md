@@ -6,20 +6,21 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: sngun
-ms.openlocfilehash: 0167dc0b1cbf8cf3b95995645ef24548a05c4343
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 5264fb44f8088ae8f942abf95bc8c0ef6d917413
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92538652"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096144"
 ---
 # <a name="serverless-database-computing-using-azure-cosmos-db-and-azure-functions"></a>Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Бессерверные вычисления дают возможность сосредоточиться на отдельных повторяемых элементах логики без отслеживания состояния. Эти элементы не требуют управления инфраструктурой и потребляют ресурсы в течение считанных секунд или миллисекунд, пока выполняются. В основе бессерверных вычислений лежат функции, которые предоставляются в экосистеме Azure посредством службы [Функции Azure](https://azure.microsoft.com/services/functions). Дополнительные сведения о других бессерверных средах выполнения в Azure доступны на странице [Бессерверные приложения в Azure](https://azure.microsoft.com/solutions/serverless/). 
 
 Благодаря естественной интеграции [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db) и службы "Функции Azure", можно создавать триггеры базы данных, входные привязки и выходные привязки непосредственно с помощью учетной записи Azure Cosmos DB. С помощью службы "Функции Azure" и Azure Cosmos DB можно создавать и развертывать бессерверные приложения, управляемые событиями, которые обеспечивают низкую задержку при обращении к сложным данным глобальной базы пользователей.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 Служба "Функции Azure" и Azure Cosmos DB позволяют интегрировать базы данных и бессерверные приложения следующим образом.
 

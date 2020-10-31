@@ -6,14 +6,15 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/09/2020
-ms.openlocfilehash: f6a348ceb30806259035cb71bb4165b736949272
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 30f139c92fe426369c609dabd826a7bff1617e72
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480077"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098048"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Часто задаваемые вопросы об Azure Synapse Link для Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
 
 Решение Azure Synapse Link для Azure Cosmos DB обеспечивает тесную интеграцию между Azure Cosmos DB и Azure Synapse Analytics. Оно позволяет клиентам выполнять аналитику операционных данных почти в реальном времени с полной изоляцией выполнения от транзакционных рабочих нагрузок и без применения конвейера извлечения, преобразования и загрузки. В этой статье даны ответы на часто задаваемые вопросы об Azure Synapse Link для Azure Cosmos DB.
 

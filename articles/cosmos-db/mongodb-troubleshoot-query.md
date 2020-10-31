@@ -7,14 +7,15 @@ ms.topic: troubleshooting
 ms.date: 10/12/2020
 ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: 7a34b4a3a0f9fe75b5e252f20a8b0924b0ce01d7
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: ece814ea316fe62bc2b8b64036b08983f65ccbef
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488390"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096365"
 ---
 # <a name="troubleshoot-query-issues-when-using-the-azure-cosmos-db-api-for-mongodb"></a>Устранение проблем с запросами при использовании Azure Cosmos DB API для MongoDB
+[!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 В этой статье рассматривается общий рекомендуемый подход для устранения проблем с запросами в Azure Cosmos DB. Хотя не следует думать, что действия, описанные в этой статье, дают полную защиту от потенциальных проблем с запросами, мы включили сюда наиболее распространенные советы по повышению производительности. Эту статью следует использовать в качестве начального места для устранения недорогих или ресурсоемких запросов в API Azure Cosmos DB для MongoDB. Если вы используете API Azure Cosmos DB Core (SQL), см. статью [руководство по устранению неполадок запросов API SQL](troubleshoot-query-performance.md) .
 

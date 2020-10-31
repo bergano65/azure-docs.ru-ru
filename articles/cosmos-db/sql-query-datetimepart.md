@@ -7,14 +7,15 @@ ms.topic: conceptual
 ms.date: 08/14/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 87663c18ddaa5da6740a0f54aa5f2812cbb06af8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd88f8d6a0f5271da97d6f2f95eecb60bf94ed78
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88227389"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93095814"
 ---
 # <a name="datetimepart-azure-cosmos-db"></a>Датетимепарт (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Возвращает значение указанного Датетимепарта между заданным значением DateTime.
   
@@ -32,7 +33,7 @@ DateTimePart (<DateTimePart> , <DateTime>)
 | DateTimePart | сокращения;        |
 | ------------ | -------------------- |
 | Year;         | "Year", "гггг", "гг" |
-| Месяц        | "month", "mm", "m"   |
+| Month        | "month", "mm", "m"   |
 | День          | "Day", "DD", "d"     |
 | Час         | "Hour", "HH"         |
 | Минута       | "Minute", "MI", "n"  |
@@ -48,7 +49,7 @@ DateTimePart (<DateTimePart> , <DateTime>)
 
 Возвращает положительное целое значение.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Датетимепарт будет возвращать `undefined` по следующим причинам:
 
@@ -87,7 +88,7 @@ SELECT DateTimePart("mcs", "2020-01-02T03:04:05.6789123Z") AS MicrosecondsValue
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

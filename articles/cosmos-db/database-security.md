@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.author: mjbrown
-ms.openlocfilehash: 35bfc45ffffac17a2eca40cb51c2db5d94c140a2
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 5b2457018daf716052b81a8b99c21e3248f185eb
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487472"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096790"
 ---
 # <a name="security-in-azure-cosmos-db---overview"></a>Безопасность в Azure Cosmos DB. Обзор
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 В этой статье представлены рекомендации по обеспечению безопасности, а также основные возможности, предлагаемые Azure Cosmos DB для предотвращения и обнаружения нарушений в работе баз данных и реагирования на эти нарушения.
 
@@ -100,7 +101,7 @@ ms.locfileid: "92487472"
 
 :::image type="content" source="./media/secure-access-to-data/nosql-database-security-master-key-portal.png" alt-text="Ответственность клиента и поставщика базы данных":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о первичных ключах и маркерах ресурсов см. [в статье Защита доступа к Azure Cosmos DBным данным](secure-access-to-data.md).
 

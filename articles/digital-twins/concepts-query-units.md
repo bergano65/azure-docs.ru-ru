@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/14/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: d50c273e50a7faf2d8c24982fbd39cecdff0bf7f
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 5ba765f03e7ac700fb4338e14358fc55e6423c47
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044383"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097045"
 ---
 # <a name="query-units-in-azure-digital-twins"></a>Единицы запросов в цифровом двойников Azure 
 
@@ -70,4 +70,4 @@ await foreach (Page<string> page in asyncPageableResponseWithCharge.AsPages())
 * [*Пошаговое руководство. запрос графа двойника*](how-to-query-graph.md)
 * [Справочная документация по API запроса](/rest/api/digital-twins/dataplane/query/querytwins)
 
-Базовые ограничения для запросов Azure Digital двойников см. в статье [*ограничения службы в общедоступной предварительной версии*](reference-service-limits.md).
+Ограничения, связанные с запросом Azure Digital двойников, можно найти в статье [*ограничения службы*](reference-service-limits.md).

@@ -8,14 +8,15 @@ ms.date: 03/20/2020
 author: timsander1
 ms.author: tisande
 ms.custom: seodec18
-ms.openlocfilehash: 6c9ea401a4a62f617b5acf6f96c60532d929ff1c
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: a02aaadf8c774557eb182acf041b6f19337a0de8
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167974"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096523"
 ---
 # <a name="connect-to-an-azure-cosmos-account-using-studio-3t"></a>Подключение к учетной записи Azure Cosmos с помощью 3T Studio
+[!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Чтобы подключиться к API Azure Cosmos DB для MongoDB с помощью 3T Studio, необходимо выполнить следующие действия.
 
@@ -51,10 +52,10 @@ ms.locfileid: "92167974"
 1. В **диспетчере подключений** выделите нужное подключение и щелкните **Connect** (Подключиться).
 
     :::image type="content" source="./media/mongodb-mongochef/ConnectToAccount.png" alt-text="Снимок экрана со страницей строки подключения":::
-2. Щелкните узел правой кнопкой мыши и выберите **Add Database** (Добавить базу данных).  Укажите имя базы данных и нажмите кнопку **ОК**.
+2. Щелкните узел правой кнопкой мыши и выберите **Add Database** (Добавить базу данных).  Укажите имя базы данных и нажмите кнопку **ОК** .
 
     :::image type="content" source="./media/mongodb-mongochef/AddDatabase1.png" alt-text="Снимок экрана со страницей строки подключения":::
-3. Щелкните правой кнопкой мыши базу данных и выберите **Add Collection** (Добавить коллекцию).  Укажите имя коллекции и нажмите кнопку **Создать**.
+3. Щелкните правой кнопкой мыши базу данных и выберите **Add Collection** (Добавить коллекцию).  Укажите имя коллекции и нажмите кнопку **Создать** .
 
     :::image type="content" source="./media/mongodb-mongochef/AddCollection.png" alt-text="Снимок экрана со страницей строки подключения":::
 4. Щелкните пункт меню **Collection** (Коллекция), затем щелкните **Add Document** (Добавить документ).

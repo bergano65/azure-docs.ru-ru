@@ -7,12 +7,12 @@ ms.date: 09/14/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: devx-track-python, github-actions-azure
-ms.openlocfilehash: 638dfc63b6a37bae3905703bbd5ecabaa94d2020
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 6c768df964d46364a8ca501c078dbecaf1aaa21f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92783085"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93095566"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в Службе приложений с помощью GitHub Actions
 
@@ -74,6 +74,9 @@ ms.locfileid: "92783085"
 1. На странице **Обзор** выберите **получить профиль публикации** .
 
 1. Сохраните скачанный файл. Вы будете использовать содержимое файла для создания секрета GitHub.
+
+> [!NOTE]
+> По состоянию на Октябрь 2020 для веб-приложений Linux потребуется параметр приложения, `WEBSITE_WEBDEPLOY_USE_SCM` установленный в значение `true` **перед скачиванием профиля публикации** . Это требование будет удалено в будущем.
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/userlevel)
 
