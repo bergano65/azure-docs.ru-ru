@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/19/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: a24d1716448363a199151a50a260bbdbd1e8e634
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14f7462aec65d2a13eb36b291331c347b995d281
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91249490"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130686"
 ---
 # <a name="integrate-azure-stream-analytics-with-azure-machine-learning-preview"></a>Интеграция Azure Stream Analytics со службой "Машинное обучение Azure" (предварительная версия)
 
@@ -23,13 +23,13 @@ ms.locfileid: "91249490"
 
 Перед добавлением модели машинного обучения в качестве функции в задание Stream Analytics выполните следующие действия.
 
-1. [Разверните модель как веб-службу](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where) с помощью Машинного обучения Azure.
+1. [Разверните модель как веб-службу](../machine-learning/how-to-deploy-and-where.md) с помощью Машинного обучения Azure.
 
 2. В сценарии оценки должен содержаться [образец входных и выходных данных](../machine-learning/how-to-deploy-and-where.md), который используется Машинным обучением Azure для создания спецификации схемы. Stream Analytics использует эту схему для понимания сигнатуры функции веб-службы. Вы можете использовать этот [Пример определения Swagger](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/AzureML/swagger-example.json) в качестве ссылки, чтобы убедиться, что она правильно настроена.
 
 3. Убедитесь, что веб-служба принимает и возвращает сериализованные данные JSON.
 
-4. Для крупномасштабных развертываний в рабочей среде подходит [Служба Azure Kubernetes](../machine-learning/how-to-deploy-and-where.md#choose-a-compute-target), разверните свою модель в ней. Если веб-служба не справляется с количеством запросов, поступивших от задания, производительность задания Stream Analytics будет снижена, что влияет на задержку. Модели, развернутые в Экземплярах контейнеров Azure, поддерживаются только при использовании портала Azure. Модели, созданные с помощью [конструктора машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer) , пока не поддерживаются в Stream Analytics.
+4. Для крупномасштабных развертываний в рабочей среде подходит [Служба Azure Kubernetes](../machine-learning/how-to-deploy-and-where.md#choose-a-compute-target), разверните свою модель в ней. Если веб-служба не справляется с количеством запросов, поступивших от задания, производительность задания Stream Analytics будет снижена, что влияет на задержку. Модели, развернутые в Экземплярах контейнеров Azure, поддерживаются только при использовании портала Azure. Модели, созданные с помощью [конструктора машинное обучение Azure](../machine-learning/concept-designer.md) , пока не поддерживаются в Stream Analytics.
 
 ## <a name="add-a-machine-learning-model-to-your-job"></a>Добавление модели машинного обучения к заданию
 
@@ -37,7 +37,7 @@ ms.locfileid: "91249490"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. Перейдите к заданию Stream Analytics в портале Azure и выберите **Функции** в разделе **Топология задания**. Затем в раскрывающемся меню **Добавить** выберите пункт **машинное обучение Azure служба** .
+1. Перейдите к заданию Stream Analytics в портале Azure и выберите **Функции** в разделе **Топология задания** . Затем в раскрывающемся меню **Добавить** выберите пункт **машинное обучение Azure служба** .
 
    ![Добавление Машинное обучение Azure UDF](./media/machine-learning-udf/add-azure-machine-learning-udf.png)
 
@@ -47,7 +47,7 @@ ms.locfileid: "91249490"
 
 ### <a name="visual-studio-code"></a>Visual Studio Code
 
-1. Откройте проект Stream Analytics в Visual Studio Code и щелкните правой кнопкой мыши папку **функции** . Затем нажмите кнопку **Добавить функцию**. Выберите **машинное обучение UDF** из раскрывающегося списка.
+1. Откройте проект Stream Analytics в Visual Studio Code и щелкните правой кнопкой мыши папку **функции** . Затем нажмите кнопку **Добавить функцию** . Выберите **машинное обучение UDF** из раскрывающегося списка.
 
    :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-add-function.png" alt-text="Добавление определяемой пользователем функции в VS Code":::
 

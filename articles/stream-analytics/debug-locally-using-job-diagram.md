@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 01/23/2020
-ms.openlocfilehash: e9d6bbdf325c0da96b81c1f2146da284ea744def
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: c32ba468979e4566d8e349d481eddca7d407b659
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92218261"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130992"
 ---
 # <a name="debug-azure-stream-analytics-queries-locally-using-job-diagram-in-visual-studio"></a>Отладка запросов Azure Stream Analytics локально с помощью схемы заданий в Visual Studio
 
@@ -32,7 +32,7 @@ ms.locfileid: "92218261"
 > [!NOTE]
 > Если вы экспортируете задание в локальный проект и хотите протестировать поток входных данных в реальном времени, необходимо указать учетные данные для всех входных данных.  
 
-Выберите источник входных и выходных данных в редакторе скриптов и щелкните **запустить локально**. Диаграмма заданий отображается в правой части.
+Выберите источник входных и выходных данных в редакторе скриптов и щелкните **запустить локально** . Диаграмма заданий отображается в правой части.
 
 ### <a name="view-the-intermediate-result-set"></a>Просмотр промежуточного результирующего набора  
 
@@ -119,7 +119,7 @@ ms.locfileid: "92218261"
 
 * Приемники выходных данных Power BI и Azure Data Lake Storage 1-го поколения не поддерживаются из-за ограничений модели проверки подлинности.
 
-* Для облачных входных данных поддерживаются [политики времени](stream-analytics-out-of-order-and-late-events.md), а для локальных входных данных — нет.
+* Для облачных входных данных поддерживаются [политики времени](./stream-analytics-time-handling.md), а для локальных входных данных — нет.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

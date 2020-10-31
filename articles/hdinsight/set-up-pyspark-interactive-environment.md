@@ -9,31 +9,29 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-python
 ms.date: 04/23/2020
-ms.openlocfilehash: 14f0c7177953e43b0c58b4f5432d0c08c5f03f45
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7cf86824bef5b6f521df0f0446d5337e2b7c418a
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87876620"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130142"
 ---
 # <a name="set-up-the-pyspark-interactive-environment-for-visual-studio-code"></a>Настройка интерактивной среды PySpark для Visual Studio Code
 
 Ниже описано, как настроить интерактивную среду PySpark в VSCode. Этот шаг предназначен только для пользователей, не являющихся пользователями Windows.
 
-Мы используем команду **python или pip** для сборки виртуального окружения в основной папке. Если вы хотите использовать другую версию, вам нужно вручную изменить версию по умолчанию команды **python или pip**. Дополнительные сведения см. в статье о команде [update-alternatives](https://linux.die.net/man/8/update-alternatives).
+Мы используем команду **python или pip** для сборки виртуального окружения в основной папке. Если вы хотите использовать другую версию, вам нужно вручную изменить версию по умолчанию команды **python или pip** . Дополнительные сведения см. в статье о команде [update-alternatives](https://linux.die.net/man/8/update-alternatives).
 
 1. Установите [Python](https://www.python.org/downloads/) и [PIP](https://pip.pypa.io/en/stable/installing/).
 
    * Установите Python из [https://www.python.org/downloads/](https://www.python.org/downloads/) . 
    * Установите PIP с [https://pip.pypa.io/en/stable/installing](https://pip.pypa.io/en/stable/installing/) (если он не установлен из установки Python).
-   * Убедитесь, что Python и PIP установлены успешно с помощью следующих команд. (необязательно)
-
-        ![Проверка команды версии для Python PIP](./media/set-up-pyspark-interactive-environment/check-python-pip-version.png)
+   * При необходимости убедитесь, что Python и PIP установлены успешно с помощью команд `python --version` и `pip --version` соответственно. 
 
      > [!NOTE]
      > Рекомендуется вручную установить Python вместо использования версии macOS по умолчанию.
 
-2. Установите **virtualenv**, выполнив команду, приведенную ниже.
+2. Установите **virtualenv** , выполнив команду, приведенную ниже.
 
    ```bash
    pip install virtualenv
@@ -55,7 +53,7 @@ sudo apt-get install python-dev
 
 Перезапустите VSCode, а затем вернитесь в редактор VSCode и выполните команду **Spark: PySPark Interactive** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="demo"></a>Демонстрация
 

@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 1b49cdb423e8fd2e70175d4ac71f6dcd07b459f9
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 87ee8a9c57fc456ba02f97bf56db25e4c91e9398
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097742"
+ms.locfileid: "93129819"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Уровень совместимости заданий Azure Stream Analytics
 
@@ -33,7 +33,7 @@ ms.locfileid: "93097742"
 
 ## <a name="set-the-compatibility-level"></a>Установка уровня совместимости
 
-Можно задать уровень совместимости для задания Stream Analytics в портал Azure или с помощью [вызова REST API задания](/azure/stream-analytics/stream-analytics-quick-create-portal).
+Можно задать уровень совместимости для задания Stream Analytics в портал Azure или с помощью [вызова REST API задания](./stream-analytics-quick-create-portal.md).
 
 Чтобы обновить уровень совместимости задания в портал Azure:
 
@@ -77,13 +77,13 @@ Azure Stream Analytics поддерживает индексирование г�
 
 **Предыдущие уровни:** Поведение Upsert было *вставлено или объединено* .
 
-**уровень 1,2:** Собственная интеграция с массовым интерфейсом API с выходными данными CosmosDB увеличивает пропускную способность и позволяет эффективно обрабатывать запросы на регулирование. Дополнительные сведения см. [на странице Azure Stream Analytics Output to Azure Cosmos DB](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-documentdb-output#improved-throughput-with-compatibility-level-12).
+**уровень 1,2:** Собственная интеграция с массовым интерфейсом API с выходными данными CosmosDB увеличивает пропускную способность и позволяет эффективно обрабатывать запросы на регулирование. Дополнительные сведения см. [на странице Azure Stream Analytics Output to Azure Cosmos DB](./stream-analytics-documentdb-output.md#improved-throughput-with-compatibility-level-12).
 
 Поведение Upsert — *Вставить или заменить* .
 
 ### <a name="datetimeoffset-when-writing-to-sql-output"></a>DateTimeOffset при записи в выходные данные SQL
 
-**Предыдущие уровни:** типы [DateTimeOffset](https://docs.microsoft.com/sql/t-sql/data-types/datetimeoffset-transact-sql?view=sql-server-2017) были скорректированы по Гринвичу.
+**Предыдущие уровни:** типы [DateTimeOffset](/sql/t-sql/data-types/datetimeoffset-transact-sql?view=sql-server-2017) были скорректированы по Гринвичу.
 
 **уровень 1,2:** DateTimeOffset больше не корректируется.
 
@@ -151,4 +151,4 @@ Azure Stream Analytics поддерживает индексирование г�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок с входными подключениями](stream-analytics-troubleshoot-input.md)
-* [Stream Analytics работоспособности ресурсов](stream-analytics-resource-health.md)
+* [Stream Analytics работоспособности ресурсов](./stream-analytics-troubleshoot-query.md)

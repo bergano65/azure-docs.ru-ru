@@ -17,12 +17,12 @@ ms.date: 03/04/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22a8a0efe16b4ab2ea7b8a647284a3449741ac02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cabf5f40bc17828bc37b5c094de7b90de3ec8b26
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89226970"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130227"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
@@ -55,7 +55,7 @@ API отчетов использует [OAuth](../../api-management/api-managem
 
 ## <a name="register-an-application"></a>Регистрация приложения
 
-Регистрация необходима, даже если доступ к API отчетов осуществляется с помощью скрипта. Регистрация предоставляет **идентификатор приложения**, который необходим для вызовов авторизации и позволяет коду принимать маркеры.
+Регистрация необходима, даже если доступ к API отчетов осуществляется с помощью скрипта. Регистрация предоставляет **идентификатор приложения** , который необходим для вызовов авторизации и позволяет коду принимать маркеры.
 
 Чтобы настроить для каталога доступ к API отчетов AAD, необходимо войти на [портал Azure](https://portal.azure.com) с учетной записью администратора Azure, которой также назначена роль участника каталога **глобального администратора** в клиенте AAD.
 
@@ -65,29 +65,29 @@ API отчетов использует [OAuth](../../api-management/api-managem
 
 **Чтобы зарегистрировать приложение AAD, сделайте следующее:**
 
-1. На [портале Azure](https://portal.azure.com) в области навигации слева щелкните **Azure Active Directory**.
+1. На [портале Azure](https://portal.azure.com) в области навигации слева щелкните **Azure Active Directory** .
    
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/01.png) 
+    ![Снимок экрана показывает Azure Active Directory, выбранные в меню портал Azure.](./media/howto-configure-prerequisites-for-reporting-api/01.png) 
 
-2. На странице **Azure Active Directory** щелкните **Регистрация приложений**.
+2. На странице **Azure Active Directory** щелкните **Регистрация приложений** .
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/02.png) 
+    ![Снимок экрана показывает Регистрация приложений, выбранные в меню "Управление".](./media/howto-configure-prerequisites-for-reporting-api/02.png) 
 
-3. На странице **Регистрация приложений** выберите пункт **Новая регистрация**.
+3. На странице **Регистрация приложений** выберите пункт **Новая регистрация** .
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/03.png)
+    ![На снимке экрана показана выбранная Новая регистрация.](./media/howto-configure-prerequisites-for-reporting-api/03.png)
 
 4. Страница **регистрации приложения** :
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/04.png)
+    ![На снимке экрана показана страница Регистрация приложения, на которой можно ввести значения на этом шаге.](./media/howto-configure-prerequisites-for-reporting-api/04.png)
 
     a. В текстовом поле **Имя** введите `Reporting API application`.
 
-    b. Для **поддерживаемого типа учетных записей**выберите **учетные записи только в этом Организации**.
+    b. Для **поддерживаемого типа учетных записей** выберите **учетные записи только в этом Организации** .
 
     c. В **текстовом поле** **URL-адрес перенаправления** выберите введите `https://localhost` .
 
-    d. Выберите **Зарегистрировать**. 
+    d. Выберите **Зарегистрировать** . 
 
 
 ## <a name="grant-permissions"></a>Предоставить разрешения 
@@ -97,41 +97,40 @@ API отчетов использует [OAuth](../../api-management/api-managem
 | API | Разрешение |
 | --- | --- |
 | Microsoft Azure Active Directory | Чтение данных каталога |
-| Microsoft Graph | Прочитать все данные журнала аудита |
+| Microsoft Graph | Прочитать все данные журнала аудита |
 
-
-![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/36.png)
+![На снимке экрана показано, где можно выбрать пункт Добавить разрешение в области разрешений P I.](./media/howto-configure-prerequisites-for-reporting-api/36.png)
 
 В следующем разделе перечислены шаги для получения доступа к обоим API. Если вам не нужен доступ к данным API, вы можете пропустить эти шаги.
 
 **Вот как можно предоставить приложению разрешения на использование API.**
 
 
-1. Выберите **разрешения API** и **добавьте разрешение**. 
+1. Выберите **разрешения API** и **добавьте разрешение** . 
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/05.png)
+    ![На снимке экрана показана страница разрешений P I, на которой можно выбрать команду Добавить разрешение.](./media/howto-configure-prerequisites-for-reporting-api/05.png)
 
-2. На **странице разрешения API запроса**выберите **Поддержка устаревших API** **Azure Active Directory Graph**. 
+2. На **странице разрешения API запроса** выберите **Поддержка устаревших API** **Azure Active Directory Graph** . 
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/06.png)
+    ![На снимке экрана показана страница запроса разрешений P I, на которой можно выбрать Azure Active Directory граф.](./media/howto-configure-prerequisites-for-reporting-api/06.png)
 
-3. На странице **необходимые разрешения** выберите **разрешения приложения**, а затем — **флажок** каталог **. ReadAll**.  Выберите **Добавить разрешения**.
+3. На странице **необходимые разрешения** выберите **разрешения приложения** , а затем — **флажок** каталог **. ReadAll** .  Выберите **Добавить разрешения** .
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/07.png)
+    ![На снимке экрана показана страница запрос разрешений P I, на которой можно выбрать разрешения приложения.](./media/howto-configure-prerequisites-for-reporting-api/07.png)
 
-4. На странице **разрешения API приложения API отчетов** выберите **предоставить согласие администратора**. 
+4. На странице **разрешения API приложения API отчетов** выберите **предоставить согласие администратора** . 
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/08.png)
+    ![На снимке экрана показана страница отчетов с разрешениями p I, где можно выбрать параметр предоставить согласие администратора.](./media/howto-configure-prerequisites-for-reporting-api/08.png)
 
 5. Примечание. **Microsoft Graph** добавляется по умолчанию во время регистрации API.
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/15.png)
+    ![На снимке экрана показана страница разрешений P I, на которой можно выбрать команду Добавить разрешение.](./media/howto-configure-prerequisites-for-reporting-api/15.png)
 
 ## <a name="gather-configuration-settings"></a>Сбор параметров конфигурации 
 
 В этом разделе показано, как получить из каталога следующие параметры:
 
-- Имя домена
+- Доменное имя
 - Идентификатор клиента
 - Секрет клиента
 
@@ -141,13 +140,13 @@ API отчетов использует [OAuth](../../api-management/api-managem
 
 **Вот как можно получить доменное имя.**
 
-1. На [портале Azure](https://portal.azure.com) в области навигации слева выберите **Azure Active Directory**.
+1. На [портале Azure](https://portal.azure.com) в области навигации слева выберите **Azure Active Directory** .
    
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/01.png) 
+    ![Снимок экрана показывает Azure Active Directory, выбранные в меню портал Azure.](./media/howto-configure-prerequisites-for-reporting-api/01.png) 
 
-2. На странице **Azure Active Directory** выберите **Имена пользовательских доменов**.
+2. На странице **Azure Active Directory** выберите **Имена пользовательских доменов** .
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/09.png) 
+    ![На снимке экрана показаны пользовательские имена доменов, выбранные из Azure Active Directory.](./media/howto-configure-prerequisites-for-reporting-api/09.png) 
 
 3. Скопируйте нужное доменное имя из списка доменов.
 
@@ -156,15 +155,15 @@ API отчетов использует [OAuth](../../api-management/api-managem
 
 **Вот как можно получить идентификатор клиента приложения.**
 
-1. На [портале Azure](https://portal.azure.com) в области навигации слева щелкните **Azure Active Directory**.
+1. На [портале Azure](https://portal.azure.com) в области навигации слева щелкните **Azure Active Directory** .
    
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/01.png) 
+    ![Снимок экрана показывает Azure Active Directory, выбранные в меню портал Azure.](./media/howto-configure-prerequisites-for-reporting-api/01.png) 
 
-2. Выберите свое приложение на странице **Регистрация приложений**.
+2. Выберите свое приложение на странице **Регистрация приложений** .
 
-3. Со страницы приложения перейдите к **идентификатору приложения** и выберите **Щелкните, чтобы скопировать**.
+3. Со страницы приложения перейдите к **идентификатору приложения** и выберите **Щелкните, чтобы скопировать** .
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/11.png) 
+    ![На снимке экрана показана страница отчетов приложение P I, на которой можно скопировать приложение I D.](./media/howto-configure-prerequisites-for-reporting-api/11.png) 
 
 
 ### <a name="get-your-applications-client-secret"></a>Получение секрета клиента приложения
@@ -172,23 +171,23 @@ API отчетов использует [OAuth](../../api-management/api-managem
 
 **Вот как можно получить секрет клиента приложения.**
 
-1. На [портале Azure](https://portal.azure.com) в области навигации слева щелкните **Azure Active Directory**.
+1. На [портале Azure](https://portal.azure.com) в области навигации слева щелкните **Azure Active Directory** .
    
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/01.png) 
+    ![Снимок экрана показывает Azure Active Directory, выбранные в меню портал Azure.](./media/howto-configure-prerequisites-for-reporting-api/01.png) 
 
-2.  Выберите свое приложение на странице **Регистрация приложений**.
+2.  Выберите свое приложение на странице **Регистрация приложений** .
 
-3.  На странице **приложение API** выберите **Сертификаты и секреты** , в разделе **секреты клиента** щелкните **+ новый секрет клиента**. 
+3.  На странице **приложение API** выберите **Сертификаты и секреты** , в разделе **секреты клиента** щелкните **+ новый секрет клиента** . 
 
-    ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/12.png)
+    ![На снимке экрана показана страница сертификаты & секреты, на которой можно добавить секрет клиента.](./media/howto-configure-prerequisites-for-reporting-api/12.png)
 
 5. На странице **Добавление секрета клиента** добавьте:
 
     a. В текстовом поле **Описание** введите `Reporting API`.
 
-    b. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
+    b. Для параметра **Срок действия истекает** выберите значение **Через 2 года** .
 
-    c. Выберите команду **Сохранить**.
+    c. Выберите команду **Сохранить** .
 
     d. Скопируйте значение ключа.
 
@@ -204,7 +203,7 @@ API отчетов использует [OAuth](../../api-management/api-managem
 
 ### <a name="error-failed-to-do-premium-license-check-from-microsoft-graph"></a>Ошибка: не удалось проверить лицензию Premium с Microsoft Graph 
 
-Если при попытке обращения ко входам с помощью песочницы Graph появляется это сообщение об ошибке, выберите **Изменить разрешения** под своей учетной записью на левой панели навигации, а затем выберите **Tasks.ReadWrite** и **Directory.Read.All**. 
+Если при попытке обращения ко входам с помощью песочницы Graph появляется это сообщение об ошибке, выберите **Изменить разрешения** под своей учетной записью на левой панели навигации, а затем выберите **Tasks.ReadWrite** и **Directory.Read.All** . 
 
 ![Пользовательский интерфейс для изменения разрешений](./media/troubleshoot-graph-api/modify-permissions.png)
 

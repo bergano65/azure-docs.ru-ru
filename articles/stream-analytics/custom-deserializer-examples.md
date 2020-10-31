@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 1/28/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ac08b5af0afbf43c7b13808fac06c40066e48b7a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 87f3e2014281580cc35f941ad62046dcb24539df
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93074239"
+ms.locfileid: "93129411"
 ---
 # <a name="read-input-in-any-format-using-net-custom-deserializers"></a>Считывание входных данных любого формата с помощью пользовательских десериализаторов .NET
 
@@ -201,7 +201,7 @@ namespace ExampleCustomCode.Serialization
 
 ## <a name="serialization-format-for-rest-apis"></a>Формат сериализации для REST API
 
-Все входные данные Stream Analytics имеют **формат сериализации** . Дополнительные сведения о параметрах ввода см. в документации по [REST API ввода](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-define-inputs).
+Все входные данные Stream Analytics имеют **формат сериализации** . Дополнительные сведения о параметрах ввода см. в документации по [REST API ввода](./stream-analytics-define-inputs.md).
 
 Следующий код JavaScript является примером формата сериализации десериализатора .NET при использовании REST API:
 
@@ -239,7 +239,7 @@ namespace ExampleCustomCode.Serialization
 
 ### <a name="when-will-this-feature-be-available-in-all-azure-regions"></a>Когда эта функция станет доступной во всех регионах Azure?
 
-Указанная функция доступна в [6 регионах](https://docs.microsoft.com/azure/stream-analytics/custom-deserializer-examples#region-support). Если вы заинтересованы в использовании этой функции в другом регионе, можно [отправить запрос](https://aka.ms/ccodereqregion). Поддержка всех регионов Azure включена в план.
+Указанная функция доступна в [6 регионах](#region-support). Если вы заинтересованы в использовании этой функции в другом регионе, можно [отправить запрос](https://aka.ms/ccodereqregion). Поддержка всех регионов Azure включена в план.
 
 ### <a name="can-i-access-metadatapropertyvalue-from-my-inputs-similar-to-getmetadatapropertyvalue-function"></a>Можно ли получить доступ к MetadataPropertyValue из входных данных, похожих на функцию GetMetadataPropertyValue?
 

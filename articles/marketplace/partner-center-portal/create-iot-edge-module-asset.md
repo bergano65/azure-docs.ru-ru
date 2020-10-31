@@ -7,18 +7,18 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/03/2020
-ms.openlocfilehash: dec0711c4763983e520d247fd8b775b1810e0479
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d55186874e6f5be67a04e4a04d54a89dc09f9cd
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87324647"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130448"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
 
 В этой статье описываются требования, которые должны соответствовать техническим ресурсам модуля "Интернет вещей" (IoT), прежде чем они будут опубликованы в Azure Marketplace.
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
 Модуль IoT Edge — это контейнер, совместимый с DOCKER, который выполняется на устройстве IoT Edge.
 
@@ -64,7 +64,7 @@ ms.locfileid: "87324647"
 <p><u>Minimum hardware requirements:</u> Linux x64 and arm32 OS, 1GB of RAM, 500 Mb of storage</p>
 ```
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
 Модуль должен включать параметры конфигурации по умолчанию, чтобы развертывание на IoT Edge устройстве было как можно более простым. Эти сведения можно указать на странице **технической настройки** плана в [центре партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace). Контейнер также может содержать пакет SDK для модуля IoT Edge, чтобы обеспечить взаимодействие с концентратором ребра и центром Интернета вещей.
 
@@ -107,10 +107,10 @@ ServerIPAddress = <MY_SERVER_IP_ADDRESS>
 
 Используйте один из следующих методов из пакета SDK для модуля IoT, чтобы задать для ProductInfo следующий идентификатор:
 
-- [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.productinfo?view=azure-dotnet#Microsoft_Azure_Devices_Client_DeviceClient_ProductInfo)
+- [C#](/dotnet/api/microsoft.azure.devices.client.deviceclient.productinfo?view=azure-dotnet#Microsoft_Azure_Devices_Client_DeviceClient_ProductInfo)
 - [В](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md)
 - [Python](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md)
-- [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.productinfo?view=azure-java-stable)
+- [Java](/java/api/com.microsoft.azure.sdk.iot.device.productinfo?view=azure-java-stable)
 
 Для модулей, которые не используют пакет SDK для модуля Интернета вещей, менее точные аналитические сведения доступны через центр партнеров, например число Скачиваний.
 

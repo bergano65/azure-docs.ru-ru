@@ -7,16 +7,16 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/11/2019
-ms.openlocfilehash: e0214cb9515a5974f1de9a27760dc037f7593f30
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba63358347cf9722d2cafa35598b9b3b37f49dc3
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90892289"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93129462"
 ---
 # <a name="copy-or-back-up-azure-stream-analytics-jobs"></a>Копирование или архивация Azure Stream Analytics заданий
 
-Вы можете копировать или архивировать развернутые задания Azure Stream Analytics с помощью Visual Studio Code или Visual Studio. При копировании задания в другой регион время последнего вывода не копируется. Поэтому при запуске скопированного задания нельзя использовать параметр [**при последней остановке**](https://docs.microsoft.com/azure/stream-analytics/start-job#start-options) .
+Вы можете копировать или архивировать развернутые задания Azure Stream Analytics с помощью Visual Studio Code или Visual Studio. При копировании задания в другой регион время последнего вывода не копируется. Поэтому при запуске скопированного задания нельзя использовать параметр [**при последней остановке**](./start-job.md#start-options) .
 
 ## <a name="before-you-begin"></a>Перед началом
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
@@ -45,11 +45,11 @@ ms.locfileid: "90892289"
 
 ## <a name="visual-studio"></a>Visual Studio
 
-1. Следуйте [инструкциям по экспорту развернутого Azure Stream Analytics задания в инструкции проекта](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-vs-tools#export-jobs-to-a-project).
+1. Следуйте [инструкциям по экспорту развернутого Azure Stream Analytics задания в инструкции проекта](./stream-analytics-vs-tools.md#export-jobs-to-a-project).
 
 2. Откройте \* файл. asaql в редакторе запросов, выберите **отправить в Azure** в редакторе скриптов и следуйте инструкциям, чтобы опубликовать задание в другом регионе или резервной копии с новым именем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Создание Stream Analytics задания с помощью Visual Studio Code](quick-create-visual-studio-code.md)
 * [Краткое руководство. Создание задания Stream Analytics с помощью Visual Studio](stream-analytics-quick-create-vs.md)

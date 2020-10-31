@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 05/01/2020
-ms.openlocfilehash: cd0b708ac3a1b16804430584dfcb01b3d2a4fae2
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: dea9c0eec275c6a0596636c8625e52b8978bb9a6
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042384"
+ms.locfileid: "93130550"
 ---
 # <a name="use-azure-blob-storage-to-manage-commercial-marketplace-leads"></a>Использование хранилища BLOB-объектов Azure для управления потенциальными клиентами на коммерческом рынке
 
@@ -33,7 +33,7 @@ ms.locfileid: "93042384"
 3. На портале Azure создайте учетную запись хранения, выполнив указанные ниже действия.  
     1. В меню слева выберите **+Создать ресурс** .  Справа появится панель **Новый** (колонка).
     2. На панели **Новый** выберите **Хранилище** .  Справа отобразится список **Подборка** .
-    3. Выберите **Учетная запись хранения** , чтобы приступить к созданию учетной записи.  Следуйте [инструкциям](../../storage/common/storage-quickstart-create-account.md?tabs=azure-portal) по созданию учетной записи хранения.
+    3. Выберите **Учетная запись хранения** , чтобы приступить к созданию учетной записи.  Следуйте [инструкциям](../../storage/common/storage-account-create.md?tabs=azure-portal) по созданию учетной записи хранения.
 
     ![Шаги по созданию учетной записи хранения Azure](./media/commercial-marketplace-lead-management-instructions-azure-blob/azure-storage-create.png)
 
@@ -55,11 +55,11 @@ ms.locfileid: "93042384"
 
 6. На странице учетной записи хранения выберите **Большие двоичные объекты** .
 
-   ![Ключ к хранилищу Azure](./media/commercial-marketplace-lead-management-instructions-azure-blob/select-blobs.png)
+   ![Снимок экрана со страницей учетной записи хранения Azure с выбранными BLOB-объектами](./media/commercial-marketplace-lead-management-instructions-azure-blob/select-blobs.png)
 
 7. На странице больших двоичных объектов нажмите кнопку **+Контейнер** .
 
-8. Введите **имя** для нового контейнера. Все знаки в имени контейнера должны быть строчными. Оно должно начинаться с буквы или цифры и может содержать только буквы, цифры и дефисы (-). Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+8. Введите **имя** для нового контейнера. Все знаки в имени контейнера должны быть строчными. Оно должно начинаться с буквы или цифры и может содержать только буквы, цифры и дефисы (-). Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
     Сохраните это значение, поскольку это значение параметра *Имя контейнера* , который необходимо указать на портале публикации для получения сведений о потенциальных клиентах для вашего коммерческого предложения.
 
@@ -91,5 +91,3 @@ ms.locfileid: "93042384"
 
     > [!NOTE]
     > Завершите настройку остальной части предложения и опубликуйте его, прежде чем вы сможете получать сведения о потенциальных клиентах для своего предложения.
-
-

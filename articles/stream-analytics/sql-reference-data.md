@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 01/29/2019
-ms.openlocfilehash: 1ae5908fe3ab95dcd62da976988bd7ce107217e5
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 1826b66b0548b7567af59de64549c7eb700025c3
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027412"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130907"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics
 
@@ -173,11 +173,11 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
    Обратите внимание, что в дополнение к разностному запросу среда выполнения Stream Analytics может периодически выполнять запрос моментального снимка для хранения контрольных точек.
 
 ## <a name="test-your-query"></a>Тестирование запроса
-   Важно убедиться, что запрос возвращает ожидаемый набор данных, который будет использоваться заданием Stream Analytics в качестве эталонных данных. Чтобы проверить запрос, перейдите к элементу "Ввод" в разделе "Топология задания" на портале. Теперь выберите "Образец данных" для эталонных входных данных Базы данных SQL. Когда образец станет доступен, скачайте файл и проверьте, правильно ли возвращаются данные. Если вы хотите оптимизировать итерации разработки и тестирования, мы рекомендуем применить [средства Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-install). Вы можете использовать любой другой инструмент, но сначала убедитесь, что запрос возвращает из Базы данных SQL Azure правильные результаты, а затем применяйте его в задании Stream Analytics. 
+   Важно убедиться, что запрос возвращает ожидаемый набор данных, который будет использоваться заданием Stream Analytics в качестве эталонных данных. Чтобы проверить запрос, перейдите к элементу "Ввод" в разделе "Топология задания" на портале. Теперь выберите "Образец данных" для эталонных входных данных Базы данных SQL. Когда образец станет доступен, скачайте файл и проверьте, правильно ли возвращаются данные. Если вы хотите оптимизировать итерации разработки и тестирования, мы рекомендуем применить [средства Stream Analytics для Visual Studio](./stream-analytics-tools-for-visual-studio-install.md). Вы можете использовать любой другой инструмент, но сначала убедитесь, что запрос возвращает из Базы данных SQL Azure правильные результаты, а затем применяйте его в задании Stream Analytics. 
 
 ### <a name="test-your-query-with-visual-studio-code"></a>Тестирование запроса с помощью Visual Studio Code
 
-   Установите [средства Azure Stream Analytics](https://marketplace.visualstudio.com/items?itemName=ms-bigdatatools.vscode-asa) и [SQL Server (mssql)](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql) на Visual Studio Code и настройте свой проект ASA. Дополнительные сведения см. [в разделе Краткое руководство. создание Azure Stream Analytics задания в Visual Studio Code](https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code) и в [учебнике по расширению SQL Server (MSSQL)](https://aka.ms/mssql-getting-started).
+   Установите [средства Azure Stream Analytics](https://marketplace.visualstudio.com/items?itemName=ms-bigdatatools.vscode-asa) и [SQL Server (mssql)](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql) на Visual Studio Code и настройте свой проект ASA. Дополнительные сведения см. [в разделе Краткое руководство. создание Azure Stream Analytics задания в Visual Studio Code](./quick-create-visual-studio-code.md) и в [учебнике по расширению SQL Server (MSSQL)](/sql/tools/visual-studio-code/sql-server-develop-use-vscode).
 
 1. Настройте входные ссылочные данные SQL.
    

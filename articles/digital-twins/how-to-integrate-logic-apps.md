@@ -8,12 +8,12 @@ ms.date: 9/11/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 9ea85449d3980f46e88eddc7e06e4a5384b8cea3
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 3fbd9016bcbfa83574d894af7ca728b863f54344
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027556"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93129326"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
@@ -33,34 +33,11 @@ ms.locfileid: "93027556"
 
 Кроме того, в ходе установки необходимых компонентов необходимо выполнить следующие действия. В оставшейся части этого раздела будут рассмотрены следующие шаги:
 - Настроить экземпляр Azure Digital Twins.
-- Получение секрета клиента регистрации приложения
 - Добавление цифрового двойника
 
 ### <a name="set-up-azure-digital-twins-instance"></a>Настройка экземпляра Azure Digital Twins
 
-Чтобы подключиться к двойников экземпляру Azure Digital для Logic Apps в этой статье, вам потребуется уже настроенный **экземпляр Azure Digital двойников** . 
-
-Сначала **настройте экземпляр Azure Digital Twins** и необходимую проверку подлинности, чтобы иметь возможность работать с экземпляром. Для этого выполните инструкции из статьи [ *Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)*](how-to-set-up-instance-portal.md).
-* После настройки экземпляра Azure Digital двойников вам потребуется **_имя узла_** экземпляра ( [найдите в портал Azure](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
-
-Чтобы проверить подлинность соединителя, вам также потребуется настроить **регистрацию приложения** . Следуйте инструкциям в [*Практическое руководство. Создайте регистрацию приложения*](how-to-create-app-registration.md), чтобы настроить ее. 
-* После регистрации приложения вам потребуется **_идентификатор приложения (клиента)_** регистрации и **_идентификатор каталога (клиента)_** ( [найдите в портал Azure](how-to-create-app-registration.md#collect-client-id-and-tenant-id)).
-
-### <a name="get-app-registration-client-secret"></a>Получение секрета клиента регистрации приложения
-
-Кроме того, вам потребуется создать **_секрет клиента_** для регистрации приложения Azure AD. Для этого перейдите на страницу [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure (эту ссылку можно использовать или найти на панели поиска на портале). Выберите регистрацию, созданную в предыдущем разделе, из списка, чтобы открыть сведения о ней. 
-
-Нажмите *Сертификаты и секреты* в меню регистрации и выберите *+ новый секрет клиента* .
-
-:::image type="content" source="media/how-to-integrate-logic-apps/client-secret.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение &quot;сертификаты и секреты&quot;, а также выделение на странице &quot;новый секрет клиента&quot;.":::
-
-Введите любые значения для описания и истечения срока действия, а затем нажмите кнопку *Добавить* .
-
-:::image type="content" source="media/how-to-integrate-logic-apps/add-client-secret.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение &quot;сертификаты и секреты&quot;, а также выделение на странице &quot;новый секрет клиента&quot;.":::
-
-Теперь убедитесь, что секрет клиента отображается на странице _сертификаты & секреты_ с _истечением срока действия_ и полями _значений_ . Запишите _значение_ , которое будет использоваться позже (вы также можете скопировать его в буфер обмена с помощью значка копирования).
-
-:::image type="content" source="media/how-to-integrate-logic-apps/client-secret-value.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение &quot;сертификаты и секреты&quot;, а также выделение на странице &quot;новый секрет клиента&quot;.":::
+[!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
 ### <a name="add-a-digital-twin"></a>Добавление цифрового двойника
 
@@ -70,9 +47,29 @@ ms.locfileid: "93027556"
 
 Вам потребуется **_идентификатор двойника_** двойника в созданном вами экземпляре.
 
+## <a name="set-up-app-registration"></a>Настройка регистрации приложения
+
+[!INCLUDE [digital-twins-prereq-registration.md](../../includes/digital-twins-prereq-registration.md)]
+
+### <a name="get-app-registration-client-secret"></a>Получение секрета клиента регистрации приложения
+
+Кроме того, вам потребуется создать **_секрет клиента_** для регистрации приложения Azure AD. Для этого перейдите на страницу [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure (эту ссылку можно использовать или найти на панели поиска на портале). Выберите регистрацию, созданную в предыдущем разделе, из списка, чтобы открыть сведения о ней. 
+
+Нажмите *Сертификаты и секреты* в меню регистрации и выберите *+ новый секрет клиента* .
+
+:::image type="content" source="media/how-to-integrate-logic-apps/client-secret.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение &quot;сертификаты и секреты&quot;, а также выделение на странице &quot;новый секрет клиента&quot;.":::
+
+Введите любые значения для *описания* и *истечения срока действия* , а затем нажмите кнопку *добавить* .
+
+:::image type="content" source="media/how-to-integrate-logic-apps/add-client-secret.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение &quot;сертификаты и секреты&quot;, а также выделение на странице &quot;новый секрет клиента&quot;.":::
+
+Теперь убедитесь, что секрет клиента отображается на странице _сертификаты & секреты_ с _истечением срока действия_ и полями _значений_ . Запишите _значение_ , которое будет использоваться позже (вы также можете скопировать его в буфер обмена с помощью значка копирования).
+
+:::image type="content" source="media/how-to-integrate-logic-apps/client-secret-value.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение &quot;сертификаты и секреты&quot;, а также выделение на странице &quot;новый секрет клиента&quot;.":::
+
 ## <a name="create-custom-logic-apps-connector"></a>Создание настраиваемого соединителя Logic Apps
 
-На этом шаге вы создадите [настраиваемый соединитель Logic Apps](../logic-apps/custom-connector-overview.md) для API-интерфейсов Azure Digital двойников. После этого вы сможете подключать Azure Digital двойников при создании приложения логики в следующем разделе.
+Теперь вы готовы создать [настраиваемый соединитель Logic Apps](../logic-apps/custom-connector-overview.md) для API-интерфейсов Azure Digital двойников. После этого вы сможете подключать Azure Digital двойников при создании приложения логики в следующем разделе.
 
 Перейдите на страницу [Logic Apps настраиваемый соединитель](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Web%2FcustomApis) в портал Azure (эту ссылку можно использовать или найти на панели поиска портала). Нажмите *+ Добавить* .
 

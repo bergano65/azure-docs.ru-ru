@@ -7,12 +7,12 @@ ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 10/22/2020
 tags: connectors
-ms.openlocfilehash: f8dccca1d1264492a4e7c8dab568e13eec9d2557
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ce7679fff86d2c96588cf2b704d44238535963b3
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100717"
+ms.locfileid: "93130941"
 ---
 # <a name="automate-workflows-for-a-sql-database-by-using-azure-logic-apps"></a>Автоматизация рабочих процессов для базы данных SQL с помощью Azure Logic Apps
 
@@ -96,9 +96,14 @@ ms.locfileid: "93100717"
    ||||
 
    > [!TIP]
-   > Эти сведения можно найти в строке подключения базы данных. Например, в портал Azure найдите и откройте свою базу данных. В меню База данных выберите **строки подключения** или **свойства** , в которых можно найти следующую строку:
+   > Для предоставления сведений о базе данных и таблице доступны следующие варианты.
+   > 
+   > * Найдите эти сведения в строке подключения базы данных. Например, в портал Azure найдите и откройте свою базу данных. В меню База данных выберите **строки подключения** или **свойства** , где можно найти следующую строку:
    >
-   > `Server=tcp:{your-server-address}.database.windows.net,1433;Initial Catalog={your-database-name};Persist Security Info=False;User ID={your-user-name};Password={your-password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;`
+   >   `Server=tcp:{your-server-address}.database.windows.net,1433;Initial Catalog={your-database-name};Persist Security Info=False;User ID={your-user-name};Password={your-password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;`
+   >
+   > * По умолчанию таблицы в системных базах данных отфильтровываются, поэтому они могут не отображаться автоматически при выборе системной базы данных. В качестве альтернативы можно вручную ввести имя таблицы после выбора параметра **введите пользовательское значение** в списке База данных.
+   >
 
    В этом примере показано, как могут выглядеть эти значения:
 

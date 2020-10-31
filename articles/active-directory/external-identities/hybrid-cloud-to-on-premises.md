@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 10/10/2018
+ms.date: 10/30/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61f82e94f506cc403106912e24532f9d5263a60d
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: cd91d1d2c9f5a4a413f9ea64cfdef649823d0f09
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896472"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93131026"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -77,7 +77,7 @@ ms.locfileid: "92896472"
 
 Мы предлагаем вам пример скрипта PowerShell, на основе которого вы можете разработать свой механизм для создания объектов гостевых пользователей в локальной службе Active Directory.
 
-Этот пример скрипта и файл Readme вы можете скачать в [центре загрузки](https://www.microsoft.com/download/details.aspx?id=51495). Выберите файл **Script and Readme to pull Azure AD B2B users on-prem.zip** .
+Вы можете скачать сценарий и файл сведений из [соединителей для Microsoft Identity Manager 2016 и Forefront Identity Manager 2010 R2](https://www.microsoft.com/download/details.aspx?id=51495). В загружаемом пакете выберите **Скрипт и файл сведений для извлечения пользователей Azure AD B2B on-prem.zip** файле.
 
 Прежде чем запускать этот скрипт, обязательно проверьте предварительные требования и изучите важные рекомендации, перечисленные в README-файле. Не забывайте, что этот скрипт предлагается только в качестве примера. Перед запуском скрипта команда разработчиков вашей и (или) партнерской организации должна настроить и проверить его.
 

@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 10/29/2020
 ms.author: aahi
-ms.openlocfilehash: 740311226a662ea3d3f8bba3ee5156e14f74516b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cedcf8a3fcd656c4af0ca7493c598791d35d20d9
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88244301"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130567"
 ---
 # <a name="use-docker-compose-to-deploy-multiple-containers"></a>Развертывание нескольких контейнеров с помощью Docker Compose
 
@@ -35,24 +35,17 @@ ms.locfileid: "88244301"
   * **Компьютерное зрениеный** ресурс только для ценовой категории F0 или Standard.
   * Ресурс **распознавателя форм** с F0 или "Стандартная ценовая категория".
   * Ресурс **Cognitive Services** с ценовой категорией S0.
-
-## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
-
-Завершите и отправьте [форму запроса Cognitive Services речевых контейнеров](https://aka.ms/speechcontainerspreview/). 
-
-[!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
-
-[!INCLUDE [Authenticate to the container registry](../../../includes/cognitive-services-containers-access-registry.md)]
+* Если вы используете контейнер для предварительной версии с условным просмотром, вам потребуется заполнить [форму интерактивного запроса](https://aka.ms/csgate/) , чтобы использовать ее.
 
 ## <a name="docker-compose-file"></a>Файл Docker Compose
 
-Файл YAML определяет все службы для развертывания. Эти службы зависят от либо `DockerFile` существующего образа контейнера. В этом случае мы будем использовать два изображения предварительной версии. Скопируйте и вставьте следующий файл YAML и сохраните его как *DOCKER-сформируйте. YAML*. Укажите соответствующие значения **apiKey**, **выставления счетов**и **EndpointUri** в файле.
+Файл YAML определяет все службы для развертывания. Эти службы зависят от либо `DockerFile` существующего образа контейнера. В этом случае мы будем использовать два изображения предварительной версии. Скопируйте и вставьте следующий файл YAML и сохраните его как *DOCKER-сформируйте. YAML* . Укажите соответствующие значения **apiKey** , **выставления счетов** и **EndpointUri** в файле.
 
 ```yaml
 version: '3.7'
 services:
   forms:
-    image: "containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer"
+    image: "mcr.microsoft.com/azure-cognitive-services/form-recognizer/layout"
     environment:
        eula: accept
        billing: # < Your form recognizer billing URL >
@@ -70,7 +63,7 @@ services:
       - "5010:5000"
 
   ocr:
-    image: "containerpreview.azurecr.io/microsoft/cognitive-services-read"
+    image: "mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview"
     environment:
       eula: accept
       apikey: # < Your computer vision API key >
@@ -98,8 +91,8 @@ docker-compose up
 Первый раз, когда DOCKER выполняет команду **DOCKER-создания up** с помощью этой конфигурации, он извлекает образы, настроенные в узле **службы** , а затем загружает и подключает их:
 
 ```console
-Pulling forms (containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:)...
-latest: Pulling from microsoft/cognitive-services-form-recognizer
+Pulling forms (mcr.microsoft.com/azure-cognitive-services/form-recognizer/layout:)...
+latest: Pulling from azure-cognitive-services/form-recognizer/layout
 743f2d6c1f65: Pull complete
 72befba99561: Pull complete
 2a40b9192d02: Pull complete
@@ -113,8 +106,8 @@ fd93b5f95865: Pull complete
 ef41dcbc5857: Pull complete
 4d05c86a4178: Pull complete
 34e811d37201: Pull complete
-Pulling ocr (containerpreview.azurecr.io/microsoft/cognitive-services-read:)...
-latest: Pulling from microsoft/cognitive-services-read
+Pulling ocr (mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview:)...
+latest: Pulling from /azure-cognitive-services/vision/read:3.1-preview
 f476d66f5408: Already exists
 8882c27f669e: Already exists
 d9af21273955: Already exists
@@ -166,8 +159,8 @@ ocr_1    | Application started. Press Ctrl+C to shut down.
 
 ```
 IMAGE ID            REPOSITORY                                                                 TAG
-2ce533f88e80        containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer   latest
-4be104c126c5        containerpreview.azurecr.io/microsoft/cognitive-services-read              latest
+2ce533f88e80        mcr.microsoft.com/azure-cognitive-services/form-recognizer/layout          latest
+4be104c126c5        mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview         latest
 ```
 
 ### <a name="test-containers"></a>Тестовые контейнеры
@@ -176,7 +169,7 @@ IMAGE ID            REPOSITORY                                                  
 
 ![Контейнер распознавателя форм](media/form-recognizer-swagger-page.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)

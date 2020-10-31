@@ -6,16 +6,16 @@ author: su-jie
 ms.author: sujie
 ms.date: 4/11/2020
 ms.topic: how-to
-ms.openlocfilehash: bd72866e3e3db21691fda6aaec864a76af7414a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 756604b71efd1715ae3b4ca3d5eebf0fdfa41e34
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903723"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93129802"
 ---
 # <a name="intellisense-in-azure-stream-analytics-tools-for-visual-studio-code"></a>IntelliSense в средствах Azure Stream Analytics для Visual Studio Code
 
-Технология IntelliSense доступна для [Stream Analytics языка запросов](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference?toc=https%3A%2F%2Fdocs.microsoft.com%2Fazure%2Fstream-analytics%2Ftoc.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fazure%2Fbread%2Ftoc.json) в [Azure Stream Analytics tools for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-bigdatatools.vscode-asa&ssr=false#overview). IntelliSense — это вспомогательное средство для написания кода, включающее несколько возможностей: "Список членов", "Сведения о параметрах", "Краткие сведения" и "Завершить слово". Функции IntelliSense иногда вызываются другими именами, такими как "завершение кода", "помощь в содержимом" и "указанием кода".
+Технология IntelliSense доступна для [Stream Analytics языка запросов](/stream-analytics-query/stream-analytics-query-language-reference?bc=https%253a%252f%252fdocs.microsoft.com%252fazure%252fbread%252ftoc.json&toc=https%253a%252f%252fdocs.microsoft.com%252fazure%252fstream-analytics%252ftoc.json) в [Azure Stream Analytics tools for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-bigdatatools.vscode-asa&ssr=false#overview). IntelliSense — это вспомогательное средство для написания кода, включающее несколько возможностей: "Список членов", "Сведения о параметрах", "Краткие сведения" и "Завершить слово". Функции IntelliSense иногда вызываются другими именами, такими как "завершение кода", "помощь в содержимом" и "указанием кода".
 
 ![Демонстрационная версия IntelliSense](./media/vs-code-intellisense/intellisense.gif)
 
@@ -36,7 +36,7 @@ Stream Analytics средства для VS Code IntelliSense предлагае
 
 |Completion     |  Тип       |
 | ----- | ------- |
-| Ключевые слова | `keyword`
+| Keywords | `keyword`
 | Функции | `build-in function`, `user defined function`  |
 | Имя набора данных| `input`, `output`, `intermediate result set`|
 | Имя столбца набора данных|`input`, `intermediate result set`|
@@ -69,7 +69,7 @@ Stream Analytics средства для VS Code IntelliSense предлагае
 
 Эта проблема вызвана отсутствием входной конфигурации, которая предоставляет данные. Можно проверить правильность настройки [локального ввода](visual-studio-code-local-run.md#define-a-local-input) или [ввода в реальном времени](visual-studio-code-local-run-live-input.md#define-a-live-stream-input) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-visual-studio-code.md)
 * [Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code](visual-studio-code-local-run.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/14/2020
-ms.openlocfilehash: 3b74f3ecdc048b6468906fb46a848d27cd1f23b9
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 7008c305525c7564e57fd225e961b462bf6939f2
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275420"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130839"
 ---
 # <a name="support-for-the-microsoft-commercial-marketplace"></a>Поддержка коммерческого рынка Майкрософт
 
@@ -32,7 +32,7 @@ ms.locfileid: "92275420"
 
 | Канал поддержки | Описание |  
 |:--- |:--- |  
-| Форумы MSDN: Marketplace, расположенный на [странице вопросов в разделе вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/products/azure) | Форум Microsoft Developer Network. |  
+| Форумы MSDN: Marketplace, расположенный на [странице вопросов в разделе вопросов и ответов на сайте Майкрософт](/answers/products/azure) | Форум Microsoft Developer Network. |  
 | Stack Overflow. Вопросы по Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure](https://stackoverflow.com/questions/tagged/azure) | Среда Stack Overflow, где можно получить решения и задать вопросы, относящиеся к Azure и Marketplace:<ul> <li>Stack Overflow. Вопросы по Azure Marketplace, расположенные по адресу [stackoverflow.com/questions/tagged/azure-marketplace](https://stackoverflow.com/questions/tagged/azure-marketplace)</li> <li>Stack Overflow. Вопросы по Azure Resource Manager, расположенные по адресу [stackoverflow.com/questions/tagged/azure-resource-manager](https://stackoverflow.com/questions/tagged/azure-resource-manager)</li> <li>Stack Overflow. Вопросы по виртуальным машинам Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure-virtual-machine](https://stackoverflow.com/questions/tagged/azure-virtual-machine)</li> <li>Stack Overflow. Вопросы по контейнерам Azure, расположенные по адресу [stackoverflow.com/search?q=azure+container](https://stackoverflow.com/search?q=azure+container)</li> </ul> |
 
 ## <a name="marketing-resources"></a>Маркетинговые ресурсы  

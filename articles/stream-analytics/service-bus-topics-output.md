@@ -7,16 +7,16 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: cc09912bb0c9ab553d180ff5cc06fc52c4c5cc0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2a9063a202ba542279efd8017d282fe0aa78d42
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91261068"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93129870"
 ---
 # <a name="service-bus-topics-output-from-azure-stream-analytics"></a>Разделы служебной шины, выводимые из Azure Stream Analytics
 
-Очереди служебной шины предоставляют метод связи "один к одному" между отправителем и получателем. [Разделы служебной шины](https://msdn.microsoft.com/library/azure/hh367516.aspx) предоставляют тип связи "один ко многим".
+Очереди служебной шины предоставляют метод связи "один к одному" между отправителем и получателем. [Разделы служебной шины](/previous-versions/azure/hh367516(v=azure.100)) предоставляют тип связи "один ко многим".
 
 В таблице ниже приведены имена и описание свойств для создания выходных данных раздела служебной шины.
 
@@ -45,7 +45,7 @@ ms.locfileid: "91261068"
 
 ## <a name="custom-metadata-properties-for-output"></a>Свойства пользовательских метаданных для выходных данных
 
-Столбцы запросов можно прикреплять к исходящим сообщениям как пользовательские свойства. Эти столбцы не переходят в полезные данные. Свойства представлены в виде словаря в выходном сообщении. *Ключ* — это имя столбца, а *значение* — это значение столбца в словаре свойств. Поддерживаются все типы данных Stream Analytics, кроме записи и массива.
+Столбцы запросов можно прикреплять к исходящим сообщениям как пользовательские свойства. Эти столбцы не переходят в полезные данные. Свойства представлены в виде словаря в выходном сообщении. *Ключ*  — это имя столбца, а *значение*  — это значение столбца в словаре свойств. Поддерживаются все типы данных Stream Analytics, кроме записи и массива.
 
 В следующем примере поля `DeviceId` и `DeviceStatus` добавляются в метаданные.
 
@@ -65,7 +65,7 @@ ms.locfileid: "91261068"
 
 ## <a name="system-properties"></a>Свойства системы
 
-Столбцы запросов можно присоединять как [системные свойства](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties&preserve-view=true) к исходящим сообщениям очереди или раздела служебной шины. Эти столбцы не попадают в полезные данные, а соответствующее [системное свойство](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties&preserve-view=true) BrokeredMessage заполняется значениями столбцов запроса.
+Столбцы запросов можно присоединять как [системные свойства](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties&preserve-view=true) к исходящим сообщениям очереди или раздела служебной шины. Эти столбцы не попадают в полезные данные, а соответствующее [системное свойство](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties&preserve-view=true) BrokeredMessage заполняется значениями столбцов запроса.
 Эти системные свойства поддерживаются — `MessageId, ContentType, Label, PartitionKey, ReplyTo, SessionId, CorrelationId, To, ForcePersistence, TimeToLive, ScheduledEnqueueTimeUtc`.
 
 Строковые значения этих столбцов анализируются как соответствующие типы значений системных свойств, а все ошибки синтаксического анализа обрабатываются как ошибки данных.

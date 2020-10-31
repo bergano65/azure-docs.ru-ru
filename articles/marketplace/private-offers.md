@@ -7,12 +7,12 @@ ms.topic: article
 author: vikrambmsft
 ms.author: vikramb
 ms.date: 07/01/2020
-ms.openlocfilehash: 2808f0d3b99257d52b2d400424f256f980005863
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0bb5dccfc99a693ec89ed08ac31b77eb16442f73
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88607202"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93129972"
 ---
 # <a name="private-offers-in-the-microsoft-commercial-marketplace"></a>Частные предложения в коммерческом магазине Майкрософт
 
@@ -30,18 +30,18 @@ ms.locfileid: "88607202"
 
 Частные предложения теперь доступны для службы "Виртуальные машины", приложений Azure (реализованы как шаблоны решений или управляемые приложения) и приложений SaaS.
 
-<!--- Like public offers, private offers can be created and managed via the [Cloud Partner Portal](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md). Customers can be granted or revoked access to private offers in minutes.
+<!--- Like public offers, private offers can be created and managed via the [Cloud Partner Portal](). Customers can be granted or revoked access to private offers in minutes.
 --->
 
 ## <a name="creating-private-offers-using-plans"></a>Создание частных предложений с помощью планов
 
-Для *новых или существующих предложений с планами*издатели могут легко создавать новые, частные вариации, создавая новые планы (ранее известные как номера SKU) и помечая их как частные. Каждое предложение может иметь до 45 частных планов.
+Для *новых или существующих предложений с планами* издатели могут легко создавать новые, частные вариации, создавая новые планы (ранее известные как номера SKU) и помечая их как частные. Каждое предложение может иметь до 45 частных планов.
 
-<!--- [Private SKUs](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md) --->
+<!--- [Private SKUs]() --->
 
 Частные планы — это компоненты предложения, которые являются видимыми и доступны для покупателей целевыми клиентами. Частные планы могут повторно использовать базовые образы или метаданные предложения, уже опубликованные для общедоступного плана. Это позволяет издателям создавать разные частные варианты общедоступного предложения без публикации нескольких версий одного и того же базового образа и метаданных предложения. Для виртуальных машин и приложений Azure. Если частный план совместно использует базовый образ с общедоступным планом, любые изменения базового образа предложения будут распространяться по всем общедоступным и частным планам с помощью этого базового образа.
 
-Для *новых предложений, которые включают только частные планы*, издатели могут создавать свои предложения как любые другие предложения, а затем помечать планы как частные. Предложения, у которых есть только частные планы, не будут обнаруживаемыми или доступными через коммерческий магазин Майкрософт или [портал Azure](https://azure.microsoft.com/features/azure-portal/) клиентами, не связанными с предложением.
+Для *новых предложений, которые включают только частные планы* , издатели могут создавать свои предложения как любые другие предложения, а затем помечать планы как частные. Предложения, у которых есть только частные планы, не будут обнаруживаемыми или доступными через коммерческий магазин Майкрософт или [портал Azure](https://azure.microsoft.com/features/azure-portal/) клиентами, не связанными с предложением.
 
 >[!NOTE]
 >Предложение, которое содержит только частные планы, не будет отображаться в общедоступном каталоге Azure Marketplace или AppSource.
@@ -69,5 +69,5 @@ ms.locfileid: "88607202"
 <!---
 ## Next steps
 
-To start using private offers, follow the steps in the [Private SKUs and Plans](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md) guide.
+To start using private offers, follow the steps in the [Private SKUs and Plans]() guide.
 --->

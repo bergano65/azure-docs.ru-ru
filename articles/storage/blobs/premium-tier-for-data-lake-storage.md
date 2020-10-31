@@ -6,21 +6,18 @@ ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.custom: references_regions
-ms.date: 10/28/2020
+ms.date: 10/30/2020
 ms.author: normesta
-ms.openlocfilehash: 9704ff7dec02a0de044863ec2da6280d65b30ef0
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: dc0b620629b5dce651e02e5fe95b0619c1d42a78
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043519"
+ms.locfileid: "93131162"
 ---
 # <a name="premium-tier-for-azure-data-lake-storage"></a>Уровень "Премиум" для Azure Data Lake Storage
 
-Azure Data Lake Storage 2-го поколения теперь поддерживает [уровень производительности "Премиум](storage-blob-performance-tiers.md#premium-performance)". Уровень производительности "Премиум" идеально подходит для приложений и рабочих нагрузок аналитики больших данных, которые нуждаются в низкой задержке и имеют большое количество транзакций. 
-
-> [!NOTE]
-> Уровень "Премиум" для Azure Data Lake Storage находится в общедоступной предварительной версии. См. сведения о [региональной доступности](#regional-availability).
+Azure Data Lake Storage 2-го поколения теперь поддерживает [уровень производительности "Премиум](storage-blob-performance-tiers.md#premium-performance)". Уровень производительности "Премиум" идеально подходит для приложений и рабочих нагрузок аналитики больших данных, которые нуждаются в низкой задержке и имеют большое количество транзакций.
 
 ## <a name="workloads-that-can-benefit-from-the-premium-performance-tier"></a>Рабочие нагрузки, которые могут использовать преимущества уровня производительности "Премиум"
 
@@ -100,14 +97,9 @@ AI/ML обрабатывает потребление и обработку ра
 |Центральная Индия|LRS|
 |Западная Индия|LRS|
 |Северная часть ОАЭ;|LRS|
-|Восточная Япония|LRS|
+|Japan East|LRS|
 |Западная Япония|LRS|
 |Юго-Восточная Азия|LRS, ZRS|
 |Восточная Австралия|LRS, ZRS|
 |Юго-Восточная Австралия|LRS|
-|Южная Бразилия|LRS|
-
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-[Объявление блога](https://www.microsoft.com)уровня "Премиум" для Azure Data Lake Storage.
+|Brazil South|LRS|

@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.topic: how-to
 ms.date: 10/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7a084b2d0582f53d4372ba3332194629ad29a4ec
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: cba81b8415f0f9cf7253e674e90ae09718b94d54
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93041865"
+ms.locfileid: "93130482"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>Azure Stream Analytics в IoT Edge
  
@@ -32,11 +32,11 @@ Azure Stream Analytics в IoT Edge работает на платформе [Azu
 ## <a name="edge-jobs-in-azure-stream-analytics"></a>Задания Edge в службе Azure Stream Analytics
 ### <a name="what-is-an-edge-job"></a>Что такое задание "Edge"?
 
-Задания Edge ASA выполняются в контейнерах, развернутых на [устройствах Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works). Они состоят из двух частей:
+Задания Edge ASA выполняются в контейнерах, развернутых на [устройствах Azure IoT Edge](../iot-edge/about-iot-edge.md). Они состоят из двух частей:
 1.  Облачная часть, которая отвечает за определение задания: пользователи определяют входы и выходы, запросы и другие параметры (неупорядоченные события и т. д.) в облаке.
 2.  Модуль, выполняющийся на устройствах IoT Edge. Он содержит механизм обработки ASA и получает определение задания из облака. 
 
-ASA развертывает задания Edge на устройства с помощью Центра Интернета вещей. Дополнительные сведения о развертывании IoT Edge [см. здесь](https://docs.microsoft.com/azure/iot-edge/module-deployment-monitoring).
+ASA развертывает задания Edge на устройства с помощью Центра Интернета вещей. Дополнительные сведения о развертывании IoT Edge [см. здесь](../iot-edge/module-deployment-monitoring.md).
 
 ![Задание Edge Azure Stream Analytics](media/stream-analytics-edge/stream-analytics-edge-job.png)
 
@@ -48,24 +48,24 @@ ASA развертывает задания Edge на устройства с п
 | --- | --- |
 | **Создание контейнера хранилища** | Контейнеры хранилища используются для сохранения определения задания, доступ к которому можно получить с устройств IoT. <br>  Любой имеющийся контейнер хранилища можно использовать повторно. |
 | **Создание задания Edge ASA** | Создайте новое задание, выберите **Edge** в качестве **среды размещения** . <br> Создание этих заданий и управление ими осуществляется из облака, а выполняются они на ваших устройствах IoT Edge. |
-| **Настройка среды IoT Edge на ваших устройствах** | Инструкции для [Windows](https://docs.microsoft.com/azure/iot-edge/quickstart) или [Linux](https://docs.microsoft.com/azure/iot-edge/quickstart-linux).|
+| **Настройка среды IoT Edge на ваших устройствах** | Инструкции для [Windows](../iot-edge/quickstart.md) или [Linux](../iot-edge/quickstart-linux.md).|
 | **Развертывание ASA на ваших устройствах IoT Edge** | Определение задания ASA экспортируется в контейнер хранилища, созданный ранее. |
 
-Вы можете выполнить инструкции из [этого пошагового руководства](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics), чтобы развернуть свое первое задание ASA в IoT Edge. Следующее видео поможет вам понять процесс выполнения задания Stream Analytics на устройстве IoT Edge:  
+Вы можете выполнить инструкции из [этого пошагового руководства](../iot-edge/tutorial-deploy-stream-analytics.md), чтобы развернуть свое первое задание ASA в IoT Edge. Следующее видео поможет вам понять процесс выполнения задания Stream Analytics на устройстве IoT Edge:  
 
 
 > [!VIDEO https://channel9.msdn.com/Events/Connect/2017/T157/player]
 
 #### <a name="create-a-storage-container"></a>Создание контейнера хранилища
 Контейнер хранилища необходим для экспорта скомпилированных запросов и конфигурации задания ASA. Он используется для настройки образа ASA Docker с определенным запросом. 
-1. Следуйте [этим инструкциям](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account) по созданию учетной записи хранения на портале Azure. Вы можете сохранить все параметры по умолчанию, чтобы использовать эту учетную запись с ASA.
+1. Следуйте [этим инструкциям](../storage/common/storage-account-create.md) по созданию учетной записи хранения на портале Azure. Вы можете сохранить все параметры по умолчанию, чтобы использовать эту учетную запись с ASA.
 2. В созданной учетной записи хранения создайте контейнер хранилища BLOB-объектов:
     1. Щелкните **Большие двоичные объекты** , а затем — **+ Контейнер** . 
     2. Введите имя и сохраните контейнер как **Частный** .
 
 #### <a name="create-an-asa-edge-job"></a>Создание задания Edge ASA
 > [!Note]
-> Это руководство посвящено созданию задания ASA с помощью портала Azure. Кроме того, [чтобы создать задание ASA Edge, вы можете использовать подключаемый модуль Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-edge-jobs).
+> Это руководство посвящено созданию задания ASA с помощью портала Azure. Кроме того, [чтобы создать задание ASA Edge, вы можете использовать подключаемый модуль Visual Studio](./stream-analytics-tools-for-visual-studio-edge-jobs.md).
 
 1. На портале Azure создайте "задание Stream Analytics". [Прямая ссылка для создания задания ASA](https://ms.portal.azure.com/#create/Microsoft.StreamAnalyticsJob).
 
@@ -81,7 +81,7 @@ ASA развертывает задания Edge на устройства с п
 4. Укажите сведения о контейнере хранилища в меню **Параметры IoT Edge** .
 
 5. Указание необязательных параметров
-    1. **Упорядочивание событий** . Неупорядоченную политику можно настроить на портале. Документация доступна [здесь](https://docs.microsoft.com/stream-analytics-query/time-skew-policies-azure-stream-analytics).
+    1. **Упорядочивание событий** . Неупорядоченную политику можно настроить на портале. Документация доступна [здесь](/stream-analytics-query/time-skew-policies-azure-stream-analytics).
     2. **Языковой стандарт** . Задайте формат интернализации.
 
 
@@ -97,7 +97,7 @@ ASA развертывает задания Edge на устройства с п
 - Установите среду выполнения IoT Edge и Docker на устройствах Edge.
 - Задайте свои устройства как **Устройства IoT Edge** в Центре Интернета вещей.
 
-Эти действия описаны в документации по IoT Edge для [Windows](https://docs.microsoft.com/azure/iot-edge/quickstart) и [Linux](https://docs.microsoft.com/azure/iot-edge/quickstart-linux).  
+Эти действия описаны в документации по IoT Edge для [Windows](../iot-edge/quickstart.md) и [Linux](../iot-edge/quickstart-linux.md).  
 
 
 ####  <a name="deployment-asa-on-your-iot-edge-devices"></a>Развертывание ASA на ваших устройствах IoT Edge
@@ -113,11 +113,11 @@ ASA развертывает задания Edge на устройства с п
 > При развертывании задания на устройствах IoT Edge ASA создает подписанный URL-адрес (SAS) для файла определения задания. Ключ SAS безопасно передается на устройства IoT Edge с помощью двойника устройства. Срок действия этого ключа составляет три года после даты создания. При обновлении задания IoT Edge SAS изменится, но версия образа останется прежней. После **Обновления** следуйте указаниям в рабочем процессе развертывания. На устройстве регистрируется уведомление об обновлении.
 
 
-Дополнительные сведения о развертываниях IoT Edge см. на [этой странице](https://docs.microsoft.com/azure/iot-edge/module-deployment-monitoring).
+Дополнительные сведения о развертываниях IoT Edge см. на [этой странице](../iot-edge/module-deployment-monitoring.md).
 
 
 ##### <a name="configure-routes"></a>Настройка маршрутов
-IoT Edge предоставляет способ декларативно маршрутизировать сообщения между модулями, а также между модулями и Центром Интернета вещей. Полный синтаксис описан [здесь](https://docs.microsoft.com/azure/iot-edge/module-composition).
+IoT Edge предоставляет способ декларативно маршрутизировать сообщения между модулями, а также между модулями и Центром Интернета вещей. Полный синтаксис описан [здесь](../iot-edge/module-composition.md).
 Имена входов и выходов, сформированных в задании ASA, можно использовать в качестве конечных точек для маршрутизации.  
 
 ###### <a name="example"></a>Пример
@@ -145,7 +145,7 @@ IoT Edge предоставляет способ декларативно мар
 ### <a name="current-limitations-for-iot-edge-jobs-compared-to-cloud-jobs"></a>Текущие ограничения заданий IoT Edge в сравнении с облачными заданиями
 Целью является обеспечение соответствия между заданиями IoT Edge и облачными заданиями. Поддерживается большинство функций языка запросов SQL, что позволяет запускать одну и ту же логику как в облаке, так и в IoT Edge.
 Тем не менее для заданий Edge пока не поддерживаются следующие компоненты:
-* Определяемые пользователем функции (UDF) в JavaScript. Определяемые пользователем функции доступны в [C# для заданий IoT Edge](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-edge-csharp-udf) (предварительная версия).
+* Определяемые пользователем функции (UDF) в JavaScript. Определяемые пользователем функции доступны в [C# для заданий IoT Edge](./stream-analytics-edge-csharp-udf.md) (предварительная версия).
 * Определяемые пользователем статистические функции (UDA).
 * Функции машинного обучения Azure.
 * Использование более 14 статических выражений за один шаг.
@@ -165,7 +165,7 @@ ASA в IoT Edge доступна в качестве образов Windows и L
 
 ### <a name="input-and-output"></a>Входные и выходные данные
 #### <a name="input-and-output-streams"></a>Входные потоки и потоки вывода
-Задания ASA Edge могут получать входные и выходные данные из других модулей, запущенных на устройствах IoT Edge. Чтобы подключиться к конкретным модулям и из них, можно задать конфигурацию маршрутизации во время развертывания. Дополнительные сведения см. в [документации по композиции модуля IoT Edge](https://docs.microsoft.com/azure/iot-edge/module-composition).
+Задания ASA Edge могут получать входные и выходные данные из других модулей, запущенных на устройствах IoT Edge. Чтобы подключиться к конкретным модулям и из них, можно задать конфигурацию маршрутизации во время развертывания. Дополнительные сведения см. в [документации по композиции модуля IoT Edge](../iot-edge/module-composition.md).
 
 Для входных и выходных данных поддерживаются форматы CSV и JSON.
 
@@ -176,7 +176,7 @@ ASA в IoT Edge доступна в качестве образов Windows и L
 
 
 ##### <a name="reference-data"></a>Ссылочные данные
-Эталонные данные (которые также называются таблицами подстановки) — это ограниченный набор данных, являющийся по своей сути статическим или медленно изменяющимся. Он используется для уточняющего запроса или для согласования с потоком данных. Для использования эталонных данных в задании Azure Stream Analytics обычно используется [соединение эталонных данных](https://docs.microsoft.com/stream-analytics-query/reference-data-join-azure-stream-analytics) в запросе. Дополнительные сведения см. в статье [Использование эталонных данных для уточняющих запросов в Stream Analytics](stream-analytics-use-reference-data.md).
+Эталонные данные (которые также называются таблицами подстановки) — это ограниченный набор данных, являющийся по своей сути статическим или медленно изменяющимся. Он используется для уточняющего запроса или для согласования с потоком данных. Для использования эталонных данных в задании Azure Stream Analytics обычно используется [соединение эталонных данных](/stream-analytics-query/reference-data-join-azure-stream-analytics) в запросе. Дополнительные сведения см. в статье [Использование эталонных данных для уточняющих запросов в Stream Analytics](stream-analytics-use-reference-data.md).
 
 Поддерживаются только локальные эталонные данные. Когда задание развертывается на устройстве IoT Edge, оно загружает эталонные данные из определенного пользователем пути к файлу.
 
@@ -226,13 +226,13 @@ ASA в IoT Edge доступна в качестве образов Windows и L
       
       
 ## <a name="get-help"></a>Получить справку
-Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов об Azure Stream Analytics](https://docs.microsoft.com/answers/topics/azure-stream-analytics.html).
+Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов об Azure Stream Analytics](/answers/topics/azure-stream-analytics.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое Azure IoT Edge (предварительная версия)](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works)
-* [Deploy Azure Stream Analytics as an IoT Edge module - preview](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))
-* [Разработка заданий Edge Stream Analytics с помощью средств Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-edge-jobs)
+* [Что такое Azure IoT Edge (предварительная версия)](../iot-edge/about-iot-edge.md)
+* [Deploy Azure Stream Analytics as an IoT Edge module - preview](../iot-edge/tutorial-deploy-stream-analytics.md) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))
+* [Разработка заданий Edge Stream Analytics с помощью средств Visual Studio](./stream-analytics-tools-for-visual-studio-edge-jobs.md)
 * [Сведения о реализации CI/CD для Stream Analytics с использованием API-интерфейсов](stream-analytics-cicd-api.md)
 
 <!--Link references-->
@@ -240,5 +240,5 @@ ASA в IoT Edge доступна в качестве образов Windows и L
 [stream.analytics.scale.jobs]: stream-analytics-scale-jobs.md
 [stream.analytics.introduction]: stream-analytics-introduction.md
 [stream.analytics.get.started]: stream-analytics-real-time-fraud-detection.md
-[stream.analytics.query.language.reference]: https://go.microsoft.com/fwlink/?LinkID=513299
-[stream.analytics.rest.api.reference]: https://go.microsoft.com/fwlink/?LinkId=517301
+[stream.analytics.query.language.reference]: /stream-analytics-query/stream-analytics-query-language-reference
+[stream.analytics.rest.api.reference]: /rest/api/streamanalytics/

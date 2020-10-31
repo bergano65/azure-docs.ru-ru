@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.custom: seodec18
-ms.openlocfilehash: ead175cbcaa9467cb5263ad95100facdda096991
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c2c199b2366f2708af19c1868cce09e0ba38fc96
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87337812"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130261"
 ---
 # <a name="troubleshoot-azure-stream-analytics-queries"></a>Устранение неполадок з запросами в службе Azure Stream Analytics
 
@@ -25,26 +25,26 @@ ms.locfileid: "87337812"
 
 1.  Изучите ошибки с помощью локального тестирования:
 
-    - На портале Azure откройте вкладку **Запрос** и выберите **Тест**. Для [проверки запроса](stream-analytics-test-query.md) используйте загруженные демонстрационные данные. Проанализируйте все ошибки и попытайтесь исправить их.   
+    - На портале Azure откройте вкладку **Запрос** и выберите **Тест** . Для [проверки запроса](stream-analytics-test-query.md) используйте загруженные демонстрационные данные. Проанализируйте все ошибки и попытайтесь исправить их.   
     - Кроме того, вы можете [проверить запрос локально](stream-analytics-live-data-local-testing.md) с помощью инструментов Stream Analytics для Visual Studio или [Visual Studio Code](visual-studio-code-local-run-live-input.md). 
 
 2.  Пошаговая [Отладка запросов с помощью схемы заданий](debug-locally-using-job-diagram-vs-code.md) Azure Stream Analytics средств для Visual Studio Code. На схеме заданий показано, как потоки данных из источников входных данных (концентратор событий, центр Интернета вещей и т. д.) проходят через несколько шагов запроса и попадают в приемники выходных данных. Каждый шаг запроса сопоставляется с временным результирующим набором, который определяется в скрипте с помощью инструкции WITH. Чтобы найти источник проблемы, вы можете просматривать данные и метрики по каждому из промежуточных результирующих наборов.
 
     ![Просмотр результатов в схеме заданий](./media/debug-locally-using-job-diagram-vs-code/preview-result.png)
 
-3.  Если используются [**метки времени**](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](stream-analytics-out-of-order-and-late-events.md).
+3.  Если используются [**метки времени**](/stream-analytics-query/timestamp-by-azure-stream-analytics), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](./stream-analytics-time-handling.md).
 
 4.  Исключите типичные проблемы, например:
-    - Предложение [**WHERE**](https://docs.microsoft.com/stream-analytics-query/where-azure-stream-analytics) в запросе фильтрует все события, предотвращая создание выходных данных.
-    - Выполнение функции [**CAST**](https://docs.microsoft.com/stream-analytics-query/cast-azure-stream-analytics) завершается ошибкой, что приводит к сбою всего задания. Чтобы избежать сбоев приведения типов, используйте функцию [**TRY_CAST**](https://docs.microsoft.com/stream-analytics-query/try-cast-azure-stream-analytics).
+    - Предложение [**WHERE**](/stream-analytics-query/where-azure-stream-analytics) в запросе фильтрует все события, предотвращая создание выходных данных.
+    - Выполнение функции [**CAST**](/stream-analytics-query/cast-azure-stream-analytics) завершается ошибкой, что приводит к сбою всего задания. Чтобы избежать сбоев приведения типов, используйте функцию [**TRY_CAST**](/stream-analytics-query/try-cast-azure-stream-analytics).
     - При использовании оконных функций подождите до завершения окна для вывода выходных данных из запроса.
     - Метка времени для событий предшествует времени запуска задания, и события отбрасываются.
-    - Условия [**JOIN**](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics) не имеют совпадений. Если совпадений нет, возвращается нулевой набор результатов.
+    - Условия [**JOIN**](/stream-analytics-query/join-azure-stream-analytics) не имеют совпадений. Если совпадений нет, возвращается нулевой набор результатов.
 
-5.  Убедитесь, что политики упорядочения событий настроены надлежащим образом. Перейдите к разделу **Параметры** и выберите [**Упорядочение событий**](stream-analytics-out-of-order-and-late-events.md). Эта политика *НЕ* применяется при проверке запроса по нажатию кнопки **Тест**. В результате тестирования в браузере и при выполнении задания в рабочей среде отличаются одним компонентом. 
+5.  Убедитесь, что политики упорядочения событий настроены надлежащим образом. Перейдите к разделу **Параметры** и выберите [**Упорядочение событий**](./stream-analytics-time-handling.md). Эта политика *НЕ* применяется при проверке запроса по нажатию кнопки **Тест** . В результате тестирования в браузере и при выполнении задания в рабочей среде отличаются одним компонентом. 
 
 6. Для отладки по журналам действий и ресурсов:
-    - в [журнале действий](../azure-resource-manager/resource-group-audit.md) отфильтруйте результаты для поиска и диагностики ошибок;
+    - в [журнале действий](../azure-resource-manager/management/view-activity-logs.md) отфильтруйте результаты для поиска и диагностики ошибок;
     - примените [журнал ресурсов для заданий](stream-analytics-job-diagnostic-logs.md) для поиска и диагностики ошибок.
 
 ## <a name="resource-utilization-is-high"></a>Интенсивное использование ресурсов
@@ -61,7 +61,7 @@ ms.locfileid: "87337812"
 
 ![Пример запроса SELECT INTO Stream Analytics](./media/stream-analytics-select-into/stream-analytics-select-into-query1.png)
 
-Обратите внимание, что задание выполняется, но события не создаются в выходных данных. На плитке **Мониторинг**, показанной здесь, можно увидеть, что данные выводятся, но невозможно определить, на каком шаге операции **JOIN** были удалены все события.
+Обратите внимание, что задание выполняется, но события не создаются в выходных данных. На плитке **Мониторинг** , показанной здесь, можно увидеть, что данные выводятся, но невозможно определить, на каком шаге операции **JOIN** были удалены все события.
 
 ![Плитка мониторинга Azure Stream Analytics](./media/stream-analytics-select-into/stream-analytics-select-into-monitor.png)
 
@@ -103,12 +103,12 @@ ms.locfileid: "87337812"
 
 ## <a name="get-help"></a>Получить справку
 
-Для получения дополнительной помощи воспользуйтесь [страницей вопросов об Azure Stream Analytics на сайте Microsoft](https://docs.microsoft.com/answers/topics/azure-stream-analytics.html).
+Для получения дополнительной помощи воспользуйтесь [страницей вопросов об Azure Stream Analytics на сайте Microsoft](/answers/topics/azure-stream-analytics.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
-* [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](/stream-analytics-query/stream-analytics-query-language-reference)
+* [Справочник по API-интерфейсу REST управления Stream Analytics](/rest/api/streamanalytics/)

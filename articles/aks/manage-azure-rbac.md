@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 15bd917a16c250807d6848f7bc0ffbdba06b4019
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f0df92eadc4db132d567e708abe6e28e82642d6
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329097"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93129564"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "91329097"
 
 В этом документе рассматривается новый подход, обеспечивающий унифицированный контроль и управление доступом к ресурсам Azure, AKS и Kubernetes.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 
 Возможность управления RBAC для ресурсов Kubernetes из Azure дает возможность управлять RBAC для ресурсов кластера с помощью Azure или собственных механизмов Kubernetes. Если этот параметр включен, субъекты Azure AD будут проверяться исключительно в Azure RBAC, а обычные пользователи Kubernetes и учетные записи служб будут проверены только с помощью Kubernetes RBAC. Дополнительные сведения о проверке подлинности, авторизации и RBAC в AKS см. [здесь](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview).
 
@@ -75,6 +75,7 @@ az extension update --name aks-preview
 - На этапе предварительной версии можно добавлять только разрешения *уровня пространства имен* с помощью Azure CLI.
 - Если у вас есть КРДС и вы вносите пользовательские определения ролей, единственный способ охватить КРДС сегодня — предоставить `Microsoft.ContainerService/managedClusters/*/read` . AKS работает над предоставлением более детализированных разрешений для КРДС. Для остальных объектов можно использовать определенные группы API, например: `Microsoft.ContainerService/apps/deployments/read` .
 - Новые назначения ролей могут занимать до 5 мин для распространения и обновления сервером авторизации.
+- Требует, чтобы клиент Azure AD, настроенный для проверки подлинности, совпадал с клиентом для подписки, в которой находится кластер AKS. 
 
 ## <a name="create-a-new-cluster-using-azure-rbac-and-managed-azure-ad-integration"></a>Создание нового кластера с помощью Azure RBAC и управляемой интеграции Azure AD
 
@@ -270,7 +271,7 @@ az role definition delete -n "AKS Deployment Viewer"
 az group delete -n MyResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о проверке подлинности AKS, авторизации и RBAC см. [здесь](concepts-identity.md).
 - Дополнительные сведения об Azure RBAC см. [здесь](../role-based-access-control/overview.md).

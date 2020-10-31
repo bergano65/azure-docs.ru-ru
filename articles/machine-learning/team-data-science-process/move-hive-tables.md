@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 7cce0a927c2ffd69252a22ea4459f789d22721c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d61c0f5f26bc46b9c4a5bc4a793df1e10710004
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86080743"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130873"
 ---
 # <a name="create-hive-tables-and-load-data-from-azure-blob-storage"></a>Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure
 
@@ -101,7 +101,7 @@ hive -e "<hive query>" > <local path in the head node>
 
 В следующем примере выходные данные запроса Hive записываются в файл `hivequeryoutput.txt` в каталоге `C:\apps\temp`.
 
-![Выходные данные запроса Hive](./media/move-hive-tables/output-hive-results-1.png)
+![На снимке экрана показаны выходные данные запроса Hive в окне командной строки Hadoop.](./media/move-hive-tables/output-hive-results-1.png)
 
 **Вывод результатов запроса Hive в большой двоичный объект Azure**
 
@@ -113,7 +113,7 @@ insert overwrite directory wasb:///<directory within the default container> <sel
 
 В следующем примере выходные данные запроса Hive записываются в каталог большого двоичного объекта `queryoutputdir` в используемом по умолчанию контейнере кластера Hadoop. Здесь нужно указать только имя каталога, не указывая имя большого двоичного объекта. Если указать имя каталога и имя большого двоичного объекта, появится следующее сообщение об ошибке: `wasb:///queryoutputdir/queryoutput.txt`.
 
-![Выходные данные запроса Hive](./media/move-hive-tables/output-hive-results-2.png)
+![На снимке экрана показана Предыдущая команда в окне командной строки Hadoop.](./media/move-hive-tables/output-hive-results-2.png)
 
 При открытии используемого по умолчанию контейнера кластера Hadoop с помощью Azure Storage Explorer выходные данные запроса Hive могут выглядеть так, как показано на следующем рисунке. Чтобы извлечь большие двоичные объекты только с указанными буквами в именах, можно применить фильтр (выделенный красной рамкой).
 
@@ -147,12 +147,12 @@ STORED AS TEXTFILE LOCATION '<storage location>' TBLPROPERTIES("skip.header.line
 
 Здесь приведены описания полей, необходимых для подключения, и прочие конфигурации.
 
-* **\<database name\>**— имя базы данных, которую необходимо создать. Если вы хотите использовать базу данных по умолчанию, то запрос *create database...* можно пропустить.
-* **\<table name\>**: имя таблицы, которую необходимо создать в указанной базе данных. Если вы хотите использовать базу данных по умолчанию, то на таблицу можно ссылаться напрямую, *\<table name\>* без \<database name\> .
-* **\<field separator\>**: разделитель, разделяющий поля в файле данных для отправки в таблицу Hive.
-* **\<line separator\>**: разделитель, разделяющий строки в файле данных.
-* **\<storage location\>**: место хранения данных в хранилище Azure, в котором сохраняются данные таблиц Hive. Если не указывать параметр *LOCATION \<storage location\>*, база данных и таблицы сохраняются в каталоге *hive/warehouse/* в контейнере по умолчанию для кластера Hive. Если вы хотите указать место хранения, то оно должно находиться в пределах контейнера по умолчанию для базы данных и таблиц. Это расположение должно называться расположением, связанным с контейнером кластера по умолчанию в формате *"wasb:/// \<directory 1> /"* или *"wasb:/// \<directory 1> / \<directory 2> /"*, и т. д. После выполнения запроса относительные каталоги создаются в контейнере по умолчанию.
-* **TBLPROPERTIES("skip.header.line.count"="1")** . Если файл данных содержит строку заголовка, необходимо добавить это свойство **в конец** запроса *create table*. В противном случае строка заголовка загружается в таблицу в качестве записи. Если в файле данных нет строки заголовка, в запросе эту конфигурацию можно пропустить.
+* **\<database name\>** — имя базы данных, которую необходимо создать. Если вы хотите использовать базу данных по умолчанию, то запрос *create database...* можно пропустить.
+* **\<table name\>** : имя таблицы, которую необходимо создать в указанной базе данных. Если вы хотите использовать базу данных по умолчанию, то на таблицу можно ссылаться напрямую, *\<table name\>* без \<database name\> .
+* **\<field separator\>** : разделитель, разделяющий поля в файле данных для отправки в таблицу Hive.
+* **\<line separator\>** : разделитель, разделяющий строки в файле данных.
+* **\<storage location\>** : место хранения данных в хранилище Azure, в котором сохраняются данные таблиц Hive. Если не указывать параметр *LOCATION \<storage location\>* , база данных и таблицы сохраняются в каталоге *hive/warehouse/* в контейнере по умолчанию для кластера Hive. Если вы хотите указать место хранения, то оно должно находиться в пределах контейнера по умолчанию для базы данных и таблиц. Это расположение должно называться расположением, связанным с контейнером кластера по умолчанию в формате *"wasb:/// \<directory 1> /"* или *"wasb:/// \<directory 1> / \<directory 2> /"* , и т. д. После выполнения запроса относительные каталоги создаются в контейнере по умолчанию.
+* **TBLPROPERTIES("skip.header.line.count"="1")** . Если файл данных содержит строку заголовка, необходимо добавить это свойство **в конец** запроса *create table* . В противном случае строка заголовка загружается в таблицу в качестве записи. Если в файле данных нет строки заголовка, в запросе эту конфигурацию можно пропустить.
 
 ## <a name="load-data-to-hive-tables"></a><a name="load-data"></a>Загрузка данных в таблицы Hive
 Ниже приведен запрос Hive, который загружает данные в таблицу Hive.
@@ -161,7 +161,7 @@ STORED AS TEXTFILE LOCATION '<storage location>' TBLPROPERTIES("skip.header.line
 LOAD DATA INPATH '<path to blob data>' INTO TABLE <database name>.<table name>;
 ```
 
-* **\<path to blob data\>**: Если файл большого двоичного объекта, который будет отправлен в таблицу Hive, находится в контейнере по умолчанию кластера HDInsight Hadoop, параметр *\<path to blob data\>* должен иметь формат *"wasb:// \<directory in this container> / \<blob file name> "*. В дополнительном контейнере кластера Hadoop под управлением службы HDInsight также может быть файл большого двоичного объекта. В этом случае *\<path to blob data\>* должно иметь формат *"wasb:// \<container name> @ \<storage account name> . BLOB.Core.Windows.NET/ \<blob file name> "*.
+* **\<path to blob data\>** : Если файл большого двоичного объекта, который будет отправлен в таблицу Hive, находится в контейнере по умолчанию кластера HDInsight Hadoop, параметр *\<path to blob data\>* должен иметь формат *"wasb:// \<directory in this container> / \<blob file name> "* . В дополнительном контейнере кластера Hadoop под управлением службы HDInsight также может быть файл большого двоичного объекта. В этом случае *\<path to blob data\>* должно иметь формат *"wasb:// \<container name> @ \<storage account name> . BLOB.Core.Windows.NET/ \<blob file name> "* .
 
   > [!NOTE]
   > Данные большого двоичного объекта, которые необходимо отправить в таблицу Hive, должны находиться в контейнере по умолчанию или в дополнительном контейнере учетной записи хранения для кластера Hadoop. В противном случае запрос *LOAD DATA* завершается ошибкой доступа к данным.
@@ -238,7 +238,7 @@ INSERT OVERWRITE TABLE <database name>.<ORC table name>
 ```
 
 > [!NOTE]
-> Если таблица TEXTFILE * \<database name\> . \<external textfile table name\> * есть секции, команда `SELECT * FROM <database name>.<external textfile table name>`, выполняемая на шаге 3, позволяет сохранить переменную секции в отдельное поле в возвращаемом наборе данных. Его вставка в * \<database name\> . \<ORC table name\> * завершается с ошибкой * \<database name\> . \<ORC table name\> * не содержит переменной секции в виде поля в схеме таблицы. В этом случае необходимо специально выбрать поля для вставки * \<database name\> . \<ORC table name\> * следующим образом:
+> Если таблица TEXTFILE *\<database name\> . \<external textfile table name\>* есть секции, команда `SELECT * FROM <database name>.<external textfile table name>`, выполняемая на шаге 3, позволяет сохранить переменную секции в отдельное поле в возвращаемом наборе данных. Его вставка в *\<database name\> . \<ORC table name\>* завершается с ошибкой *\<database name\> . \<ORC table name\>* не содержит переменной секции в виде поля в схеме таблицы. В этом случае необходимо специально выбрать поля для вставки *\<database name\> . \<ORC table name\>* следующим образом:
 >
 >
 
@@ -249,7 +249,7 @@ INSERT OVERWRITE TABLE <database name>.<ORC table name> PARTITION (<partition va
     WHERE <partition variable>=<partition value>;
 ```
 
-Можно спокойно удалить *\<external text file table name\>* при использовании следующего запроса после вставки всех данных в * \<database name\> . \<ORC table name\> *:
+Можно спокойно удалить *\<external text file table name\>* при использовании следующего запроса после вставки всех данных в *\<database name\> . \<ORC table name\>* :
 
 ```hiveql
     DROP TABLE IF EXISTS <database name>.<external textfile table name>;
