@@ -6,14 +6,14 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vikrambmsft
 ms.author: vikramb
-ms.date: 09/01/2020
+ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 167c2f091d4d8a7d7d5c32009b484125d7275796
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 91de9aff154dec1a61360477edebc90b7a13cf24
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282350"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93125178"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Сведения о партнере коммерческого рынка и использовании клиентов
 
@@ -33,15 +33,18 @@ ms.locfileid: "92282350"
 >- Механизм отслеживания потребления услуг клиентами применяется при развертывании новых служб и НЕ распространяется на существующие ресурсы, которые уже развернуты.
 >
 >- Отслеживание потребления услуг клиентами — обязательное условие при публикации [приложений Azure](./partner-center-portal/create-new-azure-apps-offer.md) в Microsoft Azure Marketplace.
+>
+>- Не все службы Azure совместимы с атрибутами использования клиентов. В настоящее время в службах Azure Kubernetes Services (AKS) и масштабируемых наборах виртуальных машин есть известные проблемы, которые приводят к появлению отчетов об использовании.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="create-guids"></a>Создание глобальных уникальных идентификаторов
 
-Идентификатор GUID является уникальным идентификатором из 32 шестнадцатеричных цифр и используется для создания ссылок. Чтобы создать идентификаторы GUID для отслеживания, следует использовать генератор GUID. Команда разработчиков службы хранилища Azure создала [форму генератора GUID](https://aka.ms/StoragePartners), которая позволяет получить GUID в правильном формате на электронную почту и которую можно использовать в различных системах отслеживания.
+Идентификатор GUID является уникальным идентификатором из 32 шестнадцатеричных цифр и используется для создания ссылок. Чтобы создать идентификаторы GUID для отслеживания, следует использовать генератор GUID, например, с помощью PowerShell.
 
-> [!NOTE]
-> Настоятельно рекомендуется использовать для создания уникального идентификатора [форму генератора GUID хранилища Azure](https://aka.ms/StoragePartners). Дополнительные сведения см. в разделе [Часто задаваемые вопросы](#faq).
+```powershell
+[guid]::NewGuid()]
+```
 
 Рекомендуется создавать уникальные GUID для всех предложений и каналов распределения каждого продукта. Можно использовать один идентификатор GUID для нескольких каналов распределения, если дробить отчетность нежелательно.
 
@@ -67,11 +70,11 @@ ms.locfileid: "92282350"
 
 1. Зарегистрируйтесь как [коммерческий издатель Azure Marketplace](https://aka.ms/JoinMarketplace).
 
-   * У каждого партнера должен быть [свой профиль в Центре партнеров](become-publisher.md). Мы рекомендуем вам опубликовать свое предложение в Azure Marketplace или AppSource.
+   * У каждого партнера должен быть [свой профиль в Центре партнеров](./partner-center-portal/create-account.md). Мы рекомендуем вам опубликовать свое предложение в Azure Marketplace или AppSource.
    * Любой партнер может зарегистрировать несколько идентификаторов GUID.
    * Партнеры могут регистрировать GUID даже для предложений и (или) шаблонов решений, не включенных в Marketplace.
 
-1. Нажмите на значок шестеренки "Параметры" в правом верхнем углу экрана и выберите **Параметры разработчика**.
+1. Нажмите на значок шестеренки "Параметры" в правом верхнем углу экрана и выберите **Параметры разработчика** .
 
 1. На **странице параметров учетной записи** щелкните **Add Tracking GUID** (Добавить GUID отслеживания).
 
@@ -79,7 +82,7 @@ ms.locfileid: "92282350"
 
 1. Чтобы зарегистрировать дополнительный идентификатор GUID, снова щелкните **Add Tracking GUID** (Добавить GUID отслеживания). На странице появятся дополнительные поля.
 
-1. Щелкните **Сохранить**.
+1. Щелкните **Сохранить** .
 
 ## <a name="use-resource-manager-templates"></a>Использование шаблонов Resource Manager
 Многие решения партнеров развертываются с помощью шаблонов Azure Resource Manager. Если у вас есть шаблон диспетчер ресурсов, доступный в Azure Marketplace, в GitHub или в качестве краткого руководства, процесс изменения шаблона для включения атрибутов использования клиентов будет прямым.
@@ -97,9 +100,9 @@ ms.locfileid: "92282350"
 
 1. Откройте шаблон Resource Manager.
 
-1. Добавьте новый ресурс типа [Microsoft. Resources/deployments](https://docs.microsoft.com/azure/templates/microsoft.resources/deployments) в основной файл шаблона. Этот ресурс можно указать только в файле **mainTemplate.json** или **azuredeploy.json**, но не во вложенных или связанных шаблонах.
+1. Добавьте новый ресурс типа [Microsoft. Resources/deployments](/azure/templates/microsoft.resources/deployments) в основной файл шаблона. Этот ресурс можно указать только в файле **mainTemplate.json** или **azuredeploy.json** , но не во вложенных или связанных шаблонах.
 
-1. Введите значение GUID после `pid-` префикса в качестве имени ресурса. Например, если GUID имеет значение eb7927c8-dd66-43e1-b0cf-c346a422063, имя ресурса будет иметь значение _PID-eb7927c8-dd66-43e1-b0cf-c346a422063_.
+1. Введите значение GUID после `pid-` префикса в качестве имени ресурса. Например, если GUID имеет значение eb7927c8-dd66-43e1-b0cf-c346a422063, имя ресурса будет иметь значение _PID-eb7927c8-dd66-43e1-b0cf-c346a422063_ .
 
 1. Проверьте шаблон на наличие ошибок.
 
@@ -110,7 +113,7 @@ ms.locfileid: "92282350"
 ### <a name="sample-resource-manager-template-code"></a>Пример кода шаблона Resource Manager
 
 Чтобы включить отслеживание ресурсов для шаблона, необходимо добавить следующие дополнительные ресурсы в разделе ресурсов. Обязательно измените данные в примере кода ниже своими входными данными, когда будете добавлять его в основной файл шаблона.
-Этот ресурс должен быть добавлен только в файл **mainTemplate.json** или **azuredeploy.json**, но не во вложенные или связанные шаблоны.
+Этот ресурс должен быть добавлен только в файл **mainTemplate.json** или **azuredeploy.json** , но не во вложенные или связанные шаблоны.
 
 ```json
 // Make sure to modify this sample code with your own inputs where applicable
@@ -132,7 +135,7 @@ ms.locfileid: "92282350"
 
 ## <a name="use-the-resource-manager-apis"></a>Использование интерфейсов API Resource Manager
 
-В некоторых случаях будет удобно напрямую вызывать интерфейсы REST API Resource Manager для развертывания служб Azure. [Azure поддерживает несколько пакетов SDK](https://docs.microsoft.com/azure/?pivot=sdkstools), позволяющих реализовать такие вызовы. Можно использовать один из пакетов SDK или вызывать REST API напрямую для развертывания ресурсов.
+В некоторых случаях будет удобно напрямую вызывать интерфейсы REST API Resource Manager для развертывания служб Azure. [Azure поддерживает несколько пакетов SDK](../index.yml?pivot=sdkstools), позволяющих реализовать такие вызовы. Можно использовать один из пакетов SDK или вызывать REST API напрямую для развертывания ресурсов.
 
 Если вы используете шаблон Azure Resource Manager, присвойте решению тег, выполнив приведенные выше инструкции. Если вместо применения шаблона Azure Resource Manager вы выполняете прямые вызовы к API, у вас сохраняется возможность присвоить развертыванию тег для связывания с информацией об использовании ресурсов Azure.
 
@@ -147,7 +150,7 @@ ms.locfileid: "92282350"
 
 #### <a name="example-the-python-sdk"></a>Пример Пакет SDK для Python
 
-В Python используется атрибут **config**. Этот атрибут можно добавить только в UserAgent. Ниже приведен пример:
+В Python используется атрибут **config** . Этот атрибут можно добавить только в UserAgent. Ниже приведен пример:
 
 ![Добавление атрибута в агент пользователя](media/marketplace-publishers-guide/python-for-lu.PNG)
 
@@ -156,7 +159,7 @@ ms.locfileid: "92282350"
 
 #### <a name="example-the-net-sdk"></a>Пример: пакет SDK для .NET
 
-Для .NET обязательно задайте агент пользователя. Библиотеку [Microsoft. Azure. Management. Fluent](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.fluent?view=azure-dotnet) можно использовать для задания агента пользователя с помощью следующего кода (пример в C#):
+Для .NET обязательно задайте агент пользователя. Библиотеку [Microsoft. Azure. Management. Fluent](/dotnet/api/microsoft.azure.management.fluent?view=azure-dotnet) можно использовать для задания агента пользователя с помощью следующего кода (пример в C#):
 
 ```csharp
 
@@ -178,18 +181,18 @@ var azure = Microsoft.Azure.Management.Fluent.Azure
 
 #### <a name="tag-a-deployment-by-using-the-azure-cli"></a>Присвоение тега развертыванию с помощью Azure CLI
 
-Чтобы добавить GUID с помощью Azure CLI, задайте переменную среды **AZURE_HTTP_USER_AGENT**. Значение этой переменной можно задать в области скрипта. Также ее можно задать глобально для области оболочки:
+Чтобы добавить GUID с помощью Azure CLI, задайте переменную среды **AZURE_HTTP_USER_AGENT** . Значение этой переменной можно задать в области скрипта. Также ее можно задать глобально для области оболочки:
 
 ```
 export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
 ```
-Дополнительные сведения см. в описании пакета [Azure SDK для Go](https://docs.microsoft.com/azure/developer/go/).
+Дополнительные сведения см. в описании пакета [Azure SDK для Go](/azure/developer/go/).
 
 ## <a name="use-terraform"></a>Использование Terraform
 
 Поддержка Terraform доступна в выпуске Azure Provider 1.21.0: [https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md#1210-january-11-2019](https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md#1210-january-11-2019).  Эта поддержка распространяется на всех партнеров, которые развертывают свои решения через Terraform, и все ресурсы, развернутые и отслеживаемые через Azure Provider (версии 1.21.0 или более поздней).
 
-В Azure Provider для Terraform добавлено новое необязательное поле [*partner_id*](https://www.terraform.io/docs/providers/azurerm/#partner_id), в котором можно указать GUID отслеживания для решения. Значение этого поля также можно получить из переменной среды *ARM_PARTNER_ID*.
+В Azure Provider для Terraform добавлено новое необязательное поле [*partner_id*](https://www.terraform.io/docs/providers/azurerm/#partner_id), в котором можно указать GUID отслеживания для решения. Значение этого поля также можно получить из переменной среды *ARM_PARTNER_ID* .
 
 ```
 provider "azurerm" {

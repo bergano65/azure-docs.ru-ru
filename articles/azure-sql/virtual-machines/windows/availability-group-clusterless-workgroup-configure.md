@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/29/2020
 ms.author: mathoma
-ms.openlocfilehash: 6bfea42c6fca3369485ccf7a47158f7420df9c9c
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 5714a2fd79d01f4cbc445c1ec1a726209ab6d427
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790038"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93124940"
 ---
 # <a name="configure-a-workgroup-availability-group"></a>Настройка группы доступности рабочей группы 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -62,11 +62,11 @@ ms.locfileid: "92790038"
 1. Нажмите **Еще...** , чтобы открыть диалоговое окно **DNS-суффикс и NetBIOS-имя компьютера** . 
 1. Введите имя DNS-суффикса в разделе **Основной DNS-суффикс этого компьютера** , например `ag.wgcluster.example.com`, а затем нажмите **ОК** : 
 
-   ![Добавление DNS-суффикса](./media/availability-group-clusterless-workgroup-configure/2-add-dns-suffix.png)
+   ![Снимок экрана — это диалоговое окно с суффиксом D и именем компьютера NetBIOS, в котором можно ввести значение.](./media/availability-group-clusterless-workgroup-configure/2-add-dns-suffix.png)
 
 1. Убедитесь, что **полное имя компьютера** теперь включает DNS-суффикс, а затем нажмите **ОК** , чтобы сохранить изменения: 
 
-   ![Добавление DNS-суффикса](./media/availability-group-clusterless-workgroup-configure/3-confirm-full-computer-name.png)
+   ![На снимке экрана показано, где можно просмотреть полное имя компьютера.](./media/availability-group-clusterless-workgroup-configure/3-confirm-full-computer-name.png)
 
 1. Перезагрузите сервер, когда будет предложено. 
 1. Повторите эти действия на всех других узлах, которые будут использоваться в группы доступности. 

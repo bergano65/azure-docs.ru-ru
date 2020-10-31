@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.custom: contperfq1
 ms.date: 06/18/2020
-ms.openlocfilehash: 18270a2f435428824714067749fc18ce2addc535
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 0e7777cba93706baea815521757b495209431ce6
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913047"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93124023"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-resource-logs"></a>Устранение неполадок в Azure Stream Analytics с помощью журналов ресурсов
 
@@ -48,7 +48,7 @@ Stream Analytics предоставляет журналы двух типов:
 
    ![Сводка операции журнала действий Stream Analytics](./media/stream-analytics-job-diagnostic-logs/operation-summary.png)
 
-4. Прокрутите вниз до раздела **Свойства** в JSON, который предоставляет сведения об ошибке, вызвавшей неудавшуюся операцию. В этом примере ошибка произошла из-за ошибки времени выполнения и превышения значений широты. Несоответствие данных, обрабатываемых Stream Analytics заданием, приводит к ошибке данных. Вы можете узнать о различных [ошибках входных и выходных данных и о том, почему они происходят](https://docs.microsoft.com/azure/stream-analytics/data-errors).
+4. Прокрутите вниз до раздела **Свойства** в JSON, который предоставляет сведения об ошибке, вызвавшей неудавшуюся операцию. В этом примере ошибка произошла из-за ошибки времени выполнения и превышения значений широты. Несоответствие данных, обрабатываемых Stream Analytics заданием, приводит к ошибке данных. Вы можете узнать о различных [ошибках входных и выходных данных и о том, почему они происходят](./data-errors.md).
 
    ![Сведения об ошибке JSON](./media/stream-analytics-job-diagnostic-logs/error-details.png)
 
@@ -111,7 +111,7 @@ properties | Сведения о записи журнала, сериализо
 
 ### <a name="data-errors"></a>Ошибки данных
 
-Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события. Вы можете узнать больше о причинах различных [ошибок ввода и вывода данных](https://docs.microsoft.com/azure/stream-analytics/data-errors).
+Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события. Вы можете узнать больше о причинах различных [ошибок ввода и вывода данных](./data-errors.md).
 
 Имя | Описание
 ------- | -------
@@ -143,5 +143,5 @@ properties | Сведения о записи журнала, сериализо
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Ошибки данных Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/data-errors)
-* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
+* [Ошибки данных Stream Analytics](./data-errors.md)
+* [Stream Analytics Query Language Reference](/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)

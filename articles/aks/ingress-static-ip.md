@@ -5,12 +5,12 @@ description: Сведения об установке и настройке ко
 services: container-service
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: be4856beac69d11de12ec764f313fa59f3b24e9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50e3e052915b6bcc1f6dee89f5ed5e2acf13dd78
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89290554"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93124362"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика со статическим общедоступным IP-адресом в Службе Azure Kubernetes (AKS)
 
@@ -50,7 +50,7 @@ az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eas
 ```
 
 > [!NOTE]
-> Приведенные выше команды создают IP-адрес, который будет удален при удалении кластера AKS. Кроме того, можно создать IP-адрес в другой группе ресурсов, которую можно управлять отдельно от кластера AKS. Если вы создаете IP-адрес в другой группе ресурсов, убедитесь, что участник-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов, например к *участнику сети*. Дополнительные сведения см. [в статье Использование статического общедоступного IP-адреса и метки DNS с подсистемой балансировки нагрузки AKS][aks-static-ip].
+> Приведенные выше команды создают IP-адрес, который будет удален при удалении кластера AKS. Кроме того, можно создать IP-адрес в другой группе ресурсов, которую можно управлять отдельно от кластера AKS. Если вы создаете IP-адрес в другой группе ресурсов, убедитесь, что участник-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов, например к *участнику сети* . Дополнительные сведения см. [в статье Использование статического общедоступного IP-адреса и метки DNS с подсистемой балансировки нагрузки AKS][aks-static-ip].
 
 Разверните диаграмму *nginx ingress* с помощью Helm. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
 
@@ -62,10 +62,10 @@ az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eas
 Контроллер Ingress также необходимо запланировать на узле Linux. Узлы Windows Server не должны запускать контроллер Ingress. Селектор узла указывается с помощью параметра `--set nodeSelector`, чтобы сообщить планировщику Kubernetes о необходимости запуска контроллера NGINX Ingress на узле под управлением Linux.
 
 > [!TIP]
-> В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic*. При необходимости укажите пространство имен для своей среды. Если в кластере AKS не включен RBAC, добавьте `--set rbac.create=false` к командам Helm.
+> В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic* . При необходимости укажите пространство имен для своей среды. Если в кластере AKS не включен RBAC, добавьте `--set rbac.create=false` к командам Helm.
 
 > [!TIP]
-> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
+> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for* . При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
 
 Обновите следующий скрипт, указав **IP-адрес** контроллера входящего трафика, и **уникальное имя** , которое вы хотите использовать для префикса FQDN.
 
@@ -199,7 +199,7 @@ spec:
     spec:
       containers:
       - name: aks-helloworld
-        image: neilpeterson/aks-helloworld:v1
+        image: mcr.microsoft.com/azuredocs/aks-helloworld:v1
         ports:
         - containerPort: 80
         env:
@@ -237,7 +237,7 @@ spec:
     spec:
       containers:
       - name: ingress-demo
-        image: neilpeterson/aks-helloworld:v1
+        image: mcr.microsoft.com/azuredocs/aks-helloworld:v1
         ports:
         - containerPort: 80
         env:
@@ -267,7 +267,7 @@ kubectl apply -f ingress-demo.yaml --namespace ingress-basic
 
 Теперь оба приложения запущены на кластере Kubernetes, несмотря на то что они настроены с помощью службы типа `ClusterIP`. Таким образом приложения не доступны через Интернет. Чтобы сделать их доступными, создайте ресурс входящего трафика Kubernetes. Ресурс входящего трафика настраивает правила, по которым осуществляется маршрутизация трафика к одному из двух приложений.
 
-В следующем примере трафик по адресу `https://demo-aks-ingress.eastus.cloudapp.azure.com/` направляется в службу `aks-helloworld`. Трафик по адресу `https://demo-aks-ingress.eastus.cloudapp.azure.com/hello-world-two` направляется в службу `ingress-demo`. Обновите *узлы* и *узел*, указав DNS-имя, которое вы создали на предыдущем шаге.
+В следующем примере трафик по адресу `https://demo-aks-ingress.eastus.cloudapp.azure.com/` направляется в службу `aks-helloworld`. Трафик по адресу `https://demo-aks-ingress.eastus.cloudapp.azure.com/hello-world-two` направляется в службу `ingress-demo`. Обновите *узлы* и *узел* , указав DNS-имя, которое вы создали на предыдущем шаге.
 
 Создайте файл `hello-world-ingress.yaml` и скопируйте в него следующий пример кода YAML:
 
@@ -331,7 +331,7 @@ Type    Reason          Age   From          Message
   Normal  CertIssued      10m   cert-manager  Certificate issued successfully
 ```
 
-Если вам нужно создать дополнительный ресурс сертификата, вы можете это сделать с помощью приведенного ниже примера манифеста. Обновите *dnsNames* и *домены*, указав для них DNS-имя, которое вы создали на предыдущем шаге. Если вы используете только внутренний контроллер входящего трафика, укажите внутреннее имя DNS для службы.
+Если вам нужно создать дополнительный ресурс сертификата, вы можете это сделать с помощью приведенного ниже примера манифеста. Обновите *dnsNames* и *домены* , указав для них DNS-имя, которое вы создали на предыдущем шаге. Если вы используете только внутренний контроллер входящего трафика, укажите внутреннее имя DNS для службы.
 
 ```yaml
 apiVersion: cert-manager.io/v1alpha2
@@ -378,7 +378,7 @@ certificate.cert-manager.io/tls-secret created
 
 ![Первый пример приложения](media/ingress/app-one.png)
 
-Теперь добавьте к FQDN путь */hello-world-two*, например *`https://demo-aks-ingress.eastus.cloudapp.azure.com/hello-world-two`*. Отобразится второе демонстрационное приложение с пользовательским заголовком:
+Теперь добавьте к FQDN путь */hello-world-two* , например *`https://demo-aks-ingress.eastus.cloudapp.azure.com/hello-world-two`* . Отобразится второе демонстрационное приложение с пользовательским заголовком:
 
 ![Второй пример приложения](media/ingress/app-two.png)
 
@@ -435,13 +435,13 @@ kubectl delete -f ingress-demo.yaml --namespace ingress-basic
 kubectl delete namespace ingress-basic
 ```
 
-Наконец, удалите статический общедоступный IP-адрес, созданный для контроллера входящего трафика. Укажите имя группы ресурсов кластера *MC_*, полученное на первом шаге в этой статье, например *MC_myResourceGroup_myAKSCluster_eastus*.
+Наконец, удалите статический общедоступный IP-адрес, созданный для контроллера входящего трафика. Укажите имя группы ресурсов кластера *MC_* , полученное на первом шаге в этой статье, например *MC_myResourceGroup_myAKSCluster_eastus* .
 
 ```azurecli-interactive
 az network public-ip delete --resource-group MC_myResourceGroup_myAKSCluster_eastus --name myAKSPublicIP
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В данной статье упоминаются некоторые внешние компоненты для AKS. Чтобы узнать больше об этих компонентах, см. следующие страницы проекта:
 

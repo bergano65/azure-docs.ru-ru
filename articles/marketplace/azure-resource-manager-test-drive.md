@@ -7,18 +7,18 @@ ms.topic: article
 ms.date: 06/19/2020
 ms.author: keferna
 author: keferna
-ms.openlocfilehash: 8ccc4cb6a6f95cfc51fb7e265e455131bc6393c2
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 1af2793bc32c1f3cdbdcd016562b761e05427073
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735614"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93125144"
 ---
 # <a name="azure-resource-manager-test-drive"></a>Azure Resource Manager тестовый накопитель
 
 Используйте этот тип, если у вас есть предложение в Azure Marketplace или AppSource, но вы хотите создать тестовый выпуск только с ресурсами Azure. Шаблон Azure Resource Manager (ARM) — это закодированный контейнер ресурсов Azure, которые вы разрабатываете для лучшего представления решения. Тестовый диск использует указанный шаблон ARM и развертывает все необходимые ресурсы для группы ресурсов. Это единственный вариант тестового диска для виртуальных машин или предложений приложений Azure.
 
-Если вы не знакомы с шаблоном ARM, прочитайте [Azure Resource Manager?](../azure-resource-manager/resource-group-overview.md) и ознакомьтесь [со структурой и СИНТАКСИСом шаблонов ARM](../azure-resource-manager/resource-group-authoring-templates.md) , чтобы лучше понять, как создавать и тестировать собственные шаблоны.
+Если вы не знакомы с шаблоном ARM, прочитайте [Azure Resource Manager?](../azure-resource-manager/management/overview.md) и ознакомьтесь [со структурой и СИНТАКСИСом шаблонов ARM](../azure-resource-manager/templates/template-syntax.md) , чтобы лучше понять, как создавать и тестировать собственные шаблоны.
 
 Сведения о **размещенном** или тестовом накопителе **приложения логики** см. в статье [что такое тестовый накопитель?](what-is-test-drive.md)
 
@@ -34,7 +34,7 @@ ms.locfileid: "92735614"
 
   - **Холодный**  — этот тип экземпляра представляет общее количество экземпляров, которые могут быть развернуты для каждого региона. Для холодных экземпляров требуется полное развертывание шаблона тестового выпуска Resource Manager по запросу клиента, так что *холодные* экземпляры загружаются гораздо медленнее, чем *горячие* . Преимущество заключается в том, что необходимо платить только за время тестового выпуска. Он *не* всегда выполняется в подписке Azure, как в случае с *горячим* экземпляром.
 
-- **Шаблон тестового выпуска Azure Resource Manager**  — отправьте ZIP-файл, содержащий шаблон Azure Resource Manager. Дополнительные сведения о создании шаблона Azure Resource Manager см. в кратком руководстве [Создание и развертывание шаблонов Azure Resource Manager на портале Azure](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md).
+- **Шаблон тестового выпуска Azure Resource Manager**  — отправьте ZIP-файл, содержащий шаблон Azure Resource Manager. Дополнительные сведения о создании шаблона Azure Resource Manager см. в кратком руководстве [Создание и развертывание шаблонов Azure Resource Manager на портале Azure](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
     > [!note]
     > Для успешной публикации важно проверить форматирование шаблона ARM. Это можно сделать двумя способами: (1) с помощью [интерактивного средства API](https://docs.microsoft.com/rest/api/resources/deployments/validate) или (2) с [тестовым развертыванием](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal).
@@ -248,7 +248,7 @@ ms.locfileid: "92735614"
 
 Для выходных данных шаблона отсутствуют ограничения. Тестовый диск преобразует все выходные значения в строки, поэтому при отправке объекта в выходные данные пользователь увидит строку JSON.
 
-Пример.
+Пример
 
 ```JSON
 "outputs": {
@@ -313,7 +313,7 @@ ms.locfileid: "92735614"
    3. Введите имя приложения.
    4. Выберите **тип** **веб-приложения или API** .
    5. Укажите любое значение в URL-адресе входа. это поле не используется.
-   6. Нажмите кнопку **создания** .
+   6. Нажмите кнопку **Создать** .
    7. После создания приложения выберите **Свойства**  >  **настроить приложение как многопользовательский** , а затем **Сохраните** .
 
 4. Щелкните **Сохранить** .

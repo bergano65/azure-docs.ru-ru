@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0cc3a335e5fbe037742767a3b59243e366f094ee
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: c169f10ac0444f5bca67d76e8e8ebc0f0b145ee1
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495926"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93124257"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
 
@@ -30,17 +30,21 @@ ms.locfileid: "92495926"
 4. Публикация приложения функции в Azure
 5. Настройка [безопасного](concepts-security.md) доступа для приложения функции Azure
 
+## <a name="prerequisite-set-up-azure-digital-twins-instance"></a>Предварительные требования: Настройка экземпляра Digital двойников для Azure
+
+[!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
+
 ## <a name="create-an-azure-functions-app-in-visual-studio"></a>Создание приложения "функции Azure" в Visual Studio
 
-В Visual Studio 2019 выберите _файл > создать > проект_ и найдите шаблон _функции Azure_ , нажмите кнопку _Далее_.
+В Visual Studio 2019 выберите _файл > создать > проект_ и найдите шаблон _функции Azure_ , нажмите кнопку _Далее_ .
 
 :::image type="content" source="media/how-to-create-azure-function/create-azure-function-project.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-Укажите имя для приложения-функции и нажмите кнопку _создать_.
+Укажите имя для приложения-функции и нажмите кнопку _создать_ .
 
 :::image type="content" source="media/how-to-create-azure-function/configure-new-project.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-Выберите тип *триггера сетки событий* приложения функции и нажмите кнопку _создать_.
+Выберите тип *триггера сетки событий* приложения функции и нажмите кнопку _создать_ .
 
 :::image type="content" source="media/how-to-create-azure-function/eventgridtrigger-function.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
@@ -155,14 +159,14 @@ namespace adtIngestFunctionSample
 
 ## <a name="publish-the-function-app-to-azure"></a>Публикация приложения функции в Azure
 
-Чтобы опубликовать приложение-функцию в Azure, выберите проект функции (не решение) в обозреватель решений и нажмите кнопку **опубликовать**.
+Чтобы опубликовать приложение-функцию в Azure, выберите проект функции (не решение) в обозреватель решений и нажмите кнопку **опубликовать** .
 
 > [!IMPORTANT] 
 > Публикация функции Azure приведет к дополнительным затратам на вашу подписку, независимо от Azure Digital двойников.
 
 :::image type="content" source="media/how-to-create-azure-function/publish-azure-function.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-Выберите **Azure** в качестве целевого объекта публикации и нажмите кнопку **Далее**.
+Выберите **Azure** в качестве целевого объекта публикации и нажмите кнопку **Далее** .
 
 :::image type="content" source="media/how-to-create-azure-function/publish-azure-function-1.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
@@ -205,7 +209,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 Наконец, можно сделать так, чтобы URL-адрес вашего экземпляра Azure Digital двойников был доступен для вашей функции, задав переменную среды. Дополнительные сведения о настройке переменных среды см. в разделе [*переменные среды*](/sandbox/functions-recipes/environment-variables). 
 
 > [!TIP]
-> URL-адрес экземпляра Azure Digital двойников создается путем добавления *https://* в начало *имени узла*для цифрового двойникова Azure. Чтобы просмотреть имя узла, а также все свойства экземпляра, можно запустить `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
+> URL-адрес экземпляра Azure Digital двойников создается путем добавления *https://* в начало *имени узла* для цифрового двойникова Azure. Чтобы просмотреть имя узла, а также все свойства экземпляра, можно запустить `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
 
 ```azurecli-interactive 
 az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=https://<your-Azure-Digital-Twins-instance-hostname>"
@@ -219,7 +223,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 :::image type="content" source="media/how-to-create-azure-function/portal-search-for-functionapp.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 В окне приложение функции выберите _удостоверение_ на панели навигации слева, чтобы включить управляемое удостоверение.
-На вкладке _назначенная система_ переключите _состояние_ на вкл. и _Сохраните_ его. Вы увидите всплывающее окно для _включения управляемого удостоверения, назначенного системой_.
+На вкладке _назначенная система_ переключите _состояние_ на вкл. и _Сохраните_ его. Вы увидите всплывающее окно для _включения управляемого удостоверения, назначенного системой_ .
 Нажмите кнопку _Да_ . 
 
 :::image type="content" source="media/how-to-create-azure-function/enable-system-managed-identity.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
@@ -234,16 +238,16 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 ### <a name="assign-access-roles-using-azure-portal"></a>Назначение ролей доступа с помощью портал Azure
 
-Нажмите кнопку _назначения ролей Azure_ , после чего откроется страница *назначения ролей Azure* . Затем выберите _+ добавить назначение ролей (Предварительная версия)_.
+Нажмите кнопку _назначения ролей Azure_ , после чего откроется страница *назначения ролей Azure* . Затем выберите _+ добавить назначение ролей (Предварительная версия)_ .
 
 :::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 На открывшейся странице _Добавление назначения ролей (Предварительная версия)_ выберите:
 
 * _Область_ — группа ресурсов.
-* _Подписка_: выберите подписку Azure.
-* _Группа ресурсов_. Выберите группу ресурсов из раскрывающегося списка.
-* _Роль_: выберите _Azure Digital двойников Data Owner_ в раскрывающемся списке.
+* _Подписка_ : выберите подписку Azure.
+* _Группа ресурсов_ . Выберите группу ресурсов из раскрывающегося списка.
+* _Роль_ : выберите _Azure Digital двойников Data Owner_ в раскрывающемся списке.
 
 Затем сохраните сведения, нажав кнопку Save ( _сохранить_ ).
 
@@ -255,7 +259,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 Для создания параметра приложения потребуются ADT_INSTANCE_URL.
 
-ADT_INSTANCE_URL можно получить, добавив **_https://_** в имя узла экземпляра. В портал Azure можно найти имя узла Digital двойников, выполнив поиск своего экземпляра на панели поиска. Затем на левой панели навигации выберите _Обзор_ , чтобы просмотреть _имя узла_. Скопируйте это значение, чтобы создать параметр приложения.
+ADT_INSTANCE_URL можно получить, добавив **_https://_** в имя узла экземпляра. В портал Azure можно найти имя узла Digital двойников, выполнив поиск своего экземпляра на панели поиска. Затем на левой панели навигации выберите _Обзор_ , чтобы просмотреть _имя узла_ . Скопируйте это значение, чтобы создать параметр приложения.
 
 :::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 

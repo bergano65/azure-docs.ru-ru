@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/23/2020
-ms.openlocfilehash: f8885229c8ab6784c6c0bf45487812fcc43f9b22
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 766d3f8d4d4c03fb4fe173dbb12eb85bb09cd71a
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903825"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93124175"
 ---
 # <a name="debug-azure-stream-analytics-queries-locally-using-job-diagram-in-visual-studio-code"></a>Отладка запросов Azure Stream Analytics локально с помощью схемы заданий в Visual Studio Code
 
@@ -31,7 +31,7 @@ ms.locfileid: "90903825"
 
 Если вы хотите протестировать запрос с локальными входными данными, выполните следующие [инструкции](visual-studio-code-local-run.md). Если вы хотите протестировать с помощью Live input, [Настройте входные данные](stream-analytics-add-inputs.md) , чтобы перейти к следующему шагу. 
 
-Откройте файл скрипта * \. asaql* и выберите **запустить локально**. Затем выберите **использовать локальный вход** или **использовать динамический вход**. Схема задания отображается в правой части окна.
+Откройте файл скрипта *\. asaql* и выберите **запустить локально** . Затем выберите **использовать локальный вход** или **использовать динамический вход** . Схема задания отображается в правой части окна.
 
 ### <a name="view-the-output-and-intermediate-result-set"></a>Просмотр выходного и промежуточного результирующего набора  
 
@@ -56,7 +56,7 @@ ms.locfileid: "90903825"
    > [!div class="mx-imgBorder"]
    > ![Метрики схемы заданий](./media/debug-locally-using-job-diagram-vs-code/job-metrics.png)
 
-3. Выберите имя источника входных данных из раскрывающегося списка, чтобы просмотреть входные метрики. Источник входных данных на следующем снимке экрана называется *кавычками*. Дополнительные сведения о входных метриках см. в статьях сведения о [мониторинге Stream Analytics заданий и наблюдении за запросами](stream-analytics-monitoring.md).
+3. Выберите имя источника входных данных из раскрывающегося списка, чтобы просмотреть входные метрики. Источник входных данных на следующем снимке экрана называется *кавычками* . Дополнительные сведения о входных метриках см. в статьях сведения о [мониторинге Stream Analytics заданий и наблюдении за запросами](stream-analytics-monitoring.md).
 
    > [!div class="mx-imgBorder"]
    > ![Метрики входных данных схемы заданий](./media/debug-locally-using-job-diagram-vs-code/input-metrics.png)
@@ -104,9 +104,9 @@ ms.locfileid: "90903825"
 
 * Пользовательский код и функции Машинное обучение Azure C# не поддерживаются. 
 
-* Только облачные входные параметры имеют поддержку [политик времени](stream-analytics-out-of-order-and-late-events.md) , а локальные параметры ввода — нет.
+* Только облачные входные параметры имеют поддержку [политик времени](./stream-analytics-time-handling.md) , а локальные параметры ввода — нет.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Создание задания Stream Analytics с помощью Visual Studio Code](quick-create-visual-studio-code.md)
 * [Изучение Azure Stream Analytics с Visual Studio Code](visual-studio-code-explore-jobs.md)

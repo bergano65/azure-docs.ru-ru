@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/01/2017
-ms.openlocfilehash: fdb3c5c12af8e9022f5babc84126badda890dce5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4ee868125ee30d40ef0d9ca5a42881ad003e9a8
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86044487"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123988"
 ---
 # <a name="data-driven-debugging-by-using-the-job-diagram"></a>Отладка на основе данных с помощью схемы заданий
 
@@ -20,7 +20,7 @@ ms.locfileid: "86044487"
 
 ## <a name="using-the-job-diagram"></a>Использование схемы заданий
 
-На портале Azure в задании Stream Analytics в разделе **Поддержка и устранение неполадок** выберите **Схема заданий**:
+На портале Azure в задании Stream Analytics в разделе **Поддержка и устранение неполадок** выберите **Схема заданий** :
 
 ![Схема заданий с метриками — расположение](./media/stream-analytics-job-diagram-with-metrics/stream-analytics-job-diagram-with-metrics-portal-1.png)
 
@@ -75,15 +75,15 @@ ms.locfileid: "86044487"
  
 ### <a name="are-we-falling-behind-in-reading-data"></a>Есть ли непрочитанные данные?
 
-*   Метрика **Итого отложенных входных событий** сообщает, сколько сообщений должен прочитать концентратор событий, и указывает входные данные Центра Интернета вещей Azure. Если это число больше 0, это означает, что задание не может обработать данные по мере их поступления. В таком случае попробуйте увеличить число единиц потоковой передачи и (или) проверьте, может ли задание выполняться параллельно. См. дополнительные сведения о [параллелизации запросов](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization). 
+*   Метрика **Итого отложенных входных событий** сообщает, сколько сообщений должен прочитать концентратор событий, и указывает входные данные Центра Интернета вещей Azure. Если это число больше 0, это означает, что задание не может обработать данные по мере их поступления. В таком случае попробуйте увеличить число единиц потоковой передачи и (или) проверьте, может ли задание выполняться параллельно. См. дополнительные сведения о [параллелизации запросов](./stream-analytics-parallelization.md). 
 
 
 ## <a name="get-help"></a>Получить справку
-Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов о Microsoft Azure Stream Analytics](https://docs.microsoft.com/answers/topics/azure-stream-analytics.html). 
+Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов о Microsoft Azure Stream Analytics](/answers/topics/azure-stream-analytics.html). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности базы данных](stream-analytics-scale-jobs.md)
-* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
-* [Stream Analytics management REST API reference](https://msdn.microsoft.com/library/azure/dn835031.aspx) (Справочник по API-интерфейсу REST для управления Stream Analytics)
+* [Stream Analytics Query Language Reference](/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
+* [Stream Analytics management REST API reference](/rest/api/streamanalytics/) (Справочник по API-интерфейсу REST для управления Stream Analytics)

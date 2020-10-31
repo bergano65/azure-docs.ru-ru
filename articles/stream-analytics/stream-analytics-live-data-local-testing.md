@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: fe1caca11ec0a3d89ddae140d00cd3556b9d3d89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0788d8b4f659364fcedc690185c9159a24434125
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86044470"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123920"
 ---
 # <a name="test-live-data-locally-using-azure-stream-analytics-tools-for-visual-studio-preview"></a>Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)
 
@@ -26,12 +26,12 @@ ms.locfileid: "86044470"
 |**Ввод**  |**Выходные данные**  |**Тип задания**  |
 |---------|---------|---------|
 |Локальные статические данные   |  Локальные статические данные   |   Облако или Edge |
-|Реальные входные данные   |  Локальные статические данные   |   Облако |
-|Реальные входные данные   |  Реальные выходные данные   |   Облако |
+|Реальные входные данные   |  Локальные статические данные   |   Cloud |
+|Реальные входные данные   |  Реальные выходные данные   |   Cloud |
 
 ## <a name="local-testing-with-live-data"></a>Локальное тестирование с помощью реальных данных
 
-1. После создания [облачного проекта Azure Stream Analytics в Visual Studio](stream-analytics-quick-create-vs.md) откройте файл **script.asaql**. При локальном тестировании по умолчанию используются локальные входные и выходные данные.
+1. После создания [облачного проекта Azure Stream Analytics в Visual Studio](stream-analytics-quick-create-vs.md) откройте файл **script.asaql** . При локальном тестировании по умолчанию используются локальные входные и выходные данные.
 
    ![Локальные входные и выходные данные Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-local-input-output.png)
 
@@ -39,7 +39,7 @@ ms.locfileid: "86044470"
 
    ![Реальные облачные входные данные Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input.png)
 
-3. Задайте **время начала**, чтобы определить, когда задание начнет обработку входных данных. Заданию может потребоваться считать входные данные заранее, чтобы обеспечить точные результаты. Время по умолчанию составляет 30 минут с текущего момента.
+3. Задайте **время начала** , чтобы определить, когда задание начнет обработку входных данных. Заданию может потребоваться считать входные данные заранее, чтобы обеспечить точные результаты. Время по умолчанию составляет 30 минут с текущего момента.
 
    ![Время начала обработки реальных данных Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-start-time.png)
 
@@ -47,7 +47,7 @@ ms.locfileid: "86044470"
 
    ![Окно обработки реальных данных Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-process-window.png)
 
-   Выходные данные обновляются каждые три секунды. В окне результатов локального выполнения отображаются первые 500 выходных строк, а выходные файлы помещаются в папку **ASALocalRun**, размещенную по пути к вашему проекту. Выходные файлы можно также открыть, нажав кнопку **Открыть папку результатов** в окне результатов локального выполнения.
+   Выходные данные обновляются каждые три секунды. В окне результатов локального выполнения отображаются первые 500 выходных строк, а выходные файлы помещаются в папку **ASALocalRun** , размещенную по пути к вашему проекту. Выходные файлы можно также открыть, нажав кнопку **Открыть папку результатов** в окне результатов локального выполнения.
 
    ![Открытие папки результатов обработки реальных данных Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-open-results-folder.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "86044470"
 
 * Power BI и Azure Data Lake Storage не поддерживаются в качестве приемников выходных данных из-за ограничений модели аутентификации.
 
-* Для облачных входных данных поддерживаются [политики времени](stream-analytics-out-of-order-and-late-events.md), а для локальных входных данных — нет.
+* Для облачных входных данных поддерживаются [политики времени](./stream-analytics-time-handling.md), а для локальных входных данных — нет.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

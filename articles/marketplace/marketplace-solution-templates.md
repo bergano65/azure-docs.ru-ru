@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: msjogarrig
 ms.author: jogarrig
 ms.date: 04/22/2020
-ms.openlocfilehash: c4be1c7eec9572d284d70823d270dafe5569ab14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af39e406f59132b90e2005a78ade0c4f5f70c174
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89484227"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93124494"
 ---
 # <a name="publishing-guide-for-azure-applications-solution-template-offers"></a>Рекомендации по публикации для предложений шаблонов решений для приложений Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "89484227"
 - Для решения требуется дополнительная автоматизация развертывания и настройки за пределами одной виртуальной машины (ВМ), например сочетание виртуальных машин, сети и ресурсов хранилища.
 - Ваши клиенты будут управлять самим решением.
 
-Параметр List, который видит Клиент для этого типа предложения, — *получить его сейчас*.
+Параметр List, который видит Клиент для этого типа предложения, — *получить его сейчас* .
 
 ## <a name="requirements-for-solution-template-offers"></a>Требования к предложениям шаблонов решений
 
@@ -32,7 +32,7 @@ ms.locfileid: "89484227"
 |Выставление счетов и ценообразование    |  Предложения шаблонов решений не являются предложениями по транзакциям, но их можно использовать для развертывания платных предложений виртуальных машин, которые выставляются через коммерческий магазин Майкрософт. Ресурсы, развертываемые с помощью шаблона ARM решения, настраиваются в подписке Azure клиента. Виртуальные машины с оплатой по мере использования преобразуются в транзакции с клиентом через корпорацию Майкрософт и выставляются через подписку Azure клиента.<br/> Для выставления счетов за использование собственной лицензии (BYOL), несмотря на то, что стоимость инфраструктуры выставляется по подписке клиента, вы самостоятельно проставляете платежи по лицензированию программного обеспечения непосредственно клиенту.   |
 |Совместимый с Azure виртуальный жесткий диск (VHD)  |   Виртуальные машины должны быть созданы на платформе Windows или Linux. Дополнительные сведения см. в разделе: <ul> <li>[Создайте предложение приложения Azure](./partner-center-portal/create-new-azure-apps-offer.md) (для виртуальных жестких дисков Windows).</li><li>[Дистрибутивы Linux, одобренные в Azure](../virtual-machines/linux/endorsed-distros.md) (для виртуальных жестких дисков Linux).</li></ul> |
 | Определение потребления услуг клиентами | Для всех шаблонов решений, опубликованных в Azure Marketplace, требуется включить атрибуты использования клиента. Дополнительные сведения о соотношении использования клиентов и о том, как ее включить, см. в статье о соотношении [использования клиентов в Azure](./azure-partner-customer-usage-attribution.md).  |
-| Использование управляемых дисков | По умолчанию для материализованных виртуальных машин "инфраструктура как услуга" (IaaS) в Azure используется параметр " [управляемые диски](../virtual-machines/windows/managed-disks-overview.md) ". В шаблонах решений необходимо использовать управляемые диски. <ul><li>Чтобы обновить шаблоны решений, следуйте указаниям в статье [Использование управляемых дисков в Azure Resource Manager шаблонах](../virtual-machines/using-managed-disks-template-deployments.md)и используйте предоставленные [образцы](https://github.com/Azure/azure-quickstart-templates).<br><br> </li><li>Чтобы опубликовать VHD как образ в Azure Marketplace, импортируйте базовый виртуальный жесткий диск управляемых дисков в учетную запись хранения, используя один из следующих методов.<ul><li>[Azure PowerShell](../virtual-machines/scripts/virtual-machines-powershell-sample-copy-managed-disks-vhd.md) </li> <li> [CLI Azure.](../virtual-machines/scripts/virtual-machines-cli-sample-copy-managed-disks-vhd.md) </li> </ul></ul> |
+| Использование управляемых дисков | По умолчанию для материализованных виртуальных машин "инфраструктура как услуга" (IaaS) в Azure используется параметр " [управляемые диски](../virtual-machines/managed-disks-overview.md) ". В шаблонах решений необходимо использовать управляемые диски. <ul><li>Чтобы обновить шаблоны решений, следуйте указаниям в статье [Использование управляемых дисков в Azure Resource Manager шаблонах](../virtual-machines/using-managed-disks-template-deployments.md)и используйте предоставленные [образцы](https://github.com/Azure/azure-quickstart-templates).<br><br> </li><li>Чтобы опубликовать VHD как образ в Azure Marketplace, импортируйте базовый виртуальный жесткий диск управляемых дисков в учетную запись хранения, используя один из следующих методов.<ul><li>[Azure PowerShell](../virtual-machines/scripts/virtual-machines-powershell-sample-copy-managed-disks-vhd.md) </li> <li> [CLI Azure.](../virtual-machines/scripts/virtual-machines-cli-sample-copy-managed-disks-vhd.md) </li> </ul></ul> |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

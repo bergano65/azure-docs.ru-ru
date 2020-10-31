@@ -5,16 +5,16 @@ author: tamram
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/28/2020
+ms.date: 10/30/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 19d70642a6c76239f62b2fd6f7e713430a7adfbb
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 53033226702ea1033fe4ae94f60c62cacbae6596
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043098"
+ms.locfileid: "93124974"
 ---
 # <a name="create-a-blockblobstorage-account"></a>Создание учетной записи Блоккблобстораже
 
@@ -118,9 +118,6 @@ az login
 
 9. Если вы хотите оптимизировать учетную запись хранения для аналитики данных, установите для **иерархического пространства имен** значение **включено** . В противном случае оставьте для этого параметра значение по умолчанию. Включение этого параметра для учетной записи Блоккблобстораже обеспечивает [уровень "Премиум" для Data Lake Storage](premium-tier-for-data-lake-storage.md).  Дополнительные сведения о Data Lake Storage см. в статье Общие сведения о [Azure Data Lake Storage 2-го поколения](data-lake-storage-introduction.md).
 
-   > [!NOTE]
-   > Функция иерархического пространства имен в учетной записи хранения блочных BLOB-объектов доступна в общедоступной предварительной версии. Сведения о доступности по регионам см. в статье о [доступности в регионе](premium-tier-for-data-lake-storage.md#regional-availability).
-
 8. Выберите **проверить и создать** , чтобы проверить параметры учетной записи хранения.
 
 9. Нажмите кнопку **Создать** .
@@ -162,9 +159,6 @@ az login
    ```
    Если вы хотите оптимизировать учетную запись хранения для аналитики данных, добавьте ее `-EnableHierarchicalNamespace $True` в команду. Включение этого параметра для учетной записи Блоккблобстораже обеспечивает [уровень "Премиум" для Data Lake Storage](premium-tier-for-data-lake-storage.md).  Дополнительные сведения о Data Lake Storage см. в статье Общие сведения о [Azure Data Lake Storage 2-го поколения](data-lake-storage-introduction.md).
 
-   > [!NOTE]
-   > Функция иерархического пространства имен в учетной записи хранения блочных BLOB-объектов доступна в общедоступной предварительной версии. Сведения о доступности по регионам см. в статье о [доступности в регионе](premium-tier-for-data-lake-storage.md#regional-availability).
-
 ## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы создать учетную запись блочного BLOB-объекта с помощью Azure CLI, необходимо сначала установить Azure CLI v. 2.0.46 или более поздняя версия. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
@@ -195,10 +189,7 @@ az login
    ```
 
    Если вы хотите оптимизировать учетную запись хранения для аналитики данных, добавьте ее `--hierarchical-namespace true` в команду. Включение этого параметра для учетной записи Блоккблобстораже обеспечивает [уровень "Премиум" для Data Lake Storage](premium-tier-for-data-lake-storage.md).  Дополнительные сведения о Data Lake Storage см. в статье Общие сведения о [Azure Data Lake Storage 2-го поколения](data-lake-storage-introduction.md).
-   
-   > [!NOTE]
-   > Функция иерархического пространства имен в учетной записи хранения блочных BLOB-объектов доступна в общедоступной предварительной версии. Сведения о доступности по регионам см. в статье о [доступности в регионе](premium-tier-for-data-lake-storage.md#regional-availability).
-   
+
 ---
 
 ## <a name="next-steps"></a>Дальнейшие действия
