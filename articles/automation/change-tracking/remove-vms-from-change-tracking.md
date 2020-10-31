@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 61ced7eda78d3ce56d78dfd6cc54e0e92d376e68
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 0b79fa22d3203504e63161aba03b32830d74d016
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100683"
+ms.locfileid: "93131281"
 ---
 # <a name="remove-vms-from-change-tracking-and-inventory"></a>Исключение виртуальных машин из Отслеживания изменений и инвентаризации
 
@@ -22,7 +22,7 @@ ms.locfileid: "93100683"
 
 ## <a name="to-remove-your-vms"></a>Удаление виртуальных машин
 
-1. В портал Azure запустите **Cloud Shell** из верхней панели навигации портал Azure. Если вы не знакомы с Azure Cloud Shell, см. раздел [обзор Azure Cloud Shell](/azure/cloud-shell/overview).
+1. В портал Azure запустите **Cloud Shell** из верхней панели навигации портал Azure. Если вы не знакомы с Azure Cloud Shell, см. раздел [обзор Azure Cloud Shell](../../cloud-shell/overview.md).
 
 2. Используйте следующую команду, чтобы указать UUID компьютера, который требуется удалить из управления.
 

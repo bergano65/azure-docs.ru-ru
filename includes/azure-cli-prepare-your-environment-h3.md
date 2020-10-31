@@ -8,16 +8,20 @@ ms.technology: azure-cli
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f7e067d663145e2edc39f8d4b90fdd91ff2f75d0
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: f354a982cb134bbee032b2ea408bdbe127a5067c
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440741"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93136261"
 ---
 ### <a name="prepare-your-environment-for-the-azure-cli"></a>Подготовка среды для Azure CLI
 
-- Чтобы использовать команды Azure CLI, [установите Azure CLI локально](/cli/azure/install-azure-cli) или запустите [Azure Cloud Shell](/azure/cloud-shell/quickstart) с помощью среды Bash.
+- Используйте [Azure Cloud Shell](/azure/cloud-shell/quickstart) , используя среду bash.
 
-- Если вы используете локальную установку, выполните вход с помощью команды Azure CLI [az login](/cli/azure/reference-index#az-login).  Выполните аутентификацию, следуя инструкциям в окне терминала.  Дополнительные параметры входа см. [в разделе Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli) .
-- При появлении запроса установите расширения Azure CLI при первом использовании.  Дополнительные сведения см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+   [![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)   
+- При необходимости выполните [локальную установку](/cli/azure/install-azure-cli) Azure CLI, чтобы выполнить справочные команды CLI.
+   - Если вы используете локальную установку, выполните вход с помощью команды Azure CLI [az login](/cli/azure/reference-index#az-login).  Выполните аутентификацию, следуя инструкциям в окне терминала.  Дополнительные параметры входа см. [в разделе Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli) .
+  - При появлении запроса установите расширения Azure CLI при первом использовании.  Дополнительные сведения см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+  - Выполните команду [az version](/cli/azure/reference-index?#az_version), чтобы узнать установленную версию и зависимые библиотеки. Чтобы обновиться до последней версии, выполните команду [az upgrade](/cli/azure/reference-index?#az_upgrade).
+

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 04/02/2020
-ms.openlocfilehash: 2f34723bec6dc2212f8897eca849e6535d737fc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af77f18771d8e18ee86b79360ac03307d3330cb0
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397425"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93131434"
 ---
 # <a name="power-bi-app-creation-overview"></a>Общие сведения о создании приложения Power BI
 
@@ -33,22 +33,22 @@ ms.locfileid: "91397425"
 
 Ниже приведены основные этапы публикации.
 
-1. Создайте приложение в Power BI. Вы получите ссылку на установку пакета, которая является основным техническим ресурсом для предложения. Перед созданием предложения в центре партнеров отправьте тестовый пакет в предварительную рабочую среду. Дополнительные сведения см. в разделе [что такое Power BI приложений?](https://docs.microsoft.com/power-bi/service-template-apps-overview).
+1. Создайте приложение в Power BI. Вы получите ссылку на установку пакета, которая является основным техническим ресурсом для предложения. Перед созданием предложения в центре партнеров отправьте тестовый пакет в предварительную рабочую среду. Дополнительные сведения см. в разделе [что такое Power BI приложений?](/power-bi/service-template-apps-overview).
 2. Добавьте маркетинговые материалы, такие как официальное название, описание и логотипы.
 3. Включите документы о юридической и технической поддержке предложения, такие как условия использования, политика конфиденциальности, политика поддержки и Справка пользователя.
 4. Создайте предложение — используйте центр партнеров, чтобы изменить сведения, включая описание предложения, маркетинговые материалы, юридические сведения, сведения о поддержке и спецификации активов.
 5. Отправьте его для публикации.
 6. Отслеживайте процесс в центре партнеров, где команда адаптации AppSource тестирует, проверяет и удостоверяет Ваше приложение.
 7. После сертификации проверьте приложение в тестовой среде и выпустите его. Он будет перечисляться в AppSource (он "переходит в активное").
-8. В Power BI отправьте пакет в рабочую среду. Дополнительные сведения см. [в разделе Управление выпуском Power BI приложения](https://docs.microsoft.com/power-bi/service-template-apps-create#manage-the-template-app-release).
+8. В Power BI отправьте пакет в рабочую среду. Дополнительные сведения см. [в разделе Управление выпуском Power BI приложения](/power-bi/service-template-apps-create#manage-the-template-app-release).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 
 Ознакомьтесь с приведенными ниже ссылками, которые содержат шаблоны, советы и примеры.
 
-- [Создание приложения Power BI](https://docs.microsoft.com/power-bi/service-template-apps-create)
-- [Советы по разработке приложения Power BI](https://docs.microsoft.com/power-bi/service-template-apps-tips)
-- [Примеры](https://docs.microsoft.com/power-bi/service-template-apps-samples)
+- [Создание приложения Power BI](/power-bi/service-template-apps-create)
+- [Советы по разработке приложения Power BI](/power-bi/service-template-apps-tips)
+- [Примеры](/power-bi/service-template-apps-samples)
 
 ## <a name="requirements"></a>Требования
 
@@ -56,13 +56,13 @@ ms.locfileid: "91397425"
 
 ### <a name="technical-requirements"></a>Технические требования
 
-Основной необходимый технический ресурс — это [Power BI приложение](https://go.microsoft.com/fwlink/?linkid=2028636). Это коллекция основных наборов данных, отчетов или панелей мониторинга. Он также включает дополнительные подключенные службы и внедренные наборы данных, которые ранее назывались [пакетом содержимого](https://docs.microsoft.com/power-bi/service-organizational-content-pack-introduction). Дополнительные сведения о разработке этого типа приложений см. в разделе [что такое приложения Power BI?](https://go.microsoft.com/fwlink/?linkid=2028636).
+Основной необходимый технический ресурс — это [Power BI приложение](/power-bi/connect-data/service-template-apps-overview). Это коллекция основных наборов данных, отчетов или панелей мониторинга. Он также включает дополнительные подключенные службы и внедренные наборы данных, которые ранее назывались [пакетом содержимого](/power-bi/service-organizational-content-pack-introduction). Дополнительные сведения о разработке этого типа приложений см. в разделе [что такое приложения Power BI?](/power-bi/connect-data/service-template-apps-overview).
 
 #### <a name="get-an-installation-web-address"></a>Получение веб-адреса установки
 
 Вы можете создать только приложение Power BI в среде [Power BI](https://powerbi.microsoft.com/) .
 
-1. Выполните вход с помощью [Power BI Pro лицензии](https://docs.microsoft.com/power-bi/service-admin-purchasing-power-bi-pro).
+1. Выполните вход с помощью [Power BI Pro лицензии](/power-bi/service-admin-purchasing-power-bi-pro).
 2. Создание и тестирование приложения в Power BI.
 3. Когда вы получаете веб-адрес установки приложения, добавьте его на страницу **технической настройки** в центре партнеров.
 

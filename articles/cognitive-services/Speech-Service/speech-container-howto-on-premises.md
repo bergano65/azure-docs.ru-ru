@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 04/29/2020
+ms.date: 10/30/2020
 ms.author: aahi
-ms.openlocfilehash: aa1cb6e9fdd504622b2f444d511a8dd0e5fc1ca8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 277a3c1c53564d7c5dff6a87381680a7f41606de
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82608390"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93131604"
 ---
 # <a name="use-speech-service-containers-with-kubernetes-and-helm"></a>Использование контейнеров речевых служб с Kubernetes и Helm
 
@@ -27,11 +27,11 @@ ms.locfileid: "82608390"
 
 | Обязательно | Назначение |
 |----------|---------|
-| Учетная запись Azure | Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][free-azure-account], прежде чем начинать работу. |
+| Учетная запись Azure | Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись][free-azure-account], прежде чем начинать работу. |
 | Доступ к реестру контейнеров | Чтобы Kubernetes мог извлечь образы DOCKER в кластер, ему потребуется доступ к реестру контейнеров. |
 | Kubernetes CLI | Интерфейс [командной строки Kubernetes][kubernetes-cli] требуется для управления общими учетными данными из реестра контейнеров. Kubernetes также требуется перед Helm, который является диспетчером пакетов Kubernetes. |
 | Интерфейс командной строки Helm | Установите интерфейс [командной строки Helm][helm-install], который используется для установки диаграммы Helm (определение пакета контейнера). |
-|Речевой ресурс |Для использования контейнеров необходимо следующее:<br><br>_Речевой_ ресурс Azure для получения связанного ключа выставления счета и URI конечной точки выставления счетов. Оба значения доступны на страницах "Обзор **речи** " и "ключи" портал Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}**: ключ ресурса<br><br>**{ENDPOINT_URI}**: пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
+|Речевой ресурс |Для использования контейнеров необходимо следующее:<br><br>_Речевой_ ресурс Azure для получения связанного ключа выставления счета и URI конечной точки выставления счетов. Оба значения доступны на страницах "Обзор **речи** " и "ключи" портал Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}** : ключ ресурса<br><br>**{ENDPOINT_URI}** : пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
 
 ## <a name="the-recommended-host-computer-configuration"></a>Рекомендуемая конфигурация главного компьютера
 
@@ -46,68 +46,26 @@ ms.locfileid: "82608390"
 
 Предполагается, что на главном компьютере есть доступный кластер Kubernetes. Ознакомьтесь с руководством по [развертыванию кластера Kubernetes](../../aks/tutorial-kubernetes-deploy-cluster.md) для концептуального понимания того, как развернуть кластер Kubernetes на главном компьютере.
 
-### <a name="sharing-docker-credentials-with-the-kubernetes-cluster"></a>Предоставление учетных данных DOCKER в кластере Kubernetes
-
-Чтобы разрешить кластеру Kubernetes `docker pull` настроенные образы из `containerpreview.azurecr.io` реестра контейнеров, необходимо переместить учетные данные DOCKER в кластер. Выполните [`kubectl create`][kubectl-create] приведенную ниже команду, чтобы создать *секрет DOCKER-Registry* на основе учетных данных, предоставленных в предварительных требованиях для доступа к реестру контейнеров.
-
-В выбранном интерфейсе командной строки выполните следующую команду. Обязательно замените `<username>` , `<password>` и на `<email-address>` учетные данные реестра контейнеров.
-
-```console
-kubectl create secret docker-registry mcr \
-    --docker-server=containerpreview.azurecr.io \
-    --docker-username=<username> \
-    --docker-password=<password> \
-    --docker-email=<email-address>
-```
-
-> [!NOTE]
-> Если у вас уже есть доступ к `containerpreview.azurecr.io` реестру контейнеров, можно создать секрет Kubernetes, используя вместо него общий флаг. Рассмотрим следующую команду, которая выполняется для JSON конфигурации DOCKER.
-> ```console
->  kubectl create secret generic mcr \
->      --from-file=.dockerconfigjson=~/.docker/config.json \
->      --type=kubernetes.io/dockerconfigjson
-> ```
-
-После успешного создания секрета на консоли выводятся следующие выходные данные.
-
-```console
-secret "mcr" created
-```
-
-Чтобы убедиться, что секрет создан, выполните [`kubectl get`][kubectl-get] с `secrets` флагом.
-
-```console
-kubectl get secrets
-```
-
-При исполнении `kubectl get secrets` выводятся все настроенные секреты.
-
-```console
-NAME    TYPE                              DATA    AGE
-mcr     kubernetes.io/dockerconfigjson    1       30s
-```
-
 ## <a name="configure-helm-chart-values-for-deployment"></a>Настройка значений диаграммы Helm для развертывания
 
-Посетите [центр Microsoft Helm][ms-helm-hub] для всех общедоступных диаграмм Helm, предлагаемых корпорацией Майкрософт. В центре Microsoft Helm вы найдете **локальную диаграмму Cognitive Services речь**. **Локальная Cognitive Services речь** — это диаграмма, которую мы будем устанавливать, но сначала необходимо создать `config-values.yaml` файл с явной конфигурацией. Начнем с добавления репозитория Майкрософт в наш экземпляр Helm.
+Посетите [центр Microsoft Helm][ms-helm-hub] для всех общедоступных диаграмм Helm, предлагаемых корпорацией Майкрософт. В центре Microsoft Helm вы найдете **локальную диаграмму Cognitive Services речь** . **Локальная Cognitive Services речь** — это диаграмма, которую мы будем устанавливать, но сначала необходимо создать `config-values.yaml` файл с явной конфигурацией. Начнем с добавления репозитория Майкрософт в наш экземпляр Helm.
 
 ```console
 helm repo add microsoft https://microsoft.github.io/charts/repo
 ```
 
-Далее предстоит настроить наши значения диаграммы Helm. Скопируйте и вставьте следующий YAML в файл с именем `config-values.yaml` . Дополнительные сведения о настройке **Cognitive Servicesной диаграммы для перевода речи в локальной среде**см. в разделе [Настройка диаграмм Helm](#customize-helm-charts). Замените `# {ENDPOINT_URI}` комментарии и `# {API_KEY}` собственными значениями.
+Далее предстоит настроить наши значения диаграммы Helm. Скопируйте и вставьте следующий YAML в файл с именем `config-values.yaml` . Дополнительные сведения о настройке **Cognitive Servicesной диаграммы для перевода речи в локальной среде** см. в разделе [Настройка диаграмм Helm](#customize-helm-charts). Замените `# {ENDPOINT_URI}` комментарии и `# {API_KEY}` собственными значениями.
 
 ```yaml
 # These settings are deployment specific and users can provide customizations
-
 # speech-to-text configurations
 speechToText:
   enabled: true
   numberOfConcurrentRequest: 3
   optimizeForAudioFile: true
   image:
-    registry: containerpreview.azurecr.io
-    repository: microsoft/cognitive-services-speech-to-text
+    registry: mcr.microsoft.com
+    repository: azure-cognitive-services/speechservices/speech-to-text
     tag: latest
     pullSecrets:
       - mcr # Or an existing secret
@@ -122,8 +80,8 @@ textToSpeech:
   numberOfConcurrentRequest: 3
   optimizeForTurboMode: true
   image:
-    registry: containerpreview.azurecr.io
-    repository: microsoft/cognitive-services-text-to-speech
+    registry: mcr.microsoft.com
+    repository: azure-cognitive-services/speechservices/speech-to-text
     tag: latest
     pullSecrets:
       - mcr # Or an existing secret
@@ -138,11 +96,11 @@ textToSpeech:
 
 ### <a name="the-kubernetes-package-helm-chart"></a>Пакет Kubernetes (диаграмма Helm)
 
-*Диаграмма Helm* содержит конфигурацию образов DOCKER, которые необходимо извлечь из `containerpreview.azurecr.io` реестра контейнеров.
+*Диаграмма Helm* содержит конфигурацию образов DOCKER, которые необходимо извлечь из `mcr.microsoft.com` реестра контейнеров.
 
 > [Helm диаграмма][helm-charts] — это коллекция файлов, описывающих связанный набор ресурсов Kubernetes. Отдельную диаграмму можно использовать для развертывания чего-либо простого, такого как memcached Pod или что-то сложного, подобно полному стеку веб-приложений с серверами HTTP, базами данных, кэшами и т. д.
 
-Предоставленные *Helm диаграммы* извлекают образы DOCKER службы Speech, а также текстовые и речевые службы из `containerpreview.azurecr.io` реестра контейнеров.
+Предоставленные *Helm диаграммы* извлекают образы DOCKER службы Speech, а также текстовые и речевые службы из `mcr.microsoft.com` реестра контейнеров.
 
 ## <a name="install-the-helm-chart-on-the-kubernetes-cluster"></a>Установка диаграммы Helm в кластере Kubernetes
 
@@ -231,7 +189,7 @@ horizontalpodautoscaler.autoscaling/text-to-speech-autoscaler   Deployment/text-
 
 ### <a name="verify-helm-deployment-with-helm-tests"></a>Проверка развертывания Helm с помощью тестов Helm
 
-Установленные диаграммы Helm определяют *тесты Helm*, которые служат для удобства проверки. Эти тесты проверяют готовность службы. Чтобы проверить службы преобразования **речи в текст** и преобразования **текста в речь** , мы выполним команду [Helm Test][helm-test] .
+Установленные диаграммы Helm определяют *тесты Helm* , которые служат для удобства проверки. Эти тесты проверяют готовность службы. Чтобы проверить службы преобразования **речи в текст** и преобразования **текста в речь** , мы выполним команду [Helm Test][helm-test] .
 
 ```console
 helm test onprem-speech
@@ -249,7 +207,7 @@ RUNNING: text-to-speech-readiness-test
 PASSED: text-to-speech-readiness-test
 ```
 
-В качестве альтернативы выполнению *тестов Helm*можно получить *внешние IP-* адреса и соответствующие порты из `kubectl get all` команды. Используя IP-адрес и порт, откройте веб-браузер и перейдите к, `http://<external-ip>:<port>:/swagger/index.html` чтобы просмотреть страницы SWAGGER API.
+В качестве альтернативы выполнению *тестов Helm* можно получить *внешние IP-* адреса и соответствующие порты из `kubectl get all` команды. Используя IP-адрес и порт, откройте веб-браузер и перейдите к, `http://<external-ip>:<port>:/swagger/index.html` чтобы просмотреть страницы SWAGGER API.
 
 ## <a name="customize-helm-charts"></a>Настройка диаграмм Helm
 
