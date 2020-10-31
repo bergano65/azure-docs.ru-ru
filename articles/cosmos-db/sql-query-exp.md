@@ -7,14 +7,16 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 76d614264124e1ce4138663b702ff6d899b3aa4e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d12ab39474f1df139bf2f9064d43f5ab7ecda16b
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74873324"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100275"
 ---
 # <a name="exp-azure-cosmos-db"></a>EXP (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
+
  Возвращает значение экспоненты для указанного числового выражения.  
   
 ## <a name="syntax"></a>Синтаксис
@@ -36,7 +38,7 @@ EXP (<numeric_expr>)
   
   Константа **e** (2,718281...) является основанием натуральных логарифмов.  
   
-  Экспонента числа является константой **e**, возведенной в степень числа. Например, EXP(1.0) = e^1.0 = 2,71828182845905 и EXP(10) = e^10 = 22026,4657948067.  
+  Экспонента числа является константой **e** , возведенной в степень числа. Например, EXP(1.0) = e^1.0 = 2,71828182845905 и EXP(10) = e^10 = 22026,4657948067.  
   
   Экспонента натурального логарифма числа — это само число. Например, EXP (LOG (n)) = n. Натуральный логарифм экспоненты числа также является числом. Например, LOG (EXP (n)) = n.  
   

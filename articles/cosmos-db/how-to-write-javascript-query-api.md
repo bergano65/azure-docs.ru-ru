@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: 4251a9ec0766f6e1956e4885b58dc874e01b0960
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ad2b9bcbfdd4353c16d890d1857727b685a5e59
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91253077"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098864"
 ---
 # <a name="how-to-write-stored-procedures-and-triggers-in-azure-cosmos-db-by-using-the-javascript-query-api"></a>Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Azure Cosmos DB позволяет создавать оптимизированные запросы с помощью гибкого интерфейса JavaScript (без знания языка SQL), который может использоваться для написания хранимых процедур или триггеров. Дополнительные сведения о поддержке API запросов JavaScript в Azure Cosmos DB см. в статье о [работе с API запросов с интегрированным языком JavaScript в Azure Cosmos DB](javascript-query-api.md).
 
@@ -79,7 +80,7 @@ function insertDocumentAndUpdateMetadata(item) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о хранимых процедурах, триггерах и определяемых пользователем функциях в Azure Cosmos DB см. по следующим ссылкам:
 

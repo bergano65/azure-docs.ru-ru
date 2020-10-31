@@ -7,14 +7,15 @@ ms.topic: conceptual
 ms.date: 08/18/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 673e6a8cb86986ff24e3ee55589d13e8a9e4fdc5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6de48583cbc3a7e41d6da5e7ed29abf07bba3112
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88608828"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100309"
 ---
 # <a name="datetimetotimestamp-azure-cosmos-db"></a>Датетиметотиместамп (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Преобразует указанный DateTime в отметку времени.
   
@@ -36,8 +37,8 @@ DateTimeToTimestamp (<DateTime>)
   |DD|четырехзначный день месяца (от 01 до 31)|
   |T|обозначает начало элементов времени|
   |hh|час с двумя цифрами (от 00 до 23)|
-  |ММ|двузначное число минут (от 00 до 59)|
-  |сс|двузначное число секунд (от 00 до 59)|
+  |mm|двузначное число минут (от 00 до 59)|
+  |ss|двузначное число секунд (от 00 до 59)|
   |. fffffff|семь цифр в долях секунды|
   |Z|Обозначение времени в формате UTC (Универсальное координированное время)||
   
@@ -47,7 +48,7 @@ DateTimeToTimestamp (<DateTime>)
 
 Возвращает числовое значение со знаком, равное текущему количеству миллисекунд, прошедших с момента выпуска UNIX, т. е. количество миллисекунд, истекших с 00:00:00 в четверг, 1 января 1970.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Датетиметотиместамп возвращает, `undefined` Если указано недопустимое значение DateTime
 
@@ -81,7 +82,7 @@ SELECT DateTimeToTimestamp("2020-07-09") AS Timestamp
 ]
 ```  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

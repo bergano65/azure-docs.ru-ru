@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 0eec1538814b93c024fe6a5aa34ee73c4c09184c
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 2f711ad269a4ea07cfbb1603b592b184779dcfdb
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92740429"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100751"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-postgresql-single-server"></a>Основные сведения об изменениях в корневом ЦС для одного сервера базы данных Azure для PostgreSQL
 
@@ -104,7 +104,7 @@ ms.locfileid: "92740429"
 ### <a name="4-what-is-the-impact-if-using-app-service-with-azure-database-for-postgresql"></a>4. Каковы последствия использования службы приложений с базой данных Azure для PostgreSQL?
 Для служб приложений Azure, подключающихся к базе данных Azure для PostgreSQL, можно использовать два возможных сценария, которые зависят от того, как вы используете SSL с приложением.
 *   Этот новый сертификат добавлен в службу приложений на уровне платформы. Если в приложении используются SSL-сертификаты, включенные в платформу службы приложений, никаких действий не требуется.
-*   Если вы явно включаете путь к файлу SSL-сертификата в коде, необходимо скачать новый сертификат и обновить код для использования нового сертификата. Хорошим примером этого сценария является использование пользовательских контейнеров в службе приложений в качестве общих в [документации по службе приложений](/app-service/tutorial-multi-container-app#configure-database-variables-in-wordpress.md) .
+*   Если вы явно включаете путь к файлу SSL-сертификата в коде, необходимо скачать новый сертификат и обновить код для использования нового сертификата. Хорошим примером этого сценария является использование пользовательских контейнеров в службе приложений в качестве общих в [документации по службе приложений](/azure/app-service/tutorial-multi-container-app#configure-database-variables-in-wordpress) .
 
 ### <a name="5-what-is-the-impact-if-using-azure-kubernetes-services-aks-with-azure-database-for-postgresql"></a>5. Каковы последствия использования Azure Kubernetes Services (AKS) с базой данных Azure для PostgreSQL?
 Если вы пытаетесь подключиться к базе данных Azure для PostgreSQL с помощью служб Kubernetes Azure (AKS), она аналогична доступу из выделенной среды размещения клиентов. Инструкции см. [здесь](../aks/ingress-own-tls.md).

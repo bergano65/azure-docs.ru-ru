@@ -8,14 +8,15 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/11/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 24e9087a175385f8e5c347a1d2df3b2785868506
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb2553346881bc2e8de631988bd11642b85aa847
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327860"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099646"
 ---
 # <a name="migrate-your-application-to-use-the-azure-cosmos-db-java-sdk-v4"></a>Перевод приложения на использование пакета средств разработки Java для Azure Cosmos DB версии 4
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!IMPORTANT]  
 > Дополнительные сведения об этом пакете SDK см. в [заметках о выпуске](sql-api-sdk-java-v4.md) пакета SDK Java Azure Cosmos DB версии 4, [репозитории Maven](https://mvnrepository.com/artifact/com.azure/azure-cosmos), [рекомендациях по повышению производительности](performance-tips-java-sdk-v4-sql.md) для пакета SDK Java Azure Cosmos DB версии 4, а также в [руководстве по устранению неполадок](troubleshoot-java-sdk-v4-sql.md) для пакета SDK Java Azure Cosmos DB версии 4.
@@ -66,7 +67,7 @@ ms.locfileid: "87327860"
 
   * **Пакет средств разработки Java версии 3.x.x.** Все классы принадлежат API Async, если имя класса не имеет постфикса `Async` после `Cosmos`.
 
-  * **Пакет средств разработки Async Java версии 2.x.x.** Имена классов похожи на имена в пакете средств разработки Java версии 2.x.x, но всегда начинаются с префикса *Async*.
+  * **Пакет средств разработки Async Java версии 2.x.x.** Имена классов похожи на имена в пакете средств разработки Java версии 2.x.x, но всегда начинаются с префикса *Async* .
 
 ### <a name="hierarchical-api-structure"></a>Иерархическая структура API
 

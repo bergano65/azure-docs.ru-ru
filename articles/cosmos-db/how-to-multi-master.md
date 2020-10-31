@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: mjbrown
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: 95337f88133c9493250e9197654288dc0af59ed1
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 35c0b5529cd9ada612caf4884683fbeaacb25b33
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92486146"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100139"
 ---
 # <a name="configure-multi-region-writes-in-your-applications-that-use-azure-cosmos-db"></a>Настройка операций записи в несколько регионов в приложениях, использующих Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 После создания учетной записи с несколькими регионами записи необходимо внести два изменения в приложение в ConnectionPolicy для DocumentClient, чтобы включить операции записи в несколько регионов и возможности множественного подключения в Azure Cosmos DB. В ConnectionPolicy установите для UseMultipleWriteLocations значение true и передайте имя региона, в котором развернуто приложение, в SetCurrentLocation. Это заполнит свойство PreferredLocations на основе географической близости от передаваемого расположения. Позже при добавлении нового региона в учетную запись нет необходимости обновлять или повторно развертывать приложение. В случае инициации регионального события оно автоматически обнаружит ближайший регион и подключится к нему.
 

@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: tisande
-ms.openlocfilehash: bbfc31e810e2c11cde4907c9d5120b66195191af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ee221acb9ff045716e3a8015b20b467ab6d0b10
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764984"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098558"
 ---
 # <a name="querying-geospatial-data-with-azure-cosmos-db"></a>Запрос геопространственных данных с помощью Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье рассматривается запрос геопространственных данных в Azure Cosmos DB с помощью SQL и LINQ. В настоящее время хранение геопространственных данных и доступ к ним поддерживают только учетные записи API SQL Azure Cosmos DB. Azure Cosmos DB поддерживает следующие встроенные функции Открытого геопространственного консорциума (OGC) для выполнения запросов к геопространственным данным. Дополнительные сведения о полном наборе встроенных функций на языке SQL см. [в разделе запросы системных функций в Azure Cosmos DB](sql-query-system-functions.md).
 

@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: tisande
-ms.openlocfilehash: e4bbb27a2f49027ed5a456ad824f54b9c92a899c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 967e07e55599be0a614e0b6097ae4745f6c7081f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83005859"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100088"
 ---
 # <a name="from-clause-in-azure-cosmos-db"></a>Предложение FROM в Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Предложение FROM ( `FROM <from_specification>` ) является необязательным, если только источник не фильтруется или не проецируется позже в запросе. Запрос, например `SELECT * FROM Families` перечисляется по всему `Families` контейнеру. Вместо имени контейнера можно также использовать специальный КОРНЕВой идентификатор для контейнера.
 
@@ -87,7 +88,7 @@ FROM <from_specification>
   
   Указывает, что документ необходимо извлечь из свойства `property_name` или элемента массива array_index всех документов, полученных указанным выражением контейнера.  
   
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
   
 Все псевдонимы, предоставленные или выведенные в аргументе `<from_source>(`, должны быть уникальными. Синтаксис `<container_expression>.`property_name совпадает с синтаксисом `<container_expression>' ['"property_name"']'`. Второй синтаксис можно использовать, если имя свойства содержит знак, не являющийся идентификатором.  
   

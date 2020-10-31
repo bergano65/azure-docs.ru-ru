@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 09/28/2019
 ms.author: mjbrown
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1de6aa5450a42bbc8fe35b220e810726f7dd2cda
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: a93bf4fe92cc7b2240a7411b093a7bab5a1a275e
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488441"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098830"
 ---
 # <a name="create-containers-with-large-partition-key"></a>Создание контейнеров с большим ключом секции
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Azure Cosmos DB использует схему секционирования на основе хэша для достижения горизонтального масштабирования данных. Все контейнеры Azure Cosmos, созданные до 3 2019, могут использовать хэш-функцию, которая вычислит хэш на основе первых 100 байт ключа секции. Если имеется несколько ключей разделов, имеющих один и тот же первый 100 байта, то эти логические секции рассматриваются службой как один и тот же логический раздел. Это может привести к проблемам, например к квотам на размер секций, а также к применению уникальных индексов по ключам секций. Для решения этой проблемы введены крупные ключи разделов. Azure Cosmos DB теперь поддерживает большие ключи разделов со значениями до 2 КБ.
 
@@ -78,7 +79,7 @@ database,
 
 В настоящее время нельзя использовать контейнеры с большим ключом секции в в Power BI и Azure Logic Apps. В этих приложениях можно использовать контейнеры без большого ключа секции.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)

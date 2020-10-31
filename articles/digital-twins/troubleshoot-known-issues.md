@@ -6,12 +6,12 @@ ms.author: baanders
 ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
-ms.openlocfilehash: 8f56538470b8a52697e2d5c4154a6a6807a0cfde
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 549e1808a3b449f7d29b968cde76ef29391880b3
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489019"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100622"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
@@ -32,7 +32,7 @@ ms.locfileid: "92489019"
 
 Кроме того, можно открыть панель Cloud Shell в портал Azure и завершить Cloud Shellную работу.
 
-:::image type="content" source="media/includes/portal-cloud-shell.png" alt-text="Представление портал Azure с выделенным значком &quot;Cloud Shell&quot;, а Cloud Shell появляется в нижней части окна портала":::
+:::image type="content" source="media/includes/portal-cloud-shell.png" alt-text="Представление портала Azure: выделенный значок Cloud Shell и окно Cloud Shell в нижней части окна портала" lightbox="media/includes/portal-cloud-shell.png":::
 
 Наконец, еще одним решением является [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) на компьютере, чтобы можно было выполнять команды Azure CLI локально. В локальной CLI эта проблема не возникает.
 
@@ -66,9 +66,9 @@ ms.locfileid: "92489019"
 
 ## <a name="issue-with-interactive-browser-authentication"></a>Проблемы с интерактивной проверкой подлинности браузера
 
-При написании кода проверки подлинности в приложениях Azure Digital двойников с помощью версии **1.2.0** **библиотеки [Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) **могут возникнуть проблемы с методом [интерактивебровсеркредентиал](/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) .
+При написании кода проверки подлинности в приложениях Azure Digital двойников с помощью версии **1.2.0** **библиотеки [Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true)** могут возникнуть проблемы с методом [интерактивебровсеркредентиал](/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) .
 
-Это не последняя версия библиотеки. Последняя версия — **1.2.2**.
+Это не последняя версия библиотеки. Последняя версия — **1.2.2** .
 
 Затронутый метод используется в следующих статьях: 
 * [*Руководство. Написание кода для клиентского приложения*](tutorial-code.md)
@@ -79,11 +79,11 @@ ms.locfileid: "92489019"
 
 ### <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 
-Чтобы устранить эту проблему, обновите приложения для использования `Azure.Identity` версии **1.2.2**. В этой версии библиотеки браузер должен загружаться и проходить проверку подлинности должным образом.
+Чтобы устранить эту проблему, обновите приложения для использования `Azure.Identity` версии **1.2.2** . В этой версии библиотеки браузер должен загружаться и проходить проверку подлинности должным образом.
 
 ### <a name="possible-causes"></a>Возможные причины
 
-Это связано с открытой проблемой с последней версией `Azure.Identity` библиотеки (версия **1.2.0**): [*сбой проверки подлинности при использовании интерактивебровсеркредентиал*](https://github.com/Azure/azure-sdk-for-net/issues/13940).
+Это связано с открытой проблемой с последней версией `Azure.Identity` библиотеки (версия **1.2.0** ): [*сбой проверки подлинности при использовании интерактивебровсеркредентиал*](https://github.com/Azure/azure-sdk-for-net/issues/13940).
 
 Эта проблема возникает при использовании версии **1.2.0** в приложении Digital двойников или при добавлении библиотеки в проект без указания версии (так же, как по умолчанию используется последняя версия).
 

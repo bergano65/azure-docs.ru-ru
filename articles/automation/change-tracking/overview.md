@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.date: 10/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: f4fc464da08128b7f2ecd0a037213d5f40aa65e0
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 35b1b07bd4d9eef555be26e1c24356b7c352bf38
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92670744"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100700"
 ---
 # <a name="change-tracking-and-inventory-overview"></a>Общие сведения об отслеживании изменений и инвентаризации
 
@@ -93,7 +93,7 @@ ms.locfileid: "92670744"
 
 ## <a name="tracking-file-content-changes"></a>Отслеживание изменений содержимого файлов
 
-Отслеживание изменений и инвентаризация позволяет просматривать содержимое файла Windows или Linux. Для каждого изменения в файле функция отслеживания изменений и инвентаризации сохраняет содержимое файла в [учетной записи хранения Azure](/storage/common/storage-account-create). При отслеживании файла его содержимое можно просмотреть до или после изменения. Содержимое файла можно просмотреть как в строке, так и параллельно.
+Отслеживание изменений и инвентаризация позволяет просматривать содержимое файла Windows или Linux. Для каждого изменения в файле функция отслеживания изменений и инвентаризации сохраняет содержимое файла в [учетной записи хранения Azure](/azure/storage/common/storage-account-create). При отслеживании файла его содержимое можно просмотреть до или после изменения. Содержимое файла можно просмотреть как в строке, так и параллельно.
 
 ![Просмотр изменений в файле](./media/overview/view-file-changes.png)
 

@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: tisande
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: 3744029b72a12cee1543a17bf1dee67a080904c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56c6327d2ecd3ae3721a7ee33565543405088d1c
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91253060"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098881"
 ---
 # <a name="how-to-register-and-use-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 API SQL в Azure Cosmos DB поддерживает регистрацию и вызов хранимых процедур, триггеров и определяемых пользователем функций (UDF), написанных на языке JavaScript. Для регистрации и вызова хранимых процедур можно использовать пакеты SDK для [.NET](sql-api-sdk-dotnet.md), [.NET Core](sql-api-sdk-dotnet-core.md), [Java](sql-api-sdk-java.md), [JavaScript](sql-api-sdk-node.md), [Node.js](sql-api-sdk-node.md)или [Python](sql-api-sdk-python.md) . После определения одной или нескольких хранимых процедур, триггеров и определяемых пользователем функций их можно загрузить и просмотреть в [портал Azure](https://portal.azure.com/) с помощью обозреватель данных.
 
@@ -707,7 +708,7 @@ results = list(container.query_items(
     'query': 'SELECT * FROM Incomes t WHERE udf.Tax(t.income) > 20000'))
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как записать или использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в статьях ниже:
 

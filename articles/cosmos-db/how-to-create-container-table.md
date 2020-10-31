@@ -8,14 +8,15 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 8c970c820417a5cff7030a8499cf0c3520465231
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: fde3145e7bd7f4e53ae7a0c44f02e066c28ec785
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92491144"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93101584"
 ---
 # <a name="create-a-container-in-azure-cosmos-db-table-api"></a>Создание контейнера в Azure Cosmos DB API таблиц
+[!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
 
 В этой статье описываются различные способы создания контейнера в Azure Cosmos DB API таблиц. В нем показано, как создать контейнер с помощью портал Azure, Azure CLI, PowerShell или поддерживаемых пакетов SDK. В этой статье показано, как создать контейнер, указать ключ секции и подготовить пропускную способность.
 
@@ -30,11 +31,11 @@ ms.locfileid: "92491144"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-table-dotnet.md#create-a-database-account)или выберите существующую.
 
-1. Откройте панель **Обозреватель данных** и выберите **создать таблицу**. После этого предоставьте следующие сведения.
+1. Откройте панель **Обозреватель данных** и выберите **создать таблицу** . После этого предоставьте следующие сведения.
 
    * Укажите идентификатор таблицы.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК** .
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-table.png" alt-text="Снимок экрана API таблиц, диалоговое окно добавления таблицы":::
 

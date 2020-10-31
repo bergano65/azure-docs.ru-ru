@@ -10,14 +10,19 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: scottwhi
-ms.openlocfilehash: 6fa12febe99e77efde45bcd2d538de78f618e641
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e14f13d0e9fba407a983fb182d25c77593e4d3c
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84710598"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098405"
 ---
 # <a name="search-for-news-with-the-bing-news-search-api"></a>Поиск новостей с помощью API Bing для поиска новостей
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 API Bing для поиска изображений позволяет легко интегрировать возможности когнитивного поиска новости Bing в приложения.
 
@@ -27,7 +32,7 @@ API Bing для поиска новостей в основном находит
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
-После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки*, установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
+После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки* , установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
 
 ## <a name="get-general-news"></a>Получение общих новостей
 
@@ -155,7 +160,7 @@ Host: api.cognitive.microsoft.com
 
 Не включайте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category).
 
-Ответ на получение краткой сводки новостей почти такой же, как и на получение главных новостей за сегодняшний день. Если статья является новостной сводкой, полю `headline` присваивается значение **true**.
+Ответ на получение краткой сводки новостей почти такой же, как и на получение главных новостей за сегодняшний день. Если статья является новостной сводкой, полю `headline` присваивается значение **true** .
 
 По умолчанию ответ включает до 12 новостных сводок. Чтобы изменить количество новостных сводок для возврата, укажите параметр запроса [headlineCount](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#headlinecount). Ответ также включает до четырех информационных статей по каждой категории новостей.
 

@@ -10,14 +10,19 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: scottwhi
-ms.openlocfilehash: 7999ed5296f2ff4e64b9edc0fb355f72b7d7a04e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 564af32b724c8b4883cd27d01813e246e5fa4901
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316653"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100207"
 ---
 # <a name="news-search-api-upgrade-guide"></a>Руководство по обновлению API для поиска новостей
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 В этом руководстве по обновлению определены изменения между версиями 5 и 7 API Bing для поиска новостей. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
 
@@ -90,4 +95,4 @@ InsufficientScope|InsufficientAuthorization
 
 - В объект [News](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news) добавлено поле `sort`. Поле `sort` показывает порядок сортировки статей. Например, статьи сортируются по релевантности (по умолчанию) или дате.
 
-- Добавлен объект [SortValue](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#sortvalue), который определяет порядок сортировки. Поле `isSelected` указывает, используется ли в ответе порядок сортировки. Значение **true** означает, что в ответе использовался порядок сортировки. А если `isSelected` имеет значение **false**, то вы можете использовать URL-адрес в поле `url`, чтобы запросить другой порядок сортировки.
+- Добавлен объект [SortValue](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#sortvalue), который определяет порядок сортировки. Поле `isSelected` указывает, используется ли в ответе порядок сортировки. Значение **true** означает, что в ответе использовался порядок сортировки. А если `isSelected` имеет значение **false** , то вы можете использовать URL-адрес в поле `url`, чтобы запросить другой порядок сортировки.

@@ -7,14 +7,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.reviewer: sngun
-ms.openlocfilehash: dac2ed3888dcf1d38fc5e2c21611edf8008a07f6
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 3128f6783dc96fffb577a378cd1aaea4e58c7a4f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92476371"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099204"
 ---
 # <a name="unique-key-constraints-in-azure-cosmos-db"></a>Ограничения для уникальных ключей в Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Уникальные ключи добавляют слой целостности данных в контейнер Azure Cosmos. Политика уникальных ключей создается одновременно с контейнером Azure Cosmos. Уникальные ключи гарантируют уникальность одного или нескольких значений в пределах логической секции. Вы также можете гарантировать уникальность для каждого [ключа секции](partitioning-overview.md).
 

@@ -7,12 +7,12 @@ ms.date: 10/03/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: github-actions-azure
-ms.openlocfilehash: f3bc407791b25e4dc1dddd61b60b3cefe0195919
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 068fc9dcb9a4f4a62c2dd879bf8144097452f1e0
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92203200"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099034"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание пользовательского контейнера в службе приложений с помощью действий GitHub
 
@@ -24,18 +24,18 @@ ms.locfileid: "92203200"
 
 |Section  |Задания  |
 |---------|---------|
-|**Аутентификация** | 1. получение субъекта-службы или профиля публикации. <br /> 2. Создайте секрет GitHub. |
+|**Аутентификация** | 1. получение субъекта-службы или профиля публикации. <br /> 2. Создание секрета GitHub. |
 |**Сборка** | 1. Создайте среду. <br /> 2. Создайте образ контейнера. |
 |**Развертывание** | 1. Разверните образ контейнера. |
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Учетная запись GitHub. Если у вас ее нет, зарегистрируйтесь [бесплатно](https://github.com/join).  
 - Рабочий реестр контейнеров и приложение службы приложений Azure для контейнеров. В этом примере используется реестр контейнеров Azure. 
     - [Узнайте, как создать контейнерное Node.jsное приложение с помощью DOCKER, отправить образ контейнера в реестр, а затем развернуть образ в службе приложений Azure.](/azure/developer/javascript/tutorial-vscode-docker-node-01)
 
-## <a name="generate-deployment-credentials"></a>Создать учетные данные развертывания
+## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
 
 Рекомендуемый способ проверки подлинности в службе приложений Azure для действий GitHub — профиль публикации. Вы также можете пройти проверку подлинности с помощью субъекта-службы, но процесс требует дополнительных действий. 
 
@@ -47,13 +47,16 @@ ms.locfileid: "92203200"
 
 1. Перейдите к службе приложений в портал Azure. 
 
-1. На странице **Обзор** выберите **получить профиль публикации**.
+1. На странице **Обзор** выберите **получить профиль публикации** .
+
+    > [!NOTE]
+    > По состоянию на Октябрь 2020 для веб-приложений Linux потребуется параметр приложения, `WEBSITE_WEBDEPLOY_USE_SCM` установленный в значение `true` **перед скачиванием файла** . Это требование будет удалено в будущем.
 
 1. Сохраните скачанный файл. Вы будете использовать содержимое файла для создания секрета GitHub.
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/service-principal)
 
-Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Выполните эту команду с [Azure Cloud Shell](https://shell.azure.com/) в портал Azure или нажав кнопку **попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -80,11 +83,11 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
 
 Вставьте содержимое выходных данных JSON в качестве значения переменной Secret. Присвойте секрету имя, например `AZURE_CREDENTIALS` .
 
-Когда вы настроите файл рабочего процесса позже, используйте секрет для входа `creds` в действие Azure Login. Пример:
+Когда вы позже настроите файл рабочего процесса, этот секрет будет передан в действие входа в Azure как параметр `creds`. Пример:
 
 ```yaml
 - uses: azure/login@v1
@@ -96,7 +99,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 # <a name="publish-profile"></a>[Опубликовать профиль](#tab/publish-profile)
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
 
 Чтобы использовать [учетные данные уровня приложения](#generate-deployment-credentials), вставьте содержимое скачанного файла профиля публикации в поле значение секрета. Назовите секрет `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
@@ -110,11 +113,11 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/service-principal)
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
 
 Чтобы использовать [учетные данные на уровне пользователя](#generate-deployment-credentials), вставьте все выходные данные JSON из команды Azure CLI в поле значения секрета. Присвойте секрету имя, например `AZURE_CREDENTIALS` .
 
-Когда вы настроите файл рабочего процесса позже, используйте секрет для входа `creds` в действие Azure Login. Пример:
+Когда вы позже настроите файл рабочего процесса, этот секрет будет передан в действие входа в Azure как параметр `creds`. Пример:
 
 ```yaml
 - uses: azure/login@v1

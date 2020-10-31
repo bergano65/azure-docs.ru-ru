@@ -7,14 +7,15 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 620ffcb379f9fa1402e422c13bcadf8da4047409
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 16004ece7877358be54ba67c2f72eb3210f16fb0
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92284692"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098133"
 ---
 # <a name="regexmatch-azure-cosmos-db"></a>РЕЖЕКСМАТЧ (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Предоставляет возможности регулярных выражений. Регулярные выражения — это краткая и гибкая нотация для поиска шаблонов текста. Azure Cosmos DB использует [регулярные выражения, совместимые с Perl (PCRE)](http://www.pcre.org/). 
 
@@ -105,7 +106,7 @@ FROM c
 WHERE RegexMatch (c.description, " s... ","i")
 ```
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Эта системная функция будет выиграть от [индекса диапазона](index-policy.md#includeexclude-strategy) , если регулярное выражение можно разделить на системные функции startsWith, EndsWith, Contains или стринжекуалс.
 

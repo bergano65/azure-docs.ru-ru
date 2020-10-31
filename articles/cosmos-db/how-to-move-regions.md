@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 09/12/2020
 ms.author: mjbrown
-ms.openlocfilehash: b34bc81f48b806b1016fbbd19d3ebc8bfef908c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14839465c19908653e22fa80f634ef7e3fa28bd9
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90090539"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100156"
 ---
 # <a name="move-an-azure-cosmos-db-account-to-another-region"></a>Перемещение учетной записи Azure Cosmos DB в другой регион
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье описывается, как выполнить одно из следующих действий:
 
@@ -73,7 +74,7 @@ Azure Cosmos DB изначально не поддерживает миграц�
 
     Теперь, когда запросы полностью перенаправляются на новый экземпляр, вы можете удалить старую учетную запись Azure Cosmos DB и средство Live Data Migrator.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения и примеры управления учетной записью Azure Cosmos, а также базами данных и контейнерами см. в следующих статьях:
 

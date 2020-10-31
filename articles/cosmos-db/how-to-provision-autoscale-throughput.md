@@ -8,14 +8,15 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/15/2020
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 452259015cf78234aa6a96194342de20db9a3724
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 615ce7da3ec480b766ceaeb307c50f7cb759fd4a
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92740888"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100122"
 ---
 # <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db---sql-api"></a>Подготавливает пропускную способность автомасштабирования для базы данных или контейнера в Azure Cosmos DB API SQL
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье объясняется, как подготавливать пропускную способность автомасштабирования для базы данных или контейнера (коллекции, графа или таблицы) в Azure Cosmos DB API SQL. Вы можете включить подготовку пропускной способности для одного контейнера или подготовку автомасштабируемой пропускной способности для целой базы данных, распределив ее между контейнерами в этой базе данных.
 

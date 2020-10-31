@@ -9,31 +9,32 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: cf27fc44d34fad10a215526f03878e34675b3a16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c6afbcebeb23889f65e5c071c3edc22e59934bbd
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91802656"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098587"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-v2-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB пакет SDK для .NET Core v2 для API SQL: заметки о выпуске и ресурсы
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 > [!div class="op_single_selector"]
 > * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
 > * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
 > * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
-> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
+> * [Пакет SDK для .NET Change Feed версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
-> * [Пружинные данные v2](sql-api-sdk-java-spring-v2.md)
+> * [Spring Data версии 2](sql-api-sdk-java-spring-v2.md)
 > * [Spring Data версии 3](sql-api-sdk-java-spring-v3.md)
 > * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
-> * ПОСЛЕДУЮЩИЕ (/рест/АПИ
+> * [REST](/rest/api
 > * [Поставщик ресурсов REST](/azure/azure-resource-manager/management/azure-services-resource-providers)
 > * [SQL](sql-api-query-reference.md)
-> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Исполнитель массовых операций — .NET версии 2](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 | |  |

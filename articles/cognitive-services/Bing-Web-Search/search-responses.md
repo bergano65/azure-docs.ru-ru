@@ -11,14 +11,19 @@ ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: a5e69fe855f0c1e99dc3672425d9aeea13d4e827
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2cea88c2e20c9e96c5ad5504815886b2cc771e44
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297796"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100564"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Структура откликов и типы ответов API Bing для поиска в Интернете  
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 При отправке Поиск в Интернете Bing поискового запроса он возвращает [`SearchResponse`](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#searchresponse) объект в тексте ответа. Объект содержит поле для каждого ответа, который система Bing посчитала соответствующим запросу. Этот пример иллюстрирует объект отклика, если система Bing вернула все ответы:
 
@@ -38,7 +43,7 @@ ms.locfileid: "89297796"
 }, ...
 ```
 
-Как правило, служба "Поиск в Интернете Bing" возвращает только некоторые из ответов. Например, если термин запроса был *гоночные дингхиес*, ответ может включать `webPages` , `images` и `rankingResponse` . Если вы не отфильтровали веб-страницы с помощью объекта [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter), отклик всегда включает ответы `webpages` и `rankingResponse`.
+Как правило, служба "Поиск в Интернете Bing" возвращает только некоторые из ответов. Например, если термин запроса был *гоночные дингхиес* , ответ может включать `webPages` , `images` и `rankingResponse` . Если вы не отфильтровали веб-страницы с помощью объекта [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter), отклик всегда включает ответы `webpages` и `rankingResponse`.
 
 [!INCLUDE [cognitive-services-bing-url-note](../../../includes/cognitive-services-bing-url-note.md)]
 
@@ -222,7 +227,7 @@ The following shows an example of how you might display articles in a search res
 
 Если пользователь введет математическое выражение или запрос на преобразование единиц измерения, то отклик может содержать ответ [Computation](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#computation). Ответ `computation` содержит нормализованное выражение и его результат.
 
-Запрос на преобразование единиц измерения преобразует одни единицы в другие. Примеры: *Сколько футов в 10 метрах?*, *Сколько столовых ложек в 1/4 чашки?*
+Запрос на преобразование единиц измерения преобразует одни единицы в другие. Примеры: *Сколько футов в 10 метрах?* , *Сколько столовых ложек в 1/4 чашки?*
 
 Ниже показан ответ `computation` на запрос *Сколько футов в 10 метрах?*
 
@@ -298,7 +303,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 |*|Умножение|
 |^|Питание|
 |!|Факториал|
-|.|Десятичный тип|
+|.|Decimal|
 |()|Группирование по приоритету|
 |[]|Компонент|
 
@@ -328,7 +333,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 
 ## <a name="timezone-answer"></a>Ответ TimeZone
 
-Если пользователь вводит запрос времени или даты, отклик может содержать ответ [TimeZone](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#timezone). Этот ответ поддерживает как явные, так и неявные запросы. Неявный запрос, например *Который час?*, возвращает местное время, соответствующее местоположению пользователя. Явный запрос, например *Который час в Сиэтле?*, возвращает местное время в Сиэтле, штат Вашингтон.
+Если пользователь вводит запрос времени или даты, отклик может содержать ответ [TimeZone](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#timezone). Этот ответ поддерживает как явные, так и неявные запросы. Неявный запрос, например *Который час?* , возвращает местное время, соответствующее местоположению пользователя. Явный запрос, например *Который час в Сиэтле?* , возвращает местное время в Сиэтле, штат Вашингтон.
 
 В ответе `timeZone` указываются название региона, текущие дата и время в формате UTC в указанном местоположении, а также смещение от UTC. Если границы географического региона находятся в нескольких временных поясах, то ответ содержит текущие дату и время в формате UTC для всех часовых поясов в рамках этой границы. Например, так как штат Флорида находится в двух часовых поясах, ответ содержит локальные дату и время обоих часовых поясов.  
 
@@ -419,7 +424,7 @@ Query: What time is it in the U.S.
 
 ## <a name="spellsuggestion-answer"></a>Ответ SpellSuggestion
 
-Если система Bing устанавливает, что пользователь мог искать что-то другое, отклик включает объект [SpellSuggestions](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#spellsuggestions). Например, если пользователь вводит запрос *карлос пен*, то Bing может установить, что пользователь наверняка искал имя "Карлос Пена" (на основании предыдущих поисковых запросов со словами *карлос пен*). Ниже представлен пример отклика с исправлением правописания.
+Если система Bing устанавливает, что пользователь мог искать что-то другое, отклик включает объект [SpellSuggestions](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#spellsuggestions). Например, если пользователь вводит запрос *карлос пен* , то Bing может установить, что пользователь наверняка искал имя "Карлос Пена" (на основании предыдущих поисковых запросов со словами *карлос пен* ). Ниже представлен пример отклика с исправлением правописания.
 
 ```json
 "spellSuggestions": {
@@ -476,10 +481,10 @@ cors-proxy-server
 
 ![Пример предложения правописания Bing](./media/cognitive-services-bing-web-api/bing-web-spellingsuggestion.GIF)  
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 * Ознакомьтесь с документацией по [регулированию запросов](throttling-requests.md).  
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
 * [Справка по API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference)

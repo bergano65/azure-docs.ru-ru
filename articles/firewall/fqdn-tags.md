@@ -7,18 +7,18 @@ ms.service: firewall
 ms.topic: article
 ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: e29e568786881f663414dcdf3eff72d4d72ab181
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed34bf755023ab866e95c51aca6d1bfb1dd7bf71
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85610614"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099459"
 ---
 # <a name="fqdn-tags-overview"></a>Общие сведения о тегах FQDN
 
 Тег FQDN — это группа полных доменных имен (FQDN), связанных с известными службами Майкрософт. Теги FQDN можно использовать в правилах приложений, чтобы разрешить нужный исходящий сетевой трафик через брандмауэр.
 
-Например, чтобы вручную разрешить сетевой трафик для Центра обновления Windows через брандмауэр, нужно создать несколько правил приложения согласно документации Майкрософт. А с помощью тегов FQDN можно создать правило приложения и включить тег **Центра обновлений Windows**. После этого сетевой трафик сможет проходить через брандмауэр к конечным точкам Центра обновления Windows.
+Например, чтобы вручную разрешить сетевой трафик для Центра обновления Windows через брандмауэр, нужно создать несколько правил приложения согласно документации Майкрософт. А с помощью тегов FQDN можно создать правило приложения и включить тег **Центра обновлений Windows** . После этого сетевой трафик сможет проходить через брандмауэр к конечным точкам Центра обновления Windows.
 
 Вы не можете создать собственные теги FQDN или указать, какие имена FQDN должны входить в тег. Майкрософт управляет полными доменными именами, включенными в теги FQDN, и обновляет тег, если эти имена меняются. 
 
@@ -30,7 +30,7 @@ ms.locfileid: "85610614"
 
 |Тег FQDN  |Описание  |
 |---------|---------|
-|Центр обновления Windows     |Разрешает исходящий доступ к Центру обновления Майкрософт, как описано в разделе [Настройка брандмауэра для обновлений программного обеспечения](https://technet.microsoft.com/library/bb693717.aspx).|
+|Центр обновления Windows     |Разрешает исходящий доступ к Центру обновления Майкрософт, как описано в разделе [Настройка брандмауэра для обновлений программного обеспечения](https://docs.microsoft.com/mem/configmgr/sum/get-started/install-a-software-update-point).|
 |диагностика Windows.|Разрешает исходящий доступ ко всем [конечным точкам диагностики Windows](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#endpoints).|
 |Служба Microsoft Active Protection Service (MAPS)|Разрешает исходящий доступ к [MAPS](https://cloudblogs.microsoft.com/enterprisemobility/2016/05/31/important-changes-to-microsoft-active-protection-service-maps-endpoint/).|
 |Среда службы приложений (ASE).|Разрешает исходящий доступ к трафику платформы ASE. Этот тег не распространяется на конечные точки пользовательского хранилища и SQL, созданные ASE. Их следует включить через [конечные точки службы](../virtual-network/tutorial-restrict-network-access-to-resources.md) или добавить вручную.<br><br>Дополнительные сведения об интеграции брандмауэра Azure с ASE см. в разделе [блокировка среда службы приложений](../app-service/environment/firewall-integration.md#configuring-azure-firewall-with-your-ase).|
@@ -40,7 +40,7 @@ ms.locfileid: "85610614"
 |Служба Azure Kubernetes (AKS)|Разрешает исходящий доступ к AKS. Дополнительные сведения см. [в статье Использование брандмауэра Azure для защиты развертываний Azure Kubernetes Service (AKS)](protect-azure-kubernetes-service.md).|
 
 > [!NOTE]
-> При выборе тега FQDN в правиле приложения поле protocol:port должно иметь значение **https**.
+> При выборе тега FQDN в правиле приложения поле protocol:port должно иметь значение **https** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

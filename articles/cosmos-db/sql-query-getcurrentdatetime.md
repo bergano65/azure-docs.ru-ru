@@ -7,14 +7,15 @@ ms.topic: conceptual
 ms.date: 08/18/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: ec0b8ccaceed4abe3dd2784463f507f3bc76d890
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 11222b2df1acee07647e02c5a4f1f65e3cf3e525
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88606964"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098541"
 ---
 # <a name="getcurrentdatetime-azure-cosmos-db"></a>Жеткуррентдатетиме (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Возвращает текущее значение даты и времени (в формате UTC) в виде строки ISO 8601.
   
@@ -35,14 +36,14 @@ GetCurrentDateTime ()
   |DD|четырехзначный день месяца (от 01 до 31)|
   |T|обозначает начало элементов времени|
   |hh|час с двумя цифрами (от 00 до 23)|
-  |ММ|двузначное число минут (от 00 до 59)|
-  |сс|двузначное число секунд (от 00 до 59)|
+  |mm|двузначное число минут (от 00 до 59)|
+  |ss|двузначное число секунд (от 00 до 59)|
   |. fffffff|семь цифр в долях секунды|
   |Z|Обозначение времени в формате UTC (Универсальное координированное время)||
   
   Дополнительные сведения о формате ISO 8601 см. в разделе [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Жеткуррентдатетиме () является недетерминированной функцией. Возвращаемый результат — UTC. Точность составляет 7 цифр с точностью 100 наносекунд.
 

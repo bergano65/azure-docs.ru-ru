@@ -7,16 +7,17 @@ ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: e12bae14ede90a3b93a69d963981f097818e65ab
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 7dc81581846f8abdae81fa3552d9fa4645f32a05
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480230"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93101312"
 ---
 # <a name="stored-procedures-triggers-and-user-defined-functions"></a>Хранимые процедуры, триггеры и определяемые пользователем функции
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Azure Cosmos DB обеспечивает транзакционное выполнение JavaScript с интегрированной средой для языка. При использовании API SQL в Azure Cosmos DB можно писать **хранимые процедуры**, **триггеры**и **определяемые пользователем функции (UDF)** на языке JavaScript. Вы можете написать свою логику на JavaScript, которую выполните в ядре СУБД. Можно создавать и выполнять триггеры, хранимые процедуры и определяемые пользователем функции с помощью [портал Azure](https://portal.azure.com/), [API интегрированных запросов JavaScript в Azure Cosmos DB](javascript-query-api.md) или [Cosmos DB клиентских пакетов SDK для SQL API](how-to-use-stored-procedures-triggers-udfs.md).
+Azure Cosmos DB обеспечивает транзакционное выполнение JavaScript с интегрированной средой для языка. При использовании API SQL в Azure Cosmos DB можно писать **хранимые процедуры** , **триггеры** и **определяемые пользователем функции (UDF)** на языке JavaScript. Вы можете написать свою логику на JavaScript, которую выполните в ядре СУБД. Можно создавать и выполнять триггеры, хранимые процедуры и определяемые пользователем функции с помощью [портал Azure](https://portal.azure.com/), [API интегрированных запросов JavaScript в Azure Cosmos DB](javascript-query-api.md) или [Cosmos DB клиентских пакетов SDK для SQL API](how-to-use-stored-procedures-triggers-udfs.md).
 
 ## <a name="benefits-of-using-server-side-programming"></a>Преимущества использования программирования на стороне сервера
 
@@ -41,7 +42,7 @@ Azure Cosmos DB обеспечивает транзакционное выпол
 
 ## <a name="transactions"></a>Transactions
 
-Транзакции в типичной базе данных могут быть определены как последовательность операций, выполняемых в одной логической единице работы. Каждая транзакция предоставляет **гарантию выполнения принципа ACID**. ACID — хорошо известная аббревиатура, которая **означает: томиЦити**, **C**онсистенци, **I**солатион и **D**урабилити. 
+Транзакции в типичной базе данных могут быть определены как последовательность операций, выполняемых в одной логической единице работы. Каждая транзакция предоставляет **гарантию выполнения принципа ACID** . ACID — хорошо известная аббревиатура, которая **означает: томиЦити** , **C** онсистенци, **I** солатион и **D** урабилити. 
 
 * Атомарность гарантирует, что все операции, проделанные в транзакции, рассматриваются как единое целое и могут быть выполнены либо все, либо не выполнены вообще. 
 
@@ -99,7 +100,7 @@ Azure Cosmos DB предоставляет триггеры, которые мо
 
 Кроме выдачи запросов с использованием синтаксиса запросов API SQL, [серверный пакет SDK](https://azure.github.io/azure-cosmosdb-js-server) позволяет создавать запросы с помощью интерфейса JavaScript без знания языка SQL. API запросов JavaScript позволяет программно создавать запросы, передавая функции предикатов в последовательность вызовов функций. Запросы анализируются средой выполнения JavaScript и эффективно выполняются в Azure Cosmos DB. Дополнительные сведения о поддержке API запросов JavaScript см. в статье [Working with JavaScript language integrated query API](javascript-query-api.md) (Как работать с API запросов с интегрированным языком JavaScript). Примеры см. в статье [How to write stored procedures and triggers using Javascript Query API](how-to-write-javascript-query-api.md) (Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как записать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в этих статьях:
 

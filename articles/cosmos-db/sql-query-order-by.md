@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/06/2020
 ms.author: tisande
-ms.openlocfilehash: c4ae66884602989284a427bdc33de7612bd9a8df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fdbe0f9754cc82ef790409cf2b36a7203b90855b
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84484326"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099289"
 ---
 # <a name="order-by-clause-in-azure-cosmos-db"></a>Предложение ORDER BY в Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Необязательное `ORDER BY` предложение задает порядок сортировки результатов, возвращаемых запросом.
 
@@ -47,7 +48,7 @@ ORDER BY <sort_specification>
   
    Указывает порядок сортировки значений в указанном столбце — по возрастанию или по убыванию. `ASC` Сортировка от наименьшего значения до самого высокого. `DESC` Сортировка от самого высокого значения к наименьшему значению. `ASC` порядок сортировки по умолчанию. Значения NULL рассматриваются как минимально возможные значения.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
   
    `ORDER BY`Для предложения требуется, чтобы политика индексирования включала индекс для полей, для которых выполняется сортировка. Среда выполнения запросов Azure Cosmos DB поддерживает сортировку по имени свойства, а не к вычисленным свойствам. Azure Cosmos DB поддерживает несколько `ORDER BY` свойств. Чтобы выполнить запрос с несколькими свойствами ORDER BY, необходимо определить [составной индекс](index-policy.md#composite-indexes) для полей, для которых выполняется сортировка.
 
@@ -79,7 +80,7 @@ ORDER BY <sort_specification>
     ]
 ```
 
-Следующий запрос получает семейство `id` s в порядке их даты создания элемента. Элемент `creationDate` — это число, представляющее *время эпохи*или затраченное время с января по 1, 1970 в секундах.
+Следующий запрос получает семейство `id` s в порядке их даты создания элемента. Элемент `creationDate` — это число, представляющее *время эпохи* или затраченное время с января по 1, 1970 в секундах.
 
 ```sql
     SELECT f.id, f.creationDate

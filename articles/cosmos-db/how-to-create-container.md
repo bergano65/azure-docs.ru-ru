@@ -8,14 +8,15 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: eb9e8caff81e86b7db732c970eee1e1a08be5241
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 302c5d6e8e523a11b8773f10bb6089e3bea09bdd
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92491110"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93101567"
 ---
 # <a name="create-a-container-in-azure-cosmos-db-sql-api"></a>Создание контейнера в Azure Cosmos DB API SQL
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье объясняются различные способы создания контейнера в Azure Cosmos DB API SQL. В нем показано, как создать контейнер с помощью портал Azure, Azure CLI, PowerShell или поддерживаемых пакетов SDK. В этой статье показано, как создать контейнер, указать ключ секции и подготовить пропускную способность.
 
@@ -30,13 +31,13 @@ ms.locfileid: "92491110"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
-1. Откройте панель **Обозреватель данных** и выберите **создать контейнер**. После этого предоставьте следующие сведения.
+1. Откройте панель **Обозреватель данных** и выберите **создать контейнер** . После этого предоставьте следующие сведения.
 
    * Укажите, создаете ли вы новую базу данных или используете существующую.
    * Введите идентификатор контейнера.
    * Введите ключ секции.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК** .
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-sql.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 

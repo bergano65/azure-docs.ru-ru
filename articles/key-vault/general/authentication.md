@@ -7,12 +7,12 @@ ms.date: 08/27/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: d247e657e93afd0c43ecee1154c542398304d8dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ec831bada19aa8d3872440ba628ac06bc64f749
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89481381"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099425"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Проверка подлинности в Azure Key Vault
 
@@ -20,9 +20,9 @@ Azure Key Vault позволяет хранить секреты и управл
 
 ## <a name="app-identity-and-security-principals"></a>Удостоверение приложения и субъекты безопасности
 
-Проверка подлинности в Key Vault работает в сочетании со службой [Azure Active Directory (Azure AD)](/azure/active-directory/fundamentals/active-directory-whatis), которая отвечает за проверку подлинности удостоверений любого предоставленного **субъекта безопасности**.
+Проверка подлинности в Key Vault работает в сочетании со службой [Azure Active Directory (Azure AD)](/azure/active-directory/fundamentals/active-directory-whatis), которая отвечает за проверку подлинности удостоверений любого предоставленного **субъекта безопасности** .
 
-Субъект безопасности — это объект, представляющий пользователя, группу, службу или приложение, которые запрашивают доступ к ресурсам Azure. Azure назначает каждому субъекту безопасности уникальный **идентификатор объекта**.
+Субъект безопасности — это объект, представляющий пользователя, группу, службу или приложение, которые запрашивают доступ к ресурсам Azure. Azure назначает каждому субъекту безопасности уникальный **идентификатор объекта** .
 
 * Субъект безопасности **Пользователь** определяет конкретного человека, у которого есть профиль в Azure Active Directory.
 
@@ -32,7 +32,7 @@ Azure Key Vault позволяет хранить секреты и управл
 
 У приложений есть два способа получить субъект-службу:
 
-* Создайте для приложения **управляемое удостоверение**, назначаемое системой (рекомендуется).
+* Создайте для приложения **управляемое удостоверение** , назначаемое системой (рекомендуется).
 
     При использовании управляемого удостоверения Azure самостоятельно управляет субъектом-службой приложения и автоматически выполняет для него проверку подлинности в других службах Azure. Управляемое удостоверение доступно для приложений, развернутых в разных службах.
 
@@ -111,7 +111,7 @@ Key Vault поддерживает два отдельных уровня авт
 |  --- | --- | --- |
 | [Python](/azure/key-vault/secrets/quick-create-python) | [Python](/azure/key-vault/keys/quick-create-python) | [Python](/azure/key-vault/certificates/quick-create-python) | 
 | [Пакет SDK для .NET версии 4](/azure/key-vault/secrets/quick-create-net) | -- | -- |
-| [Пакет SDK для .NET версии 3](/azure/key-vault/secrets/quick-create-net-v3) | -- | -- |
+| [Пакет SDK для .NET версии 3](https://dotnet.microsoft.com/download/dotnet-core/3.0) | -- | -- |
 | [Java](/azure/key-vault/secrets/quick-create-java) | -- | -- |
 | [JavaScript](/azure/key-vault/secrets/quick-create-node) | -- | -- | 
 | | | |

@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 12/02/2019
 ms.author: thweiss
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: 968ae8e582587564f1e268f16c18cf6d562d4333
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: b814100097897aff6047b8b6d6cc0e8ebaa409ba
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92279545"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93101533"
 ---
 # <a name="define-unique-keys-for-an-azure-cosmos-container"></a>Определение уникальных ключей для контейнера Azure Cosmos
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье описаны различные способы определения [уникальных ключей](unique-keys.md) при создании контейнера Azure Cosmos. Сейчас выполнить эту операцию можно с помощью портала Azure или одного из пакетов SDK.
 
@@ -26,7 +27,7 @@ ms.locfileid: "92279545"
 
 1. Откройте панель **обозревателя данных** и выберите контейнер, с которым собираетесь работать.
 
-1. Щелкните **Создать контейнер**.
+1. Щелкните **Создать контейнер** .
 
 1. В диалоговом окне **Добавить контейнер** щелкните **+ Add unique key** (+ Добавить уникальный ключ), чтобы добавить запись уникального ключа.
 

@@ -7,14 +7,15 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: c1e0a8d69edab0c01005268ee49c23625236f03a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: acdc598107228d8dbebca3dccb3361348ca06432
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88606919"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098507"
 ---
 # <a name="getcurrenttimestamp-azure-cosmos-db"></a>Жеткурренттиместамп (Azure Cosmos DB)
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
  Возвращает число миллисекунд, прошедших с 00:00:00 четверг, 1 января 1970.
   
@@ -28,7 +29,7 @@ GetCurrentTimestamp ()
   
 Возвращает числовое значение со знаком, равное текущему количеству миллисекунд, прошедших с момента выпуска UNIX, т. е. количество миллисекунд, истекших с 00:00:00 в четверг, 1 января 1970.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Жеткурренттиместамп () является недетерминированной функцией. Возвращаемый результат — UTC (всемирное время).
 
@@ -50,7 +51,7 @@ SELECT GetCurrentTimestamp() AS currentUtcTimestamp
 }]  
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
