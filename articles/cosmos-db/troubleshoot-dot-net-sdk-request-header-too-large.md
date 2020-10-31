@@ -8,14 +8,16 @@ ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: d5d66ca05390af5f6fef91ca959f1db3d547d3fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fff9bc55b324875601a2c4e68835a17c61c3769b
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89014053"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93079263"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-request-header-too-large-message"></a>Диагностика и устранение неполадок Azure Cosmos DB сообщения "слишком большой заголовок запроса"
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
+
 Сообщение "слишком большой заголовок запроса" вызывается с кодом ошибки HTTP 400. Эта ошибка возникает, если размер заголовка запроса увеличился настолько крупнее, что он превышает максимально допустимый размер. Рекомендуется использовать последнюю версию пакета SDK. Используйте по меньшей мере версии 3. x или 2. x, так как эти версии добавляют в сообщение об исключении трассировку размера заголовка.
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок

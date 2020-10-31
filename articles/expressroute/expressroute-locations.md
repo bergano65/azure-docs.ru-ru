@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 10/26/2020
 ms.author: duau
-ms.openlocfilehash: 8032833df3e0912bab93bd9ccc695c4ca6688e69
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 5ac9c4cc28e3cb87307e032f4cd15afb7c687652
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748112"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93079093"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -116,7 +116,7 @@ ms.locfileid: "92748112"
 | **[Global Cloud Xchange (GCX)](https://globalcloudxchange.com/cloud-platform/cloud-x-fusion/)** | Поддерживается| Поддерживается | Ченнаи, Мумбаи |
 | **Intelsat** | Поддерживается | Поддерживается | Вашингтон (округ Колумбия) 2 |
 | **[InterCloud](https://www.intercloud.com/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Франкфурт, Гонконг, Лондон, Нью Йорк, Париж, Silicon впадина, Сингапур, Вашингтон, округ Колумбия, Цюрих |
-| **[Internet2](https://www.internet2.edu/products-services/cloud-services-applications/microsoft-azure/#service-cloud-connect)** |Поддерживается |Поддерживается |Чикаго, Даллас, Кремниевая долина, Вашингтон (округ Колумбия) |
+| **[Internet2](https://internet2.edu/services/cloud-connect/#service-cloud-connect)** |Поддерживается |Поддерживается |Чикаго, Даллас, Кремниевая долина, Вашингтон (округ Колумбия) |
 | **[Internet Initiative Japan Inc. - IIJ](https://www.iij.ad.jp/en/news/pressrelease/2015/1216-2.html)** |Поддерживается |Поддерживается |Осака, Токио |
 | **[Internet Solutions - Cloud Connect](https://www.is.co.za/solution/cloud-connect/)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург, Лондон |
 | **[Interxion](https://www.interxion.com/why-interxion/colocate-with-the-clouds/Microsoft-Azure/)** |Поддерживается |Поддерживается |Амстердам, Амстердам 2, Копенгаген, Дублин, Франкфурт, Лондон, Марсель, Париж, Цюрих |

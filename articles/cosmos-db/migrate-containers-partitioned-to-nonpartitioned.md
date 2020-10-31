@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 09/25/2019
 ms.author: mjbrown
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 01e61abacac63d698456c3ab25826f9799d2837e
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: ffd1ff6d18769998dd3a168992566a376ea1cd27
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92482287"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93080079"
 ---
 # <a name="migrate-non-partitioned-containers-to-partitioned-containers"></a>Перенос несекционированных контейнеров в секционированные контейнеры
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Azure Cosmos DB поддерживает создание контейнеров без ключа секции. В настоящее время можно создавать несекционированные контейнеры с помощью Azure CLI и Azure Cosmos DB пакетов SDK (.NET, Java, NodeJs), версия которых меньше или равна 2. x. Нельзя создавать несекционированные контейнеры с помощью портал Azure. Однако такие несекционированные контейнеры не являются эластичными и имеют фиксированную емкость хранения 20 ГБ и ограничения пропускной способности 10 000 единиц запросов в секунду.
 

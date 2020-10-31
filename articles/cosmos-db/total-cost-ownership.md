@@ -7,14 +7,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.reviewer: sngun
-ms.openlocfilehash: a058e7a23c36dcaca16c3cce1be1ca826d472bc0
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: eb06d101170685bea5ff231612e9ffbf8df467da
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92477000"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93079297"
 ---
 # <a name="total-cost-of-ownership-tco-with-azure-cosmos-db"></a>Совокупная стоимость владения (TCO) с Azure Cosmos DB
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 В Azure Cosmos DB обеспечена высокоточная настройка мультитенантности и функции управления ресурсами. Такой подход позволяет Azure Cosmos DB работать со значительно меньшими затратами и помогать пользователям экономить. Сейчас Azure Cosmos DB поддерживает более 280 пользовательских рабочих нагрузок на одном компьютере с постоянно повышающейся плотностью, а также тысячи клиентских рабочих нагрузок в пределах кластера. Она распределяет нагрузку для реплик рабочих нагрузок клиентов по разным компьютерам в одном кластере и между несколькими кластерами в центре обработки данных. Дополнительные сведения см. в разделе [Azure Cosmos DB: принудительная отправка границы глобально распределенных баз данных](https://azure.microsoft.com/blog/azure-cosmos-db-pushing-the-frontier-of-globally-distributed-databases/). Благодаря управлению ресурсами, мультитенантности и встроенной интеграции с остальной инфраструктурой Azure, Azure Cosmos DB в среднем в 4–6 раз дешевле MongoDB, Cassandra и других NoSQL с открытым кодом, работающих в IaaS, а также почти в 10 раз дешевле ядер СУБД, работающих локально. См. документ [The total cost of (non) ownership of a NoSQL database cloud service](https://documentdbportalstorage.blob.core.windows.net/papers/11.15.2017/NoSQL%20TCO%20paper.pdf) (Совокупная стоимость (не)владения облачной службой баз данных NoSQL).
 
@@ -56,7 +57,7 @@ ms.locfileid: "92477000"
 
 * **Вы можете сэкономить до 65% затрат с зарезервированной емкостью:** Azure Cosmos DB [зарезервированная емкость](cosmos-db-reserved-capacity.md) позволяет экономить деньги за счет предварительной оплаты за ресурсы Azure Cosmos DB в течение одного года или за три года. Предоплата на один или три года позволяет снизить общие расходы на 20–65 % по сравнению с обычными ценами. Для критически важных рабочих нагрузок можно улучшить условия соглашения об уровне обслуживания в плане подготавливаемой мощности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о том, [как модель ценообразования Azure Cosmos DB помогает клиентам экономить](total-cost-ownership.md).
 * Дополнительные сведения об [оптимизации для разработки и тестирования](optimize-dev-test.md)

@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
-ms.openlocfilehash: d5683fb64c9b5df027ff8b0f50cec49e9bce5808
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 0e9010ba79e4253d7569a0bba79fa05423e1a1ec
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92475130"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93081762"
 ---
 # <a name="azure-cosmos-db-query-cheat-sheets"></a>Памятка по запросам Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 **Памятка по запросам Azure Cosmos DB** помогает быстро создавать запросы для данных. Она включает распространенные запросы к базам данных, операции, функции и операторы в удобном для печати формате PDF. Памятка содержит справочные сведения об API-интерфейсах SQL, MongoDB, Gremlin и API таблиц. 
 
@@ -30,7 +31,7 @@ ms.locfileid: "92475130"
 
 :::image type="content" source="./media/query-cheat-sheet/azure-cosmos-db-cheat-sheet-a3.png" alt-text="Памятка по запросам Azure Cosmos DB формата Letter с описанием запросов и функций API-интерфейсов SQL, JavaScript, MongoDB, Gremlin и API таблиц." border="false":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о написании запросов см. в следующих статьях.
 * См. дополнительные сведения о [создании запросов с помощью API SQL](tutorial-query-sql-api.md), [SQL-запросах для Azure Cosmos DB](./sql-query-getting-started.md); также доступен [справочник по SQL-синтаксису](./sql-query-getting-started.md)
 * Сведения о запросах MongoDB см. в статьях, посвященных [запросам с использованием API Azure Cosmos DB для MongoDB](tutorial-query-mongodb.md) и [поддержке и синтаксису функции API Azure Cosmos DB для MongoDB](mongodb-feature-support.md).

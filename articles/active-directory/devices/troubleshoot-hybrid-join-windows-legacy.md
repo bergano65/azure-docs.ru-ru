@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 361b27ce84417b30fe58ac7651f70f8c72f8a16a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a4e8ec75d6610e19f241d2047518c3a43132a6e
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627378"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93079025"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
 
@@ -25,7 +25,7 @@ ms.locfileid: "91627378"
 - Windows 7 
 - Windows 8.1 
 - Windows Server 2008 R2 
-- Windows Server 2012 
+- Windows Server 2012 
 - Windows Server 2012 R2 
 
 Сведения об устройствах под управлением Windows 10 и Windows Server 2016 см. в статье [Troubleshooting hybrid Azure Active Directory joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md) (Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory).
@@ -51,11 +51,11 @@ ms.locfileid: "91627378"
 
 1. Войдите в систему с учетной записью пользователя, которая выполнила гибридное соединение Azure AD.
 1. Откройте командную строку. 
-1. Введите `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe" /i`.
+1. Введите `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe" /i`
 
 Эта команда отображает диалоговое окно, содержащее дополнительные сведения о состоянии присоединения.
 
-![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/01.png)
+:::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/01.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
 
 ## <a name="step-2-evaluate-the-hybrid-azure-ad-join-status"></a>Шаг 2. Оценка состояния гибридного присоединения к Azure AD 
 
@@ -65,18 +65,18 @@ ms.locfileid: "91627378"
 
 - AD FS или Azure AD, или сеть настроены неправильно
 
-    ![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/02.png)
+    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/02.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
     
    - Autoworkplace.exe не удалось выполнить автоматическую аутентификацию с помощью Azure AD или AD FS. Это может быть вызвано отсутствием или неправильной настройкой AD FS (для федеративных доменов) или отсутствующим или неправильно сконфигурированным эффективным единым входом в Azure AD (для управляемых доменов), или сетевыми проблемами. 
    - Возможно, многофакторная проверка подлинности (MFA) включена или настроена для пользователя, а WIAORMULTIAUTHN не настроен на сервере AD FS. 
-   - Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое запрашивание токена программой **Autoworkplace.exe**.
+   - Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое запрашивание токена программой **Autoworkplace.exe** .
    - Возможно, URL-адреса AD FS и Azure AD отсутствуют в зоне интрасети IE на клиенте.
    - Проблемы с подключением к сети могут препятствовать **autoworkplace.exe** достигать URL-адреса AD FS или Azure AD. 
    - **Autoworkplace.exe** требует, чтобы клиент имел прямую информацию от клиента к локальному контроллеру домена AD Организации. Это означает, что гибридное присоединение к Azure AD будет выполнено успешно, только если клиент подключен к интрасети организации.
    - Ваша организация использует прозрачный единый вход Azure AD, `https://autologon.microsoftazuread-sso.com` или `https://aadg.windows.net.nsatc.net` нет в параметрах интрасети IE устройства, а параметр **Разрешить обновление строки состояния в сценарии** не включен в зоне интранета.
 - Вы не вошли в качестве пользователя домена
 
-   ![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/03.png)
+   :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/03.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
 
    Это может происходить по нескольким причинам:
 
@@ -84,11 +84,11 @@ ms.locfileid: "91627378"
    - Клиент не может подключиться к контроллеру домена.    
 - Достигнут предел квоты
 
-    ![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/04.png)
+    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/04.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
 
 - Служба не отвечает 
 
-    ![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/05.png)
+    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/05.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
 
 Сведения о состоянии можно также найти в журнале событий в разделе **Applications and Services Log\Microsoft-Workplace Join** (Журнал приложений и служб > Microsoft — присоединение к рабочей области).
   
@@ -97,11 +97,11 @@ ms.locfileid: "91627378"
 - Компьютер может быть не подключен к внутренней сети организации и к VPN с помощью подключения к локальному контроллеру домена AD.
 - Вы вошли в систему с помощью учетной записи локального компьютера. 
 - Проблемы конфигурации службы: 
-   - сервер AD FS настроен для поддержки **WIAORMULTIAUTHN**; 
+   - сервер AD FS настроен для поддержки **WIAORMULTIAUTHN** ; 
    - В лесу компьютера нет объекта точки подключения службы, указывающего на имя проверенного домена в Azure AD. 
    - или, если ваш домен управляемый, то эффективный SSO не был настроен или не работает;
    - пользователь достиг предела подключенных устройств. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ответы на вопросы можно найти в статье [Azure Active Directory device management FAQ](faq.md) (Часто задаваемые вопросы по управлению устройствами Azure Active Directory).  

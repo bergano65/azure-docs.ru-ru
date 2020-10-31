@@ -7,14 +7,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a5af62cd8c110e38ffd2a72ef2441a8e548e1ece
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 92bd3ff925080def4b2f074d07e662dfdbdbee01
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92475487"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93080856"
 ---
 # <a name="optimize-storage-cost-in-azure-cosmos-db"></a>Оптимизация затрат на хранение в Azure Cosmos DB
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 В Azure Cosmos DB нет ограничений на объем хранилища и пропускную способность. В отличие от пропускной способности, которую нужно подготавливать и настраивать для каждого контейнера или базы данных Azure Cosmos, оплата за хранилище начисляется в зависимости от фактического потребления. Счета выставляются только за используемое логическое хранилище, и вам не нужно заранее резервировать объем. Хранилище автоматически масштабируется и уменьшается в зависимости от данных, добавляемых или удаляемых в контейнере Azure Cosmos.
 
@@ -51,7 +52,7 @@ ResourceResponse<DocumentCollection> collectionInfo = await client.ReadDocumentC
 Console.WriteLine("Item size quota: {0}, usage: {1}", collectionInfo.DocumentQuota, collectionInfo.DocumentUsage);
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете перейти к изучению оптимизации затрат в Azure Cosmos DB в следующих статьях:
 
