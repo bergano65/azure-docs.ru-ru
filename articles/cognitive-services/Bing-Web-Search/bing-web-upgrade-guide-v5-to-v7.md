@@ -11,14 +11,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: scottwhi
-ms.openlocfilehash: 7ee8d05a542c6906d4ebe70f7e2a461752c6e3f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95e80907220a58243844b80d81dc187f8dc4c8bc
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85609458"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93078702"
 ---
 # <a name="upgrade-from-bing-web-search-api-v5-to-v7"></a>Обновление API Bing для поиска в Интернете с версии 5 до версии 7
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 В этом руководстве по обновлению определены изменения между версиями 5 и 7 API Bing для поиска в Интернете. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
 
@@ -26,7 +31,7 @@ ms.locfileid: "85609458"
 
 ### <a name="endpoints"></a>Конечные точки
 
-- Номер версии конечной точки изменен с 5-го на 7-й. Например, https:\/\/api.cognitive.microsoft.com/bing/**v7.0**/search.
+- Номер версии конечной точки изменен с 5-го на 7-й. Например, https:\/\/api.cognitive.microsoft.com/bing/ **v7.0** /search.
 
 ### <a name="error-response-objects-and-error-codes"></a>Объекты ответов на ошибки и коды ошибок
 
@@ -81,7 +86,7 @@ InsufficientScope|InsufficientAuthorization
 
 - Добавлен параметр запроса [answerCount](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#answercount). С помощью этого параметра можно указать число ответов, которое должен включать ответ. Ответы выбираются на основе ранжирования. Например, если задать этот параметр равным трем (3), ответ будет включать три ответа с самым высоким приоритетом.  
 
-- Добавлен параметр запроса [promote](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote). Используя этот параметр вместе с `answerCount`, можно явно включить один или несколько типов ответов независимо от их ранга. Например, чтобы распространить видео и изображения в ответ, вы можете задать для параметра повысить уровень значение *видео, изображения*. Список ответов, который требуется включить, не учитывается в предельном количестве `answerCount`. Например, если `answerCount` параметр имеет значение 2 и `promote` для него заданы *видео, изображения*, ответ может включать веб-страницы, Новости, видео и изображения.
+- Добавлен параметр запроса [promote](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote). Используя этот параметр вместе с `answerCount`, можно явно включить один или несколько типов ответов независимо от их ранга. Например, чтобы распространить видео и изображения в ответ, вы можете задать для параметра повысить уровень значение *видео, изображения* . Список ответов, который требуется включить, не учитывается в предельном количестве `answerCount`. Например, если `answerCount` параметр имеет значение 2 и `promote` для него заданы *видео, изображения* , ответ может включать веб-страницы, Новости, видео и изображения.
 
 ### <a name="object-changes"></a>Изменения объектов
 

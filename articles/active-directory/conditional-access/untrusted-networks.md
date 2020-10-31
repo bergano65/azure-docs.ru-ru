@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab9d544cc205d2971b2097110d8c36c5d85fa1fd
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: e4c020a9be7683bf045dbcc747dad3cb45058dd7
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144997"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93077682"
 ---
 # <a name="how-to-require-mfa-for-access-from-untrusted-networks-with-conditional-access"></a>Как запросить MFA для доступа из ненадежных сетей с помощью условного доступа   
 
@@ -48,17 +48,17 @@ Azure Active Directory (Azure AD) обеспечивает единый вход
 Чтобы настроить именованное расположение, сделайте следующее:
 
 - Указание этого диапазона (199.30.16.0/28) 
-- Назначьте описательное имя, например **Корпоративная сеть**. 
+- Назначьте описательное имя, например **Корпоративная сеть** . 
 
 Вместо того, чтобы пытаться определить ненадежные расположения, вы можете сделать следующее:
 
 - Включить все расположения 
 
-   ![Условный доступ](./media/untrusted-networks/02.png)
+   :::image type="content" source="./media/untrusted-networks/02.png" alt-text="Снимок экрана: панель расположения Azure A D, параметру configure присвоено значение Да, вкладка включить отображается и выбранное и выделенное расположение." border="false":::
 
 - Исключить все надежные расположения. 
 
-   ![Условный доступ](./media/untrusted-networks/01.png)
+   :::image type="content" source="./media/untrusted-networks/01.png" alt-text="Снимок экрана: панель расположения Azure A D, параметру configure присвоено значение Да, вкладка включить отображается и выбранное и выделенное расположение." border="false":::
 
 ## <a name="policy-deployment"></a>Развертывание политики
 

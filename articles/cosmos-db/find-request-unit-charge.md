@@ -8,14 +8,15 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: d8c1237b1bf4fac743ad5e70fee857337d9624c4
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 9d0694a76bca832887d30601711894b953fe22e1
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490668"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93078447"
 ---
 # <a name="find-the-request-unit-charge-for-operations-executed-in-azure-cosmos-db-sql-api"></a>Поиск затрат единиц запросов для операций, выполненных в Azure Cosmos DB API SQL
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Azure Cosmos DB поддерживает многие интерфейсы API, такие как SQL, MongoDB, Cassandra, Gremlin и Таблицы. У каждого API есть собственный набор операций базы данных, начиная от простого считывания и записи точек и заканчивая сложными запросами. Каждая операция базы данных потребляет системные ресурсы. Потребление зависит от сложности операции.
 
@@ -33,11 +34,11 @@ Azure Cosmos DB поддерживает многие интерфейсы API, 
 
 1. Перейдите на панель **обозревателя данных** и выберите контейнер, с которым собираетесь работать.
 
-1. Выберите **Создать SQL-запрос**.
+1. Выберите **Создать SQL-запрос** .
 
-1. Введите допустимый запрос и щелкните **Выполнить запрос**.
+1. Введите допустимый запрос и щелкните **Выполнить запрос** .
 
-1. Выберите **Статистика запросов**, чтобы отобразилось количество ЕЗ, фактически затраченных на выполненный запрос.
+1. Выберите **Статистика запросов** , чтобы отобразилось количество ЕЗ, фактически затраченных на выполненный запрос.
 
 :::image type="content" source="./media/find-request-unit-charge/portal-sql-query.png" alt-text="Снимок экрана со сведениями о расходах в ЕЗ на SQL-запрос на портале Azure":::
 

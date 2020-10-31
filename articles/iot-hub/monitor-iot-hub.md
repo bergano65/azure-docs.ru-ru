@@ -6,12 +6,12 @@ ms.author: robinsh
 ms.topic: conceptual
 ms.service: iot-hub
 ms.date: 10/22/2020
-ms.openlocfilehash: a8f9c46487422deb4513768dff04f559af952f7b
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 577ec9e01310787dacb45a03e1efae128cbab872
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92926263"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93078226"
 ---
 # <a name="monitoring-azure-iot-hub"></a>Наблюдение за центром Интернета вещей Azure
 
@@ -85,7 +85,7 @@ ms.locfileid: "92926263"
 
 Для метрик платформы центра Интернета вещей, собранных в единицах счетчика, некоторые агрегаты могут быть недоступны или использоваться. Дополнительные сведения см. в разделе [Поддерживаемые статистические функции статьи мониторинг справочника по данным центра Интернета вещей Azure](monitor-iot-hub-reference.md#supported-aggregations).
 
-Некоторые метрики центра Интернета вещей, такие как [метрики маршрутизации](monitor-iot-hub-reference.md#routing-metrics), являются многомерными. Для этих метрик можно применить [фильтры](/azure-monitor/platform/metrics-charts#apply-filters-to-charts) и [разделение](/azure/azure-monitor/platform/metrics-charts#apply-splitting-to-a-chart) на диаграммы на основе измерения.
+Некоторые метрики центра Интернета вещей, такие как [метрики маршрутизации](monitor-iot-hub-reference.md#routing-metrics), являются многомерными. Для этих метрик можно применить [фильтры](/azure/azure-monitor/platform/metrics-charts#apply-filters-to-charts) и [разделение](/azure/azure-monitor/platform/metrics-charts#apply-splitting-to-a-chart) на диаграммы на основе измерения.
 
 ## <a name="analyzing-logs"></a>анализ журналов;
 

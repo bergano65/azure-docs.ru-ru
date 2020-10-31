@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/08/2020
 ms.author: apimpm
-ms.openlocfilehash: 419de27ad87b113de62dacb0dc384702420afbd6
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 980d3ca52016c65301ea72e4e669c4bafea4c053
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92071121"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93077206"
 ---
 # <a name="how-to-secure-back-end-services-using-client-certificate-authentication-in-azure-api-management"></a>Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management
 
@@ -43,15 +43,15 @@ ms.locfileid: "92071121"
 
 1. На портале Azure перейдите к экземпляру службы управления API Azure.
 2. В меню выберите **Сертификаты** .
-3. Щелкните **+ Добавить**.
-    ![Добавление сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-add.png)
+3. Щелкните **+ Добавить** .
+    ![Снимок экрана, на котором выделяется кнопка "+ Добавить".](media/api-management-howto-mutual-certificates/apim-client-cert-add.png)
 4. Выберите сертификат и укажите его идентификатор и пароль.
-5. Нажмите кнопку **Создать**.
+5. Нажмите кнопку **Создать** .
 
 > [!NOTE]
 > Сертификат должен быть в формате **PFX** . Разрешено использовать самозаверяющие сертификаты.
 
-После отправки сертификат отображается в **сертификатах**.  Если у вас несколько сертификатов, сохраните отпечаток необходимого сертификата, чтобы [настроить API для аутентификации шлюза на основе сертификата клиента][Configure an API to use a client certificate for gateway authentication].
+После отправки сертификат отображается в **сертификатах** .  Если у вас несколько сертификатов, сохраните отпечаток необходимого сертификата, чтобы [настроить API для аутентификации шлюза на основе сертификата клиента][Configure an API to use a client certificate for gateway authentication].
 
 > [!NOTE]
 > Чтобы отключить проверку цепочки сертификатов при использовании, например, самозаверяющего сертификата, выполните действия, описанные в [этом разделе](api-management-faq.md#can-i-use-a-self-signed-tlsssl-certificate-for-a-back-end) часто задаваемых вопросов.
@@ -71,11 +71,11 @@ ms.locfileid: "92071121"
 1. Щелкните **Интерфейсы API** в меню **Управление API** слева и перейдите к API.
     ![Включение сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-enable.png)
 
-2. На вкладке **Конструктор** щелкните значок карандаша в разделе **Внутренняя служба**.
+2. На вкладке **Конструктор** щелкните значок карандаша в разделе **Внутренняя служба** .
 3. Измените значение параметра **Учетные данные шлюза** на **Сертификат клиента** и выберите свой сертификат в раскрывающемся списке.
-    ![Включение сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-enable-select.png)
+    ![Снимок экрана, на котором показано, где изменить учетные данные шлюза и выбрать свой сертификат.](media/api-management-howto-mutual-certificates/apim-client-cert-enable-select.png)
 
-4. Выберите команду **Сохранить**.
+4. Выберите команду **Сохранить** .
 
 > [!WARNING]
 > Изменение вступает в силу немедленно, и для проверки подлинности на фоновом сервере при вызове операций этого API теперь будет использоваться сертификат.

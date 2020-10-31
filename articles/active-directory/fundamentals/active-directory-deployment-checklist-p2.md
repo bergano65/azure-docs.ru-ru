@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 07/20/2020
+ms.date: 10/29/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64f78dadc0eb1570018320aa77a390f94adf708a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 7aebe6fafea7cbbb0b37469a13262529b568e342
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371908"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93077971"
 ---
 # <a name="azure-active-directory-feature-deployment-guide"></a>Руководство по развертыванию компонентов Azure Active Directory
 
@@ -26,16 +26,16 @@ ms.locfileid: "92371908"
 
 Кроме того, клиент может проверить свою [оценку безопасности удостоверений](identity-secure-score.md), чтобы узнать, насколько она соответствует рекомендациям корпорации Майкрософт. Проверьте свою оценку безопасности удостоверений до и после применения этих рекомендаций, чтобы сравнить свои результаты с результатами других пользователей в вашей отрасли и других организаций таких же размеров, как ваша.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Многие рекомендации, описанные в этом разделе, можно реализовать с помощью Azure AD Free или вообще без лицензии. Если для выполнения задачи требуется лицензия, в рекомендациях указано, какого типа лицензии будет достаточно.
 
 Дополнительные сведения о лицензировании можно найти на следующих страницах:
 
 * [Лицензирование Azure AD](https://azure.microsoft.com/pricing/details/active-directory/)
-* [Microsoft 365 корпоративный](https://www.microsoft.com/en-us/licensing/product-licensing/microsoft-365-enterprise)
+* [Microsoft 365 Enterprise](https://www.microsoft.com/en-us/licensing/product-licensing/microsoft-365-enterprise)
 * [Enterprise Mobility + Security](https://www.microsoft.com/en-us/licensing/product-licensing/enterprise-mobility-security)
-* [Руководство по лицензированию службы совместной работы Azure AD B2B](../external-identities/licensing-guidance.md)
+* [Цены на внешние удостоверения Azure AD](../external-identities/external-identities-pricing.md)
 
 ## <a name="phase-1-build-a-foundation-of-security"></a>Этап 1. Создание основы безопасности
 
@@ -70,7 +70,7 @@ ms.locfileid: "92371908"
 | [Реализация обратной записи паролей](../authentication/tutorial-enable-sspr-writeback.md) | Разрешите обратную запись измененного в облаке пароля в локальной среде Active Directory в Windows Server. | Azure AD Premium P1 |
 | [Внедрение Azure AD Connect Health](../hybrid/whatis-azure-ad-connect.md#what-is-azure-ad-connect-health) | Включите мониторинг статистики ключевых показателей работоспособности для серверов Azure AD Connect, серверов AD FS и контроллеров домена. | Azure AD Premium P1 |
 | [Назначение лицензий пользователям в соответствии с членством в группах в Azure Active Directory](../enterprise-users/licensing-groups-assign.md) | Экономьте время и силы, создавая группы лицензирования, с помощью которых можно включать и отключать компоненты по группам вместо настройки для каждого пользователя. | |
-| [Планирование доступа гостевых пользователей](../external-identities/what-is-b2b.md) | Для совместной работы разрешите гостевым пользователям выполнять вход в приложения и службы с использованием собственных рабочих или учебных учетных данных либо учетных данных из социальных сетей. | [Руководство по лицензированию службы совместной работы Azure AD B2B](../external-identities/licensing-guidance.md) |
+| [Планирование доступа гостевых пользователей](../external-identities/what-is-b2b.md) | Для совместной работы разрешите гостевым пользователям выполнять вход в приложения и службы с использованием собственных рабочих или учебных учетных данных либо учетных данных из социальных сетей. | [Цены на внешние удостоверения Azure AD](../external-identities/external-identities-pricing.md) |
 | [Определите стратегию управления устройствами](../devices/overview.md). | Решите, какие устройства разрешено использовать в вашей организации (свои устройства или предоставленные компанией) и как это можно делать — с помощью регистрации или присоединения. | |
 | [Развертывание Windows Hello для бизнеса в организации](/windows/security/identity-protection/hello-for-business/hello-manage-in-organization) | Подготовка к проверке подлинности с использованием пароля с помощью Windows Hello | |
 | [Развертывание методов проверки подлинности, не защищенных паролем, для пользователей](../authentication/concept-authentication-passwordless.md) | Предоставьте пользователям удобные методы проверки подлинности без пароля | Azure AD Premium P1 |
@@ -97,7 +97,7 @@ ms.locfileid: "92371908"
 | [Реализация подготовки приложения на основе групп](../manage-apps/what-is-access-management.md) | Используйте подготовку для управления доступом на основе групп, чтобы автоматически подготавливать пользователей для приложений SaaS. |  |
 | [Автоматическая подготовка пользователей и ее отзыв](../app-provisioning/user-provisioning.md) | Чтобы предотвратить несанкционированный доступ, устраните выполняемые вручную этапы из жизненного цикла учетных записей сотрудников. Синхронизируйте удостоверения из источника достоверных данных (системы управления персоналом) с Azure AD. |  |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/)
 

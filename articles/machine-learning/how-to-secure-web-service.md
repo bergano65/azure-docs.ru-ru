@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 52344b665b00329c80fb651657fbbd19d5ffd7a4
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: bb6229f602e4171cc88af6a452da69a02d2f7ad6
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92743092"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93078192"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинного обучения Azure.
 
@@ -28,7 +28,7 @@ ms.locfileid: "92743092"
 > [!TIP]
 > В пакете SDK для Машинное обучение Azure используется термин "SSL" для свойств, связанных с безопасной связью. Это не означает, что веб-служба не использует *TLS* . SSL — это просто более широко распознанный термин.
 >
-> В частности, веб-службы, развернутые с помощью Машинное обучение Azure, поддерживают только TLS версии 1,1 для ACI и TLS версии 1,2 для AKS.
+> В частности, веб-службы, развернутые с помощью Машинное обучение Azure, поддерживают TLS версии 1,2 для AKS и ACI. Для развертываний ACI, если вы используете более старую версию TLS, мы рекомендуем повторно выполнить развертывание, чтобы получить последнюю версию TLS.
 
 Протоколы TLS и SSL используют *цифровые сертификаты* , которые помогают в шифровании и проверке личности. Дополнительные сведения о работе цифровых сертификатов см. в статье об [инфраструктуре открытых ключей](https://en.wikipedia.org/wiki/Public_key_infrastructure)в разделе Википедии.
 

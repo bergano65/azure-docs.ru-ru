@@ -6,12 +6,12 @@ ms.author: robinsh
 ms.topic: reference
 ms.service: iot-hub
 ms.date: 10/22/2020
-ms.openlocfilehash: 8cace120dc823f42f2b2e01e4234ea8d5ace7a69
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 03941c3abe833deb218844cc60e2f04556fccc22
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042940"
+ms.locfileid: "93078209"
 ---
 # <a name="monitoring-azure-iot-hub-data-reference"></a>Справочник по мониторингу данных в центре Интернета вещей Azure
 
@@ -689,4 +689,4 @@ ms.locfileid: "93042940"
 ## <a name="see-also"></a>См. также
 
 * Описание мониторинга центра Интернета вещей Azure см. в статье [мониторинг центра Интернета вещей](monitor-iot-hub.md) Azure.
-* Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](/azure/azure-monitor/insights/monitor-azure-resources).
+* Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](/azure/azure-monitor/insights/monitor-azure-resource).
