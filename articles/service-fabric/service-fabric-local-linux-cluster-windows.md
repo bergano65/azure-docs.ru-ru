@@ -3,12 +3,12 @@ title: Установка кластера Azure Service Fabric на платф�
 description: В этой статье описывается установка кластеров Service Fabric на платформе Linux на компьютерах разработки Windows. Этот подход удобен для межплатформенной разработки.
 ms.topic: conceptual
 ms.date: 10/16/2020
-ms.openlocfilehash: e25c6adf5e5f5101025aa883ef2ff9750c113a76
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 7b25a84e76773baea9f17430df1b7ba13aa661aa
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164114"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93087083"
 ---
 # <a name="set-up-a-linux-service-fabric-cluster-on-your-windows-developer-machine"></a>Установка кластера Service Fabric на платформе Linux на компьютере разработчики Windows
 
@@ -57,7 +57,7 @@ ms.locfileid: "92164114"
     ```
 
     >[!TIP]
-    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [центра DOCKER](https://hub.docker.com/r/microsoft/service-fabric-onebox/) .
+    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [Service Fabric OneBox](https://hub.docker.com/_/microsoft-service-fabric-onebox) в центре DOCKER.
 
 
 

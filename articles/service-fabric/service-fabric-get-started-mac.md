@@ -4,12 +4,12 @@ description: Установите среду выполнения, пакет SD
 ms.topic: conceptual
 ms.date: 10/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: adec05a4d8e34374fe260343c73b1ecd14ba04f1
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: d08046c8f29901dd9650a1edc886efa2ff226e00
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168177"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93086783"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Настройка среды разработки для Mac OS X
 > [!div class="op_single_selector"]
@@ -41,7 +41,7 @@ ms.locfileid: "92168177"
         "fixed-cidr-v6": "fd00::/64"
     }
     ```
-    Вы можете обновить эти параметры непосредственно в файле daemon.json, который находится в папке установки Docker. Вы можете непосредственно изменить параметры конфигурации управляющей программы в Docker. Нажмите **значок Docker**, а затем последовательно выберите **Параметры** > **Управляющая программа** > **Дополнительно**.
+    Вы можете обновить эти параметры непосредственно в файле daemon.json, который находится в папке установки Docker. Вы можете непосредственно изменить параметры конфигурации управляющей программы в Docker. Нажмите **значок Docker** , а затем последовательно выберите **Параметры** > **Управляющая программа** > **Дополнительно** .
     
     >[!NOTE]
     >
@@ -49,7 +49,7 @@ ms.locfileid: "92168177"
     >
 
     >[!TIP]
-    >При тестировании больших приложений мы рекомендуем увеличить число ресурсов, выделенных для Docker. Для этого щелкните **значок Docker**, выберите **Дополнительно** и настройте число ядер и объем памяти.
+    >При тестировании больших приложений мы рекомендуем увеличить число ресурсов, выделенных для Docker. Для этого щелкните **значок Docker** , выберите **Дополнительно** и настройте число ядер и объем памяти.
 
 2. Запустите кластер.<br/>
     <b>Ubuntu 18,04 LTS:</b>
@@ -63,7 +63,7 @@ ms.locfileid: "92168177"
     ```
 
     >[!TIP]
-    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [центра DOCKER](https://hub.docker.com/r/microsoft/service-fabric-onebox/) .
+    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [Service Fabric OneBox](https://hub.docker.com/_/microsoft-service-fabric-onebox) в центре DOCKER.
 
 
 

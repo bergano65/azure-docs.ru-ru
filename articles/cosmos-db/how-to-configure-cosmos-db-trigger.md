@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 10/19/2020
 ms.author: maquaran
-ms.openlocfilehash: 152454b3da0ff1efd33ac463aecec78155a8e6f7
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c47d18726d9581b1b03aa2e676a71d6ca1bc1b7d
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490481"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93086472"
 ---
 # <a name="how-to-configure-logging-and-connectivity-with-the-azure-functions-trigger-for-cosmos-db"></a>Настройка ведения журнала и подключения с помощью триггера функций Azure для Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье описываются дополнительные параметры конфигурации, которые можно задать при использовании триггера функций Azure для Cosmos DB.
 
@@ -52,7 +53,7 @@ traces
 
 ## <a name="configuring-the-connection-policy"></a>Настройка политики подключения
 
-Существует два режима подключения: режим прямого подключения и режим шлюза. Дополнительные сведения об этих режимах подключения см. в статье [режимы подключения](sql-sdk-connection-modes.md) . По умолчанию для установки всех подключений на триггере Функций Azure для Cosmos DB используется **шлюз**. Тем не менее, это может быть не лучшим вариантом для сценариев, ориентированных на производительность.
+Существует два режима подключения: режим прямого подключения и режим шлюза. Дополнительные сведения об этих режимах подключения см. в статье [режимы подключения](sql-sdk-connection-modes.md) . По умолчанию для установки всех подключений на триггере Функций Azure для Cosmos DB используется **шлюз** . Тем не менее, это может быть не лучшим вариантом для сценариев, ориентированных на производительность.
 
 ### <a name="changing-the-connection-mode-and-protocol"></a>Изменение режима и протокола подключения
 

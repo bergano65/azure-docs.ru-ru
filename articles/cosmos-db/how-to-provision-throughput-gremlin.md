@@ -8,14 +8,15 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mjbrown
 ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 70eecc7843867a5832d962b7efaecda1b6ab4ae4
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 3c2af7f33135a8c6621db233451231ffa89c2d64
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92284516"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93086165"
 ---
 # <a name="provision-database-container-or-autoscale-throughput-on-azure-cosmos-db-gremlin-api-resources"></a>Подготавливает пропускную способность для базы данных, контейнера или автомасштабирования в Azure Cosmos DB ресурсов API Gremlin
+[!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
 
 В этой статье объясняется, как подготавливать пропускную способность в Azure Cosmos DB API Gremlin. Можно подготавливать стандартные (ручные) или автомасштабированные пропускные способности в контейнере или базе данных и совместно использовать их в контейнерах базы данных. Пропускную способность можно подготавливать с помощью портал Azure, Azure CLI или пакетов SDK для Azure Cosmos DB.
 
@@ -27,13 +28,13 @@ ms.locfileid: "92284516"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-mongodb-dotnet.md#create-a-database-account) или выберите существующую.
 
-1. Откройте панель **Обозреватель данных** и выберите **создать граф**. После этого предоставьте следующие сведения.
+1. Откройте панель **Обозреватель данных** и выберите **создать граф** . После этого предоставьте следующие сведения.
 
    * Укажите, создаете ли вы новую базу данных или используете существующую. Выберите параметр настроить **пропускную способность базы данных** , если требуется обеспечить пропускную способность на уровне базы данных.
    * Введите идентификатор графа.
    * Введите значение ключа секции (например, `/ItemID`).
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Щелкните **ОК** .
 
     :::image type="content" source="./media/how-to-provision-throughput-gremlin/provision-database-throughput-portal-gremlin-api.png" alt-text="Снимок экрана обозреватель данных при создании нового графа с пропускной способностью уровня базы данных":::
 

@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 12/9/2019
 ms.author: tvoellm
-ms.openlocfilehash: 869513d5a668544b2aa8afb13bb56e8293788b06
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 61e8ee2cbcd1252704b2d1e220fcfaaff17c2f28
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368729"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93085995"
 ---
 # <a name="restrict-user-access-to-data-operations-in-azure-cosmos-db"></a>Ограничение доступа пользователей к операциям с данными в Azure Cosmos DB
+[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 В Azure Cosmos DB есть два способа проверки подлинности взаимодействия со службой базы данных:
 
@@ -95,7 +96,7 @@ $cdba.Properties.disableKeyBasedMetadataWriteAccess="True"
 $cdba | Set-AzResource -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [управлении доступом на основе ролей Cosmos DB](role-based-access-control.md)
 - Получите общие сведения о [безопасном доступе к данным в Cosmos DB](secure-access-to-data.md)

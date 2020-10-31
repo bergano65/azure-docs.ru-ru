@@ -8,19 +8,21 @@ ms.subservice: cosmosdb-graph
 ms.topic: how-to
 ms.date: 09/09/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5537b70f9852f5b5a17362c13e2c9b8e8e9fc43c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9350682f7c636979df4dcde0c43a3b4941ad6ebb
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570621"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93085775"
 ---
 # <a name="regional-endpoints-for-azure-cosmos-db-graph-account"></a>Региональные конечные точки для графовой учетной записи Azure Cosmos DB
+[!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
+
 Графовая база данных Azure Cosmos DB [глобально распределена](distribute-data-globally.md), поэтому приложения могут использовать несколько конечных точек для чтения. Приложения, которым необходим доступ на запись в нескольких расположениях, должны включать возможность записи в несколько [регионов](how-to-multi-master.md) .
 
 Причины для выбора нескольких регионов:
-1. **Масштабируемость чтения по горизонтали** — при увеличении нагрузки приложения может быть целесообразно направить трафик чтения в разные регионы Azure.
-2. **Низкая задержка** — вы можете уменьшить сетевую задержку для каждого обхода, проводя маршрутизацию трафика чтения и записи в ближайший регион Azure.
+1. **Масштабируемость чтения по горизонтали**  — при увеличении нагрузки приложения может быть целесообразно направить трафик чтения в разные регионы Azure.
+2. **Низкая задержка**  — вы можете уменьшить сетевую задержку для каждого обхода, проводя маршрутизацию трафика чтения и записи в ближайший регион Azure.
 
 Требование **местонахождения данных** выполняется путем установки политики Azure Resource Manager для учетной записи Cosmos DB. Клиент может ограничить регионы, в которые Cosmos DB реплицирует данные.
 
@@ -28,7 +30,7 @@ ms.locfileid: "91570621"
 
 Ядро графовой СУБД Cosmos DB работает в нескольких регионах, каждый из которых содержит несколько кластеров. Каждый кластер содержит сотни компьютеров. DNS CNAME графовой учетной записи Cosmos DB *accountname.gremlin.cosmos.azure.com* разрешается в запись кластера DNS A. Один IP-адрес балансировщика нагрузки скрывает топологию внутреннего кластера.
 
-Для каждого региона графовой учетной записи Cosmos DB создается региональная запись DNS CNAME. Формат региональной конечной точки — *accountname-region.gremlin.cosmos.azure.com*. Сегмент региона региональной конечной точки получается путем удаления всех пробелов из имени [региона Azure](https://azure.microsoft.com/global-infrastructure/regions). Например, регион `"East US 2"` для глобальной учетной записи базы данных `"contoso"` будет иметь DNS CNAME *contoso-eastus2.gremlin.cosmos.azure.com*
+Для каждого региона графовой учетной записи Cosmos DB создается региональная запись DNS CNAME. Формат региональной конечной точки — *accountname-region.gremlin.cosmos.azure.com* . Сегмент региона региональной конечной точки получается путем удаления всех пробелов из имени [региона Azure](https://azure.microsoft.com/global-infrastructure/regions). Например, регион `"East US 2"` для глобальной учетной записи базы данных `"contoso"` будет иметь DNS CNAME *contoso-eastus2.gremlin.cosmos.azure.com*
 
 Клиент TinkerPop Gremlin предназначен для работы с одним сервером. Приложение может использовать глобально записываемую DNS CNAME для трафика чтения и записи. Приложения, поддерживающие регион, должны использовать региональную конечную точку для трафика чтения. Используйте региональную конечную точку для трафика записи, только если для конкретного региона настроено принятие операций записи. 
 
@@ -109,7 +111,7 @@ foreach (string location in readLocations)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление учетными записями базы данных](how-to-manage-database-account.md) в Azure Cosmos DB
 * [Высокий уровень доступности](high-availability.md) при использовании Azure Cosmos DB
 * [Global data distribution with Azure Cosmos DB - under the hood](global-dist-under-the-hood.md) (Глобальное распределение в Azure Cosmos DB — взгляд изнутри)

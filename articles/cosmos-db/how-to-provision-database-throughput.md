@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 347da75d8e3f58d3875b02000d74533b36a9b18c
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 63de1c970a118ddf24c52e7e14a0632a4eee7fba
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92486112"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93086301"
 ---
 # <a name="provision-standard-manual-throughput-on-a-database-in-azure-cosmos-db---sql-api"></a>Предоставление стандартной (ручной) пропускной способности в базе данных в Azure Cosmos DB API SQL
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье объясняется, как подготавливать стандартную (ручную) пропускную способность для базы данных в Azure Cosmos DB API SQL. Вы можете подготовить пропускную способность для [одного](how-to-provision-container-throughput.md) контейнера или для базы данных и разделить ее между контейнерами внутри базы данных. Сведения о том, когда следует использовать пропускную способность уровня контейнера и уровня базы данных, см. в статье [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md). Вы можете подготовить пропускную способность уровня базы данных с помощью портала Azure или пакетов SDK для Azure Cosmos DB.
 
@@ -26,12 +27,12 @@ ms.locfileid: "92486112"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
-1. Откройте панель **обозревателя данных** и выберите **Новая база данных**. Укажите следующие сведения:
+1. Откройте панель **обозревателя данных** и выберите **Новая база данных** . Укажите следующие сведения:
 
    * Введите идентификатор базы данных.
    * Выберите параметр **готовить к пропускной способности базы данных** .
    * Укажите пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК**.
+   * Щелкните **ОК** .
 
     :::image type="content" source="./media/how-to-provision-database-throughput/provision-database-throughput-portal-sql-api.png" alt-text="Снимок экрана: диалоговое окно &quot;Новая база данных&quot;":::
 

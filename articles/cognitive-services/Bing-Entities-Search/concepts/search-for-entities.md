@@ -10,20 +10,25 @@ ms.subservice: bing-entity-search
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 1805f6f7a61f7e0b0a6e4d5bd6931c0a7d1f1b6f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 532bf806789476c1ec901c1e4ac8522451819625
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91872074"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93085128"
 ---
 # <a name="searching-for-entities-with-the-bing-entity-api"></a>Поиск сущностей с помощью API Bing для сущностей
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 ## <a name="suggest-search-terms-with-the-bing-autosuggest-api"></a>Предложение условий поиска с помощью API автозаполнения Bing
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
-После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#query). Например, если пользователь вводит *Marcus Appel*, задайте `q` как *Marcus+Appel* или *Marcus%20Appel*.
+После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#query). Например, если пользователь вводит *Marcus Appel* , задайте `q` как *Marcus+Appel* или *Marcus%20Appel* .
 
 Если условие поиска содержит орфографические ошибки, ответ поиска включает объект [QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext). Объект показывает исходное написание и исправленное написание, которое Bing использует для поиска.
 
@@ -189,7 +194,7 @@ ms.locfileid: "91872074"
 > [!NOTE]
 > Ответы сущности поддерживают разные рынки, но ответ Places поддерживает только расположения организаций в США. 
 
-Локальные запросы на объекты, такие как *ресторан рядом со мной*, требуют расположение пользователя, чтобы давать точные результаты. Запросы всегда должны использовать заголовки X-Search-Location и X-MSEdge-ClientIP для указания расположения пользователя. Если Bing считает, что запрос из расположения пользователя будет полезен, он устанавливает полю `askUserForLocation`[QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext) значение **true**. 
+Локальные запросы на объекты, такие как *ресторан рядом со мной* , требуют расположение пользователя, чтобы давать точные результаты. Запросы всегда должны использовать заголовки X-Search-Location и X-MSEdge-ClientIP для указания расположения пользователя. Если Bing считает, что запрос из расположения пользователя будет полезен, он устанавливает полю `askUserForLocation`[QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext) значение **true** . 
 
 ```json
 {
@@ -296,7 +301,7 @@ ms.locfileid: "91872074"
 
 ![Определение принадлежности лицензии](../media/cognitive-services-bing-entities-api/licenseattribution.png)
 
-Уведомление о лицензии должно содержать гиперссылку на сайт со сведениями о лицензии. Как правило, имя лицензии делают гиперссылкой. Например, если уведомление содержит описание **Текст лицензии CC-BY-SA**, а CC-BY-SA — это имя лицензии, то CC-BY-SA нужно сделать гиперссылкой.
+Уведомление о лицензии должно содержать гиперссылку на сайт со сведениями о лицензии. Как правило, имя лицензии делают гиперссылкой. Например, если уведомление содержит описание **Текст лицензии CC-BY-SA** , а CC-BY-SA — это имя лицензии, то CC-BY-SA нужно сделать гиперссылкой.
 
 ### <a name="link-and-text-attribution"></a>Определение принадлежности текста или ссылки
 
