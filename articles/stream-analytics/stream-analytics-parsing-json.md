@@ -7,19 +7,19 @@ ms.author: mamccrea
 ms.topic: conceptual
 ms.date: 01/29/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 67bcd6fbf04cb92deaae034d289990dfec309fe6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6c2eb4225cb014b3251d12470e4e9827150a5cf2
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91280017"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123359"
 ---
 # <a name="parse-json-and-avro-data-in-azure-stream-analytics"></a>Анализ данных JSON и AVRO в Azure Stream Analytics
 
 Azure Stream Analytics поддерживает обработку событий в форматах CSV, JSON и Avro. Данные JSON и Avro могут быть структурированными и содержать сложные типы, такие как вложенные объекты (записи) и массивы. 
 
 >[!NOTE]
->Файлы AVRO, созданные функцией записи концентратора событий, используют конкретный формат, который требует функцию *пользовательского десериализатора*. Дополнительные сведения см. в разделе [Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET](https://docs.microsoft.com/azure/stream-analytics/custom-deserializer-examples).
+>Файлы AVRO, созданные функцией записи концентратора событий, используют конкретный формат, который требует функцию *пользовательского десериализатора* . Дополнительные сведения см. в разделе [Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET](./custom-deserializer-examples.md).
 >
 >Десериализация Stream Analytics AVRO не поддерживает тип Map. Stream Analytics не может считывать большие двоичные объекты записи EventHub, так как в записи EventHub используется Map.
 
@@ -89,9 +89,9 @@ FROM input
 
 ### <a name="access-nested-fields-when-property-name-is-a-variable"></a>Доступ к вложенным полям, если имя свойства является переменной
 
-Используйте функцию [GetRecordPropertyValue](https://docs.microsoft.com/stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics), если имя свойства является переменной. Это позволяет создавать динамические запросы без заданных имен свойств.
+Используйте функцию [GetRecordPropertyValue](/stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics), если имя свойства является переменной. Это позволяет создавать динамические запросы без заданных имен свойств.
 
-Например, представьте пример потока данных, который **нужно соединить с эталонными данными**, содержащими пороговые значения для каждого датчика устройства. Ниже приведен фрагмент кода с такими эталонными данными.
+Например, представьте пример потока данных, который **нужно соединить с эталонными данными** , содержащими пороговые значения для каждого датчика устройства. Ниже приведен фрагмент кода с такими эталонными данными.
 
 ```json
 {
@@ -121,7 +121,7 @@ WHERE
     GetRecordPropertyValue(input.SensorReadings, thresholds.SensorName) > thresholds.Value
 ```
 
-**GetRecordPropertyValue** выбирает свойство в *SensorReadings*, имя которого совпадает с именем свойства, поступающего от эталонных данных. Затем извлекается связанное значение из *SensorReadings*.
+**GetRecordPropertyValue** выбирает свойство в *SensorReadings* , имя которого совпадает с именем свойства, поступающего от эталонных данных. Затем извлекается связанное значение из *SensorReadings* .
 
 Результат:
 
@@ -131,7 +131,7 @@ WHERE
 
 ### <a name="convert-record-fields-into-separate-events"></a>Преобразование полей записей в отдельные события
 
-Чтобы преобразовать поля записей в отдельные события, используйте оператор [APPLY](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics) вместе с функцией [GetRecordProperties](https://docs.microsoft.com/stream-analytics-query/getrecordproperties-azure-stream-analytics).
+Чтобы преобразовать поля записей в отдельные события, используйте оператор [APPLY](/stream-analytics-query/apply-azure-stream-analytics) вместе с функцией [GetRecordProperties](/stream-analytics-query/getrecordproperties-azure-stream-analytics).
 
 С исходными примерами данных можно использовать следующий запрос для извлечения свойств в различные события.
 
@@ -154,7 +154,7 @@ CROSS APPLY GetRecordProperties(event.SensorReadings) AS sensorReading
 |12345|CustomSensor02|99|
 |12345|SensorMetadata|[object Object]|
 
-Используя [WITH](https://docs.microsoft.com/stream-analytics-query/with-azure-stream-analytics), можно перенаправлять эти события в разные места назначения:
+Используя [WITH](/stream-analytics-query/with-azure-stream-analytics), можно перенаправлять эти события в разные места назначения:
 
 ```SQL
 WITH Stage0 AS
@@ -179,7 +179,7 @@ SELECT DeviceID, PropertyValue AS Humidity INTO HumidityOutput FROM Stage0 WHERE
 |12345|{"key" : "value1"}|
 |54321|{"key" : "value2"}|
 
-Можно выполнить синтаксический анализ записи JSON в столбце *Данные*, написав простую определяемую пользователем функцию JavaScript.
+Можно выполнить синтаксический анализ записи JSON в столбце *Данные* , написав простую определяемую пользователем функцию JavaScript.
 
 ```javascript
 function parseJson(string) {
@@ -205,9 +205,9 @@ return JSON.parse(string);
 
 ## <a name="array-data-types"></a>Тип данных "массив"
 
-Тип данных "массив" представляет собой упорядоченную коллекцию значений. Ниже приведены типичные операции со значениями массивов. В этих примерах используются функции [GetArrayElement](https://docs.microsoft.com/stream-analytics-query/getarrayelement-azure-stream-analytics), [GetArrayElements](https://docs.microsoft.com/stream-analytics-query/getarrayelements-azure-stream-analytics), [GetArrayLength](https://docs.microsoft.com/stream-analytics-query/getarraylength-azure-stream-analytics) и оператор [APPLY](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics).
+Тип данных "массив" представляет собой упорядоченную коллекцию значений. Ниже приведены типичные операции со значениями массивов. В этих примерах используются функции [GetArrayElement](/stream-analytics-query/getarrayelement-azure-stream-analytics), [GetArrayElements](/stream-analytics-query/getarrayelements-azure-stream-analytics), [GetArrayLength](/stream-analytics-query/getarraylength-azure-stream-analytics) и оператор [APPLY](/stream-analytics-query/apply-azure-stream-analytics).
 
-Ниже приведен пример одного события. `CustomSensor03` и `SensorMetadata` принадлежат к типу **array**:
+Ниже приведен пример одного события. `CustomSensor03` и `SensorMetadata` принадлежат к типу **array** :
 
 ```json
 {
@@ -265,7 +265,7 @@ FROM input
 
 ### <a name="convert-array-elements-into-separate-events"></a>Преобразование элементов массива в отдельные события
 
-Выберите все элементы массива как отдельные события. Оператор [APPLY](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics) вместе со встроенной функцией [GetArrayElements](https://docs.microsoft.com/stream-analytics-query/getarrayelements-azure-stream-analytics) извлекает все элементы массива как отдельные события:
+Выберите все элементы массива как отдельные события. Оператор [APPLY](/stream-analytics-query/apply-azure-stream-analytics) вместе со встроенной функцией [GetArrayElements](/stream-analytics-query/getarrayelements-azure-stream-analytics) извлекает все элементы массива как отдельные события:
 
 ```SQL
 SELECT
@@ -301,7 +301,7 @@ CROSS APPLY GetArrayElements(SensorMetadata) AS SensorMetadataRecords
 |12345|Производитель|ABC|
 |12345|Версия|1.2.45|
 
-Если извлеченные поля должны появиться в столбцах, можно выполнить сведение набора данных с помощью синтаксиса [WITH](https://docs.microsoft.com/stream-analytics-query/with-azure-stream-analytics) в дополнение к операции [JOIN](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics). Для этого объединения потребуется условие [границы времени](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics#BKMK_DateDiff), препятствующее дублированию:
+Если извлеченные поля должны появиться в столбцах, можно выполнить сведение набора данных с помощью синтаксиса [WITH](/stream-analytics-query/with-azure-stream-analytics) в дополнение к операции [JOIN](/stream-analytics-query/join-azure-stream-analytics). Для этого объединения потребуется условие [границы времени](/stream-analytics-query/join-azure-stream-analytics#BKMK_DateDiff), препятствующее дублированию:
 
 ```SQL
 WITH DynamicCTE AS (
@@ -330,4 +330,4 @@ LEFT JOIN DynamicCTE M ON M.smKey = 'Manufacturer' and M.DeviceId = i.DeviceId A
 |12345|47|122|1.2.45|ABC|
 
 ## <a name="see-also"></a>См. также:
-[Типы данных в Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics)
+[Типы данных в Azure Stream Analytics](/stream-analytics-query/data-types-azure-stream-analytics)

@@ -8,14 +8,15 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 54b58a07e3d6d4b330b6f97ef0f4a7bdd10293da
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 01030a563c15eee7786058c2eae30d23803dfe42
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490464"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93101652"
 ---
 # <a name="create-a-container-in-azure-cosmos-db-cassandra-api"></a>Создание контейнера в Azure Cosmos DB API Cassandra
+[!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 В этой статье описываются различные способы создания контейнера в Azure Cosmos DB API Cassandra. В нем показано, как создать контейнер с помощью портал Azure, Azure CLI, PowerShell или поддерживаемых пакетов SDK. В этой статье показано, как создать контейнер, указать ключ секции и подготовить пропускную способность.
 
@@ -30,13 +31,13 @@ ms.locfileid: "92490464"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-cassandra-dotnet.md#create-a-database-account)или выберите существующую.
 
-1. Откройте панель **Обозреватель данных** и выберите **создать таблицу**. После этого предоставьте следующие сведения.
+1. Откройте панель **Обозреватель данных** и выберите **создать таблицу** . После этого предоставьте следующие сведения.
 
    * Укажите, создаете ли вы новое пространство ключей или используете существующее.
    * Введите имя таблицы.
    * Укажите свойства и первичный ключ.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК** .
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-cassandra.png" alt-text="Снимок экрана API Cassandra, диалоговое окно добавления таблицы":::
 

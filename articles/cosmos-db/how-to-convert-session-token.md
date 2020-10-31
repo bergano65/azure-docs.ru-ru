@@ -7,14 +7,15 @@ ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: vitrinh
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ff66c2cb355e2070cdf30444c52d1accacac8964
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: ece181d06c7d3dbd00ba2f1262a3887ad966d088
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490447"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93101669"
 ---
 # <a name="convert-session-token-formats-in-net-sdk"></a>Преобразование форматов токенов сеанса в пакет SDK для .NET
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этой статье объясняется, как выполнить преобразование между различными форматами маркеров сеанса для обеспечения совместимости между версиями пакета SDK.
 
@@ -26,7 +27,7 @@ ms.locfileid: "92490447"
 
 ## <a name="session-token-formats"></a>Форматы токенов сеанса
 
-Существует два формата маркеров сеанса: **простой** и **Векторный**.  Эти два формата не взаимозаменяемы, поэтому формат следует преобразовать при передаче клиентскому приложению с разными версиями.
+Существует два формата маркеров сеанса: **простой** и **Векторный** .  Эти два формата не взаимозаменяемы, поэтому формат следует преобразовать при передаче клиентскому приложению с разными версиями.
 - Формат **простого** маркера сеанса используется пакетом SDK для .NET V1 (Microsoft.Azure.Docументдб-Version 1. x).
 - Формат токена **векторного** сеанса используется пакетом SDK .NET версии 2 (Microsoft.Azure.Docументдб-Version 2. x).
 

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 8/07/2020
-ms.openlocfilehash: 0020efea69fc684ff6ebebf286718aa2a720910e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4179b06759802025f97bd32a355b788c96c9eddb
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90900792"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123326"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -48,7 +48,7 @@ Azure Stream Analytics поддерживает высокопроизводит
 
 ### <a name="visual-studio-code-for-azure-stream-analytics"></a>Visual Studio Code для Azure Stream Analytics
 
-Задания Azure Stream Analytics можно создать в Visual Studio Code. Дополнительные сведения см. в [руководстве по началу работы в VS Code](https://docs.microsoft.com/azure/stream-analytics/quick-create-visual-studio-code).
+Задания Azure Stream Analytics можно создать в Visual Studio Code. Дополнительные сведения см. в [руководстве по началу работы в VS Code](./quick-create-visual-studio-code.md).
 
 ### <a name="local-testing-with-live-data-in-visual-studio-code"></a>Локальное тестирование с фактическими данными в Visual Studio Code
 

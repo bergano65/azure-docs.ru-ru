@@ -10,14 +10,19 @@ ms.subservice: bing-autosuggest
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: scottwhi
-ms.openlocfilehash: 6fe2e78501024983544b399762fb936d86e5c9d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6971dafc7e3157b3de62284b400ebdc6ddc19c0
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "60547342"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93101907"
 ---
 # <a name="language-and-region-support-for-the-bing-autosuggest-api"></a>Поддержка языков и регионов в API автозаполнения Bing
+
+> [!WARNING]
+> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
+> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
+> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
 
 Ниже перечислены языки, которые поддерживаются API автозаполнения Bing.
 
@@ -55,7 +60,7 @@ ms.locfileid: "60547342"
 | Польский      | `pl`          |
 | Португальский (Бразилия)   | `pt-BR`|
 | Португальский (Португалия) | `pt-PT`|
-| Русский     | `ru`          |
+| русском языке     | `ru`          |
 | Испанский (Аргентина)    | `es-AR`          |
 | Испанский (Чили)     | `es-CL`          |
 | Испанский (Мексика)    | `es-MX`          |
@@ -64,7 +69,7 @@ ms.locfileid: "60547342"
 | Шведский     | `sv`          |
 | Турецкий     | `tr`          |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Страница с документацией по службам Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/)
 - [Страница продукта Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/)

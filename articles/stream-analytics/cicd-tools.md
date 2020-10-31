@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: e772701396f172eaab906f99463bd9019728b531
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa75a553ffc131f4827aa045849f1317d894ddc5
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90938033"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123156"
 ---
 # <a name="automate-builds-tests-and-deployments-of-an-azure-stream-analytics-job-using-cicd-tools"></a>Автоматизация сборок, тестов и развертываний задания Azure Stream Analytics с помощью средств CI/CD
 
@@ -21,11 +21,11 @@ ms.locfileid: "90938033"
 
 ## <a name="installation"></a>Установка
 
-Вы можете [скачать пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его [глобально](https://docs.npmjs.com/downloading-and-installing-packages-globally) с помощью `npm install -g azure-streamanalytics-cicd` команды. Рекомендуется использовать команду, которая также может использоваться в задаче "Скрипт" PowerShell или Azure CLI конвейера сборки в **Azure pipelines**.
+Вы можете [скачать пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его [глобально](https://docs.npmjs.com/downloading-and-installing-packages-globally) с помощью `npm install -g azure-streamanalytics-cicd` команды. Рекомендуется использовать команду, которая также может использоваться в задаче "Скрипт" PowerShell или Azure CLI конвейера сборки в **Azure pipelines** .
 
 ## <a name="build-the-project"></a>Сборка проекта
 
-Пакет **ASA-streamanalytics-cicd** NPM предоставляет средства для создания шаблонов Azure Resource Manager Stream Analytics [Visual Studio Code проектов](quick-create-vs-code.md) или [проектов Visual Studio](stream-analytics-quick-create-vs.md). Пакет NPM можно также использовать в Windows, macOS и Linux без установки Visual Studio Code или Visual Studio.
+Пакет **ASA-streamanalytics-cicd** NPM предоставляет средства для создания шаблонов Azure Resource Manager Stream Analytics [Visual Studio Code проектов](./quick-create-visual-studio-code.md) или [проектов Visual Studio](stream-analytics-quick-create-vs.md). Пакет NPM можно также использовать в Windows, macOS и Linux без установки Visual Studio Code или Visual Studio.
 
 После установки пакета используйте следующую команду, чтобы выполнить сборку проектов Stream Analytics.
 
@@ -66,7 +66,7 @@ azure-streamanalytics-cicd build -project "/Users/username/projects/samplejob/sa
 
 Параметры по умолчанию в parameters.jsдля файла зависят от параметров в проекте Visual Studio Code или Visual Studio. При необходимости развертывания в другой среде замените соответствующие параметры.
 
-Значения по умолчанию для всех учетных данных имеют **значение NULL**. Перед развертыванием в Azure необходимо задать значения.
+Значения по умолчанию для всех учетных данных имеют **значение NULL** . Перед развертыванием в Azure необходимо задать значения.
 
 ```json
 "Input_EntryStream_sharedAccessPolicyKey": {
@@ -122,7 +122,7 @@ azure-streamanalytics-cicd addtestcase -project <projectFullPath> [-testConfigPa
 | Параметр | Описание |
 |---|---|
 | `-project` | Путь **asaproj.jsв** файле для проекта Visual Studio Code или **[имя проекта]. Асапрож** для проекта Visual Studio. |
-| `-testConfigPath` | Путь к файлу конфигурации теста. Если он не указан, будет выполнен поиск файла в **\тест** в текущем каталоге **asaproj.jsв** файле с именем файла по умолчанию **testConfig.json**. Новый файл будет создан, если он не существовал. |
+| `-testConfigPath` | Путь к файлу конфигурации теста. Если он не указан, будет выполнен поиск файла в **\тест** в текущем каталоге **asaproj.jsв** файле с именем файла по умолчанию **testConfig.json** . Новый файл будет создан, если он не существовал. |
 
 #### <a name="visual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
@@ -137,9 +137,9 @@ azure-streamanalytics-cicd addtestcase -project "/Users/roger/projects/samplejob
 ```
 ---
 
-Если файл конфигурации теста пуст, в файл записывается следующее содержимое. В противном случае в массив **TestCases**добавляется тестовый случай. Необходимые входные конфигурации автоматически заполняются в соответствии с входными файлами конфигурации, если они существуют. В противном случае настраиваются значения по умолчанию. Перед выполнением теста необходимо указать **путь к файлу** для каждого входного и ожидаемого выходных данных. Конфигурацию можно изменить вручную.
+Если файл конфигурации теста пуст, в файл записывается следующее содержимое. В противном случае в массив **TestCases** добавляется тестовый случай. Необходимые входные конфигурации автоматически заполняются в соответствии с входными файлами конфигурации, если они существуют. В противном случае настраиваются значения по умолчанию. Перед выполнением теста необходимо указать **путь к файлу** для каждого входного и ожидаемого выходных данных. Конфигурацию можно изменить вручную.
 
-Если вы хотите, чтобы проверка теста проигнорировала определенные выходные данные, задайте для **требуемого** поля ожидаемые выходные данные **значение false**.
+Если вы хотите, чтобы проверка теста проигнорировала определенные выходные данные, задайте для **требуемого** поля ожидаемые выходные данные **значение false** .
 
 ```json
 {
@@ -179,11 +179,11 @@ azure-streamanalytics-cicd test -project <projectFullPath> [-testConfigPath <tes
 | Параметр | Описание |
 |---|---|
 | `-project` | Путь **asaproj.jsв** файле для проекта Visual Studio Code или **[имя проекта]. Асапрож** для проекта Visual Studio. |
-| `-testConfigPath` | Путь к файлу конфигурации теста. Если он не указан, будет выполнен поиск файла в **\тест** в текущем каталоге **asaproj.jsв** файле с именем файла по умолчанию **testConfig.json**.
+| `-testConfigPath` | Путь к файлу конфигурации теста. Если он не указан, будет выполнен поиск файла в **\тест** в текущем каталоге **asaproj.jsв** файле с именем файла по умолчанию **testConfig.json** .
 | `-outputPath` | Путь к выходной папке результатов теста. Если он не указан, выходные файлы результатов будут помещены в текущий каталог. |
 | `-customCodeZipFilePath` | Путь к ZIP-файлу для пользовательского кода, например UDF или десериализатор, если они используются. |
 
-По завершении всех тестов в выходной папке создается сводка результатов теста в формате JSON. Файл сводки называется **testResultSummary.jsв**.
+По завершении всех тестов в выходной папке создается сводка результатов теста в формате JSON. Файл сводки называется **testResultSummary.jsв** .
 
 ```json
 {
@@ -237,11 +237,11 @@ azure-streamanalytics-cicd test -project <projectFullPath> [-testConfigPath <tes
 }
 ```
 
-## <a name="deploy-to-azure"></a>Развертывание в Azure
+## <a name="deploy-to-azure"></a>Развернуть в Azure
 
 Вы можете использовать шаблон Azure Resource Manager и файлы параметров, созданные в процессе сборки, для [развертывания задания в Azure](../azure-resource-manager/templates/template-tutorial-use-parameter-file.md?tabs=azure-powershell#deploy-template).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Непрерывная интеграция и непрерывное развертывание для Azure Stream Analytics](cicd-overview.md)
 * [Настройка конвейера CI/CD для задания Stream Analytics с помощью Azure Pipelines](set-up-cicd-pipeline.md)

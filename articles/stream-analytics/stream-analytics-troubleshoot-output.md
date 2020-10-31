@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 10/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: c063fec3eac962d22ead12e0ca11f4b9fc155b5d
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: bc630fc5ea9407c284e2e2e879c349a83302cd9f
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92910157"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93122629"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Устранение неполадок с выходными данными в Azure Stream Analytics
 
@@ -71,7 +71,7 @@ ms.locfileid: "92910157"
 
 ## <a name="key-violation-warning-with-azure-sql-database-output"></a>Предупреждение о нарушении ключа с выходными данными службы "База данных SQL Azure"
 
-При настройке службы "База данных SQL Azure" для выходных данных задания Stream Analytics выполняется массовая вставка записей в целевую таблицу. Как правило, Azure Stream Analytics гарантирует [не менее одной доставки](https://docs.microsoft.com/stream-analytics-query/event-delivery-guarantees-azure-stream-analytics) в приемник выходных данных. Вы по-прежнему можете [выполнить однократную доставку]( https://blogs.msdn.microsoft.com/streamanalytics/2017/01/13/how-to-achieve-exactly-once-delivery-for-sql-output/) в выходные данные SQL, если для таблицы SQL определено уникальное ограничение.
+При настройке службы "База данных SQL Azure" для выходных данных задания Stream Analytics выполняется массовая вставка записей в целевую таблицу. Как правило, Azure Stream Analytics гарантирует [не менее одной доставки](/stream-analytics-query/event-delivery-guarantees-azure-stream-analytics) в приемник выходных данных. Вы по-прежнему можете [выполнить однократную доставку]( https://blogs.msdn.microsoft.com/streamanalytics/2017/01/13/how-to-achieve-exactly-once-delivery-for-sql-output/) в выходные данные SQL, если для таблицы SQL определено уникальное ограничение.
 
 При настройке уникальных ограничений для ключа в таблице SQL служба Azure Stream Analytics удаляет повторяющиеся записи. Данные разделяются на пакеты, которые рекурсивно вставляются, пока не будет обнаружена повторяющаяся запись. Процесс разбиения и вставки пропускает дубликаты по одному за раз. Для задания потоковой передачи,в котором имеется много повторяющихся строк, процесс является неэффективным и занимает много времени. Если в журнале действий в течение последнего часа отображается несколько предупреждающих сообщений о нарушении ключа, вполне вероятно, что обработка выходных данных SQL замедляет выполнение всего задания.
 
@@ -95,9 +95,9 @@ ms.locfileid: "92910157"
 
 Во время выполнения этих действий в выходных данных SQL могут возникать ошибки следующих типов:
 
-* Временные [ошибки](/azure/azure-sql/database/troubleshoot-common-errors-issues#transient-fault-error-messages-40197-40613-and-others) , повторные попытки которых выполняются с помощью стратегии повтора с экспоненциальной задержкой. Минимальный интервал повторных попыток зависит от конкретного кода ошибки, но интервалы обычно менее 60 секунд. Верхний предел может составлять не более пяти минут. 
+* Временные [ошибки](../azure-sql/database/troubleshoot-common-errors-issues.md#transient-fault-error-messages-40197-40613-and-others) , повторные попытки которых выполняются с помощью стратегии повтора с экспоненциальной задержкой. Минимальный интервал повторных попыток зависит от конкретного кода ошибки, но интервалы обычно менее 60 секунд. Верхний предел может составлять не более пяти минут. 
 
-   [Ошибки входа](/azure/azure-sql/database/troubleshoot-common-errors-issues#unable-to-log-in-to-the-server-errors-18456-40531) и [брандмауэр](/azure/azure-sql/database/troubleshoot-common-errors-issues#cannot-connect-to-server-due-to-firewall-issues) повторяются по крайней мере через 5 минут после предыдущей попытки и повторяются до тех пор, пока они не будут выполнены.
+   [Ошибки входа](../azure-sql/database/troubleshoot-common-errors-issues.md#unable-to-log-in-to-the-server-errors-18456-40531) и [брандмауэр](../azure-sql/database/troubleshoot-common-errors-issues.md#cannot-connect-to-server-due-to-firewall-issues) повторяются по крайней мере через 5 минут после предыдущей попытки и повторяются до тех пор, пока они не будут выполнены.
 
 * Ошибки данных, такие как ошибки приведения и нарушения ограничений схемы, обрабатываются с помощью политики исходящих ошибок. Эти ошибки обрабатываются повторными пакетами двоичного разделения до тех пор, пока отдельные записи, вызвавшие ошибку, не будут обрабатываться функцией Skip или Retry. Нарушение ограничения первичного уникального ключа [всегда обрабатывается](./stream-analytics-troubleshoot-output.md#key-violation-warning-with-azure-sql-database-output).
 
@@ -107,16 +107,16 @@ ms.locfileid: "92910157"
 
 ## <a name="column-names-are-lowercase-in-azure-stream-analytics-10"></a>Имена столбцов в Azure Stream Analytics (1.0) указаны строчными буквами
 
-При использовании исходного уровня совместимости (1.0) Azure Stream Analytics преобразует символы имен столбцов в нижний регистр. На более поздних уровнях совместимости это поведение было исправлено. Чтобы сохранить регистр, перейдите на уровень совместимости 1.1 или более поздний. Дополнительные сведения см. в разделе [Уровень совместимости для заданий Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level).
+При использовании исходного уровня совместимости (1.0) Azure Stream Analytics преобразует символы имен столбцов в нижний регистр. На более поздних уровнях совместимости это поведение было исправлено. Чтобы сохранить регистр, перейдите на уровень совместимости 1.1 или более поздний. Дополнительные сведения см. в разделе [Уровень совместимости для заданий Stream Analytics](./stream-analytics-compatibility-level.md).
 
 ## <a name="get-help"></a>Получить справку
 
-Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов по Azure Stream Analytics на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-stream-analytics.html).
+Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов по Azure Stream Analytics на сайте Майкрософт](/answers/topics/azure-stream-analytics.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
-* [Azure Stream Analytics management REST API reference](https://msdn.microsoft.com/library/azure/dn835031.aspx) (Справочник по API-интерфейсу REST для управления Stream Analytics).
+* [Справочник по языку запросов Azure Stream Analytics](/stream-analytics-query/stream-analytics-query-language-reference)
+* [Azure Stream Analytics management REST API reference](/rest/api/streamanalytics/) (Справочник по API-интерфейсу REST для управления Stream Analytics).

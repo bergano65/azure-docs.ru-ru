@@ -18,12 +18,12 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4353ed5413f76b13425a59d31bb6108542e3bd23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25f3402864e2ba873ce63acb6cedcd3f2ea018f7
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89231135"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123138"
 ---
 # <a name="azure-ad-powershell-cmdlets-for-reporting"></a>Командлеты Azure AD PowerShell для создания отчетов
 
@@ -59,7 +59,7 @@ Install-module AzureADPreview
 
 На следующем рисунке показан пример для этой команды. 
 
-![Кнопка "Data Summary" (Сводка данных)](./media/reference-powershell-reporting/get-azureadauditdirectorylogs.png)
+![На снимке экрана показан результат выполнения команды Get-Azure D Audit Directory Logs.](./media/reference-powershell-reporting/get-azureadauditdirectorylogs.png)
 
 
 
@@ -81,11 +81,11 @@ Install-module AzureADPreview
 
 На следующем рисунке показан пример для этой команды. 
 
-![Кнопка "Data Summary" (Сводка данных)](./media/reference-powershell-reporting/get-azureadauditsigninlogs.png)
+![На снимке экрана показан результат выполнения команды Get-Azure журнал аудита входа в систему.](./media/reference-powershell-reporting/get-azureadauditsigninlogs.png)
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое отчеты в Azure Active Directory](overview-reports.md).
 - [Отчет о журналах аудита](concept-audit-logs.md). 

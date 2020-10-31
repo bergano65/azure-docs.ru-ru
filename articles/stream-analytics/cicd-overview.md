@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 9/22/2020
-ms.openlocfilehash: ec8f27d0376f7187fd36b3feba556dbced0946e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5057eb8c84e839f504060228986ea759c8bdc3d
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90937595"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123173"
 ---
 # <a name="continuous-integration-and-deployment-cicd-for-azure-stream-analytics"></a>Непрерывная интеграция и развертывание (CI/CD) для Azure Stream Analytics
 
@@ -27,7 +27,7 @@ ms.locfileid: "90937595"
 
 1. Разработка Azure Stream Analytics запроса.
 
-   Используйте средства Azure Stream Analytics для [Visual Studio Code](quick-create-vs-code.md) или [Visual Studio](stream-analytics-quick-create-vs.md) , чтобы [локально разрабатывать и тестировать запросы](develop-locally.md). Вы также можете [экспортировать существующее задание](visual-studio-code-explore-jobs.md#export-a-job-to-a-local-project) в локальный проект.
+   Используйте средства Azure Stream Analytics для [Visual Studio Code](./quick-create-visual-studio-code.md) или [Visual Studio](stream-analytics-quick-create-vs.md) , чтобы [локально разрабатывать и тестировать запросы](develop-locally.md). Вы также можете [экспортировать существующее задание](visual-studio-code-explore-jobs.md#export-a-job-to-a-local-project) в локальный проект.
 
 2. Зафиксируйте Azure Stream Analytics проекты в системе управления версиями, например в репозитории Git.
 
@@ -41,7 +41,7 @@ ms.locfileid: "90937595"
 
 Для автоматической сборки, тестирования и развертывания можно использовать командную строку и [средства Azure Stream Analytics CI/CD](cicd-tools.md) . Вы также можете настроить конвейер CI/CD в [Azure pipelines](set-up-cicd-pipeline.md). Azure Pipelines, чтобы включить более широкие возможности, такие как Управление конвейером, Визуализация и триггеры.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматизация сборок, тестов и развертываний задания Azure Stream Analytics с помощью средств CI/CD](cicd-tools.md)
 * [Настройка конвейера CI/CD для задания Stream Analytics с помощью Azure Pipelines](set-up-cicd-pipeline.md)

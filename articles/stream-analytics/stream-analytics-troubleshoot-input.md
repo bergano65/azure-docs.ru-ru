@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 05/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: f4f79a28dbe8a49e608ca6fae1781a1e19646619
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 760c98ce9464e4d40f01256a973e07d9084c6dfe
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87448872"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123291"
 ---
 # <a name="troubleshoot-input-connections"></a>Устранение неполадок с входными подключениями
 
@@ -25,9 +25,9 @@ ms.locfileid: "87448872"
 
 2.  Проверьте входные данные.
 
-    1. Нажмите кнопку [**Образцы данных**](stream-analytics-sample-data-input.md) для всех входных данных. Скачайте примеры входных данных.
+    1. Нажмите кнопку [**Образцы данных**](./stream-analytics-test-query.md) для всех входных данных. Скачайте примеры входных данных.
         
-    1. Проверьте эти примеры данных, чтобы определить схему и [типы данных](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics).
+    1. Проверьте эти примеры данных, чтобы определить схему и [типы данных](/stream-analytics-query/data-types-azure-stream-analytics).
     
     1. Проверьте [Метрики концентратора событий](../event-hubs/event-hubs-metrics-azure-monitor.md), чтобы убедиться, что события отправляются. Метрики сообщений должны быть больше нуля, если служба "Центры событий" получает сообщения.
 
@@ -75,13 +75,13 @@ AzureStreamAnalytics_c4b65e4a-f572-4cfc-b4e2-cf237f43c6f0_1.
 
 2. Найдите концентратор событий.
 
-3. Выберите **Центры событий** под заголовком **Сущности**.
+3. Выберите **Центры событий** под заголовком **Сущности** .
 
 4. Выберите имя концентратора событий.
 
-5. На странице **Экземпляр Центров событий** под заголовком **Сущности** установите флажок **Группы потребителей**. Указана группа потребителей с именем **$Default**.
+5. На странице **Экземпляр Центров событий** под заголовком **Сущности** установите флажок **Группы потребителей** . Указана группа потребителей с именем **$Default** .
 
-6. Выберите **+Группа потребителей**, чтобы добавить новую группу потребителей. 
+6. Выберите **+Группа потребителей** , чтобы добавить новую группу потребителей. 
 
    ![Добавление группы потребителей в Центры событий](media/stream-analytics-event-hub-consumer-groups/new-eh-consumer-group.png)
 
@@ -163,16 +163,16 @@ SELECT foo FROM DataTwo
 
 ## <a name="readers-per-partition-exceeds-iot-hub-limit"></a>Число читателей на секцию превышает ограничение центра Интернета вещей
 
-Для подключения и чтения событий из центра Интернета вещей Stream Analytics задания используют встроенную [конечную точку, совместимую с концентратором событий](../iot-hub/iot-hub-devguide-messages-read-builtin.md) . Если количество ресурсов для чтения на раздел превышает пределы центра Интернета вещей, для его устранения можно воспользоваться [решением для концентратора событий](#readers-per-partition-exceeds-event-hubs-limit) . Вы можете создать группу потребителей для встроенной конечной точки с помощью сеанса конечной точки портала центра Интернета вещей или с помощью [пакета SDK для центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/IotHubResource/CreateEventHubConsumerGroup).
+Для подключения и чтения событий из центра Интернета вещей Stream Analytics задания используют встроенную [конечную точку, совместимую с концентратором событий](../iot-hub/iot-hub-devguide-messages-read-builtin.md) . Если количество ресурсов для чтения на раздел превышает пределы центра Интернета вещей, для его устранения можно воспользоваться [решением для концентратора событий](#readers-per-partition-exceeds-event-hubs-limit) . Вы можете создать группу потребителей для встроенной конечной точки с помощью сеанса конечной точки портала центра Интернета вещей или с помощью [пакета SDK для центра Интернета вещей](/rest/api/iothub/IotHubResource/CreateEventHubConsumerGroup).
 
 ## <a name="get-help"></a>Получить справку
 
-Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов по Azure Stream Analytics на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-stream-analytics.html).
+Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов по Azure Stream Analytics на сайте Майкрософт](/answers/topics/azure-stream-analytics.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
-* [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](/stream-analytics-query/stream-analytics-query-language-reference)
+* [Справочник по API-интерфейсу REST управления Stream Analytics](/rest/api/streamanalytics/)

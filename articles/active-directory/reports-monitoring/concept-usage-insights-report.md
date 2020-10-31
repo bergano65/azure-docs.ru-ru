@@ -16,12 +16,12 @@ ms.subservice: report-monitor
 ms.date: 05/13/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: b3db86137207ae726c7befc393f62590fd1456d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2c7cc68c84cc9f137ba5b51206526ff96111fe9a
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74008267"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93122747"
 ---
 # <a name="usage-and-insights-report-in-the-azure-active-directory-portal"></a>Отчет об использовании и аналитике на портале Azure Active Directory
 
@@ -42,10 +42,10 @@ ms.locfileid: "74008267"
 ## <a name="access-the-usage-and-insights-report"></a>Доступ к отчету об использовании и Insights
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
-2. Выберите нужный каталог, а затем выберите **Azure Active Directory** и выберите **корпоративные приложения**.
+2. Выберите нужный каталог, а затем выберите **Azure Active Directory** и выберите **корпоративные приложения** .
 3. В разделе **действие** выберите **Использование & Insights** , чтобы открыть отчет. 
 
-![Отчет об использовании и аналитике](./media/concept-usage-insights-report/main-menu.png)
+![На снимке экрана показано использование & Insights, выбранных в разделе действие.](./media/concept-usage-insights-report/main-menu.png)
                                      
 
 ## <a name="use-the-report"></a>Использование отчета
@@ -58,7 +58,7 @@ ms.locfileid: "74008267"
 
 При выборе дня на диаграмме использования приложения вы получите подробный список действий входа для приложения.  
 
-![Отчет об использовании и аналитике](./media/concept-usage-insights-report/usage-and-insights-report.png)
+![На снимке экрана показано использование & Insights для действий приложения, где можно выбрать диапазон и просмотреть действия входа для различных приложений.](./media/concept-usage-insights-report/usage-and-insights-report.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
