@@ -8,19 +8,19 @@ ms.date: 4/24/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-js
-ms.openlocfilehash: 53887b7487c3f0bb70c9f8cc7cd61246fabc0b37
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 158d22ffb3bc5486e0523c07cc2c022c49f2ee9c
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970135"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93145605"
 ---
 # <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>Создание настраиваемых пакетов SDK для Azure Digital двойников с помощью функции автоотдыха
 
 Сейчас единственными пакетами SDK для плоскости Data плоскость для взаимодействия с API-интерфейсами Azure Digital двойников являются .NET (C#), JavaScript и Java. Сведения об этих пакетах SDK и интерфейсах API см. в статье [*как использовать интерфейсы API и пакеты SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md). Если вы работаете на другом языке, в этой статье вы узнаете, как создать собственный пакет SDK для плоскости данных на выбранном языке с помощью функции автоотдыха.
 
 >[!NOTE]
-> При необходимости можно также использовать автооставшуюся для создания пакета SDK для плоскости управления. Для этого выполните действия, описанные в этой статье, используя последний файл **Swagger плоскости управления** (OpenAPI) в [папке Swagger плоскости управления]] ( https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/) а не на плоскости данных 1).
+> При необходимости можно также использовать автооставшуюся для создания пакета SDK для плоскости управления. Для этого выполните действия, описанные в этой статье, используя последний файл **Swagger плоскости управления** (OpenAPI) из [папки контрольной плоскости Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/) , а не из плоскости данных.
 
 ## <a name="set-up-your-machine"></a>Настройка компьютера
 
@@ -47,7 +47,7 @@ npm install -g autorest@2.0.4413
 autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --add-credentials --azure-arm --namespace=ADTApi
 ```
 
-В результате вы увидите новую папку с именем *адтапи* в рабочем каталоге. Создаваемые файлы SDK будут иметь пространство имен *адтапи*. Вы по-прежнему будете использовать это пространство имен с помощью остальных примеров использования в этой статье.
+В результате вы увидите новую папку с именем *адтапи* в рабочем каталоге. Создаваемые файлы SDK будут иметь пространство имен *адтапи* . Вы по-прежнему будете использовать это пространство имен с помощью остальных примеров использования в этой статье.
 
 Автооставшаяся версия поддерживает широкий спектр генераторов кода языка.
 
@@ -64,7 +64,7 @@ autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --ad
 3. В обозревателе решений щелкните правой кнопкой мыши проект *адтапи* созданного решения и выберите *Добавить > существующий элемент...*
 4. Найдите папку, в которой был создан пакет SDK, и выберите файлы на корневом уровне.
 5. Нажмите кнопку "ОК"
-6. Добавьте папку в проект (щелкните проект правой кнопкой мыши в обозреватель решений и выберите *добавить > Новая папка*).
+6. Добавьте папку в проект (щелкните проект правой кнопкой мыши в обозреватель решений и выберите *добавить > Новая папка* ).
 7. Назовите *модели* папок
 8. Щелкните правой кнопкой мыши папку *модели* в обозревателе решений и выберите *Добавить > существующий элемент...*
 9. Выберите файлы в папке *Models* СОЗДАННОГО пакета SDK и нажмите кнопку ОК.
@@ -73,7 +73,7 @@ autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --ad
 * `Microsoft.Rest.ClientRuntime`
 * `Microsoft.Rest.ClientRuntime.Azure`
 
-Чтобы добавить их, откройте *инструменты > диспетчер пакетов nuget > управления пакетами NuGet для решения.*...
+Чтобы добавить их, откройте *инструменты > диспетчер пакетов nuget > управления пакетами NuGet для решения.* ...
 
 1. На панели убедитесь, что выбрана вкладка *Обзор* .
 2. Поиск *Microsoft. RESTful*
@@ -117,40 +117,25 @@ catch (ErrorResponseException e)
 * Один для всех API, за исключением API запросов
 * Один для API запроса
 
-В шаблоне постраничного просмотра, не относящемся к запросу, существует две версии каждого вызова:
-* Версия для выполнения начального вызова (например, `DigitalTwins.ListEdges()` )
-* Версия для получения следующих страниц. Эти вызовы имеют суффикс "Next" (например, `DigitalTwins.ListEdgesNext()` )
+В шаблоне постраничного просмотра, не относящемся к запросу, приведен фрагмент кода, показывающий, как получить постраничный список исходящих отношений из Azure Digital двойников:
 
-Ниже приведен фрагмент кода, демонстрирующий получение выгружаемого списка исходящих отношений из Azure Digital двойников:
 ```csharp
-try
-{
-    // List to hold the results in
-    List<object> relList = new List<object>();
-    // Enumerate the IPage object returned to get the results
-    // ListAsync will throw if an error occurs
-    IPage<object> relPage = await client.DigitalTwins.ListEdgesAsync(id);
-    relList.AddRange(relPage);
-    // If there are more pages, the NextPageLink in the page is set
-    while (relPage.NextPageLink != null)
+ try 
+ {
+     // List the relationships.
+    AsyncPageable<BasicRelationship> results = client.GetRelationshipsAsync<BasicRelationship>(srcId);
+    Console.WriteLine($"Twin {srcId} is connected to:");
+    // Iterate through the relationships found.
+    int numberOfRelationships = 0;
+    await foreach (string rel in results)
     {
-        // Get more pages...
-        relPage = await client.DigitalTwins.ListEdgesNextAsync(relPage.NextPageLink);
-        relList.AddRange(relPage);
+         ++numberOfRelationships;
+         // Do something with each relationship found
+         Console.WriteLine($"Found relationship-{rel.Name}->{rel.TargetId}");
     }
-    Console.WriteLine($"Found {relList.Count} relationships on {id}");
-    // Do something with each object found
-    // As relationships are custom types, they are JSON.Net types
-    foreach (JObject r in relList)
-    {
-        string relId = r.Value<string>("$edgeId");
-        string relName = r.Value<string>("$relationship");
-        Console.WriteLine($"Found relationship {relId} from {id}");
-    }
-}
-catch (ErrorResponseException e)
-{
-    Console.WriteLine($"*** Error retrieving relationships on {id}: {e.Response.StatusCode}");
+    Console.WriteLine($"Found {numberOfRelationships} relationships on {srcId}");
+} catch (RequestFailedException rex) {
+    Console.WriteLine($"Relationship retrieval error: {rex.Status}:{rex.Message}");   
 }
 ```
 

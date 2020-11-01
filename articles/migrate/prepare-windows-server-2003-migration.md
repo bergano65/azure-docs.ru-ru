@@ -3,16 +3,21 @@ title: Подготовка серверов Windows Server 2003 для мигр
 description: Узнайте, как подготовить серверы Windows Server 2003 для миграции с помощью службы "миграция Azure".
 ms.topic: how-to
 ms.date: 05/27/2020
-ms.openlocfilehash: 5e33742d59972d491c1efb8d0f1453c1226d4625
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 350eab98a2b40d5ca1382bbfc24245e7cb47b48e
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86103948"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93146847"
 ---
 # <a name="prepare-windows-server-2003-machines-for-migration"></a>Подготовка компьютеров Windows Server 2003 к миграции
 
 В этой статье описывается подготовка компьютеров под Windows Server 2003 для миграции в Azure. 
+
+
+> [!NOTE]
+> [Расширенная поддержка Windows Server 2003](/troubleshoot/azure/virtual-machines/run-win-server-2003#microsoft-windows-server-2003-end-of-support) закончилась 14 июля 2015.  Группа поддержки Azure продолжит устранение неполадок, связанных с Windows Server 2003 в Azure. Однако эта поддержка ограничена проблемами, которые не нуждаются в устранении неполадок или исправлениях на уровне операционной системы. Перенос приложений на экземпляры Azure, работающие под управлением более новой версии Windows Server, является рекомендуемым подходом к эффективному использованию гибкости и надежности облака Azure. Однако если вы по-прежнему решили перенести Windows Server 2003 в Azure, можно использовать средство миграции Azure Migration Tool, если Windows Server является виртуальной машиной, работающей в VMware или Hyper-V.
+
 
 - Миграцию без агента можно использовать для переноса [виртуальных машин Hyper-V](tutorial-migrate-hyper-v.md) и [виртуальных машин VMware](tutorial-migrate-vmware.md) в Azure.
 - Чтобы подключиться к виртуальным машинам Azure после миграции, на виртуальной машине Azure необходимо установить Hyper-V Integration Services. На компьютерах с Windows Server 2003 эта установка не устанавливается по умолчанию.
@@ -27,18 +32,18 @@ ms.locfileid: "86103948"
 
 1. Выполните [эти инструкции](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#turn-an-integration-service-on-or-off-using-hyper-v-manager) , чтобы проверить, установлены ли они.
 2. Если она не установлена, войдите на компьютер под управлением Windows Server 2012 R2/Windows Server 2012 с ролью Hyper-V.
-3. Перейдите к файлу установки по адресу **C:\Windows\System32\vmguest.ISO**и подключите его.
+3. Перейдите к файлу установки по адресу **C:\Windows\System32\vmguest.ISO** и подключите его.
 2. Скопируйте папку установки на компьютер с Windows Server 2003 и установите Integration Services.
 4. После установки можно оставить параметры по умолчанию в Integration Services. 
 
 ## <a name="install-on-vmware-vms"></a>Установка на виртуальных машинах VMware
 
 1. Войдите на компьютер под управлением Windows Server 2012 R2/Windows Server 2012 с ролью Hyper-V.
-2. Перейдите к файлу установки по адресу **C:\Windows\System32\vmguest.ISO**и подключите его.
+2. Перейдите к файлу установки по адресу **C:\Windows\System32\vmguest.ISO** и подключите его.
 3. Скопируйте папку установки на виртуальную машину VMware.
 4. В командной строке виртуальной машины выполните команду ```gpedit.msc``` .
-5. Откройте **Конфигурация компьютера**  >  **Параметры Windows**  >  **сценарии (запуск и завершение работы)**.
-6. В поле **Автозагрузка**  >  **добавить**  >  **имя скрипта**введите адрес setup.exe.
+5. Откройте **Конфигурация компьютера**  >  **Параметры Windows**  >  **сценарии (запуск и завершение работы)** .
+6. В поле **Автозагрузка**  >  **добавить**  >  **имя скрипта** введите адрес setup.exe.
 7. После миграции в Azure сценарий выполняется при первом запуске виртуальной машины Azure.
 8. Перезапустите виртуальную машину Azure вручную. Имеется всплывающее окно диагностики загрузки, указывающее, что требуется перезагрузка.
 9. После выполнения скрипта и установки Hyper-V Integration Services на виртуальной машине Azure можно удалить скрипт из запуска.

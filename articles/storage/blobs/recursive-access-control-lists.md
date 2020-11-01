@@ -9,12 +9,12 @@ ms.date: 10/29/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d4c30029a71935cd3b8817be9010ff0fd11fa61a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 56a797864b70cb1be4a1bc5d4b79c44348d43dae
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077699"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93144432"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Рекурсивное задание списков управления доступом (ACL) для Azure Data Lake Storage 2-го поколения
 
@@ -969,8 +969,6 @@ def resume_set_acl_recursive(continuation_token):
 Если вы хотите, чтобы процесс завершился без прерывания с ошибками разрешений, можно указать это.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
-
-Чтобы убедиться в том, что процесс завершается без прерывания, передайте объект **акцессконтролчанжедоптионс** и задайте для свойства **континуеонфаилуре** этого объекта значение ``true`` .
 
 В этом примере записи ACL задаются рекурсивно. Если этот код вызывает ошибку разрешения, он записывает этот сбой и возобновляет выполнение. В этом примере на консоль выводятся результаты (включая количество ошибок). 
 

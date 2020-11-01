@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: apimpm
-ms.openlocfilehash: 06d114c500722259d02a940633a76d043b83064a
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 0832c975ecb410b97a24c975f9fc0f4799120abd
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077496"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93145520"
 ---
 # <a name="using-azure-api-management-service-with-an-internal-virtual-network"></a>Использование службы управления API Azure совместно с внутренней виртуальной сетью
 Служба управления API Azure в сочетании с виртуальными сетями Azure позволяет работать с интерфейсами API, которые недоступны из Интернета. Подключение можно создать с применением разных технологий VPN. Управление API можно развернуть в виртуальной сети в одном из двух основных режимов:
@@ -43,7 +43,7 @@ ms.locfileid: "92077496"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
-+ **Активная подписка Azure**.
++ **Активная подписка Azure** .
 
     [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -56,21 +56,23 @@ ms.locfileid: "92077496"
 ### <a name="enable-a-virtual-network-connection-using-the-azure-portal"></a>Настройка подключения к виртуальной сети с помощью портала Azure
 
 1. Перейдите к экземпляру управления API Azure на [портале Azure](https://portal.azure.com/).
-2. Щелкните **Виртуальная сеть**.
+2. Щелкните **Виртуальная сеть** .
 3. Укажите, что развертывание экземпляра управления API выполняется внутри виртуальной сети.
 
     ![Меню для настройки управления API Azure во внутренней виртуальной сети][api-management-using-internal-vnet-menu]
 
-4. Щелкните **Сохранить**.
+4. Щелкните **Сохранить** .
 
 После завершения развертывания вы должны увидеть **частный** виртуальный IP-адрес и **общедоступный** виртуальный IP-адрес службы управления API в колонке обзор. **Частный** виртуальный IP-адрес — это IP-адрес с балансировкой нагрузки в делегированной подсети управления API `gateway` , `portal` `management` к которой `scm` можно получить доступ конечные точки, и. **Общедоступный** виртуальный IP-адрес используется **только** для управления трафиком плоскости в `management` конечную точку через порт 3443 и может быть заблокирован в [ApiManagement][ServiceTags] сервицетаг.
 
 ![Панель мониторинга службы управления API, демонстрирующая настроенную внутреннюю виртуальную сеть][api-management-internal-vnet-dashboard]
 
 > [!NOTE]
-> Консоль тестирования, доступная на портале Azure, не будет работать для **внутренней** развернутой службы виртуальной сети, так как URL-адрес шлюза не зарегистрирован в общедоступной службе DNS. Вместо этого следует использовать консоль тестирования, доступную на **портале разработчика**.
+> Консоль тестирования, доступная на портале Azure, не будет работать для **внутренней** развернутой службы виртуальной сети, так как URL-адрес шлюза не зарегистрирован в общедоступной службе DNS. Вместо этого следует использовать консоль тестирования, доступную на **портале разработчика** .
 
-### <a name="enable-a-virtual-network-connection-by-using-powershell-cmdlets"></a>Настройка подключения к виртуальной сети с помощью командлетов PowerShell
+### <a name="deploy-api-management-into-virtual-network"></a><a name="deploy-apim-internal-vnet"> </a>Развертывание управления API в виртуальной сети
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-api-management-create-with-internal-vnet%2Fazuredeploy.json)
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

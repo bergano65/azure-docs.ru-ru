@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 10/06/2020
-ms.openlocfilehash: 54775d7e9923505c6e68a47feed6726b9cb84c47
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 0d22e10a71c3eee2026f55a73074ba02c68c2b78
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129938"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93146183"
 ---
 # <a name="publishing-guide-by-offer-type"></a>Руководство по публикации разных типов предложений
 
@@ -39,10 +39,8 @@ ms.locfileid: "93129938"
 | [**Модуль IoT Edge**](iot-edge-module.md) | Модули Azure IoT Edge — это наименьшая единица вычислительных ресурсов, которыми управляет IoT Edge. Эти модули могут содержать службы Майкрософт (например, Azure Stream Analytics), сторонние службы или пользовательский код для конкретного решения. |
 | [**Управляемая служба**](partner-center-portal/create-new-managed-service-offer.md) | Вы можете создавать предложения управляемой службы и управлять подписками, делегированными клиентом, или группами ресурсов через [Azure лигхсаусе](../lighthouse/overview.md).|
 | [**Приложение Power BI** <br/> **Microsoft 365**](appsource-offer-publishing-guide.md) | Вы можете опубликовать предложения AppSource, которые будут создаваться или расширяться Power BI и Microsoft 365.|
-| [**Программное обеспечение как услуга**](plan-saas-offer.md) | Используйте тип предложения "программное обеспечение как услуга" (SaaS), чтобы позволить клиенту покупать в качестве подписки техническое решение на основе SaaS. |
+| [**Программное обеспечение как услуга**](plan-saas-offer.md) | Используйте тип предложения "программное обеспечение как услуга" (SaaS), чтобы позволить клиенту покупать в качестве подписки техническое решение на основе SaaS. Сведения о требованиях единого входа для предложений SaaS см. в статье [Azure AD и предложения SaaS, предоставляемые в коммерческом магазине](azure-ad-saas.md). |
 
-
-Сведения о требованиях единого входа путем перечисления параметров и типов предложений см. в статье [**требования к Azure AD**](enable-appsource-marketplace-using-azure-ad.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

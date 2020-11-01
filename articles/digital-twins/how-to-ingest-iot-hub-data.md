@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 9/15/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1fa14c4341c449c32fd6a5f6b3274b057478c01c
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: d2606f793c7ab2e3ac29b1eb869e60a2c8e634ad
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495814"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93145928"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>Прием данных телеметрии центра Интернета вещей в Azure Digital двойников
 
@@ -22,10 +22,10 @@ Azure Digital двойников управляет данными из устр
 
 В этом документе описывается процесс создания функции Azure, которая может принимать данные телеметрии из центра Интернета вещей.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем продолжить работу с этим примером, необходимо настроить следующие ресурсы в качестве необходимых компонентов:
-* **Центр Интернета вещей**. Инструкции см. в разделе " *Создание центра Интернета вещей* " [этого руководства центра Интернета вещей](../iot-hub/quickstart-send-telemetry-cli.md).
+* **Центр Интернета вещей** . Инструкции см. в разделе " *Создание центра Интернета вещей* " [этого руководства центра Интернета вещей](../iot-hub/quickstart-send-telemetry-cli.md).
 * **Функция Azure** с правильными разрешениями для вызова вашего экземпляра Digital двойника. Инструкции см. [*в разделе инструкции. Настройка функции Azure для обработки данных*](how-to-create-azure-function.md). 
 * **Экземпляр цифрового двойников Azure** , который будет принимать данные телеметрии устройства. Инструкции см. [*в статье Настройка экземпляра и проверки подлинности Azure Digital двойников*](./how-to-set-up-instance-portal.md).
 
@@ -62,13 +62,13 @@ Azure Digital двойников управляет данными из устр
 }
 ```
 
-Чтобы **передать эту модель в экземпляр двойников**, откройте Azure CLI и выполните следующую команду:
+Чтобы **передать эту модель в экземпляр двойников** , откройте Azure CLI и выполните следующую команду:
 
 ```azurecli-interactive
 az dt model create --models '{  "@id": "dtmi:contosocom:DigitalTwins:Thermostat;1",  "@type": "Interface",  "@context": "dtmi:dtdl:context;2",  "contents": [    {      "@type": "Property",      "name": "Temperature",      "schema": "double"    }  ]}' -n {digital_twins_instance_name}
 ```
 
-Затем необходимо **создать один двойника с помощью этой модели**. Используйте следующую команду, чтобы создать двойника и установить 0,0 в качестве начального значения температуры.
+Затем необходимо **создать один двойника с помощью этой модели** . Используйте следующую команду, чтобы создать двойника и установить 0,0 в качестве начального значения температуры.
 
 ```azurecli-interactive
 az dt twin create --dtmi "dtmi:contosocom:DigitalTwins:Thermostat;1" --twin-id thermostat67 --properties '{"Temperature": 0.0,}' --dt-name {digital_twins_instance_name}
@@ -117,9 +117,9 @@ var temperature = deviceMessage["body"]["Temperature"];
 
 ```csharp
 //Update twin using device temperature
-var uou = new UpdateOperationsUtility();
-uou.AppendReplaceOp("/Temperature", temperature.Value<double>());
-await client.UpdateDigitalTwinAsync(deviceId, uou.Serialize());
+var updateTwinData = new JsonPatchDocument();
+updateTwinData.AppendReplace("/Temperature", temperature.Value<double>());
+await client.UpdateDigitalTwinAsync(deviceId, updateTwinData);
 ...
 ```
 
@@ -176,9 +176,9 @@ namespace IotHubtoTwins
                     log.LogInformation($"Device:{deviceId} Temperature is:{temperature}");
 
                     //Update twin using device temperature
-                    var uou = new UpdateOperationsUtility();
-                    uou.AppendReplaceOp("/Temperature", temperature.Value<double>());
-                    await client.UpdateDigitalTwinAsync(deviceId, uou.Serialize());
+                    var updateTwinData = new JsonPatchDocument();
+                    updateTwinData.AppendReplace("/Temperature", temperature.Value<double>());
+                    await client.UpdateDigitalTwinAsync(deviceId, updateTwinData);
                 }
             }
             catch (Exception e)
@@ -210,25 +210,25 @@ namespace IotHubtoTwins
 ## <a name="connect-your-function-to-iot-hub"></a>Подключение функции к центру Интернета вещей
 
 Настройте назначение события для данных концентратора.
-В [портал Azure](https://portal.azure.com/)перейдите к экземпляру центра Интернета вещей, созданному в разделе [*Предварительные требования*](#prerequisites) . В разделе **события**создайте подписку для функции Azure.
+В [портал Azure](https://portal.azure.com/)перейдите к экземпляру центра Интернета вещей, созданному в разделе [*Предварительные требования*](#prerequisites) . В разделе **события** создайте подписку для функции Azure.
 
 :::image type="content" source="media/how-to-ingest-iot-hub-data/add-event-subscription.png" alt-text="Схема, показывающая блок-диаграмму. На диаграмме устройство центра Интернета вещей отправляет данные телеметрии температуры через центр Интернета вещей в функцию Azure, которая обновляет свойство температуры двойника в Azure Digital двойников.":::
 
 На странице **Создание подписки на события** заполните поля следующим образом:
-  1. В поле **имя**укажите имя подписки.
-  2. В разделе **схема события**выберите _Схема сетки событий_.
-  3. В разделе **типы событий**установите флажок _телеметрии устройства_ и снимите флажки для других типов событий.
-  4. В разделе **тип конечной точки**выберите _функция Azure_.
-  5. В разделе **Конечная точка**выберите ссылку _выбрать конечную точку_ , чтобы создать конечную точку.
+  1. В поле **имя** укажите имя подписки.
+  2. В разделе **схема события** выберите _Схема сетки событий_ .
+  3. В разделе **типы событий** установите флажок _телеметрии устройства_ и снимите флажки для других типов событий.
+  4. В разделе **тип конечной точки** выберите _функция Azure_ .
+  5. В разделе **Конечная точка** выберите ссылку _выбрать конечную точку_ , чтобы создать конечную точку.
     
 :::image type="content" source="media/how-to-ingest-iot-hub-data/create-event-subscription.png" alt-text="Схема, показывающая блок-диаграмму. На диаграмме устройство центра Интернета вещей отправляет данные телеметрии температуры через центр Интернета вещей в функцию Azure, которая обновляет свойство температуры двойника в Azure Digital двойников.":::
 
 На открывшейся странице _Выбор функции Azure_ проверьте следующие сведения.
- 1. **Подписка**. Ваша подписка Azure
- 2. **Группа ресурсов**. Ваша группа ресурсов
- 3. **Приложение функции**: имя приложения функции
- 4. **Слот**: _Рабочая_
- 5. **Функция**. Выберите функцию Azure в раскрывающемся списке.
+ 1. **Подписка** . Ваша подписка Azure
+ 2. **Группа ресурсов** . Ваша группа ресурсов
+ 3. **Приложение функции** : имя приложения функции
+ 4. **Слот** : _Рабочая_
+ 5. **Функция** . Выберите функцию Azure в раскрывающемся списке.
 
 Сохраните сведения, нажав кнопку _подтвердить выбор_ .            
       

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/7/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 7f5ca063bcc784498dddf87f34f0f7974b95ecaf
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: b929632318de41470412811885b9f1bd3054783a
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027319"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93145979"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
@@ -31,12 +31,14 @@ Azure Digital двойников выполняет проверку подли�
 ## <a name="common-authentication-methods-with-azureidentity"></a>Общие методы проверки подлинности с помощью Azure. Identity
 
 `Azure.Identity` — это клиентская библиотека, которая предоставляет несколько методов получения учетных данных, которые можно использовать для получения маркера носителя и проверки подлинности с помощью пакета SDK. Хотя в этой статье приведены примеры в C#, можно просматривать `Azure.Identity` несколько языков, включая...
+
 * [.NET (C#)](/dotnet/api/azure.identity?preserve-view=true&view=azure-dotnet)
 * [Java](/java/api/overview/azure/identity-readme?preserve-view=true&view=azure-java-stable)
 * [JavaScript](/javascript/api/overview/azure/identity-readme?preserve-view=true&view=azure-node-latest)
 * [Python](/python/api/overview/azure/identity-readme?preserve-view=true&view=azure-python)
 
 Три общих метода получения учетных данных в `Azure.Identity` :
+
 * [Дефаултазурекредентиал](/dotnet/api/azure.identity.defaultazurecredential?preserve-view=true&view=azure-dotnet) предоставляет `TokenCredential` поток проверки подлинности по умолчанию для приложений, которые будут развернуты в Azure. это **рекомендуемый вариант для локальной разработки** . Также можно включить другие два метода, которые рекомендуются в этой статье. Он является оболочкой `ManagedIdentityCredential` и может иметь доступ к `InteractiveBrowserCredential` переменной конфигурации.
 * [Манажедидентитикредентиал](/dotnet/api/azure.identity.managedidentitycredential?preserve-view=true&view=azure-dotnet) работает отлично в тех случаях, когда вам нужны [управляемые удостоверения (MSI)](../active-directory/managed-identities-azure-resources/overview.md), и это хороший кандидат на работу с функциями Azure и развертывание в службах Azure.
 * [Интерактивебровсеркредентиал](/dotnet/api/azure.identity.interactivebrowsercredential?preserve-view=true&view=azure-dotnet) предназначен для интерактивных приложений и может использоваться для создания клиента SDK с проверкой подлинности

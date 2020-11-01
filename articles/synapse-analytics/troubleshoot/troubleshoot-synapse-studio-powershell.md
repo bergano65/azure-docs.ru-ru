@@ -1,20 +1,20 @@
 ---
-title: Устранение неполадок подключения синапсе Studio (Предварительная версия) с помощью PowerShell
+title: Устранение неполадок с подключением синапсе Studio
 description: Устранение неполадок с подключением Azure синапсе Studio с помощью PowerShell
-author: julieMSFT
+author: saveenr
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.date: 04/15/2020
-ms.author: jrasnick
+ms.date: 10/30/2020
+ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7cf9f18701317482284a3f1fa4b69a2c2927f64a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5e433fd857f638c1c13e4545c19e0b6314ee62e
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287718"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93146512"
 ---
-# <a name="diagnose-azure-synapse-studio-preview-connectivity-issues-with-powershell-script"></a>Диагностика проблем подключения Azure синапсе Studio (Предварительная версия) с помощью сценария PowerShell
+# <a name="troubleshoot-synapse-studio-connectivity-with-powershell"></a>Устранение неполадок с подключением синапсе Studio к PowerShell
 
 Azure синапсе Studio (Предварительная версия) зависит от набора конечных точек веб-API для правильной работы. Это руководство поможет определить причины проблем с подключением:
 - Настройка локальной сети (например, сети за корпоративным брандмауэром) для доступа к Azure синапсе Studio.
@@ -57,5 +57,5 @@ Azure синапсе Studio (Предварительная версия) зав
  Для неудачных запросов причина отображается желтым цветом, например `NamedResolutionFailure` или `ConnectFailure` . Эти причины могут помочь определить, есть ли в вашей сетевой среде недопустимые конфигурации.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если предыдущие шаги не помогли устранить проблему, [Создайте запрос в службу поддержки](../../sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket.md).

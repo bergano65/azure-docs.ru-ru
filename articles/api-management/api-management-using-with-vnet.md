@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 07/22/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: fbff4cc067ce831e9d9f69a457f348a94257e86d
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 9714dd49e06dabf9fb4669475f96089fcfc97d73
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076918"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93146745"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -46,36 +46,36 @@ ms.locfileid: "92076918"
 
 ### <a name="enable-vnet-connectivity-using-the-azure-portal"></a>Активация возможности подключения к виртуальной сети с помощью портала Azure
 
-1. Перейдите на [портал Azure](https://portal.azure.com), чтобы найти экземпляр Управления API. Найдите и выберите **Службы управления API**.
+1. Перейдите на [портал Azure](https://portal.azure.com), чтобы найти экземпляр Управления API. Найдите и выберите **Службы управления API** .
 
 2. Выберите экземпляр Управления API.
 
-3. Щелкните **Виртуальная сеть**.
+3. Щелкните **Виртуальная сеть** .
 4. Настройте развертывание экземпляра управления API внутри виртуальной сети.
 
     ![Меню "Виртуальная сеть" для управления API][api-management-using-vnet-menu]
 5. Выберите нужный тип доступа.
 
-    * **Off**: Это значение по умолчанию. Служба управления API не развернута в виртуальной сети.
+    * **Off** : Это значение по умолчанию. Служба управления API не развернута в виртуальной сети.
 
-    * **Внешние**. Шлюз Управления API и портал разработчика доступны из общедоступного Интернета через внешнюю подсистему балансировки нагрузки. Шлюз может обращаться к ресурсам в виртуальной сети.
+    * **Внешние** . Шлюз Управления API и портал разработчика доступны из общедоступного Интернета через внешнюю подсистему балансировки нагрузки. Шлюз может обращаться к ресурсам в виртуальной сети.
 
         ![Общедоступный пиринг][api-management-vnet-public]
 
-    * **Внутренние**. Шлюз Управления API и портал разработчика доступны только из виртуальной сети через внутреннюю подсистему балансировки нагрузки. Шлюз может обращаться к ресурсам в виртуальной сети.
+    * **Внутренние** . Шлюз Управления API и портал разработчика доступны только из виртуальной сети через внутреннюю подсистему балансировки нагрузки. Шлюз может обращаться к ресурсам в виртуальной сети.
 
         ![Частный пиринг][api-management-vnet-private]
 
-6. Если выбрано **Внешняя** или **Внутренняя**, будет показан список всех регионов, где предоставляется служба управления API. Выберите значение в столбце **Расположение**, а затем выберите значения в столбцах **Виртуальная сеть** и **Подсеть**. Список виртуальных сетей заполнен классическими виртуальными сетями и виртуальными сетями Resource Manager, имеющимися в подписках Azure, которые настроены в настраиваемом регионе.
+6. Если выбрано **Внешняя** или **Внутренняя** , будет показан список всех регионов, где предоставляется служба управления API. Выберите значение в столбце **Расположение** , а затем выберите значения в столбцах **Виртуальная сеть** и **Подсеть** . Список виртуальных сетей заполнен классическими виртуальными сетями и виртуальными сетями Resource Manager, имеющимися в подписках Azure, которые настроены в настраиваемом регионе.
 
     > [!IMPORTANT]
     > При развертывании экземпляра службы управления API Azure в виртуальной сети Resource Manager служба должна находиться в выделенной подсети, в которой нет других ресурсов, кроме экземпляров управления API Azure. Если попытаться развернуть экземпляр управления API Azure в подсети виртуальной сети Resource Manager, содержащей другие ресурсы, это приведет к сбою.
 
-    Затем выберите **Применить**. Страница **Виртуальная сеть** экземпляра Управления API будет обновлена с учетом новых выбранных виртуальной сети и подсети.
+    Затем выберите **Применить** . Страница **Виртуальная сеть** экземпляра Управления API будет обновлена с учетом новых выбранных виртуальной сети и подсети.
 
     ![Выбор VPN][api-management-setup-vpn-select]
 
-7. На верхней панели навигации щелкните **Сохранить**, а затем выберите **Применить конфигурацию сети**.
+7. На верхней панели навигации щелкните **Сохранить** , а затем выберите **Применить конфигурацию сети** .
 
 > [!NOTE]
 > Виртуальный IP-адрес экземпляра управления API будет изменяться при каждом включении или отключении виртуальной сети.
@@ -85,12 +85,13 @@ ms.locfileid: "92076918"
 > [!IMPORTANT]
 > Если удалить службу управления API из виртуальной сети или изменить виртуальную сеть, в которой она развернута, ранее использовавшаяся виртуальная сеть может быть заблокирована максимум на шесть часов. В этот период вы не сможете удалить виртуальную сеть или развернуть в ней новый ресурс. Такая ситуация возникает у клиентов, использующих API версии 2018-01-01 и более ранние. Для клиентов, использующих API версии 2019-01-01 и более поздние версии, виртуальная сеть освобождается сразу после удаления связанной службы управления API.
 
-## <a name="enable-vnet-connection-using-powershell-cmdlets"></a><a name="enable-vnet-powershell"> </a>Активация подключения к виртуальной сети с помощью командлетов PowerShell
-Подключение к виртуальной сети можно также активировать с помощью командлетов PowerShell.
+## <a name="deploy-api-management-into-external-vnet"></a><a name="deploy-apim-external-vnet"> </a>Развертывание управления API во внешней виртуальной сети
 
-* **Создание службы управления API в виртуальной сети**. Чтобы создать службу управления API Azure в виртуальной сети, используйте командлет [New-AzApiManagement](/powershell/module/az.apimanagement/new-azapimanagement).
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-api-management-create-with-external-vnet%2Fazuredeploy.json)
 
-* **Развертывание существующей службы управления API в виртуальной сети**. Чтобы переместить существующую службу управления API Azure внутри виртуальной сети, используйте командлет [Update-AzApiManagementRegion](/powershell/module/az.apimanagement/update-azapimanagementregion).
+* **Создание службы управления API в виртуальной сети** . Чтобы создать службу управления API Azure в виртуальной сети, используйте командлет [New-AzApiManagement](/powershell/module/az.apimanagement/new-azapimanagement).
+
+* **Развертывание существующей службы управления API в виртуальной сети** . Чтобы переместить существующую службу управления API Azure внутри виртуальной сети, используйте командлет [Update-AzApiManagementRegion](/powershell/module/az.apimanagement/update-azapimanagementregion).
 
 ## <a name="connect-to-a-web-service-hosted-within-a-virtual-network"></a><a name="connect-vnet"> </a>Подключение к веб-службе, размещенной в виртуальной сети
 После подключения службы управления API к виртуальной сети обращение к размещенным в ней внутренним службам ничем не будет отличаться от обращения к общедоступным службам. Просто введите локальный IP-адрес или имя узла (если для виртуальной сети настроен DNS-сервер) веб-службы в поле **URL-адрес веб-службы** при создании нового API или редактировании существующего.
@@ -100,12 +101,12 @@ ms.locfileid: "92076918"
 ## <a name="common-network-configuration-issues"></a><a name="network-configuration-issues"> </a>Распространенные проблемы с конфигурацией сети
 Ниже приведен список распространенных ошибок конфигурации, возникающих при развертывании службы управления API в виртуальной сети.
 
-* **Настройка пользовательского DNS-сервера**. Служба управления API зависит от нескольких служб Azure. Если служба управления API размещается в виртуальной сети, в которой используется пользовательский DNS-сервер, она должна разрешить имена узлов этих служб Azure. Следуйте [этим](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) рекомендациям по настройке пользовательского DNS-сервера. Для справки ниже приведена таблица портов, а также другие требования к сети.
+* **Настройка пользовательского DNS-сервера** . Служба управления API зависит от нескольких служб Azure. Если служба управления API размещается в виртуальной сети, в которой используется пользовательский DNS-сервер, она должна разрешить имена узлов этих служб Azure. Следуйте [этим](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) рекомендациям по настройке пользовательского DNS-сервера. Для справки ниже приведена таблица портов, а также другие требования к сети.
 
 > [!IMPORTANT]
 > Если вы планируете использовать настраиваемые DNS-серверы для виртуальной сети, настройте их **перед** развертыванием службы управления API в этой сети. В противном случае службу управления API необходимо обновлять каждый раз при изменении DNS-серверов с помощью [операции применения конфигурации сети](/rest/api/apimanagement/2019-12-01/apimanagementservice/applynetworkconfigurationupdates).
 
-* **Порты, необходимые для управления API**. Входящим и исходящим трафиком в подсети, в которой развернута служба управления API, можно управлять с помощью [группы безопасности сети][Network Security Group]. Если какой-либо из этих портов недоступен, служба управления API может не работать должным образом и даже стать недоступной. Блокировка одного или нескольких из этих портов является одной из распространенных проблем неправильной конфигурации при использовании управления API в виртуальной сети.
+* **Порты, необходимые для управления API** . Входящим и исходящим трафиком в подсети, в которой развернута служба управления API, можно управлять с помощью [группы безопасности сети][Network Security Group]. Если какой-либо из этих портов недоступен, служба управления API может не работать должным образом и даже стать недоступной. Блокировка одного или нескольких из этих портов является одной из распространенных проблем неправильной конфигурации при использовании управления API в виртуальной сети.
 
 <a name="required-ports"> </a> При размещении экземпляра Управления API в виртуальной сети используются порты, указанные в следующей таблице.
 
@@ -126,7 +127,7 @@ ms.locfileid: "92076918"
 | * / *                        | Входящий трафик            | TCP                | AZURE_LOAD_BALANCER / VIRTUAL_NETWORK | Подсистема балансировки нагрузки инфраструктуры Azure                          | Внешний и внутренний  |
 
 >[!IMPORTANT]
-> Порты, для которых *назначение* выделено **полужирным**, требуются для успешного развертывания службы управления API. Тем не менее, блокировка других портов приведет к **ухудшению** возможности использования и **мониторинга работающей службы и предоставлению подтвержденного соглашения об уровне обслуживания**.
+> Порты, для которых *назначение* выделено **полужирным** , требуются для успешного развертывания службы управления API. Тем не менее, блокировка других портов приведет к **ухудшению** возможности использования и **мониторинга работающей службы и предоставлению подтвержденного соглашения об уровне обслуживания** .
 
 + **Функциональность TLS.** Чтобы разрешить создание и проверку цепочки сертификатов TLS/SSL, службе управления API требуется исходящее сетевое подключение к узлам ocsp.msocsp.com, mscrl.microsoft.com и crl.microsoft.com. Эта зависимость не является обязательной, если любой сертификат, передаваемый в службу управления API, содержит полную цепочку до корневого ЦС.
 
@@ -136,9 +137,9 @@ ms.locfileid: "92076918"
 
     | Среда Azure | Конечные точки                                                                                                                                                                                                                                                                                                                                                              |
     |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Azure Public      | <ul><li>gcs.prod.monitoring.core.windows.net (**новое**)</li><li>prod.warmpath.msftcloudes.com (**не рекомендуется**)</li><li>global.prod.microsoftmetrics.com (**новое**)</li><li>global.metrics.nsatc.net (**не рекомендуется**)</li><li>shoebox2.prod.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется**)</li><li>shoebox2-red.prod.microsoftmetrics.com</li><li>shoebox2-black.prod.microsoftmetrics.com</li><li>shoebox2-red.shoebox2.metrics.nsatc.net</li><li>shoebox2-black.shoebox2.metrics.nsatc.net</li><li>prod3.prod.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется**)</li><li>prod3-black.prod.microsoftmetrics.com (**новое**)</li><li>prod3-black.prod3.metrics.nsatc.net (**не рекомендуется**)</li><li>prod3-red.prod.microsoftmetrics.com (**новое**)</li><li>prod3-red.prod3.metrics.nsatc.net (**не рекомендуется**)</li><li>gcs.prod.warm.ingestion.monitoring.azure.com</li></ul> |
-    | Azure для государственных организаций  | <ul><li>fairfax.warmpath.usgovcloudapi.net;</li><li>global.prod.microsoftmetrics.com (**новое**)</li><li>global.metrics.nsatc.net (**не рекомендуется**)</li><li>shoebox2.prod.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется**)</li><li>shoebox2-red.prod.microsoftmetrics.com</li><li>shoebox2-black.prod.microsoftmetrics.com</li><li>shoebox2-red.shoebox2.metrics.nsatc.net</li><li>shoebox2-black.shoebox2.metrics.nsatc.net</li><li>prod3.prod.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется**)</li><li>prod3-black.prod.microsoftmetrics.com</li><li>prod3-red.prod.microsoftmetrics.com</li><li>prod5.prod.microsoftmetrics.com</li><li>prod5-black.prod.microsoftmetrics.com</li><li>prod5-red.prod.microsoftmetrics.com</li><li>gcs.prod.warm.ingestion.monitoring.azure.us</li></ul>                                                                                                                                                                                                                                                |
-    | Azure China 21Vianet     | <ul><li>mooncake.warmpath.chinacloudapi.cn;</li><li>global.prod.microsoftmetrics.com (**новое**)</li><li>global.metrics.nsatc.net (**не рекомендуется**)</li><li>shoebox2.prod.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется**)</li><li>shoebox2-red.prod.microsoftmetrics.com</li><li>shoebox2-black.prod.microsoftmetrics.com</li><li>shoebox2-red.shoebox2.metrics.nsatc.net</li><li>shoebox2-black.shoebox2.metrics.nsatc.net</li><li>prod3.prod.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется**)</li><li>prod3-black.prod.microsoftmetrics.com</li><li>prod3-red.prod.microsoftmetrics.com</li><li>prod5.prod.microsoftmetrics.com</li><li>prod5-black.prod.microsoftmetrics.com</li><li>prod5-red.prod.microsoftmetrics.com</li><li>gcs.prod.warm.ingestion.monitoring.azure.cn</li></ul>                                                                                                                                                                                                                                                |
+    | Azure Public      | <ul><li>gcs.prod.monitoring.core.windows.net ( **новое** )</li><li>prod.warmpath.msftcloudes.com ( **не рекомендуется** )</li><li>global.prod.microsoftmetrics.com ( **новое** )</li><li>global.metrics.nsatc.net ( **не рекомендуется** )</li><li>shoebox2.prod.microsoftmetrics.com ( **новое** )</li><li>shoebox2.metrics.nsatc.net ( **не рекомендуется** )</li><li>shoebox2-red.prod.microsoftmetrics.com</li><li>shoebox2-black.prod.microsoftmetrics.com</li><li>shoebox2-red.shoebox2.metrics.nsatc.net</li><li>shoebox2-black.shoebox2.metrics.nsatc.net</li><li>prod3.prod.microsoftmetrics.com ( **новое** )</li><li>prod3.metrics.nsatc.net ( **не рекомендуется** )</li><li>prod3-black.prod.microsoftmetrics.com ( **новое** )</li><li>prod3-black.prod3.metrics.nsatc.net ( **не рекомендуется** )</li><li>prod3-red.prod.microsoftmetrics.com ( **новое** )</li><li>prod3-red.prod3.metrics.nsatc.net ( **не рекомендуется** )</li><li>gcs.prod.warm.ingestion.monitoring.azure.com</li></ul> |
+    | Azure для государственных организаций  | <ul><li>fairfax.warmpath.usgovcloudapi.net;</li><li>global.prod.microsoftmetrics.com ( **новое** )</li><li>global.metrics.nsatc.net ( **не рекомендуется** )</li><li>shoebox2.prod.microsoftmetrics.com ( **новое** )</li><li>shoebox2.metrics.nsatc.net ( **не рекомендуется** )</li><li>shoebox2-red.prod.microsoftmetrics.com</li><li>shoebox2-black.prod.microsoftmetrics.com</li><li>shoebox2-red.shoebox2.metrics.nsatc.net</li><li>shoebox2-black.shoebox2.metrics.nsatc.net</li><li>prod3.prod.microsoftmetrics.com ( **новое** )</li><li>prod3.metrics.nsatc.net ( **не рекомендуется** )</li><li>prod3-black.prod.microsoftmetrics.com</li><li>prod3-red.prod.microsoftmetrics.com</li><li>prod5.prod.microsoftmetrics.com</li><li>prod5-black.prod.microsoftmetrics.com</li><li>prod5-red.prod.microsoftmetrics.com</li><li>gcs.prod.warm.ingestion.monitoring.azure.us</li></ul>                                                                                                                                                                                                                                                |
+    | Azure China 21Vianet     | <ul><li>mooncake.warmpath.chinacloudapi.cn;</li><li>global.prod.microsoftmetrics.com ( **новое** )</li><li>global.metrics.nsatc.net ( **не рекомендуется** )</li><li>shoebox2.prod.microsoftmetrics.com ( **новое** )</li><li>shoebox2.metrics.nsatc.net ( **не рекомендуется** )</li><li>shoebox2-red.prod.microsoftmetrics.com</li><li>shoebox2-black.prod.microsoftmetrics.com</li><li>shoebox2-red.shoebox2.metrics.nsatc.net</li><li>shoebox2-black.shoebox2.metrics.nsatc.net</li><li>prod3.prod.microsoftmetrics.com ( **новое** )</li><li>prod3.metrics.nsatc.net ( **не рекомендуется** )</li><li>prod3-black.prod.microsoftmetrics.com</li><li>prod3-red.prod.microsoftmetrics.com</li><li>prod5.prod.microsoftmetrics.com</li><li>prod5-black.prod.microsoftmetrics.com</li><li>prod5-red.prod.microsoftmetrics.com</li><li>gcs.prod.warm.ingestion.monitoring.azure.cn</li></ul>                                                                                                                                                                                                                                                |
 
   >[!IMPORTANT]
   > Изменение указанных выше кластеров с зоной DNS **.nsatc.net** на **.microsoftmetrics.com** является по большей части изменением DNS. IP-адрес кластера не изменится.
@@ -147,13 +148,13 @@ ms.locfileid: "92076918"
 
 + **Службы SMTP-ретрансляции.** Исходящее сетевое подключение для ретрансляции SMTP, которое разрешается в узле `smtpi-co1.msn.com`, `smtpi-ch1.msn.com`, `smtpi-db3.msn.com`, `smtpi-sin.msn.com` и `ies.global.microsoft.com`.
 
-+ **CAPTCHA на портале разработчика**. Исходящее сетевое подключение для CAPTCHA на портале разработчика, которое разрешается в узле `client.hip.live.com` и `partner.hip.live.com`.
++ **CAPTCHA на портале разработчика** . Исходящее сетевое подключение для CAPTCHA на портале разработчика, которое разрешается в узле `client.hip.live.com` и `partner.hip.live.com`.
 
 + **Портал Azure Diagnostics.** Включает поток журналов диагностики на портале Azure при использовании расширения управления API внутри виртуальной сети; требуется исходящий доступ к `dc.services.visualstudio.com` на порте 443. Это помогает в устранении неполадок, которые могут возникнуть при использовании расширения.
 
-+ **Azure Load Balancer**. Разрешение входящего запроса из тега службы `AZURE_LOAD_BALANCER` не является требованием для номера SKU `Developer`, так как за ним развертывается только одна единица вычислений. Но входящие запросы с адреса [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md) становятся критически важными при масштабировании до более высокого номера SKU, например `Premium`, как так сбой проверки работоспособности из Load Balancer не позволяет выполнить развертывание.
++ **Azure Load Balancer** . Разрешение входящего запроса из тега службы `AZURE_LOAD_BALANCER` не является требованием для номера SKU `Developer`, так как за ним развертывается только одна единица вычислений. Но входящие запросы с адреса [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md) становятся критически важными при масштабировании до более высокого номера SKU, например `Premium`, как так сбой проверки работоспособности из Load Balancer не позволяет выполнить развертывание.
 
-+ **Application Insights**. Если в службе управления API включена функция мониторинга [Application Insights Azure](api-management-howto-app-insights.md) , необходимо разрешить исходящее подключение к [конечной точке телеметрии](../azure-monitor/app/ip-addresses.md#outgoing-ports) из виртуальной сети. 
++ **Application Insights** . Если в службе управления API включена функция мониторинга [Application Insights Azure](api-management-howto-app-insights.md) , необходимо разрешить исходящее подключение к [конечной точке телеметрии](../azure-monitor/app/ip-addresses.md#outgoing-ports) из виртуальной сети. 
 
 + **Принудительное туннелирование трафика в локальный брандмауэр с помощью Express Route или сетевого виртуального устройства.** Стандартная конфигурация клиента заключается в определении собственного маршрута по умолчанию (0.0.0.0/0), когда весь трафик из делегированной подсети Управления API принудительно проходит через локальный брандмауэр или виртуальное сетевое устройство. Этот поток трафика неизменно прерывает подключение к службе управления API Azure, так как исходящий трафик или блокируется локально, или преобразуется с помощью NAT в нераспознаваемый набор адресов, которые больше не относятся к различным конечным точкам Azure. Для решения проблемы требуется выполнить несколько приведенных ниже действий.
 
@@ -178,7 +179,7 @@ ms.locfileid: "92076918"
 
 * **Добавочные операции обновления.** При внесении изменений в сеть воспользуйтесь [API состояния сети](/rest/api/apimanagement/2019-12-01/networkstatus), чтобы проверить, не утратила ли служба управления API доступ к каким-либо критически важным ресурсам, от которых она зависит. Состояние подключения должно обновляться каждые 15 минут.
 
-* **Ссылки для перехода на ресурсы.** При развертывании в подсеть виртуальной сети, созданной с помощью модели Resource Manager, API управления резервирует эту подсеть, создавая ссылку для перехода на ресурс. Если эта подсеть уже содержит ресурс другого поставщика, развертывание **завершится ошибкой**. Аналогично, если вы перемещаете службу управления API в другую подсеть или удаляете ее, мы удаляем соответствующую ссылку для перехода на ресурс.
+* **Ссылки для перехода на ресурсы.** При развертывании в подсеть виртуальной сети, созданной с помощью модели Resource Manager, API управления резервирует эту подсеть, создавая ссылку для перехода на ресурс. Если эта подсеть уже содержит ресурс другого поставщика, развертывание **завершится ошибкой** . Аналогично, если вы перемещаете службу управления API в другую подсеть или удаляете ее, мы удаляем соответствующую ссылку для перехода на ресурс.
 
 ## <a name="subnet-size-requirement"></a><a name="subnet-size"> </a>Требования к размеру подсети
 Azure резервирует некоторые IP-адреса в каждой подсети, которые нельзя использовать. Зарезервированы первый и последний IP-адреса подсетей (для соответствия требованиям протокола), а также еще три адреса, используемые для служб Azure. Дополнительные сведения см. в разделе [Существуют ли ограничения на использование IP-адресов в пределах этих подсетей?](../virtual-network/virtual-networks-faq.md#are-there-any-restrictions-on-using-ip-addresses-within-these-subnets)
@@ -203,7 +204,7 @@ Azure резервирует некоторые IP-адреса в каждой 
 
 ## <a name="control-plane-ip-addresses"></a><a name="control-plane-ips"> </a> IP-адреса уровня управления
 
-IP-адреса разделены **средой Azure**. При разрешении IP-адреса входящих запросов, помеченных как **глобальные** , должны быть разрешены вместе с IP-адресом конкретного **региона** .
+IP-адреса разделены **средой Azure** . При разрешении IP-адреса входящих запросов, помеченных как **глобальные** , должны быть разрешены вместе с IP-адресом конкретного **региона** .
 
 | **Среда Azure**|   **Регион**|  **IP-адрес**|
 |-----------------|-------------------------|---------------|

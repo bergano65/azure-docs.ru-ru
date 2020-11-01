@@ -1,18 +1,18 @@
 ---
-title: Журналы Apache Hive, заполняющие место на диске — Azure HDInsight
-description: Журналы Apache Hive заполняют место на диске головных узлов в Azure HDInsight.
+title: 'Устранение неполадок: Apache Hive журналов заполнение дискового пространства — Azure HDInsight'
+description: В этой статье приведены инструкции по устранению неполадок, которые необходимо выполнить, когда Apache Hive журналы заполняют дисковое пространство головных узлов в Azure HDInsight.
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: nisgoel
 ms.author: nisgoel
 ms.reviewer: jasonh
 ms.date: 10/05/2020
-ms.openlocfilehash: 5554a66927fc70f22ec552b938ae62038a04acb9
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 64bf5714f5eb99df9929a47fef414a827ec680af
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533025"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93145639"
 ---
 # <a name="scenario-apache-hive-logs-are-filling-up-the-disk-space-on-the-head-nodes-in-azure-hdinsight"></a>Сценарий: журналы Apache Hive заполняют дисковое пространство головных узлов в Azure HDInsight.
 
@@ -20,13 +20,13 @@ ms.locfileid: "92533025"
 
 ## <a name="issue"></a>Проблема
 
-В кластере Apache Hive или LLAP нежелательные журналы занимают все дисковое пространство на головных узлах. Из-за этого могут возникнуть следующие проблемы.
+В кластере Apache Hive или LLAP нежелательные журналы занимают все дисковое пространство на головных узлах. Это состояние может вызвать следующие проблемы.
 
-1. Отказ в доступе SSH из-за отсутствия свободного места на головном узле.
-2. Ambari выдает *ошибку HTTP: служба 503 недоступна* .
-3. HiveServer2 Interactive не перезапускается.
+- SSH-доступ завершается сбоем, так как на головном узле не осталось места.
+- Ambari выдает *ошибку HTTP: служба 503 недоступна* .
+- HiveServer2 Interactive не перезапускается.
 
-`ambari-agent`При возникновении проблемы в журналах будет отображаться следующее.
+`ambari-agent`При возникновении проблемы в журналах будут содержаться следующие записи:
 ```
 ambari_agent - Controller.py - [54697] - Controller - ERROR - Error:[Errno 28] No space left on device
 ```
@@ -36,17 +36,17 @@ ambari_agent - HostCheckReportFileHandler.py - [54697] - ambari_agent.HostCheckR
 
 ## <a name="cause"></a>Причина
 
-В расширенных конфигурациях Hive-log4j текущее расписание удаления по умолчанию задается для файлов старше 30 дней в зависимости от даты последнего изменения.
+В расширенных конфигурациях Hive log4j текущее расписание удаления по умолчанию — это удаление файлов старше 30 дней на основе даты последнего изменения.
 
 ## <a name="resolution"></a>Решение
 
-1. Перейдите к сводке компонентов Hive на портале Ambari и щелкните `Configs` вкладку.
+1. Перейдите на страницу Сводка по компоненту Hive на портале Ambari и выберите вкладку **configs (конфигурации** ).
 
-2. Перейдите к `Advanced hive-log4j` разделу в разделе Дополнительные параметры.
+2. Перейдите к `Advanced hive-log4j` разделу **Дополнительные параметры** .
 
-3. Задайте `appender.RFA.strategy.action.condition.age` для параметра значение возраста по своему усмотрению. Пример для 14 дней: `appender.RFA.strategy.action.condition.age = 14D`
+3. Задайте `appender.RFA.strategy.action.condition.age` для параметра возраст по своему усмотрению. В этом примере для параметра Age будет задано значение 14 дней: `appender.RFA.strategy.action.condition.age = 14D`
 
-4. Если не отображаются связанные параметры, добавьте следующие параметры.
+4. Если вы не видите связанные параметры, добавьте следующие параметры:
     ```
     # automatically delete hive log
     appender.RFA.strategy.action.type = Delete
@@ -57,7 +57,7 @@ ambari_agent - HostCheckReportFileHandler.py - [54697] - ambari_agent.HostCheckR
     appender.RFA.strategy.action.PathConditions.regex = hive*.*log.*
     ```
 
-5. Задайте `hive.root.logger` для значение `INFO,RFA` следующим образом. Значение по умолчанию — DEBUG, что делает журналы очень большими.
+5. Задайте `hive.root.logger` для значение `INFO,RFA` , как показано в следующем примере. Значение по умолчанию — `DEBUG` , что делает журналы большими.
 
     ```
     # Define some default values that can be overridden by system properties

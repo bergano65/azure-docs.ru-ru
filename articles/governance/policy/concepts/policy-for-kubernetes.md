@@ -3,12 +3,12 @@ title: Сведения о политике Azure для Kubernetes
 description: Узнайте, как Политика Azure использует Rego и Open Policy Agent для управления кластерами, работающими под управлением Kubernetes в Azure или в локальной среде.
 ms.date: 09/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: bd0dc08583b126b6260999ace14d8fc13c52c1f7
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 1e85d7af26e52ea38c09ec0c052b5c6a2787bb80
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676696"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93146302"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Общие сведения о политике Azure для кластеров Kubernetes
 
@@ -37,7 +37,7 @@ ms.locfileid: "92676696"
    - [Обработчик AKS](#install-azure-policy-add-on-for-aks-engine)
 
    > [!NOTE]
-   > Распространенные проблемы с установкой см. [в разделе Устранение неполадок в надстройке политики Azure](../troubleshoot/general.md#add-on-installation-errors).
+   > Распространенные проблемы с установкой см. [в разделе Устранение неполадок в надстройке политики Azure](../troubleshoot/general.md#add-on-for-kubernetes-installation-errors).
 
 1. [Общие сведения о языке Политики Azure для Kubernetes](#policy-language)
 

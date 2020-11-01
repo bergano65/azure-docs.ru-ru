@@ -1,18 +1,18 @@
 ---
 title: Устранение распространенных ошибок
 description: Узнайте, как устранять неполадки при создании определений политик, различных пакетах SDK и надстройки для Kubernetes.
-ms.date: 10/05/2020
+ms.date: 10/30/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 98b5f1658a7d3fc7c4a7db7145b92bb6065befc5
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 74b622dd41fb28e845a35780e5d06588189ec029
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999894"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93146285"
 ---
 # <a name="troubleshoot-errors-using-azure-policy"></a>Устранение ошибок с помощью политики Azure
 
-Вы можете столкнуться с ошибками при создании определений политик, работе с пакетом SDK или настройке [политики Azure для](../concepts/policy-for-kubernetes.md) надстройки Kubernetes. В этой статье описываются различные ошибки, которые могут возникнуть, и пути их решения.
+Вы можете столкнуться с ошибками при создании определений политик, работе с пакетом SDK или настройке [политики Azure для](../concepts/policy-for-kubernetes.md) надстройки Kubernetes. В этой статье описываются различные общие ошибки, которые могут возникнуть, и способы их устранения.
 
 ## <a name="finding-error-details"></a>Поиск сведений об ошибке
 
@@ -56,7 +56,7 @@ ms.locfileid: "91999894"
 
 #### <a name="issue"></a>Проблема
 
-Ресурс не находится в состоянии оценки ( _соответствует_ или _не соответствует требованиям_), ожидаемому для этого ресурса.
+Ресурс не находится в состоянии оценки ( _соответствует_ или _не соответствует требованиям_ ), ожидаемому для этого ресурса.
 
 #### <a name="cause"></a>Причина
 
@@ -88,14 +88,14 @@ ms.locfileid: "91999894"
 
 #### <a name="cause"></a>Причина
 
-Назначение политики настроено для [Енфорцементмоде](../concepts/assignment-structure.md#enforcement-mode) _отключено_. Если режим принудительного применения отключен, то этот результат политики не применяется, и в журнале действий нет записи.
+Назначение политики настроено для [Енфорцементмоде](../concepts/assignment-structure.md#enforcement-mode) _отключено_ . Если режим принудительного применения отключен, то этот результат политики не применяется, и в журнале действий нет записи.
 
 #### <a name="resolution"></a>Решение
 
 Выполните следующие действия, чтобы устранить проблему принудительного применения назначения политики.
 
 1. Сначала дождитесь необходимого времени для завершения оценки, и результаты обеспечения соответствия будут доступны в портал Azure или пакете SDK. Чтобы запустить новую проверку для оценки с Azure PowerShell или REST API, см. статью [Проверка оценки по требованию](../how-to/get-compliance-data.md#on-demand-evaluation-scan).
-1. Убедитесь, что параметры назначения и область назначения заданы правильно и что **Енфорцементмоде** _включен_. 
+1. Убедитесь, что параметры назначения и область назначения заданы правильно и что **Енфорцементмоде** _включен_ . 
 1. Проверьте [режим определения политики](../concepts/definition-structure.md#mode):
    - Режим "все" для всех типов ресурсов.
    - Режим "индексированный", если определение политики проверяет наличие тегов или расположения.
@@ -135,7 +135,7 @@ ms.locfileid: "91999894"
 
 Чтобы передать функцию через, чтобы она была частью определения политики, заэкранированайте всю строку с `[` таким образом, чтобы свойство было похоже на `[[resourceGroup().tags.myTag]` . Escape-символ заставляет диспетчер ресурсов считать значение строкой при обработке шаблона. Затем политика Azure помещает функцию в определение политики, что позволяет использовать ее динамически, как и ожидалось. Дополнительные сведения см. [в разделе синтаксис и выражения в шаблонах Azure Resource Manager](../../../azure-resource-manager/templates/template-expressions.md).
 
-## <a name="add-on-installation-errors"></a>Ошибки установки надстройки
+## <a name="add-on-for-kubernetes-installation-errors"></a>Надстройка для ошибок установки Kubernetes
 
 ### <a name="scenario-install-using-helm-chart-fails-on-password"></a>Сценарий: Установка с использованием диаграммы Helm завершается сбоем при пароле
 
@@ -188,10 +188,131 @@ ms.locfileid: "91999894"
 
 [Важное изменение, выпущенное для политик аудита настройки гостя](https://techcommunity.microsoft.com/t5/azure-governance-and-management/important-change-released-for-guest-configuration-audit-policies/ba-p/1655316)
 
+## <a name="add-on-for-kubernetes-general-errors"></a>Общая ошибка надстройки для Kubernetes
+
+### <a name="scenario-add-on-doesnt-work-with-aks-clusters-on-version-119-preview"></a>Сценарий: надстройка не работает с кластерами AKS в версии 1,19 (Предварительная версия)
+
+#### <a name="issue"></a>Проблема
+
+Кластеры версии 1,19 возвращают эту ошибку с помощью контроллера привратника и веб-перехватчика политики.
+
+```
+2020/09/22 20:06:55 http: TLS handshake error from 10.244.1.14:44282: remote error: tls: bad certificate
+```
+
+#### <a name="cause"></a>Причина
+
+AKS клусерс в версии 1,19 (Предварительная версия) еще не совместима с надстройкой политики Azure.
+
+#### <a name="resolution"></a>Решение
+
+Избегайте использования Kubernetes 1,19 (Предварительная версия) с надстройкой политики Azure. Надстройку можно использовать с любой поддерживаемой общедоступной версией, например 1,16, 1,17 или 1,18.
+
+### <a name="scenario-add-on-is-unable-to-reach-the-azure-policy-service-endpoint-due-to-egress-restrictions"></a>Сценарий: надстройка не может связаться с конечной точкой службы политики Azure из-за ограничений исходящего трафика
+
+#### <a name="issue"></a>Проблема
+
+Надстройка не может связаться с конечной точкой службы политики Azure и возвращает одну из следующих ошибок:
+
+- `failed to fetch token, service not reachable`
+- `Error getting file "Get https://raw.githubusercontent.com/Azure/azure-policy/master/built-in-references/Kubernetes/container-allowed-images/template.yaml: dial tcp 151.101.228.133.443: connect: connection refused`
+
+#### <a name="cause"></a>Причина
+
+Эта проблема возникает, когда исходящий трафик кластера заблокирован.
+
+#### <a name="resolution"></a>Решение
+
+Убедитесь, что домены и порты в следующих статьях открыты:
+
+- [Необходимые правила исходящей сети и FQDN для кластеров AKS](../../../aks/limit-egress-traffic.md#required-outbound-network-rules-and-fqdns-for-aks-clusters)
+- [Установка надстройки политики Azure для Kubernetes с поддержкой дуги Azure (Предварительная версия)](../concepts/policy-for-kubernetes.md#install-azure-policy-add-on-for-azure-arc-enabled-kubernetes)
+
+### <a name="scenario-add-on-is-unable-to-reach-the-azure-policy-service-endpoint-due-to-aad-pod-identity-configuration"></a>Сценарий: надстройке не удается связаться с конечной точкой службы политики Azure из-за конфигурации AAD-Pod-Identity
+
+#### <a name="issue"></a>Проблема
+
+Надстройка не может связаться с конечной точкой службы политики Azure и возвращает одну из следующих ошибок:
+
+- `azure.BearerAuthorizer#WithAuthorization: Failed to refresh the Token for request to https://gov-prod-policy-data.trafficmanager.net/checkDataPolicyCompliance?api-version=2019-01-01-preview: StatusCode=404`
+- `adal: Refresh request failed. Status Code = '404'. Response body: getting assigned identities for pod kube-system/azure-policy-8c785548f-r882p in CREATED state failed after 16 attempts, retry duration [5]s, error: <nil>`
+
+#### <a name="cause"></a>Причина
+
+Эта ошибка возникает, если в кластере установлена _надстройка Add-Pod-Identity_ , а _KUBE-System_ не исключены в _AAD-Pod-Identity_ .
+
+Модули управления " _AAD-Pod-Identity_ " с узлом компонента идентификации (NMI) изменяют узлы "Iptables" для перехвата вызовов к конечной точке метаданных экземпляра Azure. Такая настройка означает, что любой запрос, сделанный в конечной точке метаданных, перехватывается функцией NMI, даже если в Pod не используется _AAD-Pod-Identity_ .
+**Азуреподидентитексцептион** CRD можно настроить для информирования _AAD-Pod_ о том, что любые запросы к конечной точке метаданных, создаваемые из Pod, которые соответствуют меткам, определенным в CRD, должны быть прокси без обработки в NMI.
+
+#### <a name="resolution"></a>Решение
+
+Исключите системные модули с `kubernetes.azure.com/managedby: aks` меткой в пространстве имен _KUBE-System_ в _AAD-Pod-Identity_ , настроив **азуреподидентитексцептион** CRD.
+
+Дополнительные сведения см. в разделе [Отключение удостоверения Pod для конкретного Pod или приложения](https://azure.github.io/aad-pod-identity/docs/configure/application_exception).
+
+Сведения о настройке исключения см. в следующем примере:
+
+```yaml
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzurePodIdentityException
+metadata:
+  name: mic-exception
+  namespace: default
+spec:
+  podLabels:
+    app: mic
+    component: mic
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzurePodIdentityException
+metadata:
+  name: aks-addon-exception
+  namespace: kube-system
+spec:
+  podLabels:
+    kubernetes.azure.com/managedby: aks
+```
+
+### <a name="scenario-the-resource-provider-isnt-registered"></a>Сценарий: поставщик ресурсов не зарегистрирован
+
+#### <a name="issue"></a>Проблема
+
+Надстройка может получить доступ к конечной точке службы политики Azure, но видит следующую ошибку:
+
+```
+The resource provider 'Microsoft.PolicyInsights' is not registered in subscription '{subId}'. See https://aka.ms/policy-register-subscription for how to register subscriptions.
+```
+
+#### <a name="cause"></a>Причина
+
+`Microsoft.PolicyInsights`Поставщик ресурсов не зарегистрирован и должен быть зарегистрирован для надстройки, чтобы получать определения политик и возвращать данные о соответствии.
+
+#### <a name="resolution"></a>Решение
+
+Зарегистрируйте поставщик ресурсов `Microsoft.PolicyInsights`. Инструкции см. [в разделе Регистрация поставщика ресурсов](../../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider).
+
+### <a name="scenario-the-subscript-is-disabled"></a>Сценарий: этот индекс отключен
+
+#### <a name="issue"></a>Проблема
+
+Надстройка может получить доступ к конечной точке службы политики Azure, но видит следующую ошибку:
+
+```
+The subscription '{subId}' has been disabled for azure data-plane policy. Please contact support.
+```
+
+#### <a name="cause"></a>Причина
+
+Эта ошибка означает, что подписка была определена как проблематичная, а флаг функции `Microsoft.PolicyInsights/DataPlaneBlocked` был добавлен для блокировки подписки.
+
+#### <a name="resolution"></a>Решение
+
+`azuredg@microsoft.com`Чтобы исследовать и устранить эту проблему, обратитесь к группе функций. 
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 - Получите ответы от экспертов по [Microsoft Q&а](/answers/topics/azure-policy.html).
 - Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
-- Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.
+- Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку** .
