@@ -10,13 +10,13 @@ ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 06/20/2019
-ms.openlocfilehash: 08aaec23b0edc0e797d26d4b51081f6daa5b5c19
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 10/29/2020
+ms.openlocfilehash: 30a511caec82ead406f0a80f107e4261a707bfdb
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92671231"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93040177"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. Импорт BACPAC-файла в базу данных в службе "База данных SQL Azure" или "Управляемый экземпляр SQL Azure"
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -62,9 +62,11 @@ ms.locfileid: "92671231"
 
 ## <a name="using-sqlpackage"></a>Использование SqlPackage
 
-Импорт базы данных SQL Server с помощью программы командной строки [SqlPackage](/sql/tools/sqlpackage) описывается в разделе [Параметры и свойства импорта](/sql/tools/sqlpackage#import-parameters-and-properties). SqlPackage входит в состав [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools для Visual Studio](/sql/ssdt/download-sql-server-data-tools-ssdt). Кроме того, новую версию [SqlPackage](https://www.microsoft.com/download/details.aspx?id=53876) можно скачать в Центре загрузки Майкрософт.
+Импорт базы данных SQL Server с помощью программы командной строки [SqlPackage](/sql/tools/sqlpackage) описывается в разделе [Параметры и свойства импорта](/sql/tools/sqlpackage#import-parameters-and-properties). SqlPackage входит в состав [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools для Visual Studio](/sql/ssdt/download-sql-server-data-tools-ssdt). Кроме того, новую версию [SqlPackage](https://www.microsoft.com/download/details.aspx?id=53876) можно скачать в Центре загрузки Майкрософт. 
 
 Вместо портала Azure рекомендуется использовать SqlPackage для масштабирования и обеспечения производительности в большинстве рабочих сред. Сведения о миграции из SQL Server в Базу данных SQL Azure с помощью файлов `BACPAC` см. в блоге команды Помощника по Azure для пользователей SQL Server [здесь](/archive/blogs/sqlcat/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files).
+
+Модель подготовки на основе DTU поддерживает выбор значений максимального размера базы данных для каждого уровня. При импорте базы данных [используйте одно из этих поддерживаемых значений](/sql/t-sql/statements/create-database-transact-sql). 
 
 Приведенная ниже команда SqlPackage импортирует базу данных **AdventureWorks2008R2** из локального хранилища на логический сервер SQL с именем **mynewserver20170403** . Эта команда создает базу данных **myMigratedDatabase** с уровнем служб **Премиум** и целевым уровнем служб **P6** . Подставьте соответствующие значения для своей среды.
 
@@ -94,7 +96,7 @@ sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка сосредоточена на модуле Az.Sql. Исправления ошибок для модуля AzureRM будут продолжать выпускаться как минимум до декабря 2020 г.  Аргументы команд в модулях Az и AzureRm практически идентичны. Дополнительные сведения о совместимости см. в статье [Знакомство с новым модулем Az для Azure PowerShell](/powershell/azure/new-azureps-module-az).
 
-Используйте командлет [New-AzSqlDatabaseImport](/powershell/module/az.sql/new-azsqldatabaseimport), чтобы отправить запрос на импорт базы данных в Azure. Операция импорта может занять некоторое время в зависимости от размера базы данных.
+Используйте командлет [New-AzSqlDatabaseImport](/powershell/module/az.sql/new-azsqldatabaseimport), чтобы отправить запрос на импорт базы данных в Azure. Операция импорта может занять некоторое время в зависимости от размера базы данных. Модель подготовки на основе DTU поддерживает выбор значений максимального размера базы данных для каждого уровня. При импорте базы данных [используйте одно из этих поддерживаемых значений](/sql/t-sql/statements/create-database-transact-sql). 
 
 ```powershell
 $importRequest = New-AzSqlDatabaseImport -ResourceGroupName "<resourceGroupName>" `
@@ -126,7 +128,7 @@ $importStatus
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Чтобы отправить запрос на импорт базы данных в Azure, используйте команду [az-sql-db-import](/cli/azure/sql/db#az-sql-db-import). Операция импорта может занять некоторое время в зависимости от размера базы данных.
+Чтобы отправить запрос на импорт базы данных в Azure, используйте команду [az-sql-db-import](/cli/azure/sql/db#az-sql-db-import). Операция импорта может занять некоторое время в зависимости от размера базы данных. Модель подготовки на основе DTU поддерживает выбор значений максимального размера базы данных для каждого уровня. При импорте базы данных [используйте одно из этих поддерживаемых значений](/sql/t-sql/statements/create-database-transact-sql). 
 
 ```azurecli
 # get the storage account key

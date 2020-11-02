@@ -128,6 +128,8 @@
           href: troubleshoot-reservation-recommendation.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: 'Устранение неполадок, связанных с недоступностью резервирования'
           href: troubleshoot-product-not-available.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Устранение неполадок со скачиванием сведений об использовании
+          href: troubleshoot-download-usage.md?toc=/azure/cost-management-billing/reservations/toc.json
 - name: Справочник
   items:
     - name: "Резервирования\_— REST API"

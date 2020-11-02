@@ -1,15 +1,17 @@
 - name: Обзор
   href: overview.md
-- name: Краткие руководства по Red Hat
-  items: null
-- name: Краткое руководство по использованию WildFly в CentOS
-  href: wildfly-on-centos.md
 - name: Образы Red Hat Enterprise Linux
   items:
-    - name: Сведения об образах Red Hat Enterprise Linux
+    - name: Общие сведения об образе RHEL
       href: redhat-images.md
-    - name: Список образов Red Hat Enterprise Linux
+    - name: Список образов RHEL
       href: redhat-imagelist.md
+- name: Краткие руководства по использованию Java для Red Hat
+  items:
+    - name: Использование JBoss EAP + RHEL в виртуальной машине или масштабируемом наборе виртуальных машин
+      href: jboss-eap-on-rhel.md
+    - name: Использование WildFly + CentOS в виртуальной машине
+      href: wildfly-on-centos.md
 - name: Инфраструктура обновления Red Hat в Azure
   href: redhat-rhui.md
 - name: Предложение образа BYOS Red Hat Enterprise Linux

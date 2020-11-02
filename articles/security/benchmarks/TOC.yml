@@ -113,6 +113,8 @@
       href: ../../virtual-network/public-ip-security-baseline.md
     - name: Базовые средства безопасности Azure Resource Graph
       href: ../../governance/resource-graph/concepts/azure-security-benchmark-baseline.md
+    - name: Базовые средства безопасности Azure Resource Manager
+      href: ../../azure-resource-manager/management/security-baseline.md
     - name: Базовые показатели безопасности Azure Sentinel
       href: ../../sentinel/security-baseline.md
     - name: Базовые средства безопасности Базы данных SQL Azure

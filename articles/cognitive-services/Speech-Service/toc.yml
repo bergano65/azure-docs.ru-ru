@@ -39,6 +39,8 @@
           href: how-to-automatic-language-detection.md
         - name: Использование API пакетного транскрибирования
           href: batch-transcription.md
+        - name: Оценка произношения
+          href: how-to-pronunciation-assessment.md
     - name: Учебники
       items:
         - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'

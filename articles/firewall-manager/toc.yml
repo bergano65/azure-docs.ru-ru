@@ -28,6 +28,8 @@
       href: deployment-overview.md
     - name: Поставщики партнера по безопасности
       href: trusted-security-partners.md
+    - name: Защита концентраторов с использованием Check Point Cloudguard Connect
+      href: check-point-overview.md
     - name: Группы IP-адресов
       href: ip-groups.md
     - name: Логика обработки правил

@@ -106,7 +106,7 @@
       items:
         - name: Общие сведения о системных разделах
           href: system-topics.md
-        - name: Источники событий
+        - name: Источники событий (издатели)
           items:
             - name: Конфигурация приложений Azure
               href: event-schema-app-configuration.md
@@ -138,13 +138,15 @@
               href: event-schema-azure-signalr.md
             - name: Подписки Azure
               href: event-schema-subscriptions.md
-    - name: Партнерские разделы
+    - name: События партнеров
       items:
-        - name: Общие сведения о партнерских разделах
-          href: partner-topics-overview.md
-        - name: Auth0
-          href: auth0-overview.md
-        - name: Как стать партнером Сетки событий
+        - name: Общие сведения о событиях партнеров
+          href: partner-events-overview.md
+        - name: Источники событий (издатели)
+          items:
+            - name: Auth0
+              href: auth0-overview.md
+        - name: Общие сведения о подключении партнеров
           href: partner-onboarding-overview.md
     - name: Домены событий
       href: event-domains.md
@@ -210,12 +212,16 @@
           href: create-view-manage-system-topics-cli.md
         - name: Шаблон Azure Resource Manager
           href: create-view-manage-system-topics-arm.md
+    - name: События партнеров
+      items:
+        - name: Подключение в качестве партнера
+          href: onboard-partner.md
+        - name: Подписка на события Auth0
+          href: auth0-how-to.md
     - name: Получение ключей доступа для разделов или доменов
       href: get-access-keys.md
     - name: Публикация в пользовательском разделе
       href: post-to-custom-topic.md
-    - name: Подписка на события Auth0
-      href: auth0-how-to.md
     - name: Получение событий в конечной точке HTTP
       href: receive-events.md
     - name: Задание расположения для недоставленных сообщений и политики повтора

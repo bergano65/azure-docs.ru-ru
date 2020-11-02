@@ -127,6 +127,8 @@
   items:
     - name: Ограничения службы Digital Twins
       href: reference-service-limits.md
+    - name: Цены на Digital Twins
+      href: 'https://azure.microsoft.com/pricing/details/digital-twins/'
     - name: API и SDK
       items:
         - name: Справочник по REST API
@@ -188,7 +190,7 @@
     - name: CLI Digital Twins
       items:
         - name: Справочник по CLI Digital Twins
-          href: /cli/azure/ext/azure-iot/dt?view=azure-cli-latest
+          href: /cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true
         - name: Пакет CLI
           href: 'https://github.com/Azure/azure-iot-cli-extension/releases'
     - name: DTDL

@@ -32,6 +32,9 @@
     - name: "Назначение политики\_— шаблон Resource Manager"
       displayName: 'assign, compliance, resource manager'
       href: ./assign-policy-template.md
+    - name: "Назначение политики\_— Terraform"
+      displayName: 'assign, compliance, hcl, provider'
+      href: ./assign-policy-terraform.md
 - name: Учебники
   items:
     - name: Создание политики Azure и управление ею
@@ -191,7 +194,15 @@
           href: ../../azure-monitor/deploy-scale.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
         - name: Включение Azure Monitor для виртуальных машин (предварительная версия)
           displayName: 'monitor, insights, log analytics, builtin'
-          href: ../../azure-monitor/insights/vminsights-enable-policy.md?bc=%2fazure%2fgovernance%2fpolicy%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fgovernance%2fpolicy%2ftoc.json
+          href: ../../azure-monitor/insights/vminsights-enable-policy.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
+    - name: Интеграция службы хранилища Azure
+      items:
+        - name: Аудит TLS с помощью Политики Azure
+          href: ../../storage/common/transport-layer-security-configure-minimum-version.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json#use-azure-policy-to-enforce-the-minimum-tls-version
+    - name: Интеграция Брандмауэра веб-приложений Azure
+      items:
+        - name: Интеграция WAF с Политикой Azure
+          href: ../../web-application-firewall/shared/waf-azure-policy.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
 - name: Диагностика
   items:
     - name: Распространенные проблемы
@@ -264,6 +275,16 @@
           href: /azure/templates/microsoft.authorization/policydefinitions
         - name: Определения инициатив
           href: /azure/templates/microsoft.authorization/policysetdefinitions
+    - name: Ресурсы Terraform
+      items:
+        - name: Назначение
+          href: 'https://www.terraform.io/docs/providers/azurerm/r/policy_assignment.html'
+        - name: Определение
+          href: 'https://www.terraform.io/docs/providers/azurerm/r/policy_definition.html'
+        - name: Инициатива (задание определения)
+          href: 'https://www.terraform.io/docs/providers/azurerm/r/policy_set_definition.html'
+        - name: Серверы
+          href: 'https://www.terraform.io/docs/providers/azurerm/r/policy_remediation.html'
 - name: Ресурсы
   items:
     - name: 'GitHub: примеры для Политики Azure'
@@ -280,6 +301,8 @@
           href: 'https://www.azadvertizer.net/'
         - name: Визуализатор Системы управления Azure
           href: 'https://github.com/julianhayward/azure-mg-sub-governance-reporting'
+        - name: Скрипты Политики Azure для Azure Monitor
+          href: 'https://github.com/JimGBritt/AzurePolicy/tree/master/AzureMonitor/Scripts'
     - name: Отзывы и поддержка
       items:
         - name: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт

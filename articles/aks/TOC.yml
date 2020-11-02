@@ -59,7 +59,7 @@
           href: ./security-controls-policy.md
     - name: Сеть
       href: concepts-network.md
-    - name: Хранилище
+    - name: Память
       href: concepts-storage.md
     - name: Масштабирование
       href: concepts-scale.md
@@ -142,7 +142,7 @@
           href: upgrade-cluster.md
         - name: Использование соглашения об уровне обслуживания с гарантией времени непрерывной работы
           href: uptime-sla.md
-        - name: Использование групп размещения близкого взаимодействия (предварительная версия)
+        - name: Использование групп размещения близкого взаимодействия
           href: reduce-latency-ppg.md
         - name: Обновление образа узла
           href: node-image-upgrade.md
@@ -166,7 +166,7 @@
           items:
             - name: Использование нескольких пулов узлов
               href: use-multiple-node-pools.md
-            - name: Использование пулов точечных узлов (предварительная версия)
+            - name: Использование пулов точечных узлов
               href: spot-node-pool.md
             - name: Использование пулов системных узлов
               href: use-system-pools.md
