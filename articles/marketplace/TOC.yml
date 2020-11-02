@@ -79,8 +79,6 @@
   items:
     - name: Руководство по публикации разных типов предложений
       href: publisher-guide-by-offer-type.md
-    - name: Включение аутентификации предложения с помощью Azure AD
-      href: enable-appsource-marketplace-using-azure-ad.md
     - name: Предложения для приложений Azure
       items:
         - name: Планирование предложения шаблона решения

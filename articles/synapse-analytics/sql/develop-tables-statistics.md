@@ -11,12 +11,12 @@ ms.date: 04/19/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.custom: ''
-ms.openlocfilehash: cefc6cc72ed8d74663464f4ac2d672369cd9d31c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 368d43283d713b8d4e101c2ee26724242f29756c
+ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91288670"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93148258"
 ---
 # <a name="statistics-in-synapse-sql"></a>Статистика в Synapse SQL
 
@@ -74,7 +74,7 @@ SET AUTO_CREATE_STATISTICS ON
 > [!NOTE]
 > Создание статистики регистрируется в журнале [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в контексте другого пользователя.
 
-При автоматическом создании статистики используется следующий формат: _WA_Sys_<8-разрядный идентификатор столбца в шестнадцатеричном формате>_<8-разрядный идентификатор таблицы в шестнадцатеричном формате>. Созданную статистику можно просмотреть, выполнив команду [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+При автоматическом создании статистики используется следующий формат: _WA_Sys_ <8-разрядный идентификатор столбца в шестнадцатеричном формате>_<8-разрядный идентификатор таблицы в шестнадцатеричном формате>. Созданную статистику можно просмотреть, выполнив команду [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ```sql
 DBCC SHOW_STATISTICS (<table_name>, <target>)
@@ -245,7 +245,7 @@ CREATE STATISTICS stats_col1
 > [!NOTE]
 > Гистограмма, используемая для оценки количества строк в результатах запроса, доступна только для первого столбца, указанного в определении объекта статистики.
 
-В этом примере гистограмма создана для *product\_category*. Статистика между столбцами вычисляется по *product\_category* и *product\_* .
+В этом примере гистограмма создана для *product\_category* . Статистика между столбцами вычисляется по *product\_category* и *product\_* .
 
 ```sql
 CREATE STATISTICS stats_2cols
@@ -616,7 +616,7 @@ SQL по запросу автоматически создает статист
 Ниже приведены основные принципы обновления статистики.
 
 - Убедитесь, что для набора данных обновляется по крайней мере один объект статистики. Тогда при обновлении статистики будет обновляться информация о размере (число строк и страниц).
-- Сосредоточьтесь на столбцах, участвующих в предложениях JOIN, GROUP BY, ORDER BY и DISTINCT.
+- Сосредоточьтесь на столбцах, участвующих в предложениях WHERE, JOIN, GROUP BY, ORDER BY и DISTINCT.
 - Чаще обновляйте столбцы "с возрастающим порядком ключа", например даты транзакций, потому что эти значения не будут включены в гистограмму статистики.
 - Реже обновляйте столбцы со статическим распределением.
 
@@ -629,12 +629,12 @@ SQL по запросу автоматически создает статист
 > [!NOTE]
 > В данный момент можно создать только статистику по одному столбцу.
 >
-> Процедура sp_create_file_statistics будет переименована в sp_create_openrowset_statistics. Роль сервера public имеет разрешение ADMINISTER BULK OPERATIONS, в то время как роль базы данных public имеет разрешения EXECUTE для процедур sp_create_file_statistics и sp_drop_file_statistics. Это может быть изменено в будущем.
+> Для выполнения sp_create_openrowset_statistics и sp_drop_openrowset_statistics требуются следующие разрешения: АДМИНИСТРировать групповые операции или АДМИНИСТРировать групповые операции базы данных.
 
 Приведенная далее хранимая процедура используется для создания статистики.
 
 ```sql
-sys.sp_create_file_statistics [ @stmt = ] N'statement_text'
+sys.sp_create_openrowset_statistics [ @stmt = ] N'statement_text'
 ```
 
 Аргументы: [ @stmt = ] N'текст_инструкции' — указывает инструкцию Transact-SQL, которая будет возвращать значения столбцов, используемых в статистике. Предложение TABLESAMPLE можно использовать для указания используемых примеров данных. Если предложение TABLESAMPLE не задано, то используется FULLSCAN.
@@ -666,7 +666,7 @@ SECRET = ''
 GO
 */
 
-EXEC sys.sp_create_file_statistics N'SELECT year
+EXEC sys.sp_create_openrowset_statistics N'SELECT year
 FROM OPENROWSET(
         BULK ''https://sqlondemandstorage.blob.core.windows.net/csv/population/population.csv'',
         FORMAT = ''CSV'',
@@ -698,7 +698,7 @@ SECRET = ''
 GO
 */
 
-EXEC sys.sp_create_file_statistics N'SELECT payment_type
+EXEC sys.sp_create_openrowset_statistics N'SELECT payment_type
 FROM OPENROWSET(
         BULK ''https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=2018/month=6/*.parquet'',
          FORMAT = ''PARQUET''
@@ -712,18 +712,18 @@ FROM OPENROWSET(
 Чтобы обновить статистику, необходимо удалить ее и создать заново. Приведенная ниже хранимая процедура используется для удаления статистики.
 
 ```sql
-sys.sp_drop_file_statistics [ @stmt = ] N'statement_text'
+sys.sp_drop_openrowset_statistics [ @stmt = ] N'statement_text'
 ```
 
 > [!NOTE]
-> Процедура sp_drop_file_statistics будет переименована в sp_drop_openrowset_statistics. Роль сервера public имеет разрешение ADMINISTER BULK OPERATIONS, в то время как роль базы данных public имеет разрешения EXECUTE для процедур sp_create_file_statistics и sp_drop_file_statistics. Это может быть изменено в будущем.
+> Для выполнения sp_create_openrowset_statistics и sp_drop_openrowset_statistics требуются следующие разрешения: АДМИНИСТРировать групповые операции или АДМИНИСТРировать групповые операции базы данных.
 
 Аргументы: [ @stmt = ] N'текст_инструкции' — задает ту же инструкцию Transact-SQL, которая использовалась при создании статистики.
 
 Чтобы обновить статистику для столбца year в наборе данных, основанном на файле population.csv, необходимо удалить и создать статистику заново.
 
 ```sql
-EXEC sys.sp_drop_file_statistics N'SELECT payment_type
+EXEC sys.sp_drop_openrowset_statistics N'SELECT payment_type
 FROM OPENROWSET(
         BULK ''https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=2018/month=6/*.parquet'',
          FORMAT = ''PARQUET''
@@ -743,7 +743,7 @@ SECRET = ''
 GO
 */
 
-EXEC sys.sp_create_file_statistics N'SELECT payment_type
+EXEC sys.sp_create_openrowset_statistics N'SELECT payment_type
 FROM OPENROWSET(
         BULK ''https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=2018/month=6/*.parquet'',
          FORMAT = ''PARQUET''

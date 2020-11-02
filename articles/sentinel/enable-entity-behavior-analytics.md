@@ -14,16 +14,23 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2020
 ms.author: yelevin
-ms.openlocfilehash: 4587ab5e2cf36dce65cd02b167656c88cfde10a1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b769703f7e7054571a3b65a021c0123d8ae07078
+ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096960"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93148241"
 ---
 # <a name="enable-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Включение анализа поведения пользователей и сущностей (УЕБА) в Azure Sentinel 
 
-
+> [!IMPORTANT]
+>
+> - Теперь функция УЕБА находится в **общедоступной** части следующих географических регионов и регионах Azure:
+>    - География США
+>    - Западная Европа, регион
+>    - География Австралии
+>
+> - Во всех других географических регионах эта функция остается в **общедоступной предварительной версии** и предоставляется без соглашения об уровне обслуживания. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -41,7 +48,7 @@ ms.locfileid: "93096960"
 
 ## <a name="how-to-enable-user-and-entity-behavior-analytics"></a>Как включить анализ поведения пользователей и сущностей
 
-1. В меню навигации меток Azure выберите **поведение сущности (Предварительная версия)** .
+1. В меню навигации меток Azure выберите **поведение сущности** .
 
 1. Под заголовком **включите его** , а затем установите переключатель в положение **вкл** .
 

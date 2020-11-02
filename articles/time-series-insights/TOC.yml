@@ -97,12 +97,10 @@
           items:
             - name: Как осуществлять подготовку и управление
               href: how-to-provision-manage.md
-            - name: Как выполнять диагностику и устранение неполадок
-              href: how-to-diagnose-troubleshoot.md
-        - name: Входящий трафик и хранилище
-          items:
             - name: Как выбрать TSID
               href: how-to-select-tsid.md
+            - name: Как выполнять диагностику и устранение неполадок
+              href: how-to-diagnose-troubleshoot.md
         - name: Модель
           items:
             - name: Как изменить модель

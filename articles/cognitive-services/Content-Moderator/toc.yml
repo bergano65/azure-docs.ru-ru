@@ -6,6 +6,8 @@
     - name: Что такое Content Moderator?
       href: overview.md
       expanded: true
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   items:
     - name: Пробная версия Content Moderator в Интернете
