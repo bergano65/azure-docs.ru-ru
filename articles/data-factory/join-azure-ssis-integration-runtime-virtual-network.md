@@ -6,17 +6,17 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/13/2020
+ms.date: 11/02/2020
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: 0e9c669f2994e896205762c5f3f4df1b5fe214ae
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: e73126cfc54294a7b9d54ff62c406d5e686ac470
+ms.sourcegitcommit: 7a7b6c7ac0aa9dac678c3dfd4b5bcbc45dc030ca
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637230"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93186779"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 
@@ -99,7 +99,7 @@ ms.locfileid: "92637230"
 
 - Убедитесь, что группа ресурсов виртуальной сети (или группа ресурсов общедоступных IP-адресов) может создавать и удалять определенные сетевые ресурсы Azure. Дополнительные сведения см. [в разделе Настройка группы ресурсов](#resource-group). 
 
-- Если вы настраиваете Azure-SSIS IR, как описано в разделе [Выборочная установка для Azure-SSIS IR](./how-to-configure-azure-ssis-ir-custom-setup.md), узлы Azure-SSIS IR будут получать частные IP-адреса из предопределенного диапазона от 172.16.0.0 до 172.31.255.255. Убедитесь, что диапазоны частных IP-адресов ваших виртуальных или локальных сетей не конфликтуют с этим диапазоном.
+- Если вы настраиваете Azure-SSIS IR, как описано в разделе [Выборочная установка для Azure-SSIS IR](./how-to-configure-azure-ssis-ir-custom-setup.md), наш внутренний процесс управления узлами будет использовать частные IP-адреса из предопределенного диапазона от 172.16.0.0 до 172.31.255.255. Поэтому убедитесь, что диапазоны частных IP-адресов ваших виртуальных или локальных сетей не конфликтуют с этим диапазоном.
 
 На этой схеме показаны необходимые подключения для Azure-SSIS IR:
 

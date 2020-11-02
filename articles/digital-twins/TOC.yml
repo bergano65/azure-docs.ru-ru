@@ -172,7 +172,7 @@
             - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core'
             - name: Пакет SDK для Java (Maven)
-              href: 'https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0-beta.1/jar'
+              href: 'https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0/jar'
             - name: "Пакет SDK для Java\_— справочник"
               href: /java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-preview
             - name: "Пакет SDK для Java\_— источник"

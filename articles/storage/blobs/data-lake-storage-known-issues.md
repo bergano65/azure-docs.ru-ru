@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/28/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: bffe69dd5b7d3cdfcba1df3420d494dcffc33f9a
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: f995750c1e009febcb9872c230e22921ff9c50c4
+ms.sourcegitcommit: 7a7b6c7ac0aa9dac678c3dfd4b5bcbc45dc030ca
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042661"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93186592"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -41,7 +41,7 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 В этом разделе описываются проблемы и ограничения, возникающие при использования API больших двоичных объектов и API Data Lake Storage 2-го поколения для обработки одних и тех же данных.
 
-* Для записи в один и тот же экземпляр файла нельзя использовать интерфейсы API и Data Lake Storage API. Когда выполняется запись в файл с помощью API Data Lake Storage 2-го поколения, информация о блокировках этого файла не возвращается вызовом [Get Block List](https://docs.microsoft.com/rest/api/storageservices/get-block-list) из API больших двоичных объектов. Единственным исключением является перезапись при использовании. Вы можете перезаписать файл или большой двоичный объект с помощью любого API.
+* Вы не можете использовать API BLOB и Data Lake Storage для записи в один и тот же экземпляр файла. Когда выполняется запись в файл с помощью API Data Lake Storage 2-го поколения, информация о блокировках этого файла не возвращается вызовом [Get Block List](https://docs.microsoft.com/rest/api/storageservices/get-block-list) из API больших двоичных объектов. Единственным исключением является перезапись при использовании. Вы можете перезаписать файл или большой двоичный объект с помощью любого API.
 
 * Если вы выполняете операцию [List Blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) без указания разделителя, результаты будут содержать не только большие двоичные объекты, но и каталоги. Если вы хотите указать разделитель, используйте только прямую косую черту (`/`). Это единственный поддерживаемый разделитель.
 
