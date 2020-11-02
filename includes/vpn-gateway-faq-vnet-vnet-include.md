@@ -9,10 +9,10 @@ ms.date: 12/03/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 72ddd0b6cd6c3e12417d3698c403f89312b531f4
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 11/01/2020
 ms.locfileid: "67185108"
 ---
 Сведения из раздела "Часто задаваемые вопросы о подключениях типа "виртуальная сеть – виртуальная сеть" применяются к соединениям VPN-шлюза. Подробнее о пиринге виртуальной сети см. в разделе [Пиринг виртуальной сети](../articles/virtual-network/virtual-network-peering-overview.md).
