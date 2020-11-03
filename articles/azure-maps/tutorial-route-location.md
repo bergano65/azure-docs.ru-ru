@@ -39,7 +39,7 @@ ms.locfileid: "92896686"
 
 В следующих шагах описаны создание и отображение элемента управления картой на веб-странице.
 
-1. На локальном компьютере создайте файл **MapRoute.html** .
+1. На локальном компьютере создайте файл **MapRoute.html**.
 2. Скопируйте следующую разметку HTML и вставьте ее в файл.
 
     ```HTML
@@ -174,7 +174,7 @@ ms.locfileid: "92896686"
 
 3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Карта сместится так, что в центре окажется Сиэтл. Синий маркер в форме капли обозначает начальную точку. Круглый синий маркер обозначает конечную точку маршрута.
 
-    :::image type="content" source="./media/tutorial-route-location/map-pins.png" alt-text="Простейший пример отрисовки карты на элементе управления картой":::
+    :::image type="content" source="./media/tutorial-route-location/map-pins.png" alt-text="Просмотр начальной и конечной точки маршрута на карте":::
 
 <a id="getroute"></a>
 
@@ -216,7 +216,7 @@ ms.locfileid: "92896686"
 
 3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Теперь на карте появится маршрут от начальной до конечной точки.
 
-     :::image type="content" source="./media/tutorial-route-location/map-route.png" alt-text="Простейший пример отрисовки карты на элементе управления картой":::
+     :::image type="content" source="./media/tutorial-route-location/map-route.png" alt-text="Элемент управления картой в Azure и служба &quot;Построение маршрутов&quot;":::
 
 Полный исходный код для этого примера можно получить [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html). Работающий пример можно изучить [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination).
 

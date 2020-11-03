@@ -1,6 +1,6 @@
 ---
 title: Импорт приложения API в качестве API с помощью портала Azure | Документация Майкрософт
-description: В этом руководстве показано, как импортировать приложение API в качестве API с помощью службы управления API.
+description: В этой статье показано, как импортировать приложение API в виде API с помощью Управления API (APIM).
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -9,15 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.topic: tutorial
+ms.topic: article
 ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 007598046ae64b390d44e61438b69bd26024b1c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41209233ec59f578db4ff7fd344bb96aefeb975e
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91626893"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93146779"
 ---
 # <a name="import-an-api-app-as-an-api"></a>импорт приложения API в качестве API;
 
@@ -43,7 +43,7 @@ ms.locfileid: "91626893"
 2. Выберите **Приложение API** в списке **Add a new API** (Добавление нового API).
 
     ![приложение API;](./media/import-api-app-as-api/api-app.png)
-3. Нажмите кнопку **Обзор**, чтобы просмотреть список приложений API в вашей подписке.
+3. Нажмите кнопку **Обзор** , чтобы просмотреть список приложений API в вашей подписке.
 4. Выберите приложение. Служба управления API найдет файл Swagger, связанный с выбранным приложением, извлечет и импортирует его. 
 
     Если службе управления API не удается найти файл Swagger, она предоставляет API в качестве сквозного. 

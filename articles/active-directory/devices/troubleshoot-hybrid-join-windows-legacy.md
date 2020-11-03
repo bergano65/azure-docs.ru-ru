@@ -65,18 +65,18 @@ ms.locfileid: "93079025"
 
 - AD FS или Azure AD, или сеть настроены неправильно
 
-    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/02.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
+    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/02.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст сообщает о том, что произошла ошибка при проверке подлинности учетной записи." border="false":::
     
    - Autoworkplace.exe не удалось выполнить автоматическую аутентификацию с помощью Azure AD или AD FS. Это может быть вызвано отсутствием или неправильной настройкой AD FS (для федеративных доменов) или отсутствующим или неправильно сконфигурированным эффективным единым входом в Azure AD (для управляемых доменов), или сетевыми проблемами. 
    - Возможно, многофакторная проверка подлинности (MFA) включена или настроена для пользователя, а WIAORMULTIAUTHN не настроен на сервере AD FS. 
-   - Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое запрашивание токена программой **Autoworkplace.exe** .
+   - Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое запрашивание токена программой **Autoworkplace.exe**.
    - Возможно, URL-адреса AD FS и Azure AD отсутствуют в зоне интрасети IE на клиенте.
    - Проблемы с подключением к сети могут препятствовать **autoworkplace.exe** достигать URL-адреса AD FS или Azure AD. 
    - **Autoworkplace.exe** требует, чтобы клиент имел прямую информацию от клиента к локальному контроллеру домена AD Организации. Это означает, что гибридное присоединение к Azure AD будет выполнено успешно, только если клиент подключен к интрасети организации.
    - Ваша организация использует прозрачный единый вход Azure AD, `https://autologon.microsoftazuread-sso.com` или `https://aadg.windows.net.nsatc.net` нет в параметрах интрасети IE устройства, а параметр **Разрешить обновление строки состояния в сценарии** не включен в зоне интранета.
 - Вы не вошли в качестве пользователя домена
 
-   :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/03.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
+   :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/03.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст сообщает о том, что произошла ошибка при проверке учетной записи." border="false":::
 
    Это может происходить по нескольким причинам:
 
@@ -84,11 +84,11 @@ ms.locfileid: "93079025"
    - Клиент не может подключиться к контроллеру домена.    
 - Достигнут предел квоты
 
-    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/04.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
+    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/04.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст сообщает об ошибке, так как пользователь достиг максимального числа присоединенных к устройствам устройств." border="false":::
 
 - Служба не отвечает 
 
-    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/05.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст, содержащий адрес электронной почты, указывает, что определенное устройство присоединено к рабочей области." border="false":::
+    :::image type="content" source="./media/troubleshoot-hybrid-join-windows-legacy/05.png" alt-text="Снимок экрана: диалоговое окно &quot;Workplace Join для Windows&quot;. Текст сообщает, что произошла ошибка, так как сервер не ответил." border="false":::
 
 Сведения о состоянии можно также найти в журнале событий в разделе **Applications and Services Log\Microsoft-Workplace Join** (Журнал приложений и служб > Microsoft — присоединение к рабочей области).
   

@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 05d7316ceccd67a8eeb1d081843307162ff210c1
-ms.sourcegitcommit: d3c3f2ded72bfcf2f552e635dc4eb4010491eb75
+ms.openlocfilehash: 989115224489ff8fff360a34b27c338ea3e33058
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92558641"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93145826"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Общие сведения об Azure Defender для реестров контейнеров
 
@@ -32,6 +32,12 @@ ms.locfileid: "92558641"
 
 Благодаря тому, что Центр безопасности извещает только о наличии проблем, снижается вероятность нежелательных информационных оповещений.
 
+
+> [!TIP]
+> Дополнительные сведения о возможностях защиты контейнеров в Центре безопасности см. в следующих статьях:
+>
+> - [Центр безопасности Azure и безопасность контейнеров](container-security.md)
+> - [Общие сведения об Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)
 
 ## <a name="when-are-images-scanned"></a>Когда проверяются образы?
 
@@ -81,10 +87,5 @@ ms.locfileid: "92558641"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о возможностях защиты контейнеров в Центре безопасности см. в следующих статьях:
-
-- [Центр безопасности Azure и безопасность контейнеров](container-security.md)
-
-- [Общие сведения об Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)
-
-
+> [!div class="nextstepaction"]
+> [Проверка образов на наличие уязвимостей](defender-for-container-registries-usage.md)

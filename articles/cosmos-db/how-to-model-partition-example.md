@@ -23,7 +23,7 @@ ms.locfileid: "93100258"
 
 ## <a name="the-scenario"></a>Сценарий
 
-В этом упражнении мы рассмотрим платформу для ведения блогов, на которой *пользователи* могут публиковать *записи* . Также они могут добавлять к этим записям *отметки "Нравится"* и текстовые *комментарии* .
+В этом упражнении мы рассмотрим платформу для ведения блогов, на которой *пользователи* могут публиковать *записи*. Также они могут добавлять к этим записям *отметки "Нравится"* и текстовые *комментарии*.
 
 > [!TIP]
 > Несколько слов, которые здесь выделены *курсивом* , определяют характер сущностей и концепций, с которыми будет работать наша модель.
@@ -138,7 +138,7 @@ ms.locfileid: "93100258"
 
 Получение сведений о пользователе выполняется путем чтения соответствующего элемента из контейнера `users`.
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-Q1.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q1.png" alt-text="Получение одного элемента из контейнера users" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -148,7 +148,7 @@ ms.locfileid: "93100258"
 
 Аналогично операции **[C1]** , выполняется путем записи в контейнер `posts`.
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер posts" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -158,7 +158,7 @@ ms.locfileid: "93100258"
 
 Сначала нужно извлечь соответствующий документ из контейнера `posts`. Но этого недостаточно, ведь согласно спецификации требуется предоставить имя пользователя автора записи, а также количество комментариев и отметок "Нравится" для этой записи. Для этого мы выполним еще три запроса SQL.
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-Q2.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q2.png" alt-text="Получение записи и дополнительных статистических данных" border="false":::
 
 В каждом из дополнительных запросов применяется фильтр по ключу секционирования соответствующего контейнера. Это позволяет добиться максимальной производительности и масштабируемости. Но в итоге мы выполняем четыре операции для возврата одной записи. Это поведение мы улучшим в следующей итерации.
 
@@ -170,7 +170,7 @@ ms.locfileid: "93100258"
 
 Сначала нам нужно извлечь требуемые записи с помощью запроса SQL, который возвращает записи по определенному пользователю. Также мы должны выполнить дополнительные запросы для получения имени пользователя автора, количества комментариев и отметок "Нравится".
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-Q3.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q3.png" alt-text="Получение всех записей пользователя и статистическая обработка дополнительных данных" border="false":::
 
 Представленная реализация имеет несколько недостатков:
 
@@ -185,7 +185,7 @@ ms.locfileid: "93100258"
 
 Комментарий создается путем сохранения соответствующего элемента в контейнер `posts`.
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер posts" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -195,7 +195,7 @@ ms.locfileid: "93100258"
 
 Мы начинаем обработку с запроса, который позволяет извлечь все комментарии к нужной записи. Затем снова нужно получить имена пользователей отдельно для каждого комментария.
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-Q4.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q4.png" alt-text="Получение всех комментариев к записи и статистическая обработка дополнительных данных" border="false":::
 
 Основной запрос позволяет отфильтровать данные контейнера по ключу секции, но раздельный сбор имен пользователей снижает общую производительность. Мы улучшим это поведение позже.
 
@@ -207,7 +207,7 @@ ms.locfileid: "93100258"
 
 Так же, как и при выполнении операции **[C3]** , мы создаем нужные элемент в контейнере `posts`.
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер posts" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -217,7 +217,7 @@ ms.locfileid: "93100258"
 
 Так же, как и при выполнении операции **[Q4]** , мы запрашиваем отметки "Нравится" для нужной записи, а затем получаем для них имена пользователей.
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-Q5.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q5.png" alt-text="Получение всех отметок &quot;Нравится&quot; к записи и статистическая обработка дополнительных данных" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -227,7 +227,7 @@ ms.locfileid: "93100258"
 
 Мы запрашиваем последние записи из контейнера `posts`, отсортировав его по убыванию даты создания, а затем собираем имена пользователей и количество комментариев и отметок "Нравится" для каждой из записей.
 
-:::image type="content" source="./media/how-to-model-partition-example/V1-Q6.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q6.png" alt-text="Получение самых свежих записей и статистическая обработка дополнительных данных" border="false":::
 
 Опять же, наш первоначальный запрос не фильтрует ключ секции `posts` контейнера, который запускает дорогостоящее развертывание. Это еще хуже, так как мы нацелены на гораздо больший результирующий набор и отсортовать результаты с помощью `ORDER BY` предложения, которое делает его более дорогостоящим в плане единиц запросов.
 
@@ -338,7 +338,7 @@ function createComment(postId, comment) {
 
 В нашем примере мы настроим канал изменений контейнера `users` таким образом, чтобы он реагировал на каждое изменение имен пользователей. Все эти изменения мы будем распространять с помощью другой хранимой процедуры из контейнера `posts`:
 
-:::image type="content" source="./media/how-to-model-partition-example/denormalization-1.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/denormalization-1.png" alt-text="Денормализация имен пользователей в контейнере posts" border="false":::
 
 ```javascript
 function updateUsernames(userId, username) {
@@ -378,7 +378,7 @@ function updateUsernames(userId, username) {
 
 Теперь, когда мы настроили денормализацию, для обработки этого запроса достаточно получить один элемент.
 
-:::image type="content" source="./media/how-to-model-partition-example/V2-Q2.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q2.png" alt-text="Получение одного элемента из контейнера posts" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -388,7 +388,7 @@ function updateUsernames(userId, username) {
 
 Здесь мы также избавились от затрат на дополнительные запросы имен пользователей и оставили лишь один запрос с фильтрацией по ключу секции.
 
-:::image type="content" source="./media/how-to-model-partition-example/V2-Q4.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q4.png" alt-text="Получение всех комментариев для записи" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -398,7 +398,7 @@ function updateUsernames(userId, username) {
 
 Аналогичный результат достигнут и для перечисления отметок "Нравится".
 
-:::image type="content" source="./media/how-to-model-partition-example/V2-Q5.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q5.png" alt-text="Получение всех отметок &quot;Нравится&quot; для записи" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -406,13 +406,13 @@ function updateUsernames(userId, username) {
 
 ## <a name="v3-making-sure-all-requests-are-scalable"></a>V3: обеспечение масштабируемости всех запросов
 
-Изучая достигнутые показатели производительности, мы видим две еще не полностью оптимизированных операции: **[Q3]** и **[Q6]** . Эти операции связаны с запросами, которые используют фильтрацию контейнеров по ключу секции.
+Изучая достигнутые показатели производительности, мы видим две еще не полностью оптимизированных операции: **[Q3]** и **[Q6]**. Эти операции связаны с запросами, которые используют фильтрацию контейнеров по ключу секции.
 
 ### <a name="q3-list-a-users-posts-in-short-form"></a>[Q3] — список записей пользователя в краткой форме
 
 В этот запрос в версии 2 уже были внесены улучшения, позволяющие избежать дополнительных запросов.
 
-:::image type="content" source="./media/how-to-model-partition-example/V2-Q3.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q3.png" alt-text="Схема, на которой показан запрос для отображения записей пользователя в краткой форме." border="false":::
 
 Но сохранившийся запрос по-прежнему не выполняет фильтрацию контейнера `posts` по ключу раздела.
 
@@ -456,11 +456,11 @@ function updateUsernames(userId, username) {
 
 Чтобы выполнить эту денормализацию, мы снова применяем канал изменений. Теперь мы настроим реагирование по каналу изменений в контейнере `posts`, чтобы переносить в контейнер `users` все новые или измененные записи. Кроме того, так как список записей не нужно возвращать с полным содержимым, мы можем усекать их при обработке.
 
-:::image type="content" source="./media/how-to-model-partition-example/denormalization-2.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/denormalization-2.png" alt-text="Денормализация с переносом записей в контейнер users" border="false":::
 
 Теперь наш запрос можно направить к контейнеру `users` и использовать фильтрацию по ключу секции этого контейнера.
 
-:::image type="content" source="./media/how-to-model-partition-example/V3-Q3.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V3-Q3.png" alt-text="Получение всех записей пользователя" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -470,7 +470,7 @@ function updateUsernames(userId, username) {
 
 Ситуация здесь похожа на описанную выше: даже после удаления запросов, ставших ненужными после добавленной в версии 2 денормализации, оставшийся запрос не использует фильтрацию по ключу секции контейнера:
 
-:::image type="content" source="./media/how-to-model-partition-example/V2-Q6.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q6.png" alt-text="Схема, на которой показан запрос для перечисления самых последних записей, созданных в краткой форме." border="false":::
 
 Применяя тот же подход, производительность и масштабируемость этого запроса можно увеличить, ограничив область его действия одной секцией. Это вполне достижимо, так как возвращать нужно ограниченный набор элементов. Чтобы заполнить домашнюю страницу нашей платформы блогов достаточно лишь получить 100 самых последних записей, не перебирая весь набор данных.
 
@@ -495,7 +495,7 @@ function updateUsernames(userId, username) {
 
 Для достижения такой денормализации нужно лишь подключить конвейер канала изменений, который мы создали ранее, для передачи записей в новый контейнер. Здесь важно помнить один важный момент — нам нужно хранить только 100 самых последних записей, иначе размер контейнера может превысить максимальный размер секции. Для этого мы вызываем [триггер после операции](stored-procedures-triggers-udfs.md#triggers) при каждом добавлении документа в контейнер:
 
-:::image type="content" source="./media/how-to-model-partition-example/denormalization-3.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/denormalization-3.png" alt-text="Денормализация с переносом записей в контейнер веб-канала" border="false":::
 
 Усечь коллекцию можно с помощью такого запроса:
 
@@ -546,7 +546,7 @@ function truncateFeed() {
 
 И, наконец, мы переадресуем существующий запрос в новый контейнер `feed`:
 
-:::image type="content" source="./media/how-to-model-partition-example/V3-Q6.png" alt-text="Запись одного элемента в контейнер users" border="false":::
+:::image type="content" source="./media/how-to-model-partition-example/V3-Q6.png" alt-text="Извлечение самых последних записей" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |

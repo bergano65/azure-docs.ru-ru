@@ -80,7 +80,7 @@ ms.locfileid: "93100075"
 
 1. Выберите **базовые BLOB-объекты** , чтобы задать условия для правила. В следующем примере большие двоичные объекты перемещаются в очень удобном хранилище, если они не были изменены в течение 30 дней.
 
-   :::image type="content" source="media/storage-lifecycle-management-concepts/lifecycle-management-base-blobs.png" alt-text="Управление жизненным циклом Добавление страницы сведений о правиле в портал Azure":::
+   :::image type="content" source="media/storage-lifecycle-management-concepts/lifecycle-management-base-blobs.png" alt-text="Страница базовых BLOB-объектов управления жизненным циклом в портал Azure":::
 
    Параметр **Последний доступ** доступен в предварительной версии в следующих регионах:
 
@@ -95,7 +95,7 @@ ms.locfileid: "93100075"
 
 1. Если вы выбрали **ограничить большие двоичные объекты с фильтрами** на странице **сведений** , выберите **фильтр установить** , чтобы добавить необязательный фильтр. В следующем примере выполняется фильтрация больших двоичных объектов в контейнере *милифециклеконтаинер* , начинающихся с "log".
 
-   :::image type="content" source="media/storage-lifecycle-management-concepts/lifecycle-management-filter-set.png" alt-text="Управление жизненным циклом Добавление страницы сведений о правиле в портал Azure":::
+   :::image type="content" source="media/storage-lifecycle-management-concepts/lifecycle-management-filter-set.png" alt-text="Страница &quot;набор фильтров управления жизненным циклом&quot; в портал Azure":::
 
 1. Нажмите кнопку **Добавить** , чтобы добавить новую политику.
 
@@ -137,7 +137,7 @@ ms.locfileid: "93100075"
    }
    ```
 
-1. Щелкните **Сохранить** .
+1. Щелкните **Сохранить**.
 
 1. Дополнительные сведения об этом примере JSON см. в разделах [Политика](#policy) и [правила](#rules) .
 
