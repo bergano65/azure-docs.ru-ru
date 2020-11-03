@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: a7e159c94bf1b9f3e8049fd657abb562f1c85671
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2bac9645fa66cd33c7cda79f16628c1104e27d7d
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87503928"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92480553"
 ---
 # <a name="azure-synapse-analytics-ip-firewall-rules-preview"></a>Правила брандмауэра для IP-адресов Azure Synapse Analytics (предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "87503928"
 
 Существует два способа добавления правил брандмауэра для IP-адресов в рабочую область Synapse. Чтобы добавить брандмауэр для IP-адресов в рабочую область, выберите **Безопасность и сеть** и установите флажок **Allow connections from all IP addresses** (Разрешить подключения со всех IP-адресов) во время создания рабочей области.
 
-![Конфигурация IP рабочей области Synapse на портале Azure.](./media/synpase-workspace-ip-firewall/ip-firewall-1.png)
+![Снимок экрана, на котором выделена кнопка "Безопасность и сеть".](./media/synpase-workspace-ip-firewall/ip-firewall-1.png)
 
 ![Конфигурация IP рабочей области Synapse на портале Azure.](./media/synpase-workspace-ip-firewall/ip-firewall-2.png)
 

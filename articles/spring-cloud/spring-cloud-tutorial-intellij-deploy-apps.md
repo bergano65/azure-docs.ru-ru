@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 6aa56eeab59dee3f080895d5f15285a2b2d41591
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 91edbbda43365b17b8276572804ba788dbee9f13
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088777"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426734"
 ---
 # <a name="use-intellij-to-deploy-azure-spring-cloud-applications"></a>Развертывание приложений Azure Spring Cloud с помощью IntelliJ
 
@@ -25,16 +25,16 @@ ms.locfileid: "92088777"
 ## <a name="prerequisites"></a>Предварительные требования
 * [JDK 8 Azul Zulu](/java/azure/jdk/java-jdk-install?preserve-view=true&view=azure-java-stable)
 * [Maven 3.5.0+](https://maven.apache.org/download.cgi)
-* [IntelliJ IDEA, выпуск Community или Ultimate, версия 2020.1 или 2019.3](https://www.jetbrains.com/idea/download/#section=windows)
+* [IntelliJ IDEA, выпуск Community или Ultimate, версия 2020.1 или 2020.2](https://www.jetbrains.com/idea/download/#section=windows)
 
 ## <a name="install-the-plug-in"></a>Установка подключаемого модуля
-Вы можете добавить Azure Toolkit for IntelliJ IDEA 3.35.0 из пользовательского интерфейса **подключаемых модулей** в IntelliJ.
+Вы можете добавить Azure Toolkit for IntelliJ IDEA 3.43.0 из пользовательского интерфейса **подключаемых модулей** в IntelliJ.
 
 1. Запустите IntelliJ.  Если вы уже открыли проект, закройте его, чтобы отобразилось диалоговое окно приветствия. Щелкните ссылку **Configure** (Настроить) в нижнем правом углу, а затем щелкните **Plugins** (Подключаемые модули), чтобы открыть диалоговое окно настройки подключаемого модуля, и выберите **Install Plugins from disk** (Установить подключаемые модули с диска).
 
     ![Выбор пункта меню настроек](media/spring-cloud-intellij-howto/configure-plugin-1.png)
 
-1. Найдите Azure Toolkit for IntelliJ.  Щелкните **Install**(Установить).
+1. Найдите Azure Toolkit for IntelliJ.  Щелкните **Install** (Установить).
 
     ![Установка подключаемого модуля](media/spring-cloud-intellij-howto/install-plugin.png)
 

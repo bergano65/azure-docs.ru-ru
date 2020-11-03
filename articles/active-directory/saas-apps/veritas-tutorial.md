@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: cdb3f30813d2650737cfa43507cef2b1d456573d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e777a27e793b1f4ef5489248c170824d69d615c
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88532541"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92517690"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-veritas-enterprise-vaultcloud-sso"></a>Руководство. Интеграция Azure Active Directory с Veritas Enterprise Vault.cloud SSO
 
@@ -27,7 +27,7 @@ ms.locfileid: "88532541"
 * Вы можете включить автоматический вход пользователей в Veritas Enterprise Vault.cloud SSO (единый вход) с учетной записью Azure AD.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>предварительные требования
@@ -61,7 +61,7 @@ ms.locfileid: "88532541"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Veritas Enterprise Vault.cloud SSO**, выберите **Veritas Enterprise Vault.cloud SSO** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
+4. В поле поиска введите **Veritas Enterprise Vault.cloud SSO** , выберите **Veritas Enterprise Vault.cloud SSO** на панели результатов, а затем нажмите кнопку **Добавить** , чтобы добавить приложение.
 
      ![Veritas Enterprise Vault.cloud SSO в списке результатов](common/search-new-app.png)
 
@@ -89,11 +89,11 @@ ms.locfileid: "88532541"
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed** , чтобы включить единый вход.
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить** , чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
@@ -122,7 +122,7 @@ ms.locfileid: "88532541"
     > [!NOTE]
     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки клиентов Veritas Enterprise Vault.cloud SSO](https://www.veritas.com/support/.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить** , чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
@@ -138,13 +138,13 @@ ms.locfileid: "88532541"
 
 ### <a name="configure-veritas-enterprise-vaultcloud-sso-single-sign-on"></a>Настройка единого входа Veritas Enterprise Vault.cloud SSO
 
-Чтобы настроить единый вход на стороне **Veritas Enterprise Vault.cloud SSO**, нужно передать скачанный **сертификат в кодировке Base64** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Veritas Enterprise Vault.cloud SSO](https://www.veritas.com/support/.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Veritas Enterprise Vault.cloud SSO** , нужно передать скачанный **сертификат в кодировке Base64** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Veritas Enterprise Vault.cloud SSO](https://www.veritas.com/support/.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -168,7 +168,7 @@ ms.locfileid: "88532541"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к Veritas Enterprise Vault.cloud SSO.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Veritas Enterprise Vault.cloud SSO**.
+1. На портале Azure выберите **Корпоративные приложения** , **Все приложения** , а затем — **Veritas Enterprise Vault.cloud SSO**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -180,31 +180,30 @@ ms.locfileid: "88532541"
 
     ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя** , а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon** , а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ### <a name="create-veritas-enterprise-vaultcloud-sso-test-user"></a>Создание тестового пользователя Veritas Enterprise Vault.cloud SSO
 
-В этом разделе описано, как создать пользователя Britta Simon в Veritas Enterprise Vault.cloud SSO. Обратитесь в  [службу поддержки Veritas Enterprise Vault.cloud SSO](https://www.veritas.com/support/.html), чтобы добавить пользователей на платформу Veritas Enterprise Vault.cloud SSO. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Veritas Enterprise Vault.cloud SSO. Обратитесь к [группе поддержки Veritas Enterprise Vault.cloud SSO](https://www.veritas.com/support/.html), чтобы добавить пользователей на платформу Veritas Enterprise Vault.cloud SSO. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Veritas Enterprise Vault.cloud SSO на Панели доступа, вы автоматически войдете в приложение Veritas Enterprise Vault.cloud SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Veritas Enterprise Vault.cloud SSO на Панели доступа, вы автоматически войдете в приложение Veritas Enterprise Vault.cloud SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)

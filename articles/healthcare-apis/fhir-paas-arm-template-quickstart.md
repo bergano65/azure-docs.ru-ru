@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 10/06/2020
-ms.openlocfilehash: e9b2ec017ca985c1de739ee74c4d0732f39bdc1d
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 0d045aac63daf99bf67ec79438f55eedd5f200d9
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91772742"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92521447"
 ---
 # <a name="quickstart-use-an-arm-template-to-deploy-azure-api-for-fhir"></a>Краткое руководство. Использование шаблона Resource Manager для развертывания Azure API для FHIR
 
@@ -75,13 +75,13 @@ Replace the line above with the following line once https://docs.microsoft.com/a
 
 1. При необходимости замените **подписку** по умолчанию на другую подписку.
 
-2. В разделе **Группа ресурсов** щелкните **Создать новую**, введите имя новой группы ресурсов и нажмите **ОК**.
+2. В разделе **Группа ресурсов** щелкните **Создать новую** , введите имя новой группы ресурсов и нажмите **ОК**.
 
 3. Если вы создаете новую группу ресурсов, выберите для нее **Регион**.
 
 4. Введите новое **имя службы** и выберите **расположение** Azure API для FHIR. Оно может отличаться от региона группы ресурсов или совпадать с ним.
 
-    :::image type="content" source="./media/fhir-paas-arm-template-quickstart/deploy-azure-api-fhir.png" alt-text="Развертывание службы Azure API для FHIR в Azure с помощью шаблона Resource Manager на портале Azure.":::
+    :::image type="content" source="./media/fhir-paas-arm-template-quickstart/deploy-azure-api-fhir.png" alt-text="Развертывание Azure API для FHIR с помощью шаблона Resource Manager на портале Azure.":::
 
 5. Выберите **Review + create** (Просмотреть и создать).
 
@@ -154,7 +154,7 @@ read -p "Press [ENTER] to continue: "
 
 2. В списке FHIR выберите свою новую службу. Откроется страница **Обзор** для новой службы Azure API для FHIR.
 
-3. Убедитесь, что новая учетная запись API FHIR подготовлена. Для этого щелкните ссылку рядом с **конечной точкой метаданных FHIR**, чтобы получить отчет о возможностях API FHIR. Ссылка имеет формат `https://<service-name>.azurehealthcareapis.com/metadata`. Если учетная запись подготовлена, отображается большой JSON-файл.
+3. Убедитесь, что новая учетная запись API FHIR подготовлена. Для этого щелкните ссылку рядом с **конечной точкой метаданных FHIR** , чтобы получить отчет о возможностях API FHIR. Ссылка имеет формат `https://<service-name>.azurehealthcareapis.com/metadata`. Если учетная запись подготовлена, отображается большой JSON-файл.
 
 # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
@@ -224,9 +224,14 @@ read -p "Press [ENTER] to continue: "
 
 ---
 
+Пошаговые инструкции по созданию шаблона Resource Manager см. в [этом учебнике](../azure-resource-manager/templates/template-tutorial-create-first-template.md).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Пошаговые инструкции по созданию шаблона ARM см. в следующей статье:
+В этом кратком руководстве показано, как развернуть Azure API для FHIR в своей подписке. Чтобы задать дополнительные параметры в Azure API для FHIR, см. соответствующее руководство. Если вы уже готовы к использованию API Azure для FHIR, ознакомьтесь с процессом регистрации приложений.
 
-> [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+>[!div class="nextstepaction"]
+>[Дополнительные параметры в Azure API для FHIR](azure-api-for-fhir-additional-settings.md)
+
+>[!div class="nextstepaction"]
+>[Общие сведения о регистрации приложений](fhir-app-registration.md)

@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: e214607b82a44fb1b6859a3c73d58907fbb279d9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ad025d2278d6c9ab360ddbdc250e8db4b4eec665
+ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91710742"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92495744"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -111,10 +111,10 @@ ms.locfileid: "91710742"
 
 Машинное обучение Azure работает с другими службами на платформе Azure, а также интегрируется со средствами на основе открытого кода, такими как Git и MLFlow.
 
-+ Целевые объекты вычислений, такие как __Служба Azure Kubernetes__, __Экземпляры контейнеров Azure__, __Azure Databricks__, __Azure Data Lake Analytics__ и __Azure HDInsight__. Дополнительные сведения о целевых объектах вычислений см. в [этой статье](concept-compute-target.md).
++ Целевые объекты вычислений, такие как __Служба Azure Kubernetes__ , __Экземпляры контейнеров Azure__ , __Azure Databricks__ , __Azure Data Lake Analytics__ и __Azure HDInsight__. Дополнительные сведения о целевых объектах вычислений см. в [этой статье](concept-compute-target.md).
 + __Сетка событий Azure__. Дополнительную информацию см. в статье [Consume Azure Machine Learning events (Preview)](concept-event-grid-integration.md) (Использование событий Машинного обучения Azure (предварительная версия)).
 + __Azure Monitor__. Дополнительную информацию см. в статье [Monitoring Azure Machine Learning](monitor-azure-machine-learning.md) (Мониторинг Машинного обучения Azure).
-+ Хранилища данных, такие как __учетные записи хранения Azure__, __Azure Data Lake Storage__, __База данных SQL Azure__, __База данных Azure для PostgreSQL__, а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md) (Создание наборов данных с помощью Открытых наборов данных Azure).
++ Хранилища данных, такие как __учетные записи хранения Azure__ , __Azure Data Lake Storage__ , __База данных SQL Azure__ , __База данных Azure для PostgreSQL__ , а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md) (Создание наборов данных с помощью Открытых наборов данных Azure).
 + __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Обзор изоляции и конфиденциальности в виртуальной сети](how-to-network-security-overview.md).
 + __Azure Pipelines__. Дополнительные сведения см. в статье [Train and deploy machine learning models](/azure/devops/pipelines/targets/azure-machine-learning) (Обучение и развертывание моделей машинного обучения).
 + __Журналы репозитория Git__. Дополнительные сведения см. в статье [Git integration for Azure Machine Learning](concept-train-model-git-integration.md) (Интеграция с Git для Машинного обучения Azure).
@@ -128,7 +128,8 @@ ms.locfileid: "91710742"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Создайте свой первый эксперимент предпочитаемым способом.
-  + [Использование записных книжек Python для обучения и развертывания моделей машинного обучения](tutorial-1st-experiment-sdk-setup.md).
+- + [Начало работы в собственной среде разработки](tutorial-1st-experiment-sdk-setup-local.md)
+  + [Использование записных книжек Jupyter на вычислительном экземпляре для обучения и развертывании моделей машинного обучения](tutorial-1st-experiment-sdk-setup.md)
   + [Использование R Markdown для обучения и развертывания моделей машинного обучения](tutorial-1st-r-experiment.md). 
   + [Использование автоматизированного машинного обучения для обучения и развертывания моделей](tutorial-first-experiment-automated-ml.md). 
   + [Использование возможностей перетаскивания конструктора для обучения и развертывания](tutorial-designer-automobile-price-train-score.md). 

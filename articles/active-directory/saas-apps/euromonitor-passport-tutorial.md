@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/31/2019
 ms.author: jeedes
-ms.openlocfilehash: a7b5a1433e2d94d68c0512aa7c09909cb4e7fee5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 422b22c265b6df353b86ff19db7c42f86bce8835
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88555313"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92453898"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-euromonitor-passport"></a>Руководство по интеграции единого входа Azure Active Directory с Euromonitor Passport
 
@@ -26,7 +26,7 @@ ms.locfileid: "88555313"
 * Включить автоматический вход пользователей в Euromonitor Passport с помощью учетной записи Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -80,7 +80,7 @@ ms.locfileid: "88555313"
 
 1. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-1. Если вы хотите настроить приложение в режиме, инициированном **поставщиком услуг**, вам нужно получить URL-адрес входа в [службе поддержки Euromonitor Passport](mailto:passport.support@euromonitor.com). Получив этот URL-адрес, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия:
+1. Если вы хотите настроить приложение в режиме, инициированном **поставщиком услуг** , вам нужно получить URL-адрес входа в [службе поддержки Euromonitor Passport](mailto:passport.support@euromonitor.com). Получив этот URL-адрес, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия:
 
     Вставьте полученное значение URL-адреса входа, полученного от службы поддержки Euromonitor Passport, в текстовое поле URL-адреса входа.
 
@@ -107,7 +107,7 @@ ms.locfileid: "88555313"
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
@@ -119,40 +119,40 @@ ms.locfileid: "88555313"
 
 В рамках этого раздела вы предоставите пользователю B.Simon доступ к Euromonitor Passport для использования единого входа Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения** , а затем — **Все приложения**.
 1. В списке приложений выберите **Euromonitor Passport**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  выберите **Пользователи и группы**.
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-euromonitor-passport-sso"></a>Настройка единого входа в приложении Euromonitor Passport
 
-Чтобы настроить единый вход на стороне **Euromonitor Passport**, необходимо отправить созданный **URL-адрес метаданных федерации приложений** в [службу технической поддержки Euromonitor Passport](mailto:passport.support@euromonitor.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Euromonitor Passport** , необходимо отправить созданный **URL-адрес метаданных федерации приложений** в [службу технической поддержки Euromonitor Passport](mailto:passport.support@euromonitor.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-euromonitor-passport-test-user"></a>Создание тестового пользователя в приложении Euromonitor Passport
 
-В рамках этого раздела вы создадите пользователя B.Simon в приложении Euromonitor Passport. Обратитесь в  [службу технической поддержки Euromonitor Passport](mailto:passport.support@euromonitor.com), чтобы добавить пользователей на платформу Euromonitor Passport. Перед использованием единого входа необходимо создать и активировать пользователей.
+В рамках этого раздела вы создадите пользователя B.Simon в приложении Euromonitor Passport. Чтобы добавить пользователей на платформу Euromonitor Passport, обратитесь в [службу технической поддержки Euromonitor Passport](mailto:passport.support@euromonitor.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Euromonitor Passport на панели доступа, вы автоматически войдете в приложение Euromonitor Passport, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув элемент Euromonitor Passport на панели доступа, вы автоматически войдете в приложение Euromonitor Passport, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Пробное использование Euromonitor Passport с Azure AD](https://aad.portal.azure.com/)

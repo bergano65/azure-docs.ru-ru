@@ -9,12 +9,12 @@ ms.author: mlearned
 description: В этой статье представлен обзор Kubernetes с поддержкой Azure Arc.
 keywords: Kubernetes, Arc, Azure, контейнеры
 ms.custom: references_regions
-ms.openlocfilehash: 601fcb096bf2bfeb1a6120015690c9aff4b6177b
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 7e48ebf98f12e79cb154fb50d8e6dbdfaea1cd95
+ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216085"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92371313"
 ---
 # <a name="what-is-azure-arc-enabled-kubernetes-preview"></a>Что собой представляет Kubernetes с поддержкой Azure Arc (предварительная версия)?
 
@@ -37,6 +37,7 @@ Kubernetes с поддержкой Azure Arc работает с любым кл
 * Canonical Charmed Kubernetes 1.18;
 * Обработчик AKS
 * Обработчик AKS в Azure Stack Hub
+* AKS в Azure Stack HCI
 * Cluster API Provider Azure.
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии 

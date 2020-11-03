@@ -4,16 +4,16 @@ description: В этом кратком руководстве описывае�
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 09/18/2020
+ms.date: 10/23/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 2ec79c9c1fc3b461037b2005da7198f81cbbab34
-ms.sourcegitcommit: 94ca9e89501e65f4dcccc3789249357c7d5e27e5
+ms.openlocfilehash: a060528d3140203541f6a13064659651c7a4f67d
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92170364"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92488965"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Краткое руководство. Развертывание первого приложения Azure Spring Cloud
 
@@ -96,7 +96,7 @@ az extension add --name spring-cloud
    cd hello-world
    ```
 
-1. Измените файл *appSettings.json* , чтобы добавить следующие параметры:
+1. Измените файл *appSettings.json* , чтобы добавить следующие параметры:
 
    ```json
    "spring": {
@@ -206,13 +206,13 @@ az extension add --name spring-cloud
 
 1. Откройте [портал Azure](https://ms.portal.azure.com/). 
 
-1. В поле поиска сверху введите *Azure Spring Cloud* .
+1. В поле поиска сверху введите *Azure Spring Cloud*.
 
 1. Выберите пункт *Azure Spring Cloud* в списке результатов.
 
    ![Значок ASC — запуск](media/spring-cloud-quickstart-launch-app-portal/find-spring-cloud-start.png)
 
-1. На странице Azure Spring Cloud выберите элемент **+ Добавить** .
+1. На странице Azure Spring Cloud выберите элемент **+ Добавить**.
 
    ![Значок ASC — добавление](media/spring-cloud-quickstart-launch-app-portal/spring-cloud-add.png)
 
@@ -221,11 +221,11 @@ az extension add --name spring-cloud
    * **Подписка** : Выберите подписку, на которую будет выставляться счет за этот ресурс.
    * **Группа ресурсов.** Создайте новую группу ресурсов. Введенное здесь имя будет использоваться в дальнейших шагах как **\<resource group name\>** .
    * **Сведения о службе или ее название.** Укажите **\<service instance name\>** .  Его длина должна быть от 4 до 32 знаков. Имя может содержать только строчные буквы, цифры и дефисы.  Первым символом в имени службы должна быть буква, а последним — буква или цифра.
-   * **Регион** . Выберите регион для экземпляра службы.
+   * **Регион**. Выберите регион для экземпляра службы.
 
    ![Начальная страница портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-start.png)
 
-6. Выберите **Просмотреть и создать** .
+6. Выберите **Просмотреть и создать**.
 
 ## <a name="build-and-deploy-the-app"></a>Создание и развертывание приложения
 
@@ -239,19 +239,19 @@ az extension add --name spring-cloud
    dotnet publish -c release -o ./publish
    ```
 
-1. Создайте приложение в экземпляре Azure Spring Cloud с назначенной общедоступной конечной точкой. Используйте то же имя приложения hello-world, указанное в *appsettings.json* .
+1. Создайте приложение в экземпляре Azure Spring Cloud с назначенной общедоступной конечной точкой. Используйте то же имя приложения hello-world, указанное в *appsettings.json*.
 
    ```console
    az spring-cloud app create -n hello-world -s <service instance name> -g <resource group name> --is-public
    ```
 
-1. Разверните в приложении файл *.zip* .
+1. Разверните в приложении файл *.zip*.
 
    ```azurecli
    az spring-cloud app deploy -n hello-world -s <service instance name> -g <resource group name> --runtime-version NetCore_31 --main-entry hello-world.dll --artifact-path ./deploy.zip
    ```
 
-   Параметр `--main-entry` определяет файл *.dll* , содержащий точку входа приложения. После того как служба загрузит файл *.zip* , она извлекает все файлы и папки и пытается выполнить точку входа в указанном `--main-entry` файле *.dll* .
+   Параметр `--main-entry` определяет файл *.dll* , содержащий точку входа приложения. После того как служба загрузит файл *.zip* , она извлекает все файлы и папки и пытается выполнить точку входа в указанном `--main-entry` файле *.dll*.
 
    Для завершения развертывания приложения потребуется несколько минут. Чтобы убедиться, что оно развернуто, перейдите в колонку **Приложения** на портале Azure.
 
@@ -345,9 +345,9 @@ info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
 
 ## <a name="generate-a-spring-cloud-project"></a>Создание проекта Spring Cloud
 
-Начните со [Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.3.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin), чтобы создать пример проекта с рекомендуемыми зависимостями для Azure Spring Cloud. На рисунке ниже показан Initializr, настроенный для этого примера проекта.
+Начните со [Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.4.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin,cloud-config-client), чтобы создать пример проекта с рекомендуемыми зависимостями для Azure Spring Cloud. На рисунке ниже показан Initializr, настроенный для этого примера проекта.
 ```url
-https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.3.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin
+https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.4.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin,cloud-config-client
 ```
 
   ![Страница Initializr](media/spring-cloud-quickstart-java/initializr-page.png)
@@ -376,13 +376,13 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.3
 
 1. На новой вкладке откройте [портал Azure](https://ms.portal.azure.com/). 
 
-2. В поле поиска сверху введите *Azure Spring Cloud* .
+2. В поле поиска сверху введите *Azure Spring Cloud*.
 
 3. Выберите пункт *Azure Spring Cloud* в списке результатов.
 
     ![Значок ASC — запуск](media/spring-cloud-quickstart-launch-app-portal/find-spring-cloud-start.png)
 
-4. На странице Azure Spring Cloud щелкните элемент **+ Добавить** .
+4. На странице Azure Spring Cloud щелкните элемент **+ Добавить**.
 
     ![Значок ASC — добавление](media/spring-cloud-quickstart-launch-app-portal/spring-cloud-add.png)
 
@@ -394,7 +394,7 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.3
 
     ![Начальная страница портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-start.png)
 
-6. Щелкните **Проверка и создание** .
+6. Щелкните **Проверка и создание**.
 
 ## <a name="build-and-deploy-the-app"></a>Создание и развертывание приложения
     
@@ -446,12 +446,12 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.3
     [ ![Развертывание в Azure, шаг 1](media/spring-cloud-quickstart-java/intellij-deploy-azure-1.png) ](media/spring-cloud-quickstart-java/intellij-deploy-azure-1.png#lightbox)
 
 1. Подтвердите имя для приложения, указанное в поле **Name** (Имя). **Имя** здесь обозначает конфигурацию, а не имя приложения. Обычно пользователям его не нужно изменять.
-1. В текстовом поле **Artifact** (Артефакт) выберите *hellospring-0.0.1-SNAPSHOT.jar* .
+1. В текстовом поле **Artifact** (Артефакт) выберите *hellospring-0.0.1-SNAPSHOT.jar*.
 1. В текстовом поле **Subscription** (Подписка) проверьте свою подписку.
 1. В текстовом поле **Spring Cloud** выберите экземпляр Azure Spring Cloud, который вы создали при [подготовке к работе экземпляра Azure Spring Cloud](./spring-cloud-quickstart-provision-service-instance.md).
 1. Задайте для параметра **Public Endpoint** (Общедоступная конечная точка) значение *Enable* (Включить).
 1. В текстовом поле **App:** (Приложение:) выберите **Create app...** (Создать приложение...).
-1. Введите *hellospring* , а затем нажмите кнопку **ОК** .
+1. Введите *hellospring* , а затем нажмите кнопку **ОК**.
 
     [ ![Развертывание в Azure, подтверждение](media/spring-cloud-quickstart-java/intellij-deploy-to-azure.png) ](media/spring-cloud-quickstart-java/intellij-deploy-to-azure.png#lightbox)
 
@@ -481,7 +481,7 @@ az spring-cloud app logs -n hellospring -s <service instance name> -g <resource 
 
 #### <a name="intellij"></a>[IntelliJ](#tab/IntelliJ)
 
-1. Выберите **Azure Explorer** и **Spring Cloud** .
+1. Выберите **Azure Explorer** и **Spring Cloud**.
 1. Щелкните правой кнопкой мыши запущенное приложение.
 1. Выберите **Streaming Logs** (Журналы потоковой передачи) из раскрывающегося списка.
 1. Выберите экземпляр.

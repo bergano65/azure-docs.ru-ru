@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 6933f838f17e52f6889a44e343d02bef4848a7b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe09da61f4d87fbef4ce6c8739cd79c7bcda6796
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88521623"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92442764"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hosted-heritage-online-sso"></a>Руководство по интеграции единого входа Azure Active Directory с Hosted Heritage Online SSO
 
@@ -26,7 +26,7 @@ ms.locfileid: "88521623"
 * Вы можете включить автоматический вход пользователей в Hosted Heritage Online SSO с использованием учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -92,7 +92,7 @@ ms.locfileid: "88521623"
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
@@ -104,41 +104,40 @@ ms.locfileid: "88521623"
 
 В этом разделе объясняется, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Hosted Heritage Online SSO.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения** , а затем — **Все приложения**.
 1. В списке приложений выберите **Hosted Heritage Online SSO**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  выберите **Пользователи и группы**.
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-hosted-heritage-online-sso-sso"></a>Настройка единого входа на стороне Hosted Heritage Online SSO
 
-Чтобы настроить единый вход на стороне **Hosted Heritage Online SSO**, отправьте в [службу поддержки Hosted Heritage Online SSO](mailto:support@isoxford.com)**URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Hosted Heritage Online SSO** , отправьте в [службу поддержки Hosted Heritage Online SSO](mailto:support@isoxford.com)**URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-hosted-heritage-online-sso-test-user"></a>Создание тестового пользователя в Hosted Heritage Online SSO
 
-В этом разделе объясняется, как создать пользователя B.Simon в приложении Hosted Heritage Online SSO. Обратитесь в  [службу поддержки Hosted Heritage Online SSO](mailto:support@isoxford.com), чтобы добавить пользователей на платформу Hosted Heritage Online SSO. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе объясняется, как создать пользователя B.Simon в приложении Hosted Heritage Online SSO. Обратитесь к [группе поддержки Hosted Heritage Online SSO](mailto:support@isoxford.com), чтобы добавить пользователей на платформу Hosted Heritage Online SSO. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкните плитку Hosted Heritage Online SSO на панели доступа, и вы автоматически войдете в приложение Hosted Heritage Online SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкните плитку Hosted Heritage Online SSO на панели доступа, и вы автоматически войдете в приложение Hosted Heritage Online SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Пробная работа с Hosted Heritage Online SSO и AAD](https://aad.portal.azure.com/)
-

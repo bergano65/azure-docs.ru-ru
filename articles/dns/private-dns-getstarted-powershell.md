@@ -1,18 +1,18 @@
 ---
 title: Краткое руководство. Создание частной зоны Azure DNS с помощью Azure PowerShell
-description: В этой статье описано, как создать и проверить частную зону и запись DNS в Azure DNS. Это пошаговое руководство по созданию первой частной зоны DNS и записи DNS, а также управлению ими с помощью PowerShell.
+description: Из этого краткого руководства вы узнаете, как создать свою первую частную зону DNS и запись DNS и как управлять ими с помощью Azure PowerShell.
 services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: quickstart
 ms.date: 10/20/2020
 ms.author: rohink
-ms.openlocfilehash: fd795c9e251a7c4c0c8cbea5ce6c48cec3535484
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: ee6dde6b34cccd415f9bf2052f65dcbe940715c1
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311754"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424390"
 ---
 # <a name="quickstart-create-an-azure-private-dns-zone-using-azure-powershell"></a>Краткое руководство. Создание частной зоны Azure DNS с помощью Azure PowerShell
 
@@ -42,7 +42,7 @@ New-AzResourceGroup -name MyAzureResourceGroup -location "eastus"
 
 Зона DNS создается с помощью командлета `New-AzPrivateDnsZone`.
 
-В следующем примере создается виртуальная сеть с именем **myAzureVNet**. Затем создается зона DNS с именем **private.contoso.com** в группе ресурсов **MyAzureResourceGroup**, которая связывает зону DNS с виртуальной сетью **MyAzureVnet** и включает автоматическую регистрацию.
+В следующем примере создается виртуальная сеть с именем **myAzureVNet**. Затем создается зона DNS с именем **private.contoso.com** в группе ресурсов **MyAzureResourceGroup** , которая связывает зону DNS с виртуальной сетью **MyAzureVnet** и включает автоматическую регистрацию.
 
 ```azurepowershell
 Install-Module -Name Az.PrivateDns -force
@@ -167,7 +167,7 @@ Get-AzPrivateDnsRecordSet -ZoneName private.contoso.com -ResourceGroupName MyAzu
    PS C:\>
    ```
 
-2. Теперь проверьте связь с именем **db**, созданным ранее.
+2. Теперь проверьте связь с именем **db** , созданным ранее.
 
    ```
    ping db.private.contoso.com
@@ -193,7 +193,7 @@ Get-AzPrivateDnsRecordSet -ZoneName private.contoso.com -ResourceGroupName MyAzu
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите группу ресурсов **MyAzureResourceGroup**, если ресурсы, созданные в этой статье, больше не нужны.
+Удалите группу ресурсов **MyAzureResourceGroup** , если ресурсы, созданные в этой статье, больше не нужны.
 
 ```azurepowershell
 Remove-AzResourceGroup -Name MyAzureResourceGroup

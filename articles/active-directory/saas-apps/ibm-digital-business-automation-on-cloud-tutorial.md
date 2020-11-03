@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: jeedes
-ms.openlocfilehash: c3c2e9b8b37d3d81b9683e871844e2dd8d099074
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91a50ed85b5802657a27c5a545de0013937e9da0
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88517071"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460569"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ibm-digital-business-automation-on-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с IBM Digital Business Automation on Cloud
 
@@ -26,7 +26,7 @@ ms.locfileid: "88517071"
 * Автоматический вход пользователей в IBM Digital Business Automation on Cloud с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +40,7 @@ ms.locfileid: "88517071"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * IBM Digital Business Automation on Cloud поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
-* После настройки IBM Digital Business Automation on Cloud можно применять элементы управления сеансами, которые защищают от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* После настройки IBM Digital Business Automation on Cloud можно применять элементы управления сеансами, которые защищают от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-ibm-digital-business-automation-on-cloud-from-the-gallery"></a>Добавление IBM Digital Business Automation on Cloud из коллекции
 
@@ -77,11 +77,11 @@ ms.locfileid: "88517071"
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
+1. Если у вас есть **файл метаданных поставщика служб** , выполните следующие действия в разделе **Базовая конфигурация SAML** :
     
     а. Щелкните **Отправить файл метаданных**.
 
-    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    b. Щелкните **значок папки** , выберите файл метаданных и нажмите кнопку **Отправить**.
 
     c. После успешной отправки файла метаданных значения **Идентификатор** и **URL-адрес ответа** будут заполнены автоматически в текстовом поле в разделе IBM Digital Business Automation on Cloud.
 
@@ -91,20 +91,20 @@ ms.locfileid: "88517071"
     > [!Note]
     > Клиенты могут получить файл метаданных для своей облачной подписки, обратившись в [службу поддержки IBM Digital Business Automation on Cloud](mailto:supportbpmoncloud@us.ibm.com).
 
-1. Если вы хотите настроить приложение в режиме, **инициируемом поставщиком удостоверений**, но у вас нет **файла метаданных, предоставленного поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
+1. Если вы хотите настроить приложение в режиме, **инициируемом поставщиком удостоверений** , но у вас нет **файла метаданных, предоставленного поставщиком удостоверений** , в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.automationcloud.ibm.com/isam/sps/<TENANT>/saml20`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.automationcloud.ibm.com/isam/sps/<TENANT>/saml20/login`.
 
-1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
+1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг** , щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://www.automationcloud.ibm.com/isam/sps/<TENANT>/login`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов IBM Digital Business Automation on Cloud](mailto:supportbpmoncloud@us.ibm.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать** , чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
@@ -115,7 +115,7 @@ ms.locfileid: "88517071"
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
@@ -127,18 +127,18 @@ ms.locfileid: "88517071"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к IBM Digital Business Automation on Cloud.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения** , а затем — **Все приложения**.
 1. В списке приложений выберите **IBM Digital Business Automation on Cloud**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  выберите **Пользователи и группы**.
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-ibm-digital-business-automation-on-cloud-sso"></a>Настройка единого входа в IBM Digital Business Automation on Cloud
@@ -147,25 +147,24 @@ ms.locfileid: "88517071"
 
 ### <a name="create-ibm-digital-business-automation-on-cloud-test-user"></a>Настройка тестового пользователя в IBM Digital Business Automation on Cloud
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении IBM Digital Business Automation on Cloud. Для добавления пользователей в на платформу IBM Digital Business Automation on Cloud обратитесь в  [службу поддержки IBM Digital Business Automation on Cloud](mailto:supportbpmoncloud@us.ibm.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении IBM Digital Business Automation on Cloud. Чтобы добавить пользователей на платформу IBM Digital Business Automation on Cloud обратитесь в [службу поддержки этой платформы](mailto:supportbpmoncloud@us.ibm.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку IBM Digital Business Automation on Cloud на Панели доступа, вы автоматически войдете в решение IBM Digital Business Automation on Cloud, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку IBM Digital Business Automation on Cloud на Панели доступа, вы автоматически войдете в решение IBM Digital Business Automation on Cloud, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Попробуйте использовать IBM Digital Business Automation on Cloud с Azure AD](https://aad.portal.azure.com/)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
 
-- [Защита IBM Digital Business Automation on Cloud с помощью средств обеспечения расширенной видимости и улучшенных элементов управления](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
+- [Защита IBM Digital Business Automation on Cloud с помощью средств обеспечения расширенной видимости и улучшенных элементов управления](/cloud-app-security/proxy-intro-aad)

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.author: cherylmc
-ms.openlocfilehash: 8e4c0174e9f5e1a15fe85d5744ddcb6ee21c4a86
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 91004b9cb545275746f75dbd6ad46981fe4b04d5
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048276"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92461164"
 ---
 # <a name="tutorial-create-and-manage-a-vpn-gateway-using-powershell"></a>Руководство по Создание VPN-шлюза и управление им с помощью PowerShell
 
@@ -26,7 +26,7 @@ VPN-шлюзы Azure предоставляют распределенное п�
 
 На следующей схеме показаны виртуальная сеть и VPN-шлюз, созданные в рамках этого руководства.
 
-![Виртуальная сеть и VPN-шлюз](./media/vpn-gateway-tutorial-create-gateway-powershell/vnet1-gateway.png)
+:::image type="content" source="./media/vpn-gateway-tutorial-create-gateway-powershell/gateway-diagram.png" alt-text="Схема виртуальной сети и VPN-шлюза":::
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -187,4 +187,4 @@ Remove-AzResourceGroup -Name $RG1
 Ознакомьтесь со следующим руководством:
 
 > [!div class="nextstepaction"]
-> * [Руководство по созданию и администрированию VPN-подключений "сеть — сеть" с помощью PowerShell](vpn-gateway-tutorial-vpnconnection-powershell.md)
+> * [Создание подключения "сеть — сеть"](vpn-gateway-create-site-to-site-rm-powershell.md)

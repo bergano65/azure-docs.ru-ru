@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/23/2020
 ms.author: jeedes
-ms.openlocfilehash: d529123b52e0e90702839f6822a586cf53dffa52
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 456348f5492af44274a37a6400fb8d95e9bd55a4
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88546722"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516033"
 ---
 # <a name="tutorial-integrate-mvision-cloud-azure-ad-sso-configuration-with-azure-active-directory"></a>Руководство по Интеграция MVISION Cloud Azure AD SSO Configuration с Azure Active Directory
 
@@ -26,7 +26,7 @@ ms.locfileid: "88546722"
 * Вы позволите пользователям автоматически входить в MVISION Cloud Azure AD SSO Configuration с учетными записями Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -41,7 +41,7 @@ ms.locfileid: "88546722"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * MVISION Cloud Azure AD SSO Configuration поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
-* После настройки Dropbox можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Dropbox можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-mvision-cloud-azure-ad-sso-configuration-from-the-gallery"></a>Добавление MVISION Cloud Azure AD SSO Configuration из коллекции
 
@@ -78,13 +78,13 @@ ms.locfileid: "88546722"
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 
-4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений** , в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<ENV>.myshn.net/shndash/saml/Azure_SSO`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<ENV>.myshn.net/shndash/response/saml-postlogin`.
 
-5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг** , щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа в приложение MVISION Cloud Azure AD SSO Configuration](common/metadata-upload-additional-signon.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "88546722"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу технической поддержки клиентов MVISION Cloud Azure AD SSO Configuration](mailto:support@skyhighnetworks.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить** , чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
@@ -106,7 +106,7 @@ ms.locfileid: "88546722"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "88546722"
 
 В этом разделе объясняется, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к MVISION Cloud Azure AD SSO Configuration.
 
-1. На портале Azure последовательно выберите элементы **Корпоративные приложения**, **Все приложения**, а затем — **MVISION Cloud Azure AD SSO Configuration**.
+1. На портале Azure последовательно выберите элементы **Корпоративные приложения** , **Все приложения** , а затем — **MVISION Cloud Azure AD SSO Configuration**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -143,40 +143,40 @@ ms.locfileid: "88546722"
 
     ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя** , а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon** , а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 
 ## <a name="configure-mvision-cloud-azure-ad-sso-configuration-sso"></a>Настройка единого входа в MVISION Cloud Azure AD SSO Configuration
 
-Чтобы настроить единый вход на стороне **MVISION Cloud Azure AD SSO Configuration**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные с портала Azure, в [службу технической поддержки MVISION Cloud Azure AD SSO Configuration](mailto:support@skyhighnetworks.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **MVISION Cloud Azure AD SSO Configuration** , нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные с портала Azure, в [службу технической поддержки MVISION Cloud Azure AD SSO Configuration](mailto:support@skyhighnetworks.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 
 ### <a name="create-mvision-cloud-azure-ad-sso-configuration-test-user"></a>Создание тестового пользователя в MVISION Cloud Azure AD SSO Configuration
 
-В рамках этого раздела вы создадите пользователя с именем B.Simon в MVISION Cloud Azure AD SSO Configuration. Для добавления пользователей на платформу MVISION Cloud Azure AD SSO Configuration обратитесь в  [службу технической поддержки MVISION Cloud Azure AD SSO Configuration](mailto:support@skyhighnetworks.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+В рамках этого раздела вы создадите пользователя с именем B.Simon в MVISION Cloud Azure AD SSO Configuration. Чтобы добавить пользователей на платформу MVISION Cloud Azure AD SSO Configuration, обратитесь в [службу поддержки MVISION Cloud Azure AD SSO Configuration](mailto:support@skyhighnetworks.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "MVISION Cloud Azure AD SSO Configuration" на Панели доступа, вы автоматически войдете в приложение MVISION Cloud Azure AD SSO Configuration, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув элемент "MVISION Cloud Azure AD SSO Configuration" на Панели доступа, вы автоматически войдете в приложение MVISION Cloud Azure AD SSO Configuration, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Ознакомление с MVISION Cloud Azure AD SSO Configuration в сочетании с Azure Active Directory](https://aad.portal.azure.com/)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)

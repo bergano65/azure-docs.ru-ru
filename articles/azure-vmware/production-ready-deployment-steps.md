@@ -3,18 +3,18 @@ title: Планирование развертывания Решения Azure 
 description: В этой статье описывается рабочий процесс развертывания Решения Azure VMware.  Его конечным результатом будет среда, готовая к созданию виртуальной машины и миграции.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 7914176174a38fef2336fc52eae7501780057452
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: e30692f26af786097f3cdb81690be617bfea0c79
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147977"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92517367"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>Планирование развертывания Решения Azure VMware
 
 В этой статье изложен процесс планирования для обнаружения и сбора данных, используемых во время развертывания. При планировании развертывания обязательно задокументируйте собранную информацию, которую затем будет удобно использовать для справки во время развертывания.
 
-После выполнения процессов, описанных в этом кратком руководстве будет создана готовая рабочая среда, в которой можно будет создать виртуальные машины и выполнить миграцию. 
+После выполнения процессов, описанных в этом кратком руководстве, будет создана готовая рабочая среда, в которой можно будет создать виртуальные машины и выполнить миграцию. 
 
 >[!IMPORTANT]
 >Перед созданием ресурса Решения Azure VMware отправьте в службу поддержки запрос на выделение узлов, как описано в статье [Включение ресурса Решения Azure VMware](enable-azure-vmware-solution.md). Когда группа поддержки получит ваш запрос, ей потребуется до пяти рабочих дней на его подтверждение и выделение узлов. Если у вас уже есть частное облако Решения Azure VMware и вы хотите выделить для него больше узлов, выполните те же действия. 
@@ -63,7 +63,7 @@ ms.locfileid: "92147977"
 
 Решение Azure VMware, имеющаяся среда Azure и локальная среда обмениваются данными о маршрутах (как правило). В этом случае блок сетевых адресов CIDR /22, определенный на этом шаге, не должен перекрываться с другими адресами, которые у вас уже есть в локальной среде или Azure.
 
-**Пример** . 10.0.0.0/22
+**Пример**. 10.0.0.0/22
 
 Дополнительные сведения см. в [контрольном списке планирования сети](tutorial-network-checklist.md#routing-and-subnet-considerations).
 
@@ -73,13 +73,13 @@ ms.locfileid: "92147977"
 
 Определите сегмент IP-адресов, чтобы создать первую сеть (сегмент NSX) в частном облаке.  Иными словами, необходимо создать сегмент сети в Решении Azure VMware для развертывания в нем виртуальных машины.   
 
-Даже если планируется только расширение сетей 2-го уровня, такой сегмент сети стоит создать для проверки среды.
+Даже если планируется только расширение сетей 2-го уровня, создайте такой сегмент сети для проверки среды.
 
 Напомним, что все создаваемые IP-сегменты должны быть уникальными в масштабах Azure и локальной среды.  
 
-**Пример** . 10.0.4.0/24
+**Пример**. 10.0.4.0/24
 
-:::image type="content" source="media/pre-deployment/nsx-segment-diagram.png" alt-text="Определение сегмента IP-адреса" border="false":::     
+:::image type="content" source="media/pre-deployment/nsx-segment-diagram.png" alt-text="Определение сегмента IP-адресов для рабочих нагрузок виртуальных машин" border="false":::     
 
 ## <a name="optional-extend-networks"></a>Расширения сетей (необязательно)
 
@@ -94,9 +94,9 @@ ms.locfileid: "92147977"
 
 Определите блок сетевых адресов CIDR `/29`, необходимый для пиринга ExpressRoute Global Reach. Напомним, что все создаваемые IP-сегменты должны быть уникальными в масштабах Решения Azure VMware и локальной среды. IP-адреса в этом сегменте используются на каждом конце подключения ExpressRoute Global Reach для подключения канала ExpressRoute Решения Azure VMware к локальному каналу ExpressRoute. 
 
-**Пример** . 10.1.0.0/29
+**Пример**. 10.1.0.0/29
 
-:::image type="content" source="media/pre-deployment/expressroute-global-reach-ip-diagram.png" alt-text="Определение сегмента IP-адреса" border="false":::
+:::image type="content" source="media/pre-deployment/expressroute-global-reach-ip-diagram.png" alt-text="Определение пиринга между сетями ExpressRoute Global Reach" border="false":::
 
 ## <a name="azure-virtual-network-to-attach-azure-vmware-solution"></a>Виртуальная сеть Azure для подключения Решения Azure VMware
 
@@ -119,7 +119,7 @@ ms.locfileid: "92147977"
 >[!NOTE]
 >Эта виртуальная сеть находится в локальной среде и Решении Azure VMware, поэтому убедитесь, что сегменты IP-адресов, используемые в этой виртуальной сети и подсетях, не перекрываются.
 
-:::image type="content" source="media/pre-deployment/azure-vmware-solution-expressroute-diagram.png" alt-text="Определение сегмента IP-адреса" border="false":::
+:::image type="content" source="media/pre-deployment/azure-vmware-solution-expressroute-diagram.png" alt-text="Определение виртуальной сети Azure для подключения Решения Azure VMware" border="false":::
 
 ## <a name="vmware-hcx-network-segments"></a>Сегменты сети VMware HCX
 

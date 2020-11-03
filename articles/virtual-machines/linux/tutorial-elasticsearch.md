@@ -13,12 +13,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 10/11/2017
 ms.author: routlaw
-ms.openlocfilehash: 1b7b4d3c25794a62bc19925ade278159ebb37615
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3d35940a445b73ecb9285355f36b141c3a151b8
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80066548"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92475062"
 ---
 # <a name="install-the-elastic-stack-on-an-azure-vm"></a>Установка Elastic Stack на виртуальной машине в Azure
 
@@ -226,9 +226,9 @@ sudo systemctl start kibana.service
 az vm open-port --port 5601 --resource-group myResourceGroup --name myVM
 ```
 
-Откройте консоль Kibana и нажмите кнопку **Создать**, чтобы создать индекс по умолчанию, основанный на данных системного журнала, отправленных ранее в Elasticsearch. 
+Откройте консоль Kibana и нажмите кнопку **Создать** , чтобы создать индекс по умолчанию, основанный на данных системного журнала, отправленных ранее в Elasticsearch. 
 
-![Обзор событий системного журнала в Kibana](media/elasticsearch-install/kibana-index.png)
+![Снимок экрана: консоль Kibana, где выделена кнопка создания.](media/elasticsearch-install/kibana-index.png)
 
 Щелкните вкладку **Поиск** на консоли Kibana для поиска, просмотра и фильтрации событий системного журнала.
 

@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 09/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: 135e0ccfd9b4681932a9a69df0372aa400933124
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: ddf418c90857b5bb7eca97eb2c6943cc93fce9ab
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102580"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92518931"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
@@ -21,12 +21,12 @@ ms.locfileid: "92102580"
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
-Создайте удостоверение для службы поиска в Azure Active Directory, а затем используйте разрешения RBAC, чтобы предоставить источникам данных Azure разрешения удостоверения только для чтения. При необходимости выберите возможность [исключения доверенных служб](search-indexer-howto-access-trusted-service-exception.md), если правила IP-адресов не подходят.
+Создайте удостоверение для службы поиска в Azure Active Directory, а затем используйте разрешения Azure RBAC, чтобы предоставить удостоверению разрешения только на чтение для доступа к источникам данных Azure. При необходимости выберите возможность [исключения доверенных служб](search-indexer-howto-access-trusted-service-exception.md), если правила IP-адресов не подходят.
 
 
 |Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
 |------------------------------|----------|-------------|---------------|
-| [Управляемое удостоверение службы](search-howto-managed-identities-data-sources.md) | Индексаторы, безопасность | Создает удостоверение для службы поиска в Azure Active Directory, а затем использует разрешения RBAC, чтобы предоставить доступ к источникам данных Azure. Такой подход устраняет необходимость использования учетных данных в строке подключения. <br><br>Если правила IP-адресов не подходят, использовать управляемое удостоверение службы можно с помощью [исключения доверенных служб](search-indexer-howto-access-trusted-service-exception.md). | Общедоступная версия. Эта возможность доступна на портале или [при создании источника данных (REST)](/rest/api/searchservice/create-data-source) с API версии 2020-06-30. |
+| [Управляемое удостоверение службы](search-howto-managed-identities-data-sources.md) | Индексаторы, безопасность | Создает удостоверение для службы поиска в Azure Active Directory, а затем использует разрешения Azure RBAC, чтобы предоставить доступ к источникам данных Azure. Такой подход устраняет необходимость использования учетных данных в строке подключения. <br><br>Если правила IP-адресов не подходят, использовать управляемое удостоверение службы можно с помощью [исключения доверенных служб](search-indexer-howto-access-trusted-service-exception.md). | Общедоступная версия. Эта возможность доступна на портале или [при создании источника данных (REST)](/rest/api/searchservice/create-data-source) с API версии 2020-06-30. |
 | [Отправка исходящих запросов с использованием приватного канала](search-indexer-howto-access-private.md) | Индексаторы, безопасность | Создает общий ресурс приватного канала, который могут использовать индексаторы при доступе к ресурсам Azure, защищенным с помощью Приватного канала Azure. Дополнительные сведения о способах защиты подключений индексаторов см. в статье о [Доступ индексатора к содержимому, защищенному с помощью функций безопасности сети Azure (Когнитивный поиск Azure)](search-indexer-securing-resources.md). | Общедоступная версия. Эта возможность доступна на портале или [при создании общего ресурса приватного канала](/rest/api/searchmanagement/sharedprivatelinkresources) с API версии 2020-08-01. |
 | [REST API управления (2020-08-01)](/rest/api/searchmanagement/management-api-versions) | REST | Новый стабильный REST API поддерживает создание общих ресурсов приватного канала. | Общедоступная версия. |
 | [REST API управления (2020-08-01, предварительная версия)](/rest/api/searchmanagement/management-api-versions) | REST | Добавляет общий ресурс приватного канала для Функций Azure и Azure SQL для баз данных MySQL. | Общедоступная предварительная версия. |

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/04/2020
 ms.author: jeedes
-ms.openlocfilehash: d93cd2efe49f819c8adeb53674b6d4f465312e06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a2169db47ca5a6adcddbcc9558161370b896a62
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88527426"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92509562"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-smart-global-governance"></a>Руководство по интеграции единого входа Azure Active Directory со Smart Global Governance
 
@@ -26,7 +26,7 @@ ms.locfileid: "88527426"
 * Вы можете включить автоматический вход пользователей в Smart Global Governance с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -41,7 +41,7 @@ ms.locfileid: "88527426"
 
 Smart Global Governance поддерживает единый вход, инициируемый поставщиком услуг и поставщиком удостоверений.
 
-После настройки Smart Global Governance вы можете применить функцию управления сеансом, которая в режиме реального времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+После настройки Smart Global Governance вы можете применить функцию управления сеансом, которая в режиме реального времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="add-smart-global-governance-from-the-gallery"></a>Добавление Smart Global Governance из коллекции
 
@@ -96,11 +96,11 @@ Smart Global Governance поддерживает единый вход, иниц
     - `https://eu-fr-south.console.smartglobalprivacy.com/dpo`
     - `https://eu-fr-south.console.smartglobalprivacy.com/platform`
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **Сертификат (необработанный)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере:
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **Сертификат (необработанный)** и щелкните **Скачать** , чтобы скачать сертификат. Сохраните этот сертификат на компьютере:
 
     ![Ссылка для скачивания сертификата](common/certificateraw.png)
 
-1. Скопируйте требуемые URL-адреса в разделе **Настройка Smart Global Governance**:
+1. Скопируйте требуемые URL-адреса в разделе **Настройка Smart Global Governance** :
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -108,7 +108,7 @@ Smart Global Governance поддерживает единый вход, иниц
 
 В этом разделе описано, как создать на портале Azure тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева щелкните **Azure Active Directory**. Щелкните **Пользователи**, а затем **Все пользователи**.
+1. На портале Azure в области слева щелкните **Azure Active Directory**. Щелкните **Пользователи** , а затем **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В свойствах **пользователя** выполните следующие действия:
    1. В поле **Имя** введите **B.Simon**.  
@@ -120,18 +120,18 @@ Smart Global Governance поддерживает единый вход, иниц
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Smart Global Governance.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения** , а затем — **Все приложения**.
 1. В списке приложений выберите **Smart Global Governance**.
-1. В разделе **Управление** на странице сводных данных о приложении выберите **Пользователи и группы**:
+1. В разделе **Управление** на странице сводных данных о приложении выберите **Пользователи и группы** :
 
    ![Выбор параметра "Пользователи и группы"](common/users-groups-blade.png)
 
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** — **Пользователи и группы**:
+1. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  — **Пользователи и группы** :
 
     ![Выбор элемента "Добавить пользователя"](common/add-assign-user.png)
 
-1. В диалоговом окне **Пользователи и группы** выберите **B. Simon** в списке **Пользователи**, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Пользователи и группы** выберите **B. Simon** в списке **Пользователи** , а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** выберите **Назначить**.
 
 ## <a name="configure-smart-global-governance-sso"></a>Настройка единого входа в Smart Global Governance
@@ -140,24 +140,24 @@ Smart Global Governance поддерживает единый вход, иниц
 
 ### <a name="create-a-smart-global-governance-test-user"></a>Создание тестового пользователя Smart Global Governance
 
-Для добавления пользователя B. Simon в Smart Global Governance обратитесь к  [группе поддержки Smart Global Governance](mailto:support.tech@smartglobal.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+Обратитесь к [группе поддержки Smart Global Governance](mailto:support.tech@smartglobal.com), чтобы добавить пользователя B. Simon в Smart Global Governance. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе вы с помощью панели доступа проверите конфигурацию единого входа Azure AD.
 
-Щелкнув плитку Smart Global Governance на Панели доступа, вы автоматически войдете в экземпляр Smart Global Governance, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку Smart Global Governance на Панели доступа, вы автоматически войдете в экземпляр Smart Global Governance, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Учебники по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Учебники по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Пробное использование Smart Global Governance с Azure AD](https://aad.portal.azure.com/)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
 
-- [Защита приложений с помощью Управления условным доступом к приложениям в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Защита приложений с помощью Управления условным доступом к приложениям в Microsoft Cloud App Security](/cloud-app-security/proxy-intro-aad)

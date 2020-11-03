@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: 74e85906742207d6cde0b7c4cc5c021c23ee4c7b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: bb5c7e082dc4a35183190f5d2d6a4b305b907f4f
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91260144"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92480485"
 ---
 # <a name="apache-spark-in-azure-synapse-analytics-core-concepts"></a>Ключевые концепции Apache Spark в Azure Synapse Analytics
 
@@ -60,7 +60,40 @@ Azure Synapse упрощает создание и настройку компо
 - Если другой пользователь с именем U2 отправит задание J3, в котором используются 10 узлов, будет создан экземпляр Spark с именем SI2 для обработки задания.
 - Если сейчас вы отправите еще одно задание, J2, использующее 10 узлов, в пуле все еще будет емкость и экземпляр, поэтому J2 будет обработано SI1.
 
+## <a name="quotas-and-resource-constraints-in-apache-spark-for-azure-synapse"></a>Квоты и ограничения ресурсов в Apache Spark для Azure Synapse
+
+### <a name="workspace-level"></a>Уровень рабочей области
+
+В каждой рабочей области Azure Synapse есть квота виртуальных ядер по умолчанию, которую можно использовать для Spark. Квота разделяется на квоту пользователя и квоту потока данных, чтобы предотвратить использование всех виртуальных ядер в рабочей области одним шаблоном использования. Квота различается в зависимости от типа подписки, но является симметричной между пользователем и потоком данных. Тем не менее, если запросить больше виртуальных ядер, чем осталось в рабочей области, отобразится следующая ошибка:
+
+```console
+Failed to start session: [User] MAXIMUM_WORKSPACE_CAPACITY_EXCEEDED
+Your Spark job requested 480 vcores.
+However, the workspace only has xxx vcores available out of quota of yyy vcores.
+Try reducing the numbers of vcores requested or increasing your vcore quota. Click here for more information - https://go.microsoft.com/fwlink/?linkid=213499
+```
+
+Ссылка в сообщении указывает на эту статью.
+
+В следующей статье описывается, как запросить увеличение квоты виртуальных ядер в рабочей области.
+
+- Выберите "Azure Synapse Analytics" в качестве типа службы.
+- В окне сведений о квоте выберите Apache Spark (виртуальное ядро) на рабочую область.
+
+[Запросить увеличение емкости на портале Azure](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests#request-a-standard-quota-increase-from-help--support)
+
+### <a name="spark-pool-level"></a>Уровень пула Spark
+
+При определении пула Spark вы эффективно определяете квоту для каждого пользователя в этом пуле. Если запустить несколько записных книжек или заданий или их сочетание, можно исчерпать квоты пула. В этом случае будет создано сообщение об ошибке, как показано ниже:
+
+```console
+Failed to start session: Your Spark job requested xx vcores.
+However, the pool is consuming yy vcores out of available zz vcores.Try ending the running job(s) in the pool, reducing the numbers of vcores requested, increasing the pool maximum size or using another pool
+```
+
+Чтобы решить эту проблему, необходимо уменьшить использование ресурсов пула перед отправкой нового запроса ресурсов путем запуска записной книжки или задания.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
-- [Документация по Apache Spark](https://spark.apache.org/docs/2.4.4/)
+- [Документация по Apache Spark](https://spark.apache.org/docs/2.4.5/)

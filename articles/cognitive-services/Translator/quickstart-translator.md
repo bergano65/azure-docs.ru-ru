@@ -12,12 +12,12 @@ ms.date: 09/14/2020
 ms.author: erhopf
 ms.custom: cog-serv-seo-aug-2020
 keywords: переводчик, служба переводчик, перевод текста, транслитерация текста, распознавание языка
-ms.openlocfilehash: e5b0bc17e8df1d82fb23a098f857be4fea13b982
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: ca86ce1dc015c8d7ee3bc83a6d7e3279a146f195
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91318846"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92517044"
 ---
 # <a name="quickstart-get-started-with-translator"></a>Краткое руководство. Начало работы с Переводчиком
 
@@ -59,7 +59,7 @@ ms.locfileid: "91318846"
 # <a name="java"></a>[Java](#tab/java)
 
 * Создайте рабочий каталог для своего проекта. Например: `mkdir sample-project`.
-* Инициализируйте проект с помощью Gradle: `gradle init --type basic`. Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
+* Инициализируйте проект с помощью Gradle: `gradle init --type basic`. Когда появится запрос на выбор **предметно-ориентированного языка** , выберите **Kotlin**.
 * Обновите `build.gradle.kts`. Помните, что вам потребуется обновить значение `mainClassName` в соответствии с примером.
   ```java
   plugins {
@@ -123,7 +123,7 @@ ms.locfileid: "91318846"
 
 ## <a name="keys-and-endpoints"></a>Ключи и конечные точки
 
-Для простоты в примерах на этой странице используются жестко запрограммированные ключи и конечные точки. Не забудьте **удалить ключ из кода, когда закончите**, и **никогда не публикуйте его в открытом доступе**. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security).
+Для простоты в примерах на этой странице используются жестко запрограммированные ключи и конечные точки. Не забудьте **удалить ключ из кода, когда закончите** , и **никогда не публикуйте его в открытом доступе**. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security).
 
 ## <a name="translate-text"></a>Перевод текста 
 
@@ -2440,6 +2440,12 @@ print(json.dumps(response, sort_keys=True, ensure_ascii=False, indent=4, separat
     }
 ]
 ```
+
+## <a name="troubleshooting"></a>Диагностика
+
+### <a name="java-users"></a>Пользователи Java
+
+Если у вас возникли проблемы с подключением, возможно, истек срок действия SSL-сертификата. Чтобы устранить эту проблему, установите [DigiCertGlobalRootG2.crt](http://cacerts.digicert.com/DigiCertGlobalRootG2.crt) в частном хранилище. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

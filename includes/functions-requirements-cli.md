@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: glenga
-ms.openlocfilehash: e969520e226999bc2b104fb4f757619832eaa165
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7ddceb2808874e531cfda81e5a9ce74be3a4fab4
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88944423"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92517091"
 ---
 ## <a name="configure-your-local-environment"></a>Настройка локальной среды
 
@@ -42,11 +42,7 @@ ms.locfileid: "88944423"
 + Пакет [SDK для .NET Core 3.1](https://www.microsoft.com/net/download).
 ::: zone-end
 ::: zone pivot="programming-language-java"  
-+ [Java Developer Kit](https://aka.ms/azure-jdks) версии 8. 
-
-    > [!IMPORTANT]
-    > + Поддержка Функций для Java 11 в настоящее время доступна в предварительной версии, а архетип Maven по умолчанию создает развертывание Java 8. Если вы хотите запустить приложение-функцию в среде Java 11, необходимо вручную изменить файл pom.xml, указав в нем значения Java 11. Дополнительные сведения см. в разделе [Версии Java](../articles/azure-functions/functions-reference-java.md#java-versions). 
-    > + Переменной среды `JAVA_HOME` необходимо присвоить расположение установки правильной версии JDK, чтобы завершить выполнение заданий этого краткого руководства.
++ [Java Developer Kit](https://aka.ms/azure-jdks) версии 8 или 11. 
 
 + [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
 

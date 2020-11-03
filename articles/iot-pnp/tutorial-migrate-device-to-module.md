@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 671809b9cdbe72c8f3091b0056897c2342a38b1f
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: d425152f83821e1d157065370bd02e2d990ec876
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089168"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426940"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-module-c"></a>Руководство по подключению модуля IoT Plug and Play (C#)
 
@@ -35,13 +35,13 @@ ms.locfileid: "92089168"
 
 Добавьте модуль с именем **my-module** в **my-module-device** :
 
-1. В средстве Обозревателя Интернета вещей Azure перейдите к устройству **my-module-device** .
+1. В средстве Обозревателя Интернета вещей Azure перейдите к устройству **my-module-device**.
 
-1. Выберите **Удостоверение модуля** , а затем выберите **Добавить** .
+1. Выберите **Удостоверение модуля** , а затем выберите **Добавить**.
 
-1. Введите **my-module** в качестве имени удостоверения модуля и нажмите кнопку **Сохранить** .
+1. Введите **my-module** в качестве имени удостоверения модуля и нажмите кнопку **Сохранить**.
 
-1. В списке удостоверений модулей выберите **my-module** . Затем скопируйте основную строку подключения. Строка подключения модуля понадобится позже.
+1. В списке удостоверений модулей выберите **my-module**. Затем скопируйте основную строку подключения. Строка подключения модуля понадобится позже.
 
 1. Перейдите на вкладку **Двойник модуля** и обратите внимание, что на ней нет требуемых или наблюдаемых свойств:
 
@@ -96,7 +96,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
 1. Откройте файл проекта *azure-iot-sdk-csharp\iot-hub\Samples\device\PnpDeviceSamples\Thermostat\Thermostat.csproj* в Visual Studio 2019.
 
-1. В Visual Studio последовательно выберите **Проект > Thermostat Properties (Свойства термостата) > Отладка** . Затем добавьте в проект следующие переменные среды:
+1. В Visual Studio последовательно выберите **Проект > Thermostat Properties (Свойства термостата) > Отладка**. Затем добавьте в проект следующие переменные среды:
 
     | Имя | Значение |
     | ---- | ----- |
@@ -169,9 +169,9 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
 Пакеты SDK для служб позволяют получить идентификатор модели подключенных устройств и модулей IoT Plug and Play. Пакеты SDK для служб можно использовать для задания перезаписываемых свойств и команд вызова:
 
-1. В другом экземпляре Visual Studio откройте проект *azure-iot-sdk-csharp\iot-hub\Samples\service\PnpServiceSamples\Thermostat\Thermostat.csproj* .
+1. В другом экземпляре Visual Studio откройте проект *azure-iot-sdk-csharp\iot-hub\Samples\service\PnpServiceSamples\Thermostat\Thermostat.csproj*.
 
-1. В Visual Studio последовательно выберите **Проект > Thermostat Properties (Свойства термостата) > Отладка** . Затем добавьте в проект следующие переменные среды:
+1. В Visual Studio последовательно выберите **Проект > Thermostat Properties (Свойства термостата) > Отладка**. Затем добавьте в проект следующие переменные среды:
 
     | Имя | Значение |
     | ---- | ----- |

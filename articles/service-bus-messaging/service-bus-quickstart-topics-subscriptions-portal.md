@@ -5,12 +5,12 @@ author: spelluru
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: d3dc63106e1ca5d9db2b14392ca1fb97e3a68289
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9085ccd272c6634e4be518872cb7e279da6b803c
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88191537"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92425397"
 ---
 # <a name="use-the-azure-portal-to-create-a-service-bus-topic-and-subscriptions-to-the-topic"></a>Создание раздела служебной шины и подписок на него с помощью портала Azure
 В этом кратком руководстве с помощью портала Azure вы создадите раздел служебной шины, а затем создадите подписки на этот раздел. 
@@ -32,7 +32,11 @@ ms.locfileid: "88191537"
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Чтобы узнать, как отправлять сообщения в раздел и получать эти сообщения с помощью подписки, ознакомьтесь с приведенной ниже статьей (выберите язык программирования в оглавлении). 
+С помощью инструкций из этой статьи вы создали пространство имен Служебной шины, раздел в этом пространстве имен и три подписки на раздел. Чтобы узнать, как опубликовать сообщения в разделе и подписаться на сообщения из подписки, ознакомьтесь с одним из следующих кратких руководств в разделе **Шаблон "публикация/подписка" для обмена сообщениями**. 
 
-> [!div class="nextstepaction"]
-> [Шаблон "публикация/подписка" для обмена сообщениями](service-bus-dotnet-how-to-use-topics-subscriptions.md)
+- [.NET](service-bus-dotnet-how-to-use-topics-subscriptions.md)
+- [Java](service-bus-java-how-to-use-topics-subscriptions.md)
+- [JavaScript](service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md)
+- [Python](service-bus-python-how-to-use-topics-subscriptions.md)
+- [PHP](service-bus-php-how-to-use-topics-subscriptions.md)
+- [Ruby](service-bus-ruby-how-to-use-topics-subscriptions.md)

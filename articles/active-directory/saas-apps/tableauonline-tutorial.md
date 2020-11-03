@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 035bc13ee44a8a003ae860eb2bdd67432fa91f14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7841f09b113b4bdf7eacddbbfc5f054bf69b1750
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88542529"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92517826"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-online"></a>Руководство по Интеграция единого входа Azure Active Directory с Tableau Online
 
@@ -26,7 +26,7 @@ ms.locfileid: "88542529"
 * Автоматический вход пользователей в Tableau Online с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +40,7 @@ ms.locfileid: "88542529"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Tableau Online поддерживает единый вход, инициируемый **поставщиком услуг**.
-* После настройки Tableau Online можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Tableau Online можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-tableau-online-from-the-gallery"></a>Добавление Tableau Online из коллекции.
 
@@ -77,11 +77,11 @@ ms.locfileid: "88542529"
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed** , чтобы включить единый вход.
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить** , чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
@@ -96,7 +96,7 @@ ms.locfileid: "88542529"
     > [!NOTE]
     > Значение `<entityid>` см. на странице **настройки Tableau Online**. Значением идентификатора сущности является **идентификатор Azure AD** на странице **настройки Tableau Online**.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать** , чтобы скачать нужный вам **XML метаданных федерации** , и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "88542529"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -139,7 +139,7 @@ ms.locfileid: "88542529"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Tableau Online.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Tableau Online**.
+1. На портале Azure выберите **Корпоративные приложения** , **Все приложения** , а затем — **Tableau Online**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -151,59 +151,59 @@ ms.locfileid: "88542529"
 
     ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя** , а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon** , а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-tableau-online-sso"></a>Настройка единого входа в Tableau Online
 
-1. В другом окне браузера войдите в приложение Tableau Online. Выберите **Параметры**, а затем щелкните **Проверка подлинности**.
+1. В другом окне браузера войдите в приложение Tableau Online. Выберите **Параметры** , а затем щелкните **Проверка подлинности**.
 
-    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_09.png)
+    ![Снимок экрана: меню "Параметры" с выбранным пунктом "Аутентификация".](./media/tableauonline-tutorial/tutorial_tableauonline_09.png)
 
-2. Чтобы включить SAML, в разделе **Типы проверки подлинности** установите флажок **Enable an additional authentication method** (Включить дополнительный метод проверки подлинности) и флажок**SAML**.
+2. Чтобы включить SAML, в разделе **Типы проверки подлинности** установите флажок **Enable an additional authentication method** (Включить дополнительный метод проверки подлинности) и флажок **SAML**.
 
-    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_12.png)
+    ![Снимок экрана: раздел "Типы аутентификации", где можно выбрать значения.](./media/tableauonline-tutorial/tutorial_tableauonline_12.png)
 
 3. Прокрутите вниз до раздела **Import metadata file into Tableau Online** (Импорт файла метаданных в Tableau Online).  Нажмите кнопку "Обзор" и импортируйте файл метаданных, скачанный из Azure AD. Нажмите кнопку **Применить**.
 
-   ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_13.png)
+   ![Снимок экрана: раздел для импорта файла метаданных.](./media/tableauonline-tutorial/tutorial_tableauonline_13.png)
 
-4. В разделе **Match assertions** (Сопоставление утверждений) вставьте соответствующее имя утверждения поставщика удостоверений для **электронной почты**, **имени** и **фамилии**. Чтобы получить эти сведения из Azure AD, сделайте следующее: 
+4. В разделе **Match assertions** (Сопоставление утверждений) вставьте соответствующее имя утверждения поставщика удостоверений для **электронной почты** , **имени** и **фамилии**. Чтобы получить эти сведения из Azure AD, сделайте следующее: 
   
     а. Перейдите на страницу интеграции с приложением **Tableau Online** портала Azure.
 
     b. В разделе **Атрибуты и утверждения пользователя** щелкните значок правки.
 
-   ![Настройка единого входа](./media/tableauonline-tutorial/attributesection.png)
+   ![Снимок экрана: раздел "Атрибуты и утверждения пользователя", где можно выбрать значок "Изменить".](./media/tableauonline-tutorial/attributesection.png)
 
     c. Скопируйте значение пространства имен для этих атрибутов: имя, электронная почта и фамилия, выполнив следующие действия:
 
-   ![единого входа Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_10.png)
+   ![Снимок экрана: атрибуты "Заданное имя", "Фамилия" и "Адрес электронной почты".](./media/tableauonline-tutorial/tutorial_tableauonline_10.png)
 
     d. Щелкните значение **user.givenname**.
 
     д) Скопируйте значение из текстового поля **Пространство имен**.
 
-    ![Настройка единого входа](./media/tableauonline-tutorial/attributesection2.png)
+    ![Снимок экрана: раздел "Управление утверждениями пользователя", где можно ввести пространство имен.](./media/tableauonline-tutorial/attributesection2.png)
 
     е) Чтобы скопировать значения пространства имен для электронной почты и фамилии, повторите описанные выше шаги.
 
     ж. Перейдите к приложению Tableau Online и задайте в разделе **Утверждения и атрибуты пользователя** следующее:
 
-    * электронный адрес: **mail** или **userprincipalname**;
+    * электронный адрес: **mail** или **userprincipalname** ;
 
     * имя: **givenname**
 
     * фамилия: **surname**
 
-    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_14.png)
+    ![Снимок экрана: раздел "Сопоставление атрибутов", в котором можно ввести значения.](./media/tableauonline-tutorial/tutorial_tableauonline_14.png)
 
 ### <a name="create-tableau-online-test-user"></a>Создание тестового пользователя Tableau Online
 
@@ -211,11 +211,11 @@ ms.locfileid: "88542529"
 
 1. В приложении **Tableau Online** щелкните **Settings** (Параметры), а затем выберите раздел **Authentication** (Проверка подлинности). Прокрутите вниз до раздела **Управление пользователями**. Щелкните **Add Users** (Добавить пользователей), а затем — **Enter Email Addresses** (Ввести адреса электронной почты).
   
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_15.png)
+    ![Снимок экрана: раздел "Управление пользователями", в котором можно добавить пользователей.](./media/tableauonline-tutorial/tutorial_tableauonline_15.png)
 
 2. Выберите **Add users for (SAML) authentication** (Добавить пользователей для проверки подлинности (SAML). В текстовое поле **Enter email addresses** (Введите адреса электронной почты) добавьте britta.simon\@contoso.com
   
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_11.png)
+    ![Снимок экрана: страница "Добавление пользователей", на которой можно ввести адрес электронной почты.](./media/tableauonline-tutorial/tutorial_tableauonline_11.png)
 
 3. Щелкните **Добавить пользователей**.
 
@@ -223,14 +223,14 @@ ms.locfileid: "88542529"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Tableau Online на Панели доступа, вы автоматически войдете в приложение Tableau Online, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Tableau Online на Панели доступа, вы автоматически войдете в приложение Tableau Online, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)

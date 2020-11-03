@@ -11,12 +11,12 @@ ms.custom: mvc, devx-track-js
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 8b10dd2d87ab7d4cf41a0bf860798f27651294d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9fe1363ffc714754c1de333a77d36595ce4223e6
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259005"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92442343"
 ---
 # <a name="tutorial-protect-and-grant-access-to-a-nodejs-web-api-from-a-single-page-application-with-azure-ad-b2c"></a>Руководство по Защита веб-API Node.js и предоставление доступа к нему из одностраничного приложения с помощью Azure AD B2C
 
@@ -50,13 +50,13 @@ ms.locfileid: "91259005"
 
 [!INCLUDE [active-directory-b2c-scopes](../../includes/active-directory-b2c-scopes.md)]
 
-Запишите значение в разделе **Области**, которое будет использоваться в области `demo.read` на следующих шагах при настройке одностраничного приложения. Значение полной области аналогично `https://contosob2c.onmicrosoft.com/api/demo.read`.
+Запишите значение в разделе **Области** , которое будет использоваться в области `demo.read` на следующих шагах при настройке одностраничного приложения. Значение полной области аналогично `https://contosob2c.onmicrosoft.com/api/demo.read`.
 
 ## <a name="grant-permissions"></a>Предоставить разрешения
 
 Чтобы вызвать защищенный веб-API из другого приложения, необходимо предоставить приложению разрешения на доступ к веб-API.
 
-Выполняя предварительные требования, вы создали веб-приложение *webapp1*. В этом учебнике вы настроите это приложение для вызова веб-API *webapi1*, созданного в предыдущем разделе.
+Выполняя предварительные требования, вы создали веб-приложение *webapp1*. В этом учебнике вы настроите это приложение для вызова веб-API *webapi1* , созданного в предыдущем разделе.
 
 [!INCLUDE [active-directory-b2c-permissions-api](../../includes/active-directory-b2c-permissions-api.md)]
 
@@ -74,14 +74,20 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-nodej
 
 ### <a name="configure-the-web-api"></a>Настройка веб-API
 
-1. Откройте файл *config.js* в редакторе кода.
-1. Измените значения переменных, указав значения из созданной ранее регистрации приложения. Также обновите `policyName`, указав поток пользователя, созданный в рамках предварительных требований (например, *B2C_1_signupsignin1*).
-
-    ```javascript
-    const clientID = "<your-webapi-application-ID>"; // Application (client) ID
-    const b2cDomainHost = "<your-tenant-name>.b2clogin.com";
-    const tenantId = "<your-tenant-ID>.onmicrosoft.com"; // Alternatively, you can use your Directory (tenant) ID (a GUID)
-    const policyName = "B2C_1_signupsignin1";
+1. Откройте файл *config.json* в редакторе кода.
+1. Измените значения переменных, указав значения из созданной ранее регистрации приложения. Также обновите `policyName`, указав поток пользователя, созданный в рамках предварительных требований (например, *B2C_1_signupsignin1* ).
+    
+    ```json
+    "credentials": {
+        "tenantName": "<your-tenant-name>",
+        "clientID": "<your-webapi-application-ID>"
+    },
+    "policies": {
+        "policyName": "B2C_1_signupsignin1"
+    },
+    "resource": {
+        "scope": ["demo.read"] 
+    },
     ```
 
 #### <a name="enable-cors"></a>Включение CORS
@@ -107,8 +113,8 @@ app.use((req, res, next) => {
 Чтобы изменить параметры в SPA, выполните приведенные ниже действия.
 
 1. В проекте [active-directory-b2c-javascript-msal-singlepageapp][github-js-spa], который вы скачали или клонировали при выполнении инструкций из предыдущего руководства, откройте файл *apiConfig.js* в папке *JavaScriptSPA*.
-1. Настройте пример с помощью URI для области *demo.read*, созданной ранее, а также URL-адрес веб-API.
-    1. В определении `apiConfig` замените значение `b2cScopes` полным URI для области *demo.read* (значение **Область**, записанное ранее).
+1. Настройте пример с помощью URI для области *demo.read* , созданной ранее, а также URL-адрес веб-API.
+    1. В определении `apiConfig` замените значение `b2cScopes` полным URI для области *demo.read* (значение **Область** , записанное ранее).
     1. Измените домен в значении `webApi` на URI перенаправления, добавленный при регистрации приложения веб-API на предыдущем шаге.
 
     Так как API доступен на конечной точке `/hello`, не удаляйте */hello* из URI.
@@ -125,7 +131,7 @@ app.use((req, res, next) => {
 
 ## <a name="run-the-spa-and-web-api"></a>Запуск SPA и веб-API
 
-Теперь вы готовы протестировать ограниченный областью доступ одностраничного приложения к API. Запустите веб-API Node.js и пример одностраничного приложения JavaScript на локальном компьютере. Затем войдите в одностраничное приложение и нажмите кнопку **Вызов API**, чтобы инициировать запрос к защищенному API.
+Теперь вы готовы протестировать ограниченный областью доступ одностраничного приложения к API. Запустите веб-API Node.js и пример одностраничного приложения JavaScript на локальном компьютере. Затем войдите в одностраничное приложение и нажмите кнопку **Вызов API** , чтобы инициировать запрос к защищенному API.
 
 Хотя в нашем примере оба приложения запущены локально, вы настроили их для использования Azure AD B2C для безопасных операций регистрации и входа, а также для предоставления доступа к защищенному веб-API.
 

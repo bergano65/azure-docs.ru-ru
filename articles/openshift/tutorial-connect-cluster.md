@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: 24990087507dee09bc38418f40c72911386e5efb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 132a9b7ad3eef17f4ca27fb76a0c05f94c82fd37
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89469122"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92428271"
 ---
 # <a name="tutorial-connect-to-an-azure-red-hat-openshift-4-cluster"></a>Руководство по подключению к кластеру Azure Red Hat OpenShift 4
 
@@ -63,7 +63,7 @@ URL-адрес консоли кластера можно узнать, выпо
 
 После входа в веб-консоль OpenShift щелкните **?** в правом верхнем углу, а затем выберите **Программы командной строки**. Скачайте выпуск, подходящий вашему компьютеру.
 
-![Экран входа в Azure Red Hat OpenShift](media/aro4-download-cli.png)
+![Снимок экрана: в списке, который открывается при выборе элемента ?, выделен пункт "Программы командной строки". .](media/aro4-download-cli.png)
 
 Вы также можете скачать последнюю версию интерфейса командной строки, подходящую для компьютера, по адресу <https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/>.
 

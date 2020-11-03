@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 235010cbcdde326cf17643cec81f3b6fcb1eea59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3225aa9eaff5c3cd0acca99261935feb9774810f
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88548775"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92520682"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Руководство по интеграции Azure Active Directory с RolePoint
 
@@ -27,7 +27,7 @@ ms.locfileid: "88548775"
 * Вы можете включить автоматический вход пользователей в RolePoint (единый вход) с помощью учетных записей Azure Active Directory.
 * Вы можете управлять учетными записями централизованно — через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -60,7 +60,7 @@ ms.locfileid: "88548775"
 
     ![Выбор элемента "Новое приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **RolePoint**. В результатах поиска выберите **RolePoint**, а затем щелкните **Добавить**.
+4. В поле поиска введите **RolePoint**. В результатах поиска выберите **RolePoint** , а затем щелкните **Добавить**.
 
      ![Результаты поиска](common/search-new-app.png)
 
@@ -88,11 +88,11 @@ ms.locfileid: "88548775"
 
     ![Выбор параметра "Единый вход"](common/select-sso.png)
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed** , чтобы включить единый вход.
 
     ![Выбор метода единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить** , чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Значок "Изменить"](common/edit-urls.png)
 
@@ -134,7 +134,7 @@ ms.locfileid: "88548775"
 
 В этом разделе описано, как создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 
     ![Выбор "Все пользователи"](common/users.png)
 
@@ -158,7 +158,7 @@ ms.locfileid: "88548775"
 
 В этом разделе описано, как разрешить Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к RolePoint.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **RolePoint**.
+1. На портале Azure выберите **Корпоративные приложения** , **Все приложения** , а затем — **RolePoint**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -170,7 +170,7 @@ ms.locfileid: "88548775"
 
     ![Выбор параметра "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** — **Пользователи и группы**.
+4. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  — **Пользователи и группы**.
 
     ![Выбор элемента "Добавить пользователя"](common/add-assign-user.png)
 
@@ -182,18 +182,18 @@ ms.locfileid: "88548775"
 
 ### <a name="create-a-rolepoint-test-user"></a>Создание тестового пользователя RolePoint
 
-Далее необходимо создать пользователя с именем Britta Simon в RolePoint. Обратитесь к  [группе поддержки RolePoint](mailto:info@rolepoint.com), чтобы добавить пользователей в RolePoint. Перед использованием единого входа необходимо создать и активировать пользователей.
+Далее необходимо создать пользователя с именем Britta Simon в RolePoint. Чтобы добавить пользователей в RolePoint, обратитесь в [службу поддержки RolePoint](mailto:info@rolepoint.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 Теперь необходимо проверить конфигурацию единого входа Azure AD с помощью Панели доступа.
 
-Щелкнув элемент "RolePoint" на Панели доступа, вы автоматически войдете в экземпляр RolePoint, для которого настроили единый вход. Дополнительные сведения о Панели доступа см. в статье [Access and use apps on the My Apps portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Доступ к приложениям и их использование на портале "Мои приложения").
+Щелкнув элемент "RolePoint" на Панели доступа, вы автоматически войдете в экземпляр RolePoint, для которого настроили единый вход. Дополнительные сведения о Панели доступа см. в статье [Access and use apps on the My Apps portal](../user-help/my-apps-portal-end-user-access.md) (Доступ к приложениям и их использование на портале "Мои приложения").
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)

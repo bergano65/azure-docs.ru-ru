@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 09/29/2020
+ms.date: 10/21/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 1d207e7cc052af32917eb6c871f332136580e56c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46c5271c8ded970442d1ae4022573473997d98af
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743282"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92427009"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro-with-gpu"></a>Руководство по подготовке к развертыванию Azure Stack Edge Pro с GPU 
 
@@ -137,7 +137,6 @@ ms.locfileid: "91743282"
 
     ![Создание ресурса 5](media/azure-stack-edge-gpu-deploy-prep/create-resource-5.png)
 
-
 8. По завершении выберите **Next: Shipping address** (Далее. Адрес доставки).
 
     - Если у вас уже есть устройство, установите флажок **I have a Azure Stack Edge Pro device** (У меня есть устройство Azure Stack Edge Pro).
@@ -150,7 +149,7 @@ ms.locfileid: "91743282"
 
 9. По завершении выберите **Next: Теги**. При желании укажите здесь теги для распределения ресурсов по категориям и консолидированного выставления счетов. По завершении выберите **Next: Отзыв и создание**.
 
-10. На вкладке **Просмотр и создание** просмотрите **сведения о ценах**, **условия использования** и подробные сведения о ресурсе. Установите флажок, чтобы подтвердить ознакомление с **условиями конфиденциальности**.
+10. На вкладке **Просмотр и создание** просмотрите **сведения о ценах** , **условия использования** и подробные сведения о ресурсе. Установите флажок, чтобы подтвердить ознакомление с **условиями конфиденциальности**.
 
     ![Создание ресурса 8](media/azure-stack-edge-gpu-deploy-prep/create-resource-8.png) 
 
@@ -168,13 +167,16 @@ ms.locfileid: "91743282"
 
 <!--![Notification for review of the Azure Stack Edge Pro order](media/azure-stack-edge-gpu-deploy-prep/azure-stack-edge-resource-2.png)-->
 
+> [!NOTE]
+>Чтобы создать несколько заказов за один раз или клонировать существующий заказ, используйте [скрипты из репозитория примеров для Azure](https://github.com/Azure-Samples/azure-stack-edge-order). Дополнительные сведения см. в файле сведений.
+
 Если во время процесса заказа возникли проблемы, ознакомьтесь со статьей [Устранение неполадок с заказами в Azure Stack Edge](azure-stack-edge-troubleshoot-ordering.md).
 
 ## <a name="get-the-activation-key"></a>Получение ключа активации.
 
 После того как ресурс Azure Stack Edge будет настроен и запущен, вам потребуется получить ключ активации. Этот ключ используется для активации устройства Azure Stack Edge Pro и его подключения к ресурсу. Этот ключ можно получить, пока вы находитесь на портале Azure.
 
-1. Выберите созданный ресурс. Выберите **Обзор**, а затем — **Настройка устройства**.
+1. Выберите созданный ресурс. Выберите **Обзор** , а затем — **Настройка устройства**.
 
     ![Выбор настройки устройства](media/azure-stack-edge-gpu-deploy-prep/azure-stack-edge-resource-2.png)
 
@@ -182,7 +184,7 @@ ms.locfileid: "91743282"
 
     Хранилище ключей создается для каждого ресурса Azure Stack Edge, который активируется на устройстве. Хранилище ключей позволяет хранить секреты и получать к ним доступ. Например, в хранилище ключей хранится ключ целостности канала (CIK) для службы. 
 
-    После указания имени хранилища ключей щелкните **Создать ключ**, чтобы создать ключ активации. 
+    После указания имени хранилища ключей щелкните **Создать ключ** , чтобы создать ключ активации. 
 
     ![Получение ключа активации](media/azure-stack-edge-gpu-deploy-prep/azure-stack-edge-resource-3.png)
 

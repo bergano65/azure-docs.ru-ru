@@ -11,12 +11,12 @@ ms.date: 08/04/2020
 ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 02/14/2019
-ms.openlocfilehash: 981e23a2b021cc0eb8085aa943830f87352aee69
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 141812e83653b458a2562bf73b70117c39bf7be0
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87828529"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92426563"
 ---
 # <a name="quickstart-create-an-azure-notification-hub-in-the-azure-portal"></a>Краткое руководство. Создание центра уведомлений Azure с помощью портала Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "87828529"
 В этом разделе создается центр уведомлений в имеющемся пространстве имен.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **Все службы** в меню слева, выполните поиск **центра уведомлений**, выберите **звездочку** (`*`) рядом с полем **Пространства имен концентратора уведомлений**, чтобы добавить его в раздел **Избранное** в меню слева. Выберите **Пространства имен концентратора уведомлений**.
+2. Выберите **Все службы** в меню слева, выполните поиск **центра уведомлений** , выберите **звездочку** (`*`) рядом с полем **Пространства имен концентратора уведомлений** , чтобы добавить его в раздел **Избранное** в меню слева. Выберите **Пространства имен концентратора уведомлений**.
 
       ![Портал Azure. Выбор параметра "Пространства имен концентратора уведомлений".](./media/create-notification-hub-portal/select-notification-hub-namespaces-all-services.png)
 3. На странице **Пространства имен концентратора уведомлений** выберите нужное пространство имен из списка.
@@ -52,10 +52,10 @@ ms.locfileid: "87828529"
       ![Развертывание уведомления](./media/create-notification-hub-portal/deployment-notification.png)
 7. Обновите веб-страницу **Пространство имен концентратора уведомлений** для просмотра нового центра в списке.
 
-      ![Портал Azure — "Уведомления" -> Go to resource (Перейти к ресурсу)](./media/create-notification-hub-portal/new-hub-in-list.png)
+      ![Снимок экрана, на котором показана веб-страница "Пространства имен концентратора уведомлений" с новым центром в списке.](./media/create-notification-hub-portal/new-hub-in-list.png)
 8. Чтобы просмотреть домашнюю страницу центра уведомлений, выберите свой **центр уведомлений**.
 
-      ![Портал Azure — "Уведомления" -> Go to resource (Перейти к ресурсу)](./media/create-notification-hub-portal/hub-home-page.png)
+      ![Снимок экрана, на котором показана домашняя страница для центра уведомлений.](./media/create-notification-hub-portal/hub-home-page.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

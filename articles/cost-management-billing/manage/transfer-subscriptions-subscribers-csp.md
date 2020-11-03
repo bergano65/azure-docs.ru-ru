@@ -6,18 +6,22 @@ ms.reviewer: dhgandhi
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 09/24/2020
+ms.date: 10/22/2020
 ms.author: banders
-ms.openlocfilehash: ae504072e2a2cc481217933478ccbfb7bc3372b3
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 69d6544485e356741634749dd91ba6485cfbb31c
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132369"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460688"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Перенос подписок Azure между подписчиками и CSP
 
 Эта статья содержит общие действия, которые используются для передачи подписок Azure между партнерами по программе "Поставщик облачных решений" (CSP) и их клиентами. Приведенные здесь сведения призваны упростить подписчикам Azure координацию с партнером. Сведения, используемые партнерами Майкрософт в ходе перехода, задокументированы с статье [Передача подписок Azure клиента другому партнеру](/partner-center/switch-azure-subscriptions-to-a-different-partner).
+
+Перед созданием запроса на передачу скачайте или экспортируйте все сведения о расходах и выставлении счетов, которые вы хотите сохранить. Данные о выставлении счетов и использовании не передаются вместе с подпиской. Дополнительные сведения об экспорте данных об управлении расходами см. в статье [Руководство. Создание задачи для экспорта данных и управление экспортированными данными](../costs/tutorial-export-acm-data.md). Дополнительные сведения о скачивании данных о счетах и использовании см. в статье [Скачивание или просмотр счета на оплату и данных о ежедневном использовании в Azure](download-azure-invoice-daily-usage-date.md).
+
+Если у вас есть резервирования, они перестанут действовать после передачи подписки. Обязательно [отмените все резервирования и верните средства за них](../reservations/exchange-and-refund-azure-reservations.md) до передачи подписки.
 
 ## <a name="transfer-ea-subscriptions-to-a-csp-partner"></a>Передача подписок с Соглашением Enterprise партнерам по программе CSP
 

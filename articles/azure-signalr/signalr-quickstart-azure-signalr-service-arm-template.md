@@ -7,16 +7,16 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 10/02/2020
-ms.openlocfilehash: 04d0a98863dded93216f5fc669b8148f710f5f0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f38bd6ed91788343c028ec5834ba28f4bad3ba43
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91858836"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92487829"
 ---
 # <a name="quickstart-use-an-arm-template-to-deploy-azure-signalr-service"></a>Краткое руководство. Использование шаблона Resource Manager для развертывания службы Azure SignalR
 
-В этом кратком руководстве объясняется, как создать службу Azure SignalR при использовании шаблона Azure Resource Manager (ARM). Вы можете развернуть службу Azure SignalR с помощью портала Azure, PowerShell или CLI.
+В этом кратком руководстве объясняется, как создать службу Azure SignalR с помощью шаблона Azure Resource Manager. Вы можете развернуть службу Azure SignalR с помощью портала Azure, PowerShell или CLI.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -62,22 +62,22 @@ ms.locfileid: "91858836"
 
 [:::image type="content" source="../media/template-deployments/deploy-to-azure.svg" alt-text="Кнопка для развертывания службы Azure SignalR в Azure с помощью шаблона Resource Manager на портале Azure.":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-signalr%2fazuredeploy.json)
 
-На странице **Развертывание службы Azure SignalR**:
+На странице **Развертывание службы Azure SignalR** :
 
 1. При необходимости замените **подписку** по умолчанию.
 
-2. В разделе **Группа ресурсов** щелкните **Создать новую**, введите имя новой группы ресурсов и нажмите **ОК**.
+2. В разделе **Группа ресурсов** щелкните **Создать новую** , введите имя новой группы ресурсов и нажмите **ОК**.
 
 3. Если вы создаете новую группу ресурсов, выберите для нее **Регион**.
 
-4. Вы также можете ввести новое **имя** и **расположение** (например, **eastus2**) службы Azure SignalR. Если имя не указано, оно создается автоматически. Расположение для службы Azure SignalR может отличаться от региона группы ресурсов или совпадать с ним. Если расположение не указано, для него будет задан тот же регион, что и для группы ресурсов.
+4. Вы также можете ввести новое **имя** и **расположение** (например, **eastus2** ) службы Azure SignalR. Если имя не указано, оно создается автоматически. Расположение для службы Azure SignalR может отличаться от региона группы ресурсов или совпадать с ним. Если расположение не указано, для него будет задан тот же регион, что и для группы ресурсов.
 
-5. Выберите **ценовую категорию** (**Free_F1** или **Standard_S1**), укажите **емкость** (число единиц SignalR) и выберите для параметра **Режим службы** значение **По умолчанию** (требуется сервер-концентратор), **Бессерверный** (не разрешающий подключение к серверу) или **Классический** (маршрутизация на сервер-концентратор, только если концентратор имеет подключение к серверу). Затем укажите, следует ли **включить журналы подключения** или **включить журналы обмена сообщениями**.
+5. Выберите **ценовую категорию** ( **Free_F1** или **Standard_S1** ), укажите **емкость** (число единиц SignalR) и выберите для параметра **Режим службы** значение **По умолчанию** (требуется сервер-концентратор), **Бессерверный** (не разрешающий подключение к серверу) или **Классический** (маршрутизация на сервер-концентратор, только если концентратор имеет подключение к серверу). Затем укажите, следует ли **включить журналы подключения** или **включить журналы обмена сообщениями**.
 
     > [!NOTE]
     > Для ценовой категории **Free_F1** емкость ограничена 1 единицей.
 
-    :::image type="content" source="./media/signalr-quickstart-azure-signalr-service-arm-template/deploy-azure-signalr-service-arm-template-portal.png" alt-text="Кнопка для развертывания службы Azure SignalR в Azure с помощью шаблона Resource Manager на портале Azure.":::
+    :::image type="content" source="./media/signalr-quickstart-azure-signalr-service-arm-template/deploy-azure-signalr-service-arm-template-portal.png" alt-text="Снимок экрана: шаблон Resource Manager для создания службы Azure SignalR на портале Azure.":::
 
 6. Выберите **Review + create** (Просмотреть и создать).
 
@@ -92,15 +92,15 @@ ms.locfileid: "91858836"
 
 * Имя и регион новой службы Azure SignalR.
 * Имя и регион новой группы ресурсов.
-* Ценовая категория Azure (**Free_F1** или **Standard_S1**).
+* Ценовая категория Azure ( **Free_F1** или **Standard_S1** ).
 * Единица измерения емкости SignalR (1, 2, 5, 10, 20, 50 или 100).
   > [!NOTE]
   > Для ценовой категории **Free_F1** емкость ограничена 1 единицей.
-* Режим службы. **По умолчанию** — чтобы использовать сервер-концентратор, **Бессерверный** — чтобы запретить любое подключение к серверу, или **Классический** — для маршрутизации на сервер-концентратор, только при наличии подключения концентратора к серверу
-* Следует ли включать журналы для подключения или обмена сообщениями (**true** или **false**)
+* Режим службы. **По умолчанию**  — чтобы использовать сервер-концентратор, **Бессерверный**  — чтобы запретить любое подключение к серверу, или **Классический**  — для маршрутизации на сервер-концентратор, только при наличии подключения концентратора к серверу
+* Следует ли включать журналы для подключения или обмена сообщениями ( **true** или **false** )
 
 ```azurepowershell-interactive
-$serviceName = Read-Host -Prompt "Enter a name for the new Azure SignalR service"
+$serviceName = Read-Host -Prompt "Enter a name for the new Azure SignalR Service"
 $serviceLocation = Read-Host -Prompt "Enter an Azure region (for example, westus2) for the service"
 $resourceGroupName = Read-Host -Prompt "Enter a name for the new resource group to contain the service"
 $resourceGroupRegion = Read-Host -Prompt "Enter an Azure region (for example, centralus) for the resource group"
@@ -124,7 +124,7 @@ $paramObjHashTable = @{
     enableMessagingLogs = $enableMessageLogs
 }
 
-Write-Verbose "Run New-AzResourceGroupDeployment to create an Azure SignalR service using an ARM template" -Verbose
+Write-Verbose "Run New-AzResourceGroupDeployment to create an Azure SignalR Service using an ARM template" -Verbose
 New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
     -TemplateParameterObject $paramObjHashTable `
     -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-signalr/azuredeploy.json
@@ -137,15 +137,15 @@ Read-Host "Press [ENTER] to continue"
 
 * Имя и регион новой службы Azure SignalR.
 * Имя и регион новой группы ресурсов.
-* Ценовая категория Azure (**Free_F1** или **Standard_S1**).
+* Ценовая категория Azure ( **Free_F1** или **Standard_S1** ).
 * Единица измерения емкости SignalR (1, 2, 5, 10, 20, 50 или 100).
     > [!NOTE]
     > Для ценовой категории **Free_F1** емкость ограничена 1 единицей.
-* Режим службы. **По умолчанию** — чтобы использовать сервер-концентратор, **Бессерверный** — чтобы запретить любое подключение к серверу, или **Классический** — для маршрутизации на сервер-концентратор, только при наличии подключения концентратора к серверу
-* Следует ли включать журналы для подключения или обмена сообщениями (**true** или **false**)
+* Режим службы. **По умолчанию**  — чтобы использовать сервер-концентратор, **Бессерверный**  — чтобы запретить любое подключение к серверу, или **Классический**  — для маршрутизации на сервер-концентратор, только при наличии подключения концентратора к серверу
+* Следует ли включать журналы для подключения или обмена сообщениями ( **true** или **false** )
 
 ```azurecli-interactive
-read -p "Enter a name for the new Azure SignalR service: " serviceName &&
+read -p "Enter a name for the new Azure SignalR Service: " serviceName &&
 read -p "Enter an Azure region (for example, westus2) for the service: " serviceLocation &&
 read -p "Enter a name for the new resource group to contain the service: " resourceGroupName &&
 read -p "Enter an Azure region (for example, centralus) for the resource group: " resourceGroupRegion &&
@@ -157,7 +157,7 @@ read -p "Specify whether to enable messaging logs (true or false): " enableMessa
 params='name='$serviceName' location='$serviceLocation' pricingTier='$priceTier' capacity='$unitCapacity' serviceMode='$servicingMode' enableConnectivityLogs='$enableConnectionLogs' enableMessagingLogs='$enableMessageLogs &&
 echo "CREATE RESOURCE GROUP:  az group create --name $resourceGroupName --location $resourceGroupRegion" &&
 az group create --name $resourceGroupName --location $resourceGroupRegion &&
-echo "RUN az deployment group create, which creates an Azure SignalR service using an ARM template" &&
+echo "RUN az deployment group create, which creates an Azure SignalR Service using an ARM template" &&
 az deployment group create --resource-group $resourceGroupName --parameters $params --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-signalr/azuredeploy.json &&
 read -p "Press [ENTER] to continue: "
 ```
@@ -171,7 +171,7 @@ read -p "Press [ENTER] to continue: "
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-Чтобы просмотреть обзор новой службы Azure SignalR, выполните следующие действия.
+Чтобы просмотреть общие сведения о новой службе Azure SignalR, выполните следующие действия:
 
 1. На [портале Azure](https://portal.azure.com) найдите и выберите службу **SignalR**.
 
@@ -182,7 +182,7 @@ read -p "Press [ENTER] to continue: "
 Выполните следующий интерактивный код, чтобы просмотреть сведения о службе Azure SignalR. Вам нужно будет ввести имя новой службы и группы ресурсов.
 
 ```azurepowershell-interactive
-$serviceName = Read-Host -Prompt "Enter the name of your Azure SignalR service"
+$serviceName = Read-Host -Prompt "Enter the name of your Azure SignalR Service"
 $resourceGroupName = Read-Host -Prompt "Enter the resource group name"
 Write-Verbose "Get-AzSignalR -ResourceGroupName $resourceGroupName -Name $serviceName" -Verbose
 Get-AzSignalR -ResourceGroupName $resourceGroupName -Name $serviceName
@@ -194,7 +194,7 @@ Read-Host "Press [ENTER] to continue"
 Выполните следующий интерактивный код, чтобы просмотреть сведения о службе Azure SignalR. Вам нужно будет ввести имя новой службы и группы ресурсов.
 
 ```azurecli-interactive
-read -p "Enter the name of your Azure SignalR service: " serviceName &&
+read -p "Enter the name of your Azure SignalR Service: " serviceName &&
 read -p "Enter the resource group name: " resourceGroupName &&
 echo "SHOW SERVICE DETAILS:  az signalr show --resource-group $resourceGroupName --name $serviceName" &&
 az signalr show --resource-group $resourceGroupName --name $serviceName &&

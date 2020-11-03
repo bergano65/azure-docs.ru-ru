@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 1/11/2019
 ms.author: jeedes
-ms.openlocfilehash: 5a8fe24e5fa1935b2363ed5d2c15c72af8af11ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad6a4d075ea861068ad0c929d92cd2f12efa6121
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88539765"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92516112"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-signagelive"></a>Руководство по Интеграция Azure Active Directory с Signagelive
 
@@ -27,7 +27,7 @@ ms.locfileid: "88539765"
 * Вы можете включить автоматический вход пользователей в Signagelive (единый вход) с помощью учетной записи Azure AD.
 * Вы можете управлять учетными записями централизованно — через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в руководстве по [получению доступа к приложениям и реализации единого входа с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis). Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в руководстве по [получению доступа к приложениям и реализации единого входа с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md). Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -64,7 +64,7 @@ ms.locfileid: "88539765"
 
      ![Signagelive в списке результатов](common/search-new-app.png)
 
-5. На панели результатов выберите **Signagelive** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+5. На панели результатов выберите **Signagelive** и нажмите кнопку **Добавить** , чтобы добавить приложение.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -90,11 +90,11 @@ ms.locfileid: "88539765"
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Выбор метода единого входа** выберите режим **SAML**, чтобы включить единый вход.
+2. В диалоговом окне **Выбор метода единого входа** выберите режим **SAML** , чтобы включить единый вход.
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить** , чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
@@ -107,7 +107,7 @@ ms.locfileid: "88539765"
     > [!NOTE]
     > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки Signagelive](mailto:support@signagelive.com). Можно также просмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать требуемый **сертификат (необработанный)** из предложенных вариантов. Сохраните его на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать** , чтобы скачать требуемый **сертификат (необработанный)** из предложенных вариантов. Сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificateraw.png)
 
@@ -129,7 +129,7 @@ ms.locfileid: "88539765"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -153,7 +153,7 @@ ms.locfileid: "88539765"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив пользователю доступ к Signagelive.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Signagelive**.
+1. На портале Azure выберите **Корпоративные приложения** , **Все приложения** , а затем — **Signagelive**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -177,19 +177,18 @@ ms.locfileid: "88539765"
 
 ### <a name="create-a-signagelive-test-user"></a>Создание тестового пользователя в Signagelive
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Signagelive. Обратитесь в  [службу поддержки Signagelive](mailto:support@signagelive.com), чтобы добавить пользователей на платформу Signagelive. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Signagelive. Чтобы добавить пользователей на платформу Signagelive, обратитесь в [службу поддержки Signagelive](mailto:support@signagelive.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе объясняется, как проверить конфигурацию единого входа Azure AD с помощью портала MyApps.
 
-Щелкнув плитку **Signagelive** на портале MyApps, вы автоматически войдете в Signagelive. Дополнительные сведения см. в статье о [портале MyApps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку **Signagelive** на портале MyApps, вы автоматически войдете в Signagelive. Дополнительные сведения см. в статье о [портале MyApps](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)

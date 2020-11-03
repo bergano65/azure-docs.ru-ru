@@ -6,12 +6,12 @@ ms.service: container-service
 ms.topic: quickstart
 ms.date: 9/22/2020
 ms.author: amgowda
-ms.openlocfilehash: 9343d3fa82302711311d8db3672713fa80fab1f7
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 994cf78a9a9b8c418d0f29f5d595f88f021659b4
+ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92122188"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92341912"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-with-confidential-computing-nodes-using-azure-cli-preview"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с узлами конфиденциальных вычислений с помощью Azure CLI (предварительная версия)
 
@@ -27,11 +27,11 @@ ms.locfileid: "92122188"
 ### <a name="deployment-pre-requisites"></a>Предварительные требования для развертывания
 
 1. Активная подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-1. Установленное и настроенное на компьютере развертывания решение Azure CLI версии 2.0.64 или более поздней (выполните команду  `az --version`, чтобы узнать версию). Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli).
+1. Установленное и настроенное на компьютере развертывания решение Azure CLI версии 2.0.64 или более поздней (выполните команду `az --version`, чтобы узнать версию). Если вам необходимо выполнить установку или обновление, ознакомьтесь со статьей [Установка Azure CLI](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli).
 1. [Расширение aks-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) с версией не ниже 0.4.62 
-1. Не менее шести ядер DCSv2 в вашей подписке. По умолчанию на каждую подписку Azure выделяется квота в 8 ядер виртуальных машин для конфиденциальных вычислений. Если вы планируете подготовить кластер, в котором будет более 8-ми ядер, выполните [эти инструкции](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests), чтобы создать запрос на увеличение квоты.
+1. Не менее шести доступных ядер **DC<x>s-v2** в вашей подписке. По умолчанию на каждую подписку Azure выделяется квота в 8 ядер виртуальных машин для конфиденциальных вычислений. Если вы планируете подготовить кластер, в котором будет более 8-ми ядер, выполните [эти инструкции](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests), чтобы создать запрос на увеличение квоты.
 
-### <a name="confidential-computing-node-features"></a>Возможности узлов конфиденциальных вычислений
+### <a name="confidential-computing-node-features-dcxs-v2"></a>Возможности узлов конфиденциальных вычислений (DC<x>s-v2)
 
 1. Рабочие узлы Linux с поддержкой только контейнеров Linux.
 1. Виртуальные машины Ubuntu 2-го поколения версии 18.04.
@@ -94,14 +94,14 @@ az aks create \
     --vm-set-type VirtualMachineScaleSets \
     --aks-custom-headers usegen2vm=true
 ```
-Приведенная выше команда подготовит к работе новый кластер AKS с пулами узлов DCSv2 и автоматически установит два набора управляющих программ: ([подключаемый модуль устройства SGX](confidential-nodes-aks-overview.md#sgx-plugin) & [вспомогательная служба цитирования SGX](confidential-nodes-aks-overview.md#sgx-quote))
+Приведенная выше команда подготовит к работе новый кластер AKS с пулами узлов **DC<x>s-v2** и автоматически установит два набора управляющих программ ([подключаемый модуль устройства SGX](confidential-nodes-aks-overview.md#sgx-plugin) & [вспомогательная служба цитирования SGX](confidential-nodes-aks-overview.md#sgx-quote)).
 
 Получите учетные данные для кластера AKS с помощью команды az aks get-credentials.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
-Убедитесь, что узлы успешно созданы, а наборы управляющих команд, имеющие отношение к SGX, выполняются в пулах узлов DCSv2, с помощью команд kubectl get pods и kubectl get nodes, как показано ниже:
+Убедитесь, что узлы успешно созданы, а наборы управляющих программ, имеющие отношение к SGX, выполняются в пулах узлов **DC<x>s-v2** , с помощью команд kubectl get pods и kubectl get nodes, как показано ниже:
 
 ```console
 $ kubectl get pods --all-namespaces
@@ -130,9 +130,12 @@ az aks update --enable-addons confcom --resource-group myResourceGroup --name my
 ```azurecli-interactive
 az aks enable-addons --addons confcom --name MyManagedCluster --resource-group MyResourceGroup 
 ```
-Теперь добавьте в кластер пул узлов DCSv2.
-
-```azurecli-interactive
+Теперь добавьте в кластер пул узлов **DC<x>s-v2**.
+    
+> [!NOTE]
+> Чтобы использовать возможность конфиденциальных вычислений, ваш существующий кластер AKS должен иметь по меньшей мере один пул узлов на основе SKU виртуальной машины **DC<x>s-v2**. Дополнительные сведения о номерах SKU виртуальных машин DCsv2 для конфиденциальных вычислений см. в [этой статье](virtual-machine-solutions.md).
+    
+  ```azurecli-interactive
 az aks nodepool add --cluster-name myAKSCluster --name confcompool1 --resource-group myResourceGroup --node-count 1 --node-vm-size Standard_DC4s_v2 --aks-custom-headers usegen2vm=true
 
 output node pool added

@@ -17,12 +17,12 @@ ms.date: 08/01/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 08/01/2019
-ms.openlocfilehash: 51a827b0bc80d7eec5b480d3e5efc49e5e1cc974
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 95e244f956940f9d75df50243714f0fb8f8d0654
+ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318268"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92424164"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinandroid-apps-using-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Xamarin.Android с помощью Центров уведомлений
 
@@ -57,7 +57,7 @@ ms.locfileid: "92318268"
 ### <a name="configure-gcmfcm-settings-for-the-notification-hub"></a>Настройка параметров GCM/FCM для центра уведомлений
 
 1. Выберите **Google (GCM/FCM)/** в разделе **Параметры** в меню слева.
-2. Введите **ключ сервера**, записанный c консоли Google Firebase.
+2. Введите **ключ сервера** , записанный c консоли Google Firebase.
 3. На панели инструментов щелкните **Сохранить**.
 
     ![Снимок экрана: концентратор уведомлений на портале Azure с выделенным и обведенным красным параметром Google (GCM/FCM)](./media/notification-hubs-android-get-started/notification-hubs-gcm-api.png)
@@ -71,17 +71,17 @@ ms.locfileid: "92318268"
 > [!NOTE]
 > Действия, описанные в этом руководстве, предназначены для Visual Studio 2017. 
 
-1. В Visual Studio откройте меню **Файл** и выберите **Создать**, а затем — **Проект**. В окне **Новый проект** сделайте следующее.
-    1. Разверните **Установлено**, **Visual C#** , а затем нажмите кнопку **Android**.
+1. В Visual Studio откройте меню **Файл** и выберите **Создать** , а затем — **Проект**. В окне **Новый проект** сделайте следующее.
+    1. Разверните **Установлено** , **Visual C#** , а затем нажмите кнопку **Android**.
     2. Из списка выберите **приложение Android (Xamarin)** .
     3. Введите **имя** проекта.
     4. Выберите **расположение** для проекта.
     5. Нажмите кнопку **ОК**.
 
         ![Диалоговое окно "Новый проект"](./media/partner-xamarin-notification-hubs-android-get-started/new-project-dialog-new.png)
-2. В диалоговом окне **нового приложения Android** выберите **Пустое приложение**и щелкните **ОК**.
+2. В диалоговом окне **нового приложения Android** выберите **Пустое приложение** и щелкните **ОК**.
 
-    ![Диалоговое окно "Новый проект"](./media/partner-xamarin-notification-hubs-android-get-started/new-android-app-dialog.png)
+    ![Снимок экрана, на котором выделен шаблон "Пустое приложение".](./media/partner-xamarin-notification-hubs-android-get-started/new-android-app-dialog.png)
 3. В окне **обозревателя решений** разверните раздел **Свойства** и выберите **AndroidManifest.xml**. Обновите имя пакета в соответствии с именем пакета, которое вы указали при добавлении Firebase Cloud Messaging в проект в консоли Google Firebase.
 
     ![Имя пакета в GCM](./media/partner-xamarin-notification-hubs-android-get-started/package-name-gcm.png)
@@ -91,7 +91,7 @@ ms.locfileid: "92318268"
     1. Выберите **Да** в окне сообщения, чтобы продолжить изменение целевой платформы.
 1. Добавьте необходимые пакеты NuGet в проект, выполнив следующие действия.
     1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
-    1. Перейдите на вкладку **Установленные**, выберите **Xamarin.Android.Support.Design** и щелкните **Обновить** в правой панели, чтобы обновить пакет до последней версии.
+    1. Перейдите на вкладку **Установленные** , выберите **Xamarin.Android.Support.Design** и щелкните **Обновить** в правой панели, чтобы обновить пакет до последней версии.
     1. Перейдите на вкладку **Обзор**. Найдите **Xamarin.GooglePlayServices.Base**. Выберите **Xamarin.GooglePlayServices.Base** в списке результатов. Щелкните **Установить**.
 
         ![Пакет NuGet для сервисов Google Play](./media/partner-xamarin-notification-hubs-android-get-started/google-play-services-nuget.png)
@@ -103,7 +103,7 @@ ms.locfileid: "92318268"
 1. Скопируйте файл `google-services.json`, который вы скачали с консоли Google Firebase в папку проекта.
 2. Добавьте `google-services.json` в проект.
 3. Выберите `google-services.json` в окне **обозревателя решений**.
-4. В области **свойств** для действия сборки выберите **GoogleServicesJson**. Если вы не видите **GoogleServicesJson**, закройте Visual Studio, перезапустите ее, затем повторно откройте проект и повторите попытку.
+4. В области **свойств** для действия сборки выберите **GoogleServicesJson**. Если вы не видите **GoogleServicesJson** , закройте Visual Studio, перезапустите ее, затем повторно откройте проект и повторите попытку.
 
     ![Действие сборки GoogleServicesJson](./media/partner-xamarin-notification-hubs-android-get-started/google-services-json-build-action.png)
 
@@ -136,8 +136,8 @@ ms.locfileid: "92318268"
 3. Подготовьте следующую информацию для вашего приложения Android и концентратора уведомлений.
 
    * **Строка подключения для ожидания передачи данных**. На [Портал Azure] на панели мониторинга выберите **Просмотреть строки подключения**. Скопируйте строку подключения для `DefaultListenSharedAccessSignature` для этого значения.
-   * **Имя центра** — это имя вашего центра на [Портал Azure]. Например, *mynotificationhub2*.
-4. В окне **обозревателя решений** щелкните **проект** правой кнопкой мыши, выберите **Добавить**, а затем — **Класс**.
+   * **Имя центра**  — это имя вашего центра на [Портал Azure]. Например, *mynotificationhub2*.
+4. В окне **обозревателя решений** щелкните **проект** правой кнопкой мыши, выберите **Добавить** , а затем — **Класс**.
 5. Создайте класс `Constants.cs` для вашего проекта Xamarin и определите в классе следующие постоянные значения. Замените значения заполнителей на собственные значения.
 
     ```csharp

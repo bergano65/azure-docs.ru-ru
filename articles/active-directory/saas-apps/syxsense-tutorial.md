@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 3bb03444062a5652e4e0aad24560b90acd2ce2d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 32c1dd06186f3485fe48b2831516661fb5f05ef3
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88544824"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92517843"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-syxsense"></a>Руководство по Интеграция единого входа Azure Active Directory со Syxsense
 
@@ -26,7 +26,7 @@ ms.locfileid: "88544824"
 * Автоматический вход пользователей в Syxsense с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +40,7 @@ ms.locfileid: "88544824"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Syxsense поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
-* После настройки Syxsense можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* После настройки Syxsense можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-syxsense-from-the-gallery"></a>Добавление Syxsense из коллекции
 
@@ -77,7 +77,7 @@ ms.locfileid: "88544824"
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
+1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений** , в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.cloudmanagementsuite.com/Saml2`.
 
@@ -104,7 +104,7 @@ ms.locfileid: "88544824"
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
@@ -116,18 +116,18 @@ ms.locfileid: "88544824"
 
 В этом разделе описано, как разрешить пользователю B.Simon использовать единый вход Azure, предоставив этому пользователю доступ к Syxsense.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения** , а затем — **Все приложения**.
 1. В списке приложений выберите **Syxsense**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  выберите **Пользователи и группы**.
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-syxsense-sso"></a>Настройка единого входа Syxsense
@@ -136,11 +136,11 @@ ms.locfileid: "88544824"
 
 1. Щелкните **значок параметров**.
 
-    ![Конфигурация Syxsense](./media/syxsense-tutorial/configure1.png)
+    ![Снимок экрана: значок параметров.](./media/syxsense-tutorial/configure1.png)
 
 1. Щелкните **External Authentication** (Внешняя проверка подлинности) и укажите значение **URL-адрес метаданных федерации приложений** в текстовое поле **Метаданные SAML2.0** и щелкните **Сохранить**.
 
-    ![Конфигурация Syxsense](./media/syxsense-tutorial/configure2.png)
+    ![Снимок экрана: страница настройки внешней проверки подлинности, на которой можно ввести значение URL-адреса метаданных федерации приложений.](./media/syxsense-tutorial/configure2.png)
 
 ### <a name="create-syxsense-test-user"></a>Создание тестового пользователя Syxsense
 
@@ -148,32 +148,32 @@ ms.locfileid: "88544824"
 
 1. Щелкните **Учетные записи пользователей** на панели навигации слева.
 
-    ![Конфигурация Syxsense](./media/syxsense-tutorial/user1.png)
+    ![Снимок экрана: пункт User Accounts (Учетные записи пользователей), выбранный на панели навигации слева.](./media/syxsense-tutorial/user1.png)
 
 1. Нажмите кнопку **Добавить**.
 
-    ![Конфигурация Syxsense](./media/syxsense-tutorial/user2.png)
+    ![Снимок экрана для панели учетных записей пользователей, где можно выбрать действие добавления.](./media/syxsense-tutorial/user2.png)
 
 1. Укажите сведения о пользователе в соответствии с требованиями организации и щелкните **Сохранить**.
 
-    ![Конфигурация Syxsense](./media/syxsense-tutorial/user3.png)
+    ![Снимок экрана для страницы, на которой можно ввести сведения.](./media/syxsense-tutorial/user3.png)
 
 ## <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Syxsense на Панели доступа, вы автоматически войдете в приложение Syxsense, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Syxsense на Панели доступа, вы автоматически войдете в приложение Syxsense, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Tutorials for integrating SaaS applications with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list) (Руководства по интеграции приложений SaaS с Azure Active Directory)
+- [Tutorials for integrating SaaS applications with Azure Active Directory](./tutorial-list.md) (Руководства по интеграции приложений SaaS с Azure Active Directory)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Пробное использование Syxsense с Azure AD](https://aad.portal.azure.com/)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
 
-- [Protect apps with Microsoft Cloud App Security Conditional Access App Control](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad) (Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security)
+- [Protect apps with Microsoft Cloud App Security Conditional Access App Control](/cloud-app-security/proxy-intro-aad) (Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security)

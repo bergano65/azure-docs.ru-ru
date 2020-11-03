@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 2db64a950569e4a96a9a87bb86a5397a17b4f2ba
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: b52bfc14906d8e47c804ae15ee898f6ca00784af
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92214946"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92503850"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Примеры кода Azure Active Directory B2C
 
@@ -60,10 +60,23 @@ ms.locfileid: "92214946"
 
 В приведенных ниже таблицах содержатся ссылки на примеры кода для использования веб-API в потоках пользователей с применением [соединителей API](api-connectors-overview.md).
 
-## <a name="api-connector-azure-function-quickstarts"></a>Краткие руководства по соединителям API Функций Azure
+### <a name="azure-function-quickstarts"></a>Краткие руководства по функциям Azure
 
 | Образец                                                                                                                          | Описание                                                                                                                                               |
 | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [.NET Core](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-api-connector-azure-function-validate) | В этом примере функции Azure для .NET Core показано, как ограничить число регистраций для определенных доменов электронной почты и проверить предоставляемые пользователями сведения. |
 | [Node.js](https://github.com/Azure-Samples/active-directory-nodejs-external-identities-api-connector-azure-function-validate)   | В этом примере функции Azure для Node.js показано, как ограничить число регистраций для определенных доменов электронной почты и проверить предоставляемые пользователями сведения.  |
 | [Python](https://github.com/Azure-Samples/active-directory-python-external-identities-api-connector-azure-function-validate)    | В этом примере функции Azure для Python показано, как ограничить число регистраций для определенных доменов электронной почты и проверить предоставляемые пользователями сведения.    |
+
+### <a name="identity-verification-with-api-connectors"></a>Проверка личности с помощью соединителей API
+
+| Образец                                                                                                            | Описание                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [IDology](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-idology-identity-verification) | В этом примере показано, как проверить удостоверение пользователя при самостоятельной регистрации с помощью соединителя API для интеграции с IDology. |
+| [Experian](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-experian-identity-verification) | В этом примере показано, как проверить удостоверение пользователя при самостоятельной регистрации с помощью соединителя API для интеграции с Experian. |
+
+### <a name="community-samples"></a>Предоставленные сообществом примеры
+
+| Образец                                                                                                            | Описание                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [Предоставленные сообществом примеры использования соединителей API](https://github.com/azure-ad-b2c/api-connector-samples) | В этом репозитории содержатся поддерживаемые сообществом примеры сценариев, реализуемых с помощью соединителей API.|

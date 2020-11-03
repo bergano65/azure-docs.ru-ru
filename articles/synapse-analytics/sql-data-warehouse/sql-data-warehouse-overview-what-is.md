@@ -10,16 +10,16 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 27311270c1383a54192d072d0e152c7cf1a58225
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ce4efe0250ea1b85e2e2d77b7ee69bdf3dbcab26
+ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85200959"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92480401"
 ---
 # <a name="what-is-azure-synapse-analytics-formerly-sql-dw"></a>Что такое Azure Synapse Analytics (ранее — Хранилище данных SQL)?
 
-> [!NOTE] 
+> [!NOTE]
 >Также изучите [документацию по Azure Synapse (предварительная версия рабочих областей)](../overview-what-is.md).
 >
 
@@ -40,7 +40,7 @@ Azure Synapse — это служба аналитики, которая объ
 
 Пул SQL представляет коллекцию аналитических ресурсов, которые подготавливаются при использовании SQL Synapse. Размер пула SQL определяется единицами хранения данных (DWU).
 
-Импортируйте большие данные с помощью простых запросов T-SQL [PolyBase](/sql/relational-databases/polybase/polybase-guide?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и используйте возможности MPP для выполнения высокопроизводительной аналитики. По мере интеграции и анализа пул SQL Synapse станет единственным оптимальным и надежным вариантом получения надежных и своевременных аналитических сведений для вашей компании.  
+Импортируйте большие данные с помощью запросов T-SQL [PolyBase](/sql/relational-databases/polybase/polybase-guide?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и используйте возможности обработчика распределенных запросов для выполнения высокопроизводительной аналитики. По мере интеграции и анализа данных SQL Synapse станет единственным оптимальным и надежным вариантом получения надежных и своевременных аналитических сведений для вашей компании. 
 
 ## <a name="key-component-of-a-big-data-solution"></a>Ключевой компонент решения для больших данных
 

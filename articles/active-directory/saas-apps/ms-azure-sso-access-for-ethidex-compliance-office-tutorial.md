@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/06/2019
 ms.author: jeedes
-ms.openlocfilehash: cee76d78e934931e6f2d0ff6787d755717ea8b0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7ef219ca147fe96fc65f14bbf3ba6a565adc95ec
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88549030"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92520920"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ms-azure-sso-access-for-ethidex-compliance-office"></a>Руководство по Интеграция единого входа Azure Active Directory с доступом к Microsoft Azure с единым входом для Ethidex Compliance Office™
 
@@ -26,7 +26,7 @@ ms.locfileid: "88549030"
 * Вы можете включить автоматический вход пользователей в доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ с использованием учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -69,7 +69,7 @@ ms.locfileid: "88549030"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™**  найдите раздел **Управление** и выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™**   найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
@@ -84,11 +84,11 @@ ms.locfileid: "88549030"
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь в [службу поддержки доступа с единым входом в MS Azure для Ethidex Compliance Office™](mailto:support@ethidex.com), чтобы получить эти значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Приложение Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ ожидает утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
+1. Приложение Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ ожидает утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ ожидает, что **nameidentifier** будет сопоставляться с **user.mail** , поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
     ![Изображение](common/edit-attribute.png)
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **Сертификат (необработанный)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **Сертификат (необработанный)** и щелкните **Скачать** , чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificateraw.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "88549030"
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
@@ -112,41 +112,40 @@ ms.locfileid: "88549030"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к Доступу к Microsoft Azure с единым входом для Ethidex Compliance Office™.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения** , а затем — **Все приложения**.
 1. В списке приложений выберите **Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  выберите **Пользователи и группы**.
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-ms-azure-sso-access-for-ethidex-compliance-office-sso"></a>Настройка единого входа на стороне Доступа к Microsoft Azure с единым входом для Ethidex Compliance Office™
 
-Чтобы настроить единый вход на стороне **Доступа к Microsoft Azure с единым входом для Ethidex Compliance Office™**, необходимо отправить скачанный **сертификат (RAW)** и соответствующие URL-адреса, скопированные на портале Azure, в [Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™](mailto:support@ethidex.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Доступа к Microsoft Azure с единым входом для Ethidex Compliance Office™** , необходимо отправить скачанный **сертификат (RAW)** и соответствующие URL-адреса, скопированные на портале Azure, в [Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™](mailto:support@ethidex.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-ms-azure-sso-access-for-ethidex-compliance-office-test-user"></a>Создание тестового пользователя в Доступе к Microsoft Azure с единым входом для Ethidex Compliance Office™
 
-В этом разделе вы создадите пользователя с именем B.Simon в Доступе к Microsoft Azure с единым входом для Ethidex Compliance Office™. Обратитесь в  [службу поддержки приложения](mailto:support@ethidex.com), чтобы создать пользователя на платформе "Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™". Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе вы создадите пользователя с именем B.Simon в Доступе к Microsoft Azure с единым входом для Ethidex Compliance Office™. Чтобы добавить пользователя на платформу "Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™", обратитесь в [службу поддержки приложения](mailto:support@ethidex.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ на панели доступа, вы автоматически войдете в приложение Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ на панели доступа, вы автоматически войдете в приложение Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
 
 - [Тестирование Доступа к Microsoft Azure с единым входом для Ethidex Compliance Office™ с AAD](https://aad.portal.azure.com/)
-

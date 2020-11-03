@@ -9,19 +9,19 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: a2e6111f2df5a8d7334a85ec5b6a9e514368ad6c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 708b8255f6cf7c60e2d2fc7fbd280b477c06a3d6
+ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91289486"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92503289"
 ---
 # <a name="manage-access-to-workspaces-data-and-pipelines"></a>Управление доступом к рабочим областям, данным и конвейерам
 
 Узнайте, как управлять доступом к рабочим областям, данным и конвейерам в рабочей области Azure Synapse Analytics (предварительной версии).
 
 > [!NOTE]
-> Общедоступная версия RBAC будет улучшена благодаря реализации ролей Azure для Synapse.
+> Общедоступная версия Azure RBAC будет улучшена благодаря реализации ролей Azure для Synapse.
 
 ## <a name="access-control-for-workspace"></a>Контроль доступа к рабочей области
 
@@ -52,10 +52,10 @@ ms.locfileid: "91289486"
 3. Перейдите к контейнеру (файловой системы), выбранному для рабочей области Azure Synapse.
 4. Щелкните **Управление доступом (IAM)** .
 5. Назначьте указанные ниже роли:
-   1. Роль **Читатель** для: `Synapse_WORKSPACENAME_Users`
-   2. Роль **Владелец данных BLOB-объектов хранилища** для `Synapse_WORKSPACENAME_Admins`
-   3. Роль **Участник данных BLOB-объектов хранилища** для `Synapse_WORKSPACENAME_Users`
-   4. Роль **Владелец данных BLOB-объектов хранилища** для `WORKSPACENAME`
+   1. Роль **Читатель**  для: `Synapse_WORKSPACENAME_Users`
+   2. Роль **Владелец данных BLOB-объектов хранилища**  для `Synapse_WORKSPACENAME_Admins`
+   3. Роль **Участник данных BLOB-объектов хранилища**  для `Synapse_WORKSPACENAME_Users`
+   4. Роль **Владелец данных BLOB-объектов хранилища**  для `WORKSPACENAME`
 
 > [!NOTE]
 > Замените параметр WORKSPACENAME действительным именем рабочей области.
@@ -144,7 +144,7 @@ ms.locfileid: "91289486"
 
 ```sql
 CREATE LOGIN [alias@domain.com] FROM EXTERNAL PROVIDER;
-ALTER SERVER ROLE  sysadmin  ADD MEMBER [alias@domain.com];
+ALTER SERVER ROLE  sysadmin  ADD MEMBER [alias@domain.com];
 ```
 
 ### <a name="sql-pools"></a>Пулы SQL

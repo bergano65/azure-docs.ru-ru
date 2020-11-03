@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.custom: mvc, seodec18, devx-track-azurecli
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/11/2019
+ms.date: 10/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 63cdb27663cb1a2d8de1a97a2f352b05ff57a3f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d175ac75ce76836d012cdd04d4dbd7d81ffda584
+ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89489890"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92460705"
 ---
-# <a name="tutorial-deploying-hsms-into-an-existing-virtual-network-using-cli"></a>Руководство по Развертывание устройств HSM в существующей виртуальной сети с помощью CLI
+# <a name="tutorial-deploying-hsms-into-an-existing-virtual-network-using-the-azure-cli"></a>Руководство по Развертывание устройств HSM в существующей виртуальной сети с помощью Azure CLI
 
 Служба выделенных устройств HSM Azure предоставляет физическое устройство в исключительное пользование клиента со всеми возможностями административного контроля и под полную ответственность за управление устройством. Так как используется физическое устройство, корпорации Майкрософт приходится контролировать передачу устройства, чтобы убедиться в его эффективном использовании. Поэтому в обычной подписке Azure служба выделенных устройств HSM недоступна для подготовки ресурсов. Клиентам Azure, которым требуется доступ к службе выделенных устройств HSM, сначала следует связаться со своим менеджером Майкрософт по работе с клиентами и запросить регистрацию для использования службы выделенных устройств HSM. Только после этого можно будет подготовить службу к работе. 
 
@@ -38,7 +38,7 @@ ms.locfileid: "89489890"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Служба выделенных устройств HSM Azure сейчас недоступна на портале Azure. Все взаимодействие со службой будут осуществляться из командной строки или с помощью PowerShell. В этом руководстве используется интерфейс командной строки (CLI) в Azure Cloud Shell. Если вы не знакомы с Azure CLI, см. статью [Начало работы с Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest).
+Служба выделенных устройств HSM Azure сейчас недоступна на портале Azure. Все взаимодействие со службой будут осуществляться из командной строки или с помощью PowerShell. В этом руководстве используется интерфейс командной строки (CLI) в Azure Cloud Shell. Если вы не знакомы с Azure CLI, см. статью [Начало работы с Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 Предполагается, что:
 
@@ -51,7 +51,7 @@ ms.locfileid: "89489890"
 
 ## <a name="provisioning-a-dedicated-hsm"></a>Подготовка выделенного устройства HSM к работе
 
-Подготовка устройств HSM к работе и их интеграция в существующую виртуальную сеть через шлюз ExpressRoute будет проверяться с помощью SSH. Эта проверка помогает обеспечить базовую доступность устройства HSM для последующей настройки. В приведенных ниже командах используется шаблон Azure Resource Manager, чтобы создать ресурсы HSM и связанные с ними сетевые ресурсы.
+Подготовка устройств HSM к работе и их интеграция в существующую виртуальную сеть через шлюз ExpressRoute будет проверяться с помощью SSH. Эта проверка помогает обеспечить базовую доступность устройства HSM для последующей настройки.
 
 ### <a name="validating-feature-registration"></a>Проверка регистрации функции
 
@@ -69,69 +69,14 @@ az feature show \
 
 ### <a name="creating-hsm-resources"></a>Создание ресурсов HSM
 
-Устройство HSM подготавливается в пользовательской виртуальной сети. Поэтому виртуальная сеть и подсеть должны быть развернуты. Для использования HSM требуется шлюз ExpressRoute, который обеспечивает обмен данными между виртуальной сетью и физическим устройством. Также необходима виртуальная машина, которая осуществляет доступ к устройству HSM с помощью клиентского программного обеспечения Gemalto. Чтобы упростить использование, эти ресурсы собраны в файл шаблона и связанный с ним файл параметров. Эти файлы можно получить, написав в корпорацию Майкрософт по адресу HSMrequest@Microsoft.com.
-
-Когда вы получите эти файлы, измените файл параметров, чтобы задать любые имена ресурсов. Измените строки, указав "value": "".
-
-- `namingInfix` — префикс для имен ресурсов HSM.
-- `ExistingVirtualNetworkName` — имя виртуальной сети, используемой устройствами HSM.
-- `DedicatedHsmResourceName1` — имя ресурса HSM в метке 1 центра обработки данных.
-- `DedicatedHsmResourceName2` — имя ресурса HSM в метке 2 центра обработки данных.
-- `hsmSubnetRange` — диапазон IP-адресов в подсети для устройств HSM.
-- `ERSubnetRange` — диапазон IP-адресов в подсети для шлюза виртуальной сети.
-
-Вот пример таких изменений.
-
-```json
-{
-"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "namingInfix": {
-      "value": "MyHSM"
-    },
-    "ExistingVirtualNetworkName": {
-      "value": "MyHSM-vnet"
-    },
-    "DedicatedHsmResourceName1": {
-      "value": "HSM1"
-    },
-    "DedicatedHsmResourceName2": {
-      "value": "HSM2"
-    },
-    "hsmSubnetRange": {
-      "value": "10.0.2.0/24"
-    },
-    "ERSubnetRange": {
-      "value": "10.0.255.0/26"
-    },
-  }
-}
-```
-
-На основе соответствующего файла шаблона Azure Resource Manager и указанных сведений будет создано 6 ресурсов:
-
-- подсеть для устройств HSM в указанной виртуальной сети;
-- подсеть для шлюза виртуальной сети;
-- шлюз виртуальной сети, который связывает виртуальную сеть с устройствами HSM;
-- общедоступный IP-адрес шлюза;
-- устройство HSM в метке 1;
-- устройство HSM в метке 2.
-
-Когда значения параметров будут заданы, эти файлы нужно отправить в файловый ресурс Cloud Shell на портале Azure. На портале Azure щелкните символ Cloud Shell "\>\_" справа в верхнем углу, чтобы открыть окно командной оболочки в нижней части экрана. В качестве командной оболочки можно использовать BASH и PowerShell. Нужно выбрать BASH, если вы не сделали этого ранее.
-
-В этой командной оболочке есть команда отправки и загрузки файлов на панели инструментов. Воспользуйтесь этой командой, чтобы отправить файл шаблона и файл параметров в свой файловый ресурс:
-
-![Файловый ресурс](media/tutorial-deploy-hsm-cli/file-share.png)
-
-После отправки файлов можно создать ресурсы. Прежде чем создавать ресурсы HSM, нужно создать другие необходимые ресурсы. Нужно создать виртуальную сеть с диапазонами подсетей для вычислительных ресурсов, устройств HSM и шлюза. Ниже приведены примеры команд по созданию такой виртуальной сети.
+Перед созданием ресурсов HSM необходимо обеспечить наличие некоторых необходимых ресурсов. Нужно создать виртуальную сеть с диапазонами подсетей для вычислительных ресурсов, устройств HSM и шлюза. Ниже приведены примеры команд по созданию такой виртуальной сети.
 
 ```azurecli
 az network vnet create \
   --name myHSM-vnet \
   --resource-group myRG \
-  --address-prefix 10.2.0.0/16
-  --subnet-name compute
+  --address-prefix 10.2.0.0/16 \
+  --subnet-name compute \
   --subnet-prefix 10.2.0.0/24
 ```
 
@@ -155,22 +100,47 @@ az network vnet subnet create \
 >[!NOTE]
 >Самым важным моментом при создании виртуальной сети, на который нужно обратить внимание, является то, что параметр delegations для подсети устройства HSM должен иметь значение Microsoft.HardwareSecurityModules/dedicatedHSMs.  Иначе подготовить устройство HSM к работе не удастся.
 
-После того как все предварительные условия будут выполнены, запустите следующую команду для использования шаблона Azure Resource Manager, убедившись, что всем параметрам присвоены уникальные значения (по крайней мере, имя группы ресурсов):
+После настройки сети используйте приведенные ниже команды Azure CLI для подготовки устройств HSM.
+
+1. Для подготовки первого устройства HSM используйте команду [az dedicated-hsm create](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_create). Имя HSM — hsm1. Замените подписку:
+
+   ```azurecli
+   az dedicated-hsm create --location westus --name hsm1 --resource-group myRG --network-profile-network-interfaces \
+        /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Network/virtualNetworks/MyHSM-vnet/subnets/MyHSM-vnet
+   ```
+
+   Развертывание занимает 25–30 минут. Большая часть этого времени уходит на развертывание устройств HSM.
+
+1. Чтобы просмотреть сведения о текущем устройстве HSM, выполните команду [az dedicated-hsm show](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_show):
+
+   ```azurecli
+   az dedicated-hsm show --resource group myRG --name hsm1
+   ```
+
+1. Подготовьте второе устройство HSM с помощью следующей команды:
+
+   ```azurecli
+   az dedicated-hsm create --location westus --name hsm2 --resource-group myRG --network-profile-network-interfaces \
+        /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Network/virtualNetworks/MyHSM-vnet/subnets/MyHSM-vnet
+   ```
+
+1. Выполните команду [az dedicated-hsm list](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_list), чтобы просмотреть сведения о текущих устройствах HSM:
+
+   ```azurecli
+   az dedicated-hsm list --resource-group myRG
+   ```
+
+Есть и другие полезные команды. Команда [az dedicated-hsm update](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_update) позволяет обновить HSM:
 
 ```azurecli
-az group deployment create \
-   --resource-group myRG  \
-   --template-file ./Deploy-2HSM-toVNET-Template.json \
-   --parameters ./Deploy-2HSM-toVNET-Params.json \
-   --name HSMdeploy \
-   --verbose
+az dedicated-hsm update --resource-group myRG –name hsm1
 ```
 
-Развертывание занимает 25–30 минут. Большая часть этого времени уходит на развертывание устройств HSM.
+Удалить HSM можно с помощью команды [az dedicated-hsm delete](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_delete):
 
-![Состояние подготовки](media/tutorial-deploy-hsm-cli/progress-status.png)
-
-После успешного развертывания отобразится сообщение "provisioningState": "Succeeded". Можно подключиться к существующей виртуальной машине и проверить доступность устройства HSM с помощью SSH.
+```azurecli
+az dedicated-hsm delete --resource-group myRG –name hsm1
+```
 
 ## <a name="verifying-the-deployment"></a>Проверка развертывания
 
@@ -184,7 +154,49 @@ az resource show \
    --ids /subscriptions/$subid/resourceGroups/myRG/providers/Microsoft.HardwareSecurityModules/dedicatedHSMs/HSM2
 ```
 
-![выходные данные подготовки](media/tutorial-deploy-hsm-cli/progress-status2.png)
+Должны отобразиться примерно такие выходные данные:
+
+```json
+{
+    "id": n/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/HSM-RG/providers/Microsoft.HardwareSecurityModules/dedicatedHSMs/HSMl",
+    "identity": null,
+    "kind": null,
+    "location": "westus",
+    "managedBy": null,
+    "name": "HSM1",
+    "plan": null,
+    "properties": {
+        "networkProfile": {
+            "networkInterfaces": [
+            {
+            "id": n/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/HSM-RG/providers/Microsoft.Network/networkInterfaces/HSMl_HSMnic", "privatelpAddress": "10.0.2.5",
+            "resourceGroup": "HSM-RG"
+            }
+            L
+            "subnet": {
+                "id": n/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/HSM-RG/providers/Microsoft.Network/virtualNetworks/demo-vnet/subnets/hsmsubnet", "resourceGroup": "HSM-RG"
+            }
+        },
+        "provisioningState": "Succeeded",
+        "stampld": "stampl",
+        "statusMessage": "The Dedicated HSM device is provisioned successfully and ready to use."
+    },
+    "resourceGroup": "HSM-RG",
+    "sku": {
+        "capacity": null,
+        "family": null,
+        "model": null,
+        "name": "SafeNet Luna Network HSM A790",
+        "size": null,
+        "tier": null
+    },
+    "tags": {
+        "Environment": "prod",
+        "resourceType": "Hsm"
+    },
+    "type": "Microsoft.HardwareSecurityModules/dedicatedHSMs"
+}
+```
 
 Теперь вы можете просмотреть ресурсы с помощью [обозревателя ресурсов Azure](https://resources.azure.com/).   В обозревателе ресурсов разверните раздел "Подписки" слева, подписку для службы выделенных устройств HSM, раздел "Группы ресурсов", используемую группу ресурсов и выберите элемент "Ресурсы".
 
@@ -219,7 +231,7 @@ az resource show \
 
 Выходные данные должны быть аналогичны показанным на приведенном ниже снимке экрана.
 
-![Список компонентов](media/tutorial-deploy-hsm-cli/hsm-show-output.png)
+![Снимок экрана: выходные данные в окне PowerShell.](media/tutorial-deploy-hsm-cli/hsm-show-output.png)
 
 На этом этапе вы выделили все ресурсы для высокодоступного развертывания двух устройств HSM, а также убедились, что они доступны и работают. Дальнейшие операции по конфигурации или проверке требуют взаимодействия с самим устройством HSM. Для этого выполните инструкции, изложенные в разделе 7 руководства администратора Gemalto Luna Network HSM 7, где описаны действия по инициализации устройства HSM и созданию разделов. Вся документация и ПО доступны непосредственно на веб-сайте Gemalto после регистрации на портале поддержки клиентов Gemalto и получения идентификатора клиента. Скачайте клиентское программное обеспечение версии 7.2, чтобы получить все необходимые компоненты.
 
@@ -230,21 +242,19 @@ az resource show \
 > [!NOTE]
 > При возникновении проблем с конфигурацией устройств Gemalto обратитесь в [службу поддержки клиентов Gemalto](https://safenet.gemalto.com/technical-support/).
 
-
 Если вы закончили работу со всеми ресурсами в этой группе ресурсов, их можно удалить с помощью приведенной ниже команды.
 
 ```azurecli
-az group deployment delete \
+az group delete \
    --resource-group myRG \
    --name HSMdeploy \
    --verbose
-
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Выполнив инструкции, приведенные в этом руководстве, вы подготовили к работе ресурсы службы выделенных устройств HSM, развернули виртуальную сеть с необходимыми устройствами HSM и дополнительными сетевыми компонентами, которые обеспечивают взаимодействие с устройствами HSM.  Теперь вы можете добавить в это развертывание дополнительные ресурсы в соответствии с требованиями вашей архитектуры развертывания. Дополнительные сведения о планировании развертывания см. в базовой документации.
-Рекомендуем использовать схему с двумя устройствами HSM в основном регионе, чтобы обеспечить доступность на уровне стойки, и двумя устройствами HSM в другом регионе, чтобы обеспечить доступность на уровне региона. Файл шаблона, который использовался в этом руководстве, может служить образцом для развертывания двух устройств HSM, но его параметры нужно изменить в соответствии с вашими требованиями.
+Рекомендуем использовать схему с двумя устройствами HSM в основном регионе, чтобы обеспечить доступность на уровне стойки, и двумя устройствами HSM в другом регионе, чтобы обеспечить доступность на уровне региона. 
 
 * [Обеспечение высокого уровня доступности](high-availability.md)
 * [Физическая безопасность](physical-security.md)
