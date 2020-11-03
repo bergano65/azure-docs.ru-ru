@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: edee1948780b827eed5047c6c9c919b66eb619d0
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 553f83151289adf6f0f4420d106af7ae37047bda
+ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900224"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93148326"
 ---
 # <a name="security-recommendations---a-reference-guide"></a>Рекомендации по безопасности — справочное руководство
 
@@ -217,6 +217,5 @@ ms.locfileid: "92900224"
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о рекомендациях см. в следующих статьях.
 
-* [Модуль Microsoft Learn для анализа рекомендаций, выполняемых Центром безопасности](/learn/modules/identify-threats-with-azure-security-center/)
 * [Рекомендации по безопасности в Центре безопасности Azure](security-center-recommendations.md)
 * [Защита сети в центре безопасности Azure.](security-center-network-recommendations.md)
