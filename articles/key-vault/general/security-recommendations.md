@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 09/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 0c541c848290988bb1f358f045abb2d0cd221de7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f96df14fb754578b58fb67ac116ac79cff3ffdcb
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87386764"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289843"
 ---
 # <a name="security-recommendations-for-azure-key-vault"></a>Рекомендации по защите Azure Key Vault
 
@@ -24,7 +24,7 @@ ms.locfileid: "87386764"
 Выполнение некоторых из описанных в этой статье рекомендаций можно автоматически отслеживать с помощью Центра безопасности Azure. Центр безопасности Azure служит первой линией обороны ваших ресурсов в Azure. Он периодически анализирует состояние безопасности для ресурсов Azure, чтобы выявить потенциальные уязвимости. Затем он предоставляет рекомендации по их устранению.
 
 - Дополнительные сведения о рекомендациях Центра безопасности Azure см. в [этой статье](../../security-center/security-center-recommendations.md).
-- Дополнительные сведения о самом Центре безопасности Azure см. в статье [Что такое Центр безопасности Azure?](../../security-center/security-center-intro.md)
+- Дополнительные сведения о самом Центре безопасности Azure см. в статье [Что такое Центр безопасности Azure?](../../security-center/security-center-introduction.md)
 
 ## <a name="data-protection"></a>Защита данных
 
@@ -54,4 +54,4 @@ ms.locfileid: "87386764"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Уточните у поставщика приложения, существуют ли дополнительные требования к безопасности. Рекомендации по разработке безопасных приложений см. в [этой документации](../../security/fundamentals/abstract-develop-secure-apps.md).
+Уточните у поставщика приложения, существуют ли дополнительные требования к безопасности. Рекомендации по разработке безопасных приложений см. в [этой документации](https://azure.microsoft.com/resources/develop-secure-applications-on-azure/).

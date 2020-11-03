@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another subscription.
-ms.openlocfilehash: c92671028f851a456b3222100e33958c9e26466a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e0cd4cad74257dbf83ec8d30405eacca341a8d31
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785329"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289525"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Перемещение Azure Key Vault в другую подписку
 
@@ -46,7 +46,7 @@ ms.locfileid: "92785329"
 
 В Организации может быть реализована политика Azure с принудительным применением или исключениями на уровне подписки. Может существовать другой набор назначений политик в подписке, где уже существует хранилище ключей, и подписка, в которую вы перемещаете хранилище ключей. Конфликт в требованиях политики может привести к нарушению работы приложений.
 
-### <a name="example"></a>Например, .
+### <a name="example"></a>Пример
 
 У вас есть приложение, подключенное к хранилищу ключей, которое создает сертификаты, действительные в течение двух лет. Подписка, в которую вы пытаетесь переместить хранилище ключей, имеет назначение политики, блокирующее создание сертификатов, которые действительны дольше одного года. После перемещения хранилища ключей в новую подписку операция создания сертификата, действующего в течение двух лет, будет заблокирована назначением политики Azure.
 
@@ -54,7 +54,7 @@ ms.locfileid: "92785329"
 
 Перейдите на страницу политики Azure на портал Azure и просмотрите назначения политик для текущей подписки, а также подписку, на которую вы перемещаетесь, и убедитесь в отсутствии несоответствий.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Уровень участника доступа или выше текущей подписки, в которой существует хранилище ключей.
 * Доступ на уровне участника или более высокий уровень к подписке, в которую необходимо переместить хранилище ключей.
@@ -100,9 +100,9 @@ az keyvault update -n myvault --set Properties.tenantId=$tenantId          # Upd
 
 Теперь, когда хранилище связано с правильным идентификатором клиента, и старые записи политики доступа удалены, задайте новые записи политики доступа с помощью командлета [Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/Set-azKeyVaultAccessPolicy) или команды Azure CLI [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy).
 
-Если вы используете управляемое удостоверение для ресурсов Azure, необходимо также обновить его до нового клиента Azure Active Directory. Дополнительные сведения об управляемых удостоверениях см. в разделе [Общие сведения об управляемом удостоверении](/azure/active-directory/managed-identities-azure-resources/overview).
+Если вы используете управляемое удостоверение для ресурсов Azure, необходимо также обновить его до нового клиента Azure Active Directory. Дополнительные сведения об управляемых удостоверениях см. в разделе [Общие сведения об управляемом удостоверении](../../active-directory/managed-identities-azure-resources/overview.md).
 
 Если вы используете управляемое удостоверение, вам также потребуется обновить удостоверение, так как старое удостоверение больше не будет находиться в правильном Azure Active Directoryном клиенте. Чтобы устранить эту проблему, см. следующие документы. 
 
-* [Обновление MSI](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/known-issues#transferring-a-subscription-between-azure-ad-directories)
-* [Перенос подписки в новый каталог](https://docs.microsoft.com/azure/role-based-access-control/transfer-subscription)
+* [Обновление MSI](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories)
+* [Перенос подписки в новый каталог](../../role-based-access-control/transfer-subscription.md)

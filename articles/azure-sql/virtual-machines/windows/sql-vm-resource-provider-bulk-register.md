@@ -13,17 +13,17 @@ ms.workload: iaas-sql-server
 ms.date: 09/21/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: b83a44db98907f505c7bf0d8302470cf3031a967
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d6900d0fdf656fa8309b18971691bb35587f7f4
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761266"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93286081"
 ---
 # <a name="register-multiple-sql-virtual-machines-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация нескольких виртуальных машин SQL в Azure с помощью поставщика ресурсов виртуальных машин SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-Эта статья содержит сведения о массовой регистрации виртуальных машин SQL Server в Azure с помощью поставщика ресурсов виртуальной машины SQL, используя командлет PowerShell `Register-SqlVMs`.
+Эта статья содержит сведения о массовой регистрации виртуальных машин SQL Server в Azure с помощью поставщика ресурсов виртуальной машины SQL, используя командлет PowerShell `Register-SqlVMs`. При регистрации в поставщике ресурсов виртуальной машины SQL устанавливается [расширение агента IaaS SQL](sql-server-iaas-agent-extension-automate-management.md).
 
 В этой статье содержатся инструкции по регистрации виртуальных машин SQL Server. Кроме того, можно зарегистрировать [все SQL Server виртуальные машины автоматически](sql-vm-resource-provider-automatic-registration.md) или [отдельные SQL Server ВМ](sql-vm-resource-provider-register.md). 
 
@@ -33,14 +33,14 @@ ms.locfileid: "91761266"
 
 Во время процесса регистрации отсутствуют риски и время простоя, а SQL Server и виртуальная машина не будут перезагружены. 
 
-Дополнительные сведения о поставщике ресурсов виртуальной машины SQL см. в [этой статье](sql-vm-resource-provider-register.md). 
+Дополнительные сведения см. в статье [поставщик ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md). 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для регистрации виртуальной машины SQL Server с помощью поставщика ресурсов понадобится: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/), которая [зарегистрирована с помощью поставщика ресурсов](sql-vm-resource-provider-register.md#register-subscription-with-rp) и содержит незарегистрированные виртуальные машины SQL Server. 
-- Учетные данные клиента, используемые для регистрации виртуальных машин, существуют в любой из следующих ролей Azure: **участник виртуальной машины**, **участник**или **владелец**. 
+- Учетные данные клиента, используемые для регистрации виртуальных машин, существуют в любой из следующих ролей Azure: **участник виртуальной машины** , **участник** или **владелец**. 
 - Последняя версия [Az PowerShell](/powershell/azure/new-azureps-module-az). 
 - Последняя версия [Az.SqlVirtualMachine](https://www.powershellgallery.com/packages/Az.SqlVirtualMachine/0.1.0).
 
@@ -227,7 +227,7 @@ Please find the detailed report in  file RegisterSqlVMScriptReport1571314821.txt
 
 При регистрации виртуальных машин SQL Server с помощью поставщика ресурсов с использованием предоставленного скрипта учитывайте следующее:
 
-- Для выполнения регистрации с помощью поставщика ресурсов требуется гостевой агент, работающий на виртуальной машине SQL Server. Образы Windows Server 2008 не имеют гостевого агента, поэтому эти виртуальные машины завершаются сбоем и должны быть зарегистрированы вручную с помощью [режима управления NoAgent](sql-vm-resource-provider-register.md#management-modes).
+- Для выполнения регистрации с помощью поставщика ресурсов требуется гостевой агент, работающий на виртуальной машине SQL Server. Образы Windows Server 2008 не имеют гостевого агента, поэтому эти виртуальные машины завершаются сбоем и должны быть зарегистрированы вручную с помощью [режима управления NoAgent](sql-server-iaas-agent-extension-automate-management.md#management-modes).
 - Существует встроенная логика повторных попыток для устранения прозрачных ошибок. Если виртуальная машина успешно зарегистрирована, эта операция выполняется быстро. Однако в случае сбоя регистрации каждая виртуальная машина будет выполнена повторно.  Таким образом, для завершения процесса регистрации необходимо значительное время, хотя требования к фактическому времени зависят от типа и количества ошибок. 
 
 ## <a name="full-script"></a>Полный сценарий

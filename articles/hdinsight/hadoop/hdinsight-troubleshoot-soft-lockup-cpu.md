@@ -7,12 +7,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/05/2019
-ms.openlocfilehash: 6c5b2dd35fe6a61d34f24c10145d4d572c97f595
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 33990e40507f088962fd8d8efd241de5d2fcc63b
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540590"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289060"
 ---
 # <a name="scenario-watchdog-bug-soft-lockup---cpu-error-from-an-azure-hdinsight-cluster"></a>Сценарий: ошибка "устройство наблюдения: ошибка: кратковременная блокировка — ЦП" из кластера Azure HDInsight
 
@@ -36,17 +36,17 @@ ms.locfileid: "92540590"
 
 1. Выберите **отправить новый** и введите входные данные, как показано ниже.
 
-    | Свойство. | Значение |
+    | Свойство | Значение |
     | --- | --- |
     | Тип скрипта | — Пользовательский |
     | Имя |Исправление проблемы с мягкой блокировкой ядра |
     | URI bash-скрипта |`https://raw.githubusercontent.com/hdinsight/hdinsight.github.io/master/ClusterCRUD/KernelSoftLockFix/scripts/KernelSoftLockIssue_FixAndReboot.sh` |
     | Типы узлов |Worker, Zookeeper |
-    | Параметры |Н/Д |
+    | Параметры |Недоступно |
 
     Выберите **сохранить это действие скрипта...** , если требуется выполнять скрипт при добавлении новых узлов.
 
-1. Щелкните **Создать** .
+1. Нажмите кнопку **создания**.
 
 1. Дождитесь завершения выполнения.
 
@@ -56,10 +56,4 @@ ms.locfileid: "92540590"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
-
-* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
-
-* Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
-
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+[!INCLUDE [troubleshooting next steps](../../../includes/hdinsight-troubleshooting-next-steps.md)]

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: 84224172dbfd63fee51b3a7b80f5990b04e5e228
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: b8dc63030c6791779ad90500747e4e2f5c4ffeef
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535031"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93288982"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop YARN с помощью Azure HDInsight
 
@@ -32,10 +32,10 @@ ms.locfileid: "92535031"
 | thrftsvr | 25 % | 50 % |
 | spark; | 50 % | 50 % |
 
-1. Выберите значок **просмотров Ambari** , а затем выберите шаблон сетки. После этого выберите **диспетчер очереди YARN** .
+1. Выберите значок **просмотров Ambari** , а затем выберите шаблон сетки. После этого выберите **диспетчер очереди YARN**.
 
     ![Диспетчер очереди YARN панели мониторинга Apache Ambari](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-1.png)
-2. Выберите очередь **по умолчанию** .
+2. Выберите очередь **по умолчанию**.
 
     ![Apache Ambari YARN выбор очереди по умолчанию](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-2.png)
 3. Для очереди **default** измените **емкость** с 50 % на 25 %. Для очереди **thriftsvr** измените **емкость** на 25 %.
@@ -49,7 +49,7 @@ ms.locfileid: "92535031"
 
     ![Очередь имен панели мониторинга Apache Ambari YARN](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-5.png)  
 
-6. Оставьте значение **емкости** 50 %, а затем выберите кнопку **Действия** .
+6. Оставьте значение **емкости** 50 %, а затем выберите кнопку **Действия**.
 
     ![Выбор действия Apache Ambari YARN](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-6.png)  
 7. Выберите команду **Save and Refresh Queues** (Сохранить и обновить очереди).
@@ -74,7 +74,7 @@ ms.locfileid: "92535031"
     yarn top
     ```
 
-    Идентификаторы перечислены в столбце **APPLICATIONID** . Вы можете скачать журналы из столбца **APPLICATIONID** .
+    Идентификаторы перечислены в столбце **APPLICATIONID**. Вы можете скачать журналы из столбца **APPLICATIONID**.
 
     ```apache
     YARN top - 18:00:07, up 19d, 0:14, 0 active users, queue(s): root
@@ -136,10 +136,4 @@ ms.locfileid: "92535031"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
-
-- Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
-
-- Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
-
-- Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+[!INCLUDE [troubleshooting next steps](../../includes/hdinsight-troubleshooting-next-steps.md)]

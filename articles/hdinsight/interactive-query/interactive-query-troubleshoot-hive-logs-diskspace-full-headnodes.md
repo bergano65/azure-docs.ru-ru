@@ -7,12 +7,12 @@ author: nisgoel
 ms.author: nisgoel
 ms.reviewer: jasonh
 ms.date: 10/05/2020
-ms.openlocfilehash: 64bf5714f5eb99df9929a47fef414a827ec680af
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 107ec012bf2ff76ee1cbe4c5f8252566a5a16127
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145639"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93288921"
 ---
 # <a name="scenario-apache-hive-logs-are-filling-up-the-disk-space-on-the-head-nodes-in-azure-hdinsight"></a>Сценарий: журналы Apache Hive заполняют дисковое пространство головных узлов в Azure HDInsight.
 
@@ -23,7 +23,7 @@ ms.locfileid: "93145639"
 В кластере Apache Hive или LLAP нежелательные журналы занимают все дисковое пространство на головных узлах. Это состояние может вызвать следующие проблемы.
 
 - SSH-доступ завершается сбоем, так как на головном узле не осталось места.
-- Ambari выдает *ошибку HTTP: служба 503 недоступна* .
+- Ambari выдает *ошибку HTTP: служба 503 недоступна*.
 - HiveServer2 Interactive не перезапускается.
 
 `ambari-agent`При возникновении проблемы в журналах будут содержаться следующие записи:
@@ -42,7 +42,7 @@ ambari_agent - HostCheckReportFileHandler.py - [54697] - ambari_agent.HostCheckR
 
 1. Перейдите на страницу Сводка по компоненту Hive на портале Ambari и выберите вкладку **configs (конфигурации** ).
 
-2. Перейдите к `Advanced hive-log4j` разделу **Дополнительные параметры** .
+2. Перейдите к `Advanced hive-log4j` разделу **Дополнительные параметры**.
 
 3. Задайте `appender.RFA.strategy.action.condition.age` для параметра возраст по своему усмотрению. В этом примере для параметра Age будет задано значение 14 дней: `appender.RFA.strategy.action.condition.age = 14D`
 
@@ -71,10 +71,4 @@ ambari_agent - HostCheckReportFileHandler.py - [54697] - ambari_agent.HostCheckR
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
-
-* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
-
-* Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
-
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+[!INCLUDE [troubleshooting next steps](../../../includes/hdinsight-troubleshooting-next-steps.md)]

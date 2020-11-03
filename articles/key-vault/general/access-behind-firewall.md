@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/12/2019
 ms.author: ambapat
-ms.openlocfilehash: 1ab5ae7bf9f1d13458e3bbeeec564fe642eb3303
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca5842fb268c20f8ae58eb5f683229c4ae3919f4
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88588734"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289168"
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Доступ к хранилищу ключей Azure из-за брандмауэра
 
@@ -43,7 +43,7 @@ ms.locfileid: "88588734"
 | Пользователь или субъект-служба, использующие рабочую или учебную учетную запись с помощью Azure AD (например, user@contoso.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для US Gov :**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br> login.microsoftonline.de:443 |
 | Пользователь или субъект-служба, использующие рабочую или учебную учетную запись, а также службы федерации Active Directory (AD FS) или другую федеративную конечную точку (например, user@contoso.com) |Все конечные точки для рабочей или учебной учетной записи, а также службы федерации Active Directory или другие федеративные конечные точки |
 
-Есть и другие возможные сложные сценарии. Дополнительные сведения см. в статьях [Сценарии аутентификации в Azure Active Directory](../../active-directory/develop/authentication-scenarios.md), [Интеграция приложений с Azure Active Directory](../../active-directory/develop/active-directory-how-to-integrate.md) и [Руководство разработчика по Azure Active Directory](https://msdn.microsoft.com/library/azure/dn151124.aspx).  
+Есть и другие возможные сложные сценарии. Дополнительные сведения см. в статьях [Сценарии аутентификации в Azure Active Directory](../../active-directory/develop/authentication-vs-authorization.md), [Интеграция приложений с Azure Active Directory](../../active-directory/develop/active-directory-how-to-integrate.md) и [Руководство разработчика по Azure Active Directory](/previous-versions/azure/dn151124(v=azure.100)).  
 
 ## <a name="key-vault-management"></a>Управление хранилищем ключей
 
@@ -74,4 +74,4 @@ ms.locfileid: "88588734"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если у вас возникли вопросы о Key Vault, посетите [страницу корпорации Майкрософт с вопросами и ответами об Azure Key Vault](https://docs.microsoft.com/answers/topics/azure-key-vault.html).
+Если у вас возникли вопросы о Key Vault, посетите [страницу корпорации Майкрософт с вопросами и ответами об Azure Key Vault](/answers/topics/azure-key-vault.html).

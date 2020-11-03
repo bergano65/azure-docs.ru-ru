@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 07be83527fa781f87ed1de06fa41bd6d08ee9dc4
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 74669036a40048ca21aae56856981197defe1c35
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426571"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93286532"
 ---
 # <a name="integrate-key-vault-with-azure-private-link"></a>Интеграция Key Vault со службой "Приватный канал Azure"
 
@@ -243,14 +243,14 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 
 * Убедитесь, что у вас есть ресурс Частной зоны DNS. 
     1. Необходимо иметь ресурс Частной зоны DNS с точным именем: privatelink.vaultcore.azure.net. 
-    2. Чтобы узнать, как это сделать, перейдите по следующей ссылке. [Частные зоны DNS](https://docs.microsoft.com/azure/dns/private-dns-privatednszone)
+    2. Чтобы узнать, как это сделать, перейдите по следующей ссылке. [Частные зоны DNS](../../dns/private-dns-privatednszone.md)
     
 * Убедитесь, что Частная зона DNS не связана с виртуальной сетью. Эта проблема может быть вызвана тем, что вы по-прежнему получаете общедоступный IP-адрес. 
     1. Если Частная зона DNS не связана с виртуальной сетью, запрос DNS, исходящий из виртуальной сети, возвратит общедоступный IP-адрес хранилища ключей. 
     2. Перейдите к ресурсу Частной зоны DNS на портале Azure и щелкните параметр связей виртуальных сетей. 
     4. Должна быть указана виртуальная сеть, которая будет выполнять вызовы к хранилищу ключей. 
     5. Если она отсутствует, добавьте ее. 
-    6. Подробные инструкции см. в разделе о[связывании виртуальной сети с Частной зоной DNS](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network).
+    6. Подробные инструкции см. в разделе о[связывании виртуальной сети с Частной зоной DNS](../../dns/private-dns-getstarted-portal.md#link-the-virtual-network).
 
 * Убедитесь, что в Частной зоне DNS указана запись А для хранилища ключей. 
     1. Перейдите на страницу Частной зоны DNS. 
@@ -270,9 +270,9 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 > [!NOTE]
 > Количество хранилищ ключей с включенными частными конечными точками для каждой подписки можно настраивать. Ниже приведено ограничение по умолчанию. Если вы хотите запросить увеличение ограничения для вашей службы, отправьте электронное письмо по адресу akv-privatelink@microsoft.com. Мы одобряем эти запросы в зависимости от индивидуальной ситуации.
 
-**Цены** . Сведения о ценах на службу "Приватный канал Azure" см. [здесь](https://azure.microsoft.com/pricing/details/private-link/).
+**Цены**. Сведения о ценах на службу "Приватный канал Azure" см. [здесь](https://azure.microsoft.com/pricing/details/private-link/).
 
-**Ограничения** .  Частная конечная точка для Azure Key Vault поддерживается только в общедоступных регионах Azure.
+**Ограничения**.  Частная конечная точка для Azure Key Vault поддерживается только в общедоступных регионах Azure.
 
 **Максимальное число частных конечных точек на Key Vault** : 64
 

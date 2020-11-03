@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1052ad06400eb70fe41617421b54978bddd9e50
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: cd0a2b44fd54eb716b5e1b8f9eabc923ccd7977f
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441374"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93285857"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
 
@@ -51,15 +51,15 @@ ms.locfileid: "92441374"
 
 После того, как гостевой пользователь принимает приглашение, свойство **Источник** обновляется в зависимости от поставщика удостоверений гостевого пользователя.
 
-Для гостевых пользователей с состоянием 1 **Источник** — это **внешний Azure Active Directory**.
+Для гостевых пользователей с состоянием 1 **Источник**  — это **внешний Azure Active Directory**.
 
 ![Гостевой пользователь с состоянием 1 после активации предложения](media/user-properties/after-redemption-state1.png)
 
-Для гостевых пользователей с состоянием 2 **Источник** — это **учетная запись Майкрософт**.
+Для гостевых пользователей с состоянием 2 **Источник**  — это **учетная запись Майкрософт**.
 
 ![Гостевой пользователь с состоянием 2 после активации предложения](media/user-properties/after-redemption-state2.png)
 
-Для гостевых пользователей с состоянием 3 и 4 для свойства **Источник** задано значение **Azure Active Directory** или **Windows Server Active Directory**, как описано в следующем разделе.
+Для гостевых пользователей с состоянием 3 и 4 для свойства **Источник** задано значение **Azure Active Directory** или **Windows Server Active Directory** , как описано в следующем разделе.
 
 ## <a name="key-properties-of-the-azure-ad-b2b-collaboration-user"></a>Основные свойства пользователя службы совместной работы Azure AD B2B
 ### <a name="usertype"></a>UserType
@@ -70,6 +70,8 @@ ms.locfileid: "92441374"
 
   > [!NOTE]
   > Свойство UserType не влияет на то, как пользователь выполняет вход, какие роли он получает в каталоге и т. д. Оно только показывает связь пользователя с главной организацией, и организация может применять политики в зависимости от значения этого свойства.
+
+Сведения о ценах см. на [Azure Active Directory ценах](https://azure.microsoft.com/pricing/details/active-directory).
 
 ### <a name="source"></a>Источник
 Это свойство указывает, как пользователь выполняет вход.

@@ -9,34 +9,37 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 09/21/2020
-ms.openlocfilehash: b986832e5febbb2a0f88b65213f9acf0dd4c5ab5
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 23ecc3bdfb0ca85caf219fc262348937923f53c3
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996886"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93286119"
 ---
 # <a name="automatic-registration-with-sql-vm-resource-provider"></a>Автоматическая регистрация с помощью поставщика ресурсов виртуальной машины SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-Включите функцию автоматической регистрации в портал Azure для автоматической регистрации всех текущих и будущих SQL Server на виртуальных машинах Azure с поставщиком ресурсов виртуальной машины SQL в упрощенном режиме.
+Включите функцию автоматической регистрации в портал Azure для автоматической регистрации всех текущих и будущих SQL Server на виртуальных машинах Azure с поставщиком ресурсов виртуальной машины SQL в упрощенном режиме. При регистрации в поставщике ресурсов виртуальной машины SQL устанавливается [расширение агента IaaS SQL](sql-server-iaas-agent-extension-automate-management.md).
 
 В этой статье описывается включение функции автоматической регистрации. Кроме того, можно [зарегистрировать одну виртуальную машину](sql-vm-resource-provider-register.md)или [зарегистрировать виртуальные](sql-vm-resource-provider-bulk-register.md) машины с помощью поставщика ресурсов виртуальной машины SQL. 
 
 ## <a name="overview"></a>Обзор
 
-[Поставщик ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md#overview) позволяет управлять SQL Server виртуальной машиной из портал Azure. Кроме того, поставщик ресурсов обеспечивает надежный набор функций, включая [автоматическую установку исправлений](automated-patching.md), [автоматическую архивацию](automated-backup.md), а также мониторинг и возможности управления. Кроме того, вы получите широкий выбор [лицензий](licensing-model-azure-hybrid-benefit-ahb-change.md) и [выпусков](change-sql-server-edition.md). Ранее эти функции были доступны только для образов виртуальных машин SQL Server, развернутых из Azure Marketplace. 
+Регистрация SQL Server виртуальной машины с помощью поставщика ресурсов виртуальной машины SQL устанавливает [расширение агента IaaS SQL](sql-server-iaas-agent-extension-automate-management.md). 
 
-Функция автоматической регистрации позволяет клиентам автоматически регистрировать все текущие и будущие SQL Server виртуальные машины в своей подписке Azure с помощью поставщика ресурсов виртуальной машины SQL. Это отличается от ручной регистрации, которая сосредоточена только на текущих SQL Server виртуальных машинах. 
+Если включена автоматическая регистрация, задание выполняется ежедневно, чтобы определить, установлены ли SQL Server на всех незарегистрированных виртуальных машинах в подписке. Это делается путем копирования двоичных файлов расширения агента IaaS SQL на виртуальную машину, а затем запуска одноразовой программы, которая проверяет наличие куста реестра SQL Server. При обнаружении SQL Server Hive виртуальная машина регистрируется в [поставщике ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md) в упрощенном режиме. Если в реестре нет SQL Server Hive, двоичные файлы будут удалены.
 
-Автоматическая регистрация SQL Server виртуальные машины в упрощенном режиме. Чтобы воспользоваться полным набором функций, вам по-прежнему необходимо [вручную перейти в режим полного управления](sql-vm-resource-provider-register.md#upgrade-to-full) . 
+После включения автоматической регистрации для подписки все текущие и будущие виртуальные машины, на которых установлено SQL Server, будут зарегистрированы в поставщике ресурсов виртуальной машины SQL в упрощенном режиме. Чтобы воспользоваться полным набором функций, вам по-прежнему необходимо [вручную перейти в режим полного управления](sql-vm-resource-provider-register.md#upgrade-to-full) . 
+
+> [!IMPORTANT]
+> Расширение агента IaaS SQL собирает данные для предоставления клиентам дополнительных преимуществ при использовании SQL Server в виртуальных машинах Azure. Корпорация Майкрософт не будет использовать эти данные для аудита лицензирования без согласия клиента. Дополнительные сведения см. в разделе [SQL Server о конфиденциальности](/sql/sql-server/sql-server-privacy#non-personal-data) .
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для регистрации виртуальной машины SQL Server с помощью поставщика ресурсов понадобится: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/).
-- Модель ресурсов Azure — [Виртуальная машина Windows](../../../virtual-machines/windows/quick-create-portal.md) с [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) , развернутая в общедоступном облаке или Azure для государственных организаций. 
+- Модель ресурсов Azure — это [Виртуальная машина Windows Server 2008 R2 (или более поздней версии)](../../../virtual-machines/windows/quick-create-portal.md) с [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) , развернутая в общедоступном облаке или Azure для государственных организаций. Windows Server 2008 не поддерживается. 
 
 
 ## <a name="enable"></a>Включить
@@ -67,7 +70,7 @@ ms.locfileid: "91996886"
 az feature unregister --namespace Microsoft.SqlVirtualMachine --name BulkRegistration
 ```
 
-# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
 Чтобы отключить автоматическую регистрацию с помощью Azure PowerShell, выполните следующую команду: 
 
@@ -81,7 +84,7 @@ Unregister-AzProviderFeature -FeatureName BulkRegistration -ProviderNamespace Mi
 
 Функцию автоматической регистрации можно включить для нескольких подписок Azure с помощью PowerShell. 
 
-Для этого выполните указанные ниже действия.
+Для этого выполните следующие действия.
 
 1. Сохраните [этот скрипт](https://github.com/microsoft/tigertoolbox/blob/master/AzureSQLVM/RegisterSubscriptionsToSqlVmAutomaticRegistration.ps1) в `.ps1` файл, например `EnableBySubscription.ps1` . 
 1. Перейдите к месту сохранения скрипта с помощью административной командной строки или окна PowerShell. 

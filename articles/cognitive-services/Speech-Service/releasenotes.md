@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: e22400016eae0642c4e25fcfd4fcaaaab22a27a8
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 8faf9c913ea9bab2feaf698efeb6fd5b3ca63179
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280571"
+ms.locfileid: "93289622"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
 
@@ -24,21 +24,13 @@ ms.locfileid: "93280571"
 
 **Примечание**. РЕЧЕВОЙ пакет SDK в Windows зависит от общего Microsoft Visual C++ распространяемого пакета для Visual Studio 2015, 2017 и 2019. Его можно скачать [здесь](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
-**Речевой интерфейс командной строки (также известный как SPX)**<br>
-SPX — это интерфейс командной строки для использования службы распознавания речи Azure без написания кода. Скачайте последнюю версию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-basics).
-- `spx csr dataset upload --kind audio|language|acoustic` — Создание наборов данных из локальных, а не только URL-адресов.
-- `spx csr evaluation create|status|list|update|delete` — Сравнение новых моделей с базовыми показателями истинности или другими моделями.
-- `spx * list` — поддерживает нестраничный интерфейс (не требуется--Top X--Skip X).
-- `spx * --http header A=B` — Поддержка пользовательских заголовков (добавленных для Office для пользовательской проверки подлинности). 
-- `spx help` — Улучшенный цвет текста с текстом и обратными импульсами (синий).
-
 **Новые функции**
 - **Linux** : добавлена поддержка Debian 10 и Ubuntu 20,04 LTS.
 - **Python/объектив-C** : добавлена поддержка `KeywordRecognizer` API. Документация будет [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/custom-keyword-basics).
 - **C++/Жава/к #** : добавлена поддержка для установки любых `HttpHeader` ключей и значений через `ServicePropertyChannel::HttpHeader` .
 - **JavaScript** : добавлена поддержка `ConversationTranscriber` API. Ознакомьтесь с документацией [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-conversation-transcription?pivots=programming-language-javascript). 
-- **C++/c #** : добавлен новый `AudioDataStream FromFile` метод (для чтения. Файлы WAV) [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/audio-audiodatastream) и [здесь (C#)](
-https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream.fromfile).
+- **C++/c #** : добавлен новый `AudioDataStream FromWavFileInput` метод (для чтения. Файлы WAV) [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/audiodatastream) и [здесь (C#)](
+https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
 -  **C++/c #/Жава/Писон/обжективе-к/Свифт** : добавлен `stopSpeakingAsync()` метод для отмены синтеза текста в речь. Прочитайте справочную документацию [здесь (C++](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace)), здесь ( [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), здесь ( [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech?view=azure-java-stable)), здесь (на языке [Python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python)и [здесь (цель-C/SWIFT)](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
 - **C#, C++, Java** : в `FromDialogServiceConnector()` класс добавлена функция `Connection` , которая может использоваться для наблюдения за подключениями и событиями отключения `DialogServiceConnector` . Ознакомьтесь с справочной документацией [здесь (C#)](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/connection)и [здесь (Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection?view=azure-java-stable).
 <!-- - **C++/C#/Java/Python/Objective-C/Swift**: Added support for Pronunciation Assessment, which evaluates speech pronunciation and gives speakers feedback on the accuracy and fluency of spoken audio. Read the documentation [here](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-pronunciation-assessment). -->
@@ -72,6 +64,16 @@ https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audioda
 
 **Ковид-19 краткие тестирование:** Благодаря удаленной работе за последние несколько недель мы не смогли выполнить проверку вручную, как и обычно. Мы не внесли изменения, которые могли бы привести к нарушению, и наши автоматические тесты прошли успешно. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br>
 Оставайтесь в курсе событий!
+
+## <a name="speech-cli-also-known-as-spx-2020-october-release"></a>Речевой интерфейс командной строки (также известный как SPX): 2020 — выпуск от октября
+SPX — это интерфейс командной строки для использования службы распознавания речи Azure без написания кода. Скачайте последнюю версию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-basics). <br>
+
+**Новые функции**
+- `spx csr dataset upload --kind audio|language|acoustic` — Создание наборов данных из локальных, а не только URL-адресов.
+- `spx csr evaluation create|status|list|update|delete` — Сравнение новых моделей с базовыми показателями истинности или другими моделями.
+- `spx * list` — поддерживает нестраничный интерфейс (не требуется--Top X--Skip X).
+- `spx * --http header A=B` — Поддержка пользовательских заголовков (добавленных для Office для пользовательской проверки подлинности). 
+- `spx help` — Улучшенный цвет текста с текстом и обратными импульсами (синий).
 
 
 ## <a name="text-to-speech-2020-august-release"></a>Преобразование текста в речь 2020-выпуск за Август

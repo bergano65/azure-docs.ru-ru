@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: 3b87d68fb9b5fa5f5f8dec43c39ea8b7dbf08b93
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7d34b61e584b63c517b6c0f8af4cb4adcc7fefe
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89651848"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289500"
 ---
 # <a name="importing-azure-key-vault-certificates-faq"></a>Импорт сертификатов Azure Key Vault вопросы и ответы
 
@@ -25,7 +25,7 @@ ms.locfileid: "89651848"
 
 ### <a name="how-can-i-import-a-certificate-in-azure-key-vault"></a>Как импортировать сертификат в Azure Key Vault?
 
-Для операции импорта сертификата Azure Key Vault принимает два формата файлов сертификатов: PEM и PFX. Хотя есть PEM-файлы, содержащие только общую часть, Key Vault требует и принимает только PEM-файл или PFX с закрытым ключом. Дополнительные сведения см. [в разделе Импорт сертификата в Key Vault](https://docs.microsoft.com/azure/key-vault/certificates/tutorial-import-certificate#import-a-certificate-to-key-vault).
+Для операции импорта сертификата Azure Key Vault принимает два формата файлов сертификатов: PEM и PFX. Хотя есть PEM-файлы, содержащие только общую часть, Key Vault требует и принимает только PEM-файл или PFX с закрытым ключом. Дополнительные сведения см. [в разделе Импорт сертификата в Key Vault](./tutorial-import-certificate.md#import-a-certificate-to-key-vault).
 
 ### <a name="after-i-import-a-password-protected-certificate-to-key-vault-and-then-download-it-why-cant-i-see-the-password-thats-associated-with-it"></a>Почему после импорта защищенного паролем сертификата для Key Vault, а затем его загрузки, почему не отображается связанный с ним пароль?
     
@@ -35,7 +35,7 @@ ms.locfileid: "89651848"
 
 При импорте сертификата необходимо убедиться, что ключ включен в файл. Если закрытый ключ хранится отдельно в другом формате, необходимо объединить ключ с сертификатом. Некоторые центры сертификации (ЦС) предоставляют сертификаты в других форматах. Поэтому перед импортом сертификата убедитесь, что он находится в формате PEM или PFX и что в ключе используется шифрование Ривест – Шамир – Адельман (RSA) или алгоритм шифрования на основе эллиптических кривых (ECC). 
 
-Дополнительные сведения см. в разделе [требования к сертификату](https://docs.microsoft.com/azure/key-vault/certificates/certificate-scenarios#formats-of-import-we-support) и [требования к ключу сертификата](https://docs.microsoft.com/azure/key-vault/keys/about-keys#cryptographic-protection).
+Дополнительные сведения см. в разделе [требования к сертификату](./certificate-scenarios.md#formats-of-import-we-support) и [требования к ключу сертификата](../keys/about-keys.md).
 
 ###  <a name="can-i-import-a-certificate-by-using-an-arm-template"></a>Можно ли импортировать сертификат с помощью шаблона ARM?
 
@@ -43,20 +43,20 @@ ms.locfileid: "89651848"
 
 ### <a name="when-i-import-a-certificate-via-the-azure-portal-i-get-a-something-went-wrong-error-how-can-i-investigate-further"></a>При импорте сертификата с помощью портал Azure появляется сообщение об ошибке "что-то пошло не так". Как можно исследовать дальнейшие исследования?
     
-Чтобы просмотреть более описательную ошибку, импортируйте файл сертификата с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/keyvault/certificate?view=azure-cli-latest#az-keyvault-certificate-import) или [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.keyvault/import-azurekeyvaultcertificate?view=azurermps-6.13.0).
+Чтобы просмотреть более описательную ошибку, импортируйте файл сертификата с помощью [Azure CLI](/cli/azure/keyvault/certificate?view=azure-cli-latest#az-keyvault-certificate-import) или [PowerShell](/powershell/module/azurerm.keyvault/import-azurekeyvaultcertificate?view=azurermps-6.13.0).
 
 ### <a name="how-can-i-resolve-error-type-access-denied-or-user-is-unauthorized-to-import-certificate"></a>Как разрешить "тип ошибки: отказано в доступе или пользователь не авторизован для импорта сертификата"?
     
-Для операции импорта необходимо предоставить пользователю разрешения на импорт сертификата в политиках доступа. Для этого перейдите в хранилище ключей, выберите **политики доступа**  >  **Добавить политику доступа**  >  **выбрать субъект разрешений сертификата**  >  **Principal**, найдите пользователя, а затем добавьте адрес электронной почты пользователя. 
+Для операции импорта необходимо предоставить пользователю разрешения на импорт сертификата в политиках доступа. Для этого перейдите в хранилище ключей, выберите **политики доступа**  >  **Добавить политику доступа**  >  **выбрать субъект разрешений сертификата**  >  **Principal** , найдите пользователя, а затем добавьте адрес электронной почты пользователя. 
 
-Дополнительные сведения о политиках доступа, связанных с сертификатами, см. в статье [о сертификатах Azure Key Vault](https://docs.microsoft.com/azure/key-vault/certificates/about-certificates#certificate-access-control).
+Дополнительные сведения о политиках доступа, связанных с сертификатами, см. в статье [о сертификатах Azure Key Vault](./about-certificates.md#certificate-access-control).
 
 
 ### <a name="how-can-i-resolve-error-type-conflict-when-creating-a-certificate"></a>Как можно разрешить «тип ошибки: конфликт при создании сертификата»?
     
-Имя каждого сертификата должно быть уникальным. Сертификат с таким именем может находиться в состоянии обратимого удаления. Кроме того, в соответствии с [композицией сертификата](https://docs.microsoft.com/azure/key-vault/certificates/about-certificates#composition-of-a-certificate)при создании нового сертификата он создает секрет с тем же именем, поэтому при наличии другого ключа или секрета в хранилище ключей с тем же именем, которое вы пытаетесь указать для вашего сертификата, создание сертификата завершится сбоем, и вам нужно будет либо удалить этот ключ или секрет, либо использовать другое имя для сертификата. 
+Имя каждого сертификата должно быть уникальным. Сертификат с таким именем может находиться в состоянии обратимого удаления. Кроме того, в соответствии с [композицией сертификата](./about-certificates.md#composition-of-a-certificate)при создании нового сертификата он создает секрет с тем же именем, поэтому при наличии другого ключа или секрета в хранилище ключей с тем же именем, которое вы пытаетесь указать для вашего сертификата, создание сертификата завершится сбоем, и вам нужно будет либо удалить этот ключ или секрет, либо использовать другое имя для сертификата. 
 
-Дополнительные сведения см. в разделе [Получение удаленной операции с сертификатом](https://docs.microsoft.com/rest/api/keyvault/getdeletedcertificate/getdeletedcertificate).
+Дополнительные сведения см. в разделе [Получение удаленной операции с сертификатом](/rest/api/keyvault/getdeletedcertificate/getdeletedcertificate).
 
 ### <a name="why-am-i-getting-error-type-char-length-is-too-long"></a>Почему я получаю сообщение "тип ошибки: длина знака слишком велика"?
 Эта ошибка может быть вызвана одной из двух причин:    
@@ -81,6 +81,6 @@ ms.locfileid: "89651848"
 Если сертификат успешно импортирован, вы сможете подтвердить его, перейдя на панель **секреты** .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сертификаты Azure Key Vault](/azure/key-vault/certificates/about-certificates)
+- [Сертификаты Azure Key Vault](./about-certificates.md)

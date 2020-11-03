@@ -8,14 +8,14 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 10/27/2020
 ms.author: memildin
-ms.openlocfilehash: cd4f2198721e0d92abe22b1b6d95dceda2dc874d
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 59cfe7b990523e5cb165d1037291b3c1b1301624
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789188"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289241"
 ---
-# <a name="continuously-export-security-center-data"></a>Непрерывный экспорт данных центра безопасности
+# <a name="continuously-export-security-center-data"></a>Непрерывный экспорт данных Центра безопасности
 
 Центр безопасности Azure создает подробные оповещения и рекомендации по безопасности. Их можно просматривать на портале или с помощью программных средств. Также может потребоваться экспортировать некоторые или все эти сведения для отслеживания с помощью других средств мониторинга в вашей среде. 
 
@@ -41,7 +41,7 @@ ms.locfileid: "92789188"
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Free|
 |Требуемые роли и разрешения|<ul><li>**Администратор безопасности** или **владелец** группы ресурсов</li><li>Разрешения на запись для целевого ресурса</li><li>Если вы используете политики Azure "Деплойифнотексист", описанные ниже, вам также понадобятся разрешения для назначения политик.</li></ul>|
-|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Да](./media/icons/yes-icon.png) Gov Китая (в концентратор событий), другие gov|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov, другие gov<br>![Да](./media/icons/yes-icon.png) Gov Китая (в концентратор событий)|
 |||
 
 

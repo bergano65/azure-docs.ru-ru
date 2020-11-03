@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0bdf2c4dda3e272ae04681f886f6e4da31dcebd8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7931ad9e55d62d5fa2b1828d276e56f7c8cd02e1
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569838"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93286487"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
 
@@ -209,14 +209,6 @@ ExpressRoute Direct дает возможность напрямую подкл�
    }  
    ```
 
-## <a name="generate-the-letter-of-authorization-loa"></a><a name="authorization"></a>Создание письма авторизации (определения гарантии)
-
-Введите недавно созданное имя ресурса прямого поиска ExpressRoute, имя группы ресурсов и имя клиента для записи определения гарантии в и (необязательно) Определите расположение файла для хранения документа. Если на путь к файлу нет ссылки, документ будет загружен в текущий каталог.
-
-```azurecli
-az network express-route port generate-loa -n Contoso-Direct -g Contoso-Direct-rg --customer-name Contoso --destination C:\Users\SampleUser\Downloads\LOA.pdf
-```
-
 ## <a name="change-adminstate-for-links"></a><a name="state"></a>Изменение AdminState для ссылок
 
 Этот процесс позволяет провести тестирование уровня 1. Убедитесь, что все кроссовые подключения правильно подключены к маршрутизаторам на первичных и вторичных портах.
@@ -341,6 +333,6 @@ az network express-route port generate-loa -n Contoso-Direct -g Contoso-Direct-r
   }  
   ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [сведений о подключении ExpressRoute Direct](expressroute-erdirect-about.md).

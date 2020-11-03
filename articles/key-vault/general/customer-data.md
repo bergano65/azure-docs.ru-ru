@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: reference
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 9b320c765b258473acd6fa553831b4f075cca9ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7155e1517ba5ff203f11ee834af3c0d1dd1fa065
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90983238"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289478"
 ---
 # <a name="azure-key-vault-customer-data-features"></a>Функции данных клиентов в Azure Key Vault
 
@@ -50,16 +50,16 @@ Azure Key Vault получает данные клиента во время с�
 
 Журналы диагностики Azure Key Vault, которые содержат персональные данные, можно получить, выполнив запрос на экспорт на портале конфиденциальности пользователей. Этот запрос должен быть отправлен администратором клиента.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ведение журнала хранилища ключей Azure](logging.md)
 
 - [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](soft-delete-cli.md)
 
-- [Операции с ключами в Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/key-operations)
+- [Операции с ключами в Azure Key Vault](/rest/api/keyvault/key-operations)
 
-- [Операции с секретами в Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/secret-operations)
+- [Операции с секретами в Azure Key Vault](/rest/api/keyvault/secret-operations)
 
-- [Сертификаты и политики Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/certificates-and-policies)
+- [Сертификаты и политики Azure Key Vault](/rest/api/keyvault/certificates-and-policies)
 
-- [Операции с учетными записями хранения Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/storage-account-key-operations)
+- [Операции с учетными записями хранения Azure Key Vault](/rest/api/keyvault/storage-account-key-operations)

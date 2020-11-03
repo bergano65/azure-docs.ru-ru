@@ -7,12 +7,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/13/2019
-ms.openlocfilehash: 92cce0751a400e17f9975d7ae3d10e6612017823
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8bac53cd08629e8b0a9cb91e596856c0ae6b5a2f
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533637"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289111"
 ---
 # <a name="unable-to-access-data-lake-storage-files-in-azure-hdinsight"></a>Не удается получить доступ к файлам Data Lakeного хранилища в Azure HDInsight
 
@@ -32,7 +32,7 @@ LISTSTATUS failed with error 0x83090aa2 (Forbidden. ACL verification failed. Eit
 
 ### <a name="resolution"></a>Решение
 
-1. Убедитесь, что у пакета обновления есть разрешения "x" для обхода по пути. Дополнительные сведения см. в разделе [Разрешения](https://hdinsight.github.io/ClusterCRUD/ADLS/adls-create-permission-setup.html). Пример команды DFS для проверки доступа к файлам и папкам в Data Lake учетной записи хранения:
+1. Убедитесь, что у пакета обновления есть разрешения "x" для обхода по пути. Дополнительные сведения см. в разделе [Разрешения](https://hdinsight.github.io/ClusterCRUD/ADLS/adls-create-permission-setup.html). Пример `dfs` команды для проверки доступа к файлам и папкам в Data Lake учетной записи хранения:
 
     ```
     hdfs dfs -ls /<path to check access>
@@ -54,13 +54,13 @@ Token Refresh failed - Received invalid http response: 500
 
 Возможно, истек срок действия сертификата, предоставленного для доступа субъекта-службы.
 
-1. SSH в головного узла. Проверьте доступ к учетной записи хранения с помощью следующей команды DFS:
+1. SSH в головного узла. Проверьте доступ к учетной записи хранения с помощью следующей `dfs` команды:
 
     ```
     hdfs dfs -ls /
     ```
 
-1. Убедитесь, что сообщение об ошибке имеет следующий вид:
+1. Убедитесь, что сообщение об ошибке похоже на следующие выходные данные:
 
     ```
     {"stderr": "-ls: Token Refresh failed - Received invalid http response: 500, text = Response{protocol=http/1.1, code=500, message=Internal Server Error, url=http://gw0-abccluster.24ajrd4341lebfgq5unsrzq0ue.fx.internal.cloudapp.net:909/api/oauthtoken}}...
@@ -161,16 +161,10 @@ Invoke-AzureRmResourceAction `
 
 ```
 
-Для назначения существующего сертификата создайте сертификат, допуская его PFX-файл и пароль. Свяжите сертификат с субъектом-службой, с которым был создан кластер, и приготовьте идентификатор AppId.
+Для назначения существующего сертификата создайте сертификат, допуская его PFX-файл и пароль. Свяжите сертификат с субъектом-службой, с которым был создан кластер, с помощью идентификатора приложения.
 
 После замены параметров фактическими значениями выполните команду PowerShell.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
-
-* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
-
-* Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
-
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+[!INCLUDE [troubleshooting next steps](../../../includes/hdinsight-troubleshooting-next-steps.md)]

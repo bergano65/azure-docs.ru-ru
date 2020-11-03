@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 10/27/2020
+ms.date: 11/03/2020
 ms.custom: generated
-ms.openlocfilehash: d9881fe91885a9a97b51da176be98a9ed6d007ba
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 3f192493dfd6bfc2fb3d5802b1dd94cd4ca3a9a9
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900767"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93285217"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -271,7 +271,7 @@ ms.locfileid: "92900767"
 > | Microsoft. support/Суппорттиккетс/связь/чтение | Перечисление одного или всех сообщений в службу поддержки |
 > | Microsoft. support/Суппорттиккетс/связь/запись | Добавляет новый обмен информацией в службу поддержки |
 
-## <a name="compute"></a>Службы вычислений
+## <a name="compute"></a>Вычисления
 
 ### <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 
@@ -843,7 +843,6 @@ ms.locfileid: "92900767"
 > | Microsoft. Network/Азурефиреваллс/Нетворкрулеколлектионс/чтение | Получение Нетворкрулеколлектион брандмауэра Azure |
 > | Microsoft. Network/Азурефиреваллс/Нетворкрулеколлектионс/запись | Нетворкрулеколлектион брандмауэр Креатесорупдатес Azure |
 > | Microsoft. Network/Азурефиреваллс/Нетворкрулеколлектионс/удаление | Удаляет Нетворкрулеколлектион брандмауэра Azure. |
-> | Microsoft. Network/Азуревебкатегориес/чтение | Возвращает категории Azure |
 > | Microsoft.Network/bastionHosts/read | Получение узла-бастиона |
 > | Microsoft.Network/bastionHosts/write | Создание или обновление узла-бастиона |
 > | Microsoft.Network/bastionHosts/delete | Удаление узла-бастиона |
@@ -1243,8 +1242,6 @@ ms.locfileid: "92900767"
 > | Microsoft. Network/Виртуалхубс/Бгпконнектионс/чтение | Возвращает дочерний ресурс центра BGP для подключения концентратора к виртуальному концентратору. |
 > | Microsoft. Network/Виртуалхубс/Бгпконнектионс/запись | Создает или обновляет дочерний ресурс основного подключения BGP виртуального концентратора. |
 > | Microsoft. Network/Виртуалхубс/Бгпконнектионс/удаление | Удаляет дочерний ресурс подключения концентратора BGP виртуального концентратора. |
-> | Microsoft. Network/Виртуалхубс/Бгпконнектионс/Адвертиседраутес/действие | Получает объявленные маршруты виртуалраутер |
-> | Microsoft. Network/Виртуалхубс/Бгпконнектионс/Леарнедраутес/действие | Получает виртуалраутер, полученные маршруты |
 > | Microsoft. Network/Виртуалхубс/Хубраутетаблес/чтение | Возвращает дочерний ресурс таблицы маршрутов виртуального концентратора. |
 > | Microsoft. Network/Виртуалхубс/Хубраутетаблес/запись | Создает или обновляет дочерний ресурс таблицы маршрутов виртуального концентратора. |
 > | Microsoft. Network/Виртуалхубс/Хубраутетаблес/удаление | Удаляет дочерний ресурс таблицы маршрутов виртуального концентратора. |
@@ -1332,9 +1329,6 @@ ms.locfileid: "92900767"
 > | Microsoft. Network/впнгатевайс/стартпаккеткаптуре/действие | Запуск записи пакетов VPN-шлюза с помощью соответствующего ресурса |
 > | Microsoft. Network/впнгатевайс/стоппаккеткаптуре/действие | Завершение записи пакетов VPN-шлюза с помощью sasURL |
 > | microsoft.network/vpngateways/listvpnconnectionshealth/action | Получает состояние работоспособности подключения для всех или подмножества подключений на шлюзе VpnGateway |
-> | Microsoft. Network/Впнгатевайс/Натрулес/чтение | Получает ресурс правила NAT. |
-> | Microsoft. Network/Впнгатевайс/Натрулес/запись | Помещает ресурс правила NAT |
-> | Microsoft. Network/Впнгатевайс/Натрулес/удаление | Удаляет ресурс правила NAT. |
 > | microsoft.network/vpnGateways/vpnConnections/read | Получение VPN-подключения. |
 > | microsoft.network/vpnGateways/vpnConnections/write | Установка VPN-подключения. |
 > | microsoft.network/vpnGateways/vpnConnections/delete | Удаляет VpnConnection. |
@@ -1349,7 +1343,7 @@ ms.locfileid: "92900767"
 > | Microsoft.Network/vpnsites/delete | Удаление ресурса сети VPN. |
 > | Microsoft. Network/Впнситес/Впнсителинкс/чтение | Возвращает ссылку на VPN-сайт |
 
-## <a name="storage"></a>Память
+## <a name="storage"></a>Служба хранилища
 
 ### <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
@@ -1522,6 +1516,7 @@ ms.locfileid: "92900767"
 > | Microsoft.Storage/locations/usages/read | Возвращает предельное и текущее число используемых ресурсов для указанной подписки. |
 > | Microsoft.Storage/operations/read | Опрашивает состояние асинхронной операции. |
 > | Microsoft.Storage/skus/read | Выводит список номеров SKU, поддерживаемых Microsoft.Storage. |
+> | Microsoft. Storage/storageAccounts/Упдатеинтерналпропертиес/действие |  |
 > | Microsoft. Storage/storageAccounts/хнсонмигратион/действие | Клиент может прервать текущую миграцию службы HNS в учетной записи хранения. |
 > | Microsoft. Storage/storageAccounts/хнсонмигратион/действие | Клиент может перейти на тип учетной записи службы HNS |
 > | Microsoft. Storage/storageAccounts/Рестореблобранжес/действие | Восстановить диапазоны BLOB-объектов в состояние указанного времени |
@@ -1572,6 +1567,7 @@ ms.locfileid: "92900767"
 > | Microsoft. Storage/storageAccounts/Филесервицес/shares/Read | Список файловых ресурсов |
 > | Microsoft. Storage/storageAccounts/Филесервицес/shares/Write | Создать или обновить общую папку |
 > | Microsoft. Storage, storageAccounts/ИнвенториполиЦиес/Delete |  |
+> | Microsoft. Storage, storageAccounts/ИнвенториполиЦиес/Read |  |
 > | Microsoft. Storage, storageAccounts/ИнвенториполиЦиес/Read |  |
 > | Microsoft. Storage/storageAccounts/ИнвенториполиЦиес/запись |  |
 > | Microsoft. Storage, storageAccounts/Локалусерс/Delete | Удалить локального пользователя |
@@ -2128,18 +2124,19 @@ ms.locfileid: "92900767"
 > | Microsoft. Сигналрсервице/SignalR/Приватиндпоинтконнектионс/Read | Чтение подключения к частной конечной точке |
 > | Microsoft. Сигналрсервице/SignalR/Привателинкресаурцес/Read | Список всех ресурсов закрытой ссылки SignalR |
 > | **DataAction** | **Описание** |
-> | Microsoft. Сигналрсервице/SignalR/serverConnection/действие | Запустите соединение с сервером. |
-> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/действие | Добавить или удалить клиентские подключения из групп или закрыть клиентское соединение. |
-> | Microsoft. Сигналрсервице/SignalR/пользователь/действие | Добавление и удаление пользователей из групп. |
-> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/Read | Проверьте наличие подключения. |
-> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/запись | Отправка сообщений непосредственно в клиентское соединение. |
-> | Microsoft. Сигналрсервице/SignalR/группа/чтение | Проверьте существование группы. |
-> | Microsoft. Сигналрсервице/SignalR/группа/запись | Широковещательные сообщения для клиентских подключений в группе или некоторых группах. |
-> | Microsoft. Сигналрсервице/SignalR/Hub/запись | Рассылка сообщений всем клиентским подключениям, подключенным к этому концентратору. |
-> | Microsoft. Сигналрсервице/SignalR/Service/accessKey/действие | Получите временный AccessKey для подписывания Клиенттокенс. |
-> | Microsoft. Сигналрсервице/SignalR/Service/Клиенттокен/Action | Получите Клиенттокен для запуска клиентского подключения. |
-> | Microsoft. Сигналрсервице/SignalR/пользователь/чтение | Проверьте существование пользователя и его принадлежность к группе. |
-> | Microsoft. Сигналрсервице/SignalR/пользователь/запись | Отправка сообщений пользователю, у которого может быть несколько клиентских подключений. |
+> | Microsoft. Сигналрсервице/SignalR/auth/accessKey/действие | Создайте временный AccessKey для подписи Клиенттокенс. |
+> | Microsoft. Сигналрсервице/SignalR/auth/Клиенттокен/Action | Создайте Клиенттокен для запуска клиентского подключения. |
+> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/Send/Action | Отправка сообщений непосредственно в клиентское соединение. |
+> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/Read | Проверьте наличие подключения клиента. |
+> | Microsoft. Сигналрсервице/SignalR/Клиентконнектион/запись | Закройте клиентское подключение. |
+> | Microsoft. Сигналрсервице/SignalR/группа, отправка и действие | Широковещательное сообщение группе. |
+> | Microsoft. Сигналрсервице/SignalR/группа/чтение | Проверьте существование группы или наличие пользователя в группе. |
+> | Microsoft. Сигналрсервице/SignalR/группа/запись | Объединение или выход из группы. |
+> | Microsoft. Сигналрсервице/SignalR/концентратор, отправка и действие | Рассылка сообщений всем клиентским подключениям в концентраторе. |
+> | Microsoft. Сигналрсервице/SignalR/serverConnection/запись | Запустите соединение с сервером. |
+> | Microsoft. Сигналрсервице/SignalR/пользователь, отправка и действие | Отправка сообщений пользователю, который может состоять из нескольких клиентских подключений. |
+> | Microsoft. Сигналрсервице/SignalR/пользователь/чтение | Проверьте наличие пользователя. |
+> | Microsoft. Сигналрсервице/SignalR/пользователь/запись |  |
 
 ### <a name="microsoftweb"></a>microsoft.web
 
@@ -3256,6 +3253,11 @@ ms.locfileid: "92900767"
 > | Microsoft.DataFactory/factories/linkedServices/read | Считывает связанную службу. |
 > | Microsoft.DataFactory/factories/linkedServices/delete | Удаляет связанную службу. |
 > | Microsoft.DataFactory/factories/linkedServices/write | Создает или обновляет связанную службу. |
+> | Microsoft. манажедвиртуалнетворкс/фабрики//чтение | Чтение управляемой виртуальной сети. |
+> | Microsoft. манажедвиртуалнетворкс/фабрики//запись | Создание или обновление управляемой виртуальной сети. |
+> | Microsoft. манажедвиртуалнетворкс/фабрики//Манажедприватиндпоинтс/чтение | Чтение управляемой частной конечной точки. |
+> | Microsoft. манажедвиртуалнетворкс/фабрики//Манажедприватиндпоинтс/запись | Создание или обновление управляемой частной конечной точки. |
+> | Microsoft. манажедвиртуалнетворкс/фабрики//Манажедприватиндпоинтс/Delete | Удаление управляемой частной конечной точки. |
 > | Microsoft. оператионресултс/фабрики//чтение | Возвращает результаты операции. |
 > | Microsoft.DataFactory/factories/pipelineruns/read | Считывает выполнения конвейера. |
 > | Microsoft.DataFactory/factories/pipelineruns/cancel/action | Отменяет запуск конвейера, указанный идентификатором запуска. |
@@ -3862,6 +3864,8 @@ ms.locfileid: "92900767"
 > | Microsoft.Sql/instancePools/delete | Удаление пула экземпляров. |
 > | Microsoft. SQL/Инстанцепулс/использование/чтение | Получает сведения об использовании пула экземпляров |
 > | Microsoft.Sql/locations/read | Получение расположений, доступных для данной подписки. |
+> | Microsoft. SQL/Locations/Администраторазуреасинкоператион/Read | Возвращает результат операций асинхронного администрирования Azure для управляемого экземпляра. |
+> | Microsoft. SQL/Locations/Администратороператионресултс/Read | Возвращает результат операций администратора управляемого экземпляра. |
 > | Microsoft.Sql/locations/auditingSettingsAzureAsyncOperation/read | Извлечение результата операции настройки расширенной политики аудита больших двоичных объектов на сервере. |
 > | Microsoft.Sql/locations/auditingSettingsOperationResults/read | Извлекает результат операции настройки политики аудита больших двоичных объектов на сервере. |
 > | Microsoft.Sql/locations/capabilities/read | Получение сведений о возможностях этой подписки в данном расположении. |
@@ -3883,6 +3887,8 @@ ms.locfileid: "92900767"
 > | Microsoft.Sql/locations/extendedAuditingSettingsOperationResults/read | Извлечение результата операции настройки расширенной политики аудита больших двоичных объектов на сервере. |
 > | Microsoft.Sql/locations/firewallRulesAzureAsyncOperation/read | Получение состояния операции правила брандмауэра. |
 > | Microsoft.Sql/locations/firewallRulesOperationResults/read | Получение состояния операции правила брандмауэра. |
+> | Microsoft. SQL/Locations/Хибридлинказуреасинкоператион/Read | Получает состояние долгосрочной асинхронной операции гибридной ссылки в Azure SQL Управляемый экземпляр. |
+> | Microsoft. SQL/Locations/Хибридлинкоператионресултс/Read | Возвращает состояние долгосрочной асинхронной операции гибридной ссылки. |
 > | Microsoft.Sql/locations/instanceFailoverGroups/read | Возвращение списка групп отработки отказа экземпляра или свойств для указанной группы экземпляра. |
 > | Microsoft.Sql/locations/instanceFailoverGroups/write | Создает группу отработки отказа экземпляра с указанными параметрами или обновляет свойства или теги для указанной группы отработки отказа. |
 > | Microsoft.Sql/locations/instanceFailoverGroups/delete | Удаление имеющейся группы отработки отказа экземпляра. |
@@ -3998,6 +4004,9 @@ ms.locfileid: "92900767"
 > | Microsoft. SQL/Манажединстанцес/Енкриптионпротектор/повторная проверка/действие | Обновление свойств указанного предохранителя шифрования сервера. |
 > | Microsoft.Sql/managedInstances/encryptionProtector/read | Возвращение списка предохранителей шифрования сервера или получение свойств для указанного предохранителя. |
 > | Microsoft.Sql/managedInstances/encryptionProtector/write | Обновление свойств указанного предохранителя шифрования сервера. |
+> | Microsoft. SQL/Манажединстанцес/Хибридлинк/Read | Возвращает список гибридных ссылок или свойства для указанной распределенной группы доступности. |
+> | Microsoft. SQL/Манажединстанцес/Хибридлинк/запись | Создает или обновляет гибридную связь с указанными параметрами. |
+> | Microsoft. SQL/Манажединстанцес/Хибридлинк/Delete | Удаляет гибридную ссылку с указанной распределенной группой доступности. |
 > | Microsoft. SQL/Манажединстанцес/Инакцессиблеманажеддатабасес/Read | Возвращает список недоступных управляемых баз данных в управляемом экземпляре. |
 > | Microsoft.Sql/managedInstances/keys/read | Возвращает список ключей управляемых экземпляров или получает свойства указанного ключа управляемого экземпляра. |
 > | Microsoft.Sql/managedInstances/keys/write | Создает ключ с указанными параметрами или обновляет свойства или теги указанного ключа управляемого экземпляра. |
@@ -4297,7 +4306,7 @@ ms.locfileid: "92900767"
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/запись | Создание нового или изменение свойств существующей виртуальной машины SQL |
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/Delete | Удалить существующую виртуальную машину SQL |
 
-## <a name="analytics"></a>Analytics
+## <a name="analytics"></a>Аналитика
 
 ### <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 
@@ -6541,6 +6550,9 @@ ms.locfileid: "92900767"
 > | Microsoft. KeyVault/хранилища/Евентгридфилтерс/чтение | Уведомляет Microsoft. KeyVault о том, что просматривается подписка EventGrid для Key Vault |
 > | Microsoft. KeyVault/Vault/Евентгридфилтерс/запись | Уведомляет Microsoft. KeyVault о том, что создается новая подписка EventGrid для Key Vault |
 > | Microsoft. KeyVault/хранилища/Евентгридфилтерс/удаление | Уведомляет Microsoft. KeyVault о том, что удаляется подписка EventGrid для Key Vault |
+> | Microsoft. KeyVault/хранилища/ключи/чтение | Перечисление ключей в указанном хранилище или считывание текущей версии указанного ключа. |
+> | Microsoft. KeyVault/хранилища/ключи/запись | Создайте новый ключ или обновите существующий. |
+> | Microsoft. KeyVault/хранилища/ключи/версии/чтение | Выводит список версий указанного ключа или считывает указанную версию ключа. |
 > | Microsoft.KeyVault/vaults/secrets/read | Просмотр свойств секрета, но не его значения. |
 > | Microsoft.KeyVault/vaults/secrets/write | Создайте новый секрет или обновите значение существующего секрета. |
 > | **DataAction** | **Описание** |
@@ -7424,7 +7436,7 @@ ms.locfileid: "92900767"
 > | Microsoft.OffAzure/VMwareSites/vcenters/read | Получает свойства VMware vCenter. |
 > | Microsoft.OffAzure/VMwareSites/vcenters/write | Создает или обновляет VMware vCenter. |
 
-## <a name="monitor"></a>Монитор
+## <a name="monitor"></a>Azure Monitor
 
 ### <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 
@@ -8283,6 +8295,7 @@ ms.locfileid: "92900767"
 > | Microsoft. OperationalInsights/рабочие области/запрос/Склдатаклассификатион/чтение | Чтение данных из таблицы Склдатаклассификатион |
 > | Microsoft.OperationalInsights/workspaces/query/SQLQueryPerformance/read | Чтение данных из таблицы SQLQueryPerformance. |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Склвулнерабилитяссессментресулт/чтение | Чтение данных из таблицы Склвулнерабилитяссессментресулт |
+> | Microsoft. OperationalInsights/рабочие области/запрос/Склвулнерабилитяссессментсканстатус/чтение | Чтение данных из таблицы Склвулнерабилитяссессментсканстатус |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Сторажеблоблогс/чтение | Чтение данных из таблицы Сторажеблоблогс |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Сторажефилелогс/чтение | Чтение данных из таблицы Сторажефилелогс |
 > | Microsoft. OperationalInsights/рабочие области/запрос/Сторажекуеуелогс/чтение | Чтение данных из таблицы Сторажекуеуелогс |
@@ -9660,7 +9673,7 @@ ms.locfileid: "92900767"
 > | Microsoft.Intune/diagnosticsettings/delete | Удаление параметра диагностики. |
 > | Microsoft.Intune/diagnosticsettingscategories/read | Чтение категорий параметра диагностики. |
 
-## <a name="other"></a>Другие
+## <a name="other"></a>Другое
 
 ### <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 

@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: fe358e35f2d68a3e55e9d9bb4ac57a13f42085e3
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: 9a52596aa0dd5fa7b9a7226d2ae57259dab08d37
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629244"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93285728"
 ---
 # <a name="understanding-just-in-time-jit-vm-access"></a>Основные сведения о JIT-доступе к виртуальной машине
 
@@ -78,9 +78,9 @@ ms.locfileid: "92629244"
 
 | Чтобы предоставить пользователю следующие возможности: | Разрешения для установки|
 | --- | --- |
-| Настройка или изменение политики JIT для виртуальной машины | *Назначьте этой роли следующие действия.*  <ul><li>В области подписки или группы ресурсов, связанной с виртуальной машиной:<br/> `Microsoft.Security/locations/jitNetworkAccessPolicies/write` </li><li> В области подписки или группы ресурсов виртуальной машины: <br/>`Microsoft.Compute/virtualMachines/write`</li></ul> | 
+|Настройка или изменение политики JIT для виртуальной машины | *Назначьте этой роли следующие действия.*  <ul><li>В области подписки или группы ресурсов, связанной с виртуальной машиной:<br/> `Microsoft.Security/locations/jitNetworkAccessPolicies/write` </li><li> В области подписки или группы ресурсов виртуальной машины: <br/>`Microsoft.Compute/virtualMachines/write`</li></ul> | 
 |Запрос JIT-доступа к виртуальной машине | *Назначьте пользователю следующие действия:*  <ul><li>В области подписки или группы ресурсов, связанной с виртуальной машиной:<br/>  `Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action` </li><li>В области подписки или группы ресурсов, связанной с виртуальной машиной:<br/>  `Microsoft.Security/locations/jitNetworkAccessPolicies/*/read` </li><li>  В области подписки, группы ресурсов или виртуальной машины:<br/> `Microsoft.Compute/virtualMachines/read` </li><li>  В области подписки, группы ресурсов или виртуальной машины:<br/> `Microsoft.Network/networkInterfaces/*/read` </li></ul>|
-|Чтение политик JIT| *Назначьте пользователю следующие действия:*  <ul><li>`Microsoft.Security/locations/jitNetworkAccessPolicies/read`</li><li>`Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action`</li><li>`Microsoft.Security/policies/read`</li><li>`Microsoft.Compute/virtualMachines/read`</li><li>`Microsoft.Network/*/read`</li>|
+|Чтение политик JIT| *Назначьте пользователю следующие действия:*  <ul><li>`Microsoft.Security/locations/jitNetworkAccessPolicies/read`</li><li>`Microsoft.Security/locations/jitNetworkAccessPolicies/initiate/action`</li><li>`Microsoft.Security/policies/read`</li><li>`Microsoft.Security/pricings/read`</li><li>`Microsoft.Compute/virtualMachines/read`</li><li>`Microsoft.Network/*/read`</li>|
 |||
 
 
