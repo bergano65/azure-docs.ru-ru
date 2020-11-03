@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/20/2018
 ms.author: normesta
 ms.reviewer: fryu
-ms.openlocfilehash: 8554a78112d197ef8174ac9d18147d301745165e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5deece615e9d7de1e71e33164560c1c26212ec08
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83652164"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92676783"
 ---
 # <a name="monitor-and-troubleshoot-a-cloud-storage-application"></a>Мониторинг и устранение неполадок приложения облачного хранилища
 
@@ -37,13 +37,13 @@ ms.locfileid: "83652164"
 
 ## <a name="turn-on-logging-and-metrics"></a>Включение ведения журнала и метрик
 
-В меню слева щелкните **Группы ресурсов**, а затем — **myResourceGroup** и выберите свою учетную запись хранения в списке ресурсов.
+В меню слева щелкните **Группы ресурсов** , а затем — **myResourceGroup** и выберите свою учетную запись хранения в списке ресурсов.
 
 В разделе **Параметры диагностики (классические)** установите для параметра **Состояние** значение **Вкл.** Убедитесь, что все параметры в разделе **Свойства большого двоичного объекта** включены.
 
 Затем нажмите кнопку **Сохранить**.
 
-![Область диагностики](media/storage-monitor-troubleshoot-storage-application/enable-diagnostics.png)
+![Снимок экрана, на котором выделен раздел с параметрами конфигурации для включения ведения журнала и выбора метрик.](media/storage-monitor-troubleshoot-storage-application/enable-diagnostics.png)
 
 ## <a name="enable-alerts"></a>Включение оповещений
 
@@ -53,7 +53,7 @@ ms.locfileid: "83652164"
 
 В разделе **Мониторинг** выберите **Оповещения (классические)** .
 
-Выберите **Добавить оповещение метрики (классическое)** и заполните форму **Добавление правила**, указав необходимые сведения. В раскрывающемся списке **Метрика** выберите `SASClientOtherError`. Чтобы оповещение срабатывало после первой ошибки, в раскрывающемся списке **Условие** выберите **Больше или равно**.
+Выберите **Добавить оповещение метрики (классическое)** и заполните форму **Добавление правила** , указав необходимые сведения. В раскрывающемся списке **Метрика** выберите `SASClientOtherError`. Чтобы оповещение срабатывало после первой ошибки, в раскрывающемся списке **Условие** выберите **Больше или равно**.
 
 ![Область диагностики](media/storage-monitor-troubleshoot-storage-application/add-alert-rule.png)
 
@@ -91,13 +91,13 @@ curl https://<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/<CONTAINER_NAME>/<INCO
 
 Запустите приложение и выберите **Файл** > **Открыть** > **From Other File Sources** (Из других источников файлов).
 
-В диалоговом окне **File Selector** (Селектор файлов) выберите **+ Add Azure Connection** (+Добавить подключение Azure). Введите **имя учетной записи хранения** и **ключ учетной записи**, а затем нажмите кнопку **ОК**.
+В диалоговом окне **File Selector** (Селектор файлов) выберите **+ Add Azure Connection** (+Добавить подключение Azure). Введите **имя учетной записи хранения** и **ключ учетной записи** , а затем нажмите кнопку **ОК**.
 
 ![Microsoft Message Analyzer. Диалоговое окно добавления соединения службы хранилища Azure.](media/storage-monitor-troubleshoot-storage-application/figure3.png)
 
 После подключения разверните контейнеры в хранилище в представлении в виде дерева, чтобы просмотреть большие двоичные объекты журналов. Выберите последний журнал и нажмите кнопку **ОК**.
 
-![Microsoft Message Analyzer. Диалоговое окно добавления соединения службы хранилища Azure.](media/storage-monitor-troubleshoot-storage-application/figure4.png)
+![Снимок экрана, на котором показано средство Microsoft Message Analyzer и выделен выбранный файл журнала.](media/storage-monitor-troubleshoot-storage-application/figure4.png)
 
 В диалоговом окне **Новый сеанс** щелкните **Запуск** для просмотра журналов.
 

@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure Synapse Link (предварительная версия) для Azure Cosmos DB
-description: Подключение Azure Cosmos DB к рабочей области Synapse с помощью Azure Synapse Link
+description: Узнайте, как подключить базу данных Azure Cosmos DB к рабочей области Azure Synapse с помощью Azure Synapse Link.
 services: synapse-analytics
 author: ArnoMicrosoft
 ms.service: synapse-analytics
@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 50717c7e8a7b0f748df98c1896e1b7eb64cd7be3
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 3434953de3460d3eff066768474f03aa0e14165e
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91819350"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668587"
 ---
 # <a name="connect-to-azure-synapse-link-preview-for-azure-cosmos-db"></a>Подключение к Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 
@@ -24,44 +24,44 @@ ms.locfileid: "91819350"
 
 Перед подключением базы данных Azure Cosmos DB к рабочей области вам потребуется следующее:
 
+* имеющаяся база данных Azure Cosmos DB (можно также создать учетную запись, следуя инструкциям из [краткого руководства по управлению учетной записью Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-database-account));
+* имеющаяся рабочая область Azure Synapse (можно также создать рабочую область, следуя инструкциям из [краткого руководства по созданию рабочей области Synapse](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace)).
+
 > [!IMPORTANT]
-> Сейчас Azure Synapse Link для Azure Cosmos DB поддерживается для рабочих областей, в которых не включена управляемая виртуальная сеть. 
+> Сейчас Azure Synapse Link для Azure Cosmos DB поддерживается для рабочих областей, в которых не включена управляемая виртуальная сеть.
 
-* имеющаяся база данных Azure Cosmos DB (можно также создать новую учетную запись, следуя инструкциям в этом [кратком руководстве](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-database-account));
-* имеющаяся рабочая область Synapse (можно также создать новую рабочую область, следуя инструкциям в этом [кратком руководстве](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace)). 
+## <a name="enable-synapse-link-on-an-azure-cosmos-db-database-account"></a>Включение Synapse Link для учетной записи базы данных Azure Cosmos DB
 
-## <a name="enable-azure-cosmos-db-analytical-store"></a>Включение аналитического хранилища Azure Cosmos DB
+Чтобы запустить крупномасштабную аналитику в Azure Cosmos DB без негативных последствий для производительности в рабочей среде, рекомендуем включить Synapse Link для Azure Cosmos DB. Synapse Link предоставляет возможность HTAP для контейнера и встроенную поддержку в Azure Synapse.
 
-Для запуска крупномасштабной аналитики в Azure Cosmos DB без негативных последствий для производительности в рабочей среде рекомендуем включить Synapse Link для Azure Cosmos DB. Synapse Link предоставляет возможность HTAP для контейнера и встроенную поддержку в Azure Synapse.
+## <a name="go-to-synapse-studio"></a>Перейдите в Synapse Studio
 
-## <a name="navigate-to-synapse-studio"></a>Перейдите в Synapse Studio
+В рабочей области Azure Synapse выберите **Запуск Synapse Studio**. На домашней странице Synapse Studio выберите **Данные** , чтобы перейти в обозреватель объектов данных.
 
-В рабочей области Synapse выберите **Запуск Synapse Studio**. На домашней странице Synapse Studio выберите **Данные**, чтобы перейти в **обозреватель объектов данных**.
-
-## <a name="connect-an-azure-cosmos-db-database-to-a-synapse-workspace"></a>Подключение базы данных Azure Cosmos DB к рабочей области Synapse
+## <a name="connect-an-azure-cosmos-db-database-to-an-azure-synapse-workspace"></a>Подключение базы данных Azure Cosmos DB к рабочей области Azure Synapse
 
 База данных Azure Cosmos DB подключается в качестве связанной службы. Связанная служба Azure Cosmos DB позволяет пользователям просматривать и изучать данные, а также считывать и записывать их из Apache Spark для Azure Synapse Analytics или SQL в Azure Cosmos DB.
 
-В обозревателе объектов данных можно напрямую подключиться к базе данных Azure Cosmos DB, выполнив следующие действия.
+В обозревателе объектов данных можно напрямую подключиться к базе данных Azure Cosmos DB, выполнив указанные ниже действия.
 
-1. Щелкните значок ***+*** рядом с данными.
-2. Выберите **Connect to external data** (Подключение к внешнем данным).
-3. Укажите API для подключения: API SQL или API для MongoDB.
-4. Выберите ***Продолжить***
-5. Присвойте имя связанной службе. Имя будет отображаться в обозревателе объектов и использоваться средой выполнения Synapse для подключения к базе данных и контейнерам. Рекомендуем использовать понятное имя.
-6. Выберите **имя учетной записи Azure Cosmos DB** и **имя базы данных**.
-7. (Необязательно.) Если регион не указан, операции среды выполнения Synapse будут направляться в ближайший регион, где включено аналитическое хранилище. Однако можно вручную задать регион, который пользователи будут использовать для доступа к аналитическому хранилищу Azure Cosmos DB. Выберите **Additional connection properties** (Дополнительные свойства подключения) — а затем **Создать**. В разделе **Имя свойства** введите ***PreferredRegions*** и задайте в поле **Значение** нужный регион (например, WestUS2 — без пробелов).
-8. Нажмите кнопку ***Создать***
+1. Выберите значок **+** рядом с областью **Данные**.
+1. Выберите **Connect to external data** (Подключение к внешнем данным).
+1. Выберите API, к которому необходимо подключиться, например **API SQL** или **API для MongoDB**.
+1. Выберите **Continue** (Продолжить).
+1. Чтобы присвоить имя связанной службе, используйте понятное имя. Имя появится в обозревателе объектов данных и будет использоваться средами выполнения Azure Synapse для подключения к базе данных и контейнерам.
+1. Выберите **имя учетной записи Azure Cosmos DB** и **имя базы данных**.
+1. (Необязательно) Если регион не указан, операции среды выполнения Azure Synapse будут направляться в ближайший регион, где включено аналитическое хранилище. Вы также можете вручную задать регион, который пользователи будут использовать для доступа к аналитическому хранилищу Azure Cosmos DB. Выберите **Additional connection properties** (Дополнительные свойства подключения), а затем — **Создать**. Для параметра **Имя свойства** введите **PreferredRegions**. Задайте **значение** необходимого региона, например **WestUS2**. (Между словами и числом нет пробелов.)
+1. Нажмите кнопку **создания**.
 
-Базы данных Azure Cosmos DB отображаются на вкладке **Подключено** в разделе Azure Cosmos DB. Azure Cosmos DB позволяет отличить контейнер с поддержкой HTAP от контейнера, поддерживающего только OLTP, по следующим значкам:
+Базы данных Azure Cosmos DB отображаются на вкладке **Связано** в разделе **Azure Cosmos DB**. Azure Cosmos DB позволяет отличить контейнер с поддержкой HTAP от контейнера, поддерживающего только OLTP, по указанным ниже значкам.
 
-**Контейнер, поддерживающий только OLTP**:
+**Контейнер, поддерживающий только OLTP** :
 
-![Контейнер OLTP](../media/quickstart-connect-synapse-link-cosmosdb/oltp-container.png)
+![Визуализация, отображающая значок контейнера OLTP.](../media/quickstart-connect-synapse-link-cosmosdb/oltp-container.png)
 
-**Контейнер с поддержкой HTAP**:
+**Контейнер с поддержкой HTAP** :
 
-![Контейнер HTAP](../media/quickstart-connect-synapse-link-cosmosdb/htap-container.png)
+![Визуализация, отображающая значок контейнера HTAP.](../media/quickstart-connect-synapse-link-cosmosdb/htap-container.png)
 
 ## <a name="quickly-interact-with-code-generated-actions"></a>Быстрое взаимодействие с созданными кодом действиями
 
@@ -69,5 +69,5 @@ ms.locfileid: "91819350"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте, какие общие возможности поддерживают Synapse и Azure Cosmos DB](./concept-synapse-link-cosmos-db-support.md).
+* [Узнайте, какие общие возможности поддерживают Azure Synapse и Azure Cosmos DB](./concept-synapse-link-cosmos-db-support.md).
 * [Узнайте, как отправлять запросы в аналитическое хранилище с помощью Spark](./how-to-query-analytical-store-spark.md).

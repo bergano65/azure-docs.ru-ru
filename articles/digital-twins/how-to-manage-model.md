@@ -7,16 +7,16 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5bcb6df1b03b0c1c835e198818813ad8d914c630
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: b31e3d44cc66e97506b29b81cef5b8d981d05e39
+ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93147119"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93279416"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Управление моделями цифровых двойников Azure
 
-Вы можете управлять [моделями](concepts-models.md) , известными экземпляру Azure Digital двойников, с помощью [**интерфейсов API дигиталтвинмоделс**](/rest/api/digital-twins/dataplane/models), [пакета SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true)или [Azure Digital двойников CLI](how-to-use-cli.md). 
+Вы можете управлять [моделями](concepts-models.md) , известными экземпляру Azure Digital двойников, с помощью [**интерфейсов API дигиталтвинмоделс**](/rest/api/digital-twins/dataplane/models), [пакета SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)или [Azure Digital двойников CLI](how-to-use-cli.md). 
 
 К операциям управления относятся передача, проверка, извлечение и удаление моделей. 
 
@@ -117,7 +117,7 @@ foreach (string fileName in dtdlFiles)
 client.CreateModels(dtdlStrings);
 ```
 
-Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Пример:
+Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Например:
 
 ```json
 [
@@ -200,7 +200,7 @@ Pageable<DigitalTwinsModelData> pmd3 = client.GetModels(new GetModelsOptions { I
 
 Это также означает, что отправка новой версии модели не влияет на существующие двойников автоматически. Существующие двойников будут просто оставаться экземплярами старой версии модели.
 
-Вы можете обновить существующие двойников до новой версии модели, установив исправления, как описано в разделе [*обновление модели Digital двойника*](how-to-manage-twin.md#update-a-digital-twins-model) статьи *практические руководства. Управление цифровыми двойниковми* . В одном и том же обновлении необходимо обновить **идентификатор модели** (в новой версии) и **все поля, которые должны быть изменены в двойника, чтобы обеспечить соответствие новой модели** .
+Вы можете обновить существующие двойников до новой версии модели, установив исправления, как описано в разделе [*обновление модели Digital двойника*](how-to-manage-twin.md#update-a-digital-twins-model) статьи *практические руководства. Управление цифровыми двойниковми*. В одном и том же обновлении необходимо обновить **идентификатор модели** (в новой версии) и **все поля, которые должны быть изменены в двойника, чтобы обеспечить соответствие новой модели**.
 
 ### <a name="remove-models"></a>Удалить модели
 

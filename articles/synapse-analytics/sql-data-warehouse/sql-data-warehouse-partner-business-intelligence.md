@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 909ea33ed96225c75a2d093f5bf2f4878ea51d2e
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: a21cee6806c4200a73b35afba73cf04d7ca60308
+ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939190"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93280018"
 ---
 # <a name="azure-synapse-analytics-business-intelligence-partners"></a>Партнеры по бизнес-аналитике Azure Synapse Analytics
 
@@ -35,6 +35,7 @@ ms.locfileid: "91939190"
 | ![LogiAnalytics](./media/sql-data-warehouse-partner-business-intelligence/logianalytics_logo.png) |**Logi Analytics**<br>Logi Analytics позволяет вашей организации собирать и анализировать большие и очень разнообразные наборы данных, а затем сразу же принимать решения на их основе. |[Страница продукта](https://www.logianalytics.com/)<br>|
 | ![Looker](./media/sql-data-warehouse-partner-business-intelligence/looker_logo.png) |**Looker BI**<br>Looker позволяет каждому сотруднику вашей компании исследовать и анализировать данные, от которых зависит ваш бизнес. Также решение предоставляет аналитику данных гибкий инструмент моделирования для управления данными и их организации.  Компании смогли существенно изменить свою культуру благодаря средству Looker.|[Страница продукта](https://looker.com/partners/microsoft-azure/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/looker.looker-analytics-platform-6_20)<br> |
 | ![MicroStrategy](./media/sql-data-warehouse-partner-business-intelligence/microstrategy_logo.png) |**MicroStrategy**<br>Платформа MicroStrategy предлагает полный набор возможностей для бизнес-аналитики и анализа данных, которые позволят организациям с пользой применять свои бизнес-данные. Мощный аналитический механизм Микростратеги, комплексные наборы инструментов, разнообразные соединители данных и открытая архитектура обеспечивают все необходимое для расширения доступа к аналитикам в каждой команде.|[Страница продукта](https://www.microstrategy.com/us/product/analytics)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microstrategy.microstrategy_enterprise_platform_vm)<br> |
+| ![Аналитика режима](./media/sql-data-warehouse-partner-business-intelligence/mode-logo.png) |**Режим**<br>Режим — это современное решение аналитики и бизнес-аналитики, помогающее группам принимать решения неоправданно, быстро и неожиданно удобство анализ данных. Группы данных быстрее переходят через предпочтительный рабочий процесс, сочетающий в себе SQL, Python, R и визуальный анализ, а заинтересованные лица совместно с ними просматривает и совместно использует данные. Благодаря более высокой доступности данных для всех мы сокращаем расстояние от вопросов до ответов и помогите компаниям принимать более качественные решения быстрее.|[Страница продукта](https://mode.com/)<br> |
 | ![Qlik](./media/sql-data-warehouse-partner-business-intelligence/qlik_logo.png) |**Qlik Sense Enterprise**<br>Стимулирование обнаружения информации с помощью приложения для визуализации данных, которое может использовать кто угодно. С помощью Qlik Sense кто угодно в вашей организации сможет легко создавать гибкие, интерактивные визуализации и принимать разумные решения. |[Страница продукта](https://www.qlik.com/us/products/qlik-sense/enterprise)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/qlik.qlik-sense) |
 | ![SiSense](./media/sql-data-warehouse-partner-business-intelligence/sisense_logo.png) |**SiSense**<br>SiSense — полноценное программное обеспечение бизнес-аналитики с инструментами, которые нужны компании для анализа и визуализации данных: эффективная база данных, возможность подключаться к разным источникам, простое извлечение данных и визуализация данных в браузере. Начните анализировать и визуализировать большие объемы данных с помощью SiSense BI and Analytics уже сегодня. |[Страница продукта](https://www.sisense.com/product/)<br> |
 | ![Tableau](./media/sql-data-warehouse-partner-business-intelligence/tableau_sparkle_logo.png) |**Tableau**<br>Аналитический инструмент Tableau с интерфейсом самообслуживания поможет просмотреть и понять данные из разных источников, от неструктурированных файлов до баз данных. Tableau имеет собственный, оптимизированный соединитель для пула Synapse SQL, который поддерживает работу с данными в реальном времени и выполняющуюся в памяти аналитику. |[Страница продукта](https://www.tableau.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/tableau.tableau-server)<br>|

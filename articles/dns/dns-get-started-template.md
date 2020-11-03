@@ -9,16 +9,16 @@ ms.topic: quickstart
 ms.date: 09/8/2020
 ms.author: duau
 ms.custom: subject-armqs
-ms.openlocfilehash: 986258631d47989e5be5e738da86f844283ce706
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 24460167e2279e7d3001d0bc16d050beb5b55289
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093826"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791007"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-an-arm-template"></a>Создание зоны и записи Azure DNS с помощью шаблона ARM
 
-В этом руководстве объясняется, как создать зону DNS, содержащую запись A, с использованием шаблона Azure Resource Manager (ARM).
+В этом руководстве объясняется, как создать зону DNS, содержащую запись `A`, с использованием шаблона Azure Resource Manager.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -34,20 +34,20 @@ ms.locfileid: "92093826"
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-azure-dns-new-zone).
 
-В рамках этого руководства вы создадите уникальную зону DNS с суффиксом *<span>azurequickstart.</span>org*. В зоне также будет размещена запись *A*, указывающая на два IP-адреса.
+В рамках этого руководства вы создадите уникальную зону DNS с суффиксом `azurequickstart.org`. В зоне также будет размещена запись `A`, указывающая на два IP-адреса.
 
 :::code language="json" source="~/quickstart-templates/101-azure-dns-new-zone/azuredeploy.json":::
 
 В шаблоне определено два ресурса Azure:
 
-* [**Microsoft.Network/dnsZones**](/azure/templates/microsoft.network/dnsZones)
-* [**Microsoft.Network/dnsZones/A**](/azure/templates/microsoft.network/dnsZones/A) (используется для создания записи A в зоне)
+- [**Microsoft.Network/dnsZones**](/azure/templates/microsoft.network/dnsZones)
+- [**Microsoft.Network/dnsZones/A**](/azure/templates/microsoft.network/dnsZones/A): Используется для создания записи `A` в зоне.
 
 Чтобы найти дополнительные связанные шаблоны Диспетчера трафика Azure, перейдите на страницу [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular).
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Выберите **Попробовать** в следующем блоке кода, чтобы открыть Azure Cloud Shell, и следуйте отображающимся инструкциям, чтобы войти в Azure. 
+1. Выберите **Попробовать** в следующем блоке кода, чтобы открыть Azure Cloud Shell, и следуйте отображающимся инструкциям, чтобы войти в Azure.
 
     ```azurepowershell-interactive
     $projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
@@ -70,7 +70,7 @@ ms.locfileid: "92093826"
 
 1. Введите значения.
 
-    При развертывании шаблона создается зона с одной записью A, указывающей на два IP-адреса. Имя группы ресурсов — это имя проекта с добавлением **rg**.
+    При развертывании шаблона создается зона с одной записью `A`, указывающей на два IP-адреса. Имя группы ресурсов — это имя проекта с добавлением **rg**.
 
     Развертывание шаблона занимает пару секунд. По завершении выходные данные должны быть следующего вида:
 
@@ -88,31 +88,31 @@ ms.locfileid: "92093826"
 
 1. Группа ресурсов должна содержать следующие ресурсы:
 
-    :::image type="content" source="./media/dns-getstarted-template/resource-group-dns-zone.png" alt-text="Результаты развертывания шаблона Resource Manager зоны Azure DNS в PowerShell":::
+    :::image type="content" source="./media/dns-getstarted-template/resource-group-dns-zone.png" alt-text="Группа ресурсов развертывания зоны DNS":::
 
-1. Выберите зону DNS с суффиксом **<span>azurequickstart.</span>org**, чтобы убедиться, что зона создана правильно с записью **A**, ссылающейся на значения **1.2.3.4** и **1.2.3.5**.
+1. Выберите зону DNS с суффиксом `azurequickstart.org`, чтобы убедиться, что зона создана правильно с записью `A`, ссылающейся на значения `1.2.3.4` и `1.2.3.5`.
 
-    :::image type="content" source="./media/dns-getstarted-template/dns-zone-overview.png" alt-text="Результаты развертывания шаблона Resource Manager зоны Azure DNS в PowerShell":::
+    :::image type="content" source="./media/dns-getstarted-template/dns-zone-overview.png" alt-text="Развертывание зоны DNS":::
 
 1. Скопируйте имя одного из серверов из данных, полученных на предыдущем этапе.
 
 1. Откройте командную строку и выполните приведенную ниже команду.
 
-   ```
+   ```cmd
    nslookup www.<dns zone name> <name server name>
    ```
 
-   Например, такое:
+   Пример:
 
-   ```
+   ```cmd
    nslookup www.2lwynbseszpam.azurequickstart.org ns1-09.azure-dns.com.
    ```
 
    Результат будет подобен приведенному на следующем снимке экрана.
 
-    :::image type="content" source="./media/dns-getstarted-template/dns-zone-validation.png" alt-text="Результаты развертывания шаблона Resource Manager зоны Azure DNS в PowerShell":::
+    :::image type="content" source="./media/dns-getstarted-template/dns-zone-validation.png" alt-text="nslookup зоны DNS":::
 
-Имя узла **www<span>.2lwynbseszpam.azurequickstart.</span>org** разрешается в **1.2.3.4** и **1.2.3.5**, как и было настроено. Такой результат подтверждает, что разрешение имен работает правильно.
+Имя узла `www.2lwynbseszpam.azurequickstart.org` разрешается как `1.2.3.4` и `1.2.3.5`, как и было настроено. Такой результат подтверждает, что разрешение имен работает правильно.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -127,10 +127,11 @@ Remove-AzResourceGroup -Name <your resource group name>
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как создать:
-* Зона DNS
-* Запись А
 
-Теперь, когда вы создали свою первую зону и запись DNS с помощью шаблона Azure Resource Manager, можно создать записи для веб-приложения в личном домене.
+- Зона DNS
+- Запись `A`
+
+Теперь, когда вы создали свою первую зону и запись DNS с помощью шаблона Resource Manager, можно создать записи для веб-приложения в личном домене.
 
 > [!div class="nextstepaction"]
 > [Создание записей DNS для веб-приложения в пользовательском домене](./dns-web-sites-custom-domain.md)

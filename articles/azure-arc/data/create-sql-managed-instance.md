@@ -4,17 +4,17 @@ description: Создание управляемого экземпляра SQL 
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
-author: twright-msft
-ms.author: twright
+author: vin-yu
+ms.author: vinsonyu
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 2a931b1a3c3f88af1abec4fd1810aae09c849c48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d1d6c7349adc65270e13d09d771963cb9cacea3
+ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940858"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93280398"
 ---
 # <a name="create-an-azure-sql-managed-instance-on-azure-arc"></a>Создание управляемого экземпляра SQL Azure в службе "Дуга Azure"
 
@@ -97,7 +97,7 @@ sqldemo 1/1         10.240.0.4:32023  Ready
 Если вы используете AKS или `kubeadm` OpenShift и т. д., вы можете скопировать внешний IP-адрес и номер порта отсюда и подключиться к нему с помощью любимого средства для подключения к экземпляру SQL Server или SQL Azure, например Azure Data Studio или SQL Server Management Studio. Однако если вы используете виртуальную машину быстрого запуска, см. Дополнительные инструкции в статье [Подключение к службе Arc Azure с поддержкой SQL управляемый экземпляр](connect-managed-instance.md) .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Подключение к SQL Управляемый экземпляр с включенной службой Arc](connect-managed-instance.md)
 - [Регистрация экземпляра в Azure и отправка метрик и журналов о вашем экземпляре](upload-metrics-and-logs-to-azure-monitor.md)
 - [Развертывание управляемого экземпляра SQL Azure с помощью Azure Data Studio](create-sql-managed-instance-azure-data-studio.md)

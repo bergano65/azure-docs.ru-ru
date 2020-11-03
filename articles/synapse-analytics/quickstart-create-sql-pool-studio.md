@@ -6,15 +6,15 @@ author: julieMSFT
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: sql
-ms.date: 3/19/2020
+ms.date: 10/16/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: f85731a7f3ffef0adf35812ee8da4e0bbd89124f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 806831ac5e965afcd076066f4baa498297a43a3e
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87036579"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92740485"
 ---
 # <a name="quickstart-create-a-synapse-sql-pool-using-synapse-studio"></a>Краткое руководство. Создание пула Synapse SQL с помощью Synapse Studio
 
@@ -37,27 +37,33 @@ Azure Synapse Analytics предлагает различные механизм
 ## <a name="navigate-to-the-synapse-workspace"></a>Переход в рабочую область Synapse
 
 1. Перейдите к рабочей области Synapse, в которой будет создан пул SQL, введя имя службы (или непосредственно имя ресурса) в строке поиска.
-![Панель поиска на портале Azure с указанными рабочими областями Synapse.](media/quickstart-create-sql-pool/create-sql-pool-00a.png)
+
+    ![Панель поиска на портале Azure с указанными рабочими областями Synapse.](media/quickstart-create-sql-pool/create-sql-pool-00a.png)
 1. В списке рабочих областей введите имя (или часть имени) рабочей области, которую нужно открыть. В нашем примере будет использоваться рабочая область с именем **contosoanalytics**.
-![Список рабочих областей Synapse, где отображаются только области с именем Contoso.](media/quickstart-create-sql-pool/create-sql-pool-00b.png)
+
+    ![Список рабочих областей Synapse, где отображаются только области с именем Contoso.](media/quickstart-create-sql-pool/create-sql-pool-00b.png)
 
 ## <a name="launch-synapse-studio"></a>Запуск Synapse Studio
 
-1. В сводке по рабочей области щелкните **Запуск Synapse Studio**, чтобы открыть расположение, в котором будет создан пул SQL. В строке поиска введите имя службы или непосредственно ресурса.
-![Окно обзора рабочей области Synapse на портале Azure, команда "Запуск Synapse Studio" выделена цветом.](media/quickstart-create-apache-spark-pool/create-spark-pool-studio-20.png)
+1. В сводке по рабочей области щелкните **Запуск Synapse Studio** , чтобы открыть расположение, в котором будет создан пул SQL. В строке поиска введите имя службы или непосредственно ресурса.
+
+    ![Окно обзора рабочей области Synapse на портале Azure, команда "Запуск Synapse Studio" выделена цветом.](media/quickstart-create-apache-spark-pool/create-spark-pool-studio-20.png)
 
 ## <a name="create-a-sql-pool-in-synapse-studio"></a>Создание пула SQL в Synapse Studio
 
-1. На домашней странице Synapse Studio перейдите в **центр управления**, щелкнув в области навигации слева значок **Управление**.
-![Домашняя страница Synapse Studio, раздел "Управление" выделен цветом.](media/quickstart-create-apache-spark-pool/create-spark-pool-studio-21.png)
+1. На домашней странице Synapse Studio перейдите в **центр управления** , щелкнув в области навигации слева значок **Управление**.
 
-1. В Центре управления перейдите к разделу **Пулы SQL**, чтобы просмотреть текущий список пулов SQL, доступных в рабочей области.
-![Центр управления Synapse Studio с выбранной навигацией пулов SQL.](media/quickstart-create-sql-pool/create-sql-pool-studio-22.png)
+    ![Домашняя страница Synapse Studio, раздел "Управление" выделен цветом.](media/quickstart-create-apache-spark-pool/create-spark-pool-studio-21.png)
+
+1. В Центре управления перейдите к разделу **Пулы SQL** , чтобы просмотреть текущий список пулов SQL, доступных в рабочей области.
+
+    ![Центр управления Synapse Studio с выбранной навигацией пулов SQL.](media/quickstart-create-sql-pool/create-sql-pool-studio-22.png)
 
 1. Выберите команду **+ Создать**. Отобразится мастер создания нового пула SQL. 
-![Список пулов SQL в Центре управления Synapse Studio.](media/quickstart-create-sql-pool/create-sql-pool-studio-23.png)
 
-1. Введите следующие сведения на вкладке **Основные сведения**:
+    ![Список пулов SQL в Центре управления Synapse Studio.](media/quickstart-create-sql-pool/create-sql-pool-studio-23.png)
+
+1. Введите следующие сведения на вкладке **Основные сведения** :
 
     | Параметр | Рекомендуемое значение | Описание |
     | :------ | :-------------- | :---------- |
@@ -68,18 +74,21 @@ Azure Synapse Analytics предлагает различные механизм
     > [!IMPORTANT]
     > Обратите внимание, что для имен, которые могут использовать пулы SQL, существуют определенные ограничения. Имена не могут содержать специальные символы, их должно быть не более 15. Имена также не должны содержать зарезервированных слов и должны быть уникальными в рабочей области.
 
-4. На следующей вкладке **Дополнительные параметры** выберите **Нет**, чтобы подготовить пул SQL без данных. Оставьте параметры сортировки по умолчанию.
-![Поток создания пула SQL: вкладка "Дополнительные параметры"](media/quickstart-create-sql-pool/create-sql-pool-studio-25.png)
+4. На следующей вкладке **Дополнительные параметры** выберите **Нет** , чтобы подготовить пул SQL без данных. Оставьте параметры сортировки по умолчанию.
 
-1. Мы не будем добавлять теги сейчас, поэтому выберите **Далее: Отзыв и создание**.
+    ![Поток создания пула SQL: вкладка "Дополнительные параметры"](media/quickstart-create-sql-pool/create-sql-pool-studio-25.png)
+
+1. В этот раз мы не будем добавлять теги, поэтому выберите **Просмотр и создание**.
 
 1. На вкладке **Просмотр и создание** убедитесь, что подробные сведения на основе ранее введенных данных указаны правильно, и нажмите кнопку **Создать**. 
-![Поток создания пула SQL: вкладка просмотра параметров](media/quickstart-create-sql-pool/create-sql-pool-studio-26.png)
+
+    ![Поток создания пула SQL: вкладка просмотра параметров](media/quickstart-create-sql-pool/create-sql-pool-studio-26.png)
 
 1. На этом этапе запустится поток подготовки ресурсов.
 
 1. После завершения подготовки в рабочей области будет показана новая запись для созданного пула SQL.
- ![Поток создания пула SQL: подготовка ресурсов](media/quickstart-create-sql-pool/create-sql-pool-studio-27.png)
+
+    ![Поток создания пула SQL: подготовка ресурсов](media/quickstart-create-sql-pool/create-sql-pool-studio-27.png)
 
 1. Созданный пул SQL станет доступным в рабочей области для загрузки данных, обработки потоков, чтения из озера и т. д.
 
@@ -92,10 +101,11 @@ Azure Synapse Analytics предлагает различные механизм
 Если вы хотите удалить пул SQL, сделайте следующее.
 
 1. Перейдите к разделу "Пулы SQL" в Центре управления Synapse Studio.
-1. Щелкните многоточие в удаляемом пуле SQL (в нашем примере **contosoedw**), чтобы отобразить команды для пула SQL. ![Список пулов SQL с недавно созданным пулом.](media/quickstart-create-sql-pool/create-sql-pool-studio-28.png)
+1. Щелкните многоточие в удаляемом пуле SQL (в нашем примере **contosoedw** ), чтобы отобразить команды для пула SQL.
+
+    ![Список пулов SQL с выбранным недавно созданным пулом.](media/quickstart-create-sql-pool/create-sql-pool-studio-28.png)
 1. Нажмите кнопку **Удалить**
 1. Подтвердите удаление и нажмите кнопку **Удалить**.
- ![Диалоговое окно для подтверждения удаления выбранного пула SQL.](media/quickstart-create-sql-pool/create-sql-pool-studio-29.png)
 1. После успешного завершения процесса пул SQL больше не будет указываться в ресурсах рабочей области.
 
 ## <a name="next-steps"></a>Дальнейшие действия 

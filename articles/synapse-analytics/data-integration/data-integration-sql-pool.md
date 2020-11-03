@@ -6,15 +6,15 @@ author: djpmsft
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql
-ms.date: 04/15/2020
+ms.date: 11/03/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
-ms.openlocfilehash: 02efaf3f0382a7af63717e777036637de2bbec25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40f8834a69101682abaaa7eac8ec9cafe8ef3d9e
+ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90033206"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93279373"
 ---
 # <a name="ingest-data-into-a-sql-pool"></a>Прием данных в пул SQL
 
@@ -22,7 +22,7 @@ ms.locfileid: "90033206"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**: Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
+* **Подписка Azure** : Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * **Учетная запись хранения Azure**. в качестве *исходного* хранилища данных используется Azure Data Lake Storage Gen 2. Если у вас нет учетной записи хранения Azure, создайте ее по инструкциям из статьи [Создание учетной записи хранения Azure](../../storage/blobs/data-lake-storage-quickstart-create-account.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 * **Azure синапсе Analytics**. вы используете пул SQL в качестве *приемника* хранилища данных. Если у вас нет экземпляра Azure синапсе Analytics, см. инструкции по созданию [пула SQL](../../azure-sql/database/single-database-create-quickstart.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) .
 
@@ -41,7 +41,7 @@ ms.locfileid: "90033206"
 
 Конвейер содержит логический поток для выполнения набора действий. В этом разделе вы создадите конвейер, содержащий действие копирования, которое принимает данные из ADLS 2-го поколения в пул SQL.
 
-1. Перейдите на вкладку **orchestration** (управление). Выберите значок "плюс" рядом с заголовком конвейеров и выберите **конвейер**.
+1. Перейдите на вкладку **Интеграция** . Выберите значок "плюс" рядом с заголовком конвейеров и выберите **конвейер**.
 1. В разделе **Move and Transform** (Перемещение и преобразование) на панели действий перетащите **Копирование данных** на холст конвейера.
 1. Выберите действие копирования и перейдите на вкладку **источник** . Выберите **создать** , чтобы создать новый исходный набор данных.
 1. Выберите Azure Data Lake Storage Gen2 в качестве хранилища данных и нажмите кнопку продолжить.

@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 6649a8d470a75922aac423bf0b411163bdd79f71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91a0ea19f53d1da7631154cb71f96e495cc93857
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449089"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92789001"
 ---
 # <a name="introduction-to-azure-defender-for-key-vault"></a>Общие сведения об Azure Defender для Key Vault
 
@@ -55,5 +55,5 @@ Azure Defender выявляет необычные и потенциально �
 Связанные материалы см. в следующих статьях: 
 
 - [Оповещения системы безопасности Key Vault](alerts-reference.md#alerts-azurekv) — раздел, в котором приведена справочная таблица со всеми оповещениями о Key Vault от Центра безопасности Azure.
-- [Экспорт оповещений в SIEM](continuous-export.md)
+- [Непрерывный экспорт данных Центра безопасности](continuous-export.md)
 - [Отключение оповещений от Azure Defender](alerts-suppression-rules.md)

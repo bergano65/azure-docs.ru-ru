@@ -8,12 +8,12 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 5b37417efdb99f6b90983b86954da70fa6f7c6a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 154a7b17fc09c55e83b65eef8d479904c36e87eb
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91716095"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791194"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-with-azcopy"></a>Руководство по Перенос локальных данных в облачное хранилище с помощью AzCopy
 
@@ -33,7 +33,7 @@ ms.locfileid: "91716095"
 
 Чтобы выполнить инструкции из этого руководства, скачайте последнюю версию AzCopy. См. подробнее о [начале работы с AzCopy](storage-use-azcopy-v10.md).
 
-Если вы работаете в Windows, вам потребуется средство [Schtasks](https://msdn.microsoft.com/library/windows/desktop/bb736357(v=vs.85).aspx), так как в этом руководстве оно используется для планирования задач. Пользователи Linux вместо этого будут использовать команду crontab.
+Если вы работаете в Windows, вам потребуется средство [Schtasks](/windows/win32/taskschd/schtasks), так как в этом руководстве оно используется для планирования задач. Пользователи Linux вместо этого будут использовать команду crontab.
 
 [!INCLUDE [storage-create-account-portal-include](../../../includes/storage-create-account-portal-include.md)]
 
@@ -44,9 +44,9 @@ ms.locfileid: "91716095"
 Чтобы создать контейнер, сделайте следующее.
 
 1. Нажмите кнопку **Учетные записи хранения** на главной странице и выберите созданную учетную запись хранилища.
-2. Выберите **Большие двоичные объекты** в разделе **Службы**, а затем выберите **Контейнер**.
+2. Выберите **Большие двоичные объекты** в разделе **Службы** , а затем выберите **Контейнер**.
 
-   ![Создание контейнера](media/storage-azcopy-migrate-on-premises-data/CreateContainer.png)
+   ![Снимок экрана, на котором показано создание контейнера](media/storage-azcopy-migrate-on-premises-data/CreateContainer.png)
  
 Имя контейнера должно начинаться с буквы или цифры. Эти имена могут содержать только буквы, цифры и знак дефиса (-). Дополнительные сведения об именовании больших двоичных объектов и контейнеров см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
@@ -62,7 +62,7 @@ ms.locfileid: "91716095"
 
 ## <a name="authenticate-with-azure-ad"></a>Аутентификация с помощью Azure AD
 
-Сначала назначьте своему удостоверению роль [участника для данных больших двоичных объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor). См. статью о [назначении роли Azure для доступа к большим двоичным объектам и данным очереди с помощью портала Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal).
+Сначала назначьте своему удостоверению роль [участника для данных больших двоичных объектов хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor). См. статью о [назначении роли Azure для доступа к большим двоичным объектам и данным очереди с помощью портала Azure](./storage-auth-aad-rbac-portal.md).
 
 Затем откройте командную строку, введите следующую команду и нажмите клавишу ВВОД.
 
@@ -72,13 +72,13 @@ azcopy login
 
 Эта команда возвращает код проверки подлинности и URL-адрес веб-сайта. Откройте веб-сайт, укажите код и нажмите кнопку **Далее**.
 
-![Создание контейнера](media/storage-use-azcopy-v10/azcopy-login.png)
+![Снимок экрана, на котором показан запрос на вход](media/storage-use-azcopy-v10/azcopy-login.png)
 
 Откроется окно входа. В этом окне войдите в свою учетную запись Azure с помощью соответствующих данных. Выполнив вход, можно закрыть окно браузера и начать работу с AzCopy.
 
 ## <a name="upload-contents-of-a-folder-to-blob-storage"></a>Отправка содержимого папки в хранилище BLOB-объектов
 
-С помощью AzCopy вы можете передать все файлы из определенной папки в [Windows](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy) или [Linux](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-linux) в хранилище больших двоичных объектов. Чтобы передать все большие двоичные объекты, содержащиеся в папке, введите следующую команду AzCopy:
+С помощью AzCopy вы можете передать все файлы из определенной папки в [Windows](./storage-use-azcopy-v10.md) или [Linux](./storage-use-azcopy-v10.md) в хранилище больших двоичных объектов. Чтобы передать все большие двоичные объекты, содержащиеся в папке, введите следующую команду AzCopy:
 
 ```AzCopy
 azcopy copy "<local-folder-path>" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" --recursive=true
@@ -135,7 +135,7 @@ azcopy sync "C:\myFolder" "https://mystorageaccount.blob.core.windows.net/mycont
 
 ---
 
-В этом руководстве мы применим [Schtasks](https://msdn.microsoft.com/library/windows/desktop/bb736357(v=vs.85).aspx) для создания в Windows запланированной задачи. Команда [Crontab](http://crontab.org/) позволяет создать задание cron в Linux.
+В этом руководстве мы применим [Schtasks](/windows/win32/taskschd/schtasks) для создания в Windows запланированной задачи. Команда [Crontab](http://crontab.org/) позволяет создать задание cron в Linux.
 
  **Schtasks** позволяет администратору создавать, удалять, просматривать, изменять, выполнять или завершать запланированные задачи на локальном или удаленном компьютере. **Cron** в Linux и Unix дает пользователям возможность выполнять команды или скрипты в определенное время определенного дня с помощью [выражений cron](https://en.wikipedia.org/wiki/Cron#CRON_expression).
 
@@ -166,7 +166,7 @@ schtasks /CREATE /SC minute /MO 5 /TN "AzCopy Script" /TR C:\script.bat
 - `/TN` позволяет указать имя задачи;
 - `/TR` позволяет указать путь к файлу `script.bat`.
 
-Дополнительные сведения о создании запланированной задачи в Windows см. в документации по [Schtasks](https://technet.microsoft.com/library/cc772785(v=ws.10).aspx#BKMK_minutes).
+Дополнительные сведения о создании запланированной задачи в Windows см. в документации по [Schtasks](/previous-versions/orphan-topics/ws.10/cc772785(v=ws.10)#BKMK_minutes).
 
 ---
 
@@ -176,7 +176,7 @@ schtasks /CREATE /SC minute /MO 5 /TN "AzCopy Script" /TR C:\script.bat
 
 Дополнительные сведения о способах перемещения данных из локальной среды в службу хранилища Azure и обратно см. по этой ссылке:
 
-* [Перемещение данных в службу хранилища Azure и обратно](https://docs.microsoft.com/azure/storage/common/storage-moving-data?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)  
+* [Перемещение данных в службу хранилища Azure и обратно](./storage-choose-data-transfer-solution.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json)  
 
 См. подробнее об AzCopy:
 

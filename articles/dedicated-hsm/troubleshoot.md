@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.custom: mvc, seodec18
 ms.date: 12/07/2018
 ms.author: mbaldwin
-ms.openlocfilehash: 622ead2ab58075fe6edbe2c013f14391624fd2b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b911181abea06894873e64da51afbb8799f1066a
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88590461"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92927844"
 ---
 # <a name="troubleshooting-the-azure-dedicated-hsm-service"></a>Устранение неполадок службы "Выделенное устройство HSM Azure"
 
@@ -71,7 +71,7 @@ az resource show --ids /subscriptions/<subid>/resourceGroups/<myresourcegroup>/p
 ###  <a name="how-do-i-see-hsms-when-provisioned"></a>Как просмотреть подготовленные устройства HSM
 Служба "Выделенное устройство HSM" работает по списку разрешений, поэтому относится к скрытому типу на портале Azure. Чтобы просмотреть ресурсы HSM, необходимо установить флажок "Показывать скрытые типы", как показано ниже. Ресурс сетевого адаптера указывается после устройства HSM, что позволяет узнать IP-адрес устройства HSM до использования протокола SSH для подключения.
 
-![Делегирование подсети](./media/troubleshoot/hsm-provisioned.png)
+![Снимок экрана, на котором показан установленный флажок "Показать скрытые типы".](./media/troubleshoot/hsm-provisioned.png)
 
 ## <a name="networking-resources"></a>Сетевые ресурсы
 
@@ -85,7 +85,7 @@ az resource show --ids /subscriptions/<subid>/resourceGroups/<myresourcegroup>/p
 
 В примерах шаблонов, предоставляемых для выделенного устройства HSM, предполагается, что IP-адрес HSM будет автоматически взят из заданного диапазона подсети. Вы можете указать явный IP-адрес устройства HSM с помощью атрибута NetworkInterfaces в шаблоне Resource Manager. 
 
-![Делегирование подсети](./media/troubleshoot/private-ip-address.png)
+![Снимок экрана, на котором показан пример шаблона для Выделенного устройства HSM.](./media/troubleshoot/private-ip-address.png)
 
 ## <a name="hsm-initialization"></a>Инициализация устройства HSM
 

@@ -4,17 +4,17 @@ description: Создание управляемого экземпляра SQL 
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
-author: twright-msft
-ms.author: twright
+author: vin-yu
+ms.author: vinsonyu
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 290745f89c7978fdcbda8be566938b58167a4f5a
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 2902274cfff11ac256459abd4fe0378146ee067b
+ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040920"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93280187"
 ---
 # <a name="create-azure-sql-managed-instance-using-kubernetes-tools"></a>Создание управляемого экземпляра SQL Azure с помощью средств Kubernetes
 
@@ -28,7 +28,7 @@ ms.locfileid: "93040920"
 
 [Установка средства kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 Чтобы создать управляемый экземпляр SQL, необходимо создать секрет Kubernetes для безопасного хранения имени входа и пароля системного администратора, а также настраиваемого ресурса управляемого экземпляра SQL на основе определения настраиваемого ресурса склманажединстанце.
 

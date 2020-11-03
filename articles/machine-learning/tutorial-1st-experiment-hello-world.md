@@ -11,18 +11,18 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 980347c658c65a0c08dfc50c08f50741fb9a00fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: afc851be08e6708efc0138dc45931cda147c67c1
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372550"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92895891"
 ---
 # <a name="tutorial-run-a-hello-world-python-script-part-2-of-4"></a>Руководство по выполнению скрипта "Hello world!" Сценарий Python (часть 2 из 4)
 
 В рамках этого учебника вы узнаете, как использовать пакет SDK Машинного обучения Azure для Python, чтобы отправить и запустить скрипт Python "Hello world!" .
 
-Этот учебник является *второй частью серии учебников из четырех частей*, в рамках которой вы ознакомитесь с основами Машинного обучения Azure и выполните задачи машинного обучения на основе заданий в Azure. Этот учебник создан на основе работы, выполненной в рамках статьи [Часть 1. Настройка локального компьютера для службы "Машинное обучение Azure"](tutorial-1st-experiment-sdk-setup-local.md).
+Этот учебник является *второй частью серии учебников из четырех частей* , в рамках которой вы ознакомитесь с основами Машинного обучения Azure и выполните задачи машинного обучения на основе заданий в Azure. Этот учебник создан на основе работы, выполненной в рамках статьи [Часть 1. Настройка локального компьютера для службы "Машинное обучение Azure"](tutorial-1st-experiment-sdk-setup-local.md).
 
 Выполняя данное руководство, вы сделаете следующее:
 
@@ -142,6 +142,9 @@ print(aml_url)
 ```bash
 python 03-run-hello.py
 ```
+
+> [!TIP]
+> Если выполнение этого кода приводит к ошибке с сообщением о том, что у вас нет доступа к подписке, см. раздел [Подключение к рабочей области](how-to-manage-workspace.md?tab=python#connect-multi-tenant), чтобы получить сведения о параметрах проверки подлинности.
 
 ## <a name="monitor-your-code-in-the-cloud-by-using-the-studio"></a>Мониторинг кода в облаке с помощью студии
 

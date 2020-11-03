@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
-ms.date: 08/17/2020
-ms.openlocfilehash: 4e7da02f7dd7e8fb19e031b814624b289730b3ee
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.date: 10/21/2020
+ms.openlocfilehash: 6231e4631c19aa3595fa85ca0aa7997861de65a3
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367726"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675043"
 ---
 # <a name="tutorial-create-azure-ad-users-using-azure-ad-applications"></a>Руководство по созданию пользователей Azure AD с помощью приложений Azure AD
 
@@ -62,12 +62,12 @@ ms.locfileid: "92367726"
     Set-AzSqlServer -ResourceGroupName <resource group> -ServerName <server name> -AssignIdentity
     ```
 
-    Дополнительные сведения см. в описании команды [Set-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver).
+    Дополнительные сведения см. в описании команды [Set-AzSqlServer](/powershell/module/az.sql/set-azsqlserver).
 
     > [!IMPORTANT]
     > Если удостоверение Azure AD настроено для логического сервера SQL Azure, то ему должно быть предоставлено разрешение [**читателей каталога**](../../active-directory/roles/permissions-reference.md#directory-readers). Этот шаг будет рассмотрен в следующем разделе. **Не** пропустите этот шаг, так как проверка подлинности Azure AD перестанет работать.
 
-    - Если вы ранее использовали команду [New-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlserver) с параметром `AssignIdentity` для создания SQL Server, вам потребуется выполнить команду [Set-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver) в качестве отдельной команды, чтобы включить это свойство в структуре Azure.
+    - Если вы ранее использовали команду [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) с параметром `AssignIdentity` для создания SQL Server, вам потребуется выполнить команду [Set-AzSqlServer](/powershell/module/az.sql/set-azsqlserver) в качестве отдельной команды, чтобы включить это свойство в структуре Azure.
 
 1. Убедитесь, что удостоверение сервера успешно назначено. Выполните указанную ниже команду PowerShell:
 
@@ -82,7 +82,7 @@ ms.locfileid: "92367726"
 
 1. Вы также можете проверить удостоверение на [портале Azure](https://portal.azure.com).
 
-    - В области ресурса **Azure Active Directory** выберите **Корпоративные приложения**. Введите имя логического сервера SQL. Вы увидите, что у него есть **идентификатор объекта**, присоединенный к ресурсу.
+    - В области ресурса **Azure Active Directory** выберите **Корпоративные приложения**. Введите имя логического сервера SQL. Вы увидите, что у него есть **идентификатор объекта** , присоединенный к ресурсу.
     
     :::image type="content" source="media/authentication-aad-service-principals-tutorial/enterprise-applications-object-id.png" alt-text="object-id":::
 
@@ -161,22 +161,32 @@ if ($selDirReader -eq $null) {
 
 1. Следуйте указаниям в этом разделе, чтобы [зарегистрировать приложение и задать разрешения](active-directory-interactive-connect-azure-sql-db.md#register-your-app-and-set-permissions).
 
-    Обязательно добавьте **разрешения приложения**, а также **делегированные разрешения**.
+    Обязательно добавьте **разрешения приложения** , а также **делегированные разрешения**.
 
-    :::image type="content" source="media/authentication-aad-service-principals-tutorial/aad-apps.png" alt-text="object-id":::
+    :::image type="content" source="media/authentication-aad-service-principals-tutorial/aad-apps.png" alt-text="Снимок экрана: страница регистрации приложения в Azure Active Directory с выделенным приложением AppSP":::
 
-    :::image type="content" source="media/authentication-aad-service-principals-tutorial/aad-app-registration-api-permissions.png" alt-text="object-id":::
+    :::image type="content" source="media/authentication-aad-service-principals-tutorial/aad-app-registration-api-permissions.png" alt-text="api-permissions":::
 
-2. Вам также необходимо будет создать секрет клиента для входа. Следуйте указаниям из этого раздела, чтобы [отправить сертификат или создать секрет для входа](../../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options).
+2. Кроме того, понадобится создать секрет клиента для входа. Следуйте указаниям из этого раздела, чтобы [отправить сертификат или создать секрет для входа](../../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options).
 
 3. Запишите следующие сведения из регистрации приложения. Они должны быть доступны на панели **Обзор**.
     - **Идентификатор приложения**
     - **Идентификатор клиента**. Он должен остаться таким же, как прежде.
 
-В этом учебнике в качестве основного субъекта-службы мы будем использовать *AppSP*, а *myapp* — в качестве второго пользователя субъекта-службы, который будет создан в SQL Azure с помощью *AppSP*. Необходимо создать два приложения: *AppSP* и *myapp*.
+В этом учебнике в качестве основного субъекта-службы будет использоваться *AppSP* , а *myapp*  — в качестве второго пользователя субъекта-службы, который будет создан в SQL Azure с помощью *AppSP*. Необходимо создать два приложения: *AppSP* и *myapp*.
 
 Дополнительные сведения о создании приложения Azure AD см. в статье [Практическое руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md).
 
+### <a name="permissions-required-to-set-or-unset-the-azure-ad-admin"></a>Разрешения, необходимые для установки или удаления администратора Azure AD
+
+Чтобы субъект-служба мог установить или удалить администратора Azure AD для SQL Azure, требуется дополнительное разрешение API. Разрешение API приложения [Directory.Read.All](https://docs.microsoft.com/graph/permissions-reference#application-permissions-18) потребуется добавить в ваше приложение в Azure AD.
+
+:::image type="content" source="media/authentication-aad-service-principals-tutorial/aad-directory-reader-all-permissions.png" alt-text="Разрешения Directory.Reader.All в Azure AD":::
+
+Субъекту-службе также потребуется роль [**Участник SQL Server**](../../role-based-access-control/built-in-roles.md#sql-server-contributor) для базы данных SQL или роль [**Участник управляемого экземпляра SQL**](../../role-based-access-control/built-in-roles.md#sql-managed-instance-contributor) для Управляемого экземпляра SQL.
+
+> [!NOTE]
+> Хотя API Graph Azure AD является нерекомендуемым, разрешение **SQL Server Contributor** по-прежнему применимо к этому учебнику. API Microsoft Graph не применяется к этому учебнику.
 
 ## <a name="create-the-service-principal-user-in-azure-sql-database"></a>Создание пользователя субъекта-службы в службе "База данных SQL Azure"
 
@@ -196,7 +206,7 @@ if ($selDirReader -eq $null) {
     GO
     ```
 
-    Дополнительные сведения см. в статье [sp_addrolemember](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql).
+    Дополнительные сведения см. в статье [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql).
 
     Кроме того, вместо назначения роли `db_owner` можно предоставить разрешение `ALTER ANY USER`. Это позволит субъекту-службе добавлять других пользователей Azure AD.
 
@@ -280,7 +290,7 @@ if ($selDirReader -eq $null) {
     > $adalPath = "${env:ProgramFiles}\WindowsPowerShell\Modules\AzureRM.profile\${version}"
     > ```
     
-2. Убедитесь, что в базе данных существует пользователь *myapp*, выполнив следующую команду:
+2. Убедитесь, что в базе данных существует пользователь *myapp* , выполнив следующую команду:
 
     ```sql
     SELECT name, type, type_desc, CAST(CAST(sid as varbinary(16)) as uniqueidentifier) as appId from sys.database_principals WHERE name = 'myapp'
@@ -301,5 +311,5 @@ if ($selDirReader -eq $null) {
 - [Использование управляемых удостоверений в Службе приложений и Функциях Azure](../../app-service/overview-managed-identity.md)
 - [Проверка подлинности субъекта-службы Azure AD в базе данных SQL — пример кода](https://techcommunity.microsoft.com/t5/azure-sql-database/azure-ad-service-principal-authentication-to-sql-db-code-sample/ba-p/481467)
 - [Application and service principal objects in Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md) (Объекты приложения и субъекта-службы в Azure Active Directory)
-- [Создание субъекта-службы Azure с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps)
+- [Создание субъекта-службы Azure с помощью Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps)
 - [Роль "Читатели каталогов" в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md)

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
-ms.openlocfilehash: 1970709dea67111bfd8b90f9fc315a3b044b2ab9
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 4505deaa4cc11c00c7283ef686827d6893c2742a
+ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900261"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93280427"
 ---
 # <a name="copy-data-from-an-sap-table-by-using-azure-data-factory"></a>Копирование данных из таблицы SAP с помощью фабрики данных Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "92900261"
 3. Проверьте выпуск SAP_BASIS, убедитесь, что он больше или равен 701.  
       ![Проверка SAP_BASIS](./media/connector-sap-table/sap-basis.png)
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать этот соединитель таблиц SAP, необходимо выполнить следующие действия:
 
@@ -229,7 +229,7 @@ ms.locfileid: "92900261"
 | `rfcTableFields`                 | Поля (столбцы) для копирования из таблицы SAP. Например, `column0, column1`. | Нет       |
 | `rfcTableOptions`                | Параметры для фильтрации строк в таблице SAP. Например, `COLUMN0 EQ 'SOMEVALUE'`. См. также таблицу операторов запросов SAP далее в этой статье. | Нет       |
 | `customRfcReadTableFunctionModule` | Пользовательский модуль функции RFC, который может использоваться для чтения данных из таблицы SAP.<br>Вы можете использовать пользовательский модуль функции RFC, чтобы определить, как данные извлекаются из системы SAP и возвращены в фабрику данных. В пользовательском модуле функции должен быть реализован интерфейс (импорт, экспорт, таблицы), похожий на `/SAPDS/RFC_READ_TABLE2` , который является интерфейсом по умолчанию, используемым фабрикой данных.<br>Фабрика данных | Нет       |
-| `partitionOption`                  | Механизм секционирования для чтения из таблицы SAP. Поддерживаемые варианты перечислены ниже. <ul><li>`None`</li><li>`PartitionOnInt` (обычные целые или целочисленные значения с нулевым отступом слева, например `0000012345` )</li><li>`PartitionOnCalendarYear` (4 цифры в формате «гггг»)</li><li>`PartitionOnCalendarMonth` (6 цифр в формате «ИИИИММ»)</li><li>`PartitionOnCalendarDate` (8 цифр в формате ГГГГММДД)</li></ul> | Нет       |
+| `partitionOption`                  | Механизм секционирования для чтения из таблицы SAP. Поддерживаемые варианты перечислены ниже. <ul><li>`None`</li><li>`PartitionOnInt` (обычные целые или целочисленные значения с нулевым отступом слева, например `0000012345` )</li><li>`PartitionOnCalendarYear` (4 цифры в формате «гггг»)</li><li>`PartitionOnCalendarMonth` (6 цифр в формате «ИИИИММ»)</li><li>`PartitionOnCalendarDate` (8 цифр в формате ГГГГММДД)</li><li>`PartitionOntime` (6 цифр в формате «ЧЧММСС», например `235959` )</li></ul> | Нет       |
 | `partitionColumnName`              | Имя столбца, используемого для секционирования данных.                | Нет       |
 | `partitionUpperBound`              | Максимальное значение столбца, указанного в `partitionColumnName` , будет использоваться для продолжения секционирования. | Нет       |
 | `partitionLowerBound`              | Минимальное значение столбца, указанного в `partitionColumnName` , будет использоваться для продолжения секционирования. (Примечание. `partitionLowerBound` не может иметь значение "0", если параметр секционирования имеет значение `PartitionOnInt` ) | Нет       |

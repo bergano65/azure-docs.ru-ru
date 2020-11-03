@@ -5,12 +5,12 @@ author: mumian
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 68ddb5c07ffac2aad4e2dafd16301fa29f391797
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0da6c614572e73a00db1087621eaca3bd790aad6
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86119350"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92891811"
 ---
 # <a name="tutorial-troubleshoot-arm-template-deployments"></a>Руководство по устранению неполадок при развертывании шаблонов ARM
 
@@ -60,7 +60,7 @@ ms.locfileid: "86119350"
     - **apiVersion1** является недопустимым именем элемента. Это ошибка проверки.
     - Версия API должна быть "2018-07-01".  Это ошибка развертывания.
 
-5. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл в качестве **azuredeploy.json** на локальном компьютере.
+5. Выберите **Файл**>**Сохранить как** , чтобы сохранить файл в качестве **azuredeploy.json** на локальном компьютере.
 
 ## <a name="troubleshoot-the-validation-error"></a>Устранение ошибки проверки
 
@@ -74,7 +74,7 @@ New-AzResourceGroupDeployment : 4:29:24 PM - Error: Code=InvalidRequestContent; 
 
 Сообщение об ошибке указывает, что проблема связана с **apiVersion1**.
 
-Чтобы устранить проблему, используйте Visual Studio Code, изменив **apiVersion1** на **apiVersion**, а затем сохраните шаблон.
+Чтобы устранить проблему, используйте Visual Studio Code, изменив **apiVersion1** на **apiVersion** , а затем сохраните шаблон.
 
 ## <a name="troubleshoot-the-deployment-error"></a>Устранение ошибки развертывания
 
@@ -94,16 +94,16 @@ New-AzResourceGroupDeployment : 4:48:50 PM - Resource Microsoft.Storage/storageA
 Ошибку развертывания можно найти на портале Azure с помощью следующей процедуры.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Откройте **Группы ресурсов**, а затем введите имя группы ресурсов. Отобразится **1 Failed** в разделе **Развертывание**.
+2. Откройте **Группы ресурсов** , а затем введите имя группы ресурсов. Отобразится **1 Failed** в разделе **Развертывание**.
 
-    ![Устранение неполадок руководства Resource Manager](./media/template-tutorial-troubleshoot/resource-manager-template-deployment-error.png)
+    ![Снимок экрана, на котором выделено неудачное развертывание.](./media/template-tutorial-troubleshoot/resource-manager-template-deployment-error.png)
 3. Выберите **Сведения об ошибке**.
 
-    ![Устранение неполадок руководства Resource Manager](./media/template-tutorial-troubleshoot/resource-manager-template-deployment-error-details.png)
+    ![Снимок экрана, на котором выделена ссылка "Сведения об ошибке".](./media/template-tutorial-troubleshoot/resource-manager-template-deployment-error-details.png)
 
     Сообщение об ошибке совпадает с сообщением, показанным ранее.
 
-    ![Устранение неполадок руководства Resource Manager](./media/template-tutorial-troubleshoot/resource-manager-template-deployment-error-summary.png)
+    ![Снимок экрана, на котором показаны сведения об ошибке.](./media/template-tutorial-troubleshoot/resource-manager-template-deployment-error-summary.png)
 
 Также можно найти ошибки в журналах действий.
 

@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: ferno
 ms.reviewer: mathoma
 ms.date: 04/28/2020
-ms.openlocfilehash: 5948f7adedfa430d7d0dac570910f662846464c6
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 67902073b1484835d23566c91cbfae6f1d80d249
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790871"
+ms.locfileid: "92900468"
 ---
 # <a name="tutorial-configure-replication-between-two-managed-instances"></a>Руководство по Настройка репликации между двумя управляемыми экземплярами
 
@@ -32,7 +32,7 @@ ms.locfileid: "92790871"
 > [!div class="checklist"]
 >
 > - Настройка Управляемого экземпляра в качестве издателя и распространителя репликации.
-> - Настройка Управляемого экземпляра в качестве распространителя репликации.
+> - Настройка управляемого экземпляра в качестве подписчика репликации.
 
 ![Репликация между двумя управляемыми экземплярами](./media/replication-between-two-instances-configure-tutorial/sqlmi-sqlmi-repl.png)
 

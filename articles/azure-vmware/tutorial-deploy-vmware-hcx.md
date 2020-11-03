@@ -3,12 +3,12 @@ title: Учебник по развертыванию и настройке VMwa
 description: Узнайте, как развернуть и настроить решение VMware HCX для частного облака Решения Azure VMware.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: c78eae11497702054bb54b5980228fd0a3962577
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 424abeef567d88f7de37f7a7a4ab7a7a8b6ef3bc
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367777"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791415"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>Развертывание и настройка VMware HCX
 
@@ -17,7 +17,7 @@ ms.locfileid: "92367777"
 Расширенный соединитель VMware HCX уже развернут в Решении Azure VMware. Он поддерживает до трех подключений к сайтам (из локальной среды в облако или из облака в облако). Если вам нужно более трех подключений к сайтам, создайте [запрос в службу поддержки](https://rc.portal.azure.com/#create/Microsoft.Support), чтобы включить надстройку [VMware HCX Enterprise](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/). Сейчас надстройка доступна в предварительной версии. 
 
 >[!NOTE]
->VMware HCX Enterprise Edition (EE) предоставляется в составе Решения Azure VMware как предварительная версия службы. Эту службу можно использовать бесплатно на условиях предварительной версии. Когда служба VMware HCX EE станет общедоступной, вы получите уведомление о начале выставления счетов за 30 дней до этого момента. Вы сможете отключить эту службу или отказаться от ее использования.
+>VMware HCX Enterprise Edition (EE) предоставляется в составе Решения Azure VMware как предварительная версия службы. Эту службу можно использовать бесплатно на условиях предварительной версии. Когда служба VMware HCX EE станет общедоступной, вы получите уведомление о начале выставления счетов за 30 дней до этого момента. Вы сможете отключить эту службу или отказаться от ее использования. Учтите, что на текущий момент нет простого способа перейти с выпуска HCX Enterprise на HCX Advanced. Для реализации такого перехода клиентам потребуется выполнить повторное развертывание, которое приведет к простою.
 
 Прежде всего внимательно изучите разделы этой статьи [Перед началом работы](#before-you-begin), [Требования к версиям программного обеспечения](#software-version-requirements) и [Предварительные требования](#prerequisites). 
 
@@ -81,7 +81,7 @@ ms.locfileid: "92367777"
 1. Откройте окно браузера, войдите в HCX Manager Решения Azure VMware на странице `https://x.x.x.9` через порт 443 под учетными данными пользователя **cloudadmin** , а затем перейдите на страницу **Support** (Поддержка).
 
    > [!TIP]
-   > Запишите IP-адрес HCX Cloud Manager в Решении Azure VMware. Чтобы узнать этот IP-адрес, на панели Решения Azure VMware последовательно выберите **Manage** > **Connectivity** (Управление — Подключение), а затем перейдите на вкладку **HCX** . 
+   > Запишите IP-адрес HCX Cloud Manager в Решении Azure VMware. Чтобы узнать этот IP-адрес, на панели Решения Azure VMware последовательно выберите **Manage** > **Connectivity** (Управление — Подключение), а затем перейдите на вкладку **HCX**. 
    >
    >Пароль vCenter был определен при настройке частного облака.
 
@@ -94,13 +94,13 @@ ms.locfileid: "92367777"
 
 1. Выберите имя и расположение, а затем ресурс или кластер, в котором вы развертываете соединитель HCX. Затем проверьте все сведения и необходимые ресурсы.  
 
-   :::image type="content" source="media/tutorial-vmware-hcx/configure-template.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/configure-template.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/configure-template.png" alt-text="Снимок экрана: подробные сведения о шаблоне" lightbox="media/tutorial-vmware-hcx/configure-template.png":::
 
-1. Ознакомьтесь с условиями лицензии. Если вы с ними согласны, выберите нужное хранилище и сеть, а затем щелкните **Далее** .
+1. Ознакомьтесь с условиями лицензии. Если вы с ними согласны, выберите нужное хранилище и сеть, а затем щелкните **Далее**.
 
 1. В разделе **Настройка шаблона** введите все необходимые сведения. 
 
-   :::image type="content" source="media/tutorial-vmware-hcx/customize-template.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/customize-template.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/customize-template.png" alt-text="Снимок экрана: поля для настройки шаблона" lightbox="media/tutorial-vmware-hcx/customize-template.png":::
 
 1. Нажмите кнопку **Далее** , проверьте конфигурацию и щелкните **Готово** , чтобы развернуть OVA-файл соединителя HCX.
      
@@ -119,7 +119,7 @@ ms.locfileid: "92367777"
 
 1. На портале Решения Azure VMware выберите **Manage** > **Connectivity** (Управление — Подключение), перейдите на вкладку **HCX** , а затем щелкните **Add** (Добавить).
 
-1. Войдите в VMware HCX Manager в локальной среде по адресу `https://HCXManagerIP:9443`, используя учетные данные **администратора** . 
+1. Войдите в VMware HCX Manager в локальной среде по адресу `https://HCXManagerIP:9443`, используя учетные данные **администратора**. 
 
    > [!IMPORTANT]
    > Не забудьте указать номер порта `9443` вместе с IP-адресом VMware HCX Manager.
@@ -149,7 +149,7 @@ ms.locfileid: "92367777"
 
 После перезапуска служб очень важно убедиться, что для vCenter на экране отображается зеленый кружок. Параметры конфигурации vCenter и единого входа должны быть заданы надлежащим образом и совпадать с теми, которые показаны на предыдущем экране.
 
-:::image type="content" source="media/tutorial-vmware-hcx/activation-done.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/activation-done.png":::  
+:::image type="content" source="media/tutorial-vmware-hcx/activation-done.png" alt-text="Снимок экрана: панель мониторинга, где состояние vCenter обозначено зеленым цветом" lightbox="media/tutorial-vmware-hcx/activation-done.png":::  
 
 Полный обзор этой процедуры см. в видео [Azure VMware Solution: Activate HCX](https://www.youtube.com/embed/BkAV_TNYxdE) (Решение Azure VMware — активация HCX).
 
@@ -162,15 +162,15 @@ ms.locfileid: "92367777"
 
 Вы можете подключить диспетчер облаков VMware HCX в Решении Azure VMware к соединителю VMware HCX в центре обработки данных (связать их между собой). 
 
-1. Войдите в vCenter в локальной среде и в разделе **Home** (Домашняя страница) выберите **HCX** .
+1. Войдите в vCenter в локальной среде и в разделе **Home** (Домашняя страница) выберите **HCX**.
 
-   :::image type="content" source="media/tutorial-vmware-hcx/vcenter-vmware-hcx.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/vcenter-vmware-hcx.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/vcenter-vmware-hcx.png" alt-text="Снимок экрана: выбор клиента vCenter с HCX в списке ярлыков" lightbox="media/tutorial-vmware-hcx/vcenter-vmware-hcx.png":::
 
 1. В разделе **Infrastructure** (Инфраструктура) выберите **Site Pairing** (Связывание сайтов), а затем в середине экрана щелкните **Connect To Remote Site** (Подключиться к удаленному сайту). 
 
-   :::image type="content" source="media/tutorial-vmware-hcx/connect-remote-site.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/connect-remote-site.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/connect-remote-site.png" alt-text="Снимок экрана: выбор параметров для создания удаленного сайта" lightbox="media/tutorial-vmware-hcx/connect-remote-site.png":::
 
-1. Введите URL-адрес или IP-адрес удаленной платформы HCX, который вы сохранили ранее, а также имя пользователя cloudadmin@vsphere.local и пароль Решения Azure VMware. В этом случае выберите **Подключиться** .
+1. Введите URL-адрес или IP-адрес удаленной платформы HCX, который вы сохранили ранее, а также имя пользователя cloudadmin@vsphere.local и пароль Решения Azure VMware. В этом случае выберите **Подключиться**.
 
    > [!NOTE]
    > Чтобы связывание сайтов прошло успешно, соединитель HCX должен маршрутизировать IP-адрес HCX Cloud Manager через порт 443.
@@ -179,7 +179,7 @@ ms.locfileid: "92367777"
 
    На этом экране будет показано, что HCX Cloud Manager в Решении Azure VMware и соединитель HCX в локальной среде успешно подключены (связаны друг с другом).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/site-pairing-complete.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF":::
+   :::image type="content" source="media/tutorial-vmware-hcx/site-pairing-complete.png" alt-text="Снимок экрана: связывание HCX Manager в Решении Azure VMware и соединителя HCX":::
 
 Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Site Pairing](https://www.youtube.com/embed/sKizDCRHOko) (Решение Azure VMware — связывание сайтов HCX).
 
@@ -198,11 +198,11 @@ VMware HCX развертывает подмножество виртуальн
 
 1. Выберите **Infrastructure** , select **Interconnect** > **Multi-Site Service Mesh** > **Network Profiles** > **Create Network Profile** (Инфраструктура > Межсоединение > Сетка многосайтовой службы > Сетевые профили > Создать сетевой профиль).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/network-profile-start.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/network-profile-start.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/network-profile-start.png" alt-text="Снимок экрана: параметры, настроенные для создания сетевого профиля" lightbox="media/tutorial-vmware-hcx/network-profile-start.png":::
 
-1. Для каждого сетевого профиля выберите сеть и группу портов, укажите имя и создайте пул IP-адресов для конкретного сегмента. Щелкните **Создать** . 
+1. Для каждого сетевого профиля выберите сеть и группу портов, укажите имя и создайте пул IP-адресов для конкретного сегмента. Щелкните **Создать**. 
 
-   :::image type="content" source="media/tutorial-vmware-hcx/example-configurations-network-profile.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF":::
+   :::image type="content" source="media/tutorial-vmware-hcx/example-configurations-network-profile.png" alt-text="Снимок экрана: сведения о новом сетевом профиле":::
 
 Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Network Profile](https://www.youtube.com/embed/NhyEcLco4JY) (Решение Azure VMware — сетевой профиль HCX).
 
@@ -211,11 +211,11 @@ VMware HCX развертывает подмножество виртуальн
 
 1. Выберите **Compute Profiles** > **Create Compute Profile** (Вычислительный профиль >Создать вычислительный профиль).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/compute-profile-create.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/compute-profile-create.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/compute-profile-create.png" alt-text="Снимок экрана: выбранные параметры для создания вычислительного профиля" lightbox="media/tutorial-vmware-hcx/compute-profile-create.png":::
 
 1. Введите имя профиля и нажмите кнопку **Continue** (Продолжить).  
 
-   :::image type="content" source="media/tutorial-vmware-hcx/name-compute-profile.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/name-compute-profile.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/name-compute-profile.png" alt-text="Снимок экрана: поле с введенным именем вычислительного профиля и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/name-compute-profile.png":::
 
 1. Выберите службы, которые нужно включить, такие как службы миграции, сетевого расширения или аварийного восстановления, а затем нажмите кнопку **Continue** (Продолжить).
   
@@ -226,47 +226,47 @@ VMware HCX развертывает подмножество виртуальн
 
 1. Если кластеры отображаются в локальном центре обработки данных, выберите **Continue** (Продолжить).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/select-service-resource.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/select-service-resource.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/select-service-resource.png" alt-text="Снимок экрана: выбор ресурсов служб и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/select-service-resource.png":::
 
 1. На странице **Select Datastore** (Выбор хранилища данных) выберите ресурс хранилища данных для развертывания устройств VMware HCX Interconnect. Затем выберите **Continue** (Продолжить).
 
    Когда выбрано несколько ресурсов, VMware HCX использует первый выбранный ресурс, пока его емкость не будет исчерпана.   
 
-   :::image type="content" source="media/tutorial-vmware-hcx/deployment-resources-and-reservations.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/deployment-resources-and-reservations.png":::  
+   :::image type="content" source="media/tutorial-vmware-hcx/deployment-resources-and-reservations.png" alt-text="Снимок экрана: выбранный ресурс хранилища данных и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/deployment-resources-and-reservations.png":::  
 
 1. В разделе **Select Management Network Profile** (Выбор сетевого профиля управления) выберите профиль, созданный на предыдущих шагах. Затем выберите **Continue** (Продолжить).  
 
-   :::image type="content" source="media/tutorial-vmware-hcx/select-management-network-profile.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/select-management-network-profile.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/select-management-network-profile.png" alt-text="Снимок экрана: выбор сетевого профиля управления и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/select-management-network-profile.png":::
 
    > [!NOTE]
    > Профиль сети управления позволяет устройствам VMware HCX обмениваться данными с vCenter. Через этот профиль можно обращаться к узлам ESXi.
 
 1. В разделе **Select Uplink Network Profile** (Выбор сетевого профиля канала исходящей связи) выберите сетевой профиль, созданный на предыдущих шагах. Затем выберите **Continue** (Продолжить).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/select-uplink-network-profile.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/select-uplink-network-profile.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/select-uplink-network-profile.png" alt-text="Снимок экрана: выбор сетевого профиля канала исходящей связи и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/select-uplink-network-profile.png":::
 
 1. В разделе **Select vMotion Network Profile** (Выбор сетевого профиля vMotion) выберите сетевой профиль, созданный на предыдущих шагах. Затем выберите **Continue** (Продолжить).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/select-vmotion-network-profile.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/select-vmotion-network-profile.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/select-vmotion-network-profile.png" alt-text="Снимок экрана: выбор сетевого профиля vMotion и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/select-vmotion-network-profile.png":::
 
 1. В разделе **Select vSphere Replication Network Profile** (Выбор сетевого профиля репликации vSphere) выберите сетевой профиль, созданный на предыдущих шагах. Затем выберите **Continue** (Продолжить).
 
    В большинстве случаев профиль репликации совпадает с сетевым профилем управления.  
 
-   :::image type="content" source="media/tutorial-vmware-hcx/select-replication-network-profile.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/select-replication-network-profile.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/select-replication-network-profile.png" alt-text="Снимок экрана: выбор сетевого профиля репликации и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/select-replication-network-profile.png":::
 
 1. В разделе **Select Distributed Switches for Network Extensions** (Выбор распределенных коммутаторов для сетевых расширений) выберите распределенные виртуальные коммутаторы, через которые подключаются виртуальные машины, переносимые в Решение Azure VMware в расширенной сети уровня 2. Затем выберите **Continue** (Продолжить).
 
-   :::image type=" content" source="media/tutorial-vmware-hcx/select-layer-2-distributed-virtual-switch.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/select-layer-2-distributed-virtual-switch.png":::
+   :::image type=" content" source="media/tutorial-vmware-hcx/select-layer-2-distributed-virtual-switch.png" alt-text="Снимок экрана: выбор распределенных виртуальных коммутаторов и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/select-layer-2-distributed-virtual-switch.png":::
 
 1. Проверьте правила подключения и нажмите **Continue** (Продолжить).  
 
-   :::image type="content" source="media/tutorial-vmware-hcx/review-connection-rules.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/review-connection-rules.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/review-connection-rules.png" alt-text="Снимок экрана: правила подключения и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/review-connection-rules.png":::
 
 1. Нажмите **Готово** , чтобы создать вычислительный профиль.
 
 
-   :::image type="content" source="media/tutorial-vmware-hcx/compute-profile-done.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/compute-profile-done.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/compute-profile-done.png" alt-text="Снимок экрана: сведения о вычислительном профиле" lightbox="media/tutorial-vmware-hcx/compute-profile-done.png":::
 
 Полный обзор этой процедуры см. в видео [Azure VMware Solution: Compute Profile](https://www.youtube.com/embed/qASXi5xrFzM) (Решение Azure VMware — вычислительный профиль).
 
@@ -283,7 +283,7 @@ VMware HCX развертывает подмножество виртуальн
 
 1. В разделе **Infrastructure** (Инфраструктура) выберите **Interconnect** > **Service Mesh** > **Create Service Mesh** (Межсоединение > Сетка служб > Создать сетку служб).    
 
-   :::image type="content" source="media/tutorial-vmware-hcx/create-service-mesh.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/create-service-mesh.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/create-service-mesh.png" alt-text="Снимок экрана: выбор параметров для создания сетки служб" lightbox="media/tutorial-vmware-hcx/create-service-mesh.png":::
 
 1. Просмотрите предварительно заполненные сайты, а затем выберите **Continue** (Продолжить). 
 
@@ -294,9 +294,9 @@ VMware HCX развертывает подмножество виртуальн
 
    От выбранных значений зависит, для каких ресурсов виртуальные машины смогут использовать службы VMware HCX.  
 
-   :::image type="content" source="media/tutorial-vmware-hcx/select-compute-profile-source.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/select-compute-profile-source.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/select-compute-profile-source.png" alt-text="Снимок экрана: выбор исходного вычислительного профиля" lightbox="media/tutorial-vmware-hcx/select-compute-profile-source.png":::
 
-   :::image type="content" source="media/tutorial-vmware-hcx/select-compute-profile-remote.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/select-compute-profile-remote.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/select-compute-profile-remote.png" alt-text="Снимок экрана: выбор удаленного вычислительного профиля" lightbox="media/tutorial-vmware-hcx/select-compute-profile-remote.png":::
 
 1. Просмотрите службы, которые будут включены, а затем щелкните **Continue** (Продолжить).  
 
@@ -308,22 +308,22 @@ VMware HCX развертывает подмножество виртуальн
 
 1. На экране **Advanced Configuration — Traffic Engineering** (Расширенная конфигурация: проектирование трафика) проверьте параметры и внесите необходимые изменения, а затем щелкните **Continue** (Продолжить).
 
-1. Проверьте предварительную версию топологии и нажмите **Продолжить** .
+1. Проверьте предварительную версию топологии и нажмите **Продолжить**.
 
 1. Введите понятное имя для этой сетки служб и нажмите **Finish** (Готово) для завершения.  
 
 1. Выберите **View Tasks** (Просмотр задач) для мониторинга развертывания. 
 
-   :::image type="content" source="media/tutorial-vmware-hcx/monitor-service-mesh.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF":::
+   :::image type="content" source="media/tutorial-vmware-hcx/monitor-service-mesh.png" alt-text="Снимок экрана: кнопка для просмотра задач":::
 
    После успешного завершения развертывания сетки служб вы увидите, что службы обозначены зеленым цветом.
 
-   :::image type="content" source="media/tutorial-vmware-hcx/service-mesh-green.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/service-mesh-green.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/service-mesh-green.png" alt-text="Снимок экрана: зеленый индикатор состояния служб" lightbox="media/tutorial-vmware-hcx/service-mesh-green.png":::
 
 1. Проверьте работоспособность сетки службы, проверив состояние устройства. 
 1. Для этого выберите **Interconnect** > **Appliances** (Interconnect > Устройства).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/interconnect-appliance-state.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/interconnect-appliance-state.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/interconnect-appliance-state.png" alt-text="Снимок экрана: выбор действий для проверки состояния устройства" lightbox="media/tutorial-vmware-hcx/interconnect-appliance-state.png":::
 
 Полный обзор этой процедуры см. в видео [Azure VMware Solution: Service Mesh](https://www.youtube.com/embed/FyZ0d3P_T24) (Решение Azure VMware — сетка служб).
 
@@ -335,19 +335,19 @@ VMware HCX развертывает подмножество виртуальн
 
 1. В разделе **Services** (Службы) выберите **Network Extension** (Расширение сети), а затем — **Create a Network Extension** (Создать расширение сети).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/create-network-extension.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/create-network-extension.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/create-network-extension.png" alt-text="Снимок экрана: выбранные параметры для создания расширения сети" lightbox="media/tutorial-vmware-hcx/create-network-extension.png":::
 
 1. Выберите все сети, которые нужно расширить в Решение Azure VMware, и щелкните **Next** (Далее).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/select-extend-networks.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF":::
+   :::image type="content" source="media/tutorial-vmware-hcx/select-extend-networks.png" alt-text="Снимок экрана: выбор сети":::
 
 1. Введите IP-адрес локального шлюза для каждой из расширяемых сетей, а затем нажмите кнопку **Submit** (Отправить). 
 
-   :::image type="content" source="media/tutorial-vmware-hcx/extend-networks-gateway.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF":::
+   :::image type="content" source="media/tutorial-vmware-hcx/extend-networks-gateway.png" alt-text="Снимок экрана: ввод IP-адреса шлюза":::
 
    Расширение сети занимает несколько минут. Когда оно будет выполнено, отобразится новое состояние **Extension complete** (Расширение завершено).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/extension-complete.png" alt-text="Снимок экрана: обзор папок для выбора шаблона OVF" lightbox="media/tutorial-vmware-hcx/extension-complete.png":::
+   :::image type="content" source="media/tutorial-vmware-hcx/extension-complete.png" alt-text="Снимок экрана: состояние завершения расширения" lightbox="media/tutorial-vmware-hcx/extension-complete.png":::
 
 Полный обзор этого шага см. в видео [Azure VMware Solution: Network Extension](https://www.youtube.com/embed/cNlp0f_tTr0) (Решение Azure VMware — расширение сети).
 

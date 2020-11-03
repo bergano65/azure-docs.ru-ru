@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d902258c80467380518df3b55583cea1efa76609
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 64767f83dfad2b0c2909e8a89b55c849d5c5a9a9
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86119316"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896996"
 ---
 # <a name="tutorial-use-condition-in-arm-templates"></a>Руководство по Использование условия в шаблонах ARM
 
@@ -73,7 +73,7 @@ ms.locfileid: "86119316"
 
     Перед настройкой шаблона рекомендуется ознакомиться с его справочником.
 
-1. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
+1. Выберите **Файл**>**Сохранить как** , чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
 
 ## <a name="modify-the-template"></a>Изменение шаблона
 
@@ -88,7 +88,7 @@ ms.locfileid: "86119316"
 1. Замените во всем шаблоне **three variables('storageAccountName')** на **parameters('storageAccountName')** .
 1. Удалите следующее определение переменной:
 
-    ![Схема использования условия в шаблонах Azure Resource Manager](./media/template-tutorial-use-conditions/resource-manager-tutorial-use-condition-template-remove-storageaccountname.png)
+    ![Снимок экрана с выделенным определением переменной, которое необходимо удалить.](./media/template-tutorial-use-conditions/resource-manager-tutorial-use-condition-template-remove-storageaccountname.png)
 
 1. Добавьте следующие два параметра в начало раздела параметров:
 
@@ -105,7 +105,7 @@ ms.locfileid: "86119316"
     },
     ```
 
-    Нажмите клавиши **[ALT]+[SHIFT]+F**, чтобы отформатировать шаблон в Visual Studio Code.
+    Нажмите клавиши **[ALT]+[SHIFT]+F** , чтобы отформатировать шаблон в Visual Studio Code.
 
     Определение обновленных параметров выглядит так:
 
@@ -117,11 +117,11 @@ ms.locfileid: "86119316"
     "condition": "[equals(parameters('newOrExisting'),'new')]",
     ```
 
-    Условие проверяет значение параметра с именем **newOrExisting**. Если значение параметра равно **new**, то в результате развертывания создается учетная запись хранения.
+    Условие проверяет значение параметра с именем **newOrExisting**. Если значение параметра равно **new** , то в результате развертывания создается учетная запись хранения.
 
     Обновленное определение учетной записи хранения выглядит так:
 
-    ![Условие использования Resource Manager](./media/template-tutorial-use-conditions/resource-manager-tutorial-use-condition-template.png)
+    ![Снимок экрана, на котором показано обновленное определение учетной записи хранения.](./media/template-tutorial-use-conditions/resource-manager-tutorial-use-condition-template.png)
 1. Обновите свойство **storageUri** определения ресурса виртуальной машины следующим значением:
 
     ```json
@@ -140,7 +140,7 @@ ms.locfileid: "86119316"
 
     ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана. Выберите файл, сохраненный ранее. После отправки вы можете использовать команды **ls** и **cat**, чтобы проверить отправку файла.
+1. Выберите **Отправка и скачивание файлов** , а затем **Отправить**. См. предыдущий снимок экрана. Выберите файл, сохраненный ранее. После отправки вы можете использовать команды **ls** и **cat** , чтобы проверить отправку файла.
 
 1. а затем выполните следующий сценарий PowerShell для его развертывания.
 
@@ -172,13 +172,13 @@ ms.locfileid: "86119316"
     ```
 
     > [!NOTE]
-    > Развертывание завершается сбоем, если **newOrExisting** — **new**, а учетная запись хранения с указанным именем уже существует.
+    > Развертывание завершается сбоем, если **newOrExisting** — **new** , а учетная запись хранения с указанным именем уже существует.
 
 Попробуйте сделать другое развертывания, задав для **newOrExisting** значение "existing" и указав имеющуюся учетную запись хранения. Чтобы создать учетную запись хранения, обратитесь к [этой статье](../../storage/common/storage-account-create.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов. Для удаления группы ресурсов выберите **Попробовать**, чтобы открыть Cloud Shell. Чтобы вставить сценарий PowerShell, щелкните панель оболочки правой кнопкой мыши и выберите **Вставить**.
+Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов. Для удаления группы ресурсов выберите **Попробовать** , чтобы открыть Cloud Shell. Чтобы вставить сценарий PowerShell, щелкните панель оболочки правой кнопкой мыши и выберите **Вставить**.
 
 ```azurepowershell-interactive
 $projectName = Read-Host -Prompt "Enter the same project name you used in the last procedure"

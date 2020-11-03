@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: duau
 ms.date: 09/01/2020
-ms.openlocfilehash: dbdb6a255fdf0214103a0011f25b0a6d25014e69
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ec569781a6318062810358c2c5e17ba71efc4f71
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89299156"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92676001"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-using-an-arm-template"></a>Краткое руководство. Создание профиля Диспетчера трафика, используя шаблон ARM
 
@@ -43,7 +43,7 @@ ms.locfileid: "89299156"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Выберите **Попробовать** в следующем блоке кода, чтобы открыть Azure Cloud Shell, и следуйте отображающимся инструкциям, чтобы войти в Azure. 
+1. Выберите **Попробовать** в следующем блоке кода, чтобы открыть Azure Cloud Shell, и следуйте отображающимся инструкциям, чтобы войти в Azure.
 
     ```azurepowershell-interactive
     $projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
@@ -66,7 +66,7 @@ ms.locfileid: "89299156"
 
 1. Введите значения.
 
-    При развертывании шаблона создается профиль с двумя внешними конечными точками. **Endpoint1** использует целевую конечную точку *w<span>ww.microsoft</span>.com* с расположением **Северная Европа**. **Endpoint2** использует целевую конечную точку *d<span>ocs.microsoft</span>.com* с расположением **Центрально-южная часть США**. 
+    При развертывании шаблона создается профиль с двумя внешними конечными точками. **Endpoint1** использует целевую конечную точку `www.microsoft.com` с расположением в регионе **Северная Европа**. **Endpoint2** использует целевую конечную точку `docs.microsoft.com` с расположением в регионе **Центрально-южная часть США**.
 
     Имя группы ресурсов — это имя проекта с добавлением **rg**.
 
@@ -87,21 +87,23 @@ ms.locfileid: "89299156"
     Get-AzTrafficManagerProfile -Name ExternalEndpointExample -ResourceGroupName $resourceGroupName | Select RelativeDnsName
     ```
 
-    Скопируйте значение **RelativeDnsName**. DNS-именем в профиле Диспетчера трафика будет *<* relativednsname *>.trafficmanager.net*. 
+    Скопируйте значение **RelativeDnsName**. DNS-имя вашего профиля Диспетчера трафика: `<relativednsname>.trafficmanager.net`.
 
-1. Из локальной среды PowerShell выполните следующую команду, заменив переменную **{relativeDNSname}** на *<* relativednsname *>.trafficmanager.net*.
+1. Из локальной среды PowerShell выполните следующую команду, заменив переменную **{relativeDNSname}** на `<relativednsname>.trafficmanager.net`.
 
     ```powershell
     Resolve-DnsName -Name {relativeDNSname} | Select-Object NameHost | Select -First 1
     ```
-    Вы должны получить имя NameHost *w<span>ww.microsoft</span>.com* или *d<span>ocs.microsoft</span>.com*, в зависимости от выбранного региона.
 
-1. Чтобы проверить, можно ли разрешить доступ к другой конечной точке, отключите конечную точку для целевого объекта, полученного на последнем шаге. Замените **{endpointName}** на **endpoint1** или **endpoint2**, чтобы отключить целевой объект для *w<span>ww.microsoft</span>.com* или *d<span>ocs.microsoft</span>.com*, соответственно.
+    Вы должны получить имя NameHost `www.microsoft.com` или `docs.microsoft.com` в зависимости от ближайшего региона.
+
+1. Чтобы проверить, можно ли разрешить доступ к другой конечной точке, отключите конечную точку для целевого объекта, полученного на последнем шаге. Замените **{endpointName}** на **endpoint1** или **endpoint2** , чтобы отключить целевой объект для `www.microsoft.com` или `docs.microsoft.com` соответственно.
 
     ```azurepowershell-interactive
     Disable-AzTrafficManagerEndpoint -Name {endpointName} -Type ExternalEndpoints -ProfileName ExternalEndpointExample -ResourceGroupName $resourceGroupName -Force
     ```
-1. Снова выполните команду из шага 2 в локальной среде PowerShell. На этот раз вы должны получить другое имя NameHost для другой конечной точки. 
+
+1. Снова выполните команду из шага 2 в локальной среде PowerShell. На этот раз вы должны получить другое имя NameHost для другой конечной точки.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -115,8 +117,7 @@ Remove-AzResourceGroup -Name <your resource group name>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы узнали, как создать:
-* профиль диспетчера трафика;
+В этом кратком руководстве был создан профиль диспетчера трафика.
 
 Дополнительные сведения о маршрутизации трафика см. в руководствах по диспетчеру трафика.
 

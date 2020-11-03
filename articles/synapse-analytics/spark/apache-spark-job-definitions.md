@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
-ms.date: 04/15/2020
-ms.openlocfilehash: 143713649afd7f9e42f517713b6b2365ee1605a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/16/2020
+ms.openlocfilehash: f942525f1360a134f58f18e0ec76a84b0ceee50b
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91260280"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92738166"
 ---
 # <a name="tutorial-create-apache-spark-job-definition-in-synapse-studio"></a>Руководство по Создание определения задания Apache Spark в Synapse Studio
 
@@ -43,15 +43,15 @@ ms.locfileid: "91260280"
 
 1. Откройте [Azure Synapse Studio](https://web.azuresynapse.net/).
 
-2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/Python) и скачать **примеры файлов для python.zip**, а затем распаковать сжатый пакет и извлечь файлы **wordcount.py** и **shakespeare.txt**. 
+2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/Python) и скачать **примеры файлов для python.zip** , а затем распаковать сжатый пакет и извлечь файлы **wordcount.py** и **shakespeare.txt**. 
 
      ![примеры файлов](./media/apache-spark-job-definitions/sample-files.png)
 
-3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.py** и **shakespeare.txt** в файловую систему ADLS 2-го поколения. 
+3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы **wordcount.py** и **shakespeare.txt** в файловую систему ADLS 2-го поколения. 
 
      ![Отправка файла Python](./media/apache-spark-job-definitions/upload-python-file.png)
 
-4. Выберите центр **Разработка**, щелкните значок "+" и выберите пункт **Spark job definition** (Определение задания Spark), чтобы создать определение задания Spark. 
+4. Выберите центр **Разработка** , щелкните значок "+" и выберите пункт **Spark job definition** (Определение задания Spark), чтобы создать определение задания Spark. 
 
      ![Создание нового определения для Python](./media/apache-spark-job-definitions/create-new-definition.png)
 
@@ -75,7 +75,7 @@ ms.locfileid: "91260280"
 
      ![Выбор значения для определения задания Spark для Python](./media/apache-spark-job-definitions/create-py-definition.png)
 
-7. Выберите **Опубликовать**, чтобы сохранить определение задания Apache Spark.
+7. Выберите **Опубликовать** , чтобы сохранить определение задания Apache Spark.
 
      ![Публикация определения PY](./media/apache-spark-job-definitions/publish-py-definition.png)
 
@@ -85,15 +85,15 @@ ms.locfileid: "91260280"
 
  1. Откройте [Azure Synapse Studio](https://web.azuresynapse.net/).
 
- 2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/Scala) и скачать **примеры файлов для scala.zip**, а затем распаковать сжатый пакет и извлечь файлы **wordcount.jar** и **shakespeare.txt**. 
+ 2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/Scala) и скачать **примеры файлов для scala.zip** , а затем распаковать сжатый пакет и извлечь файлы **wordcount.jar** и **shakespeare.txt**. 
  
      ![примеры файлов scala](./media/apache-spark-job-definitions/sample-files-scala.png)
 
- 3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.jar** и **shakespeare.txt** в файловую систему ADLS 2-го поколения.
+ 3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы **wordcount.jar** и **shakespeare.txt** в файловую систему ADLS 2-го поколения.
  
      ![Подготовка структуры Scala](./media/apache-spark-job-definitions/prepare-scala-structure.png)
 
- 4. Выберите центр **Разработка**, щелкните значок "+" и выберите пункт **Spark job definition** (Определение задания Spark), чтобы создать определение задания Spark. (Пример изображения аналогичен примеру для шага 4 **Создание определения задания Apache Spark для PySpark (Python)** .)
+ 4. Выберите центр **Разработка** , щелкните значок "+" и выберите пункт **Spark job definition** (Определение задания Spark), чтобы создать определение задания Spark. (Пример изображения аналогичен примеру для шага 4 **Создание определения задания Apache Spark для PySpark (Python)** .)
 
  5. В главном окне определения задания Apache Spark из раскрывающегося списка языков выберите **Spark (Scala)** .
 
@@ -116,7 +116,7 @@ ms.locfileid: "91260280"
 
      ![Выбор значения для определения задания Spark для Scala](./media/apache-spark-job-definitions/create-scala-definition.png)
 
- 7. Выберите **Опубликовать**, чтобы сохранить определение задания Apache Spark.
+ 7. Выберите **Опубликовать** , чтобы сохранить определение задания Apache Spark.
 
       ![Публикация определения Scala](./media/apache-spark-job-definitions/publish-scala-definition.png)
 
@@ -125,15 +125,15 @@ ms.locfileid: "91260280"
 В этом разделе рассказывается о том, как создать определение задания Apache Spark для .NET Spark (C# или F#).
  1. Откройте [Azure Synapse Studio](https://web.azuresynapse.net/).
 
- 2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/DotNET) и скачать **примеры файлов для dotnet.zip**, а затем распаковать сжатый пакет и извлечь файлы **wordcount.zip** и **shakespeare.txt**. 
+ 2. Вы можете перейти на страницу [примеров файлов для создания определений заданий Apache Spark](https://github.com/Azure-Samples/Synapse/tree/master/Spark/DotNET) и скачать **примеры файлов для dotnet.zip** , а затем распаковать сжатый пакет и извлечь файлы **wordcount.zip** и **shakespeare.txt**. 
 
      ![пример DotNet](./media/apache-spark-job-definitions/sample-dotnet.png)
 
- 3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.zip** и **shakespeare.txt** в файловую систему ADLS 2-го поколения.
+ 3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы **wordcount.zip** и **shakespeare.txt** в файловую систему ADLS 2-го поколения.
  
      ![Подготовка структуры .NET](./media/apache-spark-job-definitions/prepare-dotnet-structure.png)
 
- 4. Выберите центр **Разработка**, щелкните значок "+" и выберите пункт **Spark job definition** (Определение задания Spark), чтобы создать определение задания Spark. (Пример изображения аналогичен примеру для шага 4 **Создание определения задания Apache Spark для PySpark (Python)** .)
+ 4. Выберите центр **Разработка** , щелкните значок "+" и выберите пункт **Spark job definition** (Определение задания Spark), чтобы создать определение задания Spark. (Пример изображения аналогичен примеру для шага 4 **Создание определения задания Apache Spark для PySpark (Python)** .)
 
  5. В главном окне определения задания Apache Spark из раскрывающегося списка языков выберите **.NET Spark (C#/F#)** .
 
@@ -156,7 +156,7 @@ ms.locfileid: "91260280"
 
      ![Выбор значения для определения задания Spark для .NET](./media/apache-spark-job-definitions/create-dotnet-definition.png)
 
- 7. Выберите **Опубликовать**, чтобы сохранить определение задания Apache Spark.
+ 7. Выберите **Опубликовать** , чтобы сохранить определение задания Apache Spark.
 
       ![Публикация определения .NET](./media/apache-spark-job-definitions/publish-dotnet-definition.png)
 
@@ -169,7 +169,7 @@ ms.locfileid: "91260280"
 
       ![Открытие определения задания Spark для отправки ](./media/apache-spark-job-definitions/open-spark-definition.png)
 
- 2. Нажмите кнопку **Отправить**, чтобы отправить проект в выбранный пул Apache Spark. Вы можете щелкнуть вкладку **Spark monitoring URL** (URL-адрес мониторинга Spark), чтобы просмотреть LogQuery приложения Apache Spark.
+ 2. Нажмите кнопку **Отправить** , чтобы отправить проект в выбранный пул Apache Spark. Вы можете щелкнуть вкладку **Spark monitoring URL** (URL-адрес мониторинга Spark), чтобы просмотреть LogQuery приложения Apache Spark.
 
     ![Нажатие кнопки "Отправить" для отправки определения задания Spark](./media/apache-spark-job-definitions/submit-spark-definition.png)
 
@@ -187,7 +187,7 @@ ms.locfileid: "91260280"
 
 ### <a name="scenario-3-check-output-file"></a>Сценарий 3. Проверка выходного файла
 
- 1. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** (hozhaobdbj), откройте созданную ранее папку **результатов**, в которой можно просмотреть, созданы ли выходные данные.
+ 1. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** (hozhaobdbj), откройте созданную ранее папку **результатов** , в которой можно просмотреть, созданы ли выходные данные.
 
      ![Просмотр выходного файла](./media/apache-spark-job-definitions/view-output-file.png)
 

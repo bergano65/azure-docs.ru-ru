@@ -5,15 +5,15 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 05/04/2020
+ms.date: 10/26/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: efb32631c5ee1eedece6d2a06b94702b602ed418
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 95c55f92304ddd3ec2b3d44d4f07fb64ab815c6d
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86276126"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92756041"
 ---
 ### <a name="which-regions-are-available"></a><a name="regions"></a>Какие регионы доступны?
 
@@ -45,6 +45,10 @@ RDP и SSH — протоколы на основе использования.
 
 Сейчас поддерживаются только операции копирования и вставки текста. Такие операции, как копирование файлов, не поддерживаются. Вы можете поделиться своими отзывами о новых возможностях на странице, посвященной [Бастиону Azure](https://feedback.azure.com/forums/217313-networking?category_id=367303).
 
+### <a name="does-bastion-hardening-work-with-aadj-vm-extension-joined-vms"></a><a name="aadj"></a>Работает ли усиление защиты с виртуальными машинами, присоединенными с помощью расширения AADJ?
+
+Эта функция не работает с компьютерами, присоединенными с помощью расширения AADJ для виртуальных машин, для пользователей Azure AD. Дополнительные сведения см. в разделе [Использование виртуальных машин Windows в Azure и Azure AD](../articles/active-directory/devices/howto-vm-sign-in-azure-ad-windows.md#requirements).
+
 ### <a name="which-browsers-are-supported"></a><a name="browsers"></a>Какие браузеры поддерживаются?
 
 Используйте браузер Microsoft Edge или Google Chrome в ОС Windows. Для Apple Mac используйте браузер Google Chrome. ОС Windows и Mac также поддерживают Microsoft Edge Chromium.
@@ -66,7 +70,7 @@ RDP и SSH — протоколы на основе использования.
 Дополнительные сведения см. на [странице с расценками](https://aka.ms/BastionHostPricing).
 
 ### <a name="does-azure-bastion-require-an-rds-cal-for-administrative-purposes-on-azure-hosted-vms"></a><a name="rdscal"></a>Требуется ли для службы "Бастион Azure" клиентская лицензия RDS для администрирования на размещенных в Azure виртуальных машинах?
-Нет, для предоставления службе "Бастион Azure" доступа к виртуальным машинам Windows Server [клиентская лицензия RDS](https://www.microsoft.com/en-us/p/windows-server-remote-desktop-services-cal/dg7gmgf0dvsv?activetab=pivot:overviewtab) не нужна при использовании исключительно для администрирования.
+Нет, для предоставления службе "Бастион Azure" доступа к виртуальным машинам Windows Server [клиентская лицензия RDS](https://www.microsoft.com/p/windows-server-remote-desktop-services-cal/dg7gmgf0dvsv?activetab=pivot:overviewtab) не нужна при использовании исключительно для администрирования.
 
 ### <a name="what-keyboard-layouts-are-supported-during-the-bastion-remote-session"></a><a name="keyboard"></a>Какие раскладки клавиатуры поддерживаются во время удаленного сеанса с использованием службы "Бастион"?
 

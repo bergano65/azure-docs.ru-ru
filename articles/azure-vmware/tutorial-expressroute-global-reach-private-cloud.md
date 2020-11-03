@@ -3,18 +3,18 @@ title: Учебник по настройке пиринга между лока
 description: Создание пиринга ExpressRoute Global Reach к частному облаку в решении Azure VMware.
 ms.topic: tutorial
 ms.date: 09/21/2020
-ms.openlocfilehash: 9de6cbe177ac8d2ca4957e80c7ca1072a0d7985e
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 4d10972a693f7c4c3ae25a5bc986f6c15e978294
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91948312"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92912503"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Руководство по Настройка пиринга между локальной средой и частным облаком
 
 ExpressRoute Global Reach подключает локальную среду к частному облаку решения Azure VMware. Подключение ExpressRoute Global Reach устанавливается между локальными средами и каналом ExpressRoute частного облака с имеющимся подключением ExpressRoute. 
 
-Для канала ExpressRoute, используемого при [настройке сети между частным облаком и Azure](tutorial-configure-networking.md), необходимо создать ключи авторизации и использовать их при пиринге со шлюзами ExpressRoute или другими каналами ExpressRoute с помощью Global Reach. Вы уже использовали один ключ авторизации из канала ExpressRoute, поэтому в этом учебнике для пиринга с каналом ExpressRoute локальной среды вам необходимо будет создать другой.
+Для канала ExpressRoute, используемого при [настройке сети между частным облаком и Azure](tutorial-configure-networking.md), необходимо создать и использовать ключи авторизации.  Вы уже использовали один ключ авторизации из канала ExpressRoute, поэтому в этом учебнике для пиринга с каналом ExpressRoute локальной среды вам необходимо будет создать другой.
 
 В этом руководстве описано следующее:
 
@@ -30,33 +30,33 @@ ExpressRoute Global Reach подключает локальную среду к 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Установленное подключение к частному облаку решения Azure VMware и из него с помощью канала ExpressRoute, подключенного к шлюзу ExpressRoute в виртуальной сети Azure (VNet) — _канал 2_ из процедур пиринга.  
-1. Отдельный работоспособный канал ExpressRoute, используемый для подключения локальных сред к Azure — _канал 1_ с точки зрения процедур пиринга.
-1. [блок неперекрывающихся сетевых адресов](../expressroute/expressroute-routing.md#ip-addresses-used-for-peerings) /29 для пиринга ExpressRoute Global Reach.
+- Установленное подключение к частному облаку решения Azure VMware и из него с помощью канала ExpressRoute, подключенного к шлюзу ExpressRoute в виртуальной сети Azure (VNet) — _канал 2_ из процедур пиринга.  
+- Отдельный работоспособный канал ExpressRoute, используемый для подключения локальных сред к Azure — _канал 1_ с точки зрения процедур пиринга.
+- [блок неперекрывающихся сетевых адресов](../expressroute/expressroute-routing.md#ip-addresses-used-for-peerings) /29 для пиринга ExpressRoute Global Reach.
 
 > [!TIP]
-> В рамках этих предварительных требований считается, что канал ExpressRoute локальной среды называется _канал 1_, а канал ExpressRoute частного облака находится в другой подписке и обозначается как _канал 2_. 
+> В рамках этих предварительных требований считается, что канал ExpressRoute локальной среды называется _канал 1_ , а канал ExpressRoute частного облака находится в другой подписке и обозначается как _канал 2_. 
 
 
 ## <a name="create-an-expressroute-authorization-key-in-the-private-cloud"></a>Создание ключа авторизации ExpressRoute в частном облаке
 
-1. В частном облаке в разделе **Обзор**в разделе "Управление" выберите **Подключение > ExpressRoute > Request an authorization key** (Запрос ключа авторизации).
+1. В частном облаке в разделе **Обзор** в разделе "Управление" выберите **Подключение > ExpressRoute > Request an authorization key** (Запрос ключа авторизации).
 
    :::image type="content" source="media/expressroute-global-reach/start-request-auth-key.png" alt-text="Выберите &quot;Подключение&quot; > &quot;ExpressRoute&quot; > &quot;Запросить ключ авторизации&quot; для отправки нового запроса.":::
 
 2. Введите имя ключа авторизации и нажмите **Создать**. 
 
-   :::image type="content" source="media/expressroute-global-reach/create-global-reach-auth-key.png" alt-text="Выберите &quot;Подключение&quot; > &quot;ExpressRoute&quot; > &quot;Запросить ключ авторизации&quot; для отправки нового запроса.":::
+   :::image type="content" source="media/expressroute-global-reach/create-global-reach-auth-key.png" alt-text="Выбор кнопки &quot;Создать&quot; для создания нового ключа авторизации":::
 
    После создания новый ключ появится в списке ключей авторизации для частного облака. 
 
-   :::image type="content" source="media/expressroute-global-reach/show-global-reach-auth-key.png" alt-text="Выберите &quot;Подключение&quot; > &quot;ExpressRoute&quot; > &quot;Запросить ключ авторизации&quot; для отправки нового запроса.":::
+   :::image type="content" source="media/expressroute-global-reach/show-global-reach-auth-key.png" alt-text="Проверка наличия нового ключа авторизации в списке ключей для частного облака ":::
 
 3. Запишите ключ авторизации и идентификатор ExpressRoute вместе с блоком адресов /29. Вы будете использовать их на следующем шаге для завершения настройки пиринга. 
 
 ## <a name="peer-private-cloud-to-on-premises-using-authorization-key"></a>Настройка пиринга между частным облаком и локальными средами с помощью ключа авторизации
 
-Теперь, когда вы создали ключ авторизации для канала ExpressRoute частного облака, вы можете настроить его пиринг с каналом ExpressRoute локальной среды.  С точки зрения локального канала ExpressRoute пиринг выполняется на [портале Azure](#azure-portal-method) или с помощью [Azure CLI в Cloud Shell](#azure-cli-in-a-cloud-shell-method). Используя любой из этих методов, вы будете использовать идентификатор ресурса и ключ авторизации для канала ExpressRoute частного облака, созданный на предыдущих шагах, чтобы завершить пиринг.
+Теперь, когда вы создали ключ авторизации для канала ExpressRoute частного облака, вы можете настроить его пиринг с каналом ExpressRoute локальной среды.  С точки зрения локального канала ExpressRoute пиринг выполняется на [портале Azure](#azure-portal-method) или с помощью [Azure CLI в Cloud Shell](#azure-cli-in-a-cloud-shell-method). Оба этих метода предусматривают использование идентификатора ресурса и ключа авторизации для канала ExpressRoute частного облака, чтобы завершить пиринг.
 
 ### <a name="azure-portal-method"></a>Метод портала Azure
 
@@ -64,9 +64,9 @@ ExpressRoute Global Reach подключает локальную среду к 
 
 1. На странице **Обзор** частного облака в разделе "Управление" выберите **Подключение > ExpressRoute Global Reach > Добавить**.
 
-   :::image type="content" source="./media/expressroute-global-reach/expressroute-global-reach-tab.png" alt-text="Выберите &quot;Подключение&quot; > &quot;ExpressRoute&quot; > &quot;Запросить ключ авторизации&quot; для отправки нового запроса.":::
+   :::image type="content" source="./media/expressroute-global-reach/expressroute-global-reach-tab.png" alt-text="В меню выберите &quot;Подключение&quot;, перейдите на вкладку &quot;ExpressRoute Global Reach&quot;, а затем выберите &quot;Добавить&quot;.":::
 
-1. Вы можете создать локальное облачное подключение, выполнив одно из следующих действий.
+1. Вы можете создать локальное облачное подключение, выбрав один из следующих вариантов.
 
    - Выберите в списке канал ExpressRoute.
    - Если у вас есть идентификатор канала, скопируйте и вставьте его.
@@ -76,11 +76,11 @@ ExpressRoute Global Reach подключает локальную среду к 
 >[!TIP]
 >Вы можете удалить или отключить подключение в списке, выбрав элемент **Еще**.  
 >
-> :::image type="content" source="./media/expressroute-global-reach/on-premises-connection-disconnect.png" alt-text="Выберите &quot;Подключение&quot; > &quot;ExpressRoute&quot; > &quot;Запросить ключ авторизации&quot; для отправки нового запроса.":::
+> :::image type="content" source="./media/expressroute-global-reach/on-premises-connection-disconnect.png" alt-text="Отключение или удаление локального подключения":::
 
 ### <a name="azure-cli-in-a-cloud-shell-method"></a>Метод Azure CLI в Cloud Shell
 
-[Команды CLI](../expressroute/expressroute-howto-set-global-reach-cli.md) дополнены подробными сведениями и примерами, которые помогут настроить пиринг ExpressRoute Global Reach между локальными средами и частным облаком решения Azure VMware.  
+[Команды CLI](../expressroute/expressroute-howto-set-global-reach-cli.md) дополнены подробными сведениями и примерами, которые помогут настроить пиринг ExpressRoute Global Reach между локальными средами и частным облаком Решения Azure VMware.  
 
 > [!TIP]  
 > Для краткости выходных данных команд Azure CLI в этих инструкциях для выполнения запроса JMESPath можно использовать аргумент [`–query`, позволяющий отобразить только необходимые результаты](/cli/azure/query-azure-cli).
@@ -88,15 +88,15 @@ ExpressRoute Global Reach подключает локальную среду к 
 
 1. Войдите на портал Azure, используя ту же подписку, к которой относится канал ExpressRoute локальный среды, и откройте Cloud Shell. В качестве оболочки оставьте Bash.
  
-   :::image type="content" source="media/expressroute-global-reach/open-cloud-shell.png" alt-text="Выберите &quot;Подключение&quot; > &quot;ExpressRoute&quot; > &quot;Запросить ключ авторизации&quot; для отправки нового запроса.":::
+   :::image type="content" source="media/expressroute-global-reach/open-cloud-shell.png" alt-text="Вход на портал Azure и открытие Cloud Shell":::
  
-2. В командной строке введите команду Azure CLI, чтобы создать пиринг, используя соответствующие сведения и идентификатор ресурса, ключ авторизации и блок сетевых адресов CIDR /29. 
+2. Введите команду Azure CLI, чтобы создать пиринг. Используйте конкретные сведения и идентификатор ресурса, ключ авторизации и сетевой блок CIDR /29. 
 
-   Ниже приведен пример используемой команды и выходных данных, свидетельствующих об успешности пиринга. Пример команды основан на команде, используемой на [шаге 3 раздела "Настройка подключения между каналами ExpressRoute в разных подписках Azure"](../expressroute/expressroute-howto-set-global-reach-cli.md#enable-connectivity-between-expressroute-circuits-in-different-azure-subscriptions).
+   На изображении приведен пример используемой команды и выходных данных, свидетельствующих об успешности пиринга. Пример команды основан на команде, используемой на [шаге 3 раздела "Настройка подключения между каналами ExpressRoute в разных подписках Azure"](../expressroute/expressroute-howto-set-global-reach-cli.md#enable-connectivity-between-expressroute-circuits-in-different-azure-subscriptions).
 
-   :::image type="content" source="media/expressroute-global-reach/azure-command-with-results.png" alt-text="Выберите &quot;Подключение&quot; > &quot;ExpressRoute&quot; > &quot;Запросить ключ авторизации&quot; для отправки нового запроса.":::
+   :::image type="content" source="media/expressroute-global-reach/azure-command-with-results.png" alt-text="Создание пиринга ExpressRoute Global Reach с помощью команды Azure CLI в Cloud Shell":::
  
-   Теперь вы сможете подключаться из локальных сред к частному облаку при помощи пиринга ExpressRoute Global Reach.
+   Теперь можно подключаться из локальных сред к частному облаку при помощи пиринга ExpressRoute Global Reach.
 
 > [!TIP]
 > Вы можете удалить только что созданный пиринг, выполнив инструкции в разделе [Отключение подключения между локальными сетями](../expressroute/expressroute-howto-set-global-reach-cli.md#disable-connectivity-between-your-on-premises-networks).
@@ -104,7 +104,7 @@ ExpressRoute Global Reach подключает локальную среду к 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как создать второй ключ авторизации для канала ExpressRoute частного облака и включить пиринг ExpressRoute Global Reach из локального облака в частное. 
+Из этого учебника вы узнали, как создать второй ключ авторизации для канала ExpressRoute частного облака. Вы также узнали, как включить пиринг ExpressRoute Global Reach подключения из локальной среды к частному облаку. 
 
 Перейдите к следующему руководству, чтобы узнать, как развернуть и настроить решение VMware HCX для частного облака решения Azure VMware.
 

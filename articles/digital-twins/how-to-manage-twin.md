@@ -7,16 +7,16 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0851838b89a9a2bdc54526ac40014f645f3d88a2
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: f8eae6381a438f6820f525a4d66cb5dc388eefb0
+ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146592"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93280383"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
 
-Сущности в вашей среде представлены [цифровым двойников](concepts-twins-graph.md). Управление цифровым двойников может включать создание, изменение и удаление. Для выполнения этих операций можно использовать [**API дигиталтвинс**](/rest/api/digital-twins/dataplane/twins), [пакет SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true)или [Azure Digital двойников CLI](how-to-use-cli.md).
+Сущности в вашей среде представлены [цифровым двойников](concepts-twins-graph.md). Управление цифровым двойников может включать создание, изменение и удаление. Для выполнения этих операций можно использовать [**API дигиталтвинс**](/rest/api/digital-twins/dataplane/twins), [пакет SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)или [Azure Digital двойников CLI](how-to-use-cli.md).
 
 Эта статья посвящена управлению цифровыми двойников; сведения о работе со связями и [графом двойника](concepts-twins-graph.md) в целом см. в разделе [*руководство. Управление диаграммой двойника с помощью связей*](how-to-manage-graph.md).
 
@@ -87,7 +87,7 @@ Console.WriteLine("The twin is created successfully");
 ```
 
 >[!NOTE]
-> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateOrReplaceDigitalTwinAsync()` вызов. Пример:
+> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateOrReplaceDigitalTwinAsync()` вызов. Например:
 >
 >```csharp
 >twin.Id = "myRoomId";
@@ -264,8 +264,8 @@ await client.UpdateDigitalTwinAsync(twin_Id, updateTwinData);
 
 Эта операция будет выполнена только в том случае, если двойника, измененный исправлением, соответствует новой модели. 
 
-Рассмотрим следующий пример.
-1. Представьте себе цифровой двойника с моделью *foo_old* . *foo_old* определяет требуемое свойство *массы* .
+Рассмотрим следующий пример:
+1. Представьте себе цифровой двойника с моделью *foo_old*. *foo_old* определяет требуемое свойство *массы*.
 2. Новая модель *foo_new* определяет масса свойств и добавляет новую *температуру* требуемого свойства.
 3. После установки исправления цифровое двойника должно иметь свойство масса и температура. 
 

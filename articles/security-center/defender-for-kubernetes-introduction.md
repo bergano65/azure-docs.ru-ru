@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: dd92e1529b889671bc29939f7e9611eceac7ee20
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: a815295c4f2ab78cbd3aff82949d7c28197afd82
+ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370514"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92791925"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Общие сведения об Azure Defender для Kubernetes
 
@@ -20,7 +20,7 @@ ms.locfileid: "92370514"
 
 В комплексе Центр безопасности Azure и AKS представляют собой лучшее из ориентированных на облако решений по обеспечению безопасности Kubernetes. Они обеспечивают усиление защиты среды, защиту рабочих нагрузок и защиту во время выполнения, как описано ниже.
 
-Для обнаружения угроз в кластерах Kubernetes включите **Azure Defender для Kubernetes** .
+Для обнаружения угроз в кластерах Kubernetes включите **Azure Defender для Kubernetes**.
 
 Обнаружение угроз на уровне узла доступно для узлов AKS в Linux при включенном [Azure Defender для серверов](defender-for-servers-introduction.md).
 
@@ -114,5 +114,5 @@ AKS — это управляемая служба, а так как агент
 Связанные материалы см. в следующих статьях: 
 
 - [Включение Azure Defender](security-center-pricing.md)
-- [Экспорт оповещений в Azure Sentinel или SIEM стороннего производителя](continuous-export.md)
+- [Потоковая передача оповещений в решение SIEM, SOAR или решение для управления ИТ-услугами](export-to-siem.md)
 - [Справочная таблица предупреждений](alerts-reference.md)

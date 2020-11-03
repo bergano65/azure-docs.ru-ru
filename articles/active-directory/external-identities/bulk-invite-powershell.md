@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89e24d9ff76184c36aee5c14f15f9713b30f6f1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e047f11cc243ab1a36a8c61dd1b229d9e115115
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87907058"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92892491"
 ---
 # <a name="tutorial-use-powershell-to-bulk-invite-azure-ad-b2b-collaboration-users"></a>Руководство по Массовое приглашение пользователей службы совместной работы Azure AD B2Bс помощью PowerShell
 
@@ -63,7 +63,7 @@ Get-Module -ListAvailable AzureAD*
    Install-Module AzureADPreview
    ```
 
-Вы можете получить запрос на установку модуля из ненадежного репозитория. Это происходит, если вы ранее не устанавливали репозиторий PSGallery в качестве доверенного. Нажмите клавишу **Y**, чтобы установить модуль.
+Вы можете получить запрос на установку модуля из ненадежного репозитория. Это происходит, если вы ранее не устанавливали репозиторий PSGallery в качестве доверенного. Нажмите клавишу **Y** , чтобы установить модуль.
 
 ### <a name="get-test-email-accounts"></a>Получение тестовых учетных записей электронной почты
 
@@ -116,7 +116,7 @@ foreach ($email in $invitations)
 
 Этот сценарий отправляет приглашение на электронные адреса, указанные в файле invitations.csv. Вы должны увидеть результат, аналогичный приведенному ниже для каждого пользователя:
 
-![Выходные данные PowerShell с запросом, ожидающим подтверждения пользователя](media/tutorial-bulk-invite/B2BBulkImport.png)
+![Снимок экрана: выходные данные PowerShell с запросом, ожидающим подтверждения пользователя.](media/tutorial-bulk-invite/B2BBulkImport.png)
 
 ## <a name="verify-users-exist-in-the-directory"></a>Проверка существования пользователей в каталоге
 
@@ -126,7 +126,7 @@ foreach ($email in $invitations)
  Get-AzureADUser -Filter "UserType eq 'Guest'"
 ```
 
-Вы должны увидеть приглашенных пользователей в списке с именем участника-пользователя (UPN) в формате *emailaddress*#EXT#\@*domain*. Например *lstokes_fabrikam.com#EXT#\@contoso.onmicrosoft.com*, где contoso.onmicrosoft.com — это организация, из которой отправляется приглашение.
+Вы должны увидеть приглашенных пользователей в списке с именем участника-пользователя (UPN) в формате *emailaddress* #EXT#\@*domain*. Например *lstokes_fabrikam.com#EXT#\@contoso.onmicrosoft.com* , где contoso.onmicrosoft.com — это организация, из которой отправляется приглашение.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

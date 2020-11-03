@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: overview
 ms.date: 09/15/2020
 ms.author: memildin
-ms.openlocfilehash: 63b93db314701d281f3f4fff195671f43cdb9dbc
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 0b80db15e4fafd5e5c63a4194039fbeca21d429b
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340892"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92900402"
 ---
 # <a name="additional-threat-protections-in-azure-security-center"></a>Дополнительные средства защиты от угроз в Центре безопасности Azure
 Кроме встроенных [средств защиты Azure Defender](azure-defender.md), Центр безопасности Azure предоставляет описанные ниже возможности защиты от угроз.
@@ -32,7 +32,6 @@ ms.locfileid: "92340892"
 В некоторых конфигурациях сети Центр безопасности не может создавать оповещения о подозрительных действиях в сети. Чтобы Центр безопасности создавал сетевые оповещения, убедитесь, что:
 - у виртуальной машины есть общедоступный IP-адрес (или она находится в пределах подсистемы балансировки нагрузки с общедоступным IP-адресом);
 - исходящий трафик сети виртуальной машины не блокируется внешним решением IDS;
-- виртуальной машине был назначен один и тот же IP-адрес в течение всего времени, когда происходил подозрительный обмен данными (это также относится к виртуальным машинам, созданным в составе управляемой службы, например AKS или Databricks).
 
 Список оповещений на уровне сети Azure см. в [справочной таблице оповещений](alerts-reference.md#alerts-azurenetlayer).
 
@@ -101,4 +100,4 @@ ms.locfileid: "92340892"
 * [Ссылочная таблица для всех оповещений Центра безопасности Azure](alerts-reference.md)
 * [Оповещения безопасности в Центре безопасности Azure](security-center-alerts-overview.md)
 * [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)
-* [Экспорт оповещений системы безопасности и рекомендаций (предварительная версия)](continuous-export.md)
+* [Непрерывный экспорт данных Центра безопасности](continuous-export.md)

@@ -10,12 +10,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 716759fd6542cd473c236992ac88b69bfe5d0a66
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: a268cd6b2fa3da6846554e3d1b170298abec7f18
+ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148016"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93279407"
 ---
 # <a name="show-the-configuration-of-an-arc-enabled-postgresql-hyperscale-server-group"></a>Отображение конфигурации PostgreSQL, включенной в группу серверов масштабирования.
 
@@ -36,7 +36,7 @@ ms.locfileid: "92148016"
 kubectl get postgresqls [-n <namespace name>]
 ```
 
-Выходные данные этой команды показывают список созданных групп серверов. Для каждого из них указывается число модулей Pod. Пример:
+Выходные данные этой команды показывают список созданных групп серверов. Для каждого из них указывается число модулей Pod. Например:
 
 ```output
 NAME                                             STATE   READY-PODS   EXTERNAL-ENDPOINT   AGE
@@ -54,7 +54,7 @@ postgresql-12.arcdata.microsoft.com/postgres02   Ready   3/3          10.0.0.4:3
 kubectl get pods [-n <namespace name>]
 ```
 
-Он возвращает список модулей Pod. Вы увидите модули, используемые группами серверов, на основе имен, присвоенных этим группам серверов. Пример:
+Он возвращает список модулей Pod. Вы увидите модули, используемые группами серверов, на основе имен, присвоенных этим группам серверов. Например:
 
 ```console 
 NAME                 READY   STATUS    RESTARTS   AGE
@@ -108,7 +108,7 @@ kubectl get pvc [-n <namespace name>]
 - `data-`... — это PVC, используемый для файлов данных.
 - `logs-`... — это PVC, используемый для файлов журналов транзакций и WAL.
 
-Пример:
+Например:
 
 ```output
 NAME                                            STATUS   VOLUME              CAPACITY   ACCESS MODES   STORAGECLASS    AGE
@@ -183,7 +183,7 @@ logs-few7hh0k4npx9phsiobdc3hq-postgres01-2      Bound    local-pv-5ccd02e6   193
 kubectl describe <CRD name>/<server group name> [-n <namespace name>]
 ```
 
-Пример:
+Например:
 
 ```console
 kubectl describe postgresql-12/postgres02
@@ -210,7 +210,7 @@ Spec:
       Name:  citus
       Name:  pg_stat_statements
   Scale:
-    Shards:  2
+    Workers:  2
   Scheduling:
     Default:
       Resources:
@@ -236,20 +236,50 @@ Status:
 Events:               <none>
 ```
 
+>[!NOTE]
+>До выпуска 2020 октября `Workers` существовали `Shards` в предыдущем примере. Дополнительные сведения см. в разделе [заметки о выпуске Azure Arc Data Services (Предварительная версия)](release-notes.md) .
+
 Давайте выберем некоторые конкретные интересующие моменты в описании, приведенном `servergroup` выше. Что сообщает нам об этой группе серверов?
 
 - Версия postgres версии 12. 
-   > Особого         `postgresql-12`
+   > ```json
+   > Kind:         `postgresql-12`
+   > ```
 - Он был создан в течение месяца 2020 августа:
-   > Отметка времени создания:  `2020-08-31T21:01:07Z`
+   > ```json
+   > Creation Timestamp:  `2020-08-31T21:01:07Z`
+   > ```
 - В этой группе серверов создано два расширения postgres: `citus` и `pg_stat_statements`
-   > Engine: Extensions: Name:  `citus` Имя:  `pg_stat_statements`
+   > ```json
+   > Engine:
+   >    Extensions:
+   >      Name:  `citus`
+   >      Name:  `pg_stat_statements`
+   > ```
 - В ней используются два рабочих узла
-   > Масштабирование: сегменты:  `2`
+   > ```json
+   > Scale:
+   >    Workers:  `2`
+   > ```
 - Для каждого узла гарантируется использование 1 ЦП/Виртуальное ядро и 512 МБ ОЗУ. Он будет использовать более 4 ЦП/виртуальных ядер и 1024 МБ памяти:
-   > Планирование: по умолчанию: Resources: Limits: ЦП: 4 память: запросы 1024Mi: ЦП: 1 память: 512Mi
+   > ```json
+   > Scheduling:
+   >    Default: 
+   >      Resources:
+   >        Limits:
+   >          Cpu:     4
+   >          Memory:  1024Mi
+   >        Requests:
+   >          Cpu:     1
+   >          Memory:  512Mi
+   > ```
  - Она доступна для запросов и не имеет проблем. Все узлы работают и выполняются:
-   > Состояние:... Готовые модули Pod: состояние 3/3: готово
+   > ```json
+   > Status:
+   >  ...
+   >  Ready Pods:         3/3
+   >  State:              Ready
+   > ```
 
 **С аздата:**
 
@@ -259,7 +289,7 @@ Events:               <none>
 azdata arc postgres server show -n <server group name>
 ```
 
-Пример:
+Например:
 
 ```console
 azdata arc postgres server show -n postgres02
@@ -292,7 +322,7 @@ azdata arc postgres server show -n postgres02
       ]
     },
     "scale": {
-      "shards": 2
+      "workers": 2
     },
     "scheduling": {
       "default": {

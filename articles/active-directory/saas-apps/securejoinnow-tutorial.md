@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/07/2019
 ms.author: jeedes
-ms.openlocfilehash: e6c4cb506d4a218a22a5dd5e92fe09466e0cb0f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 024de5acfbc4e6c4aaa510de84c0bceb6bde2b3d
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88543175"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92672965"
 ---
 # <a name="tutorial-integrate-securew2-joinnow-connector-with-azure-active-directory"></a>Руководство по Интеграция SecureW2 JoinNow Connector с Azure Active Directory
 
@@ -26,7 +26,7 @@ ms.locfileid: "88543175"
 * включение автоматического входа пользователей в SecureW2 JoinNow Connector с использованием учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -89,7 +89,7 @@ ms.locfileid: "88543175"
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SecureW2 JoinNow Connector](mailto:support@securew2.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных** и нажмите кнопку **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных** и нажмите кнопку **Скачать** , чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
@@ -99,12 +99,12 @@ ms.locfileid: "88543175"
 
 ### <a name="configure-securew2-joinnow-connector-sso"></a>Настройка единого входа в SecureW2 JoinNow Connector
 
-Чтобы настроить единый вход на стороне **SecureW2 JoinNow Connector**, отправьте в [службу поддержки SecureW2 JoinNow Connector](mailto:support@securew2.com) скачанный **XML-файл метаданных** и соответствующие URL-адреса, скопированные на портале Azure. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **SecureW2 JoinNow Connector** , отправьте в [службу поддержки SecureW2 JoinNow Connector](mailto:support@securew2.com) скачанный **XML-файл метаданных** и соответствующие URL-адреса, скопированные на портале Azure. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
@@ -116,35 +116,34 @@ ms.locfileid: "88543175"
 
 В этом разделе описано, как разрешить пользователю B.Simon использовать единый вход Azure, предоставив этому пользователю доступ к SecureW2 JoinNow Connector.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения** , а затем — **Все приложения**.
 1. В списке приложений выберите **SecureW2 JoinNow Connector**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Выберите **Добавить пользователя** , а в диалоговом окне **Добавление назначения**  выберите **Пользователи и группы**.
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ### <a name="create-securew2-joinnow-connector-test-user"></a>Создание тестового пользователя SecureW2 JoinNow Connector
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении SecureW2 JoinNow Connector. Обратитесь в  [службу поддержки SecureW2 JoinNow Connector](mailto:support@securew2.com), чтобы добавить пользователей на платформу SecureW2 JoinNow Connector. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении SecureW2 JoinNow Connector. Чтобы добавить пользователей на платформу SecureW2 JoinNow Connector, обратитесь в [службу технической поддержки SecureW2 JoinNow Connector](mailto:support@securew2.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку SecureW2 JoinNow Connector на панели доступа, вы автоматически войдете в приложение SecureW2 JoinNow Connector, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку SecureW2 JoinNow Connector на панели доступа, вы автоматически войдете в приложение SecureW2 JoinNow Connector, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)

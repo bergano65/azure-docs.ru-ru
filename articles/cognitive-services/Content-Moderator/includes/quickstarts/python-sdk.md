@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 09/15/2020
 ms.custom: cog-serv-seo-aug-2020
 ms.author: pafarley
-ms.openlocfilehash: bea422514b109f446ee30633b0074730f9b89af0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 64a9143e7a425b35e37f23b233c91b8e7bb70169
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91332602"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755445"
 ---
 Приступайте к работе с клиентской библиотекой Azure Content Moderator для Python. Выполните приведенные здесь действия, чтобы установить пакет PiPy и протестировать пример кода для выполнения базовых задач. 
 
@@ -24,11 +24,11 @@ Content Moderator — это служба ИИ, позволяющая упра
 
 Клиентскую библиотеку Content Moderator для Python можно использовать для следующих задач:
 
-* [модерация текста](#moderate-text);
-* [использование пользовательского списка терминов](#use-a-custom-terms-list);
-* [модерация изображений](#moderate-images);
-* [использование пользовательского списка изображений](#use-a-custom-image-list);
-* [создание проверки](#create-a-review).
+* Модерация текста
+* Использование пользовательского списка терминов
+* Модерация изображений
+* Использование пользовательского списка изображений
+* Создание проверки
 
 [Справочная документация](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/contentmoderator?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-contentmoderator) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-contentmoderator/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples)
 
@@ -36,35 +36,38 @@ Content Moderator — это служба ИИ, позволяющая упра
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 * [Python 3.x](https://www.python.org/)
+* Получив подписку Azure, <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator"  title="Создание ресурса Content Moderator"  target="_blank">создайте ресурс Content Moderator <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. Дождитесь, пока закончится развертывание, и нажмите кнопку **Перейти к ресурсу**.
+    * Для подключения приложения к Content Moderator потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
-## <a name="create-a-content-moderator-resource"></a>Создание ресурса Content Moderator
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Content Moderator с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Кроме того, вы можете сделать следующее:
+## <a name="setting-up"></a>Настройка
 
-* Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
+### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
-После получения ключа из своего ресурса [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `CONTENT_MODERATOR_SUBSCRIPTION_KEY` и `CONTENT_MODERATOR_ENDPOINT` соответственно.
- 
-## <a name="create-a-new-python-script"></a>Создание скрипта Python
+После установки Python вы можете установить клиентскую библиотеку Content Moderator с помощью следующей команды:
+
+```console
+pip install --upgrade azure-cognitiveservices-vision-contentmoderator
+```
+
+### <a name="create-a-new-python-application"></a>Создание приложения Python
 
 Создайте скрипт Python и откройте его в предпочитаемом редакторе или интегрированной среде разработки. В начало файла добавьте следующие инструкции `import`.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/ContentModerator/ContentModeratorQuickstart.py?name=snippet_imports)]
 
-Затем создайте переменные среды для расположения конечной точки ресурса и ключа. 
+> [!TIP]
+> Хотите просмотреть готовый файл с кодом для этого краткого руководства? Его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/ContentModerator/ContentModeratorQuickstart.py), где размещены примеры кода для этого краткого руководства.
+
+Затем создайте переменные для ключа и расположения конечной точки ресурса.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/ContentModerator/ContentModeratorQuickstart.py?name=snippet_vars)]
 
-> [!NOTE]
-> Если вы создали переменные среды после запуска приложения, для доступа к переменным следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эти переменные были запущены.
-
-## <a name="install-the-client-library"></a>Установка клиентской библиотеки
-
-Вы можете установить клиентскую библиотеку Content Moderator с помощью следующей команды:
-
-```console
-pip install --upgrade azure-cognitiveservices-vision-contentmoderator
-```
+> [!IMPORTANT]
+> Перейдите на портал Azure. Если ресурс Content Moderator, созданный в соответствии с указаниями в разделе **Предварительные требования** , успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
+>
+> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Например, [хранилище ключей Azure](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
 
 ## <a name="object-model"></a>Объектная модель
 
@@ -89,9 +92,6 @@ pip install --upgrade azure-cognitiveservices-vision-contentmoderator
 * [создание проверки](#create-a-review).
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
-
-> [!NOTE]
-> В этом кратком руководстве предполагается, что вы уже [создали переменные среды](../../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа Content Moderator и конечной точки.
 
 Создайте экземпляр клиента с конечной точкой и ключом. Создайте объект [CognitiveServicesCredentials](https://docs.microsoft.com/python/api/msrest/msrest.authentication.cognitiveservicescredentials?view=azure-python) с ключом и используйте его с конечной точкой, чтобы создать объект [ContentModeratorClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/azure.cognitiveservices.vision.contentmoderator.content_moderator_client.contentmoderatorclient?view=azure-python).
 

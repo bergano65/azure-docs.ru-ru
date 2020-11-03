@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
 ms.custom: devx-track-js
-ms.openlocfilehash: 4a1bb3346d50825dcab799477794cb138ac2de91
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 72120f6937c65ca6f7a94d34122e41ae3b4a4ef5
+ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91326292"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92746447"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azureservice-bus-package"></a>Краткое руководство. Использование разделов и подписок служебной шины с Node.js и пакетом azure/service-bus
 Из этого учебника вы узнаете, как написать программу Node.js для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus). Этот пакет использует более быстрый [протокол AMQP 1.0](service-bus-amqp-overview.md) вместо [интерфейсов REST API для служебной шины](/rest/api/servicebus/service-bus-runtime-rest), как в старом пакете [azure-sb](https://www.npmjs.com/package/azure-sb). Примеры кода написаны на JavaScript.

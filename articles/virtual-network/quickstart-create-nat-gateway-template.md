@@ -1,7 +1,7 @@
 ---
 title: Создание шлюза NAT с помощью шаблона Resource Manager
 titleSuffix: Azure Virtual Network NAT
-description: В этом кратком руководстве показано, как создать шлюз NAT с помощью шаблона Azure Resource Manager.
+description: В этом кратком руководстве показано, как создать шлюз NAT с помощью шаблона Azure Resource Manager (ARM).
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -13,72 +13,64 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/09/2020
+ms.date: 10/27/2020
 ms.author: allensu
 ms.custom: subject-armqs, devx-track-azurecli
-ms.openlocfilehash: 24577fd110ce944e12750a7380192d1a2d3cb4cd
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 95856db9288e5860dfab47dce506d1e7d6de1ffc
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92736973"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92913336"
 ---
-# <a name="create-a-nat-gateway---resource-manager-template"></a>Создание шлюза NAT с помощью шаблона Resource Manager
+# <a name="quickstart-create-a-nat-gateway---arm-template"></a>Краткое руководство. Создание шлюза NAT с помощью шаблона ARM
 
-Вы можете начать работу с преобразованием сетевых адресов (NAT) виртуальной сети с помощью шаблона Azure Resource Manager.  Этот шаблон развертывает виртуальную сеть, ресурс шлюза NAT и виртуальную машину Ubuntu. Виртуальная машина Ubuntu развертывается в подсети, связанной с ресурсом шлюза NAT.
+Вы можете начать работу с преобразованием сетевых адресов (NAT) виртуальной сети с помощью шаблона Azure Resource Manager (шаблон ARM). Этот шаблон развертывает виртуальную сеть, ресурс шлюза NAT и виртуальную машину Ubuntu. Виртуальная машина Ubuntu развертывается в подсети, связанной с ресурсом шлюза NAT.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-nat-gateway-1-vm%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-a-nat-gateway-and-supporting-resources"></a>Создание шлюза NAT и вспомогательных ресурсов
+## <a name="review-the-template"></a>Изучение шаблона
 
-Этот шаблон настроен для создания: 
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-nat-gateway-1-vm).
 
-* Виртуальная сеть 
+Он создает следующее:
+
+* Виртуальная сеть
 * ресурса шлюза NAT;
 * виртуальной машины Ubuntu.
 
 Виртуальная машина Ubuntu развертывается в подсети, связанной с ресурсом шлюза NAT.
 
-### <a name="review-the-template"></a>Изучение шаблона
-
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-nat-gateway-1-vm/azuredeploy.json).
-
-:::code language="json" source="~/quickstart-templates/101-nat-gateway-1-vm/azuredeploy.json" range="1-335" highlight="256-282":::
+:::code language="json" source="~/quickstart-templates/101-nat-gateway-1-vm/azuredeploy.json":::
 
 В шаблоне определено девять ресурсов Azure.
 
-**Microsoft.Network**
+* **[Microsoft.Network/networkSecurityGroups](/azure/templates/microsoft.network/networksecuritygroups)** . Создает группу безопасности сети.
+* **[Microsoft.Network/networkSecurityGroups/securityRules](/azure/templates/microsoft.network/networksecuritygroups/securityrules)** . Создает правило безопасности.
+* **[Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)** . Создает общедоступный IP-адрес.
+* **[Microsoft.Network/publicIPPrefixes](/azure/templates/microsoft.network/publicipprefixes)** . Создает префикс общедоступного IP-адреса.
+* **[Microsoft.Compute/virtualMachines](/azure/templates/Microsoft.Compute/virtualMachines)** : Создает виртуальную машину.
+* **[Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)** . Создает виртуальную сеть.
+* **[Microsoft.Network/natGateways](/azure/templates/microsoft.network/natgateways)** . Создает ресурс шлюза NAT.
+* **[Microsoft.Network/virtualNetworks/subnets](/azure/templates/microsoft.network/virtualnetworks/subnets)** . Создает подсеть виртуальной сети.
+* **[Microsoft.Network/networkinterfaces](/azure/templates/microsoft.network/networkinterfaces)** . Создает сетевой интерфейс.
 
-* **[Microsoft.Network/natGateways](https://docs.microsoft.com/azure/templates/microsoft.network/natgateways)** . Создает ресурс шлюза NAT.
-
-* **[Microsoft.Network/networkSecurityGroups](https://docs.microsoft.com/azure/templates/microsoft.network/networksecuritygroups)** . Создает группу безопасности сети.
-
-    * **[Microsoft.Network/networkSecurityGroups/securityRules](https://docs.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules)** . Создает правило безопасности.
-
-* **[Microsoft.Network/publicIPAddresses](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses)** . Создает общедоступный IP-адрес.
-
-* **[Microsoft.Network/publicIPPrefixes](https://docs.microsoft.com/azure/templates/microsoft.network/publicipprefixes)** . Создает префикс общедоступного IP-адреса.
-
-* **[Microsoft.Network/virtualNetworks](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks)** . Создает виртуальную сеть.
-
-    * **[Microsoft.Network/virtualNetworks/subnets](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks/subnets)** . Создает подсеть виртуальной сети.
-
-* **[Microsoft.Network/networkinterfaces](https://docs.microsoft.com/azure/templates/microsoft.network/networkinterfaces)** . Создает сетевой интерфейс.
-
-**Microsoft.Compute**
-
-* **[Microsoft.Compute/virtualMachines](https://docs.microsoft.com/azure/templates/Microsoft.Compute/virtualMachines)** : Создает виртуальную машину.
-
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 **Azure CLI**
 
 ```azurecli-interactive
 read -p "Enter the location (i.e. westcentralus): " location
 resourceGroupName="myResourceGroupNAT"
-templateUri="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-nat-gateway-1-vm/azuredeploy.json" 
+templateUri="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-nat-gateway-1-vm/azuredeploy.json"
 
 az group create \
 --name $resourceGroupName \
@@ -109,11 +101,11 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. В области слева выберите **Группы ресурсов** .
+1. В области слева выберите **Группы ресурсов**.
 
-3. Выберите группу ресурсов, созданную при работе с предыдущим разделом. Имя группы ресурсов по умолчанию — **myResourceGroupNAT** .
+1. Выберите группу ресурсов, созданную при работе с предыдущим разделом. Имя группы ресурсов по умолчанию — **myResourceGroupNAT**.
 
-4. Убедитесь, что в группе ресурсов созданы следующие ресурсы:
+1. Убедитесь, что в группе ресурсов созданы следующие ресурсы:
 
     ![Группа ресурсов NAT виртуальной сети](./media/quick-create-template/nat-gateway-template-rg.png)
 
@@ -123,22 +115,22 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete).
 
-```azurecli-interactive 
+```azurecli-interactive
   az group delete \
     --name myResourceGroupNAT
 ```
 
 **Azure PowerShell**
 
-Вы можете удалить группу ресурсов и все ресурсы в ней, если они больше не нужны, выполнив команду [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=latest).
+Вы можете удалить группу ресурсов и все ресурсы в ней, если они больше не нужны, выполнив команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
-```azurepowershell-interactive 
+```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroupNAT
 ```
 
 **Портал Azure**
 
-Удалите ставшие ненужными группу ресурсов, шлюз NAT и все связанные ресурсы. Выберите группу ресурсов **myResourceGroupNAT** , которая содержит шлюз NAT, а затем выберите **Удалить** .
+Удалите ставшие ненужными группу ресурсов, шлюз NAT и все связанные ресурсы. Выберите группу ресурсов **myResourceGroupNAT** , которая содержит шлюз NAT, а затем выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -148,7 +140,7 @@ Remove-AzResourceGroup -Name myResourceGroupNAT
 * Виртуальная сеть
 * виртуальную машину Ubuntu.
 
-Виртуальная машина Ubuntu развертывается в подсети виртуальной сети, связанной со шлюзом NAT. 
+Виртуальная машина Ubuntu развертывается в подсети виртуальной сети, связанной со шлюзом NAT.
 
 Дополнительные сведения о NAT виртуальной сети и Azure Resource Manager см. в следующих статьях.
 

@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: sample
 ms.date: 05/18/2020
 ms.subservice: alerts
-ms.openlocfilehash: dad4262520da1ec88c634c98aa2af2bf66bab936
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4340bd0ffc4a060b1eb8884efa8078aaf18e1e28
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87322301"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92893987"
 ---
 # <a name="resource-manager-template-samples-for-metric-alert-rules-in-azure-monitor"></a>Примеры шаблонов Resource Manager для правил генерации оповещений метрик в Azure Monitor
 
@@ -502,7 +502,7 @@ ms.locfileid: "87322301"
 - В каждом из критериев можно выбрать только одно значение для каждого измерения.
 - Невозможно использовать "\*" в качестве значения измерения.
 - Если метрики, настроенные в разных критериях, поддерживают одно и то же измерение, то настроенное значение измерения должно быть явно задано одинаковым способом для всех этих метрик в соответствующем критерии.
-    - В приведенном ниже примере, поскольку в метриках **Transactions** и **SuccessE2ELatency** есть измерение **ApiName**, а параметр *criterion1* определяет значение *"GetBlob"* для измерения **ApiName**, то для параметра *criterion2* также нужно задать значение *"GetBlob"* для измерения **ApiName**.
+    - В приведенном ниже примере, поскольку в метриках **Transactions** и **SuccessE2ELatency** есть измерение **ApiName** , а параметр *criterion1* определяет значение *"GetBlob"* для измерения **ApiName** , то для параметра *criterion2* также нужно задать значение *"GetBlob"* для измерения **ApiName**.
 
 ### <a name="template-file"></a>Файл шаблона
 
@@ -707,15 +707,15 @@ ms.locfileid: "87322301"
 ## <a name="multiple-dimensions-static-threshold"></a>Несколько измерений, статический порог
 Одно правило генерации оповещений может отслеживать несколько временных рядов за один раз, что позволяет сократить количество правил генерации оповещений. В следующем примере создается статическое правило генерации оповещений метрики для метрик измерений.
 
-В этом примере правило генерации оповещений отслеживает сочетания значений измерений **ResponseType** и **ApiName** для метрики **Transactions**:
-1. **ResponsType** — использование подстановочного знака "\*" означает, что для каждого значения измерения **ResponseType**, включая будущие значения, каждый временной ряд отслеживается отдельно.
-2. **ApiName** — другой временный ряд, который отслеживается только для значений измерений **GetBlob** и **PutBlob**.
+В этом примере правило генерации оповещений отслеживает сочетания значений измерений **ResponseType** и **ApiName** для метрики **Transactions** :
+1. **ResponsType**  — использование подстановочного знака "\*" означает, что для каждого значения измерения **ResponseType** , включая будущие значения, каждый временной ряд отслеживается отдельно.
+2. **ApiName**  — другой временный ряд, который отслеживается только для значений измерений **GetBlob** и **PutBlob**.
 
 Например, вот несколько возможных временных рядов, которые отслеживаются этим правилом генерации оповещений:
-- Metric = *Transactions*, ResponseType = *Success*, ApiName = *GetBlob*
-- Metric = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
-- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *GetBlob*
-- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *PutBlob*
+- Metric = *Transactions* , ResponseType = *Success* , ApiName = *GetBlob*
+- Metric = *Transactions* , ResponseType = *Success* , ApiName = *PutBlob*
+- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *GetBlob*
+- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *PutBlob*
 
 ### <a name="template-file"></a>Файл шаблона
 
@@ -898,15 +898,15 @@ ms.locfileid: "87322301"
 Отдельное правило генерации оповещений с динамическими порогами может создать точно настроенные пороги для нескольких сотен временных рядов метрик (различных типов) одновременно, что приведет к управлению небольшим числом правил генерации оповещений. В следующем примере создается правило генерации оповещений метрик с динамическими порогами для метрик измерений.
 
 
-В этом примере правило генерации оповещений отслеживает сочетания значений измерений **ResponseType** и **ApiName** для метрики **Transactions**:
-1. **ResponsType** — для каждого значения измерения **ResponseType**, включая будущие значения, каждый временный ряд отслеживается отдельно.
-2. **ApiName** — другой временный ряд, который отслеживается только для значений измерений **GetBlob** и **PutBlob**.
+В этом примере правило генерации оповещений отслеживает сочетания значений измерений **ResponseType** и **ApiName** для метрики **Transactions** :
+1. **ResponsType**  — для каждого значения измерения **ResponseType** , включая будущие значения, каждый временный ряд отслеживается отдельно.
+2. **ApiName**  — другой временный ряд, который отслеживается только для значений измерений **GetBlob** и **PutBlob**.
 
 Например, вот несколько возможных временных рядов, которые отслеживаются этим правилом генерации оповещений:
-- Metric = *Transactions*, ResponseType = *Success*, ApiName = *GetBlob*
-- Metric = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
-- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *GetBlob*
-- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *PutBlob*
+- Metric = *Transactions* , ResponseType = *Success* , ApiName = *GetBlob*
+- Metric = *Transactions* , ResponseType = *Success* , ApiName = *PutBlob*
+- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *GetBlob*
+- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *PutBlob*
 
 >[!NOTE]
 > В настоящее время несколько критериев для правил генерации оповещений метрик, использующих динамические пороги, не поддерживаются.
@@ -3132,7 +3132,7 @@ Azure Monitor поддерживает мониторинг нескольких
 > [!NOTE]
 > `&amp`; — это обозначение сущности HTML для &. Параметры URL-адреса все еще разделяются одним символом &, но если вы упомянули URL-адрес в формате HTML, его необходимо закодировать. Таким образом, если в значении параметра pingURL имеется символ "&", необходимо заменить его с помощью "`&amp`;".
 
-### <a name="parameter-file"></a>Файл параметров
+### <a name="template-file"></a>Файл шаблона
 
 ```json
 {
@@ -3234,8 +3234,6 @@ Azure Monitor поддерживает мониторинг нескольких
 }
 ```
 
-
-
 ### <a name="parameter-file"></a>Файл параметров
 
 ```json
@@ -3254,12 +3252,53 @@ Azure Monitor поддерживает мониторинг нескольких
         },
         "location": {
             "value": "Replace with the location of your Application Insights resource"
-        }
+        },
+        "pingText": {
+            "defaultValue": "Optional parameter that allows you to perform a content-match for the presence of a specific string within the content returned from a pingURL response",
+            "type": "String"
+        },
     }
 }
 ```
 
+Дополнительные настройки параметра `pingText` сопоставления содержимого управляются в разделе `Configuration/Webtest` файла шаблона. Этот раздел показан ниже.
 
+```xml
+<RuleParameter Name=\"FindText\" Value=\"',parameters('pingText'), '\" />
+<RuleParameter Name=\"IgnoreCase\" Value=\"False\" />
+<RuleParameter Name=\"UseRegularExpression\" Value=\"False\" /> 
+<RuleParameter Name=\"PassIfTextFound\" Value=\"True\" />
+```
+### <a name="test-locations"></a>Расположения тестирования
+
+|Идентификатор                  | Регион           |
+|:-------------------|:-----------------|
+| `emea-nl-ams-azr`  | Западная Европа      |
+| `us-ca-sjc-azr`    | западная часть США          |
+| `emea-ru-msa-edge` | южная часть Соединенного Королевства         |
+| `emea-se-sto-edge` | западная часть Соединенного Королевства          |
+| `apac-sg-sin-azr`  | Юго-Восточная Азия   |
+| `us-tx-sn1-azr`    | Центрально-южная часть США |
+| `us-il-ch1-azr`    | Центрально-северная часть США |
+| `emea-gb-db3-azr`  | Северная Европа     |
+| `apac-jp-kaw-edge` | Восточная Япония       |
+| `emea-fr-pra-edge` | Центральная Франция   |
+| `emea-ch-zrh-edge` | Южная Франция     |
+| `us-va-ash-azr`    | Восточная часть США          |
+| `apac-hk-hkn-azr`  | Восточная Азия        |
+| `us-fl-mia-edge`   | Центральная часть США       |
+| `latam-br-gru-edge`| Южная Бразилия      |
+| `emea-au-syd-edge` | Восточная Австралия   |
+
+### <a name="us-government-test-locations"></a>Расположения для тестирования для государственных организаций США
+
+|Идентификатор                    | Регион           |
+|----------------------|------------------|
+| `usgov-va-azr`       | `USGov Virginia` |
+| `usgov-phx-azr`      | `USGov Arizona`  |
+| `usgov-tx-azr`       | `USGov Texas`    |
+| `usgov-ddeast-azr`   | `USDoD East`     |
+| `usgov-ddcentral-azr`| `USDoD Central`  |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

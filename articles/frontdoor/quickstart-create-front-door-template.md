@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 09/14/2020
 ms.author: duau
 ms.custom: subject-armqs
-ms.openlocfilehash: e7c3f2f50d9ac1fb1731f70f7b442ab4a2e44425
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 223006193219afe4179f3161d5e60e6439207b22
+ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088930"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92896061"
 ---
 # <a name="quickstart-create-a-front-door-using-an-arm-template"></a>Краткое руководство. Создание Front Door с помощью шаблона Resource Manager
 
@@ -40,7 +40,7 @@ ms.locfileid: "92088930"
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-front-door-create-basic).
 
-Используя инструкции этого руководства, вы создадите конфигурацию Front Door с одной серверной системой и одним путем по умолчанию, совпадающим с "/*". 
+В этом кратком руководстве показано как, создать конфигурацию Front Door с одной серверной системой и одним путем по умолчанию, совпадающим с `/*`.
 
 :::code language="json" source="~/quickstart-templates/101-front-door-create-basic/azuredeploy.json":::
 
@@ -50,7 +50,7 @@ ms.locfileid: "92088930"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Выберите **Попробовать** в следующем блоке кода, чтобы открыть Azure Cloud Shell, и следуйте отображающимся инструкциям, чтобы войти в Azure. 
+1. Выберите **Попробовать** в следующем блоке кода, чтобы открыть Azure Cloud Shell, и следуйте отображающимся инструкциям, чтобы войти в Azure.
 
     ```azurepowershell-interactive
     $projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
@@ -73,7 +73,7 @@ ms.locfileid: "92088930"
 
 1. Введите значения.
 
-    При развертывании шаблона создается служба Front Door с одной серверной системой. В этом примере в качестве **backendAddress** используется *<span>microsoft.</span>com*.
+    При развертывании шаблона создается служба Front Door с одной серверной системой. В этом примере в качестве **backendAddress** используется `microsoft.com`.
 
     Имя группы ресурсов — это имя проекта с добавлением **rg**.
 
@@ -96,7 +96,7 @@ ms.locfileid: "92088930"
 
 1. Выберите созданную ранее службу Front Door и щелкните ссылку **Интерфейсный узел**. Откроется веб-браузер, который перенаправляет вас к полному доменному имени сервера, определенному во время создания.
 
-    :::image type="content" source="./media/quickstart-create-front-door-template/front-door-overview.png" alt-text="Результаты развертывания шаблона Resource Manager Front Door в PowerShell":::
+    :::image type="content" source="./media/quickstart-create-front-door-template/front-door-overview.png" alt-text="Обзор Front Door на портале":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -110,8 +110,7 @@ Remove-AzResourceGroup -Name <your resource group name>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы узнали, как создать:
-* Front Door
+Используя инструкции из этого краткого руководства, вы создали экземпляр Front Door.
 
 Сведения о добавлении личного домена в Front Door см. в следующих учебниках.
 

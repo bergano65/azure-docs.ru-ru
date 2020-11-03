@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 2d5bcb52b1feb7ea8202aa354793ebf975ed4f19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4cddae25bbf7ff113d2ea67700e28eb81c0e7c4
+ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88541486"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92638029"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wizergos-productivity-software"></a>Руководство. Интеграция Azure Active Directory с Wizergos Productivity Software
 
@@ -27,7 +27,7 @@ ms.locfileid: "88541486"
 * Вы можете включить автоматический вход пользователей в Wizergos Productivity Software (единый вход) с использованием учетных записей Azure Active Directory.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>предварительные требования
@@ -61,7 +61,7 @@ ms.locfileid: "88541486"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Wizergos Productivity Software**, выберите **Wizergos Productivity Software** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Wizergos Productivity Software** , выберите **Wizergos Productivity Software** на панели результатов и нажмите кнопку **Добавить** , чтобы добавить это приложение.
 
      ![Wizergos Productivity Software в списке результатов](common/search-new-app.png)
 
@@ -89,11 +89,11 @@ ms.locfileid: "88541486"
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed** , чтобы включить единый вход.
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить** , чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "88541486"
 
     В текстовом поле **Идентификатор** введите URL-адрес: `https://www.wizergos.net`
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить** , чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
@@ -123,23 +123,23 @@ ms.locfileid: "88541486"
 
 2. В меню с тремя полосками выберите **Администратор**.
 
-    ![Настройка единого входа на стороне приложения](./media/wizergosproductivitysoftware-tutorial/tutorial_wizergosproductivitysoftware_000.png)
+    ![Снимок экрана: в меню выбран значок администрирования.](./media/wizergosproductivitysoftware-tutorial/tutorial_wizergosproductivitysoftware_000.png)
 
 3. На странице администрирования в меню слева выберите **Проверка подлинности** и нажмите кнопку **Azure AD**.
 
-    ![Настройка единого входа на стороне приложения](./media/wizergosproductivitysoftware-tutorial/tutorial_wizergosproductivitysoftware_002.png)
+    ![Снимок экрана: на странице настройки проверки подлинности выбран вариант Azure AD.](./media/wizergosproductivitysoftware-tutorial/tutorial_wizergosproductivitysoftware_002.png)
 
 4. В разделе **Проверка подлинности** выполните следующие действия.
 
-    ![Настройка единого входа на стороне приложения](./media/wizergosproductivitysoftware-tutorial/tutorial_wizergosproductivitysoftware_003.png)
+    ![Снимок экрана: страница настройки проверки подлинности, где можно ввести указанные значения.](./media/wizergosproductivitysoftware-tutorial/tutorial_wizergosproductivitysoftware_003.png)
     
     а. Чтобы отправить сертификат, скачанный с Azure AD, нажмите кнопку **UPLOAD** (Отправить).
     
-    b. В текстовое поле **URL-адрес издателя** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    b. В текстовое поле **URL-адрес издателя** вставьте значение **идентификатора Azure AD** , скопированное на портале Azure.
     
-    c. В текстовое поле **URL-адрес для единого входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    c. В текстовое поле **URL-адрес для единого входа** вставьте значение **URL-адреса входа** , скопированное на портале Azure.
     
-    d. В текстовое поле **Single Sign-Out URL** (URL-адрес единого выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    d. В текстовое поле **Single Sign-Out URL** (URL-адрес единого выхода) вставьте значение **URL-адреса выхода** , скопированное на портале Azure.
     
     д) Нажмите кнопку **Сохранить** .
 
@@ -147,7 +147,7 @@ ms.locfileid: "88541486"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory** , **Пользователи** , а затем — **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
@@ -171,7 +171,7 @@ ms.locfileid: "88541486"
 
 В этом разделе описано, как включить единый вход Azure для пользователя Britta Simon, предоставив этому пользователю доступ к Wizergos Productivity Software.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Wizergos Productivity Software**.
+1. На портале Azure выберите **Корпоративные приложения** , **Все приложения** , а затем — **Wizergos Productivity Software**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -183,13 +183,13 @@ ms.locfileid: "88541486"
 
     ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя** , а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon** , а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать** , расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
@@ -201,13 +201,12 @@ ms.locfileid: "88541486"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Wizergos Productivity Software на Панели доступа, вы автоматически войдете в приложение Wizergos Productivity Software, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Wizergos Productivity Software на Панели доступа, вы автоматически войдете в приложение Wizergos Productivity Software, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)

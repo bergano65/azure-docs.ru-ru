@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: overview
-ms.date: 09/21/2020
+ms.date: 10/23/2020
 ms.author: aahi
-ms.openlocfilehash: 856e73181ee02fe2bb21c4317ec8c733e2536d53
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 14b4e7217b6e902023e5e82f8dbd404e43b36ef0
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973128"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92676162"
 ---
 # <a name="migrate-to-the-read-v3x-ocr-containers"></a>Переход на контейнеры распознавания текста с доступом на чтение версии 3.x
 
@@ -29,21 +29,11 @@ ms.locfileid: "91973128"
 
 ## <a name="api-changes"></a>Изменения API
 
-Контейнеры с доступом на чтение версии 3.x используют API "Компьютерное зрение" версии 3 и имеют следующие конечные точки:
-
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
+Контейнер с доступом на чтение версии 3.1 использует API "Компьютерное зрение" версии 3 и имеют следующие конечные точки:
 
 * `/vision/v3.1-preview.2/read/analyzeResults/{operationId}`
 * `/vision/v3.1-preview.2/read/analyze`
 * `/vision/v3.1-preview.2/read/syncAnalyze`
-
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
-
-* `/vision/v3.0/read/analyzeResults/{operationId}`
-* `/vision/v3.0/read/analyze`
-* `/vision/v3.0/read/syncAnalyze`
-
----
 
 Подробные сведения об обновлении приложений для использования API чтения на основе облака версии 3 см. в статье [Обновление API чтения для Компьютерного зрения с версии 2.0 или 2.1 до версии 3.0](https://docs.microsoft.com/azure/cognitive-services/computer-vision/upgrade-api-versions). Эти сведения также применимы к контейнеру. Обратите внимание, что операции синхронизации поддерживаются только в контейнерах.
 
@@ -53,8 +43,7 @@ ms.locfileid: "91973128"
 
 |Контейнер  |Минимальные | Рекомендуется  |
 |---------|---------|------|
-|Чтение 3.0, предварительная версия     | 8 ядер, 16 ГБ памяти         | 8 ядер, 24 ГБ памяти
-|Чтение 3.1, предварительная версия | 8 ядер, 16 ГБ памяти         | 8 ядер, 24 ГБ памяти
+|Чтение 3.1, предварительная версия | 8 ядер, 16 ГБ памяти         | 8 ядер, 24 ГБ памяти |
 
 Частота каждого ядра должна быть минимум 2,6 ГГц.
 

@@ -11,14 +11,17 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 14ae5f01e23a7922f508c4a2674e1a3f29e354b8
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: f8b4256f33a143c711a23a3564c2a46c69e0783b
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92166069"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92675776"
 ---
 # <a name="explore-azure-machine-learning-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Машинном обучении Azure
+
+> [!NOTE] 
+> Репозиторий примеров, поддерживаемый сообществом, можно найти здесь: https://github.com/Azure/azureml-examples.
 
 [Репозиторий с записными книжками службы "Машинное обучение Azure"](https://github.com/azure/machinelearningnotebooks) включает последние примеры пакета SDK Машинного обучения Azure для Python. Эти записные книжки Juypter помогут вам изучить пакет SDK. Вы можете использовать их как модели для собственных проектов машинного обучения.
 
@@ -29,7 +32,7 @@ ms.locfileid: "92166069"
 - [Виртуальные машины для обработки и анализа данных](#dsvm)
 
 > [!NOTE]
-> Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials** , а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml** .
+> Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials** , а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml**.
 
 <a name="notebookvm"></a>
 ## <a name="get-samples-on-azure-machine-learning-compute-instance"></a>Получение примеров вычислительных операций Машинного обучения Azure

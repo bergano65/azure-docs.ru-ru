@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 06/12/2020
 ms.reviewer: jeking
-ms.openlocfilehash: 482d703689ca6cfc34dd5d78574ae52e4def2b1f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 908bf21d2fe101731b11e3a8ad783f17728c8ed3
+ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86109779"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92677336"
 ---
 # <a name="quickstart-analyze-data-with-databricks"></a>Краткое руководство. Анализ данных с помощью Databricks
 
@@ -86,7 +86,7 @@ ms.locfileid: "86109779"
 
 2. В левой области выберите **Рабочая область**. В раскрывающемся списке **Рабочая область** выберите **Создать** > **Notebook** (Записная книжка).
 
-    ![Создание записной книжки в Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-create-notebook.png "Создание записной книжки в Databricks")
+    ![Снимок экрана, на котором показано создание записной книжки в Databricks и выделены пункты меню "Создать" и "Записная книжка".](./media/data-lake-storage-quickstart-create-databricks-account/databricks-create-notebook.png "Создание записной книжки в Databricks")
 
 3. В диалоговом окне **создания записной книжки** введите имя записной книжки. Выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
@@ -109,7 +109,7 @@ ms.locfileid: "86109779"
    ```
 5. В этом блоке кода замените значения заполнителя `storage-account-name`, `appID`, `password` и `tenant-id` значениями, полученными в ходе создания субъекта-службы. Задайте значение заполнителя `container-name` для имени контейнера.
 
-6. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
+6. Нажмите клавиши **SHIFT + ВВОД** , чтобы запустить код в этом блоке.
 
 ## <a name="ingest-sample-data"></a>Принятие демонстрационных данных
 
@@ -121,7 +121,7 @@ ms.locfileid: "86109779"
 %sh wget -P /tmp https://raw.githubusercontent.com/Azure/usql/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json
 ```
 
-В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+В ячейке нажмите клавиши **SHIFT+ВВОД** , чтобы выполнить код.
 
 Теперь в новую ячейку под этой введите следующий код и замените значения, которые отображаются в скобках, использованными ранее.
 
@@ -129,7 +129,7 @@ ms.locfileid: "86109779"
 dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/")
 ```
 
-В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+В ячейке нажмите клавиши **SHIFT+ВВОД** , чтобы выполнить код.
 
 ## <a name="run-a-spark-sql-job"></a>Выполнение задания SQL Spark
 
@@ -162,15 +162,15 @@ dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<st
 
     ![Пример данных JSON](./media/data-lake-storage-quickstart-create-databricks-account/databricks-sample-csv-data.png "Пример данных JSON")
 
-    Среди прочего пример данных демонстрирует пол аудитории радиоканала (имя столбца **gender**), а также категорию подписки (бесплатная или платная) (имя столбца **level**).
+    Среди прочего пример данных демонстрирует пол аудитории радиоканала (имя столбца **gender** ), а также категорию подписки (бесплатная или платная) (имя столбца **level** ).
 
-4. Теперь можно создать визуальное представление данных по каждому полу, а также по числу пользователей с бесплатными и платными учетными записями. В нижней части выходных табличных данных щелкните значок **линейчатой диаграммы**, а затем — **параметры построения**.
+4. Теперь можно создать визуальное представление данных по каждому полу, а также по числу пользователей с бесплатными и платными учетными записями. В нижней части выходных табличных данных щелкните значок **линейчатой диаграммы** , а затем — **параметры построения**.
 
     ![Создание линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/create-plots-databricks-notebook.png "Создание линейчатой диаграммы")
 
 5. В разделе **настроек построения** перетащите значения, как показано на снимке экрана.
 
-    ![Настройка линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/databricks-notebook-customize-plot.png "Настройка линейчатой диаграммы")
+    ![Снимок экрана, на котором показана страница настройки графика и значения, которые можно перетащить.](./media/data-lake-storage-quickstart-create-databricks-account/databricks-notebook-customize-plot.png "Настройка линейчатой диаграммы")
 
     - Для параметра **Ключи** задайте значение **gender**.
     - Для параметра **Series groupings** (Группирование ряда) задайте значение **level**.
