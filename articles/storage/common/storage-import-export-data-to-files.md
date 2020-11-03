@@ -5,19 +5,20 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/20/2020
+ms.date: 10/29/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 1cd1145411fbf4ec4441d612f9552997704f9e5e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7d969392c3245eb81ed07889bd956d2b8e8fb82f
+ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782405"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93234106"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
-В этой статье содержатся пошаговые инструкции по использованию службы "Импорт и экспорт Azure" для безопасного импорта больших объемов данных в службу "Файлы Azure". Чтобы служба осуществила импорт данных, нужно отправить в центр обработки данных Azure поддерживаемые диски с данными.  
+В этой статье содержатся пошаговые инструкции по использованию службы "Импорт и экспорт Azure" для безопасного импорта больших объемов данных в службу "Файлы Azure". Чтобы служба осуществила импорт данных, нужно отправить в центр обработки данных Azure поддерживаемые диски с данными.
 
 Служба "Импорт и экспорт Azure" поддерживает только импорт файлов Azure в службу хранилища Azure. Экспорт файлов Azure не поддерживается.
 
@@ -30,7 +31,7 @@ ms.locfileid: "92782405"
 - Соответствующее количество дисков [поддерживаемых типов](storage-import-export-requirements.md#supported-disks).
 - Система с ОС Windows [поддерживаемой версии](storage-import-export-requirements.md#supported-operating-systems).
 - [Скачать WAImportExport версии 2](https://aka.ms/waiev2) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexport`. Например, `C:\WaImportExport`.
-- Учетная запись FedEx или DHL. Если вы хотите использовать перевозчик, отличный от FedEx/DHL, обратитесь в службу поддержки Azure Data Box по адресу `adbops@microsoft.com` .  
+- Учетная запись FedEx или DHL. Если вы хотите использовать перевозчик, отличный от FedEx/DHL, обратитесь в службу поддержки Azure Data Box по адресу `adbops@microsoft.com` .
     - Учетная запись должна быть действительной, иметь баланс и возможности возврата.
     - Создайте номер отслеживания для задания экспорта.
     - Каждое задание должно иметь отдельный номер отслеживания. Несколько заданий с одним и тем же номером отслеживания не поддерживаются.
@@ -48,7 +49,7 @@ ms.locfileid: "92782405"
 
 1. Подключите наши диски к системе Windows через соединители SATA.
 2. Создайте один том NTFS на каждом диске. Присвойте ему букву диска. Не используйте точки подключения.
-3. Измените файл *dataset.csv* в корневой папке, в которой находится средство. В зависимости от того, что импортируется, — файл, папка или и то и другое, добавьте записи в файл *dataset.csv* , как показано в следующем примере.  
+3. Измените файл *dataset.csv* в корневой папке, в которой находится средство. В зависимости от того, что импортируется, — файл, папка или и то и другое, добавьте записи в файл *dataset.csv* , как показано в следующем примере.
 
    - **Чтобы импортировать файл** : в следующем примере данные для копирования находятся на диске F:. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1* . Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
 
@@ -241,6 +242,102 @@ ms.locfileid: "92782405"
     ```azurecli
     az import-export update --resource-group myierg --name MyIEjob1 --cancel-requested true
     ```
+
+### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+Чтобы создать задание импорта в Azure PowerShell, выполните следующие действия.
+
+[!INCLUDE [azure-powershell-requirements-h3.md](../../../includes/azure-powershell-requirements-h3.md)]
+
+> [!IMPORTANT]
+> Пока модуль PowerShell **AZ. ImportExport** находится на этапе предварительной версии, его необходимо установить отдельно с помощью `Install-Module` командлета. Как только этот модуль PowerShell станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и по умолчанию встроен в Azure Cloud Shell.
+
+```azurepowershell-interactive
+Install-Module -Name Az.ImportExport
+```
+
+### <a name="create-a-job"></a>Создание задания
+
+1. Можно использовать существующую группу ресурсов или создать ее. Чтобы создать группу ресурсов, выполните командлет [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup) :
+
+   ```azurepowershell-interactive
+   New-AzResourceGroup -Name myierg -Location westus
+   ```
+
+1. Можно использовать существующую учетную запись хранения или создать ее. Чтобы создать учетную запись хранения, выполните командлет [New-азсторажеаккаунт](/powershell/module/az.storage/new-azstorageaccount) :
+
+   ```azurepowershell-interactive
+   New-AzStorageAccount -ResourceGroupName myierg -AccountName myssdocsstorage -SkuName Standard_RAGRS -Location westus -EnableHttpsTrafficOnly $true
+   ```
+
+1. Чтобы получить список расположений, в которые можно поставлять диски, используйте командлет [Get-азимпортекспортлокатион](/powershell/module/az.importexport/get-azimportexportlocation) :
+
+   ```azurepowershell-interactive
+   Get-AzImportExportLocation
+   ```
+
+1. Используйте `Get-AzImportExportLocation` командлет с `Name` параметром, чтобы получить расположения для вашего региона:
+
+   ```azurepowershell-interactive
+   Get-AzImportExportLocation -Name westus
+   ```
+
+1. Выполните следующий пример [New-азимпортекспорт](/powershell/module/az.importexport/new-azimportexport) , чтобы создать задание импорта:
+
+   ```azurepowershell-interactive
+   $driveList = @(@{
+     DriveId = '9CA995BA'
+     BitLockerKey = '439675-460165-128202-905124-487224-524332-851649-442187'
+     ManifestFile = '\\DriveManifest.xml'
+     ManifestHash = '69512026C1E8D4401816A2E5B8D7420D'
+     DriveHeaderHash = 'AZ31BGB1'
+   })
+
+   $Params = @{
+      ResourceGroupName = 'myierg'
+      Name = 'MyIEjob1'
+      Location = 'westus'
+      BackupDriveManifest = $true
+      DiagnosticsPath = 'waimportexport'
+      DriveList = $driveList
+      JobType = 'Import'
+      LogLevel = 'Verbose'
+      ShippingInformationRecipientName = 'Microsoft Azure Import/Export Service'
+      ShippingInformationStreetAddress1 = '3020 Coronado'
+      ShippingInformationCity = 'Santa Clara'
+      ShippingInformationStateOrProvince = 'CA'
+      ShippingInformationPostalCode = '98054'
+      ShippingInformationCountryOrRegion = 'USA'
+      ShippingInformationPhone = '4083527600'
+      ReturnAddressRecipientName = 'Gus Poland'
+      ReturnAddressStreetAddress1 = '1020 Enterprise way'
+      ReturnAddressCity = 'Sunnyvale'
+      ReturnAddressStateOrProvince = 'CA'
+      ReturnAddressPostalCode = '94089'
+      ReturnAddressCountryOrRegion = 'USA'
+      ReturnAddressPhone = '4085555555'
+      ReturnAddressEmail = 'gus@contoso.com'
+      ReturnShippingCarrierName = 'FedEx'
+      ReturnShippingCarrierAccountNumber = '123456789'
+      StorageAccountId = '/subscriptions/<SubscriptionId>/resourceGroups/myierg/providers/Microsoft.Storage/storageAccounts/myssdocsstorage'
+   }
+   New-AzImportExport @Params
+   ```
+
+   > [!TIP]
+   > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
+
+1. Используйте командлет [Get-азимпортекспорт](/powershell/module/az.importexport/get-azimportexport) , чтобы просмотреть все задания для группы ресурсов миерг:
+
+   ```azurepowershell-interactive
+   Get-AzImportExport -ResourceGroupName myierg
+   ```
+
+1. Чтобы обновить задание или отменить задание, выполните командлет [Update-азимпортекспорт](/powershell/module/az.importexport/update-azimportexport) :
+
+   ```azurepowershell-interactive
+   Update-AzImportExport -Name MyIEjob1 -ResourceGroupName myierg -CancelRequested
+   ```
 
 ---
 

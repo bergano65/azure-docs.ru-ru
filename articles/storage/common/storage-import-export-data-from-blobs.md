@@ -5,15 +5,16 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/20/2020
+ms.date: 10/29/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: bfbef5ce3ba7675aff88df654a5ba6572c38adbe
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 39f9a5802d7f10753c8ea81bf414da195e137cc6
+ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440742"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93234143"
 ---
 # <a name="use-the-azure-importexport-service-to-export-data-from-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для экспорта данных из хранилища BLOB-объектов Azure
 
@@ -42,24 +43,24 @@ ms.locfileid: "92440742"
 Чтобы создать задание экспорта, на портале Azure сделайте следующее.
 
 1. Войдите в систему по адресу <https://portal.azure.com/>.
-2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта**.
+2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта** .
 
     ![Перейдите к разделу "Задания импорта или экспорта"](./media/storage-import-export-data-from-blobs/export-from-blob1.png)
 
-3. Щелкните **создать задание импорта и экспорта**.
+3. Щелкните **создать задание импорта и экспорта** .
 
     ![Щелкните "Задание импорта и экспорта"](./media/storage-import-export-data-from-blobs/export-from-blob2.png)
 
-4. В разделе **Основные сведения**:
+4. В разделе **Основные сведения** :
 
-    - Щелкните **Экспорт из Azure**.
+    - Щелкните **Экспорт из Azure** .
     - Введите описательное имя для задания экспорта. Вы можете использовать его для отслеживания хода выполнения заданий.
         - Имя может содержать только буквы в нижнем регистре, цифры, дефисы и знаки подчеркивания.
         - Имя должно начинаться с буквы и не может содержать пробелы.
     - Выберите подписку.
     - Укажите или выберите группу ресурсов.
 
-        ![Основные](./media/storage-import-export-data-from-blobs/export-from-blob3.png)
+        ![Основные сведения](./media/storage-import-export-data-from-blobs/export-from-blob3.png)
 
 5. В разделе **Сведения о задании** сделайте следующее:
 
@@ -71,14 +72,14 @@ ms.locfileid: "92440742"
          ![Экспорт всех данных](./media/storage-import-export-data-from-blobs/export-from-blob4.png)
 
     - Вы можете указать, какие контейнеры и большие двоичные объекты необходимо экспортировать.
-        - **Чтобы указать большой двоичный объект для экспорта**, используйте селектор **Равно**. Укажите относительный путь к большому двоичному объекту, начинающийся с имени контейнера. Используйте *$root* для указания корневого контейнера.
-        - **Чтобы указать все большие двоичные объекты, начинающиеся с префикса**, используйте селектор **Начинается с**. Укажите префикс, начинающийся с символа косой черты "/". Префикс может являться префиксом имени контейнера, полным именем контейнера или полным именем контейнера с префиксом имени blob-объекта. Чтобы избежать ошибок во время обработки, необходимо указать пути к большим двоичным объектам в допустимом формате, как показано на приведенном ниже снимке экрана. Дополнительные сведения см. в разделе с [примерами допустимых путей к большим двоичным объектам](#examples-of-valid-blob-paths).
+        - **Чтобы указать большой двоичный объект для экспорта** , используйте селектор **Равно** . Укажите относительный путь к большому двоичному объекту, начинающийся с имени контейнера. Используйте *$root* для указания корневого контейнера.
+        - **Чтобы указать все большие двоичные объекты, начинающиеся с префикса** , используйте селектор **Начинается с** . Укажите префикс, начинающийся с символа косой черты "/". Префикс может являться префиксом имени контейнера, полным именем контейнера или полным именем контейнера с префиксом имени blob-объекта. Чтобы избежать ошибок во время обработки, необходимо указать пути к большим двоичным объектам в допустимом формате, как показано на приведенном ниже снимке экрана. Дополнительные сведения см. в разделе с [примерами допустимых путей к большим двоичным объектам](#examples-of-valid-blob-paths).
 
            ![Экспорт выбранных контейнеров и больших двоичных объектов](./media/storage-import-export-data-from-blobs/export-from-blob5.png)
 
     - Вы можете выполнить экспорт из файла списка больших двоичных объектов.
 
-        ![Экспорт из файла списка больших двоичных объектов](./media/storage-import-export-data-from-blobs/export-from-blob6.png)  
+        ![Экспорт из файла списка больших двоичных объектов](./media/storage-import-export-data-from-blobs/export-from-blob6.png)
 
    > [!NOTE]
    > Если большой двоичный объект для экспорта используется во время копирования данных, служба "Импорт и экспорт Azure" делает снимок большого двоичного объекта и копирует моментальный снимок.
@@ -92,7 +93,7 @@ ms.locfileid: "92440742"
         > [!TIP]
         > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
 
-7. В **сводке**:
+7. В **сводке** :
 
     - Просмотрите сведения о задании.
     - Запишите название задания и предоставленный адрес центра обработки данных Azure для отправки дисков в Azure.
@@ -100,7 +101,7 @@ ms.locfileid: "92440742"
         > [!NOTE]
         > Всегда отправляйте диски в центр обработки данных, указанный на портале Azure. В случае отправки в неправильный центр обработки данных, задание не будет обрабатываться.
 
-    - Нажмите кнопку **ОК**, чтобы завершить создание задания экспорта.
+    - Нажмите кнопку **ОК** , чтобы завершить создание задания экспорта.
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -146,7 +147,7 @@ ms.locfileid: "92440742"
     > [!TIP]
     > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
 
-   Это задание экспортирует все большие двоичные объекты в учетной записи хранения. Вы можете указать большой двоичный объект для экспорта, заменив это значение параметром **--Export**:
+   Это задание экспортирует все большие двоичные объекты в учетной записи хранения. Вы можете указать большой двоичный объект для экспорта, заменив это значение параметром **--Export** :
 
     ```azurecli
     --export blob-path=$root/logo.bmp
@@ -154,7 +155,7 @@ ms.locfileid: "92440742"
 
    Это значение параметра экспортирует большой двоичный объект с именем *logo.bmp* в корневом контейнере.
 
-   Вы также можете выбрать все большие двоичные объекты в контейнере с помощью префикса. Замените это значение для **--Export**:
+   Вы также можете выбрать все большие двоичные объекты в контейнере с помощью префикса. Замените это значение для **--Export** :
 
     ```azurecli
     blob-path-prefix=/myiecontainer
@@ -177,6 +178,93 @@ ms.locfileid: "92440742"
     az import-export update --resource-group myierg --name MyIEjob1 --cancel-requested true
     ```
 
+### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+Чтобы создать задание экспорта в Azure PowerShell, выполните следующие действия.
+
+[!INCLUDE [azure-powershell-requirements-h3.md](../../../includes/azure-powershell-requirements-h3.md)]
+
+> [!IMPORTANT]
+> Пока модуль PowerShell **AZ. ImportExport** находится на этапе предварительной версии, его необходимо установить отдельно с помощью `Install-Module` командлета. Как только этот модуль PowerShell станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и по умолчанию встроен в Azure Cloud Shell.
+
+```azurepowershell-interactive
+Install-Module -Name Az.ImportExport
+```
+
+### <a name="create-a-job"></a>Создание задания
+
+1. Чтобы получить список расположений, из которых можно получить диски, используйте командлет [Get-азимпортекспортлокатион](/powershell/module/az.importexport/get-azimportexportlocation) :
+
+   ```azurepowershell-interactive
+   Get-AzImportExportLocation
+   ```
+
+1. Выполните следующий пример [New-азимпортекспорт](/powershell/module/az.importexport/new-azimportexport) , чтобы создать задание экспорта, которое использует имеющуюся учетную запись хранения.
+
+   ```azurepowershell-interactive
+   $Params = @{
+      ResourceGroupName = 'myierg'
+      Name = 'Myexportjob1'
+      Location = 'westus'
+      BackupDriveManifest = $true
+      DiagnosticsPath = 'waimportexport'
+      ExportBlobListblobPath = '\'
+      JobType = 'Export'
+      LogLevel = 'Verbose'
+      ShippingInformationRecipientName = 'Microsoft Azure Import/Export Service'
+      ShippingInformationStreetAddress1 = '3020 Coronado'
+      ShippingInformationCity = 'Santa Clara'
+      ShippingInformationStateOrProvince = 'CA'
+      ShippingInformationPostalCode = '98054'
+      ShippingInformationCountryOrRegion = 'USA'
+      ShippingInformationPhone = '4083527600'
+      ReturnAddressRecipientName = 'Gus Poland'
+      ReturnAddressStreetAddress1 = '1020 Enterprise way'
+      ReturnAddressCity = 'Sunnyvale'
+      ReturnAddressStateOrProvince = 'CA'
+      ReturnAddressPostalCode = '94089'
+      ReturnAddressCountryOrRegion = 'USA'
+      ReturnAddressPhone = '4085555555'
+      ReturnAddressEmail = 'gus@contoso.com'
+      StorageAccountId = '/subscriptions/<SubscriptionId>/resourceGroups/myierg/providers/Microsoft.Storage/storageAccounts/myssdocsstorage'
+   }
+   New-AzImportExport @Params
+   ```
+
+    > [!TIP]
+    > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
+
+   Это задание экспортирует все большие двоичные объекты в учетной записи хранения. Вы можете указать большой двоичный объект для экспорта, заменив это значение параметром **-експортблоблистблобпас** :
+
+   ```azurepowershell-interactive
+   -ExportBlobListblobPath $root\logo.bmp
+   ```
+
+   Это значение параметра экспортирует большой двоичный объект с именем *logo.bmp* в корневом контейнере.
+
+   Вы также можете выбрать все большие двоичные объекты в контейнере с помощью префикса. Замените это значение параметром **-експортблоблистблобпас** :
+
+   ```azurepowershell-interactive
+   -ExportBlobListblobPath '/myiecontainer'
+   ```
+
+   Дополнительные сведения см. в разделе с [примерами допустимых путей к большим двоичным объектам](#examples-of-valid-blob-paths).
+
+   > [!NOTE]
+   > Если большой двоичный объект для экспорта используется во время копирования данных, служба "Импорт и экспорт Azure" делает снимок большого двоичного объекта и копирует моментальный снимок.
+
+1. Используйте командлет [Get-азимпортекспорт](/powershell/module/az.importexport/get-azimportexport) , чтобы просмотреть все задания для группы ресурсов миерг.
+
+   ```azurepowershell-interactive
+   Get-AzImportExport -ResourceGroupName myierg
+   ```
+
+1. Чтобы обновить задание или отменить задание, выполните командлет [Update-азимпортекспорт](/powershell/module/az.importexport/update-azimportexport) :
+
+   ```azurepowershell-interactive
+   Update-AzImportExport -Name MyIEjob1 -ResourceGroupName myierg -CancelRequested
+   ```
+
 ---
 
 <!--## (Optional) Step 2: -->
@@ -195,7 +283,7 @@ ms.locfileid: "92440742"
 
 Если на панели мониторинга появляется сообщение о завершении задания, это означает, что диски доставлены и номер для отслеживания посылки доступен на портале.
 
-1. Чтобы разблокировать полученные диски с экспортированными данными, необходимо получить ключи BitLocker. Перейдите к заданию экспорта на портале Azure. Откройте вкладку **Импорт/экспорт**.
+1. Чтобы разблокировать полученные диски с экспортированными данными, необходимо получить ключи BitLocker. Перейдите к заданию экспорта на портале Azure. Откройте вкладку **Импорт/экспорт** .
 2. Выберите из списка задание экспорта и щелкните его. Перейдите к разделу **Шифрование** и скопируйте ключи.
 
    ![Просмотр ключей BitLocker для задания экспорта](./media/storage-import-export-data-from-blobs/export-from-blob-7.png)
@@ -208,7 +296,7 @@ ms.locfileid: "92440742"
 
 Чтобы разблокировать диск, используйте следующую команду:
 
-   `WAImportExport Unlock /bk:<BitLocker key (base 64 string) copied from Encryption blade in Azure portal> /driveLetter:<Drive letter>`  
+   `WAImportExport Unlock /bk:<BitLocker key (base 64 string) copied from Encryption blade in Azure portal> /driveLetter:<Drive letter>`
 
 Ниже приведен пример входного примера.
 
@@ -232,14 +320,14 @@ ms.locfileid: "92440742"
 
     Параметры описаны в следующей таблице.
 
-    |Параметр командной строки|Описание|  
-    |--------------------------|-----------------|  
-    |**/logdir**|Необязательный элемент. Каталог журналов. В этот каталог записываются файлы подробного журнала. Если каталог не указан, вместо него используется текущий каталог.|  
-    |**/SN**|Обязательный. Имя учетной записи хранения для задания экспорта.|  
-    |**/SK**|Требуется, только если не указан SAS контейнера. Ключ учетной записи хранения для задания экспорта.|  
-    |**/csas:**|Требуется, только если не указан ключ учетной записи хранения. SAS контейнера для получения списка экспортируемых в рамках задания экспорта больших двоичных объектов.|  
-    |**/ExportBlobListFile:**|Обязательный. Путь к XML-файлу, содержащему список путей к большим двоичным объектам или префиксов путей экспортируемых больших двоичных объектов. Формат файла, используемый в элементе `BlobListBlobPath` в операции [Put Job](/rest/api/storageimportexport/jobs) интерфейса REST API службы импорта и экспорта.|  
-    |**/DriveSize:**|Обязательный. Размер дисков, используемых для задания экспорта, *например* 500 ГБ, 1,5 ТБ.|  
+    |Параметр командной строки|Описание|
+    |--------------------------|-----------------|
+    |**/logdir**|Необязательный элемент. Каталог журналов. В этот каталог записываются файлы подробного журнала. Если каталог не указан, вместо него используется текущий каталог.|
+    |**/SN**|Обязательный. Имя учетной записи хранения для задания экспорта.|
+    |**/SK**|Требуется, только если не указан SAS контейнера. Ключ учетной записи хранения для задания экспорта.|
+    |**/csas:**|Требуется, только если не указан ключ учетной записи хранения. SAS контейнера для получения списка экспортируемых в рамках задания экспорта больших двоичных объектов.|
+    |**/ExportBlobListFile:**|Обязательный. Путь к XML-файлу, содержащему список путей к большим двоичным объектам или префиксов путей экспортируемых больших двоичных объектов. Формат файла, используемый в элементе `BlobListBlobPath` в операции [Put Job](/rest/api/storageimportexport/jobs) интерфейса REST API службы импорта и экспорта.|
+    |**/DriveSize:**|Обязательный. Размер дисков, используемых для задания экспорта, *например* 500 ГБ, 1,5 ТБ.|
 
     Дополнительные сведения см. в разделе с [примером команды PreviewExport](#example-of-previewexport-command).
 
@@ -247,38 +335,38 @@ ms.locfileid: "92440742"
 
 ### <a name="example-of-previewexport-command"></a>Пример команды PreviewExport
 
-В следующем примере показано использование команды `PreviewExport`:  
+В следующем примере показано использование команды `PreviewExport`:
 
 ```powershell
     WAImportExport.exe PreviewExport /sn:bobmediaaccount /sk:VkGbrUqBWLYJ6zg1m29VOTrxpBgdNOlp+kp0C9MEdx3GELxmBw4hK94f7KysbbeKLDksg7VoN1W/a5UuM2zNgQ== /ExportBlobListFile:C:\WAImportExport\mybloblist.xml /DriveSize:500GB
-```  
-
-Файл списка больших двоичных объектов экспорта может содержать имена и префиксы больших двоичных объектов, как показано ниже:  
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>  
-<BlobList>  
-<BlobPath>pictures/animals/koala.jpg</BlobPath>  
-<BlobPathPrefix>/vhds/</BlobPathPrefix>  
-<BlobPathPrefix>/movies/</BlobPathPrefix>  
-</BlobList>  
 ```
 
-Инструмент импорта и экспорта Azure получает список всех экспортируемых больших двоичных объектов и вычисляет способ их размещения на дисках определенного размера с учетом любой необходимой нагрузки, а затем определяет количество дисков, необходимое для хранения больших двоичных объектов и сведений об использовании диска.  
+Файл списка больших двоичных объектов экспорта может содержать имена и префиксы больших двоичных объектов, как показано ниже:
 
-Ниже приведен пример выходных данных без журналов сведений:  
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<BlobList>
+<BlobPath>pictures/animals/koala.jpg</BlobPath>
+<BlobPathPrefix>/vhds/</BlobPathPrefix>
+<BlobPathPrefix>/movies/</BlobPathPrefix>
+</BlobList>
+```
+
+Инструмент импорта и экспорта Azure получает список всех экспортируемых больших двоичных объектов и вычисляет способ их размещения на дисках определенного размера с учетом любой необходимой нагрузки, а затем определяет количество дисков, необходимое для хранения больших двоичных объектов и сведений об использовании диска.
+
+Ниже приведен пример выходных данных без журналов сведений:
 
 ```powershell
-Number of unique blob paths/prefixes:   3  
-Number of duplicate blob paths/prefixes:        0  
-Number of nonexistent blob paths/prefixes:      1  
+Number of unique blob paths/prefixes:   3
+Number of duplicate blob paths/prefixes:        0
+Number of nonexistent blob paths/prefixes:      1
 
-Drive size:     500.00 GB  
-Number of blobs that can be exported:   6  
-Number of blobs that cannot be exported:        2  
-Number of drives needed:        3  
-        Drive #1:       blobs = 1, occupied space = 454.74 GB  
-        Drive #2:       blobs = 3, occupied space = 441.37 GB  
+Drive size:     500.00 GB
+Number of blobs that can be exported:   6
+Number of blobs that cannot be exported:        2
+Number of drives needed:        3
+        Drive #1:       blobs = 1, occupied space = 454.74 GB
+        Drive #2:       blobs = 3, occupied space = 441.37 GB
         Drive #3:       blobs = 2, occupied space = 131.28 GB
 ```
 
@@ -292,7 +380,7 @@ Number of drives needed:        3
    | Начинается с |/$root/ |Экспорт всех blob-объектов в корневом контейнере |
    | Начинается с |/book |Экспортирует все blob-объекты в любом контейнере, который начинается с префикса **book** |
    | Начинается с |/music/ |Экспортирует все blob-объекты в контейнере **music** |
-   | Начинается с |/music/love |Экспортирует все большие двоичные объекты в контейнере **music**, которые начинаются с префикса **love** |
+   | Начинается с |/music/love |Экспортирует все большие двоичные объекты в контейнере **music** , которые начинаются с префикса **love** |
    | Равно |$root/logo.bmp |Экспортирует blob-объект **logo.bmp** в корневом контейнере |
    | Равно |videos/story.mp4 |Экспортирует большой двоичный объект **story.mp4** в контейнере **videos** |
 

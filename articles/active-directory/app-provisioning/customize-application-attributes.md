@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 10/26/2020
 ms.author: kenwith
-ms.openlocfilehash: aaafd3833c63458f8403dfeb3620d76f631315b5
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: cac7b169232bb43ba1b1893b59dac81ce4c39c49
+ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899189"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93233889"
 ---
 # <a name="customizing-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory
 

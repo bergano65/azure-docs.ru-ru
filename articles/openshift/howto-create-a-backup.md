@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 49ffc33310564299131e2831b74154719b7cf7c7
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: febee51a20f57d71d633243145a1aa0c8fb9b437
+ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078584"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93233684"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Создание резервной копии приложения кластера Azure Red Hat OpenShift 4
 
@@ -22,6 +22,9 @@ ms.locfileid: "92078584"
 > [!div class="checklist"]
 > * Настройка необходимых компонентов и установка необходимых средств
 > * Создание резервной копии приложений Azure Red Hat OpenShift 4
+
+> [!NOTE] 
+> Велеро не выполняет резервное копирование данных хранилища ключей "ключ — значение" Azure Red Hat OpenShift etcd. Если необходимо выполнить резервное копирование etcd, см. раздел [резервное копирование etcd](https://docs.openshift.com/container-platform/4.5/backup_and_restore/backing-up-etcd.html).
 
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 

@@ -1,18 +1,18 @@
 ---
 title: Шифрование данных — Azure CLI — база данных Azure для MySQL
 description: Узнайте, как настроить шифрование данных для базы данных Azure для MySQL и управлять им с помощью Azure CLI.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: eb83cd4fe7e98b1cde6dcee5d3f25fa5e35f1d2c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07d2e9fa98c24695a119c651539d4003ecd8524a
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87799825"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242098"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-cli"></a>Шифрование данных для базы данных Azure для MySQL с помощью Azure CLI
 
@@ -50,7 +50,7 @@ ms.locfileid: "87799825"
 * Ключ должен иметь следующие атрибуты для использования в качестве ключа, управляемого клиентом:
   * без даты окончания срока действия;
   * не отключено;
-  * Выполнение операций **получения**, **переноса**и **распаковки**
+  * Выполнение операций **получения** , **переноса** и **распаковки**
 
 ## <a name="set-the-right-permissions-for-key-operations"></a>Задайте правильные разрешения для операций с ключами.
 
@@ -68,7 +68,7 @@ ms.locfileid: "87799825"
    az mysql server update --name  <server name>  -g <resource_group> --assign-identity
    ```
 
-2. Задайте **разрешения ключа** (**Get**, **Wrap**, **Unwrap**) для **участника**, который является именем сервера MySQL.
+2. Задайте **разрешения ключа** ( **Get** , **Wrap** , **Unwrap** ) для **участника** , который является именем сервера MySQL.
 
     ```azurecli-interactive
     az keyvault set-policy --name -g <resource_group> --key-permissions get unwrapKey wrapKey --object-id <principal id of the server>
@@ -266,6 +266,6 @@ az mysql server key delete -g <resource_group> --kid <key url>
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  Дополнительные сведения о шифровании данных см. в статье [Шифрование данных в базе данных Azure для MySQL с помощью ключа, управляемого клиентом](concepts-data-encryption-mysql.md).

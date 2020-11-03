@@ -1,17 +1,17 @@
 ---
 title: Частная ссылка — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как работает частная связь для базы данных Azure для PostgreSQL-Single Server.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 9b93e3f42c6b635ced7fdca61cb2ffe4f74d19bc
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: a864ce42888aace385cf60a4122f204c8f76831d
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489512"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93240432"
 ---
 # <a name="private-link-for-azure-database-for-postgresql-single-server"></a>Частная ссылка на сервер базы данных Azure для PostgreSQL-Single
 
@@ -113,7 +113,7 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 ## <a name="deny-public-access-for-azure-database-for-postgresql-single-server"></a>Запретить общий доступ для базы данных Azure для PostgreSQL на одном сервере
 
-Если вы хотите использовать только частные конечные точки для доступа к своей базе данных Azure для PostgreSQL, можно отключить настройку всех общедоступных конечных точек ([правил брандмауэра](concepts-firewall-rules.md) и [конечных точек службы виртуальной](concepts-data-access-and-security-vnet.md)сети), установив параметр запретить общедоступную **сеть** на сервере базы данных. 
+Если вы хотите использовать только частные конечные точки для доступа к своей базе данных Azure для PostgreSQL, можно отключить настройку всех общедоступных конечных точек ( [правил брандмауэра](concepts-firewall-rules.md) и [конечных точек службы виртуальной](concepts-data-access-and-security-vnet.md)сети), установив параметр запретить общедоступную **сеть** на сервере базы данных. 
 
 Если для этого параметра задано значение *Да* , то для базы данных Azure для PostgreSQL разрешены только подключения через частные конечные точки. Если для этого параметра установлено значение *нет* , клиенты могут подключаться к базе данных Azure для PostgreSQL на основе параметров брандмауэра или конечной точки службы виртуальной сети. Кроме того, после установки значения "доступ к частной сети" клиенты не смогут добавлять и обновлять существующие правила брандмауэра и "правила конечной точки службы виртуальной сети".
 

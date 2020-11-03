@@ -1,230 +1,293 @@
 ---
-title: Создание частной конечной точки Azure с помощью Azure PowerShell | Документация Майкрософт
-description: Сведения о частной ссылке Azure
+title: Краткое руководство. Создание частной конечной точки Azure с помощью Azure PowerShell
+description: С помощью этого краткого руководства вы узнаете, как создать частную конечную точку с помощью Azure PowerShell.
 services: private-link
-author: malopMSFT
+author: asudbring
 ms.service: private-link
 ms.topic: how-to
-ms.date: 09/16/2019
+ms.date: 11/02/2020
 ms.author: allensu
-ms.openlocfilehash: 0c6fc36be101679cea3a770f311005f63c3f0d66
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 147e646738df9d70355f379a9e64a52116e9f16f
+ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84737382"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93233599"
 ---
-# <a name="create-a-private-endpoint-using-azure-powershell"></a>Создание частной конечной точки с помощью Azure PowerShell
-Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. 
+# <a name="quickstart-create-a-private-endpoint-using-azure-powershell"></a>Краткое руководство. Создание частной конечной точки с помощью Azure PowerShell
 
-В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети Azure, логическом сервере SQL Server с частной конечной точкой Azure, используя Azure PowerShell. Затем вы сможете безопасно получить доступ к Базе данных SQL на виртуальной машине.
+Чтобы начать работу с Приватным каналом Azure, воспользуйтесь частной конечной точкой для безопасного подключения к веб-приложению Azure.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Из этого краткого руководства вы узнаете, как создать частную конечную точку для веб-приложения Azure и развернуть виртуальную машину для тестирования частного подключения.  
+
+Частные конечные точки можно создавать для служб Azure разных типов, например Azure SQL и службы хранилища Azure.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+* Веб-приложение Azure с уровнем **Премиум версии 2** или планом для службы приложений более высокого уровня, развернутое в подписке Azure.  
+    * Дополнительные сведения и пример см. в статье [кратком руководстве по созданию веб-приложения ASP.NET Core в Azure](../app-service/quickstart-dotnetcore.md). 
+    * Подробные инструкции по созданию веб-приложения и конечной точки см. в [учебнике по подключению к веб-приложению с помощью частной конечной точки Azure](tutorial-private-endpoint-webapp-portal.md).
+
+Чтобы установить и использовать PowerShell локально, для работы с этой статьей вам понадобится модуль Azure PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Перед созданием ресурсов необходимо создать группу ресурсов, в которой размещается виртуальная сеть и частная конечная точка, с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *WestUS* :
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-```azurepowershell
-
-New-AzResourceGroup `
-  -ResourceGroupName myResourceGroup `
-  -Location westcentralus
-```
-
-## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-В этом разделе вы создадите виртуальную сеть и подсеть. Затем подсеть связывается с виртуальной сетью.
-
-### <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-
-Создайте виртуальную сеть для частной конечной точки с помощью [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *MyVirtualNetwork*:
- 
-```azurepowershell
-
-$virtualNetwork = New-AzVirtualNetwork `
-  -ResourceGroupName myResourceGroup `
-  -Location westcentralus `
-  -Name myVirtualNetwork `
-  -AddressPrefix 10.0.0.0/16
-```
-
-### <a name="add-a-subnet"></a>Добавление подсети
-
-Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать подсеть. Создайте конфигурацию подсети с именем *mySubnet* с помощью [Add-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/add-azvirtualnetworksubnetconfig). В следующем примере создается подсеть с именем *mySubnet* с флагом политики сети частной конечной точки, установленным в значение **Disabled (отключено**).
-
-```azurepowershell
-$subnetConfig = Add-AzVirtualNetworkSubnetConfig `
-  -Name mySubnet `
-  -AddressPrefix 10.0.0.0/24 `
-  -PrivateEndpointNetworkPoliciesFlag "Disabled" `
-  -VirtualNetwork $virtualNetwork
-```
-
-> [!CAUTION]
-> Параметр можно легко запутать `PrivateEndpointNetworkPoliciesFlag` с другим доступным флагом, `PrivateLinkServiceNetworkPoliciesFlag` так как оба слова являются длинными словами и имеют одинаковый внешний вид.  Убедитесь, что используется правильный, `PrivateEndpointNetworkPoliciesFlag` .
-
-### <a name="associate-the-subnet-to-the-virtual-network"></a>Связывание подсети с виртуальной сетью
-
-Вы можете записать конфигурацию подсети в виртуальную сеть с помощью [Set-азвиртуалнетворк](/powershell/module/az.network/Set-azVirtualNetwork). Эта команда создает подсеть:
-
-```azurepowershell
-$virtualNetwork | Set-AzVirtualNetwork
-```
-
-## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
-
-Создайте виртуальную машину в виртуальной сети с помощью [New-AzVM](/powershell/module/az.compute/new-azvm). При запуске приведенной ниже команды запрашиваются учетные данные. Введите имя пользователя и пароль виртуальной машины:
+Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup):
 
 ```azurepowershell-interactive
-New-AzVm `
-    -ResourceGroupName "myResourceGroup" `
-    -Name "myVm" `
-    -Location "westcentralus" `
-    -VirtualNetworkName "MyVirtualNetwork" `
-    -SubnetName "mySubnet" `
-    -SecurityGroupName "myNetworkSecurityGroup" `
-    -PublicIpAddressName "myPublicIpAddress" `
-    -OpenPorts 80,3389 `
-    -AsJob  
+New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 ```
 
-Параметр `-AsJob` создает виртуальную машину в фоновом режиме. Перейдите к следующему шагу.
+## <a name="create-a-virtual-network-and-bastion-host"></a>Создание виртуальной сети и узла бастиона
 
-Когда Azure начнет создание виртуальной машины в фоновом режиме, вы получите результат, аналогичный следующему:
+В этом разделе вы создадите виртуальную сеть, подсеть и узел бастиона. 
 
-```powershell
-Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
---     ----            -------------   -----         -----------     --------             -------
-1      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-```
+Для безопасного подключения к виртуальной машине с целью тестирования частной конечной точки будет использоваться узел бастиона.
 
-## <a name="create-a-logical-sql-server"></a>Создание логического сервера SQL Server 
+Создайте виртуальную сеть и узел бастиона с помощью:
 
-Создайте логический сервер SQL Server с помощью команды New-AzSqlServer. Помните, что имя сервера должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
+* [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork)
+* [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress)
+* [New-Азбастион](/powershell/module/az.network/new-azbastion)
 
 ```azurepowershell-interactive
-$adminSqlLogin = "SqlAdmin"
-$password = "ChangeYourAdminPassword1"
+## Create backend subnet config. ##
+$subnetConfig = New-AzVirtualNetworkSubnetConfig -Name myBackendSubnet -AddressPrefix 10.0.0.0/24
 
-$server = New-AzSqlServer -ResourceGroupName "myResourceGroup" `
-    -ServerName "myserver" `
-    -Location "WestCentralUS" `
-    -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $adminSqlLogin, $(ConvertTo-SecureString -String $password -AsPlainText -Force))
+## Create Azure Bastion subnet. ##
+$bastsubnetConfig = New-AzVirtualNetworkSubnetConfig -Name AzureBastionSubnet -AddressPrefix 10.0.1.0/24
 
-New-AzSqlDatabase  -ResourceGroupName "myResourceGroup" `
-    -ServerName "myserver"`
-    -DatabaseName "myda"`
-    -RequestedServiceObjectiveName "S0" `
-    -SampleName "AdventureWorksLT"
+## Create the virtual network. ##
+$parameters1 = @{
+    Name = 'MyVNet'
+    ResourceGroupName = 'CreatePrivateEndpointQS-rg'
+    Location = 'eastus'
+    AddressPrefix = '10.0.0.0/16'
+    Subnet = $subnetConfig, $bastsubnetConfig
+}
+$vnet = New-AzVirtualNetwork @parameters1
+
+## Create public IP address for bastion host. ##
+$parameters2 = @{
+    Name = 'myBastionIP'
+    ResourceGroupName = 'CreatePrivateEndpointQS-rg'
+    Location = 'eastus'
+    Sku = 'Standard'
+    AllocationMethod = 'Static'
+}
+$publicip = New-AzPublicIpAddress @parameters2
+
+## Create bastion host ##
+$parameters3 = @{
+    ResourceGroupName = 'CreatePrivateEndpointQS-rg'
+    Name = 'myBastion'
+    PublicIpAddress = $publicip
+    VirtualNetwork = $vnet
+}
+New-AzBastion @parameters3
 ```
 
-## <a name="create-a-private-endpoint"></a>Создание частной конечной точки
+Развертывание узла-бастиона может занять несколько минут.
 
-Частная конечная точка для сервера в виртуальной сети с помощью [New-азпривателинксервицеконнектион](/powershell/module/az.network/New-AzPrivateLinkServiceConnection): 
+## <a name="create-test-virtual-machine"></a>Создание тестовой виртуальной машины
 
-```azurepowershell
+В этом разделе вы создадите виртуальную машину, которая будет использоваться для тестирования частной конечной точки.
 
-$privateEndpointConnection = New-AzPrivateLinkServiceConnection -Name "myConnection" `
-  -PrivateLinkServiceId $server.ResourceId `
-  -GroupId "sqlServer" 
- 
-$virtualNetwork = Get-AzVirtualNetwork -ResourceGroupName  "myResourceGroup" -Name "MyVirtualNetwork"  
- 
-$subnet = $virtualNetwork `
-  | Select -ExpandProperty subnets `
-  | Where-Object  {$_.Name -eq 'mysubnet'}  
- 
-$privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName "myResourceGroup" `
-  -Name "myPrivateEndpoint" `
-  -Location "westcentralus" `
-  -Subnet  $subnet `
-  -PrivateLinkServiceConnection $privateEndpointConnection
-``` 
+Создайте виртуальную машину с помощью следующих командлетов:
 
-## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS 
-Создайте частную зону DNS для домена базы данных SQL, создайте ассоциированную связь с виртуальной сетью и создайте группу зоны DNS, чтобы связать частную конечную точку с частной зоной DNS.
-
-```azurepowershell
-
-$zone = New-AzPrivateDnsZone -ResourceGroupName "myResourceGroup" `
-  -Name "privatelink.database.windows.net" 
- 
-$link  = New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName "myResourceGroup" `
-  -ZoneName "privatelink.database.windows.net"`
-  -Name "mylink" `
-  -VirtualNetworkId $virtualNetwork.Id  
-
-$config = New-AzPrivateDnsZoneConfig -Name "privatelink.database.windows.net" -PrivateDnsZoneId $zone.ResourceId
-
-$privateDnsZoneGroup = New-AzPrivateDnsZoneGroup -ResourceGroupName "myResourceGroup" `
- -PrivateEndpointName "myPrivateEndpoint" -name "MyZoneGroup" -PrivateDnsZoneConfig $config
-``` 
-  
-## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
-
-Чтобы получить общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/Get-AzPublicIpAddress). В этом примере возвращается общедоступный IP-адрес виртуальной машины *myVM* :
-
-```azurepowershell
-Get-AzPublicIpAddress `
-  -Name myPublicIpAddress `
-  -ResourceGroupName myResourceGroup `
-  | Select IpAddress 
-```  
-Откройте командную строку на локальном компьютере. Выполните команду mstsc. Замените <publicIpAddress> общедоступным IP-адресом, полученным на последнем шаге: 
+  * [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)
+  * [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface) 
+  * [New-AzVM](/powershell/module/az.compute/new-azvm)
+  * [New-AzVMConfig](/powershell/module/az.compute/new-azvmconfig)
+  * [Set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem)
+  * [Set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage)
+  * [Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface)
 
 
-> [!NOTE]
-> Если вы выполняли эти команды в командной строке PowerShell на локальном компьютере и используете модуль Az PowerShell 1.0 или более поздней версии, можете продолжить работу в этом интерфейсе.
-```
-mstsc /v:<publicIpAddress>
+```azurepowershell-interactive
+## Set credentials for server admin and password. ##
+$cred = Get-Credential
+
+## Command to get virtual network configuration. ##
+$vnet = Get-AzVirtualNetwork -Name myVNet -ResourceGroupName CreatePrivateEndpointQS-rg
+
+## Command to create network interface for VM ##
+$parameters1 = @{
+    Name = 'myNicVM'
+    ResourceGroupName = 'CreatePrivateEndpointQS-rg'
+    Location = 'eastus'
+    Subnet = $vnet.Subnets[0]
+}
+$nicVM = New-AzNetworkInterface @parameters1
+
+## Create a virtual machine configuration.##
+$parameters2 = @{
+    VMName = 'myVM'
+    VMSize = 'Standard_DS1_v2'
+}
+$parameters3 = @{
+    ComputerName = 'myVM'
+    Credential = $cred
+}
+$parameters4 = @{
+    PublisherName = 'MicrosoftWindowsServer'
+    Offer = 'WindowsServer'
+    Skus = '2019-Datacenter'
+    Version = 'latest'
+}
+$vmConfig = 
+New-AzVMConfig @parameters2 | Set-AzVMOperatingSystem -Windows @parameters3 | Set-AzVMSourceImage @parameters4 | Add-AzVMNetworkInterface -Id $nicVM.Id
+
+## Create the virtual machine ##
+New-AzVM -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Location 'eastus' -VM $vmConfig
 ```
 
-1. При появлении запроса выберите **Подключиться**. 
-2. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
-  > [!NOTE]
-  > Вам может потребоваться выбрать дополнительные варианты > использовать другую учетную запись, чтобы указать учетные данные, введенные при создании виртуальной машины. 
-  
-3. Щелкните **ОК**. 
-4. Вы можете получить предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**. 
+## <a name="create-private-endpoint"></a>Создание частной конечной точки
 
-## <a name="access-sql-database-privately-from-the-vm"></a>Доступ с виртуальной машины к базе данных SQL в частном порядке
+В этом разделе вы создадите частную конечную точку и подключение с помощью:
 
-1. Откройте PowerShell на удаленном рабочем столе myVm.
-2. Введите `nslookup myserver.database.windows.net`. Не забудьте заменить на `myserver` имя SQL Server.
+* [New-AzPrivateLinkServiceConnection](/powershell/module/az.network/New-AzPrivateLinkServiceConnection)
+* [New-AzPrivateEndpoint](/powershell/module/az.network/new-azprivateendpoint)
 
-    Должно появиться сообщение следующего вида:
-    
-    ```azurepowershell
+```azurepowershell-interactive
+## Place web app into variable. Replace <your-webapp-name> with your server name ##
+$webapp = Get-AzWebApp -ResourceGroupName CreatePrivateEndpointQS-rg -Name <your-webapp-name>
+
+## Create private endpoint connection. ##
+$parameters1 = @{
+    Name = 'myConnection'
+    PrivateLinkServiceId = $webapp.ID
+    GroupID = 'sites'
+}
+$privateEndpointConnection = New-AzPrivateLinkServiceConnection @parameters1
+
+## Place virtual network into variable. ##
+$vnet = Get-AzVirtualNetwork -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Name 'myVNet'
+
+## Disable private endpoint network policy ##
+$vnet.Subnets[0].PrivateEndpointNetworkPolicies = "Disabled"
+$vnet | Set-AzVirtualNetwork
+
+## Create private endpoint
+$parameters2 = @{
+    ResourceGroupName = 'CreatePrivateEndpointQS-rg'
+    Name = 'myPrivateEndpoint'
+    Location = 'eastus'
+    Subnet = $vnet.Subnets[0]
+    PrivateLinkServiceConnection = $privateEndpointConnection
+}
+New-AzPrivateEndpoint @parameters2
+```
+## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS
+
+В этом разделе вы создадите и настроите частную зону DNS с помощью:
+
+* [New-AzPrivateDnsZone](/powershell/module/az.privatedns/new-azprivatednszone)
+* [New-AzPrivateDnsVirtualNetworkLink](/powershell/module/az.privatedns/new-azprivatednsvirtualnetworklink)
+* [New-AzPrivateDnsZoneConfig](/powershell/module/az.network/new-azprivatednszoneconfig)
+* [New-AzPrivateDnsZoneGroup](/powershell/module/az.network/new-azprivatednszonegroup)
+
+```azurepowershell-interactive
+## Place virtual network into variable. ##
+$vnet = Get-AzVirtualNetwork -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Name 'myVNet'
+
+## Create private dns zone. ##
+$parameters1 = @{
+    ResourceGroupName = 'CreatePrivateEndpointQS-rg'
+    Name = 'privatelink.azurewebsites.net'
+}
+$zone = New-AzPrivateDnsZone @parameters1
+
+## Create dns network link. ##
+$parameters2 = @{
+    ResourceGroupName = 'CreatePrivateEndpointQS-rg'
+    ZoneName = 'privatelink.azurewebsites.net'
+    Name = 'myLink'
+    VirtualNetworkId = $vnet.Id
+}
+$link = New-AzPrivateDnsVirtualNetworkLink @parameters2
+
+## Create DNS configuration ##
+$parameters3 = @{
+    Name = 'privatelink.azurewebsites.net'
+    PrivateDnsZoneId = $zone.ResourceId
+}
+$config = New-AzPrivateDnsZoneConfig @parameters3
+
+## Create DNS zone group. ##
+$parameters4 = @{
+    ResourceGroupName = 'CreatePrivateEndpointQS-rg'
+    PrivateEndpointName = 'myPrivateEndpoint'
+    Name = 'myZoneGroup'
+    PrivateDnsZoneConfig = $config
+}
+New-AzPrivateDnsZoneGroup @parameters4
+```
+
+## <a name="test-connectivity-to-private-endpoint"></a>Проверка подключения к частной конечной точке
+
+В этом разделе описано, как использовать виртуальную машину, созданную на предыдущем шаге, для подключения к серверу SQL через частную конечную точку.
+
+1. Войдите на [портал Azure](https://portal.azure.com) 
+ 
+2. В области навигации слева выберите **Группы ресурсов** .
+
+3. Выберите **CreatePrivateEndpointQS-rg** .
+
+4. Выберите **myVM** .
+
+5. На обзорной странице для **myVM** выберите **Подключиться** , а затем — **Бастион** .
+
+6. Нажмите синюю кнопку **Использовать Бастион** .
+
+7. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
+
+8. После подключения откройте на сервере Windows PowerShell.
+
+9. Введите `nslookup <your-webapp-name>.azurewebsites.net`. Замените **\<your-webapp-name>** именем веб-приложения, созданного на предыдущих шагах.  Вы получите сообщение, аналогичное показанному ниже:
+
+    ```powershell
     Server:  UnKnown
     Address:  168.63.129.16
-    Non-authoritative answer:
-    Name:    myserver.privatelink.database.windows.net
-    Address:  10.0.0.5
-    Aliases:   myserver.database.windows.net
-    ```
-    
-3. Установите [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15).
-4. В окне **Подключение к серверу** введите или выберите следующую информацию:
 
-    | Параметр | Значение |
-    | --- | --- |
-    | Тип сервера | Компонент Database Engine |
-    | Имя сервера | myserver.database.windows.net |
-    | Имя пользователя | Введите имя пользователя, указанное при создании |
-    | Пароль | Введите пароль, указанный при создании |
-    | Запомнить пароль | Да |
-    
-5. Выберите **Подключиться**.
-6. Просмотрите **базы данных** в меню слева. 
-7. (Дополнительно) Создание или запрос информации из базы данных mydatabase.
-8. Закройте подключение к удаленному рабочему столу *myVM*. 
+    Non-authoritative answer:
+    Name:    mywebapp8675.privatelink.azurewebsites.net
+    Address:  10.0.0.5
+    Aliases:  mywebapp8675.azurewebsites.net
+    ```
+
+    Для имени веб-приложения возвращается частный IP-адрес **10.0.0.5** .  Этот адрес находится в подсети виртуальной сети, созданной ранее.
+
+10. В окне подключения бастиона к **myVM** откройте Internet Explorer.
+
+11. Введите URL-адрес веб-приложения **https://\<your-webapp-name>.azurewebsites.net** .
+
+12. Если приложение не развернуто, вы получите страницу веб-приложения по умолчанию.
+
+    :::image type="content" source="./media/create-private-endpoint-portal/web-app-default-page.png" alt-text="Страница веб-приложения по умолчанию." border="true":::
+
+13. Закройте подключение к **myVM** .
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
-Завершив использование частной конечной точки, базы данных SQL и виртуальной машины, удалите группу ресурсов и все ресурсы, используя команду [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
+Завершив использование частной конечной точки и виртуальной машины, удалите группу ресурсов и все ресурсы, используя команду [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
 
 ```azurepowershell-interactive
-Remove-AzResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения о службе [Приватный канал Azure](private-link-overview.md)
+
+В этом кратком руководстве вы узнали, как создать:
+
+* виртуальную сеть и узел-бастион;
+* виртуальную машину;
+* частную конечную точку для веб-приложения Azure.
+
+Вы использовали виртуальную машину для безопасного тестирования подключения к веб-приложению через частную конечную точку.
+
+Дополнительные сведения о службах, поддерживающих частную конечную точку, см. в следующей статье:
+> [!div class="nextstepaction"]
+> [Доступность Приватного канала](private-link-overview.md#availability)

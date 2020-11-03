@@ -1,17 +1,17 @@
 ---
 title: Подключение SSL/TLS — база данных Azure для MySQL
 description: Сведения о настройке базы данных Azure для MySQL и связанных приложений для правильного использования SSL-соединений.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: 2969c963b491e4b08a0959d548e43ba11276d28a
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 6fb0b6f38869192e89bb849950e8822a157b23c8
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126555"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93241945"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mysql"></a>Подключение SSL/TLS в базе данных Azure для MySQL
 
@@ -32,7 +32,7 @@ ms.locfileid: "92126555"
 
 При подготовке нового сервера базы данных Azure для MySQL с помощью портала Azure и интерфейса командной строки применение SSL-соединений включается по умолчанию. 
 
-Строки подключения для различных языков программирования отображаются на портале Azure. Они включают необходимые параметры SSL для подключения к базе данных. На портале Azure выберите свой сервер. В разделе **Параметры** выберите **Строки подключения**. Значение параметра SSL зависит от соединителя. Например, может использоваться "ssl=true", "sslmode=require", "sslmode=required" или другой вариант.
+Строки подключения для различных языков программирования отображаются на портале Azure. Они включают необходимые параметры SSL для подключения к базе данных. На портале Azure выберите свой сервер. В разделе **Параметры** выберите **Строки подключения** . Значение параметра SSL зависит от соединителя. Например, может использоваться "ssl=true", "sslmode=require", "sslmode=required" или другой вариант.
 
 В некоторых случаях для безопасного подключения приложениям требуется локальный файл сертификата, созданный из файла сертификата доверенного центра сертификации (ЦС). Сейчас клиенты могут **использовать только** предопределенный сертификат для подключения к серверу базы данных Azure для MySQL, расположенному по адресу https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem . 
 
@@ -76,7 +76,7 @@ ms.locfileid: "92126555"
 *   TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
 *   TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md)
 - Узнайте, как [настроить SSL](howto-configure-ssl.md)

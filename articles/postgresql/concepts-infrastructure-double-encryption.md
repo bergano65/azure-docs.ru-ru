@@ -1,17 +1,17 @@
 ---
 title: Двойное шифрование инфраструктуры — база данных Azure для PostgreSQL
 description: Узнайте, как использовать двойное шифрование инфраструктуры, чтобы добавить второй уровень шифрования с ключами, управляемыми службой.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 6/30/2020
-ms.openlocfilehash: d3a3582891ab3d3e4bfb53cbba0c0b2826cba56b
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 03d52611c89012d1132b4a27820f7f47e6cdd512
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123360"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242030"
 ---
 # <a name="azure-database-for-postgresql-infrastructure-double-encryption"></a>Двойное шифрование базы данных Azure для инфраструктуры PostgreSQL
 
@@ -71,6 +71,6 @@ ms.locfileid: "92123360"
     > - Все **новые** серверы PostgreSQL, созданные в перечисленных выше регионах, также поддерживают шифрование данных с помощью ключей клиента. В этом случае серверы, созданные с помощью восстановления на момент времени (PITR) или реплики чтения, не соответствуют "новым".
     > - Чтобы проверить, поддерживает ли подготовленный сервер до 16 ТБ, перейдите в колонку ценовая категория на портале и убедитесь, что ползунок хранилища можно переместить до 16 ТБ. Если вы можете переместить ползунок только до 4 ТБ, сервер может не поддерживать шифрование с помощью управляемых клиентом ключей. Однако данные шифруются с помощью ключей, управляемых службой, в любое время. AskAzureDBforPostgreSQL@service.microsoft.comЕсли у вас возникнут вопросы, свяжитесь с вами.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [настроить двойное шифрование инфраструктуры для базы данных Azure для PostgreSQL](howto-double-encryption.md).

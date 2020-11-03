@@ -1,17 +1,17 @@
 ---
 title: Общие сведения о высокой доступности с избыточностью зоны с помощью базы данных Azure для гибкого сервера MySQL
 description: Сведения о принципах обеспечения высокой доступности с избыточностью зоны с помощью базы данных Azure для гибкого сервера MySQL
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: 9db5776a4d2395baf03a5ed7cf05db49de8d0321
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd7be998c49a710ee7652cf18c35bed743606ffd
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90937130"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93241190"
 ---
 # <a name="high-availability-concepts-in-azure-database-for-mysql-flexible-server-preview"></a>Основные понятия высокой доступности в базе данных Azure для гибкого сервера MySQL (Предварительная версия)
 
@@ -97,8 +97,8 @@ ms.locfileid: "90937130"
 -   Запланированные события, такие как обновление масштабных и промежуточных версий, происходят одновременно в основном и в резервном состоянии. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 -   Сведения о [непрерывности бизнес-процессов](./concepts-business-continuity.md)
--   Сведения о [высокой доступности с избыточностью зоны](./concepts-high-availability.md)
+-   Сведения о [высокой доступности с избыточностью зоны](./concepts-high-availability.md)
 -   Сведения о [резервном копировании и восстановлении](./concepts-backup-restore.md)

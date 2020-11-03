@@ -1,18 +1,18 @@
 ---
 title: Частная ссылка — Azure CLI — база данных Azure для MySQL
 description: Узнайте, как настроить закрытую ссылку для базы данных Azure для MySQL с Azure CLI
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b6c26c99d68e5b92477a4d7f2c6734190d112aba
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a2ec1c609fc0562c6c8181a934e742daa9a5a4f9
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92538771"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93241571"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mysql-using-cli"></a>Создание и управление частной связью для базы данных Azure для MySQL с помощью интерфейса командной строки
 
@@ -172,7 +172,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
     | Параметр | Значение |
     | ------- | ----- |
     | Имя подключения| Выберите нужное имя подключения.|
-    | Имя узла | Выбор *mydemoserver.privatelink.MySQL.Database.Azure.com* |
+    | Hostname (Имя узла) | Выбор *mydemoserver.privatelink.MySQL.Database.Azure.com* |
     | Имя пользователя | Введите имя пользователя, *username@servername* которое предоставляется при создании сервера MySQL. |
     | Пароль | Введите пароль, предоставленный при создании сервера MySQL. |
     ||

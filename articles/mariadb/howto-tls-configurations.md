@@ -1,17 +1,17 @@
 ---
 title: Настройка TLS — портал Azure — база данных Azure для MariaDB
 description: Узнайте, как настроить конфигурацию TLS с помощью портал Azure для базы данных Azure для MariaDB.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 06/02/2020
-ms.openlocfilehash: fac719daf05e8b319db7c86d0dbc61c2814b0a0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55a664ceb3524a0c545e037dcba7a2af90034ad4
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86120353"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93241990"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-mariadb-using-azure-portal"></a>Настройка параметров TLS в базе данных Azure для MariaDB с помощью портал Azure
 
@@ -31,9 +31,9 @@ ms.locfileid: "86120353"
 
 1. В [портал Azure](https://portal.azure.com/)выберите существующий сервер базы данных Azure для MariaDB.
 
-1. На странице сервер MariaDB в разделе **Параметры**щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
+1. На странице сервер MariaDB в разделе **Параметры** щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
 
-1. В **минимальной версии TLS**выберите **1,2** , чтобы запретить подключения с использованием протокола tls версии ниже TLS 1,2 для сервера MariaDB.
+1. В **минимальной версии TLS** выберите **1,2** , чтобы запретить подключения с использованием протокола tls версии ниже TLS 1,2 для сервера MariaDB.
 
     ![Конфигурация TLS базы данных Azure для MariaDB](./media/howto-tls-configurations/tls-configurations.png)
 

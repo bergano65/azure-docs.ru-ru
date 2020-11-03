@@ -1,6 +1,6 @@
 ---
-title: Получение журналов для устранения неполадок контроллера данных с поддержкой ARC в Azure
-description: Получение журналов службы для устранения неполадок контроллера данных с поддержкой ARC в Azure.
+title: Получение журналов для устранения неполадок служб данных, включенных в службу Arc Azure
+description: Узнайте, как получить файлы журналов из контроллера данных для устранения неполадок в службах данных, включенных в службу Arc Azure.
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
@@ -9,27 +9,27 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 625092e0557d40051e1ffd538a496c20edc0222f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 0c4cff7583f08fe27649cee464fcef802cddd88f
+ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320203"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93234055"
 ---
-# <a name="get-azure-arc-enabled-data-services-logs"></a>Получение журналов служб данных с поддержкой дуги Azure
+# <a name="get-logs-to-troubleshoot-azure-arc-enabled-data-services"></a>Получение журналов для устранения неполадок служб данных, включенных в службу Arc Azure
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем продолжать:
+Прежде чем продолжать, вам потребуется:
 
-* [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]. [Инструкции по установке](./install-client-tools.md).
-* Учетная запись администратора для входа в контроллер служб данных с включенной службой "Дуга Azure".
+* [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]. Дополнительные сведения см. в [статье Установка клиентских средств для развертывания служб данных Azure Arc и управления ими](./install-client-tools.md).
+* Учетная запись администратора для входа в контроллер данных с поддержкой дуги Azure.
 
-## <a name="get-azure-arc-enabled-data-services-logs"></a>Получение журналов служб данных с поддержкой дуги Azure
+## <a name="get-log-files"></a>Получение файлов журнала
 
-Вы можете получить журналы служб данных для службы "Дуга Azure" во всех модулях Pod или конкретных модулях для устранения неполадок. Это можно сделать с помощью стандартных средств Kubernetes, таких как `kubectl logs` команда или в этой статье, которые будут использовать [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] средство, что упрощает получение всех журналов одновременно.
+Для устранения неполадок можно получить журналы служб для всех модулей Pod или отдельных модулей. Один из способов — использовать стандартные средства Kubernetes, такие как `kubectl logs` команда. В этой статье вы будете использовать [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] средство, которое упрощает получение всех журналов.
 
 1. Войдите в контроллер данных с помощью учетной записи администратора.
 
@@ -53,27 +53,27 @@ ms.locfileid: "92320203"
 
 ## <a name="options"></a>Параметры
 
-`azdata arc dc debug copy-logs` предоставляет следующие возможности для управления выходными данными.
+`azdata arc dc debug copy-logs`Команда предоставляет следующие параметры для управления выходными данными:
 
 * Выводит файлы журнала в другой каталог с помощью `--target-folder` параметра.
 * Сжатие файлов путем пропуска `--skip-compress` параметра.
-* Активируйте и включите дампы памяти, опустив `--exclude-dumps` . Этот метод не рекомендуется использовать, если только служба поддержки Майкрософт не запросил дампы памяти. Для создания дампа памяти необходимо, чтобы параметр контроллера данных был установлен в значение, заданное `allowDumps` `true` при создании контроллера данных.
+* Активируйте и включите дампы памяти, опустив `--exclude-dumps` . Этот метод не рекомендуется использовать, если только служба поддержки Майкрософт не запросил дампы памяти. Для получения дампа памяти необходимо, чтобы параметр контроллера данных `allowDumps` был установлен в значение `true` при создании контроллера данных.
 * Фильтр для получения журналов только для определенного Pod ( `--pod` ) или контейнера ( `--container` ) по имени.
-* Фильтр для получения журналов для определенного настраиваемого ресурса путем передачи `--resource-kind` параметра и `--resource-name` . `resource-kind`Значение параметра должно быть одним из имен настраиваемых определений ресурсов, которые могут быть получены командой `kubectl get customresourcedefinition` .
+* Фильтр для получения журналов для определенного настраиваемого ресурса путем передачи `--resource-kind` параметров и `--resource-name` . `resource-kind`Значение параметра должно быть одним из имен настраиваемых определений ресурсов. Эти имена можно получить с помощью команды `kubectl get customresourcedefinition` .
 
-С помощью этих параметров можно заменить `<parameters>` в следующем примере. 
+С помощью этих параметров можно заменить `<parameters>` в следующем примере: 
 
 ```console
 azdata arc dc debug copy-logs --target-folder <desired folder> --exclude-dumps --skip-compress -resource-kind <custom resource definition name> --resource-name <resource name> --namespace <namespace name>
 ```
 
-Например.
+Пример:
 
 ```console
 #azdata arc dc debug copy-logs --target-folder C:\temp\logs --exclude-dumps --skip-compress --resource-kind postgresql-12 --resource-name pg1 --namespace arc
 ```
 
-Пример иерархии папок. Иерархия папок упорядочивается по имени POD, затем контейнеру, а затем по иерархии каталогов в контейнере.
+Примером является следующая иерархия папок. Он упорядочивается по имени POD, затем контейнеру, а затем по иерархии каталогов в контейнере.
 
 ```output
 <export directory>

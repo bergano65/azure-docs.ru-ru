@@ -1,17 +1,17 @@
 ---
 title: Запрет доступа к общедоступной сети — портал Azure — "база данных Azure для PostgreSQL — один сервер"
 description: Узнайте, как настроить запрет доступа к общедоступной сети с помощью портал Azure для базы данных Azure для PostgreSQL одного сервера.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 1dfc8d473d0cfe663569d2508404bf190f2da841
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bd777fe42dc8fa3ec4643fa9607f5ca8b7aac795
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90901575"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93240330"
 ---
 # <a name="deny-public-network-access-in-azure-database-for-postgresql-single-server-using-azure-portal"></a>Запрет доступа к общедоступной сети в базе данных Azure для PostgreSQL с помощью портал Azure
 
@@ -29,9 +29,9 @@ ms.locfileid: "90901575"
 
 1. В [портал Azure](https://portal.azure.com/)выберите существующую базу данных Azure для PostgreSQL Single Server.
 
-1. На странице PostgreSQL Single Server в разделе **Параметры**щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
+1. На странице PostgreSQL Single Server в разделе **Параметры** щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
 
-1. В списке **запретить доступ к общедоступной сети**выберите **Да** , чтобы разрешить запретить общий доступ для PostgreSQL одного сервера.
+1. В списке **запретить доступ к общедоступной сети** выберите **Да** , чтобы разрешить запретить общий доступ для PostgreSQL одного сервера.
 
     :::image type="content" source="./media/howto-deny-public-network-access/deny-public-network-access.PNG" alt-text="Сервер базы данных Azure для PostgreSQL запрещает доступ к сети":::
 
@@ -41,6 +41,6 @@ ms.locfileid: "90901575"
 
     :::image type="content" source="./media/howto-deny-public-network-access/deny-public-network-access-success.png" alt-text="Сервер базы данных Azure для PostgreSQL запрещает доступ к сети":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-on-metric.md).

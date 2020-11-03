@@ -1,17 +1,17 @@
 ---
 title: Запрет доступа к общедоступной сети — портал Azure — база данных Azure для MySQL.
 description: Узнайте, как настроить запрет доступа к общедоступной сети с помощью портал Azure для базы данных Azure для MySQL.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: eb5c4e4c4dfb73b2f7c9dc9f2629296790790885
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a98ab9ea347ba4d9ec53c80626f97b429e083cb1
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90896140"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242387"
 ---
 # <a name="deny-public-network-access-in-azure-database-for-mysql-using-azure-portal"></a>Запрет доступа к общедоступной сети в базе данных Azure для MySQL с помощью портал Azure
 
@@ -29,9 +29,9 @@ ms.locfileid: "90896140"
 
 1. В [портал Azure](https://portal.azure.com/)выберите существующий сервер базы данных Azure для MySQL.
 
-1. На странице "сервер MySQL" в разделе " **Параметры**" щелкните **Безопасность подключения** , чтобы открыть страницу настройки безопасности подключения.
+1. На странице "сервер MySQL" в разделе " **Параметры** " щелкните **Безопасность подключения** , чтобы открыть страницу настройки безопасности подключения.
 
-1. В списке **запретить доступ к общедоступной сети**выберите **Да** , чтобы включить запрет общего доступа для сервера MySQL.
+1. В списке **запретить доступ к общедоступной сети** выберите **Да** , чтобы включить запрет общего доступа для сервера MySQL.
 
     :::image type="content" source="./media/howto-deny-public-network-access/setting-deny-public-network-access.PNG" alt-text="Служба &quot;база данных Azure для MySQL&quot; запрещает доступ к сети":::
 
@@ -41,6 +41,6 @@ ms.locfileid: "90896140"
 
     :::image type="content" source="./media/howto-deny-public-network-access/setting-deny-public-network-access-success.png" alt-text="Служба &quot;база данных Azure для MySQL&quot; запрещает доступ к сети":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-on-metric.md).

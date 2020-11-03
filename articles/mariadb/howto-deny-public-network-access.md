@@ -1,17 +1,17 @@
 ---
 title: Запрет доступа к общедоступной сети — портал Azure — база данных Azure для MariaDB
 description: Узнайте, как настроить запрет доступа к общедоступной сети с помощью портал Azure для базы данных Azure для MariaDB.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: f33dbfa0b96d7f6d85443005ff7e8b1a780c75a0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3117ebfd258c72bb97432871c2ea74d30c52f669
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86104390"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242196"
 ---
 # <a name="deny-public-network-access-in-azure-database-for-mariadb-using-azure-portal"></a>Запрет доступа к общедоступной сети в базе данных Azure для MariaDB с помощью портал Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "86104390"
 
 1. В [портал Azure](https://portal.azure.com/)выберите существующий сервер базы данных Azure для MariaDB.
 
-1. На странице сервер MariaDB в разделе **Параметры**щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
+1. На странице сервер MariaDB в разделе **Параметры** щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
 
 1. В списке запретить доступ к общедоступной сети выберите **Да** , чтобы включить запрет общего доступа для сервера MariaDB.
 

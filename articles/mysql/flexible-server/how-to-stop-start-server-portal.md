@@ -1,17 +1,17 @@
 ---
 title: Окончание или запуск — портал Azure — гибкий сервер базы данных Azure для MySQL
 description: В этой статье описывается, как с помощью портал Azure останавливаются и запускаются операции в базе данных Azure для MySQL.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 09/29/2020
-ms.openlocfilehash: e3e08ae9bbf00e1c9a44e6ba913cac1d842928b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15b08ea67afe0d307470b5a4fb0f7d26e0f4ea82
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91567513"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93241928"
 ---
 # <a name="stopstart-an-azure-database-for-mysql---flexible-server-preview"></a>Завершение работы и запуск базы данных Azure для MySQL — гибкого сервера (Предварительная версия)
 
@@ -52,7 +52,7 @@ ms.locfileid: "91567513"
 > [!NOTE]
 > После запуска сервера все операции управления теперь доступны для гибкого сервера.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о работе [в сети в базе данных Azure для гибкого сервера MySQL](./concepts-networking.md)
 - [Создание виртуальной сети для Гибкого сервера Базы данных Azure для MySQL и управление ею с помощью портала Azure](./how-to-manage-virtual-network-portal.md).
 

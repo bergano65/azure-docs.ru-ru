@@ -7,12 +7,12 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 3ee7761d43710e0833eb8002851e286ce5449983
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: c56c52193f433571f16e4acf7bd6e7b89641b26f
+ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636125"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93233956"
 ---
 # <a name="transformation-functions-in-wrangling-data-flow"></a>Функции преобразования в потоке данных структурирование
 
@@ -25,7 +25,7 @@ ms.locfileid: "92636125"
 
 В настоящее время не все функции Power Query M поддерживаются для структурирование данных, несмотря на то, что они доступны во время разработки. При построении потоков данных структурирование вам будет предложено следующее сообщение об ошибке, если функция не поддерживается:
 
-`The wrangling data flow is invalid. Expression.Error: The transformation logic isn't supported. Please try a simpler expression`
+`The Wrangling Data Flow is invalid. Expression.Error: The transformation logic is not supported. Please try a simpler expression.`
 
 Ниже приведен список поддерживаемых функций Power Query M.
 
@@ -76,7 +76,7 @@ ms.locfileid: "92636125"
 
 Используйте [Table. Group](/powerquery-m/table-group) для статистической обработки значений.
 * Должен использоваться с агрегатной функцией
-* Поддерживаемые статистические функции:   [Table. ROWCOUNT](/powerquery-m/table-rowcount),   [List. Sum](/powerquery-m/list-sum),   [List. Count](/powerquery-m/list-count),   [List. СРЗНАЧ](/powerquery-m/list-average),   [List. min](/powerquery-m/list-min),   [List. Max](/powerquery-m/list-max),   [List. стандартное отклонение](/powerquery-m/list-standarddeviation),   [List. First](/powerquery-m/list-first),   [List. Last](/powerquery-m/list-last)
+* Поддерживаемые агрегатные функции:   [List. Sum](/powerquery-m/list-sum),   [List. Count](/powerquery-m/list-count),   [List. СРЗНАЧ](/powerquery-m/list-average),   [List. min](/powerquery-m/list-min),   [List. Max](/powerquery-m/list-max),   [List. стандартное отклонение](/powerquery-m/list-standarddeviation),   [List. First](/powerquery-m/list-first),   [List. Last](/powerquery-m/list-last)
 
 ## <a name="sorting"></a>Сортировка
 
@@ -96,7 +96,7 @@ ms.locfileid: "92636125"
 | Table.NestedJoin | При простом соединении будет возникать ошибка проверки. Столбцы должны быть развернуты, чтобы они работали. |
 | Table.Distinct | Удаление повторяющихся строк не поддерживается. |
 | Table.RemoveLastN | Удаление нижних строк не поддерживается. |
-| Table.RowCount | Не поддерживается, но может быть достигнут с добавлением столбца со всеми ячейками Empty (можно использовать столбец условий), а затем с помощью инструкции Group By для этого столбца. Таблица. Группа поддерживается. | 
+| Table.RowCount | Не поддерживается, но может быть достигнуто путем добавления пользовательского столбца, содержащего значение 1, а затем статистической обработки этого столбца с помощью List. Sum. Таблица. Группа поддерживается. | 
 | Обработка ошибок на уровне строк | Обработка ошибок на уровне строк в настоящее время не поддерживается. Например, чтобы отфильтровать нечисловые значения из столбца, одним из подходов будет преобразование текстового столбца в число. Каждая ячейка, для которой не выполняется преобразование, будет находиться в состоянии ошибки и должна быть отфильтрована. Этот сценарий невозможен в потоке данных структурирование. |
 | Table.Transpose | Не поддерживается |
 | Table.Pivot | Не поддерживается |

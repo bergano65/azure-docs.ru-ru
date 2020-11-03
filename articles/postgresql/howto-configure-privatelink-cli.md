@@ -1,18 +1,18 @@
 ---
 title: Частная ссылка — Azure CLI — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как настроить частную ссылку для базы данных Azure для PostgreSQL-Single Server из Azure CLI
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 780ce6bed230ebbcf2a603962afc711fb9ab7f11
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 45f5a7e66c80dff5e78e575463becd95bcc7fca1
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92777934"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242200"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-cli"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — одиночный сервер с помощью интерфейса командной строки
 

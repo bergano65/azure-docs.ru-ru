@@ -1,17 +1,17 @@
 ---
 title: Двойное шифрование инфраструктуры — портал Azure — база данных Azure для PostgreSQL
 description: Узнайте, как настроить и управлять двойным шифрованием инфраструктуры для базы данных Azure для PostgreSQL.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 362c051cf1dd7e97430bd6afaf4821a9c960b71d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ea486b534ac3e703849ddb3922d7c3a428dd076b
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90901545"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242234"
 ---
 # <a name="infrastructure-double-encryption-for-azure-database-for-postgresql"></a>Двойное шифрование инфраструктуры для базы данных Azure для PostgreSQL
 
@@ -27,7 +27,7 @@ ms.locfileid: "90901545"
 
 1. Выберите **Создать ресурс** (+) в левом верхнем углу страницы портала.
 
-2. Выберите **Базы данных** > **База данных Azure для PostgreSQL**. Можно также ввести PostgreSQL в поле поиска, чтобы найти службу. Включен параметр развертывания с **одиночным сервером** .
+2. Выберите **Базы данных** > **База данных Azure для PostgreSQL** . Можно также ввести PostgreSQL в поле поиска, чтобы найти службу. Включен параметр развертывания с **одиночным сервером** .
 
    :::image type="content" source="./media/quickstart-create-database-portal/1-create-database.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
@@ -35,7 +35,7 @@ ms.locfileid: "90901545"
 
     :::image type="content" source="./media/howto-infrastructure-double-encryption/infrastructure-encryption-selected.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
-4. Щелкните **Просмотр и создание**, чтобы подготовить сервер.
+4. Щелкните **Просмотр и создание** , чтобы подготовить сервер.
 
     :::image type="content" source="./media/howto-infrastructure-double-encryption/infrastructure-encryption-summary.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
@@ -52,13 +52,13 @@ ms.locfileid: "90901545"
 ```azurecli-interactive
 az group create --name myresourcegroup --location westus
 ```
-В следующем примере создается сервер PostgreSQL 11 в западной части США под названием `mydemoserver` в группе ресурсов `myresourcegroup` с именем входа администратора сервера `myadmin` . Это сервер **4-го поколения** **общего назначения** с **двумя виртуальными ядрами**. При этом также будет включено двойное шифрование инфраструктуры для созданного сервера. Замените `<server_admin_password>` собственным значением.
+В следующем примере создается сервер PostgreSQL 11 в западной части США под названием `mydemoserver` в группе ресурсов `myresourcegroup` с именем входа администратора сервера `myadmin` . Это сервер **4-го поколения** **общего назначения** с **двумя виртуальными ядрами** . При этом также будет включено двойное шифрование инфраструктуры для созданного сервера. Замените `<server_admin_password>` собственным значением.
 
 ```azurecli-interactive
 az postgres server create --resource-group myresourcegroup --name mydemoserver  --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen4_2 --version 11 --infrastructure-encryption >Enabled/Disabled>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о шифровании данных см. в статье шифрование данных в [базе данных Azure для PostgreSQL](concepts-Infrastructure-double-encryption.md).
 

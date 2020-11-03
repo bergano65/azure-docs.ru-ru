@@ -1,17 +1,17 @@
 ---
 title: Настройка TLS — портал Azure — "база данных Azure для PostgreSQL — один сервер"
 description: Узнайте, как настроить конфигурацию TLS с помощью портал Azure для базы данных Azure для PostgreSQL на одном сервере.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/02/2020
-ms.openlocfilehash: 26470709b37c2623c581499ec55572da402e96cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25be6b3c4e3172fc8ee14b97fd890b5948c284ba
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906457"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242370"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-postgresql-single---server-using-azure-portal"></a>Настройка параметров TLS в базе данных Azure для PostgreSQL на одном сервере с помощью портал Azure
 
@@ -31,9 +31,9 @@ ms.locfileid: "90906457"
 
 1. В [портал Azure](https://portal.azure.com/)выберите существующую базу данных Azure для PostgreSQL.
 
-1.  На странице База данных Azure для PostgreSQL — один сервер в разделе **Параметры**щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
+1.  На странице База данных Azure для PostgreSQL — один сервер в разделе **Параметры** щелкните **Безопасность подключения** , чтобы открыть страницу Настройка безопасности подключения.
 
-1. В **минимальной версии TLS**выберите **1,2** , чтобы запретить подключения с использованием протокола tls версии ниже TLS 1,2 для одного сервера PostgreSQL.
+1. В **минимальной версии TLS** выберите **1,2** , чтобы запретить подключения с использованием протокола tls версии ниже TLS 1,2 для одного сервера PostgreSQL.
 
     :::image type="content" source="./media/howto-tls-configurations/setting-tls-value.png" alt-text="Конфигурация TLS для одного сервера базы данных Azure для PostgreSQL":::
 
@@ -43,6 +43,6 @@ ms.locfileid: "90906457"
 
     :::image type="content" source="./media/howto-tls-configurations/setting-tls-value-success.png" alt-text="Конфигурация TLS для одного сервера базы данных Azure для PostgreSQL":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [создании оповещений о метриках](howto-alert-on-metric.md)

@@ -1,17 +1,17 @@
 ---
 title: Высокий уровень доступности — база данных Azure для MariaDB
 description: В этой статье приведены сведения о высокой доступности в базе данных Azure для MariaDB.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 7/7/2020
-ms.openlocfilehash: bea32b3b60c9013ea223513c95629092b9ab231b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4dcb1ac7ce4b468374993c11578bce553f766a42
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86203343"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93241350"
 ---
 # <a name="high-availability-in-azure-database-for-mariadb"></a>Высокий уровень доступности в базе данных Azure для MariaDB
 Служба "база данных Azure для MariaDB" обеспечивает гарантированный высокий уровень доступности при использовании соглашения об уровне обслуживания с финансовыми гарантиями (SLA) на [99,99%](https://azure.microsoft.com/support/legal/sla/MariaDB) времени работы. База данных Azure для MariaDB обеспечивает высокий уровень доступности во время запланированных событий, таких как операция вычислений User-инитатед Scale, а также при незапланированных событиях, таких как оборудование, программное обеспечение или сбои сети. База данных Azure для MariaDB может быстро восстановиться после большинства критических обстоятельств, обеспечивая практически немедленный доступ к приложениям при использовании этой службы.
