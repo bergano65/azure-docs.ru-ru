@@ -30,21 +30,21 @@ ms.locfileid: "92681683"
 
 1. В портал Azure выберите базу данных Azure для гибкого сервера MySQL.
 
-2. На панели инструментов страницы **Обзор** сервера нажмите кнопку **Восстановить** .
+2. На панели инструментов страницы **Обзор** сервера нажмите кнопку **Восстановить**.
 
    :::image type="content" source="./media/how-to-restart-server-portal/2-server.png" alt-text="База данных Azure для MySQL: кнопка &quot;Перезапуск&quot; на странице &quot;Обзор&quot;":::
 
 3. Нажмите кнопку **Да** , чтобы подтвердить перезапуск сервера.
 
-   :::image type="content" source="./media/how-to-restart-server-portal/3-restart-confirm.png" alt-text="База данных Azure для MySQL: кнопка &quot;Перезапуск&quot; на странице &quot;Обзор&quot;":::
+   :::image type="content" source="./media/how-to-restart-server-portal/3-restart-confirm.png" alt-text="База данных Azure для MySQL — подтверждение перезапуска":::
 
 4. Убедитесь, что состояние сервера изменилось на "Идет перезапуск".
 
-   :::image type="content" source="./media/how-to-restart-server-portal/4-restarting-status.png" alt-text="База данных Azure для MySQL: кнопка &quot;Перезапуск&quot; на странице &quot;Обзор&quot;":::
+   :::image type="content" source="./media/how-to-restart-server-portal/4-restarting-status.png" alt-text="База данных Azure для MySQL — состояние перезапуска":::
 
 5. Убедитесь, что сервер перезапущен.
 
-   :::image type="content" source="./media/how-to-restart-server-portal/5-restart-success.png" alt-text="База данных Azure для MySQL: кнопка &quot;Перезапуск&quot; на странице &quot;Обзор&quot;":::
+   :::image type="content" source="./media/how-to-restart-server-portal/5-restart-success.png" alt-text="База данных Azure для MySQL — перезапуск выполнен":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

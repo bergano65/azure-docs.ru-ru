@@ -38,11 +38,11 @@ ms.locfileid: "92107051"
 
 Кроме того, клиенты могут получать доступ к предложениям AppSource с помощью Microsoft 365, Dynamics 365, Power Platform и Azure. В приведенном ниже примере показано, как получить доступ к надстройкам AppSource из меню **Файл** в Power BI.
 
-:::image type="content" source="media/overview/power-bi.png" alt-text="Демонстрация страницы с опубликованным предложением в Microsoft AppSource."::: 
+:::image type="content" source="media/overview/power-bi.png" alt-text="Отображение процедуры получения доступа к визуализациям Power BI в AppSource из меню &quot;Файл&quot; в Power BI."::: 
 
 Этот параметр позволяет открыть окно, в котором клиент может искать надстройки Power BI по имени или категории. 
 
-:::image type="content" source="media/overview/power-bi-apps.png" alt-text="Демонстрация страницы с опубликованным предложением в Microsoft AppSource."::: 
+:::image type="content" source="media/overview/power-bi-apps.png" alt-text="Отображение списка надстроек AppSource в Power BI."::: 
 
 ### <a name="azure-marketplace"></a>Azure Marketplace
 
@@ -50,17 +50,17 @@ ms.locfileid: "92107051"
 
 Ниже приведен пример страницы с опубликованным предложением в Azure Marketplace.
 
-:::image type="content" source="media/overview/example-marketplace.png" alt-text="Демонстрация страницы с опубликованным предложением в Microsoft AppSource."::: 
+:::image type="content" source="media/overview/example-marketplace.png" alt-text="Демонстрация страницы с опубликованным предложением в Azure Marketplace."::: 
 
 #### <a name="azure-marketplace-in-the-azure-portal"></a>Azure Marketplace на портале Azure
 
 Клиенты Azure могут искать и развертывать решения Azure Marketplace с помощью функции **Создать ресурс** на [портале Azure](https://portal.azure.com/).
 
-:::image type="content" source="media/overview/create-resource.png" alt-text="Демонстрация страницы с опубликованным предложением в Microsoft AppSource."::: 
+:::image type="content" source="media/overview/create-resource.png" alt-text="Отображение параметра &quot;Создать ресурс&quot; на портале Azure"::: 
 
 Этот параметр позволяет открыть Azure Marketplace на портале Azure, где можно искать решения по имени или категории.
 
-:::image type="content" source="media/overview/search-portal.png" alt-text="Демонстрация страницы с опубликованным предложением в Microsoft AppSource."::: 
+:::image type="content" source="media/overview/search-portal.png" alt-text="Отображение параметров поиска Azure Marketplace на портале Azure"::: 
 
 ## <a name="benefits-of-selling-with-microsoft"></a>Преимущества совместных продаж с корпорацией Майкрософт
 

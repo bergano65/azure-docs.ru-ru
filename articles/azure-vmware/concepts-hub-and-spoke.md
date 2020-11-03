@@ -69,12 +69,12 @@ ms.locfileid: "92674689"
 
 * **Поток трафика решения "из локальной среды в Azure VMware"**
 
-  :::image type="content" source="./media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false" lightbox="./media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png":::
+  :::image type="content" source="./media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png" alt-text="Поток трафика решения &quot;из локальной среды в Azure VMware&quot;" border="false" lightbox="./media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png":::
 
 
 * **Поток трафика виртуальной сети Azure VMware к концентратору**
 
-  :::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false" lightbox="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png":::
+  :::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png" alt-text="Поток трафика виртуальной сети Azure VMware к концентратору" border="false" lightbox="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png":::
 
 
 Дополнительные сведения о сети и концепциях подключения для Azure VMware см. в [документации по продукту VMware для Azure](./concepts-networking.md).
@@ -85,7 +85,7 @@ ms.locfileid: "92674689"
 
 Создайте таблицы маршрутов для направления трафика в брандмауэр Azure.  Для периферийных виртуальных сетей создайте маршрут, который задает маршрут по умолчанию для внутреннего интерфейса брандмауэра Azure. Таким образом, когда рабочей нагрузке в виртуальной сети необходимо достичь адресного пространства решения Azure VMware, брандмауэр может оценить его и применить соответствующее правило трафика, чтобы разрешить или отклонить его.  
 
-:::image type="content" source="media/hub-spoke/create-route-table-to-direct-traffic.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" lightbox="media/hub-spoke/create-route-table-to-direct-traffic.png":::
+:::image type="content" source="media/hub-spoke/create-route-table-to-direct-traffic.png" alt-text="Создание таблиц маршрутов для направления трафика в брандмауэр Azure" lightbox="media/hub-spoke/create-route-table-to-direct-traffic.png":::
 
 
 > [!IMPORTANT]
@@ -93,7 +93,7 @@ ms.locfileid: "92674689"
 
 Задайте маршруты для конкретных сетей в соответствующей таблице маршрутов. Например, маршруты позволяют получить префиксы IP-адресов для управления решениями и рабочих нагрузок Azure VMware на периферийных рабочих нагрузках и наоборот.
 
-:::image type="content" source="media/hub-spoke/specify-gateway-subnet-for-route-table.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" lightbox="media/hub-spoke/specify-gateway-subnet-for-route-table.png":::
+:::image type="content" source="media/hub-spoke/specify-gateway-subnet-for-route-table.png" alt-text="Установка маршрутов для конкретных сетей в соответствующей таблице маршрутов" lightbox="media/hub-spoke/specify-gateway-subnet-for-route-table.png":::
 
 Второй уровень сегментации трафика с помощью групп безопасности сети в периферийных зонах и концентратора для создания более детализированной политики трафика.
 
@@ -106,7 +106,7 @@ ms.locfileid: "92674689"
 
 Дополнительные сведения и требования см. в статье о решении Azure VMware в [шлюзе приложений](./protect-azure-vmware-solution-with-application-gateway.md) .
 
-:::image type="content" source="media/hub-spoke/azure-vmware-solution-second-level-traffic-segmentation.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
+:::image type="content" source="media/hub-spoke/azure-vmware-solution-second-level-traffic-segmentation.png" alt-text="Второй уровень сегментации трафика с помощью групп безопасности сети" border="false":::
 
 
 ### <a name="jump-box-and-azure-bastion"></a>Поле перехода и Azure бастиона
@@ -122,7 +122,7 @@ ms.locfileid: "92674689"
 > Не предоставляйте общедоступный IP-адрес виртуальной машине с полем перехода или предоставляйте доступ через Интернет к порту 3389/TCP. 
 
 
-:::image type="content" source="media/hub-spoke/azure-bastion-hub-vnet.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
+:::image type="content" source="media/hub-spoke/azure-bastion-hub-vnet.png" alt-text="Виртуальная сеть центра бастиона Azure" border="false":::
 
 
 ## <a name="azure-dns-resolution-considerations"></a>Рекомендации по разрешению Azure DNS
