@@ -1,18 +1,18 @@
 ---
 title: Частная ссылка — Azure CLI — база данных Azure для MariaDB
 description: Узнайте, как настроить частную ссылку на базу данных Azure для MariaDB из Azure CLI
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: fb3ed4e41125131538957addce5bf935b897b581
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c7f95b2009521b054958be48e444a129b0a59ed3
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92537224"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242897"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью интерфейса командной строки
 
@@ -40,7 +40,7 @@ az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet* .
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
 az network vnet create \
@@ -60,7 +60,7 @@ az network vnet subnet update \
  --disable-private-endpoint-network-policies true
 ```
 ## <a name="create-the-vm"></a>Создание виртуальной машины 
-Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM* . 
+Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM*. 
 ```azurecli-interactive
 az vm create \
   --resource-group myResourceGroup \
@@ -133,24 +133,24 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 
 Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
 
-1. На портале в строке поиска введите *myVm* .
+1. На портале в строке поиска введите *myVm*.
 
-1. Нажмите кнопку **Подключиться** . После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
+1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
-1. Щелкните **Скачать RDP-файл** . Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола ( *RDP* ).
+1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола ( *RDP* ).
 
-1. Откройте файл *downloaded.rdp* .
+1. Откройте файл *downloaded.rdp*.
 
-    1. При появлении запроса выберите **Подключиться** .
+    1. При появлении запроса выберите **Подключиться**.
 
     1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
         > [!NOTE]
         > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Щелкните **ОК** .
+1. Щелкните **ОК**.
 
-1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить** .
+1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
@@ -176,12 +176,12 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
     | Параметр | Значение |
     | ------- | ----- |
     | Имя подключения| Выберите нужное имя подключения.|
-    | Имя узла | Выбор *mydemoserver.privatelink.MariaDB.Database.Azure.com* |
+    | Hostname (Имя узла) | Выбор *mydemoserver.privatelink.MariaDB.Database.Azure.com* |
     | Имя пользователя | Введите имя пользователя, *username@servername* которое предоставляется во время создания сервера MariaDB. |
     | Пароль | Введите пароль, указанный при создании сервера MariaDB. |
     ||
 
-5. Выберите **проверить подключение** или **ОК** .
+5. Выберите **проверить подключение** или **ОК**.
 
 6. При необходимости Просмотр баз данных из левого меню и создание или запрос информации из базы данных MariaDB
 

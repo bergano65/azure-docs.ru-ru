@@ -1,17 +1,17 @@
 ---
 title: Двойное шифрование инфраструктуры — база данных Azure для MySQL
 description: Узнайте, как использовать двойное шифрование инфраструктуры, чтобы добавить второй уровень шифрования с управляемыми службами ключами.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/30/2020
-ms.openlocfilehash: 24ec674c35a4e218c105febf6471ae8427f3c1c3
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 233dcbeee0bccc714e3b4fe93e7c8b19aa9f2df0
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92125736"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242455"
 ---
 # <a name="azure-database-for-mysql-infrastructure-double-encryption"></a>Двойное шифрование инфраструктуры базы данных Azure для MySQL
 
@@ -71,6 +71,6 @@ ms.locfileid: "92125736"
     > - Все **новые** серверы MySQL, созданные в перечисленных выше регионах, также поддерживают шифрование данных с помощью ключей менеджера клиента. В этом случае серверы, созданные с помощью восстановления на момент времени (PITR) или реплики чтения, не соответствуют "новым".
     > - Чтобы проверить, поддерживает ли подготовленный сервер до 16 ТБ, перейдите в колонку ценовая категория на портале и убедитесь, что ползунок хранилища можно переместить до 16 ТБ. Если вы можете переместить ползунок только до 4 ТБ, сервер может не поддерживать шифрование с помощью управляемых клиентом ключей. Однако данные шифруются с помощью ключей, управляемых службой, в любое время. AskAzureDBforMySQL@service.microsoft.comЕсли у вас возникнут вопросы, свяжитесь с вами.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [настроить двойное шифрование инфраструктуры для базы данных Azure для MySQL](howto-double-encryption.md).

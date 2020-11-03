@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 35eef6951f844ab60caec70033e41e23a7920d3a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e00ecd6048239683951a2d1e60d3bcb0eb5aa68
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91288313"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242438"
 ---
 # <a name="query-parquet-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics
 
@@ -72,7 +72,7 @@ from openrowset(
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Первым делом вам нужно **создать базу данных**, у которой источник данных ссылается на учетную запись хранения [набора NYC Yellow Taxi](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
+Первым делом вам нужно **создать базу данных** , у которой источник данных ссылается на учетную запись хранения [набора NYC Yellow Taxi](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
 
 ## <a name="dataset"></a>Dataset
 
@@ -155,43 +155,7 @@ ORDER BY
 
 ## <a name="type-mapping"></a>Сопоставление типов
 
-Файлы Parquet содержат описания типов для каждого столбца. В приведенной ниже таблице показано, как типы Parquet сопоставляются с собственными типами SQL.
-
-| Тип Parquet | Логический тип Parquet (заметка) | Тип данных SQL |
-| --- | --- | --- |
-| BOOLEAN | | bit |
-| BINARY / BYTE_ARRAY | | varbinary |
-| DOUBLE | | FLOAT |
-| FLOAT | | real |
-| INT32 | | INT |
-| INT64 | | BIGINT |
-| INT96 | |datetime2 |
-| FIXED_LEN_BYTE_ARRAY | |binary |
-| BINARY |UTF8 |varchar \*(параметры сортировки UTF8) |
-| BINARY |STRING |varchar \*(параметры сортировки UTF8) |
-| BINARY |ENUM|varchar \*(параметры сортировки UTF8) |
-| BINARY |UUID |UNIQUEIDENTIFIER |
-| BINARY |DECIMAL |Decimal |
-| BINARY |JSON |varchar(max) \*(параметры сортировки UTF8) |
-| BINARY |BSON |varbinary(max) |
-| FIXED_LEN_BYTE_ARRAY |DECIMAL |Decimal |
-| BYTE_ARRAY |INTERVAL |varchar(max), сериализованный в стандартизированный формат |
-| INT32 |INT(8, true) |smallint |
-| INT32 |INT(16, true) |smallint |
-| INT32 |INT(32, true) |INT |
-| INT32 |INT(8, false) |tinyint |
-| INT32 |INT(16, false) |INT |
-| INT32 |INT(32, false) |BIGINT |
-| INT32 |DATE |Дата |
-| INT32 |DECIMAL |Decimal |
-| INT32 |TIME (MILLIS)|time |
-| INT64 |INT(64, true) |BIGINT |
-| INT64 |INT(64, false) |decimal(20,0) |
-| INT64 |DECIMAL |Decimal |
-| INT64 |TIME (MICROS / NANOS) |time |
-|INT64 |TIMESTAMP (MILLIS / MICROS / NANOS) |datetime2 |
-|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#lists) |Список |varchar(max), сериализованный в JSON |
-|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#maps)|MAP|varchar(max), сериализованный в JSON |
+Для сопоставления типа Parquet с [сопоставлением типов](develop-openrowset.md#type-mapping-for-parquet)проверки собственного типа SQL для Parquet.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

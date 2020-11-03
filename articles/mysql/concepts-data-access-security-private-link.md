@@ -1,17 +1,17 @@
 ---
 title: Частная ссылка — база данных Azure для MySQL
 description: Узнайте, как работает частная связь для базы данных Azure для MySQL.
-author: kummanish
-ms.author: manishku
+author: mksuni
+ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: e6086aecc73f04b25e95d3c93c60abd2164a5610
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 1ae35d1ac35dacfab2690980d57973dce050382b
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544245"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93242863"
 ---
 # <a name="private-link-for-azure-database-for-mysql"></a>Частная ссылка для базы данных Azure для MySQL
 
@@ -72,21 +72,21 @@ Data ex-фильтрация в базе данных Azure для MySQL — к�
 
 * Выберите отдельное PEC из списка, щелкнув его.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link.png" alt-text="Выбор закрытого портала конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link.png" alt-text="Выберите закрытую конечную точку, ожидающие утверждения":::
 
 * Администратор сервера MySQL может одобрить или отклонить PEC и при необходимости добавить короткий текст ответа.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link-message.png" alt-text="Выбор закрытого портала конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link-message.png" alt-text="Выберите сообщение частной конечной точки":::
 
 * После утверждения или отклонения список будет отражать соответствующее состояние вместе с текстом ответа.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-approved-connection.png" alt-text="Выбор закрытого портала конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-approved-connection.png" alt-text="выберите конечное состояние частной конечной точки":::
 
 ## <a name="use-cases-of-private-link-for-azure-database-for-mysql"></a>Варианты использования частной ссылки для базы данных Azure для MySQL
 
 Клиенты могут подключаться к частной конечной точке из той же виртуальной сети, одноранговой виртуальной сети в том же регионе или через подключение между виртуальными сетями в разных регионах. Кроме того, клиенты могут подключаться из локальной среды с помощью ExpressRoute, частного пиринга или VPN-туннелирования. Ниже приведена упрощенная схема, на которой показаны распространенные варианты использования.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="Выбор закрытого портала конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="Выберите Общие сведения о конечной точке частного назначения":::
 
 ### <a name="connecting-from-an-azure-vm-in-peered-virtual-network-vnet"></a>Подключение из виртуальной машины Azure в одноранговой виртуальной сети (VNet)
 Настройте [пиринг виртуальных сетей](../virtual-network/tutorial-connect-virtual-networks-powershell.md) , чтобы установить подключение к базе данных Azure для MySQL с виртуальной машины Azure в одноранговой виртуальной сети.
