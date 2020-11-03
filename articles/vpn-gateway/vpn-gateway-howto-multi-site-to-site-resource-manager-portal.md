@@ -41,20 +41,24 @@ ms.locfileid: "92890174"
 
 1. В браузере перейдите к [портал Azure](https://portal.azure.com) и при необходимости войдите с помощью учетной записи Azure.
 1. Выберите **все ресурсы** и укажите **шлюз виртуальной сети** в списке ресурсов и выберите его.
-1. На странице **шлюз виртуальной сети** выберите **подключения** .
+1. На странице **шлюз виртуальной сети** выберите **подключения**.
 
    :::image type="content" source="./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/connections.png" alt-text="Подключения VPN-шлюза":::
-1. На странице **подключения** выберите **+ Добавить** .
+1. На странице **подключения** выберите **+ Добавить**.
 1. Откроется страница **Добавление подключения** .
 
-   :::image type="content" source="./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/add-connection.png" alt-text="Подключения VPN-шлюза" (IPSec)** .
+   :::image type="content" source="./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/add-connection.png" alt-text="Страница &quot;Добавление подключения&quot;":::
+1. На странице **Добавление подключения** заполните следующие поля.
+
+   * **Имя.** Имя, назначаемое сайту, к которому создается подключение.
+   * **Тип подключения:** Выберите **"сеть — сеть" (IPSec)**.
 
 ## <a name="add-a-local-network-gateway"></a><a name="local"></a>Добавление шлюза локальной сети
 
 1. В поле **шлюз локальной сети** выберите **_вариант выбрать шлюз локальной сети_*_. Откроется страница _* выбор шлюза локальной сети** .
 1. Выберите **+ создать** , чтобы открыть страницу **Создание шлюза локальной сети** .
 
-   :::image type="content" source="./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/create-local-network-gateway.png" alt-text="Подключения VPN-шлюза":::
+   :::image type="content" source="./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/create-local-network-gateway.png" alt-text="Страница &quot;Создание шлюза локальной сети&quot;":::
 1. На странице **Создание шлюза локальной сети** заполните следующие поля.
 
    * **Имя.** Имя, которое будет использоваться для шлюза локальной сети.

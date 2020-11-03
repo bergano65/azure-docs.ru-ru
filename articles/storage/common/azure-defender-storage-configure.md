@@ -53,7 +53,7 @@ ms.locfileid: "92789018"
 При оформлении подписки на уровень "Стандартный" в центре безопасности Azure защитник Azure автоматически настраивается для всех учетных записей хранения. Вы можете включить или отключить защитник Azure для учетных записей хранения в определенной подписке следующим образом:
 
 1. Запустите **Центр безопасности Azure** на [портал Azure](https://portal.azure.com).
-1. В главном меню в разделе **Управление** выберите **параметры ценообразования &** .
+1. В главном меню в разделе **Управление** выберите **параметры ценообразования &**.
 1. Выберите подписку, для которой вы хотите включить или отключить защитник Azure.
 1. Выберите **защитник Azure** , чтобы включить защитник Azure для подписки.
 1. В разделе **Выбор плана защитника Azure по типу ресурса** выберите строку **хранилища** и выберите **включено** в столбце **план** .
@@ -66,10 +66,10 @@ ms.locfileid: "92789018"
 ### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Запустите [портал Azure](https://portal.azure.com/).
-1. Войдите в свою учетную запись хранения. В разделе **Параметры** выберите пункт **Расширенная безопасность** .
-1. Выберите **включить защитник Azure для хранилища** .
+1. Войдите в свою учетную запись хранения. В разделе **Параметры** выберите пункт **Расширенная безопасность**.
+1. Выберите **включить защитник Azure для хранилища**.
 
-    :::image type="content" source="media/azure-defender-storage-configure/enable-azure-defender-portal.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для хранилища в центре безопасности":::
+    :::image type="content" source="media/azure-defender-storage-configure/enable-azure-defender-portal.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для учетной записи хранения Azure":::
 
 Теперь для этой учетной записи хранения включена служба "защитник Azure".
 
@@ -84,15 +84,15 @@ ms.locfileid: "92789018"
 1. Откройте страницу **определения политики** Azure.
 1. Найдите политику **развертывание защитника Azure в учетных записях хранения** .
 
-    :::image type="content" source="media/azure-defender-storage-configure/storage-atp-policy-definitions.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для хранилища в центре безопасности":::
+    :::image type="content" source="media/azure-defender-storage-configure/storage-atp-policy-definitions.png" alt-text="Применение политики для включения защитника Azure для учетных записей хранения":::
 
 1. Выберите подписку Azure или группу ресурсов.
 
-    :::image type="content" source="media/azure-defender-storage-configure/storage-atp-policy2.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для хранилища в центре безопасности":::
+    :::image type="content" source="media/azure-defender-storage-configure/storage-atp-policy2.png" alt-text="Выберите подписку или группу ресурсов для области политики. ":::
 
 1. Назначьте политику.
 
-    :::image type="content" source="media/azure-defender-storage-configure/storage-atp-policy1.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для хранилища в центре безопасности":::
+    :::image type="content" source="media/azure-defender-storage-configure/storage-atp-policy1.png" alt-text="Назначение политики для включения защитника Azure для хранилища":::
 
 ### <a name="rest-api"></a>[REST API](#tab/rest-api)
 
@@ -125,11 +125,11 @@ ms.locfileid: "92789018"
 
 Кроме того, в электронном сообщении приводится информация о возможных причинах, а также рекомендуемые действия по поиску и устранению потенциальной угрозы.
 
-:::image type="content" source="media/azure-defender-storage-configure/storage-advanced-threat-protection-alert-email.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для хранилища в центре безопасности":::
+:::image type="content" source="media/azure-defender-storage-configure/storage-advanced-threat-protection-alert-email.png" alt-text="Оповещение службы &quot;защитник Azure для хранилища&quot;":::
 
 Вы можете просматривать текущие оповещения системы безопасности и управлять ими на [плитке оповещения системы](../../security-center/security-center-managing-and-responding-alerts.md)безопасности центра безопасности Azure. Если щелкнуть какое-либо оповещение, отобразятся сведения и действия, позволяющие изучить текущую угрозу и устранить будущие угрозы.
 
-:::image type="content" source="media/azure-defender-storage-configure/storage-advanced-threat-protection-alert.png" alt-text="Снимок экрана, показывающий, как включить защитник Azure для хранилища в центре безопасности":::
+:::image type="content" source="media/azure-defender-storage-configure/storage-advanced-threat-protection-alert.png" alt-text="Оповещение о службе &quot;защитник Azure для хранилища&quot;":::
 
 ## <a name="security-alerts"></a>Оповещения безопасности
 
