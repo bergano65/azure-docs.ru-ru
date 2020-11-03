@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: seoapr2020
 ms.date: 04/22/2020
-ms.openlocfilehash: a47781bcdf60d863d6dcf77d70bc0ee496a51388
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 2e9f6898dba559f557f49cc0ee9ff39644da243f
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92538805"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93287343"
 ---
 # <a name="troubleshoot-resource-creation-failures-in-azure-hdinsight"></a>Устранение сбоев при создании ресурсов в Azure HDInsight
 
@@ -33,24 +33,18 @@ ms.locfileid: "92538805"
 
 Чтобы запросить увеличение квоты, сделайте следующее:
 
-1. Перейдите в [портал Azure](https://portal.azure.com)и выберите Справка и **Поддержка** .
+1. Перейдите в [портал Azure](https://portal.azure.com)и выберите Справка и **Поддержка**.
 
-1. Выберите **Новый запрос в службу поддержки** .
+1. Выберите **Новый запрос в службу поддержки**.
 
 1. На вкладке **основы** на странице **новый запрос в службу поддержки** укажите следующие сведения.
 
-   * **Тип проблемы:** Выберите **пределы службы и подписки (квоты)** .
+   * **Тип проблемы:** Выберите **пределы службы и подписки (квоты)**.
    * **Подписка:** Выберите подписку, которую необходимо изменить.
-   * **Тип квоты:** Выберите **HDInsight** .
+   * **Тип квоты:** Выберите **HDInsight**.
 
 См. сведения о [создании запроса в службу поддержки для увеличения количества ядер](hdinsight-capacity-planning.md#quotas).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
-
-* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
-
-* Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
-
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+[!INCLUDE [troubleshooting next steps](../../includes/hdinsight-troubleshooting-next-steps.md)]

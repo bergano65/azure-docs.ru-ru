@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 10/27/2020
+ms.date: 11/03/2020
 ms.custom: generated
-ms.openlocfilehash: 60e9ec88fd07d8b04254c5d3917aab09d671f517
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 701c901cb9b85aeaf329846c13e6ed051ea52e63
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900866"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93288496"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -77,6 +77,12 @@ ms.locfileid: "92900866"
 > | **Web** |  |  |
 > | [Читатель данных Azure Maps](#azure-maps-data-reader) | Предоставляет доступ на чтение связанных данных карты в учетной записи Azure Maps. | 423170ca-a8f6-4b0f-8487-9e4eb8f49bfa |
 > | [Участник службы поиска](#search-service-contributor) | Позволяет управлять службами поиска, но не доступом к ним. | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
+> | [Агент AccessKey SignalR](#signalr-accesskey-reader) | Чтение ключей доступа службы SignalR | 04165923-9d83-45d5-8227-78b77b0a687e |
+> | [Сервер приложений SignalR (Предварительная версия)](#signalr-app-server-preview) | Предоставляет серверу приложений доступ к службе SignalR с параметрами проверки подлинности AAD. | 420fcaa2-552c-430f-98ca-3264be4806c7 |
+> | [Участник SignalR](#signalr-contributor) | Создание, чтение, обновление и удаление ресурсов службы SignalR | 8cf5e20a-e4b2-4e9d-b3a1-5ceb692c2761 |
+> | [Несерверный участник SignalR (Предварительная версия)](#signalr-serverless-contributor-preview) | Позволяет использовать службу доступа к приложениям в режиме без сервера с параметрами проверки подлинности AAD. | fd53cd77-2268-407a-8f46-7e7863d0f521 |
+> | [Владелец службы SignalR (Предварительная версия)](#signalr-service-owner-preview) | Полный доступ к API-интерфейсам службы Azure SignalR | 7e4f1700-ea5a-4f59-8f37-079cfe29dce3 |
+> | [Читатель службы SignalR (Предварительная версия)](#signalr-service-reader-preview) | Доступ только для чтения к интерфейсам API службы Azure SignalR | ddde6b66-c0df-4114-a159-3618637b3035 |
 > | [Участник веб-плана](#web-plan-contributor) | Позволяет управлять веб-планами для веб-сайтов, но не доступом к ним. | 2cc479cb-7b4d-49a8-b449-8c00fd0f0a4b |
 > | [Участник веб-сайта](#website-contributor) | Позволяет управлять веб-сайтами (не веб-планами), но не доступом к ним. | de139f84-1756-47ae-9be6-808fbbe84772 |
 > | **Контейнеры** |  |  |
@@ -2674,6 +2680,282 @@ ms.locfileid: "92900866"
 }
 ```
 
+### <a name="signalr-accesskey-reader"></a>Агент AccessKey SignalR
+
+Чтение ключей доступа службы SignalR
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice)/*/Реад |  |
+> | /Сигналр/листкэйс/Актион [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Просмотр значений ключей доступа SignalR на портале управления или с помощью API. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Read SignalR Service Access Keys",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/04165923-9d83-45d5-8227-78b77b0a687e",
+  "name": "04165923-9d83-45d5-8227-78b77b0a687e",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.SignalRService/*/read",
+        "Microsoft.SignalRService/SignalR/listkeys/action",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "SignalR AccessKey Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="signalr-app-server-preview"></a>Сервер приложений SignalR (Предварительная версия)
+
+Предоставляет серверу приложений доступ к службе SignalR с параметрами проверки подлинности AAD.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Сигналр/АУС/акцесскэй/Актион [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Создайте временный AccessKey для подписи Клиенттокенс. |
+> | /Сигналр/серверконнектион/Врите [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Запустите соединение с сервером. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets your app server access SignalR Service with AAD auth options.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/420fcaa2-552c-430f-98ca-3264be4806c7",
+  "name": "420fcaa2-552c-430f-98ca-3264be4806c7",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.SignalRService/SignalR/auth/accessKey/action",
+        "Microsoft.SignalRService/SignalR/serverConnection/write"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "SignalR App Server (Preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="signalr-contributor"></a>Участник SignalR
+
+Создание, чтение, обновление и удаление ресурсов службы SignalR
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Сигналрсервице](resource-provider-operations.md#microsoftsignalrservice)/* |  |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Create, Read, Update, and Delete SignalR service resources",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/8cf5e20a-e4b2-4e9d-b3a1-5ceb692c2761",
+  "name": "8cf5e20a-e4b2-4e9d-b3a1-5ceb692c2761",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.SignalRService/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "SignalR Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="signalr-serverless-contributor-preview"></a>Несерверный участник SignalR (Предварительная версия)
+
+Позволяет использовать службу доступа к приложениям в режиме без сервера с параметрами проверки подлинности AAD.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Сигналр/АУС/клиенттокен/Актион [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Создайте Клиенттокен для запуска клиентского подключения. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets your app access service in serverless mode with AAD auth options.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/fd53cd77-2268-407a-8f46-7e7863d0f521",
+  "name": "fd53cd77-2268-407a-8f46-7e7863d0f521",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.SignalRService/SignalR/auth/clientToken/action"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "SignalR Serverless Contributor (Preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="signalr-service-owner-preview"></a>Владелец службы SignalR (Предварительная версия)
+
+Полный доступ к API-интерфейсам службы Azure SignalR
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Сигналр/ХУБ/Сенд/Актион [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Рассылка сообщений всем клиентским подключениям в концентраторе. |
+> | /Сигналр/грауп/Сенд/Актион [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Широковещательное сообщение группе. |
+> | /Сигналр/грауп/Реад [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Проверьте существование группы или наличие пользователя в группе. |
+> | /Сигналр/грауп/Врите [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Объединение или выход из группы. |
+> | /Сигналр/клиентконнектион/Сенд/Актион [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Отправка сообщений непосредственно в клиентское соединение. |
+> | /Сигналр/клиентконнектион/Реад [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Проверьте наличие подключения клиента. |
+> | /Сигналр/клиентконнектион/Врите [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Закройте клиентское подключение. |
+> | /Сигналр/Усер/Сенд/Актион [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Отправка сообщений пользователю, который может состоять из нескольких клиентских подключений. |
+> | /Сигналр/Усер/Реад [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Проверьте наличие пользователя. |
+> | /Сигналр/Усер/Врите [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Full access to Azure SignalR Service REST APIs",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/7e4f1700-ea5a-4f59-8f37-079cfe29dce3",
+  "name": "7e4f1700-ea5a-4f59-8f37-079cfe29dce3",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.SignalRService/SignalR/hub/send/action",
+        "Microsoft.SignalRService/SignalR/group/send/action",
+        "Microsoft.SignalRService/SignalR/group/read",
+        "Microsoft.SignalRService/SignalR/group/write",
+        "Microsoft.SignalRService/SignalR/clientConnection/send/action",
+        "Microsoft.SignalRService/SignalR/clientConnection/read",
+        "Microsoft.SignalRService/SignalR/clientConnection/write",
+        "Microsoft.SignalRService/SignalR/user/send/action",
+        "Microsoft.SignalRService/SignalR/user/read",
+        "Microsoft.SignalRService/SignalR/user/write"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "SignalR Service Owner (Preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="signalr-service-reader-preview"></a>Читатель службы SignalR (Предварительная версия)
+
+Доступ только для чтения к интерфейсам API службы Azure SignalR
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Сигналр/грауп/Реад [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Проверьте существование группы или наличие пользователя в группе. |
+> | /Сигналр/клиентконнектион/Реад [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Проверьте наличие подключения клиента. |
+> | /Сигналр/Усер/Реад [Microsoft. сигналрсервице](resource-provider-operations.md#microsoftsignalrservice) | Проверьте наличие пользователя. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Read-only access to Azure SignalR Service REST APIs",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/ddde6b66-c0df-4114-a159-3618637b3035",
+  "name": "ddde6b66-c0df-4114-a159-3618637b3035",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.SignalRService/SignalR/group/read",
+        "Microsoft.SignalRService/SignalR/clientConnection/read",
+        "Microsoft.SignalRService/SignalR/user/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "SignalR Service Reader (Preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="web-plan-contributor"></a>Участник веб-плана
 
 Позволяет управлять веб-планами для веб-сайтов, но не доступом к ним.
@@ -3943,7 +4225,7 @@ ms.locfileid: "92900866"
 > | /Аваилабилитистатусес/Реад [Microsoft. ресаурцехеалс](resource-provider-operations.md#microsoftresourcehealth) | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
 > | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
-> | /Локатионс/администраторазуреасинкоператион/Реад [Microsoft. SQL](resource-provider-operations.md#microsoftsql) |  |
+> | /Локатионс/администраторазуреасинкоператион/Реад [Microsoft. SQL](resource-provider-operations.md#microsoftsql) | Возвращает результат операций асинхронного администрирования Azure для управляемого экземпляра. |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/манажединстанцес/датабасес/куррентсенситивитилабелс/* |  |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/манажединстанцес/датабасес/рекоммендедсенситивитилабелс/* |  |
 > | [Microsoft. SQL](resource-provider-operations.md#microsoftsql)/манажединстанцес/датабасес/счемас/таблес/колумнс/сенситивитилабелс/* |  |

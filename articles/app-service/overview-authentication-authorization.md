@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: e984332e6e93fc9a42123d06f320a66073585bff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09460e4e38ea1842d58ecf3a9b3cd00a072c271e
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89596045"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93286908"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Проверка подлинности и авторизация в службе приложений Azure и функциях Azure
 
@@ -140,12 +140,15 @@ ms.locfileid: "89596045"
 
 ### <a name="allow-only-authenticated-requests"></a>Разрешить только запросы, прошедшие проверку подлинности
 
-Параметр используется **для \<provider> входа в систему **. Служба приложений перенаправляет все анонимные запросы к `/.auth/login/<provider>` для выбранного вами поставщика. Если анонимный запрос поступает из собственного мобильного приложения, возвращаемый ответ `HTTP 401 Unauthorized`.
+Параметр используется **для \<provider> входа в систему**. Служба приложений перенаправляет все анонимные запросы к `/.auth/login/<provider>` для выбранного вами поставщика. Если анонимный запрос поступает из собственного мобильного приложения, возвращаемый ответ `HTTP 401 Unauthorized`.
 
 В этом случае в клиентском приложении не нужен код для проверки подлинности. Более точная авторизация, например авторизация для конкретной роли, может выполняться путем проверки утверждений пользователя (см. раздел [Access user claims](app-service-authentication-how-to.md#access-user-claims) (Доступ к утверждениям пользователя)).
 
 > [!CAUTION]
 > Таким образом, ограниченный доступ применяется ко всем вызовам приложения, что может быть нежелательно для приложений, которым требуется общедоступная Домашняя страница, как во многих одностраничных приложениях.
+
+> [!NOTE]
+> По умолчанию любой пользователь в клиенте Azure AD может запросить маркер для вашего приложения из Azure AD. Вы можете [настроить приложение в Azure AD](../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) , если вы хотите ограничить доступ к приложению определенным набором пользователей.
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 

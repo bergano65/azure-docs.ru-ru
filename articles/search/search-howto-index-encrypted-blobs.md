@@ -8,22 +8,21 @@ ms.author: chalton
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 09/08/2020
-ms.openlocfilehash: 6a4dcec2b50a13a256c82e4a5ec54c9b22aa973f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 11/02/2020
+ms.openlocfilehash: f0295c27f1d193b0dcd7829a11b4aabe0edb659b
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791993"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93286342"
 ---
 # <a name="how-to-index-encrypted-blobs-using-blob-indexers-and-skillsets-in-azure-cognitive-search"></a>Индексирование зашифрованных больших двоичных объектов с помощью индексаторов больших двоичных объектов и навыков в Azure Когнитивный поиск
 
-В этой статье показано, как использовать [когнитивный Поиск Azure](search-what-is-azure-search.md) для индексирования документов, которые ранее были зашифрованы в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) с помощью [Azure Key Vault](../key-vault/general/overview.md). Как правило, индексатор не может извлекать содержимое из зашифрованных файлов, так как у него нет доступа к ключу шифрования. Однако, используя пользовательский навык [декриптблобфиле](https://github.com/Azure-Samples/azure-search-power-skills/blob/master/Utils/DecryptBlobFile) , за которым следует [документекстрактионскилл](cognitive-search-skill-document-extraction.md), вы можете предоставить управляемый доступ к ключу для расшифровки файлов, а затем извлечь из них содержимое. Это разблокирует возможность индексировать эти документы, не беспокоясь о хранении незашифрованных данных.
+В этой статье показано, как использовать [когнитивный Поиск Azure](search-what-is-azure-search.md) для индексирования документов, которые ранее были зашифрованы в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) с помощью [Azure Key Vault](../key-vault/general/overview.md). Как правило, индексатор не может извлекать содержимое из зашифрованных файлов, так как у него нет доступа к ключу шифрования. Однако, используя пользовательский навык [декриптблобфиле](https://github.com/Azure-Samples/azure-search-power-skills/blob/master/Utils/DecryptBlobFile) , за которым следует [документекстрактионскилл](cognitive-search-skill-document-extraction.md), вы можете предоставить управляемый доступ к ключу для расшифровки файлов, а затем извлечь из них содержимое. Это разблокирует возможность индексировать эти документы без ущерба для состояния шифрования сохраненных документов.
 
-В этом руководство используются процедуры POST и API-интерфейсы RESTFUL поиска для выполнения следующих задач.
+Начиная с ранее зашифрованных целых документов (неструктурированный текст), таких как PDF, HTML, DOCX и PPTX в хранилище BLOB-объектов Azure, в этом руководство используются процедуры POST и API-интерфейсы RESTFUL поиска для выполнения следующих задач.
 
 > [!div class="checklist"]
-> * Начните с целых документов (неструктурированный текст), таких как PDF, HTML, DOCX и PPTX в хранилище BLOB-объектов Azure, которые были зашифрованы с помощью Azure Key Vault.
 > * Определите конвейер, который расшифровывает документы и извлекает из них текст.
 > * Определите индекс для хранения выходных данных.
 > * Выполните этот конвейер, чтобы создать и заполнить индекс.
@@ -36,13 +35,10 @@ ms.locfileid: "92791993"
 В этом примере предполагается, что вы уже отправили файлы в хранилище BLOB-объектов Azure и выполнили их шифрование в процессе. Если вам нужна помощь с начальной отправкой и шифрованием файлов, ознакомьтесь с [этим руководством](../storage/blobs/storage-encrypt-decrypt-blobs-key-vault.md) , чтобы получить сведения о том, как это сделать.
 
 + [Хранилище Azure](https://azure.microsoft.com/services/storage/)
-+ [Хранилище ключей Azure](https://azure.microsoft.com/services/key-vault/)
++ [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) в той же подписке, что и когнитивный Поиск Azure. Для хранилища ключей должна быть включена **Защита от** **обратимого удаления** и очистки.
++ [Когнитивный Поиск Azure](search-create-service-portal.md) на [уровне "оплачиваемый](search-sku-tier.md#tiers) " (базовый или выше в любом регионе)
 + [Функция Azure](https://azure.microsoft.com/services/functions/)
 + [Классическое приложение Postman](https://www.getpostman.com/)
-+ [Создайте службу поиска](search-create-service-portal.md) или [найдите существующую службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) 
-
-> [!Note]
-> Для этого руководством можно использовать бесплатную службу. Бесплатная служба поиска ограничивает вас тремя индексами, тремя индексаторами, тремя источниками данных и тремя навыков. В этом руководством создается один из них. Перед началом работы убедитесь, что у службы есть достаточно места, чтобы принять новые ресурсы.
 
 ## <a name="1---create-services-and-collect-credentials"></a>1. Создание служб и получение учетных данных
 
@@ -68,9 +64,9 @@ ms.locfileid: "92791993"
      
        ![Keyvault добавить политику доступа](media/indexing-encrypted-blob-files/keyvault-access-policies.jpg "Политики доступа Keyvault")
 
-    1. В разделе **Настройка из шаблона** выберите **Azure Data Lake Storage или служба хранилища Azure** .
+    1. В разделе **Настройка из шаблона** выберите **Azure Data Lake Storage или служба хранилища Azure**.
 
-    1. В качестве участника выберите развернутый экземпляр функции Azure. Его можно найти с помощью префикса ресурса, который использовался для его создания на шаге 2, который имеет значение префикса по умолчанию **псдбф-Function-App** .
+    1. В качестве участника выберите развернутый экземпляр функции Azure. Его можно найти с помощью префикса ресурса, который использовался для его создания на шаге 2, который имеет значение префикса по умолчанию **псдбф-Function-App**.
 
     1. Не выбирайте ничего для параметра "Авторизация приложения".
      
@@ -90,7 +86,7 @@ ms.locfileid: "92791993"
      
         ![Код ключа узла функции](media/indexing-encrypted-blob-files/function-host-key.jpg "Где найти код ключа узла функции Azure")
 
-### <a name="cognitive-services"></a>Cognitive Services
+### <a name="cognitive-services"></a>Службы Cognitive Services
 
 Процесс обогащения и подготовки к ИСКУССТВЕНному выполнению осуществляется с помощью Cognitive Services, в том числе Анализ текста и Компьютерное зрение для обработки естественного языка и изображений. Если бы вы создавали реальный прототип или проект, на этом этапе нужно было бы создать Cognitive Services (в том же регионе, что и Когнитивный поиск Azure) для связывания с операциями индексирования.
 
@@ -121,7 +117,7 @@ ms.locfileid: "92791993"
 1. Скачайте [исходный код коллекции Postman](https://github.com/Azure-Samples/azure-search-postman-samples/blob/master/index-encrypted-blobs/Index%20encrypted%20Blob%20files.postman_collection.json).
 1. Щелкните **File** > **Import** (Файл > Импорт), чтобы импортировать этот исходный код в Postman.
 1. Выберите вкладку **Collections** (Коллекции) и нажмите кнопку **...** (многоточие).
-1. Выберите команду **Изменить** . 
+1. Выберите команду **Изменить**. 
    
    ![Приложение Postman, демонстрирующее навигацию](media/indexing-encrypted-blob-files/postman-edit-menu.jpg "Переход в меню Правка в Postman")
 1. В диалоговом окне **Edit** (Правка) выберите вкладку **Variables** (Переменные). 
@@ -137,15 +133,15 @@ ms.locfileid: "92791993"
 |-------------|-----------------|
 | `admin-key` | На странице **Ключи** службы "Когнитивный поиск Azure".  |
 | `search-service-name` | Имя службы "Когнитивный поиск Azure". Введите URL-адрес `https://{{search-service-name}}.search.windows.net`. | 
-| `storage-connection-string` | На вкладке **Ключи доступа** для учетной записи хранения выберите **key1** > **Строка подключения** . | 
+| `storage-connection-string` | На вкладке **Ключи доступа** для учетной записи хранения выберите **key1** > **Строка подключения**. | 
 | `storage-container-name` | Имя контейнера больших двоичных объектов, в котором находятся зашифрованные файлы для индексации. | 
 | `function-uri` |  В функции Azure в разделе **Essentials** на главной странице. | 
 | `function-code` | В функции Azure перейдите к **разделу ключи приложения** , щелкните, чтобы отобразить ключ **по умолчанию** и скопировать значение. | 
-| `api-version` | Сохраните значение **2020-06-30** . |
-| `datasource-name` | Оставьте в качестве **зашифрованных BLOB-объектов — DS** . | 
-| `index-name` | Оставьте **зашифрованные BLOB-объекты — idx** . | 
-| `skillset-name` | Оставьте **зашифрованные BLOB-объекты — СС** . | 
-| `indexer-name` | Оставьте в виде **зашифрованных BLOB-объектов — икср** . | 
+| `api-version` | Сохраните значение **2020-06-30**. |
+| `datasource-name` | Оставьте в качестве **зашифрованных BLOB-объектов — DS**. | 
+| `index-name` | Оставьте **зашифрованные BLOB-объекты — idx**. | 
+| `skillset-name` | Оставьте **зашифрованные BLOB-объекты — СС**. | 
+| `indexer-name` | Оставьте в виде **зашифрованных BLOB-объектов — икср**. | 
 
 ### <a name="review-the-request-collection-in-postman"></a>Обзор коллекции запросов в Postman
 

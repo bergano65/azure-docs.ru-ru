@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 11/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 2781ef69ce85e82dab45a9f890ef5e6862949d98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c522d870a25b3df34ab6a0cf1c1e944a6462685
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90087989"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93284483"
 ---
 # <a name="use-logic-apps-to-receive-email-about-status-changes-of-key-vault-secrets"></a>Настройка отправки сообщений об изменении состояния секретов в хранилище ключей с помощью Logic Apps
 
@@ -28,7 +28,7 @@ ms.locfileid: "90087989"
 - Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps (например, Office 365 Outlook). Такая учетная запись используется для отправки уведомлений о событиях. Полный список поддерживаемых соединителей для приложения логики см. в статье [Соединители](/connectors).
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - Хранилище ключей в подписке Azure. Вы можете быстро создать хранилище ключей, выполнив действия, описанные в статье [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](../secrets/quick-create-cli.md).
-- Зарегистрированная Сетка событий как поставщик ресурсов (см. статью [Регистрация поставщиков ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types)).
+- Зарегистрированная Сетка событий как поставщик ресурсов (см. статью [Регистрация поставщиков ресурсов](../../azure-resource-manager/management/resource-providers-and-types.md)).
 
 ## <a name="create-a-logic-app-via-event-grid"></a>Создание приложения логики с помощью службы "Сетка событий"
 

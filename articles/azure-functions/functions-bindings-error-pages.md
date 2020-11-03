@@ -1,18 +1,18 @@
 ---
-title: Руководство по обработке ошибок в функциях Azure
-description: Узнайте, как управлять ошибками в функциях Azure со ссылками на определенные ошибки привязки.
+title: Руководство по обработке ошибок и повторным попыткам в функциях Azure
+description: Узнайте, как управлять ошибками и событиями повтора в функциях Azure со ссылками на определенные ошибки привязки.
 author: craigshoemaker
 ms.topic: conceptual
-ms.date: 09/11/2019
+ms.date: 10/01/2020
 ms.author: cshoe
-ms.openlocfilehash: 0617d55f7c67c788b1e898d963f7d509cef72d49
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: e52babd5b0612b4590f1422a941b25ba30c3f169
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096850"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93284455"
 ---
-# <a name="azure-functions-error-handling"></a>Обработка ошибок службы "Функции Azure"
+# <a name="azure-functions-error-handling-and-retries"></a>Обработка ошибок и повторных попыток в функциях Azure
 
 Обработка ошибок в функциях Azure важна, чтобы избежать потери данных, пропущенных событий и мониторинга работоспособности приложения.
 
@@ -20,7 +20,7 @@ ms.locfileid: "92096850"
 
 ## <a name="handling-errors"></a>Обработка ошибок
 
-[!INCLUDE [bindings errors intro](../../includes/functions-bindings-errors-intro.md)]
+[!INCLUDE [bindings errors intro](../../includes/functions-bindings-errors-retries.md)]
 
 ## <a name="binding-error-codes"></a>Коды ошибок привязки
 

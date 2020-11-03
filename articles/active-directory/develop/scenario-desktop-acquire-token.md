@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/18/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 26f0c18fee8fe56a9bc0fa163ef59dfe0977cad5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fac22305e64e2f6bc2ec61bc65f7e92f1b1af1bf
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825343"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93287537"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -417,7 +417,7 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 
 ### <a name="constraints"></a>Ограничения
 
-- Встроенная проверка подлинности Windows может использоваться только для *федеративных* пользователей, то есть пользователей, созданных в Active Directory и поддерживаемых Azure AD. Пользователи, созданные непосредственно в Azure AD без поддержки Active Directory (*управляемые* пользователи), не могут использовать этот поток проверки подлинности. Это ограничение не влияет на поток имени пользователя и пароля.
+- Встроенная проверка подлинности Windows может использоваться только для *федеративных* пользователей, то есть пользователей, созданных в Active Directory и поддерживаемых Azure AD. Пользователи, созданные непосредственно в Azure AD без поддержки Active Directory ( *управляемые* пользователи), не могут использовать этот поток проверки подлинности. Это ограничение не влияет на поток имени пользователя и пароля.
 - IWA предназначена для приложений, написанных для платформ .NET Framework, .NET Core и универсальной платформы Windows.
 - IWA не обходит [многофакторную проверку подлинности](../authentication/concept-mfa-howitworks.md). Если настроена MFA, IWA может завершиться ошибкой, если требуется запрос MFA, так как для MFA требуется вмешательство пользователя.
   > [!NOTE]
@@ -602,7 +602,7 @@ private static IAuthenticationResult acquireTokenIwa() throws Exception {
 
 ### <a name="this-flow-isnt-recommended"></a>Этот поток не рекомендуется.
 
-Этот поток *не рекомендуется*, так как ситуация, когда приложение запрашивает у пользователя пароль, не является безопасной. Дополнительные сведения см. в разделе [Как решить насущную проблему паролей?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/). Предпочтительным потоком для автоматического получения маркера на компьютерах, присоединенных к домену Windows, является [встроенная проверка подлинности Windows](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Integrated-Windows-Authentication). Также можно также использовать [поток кода устройства](https://aka.ms/msal-net-device-code-flow).
+Этот поток *не рекомендуется* , так как ситуация, когда приложение запрашивает у пользователя пароль, не является безопасной. Дополнительные сведения см. в разделе [Как решить насущную проблему паролей?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/). Предпочтительным потоком для автоматического получения маркера на компьютерах, присоединенных к домену Windows, является [встроенная проверка подлинности Windows](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Integrated-Windows-Authentication). Также можно также использовать [поток кода устройства](https://aka.ms/msal-net-device-code-flow).
 
 > [!NOTE]
 > Использование имени пользователя и пароля полезно в некоторых случаях, например в сценариях DevOps. Но если вы хотите использовать имя пользователя и пароль в интерактивных сценариях, где вы предоставляете свой собственный пользовательский интерфейс, подумайте о том, как отказаться от этого варианта. Используя имя пользователя и пароль, вы отказываетесь от ряда преимуществ:
@@ -954,7 +954,7 @@ if not result:
 ```csharp
 private const string ClientId = "<client_guid>";
 private const string Authority = "https://login.microsoftonline.com/contoso.com";
-private readonly string[] Scopes = new string[] { "user.read" };
+private readonly string[] scopes = new string[] { "user.read" };
 
 static async Task<AuthenticationResult> GetATokenForGraph()
 {
@@ -969,7 +969,7 @@ static async Task<AuthenticationResult> GetATokenForGraph()
     // All AcquireToken* methods store the tokens in the cache, so check the cache first
     try
     {
-        return await pca.AcquireTokenSilent(Scopes, accounts.FirstOrDefault())
+        return await pca.AcquireTokenSilent(scopes, accounts.FirstOrDefault())
             .ExecuteAsync();
     }
     catch (MsalUiRequiredException ex)

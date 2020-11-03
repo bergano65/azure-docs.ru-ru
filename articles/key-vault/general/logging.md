@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 162e40555e11dff716b58eec4b1168728257693e
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 5423fc27ecc58bcd79b36a845e4b7569f342f712
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131179"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93286695"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -26,7 +26,7 @@ ms.locfileid: "92131179"
 * Используйте стандартные методы контроля доступа, предоставляемые Azure, для защиты журналов путем ограничения доступа к ним.
 * Удаляйте журналы, которые больше не нужно хранить в учетной записи хранения.
 
-Общие сведения о Key Vault см. в статье [Что такое хранилище ключей Azure?](overview.md) Сведения о регионах доступности Key Vault можно узнать на [странице цен](https://azure.microsoft.com/pricing/details/key-vault/). Сведения об использовании Azure Monitor для Key Vault см. [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/key-vault-insights-overview).
+Общие сведения о Key Vault см. в статье [Что такое хранилище ключей Azure?](overview.md) Сведения о регионах доступности Key Vault можно узнать на [странице цен](https://azure.microsoft.com/pricing/details/key-vault/). Сведения об использовании Azure Monitor для Key Vault см. [здесь](../../azure-monitor/insights/key-vault-insights-overview.md).
 
 ## <a name="interpret-your-key-vault-logs"></a>Интерпретация журналов хранилища ключей
 
@@ -73,7 +73,7 @@ ms.locfileid: "92131179"
 | **callerIpAddress** |IP-адрес клиента, выполнившего запрос. |
 | **correlationId** |Необязательный GUID, который клиент может передавать для сопоставления журналов на стороне клиента с журналами на стороне службы (хранилища ключей). |
 | **identity** |Удостоверение из маркера, предоставляемое в запросе к REST API. Обычно это "пользователь", "субъект-служба" или комбинация "пользователь + идентификатор приложения", как например при запросе из командлета Azure PowerShell. |
-| **properties** |Эта информация зависит от типа операции (**operationName**). В большинстве случаев это поле содержит сведения о клиенте (передаваемая клиентом строка useragent), точный URI запроса REST API и код состояния HTTP. Кроме того, когда результат запроса содержит объект (например, **KeyCreate** или **VaultGet**), это поле содержит еще и URI ключа (в значении `id`), URI хранилища или URI секрета. |
+| **properties** |Эта информация зависит от типа операции ( **operationName** ). В большинстве случаев это поле содержит сведения о клиенте (передаваемая клиентом строка useragent), точный URI запроса REST API и код состояния HTTP. Кроме того, когда результат запроса содержит объект (например, **KeyCreate** или **VaultGet** ), это поле содержит еще и URI ключа (в значении `id`), URI хранилища или URI секрета. |
 
 Значения поля **operationName** отображаются в формате *ObjectVerb*. Пример:
 
@@ -88,32 +88,32 @@ ms.locfileid: "92131179"
 | operationName | Команда REST API |
 | --- | --- |
 | **Аутентификация** |Аутентификация через конечную точку Azure Active Directory |
-| **VaultGet** |[Получение сведений о хранилище ключей](https://msdn.microsoft.com/library/azure/mt620026.aspx) |
-| **VaultPut** |[Создание или обновление хранилища ключей](https://msdn.microsoft.com/library/azure/mt620025.aspx) |
-| **VaultDelete** |[Удаление хранилища ключей](https://msdn.microsoft.com/library/azure/mt620022.aspx) |
-| **VaultPatch** |[Update a key vault (Создание или обновление хранилища ключей)](https://msdn.microsoft.com/library/azure/mt620025.aspx) |
-| **VaultList** |[Список всех хранилищ ключей в группе ресурсов](https://msdn.microsoft.com/library/azure/mt620027.aspx) |
-| **KeyCreate** |[Создание ключа](https://msdn.microsoft.com/library/azure/dn903634.aspx) |
-| **KeyGet** |[Получение сведений о ключе](https://msdn.microsoft.com/library/azure/dn878080.aspx) |
-| **KeyImport** |[Импорт ключа в хранилище](https://msdn.microsoft.com/library/azure/dn903626.aspx) |
-| **KeyBackup** |[Резервное копирование ключа](https://msdn.microsoft.com/library/azure/dn878058.aspx) |
-| **KeyDelete** |[Удаление ключа](https://msdn.microsoft.com/library/azure/dn903611.aspx) |
-| **KeyRestore** |[Восстановление ключа](https://msdn.microsoft.com/library/azure/dn878106.aspx) |
-| **KeySign** |[Вход с помощью ключа](https://msdn.microsoft.com/library/azure/dn878096.aspx) |
-| **KeyVerify** |[Проверка с помощью ключа](https://msdn.microsoft.com/library/azure/dn878082.aspx) |
-| **KeyWrap** |[Перенос ключа](https://msdn.microsoft.com/library/azure/dn878066.aspx) |
-| **KeyUnwrap** |[Развертывание ключа](https://msdn.microsoft.com/library/azure/dn878079.aspx) |
-| **KeyEncrypt** |[Шифрование с помощью ключа](https://msdn.microsoft.com/library/azure/dn878060.aspx) |
-| **KeyDecrypt** |[Расшифровка с помощью ключа](https://msdn.microsoft.com/library/azure/dn878097.aspx) |
-| **KeyUpdate** |[Обновление ключа](https://msdn.microsoft.com/library/azure/dn903616.aspx) |
-| **KeyList** |[Перечисление ключей в хранилище](https://msdn.microsoft.com/library/azure/dn903629.aspx) |
-| **KeyListVersions** |[Перечисление версий ключа](https://msdn.microsoft.com/library/azure/dn986822.aspx) |
-| **SecretSet** |[Создание секрета](https://msdn.microsoft.com/library/azure/dn903618.aspx) |
-| **SecretGet** |[Получение секрета](https://msdn.microsoft.com/library/azure/dn903633.aspx) |
-| **SecretUpdate** |[Обновление секрета](https://msdn.microsoft.com/library/azure/dn986818.aspx) |
-| **SecretDelete** |[Удаление секрета](https://msdn.microsoft.com/library/azure/dn903613.aspx) |
-| **SecretList** |[Список секретов в хранилище](https://msdn.microsoft.com/library/azure/dn903614.aspx) |
-| **SecretListVersions** |[Список версий секрета](https://msdn.microsoft.com/library/azure/dn986824.aspx) |
+| **VaultGet** |[Получение сведений о хранилище ключей](/rest/api/keyvault/vaults) |
+| **VaultPut** |[Создание или обновление хранилища ключей](/rest/api/keyvault/vaults) |
+| **VaultDelete** |[Удаление хранилища ключей](/rest/api/keyvault/vaults) |
+| **VaultPatch** |[Update a key vault (Создание или обновление хранилища ключей)](/rest/api/keyvault/vaults) |
+| **VaultList** |[Список всех хранилищ ключей в группе ресурсов](/rest/api/keyvault/vaults) |
+| **KeyCreate** |[Создание ключа](/rest/api/keyvault/createkey) |
+| **KeyGet** |[Получение сведений о ключе](/rest/api/keyvault/getkey) |
+| **KeyImport** |[Импорт ключа в хранилище](/rest/api/keyvault/vaults) |
+| **KeyBackup** |[Резервное копирование ключа](/rest/api/keyvault/backupkey) |
+| **KeyDelete** |[Удаление ключа](/rest/api/keyvault/deletekey) |
+| **KeyRestore** |[Восстановление ключа](/rest/api/keyvault/restorekey) |
+| **KeySign** |[Вход с помощью ключа](/rest/api/keyvault/sign) |
+| **KeyVerify** |[Проверка с помощью ключа](/rest/api/keyvault/vaults) |
+| **KeyWrap** |[Перенос ключа](/rest/api/keyvault/wrapkey) |
+| **KeyUnwrap** |[Развертывание ключа](/rest/api/keyvault/unwrapkey) |
+| **KeyEncrypt** |[Шифрование с помощью ключа](/rest/api/keyvault/encrypt) |
+| **KeyDecrypt** |[Расшифровка с помощью ключа](/rest/api/keyvault/decrypt) |
+| **KeyUpdate** |[Обновление ключа](/rest/api/keyvault/updatekey) |
+| **KeyList** |[Перечисление ключей в хранилище](/rest/api/keyvault/vaults) |
+| **KeyListVersions** |[Перечисление версий ключа](/rest/api/keyvault/getkeyversions) |
+| **SecretSet** |[Создание секрета](/rest/api/keyvault/updatecertificate) |
+| **SecretGet** |[Получение секрета](/rest/api/keyvault/getsecret) |
+| **SecretUpdate** |[Обновление секрета](/rest/api/keyvault/updatesecret) |
+| **SecretDelete** |[Удаление секрета](/rest/api/keyvault/deletesecret) |
+| **SecretList** |[Список секретов в хранилище](/rest/api/keyvault/vaults) |
+| **SecretListVersions** |[Список версий секрета](/rest/api/keyvault/getsecretversions) |
 | **VaultAccessPolicyChangedEventGridNotification** | Опубликованное событие изменения политики доступа к хранилищу |
 | **SecretNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия секрета |
 | **SecretExpiredEventGridNotification** |Опубликованное событие истечения срока действия секрета |

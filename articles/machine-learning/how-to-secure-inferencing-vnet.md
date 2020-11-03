@@ -11,14 +11,14 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/23/2020
 ms.custom: contperfq4, tracking-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: 20f0d6a9d87caa8e95e7f9fa0b29ff45ed1195c2
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: a6b453b11c892b5d81c41cac9451b07be69aa4d3
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735468"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93285922"
 ---
-# <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности Машинное обучение Azure окружения с помощью виртуальных сетей
+# <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности среды вывода службы "Машинное обучение Azure" с помощью виртуальных сетей
 
 Из этой статьи вы узнаете, как защитить окружения с помощью виртуальной сети в Машинное обучение Azure.
 
@@ -36,7 +36,7 @@ ms.locfileid: "92735468"
 > - Экземпляры контейнеров Azure (ACI)
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 
@@ -64,11 +64,11 @@ ms.locfileid: "92735468"
 
 1. Войдите в [студию Машинного обучения Azure](https://ml.azure.com/), выберите свою подписку и рабочую область.
 
-1. Слева выберите пункт __Вычисление__ .
+1. Слева выберите пункт __Вычисление__.
 
 1. Выберите __Кластеры аналитики__ в центре, а затем — __+__ .
 
-1. В диалоговом окне __Создание кластера аналитики__ выберите __Дополнительно__ в разделе __Конфигурация сети__ .
+1. В диалоговом окне __Создание кластера аналитики__ выберите __Дополнительно__ в разделе __Конфигурация сети__.
 
 1. Чтобы настроить этот виртуальный ресурс для использования виртуальной сети, выполните следующие действия.
 
@@ -119,8 +119,8 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 Существует два подхода к изоляции трафика от кластера AKS к виртуальной сети.
 
-* __Частный кластер AKS__ . Этот подход использует частную связь Azure для защиты обмена данными с кластером для операций развертывания и управления.
-* __Внутренняя подсистема балансировки нагрузки AKS__ . Этот подход настраивает конечную точку для развертываний в AKS для использования частного IP-адреса в виртуальной сети.
+* __Частный кластер AKS__. Этот подход использует частную связь Azure для защиты обмена данными с кластером для операций развертывания и управления.
+* __Внутренняя подсистема балансировки нагрузки AKS__. Этот подход настраивает конечную точку для развертываний в AKS для использования частного IP-адреса в виртуальной сети.
 
 > [!WARNING]
 > Внутренняя подсистема балансировки нагрузки не работает с кластером AKS, использующим кубенет. Если вы хотите одновременно использовать внутреннюю подсистему балансировки нагрузки и частный кластер AKS, настройте частный кластер AKS с сетевым интерфейсом контейнера Azure (CNI). Дополнительные сведения см. [в статье configure Azure CNI Networking in Azure Kubernetes Service](../aks/configure-azure-cni.md).
@@ -138,7 +138,7 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 По умолчанию в развертываниях AKS используется [общедоступная подсистема балансировки нагрузки](../aks/load-balancer-standard.md). В этом разделе вы узнаете, как настроить AKS для использования внутренней подсистемы балансировки нагрузки. Используется внутренняя подсистема балансировки нагрузки (или частная), где только частные IP-адреса разрешены в качестве внешнего интерфейса. Внутренние подсистемы балансировки нагрузки используются для балансировки нагрузки трафика внутри виртуальной сети.
 
-Частный балансировщик нагрузки включается путем настройки AKS для использования _внутренней подсистемы балансировки нагрузки_ . 
+Частный балансировщик нагрузки включается путем настройки AKS для использования _внутренней подсистемы балансировки нагрузки_. 
 
 #### <a name="network-contributor-role"></a>Роль "участник сети"
 
@@ -159,7 +159,7 @@ aks_target = ComputeTarget.create(workspace=ws,
     az aks show -n <aks-cluster-name> --resource-group <resource-group-name> --query identity.principalId
     ```
 
-1. Чтобы узнать идентификатор группы ресурсов, содержащей виртуальную сеть, используйте следующую команду. Замените `<resource-group-name>` именем группы ресурсов, _содержащей виртуальную сеть_ .
+1. Чтобы узнать идентификатор группы ресурсов, содержащей виртуальную сеть, используйте следующую команду. Замените `<resource-group-name>` именем группы ресурсов, _содержащей виртуальную сеть_.
 
     ```azurecli-interactive
     az group show -n <resource-group-name> --query id
@@ -217,6 +217,9 @@ except:
 az ml computetarget create aks -n myaks --load-balancer-type InternalLoadBalancer
 ```
 
+> [!IMPORTANT]
+> С помощью интерфейса командной строки можно создать только кластер AKS с внутренней подсистемой балансировки нагрузки. Не существует команды AZ ml для обновления существующего кластера для использования внутренней подсистемы балансировки нагрузки.
+
 Дополнительные сведения см. в справке по команде [AZ ML computetarget Create AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
 
 ---
@@ -256,10 +259,13 @@ aks_target.wait_for_completion(show_output = True)
 1. Чтобы включить делегирование подсети в виртуальной сети, используйте сведения, приведенные в статье [Добавление или удаление делегирования подсети](../virtual-network/manage-subnet-delegation.md). Делегирование можно включить при создании виртуальной сети или добавить в существующую сеть.
 
     > [!IMPORTANT]
-    > При включении делегирования используйте `Microsoft.ContainerInstance/containerGroups` в качестве значения __Делегировать подсеть службе__ .
+    > При включении делегирования используйте `Microsoft.ContainerInstance/containerGroups` в качестве значения __Делегировать подсеть службе__.
 
 2. Разверните модель с помощью [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py&preserve-view=true#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
 
+## <a name="limit-outbound-connectivity-from-the-virtual-network"></a> Ограничение исходящих подключений из виртуальной сети
+
+Если вы не хотите использовать правила исходящего трафика по умолчанию и вы хотите ограничить исходящий доступ к виртуальной сети, необходимо разрешить доступ к реестру контейнеров Azure. Например, убедитесь, что группы безопасности сети (NSG) содержат правило, которое разрешает доступ к тегу службы __азуреконтаинеррегистри. RegionName__ , где "{RegionName}" — это имя региона Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

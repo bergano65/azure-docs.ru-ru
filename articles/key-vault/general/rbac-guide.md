@@ -9,25 +9,25 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 38072e95ed89d8fbc095e2f8ed41ea1381636300
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: f3775e73ce8f152fe39bc8170bbeba054f856630
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015161"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93286607"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control-preview"></a>Предоставление доступа к ключам, сертификатам и секретам Key Vault с помощью управления доступом на основе ролей Azure (Предварительная версия)
 
 > [!NOTE]
 > Поставщик ресурсов Key Vault поддерживает два типа ресурсов: **хранилища** и **управляемый HSM**. Управление доступом, описанное в этой статье, применимо только к **хранилищам**. Дополнительные сведения об управлении доступом для управляемого модуля HSM см. в разделе [управляемый контроль доступа HSM](../managed-hsm/access-control.md).
 
-Управление доступом на основе ролей в Azure (Azure RBAC) — это система авторизации, основанная на [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) , которая обеспечивает детальное управление доступом к ресурсам Azure.
+Управление доступом на основе ролей в Azure (Azure RBAC) — это система авторизации, основанная на [Azure Resource Manager](../../azure-resource-manager/management/overview.md) , которая обеспечивает детальное управление доступом к ресурсам Azure.
 
 Azure RBAC позволяет пользователям управлять разрешениями ключей, секретов и сертификатов. Он предоставляет одно место для управления всеми разрешениями во всех хранилищах ключей. 
 
 Модель RBAC Azure предоставляет возможность устанавливать разрешения для различных уровней области: группы управления, подписки, группы ресурсов или отдельных ресурсов.  Azure RBAC для хранилища ключей также предоставляет возможность иметь отдельные разрешения на отдельные ключи, секреты и сертификаты.
 
-Дополнительные сведения см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview).
+Дополнительные сведения см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ## <a name="best-practices-for-individual-keys-secrets-and-certificates"></a>Рекомендации по отдельным ключам, секретам и сертификатам
 
@@ -59,7 +59,7 @@ Azure RBAC позволяет пользователям управлять ра
 | Директор Key Vault секреты (Предварительная версия)| Выполните любое действие с секретами хранилища ключей, за исключением разрешений на управление. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | b86a8fe4-44ce-4948-aee5-eccb2c155cd7 |
 | Key Vault секреты пользователя (Предварительная версия)| Чтение содержимого секрета. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | 4633458b-17de-408a-b874-0445c86b69e6 |
 
-Дополнительные сведения о встроенных определениях ролей Azure см. [в статье встроенные роли Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
+Дополнительные сведения о встроенных определениях ролей Azure см. [в статье встроенные роли Azure](../../role-based-access-control/built-in-roles.md).
 
 ## <a name="using-azure-rbac-secret-key-and-certificate-permissions-with-key-vault"></a>Использование разрешений секрета, ключа и сертификата Azure RBAC с Key Vault
 
@@ -70,7 +70,7 @@ Azure RBAC позволяет пользователям управлять ра
 Для добавления назначений ролей требуются следующие разрешения:
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-- `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) или [Владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner).
+- `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](../../role-based-access-control/built-in-roles.md#user-access-administrator) или [Владелец](../../role-based-access-control/built-in-roles.md#owner).
 
 ### <a name="enable-azure-rbac-permissions-on-key-vault"></a>Включение разрешений RBAC в Azure на Key Vault
 
@@ -194,7 +194,7 @@ az role assignment create --role "Key Vault Secrets Officer (preview)" --assigne
 
 ### <a name="creating-custom-roles"></a>Создание пользовательских ролей 
 
-[AZ Role Definition Create, команда](https://docs.microsoft.com/cli/azure/role/definition#az-role-definition-create)
+[AZ Role Definition Create, команда](/cli/azure/role/definition#az-role-definition-create)
 
 **(Bash-скрипт CLI)</br>**
 ```azurecli
@@ -216,7 +216,7 @@ az role definition create --role-definition '{ \
 
 Дополнительные сведения о создании пользовательских ролей см. в следующих статьях:
 
-[Настраиваемые роли Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles)
+[Настраиваемые роли Azure](../../role-based-access-control/custom-roles.md)
 
 ## <a name="known-limits-and-performance"></a>Известные ограничения и производительность
 
@@ -224,7 +224,7 @@ az role definition create --role-definition '{ \
 
 -   Задержка назначений ролей: в текущей ожидаемой производительности это займет до 10 минут (600 с) после изменения назначения ролей для применения роли.
 
-## <a name="learn-more"></a>Материалы для дальнейшего изучения
+## <a name="learn-more"></a>Подробнее
 
-- [Обзор Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
-- [Учебник по настраиваемым ролям](https://docs.microsoft.com/azure/role-based-access-control/tutorial-custom-role-cli)
+- [Обзор Azure RBAC](../../role-based-access-control/overview.md)
+- [Учебник по настраиваемым ролям](../../role-based-access-control/tutorial-custom-role-cli.md)

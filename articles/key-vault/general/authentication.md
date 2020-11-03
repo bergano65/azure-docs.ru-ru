@@ -7,12 +7,12 @@ ms.date: 08/27/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 3ec831bada19aa8d3872440ba628ac06bc64f749
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 3fdc9a9f99b239f68022067a5aedbc7e6e0d12a4
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099425"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93287493"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Проверка подлинности в Azure Key Vault
 
@@ -20,9 +20,9 @@ Azure Key Vault позволяет хранить секреты и управл
 
 ## <a name="app-identity-and-security-principals"></a>Удостоверение приложения и субъекты безопасности
 
-Проверка подлинности в Key Vault работает в сочетании со службой [Azure Active Directory (Azure AD)](/azure/active-directory/fundamentals/active-directory-whatis), которая отвечает за проверку подлинности удостоверений любого предоставленного **субъекта безопасности** .
+Проверка подлинности в Key Vault работает в сочетании со службой [Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md), которая отвечает за проверку подлинности удостоверений любого предоставленного **субъекта безопасности**.
 
-Субъект безопасности — это объект, представляющий пользователя, группу, службу или приложение, которые запрашивают доступ к ресурсам Azure. Azure назначает каждому субъекту безопасности уникальный **идентификатор объекта** .
+Субъект безопасности — это объект, представляющий пользователя, группу, службу или приложение, которые запрашивают доступ к ресурсам Azure. Azure назначает каждому субъекту безопасности уникальный **идентификатор объекта**.
 
 * Субъект безопасности **Пользователь** определяет конкретного человека, у которого есть профиль в Azure Active Directory.
 
@@ -36,9 +36,9 @@ Azure Key Vault позволяет хранить секреты и управл
 
     При использовании управляемого удостоверения Azure самостоятельно управляет субъектом-службой приложения и автоматически выполняет для него проверку подлинности в других службах Azure. Управляемое удостоверение доступно для приложений, развернутых в разных службах.
 
-    Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview) Также просмотрите статью [Службы с поддержкой управляемых удостоверений для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities), где собраны ссылки на статьи с инструкциями по включению управляемых удостоверений для конкретных служб (Служба приложений, Функции Azure, Виртуальные машины и т. д.).
+    Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../../active-directory/managed-identities-azure-resources/overview.md) Также просмотрите статью [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/services-support-managed-identities.md), где собраны ссылки на статьи с инструкциями по включению управляемых удостоверений для конкретных служб (Служба приложений, Функции Azure, Виртуальные машины и т. д.).
 
-* Если вы не можете использовать управляемое удостоверение, **зарегистрируйте** приложение в клиенте Azure AD, как описано в статье [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](/azure/active-directory/develop/quickstart-register-app). Кроме того, при регистрации создается второй объект приложения, который представляет это приложение для всех клиентов.
+* Если вы не можете использовать управляемое удостоверение, **зарегистрируйте** приложение в клиенте Azure AD, как описано в статье [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](../../active-directory/develop/quickstart-register-app.md). Кроме того, при регистрации создается второй объект приложения, который представляет это приложение для всех клиентов.
 
 ## <a name="authorize-a-security-principal-to-access-key-vault"></a>Авторизация доступа к Key Vault для субъекта безопасности
 
@@ -56,13 +56,13 @@ Key Vault поддерживает два отдельных уровня авт
  
     Сведения о назначении ролей и управлении ими вы найдете в следующих статьях:
 
-    - [Портал Azure](/azure/role-based-access-control/role-assignments-portal)
-    - [Azure CLI](/azure/role-based-access-control/role-assignments-cli)
-    - [Azure PowerShell](/azure/role-based-access-control/role-assignments-powershell)
+    - [Портал Azure](../../role-based-access-control/role-assignments-portal.md)
+    - [Azure CLI](../../role-based-access-control/role-assignments-cli.md)
+    - [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 
-    Сейчас Key Vault поддерживает роль [Участник](/azure/role-based-access-control/built-in-roles#key-vault-contributor), которая позволяет выполнять операции управления с ресурсами Key Vault. Также предоставляются предварительные версии некоторых других ролей. Кроме того, вы можете создавать пользовательские роли, как описано в статье [Пользовательские роли Azure](/azure/role-based-access-control/custom-roles).
+    Сейчас Key Vault поддерживает роль [Участник](../../role-based-access-control/built-in-roles.md#key-vault-contributor), которая позволяет выполнять операции управления с ресурсами Key Vault. Также предоставляются предварительные версии некоторых других ролей. Кроме того, вы можете создавать пользовательские роли, как описано в статье [Пользовательские роли Azure](../../role-based-access-control/custom-roles.md).
 
-    Общие сведения о ролях см. в статье [Что такое управление доступом на основе ролей в Azure (RBAC)?](/azure/role-based-access-control/overview).
+    Общие сведения о ролях см. в статье [Что такое управление доступом на основе ролей в Azure (RBAC)?](../../role-based-access-control/overview.md).
 
 
 > [!IMPORTANT]
@@ -72,7 +72,7 @@ Key Vault поддерживает два отдельных уровня авт
 
 По умолчанию Key Vault разрешает доступ к ресурсам с общедоступных IP-адресов. Чтобы повысить уровень безопасности, вы можете ограничить доступ, разрешая его только для конкретных диапазонов IP-адресов, конечных точек служб, виртуальных сетей или частных конечных точек.
 
-Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](/azure/key-vault/general/access-behind-firewall).
+Дополнительные сведения см. в статье [Доступ к Azure Key Vault из-за брандмауэра](./access-behind-firewall.md).
 
 
 ## <a name="the-key-vault-authentication-flow"></a>Поток проверки подлинности Key Vault
@@ -80,7 +80,7 @@ Key Vault поддерживает два отдельных уровня авт
 1. Субъект-служба запрашивает проверку подлинности в Azure AD, например:
     * пользователь входит на портал Azure, вводя имя пользователя и пароль;
     * приложение вызывает REST API Azure, предоставляя идентификатор и секрет или сертификат клиента;
-    * ресурс Azure, например виртуальная машина с управляемым удостоверением, обращается к конечной точке REST [Службы метаданных экземпляров (IMDS) Azure](/azure/virtual-machines/windows/instance-metadata-service) для получения маркера доступа.
+    * ресурс Azure, например виртуальная машина с управляемым удостоверением, обращается к конечной точке REST [Службы метаданных экземпляров (IMDS) Azure](../../virtual-machines/windows/instance-metadata-service.md) для получения маркера доступа.
 
 1. Если проверка подлинности в Azure AD проходит успешно, субъекту-службе предоставляется маркер OAuth.
 
@@ -89,7 +89,7 @@ Key Vault поддерживает два отдельных уровня авт
 1. Брандмауэр Key Vault проверяет указанные ниже условия. Если любое из них соблюдается, вызов разрешается. Иначе вызов блокируется и возвращается соответствующий ответ:
 
     * брандмауэр отключен, то есть общедоступная конечная точка Key Vault считается доступной из общедоступного Интернета;
-    * вызывающий объект является [доверенной службой Key Vault](/azure/key-vault/general/overview-vnet-service-endpoints#trusted-services), то есть к нему не применяются правила брандмауэра;
+    * вызывающий объект является [доверенной службой Key Vault](./overview-vnet-service-endpoints.md#trusted-services), то есть к нему не применяются правила брандмауэра;
     * вызывающий объект указан в брандмауэре в списке разрешенных IP-адресов, виртуальных сетей или конечных точек служб;
     * вызывающий объект может обращаться к Key Vault через настроенное подключение к приватному каналу.    
 
@@ -109,20 +109,20 @@ Key Vault поддерживает два отдельных уровня авт
 
 | Секреты Key Vault | Ключи Key Vault | Сертификаты Key Vault |
 |  --- | --- | --- |
-| [Python](/azure/key-vault/secrets/quick-create-python) | [Python](/azure/key-vault/keys/quick-create-python) | [Python](/azure/key-vault/certificates/quick-create-python) | 
-| [Пакет SDK для .NET версии 4](/azure/key-vault/secrets/quick-create-net) | -- | -- |
+| [Python](../secrets/quick-create-python.md) | [Python](../keys/quick-create-python.md) | [Python](../certificates/quick-create-python.md) | 
+| [Пакет SDK для .NET версии 4](../secrets/quick-create-net.md) | -- | -- |
 | [Пакет SDK для .NET версии 3](https://dotnet.microsoft.com/download/dotnet-core/3.0) | -- | -- |
-| [Java](/azure/key-vault/secrets/quick-create-java) | -- | -- |
-| [JavaScript](/azure/key-vault/secrets/quick-create-node) | -- | -- | 
+| [Java](../secrets/quick-create-java.md) | -- | -- |
+| [JavaScript](../secrets/quick-create-node.md) | -- | -- | 
 | | | |
-| [Портал Azure](/azure/key-vault/secrets/quick-create-portal) | [Портал Azure](/azure/key-vault/keys/quick-create-portal) | [Портал Azure](/azure/key-vault/certificates/quick-create-portal) |
-| [Azure CLI](/azure/key-vault/secrets/quick-create-cli) | [Azure CLI](/azure/key-vault/keys/quick-create-cli) | [Azure CLI](/azure/key-vault/certificates/quick-create-cli) |
-| [Azure PowerShell](/azure/key-vault/secrets/quick-create-powershell) | [Azure PowerShell](/azure/key-vault/keys/quick-create-powershell) | [Azure PowerShell](/azure/key-vault/certificates/quick-create-powershell) |
-| [Шаблон ARM](/azure/key-vault/secrets/quick-create-net) | -- | -- |
+| [Портал Azure](../secrets/quick-create-portal.md) | [Портал Azure](../keys/quick-create-portal.md) | [Портал Azure](../certificates/quick-create-portal.md) |
+| [Azure CLI](../secrets/quick-create-cli.md) | [Azure CLI](../keys/quick-create-cli.md) | [Azure CLI](../certificates/quick-create-cli.md) |
+| [Azure PowerShell](../secrets/quick-create-powershell.md) | [Azure PowerShell](../keys/quick-create-powershell.md) | [Azure PowerShell](../certificates/quick-create-powershell.md) |
+| [Шаблон ARM](../secrets/quick-create-net.md) | -- | -- |
 
 ## <a name="next-steps"></a>Next Steps
 
 - [Устранение неполадок с политиками доступа Key Vault](troubleshooting-access-issues.md)
 - [Коды ошибок REST API в Key Vault](rest-error-codes.md)
 - [Руководство разработчика для Key Vault](developers-guide.md)
-- [Что такое управление доступом на основе ролей в Azure (RBAC)?](/azure/role-based-access-control/overview)
+- [Что такое управление доступом на основе ролей в Azure (RBAC)?](../../role-based-access-control/overview.md)

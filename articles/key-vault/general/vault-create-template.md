@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/5/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 1f62e0b3a40382c911cd07c777c521adb3649c4d
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: d6f3d2051790ba02f5e4ea1687830ccbdf6dcf21
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282321"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93285133"
 ---
 # <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Как создать хранилище ключей Azure и политику доступа к хранилищу с помощью шаблона диспетчер ресурсов
 
@@ -84,7 +84,7 @@ ms.locfileid: "92282321"
 
 ```
 
-Дополнительные сведения о параметрах шаблонов Key Vault см. в разделе [Справочник по шаблонам ARM Key Vault](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults).
+Дополнительные сведения о параметрах шаблонов Key Vault см. в разделе [Справочник по шаблонам ARM Key Vault](/azure/templates/microsoft.keyvault/vaults).
 
 > [!IMPORTANT]
 > При повторном развертывании шаблона все существующие политики доступа в хранилище ключей будут переопределены. Рекомендуется заполнять `accessPolicies` свойство существующими политиками доступа, чтобы избежать потери доступа к хранилищу ключей. 
@@ -160,7 +160,7 @@ ms.locfileid: "92282321"
 }
 
 ```
-Дополнительные сведения о параметрах шаблонов Key Vault см. в разделе [Справочник по шаблонам ARM Key Vault](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/accesspolicies).
+Дополнительные сведения о параметрах шаблонов Key Vault см. в разделе [Справочник по шаблонам ARM Key Vault](/azure/templates/microsoft.keyvault/vaults/accesspolicies).
 
 ## <a name="more-key-vault-resource-manager-templates"></a>Дополнительные Key Vault диспетчер ресурсов шаблонов
 
@@ -168,13 +168,13 @@ ms.locfileid: "92282321"
 
 | Секреты | Ключи | Сертификаты |
 |--|--|--|
-|<ul><li>[Краткое руководство](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-template)<li>[Ссылки](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/secrets)|Недоступно|Недоступно|
+|<ul><li>[Краткое руководство](../secrets/quick-create-template.md)<li>[Ссылки](/azure/templates/microsoft.keyvault/vaults/secrets)|Недоступно|Недоступно|
 
-Дополнительные Key Vault шаблоны можно найти здесь: [Key Vault диспетчер ресурсов Reference](https://docs.microsoft.com/azure/templates/microsoft.keyvault/allversions).
+Дополнительные Key Vault шаблоны можно найти здесь: [Key Vault диспетчер ресурсов Reference](/azure/templates/microsoft.keyvault/allversions).
 
 ## <a name="deploy-the-templates"></a>Развертывание шаблонов.
 
-Вы можете использовать портал Azure для развертывания описанных выше шаблонов с помощью параметра **создать собственный шаблон в редакторе** , как описано здесь: [развертывание ресурсов из пользовательского шаблона](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal#deploy-resources-from-custom-template).
+Вы можете использовать портал Azure для развертывания описанных выше шаблонов с помощью параметра **создать собственный шаблон в редакторе** , как описано здесь: [развертывание ресурсов из пользовательского шаблона](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).
 
 Вы также можете сохранить приведенные выше шаблоны в файлы и использовать следующие команды:  [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create):
 
@@ -219,4 +219,4 @@ Write-Host "Press [ENTER] to continue..."
 
 - [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md)
 - [Аутентификация в хранилище ключей](authentication.md)
-- [Azure Key Vaultное руководством разработчика](developers-guide.md)
+- [Руководство разработчика хранилища ключей Azure](developers-guide.md)
