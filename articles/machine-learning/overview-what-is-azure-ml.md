@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: ad025d2278d6c9ab360ddbdc250e8db4b4eec665
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 4dcc1d755f4fe11dda69f84466d3e958ca981ddf
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495744"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93316296"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -43,7 +43,7 @@ ms.locfileid: "92495744"
 Служба "Машинное обучение Microsoft Azure" предоставляет разработчикам и специалистам по обработке и анализу данных все средства, необходимые для рабочих процессов машинного обучения, в том числе:
 + [Конструктор Машинного обучения Azure.](tutorial-designer-automobile-price-train-score.md) Перетащите модули, чтобы создать эксперименты, а затем разверните конвейеры.
 
-+ Записные книжки Jupyter. Используйте наши [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks) или создайте свои записные книжки, чтобы использовать для машинного обучения наши примеры для <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a>. 
++ Записные книжки Jupyter. Используйте наши [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks) или создайте свои записные книжки, чтобы использовать для машинного обучения наши примеры для <a href="/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a>. 
 
 + Скрипты R или записные книжки, в которых используется <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакет SDK для R</a> для написания собственного кода, или модули R в конструкторе.
 
@@ -61,9 +61,9 @@ ms.locfileid: "92495744"
 
 ## <a name="build-ml-models-in-python-or-r"></a>Создание моделей машинного обучения на языке Python или R
 
-Начните обучение на локальном компьютере с помощью <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a> или <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакета SDK для R</a> для службы "Машинное обучение Microsoft Azure". Затем можно выполнить горизонтальное увеличение масштаба в облаке. 
+Начните обучение на локальном компьютере с помощью <a href="/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a> или <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакета SDK для R</a> для службы "Машинное обучение Microsoft Azure". Затем можно выполнить горизонтальное увеличение масштаба в облаке. 
 
-С большинством доступных [целевых объектов вычислений](how-to-create-attach-compute-studio.md), например вычислительной средой Машинного обучения Azure и [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), и с [расширенными службами настроек гиперпараметров](how-to-tune-hyperparameters.md) можно создавать более высокий уровень модели быстрее, используя мощные возможности облака.
+С большинством доступных [целевых объектов вычислений](how-to-create-attach-compute-studio.md), например вычислительной средой Машинного обучения Azure и [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks), и с [расширенными службами настроек гиперпараметров](how-to-tune-hyperparameters.md) можно создавать более высокий уровень модели быстрее, используя мощные возможности облака.
 
 Также с помощью пакета SDK можно [автоматизировать обучение и настройку модели](tutorial-auto-train-models.md).
 
@@ -92,9 +92,9 @@ ms.locfileid: "92495744"
 ## <a name="mlops-deploy--lifecycle-management"></a>MLOps: развертывание и управление жизненным циклом
 Имея подходящую модель, вы легко сможете использовать ее в веб-службе, устройстве Интернета вещей или в Power BI. См. дополнительные сведения о [развертывании](how-to-deploy-and-where.md).
 
-Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true), [Студию машинного обучения Azure](https://ml.azure.com) или [CLI машинного обучения](reference-azure-machine-learning-cli.md).
+Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py), [Студию машинного обучения Azure](https://ml.azure.com) или [CLI машинного обучения](reference-azure-machine-learning-cli.md).
 
-Эти модели могут использоваться, а также они могут возвращать прогнозы [в реальном времени](how-to-consume-web-service.md) или [асинхронно](how-to-use-parallel-run-step.md) на больших объемах данных.
+Эти модели могут использоваться, а также они могут возвращать прогнозы [в реальном времени](how-to-consume-web-service.md) или [асинхронно](./tutorial-pipeline-batch-scoring-classification.md) на больших объемах данных.
 
 С расширенными [конвейерами машинного обучения](concept-ml-pipelines.md) можно совместно работать на каждом из этапов подготовки данных, обучения и оценки моделей с помощью развертывания. Конвейеры позволяют выполнять следующие задачи:
 
@@ -112,7 +112,7 @@ ms.locfileid: "92495744"
 Машинное обучение Azure работает с другими службами на платформе Azure, а также интегрируется со средствами на основе открытого кода, такими как Git и MLFlow.
 
 + Целевые объекты вычислений, такие как __Служба Azure Kubernetes__ , __Экземпляры контейнеров Azure__ , __Azure Databricks__ , __Azure Data Lake Analytics__ и __Azure HDInsight__. Дополнительные сведения о целевых объектах вычислений см. в [этой статье](concept-compute-target.md).
-+ __Сетка событий Azure__. Дополнительную информацию см. в статье [Consume Azure Machine Learning events (Preview)](concept-event-grid-integration.md) (Использование событий Машинного обучения Azure (предварительная версия)).
++ __Сетка событий Azure__. Дополнительную информацию см. в статье [Consume Azure Machine Learning events (Preview)](./how-to-use-event-grid.md) (Использование событий Машинного обучения Azure (предварительная версия)).
 + __Azure Monitor__. Дополнительную информацию см. в статье [Monitoring Azure Machine Learning](monitor-azure-machine-learning.md) (Мониторинг Машинного обучения Azure).
 + Хранилища данных, такие как __учетные записи хранения Azure__ , __Azure Data Lake Storage__ , __База данных SQL Azure__ , __База данных Azure для PostgreSQL__ , а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md) (Создание наборов данных с помощью Открытых наборов данных Azure).
 + __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Обзор изоляции и конфиденциальности в виртуальной сети](how-to-network-security-overview.md).

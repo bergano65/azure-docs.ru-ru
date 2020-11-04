@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: overview
 ms.date: 04/23/2018
 ms.subservice: tables
-ms.openlocfilehash: 2670d9ce568195fd97350bf678059ac89610422f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 73813ae06858df62a88a08bb2f4f8f9f49940b1a
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88236171"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93316171"
 ---
 # <a name="what-is-azure-table-storage-"></a>Что собой представляет табличное хранилище Azure? 
 
@@ -30,10 +30,10 @@ ms.locfileid: "88236171"
 
 * [Обозреватель хранилищ Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 
-* [Getting Started with Azure Table Storage in .NET](../../cosmos-db/table-storage-how-to-use-dotnet.md) (Приступая к работе с хранилищем таблиц Azure в .NET)
+* [Getting Started with Azure Table Storage in .NET](../../cosmos-db/tutorial-develop-table-dotnet.md) (Приступая к работе с хранилищем таблиц Azure в .NET)
 
 * Дополнительные сведения о доступных API-интерфейсах см. в справочной документации по службе таблиц:
 
-    * [Справочник по клиентской библиотеке хранилища для .NET](https://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+    * [Справочник по клиентской библиотеке хранилища для .NET](/dotnet/api/overview/azure/storage)
 
-    * [Справочник по REST API](https://msdn.microsoft.com/library/azure/dd179355)
+    * [Справочник по REST API](/rest/api/storageservices/)

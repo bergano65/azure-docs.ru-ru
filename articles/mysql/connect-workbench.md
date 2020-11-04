@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: 5ec6aab8aaa63b848131d44f78867100f154d251
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 57bd8348977270de9b0e445e0a40c006b65d8392
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90896322"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93332046"
 ---
 # <a name="quickstart-use-mysql-workbench-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью MySQL Workbench
 
@@ -35,7 +35,7 @@ ms.locfileid: "90896322"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
+2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver** ).
 
 3. Щелкните имя сервера.
 
@@ -49,7 +49,7 @@ ms.locfileid: "90896322"
 
 2.    В диалоговом окне **настройки нового подключения** на вкладке **Параметры** введите следующие сведения:
 
-:::image type="content" source="./media/connect-workbench/2-setup-new-connection.png" alt-text="Имя сервера базы данных Azure для MySQL":::
+:::image type="content" source="./media/connect-workbench/2-setup-new-connection.png" alt-text="Настройка нового подключения":::
 
 | **Параметр** | **Рекомендуемое значение** | **Описание поля** |
 |---|---|---|
@@ -60,9 +60,9 @@ ms.locfileid: "90896322"
 | Имя пользователя |  *имя для входа администратора сервера* | Введите имя администратора сервера, которое вы использовали ранее при создании базы данных Azure для MySQL. Пример нашего имени пользователя — myadmin@mydemoserver. Выполните действия из предыдущего раздела, чтобы найти сведения для подключения, если вы не помните имя пользователя. Формат *имя пользователя\@имя сервера*.
 | Пароль | Ваш пароль. | Нажмите кнопку **Store in Vault...** (Сохранить в хранилище), чтобы сохранить пароль. |
 
-3.   Щелкните **Проверить подключение**, чтобы проверить, все ли параметры верно настроены. 
+3.   Щелкните **Проверить подключение** , чтобы проверить, все ли параметры верно настроены. 
 
-4.   Нажмите кнопку **ОК**, чтобы сохранить подключение. 
+4.   Нажмите кнопку **ОК** , чтобы сохранить подключение. 
 
 5.   В списке **подключений MySQL** щелкните элемент, соответствующий вашему серверу, и ожидайте установления подключения.
 
@@ -103,7 +103,7 @@ ms.locfileid: "90896322"
 
     На снимке экрана показан пример кода SQL в SQL Workbench и выходные данные после его выполнения.
     
-    :::image type="content" source="media/connect-workbench/3-workbench-sql-tab.png" alt-text="Имя сервера базы данных Azure для MySQL":::
+    :::image type="content" source="media/connect-workbench/3-workbench-sql-tab.png" alt-text="MySQL Workbench: вкладка SQL для выполнения примера кода SQL":::
 
 2. Чтобы выполнить пример кода SQL, щелкните значок молнии на панели инструментов вкладки **SQL File** (Файл SQL).
 3. Обратите внимание на три вкладки с результатами, которые отображаются в разделе **Сетка результатов** посередине страницы. 
@@ -111,6 +111,16 @@ ms.locfileid: "90896322"
 
 Вы подключились к базе данных Azure для MySQL с помощью MySQL Workbench и запросили данные с помощью языка SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Чтобы очистить все ресурсы, используемые во время этого краткого руководства, удалите группу ресурсов с помощью следующей команды:
+
+```azurecli
+az group delete \
+    --name $AZ_RESOURCE_GROUP \
+    --yes
+```
+
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Перенос базы данных с помощью экспорта и импорта](./concepts-migrate-import-export.md)

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 3b5783476e0d4a96561e11158cd2b0f6421cfbf6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 648f06ef1af5d6dce9fa3583c6358d3bd173f209
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88136105"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93319678"
 ---
 # <a name="cheat-sheet-for-azure-synapse-analytics-formerly-sql-dw"></a>Памятка по Azure Synapse Analytics (ранее — Хранилище данных SQL)
 
@@ -37,7 +37,7 @@ ms.locfileid: "88136105"
 
 ## <a name="data-migration"></a>Перенос данных
 
-Сначала загрузите данные в [Azure Data Lake Storage](../../data-factory/connector-azure-data-lake-store.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) или в хранилище BLOB-объектов Azure. Затем воспользуйтесь [инструкцией COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (предварительная версия), чтоб отправить данные в промежуточные таблицы. Используйте следующую конфигурацию:
+Сначала загрузите данные в [Azure Data Lake Storage](../../data-factory/connector-azure-data-lake-store.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) или в хранилище BLOB-объектов Azure. Затем воспользуйтесь [инструкцией COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (предварительная версия), чтоб отправить данные в промежуточные таблицы. Используйте следующую конфигурацию:
 
 | Конструирование | Рекомендация |
 |:--- |:--- |
@@ -64,8 +64,8 @@ ms.locfileid: "88136105"
 * Убедитесь, что общие ключи хэша имеют одинаковый формат данных.
 * Не распределяйте в формате varchar.
 * Таблицы измерений с общим ключом хэша к таблице фактов с частыми операциями объединения могут быть распределены по хэшу.
-* С помощью *[sys.dm_pdw_nodes_db_partition_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)* анализируйте любую асимметрию в данных.
-* С помощью *[sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)* анализируйте перемещения данных по запросам, контролируйте время трансляции и операций смешения. Это помогает рассмотреть стратегию распределения.
+* С помощью *[sys.dm_pdw_nodes_db_partition_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)* анализируйте любую асимметрию в данных.
+* С помощью *[sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)* анализируйте перемещения данных по запросам, контролируйте время трансляции и операций смешения. Это помогает рассмотреть стратегию распределения.
 
 Подробнее о [реплицированных таблицах](design-guidance-for-replicated-tables.md) и [распределенных таблицах](sql-data-warehouse-tables-distribute.md).
 
@@ -121,7 +121,7 @@ ms.locfileid: "88136105"
 
 Если вы заметили, что запросы занимают слишком много времени, убедитесь, что пользователи не работают в больших классах ресурсов. Большие классы потребляют значительно количество слотов выдачи. Они могут создать дополнительные запросы в очереди.
 
-Наконец, при использовании [пула SQL](sql-data-warehouse-overview-what-is.md#synapse-sql-pool-in-azure-synapse) уровня Gen2 каждый класс ресурсов получает в 2,5 раза больше памяти, чем на уровне Gen1.
+Наконец, при использовании [пула SQL](sql-data-warehouse-overview-what-is.md#dedicated-sql-pool-in-azure-synapse) уровня Gen2 каждый класс ресурсов получает в 2,5 раза больше памяти, чем на уровне Gen1.
 
 Подробнее о работе с [классами ресурсов и параллелизмом](resource-classes-for-workload-management.md).
 

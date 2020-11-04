@@ -5,23 +5,25 @@ author: SnehaGunda
 ms.author: sngun
 tags: azure-resource-manager
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: quickstart
 ms.date: 06/01/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: a319e5f3b6aa861feb2d9dfc88d471ff695c2a3c
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: b97702bb84eb38d185fe97ffcc596e374f28fbe2
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92482325"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93339671"
 ---
 # <a name="quickstart-create-an-azure-cosmos-db-and-a-container-by-using-an-arm-template"></a>Краткое руководство. Создание Azure Cosmos DB и контейнера с помощью шаблона ARM
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Azure Cosmos DB — это быстрая база данных NoSQL от Майкрософт с открытыми API для использования в любом масштабе. С помощью Azure Cosmos DB вы можете быстро создавать базы данных с парами "ключ — значение", документами, графами и обращаться к ним. В этом кратком руководстве рассматривается развертывание шаблона Azure Resource Manager (ARM) для создания базы данных Azure Cosmos DB и контейнера в ней. Впоследствии в этом контейнере можно будет хранить данные.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
 [:::image type="content" source="../media/template-deployments/deploy-to-azure.svg" alt-text="Развертывание в Azure":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-sql%2Fazuredeploy.json)
 
@@ -57,28 +59,28 @@ Azure Cosmos DB — это быстрая база данных NoSQL от Ма
 
 2. Введите или выберите следующие значения.
 
-   :::image type="content" source="./media/quick-create-template/create-cosmosdb-using-template-portal.png" alt-text="Развертывание в Azure":::
+   :::image type="content" source="./media/quick-create-template/create-cosmosdb-using-template-portal.png" alt-text="Шаблон ARM, интеграция с Azure Cosmos DB, развертывание на портале":::
 
     Если значение не указано, используйте значения по умолчанию для создания ресурсов Azure Cosmos DB.
 
-    * **Подписка** . Выберите нужную подписку Azure.
-    * **Группа ресурсов** . Щелкните **Создать** , введите уникальное имя новой группы ресурсов и нажмите кнопку **ОК** .
-    * **Расположение** . Выберите расположение.  Например, **центральная часть США** .
-    * **Имя учетной записи** . Имя учетной записи Azure Cosmos DB. Оно должно быть глобально уникальным.
-    * **Расположение** . Введите расположение, в котором вы хотите создать учетную запись Azure Cosmos DB. Это может быть то же расположение, в котором размещена группа ресурсов.
-    * **Основной регион** . Регион первичной реплики для учетной записи Azure Cosmos DB.
-    * **Дополнительный регион** . Регион вторичной реплики для учетной записи Azure Cosmos DB.
+    * **Подписка**. Выберите нужную подписку Azure.
+    * **Группа ресурсов**. Щелкните **Создать** , введите уникальное имя новой группы ресурсов и нажмите кнопку **ОК**.
+    * **Расположение**. Выберите расположение.  Например, **центральная часть США**.
+    * **Имя учетной записи**. Имя учетной записи Azure Cosmos DB. Оно должно быть глобально уникальным.
+    * **Расположение**. Введите расположение, в котором вы хотите создать учетную запись Azure Cosmos DB. Это может быть то же расположение, в котором размещена группа ресурсов.
+    * **Основной регион**. Регион первичной реплики для учетной записи Azure Cosmos DB.
+    * **Дополнительный регион**. Регион вторичной реплики для учетной записи Azure Cosmos DB.
     * **Уровень согласованности по умолчанию** : уровень согласованности по умолчанию в учетной записи Azure Cosmos.
     * **Префикс максимального числа устаревших запросов** : максимальное число устаревших запросов. Требуется для BoundedStaleness.
     * **Максимальный интервал в секундах** : максимальное время запаздывания. Требуется для BoundedStaleness.
     * **Имя базы данных** : имя базы данных Azure Cosmos DB.
     * **Имя контейнера** : имя контейнера Azure Cosmos DB.
-    * **Пропускная способность** .  Пропускная способность контейнера, минимальное значение — 400 единиц запросов в секунду.
+    * **Пропускная способность**.  Пропускная способность контейнера, минимальное значение — 400 единиц запросов в секунду.
     * **I agree to the terms and conditions state above** (Я принимаю указанные выше условия). Установите этот флажок.
 
-3. Щелкните **Приобрести** . После успешного развертывания учетной записи Azure Cosmos DB вы получите такое уведомление:
+3. Щелкните **Приобрести**. После успешного развертывания учетной записи Azure Cosmos DB вы получите такое уведомление:
 
-   :::image type="content" source="./media/quick-create-template/resource-manager-template-portal-deployment-notification.png" alt-text="Развертывание в Azure":::
+   :::image type="content" source="./media/quick-create-template/resource-manager-template-portal-deployment-notification.png" alt-text="Шаблон ARM, интеграция базы данных Cosmos DB, развертывание уведомлений на портале":::
 
 Для развертывания шаблона используется портал Azure. В дополнение к порталу Azure можно также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-powershell.md).
 
