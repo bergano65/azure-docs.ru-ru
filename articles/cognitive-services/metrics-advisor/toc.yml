@@ -5,12 +5,14 @@
   items:
     - name: Что такое Помощник по метрикам?
       href: overview.md
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   items:
     - name: Использование веб-портала
       href: quickstarts/web-portal.md
-    - name: Использование REST API
-      href: quickstarts/rest-api.md
+    - name: "Использование REST\_API или клиентских библиотек"
+      href: quickstarts/rest-api-and-client-library.md
 - name: Практические руководства
   items:
     - name: Подключение данных
