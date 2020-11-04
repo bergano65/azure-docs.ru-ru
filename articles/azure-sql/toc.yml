@@ -993,6 +993,8 @@
                   href: virtual-machines/windows/application-patterns-development-strategies.md
             - name: Управление
               items:
+                - name: Расширение агента IaaS для SQL
+                  href: virtual-machines/windows/sql-server-iaas-agent-extension-automate-management.md
                 - name: Выделенный узел
                   href: virtual-machines/windows/dedicated-host.md
                 - name: Расширенная поддержка SQL 2008 и R2
@@ -1021,12 +1023,14 @@
                   href: virtual-machines/windows/change-sql-server-version.md
                 - name: Память
                   href: virtual-machines/windows/storage-configuration.md
+                - name: Автоматическое исправление
+                  href: virtual-machines/windows/automated-patching.md
                 - name: Интеграция с Azure Key Vault
                   href: virtual-machines/windows/azure-key-vault-integration-configure.md
                 - name: Миграция хранилища в SSD (цен. категория "Ультра")
                   href: virtual-machines/windows/storage-migrate-to-ultradisk.md
-                - name: Регистрация через поставщика ресурсов виртуальной машины SQL
-                  displayName: 'resource provider, registration'
+                - name: Установка расширения агента IaaS для SQL
+                  displayName: 'resource provider, registration, sql vm rp'
                   items:
                     - name: Автоматическая регистрация
                       href: virtual-machines/windows/sql-vm-resource-provider-automatic-registration.md
@@ -1034,12 +1038,6 @@
                       href: virtual-machines/windows/sql-vm-resource-provider-register.md
                     - name: Массовая регистрация нескольких виртуальных машин
                       href: virtual-machines/windows/sql-vm-resource-provider-bulk-register.md
-                - name: Автоматизация задач управления
-                  items:
-                    - name: "Использование расширения агента IaaS для SQL\_Server"
-                      href: virtual-machines/windows/sql-server-iaas-agent-extension-automate-management.md
-                    - name: Автоматическое исправление
-                      href: virtual-machines/windows/automated-patching.md
             - name: Миграция
               items:
                 - name: Перенос базы данных SQL Server на виртуальную машину

@@ -3,15 +3,16 @@ title: Преобразование LINQ to SQL в Azure Cosmos DB
 description: Узнайте о поддерживаемых операторах LINQ и о том, как запросы LINQ сопоставляются с запросами SQL в Azure Cosmos DB.
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 7/29/2020
 ms.author: tisande
-ms.openlocfilehash: c7d47b0bb167b3211b3859a47b0c8e11876b1614
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 38d37d03c99bd3a39b00276da110ea0ef6bb962e
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93075407"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93332378"
 ---
 # <a name="linq-to-sql-translation"></a>Трансляция из LINQ в SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -84,7 +85,7 @@ using (FeedIterator<Book> setIterator = container.GetItemLinqQueryable<Book>()
 - **Где** : [фильтрует и поддерживает](sql-query-where.md)преобразование между `&&` , и `||` `!` в операторы SQL
 - **SelectMany** : позволяет очищать массивы в предложении [Join](sql-query-join.md) . Используйте, чтобы связать или вложить выражения для фильтрации элементов массива.
 - **OrderBy** и **OrderByDescending** : преобразование для [упорядочивания](sql-query-order-by.md) с ASC или DESC.
-- Операторы **Count** , **Sum** , **min** , **Max** и **Average** для [агрегирования](sql-query-aggregates.md)и их асинхронные эквиваленты **каунтасинк** , **сумасинк** , **минасинк** , **максасинк** и **аверажеасинк** .
+- Операторы **Count** , **Sum** , **min** , **Max** и **Average** для [агрегирования](sql-query-aggregates.md)и их асинхронные эквиваленты **каунтасинк** , **сумасинк** , **минасинк** , **максасинк** и **аверажеасинк**.
 - **CompareTo** : выполняет преобразование в сравнение диапазонов. Обычно используется для строк, так как они не сравнимы в .NET.
 - **Пропустить** и **выполнить** : преобразуется в [смещение и ограничивает](sql-query-offset-limit.md) ограничение результатов запроса и выполнение разбиения на страницы.
 - **Математические функции** : поддерживают преобразование из .NET,,,,,,,,,,,,,,, `Abs` `Acos` `Asin` `Atan` `Ceiling` `Cos` `Exp` `Floor` `Log` `Log10` `Pow` `Round` `Sign` `Sin` `Sqrt` `Tan` и `Truncate` в эквивалентные [встроенные математические функции](sql-query-mathematical-functions.md).
@@ -343,7 +344,7 @@ using (FeedIterator<Book> setIterator = container.GetItemLinqQueryable<Book>()
       WHERE c.familyName = f.parents[0].familyName
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Данные документов модели](modeling-data.md)

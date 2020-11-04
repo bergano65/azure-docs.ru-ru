@@ -557,14 +557,9 @@
               href: sql-query-linq-to-sql.md
         - name: Контейнеры и элементы
           items:
-            - name: Индексация
-              items:
-                - name: Общие сведения об индексировании
-                  displayName: 'range, spatial'
-                  href: index-overview.md
-                - name: Политики индексирования
-                  displayName: 'consistent, none'
-                  href: index-policy.md
+            - name: Общие сведения об индексировании
+              displayName: 'range, spatial'
+              href: index-overview.md
             - name: Срок жизни
               displayName: 'delete, delete data, ttl'
               href: time-to-live.md
@@ -665,8 +660,6 @@
             - name: Настройка срока жизни
               displayName: 'delete, delete data, ttl'
               href: how-to-time-to-live.md
-            - name: Управление политиками индексирования
-              href: how-to-manage-indexing-policy.md
             - name: Определение уникальных ключей
               href: how-to-define-unique-keys.md
         - name: Производительность
@@ -677,6 +670,13 @@
                   href: profile-sql-api-query.md
                 - name: Настройка производительности запросов
                   href: sql-api-query-metrics.md
+            - name: Индексация
+              items:
+                - name: Политики индексирования
+                  displayName: 'consistent, none, indexing, policy'
+                  href: index-policy.md
+                - name: Управление политиками индексирования
+                  href: how-to-manage-indexing-policy.md
             - name: .NET
               items:
                 - name: "Советы по повышению производительности при использовании пакета SDK для .NET версии\_3"
@@ -753,6 +753,8 @@
               href: create-sql-api-java-changefeed.md
         - name: Программирование на стороне сервера
           items:
+            - name: Выполнение транзакционных пакетных операций
+              href: transactional-batch.md
             - name: 'Запись хранимых процедур, триггеров и определяемых пользователем функций'
               href: how-to-write-stored-procedures-triggers-udfs.md
             - name: Запись хранимых процедур и триггеров с помощью API запросов JavaScript

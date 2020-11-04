@@ -39,6 +39,8 @@
           href: tutorial-private-endpoint-sql-portal.md
         - name: "Подключение к SQL\_Server с помощью PowerShell"
           href: tutorial-private-endpoint-sql-powershell.md
+        - name: "Подключение к SQL\_Server\_— Azure CLI"
+          href: tutorial-private-endpoint-sql-cli.md
 - name: Основные понятия
   items:
     - name: Частная конечная точка

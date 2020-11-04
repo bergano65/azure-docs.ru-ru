@@ -4,15 +4,16 @@ description: Узнайте, как создать динамическую па
 author: SnehaGunda
 ms.author: sngun
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 09/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: fc285599176057c57621dc6bfefbe9188d3badd7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b3ec3e96aa1ba4bce3893c1af2446bb509a867b6
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096892"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93333602"
 ---
 # <a name="create-a-real-time-dashboard-using-azure-cosmos-db-and-power-bi"></a>Создание панели мониторинга в режиме реального времени с помощью Azure Cosmos DB и Power BI
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -58,7 +59,12 @@ Azure Analysis Services предоставляет полностью управ
 
 1. **Настройка добавочного обновления** . Чтобы настроить добавочное обновление для набора данных, выполните действия, описанные в разделе [Добавочное обновление с помощью Power BIной](/power-bi/service-premium-incremental-refresh) статьи. Добавьте параметры **RangeStart** и **RangeEnd** , как показано на следующем снимке экрана:
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/configure-range-parameters.png" alt-text="Соединитель Power BI Azure Cosmos DB" = Table.SelectRows(#"Expanded Document", each [Document.date] > DateTime.ToText(RangeStart,"yyyy-MM-dd") and [Document.date] < DateTime.ToText(RangeEnd,"yyyy-MM-dd"))
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/configure-range-parameters.png" alt-text="Настройка параметров диапазона":::
+
+   Так как набор данных содержит столбец дат в текстовом формате, параметры **RangeStart** и **RangeEnd** должны быть преобразованы для использования следующего фильтра. В области **Расширенный редактор** измените запрос, добавив следующий текст для фильтрации строк на основе параметров RangeStart и RangeEnd:
+
+   ```
+   #"Filtered Rows" = Table.SelectRows(#"Expanded Document", each [Document.date] > DateTime.ToText(RangeStart,"yyyy-MM-dd") and [Document.date] < DateTime.ToText(RangeEnd,"yyyy-MM-dd"))
    ```
    
    В зависимости от того, какой столбец и тип данных есть в исходном наборе данных, можно соответствующим образом изменить поля RangeStart и RangeEnd
@@ -73,13 +79,13 @@ Azure Analysis Services предоставляет полностью управ
 
 1. **Определение политики обновления** . Определите политику обновления, перейдя на вкладку **Добавочное обновление** **контекстного** меню для таблицы. Настройте политику обновления на **ежедневное** обновление и сохраните данные за прошлый месяц.
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/define-refresh-policy.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/define-refresh-policy.png" alt-text="Определение политики обновления":::
 
-   Игнорируйте предупреждение, сообщающее, что *запрос M не может быть подтвержден для свертывания* . Соединитель Azure Cosmos DB растрет запросы фильтра.
+   Игнорируйте предупреждение, сообщающее, что *запрос M не может быть подтвержден для свертывания*. Соединитель Azure Cosmos DB растрет запросы фильтра.
 
 1. **Загрузите данные и создайте отчеты** — используя ранее загруженные данные, создайте диаграммы для создания отчетов о температуре и лавины.
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/load-data-generate-report.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/load-data-generate-report.png" alt-text="Загрузка данных и создание отчета":::
 
 1. **Публикация отчета в Power BI "Премиум** ". Поскольку добавочное обновление является только расширенным, диалоговое окно публикации позволяет выбрать рабочую область только для емкости Premium. Первое обновление может занять много времени, так как данные импортируются за весь период. Последующие обновления данных выполняются гораздо быстрее, так как они используют добавочное обновление.
 
@@ -96,19 +102,19 @@ Azure Analysis Services предоставляет полностью управ
 
 1. **Создание нового Analysis Services табличного проекта в Visual Studio**  -   [Установите SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017&preserve-view=true) и создайте Analysis Services табличный проект в Visual Studio.
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/create-analysis-services-project.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/create-analysis-services-project.png" alt-text="Создание проекта Azure Analysis Services":::
 
    Выберите экземпляр **интегрированной рабочей области** и установите уровень совместимости **SQL Server 2017/Azure Analysis Services (1400)** .
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/tabular-model-designer.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/tabular-model-designer.png" alt-text="Конструктор табличных моделей Azure Analysis Services":::
 
 1. **Добавьте Azure Cosmos DB источник данных** — перейдите к разделу **модели** >  **Источники данных**  >  **новый источник данных** и добавьте Azure Cosmos DB источник данных, как показано на следующем снимке экрана:
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/add-data-source.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/add-data-source.png" alt-text="Добавить Cosmos DB источник данных":::
 
-   Подключитесь к Azure Cosmos DB, указав **URI учетной записи** , **имя базы данных** и **имя контейнера** . Теперь вы можете увидеть данные из контейнера Azure Cosmos, импортированные в Power BI.
+   Подключитесь к Azure Cosmos DB, указав **URI учетной записи** , **имя базы данных** и **имя контейнера**. Теперь вы можете увидеть данные из контейнера Azure Cosmos, импортированные в Power BI.
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/preview-cosmosdb-data.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/preview-cosmosdb-data.png" alt-text="Предварительный просмотр Azure Cosmos DB данных":::
 
 1. **Создайте модель Analysis Services** — откройте редактор запросов, выполните необходимые операции для оптимизации загруженного набора данных.
 
@@ -138,12 +144,16 @@ Azure Analysis Services предоставляет полностью управ
 
 1. **Создание секций анализа Azure** . Создание секций в Azure Analysis Services для разделения набора данных на логические разделы, которые могут обновляться независимо друг от друга и с разной частотой. В этом примере создаются две секции, которые делят набор данных на данные за последний месяц и все остальное.
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/create-analysis-services-partitions.png" alt-text="Соединитель Power BI Azure Cosmos DB" = Table.SelectRows(#"Sorted Rows", each [Document.month] = "2019-07")`
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/create-analysis-services-partitions.png" alt-text="Создание секций служб Analysis Services":::
+
+   В Azure Analysis Services создайте следующие две секции:
+
+   * **Последний месяц** - `#"Filtered Rows" = Table.SelectRows(#"Sorted Rows", each [Document.month] = "2019-07")`
    * **Исторических** -  `#"Filtered Rows" = Table.SelectRows(#"Sorted Rows", each [Document.month] <> "2019-07")`
 
-1. **Разверните модель в сервер анализа данных Azure** . Щелкните правой кнопкой мыши проект Azure Analysis Services и выберите пункт **развернуть** . Добавьте имя сервера в области **Свойства сервера развертывания** .
+1. **Разверните модель в сервер анализа данных Azure** . Щелкните правой кнопкой мыши проект Azure Analysis Services и выберите пункт **развернуть**. Добавьте имя сервера в области **Свойства сервера развертывания** .
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/analysis-services-deploy-model.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/analysis-services-deploy-model.png" alt-text="Развертывание модели Azure Analysis Services":::
 
 1. **Настройка обновлений секций и слияний** — Azure Analysis Services позволяет независимой обработки секций. Так как мы хотим, чтобы Секция **последнего месяца** постоянно обновлялась с самыми последними данными, установите для интервала обновления значение 5 минут. Вы можете обновить данные с помощью [REST API](../analysis-services/analysis-services-async-refresh.md), [службы автоматизации Azure](../analysis-services/analysis-services-refresh-azure-automation.md)или [приложения логики](../analysis-services/analysis-services-refresh-logic-app.md). Обновление данных в исторических разделах не требуется. Кроме того, необходимо написать код для консолидации секции последнего месяца с историческим разделом и создания новой секции последнего месяца.
 
@@ -151,13 +161,13 @@ Azure Analysis Services предоставляет полностью управ
 
 1. **Подключитесь к сервер анализа данных Azure с помощью соединителя базы данных Azure Analysis Services** . Выберите **режим в режиме реального времени** и подключитесь к экземпляру Azure Analysis Services, как показано на следующем снимке экрана:
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/analysis-services-get-data.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/analysis-services-get-data.png" alt-text="Получение данных из Azure Analysis Services":::
 
 1. **Загрузите данные и создайте отчеты** — используя ранее загруженные данные, создайте диаграммы для отчета о температуре и лавины. Так как вы создаете активное подключение, запросы должны выполняться для данных в модели Azure Analysis Services, которая была развернута на предыдущем шаге. Диаграммы температуры будут обновлены в течение пяти минут после загрузки новых данных в Azure Cosmos DB.
 
-   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/load-data-generate-report.png" alt-text="Соединитель Power BI Azure Cosmos DB":::
+   :::image type="content" source="./media/create-real-time-weather-dashboard-powerbi/load-data-generate-report.png" alt-text="Загрузка данных и создание отчетов":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о Power BI см. в статье [Приступая к работе с Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 

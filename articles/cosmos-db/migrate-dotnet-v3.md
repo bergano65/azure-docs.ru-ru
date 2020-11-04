@@ -4,14 +4,15 @@ description: Узнайте, как обновить существующее п
 author: stefArroyo
 ms.author: esarroyo
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 09/23/2020
-ms.openlocfilehash: 3cddf76ae0157c6729e6f58e40ee3f1725a9d395
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 514a6c6daccfe63865ae0b2b9f5bf29c5cbedc29
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096671"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93334027"
 ---
 # <a name="migrate-your-application-to-use-the-azure-cosmos-db-net-sdk-v3"></a>Перенос приложения для использования пакета SDK для Azure Cosmos DB .NET v3
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -639,7 +640,7 @@ private static async Task DeleteItemAsync(DocumentClient client)
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание консольного приложения](sql-api-get-started.md) для управления Azure Cosmos DB данных API SQL с помощью пакета SDK v3
 * Дополнительные сведения о том, [что можно сделать с помощью пакета SDK v3](sql-api-dotnet-v3sdk-samples.md)

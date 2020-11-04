@@ -221,6 +221,8 @@
           href: ../../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks
     - name: Справочник по API для IoT Central
       href: /rest/api/iotcentral/
+    - name: Место расположения данных клиента
+      href: iot-central-customer-data-residency.md
     - name: Запросы данных клиентов
       href: iot-central-customer-data-requests.md
     - name: Поддерживаемые браузеры

@@ -406,6 +406,8 @@
           href: backup-encryption.md
         - name: Шифрование с использованием управляемых пользователем ключей
           href: encryption-at-rest-with-cmk.md
+        - name: Протокол TLS
+          href: transport-layer-security.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md

@@ -3,15 +3,16 @@ title: Бессерверные вычисления в базе данных с
 description: Узнайте, как можно использовать Azure Cosmos DB и служб "Функции Azure" для создания бессерверных вычислительных приложений, управляемых событиями.
 author: SnehaGunda
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: sngun
-ms.openlocfilehash: 5264fb44f8088ae8f942abf95bc8c0ef6d917413
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 73a34cc27eaba33d04f4d31585c7f494f58e7274
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096144"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93334080"
 ---
 # <a name="serverless-database-computing-using-azure-cosmos-db-and-azure-functions"></a>Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -143,7 +144,7 @@ Azure Cosmos DB является рекомендуемой базой данн�
 
 Если вы не уверены, что подойдет для вашей реализации: Flow, Logic Apps, служба "Функции Azure" или веб-задания, ознакомьтесь с разделом [Сравнение Microsoft Flow, Logic Apps, функций и веб-заданий Azure](../azure-functions/functions-compare-logic-apps-ms-flow-webjobs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь можно подключить Azure Cosmos DB и службу "Функции Azure" по-настоящему: 
 

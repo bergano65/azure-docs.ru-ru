@@ -23,6 +23,9 @@
         - name: Миграция с минимальным временем простоя с использованием DMS
           href: howto-migrate-online.md
           displayName: 'dms, data migration service'
+    - name: Политика управления версиями
+      href: concepts-version-policy.md
+      displayName: 'version, postgresql'
 - name: Одиночный сервер
   expanded: true
   items:
@@ -382,6 +385,8 @@
           items:
             - name: Портал Azure
               href: howto-move-regions-portal.md
+        - name: Обновление основных версий
+          href: how-to-upgrade-using-dump-and-restore.md
 - name: Гибкий сервер (предварительная версия)
   expanded: true
   items:

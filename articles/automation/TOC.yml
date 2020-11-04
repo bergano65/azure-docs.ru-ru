@@ -128,7 +128,7 @@
               href: graphical-runbook-sdk.md
         - name: Мониторинг runbook
           items:
-            - name: Мониторинг выходных данных runbook
+            - name: Настройка выходных данных runbook
               href: automation-runbook-output-and-messages.md
             - name: Обработка ошибок в графических модулях runbook
               href: automation-runbook-graphical-error-handling.md

@@ -3,15 +3,16 @@ title: Включение записных книжек в учетной зап
 description: Встроенные записные книжки Azure Cosmos DB позволяют анализировать и визуализировать данные с помощью портала. В этой статье описывается, как включить эту функцию для учетных записей Cosmos.
 author: deborahc
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 09/22/2019
 ms.author: dech
-ms.openlocfilehash: cf8da4379a7770e44e86663c02cc7a57da9d3452
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c869069e40780b1fd399758e84b0ffba311398e3
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93089800"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93334197"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Включение записных книжек для учетных записей Azure Cosmos DB (Предварительная версия)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -29,7 +30,7 @@ ms.locfileid: "93089800"
  
     :::image type="content" source="media/enable-notebooks/create-new-account-with-notebooks.png" alt-text="Выберите пункт &quot;записные книжки&quot; в колонке Azure Cosmos DB создание":::
 
-1. Выберите **Проверить и создать**. Можно пропустить параметр **сеть** и **теги** . 
+1. Выберите **Review + create** (Просмотреть и создать). Можно пропустить параметр **сеть** и **теги** . 
 1. Проверьте параметры учетной записи, а затем нажмите кнопку **Создать**. Создание учетной записи занимает несколько минут. Дождитесь, пока на странице портала появится сообщение **Развертывание выполнено**. 
 
    :::image type="content" source="media/enable-notebooks/create-new-account-with-notebooks-complete.png" alt-text="Область Уведомления на портале Azure":::
