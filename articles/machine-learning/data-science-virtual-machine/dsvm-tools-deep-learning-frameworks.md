@@ -11,12 +11,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 29f1949cbe9998ac569b0389986023a72e7845b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c8c6ee3d5eecc02ac921d7b10f2394380af684c2
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89070922"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309024"
 ---
 # <a name="deep-learning-and-ai-frameworks-for-the-azure-data-science-vm"></a>Платформы глубокого обучения и искусственного интеллекта для виртуальной машины Azure для обработки и анализа данных
 Платформы глубокого обучения в DSVM перечислены ниже.
@@ -76,7 +76,7 @@ ms.locfileid: "89070922"
 | Настройка и установка на DSVM  | Keras устанавливается в Python 3,6 в Windows и в Python 3,5 в Linux |
 | Как запустить      | Активируйте нужную среду в терминале, а затем запустите Python. |
 
-## <a name="microsoft-cognitive-toolkit-cntk"></a>[Microsoft Cognitive Toolkit (CNTK)](https://docs.microsoft.com/cognitive-toolkit/)
+## <a name="microsoft-cognitive-toolkit-cntk"></a>[Microsoft Cognitive Toolkit (CNTK)](/cognitive-toolkit/)
 
 | Категория | Значение |
 | ------------- | ------------- |
@@ -110,7 +110,7 @@ ms.locfileid: "89070922"
 | Поддерживаемые выпуски DSVM      | Windows Server 2019<br>Ubuntu 18.04<br> Windows 2016<br> Ubuntu 16.04   |
 | Для чего она нужна? | Средство NVIDIA для выполнения запросов активности GPU |
 | Настройка и установка на DSVM  | `nvidia-smi` находится в системном пути. |
-| Как запустить      | На виртуальной машине **с графическим процессором**откройте командную строку (в Windows) или терминал (в Linux) и запустите `nvidia-smi` . |
+| Как запустить      | На виртуальной машине **с графическим процессором** откройте командную строку (в Windows) или терминал (в Linux) и запустите `nvidia-smi` . |
 
 ## <a name="pytorch"></a>[PyTorch](https://pytorch.org/)
 
@@ -146,5 +146,5 @@ ms.locfileid: "89070922"
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.0.3 |
 | Поддерживаемые выпуски DSVM      | Ubuntu 16.04 |
-| Настройка и установка на DSVM  |Theano устанавливается в среде Python 2,7 (_root_) и в окружении Python 3,5 (_PY35_). |
+| Настройка и установка на DSVM  |Theano устанавливается в среде Python 2,7 ( _root_ ) и в окружении Python 3,5 ( _PY35_ ). |
 | Как запустить      |  Терминал: активируйте нужную версию Python (root или PY35), запустите Python, а затем импортируйте Theano.<br/>* Jupyter: выберите ядро Python 2,7 или 3,5, а затем импортируйте Theano.  <br/>Чтобы обойти недавную ошибку математической библиотеки ядра (MKL), необходимо сначала установить MKL потоковый уровень следующим образом:<br/><br/>`export MKL_THREADING_LAYER=GNU`  |

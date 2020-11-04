@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a559b29502adb1c507b1543463d84eb3bd15d5a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 3587ef6be9d6c9969dff5d1af2181ed51aea7d29
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083292"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308284"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Инструкции. Планирование реализации присоединения к Azure AD
 
@@ -119,7 +119,7 @@ ms.locfileid: "93083292"
 - **Только MDM** — устройством управляет только поставщик MDM, например Intune. Все политики доставляются в рамках регистрации MDM. Для пользователей Azure AD Premium или EMS развертывание MDM выполняется автоматически в ходе присоединения к Azure AD.
 - **Совместное управление** — устройством управляют поставщик MDM и SCCM. При таком подходе агент SCCM устанавливается на устройстве с MDM для администрирования определенных аспектов.
 
-Если вы используете групповые политики, оцените четность политик MDM с помощью [средства анализа миграции MDM (MMAT)](https://github.com/WindowsDeviceManagement/MMAT). 
+Если вы используете групповые политики, оцените свой объект групповой политики и четность политики MDM с помощью [Групповая политика Analytics](/mem/intune/configuration/group-policy-analytics) в Microsoft Endpoint Manager. 
 
 Просмотрите поддерживаемые и неподдерживаемые политики, чтобы определить, можно ли использовать решение MDM вместо групповых политик. Что касается неподдерживаемых политик, рассмотрите следующие вопросы:
 
@@ -187,7 +187,7 @@ ms.locfileid: "93083292"
 Начиная с обновления Windows 10 2004, пользователи также могут использовать удаленный рабочий стол из зарегистрированного устройства Windows 10 Azure AD на устройстве, присоединенном к Azure AD. 
 
 ## <a name="understand-your-provisioning-options"></a>Изучение вариантов подготовки
-**Примечание** . устройства, присоединенные к Azure AD, не могут быть развернуты с помощью средства подготовки системы (Sysprep) или аналогичных средств работы с образами.
+**Примечание**. устройства, присоединенные к Azure AD, не могут быть развернуты с помощью средства подготовки системы (Sysprep) или аналогичных средств работы с образами.
 
 Вы можете подготовить к работе присоединение к Azure AD, используя описанные ниже подходы.
 
@@ -246,7 +246,7 @@ ms.locfileid: "93083292"
 **Добавление поставщика MDM** :
 
 1. На странице **Azure Active Directory** в разделе **Управление** щелкните `Mobility (MDM and MAM)`. 
-1. Нажмите **Добавить приложение** .
+1. Нажмите **Добавить приложение**.
 1. Выберите поставщика MDM из списка.
 
    :::image type="content" source="./media/azureadjoin-plan/04.png" alt-text="Снимок экрана: Azure Active Directory добавить страницу приложения. В списке перечислены несколько поставщиков M D M." border="false":::
@@ -272,7 +272,7 @@ ms.locfileid: "93083292"
 - URL-адрес обнаружения MDM; 
 - URL-адрес соответствия MDM.
 
-:::image type="content" source="./media/azureadjoin-plan/06.png" alt-text="Снимок экрана: Azure Active Directory добавить страницу приложения. В списке перечислены несколько поставщиков M D M." border="false":::
+:::image type="content" source="./media/azureadjoin-plan/06.png" alt-text="Снимок экрана части раздела конфигурации Azure Active Directory M D с полями U R L для условий использования, обнаружения и соответствия требованиям M D." border="false":::
 
 Каждый URL-адрес имеет предопределенное значение по умолчанию. Если эти поля пусты, обратитесь к поставщику MDM для получения дополнительных сведений.
 

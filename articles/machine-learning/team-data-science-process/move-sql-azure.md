@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 1f1120c78ef2a634c079705c85170d9742eabd1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42bac2df7abe00be8c0e6ffddcc9bef7ef28ba9d
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87087430"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309527"
 ---
 # <a name="move-data-to-an-azure-sql-database-for-azure-machine-learning"></a>Перемещение данных в базу данных SQL Azure для машинного обучения Azure
 
@@ -36,10 +36,10 @@ ms.locfileid: "87087430"
 
 * **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись хранения Azure**. Учетная запись хранения Azure используется в этом учебнике для хранения данных. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-account-create.md). После создания учетной записи хранения необходимо получить ключ, используемый для доступа к хранилищу. См. [раздел Управление ключами доступа учетной записи хранения](../../storage/common/storage-account-keys-manage.md).
-* Доступ к **базе данных SQL Azure**. Если требуется настроить базу данных SQL Azure, то обратитесь к статье [Руководство по базам данных SQL: создание базы данных SQL за несколько минут с помощью портала Azure](../../sql-database/sql-database-get-started.md) , которая содержит сведения о том, как подготовить новый экземпляр базы данных SQL Azure.
+* Доступ к **базе данных SQL Azure**. Если требуется настроить базу данных SQL Azure, то обратитесь к статье [Руководство по базам данных SQL: создание базы данных SQL за несколько минут с помощью портала Azure](../../azure-sql/database/single-database-create-quickstart.md) , которая содержит сведения о том, как подготовить новый экземпляр базы данных SQL Azure.
 * Установленная и настроенная локальная среда **Azure PowerShell**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/).
 
-**Данные**: процессы миграции демонстрируются с помощью [набора данных о такси Нью-Йорка](https://chriswhong.com/open-data/foil_nyc_taxi/). Набор данных о такси Нью-Йорка содержит сведения о поездках и тарифах и доступен в хранилище BLOB-объектов Azure [здесь](https://www.andresmh.com/nyctaxitrips/). Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
+**Данные** : процессы миграции демонстрируются с помощью [набора данных о такси Нью-Йорка](https://chriswhong.com/open-data/foil_nyc_taxi/). Набор данных о такси Нью-Йорка содержит сведения о поездках и тарифах и доступен в хранилище BLOB-объектов Azure [здесь](https://www.andresmh.com/nyctaxitrips/). Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
 
 Вы можете либо адаптировать описанные здесь процедуры к собственному набору данных, либо выполнить описанные действия с набором данных о такси Нью-Йорка. Чтобы передать набор данных Нью такси в базу данных SQL Server, выполните процедуру, описанную в разделе [инструкции по импорту данных в базу данных SQL Server](sql-walkthrough.md#dbload).
 

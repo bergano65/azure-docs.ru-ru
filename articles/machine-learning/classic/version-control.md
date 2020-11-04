@@ -8,16 +8,16 @@ ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 10/27/2016
-ms.openlocfilehash: 186289826273e85c9faa7f972b6f48d34e38416f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5c9e27e894541d71986fe929cbc5d6fde31bc18
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91357392"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308810"
 ---
 # <a name="application-lifecycle-management-in-azure-machine-learning-studio-classic"></a>Управление жизненным циклом приложений в Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Машинное обучение Azure Studio (классическая модель) — это инструмент для разработки экспериментов машинного обучения, которые поддерживаются в облачной платформе Azure. Это решение позволяет объединить в рамках одной платформы возможности Visual Studio IDE и масштабируемой облачной службы. Вы можете использовать стандартные методики управления жизненным циклом приложений (ALM) с управлением версиями различных ресурсов для автоматического выполнения и развертывания в Машинное обучение Azure Studio (классическая модель). В этой статье рассматриваются некоторые возможности и подходы.
@@ -46,7 +46,7 @@ ms.locfileid: "91357392"
 Обратите внимание, что JSON-файл — это текстовое представление диаграммы эксперимента, которое может включать ссылку на такие ресурсы в рабочей области, как набор данных или обученные модели. Он не содержит сериализованную версию ресурса. Когда вы пытаетесь импортировать документ JSON обратно в рабочую область, ресурсы, на которые ссылается эксперимент, должны уже существовать, а их идентификаторы должны совпадать с идентификаторами ресурсов, ссылки на которые используются в эксперименте. Иначе вы не сможете получить доступ к импортированному эксперименту.
 
 ## <a name="versioning-trained-model"></a>Управление версиями обученной модели
-Обученная модель в Машинное обучение Azure Studio (классическая) сериализуется в формат, известный как iLearner-файл ( `.iLearner` ), и хранится в учетной записи хранилища BLOB-объектов Azure, связанной с рабочей областью. Получить копию iLearner можно с помощью API переобучения. В [этой статье](/azure/machine-learning/studio/retrain-machine-learning-model) объясняется, как работает API переобучения. Основные действия:
+Обученная модель в Машинное обучение Azure Studio (классическая) сериализуется в формат, известный как iLearner-файл ( `.iLearner` ), и хранится в учетной записи хранилища BLOB-объектов Azure, связанной с рабочей областью. Получить копию iLearner можно с помощью API переобучения. В [этой статье](./retrain-machine-learning-model.md) объясняется, как работает API переобучения. Основные действия:
 
 1. Настройте обучающий эксперимент.
 2. Добавьте выходной порт веб-службы в модуль "Обучение модели" или модуль, который создает обученную модель, например Настройка гиперпараметра модели" или "Создание модели R".
@@ -78,7 +78,7 @@ ms.locfileid: "91357392"
 Для получения аналогичного результата также можно создать несколько идентичных конечных точек веб-службы и обновить различные версии файла iLearner с помощью конечной точки. В [этой статье](create-models-and-endpoints-with-powershell.md) подробно описано, как это сделать.
 
 ### <a name="new-web-service"></a>Новая веб-служба
-При создании новой веб-службы на основе Azure Resource Manager конструкция конечной точки недоступна. Вместо этого можно создать файлы определения веб-службы (WSD) в формате JSON из прогнозного эксперимента с помощью командлет PowerShell [Export-AmlWebServiceDefinitionFromExperiment](https://github.com/hning86/azuremlps#export-amlwebservicedefinitionfromexperiment) или с помощью [*Export-азмлвебсервице*](https://docs.microsoft.com/powershell/module/az.machinelearning/export-azmlwebservice) PowerShell командлет из развернутой веб-службы на основе диспетчер ресурсов.
+При создании новой веб-службы на основе Azure Resource Manager конструкция конечной точки недоступна. Вместо этого можно создать файлы определения веб-службы (WSD) в формате JSON из прогнозного эксперимента с помощью командлет PowerShell [Export-AmlWebServiceDefinitionFromExperiment](https://github.com/hning86/azuremlps#export-amlwebservicedefinitionfromexperiment) или с помощью [*Export-азмлвебсервице*](/powershell/module/az.machinelearning/export-azmlwebservice) PowerShell командлет из развернутой веб-службы на основе диспетчер ресурсов.
 
 Экспортированный и обработанный с помощью системы управления версиями файл WSD можно развернуть как новую веб-службу в другом плане веб-службы и другом регионе Azure. Но убедитесь, что вы указали правильную конфигурацию учетной записи хранения, а также идентификатор нового плана веб-службы. Чтобы применить исправление в других файлах iLearner, можно изменить файл WSD, обновить ссылку на расположение обученной модели и развернуть его в качестве новой веб-службы.
 
@@ -96,7 +96,7 @@ ms.locfileid: "91357392"
 9. [Разверните веб-службу](https://github.com/hning86/azuremlps#new-amlwebservice) из прогнозного эксперимента.
 10. Протестируйте конечную точку [RRS](https://github.com/hning86/azuremlps#invoke-amlwebservicerrsendpoint) или [BES](https://github.com/hning86/azuremlps#invoke-amlwebservicebesendpoint) веб-службы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Скачайте модуль [PowerShell для машинное обучение Azure Studio (классическая модель)](https://aka.ms/amlps) и начните АВТОМАТИЗИРОВАТЬ задачи ALM.
 * Узнайте, как [создавать большое число моделей машинного обучения и управлять ими, используя только один эксперимент](create-models-and-endpoints-with-powershell.md), с помощью PowerShell и API переобучения.
 * См. дополнительные сведения о [развертывании веб-служб машинного обучения Azure](deploy-a-machine-learning-web-service.md).

@@ -11,12 +11,12 @@ ms.reviewer: peterlu
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 22e834ccc31e2d01646250c973080848173661de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bbc532acf704128e2311f440aabe8f707fc03aea
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743783"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93307222"
 ---
 # <a name="train-pytorch-models-at-scale-with-azure-machine-learning"></a>Обучение моделей PyTorch в масштабе с помощью Машинное обучение Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "91743783"
     - В папке примеры глубокого обучения на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > ML-frameworks > pytorch > обучения-параметры-Настройка-Deploy-with-pytorch** Folder. 
  
  - Собственный сервер Jupyter Notebook
-    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true) (>= 1.15.0).
+    - [Установите пакет SDK для машинное обучение Azure](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.15.0).
     - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
     - [Загрузка примеров файлов скриптов](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/pytorch/train-hyperparameter-tune-deploy-with-pytorch)`pytorch_train.py`
      
@@ -63,7 +63,7 @@ from azureml.core.compute_target import ComputeTargetException
 
 ### <a name="initialize-a-workspace"></a>Инициализация рабочей области
 
-[Машинное обучение Azure Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы. Она предоставляет централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, создав [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true) объект.
+[Машинное обучение Azure Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы. Она предоставляет централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, создав [`workspace`](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) объект.
 
 Создайте объект рабочей области из `config.json` файла, созданного в [разделе Предварительные требования](#prerequisites).
 
@@ -182,7 +182,7 @@ pytorch_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.1
 
 ### <a name="create-a-scriptrunconfig"></a>Создание Скриптрунконфиг
 
-Создайте объект [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true), чтобы указать сведения о конфигурации для вашего задания обучения, в том числе скрипт обучения, используемую среду и целевой объект вычислений, на котором будет выполняться задание. Любые аргументы в скрипте обучения передаются через командную строку, если они указаны в `arguments` параметре. 
+Создайте объект [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), чтобы указать сведения о конфигурации для вашего задания обучения, в том числе скрипт обучения, используемую среду и целевой объект вычислений, на котором будет выполняться задание. Любые аргументы в скрипте обучения передаются через командную строку, если они указаны в `arguments` параметре. 
 
 ```python
 from azureml.core import ScriptRunConfig
@@ -204,7 +204,7 @@ src = ScriptRunConfig(source_directory=project_folder,
 
 ## <a name="submit-your-run"></a>Отправка выполнения
 
-[Объект Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true) предоставляет интерфейс для журнала выполнения во время выполнения задания и после его завершения.
+[Объект Run](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) предоставляет интерфейс для журнала выполнения во время выполнения задания и после его завершения.
 
 ```Python
 run = Experiment(ws, name='pytorch-birds').submit(src)
@@ -218,7 +218,7 @@ run.wait_for_completion(show_output=True)
 
 - **Масштабирование**. Кластер пытается выполнить масштабирование, если кластеру Batch AI требуется больше узлов для выполнения выполнения, чем в настоящее время доступно.
 
-- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, и выполняется `script` . Выходные данные из STDOUT и папки **/логс** передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
+- **Выполняется** : все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, и выполняется `script` . Выходные данные из STDOUT и папки **/логс** передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
 
 - **Пост-обработка**. папка **/Outputs** для выполнения копируется в журнал выполнения.
 
@@ -268,7 +268,7 @@ dependencies:
   - horovod==0.19.5
 ```
 
-Чтобы выполнить распределенное задание с использованием MPI или хоровод в МАШИНном обучении Azure, необходимо указать [мпиконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?view=azure-ml-py&preserve-view=true) в `distributed_job_config` параметре конструктора скриптрунконфиг. Приведенный ниже код настроит распределенное задание с 2 узлами, выполняющее один процесс на каждом узле. Если вы также хотите запустить несколько процессов на одном узле (т. е. Если номер SKU кластера имеет несколько GPU), дополнительно укажите `process_count_per_node` параметр в мпиконфигуратион (значение по умолчанию — `1` ).
+Чтобы выполнить распределенное задание с использованием MPI или хоровод в МАШИНном обучении Azure, необходимо указать [мпиконфигуратион](/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?preserve-view=true&view=azure-ml-py) в `distributed_job_config` параметре конструктора скриптрунконфиг. Приведенный ниже код настроит распределенное задание с 2 узлами, выполняющее один процесс на каждом узле. Если вы также хотите запустить несколько процессов на одном узле (т. е. Если номер SKU кластера имеет несколько GPU), дополнительно укажите `process_count_per_node` параметр в мпиконфигуратион (значение по умолчанию — `1` ).
 
 ```python
 from azureml.core import ScriptRunConfig
@@ -286,7 +286,7 @@ src = ScriptRunConfig(source_directory=project_folder,
 ### <a name="distributeddataparallel"></a>дистрибутеддатапараллел
 При использовании встроенного модуля [Дистрибутеддатапараллел](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html) PyTorch, созданного с помощью пакета **Torch. Distributed** в вашем обучающем коде, можно также запустить распределенное задание с помощью Azure ml.
 
-Чтобы запустить распределенное задание PyTorch с помощью Дистрибутеддатапараллел, укажите [питорчконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?view=azure-ml-py&preserve-view=true) в качестве `distributed_job_config` параметра конструктора скриптрунконфиг. Чтобы использовать серверную часть НККЛ для Torch. Distributed, укажите `communication_backend='Nccl'` в питорчконфигуратион. В приведенном ниже коде будет настроено распределенное задание с двумя узлами. Серверная часть НККЛ является рекомендуемой серверной частью для обучения распределенного GPU PyTorch.
+Чтобы запустить распределенное задание PyTorch с помощью Дистрибутеддатапараллел, укажите [питорчконфигуратион](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?preserve-view=true&view=azure-ml-py) в качестве `distributed_job_config` параметра конструктора скриптрунконфиг. Чтобы использовать серверную часть НККЛ для Torch. Distributed, укажите `communication_backend='Nccl'` в питорчконфигуратион. В приведенном ниже коде будет настроено распределенное задание с двумя узлами. Серверная часть НККЛ является рекомендуемой серверной частью для обучения распределенного GPU PyTorch.
 
 Для распределенных заданий PyTorch, настроенных с помощью Питорчконфигуратион, Azure ML установит следующие переменные среды на узлах целевого объекта вычислений:
 
@@ -320,7 +320,7 @@ src = ScriptRunConfig(source_directory=project_folder,
 
 Чтобы оптимизировать вывод с помощью [среды выполнения ONNX](concept-onnx.md), преобразуйте обученную модель PyTorch в формат ONNX. Вывод или оценка модели — это этап, в котором развернутая модель используется для прогнозирования, чаще всего в рабочих данных. Пример см. в [руководстве](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы обучили и зарегистрировали нейронную сеть глубокого обучения с помощью PyTorch на Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о развертывании модели.
 

@@ -12,16 +12,20 @@ ms.date: 05/19/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: 2a8f9734714f0439383f6242cda3b51690284852
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 1e913e3a5356ad7f49d8b3066f5bd3da7eddd2c2
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363425"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308775"
 ---
 # <a name="publisher-verification"></a>Проверка издателя
 
-Проверка издателя помогает администраторам и конечным пользователям понять подлинность разработчиков приложений, которые интегрируются с платформой Microsoft Identity. Если приложение помечено как "проверенный издатель", это означает, что издатель подтвердил удостоверение с помощью учетной записи [Microsoft Partner Network](https://partner.microsoft.com/membership), для которой выполнен процесс [проверки](/partner-center/verification-responses) и привязка учетной записи MPN к регистрации приложения. 
+Проверка издателя помогает администраторам и конечным пользователям понять подлинность разработчиков приложений, которые интегрируются с платформой Microsoft Identity. 
+
+> [!VIDEO https://www.youtube.com/embed/IYRN2jDl5dc]
+
+Если приложение помечено как "проверенный издатель", это означает, что издатель подтвердил удостоверение с помощью учетной записи [Microsoft Partner Network](https://partner.microsoft.com/membership), для которой выполнен процесс [проверки](/partner-center/verification-responses) и привязка учетной записи MPN к регистрации приложения. 
 
 На запросе согласия Azure Active Directory и на других экранах появится синий значок "Проверено": ![Запрос согласия](./media/publisher-verification-overview/consent-prompt.png)
 

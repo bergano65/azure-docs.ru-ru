@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: 0ed958d24a7ff499c8cf33974648afb0f4e0a81d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b08318d4c12fd2e6ea8055771ca6792b0fb280dd
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91367996"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93307855"
 ---
 # <a name="choose-parameters-to-optimize-your-algorithms-in-machine-learning-studio-classic"></a>Выбор параметров для оптимизации алгоритмов в Машинное обучение Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 В этом разделе описывается, как выбрать правый набор параметров для алгоритма в Машинное обучение Azure Studio (классическая модель). В большинстве алгоритмов машинного обучения есть параметры, которые необходимо настроить. Например, это требуется сделать при обучении модели. Эффективность обученной модели зависит от выбранных для нее параметров. Процесс определения оптимального набора параметров называется *выбором модели*.
 
@@ -66,12 +66,12 @@ ms.locfileid: "91367996"
 
 ![Классификатор увеличивающегося дерева решений](./media/algorithm-parameters-optimize/fig6a.png)
 
-Затем в проверочном наборе данных выполняется оценка модели. Левый порт вывода модуля отображает разные метрики как функции значений параметров. Правый порт вывода отображает обученную модель в соответствии с оптимальной моделью и выбранной метрикой (в нашем примере — метрикой **правильности**).  
+Затем в проверочном наборе данных выполняется оценка модели. Левый порт вывода модуля отображает разные метрики как функции значений параметров. Правый порт вывода отображает обученную модель в соответствии с оптимальной моделью и выбранной метрикой (в нашем примере — метрикой **правильности** ).  
 
 ![Набор данных для проверки](./media/algorithm-parameters-optimize/fig6b.png)
 
 Чтобы просмотреть выбранные параметры, визуализируйте правый порт вывода. Эту модель можно использовать для оценки проверочного набора или в развернутой веб-службе после сохранения обученной модели.
 
 <!-- Module References -->
-[partition-and-sample]: https://msdn.microsoft.com/library/azure/a8726e34-1b3e-4515-b59a-3e4a475654b8/
-[tune-model-hyperparameters]: https://msdn.microsoft.com/library/azure/038d91b6-c2f2-42a1-9215-1f2c20ed1b40/
+[partition-and-sample]: /azure/machine-learning/studio-module-reference/partition-and-sample
+[tune-model-hyperparameters]: /azure/machine-learning/studio-module-reference/tune-model-hyperparameters

@@ -11,16 +11,16 @@ ms.subservice: studio
 ms.workload: data-services
 ms.topic: how-to
 ms.date: 01/12/2017
-ms.openlocfilehash: 1a4e4e8f97f543132e4295cca59312b0e78a6637
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4a5857e44623f545f2807592c0f6f7b6dae366f1
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362844"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308625"
 ---
 # <a name="use-azure-machine-learning-studio-classic-web-service-parameters"></a>Использование параметров веб-службы Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Веб-служба машинного обучения Azure создается при публикации эксперимента, содержащего модули с настраиваемыми параметрами. В некоторых случаях может потребоваться изменение поведения модуля, пока веб-служба выполняется. *Параметры веб-службы* позволяют это сделать. 
@@ -51,8 +51,8 @@ ms.locfileid: "91362844"
 1. В Машинное обучение Studio (классическая модель) щелкните модуль [Export Data (экспорт данных][writer] ), чтобы выбрать его. Его свойства отображаются на панели "Свойства" справа от холста эксперимента.
 2. Укажите тип хранилища.
    
-   * В разделе **Укажите целевое местоположение данных**выберите "Хранилище BLOB-объектов Azure".
-   * В разделе **Укажите тип проверки подлинности**выберите "Учетная запись".
+   * В разделе **Укажите целевое местоположение данных** выберите "Хранилище BLOB-объектов Azure".
+   * В разделе **Укажите тип проверки подлинности** выберите "Учетная запись".
    * Введите данные учетной записи для хранилища BLOB-объектов Azure. 
 
 3. Щелкните значок справа от элемента **Путь к BLOB-объекту, начиная с параметра контейнера**. Он выглядит следующим образом:
@@ -75,13 +75,12 @@ ms.locfileid: "91362844"
 Теперь пользователь веб-службы может указать новое расположение для модуля [Export Data][writer] (Экспорт данных) при доступе к веб-службе.
 
 ## <a name="more-information"></a>Дополнительные сведения
-Более подробный пример см. в публикации [AzureML Web Service Parameters](https://blogs.technet.com/b/machinelearning/archive/2014/11/25/azureml-web-service-parameters.aspx) (Параметры веб-службы AzureML) [блога, посвященного машинному обучению](https://blogs.technet.com/b/machinelearning/archive/2014/11/25/azureml-web-service-parameters.aspx).
+Более подробный пример см. в публикации [AzureML Web Service Parameters](/archive/blogs/machinelearning/azureml-web-service-parameters) (Параметры веб-службы AzureML) [блога, посвященного машинному обучению](/archive/blogs/machinelearning/azureml-web-service-parameters).
 
 Дополнительные сведения о доступе к веб-службе машинного обучения см. в статье [Как использовать веб-службу машинного обучения Azure](consume-web-services.md).
 
 <!-- Module References -->
-[feature-hashing]: https://msdn.microsoft.com/library/azure/c9a82660-2d9c-411d-8122-4d9e0b3ce92a/
-[filter-based-feature-selection]: https://msdn.microsoft.com/library/azure/918b356b-045c-412b-aa12-94a1d2dad90f/
-[reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
-[writer]: https://msdn.microsoft.com/library/azure/7a391181-b6a7-4ad4-b82d-e419c0d6522c/
-
+[feature-hashing]: /azure/machine-learning/studio-module-reference/feature-hashing
+[filter-based-feature-selection]: /previous-versions/azure/dn905854(v=azure.100)
+[reader]: /azure/machine-learning/studio-module-reference/import-data
+[writer]: /azure/machine-learning/studio-module-reference/export-data

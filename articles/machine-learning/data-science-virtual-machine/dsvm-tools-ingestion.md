@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 736504febea16af53c2c05bc367513b2dde93ccf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89cf81f8d0a66c29a345f56676fbb97601743710
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87012320"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308986"
 ---
 # <a name="data-science-virtual-machine-data-ingestion-tools"></a>Средства приема данных виртуальных машин для обработки и анализа данных
 
@@ -31,7 +31,7 @@ ms.locfileid: "87012320"
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Импорт нескольких больших двоичных объектов из хранилища BLOB-объектов Azure в Azure Data Lake Store.      |
 |  Запуск и использование    |   Откройте командную строку и введите команду `adlcopy` для получения справки.    |
-| Ссылки на примеры      | [С помощью AdlCopy](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob)      |
+| Ссылки на примеры      | [С помощью AdlCopy](../../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md)      |
 | Связанные средства на DSVM      | AzCopy, Azure CLI     |
 
 ## <a name="azure-cli"></a>Azure CLI
@@ -42,7 +42,7 @@ ms.locfileid: "87012320"
 | Поддерживаемые версии DSVM      | Windows, Linux     |
 | Распространенные способы применения      | Импорт и экспорт данных в службу хранилища Azure и Azure Data Lake Store и обратно.      |
 |  Запуск и использование    |   Откройте командную строку и введите команду `az` для получения справки.    |
-| Ссылки на примеры      | [Использование Azure CLI](https://docs.microsoft.com/cli/azure)     |
+| Ссылки на примеры      | [Использование Azure CLI](/cli/azure)     |
 | Связанные средства на DSVM      | AzCopy, AdlCopy      |
 
 
@@ -54,7 +54,7 @@ ms.locfileid: "87012320"
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Копирование файлов в хранилище BLOB-объектов Azure и копирование больших двоичных объектов между учетными записями.      |
 |  Запуск и использование    |   Откройте командную строку и введите команду `azcopy` для получения справки.    |
-| Ссылки на примеры      | [AzCopy для Windows](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy)      |
+| Ссылки на примеры      | [AzCopy для Windows](../../storage/common/storage-use-azcopy-v10.md)      |
 | Связанные средства на DSVM      | AdlCopy     |
 
 
@@ -66,7 +66,7 @@ ms.locfileid: "87012320"
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Импорт файлов из виртуальной машины в CosmosDB, импорт данных из хранилища таблиц Azure в CosmosDB и импорт данных из базы данных Microsoft SQL Server в CosmosDB.     |
 |  Запуск и использование    |   Чтобы использовать версию из командной строки, откройте командную строку и введите команду `dt` . Чтобы использовать средство графического интерфейса пользователя, откройте командную строку и введите `dtui` .    |
-| Ссылки на примеры      | [Импорт данных CosmosDB](https://docs.microsoft.com/azure/cosmos-db/import-data)      |
+| Ссылки на примеры      | [Импорт данных CosmosDB](../../cosmos-db/import-data.md)      |
 | Связанные средства на DSVM      | AzCopy, AdlCopy      |
 
 ## <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
@@ -88,7 +88,7 @@ ms.locfileid: "87012320"
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Импорт CSV-файла в таблицу SQL Server и экспорт таблицы SQL Server в файл.      |
 |  Запуск и использование    |   Откройте командную строку и введите команду `bcp` для получения справки.    |
-| Ссылки на примеры      | [bcp, программа](https://docs.microsoft.com/sql/tools/bcp-utility)      |
+| Ссылки на примеры      | [bcp, программа](/sql/tools/bcp-utility)      |
 | Связанные средства на DSVM      | SQL Server, SQLCMD      |
 
 ## <a name="blobfuse"></a>blobfuse

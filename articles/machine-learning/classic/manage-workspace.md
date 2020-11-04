@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/27/2017
-ms.openlocfilehash: 6f136d0818daca1585de3896305a080ddbabfbe2
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 3763942c7b939bf9a4fcc3e11a2536de33b61e05
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426915"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308109"
 ---
 # <a name="manage-an-azure-machine-learning-studio-classic-workspace"></a>Управление рабочей областью Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 > [!NOTE]
@@ -41,7 +41,7 @@ ms.locfileid: "92426915"
 Помимо стандартной информации об управлении ресурсами и параметров вам доступны следующие возможности:
 
 - Страница **Свойства**. На ней отображаются сведения о рабочей области и ресурсах. Кроме того, на этой странице можно изменить подписку и группу ресурсов, с которым и связана эта рабочая область.
-- **Повторная синхронизация ключей хранилища**. Рабочая область хранит ключи в учетной записи хранения. Если учетная запись хранения изменила ключи, то можно щелкнуть **Повторно синхронизировать ключи**, чтобы синхронизировать ключи с рабочей областью.
+- **Повторная синхронизация ключей хранилища**. Рабочая область хранит ключи в учетной записи хранения. Если учетная запись хранения изменила ключи, то можно щелкнуть **Повторно синхронизировать ключи** , чтобы синхронизировать ключи с рабочей областью.
 
 Для управления веб-службами, связанными с этой рабочей областью Studio (классической), используйте портал веб-служб Машинное обучение. Полные сведения см. в статье [Управление веб-службой с помощью портала веб-служб машинного обучения Azure](manage-new-webservice.md).
 
@@ -51,4 +51,4 @@ ms.locfileid: "92426915"
 >Дополнительные сведения о настройке разрешений доступа см. [в разделе Добавление или удаление назначений ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* См. дополнительные сведения о [развертывании машинного обучения с использованием шаблонов Azure Resource Manager](deploy-with-resource-manager-template.md). 
+* См. дополнительные сведения о [развертывании машинного обучения с использованием шаблонов Azure Resource Manager](deploy-with-resource-manager-template.md).

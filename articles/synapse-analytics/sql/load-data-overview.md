@@ -1,6 +1,6 @@
 ---
-title: Проектирование стратегии загрузки данных Polybase для пула SQL
-description: Вместо ETL Создайте процесс извлечения, загрузки и преобразования (ELT) для загрузки данных или пула SQL.
+title: Проектирование стратегии загрузки данных Polybase для выделенного пула SQL
+description: Вместо ETL Создайте процесс извлечения, загрузки и преобразования (ELT) для загрузки данных с помощью выделенного SQL.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -10,14 +10,14 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: dbbed2ccaa62a99bb54a6d3d2eecf0c644281404
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: a57abd080bdbbaefbe07258a2b241c093dc8c441
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92474671"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308744"
 ---
-# <a name="design-a-polybase-data-loading-strategy-for-azure-synapse-sql-pool"></a>Проектирование стратегии загрузки данных Polybase для пула SQL Azure синапсе
+# <a name="design-a-polybase-data-loading-strategy-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Проектирование стратегии загрузки данных Polybase для выделенного пула SQL в Azure синапсе Analytics
 
 Традиционные хранилища данных SMP используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Пул SQL Azure — это архитектура с массовой параллельной обработкой (MPP), которая использует преимущества масштабируемости и гибкости ресурсов вычислений и хранилища. Использование процесса извлечения, загрузки и преобразования (ELT) может использовать встроенные возможности обработки распределенных запросов и устранять ресурсы, необходимые для преобразования данных перед загрузкой.
 
@@ -29,12 +29,12 @@ ms.locfileid: "92474671"
 
 Извлечение, Загрузка и преобразование (ELT) — это процесс, с помощью которого данные извлекаются из исходной системы, загружаются в хранилище данных, а затем преобразуются.
 
-Ниже приведены основные шаги для реализации ELT в пуле SQL для Polybase.
+Основные шаги для реализации ELT в Polybase для выделенного пула SQL:
 
 1. Извлеките исходные данные в текстовые файлы.
 2. Поместите данные в хранилище BLOB-объектов Azure или Azure Data Lake Store.
 3. Подготовьте данные для загрузки.
-4. Загрузка данных в промежуточные таблицы пула SQL с помощью Polybase.
+4. Загрузка данных в выделенные промежуточные таблицы пула SQL с помощью Polybase.
 5. Преобразуйте данные.
 6. Вставьте данные в рабочие таблицы.
 
@@ -75,7 +75,7 @@ PolyBase загружает данные из текстовых файлов с
 |       TIMESTAMP       |                           DATETIME                           |
 |       TIMESTAMP       |                             time                             |
 |       Дата            |                             Дата                             |
-|        Decimal        |                            Decimal                           |
+|        Decimal        |                            decimal                           |
 
 ## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Помещение данных в хранилище BLOB-объектов Azure или Azure Data Lake Storage
 
@@ -85,11 +85,11 @@ PolyBase загружает данные из текстовых файлов с
 
 - Служба [Azure ExpressRoute](../../expressroute/expressroute-introduction.md) повышает пропускную способность сети, производительность, а также предсказуемое поведение. ExpressRoute — это служба, которая направляет данные с помощью выделенного частного подключения в Azure. Подключения ExpressRoute не направляют данные через общедоступный Интернет. Они отличаются повышенной надежностью, более высокой скоростью, меньшей задержкой и дополнительной безопасностью по сравнению с обычными подключениями через общедоступный Интернет.
 - [Служебная программа AZCopy](../../storage/common/storage-use-azcopy-v10.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) перемещает данные в службу хранилища Azure через общедоступный Интернет. Этот способ оптимален, если размер данных не превышает 10 ТБ. Для выполнения загрузок на регулярной основе с помощью AZCopy проверьте скорость сети, чтобы просмотреть, подходит ли она.
-- [Фабрика данных Azure (ADF)](../../data-factory/introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) включает шлюз, который можно установить на локальном сервере. Затем можно создать конвейер для перемещения данных из локального сервера в службу хранилища Azure. Сведения об использовании фабрики данных с пулом SQL см. в статье [Загрузка данных в пул SQL](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+- [Фабрика данных Azure (ADF)](../../data-factory/introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) включает шлюз, который можно установить на локальном сервере. Затем можно создать конвейер для перемещения данных из локального сервера в службу хранилища Azure. Сведения об использовании фабрики данных с выделенным пулом SQL см. в разделе [Загрузка данных в выделенный пул SQL](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
 ## <a name="3-prepare-the-data-for-loading"></a>3. Подготовка данных для загрузки
 
-Возможно, потребуется подготовить и очистить данные в учетной записи хранения перед их загрузкой в пул SQL. Подготовить данные можно, пока они хранятся в источнике, при экспорте данных в текстовые файлы или после того, как данные окажутся в службе хранилища Azure.  Лучше всего как можно раньше начать работу с данными.  
+Возможно, потребуется подготовить и очистить данные в учетной записи хранения, прежде чем загружать их в выделенный пул SQL. Подготовить данные можно, пока они хранятся в источнике, при экспорте данных в текстовые файлы или после того, как данные окажутся в службе хранилища Azure.  Лучше всего как можно раньше начать работу с данными.  
 
 ### <a name="define-external-tables"></a>Определение внешних таблиц
 
@@ -110,7 +110,7 @@ PolyBase загружает данные из текстовых файлов с
 - Форматирование данных в текстовом файле для согласования с столбцами и типами данных в целевой таблице пула SQL. Неполное соответствие между типами данных во внешних текстовых файлах и таблице хранилища данных вызовет отклонение строк во время загрузки.
 - Отделите поля в текстовом файле символом завершения.  Обязательно используйте уникальный символ или последовательность символов. Используйте указанный символ завершения для [создания формата внешнего файла](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
 
-## <a name="4-load-the-data-into-sql-pool-staging-tables-using-polybase"></a>4. Загрузка данных в промежуточные таблицы пула SQL с помощью Polybase
+## <a name="4-load-the-data-into-dedicated-sql-pool-staging-tables-using-polybase"></a>4. Загрузка данных в выделенные промежуточные таблицы пула SQL с помощью Polybase
 
 Этот метод рекомендуется для загрузки данных в промежуточную таблицу. Промежуточные таблицы позволяют обрабатывать ошибки без оказания влияния на рабочие таблицы. В промежуточной таблице также можно использовать встроенные функции обработки распределенных запросов для преобразования данных перед вставкой данных в рабочие таблицы с помощью пула SQL.
 
@@ -125,7 +125,7 @@ PolyBase загружает данные из текстовых файлов с
 
 ### <a name="non-polybase-loading-options"></a>Варианты загрузки, отличные от PolyBase
 
-Если данные несовместимы с PolyBase, можно использовать программу [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) или [API-интерфейс SQLBulkCopy](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json). Программа bcp загружается непосредственно в пул SQL без помощи хранилища BLOB-объектов Azure и предназначена только для небольших нагрузок. Обратите внимание, что производительность загрузки этих вариантов значительно ниже, чем у PolyBase.
+Если данные несовместимы с PolyBase, можно использовать программу [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) или [API-интерфейс SQLBulkCopy](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json). Программа bcp загружается непосредственно в выделенный пул SQL без помощи хранилища BLOB-объектов Azure и предназначена только для небольших нагрузок. Обратите внимание, что производительность загрузки этих вариантов значительно ниже, чем у PolyBase.
 
 ## <a name="5-transform-the-data"></a>5. Преобразование данных
 

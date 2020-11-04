@@ -9,12 +9,12 @@ author: samkemp
 ms.author: samkemp
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 205aed1811c3d9d21a10be7bc4f01c73eb7295b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17418b0255182934045acc9174b34cff2aefff99
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89254806"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93307451"
 ---
 # <a name="track-experiments-and-deploy-models-in-azure-machine-learning"></a>Отслеживание экспериментов и развертывание моделей в Машинное обучение Azure
 
@@ -26,11 +26,11 @@ ms.locfileid: "89254806"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Необходимо [подготавливать Рабочая область машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace#create-a-workspace)
+* Необходимо [подготавливать Рабочая область машинного обучения Azure](../how-to-manage-workspace.md#create-a-workspace)
 
 ## <a name="create-a-new-notebook"></a>Создание записной книжки
 
-Пакет SDK для Машинное обучение Azure и Млфлов предварительно установлен на виртуальной машине обработки и анализа данных и доступен в среде **azureml_py36_ \* ** conda. В Jupyterlab щелкните средство запуска и выберите следующий kernel:
+Пакет SDK для Машинное обучение Azure и Млфлов предварительно установлен на виртуальной машине обработки и анализа данных и доступен в среде * *azureml_py36_ \** _ conda. В Jupyterlab щелкните средство запуска и выберите следующий kernel:
 
 ![Выбор ядра](./media/how-to-track-experiments/experiment-tracking-1.png)
 
@@ -137,7 +137,7 @@ with mlflow.start_run():
 
 В __новой области кластера__ выводятся сведения о заполнении для:
 
-* Имя вычислений
+_ Имя вычислений
 * Служба Kubernetes — выберите создать
 * Выберите регион
 * Выберите размер виртуальной машины (для целей данного учебника достаточно по умолчанию Standard_D3_v2)
@@ -165,7 +165,7 @@ with mlflow.start_run():
 
 Затем нажмите кнопку __развернуть__ в области сведения о модели:
 
-![Развертывание](./media/how-to-track-experiments/mlflow-experiments-4.png)
+![Развернуть](./media/how-to-track-experiments/mlflow-experiments-4.png)
 
 Мы выполним развертывание модели в кластере вывода (служба Azure Kubernetes), созданном на шаге 1. Заполните приведенные ниже сведения, указав имя службы и имя кластера вычислений AKS (созданного на шаге 1). Также рекомендуется увеличить __емкость резерва ЦП__ до 1 (от 0,1) и __емкость резерва памяти__ равна 1 (из 0,5). Вы можете увеличить это увеличение, щелкнув __Дополнительно__ и заполнив подробные сведения. Затем нажмите кнопку __развернуть__.
 
@@ -204,4 +204,4 @@ print(output)
 
 ## <a name="next-steps"></a>Next Steps
 
-* Дополнительные сведения о [развертывании моделей в AzureML](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where)
+* Дополнительные сведения о [развертывании моделей в AzureML](../how-to-deploy-and-where.md)

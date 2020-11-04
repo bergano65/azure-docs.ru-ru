@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 10/27/2020
-ms.openlocfilehash: 8ffdd8c15cf225e4f5b99a0b84b71bdbed456234
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 31cb2b2b5411968f1eba71fa9afc7bdc8296407c
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130091"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93307397"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Что такое автоматизированное машинное обучение (AutoML)?
 
@@ -74,7 +74,7 @@ ms.locfileid: "93130091"
 
 1. **Определите задачу машинного обучения** , которую необходимо решить: классификация, прогнозирование или регрессия.
 
-1. **Выберите, будете ли вы использовать пакет SDK для Python или веб-интерфейс студии** . Узнайте подробнее о сравнении [пакета SDK для Python и веб-интерфейса студии](#parity).
+1. **Выберите, будете ли вы использовать пакет SDK для Python или веб-интерфейс студии**. Узнайте подробнее о сравнении [пакета SDK для Python и веб-интерфейса студии](#parity).
 
    * Если вы предпочитаете не вдаваться в подробности программирования, воспользуйтесь веб-интерфейсом студии Машинного обучения Azure по адресу [https://ml.azure.com](https://ml.azure.com/).  
    * Разработчикам Python рекомендуется ознакомиться с [пакетом SDK для Python для Машинного обучения Azure](how-to-configure-auto-train.md). 
@@ -158,7 +158,7 @@ ms.locfileid: "93130091"
 При выборе целевого объекта вычислений учитывайте следующие факторы.
 
  * **Выберите локальное вычисление** : если ваш сценарий относится к начальным исследованиям или демонстрациям с использованием небольших данных и короткого обучения (т. е. секунды или несколько минут на дочерний запуск), обучение на локальном компьютере может быть лучшим вариантом.  Нет необходимости в настройке, а ресурсы инфраструктуры (ваш компьютер или виртуальная машина) доступны напрямую.
- * **Выберите удаленный кластер машинного обучения ML** . при обучении с помощью больших наборов данных, таких как в рабочей среде, создание моделей, требующих более длительного обучения, удаленное вычисление обеспечит гораздо более высокую производительность, так как `AutoML` будет параллельно выполнять обучение между узлами кластера. При удаленном вычислении время запуска для внутренней инфраструктуры будет доходить до 1,5 минут на дочерний период, а также за дополнительные минуты для инфраструктуры кластера, если виртуальные машины еще не запущены.
+ * **Выберите удаленный кластер машинного обучения ML**. при обучении с помощью больших наборов данных, таких как в рабочей среде, создание моделей, требующих более длительного обучения, удаленное вычисление обеспечит гораздо более высокую производительность, так как `AutoML` будет параллельно выполнять обучение между узлами кластера. При удаленном вычислении время запуска для внутренней инфраструктуры будет доходить до 1,5 минут на дочерний период, а также за дополнительные минуты для инфраструктуры кластера, если виртуальные машины еще не запущены.
 
 ### <a name="pros-and-cons"></a>Преимущества и недостатки
 При выборе локального и удаленного вычисления учитывайте следующие преимущества и недостатки.
@@ -204,7 +204,7 @@ ms.locfileid: "93130091"
 
 Машинное обучение Azure предлагает два опыта работы с автоматизированным ML:
 
-* [Пакет SDK для Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) для тех, кто предпочитает работать с кодом. 
+* [Пакет SDK для Python для Машинного обучения Azure](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) для тех, кто предпочитает работать с кодом. 
 
 * Студия Машинного обучения Azure по адресу [https://ml.azure.com](https://ml.azure.com/) для тех, кто имеет ограниченные знания кода или обходится без них.  
 
@@ -289,8 +289,7 @@ ms.locfileid: "93130091"
 
 ### <a name="python-sdk-reference"></a>Справочник по пакету SDK для Python
 
-Углубить свои знания о шаблонах разработки SDK и спецификациях классов с помощью [справочной документации по классу аутомл](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py&preserve-view=true). 
+Углубить свои знания о шаблонах разработки SDK и спецификациях классов с помощью [справочной документации по классу аутомл](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?preserve-view=true&view=azure-ml-py). 
 
 > [!Note]
-> Автоматизированные функции машинного обучения также доступны в других решениях Майкрософт, таких как, [ml.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview), [HDInsight](../hdinsight/spark/apache-spark-run-machine-learning-automl.md), [Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated) и [SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)
-
+> Автоматизированные функции машинного обучения также доступны в других решениях Майкрософт, таких как, [ml.NET](/dotnet/machine-learning/automl-overview), [HDInsight](../hdinsight/spark/apache-spark-run-machine-learning-automl.md), [Power BI](/power-bi/service-machine-learning-automated) и [SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)

@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy
-ms.openlocfilehash: 9a18b35ce974aebb38f8f58b892fd93b94f5e3c8
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 8480a0b8722fbfff0f1d8a8fafc1a64f38d21d6e
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314804"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93307214"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 
@@ -26,7 +26,7 @@ ms.locfileid: "92314804"
 Вывод или оценка модели — это этап, в котором для создания прогнозов используется развернутая модель. Использование графических процессоров вместо ЦП обеспечивает преимущества производительности при параллелизуемыеных вычислениях.
 
 > [!IMPORTANT]
-> Для развертываний веб-служб вывод GPU поддерживается только в службе Kubernetes Azure. Для вывода с использованием __конвейера машинного обучения__GPU поддерживаются только в машинное обучение Azureных вычислениях. Дополнительные сведения об использовании конвейеров машинного обучения см. в разделе [учебник. создание конвейера машинное обучение Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md). 
+> Для развертываний веб-служб вывод GPU поддерживается только в службе Kubernetes Azure. Для вывода с использованием __конвейера машинного обучения__ GPU поддерживаются только в машинное обучение Azureных вычислениях. Дополнительные сведения об использовании конвейеров машинного обучения см. в разделе [учебник. создание конвейера машинное обучение Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md). 
 
 > [!TIP]
 > Несмотря на то, что фрагменты кода в этой статье используют модель TensorFlow, эту информацию можно применить к любой платформе машинного обучения, поддерживающей GPU.
@@ -38,7 +38,7 @@ ms.locfileid: "92314804"
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
-* Среда разработки Python с установленным пакетом SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).  
+* Среда разработки Python с установленным пакетом SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе [машинное обучение Azure SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).  
 
 * Зарегистрированная модель, использующая GPU.
 
@@ -192,7 +192,7 @@ inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
 ```
 
 Дополнительные сведения о средах см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md).
-Дополнительные сведения см. в справочной документации по [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py&preserve-view=true).
+Дополнительные сведения см. в справочной документации по [инференцеконфиг](/python/api/azureml-core/azureml.core.model.inferenceconfig?preserve-view=true&view=azure-ml-py).
 
 ## <a name="deploy-the-model"></a>Развертывание модели
 
@@ -217,7 +217,7 @@ aks_service.wait_for_deployment(show_output=True)
 print(aks_service.state)
 ```
 
-Дополнительные сведения см. в справочной документации по [модели](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py&preserve-view=true).
+Дополнительные сведения см. в справочной документации по [модели](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py).
 
 ## <a name="issue-a-sample-query-to-your-service"></a>Выдача примера запроса в службу
 

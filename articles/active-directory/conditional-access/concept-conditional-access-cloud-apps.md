@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 658d18ed3c9eefeedffd82bbccedbde0621fe748
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 1b3b4da4e21bca421b76f820c04ba68375be5ca0
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145520"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93307774"
 ---
 # <a name="conditional-access-cloud-apps-or-actions"></a>Условный доступ. Облачные приложения или действия
 
@@ -36,7 +36,7 @@ ms.locfileid: "92145520"
 - [Office 365.](#office-365)
 - Службы Azure Analysis Services
 - Azure DevOps
-- [База данных SQL Azure и хранилище данных](../../azure-sql/database/conditional-access-configure.md)
+- [База данных SQL Azure и Azure синапсе Analytics](../../azure-sql/database/conditional-access-configure.md)
 - Dynamics CRM Online
 - Аналитика Microsoft Application Insights
 - [Microsoft Azure Information Protection](/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
@@ -67,7 +67,7 @@ ms.locfileid: "92145520"
 - Виртуальная частная сеть (VPN)
 - ATP в Защитнике Windows
 
-### <a name="office-365"></a>Office 365
+### <a name="office-365"></a>Office 365
 
 Microsoft 365 предоставляет облачные службы для повышения производительности и совместной работы, такие как Exchange, SharePoint и Microsoft Teams. Microsoft 365 облачные службы тесно интегрированы для обеспечения беспрепятственного и совместного взаимодействия. Такая интеграция может приводить к путанице при создании политик, так как Microsoft Teams и некоторые другие приложения имеют зависимости от SharePoint, Exchange и т. д.
 
@@ -125,7 +125,7 @@ Microsoft 365 предоставляет облачные службы для п
 
 ## <a name="user-actions"></a>Действия пользователя
 
-Действиями пользователя называются задачи, которые может выполнять пользователь. Сейчас поддерживается только одно действие **Регистрация сведений о безопасности**, которое позволяет применять политику условного доступа, когда включенные в систему объединенной регистрации пользователи регистрируют сведения о безопасности. Дополнительные сведения см. в статье об [объединенной регистрации сведений о безопасности](../authentication/concept-registration-mfa-sspr-combined.md).
+Действиями пользователя называются задачи, которые может выполнять пользователь. Сейчас поддерживается только одно действие **Регистрация сведений о безопасности** , которое позволяет применять политику условного доступа, когда включенные в систему объединенной регистрации пользователи регистрируют сведения о безопасности. Дополнительные сведения см. в статье об [объединенной регистрации сведений о безопасности](../authentication/concept-registration-mfa-sspr-combined.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

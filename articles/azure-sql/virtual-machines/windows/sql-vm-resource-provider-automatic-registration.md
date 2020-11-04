@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 09/21/2020
-ms.openlocfilehash: 23ecc3bdfb0ca85caf219fc262348937923f53c3
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: d4a2d9e43dadc53008c04b44ea1dda9cb337da99
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286119"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308344"
 ---
 # <a name="automatic-registration-with-sql-vm-resource-provider"></a>Автоматическая регистрация с помощью поставщика ресурсов виртуальной машины SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "93286119"
 
 Для регистрации виртуальной машины SQL Server с помощью поставщика ресурсов понадобится: 
 
-- [Подписка Azure](https://azure.microsoft.com/free/).
+- [Подписка Azure](https://azure.microsoft.com/free/) и, как минимум, разрешения [роли участника](../../../role-based-access-control/built-in-roles.md#all) .
 - Модель ресурсов Azure — это [Виртуальная машина Windows Server 2008 R2 (или более поздней версии)](../../../virtual-machines/windows/quick-create-portal.md) с [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) , развернутая в общедоступном облаке или Azure для государственных организаций. Windows Server 2008 не поддерживается. 
 
 

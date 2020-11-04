@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 15c3f3994b9d519a4144fa2c2e1418e92cdbd6ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 087679c49c3cc025268e6f895757ae5f5c47c917
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87012412"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309121"
 ---
 # <a name="machine-learning-and-data-science-tools-on-azure-data-science-virtual-machines"></a>Машинное обучение и средства обработки и анализа данных на виртуальных машинах Azure для обработки и анализа данных
 Виртуальные машины Azure для обработки и анализа данных (Dsvm) имеют широкий набор средств и библиотек для машинного обучения, доступных на популярных языках, таких как Python, R и Julia.
@@ -24,7 +24,7 @@ ms.locfileid: "87012412"
 
 ## <a name="azure-machine-learning-sdk-for-python"></a>Пакет SDK для Машинного обучения Azure для Python
 
-См. полный справочник по [пакету SDK для машинное обучение Azure для Python](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-ml).
+См. полный справочник по [пакету SDK для машинное обучение Azure для Python](../overview-what-is-azure-ml.md).
 
 | Категория | Значение |
 | ------------- | ------------- |
@@ -113,5 +113,3 @@ ms.locfileid: "87012412"
 | Распространенные способы применения      |  Для просмотра данных на месте без необходимости извлечения, преобразования, загрузки (ETL). Запрос различных источников данных и форматов, включая CSV, JSON, реляционные таблицы и Hadoop.     |
 | Использование и запуск      | Ярлык на рабочем столе  <br/> [Drill in 10 Minutes](https://drill.apache.org/docs/drill-in-10-minutes/) (Начало работы с Drill за 10 минут)  |
 | Связанные средства на DSVM      |   Rattle, Weka, SQL Server Management Studio      |
-
-
