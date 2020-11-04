@@ -10,18 +10,18 @@ ms.author: lazzeri
 author: FrancescaLazzeri
 ms.date: 09/22/2020
 ms.custom: contperfq1
-ms.openlocfilehash: d462ed4627254275703d88cadbaf5d55a106da55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a6708214eadb2f5d0d66d72f5db5cb4a195d206
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330134"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324875"
 ---
 # <a name="deep-learning-vs-machine-learning-in-azure-machine-learning"></a>Глубокое обучение и машинное обучение в Машинное обучение Azure
 
 В этой статье объясняется глубокое изучение и машинное обучение, а также их соответствие в более широкой категории искусственного интеллекта. Узнайте о решениях для глубокого обучения, которые можно создавать на Машинное обучение Azure, таких как обнаружение мошенничества, распознавание речи и лиц, анализ тональностиности и прогнозирование временных рядов.
 
-Рекомендации по выбору алгоритмов для решений см. на [странице машинное обучение Algorithm Памятка по](algorithm-cheat-sheet.md).
+Рекомендации по выбору алгоритмов для решений см. на [странице машинное обучение Algorithm Памятка по](https://docs.microsoft.com/azure/machine-learning/algorithm-cheat-sheet?WT.mc_id=docs-article-lazzeri).
 
 ## <a name="deep-learning-machine-learning-and-ai"></a>Глубокое обучение, машинное обучение и AI
 
@@ -73,7 +73,7 @@ ms.locfileid: "91330134"
 
 Обнаружение объектов уже используется в таких отраслях, как игровые, розничные, туристическая и самостоятельные автомобили.
 
-Узнайте, как использовать модель классификации изображений из платформы с открытым кодом в Машинное обучение Azure: [классификация образов с помощью модели Pytorch](https://docs.microsoft.com/azure/machine-learning/how-to-train-pytorch?WT.mc_id=docs-article-lazzeri)
+Узнайте, как использовать модель классификации изображений из платформы с открытым кодом в Машинное обучение Azure: [классификация образов с помощью модели Pytorch](./how-to-train-pytorch.md?WT.mc_id=docs-article-lazzeri)
 
 ### <a name="image-caption-generation"></a>Создание заголовка изображения
 
@@ -93,7 +93,7 @@ ms.locfileid: "91330134"
 
 Компании используют глубокое обучение для анализа текста, чтобы определить торговую торговлю и соответствие нормативным требованиям. Еще один распространенный пример — мошенник: текстовая аналитика часто используется для анализа больших объемов документов, чтобы распознавать шансы на мошенничество. 
 
-Узнайте, как использовать модель TensorFlow в Машинное обучение Azure: [классификация рукописных цифр с помощью модели TensorFlow](https://docs.microsoft.com/azure/machine-learning/how-to-train-tensorflow?WT.mc_id=docs-article-lazzeri)
+Узнайте, как использовать модель TensorFlow в Машинное обучение Azure: [классификация рукописных цифр с помощью модели TensorFlow](./how-to-train-tensorflow.md?WT.mc_id=docs-article-lazzeri)
 
 ## <a name="artificial-neural-networks"></a>Искусственные нейронные сети
 
@@ -115,10 +115,10 @@ ms.locfileid: "91330134"
 
 Свертки нейронных сетей использовались в таких областях, как распознавание видео, распознавание изображений и системы рекомендаций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В следующих статьях приведены дополнительные параметры для использования моделей глубокого обучения с открытым кодом в [машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/?WT.mc_id=docs-article-lazzeri).
+В следующих статьях приведены дополнительные параметры для использования моделей глубокого обучения с открытым кодом в [машинное обучение Azure](./index.yml?WT.mc_id=docs-article-lazzeri).
 
-- [Классификация рукописных цифр с помощью средства оценки TensorFlow и keras](https://docs.microsoft.com/azure/machine-learning/how-to-train-keras?WT.mc_id=docs-article-lazzeri)
+- [Классификация рукописных цифр с помощью средства оценки TensorFlow и keras](./how-to-train-keras.md?WT.mc_id=docs-article-lazzeri)
 
-- [Классификация рукописных цифр с помощью модели цепочки](https://docs.microsoft.com/azure/machine-learning/how-to-train-ml-models)
+- [Классификация рукописных цифр с помощью модели цепочки](./how-to-set-up-training-targets.md)

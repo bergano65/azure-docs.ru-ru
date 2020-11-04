@@ -11,12 +11,12 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 08/31/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: a36c7076de0c4db64b67f4eba38de4daf4213bca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f46222740ad668b8bb6ec9eb85e78efb0f673528
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91446688"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322245"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Защита доступа к данным в Машинное обучение Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "91446688"
     
 ## <a name="data-workflow"></a>Рабочий процесс данных
 
-Когда вы будете готовы к использованию данных в облачном решении для хранения, мы рекомендуем использовать следующий рабочий процесс доставки данных. В этом рабочем процессе предполагается, что у вас есть [учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) и данные в облачной службе хранилища Azure. 
+Когда вы будете готовы к использованию данных в облачном решении для хранения, мы рекомендуем использовать следующий рабочий процесс доставки данных. В этом рабочем процессе предполагается, что у вас есть [учетная запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal) и данные в облачной службе хранилища Azure. 
 
 1. Создайте [хранилище данных машинное обучение Azure](#datastores) для хранения сведений о подключении к службе хранилища Azure.
 
@@ -81,9 +81,9 @@ ms.locfileid: "91446688"
 
 Существует два типа наборов данных: 
 
-+ [Филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py&preserve-view=true) ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Если данные уже очищены и готовы к использованию в учебных экспериментах, можно [загрузить или подключить](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) к целевому объекту вычислений файлы, на которые ссылается филедатасетс.
++ [Филедатасет](/python/api/azureml-core/azureml.data.file_dataset.filedataset?preserve-view=true&view=azure-ml-py) ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Если данные уже очищены и готовы к использованию в учебных экспериментах, можно [загрузить или подключить](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) к целевому объекту вычислений файлы, на которые ссылается филедатасетс.
 
-+ [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Вы можете загрузить Табулардатасет в кадр данных Pandas или Spark для дальнейшей обработки и очистки. Полный список форматов данных, которые можно создать Табулардатасетс из, см. в разделе [класс табулардатасетфактори](https://aka.ms/tabulardataset-api-reference).
++ [Табулардатасет](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Вы можете загрузить Табулардатасет в кадр данных Pandas или Spark для дальнейшей обработки и очистки. Полный список форматов данных, которые можно создать Табулардатасетс из, см. в разделе [класс табулардатасетфактори](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory).
 
 Дополнительные возможности наборов данных можно найти в следующей документации:
 
@@ -100,7 +100,7 @@ ms.locfileid: "91446688"
      + [конструктор](tutorial-designer-automobile-price-train-score.md#import-data)
      + [Компьютеры](how-to-train-with-datasets.md)
      + [Конвейеры Машинное обучение Azure](how-to-create-your-first-pipeline.md)
-+ Доступ к наборам данных для оценки с помощью [вывода пакетов](how-to-use-parallel-run-step.md) в [конвейерах машинного обучения](how-to-create-your-first-pipeline.md).
++ Доступ к наборам данных для оценки с помощью [вывода пакетов](./tutorial-pipeline-batch-scoring-classification.md) в [конвейерах машинного обучения](how-to-create-your-first-pipeline.md).
 + Настройте монитор набора данных для обнаружения [несмещенных данных](#drift) .
 
 <a name="label"></a>
@@ -121,7 +121,7 @@ ms.locfileid: "91446688"
 
 Дополнительные сведения о способах обнаружения и оповещения о смещении данных для новых данных в наборе данных см. в статье [Создание монитора набора данных](how-to-monitor-datasets.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 + Создайте набор данных в Машинное обучение Azure Studio или с помощью пакета SDK для Python, [выполнив следующие действия.](how-to-create-register-datasets.md)
 + Испытайте примеры обучения наборов данных с помощью [примеров записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/work-with-data/).

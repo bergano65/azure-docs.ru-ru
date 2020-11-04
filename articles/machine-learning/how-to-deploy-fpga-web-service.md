@@ -11,16 +11,16 @@ author: jpe316
 ms.date: 09/24/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq2, devx-track-python, deploy
-ms.openlocfilehash: 18b1c155c0bb85e346ec28d5c145e6578ca3ec48
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 6ac28e430681f35d9935cf0f484529074403bf54
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999078"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324972"
 ---
 # <a name="deploy-ml-models-to-field-programmable-gate-arrays-fpgas-with-azure-machine-learning"></a>Развертывание моделей машинного обучения в программируемых массивах Gate (FPGA) с Машинное обучение Azure 
 
-В этой статье вы узнаете о FPGA и о том, как развернуть модели машинного обучения в Azure FPGA с помощью [пакета Python для моделей с аппаратным ускорением](https://docs.microsoft.com/python/api/azureml-accel-models/azureml.accel?view=azure-ml-py&preserve-view=true) из [машинное обучение Azure](overview-what-is-azure-ml.md).
+В этой статье вы узнаете о FPGA и о том, как развернуть модели машинного обучения в Azure FPGA с помощью [пакета Python для моделей с аппаратным ускорением](/python/api/azureml-accel-models/azureml.accel?preserve-view=true&view=azure-ml-py) из [машинное обучение Azure](overview-what-is-azure-ml.md).
 
 ## <a name="what-are-fpgas"></a>Что такое FPGA?
 ППВМ содержат массив программируемых логических блоков и иерархию настраиваемых взаимоподключений. Взаимоподключения позволяют настраивать эти блоки различными способами после производства. В отличие от других микросхем, ППВМ обеспечивают сочетание программируемости и производительности. 
@@ -56,7 +56,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 ## <a name="deploy-models-on-fpgas"></a>Развертывание моделей в ППВМ
 
-Вы можете развернуть модель как веб-службу на FPGA с помощью [Машинное обучение Azure модели с аппаратным ускорением](https://docs.microsoft.com/python/api/azureml-accel-models/azureml.accel?view=azure-ml-py&preserve-view=true). Использование FPGA обеспечивает немалое определение задержки, даже с одним размером пакета. 
+Вы можете развернуть модель как веб-службу на FPGA с помощью [Машинное обучение Azure модели с аппаратным ускорением](/python/api/azureml-accel-models/azureml.accel?preserve-view=true&view=azure-ml-py). Использование FPGA обеспечивает немалое определение задержки, даже с одним размером пакета. 
 
 В этом примере вы создадите граф TensorFlow для предварительной обработки входного изображения, сделайте его характеризатора с помощью ResNet 50 для FPGA, а затем запустите эти функции с помощью классификатора, обученного в наборе данных ImageNet. Затем модель развертывается в кластере AKS.
 
@@ -68,7 +68,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
  
 - Пакет моделей с аппаратным ускорением:  `pip install --upgrade azureml-accel-models[cpu]`    
     
-- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)
+- [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest)
 
 - Квота FPGA. Отправьте [запрос на квоту](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2nac9-PZhBDnNSV2ITz0LNUN0U5S0hXRkNITk85QURTWk9ZUUFUWkkyTC4u)или выполните команду CLI, чтобы проверить квоту: 
 
@@ -80,7 +80,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 ### <a name="define-the-tensorflow-model"></a>Определение модели TensorFlow
 
-Начните с использования [пакета SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) , чтобы создать определение службы. Определение службы представляет собой файл, описывающий конвейер графов (входящие данные, характеризатор и классификатор) на основе TensorFlow. Команда развертывания сжимает определение и графики в ZIP-файл и загружает ZIP-архив в хранилище больших двоичных объектов Azure. DNN уже развернут для запуска в FPGA.
+Начните с использования [пакета SDK для машинное обучение Azure для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) , чтобы создать определение службы. Определение службы представляет собой файл, описывающий конвейер графов (входящие данные, характеризатор и классификатор) на основе TensorFlow. Команда развертывания сжимает определение и графики в ZIP-файл и загружает ZIP-архив в хранилище больших двоичных объектов Azure. DNN уже развернут для запуска в FPGA.
 
 1. Рабочая область Машинное обучение Azure нагрузки
 
@@ -223,7 +223,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 ### <a name="containerize-and-deploy-the-model"></a>Контейнеризовать и развертывание модели
 
-Затем создайте образ DOCKER из преобразованной модели и всех зависимостей.  После этого образ DOCKER можно развернуть и создать экземпляр.  Поддерживаемые целевые объекты развертывания включают службу Azure Kubernetes Service (AKS) в облаке или пограничном устройстве, например [Azure Data Box Edge](https://docs.microsoft.com/azure/databox-online/data-box-edge-overview).  Вы также можете добавить теги и описания для зарегистрированного образа DOCKER.
+Затем создайте образ DOCKER из преобразованной модели и всех зависимостей.  После этого образ DOCKER можно развернуть и создать экземпляр.  Поддерживаемые целевые объекты развертывания включают службу Azure Kubernetes Service (AKS) в облаке или пограничном устройстве, например [Azure Data Box Edge](../databox-online/azure-stack-edge-overview.md).  Вы также можете добавить теги и описания для зарегистрированного образа DOCKER.
 
    ```python
    from azureml.core.image import Image
@@ -297,7 +297,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 #### <a name="deploy-to-a-local-edge-server"></a>Развертывание на локальном пограничном сервере
 
-Все [Azure Data Box Edge устройства](https://docs.microsoft.com/azure/databox-online/data-box-edge-overview
+Все [Azure Data Box Edge устройства](../databox-online/azure-stack-edge-overview.md
 ) содержат FPGA для запуска модели.  Только одна модель может быть запущена в FPGA за один раз.  Чтобы запустить другую модель, просто разверните новый контейнер. Инструкции и примеры кода можно найти в [этом примере Azure](https://github.com/Azure-Samples/aml-hardware-accelerated-models).
 
 ### <a name="consume-the-deployed-model"></a>Использовать развернутую модель.
@@ -349,7 +349,7 @@ for top in sorted_results[:5]:
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы избежать ненужных затрат, очистите ресурсы **в следующем порядке**: веб-служба, затем изображение, а затем модель.
+Чтобы избежать ненужных затрат, очистите ресурсы **в следующем порядке** : веб-служба, затем изображение, а затем модель.
 
 ```python
 aks_service.delete()

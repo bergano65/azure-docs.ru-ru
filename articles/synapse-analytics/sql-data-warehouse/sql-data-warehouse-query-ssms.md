@@ -1,6 +1,6 @@
 ---
 title: Подключение к SSMS
-description: Используйте SQL Server Management Studio (SSMS) для подключения к Azure синапсе Analytics и выполнения запросов к ней.
+description: Используйте SQL Server Management Studio (SSMS) для подключения к выделенному пулу SQL и выполнения запросов к нему в Azure синапсе Analytics.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 772e4253244f5e13a60f155549d5f5513695e5fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c2fab8f02f31897a2e3d38094b9bd365f8e921e9
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85200755"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325323"
 ---
-# <a name="connect-to-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Подключение к Azure синапсе Analytics с помощью SQL Server Management Studio (SSMS)
+# <a name="connect-to-a-dedicated-sql-pool-in-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Подключение к выделенному пулу SQL в Azure синапсе Analytics с помощью SQL Server Management Studio (SSMS)
 
 > [!div class="op_single_selector"]
 >
@@ -34,11 +34,11 @@ ms.locfileid: "85200755"
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Пул SQL. Сведения о его создании см. в статье [Создание пула SQL Azure](create-data-warehouse-portal.md).
+* Существующий выделенный пул SQL. Чтобы создать его, см. раздел [Создание выделенного пула SQL](create-data-warehouse-portal.md).
 * Установленный SQL Server Management Studio (SSMS). [Скачайте SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) бесплатно, если у вас его еще нет.
-* Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к пулу SQL](sql-data-warehouse-connect-overview.md).
+* Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к выделенному пулу SQL](sql-data-warehouse-connect-overview.md).
 
-## <a name="1-connect-to-your-sql-pool"></a>1. подключение к пулу SQL
+## <a name="1-connect-to-your-dedicated-sql-pool"></a>1. подключение к выделенному пулу SQL
 
 1. Откройте SSMS.
 2. Откройте обозреватель объектов, выбрав **файл**  >  **подключить обозреватель объектов**.
@@ -79,4 +79,4 @@ ms.locfileid: "85200755"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md). Сведения о том, как настроить аутентификацию Azure Active Directory в своей среде, см. в статье [Аутентификация в Azure синапсе Analytics](sql-data-warehouse-authentication.md).
+Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md). Сведения о настройке среды для проверки подлинности Azure Active Directory см. [в разделе аутентификация в выделенном пуле SQL](sql-data-warehouse-authentication.md).

@@ -7,12 +7,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/21/2020
-ms.openlocfilehash: 37f0a8d1f70fa96db505973d097febabe99ab7a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2716f037de533e14ae8e57706134c8a2b135b440
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88749181"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322376"
 ---
 # <a name="azure-hdinsight-40-overview"></a>Обзор Azure HDInsight 4.0
 
@@ -102,5 +102,9 @@ Apache Oozie 4.3.1 входит в состав HDI 4.0 со следующим�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Руководством по миграции HBase](https://docs.microsoft.com/azure/hdinsight/hbase/apache-hbase-migrate-new-version)
+* [Руководством по миграции Hive](https://docs.microsoft.com/azure/hdinsight/interactive-query/apache-hive-migrate-workloads)
+* [Kafka по миграции](https://docs.microsoft.com/azure/hdinsight/kafka/migrate-versions)
+* [Руководством по миграции Spark](https://docs.microsoft.com/azure/hdinsight/spark/migrate-versions)
 * [Документация по Azure HDInsight](index.yml)
 * [Заметки о выпуске](hdinsight-release-notes.md)

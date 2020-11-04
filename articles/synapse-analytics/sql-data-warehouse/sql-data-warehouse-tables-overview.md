@@ -1,6 +1,6 @@
 ---
 title: Проектирование таблиц
-description: Общие сведения о проектировании таблиц в пуле синапсе SQL.
+description: Общие сведения о проектировании таблиц с помощью выделенного пула SQL в Azure синапсе Analytics.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,22 +11,22 @@ ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 7973c85c7ca8051cae2ab7155dda94bec43ebd59
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 3bdf234156c55e3c30df74c672866a118fd2f4f1
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92486945"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323508"
 ---
-# <a name="design-tables-in-synapse-sql-pool"></a>Разработка таблиц в пуле синапсе SQL
+# <a name="design-tables-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Разработка таблиц с помощью выделенного пула SQL в Azure синапсе Analytics
 
-В этой статье приводятся основные основные понятия, связанные с проектированием таблиц в пуле SQL.
+В этой статье приводятся ключевые понятия для разработки таблиц в выделенном пуле SQL.
 
 ## <a name="determine-table-category"></a>Определение категории таблицы
 
 При [схеме типа "звезда"](https://en.wikipedia.org/wiki/Star_schema) данные упорядочиваются в таблицы фактов и измерений. Некоторые таблицы используются для интеграции или хранения данных до того, как они перейдут в таблицу фактов или измерений. При конструировании таблицы решите, к какой таблице относятся данные: фактов, измерений или интеграции. Это решение влияет на соответствующую структуру и распределение таблицы.
 
-- **Таблицы фактов** содержат количественные данные, которые обычно создаются в транзакционной системе, а затем загружаются в пул SQL. Например, розничная компания создает транзакции по продажам каждый день, а затем загружает данные в таблицу фактов пула SQL для анализа.
+- **Таблицы фактов** содержат количественные данные, которые обычно создаются в транзакционной системе, а затем загружаются в выделенный пул SQL. Например, розничная компания создает транзакции по продажам каждый день, а затем загружает данные в отдельную таблицу фактов пула SQL для анализа.
 
 - **Таблицы измерений** содержат данные атрибутов, которые могут измениться, хотя обычно это происходит редко. Например, имя и адрес клиента хранятся в таблице измерений и обновляются только при изменении профиля клиента. Чтобы максимально ограничить размер большой таблицы фактов, имя и адрес клиента не обязательно должны находиться в каждой строке таблицы фактов. Вместо этого в таблице фактов и таблице измерений может совместно использоваться идентификатор клиента. Запрос может объединить две таблицы, чтобы связать профиль и транзакции клиента.
 
@@ -34,28 +34,28 @@ ms.locfileid: "92486945"
 
 ## <a name="schema-and-table-names"></a>Имена схем и таблиц
 
-Схемы — это хороший способ группировки таблиц, используемых подобным образом.  При переносе нескольких баз данных из локального решения в пул SQL рекомендуется перенести все таблицы фактов, измерений и интеграции в одну схему в пуле SQL.
+Схемы — это хороший способ группировки таблиц, используемых подобным образом.  При переносе нескольких баз данных из локального решения в выделенный пул SQL лучше всего перенести все таблицы фактов, измерений и интеграции в одну схему в выделенном пуле SQL.
 
-Например, можно хранить все таблицы в образце пула SQL [WideWorldImportersDW](/sql/sample/world-wide-importers/database-catalog-wwi-olap?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) в одной схеме с именем WWI. Следующий код создает [определяемую пользователем схему](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) с именем WWI.
+Например, можно хранить все таблицы в выделенном пуле SQL [WideWorldImportersDW](/sql/sample/world-wide-importers/database-catalog-wwi-olap?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) в одной схеме под названием WWI. Следующий код создает [определяемую пользователем схему](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) с именем WWI.
 
 ```sql
 CREATE SCHEMA wwi;
 ```
 
-Чтобы продемонстрировать организацию таблиц в пуле SQL, в качестве префиксов для имен таблиц можно использовать факт, Dim и int. В следующей таблице показаны некоторые имена схем и таблиц для WideWorldImportersDW.  
+Чтобы отобразить организацию таблиц в выделенном пуле SQL, в качестве префиксов для имен таблиц можно использовать факт, Dim и int. В следующей таблице показаны некоторые имена схем и таблиц для WideWorldImportersDW.  
 
-| Таблица WideWorldImportersDW  | Тип таблицы | Пул SQL |
+| Таблица WideWorldImportersDW  | Тип таблицы | Выделенный пул SQL |
 |:-----|:-----|:------|:-----|
 | City | Измерение | wwi.DimCity |
 | Порядок | Факты | wwi.FactOrder |
 
 ## <a name="table-persistence"></a>Сохраняемость таблицы
 
-Таблицы хранят данные постоянно в службе хранилища Azure, временно в службе хранилища Azure или в хранилище данных, внешнем в пуле SQL.
+Таблицы хранят данные в хранилище Azure постоянно, временно в службе хранилища Azure или в хранилище данных, внешнем по выделенному пулу SQL.
 
 ### <a name="regular-table"></a>Обычная таблица
 
-В обычной таблице данные хранятся в службе хранилища Azure в составе пула SQL. Таблица и данные сохраняются независимо от того, открыт ли сеанс.  В следующем примере создается обычная таблица с двумя столбцами.
+В обычной таблице данные хранятся в службе хранилища Azure как часть выделенного пула SQL. Таблица и данные сохраняются независимо от того, открыт ли сеанс.  В следующем примере создается обычная таблица с двумя столбцами.
 
 ```sql
 CREATE TABLE MyTable (col1 int, col2 int );  
@@ -69,17 +69,17 @@ CREATE TABLE MyTable (col1 int, col2 int );
 
 ### <a name="external-table"></a>Внешняя таблица
 
-Внешняя таблица указывает на данные, расположенные в большом двоичном объекте службы хранилища Azure или Azure Data Lake Store. При использовании в сочетании с инструкцией CREATE TABLE как SELECT, при выборе из внешней таблицы данные импортируются в пул SQL.
+Внешняя таблица указывает на данные, расположенные в большом двоичном объекте службы хранилища Azure или Azure Data Lake Store. При использовании в сочетании с инструкцией CREATE TABLE как SELECT, при выборе из внешней таблицы данные импортируются в выделенный пул SQL.
 
 Таким образом, внешние таблицы удобны для загрузки данных. Руководство по загрузке см. [в статье Загрузка данных из хранилища BLOB-объектов Azure с помощью polybase](load-data-from-azure-blob-storage-using-polybase.md).
 
 ## <a name="data-types"></a>Типы данных
 
-Пул SQL поддерживает наиболее часто используемые типы данных. Список поддерживаемых типов данных представлен в [справочнике по типах данных в инструкции CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest#DataTypes). Рекомендации по использованию типов данных см. в статье [Руководство по определению типов данных для таблиц в хранилище данных SQL](sql-data-warehouse-tables-data-types.md).
+Выделенный пул SQL поддерживает наиболее часто используемые типы данных. Список поддерживаемых типов данных представлен в [справочнике по типах данных в инструкции CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest#DataTypes). Рекомендации по использованию типов данных см. в статье [Руководство по определению типов данных для таблиц в хранилище данных SQL](sql-data-warehouse-tables-data-types.md).
 
 ## <a name="distributed-tables"></a>Распределенные таблицы
 
-Основная функция синапсе SQL — это способ хранения и работы с таблицами во всех [дистрибутивах](massively-parallel-processing-mpp-architecture.md#distributions). Синапсе SQL поддерживает три метода распространения данных: циклический перебор (по умолчанию), хэширование и репликация.
+Фундаментальным компонентом выделенного пула SQL является способ хранения таблиц в [распределениях](massively-parallel-processing-mpp-architecture.md#distributions)и работы с ними.  Выделенный пул SQL поддерживает три метода распространения данных: циклический перебор (по умолчанию), хэширование и репликация.
 
 ### <a name="hash-distributed-tables"></a>Таблицы с хэш-распределением
 
@@ -107,7 +107,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 |:---------------|:--------------------|
 | Факты           | Используйте хэш-распределение с кластеризованным индексом columnstore. Производительность улучшается, когда две хэш-таблицы объединены по одному столбцу распределения. |
 | Измерение      | Используйте репликацию для небольших таблиц. Если таблицы слишком велики для хранения на каждом вычислительном узле, используйте хэш-распределение. |
-| Промежуточный        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
+| Промежуточная        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
 
 ## <a name="table-partitions"></a>Разделы таблицы
 
@@ -119,7 +119,7 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 
 ## <a name="columnstore-indexes"></a>Индексы columnstore
 
-По умолчанию пул SQL сохраняет таблицу как кластеризованный индекс columnstore. Такая форма хранения данных обеспечивает высокое сжатие данных и производительность запросов в больших таблицах.  
+По умолчанию выделенный пул SQL хранит таблицу как кластеризованный индекс columnstore. Такая форма хранения данных обеспечивает высокое сжатие данных и производительность запросов в больших таблицах.  
 
 Кластеризованный индекс columnstore обычно является лучшим выбором, но в некоторых случаях подходящей структурой хранения являются кластеризованный индекс или куча.  
 
@@ -138,7 +138,7 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 
 ## <a name="primary-key-and-unique-key"></a>Первичный ключ и уникальный ключ
 
-ПЕРВИЧный ключ поддерживается только в том случае, если используются некластеризованные и непринудительные.  Ограничение UNIQUE поддерживается только при использовании не применяется.  Проверьте [ограничения таблицы пула SQL](sql-data-warehouse-table-constraints.md).
+ПЕРВИЧный ключ поддерживается только в том случае, если используются некластеризованные и непринудительные.  Ограничение UNIQUE поддерживается только при использовании не применяется.  Проверьте [выделенные ограничения таблицы пула SQL](sql-data-warehouse-table-constraints.md).
 
 ## <a name="commands-for-creating-tables"></a>Команды для создания таблиц
 
@@ -147,22 +147,22 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 | Инструкция Т-SQL | Описание |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) | Создает пустую таблицу, определив все столбцы и параметры таблицы. |
-| [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) | Создает внешнюю таблицу. Определение таблицы хранится в пуле SQL. Данные таблицы хранятся в хранилище BLOB-объектов Azure или в Azure Data Lake Store. |
+| [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) | Создает внешнюю таблицу. Определение таблицы хранится в выделенном пуле SQL. Данные таблицы хранятся в хранилище BLOB-объектов Azure или в Azure Data Lake Store. |
 | [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) | Задает новую таблицу с результатами инструкции Select. Столбцы и типы данных таблицы основаны на результатах инструкции Select. Чтобы импортировать данные, эта инструкция может выбрать данные из внешней таблицы. |
 | [CREATE EXTERNAL TABLE AS SELECT](/sql/t-sql/statements/create-external-table-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) | Создает новую внешнюю таблицу, экспортируя результаты инструкции Select во внешнее расположение.  Расположением является либо хранилище BLOB-объектов Azure, либо Azure Data Lake Store. |
 
-## <a name="aligning-source-data-with-the-sql-pool"></a>Согласование исходных данных с пулом SQL
+## <a name="aligning-source-data-with-dedicated-sql-pool"></a>Согласование исходных данных с выделенным пулом SQL
 
-Таблицы пула SQL заполняются путем загрузки данных из другого источника данных. Чтобы успешно выполнить загрузку, число и типы данных столбцов в исходных данных должны быть согласованы с определением таблицы в пуле SQL. Согласование данных может оказаться самой сложной частью разработки таблиц.
+Выделенные таблицы пула SQL заполняются путем загрузки данных из другого источника данных. Чтобы успешно выполнить загрузку, число и типы данных столбцов в исходных данных должны быть согласованы с определением таблицы в выделенном пуле SQL. Согласование данных может оказаться самой сложной частью разработки таблиц.
 
-Если данные поступают из нескольких хранилищ данных, данные загружаются в пул SQL и сохраняются в таблице интеграции. После того как данные находятся в таблице интеграции, можно использовать возможности пула SQL для выполнения операций преобразования. После подготовки данных их можно вставить в рабочие таблицы.
+Если данные поступают из нескольких хранилищ данных, данные загружаются в выделенный пул SQL и сохраняются в таблице интеграции. После того как данные находятся в таблице интеграции, можно использовать возможности выделенного пула SQL для выполнения операций преобразования. После подготовки данных их можно вставить в рабочие таблицы.
 
 ## <a name="unsupported-table-features"></a>Неподдерживаемые функции таблиц
 
-Пул SQL поддерживает многие, но не все функции таблиц, предлагаемые другими базами данных.  В следующем списке показаны некоторые функции таблиц, которые не поддерживаются в пуле SQL:
+Выделенный пул SQL поддерживает многие, но не все функции таблиц, предлагаемые другими базами данных.  В следующем списке показаны некоторые функции таблиц, которые не поддерживаются в выделенном пуле SQL:
 
 - Внешний ключ, проверка [ограничений таблицы](/sql/t-sql/statements/alter-table-table-constraint-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [Вычисляемые столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [Вычисленные столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Индексированные представления](/sql/relational-databases/views/create-indexed-views?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Последовательность](/sql/t-sql/statements/create-sequence-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
@@ -373,6 +373,6 @@ ORDER BY    distribution_id
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-После создания таблиц для пула SQL следующим шагом является загрузка данных в таблицу.  Руководство по загрузке см. в разделе [Загрузка данных в пул SQL](load-data-wideworldimportersdw.md).
+После создания таблиц для выделенного пула SQL следующим шагом является загрузка данных в таблицу.  Руководство по загрузке см. в разделе [Загрузка данных в выделенный пул SQL](load-data-wideworldimportersdw.md).

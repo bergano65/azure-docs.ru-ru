@@ -1,6 +1,6 @@
 ---
 title: Индексирование таблиц
-description: Рекомендации и примеры индексирования таблиц в пуле синапсе SQL.
+description: Рекомендации и примеры индексирования таблиц в выделенном пуле SQL.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,26 +11,26 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 605c3320b0fcc7ac9663acc1578740e2cb3f3174
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05551f39203f2c070dd2ede0740135d6963aedcf
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88797604"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323566"
 ---
-# <a name="indexing-tables-in-synapse-sql-pool"></a>Индексирование таблиц в пуле синапсе SQL
+# <a name="indexing-tables-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Индексирование таблиц с помощью выделенного пула SQL в Azure синапсе Analytics
 
-Рекомендации и примеры индексирования таблиц в пуле синапсе SQL.
+Рекомендации и примеры индексирования таблиц в выделенном пуле SQL.
 
 ## <a name="index-types"></a>Типы индексов
 
-Пул SQL синапсе предлагает несколько параметров индексирования, включая [кластеризованные индексы columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [кластеризованные индексы и некластеризованные индексы](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), а также параметр, не являющийся индексом, известный как [куча](/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  
+Выделенный пул SQL предлагает несколько вариантов индексирования, включая [кластеризованные индексы columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [кластеризованные индексы и некластеризованные индексы](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), а также параметр, не являющийся индексом, известный как [куча](/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  
 
-Чтобы создать таблицу с индексом, см. документацию по [CREATE TABLE (пул SQL синапсе)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .
+Чтобы создать таблицу с индексом, см. документацию по [CREATE TABLE (выделенному пулу SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .
 
 ## <a name="clustered-columnstore-indexes"></a>Кластеризованные индексы Columnstore
 
-По умолчанию пул синапсе SQL создает кластеризованный индекс columnstore, если для таблицы не заданы параметры индекса. Кластеризованные таблицы Columnstore обеспечивают максимальную производительность запросов, а также самый высокий уровень сжатия данных.  Обычно эти таблицы более эффективны, чем таблицы с кластеризованными индексами и таблицы без кластеризованных индексов, и их рекомендуется использовать в больших таблицах.  Таким образом, если вы не уверены, какой метод индексации применить к вашей таблице, используйте кластеризованные индексы Columnstore.  
+По умолчанию выделенный пул SQL создает кластеризованный индекс columnstore, если для таблицы не заданы параметры индекса. Кластеризованные таблицы Columnstore обеспечивают максимальную производительность запросов, а также самый высокий уровень сжатия данных.  Обычно эти таблицы более эффективны, чем таблицы с кластеризованными индексами и таблицы без кластеризованных индексов, и их рекомендуется использовать в больших таблицах.  Таким образом, если вы не уверены, какой метод индексации применить к вашей таблице, используйте кластеризованные индексы Columnstore.  
 
 Чтобы создать таблицу с кластеризованным индексом Columnstore, опустите предложение WITH или укажите в нем параметр CLUSTERED COLUMNSTORE INDEX.
 
@@ -52,7 +52,7 @@ WITH ( CLUSTERED COLUMNSTORE INDEX );
 
 ## <a name="heap-tables"></a>Таблицы без кластеризованных индексов
 
-При временном размещении данных в пуле синапсе SQL может оказаться, что использование таблицы кучи позволяет ускорить общий процесс. Это связано с тем, что загрузка в кучи выполняется быстрее, чем в таблицы с кластеризованными индексами, и в некоторых случаях из кэша можно выполнять последующее считывание.  Загрузка таблицы в таблицу без кластеризованных индексов перед выполнением преобразования данных выполняется намного быстрее, чем загрузка данных в таблицу с кластеризованными индексами Columnstore. Кроме того, загрузка данных во [временную таблицу](sql-data-warehouse-tables-temporary.md) выполняется быстрее, чем загрузка таблицы в постоянное хранилище.  После загрузки данных можно создавать индексы в таблице для повышения производительности запросов.  
+При временном размещении данных в выделенном пуле SQL может оказаться, что использование таблицы кучи позволяет ускорить общий процесс. Это связано с тем, что загрузка в кучи выполняется быстрее, чем в таблицы с кластеризованными индексами, и в некоторых случаях из кэша можно выполнять последующее считывание.  Загрузка таблицы в таблицу без кластеризованных индексов перед выполнением преобразования данных выполняется намного быстрее, чем загрузка данных в таблицу с кластеризованными индексами Columnstore. Кроме того, загрузка данных во [временную таблицу](sql-data-warehouse-tables-temporary.md) выполняется быстрее, чем загрузка таблицы в постоянное хранилище.  После загрузки данных можно создавать индексы в таблице для повышения производительности запросов.  
 
 Таблицы в кластере columnstore начинают оптимальное сжатие, когда количество строк превышает 60 000 000.  Для небольших таблиц уточняющих запросов, менее 60 000 000 строк, рассмотрите возможность использования КУЧИ или кластеризованного индекса для повышения производительности запросов. 
 
@@ -204,13 +204,13 @@ WHERE    COMPRESSED_rowgroup_rows_AVG < 100000
 
 ### <a name="small-or-trickle-load-operations"></a>Небольшой объем операций загрузки или потоковые загрузки
 
-Небольшие нагрузки, которые помещаются в пул синапсе SQL, иногда называют тонкого. Обычно они представляют собой практически постоянный поток данных, принимаемых системой. Однако поскольку этот поток является не совсем непрерывным, объем строк невелик. Чаще всего количество данных значительно ниже порогового значения, необходимого для непосредственной загрузки в формате columnstore.
+Небольшие нагрузки, которые помещаются в выделенный пул SQL, иногда также называют тонкогоной загрузкой. Обычно они представляют собой практически постоянный поток данных, принимаемых системой. Однако поскольку этот поток является не совсем непрерывным, объем строк невелик. Чаще всего количество данных значительно ниже порогового значения, необходимого для непосредственной загрузки в формате columnstore.
 
 В таких ситуациях рекомендуется сначала разместить данные в хранилище BLOB-объектов Azure, накопить их и лишь затем загрузить. Этот метод часто называют *микропакетной обработкой*.
 
 ### <a name="too-many-partitions"></a>Слишком много секций
 
-На качество индекса также влияет секционирование в кластеризованных таблицах Columnstore.  Перед секционированием синапсе пул SQL уже разделяет данные на базы данных 60.  Во время секционирования выполняется дальнейшее разделение данных.  Чтобы воспользоваться преимуществами кластеризованного индекса columnstore при секционировании данных, **каждая** секция должна содержать по крайней мере 1 миллион строк.  При секционировании таблицы на 100 секций таблица должна иметь по крайней мере 6 000 000 000 строк, чтобы получить преимущество от кластеризованного индекса columnstore (60 распределений *100 секции* 1 000 000 строк). Если эта таблица не содержит такого количества строк, рекомендуется уменьшить количество секций или использовать таблицу без кластеризованных индексов.
+На качество индекса также влияет секционирование в кластеризованных таблицах Columnstore.  Перед секционированием выделенный пул SQL уже разделяет данные на базы данных 60.  Во время секционирования выполняется дальнейшее разделение данных.  Чтобы воспользоваться преимуществами кластеризованного индекса columnstore при секционировании данных, **каждая** секция должна содержать по крайней мере 1 миллион строк.  При секционировании таблицы на 100 секций таблица должна иметь по крайней мере 6 000 000 000 строк, чтобы получить преимущество от кластеризованного индекса columnstore (60 распределений *100 секции* 1 000 000 строк). Если эта таблица не содержит такого количества строк, рекомендуется уменьшить количество секций или использовать таблицу без кластеризованных индексов.
 
 Когда в таблицу будут загружены данные, чтобы определить и перестроить таблицы с неоптимальными кластеризованными индексами Columnstore, выполните приведенные ниже действия.
 
@@ -252,7 +252,7 @@ ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_CO
 ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_COMPRESSION = COLUMNSTORE)
 ```
 
-Перестроение индекса в пуле синапсе SQL является автономной операцией.  Дополнительные сведения о перестройке индексов см. в разделе об использовании инструкции ALTER INDEX REORGANIZE в статьях [Дефрагментация индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-defragmentation?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и работе с [ALTER INDEX (Transact-SQL)](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Перестроение индекса в выделенном пуле SQL является автономной операцией.  Дополнительные сведения о перестройке индексов см. в разделе об использовании инструкции ALTER INDEX REORGANIZE в статьях [Дефрагментация индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-defragmentation?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и работе с [ALTER INDEX (Transact-SQL)](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 ### <a name="step-3-verify-clustered-columnstore-segment-quality-has-improved"></a>Шаг 3. Проверка улучшения качества кластеризованных сегментов Columnstore
 
@@ -283,7 +283,7 @@ AND     [OrderDateKey] <  20010101
 ALTER TABLE [dbo].[FactInternetSales_20000101_20010101] SWITCH PARTITION 2 TO  [dbo].[FactInternetSales] PARTITION 2 WITH (TRUNCATE_TARGET = ON);
 ```
 
-Дополнительные сведения о повторном создании секций с помощью CTAS см. [в разделе Использование секций в пуле SQL синапсе](sql-data-warehouse-tables-partition.md).
+Дополнительные сведения о повторном создании секций с помощью CTAS см. [в разделе Использование секций в выделенном пуле SQL](sql-data-warehouse-tables-partition.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

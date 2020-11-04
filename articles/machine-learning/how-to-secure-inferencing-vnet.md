@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/23/2020
 ms.custom: contperfq4, tracking-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: a6b453b11c892b5d81c41cac9451b07be69aa4d3
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 3f1e2e12b7ba0a47c20614065510ffd1ae8bf195
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285922"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325339"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности среды вывода службы "Машинное обучение Azure" с помощью виртуальных сетей
 
@@ -36,7 +36,7 @@ ms.locfileid: "93285922"
 > - Экземпляры контейнеров Azure (ACI)
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 
@@ -47,7 +47,7 @@ ms.locfileid: "93285922"
     - "Microsoft. Network/virtualNetworks/соединение/действие" для ресурса виртуальной сети.
     - "Microsoft. Network/virtualNetworks/подсеть/соединение/действие" в ресурсе подсети.
 
-    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking) .
+    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](../role-based-access-control/built-in-roles.md#networking) .
 
 <a id="aksvnet"></a>
 
@@ -86,7 +86,7 @@ ms.locfileid: "93285922"
     Чтобы найти IP-адрес конечной точки оценки, просмотрите код URI оценки для развернутой службы. Сведения о просмотре URI оценки см. в разделе [Использование модели, развернутой в качестве веб-службы](how-to-consume-web-service.md#connection-information).
 
    > [!IMPORTANT]
-   > Сохраните правила по умолчанию для исходящего трафика для группы безопасности сети. Дополнительные сведения см. в описании стандартных правил безопасности в статье [о группах безопасности](https://docs.microsoft.com/azure/virtual-network/security-overview#default-security-rules).
+   > Сохраните правила по умолчанию для исходящего трафика для группы безопасности сети. Дополнительные сведения см. в описании стандартных правил безопасности в статье [о группах безопасности](../virtual-network/network-security-groups-overview.md#default-security-rules).
 
    [![Правило безопасности для входящего трафика](./media/how-to-enable-virtual-network/aks-vnet-inbound-nsg-scoring.png)](./media/how-to-enable-virtual-network/aks-vnet-inbound-nsg-scoring.png#lightbox)
 
@@ -170,7 +170,7 @@ aks_target = ComputeTarget.create(workspace=ws,
     ```azurecli-interactive
     az role assignment create --assignee <SP-or-managed-identity> --role 'Network Contributor' --scope <resource-group-id>
     ```
-Дополнительные сведения об использовании внутреннего балансировщика нагрузки с AKS см. в разделе [Использование внутреннего балансировщика нагрузки со службой Azure Kubernetes](/azure/aks/internal-lb).
+Дополнительные сведения об использовании внутреннего балансировщика нагрузки с AKS см. в разделе [Использование внутреннего балансировщика нагрузки со службой Azure Kubernetes](../aks/internal-lb.md).
 
 #### <a name="enable-private-load-balancer"></a>Включить частную подсистему балансировки нагрузки
 
@@ -220,7 +220,7 @@ az ml computetarget create aks -n myaks --load-balancer-type InternalLoadBalance
 > [!IMPORTANT]
 > С помощью интерфейса командной строки можно создать только кластер AKS с внутренней подсистемой балансировки нагрузки. Не существует команды AZ ml для обновления существующего кластера для использования внутренней подсистемы балансировки нагрузки.
 
-Дополнительные сведения см. в справке по команде [AZ ML computetarget Create AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
+Дополнительные сведения см. в справке по команде [AZ ML computetarget Create AKS](/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
 
 ---
 
@@ -261,7 +261,7 @@ aks_target.wait_for_completion(show_output = True)
     > [!IMPORTANT]
     > При включении делегирования используйте `Microsoft.ContainerInstance/containerGroups` в качестве значения __Делегировать подсеть службе__.
 
-2. Разверните модель с помощью [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py&preserve-view=true#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
+2. Разверните модель с помощью [AciWebservice.deploy_configuration()](/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?preserve-view=true&view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
 
 ## <a name="limit-outbound-connectivity-from-the-virtual-network"></a> Ограничение исходящих подключений из виртуальной сети
 

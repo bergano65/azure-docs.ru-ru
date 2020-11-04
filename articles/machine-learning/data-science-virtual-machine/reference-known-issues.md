@@ -9,12 +9,12 @@ author: gvashishtha
 ms.author: gopalv
 ms.topic: reference
 ms.date: 10/10/2019
-ms.openlocfilehash: b83effa95b17d712d4019f8ab5bf13c4f02a7d2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 864b5e519875029149e93df248aa5953f62ec51e
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78206526"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322958"
 ---
 # <a name="known-issues-and-troubleshooting-the-azure-data-science-virtual-machine"></a>Известные проблемы и устранение неполадок виртуальной машины Azure для обработки и анализа данных
 
@@ -30,7 +30,7 @@ ms.locfileid: "78206526"
 
 ### <a name="disk-encryption-fails-on-the-ubuntu-dsvm"></a>Сбой шифрования диска в Ubuntu DSVM
 
-Шифрование дисков Azure (ADE) сейчас не поддерживается в Ubuntu DSVM. В качестве обходного решения рекомендуется настроить [Шифрование на стороне сервера для управляемых дисков Azure](../../virtual-machines/windows/disk-encryption.md).
+Шифрование дисков Azure (ADE) сейчас не поддерживается в Ubuntu DSVM. В качестве обходного решения рекомендуется настроить [Шифрование на стороне сервера для управляемых дисков Azure](../../virtual-machines/disk-encryption.md).
 
 ## <a name="tool-appears-disabled"></a>Средство отображается как отключено
 
@@ -46,4 +46,3 @@ ms.locfileid: "78206526"
 Окончательный экран должен выглядеть следующим образом:
 
    ![Включение Hyper-V](./media/workaround/hyperv-enable-dsvm.png)
-

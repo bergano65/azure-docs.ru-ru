@@ -10,16 +10,16 @@ ms.author: laobri
 ms.date: 10/22/2020
 ms.topic: conceptual
 ms.custom: troubleshooting, devx-track-python, contperfq2
-ms.openlocfilehash: ce32871620cc0a471e56a5b65191834d7c23b88d
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 80bc5034e6e192c1b493a65e61b94ae1b785a430
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735719"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325604"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 
-Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) и [конструкторе машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer). 
+Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) и [конструкторе машинное обучение Azure](./concept-designer.md). 
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
@@ -28,7 +28,7 @@ ms.locfileid: "92735719"
 | Проблема | Возможное решение |
 |--|--|
 | Не удалось передать данные в `PipelineData` Каталог | Убедитесь, что в скрипте создан каталог, который соответствует расположению выходных данных шага в конвейере. В большинстве случаев входной аргумент определяет выходной каталог, а затем создает каталог явным образом. Используйте `os.makedirs(args.output_dir, exist_ok=True)` для создания выходного каталога. См. [руководство](tutorial-pipeline-batch-scoring-classification.md#write-a-scoring-script) по примеру сценария оценки, в котором показан этот шаблон разработки. |
-| Ошибки зависимостей | Если в удаленном конвейере отображаются ошибки зависимостей, которые не возникали при локальном тестировании, проверьте зависимости удаленной среды и версии, совпадающие с параметрами в тестовой среде. (См. раздел [Создание среды, кэширование и повторное использование](https://docs.microsoft.com/azure/machine-learning/concept-environments#environment-building-caching-and-reuse)|
+| Ошибки зависимостей | Если в удаленном конвейере отображаются ошибки зависимостей, которые не возникали при локальном тестировании, проверьте зависимости удаленной среды и версии, совпадающие с параметрами в тестовой среде. (См. раздел [Создание среды, кэширование и повторное использование](./concept-environments.md#environment-building-caching-and-reuse)|
 | Неоднозначные ошибки с целевыми объектами вычислений | Попробуйте удалить и повторно создать целевые объекты вычислений. Повторное создание целевых объектов вычислений является быстрым и может решить некоторые временные проблемы. |
 | Конвейер не использует повторно шаги | Повторное использование шага включено по умолчанию, но убедитесь, что вы не отключили его на этапе конвейера. Если повторное использование отключено, `allow_reuse` параметр на шаге будет установлен в значение `False` . |
 | Конвейер перезапускается без необходимости | Чтобы обеспечить повторный запуск шагов только при изменении базовых данных или скриптов, следует разделить Каталоги исходного кода на каждый шаг. Если один и тот же исходный каталог используется для нескольких шагов, может возникнуть ненужное повторное использование. Используйте `source_directory` параметр для объекта шага конвейера, чтобы указать на свой изолированный каталог для этого шага, и убедитесь, что вы не используете один и тот же `source_directory` путь для нескольких шагов. |
@@ -178,9 +178,9 @@ parallelrun_step = ParallelRunStep(
 
 | Библиотека                    | Тип   | Пример                                                          | Назначение                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
 |----------------------------|--------|------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| пакет SDK для Машинного обучения Azure; | Метрика | `run.log(name, val)`                                             | Пользовательский интерфейс портала Машинное обучение Azure             | [Как отвести эксперименты](how-to-track-experiments.md)<br>[класс azureml. Core. Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true)                                                                                                                                                 |
+| пакет SDK для Машинного обучения Azure; | Метрика | `run.log(name, val)`                                             | Пользовательский интерфейс портала Машинное обучение Azure             | [Как отвести эксперименты](how-to-track-experiments.md)<br>[класс azureml. Core. Run](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py)                                                                                                                                                 |
 | Печать и ведение журнала Python    | Журнал    | `print(val)`<br>`logging.info(message)`                          | Журналы драйверов, конструктор Машинное обучение Azure | [Как отвести эксперименты](how-to-track-experiments.md)<br><br>[Ведение журнала Python](https://docs.python.org/2/library/logging.html)                                                                                                                                                                       |
-| Python для OpenCensus          | Журнал    | `logger.addHandler(AzureLogHandler())`<br>`logging.log(message)` | Application Insights трассировки                | [Отладка конвейеров в Application Insights](how-to-debug-pipelines-application-insights.md)<br><br>[Агенты OpenCensus Azure Monitor Exporter](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure)<br>[Cookbook ведения журнала Python](https://docs.python.org/3/howto/logging-cookbook.html) |
+| Python для OpenCensus          | Журнал    | `logger.addHandler(AzureLogHandler())`<br>`logging.log(message)` | Application Insights трассировки                | [Отладка конвейеров в Application Insights](./how-to-log-pipelines-application-insights.md)<br><br>[Агенты OpenCensus Azure Monitor Exporter](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure)<br>[Cookbook ведения журнала Python](https://docs.python.org/3/howto/logging-cookbook.html) |
 
 #### <a name="logging-options-example"></a>Пример параметров ведения журнала
 
@@ -220,7 +220,7 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 
 ### <a name="enable-logging-for-real-time-endpoints"></a>Включение ведения журнала для конечных точек в реальном времени
 
-Для устранения неполадок и отладки конечных точек в режиме реального времени в конструкторе необходимо включить ведение журнала Application Insights с помощью пакета SDK. Ведение журнала позволяет устранять неполадки и отлаживать проблемы развертывания и использования модели. Дополнительные сведения см. в разделе [ведение журнала для развернутых моделей](how-to-enable-logging.md#logging-for-deployed-models). 
+Для устранения неполадок и отладки конечных точек в режиме реального времени в конструкторе необходимо включить ведение журнала Application Insights с помощью пакета SDK. Ведение журнала позволяет устранять неполадки и отлаживать проблемы развертывания и использования модели. Дополнительные сведения см. в разделе [ведение журнала для развернутых моделей](./how-to-enable-app-insights.md). 
 
 ### <a name="get-logs-from-the-authoring-page"></a>Получение журналов со страницы "Создание и Настройка"
 
@@ -248,7 +248,7 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 > Чтобы обновить конвейер со страницы сведения о выполнении конвейера, необходимо **клонировать** выполнение конвейера в новый черновик конвейера. Запуск конвейера — это моментальный снимок конвейера. Он аналогичен файлу журнала и не может быть изменен. 
 
 ## <a name="application-insights"></a>Application Insights
-Дополнительные сведения об использовании библиотеки Опенценсус Python таким образом см. в разделе [Отладка и устранение неполадок конвейеров машинного обучения в Application Insights](how-to-debug-pipelines-application-insights.md)
+Дополнительные сведения об использовании библиотеки Опенценсус Python таким образом см. в разделе [Отладка и устранение неполадок конвейеров машинного обучения в Application Insights](./how-to-log-pipelines-application-insights.md)
 
 ## <a name="interactive-debugging-with-visual-studio-code"></a>Интерактивная Отладка с помощью Visual Studio Code
 
@@ -260,6 +260,6 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 
 * Полный пример, в котором показано автоматизированное машинное обучение в конвейерах МАШИНного обучения, см. в статье [Использование автоматического ML в конвейере машинное обучение Azure в Python](how-to-use-automlstep-in-pipelines.md).
 
-* Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py&preserve-view=true) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py&preserve-view=true) .
+* Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](/python/api/azureml-pipeline-core/?preserve-view=true&view=azure-ml-py) и пакету [azureml-конвейеры-этапов](/python/api/azureml-pipeline-steps/?preserve-view=true&view=azure-ml-py) .
 
 * См. список [исключений и кодов ошибок конструктора](algorithm-module-reference/designer-error-codes.md).

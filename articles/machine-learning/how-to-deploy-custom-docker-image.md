@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 09/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: e58e9271ad3b6161a1b2c72509ecc4045b75e1db
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 63089e853be825f9399081f2d39845e22b18ed2a
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741987"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325180"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Развертывание модели с помощью пользовательского базового образа DOCKER
 
@@ -42,10 +42,10 @@ ms.locfileid: "92741987"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
-* [Пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true). 
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
+* [Пакет SDK для Машинного обучения Azure](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py). 
+* [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 * [Расширение CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md).
-* [Реестр контейнеров Azure](/azure/container-registry) или другой реестр DOCKER, доступный в Интернете.
+* [Реестр контейнеров Azure](../container-registry/index.yml) или другой реестр DOCKER, доступный в Интернете.
 * В действиях, описанных в этом документе, предполагается, что вы знакомы с созданием и использованием объекта __конфигурации вывода__ в рамках развертывания модели. Дополнительные сведения см. [в разделе где развертывается и как](how-to-deploy-and-where.md).
 
 ## <a name="create-a-custom-base-image"></a>Создание пользовательского базового образа
@@ -61,9 +61,9 @@ ms.locfileid: "92741987"
 
     При использовании образов, хранящихся в __автономном реестре контейнеров__ , необходимо настроить субъект-службу, имеющий по крайней мере доступ на чтение. Затем укажите идентификатор субъекта-службы (имя пользователя) и пароль для всех, кто использует образы из реестра. Исключением является то, что реестр контейнеров становится общедоступным.
 
-    Сведения о создании закрытого реестра контейнеров Azure см. в разделе [создание закрытого реестра контейнеров](/azure/container-registry/container-registry-get-started-azure-cli).
+    Сведения о создании закрытого реестра контейнеров Azure см. в разделе [создание закрытого реестра контейнеров](../container-registry/container-registry-get-started-azure-cli.md).
 
-    Сведения об использовании субъектов-служб с реестром контейнеров Azure см. в статье [Проверка подлинности реестра контейнеров Azure с помощью субъектов-служб](/azure/container-registry/container-registry-auth-service-principal).
+    Сведения об использовании субъектов-служб с реестром контейнеров Azure см. в статье [Проверка подлинности реестра контейнеров Azure с помощью субъектов-служб](../container-registry/container-registry-auth-service-principal.md).
 
 * Реестр контейнеров Azure и сведения об образе. Укажите имя образа для любого пользователя, который должен его использовать. Например, образ с именем `myimage` , хранящийся в реестре `myregistry` , упоминается как `myregistry.azurecr.io/myimage` при использовании изображения для развертывания модели.
 
@@ -91,6 +91,9 @@ ms.locfileid: "92741987"
 
 Образы ЦП создаются из Ubuntu 16.04. Образы GPU для cuda9 создаются на основе NVIDIA/CUDA: 9.0-cudnn7-которые-Ubuntu 16.04. Образы GPU для cuda10 создаются на основе NVIDIA/CUDA: 10.0-cudnn7-которые-Ubuntu 16.04.
 <a id="getname"></a>
+
+> [!IMPORTANT]
+> При использовании пользовательских образов DOCKER рекомендуется закрепить версии пакетов, чтобы лучше обеспечить воспроизводимость.
 
 ### <a name="get-container-registry-information"></a>Получение сведений о реестре контейнеров
 
@@ -189,15 +192,15 @@ ms.locfileid: "92741987"
     Run ID: cda was successful after 2m56s
     ```
 
-Дополнительные сведения о создании образов с помощью реестра контейнеров Azure см. в статье [Сборка и запуск образа контейнера с использованием задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-quickstart-task-cli) .
+Дополнительные сведения о создании образов с помощью реестра контейнеров Azure см. в статье [Сборка и запуск образа контейнера с использованием задач реестра контейнеров Azure](../container-registry/container-registry-quickstart-task-cli.md) .
 
-Дополнительные сведения о передаче существующих образов в реестр контейнеров Azure см. в разделе [Отправка первого образа в частный реестр контейнеров DOCKER](/azure/container-registry/container-registry-get-started-docker-cli).
+Дополнительные сведения о передаче существующих образов в реестр контейнеров Azure см. в разделе [Отправка первого образа в частный реестр контейнеров DOCKER](../container-registry/container-registry-get-started-docker-cli.md).
 
 ## <a name="use-a-custom-base-image"></a>Использовать пользовательский базовый образ
 
 Чтобы использовать пользовательский образ, вам потребуются следующие сведения:
 
-* __Имя образа__ . Например, `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda:latest` — это путь к простому образу DOCKER, предоставляемому корпорацией Майкрософт.
+* __Имя образа__. Например, `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda:latest` — это путь к простому образу DOCKER, предоставляемому корпорацией Майкрософт.
 
     > [!IMPORTANT]
     > Для пользовательских образов, которые вы создали, обязательно включите все теги, которые использовались вместе с изображением. Например, если образ был создан с помощью определенного тега, например `:v1` . Если при создании изображения не использовался конкретный тег, `:latest` был применен тег.
@@ -231,7 +234,7 @@ ms.locfileid: "92741987"
 
 ### <a name="use-an-image-with-the-azure-machine-learning-sdk"></a>Использование образа с пакетом SDK для Машинное обучение Azure
 
-Чтобы использовать образ, хранящийся в **реестре контейнеров Azure для вашей рабочей области** , или **общий доступ к реестру контейнеров** , задайте следующие атрибуты [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true) :
+Чтобы использовать образ, хранящийся в **реестре контейнеров Azure для вашей рабочей области** , или **общий доступ к реестру контейнеров** , задайте следующие атрибуты [среды](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) :
 
 + `docker.enabled=True`
 + `docker.base_image`: Укажите в реестре и путь к образу.
@@ -265,7 +268,7 @@ myenv.python.conda_dependencies=conda_dep
 
 Необходимо добавить azureml-Defaults с Version >= 1.0.45 в качестве зависимости PIP. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы. Необходимо также задать для свойства inferencing_stack_version в среде значение "latest", при этом будут установлены определенные пакеты APT, необходимые для веб-службы. 
 
-Определив среду, используйте ее с объектом [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py&preserve-view=true) , чтобы определить среду вывода, в которой будет выполняться модель и веб-служба.
+Определив среду, используйте ее с объектом [инференцеконфиг](/python/api/azureml-core/azureml.core.model.inferenceconfig?preserve-view=true&view=azure-ml-py) , чтобы определить среду вывода, в которой будет выполняться модель и веб-служба.
 
 ```python
 from azureml.core.model import InferenceConfig
@@ -294,7 +297,7 @@ print(service.state)
 > [!IMPORTANT]
 > В настоящее время Машинное обучение CLI может использовать образы из реестра контейнеров Azure для вашей рабочей области или общедоступных репозиториев. Он не может использовать образы из автономных закрытых реестров.
 
-Перед развертыванием модели с помощью Машинное обучение CLI создайте [среду](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true) , которая использует пользовательский образ. Затем создайте файл конфигурации вывода, который ссылается на среду. Среду также можно определить непосредственно в файле конфигурации вывода. В следующем документе JSON показано, как ссылаться на изображение в общедоступном реестре контейнеров. В этом примере среда определяется встроенным:
+Перед развертыванием модели с помощью Машинное обучение CLI создайте [среду](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) , которая использует пользовательский образ. Затем создайте файл конфигурации вывода, который ссылается на среду. Среду также можно определить непосредственно в файле конфигурации вывода. В следующем документе JSON показано, как ссылаться на изображение в общедоступном реестре контейнеров. В этом примере среда определяется встроенным:
 
 ```json
 {

@@ -11,12 +11,12 @@ ms.author: prasantp
 author: prasanthpul
 ms.date: 06/18/2020
 ms.custom: seodec18
-ms.openlocfilehash: acaab8aaa12a107f4d0f8a8aac0baf7d5ebb8e4c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7b818de12a968869d655a80917572ddf5f2c210
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87012764"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323005"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-accelerate-ml-models"></a>ONNX и Машинное обучение Azure: создание и ускорение моделей машинного обучения
 
@@ -29,9 +29,9 @@ ms.locfileid: "87012764"
 [Среда выполнения ONNX](https://onnxruntime.ai) — это высокопроизводительный механизм вывода для развертывания моделей ONNX в рабочей среде. Она оптимизирована как для облака, так и для пограничной работы в Linux, Windows и Mac. Написанный на C++, он также содержит интерфейсы API C, Python, C#, Java и JavaScript (Node.js) для использования в различных средах. Среда выполнения ONNX поддерживает как DNN, так и традиционные модели машинного обучения и интегрируется с ускорителями на различных оборудованиях, таких как Тенсоррт на графических процессорах NVidia, Опенвино на процессорах Intel, Директмл в Windows и т. д. С помощью среды выполнения ONNX вы можете воспользоваться обширными оптимизациями рабочего уровня, тестированием и текущими улучшениями.
 
 Среда выполнения ONNX используется в крупномасштабных службах Майкрософт, таких как Bing, Office и Azure Cognitive Services. Выигрыш в производительности зависит от ряда факторов, но эти службы Майкрософт показали __среднее увеличение производительности ЦП на 2 раза__. Помимо Машинное обучение Azure Services, среда выполнения ONNX также работает в других продуктах, поддерживающих Машинное обучение рабочих нагрузок, в том числе:
-+ Windows. Среда выполнения встроена в Windows в составе [windows машинное обучение](https://docs.microsoft.com/windows/ai/windows-ml/) и работает на сотнях миллионов устройств. 
-+ Семейство продуктов Azure SQL: выполнение собственной оценки данных в [Azure SQL](https://docs.microsoft.com/azure/azure-sql-edge/onnx-overview) и azure SQL [управляемый экземпляр](https://docs.microsoft.com/azure/azure-sql/managed-instance/machine-learning-services-overview).
-+ ML.NET: [Запуск моделей ONNX в ml.NET](https://docs.microsoft.com/dotnet/machine-learning/tutorials/object-detection-onnx).
++ Windows. Среда выполнения встроена в Windows в составе [windows машинное обучение](/windows/ai/windows-ml/) и работает на сотнях миллионов устройств. 
++ Семейство продуктов Azure SQL: выполнение собственной оценки данных в [Azure SQL](../azure-sql-edge/onnx-overview.md) и azure SQL [управляемый экземпляр](../azure-sql/managed-instance/machine-learning-services-overview.md).
++ ML.NET: [Запуск моделей ONNX в ml.NET](/dotnet/machine-learning/tutorials/object-detection-onnx).
 
 
 [![Схема потока ONNX, показывающая обучение, конвертеры и развертывание](./media/concept-onnx/onnx.png)](././media/concept-onnx/onnx.png#lightbox)
@@ -42,7 +42,7 @@ ms.locfileid: "87012764"
 + Обучение новой модели ONNX в Машинное обучение Azure (см. примеры в нижней части этой статьи) или с помощью [автоматизированных машинное обучениеных возможностей](concept-automated-ml.md#automl--onnx)
 + Преобразование существующей модели из другого формата в ONNX (см. [учебники](https://github.com/onnx/tutorials)) 
 + Получение предварительно обученной модели ONNX из [коллекции моделей ONNX](https://github.com/onnx/models).
-+ Создание настраиваемых моделей ONNX в [пользовательской службе визуального распознавания Azure](https://docs.microsoft.com/azure/cognitive-services/Custom-Vision-Service/). 
++ Создание настраиваемых моделей ONNX в [пользовательской службе визуального распознавания Azure](../cognitive-services/custom-vision-service/index.yml). 
 
 Многие модели, включая классификацию изображений, обнаружение объектов и обработку текста, могут быть представлены в виде ONNX моделей. Если при работе с моделью, которая не может быть преобразована, возникла ошибка, запишите вопрос в GitHub соответствующего конвертера, который вы использовали. Вы можете продолжать использовать существующую модель форматирования, пока не будет устранена данная ошибка.
 
@@ -98,5 +98,3 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 Дополнительные сведения о **среде выполнения ONNX** или участия в проекте:
 + [Веб-сайт проекта среды выполнения ONNX](https://onnxruntime.ai)
 + [Репозиторий GitHub для среды выполнения ONNX](https://github.com/Microsoft/onnxruntime)
-
-

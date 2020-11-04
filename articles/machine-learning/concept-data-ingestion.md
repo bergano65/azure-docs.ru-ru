@@ -11,12 +11,12 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 02/26/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 18bbecbe811a9f0bc6a56194830c7e92d8770979
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 401398da4d71f32973f720dd0ca5cc9b550892e8
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890178"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323036"
 ---
 # <a name="data-ingestion-options-for-azure-machine-learning-workflows"></a>Параметры приема данных для рабочих процессов Машинное обучение Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "90890178"
 
 ## <a name="azure-data-factory"></a>Фабрика данных Azure
 
-[Фабрика данных Azure](https://docs.microsoft.com/azure/data-factory/introduction) предлагает встроенную поддержку для мониторинга источников данных и триггеров для конвейеров приема данных.  
+[Фабрика данных Azure](../data-factory/introduction.md) предлагает встроенную поддержку для мониторинга источников данных и триггеров для конвейеров приема данных.  
 
 В следующей таблице перечислены достоинства и недостатки использования фабрики данных Azure для рабочих процессов приема данных.
 
@@ -41,11 +41,11 @@ ms.locfileid: "90890178"
 ---|---
 Специально созданный для извлечения, загрузки и преобразования данных.|В настоящее время предлагает ограниченный набор задач конвейера фабрики данных Azure. 
 Позволяет создавать управляемые данными рабочие процессы для управления перемещением и преобразованиями данных в масштабе.|Дорогостоящий для создания и обслуживания. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/) на фабрику данных Azure.
-Интеграция с различными средствами Azure, такими как [Azure Databricks](https://docs.microsoft.com/azure/data-factory/transform-data-using-databricks-notebook) и [функции Azure](https://docs.microsoft.com/azure/data-factory/control-flow-azure-function-activity) | Не выполняет собственные сценарии, вместо этого использует отдельные операции COMPUTE для выполнения сценариев. 
+Интеграция с различными средствами Azure, такими как [Azure Databricks](../data-factory/transform-data-using-databricks-notebook.md) и [функции Azure](../data-factory/control-flow-azure-function-activity.md) | Не выполняет собственные сценарии, вместо этого использует отдельные операции COMPUTE для выполнения сценариев. 
 Изначально поддерживает прием данных, активированных источником данных| 
 Процессы подготовки данных и обучения модели являются отдельными.|
 Возможность преобразования внедренных данных для потоков данных фабрики Azure|
-Предоставляет [Пользовательский интерфейс](https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-portal) с низким уровнем поддержки кода для подходов, не связанных с скриптами |
+Предоставляет [Пользовательский интерфейс](../data-factory/quickstart-create-data-factory-portal.md) с низким уровнем поддержки кода для подходов, не связанных с скриптами |
 
 Эти действия и на следующей схеме иллюстрируют рабочий процесс приема данных в фабрике данных Azure.
 
@@ -60,7 +60,7 @@ ms.locfileid: "90890178"
 
 ## <a name="azure-machine-learning-python-sdk"></a>Пакет SDK Python для Машинного обучения Azure 
 
-С помощью [пакета SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml)можно включить задачи приема данных в машинное обучение Azure шаге [конвейера](how-to-create-your-first-pipeline.md) .
+С помощью [пакета SDK для Python](/python/api/overview/azure/ml)можно включить задачи приема данных в машинное обучение Azure шаге [конвейера](how-to-create-your-first-pipeline.md) .
 
 В следующей таблице приведены сведения о преимуществах и Con для использования пакета SDK и конвейера машинного обучения для задач приема данных.
 
@@ -74,7 +74,7 @@ ms.locfileid: "90890178"
 
 ![Прием данных в конвейере Azure и пакете SDK](media/concept-data-ingestion/data-ingest-option-two.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следуйте приведенным ниже статьям.
 * [Создание конвейера приема данных с помощью фабрики данных Azure](how-to-data-ingest-adf.md)

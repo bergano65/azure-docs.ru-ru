@@ -10,12 +10,12 @@ ms.custom: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 04/16/2020
-ms.openlocfilehash: c0a55780687b4c03d6809d1d740bf0b0afcd63fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05926f7ce25714fb76415802876db0640eb30aae
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90908084"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323782"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer"></a>Исключения и коды ошибок для конструктора
 
@@ -283,7 +283,7 @@ ms.locfileid: "90908084"
 
 **Решение.**
 
-Откройте модуль, создавший ошибку, и найдите столбцы, используемые в качестве входных данных. В некоторых модулях можно щелкнуть правой кнопкой мыши входные данные набора данных и выбрать пункт **Визуализировать**, чтобы получить статистику по отдельным столбцам, включая количество уникальных значений и их распределение.
+Откройте модуль, создавший ошибку, и найдите столбцы, используемые в качестве входных данных. В некоторых модулях можно щелкнуть правой кнопкой мыши входные данные набора данных и выбрать пункт **Визуализировать** , чтобы получить статистику по отдельным столбцам, включая количество уникальных значений и их распределение.
 
 Для столбцов, которые предполагается использовать для группирования или категоризации, следует сократить число уникальных значений в столбцах. В зависимости от типа данных столбца их можно уменьшить различными способами. 
 <!--
@@ -713,7 +713,7 @@ For general information about how the Matchbox recommendation algorithm works, a
 **Решение.** Эта ошибка вызвана множеством условий, и не существует конкретного решения.  
  В следующей таблице содержатся общие сообщения об этой ошибке, за которыми следует определенное описание условия. 
 
- Если сведения недоступны, перейдите в [раздел вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-machine-learning-studio-classic.html), чтобы оставить отзыв и предоставить сведения о модулях, сформировавших ошибку и связанные с нею условия.
+ Если сведения недоступны, перейдите в [раздел вопросов и ответов на сайте Майкрософт](/answers/topics/azure-machine-learning-studio-classic.html), чтобы оставить отзыв и предоставить сведения о модулях, сформировавших ошибку и связанные с нею условия.
 
 |Сообщения об исключении|
 |------------------------|
@@ -862,7 +862,7 @@ For general information about how the Matchbox recommendation algorithm works, a
 
  Эта ошибка в Машинном обучении Azure возникает, если ключ, используемый для доступа к учетной записи хранения Azure, неправильный. Например, эта ошибка может возникать, если ключ хранилища Azure был усечен при копировании и вставке, а также при использовании неправильного ключа.  
 
- Дополнительные сведения о том, как получить ключ для учетной записи хранения Azure, см. в статье [Создание учетной записи хранения Azure](https://azure.microsoft.com/documentation/articles/storage-create-storage-account-classic-portal/).  
+ Дополнительные сведения о том, как получить ключ для учетной записи хранения Azure, см. в статье [Создание учетной записи хранения Azure](../../storage/common/storage-account-create.md).  
 
 **Решение.** Повторно откройте модуль и убедитесь, что ключ к хранилищу Azure указан правильно для учетной записи. При необходимости скопируйте ключ на классическом портале Azure.  
 
@@ -1027,7 +1027,7 @@ For general information about how the Matchbox recommendation algorithm works, a
   
 -   URI SAS не содержит имя допустимого большого двоичного объекта.  
 
-**Решение.** Повторно откройте модуль, вызывающий исключение. Убедитесь, что указанный большой двоичный объект существует в контейнере в учетной записи хранения и разрешения позволяют его просматривать. Убедитесь, что входные данные имеют форму **имя контейнера/имя файла**, если у вас есть файл Excel или CSV с форматами кодирования. Убедитесь, что URI SAS содержит имя допустимого большого двоичного объекта.  
+**Решение.** Повторно откройте модуль, вызывающий исключение. Убедитесь, что указанный большой двоичный объект существует в контейнере в учетной записи хранения и разрешения позволяют его просматривать. Убедитесь, что входные данные имеют форму **имя контейнера/имя файла** , если у вас есть файл Excel или CSV с форматами кодирования. Убедитесь, что URI SAS содержит имя допустимого большого двоичного объекта.  
 
 |Сообщения об исключении|
 |------------------------|
@@ -1083,9 +1083,9 @@ For general information about how the Matchbox recommendation algorithm works, a
 
 Дополнительные сведения о запросах Hive для машинного обучения см. в следующих статьях:
 
-+ [Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-move-hive-tables)
-+ [Просмотр данных в таблицах Hive с помощью запросов Hive](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-explore-data-hive-tables)
-+ [Создание характеристик для данных в кластере Hadoop с помощью запросов Hive](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-create-features-hive)
++ [Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure](../team-data-science-process/move-hive-tables.md)
++ [Просмотр данных в таблицах Hive с помощью запросов Hive](../team-data-science-process/explore-data-hive-tables.md)
++ [Создание характеристик для данных в кластере Hadoop с помощью запросов Hive](../team-data-science-process/create-features-hive.md)
 + [Памятка по Hive для пользователей SQL (PDF)](http://hortonworks.com/wp-content/uploads/2013/05/hql_cheat_sheet.pdf)
 
   
@@ -1107,7 +1107,7 @@ For general information about how the Matchbox recommendation algorithm works, a
 
  Если в исключении модуля сообщается о сформированном сообщении SQL, примите меры на основе сообщенной ошибки. Например, сообщения об ошибках иногда включают в себя определенные рекомендации по наиболее вероятной ошибке:
 + Ошибка *No such column or missing database* (Нет такого столбца или базы данных) означает, что вы могли указать неправильное имя столбца. Если вы уверены, что имя столбца указано правильно, попробуйте использовать квадратные скобки или кавычки для заключения идентификатора столбца.
-+ *Ошибка логики SQL \<SQL keyword\> рядом *с тем, что может иметь синтаксическую ошибку перед указанным ключевым словом
++ *Ошибка логики SQL \<SQL keyword\> рядом* с тем, что может иметь синтаксическую ошибку перед указанным ключевым словом
 
   
 |Сообщения об исключении|
@@ -1164,7 +1164,7 @@ For general information about how the Matchbox recommendation algorithm works, a
 
 Обработка ошибок для этого события была представлена в более ранней версии Машинного обучения Azure, которая расширяла возможности настроек методов квантования. Сейчас все методы квантования основаны на выборе из раскрывающегося списка, поэтому технически в них не должна возникать эта ошибка.
 
- <!--If you get this error when using the [Group Data into Bins](group-data-into-bins.md) module, consider reporting the issue in the [Microsoft Q&A question page for Azure Machine Learning](https://docs.microsoft.com/answers/topics/azure-machine-learning-studio-classic.html), providing the data types, parameter settings, and the exact error message.  -->
+ <!--If you get this error when using the [Group Data into Bins](group-data-into-bins.md) module, consider reporting the issue in the [Microsoft Q&A question page for Azure Machine Learning](/answers/topics/azure-machine-learning-studio-classic.html), providing the data types, parameter settings, and the exact error message.  -->
 
 |Сообщения об исключении|
 |------------------------|
@@ -1516,11 +1516,10 @@ For general information about how the Matchbox recommendation algorithm works, a
 
 Эта ошибка выдается для перехвата необработанных ошибок внутреннего модуля. Поэтому причины этой ошибки могут отличаться в зависимости от модуля, создавшего ошибку.  
 
-Чтобы получить дополнительную помощь, рекомендуется опубликовать подробное сообщение, сопровождающее ошибку, на [форуме машинное обучение Azure](https://docs.microsoft.com/answers/topics/azure-machine-learning.html), а также описание сценария, включая данные, используемые в качестве входных данных. Эти отзывы помогут нам установить приоритеты для ошибок и найти наиболее важные проблемы для дальнейшей работы.  
+Чтобы получить дополнительную помощь, рекомендуется опубликовать подробное сообщение, сопровождающее ошибку, на [форуме машинное обучение Azure](/answers/topics/azure-machine-learning.html), а также описание сценария, включая данные, используемые в качестве входных данных. Эти отзывы помогут нам установить приоритеты для ошибок и найти наиболее важные проблемы для дальнейшей работы.  
 
 |Сообщения об исключении|
 |------------------------|
 |Library exception (Исключение библиотеки).|
 |Library exception: {exception} (Исключение библиотеки {exception}).|
 |Unknown library exception: {exception} (Неизвестное исключение библиотеки: {exception}). {customer_support_guidance}.|
-

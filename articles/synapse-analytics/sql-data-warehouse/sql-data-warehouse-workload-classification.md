@@ -11,16 +11,16 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 266eebc8322b5fc648180c0524abc973a4b60373
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b66b8a9fb3b5eb7dc78c00ba084e8609877dec7
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85212383"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323884"
 ---
 # <a name="azure-synapse-analytics-workload-classification"></a>Классификация рабочей нагрузки Azure синапсе Analytics
 
-В этой статье объясняется процесс классификации рабочей нагрузки по назначению группы рабочей нагрузки и важности входящих запросов с помощью синапсе пулов SQL в Azure синапсе.
+В этой статье описывается процесс классификации рабочей нагрузки по назначению группы рабочей нагрузки и важности для входящих запросов с выделенными пулами SQL в Azure синапсе.
 
 ## <a name="classification"></a>Классификация
 
@@ -36,7 +36,7 @@ ms.locfileid: "85212383"
 
 ## <a name="classification-process"></a>Процесс классификации
 
-Классификация для пула SQL синапсе в Azure синапсе достигается сегодня путем назначения пользователям роли, которой назначен соответствующий класс ресурсов, с помощью [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Эта возможность позволяет определять запросы, которые выходят за пределы имени входа в класс ресурсов. Более мощный метод классификации теперь доступен с синтаксисом [классификатора рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .  С помощью этого синтаксиса пользователи пула SQL синапсе могут назначать важность и количество системных ресурсов, назначенных запросу через `workload_group` параметр.
+Классификация для выделенного пула SQL в Azure синапсе достигается сегодня путем назначения пользователям роли, которой назначен соответствующий класс ресурсов, с помощью [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Эта возможность позволяет определять запросы, которые выходят за пределы имени входа в класс ресурсов. Более мощный метод классификации теперь доступен с синтаксисом [классификатора рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .  С помощью этого синтаксиса выделенные пользователи пула SQL могут назначать важность и количество системных ресурсов, назначенных запросу через `workload_group` параметр.
 
 > [!NOTE]
 > Классификация оценивается на основе каждого запроса. Несколько запросов в одном сеансе можно классифицировать по-разному.

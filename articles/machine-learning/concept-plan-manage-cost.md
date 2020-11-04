@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: f73643baa92956280d67d0d931459af3a80925ee
-ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
+ms.openlocfilehash: e8554bf4385c7ddad540b8ba807988618fe80b53
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93233754"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322983"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Планирование и управление затратами для Машинное обучение Azure
 
@@ -53,11 +53,11 @@ ms.locfileid: "93233754"
 
 ## <a name="get-cost-alerts"></a>Получение оповещений о затратах
 
-Создавайте [бюджеты](../cost-management/tutorial-acm-create-budgets.md) для управления затратами и создавайте [оповещения](../cost-management/cost-mgt-alerts-monitor-usage-spending.md) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. Однако бюджеты и оповещения могут иметь ограниченную функциональность для управления отдельными затратами на обслуживание Azure, так как они предназначены для мониторинга затрат на более высоком уровне.
+Создавайте [бюджеты](../cost-management-billing/costs/tutorial-acm-create-budgets.md) для управления затратами и создавайте [оповещения](../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. Однако бюджеты и оповещения могут иметь ограниченную функциональность для управления отдельными затратами на обслуживание Azure, так как они предназначены для мониторинга затрат на более высоком уровне.
 
 ## <a name="monitor-costs"></a>Мониторинг затрат
 
-При использовании ресурсов с Машинное обучение Azure взимается плата. Затраты на единицу использования ресурсов Azure зависят от временных интервалов (секунды, минуты, часы и дни) или использования единиц запросов. После начала использования Машинное обучение Azure затраты изменяются. Просмотрите эти затраты на панели [анализ затрат](../cost-management/quick-acm-cost-analysis.md) в портал Azure.
+При использовании ресурсов с Машинное обучение Azure взимается плата. Затраты на единицу использования ресурсов Azure зависят от временных интервалов (секунды, минуты, часы и дни) или использования единиц запросов. После начала использования Машинное обучение Azure затраты изменяются. Просмотрите эти затраты на панели [анализ затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md) в портал Azure.
 
 Вы можете просматривать затраты в диаграммах и таблицах для различных временных интервалов. Вы также можете просматривать затраты по бюджету и прогнозируемым затратам. Переключение на более длинные представления с течением времени помогает определить тенденции расходов и узнать, где могла произойти чрезмерное расходование. Если вы создали бюджеты, Узнайте, где они превышены.  
 
@@ -86,7 +86,7 @@ ms.locfileid: "93233754"
 + Если вы выполняете меньше итеративных экспериментов, сократите это время, чтобы сэкономить затраты.
 + При выполнении высокоитеративного эксперимента для разработки и тестирования может потребоваться увеличить время, чтобы не платить за постоянное масштабирование после каждого изменения в обучающем сценарии или среде.
 
-Кластеры Амлкомпуте можно настроить для изменения требований рабочей нагрузки в портал Azure с помощью [класса пакета SDK для амлкомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py&preserve-view=true), [амлкомпуте интерфейса командной строки](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)с [интерфейсами API](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/stable).
+Кластеры Амлкомпуте можно настроить для изменения требований рабочей нагрузки в портал Azure с помощью [класса пакета SDK для амлкомпуте](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?preserve-view=true&view=azure-ml-py), [амлкомпуте интерфейса командной строки](/cli/azure/ext/azure-cli-ml/ml/computetarget/create?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)с [интерфейсами API](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/stable).
 
 ```azurecli
 az ml computetarget create amlcompute --name testcluster --vm-size Standard_NC6 --min-nodes 0 --max-nodes 5 --idle-seconds-before-scaledown 300

@@ -1,24 +1,24 @@
 ---
 title: Создание политик для свойств массива ресурсов
 description: Узнайте, как работать с параметрами массива и выражениями языка массива, оценивать псевдоним [*] и добавлять элементы с помощью правил определения Политики Azure.
-ms.date: 09/30/2020
+ms.date: 10/22/2020
 ms.topic: how-to
-ms.openlocfilehash: c67982197c0161d99f29747d6fd11166cba86079
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 92339a6da4fd2061d66935cc8d04428c69822862
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576903"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323223"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Создание политик для свойств массива ресурсов Azure
 
 Свойства Azure Resource Manager обычно определяются как строки и логические значения. Если существует связь "один ко многим", то сложные свойства определяются как массивы. В Политике Azure массивы используются несколькими различными способами:
 
 - тип [параметра определения](../concepts/definition-structure.md#parameters) для предоставления нескольких параметров;
-- часть [правила политики](../concepts/definition-structure.md#policy-rule) с использованием условий **in** или **notIn**;
+- часть [правила политики](../concepts/definition-structure.md#policy-rule) с использованием условий **in** или **notIn** ;
 - часть правила политики, которая оценивает [псевдоним \[\*\]](../concepts/definition-structure.md#understanding-the--alias):
-  - такие сценарии, как **Нет**, **Любое** или **Все**;
-  - сложные сценарии с **count**;
+  - такие сценарии, как **Нет** , **Любое** или **Все** ;
+  - сложные сценарии с **count** ;
 - В [действии добавления](../concepts/effects.md#append) для замены или добавления в существующий массив.
 
 В этой статье рассматривается каждый вариант использования в Политике Azure и приводится несколько примеров определений.
@@ -28,7 +28,7 @@ ms.locfileid: "91576903"
 ### <a name="define-a-parameter-array"></a>Определение массива параметров
 
 Определение параметра в качестве массива обеспечивает гибкость политики, если требуется более одного значения.
-Это определение политики допускает любое отдельное расположение в параметре **allowedLocations** и по умолчанию использует значение _eastus2_:
+Это определение политики допускает любое отдельное расположение в параметре **allowedLocations** и по умолчанию использует значение _eastus2_ :
 
 ```json
 "parameters": {
@@ -44,7 +44,7 @@ ms.locfileid: "91576903"
 }
 ```
 
-Так как параметр **type** имеет значение _string_, при назначении этой политики можно задать только одно значение. При назначении этой политики ресурсы в области допускаются только в пределах одного региона Azure. Большинство определений политик должно допускать список утвержденных параметров, например _eastus2_, _eastus_ и _westus2_.
+Так как параметр **type** имеет значение _string_ , при назначении этой политики можно задать только одно значение. При назначении этой политики ресурсы в области допускаются только в пределах одного региона Azure. Большинство определений политик должно допускать список утвержденных параметров, например _eastus2_ , _eastus_ и _westus2_.
 
 Чтобы создать определение политики, допускающее несколько параметров, используйте свойство **type** со значением _array_. Эту же политику можно переписать следующим образом:
 
@@ -71,11 +71,11 @@ ms.locfileid: "91576903"
 > [!NOTE]
 > После сохранения определения политики изменить свойство **type** параметра невозможно.
 
-Это новое определение параметра принимает более одного значения во время назначения политики. Если определено свойство массива **allowedValues**, значения, доступные во время назначения, дополнительно ограничиваются предопределенным списком. Использовать **allowedValues** необязательно.
+Это новое определение параметра принимает более одного значения во время назначения политики. Если определено свойство массива **allowedValues** , значения, доступные во время назначения, дополнительно ограничиваются предопределенным списком. Использовать **allowedValues** необязательно.
 
 ### <a name="pass-values-to-a-parameter-array-during-assignment"></a>Передача значений в массив параметров во время назначения
 
-При назначении политики с помощью портала Azure параметр с **типом** _массива_ отображается как одно текстовое поле. В подсказке указано "Указывайте значения через ;. (например, Лондон;Нью-Йорк)". Чтобы передать допустимые значения расположения _eastus2_, _eastus_ и _westus2_ в параметр, используйте следующую строку:
+При назначении политики с помощью портала Azure параметр с **типом** _массива_ отображается как одно текстовое поле. В подсказке указано "Указывайте значения через ;. (например, Лондон;Нью-Йорк)". Чтобы передать допустимые значения расположения _eastus2_ , _eastus_ и _westus2_ в параметр, используйте следующую строку:
 
 `eastus2;eastus;westus2`
 
@@ -95,13 +95,11 @@ ms.locfileid: "91576903"
 
 Чтобы использовать эту строку с каждым пакетом SDK, выполните следующие команды:
 
-- Azure CLI: команда [az policy assignment create](/cli/azure/policy/assignment#az-policy-assignment-create) с параметром **params**;
-- Azure PowerShell: командлет [New-AzPolicyAssignment](/powershell/module/az.resources/New-Azpolicyassignment) с параметром **PolicyParameter**;
+- Azure CLI: команда [az policy assignment create](/cli/azure/policy/assignment#az-policy-assignment-create) с параметром **params** ;
+- Azure PowerShell: командлет [New-AzPolicyAssignment](/powershell/module/az.resources/New-Azpolicyassignment) с параметром **PolicyParameter** ;
 - REST API: операция _PUT_ [create](/rest/api/resources/policyassignments/create) в тексте запроса в качестве значения свойства **properties.parameters**.
 
-## <a name="policy-rules-and-arrays"></a>Правила политики и массивы
-
-### <a name="array-conditions"></a>Условия массива
+## <a name="array-conditions"></a>Условия массива
 
 Параметр _типа_
 **массива** можно использовать только с [условиями](../concepts/definition-structure.md#conditions) правила политики `in` и `notIn`. В качестве примера возьмем следующее определение политики с условием `equals`:
@@ -136,63 +134,338 @@ ms.locfileid: "91576903"
 
 - "Политику "{GUID}" не удалось параметризовать из-за ошибок проверки. Убедитесь в том, что параметры политики определены правильно. Внутреннее исключение: "Результат вычисления выражения языка "[parameters('allowedLocations')]" имеет тип "Array"; ожидаемый тип — "String"."
 
-Ожидаемый **тип** условия `equals` — _string_. Так как **allowedLocations** определен с **типом** _массива_, подсистема политик вычисляет выражение языка и выдает ошибку. При условии `in` и `notIn` подсистема политик ожидает **тип** _массива_ в выражении языка. Чтобы устранить эту ошибку, измените `equals` на `in` или `notIn`.
+Ожидаемый **тип** условия `equals` — _string_. Так как **allowedLocations** определен с **типом** _массива_ , подсистема политик вычисляет выражение языка и выдает ошибку. При условии `in` и `notIn` подсистема политик ожидает **тип** _массива_ в выражении языка. Чтобы устранить эту ошибку, измените `equals` на `in` или `notIn`.
 
-### <a name="evaluating-the--alias"></a>Вычисление псевдонима [*]
+## <a name="referencing-array-resource-properties"></a>Ссылки на свойства ресурсов массива
 
-Псевдонимы, к именам которых добавлена строка **\[\*\]** , имеют **тип** _массива_. Вместо вычисления значения всего массива **\[\*\]** позволяет вычислить каждый элемент массива по отдельности с логическим И между элементами. Существует три стандартных сценария, в которых полезно вычисление отдельных элементов: совпадение с _ни одним_, _любым_ или _всеми_ элементами. В сложных сценариях используйте [count](../concepts/definition-structure.md#count).
+Во многих вариантах использования требуется работа со свойствами массива в вычисляемом ресурсе. Для некоторых сценариев требуется ссылка на весь массив (например, проверку его длины). Для других требуется применение условия к каждому отдельному элементу массива (например, убедитесь, что все правила брандмауэра блокируют доступ из Интернета). Основные сведения о различных способах, с помощью которых политика Azure может ссылаться на свойства ресурсов, а также о том, как эти ссылки ведут себя, когда они ссылаются на свойства массива, являются ключом для написания условий, охватывающих эти сценарии.
 
-Подсистема политик активирует **действие** в блоке **then** только в том случае, если правило **if** имеет значение true.
-Этот факт важен для понимания того, как **\[\*\]** вычисляет каждый отдельный элемент массива.
+### <a name="referencing-resource-properties"></a>Ссылки на свойства ресурсов
+На свойства ресурсов можно ссылаться в политике Azure, используя [псевдонимы](../concepts/definition-structure.md#aliases) . Существует два способа ссылки на значения свойства ресурса в политике Azure:
 
-Вот пример правила политики для приведенной ниже таблицы сценариев:
+- Используйте условие [поля](../concepts/definition-structure.md#fields) , чтобы проверить, соответствуют ли **все** выбранные свойства ресурса условию. Пример
+
+  ```json
+  {
+    "field" : "Microsoft.Test/resourceType/property",
+    "equals": "value"
+  }
+  ```
+
+- Используйте `field()` функцию для доступа к значению свойства. Пример
+
+  ```json
+  {
+    "value": "[take(field('Microsoft.Test/resourceType/property'), 7)]",
+    "equals": "prefix_"
+  }
+  ```
+
+Условие поля имеет неявное поведение "все". Если псевдоним представляет коллекцию значений, он проверяет, соответствуют ли все отдельные значения условию. `field()`Функция возвращает значения, представленные псевдонимом "как есть", который затем может управляться другими функциями шаблонов.
+
+### <a name="referencing-array-fields"></a>Ссылки на поля массивов
+
+Свойства ресурсов массива обычно представлены двумя разными типами псевдонимов. Один псевдоним "Обычная" и [псевдонимы массива](../concepts/definition-structure.md#understanding-the--alias) , `[*]` присоединенные к нему:
+
+- `Microsoft.Test/resourceType/stringArray`
+- `Microsoft.Test/resourceType/stringArray[*]`
+
+#### <a name="referencing-the-array"></a>Ссылка на массив
+
+Первый псевдоним представляет одно значение, значение `stringArray` свойства из содержимого запроса. Поскольку значение этого свойства является массивом, оно не очень полезно в условиях политики. Пример:
 
 ```json
-"policyRule": {
-    "if": {
-        "allOf": [
-            {
-                "field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules",
-                "exists": "true"
-            },
-            <-- Condition (see table below) -->
-        ]
-    },
-    "then": {
-        "effect": "[parameters('effectType')]"
-    }
+{
+  "field": "Microsoft.Test/resourceType/stringArray",
+  "equals": "..."
 }
 ```
 
-Массив **ipRules** для приведенной ниже таблицы сценариев выглядит так:
+Это условие сравнивает весь `stringArray` массив с одним строковым значением. Большинство условий, в том числе `equals` , принимают только строковые значения, поэтому при сравнении массива со строкой не используется. Основной сценарий, в котором используется ссылка на свойство Array, полезен при проверке существования этого свойства:
 
 ```json
-"ipRules": [
-    {
-        "value": "127.0.0.1",
-        "action": "Allow"
-    },
-    {
-        "value": "192.168.1.1",
-        "action": "Allow"
-    }
-]
+{
+  "field": "Microsoft.Test/resourceType/stringArray",
+  "exists": "true"
+}
 ```
 
-Для каждого примера условия ниже замените `<field>` на `"field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].value"`.
+При использовании `field()` функции возвращаемое значение представляет собой массив из содержимого запроса, который затем можно использовать с любыми [поддерживаемыми шаблонными функциями](../concepts/definition-structure.md#policy-functions) , принимающими аргументы массива. Например, следующее условие проверяет, имеет ли длина `stringArray` значение больше 0:
 
-Ниже приведены результаты сочетания условия с примером правила политики и массивом существующих значений, приведенными выше.
+```json
+{
+  "value": "[length(field('Microsoft.Test/resourceType/stringArray'))]",
+  "greater": 0
+}
+```
 
-|Условие |Результат | Сценарий |Объяснение |
-|-|-|-|-|
-|`{<field>,"notEquals":"127.0.0.1"}` |Ничего |Ни одного совпадения |Один элемент массива вычисляется как false (127.0.0.1 != 127.0.0.1), а другой — как true (127.0.0.1 != 192.168.1.1), поэтому условие **notEquals** имеет значение _false_ и действие не активируется. |
-|`{<field>,"notEquals":"10.0.4.1"}` |Эффект политики |Ни одного совпадения |Оба элемента массива вычисляются как true (10.0.4.1 != 127.0.0.1 и 10.0.4.1 != 192.168.1.1), поэтому условие **notEquals** имеет значение _true_ и действие активируется. |
-|`"not":{<field>,"notEquals":"127.0.0.1" }` |Эффект политики |Одно или несколько совпадений |Один элемент массива вычисляется как false (127.0.0.1 != 127.0.0.1), а другой — как true (127.0.0.1 != 192.168.1.1), поэтому условие **notEquals** имеет значение _false_. Логический оператор вычисляется как true (**не** _false_), поэтому действие активируется. |
-|`"not":{<field>,"notEquals":"10.0.4.1"}` |Ничего |Одно или несколько совпадений |Оба элемента массива вычисляются как true (10.0.4.1 != 127.0.0.1 и 10.0.4.1 != 192.168.1.1), поэтому условие **notEquals** имеет значение _true_. Логический оператор вычисляется как false (**не** _true_), поэтому действие не активируется. |
-|`"not":{<field>,"Equals":"127.0.0.1"}` |Эффект политики |Не все совпадают |Один элемент массива вычисляется как true (127.0.0.1 == 127.0.0.1), а другой — как false (127.0.0.1 == 192.168.1.1), поэтому условие **Equals** имеет значение _false_. Логический оператор вычисляется как true (**не** _false_), поэтому действие активируется. |
-|`"not":{<field>,"Equals":"10.0.4.1"}` |Эффект политики |Не все совпадают |Оба элемента массива вычисляются как false (10.0.4.1 == 127.0.0.1 и 10.0.4.1 == 192.168.1.1), поэтому условие **Equals** имеет значение _false_. Логический оператор вычисляется как true (**не** _false_), поэтому действие активируется. |
-|`{<field>,"Equals":"127.0.0.1"}` |Ничего |Совпадают все |Один элемент массива вычисляется как true (127.0.0.1 == 127.0.0.1), а другой — как false (127.0.0.1 == 192.168.1.1), поэтому условие **Equals** имеет значение _false_ и действие не активируется. |
-|`{<field>,"Equals":"10.0.4.1"}` |Ничего |Совпадают все |Оба элемента массива вычисляются как false (10.0.4.1 == 127.0.0.1 и 10.0.4.1 == 192.168.1.1), поэтому условие **Equals** имеет значение _false_ и действие не активируется. |
+#### <a name="referencing-the-array-members-collection"></a>Ссылка на коллекцию элементов массива
+
+Псевдонимы, использующие `[*]` синтаксис, представляют **коллекцию значений свойств, выбранных из свойства массива** , что отличается от выбора самого свойства массива. В случае `Microsoft.Test/resourceType/stringArray[*]` он возвращает коллекцию, имеющую все члены `stringArray` . Как упоминалось ранее, `field` Условие проверяет, что все выбранные свойства ресурсов соответствуют условию, поэтому следующее условие выполняется, только если **все** члены `stringArray` равны "" значению "".
+
+```json
+{
+  "field": "Microsoft.Test/resourceType/stringArray[*]",
+  "equals": "value"
+}
+```
+
+Если массив содержит объекты, `[*]` можно использовать псевдоним для выбора значения определенного свойства из каждого члена массива. Пример
+
+```json
+{
+  "field": "Microsoft.Test/resourceType/objectArray[*].property",
+  "equals": "value"
+}
+```
+
+Это условие имеет значение true, если значения всех `property` свойств в `objectArray` равны `"value"` .
+
+При использовании `field()` функции для ссылки на псевдоним массива возвращаемое значение является массивом всех выбранных значений. Такое поведение означает, что общий вариант использования `field()` функции, который позволяет применять функции шаблонов к значениям свойств ресурсов, очень ограничен. В этом случае можно использовать только те функции шаблона, которые принимают аргументы массива. Например, длину массива можно получить с помощью `[length(field('Microsoft.Test/resourceType/objectArray[*].property'))]` . Однако более сложные сценарии, такие как применение функции шаблона к каждому элементу массива и его сравнение с нужным значением, возможны только при использовании `count` выражения. Дополнительные сведения см. в разделе [выражение Count](#count-expressions).
+
+Итоговые сведения см. в следующем примере содержимого ресурса и выбранных значениях, возвращенных различными псевдонимами:
+
+```json
+{
+  "tags": {
+    "env": "prod"
+  },
+  "properties":
+  {
+    "stringArray": [ "a", "b", "c" ],
+    "objectArray": [
+      {
+        "property": "value1",
+        "nestedArray": [ 1, 2 ]
+      },
+      {
+        "property": "value2",
+        "nestedArray": [ 3, 4 ]
+      }
+    ]
+  }
+}
+```
+
+При использовании условия поля в примере содержимого ресурса будут получены следующие результаты.
+
+| Псевдоним | Выбранные значения |
+|:--- |:---|
+| `Microsoft.Test/resourceType/missingArray` | `null` |
+| `Microsoft.Test/resourceType/missingArray[*]` | Пустая коллекция значений. |
+| `Microsoft.Test/resourceType/missingArray[*].property` | Пустая коллекция значений. |
+| `Microsoft.Test/resourceType/stringArray` | `["a", "b", "c"]` |
+| `Microsoft.Test/resourceType/stringArray[*]` | `"a"`, `"b"`, `"c"` |
+| `Microsoft.Test/resourceType/objectArray[*]` |  `{ "property": "value1", "nestedArray": [ 1, 2 ] }`,<br/>`{ "property": "value2", "nestedArray": [ 3, 4 ] }`|
+| `Microsoft.Test/resourceType/objectArray[*].property` | `"value1"`, `"value2"` |
+| `Microsoft.Test/resourceType/objectArray[*].nestedArray` | `[ 1, 2 ]`, `[ 3, 4 ]` |
+| `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` | `1`, `2`, `3`, `4` |
+
+При использовании `field()` функции в примере содержимого ресурса будут получены следующие результаты.
+
+| Expression | Возвращаемое значение |
+|:--- |:---|
+| `[field('Microsoft.Test/resourceType/missingArray')]` | `""` |
+| `[field('Microsoft.Test/resourceType/missingArray[*]')]` | `[]` |
+| `[field('Microsoft.Test/resourceType/missingArray[*].property')]` | `[]` |
+| `[field('Microsoft.Test/resourceType/stringArray')]` | `["a", "b", "c"]` |
+| `[field('Microsoft.Test/resourceType/stringArray[*]')]` | `["a", "b", "c"]` |
+| `[field('Microsoft.Test/resourceType/objectArray[*]')]` |  `[{ "property": "value1", "nestedArray": [ 1, 2 ] }, { "property": "value2", "nestedArray": [ 3, 4 ] }]`|
+| `[field('Microsoft.Test/resourceType/objectArray[*].property')]` | `["value1", "value2"]` |
+| `[field('Microsoft.Test/resourceType/objectArray[*].nestedArray')]` | `[[ 1, 2 ], [ 3, 4 ]]` |
+| `[field('Microsoft.Test/resourceType/objectArray[*].nestedArray[*]')]` | `[1, 2, 3, 4]` |
+
+## <a name="count-expressions"></a>Выражения Count
+
+Число выражений [Count](../concepts/definition-structure.md#count) подсчитывает количество элементов массива, соответствующих условию, и сравнивает их с целевым значением. `Count` является более интуитивным и универсальным для оценки массивов по сравнению с `field` условиями. Синтаксис:
+
+```json
+{
+  "count": {
+    "field": <[*] alias>,
+    "where": <optional policy condition expression>
+  },
+  "equals|greater|less|any other operator": <target value>
+}
+```
+
+При использовании без условия "Where" `count` просто возвращает длину массива. В примере содержимого ресурса из предыдущего раздела `count` вычисляется следующее выражение, `true` поскольку `stringArray` имеет три члена:
+
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/stringArray[*]"
+  },
+  "equals": 3
+}
+```
+
+Это поведение также работает с вложенными массивами. Например, следующее `count` выражение вычисляется `true` как, так как в массивах есть четыре члена массива `nestedArray` :
+
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/objectArray[*].nestedArray[*]"
+  },
+  "greaterOrEquals": 4
+}
+```
+
+Сила `count` в `where` состоянии. Когда оно указано, политика Azure перечисляет элементы массива и оценивает каждое условие, подчисляя число вычисляемых элементов массива `true` . В частности, в каждой итерации `where` оценки условия Политика Azure выбирает один член массива * **i** _ и оценивает содержимое ресурса по `where` условию _*, как если * *_i_*_ является единственным членом array_ *. Наличие только одного члена массива в каждой итерации предоставляет способ применения сложных условий к каждому отдельному элементу массива.
+
+Пример
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/stringArray[*]",
+    "where": {
+      "field": "Microsoft.Test/resourceType/stringArray[*]",
+      "equals": "a"
+    }
+  },
+  "equals": 1
+}
+```
+Чтобы вычислить `count` выражение, политика Azure вычисляет `where` условие 3 раза, по одному разу для каждого члена `stringArray` , подсчитывающее количество раз, в которое оно было оценено `true` . Если `where` условие ссылается на `Microsoft.Test/resourceType/stringArray[*]` члены массива, вместо того чтобы выбирать все члены `stringArray` , он будет выбирать только один элемент массива каждый раз:
+
+| Итерация | Выбранные `Microsoft.Test/resourceType/stringArray[*]` значения | `where` Результат оценки |
+|:---|:---|:---|
+| 1 | `"a"` | `true` |
+| 2 | `"b"` | `false` |
+| 3 | `"c"` | `false` |
+
+И, таким же, `count` будет возвращен `1` .
+
+Вот более сложное выражение:
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/objectArray[*]",
+    "where": {
+      "allOf": [
+        {
+          "field": "Microsoft.Test/resourceType/objectArray[*].property",
+          "equals": "value2"
+        },
+        {
+          "field": "Microsoft.Test/resourceType/objectArray[*].nestedArray[*]",
+          "greater": 2
+        }
+      ]
+    }
+  },
+  "equals": 1
+}
+```
+
+| Итерация | Выбранные значения | `where` Результат оценки |
+|:---|:---|:---|
+| 1 | `Microsoft.Test/resourceType/objectArray[*].property` => `"value1"` </br> `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `1`, `2` | `false` |
+| 2 | `Microsoft.Test/resourceType/objectArray[*].property` => `"value2"` </br> `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `3`, `4`| `true` |
+
+И поэтому `count` возвращает `1` .
+
+Тот факт, что `where` выражение вычисляется по **всему** содержимому запроса (с изменениями только для члена массива, перечисленного в настоящее время) означает, что `where` условие также может ссылаться на поля за пределами массива:
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/objectArray[*]",
+    "where": {
+      "field": "tags.env",
+      "equals": "prod"
+    }
+  }
+}
+```
+
+| Итерация | Выбранные значения | `where` Результат оценки |
+|:---|:---|:---|
+| 1 | `tags.env` => `"prod"` | `true` |
+| 2 | `tags.env` => `"prod"` | `true` |
+
+Выражения вложенных подсчетов также разрешены:
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/objectArray[*]",
+    "where": {
+      "allOf": [
+        {
+          "field": "Microsoft.Test/resourceType/objectArray[*].property",
+          "equals": "value2"
+        },
+        {
+          "count": {
+            "field": "Microsoft.Test/resourceType/objectArray[*].nestedArray[*]",
+            "where": {
+              "field": "Microsoft.Test/resourceType/objectArray[*].nestedArray[*]",
+              "equals": 3
+            },
+            "greater": 0
+          }
+        }
+      ]
+    }
+  }
+}
+```
+ 
+| Итерация внешнего цикла | Выбранные значения | Итерация внутреннего цикла | Выбранные значения |
+|:---|:---|:---|:---|
+| 1 | `Microsoft.Test/resourceType/objectArray[*].property` => `"value1`</br> `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `1`, `2` | 1 | `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `1` |
+| 1 | `Microsoft.Test/resourceType/objectArray[*].property` => `"value1`</br> `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `1`, `2` | 2 | `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `2` |
+| 2 | `Microsoft.Test/resourceType/objectArray[*].property` => `"value2`</br> `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `3`, `4` | 1 | `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `3` |
+| 2 | `Microsoft.Test/resourceType/objectArray[*].property` => `"value2`</br> `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `3`, `4` | 2 | `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `4` |
+
+### <a name="the-field-function-inside-where-conditions"></a>`field()`Функция в `where` условиях
+
+Способ `field()` поведения функций в `where` условии основан на следующих понятиях:
+1. Псевдонимы массивов разрешаются в коллекцию значений, выбранных из всех элементов массива.
+1. `field()` функции, ссылающиеся на псевдонимы массивов, возвращают массив с выбранными значениями.
+1. Обращение к подсчитанному псевдониму массива внутри `where` условия возвращает коллекцию с одним значением, выбранным из члена массива, который вычисляется в текущей итерации.
+
+Это означает, что при ссылке на элемент counted Array с `field()` функцией внутри `where` условия **она возвращает массив с одним элементом**. Хотя это и не может быть интуитивно понятным, оно согласуется с идеями того, что псевдонимы массивов всегда возвращают коллекцию выбранных свойств. Ниже приведен пример:
+
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/stringArray[*]",
+    "where": {
+      "field": "Microsoft.Test/resourceType/stringArray[*]",
+      "equals": "[field('Microsoft.Test/resourceType/stringArray[*]')]"
+    }
+  },
+  "equals": 0
+}
+```
+
+| Итерация | Значения выражений | `where` Результат оценки |
+|:---|:---|:---|
+| 1 | `Microsoft.Test/resourceType/stringArray[*]` => `"a"` </br>  `[field('Microsoft.Test/resourceType/stringArray[*]')]` => `[ "a" ]` | `false` |
+| 2 | `Microsoft.Test/resourceType/stringArray[*]` => `"b"` </br>  `[field('Microsoft.Test/resourceType/stringArray[*]')]` => `[ "b" ]` | `false` |
+| 3 | `Microsoft.Test/resourceType/stringArray[*]` => `"c"` </br>  `[field('Microsoft.Test/resourceType/stringArray[*]')]` => `[ "c" ]` | `false` |
+
+Таким образом, при необходимости доступа к значению подсчитанного псевдонима массива с `field()` функцией, способ сделать это заключается в заключении его в оболочку с помощью `first()` функции-шаблона:
+
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/stringArray[*]",
+    "where": {
+      "field": "Microsoft.Test/resourceType/stringArray[*]",
+      "equals": "[first(field('Microsoft.Test/resourceType/stringArray[*]'))]"
+    }
+  }
+}
+```
+
+| Итерация | Значения выражений | `where` Результат оценки |
+|:---|:---|:---|
+| 1 | `Microsoft.Test/resourceType/stringArray[*]` => `"a"` </br>  `[first(field('Microsoft.Test/resourceType/stringArray[*]'))]` => `"a"` | `true` |
+| 2 | `Microsoft.Test/resourceType/stringArray[*]` => `"b"` </br>  `[first(field('Microsoft.Test/resourceType/stringArray[*]'))]` => `"b"` | `true` |
+| 3 | `Microsoft.Test/resourceType/stringArray[*]` => `"c"` </br>  `[first(field('Microsoft.Test/resourceType/stringArray[*]'))]` => `"c"` | `true` |
+
+Полезные примеры см. в разделе [примеры подсчета](../concepts/definition-structure.md#count-examples).
 
 ## <a name="modifying-arrays"></a>Изменение массивов
 

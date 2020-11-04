@@ -2,16 +2,16 @@
 title: Устранение неполадок с runbook службы автоматизации Azure
 description: В этой статье рассказывается, как устранять проблемы с последовательностями runbook службы автоматизации Azure.
 services: automation
-ms.date: 07/28/2020
+ms.date: 11/03/2020
 ms.topic: conceptual
 ms.service: automation
 ms.custom: has-adal-ref
-ms.openlocfilehash: 1cbb5be8c1a4045b218c0e6bf5ac7ed0b901aa80
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e173e76b80717d6685e9a6b383ee98eddf910f5
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87904808"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323484"
 ---
 # <a name="troubleshoot-runbook-issues"></a>Устранение неполадок с последовательностями runbook
 
@@ -42,7 +42,7 @@ ms.locfileid: "87904808"
     * [Продлите сертификат](../manage-runas-account.md#cert-renewal), если истек срок действия учетной записи запуска от имени.
     * [Продлите веб-перехватчик](../automation-webhooks.md#renew-a-webhook), если вы пытаетесь использовать для запуска runbook веб-перехватчик с истекшим сроком действия.
     * [Проверьте состояния заданий](../automation-runbook-execution.md#job-statuses), чтобы определить текущие состояния runbook и возможные причины проблемы.
-    * [Добавьте в последовательность runbook дополнительные выходные данные](../automation-runbook-output-and-messages.md#monitor-message-streams), чтобы определить, что происходит перед приостановкой ее выполнения.
+    * [Добавьте в последовательность runbook дополнительные выходные данные](../automation-runbook-output-and-messages.md#working-with-message-streams), чтобы определить, что происходит перед приостановкой ее выполнения.
     * [Обработайте исключения](../automation-runbook-execution.md#exceptions), вызываемые заданием.
 
 1. Выполните этот шаг, если задание runbook или среда с гибридной рабочей ролью Runbook не отвечает.
@@ -155,7 +155,7 @@ Run Login-AzureRMAccount to login.
 
     ![Управление доступом](../media/troubleshoot-runbooks/access-control.png)
 
-1. Добавьте **идентификатор приложения**, полученный ранее. Выберите разрешения на уровне **Участник**.
+1. Добавьте **идентификатор приложения** , полученный ранее. Выберите разрешения на уровне **Участник**.
 
     ![Добавление назначения роли](../media/troubleshoot-runbooks/add-role-assignment.png)
 
@@ -201,7 +201,7 @@ The subscription named <subscription name> cannot be found.
 Выполните следующие действия, чтобы определить, пройдена ли проверка подлинности в Azure и есть ли доступ к подписке, которую вы пытаетесь выбрать.
 
 1. Проверьте скрипт вне службы автоматизации Azure и убедитесь, что он может работать автономно.
-1. Убедитесь, что скрипт запускает командлет [Connect-AzAccount](/powershell/module/Az.Accounts/Connect-AzAccount?view=azps-3.7.0) перед запуском командлета `Select-*`.
+1. Убедитесь, что скрипт запускает командлет [Connect-AzAccount](/powershell/module/Az.Accounts/Connect-AzAccount) перед запуском командлета `Select-*`.
 1. К началу вашего модуля runbook добавьте `Disable-AzContextAutosave –Scope Process`. Этот командлет обеспечит применение любых учетных данных только к выполнению текущего модуля runbook.
 1. Если это сообщение об ошибке не исчезло, измените код, добавив параметр `AzContext` для `Connect-AzAccount`, а затем выполните код.
 
@@ -398,7 +398,7 @@ Object reference not set to an instance of an object
 
 ### <a name="resolution"></a>Решение
 
-Реализуйте логику опроса и используйте для получения выходных данных командлет [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0). Пример этой логики определяется здесь:
+Реализуйте логику опроса и используйте для получения выходных данных командлет [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput). Пример этой логики определяется здесь:
 
 ```powershell
 $automationAccountName = "ContosoAutomationAccount"
@@ -476,14 +476,14 @@ Cannot convert the <ParameterType> value of type Deserialized <ParameterType> to
 
 ### <a name="cause"></a>Причина
 
-Эта ошибка может происходить при извлечении выходных данных задания из последовательности runbook с множеством [подробных потоков](../automation-runbook-output-and-messages.md#monitor-verbose-stream).
+Эта ошибка может происходить при извлечении выходных данных задания из последовательности runbook с множеством [подробных потоков](../automation-runbook-output-and-messages.md#write-output-to-verbose-stream).
 
 ### <a name="resolution"></a>Решение
 
 Чтобы устранить эту ошибку, выполните одно из следующих действий.
 
 * изменить модуль Runbook и сократить число создаваемых потоков заданий;
-* уменьшите количество потоков, полученных при выполнении командлета. Для этого можно задать значение параметра `Stream` для командлета [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0), чтобы получить только потоки вывода. 
+* уменьшите количество потоков, полученных при выполнении командлета. Для этого можно задать значение параметра `Stream` для командлета [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput), чтобы получить только потоки вывода. 
 
 ## <a name="scenario-runbook-job-fails-because-allocated-quota-was-exceeded"></a><a name="quota-exceeded"></a>Сценарий. Не удается выполнить задание runbook из-за превышения выделенной квоты
 
@@ -505,8 +505,8 @@ The quota for the monthly total job run time has been reached for this subscript
 
 1. Войдите в свою подписку Azure.
 1. Выберите учетную запись службы автоматизации, которую вы хотите обновить.
-1. Выберите **Параметры**, а затем — **Цены**.
-1. В нижней части страницы нажмите кнопку **Включить**, чтобы обновить свою учетную запись до уровня "Базовый".
+1. Выберите **Параметры** , а затем — **Цены**.
+1. В нижней части страницы нажмите кнопку **Включить** , чтобы обновить свою учетную запись до уровня "Базовый".
 
 ## <a name="scenario-runbook-output-stream-greater-than-1-mb"></a><a name="output-stream-greater-1mb"></a>Сценарий: поток вывода Runbook больше 1 МБ
 
@@ -576,7 +576,7 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 
 Эту проблему можно решить двумя способами:
 
-* Вместо [Start-Job](/powershell/module/microsoft.powershell.core/start-job?view=powershell-7) используйте [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) для запуска runbook.
+* Вместо [Start-Job](/powershell/module/microsoft.powershell.core/start-job) используйте [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook) для запуска runbook.
 * Попытайтесь запустить runbook с использованием гибридной рабочей роли Runbook.
 
 Дополнительные сведения об этом и других видах поведения последовательностей runbook службы автоматизации Azure см. в статье [о выполнении runbook в службе автоматизации Azure](../automation-runbook-execution.md).
@@ -605,8 +605,8 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 Командлеты PowerShell для реализации дочерних runbook:
 
-* [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Этот командлет позволяет запустить runbook и передать в него параметры.
-* [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0). Если есть операции, которые нужно выполнить после выполнения дочерней последовательности runbook, этот командлет позволяет проверить состояние задания для каждой дочерней последовательности.
+* [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook). Этот командлет позволяет запустить runbook и передать в него параметры.
+* [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob). Если есть операции, которые нужно выполнить после выполнения дочерней последовательности runbook, этот командлет позволяет проверить состояние задания для каждой дочерней последовательности.
 
 ## <a name="scenario-error-in-job-streams-about-the-get_serializationsettings-method"></a><a name="get-serializationsettings"></a>Сценарий. Ошибка в потоках заданий из-за метода get_SerializationSettings
 
@@ -642,7 +642,7 @@ At line:16 char:1
 
 ### <a name="cause"></a>Причина
 
-Эта проблема может возникать, поскольку песочницы Azure запрещают доступ ко всем COM-серверам вне процессов. Например, изолированное приложение или последовательность runbook не может вызывать инструментарий управления Windows (WMI) или службу установщика Windows (msiserver.exe). 
+Эта проблема может возникать, поскольку песочницы Azure запрещают доступ ко всем COM-серверам вне процессов. Например, изолированное приложение или последовательность runbook не может вызывать инструментарий управления Windows (WMI) или службу установщика Windows (msiserver.exe).
 
 ### <a name="resolution"></a>Решение
 

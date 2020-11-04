@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: e54e0ed1a3292cee400774d02f61514f54370151
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 761976741bf794a21182e8f962b274ae32925060
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85208541"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324479"
 ---
 # <a name="what-is-workload-management"></a>Что такое управление рабочей нагрузкой?
 
@@ -42,7 +42,7 @@ ms.locfileid: "85208541"
 
 Например, незапланированное назначение членства в роли smallrc позволяло пользователю использовать полный объем памяти в системе.  Использование классов ресурсов не предусматривало резервирование ресурсов, чтобы обеспечить их доступность для критически важных рабочих нагрузок.
 
-Управление рабочей нагрузкой в пуле Synapse SQL описывают три базовые концепции Azure Synapse: [классификация](sql-data-warehouse-workload-classification.md), [важность](sql-data-warehouse-workload-importance.md) и [изоляция](sql-data-warehouse-workload-isolation.md) рабочих нагрузок.  Эти возможности позволяют выборочно управлять тем, как рабочие нагрузки потребляют системные ресурсы.
+Управление рабочей нагрузкой выделенного пула SQL в Azure синапсе состоит из трех высокоуровневых концепций: [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md), [важность рабочей нагрузки](sql-data-warehouse-workload-importance.md)и [изоляция рабочей нагрузки](sql-data-warehouse-workload-isolation.md).  Эти возможности позволяют выборочно управлять тем, как рабочие нагрузки потребляют системные ресурсы.
 
 Классификация рабочих нагрузок означает назначение запросов определенным группам рабочих нагрузок с указанным уровнем важности.  Исторически это назначение выполнялось через членство в ролях с помощью команды [sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Теперь это действие можно выполнить с помощью инструкции [CREATE WORKLOAD CLASSIFER](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Возможность классификации предоставляет расширенный набор параметров для классификации запросов, таких как метка, сеанс и время.
 

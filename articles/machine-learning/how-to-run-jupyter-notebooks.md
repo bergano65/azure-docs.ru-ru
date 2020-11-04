@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 06/27/2020
-ms.openlocfilehash: 654c1beb0f8f544219ed802cab92f06055d70960
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: d253699199617489947dd95a44d9bcd1eff17334
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92628683"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325413"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
 
@@ -188,7 +188,7 @@ ms.locfileid: "92628683"
 
 ### <a name="view-logs-and-output"></a>Просмотр журналов и выходных данных
 
-Используйте [мини-приложения записной книжки](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py&preserve-view=true) для просмотра хода выполнения и журналов. Мини-приложение работает асинхронно и предоставляет обновленные сведения до тех пор, пока обучение не будет завершено. Мини-приложения Машинного обучения Azure также поддерживаются в Jupyter и JupyterLab.
+Используйте [мини-приложения записной книжки](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py) для просмотра хода выполнения и журналов. Мини-приложение работает асинхронно и предоставляет обновленные сведения до тех пор, пока обучение не будет завершено. Мини-приложения Машинного обучения Azure также поддерживаются в Jupyter и JupyterLab.
 
 ## <a name="change-the-notebook-environment"></a>Изменение среды записной книжки
 

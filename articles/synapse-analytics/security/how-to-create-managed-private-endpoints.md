@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: fae958542f1bc391f285104d80d1e19131470abe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 919b8fb89e9189df7cb1964cbe0149dc6945ad2d
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87065476"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323159"
 ---
 # <a name="create-a-managed-private-endpoint-to-your-data-source-preview"></a>Создание управляемой частной конечной точки для источника данных (Предварительная версия)
 
@@ -21,12 +21,11 @@ ms.locfileid: "87065476"
 
 ## <a name="step-1-open-your-azure-synapse-workspace-in-azure-portal"></a>Шаг 1. Откройте рабочую область Azure синапсе в портал Azure
 
-Вы можете создать управляемую закрытую конечную точку для источника данных из Azure синапсе Studio. Перейдите на вкладку **Обзор** в портал Azure и выберите **запустить синапсе Studio**.
-![Запуск Azure синапсе Studio](./media/how-to-create-managed-private-endpoints/managed-private-endpoint-1.png)
+Вы можете создать управляемую закрытую конечную точку для источника данных из Azure синапсе Studio. Перейдите на вкладку **Обзор** в портал Azure и выберите **Открыть** в карточке Open синапсе Studio в разделе Приступая к работе.
 
 ## <a name="step-2-navigate-to-the-managed-virtual-networks-tab-in-synapse-studio"></a>Шаг 2. Перейдите на вкладку "управляемые виртуальные сети" в синапсе Studio
 
-В Azure синапсе Studio в области навигации слева выберите вкладку **Управление** . Выберите **управляемые виртуальные сети** и щелкните **+ создать**.
+В Azure синапсе Studio в области навигации слева выберите вкладку **Управление** . Выберите **управляемые частные конечные точки** и щелкните **+ создать**.
 ![Создание новой управляемой частной конечной точки](./media/how-to-create-managed-private-endpoints/managed-private-endpoint-2.png)
 
 ## <a name="step-3-select-the-data-source-type"></a>Шаг 3. Выбор типа источника данных

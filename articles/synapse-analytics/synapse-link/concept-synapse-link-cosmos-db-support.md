@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: d7f1f1f004fb8c9c4d67f409072ce061c6047569
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: fa05f8a8b05a0acddae906a93c90c42424466969
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127017"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322600"
 ---
 # <a name="azure-synapse-link-preview-for-azure-cosmos-db-supported-features"></a>Поддерживаемые функции Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 
@@ -40,7 +40,7 @@ ms.locfileid: "92127017"
 | **запись**   | Можно ли использовать среду выполнения Azure синапсе для записи данных в контейнер Azure Cosmos DB | Да | Нет |
 
 * При записи данных в контейнер Azure Cosmos DB из Spark этот процесс выполняется в хранилище транзакций Azure Cosmos DB. Это влияет на производительность транзакций Azure Cosmos DB путем использования единиц запросов.
-* Интеграция пула SQL с помощью внешних таблиц в настоящее время не поддерживается.
+* Выделенная интеграция пула SQL через внешние таблицы в настоящее время не поддерживается.
  
 ## <a name="supported-code-generated-actions-for-spark"></a>Поддерживаемые действия, создаваемые кодом, для Spark
 
@@ -64,4 +64,4 @@ ms.locfileid: "92127017"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [подключиться к Synapse Link для Azure Cosmos DB](../quickstart-connect-synapse-link-cosmos-db.md).
-* [Узнайте, как отправлять запросы в аналитическое хранилище с помощью Spark](how-to-query-analytical-store-spark.md).
+* [Узнайте, как запрашивать Cosmos DB аналитического хранилища с помощью Spark](how-to-query-analytical-store-spark.md)

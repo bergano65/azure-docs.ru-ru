@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.date: 03/05/2020
-ms.openlocfilehash: 71ac7793fe5226215c5d4eab98f84dba356b114c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f13773a8e3e78451dfb587e55c40a20d1b4b385c
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91275971"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324772"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Интеграция с Git для Машинное обучение Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "91275971"
 
 ## <a name="authenticate-your-git-account-with-ssh"></a>Проверка подлинности учетной записи Git с помощью SSH
 ### <a name="generate-a-new-ssh-key"></a>Создать новый ключ SSH
-1) [Откройте окно терминала](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#terminal) на вкладке машинное обучение Azure Notebook (записная книжка).
+1) [Откройте окно терминала](./how-to-run-jupyter-notebooks.md#terminal) на вкладке машинное обучение Azure Notebook (записная книжка).
 
 2) Вставьте приведенный ниже текст, подставив его в адресе электронной почты.
 
@@ -89,7 +89,7 @@ cat ~/.ssh/id_rsa.pub
 
 + [GitLab](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account)
 
-+ [Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops#step-2--add-the-public-key-to-azure-devops-servicestfs)  Начните с **шага 2**.
++ [Azure DevOps](/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops#step-2--add-the-public-key-to-azure-devops-servicestfs)  Начните с **шага 2**.
 
 + [BitBucket](https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/#SetupanSSHkey-ssh2). Начните с **шага 4**.
 
@@ -115,7 +115,7 @@ Warning: Permanently added 'github.com,192.30.255.112' (RSA) to the list of know
 
 SSH может отобразить отпечаток SSH сервера и попросить его проверить. Следует убедиться, что отображаемый отпечаток соответствует одному из отпечатков пальцев на странице открытых ключей SSH.
 
-SSH отображает этот отпечаток при подключении к неизвестному узлу для защиты от [атак типа "злоумышленник в середине"](https://technet.microsoft.com/library/cc959354.aspx). После принятия отпечатка узла SSH не будет выводить запрос повторно, пока не изменится отпечаток.
+SSH отображает этот отпечаток при подключении к неизвестному узлу для защиты от [атак типа "злоумышленник в середине"](/previous-versions/windows/it-pro/windows-2000-server/cc959354(v=technet.10)). После принятия отпечатка узла SSH не будет выводить запрос повторно, пока не изменится отпечаток.
 
 3) Когда вам будет предложено продолжить подключение, введите `yes` . Git будет клонировать репозиторий и настроить исходный удаленный доступ для подключения по протоколу SSH для будущих команд git.
 
@@ -153,9 +153,9 @@ SSH отображает этот отпечаток при подключени
 ### <a name="azure-portal"></a>Портал Azure
 
 1. На [портале студии](https://ml.azure.com)выберите рабочую область.
-1. Выберите __эксперименты__и выберите один из экспериментов.
+1. Выберите __эксперименты__ и выберите один из экспериментов.
 1. Выберите один из запусков из столбца __номер запуска__ .
-1. Выберите __выходные данные + журналы__, а затем разверните __журналы__ и записи __azureml__ . Выберите ссылку, которая начинается с __ ### \_ Azure__.
+1. Выберите __выходные данные + журналы__ , а затем разверните __журналы__ и записи __azureml__ . Выберите ссылку, которая начинается с __### \_ Azure__.
 
 Записанные в журнал данные содержат текст, похожий на следующий код JSON:
 
@@ -178,7 +178,7 @@ SSH отображает этот отпечаток при подключени
 
 ### <a name="python-sdk"></a>Пакет SDK для Python
 
-После отправки обучающего запуска возвращается объект [запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true) . `properties`Атрибут этого объекта содержит записанные сведения о git. Например, следующий код получает хэш фиксации:
+После отправки обучающего запуска возвращается объект [запуска](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) . `properties`Атрибут этого объекта содержит записанные сведения о git. Например, следующий код получает хэш фиксации:
 
 ```python
 run.properties['azureml.git.commit']
@@ -192,8 +192,8 @@ run.properties['azureml.git.commit']
 az ml run list -e train-on-amlcompute --last 1 -w myworkspace -g myresourcegroup --query '[].properties'
 ```
 
-Дополнительные сведения см. в справочной документации по [AZ ML по запуску](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest&preserve-view=true) .
+Дополнительные сведения см. в справочной документации по [AZ ML по запуску](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md)

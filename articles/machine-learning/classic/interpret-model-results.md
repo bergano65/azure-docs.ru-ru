@@ -8,16 +8,16 @@ ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 11/29/2017
-ms.openlocfilehash: e422c1a7b333254ed49b53bcdf2d10e65f2846e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3cfdeaee863c8e11a76ac5842ae6c35d370e2ae2
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91345323"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322550"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>Интерпретация результатов модели в Студии машинного обучения Azure (классическая версия)
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 В этом разделе объясняется, как визуализировать и интерпретировать результаты прогноза в Машинное обучение Azure Studio (классическая модель). Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.
@@ -267,7 +267,7 @@ ms.locfileid: "91345323"
 
 **искать пользователей, связанных с данным пользователем;**
 
-Выбрав пункт **Related Users** (Связанные пользователи) в меню **Recommender prediction kind** (Тип прогноза системы рекомендаций), мы запросим систему рекомендаций найти пользователей, связанных с указанным пользователем. Связанными пользователями являются пользователи с аналогичными параметрами. В этом сценарии нужно выбрать значение еще одного параметра: *Related user selection* (Выбор связанных пользователей). Параметр **From Users That Rated Items (for model evaluation)**(Из пользователей, которые оценили объекты — для оценки модели) используется преимущественно для оценки модели при обучении. На этом этапе прогнозирования мы выбираем **From All Users** (Из всех пользователей). Визуализация результатов модуля [Score Matchbox Recommender][score-matchbox-recommender] (Оценка модели рекомендаций Matchbox) показана на рис. 23.
+Выбрав пункт **Related Users** (Связанные пользователи) в меню **Recommender prediction kind** (Тип прогноза системы рекомендаций), мы запросим систему рекомендаций найти пользователей, связанных с указанным пользователем. Связанными пользователями являются пользователи с аналогичными параметрами. В этом сценарии нужно выбрать значение еще одного параметра: *Related user selection* (Выбор связанных пользователей). Параметр **From Users That Rated Items (for model evaluation)** (Из пользователей, которые оценили объекты — для оценки модели) используется преимущественно для оценки модели при обучении. На этом этапе прогнозирования мы выбираем **From All Users** (Из всех пользователей). Визуализация результатов модуля [Score Matchbox Recommender][score-matchbox-recommender] (Оценка модели рекомендаций Matchbox) показана на рис. 23.
 
 ![Результат оценки системы рекомендаций — связанные пользователи](./media/interpret-model-results/23.png)
 
@@ -304,10 +304,10 @@ ms.locfileid: "91345323"
 Рис. 26. Результаты веб-службы для задачи рекомендации ресторана
 
 <!-- Module References -->
-[assign-to-clusters]: https://msdn.microsoft.com/library/azure/eed3ee76-e8aa-46e6-907c-9ca767f5c114/
-[execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
-[select-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
-[score-matchbox-recommender]: https://msdn.microsoft.com/library/azure/55544522-9a10-44bd-884f-9a91a9cec2cd/
-[score-model]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
-[train-clustering-model]: https://msdn.microsoft.com/library/azure/bb43c744-f7fa-41d0-ae67-74ae75da3ffd/
-[train-matchbox-recommender]: https://msdn.microsoft.com/library/azure/fa4aa69d-2f1c-4ba4-ad5f-90ea3a515b4c/
+[assign-to-clusters]: /azure/machine-learning/studio-module-reference/assign-data-to-clusters
+[execute-r-script]: /azure/machine-learning/studio-module-reference/execute-r-script
+[select-columns]: /azure/machine-learning/studio-module-reference/select-columns-in-dataset
+[score-matchbox-recommender]: /azure/machine-learning/studio-module-reference/score-matchbox-recommender
+[score-model]: /azure/machine-learning/studio-module-reference/score-model
+[train-clustering-model]: /azure/machine-learning/studio-module-reference/train-clustering-model
+[train-matchbox-recommender]: /azure/machine-learning/studio-module-reference/train-matchbox-recommender

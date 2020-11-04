@@ -11,18 +11,18 @@ ms.date: 09/17/2020
 ms.author: gopalv
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: 3bd4953812ec88f28ac16956a85c95afc5bb8a38
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 2225ef42d8862935e5cd682a3c11a7ce687babab
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999211"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325563"
 ---
 # <a name="advanced-entry-script-authoring"></a>Разработка расширенных сценариев ввода
 
 В этой статье показано, как написать скрипты записи для специализированных вариантов использования.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже есть обученная модель машинного обучения, которую планируется развернуть с помощью Машинное обучение Azure. Дополнительные сведения о развертывании модели см. в [этом руководстве](how-to-deploy-and-where.md).
 
@@ -89,7 +89,7 @@ def run(data):
 
 ## <a name="power-bi-compatible-endpoint"></a>Конечная точка, совместимая с Power BI 
 
-В следующем примере показано, как определить форму API в соответствии с инструкциями выше. Этот метод поддерживается для использования развернутой веб-службы из Power BI. (Дополнительные[сведения об использовании веб-службы из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).)
+В следующем примере показано, как определить форму API в соответствии с инструкциями выше. Этот метод поддерживается для использования развернутой веб-службы из Power BI. (Дополнительные[сведения об использовании веб-службы из Power BI](/power-bi/service-machine-learning-integration).)
 
 ```python
 import json
@@ -312,7 +312,7 @@ second_model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), second_model_na
 
 ### <a name="get_model_path"></a>get_model_path
 
-При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется с методом [model.get_model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py&preserve-view=true#&preserve-view=trueget-model-path-model-name--version-none---workspace-none-) для получения пути к файлу модели или файлам в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
+При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется с методом [model.get_model_path ()](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-model-path-model-name--version-none---workspace-none-) для получения пути к файлу модели или файлам в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
 
 При регистрации модели ей присваивается имя. Имя соответствует месту размещения модели: локально или во время развертывания службы.
 

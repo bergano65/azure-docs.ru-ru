@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/22/2020
-ms.openlocfilehash: 5b40ce0951e2d9c8933d4f0ea9d24b1673e254d6
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 1076b49a101d5657397ef12b8fac672d37e477b0
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495717"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324800"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое рабочая область Машинного обучения Azure?
 
@@ -52,9 +52,9 @@ ms.locfileid: "92495717"
 + В Интернете:
     + [Машинное обучение Azure Studio ](https://ml.azure.com) 
     + [Конструктор Машинного обучения Azure](concept-designer.md) 
-+ В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true).
++ В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
 + В любой среде R с [машинное обучение Azureным пакетом SDK для r (Предварительная версия)](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
-+ В командной строке с помощью [расширения CLI](https://docs.microsoft.com/azure/machine-learning/reference-azure-machine-learning-cli) машинное обучение Azure
++ В командной строке с помощью [расширения CLI](./reference-azure-machine-learning-cli.md) машинное обучение Azure
 + [Расширение Машинное обучение Azure VS Code](how-to-manage-resources-vscode.md#workspaces)
 
 
@@ -103,7 +103,7 @@ ms.locfileid: "92495717"
 + [Учетная запись хранения Azure](https://azure.microsoft.com/services/storage/). используется в качестве хранилища данных по умолчанию для рабочей области.  Здесь также хранятся записные книжки Jupyter, которые используются с Машинное обучение Azureными экземплярами для вычислений. 
   
   > [!IMPORTANT]
-  > По умолчанию учетная запись хранения является учетной записью общего назначения v1. Его можно [Обновить до версии v2 общего назначения](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade) после создания рабочей области. Не включайте иерархическое пространство имен в учетной записи хранения после обновления до общего назначения версии 2.
+  > По умолчанию учетная запись хранения является учетной записью общего назначения v1. Его можно [Обновить до версии v2 общего назначения](../storage/common/storage-account-upgrade.md) после создания рабочей области. Не включайте иерархическое пространство имен в учетной записи хранения после обновления до общего назначения версии 2.
 
   Чтобы использовать существующую учетную запись хранения Azure, она не может быть учетной записью Premium (Premium_LRS и Premium_GRS). Он также не может иметь иерархическое пространство имен (используется с Azure Data Lake Storage 2-го поколения). Ни хранилище класса Premium, ни иерархическое пространство имен не поддерживаются в учетной записи хранения _по умолчанию_ рабочей области. Вы можете использовать хранилище класса Premium или иерархическое пространство имен с учетными записями хранения, _отличными от стандартных_ .
   

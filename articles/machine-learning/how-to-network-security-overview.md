@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperfq1
-ms.openlocfilehash: 7ec62e4a6a864ca37011014341a2d059615873d5
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: fdfaef554e4e641656abd3fd2b4a5d3bbc519ccd
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131944"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325424"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Общие сведения о изоляции и конфиденциальности виртуальной сети
 
@@ -31,10 +31,10 @@ ms.locfileid: "92131944"
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы знакомы со следующими разделами:
-+ [Виртуальные сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
-+ [IP-сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm)
++ [Виртуальные сети Azure](../virtual-network/virtual-networks-overview.md)
++ [IP-сети](../virtual-network/public-ip-addresses.md)
 + [Приватный канал Azure](how-to-configure-private-link.md)
-+ [Группы безопасности сети](../virtual-network/security-overview.md)
++ [Группы безопасности сети](../virtual-network/network-security-groups-overview.md)
 + [Сетевые брандмауэры](../firewall/overview.md)
 
 ## <a name="example-scenario"></a>Пример сценария

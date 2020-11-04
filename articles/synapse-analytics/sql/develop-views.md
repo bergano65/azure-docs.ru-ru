@@ -1,6 +1,6 @@
 ---
-title: Представления T-SQL с использованием синапсе SQL
-description: Советы по использованию представлений T-SQL и разработке решений с помощью синапсе SQL.
+title: Представления T-SQL, использующие пулы SQL
+description: Советы по использованию представлений T-SQL и разработке решений с выделенным пулом SQL и бессерверным пулом SQL Server (Предварительная версия) в Azure синапсе Analytics.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,15 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: fafa0c2e1b02cc49bfb852ed7770b0927b0e9334
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e416974d1326415e9a459e39d7bdea8e3fd8a84c
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90032730"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323810"
 ---
-# <a name="t-sql-views-using-synapse-sql"></a>Представления T-SQL с использованием синапсе SQL
-В этой статье вы найдете советы по использованию представлений T-SQL и разработке решений с помощью синапсе SQL. 
+# <a name="t-sql-views-with-dedicated-sql-pool-and-serverless-sql-pool-preview--in-azure-synapse-analytics"></a>Представления T-SQL с выделенным пулом SQL и бессерверным пулом SQL Server (Предварительная версия) в Azure синапсе Analytics
+
+В этой статье вы найдете советы по использованию представлений T-SQL и разработке решений с помощью выделенного пула SQL и бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics.
 
 ## <a name="why-use-views"></a>Зачем использовать представления
 
@@ -26,12 +27,7 @@ ms.locfileid: "90032730"
 ### <a name="sql-pool---create-view"></a>Пул SQL — создание представления
 
 > [!NOTE]
-> **Пул SQL**: синтаксис для создания представления не рассматривается в этой статье. Дополнительные сведения см. в [документации по CREATE VIEW](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
-
-### <a name="sql-on-demand-preview---create-view"></a>SQL по запросу (Предварительная версия) — создание представления
-
-> [!NOTE]
-> **SQL по запросу**: синтаксис для создания представления не рассматривается в этой статье. Дополнительные сведения см. в [документации по CREATE VIEW](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+> Синтаксис команды CREATE VIEW в этой статье не рассматривается. Дополнительные сведения см. в [документации по CREATE VIEW](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 ## <a name="architectural-abstraction"></a>Архитектурная абстракция
 
@@ -54,7 +50,6 @@ FROM   dbo.DimDate_stg AS stg
 
 RENAME OBJECT DimDate TO DimDate_Old;
 RENAME OBJECT DimDate_New TO DimDate;
-
 ```
 
 Помните, что этот подход может привести к тому, что таблицы появятся и отменялись из представления пользователя и запрашивают сообщение об ошибке "таблица не существует". Представления можно использовать для предоставления пользователям единообразного уровня представления во время переименования базовых объектов.

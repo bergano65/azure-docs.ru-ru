@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 603628e24d7ccdffeafea392ab56aa7e47781a37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ffe1a4b9b32223cc57c6a6399fdc074a9d51d714
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91296490"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322390"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
 
@@ -149,7 +149,7 @@ ms.locfileid: "91296490"
 * [Студия машинного обучения Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 * [Revolution Analytics](https://www.microsoft.com/sql-server/machinelearningserver)
 * [RStudio](https://www.rstudio.com)
-* [Инструменты Python для Visual Studio](https://aka.ms/ptvsdocs)
+* [Инструменты Python для Visual Studio](/visualstudio/python/)
 * [Anaconda](https://www.anaconda.com/)
 * [Записные книжки Jupyter](https://jupyter.org/)
 * [Microsoft Power BI](https://powerbi.microsoft.com)
@@ -158,7 +158,7 @@ ms.locfileid: "91296490"
 
 Ответив на вопросы в предыдущем разделе, вы сможете определить сценарий, наиболее соответствующий вашей ситуации. Примеры сценариев приведены в статье [Сценарии для расширенной аналитики в Машинном обучении Azure](plan-sample-scenarios.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Что такое процесс обработки и анализа данных группы (TDSP)?](overview.md)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: luquinta
 author: luisquintanilla
 ms.date: 08/05/2020
-ms.openlocfilehash: 689b90fc1f45faad72640f47e5eebe936d2dc8b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2ece76ef3594cadfa1fcda89259ee18eb1f9084
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87829396"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324859"
 ---
 # <a name="what-is-responsible-machine-learning-preview"></a>Что такое машинное обучение? (предварительная версия)
 
@@ -73,7 +73,7 @@ ms.locfileid: "87829396"
 
 Гомоморфное шифрование позволяет выполнять вычисления с зашифрованными данными без необходимости доступа к секретному ключу (ключу расшифровки). Результаты вычислений шифруются и могут быть прочитаны только владельцем секретного ключа. Используя шифрование Гомоморфные, операторы облака никогда не будут иметь незашифрованный доступ к данным, на которых они хранятся и на которых осуществляется расчет. Вычисления выполняются непосредственно в зашифрованных данных. Конфиденциальность данных зависит от характера криптографических служб, а владелец данных контролирует все информационные выпуски. Дополнительные сведения о шифровании Гомоморфные в корпорации Майкрософт см. в разделе [Microsoft Research](https://www.microsoft.com/research/project/homomorphic-encryption/).
 
-Чтобы приступить к работе с шифрованием Гомоморфные в Машинное обучение Azure, используйте привязки Python [с шифрованием](https://pypi.org/project/encrypted-inference/) для [Microsoft запечатывания](https://github.com/microsoft/SEAL). Microsoft ЗАПЕЧАТЫВАНИе — это библиотека шифрования Гомоморфные с открытым исходным кодом, которая позволяет выполнять дополнения и умножение в зашифрованных целых числах или реальных числах. Дополнительные сведения о Microsoft SEAL см. на странице [центр архитектуры Azure](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/homomorphic-encryption-seal) или [проекте Microsoft Research](https://www.microsoft.com/research/project/microsoft-seal/).
+Чтобы приступить к работе с шифрованием Гомоморфные в Машинное обучение Azure, используйте привязки Python [с шифрованием](https://pypi.org/project/encrypted-inference/) для [Microsoft запечатывания](https://github.com/microsoft/SEAL). Microsoft ЗАПЕЧАТЫВАНИе — это библиотека шифрования Гомоморфные с открытым исходным кодом, которая позволяет выполнять дополнения и умножение в зашифрованных целых числах или реальных числах. Дополнительные сведения о Microsoft SEAL см. на странице [центр архитектуры Azure](/azure/architecture/solution-ideas/articles/homomorphic-encryption-seal) или [проекте Microsoft Research](https://www.microsoft.com/research/project/microsoft-seal/).
 
 См. Следующий пример, чтобы узнать, [как развернуть зашифрованную веб-службу в машинное обучение Azure](how-to-homomorphic-encryption-seal.md).
 
@@ -96,5 +96,5 @@ ms.locfileid: "87829396"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- Дополнительные сведения см. в разделе [ответственное по инновациям](https://docs.microsoft.com/azure/architecture/guide/responsible-innovation/) , чтобы узнать о рекомендациях.
+- Дополнительные сведения см. в разделе [ответственное по инновациям](/azure/architecture/guide/responsible-innovation/) , чтобы узнать о рекомендациях.
 - Изучите набор рекомендаций [ABOUT ML](https://www.partnershiponai.org/about-ml/) по документированию систем машинного обучения.

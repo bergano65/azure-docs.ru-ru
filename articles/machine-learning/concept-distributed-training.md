@@ -9,12 +9,12 @@ ms.author: nibaccam
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/27/2020
-ms.openlocfilehash: 62edee6a882191551ce2409646ea8b617576c059
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c479a64b2100cfc1a6fdf17f5e6f5636d3a689d
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89651152"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322227"
 ---
 # <a name="distributed-training-with-azure-machine-learning"></a>Распределенное обучение с помощью Машинное обучение Azure
 
@@ -24,9 +24,9 @@ ms.locfileid: "89651152"
 
 ## <a name="deep-learning-and-distributed-training"></a>Глубокое обучение и распределенное обучение 
 
-Существует два основных типа распределенного обучения: [параллелизм данных](#data-parallelism) и [параллелизм моделей](#model-parallelism). Для распределенного обучения по моделям глубокого обучения [пакет SDK для машинное обучение Azure в Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) поддерживает интеграцию с популярными платформами, PyTorch и TensorFlow. Обе платформы используют параллелизм данных для распределенного обучения и могут использовать [хоровод](https://horovod.readthedocs.io/en/latest/summary_include.html) для оптимизации скорости вычислений. 
+Существует два основных типа распределенного обучения: [параллелизм данных](#data-parallelism) и [параллелизм моделей](#model-parallelism). Для распределенного обучения по моделям глубокого обучения [пакет SDK для машинное обучение Azure в Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) поддерживает интеграцию с популярными платформами, PyTorch и TensorFlow. Обе платформы используют параллелизм данных для распределенного обучения и могут использовать [хоровод](https://horovod.readthedocs.io/en/latest/summary_include.html) для оптимизации скорости вычислений. 
 
-* [Распределенное обучение с помощью PyTorch](how-to-train-pytorch.md#distributed-training)
+* [Распределенное обучение с использованием PyTorch](how-to-train-pytorch.md#distributed-training)
 
 * [Распределенное обучение с помощью TensorFlow](how-to-train-tensorflow.md#distributed-training)
 
@@ -48,9 +48,9 @@ ms.locfileid: "89651152"
 
 В случае параллелизма модели рабочие узлы должны синхронизировать общие параметры, как правило, один раз для каждого этапа перенаправления вперед или обратного распространения. Кроме того, более крупные модели не являются проблемой, так как каждый узел работает с подразделом модели для тех же обучающих данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [использовать целевые объекты вычислений для обучения модели](how-to-set-up-training-targets.md) с помощью пакета SDK для Python.
-* Технический пример см. в статье [сценарий эталонной архитектуры](https://docs.microsoft.com/azure/architecture/reference-architectures/ai/training-deep-learning).
+* Технический пример см. в статье [сценарий эталонной архитектуры](/azure/architecture/reference-architectures/ai/training-deep-learning).
 * [Обучение моделей ml с помощью TensorFlow](how-to-train-tensorflow.md).
-* [Обучение моделей ml с помощью PyTorch](how-to-train-pytorch.md). 
+* [Обучение моделей ml с помощью PyTorch](how-to-train-pytorch.md).

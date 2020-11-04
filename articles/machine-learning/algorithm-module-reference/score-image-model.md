@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 05/26/2020
-ms.openlocfilehash: 88ca997e2d22283babf582b10d9b0eeb7de122c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe57a9e8ce9b14f7d1346d819965576770afef3b
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90905182"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324888"
 ---
 # <a name="score-image-model"></a>Оценка моделей изображений
 
@@ -38,8 +38,8 @@ ms.locfileid: "90905182"
 
 ### <a name="publish-scores-as-a-web-service"></a>Публикация оценок как веб-службы
 
-Обычно Оценка используется для возврата выходных данных в составе прогнозной веб-службы. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-deploy) по развертыванию конечной точки в режиме реального времени на основе конвейера в конструкторе машинное обучение Azure.
+Обычно Оценка используется для возврата выходных данных в составе прогнозной веб-службы. Дополнительные сведения см. в [этом руководстве](../tutorial-designer-automobile-price-deploy.md) по развертыванию конечной точки в режиме реального времени на основе конвейера в конструкторе машинное обучение Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure. 
+Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure.

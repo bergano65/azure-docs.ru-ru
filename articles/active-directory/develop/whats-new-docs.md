@@ -1,25 +1,50 @@
 ---
 title: Новые возможности документация по платформе Microsoft Identity
+titleSuffix: Microsoft identity platform
 description: Новая и обновленная документация по платформе Microsoft Identity.
-ms.date: 10/09/2020
+services: active-directory
+author: mmacy
+manager: CelesteDG
+ms.date: 11/03/2020
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-services: active-directory
-author: mmacy
-manager: CelesteDG
-ms.openlocfilehash: e6b1e16666188b21926d7547d80bda87303bc0f1
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d5865810dafef9ce2bb525a8f1b6cdbdb1a86566
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979616"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322572"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Документация по платформе Microsoft Identity: новые возможности
 
 Добро пожаловать в документацию по платформе удостоверений Майкрософт. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца.
+
+## <a name="october-2020"></a>Октябрь 2020 г.
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Краткое руководство. Вход пользователей и получение маркера доступа в веб-приложении Node с помощью потока кода авторизации](quickstart-v2-nodejs-webapp-msal.md)
+- [Как включить единый вход между приложениями в Android с помощью MSAL](msal-android-single-sign-on.md)
+- [Поддержка единого входа и политик защиты приложений в мобильных приложениях, которые вы разрабатываете](mobile-sso-support-overview.md)
+- Документация по платформе Microsoft Identity: новые возможности (в этой статье)
+- [Руководство. Выполнение входа от имени пользователя и вызов защищенного API из приложения Blazor WebAssembly](tutorial-blazor-webassembly.md)
+- [Библиотека веб-аутентификации Microsoft Identity](microsoft-identity-web.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Настраиваемое время существования маркеров в платформе Microsoft Identity (Предварительная версия)](active-directory-configurable-token-lifetimes.md)
+- [Руководство. Sign in any Azure Active Directory user using the multi-tenant application pattern](howto-convert-app-to-be-multi-tenant.md) (Вход любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения)
+- [Краткое руководство. Изменение учетных записей, поддерживаемых приложением](quickstart-modify-supported-accounts.md)
+- [Видео по платформе удостоверений Майкрософт](identity-videos.md)
+- [Руководством по миграции ADAL в MSAL для Android](migrate-android-adal-msal.md)
+- [Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт](quickstart-v2-dotnet-native-aspnet.md)
+- [Учетные данные сертификата проверки подлинности приложения платформы удостоверений Майкрософт](active-directory-certificate-credentials.md)
+- [Учебник. Вход пользователей и вызов Microsoft Graph из приложения iOS или macOS](tutorial-v2-ios.md)
+- [Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)](tutorial-v2-javascript-spa.md)
+- [Руководство по Использование режима общего устройства в приложении Android](tutorial-v2-shared-device-mode.md)
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
@@ -30,7 +55,7 @@ ms.locfileid: "91979616"
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
-- [Руководство. вход пользователей и вызов API Microsoft Graph из приложения Android](tutorial-v2-android.md)
+- [Руководство по Вход пользователей и вызов API Microsoft Graph из приложения Android](tutorial-v2-android.md)
 - [Веб-приложение, которое вызывает веб-API. Конфигурация кода](scenario-web-app-call-api-app-configuration.md)
 - [Веб-приложение, вызывающее веб-API: вызов веб-API](scenario-web-app-call-api-call-api.md)
 - [Веб-API, вызывающий веб-API: конфигурация кода](scenario-web-api-call-api-app-configuration.md)
@@ -62,27 +87,3 @@ ms.locfileid: "91979616"
 - [Краткое руководство. Настройка приложения для предоставления веб-API](quickstart-configure-app-expose-web-apis.md)
 - [Видео по платформе удостоверений Майкрософт](identity-videos.md)
 - [Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт](quickstart-v2-dotnet-native-aspnet.md)
-
-## <a name="july-2020"></a>Июль 2020 г.
-
-### <a name="new-articles"></a>Новые статьи
-
-- [Добавление приложения в коллекцию приложений Azure Active Directory](v2-howto-app-gallery-listing.md)
-- [Получить сертификат AppSource для Azure Active Directory](v2-howto-get-appsource-certified.md)
-
-### <a name="updated-articles"></a>Обновленные статьи
-
-- [Поток On-Behalf-Of в OAuth 2.0 и платформа удостоверений Майкрософт](v2-oauth2-on-behalf-of-flow.md)
-- [Ограничения для URI перенаправления и URL-адресов ответа](reply-url.md)
-- [Защищенный веб-API: конфигурация кода](scenario-protected-web-api-app-configuration.md)
-- [Защищенный веб-API: проверка областей и ролей приложений](scenario-protected-web-api-verification-scope-app-roles.md)
-- [Веб-API, вызывающий веб-API: получение маркера для приложения](scenario-web-api-call-api-acquire-token.md)
-- [Веб-API, вызывающий веб-API: конфигурация кода](scenario-web-api-call-api-app-configuration.md)
-- [Веб-приложение, вызывающее веб-API: получение маркера для приложения](scenario-web-app-call-api-acquire-token.md)
-- [Веб-приложение, которое входит в систему пользователей: конфигурация кода](scenario-web-app-sign-user-app-configuration.md)
-- [Общие сведения о платформе удостоверений Майкрософт](v2-overview.md)
-- [Видео по платформе удостоверений Майкрософт](identity-videos.md)
-- [Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт](quickstart-v2-java-webapp.md)
-- [Потоки проверки подлинности](msal-authentication-flows.md)
-- [Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)](tutorial-v2-windows-uwp.md)
-- [Инициализация клиентских приложений с помощью MSAL.js](msal-js-initializing-client-applications.md)

@@ -1,6 +1,6 @@
 ---
-title: Элементы языка T-SQL
-description: Ссылки на документацию по элементам языка T-SQL, поддерживаемым в пуле SQL синапсе.
+title: Элементы языка T-SQL для выделенного пула SQL
+description: Ссылки на документацию по элементам языка T-SQL, поддерживаемой для выделенного пула SQL в Azure синапсе Analytics.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 06/13/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: bccbe67c1ea4b93a7a1938fbab6b6f3d06cb5da3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 966df3be13eda4450608d42890fcfe2240ac61a9
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91289503"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324649"
 ---
-# <a name="t-sql-language-elements-supported-in-synapse-sql-pool"></a>Элементы языка T-SQL, поддерживаемые в пуле SQL синапсе
+# <a name="t-sql-language-elements-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Элементы языка T-SQL для выделенного пула SQL в Azure синапсе Analytics 
 
-Ссылки на документацию по элементам языка T-SQL, поддерживаемым в пуле SQL синапсе.
+Ссылки на документацию по элементам языка T-SQL, поддерживаемым в выделенном пуле SQL.
 
 ## <a name="core-elements"></a>Основные элементы
 
@@ -35,7 +35,7 @@ ms.locfileid: "91289503"
 * [выражения](/sql/t-sql/language-elements/expressions-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [KILL](/sql/t-sql/language-elements/kill-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [Временное решение свойства IDENTITY](/sql/t-sql/statements/create-table-transact-sql-identity-property?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-* [PRINT](/sql/t-sql/language-elements/print-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+* [ПЕЧАТАЛ](/sql/t-sql/language-elements/print-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [USE](/sql/t-sql/language-elements/use-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
 ## <a name="batches-control-of-flow-and-variables"></a>Пакеты, управление потоком и переменные
@@ -288,6 +288,6 @@ ms.locfileid: "91289503"
 * [SET TRANSACTION ISOLATION LEVEL](/sql/t-sql/statements/set-transaction-isolation-level-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [SET XACT_ABORT](/sql/t-sql/statements/set-xact-abort-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные справочные сведения см. [в статьях инструкции T-SQL в пуле СИНАПСЕ SQL](sql-data-warehouse-reference-tsql-statements.md)и [системные представления в пуле SQL синапсе](../sql/reference-tsql-system-views.md).
+Дополнительные справочные сведения см. [в статьях инструкции T-SQL в выделенном пуле SQL](sql-data-warehouse-reference-tsql-statements.md)и [системные представления в выделенном пуле SQL](../sql/reference-tsql-system-views.md).

@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: marhamil
 ms.custom: devx-track-python
-ms.openlocfilehash: 4f6fa73130e3e78b573a866dbb6524acbc88c50c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa650fe9cb7df64a6a7a948224be225ecfad9057
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88691468"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324614"
 ---
 # <a name="recipe-predictive-maintenance-with-the-cognitive-services-for-big-data"></a>Рецепт: диагностическое обслуживание с помощью Cognitive Services для больших данных
 
-Этот рецепт показывает, как можно использовать Azure синапсе Analytics и Cognitive Services в Spark для прогнозного обслуживания устройств IoT. Мы будем следовать примерам [ссылок CosmosDB и синапсе](https://github.com/Azure-Samples/cosmosdb-synapse-link-samples) . Чтобы упростить работу, в этом рецепте мы будем считывать данные прямо из CSV-файла, а не получать потоковые данные через CosmosDB и синапсе Link. Мы настоятельно рекомендуем ознакомиться с примером синапсе Link.
+В этом рецепте показано, как можно использовать Azure синапсе Analytics и Cognitive Services на Apache Spark для диагностического обслуживания устройств IoT. Мы будем следовать примерам [ссылок CosmosDB и синапсе](https://github.com/Azure-Samples/cosmosdb-synapse-link-samples) . Чтобы упростить работу, в этом рецепте мы будем считывать данные прямо из CSV-файла, а не получать потоковые данные через CosmosDB и синапсе Link. Мы настоятельно рекомендуем ознакомиться с примером синапсе Link.
 
 ## <a name="hypothetical-scenario"></a>Гипотетический сценарий
 
@@ -31,7 +31,7 @@ ms.locfileid: "88691468"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
-* [Рабочая область Azure синапсе](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace) , настроенная с [пулом Spark](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool)
+* [Рабочая область Azure синапсе](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace) , настроенная с [бессерверным пулом Apache Spark](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool)
 
 ## <a name="setup"></a>Настройка
 

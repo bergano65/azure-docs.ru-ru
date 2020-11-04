@@ -10,12 +10,12 @@ author: likebupt
 ms.date: 09/09/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 21dad66670da7a538039ae795d6be87cc4dbce96
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f070cfc1fd9b4326c5a80ce31f6263aadbe8e8bc
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90883091"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325443"
 ---
 # <a name="run-batch-predictions-using-azure-machine-learning-designer"></a>Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "90883091"
 > * использование конечной точки конвейера;
 > * управление версиями конечных точек.
 
-Сведения о настройке служб пакетной оценки с помощью пакета SDK см. в соответствующем [практическом руководстве](how-to-run-batch-predictions.md).
+Сведения о настройке служб пакетной оценки с помощью пакета SDK см. в соответствующем [практическом руководстве](./tutorial-pipeline-batch-scoring-classification.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -115,13 +115,13 @@ ms.locfileid: "90883091"
 
     На странице сведений о конвейере отображается подробный журнал выполнения и сведения о строке подключения к вашему конвейеру. 
     
-1. Нажмите **Запустить**, чтобы осуществить выполнение конвейера вручную.
+1. Нажмите **Запустить** , чтобы осуществить выполнение конвейера вручную.
 
     ![Сведения о конвейере](./media/how-to-run-batch-predictions-designer/submit-manual-run.png)
     
 1. Измените параметр, чтобы использовать другой набор данных.
     
-1. Нажмите **Запустить**, чтобы запустить конвейер.
+1. Нажмите **Запустить** , чтобы запустить конвейер.
 
 ### <a name="use-the-rest-endpoint"></a>Использование конечной точки REST
 

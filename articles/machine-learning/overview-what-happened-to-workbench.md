@@ -11,18 +11,18 @@ ms.reviewer: jmartens
 author: j-martens
 ms.author: jmartens
 ms.date: 03/05/2020
-ms.openlocfilehash: 62351f341d03873afc59ff7748fa03da0a202d35
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 2a9111e40b207cadd27365cb4f1c199931c40638
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495581"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323962"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
 Приложение Azure Machine Learning Workbench и некоторые другие ранние функции устарели и были заменены в выпуске за **сентябрь 2018 г.** в рамках процесса улучшения [архитектуры](concept-azure-machine-learning-architecture.md).
 
-Этот выпуск содержит множество существенных обновлений, внесенных с учетом отзывов клиентов для улучшения удобства работы. Изменения не коснулись основных функций службы, начиная от запуска эксперимента и кончая развертыванием модели. Но теперь в вашем распоряжении надежные пакеты <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">Python SDK</a>, R SDK и [интерфейс командной строки Azure](reference-azure-machine-learning-cli.md) для выполнения задач и конвейеров машинного обучения.
+Этот выпуск содержит множество существенных обновлений, внесенных с учетом отзывов клиентов для улучшения удобства работы. Изменения не коснулись основных функций службы, начиная от запуска эксперимента и кончая развертыванием модели. Но теперь в вашем распоряжении надежные пакеты <a href="/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">Python SDK</a>, R SDK и [интерфейс командной строки Azure](reference-azure-machine-learning-cli.md) для выполнения задач и конвейеров машинного обучения.
 
 Большинство артефактов, которые были созданы в предыдущей версии Машинного обучения Azure, хранятся в вашем локальном или облачном хранилище. Эти артефакты не исчезнут.
 
@@ -37,7 +37,7 @@ ms.locfileid: "92495581"
 Последний выпуск Машинного обучения Azure включает следующие возможности:
 + [Упрощенная модель ресурсов Azure](concept-azure-machine-learning-architecture.md).
 + [Новый пользовательский интерфейс портала](how-to-track-experiments.md) для управления экспериментами и целевыми объектами вычислений.
-+ Новый, более полный <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакет SDK</a>для Python.
++ Новый, более полный <a href="/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакет SDK</a>для Python.
 + Обновленное и дополненное [расширение интерфейса командной строки Azure](reference-azure-machine-learning-cli.md) для машинного обучения
 
 Переработанная [архитектура](concept-azure-machine-learning-architecture.md) для упрощения использования. Вместо нескольких ресурсов Azure и учетных записей требуется только [рабочая область машинного обучения Azure](concept-workspace.md). Новые рабочие области можно быстро создать на [портале Azure](how-to-manage-workspace.md). Рабочая область позволяет нескольким пользователя хранить целевые объекты вычислений для обучения и развертывания, экспериментов с моделями, образов Docker, развернутых моделей и т. д.
@@ -50,7 +50,7 @@ ms.locfileid: "92495581"
 
 9 января 2019. Поддержка Машинное обучение Workbench, учетных записей Экспериментирование в Машинном обучении Azure и Управление моделями, а также связанных с ними пакетов SDK и CLI завершена.
 
-Все новейшие возможности доступны при использовании нового <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK</a>, [интерфейса командной строки](reference-azure-machine-learning-cli.md) и [портала](how-to-manage-workspace.md).
+Все новейшие возможности доступны при использовании нового <a href="/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK</a>, [интерфейса командной строки](reference-azure-machine-learning-cli.md) и [портала](how-to-manage-workspace.md).
 
 ## <a name="what-about-run-histories"></a>Что будет с журналами выполнения?
 
@@ -68,7 +68,7 @@ ms.locfileid: "92495581"
 
 Никакой код и никакие наработки не будут потеряны. В более ранней версии проекты являются объектами облака с локальным каталогом. В последней версии локальные каталоги связываются с рабочей областью Машинного обучения Azure с помощью локального файла конфигурации. См. [схему последней архитектуры](concept-azure-machine-learning-architecture.md).
 
-Большая часть содержимого проекта уже находится на локальном компьютере. Это означает, что для подключения к рабочей области осталось создать в этом каталоге файл конфигурации добавить в код ссылку для подключения к рабочей области. Чтобы продолжить использовать локальный каталог, содержащий файлы и скрипты, укажите имя каталога в команде Python ["experiment.submit"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py&preserve-view=true) или с помощью команды интерфейса командной строки `az ml project attach`.  Например:
+Большая часть содержимого проекта уже находится на локальном компьютере. Это означает, что для подключения к рабочей области осталось создать в этом каталоге файл конфигурации добавить в код ссылку для подключения к рабочей области. Чтобы продолжить использовать локальный каталог, содержащий файлы и скрипты, укажите имя каталога в команде Python ["experiment.submit"](/python/api/azureml-core/azureml.core.experiment.experiment?preserve-view=true&view=azure-ml-py) или с помощью команды интерфейса командной строки `az ml project attach`.  Пример:
 ```python
 run = exp.submit(source_directory=script_folder,
                  script='train.py', run_config=run_config_system_managed)

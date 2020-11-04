@@ -12,6 +12,12 @@
       href: cloud-services-dotnet-get-started.md
     - name: Пример создания облачной службы на языке Python в Visual Studio
       href: cloud-services-python-ptvs.md
+- name: Основные понятия
+  items:
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Инструкции
   items:
     - name: План

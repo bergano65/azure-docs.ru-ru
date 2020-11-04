@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: rosouz
-ms.openlocfilehash: 8add203fabf867e22dbfe98b2bc9c632e62018b8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 90d059aaa16e24df1e71d4d439cb9aa23b786c77
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100530"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323204"
 ---
-# <a name="what-is-azure-cosmos-db-analytical-store-preview"></a>Что такое Аналитическое хранилище Azure Cosmos DB (предварительная версия)?
+# <a name="what-is-azure-cosmos-db-analytical-store-preview"></a>Что такое Azure Cosmos DB аналитическое хранилище (Предварительная версия)?
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
 
 > [!IMPORTANT]
@@ -53,7 +53,7 @@ Azure Cosmos DB Analytics Store — это полностью изолирова
 
 На следующем рисунке показано хранилище транзакций и хранилище аналитических столбцов в Azure Cosmos DB:
 
-:::image type="content" source="./media/analytical-store-introduction/transactional-analytical-data-stores.png" alt-text="Пример операционной таблицы" border="false":::
+:::image type="content" source="./media/analytical-store-introduction/transactional-analytical-data-stores.png" alt-text="Транзакционное хранилище строк и хранилище аналитических столбцов в Azure Cosmos DB" border="false":::
 
 ### <a name="decoupled-performance-for-analytical-workloads"></a>Несвязанная производительность для аналитических рабочих нагрузок
 
@@ -150,7 +150,7 @@ salary: 1000000
 | Double |  ". float64" |    24,99|
 | Массив | ". Array" |    ["a", "b"]|
 |Двоичные данные | ". binary" |0|
-|Логическое значение    | ". bool"   |Верно|
+|Логическое значение    | ". bool"   |True|
 |Int32  | ". Int32"  |123|
 |Int64  | ". Int64"  |255486129307|
 |NULL   | ". null"   | null|

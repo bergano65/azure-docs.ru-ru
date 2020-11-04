@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: larryfr
 author: BlackMist
 ms.date: 07/08/2020
-ms.openlocfilehash: e1b92563acd6983b1680cacc06a8f2d0789dddf1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c554abc8aef89ca353e06c14b04fab2622d2827
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91302508"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322197"
 ---
 # <a name="what-are-azure-machine-learning-environments"></a>Что такое Машинное обучение Azure среды?
 
@@ -35,7 +35,7 @@ ms.locfileid: "91302508"
 
 ## <a name="types-of-environments"></a>Типы окружений
 
-Среды можно разделить на три категории: *проверенные*, *управляемые пользователем*и *управляемые системой*.
+Среды можно разделить на три категории: *проверенные* , *управляемые пользователем* и *управляемые системой*.
 
 Проверенные среды предоставляются Машинное обучение Azure и доступны в рабочей области по умолчанию. Предназначен для использования как есть, они содержат коллекции пакетов и параметров Python, которые помогут приступить к работе с различными платформами машинного обучения. Эти предварительно созданные среды также обеспечивают более быстрое время развертывания. Полный список см. в статье о [проверенных средах](resource-curated-environments.md).
 
@@ -68,7 +68,7 @@ ms.locfileid: "91302508"
 
 ### <a name="submitting-a-run-using-an-environment"></a>Отправка запуска с помощью среды
 
-При первой отправке удаленного запуска с помощью среды служба Машинное обучение Azure вызывает [задачу сборки записей контроля](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-overview) доступа в реестре контейнеров Azure (запись контроля доступа), связанную с рабочей областью. Затем встроенный образ DOCKER кэшируется в записи контроля доступа рабочей области. Проверенные среды поддерживаются образами DOCKER, которые кэшируются в глобальной записи контроля доступа. В начале выполнения выполнения образ извлекается целевым объектом вычислений из соответствующей записи контроля доступа.
+При первой отправке удаленного запуска с помощью среды служба Машинное обучение Azure вызывает [задачу сборки записей контроля](../container-registry/container-registry-tasks-overview.md) доступа в реестре контейнеров Azure (запись контроля доступа), связанную с рабочей областью. Затем встроенный образ DOCKER кэшируется в записи контроля доступа рабочей области. Проверенные среды поддерживаются образами DOCKER, которые кэшируются в глобальной записи контроля доступа. В начале выполнения выполнения образ извлекается целевым объектом вычислений из соответствующей записи контроля доступа.
 
 Для локальных запусков среда DOCKER или Conda создается на основе определения среды. Затем скрипты выполняются на целевом этапе вычислений — локальной среде выполнения или в локальной подсистеме DOCKER.
 
@@ -79,13 +79,13 @@ ms.locfileid: "91302508"
  1. Загрузка базового образа и выполнения всех действий DOCKER
  2. Создание среды conda в соответствии с зависимостями conda, указанными в определении среды.
 
-Второй шаг опускается, если указаны [управляемые пользователем зависимости](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.pythonsection?view=azure-ml-py&preserve-view=true). В этом случае вы несете ответственность за установку пакетов Python, включая их в базовый образ, или указание пользовательских шагов DOCKER на первом шаге. Вы также несете ответственность за указание правильного расположения исполняемого файла Python. Также можно использовать [Пользовательский базовый образ DOCKER](how-to-deploy-custom-docker-image.md).
+Второй шаг опускается, если указаны [управляемые пользователем зависимости](/python/api/azureml-core/azureml.core.environment.pythonsection?preserve-view=true&view=azure-ml-py). В этом случае вы несете ответственность за установку пакетов Python, включая их в базовый образ, или указание пользовательских шагов DOCKER на первом шаге. Вы также несете ответственность за указание правильного расположения исполняемого файла Python. Также можно использовать [Пользовательский базовый образ DOCKER](how-to-deploy-custom-docker-image.md).
 
 ### <a name="image-caching-and-reuse"></a>Кэширование и повторное использование образов
 
 Если вы используете одно и то же определение среды для другого запуска, служба Машинное обучение Azure повторно использует кэшированный образ из записи контроля доступа рабочей области. 
 
-Чтобы просмотреть сведения о кэшированном изображении, используйте метод [Environment.get_image_details](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#&preserve-view=trueget-image-details-workspace-) .
+Чтобы просмотреть сведения о кэшированном изображении, используйте метод [Environment.get_image_details](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-image-details-workspace-) .
 
 Чтобы определить, следует ли повторно использовать кэшированное изображение или создать новый, служба вычислит [хэш-значение](https://en.wikipedia.org/wiki/Hash_table) из определения среды и сравнивает его с хэшем существующих сред. Хэш основан на:
  
@@ -108,10 +108,10 @@ ms.locfileid: "91302508"
 Чтобы обновить пакет, укажите номер версии для принудительного перестроения образа, например ```numpy==1.18.1``` . Будут установлены новые зависимости, включая вложенные, которые могут нарушить работу ранее работающего сценария. 
 
 > [!WARNING]
->  Метод [Environment. Build](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#&preserve-view=truebuild-workspace--image-build-compute-none-) выполнит перестроение кэшированного образа с возможным побочным действием обновления незакрепленных пакетов и разрушением воспроизводимость для всех определений среды, соответствующих этому кэшированному изображению.
+>  Метод [Environment. Build](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=truebuild-workspace--image-build-compute-none-) выполнит перестроение кэшированного образа с возможным побочным действием обновления незакрепленных пакетов и разрушением воспроизводимость для всех определений среды, соответствующих этому кэшированному изображению.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [создавать и использовать среды](how-to-use-environments.md) в машинное обучение Azure.
-* См. справочную документацию по пакету SDK для Python для [класса Environment](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment%28class%29?view=azure-ml-py&preserve-view=true).
+* См. справочную документацию по пакету SDK для Python для [класса Environment](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py).
 * См. справочную документацию по пакету SDK R для [сред](https://azure.github.io/azureml-sdk-for-r/reference/index.html#section-environments).

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 10/30/2020
 ms.author: normesta
-ms.openlocfilehash: dc0b620629b5dce651e02e5fe95b0619c1d42a78
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: be440407fb6f4d9715ba80c584af023a5f662394
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131162"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324230"
 ---
 # <a name="premium-tier-for-azure-data-lake-storage"></a>Уровень "Премиум" для Azure Data Lake Storage
 
@@ -80,7 +80,7 @@ AI/ML обрабатывает потребление и обработку ра
 |Восточная часть США|LRS, ZRS|
 |восточная часть США 2|LRS, ZRS|
 |Центральная часть США|LRS|
-|Западная часть США|LRS|
+|западная часть США|LRS|
 |Западная часть США 2|LRS, ZRS|
 |центрально-западная часть США|LRS|
 |Центрально-южная часть США|LRS|
@@ -97,9 +97,18 @@ AI/ML обрабатывает потребление и обработку ра
 |Центральная Индия|LRS|
 |Западная Индия|LRS|
 |Северная часть ОАЭ;|LRS|
-|Japan East|LRS|
+|Восточная Япония|LRS|
 |Западная Япония|LRS|
 |Юго-Восточная Азия|LRS, ZRS|
 |Восточная Австралия|LRS, ZRS|
 |Юго-Восточная Австралия|LRS|
-|Brazil South|LRS|
+|Южная Бразилия|LRS|
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Используйте уровень "Премиум" для Azure Data Lake Storage с помощью вашей любимой службы аналитики, например Azure Databricks, Azure HDInsight и Azure синапсе Analytics. 
+
+- [Руководство. Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark](data-lake-storage-use-databricks-spark.md) 
+- [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) Сейчас HDInsight поддерживает учетную запись, которая использует уровень производительности "Премиум", а также кластер HBase с включенным ускорением записи.
+- [Краткое руководство. Создание рабочей области Synapse](../../synapse-analytics/quickstart-create-workspace.md)
+
