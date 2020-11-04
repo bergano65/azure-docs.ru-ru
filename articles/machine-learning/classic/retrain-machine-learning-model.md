@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18, devx-track-csharp
 ms.date: 02/14/2019
-ms.openlocfilehash: 2f115313b17ed159973d2545b947e2ff031508eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff0378871139a038f096a44b9ee0c6af2cb67d73
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362339"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325816"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье показано, как переучить и развернуть модель машинного обучения в качестве новой веб-службы в Studio (классической). Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
@@ -64,7 +64,7 @@ ms.locfileid: "91362339"
 1. Создание консольного приложения C# в Visual Studio: **Создание**  >  **проекта**  >  **Visual C#**  >  **классическое**  >  **консольное приложение Windows (.NET Framework)**.
 1. Войдите на портал веб-служб Машинного обучения.
 1. Щелкните веб-службу, с которой работаете.
-1. Щелкните **Consume**(Использование).
+1. Щелкните **Consume** (Использование).
 1. В нижней части страницы **Consume** (Использование) в разделе **Sample Code** (Пример кода) щелкните **Batch** (Пакет).
 1. Скопируйте пример кода на C# для пакетного выполнения и вставьте его в файл Program.cs. Убедитесь, что пространство имен не изменено.
 
@@ -76,7 +76,7 @@ ms.locfileid: "91362339"
 
 ### <a name="update-the-apikey-declaration"></a>Обновление объявления apiKey
 
-Найдите объявление **apiKey**:
+Найдите объявление **apiKey** :
 
 ```csharp
 const string apiKey = "abc123"; // Replace this with the API key for the web service
@@ -93,10 +93,10 @@ const string apiKey = "abc123"; // Replace this with the API key for the web ser
 1. Выберите в списке учетную запись хранения, которая будет использоваться для хранения переобученной модели.
 1. В левой области навигации щелкните **Ключи доступа**.
 1. Скопируйте и сохраните **первичный ключ доступа**.
-1. В левом столбце навигации щелкните **Blobs (большие двоичные объекты**).
+1. В левом столбце навигации щелкните **Blobs (большие двоичные объекты** ).
 1. Выберите существующий контейнер или создайте другой, а затем сохраните его имя.
 
-Найдите объявления *StorageAccountName*, *StorageAccountKey* и *StorageContainerName*, а затем обновите их, используя значения с портала.
+Найдите объявления *StorageAccountName* , *StorageAccountKey* и *StorageContainerName* , а затем обновите их, используя значения с портала.
 
 ```csharp
 const string StorageAccountName = "mystorageacct"; // Replace this with your Azure storage account name
@@ -108,7 +108,7 @@ const string StorageContainerName = "mycontainer"; // Replace this with your Azu
 
 ### <a name="specify-the-output-location"></a>Указание расположения выходных данных
 
-Указывая расположение выходных данных для полезных данных запроса, измените расширение файла, заданное в *RelativeLocation*, на `ilearner`.
+Указывая расположение выходных данных для полезных данных запроса, измените расширение файла, заданное в *RelativeLocation* , на `ilearner`.
 
 ```csharp
 Outputs = new Dictionary<string, AzureBlobDataReference>() {
@@ -130,11 +130,11 @@ Outputs = new Dictionary<string, AzureBlobDataReference>() {
 
 При выполнении приложения выходные данные содержат URL-адрес и подписанные URL-адреса, необходимые для доступа к результатам оценки.
 
-Чтобы увидеть результаты работы переобученной модели, введите в адресную строку браузера полный URL-адрес, составив его из значений параметров *BaseLocation*, *RelativeLocaiton* и *SasBlobToken*, содержащихся в выходных данных *output2*.
+Чтобы увидеть результаты работы переобученной модели, введите в адресную строку браузера полный URL-адрес, составив его из значений параметров *BaseLocation* , *RelativeLocaiton* и *SasBlobToken* , содержащихся в выходных данных *output2*.
 
 Проанализируйте результаты и определите, можно ли только что обученную модель считать лучше предыдущей.
 
-Сохраните значения *BaseLocation*, *RelativeLocation* и *SasBlobToken* из полученных результатов.
+Сохраните значения *BaseLocation* , *RelativeLocation* и *SasBlobToken* из полученных результатов.
 
 ## <a name="update-the-predictive-experiment"></a>Обновление прогнозного эксперимента
 
@@ -144,7 +144,7 @@ Outputs = new Dictionary<string, AzureBlobDataReference>() {
 
 ### <a name="get-the-web-service-definition-object"></a>Получение объекта определения веб-службы
 
-Затем получите объект определения веб-службы, вызвав командлет [Get-азмлвебсервице](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservice) .
+Затем получите объект определения веб-службы, вызвав командлет [Get-азмлвебсервице](/powershell/module/az.machinelearning/get-azmlwebservice) .
 
 ```azurepowershell
 $wsd = Get-AzMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
@@ -167,7 +167,7 @@ Tags : {}
 
 ### <a name="export-the-web-service-definition-object-as-json"></a>Экспорт объекта определения веб-службы в формате JSON
 
-Чтобы изменить определение обученной модели для использования новой обученной модели, сначала необходимо использовать командлет [Export-азмлвебсервице](https://docs.microsoft.com/powershell/module/az.machinelearning/export-azmlwebservice) , чтобы экспортировать его в файл формата JSON.
+Чтобы изменить определение обученной модели для использования новой обученной модели, сначала необходимо использовать командлет [Export-азмлвебсервице](/powershell/module/az.machinelearning/export-azmlwebservice) , чтобы экспортировать его в файл формата JSON.
 
 ```azurepowershell
 Export-AzMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.json"
@@ -175,7 +175,7 @@ Export-AzMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.jso
 
 ### <a name="update-the-reference-to-the-ilearner-blob"></a>Обновление ссылки на большой двоичный объект ilearner
 
-В ресурсах-контейнерах найдите элемент [trained model], обновите значение *uri* в узле *locationInfo*, заменив его универсальным кодом ресурса (URI) BLOB-объекта ilearner. URI формируется в результате объединения параметров *BaseLocation* и *RelativeLocation* из выходных данных вызова переобучения BES.
+В ресурсах-контейнерах найдите элемент [trained model], обновите значение *uri* в узле *locationInfo* , заменив его универсальным кодом ресурса (URI) BLOB-объекта ilearner. URI формируется в результате объединения параметров *BaseLocation* и *RelativeLocation* из выходных данных вызова переобучения BES.
 
 ```json
 "asset3": {
@@ -194,7 +194,7 @@ Export-AzMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.jso
 
 ### <a name="import-the-json-into-a-web-service-definition-object"></a>Импорт JSON-файла в объект определения веб-службы
 
-Используйте командлет [Import-азмлвебсервице](https://docs.microsoft.com/powershell/module/az.machinelearning/import-azmlwebservice) , чтобы преобразовать измененный файл JSON обратно в объект определения веб-службы, который можно использовать для обновления эксперимента прогнозного.
+Используйте командлет [Import-азмлвебсервице](/powershell/module/az.machinelearning/import-azmlwebservice) , чтобы преобразовать измененный файл JSON обратно в объект определения веб-службы, который можно использовать для обновления эксперимента прогнозного.
 
 ```azurepowershell
 $wsd = Import-AzMlWebService -InputFile "C:\temp\mlservice_export.json"
@@ -202,13 +202,13 @@ $wsd = Import-AzMlWebService -InputFile "C:\temp\mlservice_export.json"
 
 ### <a name="update-the-web-service"></a>Обновление веб-службы
 
-Наконец, используйте командлет [Update-азмлвебсервице](https://docs.microsoft.com/powershell/module/az.machinelearning/update-azmlwebservice) для обновления прогнозного эксперимента.
+Наконец, используйте командлет [Update-азмлвебсервице](/powershell/module/az.machinelearning/update-azmlwebservice) для обновления прогнозного эксперимента.
 
 ```azurepowershell
 Update-AzMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 

@@ -9,23 +9,23 @@ author: peterclu
 ms.author: peterlu
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT, devx-track-csharp
 ms.date: 02/14/2019
-ms.openlocfilehash: 0064509c1158d8b016413046cb528bfd125b5f2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 158541d34568b7ea02ea82dbfe90f5801824716f
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362322"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325785"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-classic-web-service"></a>Повторное обучение и развертывание классической веб-службы (классическая модель)
 
-**применимо к:** ![ Зеленая галочка. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ X, указывающее на отсутствие.](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
+**применимо к:** ![ Зеленая галочка. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ X, указывающее на отсутствие. ](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
 
 Повторное обучение моделей машинного обучения является одним из способов обеспечения точности и основывается на самых актуальных доступных данных. В этой статье показано, как переучить классическую веб-службу Studio (классической). Инструкции по переучению новой веб-службы Studio (классической) см [. в этой статье.](retrain-machine-learning-model.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что у вас уже есть повторно обученный и прогнозный эксперимент. Эти шаги описаны в статье [Переобучение модели Студии машинного обучения Azure](/azure/machine-learning/studio/retrain-machine-learning-model). Однако вместо развертывания вашей модели машинного обучения в качестве новой классической веб-службы вы развернете свой прогнозный эксперимент.
+В этой статье предполагается, что у вас уже есть повторно обученный и прогнозный эксперимент. Эти шаги описаны в статье [Переобучение модели Студии машинного обучения Azure](./retrain-machine-learning-model.md). Однако вместо развертывания вашей модели машинного обучения в качестве новой классической веб-службы вы развернете свой прогнозный эксперимент.
      
 ## <a name="add-a-new-endpoint"></a>Добавление новой конечной точки
 
@@ -76,7 +76,7 @@ ms.locfileid: "91362322"
 
 Теперь обученную модель можно использовать для обновления созданной конечной точки оценки.
 
-В следующем примере кода показано, как использовать параметры *BaseLocation*, *RelativeLocation*, *SasBlobToken* и URL-адрес исправления для обновления конечной точки.
+В следующем примере кода показано, как использовать параметры *BaseLocation* , *RelativeLocation* , *SasBlobToken* и URL-адрес исправления для обновления конечной точки.
 
 ```csharp
 private async Task OverwriteModel()
@@ -134,7 +134,7 @@ private async Task OverwriteModel()
 
 Если код выполнен успешно, новая конечная точка начнет использовать переобученную модель примерно через 30 секунд.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 

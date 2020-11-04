@@ -7,13 +7,13 @@ ms.devlang: java
 ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: anfeldma
-ms.custom: devx-track-java
-ms.openlocfilehash: 53171fedac23401b7d696a9e611c53da86b1bb60
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.custom: devx-track-java, contperfq2
+ms.openlocfilehash: c1dec2c8451ddd1feb4b5b0dac9c82e1716079b7
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93078073"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325839"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-async-java-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB с пакетом DSK для Async Java версии 2
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -40,14 +40,14 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
 * **Режим подключения: использование прямого подключения**
     
-  Режим подключения к Azure Cosmos DB серьезно влияет на производительность, в частности на задержку на стороне клиента. Важнейший параметр для настройки политики подключения ( *ConnectionPolicy* ) на стороне клиента — это *ConnectionMode* . Для Azure Cosmos DB с пакетом SDK для Async Java версии 2 доступны два значения параметра ConnectionMode:  
+  Режим подключения к Azure Cosmos DB серьезно влияет на производительность, в частности на задержку на стороне клиента. Важнейший параметр для настройки политики подключения ( *ConnectionPolicy* ) на стороне клиента — это *ConnectionMode*. Для Azure Cosmos DB с пакетом SDK для Async Java версии 2 доступны два значения параметра ConnectionMode:  
       
   * [Gateway](/java/api/com.microsoft.azure.cosmosdb.connectionmode) ("Шлюз", используется по умолчанию);  
   * [Direct](/java/api/com.microsoft.azure.cosmosdb.connectionmode)
   
   Режим шлюза поддерживается на всех платформах SDK, поэтому он установлен по умолчанию. Если приложения работают в корпоративной сети с ограниченными ограничениями брандмауэра, лучшим выбором является режим шлюза, так как он использует стандартный HTTPS-порт и одну конечную точку.   Однако компромисс производительности заключается в том, что режим шлюза включает дополнительный сетевой прыжок всякий раз, когда данные считываются или записываются в Azure Cosmos DB. Поэтому для обеспечения более высокой производительности рекомендуется использовать режим прямого подключения.
   
-  Параметр *ConnectionMode* настраивается с помощью параметра *ConnectionPolicy* во время создания экземпляра *DocumentClient* .
+  Параметр *ConnectionMode* настраивается с помощью параметра *ConnectionPolicy* во время создания экземпляра *DocumentClient*.
 
 ### <a name="async-java-sdk-v2-maven-commicrosoftazureazure-cosmosdb"></a><a id="asyncjava2-connectionpolicy"></a>Пакет SDK для Async Java версии 2 (Maven com.microsoft.azure::azure-cosmosdb)
 
@@ -87,7 +87,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
   * ***Общие сведения о режиме Direct**
 
-  :::image type="content" source="./media/performance-tips-async-java/rntbdtransportclient.png" alt-text="Пример политики подключения Azure Cosmos DB" border="false":::
+  :::image type="content" source="./media/performance-tips-async-java/rntbdtransportclient.png" alt-text="Иллюстрация архитектуры прямого режима" border="false":::
   
   Клиентская архитектура, применяемая в режиме прямого доступа, обеспечивает предсказуемое использование сети и мультиплексированный доступ к Azure Cosmos DB репликам. На схеме выше показано, как в режиме прямого подключения запросы клиентов направляются к репликам в серверной части Cosmos DB. Архитектура прямого режима выделяет до 10 _ *каналов* * на стороне клиента на каждую реплику базы данных. Канал представляет собой TCP-соединение, которому предшествует буфер запроса, который имеет глубину 30 запросов. Каналы, принадлежащие реплике, динамически распределяются по мере необходимости **конечной точкой службы** реплики. Когда пользователь отправляет запрос в режиме прямого подключения, **транспортклиент** направляет запрос в соответствующую конечную точку службы на основе ключа секции. **Очередь запросов** помещает запросы в буфер перед конечной точкой службы.
 
