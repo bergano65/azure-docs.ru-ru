@@ -11,25 +11,25 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/30/2020
-ms.openlocfilehash: 89bad470d5ead43b79e3691343b53fff796f7abc
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: cfa6dcb0b1fc173bdf3612308227b8309491e9fa
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172785"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93312740"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Настройка частной ссылки Azure для Машинное обучение Azure рабочей области
 
 В этом документе вы узнаете, как использовать частную связь Azure с рабочей областью Машинное обучение Azure. Сведения о создании виртуальной сети для Машинное обучение Azure см. в статье [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md) .
 
-Частная ссылка Azure позволяет подключаться к рабочей области с помощью частной конечной точки. Частная конечная точка — это набор частных IP-адресов в виртуальной сети. Затем можно ограничить доступ к рабочей области, чтобы она выполнялась только по частным IP-адресам. Частная ссылка помогает снизить риск утечка данных. Дополнительные сведения о частных конечных точках см. в статье [Приватный канал Azure](/azure/private-link/private-link-overview).
+Частная ссылка Azure позволяет подключаться к рабочей области с помощью частной конечной точки. Частная конечная точка — это набор частных IP-адресов в виртуальной сети. Затем можно ограничить доступ к рабочей области, чтобы она выполнялась только по частным IP-адресам. Частная ссылка помогает снизить риск утечка данных. Дополнительные сведения о частных конечных точках см. в статье [Приватный канал Azure](../private-link/private-link-overview.md).
 
 > [!IMPORTANT]
 > Частная ссылка Azure не влияет на плоскость управления Azure (операции управления), такие как удаление рабочей области или управление ресурсами вычислений. Например, создание, обновление или удаление целевого объекта вычислений. Эти операции выполняются через общедоступный Интернет в нормальном режиме. Операции с плоскостью данных, такие как использование Машинное обучение Azure Studio, API (включая опубликованные конвейеры) или пакет SDK, используют закрытую конечную точку.
 >
 > При использовании Mozilla Firefox могут возникнуть проблемы при попытке доступа к закрытой конечной точке рабочей области. Эта проблема может быть связана с DNS по протоколу HTTPS в Mozilla. В качестве обходного пути рекомендуется использовать Microsoft ребро Google Chrome.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы планируете использовать рабочую область с включенной частной связью с ключом, управляемым клиентом, необходимо запросить эту функцию с помощью запроса в службу поддержки. Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
 
@@ -46,7 +46,7 @@ ms.locfileid: "92172785"
 
 # <a name="python"></a>[Python](#tab/python)
 
-Пакет SDK для Машинное обучение Azure Python предоставляет класс [приватиндпоинтконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.privateendpointconfig?view=azure-ml-py) , который можно использовать с [рабочей областью. Create ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---tags-none--friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--adb-workspace-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--private-endpoint-config-none--private-endpoint-auto-approval-true--exist-ok-false--show-output-true-) для создания рабочей области с закрытой конечной точкой. Для этого класса требуется существующая виртуальная сеть.
+Пакет SDK для Машинное обучение Azure Python предоставляет класс [приватиндпоинтконфиг](/python/api/azureml-core/azureml.core.privateendpointconfig?view=azure-ml-py) , который можно использовать с [рабочей областью. Create ()](/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---tags-none--friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--adb-workspace-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--private-endpoint-config-none--private-endpoint-auto-approval-true--exist-ok-false--show-output-true-) для создания рабочей области с закрытой конечной точкой. Для этого класса требуется существующая виртуальная сеть.
 
 ```python
 from azureml.core import Workspace
@@ -64,13 +64,13 @@ ws = Workspace.create(name='myworkspace',
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Create](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_create) . Следующие параметры этой команды можно использовать для создания рабочей области с частной сетью, но для нее требуется существующая виртуальная сеть.
+[Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Create](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_create) . Следующие параметры этой команды можно использовать для создания рабочей области с частной сетью, но для нее требуется существующая виртуальная сеть.
 
 * `--pe-name`— Имя создаваемой частной конечной точки.
 * `--pe-auto-approval`— Следует ли автоматически утверждать подключения частной конечной точки к рабочей области.
 * `--pe-resource-group`: Группа ресурсов для создания частной конечной точки в. Должна быть той же группой, которая содержит виртуальную сеть.
 * `--pe-vnet-name`— Существующая виртуальная сеть для создания частной конечной точки в.
-* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию: `default`.
+* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -101,11 +101,11 @@ ws = Workspace.from_config()
 ws.add_private_endpoint(private_endpoint_config=pe, private_endpoint_auto_approval=True, show_output=True)
 ```
 
-Дополнительные сведения о классах и методах, используемых в этом примере, см. в разделе [приватиндпоинтконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.privateendpointconfig?view=azure-ml-py) and [Workspace.add_private_endpoint](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#add-private-endpoint-private-endpoint-config--private-endpoint-auto-approval-true--location-none--show-output-true--tags-none-).
+Дополнительные сведения о классах и методах, используемых в этом примере, см. в разделе [приватиндпоинтконфиг](/python/api/azureml-core/azureml.core.privateendpointconfig?view=azure-ml-py) and [Workspace.add_private_endpoint](/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#add-private-endpoint-private-endpoint-config--private-endpoint-auto-approval-true--location-none--show-output-true--tags-none-).
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Add](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_add) .
+[Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Add](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_add) .
 
 ```azurecli
 az ml workspace private-endpoint add -w myworkspace  --pe-name myprivateendpoint --pe-auto-approval true --pe-vnet-name myvnet
@@ -115,8 +115,8 @@ az ml workspace private-endpoint add -w myworkspace  --pe-name myprivateendpoint
 
 В рабочей области Машинное обучение Azure на портале выберите __подключения к частным конечным точкам__ и выберите __+ Частная конечная точка__. Используйте поля для создания новой частной конечной точки.
 
-* При выборе __региона__выберите тот же регион, что и для виртуальной сети. 
-* При выборе __типа ресурса__используйте __Microsoft. мачинелеарнингсервицес или рабочие области__. 
+* При выборе __региона__ выберите тот же регион, что и для виртуальной сети. 
+* При выборе __типа ресурса__ используйте __Microsoft. мачинелеарнингсервицес или рабочие области__. 
 * Задайте __ресурсу__ имя рабочей области.
 
 Наконец, выберите __создать__ , чтобы создать частную конечную точку.
@@ -129,7 +129,7 @@ az ml workspace private-endpoint add -w myworkspace  --pe-name myprivateendpoint
 
 # <a name="python"></a>[Python](#tab/python)
 
-Чтобы удалить закрытую конечную точку, используйте [Workspace.delete_private_endpoint_connection](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#delete-private-endpoint-connection-private-endpoint-connection-name-) .
+Чтобы удалить закрытую конечную точку, используйте [Workspace.delete_private_endpoint_connection](/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#delete-private-endpoint-connection-private-endpoint-connection-name-) .
 
 ```python
 from azureml.core import Workspace
@@ -142,11 +142,11 @@ ws.delete_private_endpoint_connection(private_endpoint_connection_name=connectio
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Delete](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_delete) .
+[Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Delete](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_delete) .
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-В рабочей области Машинное обучение Azure на портале выберите __подключения к частной конечной точке__, а затем выберите конечную точку, которую нужно удалить. Наконец, выберите __Удалить__.
+В рабочей области Машинное обучение Azure на портале выберите __подключения к частной конечной точке__ , а затем выберите конечную точку, которую нужно удалить. Наконец, выберите __Удалить__.
 
 ---
 
@@ -157,7 +157,7 @@ ws.delete_private_endpoint_connection(private_endpoint_connection_name=connectio
 > [!IMPORTANT]
 > Чтобы избежать временного сбоя подключения, корпорация Майкрософт рекомендует сбрасывать кэш DNS на компьютерах, подключающихся к рабочей области, после включения частной связи. 
 
-Сведения о виртуальных машинах Azure см. в [документации по виртуальным машинам](/azure/virtual-machines/).
+Сведения о виртуальных машинах Azure см. в [документации по виртуальным машинам](../virtual-machines/index.yml).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

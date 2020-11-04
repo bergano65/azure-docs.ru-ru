@@ -1,6 +1,6 @@
 ---
 title: Автоматическое масштабирование экземпляров Apache Spark
-description: Использование компонента автомасштабирования Azure Synapse для автоматического масштабирования экземпляров Apache Spark
+description: Использование функции автомасштабирования Azure синапсе для автоматического масштабирования экземпляров Apache Spark
 author: euangMS
 ms.author: euang
 ms.reviewer: euang
@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: spark
 ms.date: 03/31/2020
-ms.openlocfilehash: c043941543088d9bdbfd535f372e2335e1ba55a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f34bcfa8b743fbee6ee3b78fc1a042d1df0abfde
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500357"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93313638"
 ---
 # <a name="automatically-scale-azure-synapse-analytics-apache-spark-pools"></a>Автоматическое масштабирование пулов Apache Spark в Azure Synapse Analytics
 
@@ -49,7 +49,7 @@ ms.locfileid: "87500357"
 
 ## <a name="get-started"></a>Начало работы
 
-### <a name="create-a-spark-pool-with-autoscaling"></a>Создание пула Spark с автомасштабированием
+### <a name="create-a-serverless-apache-spark-pool-with-autoscaling"></a>Создание бессерверного пула Apache Spark с автомасштабированием
 
 Чтобы включить компонент автомасштабирования, выполните следующие действия как часть обычного процесса создания пула.
 

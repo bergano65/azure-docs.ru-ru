@@ -1,6 +1,6 @@
 ---
-title: Восстановление существующего хранилища данных
-description: Руководство по восстановлению существующего пула SQL.
+title: Восстановление существующего выделенного пула SQL
+description: Руководство по восстановлению существующего выделенного пула SQL.
 services: synapse-analytics
 author: anumjs
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: dead71d08b5a7a16871816580107c8aed8a0a77c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b5ced43e1277ffbb1c9988af08ee032ab93a15e
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91405111"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93313495"
 ---
-# <a name="restore-an-existing-sql-pool"></a>Восстановление существующего пула SQL
+# <a name="restore-an-existing-dedicated-sql-pool-in-azure-synapse-analytics"></a>Восстановление существующего выделенного пула SQL в Azure синапсе Analytics
 
-Из этой статьи вы узнаете, как восстановить существующий пул SQL в Azure синапсе Analytics с помощью портал Azure и PowerShell.
+Из этой статьи вы узнаете, как восстановить существующий выделенный пул SQL в Azure синапсе Analytics с помощью портал Azure и PowerShell.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -31,9 +31,9 @@ ms.locfileid: "91405111"
 1. Не забудьте [установить Azure PowerShell](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Наличие существующей точки восстановления, из которой необходимо выполнить восстановление. Если вы хотите создать новое восстановление, см. [руководство по созданию новой точки восстановления, определенной пользователем](sql-data-warehouse-restore-points.md).
 
-## <a name="restore-an-existing-sql-pool-through-powershell"></a>Восстановление существующего пула SQL с помощью PowerShell
+## <a name="restore-an-existing-dedicated-sql-pool-through-powershell"></a>Восстановление существующего выделенного пула SQL с помощью PowerShell
 
-Чтобы восстановить существующий пул SQL из точки восстановления, используйте командлет PowerShell [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
+Чтобы восстановить существующий выделенный пул SQL из точки восстановления, используйте командлет PowerShell [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
 
 1. Откройте средство PowerShell.
 
@@ -41,18 +41,18 @@ ms.locfileid: "91405111"
 
 3. Выберите подписку, содержащую базу данных, которую нужно восстановить.
 
-4. Перечислите точки восстановления для пула SQL.
+4. Перечислите точки восстановления для выделенного пула SQL.
 
 5. Выберите нужные точки восстановления с помощью свойства RestorePointCreationDate.
 
-6. Восстановите пул SQL до нужной точки восстановления с помощью командлета PowerShell [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
+6. Восстановите выделенный пул SQL до нужной точки восстановления с помощью командлета PowerShell [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
 
-    1. Чтобы восстановить пул SQL на другой сервер, необходимо указать другое имя сервера.  Этот сервер также может находиться в другой группе ресурсов и регионе.
+    1. Чтобы восстановить выделенный пул SQL на другой сервер, убедитесь, что указано другое имя сервера.  Этот сервер также может находиться в другой группе ресурсов и регионе.
     2. Чтобы выполнить восстановление в другую подписку, используйте кнопку "Переместить", чтобы переместить сервер в другую подписку.
 
-7. Убедитесь, что восстановленный пул SQL находится в оперативном режиме.
+7. Убедитесь, что восстановленный выделенный пул SQL находится в оперативном режиме.
 
-8. После завершения восстановления можно настроить восстановленный пул SQL, выполнив [настройку базы данных после восстановления](../../azure-sql/database/disaster-recovery-guidance.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
+8. После завершения восстановления можно настроить восстановленный выделенный пул SQL, выполнив [настройку базы данных после восстановления](../../azure-sql/database/disaster-recovery-guidance.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
 
 ```Powershell
 
@@ -89,19 +89,19 @@ $RestoredDatabase.status
 
 ```
 
-## <a name="restore-an-existing-sql-pool-through-the-azure-portal"></a>Восстановление существующего пула SQL с помощью портал Azure
+## <a name="restore-an-existing-dedicated-sql-pool-through-the-azure-portal"></a>Восстановление существующего выделенного пула SQL с помощью портал Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Перейдите к пулу SQL, из которого требуется выполнить восстановление.
+2. Перейдите к выделенной области, из которой нужно выполнить восстановление.
 3. В верхней области колонки обзора выберите **Восстановить**.
 
     ![ Обзор восстановления](./media/sql-data-warehouse-restore-active-paused-dw/restoring-01.png)
 
-4. Выберите **Точки автоматического восстановления** или **Определенные пользователем точки восстановления**. Если у пула SQL нет точек автоматического восстановления, подождите несколько часов или создайте определенную пользователем точку восстановления перед восстановлением. Для User-Defined точек восстановления выберите существующую или создайте новую. Для **сервера**можно выбрать сервер в другой группе ресурсов и регионе или создать новый. После ввода всех параметров щелкните **Проверка и восстановление**.
+4. Выберите **Точки автоматического восстановления** или **Определенные пользователем точки восстановления**. Если выделенный пул SQL не имеет точек автоматического восстановления, подождите несколько часов или создайте точку восстановления, определенную пользователем, перед восстановлением. Для User-Defined точек восстановления выберите существующую или создайте новую. Для **сервера** можно выбрать сервер в другой группе ресурсов и регионе или создать новый. После ввода всех параметров щелкните **Проверка и восстановление**.
 
     ![Точки автоматического восстановления](./media/sql-data-warehouse-restore-active-paused-dw/restoring-11.png)
 
 ## <a name="next-steps"></a>Next Steps
 
-- [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
-- [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)
+- [Восстановление удаленного выделенного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
+- [Восстановление из выделенного пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)

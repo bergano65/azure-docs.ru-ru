@@ -11,12 +11,12 @@ author: lostmygithubaccount
 ms.date: 07/14/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 5a04e5a7136ac1a33766bf543a27ff7794498c26
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: be2afad7e7cb08d9c677e589846f3d67cf43e708
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996356"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93314228"
 ---
 # <a name="collect-data-from-models-in-production"></a>Получение данных из моделей в рабочей среде
 
@@ -67,11 +67,11 @@ ms.locfileid: "91996356"
 
 - Необходим кластер AKS. Сведения о том, как создать и развернуть в нем, см. [в разделе Развертывание и размещение](how-to-deploy-and-where.md).
 
-- [Настройте среду](how-to-configure-environment.md) и установите [пакет SDK для машинное обучение Azure мониторинга](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
+- [Настройте среду](how-to-configure-environment.md) и установите [пакет SDK для машинное обучение Azure мониторинга](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
 
 ## <a name="enable-data-collection"></a>Включение сбора данных
 
-[Сбор данных](https://docs.microsoft.com/python/api/azureml-monitoring/azureml.monitoring.modeldatacollector.modeldatacollector?view=azure-ml-py&preserve-view=true) можно включить независимо от модели, развертываемой с помощью машинное обучение Azure или других средств.
+[Сбор данных](/python/api/azureml-monitoring/azureml.monitoring.modeldatacollector.modeldatacollector?preserve-view=true&view=azure-ml-py) можно включить независимо от модели, развертываемой с помощью машинное обучение Azure или других средств.
 
 Чтобы включить сбор данных, необходимо выполнить следующие действия.
 
@@ -153,7 +153,7 @@ ms.locfileid: "91996356"
 
 1. Скачайте и откройте [Power BI Desktop](https://www.powerbi.com).
 
-1. Выберите **получить данные** и выберите [**хранилище BLOB-объектов Azure**](https://docs.microsoft.com/power-bi/desktop-data-sources).
+1. Выберите **получить данные** и выберите [**хранилище BLOB-объектов Azure**](/power-bi/desktop-data-sources).
 
     [![Настройка Power BI большого двоичного объекта](./media/how-to-enable-data-collection/PBIBlob.png)](././media/how-to-enable-data-collection/PBIBlob.png#lightbox)
 
@@ -175,7 +175,7 @@ ms.locfileid: "91996356"
 
     [![Power BI содержимое](./media/how-to-enable-data-collection/pbiContent.png)](././media/how-to-enable-data-collection/pbiContent.png#lightbox)
 
-1. Выберите **ОК**. Предварительная загрузка данных.
+1. Щелкните **ОК**. Предварительная загрузка данных.
 
     [![Power BI объединение файлов](./media/how-to-enable-data-collection/pbiCombine.png)](././media/how-to-enable-data-collection/pbiCombine.png#lightbox)
 
@@ -187,7 +187,7 @@ ms.locfileid: "91996356"
 
 ### <a name="analyze-model-data-using-azure-databricks"></a><a id="databricks"></a> Анализ данных модели с помощью Azure Databricks
 
-1. Создайте [рабочую область Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal).
+1. Создайте [рабочую область Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal).
 
 1. Перейдите к рабочей области Databricks.
 

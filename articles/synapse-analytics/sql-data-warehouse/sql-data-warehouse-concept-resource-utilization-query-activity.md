@@ -11,12 +11,12 @@ ms.date: 04/09/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 334d37ad36336d1aa737894482fd8f66e929c822
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f66efb9112a9342122f5b56ab11b862ce3c7c61b
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87077684"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93314436"
 ---
 # <a name="monitoring-resource-utilization-and-query-activity-in-azure-synapse-analytics"></a>Мониторинг использования ресурсов и действий запросов в Azure Synapse Analytics
 
@@ -53,7 +53,7 @@ Azure Synapse Analytics предоставляет широкие возможн
 
 Для программного взаимодействия при мониторинге Synapse SQL с помощью T-SQL служба предоставляет набор динамических административных представлений (DMV). Эти представления полезны в том случае, если вы активно устраняете неполадки и выявляете узкие места производительности в рабочей нагрузке.
 
-Чтобы просмотреть список динамических административных представлений, которые относятся к Synapse SQL, ознакомьтесь с этой [документацией](../sql/reference-tsql-system-views.md#sql-pool-dynamic-management-views-dmvs). 
+Чтобы просмотреть список динамических административных представлений, которые относятся к Synapse SQL, ознакомьтесь с этой [документацией](../sql/reference-tsql-system-views.md#dedicated-sql-pool-dynamic-management-views-dmvs). 
 
 ## <a name="metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики 
 

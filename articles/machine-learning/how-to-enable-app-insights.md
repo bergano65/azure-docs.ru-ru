@@ -11,12 +11,12 @@ author: blackmist
 ms.date: 09/15/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: a36f69c9956dd05c5fbd85d7e37b90c0b1e4c21e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09eeafa99c14984f74f8807014f646379c7507f0
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90897650"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93314218"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения
 
@@ -204,19 +204,19 @@ Azure Application Insights хранит журналы службы в той ж
 ## <a name="export-data-for-retention-and-processing"></a>Экспорт данных для хранения и обработки
 
 >[!Important]
-> Application Insights Azure поддерживает только экспорты в хранилище BLOB-объектов. Дополнительные сведения об ограничениях этой реализации см. в статье [Экспорт данных телеметрии из App Insights](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry#continuous-export-advanced-storage-configuration).
+> Application Insights Azure поддерживает только экспорты в хранилище BLOB-объектов. Дополнительные сведения об ограничениях этой реализации см. в статье [Экспорт данных телеметрии из App Insights](../azure-monitor/app/export-telemetry.md#continuous-export-advanced-storage-configuration).
 
-Используйте Application Insights " [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) ", чтобы экспортировать данные в учетную запись хранения BLOB-объектов, где можно определить параметры хранения. Application Insights экспортирует данные в формате JSON. 
+Используйте Application Insights " [непрерывный экспорт](../azure-monitor/app/export-telemetry.md) ", чтобы экспортировать данные в учетную запись хранения BLOB-объектов, где можно определить параметры хранения. Application Insights экспортирует данные в формате JSON. 
 
 :::image type="content" source="media/how-to-enable-app-insights/continuous-export-setup.png" alt-text="непрерывный экспорт.":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как включить ведение журнала и просмотреть журналы для конечных точек веб-службы. Выполните следующие действия в следующих статьях:
 
 
-* [Развертывание модели в кластере AKS](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-kubernetes-service)
+* [Развертывание модели в кластере AKS](./how-to-deploy-azure-kubernetes-service.md)
 
-* [Развертывание модели в службе "экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-container-instance)
+* [Развертывание модели в службе "экземпляры контейнеров Azure"](./how-to-deploy-azure-container-instance.md)
 
-* [Млопс: управление, развертывание и мониторинг моделей с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-model-management-and-deployment) для получения дополнительных сведений об использовании данных, собираемых из моделей в рабочей среде. Такие данные позволяют постоянно улучшать процесс машинного обучения.
+* [Млопс: управление, развертывание и мониторинг моделей с помощью машинное обучение Azure](./concept-model-management-and-deployment.md) для получения дополнительных сведений об использовании данных, собираемых из моделей в рабочей среде. Такие данные позволяют постоянно улучшать процесс машинного обучения.

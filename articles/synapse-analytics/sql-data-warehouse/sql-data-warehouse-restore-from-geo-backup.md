@@ -1,6 +1,6 @@
 ---
-title: Восстановление хранилища данных из географической резервной копии
-description: Руководство по географическиму восстановлению пула SQL.
+title: Восстановление выделенного пула SQL из географической резервной копии
+description: Руководство по географическиму восстановлению выделенного пула SQL в Azure синапсе Analytics
 services: synapse-analytics
 author: anumjs
 manager: craigg
@@ -11,29 +11,29 @@ ms.date: 07/12/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 3c8d78c164cefbab03d9d3fa783c75ded9773d38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7496cedd127182482bccf97909cc0a0a4a78253f
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87075820"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93313419"
 ---
-# <a name="geo-restore-for-sql-pool"></a>Геовосстановление для пула SQL
+# <a name="geo-restore-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Геовосстановление выделенного пула SQL в Azure синапсе Analytics
 
-Из этой статьи вы узнаете, как восстановить пул SQL из географической резервной копии с помощью портал Azure и PowerShell.
+Из этой статьи вы узнаете, как восстановить выделенный пул SQL из географической резервной копии с помощью портал Azure и PowerShell.
 
 ## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-**Проверьте ресурсы DTU.** Каждый пул SQL размещается на [логическом сервере SQL](../../azure-sql/database/logical-servers.md) Server (например, MyServer.Database.Windows.NET), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
+**Проверьте ресурсы DTU.** Каждый выделенный пул SQL размещается на [логическом сервере SQL Server](../../azure-sql/database/logical-servers.md) (например, MyServer.Database.Windows.NET), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
 ## <a name="restore-from-an-azure-geographical-region-through-powershell"></a>Восстановление из географического региона Azure с помощью PowerShell
 
 Чтобы выполнить восстановление из географической резервной копии, используйте командлет [Get-азсклдатабасежеобаккуп](/powershell/module/az.sql/get-azsqldatabasegeobackup?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
 
 > [!NOTE]
-> Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000**c**).
+> Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000 **c** ).
 >
 
 1. Перед началом убедитесь, что [установлен Azure PowerShell](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
@@ -74,7 +74,7 @@ $GeoRestoredDatabase.status
 
 ## <a name="restore-from-an-azure-geographical-region-through-azure-portal"></a>Восстановление из географического региона Azure с помощью портал Azure
 
-Выполните действия, описанные ниже, чтобы восстановить пул SQL из географической резервной копии.
+Выполните действия, описанные ниже, чтобы восстановить выделенный пул SQL из географической резервной копии.
 
 1. Войдите в учетную запись [портал Azure](https://portal.azure.com/) .
 2. Щелкните **Создать ресурс**.
@@ -87,7 +87,7 @@ $GeoRestoredDatabase.status
 
 4. Заполните сведения, запрошенные на вкладке " **основы** ", и нажмите кнопку " **Далее": дополнительные параметры**.
 
-   ![Основы](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
+   ![Основные сведения](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
 
 5. Для параметра **использовать существующий параметр данных** выберите **резервное копирование** и выберите соответствующую резервную копию в параметрах прокрутки вниз. Щелкните **Просмотр и создание**.
 
@@ -95,7 +95,7 @@ $GeoRestoredDatabase.status
 
 6. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
-- [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
-- [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
+- [Восстановление существующего выделенного пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
+- [Восстановление удаленного выделенного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
