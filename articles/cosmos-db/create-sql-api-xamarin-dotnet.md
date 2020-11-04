@@ -9,14 +9,15 @@ ms.topic: quickstart
 ms.date: 10/09/2020
 ms.author: anfeldma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2d82b7f618757fbf77072bd7147595eec3083885
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 91e89eaf215468f171974e5f3fd383691fdd6ebe
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487642"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096988"
 ---
 # <a name="quickstart-build-a-todo-app-with-xamarin-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения со списком дел с помощью Xamarin и API SQL для Azure Cosmos DB | Документация Майкрософт
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET версии 3](create-sql-api-dotnet.md)
@@ -38,7 +39,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы разрабатываете приложение в Windows, но еще не установили Visual Studio 2019, скачайте **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить рабочие нагрузки **Разработка для Azure** и **Разработка мобильных приложений на .NET** .
+Если вы разрабатываете приложение в Windows, но еще не установили Visual Studio 2019, скачайте **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить рабочие нагрузки **Разработка для Azure** и **Разработка мобильных приложений на .NET**.
 
 Если вы используете Mac, скачайте **бесплатный** выпуск [Visual Studio для Mac](https://www.visualstudio.com/vs/mac/).
 
@@ -83,17 +84,17 @@ Azure Cosmos DB — это глобально распределенная мн
     git clone https://github.com/Azure-Samples/azure-cosmos-db-sql-xamarin-getting-started.git
     ```
 
-4. В Visual Studio откройте файл **C:\git-samples\azure-cosmos-db-sql-xamarin-getting-started\src\ToDoItems.sln** . 
+4. В Visual Studio откройте файл **C:\git-samples\azure-cosmos-db-sql-xamarin-getting-started\src\ToDoItems.sln**. 
 
 ## <a name="obtain-your-api-keys"></a>Получение ключей API
 
 Вернитесь на портал Azure, чтобы найти сведения о ключе API. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи API SQL для Azure Cosmos DB и на левой панели навигации щелкните **Ключи** , а затем выберите **Ключи записи-чтения** . На следующем шаге используйте кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл APIKeys.cs.
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи API SQL для Azure Cosmos DB и на левой панели навигации щелкните **Ключи** , а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл APIKeys.cs.
 
-    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/keys.png" alt-text="Приложение со списком дел Xamarin в iOS":::
+    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/keys.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, колонка &quot;Ключи&quot;":::
 
-2. В Visual Studio откройте файл **ToDoItems.Core/Helpers/APIKeys.cs** .
+2. В Visual Studio откройте файл **ToDoItems.Core/Helpers/APIKeys.cs**.
 
 3. На портале Azure скопируйте значение **URI** с помощью кнопки копирования и добавьте его в качестве значения переменной `CosmosEndpointUrl` в файл APIKeys.cs.
 
@@ -115,7 +116,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 В примере этого решения показано, как создать приложение со списком дел с помощью API SQL для Azure Cosmos DB и Xamarin.Forms. В приложении представлены две вкладки: на первой вкладке содержится представление списка с элементами списка дел, которые еще не завершены. На второй вкладке отображаются элементы списка дел, которые уже завершены. На первой вкладке можно не только просмотреть список незавершенных дел, но и добавить новые элементы списка дел, а также отметить элементы как завершенные.
 
-:::image type="content" source="./media/create-sql-api-xamarin-dotnet/android-todo-screen.png" alt-text="Приложение со списком дел Xamarin в iOS":::
+:::image type="content" source="./media/create-sql-api-xamarin-dotnet/android-todo-screen.png" alt-text="Копирование данных JSON и нажатие кнопки &quot;Сохранить&quot; в обозревателе данных на портале Azure":::
 
 Код в решении ToDoItems содержит:
 
@@ -129,7 +130,7 @@ Azure Cosmos DB — это глобально распределенная мн
 Рассмотрим краткий обзор того, как приложение обменивается данными с Azure Cosmos DB.
 
 * Во все проекты необходимо добавить пакет NuGet [Microsoft.Azure.DocumentDb.Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
-* Класс `ToDoItem` в папке **ToDoItems.Core/Models** позволяет моделировать документы в созданном ранее контейнере **Элементы** . Обратите внимание, что в именах свойств учитывается регистр.
+* Класс `ToDoItem` в папке **ToDoItems.Core/Models** позволяет моделировать документы в созданном ранее контейнере **Элементы**. Обратите внимание, что в именах свойств учитывается регистр.
 * Класс `CosmosDBService` в папке **ToDoItems.Core/Services** позволяет инкапсулировать данные о подключении к Azure Cosmos DB.
 * Класс `CosmosDBService` содержит переменную типа `DocumentClient`. Переменная `DocumentClient` используется для настройки и выполнения запросов к учетной записи Azure Cosmos DB с созданием экземпляра:
 
@@ -181,27 +182,27 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. Сначала выберите целевую платформу. Для этого щелкните выделенный раскрывающийся список и выберите ToDoItems.iOS для iOS или ToDoItems.Android для Android.
 
-    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ide-select-platform.png" alt-text="Приложение со списком дел Xamarin в iOS":::
+    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ide-select-platform.png" alt-text="Выбор платформы для отладки в Visual Studio для Mac":::
 
 2. Чтобы начать отладку приложения, нажмите клавиши CMD+ВВОД или кнопку воспроизведения.
 
-    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ide-start-debug.png" alt-text="Приложение со списком дел Xamarin в iOS":::
+    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ide-start-debug.png" alt-text="Запуск отладки в Visual Studio для Mac":::
 
 3. По завершении запуска в симуляторе iOS или эмуляторе Android в приложении появятся две вкладки: в нижней части экрана — для iOS и в верхней части экрана — для Android. На первой вкладке отображаются незавершенные элементы списка дел, а на второй — завершенные.
 
-    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ios-droid-started.png" alt-text="Приложение со списком дел Xamarin в iOS":::
+    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/ios-droid-started.png" alt-text="Экран запуска приложения со списком дел":::
 
 4. Чтобы завершить элемент в списке дел в iOS, переместите его влево и нажмите кнопку **Complete** (Завершить). Чтобы завершить элемент в списке дел в Android, коснитесь элемента и долго удерживайте его, а затем нажмите кнопку завершения.
 
-    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/simulator-complete.png" alt-text="Приложение со списком дел Xamarin в iOS":::
+    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/simulator-complete.png" alt-text="Завершение элемента списка дел":::
 
 5. Чтобы изменить элемент списка дел, коснитесь элемента. Откроется новый экран для ввода новых значений. Нажмите кнопку сохранения, чтобы сохранить изменения в Azure Cosmos DB.
 
-    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/simulator-edit.png" alt-text="Приложение со списком дел Xamarin в iOS":::
+    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/simulator-edit.png" alt-text="Изменение элемента списка дел":::
 
 6. Чтобы добавить элемент списка дел, нажмите кнопку **Добавить** в правом верхнем углу начального экрана. После этого откроется новая пустая страница для изменения.
 
-    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/simulator-add.png" alt-text="Приложение со списком дел Xamarin в iOS":::
+    :::image type="content" source="./media/create-sql-api-xamarin-dotnet/simulator-add.png" alt-text="Добавление элемента списка дел":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

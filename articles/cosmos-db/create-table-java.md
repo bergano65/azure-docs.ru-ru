@@ -9,14 +9,15 @@ ms.topic: quickstart
 ms.date: 05/28/2020
 ms.author: sngun
 ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 10a1a13deaaa6e61eacef3e68e19a1cfe97ef3c1
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 48335e577ed248a42914bdaa1b1e662daf2d26cc
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487557"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93090175"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-table-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API таблиц Azure Cosmos DB
+[!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET](create-table-dotnet.md)
@@ -163,7 +164,7 @@ ms.locfileid: "92487557"
 
 2. Скопируйте основную строку подключения с помощью кнопки копирования справа.
 
-3. Откройте файл *config.properties* из папки *C:\git-samples\storage-table-java-getting-started\src\main\resources* . 
+3. Откройте файл *config.properties* из папки *C:\git-samples\storage-table-java-getting-started\src\main\resources*. 
 
 5. Закомментируйте первую строку и раскомментируйте вторую. После этого первые две строки будут выглядеть так:
 
@@ -178,7 +179,7 @@ ms.locfileid: "92487557"
     > Если для вашей конечной точки указан адрес documents.azure.com, это значит, что вы используете учетную запись для предварительной версии. В этом случае для работы с общедоступными пакетами SDK для API таблиц вам нужно создать [новую учетную запись API таблиц](#create-a-database-account).
     >
 
-7. Сохраните файл *config.properties* .
+7. Сохраните файл *config.properties*.
 
 Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
 

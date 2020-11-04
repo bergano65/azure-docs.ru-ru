@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/01/2020
-ms.openlocfilehash: 6ef4d63e30aeceec9cba3ae97f69afa1c299ec65
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 37cbd1b05249c694aaaa4ff5196a3b6328ccda7f
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742732"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93126283"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Краткое руководство. Создание задания Azure Stream Analytics с помощью Azure CLI
 
@@ -71,19 +71,19 @@ ms.locfileid: "92742732"
 
 В следующих блоках кода Azure CLI выполняются команды для подготовки входных данных, необходимых для задания. Просмотрите разделы, чтобы понять код.
 
-1. Создайте Центр Интернета вещей с помощью команды [az iot hub create](../iot-hub/iot-hub-create-using-cli.md#create-an-iot-hub). Этот пример создает Центр Интернета вещей с именем **MyASAIoTHub** . Так как имена Центров Интернета вещей являются уникальными, необходимо придумать собственное имя Центра Интернета вещей. Задайте для номера SKU значение F1, чтобы использовать уровень "Бесплатный", если он доступен с вашей подпиской. В противном случае выберите следующий самый низкий уровень.
+1. Создайте Центр Интернета вещей с помощью команды [az iot hub create](../iot-hub/iot-hub-create-using-cli.md#create-an-iot-hub). Этот пример создает Центр Интернета вещей с именем **MyASAIoTHub**. Так как имена Центров Интернета вещей являются уникальными, необходимо придумать собственное имя Центра Интернета вещей. Задайте для номера SKU значение F1, чтобы использовать уровень "Бесплатный", если он доступен с вашей подпиской. В противном случае выберите следующий самый низкий уровень.
 
     ```azurecli
     az iot hub create --name "MyASAIoTHub" --resource-group streamanalyticsrg --sku S1
     ```
 
-    После создания Центра Интернета вещей получите его строку подключения с помощью команды [az iot hub show-connection-string](https://docs.microsoft.com/cli/azure/iot/hub?view=azure-cli-latest). Скопируйте всю строку подключения и сохраните ее, чтобы использовать во время добавления Центра Интернета вещей в качестве источника входных данных в задание Stream Analytics.
+    После создания Центра Интернета вещей получите его строку подключения с помощью команды [az iot hub show-connection-string](/cli/azure/iot/hub?view=azure-cli-latest). Скопируйте всю строку подключения и сохраните ее, чтобы использовать во время добавления Центра Интернета вещей в качестве источника входных данных в задание Stream Analytics.
 
     ```azurecli
     az iot hub show-connection-string --hub-name "MyASAIoTHub"
     ```
 
-2. Добавьте устройство к Центру Интернета вещей с помощью команды [az iothub device-identity create](../iot-hub/quickstart-send-telemetry-c.md#register-a-device). В этом примере создается устройство с именем **MyASAIoTDevice** .
+2. Добавьте устройство к Центру Интернета вещей с помощью команды [az iothub device-identity create](../iot-hub/quickstart-send-telemetry-c.md#register-a-device). В этом примере создается устройство с именем **MyASAIoTDevice**.
 
     ```azurecli
     az iot hub device-identity create --hub-name "MyASAIoTHub" --device-id "MyASAIoTDevice"
@@ -124,7 +124,7 @@ ms.locfileid: "92742732"
    az storage account keys list -g streamanalyticsrg -n <storage-account>
    ```
 
-3. Создайте контейнер для хранения больших двоичных объектов с помощью команды [az storage container create](/cli/azure/storage/container). Вы можете использовать ключ учетной записи хранения, чтобы авторизовать операцию создания контейнера. Дополнительные сведения об авторизации операций с данными с помощью Azure CLI см. в статье [Авторизация доступа к данным большого двоичного объекта или очереди с помощью Azure CLI](/azure/storage/common/authorize-data-operations-cli).
+3. Создайте контейнер для хранения больших двоичных объектов с помощью команды [az storage container create](/cli/azure/storage/container). Вы можете использовать ключ учетной записи хранения, чтобы авторизовать операцию создания контейнера. Дополнительные сведения об авторизации операций с данными с помощью Azure CLI см. в статье [Авторизация доступа к данным большого двоичного объекта или очереди с помощью Azure CLI](../storage/common/authorize-data-operations-cli.md).
 
    ```azurecli
    az storage container create \
@@ -249,7 +249,7 @@ az stream-analytics transformation create
 
 2. Замените значения заполнителя в 15-й строке строкой подключения устройства Центра Интернета вещей, которую вы сохранили при работе с предыдущим разделом.
 
-3. Нажмите кнопку **Запустить** . В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
+3. Нажмите кнопку **Запустить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
 
     ![Онлайн-симулятор Raspberry Pi для Интернета вещей Azure.](./media/stream-analytics-quick-create-powershell/ras-pi-connection-string.png)
 

@@ -7,14 +7,15 @@ ms.topic: overview
 ms.date: 10/16/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: a545059c520f3cbdeee6c73a044af48795d49ac8
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 60e806be85a36c2e8a64d731c8794d806a4fcae4
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282439"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096535"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-32-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.2) — поддержка возможностей и синтаксиса
+[!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. С API Azure Cosmos DB для MongoDB можно взаимодействовать, используя любой из [драйверов](https://docs.mongodb.org/ecosystem/drivers) с открытым кодом для клиента MongoDB. API Azure Cosmos DB для MongoDB позволяет использовать имеющиеся драйверы клиента благодаря [сетевому протоколу](https://docs.mongodb.org/manual/reference/mongodb-wire-protocol) MongoDB.
 
@@ -25,7 +26,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="protocol-support"></a>Поддержка протоколов
 
-Все новые учетные записи API Azure Cosmos DB для MongoDB совместимы с сервером MongoDB версии **3.6**. В этой статье рассматривается MongoDB версии 3.2. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB. 
+Все новые учетные записи API Azure Cosmos DB для MongoDB совместимы с сервером MongoDB версии  **3.6**. В этой статье рассматривается MongoDB версии 3.2. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB. 
 
 API Azure Cosmos DB для MongoDB также обеспечивает простое обновление для удовлетворяющих требованиям учетных записей. Дополнительные сведения см. в [руководстве по обновлению версии MongoDB](mongodb-version-upgrade.md).
 

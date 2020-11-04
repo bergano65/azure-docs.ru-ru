@@ -9,14 +9,15 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 06e0d3618e96b44eca60f32a0977e7f03d6f5603
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 8a76a37de64733ba3e0126c7885d8690d2d83c1b
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91824625"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099731"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-python-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Python и Azure Cosmos DB
+[!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET](create-cassandra-dotnet.md)
@@ -100,7 +101,7 @@ ms.locfileid: "91824625"
 
 1. Нажмите кнопку :::image type="icon" source="./media/create-cassandra-python/copy.png"::: в правой части экрана, чтобы скопировать верхнее значение "Contact point" (Контакт). 
 
-   :::image type="content" source="./media/create-cassandra-python/keys.png" alt-text="Просмотр и копирование имени пользователя, пароля и контакта в колонке строки подключения на портале Azure&quot;:::
+   :::image type="content" source="./media/create-cassandra-python/keys.png" alt-text="Просмотр и копирование имени пользователя, пароля и контакта в колонке строки подключения на портале Azure":::
 
 1. Откройте файл *config.py*. 
 
@@ -110,13 +111,13 @@ ms.locfileid: "91824625"
 
     `'contactPoint': 'cosmos-db-quickstarts.cassandra.cosmosdb.azure.com:10350'`
 
-1. Скопируйте значение параметра &quot;Пользователь&quot; на портале и вставьте его над элементом `<FILLME>` в строке 6.
+1. Скопируйте значение параметра "Пользователь" на портале и вставьте его над элементом `<FILLME>` в строке 6.
 
     Теперь строка 6 должна выглядеть примерно так: 
 
     `'username': 'cosmos-db-quickstart',`
     
-1. Скопируйте значение параметра &quot;Пароль" с портала и вставьте его над элементом `<FILLME>` в строке 8.
+1. Скопируйте значение параметра "Пароль" с портала и вставьте его над элементом `<FILLME>` в строке 8.
 
     Теперь строка 8 должна выглядеть примерно так:
 
@@ -157,43 +158,11 @@ ms.locfileid: "91824625"
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
 
-    :::image type="content" source="./media/create-cassandra-python/output.png" alt-text="Просмотр и копирование имени пользователя, пароля и контакта в колонке строки подключения на портале Azure&quot;:::
-
-1. Откройте файл *config.py*. 
-
-1. Вставьте полученное на портале значение параметра Contact point (Контакт) над элементом `<FILLME>` в строке 10.
-
-    Теперь строка 10 должна выглядеть примерно так: 
-
-    `'contactPoint': 'cosmos-db-quickstarts.cassandra.cosmosdb.azure.com:10350'`
-
-1. Скопируйте значение параметра &quot;Пользователь&quot; на портале и вставьте его над элементом `<FILLME>` в строке 6.
-
-    Теперь строка 6 должна выглядеть примерно так: 
-
-    `'username': 'cosmos-db-quickstart',`
+    :::image type="content" source="./media/create-cassandra-python/output.png" alt-text="Просмотр и проверка выходных данных":::
     
-1. Скопируйте значение параметра &quot;Пароль":::
-    
-4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
+4. На портале Azure откройте **обозреватель данных** , чтобы запросить, изменить и обработать новые данные. 
 
-    :::image type="content" source="./media/create-cassandra-python/data-explorer.png" alt-text="Просмотр и копирование имени пользователя, пароля и контакта в колонке строки подключения на портале Azure&quot;:::
-
-1. Откройте файл *config.py*. 
-
-1. Вставьте полученное на портале значение параметра Contact point (Контакт) над элементом `<FILLME>` в строке 10.
-
-    Теперь строка 10 должна выглядеть примерно так: 
-
-    `'contactPoint': 'cosmos-db-quickstarts.cassandra.cosmosdb.azure.com:10350'`
-
-1. Скопируйте значение параметра &quot;Пользователь&quot; на портале и вставьте его над элементом `<FILLME>` в строке 6.
-
-    Теперь строка 6 должна выглядеть примерно так: 
-
-    `'username': 'cosmos-db-quickstart',`
-    
-1. Скопируйте значение параметра &quot;Пароль":::
+    :::image type="content" source="./media/create-cassandra-python/data-explorer.png" alt-text="Просмотр данных в обозревателе данных":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

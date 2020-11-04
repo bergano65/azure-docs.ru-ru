@@ -9,12 +9,12 @@ ms.author: dademath
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e6cbf840fa27755fa43eb2a81e752415562ce41f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 799c46ad2715e1edd3d2fba24a8350fd2608d3d8
+ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461147"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93233939"
 ---
 # <a name="get-started-with-the-group-calling-hero-sample"></a>Начало работы с примером функции группового вызова
 
@@ -75,7 +75,7 @@ ms.locfileid: "92461147"
 ## <a name="before-running-the-sample-for-the-first-time"></a>Действия перед первым запуском примера
 
 1. Откройте экземпляр PowerShell, Терминал Windows, командную строку или аналогичную среду и перейдите к каталогу, в который вы хотите клонировать пример.
-2. `git clone https://github.com/Azure/Communication.git`
+2. `git clone https://github.com/Azure-Samples/communication-services-web-calling-hero.git`
 3. Получите `Connection String` с помощью портала Azure. Дополнительные сведения о строках подключения см. в статье [Создание ресурсов Служб коммуникации Azure и управление ими](../quickstarts/create-communication-resource.md).
 4. Получив строку подключения (`Connection String`), добавьте ее в файл **Calling/appsetting.json** , который расположен в папке .NET службы. Сохраните строку подключения в переменную: `ResourceConnectionString`.
 

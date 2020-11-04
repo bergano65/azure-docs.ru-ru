@@ -9,14 +9,15 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 10/01/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7389136d5f08c7efd0c0443387744ce4c5816f00
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 13706b900c64b1d0aa5ce03fc95442e8dfc41051
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91627403"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099833"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB
+[!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET](create-cassandra-dotnet.md)
@@ -97,7 +98,7 @@ Azure Cosmos DB — это глобально распределенная мн
 * Вставьте пользовательские сущности, используя объект IMapper с новым сеансом, который подключается к пространству ключей uprofile.
 
     ```csharp
-    mapper.Insert<User>(new User(1, "LyubovK", "Dubai"));
+    mapper.Insert<User>(new User(1, "LyubovK", "Dubai"));
     ```
     
 * Выполните запрос на получение информации обо всех пользователях.
@@ -158,13 +159,13 @@ Azure Cosmos DB — это глобально распределенная мн
     ```
 3. Нажмите клавиши CTRL + F5 для запуска приложения. Приложение откроется в окне консоли. 
 
-    :::image type="content" source="./media/create-cassandra-dotnet/output.png" alt-text="Просмотр и копирование ключа доступа на странице Строка подключения на портале Azure":::
+    :::image type="content" source="./media/create-cassandra-dotnet/output.png" alt-text="Просмотр и проверка выходных данных":::
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
     
-4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные.
+4. На портале Azure откройте **обозреватель данных** , чтобы запросить, изменить и обработать новые данные.
 
-    :::image type="content" source="./media/create-cassandra-dotnet/data-explorer.png" alt-text="Просмотр и копирование ключа доступа на странице Строка подключения на портале Azure":::
+    :::image type="content" source="./media/create-cassandra-dotnet/data-explorer.png" alt-text="Просмотр данных в обозревателе данных":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

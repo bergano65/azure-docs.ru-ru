@@ -9,14 +9,15 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 10/21/2020
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: cf432910c42716de151aa2e0d36c21bff18d3ed9
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: aceb26604d67f42cdbbe1395e3a4b08675d70ea1
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92482900"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93078532"
 ---
 # <a name="quickstart-build-a-net-console-app-to-manage-azure-cosmos-db-sql-api-resources"></a>Краткое руководство. Создание консольного приложения .NET для управления ресурсами API SQL для Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET версии 3](create-sql-api-dotnet.md)
@@ -49,11 +50,11 @@ Azure Cosmos DB — это быстрая база данных NoSQL от Ма
 
 ### <a name="create-an-azure-cosmos-account"></a><a id="create-account"></a>Создание учетной записи Azure Cosmos
 
-Если вы используете опцию [Бесплатная пробная версия Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) для создания учетной записи Azure Cosmos, необходимо создать учетную запись Azure Cosmos DB типа **API SQL** . Тестовая учетная запись Azure Cosmos DB уже создана. Нет необходимости явно создавать учетную запись, поэтому вы можете пропустить этот раздел и перейти к следующему.
+Если вы используете опцию [Бесплатная пробная версия Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) для создания учетной записи Azure Cosmos, необходимо создать учетную запись Azure Cosmos DB типа **API SQL**. Тестовая учетная запись Azure Cosmos DB уже создана. Нет необходимости явно создавать учетную запись, поэтому вы можете пропустить этот раздел и перейти к следующему.
 
 Если у вас есть собственная подписка Azure или вы создали бесплатную подписку, вам следует явно создать учетную запись Azure Cosmos. Следующий код создаст учетную запись Azure Cosmos с согласованностью сеанса. Учетная запись реплицируется в `South Central US` и в `North Central US`.  
 
-Для создания учетной записи Cosmos Azure можно использовать Azure Cloud Shell. Azure Cloud Shell — это интерактивная, аутентифицированная, доступная в браузере оболочка для управления ресурсами Azure. Она предоставляет гибкие возможности при выборе оболочки, соответствующей вашим методам работы, будь то Bash или PowerShell. В рамках этого краткого руководства выберите режим **Bash** . Для Azure Cloud Shell также требуется учетная запись хранения, ее можно создать при появлении соответствующего запроса.
+Для создания учетной записи Cosmos Azure можно использовать Azure Cloud Shell. Azure Cloud Shell — это интерактивная, аутентифицированная, доступная в браузере оболочка для управления ресурсами Azure. Она предоставляет гибкие возможности при выборе оболочки, соответствующей вашим методам работы, будь то Bash или PowerShell. В рамках этого краткого руководства выберите режим **Bash**. Для Azure Cloud Shell также требуется учетная запись хранения, ее можно создать при появлении соответствующего запроса.
 
 Нажмите кнопку **Попробуйте** рядом со следующим кодом, выберите режим **Bash** , а затем — **Создать учетную запись хранения** и войдите в Cloud Shell. Затем скопируйте и вставьте следующий код в Azure Cloud Shell, после чего запустите его. Имя учетной записи Azure Cosmos должно быть глобально уникальным. Перед запуском команды обязательно обновите значение `mysqlapicosmosdb`.
 

@@ -9,14 +9,15 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 10/01/2020
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 46826319cdd2ba55d469704a09656b61c96ce798
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: f228386d8cf0e708080b7f6c5f6cef7258b2eafb
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743165"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099986"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-net-core-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета .NET Core и Azure Cosmos DB
+[!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET](create-cassandra-dotnet.md)
@@ -175,13 +176,13 @@ Azure Cosmos DB — это глобально распределенная мн
     ```
 3. Нажмите клавиши CTRL + F5 для запуска приложения. Приложение откроется в окне консоли. 
 
-    :::image type="content" source="./media/create-cassandra-dotnet/output.png" alt-text="Просмотр и копирование ключа доступа на странице Строка подключения на портале Azure":::
+    :::image type="content" source="./media/create-cassandra-dotnet/output.png" alt-text="Просмотр и проверка выходных данных":::
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
     
-4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные.
+4. На портале Azure откройте **обозреватель данных** , чтобы запросить, изменить и обработать новые данные.
 
-    :::image type="content" source="./media/create-cassandra-dotnet/data-explorer.png" alt-text="Просмотр и копирование ключа доступа на странице Строка подключения на портале Azure":::
+    :::image type="content" source="./media/create-cassandra-dotnet/data-explorer.png" alt-text="Просмотр данных в обозревателе данных":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

@@ -8,12 +8,12 @@ ms.topic: overview
 author: peterclu
 ms.author: peterlu
 ms.date: 08/24/2020
-ms.openlocfilehash: 31e129b9b1a4b5161ed33c27ea4da76168170dbe
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 345c925d3b1350dfc2ea69d65d8d14688c6930b9
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495986"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310172"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>Что такое студия Машинного обучения Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "92495986"
 | Компонент | Студии машинного обучения (классической) | Машинное обучение Azure |
 |---| --- | --- |
 | Интерфейс перетаскивания | Классический интерфейс | Обновленный интерфейс — [конструктор Машинного обучения Azure](concept-designer.md)| 
-| Пакеты SDK для кода | Не поддерживается | Полная интеграция с пакетами SDK [Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/) и [R](tutorial-1st-r-experiment.md) |
+| Пакеты SDK для кода | Не поддерживается | Полная интеграция с пакетами SDK [Машинного обучения Azure для Python](/python/api/overview/azure/ml/) и [R](tutorial-1st-r-experiment.md) |
 | Эксперимент | Масштабируемый (ограничение на объем данных для обучения: 10 ГБ) | Масштабирование с помощью целевого объекта вычислений |
 | Обучение целевых объектов вычислений | Собственный целевой объект, поддерживающий только ЦП | Обширный набор настраиваемых [целевых объектов вычислений для обучения](concept-compute-target.md#train). Включает поддержку GPU и ЦП. | 
 | Развертывание целевых объектов вычислений | Собственный формат веб-службы, без возможности настройки | Обширный набор настраиваемых [целевых объектов вычислений для развертывания](concept-compute-target.md#deploy). Включает поддержку GPU и ЦП. |
@@ -103,4 +103,3 @@ ms.locfileid: "92495986"
   + [Использование записных книжек Jupyter на вычислительном экземпляре для обучения и развертывании моделей](tutorial-1st-experiment-sdk-setup.md)
   + [Использование автоматизированного машинного обучения для обучения и развертывания моделей](tutorial-first-experiment-automated-ml.md)  
   + [Использование конструктора для обучения и развертывания моделей](tutorial-designer-automobile-price-train-score.md)
-

@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: e6b299b5befec93f21e9e8476d0cc74710612d66
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6c6282f487d6a20de4654118df94c8bfac8a441d
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323810"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93075931"
 ---
 # <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-java-service-sdk"></a>Краткое руководство. Регистрация устройств TPM в Службе подготовки устройств к добавлению в Центр Интернета вещей с помощью пакета SDK для службы Java
 
@@ -27,7 +27,7 @@ ms.locfileid: "91323810"
 - Выполнение инструкций из краткого руководства по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 - Выполнение действий в разделе [Чтение криптографических ключей из устройства доверенного платформенного модуля](quick-create-simulated-device.md#simulatetpm).
 - Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-- [Пакет SDK для Java SE 8](https://aka.ms/azure-jdks). В этом кратком руководстве мы устанавливаем [пакет SDK для Java](https://azure.github.io/azure-iot-sdk-java/service/), приведенный ниже. Он поддерживает операционные системы Linux и Windows. В рамках этого краткого руководства используется Windows.
+- [Пакет SDK для Java SE 8](https://aka.ms/azure-jdks). В этом кратком руководстве мы устанавливаем [пакет SDK для Java](https://azure.github.io/azure-iot-sdk-java/master/service/), приведенный ниже. Он поддерживает операционные системы Linux и Windows. В рамках этого краткого руководства используется Windows.
 - [Maven версии 3](https://maven.apache.org/download.cgi).
 - [Git](https://git-scm.com/download/).
 
@@ -62,7 +62,7 @@ ms.locfileid: "91323810"
 
 В этом разделе показано, как добавить в пример кода сведения о подготовке устройства TPM. 
 
-1. Откройте командную строку. Клонируйте из репозитория GitHub пример кода для регистрации устройства, используя [пакет SDK для службы Java](https://azure.github.io/azure-iot-sdk-java/service/):
+1. Откройте командную строку. Клонируйте из репозитория GitHub пример кода для регистрации устройства, используя [пакет SDK для службы Java](https://azure.github.io/azure-iot-sdk-java/master/service/):
     
     ```cmd\sh
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
@@ -98,7 +98,7 @@ ms.locfileid: "91323810"
             ```Java
             private static final String IOTHUB_HOST_NAME = "[Host name].azure-devices.net";
             ```
-        2. Укажите понятное имя в качестве значения параметра *DEVICE_ID*, а для *PROVISIONING_STATUS* сохраните значение по умолчанию *ENABLED* (включено). 
+        2. Укажите понятное имя в качестве значения параметра *DEVICE_ID* , а для *PROVISIONING_STATUS* сохраните значение по умолчанию *ENABLED* (включено). 
     
       - Вы также можете не настраивать службу подготовки. В этом случае закомментируйте или удалите в файле _ServiceEnrollmentGroupSample.java_ следующие инструкции:
           ```Java
@@ -130,7 +130,7 @@ ms.locfileid: "91323810"
     mvn install -DskipTests
     ```
 
-   С помощью этой команды можно скачать на компьютер пакет Maven [`com.microsoft.azure.sdk.iot.provisioning.service`](https://www.mvnrepository.com/artifact/com.microsoft.azure.sdk.iot.provisioning/provisioning-service-client). Пакет содержит двоичные файлы [пакета SDK для службы Java](https://azure.github.io/azure-iot-sdk-java/service/), которую должен собрать пример кода. 
+   С помощью этой команды можно скачать на компьютер пакет Maven [`com.microsoft.azure.sdk.iot.provisioning.service`](https://www.mvnrepository.com/artifact/com.microsoft.azure.sdk.iot.provisioning/provisioning-service-client). Пакет содержит двоичные файлы [пакета SDK для службы Java](https://azure.github.io/azure-iot-sdk-java/master/service/), которую должен собрать пример кода. 
 
 3. Запустите пример кода, выполнив в окне командной строки следующие команды:
 

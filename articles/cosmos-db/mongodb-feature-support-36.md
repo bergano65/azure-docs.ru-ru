@@ -7,14 +7,15 @@ ms.topic: overview
 ms.date: 08/07/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: cd2d9ddf17cf100e1a211785b9cc62c9f08352f9
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 399c078481fb205221a683e44f74b4d70c383cbe
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282416"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096569"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.6) — поддержка возможностей и синтаксиса
+[!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. С API Azure Cosmos DB для MongoDB можно взаимодействовать, используя любой из [драйверов](https://docs.mongodb.org/ecosystem/drivers) с открытым кодом для клиента MongoDB. API Azure Cosmos DB для MongoDB позволяет использовать имеющиеся драйверы клиента благодаря [сетевому протоколу](https://docs.mongodb.org/manual/reference/mongodb-wire-protocol) MongoDB.
 
@@ -22,7 +23,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="protocol-support"></a>Поддержка протоколов
 
-API Azure Cosmos DB для MongoDB совместим с сервером MongoDB версии **3.6** по умолчанию для новых учетных записей. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB. Обратите внимание, что при использовании API Azure Cosmos DB для учетных записей MongoDB, учетные записи версии 3.6 будет иметь конечную точку в формате `*.mongo.cosmos.azure.com`, в то время как в версии 3.2 конечная точка будет иметь формат `*.documents.azure.com`.
+API Azure Cosmos DB для MongoDB совместим с сервером MongoDB версии  **3.6** по умолчанию для новых учетных записей. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB. Обратите внимание, что при использовании API Azure Cosmos DB для учетных записей MongoDB, учетные записи версии 3.6 будет иметь конечную точку в формате `*.mongo.cosmos.azure.com`, в то время как в версии 3.2 конечная точка будет иметь формат `*.documents.azure.com`.
 
 ## <a name="query-language-support"></a>Поддержка языка запросов
 
@@ -495,10 +496,10 @@ $nearSphere |  Да |
 $geometry |  Да |
 $minDistance | Да |
 $maxDistance | Да |
-$center | Нет |
-$centerSphere | Нет |
-$box | Нет |
-$polygon |  Нет |
+$center | нет |
+$centerSphere | нет |
+$box | нет |
+$polygon |  нет |
 
 ## <a name="cursor-methods"></a>Методы курсора
 

@@ -9,14 +9,15 @@ ms.topic: quickstart
 ms.date: 02/21/2020
 ms.author: jasonh
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 0b81bf951df6db0da7ed049c435a319f6ee33b8a
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 816a16b34c16b2ccc95cbe57aec482b8d3e13fc6
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92479057"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099774"
 ---
 # <a name="quickstart-build-a-net-framework-or-core-application-using-the-azure-cosmos-db-gremlin-api-account"></a>Краткое руководство. Создание приложения .NET Framework или Core с помощью учетной записи API Gremlin для Azure Cosmos DB
+[!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -33,7 +34,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатную** среду [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure** .
+Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатную** среду [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -110,7 +111,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
    **Конечная точка Gremlin** — это значение используется при подключении к учетной записи графа с помощью библиотеки Gremlin.Net.
 
-    :::image type="content" source="./media/create-graph-dotnet/endpoint.png" alt-text="Копирование конечной точки&quot;:::
+    :::image type="content" source="./media/create-graph-dotnet/endpoint.png" alt-text="Копирование конечной точки":::
 
    Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin** , удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`. Значение конечной точки должно выглядеть как `testgraphacct.gremlin.cosmosdb.azure.com`
 
@@ -119,8 +120,8 @@ Azure Cosmos DB — это глобально распределенная мн
 1. После того как вы скопировали URI и первичный ключ своей учетной записи, сохраните их в новой переменной среды на локальном компьютере, на котором запущено приложение. Чтобы установить переменную среды, откройте окно командной строки и выполните следующую команду. Обязательно замените значения <Your_Azure_Cosmos_account_URI> и <Your_Azure_Cosmos_account_PRIMARY_KEY>.
 
    ```console
-   setx Host &quot;<your Azure Cosmos account name>.gremlin.cosmosdb.azure.com&quot;
-   setx PrimaryKey &quot;<Your_Azure_Cosmos_account_PRIMARY_KEY>"
+   setx Host "<your Azure Cosmos account name>.gremlin.cosmosdb.azure.com"
+   setx PrimaryKey "<Your_Azure_Cosmos_account_PRIMARY_KEY>"
    ```
 
 1. Откройте файл *Program.cs* и обновите переменные database и container, используя базу данных и контейнер (которые также являются именами графов), созданные выше.
@@ -141,23 +142,13 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь в обозреватель данных на портале Azure. Здесь вы можете просмотреть и запросить новые данные графа.
 
-1. В обозревателе данных новая база данных отображается в области "Графы". Разверните базу данных и узлы контейнера, а затем щелкните **Граф** .
+1. В обозревателе данных новая база данных отображается в области "Графы". Разверните базу данных и узлы контейнера, а затем щелкните **Граф**.
 
 2. Нажмите кнопку **Применить фильтр** , чтобы использовать запрос по умолчанию для просмотра всех вершин графа. Данные, созданные в примере приложения, отображаются на панели Graphs (Графы).
 
     Вы можете масштабировать граф, развернуть отображаемое пространство, указать дополнительные вершины и переместить их на поверхность отображения.
 
-    :::image type="content" source="./media/create-graph-dotnet/graph-explorer.png" alt-text="Копирование конечной точки&quot;:::
-
-   Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin** , удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`. Значение конечной точки должно выглядеть как `testgraphacct.gremlin.cosmosdb.azure.com`
-
-1. Затем перейдите на вкладку **Ключи** и скопируйте значение **Первичный ключ** c портала Azure. 
-
-1. После того как вы скопировали URI и первичный ключ своей учетной записи, сохраните их в новой переменной среды на локальном компьютере, на котором запущено приложение. Чтобы установить переменную среды, откройте окно командной строки и выполните следующую команду. Обязательно замените значения <Your_Azure_Cosmos_account_URI> и <Your_Azure_Cosmos_account_PRIMARY_KEY>.
-
-   ```console
-   setx Host &quot;<your Azure Cosmos account name>.gremlin.cosmosdb.azure.com&quot;
-   setx PrimaryKey &quot;<Your_Azure_Cosmos_account_PRIMARY_KEY>":::
+    :::image type="content" source="./media/create-graph-dotnet/graph-explorer.png" alt-text="Просмотр графа в обозревателе данных на портале Azure":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

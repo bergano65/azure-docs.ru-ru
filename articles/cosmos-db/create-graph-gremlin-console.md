@@ -7,14 +7,15 @@ ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 07/10/2020
 ms.author: jasonh
-ms.openlocfilehash: ca1ca258296f5ac8f1fb7120d2965ccacf74b5d5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: be93df10614e32fb14e5ca7497461f0f2d6fc93e
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91409397"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099723"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
+[!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -52,11 +53,11 @@ Azure Cosmos DB — это глобально распределенная мн
 ## <a name="connect-to-your-app-servicegraph"></a><a id="ConnectAppService"></a>Подключение к службе приложений или графу
 
 1. Перед запуском консоли Gremlin создайте или измените файл конфигурации remote-secure.yaml в каталоге `apache-tinkerpop-gremlin-console-3.2.5/conf`.
-2. Укажите *узел*, *порт*, *имя пользователя*, *пароль*, *пул подключений* и *сериализатор* согласно определениям в следующей таблице:
+2. Укажите *узел* , *порт* , *имя пользователя* , *пароль* , *пул подключений* и *сериализатор* согласно определениям в следующей таблице:
 
     Параметр|Рекомендуемое значение|Описание
     ---|---|---
-    Узлы|[*имя_учетной_записи*.**gremlin**.cosmos.azure.com]|Экран должен выглядеть следующим образом. Это значение **Gremlin URI** на странице обзора портала Azure, заключенное в квадратные скобки и без окончания 443/. Примечание. Обязательно используйте значение Gremlin, а **не** универсальный код ресурса (URI), который заканчивается на [*имя_учетной_записи*.documents.azure.com] (его использование может привести к появлению исключения Host did not respond in a timely fashion (Узел не ответил вовремя) при попытке выполнить запросы Gremlin позже). 
+    Узлы|[ *имя_учетной_записи*. **gremlin**.cosmos.azure.com]|Экран должен выглядеть следующим образом. Это значение **Gremlin URI** на странице обзора портала Azure, заключенное в квадратные скобки и без окончания 443/. Примечание. Обязательно используйте значение Gremlin, а **не** универсальный код ресурса (URI), который заканчивается на [ *имя_учетной_записи*.documents.azure.com] (его использование может привести к появлению исключения Host did not respond in a timely fashion (Узел не ответил вовремя) при попытке выполнить запросы Gremlin позже). 
     порт|443|Задайте значение 443.
     username|*Имя пользователя*|Ресурс в формате `/dbs/<db>/colls/<coll>`, где `<db>` — это имя базы данных, а `<coll>` — имя коллекции.
     password|*Значение первичного ключа*| Просмотрите второй снимок экрана ниже. Это первичный ключ, который можно получить на странице "Ключи" на портале Azure в поле "Первичный ключ". Скопируйте значение с помощью кнопки копирования в левой части поля.
@@ -65,11 +66,11 @@ Azure Cosmos DB — это глобально распределенная мн
 
    Для параметра hosts скопируйте значение **Gremlin URI** на странице **Обзор**.
 
-   :::image type="content" source="./media/create-graph-gremlin-console/gremlin-uri.png" alt-text="Azure DB Cosmos в консоли Apache Gremlin":::
+   :::image type="content" source="./media/create-graph-gremlin-console/gremlin-uri.png" alt-text="Просмотр и копирование значения Gremlin URI на странице Обзор на портале Azure":::
 
    Для параметра password скопируйте **первичный ключ** на странице **Ключи** страницы:
 
-   :::image type="content" source="./media/create-graph-gremlin-console/keys.png" alt-text="Azure DB Cosmos в консоли Apache Gremlin":::
+   :::image type="content" source="./media/create-graph-gremlin-console/keys.png" alt-text="Просмотр и копирование первичного ключа на странице Ключи портала Azure":::
 
    Файл remote-secure.yaml должен выглядеть следующим образом:
 
@@ -108,7 +109,7 @@ g.V().count()
 
 ## <a name="create-vertices-and-edges"></a>Создание вершин и границ
 
-Начнем с добавления пяти вершин для пользователей *Thomas*, *Mary Kay*, *Robin*, *Ben* и *Jack*.
+Начнем с добавления пяти вершин для пользователей *Thomas* , *Mary Kay* , *Robin* , *Ben* и *Jack*.
 
 Входные данные (Thomas):
 
@@ -214,7 +215,7 @@ g.V().hasLabel('person').has('firstName', 'Robin').addE('knows').to(g.V().hasLab
 
 ## <a name="update-a-vertex"></a>Обновление вершины
 
-Давайте обновим вершину *Thomas* и добавим свойство возраста (*45*).
+Давайте обновим вершину *Thomas* и добавим свойство возраста ( *45* ).
 
 Входные данные:
 ```java

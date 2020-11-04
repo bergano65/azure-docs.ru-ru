@@ -9,14 +9,15 @@ ms.topic: quickstart
 ms.date: 06/05/2019
 ms.author: jasonh
 ms.custom: devx-track-js
-ms.openlocfilehash: c44f7218734af4bc3144137356b85e8845208f6f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 546187b49e1186d665fe32b3f8d632a0281bffa4
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91409380"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099680"
 ---
 # <a name="quickstart-build-a-nodejs-application-by-using-azure-cosmos-db-gremlin-api-account"></a>Краткое руководство. Создание приложения Node.js с помощью учетной записи API Gremlin для Azure Cosmos DB
+[!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -95,7 +96,7 @@ ms.locfileid: "91409380"
 
     ```
 
-  Все конфигурации находятся в файле *config.js*, который мы изменим в [следующем разделе](#update-your-connection-string).
+  Все конфигурации находятся в файле *config.js* , который мы изменим в [следующем разделе](#update-your-connection-string).
 
 * Для выполнения различных операций Gremlin определяется набор функций. Это один из них:
 
@@ -151,7 +152,7 @@ ms.locfileid: "91409380"
 
 1. Откройте файл *config.js*. 
 
-2. В файле *config.js* заполните ключ `config.endpoint` значением **конечной точки Gremlin**, полученным на странице **Обзор** учетной записи Cosmos DB на портале Azure. 
+2. В файле *config.js* заполните ключ `config.endpoint` значением **конечной точки Gremlin** , полученным на странице **Обзор** учетной записи Cosmos DB на портале Azure. 
 
     `config.endpoint = "https://<your_Gremlin_account_name>.gremlin.cosmosdb.azure.com:443/";`
 
@@ -161,11 +162,11 @@ ms.locfileid: "91409380"
 
     `config.primaryKey = "PRIMARYKEY";`
 
-   :::image type="content" source="./media/create-graph-nodejs/keys.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница обзора":::
+   :::image type="content" source="./media/create-graph-nodejs/keys.png" alt-text="Колонка Ключи на портале Azure":::
 
 4. Введите имя базы данных и графа (контейнера) для значения config.database и config.collection. 
 
-Вот как должен выглядеть файл *config.js*:
+Вот как должен выглядеть файл *config.js* :
 
 ```javascript
 var config = {}
@@ -181,7 +182,7 @@ module.exports = config;
 
 ## <a name="run-the-console-app"></a>Запуск консольного приложения
 
-1. Откройте окно терминала. С помощью команды `cd` перейдите в каталог установки файла *package.json*, включенного в проект.
+1. Откройте окно терминала. С помощью команды `cd` перейдите в каталог установки файла *package.json* , включенного в проект.
 
 2. Запустите `npm install`, чтобы установить необходимые модули npm, включая `gremlin`.
 

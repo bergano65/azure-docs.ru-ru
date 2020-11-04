@@ -9,14 +9,15 @@ ms.topic: quickstart
 ms.date: 05/28/2020
 ms.author: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 65a3e9a1e60ad28fbc0357c5b04007ce4da37895
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 513af71384fd1fa5d38ee3ec367a42892a662444
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487608"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096943"
 ---
 # <a name="quickstart-build-a-table-api-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью пакета SDK .NET и Azure Cosmos DB 
+[!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET](create-table-dotnet.md)
@@ -29,7 +30,7 @@ ms.locfileid: "92487608"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы еще не установили Visual Studio 2019, можете скачать и использовать **бесплатную** среду [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure** .
+Если вы еще не установили Visual Studio 2019, можете скачать и использовать **бесплатную** среду [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -72,7 +73,7 @@ ms.locfileid: "92487608"
 
 ## <a name="open-the-sample-application-in-visual-studio"></a>Открытие примера приложения в Visual Studio
 
-1. В Visual Studio в меню **Файл** нажмите **Открыть** и выберите **проект или решение** . 
+1. В Visual Studio в меню **Файл** нажмите **Открыть** и выберите **проект или решение**. 
 
    :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-open-solution.png" alt-text="Открытие решения"::: 
 
@@ -102,9 +103,17 @@ ms.locfileid: "92487608"
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. На [портале Azure](https://portal.azure.com/) щелкните **Строка подключения** . Используйте кнопку копирования в правой части окна, чтобы скопировать **основную строку подключения** .
+1. На [портале Azure](https://portal.azure.com/) щелкните **Строка подключения**. Используйте кнопку копирования в правой части окна, чтобы скопировать **основную строку подключения**.
 
-   :::image type="content" source="./media/create-table-dotnet/connection-string.png" alt-text="Открытие решения"
+   :::image type="content" source="./media/create-table-dotnet/connection-string.png" alt-text="Просмотр и копирование основной строки подключения на панели строки подключения":::
+
+2. Откройте файл **Settings.json** в Visual Studio. 
+
+3. Вставьте значение **Первичная строка подключения** , полученное на портале, вместо значения параметра StorageConnectionString. Значение нужно вставлять в кавычках.
+
+   ```csharp
+   {
+      "StorageConnectionString": "<Primary connection string from Azure portal>"
    }
    ```
 
@@ -114,27 +123,29 @@ ms.locfileid: "92487608"
 
 ## <a name="build-and-deploy-the-app"></a>Создание и развертывание приложения
 
-1. Правой кнопкой мыши щелкните проект **CosmosTableSamples** в **обозревателе решений** Visual Studio и выберите **Управление пакетами NuGet** . 
+1. Правой кнопкой мыши щелкните проект **CosmosTableSamples** в **обозревателе решений** Visual Studio и выберите **Управление пакетами NuGet**. 
 
-   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-manage-nuget.png" alt-text="Открытие решения":::
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-manage-nuget.png" alt-text="Управление пакетами NuGet":::
 
 2. В поле **Обзор** NuGet введите Microsoft.Azure.Cosmos.Table. Это запрос для поиска клиентской библиотеки API таблицы Cosmos DB. Обратите внимание, что на данный момент эта библиотека доступна только для .NET Framework и .NET Standard. 
    
-   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-nuget-browse.png" alt-text="Открытие решения":::
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-nuget-browse.png" alt-text="Вкладка &quot;Обзор&quot; в NuGet":::
 
-3. Щелкните **Установить** , чтобы установить библиотеку **Microsoft.Azure.Cosmos.Table** . Установится пакет API таблицы Azure Cosmos DB и все зависимые компоненты.
+3. Щелкните **Установить** , чтобы установить библиотеку **Microsoft.Azure.Cosmos.Table**. Установится пакет API таблицы Azure Cosmos DB и все зависимые компоненты.
 
-4. При выполнении всего приложения данные образца вставляются в сущность таблицы и удаляются в конце выполнения. Поэтому вы не увидите вставленные данные, если выполните образец целиком. Тем не менее, чтобы просмотреть данные, вы можете вставить некоторые точки останова. Откройте файл BasicSamples.cs и щелкните правой кнопкой мыши строку 52, нажмите **Точка останова** и выберите **Вставить точку останова** . Вставьте еще одну точку останова в строке 55.
+4. При выполнении всего приложения данные образца вставляются в сущность таблицы и удаляются в конце выполнения. Поэтому вы не увидите вставленные данные, если выполните образец целиком. Тем не менее, чтобы просмотреть данные, вы можете вставить некоторые точки останова. Откройте файл BasicSamples.cs и щелкните правой кнопкой мыши строку 52, нажмите **Точка останова** и выберите **Вставить точку останова**. Вставьте еще одну точку останова в строке 55.
 
-   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-breakpoint.png" alt-text="Открытие решения"::: 
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-breakpoint.png" alt-text="Добавление точки останова"::: 
 
 5. Нажмите клавишу F5 для запуска приложения. В окне консоли отобразится имя новой базы данных таблиц (в этом примере — demoa13b1) в Azure Cosmos DB. 
     
-   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-console.png" alt-text="Открытие решения":::
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-console.png" alt-text="Выходные данные консоли":::
 
-   Когда будет достигнута первая точка останова, вернитесь к обозревателю данных на портале Azure. Нажмите кнопку **Обновить** , разверните пример* таблицы и щелкните **Сущности** . На вкладке **Сущности** справа отобразится новая сущность, добавленная для Walter Harp. Обратите внимание, что для новой сущности указан номер телефона 425-555-0101.
+   Когда будет достигнута первая точка останова, вернитесь к обозревателю данных на портале Azure. Нажмите кнопку **Обновить** , разверните пример* таблицы и щелкните **Сущности**. На вкладке **Сущности** справа отобразится новая сущность, добавленная для Walter Harp. Обратите внимание, что для новой сущности указан номер телефона 425-555-0101.
 
-   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-entity.png" alt-text="Открытие решения" и добавьте следующий элемент itemGroup. 
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-entity.png" alt-text="Новая сущность":::
+    
+   Если возникнет ошибка с сообщением о том, что при запуске проекта файл Settings.json не удалось найти, эту ошибку можно устранить, добавив в настройки проекта следующую XML-запись. Щелкните правой кнопкой мыши CosmosTableSamples, выберите "Редактировать CosmosTableSamples.csproj" и добавьте следующий элемент itemGroup. 
 
    ```csharp
      <ItemGroup>
@@ -148,7 +159,7 @@ ms.locfileid: "92487608"
     
 7. Нажмите клавишу F5, чтобы приложение выполнялось до следующей точки останова. 
 
-    Когда будет достигнута точка останова, снова щелкните **Сущности** на портале Azure, чтобы открыть вкладку **Сущности** . Обратите внимание, что номер телефона изменился на 425-555-0105.
+    Когда будет достигнута точка останова, снова щелкните **Сущности** на портале Azure, чтобы открыть вкладку **Сущности**. Обратите внимание, что номер телефона изменился на 425-555-0105.
 
 8. Нажмите клавишу F5, чтобы запустить приложение. 
  
