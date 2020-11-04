@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 11e4b79bf76a4612728992f7c16000d840b9c639
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 7929c80f4f90de82c516b746310b5e58819a16bc
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285956"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93316676"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>Мониторинг и просмотр журналов и метрик выполнения машинного обучения
 
@@ -58,7 +58,7 @@ ms.locfileid: "93285956"
 
 ## <a name="monitor-runs-using-the-jupyter-notebook-widget"></a>Мониторинг запусков с помощью мини-приложения записной книжки Jupyter
 
-При использовании метода **скриптрунконфиг** для отправки запусков можно отслеживать ход выполнения с помощью мини-приложения [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py&preserve-view=true). Подобно представлению запуска, мини-приложение является асинхронным и предоставляет обновления в реальном времени каждые 10–15 секунд до завершения задания.
+При использовании метода **скриптрунконфиг** для отправки запусков можно отслеживать ход выполнения с помощью мини-приложения [Jupyter](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py). Подобно представлению запуска, мини-приложение является асинхронным и предоставляет обновления в реальном времени каждые 10–15 секунд до завершения задания.
 
 Просмотрите мини-приложения Jupyter во время ожидания завершения выполнения.
     
@@ -134,4 +134,3 @@ RunDetails(run).show()
 * Сведения об [отслеживании экспериментов и включении журналов в конструкторе машинное обучение Azure](how-to-track-designer-experiments.md).
 
 * Пример регистрации оптимальных моделей и их развертывания см. в руководстве [Руководство № 1. Обучение модели классификации изображений с помощью Машинного обучения Azure](tutorial-train-models-with-aml.md).
-

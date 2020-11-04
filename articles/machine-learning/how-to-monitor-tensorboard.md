@@ -10,17 +10,17 @@ ms.author: minxia
 ms.date: 02/27/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 2ed8910db8b903dab3b81d9db6c9b5798d2b6b69
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7642fe6642c1b938645e520c15ac367e12630f91
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542059"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93316664"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Визуализируйте запуски и метрики экспериментов с помощью TensorBoard и Машинного обучения Azure
 
 
-В этой статье вы узнаете, как просматривать запуски и метрики экспериментов в TensorBoard с помощью [пакета `tensorboard`](https://docs.microsoft.com/python/api/azureml-tensorboard/?view=azure-ml-py&preserve-view=true) в основном пакете SDK Машинного обучения Azure. Изучив запуски экспериментов, вы сможете лучше настроить и переобучить модели машинного обучения.
+В этой статье вы узнаете, как просматривать запуски и метрики экспериментов в TensorBoard с помощью [пакета `tensorboard`](/python/api/azureml-tensorboard/?preserve-view=true&view=azure-ml-py) в основном пакете SDK Машинного обучения Azure. Изучив запуски экспериментов, вы сможете лучше настроить и переобучить модели машинного обучения.
 
 [TensorBoard](https://www.tensorflow.org/tensorboard/r1/overview) — это набор веб-приложений для проверки и понимания структуры и производительности эксперимента.
 
@@ -42,7 +42,7 @@ ms.locfileid: "91542059"
             * **как использовать команду azureml > Track-and-Monitoring-эксперименты > tensorboard > Export-Run-History-to-tensorboard > Export-Run-History-to-tensorboard. ipynb**
             * **как использовать-azureml > Track-and-Monitoring-эксперименты > tensorboard > tensorboard > tensorboard. ipynb**
     * Собственный сервер записных книжек Jupyter
-       * [Установите пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true) с дополнением `tensorboard`.
+       * [Установите пакет SDK для Машинного обучения Azure](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) с дополнением `tensorboard`.
         * [Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md).  
         * [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
 
@@ -166,7 +166,7 @@ run = exp.submit(src)
 
 Вы можете запустить TensorBoard во время выполнения или после завершения. В следующем примере создается экземпляр объекта TensorBoard `tb`, который принимает журнал запуска эксперимента, загруженный в `run`, а затем запускает TensorBoard с помощью метода `start()`. 
   
-[Конструктор TensorBoard](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?view=azure-ml-py&preserve-view=true) принимает массив запусков, поэтому убедитесь, что запуск передается в виде одноэлементного массива.
+[Конструктор TensorBoard](/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?preserve-view=true&view=azure-ml-py) принимает массив запусков, поэтому убедитесь, что запуск передается в виде одноэлементного массива.
 
 ```python
 from azureml.tensorboard import Tensorboard
@@ -247,7 +247,7 @@ for alpha in tqdm(alphas):
 
 ### <a name="export-runs-to-tensorboard"></a>Экспорт запусков в TensorBoard
 
-С помощью метода [export_to_tensorboard ()](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.export?view=azure-ml-py&preserve-view=true) пакета SDK можно экспортировать журнал выполнения эксперимента Машинного обучения Azure в журналы TensorBoard, чтобы мы могли просматривать их в TensorBoard.  
+С помощью метода [export_to_tensorboard ()](/python/api/azureml-tensorboard/azureml.tensorboard.export?preserve-view=true&view=azure-ml-py) пакета SDK можно экспортировать журнал выполнения эксперимента Машинного обучения Azure в журналы TensorBoard, чтобы мы могли просматривать их в TensorBoard.  
 
 В следующем коде мы создаем папку `logdir` в текущем рабочем каталоге. В эту папку мы экспортируем журнал выполнения эксперимента и журналы из `root_run`, а затем помечаем запуск как завершенный. 
 
@@ -273,7 +273,7 @@ root_run.complete()
 > Можно также экспортировать в TensorBoard определенный запуск, указав имя запуска: `export_to_tensorboard(run_name, logdir)`
 
 ### <a name="start-and-stop-tensorboard"></a>Запуск и остановка TensorBoard
-После экспорта журнала выполнения для этого эксперимента можно запустить TensorBoard с помощью метода [start()](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?view=azure-ml-py&preserve-view=true#&preserve-view=truestart-start-browser-false-). 
+После экспорта журнала выполнения для этого эксперимента можно запустить TensorBoard с помощью метода [start()](/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?preserve-view=true&view=azure-ml-py#&preserve-view=truestart-start-browser-false-). 
 
 ```Python
 from azureml.tensorboard import Tensorboard
@@ -285,7 +285,7 @@ tb = Tensorboard([], local_root=logdir, port=6006)
 tb.start()
 ```
 
-По завершении убедитесь, что вызвали метод [stop()](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?view=azure-ml-py&preserve-view=true#&preserve-view=truestop--) объекта TensorBoard. В противном случае TensorBoard будет продолжать работать, пока не завершится работа ядра записной книжки. 
+По завершении убедитесь, что вызвали метод [stop()](/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?preserve-view=true&view=azure-ml-py#&preserve-view=truestop--) объекта TensorBoard. В противном случае TensorBoard будет продолжать работать, пока не завершится работа ядра записной книжки. 
 
 ```python
 tb.stop()
@@ -296,4 +296,4 @@ tb.stop()
 В этом практическом руководстве вы создали два эксперимента и узнали, как запустить TensorBoard для своих журналов выполнения, чтобы определить области для потенциальной настройки и повторного обучения. 
 
 * Если вы удовлетворены вашей моделью, перейдите к статье [Как развернуть модель](how-to-deploy-and-where.md). 
-* Дополнительные сведения о [настройке гиперпараметров](how-to-tune-hyperparameters.md). 
+* Дополнительные сведения о [настройке гиперпараметров](how-to-tune-hyperparameters.md).

@@ -11,12 +11,12 @@ author: lostmygithubaccount
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 8f54ece9a932ed4cc0adc29747e1c58ee22646c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ee2280aba99606d9e31a0e565a67cd6202df3c2
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333874"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93317018"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Обнаружение смещения данных (Предварительная версия) в наборах
 
@@ -36,14 +36,14 @@ ms.locfileid: "91333874"
 
 Для создания монитора используется [набор данных машинного обучения Azure](how-to-create-register-datasets.md) . Набор данных должен включать столбец timestamp.
 
-Метрики смещения данных можно просмотреть с помощью пакета SDK для Python или в Машинное обучение Azure Studio.  Другие метрики и аналитические сведения доступны в ресурсе [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) , связанном с рабочей областью машинное обучение Azure.
+Метрики смещения данных можно просмотреть с помощью пакета SDK для Python или в Машинное обучение Azure Studio.  Другие метрики и аналитические сведения доступны в ресурсе [Azure Application Insights](../azure-monitor/app/app-insights-overview.md) , связанном с рабочей областью машинное обучение Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для создания мониторов набора данных и работы с ними требуются:
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
-* [Установленный пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true), включающий пакет azureml-DataSets.
+* [Установленный пакет SDK для машинное обучение Azure для Python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), включающий пакет azureml-DataSets.
 * Структурированные (табличные) данные с меткой времени, указанной в пути к файлу, имени файла или столбце в данных.
 
 ## <a name="what-is-data-drift"></a>Что такое смещение данных?
@@ -73,7 +73,7 @@ ms.locfileid: "91333874"
 
 Алгоритм смещения данных предоставляет общую меру изменения данных и указывает, какие функции отвечают за дальнейшее исследование. Мониторы наборов данных создают ряд других метрик путем профилирования новых данных в `timeseries` наборе данных. 
 
-Пользовательское оповещение можно настроить во всех метриках, создаваемых монитором, с помощью [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Мониторы наборов данных можно использовать для быстрого перехвата проблем с данными и сокращения времени отладки проблемы путем выявления вероятных причин.  
+Пользовательское оповещение можно настроить во всех метриках, создаваемых монитором, с помощью [Azure Application Insights](../azure-monitor/app/app-insights-overview.md). Мониторы наборов данных можно использовать для быстрого перехвата проблем с данными и сокращения времени отладки проблемы путем выявления вероятных причин.  
 
 Концептуально существует три основных сценария настройки мониторов набора данных в Машинное обучение Azure.
 
@@ -102,7 +102,7 @@ ms.locfileid: "91333874"
 
 ### <a name="python-sdk"></a><a name="sdk-dataset"></a>Пакет SDK для Python
 
-[`Dataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-)Метод класса [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) определяет столбец временной метки для набора данных.
+[`Dataset`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-)Метод класса [`with_timestamp_columns()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) определяет столбец временной метки для набора данных.
 
 ```python 
 from azureml.core import Workspace, Dataset, Datastore
@@ -129,7 +129,7 @@ dset = dset.with_timestamp_columns('date')
 dset = dset.register(ws, 'target')
 ```
 
-Полный пример использования `timeseries` наборов данных см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) или в [документации по пакету SDK для наборов данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
+Полный пример использования `timeseries` наборов данных см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) или в [документации по пакету SDK для наборов данных](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
 
 ### <a name="azure-machine-learning-studio"></a><a name="studio-dataset"></a>Машинное обучение Azure Studio
 
@@ -145,7 +145,7 @@ dset = dset.register(ws, 'target')
 
 Если данные секционированы по датам, как в этом случае, можно также указать partition_timestamp.  Это позволяет более эффективно обрабатывать даты.
 
-:::image type="content" source="media/how-to-monitor-datasets/timeseries-partitiontimestamp.png" alt-text="Задание метки времени":::
+:::image type="content" source="media/how-to-monitor-datasets/timeseries-partitiontimestamp.png" alt-text="Отметка времени секции":::
 
 
 ## <a name="create-dataset-monitors"></a>Создание мониторов набора данных
@@ -213,7 +213,7 @@ monitor = monitor.enable_schedule()
 
 1. Нажмите кнопку **+ Создать монитор** и продолжайте работу с мастером, нажав кнопку **Далее**.  
 
-:::image type="content" source="media/how-to-monitor-datasets/wizard.png" alt-text="Задание метки времени":::
+:::image type="content" source="media/how-to-monitor-datasets/wizard.png" alt-text="Мастер создания монитора":::
 
 * **Выберите целевой набор данных**.  Целевой набор данных — это табличный набор данных с заданным столбцом timestamp, который будет проанализирован для смещения данных. Целевой набор данных должен иметь функции, общие с базовым набором данных, а также `timeseries` набор данных, к которому добавляются новые данные. Исторические данные в целевом наборе данных можно анализировать, а также отслеживать новые данные.
 
@@ -240,7 +240,7 @@ monitor = monitor.enable_schedule()
 
 Начните с получения подробных сведений о величине смещения данных и о том, какие функции следует исследовать Подробнее.
 
-:::image type="content" source="media/how-to-monitor-datasets/drift-overview.png" alt-text="Задание метки времени":::
+:::image type="content" source="media/how-to-monitor-datasets/drift-overview.png" alt-text="Общие сведения о смещении":::
 
 
 | Метрика | Описание | 
@@ -253,7 +253,7 @@ monitor = monitor.enable_schedule()
 
 Узнайте, как набор данных отличается от целевого набора данных за указанный период времени.  Чем ближе к 100%, тем больше различаются два набора данных.
 
-:::image type="content" source="media/how-to-monitor-datasets/drift-magnitude.png" alt-text="Задание метки времени":::
+:::image type="content" source="media/how-to-monitor-datasets/drift-magnitude.png" alt-text="Тренд величины смещения":::
 
 ### <a name="drift-magnitude-by-features"></a>Величина смещения по функциям
 
@@ -263,7 +263,7 @@ monitor = monitor.enable_schedule()
 
 В Машинное обучение Azure Studio щелкните полосу на диаграмме, чтобы просмотреть сведения об уровне функций для этой даты. По умолчанию вы видите распределение базового набора данных и самое последнее распределение выполнения для одной и той же функции.
 
-:::image type="content" source="media/how-to-monitor-datasets/drift-by-feature.gif" alt-text="Задание метки времени":::
+:::image type="content" source="media/how-to-monitor-datasets/drift-by-feature.gif" alt-text="Величина смещения по функциям":::
 
 Эти метрики также можно получить в пакете SDK для Python с помощью `get_metrics()` метода для `DataDriftDetector` объекта.
 
@@ -271,7 +271,7 @@ monitor = monitor.enable_schedule()
 
 Наконец, прокрутите вниз, чтобы просмотреть сведения о каждой отдельной функции.  Используйте раскрывающиеся списки над диаграммой, чтобы выбрать функцию, и Дополнительно выберите метрику, которую нужно просмотреть.
 
-:::image type="content" source="media/how-to-monitor-datasets/numeric-feature.gif" alt-text="Задание метки времени":::
+:::image type="content" source="media/how-to-monitor-datasets/numeric-feature.gif" alt-text="Диаграмма числовых функций и сравнение":::
 
 Метрики на диаграмме зависят от типа функции.
 
@@ -288,16 +288,16 @@ monitor = monitor.enable_schedule()
     
     | Метрика | Описание |  
     | ------ | ----------- |  
-    | Евклидовой расстояние     |  Вычислено для столбцов категорий.Евклидово расстояние вычисляются для двух векторов, созданных на основе многоресурсоемких распределений одного столбца категорий из двух наборов данных.0 означает отсутствие разницы в многозначных дистрибутивах.Чем больше оно отклоняется от 0, тем больше этот столбец смещен.Тренды можно рассматривать с помощью графика временных рядов этой метрики и могут оказаться полезными при обнаружении функции смещения.  |
+    | Евклидовой расстояние     |  Вычислено для столбцов категорий. Евклидово расстояние вычисляются для двух векторов, созданных на основе многоресурсоемких распределений одного столбца категорий из двух наборов данных. 0 означает отсутствие разницы в многозначных дистрибутивах.  Чем больше оно отклоняется от 0, тем больше этот столбец смещен. Тренды можно рассматривать с помощью графика временных рядов этой метрики и могут оказаться полезными при обнаружении функции смещения.  |
     | Уникальные значения | Число уникальных значений функции (количество элементов). |
 
 На этой диаграмме выберите одну дату для сравнения распределения компонентов между целевым объектом и этой датой для отображаемого компонента. Для числовых функций это показывает два распределения вероятностей.  Если функция является числовой, отображается линейчатая диаграмма.
 
-:::image type="content" source="media/how-to-monitor-datasets/select-date-to-compare.gif" alt-text="Задание метки времени":::
+:::image type="content" source="media/how-to-monitor-datasets/select-date-to-compare.gif" alt-text="Выберите дату для сравнения с целевым объектом":::
 
 ## <a name="metrics-alerts-and-events"></a>Метрики, оповещения и события
 
-Вы можете запросить метрики в ресурсе [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) , связанном с рабочей областью машинного обучения. У вас есть доступ ко всем функциям Application Insights, включая настройку настраиваемых правил оповещений и групп действий для запуска таких действий, как, электронная почта, SMS, Push/Voice или функция Azure. Дополнительные сведения см. в полной Application Insights документации. 
+Вы можете запросить метрики в ресурсе [Azure Application Insights](../azure-monitor/app/app-insights-overview.md) , связанном с рабочей областью машинного обучения. У вас есть доступ ко всем функциям Application Insights, включая настройку настраиваемых правил оповещений и групп действий для запуска таких действий, как, электронная почта, SMS, Push/Voice или функция Azure. Дополнительные сведения см. в полной Application Insights документации. 
 
 Чтобы приступить к работе, перейдите к [портал Azure](https://portal.azure.com) и выберите страницу **обзора** вашей рабочей области.  Связанный Application Insights ресурс находится в крайнем правом углу:
 
@@ -319,9 +319,9 @@ monitor = monitor.enable_schedule()
 
 ![Новая группа действий](./media/how-to-monitor-datasets/action-group.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Перейдите в [машинное обучение Azure Studio](https://ml.azure.com) или в [записную книжку Python](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datadrift-tutorial/datadrift-tutorial.ipynb) , чтобы настроить монитор набора данных.
-* См. раздел Настройка смещения данных для [моделей, развернутых в службе Azure Kubernetes](how-to-monitor-data-drift.md).
+* См. раздел Настройка смещения данных для [моделей, развернутых в службе Azure Kubernetes](./how-to-enable-data-collection.md).
 * Настройка мониторов смещения набора данных с помощью [сетки событий](how-to-use-event-grid.md). 
 * При возникновении проблем ознакомьтесь с общими [советами по устранению неполадок](resource-known-issues.md#data-drift) .

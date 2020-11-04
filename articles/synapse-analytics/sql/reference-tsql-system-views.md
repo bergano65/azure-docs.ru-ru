@@ -1,5 +1,5 @@
 ---
-title: Системные представления, поддерживаемые в синапсе SQL — Предварительная версия рабочих областей
+title: Системные представления, поддерживаемые в синапсе SQL
 description: Ссылки на документацию по системным представлениям, поддерживаемым в синапсе SQL.
 author: filippopovic
 ms.service: synapse-analytics
@@ -8,20 +8,21 @@ ms.topic: reference
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7079bbcf3bd7cb7f6073b132cd558386744f6884
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 4e4e6a1607fa42f4be07451f9aa0d8ff923d85d6
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92092772"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93317332"
 ---
 # <a name="system-views-supported-in-synapse-sql"></a>Системные представления, поддерживаемые в синапсе SQL
+
 Ссылки на документацию по инструкциям T-SQL, поддерживаемым в синапсе SQL.
 
 > [!NOTE]
-> Синапсе SQL по запросу поддерживает только SQL Server представлений каталога.  
+> Синапсе пул SQL Server поддерживает только SQL Server представлений каталога.  
 
-## <a name="sql-pool-catalog-views"></a>Представления каталога пула SQL
+## <a name="dedicated-sql-pool-and-serverless-sql-pool-catalog-views"></a>Представления каталога выделенного пула SQL и бессерверного пула SQL
 
 * [sys.pdw_column_distribution_properties](/sql/relational-databases/system-catalog-views/sys-pdw-column-distribution-properties-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [sys.pdw_distributions](/sql/relational-databases/system-catalog-views/sys-pdw-distributions-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
@@ -47,7 +48,7 @@ ms.locfileid: "92092772"
 * [sys.workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) (Предварительная версия)
 * [sys.workload_management_workload_classifiers](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifiers-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) (Предварительная версия)
 
-## <a name="sql-pool-dynamic-management-views-dmvs"></a>Динамические административные представления пула SQL (DMV)
+## <a name="dedicated-sql-pool-dynamic-management-views-dmvs"></a>Выделенные динамические административные представления пула SQL
 
 * [sys.dm_pdw_dms_cores](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-dms-cores-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [sys.dm_pdw_dms_external_work](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-dms-external-work-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
@@ -69,9 +70,9 @@ ms.locfileid: "92092772"
 * [sys.dm_pdw_waits](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [sys.dm_pdw_waits](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 
-## <a name="sql-server-dmvs-applicable-to-sql-pool"></a>SQL Server динамические административные представления, применимые к пулу SQL
+## <a name="sql-server-dmvs-applicable-to-dedicated-sql-pool"></a>SQL Server динамические административные представления, применимые к выделенному пулу SQL
 
-Следующие динамические административные представления можно применять к пулу SQL, но их необходимо выполнять, подключившись к базе данных **master**.
+Следующие динамические административные представления применимы к выделенному пулу SQL, но должны выполняться путем подключения к базе данных **master** .
 
 * [sys.database_service_objectives](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
@@ -151,16 +152,16 @@ ms.locfileid: "92092772"
 * [sys.types](/sql/relational-databases/system-catalog-views/sys-types-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [sys.views](/sql/relational-databases/system-catalog-views/sys-views-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 
-## <a name="sql-server-dmvs-available-in-sql-pool"></a>Динамические административные представления SQL Server, доступные в пуле SQL
+## <a name="sql-server-dmvs-available-in-dedicated-sql-pool"></a>SQL Server динамические административные представления, доступные в выделенном пуле SQL
 
-Пул SQL предоставляет разные динамические административные представления (DMV) SQL Server. При обращении к таким представлениям в пуле SQL сообщается о состоянии базы данных SQL, в которой выполняются распределения.
+Пул SQL предоставляет разные динамические административные представления (DMV) SQL Server. Эти представления, запрашиваемые в выделенном пуле SQL, сообщают о состоянии баз данных SQL, выполняющихся в дистрибутивах.
 
 Пул SQL и Параллельное хранилище данных (PDW) в системе аналитики используют одни и те же системные представления. Каждое динамическое административное представление содержит столбец с именем pdw_node_id, который является идентификатором для вычислительных узлов.
 
 > [!NOTE]
 > Чтобы использовать эти представления, вставьте pdw_nodes_ в имя, как показано в следующей таблице.
 
-| Имя динамического административного представления в пуле SQL | Статья о Transact-SQL для SQL Server|
+| Имя динамического административного представления в выделенном пуле SQL | Статья о Transact-SQL для SQL Server|
 |:--- |:--- |
 | sys.dm_pdw_nodes_db_column_store_row_group_physical_stats | [sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)|
 | sys.dm_pdw_nodes_db_column_store_row_group_operational_stats | [sys.dm_db_column_store_row_group_operational_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-operational-stats-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)|
@@ -222,9 +223,9 @@ ms.locfileid: "92092772"
 | sys.dm_pdw_nodes_tran_session_transactions |[sys.dm_tran_session_transactions](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-session-transactions-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) |
 | sys.dm_pdw_nodes_tran_top_version_generators |[sys.dm_tran_top_version_generators](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-top-version-generators-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) |
 
-## <a name="sql-server-2016-polybase-dmvs-available-in-sql-pool"></a>Список динамических административных представлений SQL Server 2016 PolyBase, доступных в пуле SQL
+## <a name="sql-server-2016-polybase-dmvs-available-in-dedicated-sql-pool"></a>SQL Server 2016ных административных представлений Polybase, доступных в выделенном пуле SQL
 
-Следующие динамические административные представления можно применять к пулу SQL, но их необходимо выполнять, подключившись к базе данных **master**.
+Следующие динамические административные представления применимы к выделенному пулу SQL, но должны выполняться путем подключения к базе данных **master** .
 
 * [sys.dm_exec_compute_node_errors](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-compute-node-errors-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [sys.dm_exec_compute_node_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-compute-node-status-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)

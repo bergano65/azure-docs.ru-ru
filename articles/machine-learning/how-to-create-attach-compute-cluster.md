@@ -11,30 +11,30 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 56ab5ba93545ffdbfd36850c08eda78cc239f694
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: ce80c6bbd3e4a5154e80317c3918776c771e67fb
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207127"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93318210"
 ---
 # <a name="create-an-azure-machine-learning-compute-cluster"></a>Создание вычислительного кластера Машинного обучения Azure
 
 Узнайте, как создать и управлять [кластером](concept-compute-target.md#azure-machine-learning-compute-managed) в рабочей области машинное обучение Azure.
 
-Вы можете использовать Машинное обучение Azure вычислительный кластер для распределения процесса обучения или выполнения пакетного вывода в кластере вычислительных узлов ЦП или GPU в облаке. Дополнительные сведения о размерах виртуальных машин, которые содержат GPU, см. в статье [Размеры виртуальных машин, оптимизированных для GPU](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu). 
+Вы можете использовать Машинное обучение Azure вычислительный кластер для распределения процесса обучения или выполнения пакетного вывода в кластере вычислительных узлов ЦП или GPU в облаке. Дополнительные сведения о размерах виртуальных машин, которые содержат GPU, см. в статье [Размеры виртуальных машин, оптимизированных для GPU](../virtual-machines/sizes-gpu.md). 
 
 В этой статье раскрываются следующие темы:
 
 * Создание вычислительного кластера
 * Снижение стоимости вычислений в кластере
-* Настройка [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для кластера
+* Настройка [управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для кластера
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
-* [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
+* [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
 ## <a name="what-is-a-compute-cluster"></a>Что такое Кластер вычислений?
 
@@ -58,9 +58,9 @@ ms.locfileid: "92207127"
 > Кластеры обычно масштабируются до 100 узлов при наличии достаточной квоты для требуемого числа ядер. По умолчанию кластеры настроены с поддержкой взаимодействия между их узлами, например для поддержки заданий MPI. Однако вы можете масштабировать кластеры до тысяч узлов, просто [вызывая запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)и запрашивая разрешение на получение списка подписки, рабочей области или конкретного кластера для отключения взаимодействия между узлами. 
 
 
-## <a name="create"></a>Создание
+## <a name="create"></a>Создать
 
-**Оценка времени**: приблизительно 5 минут.
+**Оценка времени** : приблизительно 5 минут.
 
 Вычислительную среду Машинного обучения Azure можно многократно использовать при различных запусках. Результаты вычислений могут использоваться совместно с другими пользователями в рабочей области. Они сохраняются для последующих запусков, а число узлов в них автоматически масштабируется в зависимости от числа отправленных запросов на запуск и заданного для кластера значения max_nodes. С помощью параметра min_nodes можно контролировать минимально доступное количество узлов.
 
@@ -80,7 +80,7 @@ ms.locfileid: "92207127"
 
 [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=cpu_cluster)]
 
-При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py&preserve-view=true).
+При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?preserve-view=true&view=azure-ml-py).
 
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
@@ -90,7 +90,7 @@ ms.locfileid: "92207127"
 az ml computetarget create amlcompute -n cpu --min-nodes 1 --max-nodes 1 -s STANDARD_D3_V2
 ```
 
-См. дополнительные сведения о команде [az ml computetarget create amlcompute](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute&preserve-view=true).
+См. дополнительные сведения о команде [az ml computetarget create amlcompute](/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute&preserve-view=true).
 
 # <a name="studio"></a>[Студия](#tab/azure-studio)
 
@@ -217,4 +217,4 @@ az ml computetarget create amlcompute --name lowpriocluster --vm-size Standard_N
 Используйте в качестве среды вычислений кластер:
 
 * [Отправить обучающий запуск](how-to-set-up-training-targets.md) 
-* [Выполнение вывода пакета](how-to-use-parallel-run-step.md).
+* [Выполнение вывода пакета](./tutorial-pipeline-batch-scoring-classification.md).

@@ -1,7 +1,7 @@
 ---
 title: Использование RESTFUL для управления ресурсами машинного обучения
 titleSuffix: Azure Machine Learning
-description: Как использовать интерфейсы API для создания, запуска и удаления ресурсов машинного обучения Azure
+description: Использование интерфейсов API для создания, запуска и удаления ресурсов Машинное обучение Azure, таких как Рабочая область или регистрация моделей.
 author: lobrien
 ms.author: laobri
 services: machine-learning
@@ -10,18 +10,18 @@ ms.subservice: core
 ms.date: 01/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: b733fbc44deefe46e3496e288ebad525346ef005
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09a0580adbe6d51e4de811a57ee17203d65a2435
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322314"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93316908"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
 
 
 
-Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&preserve-view=true)или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
+Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](/cli/azure/?preserve-view=true&view=azure-cli-latest)или [пакет SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -36,9 +36,9 @@ ms.locfileid: "91322314"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure** , для которой у вас есть права администратора. Если у вас нет такой подписки, попробуйте использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree) .
-- [Рабочая область машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
-- Запросы на администрирование для других пользователей используют проверку подлинности субъекта-службы. Выполните действия, описанные в разделе [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](https://docs.microsoft.com/azure/machine-learning/how-to-setup-authentication#set-up-service-principal-authentication) , чтобы создать субъект-службу в рабочей области.
-- Служебная программа для **фигур** . Эта **программа доступна** в [подсистеме Windows для Linux](https://aka.ms/wslinstall/) или любого дистрибутива UNIX. В PowerShell **фигурный** псевдоним для **Invoke-WebRequest** и `curl -d "key=val" -X POST uri` становится `Invoke-WebRequest -Body "key=val" -Method POST -Uri uri` . 
+- [Рабочая область машинного обучения Azure](./how-to-manage-workspace.md)
+- Запросы на администрирование для других пользователей используют проверку подлинности субъекта-службы. Выполните действия, описанные в разделе [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](./how-to-setup-authentication.md#service-principal-authentication) , чтобы создать субъект-службу в рабочей области.
+- Служебная программа для **фигур** . Эта **программа доступна** в [подсистеме Windows для Linux](/windows/wsl/install-win10) или любого дистрибутива UNIX. В PowerShell **фигурный** псевдоним для **Invoke-WebRequest** и `curl -d "key=val" -X POST uri` становится `Invoke-WebRequest -Body "key=val" -Method POST -Uri uri` . 
 
 ## <a name="retrieve-a-service-principal-authentication-token"></a>Получение маркера проверки подлинности субъекта-службы
 
@@ -48,7 +48,7 @@ ms.locfileid: "91322314"
 - Идентификатор клиента (который будет связан с созданным токеном)
 - Секрет клиента (который следует защитить)
 
-Эти значения должны быть предоставлены из ответа на создание субъекта-службы. Эти значения обсуждаются в разделе [Настройка проверки подлинности для машинное обучение Azureных ресурсов и рабочих процессов](https://docs.microsoft.com/azure/machine-learning/how-to-setup-authentication#set-up-service-principal-authentication). Если вы используете подписку компании, возможно, у вас нет разрешения на создание субъекта-службы. В этом случае следует использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree).
+Эти значения должны быть предоставлены из ответа на создание субъекта-службы. Эти значения обсуждаются в разделе [Настройка проверки подлинности для машинное обучение Azureных ресурсов и рабочих процессов](./how-to-setup-authentication.md#service-principal-authentication). Если вы используете подписку компании, возможно, у вас нет разрешения на создание субъекта-службы. В этом случае следует использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree).
 
 Получение токена:
 
@@ -236,7 +236,7 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/com
 -H "Authorization:Bearer {your-access-token}"
 ```
 
-Для создания или перезаписи именованного ресурса используется запрос на размещение. В следующем примере в дополнение к знакомым подстановкам `your-subscription-id` , `your-resource-group` , `your-workspace-name` и `your-access-token` , замените `your-compute-name` и значениями для `location` , `vmSize` , `vmPriority` ,, `scaleSettings` `adminUserName` и `adminUserPassword` . В соответствии с указаниями, указанными в справочнике по [ссылке вычислительная среда машинного обучения-CREATE или Update SDK](https://docs.microsoft.com/rest/api/azureml/workspacesandcomputes/machinelearningcompute/createorupdate), следующая команда создает выделенный Standard_D1 с одним узлом (Базовый вычислительный ресурс ЦП), который будет масштабироваться через 30 минут:
+Для создания или перезаписи именованного ресурса используется запрос на размещение. В следующем примере в дополнение к знакомым подстановкам `your-subscription-id` , `your-resource-group` , `your-workspace-name` и `your-access-token` , замените `your-compute-name` и значениями для `location` , `vmSize` , `vmPriority` ,, `scaleSettings` `adminUserName` и `adminUserPassword` . В соответствии с указаниями, указанными в справочнике по [ссылке вычислительная среда машинного обучения-CREATE или Update SDK](/rest/api/azureml/workspacesandcomputes/machinelearningcompute/createorupdate), следующая команда создает выделенный Standard_D1 с одним узлом (Базовый вычислительный ресурс ЦП), который будет масштабироваться через 30 минут:
 
 ```bash
 curl -X PUT \
@@ -349,7 +349,7 @@ curl 'https://{regional-api-server}/history/v1.0/subscriptions/{your-subscriptio
 
 ### <a name="delete-resources-you-no-longer-need"></a>Удаление ресурсов, которые больше не нужны
 
-Некоторые, но не все ресурсы поддерживают команду DELETE. Проверьте [ссылку на API](https://docs.microsoft.com/rest/api/azureml/) перед фиксацией в REST API для удаления вариантов использования. Чтобы удалить модель, например, можно использовать:
+Некоторые, но не все ресурсы поддерживают команду DELETE. Проверьте [ссылку на API](/rest/api/azureml/) перед фиксацией в REST API для удаления вариантов использования. Чтобы удалить модель, например, можно использовать:
 
 ```bash
 curl
@@ -422,6 +422,6 @@ providers/Microsoft.Storage/storageAccounts/{your-storage-account-name}"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с полным [справочником по AzureML REST API](https://docs.microsoft.com/rest/api/azureml/).
-- Узнайте, как использовать конструктор для [прогнозирования цены автомобилей с помощью конструктора](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-train-score).
-- Изучите [машинное обучение Azure с записными книжками Jupyter](https://docs.microsoft.com/azure//machine-learning/samples-notebooks).
+- Ознакомьтесь с полным [справочником по AzureML REST API](/rest/api/azureml/).
+- Узнайте, как использовать конструктор для [прогнозирования цены автомобилей с помощью конструктора](./tutorial-designer-automobile-price-train-score.md).
+- Изучите [машинное обучение Azure с записными книжками Jupyter](..//machine-learning/samples-notebooks.md).

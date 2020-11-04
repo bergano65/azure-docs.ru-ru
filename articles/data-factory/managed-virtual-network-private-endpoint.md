@@ -13,12 +13,12 @@ ms.custom:
 - seo-lt-2019
 - references_regions
 ms.date: 07/15/2020
-ms.openlocfilehash: 7a0d3c60841cb12f2999a929eb4af351716abda7
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: a34f2e50a5eb4ab87a02a5128cb912fa220849f1
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635785"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93317080"
 ---
 # <a name="azure-data-factory-managed-virtual-network-preview"></a>Управляемая виртуальная сеть фабрики данных Azure (Предварительная версия)
 
@@ -51,7 +51,7 @@ ms.locfileid: "92635785"
 
 ![Новая управляемая частная конечная точка](./media/tutorial-copy-data-portal-private/new-managed-private-endpoint.png)
 
-Фабрика данных Azure поддерживает частные ссылки. Частная ссылка позволяет получить доступ к службам Azure (PaaS) (таким как служба хранилища Azure, Azure Cosmos DB, Azure синапсе Analytics (ранее — хранилище данных SQL Azure)).
+Фабрика данных Azure поддерживает частные ссылки. Частная ссылка позволяет получить доступ к службам Azure (PaaS) (таким как служба хранилища Azure, Azure Cosmos DB, Azure синапсе Analytics (ранее — хранилище данных SQL)).
 
 При использовании частной ссылки трафик между хранилищами данных и управляемой виртуальной сетью полностью проходит через магистральную сеть Майкрософт. Приватный канал обеспечивает защиту от угроз кражи данных. Чтобы установить приватный канал для ресурса, создайте частную конечную точку.
 
@@ -81,7 +81,7 @@ ms.locfileid: "92635785"
 - Файлы Azure
 - Azure Data Lake 2-го поколения
 - База данных SQL Azure (не включая Azure SQL Управляемый экземпляр)
-- Azure Synapse Analytics (прежнее название: Хранилище данных SQL Azure)
+- Azure Synapse Analytics (прежнее название — Хранилище данных SQL)
 - SQL CosmosDB Azure
 - Azure Key Vault
 - Служба частной связи Azure

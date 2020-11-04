@@ -1,7 +1,7 @@
 ---
 title: Использование частных пакетов Python
 titleSuffix: Azure Machine Learning
-description: Безопасный доступ к частным пакетам Python из Машинное обучение Azureных сред.
+description: Узнайте, как безопасно работать с частными пакетами Python из Машинное обучение Azureных сред.
 services: machine-learning
 author: rastala
 ms.author: roastala
@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2020
-ms.openlocfilehash: 58bb08cad111e0744f7831783169901cd76caef4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6a722746c8e06a691e702b095d3081f1530645de
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91772640"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93318923"
 ---
 # <a name="use-private-python-packages-with-azure-machine-learning"></a>Использование частных пакетов Python с Машинное обучение Azure
 
@@ -27,16 +27,16 @@ ms.locfileid: "91772640"
 
 Рекомендуемый подход зависит от наличия нескольких пакетов для одной Машинное обучение Azure рабочей области или всего репозитория пакетов для всех рабочих областей в Организации.
 
-Частные пакеты используются через класс [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment) . В среде вы объявляете, какие пакеты Python следует использовать, включая частные. Дополнительные сведения о среде в Машинное обучение Azure см. в разделе [использование сред](how-to-use-environments.md). 
+Частные пакеты используются через класс [среды](/python/api/azureml-core/azureml.core.environment.environment) . В среде вы объявляете, какие пакеты Python следует использовать, включая частные. Дополнительные сведения о среде в Машинное обучение Azure см. в разделе [использование сред](how-to-use-environments.md). 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
- * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)
+ * [Пакет SDK для машинное обучение Azure для Python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py)
  * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
 
 ## <a name="use-small-number-of-packages-for-development-and-testing"></a>Использование небольшого числа пакетов для разработки и тестирования
 
-Для небольшого числа частных пакетов в одной рабочей области используйте статический [`Environment.add_private_pip_wheel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#&preserve-view=trueadd-private-pip-wheel-workspace--file-path--exist-ok-false-) метод. Такой подход позволяет быстро добавить в рабочую область частный пакет, который хорошо подходит для целей разработки и тестирования.
+Для небольшого числа частных пакетов в одной рабочей области используйте статический [`Environment.add_private_pip_wheel()`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=trueadd-private-pip-wheel-workspace--file-path--exist-ok-false-) метод. Такой подход позволяет быстро добавить в рабочую область частный пакет, который хорошо подходит для целей разработки и тестирования.
 
 Укажите аргумент пути к файлу в локальном файле колеса и выполните ```add_private_pip_wheel``` команду. Команда возвращает URL-адрес, используемый для наблюдения за расположением пакета в рабочей области. Запишите URL-адрес хранилища и передайте ему `add_pip_package()` метод.
 
@@ -52,13 +52,13 @@ myenv.python.conda_dependencies=conda_dep
 
 ## <a name="use-a-repository-of-packages-from-azure-devops-feed"></a>Использование репозитория пакетов из веб-канала Azure DevOps
 
-Если вы активно разрабатываете пакеты Python для приложения машинного обучения, их можно разместить в репозитории Azure DevOps как артефакты и опубликовать в виде веб-канала. Такой подход позволяет интегрировать рабочий процесс DevOps для создания пакетов с помощью рабочая область машинного обучения Azure. Чтобы узнать, как настроить веб-каналы Python с помощью Azure DevOps, прочитайте статью [Начало работы с пакетами Python в Azure Artifacts](https://docs.microsoft.com/azure/devops/artifacts/quickstarts/python-packages?view=azure-devops&preserve-view=true)
+Если вы активно разрабатываете пакеты Python для приложения машинного обучения, их можно разместить в репозитории Azure DevOps как артефакты и опубликовать в виде веб-канала. Такой подход позволяет интегрировать рабочий процесс DevOps для создания пакетов с помощью рабочая область машинного обучения Azure. Чтобы узнать, как настроить веб-каналы Python с помощью Azure DevOps, прочитайте статью [Начало работы с пакетами Python в Azure Artifacts](/azure/devops/artifacts/quickstarts/python-packages?preserve-view=true&view=azure-devops)
 
 Этот подход использует личный маркер доступа для проверки подлинности в репозитории. Такой же подход применим к другим репозиториям с проверкой подлинности на основе маркеров, например закрытых репозиториях GitHub. 
 
- 1. [Создайте личный маркер доступа (PAT)](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&preserve-view=true&tabs=preview-page#create-a-pat) для своего экземпляра Azure DevOps. Задайте область токена для __упаковки > чтения__. 
+ 1. [Создайте личный маркер доступа (PAT)](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?preserve-view=true&tabs=preview-page&view=azure-devops#create-a-pat) для своего экземпляра Azure DevOps. Задайте область токена для __упаковки > чтения__. 
 
- 2. Добавьте URL-адрес Azure DevOps и PAT в качестве свойств рабочей области с помощью метода [Workspace.set_connection](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true#&preserve-view=trueset-connection-name--category--target--authtype--value-) .
+ 2. Добавьте URL-адрес Azure DevOps и PAT в качестве свойств рабочей области с помощью метода [Workspace.set_connection](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py#&preserve-view=trueset-connection-name--category--target--authtype--value-) .
 
      ```python
     from azureml.core import Workspace
@@ -98,6 +98,6 @@ myenv.python.conda_dependencies=conda_dep
 
 После завершения этих конфигураций можно сослаться на пакеты в определении среды Машинное обучение Azure по полному URL-адресу в хранилище больших двоичных объектов Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  * Дополнительные сведения о [корпоративной безопасности в машинное обучение Azure](concept-enterprise-security.md)

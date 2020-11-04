@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: 1dc7c343087e4fc11aef20e95bc9cafea20a99b4
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 8082694b9f08023653d47e1f7fb442219cf8b475
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92672869"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93316702"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Защита рабочей области Машинное обучение Azure с помощью виртуальных сетей
 
@@ -48,7 +48,7 @@ ms.locfileid: "92672869"
     - "Microsoft. Network/virtualNetworks/соединение/действие" для ресурса виртуальной сети.
     - "Microsoft. Network/virtualNetworks/подсеть/соединение/действие" в ресурсе подсети.
 
-    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking) .
+    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](../role-based-access-control/built-in-roles.md#networking) .
 
 
 ## <a name="secure-the-workspace-with-private-endpoint"></a>Защита рабочей области с помощью частной конечной точки
@@ -66,7 +66,7 @@ ms.locfileid: "92672869"
 >
 > Учетная запись хранения по умолчанию автоматически подготавливается при создании рабочей области.
 >
-> Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в функции [`Workspace.create()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace%28class%29?view=azure-ml-py&preserve-view=true#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-&preserve-view=true) позволяет указать настраиваемую учетную запись хранения по ИД ресурса Azure.
+> Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в функции [`Workspace.create()`](/python/api/azureml-core/azureml.core.workspace%28class%29?preserve-view=true&view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-&preserve-view=true) позволяет указать настраиваемую учетную запись хранения по ИД ресурса Azure.
 
 Чтобы использовать учетную запись хранения Azure для рабочей области в виртуальной сети, выполните следующие действия.
 
@@ -74,18 +74,18 @@ ms.locfileid: "92672869"
 
    [![Хранилище, подключенное к рабочей области Машинного обучения Azure](./media/how-to-enable-virtual-network/workspace-storage.png)](./media/how-to-enable-virtual-network/workspace-storage.png#lightbox)
 
-1. На странице Учетная запись службы хранилища выберите __брандмауэры и виртуальные сети__ .
+1. На странице Учетная запись службы хранилища выберите __брандмауэры и виртуальные сети__.
 
    ![Область "Брандмауэры и виртуальные сети" на странице службы хранилища Azure на портале Azure](./media/how-to-enable-virtual-network/storage-firewalls-and-virtual-networks.png)
 
 1. На странице __Брандмауэры и виртуальные сети__ выполните следующие действия.
-    1. Выберите __Выбранные сети__ .
-    1. В разделе __Виртуальные сети__ щелкните ссылку __Добавить существующую виртуальную сеть__ . Это действие добавляет виртуальную сеть, в которой размещается вычисление (см. шаг 1).
+    1. Выберите __Выбранные сети__.
+    1. В разделе __Виртуальные сети__ щелкните ссылку __Добавить существующую виртуальную сеть__. Это действие добавляет виртуальную сеть, в которой размещается вычисление (см. шаг 1).
 
         > [!IMPORTANT]
         > Учетная запись хранения должна находиться в той же виртуальной сети и подсети, что и экземпляры или кластеры вычислительных ресурсов, используемые для обучения или аналитики.
 
-    1. Установите флажок __Разрешить доверенным службам Microsoft доступ к этой учетной записи хранения__ . Это не дает всем службам Azure доступ к вашей учетной записи хранения.
+    1. Установите флажок __Разрешить доверенным службам Microsoft доступ к этой учетной записи хранения__. Это не дает всем службам Azure доступ к вашей учетной записи хранения.
     
         * Ресурсы некоторых служб, **зарегистрированных в вашей подписке** , могут получить доступ к учетной записи хранения **в той же подписке** для операций выбора. Например, запись журналов или создание резервных копий.
         * Ресурсам некоторых служб можно предоставить явный доступ к учетной записи хранения, __назначив роли Azure__ управляемому удостоверению, назначенному системой.
@@ -95,7 +95,7 @@ ms.locfileid: "92672869"
     > [!IMPORTANT]
     > При работе с пакетом SDK для Машинного обучения Azure среда разработки должна иметь возможность подключения к учетной записи хранения Azure. Если учетная запись хранения находится в виртуальной сети, брандмауэр должен разрешить доступ с IP-адреса среды разработки.
     >
-    > Чтобы разрешить доступ к учетной записи хранения, посетите раздел __Брандмауэры и виртуальные сети__ для учетной записи хранения *из веб-браузера в клиенте разработки* . Затем используйте флажок __Добавить IP-адрес клиента__ , чтобы добавить IP-адрес клиента в __ДИАПАЗОН АДРЕСОВ__ . Можно также использовать поле __ДИАПАЗОН АДРЕСОВ__ , чтобы вручную ввести IP-адрес среды разработки. После добавления IP-адреса клиента он может получить доступ к учетной записи хранения с помощью пакета SDK.
+    > Чтобы разрешить доступ к учетной записи хранения, посетите раздел __Брандмауэры и виртуальные сети__ для учетной записи хранения *из веб-браузера в клиенте разработки*. Затем используйте флажок __Добавить IP-адрес клиента__ , чтобы добавить IP-адрес клиента в __ДИАПАЗОН АДРЕСОВ__. Можно также использовать поле __ДИАПАЗОН АДРЕСОВ__ , чтобы вручную ввести IP-адрес среды разработки. После добавления IP-адреса клиента он может получить доступ к учетной записи хранения с помощью пакета SDK.
 
    [![Выберите область "Брандмауэры и виртуальные сети" на портале Azure](./media/how-to-enable-virtual-network/storage-firewalls-and-virtual-networks-page.png)](./media/how-to-enable-virtual-network/storage-firewalls-and-virtual-networks-page.png#lightbox)
 
@@ -125,7 +125,7 @@ ms.locfileid: "92672869"
 
  Azure Data Lake Store Gen1 и Azure Data Lake Store по умолчанию пропускают проверку, поэтому дальнейшие действия не требуются. Однако для следующих служб можно использовать аналогичный синтаксис для пропуска проверки хранилища данных:
 
-- Хранилище BLOB-объектов Azure
+- хранилище BLOB-объектов Azure;
 - Общая папка Azure
 - PostgreSQL
 - База данных SQL Azure
@@ -175,12 +175,12 @@ validate=False)
 
 1. Перейдите к Key Vault, связанному с рабочей областью.
 
-1. На странице __Key Vault__ в области слева выберите __сеть__ .
+1. На странице __Key Vault__ в области слева выберите __сеть__.
 
 1. На вкладке __брандмауэры и виртуальные сети__ выполните следующие действия.
-    1. В разделе __Разрешить доступ из__ выберите __Частная конечная точка и выбранные сети__ .
+    1. В разделе __Разрешить доступ из__ выберите __Частная конечная точка и выбранные сети__.
     1. В разделе __Виртуальные сети__ выберите __Добавить существующие виртуальные сети__ , чтобы добавить виртуальную сеть, в которой находится вычислительная среда для экспериментирования.
-    1. В разделе __разрешить доверенным службам Майкрософт обходить этот брандмауэр?__ выберите __Да__ .
+    1. В разделе __разрешить доверенным службам Майкрософт обходить этот брандмауэр?__ выберите __Да__.
 
    [![Раздел "Брандмауэры и виртуальные сети" в области хранилища ключей](./media/how-to-enable-virtual-network/key-vault-firewalls-and-virtual-networks-page.png)](./media/how-to-enable-virtual-network/key-vault-firewalls-and-virtual-networks-page.png#lightbox)
 
@@ -188,7 +188,7 @@ validate=False)
 
 Чтобы использовать реестр контейнеров Azure в виртуальной сети, необходимо соблюдать следующие требования.
 
-* Реестр контейнеров Azure должен иметь версию Premium. Дополнительные сведения об обновлении см. в разделе [Изменение SKU](/azure/container-registry/container-registry-skus#changing-skus).
+* Реестр контейнеров Azure должен иметь версию Premium. Дополнительные сведения об обновлении см. в разделе [Изменение SKU](../container-registry/container-registry-skus.md#changing-tiers).
 
 * Реестр контейнеров Azure должен находиться в той же виртуальной сети и подсети, что и учетная запись хранения и целевые объекты вычислений, используемые для обучения или аналитики.
 
@@ -233,7 +233,7 @@ validate=False)
     > [!IMPORTANT]
     > Учетная запись хранения, кластер вычислений и реестр контейнеров Azure должны находиться в одной подсети виртуальной сети.
     
-    Дополнительную информацию см. в справочном руководстве по методу [update()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true#update-friendly-name-none--description-none--tags-none--image-build-compute-none--enable-data-actions-none-&preserve-view=true).
+    Дополнительную информацию см. в справочном руководстве по методу [update()](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py#update-friendly-name-none--description-none--tags-none--image-build-compute-none--enable-data-actions-none-&preserve-view=true).
 
 1. Примените следующий шаблон Azure Resource Manager. Этот шаблон позволяет рабочей области взаимодействовать с ACR.
 
@@ -289,7 +289,7 @@ validate=False)
 
     Этот шаблон создает _закрытую конечную точку_ для доступа к сети из рабочей области в вашу учетную запись. На снимке экрана ниже показан пример этой частной конечной точки.
 
-    :::image type="content" source="media/how-to-secure-workspace-vnet/acr-private-endpoint.png" alt-text="Реестр контейнеров Azure для рабочей области":::
+    :::image type="content" source="media/how-to-secure-workspace-vnet/acr-private-endpoint.png" alt-text="Параметры закрытой конечной точки записи контроля доступа":::
 
     > [!IMPORTANT]
     > Не удаляйте эту конечную точку. Если вы случайно удалите его, можно повторно применить шаблон на этом шаге, чтобы создать новый.

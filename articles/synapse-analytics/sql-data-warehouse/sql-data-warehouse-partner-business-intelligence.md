@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: a21cee6806c4200a73b35afba73cf04d7ca60308
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 33571283b876506e419ed675dde0988974c3841e
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280018"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93317877"
 ---
 # <a name="azure-synapse-analytics-business-intelligence-partners"></a>Партнеры по бизнес-аналитике Azure Synapse Analytics
 
@@ -41,7 +41,7 @@ ms.locfileid: "93280018"
 | ![Tableau](./media/sql-data-warehouse-partner-business-intelligence/tableau_sparkle_logo.png) |**Tableau**<br>Аналитический инструмент Tableau с интерфейсом самообслуживания поможет просмотреть и понять данные из разных источников, от неструктурированных файлов до баз данных. Tableau имеет собственный, оптимизированный соединитель для пула Synapse SQL, который поддерживает работу с данными в реальном времени и выполняющуюся в памяти аналитику. |[Страница продукта](https://www.tableau.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/tableau.tableau-server)<br>|
 | ![Targit](./media/sql-data-warehouse-partner-business-intelligence/targit_logo.png) |**Targit (пакет для принятия решений)**<br>Набор решений таргит предлагает платформу бизнес-аналитики, которая предоставляет панели мониторинга в режиме реального времени, средства самостоятельной аналитики, удобные для пользователей отчеты, великолепные мобильные возможности и простую технологию обнаружения данных. Все в едином едином решении. Targit дает компаниям мужество для действия. |[Страница продукта](https://www.targit.com/targit-decision-suite/analytics)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/targit.targit-decision-suite)<br> |
 | ![ThoughtSpot](./media/sql-data-warehouse-partner-business-intelligence/thoughtspot-logo.png) |**ThoughtSpot**<br>Используйте поиск, чтобы получить детализированную аналитику из миллиардов строк или позволить ИСКУССТВЕНному анализу получать ценные сведения от вопросов, о которых вы могли не думать. ThoughtSpot помогает предпринимателям за считаные секунды находить ценные сведения, скрытые в данных их компании. Используйте поиск для анализа данных и автоматизированного получения полезных сведений, когда они вам нужны.|[Страница продукта](https://www.thoughtspot.com)<br>|
-| ![Yellowfin](./media/sql-data-warehouse-partner-business-intelligence/yellowfin_logo.png) |**Yellowfin**<br>Yellowfin — это высший рейтинг поставщика облачных бизнес- _аналитики для_ автоматизированной отчетности и панелей мониторинга с помощью BARC; Опрос бизнес-аналитики. Подключитесь к пулу Synapse SQL, создавайте и публикуйте красивые отчеты и панели мониторинга с помощью ведущей бизнес-аналитики и функций анализа. |[Страница продукта](https://www.yellowfinbi.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/yellowfin.yellowfin-for-azure-byol) |
+| ![Yellowfin](./media/sql-data-warehouse-partner-business-intelligence/yellowfin_logo.png) |**Yellowfin**<br>Yellowfin — это высший рейтинг поставщика облачных бизнес- _аналитики для_ автоматизированной отчетности и панелей мониторинга с помощью BARC; Опрос бизнес-аналитики. Подключайтесь к выделенному пулу SQL в Azure синапсе Analytics, а затем Создавайте и делите привлекательные отчеты и панели мониторинга, используя функции совместной работы с бизнес-аналитикой и аналитикой расположения. |[Страница продукта](https://www.yellowfinbi.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/yellowfin.yellowfin-for-azure-byol) |
 
 <!--https://img.youtube.com/vi/0b8sPW2UHrU/0.jpg-->
 
