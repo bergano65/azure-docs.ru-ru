@@ -2,17 +2,18 @@
 title: Миграция с CouchBase на API SQL для Azure Cosmos DB
 description: Пошаговое руководство по миграции с CouchBase на API SQL для Azure Cosmos DB
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 02/11/2020
 ms.author: mansha
 author: manishmsfte
 ms.custom: devx-track-java
-ms.openlocfilehash: 0f286b5586a0d74afed0bb185179454bb1efff95
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 73d6fe0233eccea9ebf1d82beb509c56fb45f4da
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097555"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93339518"
 ---
 # <a name="migrate-from-couchbase-to-azure-cosmos-db-sql-api"></a>Миграция с CouchBase на API SQL для Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -312,7 +313,7 @@ Mono<CosmosItemResponse> objMono = objItem.delete(ro);
 
 1. Рекомендуется использовать "/ID" в качестве первичного ключа, что гарантирует возможность выполнения операции поиска непосредственно в определенной секции. Создайте коллекцию и укажите "/ID" в качестве ключа секции.
 
-1. Полностью выключите индексирование. Так как вы будете выполнять операции поиска, нет смысла создавать дополнительную нагрузку за счет индексирования. Чтобы выключить индексирование, войдите на портал Azure и перейдите в учетную запись Azure Cosmos DB. Откройте **обозреватель данных** , выберите свою **базу данных** и **контейнер** . Откройте вкладку **Масштаб и параметры** и выберите **политику индексирования** . Текущая политика индексации выглядит следующим образом:
+1. Полностью выключите индексирование. Так как вы будете выполнять операции поиска, нет смысла создавать дополнительную нагрузку за счет индексирования. Чтобы выключить индексирование, войдите на портал Azure и перейдите в учетную запись Azure Cosmos DB. Откройте **обозреватель данных** , выберите свою **базу данных** и **контейнер**. Откройте вкладку **Масштаб и параметры** и выберите **политику индексирования**. Текущая политика индексации выглядит следующим образом:
     
    ```json
    {

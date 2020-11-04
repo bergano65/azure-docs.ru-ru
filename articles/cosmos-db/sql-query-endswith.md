@@ -3,16 +3,17 @@ title: Использование ENDSWITH на языке запросов Azur
 description: Узнайте, как системная функция SQL ENDSWITH в Azure Cosmos DB возвращает значение логического типа, указывающее, заканчивается ли первое строковое выражение вторым
 author: ginamr
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 06/02/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: dd34a41fd9757d91845eb53626b00381c7ddda7a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c0cc93fee8aacc711a797925cb2e2808b73cafd1
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100292"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93338838"
 ---
 # <a name="endswith-azure-cosmos-db"></a>ENDSWITH (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -31,7 +32,7 @@ ENDSWITH(<str_expr1>, <str_expr2> [, <bool_expr>])
    Строковое выражение.  
   
 *str_expr2*  
-   Строковое выражение, сравниваемое с концом *str_expr1* .
+   Строковое выражение, сравниваемое с концом *str_expr1*.
 
 *bool_expr* Необязательное значение для игнорирования регистра. Если задано значение true, ENDSWITH будет выполнять поиск без учета регистра. Если значение не указано, оно равно false.
   

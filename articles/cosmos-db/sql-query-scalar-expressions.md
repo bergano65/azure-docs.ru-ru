@@ -3,15 +3,16 @@ title: Скалярные выражения в запросах SQL Azure Cosmo
 description: Сведения о скалярном выражении синтаксиса SQL для Azure Cosmos DB. В этой статье также описывается объединение скалярных выражений в сложные выражения с помощью операторов.
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: mjbrown
-ms.openlocfilehash: c40916d975b8acabaa7083cf57259291f09b40a9
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 34df2d2f4a2209cca93c3f7ac12dcd203bf4a089
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93082612"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93339637"
 ---
 # <a name="scalar-expressions-in-azure-cosmos-db-sql-queries"></a>Скалярные выражения в запросах SQL Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -56,7 +57,7 @@ ms.locfileid: "93082612"
 - `input_alias`  
   
    Представляет значение, определяемое аргументом `input_alias` в предложении `FROM`.  
-  Выражение гарантировано не может принять значение **undefined** . Значения **undefined** пропускаются.  
+  Выражение гарантировано не может принять значение **undefined**. Значения **undefined** пропускаются.  
   
 - `<scalar_expression>.property_name`  
   

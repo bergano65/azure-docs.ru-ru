@@ -3,15 +3,16 @@ title: Константы SQL в Azure Cosmos DB
 description: Сведения о том, как константы SQL-запросов в Azure Cosmos DB используются для представления определенного значения данных
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 05/31/2019
 ms.author: tisande
-ms.openlocfilehash: ebc1f66e68d4cf37546e7d33a9b723385330395c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b0973dca980b65b85ac66cc1b3c9ed45f0f9c779
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100870"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93339212"
 ---
 # <a name="azure-cosmos-db-sql-query-constants"></a>Константы запроса SQL Azure Cosmos DB  
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -27,7 +28,7 @@ ms.locfileid: "93100870"
 |**Boolean**|Доступные значения: **false** , **true**|  
 |**Число**|Число с плавающей запятой двойной точности, стандарт IEEE 754.|  
 |**String**|Последовательности из нуля или более знаков Юникода. Строки необходимо заключить в одинарные или двойные кавычки.|  
-|**массив** .|Последовательность из нуля или более элементов. Каждый элемент может быть значением любого скалярного типа данных, за исключением **неопределенного** .|  
+|**массив**.|Последовательность из нуля или более элементов. Каждый элемент может быть значением любого скалярного типа данных, за исключением **неопределенного**.|  
 |**Объект**|Неупорядоченный набор из нуля или более пар "имя — значение". Имя является строкой Юникода. Значение может иметь любой скалярный тип данных (за исключением типа **Неопределенное** ).|  
   
 ## <a name="syntax"></a><a name="bk_syntax"></a>Синтаксис
@@ -68,7 +69,7 @@ ms.locfileid: "93100870"
   
 * `<null_constant>; null`  
   
-  Представляет значение **Null** типа **Null** .  
+  Представляет значение **Null** типа **Null**.  
   
 * `<boolean_constant>`  
   
@@ -117,7 +118,7 @@ ms.locfileid: "93100870"
 |\t|TAB|U+0009|  
 |\uXXXX|Символ Юникода, определяемый 4 шестнадцатеричными цифрами.|U+XXXX|  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Данные документов модели](modeling-data.md)

@@ -3,15 +3,16 @@ title: Индексирование в Azure Cosmos DB
 description: Узнайте, как работает индексирование в Azure Cosmos DB и поддерживаются различные типы индексов, такие как диапазоны, пространственные и составные индексы.
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: tisande
-ms.openlocfilehash: acb0396ece32c568a4d8c384bebcbabd7480eb09
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 4211f13324b9fda0b0823b2d035eb03863cb686d
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101465"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93339763"
 ---
 # <a name="indexing-in-azure-cosmos-db---overview"></a>Индексирование в Azure Cosmos DB — обзор
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -181,7 +182,7 @@ Azure Cosmos DB — это база данных без использовани
 
 Например, рассмотрим следующий запрос: `SELECT location FROM location IN company.locations WHERE location.country = 'France'`. Предикат запроса (фильтрация по элементам, где любое расположение имеет значение "France" в качестве страны или региона) соответствует пути, выделенному красным цветом:
 
-:::image type="content" source="./media/index-overview/matching-path.png" alt-text="Предыдущий элемент, представленный в виде дерева" border="false":::
+:::image type="content" source="./media/index-overview/matching-path.png" alt-text="Сопоставление определенного пути в дереве" border="false":::
 
 > [!NOTE]
 > Предложение `ORDER BY`, которое упорядочивается по одному свойству, *всегда* требует индекс диапазона, и если у пути, на который оно ссылается, его нет, оно завершится ошибкой. Аналогичным образом запросу `ORDER BY`, который упорядочивается по нескольким свойствам, *всегда* требуется составной индекс.

@@ -3,15 +3,16 @@ title: Управление ресурсами API Azure Cosmos DB Core (SQL) с
 description: Управление ресурсами API Azure Cosmos DB Core (SQL) с помощью Azure CLI.
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: e5e5a057d6c88e0963ab674aa7dbf2d420ff21b8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: e4b112b93a552ff62b08c102e710cd914265ba5c
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083941"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93339331"
 ---
 # <a name="manage-azure-cosmos-core-sql-api-resources-using-azure-cli"></a>Управление ресурсами API Azure Cosmos Core (SQL) с помощью Azure CLI
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -42,7 +43,7 @@ ms.locfileid: "93083941"
 * [Вывод строк подключения](#list-connection-strings)
 * [Повторное создание ключей учетных записей](#regenerate-account-key)
 
-### <a name="create-an-azure-cosmos-db-account"></a>Создание учетной записи Azure Cosmos DB
+### <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
 
 Создание учетной записи Azure Cosmos DB с помощью API SQL, согласованности сеансов в Западная часть США 2 и Восточная часть США 2.
 
@@ -541,7 +542,7 @@ lockid=$(az lock show --name $containerLockName \
 az lock delete --ids $lockid
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об Azure CLI см.:
 

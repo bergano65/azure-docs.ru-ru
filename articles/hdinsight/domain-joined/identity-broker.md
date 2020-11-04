@@ -1,20 +1,20 @@
 ---
-title: Использование брокера ИДЕНТИФИКАТОРов (Предварительная версия) для управления учетными данными — Azure HDInsight
+title: Брокер ИДЕНТИФИКАТОРов Azure HDInsight (ХИБ)
 description: Сведения об Azure HDInsight ID Broker для упрощения проверки подлинности присоединенных к домену кластеров Apache Hadoop.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
-ms.date: 09/23/2020
-ms.openlocfilehash: 6617c778c0b79a55058eafb40fd9b49b627819ea
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.date: 11/03/2020
+ms.openlocfilehash: df4faf367951402914abb03285498e0da6f3105f
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043258"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93337682"
 ---
-# <a name="azure-hdinsight-id-broker-preview"></a>Брокер ИДЕНТИФИКАТОРов Azure HDInsight (Предварительная версия)
+# <a name="azure-hdinsight-id-broker-hib"></a>Брокер ИДЕНТИФИКАТОРов Azure HDInsight (ХИБ)
 
 В этой статье описывается, как настроить и использовать компонент брокера ИДЕНТИФИКАТОРов Azure HDInsight. Эту функцию можно использовать для получения современной проверки подлинности OAuth в Apache Ambari с применением многофакторной проверки подлинности без использования хэшей паролей прежних версий в Azure Active Directory доменных служб (Azure AD DS).
 
@@ -45,7 +45,7 @@ ms.locfileid: "93043258"
 
 На следующей схеме показана обычная последовательность проверки подлинности для федеративных пользователей. Сначала шлюз пытается выполнить проверку подлинности с помощью [ропк Flow](../../active-directory/develop/v2-oauth-ropc.md). Если в Azure AD не синхронизированы хэши паролей, то возвращается обнаружение конечной точки AD FS и завершает проверку подлинности путем доступа к конечной точке AD FS.
 
-:::image type="content" source="media/identity-broker/basic-authentication.png" alt-text="Схема, показывающая поток проверки подлинности с помощью брокера ИДЕНТИФИКАТОРов HDInsight.":::
+:::image type="content" source="media/identity-broker/basic-authentication.png" alt-text="Схема, на которой показана архитектура с обычной проверкой подлинности.":::
 
 
 ## <a name="enable-hdinsight-id-broker"></a>Включение брокера ИДЕНТИФИКАТОРов HDInsight
@@ -54,7 +54,7 @@ ms.locfileid: "93043258"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выполните базовые действия по созданию кластера Корпоративный пакет безопасности. Дополнительные сведения см. в статье [Создание кластера HDInsight с корпоративный пакет безопасности](apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp).
-1. Выберите **включить брокер идентификаторов HDInsight** .
+1. Выберите **включить брокер идентификаторов HDInsight**.
 
 Функция брокера ИДЕНТИФИКАТОРов HDInsight добавляет в кластер одну лишнюю виртуальную машину. Эта виртуальная машина — это узел брокера ИДЕНТИФИКАТОРов HDInsight, который включает серверные компоненты для поддержки проверки подлинности. Узел брокера ИДЕНТИФИКАТОРов HDInsight — это домен, присоединенный к домену Azure AD DS.
 
@@ -138,7 +138,7 @@ curl -k -v -H "Authorization: Bearer Access_TOKEN" -H "Content-Type: application
 
 Для использования Beeline и Livy можно также воспользоваться приведенными [здесь](https://github.com/Azure-Samples/hdinsight-enterprise-security/tree/main/HIB/HIBSamples) кодами примеров, чтобы настроить клиент для использования OAuth и подключения к кластеру.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка кластера HDInsight с Корпоративный пакет безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure-using-azure-adds.md)
 * [Синхронизация пользователей Azure Active Directory с кластером HDInsight](../hdinsight-sync-aad-users-to-cluster.md)
