@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 08/05/2020
 ms.author: pafarley
 ms.custom: devx-track-js
-ms.openlocfilehash: 0f87bc13a75355306f7d2d15b22ff9cdfaa53794
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f77282502a0032a5b1811e32d9aa47d9b4ede569
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91858228"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92912826"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-nodejs"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Node.js
 
@@ -42,7 +42,7 @@ npm install axios --save
 
 ## <a name="write-the-nodejs-script"></a>Запись скрипта Node.js
 
-Вставьте следующий код в *facedetection.js*. Эти поля указывают, как подключиться к службе распознавания лиц и где получить входные данные. [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows#configure-an-environment-variable-for-authentication) и добавьте к ним свой ключ подписки и конечную точку Распознавания лиц. Вам может потребоваться изменить поле `imageUrl`, чтобы указать свое входное изображение.
+Вставьте следующий код в *facedetection.js*. Эти поля указывают, как подключиться к службе распознавания лиц и где получить входные данные. [Создайте переменные среды](../../cognitive-services-apis-create-account.md?tabs=multiservice%252cwindows#configure-an-environment-variable-for-authentication) и добавьте к ним свой ключ подписки и конечную точку Распознавания лиц. Вам может потребоваться изменить поле `imageUrl`, чтобы указать свое входное изображение.
 
 [!INCLUDE [subdomains-note](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 

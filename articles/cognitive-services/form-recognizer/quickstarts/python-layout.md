@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 72420019ead1ae47054ae62197d8cc310063a6b9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 5ea5e352084e379632b88194fd13011879041fd3
+ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91969778"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92899442"
 ---
 # <a name="quickstart-extract-text-and-layout-information-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение текста и сведений о макете с использованием Распознавателя документов и Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "91969778"
 
 Для работы с этим кратким руководством требуется следующее:
 - Среда [Python](https://www.python.org/downloads/), если вы хотите выполнить этот пример кода локально.
-- Документ формы. Для выполнения инструкций из этого краткого руководства можно использовать изображение из [образца набора данных](https://go.microsoft.com/fwlink/?linkid=2090451) (скачайте и разархивируйте файл *sample_data.zip*).
+- Документ формы. Для выполнения инструкций из этого краткого руководства можно использовать изображение из [образца набора данных](https://go.microsoft.com/fwlink/?linkid=2090451) (скачайте и разархивируйте файл *sample_data.zip* ).
 
 > [!NOTE]
 > В этом кратком руководстве используется документ, сохраненный локально. Чтобы узнать, как использовать удаленные файлы, доступ к которым осуществляется по URL-адресу, см. [справочную документацию](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync).
@@ -61,7 +61,8 @@ ms.locfileid: "91969778"
     
     headers = {
         # Request headers
-        'Content-Type': 'application/json',
+        # Change Content-Type as appropriate
+        'Content-Type': 'application/pdf',
         'Ocp-Apim-Subscription-Key': apim_key,
     }
     with open(source, "rb") as f:
@@ -94,7 +95,8 @@ ms.locfileid: "91969778"
     
     headers = {
         # Request headers
-        'Content-Type': 'application/json',
+        # Change Content-Type as appropriate
+        'Content-Type': 'application/pdf',
         'Ocp-Apim-Subscription-Key': apim_key,
     }
     with open(source, "rb") as f:
@@ -120,7 +122,7 @@ ms.locfileid: "91969778"
 1. Откройте окно командной строки.
 1. В командной строке выполните пример кода с помощью команды `python`. Например, `python form-recognizer-layout.py`.
 
-Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location**, который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором операции.
+Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location** , который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором операции.
 
 # <a name="v20"></a>[Версия 2.0](#tab/v2-0)   
 ```console

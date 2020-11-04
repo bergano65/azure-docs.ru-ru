@@ -10,17 +10,17 @@ ms.topic: include
 ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 0dc4528147a144ed9887ae1becfbbe2aa4b9fcf3
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: fa15b48cff73b567187aa078bec02aa82e41e665
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897749"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92918727"
 ---
 > [!IMPORTANT]
 > В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных.
 
-[Справочная документация](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-ai-formrecognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md)
+[Справочная документация](/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-ai-formrecognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -134,7 +134,7 @@ mkdir -p src/main/java
 - Копирование настраиваемой модели из одного ресурса Распознавателя документов в другой.
 
 > [!NOTE]
-> Модели можно также обучить с помощью графического пользовательского интерфейса, например [средства маркировки Распознавателя документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool).
+> Модели можно также обучить с помощью графического пользовательского интерфейса, например [средства маркировки Распознавателя документов](../../quickstarts/label-tool.md).
 
 ## <a name="code-examples"></a>Примеры кода
 

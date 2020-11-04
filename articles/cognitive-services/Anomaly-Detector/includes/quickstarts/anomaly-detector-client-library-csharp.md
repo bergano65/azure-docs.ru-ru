@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/22/2020
 ms.author: mbullwin
-ms.openlocfilehash: 22732ae10fb328839c47194e0a33faf18514ff45
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 14b361ae2163636864b37d2a063ad10886a9e3c8
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92018487"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93029510"
 ---
 Приступите к работе с клиентской библиотекой Детектора аномалий для .NET. Выполните следующие действия, чтобы установить пакет и приступить к использованию алгоритмов, предоставляемых службой. Служба Детектора аномалий позволяет находить аномалии в данных временных рядов, автоматически применяя для них наиболее подходящие модели, независимо от отрасли, сценария или объема данных.
 
@@ -66,7 +66,7 @@ Build succeeded.
 В каталоге приложения установите клиентскую библиотеку Детектора аномалий для .NET с помощью следующей команды:
 
 ```dotnetcli
-dotnet add package Azure.AI.AnomalyDetector --version 3.0.0-preview.2
+dotnet add package Microsoft.Azure.CognitiveServices.AnomalyDetector
 ```
 
 В каталоге проекта откройте файл *program.cs* и с помощью `directives` добавьте следующее:

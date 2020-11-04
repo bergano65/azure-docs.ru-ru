@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 86d2935cfac7ca095c918826c47dbf3f1dd2d8d3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: ec23ec58a020cc314f301e33b72b4787f4e32e14
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886723"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92918724"
 ---
 В этом руководстве показано, как начать работу с клиентской библиотекой API Распознавания лиц для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 
@@ -26,7 +26,7 @@ ms.locfileid: "92886723"
 * опознание лиц;
 * Проверка лиц
 
-[Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-face) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-face/) | [Примеры](https://docs.microsoft.com/samples/browse/?products=azure&term=face)
+[Справочная документация](/python/api/azure-cognitiveservices-vision-face/?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-face) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-face/) | [Примеры](/samples/browse/?products=azure&term=face)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,7 +35,6 @@ ms.locfileid: "92886723"
 * Получив подписку Azure, перейдите к <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace"  title="Создание ресурса Распознавания лиц"  target="_blank">созданию ресурса Распознавания лиц<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Распознавания лиц потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
-
 
 ## <a name="setting-up"></a>Настройка
  
@@ -63,7 +62,7 @@ pip install --upgrade azure-cognitiveservices-vision-face
 > [!IMPORTANT]
 > Перейдите на портал Azure. Если ресурс [название продукта], созданный в соответствии с указаниями в разделе **Предварительные требования** , успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
 >
-> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Например, [хранилище ключей Azure](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
+> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Например, [хранилище ключей Azure](../../../../key-vault/general/overview.md).
 
 ## <a name="object-model"></a>Объектная модель
 
@@ -71,13 +70,13 @@ pip install --upgrade azure-cognitiveservices-vision-face
 
 |Имя|Описание|
 |---|---|
-|[FaceClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient?view=azure-python) | Этот класс реализует авторизацию для использования Распознавания лиц и требуется для реализации всех ее функций. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов. |
-|[FaceOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python)|Этот класс обрабатывает основные задачи по обнаружению и распознаванию лиц. |
-|[DetectedFace](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface?view=azure-python)|Этот класс представляет все данные об отдельном лице, обнаруженном на изображении. Его можно использовать для получения подробных сведений о лице.|
-|[FaceListOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.facelistoperations?view=azure-python)|Этот класс управляет хранимыми в облаке конструкциями **FaceList** , которые включают систематизированную коллекцию лиц. |
-|[PersonGroupPersonOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations?view=azure-python)| Этот класс управляет хранимыми в облаке конструкциями **Person** , в которых хранится коллекция лиц одного человека.|
-|[PersonGroupOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongroupoperations?view=azure-python)| Этот класс управляет хранимыми в облаке конструкциями **PersonGroup** , в которых хранится систематизированная коллекция объектов **Person**. |
-|[SnapshotOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.snapshotoperations?view=azure-python)|Этот класс управляет функцией создания моментального снимка. Его можно использовать для временного сохранения всех хранимых в облаке данных о лицах и переноса этих данных в новую подписку Azure. |
+|[FaceClient](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient?view=azure-python) | Этот класс реализует авторизацию для использования Распознавания лиц и требуется для реализации всех ее функций. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов. |
+|[FaceOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python)|Этот класс обрабатывает основные задачи по обнаружению и распознаванию лиц. |
+|[DetectedFace](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface?view=azure-python)|Этот класс представляет все данные об отдельном лице, обнаруженном на изображении. Его можно использовать для получения подробных сведений о лице.|
+|[FaceListOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.facelistoperations?view=azure-python)|Этот класс управляет хранимыми в облаке конструкциями **FaceList** , которые включают систематизированную коллекцию лиц. |
+|[PersonGroupPersonOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations?view=azure-python)| Этот класс управляет хранимыми в облаке конструкциями **Person** , в которых хранится коллекция лиц одного человека.|
+|[PersonGroupOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongroupoperations?view=azure-python)| Этот класс управляет хранимыми в облаке конструкциями **PersonGroup** , в которых хранится систематизированная коллекция объектов **Person**. |
+|[SnapshotOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.snapshotoperations?view=azure-python)|Этот класс управляет функцией создания моментального снимка. Его можно использовать для временного сохранения всех хранимых в облаке данных о лицах и переноса этих данных в новую подписку Azure. |
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -92,18 +91,18 @@ pip install --upgrade azure-cognitiveservices-vision-face
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Создайте экземпляр клиента с конечной точкой и ключом. Создайте объект [CognitiveServicesCredentials](https://docs.microsoft.com/python/api/msrest/msrest.authentication.cognitiveservicescredentials?view=azure-python) с ключом и используйте его с конечной точкой, чтобы создать объект [FaceClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient?view=azure-python).
+Создайте экземпляр клиента с конечной точкой и ключом. Создайте объект [CognitiveServicesCredentials](/python/api/msrest/msrest.authentication.cognitiveservicescredentials?view=azure-python) с ключом и используйте его с конечной точкой, чтобы создать объект [FaceClient](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient?view=azure-python).
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_auth)]
 
 ## <a name="detect-faces-in-an-image"></a>Определение лиц на изображении
 
-Следующий код обнаруживает лицо на удаленно хранящемся изображении. Он выводит идентификатор обнаруженного лица в консоль, а также сохраняет его в памяти программы. Затем он обнаруживает лица на изображении с несколькими людьми и выводит их идентификаторы в консоль. Изменяя параметры в методе [detect_with_url](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python#detect-with-url-url--return-face-id-true--return-face-landmarks-false--return-face-attributes-none--recognition-model--recognition-01---return-recognition-model-false--detection-model--detection-01---custom-headers-none--raw-false----operation-config-), можно получать разные сведения о каждом объекте [DetectedFace](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface?view=azure-python).
+Следующий код обнаруживает лицо на удаленно хранящемся изображении. Он выводит идентификатор обнаруженного лица в консоль, а также сохраняет его в памяти программы. Затем он обнаруживает лица на изображении с несколькими людьми и выводит их идентификаторы в консоль. Изменяя параметры в методе [detect_with_url](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python#detect-with-url-url--return-face-id-true--return-face-landmarks-false--return-face-attributes-none--recognition-model--recognition-01---return-recognition-model-false--detection-model--detection-01---custom-headers-none--raw-false----operation-config-), можно получать разные сведения о каждом объекте [DetectedFace](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface?view=azure-python).
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_detect)]
 
 > [!TIP]
-> Обнаружение лиц можно также выполнить, используя локальное изображение. Изучите информацию о методах класса [FaceOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python), например о **detect_with_stream**.
+> Обнаружение лиц можно также выполнить, используя локальное изображение. Изучите информацию о методах класса [FaceOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python), например о **detect_with_stream**.
 
 ### <a name="display-and-frame-faces"></a>Отображение лиц и их выделение рамкой
 
@@ -123,7 +122,7 @@ pip install --upgrade azure-cognitiveservices-vision-face
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_detectgroup)]
 
-Затем добавьте следующий блок кода, чтобы найти экземпляры первого лица в группе. Сведения о том, как изменить это поведение, см. в описании метода [find_similar](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python#find-similar-face-id--face-list-id-none--large-face-list-id-none--face-ids-none--max-num-of-candidates-returned-20--mode--matchperson---custom-headers-none--raw-false----operation-config-).
+Затем добавьте следующий блок кода, чтобы найти экземпляры первого лица в группе. Сведения о том, как изменить это поведение, см. в описании метода [find_similar](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python#find-similar-face-id--face-list-id-none--large-face-list-id-none--face-ids-none--max-num-of-candidates-returned-20--mode--matchperson---custom-headers-none--raw-false----operation-config-).
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_findsimilar)]
 
@@ -158,7 +157,7 @@ pip install --upgrade azure-cognitiveservices-vision-face
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_persongroup_assign)]
 
 > [!TIP]
-> Объект **PersonGroup** можно также создать на основе удаленно размещенных изображений, используя их URL-адреса. Изучите информацию о методах класса [PersonGroupPersonOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations?view=azure-python), например о **add_face_from_url**.
+> Объект **PersonGroup** можно также создать на основе удаленно размещенных изображений, используя их URL-адреса. Изучите информацию о методах класса [PersonGroupPersonOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations?view=azure-python), например о **add_face_from_url**.
 
 ### <a name="train-persongroup"></a>Обучение PersonGroup
 
@@ -223,8 +222,8 @@ python quickstart-file.py
 
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
-* [Портал](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#clean-up-resources)
-* [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli#clean-up-resources)
+* [Портал](../../../cognitive-services-apis-create-account.md#clean-up-resources)
+* [Azure CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 Если при изучении этого краткого руководства вы создали объект **PersonGroup** и хотите его удалить, выполните в скрипте следующий код:
 
@@ -235,7 +234,7 @@ python quickstart-file.py
 В этом кратком руководстве показано, как с помощью клиентской библиотеки API Распознавания лиц для Python выполнять базовые задачи по распознаванию лиц. Далее ознакомьтесь со справочной документацией, чтобы узнать больше о библиотеке.
 
 > [!div class="nextstepaction"]
-> [Справочник по API Распознавания лиц (Python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/?view=azure-python)
+> [Справочник по API Распознавания лиц (Python)](/python/api/azure-cognitiveservices-vision-face/?view=azure-python)
 
 * [Что представляет собой служба "Распознавание лиц"?](../../overview.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/Face/FaceQuickstart.py).

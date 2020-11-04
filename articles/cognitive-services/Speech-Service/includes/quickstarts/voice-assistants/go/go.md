@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/25/2020
 ms.author: trrwilson
-ms.openlocfilehash: 59e862fe04e7bf715e6e44c783f2cf9c0ecbc7c3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b05e63dc549fdf1fec4485e27086bb32251b41d8
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91376257"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93136004"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,7 +29,7 @@ ms.locfileid: "91376257"
 Обновите файл go.mod, используя последнюю версию пакета SDK. Для этого добавьте следующую строку:
 ```sh
 require (
-    github.com/Microsoft/cognitive-services-speech-sdk-go v1.13.0
+    github.com/Microsoft/cognitive-services-speech-sdk-go v1.14.0
 )
 ```
 
@@ -101,7 +101,7 @@ func main() {
 - Перейдите на портал Azure и откройте раздел своего ресурса службы "Речь".
 - Выберите слева раздел **Keys and Endpoint** (Ключи и конечная точка). В нем вы увидите два ключа подписки.
     - Используйте один из них в качестве замены значения `YOUR_SUBSCRIPTION_KEY`.
-- Откройте слева раздел **Обзор**, запишите имя региона и сопоставьте его с идентификатором региона.
+- Откройте слева раздел **Обзор** , запишите имя региона и сопоставьте его с идентификатором региона.
     - Используйте идентификатор региона для замены значения `YOUR_BOT_REGION`, например: `"westus"` для **Западная часть США**.
 
    > [!NOTE]

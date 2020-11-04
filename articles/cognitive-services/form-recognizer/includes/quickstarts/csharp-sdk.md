@@ -9,17 +9,17 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 9e0bdbc9cc197deb5028848731f031ff19d5ebf7
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 164b3f9e0426db1f36360fee8f836216d4cad86a
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897790"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92918734"
 ---
 > [!IMPORTANT]
 > В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных.
 
-[Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/src) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.AI.FormRecognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md)
+[Справочная документация](/dotnet/api/overview/azure/ai.formrecognizer-readme) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/src) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.AI.FormRecognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -85,7 +85,7 @@ dotnet add package Azure.AI.FormRecognizer --version 3.0.0
 > [!IMPORTANT]
 > Перейдите на портал Azure. Если ресурс Распознавателя документов, созданный в соответствии с указаниями в разделе **Предварительные требования** , успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
 >
-> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security).
+> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](../../../cognitive-services-security.md).
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_creds)]
 
@@ -118,7 +118,7 @@ dotnet add package Azure.AI.FormRecognizer --version 3.0.0
 См. примеры для [обучения модели](#train-a-custom-model) и [управления настраиваемыми моделями](#manage-custom-models).
 
 > [!NOTE]
-> Модели можно также обучить с помощью графического пользовательского интерфейса, например [средства маркировки Распознавателя документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool).
+> Модели можно также обучить с помощью графического пользовательского интерфейса, например [средства маркировки Распознавателя документов](../../quickstarts/label-tool.md).
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -139,7 +139,7 @@ dotnet add package Azure.AI.FormRecognizer --version 3.0.0
 > [!IMPORTANT]
 > Получите ключ и конечную точку на портале Azure. Если ресурс Распознавателя документов, созданный в соответствии с указаниями в разделе **Предварительные требования** , успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
 >
-> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Например, [хранилище ключей Azure](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
+> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Например, [хранилище ключей Azure](../../../../key-vault/general/overview.md).
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_auth)]
 

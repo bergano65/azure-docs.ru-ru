@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: d84fd9e66c03fd92f3824b685bc550c70d4a6340
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8dee3d9c91ac2b4fe97ada6069591f8f474c8c24
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886722"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92918718"
 ---
 В этом руководстве показано, как начать работу с клиентской библиотекой API Распознавания лиц для Go. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 
@@ -34,7 +34,7 @@ ms.locfileid: "92886722"
 * Получив подписку Azure, перейдите к <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace"  title="Создание ресурса Распознавания лиц"  target="_blank">созданию ресурса Распознавания лиц<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Распознавания лиц потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
-* После получения ключа и конечной точки [задайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и конечной точки с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
+* После получения ключа и конечной точки [задайте переменные среды](../../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа и конечной точки с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
 
 ## <a name="setting-up"></a>Настройка
 
@@ -112,7 +112,7 @@ touch sample-app.go
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 > [!NOTE] 
-> В этом кратком руководстве предполагается, что вы уже [создали переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и конечной точки Распознавания лиц с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
+> В этом кратком руководстве предполагается, что вы уже [создали переменные среды](../../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа и конечной точки Распознавания лиц с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
 
 Создайте функцию **main** и добавьте к ней следующий код, чтобы создать экземпляр клиента с конечной точкой и ключом. Создайте объект **[ServerognitiveServices Authorizer](https://godoc.org/github.com/Azure/go-autorest/autorest#CognitiveServicesAuthorizer)** с ключом и используйте его с конечной точкой, чтобы создать **[Client](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face#Client)** . Этот код также создает экземпляр объекта контекста, который необходим для создания клиентских объектов. Он также определяет удаленное расположение, в котором можно найти некоторые примеры изображений из этого краткого руководства.
 
