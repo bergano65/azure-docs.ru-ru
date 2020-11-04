@@ -11,17 +11,17 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 0be75b3b0a7b9b5aaec0da1d9f41f67a7108e77a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c20bf1c5856276c4c7ee0e37ed4ef2120d1d93d
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085316"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322030"
 ---
 # <a name="create-features-for-data-in-sql-server-using-sql-and-python"></a>Создание характеристик для данных в SQL Server с помощью SQL и Python
 В этом документе показано, как создавать характеристики для данных, которые хранятся в виртуальной машине SQL Server в Azure, и помогают алгоритмам эффективнее обучаться. Для выполнения этой задачи можно использовать SQL или язык программирования, например Python. В этой статье описаны оба подхода.
 
-Эта задача является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
+Эта задача является одним из этапов [процесса обработки и анализа данных группы (TDSP)](./index.yml).
 
 > [!NOTE]
 > Для практического примера можно использовать [набор данных о такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/) и статью IPNB под названием [Структурирование данных Нью-Йорка с помощью IPython Notebook и SQL Server](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-sql-walkthrough.ipynb), содержащую полное пошаговое руководство.
@@ -99,12 +99,12 @@ from <tablename>
 
 > [!TIP]
 > Можно программным путем вставлять записи с использованием выбранного языка. Чтобы оптимизировать запись, данные можно вставлять блоками. Пример такого решения с использованием pyodbc см. [по этой ссылке](https://code.google.com/p/pypyodbc/wiki/A_HelloWorld_sample_to_access_mssql_with_python).
-> Другой вариант — вставить данные в базу данных с использованием [служебной программы BCP](https://msdn.microsoft.com/library/ms162802.aspx).
+> Другой вариант — вставить данные в базу данных с использованием [служебной программы BCP](/sql/tools/bcp-utility).
 > 
 > 
 
 ### <a name="connecting-to-azure-machine-learning"></a><a name="sql-aml"></a>Подключение к службе машинного обучения Azure
-Новую созданную характеристику можно добавить в виде столбца в существующую таблицу или сохранить в новой таблице и объединить с существующей таблицей для машинного обучения. Вы можете создать признаки и открыть доступ к ним, если они уже созданы, с помощью модуля [Импорт данных](https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/) в Машинном обучении Azure, как показано ниже.
+Новую созданную характеристику можно добавить в виде столбца в существующую таблицу или сохранить в новой таблице и объединить с существующей таблицей для машинного обучения. Вы можете создать признаки и открыть доступ к ним, если они уже созданы, с помощью модуля [Импорт данных](/azure/machine-learning/studio-module-reference/import-data) в Машинном обучении Azure, как показано ниже.
 
 ![Модули чтения в службе "Машинное обучение Azure"](./media/sql-server-virtual-machine/reader_db_featurizedinput.png)
 
@@ -126,5 +126,4 @@ conn = pyodbc.connect('DRIVER={SQL Server};SERVER=<servername>;DATABASE=<dbname>
 data_frame = pd.read_sql('''select <columnname1>, <columnname2>... from <tablename>''', conn)
 ```
 
-Теперь можно работать с кадром данных Pandas, как описано в статье [Создание характеристик для данных хранилища больших двоичных объектов Azure с помощью Panda](create-features-blob.md).
-
+Теперь можно работать с кадром данных Pandas, как описано в статье [Создание характеристик для данных хранилища больших двоичных объектов Azure с помощью Panda](./explore-data-blob.md).

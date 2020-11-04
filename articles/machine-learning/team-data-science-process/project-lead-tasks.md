@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 4a4d3a1480a852218e698862a509c4af45e49eb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9d9b2546553e03d1555cf4c587d699d9a4ea7e51
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76714412"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321928"
 ---
 # <a name="project-lead-tasks-in-the-team-data-science-process"></a>Задачи руководителя проекта в процессе обработки и анализа данных группы
 
@@ -49,7 +49,7 @@ ms.locfileid: "76714412"
 
 - Подписка Azure.
 - На компьютере установлен Git. Если вы используете DSVM, то git предварительно установлен. Если система не установлена, см. [описание платформ и средств](platforms-and-tools.md#appendix).
-- Если вы хотите использовать DSVM, DSVM Windows или Linux, созданные и настроенные в Azure. Дополнительные сведения и инструкции см. в [документации по виртуальным машинам](/azure/machine-learning/data-science-virtual-machine/)для обработки и анализа данных.
+- Если вы хотите использовать DSVM, DSVM Windows или Linux, созданные и настроенные в Azure. Дополнительные сведения и инструкции см. в [документации по виртуальным машинам](../data-science-virtual-machine/index.yml)для обработки и анализа данных.
 - Для Windows DSVM — [Диспетчер учетных данных Git (gcm)](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) , установленный на компьютере. В файле *readme.md* прокрутите вниз до раздела **скачать и установить** и выберите **последнюю версию установщика**. Скачайте *exe* Installer с страницы установщика и запустите его. 
 - Для DSVM Linux открытый ключ SSH, настроенный в DSVM и добавленный в DevOps Azure. Дополнительные сведения и инструкции см. в разделе **Создание открытого ключа SSH** в [приложении Platforms and Tools](platforms-and-tools.md#appendix). 
 
@@ -57,13 +57,13 @@ ms.locfileid: "76714412"
 
 Чтобы создать репозиторий проекта в проекте **myTeam** вашей команды, выполните следующие действия.
 
-1. Перейдите на страницу **сводки** проекта команды по адресу *https: \/ / \<server name> / \<organization name> / \<team name> *, например **https: \/ /dev.Azure.com/DataScienceUnit/myTeam**, и выберите **репозиториев** в левой области навигации. 
+1. Перейдите на страницу **сводки** проекта команды по адресу *https: \/ / \<server name> / \<organization name> / \<team name>* , например **https: \/ /dev.Azure.com/DataScienceUnit/myTeam** , и выберите **репозиториев** в левой области навигации. 
    
 1. Выберите имя репозитория в верхней части страницы, а затем в раскрывающемся списке выберите пункт **создать репозиторий** .
    
    ![Выбрать новый репозиторий](./media/project-lead-tasks/project-leads-9-select-repos.png)
    
-1. В диалоговом окне **Создание нового репозитория** убедитесь, что в разделе **Тип**выбрано значение **Git** . Введите *DSProject1* в поле **Имя репозитория**и нажмите кнопку **создать**.
+1. В диалоговом окне **Создание нового репозитория** убедитесь, что в разделе **Тип** выбрано значение **Git** . Введите *DSProject1* в поле **Имя репозитория** и нажмите кнопку **создать**.
    
    ![Создать репозиторий](./media/project-lead-tasks/project-leads-3-create-project-repo-2.png)
    
@@ -83,7 +83,7 @@ ms.locfileid: "76714412"
    
    ![Выбор импорта](./media/project-lead-tasks/project-leads-5-create-project-repo-4.png)
    
-1. В диалоговом окне **Импорт репозитория git** выберите **Git** в качестве **типа источника**и введите URL-адрес репозитория **теамтемплате** в разделе **URL-адрес клона**. URL-адрес — *https: \/ / \<server name> / \<organization name> / \<team name> /_git \<team template repository name> /*. Например: **https: \/ /dev.Azure.com/DataScienceUnit/myTeam/_git/TeamTemplate**. 
+1. В диалоговом окне **Импорт репозитория git** выберите **Git** в качестве **типа источника** и введите URL-адрес репозитория **теамтемплате** в разделе **URL-адрес клона**. URL-адрес — *https: \/ / \<server name> / \<organization name> / \<team name> /_git \<team template repository name> /*. Например: **https: \/ /dev.Azure.com/DataScienceUnit/myTeam/_git/TeamTemplate**. 
    
 1. Выберите **Импортировать**. Содержимое репозитория шаблонов команд импортируется в репозиторий проекта. 
    

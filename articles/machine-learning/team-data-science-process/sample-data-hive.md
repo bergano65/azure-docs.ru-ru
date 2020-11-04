@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 339273c091a1bcfc4f2de66ef2f79ea8cebbc49b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6a015da77cb7c0ba54be1dd5e729a9ee8a848c9d
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86026055"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321890"
 ---
 # <a name="sample-data-in-azure-hdinsight-hive-tables"></a>Выборка данных в таблицах Azure HDInsight Hive
 Из этой статье вы узнаете, как уменьшить выборку данных, хранящихся в таблицах Hive в Azure HDInsight. Для этих целей мы будем использовать запросы Hive, с помощью которых мы уменьшим размер данных для более удобного их анализа. Он охватывает три часто используемых метода выборки:
@@ -28,7 +28,7 @@ ms.locfileid: "86026055"
 **Для чего нужна выборка данных?**
 Если размер набора данных, который планируется проанализировать, слишком большой, обычно рекомендуется уменьшить выборку данных до размера, который останется репрезентативным и будет более управляемым. Уменьшение выборки способствует пониманию данных, их исследованию и проектированию признаков. Роль этой операции в процессе обработки и анализа данных группы состоит в том, чтобы сделать возможным быстрое прототипирование функций обработки данных и моделей машинного обучения.
 
-Эта задача выборки является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
+Эта задача выборки является одним из этапов [процесса обработки и анализа данных группы (TDSP)](./index.yml).
 
 ## <a name="how-to-submit-hive-queries"></a>Отправка запросов Hive
 Запросы Hive можно отправлять из командной строки Hadoop на головном узле кластера Hadoop.  Войдите в головной узел кластера Hadoop, откройте консоль Hadoop Command-Line и отправьте запросы Hive отсюда. Инструкции по отправке запросов Hive из командной строки Hadoop см. в разделе [Отправка запросов Hive](move-hive-tables.md#submit).
@@ -105,4 +105,3 @@ where state_rank <= state_cnt*'${hiveconf:sampleRate}'
 ```
 
 Сведения о дополнительных методах выборки, доступных в Hive, см. на странице [руководства по выборке](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Sampling).
-

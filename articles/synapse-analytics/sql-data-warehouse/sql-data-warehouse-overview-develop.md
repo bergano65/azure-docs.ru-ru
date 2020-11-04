@@ -1,6 +1,6 @@
 ---
-title: Ресурсы для разработки пула SQL синапсе в Azure синапсе Analytics
-description: Концепции разработки, решения по проектированию, рекомендации и методы программирования для Azure синапсе Analytics.
+title: Ресурсы для разработки выделенного пула SQL в Azure синапсе Analytics
+description: Концепции разработки, решения по проектированию, рекомендации и приемы программирования для выделенного пула SQL в Azure синапсе Analytics.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -10,18 +10,20 @@ ms.subservice: sql-dw
 ms.date: 08/29/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 95f712f196c37650b52220c9e34f6cb6b50bff23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f158655cd7aeba647480325966c7f0cfcf65b13c
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89460615"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322139"
 ---
-# <a name="design-decisions-and-coding-techniques-for-a-synapse-sql-pool-in-azure-synapse-analytics"></a>Разработка решений и методов программирования для пула синапсе SQL в Azure синапсе Analytics 
- В этой статье вы найдете дополнительные ресурсы, которые помогут вам лучше понять ключевые решения по проектированию, рекомендации и методы программирования для пула SQL в Azure синапсе.
+# <a name="design-decisions-and-coding-techniques-for-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Решения по проектированию и методики программирования для выделенного пула SQL в Azure синапсе Analytics 
+
+ В этой статье вы найдете дополнительные ресурсы, которые помогут вам лучше понять ключевые решения по проектированию, рекомендации и приемы программирования для выделенного пула SQL в Azure синапсе.
 
 ## <a name="key-design-decisions"></a>Основные проектные решения
-В следующих статьях приводятся основные понятия и решения по проектированию для разработки распределенного хранилища данных с помощью функции пула SQL в Azure синапсе:
+
+В следующих статьях приводятся основные понятия и решения по проектированию для разработки распределенного хранилища данных с помощью выделенной возможности пула SQL в Azure синапсе:
 
 * [соединение](../sql/connect-overview.md)
 * [concurrency](resource-classes-for-workload-management.md)
@@ -34,7 +36,8 @@ ms.locfileid: "89460615"
 * [статистически](sql-data-warehouse-tables-statistics.md)
 
 ## <a name="development-recommendations-and-coding-techniques"></a>Рекомендации по разработке и методики программирования
-В следующих статьях приводятся специальные методы программирования, советы и рекомендации по разработке пула SQL:
+
+В следующих статьях приводятся специальные методы программирования, советы и рекомендации по разработке выделенного пула SQL:
 
 * [хранимые процедуры](sql-data-warehouse-develop-stored-procedures.md)
 * [сигнатур](sql-data-warehouse-develop-label.md)
@@ -45,5 +48,6 @@ ms.locfileid: "89460615"
 * [Параметры группировки](sql-data-warehouse-develop-group-by-options.md)
 * [Присваивание переменной](sql-data-warehouse-develop-variable-assignment.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
+
 Дополнительные справочные сведения см. в разделе [инструкции T-SQL](sql-data-warehouse-reference-tsql-statements.md).
