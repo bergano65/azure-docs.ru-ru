@@ -3,16 +3,17 @@ title: SIN на языке запросов Azure Cosmos DB
 description: Сведения о системной функции SQL SIN в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 9f4c7933bed9d51e33ada21d03b9ab8447110e32
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: fd7abb4364cf10e01008b980211949a65027d6a2
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93082476"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93335404"
 ---
 # <a name="sin-azure-cosmos-db"></a>SIN (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -52,7 +53,7 @@ SELECT SIN(45.175643) AS sin
 
 Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

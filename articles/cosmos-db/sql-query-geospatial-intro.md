@@ -3,16 +3,17 @@ title: Данные о геопространственном и географ�
 description: Узнайте, как создавать пространственные объекты с помощью Azure Cosmos DB и API SQL.
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: 10882a0f4daf5c0d9aa1d4aeb53b2f14f9d1dea0
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a2e4e14927932575c9da42392329eea279f922fe
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100836"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336186"
 ---
 # <a name="geospatial-and-geojson-location-data-in-azure-cosmos-db"></a>Данные о геопространственном и географическом расположении в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -213,7 +214,7 @@ await container.CreateItemAsync( new UserProfile
 
 Если у вас нет информации широты и долготы, но у вас есть физические адреса или расположение, например город или страна или регион, можно найти фактические координаты, используя службу геокодирования, например службы Bing Maps для служб RESTFUL. Дополнительные сведения о геокодировании в Картах Bing можно найти [здесь](/bingmaps/rest-services/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы ознакомились с предварительными сведениями о поддержке геопространственных данных в Azure Cosmos DB, вы можете сделать следующее:
 

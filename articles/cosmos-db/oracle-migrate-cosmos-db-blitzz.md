@@ -3,16 +3,17 @@ title: Перенос данных из Oracle в Azure Cosmos DB API Cassandra 
 description: Узнайте, как перенести данные из базы данных Oracle в Azure Cosmos DB API Cassandra с помощью Блитзз.
 author: SnehaGunda
 ms.service: cosmos-db
+ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 08/21/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 263c38e330bad00833bd31bc8a43208c3784bcf4
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 15bcd0c54fc5f6614f4d1925759704309048acae
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097487"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336448"
 ---
 # <a name="migrate-data-from-oracle-to-azure-cosmos-db-cassandra-api-account-using-blitzz"></a>Перенос данных из Oracle в учетную запись Azure Cosmos DB API Cassandra с помощью Блитзз
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -57,7 +58,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
    :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/blitzz-replicant-download.png" alt-text="Загрузка средства блитзз Репликант":::
 
-   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/replicant-files.png" alt-text="Загрузка средства блитзз Репликант":::
+   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/replicant-files.png" alt-text="Файлы Репликант блитзз":::
 
 1. В окне терминала CLI настройте конфигурацию базы данных источника. Откройте файл конфигурации с помощью **`vi conf/conn/oracle.yml`** команды и добавьте разделенный запятыми список IP-адресов узлов Oracle, номер порта, имя пользователя, пароль и другие необходимые сведения. В следующем примере кода показан пример файла конфигурации:
 
@@ -76,9 +77,9 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
    use-ssl: false
    ```
 
-   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/open-connection-editor-oracle.png" alt-text="Загрузка средства блитзз Репликант":::
+   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/open-connection-editor-oracle.png" alt-text="Открыть редактор соединений Oracle":::
 
-   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/oracle-connection-configuration.png" alt-text="Загрузка средства блитзз Репликант":::
+   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/oracle-connection-configuration.png" alt-text="Конфигурация подключения к Oracle":::
 
    После заполнения сведений о конфигурации сохраните и закройте файл.
 
@@ -97,7 +98,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
 1. Перед переносом данных увеличьте пропускную способность контейнера до объема, необходимого для быстрого переноса приложения. Например, можно увеличить пропускную способность до 100000 RUs. Масштабирование пропускной способности перед началом миграции поможет перенести данные за меньшее время. 
 
-   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/scale-throughput.png" alt-text="Загрузка средства блитзз Репликант":::
+   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/scale-throughput.png" alt-text="Масштабирование контейнера Azure Cosmos по всему":::
 
    После завершения миграции необходимо уменьшить пропускную способность. В зависимости от объема хранимых данных и числа получателей, необходимых для каждой операции, можно оценить пропускную способность, необходимую после переноса данных. Дополнительные сведения о том, как оценить требуемый метод RUs, см. в статьях [предоставление пропускной способности для контейнеров и баз данных](set-throughput.md) и [Оценка единиц запросов в секунду с помощью планировщика ресурсов Azure Cosmos DB](estimate-ru-with-capacity-planner.md) .
 
@@ -135,7 +136,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
    В пользовательском интерфейсе Репликант отображается ход выполнения репликации. После завершения миграции схемы и создания моментального снимка ход выполнения показывает 100%. После завершения миграции можно проверить данные в целевой базе данных Azure Cosmos.
 
-   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/oracle-data-migration-output.png" alt-text="Загрузка средства блитзз Репликант":::
+   :::image type="content" source="./media/oracle-migrate-cosmos-db-blitzz/oracle-data-migration-output.png" alt-text="Выходные данные переноса данных Oracle":::
 
 1. Так как для миграции использовался полный режим, можно выполнять такие операции, как вставка, обновление или удаление данных в исходной базе данных Oracle. Позже вы сможете проверить, что они реплицируются в режиме реального времени в целевой базе данных Azure Cosmos. После миграции убедитесь, что пропускная способность, настроенная для контейнера Azure Cosmos, снижена.
 
@@ -147,7 +148,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
 Дополнительные сведения о переносе данных в назначение, перенос в режиме реального времени см. в [блитзз Репликант Demo](https://www.youtube.com/watch?v=y5ZeRK5A-MI).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md) 
 * [Рекомендации по использованию ключа секции](partitioning-overview.md#choose-partitionkey)

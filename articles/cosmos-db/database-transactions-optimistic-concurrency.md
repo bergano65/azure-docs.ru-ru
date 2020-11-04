@@ -4,15 +4,16 @@ description: Эта статья содержит сведения о транз
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 9209b33f23b7f6c836dedb6227d052610a21d9d2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: bdfbe5106f220a9fe4a3568709187b9071bc7917
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319493"
+ms.locfileid: "93334282"
 ---
 # <a name="transactions-and-optimistic-concurrency-control"></a>Управление транзакциями и оптимистической блокировкой
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -58,7 +59,7 @@ Azure Cosmos DB позволяет создавать [хранимые проц
 
 `_etag`Значение элемента изменяется каждый раз при обновлении элемента. Для операций Replace Item `if-match` должен быть явно выражен как часть параметров запроса. Пример такого кода можно найти на [GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/ItemManagement/Program.cs#L676-L772). `_etag` значения неявно проверяются для всех записанных элементов, затронутых хранимой процедурой. При обнаружении любого конфликта хранимая процедура выполняет откат транзакции и создает исключение. Такой метод гарантирует, что операции записи хранимой процедуры применяются атомарным образом, то есть "все или ничего". Приложение получает сигнал о необходимости повторно применить обновления и повторить исходный запрос клиента.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о транзакциях базы данных и оптимистической блокировке вы можете получить в следующих статьях.
 

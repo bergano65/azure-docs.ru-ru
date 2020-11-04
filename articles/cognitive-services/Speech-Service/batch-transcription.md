@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 08/28/2020
+ms.date: 11/03/2020
 ms.author: wolfma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fe864212eaccb67335586ef8b25049529ab36b81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e4e5f4c1a50c814174dbbd5d419fe24b2e9f88e
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91360758"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336686"
 ---
 # <a name="how-to-use-batch-transcription"></a>Использование записи пакетов
 
@@ -36,19 +36,20 @@ ms.locfileid: "91360758"
 
 Вы можете просматривать и тестировать подробный API, который доступен в виде [документа Swagger](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0).
 
-Этот API не требует пользовательских конечных точек и не имеет требований к параллелизму.
-
 Задания записи пакетов планируются в соответствии с оптимальными усилиями.
 Вы не можете оценить, когда задание изменится в состояние выполнения, но оно должно происходить в течение нескольких минут после обычной загрузки системы. В состоянии выполнения транскрипция выполняется быстрее, чем скорость воспроизведения в среде выполнения аудио.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Как и для всех функций службы "Речь", вам необходимо создать ключ подписки на [портале Azure](https://portal.azure.com), следуя [руководству по началу работы](overview.md#try-the-speech-service-for-free).
 
 >[!NOTE]
-> Для использования записи пакетов требуется стандартная подписка (S0) для службы речи. Ключи бесплатной подписки (F0) не работают. Дополнительные сведения см. в разделе [цены и ограничения](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
+> Для использования записи пакетов требуется стандартная подписка (S0) для службы речи. Ключи бесплатной подписки (F0) не подходят. Дополнительные сведения см. в разделе [цены и ограничения](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
 
 Если вы планируете настроить модели, выполните действия, описанные в разделе [Настройка акустической настройки](how-to-customize-acoustic-models.md) и [Настройка языка](how-to-customize-language-model.md). Для использования созданных моделей в записи пакетной службы требуется расположение их модели. Расположение модели можно получить при проверке сведений о модели ( `self` свойство). Развернутая Пользовательская конечная точка *не требуется* для службы транскрипции пакетов.
+
+>[!NOTE]
+> В составе REST API запись пакетной записи содержит набор [квот и ограничений](speech-services-quotas-and-limits.md#speech-to-text-quotas-and-limits-per-speech-resource), которые мы рекомендуем изучить. Чтобы воспользоваться всеми преимуществами функции записи пакетов для эффективного транскрипция большого количества звуковых файлов, рекомендуется всегда отправлять несколько файлов на запрос или указывать контейнер хранилища BLOB-объектов с аудиофайлами для транскрипция. Служба будет транскрипция файлы одновременно, уменьшая время истечения времени. Использование нескольких файлов в одном запросе очень просто и очень просто. см. раздел [конфигурации](#configuration) . 
 
 ## <a name="batch-transcription-api"></a>API пакетного транскрибирования
 
@@ -63,14 +64,18 @@ API-интерфейс для транскрипции пакетов подде
 Для звуковых потоков стереозвука левый и правый каналы разбиваются во время транскрипции. Файл результатов JSON создается для каждого канала.
 Чтобы создать упорядоченную конечную запись, используйте метки времени, созданные для каждого utterance.
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
-Параметры конфигурации предоставляются в виде JSON (один или несколько отдельных файлов):
+Параметры конфигурации предоставляются в виде JSON.
+
+**Фотографировать один или несколько отдельных файлов.** При наличии нескольких файлов для транскрипция рекомендуется отправлять несколько файлов в одном запросе. В приведенном ниже примере используются три файла:
 
 ```json
 {
   "contentUrls": [
-    "<URL to an audio file to transcribe>",
+    "<URL to an audio file 1 to transcribe>",
+    "<URL to an audio file 2 to transcribe>",
+    "<URL to an audio file 3 to transcribe>"
   ],
   "properties": {
     "wordLevelTimestampsEnabled": true
@@ -80,7 +85,7 @@ API-интерфейс для транскрипции пакетов подде
 }
 ```
 
-Параметры конфигурации предоставляются в виде JSON (обработка всего контейнера хранилища):
+**Обработка всего контейнера хранилища:**
 
 ```json
 {
@@ -93,12 +98,14 @@ API-интерфейс для транскрипции пакетов подде
 }
 ```
 
-В следующем JSON указывается пользовательская обученная модель для использования в записи пакета:
+**Используйте пользовательскую обученную модель в транскрипции пакета.** В примере используются три файла:
 
 ```json
 {
   "contentUrls": [
-    "<URL to an audio file to transcribe>",
+    "<URL to an audio file 1 to transcribe>",
+    "<URL to an audio file 2 to transcribe>",
+    "<URL to an audio file 3 to transcribe>"
   ],
   "properties": {
     "wordLevelTimestampsEnabled": true
@@ -156,7 +163,7 @@ API-интерфейс для транскрипции пакетов подде
       `channels`
    :::column-end:::
    :::column span="2":::
-      Необязательный `0` `1` параметр и расшифрованной по умолчанию. Массив номеров каналов для обработки. Здесь подмножество доступных каналов в звуковом файле можно указать для обработки (например, `0` только).
+      Необязательный `0` `1` параметр и расшифрованной по умолчанию. Массив номеров каналов для обработки. Здесь можно указать подмножество доступных каналов в звуковом файле (например, `0` только).
 :::row-end:::
 :::row:::
    :::column span="1":::
@@ -323,11 +330,84 @@ API-интерфейс для транскрипции пакетов подде
 
 В примере кода настраивается клиент и отправляется запрос на расшифровку. Затем он опрашивает сведения о состоянии и выводит сведения о ходе процесса транскрипции.
 
-[!code-csharp[Code to check batch transcription status](~/samples-cognitive-services-speech-sdk/samples/batch/csharp/program.cs#transcriptionstatus)]
+```csharp
+// get the status of our transcriptions periodically and log results
+int completed = 0, running = 0, notStarted = 0;
+while (completed < 1)
+{
+    completed = 0; running = 0; notStarted = 0;
+
+    // get all transcriptions for the user
+    paginatedTranscriptions = null;
+    do
+    {
+        // <transcriptionstatus>
+        if (paginatedTranscriptions == null)
+        {
+            paginatedTranscriptions = await client.GetTranscriptionsAsync().ConfigureAwait(false);
+        }
+        else
+        {
+            paginatedTranscriptions = await client.GetTranscriptionsAsync(paginatedTranscriptions.NextLink).ConfigureAwait(false);
+        }
+
+        // delete all pre-existing completed transcriptions. If transcriptions are still running or not started, they will not be deleted
+        foreach (var transcription in paginatedTranscriptions.Values)
+        {
+            switch (transcription.Status)
+            {
+                case "Failed":
+                case "Succeeded":
+                    // we check to see if it was one of the transcriptions we created from this client.
+                    if (!createdTranscriptions.Contains(transcription.Self))
+                    {
+                        // not created form here, continue
+                        continue;
+                    }
+
+                    completed++;
+
+                    // if the transcription was successful, check the results
+                    if (transcription.Status == "Succeeded")
+                    {
+                        var paginatedfiles = await client.GetTranscriptionFilesAsync(transcription.Links.Files).ConfigureAwait(false);
+
+                        var resultFile = paginatedfiles.Values.FirstOrDefault(f => f.Kind == ArtifactKind.Transcription);
+                        var result = await client.GetTranscriptionResultAsync(new Uri(resultFile.Links.ContentUrl)).ConfigureAwait(false);
+                        Console.WriteLine("Transcription succeeded. Results: ");
+                        Console.WriteLine(JsonConvert.SerializeObject(result, SpeechJsonContractResolver.WriterSettings));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Transcription failed. Status: {0}", transcription.Properties.Error.Message);
+                    }
+
+                    break;
+
+                case "Running":
+                    running++;
+                    break;
+
+                case "NotStarted":
+                    notStarted++;
+                    break;
+            }
+        }
+
+        // for each transcription in the list we check the status
+        Console.WriteLine(string.Format("Transcriptions status: {0} completed, {1} running, {2} not started yet", completed, running, notStarted));
+    }
+    while (paginatedTranscriptions.NextLink != null);
+
+    // </transcriptionstatus>
+    // check again after 1 minute
+    await Task.Delay(TimeSpan.FromMinutes(1)).ConfigureAwait(false);
+}
+```
 
 Подробные сведения о предыдущих вызовах см. в [документации по Swagger](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0). Полная версия показанного здесь примера находится на [GitHub](https://aka.ms/csspeech/samples) в подкаталоге `samples/batch`.
 
-В этом примере используется асинхронная Настройка для публикации звука и получения состояния транскрипции.
+В этом примере используется асинхронная Настройка для отправки аудио и получения сведений о состоянии транскрипции.
 `PostTranscriptions`Метод отправляет сведения о звуковом файле, и `GetTranscriptions` метод получает состояния.
 `PostTranscriptions` возвращает дескриптор, который `GetTranscriptions` использует для создания дескриптора, чтобы получить состояние транскрибирования.
 

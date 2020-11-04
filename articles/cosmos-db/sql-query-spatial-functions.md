@@ -3,16 +3,17 @@ title: Пространственные функции в Azure Cosmos DB язы
 description: Сведения о пространственных системных функциях SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 515e6da43a115c092ba48fdfcd2457f0b0c60623
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 690a5cef2141af75412eaca207a16c59b37aa3ac
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93082442"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93335387"
 ---
 # <a name="spatial-functions-azure-cosmos-db"></a>Пространственные функции (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -34,7 +35,7 @@ Cosmos DB поддерживает следующие встроенные фу�
 
   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
 - [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

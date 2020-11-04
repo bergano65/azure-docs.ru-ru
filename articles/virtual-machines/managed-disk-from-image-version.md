@@ -6,27 +6,24 @@ ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: how-to
 ms.workload: infrastructure
-ms.date: 10/06/2020
+ms.date: 10/27/2020
 ms.author: cynthn
 ms.reviewer: olayemio
-ms.openlocfilehash: 35edcfb4bdb0715245f4a3190fb22638b1162429
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 5873f28fed492f9ef906a9d7c1364d8ae07033a7
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370990"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336067"
 ---
 # <a name="create-a-managed-disk-from-an-image-version"></a>Создание управляемого диска из версии образа
 
-При необходимости управляемый диск можно создать из версии образа, хранящейся в коллекции общих образов.
+При необходимости можно экспортировать операционную систему или отдельный диск данных из версии образа в качестве управляемого диска из версии образа, хранящейся в коллекции общих образов.
 
 
 ## <a name="cli"></a>CLI
 
-Задайте `source` для переменной идентификатор версии образа, а затем выполните команду [AZ Disk Create](/cli/azure/disk#az_disk_create) , чтобы создать управляемый диск. 
-
-
-Просмотреть список версий образа можно с помощью команды [AZ SIG Image-Version List](/cli/azure/sig/image-version#az_sig_image_version_list). В этом примере мы ищем все версии изображений, которые являются частью определения образа *мимажедефинитион* в коллекции образов *мигаллери* .
+Выведите список версий образа в галерее, выполнив команду [AZ SIG Image-Version List](/cli/azure/sig/image-version.md#az_sig_image_version_list). В этом примере мы ищем все версии изображений, которые являются частью определения образа *мимажедефинитион* в коллекции образов *мигаллери* .
 
 ```azurecli-interactive
 az sig image-version list \
@@ -36,28 +33,37 @@ az sig image-version list \
    -o table
 ```
 
+Задайте `source` для переменной идентификатор версии образа, а затем выполните команду [AZ Disk Create](/cli/azure/disk.md#az_disk_create) , чтобы создать управляемый диск. 
 
-В этом примере мы создадим управляемый диск с именем *myManagedDisk*в регионе *EastUS* в группе ресурсов с именем *myResourceGroup*. 
+В этом примере мы экспортируем диск операционной системы версии образа, чтобы создать управляемый диск с именем *миманажедосдиск* в регионе *EastUS* в группе ресурсов с именем *myResourceGroup*. 
 
 ```azurecli-interactive
 source="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/galleries/<galleryName>/images/<galleryImageDefinition>/versions/<imageVersion>"
 
-az disk create --resource-group myResourceGroup --location EastUS --name myManagedDisk --gallery-image-reference $source 
+az disk create --resource-group myResourceGroup --location EastUS --name myManagedOSDisk --gallery-image-reference $source 
 ```
 
-Если диск является диском данных, добавьте, `--gallery-image-reference-lun` чтобы указать LUN.
+
+
+Если вы хотите экспортировать диск данных из версии образа, добавьте, `--gallery-image-reference-lun` чтобы указать расположение LUN для экспортируемого диска данных. 
+
+В этом примере мы экспортируем диск данных, расположенный в LUN 0 версии образа, чтобы создать управляемый диск с именем *миманажеддатадиск* в регионе *EastUS* в группе ресурсов с именем *myResourceGroup*. 
+
+```azurecli-interactive
+source="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/galleries/<galleryName>/images/<galleryImageDefinition>/versions/<imageVersion>"
+
+az disk create --resource-group myResourceGroup --location EastUS --name myManagedDataDisk --gallery-image-reference $source --gallery-image-reference-lun 0
+``` 
 
 ## <a name="powershell"></a>PowerShell
 
-Список всех версий образа можно получить с помощью команды [Get-азресаурце](/powershell/module/az.resources/get-azresource). 
+Выведите список версий образа в галерее с помощью командлета [Get-азресаурце](/powershell/module/az.resources/get-azresource). 
 
 ```azurepowershell-interactive
 Get-AzResource `
    -ResourceType Microsoft.Compute/galleries/images/versions | `
    Format-Table -Property Name,ResourceId,ResourceGroupName
 ```
-
-
 
 После получения всех необходимых сведений можно использовать [Get-азгаллеримажеверсион](/powershell/module/az.compute/get-azgalleryimageversion) , чтобы получить версию исходного образа, которую вы хотите использовать, и назначить ее переменной. В этом примере мы получаем `1.0.0` версию образа `myImageDefinition` определения в `myGallery` коллекции исходных файлов в `myResourceGroup` группе ресурсов.
 
@@ -69,29 +75,44 @@ $sourceImgVer = Get-AzGalleryImageVersion `
    -Name 1.0.0
 ```
 
-Настройте некоторые переменные для сведений о диске.
+После присвоения `source` переменной идентификатора версии образа используйте [New-аздискконфиг](/powershell/module/az.compute/new-azdiskconfig) для создания конфигурации диска и [New-аздиск](/powershell/module/az.compute/new-azdisk) , чтобы создать диск. 
 
-```azurepowershell-interactive
-$location = "East US"
-$resourceGroup = "myResourceGroup"
-$diskName = "myDisk"
-```
+В этом примере мы экспортируем диск операционной системы версии образа, чтобы создать управляемый диск с именем *миманажедосдиск* в регионе *EastUS* в группе ресурсов с именем *myResourceGroup*. 
 
-Создайте конфигурацию диска, а затем диск с помощью идентификатора версии исходного образа. Для `-GalleryImageReference` LUN необходим только в том случае, если источником является диск данных.
-
+Создайте конфигурацию диска.
 ```azurepowershell-interactive
 $diskConfig = New-AzDiskConfig `
-   -Location $location `
+   -Location EastUS `
    -CreateOption FromImage `
-   -GalleryImageReference @{Id = $sourceImgVer.Id; Lun=1}
+   -GalleryImageReference @{Id = $sourceImgVer.Id}
 ```
 
 Создайте диск.
 
 ```azurepowershell-interactive
 New-AzDisk -Disk $diskConfig `
-   -ResourceGroupName $resourceGroup `
-   -DiskName $diskName
+   -ResourceGroupName myResourceGroup `
+   -DiskName myManagedOSDisk
+```
+
+Если вы хотите экспортировать диск данных в версию образа, добавьте идентификатор LUN в конфигурацию диска, чтобы указать расположение LUN для экспортируемого диска данных. 
+
+В этом примере мы экспортируем диск данных, расположенный в LUN 0 версии образа, чтобы создать управляемый диск с именем *миманажеддатадиск* в регионе *EastUS* в группе ресурсов с именем *myResourceGroup*. 
+
+Создайте конфигурацию диска.
+```azurepowershell-interactive
+$diskConfig = New-AzDiskConfig `
+   -Location EastUS `
+   -CreateOption FromImage `
+   -GalleryImageReference @{Id = $sourceImgVer.Id; Lun=0}
+```
+
+Создайте диск.
+
+```azurepowershell-interactive
+New-AzDisk -Disk $diskConfig `
+   -ResourceGroupName myResourceGroup `
+   -DiskName myManagedDataDisk
 ```
 
 ## <a name="next-steps"></a>Дальнейшие шаги

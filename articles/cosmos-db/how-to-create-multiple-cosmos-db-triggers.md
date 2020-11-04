@@ -3,16 +3,17 @@ title: Создание нескольких независимых тригге
 description: Из этой статьи вы узнаете, как настроить несколько независимых активаций функций Azure для Cosmos DB, чтобы создать архитектуры на основе событий.
 author: ealsur
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: maquaran
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 14c18d0cae335f96cc2d95c79bcf39bf85ef6a2b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 78fff48a97965f0b80456cd3e56ed1507bc784fc
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101550"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336696"
 ---
 # <a name="create-multiple-azure-functions-triggers-for-cosmos-db"></a>Создание несколько активаций функций Azure для Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -25,11 +26,11 @@ ms.locfileid: "93101550"
 
 Если вы создаете бессерверные архитектуры с помощью решения [Функции Azure](../azure-functions/functions-overview.md), мы [рекомендуем](../azure-functions/functions-best-practices.md#avoid-long-running-functions) создавать небольшие наборы функций, которые работают совместно (а не крупные длительные функции).
 
-Создавая бессерверные потоки на основе событий с помощью [активации функций Azure для Cosmos DB](./change-feed-functions.md), вы можете столкнуться с ситуацией, когда нужно выполнить несколько действий при появлении нового события в определенном [контейнере Azure Cosmos](./account-databases-containers-items.md#azure-cosmos-containers). Если действия, которые нужно активировать, не зависят друг от друга, лучше всего **создать по одной активации функций Azure для Cosmos DB на каждое действие** . Каждый из этих триггеров будет прослушивать изменения в одном и том же контейнере Azure Cosmos.
+Создавая бессерверные потоки на основе событий с помощью [активации функций Azure для Cosmos DB](./change-feed-functions.md), вы можете столкнуться с ситуацией, когда нужно выполнить несколько действий при появлении нового события в определенном [контейнере Azure Cosmos](./account-databases-containers-items.md#azure-cosmos-containers). Если действия, которые нужно активировать, не зависят друг от друга, лучше всего **создать по одной активации функций Azure для Cosmos DB на каждое действие**. Каждый из этих триггеров будет прослушивать изменения в одном и том же контейнере Azure Cosmos.
 
 ## <a name="optimizing-containers-for-multiple-triggers"></a>Оптимизация контейнеров для нескольких триггеров
 
-Учитывая *требования* к активации функций Azure для Cosmos DB, нам потребуется второй контейнер для хранения состояния, который называется *контейнером аренды* . Означает ли это, что для каждой функции Azure требуется отдельный контейнер аренды?
+Учитывая *требования* к активации функций Azure для Cosmos DB, нам потребуется второй контейнер для хранения состояния, который называется *контейнером аренды*. Означает ли это, что для каждой функции Azure требуется отдельный контейнер аренды?
 
 В этом случае существует два подхода.
 
@@ -108,7 +109,7 @@ public static void MaterializedViews([CosmosDBTrigger(
 > [!NOTE]
 > Всегда отслеживайте использование единиц запросов, подготовленных на общем контейнере аренды. Каждый триггер, использующий этот контейнер, увеличит среднюю нагрузку на пропускную способность, поэтому при увеличении числа использующих ее функций Azure может потребоваться увеличить подготовленную пропускную способность.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. полную конфигурацию [активации функций Azure для Cosmos DB](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md#configuration).
 * Ознакомьтесь с расширенным [списком примеров](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md) для всех языков.

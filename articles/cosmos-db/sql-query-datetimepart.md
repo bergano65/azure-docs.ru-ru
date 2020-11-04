@@ -3,16 +3,17 @@ title: Датетимепарт на языке запросов Azure Cosmos DB
 description: Дополнительные сведения о функции SQL System Датетимепарт в Azure Cosmos DB.
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 08/14/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: dd88f8d6a0f5271da97d6f2f95eecb60bf94ed78
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 97eaff405086190b60279ac7d5cf8bf441c8f840
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095814"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336373"
 ---
 # <a name="datetimepart-azure-cosmos-db"></a>Датетимепарт (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -37,7 +38,7 @@ DateTimePart (<DateTimePart> , <DateTime>)
 | День          | "Day", "DD", "d"     |
 | Час         | "Hour", "HH"         |
 | Минута       | "Minute", "MI", "n"  |
-| Second       | "Second", "SS", "s"  |
+| Секунда       | "Second", "SS", "s"  |
 | Миллисекунда  | "миллисекунда", "MS"  |
 | Микросекунды  | "микросекунда", "MCS" |
 | Потребовавшееся   | "наносекундных", "NS"   |
@@ -88,7 +89,7 @@ SELECT DateTimePart("mcs", "2020-01-02T03:04:05.6789123Z") AS MicrosecondsValue
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

@@ -3,17 +3,18 @@ title: Использование назначаемого системой уп
 description: Узнайте, как настроить Azure Active Directory (Azure AD) управляемое удостоверение (управляемое удостоверение службы) для доступа к ключам из Azure Cosmos DB.
 author: j-patrick
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 918033f736a28534cd36a4637b41d0a6b3b4cdc7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b3bd6a71898576ac23cdd10c1eb52e1ef3a39b95
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93088579"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336594"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>Использование управляемых системой удостоверений для доступа к данным Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -215,7 +216,7 @@ namespace Monitor
 
 Теперь вы готовы к [развертыванию приложения функции](../azure-functions/functions-create-first-function-vs-code.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Проверка подлинности на основе сертификатов с помощью Azure Cosmos DB и Azure Active Directory](certificate-based-authentication.md)
 * [Защита ключей Azure Cosmos DB с помощью Azure Key Vault](access-secrets-from-keyvault.md)

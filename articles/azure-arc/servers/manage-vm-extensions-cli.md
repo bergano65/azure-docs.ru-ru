@@ -3,32 +3,19 @@ title: Включение расширения виртуальной машин
 description: В этой статье описывается, как развернуть расширения виртуальной машины на серверах с поддержкой дуги Azure, работающих в гибридных облачных средах, с помощью Azure CLI.
 ms.date: 10/19/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8f09914f246635f07b3c51c682bd67591c706732
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 99504c86046c1ef34eeab500a703b9a028cb46fb
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92463007"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336745"
 ---
 # <a name="enable-azure-vm-extensions-using-the-azure-cli"></a>Включение расширений виртуальной машины Azure с помощью Azure CLI
 
 В этой статье показано, как развернуть и удалить расширения виртуальной машины Azure, поддерживаемые серверами с поддержкой ARC в Azure, на гибридный компьютер под управлением Linux или Windows с помощью Azure CLI.
 
 [!INCLUDE [Azure CLI Prepare your environment](../../../includes/azure-cli-prepare-your-environment.md)]
-
-## <a name="prerequisites"></a>Предварительные требования
-
-[Установка Azure CLI](/cli/azure/install-azure-cli).
-
-Прежде чем использовать Azure CLI для управления расширениями виртуальной машины на гибридном сервере, управляемом серверами с поддержкой Arc, необходимо установить `ConnectedMachine` расширение CLI. Выполните следующую команду на сервере с поддержкой ARC:
-
-```azurecli
-az extension add connectedmachine
-```
-
-После завершения установки возвращается следующее сообщение:
-
-`The installed extension `connectedmachine` is experimental and not covered by customer support. Please use with discretion.`
 
 ## <a name="enable-extension"></a>Включить расширение
 
@@ -81,7 +68,7 @@ az connectedmachine machine-extension list --machine-name "myMachineName" --reso
 az connectedmachine machine-extension delete --machine-name "myMachineName" --name "OmsAgentforLinux" --resource-group "myResourceGroup"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Вы можете развертывать, администрировать и удалять расширения ВМ с помощью [PowerShell](manage-vm-extensions-powershell.md), из [портал Azure](manage-vm-extensions-portal.md)или [Azure Resource Manager шаблонов](manage-vm-extensions-template.md).
 

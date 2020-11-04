@@ -3,16 +3,17 @@ title: КВАДРАТНЫЙ Azure Cosmos DB язык запросов
 description: Дополнительные сведения о функции "функция SQL System" в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 03/04/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 2447116a3b057f59f73f4b7f56d1e127bbfad857
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: dff3787936914c3d3dbb61bdc0053126853e52af
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93082408"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93335361"
 ---
 # <a name="square-azure-cosmos-db"></a>КВАДРАТНЫЙ (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -52,7 +53,7 @@ SELECT SQUARE(1) AS s1, SQUARE(2.0) AS s2, SQUARE(3) AS s3
 
 Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

@@ -3,16 +3,17 @@ title: Функция SQRT в языке запросов Azure Cosmos DB
 description: Сведения о системной функции SQL System SQRT в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 64cef5fc3c6a90f31674cee245a7669addadb427
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ac504baf0f8c59408327bbbf51392428ffee43b8
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93082425"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93335370"
 ---
 # <a name="sqrt-azure-cosmos-db"></a>SQRT (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -52,7 +53,7 @@ SELECT SQRT(1) AS s1, SQRT(2.0) AS s2, SQRT(3) AS s3
 
 Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
