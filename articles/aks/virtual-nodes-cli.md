@@ -6,22 +6,23 @@ services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 4b43cfe41943dcf086afe332508bc6e48fbdb4d7
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: a655c8c145b4f3812dae9f1a4ec1e5eebbe44809
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899881"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348480"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов с помощью Azure CLI
 
-Чтобы быстро масштабировать рабочие нагрузки приложения в кластере Службы Azure Kubernetes (AKS), вы можете применить виртуальные узлы. Виртуальные узлы дают возможность быстро подготовить pod и оплачивать только время их выполнения (посекундно). Вам не придется ждать, пока средство автомасштабирования кластера Kubernetes развернет вычислительные узлы для виртуальных машин, на которых можно будет запустить дополнительные pod. Виртуальные узлы поддерживаются только для контейнеров pod и узлов Linux.
+В этой статье показано, как с помощью Azure CLI создать и настроить ресурсы виртуальной сети и кластер AKS, а затем включить виртуальные узлы.
 
-В этой статье показано, как создать и настроить ресурсы виртуальной сети и кластер AKS, а также включить виртуальные узлы.
+> [!NOTE]
+> В [этой статье](virtual-nodes.md) приводятся общие сведения о доступности региона и ограничениях с помощью виртуальных узлов.
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Виртуальные узлы обеспечивают сетевое взаимодействие контейнеров pod, которые выполняются в Экземплярах контейнеров Azure (ACI) и кластере AKS. Для обеспечения этого взаимодействия создается подсеть виртуальной сети и назначаются делегированные разрешения. Виртуальные узлы работают только с кластерами AKS, созданными с помощью сетевого взаимодействия уровня *Расширенный* . По умолчанию кластеры AKS создаются с помощью сетевого взаимодействия уровня *Базовый* . В этой статье показано, как создать виртуальную сеть и подсети, а затем развернуть кластер AKS, использующий сетевое взаимодействие уровня "Расширенный".
+Виртуальные узлы обеспечивают сетевое взаимодействие контейнеров pod, которые выполняются в Экземплярах контейнеров Azure (ACI) и кластере AKS. Для обеспечения этого взаимодействия создается подсеть виртуальной сети и назначаются делегированные разрешения. Виртуальные узлы работают только с кластерами AKS, созданными с помощью *Advanced* Networking (Azure CNI). По умолчанию кластеры AKS создаются с помощью *базовых* сетей (кубенет). В этой статье показано, как создать виртуальную сеть и подсети, а затем развернуть кластер AKS, использующий сетевое взаимодействие уровня "Расширенный".
 
 Если вы не использовали ACI ранее, зарегистрируйте поставщик служб в подписке. Вы можете проверить состояние регистрации поставщика ACI с помощью команды [az provider list][az-provider-list], как показано в следующем примере.
 
@@ -42,34 +43,6 @@ Microsoft.ContainerInstance  Registered           RegistrationRequired
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerInstance
 ```
-
-## <a name="regional-availability"></a>Доступность по регионам
-
-Развертывание виртуальных узлов поддерживается в следующих регионах:
-
-* восточная Австралия (australiaeast);
-* центральная часть США (centralus);
-* Восточная часть США (eastus).
-* восточная часть США 2 (eastus2);
-* Восточная Япония (japaneast);
-* Северная Европа (northeurope)
-* Юго-Восточная Азия (southeastasia);
-* центрально-западная часть США (westcentralus);
-* Западная Европа (westeurope).
-* Западная часть США (westus).
-* Западная часть США 2 (westus2).
-
-## <a name="known-limitations"></a>Известные ограничения
-Функциональные возможности виртуальных узлов сильно зависят от набора функций ACI. В дополнение к [квотам и ограничениям для экземпляров контейнеров Azure](../container-instances/container-instances-quotas.md)следующие сценарии пока не поддерживаются виртуальными узлами:
-
-* Использование субъекта-службы для извлечения образов ACR. [Обходной путь](https://github.com/virtual-kubelet/azure-aci/blob/master/README.md#private-registry) — использование [секретов Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-line).
-* [Ограничения виртуальной сети](../container-instances/container-instances-vnet.md), включая пиринг виртуальных сетей, политики сети Kubernetes и передача исходящего трафика в Интернет при использовании групп безопасности сети.
-* Контейнеры инициализации.
-* [Псевдонимы узлов](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/).
-* [Аргументы](../container-instances/container-instances-exec.md#restrictions) для exec в ACI.
-* [DaemonSet](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание контейнеров pod на виртуальном узле.
-* Виртуальные узлы поддерживают планирование контейнеров pod для Linux. Чтобы запланировать контейнеры Windows Server в ACI, можно вручную установить поставщик [Virtual Kubelet ACI](https://github.com/virtual-kubelet/azure-aci) с открытым кодом.
-* Для виртуальных узлов требуются кластеры AKS с Azure CNI Networking
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
@@ -100,7 +73,7 @@ az network vnet create \
     --subnet-prefix 10.240.0.0/16
 ```
 
-Теперь создайте дополнительную подсеть для виртуальных узлов с помощью команды [az network vnet subnet create][az-network-vnet-subnet-create]. В следующем примере создается подсеть с именем *myVirtualNodeSubnet* с префиксом адреса *10.241.0.0/16* .
+Теперь создайте дополнительную подсеть для виртуальных узлов с помощью команды [az network vnet subnet create][az-network-vnet-subnet-create]. В следующем примере создается подсеть с именем *myVirtualNodeSubnet* с префиксом адреса *10.241.0.0/16*.
 
 ```azurecli-interactive
 az network vnet subnet create \
@@ -132,7 +105,7 @@ az ad sp create-for-rbac --skip-assignment
 }
 ```
 
-Запишите значения параметров *appId* и *password* . Эти значения используются в приведенных далее действиях.
+Запишите значения параметров *appId* и *password*. Эти значения используются в приведенных далее действиях.
 
 ## <a name="assign-permissions-to-the-virtual-network"></a>Назначение разрешений для виртуальной сети
 

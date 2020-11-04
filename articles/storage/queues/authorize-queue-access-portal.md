@@ -11,16 +11,16 @@ ms.author: tamram
 ms.reviewer: ozguns
 ms.subservice: queues
 ms.custom: contperfq1
-ms.openlocfilehash: 2593f1b7ea4cfabe0243fe6f830d718896e68473
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc6c4e57d0e04cc85bd83c11ba583b3f0b24fa82
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715519"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93345998"
 ---
 # <a name="choose-how-to-authorize-access-to-queue-data-in-the-azure-portal"></a>Выберите способ авторизации доступа к данным очереди в портал Azure
 
-При доступе к данным очередей с помощью [портал Azure](https://portal.azure.com)портал выполняет запросы к службе хранилища Azure, как описано в этой статье. Запрос к службе хранилища Azure можно авторизовать с помощью учетной записи Azure AD или ключа доступа к учетной записи хранения. Портал указывает, какой метод используется, и позволяет переключаться между ними, если у вас есть соответствующие разрешения.  
+При доступе к данным очередей с помощью [портал Azure](https://portal.azure.com)портал выполняет запросы к службе хранилища Azure, как описано в этой статье. Запрос к службе хранилища Azure можно авторизовать с помощью учетной записи Azure AD или ключа доступа к учетной записи хранения. Портал указывает, какой метод используется, и позволяет переключаться между ними, если у вас есть соответствующие разрешения.
 
 ## <a name="permissions-needed-to-access-queue-data"></a>Разрешения, необходимые для доступа к данным очереди
 
@@ -28,7 +28,7 @@ ms.locfileid: "91715519"
 
 ### <a name="use-the-account-access-key"></a>Использование ключа доступа к учетной записи
 
-Чтобы получить доступ к данным очереди с помощью ключа доступа к учетной записи, необходимо назначить роль Azure, которая включает действие Azure RBAC **(Microsoft. Storage/storageAccounts/listkeys/действие**). Эта роль Azure может быть встроенной или настраиваемой ролью. Встроенные роли, поддерживающие **Microsoft. Storage, storageAccounts/listkeys/Action** , включают:
+Чтобы получить доступ к данным очереди с помощью ключа доступа к учетной записи, необходимо назначить роль Azure, которая включает действие Azure RBAC **(Microsoft. Storage/storageAccounts/listkeys/действие** ). Эта роль Azure может быть встроенной или настраиваемой ролью. Встроенные роли, поддерживающие **Microsoft. Storage, storageAccounts/listkeys/Action** , включают:
 
 - Роль [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager
 - Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
@@ -37,7 +37,7 @@ ms.locfileid: "91715519"
 При попытке получить доступ к данным очереди в портал Azure портал сначала проверяет, была ли назначена роль с помощью **Microsoft. Storage/storageAccounts/listkeys/Action**. Если вы назначили роль с этим действием, портал использует ключ учетной записи для доступа к данным очереди. Если вы не назначили роль с этим действием, портал пытается получить доступ к данным с помощью учетной записи Azure AD.
 
 > [!NOTE]
-> Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action**, поэтому пользователь с одной из этих административных ролей также может получить доступ к данным очереди с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
+> Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action** , поэтому пользователь с одной из этих административных ролей также может получить доступ к данным очереди с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
 
 ### <a name="use-your-azure-ad-account"></a>Использование учетной записи Azure AD
 
@@ -74,11 +74,11 @@ ms.locfileid: "91715519"
 
 Если проверка подлинности выполняется с помощью ключа доступа к учетной записи, вы увидите **ключ доступа** , указанный в качестве метода проверки подлинности на портале:
 
-:::image type="content" source="media/authorize-queue-access-portal/auth-method-access-key.png" alt-text="Снимок экрана, показывающий, как переходить к данным очереди в портал Azure":::
+:::image type="content" source="media/authorize-queue-access-portal/auth-method-access-key.png" alt-text="Снимок экрана: пользователь, обращающийся к очередям с ключом учетной записи":::
 
 Чтобы переключиться на использование учетной записи Azure AD, щелкните ссылку, выделенную на изображении. При наличии соответствующих разрешений через назначенные вам роли Azure вы сможете продолжать работу. Однако если у вас нет нужных разрешений, появится сообщение об ошибке следующего вида:
 
-:::image type="content" source="media/authorize-queue-access-portal/auth-error-azure-ad.png" alt-text="Снимок экрана, показывающий, как переходить к данным очереди в портал Azure":::
+:::image type="content" source="media/authorize-queue-access-portal/auth-error-azure-ad.png" alt-text="Ошибка отображается, если учетная запись Azure AD не поддерживает доступ":::
 
 Обратите внимание, что в списке нет очередей, если у вашей учетной записи Azure AD нет разрешений на их просмотр. Щелкните ссылку **Переключение на ключ доступа** , чтобы снова использовать ключ доступа для проверки подлинности.
 
@@ -86,13 +86,13 @@ ms.locfileid: "91715519"
 
 Если вы выполняете проверку подлинности с помощью учетной записи Azure AD, вы увидите на портале **учетную запись пользователя Azure AD** , указанную в качестве метода проверки подлинности:
 
-:::image type="content" source="media/authorize-queue-access-portal/auth-method-azure-ad.png" alt-text="Снимок экрана, показывающий, как переходить к данным очереди в портал Azure":::
+:::image type="content" source="media/authorize-queue-access-portal/auth-method-azure-ad.png" alt-text="Снимок экрана с пользовательским доступом к очередям с помощью учетной записи Azure AD":::
 
 Чтобы переключиться на использование ключа доступа к учетной записи, щелкните ссылку, выделенную на изображении. Если у вас есть доступ к ключу учетной записи, вы сможете продолжать работу. Однако если у вас отсутствует доступ к ключу учетной записи, портал Azure отображает сообщение об ошибке.
 
 Если у вас нет доступа к ключам учетной записи, очереди не отображаются на портале. Щелкните ссылку **Переключение на учетную запись пользователя Azure AD** , чтобы снова использовать учетную запись Azure AD для проверки подлинности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка подлинности доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md)
 - [Используйте портал Azure, чтобы назначить роль Azure для доступа к данным BLOB-объектов и очередей.](../common/storage-auth-aad-rbac-portal.md)

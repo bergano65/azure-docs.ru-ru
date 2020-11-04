@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/3/2020
 ms.author: cynthn
-ms.openlocfilehash: f6bf436110e9822d687419b74a8a22bad7a6d700
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: e0534fa6eaccbfb9318369e0a4224d84fa8de7c8
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93333470"
+ms.locfileid: "93347715"
 ---
 # <a name="preview-use-customer-managed-keys-for-encrypting-images"></a>Предварительный просмотр: Использование управляемых клиентом ключей для шифрования образов
 
@@ -23,7 +23,7 @@ ms.locfileid: "93333470"
 
 Для шифрования на стороне сервера с помощью управляемых клиентом ключей используется Azure Key Vault. Вы можете либо импортировать [ключи RSA](../key-vault/keys/hsm-protected-keys.md) в Key Vault, либо создать новые ключи RSA в Azure Key Vault.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что в каждом регионе, в котором вы хотите реплицировать образ, уже задано шифрование дисков.
 
@@ -134,7 +134,7 @@ New-AzGalleryImageVersion `
 
 ## <a name="cli"></a>CLI 
 
-Для использования общедоступной предварительной версии сначала необходимо зарегистрировать компонент.
+Для общедоступной предварительной версии сначала необходимо зарегистрироваться для получения функции. Регистрация занимает примерно 30 минут.
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.Compute --name SIGEncryption

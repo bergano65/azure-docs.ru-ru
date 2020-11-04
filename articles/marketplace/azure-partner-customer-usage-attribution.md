@@ -8,12 +8,12 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 91de9aff154dec1a61360477edebc90b7a13cf24
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 0a97286564f7d2c04268034d6f70b1a178cbb5a5
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93125178"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348344"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Сведения о партнере коммерческого рынка и использовании клиентов
 
@@ -74,7 +74,7 @@ ms.locfileid: "93125178"
    * Любой партнер может зарегистрировать несколько идентификаторов GUID.
    * Партнеры могут регистрировать GUID даже для предложений и (или) шаблонов решений, не включенных в Marketplace.
 
-1. Нажмите на значок шестеренки "Параметры" в правом верхнем углу экрана и выберите **Параметры разработчика** .
+1. Нажмите на значок шестеренки "Параметры" в правом верхнем углу экрана и выберите **Параметры разработчика**.
 
 1. На **странице параметров учетной записи** щелкните **Add Tracking GUID** (Добавить GUID отслеживания).
 
@@ -82,7 +82,7 @@ ms.locfileid: "93125178"
 
 1. Чтобы зарегистрировать дополнительный идентификатор GUID, снова щелкните **Add Tracking GUID** (Добавить GUID отслеживания). На странице появятся дополнительные поля.
 
-1. Щелкните **Сохранить** .
+1. Щелкните **Сохранить**.
 
 ## <a name="use-resource-manager-templates"></a>Использование шаблонов Resource Manager
 Многие решения партнеров развертываются с помощью шаблонов Azure Resource Manager. Если у вас есть шаблон диспетчер ресурсов, доступный в Azure Marketplace, в GitHub или в качестве краткого руководства, процесс изменения шаблона для включения атрибутов использования клиентов будет прямым.
@@ -102,7 +102,7 @@ ms.locfileid: "93125178"
 
 1. Добавьте новый ресурс типа [Microsoft. Resources/deployments](/azure/templates/microsoft.resources/deployments) в основной файл шаблона. Этот ресурс можно указать только в файле **mainTemplate.json** или **azuredeploy.json** , но не во вложенных или связанных шаблонах.
 
-1. Введите значение GUID после `pid-` префикса в качестве имени ресурса. Например, если GUID имеет значение eb7927c8-dd66-43e1-b0cf-c346a422063, имя ресурса будет иметь значение _PID-eb7927c8-dd66-43e1-b0cf-c346a422063_ .
+1. Введите значение GUID после `pid-` префикса в качестве имени ресурса. Например, если GUID имеет значение eb7927c8-dd66-43e1-b0cf-c346a422063, имя ресурса будет иметь значение _PID-eb7927c8-dd66-43e1-b0cf-c346a422063_.
 
 1. Проверьте шаблон на наличие ошибок.
 
@@ -150,7 +150,7 @@ ms.locfileid: "93125178"
 
 #### <a name="example-the-python-sdk"></a>Пример Пакет SDK для Python
 
-В Python используется атрибут **config** . Этот атрибут можно добавить только в UserAgent. Ниже приведен пример:
+В Python используется атрибут **config**. Этот атрибут можно добавить только в UserAgent. Ниже приведен пример:
 
 ![Добавление атрибута в агент пользователя](media/marketplace-publishers-guide/python-for-lu.PNG)
 
@@ -159,7 +159,7 @@ ms.locfileid: "93125178"
 
 #### <a name="example-the-net-sdk"></a>Пример: пакет SDK для .NET
 
-Для .NET обязательно задайте агент пользователя. Библиотеку [Microsoft. Azure. Management. Fluent](/dotnet/api/microsoft.azure.management.fluent?view=azure-dotnet) можно использовать для задания агента пользователя с помощью следующего кода (пример в C#):
+Для .NET обязательно задайте агент пользователя. Библиотеку [Microsoft. Azure. Management. Fluent](/dotnet/api/microsoft.azure.management.fluent) можно использовать для задания агента пользователя с помощью следующего кода (пример в C#):
 
 ```csharp
 
@@ -181,7 +181,7 @@ var azure = Microsoft.Azure.Management.Fluent.Azure
 
 #### <a name="tag-a-deployment-by-using-the-azure-cli"></a>Присвоение тега развертыванию с помощью Azure CLI
 
-Чтобы добавить GUID с помощью Azure CLI, задайте переменную среды **AZURE_HTTP_USER_AGENT** . Значение этой переменной можно задать в области скрипта. Также ее можно задать глобально для области оболочки:
+Чтобы добавить GUID с помощью Azure CLI, задайте переменную среды **AZURE_HTTP_USER_AGENT**. Значение этой переменной можно задать в области скрипта. Также ее можно задать глобально для области оболочки:
 
 ```
 export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
@@ -192,7 +192,7 @@ export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
 
 Поддержка Terraform доступна в выпуске Azure Provider 1.21.0: [https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md#1210-january-11-2019](https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md#1210-january-11-2019).  Эта поддержка распространяется на всех партнеров, которые развертывают свои решения через Terraform, и все ресурсы, развернутые и отслеживаемые через Azure Provider (версии 1.21.0 или более поздней).
 
-В Azure Provider для Terraform добавлено новое необязательное поле [*partner_id*](https://www.terraform.io/docs/providers/azurerm/#partner_id), в котором можно указать GUID отслеживания для решения. Значение этого поля также можно получить из переменной среды *ARM_PARTNER_ID* .
+В Azure Provider для Terraform добавлено новое необязательное поле [*partner_id*](https://www.terraform.io/docs/providers/azurerm/#partner_id), в котором можно указать GUID отслеживания для решения. Значение этого поля также можно получить из переменной среды *ARM_PARTNER_ID*.
 
 ```
 provider "azurerm" {

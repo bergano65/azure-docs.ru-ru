@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: e09b44504623516d41b6d310a82e78619477367c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e8d1704b7f6048c14528b784f22d60b01592b54f
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93304992"
+ms.locfileid: "93347613"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
 
@@ -48,7 +48,7 @@ ms.locfileid: "93304992"
 
 Чтобы использовать TLS-связь между источником syslog и сервером пересылки syslog, необходимо настроить управляющую программу syslog (rsyslog или syslog-ng) для взаимодействия в TLS: [шифрование трафика syslog с помощью TLS — rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Шифрование сообщений журнала с помощью TLS – syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Убедитесь, что компьютер Linux, используемый в качестве сервера пересылки журналов, работает под управлением одной из следующих операционных систем:
 
@@ -57,7 +57,7 @@ ms.locfileid: "93304992"
   - Amazon Linux 2017.09
   - Oracle Linux 7
   - Red Hat Enterprise Linux (RHEL) Server 7 и 8, включая подверсии (не 6)
-  - Debian GNU/Linux 8, 9 и 10
+  - Debian GNU/Linux 8 и 9
   - Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
   - SUSE Linux Enterprise Server 12, 15
 
@@ -65,7 +65,7 @@ ms.locfileid: "93304992"
   - CentOS 7 и 8, включая подверсии (не 6)
   - Oracle Linux 7
   - Red Hat Enterprise Linux (RHEL) Server 7 и 8, включая подверсии (не 6)
-  - Debian GNU/Linux 8, 9 и 10
+  - Debian GNU/Linux 8 и 9
   - Ubuntu Linux 14.04 LTS и 16.04 LTS
  
 - Версии управляющей программы

@@ -5,12 +5,12 @@ author: sajayantony
 ms.topic: article
 ms.date: 09/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 4c65ca24b3fa4dccb2bb0060996ade50c90bd02a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: a2cddc9bbe868a2d18ee8111aabf6db7dc8643cf
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148525"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93347001"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 
@@ -262,7 +262,8 @@ ACR поддерживает [пользовательские роли](contain
 Настройка анонимного (общего) доступа для извлечения для реестра контейнеров Azure в настоящее время является функцией предварительной версии. Если в реестре есть [ресурсы для сопоставления области (пользователя) или маркера](./container-registry-repository-scoped-permissions.md) , удалите их перед вызовом запроса в службу поддержки (сопоставление области системы можно игнорировать). Чтобы включить общий доступ, отправьте запрос в службу поддержки по адресу https://aka.ms/acr/support/create-ticket. Подробные сведения см. на [форуме отзывов и предложений по Azure](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries).
 
 > [!NOTE]
-> Анонимно можно получить доступ только к интерфейсам API, необходимым для извлечения известного образа. Никакие другие API для таких операций, как список тегов или список репозиториев, недоступны анонимно.
+> * Анонимно можно получить доступ только к интерфейсам API, необходимым для извлечения известного образа. Никакие другие API для таких операций, как список тегов или список репозиториев, недоступны анонимно.
+> * Прежде чем пытаться выполнить анонимную операцию извлечения, выполните команду, `docker logout` чтобы убедиться, что удалены все существующие учетные данные DOCKER.
 
 ## <a name="diagnostics-and-health-checks"></a>Диагностика и проверки работоспособности
 

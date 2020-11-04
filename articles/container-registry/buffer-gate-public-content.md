@@ -5,12 +5,12 @@ author: dlepow
 ms.topic: article
 ms.author: danlep
 ms.date: 10/29/2020
-ms.openlocfilehash: bb185e7d5803219135fddf421b7d6a89edd296b0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: def1c3a9b8a1086f453c7e71d766ab0dd89b0c2d
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93315812"
+ms.locfileid: "93347528"
 ---
 # <a name="manage-public-content-with-azure-container-registry"></a>Управление общедоступным содержимым с помощью реестра контейнеров Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "93315812"
 В качестве первого шага, если сейчас вы извлекаете открытые образы из DOCKER Hub как часть рабочего процесса сборки или развертывания, рекомендуется выполнить [проверку подлинности с помощью учетной записи DOCKER Hub](https://docs.docker.com/docker-hub/download-rate-limit/#how-do-i-authenticate-pull-requests) вместо анонимного запроса на включение внесенных изменений.
 
 > [!NOTE]
-> Начиная с 2 ноября 2020 г. [ограничения скорости загрузки](https://docs.docker.com/docker-hub/download-rate-limit) применяются к анонимным и прошедшим проверку подлинности запросам к концентратору DOCKER из учетных записей бесплатных планов DOCKER и применяются по IP-адресу и DOCKER ID, респеЦитивели. 
+> Начиная с 2 ноября 2020 г. [ограничения скорости загрузки](https://docs.docker.com/docker-hub/download-rate-limit) применяются к анонимным и прошедшим проверку подлинности запросам к концентратору DOCKER из учетных записей бесплатных планов DOCKER и применяются соответственно IP-адресу и идентификатору DOCKER. 
 >
 > При оценке количества запросов на вытягивание следует учитывать, что при использовании облачных служб поставщика или работе с корпоративным NAT в качестве подмножества IP-адресов будет представлено несколько пользователей. Добавление аутентификации платной учетной записи DOCKER в запросы, отправленные в центр DOCKER, позволит избежать возможных нарушений в работе служб из-за регулирования скорости.
 >

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: bba7da0343f234d8cc057ac4ecfa2a4f2e5b7242
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 3527bdbbf1ba337d24dc390f97ed090c8dfbe039
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129887"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348395"
 ---
 # <a name="service-bus-queues-output-from-azure-stream-analytics"></a>Выходные данные очередей служебной шины из Azure Stream Analytics
 
@@ -66,13 +66,13 @@ ms.locfileid: "93129887"
 
 На следующем рисунке изображены ожидаемые свойства выходного сообщения, проверенные в EventHub с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer).
 
-:::image type="content" source="media/service-bus-queues-output/custom-properties.png" alt-text="Столбцы свойств":::
+:::image type="content" source="media/service-bus-queues-output/custom-properties.png" alt-text="Настраиваемые свойства события":::
 
 ## <a name="system-properties"></a>Свойства системы
 
-Столбцы запросов можно присоединять как [системные свойства](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties&preserve-view=true) к исходящим сообщениям очереди или раздела служебной шины.
+Столбцы запросов можно присоединять как [системные свойства](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet&preserve-view=true#properties) к исходящим сообщениям очереди или раздела служебной шины.
 
-Эти столбцы не попадают в полезные данные, а соответствующее [системное свойство](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties&preserve-view=true) BrokeredMessage заполняется значениями столбцов запроса.
+Эти столбцы не попадают в полезные данные, а соответствующее [системное свойство](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet&preserve-view=true#properties) BrokeredMessage заполняется значениями столбцов запроса.
 Эти системные свойства поддерживаются — `MessageId, ContentType, Label, PartitionKey, ReplyTo, SessionId, CorrelationId, To, ForcePersistence, TimeToLive, ScheduledEnqueueTimeUtc`.
 
 Строковые значения этих столбцов анализируются как соответствующие типы значений системных свойств, а все ошибки синтаксического анализа обрабатываются как ошибки данных.

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 8f0df92eadc4db132d567e708abe6e28e82642d6
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 3f878389f22f3928bc1fc8c89b04353583326da6
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129564"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93346049"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
@@ -21,13 +21,13 @@ ms.locfileid: "93129564"
 
 В этом документе рассматривается новый подход, обеспечивающий унифицированный контроль и управление доступом к ресурсам Azure, AKS и Kubernetes.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Возможность управления RBAC для ресурсов Kubernetes из Azure дает возможность управлять RBAC для ресурсов кластера с помощью Azure или собственных механизмов Kubernetes. Если этот параметр включен, субъекты Azure AD будут проверяться исключительно в Azure RBAC, а обычные пользователи Kubernetes и учетные записи служб будут проверены только с помощью Kubernetes RBAC. Дополнительные сведения о проверке подлинности, авторизации и RBAC в AKS см. [здесь](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview).
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-### <a name="prerequisites"></a>Предварительные требования 
+### <a name="prerequisites"></a>Обязательные условия 
 - Убедитесь, что у вас Azure CLI версии 2.9.0 или более поздней.
 - Убедитесь, что `EnableAzureRBACPreview` включен флаг компонента.
 - Убедитесь, что установлено `aks-preview` [расширение CLI][az-extension-add] v 0.4.55 или более поздней версии.
@@ -72,7 +72,6 @@ az extension update --name aks-preview
 - Требуется [управляемая интеграция с Azure AD](managed-aad.md).
 - Вы не можете интегрировать Azure RBAC для авторизации Kubernetes в существующие кластеры во время предварительной версии, но вы сможете получить общедоступную версию.
 - Используйте [kubectl v 1.18.3 +][az-aks-install-cli].
-- На этапе предварительной версии можно добавлять только разрешения *уровня пространства имен* с помощью Azure CLI.
 - Если у вас есть КРДС и вы вносите пользовательские определения ролей, единственный способ охватить КРДС сегодня — предоставить `Microsoft.ContainerService/managedClusters/*/read` . AKS работает над предоставлением более детализированных разрешений для КРДС. Для остальных объектов можно использовать определенные группы API, например: `Microsoft.ContainerService/apps/deployments/read` .
 - Новые назначения ролей могут занимать до 5 мин для распространения и обновления сервером авторизации.
 - Требует, чтобы клиент Azure AD, настроенный для проверки подлинности, совпадал с клиентом для подписки, в которой находится кластер AKS. 

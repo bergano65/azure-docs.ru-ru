@@ -6,12 +6,12 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 3/10/2020
-ms.openlocfilehash: f81b6dabbd9053a69ff60d1a3c71d03fff38f627
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 29f02f80aa5bff1304dc593d68954e15fe6e66bb
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129768"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93346440"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi"></a>Используйте управляемое удостоверение для проверки подлинности задания Azure Stream Analytics для Power BI
 
@@ -19,7 +19,7 @@ ms.locfileid: "93129768"
 
 В этой статье показано, как включить управляемое удостоверение для Power BI выходных данных Stream Analytics задания с помощью портал Azure и Azure Resource Manager развертывания.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для использования этой функции необходимо следующее:
 
@@ -29,13 +29,13 @@ ms.locfileid: "93129768"
 
 ## <a name="create-a-stream-analytics-job-using-the-azure-portal"></a>Создание задания Stream Analytics с помощью портал Azure
 
-1. Создайте новое Stream Analytics задание или откройте существующее задание в портал Azure. В строке меню, расположенной в левой части экрана, выберите **управляемое удостоверение** , расположенное в разделе **Настройка** . Убедитесь, что выбран параметр "использовать управляемое системой удостоверение", а затем нажмите кнопку **сохранить** в нижней части экрана.
+1. Создайте новое Stream Analytics задание или откройте существующее задание в портал Azure. В строке меню, расположенной в левой части экрана, выберите **управляемое удостоверение** , расположенное в разделе **Настройка**. Убедитесь, что выбран параметр "использовать управляемое системой удостоверение", а затем нажмите кнопку **сохранить** в нижней части экрана.
 
    ![Настройка управляемого удостоверения Stream Analytics](./media/common/stream-analytics-enable-managed-identity.png)
 
 2. Перед настройкой выходных данных предоставьте Stream Analyticsному заданию доступ к рабочей области Power BI, следуя указаниям в разделе [предоставление Stream Analytics заданий доступ к рабочей области Power BI](#give-the-stream-analytics-job-access-to-your-power-bi-workspace) этой статьи.
 
-3. Перейдите к разделу **выходные данные** задания аналитики Stream, выберите **+ Добавить** , а затем выберите **Power BI** . Затем нажмите кнопку **авторизовать** и войдите в систему, используя учетную запись Power BI.
+3. Перейдите к разделу **выходные данные** задания аналитики Stream, выберите **+ Добавить** , а затем выберите **Power BI**. Затем нажмите кнопку **авторизовать** и войдите в систему, используя учетную запись Power BI.
 
    ![Авторизация с учетной записью Power BI](./media/stream-analytics-powerbi-output-managed-identity/stream-analytics-authorize-powerbi.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "93129768"
 
 ## <a name="azure-resource-manager-deployment"></a>Развертывание Azure Resource Manager
 
-Azure Resource Manager позволяет полностью автоматизировать развертывание задания Stream Analytics. Шаблоны диспетчер ресурсов можно развернуть с помощью Azure PowerShell или [Azure CLI](/cli/azure/?view=azure-cli-latest). В приведенных ниже примерах используется Azure CLI.
+Azure Resource Manager позволяет полностью автоматизировать развертывание задания Stream Analytics. Шаблоны диспетчер ресурсов можно развернуть с помощью Azure PowerShell или [Azure CLI](/cli/azure/). В приведенных ниже примерах используется Azure CLI.
 
 
 1. Вы можете создать ресурс **Microsoft. StreamAnalytics/стреамингжобс** с управляемым удостоверением, включив следующее свойство в раздел ресурсов шаблона диспетчер ресурсов:

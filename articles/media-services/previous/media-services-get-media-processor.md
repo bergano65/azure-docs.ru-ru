@@ -3,7 +3,7 @@ title: Как создать обработчик мультимедиа с по
 description: Узнайте, как создать компонент обработчика мультимедиа для кодирования, преобразования формата, шифрования или расшифровки мультимедийного контента служб мультимедиа Azure. Примеры кода написаны на языке C# и используют пакет SDK служб мультимедиа для .NET.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: dbf9496f-c6f0-42a7-aa36-70f89dcb8ea2
@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 11/03/2020
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: df89acb7d3686a478c87c12bbf8a42962597dca6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3215eef337ca1c9a84f2f4d917dbea8ea2e090f0
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89269392"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93346695"
 ---
 # <a name="how-to-get-a-media-processor-instance"></a>Как получить экземпляр обработчика мультимедиа
 
@@ -29,18 +29,17 @@ ms.locfileid: "89269392"
 > [!div class="op_single_selector"]
 > * [.NET](media-services-get-media-processor.md)
 > * [REST](media-services-rest-get-media-processor.md)
-> 
-> 
 
 ## <a name="overview"></a>Обзор
+
 В службах мультимедиа обработчик мультимедиа является компонентом, который работает со специфическими задачами обработки, такими как кодирование, преобразование формата, шифрование или расшифровка мультимедийного контента. Обработчик мультимедиа обычно создается при создании задачи для кодирования, шифрования или преобразования формата мультимедийного контента.
 
-## <a name="azure-media-processors"></a>Обработчики мультимедиа Azure 
+## <a name="azure-media-processors"></a>Обработчики мультимедиа Azure
 
 В следующем разделе приводятся списки обработчиков мультимедиа.
 
-* [Кодировщики мультимедиа](scenarios-and-availability.md#encoding-media-processors)
-* [Обработчики мультимедиа аналитики](scenarios-and-availability.md#analytics-media-processors)
+* [Кодировщики мультимедиа](scenarios-and-availability.md)
+* [Обработчики мультимедиа аналитики](scenarios-and-availability.md)
 
 ## <a name="get-media-processor"></a>Получение обработчика мультимедиа
 
@@ -59,13 +58,14 @@ private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcess
 }
 ```
 
-
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
+
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
+
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="next-steps"></a>Next Steps
-Теперь, когда вы знаете, как получить экземпляр обработчика мультимедиа, перейдите в раздел [Кодировка актива](media-services-dotnet-encode-with-media-encoder-standard.md) , в котором будет показано, как использовать Media Encoder Standard для кодирования ресурса-контейнера.
 
+Теперь, когда вы знаете, как получить экземпляр обработчика мультимедиа, перейдите в раздел [Кодировка актива](media-services-dotnet-encode-with-media-encoder-standard.md) , в котором будет показано, как использовать Media Encoder Standard для кодирования ресурса-контейнера.

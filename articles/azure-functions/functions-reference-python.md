@@ -4,18 +4,22 @@ description: Сведения о разработке функций на язы
 ms.topic: article
 ms.date: 12/13/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 0de25cc804844b5aa414e521fa641761d9a4b4f4
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 3d459f4249c65f2d09f9d8df6e7958adf852a2ea
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108428"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93346321"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
 В этой статье содержатся общие сведения о разработке Функций Azure с помощью Python. Предполагается, что вы уже прочли [руководство для разработчиков Функций Azure](functions-reference.md).
 
-Отдельные примеры проектов Функций в Python см. в [этой статье](/samples/browse/?products=azure-functions&languages=python).
+Разработчик Python может также заинтересовать одну из следующих статей:
+
+| Начало работы | Основные понятия| Сценарии и примеры |
+| -- | -- | -- | 
+| <ul><li>[Функция Python, использующая Visual Studio Code](./functions-create-first-function-vs-code.md?pivots=programming-language-python)</li><li>[Функция Python с терминалом/Командная строка](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Классификация изображений с помощью PyTorch](machine-learning-pytorch.md)</li><li>[Пример службы автоматизации Azure](/samples/azure-samples/azure-functions-python-list-resource-groups/azure-functions-python-sample-list-resource-groups/)</li><li>[Машинное обучение с помощью TensorFlow](functions-machine-learning-tensorflow.md)</li><li>[Обзор примеров Python](/samples/browse/?products=azure-functions&languages=python)</li></ul> |
 
 ## <a name="programming-model"></a>Модель программирования
 
@@ -44,7 +48,7 @@ def main(req: azure.functions.HttpRequest) -> str:
     return f'Hello, {user}!'
 ```
 
-Аннотации Python, включенные в пакет [azure.functions.*](/python/api/azure-functions/azure.functions?view=azure-python), позволяют привязать входные и выходные данные к методам.
+Аннотации Python, включенные в пакет [azure.functions.*](/python/api/azure-functions/azure.functions?view=azure-python&preserve-view=true), позволяют привязать входные и выходные данные к методам.
 
 ## <a name="alternate-entry-point"></a>Альтернативная точка входа
 
@@ -83,11 +87,11 @@ def main(req: azure.functions.HttpRequest) -> str:
 ```
 В главной папке проекта (\_\_app\_\_) могут содержаться следующие файлы:
 
-* *local.settings.json*: используется для хранения параметров приложения и строк подключения при локальном выполнении. Этот файл не публикуется в Azure. Дополнительные сведения см. в разделе [local.settings.file](functions-run-local.md#local-settings-file).
-* *requirements.txt*: содержит список пакетов, которые должны быть установлены при публикации в Azure.
-* *host.json*: содержит параметры глобальной конфигурации, влияющие на все функции в приложении-функции. Этот файл не публикуется в Azure. При локальном запуске поддерживаются не все параметры. Дополнительные сведения см. в разделе [host.json](functions-host-json.md).
-* *.funcignore*: (необязательно) объявляет файлы, которые не должны публиковаться в Azure.
-* *Dockerfile*: (необязательно) используется при публикации проекта в [настраиваемом контейнере](functions-create-function-linux-custom-image.md).
+* *local.settings.json* : используется для хранения параметров приложения и строк подключения при локальном выполнении. Этот файл не публикуется в Azure. Дополнительные сведения см. в разделе [local.settings.file](functions-run-local.md#local-settings-file).
+* *requirements.txt* : содержит список пакетов, которые должны быть установлены при публикации в Azure.
+* *host.json* : содержит параметры глобальной конфигурации, влияющие на все функции в приложении-функции. Этот файл не публикуется в Azure. При локальном запуске поддерживаются не все параметры. Дополнительные сведения см. в разделе [host.json](functions-host-json.md).
+* *.funcignore* : (необязательно) объявляет файлы, которые не должны публиковаться в Azure.
+* *Dockerfile* : (необязательно) используется при публикации проекта в [настраиваемом контейнере](functions-create-function-linux-custom-image.md).
 
 У каждой функции есть собственный файл кода и файл конфигурации привязки.
 
@@ -95,7 +99,7 @@ def main(req: azure.functions.HttpRequest) -> str:
 
 ## <a name="import-behavior"></a>Поведение при импорте
 
-Вы можете импортировать модули в код функции, используя явные относительные и абсолютные ссылки. В соответствии со структурой папок, показанной выше, следующие операции импорта работают в файле функции *\_\_app\_\_\my\_first\_function\\_\_init\_\_.py*:
+Вы можете импортировать модули в код функции, используя явные относительные и абсолютные ссылки. В соответствии со структурой папок, показанной выше, следующие операции импорта работают в файле функции *\_\_app\_\_\my\_first\_function\\_\_init\_\_.py* :
 
 ```python
 from . import example #(explicit relative)
@@ -185,7 +189,7 @@ def main(req: func.HttpRequest,
     logging.info(f'Python HTTP triggered function processed: {obj.read()}')
 ```
 
-При активации этой функции HTTP-запрос передается в функцию с помощью `req`. Запись извлекается из хранилища BLOB-объектов Azure по значению _ID_, включенному в URL-адрес маршрута, и становится доступной в виде `obj` в тексте функции.  Здесь указанная учетная запись хранения является строкой подключения в параметре приложения AzureWebJobsStorage, которая является той же учетной записью хранения, используемой приложением-функцией.
+При активации этой функции HTTP-запрос передается в функцию с помощью `req`. Запись извлекается из хранилища BLOB-объектов Azure по значению _ID_ , включенному в URL-адрес маршрута, и становится доступной в виде `obj` в тексте функции.  Здесь указанная учетная запись хранения является строкой подключения в параметре приложения AzureWebJobsStorage, которая является той же учетной записью хранения, используемой приложением-функцией.
 
 
 ## <a name="outputs"></a>Выходные данные
@@ -194,7 +198,7 @@ def main(req: func.HttpRequest,
 
 Чтобы использовать возвращаемое значение функции в качестве значения выходной привязки, присвойте свойству `name` значение `$return` в `function.json`.
 
-Чтобы создать несколько выходных значений, используйте метод `set()` из интерфейса [`azure.functions.Out`](/python/api/azure-functions/azure.functions.out?view=azure-python), чтобы присвоить значение привязке. Например, следующая функция может направлять сообщение в очередь и возвращает ответ HTTP.
+Чтобы создать несколько выходных значений, используйте метод `set()` из интерфейса [`azure.functions.Out`](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true), чтобы присвоить значение привязке. Например, следующая функция может направлять сообщение в очередь и возвращает ответ HTTP.
 
 ```json
 {
@@ -310,7 +314,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 Конфигурации по умолчанию подходят для большинства приложений функций Azure. Однако производительность приложений можно повысить путем применения конфигураций на основе профиля рабочей нагрузки. Первым шагом является понимание типа выполняемой рабочей нагрузки.
 
-|| Рабочая нагрузка с привязкой ввода-вывода | Рабочая нагрузка, привязанная к ЦП |
+|&nbsp;| Рабочая нагрузка с привязкой ввода-вывода | Рабочая нагрузка, привязанная к ЦП |
 |--| -- | -- |
 |Характеристики приложения функции| <ul><li>Приложение должно выполнять много одновременных вызовов.</li> <li> Приложение обрабатывает большое количество событий ввода-вывода, таких как сетевые вызовы и дисковые операции чтения и записи.</li> </ul>| <ul><li>Приложение выполняет длительные вычисления, такие как изменение размера изображения.</li> <li>Приложение выполняет преобразование данных.</li> </ul> |
 |Примеры| <ul><li>Веб-API</li><ul> | <ul><li>Обработка данных</li><li> Определение машинного обучения</li><ul>|
@@ -381,7 +385,7 @@ FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу
 
 ## <a name="context"></a>Контекст
 
-Чтобы получить контекст вызова функции во время выполнения, включите в его подпись аргумент [`context`](/python/api/azure-functions/azure.functions.context?view=azure-python).
+Чтобы получить контекст вызова функции во время выполнения, включите в его подпись аргумент [`context`](/python/api/azure-functions/azure.functions.context?view=azure-python&preserve-view=true).
 
 Пример:
 
@@ -394,7 +398,7 @@ def main(req: azure.functions.HttpRequest,
     return f'{context.invocation_id}'
 ```
 
-Класс [**Context**](/python/api/azure-functions/azure.functions.context?view=azure-python) имеет следующие строковые атрибуты:
+Класс [**Context**](/python/api/azure-functions/azure.functions.context?view=azure-python&preserve-view=true) имеет следующие строковые атрибуты:
 
 `function_directory` Каталог, в котором выполняется функция.
 
@@ -724,8 +728,8 @@ getattr(azure.functions, '__version__', '< 1.2.1')
 
 |  Среда выполнения функций  | Версия Debian | Версии Python |
 |------------|------------|------------|
-| Версия 2.x | Stretch  | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python36/python36.Dockerfile)<br/>[Python 3,7](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python37/python37.Dockerfile) |
-| Версия 3.x | бустер | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python36/python36.Dockerfile)<br/>[Python 3,7](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python37/python37.Dockerfile)<br />[Python 3.8](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python38/python38.Dockerfile) |
+| Версия 2.x | Stretch  | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python36/python36.Dockerfile)<br/>[Python 3.7](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python37/python37.Dockerfile) |
+| Версия 3.x | бустер | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python36/python36.Dockerfile)<br/>[Python 3.7](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python37/python37.Dockerfile)<br />[Python 3.8](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python38/python38.Dockerfile) |
 
 ## <a name="cross-origin-resource-sharing"></a>Предоставление общего доступа к ресурсам независимо от источника
 
@@ -746,7 +750,7 @@ CORS полностью поддерживается для приложений
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Документация по API пакета Функций Azure](/python/api/azure-functions/azure.functions?view=azure-python)
+* [Документация по API пакета Функций Azure](/python/api/azure-functions/azure.functions?view=azure-python&preserve-view=true)
 * [Рекомендации по функциям Azure](functions-best-practices.md)
 * [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
 * [Привязки хранилища BLOB-объектов Azure для службы "Функции Azure"](functions-bindings-storage-blob.md)
@@ -755,5 +759,5 @@ CORS полностью поддерживается для приложений
 * [Триггер таймера](functions-bindings-timer.md)
 
 
-[HttpRequest]: /python/api/azure-functions/azure.functions.httprequest?view=azure-python
-[HttpResponse]: /python/api/azure-functions/azure.functions.httpresponse?view=azure-python
+[HttpRequest]: /python/api/azure-functions/azure.functions.httprequest?view=azure-python&preserve-view=true
+[HttpResponse]: /python/api/azure-functions/azure.functions.httpresponse?view=azure-python&preserve-view=true

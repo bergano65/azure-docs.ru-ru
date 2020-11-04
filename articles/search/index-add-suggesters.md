@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/21/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c1ee42b5b5884b0ce3491282d256d4bea87f44e1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: f8959bf84e2b5629e03c2571fa494b96cec4f8e9
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083547"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93347647"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Создание средства подбора для включения автозаполнения и предлагаемых результатов в запросе
 
@@ -146,9 +146,9 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 
 В запросе используется предложение. После создания средства подбора вызовите один из следующих интерфейсов API для поиска по мере использования.
 
-+ [Предложения REST API](/rest/api/searchservice/suggestions) 
-+ [Автозаполнение REST API](/rest/api/searchservice/autocomplete) 
-+ [Метод Сугжествисхттпмессажесасинк] (/дотнет/АПИ/Микрософт.Азуре.СЕАРЧ.идокументсоператионс.сугжествисхттпмессажесасинк?
++ [Предложения REST API](/rest/api/searchservice/suggestions)
++ [Автозаполнение REST API](/rest/api/searchservice/autocomplete)
++ [Метод Сугжествисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync)
 + [Метод Аутокомплетевисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync)
 
 В приложении поиска клиентский код должен использовать библиотеку, например [JQUERY UI Автозаполнение](https://jqueryui.com/autocomplete/) , для получения полного запроса и обеспечения соответствия. Дополнительные сведения об этой задаче см. [в разделе Добавление автозаполнения или предлагаемых результатов в клиентский код](search-autocomplete-tutorial.md).
@@ -166,8 +166,6 @@ POST /indexes/myxboxgames/docs/autocomplete?search&api-version=2020-06-30
 ## <a name="sample-code"></a>Образец кода
 
 + [Создание первого приложения на C# (урок 3. Добавление поиска по мере использования)](tutorial-csharp-type-ahead-and-suggestions.md) демонстрирует конструкцию средства подбора, предлагаемые запросы, автозаполнение и навигацию с несколькими аспектами. Этот пример кода выполняется в песочнице Azure Когнитивный поиск Service и использует предварительно загруженный индекс гостиниц, поэтому достаточно нажать клавишу F5, чтобы запустить приложение. Подписка или вход не требуется.
-
-+ [Дотнесовтоаутокомплете](https://github.com/wantedfast/search-dotnet-getting-started/tree/master/DotNetHowToAutocomplete) — это более старый пример, содержащий код C# и Java. Здесь также демонстрируется конструкция средства подбора, предлагаемые запросы, автозаполнение и навигация с помощью аспектов. В этом примере кода используется размещенный образец данных [NYCJobs](https://github.com/Azure-Samples/search-dotnet-asp-net-mvc-jobs) . 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

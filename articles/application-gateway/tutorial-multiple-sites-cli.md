@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 4baafe9f3356e3134626c819c47939b96ab48a79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e72a98ddd5219662c8850326b4f43b25e545177
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595861"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348174"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-the-azure-cli"></a>Создание шлюза приложений, на котором размещено несколько веб-сайтов, с помощью Azure CLI
 
@@ -51,7 +51,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Создайте виртуальную сеть и подсеть с именем *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть, требуемую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, используя команду [az network public-ip create](/cli/azure/network/public-ip).
+Создайте виртуальную сеть и подсеть с именем *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть, требуемую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* , используя команду [az network public-ip create](/cli/azure/network/public-ip).
 
 ```azurecli-interactive
 az network vnet create \
@@ -77,7 +77,7 @@ az network public-ip create \
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
-Шлюз приложений можно создать с помощью команды [az network application-gateway create](/cli/azure/network/application-gateway#az-network-application-gateway-create). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress*, созданным ранее. 
+Шлюз приложений можно создать с помощью команды [az network application-gateway create](/cli/azure/network/application-gateway#az-network-application-gateway-create). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress* , созданным ранее. 
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -124,7 +124,7 @@ az network application-gateway address-pool create \
 
 >[!NOTE]
 > С помощью шлюза приложений или SKU WAF v2 можно также настроить до 5 имен узлов на прослушиватель, а в имени узла можно использовать подстановочные знаки. Дополнительные сведения см. [в разделе имена узлов с подстановочными знаками в прослушивателе](multiple-site-overview.md#wildcard-host-names-in-listener-preview) .
->Чтобы использовать несколько имен узлов и подстановочных знаков в прослушивателе с помощью Azure CLI, необходимо использовать `--host-names` вместо `--host-name` . При использовании имен узлов можно указать до 5 имен узлов в виде значений, разделенных запятыми. Например `--host-names "*.contoso.com,*.fabrikam.com"`.
+>Чтобы использовать несколько имен узлов и подстановочных знаков в прослушивателе с помощью Azure CLI, необходимо использовать `--host-names` вместо `--host-name` . При использовании имен узлов можно указать до пяти имен узлов в виде значений, разделенных пробелами. Например `--host-names "*.contoso.com *.fabrikam.com"`.
 
 ```azurecli-interactive
 az network application-gateway http-listener create \
@@ -175,7 +175,7 @@ az network application-gateway rule delete \
 
 ## <a name="create-virtual-machine-scale-sets"></a>Создание масштабируемых наборов виртуальных машин
 
-В этом примере вы создадите три масштабируемых набора виртуальных машин, которые поддерживают три пула серверной части в шлюзе приложений. Имена создаваемых масштабируемых наборов — *myvmss1*, *myvmss2* и *myvmss3*. Каждый масштабируемый набор содержит два экземпляра виртуальной машины, на которых устанавливаются службы IIS.
+В этом примере вы создадите три масштабируемых набора виртуальных машин, которые поддерживают три пула серверной части в шлюзе приложений. Имена создаваемых масштабируемых наборов — *myvmss1* , *myvmss2* и *myvmss3*. Каждый масштабируемый набор содержит два экземпляра виртуальной машины, на которых устанавливаются службы IIS.
 
 ```azurecli-interactive
 for i in `seq 1 2`; do

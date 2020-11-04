@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: ee5a88dfcc3b4ab29cd3ad8c5ff7c4701d1fced6
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 95c3ad6f689893195e0e5c17c59ab31143cf238d
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92339719"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93346525"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Использование адаптивных элементов управления приложениями для сокращения поверхностей атак на компьютерах
 
@@ -135,7 +135,7 @@ ms.locfileid: "92339719"
 
       ![Добавление настраиваемого правила](./media/security-center-adaptive-application/adaptive-application-add-custom-rule.png)
 
-   1. При определении известного безопасного пути измените **тип правила** на "путь". В путь можно включить подстановочные знаки.
+   1. При определении известного безопасного пути измените **тип правила** на "Path" и введите один путь. В путь можно включить подстановочные знаки.
    
       > [!TIP]
       > Некоторые сценарии, для которых можно использовать подстановочные знаки в пути, могут быть полезны:
@@ -156,12 +156,12 @@ ms.locfileid: "92339719"
 
     На этой панели отображается имя группы (которую можно изменить), тип ОС, расположение и другие релевантные сведения.
 
-    :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-group-settings.png" alt-text="Открытие адаптивных элементов управления приложениями на панели мониторинга Azure" lightbox="./media/security-center-adaptive-application/adaptive-application-group-settings.png":::
+    :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-group-settings.png" alt-text="Страница параметров группы для адаптивных элементов управления приложениями" lightbox="./media/security-center-adaptive-application/adaptive-application-group-settings.png":::
 
     > [!IMPORTANT]
     > Параметр **принудительное применение** в параметрах режима защиты файлов во **всех** сценариях затенен. В настоящее время параметры принудительной установки недоступны. 
     >
-    > :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-modes.png" alt-text="Открытие адаптивных элементов управления приложениями на панели мониторинга Azure":::
+    > :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-modes.png" alt-text="Режим принудительного применения защиты файлов полностью неактивен. Параметры принудительной установки недоступны.":::
 
 1. При необходимости измените имя группы или режим защиты типа файла.
 
@@ -242,7 +242,7 @@ ms.locfileid: "92339719"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как использовать адаптивное управление приложениями в центре безопасности Azure для определения списков разрешенных приложений, выполняющихся на компьютерах с Azure и без Azure. Дополнительные сведения о других функциях защиты облачной рабочей нагрузки центра безопасности см. в следующих статьях:
 
 * [Основные сведения о JIT-доступе к виртуальной машине](just-in-time-explained.md)

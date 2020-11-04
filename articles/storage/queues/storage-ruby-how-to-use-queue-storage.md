@@ -8,37 +8,42 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: 7270ea589d82c09081aec5d81d1cd0b50b1b8a9f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3acce276a12a0437ad8e1d11f85ceaf40943a4c0
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785584"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348276"
 ---
 # <a name="how-to-use-queue-storage-from-ruby"></a>Использование хранилища очередей из Ruby
+
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
 ## <a name="overview"></a>Обзор
-В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранилища очередей Microsoft Azure. Примеры написаны с помощью Ruby Azure API.
-Здесь описаны такие сценарии, как **вставка** , **просмотр** , **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей** .
+
+В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранилища очередей Microsoft Azure. Примеры написаны с помощью Ruby Azure API. Здесь описаны такие сценарии, как **вставка** , **просмотр** , **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
 [!INCLUDE [storage-create-account-include](../../../includes/storage-create-account-include.md)]
 
 ## <a name="create-a-ruby-application"></a>Создание приложения Ruby
+
 Создайте приложение Ruby. Инструкции см. в статье [Создание приложения Ruby в службе приложений на платформе Linux](../../app-service/quickstart-ruby.md).
 
 ## <a name="configure-your-application-to-access-storage"></a>Настройка приложения для доступа к хранилищу
+
 Для использования хранилища Azure необходимо загрузить и использовать пакет Ruby Azure, который содержит набор библиотек, взаимодействующих со службами REST хранилища.
 
 ### <a name="use-rubygems-to-obtain-the-package"></a>Использование RubyGems для получения пакета
+
 1. Используйте интерфейс командной строки, например **PowerShell** (Windows), **Terminal** (Mac) или **Bash** (Unix).
 2. Введите "gem install azure" в окне командной строки, чтобы установить пакеты и зависимости.
 
 ### <a name="import-the-package"></a>Импорт пакета
+
 Используйте свой любимый текстовый редактор, чтобы добавить следующий код в начало файла Ruby, где планируется использовать хранилище.
 
 ```ruby
@@ -46,6 +51,7 @@ require "azure"
 ```
 
 ## <a name="setup-an-azure-storage-connection"></a>Настройка подключения к службе хранилища Azure
+
 Модуль Azure будет считывать переменные среды **\_ \_ учетная запись хранения Azure** и **\_ \_ ACCESS_KEY службы хранилища** Azure для получения сведений, необходимых для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, необходимо указать сведения об учетной записи перед использованием объекта **Azure::QueueService** с помощью следующего кода:
 
 ```ruby
@@ -57,11 +63,12 @@ Azure.config.storage_access_key = "<your Azure storage access key>"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к учетной записи хранения, которая будет использоваться.
-3. В колонке "Параметры" справа щелкните **Ключи доступа** .
-4. В колонке "Ключи доступа" вы увидите ключи доступа 1 и 2. Можно использовать любой из них. 
-5. Щелкните значок копирования, чтобы скопировать ключ в буфер обмена. 
+3. В колонке "Параметры" справа щелкните **Ключи доступа**.
+4. В колонке "Ключи доступа" вы увидите ключи доступа 1 и 2. Можно использовать любой из них.
+5. Щелкните значок копирования, чтобы скопировать ключ в буфер обмена.
 
 ## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
+
 Следующий пример кода создает объект **Azure::QueueService** , который позволяет работать с очередями.
 
 ```ruby
@@ -79,6 +86,7 @@ end
 ```
 
 ## <a name="how-to-insert-a-message-into-a-queue"></a>Практическое руководство. Вставка сообщения в очередь
+
 Чтобы вставить сообщение в очередь, используйте метод **create_message()** для создания нового сообщения и добавления его в очередь.
 
 ```ruby
@@ -86,7 +94,8 @@ azure_queue_service.create_message("test-queue", "test message")
 ```
 
 ## <a name="how-to-peek-at-the-next-message"></a>Практическое руководство. Просмотр следующего сообщения
-Вы можете просмотреть сообщение в начале очереди, не удаляя его из нее, вызвав метод **peek\_messages()** . По умолчанию считывание **\_ сообщений ()** производится в одном сообщении. Вы также можете указать количество сообщений для просмотра.
+
+Вы можете просмотреть сообщение в начале очереди, не удаляя его из нее, вызвав метод **peek\_messages()**. По умолчанию считывание **\_ сообщений ()** производится в одном сообщении. Вы также можете указать количество сообщений для просмотра.
 
 ```ruby
 result = azure_queue_service.peek_messages("test-queue",
@@ -94,30 +103,33 @@ result = azure_queue_service.peek_messages("test-queue",
 ```
 
 ## <a name="how-to-dequeue-the-next-message"></a>Практическое руководство. Удаление следующего сообщения из очереди
+
 Вы можете удалить сообщение из очереди в два этапа.
 
 1. При вызове метода **list\_messages()** по умолчанию вы получаете следующее сообщение в очереди. Вы также можете указать количество сообщений для получения. Сообщения, возвращаемые методом **list\_messages ()** , становятся невидимыми для другого кода, читающего сообщения из этой очереди. Время ожидания видимости (в секундах) передается в качестве параметра.
-2. Чтобы завершить удаление сообщения из очереди, необходимо также вызвать метод **delete_message ()** .
+2. Чтобы завершить удаление сообщения из очереди, необходимо также вызвать метод **delete_message ()**.
 
 Этот двухэтапный процесс удаления сообщения позволяет удостовериться, что если коду не удастся обработать сообщение из-за сбоя оборудования или программного обеспечения, другой экземпляр кода сможет получить то же сообщение и повторить попытку. Код вызывает **Удаление \_ сообщения ()** сразу после обработки сообщения.
 
 ```ruby
 messages = azure_queue_service.list_messages("test-queue", 30)
-azure_queue_service.delete_message("test-queue", 
+azure_queue_service.delete_message("test-queue",
   messages[0].id, messages[0].pop_receipt)
 ```
 
 ## <a name="how-to-change-the-contents-of-a-queued-message"></a>Практическое руководство. Изменение содержимого сообщения в очереди
+
 Вы можете изменить содержимое сообщения непосредственно в очереди. Приведенный ниже код использует метод **update_message()** для обновления сообщения. Этот метод возвращает последовательность, содержащую подтверждение получения сообщения очереди, дату и время в формате UTC, представляющие время, когда сообщение будет видимо в очереди.
 
 ```ruby
 message = azure_queue_service.list_messages("test-queue", 30)
 pop_receipt, time_next_visible = azure_queue_service.update_message(
-  "test-queue", message.id, message.pop_receipt, "updated test message", 
+  "test-queue", message.id, message.pop_receipt, "updated test message",
   30)
 ```
 
 ## <a name="how-to-additional-options-for-dequeuing-messages"></a>Практическое руководство. Использование дополнительных параметров для удаления сообщений из очереди
+
 Способ извлечения сообщения из очереди можно настроить двумя способами.
 
 1. Можно получить пакет сообщения.
@@ -134,6 +146,7 @@ end
 ```
 
 ## <a name="how-to-get-the-queue-length"></a>Практическое руководство. Получение длины очереди
+
 Вы можете получить приблизительное количество сообщений в очереди. Метод **get\_queue\_metadata()** запрашивает у службы очереди приблизительное количество сообщений и метаданные очереди.
 
 ```ruby
@@ -142,6 +155,7 @@ message_count, metadata = azure_queue_service.get_queue_metadata(
 ```
 
 ## <a name="how-to-delete-a-queue"></a>Практическое руководство. Удаление очереди
+
 Чтобы удалить очередь и все сообщения в ней, вызовите метод **delete\_queue()** для объекта очереди.
 
 ```ruby
@@ -149,9 +163,10 @@ azure_queue_service.delete_queue("test-queue")
 ```
 
 ## <a name="next-steps"></a>Next Steps
+
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* Посетите [блог команды разработчиков хранилища Azure](/archive/blogs/windowsazurestorage/)
-* Посетите репозиторий [Azure SDK для Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) в GitHub
+- Посетите [блог команды разработчиков хранилища Azure](/archive/blogs/windowsazurestorage/)
+- Посетите репозиторий [Azure SDK для Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) в GitHub
 
 Сравнение службы очередей Azure, описанной в этой статье, и очередей служебной шины Azure, описанных в статье [Как использовать очереди служебной шины](https://azure.microsoft.com/develop/ruby/how-to-guides/service-bus-queues/), см. в статье [Очереди Azure и очереди служебной шины: сходства и различия](../../service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted.md).

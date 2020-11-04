@@ -10,12 +10,12 @@ ms.date: 09/14/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: queues
-ms.openlocfilehash: 6937f3aa136ee4d5b906492c3f8cffc86acbc2e5
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3636b0366dfe687c4825ec1a16c5e8094a7db10b
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785669"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93346032"
 ---
 # <a name="run-powershell-commands-with-azure-ad-credentials-to-access-queue-data"></a>Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным очереди
 
@@ -27,7 +27,7 @@ ms.locfileid: "92785669"
 
 Расширения службы хранилища Azure поддерживаются для операций с данными очереди. Действия, которые можно вызывать, зависят от разрешений, предоставленных субъекту безопасности Azure AD, с помощью которого вы входите в PowerShell. Разрешения для очередей службы хранилища Azure назначаются через Azure RBAC. Например, если вы назначили роль **читателя данных очереди** , то можете выполнять команды сценариев, считывающие данные из очереди. Если роль **участника данных очереди** назначена, можно выполнять команды сценариев, которые считывают, записывают или удаляют очередь или содержащиеся в них данные.
 
-Дополнительные сведения о разрешениях, необходимых для каждой операции службы хранилища Azure в очереди, см. в разделе [операции хранилища вызовов с токенами OAuth](/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens).  
+Дополнительные сведения о разрешениях, необходимых для каждой операции службы хранилища Azure в очереди, см. в разделе [операции хранилища вызовов с токенами OAuth](/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens).
 
 ## <a name="call-powershell-commands-using-azure-ad-credentials"></a>Вызов команд PowerShell с использованием учетных данных Azure AD
 
@@ -45,7 +45,7 @@ ms.locfileid: "92785669"
 
     Дополнительные сведения о входе в Azure с помощью PowerShell см. [в разделе Вход с помощью Azure PowerShell](/powershell/azure/authenticate-azureps).
 
-1. Создайте группу ресурсов Azure, вызвав командлет [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). 
+1. Создайте группу ресурсов Azure, вызвав командлет [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup).
 
     ```powershell
     $resourceGroup = "sample-resource-group-ps"
