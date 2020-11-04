@@ -3,15 +3,16 @@ title: Вложенные запросы SQL для Azure Cosmos DB
 description: Сведения о вложенных запросах SQL и их типичных сценариях использования и различных типах вложенных запросов в Azure Cosmos DB
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: tisande
-ms.openlocfilehash: 16be1b91d007ca2dbc88405cfc55ff519f51ee41
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: f5f209229d17a2587258d21ee90e7560e629d082
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93081542"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340861"
 ---
 # <a name="sql-subquery-examples-for-azure-cosmos-db"></a>Примеры вложенных запросов SQL для Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -125,7 +126,7 @@ WHERE AvgNutritionValue > 80
 
 Например, рассмотрим следующий набор ссылочных данных:
 
-| **Единица измерения** | **Имя**            | **Множитель** | **Базовая единица** |
+| **Единица измерения** | **имя** ;            | **Множитель** | **Базовая единица** |
 | -------- | ------------------- | -------------- | ------------- |
 | NG       | Микрограмматика            | 1,00 e-09       | Gram          |
 | μг       | микрограм           | 1,00 e-06       | Gram          |
@@ -268,7 +269,7 @@ FROM food f
 
 Статистический скалярный вложенный запрос — это вложенный запрос, имеющий агрегатную функцию в проекции или фильтре, результатом которой является единственное значение.
 
-**Пример 1** .
+**Пример 1**.
 
 Вот вложенный запрос с одним выражением агрегатной функции в его проекции:
 
@@ -518,7 +519,7 @@ JOIN n IN (SELECT VALUE ARRAY(SELECT t FROM t in c.tags WHERE t.name != 'infant 
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Данные документов модели](modeling-data.md)

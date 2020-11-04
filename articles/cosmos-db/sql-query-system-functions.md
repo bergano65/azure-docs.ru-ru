@@ -3,23 +3,24 @@ title: Системные функции на языке запросов Azure 
 description: Сведения о встроенных и определяемых пользователем системных функциях SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 10/15/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: fc8473f1caf4a17aea926d2729e7db7918db40d7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b8883d7040ad5c73a376838f7cb1aaa1b558bfbd
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93094053"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340840"
 ---
 # <a name="system-functions-azure-cosmos-db"></a>Системные функции (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
  Cosmos DB предоставляет множество встроенных функций SQL. Ниже перечислены их категории.  
   
-|Группа функций|Описание|Operations|  
+|Группа функций|Описание|Операции|  
 |--------------|-----------------|-----------------| 
 |[Функции массива](sql-query-array-functions.md)|Функции массивов выполняют операцию над входным массивом и возвращают числовое, логическое значение либо массив. | [ARRAY_CONCAT](sql-query-array-concat.md), [ARRAY_CONTAINS](sql-query-array-contains.md), [ARRAY_LENGTH](sql-query-array-length.md), [ARRAY_SLICE](sql-query-array-slice.md) |
 |[Функции даты и времени](sql-query-date-time-functions.md)|Функции даты и времени позволяют получить текущую дату и время в формате UTC в двух формах. числовая метка времени, значение которой является эпохой UNIX в миллисекундах или в виде строки, которая соответствует формату ISO 8601. | [Жеткуррентдатетиме](sql-query-getcurrentdatetime.md), [жеткурренттиместамп](sql-query-getcurrenttimestamp.md) |
@@ -36,7 +37,7 @@ ms.locfileid: "93094053"
 
 Основное различие между функциями Cosmos DB и ANSI SQL-функциями заключается в том, что функции Cosmos DB предназначены для работы с данными без схем и смешанными схемами. Например, если свойство отсутствует или имеет нечисловое значение, такое как `unknown` , элемент пропускается вместо возврата ошибки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения об Azure Cosmos DB](introduction.md)
 - [Функции массива](sql-query-array-functions.md)

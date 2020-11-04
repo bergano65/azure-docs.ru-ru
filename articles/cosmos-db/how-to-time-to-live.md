@@ -3,16 +3,17 @@ title: Настройка срока жизни в Azure Cosmos DB и управ
 description: Узнайте, как настроить срок жизни для контейнера и элемента в Azure Cosmos DB, а затем управлять им.
 author: anfeldma-ms
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 7cf0f91a655901373b02a51004cf77eb25c8cf8e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 2ddba95f9ccc25d536638dbc68c41027d26e71c7
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085893"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341014"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -29,12 +30,12 @@ ms.locfileid: "93085893"
 
 2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 
-3. Откройте область **Data Explorer** .
+3. Откройте область **Data Explorer**.
 
 4. Выберите существующий контейнер, разверните его и измените следующие значения:
 
    * Откройте окно **Scale & Settings** (Параметры масштабирования).
-   * В разделе **Параметры** найдите **Срок жизни** .
+   * В разделе **Параметры** найдите **Срок жизни**.
    * Выберите **Включен (по умолчанию)** или **Включен** и задайте значение срока жизни.
    * Щелкните **Сохранить** , чтобы сохранить изменения.
 
@@ -213,16 +214,16 @@ async function createcontainerWithTTL(db: Database, containerDefinition: Contain
 
 2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 
-3. Откройте область **Data Explorer** .
+3. Откройте область **Data Explorer**.
 
 4. Выберите существующий контейнер, разверните его и измените следующие значения:
 
    * Откройте окно **Scale & Settings** (Параметры масштабирования).
-   * В разделе **Параметры** найдите **Срок жизни** .
+   * В разделе **Параметры** найдите **Срок жизни**.
    * Выберите **вкл. (нет значения по умолчанию)** **, а затем** установите значение TTL. 
    * **Сохраните** изменения.
 
-5. Затем перейдите к элементу, для которого нужно установить срок жизни, добавьте свойство `ttl` и выберите **Обновить** . 
+5. Затем перейдите к элементу, для которого нужно установить срок жизни, добавьте свойство `ttl` и выберите **Обновить**. 
 
    ```json
    {
@@ -559,7 +560,7 @@ container = database.createContainerIfNotExists(containerProperties, 400).block(
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о сроке жизни см. в следующей статье:
 

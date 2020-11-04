@@ -6,15 +6,15 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/09/2020
-ms.openlocfilehash: 30f139c92fe426369c609dabd826a7bff1617e72
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 0791ed6882feedeab47b75eff6a69bf0a49ab7ee
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098048"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341299"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Часто задаваемые вопросы об Azure Synapse Link для Azure Cosmos DB
-[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
+[!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 Решение Azure Synapse Link для Azure Cosmos DB обеспечивает тесную интеграцию между Azure Cosmos DB и Azure Synapse Analytics. Оно позволяет клиентам выполнять аналитику операционных данных почти в реальном времени с полной изоляцией выполнения от транзакционных рабочих нагрузок и без применения конвейера извлечения, преобразования и загрузки. В этой статье даны ответы на часто задаваемые вопросы об Azure Synapse Link для Azure Cosmos DB.
 
@@ -157,7 +157,7 @@ Azure Cosmos DB гарантирует изолированное выполн�
 
 Контейнер хранилища транзакций будет представлен следующим значком:
 
-:::image type="content" source="./media/synapse-link-frequently-asked-questions/transactional-store-icon.png" alt-text="Значок контейнера Azure Cosmos DB с поддержкой аналитического хранилища":::
+:::image type="content" source="./media/synapse-link-frequently-asked-questions/transactional-store-icon.png" alt-text="Значок контейнера Azure Cosmos DB с поддержкой хранилища транзакций":::
  
 ### <a name="how-do-you-pass-azure-cosmos-db-credentials-from-azure-synapse-studio"></a>Как передавать учетные данные Azure Cosmos DB из Azure синапсе Studio?
 

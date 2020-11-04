@@ -4,15 +4,16 @@ description: Используйте функции Azure для подключе
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 83a422bbdc4e33ecd955451bb3c1e305cee2b2f4
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7f4903cf29f15132db91e47d78efe5a556efd937
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93072847"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340249"
 ---
 # <a name="serverless-event-based-architectures-with-azure-cosmos-db-and-azure-functions"></a>Бессерверные архитектуры на основе событий с Azure Cosmos DB и функциями Azure
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -26,12 +27,12 @@ ms.locfileid: "93072847"
 > [!NOTE]
 > В настоящее время триггер функций Azure для Cosmos DB поддерживается только для API ядра (SQL).
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
 Чтобы реализовать поток на основе событий без сервера, вам потребуется:
 
-* **Отслеживаемый контейнер** . отслеживаемый контейнер — это контейнер Cosmos Azure, который отслеживается, и в нем хранятся данные, из которых создается веб-канал изменений. Любые операции вставки, обновления отслеживаемого контейнера отражаются в веб-канале изменений контейнера.
-* **Контейнер аренды** . контейнер аренды сохраняет состояние в нескольких динамических экземплярах функций Azure без сервера и включает динамическое масштабирование. Этот контейнер аренды можно вручную или автоматически создать с помощью триггера функций Azure для Cosmos DB. Чтобы автоматически создать контейнер аренды, установите флаг *креателеасеколлектионифнотексистс* в [конфигурации](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md#configuration). Секционированные контейнеры аренды должны иметь `/id` Определение ключа секции.
+* **Отслеживаемый контейнер**. отслеживаемый контейнер — это контейнер Cosmos Azure, который отслеживается, и в нем хранятся данные, из которых создается веб-канал изменений. Любые операции вставки, обновления отслеживаемого контейнера отражаются в веб-канале изменений контейнера.
+* **Контейнер аренды**. контейнер аренды сохраняет состояние в нескольких динамических экземплярах функций Azure без сервера и включает динамическое масштабирование. Этот контейнер аренды можно вручную или автоматически создать с помощью триггера функций Azure для Cosmos DB. Чтобы автоматически создать контейнер аренды, установите флаг *креателеасеколлектионифнотексистс* в [конфигурации](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md#configuration). Секционированные контейнеры аренды должны иметь `/id` Определение ключа секции.
 
 ## <a name="create-your-azure-functions-trigger-for-cosmos-db"></a>Создание триггера функций Azure для Cosmos DB
 

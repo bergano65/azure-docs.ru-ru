@@ -4,17 +4,16 @@ description: Хранение строк подключения, ключей и
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
-ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: how-to
 ms.date: 05/23/2019
 ms.reviewer: sngun
-ms.openlocfilehash: bd67f9641a644d3302e1f8bc1e53ad14a3801e47
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6c5ef4f0ee0d68e2eae755f000423db4620b834d
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93092850"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341388"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Защита ключей Azure Cosmos с помощью Azure Key Vault 
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -35,22 +34,22 @@ ms.locfileid: "93092850"
 ## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
 1. Войдите на [портал Azure](https://portal.azure.com/).  
-2. Выберите **Создать ресурс > Безопасность > Key Vault** .  
+2. Выберите **Создать ресурс > Безопасность > Key Vault**.  
 3. В разделе **Создать Key Vault** введите приведенные ниже сведения.  
-   * **Имя** . Укажите уникальное имя для Key Vault.  
-   * **Подписка** . Выберите подписку, которую нужно использовать.  
+   * **Имя**. Укажите уникальное имя для Key Vault.  
+   * **Подписка**. Выберите подписку, которую нужно использовать.  
    * В разделе **Группа ресурсов** выберите **создать** и введите имя группы ресурсов.  
    * Выберите расположение в раскрывающемся меню "Расположение".  
    * Для других параметров оставьте значения по умолчанию.  
-4. Указав приведенные выше сведения, выберите **Создать** .  
+4. Указав приведенные выше сведения, выберите **Создать**.  
 
 ## <a name="add-azure-cosmos-db-access-keys-to-the-key-vault"></a>Добавление в Key Vault ключей доступа Azure Cosmos DB
-1. Перейдите в хранилище Key Vault, созданное на предыдущем шаге, и откройте вкладку **Секреты** .  
+1. Перейдите в хранилище Key Vault, созданное на предыдущем шаге, и откройте вкладку **Секреты**.  
 2. Выберите **+ создать/импорт** , 
 
-   * Выберите **вручную** для **параметров отправки** .
+   * Выберите **вручную** для **параметров отправки**.
    * Укажите **имя** для секрета.
-   * Укажите строку подключения вашей учетной записи Cosmos DB в поле **Значение** . Затем нажмите **Создать** .
+   * Укажите строку подключения вашей учетной записи Cosmos DB в поле **Значение**. Затем нажмите **Создать**.
 
    :::image type="content" source="./media/access-secrets-from-keyvault/create-a-secret.png" alt-text="Создание секрета":::
 
@@ -62,20 +61,20 @@ ms.locfileid: "93092850"
 
 1. Создайте веб-приложение Azure или загрузите его из [репозитория GitHub](https://github.com/Azure/azure-cosmosdb-dotnet/tree/master/Demo/keyvaultdemo). Это простое приложение MVC.  
 
-2. Распакуйте загруженное приложение и откройте файл **HomeController.cs** . Обновите идентификатор секрета в следующей строке:
+2. Распакуйте загруженное приложение и откройте файл **HomeController.cs**. Обновите идентификатор секрета в следующей строке:
 
    `var secret = await keyVaultClient.GetSecretAsync("<Your Key Vault’s secret identifier>")`
 
 3. **Сохраните** файл и выполните **сборку** решения.  
-4. Затем разверните приложение в Azure. Щелкните проект правой кнопкой мыши и выберите **Опубликовать** . Создайте новый профиль службы приложения (вы можете назвать приложение WebAppKeyVault1) и выберите **Опубликовать** .   
+4. Затем разверните приложение в Azure. Щелкните проект правой кнопкой мыши и выберите **Опубликовать**. Создайте новый профиль службы приложения (вы можете назвать приложение WebAppKeyVault1) и выберите **Опубликовать**.   
 
 5. После этого приложение будет развернуто. На портале Azure перейдите к развернутому веб-приложению и включите **управляемое удостоверение службы** этого приложения.  
 
-   :::image type="content" source="./media/access-secrets-from-keyvault/turn-on-managed-service-identity.png" alt-text="Создание секрета":::
+   :::image type="content" source="./media/access-secrets-from-keyvault/turn-on-managed-service-identity.png" alt-text="Управляемое удостоверение службы":::
 
 Если вы запустите приложение сейчас, отобразится следующая ошибка. Она возникает, потому что вы не предоставили этому приложению прав на использование Key Vault.
 
-:::image type="content" source="./media/access-secrets-from-keyvault/app-deployed-without-access.png" alt-text="Создание секрета":::
+:::image type="content" source="./media/access-secrets-from-keyvault/app-deployed-without-access.png" alt-text="Приложение развернуто без доступа":::
 
 ## <a name="register-the-application--grant-permissions-to-read-the-key-vault"></a>Регистрация приложения и предоставление ему разрешений на чтение из Key Vault
 
@@ -83,17 +82,17 @@ ms.locfileid: "93092850"
 
 1. Перейдите на портал Azure и откройте **Key Vault** , созданное в предыдущем разделе.  
 
-2. Откройте **политики доступа** , выберите **+ Добавить** , найдите развернутое веб-приложение, выберите разрешения и нажмите кнопку **ОК** .  
+2. Откройте **политики доступа** , выберите **+ Добавить** , найдите развернутое веб-приложение, выберите разрешения и нажмите кнопку **ОК**.  
 
-   :::image type="content" source="./media/access-secrets-from-keyvault/add-access-policy.png" alt-text="Создание секрета":::
+   :::image type="content" source="./media/access-secrets-from-keyvault/add-access-policy.png" alt-text="Добавление политики доступа":::
 
 Теперь, запустив приложение, вы сможете прочитать секрет из Key Vault.
 
-:::image type="content" source="./media/access-secrets-from-keyvault/app-deployed-with-access.png" alt-text="Создание секрета":::
+:::image type="content" source="./media/access-secrets-from-keyvault/app-deployed-with-access.png" alt-text="Развернутое приложение, в котором отображается секрет":::
  
 Аналогичным образом вы можете предоставить пользователю доступ к Key Vault. Вам нужно добавить себя в Key Vault. Для этого выберите **Политики доступа** , а затем предоставьте все необходимые разрешения для запуска приложения из Visual Studio. Если это приложение запускается с вашего рабочего стола, оно использует ваш идентификатор.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о настройке брандмауэра для Azure Cosmos DB см. в статье [Поддержка брандмауэра](how-to-configure-firewall.md) .
 * Чтобы настроить конечную точку службы для виртуальной сети, перейдите к статье [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы для виртуальной сети Azure](how-to-configure-vnet-service-endpoint.md).

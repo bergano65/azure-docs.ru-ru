@@ -3,17 +3,18 @@ title: Устранение неполадок с сообщением "слиш
 description: Узнайте, как диагностировать и устранить исключение слишком большого заголовка запроса.
 author: j82w
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.date: 07/13/2020
 ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: fff9bc55b324875601a2c4e68835a17c61c3769b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a14503bc56777563b6360143efaa86a136b22278
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93079263"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340526"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-request-header-too-large-message"></a>Диагностика и устранение неполадок Azure Cosmos DB сообщения "слишком большой заголовок запроса"
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -47,6 +48,6 @@ ms.locfileid: "93079263"
 1. Следуйте указаниям в статьях с советами по повышению производительности [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) или [.NET v2](performance-tips.md) . Преобразуйте приложение для использования режима прямого подключения с протоколом TCP. Режим прямого соединения с протоколом TCP не имеет ограничений на размер заголовка, таких как протокол HTTP, поэтому это позволяет избежать этой проблемы. 
 1. Если режим прямого подключения с протоколом TCP не является параметром для вашей рабочей нагрузки, задайте `ResponseContinuationTokenLimitInKb` параметр. Этот параметр можно найти в `FeedOptions` версии 2 или `QueryRequestOptions` 3.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Диагностика и устранение неполадок](troubleshoot-dot-net-sdk.md) при использовании пакета SDK для Azure Cosmos DB .NET.
 * Ознакомьтесь с рекомендациями по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md).

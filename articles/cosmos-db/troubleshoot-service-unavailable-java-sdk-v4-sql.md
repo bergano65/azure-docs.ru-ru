@@ -3,18 +3,20 @@ title: Устранение неполадок с Azure Cosmos DB недосту
 description: Узнайте, как диагностировать и исправлять исключения, недоступные для Azure Cosmos DB службы, с помощью пакета SDK для Java v4.
 author: kushagrathapar
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.date: 10/28/2020
 ms.author: kuthapar
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: bba6465b8978b58fa3ef7be2a7575018828eabb2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 03c899307b00010ca87b279ed720b92946d3673c
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93103157"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340096"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-java-v4-sdk-service-unavailable-exceptions"></a>Диагностика и устранение неполадок Azure Cosmos DB служба пакета SDK для Java версии 4 недоступна
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 Пакету SDK для Java v4 не удалось подключиться к Azure Cosmos DB.
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок
@@ -36,6 +38,6 @@ Exception in thread "main" ServiceUnavailableException{userAgent=azsdk-java-cosm
 Проверьте [состояние Azure](https://status.azure.com/status) , чтобы узнать, существует ли текущая ошибка.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Диагностика и устранение неполадок](troubleshoot-java-sdk-v4-sql.md) при использовании пакета SDK для Java версии 4 Azure Cosmos DB.
 * Сведения о рекомендациях по производительности для [пакета SDK для Java v4](performance-tips-java-sdk-v4-sql.md).

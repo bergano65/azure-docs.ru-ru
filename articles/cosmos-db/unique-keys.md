@@ -4,15 +4,16 @@ description: Узнайте, как определить и использова
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 3128f6783dc96fffb577a378cd1aaea4e58c7a4f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c3c42146ba93115e257924c23dc34785c8258533
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099204"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340458"
 ---
 # <a name="unique-key-constraints-in-azure-cosmos-db"></a>Ограничения для уникальных ключей в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -54,7 +55,7 @@ ms.locfileid: "93099204"
 
 * В именах уникальных ключей учитывается регистр. Например, рассмотрим контейнер с ограничением уникального ключа, установленным в значение `/address/zipcode` . Если в данных есть поле с именем `ZipCode` , Azure Cosmos DB вставляет в качестве уникального ключа значение null, так как `zipcode` не совпадает с `ZipCode` . Учет регистра в этой ситуации приводит к тому, что другие записи со значением ZipCode добавлены не будут, ведь новое значение null нарушит требование уникальности ключа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [логических секциях](partitioning-overview.md)
 * Узнайте, [как определить уникальные ключи](how-to-define-unique-keys.md) при создании контейнера

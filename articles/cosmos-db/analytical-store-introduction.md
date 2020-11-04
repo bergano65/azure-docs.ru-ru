@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: rosouz
-ms.openlocfilehash: 90d059aaa16e24df1e71d4d439cb9aa23b786c77
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d0727f512ab24342b493ba2563262a9253d95d8c
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323204"
+ms.locfileid: "93339979"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store-preview"></a>Что такое Azure Cosmos DB аналитическое хранилище (Предварительная версия)?
-[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
+[!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 > [!IMPORTANT]
 > Аналитическое хранилище Azure Cosmos DB в настоящее время находится на этапе предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -150,13 +150,13 @@ salary: 1000000
 | Double |  ". float64" |    24,99|
 | Массив | ". Array" |    ["a", "b"]|
 |Двоичные данные | ". binary" |0|
-|Логическое значение    | ". bool"   |True|
+|Логическое значение    | ". bool"   |Да|
 |Int32  | ". Int32"  |123|
 |Int64  | ". Int64"  |255486129307|
-|NULL   | ". null"   | null|
+|Null   | ". null"   | null|
 |Строка|    ". String" | "ABC"|
 |Отметка времени |    ". timestamp" |  Отметка времени (0, 0)|
-|Дата и время   |". Date"    | Исодате ("2020-08-21T07:43:07.375 Z")|
+|DateTime   |". Date"    | Исодате ("2020-08-21T07:43:07.375 Z")|
 |ObjectId   |". objectId"    | ObjectId ("5f3f7b59330ec25c132623a2")|
 |Документ   |". Object" |    {"a": "a"}|
 

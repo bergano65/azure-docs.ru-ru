@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 04/28/2020
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: 8fd794822e9e4fe282d6ef8a8ccf1eb908c03560
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 9339ac86595a1edbbd996e410d416074680695ed
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321661"
+ms.locfileid: "93340045"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Аудит для базы данных SQL Azure и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -104,6 +104,13 @@ ms.locfileid: "93321661"
   > Аудит операций поддержки Майкрософт (Предварительная версия) не поддерживает назначение учетной записи хранения. Чтобы включить эту возможность, необходимо настроить Log Analytics рабочую область или назначение концентратора событий.
 
 ![Снимок экрана служба поддержки Майкрософт операций](./media/auditing-overview/support-operations.png)
+
+Чтобы просматривать журналы аудита служба поддержки Майкрософт операций в рабочей области Log Analytics, используйте следующий запрос:
+
+```kusto
+AzureDiagnostics
+| where Category == "DevOpsOperationsAudit"
+```
 
 ### <a name="audit-to-storage-destination"></a><a id="audit-storage-destination"></a>Запись журналов аудита в целевое хранилище
 
@@ -205,9 +212,7 @@ ms.locfileid: "93321661"
 - Дополнительные методы
 
   - После загрузки нескольких файлов или вложенной папки, содержащей файлы журнала, можно объединить их локально, как описано выше в инструкциях по объединению файлов аудита в SSMS.
-  - Чтобы просмотреть журналы аудита больших двоичных объектов программным способом:
-
-    - Используйте [запросы к файлам расширенных событий](https://sqlscope.wordpress.com/2014/11/15/reading-extended-event-files-using-client-side-tools-only/) с помощью PowerShell.
+  - Программное Просмотр журналов аудита BLOB-объектов: [запрос файлов расширенных событий](https://sqlscope.wordpress.com/2014/11/15/reading-extended-event-files-using-client-side-tools-only/) с помощью PowerShell.
 
 ## <a name="production-practices"></a><a id="production-practices"></a>Рекомендации для рабочей среды
 

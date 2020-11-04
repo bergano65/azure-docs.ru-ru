@@ -3,15 +3,16 @@ title: Начало работы с запросами SQL в Azure Cosmos DB
 description: Узнайте, как использовать SQL запросы для запроса данных из Azure Cosmos DB. Образец данных можно передать в контейнер в Azure Cosmos DB и выполнить запрос.
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/24/2020
 ms.author: tisande
-ms.openlocfilehash: ee38e076e76111f4f4e6bf3b8fa8dde8c3debcfc
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7a4b2a778fc3d520c0ce85bed5bec0b49fc14384
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100819"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341915"
 ---
 # <a name="getting-started-with-sql-queries"></a>Getting started with SQL queries (Начало работы с запросами SQL)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -179,7 +180,7 @@ ms.locfileid: "93100819"
 
 * Контейнер Cosmos — это коллекция элементов JSON без схемы. Отношения внутри и между элементами контейнера неявно фиксируются с помощью включения, а не связей первичного и внешнего ключей. Эта функция важна для соединений внутри элемента, обсуждаемых далее в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения об Azure Cosmos DB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)

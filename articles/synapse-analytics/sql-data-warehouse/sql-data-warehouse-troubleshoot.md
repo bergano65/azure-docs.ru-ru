@@ -11,12 +11,12 @@ ms.date: 02/04/2019
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: fe20304341d6e99eb77ad2818e675b0063efd693
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a50554c73958400f1f16348d3b8fb2bac88ac61b
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319515"
+ms.locfileid: "93340283"
 ---
 # <a name="troubleshooting-synapse-sql-in-azure-synapse-analytics"></a>Устранение неполадок с Synapse SQL в Azure Synapse Analytics
 
@@ -67,8 +67,6 @@ ms.locfileid: "93319515"
 | :------------------------------------ | :----------------------------------------------------------- |
 | Неподдерживаемые функции базы данных SQL     | Ознакомьтесь с разделом [Неподдерживаемые функции таблиц](sql-data-warehouse-tables-overview.md#unsupported-table-features). |
 | Неподдерживаемые типы данных базы данных SQL   | Ознакомьтесь с разделом [Неподдерживаемые типы данных](sql-data-warehouse-tables-data-types.md#identify-unsupported-data-types).        |
-| Ограничения относительно инструкций DELETE и UPDATE         | Ознакомьтесь с обходными решениями для инструкций [UPDATE](sql-data-warehouse-develop-ctas.md#ansi-join-replacement-for-update-statements) и [DELETE](sql-data-warehouse-develop-ctas.md#ansi-join-replacement-for-delete-statements), а также с [использованием инструкции CTAS для обхода неподдерживаемого синтаксиса UPDATE и DELETE](sql-data-warehouse-develop-ctas.md). |
-| Инструкция MERGE не поддерживается      | Ознакомьтесь с [обходными решениями для инструкции MERGE](sql-data-warehouse-develop-ctas.md#replace-merge-statements).                  |
 | Ограничения хранимых процедур          | Ознакомьтесь с [ограничениями хранимых процедур](sql-data-warehouse-develop-stored-procedures.md#limitations) . |
 | Определяемые пользователем функции не поддерживают инструкции SELECT | Это текущее ограничение определяемых пользователем функций.  Сведения о поддерживаемом синтаксисе см. в статье, посвященной инструкции [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). |
 
@@ -80,6 +78,6 @@ ms.locfileid: "93319515"
 * [Запросы функций](https://feedback.azure.com/forums/307516-sql-data-warehouse)
 * [Видео](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
 * [Создание запроса в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md)
-* [Страница вопросов и ответов Microsoft](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html)
+* [Раздел вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html)
 * [Форум Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw)
 * [Twitter](https://twitter.com/hashtag/SQLDW)

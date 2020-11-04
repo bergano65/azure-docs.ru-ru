@@ -4,15 +4,16 @@ description: Узнайте, как определять, диагностиро
 author: timsander1
 ms.service: cosmos-db
 ms.topic: troubleshooting
+ms.subservice: cosmosdb-mongo
 ms.date: 10/12/2020
 ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: ece814ea316fe62bc2b8b64036b08983f65ccbef
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 88ef081c75a64b5cb7517ba6994834b3a64a0e6f
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096365"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340895"
 ---
 # <a name="troubleshoot-query-issues-when-using-the-azure-cosmos-db-api-for-mongodb"></a>Устранение проблем с запросами при использовании Azure Cosmos DB API для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -344,7 +345,7 @@ Azure Cosmos DB использует [секционирование](partitioni
 
 Это значение `estimatedDelayFromRateLimitingInMilliseconds` дает представление о возможных преимуществах задержки при увеличении пропускной способности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок с производительностью запросов (API SQL)](troubleshoot-query-performance.md)
 * [Управление индексированием в API Azure Cosmos DB для MongoDB](mongodb-indexing.md)

@@ -3,15 +3,16 @@ title: Использование встроенных команд и функ�
 description: Узнайте, как использовать встроенные команды и функции для выполнения стандартных операций с помощью встроенных записных книжек Python в Azure Cosmos DB.
 author: deborahc
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: dech
-ms.openlocfilehash: 32c433455e1075045323dc466b41ad19ac68f454
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 381aa88326440aba91e02393cfe2bdb1e2c38097
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93074358"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340419"
 ---
 # <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db-python-notebooks-preview"></a>Использование встроенных команд и функций записных книжек Python в Azure Cosmos DB (предварительная версия)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -201,7 +202,7 @@ primary_key = COSMOS.KEY
 ## <a name="reset-notebooks-workspace"></a>Сброс рабочей области записных книжек
 Чтобы сбросить рабочую область записных книжек до параметров по умолчанию, выберите **Сбросить рабочую область** на панели команд. При этом будут удалены все установленные пользовательские пакеты и перезапущен сервер Jupyter. Ваши записные книжки, файлы и ресурсы Azure Cosmos затронуты не будут.  
 
-:::image type="content" source="media/use-notebook-features-and-commands/reset-workspace.png" alt-text="Обозреватель данных nteract":::
+:::image type="content" source="media/use-notebook-features-and-commands/reset-workspace.png" alt-text="Сброс рабочей области записных книжек":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

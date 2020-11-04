@@ -3,21 +3,21 @@ title: Датетимедифф на языке запросов Azure Cosmos DB
 description: Дополнительные сведения о функции SQL System Датетимедифф в Azure Cosmos DB.
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/09/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: d51c8774a8646a4b961906ee77913d8edbe752ee
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 09b801c48bf2998a2d8926009cae76287c1ac9b6
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095838"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342272"
 ---
 # <a name="datetimediff-azure-cosmos-db"></a>Датетимедифф (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
-
-Возвращает число (как целое число со знаком) указанных границ Датетимепарт, пересекающихся между заданными *StartDate* и *EndDate* .
+Возвращает число (как целое число со знаком) указанных границ Датетимепарт, пересекающихся между заданными *StartDate* и *EndDate*.
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -37,7 +37,7 @@ DateTimeDiff (<DateTimePart> , <StartDate> , <EndDate>)
 | День          | "Day", "DD", "d"     |
 | Час         | "Hour", "HH"         |
 | Минута       | "Minute", "MI", "n"  |
-| Second       | "Second", "SS", "s"  |
+| Секунда       | "Second", "SS", "s"  |
 | Миллисекунда  | "миллисекунда", "MS"  |
 | Микросекунды  | "микросекунда", "MCS" |
 | Потребовавшееся   | "наносекундных", "NS"   |
@@ -119,7 +119,7 @@ SELECT DateTimeDiff("hh", "2020-01-01T01:00:00.1234527Z", "2020-01-01T01:59:59.1
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

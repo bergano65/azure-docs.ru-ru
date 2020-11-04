@@ -3,16 +3,17 @@ title: Тиккстодатетиме на языке запросов Azure Cos
 description: Дополнительные сведения о функции SQL System Тиккстодатетиме в Azure Cosmos DB.
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 08/18/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 12d286fb5c8cf6d602d95da53ef8de376f9a49cf
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: f40286a39694307ac43ecd60f6861d509f760990
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93093866"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340807"
 ---
 # <a name="tickstodatetime-azure-cosmos-db"></a>Тиккстодатетиме (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -69,7 +70,7 @@ SELECT TicksToDateTime(15943368134575530) AS DateTime
 ]
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

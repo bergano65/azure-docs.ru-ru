@@ -3,16 +3,17 @@ title: Язык запросов POWER in Azure Cosmos DB
 description: Сведения о возAzure Cosmos DBии функциональной возможности SQL System.
 author: ginamr
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 41c5cc1a6032a0aee16f1922fc59349449c65b55
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 39db52223feea63a4e3afbd4775f884acbbca548
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93091947"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341694"
 ---
 # <a name="power-azure-cosmos-db"></a>МОЩНОСТЬ (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -31,7 +32,7 @@ POWER (<numeric_expr1>, <numeric_expr2>)
    Числовое выражение.  
   
 *numeric_expr2*  
-   Степень, в которую следует возвести *numeric_expr1* .  
+   Степень, в которую следует возвести *numeric_expr1*.  
   
 ## <a name="return-types"></a>Типы возвращаемых данных
   
@@ -51,7 +52,7 @@ SELECT POWER(2, 3) AS pow1, POWER(2.5, 3) AS pow2
 [{pow1: 8, pow2: 15.625}]  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

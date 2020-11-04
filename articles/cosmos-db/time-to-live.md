@@ -4,15 +4,16 @@ description: Функция TTL в Microsoft Azure Cosmos DB позволяет 
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.reviewer: sngun
-ms.openlocfilehash: d4815f4be3c8ef1a2c262d6715756776a537eac1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: f439fcd8b2aa1c75e1aff2c6b775921beabbcddf
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101057"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340563"
 ---
 # <a name="time-to-live-ttl-in-azure-cosmos-db"></a>Срок жизни в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -85,7 +86,7 @@ ms.locfileid: "93101057"
 |TTL =-1   |Срок жизни включен. Срок действия элемента никогда не истечет.|
 |TTL = 2000 |Срок жизни включен. Срок действия элемента истекает через 2000 секунд.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как настроить срок жизни в следующих статьях:
 

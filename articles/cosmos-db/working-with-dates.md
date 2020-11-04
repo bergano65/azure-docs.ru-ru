@@ -2,17 +2,18 @@
 title: Работа с датами в Azure Cosmos DB
 description: Узнайте, как хранить, индексировать и запрашивать объекты времени в Azure Cosmos DB
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c9df71763c610f9773949ef618de7840ae752d82
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b74a403cef8474ae32d98a20899437c2124f3abf
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93073576"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340385"
 ---
 # <a name="working-with-dates-in-azure-cosmos-db"></a>Работа с датами в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]

@@ -3,17 +3,18 @@ title: Устранение неполадок Azure Cosmos DB HTTP 408 или �
 description: Узнайте, как диагностировать и исправить исключения времени ожидания запроса пакета SDK для .NET.
 author: j82w
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.date: 08/06/2020
 ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 735c098fcf6fed76019850a1cb58d9eb6c485b7a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c8d448cf335f328b5ae55579fd30127ef0e37e9d
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101023"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340504"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-net-sdk-request-timeout-exceptions"></a>Диагностика и устранение неполадок с Azure Cosmos DB исключениями времени ожидания запроса пакета SDK для .NET
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -89,6 +90,6 @@ Azure Cosmos DB распределяет общую пропускную спо�
 ### <a name="failure-rate-violates-the-azure-cosmos-db-sla"></a>Частота сбоев нарушает Azure Cosmos DB соглашения об уровне обслуживания
 Обратитесь в [службу поддержки Azure](https://aka.ms/azure-support).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Диагностика и устранение неполадок](troubleshoot-dot-net-sdk.md) при использовании пакета SDK для Azure Cosmos DB .NET.
 * Ознакомьтесь с рекомендациями по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md).

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 07/18/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: d21b59b8822684598ac2fc3fd813278c1cf0c698
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 8aae75aca585c30c0678c88247a8ecfe8a0b801d
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319811"
+ms.locfileid: "93340266"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -84,7 +84,6 @@ ms.locfileid: "93319811"
 | **DataFactory**  | Фабрика данных Azure | both | Нет | Нет |
 | **DataFactoryManagement** | Трафик управления для Фабрики данных Azure. | Исходящие | Нет | Нет |
 | **Dynamics365ForMarketingEmail** | Диапазоны адресов для службы маркетинговой электронной почты Dynamics 365. | Исходящие | Да | Нет |
-| **ElasticAFD** | Эластичная служба Azure Front Door. | both | Нет | Нет |
 | **EventHub** | . | Исходящие | Да | Да |
 | **GatewayManager** | Трафик управления для развертываний, выделенных для VPN-шлюза Azure и шлюза приложений. | Входящий трафик | Нет | Нет |
 | **GuestAndHybridManagement** | Служба автоматизации Azure и гостевая конфигурация. | Исходящие | Нет | Да |

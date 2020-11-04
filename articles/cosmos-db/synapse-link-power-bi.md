@@ -6,22 +6,21 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: acomet
-ms.openlocfilehash: 38077dca1b8a27098e8db17354b82340a651b880
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 55a73ada39f4f48aeb22c5482bd85d1092d54c35
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305180"
+ms.locfileid: "93342255"
 ---
-# <a name="use-power-bi-and-serverless-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Использование Power BI и бессерверного пула SQL для анализа данных Azure Cosmos DB с помощью ссылки синапсе (Предварительная версия)
-
-[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
+# <a name="use-power-bi-and-serverless-synapse-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Использование Power BI и бессерверного пула SQL синапсе для анализа данных Azure Cosmos DB с помощью ссылки синапсе (Предварительная версия) 
+[!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 Из этой статьи вы узнаете, как создать бессерверную базу данных пула SQL и представления по ссылке синапсе для Azure Cosmos DB. Вы запрашиваете Azure Cosmos DB контейнеры, а затем создаете модель с Power BI в этих представлениях для отражения этого запроса.
 
 В этом сценарии вы будете использовать фиктивные данные о продажах продуктов в розничном магазине партнера. Вы проанализируете доход на каждый магазин, основываясь на большом семейе и влиянии рекламы на конкретную неделю. В этой статье вы создадите два представления с именами **ретаилсалес** и **сторедемографикс** и запрос между ними. Образец данных по продукту можно получить из репозитория [GitHub](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем начать, обязательно создайте следующие ресурсы:
 
@@ -142,7 +141,7 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 
 :::image type="content" source="./media/synapse-link-power-bi/household-size-average-revenue-report.png" alt-text="Отчет, сравнивающий относительную важность размера семьи с средним доходом по магазину":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Использование T-SQL для запроса Azure Cosmos DB данных с помощью ссылки Azure синапсе](../synapse-analytics/sql/query-cosmos-db-analytical-store.md)
 

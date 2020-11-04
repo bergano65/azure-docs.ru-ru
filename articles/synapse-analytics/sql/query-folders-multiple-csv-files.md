@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 71ed590440a8c7e37a071b4eadfc09977ef91d5e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 424a1ef7a73b5abbdba0d89ededb44cb9efdd116
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310835"
+ms.locfileid: "93340994"
 ---
 # <a name="query-folders-and-multiple-files"></a>Запрашивание папок и нескольких файлов  
 
@@ -22,14 +22,14 @@ ms.locfileid: "93310835"
 
 Бессерверный пул SQL поддерживает чтение нескольких файлов и папок с помощью подстановочных знаков, которые похожи на подстановочные знаки, используемые в ОС Windows. Однако большая гибкость имеется, так как разрешено использование нескольких подстановочных знаков.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для начала **создайте базу данных** , в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
 
 Для выполнения примеров запросов вы будете использовать *CSV-файл или каталог такси* . В нем содержится Нью такси (желтый), который записывает данные с 2016 июля по 2018 июня. Файлы в *формате CSV или такси* именуются по годам и месяцу с использованием следующего шаблона: yellow_tripdata_ <year> - <month> . csv.
 
 ## <a name="read-all-files-in-folder"></a>Чтение всех файлов в папке
-    
+
 В приведенном ниже примере считываются все файлы данных Нью желтого такси из папки *CSV/такси* и возвращается общее число пассажиров и задается в год. Он также показывает использование агрегатных функций.
 
 ```sql
@@ -181,6 +181,49 @@ ORDER BY
 
 Так как у вас есть только одна папка, соответствующая критериям, результат запроса будет таким же, как и [чтение всех файлов в папке](#read-all-files-in-folder).
 
+## <a name="traverse-folders-recursively"></a>Рекурсивно просматривать папки
+
+Несерверный пул SQL может рекурсивно перемещаться по папкам, если в конце пути указан/* *. Следующий запрос будет считывать все файлы из всех папок и вложенных папок, расположенных в папке *CSV* .
+
+```sql
+SELECT
+    YEAR(pickup_datetime) as [year],
+    SUM(passenger_count) AS passengers_total,
+    COUNT(*) AS [rides_total]
+FROM OPENROWSET(
+        BULK 'csv/taxi/**', 
+        DATA_SOURCE = 'sqlondemanddemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
+        FIRSTROW = 2
+    )
+    WITH (
+        vendor_id VARCHAR(100) COLLATE Latin1_General_BIN2, 
+        pickup_datetime DATETIME2, 
+        dropoff_datetime DATETIME2,
+        passenger_count INT,
+        trip_distance FLOAT,
+        rate_code INT,
+        store_and_fwd_flag VARCHAR(100) COLLATE Latin1_General_BIN2,
+        pickup_location_id INT,
+        dropoff_location_id INT,
+        payment_type INT,
+        fare_amount FLOAT,
+        extra FLOAT,
+        mta_tax FLOAT,
+        tip_amount FLOAT,
+        tolls_amount FLOAT,
+        improvement_surcharge FLOAT,
+        total_amount FLOAT
+    ) AS nyc
+GROUP BY
+    YEAR(pickup_datetime)
+ORDER BY
+    YEAR(pickup_datetime);
+```
+
+> [!NOTE]
+> Все файлы, доступ к которым осуществляется с помощью одной инструкции OPENROWSET, должны иметь одинаковую структуру (т. е. число столбцов и их типы данных).
+
 ## <a name="multiple-wildcards"></a>Несколько подстановочных знаков
 
 Можно использовать несколько подстановочных знаков на разных уровнях пути. Например, можно создать предыдущий запрос для чтения файлов только с данными 2017, из всех папок, имена которых начинаются с *t* и заканчиваются на *i*.
@@ -230,6 +273,6 @@ ORDER BY
 
 Так как у вас есть только одна папка, соответствующая критериям, результат запроса будет таким же, как и для [чтения подмножества файлов в папке](#read-subset-of-files-in-folder) , и для [чтения всех файлов из указанной папки](#read-all-files-from-specific-folder). Более сложные сценарии использования подстановочных знаков рассматриваются в разделе [файлы Parquet запросов](query-parquet-files.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения можно найти в статье о [файлах, связанных с запросом](query-specific-files.md) .

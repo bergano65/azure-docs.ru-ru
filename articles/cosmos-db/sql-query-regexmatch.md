@@ -3,16 +3,17 @@ title: Режексматч на языке запросов Azure Cosmos DB
 description: Сведения о системной функции Режексматч SQL в Azure Cosmos DB
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 16004ece7877358be54ba67c2f72eb3210f16fb0
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7f5b2831f45e902b312636e4133557a16ee7ec95
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098133"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341643"
 ---
 # <a name="regexmatch-azure-cosmos-db"></a>РЕЖЕКСМАТЧ (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]

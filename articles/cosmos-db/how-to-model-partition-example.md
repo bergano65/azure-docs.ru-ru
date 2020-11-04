@@ -3,16 +3,17 @@ title: Моделирование и секционирование данных
 description: Сведения о моделировании и секционировании на примере реального использования Azure Cosmos DB Core API
 author: ThomasWeiss
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: 92d15337f511f534c23ff97d274b344714812a5e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ef999d4b452f3f31942e1fb2ddb46efe760acff0
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100258"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342153"
 ---
 # <a name="how-to-model-and-partition-data-on-azure-cosmos-db-using-a-real-world-example"></a>Процесс моделирования и секционирования данных в Azure Cosmos DB на примере реального использования
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -583,7 +584,7 @@ function truncateFeed() {
 
 В канале изменений, который мы используем для распространения обновлений в другие контейнеры, постоянно сохраняются все обновления. Это позволяет получить все обновления, реализованные с момента создания контейнера, и применить денормализованные представления в одной операции "наверстывания", даже если в системе накопился большой объем данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучив эту вводную статью о моделировании и секционировании данных, вы можете перейти к следующим статьям с дополнительными сведениями о рассмотренных здесь понятиях:
 

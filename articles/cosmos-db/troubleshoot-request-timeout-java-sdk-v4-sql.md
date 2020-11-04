@@ -3,18 +3,21 @@ title: Устранение неполадок Azure Cosmos DB HTTP 408 или �
 description: Узнайте, как диагностировать и исправлять исключения времени ожидания запросов SDK для Java с помощью пакета SDK для Java версии 4.
 author: kushagrathapar
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.date: 10/28/2020
 ms.author: kuthapar
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 45452109582be40f007ae57a00c2a151f216bdb8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 442d6638e88462b1dc87e9321dc631fe0a4f3a10
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93103167"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340090"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-java-v4-sdk-request-timeout-exceptions"></a>Диагностика и устранение неполадок с Azure Cosmos DB исключениями времени ожидания запроса пакета SDK для Java версии 4
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
+
 Ошибка HTTP 408 возникает, если пакету SDK не удалось выполнить запрос до наступления предельного времени ожидания.
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок
@@ -87,6 +90,6 @@ Azure Cosmos DB распределяет общую пропускную спо�
 ### <a name="failure-rate-violates-the-azure-cosmos-db-sla"></a>Частота сбоев нарушает Azure Cosmos DB соглашения об уровне обслуживания
 Обратитесь в [службу поддержки Azure](https://aka.ms/azure-support).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Диагностика и устранение неполадок](troubleshoot-java-sdk-v4-sql.md) при использовании пакета SDK для Java версии 4 Azure Cosmos DB.
 * Узнайте о рекомендациях по производительности для [Java v4](performance-tips-java-sdk-v4-sql.md).

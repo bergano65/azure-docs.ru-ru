@@ -3,16 +3,17 @@ title: Индексирование в учетной записи API Cassandra
 description: Узнайте, как работает вторичное индексирование в учетной записи Azure Azure Cosmos DB API Cassandra.
 author: TheovanKraay
 ms.service: cosmos-db
+ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 04/04/2020
 ms.author: thvankra
 ms.reviewer: sngun
-ms.openlocfilehash: fc9c7c2f06b9d39243b8593b20ddeb7ffa2f886c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 98e8f713ad2e4eef47e40d89a23dbf49a98ad67c
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93092370"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93339902"
 ---
 # <a name="secondary-indexing-in-azure-cosmos-db-cassandra-api"></a>Дополнительное индексирование в Azure Cosmos DB API Cassandra
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -72,6 +73,6 @@ CREATE INDEX ON sampleks.t1 (lastname);
 drop index sampleks.t1_lastname_idx;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте, как работает [Автоматическое индексирование](index-overview.md) в Azure Cosmos DB
 * [Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB](cassandra-support.md)

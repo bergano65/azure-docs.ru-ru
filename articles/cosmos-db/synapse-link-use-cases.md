@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: ramkris
-ms.openlocfilehash: 3132f19bd80d6958d4d073f63eb6a01c103c2776
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7621a19b510d302454465f9fcbacec27a14dddf9
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101352"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93340181"
 ---
 # <a name="azure-synapse-link-for-azure-cosmos-db-near-real-time-analytics-use-cases"></a>Azure Synapse Link для Azure Cosmos DB: Варианты использования аналитики почти в реальном времени
-[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
+[!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 [Azure Synapse Link](synapse-link.md) для Azure Cosmos DB — это облачная гибридная транзакционно-аналитическая возможность обработки (HTAP), которая позволяет вам выполнять аналитику операционных данных почти в реальном времени. Synapse Link обеспечивает тесную эффективную интеграцию между Azure Cosmos DB и Azure Synapse Analytics.
 
@@ -71,7 +71,7 @@ ms.locfileid: "93101352"
 
 Сегодня поставщики конечных решений должны создавать безопасные и масштабируемые решения для электронной коммерции, которые отвечают требованиям как клиентов, так и бизнеса. Эти решения для электронной коммерции должны привлекать клиентов через настраиваемые продукты и предложения, обрабатывайте сделки быстро и безопасно, сосредоточившись на услугах по обработке заказов и обслуживании клиентов. Azure Cosmos DB вместе с последней версией Synapse Link для Azure Cosmos DB позволяет розничным продавцам создавать персонализированные рекомендации для клиентов в режиме реального времени. Они используют параметры малой задержки и настраиваемой совместимости для немедленного анализа, как показано в следующей архитектуре:
 
-:::image type="content" source="./media/synapse-link-use-cases/real-time-personalization.png" alt-text="Ссылка на Azure синапсе для Azure Cosmos DB в аналитике цепочки поставок " border="false":::
+:::image type="content" source="./media/synapse-link-use-cases/real-time-personalization.png" alt-text="Azure Synapse Link для Azure Cosmos DB при персонализации в режиме реального времени" border="false":::
 
 Варианты использования Synapse Link для Azure Cosmos DB:
 
@@ -83,7 +83,7 @@ ms.locfileid: "93101352"
 
 Ниже показана архитектура, использующая облачные возможности HTAP в Azure Synapse Link для Azure Cosmos DB в IoT-средстве прогнозного обслуживания.
 
-:::image type="content" source="./media/synapse-link-use-cases/iot-predictive-maintenance.png" alt-text="Ссылка на Azure синапсе для Azure Cosmos DB в аналитике цепочки поставок " border="false" :::
+:::image type="content" source="./media/synapse-link-use-cases/iot-predictive-maintenance.png" alt-text="Azure Synapse Link для Azure Cosmos DB в прогнозном обслуживании Интернета вещей" border="false" :::
 
 Варианты использования Synapse Link для Azure Cosmos DB:
 
@@ -105,7 +105,7 @@ ms.locfileid: "93101352"
 
 Azure Synapse Link позволяет Azure Cosmos DB не только использовать транзакционные рабочие нагрузки, но и выполнять аналитические рабочие нагрузки почти в реальном времени для хронологических операционных данных. Такой подход избавляет от необходимости использовать ETL и гарантирует изоляцию производительности от транзакционных рабочих нагрузок.
 
-На следующем рисунке показаны шаблоны рабочих нагрузок, использующих Azure Cosmos DB: :::image type="content" source="./media/synapse-link-use-cases/synapse-link-workload-patterns.png" alt-text="Ссылка на Azure синапсе для Azure Cosmos DB в аналитике цепочки поставок " border="false":::
+На следующем рисунке показаны шаблоны рабочих нагрузок, использующих Azure Cosmos DB: :::image type="content" source="./media/synapse-link-use-cases/synapse-link-workload-patterns.png" alt-text="Шаблоны рабочих нагрузок Azure Synapse Link для Azure Cosmos DB" border="false":::
 
 Давайте рассмотрим пример международной компании CompanyXYZ, занимающейся электронной коммерцией, которую осуществляет в 20 странах/регионах, чтобы продемонстрировать преимущества выбора Azure Cosmos DB как единой базы данных в режиме реального времени, поддерживающей транзакционные и аналитические требования к платформе управления запасами.
 

@@ -3,16 +3,17 @@ title: Определяемые пользователем функции (UDF) 
 description: Дополнительные сведения о функциях, определяемых пользователем, в Azure Cosmos DB.
 author: timsander1
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: 82251cf803168c282e55438ca801ae1f30a2d019
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 5c7050042d59156e1203b5830d710e61bd8eb382
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93093730"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341898"
 ---
 # <a name="user-defined-functions-udfs-in-azure-cosmos-db"></a>Определяемые пользователем функции (UDF) в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -139,7 +140,7 @@ API расширяет синтаксис SQL для поддержки поль
 
 Как показано в предыдущих примерах, UDF интегрирует возможности языка JavaScript с API SQL. Определяемые пользователем функции предоставляют богатый программируемый интерфейс для выполнения сложной процедурной логики с помощью встроенных возможностей среды выполнения JavaScript. API SQL предоставляет аргументы для определяемых пользователем функций для каждого исходного элемента на этапе обработки текущего предложения WHERE или SELECT. Результат легко встроить в общий конвейер выполнения. В целом, UDF — это отличные средства для выполнения сложной бизнес-логики в рамках запросов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения об Azure Cosmos DB](introduction.md)
 - [Системные функции](sql-query-system-functions.md)
