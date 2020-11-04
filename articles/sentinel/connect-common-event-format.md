@@ -1,6 +1,6 @@
 ---
 title: Подключение данных CEF к предварительной версии Azure Sentinel | Документация Майкрософт
-description: Подключите внешнее решение, которое отправляет сообщения в формате распространенных событий (CEF) в Azure Sentinel с помощью компьютера Linux в качестве прокси-сервера.
+description: Подключите внешнее решение, которое отправляет сообщения в формате распространенных событий (CEF) в Azure Sentinel с помощью компьютера Linux в качестве сервера пересылки журналов.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: dae8ce6cbad1ae08898ae439c1f621bef185b5df
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: e09b44504623516d41b6d310a82e78619477367c
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747895"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93304992"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
 
@@ -42,7 +42,7 @@ ms.locfileid: "92747895"
 
  ![CEF в локальной среде](./media/connect-cef/cef-syslog-onprem.png)
 
-## <a name="security-considerations"></a>Вопросы безопасности
+## <a name="security-considerations"></a>Замечания по безопасности
 
 Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
 
@@ -50,40 +50,49 @@ ms.locfileid: "92747895"
  
 ## <a name="prerequisites"></a>Предварительные требования
 
-Убедитесь, что компьютер Linux, используемый в качестве прокси-сервера, работает под управлением одной из следующих операционных систем:
+Убедитесь, что компьютер Linux, используемый в качестве сервера пересылки журналов, работает под управлением одной из следующих операционных систем:
 
 - 64-разрядная
-  - CentOS 7 и подверсии и выше (не 6)
+  - CentOS 7 и 8, включая подверсии (не 6)
   - Amazon Linux 2017.09
   - Oracle Linux 7
-  - Red Hat Enterprise Linux (RHEL) Server 7 и подверсии и выше (не 6)
-  - Debian GNU/Linux 8 и 9
+  - Red Hat Enterprise Linux (RHEL) Server 7 и 8, включая подверсии (не 6)
+  - Debian GNU/Linux 8, 9 и 10
   - Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
-  - SUSE Linux Enterprise Server 12
+  - SUSE Linux Enterprise Server 12, 15
+
 - 32-битная
-   - CentOS 7
-   - Oracle Linux 7
-   - Red Hat Enterprise Linux Server 7
-   - Debian GNU/Linux 8 и 9
-   - Ubuntu Linux 14.04 LTS и 16.04 LTS
+  - CentOS 7 и 8, включая подверсии (не 6)
+  - Oracle Linux 7
+  - Red Hat Enterprise Linux (RHEL) Server 7 и 8, включая подверсии (не 6)
+  - Debian GNU/Linux 8, 9 и 10
+  - Ubuntu Linux 14.04 LTS и 16.04 LTS
  
- - Версии управляющей программы
-   - Syslog-ng: 2,1-3.22.1
-   - Rsyslog: V8
+- Версии управляющей программы
+  - Syslog-ng: 2,1-3.22.1
+  - Rsyslog: V8
   
- - Поддерживаемые документы RFC системного журнала
-   - Syslog RFC 3164
-   - Syslog RFC 5424
+- Поддерживаемые документы RFC системного журнала
+  - Syslog RFC 3164
+  - Syslog RFC 5424
  
 Убедитесь, что компьютер соответствует следующим требованиям: 
+
 - Разрешения
-    - Необходимо иметь повышенные разрешения (sudo) на компьютере. 
+  - Необходимо иметь повышенные разрешения (sudo) на компьютере. 
+
 - Требования к программному обеспечению
-    - Убедитесь, что на вашем компьютере установлен Python 2,7.
+  - Убедитесь, что на вашем компьютере установлен Python 2,7.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
+В этом документе вы узнали, как Azure Sentinel собирает журналы CEF из решений и устройств безопасности. Сведения о том, как подключить решение к Azure Sentinel, см. в следующих статьях:
+
+- Шаг 1. [Подключение CEF путем развертывания сервера пересылки syslog/CEF](connect-cef-agent.md)
+- Шаг 2. [выполнение действий, связанных с решением](connect-cef-solution-config.md)
+- Шаг 3. [Проверка подключения](connect-cef-verify.md)
+
+Дополнительные сведения о том, что делать с данными, собранными в Azure Sentinel, см. в следующих статьях:
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
 

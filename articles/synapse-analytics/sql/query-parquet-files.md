@@ -1,6 +1,6 @@
 ---
-title: Запрос файлов Parquet с помощью SQL по запросу (предварительная версия)
-description: Из этой статьи вы узнаете, как запрашивать файлы Parquet, используя решение "SQL по запросу" (предварительная версия).
+title: Запрос файлов Parquet с помощью бессерверного пула SQL (Предварительная версия)
+description: В этой статье вы узнаете, как запрашивать файлы Parquet с помощью бессерверного пула SQL (Предварительная версия).
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2e00ecd6048239683951a2d1e60d3bcb0eb5aa68
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 3559b3724d14be6aade07c4884190afce30c0715
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242438"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93306859"
 ---
-# <a name="query-parquet-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics
+# <a name="query-parquet-files-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics
 
-В этой статье вы узнаете, как с помощью SQL по запросу (предварительная версия) написать запрос, который будет считывать файлы Parquet.
+В этой статье вы узнаете, как написать запрос с использованием бессерверного пула SQL (Предварительная версия), который будет считывать файлы Parquet.
 
 ## <a name="quickstart-example"></a>Пример краткого руководства
 
@@ -111,7 +111,7 @@ ORDER BY
 В приведенном ниже примере показаны возможности автоматического вывода схемы для файлов Parquet. Он возвращает число строк за сентябрь 2017 г. без указания схемы.
 
 > [!NOTE]
-> При чтении файлов Parquet указывать столбцы в предложении OPENROWSET WITH не требуется. В этом случае служба запросов SQL по запросу будет использовать метаданные в файле Parquet и привязывать столбцы по имени.
+> При чтении файлов Parquet указывать столбцы в предложении OPENROWSET WITH не требуется. В этом случае серверная служба запросов пула SQL будет использовать метаданные в файле Parquet и привязывать столбцы по имени.
 
 ```sql
 SELECT TOP 10 *
@@ -128,7 +128,7 @@ FROM
 Набор данных, представленный в этом примере, разделен на отдельные вложенные папки. Вы можете выбрать конкретные разделы с помощью функции filepath. В этом примере показаны суммы по тарифам за год, месяц и payment_type за первые три месяца 2017 года.
 
 > [!NOTE]
-> Запрос службы "SQL по запросу" совместим со схемой секционирования Hive на платформе Hadoop.
+> Запрос пула SQL без сервера совместим с схемой секционирования Hive/Hadoop.
 
 ```sql
 SELECT

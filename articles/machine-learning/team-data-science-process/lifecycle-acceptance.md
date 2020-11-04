@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 7224a7bb26ef491915df9fcb9b6b84ff171a9fc0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2294ccb1d958b229a71e45bb502b8134d8d5c7f
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76720526"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305658"
 ---
 # <a name="customer-acceptance-stage-of-the-team-data-science-process-lifecycle"></a>Этап приема клиентом в жизненном цикле командного процесса обработки и анализа данных
 
@@ -60,4 +60,4 @@ ms.locfileid: "76720526"
 
 Мы предоставляем полные пошаговые руководства, демонстрирующие все этапы процесса для конкретных сценариев. Статья [Пошаговые руководства по процессу обработки и анализа данных группы](walkthroughs.md) содержит список сценариев, ссылки и описания эскизов. В пошаговых руководствах показано, как объединить облачные, локальные инструменты и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение. 
 
-Примеры выполнения шагов в процессе обработки и анализа данных группы, который использует среду "Студия машинного обучения Azure", см. в статье [Командный процесс обработки и анализа данных с использованием службы "Машинное обучение Azure"](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
+Примеры выполнения шагов в процессе обработки и анализа данных группы, который использует среду "Студия машинного обучения Azure", см. в статье [Командный процесс обработки и анализа данных с использованием службы "Машинное обучение Azure"](./index.yml).

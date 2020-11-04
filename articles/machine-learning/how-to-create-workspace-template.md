@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: 4a80b1f9bfa5d477c47e340f1dec1b37e4c69258
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 70e3185257c7c70d74fdc8492cf0a2b4970c03b1
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631056"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305477"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -28,9 +28,9 @@ ms.locfileid: "92631056"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure** . Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
+* **Подписка Azure**. Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-* Чтобы использовать шаблон из командной строки, вам потребуется [Azure PowerShell](https://docs.microsoft.com/powershell/azure/?view=azps-1.2.0) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
+* Чтобы использовать шаблон из командной строки, вам потребуется [Azure PowerShell](/powershell/azure/?view=azps-1.2.0) или [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 
 * Для некоторых сценариев требуется открыть запрос в службу поддержки. Они приведены ниже.
 
@@ -69,7 +69,7 @@ ms.locfileid: "92631056"
 > [!TIP]
 > Хотя шаблон, связанный с этим документом, создает новый Реестр контейнеров Azure, вы можете создать рабочую область и без реестра контейнеров. Он будет создан автоматически при выполнении любой операции, для которой реестр контейнеров обязателен. Например, при обучении или развертывании модели.
 >
-> Вы также можете указать в шаблоне Azure Resource Manager существующий реестр контейнеров или учетную запись хранения, а не создавать новые. Однако для используемого реестра контейнеров необходимо включить __учетную запись администратора__ . Сведения о включении учетной записи администратора см. в разделе [учетная запись администратора](/azure/container-registry/container-registry-authentication#admin-account).
+> Вы также можете указать в шаблоне Azure Resource Manager существующий реестр контейнеров или учетную запись хранения, а не создавать новые. Однако для используемого реестра контейнеров необходимо включить __учетную запись администратора__ . Сведения о включении учетной записи администратора см. в разделе [учетная запись администратора](../container-registry/container-registry-authentication.md#admin-account).
 
 [!INCLUDE [machine-learning-delete-acr](../../includes/machine-learning-delete-acr.md)]
 
@@ -77,7 +77,7 @@ ms.locfileid: "92631056"
 
 * [Шаблоны диспетчера ресурсов Azure](../azure-resource-manager/templates/template-syntax.md)
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-powershell.md)
-* [Типы ресурсов Microsoft.MachineLearningServices](https://docs.microsoft.com/azure/templates/microsoft.machinelearningservices/allversions)
+* [Типы ресурсов Microsoft.MachineLearningServices](/azure/templates/microsoft.machinelearningservices/allversions)
 
 ## <a name="deploy-template"></a>Развертывание шаблона
 
@@ -219,7 +219,7 @@ __Чтобы получить значения__ для параметров `cm
 
 Чтобы включить использование управляемых клиентом ключей, задайте следующие параметры при развертывании шаблона.
 
-* **Encryption_status** **включить** .
+* **Encryption_status** **включить**.
 * **cmk_keyvault** значение, `cmk_keyvault` полученное на предыдущих шагах.
 * **resource_cmk_uri** значение, `resource_cmk_uri` полученное на предыдущих шагах.
 
@@ -254,7 +254,7 @@ New-AzResourceGroupDeployment `
 
 При использовании ключа, управляемого клиентом, Машинное обучение Azure создает вторичную группу ресурсов, которая содержит экземпляр Cosmos DB. Дополнительные сведения см. [в разделе Шифрование неактивных данных Cosmos DB](concept-enterprise-security.md#encryption-at-rest).
 
-Дополнительной конфигурацией, которую можно предоставить для данных, является установка параметра **confidential_data** в **значение true** . Это делает следующее:
+Дополнительной конфигурацией, которую можно предоставить для данных, является установка параметра **confidential_data** в **значение true**. Это делает следующее:
 
 * Запускает шифрование локального временного диска для Машинное обучение Azureных кластерных ресурсов, предоставляя не созданные ранее кластеры в подписке. Если вы ранее создали кластер в подписке, отправьте запрос в службу поддержки, чтобы обеспечить шифрование временного диска для ваших кластеров.
 * Очищает локальный рабочий диск между запусками.
@@ -541,7 +541,7 @@ New-AzResourceGroupDeployment `
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 
-1. Выполните инструкции из раздела [Развертывание ресурсов с помощью настраиваемого шаблона](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy-portal#deploy-resources-from-custom-template). Когда вы поступите на экран __Выбор шаблона__ , выберите шаблон **201-Machine-Learning-Advanced** из раскрывающегося списка.
+1. Выполните инструкции из раздела [Развертывание ресурсов с помощью настраиваемого шаблона](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template). Когда вы поступите на экран __Выбор шаблона__ , выберите шаблон **201-Machine-Learning-Advanced** из раскрывающегося списка.
 1. Щелкните __выбрать шаблон__ , чтобы использовать шаблон. Укажите следующие необходимые сведения и другие параметры в зависимости от сценария развертывания.
 
    * Подписка: Выберите подписку Azure, которую нужно использовать для этих ресурсов.
@@ -550,7 +550,7 @@ New-AzResourceGroupDeployment `
    * Имя рабочей области: Это имя, которое будет присвоено созданному рабочему пространству Службы машинного обучения Azure. Для имени рабочего пространства допускается длина от 3 до 33 символов. Имя может содержать только буквы, цифры и дефис ("-").
    * Расположение. Выберите расположение, в котором будут созданы ресурсы.
 1. Выберите __Review + create__ (Просмотреть и создать).
-1. На экране " __Проверка и создание__ " примите указанные выше условия и нажмите кнопку __создать__ .
+1. На экране " __Проверка и создание__ " примите указанные выше условия и нажмите кнопку __создать__.
 
 Дополнительные сведения см. в разделе [Развертывание ресурсов с помощью настраиваемого шаблона](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).
 
@@ -576,7 +576,7 @@ New-AzResourceGroupDeployment `
     az keyvault show --name mykeyvault --resource-group myresourcegroup --query properties.accessPolicies
     ```
 
-    Дополнительные сведения об использовании раздела `accessPolicies` шаблона см. в разделе [Объект AccessPolicyEntry](https://docs.microsoft.com/azure/templates/Microsoft.KeyVault/2018-02-14/vaults#AccessPolicyEntry) справочника.
+    Дополнительные сведения об использовании раздела `accessPolicies` шаблона см. в разделе [Объект AccessPolicyEntry](/azure/templates/Microsoft.KeyVault/2018-02-14/vaults#AccessPolicyEntry) справочника.
 
 * Проверьте, существует ли ресурс Key Vault. Если существует, его не следует создавать повторно с помощью шаблона. Например, внесите следующие изменения в шаблон, чтобы использовать существующий ресурс Key Vault вместо создания нового:
 
@@ -655,7 +655,7 @@ New-AzResourceGroupDeployment `
 
 ### <a name="virtual-network-not-linked-to-private-dns-zone"></a>Виртуальная сеть не связана с частной зоной DNS
 
-При создании рабочей области с закрытой конечной точкой шаблон создает Частная зона DNS зону с именем __privatelink.API.azureml.MS__ . В эту частную зону DNS автоматически добавляется __ссылка на виртуальную сеть__ . Эта ссылка добавляется только для первой рабочей области и частной конечной точки, созданной в группе ресурсов. Если вы создаете другую виртуальную сеть и рабочую область с частной конечной точкой в той же группе ресурсов, вторая виртуальная сеть может не добавляться в частную зону DNS.
+При создании рабочей области с закрытой конечной точкой шаблон создает Частная зона DNS зону с именем __privatelink.API.azureml.MS__. В эту частную зону DNS автоматически добавляется __ссылка на виртуальную сеть__ . Эта ссылка добавляется только для первой рабочей области и частной конечной точки, созданной в группе ресурсов. Если вы создаете другую виртуальную сеть и рабочую область с частной конечной точкой в той же группе ресурсов, вторая виртуальная сеть может не добавляться в частную зону DNS.
 
 Чтобы просмотреть связи виртуальной сети, которые уже существуют для частной зоны DNS, используйте следующую команду Azure CLI.
 

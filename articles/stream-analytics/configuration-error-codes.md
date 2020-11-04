@@ -6,12 +6,12 @@ author: mamccrea
 ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.service: stream-analytics
-ms.openlocfilehash: de8eefd099f3691ae5e5eb5234ae8f76015dd68f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 80179506c133de92b56d476c9aa99d55c3e3bbd9
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86041121"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305801"
 ---
 # <a name="azure-stream-analytics-configuration-error-codes"></a>Коды ошибок данных в Azure Stream Analytics
 
@@ -94,7 +94,7 @@ ms.locfileid: "86041121"
 ## <a name="sqldwoutputinvalidserviceedition"></a>SQLDWOutputInvalidServiceEdition
 
 * **Причина.** База данных SQL не поддерживается.
-* **Рекомендация**. Используйте пул SQL Synapse.
+* **Рекомендация** : используйте выделенный пул SQL.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

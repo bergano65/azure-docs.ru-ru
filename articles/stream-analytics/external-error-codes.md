@@ -6,12 +6,12 @@ author: mamccrea
 ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.service: stream-analytics
-ms.openlocfilehash: f963f4c3538146b7f9929960092a18294659be5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61d6556467bc6f1494e11ce3a01bf5266b740f3f
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86045252"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305783"
 ---
 # <a name="azure-stream-analytics-external-error-codes"></a>Коды внешних ошибок в Azure Stream Analytics
 
@@ -85,11 +85,11 @@ ms.locfileid: "86045252"
 
 ## <a name="sqldwoutputinitializationerror"></a>SQLDWOutputInitializationError
 
-* **Причина.** Произошла ошибка при инициализации выходных данных пула Synapse SQL.
+* **Причина** : при инициализации выделенных выходных данных пула SQL произошла ошибка.
 
 ## <a name="sqldwoutputwriteerror"></a>SQLDWOutputWriteError
 
-* **Причина.** Произошла ошибка при записи выходных данных в пул Synapse SQL.
+* **Причина** : при записи выходных данных в выделенный пул SQL произошла ошибка.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

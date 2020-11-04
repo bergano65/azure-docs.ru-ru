@@ -8,15 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/02/2020
+ms.date: 11/03/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2ed5c554e6307b08c412de16d1bb92b458c5f15f
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+zone_pivot_groups: keyword-quickstart
+ms.openlocfilehash: 2d15da55c0bab42571d2a9660156a780c5d27881
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92166460"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305896"
 ---
 # <a name="get-started-with-custom-keyword"></a>Начало работы с Пользовательскими ключевыми словами
 
@@ -38,7 +39,7 @@ ms.locfileid: "92166460"
 
 1. На странице [настраиваемое ключевое слово](https://aka.ms/sdsdk-wakewordportal) создайте **Новый проект**. 
 
-1. Введите **имя**, необязательное **Описание**и выберите язык. Требуется один проект для каждого языка, а поддержка в настоящее время ограничена `en-US` языком.
+1. Введите **имя** , необязательное **Описание** и выберите язык. Требуется один проект для каждого языка, а поддержка в настоящее время ограничена `en-US` языком.
 
     ![Описание проекта ключевого слова](media/custom-keyword/custom-kws-portal-new-project.png)
 
@@ -48,7 +49,7 @@ ms.locfileid: "92166460"
 
 1. Чтобы создать новую модель ключевых слов, нажмите кнопку **обучение модели**.
 
-1. Введите **имя** модели, необязательное **Описание**и **ключевое слово** , а затем нажмите кнопку **Далее**. Ознакомьтесь с [рекомендациями](speech-devices-sdk-kws-guidelines.md#choose-an-effective-keyword) по выбору эффективного ключевого слова.
+1. Введите **имя** модели, необязательное **Описание** и **ключевое слово** , а затем нажмите кнопку **Далее**. Ознакомьтесь с [рекомендациями](speech-devices-sdk-kws-guidelines.md#choose-an-effective-keyword) по выбору эффективного ключевого слова.
 
     ![Введите ключевое слово](media/custom-keyword/custom-kws-portal-new-model.png)
 
@@ -64,25 +65,17 @@ ms.locfileid: "92166460"
 
 ## <a name="use-a-keyword-model-with-the-sdk"></a>Использование модели ключевых слов с пакетом SDK
 
-Сначала загрузите файл модели ключевых слов с помощью `FromFile()` статической функции, которая возвращает `KeywordRecognitionModel` . Используйте путь к файлу, `.table` скачанному из Speech Studio. Кроме того, вы создаете `AudioConfig` с помощью микрофона по умолчанию, создаете новый экземпляр `KeywordRecognizer` с помощью конфигурации аудио.
+::: zone pivot="programming-language-csharp"
+[!INCLUDE [C# Basics include](includes/how-to/keyword-recognition/keyword-basics-csharp.md)]
+::: zone-end
 
-```csharp
-using Microsoft.CognitiveServices.Speech;
-using Microsoft.CognitiveServices.Speech.Audio;
+::: zone pivot="programming-language-python"
+[!INCLUDE [Python Basics include](includes/how-to/keyword-recognition/keyword-basics-python.md)]
+::: zone-end
 
-var keywordModel = KeywordRecognitionModel.FromFile("your/path/to/Activate_device.table");
-using var audioConfig = AudioConfig.FromDefaultMicrophoneInput();
-using var keywordRecognizer = new KeywordRecognizer(audioConfig);
-```
-
-Затем выполнение распознавания ключевых слов выполняется с помощью одного вызова `RecognizeOnceAsync()` , передавая объект модели. Запустится сеанс распознавания ключевых слов, который продолжается до тех пор, пока не будет распознано ключевое слово. Таким образом, этот шаблон разработки обычно используется в многопоточных приложениях или в случаях использования, когда вы можете ожидать пробуждения по неопределенному времени.
-
-```csharp
-KeywordRecognitionResult result = await keywordRecognizer.RecognizeOnceAsync(keywordModel);
-```
-
-> [!NOTE]
-> В приведенном здесь примере используется распознавание локального ключевого слова, так как `SpeechConfig` для контекста проверки подлинности не требуется объект и не выполняется обращение к серверной части. Тем не менее можно выполнить как распознавание ключевых слов, так и проверку [с помощью непрерывного подключения к внутреннему серверной](https://docs.microsoft.com/azure/cognitive-services/speech-service/tutorial-voice-enable-your-bot-speech-sdk#view-the-source-code-that-enables-keyword)части.
+::: zone pivot="programming-languages-objectivec-swift"
+[!INCLUDE [ObjectiveC/Swift Basics include](includes/how-to/keyword-recognition/keyword-basics-objc.md)]
+::: zone-end
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

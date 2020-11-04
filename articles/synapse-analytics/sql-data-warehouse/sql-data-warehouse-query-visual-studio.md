@@ -11,14 +11,15 @@ ms.date: 08/15/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: a3e8ea3b0ed2840e5eee7a046fa3a145f82884dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59e0aed3ceda369909c6a4aecd03637a82a2dd1b
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85200704"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305384"
 ---
 # <a name="connect-to-azure-synapse-analytics-with-visual-studio-and-ssdt"></a>Подключение к Azure синапсе Analytics с помощью Visual Studio и SSDT
+
 > [!div class="op_single_selector"]
 > * [Azure Data Studio](../sql/get-started-azure-data-studio.md)
 > * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
@@ -28,17 +29,17 @@ ms.locfileid: "85200704"
 > 
 > 
 
-Используйте Visual Studio для запроса пула SQL в Azure синапсе всего за несколько минут. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
+Используйте Visual Studio для запроса выделенного пула SQL в Azure синапсе всего за несколько минут. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Пул SQL. Сведения о его создании см. в статье [Создание пула SQL Azure](create-data-warehouse-portal.md).
+* Существующий выделенный пул SQL. Чтобы создать его, см. раздел [Создание выделенного пула SQL](create-data-warehouse-portal.md).
 * Расширение SSDT для Visual Studio. Если у вас есть Visual Studio, возможно, у вас уже есть SSDT для Visual Studio. Инструкции по установке и доступные варианты установки приведены в статье [Начало работы с Visual Studio 2019](sql-data-warehouse-install-visual-studio.md).
-* Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к пулу SQL](../sql/connect-overview.md).
+* Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к выделенному пулу SQL](../sql/connect-overview.md).
 
-## <a name="1-connect-to-your-sql-pool"></a>1. подключение к пулу SQL
-1. Запустите Visual Studio 2019.
+## <a name="1-connect-to-your-dedicated-sql-pool"></a>1. подключение к выделенному пулу SQL
+1. Откройте Visual Studio 2019.
 2. Откройте обозреватель объектов SQL Server, выбрав **представление**  >  **Обозреватель объектов SQL Server**.
    
     ![Обозреватель объектов SQL Server](./media/sql-data-warehouse-query-visual-studio/open-ssdt.png)
@@ -79,4 +80,4 @@ ms.locfileid: "85200704"
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md).
 
-Сведения о том, как настроить аутентификацию Azure Active Directory в своей среде, см. в статье [Аутентификация в Azure синапсе Analytics](sql-data-warehouse-authentication.md).
+Сведения о настройке среды для проверки подлинности Azure Active Directory см. [в разделе аутентификация в выделенном пуле SQL](sql-data-warehouse-authentication.md).

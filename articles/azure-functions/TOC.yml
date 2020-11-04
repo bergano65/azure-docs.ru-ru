@@ -270,7 +270,7 @@
         - name: Управление подключениями
           href: manage-connections.md
           displayName: best practice
-        - name: Обработка ошибок
+        - name: Обработка ошибок и повторные попытки
           href: functions-bindings-error-pages.md
         - name: 'Запуск функции, не активируемой HTTP-запросом, вручную'
           href: functions-manually-run-non-http.md

@@ -1,22 +1,23 @@
 ---
-title: Power BI и несинапсеный пул SQL для анализа данных Azure Cosmos DB с помощью ссылки синапсе
-description: Узнайте, как создать бессерверную базу данных пула SQL синапсе и представления по ссылке синапсе для Azure Cosmos DB, запросите контейнеры Cosmos для Azure, а затем создайте модель с Power BI для этих представлений.
+title: Power BI и бессерверный пул SQL для анализа данных Azure Cosmos DB с помощью ссылки синапсе
+description: Узнайте, как создать синапсе базу данных без SQL Server и представления по каналу синапсе для Azure Cosmos DB, выполнить запрос к контейнерам Azure Cosmos DB, а затем построить модель с Power BI в этих представлениях.
 author: ArnoMicrosoft
 ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: acomet
-ms.openlocfilehash: 8599ebf1932d7c30622855cbf38af867d30b52b8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 38077dca1b8a27098e8db17354b82340a651b880
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098065"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305180"
 ---
-# <a name="use-power-bi-and-serverless-synapse-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Использование Power BI и бессерверного пула SQL синапсе для анализа данных Azure Cosmos DB с помощью ссылки синапсе (Предварительная версия) 
+# <a name="use-power-bi-and-serverless-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Использование Power BI и бессерверного пула SQL для анализа данных Azure Cosmos DB с помощью ссылки синапсе (Предварительная версия)
+
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
 
-В этой статье вы узнаете, как создать несинапсеный пул SQL Server (который ранее назывался "база данных **SQL по запросу** ") и представлениями по ссылке синапсе для Azure Cosmos DB. Вы запрашиваете контейнеры Azure Cosmos, а затем создаете модель с Power BI для этих представлений, чтобы отразить этот запрос.
+Из этой статьи вы узнаете, как создать бессерверную базу данных пула SQL и представления по ссылке синапсе для Azure Cosmos DB. Вы запрашиваете Azure Cosmos DB контейнеры, а затем создаете модель с Power BI в этих представлениях для отражения этого запроса.
 
 В этом сценарии вы будете использовать фиктивные данные о продажах продуктов в розничном магазине партнера. Вы проанализируете доход на каждый магазин, основываясь на большом семейе и влиянии рекламы на конкретную неделю. В этой статье вы создадите два представления с именами **ретаилсалес** и **сторедемографикс** и запрос между ними. Образец данных по продукту можно получить из репозитория [GitHub](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) .
 
@@ -32,19 +33,19 @@ ms.locfileid: "93098065"
 
 * Загрузите данные продуктов в контейнеры Azure Cosmos, как описано в записной книжке [приема данных пакетной](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/spark-notebooks/pyspark/1CosmoDBSynapseSparkBatchIngestion.ipynb) службы.
 
-* [Создайте рабочую область синапсе](../synapse-analytics/quickstart-create-workspace.md) с именем **синапселинкби** .
+* [Создайте рабочую область синапсе](../synapse-analytics/quickstart-create-workspace.md) с именем **синапселинкби**.
 
 * [Подключите базу данных Azure Cosmos к рабочей области синапсе](../synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json).
 
 ## <a name="create-a-database-and-views"></a>Создание базы данных и представлений
 
-В рабочей области синапсе перейдите на вкладку **Разработка** , щелкните **+** значок и выберите **скрипт SQL** .
+В рабочей области синапсе перейдите на вкладку **Разработка** , щелкните **+** значок и выберите **скрипт SQL**.
 
 :::image type="content" source="./media/synapse-link-power-bi/add-sql-script.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
 
-Каждая Рабочая область поставляется с серверной конечной точкой SQL. После создания скрипта SQL на панели инструментов в верхней части окна подключитесь к **SQL по запросу** .
+Каждая Рабочая область поставляется с серверной конечной точкой SQL. После создания скрипта SQL на панели инструментов в верхней части окна подключитесь к **встроенному**.
 
-:::image type="content" source="./media/synapse-link-power-bi/enable-sql-on-demand-endpoint.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
+:::image type="content" source="./media/synapse-link-power-bi/enable-sql-on-demand-endpoint.png" alt-text="Разрешить скрипту SQL использовать бессерверную конечную точку SQL в рабочей области":::
 
 Создайте новую базу данных с именем **ретаилкосмосдб** и представление SQL для контейнеров с включенной ссылкой синапсе. Следующая команда показывает, как создать базу данных.
 
@@ -104,17 +105,17 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 
 Выберите **Запуск** , который предоставляет следующую таблицу в качестве результата:
 
-:::image type="content" source="./media/synapse-link-power-bi/join-views-query-results.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
+:::image type="content" source="./media/synapse-link-power-bi/join-views-query-results.png" alt-text="Результаты запроса после присоединения к представлениям Сторедемографикс и Ретаилсалес":::
 
 ## <a name="model-views-over-containers-with-power-bi"></a>Представления модели над контейнерами с Power BI
 
 Затем откройте рабочий стол Power BI и подключитесь к бессерверной конечной точке SQL, выполнив следующие действия.
 
-1. Откройте приложение Power BI Desktop. Выберите **получить данные** и нажмите кнопку **больше** .
+1. Откройте приложение Power BI Desktop. Выберите **получить данные** и нажмите кнопку **больше**.
 
 1. Выберите **Azure синапсе Analytics (SQL DW)** в списке параметров подключения.
 
-1. Введите имя конечной точки SQL, в которой находится база данных. Введите `SynapseLinkBI-ondemand.sql.azuresynapse.net` в поле **сервер** . В этом примере  **синапселинкби** — имя рабочей области. Замените его, если вы получили другое имя для вашей рабочей области. Выберите **прямой запрос** для режима подключения к данным, а затем нажмите **кнопку ОК** .
+1. Введите имя конечной точки SQL, в которой находится база данных. Введите `SynapseLinkBI-ondemand.sql.azuresynapse.net` в поле **сервер** . В этом примере  **синапселинкби** — имя рабочей области. Замените его, если вы получили другое имя для вашей рабочей области. Выберите **прямой запрос** для режима подключения к данным, а затем нажмите **кнопку ОК**.
 
 1. Выберите предпочтительный метод проверки подлинности, например Azure AD.
 
@@ -130,7 +131,7 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 
 Теперь перейдите в окно **отчета** и создайте отчет для сравнения относительной важности размера семьи с средним доходом по магазину на основе дискретного представления дохода и индекса ларжехх:
 
-1. Выберите **точечная диаграмма** .
+1. Выберите **точечная диаграмма**.
 
 1. Перетащите **ларжехх** из представления **Сторедемографикс** в ось X.
 
@@ -139,10 +140,10 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 1. Перетащите элемент **productCode** из представления **ретаилсалес** в условные обозначения, чтобы выбрать определенную линейку продуктов.
 После выбора этих параметров вы увидите диаграмму, как на следующем снимке экрана:
 
-:::image type="content" source="./media/synapse-link-power-bi/household-size-average-revenue-report.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
+:::image type="content" source="./media/synapse-link-power-bi/household-size-average-revenue-report.png" alt-text="Отчет, сравнивающий относительную важность размера семьи с средним доходом по магазину":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование T-SQL для запроса Azure Cosmos DB данных с помощью ссылки Azure синапсе](../synapse-analytics/sql/query-cosmos-db-analytical-store.md)
 
-Использование пула синапсе SQL Server для [анализа открытых наборов данных Azure и визуализации результатов в Azure синапсе Studio](../synapse-analytics/sql/tutorial-data-analyst.md)
+Использование бессерверного пула SQL для [анализа открытых наборов данных Azure и визуализации результатов в Azure синапсе Studio](../synapse-analytics/sql/tutorial-data-analyst.md)

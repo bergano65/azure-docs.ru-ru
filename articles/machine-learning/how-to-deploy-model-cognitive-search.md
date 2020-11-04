@@ -1,7 +1,7 @@
 ---
 title: Развертывание модели для использования со службой "Когнитивный поиск"
 titleSuffix: Azure Machine Learning
-description: В этой статье объясняется, как использовать Машинное обучение Azure для развертывания модели для использования с Когнитивный поиск Azure. Когнитивный поиск могут использовать модели, развернутые Машинное обучение Azure, как пользовательское умение, чтобы расширить возможности поиска.
+description: Узнайте, как использовать Машинное обучение Azure для развертывания модели для использования с Когнитивный поиск. Модель используется в качестве пользовательского навыка для расширения возможностей поиска.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ author: cjgronlund
 ms.reviewer: larryfr
 ms.date: 06/11/2020
 ms.custom: deploy
-ms.openlocfilehash: 5d198a27d7aeca679f1ee17f35d3f4384283f13c
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: e1eebf88b72c87ce9db02760c5c44a0aa25c57cc
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91998902"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305926"
 ---
 # <a name="deploy-a-model-for-use-with-cognitive-search"></a>Развертывание модели для использования со службой "Когнитивный поиск"
 
@@ -25,7 +25,7 @@ ms.locfileid: "91998902"
 
 Когнитивный поиск выполняет обработку содержимого по содержимому разнородных, чтобы сделать его запросным для людей или приложений. Этот процесс можно улучшить с помощью модели, развернутой из Машинное обучение Azure.
 
-Машинное обучение Azure может развернуть обученную модель как веб-службу. Затем веб-служба внедряется в Когнитивный поиск _навык_, который становится частью конвейера обработки.
+Машинное обучение Azure может развернуть обученную модель как веб-службу. Затем веб-служба внедряется в Когнитивный поиск _навык_ , который становится частью конвейера обработки.
 
 > [!IMPORTANT]
 > Сведения в этой статье относятся к развертыванию модели. Он предоставляет сведения о поддерживаемых конфигурациях развертывания, позволяющих использовать модель Когнитивный поиск.
@@ -46,7 +46,7 @@ ms.locfileid: "91998902"
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
-* Среда разработки Python с установленным пакетом SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).  
+* Среда разработки Python с установленным пакетом SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе [машинное обучение Azure SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).  
 
 * Зарегистрированная модель. Если у вас нет модели, используйте пример записной книжки в [https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill) .
 
@@ -75,7 +75,7 @@ except:
 
 ## <a name="create-a-kubernetes-cluster"></a>Создание кластера Kubernetes
 
-**Оценка времени**: приблизительно 20 минут.
+**Оценка времени** : приблизительно 20 минут.
 
 Кластер Kubernetes — это набор экземпляров виртуальных машин (узлов), которые используются для запуска контейнерных приложений.
 
@@ -252,7 +252,7 @@ from azureml.core.model import InferenceConfig
 inf_config = InferenceConfig(entry_script='score.py', environment=myenv)
 ```
 
-Дополнительные сведения см. в справочной документации по [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py&preserve-view=true).
+Дополнительные сведения см. в справочной документации по [инференцеконфиг](/python/api/azureml-core/azureml.core.model.inferenceconfig?preserve-view=true&view=azure-ml-py).
 
 ## <a name="deploy-the-model"></a>Развертывание модели
 
@@ -277,7 +277,7 @@ aks_service.wait_for_deployment(show_output = True)
 print(aks_service.state)
 ```
 
-Дополнительные сведения см. в справочной документации по [модели](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py&preserve-view=true).
+Дополнительные сведения см. в справочной документации по [модели](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py).
 
 ## <a name="issue-a-sample-query-to-your-service"></a>Выдача примера запроса в службу
 
