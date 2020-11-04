@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 05/01/2020
 ms.author: mamccrea
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4b512d0817c56bc2daabff057c8bc4aa1afa1dee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 44c9dbb0eed5e8f7a868832af93a3b841f67f784
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91826517"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310699"
 ---
 # <a name="use-net-for-apache-spark-with-azure-synapse-analytics"></a>Использование .NET для Apache Spark с помощью Azure Synapse Analytics
 
@@ -44,7 +44,7 @@ ms.locfileid: "91826517"
    dotnet publish -c Release -f netcoreapp3.1 -r ubuntu.16.04-x64
    ```
 
-2. Заархивировать содержимое папки публикации, например, `publish.zip` созданной в результате выполнения шага 1. Все сборки должны находиться на первом слое ZIP-файла, а промежуточный уровень папок не должен. Это означает, что при распаковке `publish.zip` все сборки извлекаются в текущий рабочий каталог.
+2. Заархивировать содержимое папки публикации, например, `publish.zip` созданной в результате выполнения шага 1. Все сборки должны находиться на первом уровне ZIP-файла. Не должны использоваться промежуточные уровни папки. Это означает, что при распаковке `publish.zip` все сборки извлекаются в текущий рабочий каталог.
 
     **В Windows:**
 
@@ -68,7 +68,7 @@ ms.locfileid: "91826517"
 
 При создании записной книжки вы можете выбрать ядро языка, на котором будете выражать бизнес-логику. Поддержка ядра доступна для нескольких языков, включая C#.
 
-Чтобы использовать .NET для Apache Spark в записной книжке Azure Synapse Analytics, выберите ядро **.NET Spark (C#)** и подключите записную книжку к существующему пулу Spark.
+Чтобы использовать .NET для Apache Spark в записной книжке Azure синапсе Analytics, выберите **.NET Spark (C#)** в качестве ядра и подключите записную книжку к существующему бессерверному Apache Spark пулу.
 
 Записная книжка .NET Spark основана на интерактивном интерфейсе .NET и в стандартной конфигурации поддерживает все интерактивные возможности C#, в том числе .NET для Spark, а также имеет заранее определенную переменную сеанса Spark `spark`.
 

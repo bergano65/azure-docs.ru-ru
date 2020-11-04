@@ -1,7 +1,7 @@
 ---
 title: Высокопроизводительная модель, обслуживающая Тритон (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Узнайте, как развернуть модель с сервером вывода Тритон в Машинное обучение Azure
+description: Узнайте, как развернуть модель с помощью сервера Тритонного вывода NVIDIA в Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.date: 09/23/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: 3a3600c4065d331ca1cfc129cd55dd56add21424
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: afa1d958e054a769ea0f19b82afdf55a94c3d0cf
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92428354"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309714"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Высокопроизводительный обслуживание с помощью сервера вывода Тритон (Предварительная версия) 
 
@@ -36,7 +36,7 @@ ms.locfileid: "92428354"
 
 * **Подписка Azure**. Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 * Знакомство с [тем, как и где развертывать модель](how-to-deploy-and-where.md) с машинное обучение Azure.
-* [Машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py) **или** [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) и [расширение машинного обучения](reference-azure-machine-learning-cli.md).
+* [Машинное обучение Azure пакет SDK для Python](/python/api/overview/azure/ml/?view=azure-ml-py) **или** [Azure CLI](/cli/azure/?view=azure-cli-latest) и [расширение машинного обучения](reference-azure-machine-learning-cli.md).
 * Рабочая установка DOCKER для локального тестирования. Сведения об установке и проверке DOCKER см. в разделе [ориентация и настройка](https://docs.docker.com/get-started/) в документации по DOCKER.
 
 ## <a name="architectural-overview"></a>Общие сведения об архитектуре
@@ -58,7 +58,7 @@ ms.locfileid: "92428354"
 * Тритон обрабатывает запросы в пакетах, чтобы обеспечить максимальную загрузку GPU.
 * Клиент использует __универсальный код ресурса (URI) оценки__ для выполнения запросов. Например, `https://myserevice.azureml.net/score`.
 
-:::image type="content" source="./media/how-to-deploy-with-triton/inferenceconfig-deploy.png" alt-text="Схема архитектуры развертывания &quot;Стандартный&quot;, Тритон":::
+:::image type="content" source="./media/how-to-deploy-with-triton/inferenceconfig-deploy.png" alt-text="Развертывание инференцеконфиг с помощью Тритон":::
 
 Рабочий процесс для использования Тритон в развертывании модели:
 
@@ -228,7 +228,7 @@ res = triton_client.infer(model_name,
 > [!IMPORTANT]
 > Необходимо указать `AzureML-Triton` [проверенную среду](./resource-curated-environments.md).
 >
-> Пример кода Python копирует `AzureML-Triton` в другую среду с именем `My-Triton` . Код Azure CLI также использует эту среду. Дополнительные сведения о клонировании среды см. в справочнике по [среде. Clone ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#clone-new-name-) .
+> Пример кода Python копирует `AzureML-Triton` в другую среду с именем `My-Triton` . Код Azure CLI также использует эту среду. Дополнительные сведения о клонировании среды см. в справочнике по [среде. Clone ()](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#clone-new-name-) .
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -283,7 +283,7 @@ az ml model deploy -n triton-densenet-onnx \
 
 ---
 
-После завершения развертывания отображается URI оценки. Для этого локального развертывания это будет `http://localhost:6789/score` . При развертывании в облаке можно использовать команду [AZ ML Service показывать](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext_azure_cli_ml_az_ml_service_show) CLI для получения URI оценки.
+После завершения развертывания отображается URI оценки. Для этого локального развертывания это будет `http://localhost:6789/score` . При развертывании в облаке можно использовать команду [AZ ML Service показывать](/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext_azure_cli_ml_az_ml_service_show) CLI для получения URI оценки.
 
 Сведения о создании клиента, отправляющего запросы вывода в URI оценки, см. в разделе [Использование модели, развернутой в качестве веб-службы](how-to-consume-web-service.md).
 

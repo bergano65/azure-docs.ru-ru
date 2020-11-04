@@ -11,19 +11,19 @@ manager: cgronlun
 ms.date: 08/26/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: b6c6d15b553e8b19fff2c464dfb856550f7bcbf0
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 9cde7fe32d1b7b13c5f95bf3d99497926f68c88e
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92494910"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311189"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Использование автоматизированного ML в конвейере Машинное обучение Azure в Python
 
 
 Функция автоматического выполнения машинного обучения Машинное обучение Azure позволяет обнаруживать высокопроизводительные модели без повторной реализации всех возможных подходов. В сочетании с конвейерами Машинное обучение Azure можно создавать развертываемые рабочие процессы, которые позволяют быстро обнаружить алгоритм, который лучше всего подходит для ваших данных. В этой статье показано, как эффективно присоединиться к этапу подготовки данных к автоматическому этапу ML. С помощью автоматизированного ML можно быстро обнаружить оптимальный алгоритм, который лучше всего подходит для ваших данных, в то же время размещаясь в пути к Млопс и эксплуатации жизненного цикла модели с конвейерами.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -41,9 +41,9 @@ ms.locfileid: "92494910"
 
 
 > [!TIP]
-> Улучшенный интерфейс передачи временных данных между этапами конвейера доступен в классах общедоступной предварительной версии  [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) и [`OutputTabularDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?view=azure-ml-py&preserve-view=true) .  Эти классы являются [экспериментальными](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true#&preserve-view=truestable-vs-experimental) функциями предварительной версии и могут измениться в любое время.
+> Улучшенный интерфейс передачи временных данных между этапами конвейера доступен в классах общедоступной предварительной версии  [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) и [`OutputTabularDatasetConfig`](/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?preserve-view=true&view=azure-ml-py) .  Эти классы являются [экспериментальными](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#&preserve-view=truestable-vs-experimental) функциями предварительной версии и могут измениться в любое время.
 
-`AutoMLStep`Объект настраивается с помощью `AutoMLConfig` объекта. `AutoMLConfig` является гибким классом, как описано в разделе [Настройка автоматизированных экспериментов машинного обучения в Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train#configure-your-experiment-settings). 
+`AutoMLStep`Объект настраивается с помощью `AutoMLConfig` объекта. `AutoMLConfig` является гибким классом, как описано в разделе [Настройка автоматизированных экспериментов машинного обучения в Python](./how-to-configure-auto-train.md#configure-your-experiment-settings). 
 
 `Pipeline`Выполняется в `Experiment` . Конвейер `Run` имеет для каждого этапа дочерний элемент `StepRun` . Выходные данные автоматизированного ML `StepRun` — это обучающие показатели и модель с наивысшей производительностью.
 
@@ -106,7 +106,7 @@ compute_target = ws.compute_targets[compute_name]
 
 Промежуточные данные между подготовкой данных и автоматическим этапом ML можно хранить в хранилище данных по умолчанию рабочей области, поэтому нам не нужно выполнять больше вызовов `get_default_datastore()` для `Workspace` объекта. 
 
-После этого код проверяет, существует ли целевой объект вычислений AML `'cpu-cluster'` . В противном случае мы указываем, что требуется небольшой вычислительный ресурс на основе ЦП. Если вы планируете использовать функции глубокого обучения ML (например, текстовые Добавление признаков с поддержкой DNN), следует выбрать вычислительную систему с поддержкой поддержки GPU, как описано в статье [размеры виртуальных машин, оптимизированных для GPU](https://docs.microsoft.com/azure/virtual-machines/sizes-gpu). 
+После этого код проверяет, существует ли целевой объект вычислений AML `'cpu-cluster'` . В противном случае мы указываем, что требуется небольшой вычислительный ресурс на основе ЦП. Если вы планируете использовать функции глубокого обучения ML (например, текстовые Добавление признаков с поддержкой DNN), следует выбрать вычислительную систему с поддержкой поддержки GPU, как описано в статье [размеры виртуальных машин, оптимизированных для GPU](../virtual-machines/sizes-gpu.md). 
 
 Код блокируется до подготовки целевого объекта, а затем выводит некоторые сведения о только что созданном целевом объекте вычислений. Наконец, именованный целевой объект вычислений извлекается из рабочей области и назначается `compute_target` . 
 
@@ -137,7 +137,7 @@ else:
         pin_sdk_version=False)
 ```
 
-В приведенном выше коде показаны два варианта обработки зависимостей. Как было представлено, `USE_CURATED_ENV = True` Конфигурация основана на проверенной среде. Проверенные среды — "пребакед" с общими взаимозависимыми библиотеками, и их можно значительно ускорить, чтобы перевести в режим «в сети». Проверенные среды имеют предварительно созданные образы DOCKER в [реестре контейнеров Microsoft](https://hub.docker.com/publishers/microsoftowner). Путь, полученный при изменении `USE_CURATED_ENV` , чтобы `False` Показать шаблон для явного задания зависимостей. В этом случае новый пользовательский образ DOCKER будет создан и зарегистрирован в реестре контейнеров Azure в группе ресурсов (см. статью [Введение в частные реестры контейнеров DOCKER в Azure](https://docs.microsoft.com/azure/container-registry/container-registry-intro)). Создание и регистрация этого образа может занять несколько минут. 
+В приведенном выше коде показаны два варианта обработки зависимостей. Как было представлено, `USE_CURATED_ENV = True` Конфигурация основана на проверенной среде. Проверенные среды — "пребакед" с общими взаимозависимыми библиотеками, и их можно значительно ускорить, чтобы перевести в режим «в сети». Проверенные среды имеют предварительно созданные образы DOCKER в [реестре контейнеров Microsoft](https://hub.docker.com/publishers/microsoftowner). Путь, полученный при изменении `USE_CURATED_ENV` , чтобы `False` Показать шаблон для явного задания зависимостей. В этом случае новый пользовательский образ DOCKER будет создан и зарегистрирован в реестре контейнеров Azure в группе ресурсов (см. статью [Введение в частные реестры контейнеров DOCKER в Azure](../container-registry/container-registry-intro.md)). Создание и регистрация этого образа может занять несколько минут. 
 
 ## <a name="prepare-data-for-automated-machine-learning"></a>Подготовка данных для автоматического машинного обучения
 
@@ -251,11 +251,11 @@ dataprep_step = PythonScriptStep(
 `prepped_data_path`Объект имеет тип `PipelineOutputFileDataset` . Обратите внимание, что он указан как в `arguments` аргументах, так и в `outputs` . Если просмотреть предыдущий шаг, вы увидите, что в коде подготовки данных значение аргумента `'--output_path'` — это путь к файлу, в который был записан файл Parquet. 
 
 > [!TIP]
-> С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) . Пример кода с использованием `OutputFileDatasetConfig` класса см. в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).
+> С помощью общедоступного класса предварительной версии можно улучшить процесс передачи промежуточных данных между этапами конвейера [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) . Пример кода с использованием `OutputFileDatasetConfig` класса см. в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).
 
 ## <a name="train-with-automlstep"></a>Обучение с помощью Аутомлстеп
 
-Настройка автоматического этапа конвейера ML выполняется с помощью `AutoMLConfig` класса. Этот гибкий класс описан в статье [Настройка автоматизированных экспериментов машинного обучения в Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train). Входные и выходные данные являются единственными аспектами настройки, требующими особого внимания в конвейере машинного обучения. Ниже подробно рассматриваются входные и выходные данные для `AutoMLConfig` в конвейерах. Помимо данных, преимуществом конвейеров машинного обучения является возможность использования различных целевых объектов вычислений для различных этапов. Вы можете использовать более мощный вариант `ComputeTarget` только для автоматизированного процесса машинного обучения. Это так же просто, как назначение более мощным `RunConfiguration` для `AutoMLConfig` `run_configuration` параметра объекта.
+Настройка автоматического этапа конвейера ML выполняется с помощью `AutoMLConfig` класса. Этот гибкий класс описан в статье [Настройка автоматизированных экспериментов машинного обучения в Python](./how-to-configure-auto-train.md). Входные и выходные данные являются единственными аспектами настройки, требующими особого внимания в конвейере машинного обучения. Ниже подробно рассматриваются входные и выходные данные для `AutoMLConfig` в конвейерах. Помимо данных, преимуществом конвейеров машинного обучения является возможность использования различных целевых объектов вычислений для различных этапов. Вы можете использовать более мощный вариант `ComputeTarget` только для автоматизированного процесса машинного обучения. Это так же просто, как назначение более мощным `RunConfiguration` для `AutoMLConfig` `run_configuration` параметра объекта.
 
 ### <a name="send-data-to-automlstep"></a>Отправить данные в `AutoMLStep`
 
@@ -270,7 +270,7 @@ prepped_data = prepped_data_path.parse_parquet_files(file_extension=None)
 В приведенном выше фрагменте кода создается высокопроизводительный `PipelineOutputTabularDataset` `PipelineOutputFileDataset` результат выполнения этапа подготовки данных.
 
 > [!TIP]
-> Класс общедоступной предварительной версии [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) содержит метод [read_delimited_files ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true#&preserve-view=trueread-delimited-files-include-path-false--separator------header--promoteheadersbehavior-all-files-have-same-headers--3---partition-format-none--path-glob-none--set-column-types-none-) , который преобразует `OutputFileDatasetConfig` в [`OutputTabularDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?view=azure-ml-py&preserve-view=true) для использования в аутомл выполняются.
+> Класс общедоступной предварительной версии [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) содержит метод [read_delimited_files ()](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py#&preserve-view=trueread-delimited-files-include-path-false--separator------header--promoteheadersbehavior-all-files-have-same-headers--3---partition-format-none--path-glob-none--set-column-types-none-) , который преобразует `OutputFileDatasetConfig` в [`OutputTabularDatasetConfig`](/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?preserve-view=true&view=azure-ml-py) для использования в аутомл выполняются.
 
 Другой вариант — использовать `Dataset` объекты, зарегистрированные в рабочей области:
 
@@ -315,7 +315,7 @@ model_data = PipelineData(name='best_model_data',
 
 ### <a name="configure-and-create-the-automated-ml-pipeline-step"></a>Настройка и создание этапа автоматического создания конвейера ML
 
-После определения входов и выходов пора создать `AutoMLConfig` и `AutoMLStep` . Сведения о конфигурации будут зависеть от задачи, как описано в разделе [Настройка автоматизированных экспериментов машинного обучения в Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train). Для задачи классификации выживания Титанике в следующем фрагменте кода демонстрируется простая конфигурация.
+После определения входов и выходов пора создать `AutoMLConfig` и `AutoMLStep` . Сведения о конфигурации будут зависеть от задачи, как описано в разделе [Настройка автоматизированных экспериментов машинного обучения в Python](./how-to-configure-auto-train.md). Для задачи классификации выживания Титанике в следующем фрагменте кода демонстрируется простая конфигурация.
 
 ```python
 from azureml.train.automl import AutoMLConfig
@@ -353,7 +353,7 @@ train_step = AutoMLStep(name='AutoML_Classification',
 - `task` для этого примера задано значение `classification` . Другие допустимые значения — `regression` и. `forecasting`
 - `path` и `debug_log` Опишите путь к проекту и локальный файл, в который будут записываться отладочные данные 
 - `compute_target` ранее определено `compute_target` , что в этом примере является недорогым компьютером на основе ЦП. Если вы используете средства глубокого обучения Аутомл, необходимо изменить целевой объект вычислений так, чтобы он был основан на GPU
-- Параметру `featurization` задается значение `auto`. Дополнительные сведения см. в разделе [Data Добавление признаков](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train#data-featurization) документа автоматической настройки ml. 
+- Параметру `featurization` задается значение `auto`. Дополнительные сведения см. в разделе [Data Добавление признаков](./how-to-configure-auto-train.md#data-featurization) документа автоматической настройки ml. 
 - `label_column_name` Указывает, какой столбец нам нужен для прогнозирования 
 - `training_data` задается для `PipelineOutputTabularDataset` объектов, сделанных из выходных файлов этапа подготовки данных 
 
@@ -525,4 +525,4 @@ model.get_port_data_reference().download('.')
 - Запустите эту записную книжку Jupyter, где [приведен полный пример автоматизированного ML в конвейере](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/nyc-taxi-data-regression-model-building/nyc-taxi-data-regression-model-building.ipynb) , который использует регрессию для прогнозирования такси году
 - [Создание автоматизированных экспериментов ML без написания кода](how-to-use-automated-ml-for-ml-models.md)
 - Изучите различные [записные книжки Jupyter, демонстрирующие автоматический ML](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning)
-- Ознакомьтесь со сведениями об интеграции конвейера в, чтобы получить [полное млопс](https://docs.microsoft.com/azure/machine-learning/concept-model-management-and-deployment#automate-the-ml-lifecycle) или изучить [репозиторий млопс GitHub](https://github.com/Microsoft/MLOpspython) . 
+- Ознакомьтесь со сведениями об интеграции конвейера в, чтобы получить [полное млопс](./concept-model-management-and-deployment.md#automate-the-ml-lifecycle) или изучить [репозиторий млопс GitHub](https://github.com/Microsoft/MLOpspython) .

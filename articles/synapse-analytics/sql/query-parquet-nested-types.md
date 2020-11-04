@@ -1,6 +1,6 @@
 ---
-title: Запрос вложенных типов Parquet с помощью SQL по запросу (предварительная версия)
-description: В этой статье вы узнаете, как запросить вложенные типы Parquet с помощью SQL по запросу (Предварительная версия).
+title: Запрос Parquet вложенных типов с помощью бессерверного пула SQL (Предварительная версия)
+description: В этой статье вы узнаете, как запросить вложенные типы Parquet с помощью бессерверного пула SQL (Предварительная версия).
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,22 +9,22 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 08502704515c791bf63f4803b7446a0471c0a869
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3463e4dfc423a3f12ce7a42cb0def36574bcb2d3
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91288262"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93312010"
 ---
-# <a name="query-nested-types-in-parquet-and-json-files-by-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics
+# <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics
 
-В этой статье вы узнаете, как написать запрос с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics. Запрос будет считывать вложенные типы Parquet.
+В этой статье вы узнаете, как написать запрос с помощью бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics. Запрос будет считывать вложенные типы Parquet.
 Вложенные типы являются сложными структурами, представляющими объекты или массивы. Вложенные типы могут храниться в: 
 - [Parquet](query-parquet-files.md), где можно иметь несколько сложных столбцов, содержащих массивы и объекты.
 - Иерархические [JSON-файлы](query-json-files.md), в которых можно читать СЛОЖНЫЕ документы JSON в виде одного столбца.
 - Azure Cosmos DB коллекции (в настоящее время находится в общедоступной предварительной версии), где каждый документ может содержать сложные вложенные свойства.
 
-Azure синапсе SQL по запросу форматирует все вложенные типы как объекты JSON и массивы. Таким образом, можно [извлекать или изменять сложные объекты с помощью функций JSON](https://docs.microsoft.com/sql/relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server) или [анализировать данные JSON с помощью функции OPENJSON](https://docs.microsoft.com/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server). 
+Несерверный пул SQL форматирует все вложенные типы как объекты JSON и массивы. Таким образом, можно [извлекать или изменять сложные объекты с помощью функций JSON](https://docs.microsoft.com/sql/relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server) или [анализировать данные JSON с помощью функции OPENJSON](https://docs.microsoft.com/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server). 
 
 Ниже приведен пример запроса, который извлекает скалярные значения и из [ковид-19 Open Research DataSet](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/) JSON, который содержит вложенные объекты: 
 

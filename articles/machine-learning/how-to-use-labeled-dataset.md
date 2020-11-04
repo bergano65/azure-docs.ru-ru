@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 05/14/2020
-ms.openlocfilehash: 7f21d3ed3d5e71c2f87777316e7584011490043a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7fad51f5c8ec426792c74b1a14ea80ab47c2d892
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91757781"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93312299"
 ---
 # <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Создание и изучение набора данных с метками в Машинном обучении Azure
 
@@ -27,8 +27,8 @@ ms.locfileid: "91757781"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLFree), прежде чем начинать работу.
-* [Пакет SDK Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) или доступ к [Студии машинного обучения Azure](https://ml.azure.com/).
-    * Установка пакета [azure-contrib-dataset](https://docs.microsoft.com/python/api/azureml-contrib-dataset/?view=azure-ml-py&preserve-view=true).
+* [Пакет SDK Python для Машинного обучения Azure](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) или доступ к [Студии машинного обучения Azure](https://ml.azure.com/).
+    * Установка пакета [azure-contrib-dataset](/python/api/azureml-contrib-dataset/?preserve-view=true&view=azure-ml-py).
 * Рабочая область машинного обучения. См. сведения о [создании рабочей области машинного обучения Azure](how-to-manage-workspace.md).
 * Доступ к проекту маркировки данных в Машинном обучении Azure. Если у вас нет проекта маркировки, создайте его по [этой инструкции](how-to-create-labeling-projects.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "91757781"
 
 ### <a name="pandas-dataframe"></a>Кадр данных Pandas
 
-Чтобы выгрузить наборы данных с метками в кадр данных Pandas, используйте метод [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true#&preserve-view=trueto-pandas-dataframe-on-error--null---out-of-range-datetime--null--) из класса `azureml-contrib-dataset`. Чтобы установить этот класс, выполните следующую команду: 
+Чтобы выгрузить наборы данных с метками в кадр данных Pandas, используйте метод [`to_pandas_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueto-pandas-dataframe-on-error--null---out-of-range-datetime--null--) из класса `azureml-contrib-dataset`. Чтобы установить этот класс, выполните следующую команду: 
 
 ```shell
 pip install azureml-contrib-dataset
@@ -87,7 +87,7 @@ imgplot = plt.imshow(img)
 
 ### <a name="torchvision-datasets"></a>Наборы данных Torchvision
 
-Вы можете выгрузить наборы данных с метками в набор данных Torchvision с помощью метода [to_torchvision()](https://docs.microsoft.com/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset?view=azure-ml-py&preserve-view=true#&preserve-view=trueto-torchvision--), который также размещен в классе `azureml-contrib-dataset`. Чтобы использовать этот метод, необходимо установить [PyTorch](https://pytorch.org/). 
+Вы можете выгрузить наборы данных с метками в набор данных Torchvision с помощью метода [to_torchvision()](/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueto-torchvision--), который также размещен в классе `azureml-contrib-dataset`. Чтобы использовать этот метод, необходимо установить [PyTorch](https://pytorch.org/). 
 
 В следующем коде `animal_labels` набор данных — это выходные данные проекта меток, ранее сохраненного в рабочей области.
 

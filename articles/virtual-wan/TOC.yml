@@ -15,6 +15,10 @@
       href: virtual-wan-expressroute-portal.md
 - name: Основные понятия
   items:
+    - name: Безопасность
+      items:
+        - name: Основные способы защиты
+          href: security-baseline.md
     - name: Дистанционная работа
       items:
         - name: Поддержка дистанционной работы

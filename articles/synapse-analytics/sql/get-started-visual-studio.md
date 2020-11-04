@@ -1,6 +1,6 @@
 ---
 title: Подключение и запрос синапсе SQL с помощью Visual Studio и SSDT
-description: Используйте Visual Studio для отправки запросов к пулу SQL с помощью Azure Synapse Analytics.
+description: Используйте Visual Studio для запроса выделенного пула SQL с помощью Azure синапсе Analytics.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,14 +9,15 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 93c975bbbc69a43f1bd47bd4b1e7b857338ac1c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 098256c3174f5a737bec4f6a62cb1d2af99e6f4f
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87089249"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311078"
 ---
 # <a name="connect-to-synapse-sql-with-visual-studio-and-ssdt"></a>Подключение к Synapse SQL с помощью Visual Studio и SSDT
+
 > [!div class="op_single_selector"]
 > * [Azure Data Studio](get-started-azure-data-studio.md)
 > * [Power BI](get-started-power-bi-professional.md)
@@ -26,19 +27,20 @@ ms.locfileid: "87089249"
 > 
 > 
 
-Используйте Visual Studio для отправки запросов к пулу SQL с помощью Azure Synapse Analytics. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
+Используйте Visual Studio для запроса выделенного пула SQL с помощью Azure синапсе Analytics. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
 
 > [!NOTE]
-> SQL по запросу (предварительная версия) не поддерживается SSDT.
+> Несерверный пул SQL (Предварительная версия) не поддерживается SSDT.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим учебником необходимы следующие компоненты.
 
-* Пул SQL. Если у вас его нет, [создайте пул SQL](../sql-data-warehouse/create-data-warehouse-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+* Существующий выделенный пул SQL. Если у вас ее нет, см. раздел [Создание выделенного пула SQL](../sql-data-warehouse/create-data-warehouse-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) для выполнения этого предварительного требования.
 * Расширение SSDT для Visual Studio. Скорее всего, этот компонент у вас уже есть, если на вашем компьютере установлено приложение Visual Studio. Инструкции по установке и доступные варианты установки приведены в статье [Начало работы с Visual Studio 2019](../sql-data-warehouse/sql-data-warehouse-install-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
-* Полное имя сервера SQL Server. Чтобы узнать имя сервера, ознакомьтесь с разделом [Подключение к Synapse SQL](connect-overview.md).
+* Полное имя сервера SQL Server. Чтобы найти это имя сервера, см. раздел [Подключение к выделенному пулу SQL](connect-overview.md).
 
-## <a name="1-connect-to-sql-pool"></a>1. Подключение к пулу SQL
+## <a name="1-connect-to-a-dedicated-sql-pool"></a>1. подключение к выделенному пулу SQL
 1. Откройте Visual Studio 2019.
 2. Откройте обозреватель объектов SQL Server, выбрав **Вид** > **Обозреватель объектов SQL Server**.
    
@@ -50,7 +52,7 @@ ms.locfileid: "87089249"
    
     ![Подключение к серверу](./media/get-started-visual-studio/connection-dialog.png)
    
-   * **Имя сервера**: Введите найденное **имя сервера** .
+   * **Имя сервера** : Введите найденное **имя сервера** .
    * **Аутентификация**. Выберите **Проверка подлинности SQL Server** или **Встроенная проверка подлинности Active Directory**.
    * **Имя пользователя** и **пароль**. Если вы выбрали проверку подлинности SQL Server, введите имя пользователя и пароль.
    * Нажмите кнопку **Соединить**.
@@ -79,5 +81,5 @@ ms.locfileid: "87089249"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](get-started-power-bi-professional.md).
-Сведения о том, как настроить аутентификацию Azure Active Directory в своей среде, см. в статье [Аутентификация в Azure синапсе Analytics](../sql-data-warehouse/sql-data-warehouse-authentication.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+Сведения о настройке среды для проверки подлинности Azure Active Directory см. [в разделе аутентификация в выделенном пуле SQL](../sql-data-warehouse/sql-data-warehouse-authentication.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
  

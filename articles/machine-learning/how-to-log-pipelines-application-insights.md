@@ -10,12 +10,12 @@ ms.subservice: core
 ms.date: 08/11/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8a3a82e091791b39ddf36e39987590dcddea320f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 624409be4d7e2cfba37dbe16e083904766ae1389
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90897501"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309667"
 ---
 # <a name="collect-machine-learning-pipeline-log-files-in-application-insights-for-alerts-and-debugging"></a>Получение файлов журнала конвейера машинного обучения в Application Insights для предупреждений и отладки
 
@@ -38,7 +38,7 @@ ms.locfileid: "90897501"
 
 В этом разделе представлены общие сведения об использовании Опенценсус из конвейера Машинное обучение Azure. Подробное руководство см. в разделе [опенценсус Azure Monitor EXPORTS](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure) .
 
-Добавьте Писонскриптстеп в конвейер машинного обучения Azure. Настройте [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py&preserve-view=true) с зависимостью от опенценсус-ext-Azure. Настройте `APPLICATIONINSIGHTS_CONNECTION_STRING` переменную среды.
+Добавьте Писонскриптстеп в конвейер машинного обучения Azure. Настройте [RunConfiguration](/python/api/azureml-core/azureml.core.runconfiguration?preserve-view=true&view=azure-ml-py) с зависимостью от опенценсус-ext-Azure. Настройте `APPLICATIONINSIGHTS_CONNECTION_STRING` переменную среды.
 
 ```python
 from azureml.core.conda_dependencies import CondaDependencies
@@ -153,7 +153,7 @@ logger.info("I will be sent to Application Insights with Custom Dimensions", cus
 
 ### <a name="additional-helpful-queries"></a>Дополнительные полезные запросы
 
-В некоторых запросах ниже используется "customDimensions. Level". Эти уровни серьезности соответствуют уровню, с которым был первоначально отправлен журнал Python. Дополнительные сведения о запросах см. в разделе [Azure Monitor запросы журналов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-language).
+В некоторых запросах ниже используется "customDimensions. Level". Эти уровни серьезности соответствуют уровню, с которым был первоначально отправлен журнал Python. Дополнительные сведения о запросах см. в разделе [Azure Monitor запросы журналов](/azure/data-explorer/kusto/query/).
 
 | Вариант использования                                                               | Запрос                                                                                              |
 |------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
@@ -166,4 +166,4 @@ logger.info("I will be sent to Application Insights with Custom Dimensions", cus
 
 После получения журналов в экземпляре Application Insights их можно использовать для установки [предупреждений Azure Monitor](../azure-monitor/platform/alerts-overview.md#what-you-can-alert-on) на основе результатов запроса.
 
-Вы также можете добавлять результаты из запросов на [панель мониторинга Azure](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards#add-logs-analytics-query) для получения дополнительных сведений.
+Вы также можете добавлять результаты из запросов на [панель мониторинга Azure](../azure-monitor/learn/tutorial-app-dashboards.md#add-logs-query) для получения дополнительных сведений.

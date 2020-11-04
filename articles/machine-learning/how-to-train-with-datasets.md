@@ -12,19 +12,19 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: aa1ba4aa07ee4cdc097bd4ed3e6e4d7563360a5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70fd8796eb4d17662697410bf97caee835e998ab
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331800"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311328"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 
 
-В этой статье вы узнаете, как работать с [машинное обучение Azure наборами данных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py&preserve-view=true) в учебных экспериментах.  Наборы данных можно использовать в локальном или удаленном целевом объекте вычислений, не беспокоясь о строках подключения или путях к данным.
+В этой статье вы узнаете, как работать с [машинное обучение Azure наборами данных](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) в учебных экспериментах.  Наборы данных можно использовать в локальном или удаленном целевом объекте вычислений, не беспокоясь о строках подключения или путях к данным.
 
-Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azureными функциями [обучения, такими](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py&preserve-view=true) как [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true), а также [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
+Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azureными функциями [обучения, такими](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) как [скриптрунконфиг](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), а также [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,16 +34,16 @@ ms.locfileid: "91331800"
 
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
 
-* [Установленный пакет SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true) (>= 1.13.0), включающий пакет azureml-DataSets.
+* [Установленный пакет SDK машинное обучение Azure для Python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.13.0), включающий пакет azureml-DataSets.
 
 > [!Note]
-> Некоторые классы наборов данных имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py&preserve-view=true) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
+> Некоторые классы наборов данных имеют зависимости от пакета [azureml-](/python/api/azureml-dataprep/?preserve-view=true&view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
 
 ## <a name="use-datasets-directly-in-training-scripts"></a>Использование наборов данных непосредственно в сценариях обучения
 
 Если структурированные данные еще не зарегистрированы в качестве набора данных, создайте Табулардатасет и используйте их непосредственно в обучающем скрипте для локального или удаленного эксперимента.
 
-В этом примере вы создаете незарегистрированный [табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) и указываете его в качестве аргумента скрипта в объекте скриптрунконфиг для обучения. Если вы хотите повторно использовать этот Табулардатасет с другими экспериментами в рабочей области, см. статью [как зарегистрировать наборы данных в рабочей области](how-to-create-register-datasets.md#register-datasets).
+В этом примере вы создаете незарегистрированный [табулардатасет](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) и указываете его в качестве аргумента скрипта в объекте скриптрунконфиг для обучения. Если вы хотите повторно использовать этот Табулардатасет с другими экспериментами в рабочей области, см. статью [как зарегистрировать наборы данных в рабочей области](how-to-create-register-datasets.md#register-datasets).
 
 ### <a name="create-a-tabulardataset"></a>Создание Табулардатасет
 
@@ -60,7 +60,7 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path)
 
 ### <a name="access-dataset-in-training-script"></a>Доступ к набору данных в обучающем скрипте
 
-Следующий код настраивает аргумент сценария `--input-data` , который будет указываться при настройке запуска обучения (см. следующий раздел). Когда табличный набор данных передается в качестве значения аргумента, Azure ML разрешит это в идентификатор набора данных, который затем можно использовать для доступа к набору данных в обучающем скрипте (без необходимости жестко кодировать имя или идентификатор набора данных в скрипте). Затем он использует [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) метод для загрузки этого набора данных в кадр данных Pandas для дальнейшего изучения и подготовки перед обучением.
+Следующий код настраивает аргумент сценария `--input-data` , который будет указываться при настройке запуска обучения (см. следующий раздел). Когда табличный набор данных передается в качестве значения аргумента, Azure ML разрешит это в идентификатор набора данных, который затем можно использовать для доступа к набору данных в обучающем скрипте (без необходимости жестко кодировать имя или идентификатор набора данных в скрипте). Затем он использует [`to_pandas_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) метод для загрузки этого набора данных в кадр данных Pandas для дальнейшего изучения и подготовки перед обучением.
 
 > [!Note]
 > Если исходный источник данных содержит NaN, пустые строки или пустые значения, то при использовании `to_pandas_dataframe()` эти значения заменяются значением *null* .
@@ -88,7 +88,7 @@ df = dataset.to_pandas_dataframe()
 ```
 
 ### <a name="configure-the-training-run"></a>Настройка обучающего запуска
-Объект [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py&preserve-view=true) используется для настройки и отправки обучающего запуска.
+Объект [скриптрунконфиг](/python/api/azureml-core/azureml.core.scriptrun?preserve-view=true&view=azure-ml-py) используется для настройки и отправки обучающего запуска.
 
 Этот код создает объект Скриптрунконфиг, `src` который указывает
 
@@ -115,7 +115,7 @@ run.wait_for_completion(show_output=True)
 
 ## <a name="mount-files-to-remote-compute-targets"></a>Подключение файлов к удаленным целевым объектам вычислений
 
-Если у вас есть неструктурированные данные, создайте [филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.filedataset?view=azure-ml-py&preserve-view=true) и либо подключите, либо Скачайте файлы данных, чтобы сделать их доступными для целей удаленного вычислений. Узнайте, когда использовать [подключение и скачивание](#mount-vs-download) для удаленных экспериментов. 
+Если у вас есть неструктурированные данные, создайте [филедатасет](/python/api/azureml-core/azureml.data.filedataset?preserve-view=true&view=azure-ml-py) и либо подключите, либо Скачайте файлы данных, чтобы сделать их доступными для целей удаленного вычислений. Узнайте, когда использовать [подключение и скачивание](#mount-vs-download) для удаленных экспериментов. 
 
 В следующем примере создается Филедатасет, а набор данных подключается к целевому объекту вычислений путем передачи его в качестве аргумента в обучающий сценарий. 
 
@@ -222,7 +222,7 @@ print (mounted_path)
 
 ## <a name="directly-access-datasets-in-your-script"></a>Прямой доступ к наборам данных в скрипте
 
-Зарегистрированные наборы данных доступны как локально, так и удаленно в таких кластерах, как Машинное обучение Azure вычислений. Чтобы получить доступ к зарегистрированному набору данных во всех экспериментах, используйте следующий код для доступа к рабочей области и зарегистрированному набору данных по имени. По умолчанию [`get_by_name()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py&preserve-view=true#&preserve-view=trueget-by-name-workspace--name--version--latest--) метод в `Dataset` классе возвращает последнюю версию набора данных, зарегистрированную в рабочей области.
+Зарегистрированные наборы данных доступны как локально, так и удаленно в таких кластерах, как Машинное обучение Azure вычислений. Чтобы получить доступ к зарегистрированному набору данных во всех экспериментах, используйте следующий код для доступа к рабочей области и зарегистрированному набору данных по имени. По умолчанию [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) метод в `Dataset` классе возвращает последнюю версию набора данных, зарегистрированную в рабочей области.
 
 ```Python
 %%writefile $script_folder/train.py
@@ -256,7 +256,7 @@ src.run_config.source_directory_data_store = "workspaceblobstore"
 
 В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое обучение моделей машинного обучения](how-to-auto-train-remote.md) с помощью табулардатасетс.
 

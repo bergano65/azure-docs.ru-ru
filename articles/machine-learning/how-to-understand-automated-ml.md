@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq2
-ms.openlocfilehash: d66c5001d94d0c2d28ae3c55b468fbaf45871c98
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 681e965d5fb64e35374b580cbbb238defd619492
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280362"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311485"
 ---
 # <a name="evaluate-automated-machine-learning-experiment-results"></a>Оценка результатов автоматического эксперимента машинного обучения
 
@@ -41,7 +41,7 @@ ms.locfileid: "93280362"
 
 После завершения автоматического эксперимента машинного обучения журнал запусков можно найти в рабочей области машинного обучения с помощью [машинное обучение Azure Studio](overview-what-is-machine-learning-studio.md). 
 
-Для экспериментов с пакетом SDK эти же результаты можно просмотреть во время выполнения при использовании `RunDetails` [мини](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py&preserve-view=true)-приложения Jupyter.
+Для экспериментов с пакетом SDK эти же результаты можно просмотреть во время выполнения при использовании `RunDetails` [мини](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py)-приложения Jupyter.
 
 В следующих шагах и анимации показано, как просматривать журнал выполнения и метрики производительности и диаграммы определенной модели в студии.
 

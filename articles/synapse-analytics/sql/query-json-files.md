@@ -1,6 +1,6 @@
 ---
-title: Запрос JSON-файлов с помощью SQL по запросу (предварительная версия)
-description: В этом разделе объясняется, как читать JSON-файлы с помощью SQL по запросу в Azure Synapse Analytics.
+title: Запрос JSON-файлов с помощью бессерверного пула SQL (Предварительная версия)
+description: В этом разделе объясняется, как читать файлы JSON с помощью бессерверного пула SQL в Azure синапсе Analytics.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 86ed3f005788627166c65b30398279f04388546c
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 5dbad07401d77a15cd860a8ae492560c5fced819
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930855"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310607"
 ---
-# <a name="query-json-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов Parquet с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics
+# <a name="query-json-files-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Запрос JSON-файлов с помощью бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics
 
-В этой статье вы узнаете, как написать запрос с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics. Цель запроса — чтение JSON-файлов с помощью [OPENROWSET](develop-openrowset.md). 
+В этой статье вы узнаете, как написать запрос с использованием бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics. Цель запроса — чтение JSON-файлов с помощью [OPENROWSET](develop-openrowset.md). 
 - Стандартные JSON-файлы, в которых хранятся несколько документов JSON в виде массива JSON.
 - Разделенные строками JSON-файлы, в которых документы JSON разделяются символом новой строки. К общим расширениям для этих типов файлов относятся `jsonl` , `ldjson` и `ndjson` .
 

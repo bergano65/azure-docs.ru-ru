@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=jainr, previous-ms.author=jainr
-ms.openlocfilehash: 42433ec419ac9e02077cd0359e18b5114206f27d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af7900faff18d526686b80f23b9de3b3bce5ec5c
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76721835"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309617"
 ---
 # <a name="create-cicd-pipelines-for-ai-apps-using-azure-pipelines-docker-and-kubernetes"></a>Создание конвейеров CI/CD для приложений AI с помощью Azure Pipelines, Docker и Kubernetes
 
@@ -34,9 +34,9 @@ ms.locfileid: "76721835"
 - [Репозиторий исходного кода](https://github.com/Azure/DevOps-For-AI-Apps) , разветвление к учетной записи GitHub
 - [Организация Azure DevOps](/azure/devops/organizations/accounts/create-organization-msa-or-work-student)
 - [Azure CLI](/cli/azure/install-azure-cli)
-- [Кластер службы контейнеров Azure для Kubernetes (AKS)](/azure/container-service/kubernetes/container-service-tutorial-kubernetes-deploy-cluster)
+- [Кластер службы контейнеров Azure для Kubernetes (AKS)](/previous-versions/azure/container-service/kubernetes/container-service-tutorial-kubernetes-deploy-cluster)
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) для выполнения команд и выбор конфигурации из кластера AKS 
-- [Учетная запись реестра контейнеров Azure (записи контроля доступа)](/azure/container-registry/container-registry-get-started-portal)
+- [Учетная запись реестра контейнеров Azure (записи контроля доступа)](../../container-registry/container-registry-get-started-portal.md)
 
 ## <a name="cicd-pipeline-summary"></a>Сводка по конвейеру CI/CD
 
@@ -60,9 +60,9 @@ ms.locfileid: "76721835"
 10. Запросы пользователей для приложения проходят через DNS-сервер.
 11. DNS-сервер передает запросы подсистеме балансировки нагрузки и отправляет ответы обратно пользователям.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-- [Командный процесс обработки и анализа данных (TDSP)](/azure/machine-learning/team-data-science-process/).
-- [Машинное обучение Azure (AML)](/azure/machine-learning/)
+- [Командный процесс обработки и анализа данных (TDSP)](./index.yml).
+- [Машинное обучение Azure (AML)](../index.yml)
 - [Azure DevOps](https://azure.microsoft.com/services/devops/)
-- [Службы Azure Kubernetes (AKS)](/azure/aks/intro-kubernetes)
+- [Службы Azure Kubernetes (AKS)](../../aks/intro-kubernetes.md)

@@ -11,12 +11,12 @@ ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 08981ad21c15b6fc375e2e0733564c40d54932ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ce068f1b43fcd6611d4abf65029cbcc5de3b7d30
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708260"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311595"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Использование пакета интерпретации для объяснения моделей машинного обучения & прогнозах в Python (Предварительная версия)
 
@@ -85,7 +85,7 @@ ms.locfileid: "91708260"
                                  classes=classes)
     ```
 
-    или
+    или диспетчер конфигурации служб
 
     ```python
 
@@ -111,7 +111,7 @@ ms.locfileid: "91708260"
                                classes=classes)
     ```
 
-    или
+    или диспетчер конфигурации служб
 
     ```python
     from interpret.ext.blackbox import PFIExplainer
@@ -354,7 +354,7 @@ ExplanationDashboard(global_explanation, model, datasetX=x_test)
    [![Важность локального компонента панели мониторинга визуализации в AzureML Studio в экспериментах](./media/how-to-machine-learning-interpretability-aml/amlstudio-experiments.png)](./media/how-to-machine-learning-interpretability-aml/amlstudio-experiments.png#lightbox)
 
 * Панель « **модели** »
-  1. Если вы зарегистрировали исходную модель, выполнив действия, описанные в разделе [Развертывание моделей с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where), можно выбрать **модели** в левой области, чтобы просмотреть их.
+  1. Если вы зарегистрировали исходную модель, выполнив действия, описанные в разделе [Развертывание моделей с помощью машинное обучение Azure](./how-to-deploy-and-where.md), можно выбрать **модели** в левой области, чтобы просмотреть их.
   1. Выберите модель, а затем на вкладке **пояснения** Просмотрите панель мониторинга визуализации пояснения.
 
 ## <a name="interpretability-at-inference-time"></a>Возможные интерпретации во время вывода
@@ -419,7 +419,7 @@ ExplanationDashboard(global_explanation, model, datasetX=x_test)
 
 1. Разверните образ в целевом объекте вычислений, выполнив следующие действия.
 
-   1. При необходимости Зарегистрируйте исходную модель прогноза, выполнив действия, описанные в разделе [Развертывание моделей с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where).
+   1. При необходимости Зарегистрируйте исходную модель прогноза, выполнив действия, описанные в разделе [Развертывание моделей с помощью машинное обучение Azure](./how-to-deploy-and-where.md).
 
    1. Создайте файл оценки.
 
@@ -548,9 +548,8 @@ ExplanationDashboard(global_explanation, model, datasetX=x_test)
 
    Для удаления развернутой веб-службы используйте `service.delete()`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о интерпретируемости модели](how-to-machine-learning-interpretability.md)
 
 [Ознакомьтесь с примерами Машинное обучение Azure интерпретируемые записные книжки](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model)
-

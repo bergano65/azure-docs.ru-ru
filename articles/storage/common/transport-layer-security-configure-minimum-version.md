@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/27/2020
+ms.date: 11/03/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 5098d87d63d4002c4f219c5d2703ec1375599e00
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 5f772bd996b126a4cd7182a2ce088c2d3edc8e7d
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289454"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93312019"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Принудительная минимальная требуемая версия протокола TLS для запросов к учетной записи хранения
 
@@ -89,7 +89,7 @@ StorageBlobLogs
 
 ### <a name="configure-the-minimum-tls-version-for-a-storage-account"></a>Настройка минимальной версии TLS для учетной записи хранения
 
-Чтобы настроить минимальную версию TLS для учетной записи хранения, задайте версию **минимумтлсверсион** для учетной записи. Это свойство доступно для всех учетных записей хранения, созданных с помощью модели развертывания Azure Resource Manager в общедоступном облаке Azure или в облаках Azure для государственных организаций. Дополнительные сведения о модели развертывания Azure Resource Manager см. в разделе [Общие сведения об учетной записи хранения](storage-account-overview.md).
+Чтобы настроить минимальную версию TLS для учетной записи хранения, задайте версию **минимумтлсверсион** для учетной записи. Это свойство доступно для всех учетных записей хранения, созданных с помощью модели развертывания Azure Resource Manager. Дополнительные сведения о модели развертывания Azure Resource Manager см. в разделе [Общие сведения об учетной записи хранения](storage-account-overview.md).
 
 Свойство **минимумтлсверсион** не задано по умолчанию и не возвращает значение, пока оно не будет явно задано.  Если значение свойства равно **null** , учетная запись хранения разрешит запросы, отправленные с помощью TLS версии 1,0 или более поздней.
 

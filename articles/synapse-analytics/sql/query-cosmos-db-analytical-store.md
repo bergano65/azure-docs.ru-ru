@@ -1,6 +1,6 @@
 ---
 title: Запрос Azure Cosmos DB данных с помощью бессерверного пула SQL в ссылке Azure синапсе (Предварительная версия)
-description: В этой статье вы узнаете, как запросить Azure Cosmos DB с помощью SQL по запросу в Azure синапсе Link (Предварительная версия).
+description: В этой статье вы узнаете, как запрашивать Azure Cosmos DB с помощью бессерверного пула SQL в Azure синапсе Link (Предварительная версия).
 services: synapse analytics
 author: jovanpop-msft
 ms.service: synapse-analytics
@@ -9,18 +9,18 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2b1af6fa5b0ccb95476c4ae169481e4aaa15f4f9
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 9f57d435134bffbb8e7576adffeacb92bf687124
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737841"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310312"
 ---
 # <a name="query-azure-cosmos-db-data-with-serverless-sql-pool-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью несвязанного с сервером пула SQL в Azure синапсе Link (Предварительная версия)
 
 Синапсе пул SQL без сервера позволяет анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью [ссылки Azure синапсе](../../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) практически в реальном времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из [аналитического хранилища](../../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL.
 
-Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , включая большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure, или Azure Data Lake Storage использовать [команду создать внешнюю таблицу как SELECT](develop-tables-cetas.md#cetas-in-sql-on-demand). В настоящее время вы не можете хранить результаты запросов пула SQL Server, чтобы Azure Cosmos DB с помощью [CETAS](develop-tables-cetas.md#cetas-in-sql-on-demand).
+Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , включая большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure, или Azure Data Lake Storage использовать [команду создать внешнюю таблицу как SELECT](develop-tables-cetas.md#cetas-in-serverless-sql-pool). В настоящее время вы не можете хранить результаты запросов пула SQL Server, чтобы Azure Cosmos DB с помощью CETAS. 
 
 В этой статье вы узнаете, как написать запрос к неиспользуемому для сервера пулу SQL, который будет запрашивать данные из Azure Cosmos DB контейнеров, Синапсеных с включенной ссылкой. Затем вы можете узнать больше о создании бессерверных представлений пула SQL в Azure Cosmos DB контейнерах и подключении их к Power BI моделям в [этом](./tutorial-data-analyst.md) руководстве. 
 
@@ -255,11 +255,11 @@ FROM
 | Тип свойства Azure Cosmos DB | Тип столбца SQL |
 | --- | --- |
 | Логическое значение | bit |
-| Целое число | BIGINT |
-| Decimal | FLOAT |
+| Целое число | bigint |
+| Decimal | float |
 | Строка | varchar (параметры сортировки базы данных UTF8) |
 | Дата и время (строка в формате ISO) | varchar (30) |
-| Дата и время (метка времени Unix) | BIGINT |
+| Дата и время (метка времени Unix) | bigint |
 | NULL | `any SQL type` 
 | Вложенный объект или массив | varchar (max) (параметры сортировки базы данных UTF8), сериализованный как текст JSON |
 
@@ -343,7 +343,7 @@ GROUP BY geo_id
 
 Возможные ошибки и действия по устранению неполадок перечислены в следующей таблице.
 
-| Ошибка | Первопричина |
+| Error | Первопричина |
 | --- | --- |
 | Синтаксические ошибки:<br/> — Неправильный синтаксис рядом с "OPENROWSET"<br/> - `...` не является распознаваемым параметром поставщика BULK OPENROWSET.<br/> — Неправильный синтаксис рядом с `...` | Возможные основные причины<br/> -Не использовать "CosmosDB" в качестве первого параметра,<br/> — Использование строкового литерала вместо идентификатора в третьем параметре;<br/> -Не указывать третий параметр (имя контейнера) |
 | Ошибка в строке подключения CosmosDB | -Account, база данных, ключ не указан <br/> -В строке подключения есть несколько параметров, которые не распознаются.<br/> -Точка с запятой `;` размещается в конце строки соединения |
@@ -358,6 +358,6 @@ GROUP BY geo_id
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Использование Power BI и бессерверного пула SQL синапсе с помощью ссылки Azure синапсе](../../cosmos-db/synapse-link-power-bi.md)
-- [Инструкции по созданию и использованию представлений в SQL по запросу](create-use-views.md) 
-- [Руководство по созданию представлений SQL по запросу Azure Cosmos DB и их подключению к Power BIным моделям через DirectQuery](./tutorial-data-analyst.md)
+- [Использование Power BI и бессерверного пула SQL с ссылкой Azure синапсе](../../cosmos-db/synapse-link-power-bi.md)
+- [Инструкции по созданию и использованию представлений в бессерверном пуле SQL](create-use-views.md) 
+- [Руководство по созданию бессерверных представлений пула SQL с Azure Cosmos DB и их подключение к Power BIным моделям через DirectQuery](./tutorial-data-analyst.md)

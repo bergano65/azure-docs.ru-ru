@@ -11,17 +11,17 @@ ms.subservice: core
 ms.date: 03/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: 16a1c966b3f5a674f0ae1dc9c7ee078f45f8bdc2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b65553edf61d8e646e7238a5385656fe75a3156f
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91598236"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311380"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
 
 
-Автоматизируйте эффективную настройку параметров с помощью Машинное обучение Azure [пакета](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py&preserve-view=true). Узнайте, как выполнить шаги, необходимые для настройки параметров с помощью [пакета SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true).
+Автоматизируйте эффективную настройку параметров с помощью Машинное обучение Azure [пакета](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py). Узнайте, как выполнить шаги, необходимые для настройки параметров с помощью [пакета SDK для машинное обучение Azure](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py).
 
 1. определение пространства поиска параметров;
 1. Указание основной метрики для оптимизации  
@@ -44,7 +44,7 @@ ms.locfileid: "91598236"
 
 Настройте параметры, просмотрев диапазон значений, определенных для каждого параметра.
 
-Параметры могут быть дискретными или непрерывными и иметь распределение значений, описываемых [выражением параметра](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.parameter_expressions?view=azure-ml-py&preserve-view=true).
+Параметры могут быть дискретными или непрерывными и иметь распределение значений, описываемых [выражением параметра](/python/api/azureml-train-core/azureml.train.hyperdrive.parameter_expressions?preserve-view=true&view=azure-ml-py).
 
 ### <a name="discrete-hyperparameters"></a>Дискретные гиперпараметры 
 
@@ -101,7 +101,7 @@ ms.locfileid: "91598236"
 
 #### <a name="random-sampling"></a>Случайная выборка
 
-[Случайная выборка](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.randomparametersampling?view=azure-ml-py&preserve-view=true) поддерживает дискретные и непрерывные параметры. Он поддерживает раннее прекращение выполнения с низкой производительностью. Некоторые пользователи выполняют первоначальный поиск с случайной выборкой, а затем уточняют область поиска для улучшения результатов.
+[Случайная выборка](/python/api/azureml-train-core/azureml.train.hyperdrive.randomparametersampling?preserve-view=true&view=azure-ml-py) поддерживает дискретные и непрерывные параметры. Он поддерживает раннее прекращение выполнения с низкой производительностью. Некоторые пользователи выполняют первоначальный поиск с случайной выборкой, а затем уточняют область поиска для улучшения результатов.
 
 При случайной выборке значения гиперпараметров выбираются случайным образом из определенного пространства поиска. 
 
@@ -118,7 +118,7 @@ param_sampling = RandomParameterSampling( {
 
 #### <a name="grid-sampling"></a>Решетчатая выборка
 
-[Выборка по сетке](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.gridparametersampling?view=azure-ml-py&preserve-view=true) поддерживает дискретные параметры. Использование выборки по сетке можно использовать, если вы можете выполнять поиск в области поиска по бюджету. Поддерживает раннее завершение низкоуровневых запусков.
+[Выборка по сетке](/python/api/azureml-train-core/azureml.train.hyperdrive.gridparametersampling?preserve-view=true&view=azure-ml-py) поддерживает дискретные параметры. Использование выборки по сетке можно использовать, если вы можете выполнять поиск в области поиска по бюджету. Поддерживает раннее завершение низкоуровневых запусков.
 
 Выполняет простой поиск в сетке по всем возможным значениям. Выборка по сетке может использоваться только с `choice` параметрами. Например, в следующем пространстве имеется шесть выборок:
 
@@ -134,7 +134,7 @@ param_sampling = GridParameterSampling( {
 
 #### <a name="bayesian-sampling"></a>Байесовская выборка
 
-[Выборка Байеса](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.bayesianparametersampling?view=azure-ml-py&preserve-view=true) основана на алгоритме оптимизации Байеса. Выборка выбирается в зависимости от того, как выполнялись предыдущие выборки, чтобы новые примеры могли улучшить основную метрику.
+[Выборка Байеса](/python/api/azureml-train-core/azureml.train.hyperdrive.bayesianparametersampling?preserve-view=true&view=azure-ml-py) основана на алгоритме оптимизации Байеса. Выборка выбирается в зависимости от того, как выполнялись предыдущие выборки, чтобы новые примеры могли улучшить основную метрику.
 
 Выборка Байеса рекомендуется при наличии достаточного бюджета для изучения пространства параметров. Для получения наилучших результатов рекомендуется, чтобы максимальное число запусков, большее или равное 20, превышало количество настраиваемых параметров. 
 
@@ -156,7 +156,7 @@ param_sampling = BayesianParameterSampling( {
 
 ## <a name="specify-primary-metric"></a><a name="specify-primary-metric-to-optimize"></a> Укажите основную метрику
 
-Укажите [основную метрику](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.primarymetricgoal?view=azure-ml-py&preserve-view=true) , для которой требуется оптимизировать настройку параметров. Для основной метрики оценивается каждый учебный запуск. Политика раннего завершения использует основную метрику для обнаружения запусков с низкой производительностью.
+Укажите [основную метрику](/python/api/azureml-train-core/azureml.train.hyperdrive.primarymetricgoal?preserve-view=true&view=azure-ml-py) , для которой требуется оптимизировать настройку параметров. Для основной метрики оценивается каждый учебный запуск. Политика раннего завершения использует основную метрику для обнаружения запусков с низкой производительностью.
 
 Укажите следующие атрибуты для основной метрики:
 
@@ -204,7 +204,7 @@ run_logger.log("accuracy", float(val_accuracy))
 
 ### <a name="bandit-policy"></a>Политика Bandit
 
-[Политика бандит](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?view=azure-ml-py&preserve-view=true#&preserve-view=truedefinition) основана на значении коэффициента времени и времени резерва и интервале оценки. Бандит завершает работу, когда основная метрика не попадает в указанный коэффициент временного резерва или сумму временного резерва по сравнению с наилучшим выполнением.
+[Политика бандит](/python/api/azureml-train-core/azureml.train.hyperdrive.banditpolicy?preserve-view=true&view=azure-ml-py#&preserve-view=truedefinition) основана на значении коэффициента времени и времени резерва и интервале оценки. Бандит завершает работу, когда основная метрика не попадает в указанный коэффициент временного резерва или сумму временного резерва по сравнению с наилучшим выполнением.
 
 > [!NOTE]
 > Выборка Байеса не поддерживает раннее завершение. При использовании выборки Байеса задайте `early_termination_policy = None` .
@@ -227,7 +227,7 @@ early_termination_policy = BanditPolicy(slack_factor = 0.1, evaluation_interval=
 
 ### <a name="median-stopping-policy"></a>Политика медианной остановки
 
-[Средняя остановка](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.medianstoppingpolicy?view=azure-ml-py&preserve-view=true) — это политика раннего завершения, основанная на средних показателях основных метрик, сообщаемых выполнениями. Эта политика вычисляет среднее выполнение всех обучающих запусков и завершает работу с основными значениями метрик, которые хуже медианы средних значений.
+[Средняя остановка](/python/api/azureml-train-core/azureml.train.hyperdrive.medianstoppingpolicy?preserve-view=true&view=azure-ml-py) — это политика раннего завершения, основанная на средних показателях основных метрик, сообщаемых выполнениями. Эта политика вычисляет среднее выполнение всех обучающих запусков и завершает работу с основными значениями метрик, которые хуже медианы средних значений.
 
 Она принимает следующие параметры конфигурации:
 * `evaluation_interval`: частота применения политики (необязательный параметр).
@@ -243,7 +243,7 @@ early_termination_policy = MedianStoppingPolicy(evaluation_interval=1, delay_eva
 
 ### <a name="truncation-selection-policy"></a>Политика выбора усечения
 
-[Выбор усечения](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.truncationselectionpolicy?view=azure-ml-py&preserve-view=true) отменяет процент наименьших выполнений в каждом интервале оценки. Выполняется сравнение с использованием основной метрики. 
+[Выбор усечения](/python/api/azureml-train-core/azureml.train.hyperdrive.truncationselectionpolicy?preserve-view=true&view=azure-ml-py) отменяет процент наименьших выполнений в каждом интервале оценки. Выполняется сравнение с использованием основной метрики. 
 
 Она принимает следующие параметры конфигурации:
 
@@ -298,7 +298,7 @@ max_concurrent_runs=4
 
 ## <a name="configure-experiment"></a>Настройка эксперимента
 
-Чтобы [настроить эксперимент настройки параметров](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriverunconfig?view=azure-ml-py&preserve-view=true) , укажите следующие параметры.
+Чтобы [настроить эксперимент настройки параметров](/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriverunconfig?preserve-view=true&view=azure-ml-py) , укажите следующие параметры.
 * Область поиска определенного параметра
 * Политика раннего завершения
 * Основная метрика
@@ -325,7 +325,7 @@ hd_config = HyperDriveConfig(run_config=src,
 
 ## <a name="submit-experiment"></a>Отправка эксперимента
 
-Определив конфигурацию настройки параметров, [отправьте эксперимент](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=truesubmit-config--tags-none----kwargs-):
+Определив конфигурацию настройки параметров, [отправьте эксперимент](/python/api/azureml-core/azureml.core.experiment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truesubmit-config--tags-none----kwargs-):
 
 ```Python
 from azureml.core.experiment import Experiment
@@ -339,7 +339,7 @@ hyperdrive_run = experiment.submit(hd_config)
 
 
 Горячий запуск обрабатывается по-разному в зависимости от метода выборки:
-- **Выборка Байеса**: пробные версии из предыдущего запуска используются в качестве предыдущих знаний для выбора новых примеров и для улучшения основной метрики.
+- **Выборка Байеса** : пробные версии из предыдущего запуска используются в качестве предыдущих знаний для выбора новых примеров и для улучшения основной метрики.
 - **Случайная выборка** или **выборка в сетке**. для определения плохо выполняемых запусков с ранним прекращением используются знания из предыдущих запусков. 
 
 Укажите список родительских запусков, из которых требуется горячий запуск.
@@ -382,7 +382,7 @@ hd_config = HyperDriveConfig(run_config=src,
 
 ## <a name="visualize-experiment"></a>Визуализация эксперимента
 
-Используйте мини-приложение [записной книжки](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets.rundetails?view=azure-ml-py&preserve-view=true) для визуализации хода выполнения обучения. Следующий фрагмент кода визуализирует все запуски по настройке гиперпараметров в одном отображении, создаваемом в записной книжке Jupyter:
+Используйте мини-приложение [записной книжки](/python/api/azureml-widgets/azureml.widgets.rundetails?preserve-view=true&view=azure-ml-py) для визуализации хода выполнения обучения. Следующий фрагмент кода визуализирует все запуски по настройке гиперпараметров в одном отображении, создаваемом в записной книжке Jupyter:
 
 ```Python
 from azureml.widgets import RunDetails

@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 04/13/2020
-ms.openlocfilehash: a62f8aee0bd0a0d2b7009a48e9d5f00ea3c5155f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e1bf5dd070ac12878c608f744ff450395de84c48
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90883213"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310031"
 ---
 # <a name="web-service-input-and-web-service-output-modules"></a>Модули выходных данных веб-службы и веб-службы
 
@@ -26,7 +26,7 @@ ms.locfileid: "90883213"
 
 ## <a name="how-to-use-web-service-input-and-output"></a>Использование входных и выходных данных веб-службы
 
-При [создании конвейера вывода в режиме реального времени](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-deploy#create-a-real-time-inference-pipeline) из обучающего конвейера автоматически добавляются модули выходных данных веб-службы и веб-службы, которые показывают, где пользователь вводит данные в конвейер и где возвращаются данные. 
+При [создании конвейера вывода в режиме реального времени](../tutorial-designer-automobile-price-deploy.md#create-a-real-time-inference-pipeline) из обучающего конвейера автоматически добавляются модули выходных данных веб-службы и веб-службы, которые показывают, где пользователь вводит данные в конвейер и где возвращаются данные. 
 
 > [!NOTE]
 > Автоматическое создание конвейера вывода в режиме реального времени — это процесс, основанный на правилах. Нет никакой гарантии правильности. 
@@ -47,7 +47,7 @@ ms.locfileid: "90883213"
 > [!NOTE]
 >  В предыдущем примере **введите данные вручную** , чтобы получить схему данных для веб-службы и необходимые для развертывания конечной точки в режиме реального времени. Как правило, необходимо всегда подключать модуль или набор данных к порту, к которому подключены **входные данные веб-службы** , чтобы предоставить схему данных.
    
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения о [развертывании конечной точки в режиме реального времени](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-deploy#deploy-the-real-time-endpoint).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о [развертывании конечной точки в режиме реального времени](../tutorial-designer-automobile-price-deploy.md#deploy-the-real-time-endpoint).
 
 Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure.

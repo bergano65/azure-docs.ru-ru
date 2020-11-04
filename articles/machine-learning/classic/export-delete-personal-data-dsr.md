@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 05/25/2018
-ms.openlocfilehash: 6bd86dc855e5a312550abe050603aeaf45b075ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 550603b9315c1abaa025aac804afc4fe674159d2
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362356"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310025"
 ---
 # <a name="export-and-delete-in-product-user-data-from-azure-machine-learning-studio-classic"></a>Экспорт и удаление данных из пользовательского продукта из Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 
@@ -76,6 +76,6 @@ ms.locfileid: "91362356"
 ## <a name="export-studio-classic-data-with-powershell"></a>Экспорт данных студии (классическая модель) с помощью PowerShell
 Используйте PowerShell, чтобы экспортировать всю информацию в переносимый формат из Машинное обучение Azure Studio (классической) с помощью команд. Дополнительные сведения см. в статье [модуль PowerShell для машинное обучение Azure Studio (классическая модель)](powershell-module.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Документацию, посвященную веб-службам и плану обязательств, см. в разделе [машинное обучение Azure Studio (классическая модель) REST API справочнике](https://docs.microsoft.com/rest/api/machinelearning/). 
+Документацию, посвященную веб-службам и плану обязательств, см. в разделе [машинное обучение Azure Studio (классическая модель) REST API справочнике](/rest/api/machinelearning/).

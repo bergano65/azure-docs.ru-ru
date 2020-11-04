@@ -11,29 +11,29 @@ author: jhirono
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: b16c8873a1778b907b288486c204d74ee31683cb
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 168dc342eaf61a9ede632fb429311f6f5c1d4be4
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097963"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311562"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Использование рабочей области с пользовательским DNS-сервером
 
-При использовании Машинное обучение Azure с виртуальной сетью существует [несколько способов обработки разрешения имен DNS](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances). По умолчанию Azure автоматически обрабатывает разрешение имен для рабочей области и частной конечной точки. Однако __при использовании собственного пользовательского DNS-сервера__ необходимо вручную создать записи DNS для рабочей области.
+При использовании Машинное обучение Azure с виртуальной сетью существует [несколько способов обработки разрешения имен DNS](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md). По умолчанию Azure автоматически обрабатывает разрешение имен для рабочей области и частной конечной точки. Однако __при использовании собственного пользовательского DNS-сервера__ необходимо вручную создать записи DNS для рабочей области.
 
 > [!IMPORTANT]
 > В этой статье описывается, как найти полное доменное имя и IP-адреса для этих записей, которые не предоставляют сведений о настройке записей DNS для этих элементов. Сведения о добавлении записей см. в документации по программному обеспечению DNS.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Виртуальная сеть Azure, использующая [собственный DNS-сервер](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server).
+- Виртуальная сеть Azure, использующая [собственный DNS-сервер](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server).
 
 - Рабочая область Машинное обучение Azure с частной конечной точкой. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
-- Знакомство с использованием [сетевой изоляции во время обучения & вывода](how-to-enable-virtual-network.md).
+- Знакомство с использованием [сетевой изоляции во время обучения & вывода](./how-to-network-security-overview.md).
 
-- При необходимости [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) или [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+- При необходимости [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="find-the-ip-addresses"></a>Поиск IP-адресов
 
@@ -69,7 +69,7 @@ $workspaceDns.CustomDnsConfigs | format-table
 # <a name="azure-portal"></a>[Портал Azure](#tab/azure-portal)
 
 1. В [портал Azure](https://portal.azure.com)выберите __рабочую область__ машинное обучение Azure.
-1. В разделе __Параметры__ выберите __частные конечные точки подключения__ .
+1. В разделе __Параметры__ выберите __частные конечные точки подключения__.
 1. Выберите ссылку в столбце __закрытая конечная точка__ , который отображается.
 1. Список полных доменных имен (FQDN) и IP-адреса для частной конечной точки рабочей области находятся в нижней части страницы.
 

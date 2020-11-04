@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: 69eefce50cefe9f54ed931c96ccbe94b2057cae4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb87afcc6edc02d241dca763aff9ecdd594e4711
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362373"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310091"
 ---
 # <a name="excel-add-in-for-azure-machine-learning-studio-classic-web-services"></a>Надстройка Excel для веб-служб Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Excel упрощает непосредственный вызов веб-служб без необходимости написания какого-либо кода.
@@ -65,20 +65,20 @@ Excel упрощает непосредственный вызов веб-слу
 
 **Использовать новую веб-службу**
 
-1. На портале [веб-служб машинное обучение Azure](https://services.azureml.net) щелкните **веб-службы**, а затем выберите свою веб-службу. 
-2. Щелкните **Consume**(Использование).
+1. На портале [веб-служб машинное обучение Azure](https://services.azureml.net) щелкните **веб-службы** , а затем выберите свою веб-службу. 
+2. Щелкните **Consume** (Использование).
 3. Найдите раздел **Basic consumption info** (Основные сведения об использовании). Скопируйте и сохраните **первичный ключ** и URL-адрес **запроса-ответа**.
 
 ## <a name="steps-to-add-a-new-web-service"></a>Действия для добавления новой веб-службы
 
 1. Разверните новую веб-службу или используйте уже существующую. Дополнительные сведения о развертывании веб-службы см. в разделе [учебник 3. Развертывание модели кредитных рисков](tutorial-part3-credit-risk-deploy.md).
-2. Щелкните **Consume**(Использование).
+2. Щелкните **Consume** (Использование).
 3. Найдите раздел **Basic consumption info** (Основные сведения об использовании). Скопируйте и сохраните **первичный ключ** и URL-адрес **запроса-ответа**.
 4. В Excel перейдите к разделу **веб-службы** (если вы используете раздел **Predict** , щелкните стрелку "назад", чтобы перейти к списку веб-служб).
    
     ![Переход к выбору веб-службы](./media/excel-add-in-for-web-services/image3.png)
 5. Щелкните **Добавить веб-службу**.
-6. Вставьте URL-адрес в текстовое поле с меткой **URL**в надстройке Excel.
+6. Вставьте URL-адрес в текстовое поле с меткой **URL** в надстройке Excel.
 7. Вставьте ключ API (или первичный ключ) в текстовое поле с меткой **Ключ API**.
 8. Нажмите кнопку **Добавить**.
    
@@ -88,4 +88,4 @@ Excel упрощает непосредственный вызов веб-слу
 ## <a name="sharing-your-workbook"></a>Предоставление общего доступа к книге
 Во время сохранения книги также сохраняются ключи API (или первичные ключи) для веб-служб, которые вы добавили. Это означает, что доступ к книге следует предоставлять только тем лицам, которым вы доверяете.
 
-Любые вопросы можно задать ниже в разделе комментариев или на нашем [форуме](https://docs.microsoft.com/answers/topics/azure-machine-learning.html).
+Любые вопросы можно задать ниже в разделе комментариев или на нашем [форуме](/answers/topics/azure-machine-learning.html).

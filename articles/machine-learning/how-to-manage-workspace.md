@@ -10,23 +10,23 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 9abfbe03a4192411a3790bb6d6e488d674c13109
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: ab3f3765a0e988c7e93cca5782b47b3f2d32aef4
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897166"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93312556"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Создание рабочих областей Машинное обучение Azure и управление ими 
 
-В этой статье вы создадите, просмотрите и удалите [**машинное обучение Azure рабочие области**](concept-workspace.md) для [Машинное обучение Azure](overview-what-is-azure-ml.md), используя портал Azure или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true) .
+В этой статье вы создадите, просмотрите и удалите [**машинное обучение Azure рабочие области**](concept-workspace.md) для [Машинное обучение Azure](overview-what-is-azure-ml.md), используя портал Azure или [пакет SDK для Python](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py) .
 
 По мере необходимости изменения или требования к автоматизации можно также создавать и удалять рабочие области [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md)или с помощью [расширения VS Code](tutorial-setup-vscode-extension.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
-* При использовании пакета SDK для Python [установите пакет SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
+* При использовании пакета SDK для Python [установите пакет SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
 
@@ -46,7 +46,7 @@ ms.locfileid: "92897166"
     ```
     Задайте значение `create_resource_group` false, если у вас есть группа ресурсов Azure, которую вы хотите использовать для рабочей области.
 
-* <a name="create-multi-tenant"></a>**Несколько клиентов.**  Если у вас несколько учетных записей, добавьте идентификатор клиента Azure Active Directory, который вы хотите использовать.  Найдите идентификатор клиента из [портал Azure](https://portal.azure.com) в разделе **Azure Active Directory внешние удостоверения** .
+* <a name="create-multi-tenant"></a>**Несколько клиентов.**  Если у вас несколько учетных записей, добавьте идентификатор клиента Azure Active Directory, который вы хотите использовать.  Найдите идентификатор клиента из [портал Azure](https://portal.azure.com) в разделе **Azure Active Directory внешние удостоверения**.
 
     ```python
     from azureml.core.authentication import InteractiveLoginAuthentication
@@ -62,7 +62,7 @@ ms.locfileid: "92897166"
                 )
     ```
 
-* **[Независимых Cloud](reference-machine-learning-cloud-parity.md)** . Вам потребуется дополнительный код для проверки подлинности в Azure, если вы работаете в независимых облаке.
+* **[Независимых Cloud](reference-machine-learning-cloud-parity.md)**. Вам потребуется дополнительный код для проверки подлинности в Azure, если вы работаете в независимых облаке.
 
     ```python
     from azureml.core.authentication import InteractiveLoginAuthentication
@@ -78,7 +78,7 @@ ms.locfileid: "92897166"
                 )
     ```
 
-* **Используйте существующие ресурсы Azure** .  Вы также можете создать рабочую область, которая использует существующие ресурсы Azure с форматом идентификатора ресурса Azure. Поиск конкретных идентификаторов ресурсов Azure в портал Azure или с помощью пакета SDK. В этом примере предполагается, что группа ресурсов, учетная запись хранения, хранилище ключей, App Insights и реестр контейнеров уже существуют.
+* **Используйте существующие ресурсы Azure**.  Вы также можете создать рабочую область, которая использует существующие ресурсы Azure с форматом идентификатора ресурса Azure. Поиск конкретных идентификаторов ресурсов Azure в портал Azure или с помощью пакета SDK. В этом примере предполагается, что группа ресурсов, учетная запись хранения, хранилище ключей, App Insights и реестр контейнеров уже существуют.
 
    ```python
    import os
@@ -105,7 +105,7 @@ ms.locfileid: "92897166"
                              exist_ok=False)
    ```
 
-Дополнительные сведения см. в статье [Справочник по пакету SDK для рабочей области](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true).
+Дополнительные сведения см. в статье [Справочник по пакету SDK для рабочей области](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py).
 
 Если у вас возникли проблемы при доступе к подписке, см. статью [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](how-to-setup-authentication.md), а также [Проверка подлинности в машинное обучение Azure](https://aka.ms/aml-notebook-auth) записной книжке.
 
@@ -113,37 +113,37 @@ ms.locfileid: "92897166"
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с помощью учетных данных вашей подписки Azure. 
 
-1. На портале Azure вверху слева щелкните **+ Создать ресурс** .
+1. На портале Azure вверху слева щелкните **+ Создать ресурс**.
 
       ![Создать новый ресурс](./media/how-to-manage-workspace/create-workspace.gif)
 
-1. С помощью строки поиска выполните поиск по запросу **Машинное обучение** .
+1. С помощью строки поиска выполните поиск по запросу **Машинное обучение**.
 
-1. Выберите **Машинное обучение** .
+1. Выберите **Машинное обучение**.
 
-1. В области **Машинное обучение** выберите **Создать** .
+1. В области **Машинное обучение** выберите **Создать**.
 
 1. Укажите следующие сведения для настройки новой рабочей области:
 
    Поле|Описание 
    ---|---
-   имя рабочей области. |Введите уникальное имя для идентификации рабочей области. В этом примере мы используем **docs-ws** . Имена должны быть уникальными в группе ресурсов. Используйте имя, которое позволит легко запомнить рабочую область и отличить ее от областей, созданных другими пользователями. В имени рабочей области не учитывается регистр.
+   имя рабочей области. |Введите уникальное имя для идентификации рабочей области. В этом примере мы используем **docs-ws**. Имена должны быть уникальными в группе ресурсов. Используйте имя, которое позволит легко запомнить рабочую область и отличить ее от областей, созданных другими пользователями. В имени рабочей области не учитывается регистр.
    Подписка |Выберите подписку Azure, которую нужно использовать.
-   Группа ресурсов | Используйте группу ресурсов, которая уже есть в подписке, или введите имя, чтобы создать группу ресурсов. Группа ресурсов содержит связанные ресурсы для решения Azure. В этом примере мы используем **docs-aml** . Для использования существующей группы ресурсов требуется роль *участника* или *владельца* .  Дополнительные сведения о доступе см. [в статье Управление доступом к рабочей области машинное обучение Azure](how-to-assign-roles.md).
+   Группа ресурсов | Используйте группу ресурсов, которая уже есть в подписке, или введите имя, чтобы создать группу ресурсов. Группа ресурсов содержит связанные ресурсы для решения Azure. В этом примере мы используем **docs-aml**. Для использования существующей группы ресурсов требуется роль *участника* или *владельца* .  Дополнительные сведения о доступе см. [в статье Управление доступом к рабочей области машинное обучение Azure](how-to-assign-roles.md).
    Регион | Выберите ближайший к вашим пользователям регион Azure и ресурсы данных, чтобы создать рабочую область.
 
     ![Настройка рабочей области.](./media/how-to-manage-workspace/create-workspace-form.png)
 
-1. Завершив настройку рабочей области, выберите **проверить и создать** . При необходимости используйте разделы " [Сетевые](#networking) и [Дополнительные](#advanced) параметры" для настройки дополнительных параметров рабочей области.
+1. Завершив настройку рабочей области, выберите **проверить и создать**. При необходимости используйте разделы " [Сетевые](#networking) и [Дополнительные](#advanced) параметры" для настройки дополнительных параметров рабочей области.
 
-1. Проверьте параметры и внесите дополнительные изменения или исправления. Когда вы будете удовлетворены параметрами, нажмите кнопку **создать** .
+1. Проверьте параметры и внесите дополнительные изменения или исправления. Когда вы будете удовлетворены параметрами, нажмите кнопку **создать**.
 
    > [!Warning] 
    > Создание рабочей области в облаке может занять несколько минут.
 
    По завершении процесса появится сообщение об успешном развертывании. 
  
- 1. Чтобы просмотреть новую рабочую область, выберите **Перейти к ресурсу** .
+ 1. Чтобы просмотреть новую рабочую область, выберите **Перейти к ресурсу**.
  
 ---
 
@@ -155,7 +155,7 @@ ms.locfileid: "92897166"
 
 # <a name="python"></a>[Python](#tab/python)
 
-Пакет SDK для Машинное обучение Azure Python предоставляет класс [приватиндпоинтконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.privateendpointconfig?view=azure-ml-py&preserve-view=true) , который можно использовать с [рабочей областью. Create ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---tags-none--friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--adb-workspace-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--private-endpoint-config-none--private-endpoint-auto-approval-true--exist-ok-false--show-output-true-&preserve-view=true) для создания рабочей области с закрытой конечной точкой. Для этого класса требуется существующая виртуальная сеть.
+Пакет SDK для Машинное обучение Azure Python предоставляет класс [приватиндпоинтконфиг](/python/api/azureml-core/azureml.core.privateendpointconfig?preserve-view=true&view=azure-ml-py) , который можно использовать с [рабочей областью. Create ()](/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---tags-none--friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--adb-workspace-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--private-endpoint-config-none--private-endpoint-auto-approval-true--exist-ok-false--show-output-true-&preserve-view=true) для создания рабочей области с закрытой конечной точкой. Для этого класса требуется существующая виртуальная сеть.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -165,7 +165,7 @@ ms.locfileid: "92897166"
 
 1. В форме __создание закрытой конечной точки__ задайте расположение, имя и виртуальную сеть для использования. Если вы хотите использовать конечную точку с зоной Частная зона DNS, выберите __интегрировать с частной зоной DNS__ и выберите зону, используя поле __зона частная зона DNS__ . Нажмите кнопку __ОК__ , чтобы создать конечную точку.   
 
-   :::image type="content" source="media/how-to-manage-workspace/create-private-endpoint.png" alt-text="Выбор закрытой конечной точки":::   
+   :::image type="content" source="media/how-to-manage-workspace/create-private-endpoint.png" alt-text="Создание закрытой конечной точки":::   
 
 1. Завершив настройку сети, можно выбрать пункт проверить и __создать__ или перейти к дополнительной __расширенной__ конфигурации.
 
@@ -180,16 +180,16 @@ ms.locfileid: "92897166"
 При создании частной конечной точки создается новая зона Частная зона DNS с именем __privatelink.API.azureml.MS__ . Содержит ссылку на виртуальную сеть. При создании нескольких рабочих областей с частными конечными точками в одной группе ресурсов в зону DNS может быть добавлена только виртуальная сеть для первой частной конечной точки. Чтобы добавить записи для виртуальных сетей, используемых дополнительными рабочими областями или частными конечными точками, выполните следующие действия.
 
 1. В [портал Azure](https://portal.azure.com)выберите группу ресурсов, содержащую рабочую область. Затем выберите ресурс Частная зона DNS зоны с именем __privatelink.API.azureml.MS__ .
-2. В окне __Параметры__ выберите __ссылки на виртуальную сеть__ .
-3. Выберите __Добавить__ . На странице __Добавление ссылки на виртуальную сеть__ укажите уникальное __имя ссылки__ , а затем выберите добавляемую __виртуальную сеть__ . Нажмите кнопку __ОК__ , чтобы добавить сетевое соединение.
+2. В окне __Параметры__ выберите __ссылки на виртуальную сеть__.
+3. Выберите __Добавить__. На странице __Добавление ссылки на виртуальную сеть__ укажите уникальное __имя ссылки__ , а затем выберите добавляемую __виртуальную сеть__ . Нажмите кнопку __ОК__ , чтобы добавить сетевое соединение.
 
-Дополнительные сведения см. в разделе [Конфигурация DNS для частной конечной точки Azure](/azure/private-link/private-endpoint-dns).
+Дополнительные сведения см. в разделе [Конфигурация DNS для частной конечной точки Azure](../private-link/private-endpoint-dns.md).
 
 ### <a name="vulnerability-scanning"></a>Сканирование уязвимостей
 
-Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Вы должны разрешить центру безопасности Azure проверять ресурсы и следовать рекомендациям. Дополнительные сведения см. в статье  [сканирование образа реестра контейнеров Azure с помощью центра безопасности](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration) и [интеграции Azure Kubernetes Services с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-kubernetes-service-integration).
+Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Вы должны разрешить центру безопасности Azure проверять ресурсы и следовать рекомендациям. Дополнительные сведения см. в статье  [сканирование образа реестра контейнеров Azure с помощью центра безопасности](../security-center/defender-for-container-registries-introduction.md) и [интеграции Azure Kubernetes Services с центром безопасности](../security-center/defender-for-kubernetes-introduction.md).
 
-### <a name="advanced"></a>Дополнительно
+### <a name="advanced"></a>Продвинутый уровень
 
 По умолчанию метрики и метаданные для рабочей области хранятся в экземпляре Azure Cosmos DB, который обслуживает Корпорация Майкрософт. Эти данные шифруются с помощью ключей, управляемых корпорацией Майкрософт.
 
@@ -210,7 +210,7 @@ ms.locfileid: "92897166"
 > Перед выполнением этих действий необходимо сначала выполнить следующие действия.   
 >
 > 1. Авторизовать __приложение машинное обучение__ (в службе управления удостоверениями и доступом) с разрешениями участника в вашей подписке.  
-> 1. Выполните действия, описанные в разделе [Настройка ключей, управляемых клиентом](/azure/cosmos-db/how-to-setup-cmk) :
+> 1. Выполните действия, описанные в разделе [Настройка ключей, управляемых клиентом](../cosmos-db/how-to-setup-cmk.md) :
 >     * Регистрация поставщика Azure Cosmos DB
 >     * Создание и настройка Azure Key Vault
 >     * Создание ключа
@@ -238,13 +238,13 @@ from azureml.core import Workspace
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-1. Выберите __ключи, управляемые клиентом__ , а затем __щелкните, чтобы выбрать ключ__ .
+1. Выберите __ключи, управляемые клиентом__ , а затем __щелкните, чтобы выбрать ключ__.
 
-    :::image type="content" source="media/how-to-manage-workspace/advanced-workspace.png" alt-text="Выбор закрытой конечной точки":::
+    :::image type="content" source="media/how-to-manage-workspace/advanced-workspace.png" alt-text="Ключи, управляемые клиентом":::
 
 1. На __Azure Key Vault форме Выбор ключа__ выберите существующую Azure Key Vault, содержащийся в ней ключ и версию ключа. Этот ключ используется для шифрования данных, хранящихся в Azure Cosmos DB. Наконец, используйте кнопку __выбрать__ , чтобы использовать этот ключ.
 
-   :::image type="content" source="media/how-to-manage-workspace/select-key-vault.png" alt-text="Выбор закрытой конечной точки":::
+   :::image type="content" source="media/how-to-manage-workspace/select-key-vault.png" alt-text="Выберите ключ":::
 
 ---
 
@@ -280,7 +280,7 @@ from azureml.core import Workspace
 ws = Workspace.from_config()
 ```
 
-* <a name="connect-multi-tenant"></a>**Несколько клиентов.**  Если у вас несколько учетных записей, добавьте идентификатор клиента Azure Active Directory, который вы хотите использовать.  Найдите идентификатор клиента из [портал Azure](https://portal.azure.com) в разделе **Azure Active Directory внешние удостоверения** .
+* <a name="connect-multi-tenant"></a>**Несколько клиентов.**  Если у вас несколько учетных записей, добавьте идентификатор клиента Azure Active Directory, который вы хотите использовать.  Найдите идентификатор клиента из [портал Azure](https://portal.azure.com) в разделе **Azure Active Directory внешние удостоверения**.
 
     ```python
     from azureml.core.authentication import InteractiveLoginAuthentication
@@ -290,7 +290,7 @@ ws = Workspace.from_config()
     ws = Workspace.from_config(auth=interactive_auth)
     ```
 
-* **[Независимых Cloud](reference-machine-learning-cloud-parity.md)** . Вам потребуется дополнительный код для проверки подлинности в Azure, если вы работаете в независимых облаке.
+* **[Независимых Cloud](reference-machine-learning-cloud-parity.md)**. Вам потребуется дополнительный код для проверки подлинности в Azure, если вы работаете в независимых облаке.
 
     ```python
     from azureml.core.authentication import InteractiveLoginAuthentication
@@ -320,9 +320,9 @@ Workspace.list('<subscription-id>')
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. В верхнем поле поиска введите **машинное обучение** .  
+1. В верхнем поле поиска введите **машинное обучение**.  
 
-1. Выберите **Машинное обучение** .
+1. Выберите **Машинное обучение**.
 
    ![Поиск Машинное обучение Azure рабочей области](./media/how-to-manage-workspace/find-workspaces.png)
 
@@ -351,7 +351,7 @@ ws.delete(delete_dependent_resources=False, no_wait=False)
 
 В [портал Azure](https://portal.azure.com/)выберите **Удалить**  в верхней части рабочей области, которую вы хотите удалить.
 
-:::image type="content" source="./media/how-to-manage-workspace/delete-workspace.png" alt-text="Выбор закрытой конечной точки":::
+:::image type="content" source="./media/how-to-manage-workspace/delete-workspace.png" alt-text="Удалить рабочую область":::
 
 ---
 

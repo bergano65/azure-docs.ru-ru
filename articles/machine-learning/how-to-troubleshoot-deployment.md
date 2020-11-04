@@ -1,32 +1,32 @@
 ---
-title: Устранение неполадок при развертывании DOCKER
+title: Устранение неполадок развертывания веб-службы
 titleSuffix: Azure Machine Learning
-description: Узнайте, как обойти и устранить распространенные ошибки развертывания DOCKER с помощью службы Kubernetes Azure и экземпляров контейнеров Azure, используя Машинное обучение Azure.
+description: Узнайте, как обойти и устранить распространенные ошибки развертывания DOCKER с помощью службы Kubernetes Azure и экземпляров контейнеров Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-author: clauren42
-ms.author: clauren
+author: gvashishtha
+ms.author: gopalv
 ms.reviewer: jmartens
-ms.date: 08/06/2020
+ms.date: 11/02/2020
 ms.topic: troubleshooting
 ms.custom: contperfq4, devx-track-python, deploy
-ms.openlocfilehash: 259b5c789d2323dbc797116cf0d09045811a6873
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: dfbfea22738e6aeb0df31ad941b2ff10e53795a4
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073348"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311294"
 ---
-# <a name="troubleshoot-docker-deployment-of-models-with-azure-kubernetes-service-and-azure-container-instances"></a>Устранение неполадок при развертывании в DOCKER моделей с помощью службы Kubernetes Azure и экземпляров контейнеров Azure 
+# <a name="troubleshoot-model-deployment"></a>Устранение неполадок при развертывании моделей
 
 Узнайте, как устранить и устранить распространенные ошибки развертывания DOCKER в службе "экземпляры контейнеров Azure" (ACI) и службу Kubernetes Azure (AKS) с помощью Машинное обучение Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
-* [Пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
+* [Пакет SDK для Машинного обучения Azure](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+* [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 * [Расширение CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md).
 * Для локальной отладки вам необходима рабочая установка Docker в локальной системе.
 
@@ -34,66 +34,48 @@ ms.locfileid: "92073348"
 
 ## <a name="steps-for-docker-deployment-of-machine-learning-models"></a>Шаги для развертывания DOCKER в моделях машинного обучения
 
-При развертывании модели в Машинное обучение Azure используется API [model. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) и объект [среды](how-to-use-environments.md) . Служба создает базовый образ DOCKER на этапе развертывания и подключает все необходимые модели в одном вызове. Основные задачи развертывания:
+При развертывании модели для нелокальных вычислений в Машинное обучение Azure происходят следующие действия.
 
-1. Регистрация модели в реестре моделей рабочей области.
+1. Dockerfile, указанный в объекте среды в Инференцеконфиг, отправляется в облако вместе с содержимым исходного каталога.
+1. Если ранее созданный образ в реестре контейнеров недоступен, новый образ DOCKER создается в облаке и сохраняется в реестре контейнеров по умолчанию для рабочей области.
+1. Образ DOCKER из реестра контейнеров загружается в целевой объект вычислений.
+1. Хранилище больших двоичных объектов по умолчанию подключено к целевому объекту вычислений, предоставляя доступ к зарегистрированным моделям.
+1. Веб-сервер инициализируется путем запуска функции сценария записи. `init()`
+1. Когда развернутая модель получает запрос, `run()` функция обрабатывает этот запрос.
 
-2. Определение конфигурации вывода:
-    1. Создайте объект [среды](how-to-use-environments.md) . Этот объект может использовать зависимости в файле YAML среды, одной из наших проверенных сред.
-    2. Создайте конфигурацию вывода (объект InferenceConfig) на основе среды и сценария оценки.
+Основное различие при использовании локального развертывания состоит в том, что образ контейнера строится на локальном компьютере, поэтому для локального развертывания необходимо установить DOCKER.
 
-3. Разверните модель в службе "Экземпляр контейнера Azure" (ACI) или в Службе Azure Kubernetes (AKS).
+Понимание этих общих шагов должно помочь понять, где возникают ошибки.
 
-Дополнительные сведения об этом процессе см. во введении в [Управление моделями](concept-model-management-and-deployment.md).
+## <a name="get-deployment-logs"></a>Получение журналов развертывания
 
-## <a name="before-you-begin"></a>Перед началом
+Первым шагом при отладке ошибок является получение журналов развертывания. Сначала следуйте [инструкциям](how-to-deploy-and-where.md#connect-to-your-workspace) по подключению к рабочей области.
 
-Если возникнут какие-либо проблемы, прежде всего следует разбить задачу развертывания (описанную ранее) на отдельные шаги, чтобы установить причину проблемы.
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
-При использовании [модели. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) с объектом [среды](how-to-use-environments.md) в качестве входного параметра код можно разделить на три основных этапа:
+Чтобы получить журналы из развернутой службы WebService, сделайте следующее:
 
-1. Регистрация модели. Ниже приведен пример кода:
+```bash
+az ml service get-logs --verbose --workspace-name <my workspace name> --name <service name>
+```
 
-    ```python
-    from azureml.core.model import Model
-
-
-    # register a model out of a run record
-    model = best_run.register_model(model_name='my_best_model', model_path='outputs/my_model.pkl')
-
-    # or, you can register a file or a folder of files as a model
-    model = Model.register(model_path='my_model.pkl', model_name='my_best_model', workspace=ws)
-    ```
-
-2. Определение конфигурации вывода для развертывания:
-
-    ```python
-    from azureml.core.model import InferenceConfig
-    from azureml.core.environment import Environment
+# <a name="python"></a>[Python](#tab/python)
 
 
-    # create inference configuration based on the requirements defined in the YAML
-    myenv = Environment.from_conda_specification(name="myenv", file_path="myenv.yml")
-    inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
-    ```
+При условии, что имеется объект типа с `azureml.core.Workspace` именем `ws` , можно сделать следующее:
 
-3. Разверните модель, используя конфигурацию вывода, созданную на предыдущем шаге:
+```python
+print(ws.webservices)
 
-    ```python
-    from azureml.core.webservice import AciWebservice
+# Choose the webservice you are interested in
 
+from azureml.core import Webservice
 
-    # deploy the model
-    aci_config = AciWebservice.deploy_configuration(cpu_cores=1, memory_gb=1)
-    aci_service = Model.deploy(workspace=ws,
-                           name='my-service',
-                           models=[model],
-                           inference_config=inference_config,
-                           deployment_config=aci_config)
-    aci_service.wait_for_deployment(show_output=True)
-    ```
+service = Webservice(ws, '<insert name of webservice>')
+print(service.get_logs())
+```
 
-Прерывание процесса развертывания три в отдельных задачах упрощает выявление некоторых из наиболее распространенных ошибок.
+---
 
 ## <a name="debug-locally"></a>Отладка в локальной среде
 
@@ -161,7 +143,7 @@ print(service.run(input_data=test_sample))
 > [!NOTE]
 > Сценарий перезагружается из расположения, указанного объектом `InferenceConfig`, используемым службой.
 
-Чтобы изменить модель, зависимости Conda или конфигурацию развертывания, используйте метод [update()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=trueupdate--args-). В следующем примере обновляется модель, используемая службой:
+Чтобы изменить модель, зависимости Conda или конфигурацию развертывания, используйте метод [update()](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueupdate--args-). В следующем примере обновляется модель, используемая службой:
 
 ```python
 service.update([different_model], inference_config, deployment_config)
@@ -169,7 +151,7 @@ service.update([different_model], inference_config, deployment_config)
 
 ### <a name="delete-the-service"></a>Удаление службы
 
-Чтобы удалить службу, воспользуйтесь методом [delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py&preserve-view=true#&preserve-view=truedelete--).
+Чтобы удалить службу, воспользуйтесь методом [delete()](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truedelete--).
 
 ### <a name="inspect-the-docker-log"></a><a id="dockerlog"></a> Проверка журнала Docker
 
@@ -199,7 +181,7 @@ print(ws.webservices['mysvc'].get_logs())
 
 ## <a name="function-fails-get_model_path"></a>Ошибка выполнения функции: get_model_path()
 
-Часто в рамках функции `init()` в скрипте оценки вызывается функция [Model.get_model_path()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py&preserve-view=true#&preserve-view=trueget-model-path-model-name--version-none---workspace-none-), чтобы найти файл модели или папку с файлами модели в контейнере. Если файл или папку модели найти не удается, происходит сбой функции. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
+Часто в рамках функции `init()` в скрипте оценки вызывается функция [Model.get_model_path()](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-model-path-model-name--version-none---workspace-none-), чтобы найти файл модели или папку с файлами модели в контейнере. Если файл или папку модели найти не удается, происходит сбой функции. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
 
 ```python
 from azureml.core.model import Model
@@ -277,7 +259,7 @@ def run(input_data):
     > [!NOTE]
     > Если пики запроса будут превышать новое минимальное количество реплик, снова отобразится код 503. Например, по мере увеличения трафика, поступающего в вашу службу, может потребоваться увеличение минимального количества реплик.
 
-Дополнительные сведения о настройке `autoscale_target_utilization`, `autoscale_max_replicas` и `autoscale_min_replicas` см. на [этой странице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py&preserve-view=true).
+Дополнительные сведения о настройке `autoscale_target_utilization`, `autoscale_max_replicas` и `autoscale_min_replicas` см. на [этой странице](/python/api/azureml-core/azureml.core.webservice.akswebservice?preserve-view=true&view=azure-ml-py).
 
 ## <a name="http-status-code-504"></a>Код состояния HTTP 504
 
@@ -287,11 +269,11 @@ def run(input_data):
 
 ## <a name="advanced-debugging"></a>Расширенная отладка
 
-Может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если начальный сценарий не работает и причину невозможно определить с помощью дополнительного ведения журнала. С помощью Visual Studio Code и дебугпи можно присоединяться к коду, выполняющемуся в контейнере DOCKER.
+Возможно, потребуется интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если начальный сценарий не работает и причину невозможно определить с помощью дополнительного ведения журнала. С помощью Visual Studio Code и дебугпи можно присоединяться к коду, выполняющемуся в контейнере DOCKER.
 
 Дополнительные сведения см. в [разделе Интерактивная Отладка в VS Code Guide](how-to-debug-visual-studio-code.md#debug-and-troubleshoot-deployments).
 
-## <a name="model-deployment-user-forum"></a>[Форум пользователя по развертыванию модели](https://docs.microsoft.com/answers/topics/azure-machine-learning-inference.html)
+## <a name="model-deployment-user-forum"></a>[Форум пользователя по развертыванию модели](/answers/topics/azure-machine-learning-inference.html)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
