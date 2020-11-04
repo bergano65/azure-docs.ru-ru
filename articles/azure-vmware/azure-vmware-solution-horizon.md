@@ -3,12 +3,12 @@ title: Развертывание горизонта в решении VMware д
 description: Узнайте, как развернуть горизонт VMware в решении VMware для Azure.
 ms.topic: how-to
 ms.date: 09/29/2020
-ms.openlocfilehash: 6a466aea5cbdf4452a2c46b455932042d920c3b9
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: babce512b896009c08165d2e3d9aec7c33724bf4
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369018"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321352"
 ---
 # <a name="deploy-horizon-on-azure-vmware-solution"></a>Развертывание горизонта в решении VMware для Azure 
 
@@ -86,7 +86,7 @@ ms.locfileid: "92369018"
 
 Подключение из виртуальной сети Azure к частным облакам Azure или Сддкс должно быть настроено с помощью ExpressRoute Фастпас. На следующей схеме показано развертывание модуля Pod с базовым горизонтом.
 
-:::image type="content" source="media/horizon/horizon-pod-deployment-expresspath-fast-path.png" alt-text="Горизонт для решения Azure VMware и облака горизонта в Azure" border="false":::
+:::image type="content" source="media/horizon/horizon-pod-deployment-expresspath-fast-path.png" alt-text="Типичное развертывание Pod на основе горизонта с использованием быстрого пути Експресспас" border="false":::
 
 ## <a name="network-connectivity-to-scale-horizon-on-azure-vmware-solution"></a>Сетевое подключение к горизонту масштабирования в решении Azure VMware
 
@@ -94,7 +94,7 @@ ms.locfileid: "92369018"
 
 ### <a name="single-horizon-pod-on-azure-vmware-solution"></a>Модуль с одним горизонтом в решении VMware для Azure
 
-:::image type="content" source="media/horizon/single-horizon-pod-azure-vmware-solution.png" alt-text="Горизонт для решения Azure VMware и облака горизонта в Azure" border="false":::
+:::image type="content" source="media/horizon/single-horizon-pod-azure-vmware-solution.png" alt-text="Модуль с одним горизонтом в решении VMware для Azure" border="false":::
 
 Один модуль горизонта — это наиболее прямой сценарий прямого развертывания, поскольку в Восточном регионе США развертывается только один модуль горизонта.  Так как каждое частное облако и SDDC рассчитаны на обработку 4 000 сеансов рабочего стола, вы развертываете максимальный размер Pod.  Можно спланировать развертывание до трех частных облаков или Сддкс.
 
@@ -112,7 +112,7 @@ ms.locfileid: "92369018"
 
 На схеме показано, как поддерживать подключение к локальным ресурсам. Для подключения к корпоративной сети к виртуальной сети Azure требуется канал ExpressRoute.  Вам также потребуется подключить корпоративную сеть к каждому частному облаку и Сддкс с помощью ExpressRoute Global Reach.  Это позволяет подключиться из SDDC к каналу ExpressRoute и локальным ресурсам. 
 
-:::image type="content" source="media/horizon/connect-corporate-network-azure-virtual-network.png" alt-text="Горизонт для решения Azure VMware и облака горизонта в Azure" border="false":::
+:::image type="content" source="media/horizon/connect-corporate-network-azure-virtual-network.png" alt-text="Подключение корпоративной сети к виртуальной сети Azure" border="false":::
 
 ### <a name="multiple-horizon-pods-on-azure-vmware-solution-across-multiple-regions"></a>Несколько многогоризонтических модулей Pod в решении Azure VMware в нескольких регионах
 
@@ -122,7 +122,7 @@ ms.locfileid: "92369018"
 
 Те же принципы применяются при развертывании двух модулей Pod в одном регионе.  Не забудьте развернуть второй модуль горизонта в *отдельной виртуальной сети Azure*. Как и в примере с одним Pod, вы можете подключить корпоративную сеть и локальный модуль Pod к этому примеру с несколькими модулями или регионами с помощью ExpressRoute и Global Reach. 
 
-:::image type="content" source="media/horizon/multiple-horizon-pod-azure-vmware-solution.png" alt-text="Горизонт для решения Azure VMware и облака горизонта в Azure" border="false":::
+:::image type="content" source="media/horizon/multiple-horizon-pod-azure-vmware-solution.png" alt-text=" Несколько многогоризонтических модулей Pod в решении Azure VMware в нескольких регионах" border="false":::
 
 ## <a name="size-azure-vmware-solution-hosts-for-horizon-deployments"></a>Изменение размера узлов решения Azure VMware для развертываний горизонта 
 
@@ -211,3 +211,6 @@ ms.locfileid: "92369018"
 | Общая папка Windows               | D4sv3          |         | *Необязательно*                               |
 
 Стоимость виртуальной машины инфраструктуры составляет \$ 0,36 на пользователя в месяц для развертывания 2 000-Desktop в примере выше. В этом примере используется по цене за использование экземпляра Azure восточной части США за июнь 2020. Цены могут отличаться в зависимости от региона, выбранных параметров и времени.
+
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о горизонте VMware в решении VMware для Azure см. в [разделе часто задаваемые вопросы о горизонте VMware](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/products/horizon/vmw-horizon-on-microsoft-azure-vmware-solution-faq.pdf).

@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: c1ecd3a3d29d6876a59a2fa039802966f348a09d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 9209b33f23b7f6c836dedb6227d052610a21d9d2
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93089837"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93319493"
 ---
 # <a name="transactions-and-optimistic-concurrency-control"></a>Управление транзакциями и оптимистической блокировкой
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -65,4 +65,5 @@ Azure Cosmos DB позволяет создавать [хранимые проц
 - [Работа с базами данных, контейнерами и элементами Azure Cosmos](account-databases-containers-items.md)
 - [Уровни согласованности](consistency-levels.md)
 - [Типы конфликтов и политики их разрешения](conflict-resolution-policies.md)
+- [Использование Трансактионалбатч](transactional-batch.md)
 - [Хранимые процедуры, триггеры и определяемые пользователем функции](stored-procedures-triggers-udfs.md)

@@ -11,18 +11,18 @@ ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: c6bcf6f228049c4f5c4d1cd0d22cb69fb9677c1a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e72784dbdcf08d672a8498609ca3a5bbd11e632d
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91347036"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93319022"
 ---
 # <a name="track-azure-databricks-ml-experiments-with-mlflow-and-azure-machine-learning-preview"></a>Следите за экспериментами Azure Databricks ML с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
 Из этой статьи вы узнаете, как включить Млфлов для отслеживания URI и API ведения журналов, который называется [отслеживанием млфлов](https://mlflow.org/docs/latest/quickstart.html#using-the-tracking-api), для подключения экспериментов Azure DATABRICKS (ADB), млфлов и машинное обучение Azure.
 
-[MLflow](https://www.mlflow.org) — это библиотека с открытым кодом для управления жизненным циклом экспериментов машинного обучения. Отслеживание Млфлов — это компонент Млфлов, который регистрирует и отслеживает метрики и артефакты обучающего запуска. Дополнительные сведения о [Azure Databricks и млфлов](https://docs.microsoft.com/azure/databricks/applications/mlflow/). 
+[MLflow](https://www.mlflow.org) — это библиотека с открытым кодом для управления жизненным циклом экспериментов машинного обучения. Отслеживание Млфлов — это компонент Млфлов, который регистрирует и отслеживает метрики и артефакты обучающего запуска. Дополнительные сведения о [Azure Databricks и млфлов](/azure/databricks/applications/mlflow/). 
 
 См. раздел [мониторинг запусков экспериментов и создание конечных точек с помощью млфлов и машинное обучение Azure](how-to-use-mlflow.md) для дополнительных интеграции млфлов и функциональности машинное обучение Azure.
 
@@ -35,8 +35,8 @@ ms.locfileid: "91347036"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Установите пакет `azureml-mlflow`. 
-    * Этот пакет автоматически переносится в пакет `azureml-core` [SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true), который обеспечивает подключение для млфлов к рабочей области.
-* [Рабочая область и кластер Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal).
+    * Этот пакет автоматически переносится в пакет `azureml-core` [SDK для машинное обучение Azure Python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), который обеспечивает подключение для млфлов к рабочей области.
+* [Рабочая область и кластер Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal).
 * [Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md).
 
 ## <a name="track-azure-databricks-runs"></a>Отслеживание выполнений Azure Databricks
@@ -156,9 +156,9 @@ mlflow.log_metric('epoch_loss', loss.item())
 
 Сервер отслеживания внутреннего сервера по умолчанию является рабочей областью Azure Databricks; Если вы не решили [установить отслеживание млфлов только в рабочей области машинное обучение Azure](#set-mlflow-tracking-to-only-track-in-your-azure-machine-learning-workspace), сервер отслеживания внутреннего сервера является рабочей областью машинное обучение Azure.   
 
-* **Если Зарегистрированная модель с таким именем не существует**, метод регистрирует новую модель, создает версию 1 и возвращает объект моделверсион млфлов. 
+* **Если Зарегистрированная модель с таким именем не существует** , метод регистрирует новую модель, создает версию 1 и возвращает объект моделверсион млфлов. 
 
-* **Если Зарегистрированная модель с таким именем уже существует**, метод создает новую версию модели и возвращает объект Version. 
+* **Если Зарегистрированная модель с таким именем уже существует** , метод создает новую версию модели и возвращает объект Version. 
 
 ```python
 mlflow.spark.log_model(model, artifact_path = "model", 
@@ -234,4 +234,4 @@ display(preds)
 
 * [Управляйте своими моделями](concept-model-management-and-deployment.md).
 * [Следите за запуском экспериментов и создайте конечные точки с помощью млфлов и машинное обучение Azure](how-to-use-mlflow.md). 
-* Дополнительные сведения о [Azure Databricks и млфлов](https://docs.microsoft.com/azure/databricks/applications/mlflow/).
+* Дополнительные сведения о [Azure Databricks и млфлов](/azure/databricks/applications/mlflow/).

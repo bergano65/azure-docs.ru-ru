@@ -11,16 +11,16 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18, devx-track-azurecli
-ms.openlocfilehash: cba01684457c8b3a7f6c8c51c7d202bf8963658e
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: aa84d7cce09b370ab35ef67029f4dbe2ca29cabb
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92736614"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93320841"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 
-Из этой статьи вы узнаете, как управлять доступом к рабочей области Машинное обучение Azure. Управление [доступом на основе ролей Azure (Azure RBAC)](/azure/role-based-access-control/overview) используется для управления доступом к ресурсам Azure. Пользователям в Azure Active Directory назначаются определенные роли, которые предоставляют доступ к ресурсам. Azure предоставляет встроенные роли и возможность создания пользовательских ролей.
+Из этой статьи вы узнаете, как управлять доступом к рабочей области Машинное обучение Azure. Управление [доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md) используется для управления доступом к ресурсам Azure. Пользователям в Azure Active Directory назначаются определенные роли, которые предоставляют доступ к ресурсам. Azure предоставляет встроенные роли и возможность создания пользовательских ролей.
 
 ## <a name="default-roles"></a>Роли по умолчанию
 
@@ -34,18 +34,18 @@ ms.locfileid: "92736614"
 | **Настраиваемая роль** | Позволяет настраивать доступ к конкретным операциям управления или плоскости данных в рабочей области. Например, отправка запуска, создание вычислений, развертывание модели или регистрация набора данных. |
 
 > [!IMPORTANT]
-> Доступ к роли можно ограничить несколькими уровнями в Azure. Например, пользователь с доступом владельца к рабочей области может не иметь права владельца на группу ресурсов, содержащую рабочую область. Дополнительные сведения см. в статье [работа Azure RBAC](/azure/role-based-access-control/overview#how-azure-rbac-works).
+> Доступ к роли можно ограничить несколькими уровнями в Azure. Например, пользователь с доступом владельца к рабочей области может не иметь права владельца на группу ресурсов, содержащую рабочую область. Дополнительные сведения см. в статье [работа Azure RBAC](../role-based-access-control/overview.md#how-azure-rbac-works).
 
-Дополнительные сведения о конкретных встроенных ролях см. в статье [встроенные роли Azure](/azure/role-based-access-control/built-in-roles).
+Дополнительные сведения о конкретных встроенных ролях см. в статье [встроенные роли Azure](../role-based-access-control/built-in-roles.md).
 
 ## <a name="manage-workspace-access"></a>Управление доступом к рабочей области
 
 Если вы являетесь владельцем рабочей области, вы можете добавлять и удалять роли для рабочей области. Можно также назначать роли пользователям. Воспользуйтесь следующими ссылками, чтобы узнать, как управлять доступом:
-- [Пользовательский интерфейс портала Azure](/azure/role-based-access-control/role-assignments-portal)
-- [PowerShell](/azure/role-based-access-control/role-assignments-powershell)
-- [Azure CLI](/azure/role-based-access-control/role-assignments-cli)
-- [REST API](/azure/role-based-access-control/role-assignments-rest)
-- [Шаблоны диспетчера ресурсов Azure](/azure/role-based-access-control/role-assignments-template)
+- [Пользовательский интерфейс портала Azure](../role-based-access-control/role-assignments-portal.md)
+- [PowerShell](../role-based-access-control/role-assignments-powershell.md)
+- [Azure CLI](../role-based-access-control/role-assignments-cli.md)
+- [REST API](../role-based-access-control/role-assignments-rest.md)
+- [Шаблоны диспетчера ресурсов Azure](../role-based-access-control/role-assignments-template.md)
 
 Если вы установили [машинное обучение Azure CLI](reference-azure-machine-learning-cli.md), можно использовать команды интерфейса командной строки для назначения ролей пользователям:
 
@@ -65,7 +65,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role Contributor --
 
 ## <a name="azure-machine-learning-operations"></a>Машинное обучение Azure операции
 
-Машинное обучение Azure встроенных действий для многих операций и задач. Полный список см. в статье [операции с поставщиками ресурсов Azure](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
+Машинное обучение Azure встроенных действий для многих операций и задач. Полный список см. в статье [операции с поставщиками ресурсов Azure](../role-based-access-control/resource-provider-operations.md#microsoftmachinelearningservices).
 
 ## <a name="mlflow-operations-in-azure-machine-learning"></a>Операции Млфлов в машинном обучении Azure
 
@@ -135,7 +135,7 @@ az role definition create --role-definition data_scientist_role.json
 az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientist" --user jdoe@contoson.com
 ```
 
-Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли Azure](/azure/role-based-access-control/custom-roles). Дополнительные сведения об операциях (действиях и не действиях), которые можно использовать с пользовательскими ролями, см. в разделе [операции с поставщиками ресурсов](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
+Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md). Дополнительные сведения об операциях (действиях и не действиях), которые можно использовать с пользовательскими ролями, см. в разделе [операции с поставщиками ресурсов](../role-based-access-control/resource-provider-operations.md#microsoftmachinelearningservices).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -165,7 +165,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 
 ### <a name="q-are-we-publishing-azure-built-in-roles-for-the-machine-learning-service"></a>У. Публикуюте ли вы встроенные роли Azure для службы Машинное обучение?
 
-Сейчас мы не публикуем [встроенные роли Azure](/azure/role-based-access-control/built-in-roles) для службы машинное обучение. Встроенная роль после публикации не может быть обновлена, и мы все еще подтверждаем определения ролей на основе пользовательских сценариев и отзывов. 
+Сейчас мы не публикуем [встроенные роли Azure](../role-based-access-control/built-in-roles.md) для службы машинное обучение. Встроенная роль после публикации не может быть обновлена, и мы все еще подтверждаем определения ролей на основе пользовательских сценариев и отзывов. 
 
 <a id="customroles"></a>
 
@@ -351,7 +351,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
     }
     ```
 
-* __Администратор рабочей области__ . позволяет выполнять все операции в области действия рабочей области, **за исключением** следующих:
+* __Администратор рабочей области__. позволяет выполнять все операции в области действия рабочей области, **за исключением** следующих:
 
     * Создание новой рабочей области
     * Назначение квот уровня подписки или рабочей области
@@ -419,7 +419,7 @@ az role definition list --subscription <sub-id> --custom-role-only true
 az provider operation show –n Microsoft.MachineLearningServices
 ```
 
-Их также можно найти в списке [операций поставщика ресурсов](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
+Их также можно найти в списке [операций поставщика ресурсов](../role-based-access-control/resource-provider-operations.md#microsoftmachinelearningservices).
 
 
 ### <a name="q-what-are-some-common-gotchas-when-using-azure-rbac"></a>У. Каковы некоторые распространенные проблемы при использовании Azure RBAC?
@@ -427,18 +427,18 @@ az provider operation show –n Microsoft.MachineLearningServices
 Ниже приведены некоторые моменты, которые следует учитывать при использовании управления доступом на основе ролей Azure (Azure RBAC).
 
 - При создании ресурса в Azure, скажем, рабочей области, вы не являетесь владельцем рабочей области напрямую. Роль наследуется от самой высокой роли области, которой вы имеете право в этой подписке. Например, если вы являетесь администратором сети и обладаете разрешениями на создание Машинное обучение рабочей области, вам будет назначена роль администратора сети для этой рабочей области, а не роль владельца.
-- При наличии двух назначений ролей для одного и того же Azure Active Directory пользователя с конфликтующими разделами действий и отсутствия операции, перечисленные в неизменности одной роли, могут не действовать, если они также перечислены как действия в другой роли. Дополнительные сведения о том, как Azure анализирует назначения ролей, см. в статье [Определение того, как Azure RBAC определяет, имеет ли пользователь доступ к ресурсу](/azure/role-based-access-control/overview#how-azure-rbac-determines-if-a-user-has-access-to-a-resource) .
+- При наличии двух назначений ролей для одного и того же Azure Active Directory пользователя с конфликтующими разделами действий и отсутствия операции, перечисленные в неизменности одной роли, могут не действовать, если они также перечислены как действия в другой роли. Дополнительные сведения о том, как Azure анализирует назначения ролей, см. в статье [Определение того, как Azure RBAC определяет, имеет ли пользователь доступ к ресурсу](../role-based-access-control/overview.md#how-azure-rbac-determines-if-a-user-has-access-to-a-resource) .
 - Чтобы развернуть ресурсы для вычислений в виртуальной сети, необходимо явно иметь разрешения для следующих действий.
     - "Microsoft. Network/virtualNetworks/соединение/действие" для ресурса виртуальной сети.
     - "Microsoft. Network/virtualNetworks/подсеть/соединение/действие" в ресурсе подсети.
     
-    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](/azure/role-based-access-control/built-in-roles#networking).
+    Дополнительные сведения об Azure RBAC с сетью см. в разделе [встроенные сетевые роли](../role-based-access-control/built-in-roles.md#networking).
 
 - Для того чтобы новые назначения ролей вступили в силу по кэшированным разрешениям в стеке, иногда может потребоваться 1 час.
 
 ### <a name="q-what-permissions-do-i-need-to-use-a-user-assigned-managed-identity-with-my-amlcompute-clusters"></a>У. Какие разрешения требуются для использования назначенного пользователем управляемого удостоверения с моими кластерами Амлкомпуте?
 
-Чтобы назначить удостоверение, назначенное пользователем в кластерах Амлкомпуте, оно должно иметь разрешения на запись для создания вычислений и предоставления [роли управляемого оператора идентификации](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Дополнительные сведения об Azure RBAC с управляемыми удостоверениями см. [в статье управление назначенными пользователями удостоверениями](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal) .
+Чтобы назначить удостоверение, назначенное пользователем в кластерах Амлкомпуте, оно должно иметь разрешения на запись для создания вычислений и предоставления [роли управляемого оператора идентификации](../role-based-access-control/built-in-roles.md#managed-identity-operator). Дополнительные сведения об Azure RBAC с управляемыми удостоверениями см. [в статье управление назначенными пользователями удостоверениями](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md) .
 
 
 ### <a name="q-do-we-support-role-based-access-control-on-the-studio-portal"></a>У. Поддерживает ли мы управление доступом на основе ролей на портале студии?
@@ -480,4 +480,4 @@ az role definition update --role-definition update_def.json --subscription <sub-
 - [Общие сведения об обеспечении безопасности на уровне предприятия](concept-enterprise-security.md)
 - [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md)
 - [Руководство. Обучение моделей](tutorial-train-models-with-aml.md)
-- [Операции с поставщиками ресурсов](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices)
+- [Операции с поставщиками ресурсов](../role-based-access-control/resource-provider-operations.md#microsoftmachinelearningservices)

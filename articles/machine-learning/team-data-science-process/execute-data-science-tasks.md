@@ -10,20 +10,20 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 5fe11b20ff8e96bc4b0d997c49201aafdd2e2cac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cbe822b75368a1ab72bcd7f73419770b291d2508
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320529"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321152"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
 В типичным задачам обработки и анализа данных относятся изучение, моделирование и развертывание. В этой статье показано, как использовать служебные программы для **интерактивного изучения данных, анализа данных и создания отчетов (IDEAR)** и **автоматического моделирования и создания отчетов (АМАР)** для выполнения типичных задач обработки и анализа данных, в том числе интерактивного изучения данных, анализа данных, создания отчетов и создания моделей. Варианты развертывания модели в рабочей среде могут включать:
 
 - [Машинное обучение Azure](../index.yml)
-- [SQL Server со службами машинного обучения](https://docs.microsoft.com/sql/advanced-analytics/r/r-services)
-- [Сервер машинного обучения Microsoft](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)
+- [SQL Server со службами машинного обучения](/sql/advanced-analytics/r/r-services)
+- [Microsoft Machine Learning Server](/machine-learning-server/what-is-machine-learning-server)
 
 
 ## <a name="1--exploration"></a>1. <a name='DataQualityReportUtility-1'></a> исследование 
@@ -76,7 +76,7 @@ ms.locfileid: "91320529"
 1. [Служба "Машинное обучение Azure" — служба управления моделями](../index.yml)
 2. [ModelDB из MIT](http://modeldb.csail.mit.edu:3000/projects) 
 3. [SQL Server как система управления моделями](https://blogs.technet.microsoft.com/dataplatforminsider/2016/10/17/sql-server-as-a-machine-learning-model-management-system/)
-4. [Сервер машинного обучения Microsoft](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+4. [Microsoft Machine Learning Server](/sql/advanced-analytics/r/r-server-standalone)
 
 ## <a name="3--deployment"></a>3. <a name='Deployment-3'></a> развертывание
 
@@ -87,8 +87,8 @@ ms.locfileid: "91320529"
 
 
 - [Развертывание модели в службе "Машинное обучение Azure"](../how-to-deploy-and-where.md)
-- [Развертывание модели на сервере SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-py6-operationalize-the-model)
-- [Сервер машинного обучения Microsoft](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+- [Развертывание модели на сервере SQL Server](/sql/advanced-analytics/tutorials/sqldev-py6-operationalize-the-model)
+- [Microsoft Machine Learning Server](/sql/advanced-analytics/r/r-server-standalone)
 
 > [!NOTE]
 > Перед развертыванием необходимо убедиться, что показатели задержки модели достаточно малы для использования в рабочей среде.
@@ -106,7 +106,7 @@ ms.locfileid: "91320529"
 Если в рабочей среде используется несколько моделей, удобно выполнять [A/B-тестирование](https://en.wikipedia.org/wiki/A/B_testing), чтобы сравнить их эффективность. 
 
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В разделе [Ход выполнения проектов обработки и анализа данных](track-progress.md) показано, как специалист по обработке и анализу данных может отслеживать ход выполнения проекта обработки и анализа данных.
 

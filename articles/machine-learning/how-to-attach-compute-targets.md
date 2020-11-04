@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 10/02/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: cc4256ae0591e9fc82dcdce7c66514710fad3f57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 44f6d700ff25f0c2f2cb8bedc5c2d15ad2adcb83
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91711380"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93320823"
 ---
 # <a name="set-up-compute-targets-for-model-training-and-deployment"></a>Настройка целевых объектов вычислений для обучения и развертывания модели
 
@@ -43,7 +43,7 @@ ms.locfileid: "91711380"
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
-* [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
+* [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
 ## <a name="limitations"></a>Ограничения
 
@@ -58,9 +58,9 @@ ms.locfileid: "91711380"
 
 ## <a name="local-computer"></a><a id="local"></a>Локальный компьютер
 
-При использовании локального компьютера для **обучения**нет необходимости создавать целевой объект вычислений.  Просто [отправьте обучающий запуск](how-to-set-up-training-targets.md) с локального компьютера.
+При использовании локального компьютера для **обучения** нет необходимости создавать целевой объект вычислений.  Просто [отправьте обучающий запуск](how-to-set-up-training-targets.md) с локального компьютера.
 
-При использовании локального компьютера для **вывода**необходимо установить DOCKER. Чтобы выполнить развертывание, используйте [LocalWebservice.deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py&preserve-view=true#deploy-configuration-port-none-) , чтобы определить порт, который будет использовать веб-служба. Затем используйте нормальный процесс развертывания, как описано в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
+При использовании локального компьютера для **вывода** необходимо установить DOCKER. Чтобы выполнить развертывание, используйте [LocalWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.local.localwebservice?preserve-view=true&view=azure-ml-py#deploy-configuration-port-none-) , чтобы определить порт, который будет использовать веб-служба. Затем используйте нормальный процесс развертывания, как описано в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
 ## <a name="remote-virtual-machines"></a><a id="vm"></a>Удаленные виртуальные машины
 
@@ -68,9 +68,9 @@ ms.locfileid: "91711380"
 
 Можно использовать системную среду Conda, существующую среду Python или контейнер Docker. Для выполнения контейнера Docker на виртуальной машине должен быть запущен модуль Docker. Эта функция особенно удобна в случаях, когда необходима более гибкая облачная среда разработки и проведения экспериментов, чем локальный компьютер.
 
-Используйте виртуальную машину Azure для обработки и анализа данных (DSVM) в качестве выбранной виртуальной машины Azure для этого сценария. Эта виртуальная машина является предварительно настроенной обработкой и анализом данных и средой разработки искусственного интеллекта в Azure. Виртуальная машина предлагает выбор средств и платформ для разработки машинного обучения в течение всего жизненного цикла. Дополнительных сведения об использовании DSVM со Службой машинного обучения Azure см. в статье [Настройка среды разработки для Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-configure-environment#dsvm).
+Используйте виртуальную машину Azure для обработки и анализа данных (DSVM) в качестве выбранной виртуальной машины Azure для этого сценария. Эта виртуальная машина является предварительно настроенной обработкой и анализом данных и средой разработки искусственного интеллекта в Azure. Виртуальная машина предлагает выбор средств и платформ для разработки машинного обучения в течение всего жизненного цикла. Дополнительных сведения об использовании DSVM со Службой машинного обучения Azure см. в статье [Настройка среды разработки для Машинного обучения Azure](./how-to-configure-environment.md#dsvm).
 
-1. **Создание**. Создайте DSVM перед ее использованием для обучения модели. Подробные сведения о создании этого ресурса см. в разделе [Подготовка виртуальной машины Linux (Ubuntu) для обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro).
+1. **Создание**. Создайте DSVM перед ее использованием для обучения модели. Подробные сведения о создании этого ресурса см. в разделе [Подготовка виртуальной машины Linux (Ubuntu) для обработки и анализа данных](./data-science-virtual-machine/dsvm-ubuntu-intro.md).
 
     > [!WARNING]
     > Машинное обучение Azure поддерживает только виртуальные машины под управлением **Ubuntu**. Поэтому создаваемая виртуальная или существующая виртуальная машина, которую вы выбираете, должна работать под управлением Ubuntu.
@@ -128,7 +128,7 @@ ms.locfileid: "91711380"
 
 Azure HDInsight — это популярная платформа для анализа больших данных. Она предоставляет Apache Spark, который можно использовать для обучения модели.
 
-1. **Создание**.  Прежде чем использовать кластер HDInsight для обучения модели, создайте его. Инструкции по созданию Spark в кластере HDInsight см. в статье [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql). 
+1. **Создание**.  Прежде чем использовать кластер HDInsight для обучения модели, создайте его. Инструкции по созданию Spark в кластере HDInsight см. в статье [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](../hdinsight/spark/apache-spark-jupyter-spark-sql.md). 
 
     > [!WARNING]
     > Для Машинное обучение Azure требуется, чтобы кластер HDInsight имел __общедоступный IP-адрес__.
@@ -219,15 +219,15 @@ print("Using Batch compute:{}".format(batch_compute.cluster_resource_id))
 
 Azure Databricks — это среда, которая лежит в основе Apache Spark в облаке Azure. Ее можно использовать как целевой объект вычислений с помощью конвейера Машинного обучения Azure.
 
-Прежде чем ее использовать, создайте рабочую область Azure Databricks. Чтобы создать ресурс рабочей области, см. статью [Запуск задания Spark в Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal) документе.
+Прежде чем ее использовать, создайте рабочую область Azure Databricks. Чтобы создать ресурс рабочей области, см. статью [Запуск задания Spark в Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal) документе.
 
 Введите следующие данные, чтобы вложить Azure Databricks в качестве целевого объекта вычислений.
 
 * __Имя для вычислений для кирпичей__. имя, которое вы хотите назначить этому ресурсу вычислений.
-* __Имя рабочей области кирпичей__данных: имя рабочей области Azure Databricks.
+* __Имя рабочей области кирпичей__ данных: имя рабочей области Azure Databricks.
 * __Маркер доступа к модулям__. маркер доступа используется для проверки подлинности в Azure Databricks. Чтобы создать маркер доступа, см. документ [Проверка подлинности](https://docs.azuredatabricks.net/dev-tools/api/latest/authentication.html).
 
-В следующем примере кода показано, как присоединить Azure Databricks в качестве целевого объекта вычислений с Машинное обучение Azureным пакетом SDK (__Рабочая область "кирпичы" должна находиться в той же подписке, что и Рабочая область AML__):
+В следующем примере кода показано, как присоединить Azure Databricks в качестве целевого объекта вычислений с Машинное обучение Azureным пакетом SDK ( __Рабочая область "кирпичы" должна находиться в той же подписке, что и Рабочая область AML__ ):
 
 ```python
 import os
@@ -271,11 +271,11 @@ except ComputeTargetException:
 > [!WARNING]
 > Не создавайте несколько одновременных вложений для одного и того же Azure Databricks из рабочей области. Каждое новое вложение приведет к нарушению предыдущих существующих вложений.
 
-### <a name="azure-data-lake-analytics"></a><a id="adla"></a>Azure Data Lake Analytics
+### <a name="azure-data-lake-analytics"></a><a id="adla"></a>Аналитика озера данных Azure
 
 Azure Data Lake Analytics — это платформа аналитики больших данных в облаке Azure. Ее можно использовать как целевой объект вычислений с помощью конвейера Машинного обучения Azure.
 
-Прежде чем ее использовать, создайте учетную запись Azure Data Lake Analytics. Чтобы создать этот ресурс, см. статью [Начало работы с Azure Data Lake Analytics с помощью портала Azure](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-get-started-portal).
+Прежде чем ее использовать, создайте учетную запись Azure Data Lake Analytics. Чтобы создать этот ресурс, см. статью [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md).
 
 Чтобы вложить Azure Data Lake Analytics в качестве целевого объекта вычислений, используйте пакет SDK машинного обучения Azure и укажите следующие сведения.
 
@@ -325,7 +325,7 @@ except ComputeTargetException:
 > Не создавайте несколько одновременных вложений для одного и того же ADLA из рабочей области. Каждое новое вложение приведет к нарушению предыдущих существующих вложений.
 
 > [!TIP]
-> Конвейеры машинного обучения Azure работают только с хранимыми данными в хранилище данных учетной записи Data Lake Analytics по умолчанию. Если данные, с которыми необходимо работать, находятся в хранилище, отличном от хранилища по умолчанию, можно использовать [`DataTransferStep`](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.data_transfer_step.datatransferstep?view=azure-ml-py&preserve-view=true) для копирования данных перед обучением.
+> Конвейеры машинного обучения Azure работают только с хранимыми данными в хранилище данных учетной записи Data Lake Analytics по умолчанию. Если данные, с которыми необходимо работать, находятся в хранилище, отличном от хранилища по умолчанию, можно использовать [`DataTransferStep`](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.data_transfer_step.datatransferstep?preserve-view=true&view=azure-ml-py) для копирования данных перед обучением.
 
 ## <a name="azure-container-instance"></a><a id="aci"></a>Экземпляр контейнера Azure
 
@@ -350,4 +350,4 @@ except ComputeTargetException:
 * [Руководство. по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md). В нем используется управляемый целевой объект вычислений для обучения модели.
 * Узнайте, как [эффективно настроить гиперпараметры](how-to-tune-hyperparameters.md) для создания улучшенных моделей.
 * После обучения модели узнайте о [способах и расположениях развертывания моделей](how-to-deploy-and-where.md).
-* [Использование Машинного обучения Azure с виртуальными сетями Microsoft Azure](how-to-enable-virtual-network.md)
+* [Использование Машинного обучения Azure с виртуальными сетями Microsoft Azure](./how-to-network-security-overview.md)

@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: c24c82e6e013734798b75d7c2cfa5ca126e32bc4
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 37931aee24e2dbcab03bca400d58f236601c87e5
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788610"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321426"
 ---
 # <a name="rotate-the-transparent-data-encryption-tde-protector"></a>Вращение средства защиты прозрачное шифрование данных (TDE)
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "92788610"
 В этом руководстве описаны два метода смены предохранителя TDE на сервере.
 
 > [!NOTE]
-> Приостановленный пул SQL Azure синапсе Analytics необходимо возобновить до смены ключей.
+> Приостановленный выделенный пул SQL в Azure синапсе Analytics необходимо возобновить до смены ключа.
 
 > [!IMPORTANT]
 > Не удаляйте предыдущие версии ключа после смены. При смене ключа обычно сохраняются данные, зашифрованные прежними версиями ключа, например резервные копии базы данных.

@@ -11,17 +11,17 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperfq1
-ms.openlocfilehash: fc5b958813ea1107d98525b6dfc1b0b56c9c5400
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 09fe93d4e3ba50ced6c8f07d6fe25ace2376c388
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091208"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93320525"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
 
-В этом руководстве вы узнаете, как определить различные параметры конфигурации для экспериментов автоматизированного машинного обучения с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true). Автоматическое машинное обучение выбирает алгоритм и гиперпараметры, а также создает модель, готовую для развертывания. Доступно несколько параметров, с помощью которых можно настроить эксперименты автоматического машинного обучения.
+В этом руководстве вы узнаете, как определить различные параметры конфигурации для экспериментов автоматизированного машинного обучения с помощью [пакета SDK для Машинного обучения Azure](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). Автоматическое машинное обучение выбирает алгоритм и гиперпараметры, а также создает модель, готовую для развертывания. Доступно несколько параметров, с помощью которых можно настроить эксперименты автоматического машинного обучения.
 
 Примеры автоматизированных экспериментов машинного обучения см. в разделе [учебник. Обучение модели классификации с помощью автоматического машинного обучения](tutorial-auto-train-models.md) или [обучение моделей с помощью автоматизированного машинного обучения в облаке](how-to-auto-train-remote.md).
 
@@ -46,7 +46,7 @@ ms.locfileid: "92091208"
     Для установки пакета SDK можно либо 
     * Создайте вычислительный экземпляр, который автоматически устанавливает пакет SDK и предварительно настроен для рабочих процессов машинного обучения. Дополнительные сведения см. [в разделе создание машинное обучение Azure вычислительных экземпляров и управление ими](how-to-create-manage-compute-instance.md) . 
 
-    * [Установите пакет SDK самостоятельно](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true). Просто обязательно включите `automl` дополнительный объект. 
+    * [Установите пакет SDK самостоятельно](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py). Просто обязательно включите `automl` дополнительный объект. 
 
 ## <a name="select-your-experiment-type"></a>Выбор типа эксперимента
 
@@ -69,12 +69,12 @@ automl_config = AutoMLConfig(task = "classification")
 - Данные должны иметь табличный формат.
 - Прогнозируемое значение (целевой столбец) должно присутствовать в данных.
 
-**Для удаленных экспериментов**обучающие данные должны быть доступны из удаленного вычислений. Аутомл принимает только [машинное обучение Azure табулардатасетс](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) при работе с удаленным вычислением. 
+**Для удаленных экспериментов** обучающие данные должны быть доступны из удаленного вычислений. При работе с удаленным вычислением AutoML принимает только [табличные наборы данных для Машинного обучения Azure](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py). 
 
-Машинное обучение Azure наборы данных предоставляют следующие функциональные возможности:
+Наборы данных Машинного обучения Azure предоставляют следующие функциональные возможности:
 
 * Легко переносите данные из статических файлов или URL-источников в рабочую область.
-* Сделайте свои данные доступными для обучения сценариям при выполнении в облачных ресурсах. Пример [How to train with datasets](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) использования `Dataset` класса для подключения данных к удаленному целевому объекту вычислений см. в разделе обучение с помощью наборов данных.
+* предоставление доступа к данным обучающим скриптам в облачной вычислительной среде. Пример [How to train with datasets](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) использования `Dataset` класса для подключения данных к удаленному целевому объекту вычислений см. в разделе обучение с помощью наборов данных.
 
 Следующий код создает Табулардатасет на основе URL-адреса. См. статью [Создание табулардатасетс](how-to-create-register-datasets.md#create-a-tabulardataset) для примеров кода, посвященных созданию наборов данных из других источников, таких как локальные файлы и хранилища данных.
 
@@ -83,7 +83,7 @@ from azureml.core.dataset import Dataset
 data = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/creditcard.csv"
 dataset = Dataset.Tabular.from_delimited_files(data)
   ```
-**Для локальных вычислительных экспериментов**рекомендуется Pandas кадры данных для ускорения обработки.
+**Для локальных вычислительных экспериментов** рекомендуется Pandas кадры данных для ускорения обработки.
 
   ```python
   import pandas as pd
@@ -103,21 +103,21 @@ dataset = Dataset.Tabular.from_delimited_files(data)
 |&nbsp;Размер данных для обучения &nbsp;| Метод проверки |
 |---|-----|
 |**Более &nbsp; &nbsp; 20 000 &nbsp; строк**| Применяется разбиение данных по обучению и проверке. Значение по умолчанию — использовать 10% начального набора данных для обучения в качестве набора проверки. В свою очередь, этот набор проверки используется для вычисления метрик.
-|**Меньше &nbsp; &nbsp; 20 000 &nbsp; строк**| Применяется подход перекрестной проверки. Количество сверток по умолчанию зависит от количества строк. <br> **Если набор данных имеет менее 1 000 строк**, то используется 10 сверток. <br> **Если строки находятся в диапазоне от 1 000 до 20 000**, то используются три свертывания.
+|**Меньше &nbsp; &nbsp; 20 000 &nbsp; строк**| Применяется подход перекрестной проверки. Количество сверток по умолчанию зависит от количества строк. <br> **Если набор данных имеет менее 1 000 строк** , то используется 10 сверток. <br> **Если строки находятся в диапазоне от 1 000 до 20 000** , то используются три свертывания.
 
 В настоящее время необходимо предоставить собственные **тестовые данные** для оценки модели. Пример кода для перевода собственных тестовых данных для оценки модели см. в разделе **Test** [этой записной книжки Jupyter](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb).
 
 ## <a name="compute-to-run-experiment"></a>Объект вычислений для выполнения эксперимента
 
-Затем следует определить, где модель будет обучаться. Обучающий эксперимент для автоматического машинного обучения можно запустить в следующих параметрах вычислений. Узнайте о [преимуществах и недостатках локальных и удаленных вычислений](concept-automated-ml.md#local-remote) . 
+Затем следует определить, где модель будет обучаться. Обучающий эксперимент для автоматизированного машинного обучения можно запустить на следующих вычислительных ресурсах. Узнайте о [достоинствах и недостатках локальных и удаленных вычислительных ресурсов](concept-automated-ml.md#local-remote). 
 
-* **Локальный** компьютер (например, локальный Настольный компьютер или портативный компьютер), как правило, если у вас небольшой набор данных, и все еще находится на этапе исследования. Пример локального вычислений см. в [этой записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/local-run-classification-credit-card-fraud/auto-ml-classification-credit-card-fraud-local.ipynb) . 
+* **Локальный** компьютер (например, локальный Настольный компьютер или портативный компьютер), как правило, если у вас небольшой набор данных, и все еще находится на этапе исследования. Пример для локальных вычислительных ресурсов см. в [этой записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/local-run-classification-credit-card-fraud/auto-ml-classification-credit-card-fraud-local.ipynb). 
  
 * **Удаленный** компьютер в облаке — [машинное обучение Azure управляемых вычислений](concept-compute-target.md#amlcompute) — это управляемая служба, которая позволяет обучать модели машинного обучения в кластерах виртуальных машин Azure. 
 
-    Просмотрите [эту записную книжку](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) для удаленного примера с помощью машинное обучение Azure управляемых вычислений. 
+    Пример удаленных вычислений с использованием управляемых вычислительных ресурсов Машинного обучения Azure см. в [этой записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb). 
 
-* **Кластер Azure Databricks** в подписке Azure. Дополнительные сведения см. здесь: [установка Azure Databricks кластера для автоматического ML](how-to-configure-environment.md#aml-databricks). На [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/azure-databricks/automl) доступны примеры записных книжек с Azure Databricks.
+* **Кластер Azure Databricks** в подписке Azure. Дополнительные сведения см. здесь: [Настройка кластера Azure Databricks для автоматизированного машинного обучения](how-to-configure-environment.md#aml-databricks). На [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/azure-databricks/automl) доступны примеры записных книжек с Azure Databricks.
 
 <a name='configure-experiment'></a>
 
@@ -198,10 +198,10 @@ dataset = Dataset.Tabular.from_delimited_files(data)
 [Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)* |[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)* |[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
 [Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)* |[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)* |[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
 [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)* |[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)* | [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
-[Классификатор усредненного восприятия](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.averagedperceptronbinaryclassifier?view=nimbusml-py-latest&preserve-view=true)|[Регрессор вероятностного градиентного спуска](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.onlinegradientdescentregressor?view=nimbusml-py-latest&preserve-view=true) |[Auto-ARIMA](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
-[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)* |[Быстрый линейный регрессор](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.fastlinearregressor?view=nimbusml-py-latest&preserve-view=true)|[Prophet](https://facebook.github.io/prophet/docs/quick_start.html)
+[Классификатор усредненного восприятия](/python/api/nimbusml/nimbusml.linear_model.averagedperceptronbinaryclassifier?preserve-view=true&view=nimbusml-py-latest)|[Регрессор вероятностного градиентного спуска](/python/api/nimbusml/nimbusml.linear_model.onlinegradientdescentregressor?preserve-view=true&view=nimbusml-py-latest) |[Auto-ARIMA](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
+[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)* |[Быстрый линейный регрессор](/python/api/nimbusml/nimbusml.linear_model.fastlinearregressor?preserve-view=true&view=nimbusml-py-latest)|[Prophet](https://facebook.github.io/prophet/docs/quick_start.html)
 [Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)* ||ForecastTCN
-|[Линейный классификатор SVM](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.linearsvmbinaryclassifier?view=nimbusml-py-latest&preserve-view=true)*||
+|[Линейный классификатор SVM](/python/api/nimbusml/nimbusml.linear_model.linearsvmbinaryclassifier?preserve-view=true&view=nimbusml-py-latest)*||
 
 ### <a name="primary-metric"></a>Основная метрика
 `primary metric`Параметр определяет метрику, используемую во время обучения модели для оптимизации. Доступные для выбора метрики определяются выбранным типом задачи. В приведенной ниже таблице показаны допустимые основные метрики для каждого типа задачи.
@@ -333,7 +333,7 @@ run = experiment.submit(automl_config, show_output=True)
 
 Существует несколько параметров, которые можно определить для завершения эксперимента.
 
-|Критерии| description
+|Критерии| description;
 |----|----
 Без &nbsp; критериев | Если вы не определили никаких параметров выхода, эксперимент будет продолжен до тех пор, пока не будет выполнен дальнейший переход к основной метрике.
 После &nbsp; &nbsp; длительного &nbsp; &nbsp; времени| Используйте `experiment_timeout_minutes` в параметрах, чтобы определить время, в течение которого ваш эксперимент должен продолжать выполняться. <br><br> Чтобы избежать сбоев при экспериментах, не менее 15 минут или 60 минут, если строка по размеру столбца превышает 10 000 000.

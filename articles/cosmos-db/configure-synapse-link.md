@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: rosouz
 ms.custom: references_regions
-ms.openlocfilehash: e62128edf6558e461bf2c61f16d513c4085241e7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 98b8d8222ed87eebc24e97caccf3414a11c168a2
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93090398"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93319870"
 ---
 # <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db-preview"></a>Настройка и использование Azure Synapse Link для Azure Cosmos DB (предварительная версия)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)][!INCLUDE[appliesto-mongodb-apis](includes/appliesto-mongodb-api.md)]
@@ -45,9 +45,9 @@ ms.locfileid: "93090398"
 
    :::image type="content" source="./media/configure-synapse-link/find-synapse-link-feature.png" alt-text="Поиск предварительной версии функции Synapse Link":::
 
-1. Далее вам будет предложено включить Synapse Link в вашей учетной записи. Нажмите кнопку **Включить** . Выполнение этого процесса может занять от 1 до 5 минут.
+1. Далее вам будет предложено включить Synapse Link в вашей учетной записи. Нажмите кнопку **Включить**. Выполнение этого процесса может занять от 1 до 5 минут.
 
-   :::image type="content" source="./media/configure-synapse-link/enable-synapse-link-feature.png" alt-text="Поиск предварительной версии функции Synapse Link":::
+   :::image type="content" source="./media/configure-synapse-link/enable-synapse-link-feature.png" alt-text="Включение функции Synapse Link":::
 
 1. Теперь ваша учетная запись включена для использования Synapse Link. Далее ознакомьтесь со сведениями о создании контейнеров с поддержкой аналитического хранилища для автоматического запуска репликации операционных данных из хранилища транзакций в аналитическое хранилище.
 
@@ -65,13 +65,13 @@ ms.locfileid: "93090398"
 
 1. Откройте [портал Azure](https://portal.azure.com/) или [обозреватель Azure Cosmos](https://cosmos.azure.com/).
 
-1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer** .
+1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
 
 1. Выберите **Создать контейнер** и введите имя базы данных, контейнера, ключ секции и сведения о пропускной способности. Активируйте параметр **Analytical store** (Аналитическое хранилище). После включения аналитического хранилища создается контейнер со свойством `AnalyicalTTL`, для которого задано значение по умолчанию -1 (неограниченный срок хранения). В этом аналитическом хранилище содержатся все исторические версии записей.
 
-   :::image type="content" source="./media/configure-synapse-link/create-container-analytical-store.png" alt-text="Поиск предварительной версии функции Synapse Link":::
+   :::image type="content" source="./media/configure-synapse-link/create-container-analytical-store.png" alt-text="Включение аналитического хранилища для контейнера Azure Cosmos":::
 
-1. Если вы ранее не включили Synapse Link в этой учетной записи, вам будет предложено сделать это, так как создание контейнера с включенным аналитическим хранилищем является необходимым условием. При появлении запроса выберите **Включить Synapse Link** . Выполнение этого процесса может занять от 1 до 5 минут.
+1. Если вы ранее не включили Synapse Link в этой учетной записи, вам будет предложено сделать это, так как создание контейнера с включенным аналитическим хранилищем является необходимым условием. При появлении запроса выберите **Включить Synapse Link**. Выполнение этого процесса может занять от 1 до 5 минут.
 
 1. Нажмите кнопку **OK** , чтобы создать контейнер Azure Cosmos с включенным аналитическим хранилищем.
 
@@ -173,7 +173,7 @@ except exceptions.CosmosResourceExistsError:
 
 1. Откройте [портал Azure](https://portal.azure.com/) или [обозреватель Azure Cosmos](https://cosmos.azure.com/).
 
-1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer** .
+1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
 
 1. Выберите существующий контейнер с включенным аналитическим хранилищем. Разверните его и измените следующие значения:
 
@@ -216,9 +216,9 @@ container.replace(containerProperties).block();
 
 Инструкции по выполнению запросов с помощью Synapse Spark см. в статье о [запросах в аналитическое хранилище Azure Cosmos DB](../synapse-analytics/synapse-link/how-to-query-analytical-store-spark.md). В этой статье приводятся некоторые примеры того, как можно взаимодействовать с аналитическим хранилищем с помощью жестов Synapse. Чтобы просмотреть эти жесты, щелкните правой кнопкой мыши контейнер. С помощью жестов можно быстро создать код и скорректировать его в соответствии с потребностями. Они также идеально подходят для обнаружения данных одним щелчком мыши.
 
-## <a name="query-the-analytical-store-using-synapse-sql-serverless"></a><a id="query-analytical-store-sql-on-demand"></a> Запрос к аналитическому хранилищу с помощью синапсе SQL Server
+## <a name="query-the-analytical-store-using-serverless-sql-pool-in-azure-synapse-analytics"></a><a id="query-analytical-store-sql-on-demand"></a> Запрос к аналитическому хранилищу с помощью бессерверного пула SQL в Azure синапсе Analytics
 
-Синапсе SQL Server (Предварительная версия), которая ранее называлась **SQL по запросу** , позволяет запрашивать и анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью ссылки Azure синапсе. Данные можно анализировать практически в реальном времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из аналитического хранилища и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL. Дополнительные сведения см. в статье [запрос аналитического хранилища с использованием СИНАПСЕ SQL Server](../synapse-analytics/sql/query-cosmos-db-analytical-store.md) .
+Бессерверный пул SQL позволяет запрашивать и анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью ссылки Azure синапсе. Данные можно анализировать практически в реальном времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из аналитического хранилища и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL. Дополнительные сведения см. в статье [запрос аналитического хранилища с использованием СИНАПСЕ SQL Server](../synapse-analytics/sql/query-cosmos-db-analytical-store.md) .
 
 ## <a name="use-synapse-sql-serverless-to-analyze-and-visualize-data-in-power-bi"></a><a id="analyze-with-powerbi"></a>Использование синапсе SQL Server для анализа и визуализации данных в Power BI
 

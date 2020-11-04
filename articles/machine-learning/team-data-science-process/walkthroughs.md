@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 76027275d6f0b838ed6fbb7275086f190701d286
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a1af48d89fbf5d303c2a6b8ef85ca3117debd5a
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89439833"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93320076"
 ---
 # <a name="walkthroughs-executing-the-team-data-science-process"></a>Пошаговые руководства по процессу обработки и анализа данных группы
 
@@ -36,11 +36,10 @@ ms.locfileid: "89439833"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 
 Обсуждение жизненного цикла процесса обработки и анализа данных группы см. в разделе [жизненный цикл процесса обработки и анализа данных группы](lifecycle.md). Этот жизненный цикл описывает шаги от начала до конца, которые обычно следуют при выполнении проектов. 
 
-Общие сведения см. в разделе [процесс обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/). 
-
+Общие сведения см. в разделе [процесс обработки и анализа данных](./index.yml).

@@ -1,6 +1,6 @@
 ---
-title: Запрос CSV-файлов с помощью SQL по запросу (предварительная версия)
-description: В этой статье вы узнаете, как запрашивать отдельные CSV-файлы с различными форматами с помощью SQL по запросу (предварительная версия).
+title: Запрос CSV-файлов с помощью бессерверного пула SQL (Предварительная версия)
+description: В этой статье вы узнаете, как выполнять запросы к отдельным CSV-файлам с различными форматами с помощью бессерверного пула SQL (Предварительная версия).
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: d2f8a30503e14e647cbc9151ebcea7efa000ca07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7e5a64a75ca6cde4172e49eb77dde42a44c06d5e
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91288296"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321451"
 ---
 # <a name="query-csv-files"></a>Запрос CSV-файлов
 
-В этой статье вы узнаете, как выполнить запрос одного CSV-файлы с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics. CSV-файлы могут иметь разные форматы: 
+Из этой статьи вы узнаете, как выполнять запросы к одному CSV-файлу с помощью бессерверного пула SQL в Azure синапсе Analytics. CSV-файлы могут иметь разные форматы: 
 
 - Со строкой заголовка и без нее
 - Со значениями, разделенными запятыми и символами табуляции
@@ -95,7 +95,7 @@ from openrowset(
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для начала **создайте базу данных**, в которой будут созданы таблицы. Затем инициализируйте объекты, выполнив [сценарий установки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
+Для начала **создайте базу данных** , в которой будут созданы таблицы. Затем инициализируйте объекты, выполнив [сценарий установки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
 
 ## <a name="windows-style-new-line"></a>Новая строка в стиле Windows
 

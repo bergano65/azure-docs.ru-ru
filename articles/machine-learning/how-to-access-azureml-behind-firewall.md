@@ -1,7 +1,7 @@
 ---
 title: Использование брандмауэра
 titleSuffix: Azure Machine Learning
-description: Контролируйте доступ к рабочим областям Машинное обучение Azure с помощью брандмауэров Azure. Сведения об узлах, которые необходимо разрешить в брандмауэре для правильной работы Машинное обучение Azure.
+description: Контролируйте доступ к рабочим областям Машинное обучение Azure с помощью брандмауэров Azure. Сведения об узлах, которые необходимо разрешить через брандмауэр.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: d0f30edeb24f3c4abed6f144f3fb7f755cc08a72
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: 5ba1804630649044d29dd2919ef8375265a69a08
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629465"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93320873"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "92629465"
 
 | **Имя узла** | **Назначение** |
 | ---- | ---- |
-| **login.microsoftonline.com** | Аутентификация |
+| **login.microsoftonline.com** | Проверка подлинности |
 | **management.azure.com** | Используется для получения сведений о рабочей области |
 | **\*. batchai.core.windows.net** | Учебные кластеры |
 | **ml.azure.com** | Студия машинного обучения Azure. |
@@ -78,7 +78,7 @@ ms.locfileid: "92629465"
 | ---- | ---- |
 | **anaconda.com**</br>**\*. anaconda.com** | Используется для установки пакетов по умолчанию. |
 | **\*. anaconda.org** | Используется для получения данных репозитория. |
-| **pypi.org** | Используется для перечисления зависимостей из индекса по умолчанию, если таковые имеются, а индекс не перезаписывается параметрами пользователя. Если индекс перезаписывается, необходимо также разрешить **\* . pythonhosted.org** . |
+| **pypi.org** | Используется для перечисления зависимостей из индекса по умолчанию, если таковые имеются, а индекс не перезаписывается параметрами пользователя. Если индекс перезаписывается, необходимо также разрешить **\* . pythonhosted.org**. |
 
 ## <a name="r-hosts"></a>Узлы R
 

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 2c487b5bc5c8d5fa01388b2942a70defa0001253
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e50cce74f7291a6673e5d43f3485a1c63c81d827
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791534"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93319285"
 ---
 # <a name="create-and-manage-servers-and-single-databases-in-azure-sql-database"></a>Создание серверов и отдельных баз данных и управление ими в базе данных SQL Azure
 
@@ -121,12 +121,12 @@ ms.locfileid: "92791534"
 > [!IMPORTANT]
 > С помощью Transact-SQL невозможно создать или удалить сервер.
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
-|[CREATE DATABASE](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current)|Создает базу отдельную данных. Для создания новой базы данных необходимо подключение к базе данных master.|
-| [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Изменяет базу данных или эластичный пул. |
+|[CREATE DATABASE](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true)|Создает базу отдельную данных. Для создания новой базы данных необходимо подключение к базе данных master.|
+| [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current&preserve-view=true) |Изменяет базу данных или эластичный пул. |
 |[DROP DATABASE](/sql/t-sql/statements/drop-database-transact-sql)|Удаляет базу данных.|
-|[sys.database_service_objectives](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Возвращает выпуск (уровень служб), Цель обслуживания (ценовая категория) и имя эластичного пула (если таковые имеются) для базы данных SQL Azure или пула SQL Azure синапсе Analytics. При входе в базу данных master на сервере в базе данных SQL возвращает сведения обо всех базах данных. Для Azure синапсе Analytics необходимо подключиться к базе данных master.|
+|[sys.database_service_objectives](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Возвращает выпуск (уровень служб), Цель обслуживания (ценовая категория) и имя эластичного пула (если таковые имеются) для базы данных SQL Azure или выделенного пула SQL в Azure синапсе Analytics. При входе в базу данных master на сервере в базе данных SQL возвращает сведения обо всех базах данных. Для Azure синапсе Analytics необходимо подключиться к базе данных master.|
 |[sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database)| Возвращает сведения о потреблении ресурсов ЦП, операций ввода-вывода и памяти для базы данных в базе данных SQL Azure. Одна строка существует каждые 15 секунд, даже если в базе данных нет действий.|
 |[sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database)|Возвращает данные об использовании ЦП и хранилища для базы данных в базе данных SQL Azure. Эти данные собираются и объединяются с пятиминутными интервалами.|
 |[sys.database_connection_stats](/sql/relational-databases/system-catalog-views/sys-database-connection-stats-azure-sql-database)|Содержит статистику для событий подключения к базе данных SQL, предоставляя обзор успешных и неудачных попыток подключения к базе данных. |
@@ -142,7 +142,7 @@ ms.locfileid: "92791534"
 
 Для создания серверов, баз данных и брандмауэров и управления ими используйте следующие запросы REST API.
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[Серверы — создание или обновление](/rest/api/sql/servers/createorupdate)|Создает или обновляет сервер.|
 |[Серверы: удаление](/rest/api/sql/servers/delete)|Удаляет сервер SQL Server.|

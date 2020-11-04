@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 6b5571f24cc7acfd35cf2979318110ba2eecbb0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 557550627fe2c39571a848723e5d716324fee240
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320546"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321172"
 ---
 # <a name="set-up-data-science-environments-for-use-in-the-team-data-science-process"></a>Настройка сред обработки и анализа данных для использования в процессе обработки и анализа данных группы
 Процесс обработки и анализа данных группы использует различные специализированные среды для хранения, обработки и анализа данных. Сюда относятся хранилище BLOB-объектов Azure, несколько типов виртуальных машин Azure, кластеры HDInsight (Hadoop) и рабочие области Машинного обучения Azure. Выбор используемой среды зависит от типа и количества данных, которые нужно моделировать, и места хранения этих данных в облаке. 
@@ -27,7 +27,7 @@ ms.locfileid: "91320546"
 В следующих статьях описывается настройка различных сред обработки и анализа данных, используемых процессом обработки и анализа данных группы.
 
 * [Учетная запись службы хранилища Azure](../../storage/common/storage-account-create.md)
-* [Кластер HDInsight Hadoop](customize-hadoop-cluster.md)
+* [Кластер HDInsight Hadoop](../../hdinsight/spark/apache-spark-jupyter-spark-sql.md)
 * [Рабочая область Машинное обучение Azure Studio (классическая модель)](../classic/create-workspace.md)
 
 **Виртуальная машина Майкрософт для обработки и анализа данных (DSVM)** также доступна как образ виртуальной машины Azure. В этой виртуальной машине Azure предварительно установлен и настроен ряд распространенных средств, которые обычно используются для анализа данных и машинного обучения. DSVM доступна в Windows и Linux. Дополнительные сведения см. в статье [Введение в облачные виртуальные машины для анализа и обработки данных для Linux и Windows](../data-science-virtual-machine/overview.md).
@@ -36,4 +36,4 @@ ms.locfileid: "91320546"
 
 - [Виртуальная машина Windows для обработки и анализа данных](../data-science-virtual-machine/provision-vm.md)
 - [Виртуальная машина для обработки и анализа данных Ubuntu](../data-science-virtual-machine/dsvm-ubuntu-intro.md)
-- [Виртуальная машина для обработки и анализа данных CentOS](../data-science-virtual-machine/linux-dsvm-intro.md)
+- [Виртуальная машина для обработки и анализа данных CentOS](../data-science-virtual-machine/release-notes.md)

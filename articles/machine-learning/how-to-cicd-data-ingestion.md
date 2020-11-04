@@ -1,7 +1,7 @@
 ---
 title: DevOps для конвейера приема данных
 titleSuffix: Azure Machine Learning
-description: Узнайте, как применять DevOpsные методики для создания конвейера приема данных, используемого для подготовки данных для использования с Машинное обучение Azure. Конвейер приема использует фабрику данных Azure и Azure Databricks. Конвейер Azure используется для создания процесса непрерывной интеграции и доставки для конвейера приема.
+description: Узнайте, как применять DevOpsные методики для создания конвейера приема данных для подготовки данных. В используется фабрика данных Azure и Azure Databricks.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -12,20 +12,20 @@ author: eedorenko
 manager: davete
 ms.reviewer: larryfr
 ms.date: 06/23/2020
-ms.openlocfilehash: 47b41e807c4d7b9a9fce6591da6655db74f483f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e3774b360df6dce318d1d640903d0df2e21c856
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90971264"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93320691"
 ---
 # <a name="devops-for-a-data-ingestion-pipeline"></a>DevOps для конвейера приема данных
 
 В большинстве случаев решение приема данных представляет собой композицию скриптов, вызовов служб и конвейера, управляющего всеми действиями. Из этой статьи вы узнаете, как применять DevOpsные методики к жизненному циклу разработки общего конвейера приема данных, который готовит данные для обучения модели машинного обучения. Конвейер создается с использованием следующих служб Azure:
 
-* __Фабрика данных Azure__: считывает необработанные данные и осуществляет подготовку данных.
-* __Azure Databricks__: запускает записную книжку Python, которая преобразует данные.
-* __Azure pipelines__: автоматизируйте процесс непрерывной интеграции и разработки.
+* __Фабрика данных Azure__ : считывает необработанные данные и осуществляет подготовку данных.
+* __Azure Databricks__ : запускает записную книжку Python, которая преобразует данные.
+* __Azure pipelines__ : автоматизируйте процесс непрерывной интеграции и разработки.
 
 ## <a name="data-ingestion-pipeline-workflow"></a>Рабочий процесс конвейера приема данных
 
@@ -78,12 +78,11 @@ ms.locfileid: "90971264"
 
 ### <a name="python-notebook-ci"></a>Элемент конфигурации записной книжки Python
 
-Процесс CI для записных книжек Python получает код из ветви совместной работы (например, с ***главной*** или ***разработкой***) и выполняет следующие действия:
-* Linting кода
+Процесс CI для записных книжек Python получает код из ветви совместной работы (например, * **master** _ или _*_разработать_*_ ) и выполняет следующие действия: _ Code linting
 * Модульное тестирование
 * Сохранение кода как артефакта
 
-В следующем фрагменте кода показано, как реализовать эти шаги в конвейере Azure DevOps ***YAML*** :
+В следующем фрагменте кода показано, как реализовать эти шаги в конвейере Azure DevOps * **YAML** _:
 
 ```yaml
 steps:
@@ -99,7 +98,7 @@ steps:
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
-    testResultsFiles: '$(Build.BinariesDirectory)/*-testresults.xml'
+    testResultsFiles: '$(Build.BinariesDirectory)/_-testresults.xml'
     testRunTitle: 'Linting & Unit tests'
     failTaskOnFailedTests: true
   displayName: 'Publish linting and unit test results'
@@ -116,13 +115,13 @@ steps:
 
 ### <a name="azure-data-factory-ci"></a>CI фабрики данных Azure
 
-Процесс непрерывной интеграции для конвейера фабрики данных Azure является узким местом для конвейера приема данных. Непрерывная интеграция отсутствует. Развертываемый артефакт фабрики данных Azure — это коллекция шаблонов Azure Resource Manager. Единственный способ создать эти шаблоны — нажать кнопку ***опубликовать*** в рабочей области фабрика данных Azure.
+Процесс непрерывной интеграции для конвейера фабрики данных Azure является узким местом для конвейера приема данных. Непрерывная интеграция отсутствует. Развертываемый артефакт фабрики данных Azure — это коллекция шаблонов Azure Resource Manager. Единственный способ создать эти шаблоны — нажать кнопку " **опубликовать** _" в рабочей области фабрики данных Azure.
 
-1. Специалисты по работе с данными объединяют исходный код из их компонентов в ветвь совместной работы, например ***master*** или ***Разработка***. 
-1. Пользователь с предоставленными разрешениями нажимает кнопку ***Publish (опубликовать*** ), чтобы создать Azure Resource Manager шаблоны из исходного кода в ветви совместной работы. 
-1. Рабочая область проверяет конвейеры (с учетом linting и модульного тестирования), создает шаблоны Azure Resource Manager (Подумайте о построении) и сохраняет созданные шаблоны в техническом ветви ***adf_publish*** в том же репозитории кода (с учетом артефактов публикации). Эта ветвь создается автоматически рабочей областью фабрики данных Azure. 
+1. Специалисты по работе с данными объединяют исходный код из их компонентов в ветвь совместной работы, например _*_master_*_ или _*_Разработка_*_. 
+1. Пользователь с предоставленными разрешениями нажимает кнопку _*_Publish (опубликовать_*_ ), чтобы создать Azure Resource Manager шаблоны из исходного кода в ветви совместной работы. 
+1. Рабочая область проверяет конвейеры (с учетом linting и модульного тестирования), создает шаблоны Azure Resource Manager (Подумайте о построении) и сохраняет созданные шаблоны в техническом ветви _*_adf_publish_*_ в том же репозитории кода (с учетом артефактов публикации). Эта ветвь создается автоматически рабочей областью фабрики данных Azure. 
 
-Дополнительные сведения об этом процессе см. [в статье непрерывная интеграция и доставка в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment).
+Дополнительные сведения об этом процессе см. [в статье непрерывная интеграция и доставка в фабрике данных Azure](../data-factory/continuous-integration-deployment.md).
 
 Важно убедиться, что созданные шаблоны Azure Resource Manager не зависят от среды. Это означает, что все значения, которые могут различаться в разных средах, являются параметризованным. Фабрика данных Azure достаточно интеллектуальна для предоставления большинства таких значений в качестве параметров. Например, в следующем шаблоне свойства подключения к рабочей области Машинное обучение Azure предоставляются в виде параметров:
 
@@ -166,7 +165,7 @@ labels = np.array(data['target'])
 ...
 ```
 
-Это имя отличается для сред ***разработки***, ***QA***, ***UAT***и ***производственных*** . В сложном конвейере с несколькими действиями может быть несколько пользовательских свойств. Рекомендуется объединить все эти значения в одном месте и определить их как ***переменные***конвейера:
+Это имя отличается для сред _*_разработки_*_ , _*_QA_*_ , _*_UAT_*_ и _*_производственных_*_ . В сложном конвейере с несколькими действиями может быть несколько пользовательских свойств. Рекомендуется объединить все эти значения в одном месте и определить их как _*_переменные_*_ конвейера:
 
 ![На снимке экрана показана Записная книжка, которая называется Препаредата и M L. Выполните конвейер с именем M L Execute конвейер в верхней части со вкладкой переменные, выбранной ниже, с возможностью добавления новых переменных, каждая с именем, типом и значением по умолчанию.](media/how-to-cicd-data-ingestion/adf-variables.png)
 
@@ -174,13 +173,13 @@ labels = np.array(data['target'])
 
 ![На снимке экрана показана Записная книжка с именем Препаредата и M L. Выполните конвейер с именем M L Execute конвейер в верхней части с вкладкой Settings (параметры), выбранной ниже.](media/how-to-cicd-data-ingestion/adf-notebook-parameters.png)
 
-В рабочей области фабрики данных Azure ***не*** предоставляются переменные конвейера по умолчанию в качестве параметров шаблонов Azure Resource Manager. В рабочей области используется [шаблон параметризации по умолчанию](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#default-parameterization-template) , определяющий, какие свойства конвейера должны быть предоставлены как параметры шаблона Azure Resource Manager. Чтобы добавить в список переменные конвейера, обновите `"Microsoft.DataFactory/factories/pipelines"` раздел [шаблона параметризации по умолчанию](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#default-parameterization-template) , используя следующий фрагмент кода, и поместите файл result JSON в корень исходной папки:
+В рабочей области фабрики данных Azure _*_не_*_ предоставляются переменные конвейера по умолчанию в качестве параметров шаблонов Azure Resource Manager. В рабочей области используется [шаблон параметризации по умолчанию](../data-factory/continuous-integration-deployment.md#default-parameterization-template) , определяющий, какие свойства конвейера должны быть предоставлены как параметры шаблона Azure Resource Manager. Чтобы добавить в список переменные конвейера, обновите `"Microsoft.DataFactory/factories/pipelines"` раздел [шаблона параметризации по умолчанию](../data-factory/continuous-integration-deployment.md#default-parameterization-template) , используя следующий фрагмент кода, и поместите файл result JSON в корень исходной папки:
 
 ```json
 "Microsoft.DataFactory/factories/pipelines": {
         "properties": {
             "variables": {
-                "*": {
+                "_": {
                     "defaultValue": "="
                 }
             }
@@ -188,7 +187,7 @@ labels = np.array(data['target'])
     }
 ```
 
-При этом Рабочая область фабрики данных Azure будет добавлять переменные в список параметров при нажатии кнопки " ***опубликовать*** ":
+При этом Рабочая область фабрики данных Azure будет добавлять переменные в список параметров при нажатии кнопки * **Publish** _.
 
 ```json
 {
@@ -212,18 +211,18 @@ labels = np.array(data['target'])
 
 Процесс непрерывной поставки принимает артефакты и развертывает их в первую целевую среду. Это гарантирует, что решение работает, выполняя тесты. В случае успешного выполнения он переходит к следующей среде. 
 
-Конвейер Azure на компакт-диске состоит из нескольких этапов, представляющих собой среды. На каждом этапе содержатся [развертывания](https://docs.microsoft.com/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) и [задания](https://docs.microsoft.com/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml) , выполняющие следующие действия.
+Конвейер Azure на компакт-диске состоит из нескольких этапов, представляющих собой среды. На каждом этапе содержатся [развертывания](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) и [задания](/azure/devops/pipelines/process/phases?tabs=yaml&view=azure-devops) , выполняющие следующие действия.
 
-* Развертывание записной книжки Python в Azure Databricks рабочей области
+_ Развертывание записной книжки Python в Azure Databricks рабочей области
 * Развертывание конвейера фабрики данных Azure 
 * Запуск конвейера
 * Проверка результата приема данных
 
-Этапы конвейера можно настроить с помощью [утверждений](https://docs.microsoft.com/azure/devops/pipelines/process/approvals?view=azure-devops&tabs=check-pass) и [шлюзов](https://docs.microsoft.com/azure/devops/pipelines/release/approvals/gates?view=azure-devops) , которые обеспечивают дополнительный контроль над тем, как процесс развертывания проходит через цепочку сред.
+Этапы конвейера можно настроить с помощью [утверждений](/azure/devops/pipelines/process/approvals?tabs=check-pass&view=azure-devops) и [шлюзов](/azure/devops/pipelines/release/approvals/gates?view=azure-devops) , которые обеспечивают дополнительный контроль над тем, как процесс развертывания проходит через цепочку сред.
 
 ### <a name="deploy-a-python-notebook"></a>Развертывание записной книжки Python
 
-В следующем фрагменте кода определяется [развертывание](https://docs.microsoft.com/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) конвейера Azure, которое копирует записную книжку Python в кластер кирпичей.
+В следующем фрагменте кода определяется [развертывание](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) конвейера Azure, которое копирует записную книжку Python в кластер кирпичей.
 
 ```yaml
 - stage: 'Deploy_to_QA'
@@ -259,13 +258,13 @@ labels = np.array(data['target'])
               displayName: 'Deploy (copy) data processing notebook to the Databricks cluster'       
 ```            
 
-Артефакты, созданные CI, автоматически копируются в агент развертывания и доступны в `$(Pipeline.Workspace)` папке. В этом случае задача развертывания ссылается на `di-notebooks` артефакт, содержащий записную книжку Python. В этом [развертывании](https://docs.microsoft.com/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) для копирования файлов записной книжки в рабочую область "модули обработки" используется [расширение Azure DevOps для модуля](https://marketplace.visualstudio.com/items?itemName=riserrad.azdo-databricks) обработки.
+Артефакты, созданные CI, автоматически копируются в агент развертывания и доступны в `$(Pipeline.Workspace)` папке. В этом случае задача развертывания ссылается на `di-notebooks` артефакт, содержащий записную книжку Python. В этом [развертывании](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) для копирования файлов записной книжки в рабочую область "модули обработки" используется [расширение Azure DevOps для модуля](https://marketplace.visualstudio.com/items?itemName=riserrad.azdo-databricks) обработки.
 
 `Deploy_to_QA`Этап содержит ссылку на `devops-ds-qa-vg` группу переменных, определенную в проекте Azure DevOps. Действия на этом этапе относятся к переменным из этой группы переменных (например, `$(DATABRICKS_URL)` и `$(DATABRICKS_TOKEN)` ). Идея состоит в том, что следующий этап (например, `Deploy_to_UAT` ) будет действовать с теми же именами переменных, которые определены в отдельной группе переменных с областью действия UAT.
 
 ### <a name="deploy-an-azure-data-factory-pipeline"></a>Развертывание конвейера фабрики данных Azure
 
-Развертываемый артефакт фабрики данных Azure является шаблоном Azure Resource Manager. Он будет развертываться вместе с задачей ***развертывания группы ресурсов Azure*** , как показано в следующем фрагменте кода:
+Развертываемый артефакт фабрики данных Azure является шаблоном Azure Resource Manager. Он будет развернут с помощью задачи * " **Развертывание группы ресурсов Azure** ", как показано в следующем фрагменте кода:
 
 ```yaml
   - deployment: "Deploy_to_ADF"
@@ -286,7 +285,7 @@ labels = np.array(data['target'])
                 csmParametersFile: '$(Pipeline.Workspace)/adf-pipelines/ARMTemplateParametersForFactory.json'
                 overrideParameters: -data-ingestion-pipeline_properties_variables_data_file_name_defaultValue "$(DATA_FILE_NAME)"
 ```
-Значение параметра filename файла данных берется из `$(DATA_FILE_NAME)` переменной, определенной в группе переменных этапа контроля качества. Аналогичным образом все параметры, определенные в ***ARMTemplateForFactory.js*** , можно переопределить. Если это не так, используются значения по умолчанию.
+Значение параметра filename файла данных берется из `$(DATA_FILE_NAME)` переменной, определенной в группе переменных этапа контроля качества. Аналогичным образом все параметры, определенные в _*_ARMTemplateForFactory.js_*_ , можно переопределить. Если это не так, используются значения по умолчанию.
 
 ### <a name="run-the-pipeline-and-check-the-data-ingestion-result"></a>Запуск конвейера и проверка результата приема данных
 
@@ -335,15 +334,14 @@ labels = np.array(data['target'])
 
 ## <a name="putting-pieces-together"></a>Совместное размещение элементов
 
-Полный конвейер Azure CI/CD состоит из следующих этапов.
-* CI
+Полный конвейер Azure CI/CD состоит из следующих этапов: _ CI
 * Развертывание в QA
     * Развертывание в модулях и развертывание в ADF
     * Интеграционный тест
 
-Он содержит несколько этапов ***развертывания*** , равных количеству требуемых целевых сред. Каждый этап ***развертывания*** содержит два [развертывания](https://docs.microsoft.com/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) , которые выполняются параллельно, и [Задание](https://docs.microsoft.com/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml) , которое запускается после развертывания для тестирования решения в среде.
+Он содержит несколько этапов * **развертывание** _, равное количеству требуемых целевых сред. Каждый этап _*_развертывания_*_ содержит два [развертывания](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) , которые выполняются параллельно, и [Задание](/azure/devops/pipelines/process/phases?tabs=yaml&view=azure-devops) , которое запускается после развертывания для тестирования решения в среде.
 
-Пример реализации конвейера собираются в следующем фрагменте кода ***YAML*** :
+Пример реализации конвейера собираются в следующем фрагменте кода _*_YAML_*_ :
 
 ```yaml
 variables:
@@ -378,7 +376,7 @@ stages:
     - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
-        testResultsFiles: '$(Build.BinariesDirectory)/*-testresults.xml'
+        testResultsFiles: '$(Build.BinariesDirectory)/_-testresults.xml'
         testRunTitle: 'Linting & Unit tests'
         failTaskOnFailedTests: true
     displayName: 'Publish linting and unit test results'    
@@ -478,8 +476,8 @@ stages:
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Система управления версиями в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/source-control)
-* [Непрерывные интеграция и поставка в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment)
+* [Система управления версиями в Фабрике данных Azure](../data-factory/source-control.md)
+* [Непрерывные интеграция и поставка в Фабрике данных Azure](../data-factory/continuous-integration-deployment.md)
 * [DevOps для Azure Databricks](https://marketplace.visualstudio.com/items?itemName=riserrad.azdo-databricks)

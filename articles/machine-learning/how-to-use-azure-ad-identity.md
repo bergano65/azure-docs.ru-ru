@@ -11,22 +11,22 @@ ms.subservice: core
 ms.date: 02/10/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: ac7420e47077e4e2b5bcfce0f33766554cd5c76d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1789f83f048a2ab0fb75aa33635e58b0850b865b
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89647338"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93319135"
 ---
 # <a name="use-azure-ad-identity-with-your-machine-learning-web-service-in-azure-kubernetes-service"></a>Использование удостоверения Azure AD с веб-службой машинного обучения в Службе Azure Kubernetes
 
-В этом пошаговом окне вы узнаете, как назначить удостоверение Azure Active Directory (AAD) для развернутой модели машинного обучения в службе Azure Kubernetes. Проект [удостоверения Pod для AAD](https://github.com/Azure/aad-pod-identity) позволяет приложениям безопасно получать доступ к облачным ресурсам с помощью AAD, используя [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) и примитивы Kubernetes. Это позволяет веб-службе безопасно получать доступ к ресурсам Azure без необходимости внедрять учетные данные или управлять маркерами непосредственно внутри `score.py` скрипта. В этой статье объясняется, как создать и установить удостоверение Azure в кластере службы Azure Kubernetes и назначить удостоверение для развернутой веб-службы.
+В этом пошаговом окне вы узнаете, как назначить удостоверение Azure Active Directory (AAD) для развернутой модели машинного обучения в службе Azure Kubernetes. Проект [удостоверения Pod для AAD](https://github.com/Azure/aad-pod-identity) позволяет приложениям безопасно получать доступ к облачным ресурсам с помощью AAD, используя [управляемые удостоверения](../active-directory/managed-identities-azure-resources/overview.md) и примитивы Kubernetes. Это позволяет веб-службе безопасно получать доступ к ресурсам Azure без необходимости внедрять учетные данные или управлять маркерами непосредственно внутри `score.py` скрипта. В этой статье объясняется, как создать и установить удостоверение Azure в кластере службы Azure Kubernetes и назначить удостоверение для развернутой веб-службы.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
+- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
-- Доступ к кластеру AKS с помощью `kubectl` команды. Дополнительные сведения см. в разделе [Подключение к кластеру](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) .
+- Доступ к кластеру AKS с помощью `kubectl` команды. Дополнительные сведения см. в разделе [Подключение к кластеру](../aks/kubernetes-walkthrough.md#connect-to-the-cluster) .
 
 - Машинное обучение Azure веб-службы, развернутой в кластере AKS.
 
@@ -48,7 +48,7 @@ ms.locfileid: "89647338"
         kubectl apply -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
         ```
     
-    * Если в кластере AKS **не включен RBAC**, используйте следующую команду:
+    * Если в кластере AKS **не включен RBAC** , используйте следующую команду:
     
         ```azurecli-interactive
         kubectl apply -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
@@ -126,7 +126,7 @@ spec:
 
 ## <a name="assign-the-appropriate-roles-to-your-azure-identity"></a>Назначение соответствующих ролей удостоверению Azure
 
-[Назначьте управляемое удостоверение Azure с соответствующими ролями](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal) для доступа к другим ресурсам Azure. Убедитесь, что назначенные роли имеют правильные действия с **данными**. Например, [роль читателя данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader) будет иметь разрешения на чтение BLOB-объекта хранилища, а универсальная [роль читателя](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader) — нет.
+[Назначьте управляемое удостоверение Azure с соответствующими ролями](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md) для доступа к другим ресурсам Azure. Убедитесь, что назначенные роли имеют правильные действия с **данными**. Например, [роль читателя данных BLOB-объекта хранилища](../role-based-access-control/built-in-roles.md#storage-blob-data-reader) будет иметь разрешения на чтение BLOB-объекта хранилища, а универсальная [роль читателя](../role-based-access-control/built-in-roles.md#reader) — нет.
 
 ## <a name="use-azure-identity-with-your-machine-learning-web-service"></a>Использование удостоверения Azure в веб-службе машинного обучения
 
@@ -134,7 +134,7 @@ spec:
 
 ### <a name="access-key-vault-from-your-web-service"></a>Доступ к Key Vault из веб-службы
 
-Если вы предоставили удостоверению Azure доступ на чтение к секрету в **Key Vault**, вы `score.py` можете получить к нему доступ, используя следующий код.
+Если вы предоставили удостоверению Azure доступ на чтение к секрету в **Key Vault** , вы `score.py` можете получить к нему доступ, используя следующий код.
 
 ```python
 from azure.identity import DefaultAzureCredential
@@ -153,11 +153,11 @@ secret = secret_client.get_secret(my_secret_name)
 ```
 
 > [!IMPORTANT]
-> В этом примере используется Дефаултазурекредентиал. Сведения о предоставлении доступа к удостоверению с помощью определенной политики доступа см. в разделе [Назначение политики доступа Key Vault с помощью Azure CLI](/azure/key-vault/general/assign-access-policy-cli).
+> В этом примере используется Дефаултазурекредентиал. Сведения о предоставлении доступа к удостоверению с помощью определенной политики доступа см. в разделе [Назначение политики доступа Key Vault с помощью Azure CLI](../key-vault/general/assign-access-policy-cli.md).
 
 ### <a name="access-blob-from-your-web-service"></a>Доступ к большому двоичному объекту из веб-службы
 
-Если вы задаете удостоверению Azure доступ на чтение данных внутри **большого двоичного объекта хранилища**, вы `score.py` можете получить к нему доступ, используя следующий код.
+Если вы задаете удостоверению Azure доступ на чтение данных внутри **большого двоичного объекта хранилища** , вы `score.py` можете получить к нему доступ, используя следующий код.
 
 ```python
 from azure.identity import DefaultAzureCredential
@@ -177,7 +177,7 @@ blob_data = blob_client.download_blob()
 blob_data.readall()
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об использовании клиентской библиотеки удостоверений Azure для Python см. в [репозитории](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/identity/azure-identity#azure-identity-client-library-for-python) на сайте GitHub.
 * Подробное руководство по развертыванию моделей в кластерах службы Kubernetes Azure [см. в](how-to-deploy-azure-kubernetes-service.md)этом разделе.

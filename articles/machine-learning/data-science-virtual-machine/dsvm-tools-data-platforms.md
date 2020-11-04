@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 83c0fd796b7527c6f5e396a813def984b88ee9ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9f432b417140440584bf4dfd01ed45814a746953
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89440360"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93320906"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые Виртуальной машиной для обработки и анализа данных
 
@@ -103,5 +103,4 @@ systemctl start hadoop-namenode hadoop-datanode hadoop-yarn
 
 Чтобы экземпляр Spark в DSVM для доступа к данным, хранящимся в хранилище BLOB-объектов или Azure Data Lake Storage, необходимо создать и настроить `core-site.xml` файл на основе шаблона, найденного в $SPARK _HOME/конф/core-site.xml. Template. Кроме того, необходимо иметь соответствующие учетные данные для доступа к хранилищу BLOB-объектов и Azure Data Lake Storage. (Обратите внимание, что файлы шаблонов используют заполнители для хранилища BLOB-объектов и конфигураций Azure Data Lake Storage.)
 
-Более подробные сведения о создании учетных данных Azure Data Lake Storage служб см. [в статье Проверка подлинности с помощью Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-authenticate-using-active-directory). После ввода учетных данных для хранилища BLOB-объектов или Azure Data Lake Storage в файл core-site.xml можно ссылаться на данные, хранящиеся в этих источниках, с помощью префикса URI wasb://или adl://.
-
+Более подробные сведения о создании учетных данных Azure Data Lake Storage служб см. [в статье Проверка подлинности с помощью Azure Data Lake Storage 1-го поколения](../../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md). После ввода учетных данных для хранилища BLOB-объектов или Azure Data Lake Storage в файл core-site.xml можно ссылаться на данные, хранящиеся в этих источниках, с помощью префикса URI wasb://или adl://.

@@ -13,19 +13,19 @@ ms.workload: infrastructure-services
 ms.date: 07/18/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 863ab9b600b81006cdeb670811c61ed961e8c623
-ms.sourcegitcommit: 94ca9e89501e65f4dcccc3789249357c7d5e27e5
+ms.openlocfilehash: d21b59b8822684598ac2fc3fd813278c1cf0c698
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92170262"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93319811"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
 
 Тег службы представляет группу префиксов IP-адресов из определенной службы Azure. Корпорация Майкрософт управляет префиксами адресов, входящих в тег службы, и автоматически обновляет этот тег при изменении адресов, сводя к минимуму сложность частых обновлений правил сетевой безопасности.
 
-Теги службы можно использовать для определения элементов управления доступом к сети в [группах безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules)  или  [Брандмауэре Azure](https://docs.microsoft.com/azure/firewall/service-tags). Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы, например **ApiManagement**, в соответствующем поле *источника*   или *назначения*   правила, можно разрешить или запретить трафик для соответствующей службы.
+Теги службы можно использовать для определения элементов управления доступом к сети для [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или [брандмауэра Azure](https://docs.microsoft.com/azure/firewall/service-tags). Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы, например **ApiManagement** , в соответствующем поле *источника* или *назначения* правила, можно разрешить или запретить трафик для соответствующей службы.
 
 Теги службы можно использовать для обеспечения изоляции сети и защиты ресурсов Azure от общего доступа через Интернет при доступе к службам Azure, имеющим общедоступные конечные точки. Создайте правила группы безопасности сети для входящих и исходящих подключений, чтобы запретить передачу трафика **Интернета** и разрешить входящий и исходящий трафик **AzureCloud** или других [доступных тегов](#available-service-tags) служб Azure.
 
@@ -62,9 +62,10 @@ ms.locfileid: "92170262"
 | **AzureDataExplorerManagement** | Управление обозревателем Azure Data Explorer. | Входящий трафик | Нет | Нет |
 | **AzureDataLake** | Azure Data Lake Storage 1-го поколения. | Исходящие | Нет | Да |
 | **AzureDevSpaces** | Azure Dev Spaces. | Исходящие | Нет | Нет |
+| **азуредигиталтвинс** | Azure Digital двойников.<br/><br/>*Примечание.* Этот тег или IP-адреса, охваченные этим тегом, можно использовать для ограничения доступа к конечным точкам, настроенным для маршрутов событий. *Сейчас этот тег нельзя настроить с помощью портала Azure.* | Входящий трафик | Нет | Да |
 | **AzureEventGrid** | Сетка событий Azure. | both | Нет | Нет |
 | **AzureFrontDoor.Frontend** <br/> **AzureFrontDoor.Backend** <br/> **AzureFrontDoor.FirstParty**  | Azure Front Door. | both | Нет | Нет |
-| **AzureInformationProtection** | Azure Information Protection.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory**, **AzureFrontDoor.Frontend** и **AzureFrontDoor.FirstParty**. | Исходящие | Нет | Нет |
+| **AzureInformationProtection** | Azure Information Protection.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory** , **AzureFrontDoor.Frontend** и **AzureFrontDoor.FirstParty**. | Исходящие | Нет | Нет |
 | **AzureIoTHub** | Центр Интернета вещей Azure. | Исходящие | Нет | Нет |
 | **AzureKeyVault** | Azure Key Vault.<br/><br/>*Примечание.* Этот тег зависит от тега **AzureActiveDirectory**. | Исходящие | Да | Да |
 | **AzureLoadBalancer**. | Подсистема балансировки нагрузки инфраструктуры Azure. Этот тег преобразуется в [виртуальный IP-адрес узла](security-overview.md#azure-platform-considerations) (168.63.129.16), из которого поступают пробы работоспособности Azure. Сюда входит только пробный трафик, а не реальный трафик к внутреннему ресурсу. Если Azure Load Balancer не используется, это правило можно переопределить. | both | Нет | Нет |
@@ -76,7 +77,7 @@ ms.locfileid: "92170262"
 | **AzurePlatformLKM** | Лицензирование Windows или служба управления ключами.<br/><br/>С помощью этого тега можно отключить значения по умолчанию для лицензирования. Это тег следует использовать с осторожностью. Ознакомьтесь с [рекомендациями по использованию платформы Azure](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations).  Также рекомендуется протестировать этот тег, прежде чем использовать его. | Исходящие | Нет | Нет |
 | **AzureResourceManager** | Azure Resource Manager. | Исходящие | Нет | Нет |
 | **AzureSignalR** | Служба Azure SignalR. | Исходящие | Нет | Нет |
-| **AzureSiteRecovery** | Azure Site Recovery.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory**, **AzureKeyVault**, **EventHub**, **GuestAndHybridManagement** и **Storage**. | Исходящие | Нет | Нет |
+| **AzureSiteRecovery** | Azure Site Recovery.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory** , **AzureKeyVault** , **EventHub** , **GuestAndHybridManagement** и **Storage**. | Исходящие | Нет | Нет |
 | **AzureTrafficManager** | IP-адреса пробы Диспетчера трафика Azure.<br/><br/>Дополнительные сведения об IP-адресах пробы Диспетчера трафика см. в статье [Диспетчер трафика Azure: вопросы и ответы](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs). | Входящий трафик | Нет | Да |  
 | **BatchNodeManagement** | Трафик управления для развертываний, выделенных для пакетной службы Azure. | both | Нет | Да |
 | **CognitiveServicesManagement** | Диапазоны адресов для трафика Cognitive Services Azure. | both | Нет | Нет |
@@ -88,7 +89,7 @@ ms.locfileid: "92170262"
 | **GatewayManager** | Трафик управления для развертываний, выделенных для VPN-шлюза Azure и шлюза приложений. | Входящий трафик | Нет | Нет |
 | **GuestAndHybridManagement** | Служба автоматизации Azure и гостевая конфигурация. | Исходящие | Нет | Да |
 | **HDInsight** | Azure HDInsight; | Входящий трафик | Да | Нет |
-| **Интернет**; | Пространство IP-адресов, которые находятся за пределами виртуальной сети и к которым можно получить доступ из общедоступного сегмента Интернета.<br/><br/>К этим адресам относится [общедоступное пространство IP-адресов, принадлежащее Azure](https://www.microsoft.com/download/details.aspx?id=41653). | both | Нет | Нет |
+| **Интернет** ; | Пространство IP-адресов, которые находятся за пределами виртуальной сети и к которым можно получить доступ из общедоступного сегмента Интернета.<br/><br/>К этим адресам относится [общедоступное пространство IP-адресов, принадлежащее Azure](https://www.microsoft.com/download/details.aspx?id=41653). | both | Нет | Нет |
 | **LogicApps** | Azure Logic Apps. | both | Нет | Нет |
 | **LogicAppsManagement** | Трафик управления для Logic Apps. | Входящий трафик | Нет | Нет |
 | **MicrosoftCloudAppSecurity** | Microsoft Cloud App Security. | Исходящие | Нет | Нет |
@@ -101,7 +102,7 @@ ms.locfileid: "92170262"
 | **Память** | служба хранилища Azure. <br/><br/>*Примечание.* Этот тег представляет службу, но не определенные экземпляры службы. Например, тег представляет службу хранилища Azure, но не определенную учетную запись хранения Azure. | Исходящие | Да | Да |
 | **StorageSyncService** | Служба хранилища Azure. | both | Нет | Нет |
 | **WindowsVirtualDesktop** | Виртуальный рабочий стол Windows. | both | Нет | Да |
-| **VirtualNetwork**; | Адресное пространство виртуальной сети (все диапазоны IP-адресов, определенные для виртуальной сети), все адресное пространство подключенных локальных сетей, [пиринговые](virtual-network-peering-overview.md) виртуальные сети, виртуальные сети, подключенные к [шлюзу виртуальной сети](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%3ftoc.json), [виртуальный IP-адрес узла](security-overview.md#azure-platform-considerations) и префиксы адресов, используемые в [определенных пользователем маршрутах](virtual-networks-udr-overview.md). Этот тег также может содержать маршруты по умолчанию. | both | Нет | Нет |
+| **VirtualNetwork** ; | Адресное пространство виртуальной сети (все диапазоны IP-адресов, определенные для виртуальной сети), все адресное пространство подключенных локальных сетей, [пиринговые](virtual-network-peering-overview.md) виртуальные сети, виртуальные сети, подключенные к [шлюзу виртуальной сети](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%3ftoc.json), [виртуальный IP-адрес узла](security-overview.md#azure-platform-considerations) и префиксы адресов, используемые в [определенных пользователем маршрутах](virtual-networks-udr-overview.md). Этот тег также может содержать маршруты по умолчанию. | both | Нет | Нет |
 
 >[!NOTE]
 >В классической модели развертывания (до Azure Resource Manager) поддерживается подмножество тегов, перечисленных в предыдущей таблице. Написание этих тегов различается:
@@ -146,7 +147,7 @@ ms.locfileid: "92170262"
 >Подмножество этих сведений опубликовано в файлах XML для [Azure Public](https://www.microsoft.com/download/details.aspx?id=41653), [Azure для Китая](https://www.microsoft.com/download/details.aspx?id=42064) и [Azure для Германии](https://www.microsoft.com/download/details.aspx?id=54770). Эти загрузки XML станут устаревшими 30 июня 2020 г. и больше не будут доступны после этой даты. Необходимо выполнить миграцию для использования API обнаружения или скачивания файла JSON, как описано в предыдущих разделах.
 
 ### <a name="tips"></a>Советы 
-- Наличие обновления можно отслеживать по увеличению значения *changeNumber* в файле JSON. Для каждого подраздела (например, **Storage.WestUS**) имеется собственное значение *changeNumber*, которое увеличивается по мере появления изменений. Значение *changeNumber* в файле увеличивается при изменении любого из подразделов.
+- Наличие обновления можно отслеживать по увеличению значения *changeNumber* в файле JSON. Для каждого подраздела (например, **Storage.WestUS** ) имеется собственное значение *changeNumber* , которое увеличивается по мере появления изменений. Значение *changeNumber* в файле увеличивается при изменении любого из подразделов.
 - Примеры синтаксического анализа сведений о теге службы (например, получение всех диапазонов адресов для хранилища в WestUS) см. в [документации по API обнаружения тегов служб PowerShell](https://aka.ms/discoveryapi_powershell).
 
 ## <a name="next-steps"></a>Дальнейшие действия

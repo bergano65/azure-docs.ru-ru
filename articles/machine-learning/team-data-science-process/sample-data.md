@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 22e91d50227fcb44c7b90478d76379c14161ae05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 878a2a47dfaddf1d3399a1dbd98865332838e148
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76718609"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321753"
 ---
 # <a name="sample-data-in-azure-blob-containers-sql-server-and-hive-tables"></a><a name="heading"></a>Выборка данных в контейнерах больших двоичных объектов Azure, на сервере SQL Server и в таблицах Hive
 
@@ -26,9 +26,8 @@ ms.locfileid: "76718609"
 * Выборка [**данных SQL Server**](sample-data-sql-server.md) осуществляется с помощью как SQL, так и языка программирования Python. 
 * Выборка [**данных таблицы Hive**](sample-data-hive.md) осуществляется с помощью запросов Hive.
 
-Эта задача выборки является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
+Эта задача выборки является одним из этапов [процесса обработки и анализа данных группы (TDSP)](./index.yml).
 
 **Для чего нужна выборка данных?**
 
 Если размер набора данных, который планируется проанализировать, слишком большой, обычно рекомендуется уменьшить выборку данных до размера, который останется репрезентативным и будет более управляемым. Уменьшении может облегчить понимание данных, исследование и проектирование признаков. Эта роль выборки в процессе аналитики Кортаны заключается в том, чтобы включить быстрое создание прототипов функций обработки данных и моделей машинного обучения.
-

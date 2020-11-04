@@ -8,12 +8,12 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 10/28/2020
 ms.author: inhenkel
-ms.openlocfilehash: 462cf6cf850885b31588123bac46ff99bf319ee8
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: c17eeda91af46c4159f7c4b1747416298f24c703
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93243146"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93319647"
 ---
 # <a name="regional-code-names-and-endpoints"></a>Региональные имена и конечные точки кода
 
@@ -49,7 +49,7 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager |  `https://management.azure.com/` |
-| Аутентификация | `https://login.microsoftonline.com/` |
+| Проверка подлинности | `https://login.microsoftonline.com/` |
 | Аудитория токена | `https://management.core.windows.net/` |
 
 ### <a name="azure-government"></a>Azure для государственных организаций
@@ -57,17 +57,20 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager |  `https://management.usgovcloudapi.net/` |
-| Аутентификация | `https://login.microsoftonline.us/` |
+| Проверка подлинности | `https://login.microsoftonline.us/` |
 | Аудитория токена | `https://management.core.usgovcloudapi.net/` |
 
 [!INCLUDE [Widevine is not available in the GovCloud region.](./includes/widevine-not-available-govcloud.md)]
 
 ### <a name="azure-germany"></a>Azure для Германии
 
+> [!NOTE]
+> Конечные точки Azure для Германии применяются только к облакам независимых в Германии.
+
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager | `https://management.cloudapi.de/` |
-| Аутентификация | `https://login.microsoftonline.de/` |
+| Проверка подлинности | `https://login.microsoftonline.de/` |
 | Аудитория токена | `https://management.core.cloudapi.de/`|
 
 ### <a name="azure-china-21vianet"></a>Azure China 21Vianet
@@ -75,10 +78,10 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager | `https://management.chinacloudapi.cn/` |
-| Аутентификация | `https://login.chinacloudapi.cn/` |
+| Проверка подлинности | `https://login.chinacloudapi.cn/` |
 | Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 * [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
 * [Региональные имена и конечные точки кода](azure-regions-code-names.md)
