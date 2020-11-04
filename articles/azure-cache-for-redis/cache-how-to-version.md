@@ -6,31 +6,27 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: ed0f486afe466d31388fa99b4ce5f5754210533f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9f48de7ef5d9525a995af4ebbd12c5f14f40189
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91571506"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349143"
 ---
 # <a name="set-redis-version-for-azure-cache-for-redis-preview"></a>Задание версии Redis для кэша Azure для Redis (Предварительная версия)
 В этой статье вы узнаете, как настроить версию программного обеспечения Redis для использования с экземпляром кэша. Кэш Azure для Redis предлагает последнюю основную версию Redis и по крайней мере одну предыдущую версию. Эти версии будут регулярно обновляться по мере выпуска нового программного обеспечения Redis. Можно выбрать одну из двух доступных версий. Помните, что кэш будет обновлен до следующей версии автоматически, если используемая сейчас версия больше не поддерживается.
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Подписка Azure. [создайте ее бесплатно](https://azure.microsoft.com/free/)
-
-> [!NOTE]
-> Сейчас эта функция доступна в предварительной версии. [свяжитесь с нами](mailto:azurecache@microsoft.com) , если вас интересует.
->
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 ## <a name="create-a-cache"></a>Создание кэша
 Чтобы создать кэш, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com) и выберите **Создать ресурс**.
   
-1. На странице **Создание** выберите **Базы данных**, а затем **Кэш Azure для Redis**.
+1. На странице **Создание** выберите **Базы данных** , а затем **Кэш Azure для Redis**.
 
-    :::image type="content" source="media/cache-create/new-cache-menu.png" alt-text="Выберите кэш Azure для Redis.":::
+    :::image type="content" source="media/cache-create/new-cache-menu.png" alt-text="Выбор элемента &quot;Кэш Azure для Redis&quot;.":::
    
 1. На странице **Основные сведения** настройте параметры для нового кэша.
    
@@ -44,7 +40,7 @@ ms.locfileid: "91571506"
    
 1. На странице **Дополнительно** выберите используемую версию Redis.
    
-    :::image type="content" source="media/cache-how-to-version/select-redis-version.png" alt-text="Выберите кэш Azure для Redis.":::
+    :::image type="content" source="media/cache-how-to-version/select-redis-version.png" alt-text="Версия Redis.":::
 
 1. Нажмите кнопку **Создать**. 
    

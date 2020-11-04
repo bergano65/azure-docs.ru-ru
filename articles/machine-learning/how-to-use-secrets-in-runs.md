@@ -1,7 +1,7 @@
 ---
 title: Секреты проверки подлинности в обучении
 titleSuffix: Azure Machine Learning
-description: Узнайте, как безопасно передавать секреты в обучающие программы, используя рабочую область Azure Key Vault FO рйоур.
+description: Узнайте, как безопасно передавать секреты в обучающие программы с помощью Azure Key Vault для рабочей области.
 services: machine-learning
 author: rastala
 ms.author: roastala
@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 03/09/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 60459579b277684355eaf5cb92ba2f75fb05cd28
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: ce47041d888b8a7786f0f87f54e725919638e7f7
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305433"
+ms.locfileid: "93349024"
 ---
 # <a name="use-authentication-credential-secrets-in-azure-machine-learning-training-runs"></a>Использование секретов учетных данных для проверки подлинности в Машинное обучение Azure учебных запусков
 

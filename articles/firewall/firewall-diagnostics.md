@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 09/17/2020
+ms.date: 11/04/2020
 ms.author: victorh
-ms.openlocfilehash: 784459282007edab599d54edff0d2b38eed07b34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2899121db4b6a3f202be4860e2e4f43027cdef7c
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320648"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348774"
 ---
 # <a name="monitor-azure-firewall-logs-and-metrics"></a>Мониторинг журналов и метрик Брандмауэра Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "91320648"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем начать, ознакомьтесь с [журналами и метриками брандмауэра Azure](logs-and-metrics.md) , чтобы получить общие сведения о журналах диагностики и метриках, доступных для брандмауэра Azure.
 
@@ -45,10 +45,10 @@ ms.locfileid: "91320648"
 
 3. Выберите **Добавить параметр диагностики**. На странице **Параметры диагностики** представлены параметры журналов диагностики.
 5. В этом примере журналы хранятся в Журналах Azure Monitor, поэтому введите имя **Firewall log analytics**.
-6. В разделе **Журнал**выберите **азурефиреваллаппликатионруле**, **азурефиреваллнетворкруле**, **азурефиреваллсреатинтеллог**и **AzureFirewallDnsProxy** , чтобы получить журналы.
+6. В разделе **Журнал** выберите **азурефиреваллаппликатионруле** , **азурефиреваллнетворкруле** , **азурефиреваллсреатинтеллог** и **AzureFirewallDnsProxy** , чтобы получить журналы.
 7. Выберите **отправить log Analytics** , чтобы настроить рабочую область.
 8. Выберите свою подписку.
-9. Щелкните **Сохранить**.
+9. Нажмите **Сохранить**.
 
 ## <a name="enable-logging-with-powershell"></a>Включение ведения журнала с помощью PowerShell
 
@@ -56,11 +56,11 @@ ms.locfileid: "91320648"
 
 Чтобы включить ведение журналов диагностики, выполните следующие действия.
 
-1. Запишите или запомните ИД ресурса учетной записи хранения, где хранятся данные журнала, Это значение имеет вид: */Subscriptions/ \<subscriptionId\> /resourceGroups/ \<resource group name\> /провидерс/Микрософт.стораже/сторажеаккаунтс/ \<storage account name\> *.
+1. Запишите или запомните ИД ресурса учетной записи хранения, где хранятся данные журнала, Это значение имеет вид: */Subscriptions/ \<subscriptionId\> /resourceGroups/ \<resource group name\> /провидерс/Микрософт.стораже/сторажеаккаунтс/ \<storage account name\>*.
 
    Можно использовать любую учетную запись хранения в подписке. Получить эти сведения можно на портале Azure. Нужные сведения можно найти на странице **Свойство** ресурса.
 
-2. Запишите или запомните идентификатор ресурса брандмауэра, для которого нужно включить ведение журнала, Это значение имеет вид: */Subscriptions/ \<subscriptionId\> /resourceGroups/ \<resource group name\> /провидерс/Микрософт.Нетворк/азурефиреваллс/ \<Firewall name\> *.
+2. Запишите или запомните идентификатор ресурса брандмауэра, для которого нужно включить ведение журнала, Это значение имеет вид: */Subscriptions/ \<subscriptionId\> /resourceGroups/ \<resource group name\> /провидерс/Микрософт.Нетворк/азурефиреваллс/ \<Firewall name\>*.
 
    Получить эти сведения можно на портале.
 
@@ -71,6 +71,50 @@ ms.locfileid: "91320648"
    -StorageAccountId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Storage/storageAccounts/<storage account name> `
    -Enabled $true     
     ```
+
+> [!TIP]
+>Журналам диагностики отдельная учетная запись хранения не требуется. За использование хранилища для журналов доступа и производительности взимается плата.
+
+## <a name="enable-diagnostic-logging-by-using-azure-cli"></a>Включение ведения журнала диагностики с помощью Azure CLI
+
+Ведение журнала действий автоматически включается для каждого ресурса Resource Manager. Чтобы начать сбор соответствующих данных, журналы ведения диагностики должны быть включены.
+
+[!INCLUDE [azure-cli-prepare-your-environment-h3.md](../../includes/azure-cli-prepare-your-environment-h3.md)]
+
+### <a name="enable-diagnostic-logging"></a>Включение ведения журналов диагностики
+
+Используйте следующие команды, чтобы включить ведение журнала диагностики.
+
+1. Выполните команду [AZ Monitor диагностики-Settings Create](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_create) , чтобы включить ведение журнала диагностики:
+
+   ```azurecli
+   az monitor diagnostic-settings create –name AzureFirewallApplicationRule \
+     --resource Firewall07 --storage-account MyStorageAccount
+   ```
+
+   Выполните команду [AZ Monitor диагностики-Settings List](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_list) , чтобы просмотреть параметры диагностики для ресурса.
+
+   ```azurecli
+   az monitor diagnostic-settings list --resource Firewall07
+   ```
+
+   Используйте команду [AZ Monitor диагностики-Settings](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_show) , чтобы просмотреть активные параметры диагностики для ресурса.
+
+   ```azurecli
+   az monitor diagnostic-settings show --name AzureFirewallApplicationRule --resource Firewall07
+   ```
+
+1. Выполните команду [AZ Monitor диагностики-Settings Update](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_update) , чтобы обновить параметры.
+
+   ```azurecli
+   az monitor diagnostic-settings update --name AzureFirewallApplicationRule --resource Firewall07 --set retentionPolicy.days=365
+   ```
+
+   Используйте команду [AZ Monitor диагностики-Settings Delete](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_delete) , чтобы удалить параметр диагностики.
+
+   ```azurecli
+   az monitor diagnostic-settings delete --name AzureFirewallApplicationRule --resource Firewall07
+   ```
 
 > [!TIP]
 >Журналам диагностики отдельная учетная запись хранения не требуется. За использование хранилища для журналов доступа и производительности взимается плата.
@@ -97,7 +141,7 @@ ms.locfileid: "91320648"
 ## <a name="view-metrics"></a>Просмотр метрик
 Перейдите к брандмауэру Azure, в разделе **мониторинг** выберите **метрики**. Чтобы просмотреть доступные значения, выберите раскрывающийся список **Метрика**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда брандмауэр настроен для сбора журналов, можно открыть Журналы Azure Monitor, чтобы просмотреть данные.
 

@@ -7,12 +7,12 @@ manager: rochakm
 ms.topic: article
 ms.date: 3/29/2019
 ms.author: sutalasi
-ms.openlocfilehash: 6a272294ca602e3f482156a7334084bf041f683e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1570bd9dfa62caa749d5a3983b93c2555be058ec
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91307557"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348735"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
 
@@ -36,22 +36,22 @@ ms.locfileid: "91307557"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
-Перед началом:
+Перед началом работы
 - Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
 - [Ознакомьтесь](azure-to-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
-- У вас есть `Az` модуль Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
+- Установить модуль `Az` Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="sign-in-to-your-microsoft-azure-subscription"></a>Вход в подписку Microsoft Azure
 
-Войдите в подписку Azure с помощью `Connect-AzAccount` командлета.
+Войдите в подписку Azure с помощью командлета `Connect-AzAccount`.
 
 ```azurepowershell
 Connect-AzAccount
 ```
 
-Выберите подписку Azure. Используйте `Get-AzSubscription` командлет, чтобы получить список подписок Azure, к которым у вас есть доступ. Выберите подписку Azure для работы с помощью `Set-AzContext` командлета.
+Выберите подписку Azure. Используйте командлет `Get-AzSubscription`, чтобы получить список подписок Azure, к которым у вас есть доступ. Выберите подписку Azure для работы с помощью `Set-AzContext` командлета.
 
 ```azurepowershell
 Set-AzContext -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -91,7 +91,7 @@ $OSDiskVhdURI = $VM.StorageProfile.OsDisk.Vhd
 $DataDisk1VhdURI = $VM.StorageProfile.DataDisks[0].Vhd
 ```
 
-## <a name="create-a-recovery-services-vault"></a>Создание хранилища Служб восстановления
+## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
 Создайте группу ресурсов, в которой будет создано хранилище служб восстановления.
 
@@ -249,6 +249,15 @@ Write-Output $TempASRJob.State
 $RecoveryProtContainer = Get-AzRecoveryServicesAsrProtectionContainer -Fabric $RecoveryFabric -Name "A2AWestUSProtectionContainer"
 ```
 
+#### <a name="fabric-and-container-creation-when-enabling-zone-to-zone-replication"></a>Создание структуры и контейнера при включении зоны для репликации зоны
+
+При включении зоны для репликации зоны будет создана только одна структура. Но будет два контейнера. Предполагая, что регион находится в Западной Европе, используйте следующие команды для получения первичного контейнера и контейнеров защиты.
+
+```azurepowershell
+$primaryProtectionContainer = Get-AzRecoveryServicesAsrProtectionContainer -Fabric $fabric -Name "asr-a2a-default-westeurope-container"
+$recoveryPprotectionContainer = Get-AzRecoveryServicesAsrProtectionContainer -Fabric $fabric -Name "asr-a2a-default-westeurope-t-container"
+```
+
 ### <a name="create-a-replication-policy"></a>Создание политики репликации
 
 ```azurepowershell
@@ -287,6 +296,14 @@ Write-Output $TempASRJob.State
 $EusToWusPCMapping = Get-AzRecoveryServicesAsrProtectionContainerMapping -ProtectionContainer $PrimaryProtContainer -Name "A2APrimaryToRecovery"
 ```
 
+#### <a name="protection-container-mapping-creation-when-enabling-zone-to-zone-replication"></a>Создание сопоставления контейнеров защиты при включении зоны для репликации зоны
+
+При включении зоны для репликации зоны используйте приведенную ниже команду, чтобы создать сопоставление контейнеров защиты. Если регионом является Западная Европа, команда будет иметь значение-
+
+```azurepowershell
+$protContainerMapping = Get-AzRecoveryServicesAsrProtectionContainerMapping -ProtectionContainer $PrimprotectionContainer -Name "westeurope-westeurope-24-hour-retention-policy-s"
+```
+
 ### <a name="create-a-protection-container-mapping-for-failback-reverse-replication-after-a-failover"></a>Создание сопоставления контейнеров защиты для восстановления размещения (обратной репликации после отработки отказа)
 
 После отработки отказа, когда вы будете готовы перевести виртуальную машину, для которой выполнен переход на другой ресурс, обратно в исходный регион Azure, восстановление размещения выполняется. Для восстановления после сбоя виртуальная машина, для которой выполнена отработка отказа, реплицируется из отработки отказа в исходный регион. Для обратной репликации исходный и целевой регионы меняются ролями. Исходный регион становится новым регионом восстановления, а бывший регион восстановления становится исходным регионом. Сопоставление контейнеров защиты для обратной репликации отражает эту смену ролей исходного и целевого регионов.
@@ -316,7 +333,7 @@ $WusToEusPCMapping = Get-AzRecoveryServicesAsrProtectionContainerMapping -Protec
 $EastUSCacheStorageAccount = New-AzStorageAccount -Name "a2acachestorage" -ResourceGroupName "A2AdemoRG" -Location 'East US' -SkuName Standard_LRS -Kind Storage
 ```
 
-Для виртуальных машин, **не использующих управляемые диски**, Целевая учетная запись хранения — это учетная запись хранения в регионе восстановления, в которой реплицируются диски виртуальной машины. Целевая учетная запись хранения может иметь категорию "Стандартная" или "Премиум". Выберите тип учетной записи хранения, необходимый в зависимости от скорости изменения данных (скорость записи ввода-вывода) для дисков и Azure Site Recovery поддерживаемые ограничения на количество обновлений для типа хранилища.
+Для виртуальных машин, **не использующих управляемые диски** , Целевая учетная запись хранения — это учетная запись хранения в регионе восстановления, в которой реплицируются диски виртуальной машины. Целевая учетная запись хранения может иметь категорию "Стандартная" или "Премиум". Выберите тип учетной записи хранения, необходимый в зависимости от скорости изменения данных (скорость записи ввода-вывода) для дисков и Azure Site Recovery поддерживаемые ограничения на количество обновлений для типа хранилища.
 
 ```azurepowershell
 #Create Target storage account in the recovery region. In this case a Standard Storage account
@@ -626,6 +643,6 @@ Update-AzRecoveryServicesAsrProtectionDirection -ReplicationProtectedItem $Repli
 Remove-AzRecoveryServicesAsrReplicationProtectedItem -ReplicationProtectedItem $ReplicationProtectedItem
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите [Справочник по Azure Site Recovery PowerShell](/powershell/module/az.RecoveryServices) , чтобы узнать, как можно выполнять другие задачи, такие как создание планов восстановления и тестирование отработки отказа планов восстановления с помощью PowerShell.

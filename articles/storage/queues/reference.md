@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: ripohane
-ms.openlocfilehash: de504cc4209aea19925c4c3e2385c7feabceedeb
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 2ad975840a2eab0ca51dd0a219e5d86c1bd1835c
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781623"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348871"
 ---
 # <a name="azure-queue-storage-reference"></a>Справочная документация по Хранилищу очередей Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "92781623"
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
 | 12.x | [Клиентская библиотека очереди службы хранилища Azure для Java](/java/api/overview/azure/storage-queue-readme) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-queue) | [Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для Java](./storage-quickstart-queues-java.md) |
-| 8.x | [com. Microsoft. Azure. Storage. Queue](/java/api/com.microsoft.azure.storage.queue) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK V8 для Java](../blobs/storage-quickstart-blobs-java-legacy.md) |
+| 8.x | [com. Microsoft. Azure. Storage. Queue](/java/api/com.microsoft.azure.storage.queue) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage) | [Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 8](../blobs/storage-quickstart-blobs-java-legacy.md) |
 
 ### <a name="storage-management"></a>Управление хранением
 

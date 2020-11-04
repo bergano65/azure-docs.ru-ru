@@ -5,13 +5,12 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 10/19/2020
-author: jluk
-ms.openlocfilehash: a96489495abe3bfbed3030b3e08ff121c5c7cddf
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: fa81e293bc5e53a852bdb404f9e6d41c4297647b
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93090803"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93349041"
 ---
 # <a name="reduce-latency-with-proximity-placement-groups"></a>Сокращение задержки с помощью групп размещения с учетом расположения
 
@@ -20,7 +19,7 @@ ms.locfileid: "93090803"
 
 При развертывании приложения в Azure распределение экземпляров виртуальной машины между регионами или зонами доступности создает задержку в сети, что может повлиять на общую производительность приложения. Группа размещения с учетом расположения — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Для некоторых приложений, таких как игры, инженерные моделирования и торговля с высокой частотой (ХФТ), требуется низкая задержка и задачи, которые быстро выполняются. Для сценариев высокопроизводительных вычислений (HPC) рекомендуется использовать [группы размещения](../virtual-machines/linux/co-location.md#proximity-placement-groups) (ППГ) для пулов узлов кластера.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для работы с этой статьей требуется Azure CLI версии 2,14 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 

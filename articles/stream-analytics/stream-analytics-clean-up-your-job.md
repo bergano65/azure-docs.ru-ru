@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 124d2cf4380153bd3ea68de9233f6a1b5eb6ba78
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2652b97c9392d3016bbc52209d4b2bda81c31706
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130703"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348973"
 ---
 # <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Завершение или удаление задания Azure Stream Analytics
 
@@ -57,8 +57,8 @@ Azure Stream Analytics задания можно легко остановить
 
 ## <a name="stop-or-delete-a-job-using-azure-sdk-for-net"></a>Остановка или удаление задания с помощью пакета Azure SDK для .NET
 
-Чтобы остановить задание с помощью пакета Azure SDK для .NET, используйте метод [StreamingJobsOperationsExtensions.BeginStop](/dotnet/api/microsoft.azure.management.streamanalytics.streamingjobsoperationsextensions.beginstop?view=azure-dotnet). Чтобы удалить задание с помощью пакета Azure SDK для .NET, используйте метод [StreamingJobsOperationsExtensions.BeginDelete](/dotnet/api/microsoft.azure.management.streamanalytics.streamingjobsoperationsextensions.begindelete?view=azure-dotnet).
+Чтобы остановить задание с помощью пакета Azure SDK для .NET, используйте метод [StreamingJobsOperationsExtensions.BeginStop](/dotnet/api/microsoft.azure.management.streamanalytics.streamingjobsoperationsextensions.beginstop). Чтобы удалить задание с помощью пакета Azure SDK для .NET, используйте метод [StreamingJobsOperationsExtensions.BeginDelete](/dotnet/api/microsoft.azure.management.streamanalytics.streamingjobsoperationsextensions.begindelete).
 
 ## <a name="stop-or-delete-a-job-using-rest-api"></a>Остановка или удаление задания с помощью REST API
 
-Чтобы остановить задание с помощью REST API, используйте метод [Stop](/powershell/module/azurerm.streamanalytics/stop-azurermstreamanalyticsjob#stop). Чтобы удалить задание с помощью REST API, используйте метод [Delete](/powershell/module/azurerm.streamanalytics/stop-azurermstreamanalyticsjob#delete).
+Чтобы остановить задание с помощью REST API, используйте метод [Stop](/rest/api/streamanalytics/2016-03-01/streamingjobs/stop). Чтобы удалить задание с помощью REST API, используйте метод [Delete](/rest/api/streamanalytics/2016-03-01/streamingjobs/delete).

@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 04123d06d22786c9dd2aa08c2dab1153f6d43375
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 5dd2d9e932bd1be3da74a2bdc9bd918401076aa3
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098456"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348616"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps"></a>Добавление автозаполнения и предложений в клиентские приложения
 
@@ -139,7 +139,7 @@ source: "/home/suggest?highlights=true&fuzzy=true&",
 
 ### <a name="suggest-function"></a>Предложение Function
 
-Если вы используете C# и приложение MVC, файл **HomeController.CS** в каталоге Controllers — это место, где можно создать класс для предлагаемых результатов. В .NET функция предлагаю основана на [методе документсоператионсекстенсионс. предлагаю](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.suggest). Дополнительные сведения о пакете SDK для .NET см. в статье [использование когнитивный Поиск Azure из приложения .NET](./search-howto-dotnet-sdk.md).
+Если вы используете C# и приложение MVC, файл **HomeController.CS** в каталоге Controllers — это место, где можно создать класс для предлагаемых результатов. В .NET функция предлагаю основана на [методе документсоператионсекстенсионс. предлагаю](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.suggest). Дополнительные сведения о пакете SDK для .NET см. в статье [использование когнитивный Поиск Azure из приложения .NET](search-howto-dotnet-sdk.md).
 
 `InitSearch`Метод создает клиент индексов HTTP с проверкой подлинности в службе когнитивный Поиск Azure. Свойства класса [сугжестпараметерс](/dotnet/api/microsoft.azure.search.models.suggestparameters) определяют, какие поля ищутся и возвращаются в результатах, число совпадений и используется ли нечеткое сопоставление. 
 
@@ -181,7 +181,7 @@ public ActionResult Suggest(bool highlights, bool fuzzy, string term)
 
 ## <a name="autocomplete"></a>Автозавершение
 
-До сих пор код UX поиска был выровнен по центру предложений. Следующий блок кода показывает Автозаполнение с помощью функции автозаполнения пользовательского интерфейса Ксдсофт jQuery, передавая запрос на Автозаполнение Azure Когнитивный поиск. Как и в случае с предложениями, в приложении C# код, который поддерживает взаимодействие с пользователем, рассматривается в **index. cshtml** .
+До сих пор код UX поиска был выровнен по центру предложений. Следующий блок кода показывает Автозаполнение с помощью функции автозаполнения пользовательского интерфейса Ксдсофт jQuery, передавая запрос на Автозаполнение Azure Когнитивный поиск. Как и в случае с предложениями, в приложении C# код, который поддерживает взаимодействие с пользователем, рассматривается в **index. cshtml**.
 
 ```javascript
 $(function () {
@@ -253,4 +253,3 @@ public ActionResult AutoComplete(string term)
 
 + [Учебник. Создание первого приложения на C# (урок 3)](tutorial-csharp-type-ahead-and-suggestions.md)
 + [Пример кода C#: Azure-Search-DotNet-Samples/Create-First-App/3 — Add-typeahead/](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v10/3-add-typeahead)
-+ [Пример кода на C# и JavaScript с использованием параллельной программы RESTFUL](https://github.com/wantedfast/search-dotnet-getting-started/tree/master/DotNetHowToAutocomplete)

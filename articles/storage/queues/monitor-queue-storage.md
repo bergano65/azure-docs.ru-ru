@@ -9,12 +9,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: a800a176315dd3066a48f813c1bee84d2f1eb696
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 52c07861fcd3db5f9a53c4bd6730f89925b11ae6
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781878"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348956"
 ---
 # <a name="monitoring-azure-queue-storage"></a>Мониторинг хранилища очередей Azure
 
@@ -28,7 +28,8 @@ ms.locfileid: "92781878"
 Страница **Обзор** в портал Azure для каждого ресурса хранилища очередей содержит краткий обзор использования ресурсов, например запросов и почасовой оплаты. Эти сведения полезны, но лишь небольшое количество данных мониторинга доступно. Некоторые из этих данных собираются автоматически и доступны для анализа сразу после создания ресурса. Вы можете включить дополнительные типы сбора данных с помощью определенной конфигурации.
 
 ## <a name="what-is-azure-monitor"></a>Общие сведения об Azure Monitor
-Хранилище очередей Azure создает данные мониторинга с помощью [Azure Monitor](../../azure-monitor/overview.md), которая представляет собой полную службу мониторинга стека в Azure. Azure Monitor предоставляет полный набор функций для мониторинга ресурсов Azure и ресурсов в других облаках, а также в локальной среде. 
+
+Хранилище очередей Azure создает данные мониторинга с помощью [Azure Monitor](../../azure-monitor/overview.md), которая представляет собой полную службу мониторинга стека в Azure. Azure Monitor предоставляет полный набор функций для мониторинга ресурсов Azure и ресурсов в других облаках, а также в локальной среде.
 
 Начните с статьи [мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md) , который описывает следующее:
 
@@ -42,7 +43,7 @@ ms.locfileid: "92781878"
 
 ## <a name="monitoring-data"></a>Данные мониторинга
 
-Хранилище очередей Azure собирает те же данные мониторинга, что и другие ресурсы Azure, которые описаны в разделе [мониторинг данных из ресурсов Azure](../../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). 
+Хранилище очередей Azure собирает те же данные мониторинга, что и другие ресурсы Azure, которые описаны в разделе [мониторинг данных из ресурсов Azure](../../azure-monitor/insights/monitor-azure-resource.md#monitoring-data).
 
 Подробные сведения о метриках и журналах, созданных хранилищем очередей Azure, см. в [справочнике по данным мониторинга хранилища очередей Azure](monitor-queue-storage-reference.md) .
 
@@ -52,9 +53,9 @@ ms.locfileid: "92781878"
 
 ## <a name="collection-and-routing"></a>Сбор и маршрутизация
 
-Метрики платформы и журнал действий собираются автоматически, но их можно направить в другие расположения с помощью параметра диагностики. 
+Метрики платформы и журнал действий собираются автоматически, но их можно направить в другие расположения с помощью параметра диагностики.
 
-Чтобы выполнить сбор журналов ресурсов, необходимо создать параметр диагностики. При создании параметра выберите **очередь** в качестве типа хранилища, для которого необходимо включить журналы. Затем укажите одну из следующих категорий операций, для которых требуется вести журнал. 
+Чтобы выполнить сбор журналов ресурсов, необходимо создать параметр диагностики. При создании параметра выберите **очередь** в качестве типа хранилища, для которого необходимо включить журналы. Затем укажите одну из следующих категорий операций, для которых требуется вести журнал.
 
 | Категория | Описание |
 |:---|:---|
@@ -64,7 +65,7 @@ ms.locfileid: "92781878"
 
 ## <a name="creating-a-diagnostic-setting"></a>Создание параметра диагностики
 
-Вы можете создать параметр диагностики с помощью портал Azure, PowerShell, Azure CLI или шаблона Azure Resource Manager. 
+Вы можете создать параметр диагностики с помощью портал Azure, PowerShell, Azure CLI или шаблона Azure Resource Manager.
 
 Общие рекомендации см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../../azure-monitor/platform/diagnostic-settings.md).
 
@@ -77,14 +78,14 @@ ms.locfileid: "92781878"
 
 2. Войдите в свою учетную запись хранения.
 
-3. В разделе **мониторинг** щелкните **параметры диагностики (Предварительная версия)** .
+3. В разделе **мониторинг** щелкните **параметры диагностики (Предварительная версия)**.
 
    > [!div class="mx-imgBorder"]
-   > ![Портал — журналы диагностики](media/monitor-queue-storage/diagnostic-logs-settings-pane.png)   
+   > ![Портал — журналы диагностики](media/monitor-queue-storage/diagnostic-logs-settings-pane.png)
 
 4. Выберите **очередь** в качестве типа хранилища, для которого необходимо включить журналы.
 
-5. Щелкните **Добавить параметр диагностики** .
+5. Щелкните **Добавить параметр диагностики**.
 
    > [!div class="mx-imgBorder"]
    > ![Портал — журналы ресурсов — Добавление параметра диагностики](media/monitor-queue-storage/diagnostic-logs-settings-pane-2.png)
@@ -98,21 +99,21 @@ ms.locfileid: "92781878"
 
 #### <a name="archive-logs-to-a-storage-account"></a>Архивация журналов в учетную запись хранения
 
-1. Установите флажок **архивировать в учетную запись хранения** и нажмите кнопку **настроить** .
+1. Установите флажок **архивировать в учетную запись хранения** , а затем нажмите кнопку **настроить** .
 
-   > [!div class="mx-imgBorder"]   
+   > [!div class="mx-imgBorder"]
    > ![Архивное хранилище страницы параметров диагностики](media/monitor-queue-storage/diagnostic-logs-settings-pane-archive-storage.png)
 
 2. В раскрывающемся списке **учетная запись хранения** выберите учетную запись хранения, в которую нужно архивировать журналы, нажмите кнопку **ОК** , а затем нажмите кнопку **сохранить** .
 
    > [!NOTE]
-   > Перед тем как выбрать учетную запись хранения в качестве назначения экспорта, см. раздел [Архивация журналов ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage) , чтобы ознакомиться с предварительными требованиями в учетной записи хранения.
+   > Перед тем как выбрать учетную запись хранения в качестве назначения экспорта, см. раздел [Архивация журналов ресурсов Azure](/azure/azure-monitor/platform/resource-logs-collect-storage) , чтобы ознакомиться с предварительными требованиями в учетной записи хранения.
 
 #### <a name="stream-logs-to-azure-event-hubs"></a>Потоковая передача журналов в концентраторы событий Azure
 
-1. Установите флажок **поток в концентратор событий** и нажмите кнопку **настроить** .
+1. Установите флажок **поток в концентратор событий** , а затем нажмите кнопку **настроить** .
 
-2. В области **Выбор концентратора событий** выберите пространство имен, имя и имя политики концентратора событий, в который будут подаваться потоки журналов. 
+2. В области **Выбор концентратора событий** выберите пространство имен, имя и имя политики концентратора событий, в который будут подаваться потоки журналов.
 
    > [!div class="mx-imgBorder"]
    > ![Концентратор событий страницы параметров диагностики](media/monitor-queue-storage/diagnostic-logs-settings-pane-event-hub.png)
@@ -123,7 +124,7 @@ ms.locfileid: "92781878"
 
 1. Установите флажок **отправить log Analytics** , выберите рабочую область log Analytics, а затем нажмите кнопку **сохранить** .
 
-   > [!div class="mx-imgBorder"]   
+   > [!div class="mx-imgBorder"]
    > ![Страница "параметры диагностики" log Analytics](media/monitor-queue-storage/diagnostic-logs-settings-pane-log-analytics.png)
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -142,7 +143,7 @@ ms.locfileid: "92781878"
 
 #### <a name="archive-logs-to-a-storage-account"></a>Архивация журналов в учетную запись хранения
 
-Включите журналы с помощью командлета PowerShell [Set-аздиагностиксеттинг](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) вместе с `StorageAccountId` параметром.
+Включите журналы с помощью командлета PowerShell [Set-аздиагностиксеттинг](/powershell/module/az.monitor/set-azdiagnosticsetting) вместе с `StorageAccountId` параметром.
 
 ```powershell
 Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -StorageAccountId <storage-account-resource-id> -Enabled $true -Category <operatons-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
@@ -152,43 +153,43 @@ Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -StorageAccoun
 
 Можно использовать `StorageRead` , `StorageWrite` и `StorageDelete` для значения параметра **Category** .
 
-Пример:
+Ниже приведен пример:
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/queueServices/default -StorageAccountId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount -Enabled $true -Category StorageWrite,StorageDelete`
 
-Описание каждого параметра см. в разделе [Архивация журналов ресурсов Azure с помощью Azure PowerShell](https://docs.microsoft.com/azure/azure-monitor/platform/archive-diagnostic-logs#archive-diagnostic-logs-via-azure-powershell).
+Описание каждого параметра см. в разделе [Архивация журналов ресурсов Azure с помощью Azure PowerShell](/azure/azure-monitor/platform/archive-diagnostic-logs#archive-diagnostic-logs-via-azure-powershell).
 
 #### <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
 
-Включите журналы с помощью командлета PowerShell [Set-аздиагностиксеттинг](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) с `EventHubAuthorizationRuleId` параметром.
+Включите журналы с помощью командлета PowerShell [Set-аздиагностиксеттинг](/powershell/module/az.monitor/set-azdiagnosticsetting) с `EventHubAuthorizationRuleId` параметром.
 
 ```powershell
 Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -EventHubAuthorizationRuleId <event-hub-namespace-and-key-name> -Enabled $true -Category <operatons-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
 ```
 
-Пример:
+Ниже приведен пример:
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/queueServices/default -EventHubAuthorizationRuleId /subscriptions/20884142-a14v3-4234-5450-08b10c09f4/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhubnamespace/authorizationrules/RootManageSharedAccessKey -Enabled $true -Category StorageDelete`
 
-Описание каждого параметра см. в статье [потоковая передача данных в концентраторы событий с помощью командлетов PowerShell](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-stream-event-hubs#via-powershell-cmdlets).
+Описание каждого параметра см. в статье [потоковая передача данных в концентраторы событий с помощью командлетов PowerShell](/azure/azure-monitor/platform/diagnostic-logs-stream-event-hubs#via-powershell-cmdlets).
 
 #### <a name="send-logs-to-log-analytics"></a>Отправка журналов в Log Analytics
 
-Включите журналы с помощью командлета PowerShell [Set-аздиагностиксеттинг](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) с `WorkspaceId` параметром.
+Включите журналы с помощью командлета PowerShell [Set-аздиагностиксеттинг](/powershell/module/az.monitor/set-azdiagnosticsetting) с `WorkspaceId` параметром.
 
 ```powershell
 Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -WorkspaceId <log-analytics-workspace-resource-id> -Enabled $true -Category <operatons-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
 ```
 
-Пример:
+Ниже приведен пример:
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/queueServices/default -WorkspaceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.OperationalInsights/workspaces/my-analytic-workspace -Enabled $true -Category StorageDelete`
 
-Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-stream-log-store).
+Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](/azure/azure-monitor/platform/diagnostic-logs-stream-log-store).
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-1. Сначала откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) или, если вы [установили](https://docs.microsoft.com/cli/azure/install-azure-cli) Azure CLI локально, откройте командное консольное приложение (например, Windows PowerShell).
+1. Сначала откройте [Azure Cloud Shell](/azure/cloud-shell/overview) или, если вы [установили](/cli/azure/install-azure-cli) Azure CLI локально, откройте командное консольное приложение (например, Windows PowerShell).
 
 2. Если ваше удостоверение связано с более чем одной подпиской, установите активную подписку на подписку учетной записи хранения, для которой требуется включить журналы.
 
@@ -200,7 +201,7 @@ Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -WorkspaceId <
 
 #### <a name="archive-logs-to-a-storage-account"></a>Архивация журналов в учетную запись хранения
 
-Включите журналы с помощью команды [AZ Monitor диагностики-Settings Create](https://docs.microsoft.com/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
+Включите журналы с помощью команды [AZ Monitor диагностики-Settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
 
 ```azurecli-interactive
 az monitor diagnostic-settings create --name <setting-name> --storage-account <storage-account-name> --resource <storage-service-resource-id> --resource-group <resource-group> --logs '[{"category": <operations>, "enabled": true "retentionPolicy": {"days": <number-days>, "enabled": <retention-bool}}]'
@@ -210,68 +211,66 @@ az monitor diagnostic-settings create --name <setting-name> --storage-account <s
 
 Можно использовать `StorageRead` , `StorageWrite` и `StorageDelete` для значения параметра **Category** .
 
-Пример:
+Ниже приведен пример:
 
 `az monitor diagnostic-settings create --name setting1 --storage-account mystorageaccount --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/queueServices/default --resource-group myresourcegroup --logs '[{"category": StorageWrite, "enabled": true, "retentionPolicy": {"days": 90, "enabled": true}}]'`
 
-Описание каждого параметра см. в разделе [Архивные журналы ресурсов с помощью Azure CLI](https://docs.microsoft.com/azure/azure-monitor/platform/archive-diagnostic-logs#archive-diagnostic-logs-via-the-azure-cli).
+Описание каждого параметра см. в разделе [Архивные журналы ресурсов с помощью Azure CLI](/azure/azure-monitor/platform/archive-diagnostic-logs#archive-diagnostic-logs-via-the-azure-cli).
 
 #### <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
 
-Включите журналы с помощью команды [AZ Monitor диагностики-Settings Create](https://docs.microsoft.com/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
+Включите журналы с помощью команды [AZ Monitor диагностики-Settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
 
 ```azurecli-interactive
 az monitor diagnostic-settings create --name <setting-name> --event-hub <event-hub-name> --event-hub-rule <event-hub-namespace-and-key-name> --resource <storage-account-resource-id> --logs '[{"category": <operations>, "enabled": true "retentionPolicy": {"days": <number-days>, "enabled": <retention-bool}}]'
 ```
 
-Пример:
+Ниже приведен пример:
 
 `az monitor diagnostic-settings create --name setting1 --event-hub myeventhub --event-hub-rule /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhubnamespace/authorizationrules/RootManageSharedAccessKey --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/queueServices/default --logs '[{"category": StorageDelete, "enabled": true }]'`
 
-Описание каждого параметра см. в статье [потоковая передача данных в концентраторы событий через Azure CLI](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-stream-event-hubs#via-azure-cli).
+Описание каждого параметра см. в статье [потоковая передача данных в концентраторы событий через Azure CLI](/azure/azure-monitor/platform/diagnostic-logs-stream-event-hubs#via-azure-cli).
 
 #### <a name="send-logs-to-log-analytics"></a>Отправка журналов в Log Analytics
 
-Включите журналы с помощью команды [AZ Monitor диагностики-Settings Create](https://docs.microsoft.com/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
+Включите журналы с помощью команды [AZ Monitor диагностики-Settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
 
 ```azurecli-interactive
 az monitor diagnostic-settings create --name <setting-name> --workspace <log-analytics-workspace-resource-id> --resource <storage-account-resource-id> --logs '[{"category": <category name>, "enabled": true "retentionPolicy": {"days": <days>, "enabled": <retention-bool}}]'
 ```
 
-Пример:
+Ниже приведен пример:
 
 `az monitor diagnostic-settings create --name setting1 --workspace /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.OperationalInsights/workspaces/my-analytic-workspace --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/queueServices/default --logs '[{"category": StorageDelete, "enabled": true ]'`
 
- Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-stream-log-store).
+ Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](/azure/azure-monitor/platform/diagnostic-logs-stream-log-store).
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Чтобы просмотреть шаблон Azure Resource Manager, который создает параметр диагностики, см. раздел [параметр диагностики для службы хранилища Azure](https://docs.microsoft.com/azure/azure-monitor/samples/resource-manager-diagnostic-settings#diagnostic-setting-for-azure-storage).
+Чтобы просмотреть шаблон Azure Resource Manager, который создает параметр диагностики, см. раздел [параметр диагностики для службы хранилища Azure](/azure/azure-monitor/samples/resource-manager-diagnostic-settings#diagnostic-setting-for-azure-storage).
 
 ---
 
-
 ## <a name="analyzing-metrics"></a>Анализ метрик
 
-Вы можете анализировать метрики для службы хранилища Azure с помощью метрик из других служб Azure, используя обозреватель метрик. Откройте обозреватель метрик, выбрав **Метрики** в меню **Azure Monitor** . Подробные сведения об использовании этого средства см. на странице [Начало работы с обозревателем метрик Azure](../../azure-monitor/platform/metrics-getting-started.md). 
+Вы можете анализировать метрики для службы хранилища Azure с помощью метрик из других служб Azure, используя обозреватель метрик. Откройте обозреватель метрик, выбрав **Метрики** в меню **Azure Monitor**. Подробные сведения об использовании этого средства см. на странице [Начало работы с обозревателем метрик Azure](../../azure-monitor/platform/metrics-getting-started.md).
 
 В этом примере показано, как просмотреть **транзакции** на уровне учетной записи.
 
 ![Снимок экрана осуществления доступа к метрикам на портале Azure](./media/monitor-queue-storage/access-metrics-portal.png)
 
-Для метрик с поддержкой измерений можно выполнить фильтрацию по нужному значению измерения. В этом примере объясняется, как просмотреть **транзакции** на уровне учетной записи для определенной операции, выбрав значения для измерения **Имя API** .
+Для метрик с поддержкой измерений можно выполнить фильтрацию по нужному значению измерения. В этом примере объясняется, как просмотреть **транзакции** на уровне учетной записи для определенной операции, выбрав значения для измерения **Имя API**.
 
 ![Снимок экрана осуществления доступа к метрикам с поддержкой измерений на портале Azure](./media/monitor-queue-storage/access-metrics-portal-with-dimension.png)
 
 Полный список измерений, поддерживаемых службой хранилища Azure, см. в разделе [Измерения метрик](monitor-queue-storage-reference.md#metrics-dimensions).
 
-Метрики для хранилища очередей Azure находятся в следующих пространствах имен: 
+Метрики для хранилища очередей Azure находятся в следующих пространствах имен:
 
 - Microsoft.Storage/storageAccounts
 - Microsoft.Storage/storageAccounts/queueServices
 
 Список всех метрик поддержки Azure Monitor, включая хранилище очередей Azure, см. в статье [Azure Monitor поддерживаемые метрики](../../azure-monitor/platform/metrics-supported.md).
-
 
 ### <a name="accessing-metrics"></a>Доступ к метрикам
 
@@ -284,7 +283,7 @@ az monitor diagnostic-settings create --name <setting-name> --workspace <log-ana
 
 Вы можете составить список определения метрик учетной записи хранения или службы хранилища очередей. Используйте командлет [Get-AzMetricDefinition](/powershell/module/az.monitor/get-azmetricdefinition).
 
-В этом примере замените `<resource-ID>` заполнитель идентификатором ресурса всей учетной записи хранения или идентификатором ресурса службы хранилища очередей.  Эти ИД ресурса можно найти на странице **свойств** учетной записи хранения на портале Azure.
+В этом примере замените `<resource-ID>` заполнитель идентификатором ресурса всей учетной записи хранения или идентификатором ресурса службы хранилища очередей. Эти ИД ресурса можно найти на странице **свойств** учетной записи хранения на портале Azure.
 
 ```powershell
    $resourceId = "<resource-ID>"
@@ -305,7 +304,7 @@ az monitor diagnostic-settings create --name <setting-name> --workspace <log-ana
 #### <a name="list-the-account-level-metric-definition"></a>Отображение определения метрик на уровне учетной записи
 
 Вы можете составить список определения метрик учетной записи хранения или службы хранилища очередей. Используйте команду [az monitor metrics list-definitions](/cli/azure/monitor/metrics#az-monitor-metrics-list-definitions).
- 
+
 В этом примере замените `<resource-ID>` заполнитель идентификатором ресурса всей учетной записи хранения или идентификатором ресурса службы хранилища очередей. Эти ИД ресурса можно найти на странице **свойств** учетной записи хранения на портале Azure.
 
 ```azurecli-interactive
@@ -323,10 +322,10 @@ az monitor diagnostic-settings create --name <setting-name> --workspace <log-ana
 ### <a name="net"></a>[.NET](#tab/azure-portal)
 
 Azure Monitor предоставляет [пакет SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor/) для считывания определения и значений метрик. [Пример кода](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/) демонстрирует использование пакета SDK с различными параметрами. Необходимо использовать `0.18.0-preview` или более позднюю версию для метрик хранилища.
- 
+
 В этих примерах замените `<resource-ID>` заполнитель идентификатором ресурса всей учетной записи хранения или службой хранилища очередей. Эти ИД ресурса можно найти на странице **свойств** учетной записи хранения на портале Azure.
 
-Замените переменную `<subscription-ID>` на ИД своей подписки. Инструкции по получению значений для `<tenant-ID>`, `<application-ID>` и `<AccessKey>` см. на странице [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md). 
+Замените переменную `<subscription-ID>` на ИД своей подписки. Инструкции по получению значений для `<tenant-ID>`, `<application-ID>` и `<AccessKey>` см. на странице [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md).
 
 #### <a name="list-the-account-level-metric-definition"></a>Отображение определения метрик на уровне учетной записи
 
@@ -340,7 +339,6 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
         var tenantId = "<tenant-ID>";
         var applicationId = "<application-ID>";
         var accessKey = "<AccessKey>";
-
 
         MonitorManagementClient readOnlyClient = AuthenticateWithReadOnlyClient(tenantId, applicationId, accessKey, subscriptionId).Result;
         IEnumerable<MetricDefinition> metricDefinitions = await readOnlyClient.MetricDefinitions.ListAsync(resourceUri: resourceId, cancellationToken: new CancellationToken());
@@ -459,9 +457,11 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
     }
 
 ```
+
 ### <a name="template"></a>[Шаблон](#tab/template)
 
-<a name="na"></a>Недоступно
+Недоступно
+
 ---
 
 ## <a name="analyzing-logs"></a>анализ журналов;
@@ -509,7 +509,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 ### <a name="accessing-logs-in-an-event-hub"></a>Доступ к журналам в концентраторе событий
 
-Журналы, отправленные в концентратор событий, не сохраняются в виде файла, однако вы можете проверить, получил ли концентратор событий данные журнала. На портале Azure перейдите в концентратор событий и убедитесь, что количество **входящих сообщений** больше нуля. 
+Журналы, отправленные в концентратор событий, не сохраняются в виде файла, однако вы можете проверить, получил ли концентратор событий данные журнала. На портале Azure перейдите в концентратор событий и убедитесь, что количество **входящих сообщений** больше нуля.
 
 ![Журналы аудита](media/monitor-queue-storage/event-hub-log.png)
 
@@ -521,7 +521,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](../../azure-monitor/log-query/get-started-portal.md).
 
-Данные хранятся в таблице **сторажекуеуелогс** .  
+Данные хранятся в таблице **сторажекуеуелогс** .
 
 #### <a name="sample-kusto-queries"></a>Примеры запросов Kusto
 
@@ -532,7 +532,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 Используйте следующие запросы для мониторинга учетных записей хранения Azure:
 
-* Для отображения 10 наиболее распространенных ошибок за последние три дня.
+- Для отображения 10 наиболее распространенных ошибок за последние три дня.
 
     ```Kusto
     StorageQueueLogs
@@ -540,7 +540,8 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
     | summarize count() by StatusText
     | top 10 by count_ desc
     ```
-* Для отображения основных 10 операций, вызвавших наибольшее количество ошибок за последние три дня.
+
+- Для отображения основных 10 операций, вызвавших наибольшее количество ошибок за последние три дня.
 
     ```Kusto
     StorageQueueLogs
@@ -548,7 +549,8 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
     | summarize count() by OperationName
     | top 10 by count_ desc
     ```
-* Для отображения основных 10 операций с наибольшей сквозной задержкой за последние три дня.
+
+- Для отображения основных 10 операций с наибольшей сквозной задержкой за последние три дня.
 
     ```Kusto
     StorageQueueLogs
@@ -556,28 +558,33 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
     | top 10 by DurationMs desc
     | project TimeGenerated, OperationName, DurationMs, ServerLatencyMs, ClientLatencyMs = DurationMs - ServerLatencyMs
     ```
-* Для отображения всех операций, вызвавших ошибки регулирования на стороне сервера за последние три дня.
+
+- Для отображения всех операций, вызвавших ошибки регулирования на стороне сервера за последние три дня.
 
     ```Kusto
     StorageQueueLogs
     | where TimeGenerated > ago(3d) and StatusText contains "ServerBusy"
     | project TimeGenerated, OperationName, StatusCode, StatusText
     ```
-* Для отображения всех запросов с анонимным доступом за последние три дня.
+
+- Для отображения всех запросов с анонимным доступом за последние три дня.
 
     ```Kusto
     StorageBlobLogs
     | where TimeGenerated > ago(3d) and AuthenticationType == "Anonymous"
     | project TimeGenerated, OperationName, AuthenticationType, Uri
     ```
-* Для создания круговой диаграммы операций, используемых за последние три дня.
+
+- Для создания круговой диаграммы операций, используемых за последние три дня.
+
     ```Kusto
     StorageQueueLogs
     | where TimeGenerated > ago(3d)
     | summarize count() by OperationName
-    | sort by count_ desc 
+    | sort by count_ desc
     | render piechart
     ```
+
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Поддерживает ли служба хранилища Microsoft Azure метрики для управляемых и неуправляемых дисков?**

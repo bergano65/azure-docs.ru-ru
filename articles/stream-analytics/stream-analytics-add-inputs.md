@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: a9f48d95281971fc49a6a3fda93e4ee13ed8d753
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: b344e9e24d15189b805f586227c7253395e8448e
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130788"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348990"
 ---
 # <a name="understand-inputs-for-azure-stream-analytics"></a>Общие сведения о входных данных Azure Stream Analytics
 
@@ -26,7 +26,7 @@ Stream Analytics имеет интеграцию первого класса с 
 
 Эти входные ресурсы могут находиться в той же подписке Azure, что и ваше задание Stream Analytics, либо в другой подписке.
 
-Для создания, изменения и проверки входных данных задания Stream Analytics можно использовать [портал Azure](stream-analytics-quick-create-portal.md#configure-job-input),  [Azure PowerShell](/powershell/module/az.streamanalytics/New-azStreamAnalyticsInput), [API .NET](/dotnet/api/microsoft.azure.management.streamanalytics.inputsoperationsextensions), [REST API](./stream-analytics-define-inputs.md)и [Visual Studio](stream-analytics-tools-for-visual-studio-install.md) .
+Для создания, изменения и проверки входных данных задания Stream Analytics можно использовать [портал Azure](stream-analytics-quick-create-portal.md#configure-job-input),  [Azure PowerShell](/powershell/module/az.streamanalytics/New-azStreamAnalyticsInput), [API .NET](/dotnet/api/microsoft.azure.management.streamanalytics.inputsoperationsextensions), [REST API](/rest/api/streamanalytics/2016-03-01/inputs)и [Visual Studio](stream-analytics-tools-for-visual-studio-install.md) .
 
 ## <a name="stream-and-reference-inputs"></a>Потоковые и справочные входные данные
 Данные, отправляемые в источник данных, принимаются заданием Stream Analytics и обрабатываются в режиме реального времени. Входные данные делятся на два типа: входные потоковые данные и входные справочные данные.
@@ -37,7 +37,7 @@ Stream Analytics имеет интеграцию первого класса с 
 Дополнительные сведения о входных потоковых данных см. в статье [Подключение данных: узнайте о потоках входных данных из событий в Stream Analytics](stream-analytics-define-inputs.md).
 
 ### <a name="reference-data-input"></a>Входные справочные данные
-Stream Analytics также поддерживает входные данные, называемые *ссылочными данными* . Справочные данные являются полностью статическими и изменяются крайне редко. Они обычно используются для осуществления корреляции и поисков. Например, можно соединить входные потоковые данные со ссылочными данными так же, как вы бы выполнили соединение SQL для поиска статических значений. В настоящее время хранилище BLOB-объектов Azure, Azure Data Lake Storage 2-го поколения и база данных SQL Azure поддерживаются в качестве входных источников для ссылочных данных. Размер BLOB-объектов источника эталонных данных ограничен до 300 МБ в зависимости от сложности запроса и выделенных единиц потоковой передачи (Дополнительные сведения см. в разделе " [ограничение размера](stream-analytics-use-reference-data.md#size-limitation) " документации по ссылочным данным).
+Stream Analytics также поддерживает входные данные, называемые *ссылочными данными*. Справочные данные являются полностью статическими и изменяются крайне редко. Они обычно используются для осуществления корреляции и поисков. Например, можно соединить входные потоковые данные со ссылочными данными так же, как вы бы выполнили соединение SQL для поиска статических значений. В настоящее время хранилище BLOB-объектов Azure, Azure Data Lake Storage 2-го поколения и база данных SQL Azure поддерживаются в качестве входных источников для ссылочных данных. Размер BLOB-объектов источника эталонных данных ограничен до 300 МБ в зависимости от сложности запроса и выделенных единиц потоковой передачи (Дополнительные сведения см. в разделе " [ограничение размера](stream-analytics-use-reference-data.md#size-limitation) " документации по ссылочным данным).
 
 Дополнительные сведения о входных справочных данных см. в статье [Использование эталонных данных для уточняющих запросов в Stream Analytics](stream-analytics-use-reference-data.md).
 
