@@ -1,5 +1,5 @@
 ---
-title: Использование Java и JDBC с Базой данных Azure для MySQL
+title: Краткое руководство. Использование Java и JDBC с Базой данных Azure для MySQL
 description: Узнайте, как использовать Java и JDBC с Базой данных Azure для MySQL.
 author: jdubois
 ms.author: judubois
@@ -8,14 +8,14 @@ ms.custom: mvc, devcenter, devx-track-azurecli
 ms.topic: quickstart
 ms.devlang: java
 ms.date: 08/17/2020
-ms.openlocfilehash: b7db124f8f5ba56f760dc054491990889e4e738f
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 457f7e07391c647d2ab0e7d78197086f6f5e2cf7
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745271"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93337445"
 ---
-# <a name="use-java-and-jdbc-with-azure-database-for-mysql"></a>Использование Java и JDBC с Базой данных Azure для MySQL
+# <a name="quickstart-use-java-and-jdbc-with-azure-database-for-mysql"></a>Краткое руководство. Использование Java и JDBC с Базой данных Azure для MySQL
 
 В этой статье показано, как создать пример приложения, которое использует Java и [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) для сохранения данных в [Базе данных Azure для MySQL](./index.yml) и их извлечения из нее.
 
@@ -237,7 +237,7 @@ public class DemoApplication {
 Как видите, в этом файле мы закомментировали методы вставки, чтения, обновления и удаления данных. Эти методы мы создадим позже, и вы просто последовательно раскомментируете их.
 
 > [!NOTE]
-> Учетные данные для базы данных хранятся в свойствах *user* и *password* в файле *application.properties* . Эти учетные данные используются при выполнении `DriverManager.getConnection(properties.getProperty("url"), properties);`, так как файл свойств передается в качестве аргумента.
+> Учетные данные для базы данных хранятся в свойствах *user* и *password* в файле *application.properties*. Эти учетные данные используются при выполнении `DriverManager.getConnection(properties.getProperty("url"), properties);`, так как файл свойств передается в качестве аргумента.
 
 > [!NOTE]
 > Строка `AbandonedConnectionCleanupThread.uncheckedShutdown();` в конце — это команда, связанная с драйвером MySQL. Она используется для уничтожения внутреннего потока при завершении работы приложения.
@@ -326,7 +326,7 @@ public class Todo {
 }
 ```
 
-Этот класс является доменной моделью, сопоставленной с таблицей `todo`, которую вы создали при выполнении скрипта *schema.sql* .
+Этот класс является доменной моделью, сопоставленной с таблицей `todo`, которую вы создали при выполнении скрипта *schema.sql*.
 
 ### <a name="insert-data-into-azure-database-for-mysql"></a>Вставка данных в Базу данных Azure для MySQL
 
@@ -493,7 +493,7 @@ deleteData(todo, connection);
 [INFO   ] Closing database connection 
 ```
 
-## <a name="conclusion-and-resources-clean-up"></a>Заключение и очистка ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Поздравляем! Вы создали приложение Java, которое использует JDBC для сохранения данных в Базе данных Azure для MySQL и их извлечения из нее.
 

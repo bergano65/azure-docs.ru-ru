@@ -147,8 +147,6 @@
       items:
         - name: Публикация в AppSource
           href: howto-get-appsource-certified.md
-        - name: "Публикация в коллекции приложений Azure\_AD"
-          href: howto-app-gallery-listing.md
         - name: "Публикация в службе \"Панель мониторинга продаж\" для Office\_365"
           href: /office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store
     - name: Служба контроля доступа Azure

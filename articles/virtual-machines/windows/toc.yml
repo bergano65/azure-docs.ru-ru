@@ -558,7 +558,7 @@
     - name: Защита виртуальных машин
       items:
         - name: Рекомендации
-          href: security-recommendations.md
+          href: ../security-recommendations.md
         - name: JIT-доступ
           href: ../../security-center/security-center-just-in-time.md
         - name: Использование службы "Бастион"
@@ -666,7 +666,7 @@
         - name: Агент виртуальной машины Azure
           href: ../extensions/agent-windows.md
         - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
-          href: mitigate-se.md
+          href: ../mitigate-se.md
         - name: Монитор метаданных
           href: instance-metadata-service.md
         - name: Включение вложенной виртуализации
@@ -959,7 +959,7 @@
         - name: Использование ускорения работы в сети
           href: ../../virtual-network/create-vm-accelerated-networking-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Назначение общедоступного DNS-имени
-          href: portal-create-fqdn.md
+          href: ../create-fqdn.md
         - name: Разрешение DNS
           href: ../../dns/dns-for-azure-services.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Настройка управляемых удостоверений

@@ -3,8 +3,10 @@
 - name: Обзор
   href: media-services-overview.md
   items:
-    - name: Сценарии и доступность
+    - name: Распространенные сценарии
       href: scenarios-and-availability.md
+    - name: Доступность по регионам
+      href: availability-regions-v-2.md
     - name: Основные понятия
       href: media-services-concepts.md
 - name: Начало работы

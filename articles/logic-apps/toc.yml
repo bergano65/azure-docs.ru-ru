@@ -147,6 +147,7 @@
       items:
         - name: Создание учетной записи интеграции
           href: logic-apps-enterprise-integration-create-integration-account.md
+          displayName: 'Azure CLI, az logic integration-account create, integration-account'
         - name: Торговые партнеры
           href: logic-apps-enterprise-integration-partners.md
         - name: Соглашения

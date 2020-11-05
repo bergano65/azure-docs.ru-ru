@@ -7,14 +7,14 @@ ms.topic: quickstart
 ms.author: jukullam
 ms.date: 10/12/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: ce045da7d21c2af0dfde5ee896b4f7f343ce6545
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 57e740e6c47d9518c12a49473e103d0abe772618
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541270"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93337019"
 ---
-# <a name="use-github-actions-to-connect-to-azure-mysql"></a>Использование GitHub Actions для подключения к Azure MySQL
+# <a name="quickstart-use-github-actions-to-connect-to-azure-mysql"></a>Краткое руководство. Использование GitHub Actions для подключения к Azure MySQL
 
 Начните работу с [GitHub Actions](https://docs.github.com/en/actions), используя рабочий процесс для развертывания обновлений базы данных в [Базе данных Azure для MySQL](https://azure.microsoft.com/services/mysql/). 
 
@@ -39,7 +39,7 @@ ms.locfileid: "92541270"
 
 ## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
 
-Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать**.
 
 Замените заполнители `server-name` именем сервера MySQL, размещенного в Azure. Замените `subscription-id` и `resource-group` идентификатором подписки и группой ресурсов, связанных с вашим сервером MySQL.  
 
@@ -66,7 +66,7 @@ ms.locfileid: "92541270"
 
 ## <a name="copy-the-mysql-connection-string"></a>Скопируйте строку подключения MySQL 
 
-На портале Azure перейдите к серверу Базы данных Azure для MySQL и откройте раздел **Параметры** > **Строки подключения** . Скопируйте строку подключения по протоколу **ADO.NET** . Замените заполнители значениями для `your_database` и `your_password`. Теперь строка подключения будет выглядеть примерно так. 
+На портале Azure перейдите к серверу Базы данных Azure для MySQL и откройте раздел **Параметры** > **Строки подключения**. Скопируйте строку подключения по протоколу **ADO.NET**. Замените заполнители значениями для `your_database` и `your_password`. Теперь строка подключения будет выглядеть примерно так. 
 
 ```output
    Server=my-mysql-server.mysql.database.azure.com; Port=3306; Database={your_database}; Uid=adminname@my-mysql-server; Pwd={your_password}; SslMode=Preferred;

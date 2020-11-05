@@ -582,7 +582,7 @@
     - name: Защита виртуальных машин
       items:
         - name: Рекомендации
-          href: security-recommendations.md
+          href: ../security-recommendations.md
         - name: JIT-доступ
           href: ../../security-center/security-center-just-in-time.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Использование службы "Бастион"
@@ -717,7 +717,7 @@
             - name: Обновление агента
               href: ../extensions/update-linux-agent.md
         - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
-          href: mitigate-se.md
+          href: ../mitigate-se.md
         - name: Монитор метаданных
           href: instance-metadata-service.md
         - name: Получение метрик потребления с помощью REST
@@ -1045,7 +1045,7 @@
         - name: Использование ускорения работы в сети
           href: ../../virtual-network/create-vm-accelerated-networking-cli.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Назначение общедоступного DNS-имени
-          href: portal-create-fqdn.md
+          href: ../create-fqdn.md
         - name: Поиск и удаление неподключенных сетевых адаптеров
           href: find-unattached-nics.md
         - name: Разрешение DNS
