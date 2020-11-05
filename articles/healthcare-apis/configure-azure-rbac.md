@@ -8,38 +8,34 @@ ms.topic: reference
 ms.date: 03/15/2020
 ms.author: matjazl
 ms.reviewer: dseven
-ms.openlocfilehash: 1df2d112814c93261c364883f4b834e0bdb657bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5cadfad445c76726b1b825b131de4016a57979fa
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839917"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93391846"
 ---
 # <a name="configure-azure-rbac-for-fhir"></a>Настройка Azure RBAC для FHIR 
 
-В этой статье вы узнаете, как использовать [Управление доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/) для назначения доступа к плоскости данных Azure API for FHIR. Azure RBAC — это предпочтительные методы назначения доступа к плоскости данных при управлении пользователями плоскости данных в Azure Active Directoryном клиенте, связанном с подпиской Azure. Если вы используете внешний клиент Azure Active Directory, см. [ссылку на локальное назначение RBAC](configure-local-rbac.md).
+В этой статье вы узнаете, как использовать [Управление доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/index.yml) для назначения доступа к плоскости данных Azure API for FHIR. Azure RBAC — это предпочтительные методы назначения доступа к плоскости данных при управлении пользователями плоскости данных в Azure Active Directoryном клиенте, связанном с подпиской Azure. Если вы используете внешний клиент Azure Active Directory, см. [ссылку на локальное назначение RBAC](configure-local-rbac.md).
 
 ## <a name="confirm-azure-rbac-mode"></a>Подтверждение режима RBAC в Azure
 
 Чтобы использовать Azure RBAC, необходимо настроить API Azure для FHIR на использование клиента подписки Azure для плоскости данных и не указывать идентификаторы объектов удостоверений. Чтобы проверить параметры, просмотрите колонку **Проверка подлинности** в API Azure для FHIR:
 
-:::image type="content" source="media/rbac/confirm-azure-rbac-mode.png" alt-text="Подтверждение режима RBAC в Azure&quot;:::
+:::image type="content" source="media/rbac/confirm-azure-rbac-mode.png" alt-text="Подтверждение режима RBAC в Azure":::
 
-Для **центра** должен быть задан клиент Azure Active Directory, связанный с подпиской, и в поле &quot; **допустимые идентификаторы объектов**" не должно быть GUID. Вы также увидите, что флажок отключен и метка указывает, что для назначения ролей плоскости данных следует использовать Azure RBAC.
+Для **центра** должен быть задан клиент Azure Active Directory, связанный с подпиской, и в поле " **допустимые идентификаторы объектов** " не должно быть GUID. Вы также увидите, что флажок отключен и метка указывает, что для назначения ролей плоскости данных следует использовать Azure RBAC.
 
 ## <a name="assign-roles"></a>Назначение ролей
 
-Чтобы предоставить пользователям, субъектам-службам или группам доступ к плоскости данных FHIR, щелкните **Управление доступом (IAM)**, а затем выберите **назначения ролей** и щелкните **+ добавить**:
+Чтобы предоставить пользователям, субъектам-службам или группам доступ к плоскости данных FHIR, щелкните **Управление доступом (IAM)** , а затем выберите **назначения ролей** и щелкните **+ добавить** :
 
-:::image type="content" source="media/rbac/add-azure-rbac-role-assignment.png" alt-text="Подтверждение режима RBAC в Azure&quot;:::
-
-Для **центра** должен быть задан клиент Azure Active Directory, связанный с подпиской, и в поле &quot; **допустимые идентификаторы объектов**":::
+:::image type="content" source="media/rbac/add-azure-rbac-role-assignment.png" alt-text="Добавление назначения роли Azure":::
 
 В области Выбор **роли** найдите одну из встроенных ролей для плоскости данных FHIR:
 
-:::image type="content" source="media/rbac/built-in-fhir-data-roles.png" alt-text="Подтверждение режима RBAC в Azure&quot;:::
-
-Для **центра** должен быть задан клиент Azure Active Directory, связанный с подпиской, и в поле &quot; **допустимые идентификаторы объектов**":::
+:::image type="content" source="media/rbac/built-in-fhir-data-roles.png" alt-text="Встроенные роли данных FHIR":::
 
 Доступные параметры:
 
@@ -48,7 +44,7 @@ ms.locfileid: "91839917"
 * Средство экспорта данных FHIR: может читать и экспортировать ( `$export` оператор) данные.
 * Участник данных FHIR: может выполнять все операции с плоскостью данных.
 
-Если эти роли недостаточно для ваших нужд, можно также [создать пользовательские роли](https://docs.microsoft.com/azure/role-based-access-control/tutorial-custom-role-powershell).
+Если эти роли недостаточно для ваших нужд, можно также [создать пользовательские роли](../role-based-access-control/tutorial-custom-role-powershell.md).
 
 В поле **Выбор** найдите пользователя, субъекта-службы или группу, которой нужно назначить роль.
 

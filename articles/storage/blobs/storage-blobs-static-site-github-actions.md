@@ -9,32 +9,35 @@ ms.reviewer: dineshm
 ms.date: 09/11/2020
 ms.subservice: blobs
 ms.custom: devx-track-javascript, github-actions-azure
-ms.openlocfilehash: 919fa0d7b6dff0361e4439b442bcfe9648ed8677
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7213cea0796197e230cc5914f7cebfac7c69ae49
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776397"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395739"
 ---
 # <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Настройка рабочего процесса GitHub Actions для развертывания статического веб-сайта в службе хранилища Azure
 
-Начало работы с [действиями GitHub](https://docs.github.com/en/actions) с помощью рабочего процесса для развертывания статического сайта в хранилище BLOB-объектов Azure. После настройки рабочего процесса для действий GitHub вы сможете автоматически развернуть сайт в Azure из GitHub при внесении изменений в код сайта. 
+Начните работу с [действиями GitHub](https://docs.github.com/en/actions) , используя рабочий процесс для развертывания статического сайта в учетной записи хранения Azure. После настройки рабочего процесса для действий GitHub вы сможете автоматически развернуть сайт в Azure из GitHub при внесении изменений в код сайта.
 
 > [!NOTE]
 > Если вы используете [статические веб-приложения Azure](https://docs.microsoft.com/azure/static-web-apps/), вам не нужно вручную настраивать рабочий процесс для действий GitHub.
-> Статические веб-приложения Azure автоматически создают рабочий процесс GitHub. 
+> Статические веб-приложения Azure автоматически создают рабочий процесс для действий GitHub. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Подписка Azure и учетная запись GitHub. 
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
-- Учетная запись GitHub со статическим кодом веб-сайта. Если у вас нет учетной записи GitHub, [Зарегистрируйтесь бесплатно](https://github.com/join).  
-- Рабочий статический веб-сайт, размещенный в службе хранилища Azure. Сведения о [размещении статического веб-сайта в службе хранилища Azure](storage-blob-static-website-how-to.md). Статический веб-сайт должен включать [Azure CDN](static-website-content-delivery-network.md).
+- Репозиторий GitHub со статическим кодом веб-сайта. Если у вас нет учетной записи GitHub, [зарегистрируйтесь бесплатно](https://github.com/join).  
+- Рабочий статический веб-сайт, размещенный в службе хранилища Azure. Сведения о [размещении статического веб-сайта в службе хранилища Azure](storage-blob-static-website-how-to.md). Для выполнения этого примера следует также развернуть [Azure CDN](static-website-content-delivery-network.md).
 
-## <a name="generate-deployment-credentials"></a>Создать учетные данные развертывания
+> [!NOTE]
+> Обычно сеть доставки содержимого (CDN) используется для уменьшения задержки пользователей по всему миру и уменьшения количества транзакций в учетной записи хранения. Развертывание статического содержимого в облачной службе хранилища может снизить потребность в потенциально дорогостоящем вычислительном экземпляре. Дополнительные сведения см. в разделе [шаблон размещения статического содержимого](/azure/architecture/patterns/static-content-hosting).
 
-Вы можете создать [субъект-службу](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Выполните эту команду с [Azure Cloud Shell](https://shell.azure.com/) в портал Azure или нажав кнопку **попробовать** .
+## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
+
+Вы можете создать [субъект-службу](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать**.
 
 Замените заполнитель `myStaticSite` именем сайта, размещенным в службе хранилища Azure. 
 
@@ -42,7 +45,7 @@ ms.locfileid: "91776397"
    az ad sp create-for-rbac --name {myStaticSite} --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} --sdk-auth
 ```
 
-В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки и именем группы ресурсов. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений, как показано ниже. Скопируйте этот объект JSON для последующего использования.
+В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки и именем группы ресурсов. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к учетной записи хранения, как показано ниже. Скопируйте этот объект JSON для последующего использования.
 
 ```output 
   {
@@ -59,13 +62,13 @@ ms.locfileid: "91776397"
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-1. В [GitHub](https://github.com/)найдите свой репозиторий.
+1. В [GitHub](https://github.com/) найдите нужный репозиторий.
 
-1. Выберите **параметры > секреты > новый секрет**.
+1. Выберите **Settings > Secrets > New secret** (Параметры > Секреты > Новый секрет).
 
-1. Вставьте все выходные данные JSON из команды Azure CLI в поле значения секрета. Присвойте секрету имя, например `AZURE_CREDENTIALS` .
+1. Вставьте все выходные данные JSON, полученные из команды Azure CLI, в поле значения секрета. Присвойте секрету имя, например `AZURE_CREDENTIALS` .
 
-    Когда вы настроите файл рабочего процесса позже, используйте секрет для входа `creds` в действие Azure Login. Пример:
+    Когда вы позже настроите файл рабочего процесса, этот секрет будет передан в действие входа в Azure как параметр `creds`. Пример:
 
     ```yaml
     - uses: azure/login@v1
@@ -75,13 +78,13 @@ ms.locfileid: "91776397"
 
 ## <a name="add-your-workflow"></a>Добавление рабочего процесса
 
-1. Перейдите к **действиям** для репозитория GitHub. 
+1. Перейдите в раздел **Actions** (Действия) для репозитория GitHub. 
 
-    :::image type="content" source="media/storage-blob-static-website/storage-blob-github-actions-header.png" alt-text="Пункт меню действий GitHub&quot;:::
+    :::image type="content" source="media/storage-blob-static-website/storage-blob-github-actions-header.png" alt-text="Пункт меню действий GitHub":::
 
-1. Выберите **настроить рабочий процесс самостоятельно**. 
+1. Выберите **Set up your workflow yourself** (Настроить рабочий процесс самостоятельно). 
 
-1. Удалите все после `on:` раздела файла рабочего процесса. Например, оставшийся рабочий процесс может выглядеть следующим образом. 
+1. Удалите все содержимое в файле рабочего процесса после раздела `on:`. После этого рабочий процесс должен выглядеть примерно так. 
 
     ```yaml
     name: CI
@@ -93,7 +96,7 @@ ms.locfileid: "91776397"
         branches: [ master ]
     ```
 
-1. Переименуйте рабочий процесс `Blob storage website CI` и добавьте действия по извлечению и входу. Эти действия приводят к извлечению кода сайта и проверке подлинности в Azure с помощью `AZURE_CREDENTIALS` созданного ранее секрета GitHub. 
+1. Присвойте рабочему процессу имя `Blob storage website CI` и добавьте действия для извлечения и входа. Эти действия извлекают код сайта из репозитория и выполняют проверку подлинности в Azure с помощью ранее созданного секрета GitHub `AZURE_CREDENTIALS`. 
 
     ```yaml
     name: Blob storage website CI
@@ -128,10 +131,10 @@ ms.locfileid: "91776397"
         with:
             azcliversion: 2.0.72
             inlineScript: |
-            az cdn endpoint purge --content-paths  &quot;/*&quot; --profile-name &quot;CDN_PROFILE_NAME&quot; --name &quot;CDN_ENDPOINT&quot; --resource-group &quot;RESOURCE_GROUP&quot;
+            az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
     ``` 
 
-1. Завершите рабочий процесс, добавив действие для выхода из Azure. Ниже приведен Завершенный рабочий процесс. Файл появится в `.github/workflows` папке репозитория.
+1. Завершите создание рабочего процесса, добавив действие для выхода из Azure. Готовый рабочий процесс выглядит так. В папке `.github/workflows` репозитория появится новый файл.
 
     ```yaml
    name: Blob storage website CI
@@ -162,7 +165,7 @@ ms.locfileid: "91776397"
         with:
             azcliversion: 2.0.72
             inlineScript: |
-            az cdn endpoint purge --content-paths  &quot;/*&quot; --profile-name &quot;CDN_PROFILE_NAME&quot; --name &quot;CDN_ENDPOINT&quot; --resource-group &quot;RESOURCE_GROUP"
+            az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
             # Azure logout 
         - name: logout
           run: |
@@ -171,100 +174,15 @@ ms.locfileid: "91776397"
 
 ## <a name="review-your-deployment"></a>Проверка развертывания
 
-1. Перейдите к **действиям** для репозитория GitHub. 
+1. Перейдите в раздел **Actions** (Действия) для репозитория GitHub. 
 
-1. Откройте первый результат, чтобы просмотреть подробные журналы выполнения рабочего процесса. 
+1. Откройте первый результат, чтобы проверить подробные журналы выполнения рабочего процесса. 
  
-    :::image type="content" source="../media/index/github-actions-run.png" alt-text="Пункт меню действий GitHub&quot;:::
-
-1. Выберите **настроить рабочий процесс самостоятельно**. 
-
-1. Удалите все после `on:` раздела файла рабочего процесса. Например, оставшийся рабочий процесс может выглядеть следующим образом. 
-
-    ```yaml
-    name: CI
-
-    on:
-    push:
-        branches: [ master ]
-    pull_request:
-        branches: [ master ]
-    ```
-
-1. Переименуйте рабочий процесс `Blob storage website CI` и добавьте действия по извлечению и входу. Эти действия приводят к извлечению кода сайта и проверке подлинности в Azure с помощью `AZURE_CREDENTIALS` созданного ранее секрета GitHub. 
-
-    ```yaml
-    name: Blob storage website CI
-
-    on:
-    push:
-        branches: [ master ]
-    pull_request:
-        branches: [ master ]
-
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:            
-        - uses: actions/checkout@v2
-        - uses: azure/login@v1
-          with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-    ```
-
-1. Используйте действие Azure CLI, чтобы передать код в хранилище BLOB-объектов и очистить конечную точку CDN. Для `az storage blob upload-batch` Замените заполнитель именем своей учетной записи хранения. Скрипт будет отправлен в `$web` контейнер. Для `az cdn endpoint purge` Замените заполнители именем профиля CDN, именем конечной точки CDN и группой ресурсов.
-
-    ```yaml
-        - name: Upload to blob storage
-        uses: azure/CLI@v1
-        with:
-            azcliversion: 2.0.72
-            inlineScript: |
-                az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME> -d '$web' -s .
-        - name: Purge CDN endpoint
-        uses: azure/CLI@v1
-        with:
-            azcliversion: 2.0.72
-            inlineScript: |
-            az cdn endpoint purge --content-paths  &quot;/*&quot; --profile-name &quot;CDN_PROFILE_NAME&quot; --name &quot;CDN_ENDPOINT&quot; --resource-group &quot;RESOURCE_GROUP&quot;
-    ``` 
-
-1. Завершите рабочий процесс, добавив действие для выхода из Azure. Ниже приведен Завершенный рабочий процесс. Файл появится в `.github/workflows` папке репозитория.
-
-    ```yaml
-   name: Blob storage website CI
-
-    on:
-    push:
-        branches: [ master ]
-    pull_request:
-        branches: [ master ]
-
-    jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: Azure Login
-        uses: azure/login@v1
-        with:
-            creds: ${{ secrets.AZURE_CREDENTIALS }}    
-        - name: Azure CLI script
-        uses: azure/CLI@v1
-        with:
-            azcliversion: 2.0.72
-            inlineScript: |
-                az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME> -d '$web' -s .
-        - name: Azure CLI script
-        uses: azure/CLI@v1
-        with:
-            azcliversion: 2.0.72
-            inlineScript: |
-            az cdn endpoint purge --content-paths  &quot;/*&quot; --profile-name &quot;CDN_PROFILE_NAME&quot; --name &quot;CDN_ENDPOINT&quot; --resource-group &quot;RESOURCE_GROUP":::
+    :::image type="content" source="../media/index/github-actions-run.png" alt-text="Журнал выполнения действий GitHub Actions":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если статический сайт и репозиторий Azure больше не нужны, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub. 
+Если статический веб-сайт и репозиторий GitHub больше не требуются, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub. 
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.topic: how-to
-ms.subservice: users-groups-roles
+ms.subservice: roles
 ms.workload: identity
-ms.date: 09/22/2020
+ms.date: 11/04/2020
 ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa0abffc9bfb1a0c6511af331d1e8dbc10cff455
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: bbe76d21d948525421790f574830da7b3a163216
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93026536"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395399"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Управление административными единицами в Azure Active Directory
 
@@ -29,11 +29,11 @@ ms.locfileid: "93026536"
 
 1. Чтобы выполнить запросы из следующих инструкций с помощью [Graph Explorer](https://aka.ms/ge), выполните следующие действия.
 
-    а. На портале Azure перейдите к Azure AD. 
+    a. На портале Azure перейдите к Azure AD. 
     
-    b. В списке приложений выберите **Graph Explorer** .
+    b. В списке приложений выберите **Graph Explorer**.
     
-    c. На панели **разрешения** выберите **предоставить согласие администратора для Graph Explorer** .
+    c. На панели **разрешения** выберите **предоставить согласие администратора для Graph Explorer**.
 
     ![Снимок экрана, показывающий ссылку "предоставление согласия администратора для Graph Explorer".](./media/admin-units-manage/select-graph-explorer.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "93026536"
 
 ### <a name="use-the-azure-portal"></a>Использование портала Azure
 
-1. На портале Azure перейдите к Azure AD. Затем на левой панели выберите **административные единицы** .
+1. На портале Azure перейдите к Azure AD. Затем на левой панели выберите **административные единицы**.
 
     ![Снимок экрана: ссылка "административные единицы" в Azure AD.](./media/admin-units-manage/nav-to-admin-units.png)
 
@@ -85,9 +85,9 @@ Request body
 
 ### <a name="use-the-azure-portal"></a>Использование портала Azure
 
-1. В портал Azure перейдите в **Azure AD** и выберите **административные единицы** . 
-1. Выберите удаляемую административную единицу и нажмите кнопку **Удалить** . 
-1. Чтобы подтвердить удаление административной единицы, выберите **Да** . Административная единица удаляется.
+1. В портал Azure перейдите в **Azure AD** и выберите **административные единицы**. 
+1. Выберите удаляемую административную единицу и нажмите кнопку **Удалить**. 
+1. Чтобы подтвердить удаление административной единицы, выберите **Да**. Административная единица удаляется.
 
 ![Снимок экрана: кнопка удаления административной единицы и окно подтверждения.](./media/admin-units-manage/select-admin-unit-to-delete.png)
 
@@ -109,7 +109,7 @@ Request body
 {}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление пользователями в административной единице](admin-units-add-manage-users.md)
 * [Управление группами в административной единице](admin-units-add-manage-groups.md)

@@ -1,5 +1,5 @@
 ---
-title: Экспорт соединителя Azure IoT для метрик FHIR (Предварительная версия) с помощью параметров диагностики
+title: Экспорт метрик соединителя Интернета вещей Azure для FHIR (предварительная версия) с помощью параметров диагностики
 description: В этой статье объясняется, как экспортировать данные для метрик соединителя Azure IoT для FHIR (Предварительная версия) с помощью параметров диагностики.
 services: healthcare-apis
 author: msjasteppe
@@ -8,16 +8,16 @@ ms.subservice: iomt
 ms.topic: how-to
 ms.date: 10/30/2020
 ms.author: jasteppe
-ms.openlocfilehash: 2c10dc05775739a55267dd3766e533b73e12b3a1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 5a57b13cdb8c7c1144815543e03b970de32b4369
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322366"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93394260"
 ---
-# <a name="export-azure-iot-connector-for-fhir-preview-metrics-through-diagnostic-settings"></a>Экспорт соединителя Azure IoT для метрик FHIR (Предварительная версия) с помощью параметров диагностики
+# <a name="export-azure-iot-connector-for-fhir-preview-metrics-through-diagnostic-settings"></a>Экспорт метрик соединителя Интернета вещей Azure для FHIR (предварительная версия) с помощью параметров диагностики
 
-Из этой статьи вы узнаете, как экспортировать соединитель Azure IoT для журналов метрик FHIR *. Функция, позволяющая вести журнал метрик, — это [**параметры диагностики**](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) в портал Azure. 
+Из этой статьи вы узнаете, как экспортировать соединитель Azure IoT для журналов метрик FHIR *. Функция, позволяющая вести журнал метрик, — это [**параметры диагностики**](../azure-monitor/platform/diagnostic-settings.md) в портал Azure. 
 
 > [!TIP]
 > Следуйте указаниям в статье [Включение ведения журнала диагностики в Azure API для FHIR и соединителя Azure IOT для FHIR](enable-diagnostic-logging.md#enable-diagnostic-logging-in-azure-api-for-fhir) , чтобы настроить ведение журнала аудита.
@@ -48,12 +48,12 @@ ms.locfileid: "93322366"
 > [!Note] 
 > Для того чтобы первые журналы метрик отображались в выбранном репозитории, может потребоваться до 15 минут.  
  
-Дополнительные сведения о работе с журналами диагностики см. в [документации по журналу ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-overview) .
+Дополнительные сведения о работе с журналами диагностики см. в [документации по журналу ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md) .
 
 ## <a name="conclusion"></a>Заключение 
 Наличие доступа к журналам метрик очень важно для мониторинга и устранения неполадок.  Соединитель Azure IoT для FHIR позволяет выполнять эти действия с помощью журналов метрик. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с часто задаваемыми вопросами о соединителе Azure IoT для FHIR.
 

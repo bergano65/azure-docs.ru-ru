@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/04/2020
-ms.openlocfilehash: 45ce874ffb626f63b2239c66afdefd091114cbd2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f547f0b3219889b54364c4805c2dd5b183a9861a
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90888137"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93392373"
 ---
 # <a name="manage-historical-data-with-retention-policy"></a>Управление историческими данными с помощью политики хранения
 
@@ -66,11 +66,11 @@ select @rowcnt
 
 ## <a name="monitoring-data-retention-cleanup"></a>Очистка хранения данных мониторинга
 
-Операции очистки политики хранения данных можно отслеживать с помощью расширенных событий (XEvents) в Azure SQL. Дополнительные сведения о расширенных событиях см. в [обзоре XEvents](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events). 
+Операции очистки политики хранения данных можно отслеживать с помощью расширенных событий (XEvents) в Azure SQL. Дополнительные сведения о расширенных событиях см. в [обзоре XEvents](/sql/relational-databases/extended-events/extended-events). 
 
 Следующие шесть расширенных событий помогают отслеживанию состояния операций очистки. 
 
-| Имя | Описание |
+| name | Описание |
 |------| ------------|
 | data_retention_task_started  | Происходит при запуске фоновой задачи очистки таблиц с политикой хранения. |
 | data_retention_task_completed  | Происходит при завершении фоновой задачи очистки таблиц с политикой хранения. |
@@ -82,6 +82,6 @@ select @rowcnt
 Кроме того, `RING_BUFFER_DATA_RETENTION_CLEANUP` в динамическом административном представлении sys.dm_os_ring_buffers добавлен новый тип кольцевого буфера. Это представление можно использовать для отслеживания операций очистки хранения данных. 
 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Политика хранения данных](data-retention-overview.md)
 - [Включение и отключение политик хранения данных](data-retention-enable-disable.md)

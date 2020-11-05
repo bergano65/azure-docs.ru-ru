@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: a748bf977e76357c710518e608c12ad19a8cd0be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b424ece9207328d87068160f78ebc78a3bd1a8d
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90888415"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395229"
 ---
 # <a name="configure-replication-to-azure-sql-edge"></a>Настройка репликации на границе Azure SQL 
 
@@ -24,19 +24,19 @@ ms.locfileid: "90888415"
   
 - Экземпляр Azure SQL ребр должен быть принудительным подписчиком для издателя.
 - Издатель и распространитель могут быть либо:
-   - Экземпляр SQL Server, выполняющегося в локальной среде, или экземпляр SQL Server, выполняющийся на виртуальной машине Azure. Дополнительные сведения см. в статье [Обзор SQL Server на виртуальных машинах Azure](https://docs.microsoft.com/azure/azure-sql/virtual-machines/). Экземпляры SQL Server должны использовать версию более поздней, чем SQL Server 2016.
-   - Экземпляр Управляемый экземпляр Azure SQL. SQL Управляемый экземпляр может размещать базы данных издателя, распространителя и подписчика. Дополнительные сведения см. в статье [Replication to SQL Database single and pooled databases](https://docs.microsoft.com/azure/sql-database/replication-with-sql-database-managed-instance/) (Репликация в одну базу данных и базы данных в составе пула службы "База данных SQL").
+   - Экземпляр SQL Server, выполняющегося в локальной среде, или экземпляр SQL Server, выполняющийся на виртуальной машине Azure. Дополнительные сведения см. в статье [Обзор SQL Server на виртуальных машинах Azure](../azure-sql/virtual-machines/index.yml). Экземпляры SQL Server должны использовать версию более поздней, чем SQL Server 2016.
+   - Экземпляр Управляемый экземпляр Azure SQL. SQL Управляемый экземпляр может размещать базы данных издателя, распространителя и подписчика. Дополнительные сведения см. в статье [Replication to SQL Database single and pooled databases](/azure/sql-database/replication-with-sql-database-managed-instance/) (Репликация в одну базу данных и базы данных в составе пула службы "База данных SQL").
 
 - Базу данных распространителя и агенты репликации нельзя разместить на экземпляре Azure SQL Server.  
 
 > [!NOTE]
 > При попытке настроить репликацию с использованием неподдерживаемой версии могут возникать следующие две ошибки: MSSQL_REPL20084 ("процессу не удалось подключиться к подписчику") и MSSQL_REPL40532 ("не удается открыть сервер, \<name> запрошенный именем для входа. Ошибка входа. ").  
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Следующие требования и рекомендации важны для понимания при настройке репликации.
 
-- Репликацию можно настроить с помощью [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Это также можно сделать, выполнив инструкции Transact-SQL на издателе, используя либо SQL Server Management Studio, либо [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio).
+- Репликацию можно настроить с помощью [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms). Это также можно сделать, выполнив инструкции Transact-SQL на издателе, используя либо SQL Server Management Studio, либо [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
 - Чтобы выполнить репликацию в экземпляр Azure SQL Server, необходимо использовать проверку подлинности SQL Server для входа.
 - У реплицируемых таблиц должен быть первичный ключ.
 - Одна публикация на сервере SQL Server может поддерживать подписчиков и SQL Azure для пограничных вычислений, и SQL Server (локально и SQL Server на виртуальной машине Azure).  
@@ -82,15 +82,13 @@ ms.locfileid: "90888415"
 
 Создайте публикацию и принудительную подписку. Дополнительные сведения см. в разделе:
   
-- [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) , используя имя сервера SQL Azure и IP-адрес в качестве подписчика (например, **меджеинстанце, 1433**), а также имя базы данных в экземпляре SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
+- [Создание публикации](/sql/relational-databases/replication/publish/create-a-publication)
+- [Создайте принудительную подписку](/sql/relational-databases/replication/create-a-push-subscription/) , используя имя сервера SQL Azure и IP-адрес в качестве подписчика (например, **меджеинстанце, 1433** ), а также имя базы данных в экземпляре SQL Azure в качестве целевой базы данных (например, **AdventureWorks** ).  
 
 ## <a name="next-steps"></a>Дальнейшие шаги  
 
-- [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/)
-- [Типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication)
-- [Мониторинг (репликация)](https://docs.microsoft.com/sql/relational-databases/replication/monitor/monitoring-replication)
-- [Инициализация подписки](https://docs.microsoft.com/sql/relational-databases/replication/initialize-a-subscription)  
-
-
+- [Создание публикации](/sql/relational-databases/replication/publish/create-a-publication)
+- [Создание принудительной подписки](/sql/relational-databases/replication/create-a-push-subscription/)
+- [Типы репликации](/sql/relational-databases/replication/types-of-replication)
+- [Мониторинг (репликация)](/sql/relational-databases/replication/monitor/monitoring-replication)
+- [Инициализация подписки](/sql/relational-databases/replication/initialize-a-subscription)

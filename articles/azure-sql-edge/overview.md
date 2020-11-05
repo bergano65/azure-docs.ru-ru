@@ -9,18 +9,18 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: e34cd0907320f96f2846c1f424e678555381cccc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a74e12a5e9bdd2dfdbc6ac07b66798e517f6f426
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90907119"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395076"
 ---
 # <a name="what-is-azure-sql-edge"></a>Что такое Azure SQL ребро?
 
 Azure SQL Server — это оптимизированное реляционное ядро СУБД, предназначенное для развертывания Интернета вещей и IoT Edge. Эта служба предоставляет возможности для создания высокопроизводительного хранилища данных и уровня обработки для приложений и решений Интернета вещей. SQL Azure для пограничных вычислений предоставляет возможности для потоковой передачи, обработки и анализа реляционных и нереляционных данных, таких как JSON, Graph и данные временных рядов, что делает его правильным для многих современных приложений IoT.
 
-Azure SQL Server посвящена последним версиям [SQL Server ядро СУБД](/sql/sql-server/sql-server-technical-documentation), которая предоставляет ведущие в отрасли функции повышения производительности, безопасности и обработки запросов. Так как Azure SQL Server строится на основе того же механизма, что и [SQL Server](/sql/sql-server/sql-server-technical-documentation) и [SQL Azure](https://docs.microsoft.com/azure/azure-sql/), он предоставляет ту же контактную зону программирования Transact-SQL (T-SQL), которая упрощает и ускоряет разработку приложений и решений, а также обеспечивает переносимость приложений между IOT Edge устройствами, центрами обработки данных и облаком прямо вперед.
+Azure SQL Server посвящена последним версиям [SQL Server ядро СУБД](/sql/sql-server/sql-server-technical-documentation), которая предоставляет ведущие в отрасли функции повышения производительности, безопасности и обработки запросов. Так как Azure SQL Server строится на основе того же механизма, что и [SQL Server](/sql/sql-server/sql-server-technical-documentation) и [SQL Azure](../azure-sql/index.yml), он предоставляет ту же контактную зону программирования Transact-SQL (T-SQL), которая упрощает и ускоряет разработку приложений и решений, а также обеспечивает переносимость приложений между IOT Edge устройствами, центрами обработки данных и облаком прямо вперед.
 
 Что такое видео Azure SQL с ребром на канале Channel 9:
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/What-is-Azure-SQL-Edge/player]

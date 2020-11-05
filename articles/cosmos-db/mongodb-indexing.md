@@ -9,12 +9,12 @@ ms.date: 10/21/2020
 author: timsander1
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: a1144560b8bd8638477828f1aeafcacbc8b77f1d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 23e9b45c47cdbdb671146b772d16354b1ee3c31b
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096484"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93392628"
 ---
 # <a name="manage-indexing-in-azure-cosmos-dbs-api-for-mongodb"></a>Управление индексированием в API Azure Cosmos DB для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -122,7 +122,7 @@ API Azure Cosmos DB для MongoDB в настоящее время не под�
 
 `db.coll.createIndex({"children.$**" : 1})`
 
-В **отличие от MongoDB, индексы с подстановочными знаками могут поддерживать несколько полей в предикатах запросов** . При использовании одного индекса вместо создания отдельного индекса для каждого свойства различие в производительности запросов не будет.
+В **отличие от MongoDB, индексы с подстановочными знаками могут поддерживать несколько полей в предикатах запросов**. При использовании одного индекса вместо создания отдельного индекса для каждого свойства различие в производительности запросов не будет.
 
 С помощью подстановочного знака можно создать следующие типы индексов:
 
@@ -211,7 +211,7 @@ globaldb:PRIMARY> db.runCommand({shardCollection: db.coll._fullName, key: { univ
         "ok" : 1,
         "collectionsharded" : "test.coll"
 }
-globaldb:PRIMARY> db.coll.createIndex( { "student_id" : 1, "university" : 1 }, {unique:true})
+globaldb:PRIMARY> db.coll.createIndex( { "university" : 1, "student_id" : 1 }, {unique:true});
 {
         "_t" : "CreateIndexesResponse",
         "ok" : 1,
@@ -229,7 +229,7 @@ globaldb:PRIMARY> db.coll.createIndex( { "student_id" : 1, "university" : 1 }, {
 
 Чтобы включить истечение срока действия документа в определенной коллекции, необходимо создать индекс срока [жизни (TTL)](../cosmos-db/time-to-live.md). Индекс TTL — это индекс `_ts` поля со `expireAfterSeconds` значением.
 
-Пример
+Пример:
 
 ```JavaScript
 globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
@@ -365,7 +365,7 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 
 Если вы хотите создать индекс с подстановочными знаками, [выполните обновление до версии 3,6](mongodb-version-upgrade.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Индексирование в Azure Cosmos DB](../cosmos-db/index-policy.md)
 * [Срок жизни для данных Azure Cosmos DB](../cosmos-db/time-to-live.md)

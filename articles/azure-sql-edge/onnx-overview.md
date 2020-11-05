@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.date: 05/19/2020
-ms.openlocfilehash: 47c040b0fad0211af413141a5b16b587d41d3b08
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5dc3d44ac4396897fd43831d51ee628bb06048cb
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90907138"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93392067"
 ---
 # <a name="machine-learning-and-ai-with-onnx-in-sql-edge"></a>Машинное обучение и ИИ с применением ONNX в SQL для пограничных вычислений
 
@@ -28,7 +28,7 @@ ms.locfileid: "90907138"
 
 Чтобы получить модель в формате ONNX, выполните следующие действия.
 
-- **Службы для создания моделей**. Такие службы, как [автоматизированная функция Машинного обучения в Машинном обучении Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) и [служба "Пользовательское визуальное распознавание Azure"](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) поддерживают непосредственный экспорт обученной модели в формате ONNX.
+- **Службы для создания моделей**. Такие службы, как [автоматизированная функция Машинного обучения в Машинном обучении Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) и [служба "Пользовательское визуальное распознавание Azure"](../cognitive-services/custom-vision-service/getting-started-build-a-classifier.md) поддерживают непосредственный экспорт обученной модели в формате ONNX.
 
 - [**Преобразование и/или экспорт имеющихся моделей**](https://github.com/onnx/tutorials#converting-to-onnx-format). В ряде платформ обучения (например, [PyTorch](https://pytorch.org/docs/stable/onnx.html), Chainer и Caffe2) предусмотрены встроенные функциональные возможности экспорта в ONNX, что позволяет сохранить обученную модель в определенной версии формата ONNX. Для платформ без встроенных возможностей экспорта существуют автономно устанавливаемые пакеты преобразователей ONNX, которые позволяют преобразовывать модели, обученные на разных платформах машинного обучения, в формат ONNX.
 
@@ -43,12 +43,12 @@ ms.locfileid: "90907138"
 
 ## <a name="limitations"></a>Ограничения
 
-В настоящее время SQL Azure для пограничных вычислений поддерживает не все модели ONNX. Поддержка ограничена моделями с **числовыми типами данных**:
+В настоящее время SQL Azure для пограничных вычислений поддерживает не все модели ONNX. Поддержка ограничена моделями с **числовыми типами данных** :
 
-- [int и bigint](https://docs.microsoft.com/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql);
-- [real и float](https://docs.microsoft.com/sql/t-sql/data-types/float-and-real-transact-sql).
+- [int и bigint](/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql);
+- [real и float](/sql/t-sql/data-types/float-and-real-transact-sql).
   
-Другие числовые типы можно преобразовать в поддерживаемые с помощью [CAST и CONVERT](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql).
+Другие числовые типы можно преобразовать в поддерживаемые с помощью [CAST и CONVERT](/sql/t-sql/functions/cast-and-convert-transact-sql).
 
 Входные данные модели должны быть структурированы таким образом, чтобы каждый ввод данных в модель соответствовал одному столбцу в таблице. Например, если для обучения модели используется объект DataFrame Pandas, то каждая входящая порция данных должна быть отдельным столбцом в модели.
 

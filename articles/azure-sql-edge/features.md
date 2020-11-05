@@ -9,18 +9,18 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/03/2020
-ms.openlocfilehash: 646ce94587a9aa1bb8fd20a28b84658994b25cf1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 19dcbbf102a1d8d21f1b14780ea33816a1677c55
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90886543"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93392033"
 ---
 # <a name="supported-features-of-azure-sql-edge"></a>Поддерживаемые функции Microsoft Azure SQL Server 
 
 Azure SQL Server строится на основе последней версии ядро СУБД SQL. Он поддерживает подмножество функций, поддерживаемых в SQL Server 2019 в Linux, а также некоторые функции, которые в настоящее время не поддерживаются и недоступны в SQL Server 2019 в Linux (или в SQL Server в Windows).
 
-Полный список поддерживаемых функций см. в статье [Выпуски и поддерживаемые функции SQL Server 2019 на Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-editions-and-components-2019). Дополнительные сведения о выпусках и поддерживаемых возможностях SQL Server в Windows см. в разделе [выпуски и поддерживаемые функции SQL Server 2019 (15. x)](https://docs.microsoft.com/sql/sql-server/editions-and-components-of-sql-server-version-15).
+Полный список поддерживаемых функций см. в статье [Выпуски и поддерживаемые функции SQL Server 2019 на Linux](/sql/linux/sql-server-linux-editions-and-components-2019). Дополнительные сведения о выпусках и поддерживаемых возможностях SQL Server в Windows см. в разделе [выпуски и поддерживаемые функции SQL Server 2019 (15. x)](/sql/sql-server/editions-and-components-of-sql-server-version-15).
 
 ## <a name="azure-sql-edge-editions"></a>Выпуски Azure SQL ребр
 

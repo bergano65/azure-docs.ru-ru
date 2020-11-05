@@ -10,12 +10,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 09/22/2020
-ms.openlocfilehash: afd78acadf133a9f128eec402eba9d0eed51b8e3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 543a71bc2a77f0a31f8ddaa0de13135b93db48ec
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91284488"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395042"
 ---
 # <a name="azure-sql-edge-release-notes"></a>Заметки о выпуске Azure SQL ребра 
 
@@ -37,9 +37,9 @@ ms.locfileid: "91284488"
    - Включить сценарии параллельного выполнения
 6. Улучшения энергосбережения в режиме низкого энергопотребления
 7. Поддержка потоковой передачи новых функций 
-   - [Окна моментальных снимков](https://docs.microsoft.com/stream-analytics-query/snapshot-window-azure-stream-analytics) : новый тип окна, позволяющий группировать по событиям, поступающим в одно и то же время. 
-   - Включите [топоне](https://docs.microsoft.com/stream-analytics-query/topone-azure-stream-analytics) и [CollectTop](https://docs.microsoft.com/stream-analytics-query/collecttop-azure-stream-analytics) в качестве аналитической функции. Это позволит возвращать записи, упорядоченные по выбранному столбцу, без необходимости быть частью окна. 
-   - Улучшения в [MATCH_RECOGNIZE](https://docs.microsoft.com/stream-analytics-query/match-recognize-stream-analytics). 
+   - [Окна моментальных снимков](/stream-analytics-query/snapshot-window-azure-stream-analytics) : новый тип окна, позволяющий группировать по событиям, поступающим в одно и то же время. 
+   - Включите [топоне](/stream-analytics-query/topone-azure-stream-analytics) и [CollectTop](/stream-analytics-query/collecttop-azure-stream-analytics) в качестве аналитической функции. Это позволит возвращать записи, упорядоченные по выбранному столбцу, без необходимости быть частью окна. 
+   - Улучшения в [MATCH_RECOGNIZE](/stream-analytics-query/match-recognize-stream-analytics). 
 
 ### <a name="fixes"></a>Исправления
 1. Дополнительные сообщения об ошибках и сведения для устранения неполадок операций потоковой передачи TSQL. 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 02/20/2018
-ms.openlocfilehash: c8dcddcd3d928758557074bf01d92e4bcc57ee1d
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 1bb2b7ca22896ed279c8aac215109b7f7bc7854c
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93279430"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93394277"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Решение "Монитор производительности сети" в Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "93279430"
 * Центральная Франция
 * Северная часть ЮАР;
 * Центральная Канада
-* Западная часть США
+* западная часть США
 * центрально-западная часть США
 * Центрально-северная часть США
 * Центрально-южная часть США
@@ -100,11 +100,11 @@ ms.locfileid: "93279430"
 
 Этот сценарий создает разделы реестра, необходимые для решения. Он также создает правила брандмауэра Windows, чтобы разрешить агентам создавать TCP-подключения друг к другу. В разделах реестра, созданных сценарием, укажите, следует ли записывать журналы отладки и путь к файлу журнала. Сценарий также определяет TCP-порт агента, используемый для обмена данными. Значения этих разделов автоматически устанавливаются с помощью скрипта. Не нужно изменять их вручную. Открытый порт по умолчанию — 8084. Вы можете использовать пользовательский порт, задав в сценарии параметр portNumber. Используйте один и тот же порт на всех компьютерах, где выполняется скрипт. 
 
-    >[!NOTE]
-    > The script configures only Windows Firewall locally. If you have a network firewall, make sure that it allows traffic destined for the TCP port used by Network Performance Monitor.
+   >[!NOTE]
+   > Сценарий настраивает брандмауэр Windows только локально. При наличии брандмауэра сети убедитесь, что он разрешает пропуск трафика к TCP-порту, который используется монитором производительности сети.
 
-    >[!NOTE]
-    > You don't need to run the [EnableRules.ps1](https://aka.ms/npmpowershellscript ) PowerShell script for Service Connectivity Monitor.
+   >[!NOTE]
+   > Не нужно запускать скрипт PowerShell [EnableRules.ps1](https://aka.ms/npmpowershellscript ) для монитора подключения службы.
 
     
 
@@ -183,7 +183,7 @@ ms.locfileid: "93279430"
 
 В следующей таблице приведены методы сбора данных и другие сведения о сборе данных для монитора производительности сети.
 
-| Платформа | Direct Agent | Агент System Center Operations Manager | Хранилище Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
+| Платформа | Direct Agent | Агент System Center Operations Manager | Служба хранилища Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
 | --- | --- | --- | --- | --- | --- | --- |
 | Windows | &#8226; | &#8226; |  |  |  |Подтверждения TCP/сообщения ICMP ECHO отправляются каждые 5 секунд. Данные отправляются каждые 3 минуты. |
  
@@ -298,6 +298,6 @@ ms.locfileid: "93279430"
 
 * **Присоединяйтесь к нашей когорту:** Мы всегда заинтересованы в том, чтобы присоединить новых клиентов к нашей когорту. Став одним из них, вы получаете доступ к новым функциям и возможностям, а также помогаете нам улучшить монитор производительности сети. Если вы хотите присоединиться, заполните этот [краткий опрос](https://aka.ms/npmcohort). 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 Ознакомьтесь с дополнительными сведениями о [мониторинге производительности](network-performance-monitor-performance-monitor.md), [мониторинге подключения службы](network-performance-monitor-performance-monitor.md) и [мониторинге ExpressRoute](network-performance-monitor-expressroute.md). 
 

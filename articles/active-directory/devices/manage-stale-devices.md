@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7651f84e14d6ea7dcb4e12d57e2bf494d5aeff1e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: d12679e64d690614aaf788837a02af007448f83d
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083190"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93393682"
 ---
 # <a name="how-to-manage-stale-devices-in-azure-ad"></a>Руководство. управление устаревшими устройствами в Azure AD
 
@@ -37,7 +37,7 @@ ms.locfileid: "93083190"
 
 ## <a name="detect-stale-devices"></a>Выявление устаревших устройств
 
-По определению устаревшими являются устройства, которые все еще зарегистрированы, но в течение периода времени не используются для доступа к облачным приложениям. Это означает, что для их выявления нужно свойство, сохраняющее метки времени. В AAD для этой цели используется свойство **ApproximateLastLogonTimestamp** , называемое **меткой активности** . Устройство считается устаревшим, если разница между текущей датой и значением **метки активности** превышает определенный для активных устройств интервал времени. Свойство **метки активности** предоставляется в режиме общедоступной предварительной версии.
+По определению устаревшими являются устройства, которые все еще зарегистрированы, но в течение периода времени не используются для доступа к облачным приложениям. Это означает, что для их выявления нужно свойство, сохраняющее метки времени. В AAD для этой цели используется свойство **ApproximateLastLogonTimestamp** , называемое **меткой активности**. Устройство считается устаревшим, если разница между текущей датой и значением **метки активности** превышает определенный для активных устройств интервал времени. Свойство **метки активности** предоставляется в режиме общедоступной предварительной версии.
 
 ## <a name="how-is-the-value-of-the-activity-timestamp-managed"></a>Как используется значение отметки активности?  
 
@@ -59,7 +59,7 @@ ms.locfileid: "93083190"
 
 - Командлет [Get-азуреаддевице](/powershell/module/azuread/Get-AzureADDevice)
 
-    :::image type="content" source="./media/manage-stale-devices/02.png" alt-text="Снимок экрана страницы в портал Azure со списком имен, владельцев и других сведений на устройствах. В одном столбце отображается метка времени действия." border="false":::
+    :::image type="content" source="./media/manage-stale-devices/02.png" alt-text="Снимок экрана, показывающий выходные данные командной строки. Одна строка выделена и содержит отметку времени для значения Аппроксимателастлогонтиместамп." border="false":::
 
 ## <a name="plan-the-cleanup-of-your-stale-devices"></a>Планирование очистки устаревших устройств
 
@@ -147,7 +147,7 @@ Get-AzureADDevice -All:$true | select-object -Property Enabled, DeviceId, Displa
 
 ```PowerShell
 $dt = [datetime]’2017/01/01’
-Get-AzureADDevice | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-olderthan-Jan-1-2017-summary.csv
+Get-AzureADDevice -All:$true | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-olderthan-Jan-1-2017-summary.csv
 ```
 
 ## <a name="what-you-should-know"></a>Учитываемые аспекты
@@ -179,6 +179,6 @@ Get-AzureADDevice | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | select-ob
 - **Устройства, присоединенные к AAD** — пользователь не может использовать устройство для входа. 
 - **Мобильные устройства** — пользователь не может получить доступ к ресурсам Azure AD, таким как Microsoft 365. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы получить общие сведения о том, как управлять устройствами на портале Azure, см. раздел [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md)

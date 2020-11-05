@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/27/2020
-ms.openlocfilehash: 9e75edad9f2e473d27d81c73fc784c568c4e404c
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 4d420bf45cd705f518df0d52929a331d23537184
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896146"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395178"
 ---
 # <a name="create-a-data-streaming-job-in-azure-sql-edge"></a>Создание задания потоковой передачи данных в Azure SQL ребро 
 
@@ -24,13 +24,13 @@ ms.locfileid: "92896146"
 
 Потоковая передача T-SQL использует функциональность внешнего источника данных SQL Server для определения источников данных, связанных с входными и выходными данными внешнего потока для задания потоковой передачи. Используйте следующие команды T-SQL для создания внешнего потока входного или выходного объекта.
 
-- [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-external-file-format-transact-sql)
+- [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql)
 
-- [CREATE EXTERNAL DATA SOURCE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-external-data-source-transact-sql)
+- [CREATE EXTERNAL DATA SOURCE (Transact-SQL)](/sql/t-sql/statements/create-external-data-source-transact-sql)
 
 - [CREATE EXTERNAL STREAM (Transact-SQL)](#example-create-an-external-stream-object-to-azure-sql-database)
 
-Кроме того, если Azure SQL ребро, SQL Server или база данных SQL Azure используется в качестве выходного потока, необходимо [создать учетные данные для базы данных с областью действия (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-database-scoped-credential-transact-sql). Эта команда T-SQL определяет учетные данные для доступа к базе данных.
+Кроме того, если Azure SQL ребро, SQL Server или база данных SQL Azure используется в качестве выходного потока, необходимо [создать учетные данные для базы данных с областью действия (Transact-SQL)](/sql/t-sql/statements/create-database-scoped-credential-transact-sql). Эта команда T-SQL определяет учетные данные для доступа к базе данных.
 
 ### <a name="supported-input-and-output-stream-data-sources"></a>Поддерживаемые источники данных входного и выходного потока
 
@@ -38,7 +38,7 @@ ms.locfileid: "92896146"
 
 | Тип источника данных | Входные данные | Выходные данные | Описание |
 |------------------|-------|--------|------------------|
-| Центр Azure IoT Edge | Да | Да | Источник данных для чтения и записи потоковых данных в центр Azure IoT Edge. Дополнительные сведения см. в разделе [центр IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).|
+| Центр Azure IoT Edge | Да | Да | Источник данных для чтения и записи потоковых данных в центр Azure IoT Edge. Дополнительные сведения см. в разделе [центр IOT Edge](../iot-edge/iot-edge-runtime.md#iot-edge-hub).|
 | База данных SQL | Нет | Да | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных может быть локальной базой данных в Azure SQL или удаленной базой данных в SQL Server или базе данных SQL Azure.|
 | Kafka | Да | Нет | Источник данных для чтения потоковых данных из раздела Kafka. Этот адаптер сейчас доступен только для версий Intel или AMD Azure SQL. Она недоступна для ARM64 версии Azure SQL.|
 
@@ -103,7 +103,7 @@ ms.locfileid: "92896146"
 
 3. Создайте внешний источник данных с помощью инструкции CREATE EXTERNAL DATA SOURCE. Следующий пример:
 
-    * Создает внешний источник данных с именем *локалсклаутпут* .
+    * Создает внешний источник данных с именем *локалсклаутпут*.
     * Определяет внешний источник данных (LOCATION = <vendor>://<server>[:<port>]). В этом примере он указывает на локальный экземпляр Azure SQL ребр.
     * Использует учетные данные, созданные ранее.
 
@@ -173,7 +173,7 @@ ms.locfileid: "92896146"
 Используйте `sys.sp_create_streaming_job` системную хранимую процедуру для определения потоковых запросов и создания задания потоковой передачи. `sp_create_streaming_job`Хранимая процедура принимает следующие параметры:
 
 - `job_name`: Имя задания потоковой передачи. Имена заданий потоковой передачи уникальны в пределах экземпляра.
-- `statement`: Stream Analytics инструкции запросов потоковой передачи на основе [языка запросов](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference?).
+- `statement`: Stream Analytics инструкции запросов потоковой передачи на основе [языка запросов](/stream-analytics-query/stream-analytics-query-language-reference).
 
 В следующем примере создается простое задание потоковой передачи с одним запросом потоковой передачи. Этот запрос считывает входные данные из центра IoT Edge и выполняет запись `dbo.TemperatureMeasurements` в базу данных.
 
@@ -249,9 +249,9 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 | Обработка | Задание потоковой передачи выполняется, и входные данные обрабатываются. Это свидетельствует о работоспособности задания потоковой передачи. |
 | Деградация | Задание потоковой передачи выполняется, но при обработке входных данных возникли неустранимые ошибки. Входное задание продолжит выполняться, но входные данные, вызывающие ошибки, будут удаляться. |
 | Остановлена | Выполнение задания потоковой передачи остановлено. |
-| Failed | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
+| Сбой | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Просмотр метаданных, связанных с заданиями потоковой передачи в Azure SQL ребро](streaming-catalog-views.md) 
 - [Создание внешнего потока](create-external-stream-transact-sql.md)

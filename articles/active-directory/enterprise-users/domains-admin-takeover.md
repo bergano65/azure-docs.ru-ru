@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.topic: how-to
 ms.workload: identity
-ms.date: 04/29/2020
+ms.date: 11/04/2020
 ms.author: curtand
-ms.reviewer: elkuzmen
+ms.reviewer: sumitp
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6a7dcb1d24f3c1ff848e3393687b04d79d28058
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 11708aeb434f3b258377c02f15214f1ac9ae4295
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92377011"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93393631"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 
@@ -100,7 +100,7 @@ ms.locfileid: "92377011"
 
 Внешний администратор перенаправление не поддерживается для всех служб, в которых есть планы обслуживания, включающие SharePoint, OneDrive или Skype для бизнеса. Например, с помощью бесплатной подписки Office. 
 
-При необходимости можно использовать [параметр **ForceTakeover** ](#azure-ad-powershell-cmdlets-for-the-forcetakeover-option) , чтобы удалить доменное имя из неуправляемой Организации и проверить его в нужной организации. 
+При необходимости можно использовать [параметр **ForceTakeover**](#azure-ad-powershell-cmdlets-for-the-forcetakeover-option) , чтобы удалить доменное имя из неуправляемой Организации и проверить его в нужной организации. 
 
 #### <a name="more-information-about-rms-for-individuals"></a>Дополнительные сведения о службе RMS для частных лиц
 
@@ -174,7 +174,7 @@ ms.locfileid: "92377011"
 * [Как установить и настроить Azure PowerShell](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Справка по командлетам Azure](/powershell/azure/get-started-azureps)
-* [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0)
+* [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0&preserve-view=true)
 
 <!--Image references-->
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png

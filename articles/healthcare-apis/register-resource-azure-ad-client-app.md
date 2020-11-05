@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: matjazl
-ms.openlocfilehash: e92fab392dc73d8de0b7b2547e38b3f345562930
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e22eaacd73bb15ddf43f416831ff5ff42923b6e0
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91975864"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93393393"
 ---
 # <a name="register-a-resource-application-in-azure-active-directory"></a>Регистрация приложения-ресурса в Azure Active Directory
 
@@ -43,7 +43,7 @@ az ad sp create --id 4f6778d8-5aef-43dc-a1ff-b073724b9495
 
 1. На [портале Azure](https://portal.azure.com) в области навигации слева щелкните **Azure Active Directory**.
 
-2. В колонке **Azure Active Directory** щелкните **Регистрация приложений**:
+2. В колонке **Azure Active Directory** щелкните **Регистрация приложений** :
 
     ![портал Azure. Регистрация нового приложения.](media/how-to-aad/portal-aad-new-app-registration.png)
 
@@ -71,9 +71,9 @@ az ad sp create --id 4f6778d8-5aef-43dc-a1ff-b073724b9495
 
 ### <a name="define-application-roles"></a>Определение ролей приложения
 
-API Azure для FHIR и сервер OSS FHIR для Azure используют [Azure Active Directory роли приложений](https://docs.microsoft.com/azure/architecture/multitenant-identity/app-roles) для управления доступом на основе ролей. Чтобы определить, какие роли должны быть доступны для API сервера FHIR, откройте [Манифест](https://docs.microsoft.com/azure/active-directory/active-directory-application-manifest/)приложения ресурсов:
+API Azure для FHIR и сервер OSS FHIR для Azure используют [Azure Active Directory роли приложений](/azure/architecture/multitenant-identity/app-roles) для управления доступом на основе ролей. Чтобы определить, какие роли должны быть доступны для API сервера FHIR, откройте [Манифест](/azure/active-directory/active-directory-application-manifest/)приложения ресурсов:
 
-1. Щелкните **Манифест**:
+1. Щелкните **Манифест** :
 
     ![Роли приложений](media/how-to-aad/portal-aad-register-new-app-registration-APP-ROLES.png)
 
@@ -105,7 +105,7 @@ API Azure для FHIR и сервер OSS FHIR для Azure используют
     ],
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как зарегистрировать приложение-ресурс в Azure Active Directory. Затем зарегистрируйте конфиденциальное клиентское приложение.
  

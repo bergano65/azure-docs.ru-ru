@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.topic: how-to
-ms.subservice: users-groups-roles
+ms.subservice: roles
 ms.workload: identity
-ms.date: 09/22/2020
+ms.date: 11/04/2020
 ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfae813f01d3e7a08e18cde76e5c26ca253a371f
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 73ed2741c7dd754127a57642703b650a70637c63
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93026604"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93393444"
 ---
 # <a name="assign-scoped-roles-to-an-administrative-unit"></a>Назначение ролей с заданной областью административной единице
 
@@ -52,7 +52,7 @@ ms.locfileid: "93026604"
 
 ### <a name="use-the-azure-portal"></a>Использование портала Azure
 
-1. В портал Azure перейдите в **Azure AD** .
+1. В портал Azure перейдите в **Azure AD**.
 
 1. Выберите **административные единицы** , а затем выберите административную единицу, которой необходимо назначить область роли пользователя. 
 
@@ -60,7 +60,7 @@ ms.locfileid: "93026604"
 
    ![Снимок экрана: панель "роли и Администраторы" для выбора административной единицы, область роли которой необходимо назначить.](./media/admin-units-assign-roles/select-role-to-scope.png)
 
-1. Выберите роль, которую необходимо назначить, а затем щелкните **добавить назначения** . 
+1. Выберите роль, которую необходимо назначить, а затем щелкните **добавить назначения**. 
 
 1. На панели **Добавление назначений** выберите одного или нескольких пользователей, которым будет назначена роль.
 
@@ -105,7 +105,7 @@ Request body
 
 Все назначения ролей, созданные с помощью области административной единицы, можно просмотреть в [разделе административные единицы в Azure AD](https://ms.portal.azure.com/?microsoft_aad_iam_adminunitprivatepreview=true&microsoft_aad_iam_rbacv2=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/AdminUnit). 
 
-1. В портал Azure перейдите в **Azure AD** .
+1. В портал Azure перейдите в **Azure AD**.
 
 1. В левой области выберите **административные единицы** , а затем выберите административную единицу для списка назначений ролей, которые требуется просмотреть. 
 
@@ -129,7 +129,7 @@ Request body
 {}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Использование облачных групп для управления назначениями ролей](groups-concept.md)
 - [Устранение неполадок ролей, назначенных облачным группам](groups-faq-troubleshooting.md)

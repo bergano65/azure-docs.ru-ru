@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/04/2020
-ms.openlocfilehash: ee2d65d66caef5cd9405d6e3d0e094de2e30ae87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9408aaa8fd5b677f012392ef4bd51c8826650eee
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90902490"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395161"
 ---
 # <a name="enable-and-disable-data-retention-policies"></a>Включение и отключение политик хранения данных
 
@@ -22,7 +22,7 @@ ms.locfileid: "90902490"
 
 ## <a name="enable-data-retention-for-a-database"></a>Включение хранения данных для базы данных
 
-В следующем примере показано, как включить хранение данных с помощью [инструкции ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options).
+В следующем примере показано, как включить хранение данных с помощью [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options).
 
 ```sql
 ALTER DATABASE [<DatabaseName>] SET DATA_RETENTION  ON;
@@ -38,9 +38,9 @@ FROM sys.databases;
 
 ## <a name="enable-data-retention-for-a-table"></a>Включение хранения данных для таблицы
 
-Для каждой таблицы, для которой необходимо автоматически очищать данные, необходимо включить хранение данных. Если для базы данных и таблицы включено хранение данных, то фоновая задача системы будет периодически сканировать таблицу для обнаружения и удаления устаревших (устаревших) строк. Хранение данных может быть включено для таблицы либо во время создания таблицы с помощью инструкции [CREATE TABLE](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql) , либо с помощью [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql).
+Для каждой таблицы, для которой необходимо автоматически очищать данные, необходимо включить хранение данных. Если для базы данных и таблицы включено хранение данных, то фоновая задача системы будет периодически сканировать таблицу для обнаружения и удаления устаревших (устаревших) строк. Хранение данных может быть включено для таблицы либо во время создания таблицы с помощью инструкции [CREATE TABLE](/sql/t-sql/statements/create-table-transact-sql) , либо с помощью [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql).
 
-В следующем примере показано, как включить хранение данных для таблицы с помощью инструкции [CREATE TABLE](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql). 
+В следующем примере показано, как включить хранение данных для таблицы с помощью инструкции [CREATE TABLE](/sql/t-sql/statements/create-table-transact-sql). 
 
 ```sql
 CREATE TABLE [dbo].[data_retention_table] 
@@ -63,7 +63,7 @@ CONSTRAINT [pk_current_data_retention_table] PRIMARY KEY CLUSTERED ([product_cod
     - DateTimeOffset
 - RETENTION_PERIOD — целочисленное значение, за которым следует дескриптор единицы. Допустимые единицы: день, дни, неделя, недели, месяц, месяцы, год и годы.
 
-В следующем примере показано, как включить хранение данных для таблицы с помощью [инструкции ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql).  
+В следующем примере показано, как включить хранение данных для таблицы с помощью [инструкции ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql).  
 
 ```sql
 Alter Table [dbo].[data_retention_table]
@@ -101,7 +101,7 @@ and object_id = object_id(N'dbo.data_retention_table', N'U')
 
 ## <a name="disable-data-retention-on-a-table"></a>Отключение хранения данных в таблице 
 
-Хранение данных можно отключить в таблице с помощью [инструкции ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql). Следующую команду можно использовать для отключения хранения данных в таблице.
+Хранение данных можно отключить в таблице с помощью [инструкции ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql). Следующую команду можно использовать для отключения хранения данных в таблице.
 
 ```sql
 Alter Table [dbo].[data_retention_table]
@@ -110,7 +110,7 @@ Set (DATA_DELETION = OFF)
 
 ## <a name="disable-data-retention-on-a-database"></a>Отключение хранения данных в базе данных
 
-Хранение данных можно отключить в таблице с помощью [инструкции ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options). Следующую команду можно использовать для отключения хранения данных в базе данных.
+Хранение данных можно отключить в таблице с помощью [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql-set-options). Следующую команду можно использовать для отключения хранения данных в базе данных.
 
 ```sql
 ALTER DATABASE <DatabaseName> SET DATA_RETENTION  OFF;
