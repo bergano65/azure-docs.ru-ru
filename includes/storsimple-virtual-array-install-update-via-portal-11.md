@@ -1,6 +1,6 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить файл
+description: Включить файл
 services: storsimple
 author: alkohli
 ms.service: storsimple
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/18/2018
 ms.author: alkohli
 ms.custom: include file
-ms.openlocfilehash: 65d5a88f7b5d059deb633f062639e455c64ef2f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ed290e861a0fdebeb76b9e08e62c03eda52be82
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185811"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375927"
 ---
 #### <a name="to-install-updates-via-the-azure-portal"></a>Установка обновлений с помощью портала Azure
 
@@ -29,23 +29,23 @@ ms.locfileid: "67185811"
  
 4. После проверки наличия обновлений щелкните **Скачать обновления**. В разделе **Новые обновления** просмотрите заметки о выпуске. Обратите внимание, что после скачивания обновлений необходимо подтвердить установку. Нажмите кнопку **ОК**.
 
-    ![обновление устройства](../includes/media/storsimple-virtual-array-install-update-via-portal-11/azupdate6m.png)
+    ![Обновление устройства 2](../includes/media/storsimple-virtual-array-install-update-via-portal-11/azupdate6m.png)
 
     Вы получите уведомления о начале и успешном завершении загрузки.
 
 5. В разделе **Обновления устройства** щелкните **Установить**.
 
-     ![обновление устройства](../includes/media/storsimple-virtual-array-install-update-via-portal-11/azupdate11m1.png)
+     ![Обновление устройства 3](../includes/media/storsimple-virtual-array-install-update-via-portal-11/azupdate11m1.png)
 
-6. В разделе **Свежие обновления** вы увидите предупреждение о том, что обновление нарушит работу. Так как виртуальный массив является устройством с одним узлом, после обновления он будет перезагружен. Все текущие операции ввода-вывода будут прерваны. Щелкните **ОК**, чтобы установить обновления.
+6. В разделе **Свежие обновления** вы увидите предупреждение о том, что обновление нарушит работу. Так как виртуальный массив является устройством с одним узлом, после обновления он будет перезагружен. Все текущие операции ввода-вывода будут прерваны. Щелкните **ОК** , чтобы установить обновления.
 
-    ![обновление устройства](../includes/media/storsimple-virtual-array-install-update-via-portal-11/azupdate12m.png)
+    ![Обновление устройства 4](../includes/media/storsimple-virtual-array-install-update-via-portal-11/azupdate12m.png)
 
     Вы получите уведомление о запуске задания установки.
 
 7.  После завершения установки щелкните ссылку **Просмотреть задание**. Вы перейдете к колонке **Install Updates** (Установка обновлений). Здесь вы увидите подробные сведения о выполненном задании. 
 
-    ![обновление устройства](../includes/media/storsimple-virtual-array-install-update-via-portal-11/azupdate16m1.png)
+    ![Обновление устройства 5](../includes/media/storsimple-virtual-array-install-update-via-portal-11/azupdate16m1.png)
 
 8. Если в начале у вас был виртуальный массив с установленным обновлением 1 (10.0.10296.0) для программного обеспечения, сейчас у вас будет установлено обновление 1.1. Оставшиеся действия можно пропустить. 
 

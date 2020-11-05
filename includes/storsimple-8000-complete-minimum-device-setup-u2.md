@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: c44effe0bde3c7e880e53706fcb59d91a8605e7b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05719d9633429c4b8ee6fee79833f594c94ab23d
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185338"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375947"
 ---
 #### <a name="to-complete-the-minimum-storsimple-device-setup"></a>Минимальная настройка устройства StorSimple
 
@@ -30,7 +30,7 @@ ms.locfileid: "67185338"
 
        2. Введите фиксированные IP-адреса для контроллеров 0 и 1. **Статические IP-адреса контроллера должны быть свободными внутри подсети, доступной по IP-адресу устройства.** Если интерфейс DATA 0 настроен для IPv4, статические IP-адреса должны быть указаны в формате IPv4. Если указан префикс для IPv6, статические IP-адреса будут заполнены автоматически в этих полях.
 
-            ![Сетевые интерфейсы для минимальной настройки устройства StorSimple](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig2.png)
+            ![Параметры минимального настройки устройств StorSimple сетевые интерфейсы 2](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig2.png)
 
             Фиксированные IP-адреса для контроллера используются для установки обновлений на устройство и для сборки мусора. Поэтому фиксированные IP-адреса должны маршрутизироваться и должны иметь доступ к Интернету. Чтобы проверить, являются ли фиксированные IP-адреса контроллера маршрутизируемыми, можно использовать командлет [Test-HcsmConnection][Test]. В следующем примере показано, что фиксированные IP-адреса маршрутизируются к Интернету и могут получать доступ к серверам Центра обновления Майкрософт.
 
@@ -38,7 +38,7 @@ ms.locfileid: "67185338"
 
 1. Нажмите кнопку **ОК**. Запускается конфигурация устройства. После завершения конфигурации устройства вы получите уведомление. В колонке **устройств** состояние устройства изменится на **Подключено**.
 
-    ![Сетевые интерфейсы для минимальной настройки устройства StorSimple](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig4.png)
+    ![Параметры минимального настройки устройств StorSimple сетевые интерфейсы 3](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig4.png)
 
 <!--Link reference-->
 [Test]: https://technet.microsoft.com/library/dn715782(v=wps.630).aspx

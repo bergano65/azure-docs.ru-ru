@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: c10482029e6cfce7063d205161fed54030919c48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a01f91a81629800d3f03b907c65f05433b6163e6
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185345"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375959"
 ---
 #### <a name="to-stop-and-start-a-cloud-appliance"></a>Остановка и запуск облачного устройства
 
@@ -18,19 +18,19 @@ ms.locfileid: "67185345"
 
 2. На панели команд нажмите кнопку **Остановить**.
 
-    ![Виртуальная машина облачного устройства StorSimple](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart2.png)
+    ![Виртуальная машина облачного устройства StorSimple 2](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart2.png)
 
 3. При запросе подтверждения нажмите кнопку **Да**.
 
-    ![Виртуальная машина облачного устройства StorSimple](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart3.png)
+    ![Виртуальная машина облачного устройства StorSimple 3](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart3.png)
 
 4. При остановке виртуальная машина освобождается. Во время остановки облачное устройство переходит в состояние **Отмена выделения**. После остановки облачного устройства его состояние будет **Остановлено (освобождено)**.
 
-    ![Виртуальная машина облачного устройства StorSimple](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart4.png)
+    ![Виртуальная машина облачного устройства StorSimple 4](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart4.png)
 
 5. После остановки виртуальной машины нажмите кнопку **Запустить** (кнопка становится доступной), чтобы инициировать запуск. После запуска облачного устройства его состояние будет **Запущено**.
 
-    ![Виртуальная машина облачного устройства StorSimple](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart5.png)
+    ![Виртуальная машина облачного устройства StorSimple 5](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart5.png)
 
 Используйте следующие командлеты для остановки и запуска облачного устройства.
 
@@ -42,7 +42,7 @@ ms.locfileid: "67185345"
 
 Чтобы перезапустить облачное устройство, перейдите к виртуальной машине данного устройства. На панели команд нажмите кнопку **Перезапустить**. При появлении запроса подтвердите перезапуск. Когда облачное устройство будет готово к использованию, его состояние будет **Работает**.
 
-![Виртуальная машина облачного устройства StorSimple](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart6.png)
+![Виртуальная машина облачного устройства StorSimple 6](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart6.png)
 
 Используйте следующий командлет для перезапуска облачного устройства.
 
