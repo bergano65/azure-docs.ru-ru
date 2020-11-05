@@ -1,7 +1,7 @@
 ---
 title: Мониторинг и просмотр журналов выполнения машинного обучения & метрики
 titleSuffix: Azure Machine Learning
-description: Отслеживайте эксперименты машинного обучения Azure и просматривайте метрики запуска, чтобы улучшить процесс создания модели. Использование мини-приложений и портала студии для просмотра состояния выполнения и просмотра записей о выполнении.
+description: Отслеживайте эксперименты машинного обучения и просматривайте метрики запуска с помощью мини-приложений Jupyter и Машинное обучение Azure Studio.
 services: machine-learning
 author: likebupt
 ms.author: keli19
@@ -11,16 +11,14 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 7929c80f4f90de82c516b746310b5e58819a16bc
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 845160d92100a27c32f16eddcd1f36e9e8624e80
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316676"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360604"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>Мониторинг и просмотр журналов и метрик выполнения машинного обучения
-
-
 
 В этой статье вы узнаете, как отслеживать запуски Машинное обучение Azure и просматривать их журналы. Прежде чем можно будет просматривать журналы, необходимо сначала включить их. Дополнительные сведения см. [в статье Включение ведения журнала в учебных курсах машинного обучения Azure](how-to-track-experiments.md).
 

@@ -10,12 +10,12 @@ author: jpe316
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 0fb7dfb24a3c0a0b73b5fb18924f233080f73e80
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 91a9957c7a68f1752d7a6b9ea66910ec642b7bd1
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314455"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360910"
 ---
 # <a name="train-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Обучение scikit. изучение моделей в масштабе с помощью Машинное обучение Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "93314455"
 
 Если вы научитесь изучать модель машинного обучения scikit-учиться с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Запустите этот код в любой из этих сред:
  - Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
@@ -71,6 +71,8 @@ ws = Workspace.from_config()
 Если вы хотите использовать проверенную среду, то вместо этого можно выполнить следующую команду:
 
 ```python
+from azureml.core import Environment
+
 sklearn_env = Environment.get(workspace=ws, name='AzureML-Tutorial')
 ```
 

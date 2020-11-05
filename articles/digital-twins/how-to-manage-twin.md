@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: f8eae6381a438f6820f525a4d66cb5dc388eefb0
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 929181f9a4d159892956274a7958b1daa95cbc10
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280383"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360077"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
 
@@ -23,7 +23,7 @@ ms.locfileid: "93280383"
 > [!TIP]
 > Все функции пакета SDK имеют синхронные и асинхронные версии.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
@@ -32,7 +32,7 @@ ms.locfileid: "93280383"
 Чтобы создать двойника, используйте `CreateOrReplaceDigitalTwinAsync()` метод в клиенте службы следующим образом:
 
 ```csharp
-await client.CreateOrReplaceDigitalTwinAsync("myTwinId", initData);
+await client.CreateOrReplaceDigitalTwinAsync<BasicDigitalTwin>("myTwinId", initData);
 ```
 
 Чтобы создать цифровой двойника, необходимо предоставить:
@@ -55,12 +55,7 @@ await client.CreateOrReplaceDigitalTwinAsync("myTwinId", initData);
 
 API создания двойника принимает объект, который сериализуется в допустимое описание JSON свойств двойника. Описание формата JSON для двойника см. [*в статье основные понятия: Digital двойников и двойника Graph*](concepts-twins-graph.md) . 
 
-Во-первых, можно создать объект данных для представления двойника и данных его свойств следующим образом:
-
-```csharp
-await client.CreateOrReplaceDigitalTwinAsync<BasicDigitalTwin>(srcId, twin);
-```
-Вы можете создать объект параметра либо вручную, либо с помощью предоставленного вспомогательного класса. Ниже приведен пример каждого из них.
+Во-первых, можно создать объект данных для представления двойника и данных его свойств. Вы можете создать объект параметра либо вручную, либо с помощью предоставленного вспомогательного класса. Ниже приведен пример каждого из них.
 
 #### <a name="create-twins-using-manually-created-data"></a>Создание двойников с использованием данных, созданных вручную
 
@@ -87,7 +82,7 @@ Console.WriteLine("The twin is created successfully");
 ```
 
 >[!NOTE]
-> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateOrReplaceDigitalTwinAsync()` вызов. Например:
+> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateOrReplaceDigitalTwinAsync()` вызов. Пример:
 >
 >```csharp
 >twin.Id = "myRoomId";

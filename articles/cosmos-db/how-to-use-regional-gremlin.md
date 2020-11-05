@@ -1,19 +1,19 @@
 ---
 title: Региональные конечные точки для графовой базы данных Azure Cosmos DB
 description: Узнайте, как подключиться к ближайшей конечной точке графовой базы данных для приложения.
-author: jasonwhowell
-ms.author: jasonh
+author: christopheranderson
+ms.author: chrande
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: how-to
 ms.date: 09/09/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9350682f7c636979df4dcde0c43a3b4941ad6ebb
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 3e30252d8f5e80538139f8100f1070385c1b6016
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085775"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93361793"
 ---
 # <a name="regional-endpoints-for-azure-cosmos-db-graph-account"></a>Региональные конечные точки для графовой учетной записи Azure Cosmos DB
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "93085775"
 
 Ядро графовой СУБД Cosmos DB работает в нескольких регионах, каждый из которых содержит несколько кластеров. Каждый кластер содержит сотни компьютеров. DNS CNAME графовой учетной записи Cosmos DB *accountname.gremlin.cosmos.azure.com* разрешается в запись кластера DNS A. Один IP-адрес балансировщика нагрузки скрывает топологию внутреннего кластера.
 
-Для каждого региона графовой учетной записи Cosmos DB создается региональная запись DNS CNAME. Формат региональной конечной точки — *accountname-region.gremlin.cosmos.azure.com* . Сегмент региона региональной конечной точки получается путем удаления всех пробелов из имени [региона Azure](https://azure.microsoft.com/global-infrastructure/regions). Например, регион `"East US 2"` для глобальной учетной записи базы данных `"contoso"` будет иметь DNS CNAME *contoso-eastus2.gremlin.cosmos.azure.com*
+Для каждого региона графовой учетной записи Cosmos DB создается региональная запись DNS CNAME. Формат региональной конечной точки — *accountname-region.gremlin.cosmos.azure.com*. Сегмент региона региональной конечной точки получается путем удаления всех пробелов из имени [региона Azure](https://azure.microsoft.com/global-infrastructure/regions). Например, регион `"East US 2"` для глобальной учетной записи базы данных `"contoso"` будет иметь DNS CNAME *contoso-eastus2.gremlin.cosmos.azure.com*
 
 Клиент TinkerPop Gremlin предназначен для работы с одним сервером. Приложение может использовать глобально записываемую DNS CNAME для трафика чтения и записи. Приложения, поддерживающие регион, должны использовать региональную конечную точку для трафика чтения. Используйте региональную конечную точку для трафика записи, только если для конкретного региона настроено принятие операций записи. 
 

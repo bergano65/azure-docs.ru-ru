@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/28/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: f995750c1e009febcb9872c230e22921ff9c50c4
-ms.sourcegitcommit: 7a7b6c7ac0aa9dac678c3dfd4b5bcbc45dc030ca
+ms.openlocfilehash: 87532876551cacbd4da03b95b10c41600989a947
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93186592"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93359720"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -62,7 +62,7 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 ## <a name="support-for-setting-access-control-lists-acls-recursively"></a>Поддержка рекурсивного задания списков управления доступом (ACL)
 
-Возможность рекурсивного применения изменений ACL от родительского каталога к дочерним элементам — в [общедоступной предварительной версии](recursive-access-control-lists.md). В текущем выпуске этой возможности можно применять изменения списков управления доступом с помощью PowerShell, пакета SDK для .NET и пакета SDK для Python. Поддержка для пакета SDK для Java, Azure CLI, портал Azure или Обозреватель службы хранилища Azure еще недоступна.
+Возможность рекурсивно применять изменения ACL из родительского каталога к дочерним элементам является общедоступной. В текущем выпуске этой возможности можно применять изменения списков управления доступом с помощью PowerShell, Azure CLI и пакета SDK для .NET, Java и Python. В настоящее время поддержка недоступна для портал Azure или Обозреватель службы хранилища Azure.
 
 <a id="known-issues-tools"></a>
 

@@ -9,14 +9,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to
+ms.custom: how-to, automl
 ms.date: 05/28/2020
-ms.openlocfilehash: 229bcbb8c8c429b7fe4e5878b0e57e74dd828b72
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 658db1604895515525e5a4826a43c0b21d9698b1
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320652"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93359635"
 ---
 # <a name="featurization-in-automated-machine-learning"></a>Конструирование признаков в автоматизированном машинном обучении
 
@@ -29,7 +29,7 @@ ms.locfileid: "93320652"
 
 *Проектирование* признаков — это процесс использования базы данных предметной области для создания функций, помогающих оптимизировать алгоритмы машинного обучения (ml). В Машинное обучение Azure методики масштабирования и нормализации данных применяются для упрощения проектирования функций. В совокупности эти методы и инженерные функции называются *Добавление признаков* в автоматизированном машинном обучении или *аутомл*.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что вы уже знакомы с настройкой эксперимента Аутомл. Дополнительные сведения о конфигурации см. в следующих статьях:
 

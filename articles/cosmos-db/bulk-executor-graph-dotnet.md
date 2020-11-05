@@ -1,20 +1,20 @@
 ---
 title: Использование библиотеки массового исполнителя .NET с API Gremlin в Azure Cosmos DB
 description: Узнайте, как использовать библиотеку массового исполнителя, чтобы массово импортировать данные графа в контейнер API Gremlin в Azure Cosmos DB.
-author: jasonwhowell
+author: christopheranderson
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: how-to
 ms.date: 05/28/2019
-ms.author: jasonh
+ms.author: chrande
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: eb611c77abe5bf9067bfdbabd1e2c5d2ee90ac23
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b31cb33e09158de5912132d0fb7bd31a62131181
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100496"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360519"
 ---
 # <a name="using-the-graph-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db-gremlin-api"></a>Использование библиотеки массового исполнителя .NET для выполнения массовых операций с графами в API Gremlin в Azure Cosmos DB
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
@@ -118,7 +118,7 @@ e.AddProperty("customProperty", "value");
 ### <a name="prerequisites"></a>Предварительные требования
 * Visual Studio 2019 с рабочей нагрузкой разработки Azure. Вы можете бесплатно начать работу в [выпуске Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/).
 * Подписка Azure. Вы можете создать [бесплатную учетную запись Azure здесь](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cosmos-db). Кроме того, можно создать учетную запись базы данных Cosmos в [бесплатной пробной версии Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure.
-* База данных API Gremlin в Azure Cosmos DB с **неограниченной коллекцией** . В этом руководстве объясняется, как начать работу с [Gremlin API в Azure Cosmos DB в .NET](./create-graph-dotnet.md).
+* База данных API Gremlin в Azure Cosmos DB с **неограниченной коллекцией**. В этом руководстве объясняется, как начать работу с [Gremlin API в Azure Cosmos DB в .NET](./create-graph-dotnet.md).
 * Git. Дополнительные сведения см. на [странице скачивания Git](https://git-scm.com/downloads).
 
 ### <a name="clone-the-sample-application"></a>Клонирование примера приложения
@@ -142,7 +142,7 @@ git clone https://github.com/Azure-Samples/azure-cosmosdb-graph-bulkexecutor-dot
 ---|---
 `EndPointUrl`|**Конечная точка .NET SDK** , указанная в колонке "Обзор" вашей учетной записи в базе данных API Gremlin в Azure Cosmos DB в следующем формате: `https://your-graph-database-account.documents.azure.com:443/`
 `AuthorizationKey`|Первичный или вторичный ключ из вашей учетной записи Azure Cosmos DB. Дополнительные сведения см. в статье [Защита доступа к данным Azure Cosmos DB](./secure-access-to-data.md#primary-keys).
-`DatabaseName`, `CollectionName`|**Названия целевой базы данных и коллекции** . Если `ShouldCleanupOnStart` присвоено значение `true`, эти значения, наряду с `CollectionThroughput`, используются для очистки и создания новой базы данных и коллекции. Аналогично, если `ShouldCleanupOnFinish` присвоено значение `true`, база данных будет удалена по окончании приема данных. Обратите внимание: целевая коллекция должна быть **неограниченной** .
+`DatabaseName`, `CollectionName`|**Названия целевой базы данных и коллекции**. Если `ShouldCleanupOnStart` присвоено значение `true`, эти значения, наряду с `CollectionThroughput`, используются для очистки и создания новой базы данных и коллекции. Аналогично, если `ShouldCleanupOnFinish` присвоено значение `true`, база данных будет удалена по окончании приема данных. Обратите внимание: целевая коллекция должна быть **неограниченной**.
 `CollectionThroughput`|Применяется для создания новой коллекции, если параметру `ShouldCleanupOnStart` присвоено значение `true`.
 `ShouldCleanupOnStart`|Сбрасывает учетную запись базы данных и коллекции до запуска программы, а затем создает новые со значениями `DatabaseName`, `CollectionName` и `CollectionThroughput`.
 `ShouldCleanupOnFinish`|Сбрасывает учетную запись базы данных и коллекции с определенными значениями `DatabaseName` и `CollectionName` после запуска программы.

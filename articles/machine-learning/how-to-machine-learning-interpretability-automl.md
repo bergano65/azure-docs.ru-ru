@@ -6,18 +6,18 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to
+ms.custom: how-to, automl
 ms.author: mithigpe
 author: minthigpen
 ms.date: 07/09/2020
-ms.openlocfilehash: 35bf66549cedba22ec14999c4fea62a2c449416e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf1eb1c72cc93fcb72862b15f3884969915c24dd
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91408021"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360655"
 ---
-# <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Интерпретируемость: пояснения к модели в автоматизированном машинном обучении (Предварительная версия)
+# <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Интерпретируемость: пояснения к модели в автоматизированном машинном обучении (предварительная версия)
 
 
 
@@ -31,7 +31,7 @@ ms.locfileid: "91408021"
 - Включите визуализации, чтобы видеть закономерности в данных и объяснениях.
 - Реализуйте интерпретируемость во время вывода или оценки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Функции интерпретации. Выполните команду `pip install azureml-interpret` , чтобы получить необходимый пакет.
 - Знание создания автоматических экспериментов ML. Дополнительные сведения об использовании пакета SDK для Машинное обучение Azure см. в руководстве по [модели регрессии](tutorial-auto-train-models.md) или о [настройке автоматизированных экспериментов ML](how-to-configure-auto-train.md).
@@ -221,6 +221,6 @@ if service.state == 'Healthy':
 
 [![Архитектура интерпретации Машинное обучение](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как включить пояснения к модели и важность признаков в областях пакета SDK Машинное обучение Azure, отличного от автоматизированного машинного обучения, см. в [статье о концепции, посвященной возможностям интерпретации](how-to-machine-learning-interpretability.md).

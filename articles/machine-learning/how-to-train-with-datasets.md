@@ -1,7 +1,7 @@
 ---
 title: Обучение с помощью azureml-DataSets
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать наборы данных для обучения
+description: Узнайте, как сделать свои данные доступными локальному или удаленному вычислению для обучения модели ML с помощью Машинное обучение Azure наборов данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,13 +11,13 @@ manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 70fd8796eb4d17662697410bf97caee835e998ab
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: how-to, devx-track-python, data4ml
+ms.openlocfilehash: bf1dcb34b762c3dcae39316d804b617edbf2302d
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311328"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360740"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "93311328"
 
 Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azureными функциями [обучения, такими](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) как [скриптрунконфиг](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), а также [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 

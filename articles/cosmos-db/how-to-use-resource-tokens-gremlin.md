@@ -1,19 +1,19 @@
 ---
 title: Использование маркеров ресурса Azure Cosmos DB с пакетом SDK Gremlin
 description: Сведения о создании маркеров ресурса и их использования для доступа к базе данных Graph.
-author: jasonwhowell
-ms.author: jasonh
+author: christopheranderson
+ms.author: chrande
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: how-to
 ms.date: 09/06/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 74d851a28712beb80bf2a7aa196e471ef4f15074
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 22c048b748806404ccfa580e660552a1744f3781
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085740"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93361699"
 ---
 # <a name="use-azure-cosmos-db-resource-tokens-with-the-gremlin-sdk"></a>Использование маркеров ресурса Azure Cosmos DB с пакетом SDK Gremlin
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
@@ -101,7 +101,7 @@ builder.authProperties(authenticationProperties);
 
 ## <a name="permission"></a>Разрешение
 
-Распространенная ошибка, с которой сталкиваются приложения при использовании маркеров ресурсов: "Недостаточно разрешений в заголовке авторизации для соответствующего запроса. Повторите попытку используя другой заголовок авторизации." Эта ошибка возвращается, когда обход Gremlin пытается записать край или вершину, но маркер ресурса предоставляет только разрешения на *Чтение* . Проверьте обход на содержание какого-либо из следующих шагов: *.addV ()* , *.addE ()* , *.drop ()* или *.property()* .
+Распространенная ошибка, с которой сталкиваются приложения при использовании маркеров ресурсов: "Недостаточно разрешений в заголовке авторизации для соответствующего запроса. Повторите попытку используя другой заголовок авторизации." Эта ошибка возвращается, когда обход Gremlin пытается записать край или вершину, но маркер ресурса предоставляет только разрешения на *Чтение*. Проверьте обход на содержание какого-либо из следующих шагов: *.addV ()* , *.addE ()* , *.drop ()* или *.property()*.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Управление доступом на основе ролей в Azure (Azure RBAC)](role-based-access-control.md) в Azure Cosmos DB

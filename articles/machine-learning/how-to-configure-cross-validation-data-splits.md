@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to
+ms.custom: how-to, automl
 ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 06/16/2020
-ms.openlocfilehash: ed11a1b772acb31268f3d0a61fba10301ad62e18
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c29c8ab31507c0ec904a7534e50ef6523e1aab96
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320480"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360111"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Настройка разбиения и перекрестной проверки данных в автоматизированном машинном обучении
 
@@ -31,7 +31,7 @@ ms.locfileid: "93320480"
 > [!NOTE]
 > В настоящее время Studio поддерживает разбиение данных для обучения и проверки, а также параметры перекрестной проверки, но не поддерживает указание отдельных файлов данных для набора проверки. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для этой статьи требуется:
 

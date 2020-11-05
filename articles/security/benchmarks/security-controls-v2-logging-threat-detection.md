@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 9ada1956af2dabdb8e5deff33722af7a8691dd19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b26979f424798bacf6b40d43e5ab603844f595c3
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91295470"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360859"
 ---
 # <a name="security-control-v2-logging-and-threat-detection"></a>Управление безопасностью v2: ведение журнала и обнаружение угроз
 
@@ -38,9 +38,9 @@ ms.locfileid: "91295470"
 
 - [Кибератакная аналитика угроз с помощью Sentinel Azure](/azure/architecture/example-scenario/data/sentinel-threat-intelligence)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
@@ -75,9 +75,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Защита от угроз с помощью Центра безопасности Azure](../../security-center/threat-protection.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
@@ -109,9 +109,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Сбор подробных сведений о инфраструктуре DNS с помощью решения Аналитика DNS](../../azure-monitor/insights/dns-analytics.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
@@ -137,11 +137,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Общие сведения о сборе данных в центре безопасности Azure](../../security-center/security-center-enable-data-collection.md)
 
-- [Включение и Настройка мониторинга защиты от вредоносных программ](../fundamentals/antimalware.md#enable-and-configure-antimalware-monitoring-using-powershell-cmdlets)
+**Ответственность** : Совмещаемая блокировка
 
-**Ответственность**: Совмещаемая блокировка
-
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
@@ -169,9 +167,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
@@ -195,9 +193,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Экспорт оповещений и рекомендаций центра безопасности Azure](../../security-center/continuous-export.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
@@ -223,9 +221,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Как отключить входящий трафик UDP для служб Azure](https://support.microsoft.com/help/4558520/how-to-disable-inbound-udp-for-azure-services)
 
-**Ответственность**: Совмещаемая блокировка
+**Ответственность** : Совмещаемая блокировка
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Политика и стандарты](/azure/cloud-adoption-framework/organize/cloud-security-policy-standards)
 

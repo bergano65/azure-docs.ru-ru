@@ -10,12 +10,12 @@ ms.date: 08/26/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8083d42d9ce79bcf31e3875f2ff5d5f06970a7ff
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: e2138fc03fcdb614daef2051b7fc1a840e421658
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131519"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93359737"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование PowerShell для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -23,7 +23,7 @@ ms.locfileid: "92131519"
 
 [Справочные материалы](https://docs.microsoft.com/powershell/module/Az.Storage/)  |  Сопоставление Gen1 с [Gen2](#gen1-gen2-map)  |  [Отправить отзыв](https://github.com/Azure/azure-powershell/issues)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -285,7 +285,7 @@ $filesystem = Get-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName
 $filesystem.ACL
 ```
 
-Этот пример возвращает список ACL для **каталога**, а затем ВЫВОДИТ список ACL на консоль.
+Этот пример возвращает список ACL для **каталога** , а затем ВЫВОДИТ список ACL на консоль.
 
 ```powershell
 $filesystemName = "my-file-system"
@@ -390,7 +390,7 @@ foreach ($a in $aclnew)
 Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $aclnew
 ```
 
-### <a name="set-an-acl-recursively-preview"></a>Рекурсивное задание списка ACL (Предварительная версия)
+### <a name="set-an-acl-recursively"></a>Рекурсивное задание списка ACL
 
 Можно рекурсивно добавлять, обновлять и удалять списки управления доступом для существующих дочерних элементов родительского каталога без необходимости вносить эти изменения отдельно для каждого дочернего элемента. Дополнительные сведения см. в разделе [Настройка списков управления доступом (ACL) рекурсивно для Azure Data Lake Storage 2-го поколения](recursive-access-control-lists.md).
 
@@ -411,7 +411,7 @@ Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirna
 |Set-AzDataLakeStoreItemOwner<br>Set-AzDataLakeStoreItemPermission<br>Set-AzDataLakeStoreItemAcl|Update-AzDataLakeGen2Item|Командлет Update-AzDataLakeGen2Item обновляет только один элемент, а не рекурсивно. Если требуется обновлять рекурсивно, перечислите элементы с помощью командлета Get-AzDataLakeStoreChildItem, а затем выполните конвейер в командлете Update-AzDataLakeGen2Item.|
 |Test-AzDataLakeStoreItem|Get-AzDataLakeGen2Item|Если элемент не существует, командлет Get-AzDataLakeGen2Item сообщит об ошибке.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
 * [Командлеты PowerShell для службы хранилища](/powershell/module/az.storage)

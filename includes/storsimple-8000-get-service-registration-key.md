@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: a76f61902c6affdab9f70526d2de40852747f34e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 984efe73b072a356b738acc9f162ecaded995ef1
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185335"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360683"
 ---
 #### <a name="to-get-the-storsimple-service-registration-key"></a>Получение регистрационного ключа службы StorSimple
 
@@ -19,7 +19,7 @@ ms.locfileid: "67185335"
 
 2.  Выберите **Управление > Ключи**.
    
-     ![Колонка "Ключи"](./media/storsimple-8000-get-service-registration-key/getregkey2.png)
+     ![Колонка "ключи управления"](./media/storsimple-8000-get-service-registration-key/getregkey2.png)
 
 3.  В открывшейся колонке щелкните значок копирования, чтобы скопировать регистрационный ключ службы и сохранить его для последующего использования.
 

@@ -1,7 +1,7 @@
 ---
 title: Запись экспериментов с машинным обучением и метрик в журнал
 titleSuffix: Azure Machine Learning
-description: Отслеживайте эксперименты с машинным обучением Azure и метрики выполнения, чтобы улучшить процесс создания модели. Добавьте ведение журнала в свой скрипт обучения с помощью run.log, Run.start_logging или ScriptRunConfig.
+description: Включение ведения журнала в запусках МАШИНного обучения упрощает мониторинг метрик выполнения в реальном времени и помогает диагностировать ошибки и предупреждения.
 services: machine-learning
 author: likebupt
 ms.author: keli19
@@ -11,14 +11,14 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 6680bdc525c6f07b8330277056413f886412551b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: deeee689c27008ab71df0a050be3d7a6b5109307
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318429"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93361069"
 ---
-# <a name="enable-logging-in-azure-ml-training-runs"></a>Включение ведения журнала для обучающих операций Машинного обучения Azure
+# <a name="enable-logging-in-ml-training-runs"></a>Включение ведения журнала в учебных запусках МАШИНного обучения
 
 
 Пакет SDK Python для Машинного обучения Azure позволяет вам в реальном времени вести журнал с помощью пакета журналов Python по умолчанию и специализированных функций пакета SDK. Вы можете вести журналы в локальной среде и отправлять их в свою рабочую область на портале.

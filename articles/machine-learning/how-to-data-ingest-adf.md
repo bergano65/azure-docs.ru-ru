@@ -1,7 +1,7 @@
 ---
 title: Прием данных с помощью Фабрики данных Azure
 titleSuffix: Azure Machine Learning
-description: Узнайте, как создать конвейер приема данных с помощью фабрики данных Azure.
+description: Узнайте о доступных вариантах создания конвейера приема данных с помощью фабрики данных Azure и преимуществ каждого из них.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,17 +11,17 @@ manager: davete
 ms.reviewer: larryfr
 ms.date: 03/01/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8cf0abdeaf3a7fe71213b6fa4f78f057bf2f92eb
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: how-to, devx-track-python, data4ml
+ms.openlocfilehash: 73850d8022618dd6544d19564e425288aff09771
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307365"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360638"
 ---
 # <a name="data-ingestion-with-azure-data-factory"></a>Прием данных с помощью Фабрики данных Azure
 
-Из этой статьи вы узнаете, как создать конвейер приема данных с помощью фабрики данных Azure (ADF). Этот конвейер используется для приема данных для использования с Машинное обучение Azure. Фабрика данных Azure позволяет легко извлекать, преобразовывать и загружать данные (ETL). После преобразования и загрузки данных в хранилище их можно использовать для обучения моделей машинного обучения.
+В этой статье вы узнаете о доступных вариантах создания конвейера приема данных с помощью фабрики данных Azure (ADF). Этот конвейер используется для приема данных для использования с Машинное обучение Azure. Фабрика данных Azure позволяет легко извлекать, преобразовывать и загружать данные (ETL). После преобразования и загрузки данных в хранилище их можно использовать для обучения моделей машинного обучения.
 
 Простое преобразование данных можно обрабатывать с помощью собственных действий ADF и инструментов, таких как [поток данных](../data-factory/control-flow-execute-data-flow-activity.md). Когда речь идет о более сложных сценариях, данные могут обрабатываться с помощью пользовательского кода. Например, код Python или R.
 

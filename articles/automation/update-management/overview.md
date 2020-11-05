@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 10/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 36540de8924a1433f16f942d9aedc059efae05de
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 09bd82225fb7d8a6eefe84b5a70660e4553a3070
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348684"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360791"
 ---
 # <a name="update-management-overview"></a>Общие сведения о службе "Управление обновлениями"
 
@@ -18,6 +18,9 @@ ms.locfileid: "93348684"
 
 > [!NOTE]
 > Если на компьютере настроена функция "Управление обновлениями", вы не сможете использовать его для выполнения пользовательских скриптов из службы автоматизации Azure. На этом компьютере можно запустить только скрипт обновления, подписанный корпорацией Майкрософт.
+
+> [!NOTE]
+> В настоящее время включение Управление обновлениями непосредственно с сервера с поддержкой Arc не поддерживается. Сведения о требованиях и включении для сервера см. в статье [включение Управление обновлениями из учетной записи службы автоматизации](../../automation/update-management/enable-from-automation-account.md) .
 
 Чтобы автоматически скачать и установить доступные *критические* обновления и исправления *безопасности* на виртуальной машине Azure, ознакомьтесь с автоматическим [исправлением гостевой виртуальной машины](../../virtual-machines/windows/automatic-vm-guest-patching.md) для виртуальных машин Windows.
 

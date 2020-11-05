@@ -10,13 +10,13 @@ ms.author: copeters
 author: lostmygithubaccount
 ms.date: 06/25/2020
 ms.topic: conceptual
-ms.custom: how-to
-ms.openlocfilehash: 8ee2280aba99606d9e31a0e565a67cd6202df3c2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: how-to, data4ml
+ms.openlocfilehash: 04882c71a2d80e01029dd0a8b476f21a658e632b
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93317018"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93359601"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Обнаружение смещения данных (Предварительная версия) в наборах
 
@@ -38,7 +38,7 @@ ms.locfileid: "93317018"
 
 Метрики смещения данных можно просмотреть с помощью пакета SDK для Python или в Машинное обучение Azure Studio.  Другие метрики и аналитические сведения доступны в ресурсе [Azure Application Insights](../azure-monitor/app/app-insights-overview.md) , связанном с рабочей областью машинное обучение Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для создания мониторов набора данных и работы с ними требуются:
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.

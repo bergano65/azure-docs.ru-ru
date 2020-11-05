@@ -4,12 +4,12 @@ description: Узнайте, как масштабировать ресурсы 
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: e0c9770e2065002a4e2acc1198ed096dc588f8e5
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: d37a33ea575bbb8481d7d50dad8eab0f9ce0899d
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342221"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93361208"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Начало работы с автомасштабированием в Azure
 В этой статье описывается, как настроить автомасштабирование для ресурса на портале Microsoft Azure.
@@ -141,7 +141,21 @@ Azure Monitor дает возможность обнаружить все рес
 
 После предоставления пути к проверке работоспособности приложения можно отслеживать работоспособность сайта с помощью Azure Monitor. В колонке **Проверка работоспособности** на портале щелкните **метрики** на верхней панели инструментов. Откроется новая колонка, в которой можно просмотреть историю состояния работоспособности сайта и создать новое правило генерации оповещений. Дополнительные сведения о мониторинге сайтов см. [в разделе Azure Monitor](../../app-service/web-sites-monitor.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="moving-autoscale-to-a-different-region"></a>Перемещение автомасштабирования в другой регион
+В этом разделе описывается, как переместить Автомасштабирование Azure в другой регион в той же подписке и группе ресурсов. Для перемещения параметров автомасштабирования можно использовать REST API.
+### <a name="prerequisite"></a>Предварительное требование
+1. Убедитесь, что подписка и группа ресурсов доступны, а сведения в исходном и целевом регионах идентичны.
+1. Убедитесь, что Автомасштабирование Azure доступно в [регионе Azure, который вы хотите переместить](https://azure.microsoft.com/global-infrastructure/services/?products=monitor&regions=all).
+
+### <a name="move"></a>Переместить
+Используйте [REST API](https://docs.microsoft.com/rest/api/monitor/autoscalesettings/createorupdate) , чтобы создать параметр автомасштабирования в новой среде. Параметр автомасштабирования, созданный в целевом регионе, будет копией параметра автомасштабирования в исходном регионе.
+
+Не удается переместить [параметры диагностики](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) , созданные в связи с параметром автомасштабирования в исходном регионе. После завершения создания параметров автопродажи необходимо будет повторно создать параметры диагностики в целевом регионе. 
+
+### <a name="learn-more-about-moving-resources-across-azure-regions"></a>Дополнительные сведения о перемещении ресурсов в регионах Azure
+Дополнительные сведения о перемещении ресурсов между регионами и аварийным восстановлением в Azure см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources) .
+
+## <a name="next-steps"></a>Дальнейшие действия
 - [Создайте оповещение журнала действий, чтобы отслеживать все операции системы автомасштабирования в подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert).
 - [Создайте оповещение журнала действий, чтобы отслеживать все сбои автомасштабирования в подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-failed-alert).
 
