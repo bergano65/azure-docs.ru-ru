@@ -1,16 +1,16 @@
 ---
-title: Мониторинг приложений Java в любой среде — Azure Monitor Application Insights
-description: Мониторинг производительности приложений Java, выполняющихся в любой среде, без инструментирования приложения. Распределенная трассировка и схема приложения.
+title: Azure Monitor Application Insights Java
+description: Наблюдение за производительностью приложений Java, выполняющихся в любой среде, без необходимости изменения кода. Распределенная трассировка и схема приложения.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 1182813c0b79d43c2c264482629ad97f23683a49
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 07be6a4ff08700ee9407fbf39946b7c24abbc01a
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92215286"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93377043"
 ---
-# <a name="java-codeless-application-monitoring-azure-monitor-application-insights---public-preview"></a>Azure Monitor Мониторинг приложений Java с поддержкой кода Application Insights — общедоступная Предварительная версия
+# <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Application Insights Azure Monitor отслеживания приложений Java с некодированным кодом
 
 Использовать мониторинг приложений Java без написания кода очень просто: не нужно изменять код, а агент Java можно включить, лишь немного изменив конфигурацию.
 
@@ -26,15 +26,20 @@ ms.locfileid: "92215286"
 
 **1. Скачайте агент**
 
-Скачайте [аппликатионинсигхтс-ажент-3.0.0-превиев. 7. jar.](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.7/applicationinsights-agent-3.0.0-PREVIEW.7.jar)
+> [!WARNING]
+> **При обновлении с предварительной версии 3,0**
+>
+> Тщательно изучите все [Параметры конфигурации](./java-standalone-config.md) , так как структура JSON была полностью изменена, а не только само имя файла, что и все строчные буквы.
+
+Скачать [аппликатионинсигхтс-ажент-3.0.0. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0/applicationinsights-agent-3.0.0.jar)
 
 **2. Указание ВИРТУАЛЬНОЙ машины Java агенту**
 
-Добавить `-javaagent:path/to/applicationinsights-agent-3.0.0-PREVIEW.7.jar` в виртуальной машины Java argss вашего приложения
+Добавить `-javaagent:path/to/applicationinsights-agent-3.0.0.jar` в виртуальной машины Java argss вашего приложения
 
 Стандартные аргументы ВИРТУАЛЬНОЙ машины Java включают `-Xmx512m` и `-XX:+UseG1GC` . Итак, если вы узнаете, куда добавить эти данные, вы уже знакомы с их добавлением.
 
-Дополнительные сведения о настройке аргументов ВИРТУАЛЬНОЙ машины Java приложения см. в разделе [3,0 Preview: советы по обновлению аргументов виртуальной машины Java](./java-standalone-arguments.md).
+Дополнительные сведения о настройке аргументов ВИРТУАЛЬНОЙ машины Java приложения см. в статье [Советы по обновлению аргументов виртуальной машины Java](./java-standalone-arguments.md).
 
 **3. Наведите агент на ресурс Application Insights**
 
@@ -46,7 +51,7 @@ ms.locfileid: "92215286"
 APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=00000000-0000-0000-0000-000000000000
 ```
 
-Или создайте файл конфигурации с именем `ApplicationInsights.json` и поместите его в тот же каталог, что и `applicationinsights-agent-3.0.0-PREVIEW.7.jar` , со следующим содержимым:
+Или создайте файл конфигурации с именем `applicationinsights.json` и поместите его в тот же каталог, что и `applicationinsights-agent-3.0.0.jar` , со следующим содержимым:
 
 ```json
 {
@@ -70,19 +75,21 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=00000000-0000-0000-0000
 
 ## <a name="configuration-options"></a>Варианты настройки
 
-В `ApplicationInsights.json` файле можно дополнительно настроить:
+В `applicationinsights.json` файле можно дополнительно настроить:
 
 * Имя облачной роли
 * Экземпляр облачной роли
-* Запись журнала приложений
-* Метрики JMX
-* Micrometer
-* Пульс
 * Выборка
+* Метрики JMX
+* Пользовательские измерения
+* Обработчики данных телеметрии
+* Автоматическое собираемое ведение журнала
+* Автособираемые метрики Микрометер (включая метрики загрузчика пружины)
+* Пульс
 * Прокси-сервер HTTP
 * Самостоятельная диагностика
 
-Дополнительные сведения см. в статье [3,0 общедоступная Предварительная версия: параметры конфигурации](./java-standalone-config.md).
+Полные сведения см. в разделе [Параметры конфигурации](./java-standalone-config.md) .
 
 ## <a name="autocollected-requests-dependencies-logs-and-metrics"></a>Автособранные запросы, зависимости, журналы и метрики
 
@@ -226,9 +233,14 @@ telemetryClient.trackEvent("WinGame");
 
 ## <a name="upgrading-from-application-insights-java-sdk-2x"></a>Обновление с Application Insights пакета SDK для Java 2. x
 
-Если вы уже используете Application Insights Java SDK 2. x в своем приложении, нет необходимости удалять его. Агент Java 3,0 определит его, а затем запишет и сопоставьте любые пользовательские данные телеметрии, отправляемые через пакет SDK для Java 2. x, и подавление автосбора данных, выполненных пакетом SDK для Java 2. x, для предотвращения дублирования.
+Если вы уже используете Application Insights Java SDK 2. x в своем приложении, нет необходимости удалять его.
+Агент Java 3,0 определит его, а затем запишет и сопоставьте любые пользовательские данные телеметрии, отправляемые через пакет SDK для Java 2. x, и подавление автоматической сбора данных, выполненных пакетом SDK для Java 2. x, для предотвращения дублирования данных телеметрии.
 
 Если используется агент Application Insights 2. x, необходимо удалить `-javaagent:` аргумент виртуальной машины Java, указывающий на агент 2. x.
 
 > [!NOTE]
-> Примечание. пакет SDK для Java 2. x Telemetryinitializer и TelemetryProcessors не будет выполняться при использовании агента 3,0.
+> Пакет SDK для Java 2. x Telemetryinitializer и TelemetryProcessors не будет выполняться при использовании агента 3,0.
+> Многие из вариантов использования, которые ранее были необходимы, можно разрешить в 3,0, настроив [пользовательские измерения](./java-standalone-config.md#custom-dimensions) или настроив [обработчики данных телеметрии](./java-standalone-telemetry-processors.md).
+
+> [!NOTE]
+> 3,0 еще не поддерживает несколько ключей инструментирования в одном ВИРТУАЛЬНОЙ машины Java.

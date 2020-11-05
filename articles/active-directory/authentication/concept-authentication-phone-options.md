@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/05/2020
+ms.date: 11/04/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25161054a53377b9fbbb12621b95dff9c119fa17
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 45851015dd5a845497fb2d09bf1f9fffb9e35a06
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92165521"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93377757"
 ---
 # <a name="authentication-methods-in-azure-active-directory---phone-options"></a>Методы проверки подлинности в Azure Active Directory параметры телефона
 
@@ -23,7 +23,7 @@ ms.locfileid: "92165521"
 
 Пользователи также могут подтвердить свою личность, используя мобильный телефон или рабочий телефон в качестве вторичной формы проверки подлинности, используемой во время многофакторной идентификации Azure или самостоятельного сброса пароля (SSPR).
 
-Для правильной работы номер телефона необходимо указывать в формате *+код_страны номер_телефона*, например *+1 4251234567*.
+Для правильной работы номер телефона необходимо указывать в формате *+код_страны номер_телефона* , например *+1 4251234567*.
 
 > [!NOTE]
 > Между кодом страны/региона и номером телефона должен быть пробел.
@@ -49,8 +49,6 @@ ms.locfileid: "92165521"
 При проверке по телефонному звонку во время SSPR или многофакторной идентификации Azure автоматически выполняется голосовой вызов на номер телефона, зарегистрированный пользователем. Для завершения процедуры входа пользователь получает запрос на ввод PIN-кода и решетки (#) на клавиатуре.
 
 ## <a name="office-phone-verification"></a>Проверка по рабочему телефону
-
-Атрибут рабочего телефона контролируется администратором Azure AD и не может быть самостоятельно зарегистрирован пользователем.
 
 При проверке по телефонному звонку во время SSPR или многофакторной идентификации Azure автоматически выполняется голосовой вызов на номер телефона, зарегистрированный пользователем. Для завершения процедуры входа пользователь получает запрос на ввод PIN-кода и решетки (#) на клавиатуре.
 
@@ -81,7 +79,7 @@ ms.locfileid: "92165521"
 
 Узнать больше об основных понятиях многофакторной проверки подлинности можно в разделе [Принципы многофакторной идентификации Azure][concept-mfa].
 
-Дополнительные сведения о настройке методов проверки подлинности с помощью [Microsoft Graph REST API бета-версии](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta).
+Дополнительные сведения о настройке методов проверки подлинности с помощью [Microsoft Graph REST API бета-версии](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta&preserve-view=true).
 
 <!-- INTERNAL LINKS -->
 [tutorial-sspr]: tutorial-enable-sspr.md

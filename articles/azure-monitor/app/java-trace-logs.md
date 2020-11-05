@@ -4,14 +4,18 @@ description: Поиск данных трассировки Log4J или Logback
 ms.topic: conceptual
 ms.date: 05/18/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: fca5c9b1bde8429d829ab6113804602c8baa2ebe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d219f4fcfd22d25babd8c9f6564f8dcd11d3144
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87374275"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93377927"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Java в Application Insights
+
+> [!IMPORTANT]
+> Для мониторинга приложений Java рекомендуется использовать автоматическое инструментирование без изменения кода. Следуйте указаниям для [Application Insights агента Java 3,0](./java-in-process-agent.md).
+
 Если вы используете Logback или Log4J (версия 1.2 или 2.0) для трассировки, можно настроить автоматическую пересылку журналов в Application Insights, где вы сможете их изучить.
 
 > [!TIP]
@@ -127,7 +131,7 @@ ms.locfileid: "87374275"
 #### <a name="otherwise-"></a>В противном случае...
 Следуйте указаниям, чтобы вручную установить пакет SDK Application Insights для Java, скачайте JAR-файл (после перехода на страницу центра Maven щелкните ссылку JAR в разделе загрузок) для соответствующего аппендера и добавьте скачанный JAR-файл аппендера в проект.
 
-| Средство ведения журнала | Скачивание | Библиотека |
+| Средство ведения журнала | Скачать | Библиотека |
 | --- | --- | --- |
 | Logback |[JAR-файл аппендера Logback](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-logback%22) |applicationinsights-logging-logback |
 | Log4J версии 2.0 |[JAR-файл аппендера Log4J версии 2](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-log4j2%22) |applicationinsights-logging-log4j2 |
@@ -189,7 +193,7 @@ ms.locfileid: "87374275"
 
 ![На портале Application Insights откройте колонку "Поиск".](./media/java-trace-logs/01-diagnostics.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Поиск по журналу диагностики][diagnostic]
 
 <!--Link references-->

@@ -6,19 +6,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: roles
 ms.topic: article
-ms.date: 07/27/2020
+ms.date: 11/05/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23243de192683a4811eb569b17425701381c4cd1
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 74ad503374e0148e9813508b6c7f8b21e2dca7a3
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92377578"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93379168"
 ---
 # <a name="assign-a-role-to-a-group-using-privileged-identity-management"></a>Назначение роли группе с помощью управление привилегированными пользователями
 
@@ -31,7 +31,7 @@ ms.locfileid: "92377578"
 
 1. Войдите в систему [Azure AD privileged Identity Management](https://ms.portal.azure.com/?Microsoft_AAD_IAM_GroupRoles=true&Microsoft_AAD_IAM_userRolesV2=true&Microsoft_AAD_IAM_enablePimIntegration=true#blade/Microsoft_Azure_PIMCommon/CommonMenuBlade/quickStart) как администратор привилегированных ролей или глобальный администратор в Организации.
 
-1. Выбор **Управление привилегированными пользователями**роли  >  **Azure AD**  >  **Roles**  >  **Добавление назначений**
+1. Выбор **Управление привилегированными пользователями** роли  >  **Azure AD**  >  **Roles**  >  **Добавление назначений**
 
 1. Выберите роль, а затем выберите группу. Отображаются только группы, доступные для назначения ролей (группы, назначаемые ролью), а не все группы.
 
@@ -41,7 +41,7 @@ ms.locfileid: "92377578"
 
     ![Выбор участника, которому назначается роль](./media/groups-pim-eligible/set-assignment-settings.png)
 
-## <a name="using-powershell"></a>Использование PowerShell
+## <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 ### <a name="download-the-azure-ad-preview-powershell-module"></a>Скачайте модуль PowerShell для предварительной версии Azure AD
 

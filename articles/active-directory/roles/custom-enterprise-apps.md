@@ -6,19 +6,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: roles
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 11/04/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99d83005599c59f6a4249014139b594764df8acf
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 0932e4b6163264b0b514958e1e898b297e249870
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92376315"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93378556"
 ---
 # <a name="assign-custom-roles-to-manage-enterprise-apps-in-azure-active-directory"></a>Назначение пользовательских ролей для управления корпоративными приложениями в Azure Active Directory
 
@@ -46,7 +46,7 @@ ms.locfileid: "92376315"
 > Пользовательские роли создаются и управляются на уровне всей Организации и доступны только на странице обзора Организации.
 
 1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с правами администратора привилегированных ролей или глобального администратора в вашей организации.
-1. Последовательно выберите **Azure Active Directory**, **Роли и администраторы** и **Новая пользовательская роль**.
+1. Последовательно выберите **Azure Active Directory** , **Роли и администраторы** и **Новая пользовательская роль**.
 
     ![Добавление новой настраиваемой роли из списка ролей в Azure AD](./media/custom-enterprise-apps/new-custom-role.png)
 
@@ -65,12 +65,12 @@ ms.locfileid: "92376315"
 ### <a name="assign-the-role-to-a-user-using-the-azure-ad-portal"></a>Назначение роли пользователю с помощью портала Azure AD
 
 1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) , используя разрешения роли администратора привилегированных ролей.
-1. Выберите **Azure Active Directory**, а затем — **Роли и администраторы**.
+1. Выберите **Azure Active Directory** , а затем — **Роли и администраторы**.
 1. Выберите **разрешения предоставление разрешений для управления ролью назначения пользователей и групп** .
 
     ![Открытие ролей и администраторов и поиск настраиваемой роли](./media/custom-enterprise-apps/select-custom-role.png)
 
-1. Выберите **добавить назначение**, выберите нужного пользователя и нажмите кнопку **выбрать** , чтобы добавить назначение ролей пользователю.
+1. Выберите **добавить назначение** , выберите нужного пользователя и нажмите кнопку **выбрать** , чтобы добавить назначение ролей пользователю.
 
     ![Добавление назначения пользовательской роли пользователю](./media/custom-enterprise-apps/assign-user-to-role.png)
 

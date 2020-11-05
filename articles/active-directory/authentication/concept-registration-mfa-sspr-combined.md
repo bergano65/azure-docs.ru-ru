@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/14/2020
+ms.date: 11/04/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79a5d306643fa9597b30f6941c420c403695c22e
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 7e1036e63b4fdef241350786fa3a246946a9223c
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424580"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93378012"
 ---
 # <a name="combined-security-information-registration-for-azure-active-directory-overview"></a>Общие сведения о общей регистрации безопасности для Azure Active Directory
 
@@ -56,9 +56,9 @@ ms.locfileid: "92424580"
 | Microsoft Authenticator | Да (максимум 5) | Нет | Да |
 | Другое приложение для проверки подлинности | Да (максимум 5) | Нет | Да |
 | Аппаратный токен | Нет | Нет | Да |
-| Номер телефона | Да | Да | Да |
+| Телефон | Да | Да | Да |
 | Дополнительный телефон | Да | Да | Да |
-| Рабочий телефон | Нет | Нет | Нет |
+| Рабочий телефон | Да | Да | Да |
 | Адрес электронной почты | Да | Да | Да |
 | Контрольные вопросы | Да | Нет | Да |
 | Пароли приложений | Да | Нет | Да |
@@ -140,7 +140,7 @@ ms.locfileid: "92424580"
 
 Пользователь, который ранее настроил по крайней мере один метод, который можно использовать для многофакторной проверки подлинности, переходит к [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) . Пользователь изменяет текущий метод по умолчанию на другой метод по умолчанию. По завершении пользователь увидит новый метод по умолчанию на странице сведений о безопасности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к работе, ознакомьтесь с учебниками, чтобы [включить самостоятельный сброс пароля](tutorial-enable-sspr.md) и [включить многофакторную идентификацию Azure](tutorial-enable-azure-mfa.md).
 

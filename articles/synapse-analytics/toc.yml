@@ -529,6 +529,8 @@
       items:
         - name: Загрузка данных в пулы SQL с помощью действия копирования
           href: quickstart-copy-activity-load-sql-pool.md
+        - name: Преобразование данных с помощью потоков данных для сопоставления
+          href: quickstart-data-flow.md
     - name: Основные понятия
       items:
         - name: Конвейер и действие

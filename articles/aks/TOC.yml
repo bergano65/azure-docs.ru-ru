@@ -154,6 +154,8 @@
           href: cluster-container-registry-integration.md
         - name: Создание виртуальных узлов
           items:
+            - name: Использование виртуальных узлов
+              href: virtual-nodes.md
             - name: Использование Azure CLI
               href: virtual-nodes-cli.md
             - name: Использование портала Azure

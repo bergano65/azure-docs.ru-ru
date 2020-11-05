@@ -223,7 +223,8 @@
         - name: Настройка Azure Defender для SQL на виртуальных машинах Azure
           href: defender-for-sql-usage.md
           displayName: 'hybrid, arc'
-        - name: Настройка политики защиты информации
+        - name: Настройка политики защиты информации SQL
+          displayName: 'sql, database, data discovery'
           href: security-center-info-protection-policy.md
     - name: Использование Azure Defender для реестров контейнеров
       items:

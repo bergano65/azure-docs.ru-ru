@@ -6,17 +6,20 @@ author: lgayhardt
 ms.custom: devx-track-java
 ms.author: lagayhar
 ms.date: 11/01/2018
-ms.openlocfilehash: 16f4cfd70cf4dbeaeb1376368787b3fa0e4b9a52
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 434d978f6a228bad9b142738767500d639017032
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91994029"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93378879"
 ---
 # <a name="how-to-use-micrometer-with-azure-application-insights-java-sdk"></a>Как использовать Micrometer с пакетом SDK Azure Application Insights для Java
 
+> [!IMPORTANT]
+> Для мониторинга приложений Java рекомендуется использовать автоматическое инструментирование без изменения кода. Следуйте указаниям для [Application Insights агента Java 3,0](./java-in-process-agent.md).
+
 > [!NOTE]
-> Application Insights пакет SDK для Java не поддерживает пружинные Вебфлукс. 
+> Application Insights пакет SDK для Java не поддерживает пружинный Вебфлукс-использование [Application Insights агента Java 3,0](./java-in-process-agent.md) . 
 >
 > Вебфлукс и Микрометер поддерживаются в [Application Insights агенте Java 3,0](./java-on-premises.md) , не требующем инструментирования. 
 
@@ -275,7 +278,7 @@ ms.locfileid: "91994029"
     New GuavaCacheMetrics().bind(registry);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о Микрометер см. в официальной [документации микрометер](https://micrometer.io/docs).
 * Дополнительные сведения о пружины в Azure см. в официальной [пружине в документации по Azure](/java/azure/spring-framework/?view=azure-java-stable).

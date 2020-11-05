@@ -13,7 +13,7 @@
       href: quickstart-powershell.md
 - name: Учебники
   items:
-    - name: Создание и подписывание политики аттестации
+    - name: Создание политики аттестации
       href: author-sign-policy.md
     - name: Примеры кода для аттестации SGX
       href: /samples/browse/?expanded=azure&terms=attestation
@@ -47,5 +47,7 @@
       href: 'https://www.nuget.org/packages/Microsoft.Azure.DCAP/'
     - name: Библиотека Azure DCAP для Linux
       href: 'https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/a/az-dcap-client/'
+    - name: Устранение неполадок
+      href: troubleshoot-guide.md
     - name: Протокол аттестации VBS
       href: virtualization-based-security-protocol.md

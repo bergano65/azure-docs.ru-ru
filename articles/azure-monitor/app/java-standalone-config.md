@@ -1,47 +1,50 @@
 ---
-title: Мониторинг приложений Java в любом месте Azure Monitor Application Insights
-description: Наблюдение за производительностью приложений Java, работающих в любой среде, без инструментирования приложения. Найдите основную причину проблем d с помощью распределенной трассировки и схемы приложения.
+title: Параметры конфигурации — Azure Monitor Application Insights Java
+description: Параметры конфигурации для Azure Monitor Application Insights Java
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 36f2add41457d1d82b0efd6c6804496018c85225
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 710347061f072fe66987d88852045986c00812c8
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92215269"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93377689"
 ---
-# <a name="configuration-options---java-standalone-agent-for-azure-monitor-application-insights"></a>Параметры конфигурации — автономный агент Java для Azure Monitor Application Insights
+# <a name="configuration-options-for-azure-monitor-application-insights-java"></a>Параметры конфигурации для Azure Monitor Application Insights Java
 
-
+> [!WARNING]
+> **При обновлении с предварительной версии 3,0**
+>
+> Внимательно изучите все приведенные ниже параметры конфигурации, так как структура JSON полностью изменена, а также само имя файла, которое было в нижнем регистре.
 
 ## <a name="connection-string-and-role-name"></a>Строка подключения и имя роли
 
+Строка подключения и имя роли — это наиболее распространенные параметры, необходимые для начала работы.
+
 ```json
 {
-  "instrumentationSettings": {
-    "connectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000",
-    "preview": {
-      "roleName": "my cloud role name"
-    }
+  "connectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000",
+  "role": {
+    "name": "my cloud role name"
   }
 }
 ```
 
 Строка подключения является обязательной, и имя роли важно каждый раз при отправке данных из разных приложений в один и тот же ресурс Application Insights.
 
-Дополнительные сведения и дополнительные параметры конфигурации можно найти ниже.
+Дополнительные сведения и дополнительные параметры конфигурации см. ниже.
 
 ## <a name="configuration-file-path"></a>Путь к файлу конфигурации
 
-По умолчанию Application Insights Java 3,0 Preview ждет, что файл конфигурации имеет имя `ApplicationInsights.json` и находится в том же каталоге, что и `applicationinsights-agent-3.0.0-PREVIEW.5.jar` .
+По умолчанию Application Insights Java 3,0 ждет, что файл конфигурации будет называться `applicationinsights.json` и находиться в том же каталоге, что и `applicationinsights-agent-3.0.0.jar` .
 
 Можно указать собственный путь к файлу конфигурации, используя либо
 
 * `APPLICATIONINSIGHTS_CONFIGURATION_FILE` переменная среды или
-* `applicationinsights.configurationFile` Системное свойство Java
+* `applicationinsights.configuration.file` Системное свойство Java
 
-Если указан относительный путь, он будет разрешаться относительно каталога, в котором находится `applicationinsights-agent-3.0.0-PREVIEW.5.jar` .
+Если указан относительный путь, он будет разрешаться относительно каталога, в котором находится `applicationinsights-agent-3.0.0.jar` .
 
 ## <a name="connection-string"></a>Строка подключения
 
@@ -52,9 +55,7 @@ ms.locfileid: "92215269"
 
 ```json
 {
-  "instrumentationSettings": {
-    "connectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000"
-  }
+  "connectionString": "InstrumentationKey=00000000-0000-0000-0000-000000000000"
 }
 ```
 
@@ -70,10 +71,8 @@ ms.locfileid: "92215269"
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {   
-      "roleName": "my cloud role name"
-    }
+  "role": {   
+    "name": "my cloud role name"
   }
 }
 ```
@@ -90,43 +89,118 @@ ms.locfileid: "92215269"
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "roleInstance": "my cloud role instance"
-    }
+  "role": {
+    "name": "my cloud role name",
+    "instance": "my cloud role instance"
   }
 }
 ```
 
 Вы также можете задать экземпляр роли облака с помощью переменной среды `APPLICATIONINSIGHTS_ROLE_INSTANCE` .
 
-## <a name="application-log-capture"></a>Запись журнала приложений
+## <a name="sampling"></a>Выборка
 
-Application Insights Предварительная версия Java 3,0 автоматически захватывает ведение журнала приложений с помощью log4j, Logback и Java. util. Logging.
+Выборка полезна, если необходимо снизить затраты.
+Выборка выполняется в качестве функции для идентификатора операции (также известного как идентификатор трассировки), поэтому один и тот же идентификатор операции всегда будет принимать одно и то же решение выборки. Это гарантирует, что вы не будете получать части распределенной транзакции, выборке в, в то время как другие ее части.
 
-По умолчанию он собирает все записи журнала, выполненные на `INFO` уровне или выше.
+Например, если выбрать для выборки значение 10%, будут отображены только 10% транзакций, но каждый из этих 10% будет иметь полные сведения о транзакциях.
 
-Если вы хотите изменить это пороговое значение:
+Ниже приведен пример того, как задать выборку для записи приблизительно **1/3 из всех транзакций** . Убедитесь, что задана частота выборки, правильная для вашего варианта использования:
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "instrumentation": {
-        "logging": {
-          "threshold": "WARN"
-        }
-      }
+  "sampling": {
+    "percentage": 33.333
+  }
+}
+```
+
+Можно также задать процент выборки с помощью переменной среды `APPLICATIONINSIGHTS_SAMPLING_PERCENTAGE` .
+
+> [!NOTE]
+> В качестве процента выборки выберите значение в процентах, близкое к 100/N, где N — это целое число. В настоящее время выборка не поддерживает другие значения.
+
+## <a name="jmx-metrics"></a>Метрики JMX
+
+Если вы хотите получить дополнительные метрики JMX:
+
+```json
+{
+  "jmxMetrics": [
+    {
+      "name": "JVM uptime (millis)",
+      "objectName": "java.lang:type=Runtime",
+      "attribute": "Uptime"
+    },
+    {
+      "name": "MetaSpace Used",
+      "objectName": "java.lang:type=MemoryPool,name=Metaspace",
+      "attribute": "Usage.used"
+    }
+  ]
+}
+```
+
+`name` имя метрики, которое будет назначено этой метрике JMX (может быть любым).
+
+`objectName` — [имя объекта](https://docs.oracle.com/javase/8/docs/api/javax/management/ObjectName.html) MBean-компонента JMX, который требуется получить.
+
+`attribute` имя атрибута внутри MBean-компонента JMX, который требуется получить.
+
+Поддерживаются числовые и логические значения метрик JMX. Метрики логического JMX сопоставлены с `0` false, а `1` значение true.
+
+[//]: # "Примечание. не Задокументируйте APPLICATIONINSIGHTS_JMX_METRICS здесь"
+[//]: # "JSON, внедренный в env, является запутанным, и его следует задокументировать только для сценария подключения с некодированным кодом"
+
+## <a name="custom-dimensions"></a>Пользовательские измерения
+
+Если вы хотите добавить пользовательские измерения ко всем данным телеметрии:
+
+```json
+{
+  "customDimensions": {
+    "mytag": "my value",
+    "anothertag": "${ANOTHER_VALUE}"
+  }
+}
+```
+
+`${...}` может использоваться для считывания значения из указанной переменной среды при запуске.
+
+## <a name="telemetry-processors-preview"></a>Обработчики данных телеметрии (Предварительная версия)
+
+Это ознакомительная версия функции.
+
+Он позволяет настроить правила, которые будут применяться к телеметрии запросов, зависимостей и трассировки, например
+ * Маскирование конфиденциальных данных
+ * Условно добавить пользовательские измерения
+ * Обновление имени телеметрии, используемого для агрегирования и вывода
+
+Дополнительные сведения см. в документации по [обработчику данных телеметрии](./java-standalone-telemetry-processors.md) .
+
+## <a name="auto-collected-logging"></a>Автоматическое собираемое ведение журнала
+
+Log4j, Logback и Java. util. Logging устанавливаются в автоматическом инструментировании. ведение журнала выполняется с помощью этих платформ ведения журналов.
+
+По умолчанию ведение журнала выполняется только в том случае, если ведение журнала выполняется на `INFO` уровне или выше.
+
+Если вы хотите изменить этот уровень коллекции, сделайте следующее:
+
+```json
+{
+  "instrumentation": {
+    "logging": {
+      "level": "WARN"
     }
   }
 }
 ```
 
-Можно также задать пороговое значение ведения журнала с помощью переменной среды `APPLICATIONINSIGHTS_LOGGING_THRESHOLD` .
+Можно также задать пороговое значение с помощью переменной среды `APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL` .
 
-Это допустимые `threshold` значения, которые можно указать в `ApplicationInsights.json` файле и их соответствие уровням ведения журнала в разных платформах ведения журналов.
+Это допустимые `level` значения, которые можно указать в `applicationinsights.json` файле и их соответствие уровням ведения журнала в разных платформах ведения журналов.
 
-| пороговое значение   | Log4j  | Logback | ИЮЛ     |
+| уровень             | Log4j  | Logback | ИЮЛ     |
 |-------------------|--------|---------|---------|
 | OFF               | OFF    | OFF     | OFF     |
 | АВАРИЙ             | АВАРИЙ  | ОШИБКА   | SEVERE  |
@@ -139,53 +213,19 @@ Application Insights Предварительная версия Java 3,0 авт
 | TRACE (или FINEST) | TRACE  | TRACE   | FINEST  |
 | ALL               | ALL    | ALL     | ALL     |
 
-## <a name="jmx-metrics"></a>Метрики JMX
+## <a name="auto-collected-micrometer-metrics-including-spring-boot-actuator-metrics"></a>Автособираемые метрики Микрометер (включая метрики загрузчика пружины)
 
-Если у вас есть некоторые JMX метрики, которые вы заинтересованы в захвате:
+Если приложение использует [микрометер](https://micrometer.io), то метрики, отправляемые в глобальный реестр микрометер, будут собираться в автоматическом виде.
 
-```json
-{
-  "instrumentationSettings": {
-    "preview": {
-      "jmxMetrics": [
-        {
-          "objectName": "java.lang:type=Runtime",
-          "attribute": "Uptime",
-          "display": "JVM uptime (millis)"
-        },
-        {
-          "objectName": "java.lang:type=MemoryPool,name=Metaspace",
-          "attribute": "Usage.used",
-          "display": "MetaSpace Used"
-        }
-      ]
-    }
-  }
-}
-```
+Кроме того, если приложение использует [пружинный выключатель загрузки](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html), то метрики, настроенные с помощью пружинного выключателя, также будут собираться в автоматическом виде.
 
-Поддерживаются числовые и логические значения метрик JMX. Метрики логического JMX сопоставлены с `0` false, а `1` значение true.
-
-[//]: # "Примечание. не Задокументируйте APPLICATIONINSIGHTS_JMX_METRICS здесь"
-[//]: # "JSON, внедренный в env, является запутанным, и его следует задокументировать только для сценария подключения с некодированным кодом"
-
-## <a name="micrometer-including-metrics-from-spring-boot-actuator"></a>Микрометер (включая метрики с пружинного загрузочного выключателя)
-
-Если приложение использует [микрометер](https://micrometer.io), Application Insights 3,0 (начиная с предварительной версии. 2) теперь собирает метрики, отправленные в глобальный реестр микрометер.
-
-Если приложение использует [пружинный выключатель загрузки](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html), то Application Insights 3,0 (начиная с предварительной версии. 4) теперь захватывает метрики, настроенные с помощью программы-загрузчика пружины (которая использует микрометер, но не использует глобальный реестр микрометер).
-
-Если вы хотите отключить эти функции, выполните следующие действия.
+Чтобы отключить автоматическую коллекцию метрик Микрометер (включая метрики выключателя пружины), выполните следующие действия.
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "instrumentation": {
-        "micrometer": {
-          "enabled": false
-        }
-      }
+  "instrumentation": {
+    "micrometer": {
+      "enabled": false
     }
   }
 }
@@ -193,16 +233,12 @@ Application Insights Предварительная версия Java 3,0 авт
 
 ## <a name="heartbeat"></a>Пульс
 
-По умолчанию Application Insights Предварительная версия Java 3,0 отправляет метрику пульса каждые 15 минут. Если вы используете метрику пульса для активации оповещений, можно увеличить частоту этого пульса:
+По умолчанию Application Insights Java 3,0 отправляет метрику пульса каждые 15 минут. Если вы используете метрику пульса для активации оповещений, можно увеличить частоту этого пульса:
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "heartbeat": {
-        "intervalSeconds": 60
-      }
-    }
+  "heartbeat": {
+    "intervalSeconds": 60
   }
 }
 ```
@@ -210,86 +246,63 @@ Application Insights Предварительная версия Java 3,0 авт
 > [!NOTE]
 > Вы не можете уменьшить частоту этого пульса, так как данные пульса также используются для мониторинга Application Insights использования.
 
-## <a name="sampling"></a>Выборка
-
-Выборка полезна, если необходимо снизить затраты.
-Выборка выполняется в качестве функции для идентификатора операции (также известного как идентификатор трассировки), поэтому один и тот же идентификатор операции всегда будет принимать одно и то же решение выборки. Это гарантирует, что вы не будете получать части распределенной транзакции, выборке в, в то время как другие ее части.
-
-Например, если выбрать для выборки значение 10%, будут отображены только 10% транзакций, но каждый из этих 10% будет иметь полные сведения о транзакциях.
-
-Ниже приведен пример того, как задать для выборки **10% всех транзакций** . Убедитесь, что для варианта использования задана правильная частота выборки:
-
-```json
-{
-  "instrumentationSettings": {
-    "preview": {
-      "sampling": {
-        "fixedRate": {
-          "percentage": 10
-        }
-      }
-    }
-  }
-}
-```
-
-Можно также задать процент выборки с помощью переменной среды `APPLICATIONINSIGHTS_SAMPLING_PERCENTAGE` .
-
 ## <a name="http-proxy"></a>Прокси-сервер HTTP
 
-Если приложение находится за брандмауэром и не может напрямую подключаться к Application Insights (см. [IP-адреса, используемые Application Insights](./ip-addresses.md)), можно настроить Application Insights Java 3,0 Preview для использования прокси-сервера http:
+Если приложение находится за брандмауэром и не может напрямую подключаться к Application Insights (см. [IP-адреса, используемые Application Insights](./ip-addresses.md)), можно настроить Application Insights Java 3,0 для использования прокси-сервера http:
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "httpProxy": {
-        "host": "myproxy",
-        "port": 8080
-      }
-    }
+  "proxy": {
+    "host": "myproxy",
+    "port": 8080
   }
 }
 ```
+
+[//]: # "Обратите внимание, что не следует объявлять поддержку Опентелеметри до тех пор, пока мы не поддерживаем 0.10.0, который содержит существенные критические изменения"
+
+[//]: # "Поддержка # # для предварительных выпусков API Опентелеметри в 1,0"
+
+[//]: # "Поддержка предварительно 1,0 версий API Опентелеметри является явной, так как API Опентелеметри еще не является стабильным."
+[//]: # "и поэтому каждая версия агента поддерживает только определенные версии API Опентелеметри, предшествующие 1,0."
+[//]: # "(это ограничение не будет применяться после выпуска API Опентелеметри 1,0)."
+
+[//]: # "JSON"
+[//]: # "{"
+[//]: # "  \"Предварительный просмотр \" : {"
+[//]: # "    \"Опентелеметряписуппорт \" : true"
+[//]: # "  }"
+[//]: # "}"
+[//]: # "```"
 
 ## <a name="self-diagnostics"></a>Самостоятельная диагностика
 
-"Самодиагностика" относится к внутреннему журналу Application Insights предварительной версии Java 3,0.
+"Самодиагностика" относится к внутреннему журналу Application Insights Java 3,0.
 
 Это может быть полезно для обнаружения и диагностики проблем с Application Insights.
 
-По умолчанию он записывается в консоль с уровнем `warn` , соответствующим этой конфигурации:
+По умолчанию Application Insights Java 3,0 записывает в журнал на уровне `INFO` как для файла `applicationinsights.log` , так и для консоли, соответствующей этой конфигурации:
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "selfDiagnostics": {
-        "destination": "console",
-        "level": "WARN"
-      }
+  "selfDiagnostics": {
+    "destination": "file+console",
+    "level": "INFO",
+    "file": {
+      "path": "applicationinsights.log",
+      "maxSizeMb": 5,
+      "maxHistory": 1
     }
   }
 }
 ```
 
-Допустимые уровни: `OFF` , `ERROR` ,,, `WARN` `INFO` `DEBUG` и `TRACE` .
+`destination` может быть одним из `file` , `console` или `file+console` .
 
-Если вы хотите записать в файл вместо ведения журнала в консоли, выполните следующие действия.
+`level` может быть одним из `OFF` , `ERROR` , `WARN` , `INFO` , `DEBUG` или `TRACE` .
 
-```json
-{
-  "instrumentationSettings": {
-    "preview": {
-      "selfDiagnostics": {
-        "destination": "file",
-        "directory": "/var/log/applicationinsights",
-        "level": "WARN",
-        "maxSizeMB": 10
-      }
-    }
-  }
-}
-```
+`path` может быть абсолютным или относительным путем. Относительные пути разрешаются в каталоге, где находится `applicationinsights-agent-3.0.0.jar` .
 
-При использовании ведения журнала файлов после того, как файл будет найден, `maxSizeMB` он переключается, оставляя только последний завершенный файл журнала в дополнение к текущему файлу журнала.
+`maxSizeMb` максимальный размер файла журнала до его перебора.
+
+`maxHistory` число файлов журнала, которые были включены в сохраняемые файлы журналов (помимо текущего файла журнала).

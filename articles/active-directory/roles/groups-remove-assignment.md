@@ -6,19 +6,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: roles
 ms.topic: article
-ms.date: 07/27/2020
+ms.date: 11/05/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c7f441930d9d99f35c2e53bb040b0db0a427659
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d58465c56be310d3f9d500ab551c7d2b19ffaa83
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92377571"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93378386"
 ---
 # <a name="remove-role-assignments-from-a-group-in-azure-active-directory"></a>Удаление назначений ролей из группы в Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "92377571"
 
 1. Войдите в [центр администрирования Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
 
-1. Выберите **роли и администраторы** > **_имя роли_*_.
+1. Выберите **роли и администраторы** > * *_имя роли_* _.
 
 1. Выберите группу, из которой необходимо удалить назначение ролей, и щелкните _ * удалить назначение * *.
 
@@ -36,7 +36,7 @@ ms.locfileid: "92377571"
 
 1. При появлении запроса на подтверждение действия выберите **Да**.
 
-## <a name="using-powershell"></a>Использование PowerShell
+## <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 ### <a name="create-a-group-that-can-be-assigned-to-role"></a>Создание группы, которой можно назначить роль
 

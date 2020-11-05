@@ -6,24 +6,24 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 10/30/2020
 ms.author: rahugup
-ms.openlocfilehash: 5541d5c3b9beea86f5c76747dd13ffeff1b12d97
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e1b34db7f2473e16d3ebde11376652f654f2f778
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93133734"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93377961"
 ---
 # <a name="scale-migration-of-vmware-vms"></a>Масштабирование миграции виртуальных машин VMware 
 
 Эта статья поможет вам понять, как использовать сценарии для переноса большого количества виртуальных машин VMware (ВМ) с помощью метода без агента. Чтобы масштабировать миграцию, используйте модуль PowerShell для службы " [Миграция Azure](https://aka.ms/azuremigratepowershellvmware)". 
 
-Скрипты автоматизации миграции VMware для Azure можно загрузить по адресу [Azure PowerShell Samples] https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/migrate-at-scale-vmware-agentles) в репозитории GitHub. Сценарии можно использовать для переноса виртуальных машин VMware в Azure с помощью метода миграции без агента. Команды PowerShell для службы "миграция Azure", используемые в этих сценариях, описаны [здесь](https://aka.ms/azuremigratepowershellvmware).
+Скрипты автоматизации миграции VMware для Azure можно скачать в репозитории [примеров Azure PowerShell](https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/migrate-at-scale-vmware-agentles) на сайте GitHub. Сценарии можно использовать для переноса виртуальных машин VMware в Azure с помощью метода миграции без агента. Команды PowerShell для службы "миграция Azure", используемые в этих сценариях, описаны [здесь](https://aka.ms/azuremigratepowershellvmware).
 
 ## <a name="current-limitations"></a>Текущие ограничения
 - Эти сценарии поддерживают перенос виртуальных машин VMware со всеми дисками. Вы можете обновить скрипты, если хотите выборочно реплицировать диски, подключенные к виртуальной машине VMware. 
 - Скрипты поддерживают использование рекомендаций по оценке. Если рекомендации по оценке не используются, то все диски, подключенные к виртуальной машине VMware, переносятся на один и тот же тип управляемого диска ("Стандартный" или "Премиум"). Вы можете обновить скрипты, если вы хотите использовать несколько типов управляемых дисков с одной и той же виртуальной машиной.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - [Выполнить задачи из учебника по обнаружению](tutorial-discover-vmware.md), чтобы подготовить Azure и VMware к миграции.
 - Мы рекомендуем изучить и второй учебник, чтобы [оценить виртуальные машины VMware](tutorial-assess-vmware.md) перед переносом в Azure.

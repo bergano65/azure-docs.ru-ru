@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.date: 05/05/2020
 ms.author: kaib
-ms.openlocfilehash: 5d803acc7f2287d0b88791d85fa876f89e4a0955
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 0d8a030061ef6aa848344152edaa3267ad916e2a
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332191"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93377944"
 ---
 # <a name="chroot-environment-in-a-linux-rescue-vm"></a>Среда чрут на виртуальной машине Linux
 
@@ -34,7 +34,7 @@ ms.locfileid: "92332191"
 
    1. Получите доступ к виртуальной машине от имени привилегированного пользователя с помощью следующей команды:
 
-      `#sudo su -`
+      `sudo su -`
 
    1. Найдите диск с помощью `dmesg` (метод, используемый для обнаружения нового диска, может отличаться). В следующем примере **дмесг** используется для фильтрации по дискам **SCSI** :
 
@@ -53,17 +53,17 @@ ms.locfileid: "92332191"
    1. Используйте следующие команды для доступа к среде чрут:
 
       ```
-      #mkdir /rescue
-      #mount /dev/sdc1 /rescue
-      #mount /dev/sdc15 /rescue/boot/efi
-      #cd /rescue
+      mkdir /rescue
+      mount /dev/sdc1 /rescue
+      mount /dev/sdc15 /rescue/boot/efi
+      cd /rescue
 
-      #mount -t proc proc proc
-      #mount -t sysfs sys sys/
-      #mount -o bind /dev dev/
-      #mount -o bind /dev/pts dev/pts/
-      #mount -o bind /run run/
-      #chroot /rescue
+      mount -t proc proc proc
+      mount -t sysfs sys sys/
+      mount -o bind /dev dev/
+      mount -o bind /dev/pts dev/pts/
+      mount -o bind /run run/
+      chroot /rescue
       ```
 
    1. Устранение неполадок среды чрут.
@@ -71,16 +71,16 @@ ms.locfileid: "92332191"
    1. Чтобы выйти из среды чрут, используйте следующие команды:
 
       ```
-      #exit
+      exit
 
-      #umount /rescue/proc/
-      #umount /rescue/sys/
-      #umount /rescue/dev/pts
-      #umount /rescue/dev/
-      #umount /rescue/run
-      #cd /
-      #umount /rescue/boot/efi
-      #umount /rescue
+      umount /rescue/proc/
+      umount /rescue/sys/
+      umount /rescue/dev/pts
+      umount /rescue/dev/
+      umount /rescue/run
+      cd /
+      umount /rescue/boot/efi
+      umount /rescue
       ```
 
       > [!NOTE]
@@ -101,7 +101,7 @@ ms.locfileid: "92332191"
 
    1. Получите доступ к виртуальной машине от имени привилегированного пользователя с помощью следующей команды:
 
-      `#sudo su -`
+      `sudo su -`
 
    1. Найдите диск с помощью `dmesg` (метод, используемый для обнаружения нового диска, может отличаться). В следующем примере **дмесг** используется для фильтрации по дискам **SCSI** :
 
@@ -120,17 +120,17 @@ ms.locfileid: "92332191"
    1. Используйте следующие команды для доступа к среде чрут:
 
       ```
-      #mkdir /rescue
-      #mount -o nouuid /dev/sdc2 /rescue
-      #mount -o nouuid /dev/sdc1 /rescue/boot/
-      #cd /rescue
+      mkdir /rescue
+      mount -o nouuid /dev/sdc2 /rescue
+      mount -o nouuid /dev/sdc1 /rescue/boot/
+      cd /rescue
 
-      #mount -t proc proc proc
-      #mount -t sysfs sys sys/
-      #mount -o bind /dev dev/
-      #mount -o bind /dev/pts dev/pts/
-      #mount -o bind /run run/
-      #chroot /rescue
+      mount -t proc proc proc
+      mount -t sysfs sys sys/
+      mount -o bind /dev dev/
+      mount -o bind /dev/pts dev/pts/
+      mount -o bind /run run/
+      chroot /rescue
       ```
 
    1. Устранение неполадок среды чрут.
@@ -138,16 +138,16 @@ ms.locfileid: "92332191"
    1. Чтобы выйти из среды чрут, используйте следующие команды:
 
       ```
-      #exit
+      exit
 
-      #umount /rescue/proc/
-      #umount /rescue/sys/
-      #umount /rescue/dev/pts
-      #umount /rescue/dev/
-      #umount /rescue/run
-      #cd /
-      #umount /rescue/boot/
-      #umount /rescue
+      umount /rescue/proc/
+      umount /rescue/sys/
+      umount /rescue/dev/pts
+      umount /rescue/dev/
+      umount /rescue/run
+      cd /
+      umount /rescue/boot/
+      umount /rescue
       ```
 
       > [!NOTE]
@@ -171,7 +171,7 @@ ms.locfileid: "92332191"
 
    1. Получите доступ к виртуальной машине от имени привилегированного пользователя с помощью следующей команды:
 
-      `#sudo su -`
+      `sudo su -`
 
    1. Найдите диск с помощью `dmesg` (метод, используемый для обнаружения нового диска, может отличаться). В следующем примере **дмесг** используется для фильтрации по дискам **SCSI** :
 
@@ -190,9 +190,9 @@ ms.locfileid: "92332191"
    1. Чтобы активировать группу логических томов, используйте следующую команду:
 
       ```
-      #vgscan --mknodes
-      #vgchange -ay
-      #lvscan
+      vgscan --mknodes
+      vgchange -ay
+      lvscan
       ```
 
    1. Используйте `lsblk` команду, чтобы получить имена LVM:
@@ -221,23 +221,23 @@ ms.locfileid: "92332191"
    1. Используйте следующие команды для доступа к среде чрут:
 
       ```
-      #mkdir /rescue
-      #mount /dev/mapper/rootvg-rootlv /rescue
-      #mount /dev/mapper/rootvg-varlv /rescue/var
-      #mount /dev/mapper/rootvg-homelv /rescue/home
-      #mount /dev/mapper/rootvg-usrlv /rescue/usr
-      #mount /dev/mapper/rootvg-tmplv /rescue/tmp
-      #mount /dev/mapper/rootvg-optlv /rescue/opt
-      #mount /dev/sdc2 /rescue/boot/
-      #mount /dev/sdc1 /rescue/boot/efi
-      #cd /rescue
+      mkdir /rescue
+      mount /dev/mapper/rootvg-rootlv /rescue
+      mount /dev/mapper/rootvg-varlv /rescue/var
+      mount /dev/mapper/rootvg-homelv /rescue/home
+      mount /dev/mapper/rootvg-usrlv /rescue/usr
+      mount /dev/mapper/rootvg-tmplv /rescue/tmp
+      mount /dev/mapper/rootvg-optlv /rescue/opt
+      mount /dev/sdc2 /rescue/boot/
+      mount /dev/sdc1 /rescue/boot/efi
+      cd /rescue
 
-      #mount -t proc proc proc
-      #mount -t sysfs sys sys/
-      #mount -o bind /dev dev/
-      #mount -o bind /dev/pts dev/pts/
-      #mount -o bind /run run/
-      #chroot /rescue
+      mount -t proc proc proc
+      mount -t sysfs sys sys/
+      mount -o bind /dev dev/
+      mount -o bind /dev/pts dev/pts/
+      mount -o bind /run run/
+      chroot /rescue
       ```
 
    1. Устранение неполадок среды чрут.
@@ -245,22 +245,22 @@ ms.locfileid: "92332191"
    1. Чтобы выйти из среды чрут, используйте следующие команды:
 
       ```
-      #exit
+      exit
 
-      #umount /rescue/proc/
-      #umount /rescue/sys/
-      #umount /rescue/dev/pts
-      #umount /rescue/dev/
-      #umount /rescue/run
-      #cd /
-      #umount /rescue/boot/efi
-      #umount /rescue/boot
-      #umount /rescue/home
-      #umount /rescue/var
-      #umount /rescue/usr
-      #umount /rescue/tmp
-      #umount /rescue/opt
-      #umount /rescue
+      umount /rescue/proc/
+      umount /rescue/sys/
+      umount /rescue/dev/pts
+      umount /rescue/dev/
+      umount /rescue/run
+      cd /
+      umount /rescue/boot/efi
+      umount /rescue/boot
+      umount /rescue/home
+      umount /rescue/var
+      umount /rescue/usr
+      umount /rescue/tmp
+      umount /rescue/opt
+      umount /rescue
       ```
 
       > [!NOTE]
@@ -284,7 +284,7 @@ ms.locfileid: "92332191"
 
    1. Получите доступ к виртуальной машине от имени привилегированного пользователя с помощью следующей команды:
 
-      `#sudo su -`
+      `sudo su -`
 
    1. Найдите диск с помощью `dmesg` (метод, используемый для обнаружения нового диска, может отличаться). В следующем примере **дмесг** используется для фильтрации по дискам **SCSI** :
 
@@ -303,9 +303,9 @@ ms.locfileid: "92332191"
    1. Чтобы активировать группу логических томов, используйте следующую команду:
 
       ```
-      #vgscan --mknodes
-      #vgchange -ay
-      #lvscan
+      vgscan --mknodes
+      vgchange -ay
+      lvscan
       ```
 
    1. Используйте `lsblk` команду, чтобы получить имена LVM:
@@ -333,22 +333,22 @@ ms.locfileid: "92332191"
    1. Используйте следующие команды для доступа к среде чрут:
 
       ```
-      #mkdir /rescue
-      #mount /dev/mapper/rootvg-rootlv /rescue
-      #mount /dev/mapper/rootvg-varlv /rescue/var
-      #mount /dev/mapper/rootvg-homelv /rescue/home
-      #mount /dev/mapper/rootvg-usrlv /rescue/usr
-      #mount /dev/mapper/rootvg-tmplv /rescue/tmp
-      #mount /dev/sdc1 /rescue/boot/
-      #mount /dev/sdc15 /rescue/boot/efi
-      #cd /rescue
+      mkdir /rescue
+      mount /dev/mapper/rootvg-rootlv /rescue
+      mount /dev/mapper/rootvg-varlv /rescue/var
+      mount /dev/mapper/rootvg-homelv /rescue/home
+      mount /dev/mapper/rootvg-usrlv /rescue/usr
+      mount /dev/mapper/rootvg-tmplv /rescue/tmp
+      mount /dev/sdc1 /rescue/boot/
+      mount /dev/sdc15 /rescue/boot/efi
+      cd /rescue
 
-      #mount -t proc proc proc
-      #mount -t sysfs sys sys/
-      #mount -o bind /dev dev/
-      #mount -o bind /dev/pts dev/pts/
-      #mount -o bind /run run/
-      #chroot /rescue
+      mount -t proc proc proc
+      mount -t sysfs sys sys/
+      mount -o bind /dev dev/
+      mount -o bind /dev/pts dev/pts/
+      mount -o bind /run run/
+      chroot /rescue
       ```
 
    1. Устранение неполадок среды чрут.
@@ -356,21 +356,21 @@ ms.locfileid: "92332191"
    1. Чтобы выйти из среды чрут, используйте следующие команды:
 
       ```
-      #exit
+      exit
 
-      #umount /rescue/proc/
-      #umount /rescue/sys/
-      #umount /rescue/dev/pts
-      #umount /rescue/dev/
-      #umount /rescue/run
-      #cd /
-      #umount /rescue/boot/efi
-      #umount /rescue/boot
-      #umount /rescue/home
-      #umount /rescue/var
-      #umount /rescue/usr
-      #umount /rescue/tmp
-      #umount /rescue
+      umount /rescue/proc/
+      umount /rescue/sys/
+      umount /rescue/dev/pts
+      umount /rescue/dev/
+      umount /rescue/run
+      cd /
+      umount /rescue/boot/efi
+      umount /rescue/boot
+      umount /rescue/home
+      umount /rescue/var
+      umount /rescue/usr
+      umount /rescue/tmp
+      umount /rescue
       ```
 
       > [!NOTE]
@@ -391,7 +391,7 @@ ms.locfileid: "92332191"
 
    1. Получите доступ к виртуальной машине от имени привилегированного пользователя с помощью следующей команды:
 
-      `#sudo su -`
+      `sudo su -`
 
    1. Найдите диск с помощью `dmesg` (метод, используемый для обнаружения нового диска, может отличаться). В следующем примере **дмесг** используется для фильтрации по дискам **SCSI** :
 
@@ -410,18 +410,18 @@ ms.locfileid: "92332191"
    1. Используйте следующие команды для доступа к среде чрут:
 
       ```
-      #mkdir /rescue
-      #mount -o nouuid /dev/sdc2 /rescue
-      #mount -o nouuid /dev/sdc1 /rescue/boot/
-      #mount /dev/sdc15 /rescue/boot/efi
-      #cd /rescue
+      mkdir /rescue
+      mount -o nouuid /dev/sdc2 /rescue
+      mount -o nouuid /dev/sdc1 /rescue/boot/
+      mount /dev/sdc15 /rescue/boot/efi
+      cd /rescue
 
-      #mount -t proc proc proc
-      #mount -t sysfs sys sys/
-      #mount -o bind /dev dev/
-      #mount -o bind /dev/pts dev/pts/
-      #mount -o bind /run run/
-      ##chroot /rescue
+      mount -t proc proc proc
+      mount -t sysfs sys sys/
+      mount -o bind /dev dev/
+      mount -o bind /dev/pts dev/pts/
+      mount -o bind /run run/
+      chroot /rescue
       ```
 
    1. Устранение неполадок среды чрут.
@@ -429,17 +429,17 @@ ms.locfileid: "92332191"
    1. Чтобы выйти из среды чрут, используйте следующие команды:
 
       ```
-      #exit
+      exit
 
-      #umount /rescue/proc/
-      #umount /rescue/sys/
-      #umount /rescue/dev/pts
-      #umount /rescue/dev/
-      #umount /rescue/run
-      #cd /
-      #umount /rescue/boot/efi
-      #umount /rescue/boot
-      #umount /rescue
+      umount /rescue/proc/
+      umount /rescue/sys/
+      umount /rescue/dev/pts
+      umount /rescue/dev/
+      umount /rescue/run
+      cd /
+      umount /rescue/boot/efi
+      umount /rescue/boot
+      umount /rescue
       ```
 
       > [!NOTE]
@@ -460,7 +460,7 @@ ms.locfileid: "92332191"
 
    1. Получите доступ к виртуальной машине от имени привилегированного пользователя с помощью следующей команды:
 
-      `#sudo su -`
+      `sudo su -`
 
    1. Найдите диск с помощью `dmesg` (метод, используемый для обнаружения нового диска, может отличаться). В следующем примере **дмесг** используется для фильтрации по дискам **SCSI** :
 
@@ -479,18 +479,18 @@ ms.locfileid: "92332191"
    1. Используйте следующие команды для доступа к среде чрут:
 
       ```
-      #mkdir /rescue
-      #mount -o nouuid /dev/sdc4 /rescue
-      #mount -o nouuid /dev/sdc3 /rescue/boot/
-      #mount /dev/sdc2 /rescue/boot/efi
-      #cd /rescue
+      mkdir /rescue
+      mount -o nouuid /dev/sdc4 /rescue
+      mount -o nouuid /dev/sdc3 /rescue/boot/
+      mount /dev/sdc2 /rescue/boot/efi
+      cd /rescue
 
-      #mount -t proc proc proc
-      #mount -t sysfs sys sys/
-      #mount -o bind /dev dev/
-      #mount -o bind /dev/pts dev/pts/
-      #mount -o bind /run run/
-      #chroot /rescue
+      mount -t proc proc proc
+      mount -t sysfs sys sys/
+      mount -o bind /dev dev/
+      mount -o bind /dev/pts dev/pts/
+      mount -o bind /run run/
+      chroot /rescue
       ```
 
    1. Устранение неполадок среды чрут.
@@ -498,17 +498,17 @@ ms.locfileid: "92332191"
    1. Чтобы выйти из среды чрут, используйте следующие команды:
 
       ```
-      #exit
+      exit
 
-      #umount /rescue/proc/
-      #umount /rescue/sys/
-      #umount /rescue/dev/pts
-      #umount /rescue/dev/
-      #umount /rescue/run
-      #cd /
-      #umount /rescue/boot/efi
-      #umount /rescue/boot
-      #umount /rescue
+      umount /rescue/proc/
+      umount /rescue/sys/
+      umount /rescue/dev/pts
+      umount /rescue/dev/
+      umount /rescue/run
+      cd /
+      umount /rescue/boot/efi
+      umount /rescue/boot
+      umount /rescue
       ```
 
       > [!NOTE]
@@ -519,6 +519,6 @@ ms.locfileid: "92332191"
 1. Отключите диск от виртуальной машины и выполните переключение диска с исходной виртуальной машины.
 1. Запустите исходную виртуальную машину и проверьте ее подключение.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Устранение неполадок SSH-подключения](troubleshoot-ssh-connection.md)

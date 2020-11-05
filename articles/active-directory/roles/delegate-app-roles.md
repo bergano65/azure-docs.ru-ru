@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: roles
 ms.topic: how-to
-ms.date: 11/08/2019
+ms.date: 11/04/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8139dca2896610b8a3a52f1446255bea0031dc11
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 9ad21e15d33dabba74d338b339e4b2fdc25df52e
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378278"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93379219"
 ---
 # <a name="delegate-app-registration-permissions-in-azure-active-directory"></a>Делегирование разрешений регистрации приложения в Azure Active Directory
 
@@ -89,8 +89,8 @@ ms.locfileid: "92378278"
 
 Создание пользовательских ролей и назначение пользовательских ролей — это отдельные шаги.
 
-- [Создайте пользовательское *Определение роли* ](custom-create.md) и [добавьте к нему разрешения из списка предустановок](custom-available-permissions.md). Это те же разрешения, которые используются во встроенных ролях.
-- [Создайте *назначение роли* ](custom-assign-powershell.md) , чтобы назначить настраиваемую роль.
+- [Создайте пользовательское *Определение роли*](custom-create.md) и [добавьте к нему разрешения из списка предустановок](custom-available-permissions.md). Это те же разрешения, которые используются во встроенных ролях.
+- [Создайте *назначение роли*](custom-assign-powershell.md) , чтобы назначить настраиваемую роль.
 
 Это разделение позволяет создать одно определение роли, а затем назначить его несколько раз в разных *областях*. Пользовательская роль может быть назначена в области всей организации или ее можно назначить в области, если один объект Azure AD. Примером области объекта является регистрация одного приложения. С помощью разных областей одно и то же определение роли можно назначить Светлана всем регистрациям приложений в Организации, а затем Навин только с регистрацией приложения отчетов о расходах contoso.
 

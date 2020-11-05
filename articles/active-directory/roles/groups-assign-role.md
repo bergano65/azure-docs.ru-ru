@@ -6,19 +6,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: roles
 ms.topic: article
-ms.date: 07/27/2020
+ms.date: 11/05/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28df0e420183239eae21aa18c807bb82b4ec7649
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: fb81b5dc98bf75a17e55abafdebfbeca68774a99
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92377676"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93379151"
 ---
 # <a name="assign-a-role-to-a-cloud-group-in-azure-active-directory"></a>Назначение роли для облачной группы в Azure Active Directory
 
@@ -30,9 +30,9 @@ ms.locfileid: "92377676"
 
 1. Войдите в [центр администрирования Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
 
-1. Выберите **Azure Active Directory**  >  **роли и администраторы**, а затем выберите роль, которую нужно назначить.
+1. Выберите **Azure Active Directory**  >  **роли и администраторы** , а затем выберите роль, которую нужно назначить.
 
-1. На странице ** _имя роли_*_ Выберите > _* добавить назначение**.
+1. На странице **_имя роли_*_ Выберите > _* добавить назначение**.
 
    ![Добавление нового назначения роли](./media/groups-assign-role/add-assignment.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "92377676"
 
 Дополнительные сведения о назначении разрешений роли пользователям см. в статье [назначение ролей администратора и пользователей, не являющихся администраторами](../fundamentals/active-directory-users-assign-role-azure-portal.md).
 
-## <a name="using-powershell"></a>Использование PowerShell
+## <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 ### <a name="create-a-group-that-can-be-assigned-to-role"></a>Создание группы, которой можно назначить роль
 

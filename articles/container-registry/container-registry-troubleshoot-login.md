@@ -3,12 +3,12 @@ title: Устранение неполадок при входе в реестр
 description: Симптомы, причины и способы устранения распространенных проблем при входе в реестр контейнеров Azure
 ms.topic: article
 ms.date: 08/11/2020
-ms.openlocfilehash: a00db5cc34da6d90210a22005f33b0ad1bf20f1b
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 5499c64bef8ce36a5f622c4d847b417ef49a5a03
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348905"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93379508"
 ---
 # <a name="troubleshoot-registry-login"></a>Устранение неполадок при входе в реестр
 
@@ -56,13 +56,13 @@ ms.locfileid: "93348905"
 
 ### <a name="specify-correct-registry-name"></a>Укажите правильное имя реестра
 
-При использовании `docker login` Укажите полное имя сервера входа в реестр, например *myregistry.azurecr.IO*. Убедитесь, что используются только строчные буквы. Пример
+При использовании `docker login` Укажите полное имя сервера входа в реестр, например *myregistry.azurecr.IO*. Убедитесь, что используются только строчные буквы. Пример:
 
 ```console
 docker login myregistry.azurecr.io
 ```
 
-При использовании команды [AZ контроля учетных записей](/cli/azure/acr#az-acr-login) с удостоверением Azure Active Directory сначала [Войдите в Azure CLI](/cli/azure/authenticate-azure-cli), а затем укажите имя ресурса Azure реестра. Имя ресурса — это имя, указанное при создании реестра, например *myregistry* (без суффикса домена). Пример
+При использовании команды [AZ контроля учетных записей](/cli/azure/acr#az-acr-login) с удостоверением Azure Active Directory сначала [Войдите в Azure CLI](/cli/azure/authenticate-azure-cli), а затем укажите имя ресурса Azure реестра. Имя ресурса — это имя, указанное при создании реестра, например *myregistry* (без суффикса домена). Пример:
 
 ```azurecli
 az acr login --name myregistry
@@ -98,7 +98,9 @@ az acr login --name myregistry
 
 Подтвердите разрешения реестра, связанные с учетными данными, например `AcrPull` роль Azure для извлечения образов из реестра или `AcrPush` роль для push-образов. 
 
-Для доступа к реестру на портале или управлении реестром с помощью Azure CLI требуется по крайней мере `Reader` роль для выполнения Azure Resource Managerных операций.
+Для доступа к реестру на портале или управлении реестром с помощью Azure CLI требуется по крайней мере `Reader` роль или аналогичные разрешения для выполнения операций Azure Resource Manager.
+
+Если ваши разрешения недавно были изменены, чтобы разрешить доступ к реестру на портале, вам может потребоваться использовать режиме инкогнито или частный сеанс в браузере, чтобы избежать использования устаревшего кэша браузера или файлов cookie.
 
 Вы или владелец реестра должны иметь достаточные привилегии в подписке для добавления или удаления назначений ролей.
 
@@ -135,7 +137,7 @@ az acr login --name myregistry
 * [Реестр контейнеров: вопросы и ответы](container-registry-faq.md)
 * [Рекомендации по использованию реестра контейнеров Azure](container-registry-best-practices.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы не решите проблему здесь, см. следующие параметры.
 

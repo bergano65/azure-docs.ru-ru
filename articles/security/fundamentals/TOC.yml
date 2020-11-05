@@ -68,6 +68,8 @@
   items:
     - name: Microsoft Antimalware
       href: antimalware.md
+    - name: 'Microsoft Antimalware: примеры кода'
+      href: antimalware-code-samples.md
     - name: Общие сведения об обеспечении безопасности виртуальных машин
       href: virtual-machines-overview.md
     - name: Рекомендации по рабочим нагрузкам IaaS
