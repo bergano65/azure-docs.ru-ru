@@ -1,7 +1,7 @@
 ---
 title: Запуск, отслеживание и отмена обучающих запусков в Python
 titleSuffix: Azure Machine Learning
-description: Узнайте, как начать, задать состояние, отмечать и упорядочивать эксперименты машинного обучения.
+description: Узнайте, как запускать, изменять состояние и управлять запуском эксперимента машинного обучения с помощью пакета SDK для Машинное обучение Azure Python.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 01/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 0baee1646d2346a411b3b7bdb8efc90e9aeb7a4a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2f7d102ad6bf2aba2056456acfe6207a0b0643ba
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316878"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93357986"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
 
@@ -30,7 +30,7 @@ ms.locfileid: "93316878"
 * Создание дочерних запусков.
 * Теги и поиск запусков.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Вам потребуются следующие элементы:
 

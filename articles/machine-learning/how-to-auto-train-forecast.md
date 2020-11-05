@@ -8,14 +8,14 @@ ms.author: nibaccam
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to, contperfq1
+ms.custom: how-to, contperfq1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: b708d85e94782ea264432ae3780b2b1f0d240396
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3be1d404d0cac7f9e5c9b1c2f7350cf05c5fe794
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320814"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93358122"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение прогнозной модели временных рядов
 
@@ -33,7 +33,7 @@ ms.locfileid: "93320814"
 
 В отличие от классических методов временных рядов, в автоматизированном ML значения временных рядов "сведены", чтобы стать дополнительными измерениями для регрессии вместе с другими прогностические факторы. Этот подход предусматривает использование нескольких контекстных переменных и их связи друг с другом во время обучения. Так как на прогноз могут повлиять несколько факторов, этот метод хорошо согласуется с реальными сценариями прогнозирования. Например, при прогнозировании продаж их результат определяется взаимосвязью совокупности факторов: тенденций в предыдущие периоды, валютного курса и цены. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для этой статьи требуется: 
 

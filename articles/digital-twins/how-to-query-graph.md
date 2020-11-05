@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 7bb38824f2071e2575877940795f9b90a2a384b4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 57b6bac49f0142b008a21accfffb614453cc6aec
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325765"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93358156"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -154,21 +154,19 @@ AND T.Temperature = 70
 Вы также можете получить двойников в зависимости от **того, определено ли определенное свойство**. Ниже приведен запрос, который получает двойников с определенным свойством *Location* :
 
 ```sql
-SELECT *
-FROM DIGITALTWINS WHERE IS_DEFINED(Location)
+SELECT * FROM DIGITALTWINS WHERE IS_DEFINED(Location)
 ```
 
 Это может помочь получить двойников по их свойствам *тегов* , как описано в разделе [Добавление тегов в Digital двойников](how-to-use-tags.md). Ниже приведен запрос, который получает все двойников, помеченные *красным цветом* :
 
 ```sql
-select * from digitaltwins where is_defined(tags.red)
+SELECT * FROM DIGITALTWINS WHERE IS_DEFINED(tags.red)
 ```
 
 Можно также получить двойников на основе **типа свойства**. Ниже приведен запрос, который получает двойников, свойство *температуры* которого является числом:
 
 ```sql
-SELECT * FROM DIGITALTWINS T
-WHERE IS_NUMBER(T.Temperature)
+SELECT * FROM DIGITALTWINS T WHERE IS_NUMBER(T.Temperature)
 ```
 
 ### <a name="query-by-model"></a>Запрос по модели

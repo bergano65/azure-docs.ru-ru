@@ -10,20 +10,20 @@ author: lobrien
 manager: cgronlun
 ms.date: 08/26/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 9cde7fe32d1b7b13c5f95bf3d99497926f68c88e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: how-to, devx-track-python, automl
+ms.openlocfilehash: 4cbe43f224ddf349db6b182feb3a717bb2bfd32e
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311189"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93358836"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Использование автоматизированного ML в конвейере Машинное обучение Azure в Python
 
 
 Функция автоматического выполнения машинного обучения Машинное обучение Azure позволяет обнаруживать высокопроизводительные модели без повторной реализации всех возможных подходов. В сочетании с конвейерами Машинное обучение Azure можно создавать развертываемые рабочие процессы, которые позволяют быстро обнаружить алгоритм, который лучше всего подходит для ваших данных. В этой статье показано, как эффективно присоединиться к этапу подготовки данных к автоматическому этапу ML. С помощью автоматизированного ML можно быстро обнаружить оптимальный алгоритм, который лучше всего подходит для ваших данных, в то же время размещаясь в пути к Млопс и эксплуатации жизненного цикла модели с конвейерами.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/22/2020
 ms.author: aahi
-ms.openlocfilehash: a3b2a9db688104c168017863910745427a3a68f9
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 80e0de73bbeae2ee1a79199fde34a3c430959ac8
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425804"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93356711"
 ---
 # <a name="batch-processing-kit-for-speech-containers"></a>Набор пакетной обработки для речевых контейнеров
 
@@ -25,7 +25,7 @@ ms.locfileid: "92425804"
 
 Контейнер пакета пакетной службы доступен бесплатно в [GitHub](https://github.com/microsoft/batch-processing-kit) и   [DOCKER Hub](https://hub.docker.com/r/batchkit/speech-batch-kit/tags). [Плата взимается](speech-container-howto.md#billing) только за используемые контейнеры речи.
 
-| Компонент  | Описание  |
+| Функция  | Описание  |
 |---------|---------|
 | Распространение пакетного звукового файла     | Автоматическая отправка большого количества файлов в локальные или облачные конечные точки контейнера речи. Файлы могут находиться на любом томе, совместимом с POSIX, в том числе в сетевых файловых системах.       |
 | Интеграция с пакетом SDK для распознавания речи | Передайте общие флаги в пакет SDK для распознавания речи, включая: n-лучшие данные, диаризатион, язык, маскировка на ненормативную лексику.  |
@@ -106,7 +106,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 
 `ONESHOT` режим расшифровывает один пакет звуковых файлов (из входного каталога и необязательного списка файлов) в выходную папку.
 
-:::image type="content" source="media/containers/batch-oneshot-mode.png" alt-text="Схема, на которой показан пример рабочего процесса контейнера пакета пакетной службы.":::
+:::image type="content" source="media/containers/batch-oneshot-mode.png" alt-text="Схема, показывающая файлы обработки контейнера пакета пакетной службы в режиме онешот.":::
 
 1. Определите конечные точки контейнера речи, которые клиент пакетной службы будет использовать в `config.yaml` файле. 
 2. Размещение звуковых файлов для транскрипции во входном каталоге.  
@@ -121,7 +121,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 
 `DAEMON` режим расшифровывает существующие файлы в заданной папке и постоянно расшифровывает новые аудиофайлы по мере их добавления.          
 
-:::image type="content" source="media/containers/batch-daemon-mode.png" alt-text="Схема, на которой показан пример рабочего процесса контейнера пакета пакетной службы.":::
+:::image type="content" source="media/containers/batch-daemon-mode.png" alt-text="Схема, показывающая файлы обработки контейнера пакетного пакета в режиме управляющей программы.":::
 
 1. Определите конечные точки контейнера речи, которые клиент пакетной службы будет использовать в `config.yaml` файле. 
 2. Вызов контейнера во входном каталоге. Клиент пакетной службы начнет наблюдение за входящими файлами в каталоге. 
@@ -134,7 +134,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 
 `REST` Mode — это режим сервера API, предоставляющий базовый набор конечных точек HTTP для отправки пакетов звуковых файлов, проверки состояния и длительного опроса. Также обеспечивает программное использование с помощью расширения модуля Python или импорт в качестве подмодуля.
 
-:::image type="content" source="media/containers/batch-rest-api-mode.png" alt-text="Схема, на которой показан пример рабочего процесса контейнера пакета пакетной службы.":::
+:::image type="content" source="media/containers/batch-rest-api-mode.png" alt-text="Схема, показывающая файлы обработки контейнера пакета пакетной службы в режиме RESTFUL.":::
 
 1. Определите конечные точки контейнера речи, которые клиент пакетной службы будет использовать в `config.yaml` файле. 
 2. Отправьте запрос HTTP-запроса на одну из конечных точек сервера API. 
@@ -151,7 +151,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 
 ---
 
-## <a name="logging"></a>Ведение журнала
+## <a name="logging"></a>Logging
 
 > [!NOTE]
 > Клиент пакетной службы может периодически перезаписывать файл *Run. log* , если он становится слишком большим.

@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 47cface4efbf38f2cec630745d498db674c936d3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 4b3256591c0aa2536fd42bcdbb2ef339fc1d5c48
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791959"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93356813"
 ---
 # <a name="how-to-use-azuresearchdocuments-in-a-c-net-application"></a>Использование Azure.Search.Docументс в приложении .NET на C#
 
@@ -60,7 +60,7 @@ Azure.Search.Docументс (версия 11) Целевая версия [ `20
 
 ## <a name="example-application"></a>Пример приложения
 
-В этой статье "учебные материалы по примеру", полагается на пример кода [дотнесовто](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo/v11) на сайте GitHub, чтобы продемонстрировать фундаментальные понятия в Azure когнитивный Поиск — в частности, как создать, загрузить и запросить индекс поиска.
+В этой статье "учебные материалы по примеру", полагается на пример кода [дотнесовто](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo) на сайте GitHub, чтобы продемонстрировать фундаментальные понятия в Azure когнитивный Поиск — в частности, как создать, загрузить и запросить индекс поиска.
 
 В оставшейся части этой статьи Предположим, что новый индекс под названием «Гостиницы» заполнен несколькими документами, с несколькими запросами, которые соответствуют результатам.
 

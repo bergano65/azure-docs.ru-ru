@@ -1,7 +1,7 @@
 ---
 title: Использование Аутомл для создания моделей & развертывания
 titleSuffix: Azure Machine Learning
-description: Создание, проверка и развертывание моделей автоматизированного машинного обучения с помощью Машинного обучения Azure.
+description: Создание, проверка и развертывание автоматических моделей машинного обучения с помощью Машинное обучение Azure Studio.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,13 +10,13 @@ author: aniththa
 ms.reviewer: nibaccam
 ms.date: 07/10/2020
 ms.topic: conceptual
-ms.custom: how-to
-ms.openlocfilehash: ad84d3d3fd58edc6f7967c6f50440dcc90625617
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: how-to, automl
+ms.openlocfilehash: 0c697e6332b757e1d135a77b70f33a6e32528309
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311276"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93358904"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Создание, проверка и развертывание моделей автоматизированного машинного обучения с помощью Машинного обучения Azure
 

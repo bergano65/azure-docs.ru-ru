@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 07/24/2020
+ms.date: 11/04/2020
 ms.author: tisande
-ms.openlocfilehash: 7a4b2a778fc3d520c0ce85bed5bec0b49fc14384
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 9176205b93519f0afac0c57f5da8593df6673c0f
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341915"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93356626"
 ---
 # <a name="getting-started-with-sql-queries"></a>Getting started with SQL queries (Начало работы с запросами SQL)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -21,26 +21,35 @@ ms.locfileid: "93341915"
 
 **Операции чтения точек** . Поиск ключа и значения можно выполнить по одному *идентификатору элемента* и ключу секции. Сочетание *идентификатора* и ключа секции — это ключ, а сам элемент — это значение. Для документа размером 1 КБ точка считывания обычно имеет 1 [единицу запроса](request-units.md) с задержкой менее 10 мс. Операции чтения точек возвращают один элемент.
 
-**SQL-запросы** . Вы можете запрашивать данные, создавая запросы с помощью язык SQL (SQL) в качестве языка запросов JSON. Запросы всегда изменяют по крайней мере 2,3 единиц запросов и, как правило, имеют более высокую и более длительные переменные задержки, чем операции чтения точек. Запросы могут возвращать много элементов.
-
-Большинство рабочих нагрузок с интенсивными операциями чтения в Azure Cosmos DB используют сочетание операций чтения с точки зрения и SQL-запросов. Если требуется только чтение одного элемента, то чтение точек выполняется дешевле и быстрее, чем запросы. Операции чтения точек не требуют использования обработчика запросов для доступа к данным и могут считывать данные напрямую. Конечно, все рабочие нагрузки не могут читать данные в монопольном режиме с помощью операций чтения точек, поэтому поддержка SQL в качестве языка запросов и [индексирования без использования схем](index-overview.md) обеспечивает более гибкий способ доступа к данным.
-
-Ниже приведены некоторые примеры того, как выполнять операции чтения с каждым пакетом SDK.
+Ниже приведены некоторые примеры того, как выполнять **операции чтения** с каждым пакетом SDK.
 
 - [Пакет SDK для .NET](/dotnet/api/microsoft.azure.cosmos.container.readitemasync?preserve-view=true&view=azure-dotnet)
 - [пакет SDK для Java](/java/api/com.azure.cosmos.cosmoscontainer.readitem?preserve-view=true&view=azure-java-stable#com_azure_cosmos_CosmosContainer__T_readItem_java_lang_String_com_azure_cosmos_models_PartitionKey_com_azure_cosmos_models_CosmosItemRequestOptions_java_lang_Class_T__)
 - [Пакет SDK для Node.js](/javascript/api/@azure/cosmos/item?preserve-view=true&view=azure-node-latest#read-requestoptions-)
 - [Пакет SDK для Python](/python/api/azure-cosmos/azure.cosmos.containerproxy?preserve-view=true&view=azure-python#read-item-item--partition-key--populate-query-metrics-none--post-trigger-include-none----kwargs-)
 
+**SQL-запросы** . Вы можете запрашивать данные, создавая запросы с помощью язык SQL (SQL) в качестве языка запросов JSON. Запросы всегда изменяют по крайней мере 2,3 единиц запросов и, как правило, имеют более высокую и более длительные переменные задержки, чем операции чтения точек. Запросы могут возвращать много элементов.
+
+Большинство рабочих нагрузок с интенсивными операциями чтения в Azure Cosmos DB используют сочетание операций чтения с точки зрения и SQL-запросов. Если требуется только чтение одного элемента, то чтение точек выполняется дешевле и быстрее, чем запросы. Операции чтения точек не требуют использования обработчика запросов для доступа к данным и могут считывать данные напрямую. Конечно, все рабочие нагрузки не могут читать данные в монопольном режиме с помощью операций чтения точек, поэтому поддержка SQL в качестве языка запросов и [индексирования без использования схем](index-overview.md) обеспечивает более гибкий способ доступа к данным.
+
+Ниже приведены некоторые примеры выполнения **запросов SQL** с каждым пакетом SDK.
+
+- [Пакет SDK для .NET](https://docs.microsoft.com/azure/cosmos-db/sql-api-dotnet-v3sdk-samples#query-examples)
+- [пакет SDK для Java](https://docs.microsoft.com/azure/cosmos-db/sql-api-java-sdk-samples#query-examples)
+- [Пакет SDK для Node.js](https://docs.microsoft.com/azure/cosmos-db/sql-api-nodejs-samples#item-examples)
+- [Пакет SDK для Python](https://docs.microsoft.com/azure/cosmos-db/sql-api-python-samples#item-examples)
+
 Оставшаяся часть документа показывает, как приступить к написанию SQL запросов в Azure Cosmos DB. SQL-запросы можно выполнять с помощью пакета SDK или портал Azure.
 
 ## <a name="upload-sample-data"></a>Отправить образец данных
 
-В учетной записи Cosmos DB API SQL создайте контейнер с именем `Families` . Создайте два простых элемента JSON в контейнере. Большинство примеров запросов можно запускать в Azure Cosmos DB документации по запросам, использующим этот набор данных.
+В учетной записи Cosmos DB API SQL откройте [Обозреватель данных](https://docs.microsoft.com/azure/cosmos-db/data-explorer) , чтобы создать контейнер с именем `Families` . После создания используйте браузер структуры данных, чтобы найти и открыть его. В `Families` контейнере вы увидите `Items` параметр справа под именем контейнера. Откройте этот параметр, и вы увидите кнопку в строке меню в центре экрана, чтобы создать новый элемент. Эта функция будет использоваться для создания элементов JSON ниже.
 
 ### <a name="create-json-items"></a>Создание элементов JSON
 
-Следующий код создает два простых элемента JSON о семействах. К простым элементам JSON для семейств Андерсен и Вейкфилд относятся родители, дочерние элементы и их pets, адрес и сведения о регистрации. Первый элемент содержит строки, числа, логические значения, массивы и вложенные свойства.
+Следующие два элемента JSON — это документы о семействах Андерсен и Вейкфилд. К ним относятся родители, дети и их pets, адрес и сведения о регистрации. 
+
+Первый элемент содержит строки, числа, логические значения, массивы и вложенные свойства:
 
 ```json
 {
@@ -64,7 +73,7 @@ ms.locfileid: "93341915"
 }
 ```
 
-Второй элемент использует `givenName` , а `familyName` вместо `firstName` и `lastName` .
+Второй элемент использует `givenName` , а `familyName` вместо `firstName` и `lastName` :
 
 ```json
 {
@@ -180,7 +189,7 @@ ms.locfileid: "93341915"
 
 * Контейнер Cosmos — это коллекция элементов JSON без схемы. Отношения внутри и между элементами контейнера неявно фиксируются с помощью включения, а не связей первичного и внешнего ключей. Эта функция важна для соединений внутри элемента, обсуждаемых далее в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об Azure Cosmos DB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)

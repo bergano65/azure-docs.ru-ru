@@ -6,18 +6,18 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python
+ms.custom: how-to, devx-track-python, data4ml
 ms.author: iefedore
 author: eedorenko
 manager: davete
 ms.reviewer: larryfr
 ms.date: 06/23/2020
-ms.openlocfilehash: 8f229c52b62c740c9d955f745a6922e59163b907
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: fe2f35708f6a148f8db9ef6fd0a598e19e746fbd
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348565"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93358632"
 ---
 # <a name="devops-for-a-data-ingestion-pipeline"></a>DevOps для конвейера приема данных
 
@@ -211,18 +211,18 @@ labels = np.array(data['target'])
 
 Процесс непрерывной поставки принимает артефакты и развертывает их в первую целевую среду. Это гарантирует, что решение работает, выполняя тесты. В случае успешного выполнения он переходит к следующей среде. 
 
-Конвейер Azure на компакт-диске состоит из нескольких этапов, представляющих собой среды. На каждом этапе содержатся [развертывания](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) и [задания](/azure/devops/pipelines/process/phases?tabs=yaml&view=azure-devops) , выполняющие следующие действия.
+Конвейер Azure на компакт-диске состоит из нескольких этапов, представляющих собой среды. На каждом этапе содержатся [развертывания](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops&preserve-view=true) и [задания](/azure/devops/pipelines/process/phases?tabs=yaml&view=azure-devops&preserve-view=true) , выполняющие следующие действия.
 
 _ Развертывание записной книжки Python в Azure Databricks рабочей области
 * Развертывание конвейера фабрики данных Azure 
 * Запуск конвейера
 * Проверка результата приема данных
 
-Этапы конвейера можно настроить с помощью [утверждений](/azure/devops/pipelines/process/approvals?tabs=check-pass&view=azure-devops) и [шлюзов](/azure/devops/pipelines/release/approvals/gates?view=azure-devops) , которые обеспечивают дополнительный контроль над тем, как процесс развертывания проходит через цепочку сред.
+Этапы конвейера можно настроить с помощью [утверждений](/azure/devops/pipelines/process/approvals?tabs=check-pass&view=azure-devops&preserve-view=true) и [шлюзов](/azure/devops/pipelines/release/approvals/gates?view=azure-devops&preserve-view=true) , которые обеспечивают дополнительный контроль над тем, как процесс развертывания проходит через цепочку сред.
 
 ### <a name="deploy-a-python-notebook"></a>Развертывание записной книжки Python
 
-В следующем фрагменте кода определяется [развертывание](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) конвейера Azure, которое копирует записную книжку Python в кластер кирпичей.
+В следующем фрагменте кода определяется [развертывание](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops&preserve-view=true) конвейера Azure, которое копирует записную книжку Python в кластер кирпичей.
 
 ```yaml
 - stage: 'Deploy_to_QA'
@@ -258,7 +258,7 @@ _ Развертывание записной книжки Python в Azure Datab
               displayName: 'Deploy (copy) data processing notebook to the Databricks cluster'       
 ```            
 
-Артефакты, созданные CI, автоматически копируются в агент развертывания и доступны в `$(Pipeline.Workspace)` папке. В этом случае задача развертывания ссылается на `di-notebooks` артефакт, содержащий записную книжку Python. В этом [развертывании](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) для копирования файлов записной книжки в рабочую область "модули обработки" используется [расширение Azure DevOps для модуля](https://marketplace.visualstudio.com/items?itemName=riserrad.azdo-databricks) обработки.
+Артефакты, созданные CI, автоматически копируются в агент развертывания и доступны в `$(Pipeline.Workspace)` папке. В этом случае задача развертывания ссылается на `di-notebooks` артефакт, содержащий записную книжку Python. В этом [развертывании](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops&preserve-view=true) для копирования файлов записной книжки в рабочую область "модули обработки" используется [расширение Azure DevOps для модуля](https://marketplace.visualstudio.com/items?itemName=riserrad.azdo-databricks) обработки.
 
 `Deploy_to_QA`Этап содержит ссылку на `devops-ds-qa-vg` группу переменных, определенную в проекте Azure DevOps. Действия на этом этапе относятся к переменным из этой группы переменных (например, `$(DATABRICKS_URL)` и `$(DATABRICKS_TOKEN)` ). Идея состоит в том, что следующий этап (например, `Deploy_to_UAT` ) будет действовать с теми же именами переменных, которые определены в отдельной группе переменных с областью действия UAT.
 
@@ -339,7 +339,7 @@ _ Развертывание записной книжки Python в Azure Datab
     * Развертывание в модулях и развертывание в ADF
     * Интеграционный тест
 
-Он содержит несколько этапов * **развертывание** _, равное количеству требуемых целевых сред. Каждый этап _*_развертывания_*_ содержит два [развертывания](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) , которые выполняются параллельно, и [Задание](/azure/devops/pipelines/process/phases?tabs=yaml&view=azure-devops) , которое запускается после развертывания для тестирования решения в среде.
+Он содержит несколько этапов * **развертывание** _, равное количеству требуемых целевых сред. Каждый этап _*_развертывания_*_ содержит два [развертывания](/azure/devops/pipelines/process/deployment-jobs?view=azure-devops&preserve-view=true) , которые выполняются параллельно, и [Задание](/azure/devops/pipelines/process/phases?tabs=yaml&view=azure-devops&preserve-view=true) , которое запускается после развертывания для тестирования решения в среде.
 
 Пример реализации конвейера собираются в следующем фрагменте кода _*_YAML_*_ :
 

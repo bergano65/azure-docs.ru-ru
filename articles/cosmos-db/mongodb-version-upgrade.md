@@ -1,18 +1,18 @@
 ---
 title: Обновление Mongo версии API Azure Cosmos DB для учетной записи MongoDB
 description: Как быстро обновить версию MongoDB Wired-Protocol для API существующей Azure Cosmos DB для учетных записей MongoDB
-author: jasonwhowell
+author: christopheranderson
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: guide
 ms.date: 09/22/2020
-ms.author: jasonh
-ms.openlocfilehash: eb12fc909b5165cbc759bbb7c531864cde16bb88
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.author: chrande
+ms.openlocfilehash: 9ce444e41d19ece984071d0f62e705a09d5f23c9
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096314"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93356473"
 ---
 # <a name="upgrade-the-mongodb-wire-protocol-version-of-your-azure-cosmos-dbs-api-for-mongodb-account"></a>Обновление версии протокола MongoDB Wired для учетной записи API Azure Cosmos DB для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]

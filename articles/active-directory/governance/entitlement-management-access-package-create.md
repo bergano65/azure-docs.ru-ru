@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c1734af799ee473d6ba75fe2e8ab8429afa51d0
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: f6c30dffbc8f97273ee59ce33ae3fe75ed730763
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318193"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93356643"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 
@@ -67,7 +67,7 @@ ms.locfileid: "92318193"
    
     ![Управление правами на портале Azure](./media/entitlement-management-shared/access-packages-list.png)
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 
 На вкладке " **основы** " Присвойте пакету доступа имя и укажите каталог для создания пакета доступа в.
 
@@ -89,7 +89,7 @@ ms.locfileid: "92318193"
 
 На вкладке **роли ресурсов** выберите ресурсы для включения в пакет Access. Пользователи, запрашивающие и получающие доступ к пакету Access, получат все роли ресурсов в пакете Access.
 
-1. Выберите тип ресурса, который необходимо добавить (**группы и команды**, **приложения**или **сайты SharePoint**).
+1. Выберите тип ресурса, который необходимо добавить ( **группы и команды** , **приложения** или **сайты SharePoint** ).
 
 1. В открывшейся области Выбор выберите один или несколько ресурсов из списка.
 
@@ -125,7 +125,7 @@ ms.locfileid: "92318193"
 
 1. Проверка параметров пакета доступа
 
-    ![Доступ к пакету — политика-включить параметр политики](./media/entitlement-management-access-package-create/review-create.png)
+    ![Доступ к пакету — включить параметр политики](./media/entitlement-management-access-package-create/review-create.png)
 
 1. Щелкните **создать** , чтобы создать пакет Access.
 
