@@ -5,14 +5,14 @@ author: sr-msft
 ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
-ms.date: 07/10/2020
+ms.date: 11/05/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9fd828baed5a03cbce5d5327248eb34045ffd6bc
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 2fa8794066739302d2f32acb13c936c524dc89a8
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489716"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422354"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli-rest-api"></a>Создание реплик чтения и управление ими из Azure CLI REST API
 
@@ -27,7 +27,9 @@ ms.locfileid: "92489716"
 * **Реплика** — более подробная, чем **Off**. Это минимальный уровень ведения журнала, необходимый для работы [реплик чтения](concepts-read-replicas.md) . Этот параметр используется по умолчанию на большинстве серверов.
 * **Логический** — более подробный, чем **реплика**. Это минимальный уровень ведения журнала для работы логического декодирования. Реплики чтения также работают с этим параметром.
 
-После изменения этого параметра сервер необходимо перезапустить. На внутреннем уровне этот параметр задает параметры postgres `wal_level` , `max_replication_slots` и `max_wal_senders` .
+
+> [!NOTE]
+> При развертывании реплик чтения для устойчивых основных рабочих нагрузок с большим количеством операций записи, задержка репликации может продолжать расти и никогда не сможет быть перехватываться с базой данных-источником. Это также может увеличить использование хранилища на основном сайте, так как файлы WAL не удаляются до тех пор, пока они не будут получены в реплике.
 
 ## <a name="azure-cli"></a>Azure CLI
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
@@ -207,6 +209,6 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{serverName}?api-version=2017-12-01
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
 * Дополнительные сведения см. в статье [Создание реплик чтения и управление ими с помощью портала Azure](howto-read-replicas-portal.md).

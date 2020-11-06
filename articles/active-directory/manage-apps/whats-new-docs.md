@@ -1,7 +1,7 @@
 ---
 title: Новые возможности управления приложениями Azure Active Directory
 description: Новая и обновленная документация по управлению Azure Active Directory приложениями.
-ms.date: 10/21/2020
+ms.date: 11/05/2020
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
@@ -10,23 +10,41 @@ ms.author: kenwith
 author: kenwith
 manager: CelesteDG
 services: active-directory
-ms.openlocfilehash: 569c111c392e6bbaf9a54d17dc6e88bc8d851dc6
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 257057c4688fcf75651df4250c601eb1f1a2e8a3
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428016"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422609"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory Управление приложениями: новые возможности
 
 Добро пожаловать в документацию по управлению приложениями Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы управления приложениями, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="october-2020"></a>Октябрь 2020 г.
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Azure Active Directory Управление приложениями: новые возможности](whats-new-docs.md)
+- [Общие сведения о едином входе на основе OIDC](configure-oidc-single-sign-on.md)
+- [Настройка классификации разрешений](configure-permission-classifications.md)
+- [Настройка согласия владельца группы на приложения, обращающиеся к данным группы](configure-user-consent-groups.md)
+- [Управление политиками согласия для приложений](manage-app-consent-policies.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Проблемы при входе в настроенные приложения единого входа на основе SAML](application-sign-in-problem-federated-sso-gallery.md)
+- [Проблема при установке соединителя агента прокси приложения](application-proxy-connector-installation-problem.md)
+- [Перемещение проверки подлинности приложения из службы федерации Active Directory (AD FS) в Azure Active Directory](migrate-adfs-apps-to-azure.md)
+- [Настройка согласия конечных пользователей для приложений](configure-user-consent.md)
+
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
 ### <a name="new-articles"></a>Новые статьи
 - [Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-setup-oidc-sso.md)
 - [Краткое руководство. Назначение пользователей приложению, которое использует Azure AD в качестве поставщика удостоверений](add-application-portal-assign-users.md)
-- [Новые возможности в Документации Майкрософт](whats-new-docs.md)
+- [Новые возможности в документах](whats-new-docs.md)
 
 
 ### <a name="updated-articles"></a>Обновленные статьи

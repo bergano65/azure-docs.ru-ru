@@ -8,12 +8,12 @@ ms.author: jlembicz
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: a121751e71bffdb76341f6a7dc2a01a22240019b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 588de9c9cae114b5f5396db17f7ecb19bcde25c6
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91534474"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93423085"
 ---
 # <a name="how-to-create-an-index-for-multiple-languages-in-azure-cognitive-search"></a>Создание индекса для нескольких языков в Azure Когнитивный поиск
 
@@ -67,4 +67,4 @@ Azure Когнитивный поиск предлагает широкий вы
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-Если вы являетесь разработчиком .NET, обратите внимание, что вы можете настроить языковые анализаторы с помощью [пакета SDK Azure когнитивный Поиск .NET](https://www.nuget.org/packages/Microsoft.Azure.Search) и свойства [анализатора](/dotnet/api/microsoft.azure.search.models.analyzer) .
+Если вы являетесь разработчиком .NET, обратите внимание, что вы можете настроить языковые анализаторы с помощью [пакета SDK Azure когнитивный Поиск .NET](https://www.nuget.org/packages/Microsoft.Azure.Search) и свойства [лексикаланализер](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer) .

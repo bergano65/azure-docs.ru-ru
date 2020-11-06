@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 09/22/2020
-ms.openlocfilehash: fab49c4242afc2e4f2d0595e2aa95f19f3d976f8
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.date: 11/05/2020
+ms.openlocfilehash: feca2e83646264b28e42125b3fdebf41266c06bd
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951585"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422728"
 ---
 # <a name="api-versions-in-azure-cognitive-search"></a>Версии API в Azure Когнитивный поиск
 
@@ -87,8 +87,8 @@ Azure Когнитивный поиск регулярно разворачив�
 
 | Версия пакета SDK | Состояние | Описание |
 |-------------|--------|------------------------------|
-| [Azure.Search.Docументс 11,0](/dotnet/api/overview/azure/search.documents-readme) | объем стабилен | Новая клиентская библиотека из пакета SDK для Azure .NET, выпущенная 2020 июля. Обращается к API поиска по ОСТАВШИМся версии = 2020-06-30 REST API но еще не поддерживает, гео-фильтры или [фиелдбуилдер](/dotnet/api/microsoft.azure.search.fieldbuilder). |
-| [Microsoft. Azure. Search 10,0](https://www.nuget.org/packages/Microsoft.Azure.Search/) | объем стабилен | Выпущена 2019 мая. Обращается к API поиска по ОСТАВШИМся версия = 2019-05-06.|
+| [Azure.Search.Docументс 11](/dotnet/api/overview/azure/search.documents-readme) | объем стабилен | Новая клиентская библиотека из пакета SDK для Azure .NET, выпущенная 2020 июля. Обращается к API поиска по ОСТАВШИМся версии = 2020-06-30 REST API но еще не поддерживает географические фильтры. |
+| [Microsoft. Azure. Search 10](https://www.nuget.org/packages/Microsoft.Azure.Search/) | объем стабилен | Выпущена 2019 мая. Обращается к API поиска по ОСТАВШИМся версия = 2019-05-06.|
 | [Microsoft. Azure. Management. Search 4.0.0](/dotnet/api/overview/azure/search/management) | объем стабилен | Обращается к API-версии управления для остальных компонентов, версия = 2020-08-01.  |
 | Microsoft. Azure. Management. Search 3.0.0 | объем стабилен | Обращается к API-версии управления для остальных компонентов, версия = 2015-08-19.  |
 

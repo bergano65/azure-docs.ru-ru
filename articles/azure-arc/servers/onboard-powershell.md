@@ -1,22 +1,22 @@
 ---
 title: Подключение гибридных компьютеров к Azure с помощью PowerShell
-description: Из этой статьи вы узнаете, как установить агент и подключить компьютер к Azure с помощью серверов с поддержкой ARC в Azure с помощью PowerShell.
+description: Из этой статьи вы узнаете, как установить агент и подключить компьютер к Azure с помощью серверов, поддерживающих дугу Azure. Для этого мы воспользуемся PowerShell.
 ms.date: 10/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0755846ef02377edade98b69e478908a111ab247
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: f85e2564b2e5b194d306ef4bad2269982331a7d4
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92901535"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422779"
 ---
-# <a name="connect-hybrid-machines-to-azure-using-powershell"></a>Подключение гибридных компьютеров к Azure с помощью PowerShell
+# <a name="connect-hybrid-machines-to-azure-by-using-powershell"></a>Подключение гибридных компьютеров к Azure с помощью PowerShell
 
-Вы можете включить серверы с поддержкой ARC в Azure для одной или нескольких компьютеров Windows или Linux в своей среде, выполнив набор действий вручную. Также можно использовать командлет PowerShell [Connect-азконнектедмачине](/powershell/module/az.connectedmachine/remove-azconnectedmachine) , чтобы скачать агент подключенного компьютера, установить агент и зарегистрировать машину в службе "Дуга Azure". Командлет загружает пакет установщик Windows агента Windows из центра загрузки Майкрософт и пакет агента Linux из репозитория пакетов Майкрософт.
+Для серверов, включенных с помощью дуги Azure, можно выполнить действия вручную, чтобы включить их для одной или нескольких компьютеров Windows или Linux в вашей среде. Кроме того, можно использовать командлет PowerShell [Connect-азконнектедмачине](/powershell/module/az.connectedmachine/remove-azconnectedmachine) , чтобы скачать агент подключенного компьютера, установить агент и зарегистрировать машину в службе "Дуга Azure". Командлет загружает пакет агента Windows (установщик Windows) из центра загрузки Майкрософт и пакета агента Linux из репозитория пакетов Майкрософт.
 
 Этот метод требует наличия разрешений администратора на компьютере для установки и настройки агента. В Linux, используя корневую учетную запись, и в Windows вы являетесь членом группы локальных администраторов. Этот процесс можно выполнить в интерактивном или удаленном режиме на сервере Windows Server с помощью [удаленного взаимодействия PowerShell](/powershell/scripting/learn/ps101/08-powershell-remoting).
 
-Прежде чем приступить к работе, ознакомьтесь с данными о [необходимых компонентах](agent-overview.md#prerequisites) и убедитесь, что подписка и ресурсы соответствуют требованиям. Сведения о поддерживаемых регионах и других связанных вопросах см. в разделе [Поддерживаемые регионы Azure](overview.md#supported-regions).
+Прежде чем начать, ознакомьтесь с [предварительными](agent-overview.md#prerequisites) требованиями и убедитесь, что подписка и ресурсы соответствуют требованиям. Сведения о поддерживаемых регионах и других связанных вопросах см. в разделе [Поддерживаемые регионы Azure](overview.md#supported-regions).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -24,13 +24,13 @@ ms.locfileid: "92901535"
 
 - Компьютер с Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/).
 
-Прежде чем использовать Azure PowerShell для управления расширениями виртуальной машины на гибридном сервере, управляемом серверами с поддержкой Arc, необходимо установить `Az.ConnectedMachine` модуль. Выполните следующую команду на сервере с поддержкой ARC:
+PowerShell используется для управления расширениями виртуальной машины на гибридных серверах, управляемых с помощью серверов с поддержкой дуги Azure. Перед использованием PowerShell установите `Az.ConnectedMachine` модуль. Выполните следующую команду на сервере с поддержкой дуги Azure.
 
 ```powershell
 Install-Module -Name Az.ConnectedMachine
 ```
 
-После завершения установки возвращается следующее сообщение:
+После завершения установки появится следующее сообщение:
 
 `The installed extension ``Az.ConnectedMachine`` is experimental and not covered by customer support. Please use with discretion.`
 
@@ -54,11 +54,11 @@ Install-Module -Name Az.ConnectedMachine
         Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -SubscriptionId 978ab182-6cf0-4de3-a58b-53c8d0a3235e -proxy http://<proxyURL>:<proxyport>
         ```
 
-Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. В Windows по адресу *%програмдата%\азуреконнектедмачинеажент\лог\химдс.лог* и в Linux по адресу */Вар/ОПТ/азкмажент/лог/химдс.лог* .
+Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. В Windows проверьте этот файл: *%програмдата%\азуреконнектедмачинеажент\лог\химдс.лог*. В Linux Проверьте этот файл: */Вар/ОПТ/азкмажент/лог/химдс.лог*.
 
-## <a name="install-and-connect-using-powershell-remoting"></a>Установка и подключение с помощью удаленного взаимодействия PowerShell
+## <a name="install-and-connect-by-using-powershell-remoting"></a>Установка и подключение с помощью удаленного взаимодействия PowerShell
 
-Выполните следующие действия, чтобы настроить один или несколько серверов Windows с серверами с поддержкой дуги Azure. На удаленном компьютере должна быть включена служба удаленного взаимодействия PowerShell. Это можно сделать с помощью командлета `Enable-PSRemoting`.
+Вот как можно настроить один или несколько серверов Windows с включенными серверами в службе "Дуга Azure". Необходимо включить удаленное взаимодействие PowerShell на удаленном компьютере. Для этого используйте командлет `Enable-PSRemoting`.
 
 1. Откройте консоль PowerShell с правами администратора.
 
@@ -80,7 +80,7 @@ Install-Module -Name Az.ConnectedMachine
         Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -PSSession $session
         ```
 
-    В следующем примере приведены результаты выполнения команды, предназначенной для одного компьютера:
+    В следующем примере показаны результаты выполнения команды, предназначенной для одного компьютера:
     
     ```azurepowershell
     time="2020-08-07T13:13:25-07:00" level=info msg="Onboarding Machine. It usually takes a few minutes to complete. Sometimes it may take longer depending on network and server load status."
@@ -95,14 +95,14 @@ Install-Module -Name Az.ConnectedMachine
 
 ## <a name="verify-the-connection-with-azure-arc"></a>Проверка подключения с помощью Azure Arc
 
-После установки агента и настройки его подключения к серверам с поддержкой Azure Arc перейдите на портал Azure, чтобы убедиться, что сервер подключен. Просмотрите свои компьютеры на [портале Azure](https://portal.azure.com).
+После установки и настройки агента для регистрации на серверах с поддержкой Arc Azure перейдите к портал Azure, чтобы убедиться, что сервер успешно подключен. Просмотрите свои компьютеры на [портале Azure](https://portal.azure.com).
 
-![Успешное соединение с сервером](./media/onboard-portal/arc-for-servers-successful-onboard.png)
+![Снимок экрана панели мониторинга "серверы" с успешным подключением к серверу.](./media/onboard-portal/arc-for-servers-successful-onboard.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Сведения об устранении неполадок можно найти в разделе [руководство по устранению неполадок подключенного компьютера](troubleshoot-agent-onboard.md).
+* При необходимости ознакомьтесь с [руководством по устранению неполадок подключенного компьютера](troubleshoot-agent-onboard.md).
 
-* Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-policy.md) и т. д.
+* Узнайте, как управлять компьютером с помощью [политики Azure](../../governance/policy/overview.md). Вы можете использовать [гостевую конфигурацию](../../governance/policy/concepts/guest-configuration.md)виртуальной машины, убедиться, что компьютер сообщает о предполагаемой log Analytics рабочей области, и включить мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-policy.md).
 
-* Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется получить данные мониторинга операционной системы и рабочей нагрузки, управлять ими с помощью модулей Runbook или функций автоматизации, таких как Управление обновлениями, или использовать другие службы Azure, такие как [Центр безопасности Azure](../../security-center/security-center-introduction.md).
+* Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется получить данные мониторинга операционной системы и рабочей нагрузки, а также управлять ими с помощью модулей Runbook или таких функций службы автоматизации Azure, как Управление обновлениями. Этот агент также необходим для использования других служб Azure, таких как [Центр безопасности Azure](../../security-center/security-center-introduction.md).

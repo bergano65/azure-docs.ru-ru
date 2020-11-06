@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha
 ms.reviewer: glenga
-ms.openlocfilehash: 0c37c8f108e9bcbb827c05242d8863994dfc64cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a668024db126c82f96756555aba513b77f7d7366
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89177097"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422966"
 ---
 # <a name="debug-powershell-azure-functions-locally"></a>Локальная отладка функций Azure PowerShell
 
@@ -38,7 +38,7 @@ PSFunctionApp
  | - profile.ps1
 ```
 
-Это приложение-функция аналогично тому, которое вы получаете при выполнении [краткого руководства по PowerShell](./functions-create-first-function-vs-code.md?pivots=programming-language-powershell).
+Это приложение-функция аналогично тому, которое вы получаете при выполнении [краткого руководства по PowerShell](./create-first-function-vs-code-powershell.md).
 
 Код функции в `run.ps1` выглядит как следующий скрипт:
 
@@ -95,10 +95,10 @@ if($name) {
 Для отладки функций PowerShell в Visual Studio Code необходимо установить следующие компоненты:
 
 * [Расширение PowerShell для Visual Studio Code](/powershell/scripting/components/vscode/using-vscode)
-* [Расширение "Функции Azure" для Visual Studio Code](functions-create-first-function-vs-code.md)
+* [Расширение "Функции Azure" для Visual Studio Code](./create-first-function-cli-powershell.md)
 * [PowerShell Core 6,2 или более поздней версии](/powershell/scripting/install/installing-powershell-core-on-windows)
 
-После установки этих зависимостей загрузите существующий проект функций PowerShell или [Создайте свой первый проект функций PowerShell](./functions-create-first-function-vs-code.md?pivots=programming-language-powershell).
+После установки этих зависимостей загрузите существующий проект функций PowerShell или [Создайте свой первый проект функций PowerShell](./create-first-function-vs-code-powershell.md).
 
 >[!NOTE]
 > Если в проекте отсутствуют необходимые файлы конфигурации, вам будет предложено добавить их.
@@ -111,7 +111,7 @@ PowerShell Core устанавливается параллельно с Windows
 
 1. Выберите **PowerShell: отобразить меню сеанса**.
 
-1. Если **текущий сеанс** не является **PowerShell Core 6**, выберите **параметр перейти к: PowerShell Core 6**.
+1. Если **текущий сеанс** не является **PowerShell Core 6** , выберите **параметр перейти к: PowerShell Core 6**.
 
 При открытии файла PowerShell в нижней правой части окна отображается зеленая версия. При выборе этого текста также отображается меню сеанса. Дополнительные сведения см. в статье [Выбор версии PowerShell для использования с расширением](/powershell/scripting/components/vscode/using-vscode#choosing-a-version-of-powershell-to-use-with-the-extension).
 

@@ -5,24 +5,27 @@ author: sr-msft
 ms.author: srranga
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 06/22/2020
-ms.openlocfilehash: 4ab4a64fa395c105ced8e47cdcec019373f7f835
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/05/2020
+ms.openlocfilehash: 0e9773e5c08f9d07f76a70bc4f899acf5004d3c2
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708617"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421815"
 ---
 # <a name="logical-decoding"></a>Логическое декодирование
  
+> [!NOTE]
+> Логическая декодирование находится в общедоступной предварительной версии в базе данных Azure для PostgreSQL-Single Server.
+
 [Логическое декодирование в PostgreSQL](https://www.postgresql.org/docs/current/logicaldecoding.html) позволяет передавать изменения данных внешним потребителям. Логическое декодирование часто используется для потоковой передачи событий и сценариев отслеживания измененных данных.
 
-При логическом декодировании используется подключаемый модуль вывода для преобразования журнала упреждающего ввода postgres (WAL) в доступный для чтения формат. Служба "база данных Azure для PostgreSQL" предоставляет выходные подключаемые модули [wal2json](https://github.com/eulerto/wal2json), [test_decoding](https://www.postgresql.org/docs/current/test-decoding.html) и пгаутпут. пгаутпут становится доступным для postgres из postgres версии 10 и выше.
+При логическом декодировании используется подключаемый модуль вывода для преобразования журнала упреждающего ввода postgres (WAL) в доступный для чтения формат. Служба "база данных Azure для PostgreSQL" предоставляет выходные подключаемые модули [wal2json](https://github.com/eulerto/wal2json), [test_decoding](https://www.postgresql.org/docs/current/test-decoding.html) и пгаутпут. пгаутпут становится доступным для PostgreSQL из PostgreSQL версии 10 и выше.
 
 Общие сведения о том, как работает логическое декодирование postgres, см. в [нашем блоге](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/change-data-capture-in-postgres-how-to-use-logical-decoding-and/ba-p/1396421). 
 
 > [!NOTE]
-> Логическая декодирование находится в общедоступной предварительной версии в базе данных Azure для PostgreSQL-Single Server.
+> Логическая репликация с использованием публикации или подписки PostgreSQL не поддерживается в базе данных Azure для PostgreSQL-Single Server.
 
 
 ## <a name="set-up-your-server"></a>Настройка сервера 
@@ -39,25 +42,29 @@ ms.locfileid: "91708617"
 ### <a name="using-azure-cli"></a>Использование Azure CLI
 
 1. Задайте для azure.replication_support значение `logical` .
-   ```
+   ```azurecli-interactive
    az postgres server configuration set --resource-group mygroup --server-name myserver --name azure.replication_support --value logical
    ``` 
 
 2. Перезапустите сервер, чтобы применить изменение.
-   ```
+   ```azurecli-interactive
    az postgres server restart --resource-group mygroup --name myserver
    ```
+3. Если вы используете postgres 9,5 или 9,6 и используете доступ к общедоступной сети, добавьте правило брандмауэра, чтобы включить общедоступный IP-адрес клиента, с которого будет выполняться логическая репликация. Имя правила брандмауэра должно включать **_replrule**. Например, *test_replrule*. Чтобы создать правило брандмауэра на сервере, выполните команду [az postgres server firewall-rule create](/cli/azure/postgres/server/firewall-rule). 
 
 ### <a name="using-azure-portal"></a>Использование портала Azure
 
-1. Задайте для параметра Поддержка репликации Azure значение **логический**. Щелкните **Сохранить**.
+1. Задайте для параметра Поддержка репликации Azure значение **логический**. Нажмите кнопку **Сохранить**.
 
    :::image type="content" source="./media/concepts-logical/replication-support.png" alt-text="База данных Azure для PostgreSQL — репликация — поддержка репликации Azure":::
 
 2. Перезапустите сервер, чтобы применить изменение, выбрав **Да**.
 
-   :::image type="content" source="./media/concepts-logical/confirm-restart.png" alt-text="База данных Azure для PostgreSQL — репликация — поддержка репликации Azure":::
+   :::image type="content" source="./media/concepts-logical/confirm-restart.png" alt-text="База данных Azure для PostgreSQL-Replication-подтверждение перезапуска":::
 
+3. Если вы используете postgres 9,5 или 9,6 и используете доступ к общедоступной сети, добавьте правило брандмауэра, чтобы включить общедоступный IP-адрес клиента, с которого будет выполняться логическая репликация. Имя правила брандмауэра должно включать **_replrule**. Например, *test_replrule*. Затем нажмите кнопку **Сохранить**.
+
+   :::image type="content" source="./media/concepts-logical/client-replrule-firewall.png" alt-text="База данных Azure для PostgreSQL — репликация — Добавление правила брандмауэра":::
 
 ## <a name="start-logical-decoding"></a>Начать логическое декодирование
 

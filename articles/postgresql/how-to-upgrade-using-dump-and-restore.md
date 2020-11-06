@@ -5,13 +5,13 @@ author: sr-msft
 ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
-ms.date: 11/03/2020
-ms.openlocfilehash: 26154f4501daba373f1f8b108f1ee7105b1b194f
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.date: 11/05/2020
+ms.openlocfilehash: 6dfcf0b2ec1d46821007123908a8e7ba8df29744
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93294345"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421776"
 ---
 # <a name="upgrade-your-postgresql-database-using-dump-and-restore"></a>Обновление базы данных PostgreSQL с помощью дампа и восстановления
 
@@ -81,7 +81,7 @@ ms.locfileid: "93294345"
    ```azurecli-interactive
     psql "host=myTargetServer port=5432 dbname=postgres user=myUser password=###### sslmode=mySSLmode"
     ```
-    ```bash
+    ```SQL
     postgres> \l   
     postgres> create database myTargetDB;
    ```
@@ -149,7 +149,7 @@ ms.locfileid: "93294345"
 > [!TIP]
 > Описанный в этом документе процесс также можно использовать для обновления сервера базы данных Azure для PostgreSQL, который находится на этапе предварительной версии. Основное отличие заключается в том, что строка подключения для гибкого целевого сервера не имеет `@dbName` .  Например, если имя пользователя — `pg` , то имя пользователя одиночного сервера в строке подключения будет иметь значение `pg@pg-95` , а при использовании гибкого сервера можно просто использовать `pg` .
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Когда вы удовлетворены функцией целевой базы данных, можно удалить старый сервер базы данных. 
 - Если вы хотите использовать ту же конечную точку базы данных, что и исходный сервер, то после удаления старого сервера базы данных-источника можно создать реплику чтения с прежним именем сервера базы данных. После установки стабильного состояния можно отключить реплику, которая сделает сервер реплики независимым сервером. Дополнительные сведения см. в разделе [репликация](./concepts-read-replicas.md) .

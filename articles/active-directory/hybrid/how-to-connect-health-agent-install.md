@@ -17,18 +17,18 @@ ms.topic: how-to
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 78871441fe7f9b0f6d02cdf6f05b97933abfca54
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 975933a97b089cb208ecd7ff4461a893364262ff
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275648"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422371"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
 В этом документе описываются этапы установки и настройки агентов Azure AD Connect Health. Загрузить агенты можно [отсюда](how-to-connect-install-roadmap.md#download-and-install-azure-ad-connect-health-agent):
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 В таблице ниже приведен список предварительных требований для использования Azure AD Connect Health.
 
@@ -59,7 +59,7 @@ ms.locfileid: "92275648"
 
 | Доменная среда | Требуемые конечные точки службы Azure |
 | --- | --- |
-| Общедоступная сеть | <li>&#42;.blob.core.windows.net </li><li>&#42;.aadconnecthealth.azure.com </li><li>&#42;.servicebus.windows.net, порт 5671; </li><li>&#42;.adhybridhealth.azure.com/;</li><li>https:\//management.azure.com </li><li>https:\//policykeyservice.dc.ad.msft.net/</li><li>https:\//login.windows.net</li><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
+| Общедоступная сеть | <li>&#42;.blob.core.windows.net </li><li>&#42;.aadconnecthealth.azure.com </li><li>&#42;. servicebus.windows.net-Port: 5671 (не требуется в последней версии агента)</li><li>&#42;.adhybridhealth.azure.com/;</li><li>https:\//management.azure.com </li><li>https:\//policykeyservice.dc.ad.msft.net/</li><li>https:\//login.windows.net</li><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
 | Azure для Германии | <li>*.blob.core.cloudapi.de; </li><li>*.servicebus.cloudapi.de; </li> <li>*.aadconnecthealth.microsoftazure.de; </li><li>https:\//management.microsoftazure.de </li><li>https:\//policykeyservice.aadcdi.microsoftazure.de </li><li>https:\//login.microsoftonline.de </li><li>https:\//secure.aadcdn.microsoftonline-p.de </li><li>https:\//www.office.de. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
 | Azure для государственных организаций | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
 
@@ -123,8 +123,8 @@ ms.locfileid: "92275648"
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2012-r2"></a>Включение аудита для AD FS на Windows Server 2012 R2
 
 1. Из раздела **Диспетчер сервера** на начальном экране или на панели задач откройте диалоговое окно **Локальная политика безопасности**. Затем выберите **Сервис/Локальная политика безопасности**.
-2. Перейдите к папке **Параметры безопасности\Локальные политики\Назначение прав пользователей**, а затем дважды щелкните **Создание аудитов безопасности**.
-3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS. Если она отсутствует, щелкните ссылку **Добавление пользователя или группы**, добавьте запись в список и нажмите кнопку **ОК**.
+2. Перейдите к папке **Параметры безопасности\Локальные политики\Назначение прав пользователей** , а затем дважды щелкните **Создание аудитов безопасности**.
+3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS. Если она отсутствует, щелкните ссылку **Добавление пользователя или группы** , добавьте запись в список и нажмите кнопку **ОК**.
 4. Чтобы включить аудит, откройте командную строку с повышенным уровнем привилегий и выполните следующую команду: ```auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable```.
 5. Закройте вкладку **Параметры локальной безопасности**.
 <br />   -- **Следующие шаги требуются только для основных серверов AD FS.** -- <br />
@@ -137,8 +137,8 @@ ms.locfileid: "92275648"
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2016"></a>Включение аудита для AD FS на Windows Server 2016
 
 1. Из раздела **Диспетчер сервера** на начальном экране или на панели задач откройте диалоговое окно **Локальная политика безопасности**. Затем выберите **Сервис/Локальная политика безопасности**.
-2. Перейдите к папке **Параметры безопасности\Локальные политики\Назначение прав пользователей**, а затем дважды щелкните **Создание аудитов безопасности**.
-3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS. Если она отсутствует, щелкните **Добавить пользователя или группу**, добавьте учетную запись службы AD FS в список и нажмите кнопку **ОК**.
+2. Перейдите к папке **Параметры безопасности\Локальные политики\Назначение прав пользователей** , а затем дважды щелкните **Создание аудитов безопасности**.
+3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS. Если она отсутствует, щелкните **Добавить пользователя или группу** , добавьте учетную запись службы AD FS в список и нажмите кнопку **ОК**.
 4. Чтобы включить аудит, откройте командную строку с повышенным уровнем привилегий и выполните следующую команду: <code>auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable</code>.
 5. Закройте вкладку **Параметры локальной безопасности**.
 <br />   -- **Следующие шаги требуются только для основных серверов AD FS.** -- <br />

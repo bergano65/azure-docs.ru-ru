@@ -5,12 +5,12 @@ ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 758e11a9c043fbd1238d1e3533a2d83804ec0b73
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 5b9ffdec83fb613b7df0b5a3227ca66c55e54fe9
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043105"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422558"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "93043105"
 
 | Начало работы | Основные понятия| Направляемое обучение |
 | -- | -- | -- | 
-| <ul><li>[ ФункцияNode.js с использованием Visual Studio Code](./functions-create-first-function-vs-code.md?pivots=programming-language-javascript)</li><li>[Node.js функции с помощью терминала/командной строки](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-javascript)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[Функции TypeScript](#typescript)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Рефакторинг интерфейсов API Node.js и Express для бессерверных интерфейсов API](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
+| <ul><li>[ ФункцияNode.js с использованием Visual Studio Code](./create-first-function-vs-code-node.md)</li><li>[Node.js функции с помощью терминала/командной строки](./create-first-function-cli-java.md)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[Функции TypeScript](#typescript)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Рефакторинг интерфейсов API Node.js и Express для бессерверных интерфейсов API](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
 
 ## <a name="javascript-function-basics"></a>Основы функций JavaScript
 
@@ -107,13 +107,13 @@ module.exports = async function (context, req) {
 
 ### <a name="inputs"></a>Входные данные
 Входные данные в Функциях Azure делятся на две категории: входные данные от триггера и дополнительные входные данных. Привязки триггера и другие привязки для ввода (привязки `direction === "in"`) могут считываться функцией тремя способами.
- - **_[Рекомендуется.]_ Как параметры, передаваемые функции.** Они передаются в функцию в том же порядке, в каком они определены в файле *function.json* . `name`Свойство, определенное в *function.js* , не обязательно должно совпадать с именем параметра, хотя он должен.
+ - **_[Рекомендуется.]_ Как параметры, передаваемые функции.** Они передаются в функцию в том же порядке, в каком они определены в файле *function.json*. `name`Свойство, определенное в *function.js* , не обязательно должно совпадать с именем параметра, хотя он должен.
  
    ```javascript
    module.exports = async function(context, myTrigger, myInput, myOtherInput) { ... };
    ```
    
- - **Как элементы объекта [`context.bindings`](#contextbindings-property).** Каждый элемент назван по свойству `name`, определенному в файле *function.json* .
+ - **Как элементы объекта [`context.bindings`](#contextbindings-property).** Каждый элемент назван по свойству `name`, определенному в файле *function.json*.
  
    ```javascript
    module.exports = async function(context) { 
@@ -154,7 +154,7 @@ module.exports = async function (context, req) {
 
   При использовании синхронной функции можно вернуть этот объект с помощью [`context.done`](#contextdone-method) (см. пример).
 - **_[Рекомендуется для одного экземпляра выходных данных.]_ Возвращает значение напрямую и с использованием имени привязки $return.** Этот метод работает для функций возврата (асинхронной или функции обещаний). См. пример в разделе [Экспорт асинхронной функции](#exporting-an-async-function). 
-- **Присвоение значений для свойства `context.bindings`** . Вы можете присвоить значения непосредственно для context.bindings.
+- **Присвоение значений для свойства `context.bindings`**. Вы можете присвоить значения непосредственно для context.bindings.
 
   ```javascript
   module.exports = async function(context) {
@@ -358,7 +358,7 @@ context.log.warn("Something has happened. " + context.invocationId);
 }  
 ```
 
-Значения **consoleLevel** соответствуют именам методов в `context.log`. Чтобы отключить ведение журнала трассировки в консоли, задайте для параметра **consoleLevel** значение _off_ . Дополнительные сведения см. [ в разделеhost.jsпо ссылке на v1. x](functions-host-json-v1.md).
+Значения **consoleLevel** соответствуют именам методов в `context.log`. Чтобы отключить ведение журнала трассировки в консоли, задайте для параметра **consoleLevel** значение _off_. Дополнительные сведения см. [ в разделеhost.jsпо ссылке на v1. x](functions-host-json-v1.md).
 
 ---
 
@@ -426,7 +426,7 @@ module.exports = function (context, req) {
 
 У объекта (запроса) `context.req` есть следующие свойства:
 
-| Свойство      | Описание                                                    |
+| Свойство.      | Описание                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | Объект, содержащий текст запроса.               |
 | _Верхний_     | Объект, содержащий заголовок запроса.                   |
@@ -441,7 +441,7 @@ module.exports = function (context, req) {
 
 У объекта (ответа) `context.res` есть следующие свойства:
 
-| Свойство  | Описание                                               |
+| Свойство.  | Описание                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | Объект, содержащий текст ответа.         |
 | _Верхний_ | Объект, содержащий заголовок ответа.             |
@@ -507,7 +507,7 @@ FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу
 
 | Версия службы "Функции" | Версия узла (Windows) | Версия узла (Linux) |
 |---|---| --- |
-| 1.x | 6.11.2 (заблокировано средой выполнения) | Н/Д |
+| 1.x | 6.11.2 (заблокировано средой выполнения) | н/д |
 | 2.x  | ~ 8<br/>~ 10 (рекомендуется)<br/>~ 12<sup>*</sup> | ~ 8 (рекомендуется)<br/>~ 10  |
 | 3.x | ~ 10<br/>~ 12 (рекомендуется)  | ~ 10<br/>~ 12 (рекомендуется) |
 
@@ -545,12 +545,12 @@ module.exports = function(context) {
 ### <a name="using-kudu"></a>С помощью Kudu
 1. Перейдите к `https://<function_app_name>.scm.azurewebsites.net`.
 
-2. Щелкните **консоль отладки**  >  **cmd** .
+2. Щелкните **консоль отладки**  >  **cmd**.
 
 3. Перейдите к `D:\home\site\wwwroot`, а затем перетащите файл package.json в папку **wwwroot** в верхней части страницы.  
     Существуют другие способы передачи файлов в приложение-функцию. Дополнительные сведения см. в разделе [Как обновить файлы приложения-функции](functions-reference.md#fileupdate). 
 
-4. После загрузки файла package.json запустите команду `npm install` в **консоли удаленного выполнения Kudu** .  
+4. После загрузки файла package.json запустите команду `npm install` в **консоли удаленного выполнения Kudu**.  
     В результате этого действия будут загружены пакеты, указанные в файле package.json, и перезапущено приложение-функция.
 
 ## <a name="environment-variables"></a>Переменные среды
@@ -651,7 +651,7 @@ module.exports = myObj;
 
 ## <a name="typescript"></a>TypeScript
 
-Если вы используете версию 2. x среды выполнения функций, [функции Azure для Visual Studio Code](functions-create-first-function-vs-code.md) и [Azure functions Core Tools](functions-run-local.md) позволяют создавать приложения-функции с помощью шаблона, поддерживающего проекты приложения-функции TypeScript. Этот шаблон создает `package.json` файлы проекта и, облегчающие превращение `tsconfig.json` , запуск и публикацию функций JavaScript из кода TypeScript с помощью этих средств.
+Если вы используете версию 2. x среды выполнения функций, [функции Azure для Visual Studio Code](./create-first-function-cli-typescript.md) и [Azure functions Core Tools](functions-run-local.md) позволяют создавать приложения-функции с помощью шаблона, поддерживающего проекты приложения-функции TypeScript. Этот шаблон создает `package.json` файлы проекта и, облегчающие превращение `tsconfig.json` , запуск и публикацию функций JavaScript из кода TypeScript с помощью этих средств.
 
 Созданный `.funcignore` файл используется для указания, какие файлы исключаются при публикации проекта в Azure.  
 
@@ -659,7 +659,7 @@ module.exports = myObj;
 
 Способ, которым локально разрабатывается и развертывается в проекте TypeScript, зависит от вашего средства разработки.
 
-### <a name="visual-studio-code"></a>Visual Studio Code
+### <a name="visual-studio-code"></a>Visual Studio Code
 
 [Функция Azure для расширения Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) позволяет разрабатывать функции с помощью TypeScript. Основные средства являются обязательным требованием к расширению функций Azure.
 

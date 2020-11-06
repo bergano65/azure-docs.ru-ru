@@ -6,21 +6,21 @@ ms.custom: devx-track-java
 ms.author: karler
 ms.topic: how-to
 ms.date: 04/08/2020
-ms.openlocfilehash: a9592d848398c71bc573c073f0b712898f666640
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 48a732e3935d78bdbf8b81fe989b59be1fbe2203
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104875"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422813"
 ---
 # <a name="use-java-and-gradle-to-create-and-publish-a-function-to-azure"></a>Использование Java и Gradle для создания и публикации функции в Azure
 
 В этой статье показано, как создать и опубликовать проект функции Java в службе "функции Azure" с помощью программы командной строки Gradle. После завершения этого руководства код функции будет выполняться в Azure в [бессерверном плане потребления](functions-scale.md#consumption-plan) с активацией по HTTP-запросу. 
 
 > [!NOTE]
-> Если Gradle не является предпочтительным средством разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java, используя [Maven](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java), [IntelliJ идею](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [VS Code](./functions-create-first-function-vs-code.md?pivots=programming-language-java).
+> Если Gradle не является предпочтительным средством разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java, используя [Maven](./create-first-function-cli-java.md), [IntelliJ идею](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [VS Code](./create-first-function-vs-code-java.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для разработки функций с помощью Java, должны быть установлены следующие компоненты:
 
@@ -127,7 +127,7 @@ gradle azureFunctionsDeploy
 + группа ресурсов; Ей присваивается имя, которое вы указали в параметре _resourceGroup_.
 + учетная запись хранения; Требуется для Функций Azure. Это имя создается случайным образом на основе требований к именованию учетных записей хранения.
 + План службы приложений. Несерверное размещение плана потребления для приложения функции в указанном _аппрегион_. Это имя создается случайным образом.
-+ Приложение-функция. Приложение-функция представляет собой минимальную единицу развертывания и выполнения для ваших функций. Ему присваивается имя из параметра _appName_, к которому добавляется случайное число. 
++ Приложение-функция. Приложение-функция представляет собой минимальную единицу развертывания и выполнения для ваших функций. Ему присваивается имя из параметра _appName_ , к которому добавляется случайное число. 
 
 Развертывание также упаковывает файлы проекта и развертывает их в новом приложении-функции [из ZIP-файла](functions-deployment-technologies.md#zip-deploy) с включенным режимом выполнения из пакета.
 
@@ -142,7 +142,7 @@ gradle azureFunctionsDeploy
 
 1. Перейдите на [портал Azure], войдите в систему, введите _имя приложения-функции_ в поле **Поиск** в верхней части страницы и нажмите клавишу ВВОД.
  
-1. В приложении-функции выберите **функции**, выберите функцию, а затем щелкните **</> получить URL-адрес функции** в правом верхнем углу. 
+1. В приложении-функции выберите **функции** , выберите функцию, а затем щелкните **</> получить URL-адрес функции** в правом верхнем углу. 
 
     :::image type="content" source="./media/functions-create-first-java-gradle/get-function-url-portal.png" alt-text="Копирование URL-адреса функции с портала Azure":::
 

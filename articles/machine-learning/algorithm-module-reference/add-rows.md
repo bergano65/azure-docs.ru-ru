@@ -1,7 +1,7 @@
 ---
 title: 'Добавить строки: ссылка на модуль'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль добавления строк в Машинное обучение Azure для сцепления двух наборов данных.
+description: Узнайте, как использовать модуль добавления строк в конструкторе Машинное обучение Azure для сцепления двух наборов данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 02/22/2020
-ms.openlocfilehash: 353ecc89e242e1d17dd83436f83afe77cc8c84ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2c2a74ee88e7161ab8dd1701ef4d105df67c0938
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90898976"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421946"
 ---
 # <a name="add-rows-module"></a>Добавить модуль "строки"
 

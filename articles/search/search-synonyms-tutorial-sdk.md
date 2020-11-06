@@ -7,141 +7,139 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 11/05/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 842d43c82875a1a8e5e45ba14f47ceb6eac26727
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b97b223ac180df7f8eb07ad8eaab66847f50776
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91538812"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93423000"
 ---
 # <a name="example-add-synonyms-for-azure-cognitive-search-in-c"></a>Пример. Добавление синонимов для Когнитивный поиск Azure в C #
 
 Синонимы позволяют расширить запрос с помощью сопоставления семантически эквивалентных терминов с входными терминами. Например, вы можете сопоставить термин "машина" с документами, в которых встречается слово "автомобиль" или "транспортное средство". 
 
-В Когнитивный поиск Azure синонимы определяются в сопоставлении *синонимов*с помощью *правил сопоставления* , связывающих эквивалентные термины. В этом примере рассматриваются основные шаги по добавлению и использованию синонимов с существующим индексом. Вы узнаете, как выполнять следующие задачи:
+В Когнитивный поиск Azure синонимы определяются в сопоставлении *синонимов* с помощью *правил сопоставления* , связывающих эквивалентные термины. В этом примере рассматриваются основные шаги по добавлению и использованию синонимов с существующим индексом.
+
+В этом примере вы научитесь:
 
 > [!div class="checklist"]
-> * Создайте карту синонимов с помощью класса  [SynonymMap](/dotnet/api/microsoft.azure.search.models.synonymmap) . 
-> * Задайте свойство [SynonymMaps](/dotnet/api/microsoft.azure.search.models.field.synonymmaps) для полей, которые должны поддерживать расширение запросов через синонимы.
+> * Создайте карту синонимов с помощью [класса SynonymMap](/dotnet/api/azure.search.documents.indexes.models.synonymmap). 
+> * Задайте [свойство синониммапснаме](/dotnet/api/azure.search.documents.indexes.models.searchfield.synonymmapnames) для полей, которые должны поддерживать расширение запросов через синонимы.
 
 Вы можете запросить поле с поддержкой синонимов как обычно. Для доступа к синонимам не требуется дополнительный синтаксис запроса.
 
 Вы можете создать несколько сопоставлений синонимов, разместить их как ресурс служб, доступный для любого индекса, а затем указать ссылку на используемый на уровне поля. Во время выполнения запроса в дополнение к поиску индекса Когнитивный поиск Azure выполняет поиск в сопоставлении синонимов, если он указан в полях, используемых в запросе.
 
 > [!NOTE]
-> Синонимы можно создавать программно, но не на портале. Если вы считаете, что нам следует добавить поддержку синонимов на портале Azure, оставьте свой отзыв на [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
+> Синонимы можно создавать программно, но не на портале.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже приведены предварительные требования, описанные в этом руководстве.
 
 * [Visual Studio](https://www.visualstudio.com/downloads/)
 * [Служба Когнитивный поиск Azure](search-create-service-portal.md)
-* [Библиотека Microsoft.Azure.Search .NET](/dotnet/api/overview/azure/search)
-* [Использование Когнитивный поиск Azure из приложения .NET](./search-howto-dotnet-sdk.md)
+* [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/)
+
+Если вы не знакомы с клиентской библиотекой .NET, см. статью [использование когнитивный Поиск Azure в .NET](search-howto-dotnet-sdk.md).
+
+## <a name="sample-code"></a>Образец кода
+
+Полный исходный код примера приложения, используемого в этом примере, можно найти на сайте [GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToSynonyms).
 
 ## <a name="overview"></a>Обзор
 
-Значение синонимов показано в запросах "до" и "после". В этом примере используйте пример приложения, которое выполняет запросы и возвращает результаты по образцу индекса. Пример приложения создает небольшой индекс с именем hotels с двумя документами. Приложение выполняет поисковые запросы с помощью терминов и фраз, которые отсутствуют в индексе, что вызывает функцию синонимов, и поиск выполняется повторно. В примере кода ниже показан общий поток.
+Запросы Before и After используются для демонстрации значений синонимов. В этом примере пример приложения выполняет запросы и возвращает результаты на примере индекса гостиниц, заполненного двумя документами. Во первых, приложение выполняет поисковые запросы с использованием терминов и фраз, которые не отображаются в индексе. Во-вторых, код включает функцию синонимов, а затем повторно выдает те же запросы, возвращая результаты на основе совпадений в сопоставлении синонимов. 
+
+В примере кода ниже показан общий поток.
 
 ```csharp
-  static void Main(string[] args)
-  {
-      SearchServiceClient serviceClient = CreateSearchServiceClient();
+static void Main(string[] args)
+{
+   SearchIndexClient indexClient = CreateSearchIndexClient();
 
-      Console.WriteLine("{0}", "Cleaning up resources...\n");
-      CleanupResources(serviceClient);
+   Console.WriteLine("Cleaning up resources...\n");
+   CleanupResources(indexClient);
 
-      Console.WriteLine("{0}", "Creating index...\n");
-      CreateHotelsIndex(serviceClient);
+   Console.WriteLine("Creating index...\n");
+   CreateHotelsIndex(indexClient);
 
-      ISearchIndexClient indexClient = serviceClient.Indexes.GetClient("hotels");
+   SearchClient searchClient = indexClient.GetSearchClient("hotels");
 
-      Console.WriteLine("{0}", "Uploading documents...\n");
-      UploadDocuments(indexClient);
+   Console.WriteLine("Uploading documents...\n");
+   UploadDocuments(searchClient);
 
-      ISearchIndexClient indexClientForQueries = CreateSearchIndexClient();
+   SearchClient searchClientForQueries = CreateSearchClientForQueries();
 
-      RunQueriesWithNonExistentTermsInIndex(indexClientForQueries);
+   RunQueriesWithNonExistentTermsInIndex(searchClientForQueries);
 
-      Console.WriteLine("{0}", "Adding synonyms...\n");
-      UploadSynonyms(serviceClient);
-      EnableSynonymsInHotelsIndex(serviceClient);
-      Thread.Sleep(10000); // Wait for the changes to propagate
+   Console.WriteLine("Adding synonyms...\n");
+   UploadSynonyms(indexClient);
 
-      RunQueriesWithNonExistentTermsInIndex(indexClientForQueries);
+   Console.WriteLine("Enabling synonyms in the test index...\n");
+   EnableSynonymsInHotelsIndexSafely(indexClient);
+   Thread.Sleep(10000); // Wait for the changes to propagate
 
-      Console.WriteLine("{0}", "Complete.  Press any key to end application...\n");
+   RunQueriesWithNonExistentTermsInIndex(searchClientForQueries);
 
-      Console.ReadKey();
-  }
+   Console.WriteLine("Complete.  Press any key to end application...\n");
+
+   Console.ReadKey();
+}
 ```
-Инструкции по созданию и заполнению примера индекса см. в статье [использование когнитивный Поиск Azure из приложения .NET](./search-howto-dotnet-sdk.md).
 
 ## <a name="before-queries"></a>Запросы "до"
 
 С помощью `RunQueriesWithNonExistentTermsInIndex` отправляются запросы на поиск таких выражений, как "пять звезд", "Интернет" и "отели среднего класса".
+
 ```csharp
 Console.WriteLine("Search the entire index for the phrase \"five star\":\n");
-results = indexClient.Documents.Search<Hotel>("\"five star\"", parameters);
+results = searchClient.Search<Hotel>("\"five star\"", searchOptions);
 WriteDocuments(results);
 
 Console.WriteLine("Search the entire index for the term 'internet':\n");
-results = indexClient.Documents.Search<Hotel>("internet", parameters);
+results = searchClient.Search<Hotel>("internet", searchOptions);
 WriteDocuments(results);
 
 Console.WriteLine("Search the entire index for the terms 'economy' AND 'hotel':\n");
-results = indexClient.Documents.Search<Hotel>("economy AND hotel", parameters);
+results = searchClient.Search<Hotel>("economy AND hotel", searchOptions);
 WriteDocuments(results);
 ```
-Ни в одном из двух индексированных документов нет этих выражений, поэтому мы используем следующие выходные данные из первой функции `RunQueriesWithNonExistentTermsInIndex`.
-```
-Search the entire index for the phrase "five star":
 
-no document matched
-
-Search the entire index for the term 'internet':
-
-no document matched
-
-Search the entire index for the terms 'economy' AND 'hotel':
-
-no document matched
-```
+Ни один из двух индексированных документов не содержит термины, поэтому мы получаем следующие выходные данные из первого `RunQueriesWithNonExistentTermsInIndex` :  **документ не соответствует**.
 
 ## <a name="enable-synonyms"></a>Включение поиска синонимов
 
-Чтобы включить поиск синонимов, нам потребуется выполнить два действия. Сначала нам необходимо определить и отправить правила синонимов, а затем настроить поля для их использования. Описание этого процесса вы можете найти в `UploadSynonyms` и `EnableSynonymsInHotelsIndex`.
+После выполнения запросов "до" пример кода включает синонимы. Чтобы включить поиск синонимов, нам потребуется выполнить два действия. Сначала определите и отправьте правила синонимов. Во вторых, настройте поля для их использования. Описание этого процесса вы можете найти в `UploadSynonyms` и `EnableSynonymsInHotelsIndex`.
 
 1. Добавьте сопоставление синонимов в свою службу поиска. С помощью `UploadSynonyms` мы определим четыре правила в сопоставлении синонимов desc-synonymmap и добавим его в службу.
-   ```csharp
-    var synonymMap = new SynonymMap()
-    {
-        Name = "desc-synonymmap",
-        Format = "solr",
-        Synonyms = "hotel, motel\n
-                    internet,wifi\n
-                    five star=>luxury\n
-                    economy,inexpensive=>budget"
-    };
 
-    serviceClient.SynonymMaps.CreateOrUpdate(synonymMap);
+   ```csharp
+   private static void UploadSynonyms(SearchIndexClient indexClient)
+   {
+      var synonymMap = new SynonymMap("desc-synonymmap", "hotel, motel\ninternet,wifi\nfive star=>luxury\neconomy,inexpensive=>budget");
+
+      indexClient.CreateOrUpdateSynonymMap(synonymMap);
+   }
    ```
-   Сопоставление синонимов должно соответствовать стандартному формату `solr` с открытым кодом. Этот формат объясняется в разделе [Синонимы в Azure когнитивный Поиск](search-synonyms.md) `Apache Solr synonym format` .
 
-2. Настройте поля, поддерживающие поиск, чтобы использовать сопоставление синонимов в определении индекса. С помощью `EnableSynonymsInHotelsIndex` мы можем включить поиск синонимов для двух полей — `category` и `tags`. Для этого необходимо задать свойство `synonymMaps` для имени добавленного сопоставления синонимов.
+1. Настройте поля, поддерживающие поиск, чтобы использовать сопоставление синонимов в определении индекса. С помощью `AddSynonymMapsToFields` мы можем включить поиск синонимов для двух полей — `category` и `tags`. Для этого необходимо задать свойство `SynonymMapNames` для имени добавленного сопоставления синонимов.
+
    ```csharp
-   Index index = serviceClient.Indexes.Get("hotels");
-   index.Fields.First(f => f.Name == "category").SynonymMaps = new[] { "desc-synonymmap" };
-   index.Fields.First(f => f.Name == "tags").SynonymMaps = new[] { "desc-synonymmap" };
-
-   serviceClient.Indexes.CreateOrUpdate(index);
+   private static SearchIndex AddSynonymMapsToFields(SearchIndex index)
+   {
+      index.Fields.First(f => f.Name == "category").SynonymMapNames.Add("desc-synonymmap");
+      index.Fields.First(f => f.Name == "tags").SynonymMapNames.Add("desc-synonymmap");
+      return index;
+   }
    ```
-   Когда вы добавите сопоставление синонимов, необходимость в перестроении индексов отпадет. Чтобы использовать новое сопоставление синонимов, вы можете добавить это сопоставление в свою службу, а затем изменить существующие определения полей в любом индексе. Добавление новых атрибутов никак не скажется на доступности индексов. То же относится и к отключению поиска синонимов для поля. Вы можете просто задать для пустого списка свойство `synonymMaps`.
+
+   Когда вы добавите сопоставление синонимов, необходимость в перестроении индексов отпадет. Чтобы использовать новое сопоставление синонимов, вы можете добавить это сопоставление в свою службу, а затем изменить существующие определения полей в любом индексе. Добавление новых атрибутов никак не скажется на доступности индексов. То же относится и к отключению поиска синонимов для поля. Вы можете просто задать для пустого списка свойство `SynonymMapNames`.
+
    ```csharp
-   index.Fields.First(f => f.Name == "category").SynonymMaps = new List<string>();
+   index.Fields.First(f => f.Name == "category").SynonymMapNames.Add("desc-synonymmap");
    ```
 
 ## <a name="after-queries"></a>Запросы "после"
@@ -161,12 +159,10 @@ Search the entire index for the terms 'economy' AND 'hotel':
 
 Name: Roach Motel       Category: Budget        Tags: [motel, budget]
 ```
+
 Первый запрос находит документ из правила `five star=>luxury`. Для второго запроса поиск расширяется с помощью термина `internet,wifi`, а для третьего при поиске соответствующих документов используются оба термина запросов — `hotel, motel` и `economy,inexpensive=>budget`.
 
 Добавление синонимов полностью изменяет возможности поиска. В этом примере исходным запросом не удалось вернуть значимые результаты, даже если документы в нашем индексе оказались релевантными. Включив поиск синонимов, мы можем расширить индекс, чтобы включить распространенные термины, не изменяя при этом базовые данные в индексе.
-
-## <a name="sample-application-source-code"></a>Исходный код образца приложения
-Полный исходный код образца приложения, используемого в этом пошаговом руководстве, см. в репозитории [GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToSynonyms).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -174,7 +170,7 @@ Name: Roach Motel       Category: Budget        Tags: [motel, budget]
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-В этом примере демонстрируется функция синонимов в коде C# для создания и публикации правил сопоставления, а затем вызывается сопоставление синонимов для запроса. См. дополнительные сведения о [пакете SDK для .NET ](/dotnet/api/microsoft.azure.search) и [REST API](/rest/api/searchservice/).
+В этом примере демонстрируется функция синонимов в коде C# для создания и публикации правил сопоставления, а затем вызывается сопоставление синонимов для запроса. См. дополнительные сведения о [пакете SDK для .NET ](/dotnet/api/overview/azure/search.documents-readme) и [REST API](/rest/api/searchservice/).
 
 > [!div class="nextstepaction"]
 > [Использование синонимов в Azure Когнитивный поиск](search-synonyms.md)

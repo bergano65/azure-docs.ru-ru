@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperfq1, automl
-ms.openlocfilehash: 009018335e57943392b83047702f24890bf714d5
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 825413421bc9025c2912bb790a3166c6e3d34a0f
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359618"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421844"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -117,7 +117,7 @@ dataset = Dataset.Tabular.from_delimited_files(data)
 
     Пример удаленных вычислений с использованием управляемых вычислительных ресурсов Машинного обучения Azure см. в [этой записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb). 
 
-* **Кластер Azure Databricks** в подписке Azure. Дополнительные сведения см. здесь: [Настройка кластера Azure Databricks для автоматизированного машинного обучения](how-to-configure-environment.md#aml-databricks). На [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/azure-databricks/automl) доступны примеры записных книжек с Azure Databricks.
+* **Кластер Azure Databricks** в подписке Azure. Дополнительные сведения см. в подокне [Настройка кластера Azure Databricks для автоматического создания машинного обучения](how-to-configure-databricks-automl-environment.md). На [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/azure-databricks/automl) доступны примеры записных книжек с Azure Databricks.
 
 <a name='configure-experiment'></a>
 

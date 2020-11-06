@@ -3,12 +3,12 @@ title: Развертывание горизонта в решении VMware д
 description: Узнайте, как развернуть горизонт VMware в решении VMware для Azure.
 ms.topic: how-to
 ms.date: 09/29/2020
-ms.openlocfilehash: babce512b896009c08165d2e3d9aec7c33724bf4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: fb5e5b4c5f5da4c140f8d3575b963545f3a57db8
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321352"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93423124"
 ---
 # <a name="deploy-horizon-on-azure-vmware-solution"></a>Развертывание горизонта в решении VMware для Azure 
 
@@ -128,6 +128,18 @@ ms.locfileid: "93321352"
 
 Методология изменения размера горизонта на узле, работающем в решении VMware для Azure, проще, чем в локальной среде.  Это связано с тем, что узел решения Azure VMware является стандартизированным.  Точное определение размера узла помогает определить количество узлов, необходимых для поддержки требований VDI.  Это центральное значение для определения затрат на Рабочий стол.
 
+### <a name="sizing-tables"></a>Изменение размеров таблиц
+
+В таблицах показаны распространенные рабочие нагрузки для учетных записей рабочих нагрузок и рабочих ролей для входа в систему VSI.
+
+#### <a name="knowledge-worker-workloads"></a>Рабочие нагрузки рабочих нагрузок в базе знаний
+
+:::image type="content" source="media/horizon/common-vdi-profiles-vsi-workloads-knowledge.png" alt-text="Таблица общих профилей VDI для горизонта VMware для учетных записей рабочих нагрузок в базе данных VSI" lightbox="media/horizon/common-vdi-profiles-vsi-workloads-knowledge.png" border="false":::
+
+#### <a name="power-worker-workloads"></a>Рабочие нагрузки Power Worker
+
+:::image type="content" source="media/horizon/common-vdi-profiles-vsi-workloads-power.png" alt-text="Таблица общих профилей VDI для горизонта управления рабочими нагрузками для входа в систему VSI" lightbox="media/horizon/common-vdi-profiles-vsi-workloads-power.png" border="false":::
+
 ### <a name="azure-vmware-solution-host-instance"></a>Экземпляр узла решения VMware Azure
 
 * Сервер PowerEdge R640 Server-DSS с ОГРАНИЧЕНным доступом
@@ -212,5 +224,5 @@ ms.locfileid: "93321352"
 
 Стоимость виртуальной машины инфраструктуры составляет \$ 0,36 на пользователя в месяц для развертывания 2 000-Desktop в примере выше. В этом примере используется по цене за использование экземпляра Azure восточной части США за июнь 2020. Цены могут отличаться в зависимости от региона, выбранных параметров и времени.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о горизонте VMware в решении VMware для Azure см. в [разделе часто задаваемые вопросы о горизонте VMware](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/products/horizon/vmw-horizon-on-microsoft-azure-vmware-solution-faq.pdf).
