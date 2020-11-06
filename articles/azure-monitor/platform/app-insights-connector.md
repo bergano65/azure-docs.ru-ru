@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
-ms.openlocfilehash: 09485d3279e4ca4fff5b6492bab432d8034d7e42
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e426962310417fdca56ea2f7d45a6ea820d41981
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449408"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94335882"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
@@ -57,8 +57,8 @@ ms.locfileid: "91449408"
 
 ## <a name="configuration"></a>Конфигурация
 
-1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AppInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../insights/solutions.md).
-2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
+1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../insights/solutions.md).
+2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы** , чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
 3. В разделе **Подписки** выберите подписку с ресурсами Application Insights, а затем в разделе **Имя** выберите одно или несколько приложений.
 4. Выберите команду **Сохранить**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "91449408"
 
 ### <a name="view-application-insights-connector-information"></a>Просмотр сведений о соединителе Application Insights
 
-Щелкните плитку **Application Insights**, чтобы открыть панель мониторинга **Application Insights** для просмотра следующих колонок.
+Щелкните плитку **Application Insights** , чтобы открыть панель мониторинга **Application Insights** для просмотра следующих колонок.
 
 ![Снимок экрана панели мониторинга Application Insights, в которой показаны колонки для приложений, объем данных и доступность.](./media/app-insights-connector/app-insights-dash01.png)
 
@@ -113,15 +113,15 @@ ms.locfileid: "91449408"
 
 ![Перспектива "Доступность" Application Insights](./media/app-insights-connector/availability-blade-drill-search.png)
 
-Если щелкнуть в любом месте в колонках **Server Requests** (Запросы сервера) или **Сбои**, компоненты перспективы изменятся, предоставляя данные визуализации, связанные с запросами.
+Если щелкнуть в любом месте в колонках **Server Requests** (Запросы сервера) или **Сбои** , компоненты перспективы изменятся, предоставляя данные визуализации, связанные с запросами.
 
 ![Колонка "Сбои" Application Insights](./media/app-insights-connector/server-requests-failures-drill-search.png)
 
-Если щелкнуть в любом месте в колонке **Исключения**, отобразятся данные визуализации, соответствующие исключениям.
+Если щелкнуть в любом месте в колонке **Исключения** , отобразятся данные визуализации, соответствующие исключениям.
 
 ![Колонка "Исключения" Application Insights](./media/app-insights-connector/exceptions-blade-drill-search.png)
 
-Вне зависимости от того, что вы щелкнете на панели мониторинга **соединителя Application Insights** на странице **Поиск**, в любом запросе, возвращающем данные Application Insights, будет отображаться перспектива Application Insights. Например, если вы просматриваете данные Application Insights, в запросе **&#42;** также будет отображаться вкладка перспективы, как показано на следующем изображении:
+Вне зависимости от того, что вы щелкнете на панели мониторинга **соединителя Application Insights** на странице **Поиск** , в любом запросе, возвращающем данные Application Insights, будет отображаться перспектива Application Insights. Например, если вы просматриваете данные Application Insights, в запросе **&#42;** также будет отображаться вкладка перспективы, как показано на следующем изображении:
 
 ![Application Insights](./media/app-insights-connector/app-insights-search.png)
 
@@ -135,7 +135,7 @@ ms.locfileid: "91449408"
 
 Колонки Соединителя Application Insights предназначены для сведения данных в выбранное приложение Application Insights *при использовании портала Azure*. Решение можно использовать как высокоуровневую платформу мониторинга, которая позволяет устранять неполадки в приложении. При появлении потенциальной проблемы в одном из подключенных приложений вы можете получить о ней дополнительные сведения в поиске Log Analytics или свести их непосредственно в приложении Application Insights.
 
-Чтобы свести данные, нажмите символ с многоточием (**…**), который отображается в конце каждой строки, а затем выберите **Open in Application Insights** (Открыть в Application Insights).
+Чтобы свести данные, нажмите символ с многоточием ( **…** ), который отображается в конце каждой строки, а затем выберите **Open in Application Insights** (Открыть в Application Insights).
 
 >[!NOTE]
 >Параметр **Open in Application Insights** (Открыть в Application Insights) недоступен на портале Azure.
@@ -144,7 +144,7 @@ ms.locfileid: "91449408"
 
 ### <a name="sample-corrected-data"></a>Данные исправления выборки
 
-В Application Insights предоставлена функция *[исправления выборки](../app/sampling.md)*, с помощью которой можно уменьшить трафик данных телеметрии. При включении выборки в приложении Application Insights уменьшается количество записей, хранимых в Application Insights и в службе Log Analytics. В то время как на странице **соединителя Application Insights** и в перспективах данные остаются согласованными, для пользовательских запросов данные выборки необходимо исправлять вручную.
+В Application Insights предоставлена функция *[исправления выборки](../app/sampling.md)* , с помощью которой можно уменьшить трафик данных телеметрии. При включении выборки в приложении Application Insights уменьшается количество записей, хранимых в Application Insights и в службе Log Analytics. В то время как на странице **соединителя Application Insights** и в перспективах данные остаются согласованными, для пользовательских запросов данные выборки необходимо исправлять вручную.
 
 Ниже приведен пример исправления выборки в запросе поиска по журналам:
 
@@ -154,7 +154,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 Поле **Sampled Count** (Количество данных выборки) есть во всех записях и обозначает количество точек данных, представленных в записи. Если включить функцию выборки для вашего приложения Application Insights, значение поля **Sampled Count** (Количество данных выборки) будет больше 1. Чтобы подсчитать число записей, создаваемых приложением, суммируйте значения полей **Sampled Count** (Количество данных выборки).
 
-Выборка влияет только на общее число записей, создаваемых приложением. Значение выборки не нужно исправлять для таких полей метрик, как **RequestDuration** или **AvailabilityDuration**, так как в этих полях отображается среднее значение представленных записей.
+Выборка влияет только на общее число записей, создаваемых приложением. Значение выборки не нужно исправлять для таких полей метрик, как **RequestDuration** или **AvailabilityDuration** , так как в этих полях отображается среднее значение представленных записей.
 
 ## <a name="input-data"></a>Входные данные
 
@@ -174,7 +174,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="generic-fields"></a>Универсальные поля
 
-| Свойство | Описание |
+| Свойство. | Description |
 | --- | --- |
 | Тип | ApplicationInsights |
 | ClientIP |   |
@@ -200,7 +200,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="availability-specific-fields"></a>Поля со сведениями о доступности
 
-| Свойство | Описание |
+| Свойство. | Description |
 | --- | --- |
 | TelemetryType | Доступность |
 | AvailabilityTestName | Имя веб-теста |
@@ -242,7 +242,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="request-specific-fields"></a>Поля со сведениями о запросах
 
-| Свойство | Описание |
+| Свойство. | Description |
 | --- | --- |
 | Тип | ApplicationInsights |
 | TelemetryType | Запрос |
@@ -304,7 +304,7 @@ $Headers = @{
 $Connections = Invoke-RestMethod -Method "GET" -Uri "https://management.azure.com$($LAWorkspace.ResourceId)/dataSources/?%24filter=kind%20eq%20'ApplicationInsights'&api-version=2015-11-01-preview" -Headers $Headers
 $ConnectionsJson = $Connections | ConvertTo-Json
 ```
-Этот сценарий требует маркер проверки подлинности носителя, используемый в процессе проверки подлинности в Azure Active Directory. Одним из способов получения токена описан в статье [Data Sources — Create Or Update](/rest/api/loganalytics/datasources/createorupdate) (Источники данных: создание или обновление). Щелкните **Попробовать** и войдите в свою подписку Azure. Вы можете скопировать маркер носителя из **предварительного запроса**, как показано на следующем рисунке.
+Этот сценарий требует маркер проверки подлинности носителя, используемый в процессе проверки подлинности в Azure Active Directory. Одним из способов получения токена описан в статье [Data Sources — Create Or Update](/rest/api/loganalytics/datasources/createorupdate) (Источники данных: создание или обновление). Щелкните **Попробовать** и войдите в свою подписку Azure. Вы можете скопировать маркер носителя из **предварительного запроса** , как показано на следующем рисунке.
 
 
 ![Маркер носителя](media/app-insights-connector/bearer-token.png)

@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 09/23/2020
 ms.author: alkohli
-ms.openlocfilehash: 9f4f9f65b562b01466aec69cd541ea77f443f803
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: f5bcb5c42661c375372d4d0b17571d784152dd5f
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127530"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337293"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>Использование локального веб-интерфейса для администрирования Data Box и Data Box Heavy
 
@@ -153,7 +153,7 @@ ms.locfileid: "92127530"
 <file size="3603" crc64="0x7e34c25d5606693f">\databox\TOC.yml</file>
 ```
 
-Этот файл содержит список всех файлов, которые были скопированы в Data Box или Data Box Heavy. В этом файле значение *crc64* соотносится с контрольной суммой, созданной для соответствующего файла.
+Этот файл содержит список всех файлов, которые были скопированы в Data Box или Data Box Heavy. В этом файле значение  *crc64* соотносится с контрольной суммой, созданной для соответствующего файла.
 
 ## <a name="view-available-capacity-of-the-device"></a>Просмотр доступной емкости устройства
 
@@ -212,7 +212,7 @@ ms.locfileid: "92127530"
 
 1. В правом верхнем углу локального веб-интерфейса устройства выберите **Параметры**.
 
-   ![Открыть параметры Data Box](media/data-box-local-web-ui-admin/data-box-settings-1.png)
+   ![Открыть параметры Data Box-1](media/data-box-local-web-ui-admin/data-box-settings-1.png)
 
 2. **Включить** Права оператора Backup.
 
@@ -235,7 +235,7 @@ ms.locfileid: "92127530"
 
 1. В правом верхнем углу локального веб-интерфейса устройства выберите **Параметры**.
 
-    ![Открыть параметры Data Box](media/data-box-local-web-ui-admin/data-box-settings-1.png)
+    ![Откройте параметры Data Box-2.](media/data-box-local-web-ui-admin/data-box-settings-1.png)
 
 2. **Включить** Списки управления доступом для службы файлов Azure.
 
@@ -255,7 +255,7 @@ ms.locfileid: "92127530"
 
 1. В правом верхнем углу локального веб-интерфейса устройства выберите **Параметры**.
 
-    ![Открыть параметры Data Box](media/data-box-local-web-ui-admin/data-box-settings-1.png)
+    ![Открыть параметры Data Box-3](media/data-box-local-web-ui-admin/data-box-settings-1.png)
 
 2. **Включить** TLS 1,1.
 

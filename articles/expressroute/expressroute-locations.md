@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 10/26/2020
 ms.author: duau
-ms.openlocfilehash: 5ac9c4cc28e3cb87307e032f4cd15afb7c687652
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 064c9e77876423d0c46f5f9890497a76331481ae
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93079093"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94336766"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -33,7 +33,7 @@ ms.locfileid: "93079093"
 Регионы Azure — это глобальные центры обработки данных, в которых размещаются ресурсы вычислений, сети и хранилища Azure. При создании ресурса Azure клиенту необходимо выбрать расположение ресурса. Расположение ресурса определяет, в каком центре обработки данных Azure (или в какой зоне доступности) создается этот ресурс.
 
 ## <a name="expressroute-locations"></a>Расположения ExpressRoute
-Расположения ExpressRoute (которые иногда называют расположениями пиринга) — это объекты совместного размещения, в которых установлены устройства Microsoft Enterprise Edge (MSEE). Расположения ExpressRoute являются точкой входа в сеть корпорации Майкрософт. Они распределены по всему миру, предоставляя клиентам возможность подключаться к сети корпорации Майкрософт в любом регионе. Именно в этих расположениях партнеры ExpressRoute и клиенты ExpressRoute Direct создают перекрестные подключения к сети корпорации Майкрософт. В общем случае расположения ExpressRoute не обязаны соответствовать регионам Azure. Например, клиент может создать канал ExpressRoute в расположении пиринга *Сиэтл* для доступа к ресурсу в регионе *Восточная часть США* .
+Расположения ExpressRoute (которые иногда называют расположениями пиринга) — это объекты совместного размещения, в которых установлены устройства Microsoft Enterprise Edge (MSEE). Расположения ExpressRoute являются точкой входа в сеть корпорации Майкрософт. Они распределены по всему миру, предоставляя клиентам возможность подключаться к сети корпорации Майкрософт в любом регионе. Именно в этих расположениях партнеры ExpressRoute и клиенты ExpressRoute Direct создают перекрестные подключения к сети корпорации Майкрософт. В общем случае расположения ExpressRoute не обязаны соответствовать регионам Azure. Например, клиент может создать канал ExpressRoute в расположении пиринга *Сиэтл* для доступа к ресурсу в регионе *Восточная часть США*.
 
 Вы сможете получить доступ ко всем службам Azure во всех регионах соответствующего геополитического региона, если вы подключены по меньшей мере к одному расположению ExpressRoute в этом регионе.
 
@@ -266,7 +266,7 @@ ms.locfileid: "93079093"
 | **[Cox Business](https://www.cox.com/business/networking/cloud-connectivity.html)**| Equinix | Даллас, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[Crown Castle](https://fiber.crowncastle.com/solutions/added/cloud-connect)**| Equinix | Атланта, Чикаго, Даллас, Лос-Анджелес, Нью-Йорк, Вашингтон (округ Колумбия) |
 | **[Data Foundry](https://www.datafoundry.com/services/cloud-connect)** | Megaport | Даллас |
-| **[Epsilon Telecommunications Limited](https://www.epsilontel.com/data-connectivity/cloud-access/)** | Equinix | Лондон, Сингапур, Вашингтон, округ Колумбия |
+| **[Epsilon Telecommunications Limited](https://www.epsilontel.com/solutions/cloud-connect/)** | Equinix | Лондон, Сингапур, Вашингтон, округ Колумбия |
 | **[Eurofiber](https://eurofiber.nl/microsoft-azure/)** | Equinix | Амстердам |
 | **[Exponential E](https://www.exponential-e.com/services/connectivity-services/cloud-connect-exchange)** | Equinix | London |
 | **[Fastweb S.p.A](https://www.fastweb.it/grandi-aziende/connessione-voce-e-wifi/scheda-prodotto/rete-privata-virtuale/)** | Equinix | Амстердам |

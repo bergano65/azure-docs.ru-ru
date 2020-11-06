@@ -8,12 +8,12 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 11/4/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 3f3196e775ff9e7d8064559069414952f09a3016
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 95ac1abc1f286330bc5e7036f01faa6cf1b22d70
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360230"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337905"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Сведения о партнере коммерческого рынка и использовании клиентов
 
@@ -43,7 +43,7 @@ ms.locfileid: "93360230"
 Идентификатор GUID является уникальным идентификатором из 32 шестнадцатеричных цифр и используется для создания ссылок. Чтобы создать идентификаторы GUID для отслеживания, следует использовать генератор GUID, например, с помощью PowerShell.
 
 ```powershell
-[guid]::NewGuid()]
+[guid]::NewGuid()
 ```
 
 Рекомендуется создавать уникальные GUID для всех предложений и каналов распределения каждого продукта. Можно использовать один идентификатор GUID для нескольких каналов распределения, если дробить отчетность нежелательно.

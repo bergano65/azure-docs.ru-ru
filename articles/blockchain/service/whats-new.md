@@ -4,12 +4,12 @@ description: Узнайте о новых возможностях службы 
 ms.date: 06/30/2020
 ms.topic: conceptual
 ms.reviewer: ravastra
-ms.openlocfilehash: 47e0da5a729519f2af3c5b2a2fd3e0f7485624cf
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 6a3113a2d28e704b188d701da13493ecd8263cab
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91948465"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94335032"
 ---
 # <a name="whats-new-in-azure-blockchain-service"></a>Что нового в службе Azure Блокчейн?
 
@@ -27,7 +27,7 @@ ms.locfileid: "91948465"
 
 ### <a name="version-upgrades"></a>Обновления версий
 
-- Обновление версии кворума до 2.6.0. В версии 2.6.0 можно отправить подписанные частные транзакции. Дополнительные сведения об отправке частных транзакций см. в [документации по API кворума](https://docs.goquorum.com/en/latest/Getting%20Started/api/).
+- Обновление версии кворума до 2.6.0. В версии 2.6.0 можно отправить подписанные частные транзакции. Дополнительные сведения об отправке частных транзакций см. в [документации по API кворума](https://docs.goquorum.consensys.net/en/latest/Reference/APIs/ContractExtensionAPIs/#apis).
 - Обновление версии Тессера до 0.10.5.
 
 ### <a name="contract-size-and-transaction-size-increased-to-128-kb"></a>Размер контракта и размер транзакции увеличились до 128 КБ
@@ -69,7 +69,7 @@ ms.locfileid: "91948465"
 В кворуме 2.6.0 вызовы функции *ETH. естиматегас* без указания дополнительного параметра *значения* приводят к *сбою обработчика метода* . Команда кворума была уведомлена, а исправление ожидается в конце июля 2020. Можно использовать следующие обходные пути, пока не будет доступно исправление:
 
 - Старайтесь не использовать *ETH. естиматегас* , так как это может повлиять на производительность. Дополнительные сведения о проблемах производительности ETH. Естиматегас см. в разделе [вызов функции ETH. естиматегас снижает производительность](#calling-ethestimategas-function-reduces-performance). Включить значение газа для каждой транзакции. Большинство библиотек вызывает ETH. Естиматегас, если значение газа не указано, что приводит к сбою кворума v 2.6.0.
-- Если необходимо вызвать *ETH. естиматегас*, Группа кворума предложит передать *значение* дополнительного параметра *в качестве* обходного пути.
+- Если необходимо вызвать *ETH. естиматегас* , Группа кворума предложит передать *значение* дополнительного параметра *в качестве* обходного пути.
 
 ### <a name="mining-stops-if-fewer-than-four-validator-nodes"></a>Если меньше четырех проверяющих узлов, интеллектуальный анализ данных останавливается
 
@@ -127,5 +127,5 @@ ms.locfileid: "91948465"
 
 - [Избегайте неограниченных циклов](https://blog.b9lab.com/getting-loopy-with-solidity-1d51794622ad )
 - [Рекомендации по обеспечению безопасности интеллектуального контракта](https://github.com/ConsenSys/smart-contract-best-practices)
-- [Рекомендации по смарт-контрактам, предоставляемые кворумом](http://docs.goquorum.com/en/latest/Security/Framework/Decentralized%20Application/Smart%20Contracts%20Security/)
+- [Рекомендации по смарт-контрактам, предоставляемые кворумом](https://docs.goquorum.consensys.net/en/stable/Concepts/Security/Framework/DecentralizedApplication/SmartContractsSecurity/)
 - [Рекомендации по ограничениям газа и циклам, обеспечиваемым прозрачностью](https://solidity.readthedocs.io/en/develop/security-considerations.html#gas-limit-and-loops)

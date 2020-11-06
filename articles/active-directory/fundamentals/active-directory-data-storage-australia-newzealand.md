@@ -12,20 +12,20 @@ ms.topic: conceptual
 ms.date: 7/21/2020
 ms.custom: it-pro, seodec18, references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bbd31bf47c7ce7ae75a6934da0ea769698ef187
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 812abe141f8130a198178668dc4f212f373d9bcd
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89565117"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94334947"
 ---
-# <a name="customer-data-storage-for-australian-and-new-zealand-customers-in-azure-active-directory"></a>Хранилище данных клиентов для клиентов в Австралии и новых Зеландия в Azure Active Directory
+# <a name="customer-data-storage-for-australian-and-new-zealand-customers-in-azure-active-directory"></a>Хранилище данных клиентов для клиентов в Австралии и новых Зеландия в Azure Active Directory 
 
 Azure Active Directory (Azure AD) хранит свои данные клиента в географическом расположении в зависимости от страны, которую вы указали при регистрации в Microsoft Online Service. Службы Microsoft Online Services включают Microsoft 365 и Azure. 
 
 Сведения о расположении данных Azure AD и других служб Майкрософт см. в разделе где находятся [ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
 
-С 26 февраля 2020 г. Корпорация Майкрософт приступила к хранению данных клиента Azure AD для новых клиентов с помощью адреса выставления счетов в Австралии или Новой Зеландии в пределах австралийских центров обработки данных. С 1 мая 2020 до 31 октября 2020 Корпорация Майкрософт перенесет существующие клиенты, у которых в австралийском центре обработки данных есть Австралийский или новый адрес для выставления счетов, без каких бы то ни было каких либо действий клиента. Процесс миграции не затрагивает время простоя клиентов и не влияет на функциональность клиента во время миграции.
+С 26 февраля 2020 г. Корпорация Майкрософт приступила к хранению данных клиента Azure AD для новых клиентов с помощью адреса выставления счетов в Австралии или Новой Зеландии в пределах австралийских центров обработки данных. С 1 мая 2020 до 31 марта 2021 Корпорация Майкрософт перенесет существующие клиенты, у которых в австралийском центре обработки данных есть Австралийский или новый адрес для выставления счетов, без каких бы то ни было каких либо действий клиента. Процесс миграции не затрагивает время простоя клиентов и не влияет на функциональность клиента во время миграции.
 
 Кроме того, некоторые функции Azure AD пока не поддерживают хранение данных клиентов в Австралии. Сведения о конкретных функциях см. в [карте данных Azure AD](https://msit.powerbi.com/view?r=eyJrIjoiYzEyZTc5OTgtNTdlZS00ZTVkLWExN2ItOTM0OWU4NjljOGVjIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9). Например, Многофакторная идентификация Microsoft Azure хранит данные клиентов в США и обрабатывает их глобально. См. [местонахождение данных и данные клиента для многофакторной идентификации Azure](../authentication/concept-mfa-data-residency.md).
 

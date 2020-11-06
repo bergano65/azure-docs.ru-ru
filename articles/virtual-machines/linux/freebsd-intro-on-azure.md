@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 09/13/2017
 ms.author: mimckitt
-ms.openlocfilehash: 2959904029643e5345590bd49f81b231c49771d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 39564a34eb7a57cbd20e37b90d064917d5bf3b7a
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87286314"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337535"
 ---
 # <a name="introduction-to-freebsd-on-azure"></a>Введение в FreeBSD в Azure
 В этой статье представлен обзор запуска виртуальной машины FreeBSD в Azure.
@@ -22,9 +22,9 @@ FreeBSD для Microsoft Azure — это расширенная операци�
 
 Корпорация Майкрософт предоставляет образы FreeBSD на платформе Azure с предварительно настроенным [гостевым агентом виртуальной машины Azure](https://github.com/Azure/WALinuxAgent/). В настоящее время она предлагает образы FreeBSD следующих версий:
 
-- [FreeBSD 10.4 в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD104)
-- [FreeBSD 11.2 в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD112)
-- [FreeBSD 12.0 в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD120)
+- FreeBSD 10.4 в Azure Marketplace
+- FreeBSD 11.2 в Azure Marketplace
+- FreeBSD 12.0 в Azure Marketplace
 
 Этот агент отвечает за обмен данными между виртуальной машиной FreeBSD и Azure Fabric при таких операциях, как подготовка виртуальной машины к первому использованию (имя пользователя, пароль или ключ SSH, имя узла и т. д.) и выборочное включение функций расширений виртуальной машины.
 
@@ -33,22 +33,22 @@ FreeBSD для Microsoft Azure — это расширенная операци�
 ### <a name="create-a-freebsd-vm-through-azure-cli-on-freebsd"></a>Создайте виртуальную машину FreeBSD с помощью Azure CLI в FreeBSD.
 Сначала необходимо установить [Azure CLI](/cli/azure/get-started-with-azure-cli), выполнив следующую команду на компьютере FreeBSD.
 
-```bash 
+```bash 
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-Если на компьютере FreeBSD не установлена оболочка bash, выполните следующую команду перед установкой. 
+Если на компьютере FreeBSD не установлена оболочка bash, выполните следующую команду перед установкой. 
 
 ```bash
 sudo pkg install bash
 ```
 
-Если на компьютере FreeBSD не установлен python, выполните следующие команды перед установкой. 
+Если на компьютере FreeBSD не установлен python, выполните следующие команды перед установкой. 
 
 ```bash
 sudo pkg install python35
-cd /usr/local/bin 
-sudo rm /usr/local/bin/python 
+cd /usr/local/bin 
+sudo rm /usr/local/bin/python 
 sudo ln -s /usr/local/bin/python3.5 /usr/local/bin/python
 ```
 
@@ -57,7 +57,7 @@ sudo ln -s /usr/local/bin/python3.5 /usr/local/bin/python
 Теперь можно выполнить вход в Azure и создать виртуальную машину FreeBSD. Ниже приведен пример создания виртуальной машины FreeBSD версии 11.0. Также можно добавить параметр `--public-ip-address-dns-name` с глобальным именем DNS для созданного общедоступного IP-адреса. 
 
 ```azurecli
-az login 
+az login 
 az group create --name myResourceGroup --location eastus
 az vm create --name myFreeBSD11 \
     --resource-group myResourceGroup \

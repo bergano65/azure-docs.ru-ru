@@ -419,8 +419,6 @@
                   href: 'http://aka.ms/speech/va-samples'
                 - name: 'Голосовые помощники: часто задаваемые вопросы'
                   href: faq-voice-assistants.md
-                - name: Пакет SDK для службы "Речь"
-                  href: speech-sdk.md
                 - name: Пользовательские команды для шифрования неактивных данных
                   href: custom-commands-encryption-of-data-at-rest.md
         - name: Канал Direct Line Speech
@@ -498,7 +496,7 @@
           href: 'https://speech.microsoft.com'
         - name: Создание приложения пользовательских команд с помощью Speech Studio
           href: quickstart-custom-speech-commands-create-new.md
-- name: Развернуть
+- name: Развертывание
   items:
     - name: Включение ведения журналов
       href: how-to-use-logging.md

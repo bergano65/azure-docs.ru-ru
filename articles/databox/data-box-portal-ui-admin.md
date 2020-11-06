@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: how-to
 ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: a4ac56a4d588071f599f62e6de94d9ec7367a1ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 538a650c6063422f89c8ed3d1753981a293693b7
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87924759"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94338175"
 ---
 # <a name="use-azure-portal-to-administer-your-data-box-disk"></a>Администрирование Диска Data Box с помощью портала Azure
 
@@ -29,15 +29,15 @@ ms.locfileid: "87924759"
 
 1.  Перейдите на вкладку **Обзор > Отмена**. 
 
-    ![Отмена заказа 1](media/data-box-portal-ui-admin/cancel-order1.png)
+    ![Команда "Отмена" на вкладке "Обзор" для заказа](media/data-box-portal-ui-admin/portal-ui-admin-cancel-command.png)
 
 2.  Введите причину для отмены заказа.  
 
-    ![Отмена заказа 2](media/data-box-portal-ui-admin/cancel-order2.png)
+    ![Причина отмены заказа](media/data-box-portal-ui-admin/portal-ui-admin-cancel-order-reason.png)
 
 3.  После отмены заказа на портале обновляется состояние заказа и отображается значение **Отменено**.
 
-    ![Отмена заказа 3](media/data-box-portal-ui-admin/cancel-order3.png)
+    ![Отмененный порядок](media/data-box-portal-ui-admin/portal-ui-admin-canceled-order.png)
 
 Вы не получите уведомление по электронной почте об отмене заказа.
 
@@ -49,13 +49,13 @@ ms.locfileid: "87924759"
 
 1.  Перейдите на вкладку **Обзор > Клонировать**. 
 
-    ![Порядок клонирования заказа 1](media/data-box-portal-ui-admin/clone-order1.png)
+    ![Команда clone на вкладке "Обзор" для заказа](media/data-box-portal-ui-admin/portal-ui-admin-clone-command.png)
 
 2.  Все сведения о заказе остаются теми же. Имя заказа — это первоначальное имя с добавлением *-Clone*. Установите флажок, чтобы подтвердить, что вы просмотрели сведения о конфиденциальности. Нажмите кнопку **Создать**.    
 
 Клон создается в течение нескольких минут, после чего портал обновляется и отображается новый заказ.
 
-[![Порядок клонирования 3](media/data-box-portal-ui-admin/clone-order3.png)](media/data-box-portal-ui-admin/clone-order3.png#lightbox) 
+[![Клонированный порядок](media/data-box-portal-ui-admin/portal-ui-admin-cloned-order.png)](media/data-box-portal-ui-admin/portal-ui-admin-cloned-order.png#lightbox) 
 
 ## <a name="delete-order"></a>Удаление заказа
 
@@ -65,15 +65,15 @@ ms.locfileid: "87924759"
 
 1. Перейдите ко **всем ресурсам**. Найдите свой заказ.
 
-    ![Поиск заказов дисков Data Box](media/data-box-portal-ui-admin/search-data-box-disk-orders.png)
+    ![Поиск заказов](media/data-box-portal-ui-admin/portal-ui-admin-search-data-box-disk-orders.png)
 
 2. Щелкните заказ, который необходимо удалить, и перейдите на вкладку **Обзор**. На панели команд нажмите кнопку **Удалить**.
 
-    ![Удаление заказа диска Data Box 1](media/data-box-portal-ui-admin/delete-order1.png)
+    ![Удаление заказа](media/data-box-portal-ui-admin/portal-ui-admin-delete-command.png)
 
 3. Когда будет предложено подтвердить удаление, введите имя заказа. Щелкните **Удалить**.
 
-     ![Удаление заказа диска Data Box 2](media/data-box-portal-ui-admin/delete-order2.png)
+     ![Подтвердить удаление заказа](media/data-box-portal-ui-admin/portal-ui-admin-confirm-deletion.png)
 
 
 ## <a name="download-shipping-label"></a>Скачивание транспортной этикетки
@@ -83,11 +83,11 @@ ms.locfileid: "87924759"
 Выполните следующие действия, чтобы скачать транспортную этикетку.
 1.  Выберите **Обзор > Скачать транспортную этикетку**. Этот параметр доступен только после отправки диска. 
 
-    ![Скачивание транспортной этикетки](media/data-box-portal-ui-admin/download-shipping-label.png)
+    ![Скачивание транспортной этикетки](media/data-box-portal-ui-admin/portal-ui-admin-download-shipping-label.png)
 
 2.  Загрузится новая транспортная этикетка для возврата, которая выглядит следующим образом. Сохраните этикетку, распечатайте ее и прикрепите к возвращаемой посылке.
 
-    ![Пример транспортной этикетки](media/data-box-portal-ui-admin/example-shipping-label.png)
+    ![Пример транспортной этикетки](media/data-box-portal-ui-admin/portal-ui-admin-example-shipping-label.png)
 
 ## <a name="edit-shipping-address"></a>Изменение адреса поставки
 
@@ -97,11 +97,11 @@ ms.locfileid: "87924759"
 
 1. Выберите **Сведения о заказе > Изменить адрес поставки**.
 
-    ![Изменение адреса поставки 1](media/data-box-portal-ui-admin/edit-shipping-address1.png)
+    ![Команда "изменить адрес доставки" в сведениях о заказе](media/data-box-portal-ui-admin/portal-ui-admin-edit-shipping-address-command.png)
 
 2. Теперь можно изменить адрес поставки и сохранить изменения.
 
-    ![Изменение адреса поставки 2](media/data-box-portal-ui-admin/edit-shipping-address2.png)
+    ![Диалоговое окно "изменение адреса доставки"](media/data-box-portal-ui-admin/portal-ui-admin-edit-shipping-address-dbox.png)
 
 ## <a name="edit-notification-details"></a>Изменение сведений об уведомлении
 
@@ -111,15 +111,15 @@ ms.locfileid: "87924759"
 
 1. Перейдите к **Сведения о заказе > Изменить сведения об уведомлении**.
 
-    ![Изменение сведений об уведомлении 1](media/data-box-portal-ui-admin/edit-notification-details1.png)
+    ![Команда "изменить сведения об уведомлении" в сведениях о заказе](media/data-box-portal-ui-admin/portal-ui-admin-edit-notification-details-command.png)
 
 2. Теперь можно изменить сведения об уведомлении, а затем сохранить изменения.
  
-    ![Изменение сведений об уведомлении 2](media/data-box-portal-ui-admin/edit-notification-details2.png)
+    ![Диалоговое окно «Изменение сведений об уведомлении»](media/data-box-portal-ui-admin/portal-ui-admin-edit-notification-details-dbox.png)
 
 ## <a name="view-order-status"></a>Просмотр состояния заказа
 
-|состояние заказа; |Описание |
+|состояние заказа; |Description |
 |---------|---------|
 |Заказано     | Заказ успешно размещен. <br> Если диски недоступны, вы получите уведомление. <br>Если диски доступны, корпорация Майкрософт определяет диск для посылки и подготавливает коробку с ним.        |
 |Обработано     | Обработка заказа завершена. <br> Во время обработки заказов выполняются следующие действия:<li>Диски шифруются с использованием AES-128 BitLocker. </li> <li>диск Data Box блокируется для предотвращения неавторизованного доступа;</li><li>Во время этого процесса создается ключ доступа, который разблокирует диски.</li>        |

@@ -9,12 +9,12 @@ ms.custom: devx-track-python
 ms.author: gopalv
 ms.date: 09/11/2019
 ms.topic: reference
-ms.openlocfilehash: 9da757e47308fe0fe1a96958e464b440d99f0984
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 6fb7b7c2e9022b6b629a039a48bb559b36393f79
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324732"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94334998"
 ---
 # <a name="reference-ubuntu-linux-data-science-virtual-machine"></a>Справочник: виртуальная машина Ubuntu (Linux) для обработки и анализа данных
 
@@ -310,7 +310,7 @@ cd xgboostdemo
 xgboost mushroom.conf
 ```
 
-Файл .model записывается в указанный каталог. Дополнительную информацию об этом примере см. [на сайте GitHub](https://github.com/dmlc/xgboost/tree/master/demo/binary_classification).
+Файл .model записывается в указанный каталог. Дополнительную информацию об этом примере см. [на сайте GitHub](https://github.com/dmlc/xgboost/tree/master/demo/CLI/binary_classification).
 
 Дополнительные сведения об xgboost см. на [странице документации по xgboost](https://xgboost.readthedocs.org/en/latest/) и в соответствующем [репозитории GitHub](https://github.com/dmlc/xgboost).
 
@@ -344,6 +344,6 @@ rattle()
 
 Теперь вы можете выйти из Rattle и R и отредактировать созданный скрипт R. Этот скрипт можно использовать и без изменений, запуская его в любой момент для повтора действий, выполненных в пользовательском интерфейсе Rattle. Этот способ позволяет новичкам в R быстро выполнить анализ и машинное обучение в простом графическом интерфейсе с автоматическим созданием кода на R для изменения и (или) изучения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Остались еще вопросы? Рассмотрите возможность создания запроса в [службу поддержки](https://azure.microsoft.com/support/create-ticket/).

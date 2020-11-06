@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: how-to
 ms.date: 08/12/2020
 ms.author: alkohli
-ms.openlocfilehash: b09176ad8cb93d7710975b67de619b4f58eaa2f0
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 9643e62f085888808b95698d068c5e383fb8d539
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951916"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337973"
 ---
 # <a name="use-self-managed-shipping-for-azure-data-box-in-the-azure-portal"></a>Использование функции самоуправляемой доставки Azure Data Box на портале Azure
 
@@ -29,35 +29,37 @@ ms.locfileid: "91951916"
 * Сингапур
 * Южная Корея
 * Индия
-* ЮАР
+* Южно-Африканская Республика
 
 ## <a name="use-self-managed-shipping"></a>Использование самоуправляемой доставки
 
-При размещении заказа на Data Box можно выбрать вариант "Самоуправляемая доставка".
+При размещении Data Box заказ можно выбрать способ самостоятельного управления доставкой.
 
 1. В заказе на устройство Azure Data Box в разделе **Контактные сведения** выберите **+ Добавить адрес доставки**.
-   ![Самоуправляемая доставка](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-1.png)
+ 
+   ![Самостоятельно управляемая доставка, добавление адреса доставки](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-1.png)
 
-2. При выборе типа доставки выберите вариант **Самоуправляемая доставка**. Этот вариант доступен только в том случае, если вы находитесь в одном из поддерживаемых регионов, указанных в разделе "Предварительные требования".
+2. При выборе типа доставки выберите параметр доставка с возможностью **самостоятельного управления** . Этот вариант доступен только в том случае, если вы находитесь в одном из поддерживаемых регионов, указанных в разделе "Предварительные требования".
 
 3. После того как вы указали адрес доставки, проверьте его и завершите заказ.
-   ![Самостоятельно управляемая доставка 2](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-2.png)
+
+   ![Самостоятельно управляемая доставка, проверка и добавление адреса](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-2.png)
 
 4. Когда устройство будет подготовлено и вы получите для него уведомление по электронной почте, вы можете запланировать отправку.
 
    В заказе на Azure Data Box перейдите в раздел **Обзор** и выберите **Запланировать вывоз**.
 
-   ![Заказ устройства Data Box для вывоза](media\data-box-portal-customer-managed-shipping\data-box-portal-schedule-pickup-01.png)
+   ![Data Box порядок, запланировать параметр отправки](media\data-box-portal-customer-managed-shipping\data-box-portal-schedule-pickup-01.png)
 
 5. Следуйте инструкциям в разделе **Планирование вывоза для Azure**.
 
    Прежде чем вы получите код авторизации, вам необходимо будет отправить сообщение на адрес [adbops@microsoft.com](mailto:adbops@microsoft.com), чтобы запланировать вывоз устройств из регионального центра обработки данных.
 
-   ![Расписание отправки](media\data-box-portal-customer-managed-shipping\data-box-portal-schedule-pickup-email-01.png)
+   ![Планирование отправки для инструкций Azure](media\data-box-portal-customer-managed-shipping\data-box-portal-schedule-pickup-email-01.png)
 
 6. После того как вы запланировали вывоз устройства, вы можете посмотреть код авторизации устройства на панели **Планирование вывоза для Azure**.
 
-   ![Просмотр кода авторизации](media\data-box-portal-customer-managed-shipping\data-box-portal-auth-01b.png)
+   ![Просмотр кода авторизации устройства](media\data-box-portal-customer-managed-shipping\data-box-portal-auth-01b.png)
 
    Запишите этот **код авторизации**. В соответствии с требованиями безопасности во время планирования выборки необходимо предоставить имя лица, которое приступило к выполнению подбора.
 
@@ -67,7 +69,7 @@ ms.locfileid: "91951916"
 
 7. После выдачи устройства из центра обработки данных ваш заказ автоматически переходит в состояние **Принято курьером**.
 
-    ![Принято курьером](media\data-box-portal-customer-managed-shipping\data-box-portal-picked-up-boxed-01.png)
+    ![Заказ в состоянии "отобрано"](media\data-box-portal-customer-managed-shipping\data-box-portal-picked-up-boxed-01.png)
 
 8. Получив устройство Data Box, скопируйте на него необходимые данные. После копирования данных можно начать подготовку устройства Data Box к отправке. Подробнее см. в разделе [Подготовка к отправке](data-box-deploy-picked-up.md#prepare-to-ship).
 
@@ -76,13 +78,13 @@ ms.locfileid: "91951916"
    > [!NOTE]
    > Не отправляйте код авторизации по электронной почте. Он проверяется в центре обработки данных только при сдаче устройства.
 
-9. Если вы получили приглашение на сдачу устройства, ваш заказ на портале Azure должен находиться в состоянии **Все готово для получения в центре данных Azure**. Для сдачи устройства следуйте инструкциям в разделе **Планирование сдачи**.
+9. Если вы получили встречу на удаление, заказ должен быть **готов к приему в состояние центра обработки данных Azure** в портал Azure. Для сдачи устройства следуйте инструкциям в разделе **Планирование сдачи**.
 
-   ![Просмотр кода авторизации 2](media\data-box-portal-customer-managed-shipping\data-box-portal-received-complete-02b.png)
+   ![Инструкции для сброса устройства](media\data-box-portal-customer-managed-shipping\data-box-portal-received-complete-02b.png)
 
 10. После проверки идентификатора и кода авторизации и сдачи устройства в центре обработки данных состояние вашего заказа должно измениться на **Получено**.
 
-    ![Сдача завершена](media\data-box-portal-customer-managed-shipping\data-box-portal-received-complete-01.png)
+    ![Заказ с состоянием получено](media\data-box-portal-customer-managed-shipping\data-box-portal-received-complete-01.png)
 
 11. После сдачи устройства копирование данных будет продолжено. После завершения копирования выполнение заказа завершено.
 

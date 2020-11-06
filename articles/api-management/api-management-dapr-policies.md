@@ -6,12 +6,12 @@ ms.author: vlvinogr
 ms.date: 10/23/2020
 ms.topic: article
 ms.service: api-management
-ms.openlocfilehash: 2bf9c4d233cfad454d63da4dce30a38af80d24ab
-ms.sourcegitcommit: d3c3f2ded72bfcf2f552e635dc4eb4010491eb75
+ms.openlocfilehash: 16788e3f547c5848893ba3867da4291c45b04408
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92558403"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94335491"
 ---
 # <a name="api-management-dapr-integration-policies"></a>Политики интеграции ДАПР управления API
 
@@ -25,7 +25,7 @@ ms.locfileid: "92558403"
 
 ## <a name="enable-dapr-support-in-the-self-hosted-gateway"></a>Включение поддержки ДАПР в шлюзе, размещенном на собственном сервере
 
-Чтобы включить поддержку ДАПР в шлюзе, расположенном на собственном сервере, добавьте [заметки ДАПР](https://github.com/dapr/docs/blob/master/howto/configure-k8s/README.md) ниже в [шаблон развертывания Kubernetes](how-to-deploy-self-hosted-gateway-kubernetes.md) , заменив имя app-Name на нужное имя. Полное пошаговое руководство по настройке и использованию управления API с ДАПР доступно [здесь](https://aka.ms/apim/dapr/walkthru).
+Чтобы включить поддержку ДАПР в шлюзе, расположенном на собственном сервере, добавьте [заметки ДАПР](https://github.com/dapr/docs/blob/master/README.md) ниже в [шаблон развертывания Kubernetes](how-to-deploy-self-hosted-gateway-kubernetes.md) , заменив имя app-Name на нужное имя. Полное пошаговое руководство по настройке и использованию управления API с ДАПР доступно [здесь](https://aka.ms/apim/dapr/walkthru).
 ```yml
 template:
     metadata:
@@ -39,9 +39,9 @@ template:
 
 ## <a name="distributed-application-runtime-dapr-integration-policies"></a>Политики интеграции Distributed Application Runtime (Dapr)
 
--  [Отправить запрос в службу](api-management-dapr-policies.md#invoke): использует среду выполнения ДАПР для выявления и надежной связи с микрослужбой ДАПР. Дополнительные сведения о вызове службы в ДАПР см. в описании в этом файле [readme](https://github.com/dapr/docs/blob/master/concepts/service-invocation/README.md#service-invocation) .
--  [Отправить сообщение в Pub/подразделы](api-management-dapr-policies.md#pubsub): использует среду выполнения ДАПР для публикации сообщения в раздел публикации и подписки. Дополнительные сведения о публикации и подписывание сообщений в ДАПР см. в описании в файле [сведений](https://github.com/dapr/docs/blob/master/concepts/publish-subscribe-messaging/README.md) .
--  [Выходная привязка триггера](api-management-dapr-policies.md#bind): использует среду выполнения ДАПР для вызова внешней системы через выходную привязку. Дополнительные сведения о привязках в ДАПР см. в описании в этом файле [readme](https://github.com/dapr/docs/blob/master/concepts/bindings/README.md) .
+-  [Отправить запрос в службу](api-management-dapr-policies.md#invoke): использует среду выполнения ДАПР для выявления и надежной связи с микрослужбой ДАПР. Дополнительные сведения о вызове службы в ДАПР см. в описании в этом файле [readme](https://github.com/dapr/docs/blob/master/README.md#service-invocation) .
+-  [Отправить сообщение в Pub/подразделы](api-management-dapr-policies.md#pubsub): использует среду выполнения ДАПР для публикации сообщения в раздел публикации и подписки. Дополнительные сведения о публикации и подписывание сообщений в ДАПР см. в описании в файле [сведений](https://github.com/dapr/docs/blob/master/README.md) .
+-  [Выходная привязка триггера](api-management-dapr-policies.md#bind): использует среду выполнения ДАПР для вызова внешней системы через выходную привязку. Дополнительные сведения о привязках в ДАПР см. в описании в этом файле [readme](https://github.com/dapr/docs/blob/master/README.md) .
 
 ## <a name="send-request-to-a-service"></a><a name="invoke"></a> Отправить запрос службе
 
@@ -89,11 +89,11 @@ template:
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
+| Атрибут        | Описание                     | Обязательно | По умолчанию |
 |------------------|---------------------------------|----------|---------|
 | backend-id       | Необходимо задать значение "ДАПР"           | Да      | Н/Д     |
-| ДАПР-App-ID      | Имя целевой микрослужбы. Сопоставляется с параметром [AppID](https://github.com/dapr/docs/blob/master/reference/api/service_invocation_api.md) в ДАПР.| Да | Н/Д |
-| ДАПР-метод      | Имя метода или URL-адреса для вызова в целевой микрослужбе. Сопоставляется с параметром [имени метода](https://github.com/dapr/docs/blob/master/reference/api/service_invocation_api.md) в ДАПР.| Да | Н/Д |
+| ДАПР-App-ID      | Имя целевой микрослужбы. Сопоставляется с параметром [AppID](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/service_invocation_api.md) в ДАПР.| Да | Н/Д |
+| ДАПР-метод      | Имя метода или URL-адреса для вызова в целевой микрослужбе. Сопоставляется с параметром [имени метода](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/service_invocation_api.md) в ДАПР.| Да | Н/Д |
 
 ### <a name="usage"></a>Использование
 
@@ -120,7 +120,7 @@ template:
 
 #### <a name="example"></a>Пример
 
-В следующем примере показано, как отправить текст текущего запроса в [раздел](https://github.com/dapr/docs/blob/master/reference/api/pubsub_api.md#url-parameters) "New" [компонента](https://github.com/dapr/docs/blob/master/reference/api/pubsub_api.md#url-parameters)Pub/подраздела "Orders". Ответ, полученный от среды выполнения ДАПР, хранится в записи "ДАПР-Response" коллекции Variables в объекте [контекста](api-management-policy-expressions.md#ContextVariables) .
+В следующем примере показано, как отправить текст текущего запроса в [раздел](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md#url-parameters) "New" [компонента](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md#url-parameters)Pub/подраздела "Orders". Ответ, полученный от среды выполнения ДАПР, хранится в записи "ДАПР-Response" коллекции Variables в объекте [контекста](api-management-policy-expressions.md#ContextVariables) .
 
 Если среда выполнения ДАПР не может определить целевой раздел, например, и выдает ошибку, то активируется раздел "On-Error". Ответ, полученный от среды выполнения ДАПР, возвращается непосредственно вызывающему объекту. В противном случае возвращается ответ по умолчанию `200 OK` .
 
@@ -157,10 +157,10 @@ template:
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
+| Атрибут        | Описание                     | Обязательно | По умолчанию |
 |------------------|---------------------------------|----------|---------|
-| pubsub — имя      | Имя целевого компонента PubSub. Сопоставляется с параметром [пубсубнаме](https://github.com/dapr/docs/blob/master/reference/api/pubsub_api.md) в ДАПР. Если он отсутствует, значение атрибута __раздела__ должно быть в виде `pubsub-name/topic-name` .    | Нет       | None    |
-| Раздел            | Имя раздела. Сопоставляется с параметром [раздела](https://github.com/dapr/docs/blob/master/reference/api/pubsub_api.md) в ДАПР.               | Да      | Н/Д     |
+| pubsub — имя      | Имя целевого компонента PubSub. Сопоставляется с параметром [пубсубнаме](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md) в ДАПР. Если он отсутствует, значение атрибута __раздела__ должно быть в виде `pubsub-name/topic-name` .    | Нет       | None    |
+| Раздел            | Имя раздела. Сопоставляется с параметром [раздела](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md) в ДАПР.               | Да      | Н/Д     |
 | ignore-error     | Если задано значение, `true` то политика не активирует раздел ["On-Error"](api-management-error-handling-policies.md) при получении ошибки из среды выполнения ДАПР | Нет | `false` |
 | response-variable-name | Имя записи коллекции [Variables](api-management-policy-expressions.md#ContextVariables) , используемой для хранения ответа от среды выполнения ДАПР | Нет | None |
 | timeout | Время (в секундах) ожидания ответа среды выполнения ДАПР. Может находиться в диапазоне от 1 до 240 секунд. | Нет | 5 |
@@ -176,7 +176,7 @@ template:
 
 ## <a name="trigger-output-binding"></a><a name="bind"></a> Выходная привязка триггера
 
-Эта политика указывает шлюзу управления API на срабатывание исходящей [привязки](https://github.com/dapr/docs/blob/master/concepts/bindings/README.md)ДАПР. Политика выполняет эту задачу, создавая запрос HTTP POST для `http://localhost:3500/v1.0/bindings/{{bind-name}}` замены параметра шаблона и добавления содержимого, указанного в инструкции политики.
+Эта политика указывает шлюзу управления API на срабатывание исходящей [привязки](https://github.com/dapr/docs/blob/master/README.md)ДАПР. Политика выполняет эту задачу, создавая запрос HTTP POST для `http://localhost:3500/v1.0/bindings/{{bind-name}}` замены параметра шаблона и добавления содержимого, указанного в инструкции политики.
 
 Политика предполагает, что среда выполнения ДАПР выполняется в контейнере расширения в том же Pod, что и шлюз. Среда выполнения ДАПР отвечает за вызов внешнего ресурса, представленного привязкой.
 
@@ -237,16 +237,16 @@ template:
 | Элемент             | Описание  | Обязательно |
 |---------------------|--------------|----------|
 | Invoke-ДАПР — привязка | Корневой элемент | Да      |
-| метаданные            | Привязка конкретных метаданных в виде пар «ключ-значение». Сопоставляется со свойством [метаданных](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
-| Данные            | Содержимое сообщения. Сопоставляется со свойством [Data](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
+| метаданные            | Привязка конкретных метаданных в виде пар «ключ-значение». Сопоставляется со свойством [метаданных](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
+| Данные            | Содержимое сообщения. Сопоставляется со свойством [Data](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
 
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
+| Атрибут        | Описание                     | Обязательно | По умолчанию |
 |------------------|---------------------------------|----------|---------|
-| name            | Имя целевой привязки. Должно совпадать с именем привязок, [определенных](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#bindings-structure) в ДАПР.           | Да      | Н/Д     |
-| Операция       | Имя целевой операции (только для привязки). Сопоставляется со свойством [Operation](https://github.com/dapr/docs/blob/master/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет | None |
+| name            | Имя целевой привязки. Должно совпадать с именем привязок, [определенных](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#bindings-structure) в ДАПР.           | Да      | Н/Д     |
+| Операция       | Имя целевой операции (только для привязки). Сопоставляется со свойством [Operation](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет | None |
 | ignore-error     | Если задано значение, `true` то политика не активирует раздел ["On-Error"](api-management-error-handling-policies.md) при получении ошибки из среды выполнения ДАПР | Нет | `false` |
 | response-variable-name | Имя записи коллекции [Variables](api-management-policy-expressions.md#ContextVariables) , используемой для хранения ответа от среды выполнения ДАПР | Нет | None |
 | timeout | Время (в секундах) ожидания ответа среды выполнения ДАПР. Может находиться в диапазоне от 1 до 240 секунд. | Нет | 5 |

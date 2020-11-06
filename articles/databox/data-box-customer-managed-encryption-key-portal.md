@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: alkohli
 ms.subservice: pod
-ms.openlocfilehash: 31147d534109e0d74d33d102075c69eeb703496e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40b777342c2c565efc5b40d361a259c98eae693c
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91739941"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337728"
 ---
 # <a name="use-customer-managed-keys-in-azure-key-vault-for-azure-data-box"></a>Использование управляемых клиентом ключей в Azure Key Vault для Azure Data Box
 
@@ -47,7 +47,7 @@ Azure Data Box защищает ключ разблокировки устрой
 
     ![Колонка "Обзор" заказа Data Box](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-1.png)
 
-2. Перейдите в раздел **параметры > шифрование**. В разделе **тип шифрования**можно выбрать способ защиты ключа разблокировки устройства. По умолчанию для защиты пароля для разблокировки устройства используется управляемый корпорацией Майкрософт ключ. 
+2. Перейдите в раздел **параметры > шифрование**. В разделе **тип шифрования** можно выбрать способ защиты ключа разблокировки устройства. По умолчанию для защиты пароля для разблокировки устройства используется управляемый корпорацией Майкрософт ключ. 
 
     ![Выбор параметра шифрования](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-2.png)
 
@@ -55,40 +55,40 @@ Azure Data Box защищает ключ разблокировки устрой
 
     ![Выбор ключа, управляемого клиентом](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-3.png)
 
-5. В колонке **Select key from Azure Key Vault** (Выбор ключа из Azure Key Vault) подписка заполняется автоматически. Для поля **Хранилище ключей** можно выбрать существующее хранилище Key Vault из раскрывающегося списка.
+4. В колонке **Select key from Azure Key Vault** (Выбор ключа из Azure Key Vault) подписка заполняется автоматически. Для поля **Хранилище ключей** можно выбрать существующее хранилище Key Vault из раскрывающегося списка.
 
-    ![Создание Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-31.png)
+    ![Выберите существующий Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-3-a.png)
 
     Чтобы создать Key Vault, можно также выбрать **Создать**. В колонке **Создать Key Vault** введите группу ресурсов и имя Key Vault. Убедитесь, что включена **Защита от** **обратимого удаления** и очистки. Примите все остальные значения по умолчанию. Выберите **Review + Create** (Просмотреть и создать).
 
-    ![Создание новой Azure Key Vault 2](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-4.png)
+    ![Проверка и создание Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-4.png)
 
-7. Проверьте сведения, связанные с Key Vault, и выберите **Создать**. Подождите несколько минут, пока не завершится создание Key Vault.
+5. Проверьте сведения, связанные с Key Vault, и выберите **Создать**. Подождите несколько минут, пока не завершится создание Key Vault.
 
-    ![Создание хранилища Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-5.png)
+    ![Создание Azure Key Vault с помощью параметров](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-5.png)
 
-8. В колонке **Select key from Azure Key Vault** (Выбор ключа из Azure Key Vault) можно выбрать ключ в существующем Key Vault.
+6. В колонке **Select key from Azure Key Vault** (Выбор ключа из Azure Key Vault) можно выбрать ключ в существующем Key Vault.
 
-    ![Создать новый ключ в Azure Key Vault 3](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6.png)
+    ![Выберите ключ из Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6.png)
 
-9. Если вы хотите создать новый ключ, выберите **создать** , чтобы создать ключ. Размер ключа RSA может быть 2048 бит или больше.
+7. Если вы хотите создать новый ключ, выберите **создать** , чтобы создать ключ. Размер ключа RSA может быть 2048 бит или больше.
 
-    ![Создать новый ключ в Azure Key Vault 4](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-61.png)
+    ![Создание ключа в Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6-a.png)
 
-10. Укажите имя ключа, примите остальные значения по умолчанию и нажмите кнопку **Создать**. 
+8. Укажите имя ключа, примите остальные значения по умолчанию и нажмите кнопку **Создать**.
 
-    ![Создание ключа](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-7.png)
+    ![Имя новый ключ](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-7.png)
 
 
-11. Вы получите уведомление о том, что в Key Vault создан ключ. Выберите **версию** и нажмите кнопку **Выбрать**.
+9. Вы получите уведомление о том, что в Key Vault создан ключ. Выберите **версию** и нажмите кнопку **Выбрать**.
 
-    ![Ключ, созданный в Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8.png)
+    ![Выберите версию для нового ключа](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8.png)
 
-12. На панели **тип шифрования** можно просмотреть хранилище ключей и ключ, выбранный для ключа, управляемого клиентом.
+10. На панели **тип шифрования** можно просмотреть хранилище ключей и ключ, выбранный для ключа, управляемого клиентом.
 
     ![Ключ и хранилище ключей для ключа, управляемого клиентом](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-9.png)
 
-13. Сохраните ключ. 
+11. Сохраните ключ. 
 
     ![Сохранить ключ, управляемый клиентом](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-10.png)
 

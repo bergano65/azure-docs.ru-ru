@@ -3,12 +3,12 @@ title: Основные понятия — частные облака и кла
 description: Узнайте о ключевых возможностях решений Azure VMware, определяемых программными центрами обработки данных и кластерами vSphere.
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: b261eb0517e9890d9bccf12f2e5748626f4c1ff9
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: daa712a722ca3252a49e4f54e0cc9e42de4ffc73
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791024"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337327"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Концепции частного облака и кластера решения VMware для Azure
 
@@ -52,9 +52,9 @@ ms.locfileid: "92791024"
 
 | Программное обеспечение              |    Версия   |
 | :---                  |     :---:    |
-| ВКСА/vSphere/ESXi |    6,7 U2    | 
-| ESXi                  |    6,7 U2    | 
-| vSAN                  |    6,7 U2    |
+| ВКСА/vSphere/ESXi |    6,7 U3    | 
+| ESXi                  |    6,7 U3    | 
+| vSAN                  |    6,7 U3    |
 | НСКС-T                 |      2.5     |
 
 Для любого нового кластера в частном облаке версия программного обеспечения соответствует тому, что выполняется в данный момент. Для любого нового частного облака в подписке устанавливается последняя версия программного стека.
@@ -74,7 +74,7 @@ ms.locfileid: "92791024"
 
 Настройки частного облака vCenter и НСКС-T имеют расписание почасового резервного копирования.  Резервные копии хранятся в течение трех дней. Если необходимо выполнить восстановление из резервной копии, откройте [запрос в службу поддержки](https://rc.portal.azure.com/#create/Microsoft.Support) в портал Azure, чтобы запросить восстановление.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующий шаг — изучение [сетей и концепций взаимодействия](concepts-networking.md).
 

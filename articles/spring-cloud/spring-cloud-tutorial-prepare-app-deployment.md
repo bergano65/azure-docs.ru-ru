@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 31e25fb8c67e3d271bc37eb4b0d28c67d94a664f
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 9e613331760a1715c3821bdc7dbbf0469e8bfd97
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92092806"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337616"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Подготовка приложения к развертыванию в Azure Веснного облака
 
@@ -30,15 +30,38 @@ Azure Веснное облако предоставляет надежные с
 Azure Веснного облака поддерживает:
 
 * .NET Core 3.1
-* Стилтое 2,4
+* Стилтое 2,4 и 3,0
 
 ## <a name="dependencies"></a>Зависимости
 
-Установите пакет [Microsoft. Azure. спрингклауд. Client](https://www.nuget.org/packages/Microsoft.Azure.SpringCloud.Client/) .
+Для Стилтое 2,4 Добавьте в файл проекта последнюю версию пакета [Microsoft. Azure. спрингклауд. Client 1. x. x](https://www.nuget.org/packages/Microsoft.Azure.SpringCloud.Client/) :
+
+```xml
+<ItemGroup>
+  <PackageReference Include="Microsoft.Azure.SpringCloud.Client" Version="1.0.0-preview.1" />
+  <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="2.4.4" />
+  <PackageReference Include="Steeltoe.Extensions.Configuration.ConfigServerCore" Version="2.4.4" />
+  <PackageReference Include="Steeltoe.Management.TracingCore" Version="2.4.4" />
+  <PackageReference Include="Steeltoe.Management.ExporterCore" Version="2.4.4" />
+</ItemGroup>
+```
+
+Для Стилтое 3,0 добавьте последний пакет [Microsoft. Azure. спрингклауд. Client 2. x. x](https://www.nuget.org/packages/Microsoft.Azure.SpringCloud.Client/) в файл проекта:
+
+```xml
+<ItemGroup>
+  <PackageReference Include="Microsoft.Azure.SpringCloud.Client" Version="2.0.0-preview.1" />
+  <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="3.0.0" />
+  <PackageReference Include="Steeltoe.Extensions.Configuration.ConfigServerCore" Version="3.0.0" />
+  <PackageReference Include="Steeltoe.Management.TracingCore" Version="3.0.0" />
+</ItemGroup>
+```
 
 ## <a name="update-programcs"></a>Обновление Program.cs
 
-В `Program.Main` методе вызовите `UseAzureSpringCloudService` метод:
+В `Program.Main` методе вызовите `UseAzureSpringCloudService` метод.
+
+Для Стилтое 2.4.4 вызовите `UseAzureSpringCloudService` после `ConfigureWebHostDefaults` и после `AddConfigServer` вызова метода:
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -47,7 +70,21 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
         {
             webBuilder.UseStartup<Startup>();
         })
+        .AddConfigServer()
         .UseAzureSpringCloudService();
+```
+
+Для Стилтое 3.0.0 вызовите `UseAzureSpringCloudService` до `ConfigureWebHostDefaults` и перед любым кодом конфигурации стилтое:
+
+```csharp
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .UseAzureSpringCloudService()
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.UseStartup<Startup>();
+        })
+        .AddConfigServer();
 ```
 
 ## <a name="enable-eureka-server-service-discovery"></a>Включить обнаружение службы Еурека Server
@@ -198,8 +235,8 @@ Azure Spring Cloud размещает компоненты Spring Cloud и уп�
 Версия Spring Boot | Версия Spring Cloud | Начальная версия облачного клиента Azure весны
 ---|---|---
 2.1.x | Greenwich.RELEASE | 2.1.2
-2.2. x | Хокстон. SR8 | Не требуется.
-2.3. x | Хокстон. SR8 | Не требуется.
+2.2. x | Хокстон. SR8 | Не требуется
+2.3. x | Хокстон. SR8 | Не требуется
 
 Если вы используете пружинную загрузку 2,1, включите следующие депенденЦии в файл pom.xml.
 

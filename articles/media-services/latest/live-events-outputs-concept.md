@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 10/23/2020
 ms.author: inhenkel
-ms.openlocfilehash: 300d9e433b4c57f2868416d866f1dcff6c189fb7
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: f7f73efff266e012616ac68d956abd921afaac2a
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784462"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337429"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>События и выходные данные прямой трансляции в Службах мультимедиа
 
@@ -28,7 +28,7 @@ ms.locfileid: "92784462"
 Службы мультимедиа Azure позволяют предоставлять клиентам интерактивные мероприятия в облаке Azure. Чтобы настроить события динамической потоковой передачи в службах мультимедиа v3, необходимо ознакомиться с основными понятиями, обсуждаемыми в этой статье.
 
 > [!TIP]
-> Для клиентов, выполняющих миграцию из API-интерфейсов служб мультимедиа версии 2, активная сущность **события** заменяет **канал** в v2 и **выходные данные в реальном времени** заменяет **программу** .
+> Для клиентов, выполняющих миграцию из API-интерфейсов служб мультимедиа версии 2, активная сущность **события** заменяет **канал** в v2 и **выходные данные в реальном времени** заменяет **программу**.
 
 ## <a name="live-events"></a>Трансляции
 
@@ -39,8 +39,8 @@ ms.locfileid: "92784462"
 Для [события Live](/rest/api/media/liveevents) можно задать *транзитный* (локальный динамический кодировщик отправляет поток с несколькими скоростями) или *кодирование в реальном времени* (локальный динамический кодировщик отправляет односкоростной поток). Типы задаются во время создания с помощью [лививентенкодингтипе](/rest/api/media/liveevents/create#liveeventencodingtype):
 
 * **Лививентенкодингтипе. None** : локальный динамический кодировщик отправляет поток с несколькими скоростями. Принимающий поток проходит через событие Live без дальнейшей обработки. Также называется сквозным режимом.
-* **Лививентенкодингтипе. Standard** . локальный динамический кодировщик отправляет односкоростной поток в Live Event, а службы мультимедиа — несколько потоков с несколькими скоростями. Если веб-канал публикации имеет 720p или более высокое разрешение, Предустановка **Default720p** кодирует набор из 6 пар "разрешение/скорость".
-* **Лививентенкодингтипе. Premium1080p** . локальный динамический кодировщик отправляет односкоростной поток в Live Event, а службы мультимедиа — несколько потоков с несколькими скоростями. Предустановка Default1080p указывает выходной набор пар "разрешение-скорость".
+* **Лививентенкодингтипе. Standard**. локальный динамический кодировщик отправляет односкоростной поток в Live Event, а службы мультимедиа — несколько потоков с несколькими скоростями. Если веб-канал публикации имеет 720p или более высокое разрешение, Предустановка **Default720p** кодирует набор из 6 пар "разрешение/скорость".
+* **Лививентенкодингтипе. Premium1080p**. локальный динамический кодировщик отправляет односкоростной поток в Live Event, а службы мультимедиа — несколько потоков с несколькими скоростями. Предустановка Default1080p указывает выходной набор пар "разрешение-скорость".
 
 ### <a name="pass-through"></a>Сквозной режим
 
@@ -150,7 +150,7 @@ ms.locfileid: "92784462"
     |---|---|---|
     |REST|[Properties. Ванитюрл](/rest/api/media/liveevents/create#liveevent)|[Лививентинпут. accessToken](/rest/api/media/liveevents/create#liveeventinput)|
     |CLI|[--именного — URL-адрес](/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access — токен](/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
-    |.NET|[Лививент. Ванитюрл](/dotnet/api/microsoft.azure.management.media.models.liveevent.vanityurl?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
+    |.NET|[Лививент. Ванитюрл](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
 
 ### <a name="live-ingest-url-naming-rules"></a>Правила именования URL-адресов динамического приема
 
@@ -205,7 +205,7 @@ ms.locfileid: "92784462"
 
 Подробные сведения о динамических выходных данных см. в разделе [Использование DVR для облака](live-event-cloud-dvr.md).
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 См. статью с [часто задаваемыми вопросами](frequently-asked-questions.md#live-streaming) .
 

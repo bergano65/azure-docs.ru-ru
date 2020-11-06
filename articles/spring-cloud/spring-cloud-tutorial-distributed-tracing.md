@@ -8,12 +8,12 @@ ms.date: 10/06/2019
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 30eb19e418292e74989be81d94ed684c917f6971
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: a78aec8c18f3b89629bbf696de3a097397ac59bc
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088641"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337922"
 ---
 # <a name="use-distributed-tracing-with-azure-spring-cloud"></a>Использование распределенной трассировки в Azure Spring Cloud
 
@@ -28,14 +28,18 @@ ms.locfileid: "92088641"
 
 ## <a name="dependencies"></a>Зависимости
 
-Установить следующие пакеты NuGet
+Для Стилтое 2.4.4 Добавьте следующие пакеты NuGet:
 
 * [Стилтое. Management. ТраЦингкоре](https://www.nuget.org/packages/Steeltoe.Management.TracingCore/)
 * [Стилтое. Management. Експортеркоре](https://www.nuget.org/packages/Microsoft.Azure.SpringCloud.Client/)
 
+Для Стилтое 3.0.0 добавьте следующий пакет NuGet:
+
+* [Стилтое. Management. ТраЦингкоре](https://www.nuget.org/packages/Steeltoe.Management.TracingCore/)
+
 ## <a name="update-startupcs"></a>Обновление Startup.cs
 
-1. В `ConfigureServices` методе вызовите `AddDistributedTracing` методы и `AddZipkinExporter` .
+1. Для Стилтое 2.4.4 вызовите `AddDistributedTracing` и `AddZipkinExporter` в `ConfigureServices` методе.
 
    ```csharp
    public void ConfigureServices(IServiceCollection services)
@@ -45,14 +49,29 @@ ms.locfileid: "92088641"
    }
    ```
 
-1. В `Configure` методе вызовите `UseTracingExporter` метод.
+   Для Стилтое 3.0.0 вызовите `AddDistributedTracing` в `ConfigureServices` методе.
+
+   ```csharp
+   public void ConfigureServices(IServiceCollection services)
+   {
+       services.AddDistributedTracing(Configuration, builder => builder.UseZipkinWithTraceOptions(services));
+   }
+   ```
+
+1. Для Стилтое 2.4.4 вызовите `UseTracingExporter` в `Configure` методе.
 
    ```csharp
    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
    {
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+        });
         app.UseTracingExporter();
    }
    ```
+
+   Для Стилтое 3.0.0 в методе не требуется никаких изменений `Configure` .
 
 ## <a name="update-configuration"></a>Обновление конфигурации
 
@@ -60,7 +79,7 @@ ms.locfileid: "92088641"
 
 1. `management.tracing.alwaysSample` — присвойте значение True.
 
-2. Если вы хотите просмотреть диапазоны трассировки, отправляемые между сервером Еурека, сервером конфигурации и пользовательскими приложениями: значение `management.tracing.egressIgnorePattern` "/API/v2/spans |/v2/Apps/.* /пермиссионс |/Еурека/.*| /оаус/. * ".
+2. Если вы хотите просмотреть диапазоны трассировки, отправляемые между сервером Еурека, сервером конфигурации и пользовательскими приложениями: значение `management.tracing.egressIgnorePattern` "/API/v2/spans |/v2/Apps/. */пермиссионс |/Еурека/.* | /оаус/. * ".
 
 Например, *appsettings.jsв* будет содержать следующие свойства:
  
@@ -137,10 +156,10 @@ spring.sleuth.sampler.probability=0.5
 
 1. Перейдите к странице своей службы Azure Spring Cloud на портале Azure.
 1. На странице **Мониторинг** выберите элемент **Распределенная трассировка**.
-1. Выберите **Изменить параметр**, чтобы изменить или добавить новый параметр.
+1. Выберите **Изменить параметр** , чтобы изменить или добавить новый параметр.
 1. Создайте новый запрос Application Insights или выберите имеющийся.
 1. Выберите категорию ведения журнала, которую требуется отслеживать, и укажите период удержания (в днях).
-1. Выберите **Применить**, чтобы применить новую трассировку.
+1. Выберите **Применить** , чтобы применить новую трассировку.
 
 ## <a name="view-the-application-map"></a>Просмотр схемы приложений
 
@@ -158,7 +177,7 @@ spring.sleuth.sampler.probability=0.5
 
 1. Перейдите к странице своей службы Azure Spring Cloud на портале Azure.
 1. В разделе **Мониторинг** выберите элемент **Распределенная трассировка**.
-1. Щелкните **Отключить**, чтобы отключить Application Insights
+1. Щелкните **Отключить** , чтобы отключить Application Insights
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

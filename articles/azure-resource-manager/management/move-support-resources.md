@@ -3,12 +3,12 @@ title: Поддержка операции перемещения типом р�
 description: Список типов ресурсов Azure, подлежащих перемещению в новую группу ресурсов или подписку.
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 675f7bb11ed98dd17e8f4ee4a0197d05128af851
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d5875287c7af905579397164029ef0504d6b9dc
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627114"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337956"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 
@@ -1433,7 +1433,7 @@ ms.locfileid: "91627114"
 > | privatednszones / virtualnetworklinks | Да | Да |
 > | privatednszonesinternal | нет | нет |
 > | privateendpointredirectmaps | нет | нет |
-> | privateendpoints | Да | Да |
+> | privateendpoints | Нет | нет |
 > | privatelinkservices | нет | нет |
 > | publicipaddresses | Да — Базовый SKU<br>Да — SKU "Стандартный" | Да — Базовый SKU<br>Нет — Стандартный SKU |
 > | publicipprefixes | Да | Да |

@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/10/2020
 ms.author: alkohli
-ms.openlocfilehash: 01eb35a60a6d51b5742d8fedd2ee0631aa86c924
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 3a915ac8de83a5e183660ec4a3d05044eafff4a9
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147946"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337514"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy-export-orders"></a>Отслеживание и ведение журнала событий для Azure Data Box и Azure Data Box Heavy экспорт заказов
 
@@ -52,9 +52,9 @@ ms.locfileid: "92147946"
 
 При размещении заказа на экспорт для Data Box можно включить сбор подробных журналов. Вот экран заказа, где можно включить подробный журнал:
 
-![Выбор параметра экспорта](media/data-box-deploy-export-ordered/azure-data-box-export-04b.png)
+![Выбор параметра экспорта](media/data-box-deploy-export-ordered/azure-data-box-export-order-export-option.png)
 
-При выборе параметра **включить подробный журнал** создается подробный файл журнала при копировании данных из учетной записи хранения Azure. Этот журнал содержит список всех файлов, которые были успешно экспортированы.      
+При выборе параметра **включить подробный журнал** создается подробный файл журнала при копировании данных из учетной записи хранения Azure. Этот журнал содержит список всех файлов, которые были успешно экспортированы.
 
 Дополнительные сведения о порядке экспорта см. в разделе [создание порядка экспорта для Data Box](data-box-deploy-export-ordered.md)
 
@@ -252,7 +252,7 @@ The authentication information fields provide detailed information about this sp
 
 - Сведения об отслеживании несущей для вашего устройства.
 - События с действием *секурирасе* . Эти события соответствуют очисткиу данных на диске.
-- Data Box ссылки на журналы. Отображаются пути для *журналов аудита*, *журналов копирования*и файлов *BOM* .
+- Data Box ссылки на журналы. Отображаются пути для *журналов аудита* , *журналов копирования* и файлов *BOM* .
 
 Ниже приведен пример журнала заказа из портал Azure.
 
@@ -303,6 +303,6 @@ Audit Logs Path      : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 BOM Files Path       : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [устранять неполадки Data Box и Data Box Heavy](data-box-troubleshoot.md).

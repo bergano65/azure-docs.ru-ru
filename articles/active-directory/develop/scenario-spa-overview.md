@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: 658e7f206f892c9dc241aab228aa933884f95b94
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 11a295402c925f5b8244eb3294097ff2271b5d68
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675635"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94335270"
 ---
 # <a name="scenario-single-page-application"></a>Scenario: Одностраничное приложение
 
@@ -38,7 +38,7 @@ ms.locfileid: "92675635"
 
 ![Авторизация в одностраничных приложениях](./media/scenarios/spa-app-auth.svg)
 
-- [Неявный поток OAuth 2.0](./v2-oauth2-implicit-grant-flow.md). Поток неявного предоставления позволяет приложению получать маркеры **ID** и **Доступа** . В отличие от потока кода авторизации, поток неявного предоставления не возвращает маркер **обновления** .
+- [Неявный поток OAuth 2.0](./v2-oauth2-implicit-grant-flow.md). Поток неявного предоставления позволяет приложению получать маркеры **ID** и **Доступа**. В отличие от потока кода авторизации, поток неявного предоставления не возвращает маркер **обновления**.
 
 ![Одностраничные приложения. Неявное предоставление разрешений](./media/scenarios/spa-app.svg)
 
@@ -56,7 +56,6 @@ ms.locfileid: "92675635"
 
 [!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-> [!div class="nextstepaction"]
-> [Регистрация приложения](scenario-spa-app-registration.md)
+[Регистрация приложения](scenario-spa-app-registration.md)
