@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d55e7f29c9ecefa7cfcf98ef890d9982b044ef30
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 6dd88f6e8eb2ce95c1aa68c63f3d14a14e079d19
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378828"
+ms.locfileid: "93396521"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -90,7 +90,7 @@ ms.locfileid: "93378828"
 
 ### <a name="azure-devops-administrator"></a>[Администратор Azure DevOps](#azure-devops-administrator-permissions)
 
-Пользователи с этой ролью могут управлять политикой Azure DevOps, чтобы разрешить создавать организации Azure DevOps только заданным пользователям или группам. Пользователи с этой ролью могут управлять этой политикой с использованием любой организации Azure DevOps, которая поддерживается организацией Azure AD.
+Пользователи с этой ролью могут управлять политикой Azure DevOps, чтобы разрешить создавать организации Azure DevOps только заданным пользователям или группам. Пользователи этой роли могут управлять этой политикой с помощью любой организации Azure DevOps, которая поддерживается организацией Azure AD компании. Эта роль не предоставляет никаких других разрешений Azure DevOps (например, администраторов коллекции проектов) в любых организациях Azure DevOps, поддерживаемых Организацией Azure AD компании.
 
 Все корпоративные политики Azure DevOps могут управляться пользователями этой роли.
 

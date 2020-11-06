@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: 439523fe55f231548ebc80ebc5d3b53c2f0d6e2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d663dc4e2bd860ec9494785ecbf6dbf10a4c5b5
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84808144"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397762"
 ---
 # <a name="create-an-application-gateway-with-an-internal-load-balancer-ilb"></a>Создание шлюза приложений с внутренней подсистемой балансировки нагрузки (ILB)
 
@@ -50,7 +50,7 @@ ms.locfileid: "84808144"
 
 ## <a name="create-a-resource-group-for-resource-manager"></a>Создание группы ресурсов для диспетчера ресурсов.
 
-Для работы с командлетами диспетчера ресурсов Azure необходимо перейти в режим PowerShell. Дополнительные сведения см. в статье [Использование Windows PowerShell с диспетчером ресурсов](../powershell-azure-resource-manager.md).
+Для работы с командлетами диспетчера ресурсов Azure необходимо перейти в режим PowerShell. Дополнительные сведения см. в статье [Использование Windows PowerShell с диспетчером ресурсов](../azure-resource-manager/management/manage-resources-powershell.md).
 
 ### <a name="step-1"></a>Шаг 1
 
@@ -242,7 +242,7 @@ Successful OK                   055f3a96-8681-2094-a304-8d9a11ad8301
 ```
 
 > [!NOTE]
-> Если указать параметр **-force**, запрос на подтверждение удаления не появится.
+> Если указать параметр **-force** , запрос на подтверждение удаления не появится.
 
 Для проверки того, удалена ли служба, используйте командлет `Get-AzApplicationGateway`. Этот шаг не является обязательным.
 
@@ -256,12 +256,11 @@ VERBOSE: 10:52:46 PM - Begin Operation: Get-AzureApplicationGateway
 Get-AzureApplicationGateway : ResourceNotFound: The gateway does not exist.
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Чтобы настроить разгрузку SSL, ознакомьтесь с [настройкой шлюза приложений для разгрузки SSL](application-gateway-ssl.md).
+Чтобы настроить разгрузку SSL, ознакомьтесь с [настройкой шлюза приложений для разгрузки SSL](./tutorial-ssl-powershell.md).
 
 Дополнительные сведения о параметрах балансировки нагрузки в целом см. в статьях:
 
 * [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
 * [Диспетчер трафика Azure](https://azure.microsoft.com/documentation/services/traffic-manager/)
-

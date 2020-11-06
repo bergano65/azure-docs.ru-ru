@@ -7,19 +7,19 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 33b70ba8ab7ffef90c42f53e58a2d27e619862f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8be37ed1da0da4da3db43ef4c1cd01ed962f24ed
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84806801"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397314"
 ---
 # <a name="use-private-ip-for-internal-routing-for-an-ingress-endpoint"></a>Использовать частный IP-адрес для внутренней маршрутизации для конечной точки входящего трафика 
 
 Эта функция позволяет предоставлять конечную точку входящих данных в `Virtual Network` с помощью частного IP-адреса.
 
-## <a name="pre-requisites"></a>Предварительные требования  
-Шлюз приложений с [частной IP-конфигурацией](https://docs.microsoft.com/azure/application-gateway/configure-application-gateway-with-private-frontend-ip)
+## <a name="pre-requisites"></a>Предварительные условия  
+Шлюз приложений с [частной IP-конфигурацией](./configure-application-gateway-with-private-frontend-ip.md)
 
 Существует два способа настройки контроллера для использования частного IP-адреса для входящего трафика,
 
@@ -66,4 +66,4 @@ appgw:
 АГИК выдаст сбой, если не `usePrivateIP: true` назначен частный IP-адрес.
 
 > [!NOTE]
-> Для SKU шлюза приложений версии 2 требуется общедоступный IP-адрес. Если требуется, чтобы шлюз приложений был частным, подключите его [`Network Security Group`](https://docs.microsoft.com/azure/virtual-network/security-overview) к подсети шлюза приложений, чтобы ограничить трафик.
+> Для SKU шлюза приложений версии 2 требуется общедоступный IP-адрес. Если требуется, чтобы шлюз приложений был частным, подключите его [`Network Security Group`](../virtual-network/network-security-groups-overview.md) к подсети шлюза приложений, чтобы ограничить трафик.

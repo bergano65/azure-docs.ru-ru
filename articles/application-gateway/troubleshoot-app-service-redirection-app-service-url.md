@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: absha
-ms.openlocfilehash: f3a3ba3ee908204668ad9d7201ddfddec0a26f28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 676d7c2ad18327471c6e95f3cef26185fa49b78b
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595950"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93396895"
 ---
 # <a name="troubleshoot-app-service-issues-in-application-gateway"></a>Устранение неполадок службы приложений в шлюзе приложений
 
@@ -80,10 +80,10 @@ X-Powered-By: ASP.NET
 
 ## <a name="solution-rewrite-the-location-header"></a>Решение. Перепишите заголовок Location
 
-Задайте имя узла в заголовке Location в качестве имени домена шлюза приложений. Для этого создайте [правило перезаписи](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers) с условием, которое оценивает, содержит ли заголовок Location в ответе azurewebsites.NET. Кроме того, необходимо выполнить действие для перезаписи заголовка Location, чтобы он имел имя узла шлюза приложений. Дополнительные сведения см. в разделе инструкции по [перезаписи заголовка Location](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers#modify-a-redirection-url).
+Задайте имя узла в заголовке Location в качестве имени домена шлюза приложений. Для этого создайте [правило перезаписи](./rewrite-http-headers.md) с условием, которое оценивает, содержит ли заголовок Location в ответе azurewebsites.NET. Кроме того, необходимо выполнить действие для перезаписи заголовка Location, чтобы он имел имя узла шлюза приложений. Дополнительные сведения см. в разделе инструкции по [перезаписи заголовка Location](./rewrite-http-headers.md#modify-a-redirection-url).
 
 > [!NOTE]
-> Поддержка переопределения HTTP-заголовков доступна только для [Standard_v2 и WAF_V2 SKU](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant) шлюза приложений. При использовании номера SKU v1 рекомендуется [выполнить миграцию с версии v1 на версию 2](https://docs.microsoft.com/azure/application-gateway/migrate-v1-v2). Вы хотите использовать функцию перезаписи и другие [Расширенные возможности](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant#feature-comparison-between-v1-sku-and-v2-sku) , доступные в версии v2.
+> Поддержка переопределения HTTP-заголовков доступна только для [Standard_v2 и WAF_V2 SKU](./application-gateway-autoscaling-zone-redundant.md) шлюза приложений. При использовании номера SKU v1 рекомендуется [выполнить миграцию с версии v1 на версию 2](./migrate-v1-v2.md). Вы хотите использовать функцию перезаписи и другие [Расширенные возможности](./application-gateway-autoscaling-zone-redundant.md#feature-comparison-between-v1-sku-and-v2-sku) , доступные в версии v2.
 
 ## <a name="alternate-solution-use-a-custom-domain-name"></a>Альтернативное решение. Используйте имя пользовательского домена.
 
@@ -93,7 +93,7 @@ X-Powered-By: ASP.NET
 
 Необходимо быть владельцем личного домена и выполнить следующую процедуру:
 
-- Зарегистрируйте домен в списке личный домен службы приложений. В пользовательском домене должна быть запись CNAME, указывающая на полное доменное имя службы приложений. Дополнительные сведения см. [в статье сопоставьте существующее настраиваемое DNS-имя со службой приложений Azure](https://docs.microsoft.com//azure/app-service/app-service-web-tutorial-custom-domain).
+- Зарегистрируйте домен в списке личный домен службы приложений. В пользовательском домене должна быть запись CNAME, указывающая на полное доменное имя службы приложений. Дополнительные сведения см. [в статье сопоставьте существующее настраиваемое DNS-имя со службой приложений Azure](//azure/app-service/app-service-web-tutorial-custom-domain).
 
     ![Список пользовательских доменов службы приложений](./media/troubleshoot-app-service-redirection-app-service-url/appservice-2.png)
 

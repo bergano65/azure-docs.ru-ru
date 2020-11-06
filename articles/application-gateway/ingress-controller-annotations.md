@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: f54381ddcd11a2e4a24d30d812468da85b5403de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f570f9f18f9c9d484a9bc9c1a5c64d42dbdc714
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80335826"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397456"
 ---
 # <a name="annotations-for-application-gateway-ingress-controller"></a>Заметки для контроллера входящего трафика шлюза приложений 
 
@@ -72,7 +72,7 @@ spec:
 
 ## <a name="tls-redirect"></a>Перенаправление TLS
 
-Шлюз приложений [можно настроить](https://docs.microsoft.com/azure/application-gateway/application-gateway-redirect-overview) для автоматического перенаправления URL-адресов HTTP к их аналогам HTTPS. Если эта заметка имеется и протокол TLS настроен правильно, контроллер входящего трафика Kubernetes создаст [правило маршрутизации с конфигурацией перенаправления](https://docs.microsoft.com/azure/application-gateway/redirect-http-to-https-portal#add-a-routing-rule-with-a-redirection-configuration) и применит изменения к шлюзу приложений. Созданное перенаправление будет HTTP `301 Moved Permanently` .
+Шлюз приложений [можно настроить](./redirect-overview.md) для автоматического перенаправления URL-адресов HTTP к их аналогам HTTPS. Если эта заметка имеется и протокол TLS настроен правильно, контроллер входящего трафика Kubernetes создаст [правило маршрутизации с конфигурацией перенаправления](./redirect-http-to-https-portal.md#add-a-routing-rule-with-a-redirection-configuration) и применит изменения к шлюзу приложений. Созданное перенаправление будет HTTP `301 Moved Permanently` .
 
 ### <a name="usage"></a>Использование
 

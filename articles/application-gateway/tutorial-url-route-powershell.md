@@ -8,18 +8,18 @@ ms.topic: how-to
 ms.date: 07/31/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 37e76f54b9c4fe38c891f7cee7bc443d1b0b20f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a73208ef7014c1f21c78485fc613a26ce3bfc76
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89596079"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397184"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-azure-powershell"></a>Маршрутизация веб-трафика на основе URL-адреса с использованием Azure PowerShell
 
-С помощью Azure PowerShell можно настраивать маршрутизацию веб-трафика в определенные серверные пулы на основе URL-адреса, который используется для доступа к приложению. В этой статье вы создадите [шлюз приложений Azure](application-gateway-introduction.md) с тремя внутренними пулами с помощью [масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md). У каждого серверного пула свое назначение. Например, они могут использоваться для данных, изображений и видео.  Если направлять трафик в отдельные пулы, пользователи будут получать нужную информацию в нужное время.
+С помощью Azure PowerShell можно настраивать маршрутизацию веб-трафика в определенные серверные пулы на основе URL-адреса, который используется для доступа к приложению. В этой статье вы создадите [шлюз приложений Azure](./overview.md) с тремя внутренними пулами с помощью [масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/overview.md). У каждого серверного пула свое назначение. Например, они могут использоваться для данных, изображений и видео.  Если направлять трафик в отдельные пулы, пользователи будут получать нужную информацию в нужное время.
 
-Чтобы включить маршрутизацию трафика, создайте [правила маршрутизации](application-gateway-url-route-overview.md), назначенные прослушивателям, которые ожидают передачи данных через определенные порты. После этого веб-трафик будет поступать на надлежащие серверы в пуле.
+Чтобы включить маршрутизацию трафика, создайте [правила маршрутизации](./url-route-overview.md), назначенные прослушивателям, которые ожидают передачи данных через определенные порты. После этого веб-трафик будет поступать на надлежащие серверы в пуле.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -55,7 +55,7 @@ New-AzResourceGroup -Name myResourceGroupAG -Location eastus
 
 Вы можете применить существующую виртуальную сеть или создать новую, но она в любом случае должна содержать отдельную подсеть только для шлюзов приложения. В этой статье вы создадите подсеть для шлюза приложений и подсеть для масштабируемых наборов. Также вы создадите общедоступный IP-адрес для доступа к ресурсам через шлюз приложения.
 
-Создайте конфигурации подсетей с именами *myAGSubnet* и *myBackendSubnet*, выполнив командлет [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть с именем *myVNet*, используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) с конфигурациями подсетей. Наконец, создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
+Создайте конфигурации подсетей с именами *myAGSubnet* и *myBackendSubnet* , выполнив командлет [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть с именем *myVNet* , используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) с конфигурациями подсетей. Наконец, создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* , выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
 
 ```azurepowershell-interactive
 $backendSubnetConfig = New-AzVirtualNetworkSubnetConfig `
@@ -136,7 +136,7 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSetting `
 
 Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этой статье вы создадите два прослушивателя. Первым создается базовый прослушиватель, который ожидает передачи данных по корневому URL-адресу. Вторым создается прослушиватель, который ожидает передачи данных по определенным URL-адресам.
 
-Создайте прослушиватель по умолчанию с именем *myDefaultListener*, используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener), с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. 
+Создайте прослушиватель по умолчанию с именем *myDefaultListener* , используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener), с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. 
 
 Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *rule1* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
@@ -212,7 +212,7 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 
 ### <a name="add-backend-listener"></a>Добавление серверного прослушивателя
 
-Добавьте серверный прослушиватель с именем *backendListener*, необходимый для маршрутизации трафика, с помощью командлета [Add-AzApplicationGatewayHttpListener](/powershell/module/az.network/add-azapplicationgatewayhttplistener).
+Добавьте серверный прослушиватель с именем *backendListener* , необходимый для маршрутизации трафика, с помощью командлета [Add-AzApplicationGatewayHttpListener](/powershell/module/az.network/add-azapplicationgatewayhttplistener).
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -312,7 +312,7 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 
 ## <a name="create-virtual-machine-scale-sets"></a>Создание масштабируемых наборов виртуальных машин
 
-В этом примере вы создадите три масштабируемых набора виртуальных машин, которые поддерживают три созданных внутренних пула. Имена создаваемых масштабируемых наборов — *myvmss1*, *myvmss2* и *myvmss3*. Масштабируемый набор назначается серверному пулу при настройке параметров IP-адреса.
+В этом примере вы создадите три масштабируемых набора виртуальных машин, которые поддерживают три созданных внутренних пула. Имена создаваемых масштабируемых наборов — *myvmss1* , *myvmss2* и *myvmss3*. Масштабируемый набор назначается серверному пулу при настройке параметров IP-адреса.
 
 ```azurepowershell-interactive
 $vnet = Get-AzVirtualNetwork `

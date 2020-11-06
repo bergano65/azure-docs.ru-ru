@@ -9,20 +9,20 @@ ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 67d22535f44d4d1b39b6c305fa0670d2d08be0c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2bd57344f0bd7f3b97c523f9378a5820c1a90a84
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595807"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93396572"
 ---
 # <a name="create-an-application-gateway-with-tls-termination-using-azure-powershell"></a>Создание шлюза приложений с завершением TLS с помощью Azure PowerShell
 
-Azure PowerShell можно использовать для создания [шлюза приложений](overview.md) с сертификатом для [завершения TLS/SSL](ssl-overview.md) , который использует [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию. 
+Azure PowerShell можно использовать для создания [шлюза приложений](overview.md) с сертификатом для [завершения TLS/SSL](ssl-overview.md) , который использует [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/overview.md) для внутренних серверов. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию. 
 
 Вы узнаете, как выполнять следующие задачи:
 
-* Создание самозаверяющего сертификата
+* Создание самозаверяющего сертификата.
 * настройка сети;
 * создание шлюза приложений с сертификатом;
 * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
@@ -33,9 +33,9 @@ Azure PowerShell можно использовать для создания [ш
 
 Для работы с этой статьей требуется модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Login-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
 
-Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этой статье вы создадите самозаверяющий сертификат с помощью команды [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate). Вы можете использовать [Export-PfxCertificate](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate) с возвращенным отпечатком, чтобы экспортировать PFX-файл из сертификата.
+Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этой статье вы создадите самозаверяющий сертификат с помощью команды [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate). Вы можете использовать [Export-PfxCertificate](/powershell/module/pkiclient/export-pfxcertificate) с возвращенным отпечатком, чтобы экспортировать PFX-файл из сертификата.
 
 ```powershell
 New-SelfSignedCertificate `
@@ -66,7 +66,7 @@ Export-PfxCertificate `
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с именем *myResourceGroupAG*, используя [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). 
+Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с именем *myResourceGroupAG* , используя [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). 
 
 ```powershell
 New-AzResourceGroup -Name myResourceGroupAG -Location eastus
@@ -74,7 +74,7 @@ New-AzResourceGroup -Name myResourceGroupAG -Location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Настройте подсети с именами *myBackendSubnet* и *myAGSubnet*, выполнив командлет [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть с именем *myVNet*, используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) с конфигурациями подсетей. Наконец, создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
+Настройте подсети с именами *myBackendSubnet* и *myAGSubnet* , выполнив командлет [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть с именем *myVNet* , используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) с конфигурациями подсетей. Наконец, создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* , выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
 
 ```powershell
 $backendSubnetConfig = New-AzVirtualNetworkSubnetConfig `
@@ -284,7 +284,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![Предупреждение системы безопасности](./media/tutorial-ssl-powershell/application-gateway-secure.png)
 
-Чтобы принять предупреждение системы безопасности, если используется самозаверяющий сертификат безопасности, выберите **Сведения**, а затем нажмите **Перейти на веб-страницу**. На экране отобразится защищенный веб-сайт IIS, как в показано следующем примере:
+Чтобы принять предупреждение безопасности, если вы использовали самозаверяющий сертификат, выберите **сведения** , а затем перейдите на **веб-страницу**. На экране отобразится защищенный веб-сайт IIS, как в показано следующем примере:
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/tutorial-ssl-powershell/application-gateway-iistest.png)
 

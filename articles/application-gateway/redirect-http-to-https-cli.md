@@ -8,20 +8,20 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 09/24/2020
 ms.author: victorh
-ms.openlocfilehash: 7dbfa877f634256c86166892a38d048a95e56baa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49fd6a939fc30671cf78984fdcba009666f6121e
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331035"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397320"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-cli"></a>Создание шлюза приложений с сертификатом с помощью Azure CLI
 
-Вы можете использовать Azure CLI для создания [шлюза приложений](overview.md) с сертификатом для завершения TLS/SSL. Правило маршрутизации используется для перенаправления трафика HTTP в HTTPS-порт в шлюзе приложений. В этом примере также создается [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) с двумя экземплярами виртуальных машин, предназначенный для внутреннего пула шлюза приложений.
+Вы можете использовать Azure CLI для создания [шлюза приложений](overview.md) с сертификатом для завершения TLS/SSL. Правило маршрутизации используется для перенаправления трафика HTTP в HTTPS-порт в шлюзе приложений. В этом примере также создается [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/overview.md) с двумя экземплярами виртуальных машин, предназначенный для внутреннего пула шлюза приложений.
 
 Вы узнаете, как выполнять следующие задачи:
 
-* Создание самозаверяющего сертификата
+* Создание самозаверяющего сертификата.
 * настройка сети;
 * создание шлюза приложений с сертификатом;
 * добавление прослушивателя и правила перенаправления;
@@ -33,7 +33,7 @@ ms.locfileid: "91331035"
 
 Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
 
 Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этом руководстве для создания самозаверяющего сертификата и PFX-файла используется команда openssl.
 
@@ -61,7 +61,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть с именем *myBackendSubnet*, необходимую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, используя команду [az network public-ip create](/cli/azure/network/public-ip).
+Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть с именем *myBackendSubnet* , необходимую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* , используя команду [az network public-ip create](/cli/azure/network/public-ip).
 
 ```azurecli-interactive
 az network vnet create \
@@ -85,7 +85,7 @@ az network public-ip create \
 
 Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway#az-network-application-gateway-create), чтобы создать шлюз приложений *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. 
 
-Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress*, созданным ранее. В этом примере нужно связать созданный сертификат и пароль при создании шлюза приложений. 
+Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress* , созданным ранее. В этом примере нужно связать созданный сертификат и пароль при создании шлюза приложений. 
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -172,7 +172,7 @@ az network application-gateway rule create \
 
 ## <a name="create-a-virtual-machine-scale-set"></a>создавать масштабируемый набор виртуальных машин;
 
-В этом примере вы создаете масштабируемый набор виртуальных машин *myvmss*, чтобы предоставить серверы для внутреннего пула в шлюзе приложений. Виртуальные машины в масштабируемом наборе связаны с подсетью *myBackendSubnet* и пулом *appGatewayBackendPool*. Чтобы создать масштабируемый набор, выполните команду [az vmss create](/cli/azure/vmss#az-vmss-create).
+В этом примере вы создаете масштабируемый набор виртуальных машин *myvmss* , чтобы предоставить серверы для внутреннего пула в шлюзе приложений. Виртуальные машины в масштабируемом наборе связаны с подсетью *myBackendSubnet* и пулом *appGatewayBackendPool*. Чтобы создать масштабируемый набор, выполните команду [az vmss create](/cli/azure/vmss#az-vmss-create).
 
 ```azurecli-interactive
 az vmss create \
@@ -217,12 +217,10 @@ az network public-ip show \
 
 ![Предупреждение системы безопасности](./media/redirect-http-to-https-cli/application-gateway-secure.png)
 
-Чтобы принять предупреждение системы безопасности, если используется самозаверяющий сертификат безопасности, выберите **Сведения**, а затем нажмите **Перейти на веб-страницу**. На экране отобразится защищенный веб-сайт NGINX, как в показано следующем примере:
+Чтобы принять предупреждение безопасности, если вы использовали самозаверяющий сертификат, выберите **сведения** , а затем перейдите на **веб-страницу**. На экране отобразится защищенный веб-сайт NGINX, как в показано следующем примере:
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/redirect-http-to-https-cli/application-gateway-nginxtest.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI](redirect-internal-site-cli.md)
-
-

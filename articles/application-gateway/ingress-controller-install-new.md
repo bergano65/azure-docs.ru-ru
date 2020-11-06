@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: cbebf430bf44ccdee51bf44b11b8b01f23544dcc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04d8a77cd051823559aba42d5dfc1418e6343ecc
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84807145"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397388"
 ---
 # <a name="how-to-install-an-application-gateway-ingress-controller-agic-using-a-new-application-gateway"></a>Установка контроллера входящего трафика шлюза приложений (АГИК) с помощью нового шлюза приложений
 
@@ -30,7 +30,7 @@ ms.locfileid: "84807145"
 
 У [Azure Cloud Shell](https://shell.azure.com/) уже есть все необходимые средства. Если вы решили использовать другую среду, убедитесь, что установлены следующие программы командной строки:
 
-* `az` -Azure CLI: [инструкции по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+* `az` -Azure CLI: [инструкции по установке](/cli/azure/install-azure-cli?view=azure-cli-latest)
 * `kubectl` -Kubernetes программа командной строки: [инструкции по установке](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 * `helm` -Диспетчер пакетов Kubernetes: [инструкции по установке](https://github.com/helm/helm/releases/latest)
 * `jq` -процессор командной строки JSON: [инструкции по установке](https://stedolan.github.io/jq/download/)
@@ -38,9 +38,9 @@ ms.locfileid: "84807145"
 
 ## <a name="create-an-identity"></a>Создание удостоверения
 
-Выполните следующие действия, чтобы создать [объект субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)Azure Active Directory (AAD). Запишите `appId` значения, `password` и, `objectId` которые будут использоваться в следующих шагах.
+Выполните следующие действия, чтобы создать [объект субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object)Azure Active Directory (AAD). Запишите `appId` значения, `password` и, `objectId` которые будут использоваться в следующих шагах.
 
-1. Создание субъекта-службы AD ([Подробнее о RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)):
+1. Создание субъекта-службы AD ([Подробнее о RBAC](../role-based-access-control/overview.md)):
     ```azurecli
     az ad sp create-for-rbac --skip-assignment -o json > auth.json
     appId=$(jq -r ".appId" auth.json)
@@ -71,11 +71,11 @@ ms.locfileid: "84807145"
 ## <a name="deploy-components"></a>Развертывание компонентов
 На этом шаге в подписку будут добавлены следующие компоненты:
 
-- [Служба Azure Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes)
-- [Шлюз приложений](https://docs.microsoft.com/azure/application-gateway/overview) версии 2
-- [Виртуальная сеть](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) с двумя [подсетями](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
-- [Общедоступный IP-адрес](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address)
-- [Управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview), которое будет использоваться [удостоверением "AAD Pod](https://github.com/Azure/aad-pod-identity/blob/master/README.md) "
+- [Служба Azure Kubernetes](../aks/intro-kubernetes.md)
+- [Шлюз приложений](./overview.md) версии 2
+- [Виртуальная сеть](../virtual-network/virtual-networks-overview.md) с двумя [подсетями](../virtual-network/virtual-networks-overview.md)
+- [Общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md)
+- [Управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md), которое будет использоваться [удостоверением "AAD Pod](https://github.com/Azure/aad-pod-identity/blob/master/README.md) "
 
 1. Скачайте шаблон Azure Resource Manager и при необходимости измените шаблон.
     ```bash
@@ -111,7 +111,7 @@ ms.locfileid: "84807145"
 ### <a name="setup-kubernetes-credentials"></a>Настройка учетных данных Kubernetes
 Для выполнения следующих действий требуется команда [kubectl](https://kubectl.docs.kubernetes.io/) Setup, которая будет использоваться для подключения к нашему новому кластеру Kubernetes. [Cloud Shell](https://shell.azure.com/) `kubectl` уже установлен. Мы будем использовать `az` CLI для получения учетных данных для Kubernetes.
 
-Получите учетные данные для вновь развернутых AKS (см.[Дополнительные](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough#connect-to-the-cluster)сведения):
+Получите учетные данные для вновь развернутых AKS (см.[Дополнительные](../aks/kubernetes-walkthrough.md#connect-to-the-cluster)сведения):
 ```azurecli
 # use the deployment-outputs.json created after deployment to get the cluster name and resource group name
 aksClusterName=$(jq -r ".aksClusterName.value" deployment-outputs.json)
@@ -121,7 +121,7 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
 ```
 
 ### <a name="install-aad-pod-identity"></a>Установка удостоверения Pod для AAD
-  Azure Active Directory удостоверение Pod предоставляет доступ на основе маркеров к [Azure Resource Manager (ARM)](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
+  Azure Active Directory удостоверение Pod предоставляет доступ на основе маркеров к [Azure Resource Manager (ARM)](../azure-resource-manager/management/overview.md).
 
   [Удостоверение для AAD Pod](https://github.com/Azure/aad-pod-identity) добавит в кластер Kubernetes следующие компоненты:
    * [определения пользовательских ресурсов](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/) Kubernetes: `AzureIdentity`, `AzureAssignedIdentity`, `AzureIdentityBinding`;
@@ -144,9 +144,9 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
      ```
 
 ### <a name="install-helm"></a>Установка Helm
-[Helm](https://docs.microsoft.com/azure/aks/kubernetes-helm) — это диспетчер пакетов для Kubernetes. Мы будем использовать его для установки `application-gateway-kubernetes-ingress` пакета:
+[Helm](../aks/kubernetes-helm.md) — это диспетчер пакетов для Kubernetes. Мы будем использовать его для установки `application-gateway-kubernetes-ingress` пакета:
 
-1. Установите [Helm](https://docs.microsoft.com/azure/aks/kubernetes-helm) и выполните следующую команду, чтобы добавить `application-gateway-kubernetes-ingress` пакет Helm:
+1. Установите [Helm](../aks/kubernetes-helm.md) и выполните следующую команду, чтобы добавить `application-gateway-kubernetes-ingress` пакет Helm:
 
     - *RBAC включен* Кластер AKS
 

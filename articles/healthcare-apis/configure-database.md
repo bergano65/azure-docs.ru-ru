@@ -7,18 +7,18 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 11/15/2019
 ms.author: matjazl
-ms.openlocfilehash: 2850f831100533908d55c4aab372338e07b3807f
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 3fe4118a8ecf4479732ba4073b342d3ec9f941b8
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042496"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93398204"
 ---
 # <a name="configure-database-settings"></a>Настройка параметров базы данных 
 
 API Azure для FHIR использует базу данных для хранения своих данных. Производительность базовой базы данных зависит от числа единиц запроса (RU), выбранных во время подготовки службы или в параметрах базы данных после подготовки службы.
 
-API Azure для FHIR использует концепцию RUs из Cosmos DB (см. [единицы запросов в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/request-units)) при настройке производительности базовой базы данных. 
+API Azure для FHIR использует концепцию RUs из Cosmos DB (см. [единицы запросов в Azure Cosmos DB](../cosmos-db/request-units.md)) при настройке производительности базовой базы данных. 
 
 Пропускная способность должна быть подготовлена для обеспечения доступности достаточного количества системных ресурсов для базы данных в любое время. Количество запросов, необходимых для вашего приложения, зависит от выполняемых операций. Операции могут варьироваться от простых операций чтения и записи до более сложных запросов. 
 
@@ -36,7 +36,7 @@ API Azure для FHIR использует концепцию RUs из Cosmos DB
 
 ![Cosmos DB конфигурации](media/database/database-settings.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как обновить службу веб-запросов для Azure API для FHIR. Сведения о настройке ключей, управляемых клиентом, в качестве параметров базы данных:
 

@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.date: 07/20/2019
 ms.author: victorh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6bc5761f4e629a90dacf06cd7503ca86a5448fe4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d0a130830c8b03fd1f47086b9a997f6fc3df9a4
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595880"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93396963"
 ---
 # <a name="manage-web-traffic-with-an-application-gateway-using-the-azure-cli"></a>Управление веб-трафиком с помощью шлюза приложений и Azure CLI
 
-Шлюз приложений используется для контроля и защиты веб-трафика, поступающего на обслуживаемые вами серверы. С помощью Azure CLI вы можете создать [шлюз приложений](overview.md), использующий [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин. Масштабируемый набор добавляется в серверный пул шлюза приложений по умолчанию.
+Шлюз приложений используется для контроля и защиты веб-трафика, поступающего на обслуживаемые вами серверы. С помощью Azure CLI вы можете создать [шлюз приложений](overview.md), использующий [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/overview.md) для внутренних серверов. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин. Масштабируемый набор добавляется в серверный пул шлюза приложений по умолчанию.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -45,7 +45,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов 
 
-Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть с именем *myBackendSubnet*, необходимую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, используя команду [az network public-ip create](/cli/azure/network/public-ip).
+Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть с именем *myBackendSubnet* , необходимую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* , используя команду [az network public-ip create](/cli/azure/network/public-ip).
 
 ```azurecli-interactive
 az network vnet create \
@@ -71,7 +71,7 @@ az network public-ip create \
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
-Чтобы создать шлюз приложений с именем *myAppGateway*, выполните команду [AZ Network Application-Gateway Create](/cli/azure/network/application-gateway) . При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPAddressddress*, созданным ранее. 
+Чтобы создать шлюз приложений с именем *myAppGateway* , выполните команду [AZ Network Application-Gateway Create](/cli/azure/network/application-gateway) . При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPAddressddress* , созданным ранее. 
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -155,4 +155,4 @@ az group delete --name myResourceGroupAG --location eastus
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Ограничение веб-трафика с помощью брандмауэра веб-приложения](./tutorial-restrict-web-traffic-cli.md)
+[Ограничение веб-трафика с помощью брандмауэра веб-приложения](../web-application-firewall/ag/tutorial-restrict-web-traffic-cli.md)

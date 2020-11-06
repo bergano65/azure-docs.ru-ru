@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 03/31/2020
 ms.author: victorh
-ms.openlocfilehash: 653e432ca445451fc9da7155137052b9916d0d92
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3dd46f4033a568a278d7006c0d5aab451496ff47
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311603"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397229"
 ---
 # <a name="migrate-azure-application-gateway-and-web-application-firewall-from-v1-to-v2"></a>Перенос шлюза приложений Azure и брандмауэра веб-приложения с версии v1 на v2
 
@@ -125,7 +125,7 @@ ms.locfileid: "91311603"
       $trustedCert = New-AzApplicationGatewayTrustedRootCertificate -Name "trustedCert1" -CertificateFile $certFilePath
       ```
 
-      Чтобы создать список объектов Псаппликатионгатевайтрустедрутцертификате, см. раздел [New-азаппликатионгатевайтрустедрутцертификате](https://docs.microsoft.com/powershell/module/Az.Network/New-AzApplicationGatewayTrustedRootCertificate?view=azps-2.1.0&viewFallbackFrom=azps-2.0.0).
+      Чтобы создать список объектов Псаппликатионгатевайтрустедрутцертификате, см. раздел [New-азаппликатионгатевайтрустедрутцертификате](/powershell/module/Az.Network/New-AzApplicationGatewayTrustedRootCertificate?view=azps-2.1.0&viewFallbackFrom=azps-2.0.0).
    * **privateIpAddress: [строка]: необязательный**. Конкретный частный IP-адрес, который необходимо связать с новым шлюзом v2.  Это должно быть из той же виртуальной сети, которую вы выделили для нового шлюза v2. Если этот параметр не указан, сценарий выделяет частный IP-адрес для шлюза v2.
    * **публиЦипресаурцеид: [строка]: необязательный**. ResourceId существующего ресурса общедоступного IP-адреса (SKU "Стандартный") в подписке, которую нужно выделить новому шлюзу v2. Если этот параметр не указан, сценарий выделяет новый общедоступный IP-адрес в той же группе ресурсов. Имя — это имя шлюза v2 с добавленным параметром *-IP* .
    * **валидатемигратион: [Switch]: необязательный параметр**. Используйте этот параметр, если требуется, чтобы скрипт выполнял некоторые базовые проверки сравнения конфигураций после создания шлюза v2 и копии конфигурации. По умолчанию проверка не выполняется.

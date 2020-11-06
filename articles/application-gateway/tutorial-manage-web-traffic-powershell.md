@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.date: 07/19/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: f29b31b09c2532c336ef2a2d574fab5e000b3e4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7e410218117aa0d21167b6d615a3835aeec470e7
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595892"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397116"
 ---
 # <a name="manage-web-traffic-with-an-application-gateway-using-azure-powershell"></a>Управление веб-трафиком с помощью шлюза приложений в Azure PowerShell
 
-Шлюз приложений используется для контроля и защиты веб-трафика, поступающего на обслуживаемые вами серверы. С помощью Azure PowerShell вы можете создать [шлюз приложений](overview.md), в котором используется [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов для управления веб-трафиком. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
+Шлюз приложений используется для контроля и защиты веб-трафика, поступающего на обслуживаемые вами серверы. С помощью Azure PowerShell вы можете создать [шлюз приложений](overview.md), в котором используется [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/overview.md) для внутренних серверов для управления веб-трафиком. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -45,7 +45,7 @@ New-AzResourceGroup -Name myResourceGroupAG -Location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов 
 
-Настройте подсети с именами *myBackendSubnet* и *myAGSubnet*, выполнив командлет [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть *myVNet*, используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) с конфигурациями подсетей. Наконец, создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
+Настройте подсети с именами *myBackendSubnet* и *myAGSubnet* , выполнив командлет [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Создайте виртуальную сеть *myVNet* , используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) с конфигурациями подсетей. Наконец, создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* , выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). Эти ресурсы используются для обеспечения сетевого подключения к шлюзу приложений и связанным с ним ресурсам.
 
 ```azurepowershell-interactive
 $backendSubnetConfig = New-AzVirtualNetworkSubnetConfig `
@@ -257,4 +257,4 @@ Remove-AzResourceGroup -Name myResourceGroupAG
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Ограничение веб-трафика с помощью брандмауэра веб-приложения](./tutorial-restrict-web-traffic-powershell.md)
+[Ограничение веб-трафика с помощью брандмауэра веб-приложения](../web-application-firewall/ag/tutorial-restrict-web-traffic-powershell.md)

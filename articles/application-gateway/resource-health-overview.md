@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 7/9/2019
 ms.author: victorh
-ms.openlocfilehash: db29551a8150b70e797d45fe659482470c8aca2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7e30a93f8270cfaf8910130cc1e2633bb80c2b8e
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67659506"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397178"
 ---
 # <a name="azure-application-gateway-resource-health-overview"></a>Общие сведения о Работоспособность ресурсов шлюза приложений Azure
 
@@ -59,6 +59,6 @@ ms.locfileid: "67659506"
 
 ![Состояние "в состоянии"](media/resource-health-overview/degraded.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения об устранении неполадок брандмауэра веб-приложения шлюза приложений (WAF) см. в разделе [Устранение неполадок брандмауэра веб-приложения (WAF) для шлюза приложений Azure](web-application-firewall-troubleshoot.md).
+Дополнительные сведения об устранении неполадок брандмауэра веб-приложения шлюза приложений (WAF) см. в разделе [Устранение неполадок брандмауэра веб-приложения (WAF) для шлюза приложений Azure](../web-application-firewall/ag/web-application-firewall-troubleshoot.md).

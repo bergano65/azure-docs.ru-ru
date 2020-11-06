@@ -7,17 +7,17 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 06/10/2020
 ms.author: caya
-ms.openlocfilehash: c1bd41587e4f56fb0a7f3eb8285d301751f558d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26f53a8f93d4d51ec8f8fd91051496a46670f432
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84668106"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397354"
 ---
 # <a name="what-is-application-gateway-ingress-controller"></a>Что такое входной контроллер шлюза приложений?
 Контроллер входящего трафика шлюза приложений (АГИК) — это приложение Kubernetes, которое позволяет клиентам [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) использовать собственный [шлюз](https://azure.microsoft.com/services/application-gateway/) нагрузки уровня 7 для Microsoft Azure, чтобы предоставить доступ к облачному программному обеспечению через Интернет. АГИК отслеживает кластер Kubernetes, на котором он размещен, и постоянно обновляет шлюз приложений, чтобы выбранные службы были доступны в Интернете.
 
-Входной контроллер работает в своем собственном модуле в AKS клиента. АГИК отслеживает подмножество ресурсов Kubernetes для внесения изменений. Состояние кластера AKS преобразуется в конфигурацию шлюза приложений и применяется к [Azure Resource Manager (ARM)](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
+Входной контроллер работает в своем собственном модуле в AKS клиента. АГИК отслеживает подмножество ресурсов Kubernetes для внесения изменений. Состояние кластера AKS преобразуется в конфигурацию шлюза приложений и применяется к [Azure Resource Manager (ARM)](../azure-resource-manager/management/overview.md).
 
 ## <a name="benefits-of-application-gateway-ingress-controller"></a>Преимущества контроллера входящего трафика шлюза приложений
 АГИК помогает устранить необходимость создания другой подсистемы балансировки нагрузки или общедоступного IP-адреса перед кластером AKS и избежать нескольких прыжков в пути данных до достижения запросов к кластеру AKS. Шлюз приложений обращается к модулям Pod напрямую с помощью частных IP-адресов и не требует Нодепорт или Кубепрокси Services. Это также повышает производительность развертывания.
@@ -69,7 +69,7 @@ ms.locfileid: "84668106"
 ### <a name="helm-deployed-agic-2-aks-clusters"></a>Helm развернутые АГИК (2 + AKS кластеры)
 |                  |1 шлюз приложений |2 + шлюзы приложений |
 |------------------|---------|--------|
-|**1 АГИК**|Недоступно |Недоступно |
+|**1 АГИК**|Н/Д |Н/Д |
 |**2 + Агикс**|Необходимо использовать общую функциональность Прохибитедтаржет |Недоступно |
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -77,4 +77,3 @@ ms.locfileid: "84668106"
 - [**AKS Add-On серия статей Brownfield Deployment**](tutorial-ingress-controller-add-on-existing.md): Установка агик надстройки в кластере AKS с существующим шлюзом приложений.
 - [**Развертывание Helm нуля**](ingress-controller-install-new.md): Установка агик с помощью Helm, нового кластера AKS и нового шлюза приложений в инфраструктуре пустого материала.
 - [**Развертывание Helm серия статей Brownfield**](ingress-controller-install-existing.md). Развертывание агик через Helm в существующем кластере AKS и шлюзе приложений.
-

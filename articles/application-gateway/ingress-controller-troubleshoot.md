@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 06/18/2020
 ms.author: caya
-ms.openlocfilehash: cbb62509472d6f86ba30e13c95ce2c2bfd343765
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: d6bcb9125cdfc07eb249353cb85b40a22d3e468c
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168194"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397371"
 ---
 # <a name="troubleshoot-common-questions-or-issues-with-ingress-controller"></a>Устранение распространенных вопросов и проблем с контроллером входящего трафика
 
@@ -141,7 +141,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
      aspnetapp              1/1     Running   0          17h   10.0.0.6    aks-agentpool-35064155-1   <none>           <none>            app=aspnetapp
      ```
 
-  2. Одна или несколько **служб**, ссылающихся на модули, приведенные выше, с помощью соответствующих `selector` меток.
+  2. Одна или несколько **служб** , ссылающихся на модули, приведенные выше, с помощью соответствующих `selector` меток.
      Проверьте, не [Cloud Shell](https://shell.azure.com/) ли это с помощью `kubectl get services -o wide`
      ```bash
      delyan@Azure:~$ kubectl get services -o wide --show-labels
@@ -150,7 +150,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
      aspnetapp           ClusterIP   10.2.63.254    <none>        80/TCP    17h   app=aspnetapp   <none>     
      ```
 
-  3. Входящий **(с**заметкам `kubernetes.io/ingress.class: azure/application-gateway` ), ссылающийся на указанную выше службу проверьте это с [Cloud Shell](https://shell.azure.com/)`kubectl get ingress -o wide --show-labels`
+  3. Входящий **(с** заметкам `kubernetes.io/ingress.class: azure/application-gateway` ), ссылающийся на указанную выше службу проверьте это с [Cloud Shell](https://shell.azure.com/)`kubectl get ingress -o wide --show-labels`
      ```bash
      delyan@Azure:~$ kubectl get ingress -o wide --show-labels
 
@@ -243,7 +243,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
 |  5        | Заносит в журнал упакованные объекты; показывает исключенную конфигурацию JSON, примененную к ARM |
 
 
-Уровни детализации изменяются с помощью `verbosityLevel` переменной в файле [Helm-config. YAML](#sample-helm-config-file) . Увеличьте уровень детализации, чтобы `5` получить конфигурацию JSON, отправленную в [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview):
+Уровни детализации изменяются с помощью `verbosityLevel` переменной в файле [Helm-config. YAML](#sample-helm-config-file) . Увеличьте уровень детализации, чтобы `5` получить конфигурацию JSON, отправленную в [ARM](../azure-resource-manager/management/overview.md):
   - Добавьте `verbosityLevel: 5` строку отдельно в [Helm-config. YAML](#sample-helm-config-file) и повторите установку.
   - получение журналов с помощью `kubectl logs <pod-name>`
 
@@ -300,4 +300,3 @@ rbac:
 aksClusterConfiguration:
     apiServerAddress: <aks-api-server-address>
 ```
-

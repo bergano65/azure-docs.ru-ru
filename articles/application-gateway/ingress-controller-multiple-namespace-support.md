@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 953430421bd30aaa1df352451b549994aeaa1a70
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cffc15974bf5a016a4584f5c5f3dcc8a185c9824
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85556163"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397337"
 ---
 # <a name="enable-multiple-namespace-support-in-an-aks-cluster-with-application-gateway-ingress-controller"></a>Включение поддержки нескольких пространств имен в кластере AKS с помощью контроллера входящего трафика шлюза приложений
 
@@ -35,7 +35,7 @@ ms.locfileid: "85556163"
   - Вывод списка входящих ресурсов из всех доступных пространств имен
   - фильтровать входящие ресурсы с заметками `kubernetes.io/ingress.class: azure/application-gateway`
   - Создание общей [конфигурации шлюза приложений](https://github.com/Azure/azure-sdk-for-go/blob/37f3f4162dfce955ef5225ead57216cf8c1b2c70/services/network/mgmt/2016-06-01/network/models.go#L1710-L1744)
-  - Применение конфигурации к связанному шлюзу приложений через [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)
+  - Применение конфигурации к связанному шлюзу приложений через [ARM](../azure-resource-manager/management/overview.md)
 
 ## <a name="conflicting-configurations"></a>Конфликтующие конфигурации
 Несколько [ресурсов](https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource) , входящих в состав пространства имен, могут дать указание агик создавать конфликтующие конфигурации для одного шлюза приложений. (Два передает заявляют один и тот же домен для экземпляра.)
@@ -90,7 +90,7 @@ spec:
   - Параметры HTTP: `bp-production-contoso-web-service-80-80-websocket-ingress`
   - Проба работоспособности: `pb-production-contoso-web-service-80-websocket-ingress`
 
-Обратите внимание, что за исключением правила *прослушивателя* и *маршрутизации*, созданные ресурсы шлюза приложений включают имя пространства имен ( `production` ), для которого они были созданы.
+Обратите внимание, что за исключением правила *прослушивателя* и *маршрутизации* , созданные ресурсы шлюза приложений включают имя пространства имен ( `production` ), для которого они были созданы.
 
 Если два входящих ресурса вводятся в кластер AKS в разные моменты времени, скорее всего, АГИК будет в ситуации, когда он перестраивает шлюз приложений и перенаправляет трафик с `namespace-B` на `namespace-A` .
 
@@ -99,7 +99,7 @@ spec:
 ## <a name="restrict-access-to-namespaces"></a>Ограничение доступа к пространствам имен
 По умолчанию АГИК будет настраивать шлюз приложений на основе пометки входных данных в любом пространстве имен. Если вы хотите ограничить это поведение, вы можете использовать следующие параметры:
   - Ограничьте пространство имен, явно определив пространства имен АГИК, с помощью `watchNamespace` ключа YAML в [Helm-config. YAML](#sample-helm-config-file)
-  - Используйте [Role/ролебиндинг](https://docs.microsoft.com/azure/aks/azure-ad-rbac) , чтобы ограничить агик конкретными пространствами имен
+  - Используйте [Role/ролебиндинг](../aks/azure-ad-rbac.md) , чтобы ограничить агик конкретными пространствами имен
 
 ## <a name="sample-helm-config-file"></a>Пример файла конфигурации Helm
 
@@ -155,4 +155,3 @@ spec:
     aksClusterConfiguration:
         apiServerAddress: <aks-api-server-address>
 ```
-

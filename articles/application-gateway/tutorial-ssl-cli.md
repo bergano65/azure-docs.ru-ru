@@ -8,20 +8,20 @@ ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: d2a49c1ba90c35575116ed6cf1482683c45e0b5e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 76fea0c8b6f3c13c9f462ecbb72611c6659c65d0
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595824"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397086"
 ---
 # <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Создание шлюза приложений с завершением TLS с помощью Azure CLI
 
-Вы можете использовать Azure CLI для создания [шлюза приложений](overview.md) с сертификатом для [завершения TLS](ssl-overview.md). Для внутренних серверов можно использовать [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) . В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
+Вы можете использовать Azure CLI для создания [шлюза приложений](overview.md) с сертификатом для [завершения TLS](ssl-overview.md). Для внутренних серверов можно использовать [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/overview.md) . В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
 
 Вы узнаете, как выполнять следующие задачи:
 
-* Создание самозаверяющего сертификата
+* Создание самозаверяющего сертификата.
 * настройка сети;
 * создание шлюза приложений с сертификатом;
 * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
@@ -34,7 +34,7 @@ ms.locfileid: "89595824"
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
 
 Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этой статье для создания самозаверяющего сертификата и PFX-файла используется команда openssl.
 
@@ -62,7 +62,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть с именем *myBackendSubnet*, необходимую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*, используя команду [az network public-ip create](/cli/azure/network/public-ip).
+Создайте виртуальную сеть с именем *myVNet* и подсеть *myAGSubnet* с помощью команды [az network vnet create](/cli/azure/network/vnet). Затем добавьте подсеть с именем *myBackendSubnet* , необходимую для внутренних серверов, используя команду [az network vnet subnet create](/cli/azure/network/vnet/subnet). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* , используя команду [az network public-ip create](/cli/azure/network/public-ip).
 
 ```azurecli-interactive
 az network vnet create \
@@ -90,7 +90,7 @@ az network public-ip create \
 
 Шлюз приложений можно создать с помощью команды [az network application-gateway create](/cli/azure/network/application-gateway). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. 
 
-Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress*, созданным ранее. В этом примере нужно связать созданный сертификат и пароль при создании шлюза приложений. 
+Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress* , созданным ранее. В этом примере нужно связать созданный сертификат и пароль при создании шлюза приложений. 
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -168,7 +168,7 @@ az network public-ip show \
 
 ![Предупреждение системы безопасности](./media/tutorial-ssl-cli/application-gateway-secure.png)
 
-Чтобы принять предупреждение системы безопасности, если используется самозаверяющий сертификат безопасности, выберите **Сведения**, а затем нажмите **Перейти на веб-страницу**. На экране отобразится защищенный веб-сайт NGINX, как в показано следующем примере:
+Чтобы принять предупреждение безопасности, если вы использовали самозаверяющий сертификат, выберите **сведения** , а затем перейдите на **веб-страницу**. На экране отобразится защищенный веб-сайт NGINX, как в показано следующем примере:
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/tutorial-ssl-cli/application-gateway-nginx.png)
 

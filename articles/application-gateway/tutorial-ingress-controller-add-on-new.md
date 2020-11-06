@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: caya
-ms.openlocfilehash: a93ef47d4a7ecc136f66cf54a08f7ed23bec2cc0
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 18c8aa0ff05dababc5a79c5c05b43ce9ebcbf9b4
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427965"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397102"
 ---
 # <a name="tutorial-enable-the-ingress-controller-add-on-preview-for-a-new-aks-cluster-with-a-new-application-gateway-instance"></a>Руководство по включению надстройки контроллера объекта ingress (предварительная версия) для нового кластера AKS с новым экземпляром Шлюза приложений
 
@@ -39,17 +39,17 @@ ms.locfileid: "92427965"
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим учебником вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
-Зарегистрируйте флаг компонента *AKS-IngressApplicationGatewayAddon*, используя команду [az feature register](https://docs.microsoft.com/cli/azure/feature#az-feature-register), как показано в указанном ниже примере. Это необходимо сделать только один раз для подписки, пока надстройка находится на стадии предварительной версии.
+Зарегистрируйте флаг компонента *AKS-IngressApplicationGatewayAddon* , используя команду [az feature register](/cli/azure/feature#az-feature-register), как показано в указанном ниже примере. Это необходимо сделать только один раз для подписки, пока надстройка находится на стадии предварительной версии.
 ```azurecli-interactive
 az feature register --name AKS-IngressApplicationGatewayAddon --namespace Microsoft.ContainerService
 ```
 
-Через несколько минут отобразится состояние `Registered`. Состояние регистрации можно проверить с помощью команды [az feature list](https://docs.microsoft.com/cli/azure/feature#az-feature-register):
+Через несколько минут отобразится состояние `Registered`. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature#az-feature-register):
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKS-IngressApplicationGatewayAddon')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов Microsoft.ContainerService с помощью команды [az provider register](https://docs.microsoft.com/cli/azure/provider#az-provider-register):
+Когда все будет готово, обновите регистрацию поставщика ресурсов Microsoft.ContainerService с помощью команды [az provider register](/cli/azure/provider#az-provider-register):
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
 ```
@@ -66,7 +66,7 @@ az extension list
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-В Azure выделите связанные ресурсы группе ресурсов. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении (регионе) *CanadaCentral*: 
+В Azure выделите связанные ресурсы группе ресурсов. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении (регионе) *CanadaCentral* : 
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location canadacentral
@@ -82,15 +82,15 @@ az group create --name myResourceGroup --location canadacentral
 > - На портале включите WAF в Шлюзе приложений. 
 > - Сначала создайте WAF версии 2 экземпляра Шлюза приложений, а затем следуйте инструкциям по [включению надстройки AGIC с существующим кластером AKS и экземпляром Шлюза приложений](tutorial-ingress-controller-add-on-existing.md). 
 
-В следующем примере вы развернете новый кластер AKS с именем *myCluster* с помощью [Azure CNI](https://docs.microsoft.com/azure/aks/concepts-network#azure-cni-advanced-networking) и [управляемых удостоверений](https://docs.microsoft.com/azure/aks/use-managed-identity). Надстройка AGIC будет включена в созданной вами группе ресурсов *myResourceGroup*. 
+В следующем примере вы развернете новый кластер AKS с именем *myCluster* с помощью [Azure CNI](../aks/concepts-network.md#azure-cni-advanced-networking) и [управляемых удостоверений](../aks/use-managed-identity.md). Надстройка AGIC будет включена в созданной вами группе ресурсов *myResourceGroup*. 
 
-Развертывание нового кластера AKS с включенной надстройкой AGIC без указания существующего экземпляра Шлюза приложений приведет к автоматическому созданию экземпляра SKU уровня "Стандартный" версии 2 экземпляра Шлюза приложений. Поэтому потребуется указать имя и диапазон адресов подсети экземпляра Шлюза приложений. Имя экземпляра Шлюза приложений будет *myApplicationGateway*, а используемый диапазон адресов подсети — 10.2.0.0/16. Убедитесь, что вы добавили или обновили расширение aks-preview в начале этого учебника. 
+Развертывание нового кластера AKS с включенной надстройкой AGIC без указания существующего экземпляра Шлюза приложений приведет к автоматическому созданию экземпляра SKU уровня "Стандартный" версии 2 экземпляра Шлюза приложений. Поэтому потребуется указать имя и диапазон адресов подсети экземпляра Шлюза приложений. Имя экземпляра Шлюза приложений будет *myApplicationGateway* , а используемый диапазон адресов подсети — 10.2.0.0/16. Убедитесь, что вы добавили или обновили расширение aks-preview в начале этого учебника. 
 
 ```azurecli-interactive
 az aks create -n myCluster -g myResourceGroup --network-plugin azure --enable-managed-identity -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-prefix "10.2.0.0/16" --generate-ssh-keys
 ```
 
-Информацию для настройки дополнительных параметров команды `az aks create` см. по [этим ссылкам](https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-create). 
+Информацию для настройки дополнительных параметров команды `az aks create` см. по [этим ссылкам](/cli/azure/aks?view=azure-cli-latest#az-aks-create). 
 
 > [!NOTE]
 > Созданный вами кластер AKS отобразится в группе ресурсов *myResourceGroup*. Но автоматически созданный экземпляр Шлюза приложений будет находиться в группе ресурсов узла, в котором находятся пулы агентов. По умолчанию группа ресурсов узла имеет имя *MC_resource-group-name_cluster-name_location* (можно изменить). 
@@ -124,7 +124,7 @@ kubectl get ingress
 - Используя IP-адрес экземпляра Шлюза приложений, полученного при выполнении предыдущей команды.
 - При помощи `curl`. 
 
-Для обновления Шлюзу приложений может потребоваться около минуты. Если Шлюз приложений на портале по-прежнему находится в состоянии **Обновление**, дождитесь окончания процедуры, прежде чем подключаться к IP-адресу. 
+Для обновления Шлюзу приложений может потребоваться около минуты. Если Шлюз приложений на портале по-прежнему находится в состоянии **Обновление** , дождитесь окончания процедуры, прежде чем подключаться к IP-адресу. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -138,4 +138,3 @@ az group delete --name myResourceGroup
 
 > [!div class="nextstepaction"]
 > [Сведения об отключении надстройки AGIC](./ingress-controller-disable-addon.md)
-

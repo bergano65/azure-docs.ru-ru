@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: victorh
-ms.openlocfilehash: 2a269137508feb8a2d2cc0710986e1b74b91c0ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 63f4b28915a932398e5417f8ea9be3fe4d68e705
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186747"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397847"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-by-using-powershell-for-azure-resource-manager"></a>Создание пользовательской проверки для шлюза приложений с помощью PowerShell для диспетчера ресурсов Azure
 
@@ -195,7 +195,6 @@ DnsSettings              : {
                             }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Узнайте, как настроить разгрузку TLS, посетив страницу [Настройка разгрузки TLS](application-gateway-ssl-arm.md) .
-
+Узнайте, как настроить разгрузку TLS, посетив страницу [Настройка разгрузки TLS](./tutorial-ssl-powershell.md) .

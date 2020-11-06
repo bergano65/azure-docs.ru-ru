@@ -10,12 +10,12 @@ author: saachigopal
 ms.date: 10/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 23b59c80c8e44cf6473a2de9be9807eaf8a756c6
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 4b4a1e601a5a0dbf5e56fc1d930e14150f27fee3
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310543"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93398238"
 ---
 # <a name="train-a-model-by-using-a-custom-docker-image"></a>Обучение модели с помощью пользовательского образа DOCKER
 
@@ -23,7 +23,7 @@ ms.locfileid: "93310543"
 
 Машинное обучение Azure предоставляет базовый образ DOCKER по умолчанию. Можно также использовать Машинное обучение Azure среды, чтобы указать другой базовый образ, например один из обслуживаемых [машинное обучение Azure базовых образов](https://github.com/Azure/AzureML-Containers) или [пользовательский образ](how-to-deploy-custom-docker-image.md#create-a-custom-base-image). Пользовательские базовые образы позволяют тесно управлять зависимостями и поддерживать более строгий контроль версий компонентов при выполнении заданий обучения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Запустите код в любой из этих сред:
 
@@ -138,7 +138,7 @@ print(compute_target.get_status().serialize())
 
 ## <a name="configure-your-training-job"></a>Настройка учебного задания
 
-В рамках этого руководства используйте сценарий обучения *Train.py* на [GitHub](https://github.com/Azure/azureml-examples/blob/main/code/models/fastai/pets-resnet34/train.py). На практике можно выполнить любой пользовательский сценарий обучения и запустить его, как есть, с Машинное обучение Azure.
+В рамках этого руководства используйте сценарий обучения *Train.py* на [GitHub](https://github.com/Azure/azureml-examples/blob/main/code/train/fastai/pets-resnet34/train.py). На практике можно выполнить любой пользовательский сценарий обучения и запустить его, как есть, с Машинное обучение Azure.
 
 Создайте `ScriptRunConfig` ресурс, чтобы настроить выполнение задания в нужном [целевом объекте вычислений](how-to-set-up-training-targets.md).
 
@@ -165,7 +165,7 @@ run.wait_for_completion(show_output=True)
 > [!WARNING]
 > Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [хранилища](/python/api/azureml-core/azureml.data?preserve-view=true&view=azure-ml-py)данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы обучили модель с помощью пользовательского образа DOCKER. Дополнительные сведения о Машинное обучение Azure см. в следующих статьях:
 * [Следите за показателями запуска](how-to-track-experiments.md) во время обучения.
 * [Развертывание модели](how-to-deploy-custom-docker-image.md) с помощью пользовательского образа DOCKER.

@@ -9,16 +9,16 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: cavoeg
-ms.openlocfilehash: cdb73670996341e9219230bb277e087009266f32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b362a81fc9b533fe00987a74d7e25dbba61a2589
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87846026"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93398255"
 ---
 # <a name="azure-active-directory-identity-configuration-for-azure-api-for-fhir"></a>Настройка удостоверения Azure Active Directory для Azure API для FHIR
 
-Важным элементом при работе с данными здравоохранения является обеспечение безопасности данных и недоступность неавторизованных пользователей или приложений. Серверы FHIR используют [OAuth 2,0](https://oauth.net/2/) для обеспечения безопасности данных. [API Azure для FHIR](https://azure.microsoft.com/services/azure-api-for-fhir/) защищен с помощью [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/), который является примером поставщика удостоверений OAuth 2,0. В этой статье представлен обзор авторизации сервера FHIR и действия, необходимые для получения маркера для доступа к серверу FHIR. Хотя эти действия применимы к любому FHIR серверу и любому поставщику удостоверений, мы рассмотрим API Azure для FHIR в качестве сервера FHIR и Azure AD в качестве поставщика удостоверений в этой статье.
+Важным элементом при работе с данными здравоохранения является обеспечение безопасности данных и недоступность неавторизованных пользователей или приложений. Серверы FHIR используют [OAuth 2,0](https://oauth.net/2/) для обеспечения безопасности данных. [API Azure для FHIR](https://azure.microsoft.com/services/azure-api-for-fhir/) защищен с помощью [Azure Active Directory](../active-directory/index.yml), который является примером поставщика удостоверений OAuth 2,0. В этой статье представлен обзор авторизации сервера FHIR и действия, необходимые для получения маркера для доступа к серверу FHIR. Хотя эти действия применимы к любому FHIR серверу и любому поставщику удостоверений, мы рассмотрим API Azure для FHIR в качестве сервера FHIR и Azure AD в качестве поставщика удостоверений в этой статье.
 
 ## <a name="access-control-overview"></a>Общие сведения о контроле доступа
 
@@ -26,12 +26,12 @@ ms.locfileid: "87846026"
 
 Получить маркер можно несколькими способами, но API Azure для FHIR не волнует, как получен маркер, если он является соответствующим подписанным маркером с правильными утверждениями. 
 
-Используя [поток кода авторизации](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code) в качестве примера, доступ к серверу FHIR проходит через четыре следующих шага:
+Используя [поток кода авторизации](../active-directory/azuread-dev/v1-protocols-oauth-code.md) в качестве примера, доступ к серверу FHIR проходит через четыре следующих шага:
 
 ![Авторизация FHIR](media/azure-ad-hcapi/fhir-authorization.png)
 
-1. Клиент отправляет запрос в `/authorize` конечную точку Azure AD. Azure AD перенаправит клиент на страницу входа, где пользователь будет проходить проверку подлинности, используя соответствующие учетные данные (например, имя пользователя и пароль или двухфакторная проверка подлинности). См. Дополнительные сведения о [получении кода авторизации](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code#request-an-authorization-code). После успешной проверки подлинности клиенту возвращается *код авторизации* . Azure AD разрешит возврат этого кода авторизации только в зарегистрированный URL-адрес ответа, настроенный в регистрации клиентского приложения (см. ниже).
-1. Клиентское приложение обменивается кодом авторизации для *маркера доступа* в `/token` КОНЕЧНОЙ точке Azure AD. При запросе маркера клиентскому приложению может потребоваться предоставить секрет клиента (пароль приложения). См. Дополнительные сведения о [получении маркера доступа](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code#use-the-authorization-code-to-request-an-access-token).
+1. Клиент отправляет запрос в `/authorize` конечную точку Azure AD. Azure AD перенаправит клиент на страницу входа, где пользователь будет проходить проверку подлинности, используя соответствующие учетные данные (например, имя пользователя и пароль или двухфакторная проверка подлинности). См. Дополнительные сведения о [получении кода авторизации](../active-directory/azuread-dev/v1-protocols-oauth-code.md#request-an-authorization-code). После успешной проверки подлинности клиенту возвращается *код авторизации* . Azure AD разрешит возврат этого кода авторизации только в зарегистрированный URL-адрес ответа, настроенный в регистрации клиентского приложения (см. ниже).
+1. Клиентское приложение обменивается кодом авторизации для *маркера доступа* в `/token` КОНЕЧНОЙ точке Azure AD. При запросе маркера клиентскому приложению может потребоваться предоставить секрет клиента (пароль приложения). См. Дополнительные сведения о [получении маркера доступа](../active-directory/azuread-dev/v1-protocols-oauth-code.md#use-the-authorization-code-to-request-an-access-token).
 1. Клиент выполняет запрос к API Azure для FHIR, например `GET /Patient` для поиска всех пациентов. При выполнении запроса он включает маркер доступа в заголовке HTTP-запроса, например `Authorization: Bearer eyJ0e...` , где `eyJ0e...` представляет маркер доступа в кодировке Base64.
 1. API Azure для FHIR проверяет, что маркер содержит соответствующие утверждения (свойства в токене). Если все проверяется, запрос завершается и возвращается пакет FHIR с результатами клиенту.
 
@@ -89,7 +89,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvaWQiOiIxMjMiLCAiaXNzIjoiaHR0cHM6Ly9pc3N
 
 ## <a name="obtaining-an-access-token"></a>Получение маркера доступа
 
-Как упоминалось выше, существует несколько способов получить маркер из Azure AD. Они подробно описаны в [документации для разработчиков Azure AD](https://docs.microsoft.com/azure/active-directory/develop/).
+Как упоминалось выше, существует несколько способов получить маркер из Azure AD. Они подробно описаны в [документации для разработчиков Azure AD](../active-directory/develop/index.yml).
 
 В Azure AD есть две разные версии конечных точек OAuth 2,0, которые называются `v1.0` и `v2.0` . Обе эти версии являются конечными точками OAuth 2,0, `v1.0` а `v2.0` конструкции и соответствуют различиям в реализации этого стандарта в Azure AD. 
 
@@ -98,11 +98,11 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvaWQiOiIxMjMiLCAiaXNzIjoiaHR0cHM6Ly9pc3N
 Соответствующие разделы документации по Azure AD:
 
 * Конечная точка `v1.0`:
-    * [Поток кода авторизации](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code).
-    * [Поток учетных данных клиента](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow).
+    * [Поток кода авторизации](../active-directory/azuread-dev/v1-protocols-oauth-code.md).
+    * [Поток учетных данных клиента](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md).
 * Конечная точка `v2.0`:
-    * [Поток кода авторизации](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow).
-    * [Поток учетных данных клиента](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow).
+    * [Поток кода авторизации](../active-directory/develop/v2-oauth2-auth-code-flow.md).
+    * [Поток учетных данных клиента](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md).
 
 Существуют другие варианты (например, от имени потока) для получения маркера. Дополнительные сведения см. в документации по Azure AD. При использовании API Azure для FHIR также есть несколько сочетаний клавиш для получения маркера доступа (для отладки) [с помощью Azure CLI](get-healthcare-apis-access-token-cli.md).
 

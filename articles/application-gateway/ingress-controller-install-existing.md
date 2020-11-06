@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 0652c49acf58a52244cc27ae3e59120ac7f03858
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c11de2f1bc4143281d2859de7a38268932b13fba
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84807108"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397405"
 ---
 # <a name="install-an-application-gateway-ingress-controller-agic-using-an-existing-application-gateway"></a>Установка контроллера входящего трафика шлюза приложений (АГИК) с помощью существующего шлюза приложений
 
@@ -27,10 +27,10 @@ ms.locfileid: "84807108"
 - [Установка контроллера входящего трафика с помощью Helm](#install-ingress-controller-as-a-helm-chart)
 - [Шлюз приложений с несколькими кластерами и общим доступом](#multi-cluster--shared-application-gateway). Установите агик в среде, где шлюз приложений является общим для одного или нескольких кластеров AKS и (или) других компонентов Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 В этом документе предполагается, что у вас уже установлены следующие средства и инфраструктура:
-- [AKS](https://azure.microsoft.com/services/kubernetes-service/) с включенной поддержкой [расширенных сетей](https://docs.microsoft.com/azure/aks/configure-azure-cni)
-- [Шлюз приложений версии 2](https://docs.microsoft.com/azure/application-gateway/create-zone-redundant) в той же виртуальной сети, что и AKS
+- [AKS](https://azure.microsoft.com/services/kubernetes-service/) с включенной поддержкой [расширенных сетей](../aks/configure-azure-cni.md)
+- [Шлюз приложений версии 2](./tutorial-autoscale-ps.md) в той же виртуальной сети, что и AKS
 - [Удостоверение Pod AAD](https://github.com/Azure/aad-pod-identity) , установленное в КЛАСТЕРе AKS
 - [Cloud Shell](https://shell.azure.com/) — это среда оболочки Azure, которая имеет интерфейс `az` командной строки, `kubectl` и `helm` установлен. Эти средства необходимы для приведенных ниже команд.
 
@@ -41,10 +41,10 @@ ms.locfileid: "84807108"
 Скачанный ZIP-файл будет содержать шаблоны JSON, bash и скрипты PowerShell, которые можно использовать для восстановления шлюза приложений, если это необходимо.
 
 ## <a name="install-helm"></a>Установка Helm
-[Helm](https://docs.microsoft.com/azure/aks/kubernetes-helm) — это диспетчер пакетов для Kubernetes. Мы будем использовать его для установки `application-gateway-kubernetes-ingress` пакета.
+[Helm](../aks/kubernetes-helm.md) — это диспетчер пакетов для Kubernetes. Мы будем использовать его для установки `application-gateway-kubernetes-ingress` пакета.
 Для установки Helm используйте [Cloud Shell](https://shell.azure.com/) :
 
-1. Установите [Helm](https://docs.microsoft.com/azure/aks/kubernetes-helm) и выполните следующую команду, чтобы добавить `application-gateway-kubernetes-ingress` пакет Helm:
+1. Установите [Helm](../aks/kubernetes-helm.md) и выполните следующую команду, чтобы добавить `application-gateway-kubernetes-ingress` пакет Helm:
 
     - *RBAC включен* Кластер AKS
 
@@ -72,7 +72,7 @@ ms.locfileid: "84807108"
 
 ## <a name="set-up-aad-pod-identity"></a>Настройка удостоверения Pod для AAD
 
-[Удостоверение типа POD AAD](https://github.com/Azure/aad-pod-identity) — это контроллер, аналогичный агик, который также работает на AKS. Он привязывает Azure Active Directory удостоверения к модулям Pod Kubernetes. Удостоверение требуется для того, чтобы приложение в Kubernetes Pod могло взаимодействовать с другими компонентами Azure. В конкретном случае для модуля АГИК требуется авторизация для выполнения HTTP-запросов к [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
+[Удостоверение типа POD AAD](https://github.com/Azure/aad-pod-identity) — это контроллер, аналогичный агик, который также работает на AKS. Он привязывает Azure Active Directory удостоверения к модулям Pod Kubernetes. Удостоверение требуется для того, чтобы приложение в Kubernetes Pod могло взаимодействовать с другими компонентами Azure. В конкретном случае для модуля АГИК требуется авторизация для выполнения HTTP-запросов к [ARM](../azure-resource-manager/management/overview.md).
 
 Чтобы добавить этот компонент в AKS, следуйте [инструкциям по установке удостоверения Pod AAD](https://github.com/Azure/aad-pod-identity#deploy-the-azure-aad-identity-infra) .
 
@@ -323,7 +323,7 @@ Helm install с `appgw.shared=true` выполнит развертывание 
     ```
 
 ### <a name="enable-for-an-existing-agic-installation"></a>Включить для существующей установки АГИК
-Предположим, что у нас уже есть рабочий AKS, шлюз приложений и настроенный АГИК в нашем кластере. У нас есть `prod.contosor.com` входящий трафик для и успешно обслуживать его в AKS. Мы хотим добавить `staging.contoso.com` к нашему существующему шлюзу приложений, но необходимо разместить его на [виртуальной машине](https://azure.microsoft.com/services/virtual-machines/). Мы будем повторно использовать существующий шлюз приложений и вручную настроить прослушиватель и серверные пулы для `staging.contoso.com` . Но Настройка конфигурации шлюза приложений вручную (через [портал](https://portal.azure.com), [API ARM](https://docs.microsoft.com/rest/api/resources/) или [terraform](https://www.terraform.io/)) противоречит предположениям полного владения агик. Вскоре после применения изменений АГИК будет перезаписывать или удалять их.
+Предположим, что у нас уже есть рабочий AKS, шлюз приложений и настроенный АГИК в нашем кластере. У нас есть `prod.contosor.com` входящий трафик для и успешно обслуживать его в AKS. Мы хотим добавить `staging.contoso.com` к нашему существующему шлюзу приложений, но необходимо разместить его на [виртуальной машине](https://azure.microsoft.com/services/virtual-machines/). Мы будем повторно использовать существующий шлюз приложений и вручную настроить прослушиватель и серверные пулы для `staging.contoso.com` . Но Настройка конфигурации шлюза приложений вручную (через [портал](https://portal.azure.com), [API ARM](/rest/api/resources/) или [terraform](https://www.terraform.io/)) противоречит предположениям полного владения агик. Вскоре после применения изменений АГИК будет перезаписывать или удалять их.
 
 Мы можем запретить АГИК внесение изменений в подмножество конфигурации.
 

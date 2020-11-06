@@ -1,14 +1,14 @@
 ---
 title: Подключение гибридных компьютеров к Azure на портале Azure
 description: Из этой статьи вы узнаете, как установить агент и подключить компьютеры к Azure с помощью серверов с поддержкой дуги Azure из портал Azure.
-ms.date: 10/21/2020
+ms.date: 11/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8769a3b76172bc6508b7c52eda359695c01eaa4b
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: ca3c08acdef1b2a1f7c3774f5755967d472c93ed
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370157"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93398034"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Подключение гибридных компьютеров к Azure на портале Azure
 
@@ -113,9 +113,9 @@ msiexec.exe /i AzureConnectedMachineAgent.msi /?
 
 Агент подключенного компьютера для ОС Linux предоставляется в пакете в предпочтительном формате для распространения (RPM или DEB). Он размещен в [репозитории пакетов](https://packages.microsoft.com/) Microsoft. [Пакет скриптов оболочки `Install_linux_azcmagent.sh`](https://aka.ms/azcmagent) выполняет следующие действия:
 
-- настраивает на хост-компьютере скачивание пакета агента по адресу packages.microsoft.com.
-- Устанавливает пакет поставщика гибридных ресурсов.
-- Регистрация компьютера в службе "Дуга Azure"
+* настраивает на хост-компьютере скачивание пакета агента по адресу packages.microsoft.com.
+
+* Устанавливает пакет поставщика гибридных ресурсов.
 
 При необходимости можно указать в агенте сведения о прокси-сервере, включив параметр `--proxy "{proxy-url}:{proxy-port}"`.
 
@@ -131,17 +131,32 @@ wget https://aka.ms/azcmagent -O ~/Install_linux_azcmagent.sh
 bash ~/Install_linux_azcmagent.sh
 ```
 
-Чтобы скачать и установить агент и включить параметр `--proxy` для настройки взаимодействия агента через прокси-сервер, выполните следующие команды:
+1. Чтобы скачать и установить агент и включить параметр `--proxy` для настройки взаимодействия агента через прокси-сервер, выполните следующие команды:
 
-```bash
-# Download the installation package.
-wget https://aka.ms/azcmagent -O ~/Install_linux_azcmagent.sh
+    ```bash
+    # Download the installation package.
+    wget https://aka.ms/azcmagent -O ~/Install_linux_azcmagent.sh
 
-# Install the connected machine agent. 
-bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
-```
+    # Install the connected machine agent.
+    bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
+    ```
 
-## <a name="verify-the-connection-with-azure-arc"></a>Проверка подключения с помощью Azure Arc
+2. После установки агента необходимо настроить его для взаимодействия со службой Azure Arc, выполнив следующую команду:
+
+    ```bash
+    azcmagent connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID" --cloud "cloudName"
+    if [ $? = 0 ]; then echo "\033[33mTo view your onboarded server(s), navigate to https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.HybridCompute%2Fmachines\033[m"; fi
+    ```
+
+### <a name="install-with-the-scripted-method"></a>Установка с помощью метода скрипта
+
+1. Войдите на сервер с учетной записью с корневым доступом.
+
+1. Перейдите к обычной или общей папке, в которую скопировали скрипт, и выполните его на сервере, запустив `./OnboardingScript.sh`.
+
+Если не удается запустить агент после завершения установки, просмотрите подробные сведения об ошибке в журналах. Каталог журнала — *var/opt/азкмажент/log*.
+
+## <a name="verify-the-connection-with-azure-arc"></a>Проверка подключения с помощью Azure Arc
 
 После установки агента и настройки его подключения к серверам с поддержкой Azure Arc перейдите на портал Azure, чтобы убедиться, что сервер подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
 

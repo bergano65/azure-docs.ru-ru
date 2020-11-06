@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: 1445d1418bde6d5d15e365c59ceb56e7661faccb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13441899eeb5ca2b7c60977ab2858fe40a398d1a
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87088076"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397864"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-classic-by-using-powershell"></a>Создание пользовательской проверки для шлюза приложений (классического) Azure с помощью PowerShell
 
@@ -143,7 +143,7 @@ Get-AzureApplicationGateway AppGwTest
 |Параметр|Описание|
 |---|---|
 |**Имя** |Имя пользовательской пробы. |
-| **протокол**; | Используемый протокол (возможные значения: HTTP или HTTPS).|
+| **Протокол** | Используемый протокол (возможные значения: HTTP или HTTPS).|
 | **Host** и **Path** | Полный путь URL-адреса, который вызывается шлюзом приложений для определения работоспособности экземпляра. Например, если у вас есть веб-сайт http: \/ /contoso.com/, то пользовательская пробная проверка может быть настроена на "http: \/ /contoso.com/Path/custompath.htm" для проверки на наличие успешного HTTP-ответа.|
 | **Интервал** | Задает интервал между пробами в секундах.|
 | **Timeout** | Определяет время ожидания для проверки ответа HTTP.|
@@ -198,9 +198,8 @@ Get-AzureApplicationGateway AppGwTest
 Set-AzureApplicationGatewayConfig -Name "<application gateway name>" -Configfile "<path to file>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Если вы хотите настроить протокол TLS, который ранее назывался разгрузкой SSL (SSL), см. раздел [Настройка шлюза приложений для разгрузки TLS](application-gateway-ssl.md).
+Если вы хотите настроить протокол TLS, который ранее назывался разгрузкой SSL (SSL), см. раздел [Настройка шлюза приложений для разгрузки TLS](./tutorial-ssl-powershell.md).
 
-Указания по настройке шлюза приложений для использования с внутренним балансировщиком нагрузки см. в статье [Создание шлюза приложений с внутренней подсистемой балансировщика нагрузки (ILB)](application-gateway-ilb.md).
-
+Указания по настройке шлюза приложений для использования с внутренним балансировщиком нагрузки см. в статье [Создание шлюза приложений с внутренней подсистемой балансировщика нагрузки (ILB)](./application-gateway-ilb-arm.md).
