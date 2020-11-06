@@ -1,0 +1,90 @@
+### YamlMime:Landing
+title: Контейнеры Azure Cognitive Services
+summary: Azure Cognitive Services предлагает разные контейнеры для локального использования средств ИИ. Контейнеры предоставляют гибко использовать Cognitive Services с вашими данными для обеспечения безопасности, соответствия требованиям и других эксплуатационных преимуществ.
+metadata:
+  title: Контейнеры Azure Cognitive Services
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: aahill
+  manager: nitinme
+  ms.service: cognitive-services
+  ms.topic: landing-page
+  ms.date: 10/27/2020
+  ms.author: aahi
+  ms.openlocfilehash: 28eb8450201280e58e24dd5ad9b8826165b614c3
+  ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 11/04/2020
+  ms.locfileid: "93328082"
+landingContent:
+- title: О контейнерах Cognitive Services
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что такое контейнеры Cognitive Services?
+      url: ../cognitive-services-container-support.md
+    - text: Часто задаваемые вопросы
+      url: container-faq.md
+    - text: Теги образа контейнера
+      url: container-image-tags.md
+- title: Инструкции по работе с контейнерами
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Повторное использование контейнеров
+      url: container-reuse-recipe.md
+    - text: Развертывание в Экземплярах контейнеров Azure
+      url: azure-container-instance-recipe.md
+    - text: Развертывание в Kubernetes
+      url: azure-kubernetes-recipe.md
+    - text: Развертывание с использованием Docker Compose
+      url: azure-kubernetes-recipe.md
+- title: Контейнеры Компьютерного зрения
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - url: ../computer-vision/computer-vision-how-to-install-containers.md
+      text: Чтение OCR
+    - url: ../computer-vision/spatial-analysis-container.md
+      text: Пространственный анализ
+    - url: ../face/face-how-to-install-containers.md
+      text: Распознавание лиц
+    - url: ../form-recognizer/form-recognizer-container-howto.md
+      text: Распознаватель документов
+- title: Контейнеры для работы с языком
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - url: ../text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=sentiment
+      text: Анализ тональности
+    - url: ../text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=keyphrase
+      text: Извлечение ключевой фразы
+    - url: ../text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=language
+      text: Распознавание языка текста
+    - url: ../text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=healthcare
+      text: Анализ текста для сферы здравоохранения
+    - url: ../luis/luis-container-howto.md
+      text: Контейнер LUIS
+- title: Контейнеры Речи
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - url: ../speech-service/speech-container-howto.md?tabs=stt
+      text: Преобразование речи в текст
+    - url: ../speech-service/speech-container-howto.md?tabs=cstt
+      text: Настраиваемое преобразование речи в текст
+    - url: ../speech-service/speech-container-howto.md?tabs=tts
+      text: Преобразование текста в речь
+    - url: ../speech-service/speech-container-howto.md?tabs=ctts
+      text: Настраиваемое преобразование текста в речь
+    - url: ../speech-service/speech-container-howto.md?tabs=ntts
+      text: Нейронное преобразование текста в речь
+    - url: ../speech-service/speech-container-howto.md?tabs=lid
+      text: Распознавание языка речи
+- title: Контейнер принятия решений
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - url: ../anomaly-detector/anomaly-detector-container-howto.md
+      text: Детектор аномалий

@@ -161,6 +161,8 @@
           href: spatial-analysis-zone-line-placement.md
         - name: Размещение камеры
           href: spatial-analysis-camera-placement.md
+    - name: Документация по контейнерам Cognitive Services
+      href: ../containers/index.yml
 - name: Практические руководства
   items:
     - name: Вызов API компьютерного зрения

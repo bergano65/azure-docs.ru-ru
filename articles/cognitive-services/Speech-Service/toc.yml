@@ -39,8 +39,6 @@
           href: how-to-automatic-language-detection.md
         - name: Использование API пакетного транскрибирования
           href: batch-transcription.md
-        - name: Оценка произношения
-          href: how-to-pronunciation-assessment.md
     - name: Учебники
       items:
         - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
@@ -500,7 +498,7 @@
           href: 'https://speech.microsoft.com'
         - name: Создание приложения пользовательских команд с помощью Speech Studio
           href: quickstart-custom-speech-commands-create-new.md
-- name: Развертывание
+- name: Развернуть
   items:
     - name: Включение ведения журналов
       href: how-to-use-logging.md
@@ -530,6 +528,8 @@
           href: deploy-speech-on-container-instances.md
         - name: Часто задаваемые вопросы о контейнерах
           href: speech-container-faq.md
+        - name: Документация по контейнерам Cognitive Services
+          href: ../containers/index.yml
 - name: Устройства
   items:
     - name: 'Документация по устройствам, подключаемым к службе "Речь"'

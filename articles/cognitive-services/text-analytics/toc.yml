@@ -80,6 +80,8 @@
           href: how-tos/text-analytics-how-to-use-container-instances.md
         - name: Использование Службы Azure Kubernetes (AKS)
           href: how-tos/text-analytics-how-to-use-kubernetes-service.md
+        - name: Документация по контейнерам Cognitive Services
+          href: ../containers/index.yml
     - name: Переход на версию 3 API
       href: migration-guide.md
 - name: Справочник
