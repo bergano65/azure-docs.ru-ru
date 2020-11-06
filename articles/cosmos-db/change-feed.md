@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 04/08/2020
 ms.reviewer: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 6d0ae81177ca8488c410e40ca56642199694c08c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 8c9007cf14b485c37b94e9f475e2ce890ea0ea2b
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93072658"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94330807"
 ---
 # <a name="change-feed-in-azure-cosmos-db"></a>Канал изменений в Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Канал изменений, поддерживаемый в Azure Cosmos DB, прослушивает изменения в контейнере Azure Cosmos. Затем он выводит отсортированный список документов в порядке, в котором они были изменены. Изменения сохраняются и обрабатываются асинхронно и пошагово, а выходные данные могут распределяться в один или несколько объектов-получателей для параллельной обработки.
+Веб-канал изменений в Azure Cosmos DB — это постоянная запись изменений в контейнер в порядке их возникновения. Канал изменений, поддерживаемый в Azure Cosmos DB, прослушивает изменения в контейнере Azure Cosmos. Затем он выводит отсортированный список документов в порядке, в котором они были изменены. Сохраненные изменения могут обрабатываться асинхронно и постепенно, а выходные данные могут быть распределены по одному или нескольким потребителям для параллельной обработки.
 
 См. дополнительные сведения о [конструктивных шаблонах канала изменений](change-feed-design-patterns.md).
 

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: rosouz
-ms.openlocfilehash: d0727f512ab24342b493ba2563262a9253d95d8c
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 60326b0ba06e1642e2831814dd931c69f6a04f3b
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339979"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94330909"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store-preview"></a>Что такое Azure Cosmos DB аналитическое хранилище (Предварительная версия)?
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -19,7 +19,7 @@ ms.locfileid: "93339979"
 > [!IMPORTANT]
 > Аналитическое хранилище Azure Cosmos DB в настоящее время находится на этапе предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Azure Cosmos DB Analytics Store — это полностью изолированное хранилище столбцов, позволяющее выполнять крупномасштабную аналитику с операционными данными в Azure Cosmos DB без каких-либо последствий с транзакционными рабочими нагрузками.  
+Azure Cosmos DB Analytics Store — это полностью изолированное хранилище столбцов, позволяющее выполнять крупномасштабную аналитику с операционными данными в Azure Cosmos DB без каких-либо последствий с транзакционными рабочими нагрузками. Хранилище транзакций Azure Cosmos DB не зависит от схемы и позволяет выполнять итерации по транзакционным приложениям без необходимости управлять схемой или индексами. В отличие от этого, аналитическое хранилище Azure Cosmos DB разработано с целью оптимизации производительности аналитических запросов. В этой статье подробно описывается аналитическое хранилище.
 
 ## <a name="challenges-with-large-scale-analytics-on-operational-data"></a>Сложности крупномасштабного анализа операционных данных
 
@@ -150,10 +150,10 @@ salary: 1000000
 | Double |  ". float64" |    24,99|
 | Массив | ". Array" |    ["a", "b"]|
 |Двоичные данные | ". binary" |0|
-|Логическое значение    | ". bool"   |Да|
+|логический    | ". bool"   |Верно|
 |Int32  | ". Int32"  |123|
 |Int64  | ". Int64"  |255486129307|
-|Null   | ". null"   | null|
+|NULL   | ". null"   | null|
 |Строка|    ". String" | "ABC"|
 |Отметка времени |    ". timestamp" |  Отметка времени (0, 0)|
 |DateTime   |". Date"    | Исодате ("2020-08-21T07:43:07.375 Z")|

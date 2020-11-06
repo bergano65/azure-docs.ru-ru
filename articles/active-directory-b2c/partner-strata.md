@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/25/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 0fd2312df31e61ae30f4c3fd04dc0991ac0f4675
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 6276bd0db9bfb93897f7350b87d208ac2951c859
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376861"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94330331"
 ---
 # <a name="tutorial-for-extending-azure-ad-b2c-to-protect-on-premises-applications-using-strata"></a>Руководство по расширению Azure AD B2C для защиты локальных приложений с помощью Strata
 
@@ -29,7 +29,7 @@ ms.locfileid: "93376861"
 
 - **Простая настройка**. Azure AD B2C предоставляет простой пошаговый пользовательский интерфейс для подключения соединителей SAML Маверикс Identity ORCHESTRATOR или OIDC к Azure AD B2C.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы приступить к работе, вам потребуется:
 
@@ -57,7 +57,7 @@ ms.locfileid: "93376861"
 
 ![На рисунке показана архитектура интеграции Azure AD B2C с Strata Маверикс для обеспечения доступа к гибридным приложениям.](./media/partner-strata/strata-architecture-diagram.png)
 
-| Шаги | Описание |
+| Шаги | Описание: |
 |:-------|:---------------|
 | 1. | Пользователь выполняет запрос на доступ к локальному размещенному приложению. Маверикс Identity Orchestrator передает запрос, сделанный пользователем, в приложение.|
 | 2. | Orchestrator проверяет состояние проверки подлинности пользователя. Если он не получает маркер сеанса или указанный токен сеанса является недопустимым, он отправляет пользователю Azure AD B2C для проверки подлинности.|
@@ -69,7 +69,7 @@ ms.locfileid: "93376861"
 | 8. | Теперь пользователь прошел проверку подлинности и имеет доступ к приложению.|
 
 ## <a name="get-maverics-identity-orchestrator"></a>Получение Маверикс Identity Orchestrator
-
+Чтобы получить программное обеспечение, которое будет использоваться для интеграции устаревшего локального приложения с Azure AD B2C, обратитесь в [Strata](https://www.strata.io/contact/). После получения программного обеспечения выполните следующие действия, чтобы определить необходимые компоненты Orchestrator и выполнить необходимые действия по установке и настройке.
 
 ## <a name="configure-your-azure-ad-b2c-tenant"></a>Настройка клиента Azure AD B2C
 
@@ -338,7 +338,7 @@ appgateways:
 
 7. Должно отобразиться запрошенное приложение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

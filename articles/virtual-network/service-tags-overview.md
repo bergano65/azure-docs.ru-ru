@@ -10,15 +10,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/18/2020
+ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 8aae75aca585c30c0678c88247a8ecfe8a0b801d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 60d3607a543cac5b8ce71819eb60394d8b8827bf
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340266"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94331126"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -28,6 +28,8 @@ ms.locfileid: "93340266"
 Теги службы можно использовать для определения элементов управления доступом к сети для [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или [брандмауэра Azure](https://docs.microsoft.com/azure/firewall/service-tags). Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы, например **ApiManagement** , в соответствующем поле *источника* или *назначения* правила, можно разрешить или запретить трафик для соответствующей службы.
 
 Теги службы можно использовать для обеспечения изоляции сети и защиты ресурсов Azure от общего доступа через Интернет при доступе к службам Azure, имеющим общедоступные конечные точки. Создайте правила группы безопасности сети для входящих и исходящих подключений, чтобы запретить передачу трафика **Интернета** и разрешить входящий и исходящий трафик **AzureCloud** или других [доступных тегов](#available-service-tags) служб Azure.
+
+![Сетевая изоляция служб Azure с помощью тегов служб](./media/service-tags-overview/service_tags.png)
 
 ## <a name="available-service-tags"></a>Доступные теги службы
 В следующей таблице перечислены все теги службы, доступные для использования в правилах [группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules).

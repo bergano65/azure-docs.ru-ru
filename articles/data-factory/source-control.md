@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: 78e230453e256e90803b3607fa02904f90774881
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 523f28cdd32c5176160587a8531aa66c0621d5a7
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325096"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94330695"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -207,7 +207,7 @@ ms.locfileid: "93325096"
 
 ### <a name="creating-feature-branches"></a>Создание ветвей функциональностей
 
-Каждый репозиторий Git Azure Repos, который связан с фабрикой данных, имеет ветвь совместной работы. (`master` — ветвь совместной работы по умолчанию.) Пользователи также могут создавать ветви функциональностей. Для этого нужно щелкнуть **+ New Branch** (Создать ветвь) в раскрывающемся списке ветвей. В появившейся области создания ветви введите имя ветви функциональности.
+Каждый репозиторий Git Azure Repos, который связан с фабрикой данных, имеет ветвь совместной работы. (`main` — ветвь совместной работы по умолчанию.) Пользователи также могут создавать ветви функциональностей. Для этого нужно щелкнуть **+ New Branch** (Создать ветвь) в раскрывающемся списке ветвей. В появившейся области создания ветви введите имя ветви функциональности.
 
 ![Создание ветви](media/author-visually/new-branch.png)
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/14/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: f322803d3484b4ec2d5449e19d67d75b35d6d92f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5ef67580928a45609f50d3fe798eb9d054265c0a
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75751985"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375910"
 ---
 [!INCLUDE [P2S FAQ All](vpn-gateway-faq-p2s-all-include.md)]
 
@@ -23,7 +23,7 @@ ms.locfileid: "75751985"
 
 Обход проверки удостоверения сервера в целом не рекомендуется, но при аутентификации сертификата Azure для проверки сервера в протоколе туннелирования VPN (IKEv2/SSTP) и протоколе EAP используется один и тот же сертификат. Так как сертификат сервера и FQDN уже проверены протоколом туннелирования VPN, повторная проверка в EAP не требуется.
 
-![точка — сеть](./media/vpn-gateway-faq-p2s-all-include/servercert.png "Сертификат сервера")
+![Аутентификация "точка — сеть"](./media/vpn-gateway-faq-p2s-all-include/servercert.png "Сертификат сервера")
 
 ### <a name="can-i-use-my-own-internal-pki-root-ca-to-generate-certificates-for-point-to-site-connectivity"></a>Можно ли с помощью корневого ЦС собственной внутренней системы PKI создать сертификаты для подключения "точка — сеть"?
 
