@@ -4,6 +4,10 @@
   items:
     - name: Сведения о службах лабораторий
       href: lab-services-overview.md
+- name: Краткие руководства
+  items:
+    - name: Начало работы
+      href: get-started-manage-labs.md
 - name: Учебники
   items:
     - name: Настройка учетной записи лаборатории

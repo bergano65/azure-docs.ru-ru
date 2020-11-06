@@ -29,6 +29,9 @@
     - name: Устранение повреждений базы данных
       href: how-to-fix-corrupt-database.md
       displayName: corrupt data
+    - name: Политика управления версиями
+      href: concepts-version-policy.md
+      displayName: version policy
 - name: Одиночный сервер
   expanded: true
   items:

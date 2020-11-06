@@ -14,8 +14,9 @@
     - name: Заметки о выпуске
       href: release-notes.md
 - name: Краткие руководства
+  expanded: true
   items:
-    - name: Введение
+    - name: Начало работы
       href: get-started.md
       displayName: 'get, started, quickstart'
     - name: 1. Создание рабочей области Synapse
@@ -170,7 +171,9 @@
           href: sql/overview-features.md
         - name: Модели потребления ресурсов
           href: sql/resource-consumption-models.md
-        - name: Рекомендации по использованию бессерверного пула SQL
+        - name: Обработанные данные
+          href: sql/data-processed.md
+        - name: Рекомендации по использованию SQL по запросу
           href: sql/best-practices-sql-on-demand.md
         - name: Рекомендации по использованию выделенного пула SQL
           href: sql/best-practices-sql-pool.md

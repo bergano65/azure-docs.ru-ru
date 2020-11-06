@@ -662,6 +662,8 @@
               href: how-to-time-to-live.md
             - name: Определение уникальных ключей
               href: how-to-define-unique-keys.md
+            - name: Выполнение транзакционных пакетных операций
+              href: transactional-batch.md
         - name: Производительность
           items:
             - name: Запрос
@@ -753,8 +755,6 @@
               href: create-sql-api-java-changefeed.md
         - name: Программирование на стороне сервера
           items:
-            - name: Выполнение транзакционных пакетных операций
-              href: transactional-batch.md
             - name: 'Запись хранимых процедур, триггеров и определяемых пользователем функций'
               href: how-to-write-stored-procedures-triggers-udfs.md
             - name: Запись хранимых процедур и триггеров с помощью API запросов JavaScript

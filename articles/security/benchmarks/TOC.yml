@@ -179,7 +179,5 @@
       href: ../../virtual-machines/windows/security-baseline.md
     - name: Базовые средства безопасности виртуальной сети
       href: ../../virtual-network/security-baseline.md
-    - name: Базовые показатели безопасности Виртуальной глобальной сети
-      href: ../../virtual-wan/security-baseline.md
     - name: Базовые средства безопасности VPN-шлюза
       href: ../../vpn-gateway/security-baseline.md

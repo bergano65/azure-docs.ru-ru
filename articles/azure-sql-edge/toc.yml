@@ -47,7 +47,7 @@
         - name: Развертывание в Kubernetes
           href: deploy-kubernetes.md
         - name: Развертывание с помощью Azure Data Studio
-          href: 'https://docs.microsoft.com/sql/azure-data-studio/deploy-azure-sql-edge?toc=/azure/azure-sql-edge/toc.json'
+          href: /sql/azure-data-studio/deploy-azure-sql-edge?toc=%252fazure%252fazure-sql-edge%252ftoc.json
     - name: Машинное обучение
       items:
         - name: Использование Машинного обучения и ИИ с ONNX
@@ -91,9 +91,9 @@
         - name: DATE_BUCKET (Transact-SQL)
           href: date-bucket-tsql.md
         - name: FIRST_VALUE (Transact-SQL)
-          href: 'https://docs.microsoft.com/sql/t-sql/functions/first-value-transact-sql?toc=/azure/azure-sql-edge/toc.json'
+          href: /sql/t-sql/functions/first-value-transact-sql?toc=%252fazure%252fazure-sql-edge%252ftoc.json
         - name: LAST_VALUE (Transact-SQL)
-          href: 'https://docs.microsoft.com/sql/t-sql/functions/last-value-transact-sql?toc=/azure/azure-sql-edge/toc.json'
+          href: /sql/t-sql/functions/last-value-transact-sql?toc=%252fazure%252fazure-sql-edge%252ftoc.json
         - name: Хранение и очистка данных
           items:
             - name: Общие сведения о хранении данных
@@ -109,11 +109,11 @@
         - name: Общие сведения о безопасности
           href: security-overview.md
         - name: Функции безопасности
-          href: 'https://docs.microsoft.com/sql/linux/sql-server-linux-security-get-started?toc=/azure/azure-sql-edge/toc.json'
+          href: /sql/linux/sql-server-linux-security-get-started?toc=%252fazure%252fazure-sql-edge%252ftoc.json
         - name: Шифрование подключений
-          href: 'https://docs.microsoft.com/sql/linux/sql-server-linux-encrypted-connections?toc=/azure/azure-sql-edge/toc.json'
+          href: /sql/linux/sql-server-linux-encrypted-connections?toc=%252fazure%252fazure-sql-edge%252ftoc.json
         - name: Центр безопасности Azure для Интернета вещей
-          href: 'https://docs.microsoft.com/azure/asc-for-iot/overview?toc=/azure/azure-sql-edge/toc.json&bc=/azure/azure-sql-edge/breadcrumb/toc.json'
+          href: ../defender-for-iot/overview.md?bc=%252fazure%252fazure-sql-edge%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fazure-sql-edge%252ftoc.json
 - name: Практическое руководство
   items:
     - name: Настройка SQL для пограничных вычислений
@@ -141,7 +141,7 @@
 - name: Справочник
   items:
     - name: Справочник по Transact-SQL (T-SQL)
-      href: 'https://docs.microsoft.com/sql/t-sql/language-reference'
+      href: /sql/t-sql/language-reference
 - name: Ресурсы
   items:
     - name: Участники
