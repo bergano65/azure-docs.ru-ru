@@ -1,7 +1,7 @@
 ---
 title: Справочник по модулю хэширования компонентов
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль хэширования функций в Машинное обучение Azure, чтобы создание признаков текстовые данные.
+description: Узнайте, как использовать модуль хэширования функций в конструкторе Машинное обучение Azure для создание признаков текстовых данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 02/22/2020
-ms.openlocfilehash: a9ef6ff81a2c9f3697f7c3ccf1cd8e91ad2fb683
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: cd48b32afee320aa3d252540d566317c374c73a8
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323728"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93420790"
 ---
 # <a name="feature-hashing-module-reference"></a>Справочник по модулю хэширования компонентов
 
@@ -22,7 +22,7 @@ ms.locfileid: "93323728"
 
 Используйте модуль хэширования функций для преобразования потока текста на английском языке в набор целочисленных функций. Затем этот хэшированный набор функций можно передать в алгоритм машинного обучения для обучения модели текстовой аналитики.
 
-Функции хэширования функций, предоставляемые в этом модуле, основаны на платформе нимбусмл. Дополнительные сведения см. в разделе [класс нграмхаш](/python/api/nimbusml/nimbusml.feature_extraction.text.extractor.ngramhash?view=nimbusml-py-latest).
+Функции хэширования функций, предоставляемые в этом модуле, основаны на платформе нимбусмл. Дополнительные сведения см. в разделе [класс нграмхаш](/python/api/nimbusml/nimbusml.feature_extraction.text.extractor.ngramhash?view=nimbusml-py-latest&preserve-view=true).
 
 ## <a name="what-is-feature-hashing"></a>Что такое хэширование функций?
 
@@ -129,6 +129,6 @@ ms.locfileid: "93323728"
 
 Оптимальный набор методов предварительной обработки, применяемых в любом решении, зависит от домена, словаря и потребности бизнеса. конвейер с данными, чтобы узнать, какие методы обработки текста наиболее эффективны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
             
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure

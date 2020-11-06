@@ -1,6 +1,6 @@
 ---
 title: 'Входные и выходные данные веб-службы: Справочник по модулям'
-description: Сведения о модулях веб-службы в конструкторе Машинное обучение Azure
+description: Узнайте, как использовать модули веб-служб в конструкторе Машинное обучение Azure для управления входными и выходными данными.
 titleSuffix: Azure Machine Learning
 services: machine-learning
 ms.service: machine-learning
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 04/13/2020
-ms.openlocfilehash: e1bf5dd070ac12878c608f744ff450395de84c48
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 475ad3de8e0a7636a14949d4fcd8a5ec2812ad5e
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310031"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421130"
 ---
 # <a name="web-service-input-and-web-service-output-modules"></a>Модули выходных данных веб-службы и веб-службы
 
@@ -47,7 +47,7 @@ ms.locfileid: "93310031"
 > [!NOTE]
 >  В предыдущем примере **введите данные вручную** , чтобы получить схему данных для веб-службы и необходимые для развертывания конечной точки в режиме реального времени. Как правило, необходимо всегда подключать модуль или набор данных к порту, к которому подключены **входные данные веб-службы** , чтобы предоставить схему данных.
    
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о [развертывании конечной точки в режиме реального времени](../tutorial-designer-automobile-price-deploy.md#deploy-the-real-time-endpoint).
 
 Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure.

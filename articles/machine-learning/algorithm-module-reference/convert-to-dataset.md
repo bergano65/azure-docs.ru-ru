@@ -1,7 +1,7 @@
 ---
 title: 'Преобразовать в набор данных: ссылка на модуль'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль преобразования в набор данных в Машинное обучение Azure для преобразования входных данных в формат внутреннего набора данных, используемый Машинное обучение Microsoft Azure.
+description: Узнайте, как использовать модуль Convert to DataSet в конструкторе Машинное обучение Azure для преобразования входных данных в формат внутреннего набора данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/10/2019
-ms.openlocfilehash: 9c014f14149b903713ae2f03b98956cd4ecaf8a1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 671a8f7c6fa4c20ef4fc88f57d4a946a84614389
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323054"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93420875"
 ---
 # <a name="convert-to-dataset"></a>Преобразование в набор данных
 

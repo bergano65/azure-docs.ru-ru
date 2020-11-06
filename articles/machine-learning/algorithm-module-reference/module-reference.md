@@ -1,6 +1,6 @@
 ---
 title: Справочник по алгоритмам и модулям
-description: Сведения о модулях, доступных в конструкторе Машинное обучение Azure
+description: Сведения о модулях конструктора Машинное обучение Azure, которые можно использовать для создания собственных проектов машинного обучения.
 titleSuffix: Azure Machine Learning
 services: machine-learning
 ms.service: machine-learning
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 05/19/2020
-ms.openlocfilehash: 9a2e21696409c320b89d1fed54fefad953b955e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 998f9ef7bddfd988dc0af8183fb9c000bf8c79e7
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90886403"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421300"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer"></a>Ссылка на модуль & алгоритма для конструктора Машинное обучение Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "90886403"
 | Язык Python | Внедрение кода в модуль для интеграции Python с вашим конвейером. | [Создание модели Python](create-python-model.md) <br/> [Выполнение скриптов Python](execute-python-script.md) |
 | Язык R | Внедрение кода в модуль для интеграции R с вашим конвейером. | [Выполнение скрипта R](execute-r-script.md) |
 | Анализ текста | Специализированные вычислительные средства для работы со структурированным и неструктурированным текстом. |  [Преобразование слов в векторы](convert-word-to-vector.md) <br/> [Извлечение N-грамм из текста](extract-n-gram-features-from-text.md) <br/> [Хэширование признаков](feature-hashing.md) <br/> [Предварительная обработка текста](preprocess-text.md) <br/> [Латентное распределение Дирихле (LDA)](latent-dirichlet-allocation.md) <br/> [Оценка модели Vowpal Wabbit](score-vowpal-wabbit-model.md) <br/> [Обучение модели Vowpal Wabbit](train-vowpal-wabbit-model.md)|
-| API Компьютерного зрения | Модули, связанные с предварительной обработкой данных образа и распознаванием изображений. |  [Применение преобразования изображений](apply-image-transformation.md) <br/> [Преобразование в каталог изображений](convert-to-image-directory.md) <br/> [Инициализация преобразования изображений](init-image-transformation.md) <br/> [Разделение каталога изображений](split-image-directory.md) <br/> [DenseNet](densenet.md) <br/> [ResNet](resnet.md) |
+| Компьютерное зрение | Модули, связанные с предварительной обработкой данных образа и распознаванием изображений. |  [Применение преобразования изображений](apply-image-transformation.md) <br/> [Преобразование в каталог изображений](convert-to-image-directory.md) <br/> [Инициализация преобразования изображений](init-image-transformation.md) <br/> [Разделение каталога изображений](split-image-directory.md) <br/> [DenseNet](densenet.md) <br/> [ResNet](resnet.md) |
 | Рекомендация | Построение моделей рекомендаций. | [Оценка рекомендателя](evaluate-recommender.md) <br/> [Оценка рекомендателя SVD](score-svd-recommender.md) <br/> [Оценка Wide and Deep Recommender](score-wide-and-deep-recommender.md)<br/> [Обучение рекомендателя SVD](train-SVD-recommender.md) <br/> [Обучение Wide and Deep Recommender](train-wide-and-deep-recommender.md)|
 | Обнаружение аномалий | Построение моделей обнаружения аномалий. | [Обнаружение аномалий на основе анализа первичных компонентов](pca-based-anomaly-detection.md) <br/> [Обучение модели обнаружения аномалий](train-anomaly-detection-model.md) |
 

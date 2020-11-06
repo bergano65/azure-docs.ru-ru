@@ -1,7 +1,7 @@
 ---
 title: Многоклассовая классификация "один-все"
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль Многоклассовый классификатор "один — все" в Машинное обучение Azure для создания многоклассовой модели классификации из ансамблей из моделей двоичной классификации.
+description: Узнайте, как использовать модуль Многоклассовый классификатор "один — все" в конструкторе Машинное обучение Azure для создания ансамблей моделей двоичной классификации.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/16/2019
-ms.openlocfilehash: dfe01e16b55325db03e4150a33ae5c4aa5822ae2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f09a77043a552d8d7f09c2a6abcb78f89cbf8ee2
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90898499"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93420688"
 ---
 # <a name="one-vs-all-multiclass"></a>Многоклассовая классификация "один-все"
 

@@ -1,7 +1,7 @@
 ---
 title: 'Выполнение скрипта R: Справочник по модулям'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль выполнить сценарий R в Машинное обучение Azure для выполнения кода R.
+description: Узнайте, как использовать модуль «выполнение скрипта R» в конструкторе Машинное обучение Azure для выполнения пользовательского кода R.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/21/2020
-ms.openlocfilehash: 0a3dbb42e69978a8a4895f44b57cc3ca5353e799
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3e94172096daf5fd06549f8645d05b874948a917
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323733"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93420824"
 ---
 # <a name="execute-r-script-module"></a>Выполнить модуль R Script
 

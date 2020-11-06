@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory подготовки приложений
 description: Новая и обновленная документация по подготовке Azure Active Directory приложений.
-ms.date: 10/21/2020
+ms.date: 11/05/2020
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -10,22 +10,42 @@ ms.author: kenwith
 author: kenwith
 manager: CelesteDG
 services: active-directory
-ms.openlocfilehash: 885838e1a517ab4713f1753957f8b85f40297fd2
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 83375eebdbe46fc0132f1fcf0b6d11457aa0e897
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424556"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421011"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory подготовка приложений: новые возможности
 
 Добро пожаловать в Azure Active Directoryную документацию по подготовке приложений. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы подготовки, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
 
+## <a name="october-2020"></a>Октябрь 2020 г.
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Сведения о том, как подготовка интегрируется с журналами Azure Monitor](application-provisioning-log-analytics.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Описание процесса подготовки](how-provisioning-works.md)
+- [Сведения о том, как подготовка интегрируется с журналами Azure Monitor](application-provisioning-log-analytics.md)
+- [Настройка сопоставления атрибутов подготовки пользователей для приложений SaaS в Azure Active Directory](customize-application-attributes.md)
+- [Справочник по написанию выражений для сопоставления атрибутов в Azure AD](functions-for-customizing-application-data.md)
+- [Руководство. Создание конечной точки SCIM и настройка подготовки пользователей с Azure AD](use-scim-to-provision-users-and-groups.md)
+- [Включение автоматической подготовки пользователей для приложения с несколькими клиентами](isv-automatic-provisioning-multi-tenant-apps.md)
+- [Известные проблемы: Подготовка приложений](known-issues.md)
+- [Планирование развертывания автоматической подготовки пользователей](plan-auto-user-provisioning.md)
+- [Планирование облачного приложения отдела кадров для Azure Active Directory подготовки пользователей](plan-cloud-hr-provision.md)
+- [Подготовка по запросу](provision-on-demand.md)
+
+
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Новые возможности в Документации Майкрософт](whats-new-docs.md)
+- [Новые возможности в документах](whats-new-docs.md)
 
 ### <a name="updated-articles"></a>Обновленные статьи
 - [Подготовка приложений в карантинном состоянии](application-provisioning-quarantine-status.md)
