@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: Zhchia
-ms.openlocfilehash: aa377dae5d80da39faf6ac2e70926301004024e8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: dd625d082d15ce4a6ec59972483b06a84ea6d080
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455686"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94355045"
 ---
 # <a name="tutorial-configure-coda-for-automatic-user-provisioning"></a>Учебник. Настройка формата Coda для автоматической подготовки пользователей
 
@@ -75,7 +75,7 @@ ms.locfileid: "92455686"
 
 ### <a name="to-configure-automatic-user-provisioning-for-coda-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для формата Coda в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -101,9 +101,9 @@ ms.locfileid: "92455686"
 
 7. Щелкните **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с**форматом Coda.
+8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с** форматом Coda.
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в формат Coda в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в формате Coda для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API формата Coda поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в формат Coda в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в формате Coda для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API формата Coda поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|

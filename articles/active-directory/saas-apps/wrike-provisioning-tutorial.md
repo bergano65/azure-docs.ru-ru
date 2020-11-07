@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 08/26/2019
 ms.author: Zhchia
-ms.openlocfilehash: 76b5f279294dda0d2b1c01bf8cdd803390b04cec
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 53b1db1a8c4da59055c0af5f448fa0c8a6933daf
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92520036"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94354312"
 ---
 # <a name="tutorial-configure-wrike-for-automatic-user-provisioning"></a>Учебник. Настройка Врике для автоматической подготовки пользователей
 
@@ -58,7 +58,7 @@ ms.locfileid: "92520036"
 
 2.  Перейдите в **Azure AD** и выберите его.
 
-    ![Azure AD](media/Wrike-provisioning-tutorial/Capture01.png)
+    ![Azure AD](media/Wrike-provisioning-tutorial/Capture01.png)
 
 3.  Выберите SCIM. Скопируйте **базовый URL-адрес**.
 
@@ -72,7 +72,7 @@ ms.locfileid: "92520036"
 
     ![Врике создание токена](media/Wrike-provisioning-tutorial/password.png)
 
-6.  Скопируйте **маркер секрета**и вставьте его в Azure AD. Нажмите кнопку **сохранить** , чтобы завершить настройку подготовки в врике.
+6.  Скопируйте **маркер секрета** и вставьте его в Azure AD. Нажмите кнопку **сохранить** , чтобы завершить настройку подготовки в врике.
 
     ![Постоянный маркер доступа](media/Wrike-provisioning-tutorial/Wrike-create-token.png)
 
@@ -95,7 +95,7 @@ ms.locfileid: "92520036"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **врике**, выберите **врике** на панели результатов и нажмите кнопку **добавить** , чтобы добавить приложение.
+4. В поле поиска введите **врике** , выберите **врике** на панели результатов и нажмите кнопку **добавить** , чтобы добавить приложение.
 
     ![Wrike в списке результатов](common/search-new-app.png)
 
@@ -125,7 +125,7 @@ ms.locfileid: "92520036"
 
     ![Режим подготовки установлен в значение "автоматически"](common/provisioning-automatic.png)
 
-5. В разделе Учетные данные администратора введите **базовый URL-адрес** и **постоянные значения маркера доступа** , полученные ранее в поле **URL-адрес клиента** и **секретный токен**соответственно. Выберите **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к врике. В случае сбоя подключения убедитесь, что у учетной записи Врике есть разрешения администратора, и повторите попытку.
+5. В разделе Учетные данные администратора введите **базовый URL-адрес** и **постоянные значения маркера доступа** , полученные ранее в поле **URL-адрес клиента** и **секретный токен** соответственно. Выберите **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к врике. В случае сбоя подключения убедитесь, что у учетной записи Врике есть разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -133,7 +133,7 @@ ms.locfileid: "92520036"
 
     ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
-8. Щелкните **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с врике**.
 

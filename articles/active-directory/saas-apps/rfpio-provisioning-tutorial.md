@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 98f92a6b0169c573b97788c7ffaf76255796cfa6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 2792d5cc65e08a23a333deebdb24c0fd869446c3
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91278946"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94352920"
 ---
 # <a name="tutorial-configure-rfpio-for-automatic-user-provisioning"></a>Учебник. Настройка RFPIO для автоматической подготовки пользователей
 
@@ -90,7 +90,7 @@ ms.locfileid: "91278946"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **RFPIO**, выберите **RFPIO** на панели результатов и нажмите кнопку    **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **RFPIO** , выберите **RFPIO** на панели результатов и нажмите кнопку    **добавить** , чтобы добавить это приложение.
 
     ![RFPIO в списке результатов](common/search-new-app.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "91278946"
 
 ### <a name="to-configure-automatic-user-provisioning-for-rfpio-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для RFPIO в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -133,7 +133,7 @@ ms.locfileid: "91278946"
 
     ![Сопоставления пользователей RFPIO](media/rfpio-provisioning-tutorial/usermapping.png)
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в RFPIO в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в RFPIO для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в RFPIO в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в RFPIO для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Атрибуты пользователя RFPIO](media/rfpio-provisioning-tutorial/userattributes.png)
 

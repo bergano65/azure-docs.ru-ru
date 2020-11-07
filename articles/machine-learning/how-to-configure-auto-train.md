@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperfq1, automl
-ms.openlocfilehash: 825413421bc9025c2912bb790a3166c6e3d34a0f
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 435476bee4839d083e3fe6cb0aa635d5ca67c4c0
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421844"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94352580"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -37,7 +37,7 @@ ms.locfileid: "93421844"
 
 Если вы не хотите писать код, вы также можете [создавать эксперименты автоматизированного машинного обучения в Студии машинного обучения Azure](how-to-use-automated-ml-for-ml-models.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для этой статьи требуется: 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в [инструкциях по созданию рабочей области Машинного обучения Azure](how-to-manage-workspace.md).
@@ -46,7 +46,7 @@ ms.locfileid: "93421844"
     Для установки пакета SDK можно либо 
     * Создайте вычислительный экземпляр, который автоматически устанавливает пакет SDK и предварительно настроен для рабочих процессов машинного обучения. Дополнительные сведения см. [в разделе создание машинное обучение Azure вычислительных экземпляров и управление ими](how-to-create-manage-compute-instance.md) . 
 
-    * [Установите пакет SDK самостоятельно](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py). Просто обязательно включите `automl` дополнительный объект. 
+    * [Установите `automl` пакет самостоятельно](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md#setup-using-a-local-conda-environment), который включает установку пакета SDK [по умолчанию](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py#default-install&preserve-view=true) .
 
 ## <a name="select-your-experiment-type"></a>Выбор типа эксперимента
 

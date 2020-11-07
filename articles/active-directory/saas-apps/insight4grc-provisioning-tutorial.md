@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 02/04/2020
 ms.author: Zhchia
-ms.openlocfilehash: 3c3aa5c1f640db79e4e64545dc0da804508f64a9
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: 3fa91e6d9c1df941a930d53119e6d4bd4cabca04
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92460042"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94354365"
 ---
 # <a name="tutorial-configure-insight4grc-for-automatic-user-provisioning"></a>Учебник. Настройка Insight4GRC для автоматической подготовки пользователей
 
@@ -70,7 +70,7 @@ ms.locfileid: "92460042"
 
 ### <a name="to-configure-automatic-user-provisioning-for-insight4grc-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Insight4GRC в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "92460042"
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Insight4GRC**.
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Insight4GRC в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Insight4GRC для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API Insight4GRC поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Insight4GRC в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Insight4GRC для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API Insight4GRC поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|
@@ -113,7 +113,7 @@ ms.locfileid: "92460042"
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Insight4GRC**.
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Insight4GRC в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Insight4GRC для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Insight4GRC в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Insight4GRC для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
       |attribute|Тип|
       |---|---|

@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 881be102a00badf1e03188b26514ad0eb1a9bd90
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 2d51903aff6f3fd1cd53d85a980f1b5dc2a893e9
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92520784"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94354331"
 ---
 # <a name="tutorial-configure-reward-gateway-for-automatic-user-provisioning"></a>Учебник. Настройка шлюза наград для автоматической подготовки пользователей
 
@@ -51,7 +51,7 @@ ms.locfileid: "92520784"
 ## <a name="setup-reward-gateway--for-provisioning"></a>Настройка шлюза наград для подготовки
 Перед настройкой шлюза наград для автоматической подготовки пользователей с помощью Azure AD необходимо включить подготовку SCIM в шлюзе наград.
 
-1. Войдите в [консоль администратора шлюза наград](https://rewardgateway.photoshelter.com/login/). Щелкните **Integrations**(Интеграция).
+1. Войдите в [консоль администратора шлюза наград](https://rewardgateway.photoshelter.com/login/). Щелкните **Integrations** (Интеграция).
 
     ![Снимок экрана консоли администрирования шлюза наград с вызываемым параметром Integrations.](media/reward-gateway-provisioning-tutorial/image00.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "92520784"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **вознаграждение шлюз**, выберите **наградный шлюз** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **вознаграждение шлюз** , выберите **наградный шлюз** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![Reward Gateway в списке результатов](common/search-new-app.png)
 
@@ -94,7 +94,7 @@ ms.locfileid: "92520784"
 
 ### <a name="to-configure-automatic-user-provisioning-for-reward-gateway-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для шлюза наград в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -124,7 +124,7 @@ ms.locfileid: "92520784"
 
     ![Снимок экрана раздела "сопоставления" с вызываемым параметром "синхронизировать Azure Active Directory пользователей в качестве шлюза".](media/reward-gateway-provisioning-tutorial/user-mappings.png)
 
-9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD, чтобы получить шлюз в разделе **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в шлюзе наград для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD, чтобы получить шлюз в разделе **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в шлюзе наград для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Снимок экрана раздела "сопоставления атрибутов" с шестью отображаемыми сопоставлениями.](media/reward-gateway-provisioning-tutorial/user-attributes.png)
 

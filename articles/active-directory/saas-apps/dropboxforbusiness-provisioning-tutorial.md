@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
-ms.openlocfilehash: f1ad698ccacc2fee94c797a20a43744d4cafba76
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 7bbf9b199b15815127f0ecb26ae027ef7bfa52d2
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91305687"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94355451"
 ---
 # <a name="tutorial-configure-dropbox-for-business-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Dropbox for Business
 
@@ -54,7 +54,7 @@ ms.locfileid: "91305687"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Dropbox для бизнеса**, выберите **Dropbox для бизнеса** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **Dropbox для бизнеса** , выберите **Dropbox для бизнеса** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![Dropbox for Business в списке результатов](common/search-new-app.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "91305687"
 
 ### <a name="to-configure-automatic-user-provisioning-for-dropbox-for-business-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для Dropbox для бизнеса в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -119,7 +119,7 @@ ms.locfileid: "91305687"
 
     ![Сопоставления пользователей Dropbox](media/dropboxforbusiness-provisioning-tutorial/dropbox-user-mapping.png)
 
-11. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Dropbox в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Dropbox для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Dropbox в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Dropbox для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Атрибуты пользователя Dropbox](media/dropboxforbusiness-provisioning-tutorial/dropbox-user-attributes.png)
 
@@ -127,7 +127,7 @@ ms.locfileid: "91305687"
 
     ![Сопоставления групп Dropbox](media/dropboxforbusiness-provisioning-tutorial/dropbox-group-mapping.png)
 
-13. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Dropbox в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Dropbox для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+13. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Dropbox в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Dropbox для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Атрибуты группы Dropbox](media/dropboxforbusiness-provisioning-tutorial/dropbox-group-attributes.png)
 

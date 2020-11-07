@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 06/3/2019
 ms.author: Zhchia
-ms.openlocfilehash: 46312dc2037eb128908e743f29474b9b4e79a2a6
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 280083ccbd732e95796013bf2b2c08e96564c24c
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519849"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94354178"
 ---
 # <a name="tutorial-configure-zoom-for-automatic-user-provisioning"></a>Учебник. Настройка масштабирования для автоматической подготовки пользователей
 
@@ -85,7 +85,7 @@ ms.locfileid: "92519849"
 
 ### <a name="to-configure-automatic-user-provisioning-for-zoom-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для масштабирования в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -113,7 +113,7 @@ ms.locfileid: "92519849"
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей для масштабирования**.
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD, чтобы увеличить раздел **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в масштабе операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API масштабирования поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD, чтобы увеличить раздел **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в масштабе операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API масштабирования поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|

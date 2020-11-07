@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 56aad5ce9045ca205221ba0c56d1ea75f8f3610a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 55f7b64c9ade91bb2923161d60568e3ea14ee034
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91850510"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94353525"
 ---
 # <a name="tutorial-configure-mypolicies-for-automatic-user-provisioning"></a>Учебник. Настройка myPolicies для автоматической подготовки пользователей
 
@@ -74,7 +74,7 @@ ms.locfileid: "91850510"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **myPolicies**, выберите **myPolicies** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **myPolicies** , выберите **myPolicies** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![myPolicies в списке результатов](common/search-new-app.png)
 
@@ -87,7 +87,7 @@ ms.locfileid: "91850510"
 
 ### <a name="to-configure-automatic-user-provisioning-for-mypolicies-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для myPolicies в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -106,7 +106,7 @@ ms.locfileid: "91850510"
 5. В разделе **учетные данные администратора** введите `https://<myPoliciesCustomDomain>.mypolicies.com/scim` **URL-адрес клиента** , где `<myPoliciesCustomDomain>` — это пользовательский домен myPolicies. Вы можете получить домен клиента myPolicies из URL-адреса.
 Пример: `<demo0-qa>` . mypolicies.com.
 
-6. В поле **секретный токен**введите значение токена, которое было получено ранее. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к myPolicies. Если подключение не выполняется, убедитесь, что у учетной записи myPolicies есть разрешения администратора, и повторите попытку.
+6. В поле **секретный токен** введите значение токена, которое было получено ранее. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к myPolicies. Если подключение не выполняется, убедитесь, что у учетной записи myPolicies есть разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -120,7 +120,7 @@ ms.locfileid: "91850510"
 
     :::image type="content" source="media/mypolicies-provisioning-tutorial/usermapping.png" alt-text="Снимок экрана раздела &quot;сопоставления&quot;. В поле Имя выполните синхронизацию Azure Active Directory пользователей с кустомаппссо." border="false":::
 
-10. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в myPolicies в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в myPolicies для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+10. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в myPolicies в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в myPolicies для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|
@@ -155,7 +155,7 @@ ms.locfileid: "91850510"
 
 ## <a name="connector-limitations"></a>Ограничения соединителя
 
-* myPolicies всегда требует **имя пользователя**, **адрес электронной почты** и **externalId**.
+* myPolicies всегда требует **имя пользователя** , **адрес электронной почты** и **externalId**.
 * myPolicies не поддерживает жесткие удаления для атрибутов пользователей.
 
 ## <a name="change-log"></a>Журнал изменений

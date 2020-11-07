@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: 5a2a0c94dc4691c17eebe235055015a2853bacb4
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: MT
+ms.openlocfilehash: f43d7b2a858c5047c40157429dc5c50b467c8efc
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677584"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94353141"
 ---
 # <a name="tutorial-configure-sap-cloud-platform-identity-authentication-for-automatic-user-provisioning"></a>Учебник. Настройка SAP Cloud Platform Identity Authentication для автоматической подготовки пользователей
 
@@ -37,7 +37,7 @@ ms.locfileid: "92677584"
 
 ## <a name="assigning-users-to-sap-cloud-platform-identity-authentication"></a>Назначение пользователей для проверки подлинности с использованием удостоверения облачной платформы SAP
 
-В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением* . В контексте автоматической подготовки учетных записей пользователей синхронизируются только пользователи и группы, назначенные приложению в Azure AD.
+В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки учетных записей пользователей синхронизируются только пользователи и группы, назначенные приложению в Azure AD.
 
 Перед настройкой и включением автоматической подготовки пользователей следует решить, каким пользователям и (или) группам в Azure AD требуется доступ к SAP Cloud Platform Identity Authentication. После принятия решения вы можете назначить этих пользователей и (или) группы для проверки подлинности SAP Cloud Platform Identity аутентификации, следуя приведенным ниже инструкциям.
 * [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
@@ -50,22 +50,22 @@ ms.locfileid: "92677584"
 
 ## <a name="setup-sap-cloud-platform-identity-authentication-for-provisioning"></a>Настройка SAP Cloud Platform Identity аутентификация для подготовки
 
-1. Войдите в [консоль администрирования SAP Cloud Platform Identity Authentication](https://sapmsftintegration.accounts.ondemand.com/admin). Перейдите к **пользователям & авторизации > администраторов** .
+1. Войдите в [консоль администрирования SAP Cloud Platform Identity Authentication](https://sapmsftintegration.accounts.ondemand.com/admin). Перейдите к **пользователям & авторизации > администраторов**.
 
     ![Консоль администрирования SAP Cloud Platform Identity Authentication](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/adminconsole.png)
 
 2.  Нажмите кнопку **+ Добавить** в левой панели, чтобы добавить нового администратора в список. Выберите **добавить систему** и введите имя системы.   
 
 > [!NOTE]
-> Пользователь администратору в SAP Cloud Platform Identity Authentication должен иметь тип **System** . Создание обычного пользователя с правами администратора может привести к *несанкционированным* ошибкам во время подготовки.   
+> Пользователь администратору в SAP Cloud Platform Identity Authentication должен иметь тип **System**. Создание обычного пользователя с правами администратора может привести к *несанкционированным* ошибкам во время подготовки.   
 
-3.  В разделе Настройка авторизации включите переключатель в положение **Управление пользователями** и **Управление группами** .
+3.  В разделе Настройка авторизации включите переключатель в положение **Управление пользователями** и **Управление группами**.
 
     ![SAP облачная платформа Identity аутентификация Add SCIM](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/configurationauth.png)
 
-4. Вы получите электронное письмо, чтобы активировать учетную запись и задать пароль для **службы SAP Cloud Platform Identity Authentication** .
+4. Вы получите электронное письмо, чтобы активировать учетную запись и задать пароль для **службы SAP Cloud Platform Identity Authentication**.
 
-4.  Скопируйте **идентификатор пользователя** и **пароль** . Эти значения будут указаны в полях имя администратора и пароль администратора, соответственно на вкладке Подготовка приложения SAP Cloud Platform Identity Authentication в портал Azure.
+4.  Скопируйте **идентификатор пользователя** и **пароль**. Эти значения будут указаны в полях имя администратора и пароль администратора, соответственно на вкладке Подготовка приложения SAP Cloud Platform Identity Authentication в портал Azure.
 
 ## <a name="add-sap-cloud-platform-identity-authentication-from-the-gallery"></a>Добавление приложения SAP Cloud Platform Identity Authentication из коллекции
 
@@ -73,11 +73,11 @@ ms.locfileid: "92677584"
 
 **Чтобы добавить SAP Cloud Platform Identity Authentication из коллекции приложений Azure AD, выполните следующие действия.**
 
-1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory** .
+1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения** .
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -98,15 +98,15 @@ ms.locfileid: "92677584"
 
 ### <a name="to-configure-automatic-user-provisioning-for-sap-cloud-platform-identity-authentication-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей в Azure AD с удостоверением Identity, выполните следующие действия.
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения** .
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **SAP Cloud Platform Identity Authentication** .
+2. В списке приложений выберите **SAP Cloud Platform Identity Authentication**.
 
     ![Ссылка на SAP Cloud Platform Identity Authentication в списке приложений](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка** .
+3. Выберите вкладку **Подготовка**.
 
     ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "92677584"
 
     ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите `https://<tenantID>.accounts.ondemand.com/service/scim ` **URL-адрес клиента** . Введите значения **идентификатора пользователя** и **пароля** , полученные ранее в поле **имя администратора** и **пароль администратора** соответственно. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к SAP Cloud Platform Identity Authentication. В случае сбоя подключения убедитесь, что учетная запись аутентификации SAP Cloud Platform Identity имеет разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите `https://<tenantID>.accounts.ondemand.com/service/scim ` **URL-адрес клиента**. Введите значения **идентификатора пользователя** и **пароля** , полученные ранее в поле **имя администратора** и **пароль администратора** соответственно. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к SAP Cloud Platform Identity Authentication. В случае сбоя подключения убедитесь, что учетная запись аутентификации SAP Cloud Platform Identity имеет разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/testconnection.png)
 
@@ -122,9 +122,9 @@ ms.locfileid: "92677584"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Выберите команду **Сохранить** .
+7. Выберите команду **Сохранить**.
 
-8. В разделе " **сопоставления** " выберите **синхронизировать Azure Active Directory пользователей с SAP облачная платформа удостоверение аутентификации** .
+8. В разделе " **сопоставления** " выберите **синхронизировать Azure Active Directory пользователей с SAP облачная платформа удостоверение аутентификации**.
 
     ![Сопоставления пользователей SAP Cloud Platform Identity Authentication](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/mapping.png)
 
@@ -142,11 +142,11 @@ ms.locfileid: "92677584"
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
-13. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить** .
+13. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры** . Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD на платформе SAP Cloud Platform Identity Authentication.
+После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD на платформе SAP Cloud Platform Identity Authentication.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 
