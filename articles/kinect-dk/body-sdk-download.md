@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Azure, Kinect, пакет SDK, скачать обновление, последние, доступные, установка, основной текст, отслеживание
-ms.openlocfilehash: e3f8233d208e2a45c1af9a52a76b6064b15bfe4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ac0598d893617f341b9e1fd4d45c0c3e3f3c619
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85277069"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359601"
 ---
 # <a name="download-azure-kinect-body-tracking-sdk"></a>Скачать пакет SDK для отслеживания текста Kinect для Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "85277069"
 
 ## <a name="windows-download-links"></a>Ссылки для загрузки Windows
 
-Version       | Скачать
+Версия       | Скачать
 --------------|----------
 1.0.1 | [msi](https://www.microsoft.com/en-us/download/details.aspx?id=100942) [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/1.0.1) MSI
 1.0.0 | [msi](https://www.microsoft.com/en-us/download/details.aspx?id=100848) [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/1.0.0) MSI
@@ -41,7 +41,7 @@ Version       | Скачать
 
 Сейчас единственным поддерживаемым дистрибутивом является Ubuntu 18.04. Чтобы запросить поддержку других дистрибутивов, перейдите на [эту страницу](https://aka.ms/azurekinectfeedback).
 
-Сначала необходимо настроить [репозиторий пакетов Майкрософт](https://packages.microsoft.com/), следуя инструкциям, приведенным [здесь](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+Сначала необходимо настроить [репозиторий пакетов Майкрософт](https://packages.microsoft.com/), следуя инструкциям, приведенным [здесь](/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 Пакет `libk4abt<major>.<minor>-dev` содержит заголовки и файлы CMake для сборки в `libk4abt`.
 `libk4abt<major>.<minor>`Пакет содержит общие объекты, необходимые для запуска исполняемых файлов, зависящих от, а `libk4abt` также для примера средства просмотра.
@@ -114,7 +114,7 @@ Version       | Скачать
 * [Изменение API] Добавлена  `k4abt_frame_get_timestamp_usec()` функция для упрощения шагов, позволяющих пользователям запрашивать отметку времени основного фрейма.
 * Улучшена точность алгоритма отслеживания текста и отслеживание надежности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обзор Azure Kinect DK](about-azure-kinect-dk.md)
 

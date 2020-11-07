@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 11/04/2020
 ms.author: victorh
-ms.openlocfilehash: 2899121db4b6a3f202be4860e2e4f43027cdef7c
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 2dd1b51c6bcdbc531661d9ecf45d3d0282eb5b45
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348774"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358853"
 ---
 # <a name="monitor-azure-firewall-logs-and-metrics"></a>Мониторинг журналов и метрик Брандмауэра Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "93348774"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, ознакомьтесь с [журналами и метриками брандмауэра Azure](logs-and-metrics.md) , чтобы получить общие сведения о журналах диагностики и метриках, доступных для брандмауэра Azure.
 
@@ -48,76 +48,57 @@ ms.locfileid: "93348774"
 6. В разделе **Журнал** выберите **азурефиреваллаппликатионруле** , **азурефиреваллнетворкруле** , **азурефиреваллсреатинтеллог** и **AzureFirewallDnsProxy** , чтобы получить журналы.
 7. Выберите **отправить log Analytics** , чтобы настроить рабочую область.
 8. Выберите свою подписку.
-9. Нажмите **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
-## <a name="enable-logging-with-powershell"></a>Включение ведения журнала с помощью PowerShell
+## <a name="enable-diagnostic-logging-by-using-powershell"></a>Включение ведения журнала диагностики с помощью PowerShell
 
 Ведение журнала действий автоматически включается для каждого ресурса Resource Manager. Чтобы начать сбор соответствующих данных, журналы ведения диагностики должны быть включены.
 
-Чтобы включить ведение журналов диагностики, выполните следующие действия.
+Чтобы включить ведение журнала диагностики с помощью PowerShell, выполните следующие действия.
 
-1. Запишите или запомните ИД ресурса учетной записи хранения, где хранятся данные журнала, Это значение имеет вид: */Subscriptions/ \<subscriptionId\> /resourceGroups/ \<resource group name\> /провидерс/Микрософт.стораже/сторажеаккаунтс/ \<storage account name\>*.
+1. Запишите идентификатор ресурса рабочей области Log Analytics, где хранятся данные журнала. Это значение имеет вид: `/subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/microsoft.operationalinsights/workspaces/<workspace name>` .
 
-   Можно использовать любую учетную запись хранения в подписке. Получить эти сведения можно на портале Azure. Нужные сведения можно найти на странице **Свойство** ресурса.
+   Вы можете использовать любую рабочую область в подписке. Получить эти сведения можно на портале Azure. Эти сведения находятся на странице **свойств** ресурсов.
 
-2. Запишите или запомните идентификатор ресурса брандмауэра, для которого нужно включить ведение журнала, Это значение имеет вид: */Subscriptions/ \<subscriptionId\> /resourceGroups/ \<resource group name\> /провидерс/Микрософт.Нетворк/азурефиреваллс/ \<Firewall name\>*.
+2. Запишите или запомните идентификатор ресурса брандмауэра, для которого нужно включить ведение журнала, Это значение имеет вид: `/subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/azureFirewalls/<Firewall name>` .
 
    Получить эти сведения можно на портале.
 
-3. Включите ведение журнала диагностики с помощью следующего командлета PowerShell:
+3. Включите ведение журнала диагностики для всех журналов и метрик с помощью следующего командлета PowerShell:
 
-    ```powershell
-    Set-AzDiagnosticSetting  -ResourceId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/azureFirewalls/<Firewall name> `
-   -StorageAccountId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Storage/storageAccounts/<storage account name> `
-   -Enabled $true     
-    ```
+   ```powershell
+   $diagSettings = @{
+      Name = 'toLogAnalytics'
+      ResourceId = '/subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/azureFirewalls/<Firewall name>'
+      WorkspaceId = '/subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/microsoft.operationalinsights/workspaces/<workspace name>'
+      Enabled = $true
+   }
+   Set-AzDiagnosticSetting  @diagSettings 
+   ```
 
-> [!TIP]
->Журналам диагностики отдельная учетная запись хранения не требуется. За использование хранилища для журналов доступа и производительности взимается плата.
-
-## <a name="enable-diagnostic-logging-by-using-azure-cli"></a>Включение ведения журнала диагностики с помощью Azure CLI
+## <a name="enable-diagnostic-logging-by-using-the-azure-cli"></a>Включение ведения журнала диагностики с помощью Azure CLI
 
 Ведение журнала действий автоматически включается для каждого ресурса Resource Manager. Чтобы начать сбор соответствующих данных, журналы ведения диагностики должны быть включены.
 
-[!INCLUDE [azure-cli-prepare-your-environment-h3.md](../../includes/azure-cli-prepare-your-environment-h3.md)]
+Чтобы включить ведение журнала диагностики с Azure CLI, выполните следующие действия.
 
-### <a name="enable-diagnostic-logging"></a>Включение ведения журналов диагностики
+1. Запишите идентификатор ресурса рабочей области Log Analytics, где хранятся данные журнала. Это значение имеет вид: `/subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/azureFirewalls/<Firewall name>` .
 
-Используйте следующие команды, чтобы включить ведение журнала диагностики.
+   Вы можете использовать любую рабочую область в подписке. Получить эти сведения можно на портале Azure. Эти сведения находятся на странице **свойств** ресурсов.
 
-1. Выполните команду [AZ Monitor диагностики-Settings Create](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_create) , чтобы включить ведение журнала диагностики:
+2. Запишите или запомните идентификатор ресурса брандмауэра, для которого нужно включить ведение журнала, Это значение имеет вид: `/subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/azureFirewalls/<Firewall name>` .
 
-   ```azurecli
-   az monitor diagnostic-settings create –name AzureFirewallApplicationRule \
-     --resource Firewall07 --storage-account MyStorageAccount
+   Получить эти сведения можно на портале.
+
+3. Включите ведение журнала диагностики для всех журналов и метрик с помощью следующей команды Azure CLI:
+
+   ```azurecli-interactive
+   az monitor diagnostic-settings create -n 'toLogAnalytics'
+      --resource '/subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/azureFirewalls/<Firewall name>'
+      --workspace '/subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/microsoft.operationalinsights/workspaces/<workspace name>'
+      --logs '[{\"category\":\"AzureFirewallApplicationRule\",\"Enabled\":true}, {\"category\":\"AzureFirewallNetworkRule\",\"Enabled\":true}, {\"category\":\"AzureFirewallDnsProxy\",\"Enabled\":true}]' 
+      --metrics '[{\"category\": \"AllMetrics\",\"enabled\": true}]'
    ```
-
-   Выполните команду [AZ Monitor диагностики-Settings List](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_list) , чтобы просмотреть параметры диагностики для ресурса.
-
-   ```azurecli
-   az monitor diagnostic-settings list --resource Firewall07
-   ```
-
-   Используйте команду [AZ Monitor диагностики-Settings](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_show) , чтобы просмотреть активные параметры диагностики для ресурса.
-
-   ```azurecli
-   az monitor diagnostic-settings show --name AzureFirewallApplicationRule --resource Firewall07
-   ```
-
-1. Выполните команду [AZ Monitor диагностики-Settings Update](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_update) , чтобы обновить параметры.
-
-   ```azurecli
-   az monitor diagnostic-settings update --name AzureFirewallApplicationRule --resource Firewall07 --set retentionPolicy.days=365
-   ```
-
-   Используйте команду [AZ Monitor диагностики-Settings Delete](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_delete) , чтобы удалить параметр диагностики.
-
-   ```azurecli
-   az monitor diagnostic-settings delete --name AzureFirewallApplicationRule --resource Firewall07
-   ```
-
-> [!TIP]
->Журналам диагностики отдельная учетная запись хранения не требуется. За использование хранилища для журналов доступа и производительности взимается плата.
 
 ## <a name="view-and-analyze-the-activity-log"></a>Просмотр и анализ журнала действий
 
@@ -133,6 +114,8 @@ ms.locfileid: "93348774"
 
 Примеры запросов к службе анализа журналов в Azure Firewall [см. в](log-analytics-samples.md)этой статье.
 
+[Книга брандмауэра Azure](firewall-workbook.md) предоставляет гибкий холст для анализа данных брандмауэра Azure. Его можно использовать для создания многофункциональных визуальных отчетов в портал Azure. Вы можете коснуться нескольких брандмауэров, развернутых в Azure, и объединить их в единый интерактивный интерфейс.
+
 Вы также можете подключиться к учетной записи хранения и извлечь записи журнала JSON для журналов доступа и производительности. После скачивания JSON-файлов их можно преобразовать в формат CSV и просматривать в Excel, Power BI или другом средстве визуализации данных.
 
 > [!TIP]
@@ -141,8 +124,10 @@ ms.locfileid: "93348774"
 ## <a name="view-metrics"></a>Просмотр метрик
 Перейдите к брандмауэру Azure, в разделе **мониторинг** выберите **метрики**. Чтобы просмотреть доступные значения, выберите раскрывающийся список **Метрика**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда брандмауэр настроен для сбора журналов, можно открыть Журналы Azure Monitor, чтобы просмотреть данные.
+
+[Мониторинг журналов с помощью книги брандмауэра Azure](firewall-workbook.md)
 
 [Решения для мониторинга сетей в Журналах Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md)

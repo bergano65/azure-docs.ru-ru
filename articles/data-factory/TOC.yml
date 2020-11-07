@@ -203,6 +203,8 @@
       href: concepts-roles-permissions.md
     - name: Правила именования
       href: naming-rules.md
+    - name: Избыточность данных
+      href: concepts-data-redundancy.md
 - name: Практические руководства
   items:
     - name: Автор

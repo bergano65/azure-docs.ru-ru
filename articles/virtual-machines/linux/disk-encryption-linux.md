@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: d3e856256e02e2c1914aeec493a87ffe992bbf13
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: e8f71b277a4f4b538d501b1fa825bc6ec43428c8
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92740325"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359397"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Linux
 
@@ -200,8 +200,8 @@ Get-command *diskencryption*
 | vmName | Имя виртуальной машины для выполнения операции шифрования. |
 | keyVaultName | Имя хранилища ключей, в которое будет передан ключ шифрования. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команды Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroupName"`.|
 | keyVaultResourceGroup | Имя группы ресурсов, содержащей хранилище ключей. |
-|  keyEncryptionKeyURL | URL-адрес ключа шифрования ключей, который используется для шифрования ключа шифрования. Это необязательный параметр, если выбрать **nokek** из раскрывающегося списка UseExistingKek. Если из раскрывающегося списка UseExistingKek выбрано значение **kek** , то потребуется ввести значение _keyEncryptionKeyURL_ . |
-| volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_ , _Data_ и _All_ . 
+|  keyEncryptionKeyURL | URL-адрес ключа шифрования ключей, который используется для шифрования ключа шифрования. Это необязательный параметр, если выбрать **nokek** из раскрывающегося списка UseExistingKek. Если из раскрывающегося списка UseExistingKek выбрано значение **kek** , то потребуется ввести значение _keyEncryptionKeyURL_. |
+| volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_ , _Data_ и _All_. 
 | forceUpdateTag | Передает уникальное значение, такое как GUID, каждый раз, когда операция должна выполняться принудительно. |
 | location | Расположение для всех ресурсов. |
 
@@ -415,6 +415,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Виртуальные машины серии M с Ускоритель записиными дисками.
 - Применение ADE к виртуальной машине с дисками, зашифрованными с помощью [шифрования на стороне сервера, с помощью ключей, управляемых клиентом](disk-encryption.md) (SSE + CMK). Применение SSE + CMK к диску данных на виртуальной машине, зашифрованном с помощью ADE, также является неподдерживаемым сценарием.
 - Перенос виртуальной машины, зашифрованной с помощью ADE, или **когда-либо** зашифрованный с помощью ade, для [шифрования на стороне сервера с ключами, управляемыми клиентом](disk-encryption.md).
+- [Размеры виртуальных машин Azure без локального временного диска](../azure-vms-no-temp-disk.md); в частности, dv4, Dsv4, Ev4 и Esv4.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

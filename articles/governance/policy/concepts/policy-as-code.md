@@ -1,16 +1,16 @@
 ---
-title: Разработка политики Azure как рабочих процессов кода
+title: Разработка Политики Azure как рабочих процессов кода
 description: Научитесь проектировать рабочие процессы для развертывания определений политик Azure как кода и автоматически проверять ресурсы.
 ms.date: 10/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2be6c0770098d50abbb9695e04b3f53c073de9ae
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 74d2097e4db4442e6e65f30541864fb554f7379d
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320614"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359686"
 ---
-# <a name="design-azure-policy-as-code-workflows"></a>Разработка политики Azure как рабочих процессов кода
+# <a name="design-azure-policy-as-code-workflows"></a>Разработка Политики Azure как рабочих процессов кода
 
 По мере продвижения к созданию системы управления облаком вам потребуется перейти от ручного управления каждым определением политики на портале Azure или с помощью различных пакетов SDK к чему-то более управляемому и повторяемому в масштабе предприятия. Среди основных подходов к управлению системами с масштабированием в облаке можно выделить следующие два.
 
@@ -38,8 +38,6 @@ ms.locfileid: "92320614"
 
 - Определение политики: [Добавление тега к ресурсам](https://github.com/Azure/azure-policy/tree/master/samples/Tags/add-tag)
 - Определение инициативы: [теги выставления счетов](https://github.com/Azure/azure-policy/tree/master/samples/PolicyInitiatives/multiple-billing-tags)
-
-Кроме того, ознакомьтесь со статьей [экспорт ресурсов политики Azure](../how-to/export-resources.md) , чтобы получить существующие определения и назначения в среде управления исходным кодом [GitHub](https://www.github.com).
 
 ## <a name="workflow-overview"></a>Обзор рабочего процесса
 
@@ -73,6 +71,8 @@ ms.locfileid: "92320614"
 ```
 
 При добавлении новой политики или изменении существующей рабочий процесс должен автоматически обновлять определение политики в Azure. Тестирование нового или обновленного определения политики происходит позже.
+
+Кроме того, ознакомьтесь со статьей [экспорт ресурсов политики Azure](../how-to/export-resources.md) , чтобы получить существующие определения и назначения в среде управления исходным кодом [GitHub](https://www.github.com).
 
 ### <a name="create-and-update-initiative-definitions"></a>Создание и обновление определений инициатив
 

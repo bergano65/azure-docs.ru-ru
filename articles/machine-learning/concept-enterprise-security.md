@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/09/2020
-ms.openlocfilehash: f9d6f58256ccc21e5121a16a429e0f4c3ff1e485
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 19736a37e0da07237f6b112de7da86efe3d8bfe5
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323088"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359380"
 ---
 # <a name="enterprise-security-and-governance-for-azure-machine-learning"></a>Корпоративная безопасность и управление для Машинное обучение Azure
 
@@ -126,6 +126,7 @@ ms.locfileid: "93323088"
 * Очищает локальный временный диск между запусками.
 * Безопасно передает учетные данные для учетной записи хранения, реестра контейнеров и учетной записи SSH из уровня выполнения в вычислительные кластеры с помощью хранилища ключей.
 * Включает IP-фильтрацию для того, чтобы базовые пулы пакетов невозможно было вызывать из внешних служб, отличных от AzureMachineLearningService.
+* Обратите внимание, что в рабочей области HBI не поддерживаются экземпляры вычислений.
 
 #### <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
 

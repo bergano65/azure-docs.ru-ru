@@ -31,14 +31,10 @@
       href: spring-cloud-tutorial-setup-autoscale.md
     - name: Оповещения и группы действий
       href: spring-cloud-tutorial-alerts-action-groups.md
-    - name: Использование IntelliJ для развертывания приложений
-      href: spring-cloud-tutorial-intellij-deploy-apps.md
     - name: Панель мониторинга автоматического выключения
       href: spring-cloud-tutorial-circuit-breaker.md
     - name: Пользовательское DNS-имя
       href: spring-cloud-tutorial-custom-domain.md
-    - name: Подготовка экземпляра Azure Spring Cloud с помощью Terraform
-      href: spring-cloud-tutorial-provision-azure-spring-cloud-instance-terraform.md
     - name: Использование управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
       href: spring-cloud-tutorial-managed-identities-key-vault.md
     - name: Развертывание Azure Spring Cloud в виртуальной сети
@@ -77,6 +73,8 @@
           href: spring-cloud-howto-staging-environment.md
         - name: Запуск приложения Java из исходного кода
           href: spring-cloud-howto-launch-from-source.md
+        - name: Использование IntelliJ для развертывания приложений
+          href: spring-cloud-tutorial-intellij-deploy-apps.md
     - name: Configure
       items:
         - name: 'Запуск, остановка и удаление приложения'
@@ -115,6 +113,8 @@
           href: spring-cloud-howto-github-actions.md
         - name: Аутентификация с помощью Key Vault в GitHub Actions
           href: spring-cloud-github-actions-key-vault.md
+        - name: Подготовка экземпляра Azure Spring Cloud с помощью Terraform
+          href: spring-cloud-tutorial-provision-azure-spring-cloud-instance-terraform.md
     - name: Диагностика
       items:
         - name: Самостоятельная диагностика и устранение проблем
