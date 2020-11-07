@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: 7d35799cd73ff4d065cb58189f2325dc4dac6840
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4a30b5c225bcbcb7ca0febad5ae23bce522d2135
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87567998"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357527"
 ---
 # <a name="create-a-connection-monitor-preview-using-the-armclient"></a>Создание монитора подключения (Предварительная версия) с помощью ARMClient
 
 Узнайте, как создать монитор подключений (Предварительная версия) для отслеживания взаимодействия между ресурсами с помощью ARMClient. Он поддерживает Гибридные развертывания в облаке Azure.
 
-## <a name="before-you-begin"></a>Перед началом 
+## <a name="before-you-begin"></a>Подготовка к работе 
 
 В мониторах подключений, создаваемых в мониторе подключений (Предварительная версия), можно добавить локальные компьютеры и виртуальные машины Azure в качестве источников. Эти мониторы соединений также могут отслеживать подключение к конечным точкам. Конечные точки могут находиться в Azure или на любом другом URL-адресе или IP.
 
@@ -60,40 +60,92 @@ properties: {
 
 endpoints: [{
 
-name: 'workspace',
+name: 'endpoint_workspace_machine',
+
+type: 'MMAWorkspaceMachine',
 
 resourceId: '/subscriptions/<subscription id>/resourcegroups/<resource group>/providers/Microsoft.OperationalInsights/workspaces/sampleWorkspace',
 
-filter: {
+//Example 1: Choose a machine
 
- items: [{
-
-type: 'AgentAddress',
-
-address: '<FQDN of your on-premises agent>'
-
-}]
-
+address : '<non-Azure machine FQDN>'
 }
 
-          },
+//Example 2: Select IP from chosen machines
 
- {
+address : '<non-Azure machine FQDN>
 
-name: 'vm1',
+"scope": {
+      "include": [
+            {
+                  "address": "<IP belonging to machine chosen above>"  
+        }
+       ]
+      }
+   }    
+   
+name: 'endpoint_workspace_network',
+
+type: 'MMAWorkspaceNetwork',
+
+resourceId: '/subscriptions/<subscription id>/resourcegroups/<resource group>/providers/Microsoft.OperationalInsights/workspaces/sampleWorkspace',
+
+ coverage level : 'high', //Optional
+ 
+ //Include subnets. You can also exclude IPs from subnet to exclude from monitoring
+ 
+ scope: {
+      "include": [
+            {
+                  "address": "<subnet 1 mask>" // Eg: 10.10.1.0/28
+            },
+            {
+                  "address": "<subnet 2 mask>" 
+            }
+      ],
+      "exclude": [
+            { 
+            "address" : "<ip-from-included-subnets-that-should-be-excluded>"
+        }
+      ]
+     }
+},
+
+//Use a Azure VM as an endpoint
+{
+
+name: 'endpoint_virtualmachine',
 
 resourceId: '/subscriptions/<subscription id>/resourceGroups/<resource group>/providers/Microsoft.Compute/virtualMachines/<vm-name>'
 
 },
 
+//Use an Azure VNET or Subnet as an endpoint
+
  {
 
-name: 'vm2',
+name: 'endpoint_vnet_subnet',
 
-resourceId: '/subscriptions/<subscription id>/resourceGroups/<resource group>/providers/Microsoft.Compute/virtualMachines/<vm-name>'
+resourceId: '<resource id of VNET or subnet'
+coverage level: 'high' //Optional
 
+//Scope is optional.
+
+  "scope": {
+      "include": [
+            {
+                  "address": "<subnet 1 mask>" // Eg: 10.10.1.0/28 .This subnet should match with any existing subnet in vnet
+            }
+      ],
+    "exclude": [
+            {
+                  "address": "<ip-from-included-subnets-that-should-be-excluded>" // If used with include, IP should be part of the subnet defined above. Without include, this could be any address within vnet range or any specific subnet range as a whole.
+            }
+      ]
+  }
    },
 
+//Endpoint as a URL
 {
 
 name: 'azure portal'
@@ -102,6 +154,7 @@ address: '<URL>'
 
    },
 
+//Endpoint as an IP 
  {
 
     name: 'ip',
@@ -167,9 +220,24 @@ address: '<URL>'
     protocol: 'HTTP',
 
     httpConfiguration: {
-
-     preferHTTPS: true
-
+    
+     port: '<port of choice>'
+  
+    preferHTTPS: true // If port chosen is not 80 or 443
+    
+    method: 'GET', //Choose GET or POST
+    
+    path: '/', //Specify path for request
+         
+    requestHeaders: [
+            {
+              "name": "Content-Type",
+              "value": "appication/json"
+            }
+          ],
+          
+    validStatusCodeRanges: [ "102", "200-202", "3xx" ], //Samples
+          
     },
 
     successThreshold: {
@@ -180,7 +248,8 @@ address: '<URL>'
 
     }
 
-   }, {
+   }, 
+   {
 
     name: 'tcpEnabled',
 
@@ -307,14 +376,20 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
     * Name — имя конфигурации теста.
     * Тестфрекуенцисек — укажите, как часто источники будут проверять связь с адресатами по указанному протоколу и порту. Можно выбрать 30 секунд, 1 минуту, 5 минут, 15 минут или 30 минут. Источники проверяют возможность подключения к местам назначения на основе выбранного значения. Например, если выбрать 30 секунд, источники будут проверять подключение к назначению по крайней мере один раз в течение 30 секунд.
     * Протокол — можно выбрать TCP, ICMP, HTTP или HTTPS. В зависимости от протокола можно использовать определенные конфигурации протокола.
-        * Преферхттпс — укажите, следует ли использовать HTTPS через HTTP.
+    
+        * Преферхттпс — укажите, следует ли использовать HTTPS через HTTP, если используемый порт не является ни 80, ни 443
         * Порт — укажите выбранный порт назначения.
-        * Дисаблетрацерауте — применяется к группам тестов с протоколом TCP или ICMP. ИТ-отделы не обнаруживают возможности обнаружения топологии и приема-передачи по прыжкам.
+        * Дисаблетрацерауте — применяется к конфигурациям тестов с протоколом TCP или ICMP. ИТ-отделы не обнаруживают возможности обнаружения топологии и приема-передачи по прыжкам.
+        * метод — применяется к конфигурациям тестов, для которых используется протокол HTTP. Выберите метод HTTP-запроса — GET или POST.
+        * путь — укажите параметры пути для добавления к URL-адресу
+        * Валидстатускодес — выберите соответствующие коды состояния. Если код ответа не соответствует этому списку, вы получите диагностическое сообщение.
+        * requestHeaders — укажите строки заголовков настраиваемых запросов, которые будут переданы в назначение.
+        
     * Сукцесссрешолд — можно задать пороговые значения для следующих сетевых параметров:
         * Чекксфаиледперцент — задайте процент проверок, которые могут завершаться ошибкой, когда источники проверяют подключение к местам назначения, используя указанные критерии. Для протокола TCP или ICMP процент неудачных проверок может равняться проценту потери пакетов. Для протокола HTTP это поле представляет процент HTTP-запросов, которые не получили ответа.
         * Раундтриптимемс — задайте время приема-передачи в миллисекундах, в течение которого источники могут быть выбраны для подключения к назначению в конфигурации теста.
 
-## <a name="scale-limits"></a> Ограничения масштабирования
+## <a name="scale-limits"></a>Ограничения масштабирования
 
 Мониторы подключений имеют следующие ограничения масштабирования:
 

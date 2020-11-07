@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 06/10/2020
+ms.date: 11/06/2020
 ms.author: aahi
-ms.openlocfilehash: 3bc03cf03f8a8e0f2a222ca1089618eaade9485d
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 24d4dd4d0caa49b9514bf19f707ea87b0b071a79
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92496079"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357102"
 ---
 # <a name="how-to-deploy-a-people-counting-web-application"></a>Руководство. Развертывание веб-приложения для инвентаризации людей
 
@@ -64,6 +64,8 @@ az iot hub device-identity create --hub-name "<IoT Hub Name>" --device-id "<Edge
 ### <a name="deploy-the-container-on-azure-iot-edge-on-the-host-computer"></a>Развертывание контейнера на Azure IoT Edge на главном компьютере
 
 Разверните контейнер пространственного анализа как модуль IoT на главном компьютере с помощью Azure CLI. Для процесса развертывания требуется файл манифеста развертывания, который описывает необходимые контейнеры, переменные и конфигурации для развертывания. Вы можете найти пример [манифеста развертывания с пограничным Azure Stack](https://github.com/Azure-Samples/cognitive-services-rest-api-samples/) , а также [манифест развертывания](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) на сайте GitHub, не относящийся к Azure Stack, который включает базовую конфигурацию развертывания для контейнера *пространственного анализа* . 
+
+Кроме того, вы можете использовать расширения Azure IoT для Visual Studio Code для выполнения операций с центром Интернета вещей. Чтобы узнать больше, перейдите к разделу [Развертывание модулей Azure IOT Edge из Visual Studio Code](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-vscode) .
 
 > [!NOTE] 
 > Контейнеры *spatial-Analysis-Telegraf* и *пространственный-Analysis-Diagnostics* являются необязательными. Вы можете удалить их из *DeploymentManifest.js* файла. Дополнительные сведения см. в статье [телеметрии и устранении неполадок](./spatial-analysis-logging.md) . Вы можете найти два примера *DeploymentManifest.js* файлов на сайте GitHub, для устройств с [Azure Stack пограничным](https://go.microsoft.com/fwlink/?linkid=2142179) или для другого [настольного компьютера](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) .
@@ -170,7 +172,7 @@ docker tag rtvsofficial.azurecr.io/acceleratorapp.personcount:1.0 [desired local
 docker push [desired local image name]
 ```
 
-Чтобы установить контейнер, создайте новый Веб-приложение для контейнеров Azure и введите необходимые параметры. Затем перейдите на вкладку **DOCKER** и выберите **один контейнер**, а затем **Реестр контейнеров Azure**. Используйте свой экземпляр реестра контейнеров Azure, где вы отправили приведенный выше образ.
+Чтобы установить контейнер, создайте новый Веб-приложение для контейнеров Azure и введите необходимые параметры. Затем перейдите на вкладку **DOCKER** и выберите **один контейнер** , а затем **Реестр контейнеров Azure**. Используйте свой экземпляр реестра контейнеров Azure, где вы отправили приведенный выше образ.
 
 ![Введите сведения об образе](./media/spatial-analysis/solution-app-create-screen.png)
 
@@ -191,7 +193,10 @@ docker push [desired local image name]
 
 ![тестирование развертывания](./media/spatial-analysis/solution-app-output.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="get-the-personcount-source-code"></a>Получение исходного кода Персонкаунт
+Если вы хотите просмотреть или изменить исходный код для этого приложения, его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-spatial-analysis).
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка операций пространственного анализа](./spatial-analysis-operations.md)
 * [Ведение журнала и устранение неполадок](spatial-analysis-logging.md)

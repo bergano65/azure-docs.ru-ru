@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 7f6be959bf09cbe20bb37dfa3d17d64467758bd6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 305682812896bb74474b5065cfd56a071a73ed15
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397901"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358785"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Indexers in Azure Cognitive Search (Индексаторы в службе "Когнитивный поиск Azure")
 
@@ -32,7 +32,7 @@ ms.locfileid: "91397901"
 
 * [Мастер импорта данных > портала](search-import-data-portal.md)
 * [API REST службы](/rest/api/searchservice/Indexer-operations)
-* [Пакет SDK для .NET](/dotnet/api/microsoft.azure.search.iindexersoperations)
+* [Пакет SDK для .NET](/dotnet/api/azure.search.documents.indexes.models.searchindexer)
 
 Изначально новый индексатор объявляется в качестве предварительной версии функции. Предварительные версии функций добавляют в API (REST и .NET), а затем после выхода общедоступной версии интегрируются на портале. При оценке нового индексатора следует запланировать написание кода.
 
@@ -52,7 +52,7 @@ ms.locfileid: "91397901"
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [База данных SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Управляемый экземпляр SQL](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
-* [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
+* [SQL Server в виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
 
 ## <a name="indexer-stages"></a>Этапы индексатора
 
@@ -88,19 +88,19 @@ ms.locfileid: "91397901"
 
 На следующем рисунке показан пример представления [сеанса отладки](cognitive-search-debug-session.md) индексатора этапов индексатора: взлом документов, сопоставления полей, выполнение набора навыков и сопоставления полей вывода.
 
-:::image type="content" source="media/search-indexer-overview/sample-debug-session.png" alt-text="Этапы индексатора" lightbox="media/search-indexer-overview/sample-debug-session.png":::
+:::image type="content" source="media/search-indexer-overview/sample-debug-session.png" alt-text="Пример сеанса отладки" lightbox="media/search-indexer-overview/sample-debug-session.png":::
 
 ## <a name="basic-configuration-steps"></a>Основные этапы настройки
 
 В индексаторах реализованы уникальные функции для работы с источниками данных. Поэтому тип индексатора будет определять особенности настройки источника данных или индексатора. Тем не менее всем индексаторам присущи сходные структура и требования. Ниже описаны действия, общие для всех индексаторов.
 
 ### <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
-Индексатор получает соединение с источником данных из объекта *источника данных* . Определение источника данных предоставляет строку подключения и, возможно, учетные данные. Чтобы создать ресурс, вызовите REST API для [создания источника данных](/rest/api/searchservice/create-data-source) или [класс DataSource](/dotnet/api/microsoft.azure.search.models.datasource).
+Индексатор получает соединение с источником данных из объекта *источника данных* . Определение источника данных предоставляет строку подключения и, возможно, учетные данные. Вызовите класс [CREATE Datasource](/rest/api/searchservice/create-data-source) REST API или [сеарчиндексердатасаурцеконнектион](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection) , чтобы создать ресурс.
 
 Источники данных настраиваются и управляются независимо от индексаторов, которые их используют. Это означает, что источник данных может использоваться несколькими индексаторами для одновременной загрузки нескольких индексов.
 
 ### <a name="step-2-create-an-index"></a>Шаг 2. Создание индекса
-Хотя индексатор автоматизирует некоторые задачи, связанные с приемом данных, это обычно не распространяется на создание индекса. Перед началом работы у вас должен быть стандартный индекс с полями, которые соответствуют полям во внешнем источнике данных. Поля должны совпадать по имени и типу данных. Дополнительные сведения о структурировании индекса см. в статье [Создание индекса (когнитивный Поиск Azure REST API)](/rest/api/searchservice/Create-Index) или [класса индекса](/dotnet/api/microsoft.azure.search.models.index). Справку по сопоставлению полей см. [в разделе сопоставления полей в Azure когнитивный Поиск индексаторы](search-indexer-field-mappings.md).
+Хотя индексатор автоматизирует некоторые задачи, связанные с приемом данных, это обычно не распространяется на создание индекса. Перед началом работы у вас должен быть стандартный индекс с полями, которые соответствуют полям во внешнем источнике данных. Поля должны совпадать по имени и типу данных. Дополнительные сведения о структурировании индекса см. в статье [Создание индекса (Azure Когнитивный поиск REST API)](/rest/api/searchservice/Create-Index) или [класса сеарчиндекс](/dotnet/api/azure.search.documents.indexes.models.searchindex). Справку по сопоставлению полей см. [в разделе сопоставления полей в Azure когнитивный Поиск индексаторы](search-indexer-field-mappings.md).
 
 > [!Tip]
 > Хотя индексаторы не могут создавать индексы, вы можете это сделать с помощью мастера **импорта данных**. В большинстве случаев мастер может определить схему индекса на основе существующих метаданных в источнике, предоставляя предварительную схему, которую можно изменить в мастере во время его работы. После создания индекса в службе последующие изменения на портале ограничиваются добавлением новых полей. Используйте мастер для создания индекса, но не для изменения. Чтобы пройти практическое обучение, перейдите к [пошаговому руководству по порталу](search-get-started-portal.md).

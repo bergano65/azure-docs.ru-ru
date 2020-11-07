@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: fbd4c4ecfa2be9815e5d301a02460dc28171716a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3f2dfb113f4c82dfea422a7c2be1c5fb07ffd60e
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329267"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358173"
 ---
 # <a name="public-ip-addresses"></a>Общедоступные IP-адреса
 
@@ -39,12 +39,14 @@ ms.locfileid: "91329267"
 
 ## <a name="sku"></a>номер SKU
 
+Дополнительные сведения об обновлении SKU см. в статье [Обновление общедоступного IP-адреса](../virtual-network/virtual-network-public-ip-address-upgrade.md).
+
 Общедоступные IP-адреса создаются с использованием одного из следующих номеров SKU:
 
 >[!IMPORTANT]
 > Соответствующие номера SKU необходимы для подсистемы балансировки нагрузки и ресурсов общедоступного IP-адреса. Невозможно объединить ресурсы номеров SKU уровня "Базовый" и "Стандартный". Изолированные виртуальные машины, виртуальные машины в ресурсе группы доступности и ресурсы масштабируемого набора виртуальных машин нельзя подключить к обоим SKU одновременно.  В новых конструкциях рекомендуется использовать номер SKU уровня "Стандартный".  Дополнительные сведения вы найдете в статье [Azure Load Balancer Standard overview](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Обзор Load Balancer уровня "Стандартный").
 
-### <a name="standard"></a>Стандартный
+### <a name="standard"></a>Standard
 
 Общедоступные IP-адреса стандартного SKU:
 

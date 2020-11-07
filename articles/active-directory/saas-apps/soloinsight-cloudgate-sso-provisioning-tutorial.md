@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: Zhchia
-ms.openlocfilehash: 6ab23183fa42b87dad68da1d7ef9b1a2f6145750
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 1b992150f6013fd597a3e56b243bd6236289b710
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92514798"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358003"
 ---
 # <a name="tutorial-configure-soloinsight-cloudgate-sso-for-automatic-user-provisioning"></a>Учебник. Настройка единого входа Soloinsight-CloudGate для автоматической подготовки пользователей
 
@@ -58,7 +58,7 @@ ms.locfileid: "92514798"
 
     ![Добавление SCIM Soloinsight-CloudGate единого входа](media/soloinsight-cloudgate-sso-provisioning-tutorial/config.png)
 
-3.  Прокрутите страницу вниз до конца страницы, чтобы получить **URL-адрес** и **маркер секрета**клиента. Скопируйте **маркер секрета**. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения Soloinsight-CloudGate SSO в портал Azure.
+3.  Прокрутите страницу вниз до конца страницы, чтобы получить **URL-адрес** и **маркер секрета** клиента. Скопируйте **маркер секрета**. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения Soloinsight-CloudGate SSO в портал Azure.
 
     ![Создание маркера Soloinsight-CloudGate SSO](media/soloinsight-cloudgate-sso-provisioning-tutorial/token.png)
 
@@ -80,7 +80,7 @@ ms.locfileid: "92514798"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **солоинсигхт-КЛАУДГАТЕ SSO**, выберите **СОЛОИНСИГХТ-клаудгате SSO** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **солоинсигхт-КЛАУДГАТЕ SSO** , выберите **СОЛОИНСИГХТ-клаудгате SSO** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![Soloinsight-CloudGate SSO в списке результатов](common/search-new-app.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "92514798"
 
 ### <a name="to-configure-automatic-user-provisioning-for-soloinsight-cloudgate-sso-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Soloinsight-CloudGate SSO в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -123,7 +123,7 @@ ms.locfileid: "92514798"
 
     ![Сопоставления пользователей Soloinsight-CloudGate SSO](media/soloinsight-cloudgate-sso-provisioning-tutorial/usermappings.png)
 
-9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD, чтобы Soloinsight-CloudGate единый вход в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Soloinsight-CloudGate SSO для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD, чтобы Soloinsight-CloudGate единый вход в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Soloinsight-CloudGate SSO для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Soloinsight-CloudGate пользовательские атрибуты единого входа](media/soloinsight-cloudgate-sso-provisioning-tutorial/userattributes.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "92514798"
 
     ![Сопоставления групп Soloinsight-CloudGate единого входа](media/soloinsight-cloudgate-sso-provisioning-tutorial/groupmappings.png)
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD, чтобы Soloinsight-CloudGate единый вход в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Soloinsight-CloudGate SSO для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Проверьте атрибуты группы, которые синхронизированы из Azure AD, чтобы Soloinsight-CloudGate единый вход в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Soloinsight-CloudGate SSO для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Атрибуты группы Soloinsight-CloudGate единого входа](media/soloinsight-cloudgate-sso-provisioning-tutorial/groupattributes.png)
 

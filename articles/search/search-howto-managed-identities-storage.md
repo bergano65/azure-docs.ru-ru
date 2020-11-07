@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: b877ff912470cc19082410fddab64c84824eb269
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: f26ca04955dfa854a8ee17b7aa255a6ed991b8df
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519560"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358377"
 ---
 # <a name="set-up-a-connection-to-an-azure-storage-account-using-a-managed-identity"></a>Настройка подключения к учетной записи хранения Azure с использованием управляемого удостоверения
 
@@ -34,7 +34,7 @@ ms.locfileid: "92519560"
 
 ![Включение управляемого удостоверения, назначаемого системой](./media/search-managed-identities/turn-on-system-assigned-identity.png "Включение управляемого удостоверения, назначаемого системой")
 
-Нажав **Сохранить**, вы увидите идентификатор объекта, назначенный вашей службе поиска.
+Нажав **Сохранить** , вы увидите идентификатор объекта, назначенный вашей службе поиска.
 
 ![Идентификатор объекта](./media/search-managed-identities/system-assigned-identity-object-id.png "Идентификатор объекта.")
  
@@ -44,7 +44,7 @@ ms.locfileid: "92519560"
 
 1. На портале Azure перейдите к учетной записи хранения, которая содержит данные для индексирования.
 2. Выберите **Управление доступом (IAM)**
-3. Щелкните **Добавить**, а затем **Добавить назначение роли**.
+3. Щелкните **Добавить** , а затем **Добавить назначение роли**.
 
     ![Добавление назначения роли](./media/search-managed-identities/add-role-assignment-storage.png "Добавление назначения роли")
 
@@ -65,7 +65,7 @@ ms.locfileid: "92519560"
 
 ### <a name="3---create-the-data-source"></a>3\. Создание источника данных
 
-[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.datasource) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из учетной записи хранения с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
+[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из учетной записи хранения с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
 
 Если индексация выполняется по учетной записи хранения, источник данных должен иметь следующие обязательные свойства:
 
@@ -77,7 +77,7 @@ ms.locfileid: "92519560"
 * **credentials**
     * Если для проверки подлинности используется управляемое удостоверение, формат **учетных данных** отличается от того, который используется без управляемого удостоверения. Здесь вы предоставите ResourceId без ключа учетной записи и пароля. ResourceId должен содержать идентификатор подписки для учетной записи хранения, группу ресурсов для учетной записи хранения и имя учетной записи хранения.
     * Формат управляемого удостоверения: 
-        * *ResourceId=/subscriptions/**идентификатор_подписки**/resourceGroups/**имя_группы_ресурсов**/providers/Microsoft.Storage/storageAccounts/**имя_учетной_записи_хранения**/;* .
+        * *ResourceId=/subscriptions/ **идентификатор_подписки** /resourceGroups/ **имя_группы_ресурсов** /providers/Microsoft.Storage/storageAccounts/ **имя_учетной_записи_хранения** /;* .
 * Свойство **container** определяет контейнер или таблицу в учетной записи хранения. По умолчанию все большие двоичные объекты в контейнере доступны для извлечения. Если требуется индексирование больших двоичных объектов из определенного виртуального каталога, можно указать этот каталог с помощью дополнительного параметра **query**.
 
 Пример для создания большого двоичного объекта в качестве источника данных с помощью [REST API](/rest/api/searchservice/create-data-source):

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: apimpm
-ms.openlocfilehash: 3886f82180728bc6f454b1a49b5551bc4831869e
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 37ac6369790ed526fd923819558863ae84432aed
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92070900"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358122"
 ---
 # <a name="policies-in-azure-api-management"></a>Политики в Azure API Management
 
@@ -38,7 +38,7 @@ ms.locfileid: "92070900"
 > 
 > 
 
-Конфигурация состоит из таких операторов: `inbound`, `backend`, `outbound` и `on-error`. Набор указанных операторов политики выполняется для создания запроса и получения ответа.
+Конфигурация состоит из таких операторов: `inbound`, `backend`, `outbound` и `on-error`. Ряд указанных операторов политики выполняется для запроса и ответа.
 
 ```xml
 <policies>
@@ -60,7 +60,7 @@ ms.locfileid: "92070900"
 
 Если во время обработки запроса произошла ошибка, все оставшиеся действия в разделах `inbound`, `backend` или `outbound` пропускаются, и начинают выполняться операторы из раздела `on-error`. Поместив операторы политики в раздел `on-error`, вы можете просмотреть ошибку с помощью свойства `context.LastError`, изучить и настроить ответ на ошибку с помощью политики `set-body`, а также настроить, что именно происходит при возникновении ошибки. Существуют коды ошибок для встроенных действий и для ошибок, которые могут возникать во время обработки оператора политики. Дополнительные сведения см. в статье [Обработка ошибок в политиках управления API](./api-management-error-handling-policies.md).
 
-## <a name="how-to-configure-policies"></a><a name="scopes"> </a>Как настраивать политики
+## <a name="how-to-configure-policies"></a><a name="scopes"> </a>Настройка политик
 
 Сведения о настройке политик см. в статье [How to set or edit Azure API Management policies](set-edit-policies.md) (Как настроить или изменить политики в службе управления API Azure).
 
@@ -113,7 +113,7 @@ ms.locfileid: "92070900"
 </ip-filter>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 

@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 12/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 6d242fa5ac7257908b4f70d97531a9a1c9c88832
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: cee9544dbc2deecafa67d73d3bdea804937c1d7a
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457560"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94356320"
 ---
 # <a name="tutorial-configure-atlassian-cloud-for-automatic-user-provisioning"></a>Руководство. Настройка Atlassian Cloud для автоматической подготовки пользователей
 
@@ -76,7 +76,7 @@ ms.locfileid: "92457560"
 
 ### <a name="to-configure-automatic-user-provisioning-for-atlassian-cloud-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Atlassian Cloud в Azure AD, сделайте следующее:
 
-1. Войдите в [портал Azure](https://portal.azure.com) и выберите **корпоративные приложения**, выберите **все приложения**, а затем выберите **Atlassian Cloud**.
+1. Войдите в [портал Azure](https://portal.azure.com) и выберите **корпоративные приложения** , выберите **все приложения** , а затем выберите **Atlassian Cloud**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -104,7 +104,7 @@ ms.locfileid: "92457560"
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Atlassian Cloud**.
 
-9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в Atlassian Cloud, в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Atlassian Cloud для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в Atlassian Cloud, в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Atlassian Cloud для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|
@@ -116,7 +116,7 @@ ms.locfileid: "92457560"
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directoryные группы с Atlassian Cloud**.
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Atlassian Cloud в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Atlassian Cloud для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Atlassian Cloud в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Atlassian Cloud для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
       |attribute|Тип|
       |---|---|

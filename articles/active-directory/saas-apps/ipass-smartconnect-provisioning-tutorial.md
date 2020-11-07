@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: bf779918dbfb9f7b95096f3a5efcc8e64f09c403
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 397aab743da25da3882c66d0fdf32c4c4d202586
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91850519"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357000"
 ---
 # <a name="tutorial-configure-ipass-smartconnect-for-automatic-user-provisioning"></a>Учебник. Настройка Ипасс Смартконнект для автоматической подготовки пользователей
 
@@ -73,7 +73,7 @@ ms.locfileid: "91850519"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Ипасс смартконнект**, выберите **ипасс смартконнект** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **Ипасс смартконнект** , выберите **ипасс смартконнект** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![iPass SmartConnect в списке результатов](common/search-new-app.png)
 
@@ -86,7 +86,7 @@ ms.locfileid: "91850519"
 
 ### <a name="to-configure-automatic-user-provisioning-for-ipass-smartconnect-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Ипасс Смартконнект в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -116,9 +116,9 @@ ms.locfileid: "91850519"
 
     :::image type="content" source="media/ipass-smartconnect-provisioning-tutorial/usermapping.png" alt-text="Снимок экрана раздела &quot;сопоставления&quot;. В поле Имя выполните синхронизацию Azure Active Directory пользователей с Ипасс Смартконнект." border="false":::
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Ипасс Смартконнект в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в ипасс смартконнект для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Ипасс Смартконнект в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в ипасс смартконнект для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
-    :::image type="content" source="media/ipass-smartconnect-provisioning-tutorial/userattribute.png" alt-text="Снимок экрана раздела &quot;сопоставления&quot;. В поле Имя выполните синхронизацию Azure Active Directory пользователей с Ипасс Смартконнект." border="false":::
+    :::image type="content" source="media/ipass-smartconnect-provisioning-tutorial/userattribute.png" alt-text="Снимок экрана со страницей сопоставления атрибутов. В таблице перечислены атрибуты Azure Active Directory и Ипасс Смартконнект и приоритет сопоставления." border="false":::
 
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).

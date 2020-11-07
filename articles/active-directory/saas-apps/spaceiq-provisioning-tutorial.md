@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: 135b780f547ddd8e979899898b9971c4dcf89cee
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 4e115de4f86baba9559730d94f45ab7b17cc4379
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92514713"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357969"
 ---
 # <a name="tutorial-configure-spaceiq-for-automatic-user-provisioning"></a>Учебник. Настройка SpaceIQ для автоматической подготовки пользователей
 
@@ -86,7 +86,7 @@ ms.locfileid: "92514713"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **SpaceIQ**, выберите **SpaceIQ** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **SpaceIQ** , выберите **SpaceIQ** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![SpaceIQ в списке результатов](common/search-new-app.png)
 
@@ -99,7 +99,7 @@ ms.locfileid: "92514713"
 
 ### <a name="to-configure-automatic-user-provisioning-for-spaceiq-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для SpaceIQ в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -129,7 +129,7 @@ ms.locfileid: "92514713"
 
     ![Сопоставления пользователей SpaceIQ](media/spaceiq-provisioning-tutorial/usermapping.png)
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в SpaceIQ в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в SpaceIQ для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в SpaceIQ в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в SpaceIQ для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Атрибуты пользователя SpaceIQ](media/spaceiq-provisioning-tutorial/userattributes.png)
 

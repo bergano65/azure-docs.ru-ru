@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/01/2019
 ms.author: Zhchia
-ms.openlocfilehash: dd5a0e05b303d6fc7a5cfa012f49fab99828e8a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 4f230a70ae87c7c0ec9db347e7cf975c0252bb18
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91300077"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357816"
 ---
 # <a name="tutorial-configure-brivo-onair-identity-connector-for-automatic-user-provisioning"></a>Учебник. Настройка соединителя удостоверений Бриво Онаир для автоматической подготовки пользователей
 
@@ -80,7 +80,7 @@ ms.locfileid: "91300077"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Бриво Онаир Identity Connector**, выберите **Бриво онаир Identity Connector** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **Бриво Онаир Identity Connector** , выберите **Бриво онаир Identity Connector** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![Бриво Онаир Identity Connector в списке результатов](common/search-new-app.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "91300077"
 
 ### <a name="to-configure-automatic-user-provisioning-for-brivo-onair-identity-connector-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для соединителя удостоверений Бриво Онаир в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -120,7 +120,7 @@ ms.locfileid: "91300077"
 
     ![Сопоставления пользователей для соединителя удостоверений бриво Онаир](media/brivo-onair-identity-connector-provisioning-tutorial/user-mappings.png )
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Бриво Онаир Identity Connector в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Бриво Онаир Identity Connector для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Бриво Онаир Identity Connector в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Бриво Онаир Identity Connector для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Пользовательские атрибуты соединителя удостоверений бриво Онаир](media/brivo-onair-identity-connector-provisioning-tutorial/user-attributes.png)
 
@@ -128,7 +128,7 @@ ms.locfileid: "91300077"
 
     ![Сопоставления группы соединителей удостоверений бриво Онаир](media/brivo-onair-identity-connector-provisioning-tutorial/group-mappings.png)
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Бриво Онаир Identity Connector в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в соединителе удостоверений бриво онаир для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Бриво Онаир Identity Connector в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в соединителе удостоверений бриво онаир для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
     ![Атрибуты группы соединителя удостоверений бриво Онаир](media/brivo-onair-identity-connector-provisioning-tutorial/group-attributes.png)
 

@@ -7,15 +7,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: arvinh
-ms.openlocfilehash: d82aca50ce57a09697d389197bf2b102bb5df457
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: 1f82cab1172e7293e2a5910d35280eefb30ed49e
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92456342"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357459"
 ---
 # <a name="tutorial-configure-cerner-central-for-automatic-user-provisioning"></a>Руководство по настройке Cerner Central для автоматической подготовки пользователей
 
@@ -108,7 +108,7 @@ ms.locfileid: "92456342"
 
 1. Выберите команду **Сохранить**.
 
-1. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей и групп Azure AD, которые будут синхронизированы с Cerner Central. Атрибуты, которые выбраны в качестве свойств **Matching**, используются для сопоставления учетных записей пользователей и групп в Cerner Central для операций обновления. Нажмите кнопку "Сохранить", чтобы подтвердить все изменения.
+1. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей и групп Azure AD, которые будут синхронизированы с Cerner Central. Атрибуты, которые выбраны в качестве свойств **Matching** , используются для сопоставления учетных записей пользователей и групп в Cerner Central для операций обновления. Нажмите кнопку "Сохранить", чтобы подтвердить все изменения.
 
 1. Чтобы включить службу подготовки Azure AD для Cerner Central, в разделе **Параметры** установите переключатель **Состояние подготовки** в положение **Включено**.
 

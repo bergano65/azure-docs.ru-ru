@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: 11f89a0a42a42fd84d1dc0c8606128f5af9e751e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c6f4b932bb8f16af3c0368ab219bd8a12bf2face
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91711563"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357986"
 ---
 # <a name="azure-files-monitoring-data-reference"></a>Справочник по данным мониторинга файлов Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "91711563"
 
 ### <a name="capacity-metrics"></a>Метрики емкости
 
-Значения метрик емкости отправляются в Azure Monitor каждый час. Значения обновляются каждый день. Интервал времени определяет интервал, за который представлены значения метрик. Поддерживаемый интервал времени для всех метрик емкости — один час (PT1H).
+Значения метрик емкости обновляются ежедневно (до 24 часов). Интервал времени определяет интервал, за который представлены значения метрик. Поддерживаемый интервал времени для всех метрик емкости — один час (PT1H).
 
 Службы файлов Azure предоставляют следующие метрики емкости в Azure Monitor.
 

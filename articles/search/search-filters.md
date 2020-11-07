@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6c46dfb3f36c3ef7f67ce2f3b52c2ffe4c805a61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d83e5c39f97db49e2cc9b77cc806cff0a1fa6de
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91534800"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94355990"
 ---
 # <a name="filters-in-azure-cognitive-search"></a>Фильтры в Когнитивный поиск Azure 
 
@@ -104,7 +104,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
    search=*&$filter=Rooms/any(room: room/BaseRate ge 60 and room/BaseRate lt 300) and Address/City eq 'Honolulu'
    ```
 
-+ Сочетание строки запроса и **$filter**, где фильтр создает подмножество, а строка запроса предоставляет термины для полнотекстового поиска по отфильтрованному подмножеству. Добавление терминов («театров расстояний») приводит к получению оценок в результатах поиска, где документы, которые лучше соответствуют условиям, ранжированы выше. Использование фильтра с строкой запроса является наиболее распространенным шаблоном использования.
++ Сочетание строки запроса и **$filter** , где фильтр создает подмножество, а строка запроса предоставляет термины для полнотекстового поиска по отфильтрованному подмножеству. Добавление терминов («театров расстояний») приводит к получению оценок в результатах поиска, где документы, которые лучше соответствуют условиям, ранжированы выше. Использование фильтра с строкой запроса является наиболее распространенным шаблоном использования.
 
    ```
   search=walking distance theaters&$filter=Rooms/any(room: room/BaseRate ge 60 and room/BaseRate lt 300) and Address/City eq 'Seattle'&$count=true
@@ -138,11 +138,11 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 В REST API фильтрация по умолчанию включена *для* простых полей. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
 
-В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства- [фильтра](/dotnet/api/microsoft.azure.search.models.field.isfilterable) соответствующего объекта [поля](/dotnet/api/microsoft.azure.search.models.field) значение `true` . Это также можно сделать декларативно с помощью атрибута с [фильтрацией](/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается для `BaseRate` Свойства класса Model, который сопоставляется с определением индекса.
+В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства с [фильтром](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable) для соответствующего объекта [сеарчфиелд](/dotnet/api/azure.search.documents.indexes.models.searchfield) значение `true` . В приведенном ниже примере атрибут задается для `BaseRate` Свойства класса Model, который сопоставляется с определением индекса.
 
 ```csharp
-    [IsFilterable, IsSortable, IsFacetable]
-    public double? BaseRate { get; set; }
+[IsFilterable, IsSortable, IsFacetable]
+public double? BaseRate { get; set; }
 ```
 
 ### <a name="making-an-existing-field-filterable"></a>Обеспечение фильтрации существующего поля
@@ -157,10 +157,10 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ### <a name="approaches-for-filtering-on-text"></a>Подходы к фильтрации по тексту
 
-| Подход | Описание | Назначение |
+| Метод | Описание | Назначение |
 |----------|-------------|-------------|
 | [`search.in`](search-query-odata-search-in-function.md) | Функция, которая сопоставляет поле со списком строк с разделителями. | Рекомендуется для [фильтров безопасности](search-security-trimming-for-azure-search.md) и для любых фильтров, в которых несколько необработанных текстовых значений должны сопоставляться с строковым полем. Функция **Search.in** разработана для ускорения и намного быстрее, чем явно сравнивать поле с каждой строкой с помощью `eq` и `or` . | 
-| [`search.ismatch`](search-query-odata-full-text-search-functions.md) | Функция, которая позволяет совместно использовать операции полнотекстового поиска вместе с операциями строго логического фильтра в одном выражении фильтра. | Используйте **Поиск. Match** (или его эквивалент, **Search. исматчскоринг**), если требуется несколько сочетаний фильтра поиска в одном запросе. Вы также можете использовать ее для фильтра *contains* (для фильтрации в частичной строке в контексте большей строки). |
+| [`search.ismatch`](search-query-odata-full-text-search-functions.md) | Функция, которая позволяет совместно использовать операции полнотекстового поиска вместе с операциями строго логического фильтра в одном выражении фильтра. | Используйте **Поиск. Match** (или его эквивалент, **Search. исматчскоринг** ), если требуется несколько сочетаний фильтра поиска в одном запросе. Вы также можете использовать ее для фильтра *contains* (для фильтрации в частичной строке в контексте большей строки). |
 | [`$filter=field operator string`](search-query-odata-comparison-operators.md) | Определенное пользователем выражение, состоящее из поля, операторов и значений. | Используйте этот параметр, если нужно найти точные соответствия между строковым и строковым значениями. |
 
 ## <a name="numeric-filter-fundamentals"></a>Основные компоненты числового фильтра

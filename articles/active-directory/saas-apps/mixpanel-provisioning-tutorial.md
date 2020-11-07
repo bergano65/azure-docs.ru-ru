@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/24/2020
 ms.author: Zhchia
-ms.openlocfilehash: c51fd947167834e79882e4efcee150f030e6f5e9
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: e70ee06d696539f0b41c0a070f6f5b43391fda52
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92521192"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357165"
 ---
 # <a name="tutorial-configure-mixpanel-for-automatic-user-provisioning"></a>Учебник. Настройка Mixpanel для автоматической подготовки пользователей
 
@@ -70,7 +70,7 @@ ms.locfileid: "92521192"
 
 ### <a name="to-configure-automatic-user-provisioning-for-mixpanel-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Mixpanel в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "92521192"
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Mixpanel**.
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Mixpanel в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Mixpanel для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API Mixpanel поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Mixpanel в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Mixpanel для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API Mixpanel поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|
@@ -107,7 +107,7 @@ ms.locfileid: "92521192"
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Mixpanel**.
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Mixpanel в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Mixpanel для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Mixpanel в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Mixpanel для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
       |attribute|Тип|
       |---|---|

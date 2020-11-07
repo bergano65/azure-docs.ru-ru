@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: baa6e10d33d1c0a1a9c367baa8888fdfb5a47c01
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: e0409f289289aaebc760473f1f74130b34fbdd39
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746232"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357731"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Windows
 
@@ -135,7 +135,7 @@ ms.locfileid: "92746232"
 | keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команды Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroup"`.|
 | keyVaultResourceGroup | Имя группы ресурсов, содержащей хранилище ключей.|
 |  keyEncryptionKeyURL | URL-адрес ключа шифрования ключа в формате https:// &lt; keyvault-Name &gt; . Vault.Azure.NET/key/ &lt; Key-Name &gt; . Если вы не хотите использовать KEK, оставьте это поле пустым. |
-| volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_ , _Data_ и _All_ . 
+| volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_ , _Data_ и _All_. 
 | forceUpdateTag | Передает уникальное значение, такое как GUID, каждый раз, когда операция должна выполняться принудительно. |
 | resizeOSDisk | Если размер раздела ОС будет изменен и займет весь виртуальный жесткий диск ОС до разделения системного тома. |
 | location | Расположение для всех ресурсов. |
@@ -158,7 +158,7 @@ ms.locfileid: "92746232"
 
 - Запустить виртуальную машину после освобождения
 - Восстановление службы
-- Резервное копирование
+- Backup
 
 В этих сценариях диски NVMe должны быть инициализированы после запуска виртуальной машины. Чтобы включить шифрование дисков NVMe, выполните команду, чтобы снова включить шифрование дисков Azure после инициализации дисков NVMe.
 
@@ -266,6 +266,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Виртуальные машины серии M с Ускоритель записиными дисками.
 - Применение ADE к виртуальной машине с дисками, зашифрованными с помощью [шифрования на стороне сервера, с помощью ключей, управляемых клиентом](disk-encryption.md) (SSE + CMK). Применение SSE + CMK к диску данных на виртуальной машине, зашифрованном с помощью ADE, также является неподдерживаемым сценарием.
 - Перенос виртуальной машины, зашифрованной с помощью ADE, или **когда-либо** зашифрованный с помощью ade, для [шифрования на стороне сервера с ключами, управляемыми клиентом](disk-encryption.md).
+- [Размеры виртуальных машин Azure без локального временного диска](../azure-vms-no-temp-disk.md); в частности, dv4, Dsv4, Ev4 и Esv4.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

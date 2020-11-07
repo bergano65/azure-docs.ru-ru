@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: eaf54b7f7336619d03ce0fb6ea7fa032d0fcdff7
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: MT
+ms.openlocfilehash: 528ab93d1cf47d64338ef186a120695681f48e55
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319173"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357221"
 ---
 # <a name="tutorial-configure-15five-for-automatic-user-provisioning"></a>Учебник. Настройка 15Five для автоматической подготовки пользователей
 
@@ -58,15 +58,15 @@ ms.locfileid: "92319173"
 
 2.  Щелкните **SCIM 2,0**.
 
-    :::image type="content" source="media/15five-provisioning-tutorial/image00.png" alt-text="Снимок экрана консоли администрирования 15Five. Интеграция отображается в разделе &quot;компоненты&quot; в меню, а компоненты и интеграции выделены." border="false":::
+    :::image type="content" source="media/15five-provisioning-tutorial/image00.png" alt-text="Снимок экрана со страницей &quot;интеграции&quot; в консоли администрирования 15Five. В разделе «инструмент» выделено «S M 2,0»." border="false":::
 
 3.  Перейдите к **scim integration > создать токен OAuth**.
 
-    :::image type="content" source="media/15five-provisioning-tutorial/image02.png" alt-text="Снимок экрана консоли администрирования 15Five. Интеграция отображается в разделе &quot;компоненты&quot; в меню, а компоненты и интеграции выделены." border="false":::
+    :::image type="content" source="media/15five-provisioning-tutorial/image02.png" alt-text="Снимок экрана со страницей интеграции S C M в консоли администрирования 15Five. Выделена генерация маркера OAuth." border="false":::
 
 4.  Скопируйте значения для **базового URL-адреса SCIM 2,0** и **маркера доступа**. Это значение будет указано в поле **URL-адрес клиента** и **секретный токен** на вкладке подготовка приложения 15Five в портал Azure.
     
-    :::image type="content" source="media/15five-provisioning-tutorial/image03.png" alt-text="Снимок экрана консоли администрирования 15Five. Интеграция отображается в разделе &quot;компоненты&quot; в меню, а компоненты и интеграции выделены." border="false":::
+    :::image type="content" source="media/15five-provisioning-tutorial/image03.png" alt-text="Снимок экрана со страницей интеграции S C M. В таблице маркеров будут выделены значения рядом с с I M 2,0 базовый U R L и маркер доступа." border="false":::
 
 ## <a name="step-3-add-15five-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление 15Five из коллекции приложений Azure AD
 
@@ -86,7 +86,7 @@ ms.locfileid: "92319173"
 
 ### <a name="to-configure-automatic-user-provisioning-for-15five-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для 15Five в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения** , а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "92319173"
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с 15Five**.
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в 15Five в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в 15Five для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в 15Five в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в 15Five для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
 
    |attribute|Тип|
@@ -133,7 +133,7 @@ ms.locfileid: "92319173"
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с 15Five**.
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в 15Five в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в 15Five для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в 15Five в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в 15Five для операций обновления. Нажмите кнопку **Сохранить** , чтобы зафиксировать все изменения.
 
       |attribute|Тип|
       |---|---|

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 10/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: ea82724ec534aa896fa012332c10e28050caf825
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 27d962a2cf1a1c453d942d320d65b3e9b9a4b959
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909392"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357799"
 ---
 # <a name="azure-disk-encryption-for-windows-vms"></a>Шифрование дисков Azure для виртуальных машин Windows 
 
@@ -38,6 +38,8 @@ ms.locfileid: "92909392"
 Шифрование дисков Azure также доступно для виртуальных машин с хранилищем класса Рremium.
 
 Шифрование дисков Azure недоступно на [виртуальных машинах поколения 2](../generation-2.md#generation-1-vs-generation-2-capabilities). Дополнительные сведения об исключениях см. в статье [Шифрование дисков Azure. Неподдерживаемые сценарии](disk-encryption-windows.md#unsupported-scenarios).
+
+Шифрование дисков Azure недоступно в образах виртуальных машин без временных дисков (dv4, Dsv4, Ev4 и Esv4).  См. раздел [размеры виртуальных машин Azure без локального временного диска](../azure-vms-no-temp-disk.md).
 
 ### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 

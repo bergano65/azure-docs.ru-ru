@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 49493f47c7178a15e37a54a70dd066690057caba
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: b940da2cf754e7e1cac91df6b517ecebe55e8c40
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519577"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358428"
 ---
 # <a name="set-up-an-indexer-connection-to-azure-sql-database-using-a-managed-identity"></a>Настройка подключения индексатора к базе данных SQL Azure с помощью управляемого удостоверения
 
@@ -33,7 +33,7 @@ ms.locfileid: "92519577"
 
 ![Включение управляемого удостоверения, назначаемого системой](./media/search-managed-identities/turn-on-system-assigned-identity.png "Включение управляемого удостоверения, назначаемого системой")
 
-Нажав **Сохранить**, вы увидите идентификатор объекта, назначенный вашей службе поиска.
+Нажав **Сохранить** , вы увидите идентификатор объекта, назначенный вашей службе поиска.
 
 ![Идентификатор объекта](./media/search-managed-identities/system-assigned-identity-object-id.png "Идентификатор объекта.")
 
@@ -82,7 +82,7 @@ ms.locfileid: "92519577"
 
 1. На портале Azure перейдите к учетной записи Azure SQL Server.
 2. Выберите **Управление доступом (IAM)**
-3. Щелкните **Добавить**, а затем **Добавить назначение роли**.
+3. Щелкните **Добавить** , а затем **Добавить назначение роли**.
 
     ![Добавление назначения роли](./media/search-managed-identities/add-role-assignment-sql-server.png "Добавление назначения роли")
 
@@ -94,16 +94,16 @@ ms.locfileid: "92519577"
 
 ### <a name="5---create-the-data-source"></a>5\. Создание источника данных
 
-[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.datasource) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из базы данных SQL Azure с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
+[REST API](/rest/api/searchservice/create-data-source), портал Azure и [пакет SDK для .NET](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection) поддерживают строку подключения управляемого удостоверения. Ниже приведен пример создания источника данных для индексации данных из базы данных SQL Azure с помощью [REST API](/rest/api/searchservice/create-data-source) и строки подключения управляемой идентификации. Формат строки подключения управляемого удостоверения одинаков для REST API, пакета SDK для .NET и портал Azure.
 
 При создании источника данных с помощью [REST API](/rest/api/searchservice/create-data-source)источник данных должен иметь следующие обязательные свойства:
 
 * Свойство **name** — уникальное имя источника данных в службе поиска.
-* **type** — `azuresql`
+* **type**  — `azuresql`
 * **credentials**
     * Если для проверки подлинности используется управляемое удостоверение, формат **учетных данных** отличается от того, который используется без управляемого удостоверения. Здесь вы будете предоставлять имя начального каталога или базы данных и ResourceId без ключа учетной записи или пароля. ResourceId должен включать идентификатор подписки базы данных SQL Azure, группу ресурсов базы данных SQL и имя базы данных SQL. 
     * Формат строки подключения для управляемого удостоверения:
-        * *Initial Catalog|Database=**имя базы данных**;ResourceId=/subscriptions/**ИД подписки**/resourceGroups/**имя группы ресурсов**/providers/Microsoft.Sql/servers/**имя сервера SQL Server**/;Connection Timeout=**время ожидания подключения**;*
+        * *Initial Catalog|Database= **имя базы данных** ;ResourceId=/subscriptions/ **ИД подписки** /resourceGroups/ **имя группы ресурсов** /providers/Microsoft.Sql/servers/ **имя сервера SQL Server** /;Connection Timeout= **время ожидания подключения** ;*
 * **container** указывает имя таблицы или представления, которые необходимо индексировать.
 
 Пример создания объекта SQL Azure в качестве источника данных с помощью [REST API](/rest/api/searchservice/create-data-source):

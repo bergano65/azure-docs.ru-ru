@@ -2,14 +2,14 @@
 title: Справочник разработчика Python. Функции Azure
 description: Сведения о разработке функций на языке Python
 ms.topic: article
-ms.date: 12/13/2019
+ms.date: 11/4/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 3d459f4249c65f2d09f9d8df6e7958adf852a2ea
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: cc99a8c10ecefc063fdb89c61bdaeb0e686b1a82
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346321"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358054"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -69,72 +69,70 @@ def main(req: azure.functions.HttpRequest) -> str:
 Рекомендуемая структура папок для проекта Функций на Python выглядит следующим образом:
 
 ```
- __app__
- | - my_first_function
+ <project_root>/
+ | - .venv/
+ | - .vscode/
+ | - my_first_function/
  | | - __init__.py
  | | - function.json
  | | - example.py
- | - my_second_function
+ | - my_second_function/
  | | - __init__.py
  | | - function.json
- | - shared_code
+ | - shared_code/
+ | | - __init__.py
  | | - my_first_helper_function.py
  | | - my_second_helper_function.py
+ | - tests/
+ | | - test_my_second_function.py
+ | - .funcignore
  | - host.json
+ | - local.settings.json
  | - requirements.txt
  | - Dockerfile
- tests
 ```
-В главной папке проекта (\_\_app\_\_) могут содержаться следующие файлы:
+Главная папка проекта (<project_root>) может содержать следующие файлы:
 
 * *local.settings.json* : используется для хранения параметров приложения и строк подключения при локальном выполнении. Этот файл не публикуется в Azure. Дополнительные сведения см. в разделе [local.settings.file](functions-run-local.md#local-settings-file).
-* *requirements.txt* : содержит список пакетов, которые должны быть установлены при публикации в Azure.
+* *requirements.txt* : содержит список пакетов Python, устанавливаемых системой при публикации в Azure.
 * *host.json* : содержит параметры глобальной конфигурации, влияющие на все функции в приложении-функции. Этот файл не публикуется в Azure. При локальном запуске поддерживаются не все параметры. Дополнительные сведения см. в разделе [host.json](functions-host-json.md).
-* *.funcignore* : (необязательно) объявляет файлы, которые не должны публиковаться в Azure.
-* *Dockerfile* : (необязательно) используется при публикации проекта в [настраиваемом контейнере](functions-create-function-linux-custom-image.md).
+* *. vscode/* : (необязательно) содержит конфигурацию хранилища vscode. Дополнительные сведения см. в разделе [параметр VSCode](https://code.visualstudio.com/docs/getstarted/settings).
+* *. венв/* : (необязательно) содержит виртуальную среду Python, используемую локальной средой разработки.
+* *Dockerfile*. используется при публикации проекта в [пользовательском контейнере](functions-create-function-linux-custom-image.md)(необязательно).
+* Tests */* : (необязательно) содержит тестовые случаи приложения-функции.
+* *. фунЦигноре* (необязательный). объявляет файлы, которые не должны публиковаться в Azure. Как правило, этот файл содержит, `.vscode/` чтобы игнорировать параметр редактора, игнорировать `.venv/` локальные виртуальные среды Python, `tests/` игнорировать тестовые случаи и `local.settings.json` предотвратить публикацию параметров локального приложения.
 
 У каждой функции есть собственный файл кода и файл конфигурации привязки.
 
-При развертывании проекта в приложении-функции Azure следует включить в пакет все содержимое главной папки ( *\_\_app\_\_* ), но не саму эту папку. Тесты рекомендуется хранить в папке, отдельной от папки проекта (в этом примере — `tests`). Это позволяет не развертывать тестовый код в приложении. Дополнительные сведения см. в разделе [Модульное тестирование](#unit-testing).
+При развертывании проекта в приложении-функции в Azure все содержимое главного проекта ( *<project_root>* ) должно включаться в пакет, но не саму папку, а это означает, что оно `host.json` должно находиться в корне пакета. В этом примере рекомендуется сохранять тесты в папке вместе с другими функциями `tests/` . Дополнительные сведения см. в разделе [Модульное тестирование](#unit-testing).
 
 ## <a name="import-behavior"></a>Поведение при импорте
 
-Вы можете импортировать модули в код функции, используя явные относительные и абсолютные ссылки. В соответствии со структурой папок, показанной выше, следующие операции импорта работают в файле функции *\_\_app\_\_\my\_first\_function\\_\_init\_\_.py* :
+Вы можете импортировать модули в коде функции, используя абсолютные и относительные ссылки. В зависимости от показанной выше структуры папок следующие операции импорта работают в файле функции *<project_root> \ \ \_ Первая \_ функция \\ _ \_ init \_ \_ . Корректировка* :
 
 ```python
-from . import example #(explicit relative)
+from shared_code import my_first_helper_function #(absolute)
 ```
 
 ```python
-from ..shared_code import my_first_helper_function #(explicit relative)
+import shared_code.my_second_helper_function #(absolute)
 ```
 
 ```python
-from __app__ import shared_code #(absolute)
+from . import example #(relative)
+```
+
+> [!NOTE]
+>  *Shared_code или* папка должны содержать \_ \_ \_ \_ файл init. корректировки, чтобы пометить его как пакет Python при использовании абсолютного синтаксиса импорта.
+
+Следующий \_ \_ Импорт приложения \_ \_ и относительный импорт верхнего уровня являются устаревшими, так как он не поддерживается средством проверки статических типов и не поддерживается платформами тестирования Python.
+
+```python
+from __app__.shared_code import my_first_helper_function #(deprecated __app__ import)
 ```
 
 ```python
-import __app__.shared_code #(absolute)
-```
-
-Следующие операции импорта *не работают* в том же файле:
-
-```python
-import example
-```
-
-```python
-from example import some_helper_code
-```
-
-```python
-import shared_code
-```
-
-Общий код следует располагать в отдельной папке в папке *\_\_app\_\_* . Для ссылок на модули в папке *shared\_code* можно использовать следующий синтаксис:
-
-```python
-from __app__.shared_code import my_first_helper_function
+from ..shared_code import my_first_helper_function #(deprecated beyond top-level relative import)
 ```
 
 ## <a name="triggers-and-inputs"></a>Триггеры и входные данные
@@ -319,7 +317,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 |Характеристики приложения функции| <ul><li>Приложение должно выполнять много одновременных вызовов.</li> <li> Приложение обрабатывает большое количество событий ввода-вывода, таких как сетевые вызовы и дисковые операции чтения и записи.</li> </ul>| <ul><li>Приложение выполняет длительные вычисления, такие как изменение размера изображения.</li> <li>Приложение выполняет преобразование данных.</li> </ul> |
 |Примеры| <ul><li>Веб-API</li><ul> | <ul><li>Обработка данных</li><li> Определение машинного обучения</li><ul>|
 
- 
+
 > [!NOTE]
 >  Так как рабочие нагрузки реальных реальных функций чаще всего являются сочетанием операций ввода-вывода и ЦП, рекомендуется профилировать рабочую нагрузку при реалистичных рабочих нагрузках.
 
@@ -539,12 +537,14 @@ func azure functionapp publish <APP_NAME> --no-build
 
 Функции, написанные на языке Python, можно тестировать так же, как и другой код Python, используя стандартные платформы тестирования. Для большинства привязок можно создать макет объекта ввода, создав экземпляр соответствующего класса из пакета `azure.functions`. Поскольку пакет [`azure.functions`](https://pypi.org/project/azure-functions/) может быть недоступен, обязательно установите его с помощью файла `requirements.txt`, как описано в разделе [Управление пакетами](#package-management) выше.
 
-Например, ниже приведена имитация тестирования функции для триггеров HTTP:
+Возьмем *my_second_function* в качестве примера, ниже приведено фиктивное тестирование функции, активируемой http:
+
+Сначала необходимо создать *<project_root>/my_second_function/function.jsв* файле и определить эту функцию как триггер HTTP.
 
 ```json
 {
   "scriptFile": "__init__.py",
-  "entryPoint": "my_function",
+  "entryPoint": "main",
   "bindings": [
     {
       "authLevel": "function",
@@ -565,106 +565,72 @@ func azure functionapp publish <APP_NAME> --no-build
 }
 ```
 
+Теперь мы можем реализовать *my_second_function* и *shared_code. My _second_helper_function*.
+
 ```python
-# __app__/HttpTrigger/__init__.py
+# <project_root>/my_second_function/__init__.py
 import azure.functions as func
 import logging
 
-def my_function(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Python HTTP trigger function processed a request.')
+# Use absolute import to resolve shared_code modules
+from shared_code import my_second_helper_function
 
-    name = req.params.get('name')
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get('name')
+# Define an http trigger which accepts ?value=<int> query parameter
+# Double the value and return the result in HttpResponse
+def main(req: func.HttpRequest) -> func.HttpResponse:
+    logging.info('Executing my_second_function.')
 
-    if name:
-        return func.HttpResponse(f"Hello {name}")
-    else:
-        return func.HttpResponse(
-             "Please pass a name on the query string or in the request body",
-             status_code=400
-        )
+    initial_value: int = int(req.params.get('value'))
+    doubled_value: int = my_second_helper_function.double(initial_value)
+
+    return func.HttpResponse(
+      body=f"{initial_value} * 2 = {doubled_value}",
+      status_code=200
+    )
 ```
 
 ```python
-# tests/test_httptrigger.py
+# <project_root>/shared_code/__init__.py
+# Empty __init__.py file marks shared_code folder as a Python package
+```
+
+```python
+# <project_root>/shared_code/my_second_helper_function.py
+
+def double(value: int) -> int:
+  return value * 2
+```
+
+Мы можем приступить к написанию тестовых случаев для триггера HTTP.
+
+```python
+# <project_root>/tests/test_my_second_function.py
 import unittest
 
 import azure.functions as func
-from __app__.HttpTrigger import my_function
+from my_second_function import main
 
 class TestFunction(unittest.TestCase):
-    def test_my_function(self):
+    def test_my_second_function(self):
         # Construct a mock HTTP request.
         req = func.HttpRequest(
             method='GET',
             body=None,
-            url='/api/HttpTrigger',
-            params={'name': 'Test'})
+            url='/api/my_second_function',
+            params={'value': '21'})
 
         # Call the function.
-        resp = my_function(req)
+        resp = main(req)
 
         # Check the output.
         self.assertEqual(
             resp.get_body(),
-            b'Hello Test',
+            b'21 * 2 = 42',
         )
 ```
 
-Вот еще один пример с функцией для триггеров очереди:
+В `.venv` виртуальной среде Python установите любимую платформу тестирования Python (например, `pip install pytest` ). Просто выполните команду `pytest tests` , чтобы проверить результат теста.
 
-```json
-{
-  "scriptFile": "__init__.py",
-  "entryPoint": "my_function",
-  "bindings": [
-    {
-      "name": "msg",
-      "type": "queueTrigger",
-      "direction": "in",
-      "queueName": "python-queue-items",
-      "connection": "AzureWebJobsStorage"
-    }
-  ]
-}
-```
-
-```python
-# __app__/QueueTrigger/__init__.py
-import azure.functions as func
-
-def my_function(msg: func.QueueMessage) -> str:
-    return f'msg body: {msg.get_body().decode()}'
-```
-
-```python
-# tests/test_queuetrigger.py
-import unittest
-
-import azure.functions as func
-from __app__.QueueTrigger import my_function
-
-class TestFunction(unittest.TestCase):
-    def test_my_function(self):
-        # Construct a mock Queue message.
-        req = func.QueueMessage(
-            body=b'test')
-
-        # Call the function.
-        resp = my_function(req)
-
-        # Check the output.
-        self.assertEqual(
-            resp,
-            'msg body: test',
-        )
-```
 ## <a name="temporary-files"></a>Временные файлы
 
 Метод `tempfile.gettempdir()` возвращает временную папку, которая в Linux — `/tmp`. Приложение может использовать этот каталог для хранения временных файлов, создаваемых и используемых вашими функциями во время выполнения.

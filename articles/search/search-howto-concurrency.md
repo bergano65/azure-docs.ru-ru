@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 85f14329359eaf051b992f657ac0e4e634d504cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1cb8d578c05166f88ed7e91681dd6b5f15b1e3e5
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89020836"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358649"
 ---
 # <a name="how-to-manage-concurrency-in-azure-cognitive-search"></a>Управление параллелизмом в Azure Когнитивный поиск
 
@@ -30,7 +30,7 @@ ms.locfileid: "89020836"
 Все ресурсы имеют [*тег сущности (ETag)*](https://en.wikipedia.org/wiki/HTTP_ETag), который предоставляет сведения о версии объекта. Если сначала проверить ETag, то можно избежать параллельных обновлений в стандартном рабочем процессе (получение, локальное изменение, обновление), убедившись, что ETag ресурса соответствует локальной копии.
 
 + Интерфейс REST API использует [ETag](/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search) в заголовке запроса.
-+ Пакет SDK для .NET задает ETag с помощью объекта accessCondition, устанавливая в ресурсе [заголовок If-Match | If-None-Match](/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search). Любой объект, наследуемый из [IResourceWithETag (пакет SDK для .NET)](/dotnet/api/microsoft.azure.search.models.iresourcewithetag), содержит объект accessCondition.
++ Пакет SDK для .NET задает ETag с помощью объекта accessCondition, устанавливая в ресурсе [заголовок If-Match | If-None-Match](/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search). Объекты, использующие Теги ETag, такие как [SynonymMap. ETag](/dotnet/api/azure.search.documents.indexes.models.synonymmap.etag) и [сеарчиндекс. ETag](/dotnet/api/azure.search.documents.indexes.models.searchindex.etag), имеют объект accessCondition.
 
 Каждый раз при обновлении ресурса его ETag изменяется автоматически. При реализации управления параллелизмом все, что необходимо сделать, это поместить предварительное условие в запрос на обновление. Этим условием должно быть требование, чтобы удаленный ресурс имел такой же ETag, как и копия ресурса, измененного вами на клиенте. Если параллельный процесс уже изменил удаленный ресурс, то ETag не будет соответствовать предварительному условию и, следовательно, запрос завершится ошибкой HTTP 412. Если используется пакет SDK для .NET, то это объявляется в качестве `CloudException`, где метод расширения `IsAccessConditionFailed()` возвращает значение true.
 
@@ -207,7 +207,7 @@ ms.locfileid: "89020836"
         }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Просмотрите [пример кода C# для синонимов](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToSynonyms), чтобы получить дополнительные сведения о безопасном обновлении существующего индекса.
 
@@ -216,7 +216,7 @@ ms.locfileid: "89020836"
 + [REST API пример на GitHub](https://github.com/Azure-Samples/search-rest-api-getting-started)
 + [Пример пакета SDK для .NET на сайте GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started). Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Общие заголовки](/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search) 
  http-запросов и ответов [Коды](/rest/api/searchservice/http-status-codes) 

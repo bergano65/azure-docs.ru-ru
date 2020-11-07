@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: article
 keywords: Azure, Kinect, RGB, IR, запись, датчик, пакет SDK, доступ, глубина, видео, Камера, иму, движение, датчик, аудио, микрофон, матроска, пакет SDK для датчика, Загрузка, тело, отслеживание, поддержка
-ms.openlocfilehash: 61d29284bc2ed9e574e8a19561f19ad6f4259908
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2fbfe9c52a46cbf7058e6d5ca91008f1f289bfd2
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85277101"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357051"
 ---
 # <a name="azure-kinect-support-options-and-resources"></a>Варианты и ресурсы поддержки Azure Kinect
 
@@ -32,9 +32,9 @@ ms.locfileid: "85277101"
 
 ### <a name="microsoft-qa"></a>Майкрософт: вопросы и ответы
 
-Чтобы получить быстрые и заслуживающие доверия ответы на свои технические вопросы по продуктам от инженеров Майкрософт, специалистов Azure Most Valuable Professional (MVP) или нашего сообщества экспертов, воспользуйтесь [разделом вопросов и ответов на сайте Майкрософт](https://aka.ms/azureqa), который является предпочтительной площадкой для получения поддержки от сообщества.
+Чтобы получить быстрые и заслуживающие доверия ответы на свои технические вопросы по продуктам от инженеров Майкрософт, специалистов Azure Most Valuable Professional (MVP) или нашего сообщества экспертов, воспользуйтесь [разделом вопросов и ответов на сайте Майкрософт](/answers/products/azure), который является предпочтительной площадкой для получения поддержки от сообщества.
 
-- [Microsoft Q&A для Azure Kinect](https://docs.microsoft.com/answers/topics/azure-kinect-dk.html), где можно задать вопросы или выполнить поиск по существующей библиотеке вопросов.
+- [Microsoft Q&A для Azure Kinect](/answers/topics/azure-kinect-dk.html), где можно задать вопросы или выполнить поиск по существующей библиотеке вопросов.
 
 ### <a name="development-azure-kinect-on-azure"></a>Разработка Azure Kinect в Azure
 
@@ -50,13 +50,13 @@ ms.locfileid: "85277101"
 
 ### <a name="azure-kinect-dk-device"></a>Устройство Azure Kinect DK
 
-Перед обращением в службу поддержки оборудования убедитесь, что вы установили и обновили Azure Kinect DK. Чтобы проверить, работает ли устройство, используйте [средство просмотра Kinect для Azure](azure-kinect-viewer.md). Дополнительные сведения см. на странице [справки Azure KINECT DK](https://aka.ms/kinectsupport) .
+Перед обращением в службу поддержки оборудования убедитесь, что вы установили и обновили Azure Kinect DK. Чтобы проверить, работает ли устройство, используйте [средство просмотра Kinect для Azure](azure-kinect-viewer.md). Дополнительные сведения см. на странице [справки Azure KINECT DK](./index.yml) .
 Вам также может потребоваться извлечь [Известные проблемы и устранить неполадки](troubleshooting.md).
 
 [Получите справку](https://support.microsoft.com/supportforbusiness/productselection?sapId=f77b1b95-721e-43a0-2db8-b01e81a3f813) по функциям устройства или датчика, обновлениям встроенного по или приобретению.
 
 Дополнительные сведения о предложениях поддержки см. в статье [Поддержка Майкрософт для бизнеса](https://support.microsoft.com/help/4341255/support-for-business).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Устранение неполадок с Azure Kinect](troubleshooting.md)

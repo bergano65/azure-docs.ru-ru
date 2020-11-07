@@ -4,18 +4,18 @@ description: Содержит ответы на некоторые распро�
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: dikamath
-ms.openlocfilehash: a1ca50e1e1374b5e819c9355be1a48e2b7c3e536
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 9f0eb1ec7c979e6f35c21f49cad9ab9975a221fc
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349092"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357299"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
 Ответы на часто задаваемые вопросы о решении Azure VMware.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 #### <a name="what-is-azure-vmware-solution"></a>Что такое Решение Azure VMware?
 
@@ -74,7 +74,7 @@ ms.locfileid: "93349092"
 Azure бастиона — это служба, рекомендуемая для подключения к полю перехода, чтобы предотвратить предоставление доступа к решению VMware для Azure через Интернет. Вы не можете использовать Azure бастиона для подключения к виртуальным машинам Azure VMware, так как они не являются объектами Azure IaaS.
 
 #### <a name="can-azure-load-balancer-internal-be-used-for-azure-vmware-solution-vms"></a>Можно ли использовать внутренний Azure Load Balancer для виртуальных машин решения VMware Azure?
-Нет. Azure Load Balancer Internal поддерживает только виртуальные машины Azure IaaS. Azure Load Balancer не поддерживает серверные пулы на основе IP-адресов; только виртуальные машины Azure или масштабируемые наборы виртуальных машин (VMSS), в которых виртуальные машины Azure VMware не являются объектами Azure.
+Нет. Azure Load Balancer Internal поддерживает только виртуальные машины Azure IaaS. Azure Load Balancer не поддерживает серверные пулы на основе IP-адресов; только виртуальные машины Azure или масштабируемые наборы виртуальных машин, в которых виртуальные машины Azure VMware не являются объектами Azure.
 
 #### <a name="can-an-existing-expressroute-gateway-be-used-to-connect-to-azure-vmware-solution"></a>Можно ли использовать существующий шлюз ExpressRoute для подключения к решению Azure VMware?
 Да, вы можете использовать существующий шлюз ExpressRoute для подключения к решению Azure VMware, если он не превышает ограничение в четыре канала ExpressRoute на виртуальную сеть.  Но для доступа к Решению Azure VMware из локальной среды через ExpressRoute требуется служба ExpressRoute Global Reach, так как шлюз ExpressRoute не обеспечивает транзитивную маршрутизацию между подключенными каналами.
@@ -280,6 +280,17 @@ VMware HCX Enterprise Edition (EE) предоставляется в соста�
    `"
 
    For additional ways to register the resource provider, see [Azure resource providers and types](../azure-resource-manager/management/resource-providers-and-types.md).
+
+
+## Customer communication
+
+#### How can I receive an alert when Azure sends service health notifications to my Azure subscription?
+
+Service issues, planned maintenance, health advisories, security advisories notifications are published through **Service Health** in the Azure portal.  You can take timely actions when you set up activity log alerts for these notifications. For more information, see [Create service health alerts using the Azure portal](../service-health/alerts-activity-log-service-notifications-portal.md#create-service-health-alert-using-azure-portal).
+
+:::image type="content" source="media/service-health.png" alt-text="Screenshot of Service Health notifications":::
+
+
 
 <!-- LINKS - external -->
 [kb2106952]: https://kb.vmware.com/s/article/2106952?lang=en_US&queryTerm=21069522

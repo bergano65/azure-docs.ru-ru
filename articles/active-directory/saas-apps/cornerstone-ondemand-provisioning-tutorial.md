@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 4200bc9879aba5e18282123be03576cc617a5e14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 59c599167089d222324ed880c18e68d763f5e468
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88549235"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358462"
 ---
 # <a name="tutorial-configure-cornerstone-ondemand-for-automatic-user-provisioning"></a>Руководство по Настройка Cornerstone OnDemand для автоматической подготовки пользователей
 
@@ -54,7 +54,7 @@ ms.locfileid: "88549235"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Cornerstone OnDemand** и выберите **Cornerstone OnDemand** на панели результатов. Нажмите **Добавить**, чтобы добавить приложение.
+4. В поле поиска введите **Cornerstone OnDemand** и выберите **Cornerstone OnDemand** на панели результатов. Нажмите **Добавить** , чтобы добавить приложение.
 
     ![Cornerstone OnDemand в списке результатов](common/search-new-app.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "88549235"
 
     * В поле **Домен** введите URL-адрес веб-службы клиента Cornerstone OnDemand. Например, если служба расположена по адресу `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`, а доменом Contoso является `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`. Дополнительные сведения о том, как получить URL-адрес веб-службы, приведены [в этом PDF-документе](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf).
 
-6. После заполнения полей, показанных на шаге 5, выберите **Проверить подключение**, чтобы убедиться, что Azure AD может подключаться к Cornerstone OnDemand. Если установить подключение не удалось, убедитесь, что у учетной записи Cornerstone OnDemand есть разрешения администратора и попробуйте снова.
+6. После заполнения полей, показанных на шаге 5, выберите **Проверить подключение** , чтобы убедиться, что Azure AD может подключаться к Cornerstone OnDemand. Если установить подключение не удалось, убедитесь, что у учетной записи Cornerstone OnDemand есть разрешения администратора и попробуйте снова.
 
     ![Проверка подключения к Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/TestConnection.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "88549235"
 
     ![Синхронизация Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/UserMapping.png)
 
-10. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Cornerstone OnDemand. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Cornerstone OnDemand для операций обновления. Нажмите **Сохранить**, чтобы сохранить все изменения.
+10. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Cornerstone OnDemand. Атрибуты, выбранные как свойства **сопоставления** , используются для сопоставления учетных записей пользователей в Cornerstone OnDemand для операций обновления. Нажмите **Сохранить** , чтобы сохранить все изменения.
 
     ![Сопоставления атрибутов Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/UserMappingAttributes.png)
 
