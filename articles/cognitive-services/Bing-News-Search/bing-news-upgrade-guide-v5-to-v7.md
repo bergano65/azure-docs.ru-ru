@@ -10,12 +10,12 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: scottwhi
-ms.openlocfilehash: 564af32b724c8b4883cd27d01813e246e5fa4901
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: fe9511df5fb290853dbd6cb8d39fed4e289fca4d
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100207"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94366423"
 ---
 # <a name="news-search-api-upgrade-guide"></a>Руководство по обновлению API для поиска новостей
 
@@ -42,7 +42,7 @@ ms.locfileid: "93100207"
 
 - Коды ошибок версии 5 заменены следующими возможными значениями `code` и `subCode`.
 
-|Код|SubCode (дополнительный код)|Описание
+|Код|SubCode (дополнительный код)|Description
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|Bing возвращает ServerError (ошибку сервера) каждый раз при возникновении любого из условий вложенного кода. Ответ включает в себя ошибки, если код состояния HTTP — 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Блокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса недопустима. Например, отсутствует обязательный параметр или значение параметра недопустимо.<br/><br/>В случае ошибки ParameterMissing или ParameterInvalidValue возвращается код состояния HTTP 400.<br/><br/>При ошибке HttpNotAllowed (HTTP запрещен) будет наблюдаться код состояния HTTP 410.
@@ -75,24 +75,24 @@ InsufficientScope|InsufficientAuthorization
 
 ### <a name="object-changes"></a>Изменения объектов
 
-- В объект [NewsArticle](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle) добавлено поле `contractualRules`. Поле `contractualRules` содержит список правил, которым необходимо следовать (например, определение принадлежности статьи). Необходимо применить правила принадлежности, указанные в поле `contractualRules`, а не в `provider`. Статья включает поле `contractualRules`, только если в ответе [API для поиска в Интернете](../bing-web-search/search-the-web.md) содержится ответ по новостям.
+- В объект [NewsArticle](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle) добавлено поле `contractualRules`. Поле `contractualRules` содержит список правил, которым необходимо следовать (например, определение принадлежности статьи). Необходимо применить правила принадлежности, указанные в поле `contractualRules`, а не в `provider`. Статья включает поле `contractualRules`, только если в ответе [API для поиска в Интернете](../bing-web-search/overview.md) содержится ответ по новостям.
 
 ## <a name="non-breaking-changes"></a>Некритические изменения
 
 ### <a name="query-parameters"></a>Параметры запроса
 
-- Добавлены продукты, которые можно задать в качестве значения параметра запроса [category](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category). Категории по рынкам приводятся в [этой статье](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference).
+- Добавлены продукты, которые можно задать в качестве значения параметра запроса [category](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category). Категории по рынкам приводятся в [этой статье](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference).
 
-- Добавлен параметр запроса [SortBy](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#sortby), который возвращает темы, набирающие популярность (начиная с самых последних).
+- Добавлен параметр запроса [SortBy](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#sortby), который возвращает темы, набирающие популярность (начиная с самых последних).
 
-- Добавлен параметр запроса [Since](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#since), который возвращает темы, набирающие популярность. Это темы, обнаруженные Bing во время или после указанной метки времени (формат времени UNIX EPOCH).
+- Добавлен параметр запроса [Since](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#since), который возвращает темы, набирающие популярность. Это темы, обнаруженные Bing во время или после указанной метки времени (формат времени UNIX EPOCH).
 
 ### <a name="object-changes"></a>Изменения объектов
 
-- В объект [NewsArticle](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle) добавлено поле `mentions`. Поле `mentions` содержит список сущностей (людей или мест), найденных в статье.
+- В объект [NewsArticle](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle) добавлено поле `mentions`. Поле `mentions` содержит список сущностей (людей или мест), найденных в статье.
 
-- В объект [NewsArticle](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle) добавлено поле `video`. Поле `video` содержит видео, связанное с новостной статьей. Видео является либо \<iframe\> внедренным, либо эскизом движения.
+- В объект [NewsArticle](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle) добавлено поле `video`. Поле `video` содержит видео, связанное с новостной статьей. Видео является либо \<iframe\> внедренным, либо эскизом движения.
 
-- В объект [News](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news) добавлено поле `sort`. Поле `sort` показывает порядок сортировки статей. Например, статьи сортируются по релевантности (по умолчанию) или дате.
+- В объект [News](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news) добавлено поле `sort`. Поле `sort` показывает порядок сортировки статей. Например, статьи сортируются по релевантности (по умолчанию) или дате.
 
-- Добавлен объект [SortValue](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#sortvalue), который определяет порядок сортировки. Поле `isSelected` указывает, используется ли в ответе порядок сортировки. Значение **true** означает, что в ответе использовался порядок сортировки. А если `isSelected` имеет значение **false** , то вы можете использовать URL-адрес в поле `url`, чтобы запросить другой порядок сортировки.
+- Добавлен объект [SortValue](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#sortvalue), который определяет порядок сортировки. Поле `isSelected` указывает, используется ли в ответе порядок сортировки. Значение **true** означает, что в ответе использовался порядок сортировки. А если `isSelected` имеет значение **false** , то вы можете использовать URL-адрес в поле `url`, чтобы запросить другой порядок сортировки.

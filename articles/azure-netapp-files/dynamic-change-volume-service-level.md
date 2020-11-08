@@ -12,16 +12,19 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 08/26/2020
+ms.date: 11/06/2020
 ms.author: b-juche
-ms.openlocfilehash: 3f5627f4bd0d62a70ef9d7809f0bf1441141f4c6
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: fe4b2925a34ae7c06bb0b597f0bcdcc3f4d80896
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931251"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94363227"
 ---
 # <a name="dynamically-change-the-service-level-of-a-volume"></a>Динамическое изменение уровня обслуживания тома
+
+> [!IMPORTANT] 
+> Регистрация в общедоступной предварительной версии для этой функции находится на удержании до дальнейшего уведомления. 
 
 Уровень обслуживания существующего тома можно изменить, переместив том в другой пул мощностей, который использует требуемый [уровень обслуживания](azure-netapp-files-service-levels.md) для тома. Это изменение уровня обслуживания для тома выполняется на месте и не требует переноса данных. Он также не влияет на доступ к тому.  
 
@@ -33,28 +36,28 @@ ms.locfileid: "91931251"
 
 * После перемещения тома в другой пул емкостью вы больше не сможете получить доступ к предыдущим журналам действий тома и метрикам тома. Том будет начинаться с новых журналов действий и метрик в новом пуле емкости.
 
-* При перемещении тома в пул ресурсов более высокого уровня обслуживания (например, при переходе с уровня " *стандартный* " на уровень " *премиум* " или " *Ultra* Service") необходимо подождать не менее семи дней, прежде чем можно будет переместить *этот том в* пул емкости более низкого уровня обслуживания (например, переход с *Ultra* на *Premium* или *Standard*).  
+* При перемещении тома в пул ресурсов более высокого уровня обслуживания (например, при переходе с уровня " *стандартный* " на уровень " *премиум* " или " *Ultra* Service") необходимо подождать не менее семи дней, прежде чем можно будет переместить *этот том в* пул емкости более низкого уровня обслуживания (например, переход с *Ultra* на *Premium* или *Standard* ).  
+<!-- 
+## Register the feature
 
-## <a name="register-the-feature"></a>регистрация компонента
+The feature to move a volume to another capacity pool is currently in preview. If you are using this feature for the first time, you need to register the feature first.
 
-Функция перемещения тома в другой пул емкости сейчас доступна в предварительной версии. Если эта функция используется впервые, необходимо сначала зарегистрировать эту функцию.
-
-1. Зарегистрируйте функцию: 
+1. Register the feature: 
 
     ```azurepowershell-interactive
     Register-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFTierChange
     ```
 
-2. Проверьте состояние регистрации компонента: 
+2. Check the status of the feature registration: 
 
     > [!NOTE]
-    > **RegistrationState** может находиться в состоянии до `Registering` 60 минут до перехода на `Registered` . Прежде чем продолжить, подождите, пока состояние не будет **зарегистрировано** .
+    > The **RegistrationState** may be in the `Registering` state for up to 60 minutes before changing to`Registered`. Wait until the status is **Registered** before continuing.
 
     ```azurepowershell-interactive
     Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFTierChange
     ```
-Вы также можете использовать [Azure CLI команды](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
-
+You can also use [Azure CLI commands](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` and `az feature show` to register the feature and display the registration status. 
+--> 
 ## <a name="move-a-volume-to-another-capacity-pool"></a>Перемещение тома в другой пул мощностей
 
 1.  На странице тома щелкните правой кнопкой мыши том, уровень обслуживания которого необходимо изменить. Выберите **изменить пул**.

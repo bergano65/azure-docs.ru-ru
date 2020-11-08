@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: d1405bce6761b6702146418296cb7b47bb9124ee
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: f270ac736bb5dbc429dc8659cc88e63d0b51a523
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357187"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94366644"
 ---
 # <a name="limits-in-azure-database-for-postgresql---flexible-server"></a>Ограничения в базе данных Azure для PostgreSQL-гибкого сервера
 
@@ -78,7 +78,7 @@ PostgreSQL подключение, даже бездействующее, мож
 - Zone-Redundant HA сейчас не поддерживается для пакетных серверов.
 - IP-адрес сервера базы данных изменяется при отработки отказа сервера в режим высокой доступности. Убедитесь, что вместо IP-адреса сервера используется запись DNS.
 - Если логическая репликация настроена с помощью гибкого сервера с высоким уровнем доступности, то в случае отработки отказа на резервный сервер, логические слоты репликации не копируются на резервный сервер. 
-- Дополнительные ограничения высокой доступности см. на странице с [документацией по высокой доступности](concepts-high-availability.md) .
+- Дополнительные сведения о доступности с избыточностью в зонах, включая ограничения, см. на странице с описанием [принципов и высокой доступности](concepts-high-availability.md) .
 
 ### <a name="availability-zones"></a>Зоны доступности
 

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/09/2020
 ms.author: aahi
 ms.reviewer: jdesousa
-ms.openlocfilehash: 14fd7c2b034077d818d1a1224d3c4c12a7fc07bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c587bb042601b947b71658bf790e9acdfbdbf742
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855646"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94363788"
 ---
 # <a name="text-offsets-in-the-text-analytics-api-output"></a>Смещения текста в выходных данных API анализа текста
 
@@ -34,9 +34,9 @@ ms.locfileid: "88855646"
 
 ## <a name="extracting-substrings-from-text-with-offsets"></a>Извлечение подстрок из текста с использованием смещений
 
-Смещение может вызвать проблемы при использовании символьных методов подстроки, например метода .NET [substring ()](https://docs.microsoft.com/dotnet/api/system.string.substring?view=netframework-4.8) . Одна из проблем заключается в том, что смещение может привести к тому, что метод подстроки завершится в середине многосимвольной кодировки графеме, а не в конце.
+Смещение может вызвать проблемы при использовании символьных методов подстроки, например метода .NET [substring ()](/dotnet/api/system.string.substring?view=netframework-4.8) . Одна из проблем заключается в том, что смещение может привести к тому, что метод подстроки завершится в середине многосимвольной кодировки графеме, а не в конце.
 
-В .NET рассмотрите возможность использования класса [StringInfo](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo?view=netframework-4.8) , который позволяет работать со строкой в виде набора текстовых элементов, а не отдельных символьных объектов. Вы также можете найти библиотеки графеме Splitter в предпочитаемой программной среде. 
+В .NET рассмотрите возможность использования класса [StringInfo](/dotnet/api/system.globalization.stringinfo?view=netframework-4.8) , который позволяет работать со строкой в виде набора текстовых элементов, а не отдельных символьных объектов. Вы также можете найти библиотеки графеме Splitter в предпочитаемой программной среде. 
 
 API анализа текста также возвращает эти текстовые элементы для удобства.
 

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: marhamil
 ms.custom: devx-track-python
-ms.openlocfilehash: aa650fe9cb7df64a6a7a948224be225ecfad9057
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d2995f39bc61ae5bb87abafd674f411271e57ca2
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324614"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94366287"
 ---
 # <a name="recipe-predictive-maintenance-with-the-cognitive-services-for-big-data"></a>Рецепт: диагностическое обслуживание с помощью Cognitive Services для больших данных
 
@@ -31,13 +31,13 @@ ms.locfileid: "93324614"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
-* [Рабочая область Azure синапсе](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace) , настроенная с [бессерверным пулом Apache Spark](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool)
+* [Рабочая область Azure синапсе](../../../synapse-analytics/quickstart-create-workspace.md) , настроенная с [бессерверным пулом Apache Spark](../../../synapse-analytics/quickstart-create-apache-spark-pool-portal.md)
 
 ## <a name="setup"></a>Настройка
 
 ### <a name="create-an-anomaly-detector-resource"></a>Создание ресурса "Детектор аномалий"
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для переводчика с помощью [портал Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli). Кроме того, вы можете сделать следующее:
+Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для переводчика с помощью [портал Azure](../../cognitive-services-apis-create-account.md) или [Azure CLI](../../cognitive-services-apis-create-account-cli.md). Кроме того, вы можете сделать следующее:
 
 - Просмотр существующего ресурса в  [портал Azure](https://portal.azure.com/).
 
@@ -100,9 +100,9 @@ df_anomaly.select("timestamp","value","deviceId","anomalies.isAnomaly").show(3)
 
 | TIMESTAMP           |   value | deviceId   | isAnomaly   |
 |:--------------------|--------:|:-----------|:------------|
-| 2020-05-01 18:33:51 |    3174 | dev-7      | False       |
-| 2020-05-01 18:33:52 |    2976 | dev-7      | False       |
-| 2020-05-01 18:33:53 |    2714 | dev-7      | False       |
+| 2020-05-01 18:33:51 |    3174 | dev-7      | Неверно       |
+| 2020-05-01 18:33:52 |    2976 | dev-7      | Неверно       |
+| 2020-05-01 18:33:53 |    2714 | dev-7      | Неверно       |
 
 
  ## <a name="visualize-anomalies-for-one-of-the-devices"></a>Визуализация аномалий для одного из устройств
@@ -149,6 +149,6 @@ plt.show()
 
 ![График детектора аномалий](../media/anomaly-output.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как выполнить прогнозируемое обслуживание в масштабе с помощью Azure Cognitive Services, Azure синапсе Analytics и Azure CosmosDB. Дополнительные сведения см. в полном примере на сайте [GitHub](https://github.com/Azure-Samples/cosmosdb-synapse-link-samples).

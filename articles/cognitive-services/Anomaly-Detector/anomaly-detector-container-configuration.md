@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: mbullwin
-ms.openlocfilehash: ae987a4239f478162e1e1f251e0d6607d63e02c5
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: c175a52259e9cfe5b4d03ce0279bbe24d16a48ae
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019755"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94363720"
 ---
 # <a name="configure-anomaly-detector-containers"></a>Настройка контейнеров Детектора аномалий
 
@@ -28,7 +28,7 @@ ms.locfileid: "92019755"
 |Обязательно|Параметр|Назначение|
 |--|--|--|
 |Да|[ApiKey](#apikey-configuration-setting)|Используется для отслеживания данных для выставлении счетов.|
-|Нет|[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|
+|Нет|[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](/azure/application-insights).|
 |Да|[Выставление счетов](#billing-configuration-setting)|Задает URI конечной точки для ресурса службы в Azure.|
 |Да|[Лицензионное соглашение](#eula-setting)| Указывает, что вы приняли условия лицензии для контейнера.|
 |Нет|[Fluentd](#fluentd-settings)|Записывает данные в журнал и (необязательно) передает метрики на сервер Fluentd.|
@@ -90,14 +90,14 @@ ms.locfileid: "92019755"
 
 |Необязательно| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строка | В контейнерах детекторов аномалий это не используется.|
-|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию: `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
+|Нельзя использовать| `Input` | Строка | В контейнерах детекторов аномалий это не используется.|
+|Необязательный| `Output` | Строка | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
 В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](anomaly-detector-container-howto.md#stop-the-container).
 
-* **Символ продолжения строки**: команды DOCKER в следующих разделах используют обратную косую черту, в `\` качестве символа продолжения строки для оболочки bash. Замените или удалите ее в соответствии с требованиями вашей операционной системы. Например, символ продолжения строки для Windows — это крышка (`^`). Замените обратную косую черту крышкой. 
+* **Символ продолжения строки** : команды DOCKER в следующих разделах используют обратную косую черту, в `\` качестве символа продолжения строки для оболочки bash. Замените или удалите ее в соответствии с требованиями вашей операционной системы. Например, символ продолжения строки для Windows — это крышка (`^`). Замените обратную косую черту крышкой. 
 * **Порядок аргументов**. не изменяйте порядок аргументов, если вы не знакомы с контейнерами DOCKER.
 
 Замените значение в квадратных скобках `{}` собственными значениями:
@@ -137,7 +137,7 @@ ms.locfileid: "92019755"
   Logging:Console:LogLevel:Default=Information
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"](how-to/deploy-anomaly-detection-on-container-instances.md)
 * [Дополнительные сведения о службе API детектора аномалий](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)

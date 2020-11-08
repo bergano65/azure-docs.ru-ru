@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: aahi
-ms.openlocfilehash: d9517eef8976e79db21fbe552861d0d59923e8ba
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: e3e0ae444e2b3b6ac195a83653baf4b71bac6644
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173949"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94363873"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Как использовать Анализ текста для работоспособности (Предварительная версия)
 
@@ -84,7 +84,7 @@ ms.locfileid: "92173949"
 Существует несколько способов установки и запуска контейнера. 
 
 - Используйте [портал Azure](text-analytics-how-to-install-containers.md?tabs=healthcare) , чтобы создать анализ текста ресурс, и используйте DOCKER для получения контейнера.
-- Используйте следующие сценарии PowerShell и [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) для автоматизации конфигурации контейнера развертывания ресурсов.
+- Используйте следующие сценарии PowerShell и [Azure CLI](/cli/azure/?view=azure-cli-latest) для автоматизации конфигурации контейнера развертывания ресурсов.
 
 ### <a name="install-the-container-using-azure-web-app-for-containers"></a>Установка контейнера с помощью Azure Веб-приложение для контейнеров
 
@@ -124,7 +124,7 @@ az webapp config appsettings set -g $resource_group_name -n $appservice_name --s
 Вы также можете использовать экземпляр контейнера Azure (ACI), чтобы упростить развертывание. ACI — это ресурс, который позволяет запускать контейнеры DOCKER по запросу в управляемой среде Azure, не поддерживающей работу сервера. 
 
 Инструкции по развертыванию ресурса ACI с помощью портал Azure см. в статье Использование службы " [экземпляры контейнеров Azure](text-analytics-how-to-use-container-instances.md) ". Вы также можете использовать приведенный ниже сценарий PowerShell с помощью Azure CLI, который создаст ACI в подписке с помощью образа контейнера.  Дождитесь завершения сценария (приблизительно 25-30 минут) перед отправкой первого запроса.  Из-за ограничения на максимальное число ЦП на ресурс ACI не выбирайте этот параметр, если предполагается отправлять более 5 больших документов (примерно 5000 символов каждый) для каждого запроса.
-Сведения о доступности см. в статье [ACI региональные службы поддержки](https://docs.microsoft.com/azure/container-instances/container-instances-region-availability) . 
+Сведения о доступности см. в статье [ACI региональные службы поддержки](../../../container-instances/container-instances-region-availability.md) . 
 
 > [!NOTE] 
 > В службе "экземпляры контейнеров Azure" не включена поддержка HTTPS для встроенных доменов. Если требуется протокол HTTPS, необходимо настроить его вручную, включая создание сертификата и регистрацию домена. Инструкции для этого можно найти в NGINX ниже.

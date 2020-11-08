@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 03/02/2019
 ms.author: aahi
-ms.openlocfilehash: 79bbdd109d005b7c6de293aebf50433fb7ea1d91
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c3908c81e7d89efe3da90f9707023cb7c184795
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87291647"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94365014"
 ---
 # <a name="external--community-content-for-the-text-analytics-cognitive-service"></a>Внешнее содержимое и материалы сообщества для API анализа текста (Cognitive Service)
 
@@ -31,11 +31,11 @@ ms.locfileid: "87291647"
 
 + [Анализ тональности в приложении логики с использованием данных SQL Server (блог TechNet)](https://social.technet.microsoft.com/wiki/contents/articles/36074.logic-apps-with-azure-cognitive-service.aspx)
 
-+ [Анализ тональности с помощью Dynamics 365 CRM Online (блог MSDN)](https://blogs.msdn.microsoft.com/geoffreyinnis/2016/07/11/sentiment-analysis-in-usd-with-cognitive-services-text-analytics/) 
++ [Анализ тональности с помощью Dynamics 365 CRM Online (блог MSDN)](/archive/blogs/geoffreyinnis/sentiment-analysis-in-usd-with-cognitive-services-text-analytics) 
 
 + Блог Power BI. Извлечение ключевых фраз из сообщений Facebook: [часть 1](https://community.powerbi.com/t5/Community-Blog/Text-Analytics-in-Power-BI-Extraction-of-key-phrases-from/ba-p/88483) и [часть 2](https://community.powerbi.com/t5/Community-Blog/Text-Analytics-in-Power-BI-Extraction-of-key-phrases-from/ba-p/88487)
 
-+ [Поиск тональности комментариев в группе Yammer с помощью MS Flow (Майкрософт Technical Community)](https://docs.microsoft.com/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure)
++ [Поиск тональности комментариев в группе Yammer с помощью MS Flow (Майкрософт Technical Community)](/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure)
 
 
 

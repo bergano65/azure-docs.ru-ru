@@ -2,13 +2,13 @@
 title: Поддержка операции перемещения типом ресурсов
 description: Список типов ресурсов Azure, подлежащих перемещению в новую группу ресурсов или подписку.
 ms.topic: conceptual
-ms.date: 09/23/2020
-ms.openlocfilehash: 7d5875287c7af905579397164029ef0504d6b9dc
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.date: 11/06/2020
+ms.openlocfilehash: 5b71c991136533096604c8a35af7989a227b6d2a
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337956"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94364235"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 
@@ -792,7 +792,6 @@ ms.locfileid: "94337956"
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | datafactories | Да | Да |
-> | datafactoryschema | нет | нет |
 > | factories | Да | Да |
 
 ## <a name="microsoftdatalake"></a>Microsoft.DataLake
@@ -1135,7 +1134,7 @@ ms.locfileid: "94337956"
 > | транзакции | нет | нет |
 > | vminsightsonboardingstatuses | нет | нет |
 > | webtests | Да | Да |
-> | веб-тесты и жеттестресултфиле | Нет | нет |
+> | веб-тесты и жеттестресултфиле | Нет | Нет |
 > | workbooks | Да | Да |
 > | workbooktemplates | Да | Да |
 
@@ -1433,7 +1432,7 @@ ms.locfileid: "94337956"
 > | privatednszones / virtualnetworklinks | Да | Да |
 > | privatednszonesinternal | нет | нет |
 > | privateendpointredirectmaps | нет | нет |
-> | privateendpoints | Нет | нет |
+> | privateendpoints | Нет | Нет |
 > | privatelinkservices | нет | нет |
 > | publicipaddresses | Да — Базовый SKU<br>Да — SKU "Стандартный" | Да — Базовый SKU<br>Нет — Стандартный SKU |
 > | publicipprefixes | Да | Да |
@@ -1475,9 +1474,9 @@ ms.locfileid: "94337956"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | hypervsites | Нет | Нет |
+> | hypervsites | нет | Нет |
 > | importsites | Нет | нет |
-> | serversites | нет | нет |
+> | serversites | Нет | Нет |
 > | vmwaresites | нет | нет |
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
@@ -1514,7 +1513,7 @@ ms.locfileid: "94337956"
 > | legacypeerings | нет | нет |
 > | peerasns | нет | нет |
 > | peeringlocations | нет | нет |
-> | peerings | Нет | Нет |
+> | peerings | нет | нет |
 > | peeringservicecountries | нет | нет |
 > | peeringservicelocations | нет | нет |
 > | peeringserviceproviders | нет | нет |
@@ -1950,7 +1949,7 @@ ms.locfileid: "94337956"
 > | ------------- | ----------- | ---------- |
 > | account | нет | нет |
 > | account / extension | нет | нет |
-> | account / project | нет | нет |
+> | account / project | нет | Нет |
 
 ## <a name="microsoftvmware"></a>Microsoft.VMware
 
@@ -2019,7 +2018,7 @@ ms.locfileid: "94337956"
 > | sites / premieraddons | Да | Да |
 > | sites / slots | Да | Да |
 > | sourcecontrols | нет | нет |
-> | staticsites | нет | нет |
+> | staticsites | нет | Нет |
 
 ## <a name="microsoftwindowsesu"></a>Microsoft.WindowsESU
 

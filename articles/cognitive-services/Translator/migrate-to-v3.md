@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: fb907e0b9c923a77c6956723f6df397fabd84da8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f22213bf192b12e046bab12346e5d5d83fb36b96
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86523984"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94364281"
 ---
 # <a name="translator-v2-to-v3-migration"></a>Миграция с версии 2 на v3
 
@@ -37,7 +37,7 @@ ms.locfileid: "86523984"
 * В этот API-интерфейс добавлен метод Transliterate. Этот метод преобразует слова и предложения в одном скрипте (например, арабском) в другой скрипт (например, латинский).
 * Языки. новый метод "Languages" предоставляет сведения о языке в формате JSON для использования с методами "транслируюте", "Dictionary" и "транслитерированный".
 * Новая возможность преобразования. в метод "перевести" добавлены новые возможности для поддержки некоторых функций, которые были в API v2 в качестве отдельных методов. В качестве примера можно привести метод TranslateArray.
-* Проговорите, что функция преобразования текста в речь больше не поддерживается в Microsoft Translator. Функция преобразования текста в речь доступна в [службе распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech).
+* Проговорите, что функция преобразования текста в речь больше не поддерживается в Microsoft Translator. Функция преобразования текста в речь доступна в [службе распознавания речи (Майкрософт)](../speech-service/text-to-speech.md).
 
 Ниже приведен список методов версий 2 и 3, в котором указаны методы версии 3 и API-интерфейсы, предоставляющие возможности версии 2.
 
@@ -47,8 +47,8 @@ ms.locfileid: "86523984"
 | `TranslateArray`      | [Translate](reference/v3-0-translate.md)        |
 | `GetLanguageNames`      | [Языки](reference/v3-0-languages.md)         |
 | `GetLanguagesForTranslate`     | [Языки](reference/v3-0-languages.md)       |
-| `GetLanguagesForSpeak`      | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
-| `Speak`     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
+| `GetLanguagesForSpeak`      | [Служба распознавания речи (Майкрософт)](../speech-service/language-support.md#text-to-speech)         |
+| `Speak`     | [Служба распознавания речи (Майкрософт)](../speech-service/text-to-speech.md)          |
 | `Detect`     | [Detect](reference/v3-0-detect.md)         |
 | `DetectArray`     | [Detect](reference/v3-0-detect.md)         |
 | `AddTranslation`     | Компонент больше не поддерживается.       |
@@ -86,7 +86,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 ## <a name="v3-end-points"></a>Конечные точки версии 3
 
-Global
+Глобальный
 
 * api.cognitive.microsofttranslator.com
 
@@ -118,8 +118,8 @@ Global
 
 | Версия | Конечная точка | Соответствие требованиям процессора GDPR | Использование Translator Hub | Использование Пользовательского переводчика (предварительная версия) |
 | :------ | :------- | :------------------------ | :----------------- | :------------------------------ |
-|Переводчик версии 2|    api.microsofttranslator.com|    нет    |Да    |нет|
-|Translator версии 3|    api.cognitive.microsofttranslator.com|    Да|    нет|    Да|
+|Переводчик версии 2|    api.microsofttranslator.com|    Нет    |Да    |Нет|
+|Translator версии 3|    api.cognitive.microsofttranslator.com|    Да|    Нет|    Да|
 
 **Translator версии 3**
 * Является общедоступным и полностью поддерживается.
@@ -137,13 +137,13 @@ Global
 
 Ни одна из версий транслятора не создает запись переводов. Ваши переводы никогда не передаются третьим лицам. Дополнительные сведения см. на веб-странице Translator [об отсутствии отслеживания](https://www.aka.ms/NoTrace).
 
-## <a name="links"></a>Ссылки
+## <a name="links"></a>Создание ссылок
 
 * [Политика конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement)
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)
 * [Условия служб Online Services](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [API перевода текстов версии 3.0](reference/v3-0-reference.md)

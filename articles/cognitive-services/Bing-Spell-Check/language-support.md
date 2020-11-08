@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: 2b4e4eb84cecf2f68c50f0a40630cc2e6f34554f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 38bf38f47e4430c847e54bd89f6bf3cd7be50527
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93084213"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94367086"
 ---
 # <a name="language-and-region-support-for-bing-spell-check-api"></a>Поддержка языков и регионов в API проверки орфографии Bing
 
@@ -26,7 +26,7 @@ ms.locfileid: "93084213"
 
 В API проверки орфографии Bing поддерживаются перечисленные ниже языки (только в режиме `spell`).
 
-Учтите, что для работы с любым языком, кроме `en-US`, необходимо задать `mkt`, а также `Accept-Language` или `setLang`, как описано в [справочнике по API проверки орфографии версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference).
+Учтите, что для работы с любым языком, кроме `en-US`, необходимо задать `mkt`, а также `Accept-Language` или `setLang`, как описано в [справочнике по API проверки орфографии версии 7](/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference).
 
 | Язык    | Код языка |
 |:----------- |:-------------:|
@@ -71,7 +71,7 @@ ms.locfileid: "93084213"
 | Шведский     | `sv`          |
 | Турецкий     | `tr`          |
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
-- [Страница документации по службам Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/)
+- [Страница документации по службам Cognitive Services](../index.yml)
 - [Страница продукта Cognitive Services](https://azure.microsoft.com/services/cognitive-services/)

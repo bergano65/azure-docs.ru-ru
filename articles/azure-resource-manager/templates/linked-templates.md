@@ -2,19 +2,19 @@
 title: Связывание шаблонов для развертывания
 description: Описывает, как использовать связанные шаблоны в шаблоне диспетчера ресурсов Azure для создания решения модульных шаблонов. Показывает, как передавать значения параметров, указывать файл параметров и динамически создаваемые URL-адреса.
 ms.topic: conceptual
-ms.date: 09/08/2020
-ms.openlocfilehash: fb742ed4fabd6630d2d27f5876719e2e2b1a9a4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/06/2020
+ms.openlocfilehash: 603445fdd96cc72a2d64bae21a47cfeabd6dd167
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91369320"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94366343"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Использование связанных и вложенных шаблонов при развертывании ресурсов Azure
 
 Для развертывания сложных решений можно разбить шаблон на множество связанных шаблонов, а затем развернуть их вместе с помощью основного шаблона. Связанные шаблоны могут быть отдельными файлами или синтаксисом шаблонов, внедренными в основной шаблон. В этой статье используется термин **связанный шаблон** для ссылки на отдельный файл шаблона, на который есть ссылка через ссылку из основного шаблона. Он использует термин **вложенный шаблон** для ссылки на синтаксис внедренного шаблона в основном шаблоне.
 
-Для небольших и средних решений отдельный шаблон проще в понимании и обслуживании. Все ресурсы и значения можно увидеть в отдельном файле. В сложных сценариях связанные шаблоны позволяют разбить решение на целевые компоненты. Вы можете легко повторно использовать эти шаблоны для других сценариев.
+Для небольших и средних решений отдельный шаблон проще в понимании и обслуживании. Все ресурсы и значения можно увидеть в отдельном файле. Для более сложных сценариев связанные шаблоны позволяют разбить решение на целевые компоненты. Вы можете легко повторно использовать эти шаблоны для других сценариев.
 
 Подробнее см. [Руководство. Создание связанных шаблонов Azure Resource Manager](./deployment-tutorial-linked-template.md).
 
@@ -96,7 +96,7 @@ ms.locfileid: "91369320"
 
 ### <a name="expression-evaluation-scope-in-nested-templates"></a>Область вычисления выражения во вложенных шаблонах
 
-При использовании вложенного шаблона можно указать, должны ли выражения шаблона вычисляться в области родительского шаблона или вложенного шаблона. Область определяет, как разрешаются параметры, переменные и функции, такие как [resourceGroup](template-functions-resource.md#resourcegroup) и [Подписка](template-functions-resource.md#subscription) .
+При использовании вложенного шаблона можно указать, должны ли его выражения вычисляться в области родительского шаблона или вложенного шаблона. Область определяет, как разрешаются параметры, переменные и функции, такие как [resourceGroup](template-functions-resource.md#resourcegroup) и [Подписка](template-functions-resource.md#subscription) .
 
 Область задается через `expressionEvaluationOptions` свойство. По умолчанию `expressionEvaluationOptions` свойство имеет значение, то `outer` есть использует область родительского шаблона. Установите значение, чтобы `inner` выражения выводились в области вложенного шаблона.
 
@@ -283,7 +283,7 @@ ms.locfileid: "91369320"
 
 ## <a name="linked-template"></a>Связанный шаблон
 
-Чтобы связать шаблон, добавьте [ресурс развертывания](/azure/templates/microsoft.resources/deployments) в основной шаблон. В свойстве **templateLink** укажите универсальный код ресурса (URI) шаблона, который нужно включить. В следующем примере выполняется ссылка на шаблон, который развертывает новую учетную запись хранения.
+Чтобы связать шаблон, добавьте [ресурс развертывания](/azure/templates/microsoft.resources/deployments) в основной шаблон. В свойстве **templateLink** укажите универсальный код ресурса (URI) шаблона, который нужно включить. В следующем примере выполняется ссылка на шаблон, который находится в учетной записи хранения.
 
 ```json
 {
@@ -310,13 +310,17 @@ ms.locfileid: "91369320"
 }
 ```
 
-При ссылке на связанный шаблон значение `uri` не должно быть локальным файлом или файлом, доступным только в локальной сети. Необходимо указать значение URI, которое можно скачать как **http** или **HTTPS**.
+При ссылке на связанный шаблон значение `uri` не может быть локальным файлом или файлом, доступным только в локальной сети. Azure Resource Manager должен иметь доступ к шаблону. Укажите значение URI, которое скачивается как **http** или **HTTPS**. 
 
-> [!NOTE]
->
-> Вы можете ссылаться на шаблоны с помощью параметров, которые в конечном итоге разрешаются для чего-либо, использующего **http** или **HTTPS**, например с помощью `_artifactsLocation` параметра следующим образом: `"uri": "[concat(parameters('_artifactsLocation'), '/shared/os-disk-parts-md.json', parameters('_artifactsLocationSasToken'))]",`
+Вы можете ссылаться на шаблоны с помощью параметров, включающих **http** или **HTTPS**. Например, распространенным шаблоном является использование `_artifactsLocation` параметра. Связанный шаблон можно задать с помощью выражения, например:
 
-Диспетчер ресурсов должен иметь доступ к шаблону. Один из вариантов — разместить связанный шаблон в учетной записи хранения и использовать универсальный код ресурса (URI) этого элемента.
+```json
+"uri": "[concat(parameters('_artifactsLocation'), '/shared/os-disk-parts-md.json', parameters('_artifactsLocationSasToken'))]"
+```
+
+Если вы создаете ссылку на шаблон в GitHub, используйте необработанный URL-адрес. Ссылка имеет формат: `https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-with-templates/quickstart-template/azuredeploy.json` . Чтобы получить необработанную ссылку, выберите **необработанный**.
+
+:::image type="content" source="./media/linked-templates/select-raw.png" alt-text="Выберите необработанный URL-адрес":::
 
 ### <a name="parameters-for-linked-template"></a>Параметры для связанного шаблона
 
@@ -384,7 +388,7 @@ ms.locfileid: "91369320"
 
 В предыдущих примерах были показаны жестко запрограммированные значения URL-адреса для ссылок на шаблоны. Этот подход может работать для простого шаблона, но он не подходит для большого набора модульных шаблонов. Вместо этого можно создать статическую переменную, которая содержит базовый URL-адрес для основного шаблона, а затем динамически создавать URL-адреса для связанных шаблонов на основе этого адреса. Преимущество такого подхода заключается в том, что вы можете легко перемещать или разветвление шаблона, так как необходимо изменить только статическую переменную в основном шаблоне. Основной шаблон передает правильные URI через разделенный шаблон.
 
-В следующем примере показано, как использовать базовый URL-адрес для создания двух URL-адресов для связанных шаблонов (**sharedTemplateUrl** и **vmTemplate**).
+В следующем примере показано, как использовать базовый URL-адрес для создания двух URL-адресов для связанных шаблонов ( **sharedTemplateUrl** и **vmTemplate** ).
 
 ```json
 "variables": {
@@ -799,11 +803,11 @@ az deployment group create --resource-group ExampleGroup --template-uri $url?$to
 
 В следующих примерах показаны наиболее частые способы использования связанных шаблонов.
 
-|Основной шаблон  |Связанный шаблон |Описание  |
+|Основной шаблон  |Связанный шаблон |Description  |
 |---------|---------| ---------|
-|[Hello World](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) |[связанный шаблон.](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json) | Возвращает строку из связанного шаблона. |
-|[Подсистема балансировки нагрузки с общедоступным IP-адресом](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[связанный шаблон.](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Возвращает общедоступный IP-адрес из связанного шаблона и задает это значение в подсистеме балансировки нагрузки. |
-|[Несколько IP-адресов](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/static-public-ip-parent.json) | [связанный шаблон.](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/static-public-ip.json) |Создает несколько общедоступных IP-адресов в связанном шаблоне.  |
+|[Hello World](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) |[связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json) | Возвращает строку из связанного шаблона. |
+|[Подсистема балансировки нагрузки с общедоступным IP-адресом](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Возвращает общедоступный IP-адрес из связанного шаблона и задает это значение в подсистеме балансировки нагрузки. |
+|[Несколько IP-адресов](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/static-public-ip-parent.json) | [связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/static-public-ip.json) |Создает несколько общедоступных IP-адресов в связанном шаблоне.  |
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

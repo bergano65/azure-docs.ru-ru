@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 5d6b0a6be0d99815c4d14bb04e56241d011812b5
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 1d9b7c79919569830834915fc609b849e717dce8
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93084958"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94365845"
 ---
 # <a name="bing-entity-search-api-endpoint"></a>Конечная точка API Bing для поиска сущностей
 
@@ -29,17 +29,17 @@ API Bing для поиска сущностей использует одну к
 
 ## <a name="get-entity-results-from-the-endpoint"></a>Получение результатов поиска сущностей из конечной точки
 
-Чтобы получить результаты поиска сущностей с помощью **API Bing** , отправьте запрос `GET` на следующую конечную точку. Используйте [заголовки](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#headers) и [параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#query-parameters) для настройки поискового запроса. Поисковые запросы можно отправлять с помощью параметра `?q=`.
+Чтобы получить результаты поиска сущностей с помощью **API Bing** , отправьте запрос `GET` на следующую конечную точку. Используйте [заголовки](/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#headers) и [параметры запроса](/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#query-parameters) для настройки поискового запроса. Поисковые запросы можно отправлять с помощью параметра `?q=`.
 
 ```cURL
  GET https://api.cognitive.microsoft.com/bing/v7.0/entities
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Основные сведения об API Bing для поиска сущностей](overview.md)
 
-## <a name="see-also"></a>См. также раздел 
+## <a name="see-also"></a>См. также 
 
-Дополнительные сведения о заголовках, параметрах, кодах рынков, объектах ответов, ошибках и т. д. приведены в статье [Bing Entity Search API v7 reference](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference) (Справочник по API Bing для поиска сущностей версии 7).
+Дополнительные сведения о заголовках, параметрах, кодах рынков, объектах ответов, ошибках и т. д. приведены в статье [Bing Entity Search API v7 reference](/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference) (Справочник по API Bing для поиска сущностей версии 7).

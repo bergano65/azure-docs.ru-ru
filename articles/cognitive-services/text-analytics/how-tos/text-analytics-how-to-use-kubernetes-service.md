@@ -10,16 +10,16 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: b7a5953edd9aec96a7f75e747c39e8f07f7210bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 744be742d9f638df14f9d6720c9dad9678685af0
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88243774"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94366899"
 ---
 # <a name="deploy-a-text-analytics-container-to-azure-kubernetes-service"></a>Развертывание контейнера Анализ текста в службе Kubernetes Azure
 
-Узнайте, как развернуть образ контейнера [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers) Cognitive Services Azure в службе Kubernetes Azure (AKS). В этой процедуре показано, как создать ресурс Анализ текста, как создать связанный образ анализа тональности и как выполнить это согласование этих двух элементов из браузера. С помощью контейнеров можно не только управлять инфраструктурой, но и сосредоточиться на разработке приложений.
+Узнайте, как развернуть образ контейнера [Анализ текста](./text-analytics-how-to-install-containers.md) Cognitive Services Azure в службе Kubernetes Azure (AKS). В этой процедуре показано, как создать ресурс Анализ текста, как создать связанный образ анализа тональности и как выполнить это согласование этих двух элементов из браузера. С помощью контейнеров можно не только управлять инфраструктурой, но и сосредоточиться на разработке приложений.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,7 +27,7 @@ ms.locfileid: "88243774"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services), прежде чем начинать работу.
 * Текстовый редактор, например [Visual Studio Code](https://code.visualstudio.com/download).
-* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) установлен.
+* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) установлен.
 * Установленная [CLI Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/) .
 * Ресурс Azure с правильной ценовой категорией. Не все ценовые категории поддерживают этот контейнер.
     * **Анализ текста ресурс Azure** только с ценовыми категориями F0 или Standard.
@@ -49,15 +49,15 @@ ms.locfileid: "88243774"
 
 [!INCLUDE [Verify the Language Detection container instance](../includes/verify-language-detection-container.md)]
 
-#### <a name="sentiment-analysis"></a>[Анализ тональности](#tab/sentiment).
+#### <a name="sentiment-analysis"></a>[анализ тональности](#tab/sentiment);
 
 [!INCLUDE [Sentiment Analysis Kubernetes config and deploy steps](../includes/sentiment-analysis-kubernetes-config-deploy.md)]
 
 [!INCLUDE [Verify the Sentiment Analysis container instance](../includes/verify-sentiment-analysis-container.md)]
 
-***
+**_
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* Использование большего числа [контейнеров Cognitive Services](../../cognitive-services-container-support.md)
-* Использование [подключенной службы анализ текста](../vs-text-connected-service.md)
+_ Использовать больше [контейнеров Cognitive Services](../../cognitive-services-container-support.md)
+* Использование [подключенной службы анализ текста](../index.yml)

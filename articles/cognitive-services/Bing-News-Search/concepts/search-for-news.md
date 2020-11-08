@@ -10,12 +10,12 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: scottwhi
-ms.openlocfilehash: 1e14f13d0e9fba407a983fb182d25c77593e4d3c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: fbe8f9f4c5354d5a1b68909fcb65597e8c03dfb8
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098405"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94367172"
 ---
 # <a name="search-for-news-with-the-bing-news-search-api"></a>Поиск новостей с помощью API Bing для поиска новостей
 
@@ -32,7 +32,7 @@ API Bing для поиска новостей в основном находит
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
-После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки* , установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
+После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки* , установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
 
 ## <a name="get-general-news"></a>Получение общих новостей
 
@@ -50,13 +50,13 @@ Host: api.cognitive.microsoft.com
 
 Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств.
 
-Чтобы получить новости с определенного домена, используйте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx).
+Чтобы получить новости с определенного домена, используйте оператор запроса [site:](/previous-versions/bing/search/ff795613(v=msdn.10)).
 
 ```http
 GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=sailing+dinghies+site:contososailing.com&mkt=en-us HTTP/1.1
 ```
 
-В следующем примере JSON показан ответ на предыдущий запрос. В соответствии с [требованиями к использованию и отображению](../useanddisplayrequirements.md) для API поиска Bing все новостные статьи должны отображаться в порядке, указанном в ответе. Если статья содержит сгруппированные статьи, необходимо указать, что существуют связанные статьи, и отображать их по запросу.
+В следующем примере JSON показан ответ на предыдущий запрос. В соответствии с [требованиями к использованию и отображению](../../bing-web-search/use-display-requirements.md) для API поиска Bing все новостные статьи должны отображаться в порядке, указанном в ответе. Если статья содержит сгруппированные статьи, необходимо указать, что существуют связанные статьи, и отображать их по запросу.
 
 ```json
 {
@@ -104,9 +104,9 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=sailing+dinghies
 }
 ```
 
-В ответе [Новости](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v5-reference#news) перечислены новостные статьи, которые система Bing посчитала соответствующими запросу. Поле `totalEstimatedMatches` содержит оценку количества статей, доступных для просмотра. Сведения о разбиении статей на страницы см. в разделе [Разбиение новостей по страницам](../paging-news.md).
+В ответе [Новости](/rest/api/cognitiveservices-bingsearch/bing-news-api-v5-reference#news) перечислены новостные статьи, которые система Bing посчитала соответствующими запросу. Поле `totalEstimatedMatches` содержит оценку количества статей, доступных для просмотра. Сведения о разбиении статей на страницы см. в разделе [Разбиение новостей по страницам](../../bing-web-search/paging-search-results.md).
 
-Каждый объект [новостной статьи](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v5-reference#newsarticle) в списке содержит название, описание и URL-адрес статьи на исходном веб-сайте. Если статья содержит изображение, то объект включает эскиз этого изображения. Используйте свойства `name` и `url`, чтобы создать гиперссылку, направляющую пользователя к новостной статье на исходном сайте. Если статья содержит изображение, также сделайте его интерактивным с помощью свойства `url`. Обязательно используйте свойство `provider`, чтобы указать источник статьи.
+Каждый объект [новостной статьи](/rest/api/cognitiveservices-bingsearch/bing-news-api-v5-reference#newsarticle) в списке содержит название, описание и URL-адрес статьи на исходном веб-сайте. Если статья содержит изображение, то объект включает эскиз этого изображения. Используйте свойства `name` и `url`, чтобы создать гиперссылку, направляющую пользователя к новостной статье на исходном сайте. Если статья содержит изображение, также сделайте его интерактивным с помощью свойства `url`. Обязательно используйте свойство `provider`, чтобы указать источник статьи.
 
 Если Bing может определить категорию новостной статьи, значит в ней содержится поле `category`.
 
@@ -140,7 +140,7 @@ X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
 Host: api.cognitive.microsoft.com
 ```
 
-Используйте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category), чтобы указать категорию статей для получения. Список возможных категорий новостей, которые можно указать, см. в разделе [News Categories by Market](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news-categories-by-market) (Категории новостей по рынку).
+Используйте параметр запроса [Категория](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category), чтобы указать категорию статей для получения. Список возможных категорий новостей, которые можно указать, см. в разделе [News Categories by Market](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news-categories-by-market) (Категории новостей по рынку).
 
 Ответ на получение новостей по категориям почти такой же, как и на получение общих новостей. Однако все статьи принадлежат к указанной категории.
 
@@ -158,11 +158,11 @@ X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
 Host: api.cognitive.microsoft.com
 ```
 
-Не включайте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category).
+Не включайте параметр запроса [Категория](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category).
 
-Ответ на получение краткой сводки новостей почти такой же, как и на получение главных новостей за сегодняшний день. Если статья является новостной сводкой, полю `headline` присваивается значение **true** .
+Ответ на получение краткой сводки новостей почти такой же, как и на получение главных новостей за сегодняшний день. Если статья является новостной сводкой, полю `headline` присваивается значение **true**.
 
-По умолчанию ответ включает до 12 новостных сводок. Чтобы изменить количество новостных сводок для возврата, укажите параметр запроса [headlineCount](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#headlinecount). Ответ также включает до четырех информационных статей по каждой категории новостей.
+По умолчанию ответ включает до 12 новостных сводок. Чтобы изменить количество новостных сводок для возврата, укажите параметр запроса [headlineCount](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#headlinecount). Ответ также включает до четырех информационных статей по каждой категории новостей.
 
 Ответ считает сгруппированные статьи как одну. Поскольку в группе несколько статей, ответ может включать более 12 новостных сводок и более четырех информационных статей по каждой категории.
 
@@ -184,7 +184,7 @@ Host: api.cognitive.microsoft.com
 > [!NOTE]
 > Популярные темы доступны только на рынках en-US и zh-CN.
 
-Следующий JSON — это ответ на предыдущий запрос. Каждая популярная новостная статья включает связанное изображение, пометку "последние новости" и URL-адрес результатов поиска Bing для статьи. Используйте URL-адрес из поля `webSearchUrl`, чтобы переадресовать пользователя на страницу результатов поиска Bing. Или используйте текст запроса для вызова [API для Поиска в Интернете](../../bing-web-search/search-the-web.md), чтобы отобразить результаты самостоятельно.
+Следующий JSON — это ответ на предыдущий запрос. Каждая популярная новостная статья включает связанное изображение, пометку "последние новости" и URL-адрес результатов поиска Bing для статьи. Используйте URL-адрес из поля `webSearchUrl`, чтобы переадресовать пользователя на страницу результатов поиска Bing. Или используйте текст запроса для вызова [API для Поиска в Интернете](../../bing-web-search/overview.md), чтобы отобразить результаты самостоятельно.
 
 ```json
 {
@@ -228,7 +228,7 @@ Host: api.cognitive.microsoft.com
 
 ## <a name="getting-related-news"></a>Получение похожих новостей
 
-Если есть другие статьи, связанные с новостной статьей, то она может включать в себя поле [clusteredArticles](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle-clusteredarticles). Ниже показаны сгруппированные статьи.
+Если есть другие статьи, связанные с новостной статьей, то она может включать в себя поле [clusteredArticles](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle-clusteredarticles). Ниже показаны сгруппированные статьи.
 
 ```json
     {
@@ -266,7 +266,7 @@ Host: api.cognitive.microsoft.com
 
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Разбивка на страницы результатов, возвращаемых Поиском новостей Bing](../paging-news.md)
+> [Разбивка на страницы результатов, возвращаемых Поиском новостей Bing](../../bing-web-search/paging-search-results.md)
