@@ -9,16 +9,16 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/24/2019
 ms.author: erhopf
-ms.openlocfilehash: c7dd916b27cd8005162c09f7e6a090293e336719
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95f3de0fe26678f6b4bcd97a78c06e92b72a7135
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83590644"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368820"
 ---
 # <a name="custom-subdomain-names-for-cognitive-services"></a>Имена пользовательских поддоменов для Cognitive Services
 
-Azure Cognitive Services использовать пользовательские имена поддоменов для каждого ресурса, созданного с помощью [портал Azure](https://portal.azure.com), [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/)или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). В отличие от региональных конечных точек, которые были распространены для всех клиентов в определенном регионе Azure, имена пользовательских поддоменов уникальны для ресурса. Имена пользовательских поддоменов необходимы, чтобы включить такие функции, как Azure Active Directory (Azure AD) для проверки подлинности.
+Azure Cognitive Services использовать пользовательские имена поддоменов для каждого ресурса, созданного с помощью [портал Azure](https://portal.azure.com), [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/)или [Azure CLI](/cli/azure/install-azure-cli). В отличие от региональных конечных точек, которые были распространены для всех клиентов в определенном регионе Azure, имена пользовательских поддоменов уникальны для ресурса. Имена пользовательских поддоменов необходимы, чтобы включить такие функции, как Azure Active Directory (Azure AD) для проверки подлинности.
 
 ## <a name="how-does-this-impact-existing-resources"></a>Как это влияет на существующие ресурсы?
 
@@ -80,7 +80,7 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 | | восточная часть США 2 | `https://eastus2.api.cognitive.microsoft.com` |
 | | Центральная Франция | `https://francecentral.api.cognitive.microsoft.com` |
 | | Центральная Индия | `https://centralindia.api.cognitive.microsoft.com` |
-| | Japan East | `https://japaneast.api.cognitive.microsoft.com` |
+| | Восточная Япония | `https://japaneast.api.cognitive.microsoft.com` |
 | | Республика Корея, центральный регион | `https://koreacentral.api.cognitive.microsoft.com` |
 | | Центрально-северная часть США | `https://northcentralus.api.cognitive.microsoft.com` |
 | | Северная Европа | `https://northeurope.api.cognitive.microsoft.com` |
@@ -96,7 +96,7 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 | Китай | Восточный Китай 2 | `https://chinaeast2.api.cognitive.azure.cn` |
 | | Северный Китай | `https://chinanorth.api.cognitive.azure.cn` |
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
-* [Что такое Cognitive Services?](Welcome.md)
+* [Что такое Cognitive Services?](./what-are-cognitive-services.md)
 * [Аутентификация](authentication.md)

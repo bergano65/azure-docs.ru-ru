@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: erhopf
 ms.service: cognitive-services
 ms.date: 11/03/2020
-ms.openlocfilehash: 715b02eec7b499afdcffa5e1f31d388e8bc930e7
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 239a93c58edd1f02e5e34d974fdc864f3e1cf90f
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305237"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369432"
 ---
 # <a name="cognitive-services-whats-new-in-docs-for-october-1-2020---october-31-2020"></a>Cognitive Services: новые возможности в документах для 1 октября 2020 г., 31 октября 2020 г.
 
@@ -34,39 +34,39 @@ ms.locfileid: "93305237"
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
-- [Развертывание нескольких контейнеров с помощью Docker Compose](/azure/cognitive-services/containers/docker-compose-recipe.md)
+- [Развертывание нескольких контейнеров с помощью Docker Compose](./containers/docker-compose-recipe.md)
 
 ## <a name="form-recognizer"></a>Распознаватель документов
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
-- [Новые возможности Распознавателя документов](/azure/cognitive-services/form-recognizer/whats-new.md)
+- [Новые возможности Распознавателя документов](./form-recognizer/whats-new.md)
 
 ## <a name="immersive-reader"></a>Иммерсивное средство чтения
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Заметки о выпуске пакета SDK JavaScript для чтения в иммерсивного](/azure/cognitive-services/immersive-reader/release-notes.md)
+- [Заметки о выпуске пакета SDK JavaScript для чтения в иммерсивного](./immersive-reader/release-notes.md)
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
-- [Сохранение настроек пользователя](/azure/cognitive-services/immersive-reader/how-to-store-user-preferences.md)
-- [Справочник по SDK для Java Reader (v 1.1)](/azure/cognitive-services/immersive-reader/reference.md)
+- [Сохранение настроек пользователя](./immersive-reader/how-to-store-user-preferences.md)
+- [Справочник по SDK для Java Reader (v 1.1)](./immersive-reader/reference.md)
 
 ## <a name="metrics-advisor"></a>Помощник по метрикам
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
-- [Добавление веб-каналов данных из разных источников данных в помощник по метрикам](/azure/cognitive-services/metrics-advisor/data-feeds-from-different-sources.md)
-- [Рекомендации по метрикам часто задаваемые вопросы](/azure/cognitive-services/metrics-advisor/faq.md)
+- [Добавление веб-каналов данных из разных источников данных в помощник по метрикам](./metrics-advisor/data-feeds-from-different-sources.md)
+- [Рекомендации по метрикам часто задаваемые вопросы](./metrics-advisor/faq.md)
 
 ## <a name="text-analytics"></a>Анализ текста
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
-- [Переход на версию 3. x API анализа текста](/azure/cognitive-services/text-analytics/migration-guide.md)
-- [Как использовать распознавание именованных сущностей в Анализ текста](/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-entity-linking.md)
-- [Руководство. Определение тональность с помощью API Анализа текста](/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md)
+- [Переход на версию 3. x API анализа текста](./text-analytics/migration-guide.md)
+- [Как использовать распознавание именованных сущностей в Анализ текста](./text-analytics/how-tos/text-analytics-how-to-entity-linking.md)
+- [Руководство. Определение тональность с помощью API Анализа текста](./text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md)
 
 ## <a name="community-contributors"></a>Участники сообщества
 

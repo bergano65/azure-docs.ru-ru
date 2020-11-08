@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: scottwhi
-ms.openlocfilehash: 43086c245f1d16975eae6951b1e8c2cb56fe5241
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ac581b96ba4e29837570ab8c01bf6c927eb34a28
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098337"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94367528"
 ---
 # <a name="spell-check-api-upgrade-guide"></a>Руководство по обновлению API для проверки орфографии
 
@@ -43,7 +43,7 @@ ms.locfileid: "93098337"
 
 - Коды ошибок версии 5 заменены следующими возможными значениями `code` и `subCode`.  
   
-|Код|SubCode (дополнительный код)|Описание
+|Код|SubCode (дополнительный код)|Description
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|Bing возвращает ServerError (ошибку сервера) каждый раз при возникновении любого из условий дополнительного кода. Ответ включает в себя ошибки, если код состояния HTTP — 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Блокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) каждый раз, когда любая часть запроса недопустима. Например, отсутствует обязательный параметр или значение параметра недопустимо.<br/><br/>В случае ошибки ParameterMissing или ParameterInvalidValue возвращается код состояния HTTP 400.<br/><br/>При ошибке HttpNotAllowed (HTTP запрещен) будет наблюдаться код состояния HTTP 410.
@@ -77,4 +77,4 @@ InsufficientScope|InsufficientAuthorization
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Требования к использованию и отображению](./UseAndDisplayRequirements.md)
+> [Требования к использованию и отображению](../bing-web-search/use-display-requirements.md)

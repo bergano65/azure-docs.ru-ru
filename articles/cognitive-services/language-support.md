@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: dba43c9e9b214a1ad077a2a15bdf014e057bb04e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5cde7e677bd0121954b01cf9bb8defe45111a5b2
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88869887"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369194"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Поддержка естественного языка в Azure Cognitive Services
 
@@ -33,37 +33,37 @@ Azure Cognitive Services позволяет создавать приложен�
 * [Компьютерное зрение](./computer-vision/language-support.md)
 * [Распознаватель форм (Предварительная версия)](./form-recognizer/language-support.md)
 * [Распознаватель рукописного текста (предварительная версия)](./ink-recognizer/language-support.md)
-* [Индексатор видео](https://docs.microsoft.com/azure/media-services/video-indexer/language-identification-model#guidelines-and-limitations)
+* [Индексатор видео](../media-services/video-indexer/language-identification-model.md#guidelines-and-limitations)
 
 ## <a name="language"></a>Язык
 
 * [Иммерсивное средство чтения](./immersive-reader/language-support.md)
-* [Распознавание речи (LUIS)](./luis/luis-supported-languages.md)
-* [QnA Maker](./qnamaker/overview/languages-supported.md)
-* [Анализ текста](./text-analytics/text-analytics-supported-languages.md)
-* [Переводчик](./translator/languages.md)
+* [Распознавание речи (LUIS)](./luis/luis-language-support.md)
+* [QnA Maker](./qnamaker/overview/language-support.md)
+* [Анализ текста](./text-analytics/language-support.md)
+* [Переводчик](./translator/language-support.md)
 
 ## <a name="speech"></a>Речь
 
-* [Служба "Речь": преобразование речи в текст](./speech-service/supported-languages.md#speech-to-text)
-* [Служба "Речь": преобразование текста в речь](./speech-service/supported-languages.md#text-to-speech)
-* [Служба "Речь": перевод речи](./speech-service/supported-languages.md#speech-translation)
+* [Служба "Речь": преобразование речи в текст](./speech-service/language-support.md#speech-to-text)
+* [Служба "Речь": преобразование текста в речь](./speech-service/language-support.md#text-to-speech)
+* [Служба "Речь": перевод речи](./speech-service/language-support.md#speech-translation)
 
 ## <a name="search"></a>Поиск
 
-* [Пользовательский поиск Bing](./bing-custom-search/supported-countries-markets.md)
-* [Поиск изображений Bing](./bing-image-search/supported-countries-markets.md)
-* [Поиск новостей Bing](./bing-news-search/supported-countries-markets.md)
-* [Автозаполнение Bing](./Bing-Autosuggest/bing-autosuggest-supported-languages.md)
-* [Проверка орфографии Bing](./bing-spell-check/bing-spell-check-supported-languages.md)
-* [Визуальный поиск Bing](./bing-visual-search/supported-countries-markets.md)
-* [Поиск в Интернете Bing](./bing-web-search/supported-countries-markets.md)
+* [Пользовательский поиск Bing](./bing-custom-search/language-support.md)
+* [Поиск изображений Bing](./bing-image-search/language-support.md)
+* [Поиск новостей Bing](./bing-news-search/language-support.md)
+* [Автозаполнение Bing](./bing-autosuggest/language-support.md)
+* [Проверка орфографии Bing](./bing-spell-check/language-support.md)
+* [Визуальный поиск Bing](./bing-visual-search/language-support.md)
+* [Поиск в Интернете Bing](./bing-web-search/language-support.md)
 
 ## <a name="decision"></a>Решение
 
-* [Content Moderator](./content-moderator/text-moderation-api-languages.md)
+* [Content Moderator](./content-moderator/language-support.md)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
-* [Что такое Cognitive Services?](welcome.md)
+* [Что такое Cognitive Services?](./what-are-cognitive-services.md)
 * [Создание учетной записи](cognitive-services-apis-create-account.md)

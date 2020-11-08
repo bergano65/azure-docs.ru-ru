@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: erhopf
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: ceaa04fdf8776d4fab1db4cfb1b3df4298f28de9
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: f14ac72443dedc8e33e607a82b2145c7ebf95ad2
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152278"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368786"
 ---
 # <a name="azure-cognitive-services-security"></a>Безопасность Cognitive Services Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "92152278"
 setx ENVIRONMENT_VARIABLE_KEY="value"
 ```
 
-В новом экземпляре **командной строки**прочтите переменную среды.
+В новом экземпляре **командной строки** прочтите переменную среды.
 
 ```CMD
 :: Prints the env var value
@@ -76,7 +76,7 @@ echo %ENVIRONMENT_VARIABLE_KEY%
 [System.Environment]::SetEnvironmentVariable('ENVIRONMENT_VARIABLE_KEY', 'value', 'User')
 ```
 
-В новом экземпляре **Windows PowerShell**прочтите переменную среды.
+В новом экземпляре **Windows PowerShell** прочтите переменную среды.
 
 ```powershell
 # Prints the env var value
@@ -92,7 +92,7 @@ echo %ENVIRONMENT_VARIABLE_KEY%
 echo export ENVIRONMENT_VARIABLE_KEY="value" >> /etc/environment && source /etc/environment
 ```
 
-В новом экземпляре **Bash**прочтите переменную среды.
+В новом экземпляре **Bash** прочтите переменную среды.
 
 ```Bash
 # Prints the env var value
@@ -113,7 +113,7 @@ echo "${ENVIRONMENT_VARIABLE_KEY}"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank"> `Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank">`Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```csharp
 using static System.Environment;
@@ -132,7 +132,7 @@ class Program
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank"> `getenv` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank">`getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```cpp
 #include <stdlib.h>
@@ -147,7 +147,7 @@ int main()
 
 # <a name="java"></a>[Java](#tab/java)
 
-Дополнительные сведения см. в <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank"> `System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. в разделе <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank">`System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```java
 import java.lang.*;
@@ -164,7 +164,7 @@ public class Program {
 
 # <a name="nodejs"></a>[Node.js](#tab/node-js)
 
-Дополнительные сведения см. в <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank"> `process.env` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. в разделе <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank">`process.env` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```javascript
 // Get the named env var, and assign it to the value variable
@@ -174,7 +174,7 @@ const value =
 
 # <a name="python"></a>[Python](#tab/python)
 
-Дополнительные сведения см. в <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank"> `os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. в разделе <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank">`os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```python
 import os
@@ -185,7 +185,7 @@ value = os.environ['ENVIRONMENT_VARIABLE_KEY']
 
 # <a name="objective-c"></a>[Objective-C](#tab/objective-c)
 
-Дополнительные сведения см. в <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank"> `environment` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. в разделе <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank">`environment` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```objectivec
 // Get the named env var, and assign it to the value variable
@@ -201,7 +201,7 @@ NSString* value =
 
 Защищенное хранилище доступна для этой службы:
 
-* Переводчик
+* API перевода
 
 Для следующих служб инженеры Майкрософт не будут получать доступ к данным клиентов на уровне E0: 
 
@@ -211,7 +211,7 @@ NSString* value =
 * Персонализатор
 
 > [!IMPORTANT]
-> Для **распознавателя форм**специалисты Майкрософт не будут получать доступ к данным клиентов в ресурсах, созданных после 10 июля 2020.
+> Для **распознавателя форм** специалисты Майкрософт не будут получать доступ к данным клиентов в ресурсах, созданных после 10 июля 2020.
 
 Чтобы запросить возможность использования номера SKU E0, заполните и отправьте эту [форму запроса](https://aka.ms/cogsvc-cmk). Для получения сведений о состоянии вашего запроса потребуется около 3-5 рабочих дней. В зависимости от спроса вы можете поместить в очередь и утвердить, как только пространство станет доступным. После утверждения для использования SKU E0 с LUIS необходимо создать новый ресурс на основе портал Azure и выбрать в качестве ценовой категории значение E0. Пользователи не смогут выполнить обновление с F0 на новый SKU E0.
 
@@ -220,7 +220,7 @@ NSString* value =
 > [!IMPORTANT]
 > Корпорация Майкрософт **не** использует данные клиентов для улучшения своих речевых моделей. Кроме того, если ведение журнала конечных точек отключено и никакие настройки не используются, данные клиента не сохраняются. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Изучите различные [Cognitive Services](welcome.md)
+* Изучите различные [Cognitive Services](./what-are-cognitive-services.md)
 * Дополнительные сведения о [Cognitive Services виртуальных сетях](cognitive-services-virtual-networks.md)

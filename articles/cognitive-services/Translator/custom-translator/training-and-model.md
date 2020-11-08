@@ -9,17 +9,17 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: swmachan
-ms.openlocfilehash: d8713d20503dc788175a408f5ec652505090396e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1765aaed3c0562da13c539845bfe19f6f85ed4ef
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88510833"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369024"
 ---
 # <a name="what-are-trainings-and-models"></a>Сведения об обучении и моделях
 
 Моделью называется система, которая предоставляет перевод для определенной языковой пары.
-Модель создается в результате успешного обучения. При обучении модели требуются три взаимоисключающих типа документов: обучение, Настройка и тестирование. Также можно указать тип документа словаря. См. статью [Выравнивание предложений](https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/sentence-alignment#suggested-minimum-number-of-sentences).
+Модель создается в результате успешного обучения. При обучении модели требуются три взаимоисключающих типа документов: обучение, Настройка и тестирование. Также можно указать тип документа словаря. См. статью [Выравнивание предложений](./sentence-alignment.md#suggested-minimum-number-of-sentences).
 
 Если при постановке в очередь обучающих курсов предоставлены только обучающие данные, настраиваемый переводчик будет автоматически собирать данные по настройке и тестированию. Он будет использовать случайное подмножество предложений из учебных документов и исключить эти предложения из обучающих данных.
 

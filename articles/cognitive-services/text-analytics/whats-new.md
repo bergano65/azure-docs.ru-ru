@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 10/16/2020
 ms.author: aahi
-ms.openlocfilehash: a85c129dd11e587a0714e92c850315101df103f0
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: f0204f5b923cf3363d85be9642d2866436df155a
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92166188"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369466"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -157,13 +157,13 @@ API анализа текста v3 теперь общедоступен со с
 ### <a name="sdk-support-for-text-analytics-api-v3-public-preview"></a>Поддержка пакета SDK для общедоступной предварительной версии API анализа текста v3
 
 В рамках [единой версии пакета SDK для Azure](https://techcommunity.microsoft.com/t5/azure-sdk/january-2020-unified-azure-sdk-release/ba-p/1097290)пакет sdk для API анализа текста v3 теперь доступен в виде общедоступной предварительной версии для следующих языков программирования:
-   * [C#](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-csharp)
-   * [Python](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-python)
-   * [JavaScript (Node.js)](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-javascript)
-   * [Java](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-java)
+   * [C#](./quickstarts/text-analytics-sdk.md?pivots=programming-language-csharp&tabs=version-3)
+   * [Python](./quickstarts/text-analytics-sdk.md?pivots=programming-language-python&tabs=version-3)
+   * [JavaScript (Node.js)](./quickstarts/text-analytics-sdk.md?pivots=programming-language-javascript&tabs=version-3)
+   * [Java](./quickstarts/text-analytics-sdk.md?pivots=programming-language-java&tabs=version-3)
    
    > [!div class="nextstepaction"]
-> [Дополнительные сведения о пакете SDK для API анализа текста v3](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3)
+> [Дополнительные сведения о пакете SDK для API анализа текста v3](./quickstarts/text-analytics-sdk.md?tabs=version-3)
 
 ### <a name="named-entity-recognition-v3-public-preview"></a>Общедоступная Предварительная версия распознавания имен сущностей v3
 
@@ -181,7 +181,7 @@ API анализа текста v3 теперь общедоступен со с
     * План
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
-    * Адрес электронной почты 
+    * Электронная почта 
     * Номер телефона (только США)
     * URL-адрес
     * IP-адрес
@@ -200,7 +200,7 @@ API анализа текста v3 теперь общедоступен со с
 * [Версия модели](concepts/model-versioning.md) `2019-10-01` , которая включает в себя:
     * Расширенное обнаружение и классификация сущностей, найденных в тексте. 
     * Распознавание следующих новых типов сущностей:
-        * номер телефона.
+        * Номер телефона
         * IP-адрес
 
 Связывание сущностей поддерживает английский и испанский языки. Языковая поддержка NER зависит от типа сущности.
@@ -219,7 +219,7 @@ API анализа текста v3 теперь общедоступен со с
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое API "Анализ текста"?](overview.md)  
 * [Примеры пользовательских сценариев](text-analytics-user-scenarios.md)

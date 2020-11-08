@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: 0033f4919e4e4e5e56e4057e00c393ae7be1ca44
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: d5caa9b4168307bb27022b59415e43b37f30bf67
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93090568"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94367392"
 ---
 # <a name="configure-your-hosted-ui-experience"></a>Настройка размещенного пользовательского интерфейса
 
@@ -54,7 +54,7 @@ ms.locfileid: "93090568"
 
 6. В разделе **Additional Configurations** (Дополнительные конфигурации) укажите значения, которые нужны для вашего приложения. Эти параметры не являются обязательными. В области предварительного просмотра справа можно наблюдать, как влияет на результат добавление или удаление этих параметров. Доступны следующие параметры конфигурации.  
 
-7. Введите ключ подписки на службу поиска или выберите его из раскрывающегося списка. Раскрывающийся список заполняется ключами из подписок в вашей учетной записи Azure. См. [Учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).  
+7. Введите ключ подписки на службу поиска или выберите его из раскрывающегося списка. Раскрывающийся список заполняется ключами из подписок в вашей учетной записи Azure. См. [Учетная запись API Cognitive Services](../cognitive-services-apis-create-account.md).  
 
 8. Если вы включили автозаполнение, введите ключ подписки на службу автозаполнения или выберите его из раскрывающегося списка. Раскрывающийся список заполняется ключами из подписок в вашей учетной записи Azure. Пользовательское автозаполнение требует наличия определенного уровня подписки, как описано [на страниц цен](https://azure.microsoft.com/pricing/details/cognitive-services/bing-custom-search/).
 
@@ -82,7 +82,7 @@ ms.locfileid: "93090568"
   `https://ui.customsearch.ai/hosted?customConfig=YOUR-CUSTOM-CONFIG-ID`  
   
   > [!NOTE]
-  > При необходимости добавьте следующие параметры запроса в URL-адрес. Дополнительные сведения об этих параметрах см. в справочнике по [API пользовательского поиска](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#query-parameters).
+  > При необходимости добавьте следующие параметры запроса в URL-адрес. Дополнительные сведения об этих параметрах см. в справочнике по [API пользовательского поиска](/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#query-parameters).
   >
   > - q
   > - mkt
@@ -92,7 +92,7 @@ ms.locfileid: "93090568"
   > [!IMPORTANT]
   > На этой странице не будут отображаться заявление о конфиденциальности или другие уведомления и условия. Этот вариант подходит не для всех случаев.  
 
-Дополнительные сведения, включая пользовательский идентификатор конфигурации, вы найдете в разделе **Конечные точки** на вкладке **Рабочая среда** .
+Дополнительные сведения, включая пользовательский идентификатор конфигурации, вы найдете в разделе **Конечные точки** на вкладке **Рабочая среда**.
 
 ## <a name="configuration-options"></a>Варианты настройки
 
@@ -150,7 +150,7 @@ ms.locfileid: "93090568"
 - "Logo URL" (URL-адрес логотипа).
 - "Favicon URL" (URL-адрес значка).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Use decoration markers to highlight text](../bing-web-search/hit-highlighting.md) (Использование маркеров оформления для выделения текста)
-- [Отображение веб-страниц на страницах](./page-webpages.md)
+- [Отображение веб-страниц на страницах](../bing-web-search/paging-search-results.md)

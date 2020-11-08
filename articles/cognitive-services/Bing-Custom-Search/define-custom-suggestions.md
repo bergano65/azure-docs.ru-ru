@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: maheshb
-ms.openlocfilehash: 02baea817f2647f056131aa654afb129549a1e4e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: aba990914ea193a7246a24b1502522f6144a0a9c
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93080980"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94367596"
 ---
 # <a name="configure-your-custom-autosuggest-experience"></a>Настройка пользовательского автозаполнения
 
@@ -28,7 +28,7 @@ ms.locfileid: "93080980"
 
 Вы можете указать, возвращать ли только пользовательские предложения или также включать предложения Bing. Если включить предложения Bing, то пользовательские предложения будут предшествовать предложениям Bing. Если предоставить достаточно предложений, возможно, возвращаемый список предложений не будет содержать предложения Bing. Предложения Bing всегда ограничены контекстом экземпляра службы Пользовательского поиска. 
 
-Чтобы настроить предлагаемые поисковые запросы для экземпляра, щелкните вкладку **Автозаполнение** .  
+Чтобы настроить предлагаемые поисковые запросы для экземпляра, щелкните вкладку **Автозаполнение**.  
 
 > [!NOTE]
 > Чтобы использовать эту функцию, необходимо подписаться на службу пользовательского поиска на соответствующем уровне (ознакомьтесь с [ценами](https://azure.microsoft.com/pricing/details/cognitive-services/bing-custom-search/)).
@@ -91,8 +91,8 @@ GET https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/Suggestions
 Если пользователь выберет предложенную строку запроса из раскрывающегося списка, то при вызове [API пользовательского поиска Bing](overview.md) будет использована строка запроса из поля `query`.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Get custom suggestion](./get-custom-suggestions.md) (Получение пользовательских предложений)
+- [Get custom suggestion]() (Получение пользовательских предложений)
 - [Search your custom instance](./search-your-custom-view.md) (Поиск в пользовательском экземпляре)
 - [Configure and consume custom hosted U](./hosted-ui.md) (Настройка и использование размещаемого пользовательского интерфейса)

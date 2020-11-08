@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: d0899132f308c7069395738140b35b138571483d
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 542f62f04adc7d4858e4b4621b0ae85e906434ad
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220862"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369330"
 ---
 # <a name="view-system-test-results"></a>Просмотр результатов теста системы
 
@@ -92,7 +92,7 @@ ms.locfileid: "92220862"
 
     ![Снимок экрана, на котором выделена кнопка обновления для обновления параметров развертывания.](media/how-to/how-to-update-undeploy-model.png)
 
-3.  Выберите **Обновить**.
+3.  Нажмите кнопку **Обновить**.
 4.  Выберите **Развернуто** или **Не развернуто** для регионов, в которых необходимо развернуть модель или отменить развертывание модели, и нажмите кнопку **Сохранить**.
 
     ![Развертывание модели](media/how-to/how-to-undeploy-model.png)
@@ -100,8 +100,8 @@ ms.locfileid: "92220862"
 >[!Note]
 >При выборе **Не развернуто** во всех регионах отменяется развертывание модели для всех регионов и модель переводится в неразвернутое состояние. После этого модель недоступна для использования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
+- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](../reference/v3-0-translate.md?tabs=curl).
 - Узнайте, как [настроить параметры](how-to-manage-settings.md) для предоставления общего доступа к рабочей области и управлять ключом подписки.
 - Узнайте, как [перенести рабочую область и проект](how-to-migrate.md) из [Microsoft Translator Hub](https://hub.microsofttranslator.com).

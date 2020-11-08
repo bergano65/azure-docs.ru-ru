@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: scottwhi
-ms.openlocfilehash: c4b02ef7bc833a7f5ab41e0203836637613244e0
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 9e887d8f7579a90e7d4e8d54dcf28e1256269063
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101992"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368463"
 ---
 # <a name="autosuggest-api-upgrade-guide"></a>Руководство по обновлению API автозаполнения
 
@@ -42,7 +42,7 @@ ms.locfileid: "93101992"
 
 - Коды ошибок версии 5 заменены следующими возможными значениями `code` и `subCode`.
 
-|Код|SubCode (дополнительный код)|Описание
+|Код|SubCode (дополнительный код)|Description
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|Bing возвращает ServerError (ошибку сервера) каждый раз при возникновении любого из условий вложенного кода. Ответ включает в себя ошибки, если код состояния HTTP — 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Блокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса недопустима. Например, отсутствует обязательный параметр или значение параметра недопустимо.<br/><br/>В случае ошибки ParameterMissing или ParameterInvalidValue возвращается код состояния HTTP 400.<br/><br/>Если ошибка — Хттпноталловед, код состояния HTTP — 410.
@@ -76,4 +76,4 @@ InsufficientScope|InsufficientAuthorization
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Требования к использованию и отображению](./UseAndDisplayRequirements.md)
+> [Требования к использованию и отображению](../bing-web-search/use-display-requirements.md)

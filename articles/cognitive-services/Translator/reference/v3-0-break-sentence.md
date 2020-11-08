@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 08/06/2020
 ms.author: swmachan
-ms.openlocfilehash: 340b0ed02821fb98f271539ac39e0ccad8581082
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27069cf38da2567a3af3ed0fb65baead43665186
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87904009"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369483"
 ---
 # <a name="translator-30-breaksentence"></a>Переводчик 3,0: Бреаксентенце
 
 Определяет расположение границ предложения в фрагменте текста.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -33,7 +33,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 В таблице ниже приведены параметры, которые передаются в строке запроса.
 
-| Параметр запроса | Описание |
+| Параметр запроса | Description |
 | -------| ----------- |
 | api-version <img width=200/>   | **Обязательный параметр запроса**.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`. |
 | Язык | **Необязательный параметр запроса**.<br/>Тег языка, определяющий язык входного текста. Если код не указан, будет применено автоматическое распознавание языка. |
@@ -43,7 +43,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 | Заголовки | Описание |
 | ------- | ----------- |
-| Заголовки для проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
+| Заголовки для проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
 | Content-Type | **Обязательный заголовок запроса**.<br/>Указывает тип содержимого для полезных данных. Возможные значения: `application/json`. |
 | Content-Length    | **Обязательный заголовок запроса**.<br/>Длина текста запроса.  | 
 | X-ClientTraceId   | **Необязательно**.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Обратите внимание, что этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем `ClientTraceId`.  | 
@@ -141,7 +141,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
   </tr>
 </table> 
 
-Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](./v3-0-reference.md#errors). 
 
 ## <a name="examples"></a>Примеры
 
@@ -150,4 +150,3 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'How are you? I am fine. What did you do today?'}]"
 ```
-

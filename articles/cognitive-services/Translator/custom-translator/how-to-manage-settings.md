@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 184073ef3ee1b6a67c844754f7da81f88bbbdf62
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e556ca2051fd75eb9bf6411c5479e63554606d48
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91757033"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368344"
 ---
 # <a name="how-to-manage-settings"></a>Как управлять параметрами
 
@@ -33,7 +33,7 @@ ms.locfileid: "91757033"
 
 Если у вас нет подписки, выполните следующие действия:
 
-1. Подпишитесь на создание ресурса переводчика. Подпишитесь на [переводчик](https://docs.microsoft.com/azure/cognitive-services/translator/translator-how-to-signup) , чтобы подписаться и получить ключ переводчика.
+1. Подпишитесь на создание ресурса переводчика. Подпишитесь на [переводчик](../translator-how-to-signup.md) , чтобы подписаться и получить ключ переводчика.
 2. Запишите ключ для подписки на транслятор. Приемлемым является либо Key1, либо Key2.
 3. Вернитесь обратно на портал Custom Translator.
 
@@ -52,7 +52,7 @@ ms.locfileid: "91757033"
     ![Диалоговое окно "Создать рабочую область"](media/how-to/create-new-workspace-dialog.png)
 
 >[!Note]
->Настраиваемый транслятор не поддерживает создание рабочей области для API перевода текстов ресурса (то есть Ключ подписки Azure), созданный в [включенной виртуальной сети](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet).
+>Настраиваемый транслятор не поддерживает создание рабочей области для API перевода текстов ресурса (то есть Ключ подписки Azure), созданный в [включенной виртуальной сети](../../../api-management/api-management-using-with-vnet.md).
 
 ### <a name="modify-existing-key"></a>Изменить существующий ключ
 

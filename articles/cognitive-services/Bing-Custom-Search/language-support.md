@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: aahi
-ms.openlocfilehash: 3519c9d6a62eaff036cf8f7006a0b443383f5131
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 2579d24e1a1754e873c6591b6d86ec12dd0dfa60
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93090500"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94367324"
 ---
 # <a name="language-and-region-support-for-the-bing-custom-search-api"></a>Поддержка языков и регионов в API пользовательского поиска Bing
 
@@ -26,11 +26,11 @@ ms.locfileid: "93090500"
 
 API пользовательского поиска Bing поддерживает более трех десятков стран и регионов, причем во многих из них используется несколько языков.
 
-В запросе можно также указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса см. в разделе [Параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#query-parameters) .
+В запросе можно также указать необязательный параметр [mkt](/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса см. в разделе [Параметры запроса](/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#query-parameters) .
 
 Страну или регион можно указать с помощью параметра запроса `cc`. Указывая страну или регион, необходимо также задать один или несколько кодов языков с помощью `Accept-Language`-заголовка. Поддерживаемые языки зависят от страны или региона; они предоставляются для каждой страны или региона в таблице **рынков** .
 
-Заголовок `Accept-Language` и параметр запроса `setLang` являются взаимоисключающими. Не указывайте оба. Дополнительные сведения см. в разделе [Accept-Language](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#acceptlanguage).
+Заголовок `Accept-Language` и параметр запроса `setLang` являются взаимоисключающими. Не указывайте оба. Дополнительные сведения см. в разделе [Accept-Language](/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#acceptlanguage).
 
 ## <a name="countriesregions"></a>Страны и регионы
 

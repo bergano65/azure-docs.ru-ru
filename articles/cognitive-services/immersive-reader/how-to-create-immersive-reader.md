@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: 9dcbfa8234aea2c558df107fc919dc74f7b4f39a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b012da0b2aea4a50002e9adbc0876396ddd4b5e7
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324507"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368735"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>Создание иммерсивного ресурса чтения и Настройка проверки подлинности Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "91324507"
 
 ## <a name="set-up-powershell-environment"></a>Настройка среды PowerShell
 
-1. Для начала откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). Убедитесь, что для Cloud Shell задано значение PowerShell в левом верхнем углу раскрывающегося списка или с помощью команды `pwsh` .
+1. Для начала откройте [Azure Cloud Shell](../../cloud-shell/overview.md). Убедитесь, что для Cloud Shell задано значение PowerShell в левом верхнем углу раскрывающегося списка или с помощью команды `pwsh` .
 
 1. Скопируйте и вставьте следующий фрагмент кода в оболочку.
 
@@ -196,7 +196,3 @@ ms.locfileid: "91324507"
 * Ознакомьтесь с [руководством для разработчиков iOS](./tutorial-ios.md), чтобы узнать о других возможностях пакета SDK иммерсивного средства чтения при использовании Swift для iOS.
 * Ознакомьтесь с [руководством для разработчиков Python](./tutorial-python.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Python.
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).
-
-
-
-

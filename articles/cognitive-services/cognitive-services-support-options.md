@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/11/2020
 ms.author: erhopf
-ms.openlocfilehash: d99cfc8b50155eb4cb2aecb3cb770f71b927ce1d
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 01e46ad8d139f2cab2fbb6499dc66c7af5ceb554
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148699"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368769"
 ---
 # <a name="azure-cognitive-services-support-and-help-options"></a>Параметры поддержки и справки Azure Cognitive Services
 
@@ -32,39 +32,39 @@ ms.locfileid: "92148699"
 
 ## <a name="post-a-question-on-microsoft-qa"></a>Публикация вопроса в разделе вопросов и ответов на сайте Майкрософт
 
-Для получения быстрых и надежных ответов на технические вопросы от инженеров Майкрософт, наиболее ценных специалистов по Azure (MVP) или нашего экспертного сообщества Присоединяйтесь к нам по [Microsoft Q&а](https://docs.microsoft.com/answers/products/azure?product=all)— предпочитаемый целевой объект Azure для поддержки сообщества.
+Для получения быстрых и надежных ответов на технические вопросы от инженеров Майкрософт, наиболее ценных специалистов по Azure (MVP) или нашего экспертного сообщества Присоединяйтесь к нам по [Microsoft Q&а](/answers/products/azure?product=all)— предпочитаемый целевой объект Azure для поддержки сообщества.
 
 Если вы не нашли решение своей проблемы с помощью функции поиска, опубликуйте свой вопрос в разделе вопросов и ответов на сайте Майкрософт. При формулировании вопроса используйте один из следующих тегов:
 
-* [Cognitive Services](https://docs.microsoft.com/answers/topics/azure-cognitive-services.html)
+* [Cognitive Services](/answers/topics/azure-cognitive-services.html)
 
 **Компьютерное зрение**
 
-* [Компьютерное зрение](https://docs.microsoft.com/answers/topics/azure-computer-vision.html)
-* [Пользовательское визуальное распознавание](https://docs.microsoft.com/answers/topics/azure-custom-vision.html)
-* [Распознавание лиц](https://docs.microsoft.com/answers/topics/azure-face.html)
-* [Распознаватель документов](https://docs.microsoft.com/answers/topics/azure-form-recognizer.html)
-* [Индексатор видео](https://docs.microsoft.com/answers/topics/azure-media-services.html)
+* [Компьютерное зрение](/answers/topics/azure-computer-vision.html)
+* [Пользовательское визуальное распознавание](/answers/topics/azure-custom-vision.html)
+* [Распознавание лиц](/answers/topics/azure-face.html)
+* [Распознаватель документов](/answers/topics/azure-form-recognizer.html)
+* [Индексатор видео](/answers/topics/azure-media-services.html)
 
 **Язык**
 
-* [Иммерсивное средство чтения](https://docs.microsoft.com/answers/topics/azure-immersive-reader.html)
-* [Распознавание речи (LUIS)](https://docs.microsoft.com/answers/topics/azure-language-understanding.html)
-* [QnA Maker](https://docs.microsoft.com/answers/topics/azure-qna-maker.html)
-* [Анализ текста](https://docs.microsoft.com/answers/topics/azure-text-analytics.html)
-* [Переводчик](https://docs.microsoft.com/answers/topics/azure-translator.html)
+* [Иммерсивное средство чтения](/answers/topics/azure-immersive-reader.html)
+* [Распознавание речи (LUIS)](/answers/topics/azure-language-understanding.html)
+* [QnA Maker](/answers/topics/azure-qna-maker.html)
+* [Анализ текста](/answers/topics/azure-text-analytics.html)
+* [Переводчик](/answers/topics/azure-translator.html)
 
 **Речь**
 
-* [Служба распознавания речи](https://docs.microsoft.com/answers/topics/azure-speech.html)
+* [Служба распознавания речи](/answers/topics/azure-speech.html)
 
 
 **Решение**
 
-* [Детектор аномалий](https://docs.microsoft.com/answers/topics/azure-anomaly-detector.html) 
-* [Content Moderator](https://docs.microsoft.com/answers/topics/azure-content-moderator.html)
+* [Детектор аномалий](/answers/topics/azure-anomaly-detector.html) 
+* [Content Moderator](/answers/topics/azure-content-moderator.html)
 * [Помощник по метрикам (предварительная версия)]()
-* [Персонализатор](https://docs.microsoft.com/answers/topics/azure-personalizer.html)
+* [Персонализатор](/answers/topics/azure-personalizer.html)
 
 ## <a name="post-a-question-to-stack-overflow"></a>Публикация вопроса на сайте Stack Overflow
 
@@ -116,7 +116,7 @@ ms.locfileid: "92148699"
 | Служба                       | URL-адрес Cognitive Services UserVoice |
 |-------------------------------|---------------|
 | Детектор аномалий              | https://cognitive.uservoice.com/forums/912196-anomaly-detector |
-| Компьютерное зрение               | https://cognitive.uservoice.com/forums/430309-computer-vision |
+| API Компьютерного зрения               | https://cognitive.uservoice.com/forums/430309-computer-vision |
 | Content Moderator             | https://cognitive.uservoice.com/forums/559960-content-moderator |
 | Custom Vision                 | https://cognitive.uservoice.com/forums/598141-custom-vision-service |
 | Распознавание лиц                          | https://cognitive.uservoice.com/forums/430315-face |
@@ -140,7 +140,7 @@ ms.locfileid: "92148699"
 * Новости о Cognitive Services доступны в [блоге Azure](https://azure.microsoft.com/blog/topics/cognitive-services/).
 * [Присоединяйтесь к беседе по Reddit](https://www.reddit.com/r/AZURE/search/?q=Cognitive%20Services&restrict_sr=1) о Cognitive Services.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Общие сведения об Azure Cognitive Services](welcome.md)
+> [Общие сведения об Azure Cognitive Services](./what-are-cognitive-services.md)

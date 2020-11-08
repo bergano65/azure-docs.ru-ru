@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: ece9d191460323a917579c5a32cff429f52139fa
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a02d5217cb051516e11d17730f31869618a2cfb0
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098235"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369398"
 ---
 # <a name="using-the-bing-spell-check-api"></a>Использование API Проверки орфографии Bing
 
@@ -49,14 +49,14 @@ API поддерживает два режима проверки орфогра
 
 ## <a name="market-setting"></a>Настройка рынка
 
-В запросе[код рынка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#market-codes) необходимо указать с помощью параметра `mkt`. Иначе, API будет использовать рынок по умолчанию в зависимости от IP-адреса, с которого отправлен запрос.
+В запросе[код рынка](/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#market-codes) необходимо указать с помощью параметра `mkt`. Иначе, API будет использовать рынок по умолчанию в зависимости от IP-адреса, с которого отправлен запрос.
 
 
 ## <a name="http-post-and-get-support"></a>Поддержка HTTP запросов POST и GET
 
 Этот API поддерживает либо HTTP-запрос POST, либо HTTP-запрос GET. Используемый запрос зависит от длины текста, который нужно проверить. Если строки всегда меньше 1500 символов, можно использовать запрос GET. Но если вам нужно поддерживать строки размером до 10 000 символов, используйте запрос POST. Текстовая строка может содержать любой допустимый символ в формате UTF-8.
 
-В следующем примере показан запрос POST для проверки орфографии и грамматики текстовой строки. Пример включает в себя параметр запроса [mode](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#mode) для полноты информации (его можно опустить, так как параметр `mode` по умолчанию имеет значение Proof). Параметр запроса [text](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#text) содержит строку, которую нужно проверить.
+В следующем примере показан запрос POST для проверки орфографии и грамматики текстовой строки. Пример включает в себя параметр запроса [mode](/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#mode) для полноты информации (его можно опустить, так как параметр `mode` по умолчанию имеет значение Proof). Параметр запроса [text](/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#text) содержит строку, которую нужно проверить.
   
 ```  
 POST https://api.cognitive.microsoft.com/bing/v7.0/spellcheck?mode=proof&mkt=en-us HTTP/1.1  
@@ -73,7 +73,7 @@ text=when+its+your+turn+turn,+john,+come+runing
 
 При использовании HTTP-запроса GET следует включить параметр запроса `text` в строку запроса с URL-адресом.
   
-Ниже показан ответ на предыдущий запрос. Ответ будет содержать объект [SpellCheck](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#spellcheck). 
+Ниже показан ответ на предыдущий запрос. Ответ будет содержать объект [SpellCheck](/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#spellcheck). 
   
 ```json
 {  
@@ -117,7 +117,7 @@ text=when+its+your+turn+turn,+john,+come+runing
 }  
 ```  
   
-В поле [flaggedTokens](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#flaggedtokens) перечислены орфографические и грамматические ошибки, найденные API в строке [text](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#text). Поле `token` содержит слова для замены. Используйте смещение, отсчитываемое с нуля, в поле `offset`, чтобы найти токен в строке `text`. Необходимо заменить слово в данном расположении на слово из поля `suggestion`. 
+В поле [flaggedTokens](/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#flaggedtokens) перечислены орфографические и грамматические ошибки, найденные API в строке [text](/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference#text). Поле `token` содержит слова для замены. Используйте смещение, отсчитываемое с нуля, в поле `offset`, чтобы найти токен в строке `text`. Необходимо заменить слово в данном расположении на слово из поля `suggestion`. 
 
 Если в поле `type` указано значение RepeatedToken, вам все еще нужно заменить токен на `suggestion`, но, скорее всего, потребуется удалить конечный пробел.
 
@@ -125,7 +125,7 @@ text=when+its+your+turn+turn,+john,+come+runing
 
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API Проверки орфографии Bing версии 7](/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
