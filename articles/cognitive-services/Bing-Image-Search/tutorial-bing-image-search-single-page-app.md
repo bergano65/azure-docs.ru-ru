@@ -11,14 +11,19 @@ ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: fe4c40e2c5e2b8992598125c376dc0da516e9736
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a62133737d48a8ebf454b5fab83ef52ef2daad09
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316704"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098439"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-image-search-api"></a>Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска изображений
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 API Bing для поиска изображений позволяет искать в Интернете соответствующие изображения высокого качества. Используйте это руководство для создания одностраничного веб-приложения, которое может отправлять поисковые запросы к API и отображать результаты на веб-странице. Это руководство аналогично [соответствующему руководству по](../Bing-Web-Search/tutorial-bing-web-search-single-page-app.md) API Bing для поиска в Интернете.
 

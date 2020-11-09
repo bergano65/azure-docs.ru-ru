@@ -11,14 +11,19 @@ ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: b87a2cd3e6edc6a47de77f475c40d30ce1606e01
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8fa86ef33fe7b0d9e97aebca96b3aa5465f24a4
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316619"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099867"
 ---
 # <a name="tutorial-build-a-web-page-spell-check-client"></a>Руководство по Создание веб-страницы клиента для проверки орфографии
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 В рамках работы с этим руководством мы создадим веб-страницу, с помощью которой пользователи смогут запрашивать API Bing для проверки орфографии. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/Tutorials/BingSpellCheckApp.html).
 
@@ -123,7 +128,7 @@ getSubscriptionKey = function() {
     }
 ```
 
-Вспомогательная функция getSubscriptionKey принимает один параметр — **invalidate**. Если **invalidate** имеет значение **true**, функция getSubscriptionKey удаляет файл cookie, который содержит ключ API Bing для проверки орфографии. Если **invalidate** имеет значение **false**, функция getSubscriptionKey возвращает значение ключа API Bing для проверки орфографии.
+Вспомогательная функция getSubscriptionKey принимает один параметр — **invalidate**. Если **invalidate** имеет значение **true** , функция getSubscriptionKey удаляет файл cookie, который содержит ключ API Bing для проверки орфографии. Если **invalidate** имеет значение **false** , функция getSubscriptionKey возвращает значение ключа API Bing для проверки орфографии.
 
 ```html
     function getSubscriptionKey(invalidate) {
@@ -271,7 +276,7 @@ function bingSpellCheck(query, key) {
 </form>
 ```
 
-Добавьте HTML-тег **div**, который мы используем для отображения результатов. Определенный ранее код JavaScript обращается к этому тегу **div**.
+Добавьте HTML-тег **div** , который мы используем для отображения результатов. Определенный ранее код JavaScript обращается к этому тегу **div**.
 
 ```html
 <h2>Results</h2>

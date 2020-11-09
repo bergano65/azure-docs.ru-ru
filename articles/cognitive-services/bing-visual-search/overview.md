@@ -10,14 +10,19 @@ ms.subservice: bing-visual-search
 ms.topic: overview
 ms.date: 12/19/2019
 ms.author: scottwhi
-ms.openlocfilehash: 192517aa16e0fe56eb5b7dc8b852116af500b715
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2eab79d79a287bc8a92133c6901c420dfaee2fd5
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87023727"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93082051"
 ---
 # <a name="what-is-the-bing-visual-search-api"></a>Знакомство с API Визуального поиска Bing
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 API Визуального поиска Bing возвращает аналитические сведения об изображении. Изображение можно передать или указать его URL-адрес. Аналитические сведения — это визуально похожие изображения, ресурсы для покупок, веб-страницы с изображениями и т. п. Аналитические сведения, возвращаемые API Визуального поиска Bing, похожи на изображения, отображаемые в разделе Bing.com/images. 
 

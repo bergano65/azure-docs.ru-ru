@@ -8,12 +8,12 @@ ms.subservice: language-understanding
 keywords: Azure, искусственный интеллект, ИИ, обработка естественного языка, NLP, LUIS, Azure LUIS, распознавание естественного языка, чат-бот ИИ, создатель чат-бота, общие сведения о естественном языке
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-set-diberry-3core
-ms.openlocfilehash: c2bc607fb5a5b5b38249453a1d0fce833547191f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e389152292239076f3077e2edfb8d5be52ab815b
+ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91327308"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93241384"
 ---
 # <a name="quickstart-language-understanding-luis-sdk-client-libraries-to-create-and-query-your-luis-app"></a>Краткое руководство. Использование клиентских библиотек пакета SDK Распознавания речи (LUIS) для создания приложения LUIS и отправки в него запросов
 
@@ -21,7 +21,8 @@ ms.locfileid: "91327308"
 
 Распознавание речи (LUIS) позволяет применять обработку естественного языка (NLP) к тексту пользователя в разговорном стиле и на естественном языке, чтобы предсказать общий смысл и извлечь соответствующую подробную информацию.
 
-* Клиентская библиотека **пакета SDK для разработки** позволяет создавать, редактировать, обучать и публиковать приложения LUIS. * Клиентская библиотека **пакета SDK для среды выполнения прогнозирования** позволяет отправлять запросы в опубликованное приложение.
+* Клиентская библиотека **пакета SDK для разработки** позволяет создавать, редактировать, обучать и публиковать приложения LUIS.
+* Клиентская библиотека **пакета SDK для среды выполнения прогнозирования** позволяет отправлять запросы к опубликованному приложению.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [LUIS development with C# SDK](./includes/sdk-csharp.md)]

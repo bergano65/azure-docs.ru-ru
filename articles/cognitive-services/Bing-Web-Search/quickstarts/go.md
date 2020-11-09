@@ -12,14 +12,19 @@ ms.date: 05/22/2020
 ms.author: aahi
 ms.reviewer: nhoyadx@gmail.com, v-gedod, erhopf
 ms.custom: seodec2018
-ms.openlocfilehash: 3ea8375d1ed999d4b617a9d2a78ec53ad22543ac
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e91d1477c32006628eba3196e182a493b029801f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85602196"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93076747"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-go"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Go
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 Используйте это краткое руководство, чтобы вызвать API Поиска в Интернете Bing. Это приложение Go отправляет поисковый запрос к API и показывает ответ JSON. Хотя это приложение написано на Go, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 

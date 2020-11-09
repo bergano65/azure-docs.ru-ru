@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/15/2020
 ms.author: erhopf
-ms.openlocfilehash: 1befc26d6c6d0a12af57c8a0d3d0e6d32f363f19
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 10cee7f5b0deff37a9b1df1937fe8f6ed8431daa
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096901"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93135765"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Linux.
 
@@ -23,7 +23,7 @@ ms.locfileid: "92096901"
 
 ## <a name="system-requirements"></a>Требования к системе
 
-Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 7 или 8, CentOS 7 или 8).
+Linux: см. список [поддерживаемых дистрибутивов Linux и целевых архитектур](~/articles/cognitive-services/speech-service/speech-sdk.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,19 +33,14 @@ Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 7 или 8, CentOS 7 ил
 
 * Для поддерживаемых платформ Linux потребуется установить определенные библиотеки (`libssl` для поддержки протокола SSL и `libasound2` для поддержки звука). Ниже приведены команды, необходимые для установки правильных версий этих библиотек. Используйте команды для своего дистрибутива.
 
-   * В Ubuntu:
+   * В Ubuntu или Debian сделайте следующее:
 
      ```sh
      sudo apt-get update
      sudo apt-get install build-essential libssl1.0.0 libasound2 wget
      ```
 
-   * Для Debian 9:
-
-     ```sh
-     sudo apt-get update
-     sudo apt-get install build-essential libssl1.0.2 libasound2 wget
-     ```
+     Если пакет libssl1.0.0 недоступен, установите libssl1.0.x (где x больше 0) или libssl1.1.
 
    * Для RHEL/CentOS.
 

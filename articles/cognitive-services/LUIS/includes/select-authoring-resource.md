@@ -2,16 +2,15 @@
 title: Выбор ресурса для разработки
 ms.topic: include
 ms.date: 03/25/2020
-ms.openlocfilehash: b16e720e8b28d9440cde4fdf5e84dbfc00c00ca8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b8544ca5cea6b717863410c0add303d32386157c
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "83658681"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93128231"
 ---
 ## <a name="select-subscription-and-authoring-resource"></a>Выбор подписки и ресурса для разработки
 
-Чтобы просмотреть список приложений или создать приложение на портале LUIS, выберите подписку и ресурс для разработки. Доступ к приложениям осуществляется через ресурс для разработки LUIS.
+При выборе определенной подписки и ресурса разработки вы увидите список связанных с ней приложений.
 
-> [!div class="mx-imgBorder"]
-> ![Выбор подписки для разработки и ресурса для разработки](../media/select-authoring-resource/select-authoring-resource-my-english-app.png)
+:::image type="content" source="../media/select-authoring-resource/select-authoring-resource-my-english-app-2.png" alt-text="Выбор подписки для разработки и ресурса для разработки" lightbox="../media/select-authoring-resource/select-authoring-resource-my-english-app-2.png":::

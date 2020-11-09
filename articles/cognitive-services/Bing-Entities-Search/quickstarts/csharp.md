@@ -11,14 +11,19 @@ ms.topic: quickstart
 ms.date: 10/19/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 99f2197732a332e860af421f46d1049c2388043c
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 52efd103bf510e7cca8a1e4a1d682948b498d64c
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92221236"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93084856"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-c"></a>Краткое руководство. Отправка запросов для поиска в REST API Поиска сущностей Bing с помощью C#
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска сущностей и просмотреть ответ в формате JSON. Это простое приложение C# отправляет запрос на поиск новостей к API и отображает ответ. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingEntitySearchv7.cs).
 
@@ -40,7 +45,7 @@ ms.locfileid: "92221236"
 1. Добавьте пакет NuGet [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/).
     1. В **Обозревателе решений** щелкните проект правой кнопкой мыши.
     2. Выберите **Manage NuGet Packages...** (Управление пакетами NuGet...).
-    3. Найдите и выберите пакет *Newtonsoft.Json* . Установите его.
+    3. Найдите и выберите пакет *Newtonsoft.Json*. Установите его.
 1. Затем добавьте следующие пространства имен в основной файл кода:
     
     ```csharp

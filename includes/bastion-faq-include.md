@@ -5,15 +5,15 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 10/26/2020
+ms.date: 11/05/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 95c55f92304ddd3ec2b3d44d4f07fb64ab815c6d
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: a38c4bb18e16a814b626a6941d626b66311cd8ea
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92756041"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94329561"
 ---
 ### <a name="which-regions-are-available"></a><a name="regions"></a>Какие регионы доступны?
 
@@ -88,3 +88,7 @@ RDP и SSH — протоколы на основе использования.
 ### <a name="how-do-i-handle-deployment-failures"></a><a name="udr"></a>Как устранить сбои развертывания?
 
 Изучите все сообщения об ошибках и при необходимости [подайте запрос на поддержку на портале Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Сбои развертывания могут возникать из-за [лимитов, квот и ограничений подписки Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits). В частности, к сбою развертывания Бастиона Azure может привести ограничение количества общедоступных IP-адресов, которые разрешено использовать для подписки.
+
+### <a name="how-do-i-incorporate-azure-bastion-in-my-dr-plan"></a><a name="dr"></a>Как включить службу "Бастион Azure" в план аварийного восстановления?
+
+Так как служба "Бастион Azure" связана с тем или иным регионом Azure и развертывается в виртуальных сетях или пиринговых виртуальных сетях, вы отвечаете за развертывание службы "Бастион Azure" в виртуальной сети сайта аварийного восстановления (DR). В случае сбоя в регионе Azure вы выполняете операцию отработки отказа для виртуальных машин, а затем используете узел Бастиона Azure, развернутый в регионе аварийного восстановления, для подключения к виртуальным машинам, развернутым в регионе аварийного восстановления.

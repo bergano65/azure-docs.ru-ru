@@ -11,14 +11,19 @@ ms.topic: tutorial
 ms.date: 02/03/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: 2bdd51218c098dcd778d9a72a98fe42b96357b4e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b750554ec231cddd0403c89a33f2af4349ff188
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91328723"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099003"
 ---
 # <a name="tutorial-single-page-video-search-app"></a>Руководство по Одностраничное приложение для поиска видео
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 API Bing для поиска видео позволяет выполнять поиск в Интернете и получать результаты видео, относящиеся к поисковому запросу. В этом руководстве мы создаем одностраничное веб-приложение, использующее API Bing для поиска в Интернете для отображения результатов поиска прямо на странице. Приложение включает в себя компоненты HTML, CSS и JavaScript.
 
 <!-- Remove until it can be replaced with a sanitized version.
@@ -320,7 +325,7 @@ API Bing для поиска новостей возвращает до четы
 
 ## <a name="rendering-result-items"></a>Отображение элементов результата
 
-В коде JavaScript есть объект `searchItemRenderers`, который содержит *обработчики*: функции, создающие HTML-код для каждого типа результатов поиска. На странице поиска видео используется только `videos`. См. другие руководства о различных типах рендеринга.
+В коде JavaScript есть объект `searchItemRenderers`, который содержит *обработчики* : функции, создающие HTML-код для каждого типа результатов поиска. На странице поиска видео используется только `videos`. См. другие руководства о различных типах рендеринга.
 
 ```javascript
 searchItemRenderers = {

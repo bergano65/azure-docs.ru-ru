@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/15/2020
 ms.author: trbye
-ms.openlocfilehash: 613ee87064cc3b0bbbae8b8ac2e31a5ed60d39f2
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: eae4aece79cd387aaa7e708591ca31442eaa05c3
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097207"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93135851"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Python. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `pip install azure-cognitiveservices-speech`.
 
@@ -20,25 +20,20 @@ ms.locfileid: "92097207"
 - Пакет SDK службы "Речь" для Python доступен для таких операционных систем:
   - Windows: x64 и x86.
   - MAC: macOS X версии 10.12 или более поздней.
-  - Linux: Ubuntu 16.04/18.04, Debian 9, RHEL 7/8, CentOS 7/8 (64-разрядная версия).
+  - Linux: см. список [поддерживаемых дистрибутивов Linux и целевых архитектур](~/articles/cognitive-services/speech-service/speech-sdk.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Для поддерживаемых платформ Linux потребуется установить определенные библиотеки (`libssl` для поддержки протокола SSL и `libasound2` для поддержки звука). Ниже приведены команды, необходимые для установки правильных версий этих библиотек. Используйте команды для своего дистрибутива.
 
-  - Чтобы установить необходимые пакеты в Ubuntu, выполните следующие команды:
+  - Чтобы установить необходимые пакеты в Ubuntu или Debian, выполните следующие команды:
 
     ```sh
     sudo apt-get update
     sudo apt-get install build-essential libssl1.0.0 libasound2
     ```
 
-  - Чтобы установить необходимые пакеты в Debian 9, выполните следующие команды:
-
-    ```sh
-    sudo apt-get update
-    sudo apt-get install build-essential libssl1.0.2 libasound2
-    ```
+    Если пакет libssl1.0.0 недоступен, установите libssl1.0.x (где x больше 0) или libssl1.1.
 
   - Чтобы установить необходимые пакеты в RHEL/CentOS, выполните следующие команды:
 
@@ -84,7 +79,7 @@ import azure.cognitiveservices.speech as speechsdk
    ![Установка расширения Python](~/articles/cognitive-services/speech-service/media/sdk/qs-python-vscode-python-extension.png)
 
 1. Кроме того, в Visual Studio Code можно установить пакет SDK службы "Речь" для Python из интегрированной командной строки:
-   1. Откройте терминал (в раскрывающихся меню выберите **Терминал** > **Новый терминал**).
+   1. Откройте терминал (в раскрывающихся меню выберите **Терминал** > **Новый терминал** ).
    1. В открывшемся окне терминала введите команду `python -m pip install azure-cognitiveservices-speech`.
 
 Если вы не знакомы с Visual Studio Code, ознакомьтесь с более детальной [документацией по Visual Studio Code](https://code.visualstudio.com/docs). Дополнительные сведения о Visual Studio Code и Python см. в [учебнике по Visual Studio Code для Python](https://code.visualstudio.com/docs/python/python-tutorial).

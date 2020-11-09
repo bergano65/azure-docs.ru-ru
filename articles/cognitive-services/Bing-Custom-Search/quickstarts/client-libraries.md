@@ -12,14 +12,19 @@ ms.topic: quickstart
 ms.date: 02/27/2020
 ms.author: aahi
 ms.custom: devx-track-python, devx-track-csharp
-ms.openlocfilehash: 384a8ccefb5273186a24f54aced41a31f176c5be
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a85a953cfa16ebe1103540b77d6e076e0bd721c0
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88934775"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93075778"
 ---
 # <a name="quickstart-use-the-bing-custom-search-client-library"></a>Краткое руководство. Использование клиентской библиотеки Пользовательского поиска Bing
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 ::: zone pivot="programming-language-csharp"
 

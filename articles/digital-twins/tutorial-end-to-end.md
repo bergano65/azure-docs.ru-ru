@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: a765bf547924cbba1c4cff36a97df4ae88df1787
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: d5467537e105225541ffc501d345fd2fa57e0803
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495931"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324561"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Руководство по Создание комплексного решения
 
@@ -48,7 +48,7 @@ ms.locfileid: "92495931"
 
 Ниже перечислены компоненты, реализованные в примере приложения *AdtSampleApp* для сценария сборки.
 * Проверка подлинности устройства 
-* Примеры использования [пакета SDK .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet-preview&preserve-view=true) (находятся в *CommandLoop.cs* )
+* Примеры использования [пакета SDK .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true) (находятся в *CommandLoop.cs* )
 * Консольный интерфейс для вызова API Azure Digital Twins
 * *SampleClientApp*  — пример решения Azure Digital Twins
 * *SampleFunctionsApp*  — приложение Функций Azure, которое обновляет ваш граф Azure Digital Twins на основе данных телеметрии из событий Центра Интернета вещей и Azure Digital Twins
@@ -329,7 +329,7 @@ ObserveProperties thermostat67 Temperature
 :::image type="content" source="media/tutorial-end-to-end/building-scenario-c.png" alt-text="Фрагмент схемы полного сценария сборки. Выделены стрелка C и элементы после Azure Digital Twins: Сетка событий, Центр Интернета вещей и вторая функция Azure":::
 
 Для настройки этого потока данных необходимо выполнить следующие действия.
-1. Создать конечную точку Azure Digital Twins, которая подключает экземпляр к Сетке событий.
+1. Создание конечной точки Сетки событий в Azure Digital Twins, которая подключает экземпляр к Сетке событий.
 2. Настроить маршрут в Azure Digital Twins для отправки событий изменения свойств двойника в конечную точку.
 3. Развернуть приложение Функции Azure, которое ожидает передачи данных (через [Сетку событий](../event-grid/overview.md)) в конечной точке и соответствующим образом обновляет другие двойники.
 4. Запустить имитированное устройство и запросить Azure Digital Twins, чтобы просмотреть результаты в реальном времени.
@@ -354,7 +354,7 @@ az eventgrid topic create -g <your-resource-group> --name <name-for-your-event-g
 
 Выходные данные этой команды содержат сведения о созданном разделе Сетки событий.
 
-Затем создайте конечную точку Azure Digital Twins, указывающую на этот раздел Сетки событий. Используйте приведенную ниже команду, вставив вместо заполнителей соответствующие значения:
+Затем создайте конечную точку Сетки событий в Azure Digital Twins, которая подключит ваш экземпляр к разделу Сетки событий. Используйте приведенную ниже команду, вставив вместо заполнителей соответствующие значения:
 
 ```azurecli-interactive
 az dt endpoint create eventgrid --dt-name <your-Azure-Digital-Twins-instance> --eventgrid-resource-group <your-resource-group> --eventgrid-topic <your-event-grid-topic> --endpoint-name <name-for-your-Azure-Digital-Twins-endpoint>
@@ -372,11 +372,11 @@ az dt endpoint show --dt-name <your-Azure-Digital-Twins-instance> --endpoint-nam
 
 :::image type="content" source="media/tutorial-end-to-end/output-endpoints.png" alt-text="Результат запроса конечной точки, показывающий конечную точку с параметром provisioningState, имеющим значение Succeeded":::
 
-Сохраните имена, которые вы назначили разделу Сетки событий и конечной точке Azure Digital Twins. Они понадобятся вам позже.
+Сохраните имена, которые вы назначили разделу Сетки событий и конечной точке Сетке событий, в Azure Digital Twins. Они понадобятся вам позже.
 
 ### <a name="set-up-route"></a>Настройка маршрута
 
-Теперь создайте маршрут Azure Digital Twins, который отправляет события в только что созданную конечную точку Azure Digital Twins.
+Теперь создайте маршрут Azure Digital Twins, который отправляет события в только что созданную конечную точку Сетки событий.
 
 ```azurecli-interactive
 az dt route create --dt-name <your-Azure-Digital-Twins-instance> --endpoint-name <your-Azure-Digital-Twins-endpoint> --route-name <name-for-your-Azure-Digital-Twins-route>

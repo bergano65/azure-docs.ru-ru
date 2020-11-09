@@ -11,14 +11,19 @@ ms.topic: tutorial
 ms.date: 06/23/2020
 ms.author: aahi
 ms.custom: seodec2018, devx-track-js
-ms.openlocfilehash: 225ab3a8ab03c507132bdfcb176aeeb706d6b115
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0eef6f424c0360ba1378bafa738cbec7dbf05776
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91304055"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098371"
 ---
 # <a name="tutorial-create-a-single-page-web-app"></a>Руководство по Создание одностраничного веб-приложения
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 API Bing для поиска новостей позволяет выполнять поиск новостей и получать результаты различных типов, релевантных поисковому запросу. В этом руководстве мы создаем одностраничное веб-приложение, использующее API Bing для поиска новостей для отображения результатов поиска прямо на странице. Приложение включает в себя компоненты HTML, CSS и JavaScript. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/Tutorials/BingNewsSearchApp.html).
 
@@ -334,7 +339,7 @@ API Bing для поиска новостей возвращает до четы
 
 ## <a name="rendering-result-items"></a>Отображение элементов результата
 
-В коде JavaScript есть объект `searchItemRenderers`, который содержит функции-*обработчики*, создающие HTML-код для каждого типа результатов поиска.
+В коде JavaScript есть объект `searchItemRenderers`, который содержит функции- *обработчики* , создающие HTML-код для каждого типа результатов поиска.
 
 ```javascript
 searchItemRenderers = {

@@ -7,15 +7,15 @@ ms.reviewer: dcscontentpm
 tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
-ms.topic: conceptual
-ms.date: 08/20/2020
+ms.topic: how-to
+ms.date: 10/28/2020
 ms.author: banders
-ms.openlocfilehash: c24af5a9fb1367e00d9a014b1e10f750a38ad30b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: e380aa1f4d50e6ced34254ceca9d899022142f6d
+ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91270905"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92911296"
 ---
 # <a name="download-or-view-your-azure-billing-invoice-and-daily-usage-data"></a>Скачивание или просмотр счета на оплату и данных о ежедневном использовании в Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "91270905"
 
     ![Снимок экрана, на котором показан параметр Billing & usage (Счет и данные об использовании)](./media/download-azure-invoice-daily-usage-date/billingandusage.png)
 
-3. Нажмите кнопку скачивания, чтобы скачать копию счета в формате PDF, а затем выберите **Скачать счет**. Если отображается сообщение **Недоступно**, см. раздел [Почему не отображается счет за последний расчетный период?](#noinvoice)
+3. Нажмите кнопку скачивания, чтобы скачать копию счета в формате PDF, а затем выберите **Скачать счет**. Если отображается сообщение **Недоступно** , см. раздел [Почему не отображается счет за последний расчетный период?](#noinvoice)
 
     ![Снимок экрана, на котором показаны периоды выставления счетов, действие скачивания и общие суммы за каждый расчетный период](./media/download-azure-invoice-daily-usage-date/downloadinvoice.png)
 
@@ -136,9 +136,7 @@ ms.locfileid: "91270905"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выполните поиск по фразе *Управление затратами + выставление счетов*.
-
-    ![Снимок экрана, показывающий поиск на портале Azure](./media/download-azure-invoice-daily-usage-date/portal-cm-billing-search.png)
-
+1. Если у вас есть доступ к нескольким учетным записям выставления счетов, выберите область выставления счетов для учетной записи выставления счетов EA.
 1. Выберите **Использование+расходы**.
 1. Возле месяца, сведения о котором необходимо скачать, выберите **Скачать**.
 
@@ -161,14 +159,10 @@ ms.locfileid: "91270905"
 
 1. Выполните поиск по фразе **Управление затратами + выставление счетов**.
 2. Выберите профиль выставления счетов.
-3. В колонке "**Обзор**" щелкните **Скачать файл использования и расходов Azure**.
+3. В колонке " **Обзор** " щелкните **Скачать файл использования и расходов Azure**.
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверка доступа к Клиентскому соглашению Майкрософт
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-mca.md)]
-
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
-
-Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

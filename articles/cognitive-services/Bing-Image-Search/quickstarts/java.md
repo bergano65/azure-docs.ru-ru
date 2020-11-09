@@ -12,14 +12,19 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018, seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 79e5b5e0562c86668c276a94ab28835c13433eb8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: aed96bab233a815091009278349627343cc5efd8
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87327248"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099952"
 ---
 # <a name="quickstart-search-for-images-with-the-bing-image-search-api-and-java"></a>Краткое руководство. Поиск изображений с помощью пакета API "Поиск изображений Bing" и Java 
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 Из этого краткого руководства вы узнаете, как отправлять поисковые запросы к API "Поиск изображений Bing" в Azure Cognitive Services. Это приложение на Java отправляет поисковый запрос к API и отображает URL-адрес первого возвращенного в результатах изображения. Это приложение создано на языке Java. Но API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 

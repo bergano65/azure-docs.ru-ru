@@ -11,14 +11,19 @@ ms.topic: tutorial
 ms.date: 03/31/2020
 ms.author: scottwhi
 ms.custom: devx-track-js
-ms.openlocfilehash: d5dc762499342f0004073fb6c240c98c4ac2bc09
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ecea9dce3509e064d9244a8b725add21747a03e
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334571"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93102210"
 ---
 # <a name="tutorial-upload-images-to-the-bing-visual-search-api"></a>Руководство по отправке изображений в API "Визуальный поиск Bing"
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 API визуального поиска Bing позволяет искать в Интернете изображения, сходные с теми, которые вы отправите в него. С помощью этого руководства вы создадите одностраничное веб-приложение, которое умеет отправлять в API изображение и отображать полученные результаты. Обратите внимание, что это приложение соблюдает не все [требования Bing к использованию и отображению](../bing-web-search/use-display-requirements.md), имеющие отношение к работе с API.
 

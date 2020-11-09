@@ -11,14 +11,19 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: 9a5749d115a4d5d9ce1e0ac454609c7b639c2f8e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e1b666e8929309778fc7b72e034a425c841fc2f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91309774"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93095923"
 ---
 # <a name="tutorial-get-search-suggestions-on-a-web-page"></a>Руководство по Получение результатов поиска на веб-странице
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 В рамках работы с этим руководством мы создадим веб-страницу, которая позволит пользователям запрашивать API автозаполнения Bing.
 
@@ -119,7 +124,7 @@ getSubscriptionKey = function() {
     }
 ```
 
-Вспомогательная функция getSubscriptionKey принимает один параметр — **invalidate**. Если **invalidate** имеет значение **true**, функция getSubscriptionKey удаляет файл cookie, который содержит ключ API автозаполнения Bing. Если **invalidate** имеет значение **false**, функция getSubscriptionKey возвращает значение ключа API автозаполнения Bing.
+Вспомогательная функция getSubscriptionKey принимает один параметр — **invalidate**. Если **invalidate** имеет значение **true** , функция getSubscriptionKey удаляет файл cookie, который содержит ключ API автозаполнения Bing. Если **invalidate** имеет значение **false** , функция getSubscriptionKey возвращает значение ключа API автозаполнения Bing.
 
 ```html
     function getSubscriptionKey(invalidate) {
@@ -267,7 +272,7 @@ function bingAutosuggest(query, key) {
 </form>
 ```
 
-Добавьте HTML-тег **div**, который мы используем для отображения результатов. Определенный ранее код JavaScript обращается к этому тегу **div**.
+Добавьте HTML-тег **div** , который мы используем для отображения результатов. Определенный ранее код JavaScript обращается к этому тегу **div**.
 
 ```html
 <h2>Results</h2>

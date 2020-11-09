@@ -10,14 +10,19 @@ ms.subservice: bing-spell-check
 ms.topic: overview
 ms.date: 12/19/2019
 ms.author: aahi
-ms.openlocfilehash: 205d7991551ca48c3ea2e61baef53f5d06bdcbd2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 905ae56ab8d64f7342c4ee6b9f25d188c907710d
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86200495"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93084193"
 ---
 # <a name="what-is-the-bing-spell-check-api"></a>Что такое API Проверки орфографии Bing?
+
+> [!WARNING]
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 API проверки орфографии Bing позволяет выполнять контекстную проверку орфографии и грамматики в тексте. Большинство средств проверки орфографии выполняют проверку с использованием наборов правил на основе словаря, а в Bing используется машинное обучение и статистический машинный перевод для точных исправлений с учетом контекста. 
 
