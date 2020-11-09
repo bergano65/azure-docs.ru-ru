@@ -1,9 +1,9 @@
 - name: Документация по API распознавания говорящего
-  href: Home.md
+  href: ../speech-service/speaker-recognition-overview.md
 - name: Обзор
   items:
     - name: Дополнительные сведения об API распознавания говорящего
-      href: Home.md
+      href: ../speech-service/speaker-recognition-overview.md
 - name: Справочник
   items:
     - name: Справочник по API

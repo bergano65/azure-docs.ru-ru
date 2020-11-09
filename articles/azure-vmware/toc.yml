@@ -72,6 +72,8 @@
           href: concepts-api-management.md
         - name: Звездообразная модель
           href: concepts-hub-and-spoke.md
+        - name: Центр безопасности Azure
+          href: azure-security-integration.md
         - name: Azure Backup Server
           items:
             - name: Настройка Backup Server

@@ -62,28 +62,28 @@
 - name: Справочник
   items:
     - name: Справочник по API Пользовательского автозаполнения Bing
-      href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-autosuggest-api-v7-reference'
+      href: /rest/api/cognitiveservices-bingsearch/bing-custom-autosuggest-api-v7-reference
     - name: Справочник по API Пользовательского поиска изображений Bing
-      href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference'
+      href: /rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference
     - name: Справочник по API Пользовательского поиска Bing
-      href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference'
+      href: /rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference
     - name: Справочник по API Пользовательского поиска видео Bing
-      href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-videos-api-v7-reference'
+      href: /rest/api/cognitiveservices-bingsearch/bing-custom-videos-api-v7-reference
     - name: Требования к использованию и отображению API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/use-display-requirements.md
       maintainContext: true
     - name: Пакеты SDK
       items:
         - name: .NET
-          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet'
+          href: /dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet
         - name: "Java\_— Пользовательский поиск"
-          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable'
+          href: /java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable
         - name: "Java\_— Пользовательский поиск изображений"
-          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingcustomimagesearch?view=azure-java-stable'
+          href: /java/api/overview/azure/cognitiveservices/client/bingcustomimagesearch?view=azure-java-stable
         - name: Python
           href: /python/api/azure-cognitiveservices-search-customsearch/?view=azure-python
         - name: Node.js
-          href: 'https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-customsearch/?view=azure-node-latest'
+          href: /javascript/api/@azure/cognitiveservices-customsearch/?view=azure-node-latest
         - name: "Go\_— Пользовательский поиск"
           href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customsearch'
         - name: "Go\_— Пользовательский поиск изображений"
