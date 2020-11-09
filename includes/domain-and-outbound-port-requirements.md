@@ -7,16 +7,16 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 10/09/2019
 ms.author: abnarain
-ms.openlocfilehash: 0b2831321c9f4d855a19605c1ce5ace9fa11c88b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 79a8bc73f416c8d10d83e7ad94a727094f072b00
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89596126"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94331713"
 ---
 | Доменные имена                  | Исходящие порты | Описание                              |
 | ----------------------------- | -------------- | ---------------------------------------- |
-| `*.servicebus.windows.net`    | 443            | Требуется локальной среде выполнения интеграции для подключения к службам перемещения данных в Фабрике данных Azure. |
+| `*.servicebus.windows.net`    | 443            | Требуется локальной среде выполнения интеграции для интерактивной разработки. |
 | `{datafactory}.{region}.datafactory.azure.net`<br> или `*.frontend.clouddatahub.net` | 443            | Требуется локальной среде выполнения интеграции для подключения к службе фабрики данных. <br>Для нового экземпляра Фабрики данных найдите полное доменное имя из ключа локальной среды IR в формате {datafactory}.{region}.datafactory.azure.net. Для старого экземпляра Фабрики данных, если полное доменное имя не отображается в ключе локальной среды IR, используйте *.frontend.clouddatahub.net. |
 | `download.microsoft.com`    | 443            | Требуется локальной среде выполнения интеграции для скачивания обновлений. Если автоматическое обновление отключено, можно пропустить настройку этого домена. |
 | `*.core.windows.net`          | 443            | Используется локальной средой выполнения интеграции для подключения к учетной записи хранения Azure при помощи функции [промежуточного копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance#staged-copy). |

@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3d5c47d3e3e9485c3a6de8f93782c654fb34a516
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1208d95a282ca6e236d9d6be8013f51dead90d13
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330644"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94376652"
 ---
 # <a name="add-chit-chat-to-a-knowledge-base"></a>Добавление беседы в базу знаний
 
@@ -60,7 +60,15 @@ ms.locfileid: "91330644"
 ## <a name="add-chit-chat-to-an-existing-kb"></a>Добавление беседы в существующую базу знаний
 Выберите базу знаний и перейдите на страницу **Параметры**. Здесь есть ссылка на все наборы данных бесед в соответствующем формате **TSV**. Загрузите желаемую личность, а затем отправьте ее как источник файла. Не изменяйте формат или метаданные при загрузке и отправке файла.
 
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+
 ![Добавление беседы в существующую базу знаний](../media/qnamaker-how-to-chit-chat/add-chit-chat-dataset.png)
+
+# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+
+![Добавление "ХИ2ТЕСТ-Chat" в существующую предварительную версию базы знаний](../media/qnamaker-how-to-chit-chat/add-chit-chat-dataset-v2.png)
+
+---
 
 ## <a name="edit-your-chit-chat-questions-and-answers"></a>Изменение вопросов и ответов беседы
 Во время изменения базы знаний вы увидите новый источник для беседы, зависящий от выбранного персонажа. Теперь вы можете добавлять измененные вопросы или редактировать ответы как и в любом другом источнике.
@@ -79,11 +87,11 @@ ms.locfileid: "91330644"
 
 ![Удаление беседы из базы знаний](../media/qnamaker-how-to-chit-chat/delete-chit-chat.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Импорт базы знаний](../Tutorials/migrate-knowledge-base.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Общие сведения о QnA Maker](../Overview/overview.md)

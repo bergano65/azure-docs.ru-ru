@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: eaf12fe1d757c3a5a76307d87151bf71aa720b2b
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 13959c4a3c798656efdc72b5c8e5f96e4fb2392a
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042391"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94375359"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -60,7 +60,7 @@ ms.locfileid: "93042391"
 Мы увидели, что при чистой повторной установке агента будут устранены большинство проблем. По сути, это может быть первым предложением поддержки для получения агента в состояние ункурроптед от нашей группы поддержки. Запуск средства устранения неполадок, регистрация журнала и повторная повторная установка поможет ускорить решение проблем.
 
 1. Скачайте скрипт очистки:
-- `$ wget https://github.com/microsoft/OMS-Agent-for-Linux/blob/master/tools/purge_omsagent.sh`
+- `$ wget https://raw.githubusercontent.com/microsoft/OMS-Agent-for-Linux/master/tools/purge_omsagent.sh`
 2. Запустите скрипт очистки (с разрешениями sudo):
 - `$ sudo sh purge_omsagent.sh`
 
@@ -92,7 +92,7 @@ ms.locfileid: "93042391"
 | NOT_DEFINED | Подключаемый модуль auoms auditd не будет установлен, так как не установлены необходимые зависимости | Установить auoms не удалось, установите пакет auditd. |
 | 2 | Набору оболочки предоставлен недопустимый параметр. Запустите `sudo sh ./omsagent-*.universal*.sh --help` для информации об использовании |
 | 3 | Набору оболочки не предоставлен параметр. Выполните `sudo sh ./omsagent-*.universal*.sh --help`, чтобы получить сведения об использовании. |
-| 4 | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent- *rpm* .sh можно установить только в системах на базе RPM, а пакеты omsagent- *deb* .sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Кроме того, просмотрите и проверьте настройки прокси-сервера. |
+| 4 | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent- *rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent- *deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Кроме того, просмотрите и проверьте настройки прокси-сервера. |
 | 5 | Набор оболочки должен выполняться от имени привилегированного пользователя, ИЛИ получена ошибка 403 во время подключения. Выполните команду с использованием `sudo`. |
 | 6 | Недопустимая архитектура пакета, ИЛИ получена ошибка 200 во время подключения; пакеты omsagent- *x64.sh можно установить только в 64-разрядных системах, а пакеты omsagent-* x86.sh — только в 32-разрядных системах. Скачайте правильный пакет для используемой архитектуры из [последнего выпуска](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
 | 17 | Не удалось установить пакет OMS. Просмотрите выходные данные команды, чтобы определить причину сбоя. |
@@ -444,7 +444,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 ```
 sudo sh ./omsagent-*.universal.x64.sh --purge
 ```
-либо
+Или
 
 ```
 sudo sh ./onboard_agent.sh --purge

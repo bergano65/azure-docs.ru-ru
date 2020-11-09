@@ -120,6 +120,8 @@
           href: customize-branding.md
         - name: Настройка варианта "Не выходить?"
           href: keep-me-signed-in.md
+        - name: Как найти идентификатор клиента
+          href: active-directory-how-to-find-tenant.md
         - name: Привязка подписки Azure
           href: active-directory-how-subscriptions-associated-directory.md
         - name: Добавление сведений о конфиденциальности

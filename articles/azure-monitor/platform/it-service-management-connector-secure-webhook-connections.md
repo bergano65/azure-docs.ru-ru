@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 09/08/2020
-ms.openlocfilehash: 5976b70825ac2854e67ddad968752fc87d9e8cea
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 85ff3bed2a648f852c311fefa8513622c2a48285
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93377145"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94376542"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-secure-export"></a>Подключение Azure к средствам ITSM с помощью безопасного экспорта
 
@@ -72,7 +72,7 @@ ITSMC использует учетные данные пользователя 
 3. Выберите **задать** для **URI идентификатора приложения**.
 
    [![Снимок экрана с параметром для задания U R I для приложения I D.](media/it-service-management-connector-secure-webhook-connections/azure-ad.png)](media/it-service-management-connector-secure-webhook-connections/azure-ad-expand.png#lightbox)
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 ## <a name="create-a-secure-webhook-action-group"></a>Создание безопасной группы действий веб-перехватчика
 
@@ -108,7 +108,7 @@ ITSMC использует учетные данные пользователя 
 
 В следующих разделах приводятся сведения о подключении продукта ServiceNow и безопасном экспорте в Azure.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Убедитесь, что выполнены следующие предварительные требования:
 
@@ -117,7 +117,7 @@ ITSMC использует учетные данные пользователя 
 
 ### <a name="configure-the-servicenow-connection"></a>Настройка подключения ServiceNow
 
-1. Используйте ссылку <https:// <instance name> . Service-Now.com/API/sn_em_connector/EM/inbound_event?Source=azuremonitor,> универсальный код ресурса (URI) для определения безопасного экспорта.
+1. Используйте ссылку HTTPS://(имя экземпляра). Service-Now. com/API/sn_em_connector/ем/inbound_event? Source = азуремонитор URI для определения безопасного экспорта.
 
 2. Следуйте инструкциям в соответствии с версией:
    * [Париж](https://docs.servicenow.com/bundle/paris-it-operations-management/page/product/event-management/concept/azure-integration.html)
@@ -127,7 +127,7 @@ ITSMC использует учетные данные пользователя 
 
 В следующих разделах содержатся сведения о подключении продукта Хеликс BMC и безопасном экспорте в Azure.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Убедитесь, что выполнены следующие предварительные требования:
 

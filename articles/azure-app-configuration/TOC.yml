@@ -140,8 +140,6 @@
           href: 'https://go.microsoft.com/fwlink/?linkid=2103727'
         - name: Пакет Azure SDK для JavaScript
           href: 'https://go.microsoft.com/fwlink/?linkid=2103664'
-        - name: REST API
-          href: 'https://go.microsoft.com/fwlink/?linkid=2078296'
     - name: Управление функциями
       items:
         - name: Библиотека .NET Core
@@ -156,6 +154,52 @@
           href: /powershell/module/az.appconfiguration/
         - name: Terraform
           href: 'https://www.terraform.io/docs/providers/azurerm/r/app_configuration.html'
+    - name: REST API
+      items:
+        - name: Обзор
+          href: rest-api.md
+        - name: Ресурсы
+          items:
+            - name: Ключи
+              href: ./rest-api-keys.md
+            - name: Значения ключей
+              href: ./rest-api-key-value.md
+            - name: Метки
+              href: ./rest-api-labels.md
+            - name: Блокировки
+              href: ./rest-api-locks.md
+            - name: Редакции
+              href: ./rest-api-revisions.md
+        - name: Протокол
+          items:
+            - name: Аутентификация
+              href: ./rest-api-authentication-index.md
+              items:
+                - name: "Проверка подлинности Azure\_Active\_Directory"
+                  href: rest-api-authentication-azure-ad.md
+                - name: Проверка подлинности HMAC
+                  href: rest-api-authentication-hmac.md
+            - name: Авторизация
+              href: ./rest-api-authorization-index.md
+              items:
+                - name: Авторизация Azure Active Directory
+                  href: rest-api-authorization-azure-ad.md
+                - name: Авторизация HMAC
+                  href: rest-api-authorization-hmac.md
+            - name: Модель согласованности
+              href: ./rest-api-consistency.md
+            - name: Общие заголовки
+              href: ./rest-api-headers.md
+            - name: Регулирование
+              href: ./rest-api-throttling.md
+            - name: Управление версиями
+              href: ./rest-api-versioning.md
+        - name: Разработка
+          items:
+            - name: Fiddler
+              href: ./rest-api-fiddler.md
+            - name: Postman
+              href: ./rest-api-postman.md
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md

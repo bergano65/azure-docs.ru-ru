@@ -1,18 +1,18 @@
 ---
 title: Краткое руководство. Создание частной конечной точки Azure с помощью Azure PowerShell
-description: С помощью этого краткого руководства вы узнаете, как создать частную конечную точку с помощью Azure PowerShell.
+description: Из этого краткого руководства вы узнаете, как создать частную конечную точку с помощью Azure PowerShell.
 services: private-link
 author: asudbring
 ms.service: private-link
-ms.topic: how-to
+ms.topic: quickstart
 ms.date: 11/02/2020
 ms.author: allensu
-ms.openlocfilehash: 147e646738df9d70355f379a9e64a52116e9f16f
-ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
-ms.translationtype: MT
+ms.openlocfilehash: 7add424c23e430a8ca5059d45acd037fff8836ad
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93233599"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368667"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-powershell"></a>Краткое руководство. Создание частной конечной точки с помощью Azure PowerShell
 
@@ -47,11 +47,11 @@ New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 
 Для безопасного подключения к виртуальной машине с целью тестирования частной конечной точки будет использоваться узел бастиона.
 
-Создайте виртуальную сеть и узел бастиона с помощью:
+Создание виртуальной сети и узла бастиона с помощью:
 
 * [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork)
 * [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress)
-* [New-Азбастион](/powershell/module/az.network/new-azbastion)
+* [New-AzBastion](/powershell/module/az.network/new-azbastion).
 
 ```azurepowershell-interactive
 ## Create backend subnet config. ##
@@ -147,14 +147,15 @@ New-AzVM -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Location 'eastus' -VM 
 
 ## <a name="create-private-endpoint"></a>Создание частной конечной точки
 
-В этом разделе вы создадите частную конечную точку и подключение с помощью:
+В рамках этого раздела вы создадите частную конечную точку и подключение с помощью:
 
 * [New-AzPrivateLinkServiceConnection](/powershell/module/az.network/New-AzPrivateLinkServiceConnection)
 * [New-AzPrivateEndpoint](/powershell/module/az.network/new-azprivateendpoint)
 
 ```azurepowershell-interactive
-## Place web app into variable. Replace <your-webapp-name> with your server name ##
-$webapp = Get-AzWebApp -ResourceGroupName CreatePrivateEndpointQS-rg -Name <your-webapp-name>
+## Place web app into variable. Replace <webapp-resource-group-name> with the resource group of your webapp. ##
+## Replace <your-webapp-name> with your webapp name ##
+$webapp = Get-AzWebApp -ResourceGroupName <webapp-resource-group-name> -Name <your-webapp-name>
 
 ## Create private endpoint connection. ##
 $parameters1 = @{
@@ -183,7 +184,7 @@ New-AzPrivateEndpoint @parameters2
 ```
 ## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS
 
-В этом разделе вы создадите и настроите частную зону DNS с помощью:
+В рамках этого раздела вы создадите и настроите частную зону DNS с помощью:
 
 * [New-AzPrivateDnsZone](/powershell/module/az.privatedns/new-azprivatednszone)
 * [New-AzPrivateDnsVirtualNetworkLink](/powershell/module/az.privatedns/new-azprivatednsvirtualnetworklink)
@@ -233,15 +234,15 @@ New-AzPrivateDnsZoneGroup @parameters4
 
 1. Войдите на [портал Azure](https://portal.azure.com) 
  
-2. В области навигации слева выберите **Группы ресурсов** .
+2. В области навигации слева выберите **Группы ресурсов**.
 
-3. Выберите **CreatePrivateEndpointQS-rg** .
+3. Выберите **CreatePrivateEndpointQS-rg**.
 
-4. Выберите **myVM** .
+4. Выберите **myVM**.
 
-5. На обзорной странице для **myVM** выберите **Подключиться** , а затем — **Бастион** .
+5. На обзорной странице для **myVM** выберите **Подключиться** , а затем — **Бастион**.
 
-6. Нажмите синюю кнопку **Использовать Бастион** .
+6. Нажмите синюю кнопку **Использовать Бастион**.
 
 7. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
@@ -259,20 +260,20 @@ New-AzPrivateDnsZoneGroup @parameters4
     Aliases:  mywebapp8675.azurewebsites.net
     ```
 
-    Для имени веб-приложения возвращается частный IP-адрес **10.0.0.5** .  Этот адрес находится в подсети виртуальной сети, созданной ранее.
+    Для имени веб-приложения возвращается частный IP-адрес  **10.0.0.5**.  Этот адрес находится в подсети виртуальной сети, созданной ранее.
 
 10. В окне подключения бастиона к **myVM** откройте Internet Explorer.
 
-11. Введите URL-адрес веб-приложения **https://\<your-webapp-name>.azurewebsites.net** .
+11. Введите URL-адрес веб-приложения **https://\<your-webapp-name>.azurewebsites.net**.
 
 12. Если приложение не развернуто, вы получите страницу веб-приложения по умолчанию.
 
     :::image type="content" source="./media/create-private-endpoint-portal/web-app-default-page.png" alt-text="Страница веб-приложения по умолчанию." border="true":::
 
-13. Закройте подключение к **myVM** .
+13. Закройте подключение к **myVM**.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
-Завершив использование частной конечной точки и виртуальной машины, удалите группу ресурсов и все ресурсы, используя команду [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
+По завершении использования частной конечной точки и виртуальной машины удалите группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup):
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force

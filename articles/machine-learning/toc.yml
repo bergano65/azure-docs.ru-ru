@@ -399,6 +399,9 @@
         - name: Использование удаленных целевых объектов вычислений
           displayName: automl automated auto ml
           href: how-to-auto-train-remote.md
+        - name: Использование автоматизированного ML с Databricks
+          displayName: automl
+          href: how-to-configure-databricks-automl-environment.md
         - name: Автоматическое обучение прогнозной модели
           displayName: time series
           href: how-to-auto-train-forecast.md

@@ -50,13 +50,13 @@
   items:
     - name: Краткие руководства
       items:
-        - name: Создание рабочей области Synapse с помощью портала Azure
+        - name: Создание рабочей области на портале Azure
           href: quickstart-create-workspace.md
           displayName: quickstart
-        - name: Создание рабочей области Synapse с помощью Azure CLI
+        - name: "Создание рабочей области с помощью Azure\_CLI"
           href: quickstart-create-workspace-cli.md
           displayName: quickstart
-        - name: Создание рабочей области Synapse с помощью Azure PowerShell
+        - name: Создание рабочей области с помощью Azure PowerShell
           href: quickstart-create-workspace-powershell.md
           displayName: quickstart
         - name: Развертывание с помощью шаблона
@@ -338,6 +338,12 @@
               displayname: 'workload, management'
     - name: Практические руководства
       items:
+        - name: Резервное копирование и восстановление
+          items:
+            - name: Создание точек восстановления
+              href: ./backuprestore/sqlpool-create-restore-point.md
+            - name: Восстановление пула Synapse SQL
+              href: ./backuprestore/restore-sql-pool.md
         - name: Управление и мониторинг
           items:
             - name: Мониторинг кэша 2-го поколения

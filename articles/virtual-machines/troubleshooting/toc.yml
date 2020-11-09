@@ -109,6 +109,8 @@
           href: unresponsive-vm-apply-group-policy.md
         - name: При применении политики безопасности виртуальная машина не отвечает
           href: unresponsive-vm-apply-security-policy.md
+        - name: Виртуальная машина не отвечает на запросы при ожидании диспетчера локальных сеансов
+          href: vm-unresponsive-wait-local-session-manager.md
         - name: 'Ошибка диспетчера загрузки Windows: состояние "Недопустимый хэш образа"'
           href: windows-boot-error-invalid-image-hash.md
         - name: "Ошибка остановки работы Windows\_— неправильная информация о конфигурации системы"
@@ -117,6 +119,8 @@
           href: troubleshoot-windows-stop-error.md
         - name: 'Ошибка, вызывающая прекращение работы Windows: системный процесс завершен'
           href: windows-stop-error-system-process-terminated.md
+        - name: 'Ошибка, при которой происходит остановка Windows: системное исключение потока не обработано'
+          href: windows-stop-error-system-thread-exception-not-handled.md
 - name: Не удается подключиться к виртуальной машине
   items:
     - name: RDP

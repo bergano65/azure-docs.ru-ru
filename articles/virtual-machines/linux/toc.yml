@@ -36,29 +36,31 @@
       href: tutorial-virtual-network.md
     - name: "9.\_Резервное копирование виртуальных машин"
       href: tutorial-backup-vms.md
-    - name: "10.\_Управление виртуальными машинами"
+    - name: "10.\_Включение аварийного восстановления"
+      href: tutorial-disaster-recovery.md
+    - name: "11.\_Управление виртуальными машинами"
       href: tutorial-govern-resources.md
-    - name: "11.\_Отслеживание и обновление виртуальных машин"
+    - name: "12.\_Отслеживание и обновление виртуальных машин"
       href: tutorial-config-management.md
-    - name: "12.\_Мониторинг виртуальных машин"
+    - name: "13.\_Мониторинг виртуальных машин"
       href: tutorial-monitor.md
-    - name: "13.\_Управление безопасностью виртуальных машин"
+    - name: "14.\_Управление безопасностью виртуальных машин"
       href: tutorial-azure-security.md
-    - name: "14a.\_Сборка с помощью Jenkins"
+    - name: "15a.\_Сборка с помощью Jenkins"
       href: /azure/developer/jenkins/pipeline-with-github-and-docker
-    - name: 14б. Интеграция Jenkins с Azure DevOps
+    - name: 15b. Интеграция Jenkins с Azure DevOps
       href: /azure/developer/jenkins/deploy-to-linux-vm-using-azure-devops-services
-    - name: "15a.\_Настройка стратегии последовательного развертывания"
+    - name: "16a.\_Настройка стратегии последовательного развертывания"
       href: tutorial-devops-azure-pipelines-classic.md
-    - name: "15b.\_Настройка стратегии раннего развертывания"
+    - name: "16b.\_Настройка стратегии раннего развертывания"
       href: tutorial-azure-devops-canary-strategy.md
-    - name: "15c.\_Настройка стратегии развертывания по схеме Blue-Green"
+    - name: "16c.\_Настройка стратегии развертывания по схеме Blue-Green"
       href: tutorial-azure-devops-blue-green-strategy.md
-    - name: 15d. Использование CI/CD с Azure Pipelines (YAML)
+    - name: 16d. Использование CI/CD с Azure Pipelines (YAML)
       href: tutorial-build-deploy-azure-pipelines.md
-    - name: "16.\_Создание стека LAMP"
+    - name: "17.\_Создание стека LAMP"
       href: tutorial-lamp-stack.md
-    - name: "17.\_Защита веб-сервера с помощью SSL"
+    - name: "18.\_Защита веб-сервера с помощью SSL"
       href: tutorial-secure-web-server.md
 - name: Примеры
   items:
@@ -285,7 +287,7 @@
         - name: Зарезервированные экземпляры
           items:
             - name: Предоплата за виртуальные машины
-              href: prepay-reserved-vm-instances.md
+              href: ../prepay-reserved-vm-instances.md
             - name: Предоплата за выделенные узлы
               href: ../prepay-dedicated-hosts-reserved-instances.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
             - name: Основные сведения о резервировании в Azure
