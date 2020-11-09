@@ -1,5 +1,5 @@
 ---
-title: Просмотр и настройка соединителя Интернета вещей Azure для метрик FHIR (предварительная версия)
+title: Отображение и Настройка соединителя Azure IoT для метрик FHIR (Предварительная версия)
 description: В этой статье объясняется, как отобразить и настроить соединитель Azure IoT для метрик FHIR (Предварительная версия).
 services: healthcare-apis
 author: msjasteppe
@@ -8,73 +8,71 @@ ms.subservice: iomt
 ms.topic: how-to
 ms.date: 10/29/2020
 ms.author: jasteppe
-ms.openlocfilehash: 1cdae789b8286be408735fff92e2de46e28ce514
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 9a4e2c4dfe8a9de28688afe0dd036cecb7ce2b39
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394294"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381224"
 ---
-# <a name="view-and-configure-azure-iot-connector-for-fhir-preview-metrics"></a>Просмотр и настройка соединителя Интернета вещей Azure для метрик FHIR (предварительная версия) 
+# <a name="display-and-configure-azure-iot-connector-for-fhir-preview-metrics"></a>Отображение и Настройка соединителя Azure IoT для метрик FHIR (Предварительная версия) 
 
-В этой статье вы узнаете, как просматривать и настраивать соединитель Azure IoT для метрик FHIR *. 
+В этой статье вы узнаете, как отобразить и настроить соединитель Azure IoT для быстрого получения ресурсов о взаимодействии в сфере здравоохранения (FHIR&#174;) *.
 
 > [!TIP]
-> Следуйте указаниям в статье [Экспорт соединителя Azure IOT для FHIR (Предварительная версия) с помощью параметров диагностики](./iot-metrics-diagnostics-export.md) , чтобы узнать, как настроить экспорт данных метрик.
+> Чтобы узнать, как настроить экспорт данных метрик, следуйте указаниям в статье [Экспорт соединителя Azure IOT для FHIR (Предварительная версия) для метрик с помощью параметров диагностики](./iot-metrics-diagnostics-export.md).
 
-## <a name="view-metrics-for-azure-iot-connector-for-fhir-preview"></a>Просмотр метрик для соединителя Azure IoT для FHIR (Предварительная версия)
-1. Чтобы просмотреть метрики для соединителей IoT, выберите службу API Azure для службы FHIR в портал Azure. 
+## <a name="display-metrics-for-azure-iot-connector-for-fhir-preview"></a>Отображение метрик для соединителя Azure IoT для FHIR (Предварительная версия)
 
-2. Переход к **метрикам** 
+1. Войдите в портал Azure, а затем выберите API Azure для службы FHIR. 
+
+2. В области слева выберите **метрики**. 
 
 3. Перейдите на вкладку **соединитель IOT** .
 
-   :::image type="content" source="media/iot-metrics-display/iot-metrics-main.png" alt-text="Connector1 IoT" lightbox="media/iot-metrics-display/iot-metrics-main.png"::: 
+   :::image type="content" source="media/iot-metrics-display/iot-metrics-main.png" alt-text="Снимок экрана: панель &quot;соединитель IoT&quot; с графикой, отображающей количество входящих и нормализованных сообщений." lightbox="media/iot-metrics-display/iot-metrics-main.png"::: 
 
-4. Выберите соединитель IoT, чтобы просмотреть его метрики (например, существует (4) соединителей IoT, связанных с этим API Azure для службы FHIR).
+4. Выберите соединитель IoT для просмотра его метрик. Например, существует четыре соединителя Интернета вещей ( *соединитель 1* , *соединитель 2* и т. д.), связанные с этим API Azure для службы FHIR.
 
-   :::image type="content" source="media/iot-metrics-display/iot-metrics-select-connector.png" alt-text="Connector2 IoT" lightbox="media/iot-metrics-display/iot-metrics-select-connector.png"::: 
+   :::image type="content" source="media/iot-metrics-display/iot-metrics-select-connector.png" alt-text="Снимок экрана: панель &quot;соединитель IoT&quot;, на которой показаны вкладки соединителя IoT 1, 2, 3 и 4." lightbox="media/iot-metrics-display/iot-metrics-select-connector.png"::: 
 
-> [!NOTE]
-> **Настраиваемая** вкладка позволяет создавать определенные сочетания времени и дат для просмотра метрик соединителя IOT.
+5. Выберите период времени (например, **1 час** , **24 часа** , **7 дней** или **Настраиваемый** ) метрик соединителя Интернета вещей, которые требуется отобразить. Выбрав **настраиваемую** вкладку, можно создать определенные сочетания времени и дат для отображения метрик соединителя IOT.
 
-5. Выберите период времени для отображаемых метрик соединителя Интернета вещей (например: 1 час, 24 часа, 7 дней или пользовательское).
-
-   :::image type="content" source="media/iot-metrics-display/iot-metrics-select-time.png" alt-text="Connector3 IoT" lightbox="media/iot-metrics-display/iot-metrics-select-time.png"::: 
+   :::image type="content" source="media/iot-metrics-display/iot-metrics-select-time.png" alt-text="Снимок экрана: панель &quot;соединитель IoT&quot;, отображающая график периода времени &quot;1 час&quot; для &quot;соединителя 1&quot;." lightbox="media/iot-metrics-display/iot-metrics-select-time.png"::: 
  
-## <a name="metrics-types-for-azure-iot-connector-for-fhir-preview"></a>Типы метрик для соединителя Azure IoT для FHIR (Предварительная версия) 
-Ниже перечислены метрики отображаемого соединителя Интернета вещей.
+## <a name="metric-types-for-azure-iot-connector-for-fhir-preview"></a>Типы метрик для соединителя Azure IoT для FHIR (Предварительная версия) 
 
-|Тип метрик|Назначение метрик| 
+Метрики соединителя IoT, которые можно отобразить, перечислены в следующей таблице.
+
+|Тип метрики|Назначение метрики| 
 |-----------|--------------|
-|Число входящих сообщений|Число полученных необработанных входящих сообщений (например, событий устройства).|
-|Число нормализованных сообщений|Число нормализованных сообщений.|
-|Число групп сообщений|Число групп, у которых есть сообщения, агрегированные в указанное временное окно.|
-|Средняя задержка нормализованного этапа|Средняя задержка этапа нормализации. Нормализация этапа — это выполнение нормализации необработанных входящих сообщений.|
-|Средняя задержка этапа группы|Средняя задержка этапа группы. Этап группы заключается в выполнении буферизации, агрегирования и группирования нормализованных сообщений.| 
-|общее число ошибок|Общее число ошибок.| 
+|Число входящих сообщений|Отображает число полученных необработанных входящих сообщений (например, событий устройства).|
+|Число нормализованных сообщений|Отображает число нормализованных сообщений.|
+|Число групп сообщений|Отображает число групп, для которых в заданном временном окне собраны сообщения.|
+|Средняя задержка нормализованного этапа|Отображает среднюю задержку нормализованного этапа. Нормализованная стадия выполняет нормализацию необработанных входящих сообщений.|
+|Средняя задержка этапа группы|Отображает среднюю задержку этапа группы. На этапе группы выполняется буферизация, агрегирование и группирование нормализованных сообщений.| 
+|общее число ошибок|Отображает общее число ошибок.| 
 
-## <a name="focusing-and-configuring-azure-iot-connector-for-fhir-preview-metrics"></a>Фокусирование и Настройка соединителя Azure IoT для метрик FHIR (Предварительная версия)
-В этом примере мы будем сосредоточиться на **количестве метрик входящих сообщений** .
+## <a name="focus-on-and-configure-azure-iot-connector-for-fhir-preview-metrics"></a>Сосредоточьтесь на и настройте соединитель Azure IoT для метрик FHIR (Предварительная версия)
+
+В этом примере основное внимание уделяется **числу метрик входящих сообщений** .
 
 1. Выберите момент времени, на который вы хотите сосредоточиться.
 
-   :::image type="content" source="media/iot-metrics-display/iot-metrics-focus.png" alt-text="Connector4 IoT" lightbox="media/iot-metrics-display/iot-metrics-focus.png"::: 
+   :::image type="content" source="media/iot-metrics-display/iot-metrics-focus.png" alt-text="Снимок экрана области метрики &quot;число входящих сообщений&quot;, выделяющий один момент времени на линейном графике." lightbox="media/iot-metrics-display/iot-metrics-focus.png"::: 
 
-2. На этом экране вы можете **Добавить метрику** , **Добавить фильтр** и **Применить разбиение** для дальнейшей настройки. 
+2. В области **число входящих сообщений** можно дополнительно настроить метрику, выбрав **Добавить метрику** , **Добавить фильтр** или **Применить разделение**. 
 
-   :::image type="content" source="media/iot-metrics-display/iot-metrics-add-options.png" alt-text="Connector5 IoT" lightbox="media/iot-metrics-display/iot-metrics-add-options.png"::: 
+   :::image type="content" source="media/iot-metrics-display/iot-metrics-add-options.png" alt-text="Снимок экрана: область метрики &quot;число входящих сообщений&quot;, в которой выделяются кнопки &quot;добавить метрику&quot;, &quot;добавить фильтр&quot; и &quot;применить разделение&quot;." lightbox="media/iot-metrics-display/iot-metrics-add-options.png"::: 
 
 ## <a name="conclusion"></a>Заключение 
-Наличие доступа к метрикам плоскости данных очень важно для мониторинга и устранения неполадок.  Соединитель Azure IoT для FHIR помогает выполнять эти действия с помощью метрик. 
+Наличие доступа к метрикам плоскости данных очень важно для мониторинга и устранения неполадок. Соединитель Azure IoT для FHIR помогает выполнять эти действия с помощью метрик. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с часто задаваемыми вопросами о соединителе Azure IoT для FHIR.
+Получите ответы на часто задаваемые вопросы о соединителе Azure IoT для FHIR.
 
 >[!div class="nextstepaction"]
 >[Вопросы и ответы о соединителе Azure IoT для FHIR](fhir-faq.md)
 
-*На портале Azure соединитель "Azure IoT для FHIR" называется соединителем IoT (предварительная версия).
-
-FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.
+* В портал Azure соединитель Azure IoT для FHIR называется соединителем IoT (Предварительная версия). FHIR является охраняемым товарным знаком HL7 и используется с разрешением HL7. 

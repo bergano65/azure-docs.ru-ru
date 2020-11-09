@@ -8,12 +8,12 @@ ms.date: 08/26/2020
 ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.service: digital-twins
-ms.openlocfilehash: cb532098cda290654d6bdebe9cec2edab8ccbf99
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 6393b0b8d794345fded95718a2581ae9b929ad49
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94355793"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381156"
 ---
 # <a name="move-an-azure-digital-twins-instance-to-a-different-azure-region"></a>Перемещение экземпляра Azure Digital двойников в другой регион Azure
 
@@ -120,7 +120,7 @@ ms.locfileid: "94355793"
 
 ### <a name="create-a-new-instance"></a>Создание нового экземпляра
 
-Сначала создайте новый экземпляр Azure Digital двойников в целевом регионе. Выполните действия, описанные в разделе [Настройка экземпляра и проверки подлинности](how-to-set-up-instance-portal.md). Помните следующие указатели:
+Сначала создайте новый экземпляр Azure Digital двойников в целевом регионе. Выполните действия, описанные в разделе « [инструкции. Настройка экземпляра и проверки подлинности](how-to-set-up-instance-portal.md)». Помните следующие указатели:
 
 * Вы можете иметь одно и то же имя для нового экземпляра, *Если* оно находится в другой группе ресурсов. Если необходимо использовать ту же группу ресурсов, которая содержит исходный экземпляр, то новому экземпляру потребуется собственное уникальное имя.
 * Введите новый целевой регион при появлении запроса на расположение.

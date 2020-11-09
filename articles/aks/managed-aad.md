@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/26/2020
 ms.author: thomasge
-ms.openlocfilehash: d34505b1f36d6de77e2bb1df9aa98b7a14b5f44d
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: fdbef15bb7831fedd7c375d565e0cde10f9b9a9e
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171942"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94380438"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>Интеграция Azure Active Directory с управляемым AKS
 
@@ -22,20 +22,13 @@ ms.locfileid: "92171942"
 
 Дополнительные сведения о потоке интеграции Azure AD см. в [документации по основным понятиям интеграции Azure Active Directory](concepts-identity.md#azure-active-directory-integration).
 
-## <a name="region-availability"></a>Доступность по регионам
-
-Интеграция Azure Active Directory с управляемыми AKSми доступна в общедоступных регионах, где [поддерживается AKS](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
-
-* В настоящее время Azure для государственных организаций не поддерживается.
-* В настоящее время в Azure Китая 21Vianet не поддерживается.
-
 ## <a name="limitations"></a>Ограничения 
 
 * Невозможно отключить управляемую AKS интеграцию Azure AD
 * кластеры, не поддерживающие RBAC, не поддерживаются для интеграции Azure AD, управляемой AKS.
 * Изменение клиента Azure AD, связанного с интеграцией Azure AD, управляемой AKS, не поддерживается
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Azure CLI версии 2.11.0 или более поздней.
 * Kubectl с минимальной версией [1.18.1](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v1181) или [кубелогин](https://github.com/Azure/kubelogin)
@@ -55,7 +48,7 @@ kubelogin --version
 Используйте [эти инструкции](https://kubernetes.io/docs/tasks/tools/install-kubectl/) для других операционных систем.
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для кластера требуется группа Azure AD. Эта группа необходима в качестве группы администраторов кластера для предоставления разрешений администратора кластера. Вы можете использовать существующую группу Azure AD или создать новую. Запишите идентификатор объекта вашей группы Azure AD.
 

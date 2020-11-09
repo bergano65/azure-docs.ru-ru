@@ -11,19 +11,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: scottwhi
-ms.openlocfilehash: 95e80907220a58243844b80d81dc187f8dc4c8bc
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 39848bcaded1669c6a6efd5b649ecf8e8343a596
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93078702"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381122"
 ---
 # <a name="upgrade-from-bing-web-search-api-v5-to-v7"></a>Обновление API Bing для поиска в Интернете с версии 5 до версии 7
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 В этом руководстве по обновлению определены изменения между версиями 5 и 7 API Bing для поиска в Интернете. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
 
@@ -80,14 +80,14 @@ InsufficientScope|InsufficientAuthorization
 
 ### <a name="headers"></a>Заголовки
 
-- Добавлен необязательный заголовок запроса [Pragma](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#pragma). По умолчанию Bing возвращает кэшированное содержимое, если оно доступно. Чтобы Bing не возвращал кэшированное содержимое, установите для заголовка Pragma значение no-cache (например, Pragma:no-cache).
+- Добавлен необязательный заголовок запроса [Pragma](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#pragma). По умолчанию Bing возвращает кэшированное содержимое, если оно доступно. Чтобы Bing не возвращал кэшированное содержимое, установите для заголовка Pragma значение no-cache (например, Pragma:no-cache).
 
 ### <a name="query-parameters"></a>Параметры запроса
 
-- Добавлен параметр запроса [answerCount](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#answercount). С помощью этого параметра можно указать число ответов, которое должен включать ответ. Ответы выбираются на основе ранжирования. Например, если задать этот параметр равным трем (3), ответ будет включать три ответа с самым высоким приоритетом.  
+- Добавлен параметр запроса [answerCount](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#answercount). С помощью этого параметра можно указать число ответов, которое должен включать ответ. Ответы выбираются на основе ранжирования. Например, если задать этот параметр равным трем (3), ответ будет включать три ответа с самым высоким приоритетом.  
 
-- Добавлен параметр запроса [promote](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote). Используя этот параметр вместе с `answerCount`, можно явно включить один или несколько типов ответов независимо от их ранга. Например, чтобы распространить видео и изображения в ответ, вы можете задать для параметра повысить уровень значение *видео, изображения* . Список ответов, который требуется включить, не учитывается в предельном количестве `answerCount`. Например, если `answerCount` параметр имеет значение 2 и `promote` для него заданы *видео, изображения* , ответ может включать веб-страницы, Новости, видео и изображения.
+- Добавлен параметр запроса [promote](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote). Используя этот параметр вместе с `answerCount`, можно явно включить один или несколько типов ответов независимо от их ранга. Например, чтобы распространить видео и изображения в ответ, вы можете задать для параметра повысить уровень значение *видео, изображения*. Список ответов, который требуется включить, не учитывается в предельном количестве `answerCount`. Например, если `answerCount` параметр имеет значение 2 и `promote` для него заданы *видео, изображения* , ответ может включать веб-страницы, Новости, видео и изображения.
 
 ### <a name="object-changes"></a>Изменения объектов
 
-- Поле `someResultsRemoved` добавлено в объект [WebAnswer](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#webanswer). Поле содержит логическое значение, которое указывает, были ли исключены из ответа некоторые результаты ответа при поиске в Интернете.  
+- Поле `someResultsRemoved` добавлено в объект [WebAnswer](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#webanswer). Поле содержит логическое значение, которое указывает, были ли исключены из ответа некоторые результаты ответа при поиске в Интернете.

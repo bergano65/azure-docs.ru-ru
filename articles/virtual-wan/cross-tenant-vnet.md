@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: wellee
-ms.openlocfilehash: 875fd40fea315269f7fe72032942c40551a6b144
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: c49a85c71c9b877be7e143f5caf27dc307fe0c12
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078975"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381275"
 ---
 # <a name="connect-cross-tenant-vnets-to-a-virtual-wan-hub"></a>Подключение виртуальных сетей между клиентами к виртуальному концентратору глобальной сети
 
@@ -54,7 +54,7 @@ ms.locfileid: "92078975"
 1. Затем добавьте подписку удаленного клиента и родительскую подписку клиента в текущий сеанс PowerShell. Выполните следующую команду. Если вы вошли в родительский узел, необходимо выполнить команду только для удаленного клиента.
 
    ```azurepowershell-interactive
-   Add-AzAccount "xxxxx-b34a-4df9-9451-4402dcaecc5b"
+   Add-AzAccount -SubscriptionId "xxxxx-b34a-4df9-9451-4402dcaecc5b"
    ```
 
 1. Убедитесь, что назначение роли прошло успешно, войдя в Azure PowerShell с помощью родительских учетных данных, и выполните следующую команду:
@@ -98,7 +98,7 @@ ms.locfileid: "92078975"
    * **PowerShell:** Если соединение было успешно сформировано, метаданные из вновь сформированного соединения будут отображаться в консоли PowerShell.
    * **Портал Azure:** Перейдите к виртуальным сетевым концентраторам, подключениям **> подключения к виртуальной сети**. Можно просмотреть указатель на соединение. Чтобы просмотреть фактический ресурс, вам понадобятся соответствующие разрешения.
    
-## <a name="troubleshooting"></a><a name="troubleshoot"></a>Диагностика
+## <a name="troubleshooting"></a><a name="troubleshoot"></a>Устранение неполадок
 
 * Убедитесь, что метаданные в $remote (из предыдущего [раздела](#connect)) соответствуют сведениям из портал Azure.
 * Разрешения можно проверить с помощью параметров IAM группы ресурсов удаленного клиента или с помощью команд Azure PowerShell (Get-Азсубскриптион).

@@ -3,12 +3,12 @@ title: Разрешения на репозитории в Реестре кон
 description: Создание маркера с разрешениями, ограниченными конкретными репозиториями в реестре уровня "Премиум" для извлечения или отправки изображений или выполнения других действий.
 ms.topic: article
 ms.date: 05/27/2020
-ms.openlocfilehash: 8661ff2e320788d3899ae16dd3bee7d3ff662caa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b65b1bf69337cb172a17043490a5d13c7bd7afc2
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84509412"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381241"
 ---
 # <a name="create-a-token-with-repository-scoped-permissions"></a>Создание токена с разрешениями уровня репозитория
 
@@ -46,7 +46,7 @@ ms.locfileid: "84509412"
   |`metadata/read`    | Чтение метаданных из репозитория   | Перечисление тегов или манифестов |
   |`metadata/write`     |  Запись метаданных в репозиторий  | Включение или отключение операций чтения, записи или удаления |
 
-* Разрешения для репозитория групп **карт области**, которые применяются к токену или могут повторно применяться к другим токенам. Каждый токен связан с одной картой области. 
+* Разрешения для репозитория групп **карт области** , которые применяются к токену или могут повторно применяться к другим токенам. Каждый токен связан с одной картой области. 
 
    Карта области предоставляет следующие возможности.
 
@@ -61,9 +61,9 @@ ms.locfileid: "84509412"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Azure CLI** — команды для создания токенов и управления ими доступны в Azure CLI версии 2.0.76 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
-* **Docker** — чтобы проверить подлинность в реестре для извлечения или отправки образов, требуется локальная установка Docker. На сайте Docker предоставляются инструкции по установке для систем [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms).
-* **Реестр контейнеров** — если у вас его нет, создайте реестр контейнеров уровня "Премиум" в подписке Azure или обновите существующий реестр. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md). 
+* **Azure CLI**  — команды для создания токенов и управления ими доступны в Azure CLI версии 2.0.76 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+* **Docker**  — чтобы проверить подлинность в реестре для извлечения или отправки образов, требуется локальная установка Docker. На сайте Docker предоставляются инструкции по установке для систем [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms).
+* **Реестр контейнеров**  — если у вас его нет, создайте реестр контейнеров уровня "Премиум" в подписке Azure или обновите существующий реестр. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md). 
 
 ## <a name="create-token---cli"></a>Создание токена — интерфейс командной строки
 
@@ -150,7 +150,7 @@ az acr token create --name MyToken \
 Следующий пример создает токен и карту области со следующими разрешениями для репозитория `samples/hello-world`: `content/write` и `content/read`.
 
 1. На портале перейдите к нужному реестру контейнеров.
-1. В разделе **разрешения репозитория**выберите **токены (Предварительная версия) > + добавить**.
+1. В разделе **разрешения репозитория** выберите **токены (Предварительная версия) > + добавить**.
 
       :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-token-add.png" alt-text="Создание токена на портале":::
 1. Введите имя токена.
@@ -159,10 +159,10 @@ az acr token create --name MyToken \
     1. Введите имя и описание для карты области. 
     1. В разделе **Репозитории** введите `samples/hello-world` и в разделе **Разрешения** выберите `content/read` и `content/write`. Затем выберите **+ Добавить**.  
 
-        :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-scope-map-add.png" alt-text="Создание токена на портале":::
+        :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-scope-map-add.png" alt-text="Создание карты области на портале":::
 
-    1. После добавления репозиториев и разрешений выберите **Добавить**, чтобы добавить карту области.
-1. Примите **Состояние** токена по умолчанию **Включено**, а затем выберите **Создать**.
+    1. После добавления репозиториев и разрешений выберите **Добавить** , чтобы добавить карту области.
+1. Примите **Состояние** токена по умолчанию **Включено** , а затем выберите **Создать**.
 
 После проверки и создания токена сведения о нем отображаются на экране **Токены**.
 
@@ -171,12 +171,12 @@ az acr token create --name MyToken \
 Чтобы использовать токен, созданный на портале, необходимо создать пароль. Можно создать один или два пароля и задать дату окончания срока действия для каждого из них. 
 
 1. На портале перейдите к нужному реестру контейнеров.
-1. В разделе **разрешения репозитория**выберите **токены (Предварительная версия)** и выберите маркер.
+1. В разделе **разрешения репозитория** выберите **токены (Предварительная версия)** и выберите маркер.
 1. В сведениях о токене выберите **password1** или **password2** и щелкните значок "Создать".
 1. На экране пароля при необходимости задайте дату окончания срока действия пароля и выберите **Создать**. Рекомендуется задать дату окончания срока действия.
 1. После создания пароля скопируйте и сохраните его в надежном месте. После закрытия экрана вы не сможете повторно получить созданный пароль, но сможете создать новый.
 
-    :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-token-password.png" alt-text="Создание токена на портале":::
+    :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-token-password.png" alt-text="Создание пароля токена на портале":::
 
 ## <a name="authenticate-with-token"></a>Проверка подлинности с помощью токена
 
@@ -186,8 +186,8 @@ az acr token create --name MyToken \
 
 |Действие  |Процедура проверки подлинности  |
   |---------|---------|
-  |`content/delete`    | `az acr repository delete` в Azure CLI<br/><br/>Например, `az acr repository delete --name myregistry --repository myrepo --username MyToken --password xxxxxxxxxx`.|
-  |`content/read`     |  `docker login`<br/><br/>`az acr login` в Azure CLI<br/><br/>Например, `az acr login --name myregistry --username MyToken --password xxxxxxxxxx`.  |
+  |`content/delete`    | `az acr repository delete` в Azure CLI<br/><br/>Пример: `az acr repository delete --name myregistry --repository myrepo --username MyToken --password xxxxxxxxxx`|
+  |`content/read`     |  `docker login`<br/><br/>`az acr login` в Azure CLI<br/><br/>Пример: `az acr login --name myregistry --username MyToken --password xxxxxxxxxx`  |
   |`content/write`     |  `docker login`<br/><br/>`az acr login` в Azure CLI     |
   |`metadata/read`    | `az acr repository show`<br/><br/>`az acr repository show-tags`<br/><br/>`az acr repository show-manifests` в Azure CLI   |
   |`metadata/write`     |  `az acr repository untag`<br/><br/>`az acr repository update` в Azure CLI |
@@ -204,7 +204,7 @@ az acr token create --name MyToken \
 docker pull hello-world
 docker pull alpine
 docker tag hello-world myregistry.azurecr.io/samples/hello-world:v1
-docker tag hello-world myregistry.azurecr.io/samples/alpine:v1
+docker tag alpine myregistry.azurecr.io/samples/alpine:v1
 ```
 
 ### <a name="authenticate-using-token"></a>Проверка подлинности с помощью токена
@@ -259,7 +259,7 @@ az acr scope-map update \
 На портале Azure выполните следующие действия.
 
 1. Перейдите к реестру контейнеров.
-1. В разделе **разрешения репозитория**выберите карты **области (Предварительная версия)** и выберите карту области для обновления.
+1. В разделе **разрешения репозитория** выберите карты **области (Предварительная версия)** и выберите карту области для обновления.
 1. В разделе **Репозитории** введите `samples/alpine` и в разделе **Разрешения** выберите `content/read` и `content/write`. Затем выберите **+ Добавить**.
 1. В разделе **Репозитории** выберите `samples/hello-world` и в разделе **Разрешения** отмените выбор `content/write`. Затем нажмите кнопку **Save** (Сохранить).
 

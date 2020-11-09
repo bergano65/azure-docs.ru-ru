@@ -10,21 +10,21 @@ ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: scottwhi
-ms.openlocfilehash: 2ec57937b2bac430fccd7b6e1fbc05b44d9cf996
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: cbbde354c1bc68a2b1017c3ccba61b846fa62916
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93078802"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94380765"
 ---
 # <a name="get-insights-about-a-video"></a>Получение полезных сведений о видео
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
-Каждое видео, возвращаемое API Bing для поиска видео, содержит идентификатор, с помощью которого можно получить дополнительные сведения об этом видео, например найти связанные видео. Чтобы получить полезные сведения о видео, получите токен [videoId](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#video-videoid), указанный в ответе API. 
+Каждое видео, возвращаемое API Bing для поиска видео, содержит идентификатор, с помощью которого можно получить дополнительные сведения об этом видео, например найти связанные видео. Чтобы получить полезные сведения о видео, получите токен [videoId](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#video-videoid), указанный в ответе API. 
 
 ```json
     "value" : [
@@ -39,7 +39,7 @@ ms.locfileid: "93078802"
     ],
 ```
 
-Затем отправьте запрос GET к конечной точке сведений о видео, указав этот идентификатор. Укажите для параметра запроса [id](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#id) значение токена `videoId`. Чтобы указать полезные сведения, которые необходимо получить, задайте значение параметра запроса [modules](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#modulesrequested). Чтобы получить все сведения, задайте для `modules` значение All. Ответ будет содержать все сведения, которые вы запросили, если они доступны.
+Затем отправьте запрос GET к конечной точке сведений о видео, указав этот идентификатор. Укажите для параметра запроса [id](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#id) значение токена `videoId`. Чтобы указать полезные сведения, которые необходимо получить, задайте значение параметра запроса [modules](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#modulesrequested). Чтобы получить все сведения, задайте для `modules` значение All. Ответ будет содержать все сведения, которые вы запросили, если они доступны.
 
 ```cURL
 GET https://api.cognitive.microsoft.com/bing/v7.0/videos/details?q=sailiing+dinghies&id=6DB795E11A6E3CBAAD636DB795E11A6E3CBAAD63&modules=All&mkt=en-us HTTP/1.1  
@@ -53,7 +53,7 @@ Host: api.cognitive.microsoft.com
 
 ## <a name="getting-related-videos-insights"></a>Получение полезных сведений о связанных видео  
 
-Чтобы найти видео, связанные с указанным видео, задайте для параметра запроса [modules](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#modulesrequested) значение `RelatedVideos`.
+Чтобы найти видео, связанные с указанным видео, задайте для параметра запроса [modules](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#modulesrequested) значение `RelatedVideos`.
   
 ```cURL  
 GET https://api.cognitive.microsoft.com/bing/v7.0/videos/details?q=sailiing+dinghies&id=6DB795E11A6E3CBAAD636DB795E11A6E3CBAAD63&modules=RelatedVideos&mkt=en-us HTTP/1.1  
@@ -65,7 +65,7 @@ X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
 Host: api.cognitive.microsoft.com  
 ```  
 
-Ответ на этот запрос будет содержать объект верхнего уровня [VideoDetails](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videodetails) вместо объекта [Videos](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos).  
+Ответ на этот запрос будет содержать объект верхнего уровня [VideoDetails](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videodetails) вместо объекта [Videos](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos).  
   
 ```json
 {
@@ -103,4 +103,3 @@ Host: api.cognitive.microsoft.com
 
 > [!div class="nextstepaction"]
 > [Поиск видеороликов по тенденциям](trending-videos.md)
-

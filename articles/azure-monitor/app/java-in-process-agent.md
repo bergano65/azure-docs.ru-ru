@@ -3,12 +3,12 @@ title: Azure Monitor Application Insights Java
 description: Наблюдение за производительностью приложений Java, выполняющихся в любой среде, без необходимости изменения кода. Распределенная трассировка и схема приложения.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 31ee3c4a2dbf6f6832c0228e70aa079b5f028bc4
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 2459f80746d95234701319bbb5142c8e540890d3
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331929"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94379775"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Application Insights Azure Monitor отслеживания приложений Java с некодированным кодом
 
@@ -133,7 +133,7 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 
 Наша цель в версии 3.0 + позволяет отправить пользовательскую телеметрию с помощью стандартных API.
 
-Мы поддерживаем Микрометер, Опентелеметри API и популярные платформы ведения журналов. Application Insights Java 3,0 автоматически захватывает данные телеметрии и сопоставляет их вместе со всеми автоматически собранными данными телеметрии.
+Мы поддерживаем Микрометер, Опентелеметри API и популярные платформы ведения журналов. Application Insights Java 3,0 автоматически захватывает данные телеметрии и сопоставляет их вместе со всеми автоматически собираемыми данными телеметрии.
 
 ### <a name="supported-custom-telemetry"></a>Поддерживаемые пользовательские данные телеметрии
 

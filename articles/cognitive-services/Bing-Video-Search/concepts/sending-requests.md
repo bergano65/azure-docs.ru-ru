@@ -10,19 +10,19 @@ ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: aahi
-ms.openlocfilehash: e2907cb568076ef4de199c5227e03db652414464
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 1e6fc68a1e48c9c47cc6a76911f947f2d9916a25
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077223"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94379516"
 ---
 # <a name="sending-search-requests-to-the-bing-video-search-api"></a>Отправка поисковых запросов в API Bing для поиска видео
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 В этой статье описаны параметры и атрибуты запросов, отправляемых в API Bing для поиска видео, а также возвращаемый объект ответа в формате JSON. 
 
@@ -32,7 +32,7 @@ ms.locfileid: "93077223"
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
-После ввода условия поиска примените к нему URL-кодирование перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки* , установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
+После ввода условия поиска примените к нему URL-кодирование перед установкой параметра запроса [q](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки* , установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
 
 ## <a name="sending-a-request"></a>Отправка запроса
 
@@ -47,18 +47,18 @@ https://api.cognitive.microsoft.com/bing/v7.0/videos/search
 Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа к нему злоумышленников. Осуществление вызовов с сервера также предоставляет единую точку обновления для будущих версий API.
 
   
-В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#query), который содержит условие поиска пользователя. В запросе можно также указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса, таких как `pricing`, можно найти в разделе [Параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.  
+В запросе необходимо указать параметр [q](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#query), который содержит условие поиска пользователя. В запросе можно также указать необязательный параметр [mkt](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса, таких как `pricing`, можно найти в разделе [Параметры запроса](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.  
   
-Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:  
+Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:  
   
--   [User-Agent](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#useragent)  
--   [X-MSEdge-ClientID](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#clientid)  
--   [X-Search-ClientIP](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#clientip)  
--   [X-Search-расположение](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#location)  
+-   [User-Agent](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#useragent)  
+-   [X-MSEdge-ClientID](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#clientid)  
+-   [X-Search-ClientIP](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#clientip)  
+-   [X-Search-расположение](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#location)  
 
 Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения.  
 
-Список всех заголовков в запросах и ответах приведен в разделе [Заголовки](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#headers).
+Список всех заголовков в запросах и ответах приведен в разделе [Заголовки](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#headers).
 
 ## <a name="example-search-request"></a>Пример поискового запроса
 
@@ -154,8 +154,8 @@ BingAPIs-Market: en-US
 
 Проверьте, как работает API. Перейдите на страницу [консоли тестирования API для поиска видео](https://dev.cognitive.microsoft.com/docs/services/56b43f3ccf5ff8098cef3809/operations/58113fe5e31dac0a1ce6b0a8). 
 
-Дополнительные сведения об использовании объектов ответа см. в разделе о [поиске видео в Интернете](../search-the-web.md).
+Дополнительные сведения об использовании объектов ответа см. в разделе о [поиске видео в Интернете](../overview.md).
 
 Дополнительные сведения о получении аналитических сведений о видео, таких как связанные поисковые запросы, см. в разделе об [аналитике для видео](../video-insights.md).  
   
-Сведения о видео, которое попадает в тренды в социальных сетях, см. в разделе о [видео, набирающих популярность](../trending-videos.md).  
+Сведения о видео, которое попадает в тренды в социальных сетях, см. в разделе о [видео, набирающих популярность](../trending-videos.md).

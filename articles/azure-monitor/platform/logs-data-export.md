@@ -7,12 +7,12 @@ ms.custom: references_regions
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 972c32b5403a7e6f614161271b7cb7e88693e032
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 54d5fdf1f6bc905482186475302901c46de0d285
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335100"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94380132"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
@@ -296,7 +296,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | адкскуери | |
 | аегделиверифаилурелогс | |
 | аегпублишфаилурелогс | |
-| Оповещение |Частичная поддержка. Некоторые данные из этой таблицы принимаются через учетную запись хранения. Эти данные в настоящее время не экспортируются. |
+| Предупреждение |Частичная поддержка. Некоторые данные из этой таблицы принимаются через учетную запись хранения. Эти данные в настоящее время не экспортируются. |
 | Аномалии | |
 | апиманажементгатевайлогс | |
 | аппцентереррор | |
@@ -325,7 +325,6 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | ContainerImageInventory | |
 | ContainerInventory | |
 | контаинерлог | |
-| контаинерлог | |
 | контаинернодеинвентори | |
 | контаинерсервицелог | |
 | кореазуребаккуп | |
@@ -343,7 +342,6 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | днсинвентори | |
 | Dynamics365Activity | |
 | Событие | Частичная поддержка. Некоторые данные из этой таблицы принимаются через учетную запись хранения. Эти данные в настоящее время не экспортируются. |
-| ексчанжеассессментрекоммендатион | |
 | ексчанжеассессментрекоммендатион | |
 | фаилединжестион | |
 | функтионапплогс | |
@@ -446,6 +444,6 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | ввдманажемент | |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запросите экспортированные данные из обозреватель данных Azure](azure-data-explorer-query-storage.md).

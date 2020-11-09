@@ -10,19 +10,19 @@ ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: scottwhi
-ms.openlocfilehash: c67ef6ddcd709dea8727a67100607bfc4f8cc8f6
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 392bb46d481df1f872b9a61beffed9e5b46f4dc5
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099850"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94379843"
 ---
 # <a name="video-search-api-upgrade-guide"></a>Руководство по обновлению API Bing для поиска видео
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 В этом руководстве по обновлению определены изменения между версиями 5 и 7 API Bing для поиска видео. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
 
@@ -30,7 +30,7 @@ ms.locfileid: "93099850"
 
 ### <a name="endpoints"></a>Конечные точки
 
-- Номер версии конечной точки изменен с 5 на 7. Например, `https://api.cognitive.microsoft.com/bing/v7.0/videos/search`.
+- Номер версии конечной точки изменен с 5 на 7. Пример: `https://api.cognitive.microsoft.com/bing/v7.0/videos/search`.
 
 ### <a name="error-response-objects-and-error-codes"></a>Объекты ответов на ошибки и коды ошибок
 
@@ -76,11 +76,10 @@ InsufficientScope|InsufficientAuthorization
 
 ### <a name="query-parameters"></a>Параметры запроса
 
-- Параметр запроса `modulesRequested` переименован в [modules](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#modulesrequested).  
+- Параметр запроса `modulesRequested` переименован в [modules](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#modulesrequested).  
 
 ### <a name="object-changes"></a>Изменения объектов
 
-- Поле `nextOffsetAddCount` объекта [Videos](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) переименовано в `nextOffset`. Также изменился способ использования смещения. Ранее параметру запроса [offset](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#offset) необходимо было задавать значение `nextOffset` + предыдущее значение смещения + число видео в результатах. Теперь параметру запроса `offset` просто необходимо задать значение `nextOffset`.  
+- Поле `nextOffsetAddCount` объекта [Videos](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) переименовано в `nextOffset`. Также изменился способ использования смещения. Ранее параметру запроса [offset](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#offset) необходимо было задавать значение `nextOffset` + предыдущее значение смещения + число видео в результатах. Теперь параметру запроса `offset` просто необходимо задать значение `nextOffset`.  
   
-- Тип данных в поле `relatedVideos` изменен с `Video[]` на [VideosModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videosmodule) (см. раздел [VideoDetails](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videodetails)).
-
+- Тип данных в поле `relatedVideos` изменен с `Video[]` на [VideosModule](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videosmodule) (см. раздел [VideoDetails](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videodetails)).

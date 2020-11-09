@@ -9,15 +9,15 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: seo-lt-2019
+ms.custom: seo-nov-2020
 ms.topic: tutorial
 ms.date: 09/25/2019
-ms.openlocfilehash: dd75452ff5d2633c8c02ec97f8038ba104c38978
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 1c27d02bb5b02c71d45408e6bbe320d86cc50729
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331844"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94354688"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Руководство по Перенос MongoDB в API Azure Cosmos DB для MongoDB по сети с помощью DMS
 
@@ -26,7 +26,7 @@ ms.locfileid: "94331844"
 В этом руководстве описываются действия, связанные с использованием Azure Database Migration Service для переноса данных MongoDB в Azure Cosmos DB:
 > [!div class="checklist"]
 > 
-> * создание экземпляра Azure Database Migration Service; 
+> * Создайте экземпляр Azure Database Migration Service. 
 > * создание проекта миграции; 
 > * указание источника; 
 > * указание целевого объекта; 
