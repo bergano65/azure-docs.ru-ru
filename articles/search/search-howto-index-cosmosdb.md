@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: 9b3353d3ba1af572b118001691e38af497f6f1fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf2282c5fda29cd266778a322efa4a0a33139c35
+ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91290047"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94372388"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>How to index Cosmos DB data using an indexer in Azure Cognitive Search (Индексирование данных Cosmos DB с помощью индексатора в службе "Когнитивный поиск Azure") 
 
@@ -32,7 +32,7 @@ ms.locfileid: "91290047"
 
 Индексатор Cosmos DB в Azure Когнитивный поиск может выполнять обход [Azure Cosmos DB элементов](../cosmos-db/databases-containers-items.md#azure-cosmos-items) , доступ к которым осуществляется через различные протоколы. 
 
-+ Для [API SQL](../cosmos-db/sql-query-getting-started.md), который является общедоступным, можно использовать [портал](#cosmos-indexer-portal), [REST API](/rest/api/searchservice/indexer-operations)или [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.indexer) , чтобы создать источник данных и индексатор.
++ Для [API SQL](../cosmos-db/sql-query-getting-started.md), который является общедоступным, можно использовать [портал](#cosmos-indexer-portal), [REST API](/rest/api/searchservice/indexer-operations)или [пакет SDK для .NET](/dotnet/api/azure.search.documents.indexes.models.searchindexer) , чтобы создать источник данных и индексатор.
 
 + Для [MONGODB API (Предварительная версия)](../cosmos-db/mongodb-introduction.md)можно создать источник данных и индексатор с помощью [портала](#cosmos-indexer-portal) или [REST API версии 2020-06-30-Preview](search-api-preview.md) .
 
@@ -68,14 +68,14 @@ ms.locfileid: "91290047"
 
 ### <a name="3---set-the-data-source"></a>3. Настройка источника данных
 
-На странице **источник данных** должен быть **Cosmos DB**источник со следующими характеристиками:
+На странице **источник данных** должен быть **Cosmos DB** источник со следующими характеристиками:
 
 + **Name** — это имя объекта источника данных. После создания вы можете выбрать его для других рабочих нагрузок.
 
 + **Учетная запись Cosmos DB** должна иметь один из следующих форматов:
     1. Первичная или вторичная строка подключения из Cosmos DB со следующим форматом: `AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;` .
         + Для **коллекций MongoDB** версии 3,2 и 3,6 для учетной записи Cosmos DB в портал Azure используется следующий формат: `AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;ApiKind=MongoDb`
-        + Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для **графов Gremlin и таблиц Cassandra**Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .
+        + Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для **графов Gremlin и таблиц Cassandra** Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .
     1.  Строка подключения управляемого удостоверения со следующим форматом, который не включает ключ учетной записи: `ResourceId=/subscriptions/<your subscription ID>/resourceGroups/<your resource group name>/providers/Microsoft.DocumentDB/databaseAccounts/<your cosmos db account name>/;(ApiKind=[api-kind];)` . Чтобы использовать этот формат строки подключения, следуйте инструкциям по [настройке подключения индексатора к базе данных Cosmos DB с помощью управляемого удостоверения](search-howto-managed-identities-cosmos-db.md).
 
 + **База данных** — это существующая база данных из учетной записи. 
@@ -151,7 +151,7 @@ ms.locfileid: "91290047"
 
 2. В левой области навигации щелкните **ключи** , а затем скопируйте либо первичный, либо вторичный ключ (они эквивалентны).
 
-3. Перейдите на страницы портала для учетной записи хранения Cosmos. В области навигации слева в разделе **Параметры**щелкните **ключи**. На этой странице представлен URI, два набора строк подключения и два набора ключей. Скопируйте одну из строк подключения в Блокнот.
+3. Перейдите на страницы портала для учетной записи хранения Cosmos. В области навигации слева в разделе **Параметры** щелкните **ключи**. На этой странице представлен URI, два набора строк подключения и два набора ключей. Скопируйте одну из строк подключения в Блокнот.
 
 ### <a name="2---create-a-data-source"></a>2. Создание источника данных
 
@@ -185,7 +185,7 @@ ms.locfileid: "91290047"
 |---------|-------------|
 | **name** | Обязательный элемент. Введите любое имя для представления вашего объекта источника данных. |
 |**type**| Обязательный элемент. Этот параметр должен содержать значение `cosmosdb`. |
-|**credentials** | Обязательный элемент. Необходимо либо следовать Cosmos DB формату строки подключения, либо формату строки подключения управляемого удостоверения.<br/><br/>Для **коллекций SQL**строки подключения могут соответствовать любому из следующих форматов: <li>`AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<li>Строка подключения управляемого удостоверения со следующим форматом, который не включает ключ учетной записи: `ResourceId=/subscriptions/<your subscription ID>/resourceGroups/<your resource group name>/providers/Microsoft.DocumentDB/databaseAccounts/<your cosmos db account name>/;` . Чтобы использовать этот формат строки подключения, следуйте инструкциям по [настройке подключения индексатора к базе данных Cosmos DB с помощью управляемого удостоверения](search-howto-managed-identities-cosmos-db.md).<br/><br/>Для коллекций версии 3,2 и 3,6 **MongoDB** используйте один из следующих форматов для строки подключения: <li>`AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<li>Строка подключения управляемого удостоверения со следующим форматом, который не включает ключ учетной записи: `ResourceId=/subscriptions/<your subscription ID>/resourceGroups/<your resource group name>/providers/Microsoft.DocumentDB/databaseAccounts/<your cosmos db account name>/;ApiKind=MongoDb;` . Чтобы использовать этот формат строки подключения, следуйте инструкциям по [настройке подключения индексатора к базе данных Cosmos DB с помощью управляемого удостоверения](search-howto-managed-identities-cosmos-db.md).<br/><br/>Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для **графов Gremlin и таблиц Cassandra**Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
+|**credentials** | Обязательный элемент. Необходимо либо следовать Cosmos DB формату строки подключения, либо формату строки подключения управляемого удостоверения.<br/><br/>Для **коллекций SQL** строки подключения могут соответствовать любому из следующих форматов: <li>`AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<li>Строка подключения управляемого удостоверения со следующим форматом, который не включает ключ учетной записи: `ResourceId=/subscriptions/<your subscription ID>/resourceGroups/<your resource group name>/providers/Microsoft.DocumentDB/databaseAccounts/<your cosmos db account name>/;` . Чтобы использовать этот формат строки подключения, следуйте инструкциям по [настройке подключения индексатора к базе данных Cosmos DB с помощью управляемого удостоверения](search-howto-managed-identities-cosmos-db.md).<br/><br/>Для коллекций версии 3,2 и 3,6 **MongoDB** используйте один из следующих форматов для строки подключения: <li>`AccountEndpoint=https://<Cosmos DB account name>.documents.azure.com;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<li>Строка подключения управляемого удостоверения со следующим форматом, который не включает ключ учетной записи: `ResourceId=/subscriptions/<your subscription ID>/resourceGroups/<your resource group name>/providers/Microsoft.DocumentDB/databaseAccounts/<your cosmos db account name>/;ApiKind=MongoDb;` . Чтобы использовать этот формат строки подключения, следуйте инструкциям по [настройке подключения индексатора к базе данных Cosmos DB с помощью управляемого удостоверения](search-howto-managed-identities-cosmos-db.md).<br/><br/>Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для **графов Gremlin и таблиц Cassandra** Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
 | **container** | В данной вкладке содержатся следующие элементы. <br/>**name**. Обязательный элемент. Укажите идентификатор коллекции базы данных, которая будет индексироваться.<br/>**query**. Необязательный параметр. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую Когнитивным поиском Azure.<br/>Для API MongoDB, Gremlin и Cassandra запросы не поддерживаются. |
 | **dataChangeDetectionPolicy** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
 |**dataDeletionDetectionPolicy** | Необязательный параметр. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
@@ -194,7 +194,7 @@ ms.locfileid: "91290047"
 Вы можете указать SQL-запрос для преобразования вложенных свойств или массивов в плоскую структуру, проецирования свойств JSON, а также для фильтрации данных, подлежащих индексированию. 
 
 > [!WARNING]
-> Пользовательские запросы не поддерживаются для **API MongoDB**, **api Gremlin**и **API Cassandra**: `container.query` параметр должен иметь значение null или быть пропущен. Если вам нужно использовать пользовательский запрос, сообщите нам об этом через сайт [User Voice](https://feedback.azure.com/forums/263029-azure-search).
+> Пользовательские запросы не поддерживаются для **API MongoDB** , **api Gremlin** и **API Cassandra** : `container.query` параметр должен иметь значение null или быть пропущен. Если вам нужно использовать пользовательский запрос, сообщите нам об этом через сайт [User Voice](https://feedback.azure.com/forums/263029-azure-search).
 
 Пример документа:
 
@@ -274,11 +274,11 @@ SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @High
 | Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| Строковый тип |Edm.String |
+| Строка |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
-| Другие объекты JSON |Недоступно |
+| Другие объекты JSON |Н/Д |
 
 ### <a name="4---configure-and-run-the-indexer"></a>4. Настройка и запуск индексатора
 
@@ -307,16 +307,16 @@ SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @High
 
 Общедоступный пакет SDK для .NET имеет полное соответствие с общедоступной REST API. Мы рекомендуем прочитать предыдущий раздел о REST API, чтобы ознакомиться с концепциями, рабочим процессом и требованиями. Используйте следующую справочную документацию по .NET API для реализации индексатора JSON в управляемом коде.
 
-+ [microsoft.azure.search.models.datasource](/dotnet/api/microsoft.azure.search.models.datasource)
-+ [microsoft.azure.search.models.datasourcetype](/dotnet/api/microsoft.azure.search.models.datasourcetype)
-+ [microsoft.azure.search.models.index](/dotnet/api/microsoft.azure.search.models.index)
-+ [microsoft.azure.search.models.indexer](/dotnet/api/microsoft.azure.search.models.indexer)
++ [azure.search.docументс. indexes. Models. сеарчиндексердатасаурцеконнектион](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection)
++ [azure.search.docументс. indexes. Models. сеарчиндексердатасаурцетипе](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourcetype)
++ [azure.search.docументс. indexes. Models. сеарчиндекс](/dotnet/api/azure.search.documents.indexes.models.searchindex)
++ [azure.search.docументс. indexes. Models. сеарчиндексер](/dotnet/api/azure.search.documents.indexes.models.searchindexer)
 
 <a name="DataChangeDetectionPolicy"></a>
 
 ## <a name="indexing-changed-documents"></a>Индексация измененных документов
 
-Политика обнаружения изменения данных предназначена для эффективного определения измененных элементов данных. В настоящее время единственной поддерживаемой политикой является [`HighWaterMarkChangeDetectionPolicy`](/dotnet/api/microsoft.azure.search.models.highwatermarkchangedetectionpolicy) использование `_ts` Свойства (timestamp), предоставленного Azure Cosmos DB, которое указывается следующим образом:
+Политика обнаружения изменения данных предназначена для эффективного определения измененных элементов данных. В настоящее время единственной поддерживаемой политикой является [`HighWaterMarkChangeDetectionPolicy`](/dotnet/api/azure.search.documents.indexes.models.highwatermarkchangedetectionpolicy) использование `_ts` Свойства (timestamp), предоставленного Azure Cosmos DB, которое указывается следующим образом:
 
 ```http
     {

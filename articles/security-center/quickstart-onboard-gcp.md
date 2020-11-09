@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 71f1de7b4ff265a5740181a2bb2032f33a83abe3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bbaa44fb64becee85b29cd44bee44e593ec55bf6
+ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448982"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94372648"
 ---
 #  <a name="connect-your-gcp-accounts-to-azure-security-center"></a>Подключение учетных записей GCP к Центру безопасности Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "91448982"
 
 |Аспект|Подробнее|
 |----|:----|
-|Состояние выпуска:|Предварительный просмотр|
+|Состояние выпуска:|Предварительный просмотр<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
 |Требуемые роли и разрешения|**Владелец** или **Участник** в соответствующей подписке Azure|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
@@ -48,8 +48,8 @@ ms.locfileid: "91448982"
 
 Для всех проектов GCP вашей организации также необходимо выполнить следующие действия:
 
-1. Настроить **центр управления безопасностью GCP**, выполнив [эти инструкции из документации по GCP](https://cloud.google.com/security-command-center/docs/quickstart-scc-setup).
-1. Включить службу **анализа работоспособности системы безопасности**, выполнив [эти инструкции из документации по GCP](https://cloud.google.com/security-command-center/docs/how-to-use-security-health-analytics).
+1. Настроить **центр управления безопасностью GCP** , выполнив [эти инструкции из документации по GCP](https://cloud.google.com/security-command-center/docs/quickstart-scc-setup).
+1. Включить службу **анализа работоспособности системы безопасности** , выполнив [эти инструкции из документации по GCP](https://cloud.google.com/security-command-center/docs/how-to-use-security-health-analytics).
 1. Проверить, поступают ли данные в центр управления безопасностью.
 
 Инструкции по подключению среды GCP для настройки системы безопасности см. в соответствующих рекомендациях Google. Интеграция центра управления безопасностью Google расширяет его возможности и увеличивает потребление ресурсов, что может отразиться на сумме выставляемых счетов.
@@ -78,9 +78,9 @@ ms.locfileid: "91448982"
 1. В **меню навигации** в разделе **IAM и администрирования** выберите элемент **IAM**.
     1. Переключитесь на уровень организации.
     1. Нажмите кнопку **ADD** (Добавить).
-    1. В поле **New members** (Новые участники) вставьте **адрес электронной почты**, скопированный ранее.
+    1. В поле **New members** (Новые участники) вставьте **адрес электронной почты** , скопированный ранее.
     1. Для параметра роли выберите вариант **Security Center Admin Viewer** (Наблюдатель администратора Центра безопасности) и нажмите кнопку Save (Сохранить).
-        :::image type="content" source="./media/quickstart-onboard-gcp/iam-settings-gcp-permissions-admin-viewer.png" alt-text="Обзорная панель мониторинга Центра безопасности с тремя проектами GCP":::
+        :::image type="content" source="./media/quickstart-onboard-gcp/iam-settings-gcp-permissions-admin-viewer.png" alt-text="Предоставление необходимых разрешений GCP":::
 
 
 ### <a name="step-4-create-a-private-key-for-the-dedicated-service-account"></a>Шаг 4. Создание закрытого ключа для отдельной учетной записи службы
@@ -107,7 +107,7 @@ ms.locfileid: "91448982"
 После успешного создания соединителя и правильной настройки центра управления безопасностью GCP:
 
 - Стандарт GCP CIS появится на панели мониторинга соответствия нормативным требованиям в Центре безопасности.
-- Рекомендации по обеспечению безопасности ресурсов GCP отобразятся на портале Центра безопасности, а также на панели мониторинга соответствия нормативным требованиям через 5–10 минут после завершения подключения:   :::image type="content" source="./media/quickstart-onboard-gcp/gcp-resources-in-recommendations.png" alt-text="Обзорная панель мониторинга Центра безопасности с тремя проектами GCP":::
+- Рекомендации по обеспечению безопасности ресурсов GCP отобразятся на портале Центра безопасности, а также на панели мониторинга соответствия нормативным требованиям через 5–10 минут после завершения подключения:   :::image type="content" source="./media/quickstart-onboard-gcp/gcp-resources-in-recommendations.png" alt-text="Ресурсы и рекомендации GCP на странице рекомендаций Центра безопасности":::
 
 
 ## <a name="monitoring-your-gcp-resources"></a>Мониторинг ресурсов GCP
@@ -116,7 +116,7 @@ ms.locfileid: "91448982"
 
 Чтобы посмотреть актуальные рекомендации для отдельных типов ресурсов, перейдите на страницу инвентаризации активов Центра безопасности и отфильтруйте ресурсы GCP по нужному вам типу.
 
-:::image type="content" source="./media/quickstart-onboard-gcp/gcp-resource-types-in-inventory.png" alt-text="Обзорная панель мониторинга Центра безопасности с тремя проектами GCP"::: 
+:::image type="content" source="./media/quickstart-onboard-gcp/gcp-resource-types-in-inventory.png" alt-text="Фильтрация ресурсов GCP по типу на странице инвентаризации активов"::: 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

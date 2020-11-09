@@ -8,14 +8,14 @@ ms.topic: conceptual
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
-ms.date: 04/28/2020
+ms.date: 11/08/2020
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: 9339ac86595a1edbbd996e410d416074680695ed
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 8cf0652148ad54eeacdec874823ea680f39f670c
+ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340045"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94372733"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Аудит для базы данных SQL Azure и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "93340045"
 - **Анализировать** отчеты. Вы можете искать подозрительные события, необычную деятельность и тенденции.
 
 > [!IMPORTANT]
-> Аудит базы данных SQL Azure оптимизирован для обеспечения доступности и производительности. Во время очень высокой активности база данных SQL Azure или Azure синапсе позволяет выполнять операции и не записывать некоторые события аудита.
+> Аудит для базы данных SQL Azure и Azure синапсе оптимизирован для обеспечения доступности и производительности. При очень высокой активности или высокой сетевой нагрузке база данных SQL Azure и Azure синапсе позволяют выполнять операции и не записывать некоторые события аудита.
 
 ### <a name="auditing-limitations"></a>Ограничения аудита
 

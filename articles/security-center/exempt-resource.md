@@ -7,14 +7,14 @@ ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 87c16207f312479dcfe083ad9494d75b3538e18c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 347d5ac9de164f2e96340df71fd3b1b908e607c1
+ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91532556"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94372750"
 ---
-# <a name="exempt-a-resource-from-recommendations-and-secure-score"></a>Исключение ресурса из рекомендаций и безопасной оценки
+# <a name="exempt-a-resource-from-recommendations-and-secure-score"></a>Исключение ресурса из рекомендаций и оценки безопасности
 
 Основной приоритет каждой группы безопасности пытается убедиться в том, что аналитики могут сосредоточиться на задачах и инцидентах, которые важны для Организации. В центре безопасности имеется множество функций для настройки наиболее важных данных, и гарантируется, что ваш показатель безопасности является допустимым отражением решений по обеспечению безопасности вашей организации. Исключение ресурсов — одна из таких функций.
 
@@ -28,9 +28,9 @@ ms.locfileid: "91532556"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Предварительный просмотр|
+|Состояние выпуска:|Предварительный просмотр<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
 |Цены|Это функция политики Azure уровня "Премиум", предлагаемая для клиентов защитника Azure без дополнительных затрат. В будущем может взиматься плата за использование других пользователей.|
 |Требуемые роли и разрешения|**Владелец подписки** или **участник политики** для создания исключения<br>Чтобы создать правило, необходимо иметь разрешения на изменение политик в политике Azure.<br>Дополнительные сведения см. в статье [разрешения RBAC в политике Azure](../governance/policy/overview.md#azure-rbac-permissions-in-azure-policy).|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
@@ -45,22 +45,22 @@ ms.locfileid: "91532556"
 
     Откроется область создание исключения.
 
-    :::image type="content" source="./media/exempt-resource/exemption-rule-options.png" alt-text="Создание параметра исключения из контекстного меню":::
+    :::image type="content" source="./media/exempt-resource/exemption-rule-options.png" alt-text="Создать панель исключения":::
 
 1. Введите критерии и выберите условия, по которым следует исключить этот ресурс:
     - **Устранение** . Эта проблема не относится к ресурсу, так как он обрабатывается другим средством или процессом, отличным от предлагаемого.
     - **Отказ** — принятие риска для этого ресурса
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 1. Через некоторое время (это может занять до 24 часов):
     - Ресурс не влияет на вашу оценку безопасности.
     - Ресурс указан на вкладке **неприменимо** на странице сведений об рекомендации.
     - В информационной панели в верхней части страницы сведений о рекомендациях отображается число исключенных ресурсов:
         
-        :::image type="content" source="./media/exempt-resource/info-banner.png" alt-text="Создание параметра исключения из контекстного меню":::
+        :::image type="content" source="./media/exempt-resource/info-banner.png" alt-text="Число исключенных ресурсов":::
 
 1. Чтобы проверить исключенные ресурсы, откройте вкладку **неприменимо** .
 
-    :::image type="content" source="./media/exempt-resource/modifying-exemption.png" alt-text="Создание параметра исключения из контекстного меню":::
+    :::image type="content" source="./media/exempt-resource/modifying-exemption.png" alt-text="Изменение исключения":::
 
     Причина каждого исключения включается в таблицу (1).
 
@@ -73,7 +73,7 @@ ms.locfileid: "91532556"
 
 Вы можете использовать политику Azure для трассировки исключения на странице **исключение** :
 
-:::image type="content" source="./media/exempt-resource/policy-page-exemption.png" alt-text="Создание параметра исключения из контекстного меню":::
+:::image type="content" source="./media/exempt-resource/policy-page-exemption.png" alt-text="Страница исключения политики Azure":::
 
 
 

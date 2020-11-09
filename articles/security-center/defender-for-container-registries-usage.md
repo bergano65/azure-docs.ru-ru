@@ -7,12 +7,12 @@ ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: a1357f263c450605025b6f1e9b7bdea47d0d4f58
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 2471a19cf795d969644cb92e23b7a2926f2ee1a9
+ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289222"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94372614"
 ---
 # <a name="use-azure-defender-for-container-registries-to-scan-your-images-for-vulnerabilities"></a>Использование защитника Azure для реестров контейнеров для проверки образов на наличие уязвимостей
 
@@ -114,6 +114,9 @@ ms.locfileid: "93289222"
 
 ## <a name="disable-specific-findings-preview"></a>Отключить определенные выводы (Предварительная версия)
 
+> [!NOTE]
+> [!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)]
+
 Если правила вашей организации требуют игнорировать обнаруженную проблему, а не исправлять ее, вы можете исключить ее из результатов поиска. Отключенные результаты не учитываются в оценке безопасности и не создают нежелательный шум.
 
 Если результат поиска соответствует критерию, заданному в правилах отключения, он не будет отображаться в списке результатов. Типичные сценарии включают:
@@ -134,7 +137,7 @@ ms.locfileid: "93289222"
 - Категория
 - Проверка безопасности 
 - Оценки CVSS v3
-- Severity 
+- Статус 
 - Состояние исправления 
 
 Чтобы создать правило, выполните следующие действия.
@@ -153,7 +156,7 @@ ms.locfileid: "93289222"
     1. Чтобы просмотреть или удалить правило, выберите меню с многоточием ("...").
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > См. сведения об [Azure Defender](azure-defender.md).
