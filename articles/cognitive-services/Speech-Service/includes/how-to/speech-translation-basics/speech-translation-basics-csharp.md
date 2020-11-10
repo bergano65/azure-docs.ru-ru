@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 04/13/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1302b3e959530b0ff738e4fb5c3898355088591d
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: c8392770d7edb18f776f7664657c6985b9f7fb63
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92470926"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425436"
 ---
 Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этом кратком руководстве вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для выполнения высококачественного перевода речи. В этом кратком руководстве рассматриваются такие темы, как:
 
@@ -28,7 +28,7 @@ ms.locfileid: "92470926"
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span> </a> статьи _о пакете SDK для распознавания речи_ .
+Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span></a> статьи _о пакете SDK для распознавания речи_ .
 
 ## <a name="import-dependencies"></a>Импорт зависимостей
 
@@ -76,7 +76,7 @@ public class Program
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
 * С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Получите эти учетные данные, выполнив действия, описанные в разделе [пробная служба распознавания речи бесплатно](../../../overview.md#try-the-speech-service-for-free).
+Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free).
 
 ```csharp
 public class Program
@@ -228,7 +228,7 @@ static async Task TranslateSpeechAsync()
 }
 ```
 
-Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../speech-to-text-basics.md).
+Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../get-started-speech-to-text.md).
 
 ## <a name="synthesize-translations"></a>Синтезирование переводов
 
@@ -333,13 +333,13 @@ static async Task TranslateSpeechAsync()
 }
 ```
 
-Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../text-to-speech-basics.md).
+Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../get-started-text-to-speech.md).
 
-[config]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechtranslationconfig?view=azure-dotnet
-[audioconfig]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audio.audioconfig?view=azure-dotnet
-[recognizer]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.translation.translationrecognizer?view=azure-dotnet
-[recognitionlang]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.speechrecognitionlanguage?view=azure-dotnet
-[addlang]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechtranslationconfig.addtargetlanguage?view=azure-dotnet
-[translations]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.translation.translationrecognitionresult.translations?view=azure-dotnet
-[voicename]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechtranslationconfig.voicename?view=azure-dotnet
-[speechsynthesisvoicename]: https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.speechsynthesisvoicename?view=azure-dotnet
+[config]: /dotnet/api/microsoft.cognitiveservices.speech.speechtranslationconfig?view=azure-dotnet
+[audioconfig]: /dotnet/api/microsoft.cognitiveservices.speech.audio.audioconfig?view=azure-dotnet
+[recognizer]: /dotnet/api/microsoft.cognitiveservices.speech.translation.translationrecognizer?view=azure-dotnet
+[recognitionlang]: /dotnet/api/microsoft.cognitiveservices.speech.speechconfig.speechrecognitionlanguage?view=azure-dotnet
+[addlang]: /dotnet/api/microsoft.cognitiveservices.speech.speechtranslationconfig.addtargetlanguage?view=azure-dotnet
+[translations]: /dotnet/api/microsoft.cognitiveservices.speech.translation.translationrecognitionresult.translations?view=azure-dotnet
+[voicename]: /dotnet/api/microsoft.cognitiveservices.speech.speechtranslationconfig.voicename?view=azure-dotnet
+[speechsynthesisvoicename]: /dotnet/api/microsoft.cognitiveservices.speech.speechconfig.speechsynthesisvoicename?view=azure-dotnet

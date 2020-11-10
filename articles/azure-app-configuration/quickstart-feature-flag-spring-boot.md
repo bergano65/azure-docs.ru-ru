@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 04/18/2020
 ms.author: lcozzens
 ms.custom: devx-track-java
-ms.openlocfilehash: 9a804bd40635cd039a2c099f98351b2487c554d3
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 64ccc9c91d9ead567035b1f7f35e0a0088b6200b
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075541"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93124192"
 ---
 # <a name="quickstart-add-feature-flags-to-a-spring-boot-app"></a>Краткое руководство. Добавление флагов функций в приложение Spring Boot
 
@@ -30,7 +30,7 @@ ms.locfileid: "92075541"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-7. Выберите **Диспетчер компонентов** >  **+Добавить**, чтобы добавить флаг функции `Beta`.
+7. Выберите **Диспетчер компонентов** >  **+Добавить** , чтобы добавить флаг функции `Beta`.
 
     > [!div class="mx-imgBorder"]
     > ![Включение флага функции с именем Beta](media/add-beta-feature-flag.png)
@@ -286,7 +286,7 @@ ms.locfileid: "92075541"
 
 1. В браузере перейдите по адресу `http://localhost:8080/welcome`.
 
-    ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/spring-boot-feature-flag-local-before.png)
+    ![Снимок экрана: окно браузера с приветственным сообщением.](./media/quickstarts/spring-boot-feature-flag-local-before.png)
 
 1. На портале конфигурации приложений выберите **Feature Manager** (Диспетчер функций) и измените состояние ключа **Beta** на **On** (Включен).
 
@@ -296,7 +296,7 @@ ms.locfileid: "92075541"
 
 1. Обновите страницу браузера, чтобы просмотреть новые параметры конфигурации.
 
-    ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/spring-boot-feature-flag-local-after.png)
+    ![Снимок экрана: окно браузера с приветственным сообщением и выделенной ссылкой на бета-версию.](./media/quickstarts/spring-boot-feature-flag-local-after.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

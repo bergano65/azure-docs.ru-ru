@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: a3bd565b26d011e6186cc6957769db57f9cd1c9c
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 7518d6ac8bc0cde515ab8da2f3d9c1496cb93f08
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093418"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311722"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-synapse-sql"></a>Использование Azure Active Directory для проверки подлинности в SQL Synapse
 
@@ -39,7 +39,7 @@ ms.locfileid: "92093418"
 3. Назначьте роль созданному идентификатору Azure AD в рабочей области Azure Synapse (предварительной версии).
 4. Подключитесь к Synapse Studio, используя идентификаторы Azure AD.
 
-## <a name="aad-pass-through-in-azure-synapse-analytics"></a>Сквозной доступ через Synapse Analytics с помощью Azure AD
+## <a name="azure-ad-pass-through-in-azure-synapse-analytics"></a>Сквозная передача Azure AD в Synapse Analytics
 
 Azure Synapse Analytics позволяет получать доступ к данным в озере, используя идентификатор Azure AD.
 
@@ -49,13 +49,13 @@ Azure Synapse Analytics позволяет получать доступ к да
 
 На общей схеме ниже показана архитектура решения, в котором используется аутентификация Azure AD для SQL Synapse. Для поддержки собственной проверки подлинности Azure AD с использованием пароля пользователя учитывается только облачная часть, Azure AD и SQL Synapse. Для поддержки федеративной проверки подлинности (или имени пользователя и пароля в качестве учетных данных Windows) требуется взаимодействие с блоком ADFS. Стрелки обозначают пути обмена данными.
 
-![схема проверки подлинности aad](./media/aad-authentication/1-active-directory-authentication-diagram.png)
+![Схема проверки подлинности Azure AD](./media/aad-authentication/1-active-directory-authentication-diagram.png)
 
 На следующей схеме показаны федерация, отношения доверия и отношения размещения. Все эти компоненты позволяют клиенту подключиться к базе данных, отправив маркер. Маркер проходит аутентификацию в Azure AD и становится доверенным для базы данных. 
 
 Клиент 1 может представлять каталог Azure AD с собственными пользователями или федеративными пользователями. Клиент 2 представляет возможное решение, включая импортированных пользователей. В этом примере пользователи импортированы из федеративной службы Azure Active Directory, при этом службы ADFS синхронизированы с Azure Active Directory. 
 
-Важно понимать, что для доступа к базе данных с использованием проверки подлинности Azure AD необходимо связать подписку размещения с Azure AD. Эту же подписку нужно использовать, чтобы создать сервер SQL Server для размещения Базы данных SQL Azure или пула SQL.
+Важно понимать, что для доступа к базе данных с использованием проверки подлинности Azure AD необходимо связать подписку размещения с Azure AD. Эту же подписку нужно использовать, чтобы создать сервер SQL Server для размещения Базы данных SQL Azure или выделенного пула SQL.
 
 ![отношение подписки](./media/aad-authentication/2-subscription-relationship.png)
 
@@ -109,7 +109,7 @@ Azure Synapse Analytics позволяет получать доступ к да
 - Универсальная служба Azure Active Directory с поддержкой MFA.
 - Использование маркера проверки подлинности приложения
 
-Для субъектов сервера (имен для входа) Azure AD поддерживаются следующие методы проверки подлинности (**общедоступная предварительная версия**):
+Для субъектов сервера (имен для входа) Azure AD поддерживаются следующие методы проверки подлинности ( **общедоступная предварительная версия** ):
 
 - Пароль Azure Active Directory.
 - Встроенная служба Azure Active Directory.
@@ -119,10 +119,10 @@ Azure Synapse Analytics позволяет получать доступ к да
 
 - Для повышения управляемости рекомендуем подготовить специальную группу Azure AD от имени администратора.
 - За один раз для пула SQL можно настроить только одного администратора Azure AD (пользователя или группу).
-  - Добавление субъектов сервера (имен для входа) Azure AD для SQL по запросу (предварительной версии) позволяет создавать несколько субъектов сервера (имен для входа) Azure AD, которые можно добавить для роли `sysadmin`.
-- Изначально только администратор Azure AD для SQL Synapse может подключаться к SQL Synapse, используя учетную запись Azure AD. Затем администратор Active Directory может настроить других пользователей базы данных Azure AD.
+  - Добавление субъектов сервера (имен для входа) Azure AD Synapse SQL (предварительная версия) позволяет создавать несколько субъектов сервера (имен для входа) Azure AD, которые можно добавить к роли `sysadmin`.
+- Только администратор Azure AD для Synapse SQL может подключаться к Synapse SQL, используя учетную запись Azure AD. Затем администратор Active Directory может настроить других пользователей базы данных Azure AD.
 - Мы рекомендуем установить время ожидания подключения в 30 секунд.
-- Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server**, требуется версия .NET Framework не ниже 4.6.) Поэтому для последних версий этих инструментов и приложений уровня данных (DAC и BACPAC-файлов) можно применять аутентификацию Azure AD.
+- Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server** , требуется версия .NET Framework не ниже 4.6.) Поэтому для последних версий этих инструментов и приложений уровня данных (DAC и BACPAC-файлов) можно применять аутентификацию Azure AD.
 - Начиная с версии 15.0.1, служебные программы[SQLCMD](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [BCP](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) поддерживают интерактивную аутентификацию Active Directory с возможностью MFA.
 - Для SQL Server Data Tools для Visual Studio 2015 требуется версия Data Tools, выпущенная в апреле 2016 г. (14.0.60311.1), или более поздняя. Сейчас пользователи Azure AD не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 - [Драйвер Microsoft JDBC 6.0 для SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) поддерживает проверку подлинности Azure AD. Вы можете также ознакомиться с [настройкой свойств подключения](/sql/connect/jdbc/setting-the-connection-properties?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).

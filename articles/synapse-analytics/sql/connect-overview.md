@@ -10,17 +10,17 @@ ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bbd82f856213bb36e71625eabc8bce9999ccd53f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 532ada430e7ff2ae76eb0cfbc389792bb0d98209
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91289401"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322653"
 ---
 # <a name="connect-to-synapse-sql"></a>Подключение к Synapse SQL
 Установите подключение к функции Synapse SQL в Azure Synapse Analytics.
 
-## <a name="supported-tools-for-sql-on-demand-preview"></a>Поддерживаемые средства для использования SQL по запросу (предварительная версия)
+## <a name="supported-tools-for-serverless-sql-pool-preview"></a>Поддерживаемые средства для бессерверного пула SQL (предварительная версия)
 
 [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) полностью поддерживается, начиная с версии 1.18.0. SSMS частично поддерживается, начиная с версии 18.5, и используется только для подключения и выполнения запросов.
 
@@ -31,8 +31,8 @@ ms.locfileid: "91289401"
 
 ## <a name="find-your-server-name"></a>Поиск имени сервера
 
-Имя сервера для пула SQL в приведенном ниже примере — showdemoweu.sql.azuresynapse.net.
-Имя сервера для использования SQL по запросу в приведенном ниже примере — showdemoweu-ondemand.sql.azuresynapse.net.
+Имя сервера для выделенного пула SQL в приведенном ниже примере — showdemoweu.sql.azuresynapse.net.
+Имя сервера для бессерверного пула SQL в приведенном ниже примере — showdemoweu-ondemand.sql.azuresynapse.net.
 
 Чтобы найти полное имя сервера, сделайте следующее.
 
@@ -46,9 +46,9 @@ ms.locfileid: "91289401"
 
 ![Полное имя сервера](./media/connect-overview/server-connect-example.png)
 
-## <a name="sql-on-demand"></a>**SQL по запросу**
+## <a name="serverless-sql-pool"></a>**Бессерверный пул SQL**
 
-![Полное имя сервера для использования SQL по запросу](./media/connect-overview/server-connect-example-sqlod.png)
+![Полное имя сервера для бессерверного пула SQL](./media/connect-overview/server-connect-example-sqlod.png)
 
 ## <a name="supported-drivers-and-connection-strings"></a>Поддерживаемые драйверы и строки подключения
 Synapse SQL поддерживает драйверы [ADO.NET](https://msdn.microsoft.com/library/e80y5yhx(v=vs.110).aspx), [ODBC](https://msdn.microsoft.com/library/jj730314.aspx), [PHP](https://msdn.microsoft.com/library/cc296172.aspx?f=255&MSPPError=-2147217396) и [JDBC](https://msdn.microsoft.com/library/mt484311(v=sql.110).aspx). Выберите один из указанных типов драйверов для получения информации об обновлениях и документации. Чтобы автоматически создать строку подключения для используемого драйвера на портале Azure, щелкните **Показать строки подключения к базам данных** на странице из предыдущего примера. Ниже приведены примеры синтаксиса строк подключения для каждого драйвера.
@@ -92,7 +92,7 @@ Synapse SQL стандартизирует некоторые параметры
 
 ## <a name="recommendations"></a>Рекомендации
 
-Для выполнения запросов с помощью **SQL по запросу** мы рекомендуем использовать инструменты [Azure Data Studio](get-started-azure-data-studio.md) и Azure Synapse Studio.
+Для выполнения запросов **бессерверного пула SQL** мы рекомендуем использовать [Azure Data Studio](get-started-azure-data-studio.md) и Azure Synapse Studio.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Чтобы подключиться и отправить запрос с помощью Visual Studio, см. инструкции в статье [Подключение к Azure Synapse Analytics с помощью Visual Studio и SSDT](../sql-data-warehouse/sql-data-warehouse-query-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json). Подробные сведения о способах проверки подлинности см. в статье [Проверка подлинности в Synapse SQL](../sql-data-warehouse/sql-data-warehouse-authentication.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).

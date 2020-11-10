@@ -8,14 +8,14 @@ ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc
 ms.date: 09/22/2020
-ms.openlocfilehash: 6b475e34c01ca26abd3d8ab1d904521de19f941b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 01efb5736d7becf1b46c7c2898c22648b0421dd1
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945217"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305818"
 ---
-# <a name="create-and-delete-jobs-in-an-azure-stream-analytics-cluster"></a>Создание и удаление заданий в кластере Azure Stream Analytics
+# <a name="add-and-remove-jobs-in-an-azure-stream-analytics-cluster"></a>Добавление и удаление заданий в кластере Azure Stream Analytics
 
 В кластере Azure Stream Analytics можно запустить сразу несколько заданий Stream Analytics. Для выполнения заданий в кластере используется простой двухэтапный процесс: добавьте задание в кластер и запустите задание. В этой статье показано, как добавлять задания в существующий кластер и удалять их из него. Выполните инструкции из краткого руководства [по созданию кластера Stream Analytics](create-cluster.md), если у вас его еще нет.
 

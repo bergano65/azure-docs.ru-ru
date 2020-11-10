@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: quickstart
-ms.date: 09/03/2019
+ms.date: 11/04/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: fcc7c6ff74e17db2066d97597849c985f5a961e9
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 23615daf4a07e02b01bbd5a9cdf57ec9a81a2b76
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76514074"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93347407"
 ---
 ::: zone target="docs"
 
@@ -24,7 +24,7 @@ ms.locfileid: "76514074"
 
 Подробные пошаговое инструкции по развертыванию и отслеживанию см. в статье [Руководство. Заказ Диска Azure Data Box (предварительная версия)](data-box-disk-deploy-ordered.md). 
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F&preserve-view=true).
 
 ::: zone-end
 
@@ -65,14 +65,84 @@ ms.locfileid: "76514074"
 
 ## <a name="order"></a>Порядок
 
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
 Это действие занимает примерно 5 минут.
 
 1. Создайте новый ресурс Azure Data Box на портале Azure. 
-2. Выберите включенную для этой службы подписку и выберите тип передачи **импортирование**. Укажите **Страну источника**, где находятся данные и **регион назначения Azure** для передачи данных.
+2. Выберите включенную для этой службы подписку и выберите тип передачи **импортирование**. Укажите **Страну источника** , где находятся данные и **регион назначения Azure** для передачи данных.
 3. Выберите **Диск Data Box**. Максимальная емкость решения составляет 35 ТБ, и можно создавать заказы на несколько дисков для больших объемов данных.  
 4. Введите сведения о заказе и о доставке. Если служба доступна в вашем регионе, укажите адреса электронной почты для уведомлений, просмотрите сводные данные, а затем создайте заказ.
 
 После создания заказа диски подготавливаются к отправке.
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Используйте эти команды Azure CLI, чтобы создать задание Диска Azure Data Box.
+
+[!INCLUDE [azure-cli-prepare-your-environment-h3.md](../../includes/azure-cli-prepare-your-environment-h3.md)]
+
+1. Выполните команду [az group create](/cli/azure/group#az_group_create), чтобы создать группу ресурсов или использовать существующую группу ресурсов:
+
+   ```azurecli
+   az group create --name databox-rg --location westus
+   ```
+
+1. Используйте команду [az storage account create](/cli/azure/storage/account#az_storage_account_create), чтобы создать учетную запись хранения или использовать существующую учетную запись хранения:
+
+   ```azurecli
+   az storage account create --resource-group databox-rg --name databoxtestsa
+   ```
+
+1. Выполните команду [az databox job create](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_create), чтобы создать задание Data Box со SKU DataBoxDisk:
+
+   ```azurecli
+   az databox job create --resource-group databox-rg --name databoxdisk-job \
+       --location westus --sku DataBoxDisk --contact-name "Jim Gan" --phone=4085555555 \
+       –-city Sunnyvale --email-list JimGan@contoso.com --street-address1 "1020 Enterprise Way" \
+       --postal-code 94089 --country US --state-or-province CA \
+       --storage-account databoxtestsa --expected-data-size 1
+   ```
+
+1. Выполните команду [az databox job update](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_update), чтобы обновить задание, как показано в этом примере, где вы изменяете имя и адрес контакта:
+
+   ```azurecli
+   az databox job update -g databox-rg --name databox-job --contact-name "Robert Anic" --email-list RobertAnic@contoso.com
+   ```
+
+   Выполните команду [az databox job show](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_show), чтобы получить сведения о задании:
+
+   ```azurecli
+   az databox job show --resource-group databox-rg --name databox-job
+   ```
+
+   Используйте команду [az databox job list]( /cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_list), чтобы просмотреть все задания Data Box для группы ресурсов:
+
+   ```azurecli
+   az databox job list --resource-group databox-rg
+   ```
+
+   Выполните команду [az databox job cancel](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_cancel), чтобы отменить задание:
+
+   ```azurecli
+   az databox job cancel –resource-group databox-rg --name databox-job --reason "Cancel job."
+   ```
+
+   Выполните команду [az databox job delete](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_delete), чтобы удалить задание:
+
+   ```azurecli
+   az databox job delete –resource-group databox-rg --name databox-job
+   ```
+
+1. Используйте команду [az databox job list-credentials]( /cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_list_credentials), чтобы вывести учетные данные для задания Data Box:
+
+   ```azurecli
+   az databox job list-credentials --resource-group "databox-rg" --name "databoxdisk-job"
+   ```
+
+После создания заказа устройство подготавливается к отправке.
+
+---
 
 ## <a name="unpack"></a>Распаковка
 
@@ -100,11 +170,11 @@ ms.locfileid: "76514074"
 
 Время завершения этой операции, зависит от размера ваших данных.
 
-1. Диск содержит папки *PageBlob*, *BlockBlob*, *AzureFile*, *ManagedDisk* и *DataBoxDiskImport*. Для копирования перетащите данные, которые нужно импортировать в качестве блочных BLOB-объектов в папку *BlockBlob*. Аналогичным образом перетащите VHD/VHDX в папку *PageBlob*, а соответствующие данные — в папку *AzureFile*. Скопируйте те VHD, которые хотите отправить как управляемые диски, в папку *ManagedDisk*.
+1. Диск содержит папки *PageBlob* , *BlockBlob* , *AzureFile* , *ManagedDisk* и *DataBoxDiskImport*. Для копирования перетащите данные, которые нужно импортировать в качестве блочных BLOB-объектов в папку *BlockBlob*. Аналогичным образом перетащите VHD/VHDX в папку *PageBlob* , а соответствующие данные — в папку *AzureFile*. Скопируйте те VHD, которые хотите отправить как управляемые диски, в папку *ManagedDisk*.
 
     Хранилище создается в учетной записи хранения Azure для каждой подпапки в папках *BlockBlob* и *PageBlob*. В папке *AzureFile* в качестве вложенной папки создана общая папка.
 
-    Все файлы в папках *BlockBlob* и *PageBlob* копируются по умолчанию в контейнер `$root` в учетную запись хранения Azure. Скопируйте файлы в папку, находящуюся внутри *AzureFile*. Все файлы, скопированные непосредственно в папку *AzureFile*, завершаются сбоем и отправляются как блочные BLOB-объекты.
+    Все файлы в папках *BlockBlob* и *PageBlob* копируются по умолчанию в контейнер `$root` в учетную запись хранения Azure. Скопируйте файлы в папку, находящуюся внутри *AzureFile*. Все файлы, скопированные непосредственно в папку *AzureFile* , завершаются сбоем и отправляются как блочные BLOB-объекты.
 
     > [!NOTE]
     > - Все контейнеры, BLOB-объекты и файлы должны соответствовать [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions). Если не следовать этим правилам, произойдет сбой передачи данных в Azure.

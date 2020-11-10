@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/13/2020
 ms.author: trbye
-ms.openlocfilehash: eab4af541c2190599e953196ba16e9300bee2ede
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: d5489c5c548d1242ebac9f17faa8ed55fa79108b
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92470654"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94424865"
 ---
 Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этом кратком руководстве вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для выполнения высококачественного перевода речи. В этом кратком руководстве рассматриваются такие темы, как:
 
@@ -27,7 +27,7 @@ ms.locfileid: "92470654"
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span> </a> статьи _о пакете SDK для распознавания речи_ .
+Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span></a> статьи _о пакете SDK для распознавания речи_ .
 
 ## <a name="import-dependencies"></a>Импорт зависимостей
 
@@ -70,7 +70,7 @@ auto SPEECH__SERVICE__REGION = getenv("SPEECH__SERVICE__REGION");
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
 * С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Получите эти учетные данные, выполнив действия, описанные в разделе [пробная служба распознавания речи бесплатно](../../../overview.md#try-the-speech-service-for-free).
+Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free).
 
 ```cpp
 auto SPEECH__SUBSCRIPTION__KEY = getenv("SPEECH__SUBSCRIPTION__KEY");
@@ -221,7 +221,7 @@ void translateSpeech() {
 }
 ```
 
-Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../speech-to-text-basics.md).
+Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../get-started-speech-to-text.md).
 
 ## <a name="synthesize-translations"></a>Синтезирование переводов
 
@@ -329,13 +329,13 @@ void translateSpeech() {
 }
 ```
 
-Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../text-to-speech-basics.md).
+Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../get-started-text-to-speech.md).
 
-[config]: https://docs.microsoft.com/cpp/cognitive-services/speech/translation-speechtranslationconfig
-[audioconfig]: https://docs.microsoft.com/cpp/cognitive-services/speech/audio-audioconfig
-[recognizer]: https://docs.microsoft.com/cpp/cognitive-services/speech/translation-translationrecognizer
-[recognitionlang]: https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setspeechrecognitionlanguage
-[addlang]: https://docs.microsoft.com/cpp/cognitive-services/speech/translation-speechtranslationconfig#addtargetlanguage
-[translations]: https://docs.microsoft.com/cpp/cognitive-services/speech/translation-translationrecognitionresult#translations
-[voicename]: https://docs.microsoft.com/cpp/cognitive-services/speech/translation-speechtranslationconfig#setvoicename
-[speechsynthesisvoicename]: https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setspeechsynthesisvoicename
+[config]: /cpp/cognitive-services/speech/translation-speechtranslationconfig
+[audioconfig]: /cpp/cognitive-services/speech/audio-audioconfig
+[recognizer]: /cpp/cognitive-services/speech/translation-translationrecognizer
+[recognitionlang]: /cpp/cognitive-services/speech/speechconfig#setspeechrecognitionlanguage
+[addlang]: /cpp/cognitive-services/speech/translation-speechtranslationconfig#addtargetlanguage
+[translations]: /cpp/cognitive-services/speech/translation-translationrecognitionresult#translations
+[voicename]: /cpp/cognitive-services/speech/translation-speechtranslationconfig#setvoicename
+[speechsynthesisvoicename]: /cpp/cognitive-services/speech/speechconfig#setspeechsynthesisvoicename

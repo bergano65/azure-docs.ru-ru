@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 166d598528d8fe38e2bc22b76c659326c5e0ba45
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 4337d6bb108042a909250b3d87d13ab60357cfec
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91288789"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93311117"
 ---
 # <a name="connect-to-synapse-sql-with-sql-server-management-studio-ssms"></a>Подключение к Synapse SQL с помощью SQL Server Management Studio (SSMS).
 > [!div class="op_single_selector"]
@@ -26,9 +26,9 @@ ms.locfileid: "91288789"
 > 
 > 
 
-Вы можете использовать [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) для подключения и создания запроса Synapse SQL в Azure Synapse Analytics с помощью ресурсов SQL по запросу (предварительная версия) или пула SQL. 
+Вы можете использовать [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) для подключения и создания запроса Synapse SQL в Azure Synapse Analytics с помощью ресурсов бессерверного пула SQL (предварительная версия) или выделенного пула SQL. 
 
-### <a name="supported-tools-for-sql-on-demand-preview"></a>Поддерживаемые средства для использования SQL по запросу (предварительная версия)
+### <a name="supported-tools-for-serverless-sql-pool-preview"></a>Поддерживаемые средства для бессерверного пула SQL (предварительная версия)
 
 [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) полностью поддерживается, начиная с версии 1.18.0. SSMS частично поддерживается, начиная с версии 18.5, и используется только для подключения и выполнения запросов.
 
@@ -40,21 +40,21 @@ ms.locfileid: "91288789"
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.  
 
 * [SQL Server Management Studio (SSMS).](/sql/ssms/download-sql-server-management-studio-ssms) 
-* Для пула SQL требуется существующее хранилище данных. Сведения о его создании см. в статье [Создание пула SQL Azure](../quickstart-create-sql-pool-portal.md). Для использования SQL по запросу он уже предусмотрен в вашем рабочем пространстве во время создания. 
+* Для выделенного пула SQL требуется существующее хранилище данных. Сведения о его создании см. в статье [Создание выделенного пула SQL](../quickstart-create-sql-pool-portal.md). Если вы хотите использовать бессерверный пул, он уже был подготовлен и именован в вашей рабочей области во время создания. 
 * Полное имя сервера SQL Server. Чтобы найти это имя, см. статью [Подключение к Synapse SQL](connect-overview.md).
 
 ## <a name="connect"></a>Подключение
 
-### <a name="sql-pool"></a>Пул SQL
+### <a name="dedicated-sql-pool"></a>Выделенный пул SQL
 
-Чтобы подключиться к Synapse SQL с помощью пула SQL, выполните следующие действия: 
+Чтобы подключиться к Synapse SQL с помощью выделенного пула SQL, выполните следующие действия: 
 
 1. Откройте SQL Server Management Studio (SSMS). 
 1. В диалоговом окне **Подключение к серверу** заполните поля и выберите **Подключить**. 
   
     ![Подключение к серверу 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/connect-object-explorer1.png)
    
-   * **Имя сервера**: Введите найденное **имя сервера** .
+   * **Имя сервера** : Введите найденное **имя сервера** .
    * **Аутентификация**.  Выберите тип проверки подлинности, например **Проверка подлинности SQL Server** или **Встроенная проверка подлинности Active Directory**.
    * **Имя пользователя** и **пароль**. Если вы выбрали проверку подлинности SQL Server, введите имя пользователя и пароль.
 
@@ -63,28 +63,28 @@ ms.locfileid: "91288789"
     ![Обзор AdventureWorksDW 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/explore-tables.png)
 
 
-### <a name="sql-on-demand-preview"></a>SQL по запросу (предварительная версия)
+### <a name="serverless-sql-pool-preview"></a>Бессерверный пул SQL (предварительная версия)
 
-Чтобы подключиться к Synapse SQL с помощью SQL по запросу, выполните следующие действия. 
+Чтобы подключиться к Synapse SQL с помощью бессерверного пула SQL, выполните следующие действия: 
 
 1. Откройте SQL Server Management Studio (SSMS).
 1. В диалоговом окне **Подключение к серверу** заполните поля и выберите **Подключить**. 
    
     ![Подключение к серверу 2](./media/get-started-ssms/connect-object-explorer1.png)
    
-   * **Имя сервера**: Введите найденное **имя сервера** .
-   * **Аутентификация**. Выберите тип проверки подлинности, например **Проверка подлинности SQL Server** или **Встроенная проверка подлинности Active Directory**:
+   * **Имя сервера** : Введите найденное **имя сервера** .
+   * **Аутентификация**. Выберите тип проверки подлинности, например **Проверка подлинности SQL Server** или **Встроенная проверка подлинности Active Directory** :
    * **Имя пользователя** и **пароль**. Если вы выбрали проверку подлинности SQL Server, введите имя пользователя и пароль.
    * Выберите **Подключиться**.
 
-4. Чтобы исследовать данные, разверните сервер Azure SQL Server. Вы можете просмотреть базы данных, связанные с сервером. Разверните *демоверсию*, чтобы просмотреть содержимое образца базы данных.
+4. Чтобы исследовать данные, разверните сервер Azure SQL Server. Вы можете просмотреть базы данных, связанные с сервером. Разверните *демоверсию* , чтобы просмотреть содержимое образца базы данных.
    
     ![Обзор AdventureWorksDW 2](./media/get-started-ssms/explore-tables.png)
 
 
 ## <a name="run-a-sample-query"></a>Запуск пробного запроса
 
-### <a name="sql-pool"></a>Пул SQL
+### <a name="dedicated-sql-pool"></a>Выделенный пул SQL
 
 Теперь, когда подключение к базе данных установлено, можно выполнить запрос данных.
 
@@ -104,7 +104,7 @@ ms.locfileid: "91288789"
    
     ![Результаты запроса 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/results.png)
 
-### <a name="sql-on-demand"></a>Использование SQL по запросу
+### <a name="serverless-sql-pool"></a>Бессерверный пул SQL
 
 Теперь, когда вы установили подключение к базе данных, можно выполнить запрос данных.
 

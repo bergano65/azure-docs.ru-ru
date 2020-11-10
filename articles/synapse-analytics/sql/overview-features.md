@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: f159e38eb66e1758feaf743c32d8de30c614b234
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: fe30a2a0885e1a579eb32ad84ef467f7162febe4
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91288517"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310329"
 ---
 # <a name="transact-sql-features-supported-in-azure-synapse-sql"></a>Функции T-SQL, которые поддерживаются в Azure Synapse SQL
 
@@ -54,7 +54,7 @@ Azure Synapse SQL — это служба аналитики больших д�
 | **Инструкция INSERT** | Да | Нет |
 | **Инструкция UPDATE** | Да | Нет |
 | **Инструкция DELETE** | Да | Нет |
-| **Инструкция MERGE** | Нет | Нет |
+| **Инструкция MERGE** | нет | Нет |
 | **[Транзакции](develop-transactions.md)** | Да | Нет |
 | **[Метки](develop-label.md)** | Да | Нет |
 | **Загрузка данных** | Да. Лучше всего использовать инструкцию [COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), но система поддерживает для загрузки данных как массовую загрузку (BCP), так и [CETAS](/sql/t-sql/statements/create-external-table-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). | Нет |
@@ -79,8 +79,8 @@ Synapse SQL позволяет использовать встроенные ф�
 | **Пользователи** |  Недоступно (в базах данных поддерживаются только автономные пользователи). | Да |
 | **[Автономные пользователи](/sql/relational-databases/security/contained-database-users-making-your-database-portable?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)** | Да. **Примечание.** Только один пользователь Azure AD может быть администратором с неограниченными правами. | Да |
 | **Аутентификация по имени пользователя и паролю в SQL**| Да | Да |
-| **Проверка подлинности Azure Active Directory (AAD)**| Да (для пользователей Azure AD) | Да (для учетных данных и пользователей Azure AD) |
-| **Сквозная проверка подлинности в службе хранилища Azure Active Directory (AAD)** | Да | Да |
+| **Проверка подлинности через Azure Active Directory (Azure AD)**| Да (для пользователей Azure AD) | Да (для учетных данных и пользователей Azure AD) |
+| **Сквозная проверка подлинности в службе хранилища Azure Active Directory (Azure AD)** | Да | Да |
 | **Аутентификация по маркерам SAS для службы хранилища** | Нет | Да, с использованием [DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в [EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) или [CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) на уровне объекта. |
 | **Проверка подлинности по ключу доступа к хранилищу** | Да, с использованием [DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в [EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). | Нет |
 | **Проверка подлинности по [управляемому удостоверению](../security/synapse-workspace-managed-identity.md) для службы хранилища** | Да, с использованием [управляемого удостоверения службы](../../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). | Да, с использованием учетных данных `Managed Identity`. |
@@ -103,7 +103,7 @@ Synapse SQL позволяет использовать встроенные ф�
 | **[Правила брандмауэра](../security/synapse-workspace-ip-firewall.md)**| Да | Да |
 | **[Частная конечная точка](../security/synapse-workspace-managed-private-endpoints.md)**| Да | Да |
 
-Пул SQL и SQL по запросу используют для запроса данных стандартный язык Transact-SQL. Подробные сведения о различиях см. в [справочнике по языку Transact-SQL](/sql/t-sql/language-reference).
+Выделенный и бессерверный пулы SQL используют для запрашивания данных стандартный язык Transact-SQL. Подробные сведения о различиях см. в [справочнике по языку Transact-SQL](/sql/t-sql/language-reference).
 
 ## <a name="tools"></a>Инструменты
 
@@ -118,7 +118,7 @@ Synapse SQL позволяет использовать встроенные ф�
 | **Среда SQL Server Management Studio** | Да | Да, версия 18.5 или более поздняя. |
 
 > [!NOTE]
-> С помощью SSMS можно подключиться к SQL по запросу (предварительная версия) и выполнить запрос. Эти средства частично поддерживаются, начиная с версии 18.5, и используется только для подключения и выполнения запросов.
+> С помощью SSMS можно подключиться к бессерверному пулу SQL (предварительная версия) и выполнить запрос. Эти средства частично поддерживаются, начиная с версии 18.5, и используется только для подключения и выполнения запросов.
 
 Большинство приложений используют стандартный язык Transact-SQL, который может выполнять запросы по подготовленным и бессерверным моделям потребления в Synapse SQL.
 
@@ -150,7 +150,7 @@ Synapse SQL позволяет использовать встроенные ф�
 | **[CDM](https://docs.microsoft.com/common-data-model/)** | Нет | Нет |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о рекомендациях для пула SQL и SQL по запросу можно найти в следующих статьях:
+Рекомендации по работе с выделенным и бессерверным пулами SQL см. в следующих статьях:
 
-- [Рекомендации по использованию пула SQL](best-practices-sql-pool.md)
-- [Рекомендации по использованию SQL по запросу](best-practices-sql-on-demand.md)
+- [Рекомендации по использованию выделенного пула SQL](best-practices-sql-pool.md)
+- [Рекомендации по использованию бессерверного пула SQL](best-practices-sql-on-demand.md)

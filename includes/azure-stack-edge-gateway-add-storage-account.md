@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 08/30/2020
 ms.author: alkohli
-ms.openlocfilehash: 30ca4d330d9b16214396ac81e5ab5722ca0e7569
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0b6a6cbf51ef2ff1f1ef53b53a2b84c7a4f9510d
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89254306"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93376048"
 ---
 1. На [портале Azure](https://portal.azure.com/) выберите ресурс Azure Stack Edge и перейдите в раздел **Обзор**. Устройство должно быть подключено к сети.
 
@@ -29,11 +29,11 @@ ms.locfileid: "89254306"
 
     <!--![Add a storage account](media/azure-stack-edge-gateway-add-storage-account/add-storage-account-2.png)-->
 
-    Д. Указав все параметры учетной записи хранения, выберите **Добавить**, чтобы создать учетную запись хранения Edge. Когда учетная запись хранения Edge будет создана, вы получите уведомление. Новая учетная запись хранения Edge появится в списке учетных записей хранения на портале Azure. 
+    Д. Указав все параметры учетной записи хранения, выберите **Добавить** , чтобы создать учетную запись хранения Edge. Когда учетная запись хранения Edge будет создана, вы получите уведомление. Новая учетная запись хранения Edge появится в списке учетных записей хранения на портале Azure. 
 
     
-4. Если выбрать эту новую учетную запись хранения и перейти к разделу **Ключи доступа**, вы найдете конечную точку службы BLOB-объектов и соответствующее имя учетной записи хранения. Скопируйте эти значения, так как они и ключи доступа понадобятся при подключении к учетной записи хранения Edge.
+4. Если выбрать эту новую учетную запись хранения и перейти к разделу **Ключи доступа** , вы найдете конечную точку службы BLOB-объектов и соответствующее имя учетной записи хранения. Скопируйте эти значения, так как они и ключи доступа понадобятся при подключении к учетной записи хранения Edge.
 
-    ![добавление учетной записи хранения;](media/azure-stack-edge-gateway-add-storage-account/add-storage-account-4.png)
+    ![Добавление учетной записи хранения (2)](media/azure-stack-edge-gateway-add-storage-account/add-storage-account-4.png)
 
     Чтобы получить ключи доступа, [подключитесь к локальным API устройства с помощью Azure Resource Manager](../articles/databox-online/azure-stack-edge-j-series-connect-resource-manager.md). 

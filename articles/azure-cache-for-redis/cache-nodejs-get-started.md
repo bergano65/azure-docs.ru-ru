@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование кэша Azure для Redis с Node.js
+title: Краткое руководство. Использование Кэша Azure для Redis в Node.js
 description: Из этого краткого руководства вы узнаете, как использовать кэш Redis для Azure с Node.js и node_redis.
 author: yegu-ms
 ms.service: cache
@@ -8,14 +8,14 @@ ms.topic: quickstart
 ms.date: 05/21/2018
 ms.author: yegu
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: ce570475617236bb99f1bca7a07dc95e1f3285aa
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: aa22cffc1fc38e055c6c2bb504c311c012f31ac2
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91331001"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93087151"
 ---
-# <a name="quickstart-use-azure-cache-for-redis-with-nodejs"></a>Краткое руководство. Использование кэша Azure для Redis с Node.js
+# <a name="quickstart-use-azure-cache-for-redis-in-nodejs"></a>Краткое руководство. Использование Кэша Azure для Redis в Node.js
 
 Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении Node.js для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 
@@ -51,7 +51,7 @@ var client = redis.createClient(6380, process.env.REDISCACHEHOSTNAME,
     {auth_pass: process.env.REDISCACHEKEY, tls: {servername: process.env.REDISCACHEHOSTNAME}});
 ```
 
-Нельзя создавать новые подключения для каждой операции в коде. Вместо этого повторно используйте как можно больше подключений. 
+Не создавайте новые подключения для каждой операции в коде. Вместо этого повторно используйте как можно больше подключений. 
 
 ## <a name="create-a-new-nodejs-app"></a>Создание нового приложения Node.js
 
@@ -119,7 +119,7 @@ node redistest.js
 > Удаление группы ресурсов — необратимая операция, и все соответствующие ресурсы удаляются окончательно. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. Если ресурсы для размещения этого примера созданы в имеющейся группе ресурсов, содержащей ресурсы, которые следует сохранить, можно удалить каждый ресурс отдельно в соответствующих колонках вместо удаления группы ресурсов.
 >
 
-Войдите в портал [Azure](https://portal.azure.com) и выберите**Группы ресурсов**.
+Войдите в портал [Azure](https://portal.azure.com) и выберите **Группы ресурсов**.
 
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени**. В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов выберите **...** , а затем **Удалить группу ресурсов**.
 

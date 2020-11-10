@@ -7,41 +7,52 @@ ms.service: postgresql
 ms.custom: mvc, devcenter, devx-track-csharp
 ms.devlang: csharp
 ms.topic: quickstart
-ms.date: 10/16/2020
-ms.openlocfilehash: 221bd8287133c3fe9bb53bd4b480823d971b3e3a
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.date: 10/18/2020
+ms.openlocfilehash: 8820fd7b0812d925af6aca923a2b205d5bc92f3e
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92166018"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341456"
 ---
 # <a name="quickstart-use-net-c-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью .NET (C#)
 
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для PostgreSQL с помощью приложения C#. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на C# и вы только начали работу с базой данных Azure для PostgreSQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
-В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
-- [Создание базы данных — портал](quickstart-create-server-database-portal.md)
-- [Создание базы данных — CLI](quickstart-create-server-database-azure-cli.md)
+Для целей этого краткого руководства понадобится:
 
-Также вам потребуется:
-- Установите платформу [.NET Framework](https://www.microsoft.com/net/download). Выполните действия в статье по ссылке, чтобы установить .NET конкретно для вашей платформы (Windows, Ubuntu Linux или macOS). 
-- Установите [Visual Studio](https://www.visualstudio.com/downloads/) или Visual Studio Code для ввода и редактирования кода.
-- Добавьте ссылку на пакет Nuget [Npgsql](https://www.nuget.org/packages/Npgsql/).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free) бесплатно.
+- Создать отдельный сервер Базы данных Azure для PostgreSQL на [портале Azure](./quickstart-create-server-database-portal.md) <br/> или с помощью [Azure CLI](./quickstart-create-server-database-azure-cli.md), если он еще не создан.
+- Выполнить **ОДНО** из действий (в зависимости от того, пользуетесь вы общим или частным доступом), чтобы настроить возможность подключения.
+
+  |Действие| Метод подключения|Практическое руководство|
+  |:--------- |:--------- |:--------- |
+  | **Настройка правил брандмауэра** | Общие | [Портал](./howto-manage-firewall-using-portal.md) <br/> [CLI](./howto-manage-firewall-using-cli.md)|
+  | **Настройка конечной точки службы** | Общие | [Портал](./howto-manage-vnet-using-portal.md) <br/> [CLI](./howto-manage-vnet-using-cli.md)|
+  | **Настройка приватного канала** | Private | [Портал](./howto-configure-privatelink-portal.md) <br/> [CLI](./howto-configure-privatelink-cli.md) |
+
+- Установить [.NET Framework](https://www.microsoft.com/net/download) для своей платформы (Windows, Ubuntu Linux или macOS). 
+- Установить [Visual Studio](https://www.visualstudio.com/downloads/), чтобы выполнить сборку проекта.
+- Установить пакет NuGet [Npgsql](https://www.nuget.org/packages/Npgsql/) в Visual Studio.
 
 ## <a name="get-connection-information"></a>Получение сведений о подключении
 Получите сведения, необходимые для подключения к базе данных Azure.для PostgreSQL. Вам потребуется полное имя сервера и учетные данные для входа.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
+2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver** ).
 3. Щелкните имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
  :::image type="content" source="./media/connect-csharp/1-connection-string.png" alt-text="Имя сервера службы &quot;База данных Azure для PostgreSQL&quot;":::
 
-## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
-Используйте приведенный ниже код для подключения и загрузки данных с помощью инструкций SQL **CREATE TABLE** и **INSERT INTO**. В коде используется класс NpgsqlCommand с методом [Open()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_Open), чтобы установить подключение к базе данных PostgreSQL. Затем код использует метод [CreateCommand()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_CreateCommand), устанавливает свойство CommandText и вызывает метод [ExecuteNonQuery()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_ExecuteNonQuery), чтобы выполнить команды базы данных. 
+## <a name="step-1-connect-and-insert-data"></a>Шаг 1. Подключение и введение данных
+Используйте приведенный ниже код для подключения и загрузки данных с помощью инструкций SQL **CREATE TABLE** и **INSERT INTO**. В коде используется класс NpgsqlCommand с методом: 
+- [Open()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_Open), чтобы установить соединение с базой данных PostgreSQL.
+- [CreateCommand ()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_CreateCommand), чтобы задать свойство CommandText.
+- [ExecuteNonQuery ()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_ExecuteNonQuery), чтобы выполнять команды базы данных. 
 
-Замените значения параметров Host, DBName, User и Password значениями, указанными при создании сервера и базы данных. 
+> [!IMPORTANT]
+> Замените значения параметров Host, DBName, User и Password значениями, указанными при создании сервера и базы данных. 
 
 ```csharp
 using System;
@@ -113,10 +124,17 @@ namespace Driver
 }
 ```
 
-## <a name="read-data"></a>Чтение данных
-Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. В коде используется класс NpgsqlCommand с методом [Open()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_Open), чтобы установить подключение к PostgreSQL. Затем код использует методы [CreateCommand()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_CreateCommand) и [ExecuteReader()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_ExecuteReader) для выполнения команд базы данных. После чего используется метод [Read()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlDataReader.html#Npgsql_NpgsqlDataReader_Read) для перехода к записи в результирующем наборе. Наконец, код использует методы [GetInt32](https://www.npgsql.org/doc/api/Npgsql.NpgsqlDataReader.html#Npgsql_NpgsqlDataReader_GetInt32_System_Int32_) и [GetString](https://www.npgsql.org/doc/api/Npgsql.NpgsqlDataReader.html#Npgsql_NpgsqlDataReader_GetString_System_Int32_) для анализа значений в записи.
+[Возникли проблемы? Сообщите нам!](https://aka.ms/postgres-doc-feedback)
 
-Замените значения параметров Host, DBName, User и Password значениями, указанными при создании сервера и базы данных. 
+## <a name="step-2-read-data"></a>Шаг 2. Чтение данных
+Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. В коде используется класс NpgsqlCommand с методом:
+- [Open()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_Open), чтобы установить соединение с PostgreSQL.
+- [CreateCommand()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_CreateCommand) и [ExecuteReader()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_ExecuteReader), чтобы выполнять команды базы данных.
+- [Read()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlDataReader.html#Npgsql_NpgsqlDataReader_Read), чтобы перейти к записи в результирующем наборе.
+- [GetInt32()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlDataReader.html#Npgsql_NpgsqlDataReader_GetInt32_System_Int32_) и [GetString()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlDataReader.html#Npgsql_NpgsqlDataReader_GetString_System_Int32_), чтобы анализировать значения в записи.
+
+> [!IMPORTANT]
+> Замените значения параметров Host, DBName, User и Password значениями, указанными при создании сервера и базы данных. 
 
 ```csharp
 using System;
@@ -179,11 +197,16 @@ namespace Driver
 }
 ```
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/postgres-doc-feedback)
 
-## <a name="update-data"></a>Обновление данных
-Используйте указанный ниже код с инструкцией SQL **UPDATE** для подключения и обновления данных. В коде используется класс NpgsqlCommand с методом [Open()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_Open), чтобы установить подключение к PostgreSQL. Затем код использует метод [CreateCommand()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_CreateCommand), устанавливает свойство CommandText и вызывает метод [ExecuteNonQuery()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_ExecuteNonQuery), чтобы выполнить команды базы данных.
+## <a name="step-3-update-data"></a>Шаг 3. Обновление данных
+Используйте указанный ниже код с инструкцией SQL **UPDATE** для подключения и обновления данных. В коде используется класс NpgsqlCommand с методом:
+- [Open()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_Open), чтобы установить соединение с PostgreSQL. 
+- [CreateCommand ()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_CreateCommand), чтобы задать свойство CommandText.
+- [ExecuteNonQuery ()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_ExecuteNonQuery), чтобы выполнять команды базы данных.
 
-Замените значения параметров Host, DBName, User и Password значениями, указанными при создании сервера и базы данных. 
+> [!IMPORTANT]
+> Замените значения параметров Host, DBName, User и Password значениями, указанными при создании сервера и базы данных. 
 
 ```csharp
 using System;
@@ -239,13 +262,15 @@ namespace Driver
 
 ```
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/postgres-doc-feedback)
 
-## <a name="delete-data"></a>Удаление данных
+## <a name="step-4-delete-data"></a>Шаг 4. Удаление данных
 Используйте указанный ниже код с инструкцией SQL **DELETE** для подключения и удаления данных. 
 
 В коде используется класс NpgsqlCommand с методом [Open()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_Open), чтобы установить подключение к базе данных PostgreSQL. Затем код использует метод [CreateCommand()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlConnection.html#Npgsql_NpgsqlConnection_CreateCommand), устанавливает свойство CommandText и вызывает метод [ExecuteNonQuery()](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_ExecuteNonQuery), чтобы выполнить команды базы данных.
 
-Замените значения параметров Host, DBName, User и Password значениями, указанными при создании сервера и базы данных. 
+> [!IMPORTANT]
+> Замените значения параметров Host, DBName, User и Password значениями, указанными при создании сервера и базы данных. 
 
 ```csharp
 using System;
@@ -298,6 +323,21 @@ namespace Driver
 
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Чтобы очистить все ресурсы, используемые во время этого краткого руководства, удалите группу ресурсов с помощью следующей команды:
+
+```azurecli
+az group delete \
+    --name $AZ_RESOURCE_GROUP \
+    --yes
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Перенос базы данных с помощью экспорта и импорта](./howto-migrate-using-export-and-import.md)
+> [Управление сервером службы "База данных Azure для MySQL" через портал](./howto-create-manage-server-portal.md)<br/>
+
+> [!div class="nextstepaction"]
+> [Управление сервером службы "База данных Azure для MySQL" с помощью CLI](./how-to-manage-server-cli.md)
+
+[Не можете найти нужную информацию? Сообщите нам!](https://aka.ms/postgres-doc-feedback)

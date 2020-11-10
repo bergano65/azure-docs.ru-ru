@@ -8,12 +8,12 @@ ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-t
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: 48e6a2a6bcf20e22edbf0d2f98607b8310d2f22d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 55c352df83e8f72a418452dd28d621556b207e5e
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91307863"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93332174"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение и запрос данных с помощью Node.js в Базе данных Azure для MySQL
 
@@ -66,9 +66,9 @@ ms.locfileid: "91307863"
    ```
 3. Проверьте установку, просмотрев текст вывода npm list. Номера версии могут отличаться, когда будут выпущены новые обновления.
 
-### <a name="mac-os"></a>MacOS
+### <a name="macos"></a>macOS
 
-1. Чтобы установить **brew** (простой в использовании диспетчер пакетов для Mac OS X) и **Node.js**, выполните следующую команду:
+1. Чтобы установить **brew** (простой в использовании диспетчер пакетов для macOS и **Node.js** ), выполните следующую команду:
 
    ```bash
    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -90,7 +90,7 @@ ms.locfileid: "91307863"
 Получите сведения о подключении, необходимые для подключения к базе данных Azure.для MySQL. Вам потребуется полное имя сервера и учетные данные для входа.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В меню слева на портале Azure выберите **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
+2. В меню слева на портале Azure выберите **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver** ).
 3. Выберите имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
  :::image type="content" source="./media/connect-nodejs/server-name-azure-database-mysql.png" alt-text="Имя сервера базы данных Azure для MySQL":::
@@ -319,6 +319,16 @@ function deleteData(){
                 else  console.log('Done.') 
         });
 };
+```
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Чтобы очистить все ресурсы, используемые во время этого краткого руководства, удалите группу ресурсов с помощью следующей команды:
+
+```azurecli
+az group delete \
+    --name $AZ_RESOURCE_GROUP \
+    --yes
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -1,6 +1,6 @@
 ---
-title: Запрос данных из хранилища с помощью SQL по запросу (предварительная версия)
-description: В этой статье описывается, как выполнять запросы к службе хранилища Azure с помощью ресурса SQL по запросу (предварительная версия) в Azure Synapse Analytics.
+title: Отправка запросов к хранилищу данных с помощью бесерверного пула SQL (предварительная версия)
+description: В этой статье описывается, как выполнять запросы к службе хранилища Azure с помощью ресурса бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,27 +9,27 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0ac54eb5d6350cc234eb7036a3a1dc97a4f1b083
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 3fd3a94efd6e7870ae3919a011fc24f66b97c559
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91288381"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93310951"
 ---
-# <a name="query-storage-files-using-sql-on-demand-preview-resources-within-synapse-sql"></a>Запрашивание файлов хранилища с помощью ресурсов SQL по запросу (предварительная версия) в Synapse SQL
+# <a name="query-storage-files-with-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Отправка запросов к файлам хранилища с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics
 
-SQL по запросу (предварительная версия) позволяет запрашивать данные в озере данных. Предоставляемая контактная зона для запросов T-SQL позволяет запрашивать частично структурированные и неструктурированные данные. Возможность запрашивания данных поддерживает следующие аспекты T-SQL:
+Бессерверный пул SQL(предварительная версия) позволяет запрашивать данные в озере данных. Предоставляемая контактная зона для запросов T-SQL позволяет запрашивать частично структурированные и неструктурированные данные. Возможность запрашивания данных поддерживает следующие аспекты T-SQL:
 
 - Полная контактная зона инструкции [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), включая большинство [функций и операторов SQL](overview-features.md).
 - CREATE EXTERNAL TABLE AS SELECT ([CETAS](develop-tables-cetas.md)) создает [внешнюю таблицу](develop-tables-external-tables.md), а затем в параллельном режиме экспортирует результаты инструкции SELECT Transact-SQL в службу хранилища Azure.
 
-Дополнительные сведения о поддерживаемых и неподдерживаемых возможностях SQL по запросу см. в статье с [общими сведениями об SQL по запросу](on-demand-workspace-overview.md) или следующих статьях:
+Дополнительные сведения о поддерживаемых и неподдерживаемых возможностях см. в статье с [общими сведениями о бессерверном пуле SQL](on-demand-workspace-overview.md) или следующих статьях:
 - [Создание возможностей доступа к хранилищу](develop-storage-files-overview.md). Из этой статьи вы узнаете, как использовать [внешние таблицы](develop-tables-external-tables.md) и функцию [OPENROWSET](develop-openrowset.md) для считывания данных из хранилища.
 - [Управление доступом к хранилищу](develop-storage-files-storage-access-control.md). Из этой статьи вы узнаете, как обеспечить доступ Synapse SQL к хранилищу с использованием аутентификации SAS или управляемого удостоверения рабочей области.
 
 ## <a name="overview"></a>Обзор
 
-Чтобы оптимизировать процесс запрашивания данных, размещенных в файлах службы хранилища Azure, SQL по запросу использует функцию [OPENROWSET](develop-openrowset.md) со следующими дополнительными возможностями:
+Чтобы оптимизировать процесс запрашивания данных, размещенных в файлах службы хранилища Azure, бессерверный пул SQL использует функцию [OPENROWSET](develop-openrowset.md) со следующими дополнительными возможностями:
 
 - [Запрашивание нескольких файлов или папок](#query-multiple-files-or-folders)
 - [Формат PARQUET](#query-parquet-files)
@@ -66,7 +66,7 @@ WITH (C1 int, C2 varchar(20), C3 as varchar(max)) as rows
 - ESCAPE_CHAR = 'char'. Определяет символ в файле, который используется для экранирования самого себя и всех значений разделителей. Если за escape-символом следует значение, отличное от него самого или какого-либо из значений разделителей, при считывании этого значения escape-символ пропускается.
 Параметр ESCAPE_CHAR будет применяться независимо от того, включен ли параметр FIELDQUOTE. Он не будет использоваться для экранирования символа кавычек. Символ кавычек нужно экранировать другим символом кавычек. Такой символ может использоваться в значении столбца только в том случае, если значение инкапсулировано с помощью символов кавычек.
 - FIELDTERMINATOR ='field_terminator'. Определяет используемый признак конца поля. По умолчанию признаком конца поля считается запятая ( **,** ).
-- ROWTERMINATOR ='row_terminator'. Определяет используемый признак конца строки. По умолчанию признаком конца строки считается символ новой строки ( **\r\n**).
+- ROWTERMINATOR ='row_terminator'. Определяет используемый признак конца строки. По умолчанию признаком конца строки считается символ новой строки ( **\r\n** ).
 
 ## <a name="file-schema"></a>Схема файла
 
@@ -146,7 +146,7 @@ OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/myroot/*/mysubfolder/*
 
 ## <a name="work-with-complex-types-and-nested-or-repeated-data-structures"></a>Работа со сложными типами, а также вложенными и повторяющимися структурами данных
 
-Чтобы оптимизировать работу с данными, которые хранятся во вложенных или повторяющихся типах данных (например, в файлах [Parquet](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#nested-types)), в SQL по запросу добавлены перечисленные ниже расширения.
+Чтобы оптимизировать работу с данными, которые хранятся во вложенных или повторяющихся типах данных (например, в файлах [Parquet](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#nested-types)), в бессерверный пул SQL добавлены указанные ниже расширения.
 
 #### <a name="project-nested-or-repeated-data"></a>Вложенные или повторяющиеся данные в проекте
 
@@ -228,7 +228,7 @@ OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/myroot/*/mysubfolder/*
 
 ### <a name="demo-setup"></a>Настройка демонстрации
 
-Для начала **создайте базу данных**, в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. 
+Для начала **создайте базу данных** , в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. 
 
 Этот скрипт создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются для чтения данных в этих примерах.
 

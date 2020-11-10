@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Массовая загрузка данных в Synapse SQL
-description: Использование Synapse Studio для массовой загрузки данных в Synapse SQL
+title: Краткое руководство. Массовая загрузка данных с использованием выделенного пула SQL
+description: Используйте Synapse Studio для загрузки данных в выделенный пул SQL в Azure Synapse Analytics.
 services: synapse-analytics
 author: kevinvngo
 ms.service: synapse-analytics
@@ -9,28 +9,29 @@ ms.topic: quickstart
 ms.date: 05/06/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4dd0455c73395b3f3b883032d25160f0ea299cea
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 2a4740699d70601591645aa0d3183531a6687be6
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090630"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324944"
 ---
 # <a name="quickstart-bulk-loading-with-synapse-sql"></a>Краткое руководство. Массовая загрузка в Synapse SQL
 
-Загружать данные никогда не было так просто, как с помощью мастера массовой загрузки в Synapse Studio. Этот мастер поможет вам создать скрипт T-SQL с использованием [инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) для массовой загрузки данных. 
+Загружать данные никогда не было так просто, как с помощью мастера массовой загрузки в Synapse Studio. Этот мастер поможет вам создать скрипт T-SQL с использованием [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) для массовой загрузки данных. 
 
 ## <a name="entry-points-to-the-bulk-load-wizard"></a>Точки входа в мастер массовой загрузки
 
-Теперь вы можете без усилий выполнять массовую загрузку данных с использованием пулов SQL, щелкнув правой кнопкой мыши в следующих областях Synapse Studio.
+Теперь вы можете без усилий выполнять массовую загрузку данных с использованием выделенных пулов SQL, щелкнув правой кнопкой мыши в следующих областях Synapse Studio:
 
 - Файл или папка в учетной записи хранения Azure, присоединенной к рабочей области. ![Меню, вызываемое щелчком правой кнопкой мыши по файлу или папке в учетной записи хранения](./sql/media/bulk-load/bulk-load-entry-point-0.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Этот мастер создает инструкцию COPY, которая использует сквозную передачу через Azure AD для аутентификации. У [пользователя Azure AD должны быть разрешения на доступ](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples#d-azure-active-directory-authentication-aad) к рабочей области по меньшей мере с ролью Azure участника данных BLOB-объектов хранилища в учетной записи ADLS 2-го поколения.
+- Этот мастер создает инструкцию COPY, которая использует сквозную передачу через Azure AD для аутентификации. У [пользователя Azure AD должны быть разрешения на доступ](
+./sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples.md#d-azure-active-directory-authentication) к рабочей области по меньшей мере с ролью Azure участника данных BLOB-объектов хранилища в учетной записи ADLS 2-го поколения. 
 
-- У вас должны быть [разрешения на использование инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#permissions) и разрешения на создание таблиц, если для загрузки будет создаваться новая таблица.
+- У вас должны быть [разрешения на использование инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#permissions) и разрешения на создание таблиц, если для загрузки будет создаваться новая таблица.
 
 - У соответствующей службы, связанной с учетной записью ADLS 2-го поколения, **должны быть разрешения на доступ к файлу**/**папке** для загрузки. Например, если для связанной службы используется механизм аутентификации "Управляемое удостоверение", у управляемого удостоверения рабочей области должна быть по меньшей мере роль читателя для BLOB-объектов хранилища в учетной записи хранения.
 
@@ -46,7 +47,7 @@ ms.locfileid: "92090630"
 
 3. Выбрав элемент "Предварительный просмотр данных", вы увидите, как инструкция COPY будет анализировать файл. Это поможет вам настроить параметры формата файла. Выбирайте элемент "Предварительный просмотр данных" при каждом изменении параметров формата файла, чтобы увидеть, как инструкция COPY анализирует файл с обновленными параметрами: ![Предварительный просмотр данных](./sql/media/bulk-load/bulk-load-file-format-settings-preview-data.png) 
 
-4. Выберите пул SQL, который вы используете для загрузки, и укажите, куда загружать данные: в существующую или новую таблицу: ![Выбор целевого расположения](./sql/media/bulk-load/bulk-load-target-location.png)
+4. Выберите выделенный пул SQL, который вы используете для загрузки, и укажите, куда загружать данные — в существующую или новую таблицу: ![Выбор целевого расположения](./sql/media/bulk-load/bulk-load-target-location.png)
 
 5. Выберите элемент "Настроить сопоставление столбцов", чтобы проверить правильность сопоставления. Для новых таблиц очень важно настроить сопоставление столбцов, так как это позволяет обновлять типы данных для целевого столбца. ![Настройка сопоставления столбцов](./sql/media/bulk-load/bulk-load-target-location-column-mapping.png)
 
@@ -54,5 +55,5 @@ ms.locfileid: "92090630"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. сведения о возможностях [инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax).
-- См. сведения о [загрузке данных](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/design-elt-data-loading#what-is-elt).
+- См. сведения о возможностях [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax).
+- См. сведения о [загрузке данных](./sql-data-warehouse/design-elt-data-loading.md#what-is-elt).

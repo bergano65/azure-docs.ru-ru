@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 09/03/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: d06d1b0553161523708f4bb142f1c715a77eb2dd
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: fa7faf64e1889ef2d1abe644f23f0be363709a6b
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461113"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322726"
 ---
 # <a name="quickstart-create-a-synapse-workspace"></a>Краткое руководство. Создание рабочей области Synapse
 В этом кратком руководстве описаны действия по созданию рабочей области Azure Synapse с помощью портала Azure.
@@ -65,6 +65,6 @@ ms.locfileid: "92461113"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание пула SQL](quickstart-create-sql-pool-studio.md) 
-* [Создание пула Apache Spark](quickstart-create-apache-spark-pool-portal.md)
-* [Использование службы SQL по запросу](quickstart-sql-on-demand.md)
+* [Создание выделенного пула SQL](quickstart-create-sql-pool-studio.md) 
+* [Создание бессерверного пула Apache Spark](quickstart-create-apache-spark-pool-portal.md)
+* [Использование бессерверного пула SQL](quickstart-sql-on-demand.md)

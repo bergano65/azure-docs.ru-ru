@@ -1,6 +1,6 @@
 ---
-title: Использование Java и JDBC с Базой данных Azure для PostgreSQL
-description: Узнайте, как использовать Java и JDBC с Базой данных Azure для PostgreSQL.
+title: Краткое руководство. Использование Java и JDBC с Базой данных Azure для PostgreSQL
+description: Из этого краткого руководства вы узнаете, как использовать Java и JDBC с Базой данных Azure для PostgreSQL.
 author: jdubois
 ms.author: judubois
 ms.service: postgresql
@@ -8,14 +8,14 @@ ms.custom: mvc, devcenter, devx-track-azurecli
 ms.topic: quickstart
 ms.devlang: java
 ms.date: 08/17/2020
-ms.openlocfilehash: 402e69606196ecb1030023c49fa5afefd31b9e94
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 42547338c0f5f2f3105833b12e499d40b6209b05
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92734985"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341422"
 ---
-# <a name="use-java-and-jdbc-with-azure-database-for-postgresql"></a>Использование Java и JDBC с Базой данных Azure для PostgreSQL
+# <a name="quickstart-use-java-and-jdbc-with-azure-database-for-postgresql"></a>Краткое руководство. Использование Java и JDBC с Базой данных Azure для PostgreSQL
 
 В этой статье показано, как создать пример приложения, которое использует Java и [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) для сохранения данных в [Базе данных Azure для PostgreSQL](./index.yml) и их извлечения из нее.
 
@@ -233,7 +233,7 @@ public class DemoApplication {
 Как видите, в этом файле мы закомментировали методы вставки, чтения, обновления и удаления данных. Эти методы мы создадим позже, и вы просто последовательно раскомментируете их.
 
 > [!NOTE]
-> Учетные данные для базы данных хранятся в свойствах *user* и *password* в файле *application.properties* . Эти учетные данные используются при выполнении `DriverManager.getConnection(properties.getProperty("url"), properties);`, так как файл свойств передается в качестве аргумента.
+> Учетные данные для базы данных хранятся в свойствах *user* и *password* в файле *application.properties*. Эти учетные данные используются при выполнении `DriverManager.getConnection(properties.getProperty("url"), properties);`, так как файл свойств передается в качестве аргумента.
 
 Теперь вы можете выполнить класс main в любом удобном инструменте.
 
@@ -318,7 +318,7 @@ public class Todo {
 }
 ```
 
-Этот класс является доменной моделью, сопоставленной с таблицей `todo`, которую вы создали при выполнении скрипта *schema.sql* .
+Этот класс является доменной моделью, сопоставленной с таблицей `todo`, которую вы создали при выполнении скрипта *schema.sql*.
 
 ### <a name="insert-data-into-azure-database-for-postgresql"></a>Вставка данных в Базу данных Azure для PostgreSQL
 
@@ -485,7 +485,7 @@ deleteData(todo, connection);
 [INFO   ] Closing database connection 
 ```
 
-## <a name="conclusion-and-resources-clean-up"></a>Заключение и очистка ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Поздравляем! Вы создали приложение Java, которое использует JDBC для сохранения данных в Базе данных Azure для PostgreSQL и их извлечения из нее.
 

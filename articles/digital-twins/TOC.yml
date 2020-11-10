@@ -61,8 +61,8 @@
       items:
         - name: Управление пользовательскими моделями
           href: how-to-manage-model.md
-        - name: Преобразование стандартных отраслевых моделей
-          href: how-to-convert-models.md
+        - name: Интеграция стандартных отраслевых моделей
+          href: how-to-integrate-models.md
         - name: Анализ и проверка моделей
           href: how-to-parse-models.md
         - name: Добавление тегов
@@ -143,7 +143,7 @@
               href: /dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet
             - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins'
-            - name: Пакет SDK для Java
+            - name: Пакет SDK для Java (Maven)
               href: 'https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar'
             - name: "Пакет SDK для Java\_— справочник"
               href: /java/api/overview/azure/digitaltwins/management?view=azure-java-preview
@@ -153,11 +153,11 @@
               href: 'https://www.npmjs.com/package/@azure/arm-digitaltwins'
             - name: "Пакет SDK для JavaScript\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/arm-digitaltwins'
-            - name: Пакет SDK для Python
+            - name: "Пакет SDK для Python\_— PyPi"
               href: 'https://pypi.org/project/azure-mgmt-digitaltwins/'
             - name: "Пакет SDK для Python\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-python/tree/release/v3/sdk/digitaltwins/azure-mgmt-digitaltwins'
-            - name: Пакет SDK для GO
+            - name: 'Пакет SDK для Go: GoDoc'
               href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt/2020-10-31/digitaltwins'
             - name: "Go\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/digitaltwins/mgmt/2020-10-31/digitaltwins'
@@ -174,17 +174,19 @@
             - name: Пакет SDK для Java (Maven)
               href: 'https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0/jar'
             - name: "Пакет SDK для Java\_— справочник"
-              href: /java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-preview
+              href: /java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-stable
             - name: "Пакет SDK для Java\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core'
             - name: Пакет SDK для JavaScript (npm)
               href: 'https://www.npmjs.com/package/@azure/digital-twins-core'
             - name: Справочник по пакету SDK для JavaScript
-              href: /javascript/api/@azure/digital-twins/?preserve-view=true&view=azure-node-latest
+              href: /javascript/api/@azure/digital-twins-core/?branch=master&view=azure-node-latest
             - name: "Пакет SDK для JavaScript\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core'
             - name: "Пакет SDK для Python\_— PyPi"
-              href: 'https://pypi.org/project/azure-digitaltwins-core/1.0.0b1/'
+              href: 'https://pypi.org/project/azure-digitaltwins-core/'
+            - name: 'Пакет SDK для Python: справочник'
+              href: /python/api/azure-digitaltwins-core/azure.digitaltwins.core?view=azure-python
             - name: "Пакет SDK для Python\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core'
     - name: CLI Digital Twins

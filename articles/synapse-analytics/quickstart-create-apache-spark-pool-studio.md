@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание пула Apache Spark (предварительная версия) с помощью Synapse Studio
-description: Создайте пул Apache Spark с помощью Synapse Studio, выполнив действия из этого руководства.
+title: Краткое руководство. Создание бессерверного пула Apache Spark (предварительная версия) с помощью Synapse Studio
+description: Создайте бессерверный пул Apache Spark с помощью Synapse Studio, выполнив действия из этого руководства.
 services: synapse-analytics
 author: saveenr
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: spark
 ms.date: 10/16/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: c497b9974ad2d6fdd9482ae673de5807669d8ff5
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 313ad0c620fe06158e96c208ae265702134b58d1
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748255"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93324206"
 ---
-# <a name="quickstart-create-an-apache-spark-pool-preview-using-synapse-studio"></a>Краткое руководство. Создание пула Apache Spark (предварительная версия) с помощью Synapse Studio
+# <a name="quickstart-create-a-serverless-apache-spark-pool-preview-using-synapse-studio"></a>Краткое руководство. Создание бессерверного пула Apache Spark (предварительная версия) с помощью Synapse Studio
 
 Azure Synapse Analytics предлагает различные аналитические модули, упрощающие прием, преобразование, моделирование, анализ и предоставление данных. Пул Apache Spark предоставляет возможности для вычислений больших данных из открытых источников. После создания пула Apache Spark в рабочей области Synapse данные можно загружать, моделировать, обрабатывать и обслуживать для получения аналитических сведений.  
 
@@ -47,7 +47,7 @@ Azure Synapse Analytics предлагает различные аналитич
 
 ## <a name="launch-synapse-studio"></a>Запуск Synapse Studio 
 
-В окне обзора рабочей области выберите **Запуск Synapse Studio** , чтобы открыть расположение, в котором будет создан пул Apache Spark. В строке поиска введите имя службы или непосредственно ресурса.
+В обзоре рабочей области выберите **Workspace web URL** (Веб-адрес рабочей области), чтобы открыть Synapse Studio.
 
 ![Окно обзора рабочей области Synapse на портале Azure, команда "Запуск Synapse Studio" выделена цветом.](media/quickstart-create-apache-spark-pool/create-spark-pool-studio-20.png)
 

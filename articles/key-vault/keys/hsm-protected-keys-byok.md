@@ -10,12 +10,12 @@ ms.subservice: keys
 ms.topic: tutorial
 ms.date: 05/29/2020
 ms.author: ambapat
-ms.openlocfilehash: fe7a8a3df535d05c3c834d3e2fbba5f7df5d6fcd
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: a1c6b054a9caac8ba223bc81e164e7ebf34bd267
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372257"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94413332"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault-byok"></a>Импорт защищенных модулем HSM ключей в Key Vault (BYOK)
 
@@ -64,6 +64,7 @@ ms.locfileid: "94372257"
 |Marvell|Изготовитель|Все модули HSM LiquidSecurity со<ul><li>встроенным ПО версии 2.0.4 или более поздней</li><li>встроенным ПО версии 3.2 или более новой</li></ul>|[Новое средство BYOK и документация для Marvell](https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/exporting-marvell-hsm-keys-to-cloud-azure-key-vault.html)|
 |Cryptomathic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>nCipher</li><li>Thales</li><li>Utimaco</li></ul>Дополнительные сведения см. на [сайте Cryptomathic](https://www.cryptomathic.com/azurebyok).|[Новое средство BYOK и документация для Cryptomathic](https://www.cryptomathic.com/azurebyok)|
 |Securosys SA|Производитель, HSM как услуга|Семейство Primus HSM, Securosys Clouds HSM|[Новое средство BYOK и документация для Primus](https://www.securosys.com/primus-azure-byok)|
+|StorMagic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>Utimaco</li><li>Thales</li><li>nCipher</li></ul>Дополнительные сведения см. на [сайте StorMagic](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm).|[SvKMS и Azure Key Vault (BYOK)](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|
 ||||
 
 

@@ -8,16 +8,16 @@ ms.workload: storage
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: devx-track-azurecli, subject-armqs
-ms.openlocfilehash: 088961d58cee2f1bb0c6ac042d9d8ee2ad50ba14
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 70441c3a1953fa1b6ebd69ef9cdb324d6cc04a5b
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931365"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93336458"
 ---
-# <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
+# <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS
 
-В этой статье описывается, как быстро настроить Azure NetApp Files и создать том. 
+В этой статье описывается, как быстро настроить Azure NetApp Files и создать том.
 
 В этом кратком руководстве описывается настройка следующих элементов:
 
@@ -28,10 +28,10 @@ ms.locfileid: "91931365"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом 
+## <a name="before-you-begin"></a>Перед началом
 
-> [!IMPORTANT] 
-> Необходимо иметь доступ к службе Azure NetApp Files.  Запросить доступ к службе можно на [странице заявки на доступ к Azure NetApp Files](https://aka.ms/azurenetappfiles).  Перед продолжением необходимо дождаться официального подтверждения по электронной почте от команды Azure NetApp Files. 
+> [!IMPORTANT]
+> Необходимо иметь доступ к службе Azure NetApp Files. Запросить доступ к службе можно на [странице заявки на доступ к Azure NetApp Files](https://aka.ms/azurenetappfiles).  Перед продолжением необходимо дождаться официального подтверждения по электронной почте от команды Azure NetApp Files.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -69,11 +69,11 @@ ms.locfileid: "91931365"
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Отсутствует.  
+Отсутствует.
 
-Для регистрации Azure NetApp Files и поставщика ресурсов NetApp используйте портал Azure, PowerShell или Azure CLI.  
+Для регистрации Azure NetApp Files и поставщика ресурсов NetApp используйте портал Azure, PowerShell или Azure CLI.
 
-Дополнительные сведения см. в статье [Регистрация в службе Azure NetApp Files](azure-netapp-files-register.md). 
+Дополнительные сведения см. в статье [Регистрация в службе Azure NetApp Files](azure-netapp-files-register.md).
 
 ---
 
@@ -81,7 +81,7 @@ ms.locfileid: "91931365"
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-1. В поле поиска на портале Azure введите **Azure NetApp Files**, затем выберите **Azure NetApp Files** из появившегося списка.
+1. В поле поиска на портале Azure введите **Azure NetApp Files** , затем выберите **Azure NetApp Files** в появившемся списке.
 
       ![Выбор Azure NetApp Files](../media/azure-netapp-files/azure-netapp-files-select-azure-netapp-files.png)
 
@@ -89,17 +89,17 @@ ms.locfileid: "91931365"
 
      ![Создание учетной записи NetApp](../media/azure-netapp-files/azure-netapp-files-create-new-netapp-account.png)
 
-3. В окне "New NetApp Account" (Новая учетная запись NetApp) укажите следующую информацию. 
-   1. Введите имя учетной записи **myaccount1**. 
+3. В окне "New NetApp Account" (Новая учетная запись NetApp) укажите следующую информацию.
+   1. Введите имя учетной записи **myaccount1**.
    2. Выберите свою подписку.
-   3. Выберите **Создать**, чтобы создать группу ресурсов. Введите имя группы ресурсов **myRG1**. Нажмите кнопку **ОК**. 
-   4. Выберите расположение учетной записи.  
+   3. Выберите **Создать** , чтобы создать группу ресурсов. Введите имя группы ресурсов **myRG1**. Нажмите кнопку **ОК**.
+   4. Выберите расположение учетной записи.
 
-      ![Окно создания учетной записи NetApp](../media/azure-netapp-files/azure-netapp-files-new-account-window.png)  
+      ![Окно создания учетной записи NetApp](../media/azure-netapp-files/azure-netapp-files-new-account-window.png)
 
       ![Окно группы ресурсов](../media/azure-netapp-files/azure-netapp-files-resource-group-window.png)
 
-4. Нажмите кнопку **Создать**, чтобы создать учетную запись NetApp.
+4. Нажмите кнопку **Создать** , чтобы создать учетную запись NetApp.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -109,7 +109,7 @@ ms.locfileid: "91931365"
     $resourceGroup = "myRG1"
     $location = "eastus"
     $anfAccountName = "myaccount1"
-    ``` 
+    ```
 
     > [!NOTE]
     > Список поддерживаемых регионов см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=netapp&regions=all).
@@ -123,7 +123,7 @@ ms.locfileid: "91931365"
     ```
 
 2. Создайте учетную запись Azure NetApp Files с помощью команды [New-AzNetAppFilesAccount](/powershell/module/az.netappfiles/New-AzNetAppFilesAccount):
-   
+
     ```powershell-interactive
     New-AzNetAppFilesAccount -ResourceGroupName $resourceGroup -Location $location -Name $anfAccountName
     ```
@@ -136,7 +136,7 @@ ms.locfileid: "91931365"
     RESOURCE_GROUP="myRG1"
     LOCATION="eastus"
     ANF_ACCOUNT_NAME="myaccount1"
-    ``` 
+    ```
 
     > [!NOTE]
     > Список поддерживаемых регионов см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=netapp&regions=all).
@@ -152,7 +152,7 @@ ms.locfileid: "91931365"
     ```
 
 3. Создайте учетную запись Azure NetApp Files с помощью команды [az netappfiles account create](/cli/azure/netappfiles/account#az-netappfiles-account-create):
-   
+
     ```azurecli-interactive
     az netappfiles account create \
         --resource-group $RESOURCE_GROUP \
@@ -176,22 +176,22 @@ ms.locfileid: "91931365"
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-1. В колонке управления Azure NetApp Files выберите свою учетную запись NetApp (**myaccount1**).
+1. В колонке управления Azure NetApp Files выберите свою учетную запись NetApp ( **myaccount1** ).
 
-    ![Выбор учетной записи NetApp](../media/azure-netapp-files/azure-netapp-files-select-netapp-account.png)  
+    ![Выбор учетной записи NetApp](../media/azure-netapp-files/azure-netapp-files-select-netapp-account.png)
 
 2. В колонке управления Azure NetApp Files для своей учетной записи NetApp щелкните **Пулы емкости**.
 
-    ![Выбор "Пулы емкости"](../media/azure-netapp-files/azure-netapp-files-click-capacity-pools.png)  
+    ![Выбор "Пулы емкости"](../media/azure-netapp-files/azure-netapp-files-click-capacity-pools.png)
 
-3. Щелкните **+ Добавить пулы**. 
+3. Щелкните **+ Добавить пулы**.
 
-    ![Выбор "+ Добавить пулы"](../media/azure-netapp-files/azure-netapp-files-new-capacity-pool.png)  
+    ![Выбор "+ Добавить пулы"](../media/azure-netapp-files/azure-netapp-files-new-capacity-pool.png)
 
-4. Укажите сведения о пуле емкости. 
+4. Укажите сведения о пуле емкости.
     * Введите имя пула **mypool1**.
-    * Выберите уровень обслуживания **Премиум**. 
-    * Укажите размер пула **4 (Тиб)** . 
+    * Выберите уровень обслуживания **Премиум**.
+    * Укажите размер пула **4 (Тиб)** .
     * Используйте тип качества обслуживания **Авто**.
 
 5. Нажмите кнопку **Создать**.
@@ -222,7 +222,7 @@ ms.locfileid: "91931365"
     SERVICE_LEVEL="Premium" # Valid values are Standard, Premium and Ultra
     ```
 
-2. Создайте новый пул емкости с помощью [az netappfiles pool create](/cli/azure/netappfiles/pool#az-netappfiles-pool-create) 
+2. Создайте новый пул емкости с помощью [az netappfiles pool create](/cli/azure/netappfiles/pool#az-netappfiles-pool-create)
 
     ```azurecli-interactive
     az netappfiles pool create \
@@ -252,45 +252,45 @@ ms.locfileid: "91931365"
 
 1. В колонке управления Azure NetApp Files для своей учетной записи NetApp щелкните **Тома**.
 
-    ![Выбор "Тома"](../media/azure-netapp-files/azure-netapp-files-click-volumes.png)  
+    ![Выбор "Тома"](../media/azure-netapp-files/azure-netapp-files-click-volumes.png)
 
 2. Щелкните **+ Add volume** (+ Добавить том).
 
-    ![Выбор "+ Добавить том"](../media/azure-netapp-files/azure-netapp-files-click-add-volumes.png)  
+    ![Выбор "+ Добавить том"](../media/azure-netapp-files/azure-netapp-files-click-add-volumes.png)
 
-3. В окне "Создать том" укажите сведения о томе. 
-   1. Введите имя тома **myvol1**. 
-   2. Выберите пул емкости (**mypool1**).
-   3. Используйте значение квоты по умолчанию. 
-   4. В разделе "Виртуальная сеть" щелкните **Создать**, чтобы создать виртуальную сеть Azure.  Затем укажите следующие сведения.
+3. В окне "Создать том" укажите сведения о томе.
+   1. Введите имя тома **myvol1**.
+   2. Выберите пул емкости ( **mypool1** ).
+   3. Используйте значение квоты по умолчанию.
+   4. В разделе "Виртуальная сеть" щелкните **Создать** , чтобы создать виртуальную сеть Azure.  Затем укажите следующие сведения.
        * Введите имя виртуальной сети **myvnet1**.
        * Укажите диапазон адресов для параметра, например 10.7.0.0/16.
        * Введите имя подсети **myANFsubnet**.
        * Укажите диапазон адресов подсети, например 10.7.0.0/24. Невозможно использовать выделенную подсеть совместно с другими ресурсами.
        * Для делегирования подсети выберите **Microsoft.NetApp/volumes**.
-       * Нажмите кнопку **ОК**, чтобы создать виртуальную сеть.
-   5. В разделе "Подсеть" выберите созданную виртуальную сеть (**myvnet1**) в качестве делегируемой подсети.
+       * Нажмите кнопку **ОК** , чтобы создать виртуальную сеть.
+   5. В разделе "Подсеть" выберите созданную виртуальную сеть ( **myvnet1** ) в качестве делегируемой подсети.
 
-      ![Окно создания тома](../media/azure-netapp-files/azure-netapp-files-create-volume-window.png)  
+      ![Окно создания тома](../media/azure-netapp-files/azure-netapp-files-create-volume-window.png)
 
-      ![Окно создания виртуальной сети](../media/azure-netapp-files/azure-netapp-files-create-virtual-network-window.png)  
+      ![Окно создания виртуальной сети](../media/azure-netapp-files/azure-netapp-files-create-virtual-network-window.png)
 
-4. Щелкните **Протокол**, а затем выполните приведенные ниже действия. 
-    * Выберите **NFS** в качестве типа протокола тома.  
-    * Укажите путь к файлу (**myfilepath1**), который будет использоваться для создания пути экспорта для этого тома.  
-    * Выберите версию NFS (**NFSv3** или **NFSv4.1**) для тома.  
-      Сведения о версиях NFS см. в разделах [Сonsiderations](azure-netapp-files-create-volumes.md#considerations) (Рекомендации) и [Best practice](azure-netapp-files-create-volumes.md#best-practice) (Лучшая методика). 
-      
-  ![Чтобы сразу же начать работу, выберите протокол NFS](../media/azure-netapp-files/azure-netapp-files-quickstart-protocol-nfs.png)
+4. Щелкните **Протокол** , а затем выполните приведенные ниже действия.
+    * Выберите **NFS** в качестве типа протокола тома.
+    * Укажите путь к файлу ( **myfilepath1** ), который будет использоваться для создания пути экспорта для этого тома.
+    * Выберите версию NFS ( **NFSv3** или **NFSv4.1** ) для тома.
+      Сведения о версиях NFS см. в разделах [Сonsiderations](azure-netapp-files-create-volumes.md#considerations) (Рекомендации) и [Best practice](azure-netapp-files-create-volumes.md#best-practice) (Лучшая методика).
+
+    ![Чтобы сразу же начать работу, выберите протокол NFS](../media/azure-netapp-files/azure-netapp-files-quickstart-protocol-nfs.png)
 
 5. Щелкните **Review + create** (Просмотреть и создать).
 
-    ![Окно просмотра и создания](../media/azure-netapp-files/azure-netapp-files-review-and-create-window.png)  
+    ![Окно просмотра и создания](../media/azure-netapp-files/azure-netapp-files-review-and-create-window.png)
 
-6. Ознакомьтесь с информацией о томе, а затем щелкните **Создать**.  
+6. Ознакомьтесь с информацией о томе, а затем щелкните **Создать**.
     Созданный том появится в колонке "Тома".
 
-    ![Созданный том](../media/azure-netapp-files/azure-netapp-files-create-volume-created.png)  
+    ![Созданный том](../media/azure-netapp-files/azure-netapp-files-create-volume-created.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -307,13 +307,13 @@ ms.locfileid: "91931365"
     ```
 
 3. Создайте виртуальную сеть с помощью команды [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork).
-    
+
     ```powershell-interactive
     $vnet = New-AzVirtualNetwork -Name "myvnet1" -ResourceGroupName $resourceGroup -Location $location -AddressPrefix "10.7.0.0/16" -Subnet $subnet
     ```
 
 4. Создайте том с помощью команды [New-AzNetAppFilesVolume](/powershell/module/az.netappfiles/new-aznetappfilesvolume).
-   
+
     ```powershell-interactive
     $volumeSizeBytes = 1099511627776 # 100GiB
     $subnetId = $vnet.Subnets[0].Id
@@ -333,14 +333,14 @@ ms.locfileid: "91931365"
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Определение некоторых переменных для последующего использования.
-    
+
     ```azurecli-interactive
     VNET_NAME="myvnet1"
     SUBNET_NAME="myANFSubnet"
     ```
 
 1. Создайте виртуальную сеть без подсети с помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create).
-    
+
     ```azurecli-interactive
     az network vnet create \
         --resource-group $RESOURCE_GROUP \
@@ -362,7 +362,7 @@ ms.locfileid: "91931365"
     ```
 
 3. Создайте том с помощью команды [az netappfiles volume create](/cli/azure/netappfiles/volume#az-netappfiles-volume-create).
-   
+
     ```azurecli-interactive
     VNET_ID=$(az network vnet show --resource-group $RESOURCE_GROUP --name $VNET_NAME --query "id" -o tsv)
     SUBNET_ID=$(az network vnet subnet show --resource-group $RESOURCE_GROUP --vnet-name $VNET_NAME --name $SUBNET_NAME --query "id" -o tsv)
@@ -385,7 +385,7 @@ ms.locfileid: "91931365"
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-<!-- [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)] --> 
+<!-- [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)] -->
 
 В следующих фрагментах кода показано, как настроить виртуальную сеть и создать том Azure NetApp Files в шаблоне Azure Resource Manager (ARM). Для настройки виртуальной сети требуется ресурс [Microsoft.Network/virtualNetworks](/azure/templates/Microsoft.Network/virtualNetworks). Для создания тома используется ресурс [Microsoft.NetApp/netAppAccounts/capacityPools/volumes](/azure/templates/microsoft.netapp/netappaccounts/capacitypools/volumes). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
 
@@ -403,50 +403,50 @@ ms.locfileid: "91931365"
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.  
+По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.
 
 > [!IMPORTANT]
-> Все ресурсы в группе ресурсов будут окончательно удалены, и отменить эту операцию невозможно. 
+> Все ресурсы в группе ресурсов будут окончательно удалены, и отменить эту операцию невозможно.
 
-1. В поле поиска на портале Azure введите **Azure NetApp Files**, затем выберите **Azure NetApp Files** из появившегося списка.
+1. В поле поиска на портале Azure введите **Azure NetApp Files** , затем выберите **Azure NetApp Files** в появившемся списке.
 
-2. В списке подписок щелкните группу ресурсов (myRG1), которую необходимо удалить. 
+2. В списке подписок щелкните группу ресурсов (myRG1), которую необходимо удалить.
 
     ![Переход к группе ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-navigate-to-resource-groups.png)
 
 
 3. На странице группы ресурсов выберите команду **Удалить группу ресурсов**.
 
-    ![Снимок экрана, на котором выделена кнопка "Удалить группу ресурсов".](../media/azure-netapp-files/azure-netapp-files-azure-delete-resource-group.png) 
+    ![Снимок экрана, на котором выделена кнопка "Удалить группу ресурсов".](../media/azure-netapp-files/azure-netapp-files-azure-delete-resource-group.png)
 
     Откроется окно с предупреждением о ресурсах, которые будут удалены вместе с группой ресурсов.
 
 4. Введите имя группы ресурсов (myRG1) для подтверждения того, что вы хотите окончательно удалить группу ресурсов и все входящие в нее ресурсы, а затем нажмите кнопку **Удалить**.
 
-    ![Подтверждение удаления группы ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-confirm-resource-group-deletion.png ) 
+    ![Подтверждение удаления группы ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-confirm-resource-group-deletion.png )
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.  
+По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.
 
 > [!IMPORTANT]
 > Все ресурсы в группе ресурсов будут окончательно удалены, и отменить эту операцию невозможно.
 
 1. Удалите группу ресурсов с помощью команды [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
-   
+
     ```powershell-interactive
     Remove-AzResourceGroup -Name $resourceGroup
     ```
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.  
+По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.
 
 > [!IMPORTANT]
 > Все ресурсы в группе ресурсов будут окончательно удалены, и отменить эту операцию невозможно.
 
 1. Удалите группу ресурсов с помощью команды [az group delete](/cli/azure/group#az-group-delete).
-   
+
     ```azurecli-interactive
     az group delete \
         --name $RESOURCE_GROUP
@@ -456,13 +456,17 @@ ms.locfileid: "91931365"
 
 Отсутствует.
 
-Чтобы удалить группу ресурсов, используйте портал Azure, PowerShell или Azure CLI.   
+Чтобы удалить группу ресурсов, используйте портал Azure, PowerShell или Azure CLI.
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Иерархия хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)   
-> [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)   
+> [Иерархия хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
+
+> [!div class="nextstepaction"]
+> [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
+
+> [!div class="nextstepaction"]
 > [Создание тома NFS](azure-netapp-files-create-volumes.md)

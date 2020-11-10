@@ -1,20 +1,20 @@
 ---
-title: Как создать и подписать файл политики аттестации Azure
-description: Объясняется, как создать и подписать политику аттестации.
+title: Создание политики аттестации в Azure
+description: Объяснение того, как создать политику аттестации.
 services: attestation
 author: msmbaldwin
 ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: c8ffdcd0615913649e80b20f6873d005f4ad4410
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 3e36de62b79788e2efdc3e9abf711924c4fba0c4
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675987"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341813"
 ---
-# <a name="how-to-author-and-sign-an-attestation-policy"></a>Как создать и подписать файл политики аттестации
+# <a name="how-to-author-an-attestation-policy"></a>Создание политики аттестации
 
 Политика аттестации — это файл, отправленный для аттестации Microsoft Azure. Аттестация Azure обеспечивает гибкость при отправке политики в формате, специально предназначенном для аттестации. Также возможна передача закодированной версии политики, JSON Web Signature. За написание политики аттестации отвечает администратор политики. В большинстве сценариев аттестации в качестве администратора политики выступает проверяющая сторона. Клиент, выполняющий вызов аттестации, отправляет свидетельство об аттестации, которое служба анализирует и преобразует во входящие утверждения (набор свойств, значение). Затем служба обрабатывает утверждения в зависимости от того, что определено в политике, и возвращает вычисленный результат.
 
@@ -44,7 +44,7 @@ issuancerules
 
     Сейчас поддерживается только одна версия: 1.0.
 
-- **authorizationrules**  — коллекция правил утверждений, которые будут проверяться первыми, чтобы определить, следует ли продолжать аттестацию Azure в сегменте **issuancerules** . Правила утверждений применяются в том порядке, в котором они определены.
+- **authorizationrules**  — коллекция правил утверждений, которые будут проверяться первыми, чтобы определить, следует ли продолжать аттестацию Azure в сегменте **issuancerules**. Правила утверждений применяются в том порядке, в котором они определены.
 
 - **issuancerules**  — коллекция правил утверждений, которые будут оцениваться для добавления дополнительных сведений в результат аттестации, как определено в политике. Правила утверждений являются необязательными и применяются в том порядке, в котором они определены.
 
@@ -54,7 +54,7 @@ issuancerules
 
 1. Создайте новый файл.
 1. Добавьте версию в файл.
-1. Добавьте разделы для **authorizationrules** и **issuancerules** .
+1. Добавьте разделы для **authorizationrules** и **issuancerules**.
 
   ```
   version=1.0;
@@ -84,9 +84,9 @@ issuancerules
   };
   ```
 
-  Если входящий набор утверждений содержит утверждение, соответствующее типу, значению и издателю, действие permit() сообщит обработчику политики, что нужно обработать раздел **issuancerules** .
+  Если входящий набор утверждений содержит утверждение, соответствующее типу, значению и издателю, действие permit() сообщит обработчику политики, что нужно обработать раздел **issuancerules**.
   
-5. Добавьте правила утверждений в раздел **issuancerules** .
+5. Добавьте правила утверждений в раздел **issuancerules**.
 
   ```
   version=1.0;
@@ -134,41 +134,6 @@ issuancerules
 3. Отправьте JWS и проверьте политику.
      - Если в файле политики нет синтаксических ошибок, файл политики будет принят службой.
      - Если файл политики содержит синтаксические ошибки, то служба отклонит файл политики.
-
-## <a name="signing-the-policy"></a>Подписывание политики
-
-Ниже приведен пример скрипта Python для выполнения операции подписывания политики.
-
-```python
-from OpenSSL import crypto
-import jwt
-import getpass
-       
-def cert_to_b64(cert):
-              cert_pem = crypto.dump_certificate(crypto.FILETYPE_PEM, cert)
-              cert_pem_str = cert_pem.decode('utf-8')
-              return ''.join(cert_pem_str.split('\n')[1:-2])
-       
-print("Provide the path to the PKCS12 file:")
-pkcs12_path = str(input())
-pkcs12_password = getpass.getpass("\nProvide the password for the PKCS12 file:\n")
-pkcs12_bin = open(pkcs12_path, "rb").read()
-pkcs12 = crypto.load_pkcs12(pkcs12_bin, pkcs12_password.encode('utf8'))
-ca_chain = pkcs12.get_ca_certificates()
-ca_chain_b64 = []
-for chain_cert in ca_chain:
-   ca_chain_b64.append(cert_to_b64(chain_cert))
-   signing_cert_pkey = crypto.dump_privatekey(crypto.FILETYPE_PEM, pkcs12.get_privatekey())
-signing_cert_b64 = cert_to_b64(pkcs12.get_certificate())
-ca_chain_b64.insert(0, signing_cert_b64)
-
-print("Provide the path to the policy text file:")
-policy_path = str(input())
-policy_text = open(policy_path, "r").read()
-encoded = jwt.encode({'text': policy_text }, signing_cert_pkey, algorithm='RS256', headers={'x5c' : ca_chain_b64})
-print("\nAttestation Policy JWS:")
-print(encoded.decode('utf-8'))
-```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Настройка службы "Аттестация Azure" с помощью PowerShell](quickstart-powershell.md)

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: quickstart
-ms.date: 09/03/2019
+ms.date: 11/04/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 9eda54ad23e06149910fe69ec16588f49829a5a5
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 3a7f9179822720b0e5ffc21bc560b4c6ccad9463
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92122829"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93347428"
 ---
 ::: zone target = "docs"
 
@@ -60,14 +60,87 @@ ms.locfileid: "92122829"
 
 ## <a name="order"></a>Порядок
 
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
 Это действие занимает примерно 5 минут.
 
 1. Создайте новый ресурс Azure Data Box на портале Azure.
-2. Выберите включенную для этой службы существующую подписку и укажите тип передачи **Импорт**. Укажите **Страну источника**, где находятся данные и **регион назначения Azure** для передачи данных.
+2. Выберите включенную для этой службы существующую подписку и укажите тип передачи **Импорт**. Укажите **Страну источника** , где находятся данные и **регион назначения Azure** для передачи данных.
 3. Выберите **Data Box Heavy**. Максимальная пригодная к использованию емкость составляет 770 ТБ. При этом можно создавать заказы на несколько устройств для больших объемов данных.
 4. Введите сведения о заказе и о доставке. Если служба доступна в вашем регионе, укажите адреса электронной почты для уведомлений, просмотрите сводные данные, а затем создайте заказ.
 
 После создания заказа устройство подготавливается к отправке.
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Используйте эти команды Azure CLI, чтобы создать задание Data Box Heavy.
+
+[!INCLUDE [azure-cli-prepare-your-environment-h3.md](../../includes/azure-cli-prepare-your-environment-h3.md)]
+
+1. Выполните команду [az group create](/cli/azure/group#az_group_create), чтобы создать группу ресурсов или использовать существующую группу ресурсов:
+
+   ```azurecli
+   az group create --name databox-rg --location westus 
+   ```
+
+1. Используйте команду [az storage account create](/cli/azure/storage/account#az_storage_account_create), чтобы создать учетную запись хранения или использовать существующую учетную запись хранения:
+
+   ```azurecli
+   az storage account create --resource-group databox-rg --name databoxtestsa
+   ```
+
+1. Выполните команду [az databox job create](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_create), чтобы создать задание Data Box со значением **--sku** для `DataBoxHeavy`:
+
+   ```azurecli
+   az databox job create --resource-group databox-rg --name databoxheavy-job \
+       --location westus --sku DataBoxHeavy --contact-name "Jim Gan" --phone 4085555555 \
+       --city Sunnyvale --email-list JimGan@contoso.com --street-address1 "1020 Enterprise Way" \
+       --postal-code 94089 --country US --state-or-province CA --storage-account databoxtestsa \
+       --staging-storage-account databoxtestsa --resource-group-for-managed-disk rg-for-md
+   ```
+
+   > [!NOTE]
+   > Убедитесь, что подписка поддерживает Data Box Heavy.
+
+1. Выполните команду [az databox job update](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_update), чтобы обновить задание, как показано в этом примере, где вы изменяете имя и адрес контакта:
+
+   ```azurecli
+   az databox job update -g databox-rg --name databox-job --contact-name "Robert Anic" --email-list RobertAnic@contoso.com
+   ```
+
+   Выполните команду [az databox job show](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_show), чтобы получить сведения о задании:
+
+   ```azurecli
+   az databox job show --resource-group databox-rg --name databox-job
+   ```
+
+   Используйте команду [az databox job list]( /cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_list), чтобы просмотреть все задания Data Box для группы ресурсов:
+
+   ```azurecli
+   az databox job list --resource-group databox-rg
+   ```
+
+   Выполните команду [az databox job cancel](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_cancel), чтобы отменить задание:
+
+   ```azurecli
+   az databox job cancel –resource-group databox-rg --name databox-job --reason "Cancel job."
+   ```
+
+   Выполните команду [az databox job delete](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_delete), чтобы удалить задание:
+
+   ```azurecli
+   az databox job delete –resource-group databox-rg --name databox-job
+   ```
+
+1. Используйте команду [az databox job list-credentials]( /cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_list_credentials), чтобы вывести учетные данные для задания Data Box:
+
+   ```azurecli
+   az databox job list-credentials --resource-group "databox-rg" --name "databoxdisk-job"
+   ```
+
+После создания заказа устройство подготавливается к отправке.
+
+---
 
 ::: zone-end
 

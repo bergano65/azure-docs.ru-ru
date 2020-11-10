@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание приложения Python, использующем Кэш Azure для Redis
+title: Краткое руководство. Использование Кэша Azure для Redis с приложениями Python
 description: Из этого краткого руководства вы узнаете, как создать приложение Python, в котором используется Кэш Azure для Redis.
 author: yegu-ms
 ms.author: yegu
@@ -11,14 +11,14 @@ ms.custom:
 - seo-python-october2019
 - devx-track-python
 ms.date: 11/05/2019
-ms.openlocfilehash: aed9be394076b4ef10b8354552d69771ae659eea
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 79add54478e9cd52ffd3041d5f85bf588929b44f
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87845330"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099442"
 ---
-# <a name="quickstart-create-a-python-app-that-uses-azure-cache-for-redis"></a>Краткое руководство. Создание приложения Python, в котором используется кэш Azure для Redis
+# <a name="quickstart-use-azure-cache-for-redis-in-python"></a>Краткое руководство. Использование Кэша Azure для Redis с приложениями Python
 
 Из этой статьи вы узнаете, как реализовать кэш Azure для Redis в приложении Python для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 

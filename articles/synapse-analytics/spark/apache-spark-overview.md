@@ -9,16 +9,16 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: 3c269f07c177d99e46dcc343b80979835b429b68
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 0ea46122cffe03ffe2e6a4e07afc6995d88a3acb
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369358"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93306989"
 ---
 # <a name="apache-spark-in-azure-synapse-analytics"></a>Apache Spark в Azure Synapse Analytics
 
-Apache Spark — это платформа параллельной обработки, которая поддерживает обработку в памяти, чтобы повысить производительность приложений для анализа больших данных. Apache Spark в Azure Synapse Analytics — это одна из реализаций Apache Spark в облаке, предоставляемая корпорацией Майкрософт. Azure Synapse упрощает создание и настройку пула Spark (предварительной версии) в Azure. Пулы Spark в Azure Synapse совместимы со службой хранилища Azure и Azure Data Lake Storage 2-го поколения. Следовательно, пулы Azure Spark можно использовать для обработки данных, хранящихся в Azure.
+Apache Spark — это платформа параллельной обработки, которая поддерживает обработку в памяти, чтобы повысить производительность приложений для анализа больших данных. Apache Spark в Azure Synapse Analytics — это одна из реализаций Apache Spark в облаке, предоставляемая корпорацией Майкрософт. Azure Synapse упрощает создание и настройку пула бессерверного пула Apache Spark (предварительная версия) в Azure. Пулы Spark в Azure Synapse совместимы со службой хранилища Azure и Azure Data Lake Storage 2-го поколения. Следовательно, пулы Spark можно использовать для обработки данных, хранящихся в Azure.
 
 ![Spark: единая платформа](./media/apache-spark-overview/spark-overview.png)
 

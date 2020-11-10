@@ -6,26 +6,28 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
-ms.date: 07/30/2020
-ms.openlocfilehash: e6e53755d9231008d0f48c755ff9da297d7305d7
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.date: 10/28/2020
+ms.openlocfilehash: 0d7f455e748a52595839cc509720bf7ad5b9b617
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747173"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93099068"
 ---
 # <a name="quickstart-create-and-manage-logic-apps-using-the-azure-cli"></a>Краткое руководство. Создание приложений логики и управление ими с помощью Azure CLI
 
-В этом кратком руководстве показано, как создавать приложения логики и управлять ими с помощью [расширений Azure CLI Logic Apps](/cli/azure/ext/logic/logic?view=azure-cli-latest) (`az logic`). В командной строке можно создать приложение логики, определив его рабочий процесс с помощью JSON-файла. Затем вы можете управлять приложением логики, выполняя из командной строки такие операции, как `list`, `show` (`get`), `update` и `delete`.
+В этом кратком руководстве показано, как создавать приложения логики и управлять ими с помощью [расширений Azure CLI Logic Apps](/cli/azure/ext/logic/logic) (`az logic`). В командной строке можно создать приложение логики, определив его рабочий процесс с помощью JSON-файла. Затем вы можете управлять приложением логики, выполняя из командной строки такие операции, как `list`, `show` (`get`), `update` и `delete`.
 
 > [!WARNING]
-> Расширение Azure CLI Logic Apps в настоящее время *экспериментальное* , на него не предоставляется *клиентская поддержка* . Используйте это расширение CLI с осторожностью, особенно в рабочих средах.
+> Расширение Azure CLI Logic Apps в настоящее время *экспериментальное* , на него не предоставляется *клиентская поддержка*. Используйте это расширение CLI с осторожностью, особенно в рабочих средах.
+
+Если вы не работали с Logic Apps, вы также можете узнать, как создать первые приложения логики с помощью [портала Azure](quickstart-create-first-logic-app-workflow.md), [Visual Studio](quickstart-create-logic-apps-with-visual-studio.md) и [Visual Studio Code](quickstart-create-logic-apps-visual-studio-code.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure с активной подпиской. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), установленный на локальном компьютере.
-* Расширение [Logic Apps Azure CLI](/cli/azure/azure-cli-extensions-list?view=azure-cli-latest), установленное на компьютере. Чтобы установить это расширение, используйте следующую команду: `az extension add --name logic`
+* [Azure CLI](/cli/azure/install-azure-cli), установленный на локальном компьютере.
+* Расширение [Logic Apps Azure CLI](/cli/azure/azure-cli-extensions-list), установленное на компьютере. Чтобы установить это расширение, используйте следующую команду: `az extension add --name logic`
 * [Группа ресурсов Azure](#example---create-resource-group), в которой создается приложение логики.
 
 ### <a name="prerequisite-check"></a>Проверка предварительных условий
@@ -33,8 +35,8 @@ ms.locfileid: "92747173"
 Перед началом работы проверьте среду, выполнив следующие действия.
 
 * Войдите на портал Azure и убедитесь, что ваша подписка активна, выполнив команду `az login`.
-* Проверьте версию Azure CLI в терминале или в командном окне, выполнив команду `az --version`. Сведения о последней версии см. в [заметках о выпуске](/cli/azure/release-notes-azure-cli?tabs=azure-cli&view=azure-cli-latest).
-  * Если у вас нет последней версии, обновите установку, следуя указаниям в [руководстве по установке операционной системы или платформы](/cli/azure/install-azure-cli?view=azure-cli-latest).
+* Проверьте версию Azure CLI в терминале или в командном окне, выполнив команду `az --version`. Сведения о последней версии см. в [заметках о выпуске](/cli/azure/release-notes-azure-cli?tabs=azure-cli).
+  * Если у вас нет последней версии, обновите установку, следуя указаниям в [руководстве по установке операционной системы или платформы](/cli/azure/install-azure-cli).
 
 ### <a name="example---create-resource-group"></a>Пример. Создание группы ресурсов
 
@@ -61,13 +63,13 @@ az group create --name testResourceGroup --location westus
 
 ## <a name="workflow-definition"></a>Определение рабочего процесса
 
-Прежде чем [создать приложение логики](#create-logic-apps-from-cli) или [обновить существующее](#update-logic-apps-from-cli) с помощью Azure CLI, вам потребуется определение рабочего процесса для приложения логики. На портале Azure можно просмотреть базовое определение рабочего процесса приложения логики в формате JSON, переключив представление **Конструктор** на **Представление кода** .
+Прежде чем [создать приложение логики](#create-logic-apps-from-cli) или [обновить существующее](#update-logic-apps-from-cli) с помощью Azure CLI, вам потребуется определение рабочего процесса для приложения логики. На портале Azure можно просмотреть базовое определение рабочего процесса приложения логики в формате JSON, переключив представление **Конструктор** на **Представление кода**.
 
 При выполнении команд для создания или обновления приложения логики определение рабочего процесса отправляется в качестве обязательного параметра (`--definition`). Необходимо создать определение рабочего процесса в виде JSON-файла, который следует за [схемой языка определения рабочего процесса](./logic-apps-workflow-definition-language.md).
 
 ## <a name="create-logic-apps-from-cli"></a>Создание приложений логики из CLI
 
-Рабочий процесс приложения логики можно создать из Azure CLI с помощью команды [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-create), используя JSON-файл для определения.
+Рабочий процесс приложения логики можно создать из Azure CLI с помощью команды [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create), используя JSON-файл для определения.
 
 ```azurecli
 
@@ -84,7 +86,7 @@ az logic workflow create --definition
 
 ```
 
-Команда должна включать следующие [обязательные параметры](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-create-required-parameters):
+Команда должна включать следующие [обязательные параметры](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create-required-parameters):
 
 | Параметр | Значение | Описание |
 | --------- | ----- | ----------- |
@@ -93,7 +95,7 @@ az logic workflow create --definition
 | Имя | `--name -n` | Имя приложения логики. Имя может содержать только буквы, цифры, дефисы (`-`), символы подчеркивания (`_`), круглые скобки (`()`) и точки (`.`). Это имя должно быть уникальным в пределах регионов. |
 | Имя группы ресурсов | `--resource-group -g` | [Группа ресурсов Azure](../azure-resource-manager/management/overview.md), в которой создается приложение логики. Если для приложения логики еще не создана [группа ресурсов](#example---create-resource-group), создайте ее прежде чем приступить к работе |
 
-Кроме того, можно включить дополнительные [необязательные параметры](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-create-optional-parameters) для настройки элементов управления доступом вашего приложения логики, конечных точек, учетной записи интеграции, среды службы интеграции, состояния и тегов ресурсов.
+Кроме того, можно включить дополнительные [необязательные параметры](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create-optional-parameters) для настройки элементов управления доступом вашего приложения логики, конечных точек, учетной записи интеграции, среды службы интеграции, состояния и тегов ресурсов.
 
 ### <a name="example---create-logic-app"></a>Пример. Создание приложения логики
 
@@ -109,9 +111,9 @@ az logic workflow create --resource-group "testResourceGroup" --location "westus
 
 ## <a name="update-logic-apps-from-cli"></a>Обновление приложений логики из CLI
 
-Вы также можете обновить рабочий процесс приложения логики из Azure CLI с помощью команды [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-create).
+Вы также можете обновить рабочий процесс приложения логики из Azure CLI с помощью команды [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create).
 
-Команда должна включать те же [обязательные параметры](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-create-required-parameters), что и при [создании](#create-logic-apps-from-cli) приложения логики. Кроме того, можно добавить те же [необязательные параметры](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-create-optional-parameters) как при создании приложения логики.
+Команда должна включать те же [обязательные параметры](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create-required-parameters), что и при [создании](#create-logic-apps-from-cli) приложения логики. Кроме того, можно добавить те же [необязательные параметры](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create-optional-parameters) как при создании приложения логики.
 
 ```azurecli
 
@@ -142,16 +144,16 @@ az logic workflow create --resource-group "testResourceGroup" --location "westus
 
 ## <a name="delete-logic-apps-from-cli"></a>Удаление приложений логики из CLI
 
-Вы можете также удалить рабочий процесс приложения логики из Azure CLI с помощью команды [`az logic workflow delete`](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-delete).
+Вы можете также удалить рабочий процесс приложения логики из Azure CLI с помощью команды [`az logic workflow delete`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-delete).
 
-Команда должна включать следующие [обязательные параметры](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-delete-required-parameters):
+Команда должна включать следующие [обязательные параметры](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-delete-required-parameters):
 
 | Параметр | Значение | Описание |
 | --------- | ----- | ----------- |
 | Имя | `--name -n` | Имя приложения логики. |
 | Имя группы ресурсов | `-resource-group -g` | Группа ресурсов, в которой находится ваше приложение логики. |
 
-Также можно включить [необязательный параметр](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-delete-optional-parameters), чтобы пропустить запросы на подтверждение `--yes -y`.
+Также можно включить [необязательный параметр](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-delete-optional-parameters), чтобы пропустить запросы на подтверждение `--yes -y`.
 
 ```azurecli
 
@@ -185,7 +187,7 @@ az logic workflow delete --resource-group "testResourceGroup" --name "testLogicA
 
 ## <a name="show-logic-apps-in-cli"></a>Отображение приложений логики в интерфейсе командной строки
 
-Конкретный рабочий процесс приложения логики можно получить с помощью команды [`az logic workflow show`](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-show).
+Конкретный рабочий процесс приложения логики можно получить с помощью команды [`az logic workflow show`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-show).
 
 ```azurecli
 
@@ -194,7 +196,7 @@ az logic workflow show --name
 
 ```
 
-Команда должна включать следующие [обязательные параметры](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-show-required-parameters):
+Команда должна включать следующие [обязательные параметры](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-show-required-parameters):
 
 | Параметр | Значение | Описание |
 | --------- | ----- | ----------- |
@@ -213,9 +215,9 @@ az logic workflow show --resource-group "testResourceGroup" --name "testLogicApp
 
 ## <a name="list-logic-apps-in-cli"></a>Перечисление приложений логики в интерфейсе командной строки
 
-Вы можете перечислить приложения логики по подписке с помощью команды [`az logic workflow list`](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-list). Эта команда возвращает код JSON для рабочих процессов приложений логики.
+Вы можете перечислить приложения логики по подписке с помощью команды [`az logic workflow list`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-list). Эта команда возвращает код JSON для рабочих процессов приложений логики.
 
-Отфильтровать результаты можно по следующим [необязательным параметрам](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-list-optional-parameters):
+Отфильтровать результаты можно по следующим [необязательным параметрам](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-list-optional-parameters):
 
 | Параметр | Значение | Описание |
 | --------- | ----- | ----------- |
@@ -265,7 +267,7 @@ Expecting value: line 1 column 1 (char 0)
 
 | Параметр | Значение | Описание |
 | --------- | ----- | ----------- |
-| Формат вывода | `--output -o` | Изменение [формата выходных данных](/cli/azure/format-output-azure-cli?view=azure-cli-latest) файла JSON по умолчанию. |
+| Формат вывода | `--output -o` | Изменение [формата выходных данных](/cli/azure/format-output-azure-cli) файла JSON по умолчанию. |
 | Отображать только ошибки | `--only-show-errors` | Отключение предупреждений и отображение только ошибок. |
 | Подробный | `--verbose` | Отображение подробных журналов. |
 | Отладка | `--debug` | Отображение всех журналов отладки. |
@@ -274,8 +276,11 @@ Expecting value: line 1 column 1 (char 0)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure/?view=azure-cli-latest).
-
-Пример создания базового приложения логики с помощью CLI см. в статье [Пример скрипта Azure CLI для создания приложения логики](sample-logic-apps-cli-script.md).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure/).
 
 Дополнительные примеры скриптов CLI для Logic Apps можно найти в [браузере примеров кода Майкрософт](/samples/browse/?products=azure-logic-apps).
+
+Затем можно создать пример логики приложения с помощью Azure CLI, используя пример скрипта и определение рабочего процесса.
+
+> [!div class="nextstepaction"]
+> [Создание приложения логики с помощью примера скрипта](sample-logic-apps-cli-script.md).

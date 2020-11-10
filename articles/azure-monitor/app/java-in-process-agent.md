@@ -3,12 +3,12 @@ title: Azure Monitor Application Insights Java
 description: Наблюдение за производительностью приложений Java, выполняющихся в любой среде, без необходимости изменения кода. Распределенная трассировка и схема приложения.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 2459f80746d95234701319bbb5142c8e540890d3
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: f7cda0f9389f0b628aca82dd6c65acba140e739b
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94379775"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94426839"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Application Insights Azure Monitor отслеживания приложений Java с некодированным кодом
 
@@ -16,9 +16,9 @@ ms.locfileid: "94379775"
 
  Агент Java работает в любой среде и позволяет отслеживать все приложения Java. Другими словами, независимо от того, выполняются ли приложения Java на виртуальных машинах (локально), в AKS в Windows, Linux — Вы переименовываете его, а агент Java 3,0 будет отслеживать ваше приложение.
 
-Добавление пакета SDK для Application Insights Java в приложение больше не требуется, так как агент 3,0 выполняет Автозапись запросов, зависимостей и журналов отдельно.
+Добавление пакета SDK для Application Insights Java в приложение больше не требуется, так как агент 3,0 выполняет автоматический сбор запросов, зависимостей и журналов отдельно.
 
-Вы по-прежнему можете отправить пользовательскую телеметрию из приложения. Агент 3,0 будет отслеживать и сопоставлять его вместе со всеми данными телеметрии, собранными в ходе сбора.
+Вы по-прежнему можете отправить пользовательскую телеметрию из приложения. Агент 3,0 будет отслеживать и сопоставлять его вместе со всеми автособираемыми данными телеметрии.
 
 Агент 3,0 поддерживает Java 8 и более поздних версий.
 
@@ -82,7 +82,7 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 * Выборка
 * Метрики JMX
 * Пользовательские измерения
-* Обработчики данных телеметрии
+* Обработчики данных телеметрии (Предварительная версия)
 * Автоматическое собираемое ведение журнала
 * Автособираемые метрики Микрометер (включая метрики загрузчика пружины)
 * Пульс
@@ -91,7 +91,7 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 
 Полные сведения см. в разделе [Параметры конфигурации](./java-standalone-config.md) .
 
-## <a name="autocollected-requests-dependencies-logs-and-metrics"></a>Автособранные запросы, зависимости, журналы и метрики
+## <a name="auto-collected-requests-dependencies-logs-and-metrics"></a>Автоматические собранные запросы, зависимости, журналы и метрики
 
 ### <a name="requests"></a>Requests
 

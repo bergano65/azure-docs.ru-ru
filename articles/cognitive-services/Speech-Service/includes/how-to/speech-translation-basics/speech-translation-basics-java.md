@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 04/13/2020
 ms.custom: devx-track-java
 ms.author: trbye
-ms.openlocfilehash: 9c4528a87a577ba98f60824936141124387d27a0
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 9c9ac75be5eba41d5625a092ac48166e24fcac79
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92470807"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425475"
 ---
 Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этом кратком руководстве вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для выполнения высококачественного перевода речи. В этом кратком руководстве рассматриваются такие темы, как:
 
@@ -28,11 +28,11 @@ ms.locfileid: "92470807"
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span> </a> статьи _о пакете SDK для распознавания речи_ .
+Прежде чем выполнять какие-либо действия, необходимо установить пакет SDK для службы "Речь". В зависимости от используемой платформы следуйте инструкциям в разделе <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk#get-the-speech-sdk" target="_blank">Получение речевого пакета SDK <span class="docon docon-navigate-external x-hidden-focus"></span></a> статьи _о пакете SDK для распознавания речи_ .
 
 ## <a name="import-dependencies"></a>Импорт зависимостей
 
-Чтобы выполнить примеры в этой статье, включите следующие `import` инструкции в начало **. * Файл кода Java.
+Чтобы выполнить примеры в этой статье, включите следующие `import` инструкции в начало * *.* Файл кода Java.
 
 ```java
 package speech;
@@ -73,7 +73,7 @@ public class App {
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
 * С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Получите эти учетные данные, выполнив действия, описанные в разделе [пробная служба распознавания речи бесплатно](../../../overview.md#try-the-speech-service-for-free).
+Давайте посмотрим, как создается [`SpeechTranslationConfig`][config] с помощью ключа и региона. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free).
 
 ```java
 public class App {
@@ -233,7 +233,7 @@ static void translateSpeech() throws ExecutionException, InterruptedException {
 }
 ```
 
-Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../speech-to-text-basics.md).
+Дополнительные сведения о распознавании речи в тексте см. [в разделе основы распознавания речи](../../../get-started-speech-to-text.md).
 
 ## <a name="synthesize-translations"></a>Синтезирование переводов
 
@@ -338,13 +338,13 @@ static void translateSpeech() throws ExecutionException, InterruptedException {
 }
 ```
 
-Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../text-to-speech-basics.md).
+Дополнительные сведения о синтезе речи см. [в разделе основы синтеза речи](../../../get-started-text-to-speech.md).
 
-[config]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.translation.SpeechTranslationConfig?view=azure-java-stable
-[audioconfig]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.audio.AudioConfig?view=azure-java-stable
-[recognizer]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.translation.TranslationRecognizer?view=azure-java-stable
-[recognitionlang]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setspeechrecognitionlanguage?view=azure-java-stable
-[addlang]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.translation.speechtranslationconfig.addtargetlanguage?view=azure-java-stable
-[translations]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.translation.translationrecognitionresult.gettranslations?view=azure-java-stable
-[voicename]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.translation.speechtranslationconfig.setvoicename?view=azure-java-stable
-[speechsynthesisvoicename]: https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setspeechsynthesisvoicename?view=azure-java-stable
+[config]: /java/api/com.microsoft.cognitiveservices.speech.translation.SpeechTranslationConfig?view=azure-java-stable
+[audioconfig]: /java/api/com.microsoft.cognitiveservices.speech.audio.AudioConfig?view=azure-java-stable
+[recognizer]: /java/api/com.microsoft.cognitiveservices.speech.translation.TranslationRecognizer?view=azure-java-stable
+[recognitionlang]: /java/api/com.microsoft.cognitiveservices.speech.speechconfig.setspeechrecognitionlanguage?view=azure-java-stable
+[addlang]: /java/api/com.microsoft.cognitiveservices.speech.translation.speechtranslationconfig.addtargetlanguage?view=azure-java-stable
+[translations]: /java/api/com.microsoft.cognitiveservices.speech.translation.translationrecognitionresult.gettranslations?view=azure-java-stable
+[voicename]: /java/api/com.microsoft.cognitiveservices.speech.translation.speechtranslationconfig.setvoicename?view=azure-java-stable
+[speechsynthesisvoicename]: /java/api/com.microsoft.cognitiveservices.speech.speechconfig.setspeechsynthesisvoicename?view=azure-java-stable

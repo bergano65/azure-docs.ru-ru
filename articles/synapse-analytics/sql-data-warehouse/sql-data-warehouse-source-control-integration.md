@@ -1,6 +1,6 @@
 ---
 title: Интеграция системы управления версиями
-description: Использование DevOps с базой данных корпоративного класса для пула SQL и интеграция платформенной функциональности системы управления версиями с помощью Azure Repos (Git и GitHub).
+description: Использование DevOps с базой данных корпоративного класса для выделенного пула SQL и интеграция платформенной функциональности системы управления версиями с помощью Azure Repos (Git и GitHub).
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -10,16 +10,16 @@ ms.subservice: sql-dw
 ms.date: 08/23/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 84abfea39cb7311e7cd60346d936c08c28c334d4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4751f3cf213098873b0c53b15df82f57d155787a
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89441421"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93313302"
 ---
-# <a name="source-control-integration-for-sql-pool"></a>Интеграция системы управления версиями для пула SQL
+# <a name="source-control-integration-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Интеграция системы управления версиями для выделенного пула SQL в Azure Synapse Analytics
 
-Из этого руководства вы узнаете, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с системой управления версиями.  Интеграция системы управления версиями — это первый шаг в создании конвейера непрерывной интеграции и развертывания для ресурса пула SQL в Azure Synapse Analytics.
+Из этого руководства вы узнаете, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с системой управления версиями.  Интеграция системы управления версиями — это первый шаг в создании конвейера непрерывной интеграции и развертывания с помощью ресурса выделенного пула SQL в Azure Synapse Analytics.
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -37,7 +37,7 @@ ms.locfileid: "89441421"
 
    ![Управление подключениями](./media/sql-data-warehouse-source-control-integration/2-manage-connections.png "Управление подключениями")
 
-3. Подключитесь к проекту, выбрав **Управление подключениями**, а затем **Подключиться к проекту**.
+3. Подключитесь к проекту, выбрав **Управление подключениями** , а затем **Подключиться к проекту**.
  ![Подключение 1](./media/sql-data-warehouse-source-control-integration/3-connect-project.png "Подключение")
 
 
@@ -85,8 +85,8 @@ ms.locfileid: "89441421"
 
    ![Проверка](./media/sql-data-warehouse-source-control-integration/10-verify-column-change-pushed.png "Проверка изменений")
 
-4. (**Необязательно**.) Используйте расширение "Сравнение схем" и обновите изменения в целевом хранилище данных с помощью SSDT, чтобы определения объектов в репозитории в Azure Repos и локальном репозитории отражали изменения в хранилище данных.
+4. ( **Необязательно**.) Используйте расширение "Сравнение схем" и обновите изменения в целевом хранилище данных с помощью SSDT, чтобы определения объектов в репозитории в Azure Repos и локальном репозитории отражали изменения в хранилище данных.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Разработка для пула SQL](sql-data-warehouse-overview-develop.md)
+- [Разработка для выделенного пула SQL](sql-data-warehouse-overview-develop.md)

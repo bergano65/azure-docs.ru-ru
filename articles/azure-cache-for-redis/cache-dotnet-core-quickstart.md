@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование Кэша Azure для Redis в приложениях .NET Core
+title: Краткое руководство. Использование Кэша Azure для Redis с приложениями .NET Core
 description: В этом кратком руководстве описано, как обращаться к кэшу Azure для Redis из приложений .NET Core
 author: yegu-ms
 ms.author: yegu
@@ -8,14 +8,14 @@ ms.devlang: dotnet
 ms.custom: devx-track-csharp, mvc
 ms.topic: quickstart
 ms.date: 06/18/2020
-ms.openlocfilehash: 12466f64daa699925e4e184536b2d50c5fb89847
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 945d4a3d2bba84bf8f5973fd8dec092c66794c11
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547730"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93077087"
 ---
-# <a name="quickstart-use-azure-cache-for-redis-with-a-net-core-app"></a>Краткое руководство. Использование кэша Azure для Redis в приложениях .NET Core
+# <a name="quickstart-use-azure-cache-for-redis-in-net-core"></a>Краткое руководство. Использование Кэша Azure для Redis с приложениями .NET Core
 
 Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении .NET Core для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure. Вы будете использовать клиент [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) с кодом C# в консольном приложении .NET Core.
 
@@ -29,7 +29,7 @@ ms.locfileid: "92547730"
 
 [!INCLUDE [redis-cache-access-keys](../../includes/redis-cache-access-keys.md)]
 
-Запомните или запишите **имя узла** и **первичный ключ доступа** . Эти значения вам потребуются позже для создания секрета *CacheConnection* .
+Запомните или запишите **имя узла** и **первичный ключ доступа**. Эти значения вам потребуются позже для создания секрета *CacheConnection*.
 
 
 
@@ -41,7 +41,7 @@ ms.locfileid: "92547730"
 dotnet new console -o Redistest
 ```
 
-В этом же окне командной строки перейдите к каталогу нового проекта *Redistest* .
+В этом же окне командной строки перейдите к каталогу нового проекта *Redistest*.
 
 
 
@@ -49,7 +49,7 @@ dotnet new console -o Redistest
 
 В этом разделе добавьте [инструмент "Диспетчер секретов"](/aspnet/core/security/app-secrets) в проект. Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде.
 
-Откройте файл *Redistest.csproj* . Добавьте элемент `DotNetCliToolReference`, чтобы включить *Microsoft.Extensions.SecretManager.Tools* . Кроме того, добавьте элемент `UserSecretsId`, как показано ниже, и сохраните файл.
+Откройте файл *Redistest.csproj*. Добавьте элемент `DotNetCliToolReference`, чтобы включить *Microsoft.Extensions.SecretManager.Tools*. Кроме того, добавьте элемент `UserSecretsId`, как показано ниже, и сохраните файл.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -76,7 +76,7 @@ dotnet add package Microsoft.Extensions.Configuration.UserSecrets
 dotnet restore
 ```
 
-В том же окне командной строки выполните следующую команду, чтобы сохранить новый секрет с именем *CacheConnection* . Не забудьте заменить заполнители (включая угловые скобки) именем кэша и первичным ключом доступа.
+В том же окне командной строки выполните следующую команду, чтобы сохранить новый секрет с именем *CacheConnection*. Не забудьте заменить заполнители (включая угловые скобки) именем кэша и первичным ключом доступа.
 
 ```
 dotnet user-secrets set CacheConnection "<cache name>.redis.cache.windows.net,abortConnect=false,ssl=true,password=<primary-access-key>"
@@ -191,7 +191,7 @@ static void Main(string[] args)
 }
 ```
 
-Сохраните *Program.cs* .
+Сохраните *Program.cs*.
 
 В кэше Azure для Redis настраивается число баз данных (по умолчанию 16) для обеспечения логического разделения данных в нем. Этот код подключается к стандартной базе данных DB 0. Дополнительные сведения см. в разделах [What are Redis databases?](cache-configure.md#default-redis-server-configuration) (Что такое базы данных Redis) и [Конфигурация сервера Redis по умолчанию](cache-development-faq.md#what-are-redis-databases).
 
@@ -293,13 +293,13 @@ dotnet run
 > Удаление группы ресурсов — необратимая операция, и все соответствующие ресурсы удаляются окончательно. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. Если ресурсы для размещения этого примера созданы в имеющейся группе ресурсов, содержащей ресурсы, которые следует сохранить, можно удалить каждый ресурс отдельно в соответствующих колонках вместо удаления группы ресурсов.
 >
 
-Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов** .
+Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
-Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources* . В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов** .
+Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
 ![DELETE](./media/cache-dotnet-core-quickstart/cache-delete-resource-group.png)
 
-Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить** .
+Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 

@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 07/15/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 161d1c95507d366ce00f75580a100fd2607675d9
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 0c43f1ea81bbc29817e6a2509c9967bf3b5782c9
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544024"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93337291"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-using-azure-cli"></a>Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI
 
@@ -36,7 +36,7 @@ ms.locfileid: "92544024"
 az login
 ```
 
-Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Запишите значение **идентификатора** из выходных данных команды **az login** , чтобы использовать его в команде в качестве значения аргумента **подписки** . Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
+Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Запишите значение **идентификатора** из выходных данных команды **az login** , чтобы использовать его в команде в качестве значения аргумента **подписки**. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -62,7 +62,7 @@ az mysql server create --resource-group myresourcegroup --name mydemoserver --lo
 name | mydemoserver | Введите уникальное имя для сервера службы "База данных Azure для MySQL". Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Его длина должна составлять от 3 до 63 символов.
 resource-group | myresourcegroup | Укажите имя группы ресурсов Azure.
 location | westus | Расположение сервера в Azure.
-admin-user | myadmin | Имя для входа администратора. Не может иметь значение **azure_superuser** , **admin** , **administrator** , **root** , **guest** или **public** .
+admin-user | myadmin | Имя для входа администратора. Не может иметь значение **azure_superuser** , **admin** , **administrator** , **root** , **guest** или **public**.
 admin-password | *Надежный пароль* | Пароль администратора. Пароль должен содержать от 8 до 128 символов. Пароль должен содержать символы из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры и небуквенно-цифровые знаки.
 sku-name|GP_Gen5_2|Введите имя ценовой категории и конфигурацию вычислительных ресурсов. В сокращенной записи соответствует схеме {ценовая категория} _{поколение вычислительных ресурсов}_ {число виртуальных ядер}. Дополнительные сведения см. на странице с [ценовыми категориями](./concepts-pricing-tiers.md).
 
@@ -91,7 +91,7 @@ az mysql server firewall-rule create --resource-group myresourcegroup --server m
 az mysql server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin** .
+Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin**.
 ```json
 {
   "administratorLogin": "myadmin",
@@ -143,6 +143,4 @@ az mysql server delete --resource-group myresourcegroup --name mydemoserver
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
->[Создание приложения PHP в Windows с помощью MySQL](../app-service/tutorial-php-mysql-app.md)
->[Создание приложения PHP в Linux с помощью MySQL](../app-service/tutorial-php-mysql-app.md?pivots=platform-linux%253fpivots%253dplatform-linux)
->[Создание приложения Spring на основе Java с помощью MySQL](/azure/developer/java/spring-framework/spring-app-service-e2e?tabs=bash)
+>[Создание приложения PHP с подключением к MySQL (Windows)](../app-service/tutorial-php-mysql-app.md)

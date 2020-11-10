@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание пула Apache Spark с помощью портала Azure
-description: Действия, описанные в этом учебнике, позволяют создать пул Apache Spark с помощью портала Azure.
+title: Краткое руководство. Создание бессерверного пула Apache Spark с помощью портала Azure
+description: Создайте бессерверный пул Apache Spark с помощью портала Azure, выполнив действия из этого руководства.
 services: synapse-analytics
 author: julieMSFT
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: ea32126e19c4520a6d5a40f38f60ec44e9a119cd
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e84afc949a84da90a4799d7db3b3e7ad3e0057a3
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91260875"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323559"
 ---
-# <a name="quickstart-create-a-new-apache-spark-pool-using-the-azure-portal"></a>Краткое руководство. Создание пула Apache Spark с помощью портала Azure
+# <a name="quickstart-create-a-new-serverless-apache-spark-pool-using-the-azure-portal"></a>Краткое руководство. Создание нового бессерверного пула Apache Spark с помощью портала Azure
 
 Azure Synapse Analytics предлагает различные механизмы аналитики, упрощающие прием, преобразование, моделирование, анализ и распространение данных. Пул Apache Spark предлагает возможности для вычислений больших данных с открытым кодом. После создания пула Apache Spark в рабочей области Synapse вы сможете загружать, моделировать, обрабатывать и распространять данные для быстрого получения аналитических сведений.
 
@@ -47,7 +47,7 @@ Azure Synapse Analytics предлагает различные механизм
 
 1. В рабочей области Synapse, в которой необходимо создать пул Apache Spark, выберите **Новый пул Apache Spark**.
     ![Обзор рабочей области Synapse с красным прямоугольником вокруг команды создания пула Apache Spark](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-01.png)
-2. Введите следующие сведения на вкладке **Основные сведения**:
+2. Введите следующие сведения на вкладке **Основные сведения** :
 
     |Параметр | Рекомендуемое значение | Описание |
     | :------ | :-------------- | :---------- |
@@ -62,7 +62,7 @@ Azure Synapse Analytics предлагает различные механизм
     > Обратите внимание, что для имен, которые могут использовать пулы Apache Spark, существуют определенные ограничения. Имя должно содержать только буквы и цифры, его длина не должна превышать 15 символов. Имя должно начинаться с буквы, быть уникальными в рабочей области, но не должно содержать зарезервированные слова.
 
 3. Щелкните **Далее: дополнительные параметры** и проверьте предложенные по умолчанию параметры. Не изменяйте параметры по умолчанию.
-    ![Поток создания пула Apache Spark: вкладка "Дополнительные параметры"](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-03.png)
+    ![Снимок экрана: страница "Создание пула Apache Spark" с выбранной вкладкой "Дополнительные параметры".](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-03.png)
 
 4. Выберите **Далее: теги**. Не удаляйте теги.
     ![Поток создания пула Apache Spark: вкладка "Дополнительные параметры"](media/quickstart-create-apache-spark-pool/create-spark-pool-03-tags.png)
@@ -73,7 +73,7 @@ Azure Synapse Analytics предлагает различные механизм
     ![Поток создания пула Apache Spark: вкладка просмотра параметров](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-05.png)
 
 7. На этом этапе запустится поток подготовки ресурсов, а затем проинформирует о своем завершении.
-    ![Поток создания пула Apache Spark: подготовка ресурсов](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-06.png)
+    ![Снимок экрана: страница "Обзор" с отображаемым сообщением "Развертывание выполнено".](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-06.png)
 
 8. После завершения подготовки в рабочей области будет показана новая запись для созданного пула Apache Spark.
     ![Поток создания пула Apache Spark: подготовка ресурсов](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-07.png)
@@ -89,7 +89,7 @@ Azure Synapse Analytics предлагает различные механизм
 Если вы хотите удалить пул Apache Spark, выполните следующие действия:
 
 1. Перейдите в колонку "Пулы Apache Spark" в рабочей области.
-2. Выберите пул Apache Spark для удаления (в нашем примере это **contosospark**).
+2. Выберите пул Apache Spark для удаления (в нашем примере это **contosospark** ).
 3. Нажмите кнопку **Удалить**
  ![Список пулов Apache Spark с выбранным недавно созданным пулом](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-08.png)
 4. Подтвердите удаление и нажмите кнопку **Удалить**.
@@ -99,4 +99,4 @@ Azure Synapse Analytics предлагает различные механизм
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [Краткое руководство. Создание записной книжки Apache Spark](quickstart-apache-spark-notebook.md).
-- См. [Краткое руководство. Создание пула SQL Synapse с помощью портала Azure](quickstart-create-sql-pool-portal.md).
+- См. [Краткое руководство. Создание выделенного пула SQL Synapse с помощью портала Azure](quickstart-create-sql-pool-portal.md).

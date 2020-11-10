@@ -9,12 +9,12 @@ ms.custom:
 - mvc
 - devx-track-js
 - devx-track-azurecli
-ms.openlocfilehash: 41e064d34f9fdb004feb72d7becdb08fe377aec5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1c327fc7fc067948b5022f989e6c86f99573bd1a
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91271228"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93100190"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-the-azure-cli"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью Azure CLI
 
@@ -24,11 +24,11 @@ ms.locfileid: "91271228"
 
 ![Просмотр приложения, развернутого в службе "Экземпляры контейнеров Azure", в браузере][aci-app-browser]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-account], прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Для выполнения инструкций этого краткого руководства можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Если вы хотите использовать его локально, рекомендуется использовать версию 2.0.55 или более позднюю. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+- Для работы с этим кратким руководством требуется Azure CLI версии не ниже 2.0.55. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -66,7 +66,7 @@ FQDN                               ProvisioningState
 aci-demo.eastus.azurecontainer.io  Succeeded
 ```
 
-Когда `ProvisioningState` контейнера перейдет в состояние **успешного запуска**, перейдите к нему в браузере, указав полное доменное имя. Если появится примерно такая веб-страница, поздравляем! Вы успешно развернули приложение, выполняющееся в контейнере Docker в Azure.
+Когда `ProvisioningState` контейнера перейдет в состояние **успешного запуска** , перейдите к нему в браузере, указав полное доменное имя. Если появится примерно такая веб-страница, поздравляем! Вы успешно развернули приложение, выполняющееся в контейнере Docker в Azure.
 
 ![Просмотр приложения, развернутого в службе "Экземпляры контейнеров Azure", в браузере][aci-app-browser]
 
@@ -101,7 +101,7 @@ listening on port 80
 az container attach --resource-group myResourceGroup --name mycontainer
 ```
 
-После присоединения несколько раз обновите страницу в браузере, чтобы создать некоторые дополнительные выходные данные. Когда все будет готово, отсоедините консоль с помощью `Control+C`. Выходные данные должны иметь следующий вид.
+После присоединения несколько раз обновите страницу в браузере, чтобы создать некоторые дополнительные выходные данные. Когда все будет готово, отсоедините консоль с помощью `Control+C`. Вы должны увидеть результат, аналогичный приведенному ниже:
 
 ```output
 Container 'mycontainer' is in state 'Running'...

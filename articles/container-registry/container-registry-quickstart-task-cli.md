@@ -4,12 +4,12 @@ description: Узнайте, как использовать команды Ре
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 36921900f64d458f1f2591897e32c98f6d22a550
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 1b4dcc05747ceae52c649c366c3faf437e77b560
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91538234"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098932"
 ---
 # <a name="quickstart-build-and-run-a-container-image-using-azure-container-registry-tasks"></a>Краткое руководство. Сборка и запуск образа контейнера с помощью Задач Реестра контейнеров Azure
 
@@ -17,11 +17,11 @@ ms.locfileid: "91538234"
 
 После знакомства с этим кратким руководством ознакомьтесь с более сложными функциями Задач Реестра контейнеров Azure с помощью [этих учебников](container-registry-tutorial-quick-task.md). Задачи Реестра контейнеров Azure позволяют автоматизировать создание образов на основе фиксированного кода или обновления базовых образов или проверять несколько контейнеров параллельно, а также использовать другие сценарии. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-account], прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Для выполнения инструкций этого краткого руководства можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Если вы хотите использовать его локально, рекомендуется использовать версию 2.0.58 или более позднюю. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+    
+- Для работы с этим кратким руководством требуется Azure CLI версии не ниже 2.0.58. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -42,14 +42,14 @@ az acr create --resource-group myResourceGroup \
   --name myContainerRegistry008 --sku Basic
 ```
 
-В этом примере создается реестр ценовой категории *Базовый*; это экономный вариант для разработчиков, изучающих Реестр контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Уровни служб реестра контейнеров][container-registry-skus].
+В этом примере создается реестр ценовой категории *Базовый* ; это экономный вариант для разработчиков, изучающих Реестр контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Уровни служб реестра контейнеров][container-registry-skus].
 
 ## <a name="build-and-push-image-from-a-dockerfile"></a>Создание и отправка образа с помощью Dockerfile
 
-Используйте Реестр контейнеров Azure для создания и отправки образа. Сначала создайте локальный рабочий каталог, а затем создайте Dockerfile с именем *Dockerfile*, содержащий одну строку: `FROM hello-world`. Это простой пример того, как создать образ контейнера Linux из образа `hello-world` в Docker Hub. Вы можете создавать собственные стандартные образы Dockerfile и образы сборки для других платформ. Если вы работаете в оболочке bash, создайте Dockerfile с помощью следующей команды:
+Используйте Реестр контейнеров Azure для создания и отправки образа. Сначала создайте локальный рабочий каталог, а затем создайте Dockerfile с именем *Dockerfile* , содержащий одну строку: `FROM mcr.microsoft.com/hello-world`. Это простой пример того, как создать образ контейнера Linux на основе образа `hello-world`, размещенного в Реестре контейнеров Майкрософт. Вы можете создавать собственные стандартные образы Dockerfile и образы сборки для других платформ. Если вы работаете в оболочке bash, создайте Dockerfile с помощью следующей команды:
 
 ```bash
-echo FROM hello-world > Dockerfile
+echo FROM mcr.microsoft.com/hello-world > Dockerfile
 ```
 
 Выполните команду [az acr build][az-acr-build], которая создает образ и отправляет его в реестр. В примере ниже показаны создание и отправка образа `sample/hello-world:v1`. Символ `.` в конце команды задает расположение Dockerfile, в данном случае это текущий каталог.
@@ -78,8 +78,8 @@ Waiting for agent...
 2019/03/18 21:57:00 Successfully obtained source code and scanned for dependencies
 2019/03/18 21:57:00 Launching container with name: build
 Sending build context to Docker daemon  13.82kB
-Step 1/1 : FROM hello-world
-latest: Pulling from library/hello-world
+Step 1/1 : FROM mcr.microsoft.com/hello-world
+latest: Pulling from hello-world
 Digest: sha256:2557e3c07ed1e38f26e389462d03ed943586fxxxx21577a99efb77324b0fe535
 Successfully built fce289e99eb9
 Successfully tagged mycontainerregistry008.azurecr.io/sample/hello-world:v1

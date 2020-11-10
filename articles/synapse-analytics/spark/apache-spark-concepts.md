@@ -1,6 +1,6 @@
 ---
 title: Основные принципы работы Apache Spark
-description: Общие сведения об использовании Apache Spark в Azure Synapse Analytics, включая разные понятия.
+description: Введение в основные понятия об использовании Apache Spark в Azure Synapse Analytics.
 services: synapse-analytics
 author: euangMS
 ms.service: synapse-analytics
@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: bb5c7e082dc4a35183190f5d2d6a4b305b907f4f
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: d29fa6454839b0c34830374282b8abb5fa6e4c51
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480485"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93313401"
 ---
 # <a name="apache-spark-in-azure-synapse-analytics-core-concepts"></a>Ключевые концепции Apache Spark в Azure Synapse Analytics
 
@@ -24,7 +24,7 @@ Azure Synapse упрощает создание и настройку компо
 
 ## <a name="spark-pools-preview"></a>Пулы Spark (предварительная версия)
 
-Пул Spark (предварительной версии) создается на портале Azure. Это определение пула Spark, при реализации которого создается экземпляр Spark, обрабатывающий данные. Созданный пул Spark существует только в виде метаданных. Соответственно, ресурсы не потребляются и не выполняются, а значит за них не взимается плата. В пуле Spark есть ряд свойств, управляющих характеристиками экземпляра Spark. Эти характеристики среди прочего включают имя, размер, поведение масштабирования и время жизни.
+Бессерверный пул Apache Spark (предварительная версия) создается на портале Azure. Это определение пула Spark, при реализации которого создается экземпляр Spark, обрабатывающий данные. Созданный пул Spark существует только в виде метаданных. Соответственно, ресурсы не потребляются и не выполняются, а значит за них не взимается плата. В пуле Spark есть ряд свойств, управляющих характеристиками экземпляра Spark. Эти характеристики среди прочего включают имя, размер, поведение масштабирования и время жизни.
 
 Для создания пулов Spark не нужны средства или ресурсы, поэтому их можно создавать в любом количестве с любыми конфигурациями. К пулам Spark также можно применять разрешения, чтобы предоставлять пользователям доступ только к определенным из них.
 

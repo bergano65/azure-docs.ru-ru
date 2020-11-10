@@ -8,14 +8,15 @@ ms.devlang: php
 ms.topic: quickstart
 ms.date: 01/05/2019
 ms.author: jasonh
-ms.openlocfilehash: e8848ee0a1fe5755316b59432c465b3836a0bab1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f4bf5ebeb3cda8507b79a7021dd506146ecb2a36
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91409363"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93131315"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-php-and-the-azure-portal"></a>Краткое руководство. Создание графовой базы данных в Azure Cosmos DB с помощью PHP и портала Azure
+[!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -191,21 +192,21 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь можно вернуться в обозреватель данных, чтобы просмотреть вершины, добавленные в граф, и добавить дополнительные точки данных.
 
-1. Щелкните **Обозреватель данных**, затем разверните **sample-graph**, щелкните **Граф** и нажмите кнопку **Применить фильтр**. 
+1. Щелкните **Обозреватель данных** , затем разверните **sample-graph** , щелкните **Граф** и нажмите кнопку **Применить фильтр**. 
 
-   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-expanded.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница &quot;Ключи&quot;":::
+   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-expanded.png" alt-text="Снимок экрана: выбран пункт &quot;Граф&quot; в разделе API и выделена кнопка &quot;Применить фильтр&quot;.":::
 
 2. В списке **результатов** обратите внимание на новых пользователей, добавленных в граф. Выберите пользователя **ben**. Вы увидите, что он связан с пользователем robin. Здесь можно перетаскивать вершины мышью, увеличивать или уменьшать масштаб колесиком мыши, а также увеличивать размер графа с помощью двойной стрелки. 
 
-   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-graph-explorer-new.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница &quot;Ключи&quot;":::
+   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-graph-explorer-new.png" alt-text="Новые вершины в графе в обозревателе данных на портале Azure":::
 
 3. Давайте добавим несколько новых пользователей. Нажмите кнопку **New Vertex** (Создать вершину), чтобы добавить данные в граф.
 
-   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-new-vertex.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница &quot;Ключи&quot;":::
+   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-new-vertex.png" alt-text="Снимок экрана: панель &quot;Новая вершина&quot; для ввода значений.":::
 
 4. Введите метку *person*.
 
-5. Щелкните **Добавить свойство**, чтобы поочередно добавить каждое из указанных ниже свойств. Обратите внимание, что вы можете создать уникальные свойства для каждого пользователя в графе. Требуется только ключ **id**.
+5. Щелкните **Добавить свойство** , чтобы поочередно добавить каждое из указанных ниже свойств. Обратите внимание, что вы можете создать уникальные свойства для каждого пользователя в графе. Требуется только ключ **id**.
 
     Клавиши | Значение | Примечания
     ----|----|----
@@ -222,7 +223,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 8. Введите метку *person*.
 
-9. Щелкните **Добавить свойство**, чтобы поочередно добавить следующие свойства:
+9. Щелкните **Добавить свойство** , чтобы поочередно добавить следующие свойства:
     
     Клавиши | Значение | Примечания
     ----|----|----
@@ -236,17 +237,17 @@ Azure Cosmos DB — это глобально распределенная мн
 
     По мере добавления новых данных используйте фильтры для ограничения результатов. По умолчанию обозреватель данных использует `g.V()` для получения всех вершин в графе. Вы можете задать для него другой [запрос графа](tutorial-query-graph.md), например `g.V().count()`, который возвращает число всех вершин графа в формате JSON. Если вы изменили фильтр, для возвращения к полному списку результатов снова установите фильтр `g.V()` и щелкните **Применить фильтр**.
 
-12. Теперь вы можете соединить пользователей rakesh и ashley. Выберите в списке **Результаты** пользователя **ashley**, а затем нажмите кнопку редактирования рядом с разделом **Целевые объекты** в нижнем правом углу. Чтобы отобразить область **Свойства**, может потребоваться развернуть окно.
+12. Теперь вы можете соединить пользователей rakesh и ashley. Выберите в списке **Результаты** пользователя **ashley** , а затем нажмите кнопку редактирования рядом с разделом **Целевые объекты** в нижнем правом углу. Чтобы отобразить область **Свойства** , может потребоваться развернуть окно.
 
-    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-edit-target.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница &quot;Ключи&quot;":::
+    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-edit-target.png" alt-text="Изменение целевого объекта вершины в графе":::
 
-13. В поле **Целевой объект** введите *rakesh*, затем в поле **Граничная метка** введите слово *знает* и щелкните значок галочки.
+13. В поле **Целевой объект** введите *rakesh* , затем в поле **Граничная метка** введите слово *знает* и щелкните значок галочки.
 
-    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-set-target.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница &quot;Ключи&quot;":::
+    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-set-target.png" alt-text="Добавление связи между пользователями ashley и rakesh в обозревателе данных":::
 
 14. Теперь выберите пользователя **rakesh** в списке результатов. Вы увидите, что пользователи ashley и rakesh связаны. 
 
-    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-graph-explorer.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница &quot;Ключи&quot;":::
+    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-graph-explorer.png" alt-text="Две вершины, связанные в обозревателе данных":::
 
     На этом часть краткого руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
 

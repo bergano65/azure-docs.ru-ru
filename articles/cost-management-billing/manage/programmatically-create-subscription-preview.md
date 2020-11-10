@@ -5,16 +5,16 @@ author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 10/12/2020
+ms.date: 10/29/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c63733a66a2bb4e320a24649dfe82eac259e79ae
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 3ffdeb0add8622e1b9f28f9603dc146b78f742cd
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131111"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93043289"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-preview-apis"></a>Программное создание подписок Azure с помощью предварительных версий API
 
@@ -212,7 +212,7 @@ az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscript
 ### <a name="limitations-of-azure-enterprise-subscription-creation-api"></a>Ограничения API создания подписок Azure Enterprise
 
 - С помощью этого API могут быть созданы только подписки Azure Enterprise.
-- Для учетной записи регистрации действует ограничение в 2000 подписок. После этого дополнительные подписки для учетной записи можно создать только на портале Azure. Если вы хотите создать больше подписок с помощью API, создайте другую учетную запись регистрации.
+- Для учетной записи регистрации действует ограничение в 2000 подписок. После этого дополнительные подписки для учетной записи можно создать только на портале Azure. Если вы хотите создать больше подписок с помощью API, создайте другую учетную запись регистрации. Отмененные, удаленные и переданные подписки учитываются в ограничение в 2000 подписок.
 - Пользователи, которые не являются владельцами учетной записи, но были добавлены в учетную запись регистрации с помощью Azure RBAC, не могут создавать подписки на портале Azure.
 - Невозможно выбрать клиент для создания подписки. Подписка всегда создается в домашнем клиенте владельца учетной записи. Чтобы переместить подписку в другой клиент, ознакомьтесь с [изменением подписки клиента](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
@@ -324,7 +324,7 @@ POST https://management.azure.com/providers/Microsoft.Billing/billingAccounts/<b
 
 ### <a name="create-a-subscription-for-an-invoice-section"></a>Создание подписки для раздела счета
 
-В следующем примере создается подписка с именем *Dev Team subscription* типа *План Microsoft Azure* для раздела счета *Development*. Счет за подписку будет выставлен для профиля выставления счетов *Contoso finance's*, а сама подписка будет указана в разделе *Development* этого счета.
+В следующем примере создается подписка с именем *Dev Team subscription* типа *План Microsoft Azure* для раздела счета *Development*. Счет за подписку будет выставлен для профиля выставления счетов *Contoso finance's* , а сама подписка будет указана в разделе *Development* этого счета.
 
 Выполните следующий запрос, заменив идентификатор `<invoiceSectionId>` на `invoiceSectionId`, скопированный на втором шаге (```/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_2019-05-31/billingProfiles/PBFV-XXXX-XXX-XXX/invoiceSections/GJGR-XXXX-XXX-XXX```). В параметрах запроса API необходимо передать `billingProfileId` и `skuId`, скопированные на втором шаге. Сведения об указании владельцев см. в разделе [Получение идентификаторов объектов пользователей](grant-access-to-create-subscription.md#userObjectId).
 
@@ -504,9 +504,9 @@ GET https://management.azure.com<customerId>?$expand=resellers&api-version=2019-
 
 ### <a name="create-a-subscription-for-a-customer"></a>Создание подписки для клиента
 
-В следующем примере создается подписка с именем *Dev Team subscription* для *Fabrikam toys*, которая затем связывается с торговым посредником *Wingtip*. 
+В следующем примере создается подписка с именем *Dev Team subscription* для *Fabrikam toys* , которая затем связывается с торговым посредником *Wingtip*. 
 
-Выполните следующий запрос, заменив идентификатор `<customerId>` на `id`, скопированный на втором шаге (```/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Передайте в параметрах запроса API необязательное значение *resellerId*, скопированное на втором шаге.
+Выполните следующий запрос, заменив идентификатор `<customerId>` на `id`, скопированный на втором шаге (```/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Передайте в параметрах запроса API необязательное значение *resellerId* , скопированное на втором шаге.
 
 ```json
 POST https://management.azure.com<customerId>/providers/Microsoft.Subscription/createSubscription?api-version=2018-11-01-preview

@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 07342cb31f1c44273f98a97b018620538f86c17f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2e06f0918ce23beded7475f644e7cc6019facacc
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91287735"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93322589"
 ---
 # <a name="interact-with-azure-cosmos-db-using-apache-spark-in-azure-synapse-link-preview"></a>Взаимодействие с Azure Cosmos DB с помощью Apache Spark в Azure Synapse Link (предварительная версия)
 
@@ -209,7 +209,7 @@ query.awaitTermination()
     ]
 }
 ```
-Если вы хотите отправить определения удаленных заданий Spark в пул Synapse Spark, узнайте, как ссылаться на внешние библиотеки, следуя инструкциям из этого [учебника](../spark/apache-spark-job-definitions.md).
+Если вы хотите отправить определения удаленных заданий Spark в пул бессерверный пул Apache Spark, узнайте, как ссылаться на внешние библиотеки, следуя инструкциям из этого [руководства](../spark/apache-spark-job-definitions.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 

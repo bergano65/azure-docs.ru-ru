@@ -9,12 +9,12 @@ ms.subservice: machine-learning
 ms.date: 06/30/2020
 ms.author: midesa
 ms.reviewer: jrasnick,
-ms.openlocfilehash: da4cef50610b219689e2271e9f70fd1adb1a235f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 979e360bb920fc3b34a201b1287b50b141bffa9b
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540512"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93313614"
 ---
 # <a name="tutorial-run-experiments-using-azure-automated-ml-and-apache-spark"></a>Руководство по выполнению экспериментов с помощью автоматизированного машинного обучения Azure и Apache Spark
 
@@ -29,13 +29,16 @@ ms.locfileid: "91540512"
 - Расчет точности модели.
 
 ### <a name="before-you-begin"></a>Подготовка к работе
-- Создайте пул Apache Spark, выполнив инструкции из [этого руководства](../quickstart-create-apache-spark-pool-studio.md).
+
+- Создайте бессерверный пул Apache Spark, следуя инструкциям из [этого краткого руководства](../quickstart-create-apache-spark-pool-studio.md).
 - Выполните действия из [руководства по настройке рабочей области машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/tutorial-1st-experiment-sdk-setup), если у вас еще нет рабочей области машинного обучения Azure. 
 
 ### <a name="understand-regression-models"></a>Общие сведения о моделях регрессии
+
 *Модели регрессии* прогнозируют числовые выходные значения на основе независимых прогностических факторов. В случае регрессии цель заключается в том, чтобы установить связь между этими независимыми переменными прогнозирования, оценивая, как одна переменная влияет на другие.  
 
 ### <a name="regression-analysis-example-on-the-nyc-taxi-data"></a>Пример регрессионного анализа данных о такси Нью-Йорка
+
 В этом примере вы с помощью Spark выполните некоторый анализ данных о чаевых таксистам Нью-Йорка. Данные доступны через [открытые наборы данных Azure](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Это подмножество набора данных содержит сведения о поездках на такси, включая сведения о каждой поездке, времени начала и окончания и расположениях, стоимости и других интересных атрибутах.
 
 > [!IMPORTANT]
@@ -143,7 +146,7 @@ ws = Workspace(workspace_name = workspace_name,
 ```
 
 ## <a name="convert-a-dataframe-to-an-azure-machine-learning-dataset"></a>Преобразование кадров данных в набор данных Машинного обучения Azure
-Чтобы отправить удаленный эксперимент, нам необходимо преобразовать набор данных в формат ```TabularDatset``` для Машинного обучения Azure. [TabularDataset](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) переводит данные в табличный формат, выполняя синтаксический анализ предоставленных файлов.
+Чтобы отправить удаленный эксперимент, нам необходимо преобразовать набор данных в формат ```TabularDatset``` для Машинного обучения Azure. [TabularDataset](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) переводит данные в табличный формат, выполняя синтаксический анализ предоставленных файлов.
 
 Приведенный ниже код позволяет получить сведения о существующей рабочей области и стандартном хранилище данных Машинного обучения Azure. Затем это хранилище и расположение файлов передаются в параметре path для создания нового ```TabularDataset```. 
 
@@ -165,7 +168,7 @@ dataset_training = Dataset.Tabular.from_delimited_files(path = [(datastore, 'tra
 
 ![Изображение отправленного набора данных.](./media/apache-spark-machine-learning-aml-notebook/upload-dataset.png)
 
-## <a name="submit-an-auto-ml-experiment"></a>Отправка эксперимента автоматизированного машинного обучения
+## <a name="submit-an-automl-experiment"></a>Отправка эксперимента автоматизированного машинного обучения
 
 #### <a name="define-training-settings"></a>Определение параметров обучения
 

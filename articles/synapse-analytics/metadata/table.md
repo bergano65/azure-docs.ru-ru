@@ -1,6 +1,6 @@
 ---
 title: Таблицы общих метаданных
-description: Azure Synapse Analytics предоставляет модель общих метаданных, в которой создание таблицы в Apache Spark делает ее доступной из службы SQL по запросу (предварительной версии) и пулов SQL, не требуя репликации данных.
+description: Azure Synapse Analytics предоставляет общую модель метаданных, в которой к созданной в бессерверном пуле Apache Spark таблице можно будет получить доступ из бессерверного пула SQL (предварительная версия) и выделенного пула SQL без необходимости репликации данных.
 services: sql-data-warehouse
 author: MikeRys
 ms.service: synapse-analytics
@@ -10,30 +10,30 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6b9835cf5de28fbd515a214554f723d99e8e8fe4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f269217908bea4b5e8ef3c0004a9cec9d5d682c7
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91260737"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93314547"
 ---
 # <a name="azure-synapse-analytics-shared-metadata-tables"></a>Таблицы общих метаданных Azure Synapse Analytics
 
 [!INCLUDE [synapse-analytics-preview-terms](../../../includes/synapse-analytics-preview-terms.md)]
 
-Azure Synapse Analytics позволяет разным вычислительным системам рабочей области совместно использовать базы данных и таблицы на основе Parquet в пулах Apache Spark (предварительная версия) и ядре SQL по запросу (предварительная версия).
+Azure Synapse Analytics позволяет разным вычислительным системам рабочей области совместно использовать базы данных и таблицы на основе Parquet в пулах Apache Spark (предварительная версия) и бессерверном пуле SQL (предварительная версия).
 
 После того как задание Spark создаст базу данных, в ней можно с помощью Spark создать таблицы с форматом хранения Parquet. Эти таблицы немедленно становятся доступными для выполнения запросов через любой пул Spark в рабочей области Azure Synapse. Их также можно использовать из любого задания Spark при наличии соответствующих разрешений.
 
-Таблицы, создаваемые и управляемые в Spark, а также внешние таблицы Spark доступны как внешние таблицы с тем же именем в соответствующей синхронизированной базе данных в SQL по запросу. Дополнительные сведения можно найти в разделе [Exposing a Spark table in SQL](#expose-a-spark-table-in-sql) (Предоставление таблицы Spark в SQL).
+Таблицы, создаваемые и управляемые в Spark, а также внешние таблицы Spark доступны как внешние таблицы с тем же именем в соответствующей синхронизированной базе данных в бессерверном пуле SQL. Дополнительные сведения можно найти в разделе [Exposing a Spark table in SQL](#expose-a-spark-table-in-sql) (Предоставление таблицы Spark в SQL).
 
-Так как таблицы синхронизируются с SQL по запросу асинхронно, они появляются с некоторой задержкой.
+Так как таблицы синхронизируются с бессерверным пулом SQL асинхронно, они появляются с некоторой задержкой.
 
 ## <a name="manage-a-spark-created-table"></a>Управление созданной в Spark таблицей
 
-Используйте Spark для управления созданными в Spark базами данных. Например, можно удалить базу данных из задания пула Spark или создать в ней таблицы средствами Spark.
+Используйте Spark для управления созданными в Spark базами данных. Например, можно удалить таблицу из задания бессерверного пула Apache Spark или создать в ней таблицы средствами Spark.
 
-Если вы создадите в такой базе данных объекты, используя SQL по запросу, или попытаетесь удалить эту базу данных, операция будет выполнена успешно, но это никак не отразится на исходной базе данных Spark.
+Если вы создадите в такой базе данных объекты, используя бессерверный пул SQL, или попытаетесь удалить эту базу данных, операция будет выполнена успешно, но это никак не отразится на исходной базе данных Spark.
 
 ## <a name="expose-a-spark-table-in-sql"></a>Предоставление таблицы Spark в SQL
 
@@ -74,12 +74,12 @@ Spark предоставляет два типа таблиц, которые Az
 | `decimal`      | `decimal`        |<!-- need precision and scale-->|
 | `timestamp` |    `datetime2`      |<!-- need precision and scale-->|
 | `date`      | `date`           ||
-| `string`    |    `varchar(max)`   | С параметрами сортировки `Latin1_General_CP1_CI_AS_UTF8` |
+| `string`    |    `varchar(max)`   | С параметрами сортировки `Latin1_General_100_BIN2_UTF8` |
 | `binary`    |    `varbinary(max)` ||
 | `boolean`   |    `bit`            ||
-| `array`     |    `varchar(max)`   | Сериализуется в JSON с параметрами сортировки `Latin1_General_CP1_CI_AS_UTF8` |
-| `map`       |    `varchar(max)`   | Сериализуется в JSON с параметрами сортировки `Latin1_General_CP1_CI_AS_UTF8` |
-| `struct`    |    `varchar(max)`   | Сериализуется в JSON с параметрами сортировки `Latin1_General_CP1_CI_AS_UTF8` |
+| `array`     |    `varchar(max)`   | Сериализуется в JSON с параметрами сортировки `Latin1_General_100_BIN2_UTF8` |
+| `map`       |    `varchar(max)`   | Сериализуется в JSON с параметрами сортировки `Latin1_General_100_BIN2_UTF8` |
+| `struct`    |    `varchar(max)`   | Сериализуется в JSON с параметрами сортировки `Latin1_General_100_BIN2_UTF8` |
 
 <!-- TODO: Add precision and scale to the types mentioned above -->
 
@@ -95,9 +95,9 @@ Spark предоставляет два типа таблиц, которые Az
 
 ## <a name="examples"></a>Примеры
 
-### <a name="create-a-managed-table-backed-by-parquet-in-spark-and-query-from-sql-on-demand"></a>Создание управляемой таблицы на основе Parquet в Spark и обращение к ней из SQL по запросу
+### <a name="create-a-managed-table-backed-by-parquet-in-spark-and-query-from-serverless-sql-pool"></a>Создание управляемой таблицы на основе Parquet в Spark и обращение к ней из бессерверного пула SQL
 
-В этом сценарии существует база данных Spark с именем `mytestdb`. См. раздел [Создание базы данных Spark и подключение к ней для SQL по запросу](database.md#create-and-connect-to-spark-database-with-sql-on-demand).
+В этом сценарии существует база данных Spark с именем `mytestdb`. См. раздел [Создание базы данных Spark и подключение к ней с помощью бессерверного пула SQL](database.md#create-and-connect-to-spark-database-with-serverless-sql-pool).
 
 Создайте управляемую таблицу Spark с помощью SparkSQL, выполнив следующую команду:
 
@@ -105,7 +105,7 @@ Spark предоставляет два типа таблиц, которые Az
     CREATE TABLE mytestdb.myParquetTable(id int, name string, birthdate date) USING Parquet
 ```
 
-Эта команда создает таблицу `myParquetTable` в базе данных `mytestdb`. С небольшой задержкой эта таблица станет доступной в SQL по запросу. Для нашего примера выполните указанную ниже инструкцию из SQL по запросу.
+Эта команда создает таблицу `myParquetTable` в базе данных `mytestdb`. После короткой задержки вы увидите таблицу в бессерверном пуле SQL. Например, выполните следующую инструкцию из бессерверного пула SQL.
 
 ```sql
     USE mytestdb;
@@ -140,7 +140,7 @@ var df = spark.CreateDataFrame(data, schema);
 df.Write().Mode(SaveMode.Append).InsertInto("mytestdb.myParquetTable");
 ```
 
-Теперь вы можете получить эти данные из SQL по запросу следующим образом:
+Теперь вы можете считывать данные из бессерверного пула SQL следующим образом:
 
 ```sql
 SELECT * FROM mytestdb.dbo.myParquetTable WHERE name = 'Alice';
@@ -154,7 +154,7 @@ id | name | birthdate
 1 | Alice | 2010-01-01
 ```
 
-### <a name="create-an-external-table-backed-by-parquet-in-spark-and-query-from-sql-on-demand"></a>Создание внешней таблицы на основе Parquet в Spark и обращение к ней из SQL по запросу
+### <a name="create-an-external-table-backed-by-parquet-in-spark-and-query-from-serverless-sql-pool"></a>Создание внешней таблицы на основе Parquet в Spark и обращение к ней из бессерверного пула SQL
 
 В этом примере вы создаете внешнюю таблицу Spark на основе файлов данных Parquet, которые мы получили в предыдущем примере для управляемой таблицы.
 
@@ -168,7 +168,7 @@ CREATE TABLE mytestdb.myExternalParquetTable
 
 Замените заполнитель `<fs>` именем файловой системы, которое используется по умолчанию для рабочей области, а заполнитель `<synapse_ws>` — именем рабочей области Synapse, в которой вы выполняете этот пример.
 
-Приведенный выше пример создает таблицу `myExtneralParquetTable` в базе данных `mytestdb`. С небольшой задержкой эта таблица станет доступной в SQL по запросу. Для нашего примера выполните указанную ниже инструкцию из SQL по запросу.
+Приведенный выше пример создает таблицу `myExtneralParquetTable` в базе данных `mytestdb`. После короткой задержки вы увидите таблицу в бессерверном пуле SQL. Например, выполните следующую инструкцию из бессерверного пула SQL.
 
 ```sql
 USE mytestdb;
@@ -177,7 +177,7 @@ SELECT * FROM sys.tables;
 
 Убедитесь, что `myExternalParquetTable` есть в результатах.
 
-Теперь вы можете получить эти данные из SQL по запросу следующим образом:
+Теперь вы можете считывать данные из бессерверного пула SQL следующим образом:
 
 ```sql
 SELECT * FROM mytestdb.dbo.myExternalParquetTable WHERE name = 'Alice';

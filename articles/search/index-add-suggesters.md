@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8ae25c63e9c6e3bf6ad363cde9eb641703562811
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: ed7b61e9e0379462e0dfbcdcc93acfccf470d95f
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360026"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94427043"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Создание средства подбора для включения автозаполнения и предлагаемых результатов в запросе
 
@@ -26,7 +26,7 @@ ms.locfileid: "93360026"
 
 Эти функции можно использовать отдельно или вместе. Чтобы реализовать эти поведения в Azure Когнитивный поиск, существует компонент индекса и запроса. 
 
-+ В индексе добавьте предложение в индекс. Можно использовать портал, [REST API](/rest/api/searchservice/create-index)или [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.suggester). Оставшаяся часть этой статьи посвящена созданию средства подбора.
++ В индексе добавьте предложение в индекс. Можно использовать портал, [создать индекс (RESTFUL) (/рест/АПИ/сеарчсервице/креате-индекс) или [свойство](/dotnet/api/azure.search.documents.indexes.models.searchindex.suggesters)средства подбора. Оставшаяся часть этой статьи посвящена созданию средства подбора.
 
 + В запросе запроса вызовите один из [интерфейсов API, перечисленных ниже](#how-to-use-a-suggester).
 
@@ -107,34 +107,33 @@ ms.locfileid: "93360026"
 
 ## <a name="create-using-net"></a>Создание с помощью .NET
 
-В C# Определите [объект](/dotnet/api/microsoft.azure.search.models.suggester)средства подбора. `Suggesters` является коллекцией, но может принимать только один элемент. 
+В C# Определите [объект сеарчсугжестер](/dotnet/api/azure.search.documents.indexes.models.searchsuggester). `Suggesters` является коллекцией объекта Сеарчиндекс, но может принимать только один элемент. 
 
 ```csharp
-private static void CreateHotelsIndex(SearchServiceClient serviceClient)
+private static void CreateIndex(string indexName, SearchIndexClient indexClient)
 {
-    var definition = new Index()
-    {
-        Name = "hotels-sample-index",
-        Fields = FieldBuilder.BuildForType<Hotel>(),
-        Suggesters = new List<Suggester>() {new Suggester()
-            {
-                Name = "sg",
-                SourceFields = new string[] { "HotelName", "Category" }
-            }}
-    };
+    FieldBuilder fieldBuilder = new FieldBuilder();
+    var searchFields = fieldBuilder.Build(typeof(Hotel));
 
-    serviceClient.Indexes.Create(definition);
+    //var suggester = new SearchSuggester("sg", sourceFields = "HotelName", "Category");
 
+    var definition = new SearchIndex(indexName, searchFields);
+
+    var suggester = new SearchSuggester("sg", new[] { "HotelName", "Category"});
+
+    definition.Suggesters.Add(suggester);
+
+    indexClient.CreateOrUpdateIndex(definition);
 }
 ```
 
 ## <a name="property-reference"></a>Справочные данные по свойствам
 
-|Свойство      |Описание      |
+|Свойство.      |Описание      |
 |--------------|-----------------|
 |`name`        |Имя средства подбора.|
 |`searchMode`  |Стратегия, используемая для поиска фраз кандидата. В настоящее время поддерживается только режим `analyzingInfixMatching` , который в настоящее время соответствует началу термина.|
-|`sourceFields`|Список из одного или нескольких полей, которые служат источником содержимого для предложений. Поля должны иметь тип `Edm.String` и `Collection(Edm.String)` . Если в поле указан анализатор, он должен быть именованным анализатором из [этого списка](/dotnet/api/microsoft.azure.search.models.analyzername) (а не настраиваемого анализатора).<p/> Рекомендуется указывать только те поля, которые приведут себя к ожидаемому и соответствующему ответу, будь то заполненная строка в строке поиска или раскрывающемся списке.<p/>Имя отеля является хорошим кандидатом, поскольку имеет точность. Поля с подробными сведениями, такие как описания и комментарии, слишком сжимаются. Аналогичным образом, повторяющиеся поля, такие как категории и теги, менее эффективны. В примерах мы все равно включаем «Category», чтобы показать, что можно включить несколько полей. |
+|`sourceFields`|Список из одного или нескольких полей, которые служат источником содержимого для предложений. Поля должны иметь тип `Edm.String` и `Collection(Edm.String)` . Если в поле указан анализатор, он должен быть именованным анализатором из [этого списка](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername) (а не настраиваемого анализатора).<p/> Рекомендуется указывать только те поля, которые приведут себя к ожидаемому и соответствующему ответу, будь то заполненная строка в строке поиска или раскрывающемся списке.<p/>Имя отеля является хорошим кандидатом, поскольку имеет точность. Поля с подробными сведениями, такие как описания и комментарии, слишком сжимаются. Аналогичным образом, повторяющиеся поля, такие как категории и теги, менее эффективны. В примерах мы все равно включаем «Category», чтобы показать, что можно включить несколько полей. |
 
 <a name="how-to-use-a-suggester"></a>
 
@@ -144,8 +143,8 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 
 + [Предложения REST API](/rest/api/searchservice/suggestions)
 + [Автозаполнение REST API](/rest/api/searchservice/autocomplete)
-+ [Метод Сугжествисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync)
-+ [Метод Аутокомплетевисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync)
++ [Метод Сугжестасинк](/dotnet/api/azure.search.documents.searchclient.suggestasync)
++ [Метод Аутокомплетеасинк](/dotnet/api/azure.search.documents.searchclient.autocompleteasync)
 
 В приложении поиска клиентский код должен использовать библиотеку, например [JQUERY UI Автозаполнение](https://jqueryui.com/autocomplete/) , для получения полного запроса и обеспечения соответствия. Дополнительные сведения об этой задаче см. [в разделе Добавление автозаполнения или предлагаемых результатов в клиентский код](search-autocomplete-tutorial.md).
 

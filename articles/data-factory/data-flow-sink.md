@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: 47aada0abe2520ba81689ca8fa17787fde847d83
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 2e26028c47e8c96f8c1adabc468ee6f03e3cb19c
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360255"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94427315"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование приемника в потоке данных сопоставления
 
@@ -105,7 +105,7 @@ ms.locfileid: "93360255"
 ![Снимок экрана, показывающий пользовательский порядок приемников.](media/data-flow/custom-sink-ordering.png "Снимок экрана, показывающий пользовательский порядок приемников.")
 
 > [!NOTE]
-> При использовании [кэшированных поисков](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-expression-builder#cached-lookup)убедитесь, что в упорядочении приемников задано значение 0 для кэшированных приемников.
+> При использовании [кэшированных поисков](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-expression-builder#cached-lookup)убедитесь, что в упорядочении приемников задано значение 1, самый низкий (или первый) в порядке сортировки.
 
 ![Заказ настраиваемых приемников](media/data-flow/cache-2.png "Заказ настраиваемых приемников")
 

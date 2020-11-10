@@ -9,12 +9,12 @@ ms.date: 11/03/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d61942155e46792f95091957925523381a5a9cda
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: efa434959df1d0310e390e78cee2ada726f61827
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422626"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94427541"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Рекурсивное задание списков управления доступом (ACL) для Azure Data Lake Storage 2-го поколения
 
@@ -22,7 +22,7 @@ ms.locfileid: "93422626"
 
 [Библиотеки](#libraries)  |  [Примеры](#code-samples)  |  [Рекомендации](#best-practice-guidelines)  |  [Отправить отзыв](#provide-feedback)
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -411,7 +411,7 @@ Set-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $
 ```
 
 > [!NOTE]
-> Если вы хотите задать запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например, введите `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`.
+> Если вы хотите задать запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например, так: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`.
 
 Пример рекурсивного задания списков ACL в пакетах путем указания размера пакета см. в справочной статье по [Set-AzDataLakeGen2AclRecursive](https://docs.microsoft.com/powershell/module/az.storage/set-azdatalakegen2aclrecursive) .
 
@@ -604,7 +604,7 @@ Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Pat
 ```
 
 > [!NOTE]
-> Если вы хотите обновить запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например, введите `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission rwx -DefaultScope`.
+> Если вы хотите обновить запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например, так: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission rwx -DefaultScope`.
 
 Пример рекурсивного обновления списков ACL в пакетах путем указания размера пакета см. в справочной статье по [Update-AzDataLakeGen2AclRecursive](https://docs.microsoft.com/powershell/module/az.storage/update-azdatalakegen2aclrecursive) .
 
@@ -745,7 +745,7 @@ Remove-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName  -Ac
 ```
 
 > [!NOTE]
-> Если вы хотите удалить запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например, введите `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission "---" -DefaultScope`.
+> Если вы хотите удалить запись ACL **по умолчанию** , используйте параметр **-DefaultScope** при выполнении команды **Set-AzDataLakeGen2ItemAclObject** . Например, так: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission "---" -DefaultScope`.
 
 Пример рекурсивного удаления списков ACL в пакетах путем указания размера пакета см. в справочной статье [recurs-AzDataLakeGen2AclRecursive](https://docs.microsoft.com/powershell/module/az.storage/remove-azdatalakegen2aclrecursive) .
 
@@ -994,12 +994,6 @@ def resume_set_acl_recursive(continuation_token):
 В этом примере используется `ContinueOnFailure` параметр, чтобы выполнение продолжалось, даже если операция встречает ошибку разрешения. 
 
 ```powershell
-
-$TotalDirectoriesSuccess = 0
-$TotalFilesSuccess = 0
-$totalFailure = 0
-$FailedEntries = New-Object System.Collections.Generic.List[System.Object]
-
 $result = Set-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl -ContinueOnFailure
 
 echo "[Result Summary]"
@@ -1164,7 +1158,7 @@ def continue_on_failure():
 
 Вы можете отправить отзыв или сообщить о вопросе по адресу  [recursiveACLfeedback@microsoft.com](mailto:recursiveACLfeedback@microsoft.com) .
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
 - [Известные проблемы](data-lake-storage-known-issues.md)

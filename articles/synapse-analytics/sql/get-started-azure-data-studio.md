@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: c3c1b61cb4f799b79ca00fc92ffadc2374a61c03
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: fb4c7f8ba49cf701ef13cb57ab2b323a94c928cc
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132471"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323827"
 ---
 # <a name="connect-to-synapse-sql-with-azure-data-studio-preview"></a>Подключение к Synapse SQL с помощью Azure Data Studio (предварительная версия)
 
@@ -30,11 +30,11 @@ ms.locfileid: "92132471"
 
 ## <a name="connect"></a>Подключение
 
-Чтобы подключиться к Synapse SQL, откройте Azure Data Studio и выберите **Новое подключение** .
+Чтобы подключиться к Synapse SQL, откройте Azure Data Studio и выберите **Новое подключение**.
 
 ![Откройте Azure Data Studio.](./media/get-started-azure-data-studio/1-start.png)
 
-Выберите **Microsoft SQL Server** в качестве **типа подключения** .
+Выберите **Microsoft SQL Server** в качестве **типа подключения**.
 
 Для подключения требуются следующие параметры.
 
@@ -42,15 +42,15 @@ ms.locfileid: "92132471"
 * **База данных:** Имя базы данных
 
 > [!NOTE]
-> Если вы хотите использовать **SQL по запросу (предварительная версия)** , URL-адрес должен выглядеть следующим образом:
+> Если вы хотите использовать **бессерверный пул SQL (предварительная версия)** , URL-адрес должен выглядеть следующим образом:
 >
 > - `<Azure Synapse workspace name>`-ondemand.sql.azuresynapse.net.
 >
-> Если вы хотите использовать **пул SQL** , URL-адрес должен выглядеть следующим образом:
+> Если же вы хотите использовать **выделенный пул SQL** , URL-адрес должен выглядеть так:
 >
 > - `<Azure Synapse workspace name>`.sql.azuresynapse.net
 
-Выберите в качестве **типа проверки подлинности** **Проверка подлинности Windows** , **Azure Active Directory** или **Имя входа SQL** .
+Выберите в качестве **типа проверки подлинности** **Проверка подлинности Windows** , **Azure Active Directory** или **Имя входа SQL**.
 
 Чтобы использовать **Имя входа SQL** в качестве типа проверки подлинности, добавьте параметры имени пользователя или пароля:
 
@@ -73,11 +73,11 @@ ms.locfileid: "92132471"
 
 ## <a name="query"></a>Запрос
 
-После подключения Synapse SQL можно запросить с помощью поддерживаемых для экземпляра инструкций [Transact-SQL (T-SQL)](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Чтобы начать работу, выберите в представлении панели мониторинга **Новый запрос** .
+После подключения Synapse SQL можно запросить с помощью поддерживаемых для экземпляра инструкций [Transact-SQL (T-SQL)](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Чтобы начать работу, выберите в представлении панели мониторинга **Новый запрос**.
 
 ![Новый запрос](./media/get-started-azure-data-studio/5-new-query.png)
 
-Например, чтобы создать [запрос для файлов Parquet](query-parquet-files.md), используя SQL по запросу можно использовать следующую инструкцию Transact-SQL:
+Например, чтобы создать [запрос для файлов Parquet](query-parquet-files.md) с помощью бессерверного пула SQL можно использовать следующую инструкцию Transact-SQL:
 
 ```sql
 SELECT COUNT(*)

@@ -9,12 +9,12 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 5e422b5292f77150e2755cb5963e2cd95d148654
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 382ba871f95b3b36c3f819de8d582ba2c5dc358a
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939109"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93316088"
 ---
 # <a name="machine-learning-capabilities-in-azure-synapse-analytics-workspaces-preview"></a>Возможности Машинного обучения в Azure Synapse Analytics (предварительная версия рабочих областей)
 
@@ -81,4 +81,4 @@ Azure Synapse Analytics предлагает различные возможно
 * [Начало работы с Azure Synapse Analytics](../get-started.md)
 * [Создание рабочей области](../get-started-create-workspace.md)
 * [Краткое руководство. Создание новой связанной службы Машинного обучения Azure в Synapse](quickstart-integrate-azure-machine-learning.md)
-* [Учебник. Мастер оценки моделей машинного обучения — пул SQL](tutorial-sql-pool-model-scoring-wizard.md)
+* [Учебник. Мастер оценки моделей машинного обучения — выделенный пул SQL](tutorial-sql-pool-model-scoring-wizard.md)

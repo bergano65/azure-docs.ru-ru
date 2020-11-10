@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование кэша Azure для Redis с приложениями Java
+title: Краткое руководство. Использование Кэша Azure для Redis с приложениями Java
 description: В этом кратком руководстве описано, как создать приложение Java, которое использует кэш Redis для Azure
 author: yegu-ms
 ms.service: cache
@@ -8,14 +8,14 @@ ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: yegu
 ms.custom: mvc, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 16a912b2530d567a11a81fc10e9e09eee572e7e6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: edb80ab3107cbd0a5ddd802d56a60ce77affb2f2
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87528840"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93088120"
 ---
-# <a name="quickstart-use-azure-cache-for-redis-with-java"></a>Краткое руководство. Использование кэша Azure для Redis с приложениями Java
+# <a name="quickstart-use-azure-cache-for-redis-in-java"></a>Краткое руководство. Использование Кэша Azure для Redis с приложениями Java
 
 Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении Java с помощью клиента Redis [Jedis](https://github.com/xetorthio/jedis) для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 
@@ -152,7 +152,7 @@ mvn exec:java -D exec.mainClass=example.demo.App
 > Удаление группы ресурсов — необратимая операция, и все соответствующие ресурсы удаляются окончательно. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. Если ресурсы для размещения этого примера созданы в имеющейся группе ресурсов, содержащей ресурсы, которые следует сохранить, можно удалить каждый ресурс отдельно в соответствующих колонках вместо удаления группы ресурсов.
 >
 
-1. Войдите в портал [Azure](https://portal.azure.com) и выберите**Группы ресурсов**.
+1. Войдите в портал [Azure](https://portal.azure.com) и выберите **Группы ресурсов**.
 
 1. Введите имя группы ресурсов в текстовое поле **Фильтровать по имени**. В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов выберите **...** , а затем **Удалить группу ресурсов**.
 

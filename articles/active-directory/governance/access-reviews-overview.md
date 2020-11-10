@@ -12,17 +12,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.subservice: compliance
-ms.date: 09/08/2020
+ms.date: 10/29/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.custom: contperfq1
-ms.openlocfilehash: b454ced085ec3d73f3ca0f761abb6c5de44244ab
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 3f52b8d4e56ec854f93940ea77f09c3dff1d362e
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89594345"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93096008"
 ---
 # <a name="what-are-azure-ad-access-reviews"></a>Что собой представляют проверки доступа Azure AD?
 
@@ -81,7 +81,7 @@ Azure AD позволяет работать вместе с коллегами
 
 Лицензии Azure AD Premium P2 **не** требуются для пользователей с ролями глобального администратора или администратора пользователей, которые настраивают проверки доступа и параметры или применяют решения из проверок.
 
-Каждая платная лицензия Azure AD Premium P2, которая присваивается пользователям из вашей организации, позволяет пригласить с помощью Azure Active Directory B2B до пяти гостевых пользователей в пределах квоты внешних пользователей. Эти гостевые пользователи также могут использовать функции Azure AD Premium P2. Дополнительные сведения см. в статье [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](../external-identities/licensing-guidance.md).
+Доступ для гостевых пользователей Azure AD предоставляется на основе модели выставления счетов "ежемесячно активный пользователь" (MAU), которая заменяет модель выставления счетов в соотношении 1:5. Дополнительные сведения см. в статье [Модель выставления счетов для внешних удостоверений Azure AD](../external-identities/external-identities-pricing.md).
 
 Дополнительные сведения о лицензиях см. в статье [Назначение или удаление лицензий с помощью портала Azure Active Directory](../fundamentals/license-users-groups.md).
 

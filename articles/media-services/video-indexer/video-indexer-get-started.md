@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: quickstart
-ms.date: 10/19/2020
+ms.date: 10/30/2020
 ms.author: juliako
-ms.openlocfilehash: 6b154db25f1f13b60e4110d1b1866308ee952487
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 9ad004f65335d79205cbaddaa190b92a19c327d5
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219796"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93147289"
 ---
 # <a name="quickstart-how-to-sign-up-and-upload-your-first-video"></a>Краткое руководство. Как зарегистрироваться и отправить видео
 
@@ -27,8 +27,10 @@ ms.locfileid: "92219796"
 
 Чтобы начать разработку с помощью Индексатора видео, откройте веб-сайт службы [Индексатор видео](https://www.videoindexer.ai/) и зарегистрируйтесь на нем.
 
+Как только вы начнете использовать Индексатор видео, все сохраненные данные и переданное содержимое будут шифроваться при хранении с помощью управляемого ключа Майкрософт.
+
 > [!NOTE]
-> Как только вы начнете использовать Индексатор видео, все сохраненные данные и переданное содержимое будут шифроваться при хранении с помощью управляемого ключа Майкрософт.
+> См. раздел [Планируемые изменения в аутентификации на веб-сайте Индексатора видео](release-notes.md#planned-video-indexer-website-authenticatication-changes).
 
 ## <a name="upload-a-video-using-the-video-indexer-website"></a>Отправка видео с помощью веб-сайта Индексатора видео
 
@@ -49,12 +51,12 @@ ms.locfileid: "92219796"
 1. После отправки видео Индексатор видео запускает индексирование и анализ видео. Будут отображаться сведения о ходе выполнения. 
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/video-indexer-get-started/progress.png" alt-text="Передача":::
+    > :::image type="content" source="./media/video-indexer-get-started/progress.png" alt-text="Ход отправки":::
 1. Когда Индексатор видео завершит анализ, вы получите сообщение электронной почты, содержащее ссылку на ваше видео и краткое описание того, что в нем обнаружено. Например: люди, произнесенные и записанные слова, темы и именованные сущности.
 1. Позднее вы сможете найти видео в списке библиотек и выполнять различные операции. Например: поиск, повторное индексирование, изменение.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/video-indexer-get-started/uploaded.png" alt-text="Передача":::
+    > :::image type="content" source="./media/video-indexer-get-started/uploaded.png" alt-text="Передаваемые данные отправлены":::
  
 ## <a name="see-also"></a>См. также статью
 

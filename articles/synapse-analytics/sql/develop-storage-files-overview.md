@@ -1,6 +1,6 @@
 ---
-title: Доступ к файлам в хранилище в SQL по запросу (предварительная версия)
-description: Узнайте, как запрашивать файлы хранилища с помощью ресурсов SQL по запросу (предварительная версия) в Synapse SQL
+title: Доступ к файлам хранилища в бессерверном пуле SQL (предварительная версия)
+description: В этой статье описывается, как отправлять запросы к файлам хранилища с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8884f62ba015cc4b33b75a133f21264dac6430e5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 73a5414a979742c4a7df16dcd2a5edda3748abef
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91288993"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93315939"
 ---
-# <a name="access-external-storage-in-synapse-sql-on-demand"></a>Доступ к внешнему хранилищу в Synapse SQL (по запросу)
+# <a name="access-external-storage-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Доступ к внешнему хранилищу с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics
 
-В этом документе описывается, как пользователь может считывать данные из файлов, хранящихся в службе хранилища Azure, в Synapse SQL (по запросу). Пользователи могут обращаться к хранилищу с помощью следующих средств:
+В этом документе описывается, как пользователи могут считывать данные из файлов, хранящихся в службе хранилища Azure в бессерверном пуле SQL. Пользователи могут обращаться к хранилищу с помощью следующих средств:
 
 - [OPENROWSET](develop-openrowset.md) — функция, которая позволяет выполнять специальные запросы к файлам в службе хранилища Azure.
 - [Внешняя таблица](develop-tables-external-tables.md) — предопределенная структура данных, созданная на основе набора внешних файлов.
@@ -27,7 +27,7 @@ ms.locfileid: "91288993"
 
 ## <a name="query-files-using-openrowset"></a>Запрашивание файлов с помощью OPENROWSET
 
-С помощью функции OPENROWSET пользователи могут запрашивать внешние файлы в службе хранилища Azure, если у них есть доступ к хранилищу. Пользователь, подключенный к конечной точке Synapse SQL по запросу, должен использовать следующий запрос для чтения содержимого файлов в службе хранилища Azure:
+С помощью функции OPENROWSET пользователи могут запрашивать внешние файлы в службе хранилища Azure, если у них есть доступ к хранилищу. Пользователь, подключенный к бессерверному пулу SQL, должен использовать следующий запрос для чтения содержимого файлов в службе хранилища Azure:
 
 ```sql
 SELECT * FROM

@@ -1,6 +1,6 @@
 ---
-title: Импорт и экспорт данных между пулами Spark (предварительная версия) и пулами SQL
-description: В этой статье содержатся сведения об использовании настраиваемого соединителя для перемещения данных между пулами SQL и пулами Spark (предварительной версии).
+title: Импорт и экспорт данных между бессерверными пулами Apache Spark (предварительная версия) и пулами SQL
+description: В этой статье содержатся сведения об использовании настраиваемого соединителя для перемещения данных между выделенными пулами SQL и бессерверными пулами Spark (предварительная версия).
 services: synapse-analytics
 author: euangMS
 ms.service: synapse-analytics
@@ -9,22 +9,22 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: prgomata
 ms.reviewer: euang
-ms.openlocfilehash: 11f73d2becb40b800c49afe0cd58f56953f8d42d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: ee82fbaa9687e064747908600c7e5c9017f8f1a9
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91259924"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93323900"
 ---
 # <a name="introduction"></a>Введение
 
-Соединитель Spark для Synapse SQL в службе Azure Synapse разработан для эффективной передачи данных между пулом Spark (предварительной версии) и пулами SQL в Azure Synapse. Соединитель Spark для Synapse SQL в службе Azure Synapse работает только в пулах SQL и не поддерживает SQL по запросу.
+Соединитель Spark для Synapse SQL в службе Azure Synapse разработан для эффективной передачи данных между бессерверными пулами Apache Spark (предварительная версия) и пулами SQL в Azure Synapse. Соединитель Spark для Synapse SQL в службе Azure Synapse работает только в выделенных пулах SQL и не поддерживает бессерверный пул SQL.
 
 ## <a name="design"></a>Конструирование
 
 Передача данных между пулами Spark и SQL может выполняться с помощью JDBC. Но при наличии двух распределенных систем, таких как пулы Spark и SQL, как правило, JDBC является узким местом при последовательной передаче данных.
 
-Соединитель Spark для Synapse SQL в службе Azure Synapse реализует источник данных для Apache Spark. Он использует Azure Data Lake Storage 2-го поколения и PolyBase в пулах SQL для эффективной передачи данных между кластером Spark и экземпляром Synapse SQL.
+Соединитель Spark для Synapse SQL в службе Azure Synapse реализует источник данных для Apache Spark. Он использует Azure Data Lake Storage 2-го поколения и PolyBase в выделенных пулах SQL для эффективной передачи данных между кластером Spark и экземпляром Synapse SQL.
 
 ![Архитектура соединителя](./media/synapse-spark-sqlpool-import-export/arch1.png)
 
@@ -32,7 +32,7 @@ ms.locfileid: "91259924"
 
 Проверка подлинности между системами упрощена в Azure Synapse Analytics. Служба токенов подключается к Azure Active Directory, чтобы получить маркеры безопасности, используемые при доступе к учетной записи хранения или к серверу хранилища данных.
 
-По этой причине нет необходимости создавать учетные данные или указывать их в API соединителя, если аутентификация AAD настроена для учетной записи хранения и сервера хранилища данных. В противном случае можно указать проверку подлинности SQL. Дополнительные сведения см. в разделе [Использование](#usage).
+По этой причине нет необходимости создавать учетные данные или указывать их в API соединителя, если аутентификация Azure AD настроена для учетной записи хранения и сервера хранилища данных. В противном случае можно указать проверку подлинности SQL. Дополнительные сведения см. в разделе [Использование](#usage).
 
 ## <a name="constraints"></a>Ограничения
 
@@ -67,7 +67,7 @@ EXEC sp_addrolemember 'db_exporter',[mike@contoso.com]
 
 Инструкции импорта необязательны, так как они уже импортированы для интерфейса записной книжки.
 
-### <a name="transfer-data-to-or-from-a-sql-pool-attached-with-the-workspace"></a>Передача данных в пул SQL, подключенный к рабочей области, и из него
+### <a name="transfer-data-to-or-from-a-dedicated-sql-pool-attached-within-the-workspace"></a>Передача данных в выделенный пул SQL, подключенный к рабочей области, и из него
 
 > [!NOTE]
 > **Импорт в интерфейсе записной книжки не требуется.**
@@ -91,12 +91,12 @@ val df = spark.read.sqlanalytics("<DBName>.<Schema>.<TableName>")
 df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
-API записи создает таблицу в пуле SQL, а затем вызывает Polybase для загрузки данных.  Таблица не должна существовать в пуле SQL, или будет возвращена ошибка с информацией о том, что объект с определенным именем уже существует.
+API записи создает таблицу в выделенном пуле SQL, а затем вызывает Polybase для загрузки данных.  Таблица не должна существовать в выделенном пуле SQL, или будет возвращена ошибка с информацией о том, что объект с определенным именем уже существует.
 
 Значения TableType
 
-- Constants.INTERNAL — управляемая таблица в пуле SQL
-- Constants.EXTERNAL — внешняя таблица в пуле SQL
+- Constants.INTERNAL — управляемая таблица в выделенном пуле SQL
+- Constants.EXTERNAL — внешняя таблица в выделенном пуле SQL
 
 Управляемая пулом SQL таблица
 
@@ -106,10 +106,10 @@ df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.INTERNAL)
 
 Внешняя таблица пула SQL
 
-Для записи во внешнюю таблицу пула SQL в пуле SQL должны существовать EXTERNAL DATA SOURCE и EXTERNAL FILE FORMAT.  См. дополнительные сведения о [создании внешнего источника данных](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и о [форматах внешних файлов](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в пуле SQL.  Ниже приведены примеры создания внешнего источника данных и форматов внешних файлов в пуле SQL.
+Для записи во внешнюю таблицу выделенного пула SQL в выделенном пуле должны существовать EXTERNAL DATA SOURCE и EXTERNAL FILE FORMAT.  Дополнительные сведения о [создании внешнего источника данных](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и о [форматах внешних файлов](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) см. в выделенном пуле SQL.  Ниже приведены примеры создания внешнего источника данных и форматов внешних файлов в выделенном пуле SQL.
 
 ```sql
---For an external table, you need to pre-create the data source and file format in SQL pool using SQL queries:
+--For an external table, you need to pre-create the data source and file format in dedicated SQL pool using SQL queries:
 CREATE EXTERNAL DATA SOURCE <DataSourceName>
 WITH
   ( LOCATION = 'abfss://...' ,
@@ -134,7 +134,7 @@ df.write.
 
 ```
 
-### <a name="if-you-transfer-data-to-or-from-a-sql-pool-or-database-outside-the-workspace"></a>Передача данных в пул SQL или базу данных вне рабочей области и из них
+### <a name="transfer-data-to-or-from-a-dedicated-sql-pool-or-database-outside-the-workspace"></a>Передача данных в выделенный пул SQL или базу данных вне рабочей области и из них
 
 > [!NOTE]
 > Импорт в интерфейсе записной книжки не требуется.
@@ -160,11 +160,11 @@ option(Constants.SERVER, "samplews.database.windows.net").
 sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
-### <a name="use-sql-auth-instead-of-aad"></a>Использование аутентификации SQL вместо AAD
+### <a name="use-sql-auth-instead-of-azure-ad"></a>Использование аутентификации SQL вместо Azure AD
 
 #### <a name="read-api"></a>API чтения
 
-В настоящее время соединитель не поддерживает проверку подлинности на основе маркеров безопасности для пула SQL, который находится за пределами рабочей области. Необходимо использовать проверку подлинности SQL.
+В настоящее время соединитель не поддерживает проверку подлинности на основе маркеров безопасности для выделенного пула SQL, который находится за пределами рабочей области. Необходимо использовать проверку подлинности SQL.
 
 ```scala
 val df = spark.read.
@@ -227,7 +227,7 @@ scala_df.write.sqlanalytics("sqlpool.dbo.PySparkTable", Constants.INTERNAL)
 
 - Вам нужны разрешения на установку списков управления доступом для папки synapse и всех ее вложенных папок с помощью портала Azure Чтобы установить список управления доступом для корневой папки ("/"), следуйте приведенным ниже инструкциям.
 
-- Подключение к учетной записи хранения, подключенной к рабочей области, из Обозревателя службы хранилища через AAD
+- Подключение к учетной записи хранения, подключенной к рабочей области, из Обозревателя службы хранилища через Azure AD
 - Выберите учетную запись и укажите для рабочей области URL-адрес ADLS 2-го поколения и файловую систему по умолчанию.
 - Когда учетная запись хранения появится в списке, щелкните ее правой кнопкой мыши и выберите пункт "Управление доступом".
 - Добавьте пользователя в папку "/" с правами на выполнение. Щелкните "ОК".
@@ -237,5 +237,5 @@ scala_df.write.sqlanalytics("sqlpool.dbo.PySparkTable", Constants.INTERNAL)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание пула SQL с помощью портала Azure](../../synapse-analytics/quickstart-create-apache-spark-pool-portal.md).
+- [Создание выделенного пула SQL с помощью портала Azure](../../synapse-analytics/quickstart-create-apache-spark-pool-portal.md)
 - [Создание пула Apache Spark с помощью портала Azure](../../synapse-analytics/quickstart-create-apache-spark-pool-portal.md) 

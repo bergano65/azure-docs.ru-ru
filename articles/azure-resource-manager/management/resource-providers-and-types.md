@@ -2,14 +2,14 @@
 title: Поставщики ресурсов и типы ресурсов
 description: Описывает поставщики ресурсов, которые поддерживают Azure Resource Manager. Здесь описываются их схемы, доступные версии API и регионы, в которых могут размещаться ресурсы.
 ms.topic: conceptual
-ms.date: 09/01/2020
+ms.date: 11/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8b1a9e6d539d37fb26d8fb0e3a541415dd574e9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 702836e0dc98b06ccf6e0eeb0d0f373374c4e783
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89278893"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94426465"
 ---
 # <a name="azure-resource-providers-and-types"></a>Поставщики и типы ресурсов Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "89278893"
 
 ## <a name="register-resource-provider"></a>Регистрация поставщика ресурсов
 
-Перед использованием поставщика ресурсов необходимо зарегистрировать поставщик ресурсов для подписки Azure. На этом шаге выполняется настройка подписки для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную.
+Перед использованием поставщика ресурсов необходимо зарегистрировать подписку Azure для поставщика ресурсов. Регистрация настраивает подписку для работы с поставщиком ресурсов. Некоторые поставщики ресурсов регистрируются по умолчанию. Другие поставщики ресурсов регистрируются автоматически при выполнении определенных действий. Например, при создании ресурса на портале поставщик ресурсов обычно регистрируется для вас. Для других сценариев может потребоваться вручную зарегистрировать поставщик ресурсов.
 
 В этой статье показано, как проверить состояние регистрации поставщика ресурсов и зарегистрировать его при необходимости. Необходимо иметь разрешение на выполнение `/register/action` операции для поставщика ресурсов. Разрешение включается в роли участника и владельца.
 
@@ -40,7 +40,7 @@ ms.locfileid: "89278893"
 
 Вы не можете отменить регистрацию поставщика ресурсов, если у вас по-прежнему есть типы ресурсов от этого поставщика ресурсов в вашей подписке.
 
-## <a name="azure-portal"></a>Портал Azure
+## <a name="azure-portal"></a>портал Azure;
 
 Чтобы просмотреть всех поставщиков ресурсов, а также состояние регистрации для подписки, сделайте следующее:
 
@@ -49,9 +49,9 @@ ms.locfileid: "89278893"
 
     ![выбор подписок](./media/resource-providers-and-types/select-all-services.png)
 
-3. В поле **Все службы** введите **подписка**, а затем выберите **Подписки**.
+3. В поле **Все службы** введите **подписка** , а затем выберите **Подписки**.
 4. Выберите подписку из списка подписок для просмотра.
-5. Выберите **Поставщики ресурсов**, а затем просмотрите список доступных поставщиков ресурсов.
+5. Выберите **Поставщики ресурсов** , а затем просмотрите список доступных поставщиков ресурсов.
 
     ![отображение поставщиков ресурсов](./media/resource-providers-and-types/show-resource-providers.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "89278893"
 
     ![Пункт "Все службы"](./media/resource-providers-and-types/select-resource-explorer.png)
 
-4. Разверните список **Поставщики**, щелкнув стрелку вправо.
+4. Разверните список **Поставщики** , щелкнув стрелку вправо.
 
     ![выбор поставщиков](./media/resource-providers-and-types/select-providers.png)
 
@@ -83,8 +83,6 @@ ms.locfileid: "89278893"
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
 Чтобы просмотреть всех поставщиков ресурсов в Azure, а также состояние регистрации для подписки, используйте команду ниже:
 
 ```azurepowershell-interactive
@@ -101,6 +99,12 @@ Microsoft.ClassicNetwork         Registered
 Microsoft.ClassicStorage         Registered
 Microsoft.CognitiveServices      Registered
 ...
+```
+
+Чтобы просмотреть все зарегистрированные поставщики ресурсов для подписки, используйте:
+
+```azurepowershell-interactive
+ Get-AzResourceProvider -ListAvailable | Where-Object RegistrationState -eq "Registered" | Select-Object ProviderNamespace, RegistrationState | Sort-Object ProviderNamespace
 ```
 
 Чтобы зарегистрировать поставщик ресурсов, воспользуйтесь командой:
@@ -186,11 +190,11 @@ West US
 ...
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI;
 
 Чтобы просмотреть всех поставщиков ресурсов в Azure, а также состояние регистрации для подписки, используйте команду ниже:
 
-```azurecli
+```azurecli-interactive
 az provider list --query "[].{Provider:namespace, Status:registrationState}" --out table
 ```
 
@@ -206,9 +210,15 @@ Microsoft.CognitiveServices      Registered
 ...
 ```
 
+Чтобы просмотреть все зарегистрированные поставщики ресурсов для подписки, используйте:
+
+```azurecli-interactive
+az provider list --query "sort_by([?registrationState=='Registered'].{Provider:namespace, Status:registrationState}, &Provider)" --out table
+```
+
 Чтобы зарегистрировать поставщик ресурсов, воспользуйтесь командой:
 
-```azurecli
+```azurecli-interactive
 az provider register --namespace Microsoft.Batch
 ```
 
@@ -216,7 +226,7 @@ az provider register --namespace Microsoft.Batch
 
 Чтобы просмотреть сведения для конкретного поставщика ресурсов, используйте команду ниже:
 
-```azurecli
+```azurecli-interactive
 az provider show --namespace Microsoft.Batch
 ```
 
@@ -235,7 +245,7 @@ az provider show --namespace Microsoft.Batch
 
 Чтобы просмотреть типы ресурсов для поставщика ресурсов, используйте команду ниже:
 
-```azurecli
+```azurecli-interactive
 az provider show --namespace Microsoft.Batch --query "resourceTypes[*].resourceType" --out table
 ```
 
@@ -254,7 +264,7 @@ locations/quotas
 
 Чтобы получить список доступных версий API для типа ресурса, используйте следующую команду:
 
-```azurecli
+```azurecli-interactive
 az provider show --namespace Microsoft.Batch --query "resourceTypes[?resourceType=='batchAccounts'].apiVersions | [0]" --out table
 ```
 
@@ -274,7 +284,7 @@ Result
 
 Чтобы получить список поддерживаемых расположений для типа ресурса, используйте следующую команду:
 
-```azurecli
+```azurecli-interactive
 az provider show --namespace Microsoft.Batch --query "resourceTypes[?resourceType=='batchAccounts'].locations | [0]" --out table
 ```
 
@@ -290,7 +300,7 @@ West US
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о создании шаблонов диспетчер ресурсов см. в разделе [Создание шаблонов Azure Resource Manager](../templates/template-syntax.md). 
 * Схемы шаблонов поставщиков ресурсов см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).

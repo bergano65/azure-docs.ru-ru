@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 08/03/2020
 ms.author: matjazl
-ms.openlocfilehash: 66ea8692fd3d93b8de9740e145404a8db50ebfdf
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 8f4d16931f09f94af81dd4e0f178ce6e0f990881
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93398102"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94426210"
 ---
 # <a name="frequently-asked-questions-about-the-azure-api-for-fhir"></a>Часто задаваемые вопросы об API Azure для FHIR
 
@@ -29,6 +29,9 @@ ms.locfileid: "93398102"
 ### <a name="what-identity-provider-do-you-support"></a>Какой поставщик удостоверений поддерживается?
 
 В настоящее время в качестве поставщика удостоверений поддерживается Microsoft Azure Active Directory.
+
+### <a name="what-is-the-recovery-point-objective-rpo-for-the-azure-api-for-fhir"></a>Что такое Целевая точка восстановления (RPO) для API Azure для FHIR?
+API Azure для FHIR поддерживается Cosmos DB как наш поставщик сохраняемости. По этой причине значение RPO для службы равно [Cosmos DB (один регион)](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) и < 240 минут.
 
 ### <a name="what-fhir-version-do-you-support"></a>Какая версия FHIR поддерживается?
 

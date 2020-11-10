@@ -1,6 +1,6 @@
 ---
-title: Копирование Synapse Link для данных Azure Cosmos DB в пул SQL с помощью Apache Spark
-description: Загрузка данных в кадр данных Spark, их курирование и загрузка в таблицу пулов SQL
+title: Копирование Synapse Link для данных Azure Cosmos DB в выделенный пул SQL с помощью Apache Spark
+description: Загрузка данных в кадр данных Spark, их курирование и загрузка в таблицу выделенного пула SQL
 services: synapse-analytics
 author: ArnoMicrosoft
 ms.service: synapse-analytics
@@ -9,30 +9,30 @@ ms.subservice: synapse-link
 ms.date: 08/10/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 409f1ecee5ccf42a0168d500b40337366e07bfc0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 13891f9614e658be39adbb69fed1503a0c66d5e4
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91287856"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309221"
 ---
-# <a name="copy-data-from-azure-cosmos-db-into-a-sql-pool-using-apache-spark"></a>Копирование данных из Azure Cosmos DB в пул SQL с помощью Apache Spark
+# <a name="copy-data-from-azure-cosmos-db-into-a-dedicated-sql-pool-using-apache-spark"></a>Копирование данных из Azure Cosmos DB в выделенный пул SQL с помощью Apache Spark
 
 С помощью Azure Synapse Link для Azure Cosmos DB пользователи могут запускать аналитику почти в реальном времени по операционным данным в Azure Cosmos DB. Однако в некоторых ситуациях определенные данные необходимо агрегировать и обогащать для обслуживания пользователей хранилища данных. Для курирования и экспорта данных Synapse Link достаточно всего нескольких ячеек в записной книжке.
 
 ## <a name="prerequisites"></a>Предварительные требования
 * [Подготовьте рабочую область Synapse](../quickstart-create-workspace.md), используя:
-    * [Пул Spark](../quickstart-create-apache-spark-pool-studio.md)
-    * [Пул SQL](../quickstart-create-sql-pool-studio.md)
+    * [бессерверный пул Apache Spark;](../quickstart-create-apache-spark-pool-studio.md)
+    * [выделенный пул SQL.](../quickstart-create-sql-pool-studio.md)
 * [Подготовьте учетную запись Cosmos DB, используя контейнер HTAP с данными](../../cosmos-db/configure-synapse-link.md)
 * [Подключите контейнер HTAP Azure Cosmos DB к рабочей области](./how-to-connect-synapse-link-cosmos-db.md)
-* [Настройте надлежащим образом импорт данных в пул SQL из Spark](../spark/synapse-spark-sql-pool-import-export.md)
+* [Настройте надлежащим образом импорт данных в выделенный пул SQL из Spark.](../spark/synapse-spark-sql-pool-import-export.md)
 
 ## <a name="steps"></a>Шаги
 В этом руководстве показано, как подключиться к аналитическому хранилищу. Описанные здесь действия не влияют на хранилище транзакций (для их выполнения единицы запросов не потребляются). Мы выполним следующие действия:
 1. Считывание контейнера HTAP Cosmos DB в кадр данных Spark
 2. Агрегирование результатов в новый кадр данных
-3. Прием данных в пуле SQL
+3. Прием данных в выделенный пул SQL
 
 [![Передача из Spark в SQL 1](../media/synapse-link-spark-to-sql/synapse-spark-to-sql.png)](../media/synapse-link-spark-to-sql/synapse-spark-to-sql.png#lightbox)
 
@@ -50,7 +50,7 @@ ms.locfileid: "91287856"
 * weekStarting: long (nullable = true)
 * _etag: string (nullable = true)
 
-Для отчетности мы будем агрегировать продажи (*quantity*, *revenue* (price x quantity) по *productCode* и *weekStarting*. Наконец, мы экспортируем эти данные в таблицу пула SQL с именем **dbo.productsales**.
+Для отчетности мы будем агрегировать продажи ( *quantity* , *revenue* (price x quantity) по *productCode* и *weekStarting*. Наконец, мы экспортируем эти данные в таблицу выделенного пула SQL с именем **dbo.productsales**.
 
 ## <a name="configure-a-spark-notebook"></a>Настройка записной книжки Spark
 Создайте записную книжку Spark, используя в качестве основного языка с Scala на Spark (Scala). Мы используем для сеанса заданный по умолчанию параметр записной книжки.
@@ -67,7 +67,7 @@ val df_olap = spark.read.format("cosmos.olap").
 
 ## <a name="aggregate-the-results-in-a-new-dataframe"></a>Агрегирование результатов в новый кадр данных
 
-Во второй ячейке будет выполнятся преобразование и статистические вычисления, которые необходимо выполнить для нового кадра данных, прежде чем загружать его в базу данных пула SQL.
+Во второй ячейке будут выполнятся преобразование и статистические вычисления, которые необходимо выполнить для нового кадра данных до его загрузки в базу данных выделенного пула SQL.
 
 ```java
 // Select relevant columns and create revenue
@@ -77,12 +77,12 @@ val df_olap_aggr = df_olap_step1.groupBy("productCode","weekStarting").agg(sum("
     withColumn("AvgPrice",col("Sum_revenue")/col("Sum_quantity"))
 ```
 
-## <a name="load-the-results-into-a-sql-pool"></a>Загрузка результатов в пул SQL
+## <a name="load-the-results-into-a-dedicated-sql-pool"></a>Загрузка результатов в выделенный пул SQL
 
-В третьей ячейке данные загружаются в пул SQL. При этом автоматически создается временная внешняя таблица, внешний источник данных и формат внешнего файла, которые будут удалены после завершения задания.
+В третьей ячейке данные загружаются в выделенный пул SQL. При этом автоматически создается временная внешняя таблица, внешний источник данных и формат внешнего файла, которые будут удалены после завершения задания.
 
 ```java
-df_olap_aggr.write.sqlanalytics("arnaudpool.dbo.productsales", Constants.INTERNAL)
+df_olap_aggr.write.sqlanalytics("userpool.dbo.productsales", Constants.INTERNAL)
 ```
 
 ## <a name="query-the-results-with-sql"></a>Запрос результатов с помощью SQL

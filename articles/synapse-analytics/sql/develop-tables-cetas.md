@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 93f23cdcfb3fb7107e3b1838b48b3e58ccc2d028
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d0805aaf694f1569e613ab74135c95e454adbdc0
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91288772"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93315069"
 ---
 # <a name="cetas-with-synapse-sql"></a>CETAS в SQL Synapse
 
-Вы можете использовать инструкцию CREATE EXTERNAL TABLE AS SELECT (CETAS) в пуле SQL или SQL по запросу (предварительная версия) для выполнения следующих задач:  
+Вы можете использовать CREATE EXTERNAL TABLE AS SELECT (CETAS) в выделенных пулах SQL или бессерверных пулах SQL (предварительная версия) для выполнения следующих задач:  
 
 - Создание внешней таблицы
 - Параллельный экспорт результатов инструкции Transact-SQL SELECT в:
@@ -27,13 +27,13 @@ ms.locfileid: "91288772"
   - Большой двоичный объект хранилища Azure
   - Azure Data Lake Storage 2-го поколения
 
-## <a name="cetas-in-sql-pool"></a>CETAS в пуле SQL
+## <a name="cetas-in-dedicated-sql-pool"></a>Использование CETAS в выделенном пуле SQL
 
-Дополнительные сведения о пуле SQL, использовании CETAS и синтаксисе см. в статье [CREATE EXTERNAL TABLE AS SELECT](/sql/t-sql/statements/create-external-table-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Кроме того, инструкции по CTAS с использованием пула SQL см. в статье [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+Дополнительные сведения о выделенном пуле SQL, а также использовании и синтаксисе CETAS см. в разделе [CREATE EXTERNAL TABLE AS SELECT](/sql/t-sql/statements/create-external-table-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Инструкции по использованию CTAS в выделенным пуле SQL см. в разделе [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
-## <a name="cetas-in-sql-on-demand"></a>CETAS в SQL по запросу
+## <a name="cetas-in-serverless-sql-pool"></a>Использование CETAS в бессерверном пуле SQL
 
-При использовании SQL по запросу CETAS применяется для создания внешней таблицы и экспорта результатов запроса в Azure Storage Blob или Azure Data Lake Storage 2-го поколения.
+При использовании бессерверного пула SQL с помощью CETAS можно создать внешнюю таблицу и экспортировать результаты запроса в Azure Storage Blob или Azure Data Lake Storage 2-го поколения.
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -56,7 +56,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
 *[ [ *database_name* . [ *schema_name* ] . ] | *schema_name* . ] *table_name**
 
-Имя создаваемой таблицы, состоящее из одной, двух или трех частей. Для внешней таблицы SQL по запросу хранит только метаданные таблицы. Никакие данные не перемещаются и не хранятся в SQL по запросу.
+Имя создаваемой таблицы, состоящее из одной, двух или трех частей. При использовании внешней таблицы бессерверный пул SQL хранит только метаданные таблицы. Сами данные не перемещаются в бессерверный пул SQL и не хранятся там.
 
 LOCATION = *'path_to_folder'*
 
