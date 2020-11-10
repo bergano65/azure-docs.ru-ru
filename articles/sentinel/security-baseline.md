@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 09/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f4c6bf8b203f9721436ab3dde1f80837df92234d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: b1fbedf45514455f0e19461e5ee0558bb2914c58
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518268"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94427723"
 ---
 # <a name="azure-security-baseline-for-azure-sentinel"></a>Базовый план безопасности Azure для Azure Sentinel
 
-Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](../security/benchmarks/overview.md) к Azure Sentinel. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, применимым к Azure Sentinel. **Элементы управления** , неприменимые к Azure Sentinel, были исключены. Чтобы узнать, как Azure Sentinel полностью сопоставляется с тестовым показателем безопасности Azure, ознакомьтесь с [полным базовым файлом сопоставления для Azure Sentinel](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](../security/benchmarks/overview.md) к Azure Sentinel. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, применимым к Azure Sentinel. **Элементы управления** , неприменимые к Azure Sentinel, были исключены. Чтобы узнать, как Azure Sentinel полностью сопоставляется с тестовым показателем безопасности Azure, ознакомьтесь с [полным базовым файлом сопоставления для Azure Sentinel](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 ## <a name="network-security"></a>Безопасность сети
 
@@ -27,9 +27,9 @@ ms.locfileid: "92518268"
 
 **Руководство**. невозможно связать виртуальную сеть, подсеть или группу безопасности сети непосредственно с Azure Sentinel. Однако вы можете включить частную конечную точку Azure для Log Analytics рабочей области, связанной с Sentinel Azure, чтобы ограничить обмен данными с частными сетями.
 
-**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
@@ -41,9 +41,9 @@ ms.locfileid: "92518268"
 
 - [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
-**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
@@ -55,9 +55,9 @@ ms.locfileid: "92518268"
 
 - [Включение аудита в Azure Sentinel](resources.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "92518268"
 
 - [Включение аудита в Azure Sentinel](resources.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
 **Ответственность**. Customer
 
@@ -75,9 +75,9 @@ ms.locfileid: "92518268"
 
 - [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
 
@@ -85,9 +85,9 @@ ms.locfileid: "92518268"
 
 - [Включение аудита в Azure Sentinel](resources.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
@@ -95,9 +95,9 @@ ms.locfileid: "92518268"
 
 - [Включение аудита в Azure Sentinel](resources.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
@@ -115,9 +115,9 @@ ms.locfileid: "92518268"
 
 - [Настройка Azure RBAC для книг](quickstart-get-visibility.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -133,9 +133,9 @@ ms.locfileid: "92518268"
 
 - [Использование Политики Azure](../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="34-use-azure-active-directory-single-sign-on-sso"></a>3,4. Использование единого входа Azure Active Directory (SSO)
 
@@ -145,9 +145,9 @@ ms.locfileid: "92518268"
 
 - [Общие сведения об использовании единого входа в Azure AD](../active-directory/manage-apps/what-is-single-sign-on.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directory доступа
 
@@ -157,9 +157,9 @@ ms.locfileid: "92518268"
 
 - [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="36-use-secure-azure-managed-workstations-for-administrative-tasks"></a>3,6: используйте защищенные рабочие станции, управляемые Azure, для административных задач
 
@@ -169,9 +169,9 @@ ms.locfileid: "92518268"
 
 - [Планирование развертывания облачной службы Многофакторной идентификации Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: журналы и оповещения о подозрительных действиях учетных записей администраторов
 
@@ -183,9 +183,9 @@ ms.locfileid: "92518268"
 
 - [Общие сведения об обнаружении рисков в Azure AD](/azure/active-directory/reports-monitoring/concept-risk-events)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
 
@@ -193,9 +193,9 @@ ms.locfileid: "92518268"
 
 - [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
@@ -203,9 +203,9 @@ ms.locfileid: "92518268"
 
 - [Создание и настройка нового клиента Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
 
@@ -215,9 +215,9 @@ ms.locfileid: "92518268"
 
 - [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: монитор пытается получить доступ к отключенным учетным данным
 
@@ -231,9 +231,9 @@ ms.locfileid: "92518268"
 
 - [Подключение к Azure Sentinel](quickstart-onboard.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="312-alert-on-account-sign-in-behavior-deviation"></a>3,12: предупреждение об отклонении при входе в учетную запись
 
@@ -247,11 +247,11 @@ ms.locfileid: "92518268"
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13. Предоставление корпорации Майкрософт доступа к соответствующим данным клиентов в рамках сценариев поддержки
 
-**Руководство**: Сейчас недоступно; Защищенное хранилище еще не поддерживается для Sentinel или Log Analytics рабочей области Azure.
+**Руководство** : Сейчас недоступно; Защищенное хранилище еще не поддерживается для Sentinel или Log Analytics рабочей области Azure.
 
 - [Список поддерживаемых служб защищенного хранилища](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
@@ -269,9 +269,9 @@ ms.locfileid: "92518268"
 
 - [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -281,9 +281,9 @@ ms.locfileid: "92518268"
 
 - [Создание групп управления](/azure/governance/management-groups/create)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4. Шифрование любой конфиденциальной информации при передаче
 
@@ -291,9 +291,9 @@ ms.locfileid: "92518268"
 
 - [Подключение внешнего решения с помощью общего формата событий](connect-common-event-format.md)
 
-**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+**Мониторинг центра безопасности Azure** : Сейчас это недоступно
 
-**Ответственность**: Совмещаемая блокировка
+**Ответственность** : Совмещаемая блокировка
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5. Использование средства активного обнаружения для распознавания конфиденциальных данных
 
@@ -303,9 +303,9 @@ ms.locfileid: "92518268"
 
 - [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Совмещаемая блокировка
+**Ответственность** : Совмещаемая блокировка
 
 ### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
 
@@ -333,21 +333,21 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Настройка Azure RBAC для книг](quickstart-get-visibility.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
 
 **Руководство**. для шифрования неактивных данных в рабочих областях Azure Sentinel и Azure Monitor log Analytics используются ключи, управляемые корпорацией Майкрософт. Возможность использовать собственный ключ пока не полностью поддерживается для Sentinel, но будет в ближайшем будущем.
 
-- [Обзор ключа, управляемого клиентом Azure Monitor](../azure-monitor/platform/customer-managed-keys.md#customer-managed-key-cmk-overview)
+- [Обзор ключа, управляемого клиентом Azure Monitor](../azure-monitor/platform/customer-managed-keys.md#customer-managed-key-overview)
 
 - [Общие сведения о ключах, управляемых клиентом, в Azure Sentinel (Предварительная версия)](customer-managed-keys.md)
 
-**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+**Мониторинг центра безопасности Azure** : Сейчас это недоступно
 
-**Ответственность**: Совмещаемая блокировка
+**Ответственность** : Совмещаемая блокировка
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
@@ -355,9 +355,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Включение аудита в Azure Sentinel](resources.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
@@ -375,9 +375,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
 
@@ -385,9 +385,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
@@ -404,9 +404,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
@@ -418,9 +418,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9. Использование только утвержденных служб Azure
 
@@ -433,9 +433,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: ограничьте возможность пользователей работать с Azure Resource Manager
 
@@ -445,7 +445,7 @@ Log Analytics роли включают Log Analytics участника и ср
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
@@ -459,9 +459,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
 
@@ -471,9 +471,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Сведения о действии Политик Azure](../governance/policy/concepts/effects.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 
@@ -485,7 +485,7 @@ Log Analytics роли включают Log Analytics участника и ср
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
 
@@ -493,9 +493,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
 
@@ -503,9 +503,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="711-manage-azure-secrets-securely"></a>7.11. Безопасное управление секретами Azure
 
@@ -517,9 +517,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](/azure/key-vault/managed-identity)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
 
@@ -527,9 +527,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
@@ -541,9 +541,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 Вы отвечаете за предварительную проверку содержимого, которое передается в Нерасчетные ресурсы Azure, в том числе Log Analytics рабочей области. Корпорация Майкрософт не может получить доступ к данным клиентов, поэтому не может проводить проверку содержимого клиентов от вредоносных программ от вашего имени.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="data-recovery"></a>Восстановление данных
 
@@ -561,9 +561,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Общие сведения о ключах, управляемых клиентом, в Azure Sentinel](customer-managed-keys.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
@@ -581,9 +581,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Клиент также может воспользоваться руководством по обработке инцидентов безопасности компьютера NIST, чтобы помочь в создании собственного плана реагирования на инциденты.](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
@@ -591,9 +591,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 Кроме того, четко помечайте подписки (для устар. производственной, непроизводственной) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure.
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
@@ -603,7 +603,7 @@ Log Analytics роли включают Log Analytics участника и ср
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
@@ -611,9 +611,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
@@ -623,9 +623,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Как выполнить потоковую передачу оповещений в Azure Sentinel](connect-azure-security-center.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
@@ -633,9 +633,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
@@ -649,9 +649,9 @@ Log Analytics роли включают Log Analytics участника и ср
 
 - [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Совмещаемая блокировка
+**Ответственность** : Совмещаемая блокировка
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

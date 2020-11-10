@@ -4,12 +4,12 @@ description: Параметры конфигурации для Azure Monitor Ap
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 6edb77ec21b4f82f8398312fdff24aa5ea207771
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: b703a708af564b9dafc8c1409333a2cfed6d2653
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94381037"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94427706"
 ---
 # <a name="configuration-options-for-azure-monitor-application-insights-java"></a>Параметры конфигурации для Azure Monitor Application Insights Java
 
@@ -178,9 +178,9 @@ ms.locfileid: "94381037"
 
 Дополнительные сведения см. в документации по [обработчику данных телеметрии](./java-standalone-telemetry-processors.md) .
 
-## <a name="autocollected-logging"></a>Ведение журнала с автосбором
+## <a name="auto-collected-logging"></a>Автоматическое собираемое ведение журнала
 
-Log4j, Logback и Java. util. Logging устанавливаются в автоматическом инструментировании, а ведение журнала выполняется с помощью этих платформ ведения журналов.
+Log4j, Logback и Java. util. Logging устанавливаются в автоматическом инструментировании. ведение журнала выполняется с помощью этих платформ ведения журналов.
 
 По умолчанию ведение журнала выполняется только в том случае, если ведение журнала выполняется на `INFO` уровне или выше.
 
@@ -213,13 +213,13 @@ Log4j, Logback и Java. util. Logging устанавливаются в авто
 | TRACE (или FINEST) | TRACE  | TRACE   | FINEST  |
 | ALL               | ALL    | ALL     | ALL     |
 
-## <a name="autocollected-micrometer-metrics-including-spring-boot-actuator-metrics"></a>Автособранные метрики Микрометер (включая метрики загрузчика пружины)
+## <a name="auto-collected-micrometer-metrics-including-spring-boot-actuator-metrics"></a>Автособираемые метрики Микрометер (включая метрики загрузчика пружины)
 
-Если приложение использует [микрометер](https://micrometer.io), то метрики, отправляемые в глобальный реестр микрометер, будут собираются.
+Если приложение использует [микрометер](https://micrometer.io), то метрики, отправляемые в глобальный реестр микрометер, будут собираться в автоматическом виде.
 
-Кроме того, если приложение использует [пружинный загрузчик](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html), то метрики, настроенные с помощью пружинного выключателя, также будут использоваться для автосбора.
+Кроме того, если приложение использует [пружинный выключатель загрузки](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html), то метрики, настроенные с помощью пружинного выключателя, также будут собираться в автоматическом виде.
 
-Чтобы отключить автоколлекцию метрик Микрометер (включая метрики выключателя пружины), выполните следующие действия.
+Чтобы отключить автоматическую коллекцию метрик Микрометер (включая метрики выключателя пружины), выполните следующие действия.
 
 > [!NOTE]
 > Плата за настраиваемые метрики взимается отдельно и может привести к дополнительным затратам. Обязательно ознакомьтесь с подробными [сведениями о ценах](https://azure.microsoft.com/pricing/details/monitor/). Чтобы отключить метрики Микрометер и пружины, добавьте приведенную ниже конфигурацию в файл конфигурации.
