@@ -11,14 +11,14 @@ ms.workload: identity
 ms.date: 01/31/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 8c01724340df7e0efffe9847b49e1fe9d444ee01
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e63a948260863c93a92e4241044be5e0baf8afca
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91257628"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94443268"
 ---
-# <a name="scenario-daemon-application-that-calls-web-apis"></a>Сценарий: управляющее приложение, вызывающее веб-API
+# <a name="scenario-daemon-application-that-calls-web-apis"></a>Scenario: Создание управляющей программы, которая вызывает веб-API
 
 Изучите все, что нужно для создания управляющего приложения, вызывающего веб-API.
 
@@ -59,7 +59,6 @@ ms.locfileid: "91257628"
 
 [!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Приложение управляющей программы — регистрация приложения](./scenario-daemon-app-registration.md)
+Перейдите к следующей статье в этом сценарии — [Регистрация приложения](./scenario-daemon-app-registration.md).

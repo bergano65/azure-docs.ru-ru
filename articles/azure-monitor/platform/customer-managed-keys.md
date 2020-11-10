@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 11/09/2020
-ms.openlocfilehash: 7f62aade114613261a22a818ab47e096eb16084b
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 62621a36955808ec3f2c796681fe660e6e8524bc
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427978"
+ms.locfileid: "94443387"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -27,9 +27,10 @@ Azure Monitor гарантирует, что все данные и сохран
 
 Возможность использования ключа, управляемого клиентом, доставляется в выделенных кластерах Log Analytics. Она позволяет защищать данные с помощью элемента управления [защищенным хранилищем](#customer-lockbox-preview) и предоставляет элементу управления возможность отзывать доступ к данным в любое время. Данные, полученные за последние 14 дней, также хранятся в кэше горячего уровня доступа (с поддержкой SSD) для эффективной работы обработчика запросов. Эти данные остаются зашифрованными с помощью ключей Майкрософт независимо от управляемой клиентом конфигурации ключа, но контроль над данными SSD соответствует [отзыву ключа](#key-revocation). Мы работаем над тем, чтобы данные SSD были зашифрованы с Customer-Managed ключом в первой половине 2021.
 
-Чтобы убедиться, что у нас есть необходимая емкость для подготовки выделенного кластера в вашем регионе, необходимо, чтобы ваша подписка была разрешена заранее. Используйте свой контакт Майкрософт или откройте запрос в службу поддержки, чтобы получить доступ к подписке, прежде чем запускать Customer-Managedную конфигурацию ключа.
-
 [Модель ценообразования log Analytics кластеров](./manage-cost-storage.md#log-analytics-dedicated-clusters) использует резервирование емкости, начиная с 1000 ГБ/день.
+
+> [!IMPORTANT]
+> В связи с временными ограничениями емкости перед созданием кластера необходимо предварительно зарегистрироваться в. Используйте свои контакты в Майкрософт или откройте запрос в службу поддержки, чтобы зарегистрировать идентификаторы подписок.
 
 ## <a name="how-customer-managed-key-works-in-azure-monitor"></a>Как работает ключ Customer-Managed в Azure Monitor
 
@@ -63,11 +64,11 @@ Azure Monitor использует назначаемое системой уп�
 
 ## <a name="customer-managed-key-provisioning-procedure"></a>Процедура подготовки ключа Customer-Managed
 
-1. Разрешение подписки — возможность доставки в выделенные кластеры Log Analytics. Чтобы убедиться, что у нас есть требуемая емкость в вашем регионе, необходимо, чтобы ваша подписка была разрешена заранее. Используйте контакт Майкрософт, чтобы получить доступ к подписке.
-2. Создание Azure Key Vault и ключа хранилища.
-3. Создание кластера
-4. Предоставление разрешений для вашего Key Vault.
-5. Связывание рабочих областей Log Analytics
+1. Регистрация подписки для разрешения создания кластера
+1. Создание Azure Key Vault и ключа хранилища.
+1. Создание кластера
+1. Предоставление разрешений для вашего Key Vault.
+1. Связывание рабочих областей Log Analytics
 
 Customer-Managed конфигурация ключа не поддерживается в портал Azure и подготовка выполняется с помощью [PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/), [CLI](https://docs.microsoft.com/cli/azure/monitor/log-analytics) или запросов [RESTful](https://docs.microsoft.com/rest/api/loganalytics/) .
 
@@ -149,7 +150,6 @@ Authorization: Bearer <token>
 
 > [!IMPORTANT]
 > Customer-Managed ключом является региональный. Azure Key Vault, кластер и связанные рабочие области Log Analytics должны находиться в одном регионе, но они могут находиться в разных подписках.
-> Чтобы убедиться, что у нас есть необходимая емкость для подготовки выделенного кластера в вашем регионе, необходимо, чтобы ваша подписка была разрешена заранее. Используйте свой контакт Майкрософт или откройте запрос в службу поддержки, чтобы получить доступ к вашей подписке перед началом Customer-Managed конфигурации ключа. 
 
 ### <a name="storing-encryption-key-kek"></a>Хранение ключа шифрования (KEK)
 
@@ -200,6 +200,25 @@ az monitor log-analytics cluster update --name "cluster-name" --resource-group "
 
 ```powershell
 Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -ClusterName "cluster-name" -KeyVaultUri "key-uri" -KeyName "key-name" -KeyVersion "key-version"
+```
+
+```rst
+PATCH https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/cluster-name"?api-version=2020-08-01
+Authorization: Bearer <token> 
+Content-type: application/json
+ 
+{
+  "properties": {
+    "keyVaultProperties": {
+      "keyVaultUri": "https://key-vault-name.vault.azure.net",
+      "kyName": "key-name",
+      "keyVersion": "current-version"
+  },
+  "sku": {
+    "name": "CapacityReservation",
+    "capacity": 1000
+  }
+}
 ```
 
 **Ответ**
@@ -288,6 +307,11 @@ Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -Cl
 
 Связывание учетной записи хранения для *запроса* к рабочей области — запросы, *сохраненные для поиска* , сохраняются в учетной записи хранения. 
 
+```azurecli
+$storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
+az monitor log-analytics workspace linked-storage create --type Query --resource-group "resource-group-name" --workspace-name "workspace-name" --storage-accounts $storageAccountId
+```
+
 ```powershell
 $storageAccount.Id = Get-AzStorageAccount -ResourceGroupName "resource-group-name" -Name "storage-account-name"
 New-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName "resource-group-name" -WorkspaceName "workspace-name" -DataSourceType Query -StorageAccountIds $storageAccount.Id
@@ -314,6 +338,11 @@ Content-type: application/json
 **Настройка BYOS для запросов оповещений журнала**
 
 Свяжите учетную запись хранения с *оповещениями* в рабочей области — запросы на *оповещения журнала* сохраняются в учетной записи хранения. 
+
+```azurecli
+$storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
+az monitor log-analytics workspace linked-storage create --type ALerts --resource-group "resource-group-name" --workspace-name "workspace-name" --storage-accounts $storageAccountId
+```
 
 ```powershell
 $storageAccount.Id = Get-AzStorageAccount -ResourceGroupName "resource-group-name" -Name "storage-account-name"

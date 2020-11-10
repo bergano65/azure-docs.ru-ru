@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 1e5c8b788f1abbfbd46c4dfe6c7bb9d87adcee86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d737f107e7a9b1476fdf86ac0320931ea137671
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91257272"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442911"
 ---
 # <a name="protected-web-api-verify-scopes-and-app-roles"></a>Защищенный веб-API: проверка областей и ролей приложений
 
@@ -47,8 +47,8 @@ ms.locfileid: "91257272"
 
 Но этой защиты недостаточно. Она гарантирует только то, что ASP.NET и ASP.NET Core проверят маркер. API необходимо проверить, что маркер, используемый для вызова API, запрашивается с ожидаемыми утверждениями. В частности, требуют проверки следующие утверждения.
 
-- *Области*, если API вызывается от имени пользователя.
-- *Роли приложения*, если API можно вызывать из управляющего приложения.
+- *Области* , если API вызывается от имени пользователя.
+- *Роли приложения* , если API можно вызывать из управляющего приложения.
 
 ## <a name="verify-scopes-in-apis-called-on-behalf-of-users"></a>Проверка областей в интерфейсах API, вызываемых от имени пользователей
 
@@ -100,7 +100,7 @@ public class TodoListController : Controller
 
 Теперь необходимо, чтобы ваш API проверял, что полученный маркер содержит утверждение `roles` и что это утверждение имеет ожидаемое значение. Код проверки аналогичен коду, который проверяет делегированные разрешения, за исключением того, что действие контроллера проверяет роли, а не области.
 
-### <a name="aspnet-core"></a>ASP.NET Core
+### <a name="aspnet-core"></a>ASP.NET Core
 
 ```csharp
 [Authorize]
@@ -152,5 +152,4 @@ bool isAppOnlyToken = oid == sub;
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Перенос в рабочую среду](scenario-protected-web-api-production.md)
+Перейдите к следующей статье в этом сценарии, [перейдите в рабочую среду](scenario-protected-web-api-production.md).

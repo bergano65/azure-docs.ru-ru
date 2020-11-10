@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 47a45b52ac10a44b6efd54c41b3fec1e61a47a35
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f438567851204a1a284955bede1525505712f4b7
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82181636"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442384"
 ---
 # <a name="web-app-that-signs-in-users-move-to-production"></a>Веб-приложение, которое входит в систему пользователей: перейти в рабочую среду
 
@@ -24,9 +24,7 @@ ms.locfileid: "82181636"
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
-
-### <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неполадок
 
 > [!NOTE]
 > Когда пользователи впервые входят в веб-приложение, им необходимо предоставить согласие. Однако в некоторых организациях пользователи могут видеть примерно следующее сообщение:
@@ -35,28 +33,17 @@ ms.locfileid: "82181636"
 >
 > Это связано с тем, что администратор клиента **отключил** возможность пользователей принять согласие. В этом случае вам нужно обратиться к администраторам клиента, чтобы они выводили согласие администратора для областей, необходимых для приложения.
 
-### <a name="same-site"></a>Тот же сайт
+## <a name="same-site"></a>Тот же сайт
 
-Убедитесь, что вы понимаете возможные проблемы с новыми версиями браузера Chrome.
-
-> [!div class="nextstepaction"]
-> [Как управлять изменениями файлов cookie SameSite в браузере Chrome](howto-handle-samesite-cookie-changes-chrome-browser.md)
+Убедитесь, что вы понимаете возможные проблемы с новыми версиями браузера Chrome: [как управлять изменениями файлов cookie SameSite в браузере Chrome](howto-handle-samesite-cookie-changes-chrome-browser.md).
 
 Пакет Microsoft. Identity. Web NuGet обрабатывает наиболее распространенные проблемы SameSite.
-
-### <a name="scenario-for-calling-web-apis"></a>Сценарий для вызова веб-API
-
-После того как веб-приложение подписывает пользователей, оно может вызывать веб-API от имени вошедших в систему пользователей. Вызов веб-API из веб-приложения является объектом следующего сценария:
-
-> [!div class="nextstepaction"]
-> [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md)
 
 ## <a name="deep-dive-aspnet-core-web-app-tutorial"></a>Глубокое углубление: учебник по веб-приложениям ASP.NET Core
 
 Узнайте о других способах входа пользователей с помощью этого ASP.NET Core учебнике: 
 
-> [!div class="nextstepaction"]
-> [Разрешите веб-приложениям выполнять вход пользователей и вызывать API с помощью платформы удостоверений Майкрософт для разработчиков](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) 
+[Разрешите веб-приложениям выполнять вход пользователей и вызывать API с помощью платформы удостоверений Майкрософт для разработчиков](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial)
 
 В этом последовательном руководстве есть готовый к использованию код для веб-приложения, включая добавление учетных записей в:
 
@@ -70,5 +57,8 @@ ms.locfileid: "82181636"
 
 Дополнительные сведения о веб-приложении Java из этого примера на сайте GitHub: 
 
-> [!div class="nextstepaction"]
-> [Веб-приложение Java, которое входит в систему пользователей с платформой идентификации Майкрософт и вызывает Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp)
+[Веб-приложение Java, которое входит в систему пользователей с платформой идентификации Майкрософт и вызывает Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp)
+
+## <a name="next-steps"></a>Next Steps
+
+После того как веб-приложение подписывает пользователей, оно может вызывать веб-API от имени вошедших в систему пользователей. Вызов веб-API из веб-приложения является объектом следующего сценария: [веб-приложение, вызывающее веб-API](scenario-web-app-call-api-overview.md).

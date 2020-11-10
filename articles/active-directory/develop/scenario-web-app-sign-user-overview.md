@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 7cadb4784cbf90d283f64e12edc155d4430fab06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38ed7fb2930463e6657422e851a73f2b3b011f35
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91257080"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94443591"
 ---
 # <a name="scenario-web-app-that-signs-in-users"></a>Scenario: Веб-приложение, выполняющее вход пользователей
 
@@ -28,29 +28,25 @@ ms.locfileid: "91257080"
 
 Если вы хотите создать первое переносимое веб-приложение (ASP.NET Core), которое входит в систему пользователей, следуйте указаниям в этом кратком руководстве:
 
-> [!div class="nextstepaction"]
-> [Краткое руководство. ASP.NET Core веб-приложение, которое входит в систему пользователей](quickstart-v2-aspnet-core-webapp.md)
+[Краткое руководство. ASP.NET Core веб-приложение, которое входит в систему пользователей](quickstart-v2-aspnet-core-webapp.md)
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
 Если вы хотите разобраться, как добавить вход в существующее веб-приложение ASP.NET, воспользуйтесь приведенным ниже кратким руководством.
 
-> [!div class="nextstepaction"]
-> [Краткое руководство. веб-приложение ASP.NET, которое входит в систему пользователей](quickstart-v2-aspnet-webapp.md)
+[Краткое руководство. веб-приложение ASP.NET, которое входит в систему пользователей](quickstart-v2-aspnet-webapp.md)
 
 # <a name="java"></a>[Java](#tab/java)
 
 Если вы являетесь разработчиком Java, воспользуйтесь приведенным ниже кратким руководством.
 
-> [!div class="nextstepaction"]
-> [Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт](quickstart-v2-java-webapp.md)
+[Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт](quickstart-v2-java-webapp.md)
 
 # <a name="python"></a>[Python](#tab/python)
 
 Если вы разрабатываете с помощью Python, попробуйте выполнить следующие действия в этом кратком руководстве:
 
-> [!div class="nextstepaction"]
-> [Краткое руководство. Добавление возможности входа в веб-приложение Python с помощью учетной записи Майкрософт](quickstart-v2-python-webapp.md)
+[Краткое руководство. Добавление возможности входа в веб-приложение Python с помощью учетной записи Майкрософт](quickstart-v2-python-webapp.md)
 
 ---
 
@@ -77,26 +73,22 @@ ms.locfileid: "91257080"
 
 [!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-> [!div class="nextstepaction"]
-> [Регистрация приложения](./scenario-web-app-sign-user-app-registration.md?tabs=aspnetcore)
+Перейдите к следующей статье в этом сценарии — [Регистрация приложения](./scenario-web-app-sign-user-app-registration.md?tabs=aspnetcore).
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-> [!div class="nextstepaction"]
-> [Регистрация приложения](./scenario-web-app-sign-user-app-registration.md?tabs=aspnet)
+Перейдите к следующей статье в этом сценарии — [Регистрация приложения](./scenario-web-app-sign-user-app-registration.md?tabs=aspnet).
 
 # <a name="java"></a>[Java](#tab/java)
 
-> [!div class="nextstepaction"]
-> [Регистрация приложения](./scenario-web-app-sign-user-app-registration.md?tabs=java)
+Перейдите к следующей статье в этом сценарии — [Регистрация приложения](./scenario-web-app-sign-user-app-registration.md?tabs=java).
 
 # <a name="python"></a>[Python](#tab/python)
 
-> [!div class="nextstepaction"]
-> [Регистрация приложения](./scenario-web-app-sign-user-app-registration.md?tabs=python)
+Перейдите к следующей статье в этом сценарии — [Регистрация приложения](./scenario-web-app-sign-user-app-registration.md?tabs=python).
 
 ---

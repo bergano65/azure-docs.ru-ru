@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: c8d68a17b3b991b88e02cf056dcb46da2debfa71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b24b95423adb271b8a4016430e7d2b381c386cd2
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91403200"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94443761"
 ---
 # <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Веб-приложение, которое вызывает веб-API. Конфигурация кода
 
@@ -99,7 +99,7 @@ ms.locfileid: "91403200"
 
 ## <a name="startupcs"></a>Startup.cs
 
-Веб-приложению потребуется получить маркер для подчиненного API. Его можно указать, добавив `.EnableTokenAcquisitionToCallDownstreamApi()` строку после `.AddMicrosoftIdentityWebApi(Configuration)` . Эта строка предоставляет `ITokenAcquisition` службу, которую можно использовать в действиях контроллера и страницы. Однако, как вы увидите в следующих двух вариантах, это можно сделать более просто. Также необходимо выбрать реализацию кэша маркеров, например `.AddInMemoryTokenCaches()` в *Startup.CS*:
+Веб-приложению потребуется получить маркер для подчиненного API. Его можно указать, добавив `.EnableTokenAcquisitionToCallDownstreamApi()` строку после `.AddMicrosoftIdentityWebApi(Configuration)` . Эта строка предоставляет `ITokenAcquisition` службу, которую можно использовать в действиях контроллера и страницы. Однако, как вы увидите в следующих двух вариантах, это можно сделать более просто. Также необходимо выбрать реализацию кэша маркеров, например `.AddInMemoryTokenCaches()` в *Startup.CS* :
 
    ```csharp
    using Microsoft.Identity.Web;
@@ -175,7 +175,7 @@ ms.locfileid: "91403200"
    }
    ```
 
-### <a name="summary"></a>Итоги
+### <a name="summary"></a>Сводка
 
 Как и в случае с веб-API, можно выбрать различные реализации кэша маркеров. Дополнительные сведения см. в [статье сериализация кэша маркеров в Microsoft. Identity. Web](https://aka.ms/ms-id-web/token-cache-serialization) .
 
@@ -519,5 +519,4 @@ def _build_msal_app(cache=None):
 
 На этом этапе при входе пользователя маркер сохраняется в кэше маркеров. Ознакомьтесь со сведениями об использовании кэша в других частях веб-приложения.
 
-> [!div class="nextstepaction"]
-> [Веб-приложение, которое вызывает веб-API. Удаление учетных записей из кэша при глобальном выходе](scenario-web-app-call-api-sign-in.md)
+[Удаление учетных записей из кэша при глобальном выходе](scenario-web-app-call-api-sign-in.md)

@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: 70e3185257c7c70d74fdc8492cf0a2b4970c03b1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2c415fc92d2d338c568c422b1db2579563527839
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305477"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442061"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -34,7 +34,7 @@ ms.locfileid: "93305477"
 
 * Для некоторых сценариев требуется открыть запрос в службу поддержки. Они приведены ниже.
 
-    * __Рабочая область с включенной частной связью с ключом, управляемым клиентом (CMK)__
+    * __Рабочая область с поддержкой Приватного канала с ключом, управляемым клиентом__
     * __Реестр контейнеров Azure для рабочей области, находящейся за виртуальной сетью__
 
     Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
@@ -170,7 +170,7 @@ New-AzResourceGroupDeployment `
 > [!IMPORTANT]
 > После создания рабочей области вы не сможете изменить параметры для конфиденциальных данных, шифрования, идентификатора хранилища ключей или идентификаторов ключей. Чтобы изменить эти значения, придется создать новую рабочую область с новыми значениями.
 
-Дополнительные сведения см. в статье [Шифрование данных при хранении](concept-enterprise-security.md#encryption-at-rest).
+Дополнительные сведения см. в статье [Шифрование данных при хранении](concept-data-encryption.md#encryption-at-rest).
 
 > [!IMPORTANT]
 > Чтобы использовать этот шаблон, ваша подписка должна соответствовать некоторым дополнительным требованиям.
@@ -252,7 +252,7 @@ New-AzResourceGroupDeployment `
 ```
 ---
 
-При использовании ключа, управляемого клиентом, Машинное обучение Azure создает вторичную группу ресурсов, которая содержит экземпляр Cosmos DB. Дополнительные сведения см. [в разделе Шифрование неактивных данных Cosmos DB](concept-enterprise-security.md#encryption-at-rest).
+При использовании ключа, управляемого клиентом, Машинное обучение Azure создает вторичную группу ресурсов, которая содержит экземпляр Cosmos DB. Дополнительные сведения см. [в разделе Шифрование неактивных данных Cosmos DB](concept-data-encryption.md#encryption-at-rest).
 
 Дополнительной конфигурацией, которую можно предоставить для данных, является установка параметра **confidential_data** в **значение true**. Это делает следующее:
 
@@ -264,7 +264,7 @@ New-AzResourceGroupDeployment `
     > [!IMPORTANT]
     > После создания рабочей области вы не сможете изменить параметры для конфиденциальных данных, шифрования, идентификатора хранилища ключей или идентификаторов ключей. Чтобы изменить эти значения, придется создать новую рабочую область с новыми значениями.
 
-  Дополнительные сведения см. [в разделе Шифрование неактивных](concept-enterprise-security.md#encryption-at-rest)данных.
+  Дополнительные сведения см. [в разделе Шифрование неактивных](concept-data-encryption.md#encryption-at-rest)данных.
 
 ## <a name="deploy-workspace-behind-a-virtual-network"></a>Развертывание рабочей области за виртуальной сетью
 

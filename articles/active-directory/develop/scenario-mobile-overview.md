@@ -13,14 +13,14 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 70ddc2191cc06a1bede87adc5940e0f7dea63384
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 853ab82ab40cc7ebee1c74feaf6aad87adf39ece
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91257543"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94443115"
 ---
-# <a name="scenario-mobile-application-that-calls-web-apis"></a>Сценарий: мобильное приложение, вызывающее веб-API
+# <a name="scenario-mobile-application-that-calls-web-apis"></a>Scenario: Создание мобильного приложения, которое вызывает веб-API
 
 Узнайте, как создать мобильное приложение, вызывающее веб-API.
 
@@ -40,7 +40,7 @@ ms.locfileid: "91257543"
 
 Рекомендации для мобильных приложений:
 
-- **Взаимодействие с пользователем — ключ**: разрешить пользователям видеть значение приложения перед запросом на вход. Запросите только необходимые разрешения.
+- **Взаимодействие с пользователем — ключ** : разрешить пользователям видеть значение приложения перед запросом на вход. Запросите только необходимые разрешения.
 - **Поддержка всех конфигураций пользователей**. Многие мобильные бизнес-пользователи должны соблюдать политики условного доступа и политики соответствия устройств. Не забудьте обеспечить поддержку этих ключевых сценариев.
 - **Реализация единого входа (SSO)**. с помощью MSAL и платформы идентификации Майкрософт можно включить единый вход с помощью браузера или Microsoft Authenticator (и корпоративный портал Intune на устройстве Android).
 - **Реализация режима общего устройства**. позволяет использовать приложение в сценариях с общими устройствами, например больницы, производство, розничная торговля и финансы. [Дополнительные сведения см. в статье поддержка общего режима устройства](msal-shared-devices.md).
@@ -57,7 +57,6 @@ ms.locfileid: "91257543"
 
 [!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Регистрация приложения](scenario-mobile-app-registration.md)
+Перейдите к следующей статье в этом сценарии — [Регистрация приложения](scenario-mobile-app-registration.md).

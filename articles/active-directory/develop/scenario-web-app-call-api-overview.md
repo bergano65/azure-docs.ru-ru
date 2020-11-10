@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 174db339079de91a87cef9551bc79e6f03701605
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4123b0424e52c6a2919de4b60bcc6158062b0f1
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91257135"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442639"
 ---
 # <a name="scenario-a-web-app-that-calls-web-apis"></a>Сценарий: веб-приложение, вызывающее веб-API
 
@@ -30,7 +30,7 @@ ms.locfileid: "91257135"
 
 Вы можете добавить проверку подлинности в веб-приложение, чтобы он мог подписывать пользователей и вызывать веб-API от имени пользователя, выполнившего вход.
 
-![Веб-приложение, которое вызывает веб-API](./media/scenario-webapp/web-app.svg)
+![Веб-приложение, вызывающее веб-API](./media/scenario-webapp/web-app.svg)
 
 Веб-приложения, вызывающие веб-API, являются конфиденциальными клиентскими приложениями.
 Вот почему они регистрируют секрет (пароль приложения или сертификат) с помощью Azure Active Directory (Azure AD). Этот секрет передается во время вызова Azure AD для получения маркера.
@@ -51,7 +51,6 @@ ms.locfileid: "91257135"
 
 [!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Веб-приложение, вызывающее веб-API: регистрация приложения](scenario-web-app-call-api-app-registration.md)
+Перейдите к следующей статье в этом сценарии — [Регистрация приложения](scenario-web-app-call-api-app-registration.md).

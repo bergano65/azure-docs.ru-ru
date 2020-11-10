@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: ab0b74ffbcd8167613c6a8470e2f9102566edc60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56bcc4e4936371b58d78f6de5ce4c2d25fbf614d
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91257237"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442809"
 ---
 # <a name="a-web-api-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-API, вызывающий веб-API: получение маркера для приложения
 
@@ -90,7 +90,6 @@ public class ApiController {
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Веб-API, вызывающий веб-API: вызов API](scenario-web-api-call-api-call-api.md)
+Перейдите к следующей статье в этом сценарии, [вызовите API](scenario-web-api-call-api-call-api.md).

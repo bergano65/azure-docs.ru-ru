@@ -1,5 +1,5 @@
 ---
-title: Настройка сопоставлений атрибутов в Azure AD | Документация Майкрософт
+title: Руководство. Настройка сопоставлений атрибутов Azure Active Directory
 description: Узнайте, что такое сопоставление атрибутов для приложений SaaS в Azure Active Directory и как настроить его в соответствии с потребностями вашего бизнеса.
 services: active-directory
 author: kenwith
@@ -7,17 +7,17 @@ manager: celestedg
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
-ms.topic: how-to
-ms.date: 10/26/2020
+ms.topic: tutorial
+ms.date: 11/10/2020
 ms.author: kenwith
-ms.openlocfilehash: 2f21e4f41814b47d8e630df72c255886ac2af53b
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: MT
+ms.openlocfilehash: 42ec826ab95363c2599be541fe451473be5ca08d
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364298"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441959"
 ---
-# <a name="customizing-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory
+# <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Руководство. Настройка сопоставления атрибутов подготовки пользователей для приложений SaaS в Azure Active Directory
 
 Microsoft Azure AD обеспечивает поддержку для подготовки пользователей для сторонних приложений SaaS, например Salesforce, G Suite и др. Если включена подготовка пользователей для сторонних приложений SaaS, портал Azure определяет значения их атрибутов посредством сопоставления атрибутов.
 

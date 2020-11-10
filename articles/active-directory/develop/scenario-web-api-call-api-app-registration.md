@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c0b009d6d53a117aa11d0629fb649b2dd55559af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 790580160ec236d1923dc28b9990d2675c253b44
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89438200"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442690"
 ---
 # <a name="a-web-api-that-calls-web-apis-app-registration"></a>Веб-API, который вызывает веб-API: регистрация приложения
 
@@ -30,7 +30,6 @@ ms.locfileid: "89438200"
 
 Веб-приложения вызывают интерфейсы API от имени пользователей, которым был получен маркер носителя. Веб-приложениям необходимо запросить делегированные разрешения. Дополнительные сведения см. [в статье Добавление разрешений для доступа к веб-API](quickstart-configure-app-access-web-apis.md#add-permissions-to-access-your-web-api).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Веб-API, вызывающий веб-API: конфигурация кода](scenario-web-api-call-api-app-configuration.md)
+Перейдите к следующей статье в этом сценарии: [Конфигурация кода приложения](scenario-web-api-call-api-app-configuration.md).

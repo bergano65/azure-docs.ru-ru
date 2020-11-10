@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: ea0312cd8129fce342f94cfab5701d1773aca309
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dad7b0563fd1ca0dbf60403bc6172e7616e278b2
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91728341"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94443659"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Веб-приложение, которое входит в систему пользователей: конфигурация кода
 
@@ -245,7 +245,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
      }).AddMicrosoftIdentityUI();
     ```
 
-3. В `Configure` методе в *Startup.CS*включите проверку подлинности с помощью вызова `app.UseAuthentication();`
+3. В `Configure` методе в *Startup.CS* включите проверку подлинности с помощью вызова `app.UseAuthentication();`
 
    ```c#
    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -338,28 +338,24 @@ Session(app)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующей статье вы узнаете, как активировать вход и выход.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-> [!div class="nextstepaction"]
-> [Функции входа и выхода](./scenario-web-app-sign-user-sign-in.md?tabs=aspnetcore)
+Перейдите к следующей статье в этом сценарии, [Войдите и выйдите](./scenario-web-app-sign-user-sign-in.md?tabs=aspnetcore)из нее.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-> [!div class="nextstepaction"]
-> [Функции входа и выхода](./scenario-web-app-sign-user-sign-in.md?tabs=aspnet)
+Перейдите к следующей статье в этом сценарии, [Войдите и выйдите](./scenario-web-app-sign-user-sign-in.md?tabs=aspnet)из нее.
 
 # <a name="java"></a>[Java](#tab/java)
 
-> [!div class="nextstepaction"]
-> [Функции входа и выхода](./scenario-web-app-sign-user-sign-in.md?tabs=java)
+Перейдите к следующей статье в этом сценарии, [Войдите и выйдите](./scenario-web-app-sign-user-sign-in.md?tabs=java)из нее.
 
 # <a name="python"></a>[Python](#tab/python)
 
-> [!div class="nextstepaction"]
-> [Функции входа и выхода](./scenario-web-app-sign-user-sign-in.md?tabs=python)
+Перейдите к следующей статье в этом сценарии, [Войдите и выйдите](./scenario-web-app-sign-user-sign-in.md?tabs=python)из нее.
 
 ---

@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: alkohli
-ms.openlocfilehash: b514cce8128dc0b17b5cebf8f2dc42e2c4dd8c8e
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: ad8a5a23361e721fd5d8d55d3555f51def94e768
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337132"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442027"
 ---
 # <a name="tutorial-create-export-order-for-azure-data-box-preview"></a>Учебник. создание порядка экспорта для Azure Data Box (Предварительная версия)
 
@@ -259,7 +259,7 @@ Data Box копирует данные из исходных учетных за
 
 В следующей таблице приведены примеры допустимых путей к большим двоичным объектам.
 
-   | Выбор | Путь к BLOB-объекту | Description |
+   | Выбор | Путь к BLOB-объекту | Описание |
    | --- | --- | --- |
    | Начинается с |/ |Экспорт всех blob-объектов в учетной записи хранения |
    | Начинается с |/$root/ |Экспорт всех blob-объектов в корневом контейнере |

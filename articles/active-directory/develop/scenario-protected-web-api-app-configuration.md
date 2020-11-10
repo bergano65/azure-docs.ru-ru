@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 613ba527c8f86257dd271d3cc9e43c97fc475068
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bfbfb1ff5b6cb9c711d987608226c51822dfc935
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91257458"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442962"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
@@ -119,7 +119,7 @@ _Microsoft. Identity. Web_ обеспечивает связь между ASP.NE
 
 #### <a name="using-microsoftidentityweb-templates"></a>Использование шаблонов Microsoft. Identity. Web
 
-Вы можете создать веб-API с нуля с помощью шаблонов проектов Microsoft. Identity. Web. Дополнительные сведения см. в [статье шаблон проекта Microsoft. Identity. Web-Web API](https://aka.ms/ms-id-web/webapi-project-templates) .
+Вы можете создать веб-API с нуля с помощью шаблонов проектов Microsoft. Identity. Web. Дополнительные сведения см. в [статье шаблон проекта Microsoft. Identity. Web-Web API](https://aka.ms/ms-id-web/webapi-project-templates).
 
 #### <a name="starting-from-an-existing-aspnet-core-31-application"></a>Начиная с существующего приложения ASP.NET Core 3,1
 
@@ -140,7 +140,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
- В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Однако можно изменить шаблоны для использования конечной точки платформы идентификации Майкрософт с помощью [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) замените код в *Startup.CS*:
+ В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Однако можно изменить шаблоны для использования конечной точки платформы идентификации Майкрософт с помощью [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) замените код в *Startup.CS* :
 
 ```csharp
 using Microsoft.Identity.Web;
@@ -170,7 +170,7 @@ services.AddControllers();
 ```
 
 > [!NOTE]
-> Если используется Microsoft. Identity. Web и не задан параметр `Audience` in *appsettings.json*, используется следующее:
+> Если используется Microsoft. Identity. Web и не задан параметр `Audience` in *appsettings.json* , используется следующее:
 > -  `$"{ClientId}"` Если вы установили [маркер доступа](scenario-protected-web-api-app-registration.md#accepted-token-version) , который принимает версию `2` , или для Azure AD B2C веб-API.
 > - `$"api://{ClientId}` во всех остальных случаях (для [маркеров доступа](access-tokens.md)v 1.0).
 > Дополнительные сведения см. в разделе [Исходный код](https://github.com/AzureAD/microsoft-identity-web/blob/d2ad0f5f830391a34175d48621a2c56011a45082/src/Microsoft.Identity.Web/Resource/RegisterValidAudience.cs#L70-L83)Microsoft. Identity. Web.
@@ -210,7 +210,7 @@ services.AddControllers();
 
 В большинстве случаев изменять параметры не требуется. Приложения, не являющиеся отдельными клиентами, являются исключениями. Эти веб-приложения принимают пользователей из любой организации или из личных учетных записей Майкрософт. Издатели в этом случае должны быть проверены. Microsoft. Identity. Web также отвечает за проверку издателя. Дополнительные сведения см. в разделе Microsoft. Identity. Web [аадиссуервалидатор](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web/Resource/AadIssuerValidator.cs).
 
-Если вы хотите настроить параметры проверки маркера в ASP.NET Core, используйте следующий фрагмент кода в *Startup.CS*:
+Если вы хотите настроить параметры проверки маркера в ASP.NET Core, используйте следующий фрагмент кода в *Startup.CS* :
 
 ```c#
 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -240,7 +240,6 @@ https://github.com/azure-samples/active-directory-dotnet-webapi-manual-jwt-valid
 - Node.js: [Azure-Samples/MS-Identity-NodeJS-webapi-азурефунктионс](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions)
 - Python: [Azure-Samples/MS-Identity-Python-webapi-азурефунктионс)](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Проверка областей и ролей приложений в коде](scenario-protected-web-api-verification-scope-app-roles.md)
+Перейдите к следующей статье в этом сценарии, [Проверьте области и роли приложений в коде](scenario-protected-web-api-verification-scope-app-roles.md).

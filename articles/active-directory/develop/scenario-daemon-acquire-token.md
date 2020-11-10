@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 13000c5a61dc2c4d49aa395271beddef64d32245
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c13b6ed991403e65c4c4d71c964f1f7f4d1ffe7b
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88119221"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94443319"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющее приложение, вызывающее веб-API — получение маркера
 
@@ -57,7 +57,7 @@ final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default"
 
 > [!IMPORTANT]
 > Когда MSAL запрашивает маркер доступа для ресурса, который принимает маркер доступа версии 1,0, Azure AD анализирует нужную аудиторию из запрошенной области, принимая все до последней косой черты и используя ее в качестве идентификатора ресурса.
-> Таким образом, если, как и база данных SQL Azure (**https: \/ /Database.Windows.NET**), ресурс ожидает аудиторию, которая заканчивается косой чертой (для базы данных SQL Azure `https://database.windows.net/` ), необходимо запросить область действия `https://database.windows.net//.default` . (Обратите внимание на двойную косую черту.) См. также MSAL.NET проблема [#747: пропущена Конечная косая черта URL-адреса ресурса, что привело к сбою проверки подлинности SQL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
+> Таким образом, если, как и база данных SQL Azure ( **https: \/ /Database.Windows.NET** ), ресурс ожидает аудиторию, которая заканчивается косой чертой (для базы данных SQL Azure `https://database.windows.net/` ), необходимо запросить область действия `https://database.windows.net//.default` . (Обратите внимание на двойную косую черту.) См. также MSAL.NET проблема [#747: пропущена Конечная косая черта URL-адреса ресурса, что привело к сбою проверки подлинности SQL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## <a name="acquiretokenforclient-api"></a>API Аккуиретокенфорклиент
 
@@ -202,7 +202,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 ## <a name="application-token-cache"></a>Кэш маркеров приложений
 
-В MSAL.NET `AcquireTokenForClient` использует кэш маркеров приложений. (Все остальные методы AcquireToken*XX* используют кэш пользовательских маркеров.) Не вызывайте метод `AcquireTokenSilent` перед вызовом `AcquireTokenForClient` , так как `AcquireTokenSilent` использует кэш *пользовательских* маркеров. `AcquireTokenForClient` проверяет сам кэш маркера *приложения* и обновляет его.
+В MSAL.NET `AcquireTokenForClient` использует кэш маркеров приложений. (Все остальные методы AcquireToken *XX* используют кэш пользовательских маркеров.) Не вызывайте метод `AcquireTokenSilent` перед вызовом `AcquireTokenForClient` , так как `AcquireTokenSilent` использует кэш *пользовательских* маркеров. `AcquireTokenForClient` проверяет сам кэш маркера *приложения* и обновляет его.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -229,21 +229,18 @@ Content: {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-> [!div class="nextstepaction"]
-> [Управляющая программа — вызов веб-API](./scenario-daemon-call-api.md?tabs=dotnet)
+Перейдите к следующей статье в этом сценарии, [вызвав веб-API](./scenario-daemon-call-api.md?tabs=dotnet).
 
 # <a name="python"></a>[Python](#tab/python)
 
-> [!div class="nextstepaction"]
-> [Управляющая программа — вызов веб-API](./scenario-daemon-call-api.md?tabs=python)
+Перейдите к следующей статье в этом сценарии, [вызвав веб-API](./scenario-daemon-call-api.md?tabs=python).
 
 # <a name="java"></a>[Java](#tab/java)
 
-> [!div class="nextstepaction"]
-> [Управляющая программа — вызов веб-API](./scenario-daemon-call-api.md?tabs=java)
+Перейдите к следующей статье в этом сценарии, [вызвав веб-API](./scenario-daemon-call-api.md?tabs=java).
 
 ---

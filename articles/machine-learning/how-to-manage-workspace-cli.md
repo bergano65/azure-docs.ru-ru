@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 181cae525845e7cae5e8f6f178b01ee33999b8b5
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 9b55c4873c4d7ee430e7d9ce84d2782a37e522ae
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312488"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94442146"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 
@@ -177,7 +177,7 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 > [!IMPORTANT]
 > Выбор высокого воздействия на бизнес может выполняться только при создании рабочей области. Этот параметр нельзя изменить после создания рабочей области.
 
-Дополнительные сведения о ключах, управляемых клиентом, и рабочей области бизнес-влияния см. в разделе [Корпоративная безопасность для машинное обучение Azure](concept-enterprise-security.md#encryption-at-rest).
+Дополнительные сведения о ключах, управляемых клиентом, и рабочей области бизнес-влияния см. в разделе [Корпоративная безопасность для машинное обучение Azure](concept-data-encryption.md#encryption-at-rest).
 
 ### <a name="use-existing-resources"></a>Использование существующих ресурсов
 
