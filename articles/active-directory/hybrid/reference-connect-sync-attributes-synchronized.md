@@ -16,12 +16,12 @@ ms.date: 04/15/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9411c22183620f883b4d2819eb3078e49837e578
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ec05c4160c6502904644bf7035bda0bed66cc33
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90016084"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94413196"
 ---
 # <a name="azure-ad-connect-sync-attributes-synchronized-to-azure-active-directory"></a>Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory
 В этой статье перечислены атрибуты, которые синхронизируются при помощи служб синхронизации Azure AD Connect.  
@@ -39,7 +39,7 @@ ms.locfileid: "90016084"
 >
 
 ## <a name="microsoft-365-apps-for-enterprise"></a>Приложения Microsoft 365 для предприятий
-| Имя атрибута | Пользователь | Комментарий |
+| Имя атрибута | Пользователь | Комментировать |
 | --- |:---:| --- |
 | AccountEnabled |X |Определяет, включена ли учетная запись. |
 | cn |X | |
@@ -52,7 +52,7 @@ ms.locfileid: "90016084"
 | userPrincipalName |X |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 
 ## <a name="exchange-online"></a>Exchange Online
-| Имя атрибута | Пользователь | Contact | Группа | Комментарий |
+| Имя атрибута | Пользователь | Contact | Группа | Комментировать |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | assistant |X |X | | |
@@ -64,7 +64,7 @@ ms.locfileid: "90016084"
 | company |X |X | | |
 | countryCode |X |X | | |
 | department |X |X | | |
-| description | | |X | |
+| description; | | |X | |
 | displayName |X |X |X | |
 | dLMemRejectPerms |X |X |X | |
 | dLMemSubmitPerms |X |X |X | |
@@ -175,7 +175,7 @@ ms.locfileid: "90016084"
 | wWWHomePage |X |X | | |
 
 ## <a name="sharepoint-online"></a>SharePoint Online
-| Имя атрибута | Пользователь | Contact | Группа | Комментарий |
+| Имя атрибута | Пользователь | Contact | Группа | Комментировать |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | authOrig |X |X |X | |
@@ -185,7 +185,7 @@ ms.locfileid: "90016084"
 | company |X |X | | |
 | countryCode |X |X | | |
 | department |X |X | | |
-| description |X |X |X | |
+| description; |X |X |X | |
 | displayName |X |X |X | |
 | dLMemRejectPerms |X |X |X | |
 | dLMemSubmitPerms |X |X |X | |
@@ -257,7 +257,7 @@ ms.locfileid: "90016084"
 | wWWHomePage |X |X | | |
 
 ## <a name="teams-and-skype-for-business-online"></a>Команды и Skype для бизнеса Online
-| Имя атрибута | Пользователь | Contact | Группа | Комментарий |
+| Имя атрибута | Пользователь | Contact | Группа | Комментировать |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | c |X |X | | |
@@ -265,7 +265,7 @@ ms.locfileid: "90016084"
 | co |X |X | | |
 | company |X |X | | |
 | department |X |X | | |
-| description |X |X |X | |
+| description; |X |X |X | |
 | displayName |X |X |X | |
 | facsimiletelephonenumber |X |X |X | |
 | givenName |X |X | | |
@@ -305,7 +305,7 @@ ms.locfileid: "90016084"
 | wWWHomePage |X |X | | |
 
 ## <a name="azure-rms"></a>Azure RMS
-| Имя атрибута | Пользователь | Contact | Группа | Комментарий |
+| Имя атрибута | Пользователь | Contact | Группа | Комментировать |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | cn |X | |X |Общее имя или псевдоним. Чаще всего префикс значения [mail]. |
@@ -320,12 +320,12 @@ ms.locfileid: "90016084"
 | userPrincipalName |X | | |Это имя участника-пользователя является именем пользователя для входа. Чаще всего соответствует значению [mail]. |
 
 ## <a name="intune"></a>Intune
-| Имя атрибута | Пользователь | Contact | Группа | Комментарий |
+| Имя атрибута | Пользователь | Contact | Группа | Комментировать |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | c |X |X | | |
 | cn |X | |X | |
-| description |X |X |X | |
+| description; |X |X |X | |
 | displayName |X |X |X | |
 | mail |X |X |X | |
 | mailNickname |X |X |X | |
@@ -338,7 +338,7 @@ ms.locfileid: "90016084"
 | userPrincipalName |X | | |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 
 ## <a name="dynamics-crm"></a>Dynamics CRM
-| Имя атрибута | Пользователь | Contact | Группа | Комментарий |
+| Имя атрибута | Пользователь | Contact | Группа | Комментировать |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | c |X |X | | |
@@ -346,7 +346,7 @@ ms.locfileid: "90016084"
 | co |X |X | | |
 | company |X |X | | |
 | countryCode |X |X | | |
-| description |X |X |X | |
+| description; |X |X |X | |
 | displayName |X |X |X | |
 | facsimiletelephonenumber |X |X | | |
 | givenName |X |X | | |
@@ -373,11 +373,11 @@ ms.locfileid: "90016084"
 Эта группа представляет собой минимальный набор атрибутов, необходимых для универсальной рабочей нагрузки или приложения. Он может использоваться для рабочей нагрузки, не указанной в другом разделе, или приложения стороннего производителя. Явным образом он используется для следующего:
 
 * Yammer (используется только пользователь);
-* [гибридные сценарии межорганизационного взаимодействия бизнес-бизнес, обеспечиваемые такими ресурсами, как SharePoint.](https://go.microsoft.com/fwlink/?LinkId=747036)
+* [гибридные сценарии межорганизационного взаимодействия бизнес-бизнес, обеспечиваемые такими ресурсами, как SharePoint.](/sharepoint/create-b2b-extranet)
 
 Эта группа представляет собой набор атрибутов, которые можно использовать, если каталог Azure AD не используется для поддержки Microsoft 365, Dynamics или Intune. Это небольшой набор основных атрибутов. Обратите внимание, что единый вход или подготовка к некоторым сторонним приложениям требует настройки синхронизации атрибутов в дополнение к описанным здесь атрибутам. Требования к приложениям описаны в руководстве по приложениям [SaaS](../saas-apps/tutorial-list.md) для каждого приложения.
 
-| Имя атрибута | Пользователь | Contact | Группа | Комментарий |
+| Имя атрибута | Пользователь | Contact | Группа | Комментировать |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | cn |X | |X | |
@@ -399,7 +399,7 @@ ms.locfileid: "90016084"
 ## <a name="windows-10"></a>Windows 10
 Компьютер (устройство), присоединенное к домену Windows 10, синхронизирует некоторые атрибуты с Azure AD. Дополнительные сведения о сценариях см. в статье [Подключение присоединенных к домену устройств к Azure AD для работы в Windows 10](../devices/hybrid-azuread-join-plan.md). Эти атрибуты всегда синхронизируются, и Windows 10 отображается как приложение, выбор которого нельзя отменить. Компьютер, присоединенный к домену Windows 10, определяется заполненным атрибутом userCertificate.
 
-| Имя атрибута | Устройство | Комментарий |
+| Имя атрибута | Устройство | Комментировать |
 | --- |:---:| --- |
 | AccountEnabled |X | |
 | deviceTrustType |X |Жестко запрограммированное значение для компьютеров, присоединенных к домену. |
@@ -413,7 +413,7 @@ ms.locfileid: "90016084"
 
 Эти атрибуты для **пользователя** представлены в дополнение к другим выбранным приложениям.  
 
-| Имя атрибута | Пользователь | Комментарий |
+| Имя атрибута | Пользователь | Комментировать |
 | --- |:---:| --- |
 | domainFQDN |X |Другое название dnsDomainName. Например, contoso.com. |
 | domainNetBios |X |Другое название netBiosName. Например, CONTOSO. |
@@ -422,7 +422,7 @@ ms.locfileid: "90016084"
 ## <a name="exchange-hybrid-writeback"></a>Гибридная обратная запись Exchange
 Эти атрибуты записываются из Azure AD в локальную службу Active Directory при активации **гибридного развертывания Exchange**. В зависимости от установленной версии Exchange может синхронизироваться меньшее количество атрибутов.
 
-| Имя атрибута (локальная служба AD) | Имя атрибута (пользовательский интерфейс Connect) | Пользователь | Contact | Группа | Комментарий |
+| Имя атрибута (локальная служба AD) | Имя атрибута (пользовательский интерфейс Connect) | Пользователь | Contact | Группа | Комментировать |
 | --- |:---:|:---:|:---:| --- |---|
 | msDS-ExternalDirectoryObjectID| ms-DS-External-Directory-Object-Id |X | | |Производный от cloudAnchor в Azure AD. Это новый атрибут в Exchange 2016 и Windows Server 2016 AD. |
 | msExchArchiveStatus| ms-Exch-ArchiveStatus |X | | |Серверный архив: позволяет клиентам архивировать почту. |
@@ -437,7 +437,7 @@ ms.locfileid: "90016084"
 ## <a name="exchange-mail-public-folder"></a>Общедоступная папка почты Exchange
 Эти атрибуты синхронизируются из локального экземпляра Active Directory в Azure AD при включении **общедоступных почтовых папок Exchange**.
 
-| Имя атрибута | PublicFolder | Комментарий |
+| Имя атрибута | PublicFolder | Комментировать |
 | --- | :---:| --- |
 | displayName | X |  |
 | mail | X |  |
@@ -449,7 +449,7 @@ ms.locfileid: "90016084"
 ## <a name="device-writeback"></a>Обратная запись устройств
 Объекты устройств создаются в Active Directory. Это могут быть устройства, присоединенные к Azure AD, или компьютеры Windows 10, присоединенные к домену.
 
-| Имя атрибута | Устройство | Комментарий |
+| Имя атрибута | Устройство | Комментировать |
 | --- |:---:| --- |
 | altSecurityIdentities |X | |
 | displayName |X | |
@@ -470,7 +470,7 @@ ms.locfileid: "90016084"
 * Если используется альтернативный идентификатор, то локальный атрибут userPrincipalName синхронизируется с атрибутом Azure AD onPremisesUserPrincipalName. Атрибут "Альтернативный идентификатор", например почта, синхронизируется с атрибутом Azure AD userPrincipalName.
 * В списках выше тип объекта **User** также относится к типу объекта **iNetOrgPerson**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

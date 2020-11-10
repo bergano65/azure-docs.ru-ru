@@ -1,14 +1,14 @@
 ---
 title: Развертывание службы "Политика Azure" для делегированных подписок в масштабе
 description: Узнайте, как Azure Лигхсаусе позволяет развернуть определение политики и назначение политики для нескольких клиентов.
-ms.date: 08/12/2020
+ms.date: 11/09/2020
 ms.topic: how-to
-ms.openlocfilehash: 27d32a68c1a3806e514533efbae581aa97bc6d0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5af938c61ad3e42e36360a15c6011b54fa1e823d
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88167289"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94412074"
 ---
 # <a name="deploy-azure-policy-to-delegated-subscriptions-at-scale"></a>Развертывание службы "Политика Azure" для делегированных подписок в масштабе
 
@@ -91,7 +91,11 @@ foreach ($ManagedSub in $ManagedSubscriptions)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+> [!NOTE]
+> Хотя вы можете развертывать политики для нескольких клиентов, в настоящее время вы не можете [просматривать сведения о соответствии](../../governance/policy/how-to/determine-non-compliance.md#compliance-details) для несоответствующих ресурсов в этих клиентах.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о службе [Политика Azure](../../governance/policy/index.yml).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).
+- Узнайте, как [развернуть политику, которую можно исправить](deploy-policy-remediation.md) в делегированной подписке.

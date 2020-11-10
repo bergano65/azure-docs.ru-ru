@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: f2162ee6df551e1bc64741229aec99d5e697fd29
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8e2144a61d83f6c7dece8f34232031192b51cde8
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91395997"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94412703"
 ---
 # <a name="security-control-data-protection"></a>Управление безопасностью: защита данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "91395997"
 
 Используйте теги для отслеживания ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
 ## <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -36,11 +36,11 @@ ms.locfileid: "91395997"
 
 Реализуйте изоляцию с помощью отдельных подписок и групп управления для отдельных доменов безопасности, таких как тип среды и уровень конфиденциальности данных. Вы можете ограничить уровень доступа к ресурсам Azure, которые требуются для приложений и корпоративных сред. Вы можете управлять доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure (Azure RBAC). 
 
-- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+- [Создание групп управления](../../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
 ## <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
 
@@ -52,7 +52,7 @@ ms.locfileid: "91395997"
 
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и защищенным от потери и раскрытия данных клиента. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+- [Общие сведения о защите данных клиентов в Azure](../fundamentals/protection-customer-data.md)
 
 ## <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4. Шифрование любой конфиденциальной информации при передаче
 
@@ -64,7 +64,7 @@ ms.locfileid: "91395997"
 
 Следуйте рекомендациям центра безопасности Azure для шифрования неактивных данных и шифрования при передаче, где это применимо.
 
-- [Общие сведения о шифровании при передаче с помощью Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
+- [Общие сведения о шифровании при передаче с помощью Azure](../fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
 ## <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5. Использование средства активного обнаружения для распознавания конфиденциальных данных
 
@@ -78,11 +78,11 @@ ms.locfileid: "91395997"
 
 Используйте Information Protection Azure SQL для помощи в классификации и маркировке информации, хранящейся в базе данных SQL Azure.
 
-- [Как реализовать обнаружение данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-data-discovery-and-classification)
+- [Как реализовать обнаружение данных SQL Azure](../../azure-sql/database/data-discovery-and-classification-overview.md)
 
-- [Реализация Azure Information Protection](https://docs.microsoft.com/azure/information-protection/deployment-roadmap)
+- [Реализация Azure Information Protection](/azure/information-protection/deployment-roadmap)
 
-- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+- [Общие сведения о защите данных клиентов в Azure](../fundamentals/protection-customer-data.md)
 
 ## <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
@@ -92,7 +92,7 @@ ms.locfileid: "91395997"
 
 Используйте управление доступом на основе ролей Azure (Azure RBAC) для управления доступом к данным и ресурсам. в противном случае используйте специфические методы управления доступом к службам.
 
-- [Настройка Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- [Настройка Azure RBAC](../../role-based-access-control/role-assignments-portal.md)
 
 ## <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
@@ -104,7 +104,7 @@ ms.locfileid: "91395997"
 
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+- [Общие сведения о защите данных клиентов в Azure](../fundamentals/protection-customer-data.md)
 
 ## <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
 
@@ -114,9 +114,9 @@ ms.locfileid: "91395997"
 
 Используйте шифрование неактивных ресурсов на всех ресурсах Azure. Корпорация Майкрософт рекомендует разрешить Azure управлять ключами шифрования, однако существует возможность управлять собственными ключами в некоторых экземплярах. 
 
-- [Общие сведения о шифровании неактивных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)
+- [Общие сведения о шифровании неактивных в Azure](../fundamentals/encryption-atrest.md)
 
-- [Настройка ключей шифрования, управляемых клиентом](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal)
+- [Настройка ключей шифрования, управляемых клиентом](../../storage/common/customer-managed-keys-configure-key-vault.md)
 
 ## <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
@@ -126,9 +126,9 @@ ms.locfileid: "91395997"
 
 Используйте Azure Monitor с журналом действий Azure, чтобы создавать оповещения о том, когда изменения выполняются с важными ресурсами Azure.
 
-- [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+- [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. следующий контроль безопасности:  [Управление уязвимостью](security-control-vulnerability-management.md)

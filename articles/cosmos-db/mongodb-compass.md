@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/05/2020
 author: christopheranderson
 ms.author: chrande
-ms.openlocfilehash: 6c48639279556d495be57a2933f1d7f3c139294a
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 43bcd54955cb1a8aaf08785368faf13c14f8322c
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93361120"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94413060"
 ---
 # <a name="use-mongodb-compass-to-connect-to-azure-cosmos-dbs-api-for-mongodb"></a>Подключение к API Azure Cosmos DB для MongoDB с помощью MongoDB Compass
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -21,15 +21,12 @@ ms.locfileid: "93361120"
 
 Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ-значение" и графовые базы данных, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB.
 
-## <a name="pre-requisites"></a>Предварительные требования
+## <a name="pre-requisites"></a>Предварительные условия
 
 Чтобы подключиться к учетной записи Cosmos DB с помощью MongoDB компаса, необходимо:
 
 * Скачайте и установите [Compass](https://www.mongodb.com/download-center/compass?jmp=hero).
 * Получите сведений о [строке подключения](connect-mongodb-account.md) Cosmos DB.
-
-> [!NOTE]
-> В настоящее время API Azure Cosmos DB для сервера MongoDB версии 3,2 поддерживается последней версией MongoDB компаса. MongoDB компас пока не поддерживается версией сервера 3,6. 
 
 ## <a name="connect-to-cosmos-dbs-api-for-mongodb"></a>Подключение к API Cosmos DB для MongoDB
 

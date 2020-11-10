@@ -14,18 +14,18 @@ ms.date: 09/15/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a5a4659671f8d4ded64a4f04f84abf1f67d8825
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 24820949eb6762caf808c4420ede6f0f59184281
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91265261"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94412601"
 ---
 # <a name="azure-ad-connect---msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Azure AD Connect МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес
 В следующем справочном документе описываются эти атрибуты, используемые Exchange, и правильный способ изменения правил синхронизации по умолчанию.
 
 ## <a name="what-are-msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Что такое МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес?
-Существует два типа [удержаний](https://docs.microsoft.com/Exchange/policy-and-compliance/holds/holds?view=exchserver-2019) , доступных для сервера Exchange: судебное хранение и In-Place удержание. Если удержание судебного разбирательства включено, все элементы почтового ящика помещаются в удержание.  In-Place удержание используется для сохранения только тех элементов, которые удовлетворяют критериям поискового запроса, определенного с помощью средства In-Place eDiscovery.
+Существует два типа [удержаний](/Exchange/policy-and-compliance/holds/holds?view=exchserver-2019) , доступных для сервера Exchange: судебное хранение и In-Place удержание. Если удержание судебного разбирательства включено, все элементы почтового ящика помещаются в удержание.  In-Place удержание используется для сохранения только тех элементов, которые удовлетворяют критериям поискового запроса, определенного с помощью средства In-Place eDiscovery.
 
 Атрибуты МсексчусерхолдполЦиес и КлаудмсексчусерхолдполиЦиес позволяют локальным AD и Azure AD определить, какие пользователи находятся в удержании, в зависимости от того, использует ли они локальную среду Exchange или Exchange.
 

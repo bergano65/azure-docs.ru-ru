@@ -5,12 +5,12 @@ author: jeffhollan
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.author: jehollan
-ms.openlocfilehash: 3a44efac274bf5c5d6cfc6a0f044ee89b479cbe6
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 691fbf3be4e39a724a8a290c3ec147a679013cba
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897081"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94413094"
 ---
 # <a name="azure-functions-networking-options"></a>Параметры сети для Функций Azure
 
@@ -117,6 +117,9 @@ ms.locfileid: "92897081"
 az resource update -g <resource_group> -n <function_app_name>/config/web --set properties.functionsRuntimeScaleMonitoringEnabled=1 --resource-type Microsoft.Web/sites
 ```
 
+> [!TIP]
+> Включение триггеров виртуальной сети может оказать влияние на производительность приложения, так как экземпляры плана службы приложений должны отслеживать триггеры, чтобы определить, когда следует масштабировать. Это воздействие, скорее всего, будет очень небольшим.
+
 Триггеры виртуальной сети поддерживаются в версии 2. x и более поздних версиях среды выполнения Функций. Поддерживаются следующие типы триггеров, отличных от HTTP.
 
 | Расширение | Минимальная версия |
@@ -153,11 +156,11 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 
 При интеграции приложения-функции в плане категории "Премиум" или плане службы приложений с виртуальной сетью приложение по умолчанию может выполнять исходящие вызовы через Интернет. Добавив параметр приложения `WEBSITE_VNET_ROUTE_ALL=1`, вы принудительно передаете весь исходящий трафик в виртуальную сеть, где могут использоваться правила группы безопасности сети для ограничения трафика.
 
-## <a name="automation"></a>Служба автоматизации
+## <a name="automation"></a>Автоматизация
 Следующие API позволяют программно управлять региональной интеграцией виртуальной сети.
 
-+ **Azure CLI** . Используйте [`az functionapp vnet-integration`](/cli/azure/functionapp/vnet-integration) команды для добавления, перечисления или удаления региональных интеграций виртуальной сети.  
-+ **Шаблоны ARM** . интеграция региональной виртуальной сети можно включить с помощью шаблона Azure Resource Manager. Полный пример см. в разделе [шаблон](https://azure.microsoft.com/resources/templates/101-function-premium-vnet-integration/)быстрого запуска функций.
++ **Azure CLI**. Используйте [`az functionapp vnet-integration`](/cli/azure/functionapp/vnet-integration) команды для добавления, перечисления или удаления региональных интеграций виртуальной сети.  
++ **Шаблоны ARM**. интеграция региональной виртуальной сети можно включить с помощью шаблона Azure Resource Manager. Полный пример см. в разделе [шаблон](https://azure.microsoft.com/resources/templates/101-function-premium-vnet-integration/)быстрого запуска функций.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/03/2019
 ms.author: terrylan
-ms.openlocfilehash: 0bf9b4d3aa1926343ad25000a05762a31d49617d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4a3b2afd8b1a5ffdbb1fe0db1c3e345a9c99154
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73889854"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94412618"
 ---
 # <a name="azure-security-best-practices-and-patterns"></a>Рекомендации и шаблоны для обеспечения безопасности в Azure
 
@@ -28,8 +28,8 @@ ms.locfileid: "73889854"
 
 Рекомендации предназначены для ИТ-специалистов. К ним могут относиться проектировщики, архитекторы, разработчики и тестировщики, занимающиеся созданием и развертыванием безопасных решений в Azure.
 
-* [Рекомендации по обеспечению безопасности границ Azure](/azure/security/fundamentals/network-best-practices#adopt-a-zero-trust-approach)
-* [Рекомендации по обеспечению безопасности базы данных Azure](database-best-practices.md)
+* [Рекомендации по обеспечению безопасности границ Azure](./network-best-practices.md#adopt-a-zero-trust-approach)
+* [Рекомендации по обеспечению безопасности базы данных Azure](../../azure-sql/database/security-best-practice.md)
 * [Рекомендации по защите и шифрованию данных в Azure](data-encryption-best-practices.md)
 * [Рекомендации по защите управления удостоверениями и доступом в Azure](identity-management-best-practices.md)
 * [Рекомендации по защите сетей Azure](network-best-practices.md)
@@ -38,7 +38,7 @@ ms.locfileid: "73889854"
 * [Рекомендации по безопасности Azure Service Fabric](service-fabric-best-practices.md)
 * [Рекомендации по обеспечению безопасности виртуальных машин Azure](iaas.md)
 * [Реализация архитектуры защищенной гибридной сети в Azure](/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid)
-* [Рекомендации по обеспечению безопасности "Интернет вещей"](iot-best-practices.md)
+* [Рекомендации по обеспечению безопасности "Интернет вещей"](../../iot-fundamentals/iot-security-best-practices.md)
 * [Защита баз данных PaaS в Azure](paas-applications-using-sql.md)
 * [Защита мобильных приложений и веб-приложений PaaS с помощью службы приложений Azure](paas-applications-using-app-services.md)
 * [Защита мобильных приложений и веб-приложений PaaS с помощью службы хранилища Azure](paas-applications-using-storage.md)

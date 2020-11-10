@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/23/2020
+ms.date: 11/09/2020
 ms.author: aahi
 ms.custom: cog-serv-seo-aug-2020
 keywords: локальная среда, Docker, контейнер
-ms.openlocfilehash: 6f04e40b0b2baa496faf8001684304c5df78ec20
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: f91d96732c872c6f93ee2de4c5c3eba5fe5ffbc4
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92496142"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94412244"
 ---
 # <a name="install-and-run-docker-containers-for-the-speech-service-apis"></a>Установка и запуск контейнеров DOCKER для API-интерфейсов речевой службы 
 
@@ -41,10 +41,10 @@ ms.locfileid: "92496142"
 
 | Контейнер | Компоненты | Последняя версия |
 |--|--|--|
-| Преобразование речи в текст | Анализирует тональности и расшифровывает непрерывную голосовую или пакетную звукозапись в реальном времени с промежуточными результатами.  | 2.5.0 |
-| Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.5.0 |
-| Преобразование текста в речь | Преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.7.0 |
-| Пользовательский текст в речь | С помощью настраиваемой модели [пользовательского голосового портала](https://aka.ms/custom-voice-portal)преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.7.0 |
+| Преобразование речи в текст | Анализирует тональности и расшифровывает непрерывную голосовую или пакетную звукозапись в реальном времени с промежуточными результатами.  | 2.6.0 |
+| Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.6.0 |
+| Преобразование текста в речь | Преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.8.0 |
+| Пользовательский текст в речь | С помощью настраиваемой модели [пользовательского голосового портала](https://aka.ms/custom-voice-portal)преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.8.0 |
 | Речь распознавание языка | Определение языка, произнесенного в звуковых файлах. | 1.0 |
 | Преобразование текста в речь для нейронов | Преобразует текст в голосовую речь с помощью технологии глубокой нейронной сети, обеспечивая более естественную синтезированную речь. | 1.2.0 |
 
@@ -58,7 +58,7 @@ ms.locfileid: "92496142"
 |--|--|
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
-| Речевой ресурс | Для использования контейнеров необходимо следующее:<br><br>Ресурс _речи_ Azure для получения связанного ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **речи** " и "ключи" портал Azure. Они необходимы для запуска контейнера.<br><br>**{API_KEY}**: один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}**: конечная точка, указанная на странице **обзора** |
+| Речевой ресурс | Для использования контейнеров необходимо следующее:<br><br>Ресурс _речи_ Azure для получения связанного ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **речи** " и "ключи" портал Azure. Они необходимы для запуска контейнера.<br><br>**{API_KEY}** : один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : конечная точка, указанная на странице **обзора** |
 
 [!INCLUDE [Gathering required parameters](../containers/includes/container-gathering-required-parameters.md)]
 
@@ -80,7 +80,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице описаны минимальное и рекомендуемое выделение ресурсов для каждого контейнера речи.
 
-| Контейнер | Минимальные | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуется |
 |-----------|---------|-------------|
 | Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 | Пользовательское распознавание речи к тексту | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
@@ -156,7 +156,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 #### <a name="docker-pull-for-the-speech-to-text-container"></a>Опрашивающий запрос DOCKER для контейнера преобразования речи в текст
 
-Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
+Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
 
 ```Docker
 docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-text:latest
@@ -176,7 +176,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-
 Следующий тег является примером формата:
 
 ```
-2.5.0-amd64-en-us-preview
+2.6.0-amd64-en-us
 ```
 
 Сведения о всех поддерживаемых языковых стандартах контейнера **для преобразования речи** в текст см. в статье [теги изображений](../containers/container-image-tags.md#speech-to-text).
@@ -185,7 +185,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-
 
 #### <a name="docker-pull-for-the-custom-speech-to-text-container"></a>Опрашивающий запрос DOCKER для контейнера Пользовательское распознавание речи в текст
 
-Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
+Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
 
 ```Docker
 docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/custom-speech-to-text:latest
@@ -198,7 +198,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/custom-spe
 
 #### <a name="docker-pull-for-the-text-to-speech-container"></a>Извлечение DOCKER для контейнера текста в речь
 
-Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
+Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
 
 ```Docker
 docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/text-to-speech:latest
@@ -218,7 +218,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/text-to-sp
 Следующий тег является примером формата:
 
 ```
-1.6.0-amd64-en-us-ariarus-preview
+1.8.0-amd64-en-us-ariarus
 ```
 
 Все поддерживаемые языковые стандарты и соответствующие **голоса контейнера преобразования текста в речь см** . в разделе [теги изображений текста в речь](../containers/container-image-tags.md#text-to-speech).
@@ -230,7 +230,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/text-to-sp
 
 #### <a name="docker-pull-for-the-neural-text-to-speech-container"></a>Извлечение DOCKER для контейнера нейронного текста в речь
 
-Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
+Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
 
 ```Docker
 docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/neural-text-to-speech:latest
@@ -262,7 +262,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/neural-tex
 
 #### <a name="docker-pull-for-the-custom-text-to-speech-container"></a>Опрашивающий запрос DOCKER для пользовательского контейнера преобразования текста в речь
 
-Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
+Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
 
 ```Docker
 docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/custom-text-to-speech:latest
@@ -275,7 +275,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/custom-tex
 
 #### <a name="docker-pull-for-the-speech-language-detection-container"></a>Извлечение DOCKER для контейнера распознавание языка речи
 
-Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра предварительного просмотра контейнера.
+Используйте команду [DOCKER Pull](https://docs.docker.com/engine/reference/commandline/pull/) , чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
 
 ```Docker
 docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/language-detection:latest
@@ -315,8 +315,14 @@ ApiKey={API_KEY}
 
 
 #### <a name="analyze-sentiment-on-the-speech-to-text-output"></a>Анализ тональности на выходе из речи в текст 
+Начиная с версии v 2.6.0 контейнера "речь-Text", вместо предварительной версии следует использовать конечную точку API Текстаналитикс 3,0. Например.
+* `https://westus2.api.cognitive.microsoft.com/text/analytics/v3.0/sentiment`
+* `https://localhost:5000/text/analytics/v3.0/sentiment`
 
-Начиная с версии v 2.2.0 контейнера для преобразования речи в текст можно вызвать [API тональности Analysis v3](../text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md) на выходе. Для вызова анализа тональности требуется конечная точка ресурса API анализа текста. Например: 
+> [!NOTE]
+> Анализ текста `v3.0` API не имеет обратной совместимости с анализ текста `v3.0-preview.1` . Чтобы получить последнюю поддержку функций тональности, используйте `v2.6.0` образ контейнера для преобразования речи в текст и анализ текста `v3.0` .
+
+Начиная с версии v 2.2.0 контейнера для преобразования речи в текст можно вызвать [API тональности Analysis v3](../text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md) на выходе. Для вызова анализа тональности требуется конечная точка ресурса API анализа текста. Пример: 
 * `https://westus2.api.cognitive.microsoft.com/text/analytics/v3.0-preview.1/sentiment`
 * `https://localhost:5000/text/analytics/v3.0-preview.1/sentiment`
 
@@ -338,6 +344,26 @@ CloudAI:SentimentAnalysisSettings:SentimentAnalysisApiKey={SENTIMENT_APIKEY}
 
 * Выполняет те же действия, что и приведенная выше команда.
 * Хранит API анализа текстаную конечную точку и ключ для отправки запросов анализа тональности. 
+
+#### <a name="phraselist-v2-on-the-speech-to-text-output"></a>Фраселист v2 для вывода речи в текст 
+
+Начиная с версии v 2.6.0 контейнера "речь-Text", вы можете получить выходные данные с помощью собственных фраз — либо всего предложения, либо фраз в середине. Например, вы обладаете *высокой назначением человека* в следующем предложении:
+
+* « **Это предложение — это еще** одно предложение».
+
+Чтобы настроить список фраз, необходимо добавить собственные фразы при выполнении вызова. Пример:
+
+```python
+    phrase="the tall man"
+    recognizer = speechsdk.SpeechRecognizer(
+        speech_config=dict_speech_config,
+        audio_config=audio_config)
+    phrase_list_grammer = speechsdk.PhraseListGrammar.from_recognizer(recognizer)
+    phrase_list_grammer.addPhrase(phrase)
+
+```
+
+Если нужно добавить несколько фраз, вызовите `.addPhrase()` каждую фразу, чтобы добавить ее в список фраз. 
 
 
 # <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
@@ -391,6 +417,46 @@ ApiKey={API_KEY}
 * Загружает модель, заданную `ModelId` (если она не найдена в подключении тома).
 * Если пользовательская модель была ранее скачана, параметр `ModelId` игнорируется.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
+
+
+#### <a name="base-model-download-on-the-custom-speech-to-text-container"></a>Загрузка базовой модели в пользовательском контейнере преобразования речи в текст  
+Начиная с версии v 2.6.0 контейнера пользовательских речевых функций можно получить доступную базовую модель с помощью параметра Option `BaseModelLocale=<locale>` . Этот параметр позволяет получить список доступных базовых моделей для этого языкового стандарта в учетной записи выставления счетов. Пример:
+
+```bash
+docker run --rm -it \
+mcr.microsoft.com/azure-cognitive-services/speechservices/custom-speech-to-text \
+BaseModelLocale={LOCALE} \
+Eula=accept \
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY}
+```
+
+Команда:
+
+* Выполняет *пользовательское распознавание речиный* контейнер из образа контейнера.
+* Проверьте и верните доступные базовые модели для целевого языкового стандарта.
+
+Выходные данные предоставляют список базовых моделей с региональными стандартами данных, идентификатором модели и датой создания. Вы можете использовать идентификатор модели для загрузки и использования конкретной базовой модели, которую вы предпочитаете. Пример:
+```
+Checking available base model for en-us
+2020/10/30 21:54:20 [Info] Searching available base models for en-us
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2016-11-04T08:23:42Z, Id: a3d8aab9-6f36-44cd-9904-b37389ce2bfa
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2016-11-04T12:01:02Z, Id: cc7826ac-5355-471d-9bc6-a54673d06e45
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2017-08-17T12:00:00Z, Id: a1f8db59-40ff-4f0e-b011-37629c3a1a53
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2018-04-16T11:55:00Z, Id: c7a69da3-27de-4a4b-ab75-b6716f6321e5
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2018-09-21T15:18:43Z, Id: da494a53-0dad-4158-b15f-8f9daca7a412
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2018-10-19T11:28:54Z, Id: 84ec130b-d047-44bf-a46d-58c1ac292ca7
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2018-11-26T07:59:09Z, Id: ee5c100f-152f-4ae5-9e9d-014af3c01c56
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2018-11-26T09:21:55Z, Id: d04959a6-71da-4913-9997-836793e3c115
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2019-01-11T10:04:19Z, Id: 488e5f23-8bc5-46f8-9ad8-ea9a49a8efda
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2019-02-18T14:37:57Z, Id: 0207b3e6-92a8-4363-8c0e-361114cdd719
+2020/10/30 21:54:21 [Info] [Base model] Locale: en-us, CreatedDate: 2019-03-03T17:34:10Z, Id: 198d9b79-2950-4609-b6ec-f52254074a05
+2020/10/30 21:54:21 [Fatal] Please run this tool again and assign --modelId '<one above base model id>'. If no model id listed above, it means currently there is no available base model for en-us
+```
+
+#### <a name="custom-pronunciation-on-the-custom-speech-to-text-container"></a>Пользовательское произношение по пользовательскому контейнеру преобразования речи в текст 
+Начиная с версии v 2.5.0 контейнера пользовательского преобразования "речь-к тексту" вы можете получить результат выполнения пользовательской произношения. Все, что вам нужно сделать, — это настроить пользовательские правила произношения в пользовательской модели и подключить модель к контейнеру пользовательских речевых преобразований в текст.
+
 
 # <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
