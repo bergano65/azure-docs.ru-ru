@@ -86,7 +86,7 @@
     - name: 'База данных Azure для PostgreSQL: базовые показатели безопасности для гипермасштабирования'
       href: ../../postgresql/postgresql-hyperscale-security-baseline.md
     - name: Базовые средства безопасности Azure Databricks
-      href: ../../azure-databricks/security-baseline.md
+      href: /azure/databricks/scenarios/security-baseline
     - name: Базовая защита Azure DNS
       href: ../../dns/security-baseline.md
     - name: Базовые показатели безопасности Azure DevTest Labs
@@ -118,7 +118,7 @@
     - name: Базовые показатели безопасности Azure Sentinel
       href: ../../sentinel/security-baseline.md
     - name: Базовые средства безопасности Базы данных SQL Azure
-      href: ../../sql-database/security-baseline.md
+      href: ../../azure-sql/database/security-baseline.md
     - name: Базовые средства безопасности службы хранилища Azure
       href: ../../storage/common/security-baseline.md
     - name: Базовые средства безопасности Диспетчера трафика Azure
@@ -154,7 +154,7 @@
     - name: Базовый уровень безопасности HDInsight
       href: ../../hdinsight/security-baseline.md
     - name: Базовый уровень безопасности Key Vault
-      href: ../../key-vault/security-baseline.md
+      href: ../../key-vault/general/security-baseline.md
     - name: Базовые показатели безопасности Logic Apps
       href: ../../logic-apps/security-baseline.md
     - name: Базовые показатели безопасности Наблюдателя за сетями

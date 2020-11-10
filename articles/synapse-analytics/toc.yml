@@ -173,7 +173,7 @@
           href: sql/resource-consumption-models.md
         - name: Обработанные данные
           href: sql/data-processed.md
-        - name: Рекомендации по использованию SQL по запросу
+        - name: Рекомендации по использованию бессерверного пула SQL
           href: sql/best-practices-sql-on-demand.md
         - name: Рекомендации по использованию выделенного пула SQL
           href: sql/best-practices-sql-pool.md

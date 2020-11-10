@@ -40,6 +40,8 @@
       href: front-door-backend-pool.md
     - name: Кэширование с помощью Front Door
       href: front-door-caching.md
+    - name: Защита от атак DDoS
+      href: front-door-ddos.md
     - name: Часто задаваемые вопросы о службе Front Door
       href: front-door-faq.md
     - name: Геофильтрация

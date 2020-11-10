@@ -64,6 +64,8 @@
           href: connection-monitor-preview-create-using-portal.md
         - name: Использование ARMClient
           href: connection-monitor-preview-create-using-arm-client.md
+        - name: Регистрация с помощью PowerShell
+          href: connection-monitor-create-using-powershell.md
     - name: Миграция в Монитор подключений (предварительная версия)
       items:
         - name: Из Монитора производительности сети

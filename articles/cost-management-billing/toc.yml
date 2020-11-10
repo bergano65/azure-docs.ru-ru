@@ -120,6 +120,8 @@
           href: understand/subscription-transfer.md
         - name: Передача подписок между партнерами (предварительная версия)
           href: manage/azure-plan-subscription-transfer-partners.md
+        - name: Начало работы на портале Azure EA
+          href: manage/ea-portal-get-started.md
 - name: Практические руководства
   items:
     - name: Настройка службы Управления затратами и выставления счетов
@@ -200,8 +202,6 @@
               href: manage/cancel-azure-subscription.md
         - name: Управление подписками в рамках Соглашения Enterprise
           items:
-            - name: Начало работы на портале Azure EA
-              href: manage/ea-portal-get-started.md
             - name: Роли EA в Azure
               href: manage/understand-ea-roles.md
             - name: Администрирование на портале Azure EA
