@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: b2e54545fb79120a3f9d66067da267df3b151b3f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3812cef9b90a15870733441c9e830daf32e0b18
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322127"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408946"
 ---
 # <a name="security-control-v2-backup-and-recovery"></a>Управление безопасностью версии 2: резервное копирование и восстановление
 
@@ -32,13 +32,13 @@ ms.locfileid: "91322127"
 
 - [Непрерывность бизнес-процессов и аварийное восстановление в масштабах предприятия](/azure/cloud-adoption-framework/ready/enterprise-scale/business-continuity-and-disaster-recovery)
 
-- [Включение Azure Backup](/azure/backup/)
+- [Включение Azure Backup](../../backup/index.yml)
 
-- [Включение восстановления между регионами](/azure/backup/backup-azure-arm-restore-vms#cross-region-restore)
+- [Включение восстановления между регионами](../../backup/backup-azure-arm-restore-vms.md#cross-region-restore)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Политика и стандарты](/azure/cloud-adoption-framework/organize/cloud-security-policy-standards)
 
@@ -60,17 +60,17 @@ ms.locfileid: "91322127"
 
 Используйте управление доступом на основе ролей в Azure Backup, Azure Key Vault или других ресурсах для защиты резервных копий и управляемых клиентом ключей. Кроме того, можно включить дополнительные функции безопасности, чтобы требовать MFA, прежде чем можно будет изменить или удалить резервные копии.
 
-- [Общие сведения о средствах безопасности в Azure Backup](/azure/backup/security-overview)
+- [Общие сведения о средствах безопасности в Azure Backup](../../backup/security-overview.md)
 
-- [Шифрование данных резервных копий с помощью управляемых клиентом ключей](/azure/backup/encryption-at-rest-with-cmk) 
+- [Шифрование данных резервных копий с помощью управляемых клиентом ключей](../../backup/encryption-at-rest-with-cmk.md) 
 
-- [Резервное копирование ключей Key Vault в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Резервное копирование ключей Key Vault в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
-- [Функции безопасности, помогающие защитить гибридные резервные копии от атак](/azure/backup/backup-azure-security-feature#prevent-attacks)
+- [Функции безопасности, помогающие защитить гибридные резервные копии от атак](../../backup/backup-azure-security-feature.md#prevent-attacks)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
@@ -86,13 +86,13 @@ ms.locfileid: "91322127"
 
 Периодически осуществляйте восстановление данных из резервной копии. Убедитесь, что вы можете восстановить резервные копии ключей, управляемых клиентом.
 
-- [Как восстановить файлы из резервной копии виртуальной машины Azure](/azure/backup/backup-azure-restore-files-from-vm)
+- [Как восстановить файлы из резервной копии виртуальной машины Azure](../../backup/backup-azure-restore-files-from-vm.md)
 
-- [Восстановление ключей Key Vault в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Восстановление ключей Key Vault в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Подготовка инцидентов](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
@@ -106,15 +106,14 @@ ms.locfileid: "91322127"
 
 Убедитесь, что у вас есть меры по предотвращению и восстановлению после потери ключей. Включите обратимое удаление и очистку защиты в Azure Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.  
 
-- [Включение обратимого удаления и очистки защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение обратимого удаления и очистки защиты в Key Vault](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
 - [Подготовка инцидентов](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
 - [Безопасность данных](/azure/cloud-adoption-framework/organize/cloud-security-data-security)
-

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 172607a7f8f036bbfb68e8d15e77b2a3e3fb5377
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ba7391b3b524f7532101083a444aab6059e8a10
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326394"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408761"
 ---
 # <a name="security-control-v2-incident-response"></a>Управление безопасностью v2: реагирование на инциденты
 
@@ -26,13 +26,13 @@ ms.locfileid: "91326394"
 
 Убедитесь, что в Организации есть процессы для реагирования на инциденты безопасности, обновили эти процессы для Azure и регулярно исмерены их применение для обеспечения готовности.
 
-- [Реализация безопасности в среде предприятия](https://aka.ms/AzSec4)
+- [Реализация безопасности в среде предприятия](/azure/cloud-adoption-framework/security/security-top-10#3-process-assign-accountability-for-cloud-security-decisions)
 
 - [Справочное руководство по реагированию на инциденты](/microsoft-365/downloads/IR-Reference-Guide.pdf)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
@@ -50,9 +50,9 @@ ms.locfileid: "91326394"
 
 - [Как задать контакт безопасности центра безопасности Azure](../../security-center/security-center-provide-security-contact-details.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
@@ -76,9 +76,9 @@ ms.locfileid: "91326394"
 
 - [Как выполнить потоковую передачу оповещений в Azure Sentinel](../../sentinel/connect-azure-security-center.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
@@ -116,9 +116,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Изучение инцидентов с помощью Azure Sentinel](../../sentinel/tutorial-investigate-cases.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
@@ -140,11 +140,11 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Оповещения безопасности в Центре безопасности Azure](../../security-center/security-center-alerts-overview.md)
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../../azure-resource-manager/management/tag-resources.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
@@ -166,13 +166,12 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [настройке автоматического реагирования на угрозы в Azure Sentinel](../../sentinel/tutorial-respond-threats-playbook.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Операции безопасности](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 - [Подготовка инцидентов](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
 - [Анализ угроз](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
-

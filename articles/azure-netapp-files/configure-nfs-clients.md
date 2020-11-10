@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 10/19/2020
+ms.date: 11/09/2020
 ms.author: b-juche
-ms.openlocfilehash: f4b8b4b56693023ede2ccf8ae7eeac7ed5e16824
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: c1cdeaa41dda11f2ab520cf8d31ddb2116587082
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216867"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94409575"
 ---
 # <a name="configure-an-nfs-client-for-azure-netapp-files"></a>Настройка клиента NFS для Azure NetApp Files
 
@@ -75,7 +75,10 @@ ms.locfileid: "92216867"
     Пример: 
 
     `sudo realm join CONTOSO.COM -U ad_admin --computer-ou="CN=Computers"`
-
+    
+    Убедитесь, что `default_realm` для параметра задана указанная область в `/etc/krb5.conf` .  В противном случае добавьте его в `[libdefaults]` раздел файла, как показано в следующем примере:
+    
+    `default_realm = CONTOSO.COM`
 
 7. Перезапустите все службы NFS:  
  
@@ -199,7 +202,7 @@ ms.locfileid: "92216867"
 
 5. Ubuntu 18,04 по умолчанию использует чрони. Следуя рекомендациям по настройке в [Ubuntu Бионик: использование чрони для настройки NTP](https://ubuntu.com/blog/ubuntu-bionic-using-chrony-to-configure-ntp).
 
-6. Присоединитесь к домен Active Directory:   
+6. Присоединиться к домену Active Directory:   
  
     `sudo realm join $DOMAIN.NAME -U $SERVICEACCOUNT --computer-ou="OU=$YOUROU"`
  

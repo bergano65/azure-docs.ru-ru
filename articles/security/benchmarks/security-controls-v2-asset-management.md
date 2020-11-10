@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 087147038286bd7363fcc0eb3812abccc6ef9206
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: c553652d4d8abd16b4e5fd4ff896e42bdba103ad
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92201840"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408980"
 ---
 # <a name="security-control-v2-asset-management"></a>Управление безопасностью версии 2: Управление активами
 
@@ -36,9 +36,9 @@ ms.locfileid: "92201840"
 
 - [Общие сведения о Группы управления Azure](../../governance/management-groups/overview.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
@@ -56,15 +56,15 @@ ms.locfileid: "92201840"
 
 Логически упорядочивайте активы в соответствии с классификацией вашей организации с помощью тегов, а также других метаданных в Azure (имя, описание и категория).  
 
-- [Создание запросов с помощью обозревателя графа ресурсов Azure](../../governance/resource-graph/first-query-portal.md)
+- [Как создавать запросы с помощью обозревателя Azure Resource Graph](../../governance/resource-graph/first-query-portal.md)
 
 - [Управление инвентаризацией активов в центре безопасности Azure](../../security-center/asset-inventory.md)
 
-- [Дополнительные сведения о разметке ресурсов см. в разделе Описание принятия решений по именованию и маркировке.](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Дополнительные сведения о разметке ресурсов см. в разделе Описание принятия решений по именованию и маркировке.](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%252fazure%252fazure-resource-manager%252fmanagement%252ftoc.json)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
@@ -80,13 +80,13 @@ ms.locfileid: "92201840"
 
 - [Настройка и управление политикой Azure](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../../governance/policy/samples/index.md)
 
-- [Создание запросов с помощью обозревателя графа ресурсов Azure](../../governance/resource-graph/first-query-portal.md)
+- [Как создавать запросы с помощью обозревателя Azure Resource Graph](../../governance/resource-graph/first-query-portal.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Управление соответствием требованиям безопасности](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
@@ -104,9 +104,9 @@ ms.locfileid: "92201840"
 
 - [Удаление группы ресурсов и ресурса Azure](../../azure-resource-manager/management/delete-resource-group.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
@@ -124,9 +124,9 @@ ms.locfileid: "92201840"
 
 - [Настройка условного доступа для блокировки доступа к диспетчеру ресурсов Azure](../../role-based-access-control/conditional-access-azure-management.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Управление состоянием](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)  
 
@@ -152,15 +152,14 @@ ms.locfileid: "92201840"
 
 - [Общие сведения о Отслеживание изменений и инвентаризации службы автоматизации Azure](../../automation/change-tracking/overview.md)
 
-- [Управление выполнением скриптов PowerShell в средах Windows](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
+- [Управление выполнением скриптов PowerShell в средах Windows](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
 - [Управление состоянием](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)  
 
 - [Управление соответствием требованиям безопасности](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
-

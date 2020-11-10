@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 452b1a33520309ae696ab318c034f0186c993fdc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e74994847608b7fb59a1bf507691f02cf02b714a
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91402928"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408895"
 ---
 # <a name="security-control-v2-endpoint-security"></a>Управление безопасностью v2: безопасность конечных точек
 
@@ -34,9 +34,9 @@ ms.locfileid: "91402928"
 
 - [Служба ATP в защитнике Майкрософт для серверов, отличных от Windows](/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-non-windows)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security)
 
@@ -60,11 +60,11 @@ ms.locfileid: "91402928"
 
 - [Настройка антивредоносного по Майкрософт для облачных служб и виртуальных машин](../fundamentals/antimalware.md)
 
-- [Поддерживаемые решения для защиты конечных точек](https://docs.microsoft.com/azure/security-center/security-center-services?tabs=features-windows#supported-endpoint-protection-solutions-)
+- [Поддерживаемые решения для защиты конечных точек](../../security-center/security-center-services.md?tabs=features-windows#supported-endpoint-protection-solutions-)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security)
 
@@ -86,9 +86,9 @@ ms.locfileid: "91402928"
 
 - [Развертывание антивредоносного по Майкрософт для облачных служб и виртуальных машин Azure](../fundamentals/antimalware.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security)
 

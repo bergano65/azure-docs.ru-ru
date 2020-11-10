@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7baa851943db3e8c691b50c2cb5446a2adbbccc
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 5e50b9e5dc683eb30452dbb96d82c9f66de93763
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457997"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408011"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
 
@@ -36,7 +36,7 @@ ms.locfileid: "92457997"
 ![Простой единый вход](./media/how-to-connect-sso/sso1.png)
 
 >[!IMPORTANT]
->Для простого единого входа необходимо, чтобы устройство пользователя было только **присоединенным к домену**, но не использовалось в устройствах с [присоединением к Azure AD](../devices/concept-azure-ad-join.md) или [гибридным присоединением к Azure AD](../devices/concept-azure-ad-join-hybrid.md). Единый вход на устройствах с присоединением к Azure AD, гибридным присоединением к Azure AD или регистрацией в Azure AD работает на базе [основного маркера обновления](../devices/concept-primary-refresh-token.md).
+>Для простого единого входа необходимо, чтобы устройство пользователя было только **присоединенным к домену** , но не использовалось в устройствах с [присоединением к Azure AD](../devices/concept-azure-ad-join.md) или [гибридным присоединением к Azure AD](../devices/concept-azure-ad-join-hybrid.md). Единый вход на устройствах с присоединением к Azure AD, гибридным присоединением к Azure AD или регистрацией в Azure AD работает на базе [основного маркера обновления](../devices/concept-primary-refresh-token.md).
 
 ## <a name="key-benefits"></a>Основные преимущества
 
@@ -85,7 +85,7 @@ ms.locfileid: "92457997"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [**Краткое руководство**](how-to-connect-sso-quick-start.md). Настройка и подготовка к работе простого единого входа Azure AD.
-- [**План развертывания**](https://aka.ms/deploymentplans/sso). Пошаговый план развертывания.
+- [**План развертывания**](../manage-apps/plan-sso-deployment.md). Пошаговый план развертывания.
 - [**Техническое руководство по сквозной проверке подлинности Azure Active Directory**](how-to-connect-sso-how-it-works.md). Сведения о том, как работает эта функция.
 - [**Часто задаваемые вопросы**](how-to-connect-sso-faq.md). Ответы на часто задаваемые вопросы.
 - [**Устранение неполадок**](tshoot-connect-sso.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.

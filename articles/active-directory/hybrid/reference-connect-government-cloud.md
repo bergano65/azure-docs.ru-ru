@@ -11,12 +11,12 @@ ms.date: 04/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c083b319b11807a88461b2464153821fa2ad0b67
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 219893859d05eb419bc862484a9083abf8c26db7
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89276190"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94409303"
 ---
 # <a name="hybrid-identity-considerations-for-the-azure-government-cloud"></a>Рекомендации по гибридной идентификации в облаке Azure для государственных организаций
 
@@ -36,7 +36,7 @@ ms.locfileid: "89276190"
 Перед развертыванием агента сквозной проверки подлинности проверьте, установлен ли брандмауэр между вашими серверами и Azure AD. Если брандмауэр или прокси-сервер разрешает использовать защищенные программы или программы, заблокированные службой доменных имен (DNS), добавьте следующие подключения.
 
 > [!NOTE]
-> Следующие рекомендации также применимы к установке [соединителя Azure AD Application Proxy](https://aka.ms/whyappproxy) для сред Azure для государственных организаций.
+> Следующие рекомендации также применимы к установке [соединителя Azure AD Application Proxy](../manage-apps/what-is-application-proxy.md) для сред Azure для государственных организаций.
 
 |URL-адрес |Как он используется|
 |-----|-----|

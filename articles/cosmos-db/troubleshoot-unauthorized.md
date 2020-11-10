@@ -8,12 +8,12 @@ ms.date: 07/13/2020
 ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: dce956b932274a44e98a28b4c6567a5e98771613
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: aa9bf1fd706ccf6064893f1141be5e5b2f185ff3
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340011"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94411173"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-unauthorized-exceptions"></a>Диагностика и устранение неполадок Azure Cosmos DB несанкционированных исключений
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -50,6 +50,8 @@ HTTP 401: подпись MAC, найденная в HTTP-запросе, не с
 #### <a name="solution"></a>Решение.
 Существует условие гонки с созданием контейнера. Экземпляр приложения пытается получить доступ к контейнеру до завершения создания контейнера. Наиболее распространенный сценарий для этого состояния гонки — если приложение запущено и контейнер удален и создан повторно с тем же именем. Пакет SDK пытается использовать новый контейнер, но создание контейнера по-прежнему выполняется, поэтому у него нет ключей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Диагностика и устранение неполадок](troubleshoot-dot-net-sdk.md) при использовании пакета SDK для Azure Cosmos DB .NET.
 * Ознакомьтесь с рекомендациями по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md).
+* [Диагностика и устранение неполадок](troubleshoot-java-sdk-v4-sql.md) при использовании пакета SDK для Java версии 4 Azure Cosmos DB.
+* Сведения о рекомендациях по производительности для [пакета SDK для Java v4](performance-tips-java-sdk-v4-sql.md).

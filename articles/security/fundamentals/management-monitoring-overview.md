@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: c5525fc43f23ecd1760c5a869d8171aee0e9415d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e74b540610d3b6520f4c8e25ca2df7bf628706f
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91395776"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94410340"
 ---
 # <a name="azure-security-management-and-monitoring-overview"></a>Обзор управления безопасностью Azure и ее мониторинга
 Эта статья содержит обзор функций безопасности и служб, предоставляемых Azure для упрощения управления облачными службами Azure и виртуальными машинами, а также их мониторинга.
@@ -48,8 +48,8 @@ Azure также поддерживает продукт Symantec Endpoint Prote
 
 * [Развертывание решений по защите от вредоносных программ на виртуальных машинах Azure](https://azure.microsoft.com/blog/deploying-antimalware-solutions-on-azure-virtual-machines/)
 * [Антивредоносное ПО Майкрософт для облачных служб и виртуальных машин Azure](antimalware.md)
-* [Установка и настройка Trend Micro Deep Security как услуги на ВМ Windows](/azure/virtual-machines/windows/classic/install-trend)
-* [Установка и настройка Symantec Endpoint Protection на виртуальной машине Windows](/azure/virtual-machines/windows/classic/install-symantec)
+* [Установка и настройка Trend Micro Deep Security как услуги на ВМ Windows](../../virtual-machines/extensions/trend.md)
+* [Установка и настройка Symantec Endpoint Protection на виртуальной машине Windows](../../virtual-machines/extensions/symantec.md)
 * [Новые возможности защиты виртуальных машин Azure от вредоносных программ](https://azure.microsoft.com/blog/new-antimalware-options-for-protecting-azure-virtual-machines/)
 
 ## <a name="multi-factor-authentication"></a>Многофакторная идентификация
@@ -61,7 +61,7 @@ Azure также поддерживает продукт Symantec Endpoint Prote
 Дополнительные сведения:
 
 * [Многофакторная идентификация](https://azure.microsoft.com/documentation/services/multi-factor-authentication/)
-* [Что такое Многофакторная идентификация Azure?](/azure/active-directory/authentication/multi-factor-authentication)
+* [Что такое Многофакторная идентификация Azure?](../../active-directory/authentication/concept-mfa-howitworks.md)
 * [Принципы работы службы Многофакторной идентификации Azure](../../active-directory/authentication/concept-mfa-howitworks.md)
 
 ## <a name="expressroute"></a>ExpressRoute
@@ -87,7 +87,7 @@ VPN-шлюзы, или шлюзы виртуальных сетей Azure, ис�
 * [Шлюзы VPN](../../vpn-gateway/vpn-gateway-about-vpngateways.md)
 * [Обзор сетевой безопасности Azure](network-overview.md)
 
-## <a name="privileged-identity-management"></a>Управление привилегированными пользователями (PIM)
+## <a name="privileged-identity-management"></a>Управление привилегированными пользователями
 
 Иногда пользователям требуется выполнять привилегированные операции с ресурсами в Azure или других приложениях SaaS. Как правило, это означает, что организации должны обеспечить им постоянный привилегированный доступ в Azure Active Directory (Azure AD).
 
@@ -112,7 +112,7 @@ VPN-шлюзы, или шлюзы виртуальных сетей Azure, ис�
 
 Дополнительные сведения:
 
-* [Защита идентификации Azure Active Directory](/azure/active-directory/active-directory-identityprotection)
+* [Защита идентификации Azure Active Directory](../../active-directory/identity-protection/overview-identity-protection.md)
 * [Channel 9: Azure AD and Identity Show: Identity Protection Preview (Канал 9. Azure Active Directory и идентификация. Предварительная версия защиты идентификации)](https://channel9.msdn.com/Series/Azure-AD-Identity/Azure-AD-and-Identity-Show-Identity-Protection-Preview)
 
 ## <a name="security-center"></a>Центр безопасности
@@ -129,8 +129,8 @@ VPN-шлюзы, или шлюзы виртуальных сетей Azure, ис�
 
 Дополнительные сведения:
 
-* [Введение в Центр безопасности Azure](../../security-center/security-center-intro.md)
-* [Повышение оценки безопасности в центре безопасности Azure](../../security-center/security-center-secure-score.md)
+* [Введение в Центр безопасности Azure](../../security-center/security-center-introduction.md)
+* [Повышение оценки безопасности в центре безопасности Azure](../../security-center/secure-score-security-controls.md)
 
 ## <a name="intelligent-security-graph"></a>Intelligent Security Graph
 

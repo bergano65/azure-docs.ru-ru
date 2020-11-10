@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 82114164d70eae71678e70ff2bdb7ea44a54d4cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e88976bfbf5d033d6f5dc2318a6383e01ceb791d
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87076304"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94409082"
 ---
 # <a name="security-control-logging-and-monitoring"></a>Управление безопасностью: ведение журнала и мониторинг
 
@@ -26,9 +26,9 @@ ms.locfileid: "87076304"
 
 Корпорация Майкрософт поддерживает источники времени для ресурсов Azure. Однако вы можете управлять параметрами синхронизации времени для ресурсов вычислений.
 
-- [Настройка синхронизации времени для ресурсов Windows Azure для вычислений](https://docs.microsoft.com/azure/virtual-machines/windows/time-sync)
+- [Настройка синхронизации времени для ресурсов Windows Azure для вычислений](../../virtual-machines/windows/time-sync.md)
 
-- [Настройка синхронизации времени для ресурсов Azure Linux](https://docs.microsoft.com/azure/virtual-machines/linux/time-sync)
+- [Настройка синхронизации времени для ресурсов Azure Linux](../../virtual-machines/linux/time-sync.md)
 
 ## <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
@@ -40,11 +40,11 @@ ms.locfileid: "87076304"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM. 
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md)
 
-- [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm)
+- [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](../../azure-monitor/learn/quick-collect-azurevm.md)
 
 - [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -56,9 +56,9 @@ ms.locfileid: "87076304"
 
 Включите параметры диагностики для ресурсов Azure, чтобы получить доступ к журналам аудита, безопасности и диагностики. Автоматически доступны журналы действий, включающие источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md)
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../../azure-monitor/platform/platform-logs-overview.md)
 
 ## <a name="24-collect-security-logs-from-operating-systems"></a>2.4. Сбор журналов безопасности из операционных систем
 
@@ -68,9 +68,9 @@ ms.locfileid: "87076304"
 
 Если ресурсы для вычислений принадлежат корпорации Майкрософт, корпорация Майкрософт несет ответственность за мониторинг ИТ-ресурсов. Если ресурс-источник принадлежит вашей организации, вы отвечаете за его мониторинг. Для мониторинга операционной системы можно использовать центр безопасности Azure. Данные, собираемые центром безопасности из операционной системы, включают в себя тип ОС и версию, ОПЕРАЦИОНную систему (журналы событий Windows), запущенные процессы, имя компьютера, IP-адреса и вошедший в систему пользователь. Агент Log Analytics также собирает файлы аварийного дампа.
 
-- [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm)
+- [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](../../azure-monitor/learn/quick-collect-azurevm.md)
 
-- [Общие сведения о сборе данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection)
+- [Общие сведения о сборе данных в центре безопасности Azure](../../security-center/security-center-enable-data-collection.md)
 
 ## <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
@@ -80,9 +80,9 @@ ms.locfileid: "87076304"
 
 В Azure Monitor задайте срок хранения Log Analytics рабочей области согласно нормативным требованиям Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-- [Изменение срока хранения данных в Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Изменение срока хранения данных в Log Analytics](../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Настройка политики хранения для журналов учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-logging)
+- [Настройка политики хранения для журналов учетных записей хранения Azure](../../storage/common/storage-monitor-storage-account.md#configure-logging)
 
 ## <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
 
@@ -94,11 +94,11 @@ ms.locfileid: "87076304"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM. 
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-- [Общие сведения о рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+- [Общие сведения о рабочей области Log Analytics](../../azure-monitor/log-query/get-started-portal.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+- [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
 
 ## <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
@@ -110,11 +110,11 @@ ms.locfileid: "87076304"
 
 Кроме того, вы можете включить и подключить данные в Azure Sentinel.
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-- [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
+- [Управление оповещениями в центре безопасности Azure](../../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+- [Как оповещать данные журнала Log Analytics](../../azure-monitor/learn/tutorial-response.md)
 
 ## <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
 
@@ -128,7 +128,7 @@ ms.locfileid: "87076304"
 
 - [Настройка антивредоносного по Майкрософт для облачных служб](/powershell/module/servicemanagement/azure.service/set-azureserviceantimalwareextension?view=azuresmps-4.0.0)
 
-- [Знакомство с антивредоносным по Майкрософт](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
+- [Знакомство с антивредоносным по Майкрософт](../fundamentals/antimalware.md)
 
 ## <a name="29-enable-dns-query-logging"></a>2.9. Включение ведения журнала запросов DNS
 
@@ -146,11 +146,11 @@ ms.locfileid: "87076304"
 
 Используйте Microsoft Monitoring Agent на всех поддерживаемых виртуальных машинах Windows Azure для регистрации события создания процесса и поля командной строки.   Для поддерживаемых виртуальных машин Linux в Azure можно вручную настроить ведение журнала консоли для каждого узла и использовать syslog для хранения данных.  Кроме того, используйте рабочую область Log Analytics Azure Monitor, чтобы просматривать журналы и выполнять запросы к данным журнала из виртуальных машин Azure. 
 
-- [Сбор данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
+- [Сбор данных в центре безопасности Azure](../../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
-- [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+- [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
 
-- [Источники данных системного журнала в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-syslog)
+- [Источники данных системного журнала в Azure Monitor](../../azure-monitor/platform/data-sources-syslog.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

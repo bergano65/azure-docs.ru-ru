@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: dad01212be3589af7167082ff22c624fa776772a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b74baebd964ee43658f74e0050dff838e29f9b8a
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82193128"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94409065"
 ---
 # <a name="security-control-network-security"></a>Управление безопасностью: Сетевая безопасность
 
@@ -22,21 +22,21 @@ ms.locfileid: "82193128"
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 1,1 | 9,2, 9,4, 14,1, 14,2, 14,3 | Customer |
+| 1.1 | 9,2, 9,4, 14,1, 14,2, 14,3 | Customer |
 
 Убедитесь, что все развертывания подсетей виртуальных сетей имеют группу безопасности сети, применяемую к элементам управления доступом к сети, относящимся к доверенным портам и источникам приложения. Если это возможно, используйте частные конечные точки с закрытой ссылкой для защиты ресурсов службы Azure в виртуальной сети путем расширения удостоверения виртуальной сети для службы. Если частные конечные точки и частная ссылка недоступны, используйте конечные точки службы. Требования к конкретной службе см. в рекомендации по безопасности для этой конкретной службы. 
 
 Кроме того, при наличии определенного варианта использования требование может быть удовлетворено реализацией брандмауэра Azure.
 
-- [Общие сведения о конечных точках службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview)
+- [Общие сведения о конечных точках службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)
 
-- [Общие сведения о частной ссылке Azure](https://docs.microsoft.com/azure/private-link/private-link-overview)
+- [Общие сведения о частной ссылке Azure](../../private-link/private-link-overview.md)
 
-- [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+- [Создание виртуальной сети](../../virtual-network/quick-create-portal.md)
 
-- [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+- [Создание NSG с конфигурацией безопасности](../../virtual-network/tutorial-filter-network-traffic.md)
 
-- [Развертывание и настройка брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+- [Развертывание и настройка брандмауэра Azure](../../firewall/tutorial-firewall-deploy-portal.md)
 
 ## <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
@@ -46,11 +46,11 @@ ms.locfileid: "82193128"
 
 Используйте центр безопасности Azure и следуйте рекомендациям по защите сети, чтобы помочь защитить сетевые ресурсы в Azure. Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать Аналитика трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
-- [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+- [Как включить журналы потоков NSG](../../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-- [Как включать и использовать Аналитику трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+- [Как включать и использовать Аналитику трафика](../../network-watcher/traffic-analytics.md)
 
-- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](../../security-center/security-center-network-recommendations.md)
 
 ## <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
@@ -60,7 +60,7 @@ ms.locfileid: "82193128"
 
 Развертывание брандмауэра веб-приложения Azure (WAF) перед критически важными веб-приложениями для дополнительной проверки входящего трафика. Включите параметр диагностики для WAF и приема журналов в учетную запись хранения, концентратор событий или рабочую область Log Analytics.
 
-- [Развертывание WAF Azure](https://docs.microsoft.com/azure/web-application-firewall/ag/create-waf-policy-ag)
+- [Развертывание WAF Azure](../../web-application-firewall/ag/create-waf-policy-ag.md)
 
 ## <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4. Запрет взаимодействия с известными опасными IP-адресами
 
@@ -76,15 +76,15 @@ ms.locfileid: "82193128"
 
 Используйте адаптивную защиту сети в центре безопасности Azure, чтобы рекомендовать NSG конфигурации, ограничивающие порты и исходные IP-адреса на основе фактического трафика и аналитики угроз.
 
-- [Настройка защиты от атак DDoS](https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection)
+- [Настройка защиты от атак DDoS](../../virtual-network/manage-ddos-protection.md)
 
-- [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+- [Развертывание брандмауэра Azure](../../firewall/tutorial-firewall-deploy-portal.md)
 
-- [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer)
+- [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../../security-center/azure-defender.md)
 
-- [Общие сведения о адаптивной защите сети в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-network-hardening)
+- [Общие сведения о адаптивной защите сети в центре безопасности Azure](../../security-center/security-center-adaptive-network-hardening.md)
 
-- [Общие сведения об управлении доступом к сети в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-just-in-time)
+- [Общие сведения об управлении доступом к сети в центре безопасности Azure](../../security-center/security-center-just-in-time.md)
 
 ## <a name="15-record-network-packets"></a>1,5: запись сетевых пакетов
 
@@ -94,7 +94,7 @@ ms.locfileid: "82193128"
 
 Включите запись пакетов наблюдателя за сетями для изучения аномальных действий.
 
-- [Как включить Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-create)
+- [Как включить Наблюдатель за сетями](../../network-watcher/network-watcher-create.md)
 
 ## <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6. Развертывание сетевых систем обнаружения и предотвращения вторжений (IDS/IPS)
 
@@ -108,9 +108,9 @@ ms.locfileid: "82193128"
 
 - [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/?term=Firewall)
 
-- [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+- [Развертывание брандмауэра Azure](../../firewall/tutorial-firewall-deploy-portal.md)
 
-- [Настройка оповещений с помощью брандмауэра Azure](https://docs.microsoft.com/azure/firewall/threat-intel)
+- [Настройка оповещений с помощью брандмауэра Azure](../../firewall/threat-intel.md)
 
 ## <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
 
@@ -120,11 +120,11 @@ ms.locfileid: "82193128"
 
 Разверните шлюз приложений Azure для веб-приложений с включенным протоколом HTTPS/TLS для доверенных сертификатов.
 
-- [Развертывание шлюза приложений](https://docs.microsoft.com/azure/application-gateway/quick-create-portal)
+- [Развертывание шлюза приложений](../../application-gateway/quick-create-portal.md)
 
-- [Настройка шлюза приложений для использования протокола HTTPS](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal)
+- [Настройка шлюза приложений для использования протокола HTTPS](../../application-gateway/create-ssl-portal.md)
 
-- [Общие сведения о балансировке нагрузки уровня 7 с помощью шлюзов веб-приложений Azure](https://docs.microsoft.com/azure/application-gateway/overview)
+- [Общие сведения о балансировке нагрузки уровня 7 с помощью шлюзов веб-приложений Azure](../../application-gateway/overview.md)
 
 ## <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
 
@@ -136,9 +136,9 @@ ms.locfileid: "82193128"
 
 Группы безопасности приложений также можно использовать для упрощения сложной настройки безопасности. Группы безопасности приложений позволяют настроить сетевую безопасность как естественное расширение в структуре приложения. Это позволяет группировать виртуальные машины и определять политики безопасности сети на основе таких групп.
 
-- [Общие сведения и использование тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)
+- [Общие сведения и использование тегов служб](../../virtual-network/service-tags-overview.md)
 
-- [Общие сведения и использование групп безопасности приложений](https://docs.microsoft.com/azure/virtual-network/security-overview#application-security-groups)
+- [Общие сведения и использование групп безопасности приложений](../../virtual-network/network-security-groups-overview.md#application-security-groups)
 
 ## <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
 
@@ -150,11 +150,11 @@ ms.locfileid: "82193128"
 
 Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны диспетчера ресурсов Azure, элементы управления RBAC и политики, в одном определении схемы. Вы можете применить схему к новым подпискам, а также настроить управление и управление с помощью управления версиями.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Примеры политик Azure для работы в сети](https://docs.microsoft.com/azure/governance/policy/samples/#network)
+- [Примеры политик Azure для работы в сети](../../governance/policy/samples/built-in-policies.md#network)
 
-- [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+- [Создание схемы Azure](../../governance/blueprints/create-blueprint-portal.md)
 
 ## <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
 
@@ -168,11 +168,11 @@ ms.locfileid: "82193128"
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
-- [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+- [Создание виртуальной сети](../../virtual-network/quick-create-portal.md)
 
-- [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+- [Создание группы безопасности сети с конфигурацией безопасности](../../virtual-network/tutorial-filter-network-traffic.md)
 
 ## <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
@@ -182,9 +182,9 @@ ms.locfileid: "82193128"
 
 Используйте журнал действий Azure для мониторинга конфигураций ресурсов и обнаружения изменений в ресурсах Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+- [Как просматривать и извлекать события журнала действий Azure](../../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+- [Как создать оповещения в службе Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

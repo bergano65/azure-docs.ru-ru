@@ -5,16 +5,16 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.author: tomfitz
-ms.openlocfilehash: c3ba36fc3aaa98aec54b6c70cd416c589be27cfa
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 3e8bdd85c112d90fd5e10f6e65e48ca6b3f71b6e
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747358"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94410748"
 ---
 # <a name="createuidefinition-elements"></a>Элементы CreateUiDefinition
 
-В этой статье описывается схема и свойства всех поддерживаемых элементов CreateUiDefinition. 
+В этой статье описывается схема и свойства всех поддерживаемых элементов CreateUiDefinition.
 
 ## <a name="schema"></a>схема
 
@@ -36,7 +36,7 @@ ms.locfileid: "92747358"
 | Свойство | Обязательно | Описание |
 | -------- | -------- | ----------- |
 | name | Да | Внутренний идентификатор для ссылки на конкретный экземпляр элемента. Чаще всего имя элемента используется в `outputs`, где значения выходных данных указанных элементов сопоставляются с параметрами шаблона. Его также можно использовать для привязки выходного значения элемента к `defaultValue` другого элемента. |
-| type | Да | Элемент управления пользовательского интерфейса для обработки элемента. Список поддерживаемых типов см. в разделе [Элементы](#elements). |
+| тип | Да | Элемент управления пользовательского интерфейса для обработки элемента. Список поддерживаемых типов см. в разделе [Элементы](#elements). |
 | метка | Да | Отображаемый текст элемента. Некоторые типы элементов содержат несколько меток, поэтому значение может быть объектом, содержащим несколько строк. |
 | defaultValue | Нет | Значение элемента по умолчанию. Некоторые типы элементов поддерживают сложные значения по умолчанию, поэтому значение может быть объектом. |
 | toolTip | Нет | Текст для отображения в подсказке элемента. Аналогично `label` некоторые элементы поддерживают несколько строк с подсказками. С помощью синтаксиса Markdown можно внедрить встроенные ссылки.
@@ -56,6 +56,7 @@ ms.locfileid: "92747358"
 - [Элемент пользовательского интерфейса Microsoft.Common.OptionsGroup](microsoft-common-optionsgroup.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.PasswordBox](microsoft-common-passwordbox.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.Section](microsoft-common-section.md)
+- [Microsoft. Common. СервицепринЦипалселектор](microsoft-common-serviceprincipalselector.md)
 - [Microsoft. Common. Slider](microsoft-common-slider.md)
 - [Microsoft. Common. Тагсбиресаурце](microsoft-common-tagsbyresource.md)
 - [Microsoft.Common.TextBlock](microsoft-common-textblock.md)

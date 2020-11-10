@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 4f3e8540902809f951a441aa2fe8d00026c44d82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee28cbffd6f047b4991d29781e0b131a44c7dfae
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81408589"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94409184"
 ---
 # <a name="security-control-data-recovery"></a>Управление безопасностью: восстановление данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "81408589"
 
 Включите Azure Backup и настройте источник резервного копирования (виртуальные машины Azure, SQL Server или файловые ресурсы), а также нужную частоту и срок хранения.
 
-- [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
+- [Включение Azure Backup](../../backup/index.yml)
 
 ## <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2. Выполнение полного резервного копирования системы и любых ключей, управляемых клиентом
 
@@ -36,9 +36,9 @@ ms.locfileid: "81408589"
 
 Включите Azure Backup и целевые виртуальные машины, а также желаемую частоту и сроки хранения. Резервное копирование управляемых пользователем ключей в Azure Key Vault.
 
-- [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
+- [Включение Azure Backup](../../backup/index.yml)
 
-- [Как создать резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
 ## <a name="93-validate-all-backups-including-customer-managed-keys"></a>9.3. Проверка всех резервных копий, включая управляемые клиентом ключи
 
@@ -48,9 +48,9 @@ ms.locfileid: "81408589"
 
 Обеспечение возможности периодически выполнять восстановление данных в Azure Backup. Проверка восстановления резервных копий ключей, управляемых клиентом.
 
-- [Как восстановить файлы из резервной копии виртуальной машины Azure](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm)
+- [Как восстановить файлы из резервной копии виртуальной машины Azure](../../backup/backup-azure-restore-files-from-vm.md)
 
-- [Как восстановить резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
 ## <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4. Обеспечение защиты резервных копий и управляемых клиентом ключей
 
@@ -62,11 +62,11 @@ ms.locfileid: "81408589"
 
 Включите Soft-Delete и очистите защиту в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.  Если хранилище Azure используется для хранения резервных копий, включите обратимое удаление, чтобы сохранять и восстанавливать данные при удалении больших двоичных объектов или моментальных снимков больших двоичных объектов. 
 
-- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+- [Общие сведения об Azure RBAC](../../role-based-access-control/overview.md)
 
-- [Включение Soft-Delete и очистка защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение Soft-Delete и очистка защиты в Key Vault](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
-- [Soft delete for Azure Storage blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
+- [Soft delete for Azure Storage blobs](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

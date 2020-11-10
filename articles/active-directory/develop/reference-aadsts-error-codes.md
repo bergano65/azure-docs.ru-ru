@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 04/30/2020
+ms.date: 11/09/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 4bd738197c84d7dce36f087d170f61a55d8e9f32
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 59ed397f3bd54a324f8fa375a3ea870860c31142
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241333"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94410935"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Коды ошибок аутентификации и авторизации Azure AD
 
@@ -74,7 +74,7 @@ ms.locfileid: "93241333"
 ## <a name="lookup-current-error-code-information"></a>Просмотр сведений о текущем коде ошибки
 Коды ошибок и сообщения могут изменяться.  Для получения самых актуальных сведений ознакомьтесь со [https://login.microsoftonline.com/error](https://login.microsoftonline.com/error) страницей, чтобы найти описания ошибок, исправления и некоторые возможные обходные пути аадстс.  
 
-Поиск по числовой части возвращенного кода ошибки.  Например, если получен код ошибки "AADSTS16000", выполните поиск по запросу [https://login.microsoftonline.com/error](https://login.microsoftonline.com/error) "16000".  Можно также напрямую связать с определенной ошибкой, добавив номер кода ошибки к URL-адресу: [https://login.microsoftonline.com/error?code=16000](https://login.microsoftonline.com/error?code=16000) .
+Например, если получен код ошибки "AADSTS50058", выполните поиск по запросу [https://login.microsoftonline.com/error](https://login.microsoftonline.com/error) "50058".  Можно также напрямую связать с определенной ошибкой, добавив номер кода ошибки к URL-адресу: [https://login.microsoftonline.com/error?code=50058](https://login.microsoftonline.com/error?code=50058) .
 
 ## <a name="aadsts-error-codes"></a>Коды ошибок AADSTS
 

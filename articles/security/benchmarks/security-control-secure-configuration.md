@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 347a63cc77c565d800328c19d1d543c2c9efafc0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 349456b0a4de65520dd633efe0573d24ea1c89c4
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89400098"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94409031"
 ---
 # <a name="security-control-secure-configuration"></a>Управление безопасностью: безопасная конфигурация
 
@@ -30,13 +30,13 @@ ms.locfileid: "89400098"
 
 Вы также можете использовать рекомендации из центра безопасности Azure в качестве защищенного шаблона базовой конфигурации для ресурсов Azure.
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
-- [Руководство по Создание политик и управление ими для обеспечения соответствия требованиям](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Руководство по Создание политик и управление ими для обеспечения соответствия требованиям](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/export-template-portal)
+- [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../../azure-resource-manager/templates/export-template-portal.md)
 
-- [Рекомендации по безопасности — справочное руководство](https://docs.microsoft.com/azure/security-center/recommendations-reference)
+- [Рекомендации по безопасности — справочное руководство](../../security-center/recommendations-reference.md)
 
 ## <a name="72-establish-secure-operating-system-configurations"></a>7.2. Сохранение безопасных конфигураций для операционных систем
 
@@ -46,15 +46,15 @@ ms.locfileid: "89400098"
 
 Используйте рекомендации центра безопасности Azure для сохранения конфигураций безопасности во всех ресурсах вычислений.  Кроме того, можно использовать пользовательские образы операционной системы или настройку состояния службы автоматизации Azure, чтобы установить конфигурацию безопасности операционной системы, требуемой для Организации.
 
-- [Как отслеживать рекомендации центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-recommendations)
+- [Как отслеживать рекомендации центра безопасности Azure](../../security-center/security-center-recommendations.md)
 
-- [Рекомендации по безопасности — справочное руководство](https://docs.microsoft.com/azure/security-center/recommendations-reference)
+- [Рекомендации по безопасности — справочное руководство](../../security-center/recommendations-reference.md)
 
-- [Обзор настройки состояния службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Обзор настройки состояния службы автоматизации Azure](../../automation/automation-dsc-overview.md)
 
-- [Отправка виртуального жесткого диска и его использование для создания новых виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed)
+- [Отправка виртуального жесткого диска и его использование для создания новых виртуальных машин Windows в Azure](../../virtual-machines/windows/upload-generalized-managed.md)
 
-- [Создание виртуальной машины Linux на основе пользовательского диска с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-machines/linux/upload-vhd)
+- [Создание виртуальной машины Linux на основе пользовательского диска с помощью Azure CLI](../../virtual-machines/linux/upload-vhd.md)
 
 ## <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
 
@@ -64,11 +64,11 @@ ms.locfileid: "89400098"
 
 Используйте политику Azure [Deny] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.  Кроме того, вы можете использовать шаблоны Azure Resource Manager для поддержания конфигурации безопасности ресурсов Azure, необходимых вашей организации. 
 
-- [Общие сведения о влиянии политики Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+- [Общие сведения о влиянии политики Azure](../../governance/policy/concepts/effects.md)
 
-- [Создание политик и управление ими для обеспечения соответствия](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Создание политик и управление ими для обеспечения соответствия](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Общие сведения о шаблонах Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview)
+- [Общие сведения о шаблонах Azure Resource Manager](../../azure-resource-manager/templates/overview.md)
 
 ## <a name="74-maintain-secure-operating-system-configurations"></a>7.4. Сохранение безопасных конфигураций для операционных систем
 
@@ -80,29 +80,29 @@ ms.locfileid: "89400098"
 
 Кроме того, обратите внимание, что образы виртуальных машин Azure Marketplace, опубликованные корпорацией Майкрософт, управляются и обслуживаются корпорацией Майкрософт. 
 
-- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-vulnerability-assessment-recommendations)
+- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../../security-center/deploy-vulnerability-assessment-vm.md)
 
-- [Создание виртуальной машины Azure на основе шаблона Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/ps-template)
+- [Создание виртуальной машины Azure на основе шаблона Azure Resource Manager](../../virtual-machines/windows/ps-template.md)
 
-- [Обзор настройки состояния службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Обзор настройки состояния службы автоматизации Azure](../../automation/automation-dsc-overview.md)
 
-- [Создание виртуальной машины Windows на портале Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
+- [Создание виртуальной машины Windows на портале Azure](../../virtual-machines/windows/quick-create-portal.md)
 
-- [Сведения о том, как скачать шаблон виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/windows/download-template)
+- [Сведения о том, как скачать шаблон виртуальной машины](../../virtual-machines/windows/download-template.md)
 
-- [Пример сценария для отправки VHD в Azure и создания виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
+- [Пример сценария для отправки VHD в Azure и создания виртуальной машины](../../virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script.md)
 
 ## <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 7.5 | 5,3 | Customer |
+| 7,5 % | 5,3 | Customer |
 
 Используйте Azure DevOps для безопасного хранения и управления кодом, например пользовательскими политиками Azure, Azure Resource Manager шаблонами и скриптами настройки требуемого состояния. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS.
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-- [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
+- [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
 ## <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
 
@@ -112,35 +112,35 @@ ms.locfileid: "89400098"
 
 При использовании пользовательских образов используйте управление доступом на основе ролей Azure (Azure RBAC), чтобы обеспечить доступ к образам только полномочным пользователям. Используя коллекцию общих образов, вы можете делиться своими образами с другими пользователями, участниками службы или группами конструктора приложений в вашей организации.  Для образов контейнеров Храните их в реестре контейнеров Azure и используйте Azure RBAC, чтобы обеспечить доступ к образам только полномочным пользователям.  
 
-- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)
+- [Общие сведения об Azure RBAC](../../role-based-access-control/rbac-and-directory-admin-roles.md)
 
-- [Общие сведения об Azure RBAC для реестра контейнеров](https://docs.microsoft.com/azure/container-registry/container-registry-roles)
+- [Общие сведения об Azure RBAC для реестра контейнеров](../../container-registry/container-registry-roles.md)
 
-- [Настройка Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
+- [Настройка Azure RBAC](../../role-based-access-control/quickstart-assign-role-user-portal.md)
 
-- [Обзор коллекции общих образов](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries)
+- [Обзор коллекции общих образов](../../virtual-machines/windows/shared-image-galleries.md)
 
 ## <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 7.7 | 5.4 | Customer |
+| 7.7 | 5,4 | Customer |
 
 Определение и реализация стандартных конфигураций безопасности для ресурсов Azure с помощью политики Azure. Используйте псевдонимы политик Azure для создания настраиваемых политик для аудита или принудительного применения конфигурации сети ресурсов Azure. Вы также можете использовать встроенные определения политик, связанные с конкретными ресурсами.  Кроме того, вы можете использовать службу автоматизации Azure для развертывания изменений конфигурации.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Использование псевдонимов](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+- [Использование псевдонимов](../../governance/policy/concepts/definition-structure.md#aliases)
 
 ## <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: развертывание средств управления конфигурацией для операционных систем
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 7.8 | 5.4 | Customer |
+| 7.8 | 5,4 | Customer |
 
 Настройка состояния службы автоматизации Azure — это служба управления конфигурацией для узлов Desired State Configuration (DSC) в любом облачном или локальном центре обработки данных. Вы можете легко переносить компьютеры в облачную среду, присваивать им декларативные конфигурации, а также просматривать отчеты, отражающие соответствие каждого компьютера требуемому состоянию. 
 
-- [Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding)
+- [Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"](../../automation/automation-dsc-onboarding.md)
 
 ## <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
 
@@ -150,7 +150,7 @@ ms.locfileid: "89400098"
 
 Используйте центр безопасности Azure для выполнения проверок базовых показателей ресурсов Azure.  Кроме того, используйте политику Azure для оповещения и аудита конфигураций ресурсов Azure.
 
-- [Как исправить рекомендации в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations)
+- [Как исправить рекомендации в центре безопасности Azure](../../security-center/security-center-remediate-recommendations.md)
 
 ## <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
 
@@ -160,7 +160,7 @@ ms.locfileid: "89400098"
 
 Используйте центр безопасности Azure для выполнения проверок базовых параметров ОС и DOCKER для контейнеров.
 
-- [Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров](https://docs.microsoft.com/azure/security-center/security-center-container-recommendations)
+- [Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров](../../security-center/container-security.md)
 
 ## <a name="711-manage-azure-secrets-securely"></a>7.11. Безопасное управление секретами Azure
 
@@ -170,9 +170,9 @@ ms.locfileid: "89400098"
 
 Используйте Управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить управление секретами для облачных приложений.
 
-- [Интеграция с управляемыми удостоверениями Azure](https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity)
+- [Интеграция с управляемыми удостоверениями Azure](../../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-- [Создание Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal)
+- [Создание Key Vault](../../key-vault/secrets/quick-create-portal.md)
 
 - [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md)
 
@@ -186,7 +186,7 @@ ms.locfileid: "89400098"
 
 Используйте управляемые удостоверения для предоставления служб Azure с автоматически управляемым удостоверением в Azure AD. Управляемое удостоверение можно использовать для проверки подлинности в любой службе, которая поддерживает проверку подлинности Azure AD, включая Key Vault, при этом не сохраняя каких-либо учетных данных в коде.
 
-- [Настройка управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
+- [Настройка управляемых удостоверений](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
 ## <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
 
@@ -199,6 +199,6 @@ ms.locfileid: "89400098"
 - [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. следующий контроль безопасности:  [Защита от вредоносных программ](security-control-malware-defense.md)

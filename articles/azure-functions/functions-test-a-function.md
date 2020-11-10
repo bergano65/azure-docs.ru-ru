@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp, devx-track-js
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 8ff70c14310dd81a051ac27c1d6d59bb3d1deb7b
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: ff64d5c17174f8e1e67111ebca9ccf050deb2f26
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677601"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94409660"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -36,10 +36,10 @@ ms.locfileid: "92677601"
 
 Чтобы настроить среду, создайте функцию и протестируйте приложение. Описанные ниже действия помогут создать приложения и функции, необходимые для поддержки тестов.
 
-1. [Создайте новое приложение-функцию](./functions-create-first-azure-function.md) и назовите его **Functions** .
-2. [Создайте функцию HTTP на основе шаблона](./functions-create-first-azure-function.md) и назовите ее **михттптригжер** .
-3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее **митимертригжер** .
-4. [Создайте тестовое приложение xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) в решении и назовите его **functions. Tests** .
+1. [Создайте новое приложение-функцию](./functions-create-first-azure-function.md) и назовите его **Functions**.
+2. [Создайте функцию HTTP на основе шаблона](./functions-create-first-azure-function.md) и назовите ее **михттптригжер**.
+3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее **митимертригжер**.
+4. [Создайте тестовое приложение xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) в решении и назовите его **functions. Tests**.
 5. Использование NuGet для добавления ссылки из тестового приложения в [Microsoft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
 6. [Ссылка на приложение *функций*](/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *functions. Tests* .
 
@@ -193,11 +193,11 @@ namespace Functions.Tests
 
 Класс `TestFactory` реализует следующие элементы.
 
-- **Данные** . это свойство возвращает коллекцию образцов данных [IEnumerable](/dotnet/api/system.collections.ienumerable) . Пары "ключ-значение" представляют собой значения, которые передаются в строку запроса.
+- **Данные**. это свойство возвращает коллекцию образцов данных [IEnumerable](/dotnet/api/system.collections.ienumerable) . Пары "ключ-значение" представляют собой значения, которые передаются в строку запроса.
 
 - **Креатедиктионари** : Этот метод принимает пару "ключ-значение" в качестве аргументов и возвращает новый объект, `Dictionary` используемый для `QueryCollection` представления значений строки запроса.
 
-- **Креатехттпрекуест** . Этот метод создает HTTP-запрос, инициализируемый с помощью заданных параметров строки запроса.
+- **Креатехттпрекуест**. Этот метод создает HTTP-запрос, инициализируемый с помощью заданных параметров строки запроса.
 
 - **Креателогжер** : в зависимости от типа средства ведения журнала этот метод возвращает класс ведения журнала, используемый для тестирования. `ListLogger` следит за сообщениями в журнале, доступными для оценки в тестах.
 
@@ -251,17 +251,17 @@ namespace Functions.Tests
 
 - **Timer_should_log_message** : этот тест создает экземпляр `ListLogger` и передает его в функции таймера. После выполнения функции журнал будет проверен на наличие ожидаемого сообщения.
 
-Если вы хотите получить доступ к параметрам приложения в тестах, можно использовать [System. Environment. GetEnvironmentVariable](./functions-dotnet-class-library.md#environment-variables).
+Если вы хотите получить доступ к параметрам приложения в тестах, [inject](./functions-dotnet-dependency-injection.md) можно внедрить `IConfiguration` экземпляр с макетными значениями переменных среды в функцию.
 
 ### <a name="run-tests"></a>Выполнить тесты
 
-Чтобы выполнить тесты, перейдите в **Обозреватель тестов** и щелкните **Запустить все** .
+Чтобы выполнить тесты, перейдите в **Обозреватель тестов** и щелкните **Запустить все**.
 
 ![Тестирование Функций Azure с помощью C# в Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
 
 ### <a name="debug-tests"></a>Отладка тестов
 
-Чтобы отладить тесты, установите точку останова в тесте, перейдите в **Обозреватель тестов** и щелкните **Запустить > Отладка последнего выполнения** .
+Чтобы отладить тесты, установите точку останова в тесте, перейдите в **Обозреватель тестов** и щелкните **Запустить > Отладка последнего выполнения**.
 
 ## <a name="javascript-in-vs-code"></a>JavaScript в VS Code
 
@@ -315,7 +315,7 @@ module.exports = {
 
 Этот модуль реализует свойство `IsPastDue`, чтобы установить его как ложный экземпляр таймера. Такие конфигурации таймера, как выражения НКРОНТАБ, не требуются здесь, так как тестовая программа просто вызывает функцию напрямую для проверки результата.
 
-Затем используйте расширение Функций VS Code, чтобы [создать новую Функцию JavaScript HTTP](/azure/developer/javascript/tutorial-vscode-serverless-node-01), и присвойте ей имя *HttpTrigger* . Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
+Затем используйте расширение Функций VS Code, чтобы [создать новую Функцию JavaScript HTTP](/azure/developer/javascript/tutorial-vscode-serverless-node-01), и присвойте ей имя *HttpTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
 
 ```javascript
 const httpFunction = require('./index');
@@ -336,7 +336,7 @@ test('Http trigger should return known text', async () => {
 
 Функция HTTP на основе шаблона возвращает строку "Hello", сцепленную с именем, указанным в строке запроса. Ложный экземпляр запроса создается этим тестом и передается функции HTTP. Тест проверяет, что метод *log* вызывается один раз, и возвращенный текст приравнивается к "Hello Bill".
 
-Затем используйте расширение Функций VS Code, чтобы создать новую Функцию таймера JavaScript, и присвойте ей имя *TimerTrigger* . Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
+Затем используйте расширение Функций VS Code, чтобы создать новую Функцию таймера JavaScript, и присвойте ей имя *TimerTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
 
 ```javascript
 const timerFunction = require('./index');
@@ -363,7 +363,7 @@ npm test
 
 ### <a name="debug-tests"></a>Отладка тестов
 
-Для отладки тестов добавьте следующую конфигурацию в файл *launch.json* .
+Для отладки тестов добавьте следующую конфигурацию в файл *launch.json*.
 
 ```json
 {
@@ -379,7 +379,7 @@ npm test
 }
 ```
 
-Затем в тесте установите точку останова и нажмите клавишу **F5** .
+Затем в тесте установите точку останова и нажмите клавишу **F5**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 9833f63d999ab7c24174853bd37f4e7a76f6dfbf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ddce9bd8eaa57571cd3c3eac660806340db4b74
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329437"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408674"
 ---
 # <a name="security-control-v2-network-security"></a>Управление безопасностью версии 2: Сетевая безопасность
 
@@ -40,9 +40,9 @@ ms.locfileid: "91329437"
 
 - [Книга незащищенных протоколов Azure Sentinel](../../sentinel/quickstart-get-visibility.md#use-built-in-workbooks)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -54,7 +54,7 @@ ms.locfileid: "91329437"
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| NS-2 | Недоступно | ЦС-3, AC-17, MA-4 |
+| NS-2 | Н/Д | ЦС-3, AC-17, MA-4 |
 
 Используйте Azure ExpressRoute или виртуальную частную сеть Azure (VPN) для создания частных подключений между центрами обработки данных Azure и локальной инфраструктурой в среде совместного размещения. Подключения ExpressRoute не проходят через общедоступный Интернет и обеспечивают повышенную надежность, скорость и задержку, чем обычные подключения к Интернету. Для VPN-подключения типа "точка — сеть" и VPN-подключения типа "сеть — сеть" можно подключить локальные устройства или сети к виртуальной сети, используя любое сочетание параметров VPN и Azure ExpressRoute.
 
@@ -68,9 +68,9 @@ ms.locfileid: "91329437"
 
 - [Приватный канал Azure](../../private-link/private-link-service-overview.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -92,9 +92,9 @@ ms.locfileid: "91329437"
 
 - [Общие сведения о конечных точках службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -116,17 +116,17 @@ ms.locfileid: "91329437"
 -   Защитите свои ресурсы от атак от атак DDoS, включив стандартную защиту от атак DDoS в виртуальных сетях Azure. 
 -   Используйте центр безопасности Azure для обнаружения рисков с несоответствующими настройками, связанными с указанным выше. 
 
-- [Документация по брандмауэру Azure](/azure/firewall/)
+- [Документация по брандмауэру Azure](../../firewall/index.yml)
 
 - [Развертывание WAF Azure](../../web-application-firewall/overview.md)
 
 - [Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure](../../virtual-network/manage-ddos-protection.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
-None
+Нет
 
 ## <a name="ns-5-deploy-intrusion-detectionintrusion-prevention-systems-idsips"></a>NS-5: развертывание систем обнаружения вторжений и предотвращения вторжений (ИДЕНТИФИКАТОРы и IP-адреса)
 
@@ -144,9 +144,9 @@ None
 
 - [Функция ЕДР ATP в защитнике Майкрософт](/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -168,11 +168,11 @@ None
 
 - [Общие сведения и использование тегов служб](../../virtual-network/service-tags-overview.md)
 
-- [Общие сведения и использование групп безопасности приложений](/azure/virtual-network/security-overview#application-security-groups)
+- [Общие сведения и использование групп безопасности приложений](../../virtual-network/network-security-groups-overview.md#application-security-groups)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -184,7 +184,7 @@ None
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| NS-7 | Недоступно | SC-20, SC-21 |
+| NS-7 | Н/Д | SC-20, SC-21 |
 
 Следуйте рекомендациям по обеспечению безопасности DNS, чтобы устранить распространенные атаки, такие как висячие DNS, атаки несанкционированного доступа к DNS, неустранение и подмена DNS и т. д. 
 
@@ -196,13 +196,12 @@ None
 
 - [Предотвращение висячих записей DNS и избежание поддоменного перенаправление](../fundamentals/subdomain-takeover.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
 - [Управление состоянием](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
 
-- [Безопасность приложений и DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
-
+- [Безопасность приложений и DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)

@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: d5de8da548c2e141eb921aa4f95e82f7199ae1f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e8310d5941916ed3e4a9d7c66af96779be8f939
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90602376"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94410299"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory
 
@@ -221,4 +221,4 @@ Azure AD поддерживает следующие методы аутенти
 
 [Начните работу](../fundamentals/active-directory-whatis.md) с Azure AD и разверните правильное решение аутентификации для своей организации.
 
-Если вы планируете перейти с федеративной аутентификации на облачную, узнайте больше об [изменении метода входа](../../active-directory/hybrid/plan-connect-user-signin.md). Чтобы помочь вам спланировать и реализовать миграцию, используйте [эти планы развертывания проектов](https://aka.ms/deploymentplans) или рассмотрите возможность использования новой функции [промежуточного развертывания](../../active-directory/hybrid/how-to-connect-staged-rollout.md) для перевода федеративных пользователей на использование облачной проверки подлинности в промежуточном подходе.
+Если вы планируете перейти с федеративной аутентификации на облачную, узнайте больше об [изменении метода входа](../../active-directory/hybrid/plan-connect-user-signin.md). Чтобы помочь вам спланировать и реализовать миграцию, используйте [эти планы развертывания проектов](../fundamentals/active-directory-deployment-plans.md) или рассмотрите возможность использования новой функции [промежуточного развертывания](../../active-directory/hybrid/how-to-connect-staged-rollout.md) для перевода федеративных пользователей на использование облачной проверки подлинности в промежуточном подходе.

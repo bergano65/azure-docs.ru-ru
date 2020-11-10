@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 420ab87591e230592ec8f728c6acb155266b5912
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae0930e0845e8e8bd6dc4571dc3e8e27491a7be6
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91403532"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408798"
 ---
 # <a name="security-control-v2-governance-and-strategy"></a>Управление безопасностью версии 2: управление и стратегия
 
@@ -45,19 +45,19 @@ ms.locfileid: "91403532"
 - Соответствующие криптографические стандарты
 
 Дополнительные сведения см. в следующих ресурсах.
-- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json)
+- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](/azure/architecture/framework/security/storage-data-encryption?amp;bc=%252fsecurity%252fcompass%252fbreadcrumb%252ftoc.json&toc=%252fsecurity%252fcompass%252ftoc.json)
 
 - [Основы безопасности Azure. безопасность, шифрование и хранение данных в Azure](../fundamentals/encryption-overview.md)
 
-- [Облачная инфраструктура внедрения — рекомендации по защите и шифрованию данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
+- [Облачная инфраструктура внедрения — рекомендации по защите и шифрованию данных в Azure](../fundamentals/data-encryption-best-practices.md?amp;bc=%252fazure%252fcloud-adoption-framework%252f_bread%252ftoc.json&toc=%252fazure%252fcloud-adoption-framework%252ftoc.json)
 
 - [Тестирование безопасности Azure — управление ресурсами](security-controls-v2-asset-management.md)
 
 - [Тестирование безопасности Azure — защита данных](security-controls-v2-data-protection.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Все заинтересованные лица](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
@@ -79,9 +79,9 @@ ms.locfileid: "91403532"
 
 - [Выровняйте сегментацию сети с помощью стратегии сегментации предприятия](/security/compass/network-security-containment#align-network-segmentation-with-enterprise-segmentation-strategy)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Все заинтересованные лица](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
@@ -95,9 +95,9 @@ ms.locfileid: "91403532"
 
 - [Контроль производительности и управление уязвимостью системы безопасности Azure](security-controls-v2-posture-vulnerability-management.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Все заинтересованные лица](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
@@ -105,19 +105,19 @@ ms.locfileid: "91403532"
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| GS-4 | Недоступно | PL, PM |
+| GS-4 | Н/Д | PL, PM |
 
 Убедитесь, что вы задокументированы и сообщаете четкие стратегии для ролей и обязанностей в организации безопасности. Определение приоритетов для обеспечения четкой отчетности за принятие решений в области безопасности, обучение всех пользователей по общей модели ответственности и обучение технических команд по технологиям для защиты облака.
 
-- [Рекомендации по обеспечению безопасности в Azure 1 — люди: обучение групп в облаке Cloud Security](https://aka.ms/AzSec1)
+- [Рекомендации по обеспечению безопасности в Azure 1 — люди: обучение групп в облаке Cloud Security](/azure/cloud-adoption-framework/security/security-top-10#1-people-educate-teams-about-the-cloud-security-journey)
 
-- [Рекомендации по обеспечению безопасности в Azure 2 — люди: обучение групп по технологиям Cloud Security](https://aka.ms/AzSec2)
+- [Рекомендации по обеспечению безопасности в Azure 2 — люди: обучение групп по технологиям Cloud Security](/azure/cloud-adoption-framework/security/security-top-10#2-people-educate-teams-on-cloud-security-technology)
 
-- [Рекомендации по обеспечению безопасности в Azure 3 — процесс: назначение отчетности для решений безопасности в облаке](https://aka.ms/AzSec3)
+- [Рекомендации по обеспечению безопасности в Azure 3 — процесс: назначение отчетности для решений безопасности в облаке](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Все заинтересованные лица](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
@@ -145,7 +145,7 @@ ms.locfileid: "91403532"
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Рекомендации по обеспечению безопасности в Azure — 11-архитектура. Единая единая стратегия безопасности](https://aka.ms/AzSec11)
+- [Рекомендации по обеспечению безопасности в Azure — 11-архитектура. Единая единая стратегия безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
 - [Тестирование безопасности Azure — Сетевая безопасность](security-controls-v2-network-security.md)
 
@@ -153,9 +153,9 @@ ms.locfileid: "91403532"
 
 - [Стратегия архитектуры корпоративной сети](/azure/cloud-adoption-framework/ready/enterprise-scale/architecture)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Все заинтересованные лица](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
@@ -185,13 +185,13 @@ ms.locfileid: "91403532"
 
 - [Тестирование безопасности Azure — привилегированный доступ](security-controls-v2-privileged-access.md)
 
-- [Рекомендации по обеспечению безопасности в Azure — 11-архитектура. Единая единая стратегия безопасности](https://aka.ms/AzSec11)
+- [Рекомендации по обеспечению безопасности в Azure — 11-архитектура. Единая единая стратегия безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
 - [Общие сведения о безопасности при управлении удостоверениями в Azure](../fundamentals/identity-management-overview.md)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Все заинтересованные лица](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
@@ -224,15 +224,15 @@ ms.locfileid: "91403532"
 
 - [Тестирование безопасности Azure — реагирование на инциденты](security-controls-v2-incident-response.md)
 
-- [Рекомендации по обеспечению безопасности в Azure 4. процесс. Обновление процессов реагирования на инциденты для облака](https://aka.ms/AzSec4)
+- [Рекомендации по обеспечению безопасности в Azure 4. процесс. Обновление процессов реагирования на инциденты для облака](/azure/cloud-adoption-framework/security/security-top-10#3-process-assign-accountability-for-cloud-security-decisions)
 
 - [Обзор инфраструктуры внедрения Azure, ведения журналов и создания отчетов](/azure/cloud-adoption-framework/decision-guides/logging-and-reporting/)
 
 - [Масштабирование Azure Enterprise, управление и мониторинг](/azure/cloud-adoption-framework/ready/enterprise-scale/management-and-monitoring)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Все заинтересованные лица](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
@@ -259,9 +259,8 @@ ms.locfileid: "91403532"
 
 - [Платформа внедрения Azure — непрерывность бизнес-процессов и аварийное восстановление](/azure/cloud-adoption-framework/ready/enterprise-scale/business-continuity-and-disaster-recovery)
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Все заинтересованные лица](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
-

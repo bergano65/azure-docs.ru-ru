@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: f95d7ae38ece2a2ad939d2b3c829aed2c676d0f7
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 7079f0b1060be1a260b41e07b9d9299bab57127f
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94354008"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94410816"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Шифрование дисков Azure для виртуальных машин под управлением Linux 
 
@@ -75,6 +75,7 @@ ms.locfileid: "94354008"
 | RedHat | RHEL 7.2; | 7.2 | RedHat:RHEL:7.2:latest | ОС и диск данных (см. примечание ниже) |
 | RedHat | RHEL 6.8 | 6,8 | RedHat:RHEL:6.8:latest | Диск данных (см. примечание ниже) |
 | RedHat | RHEL 6.7 | 6.7 | RedHat:RHEL:6.7:latest | Диск данных (см. примечание ниже) |
+| OpenLogic | CentOS 7,8 | 7.8 | OpenLogic: CentOS: 7_8: Последняя | Диск операционной системы и данных |
 | OpenLogic | CentOS 7.7 | 7.7 | OpenLogic:CentOS:7.7:latest | Диск операционной системы и данных |
 | OpenLogic | CentOS 7.7 | 7-LVM | OpenLogic:CentOS:7-LVM:latest | Диск операционной системы и данных |
 | OpenLogic | CentOS 7.6 | 7.6 | OpenLogic:CentOS:7.6:latest | Диск операционной системы и данных |

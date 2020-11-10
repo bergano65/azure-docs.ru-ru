@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: f496d0f38452fa7cf64bc9eef370bd0b2116cfa5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe703b9589dcd49298ac45d5a14032ca7e556bfd
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89049967"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408419"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Политика поддержки Azure Red Hat OpenShift
 
@@ -30,6 +30,7 @@ ms.locfileid: "89049967"
 * Все виртуальные машины кластера должны иметь прямой исходящий доступ к Интернету по крайней мере для конечных точек Azure Resource Manager (ARM) и Service Logging (Geneva).  Ни одна из форм прокси-сервера HTTPS не поддерживается.
 * Не изменяйте конфигурацию DNS виртуальной сети кластера. Необходимо использовать сопоставитель Azure DNS по умолчанию.
 * Не переопределяйте ни один из объектов MachineConfig кластера (например, конфигурацию kubelet) никаким образом.
+* Не устанавливайте параметры Унсуппортедконфиговерридес. Установка этих параметров предотвращает обновление дополнительных версий.
 * Служба Azure Red Hat OpenShift обращается к кластеру через службу приватных каналов.  Не удаляйте и не изменяйте доступ к службам.
 * Вычислительные узлы, кроме RHCOS, не поддерживаются. Например, вычислительный узел RHEL использовать нельзя.
 

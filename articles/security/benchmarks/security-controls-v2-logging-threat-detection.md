@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: b26979f424798bacf6b40d43e5ab603844f595c3
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 99e7a8fcb34c963cfab366f1913508a7ff3f4a51
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360859"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94408708"
 ---
 # <a name="security-control-v2-logging-and-threat-detection"></a>Управление безопасностью v2: ведение журнала и обнаружение угроз
 
@@ -30,7 +30,7 @@ ms.locfileid: "93360859"
 
 Кроме того, используйте метку Azure для создания правил аналитики, которые позволяют найти угрозы, соответствующие определенному критерию в среде. Правила создают инциденты при совпадении критериев, чтобы можно было исследовать каждый инцидент. Azure Sentinel также может импортировать аналитику угроз сторонних производителей, чтобы улучшить возможности обнаружения угроз. 
 
-- [Защита от угроз с помощью Центра безопасности Azure](../../security-center/threat-protection.md)
+- [Защита от угроз с помощью Центра безопасности Azure](../../security-center/azure-defender.md)
 
 - [Справочное руководство по оповещениям системы безопасности в центре безопасности Azure](../../security-center/alerts-reference.md)
 
@@ -73,7 +73,7 @@ Azure AD предоставляет следующие журналы польз
 
 - [Включение защиты идентификации Azure](../../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Защита от угроз с помощью Центра безопасности Azure](../../security-center/threat-protection.md)
+- [Защита от угроз с помощью Центра безопасности Azure](../../security-center/azure-defender.md)
 
 **Ответственность** : Customer
 
@@ -230,4 +230,3 @@ Azure AD предоставляет следующие журналы польз
 - [Безопасность приложений и DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
 
 - [Безопасность инфраструктуры и конечных точек](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
-
