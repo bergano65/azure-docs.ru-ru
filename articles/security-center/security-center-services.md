@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 67c52728b72f0941ae3c9b39552ca398c12c67a2
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 40d70c7bd740d8c72ddb72047a3bae3586e1aa1f
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425156"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445257"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -35,7 +35,7 @@ ms.locfileid: "92425156"
 |[Оповещения системы безопасности о бесфайловых угрозах](alerts-reference.md#alerts-windows)|✔|✔|✔|Да|
 |[Оповещения системы безопасности об угрозах на уровне сети](other-threat-protections.md#network-layer)|✔|✔|-|Да|
 |[JIT-доступ к виртуальной машине](security-center-just-in-time.md)|✔|-|-|Да|
-|[Нативная оценка уязвимостей](deploy-vulnerability-assessment-vm.md#overview-of-the-integrated-vulnerability-scanner)|✔|-|-|Да|
+|[Нативная оценка уязвимостей](deploy-vulnerability-assessment-vm.md#overview-of-the-integrated-vulnerability-scanner)|✔|-|✔|Да|
 |[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md)|✔|✔|✔|Да|
 |[Адаптивные элементы управления приложениями](security-center-adaptive-application.md)|✔|-|✔|Да|
 |[Карта сети](security-center-network-recommendations.md#network-map)|✔|✔|-|Да|
@@ -46,7 +46,7 @@ ms.locfileid: "92425156"
 |Оценка на предмет неправильных настроек системы безопасности|✔|✔|✔|Azure Нет<br><br>Поддержка Arc: Да|
 |[Оценка защиты конечных точек](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Azure Нет<br><br>Поддержка Arc: Да|
 |Оценка шифрования дисков|✔</br>(в [поддерживаемых сценариях](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Нет|
-|Оценка уязвимостей сторонних решений|✔|-|-|Нет|
+|Оценка уязвимостей сторонних решений|✔|-|✔|Нет|
 |[Оценка безопасности сети](security-center-network-recommendations.md)|✔|✔|-|Нет|
 
 
@@ -59,7 +59,7 @@ ms.locfileid: "92425156"
 |[Оповещения системы безопасности о бесфайловых угрозах](alerts-reference.md#alerts-windows)|-|-|-|Да|
 |[Оповещения системы безопасности об угрозах на уровне сети](other-threat-protections.md#network-layer)|✔|✔|-|Да|
 |[JIT-доступ к виртуальной машине](security-center-just-in-time.md)|✔|-|-|Да|
-|[Нативная оценка уязвимостей](deploy-vulnerability-assessment-vm.md#overview-of-the-integrated-vulnerability-scanner)|✔|-|-|Да|
+|[Нативная оценка уязвимостей](deploy-vulnerability-assessment-vm.md#overview-of-the-integrated-vulnerability-scanner)|✔|-|✔|Да|
 |[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md)|✔|✔|✔|Да|
 |[Адаптивные элементы управления приложениями](security-center-adaptive-application.md)|✔|-|✔|Да|
 |[Карта сети](security-center-network-recommendations.md#network-map)|✔|✔|-|Да|
@@ -70,7 +70,7 @@ ms.locfileid: "92425156"
 |Оценка на предмет неправильных настроек системы безопасности|✔|✔|✔|Azure Нет<br><br>Поддержка Arc: Да|
 |[Оценка защиты конечных точек](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Нет|
 |Оценка шифрования дисков|✔</br>(в [поддерживаемых сценариях](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Нет|
-|Оценка уязвимостей сторонних решений|✔|-|-|Нет|
+|Оценка уязвимостей сторонних решений|✔|-|✔|Нет|
 |[Оценка безопасности сети](security-center-network-recommendations.md)|✔|✔|-|Нет|
 
 --- 

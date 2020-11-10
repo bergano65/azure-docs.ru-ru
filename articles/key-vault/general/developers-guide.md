@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 707b6d0f8a5fa3cff89339b9b0465d96b5369a34
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 596de459b888bb9973aca1c7d72f2f9e24c966eb
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287598"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445138"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
 
@@ -79,7 +79,7 @@ Key Vault использует проверку подлинности Azure AD,
 
 ## <a name="manage-keys-certificates-and-secrets"></a>Управление ключами, сертификатами и секретами
 
-Доступом к ключам, секретам и сертификатам управляет плоскость данных. Управление доступом к плоскости данных можно выполнить с помощью политик доступа к локальному хранилищу или RBAC (Предварительная версия).
+Доступом к ключам, секретам и сертификатам управляет плоскость данных. Управление доступом к плоскости данных можно выполнить с помощью политик доступа к локальному хранилищу или Azure RBAC (Предварительная версия).
 
 **Ключи API и пакеты SDK**
 
@@ -104,7 +104,7 @@ Key Vault использует проверку подлинности Azure AD,
 
 См. раздел [клиентские библиотеки](client-libraries.md) для пакетов установки и исходный код.
 
-Дополнительные сведения о Key Vault безопасности плоскости данных см. в статьях [Key Vault плоскость данных и политики доступа](./secure-your-key-vault.md#data-plane-and-access-policies) и [Key Vault ПЛОСКОСТЬ данных и RBAC (Предварительная версия)](./secure-your-key-vault.md#data-plane-and-azure-rbac-preview) .
+Дополнительные сведения о Key Vault безопасности плоскости данных см. в статьях [Key Vault плоскость данных и политики доступа](./secure-your-key-vault.md#data-plane-and-access-policies) , [Key Vault плоскость данных и Azure RBAC (Предварительная версия)](./secure-your-key-vault.md#data-plane-and-azure-rbac-preview) .
 
 ### <a name="code-examples"></a>Примеры кода
 

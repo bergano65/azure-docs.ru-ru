@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 48a822adc34019ca2f6a39aa70211cae7fbf6030
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 1abbabd3c231a70ca473c4b64e9a8c75d2119c89
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289878"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445529"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовая конфигурация системы безопасности Azure для Key Vault
 
@@ -344,7 +344,7 @@ https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
-**Руководство** : неприменимо; Azure Key Vault не имеет концепции паролей по умолчанию, так как проверка подлинности обеспечивается Active Directory и защищена с помощью управления доступом на основе ролей.
+**Руководство** : неприменимо; Azure Key Vault не имеет концепции паролей по умолчанию, так как проверка подлинности обеспечивается Active Directory и защищена с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
 
 **Мониторинг Центра безопасности Azure** : Неприменимо
@@ -445,7 +445,7 @@ Azure Active Directory обнаружения рисков: https://docs.microso
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
-**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации для ресурсов Azure, таких как key Vault. Это позволяет управлять доступом на основе ролей (RBAC) для администрирования конфиденциальных ресурсов.
+**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации для ресурсов Azure, таких как key Vault. Это обеспечивает управление доступом на основе ролей Azure (Azure RBAC) для администрирования конфиденциальных ресурсов.
 
  
 

@@ -7,14 +7,14 @@ tags: azure-resource-manager
 ms.service: security
 ms.subservice: security-fundamentals
 ms.topic: article
-ms.date: 10/01/2020
+ms.date: 11/10/2020
 ms.author: mbaldwin
-ms.openlocfilehash: dbc426144678f5bd7382b0961bf9bc3f5339b97a
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 955990ed9209ea1e12eed824241e8a5a456ed73b
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409813"
+ms.locfileid: "94444883"
 ---
 # <a name="azure-tls-certificate-changes"></a>Изменения TLS-сертификатов Azure  
 
@@ -22,12 +22,15 @@ ms.locfileid: "94409813"
 
 ## <a name="when-will-this-change-happen"></a>Когда будет применено это изменение?
 
+Существующие конечные точки Azure были переведены поэтапно с 13 августа 2020. Все новые конечные точки TLS/SSL Azure содержат обновленные сертификаты, связанные с новыми корневыми ЦС.
+
+Сведения о конкретной службе:
+
 - Переход для служб [Azure Active Directory (Azure AD)](../../active-directory/index.yml) начался 7 июля 2020 г.
-- Все новые конечные точки TLS/SSL Azure содержат обновленные сертификаты, связанные с новыми корневыми ЦС.
-- Переход для существующих конечных точек Azure начнется 13 августа 2020 г.
 - [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub) и [DPS](../../iot-dps/index.yml) будут связаны с корневым ЦС Baltimore CyberTrust, но их промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](https://techcommunity.microsoft.com/t5/internet-of-things/azure-iot-tls-changes-are-coming-and-why-you-should-care/ba-p/1658456)
 - [Хранилище Azure](../../storage/index.yml) будет связано с корневым ЦС Baltimore CyberTrust, но его промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](https://techcommunity.microsoft.com/t5/azure-storage/azure-storage-tls-changes-are-coming-and-why-you-care/ba-p/1705518)
 - [Кэш Azure для Redis](../../azure-cache-for-redis/index.yml) останется в КОРНЕВОМ центре сертификации Baltimore CyberTrust, но их промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](../../azure-cache-for-redis/cache-whats-new.md)
+
 > [!IMPORTANT]
 > Возможно, клиентам потребуется обновить свои приложения после этого изменения, чтобы предотвратить сбои при попытке подключения к службам Azure.
 

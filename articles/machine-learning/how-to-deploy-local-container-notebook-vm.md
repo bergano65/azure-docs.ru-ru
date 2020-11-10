@@ -11,12 +11,12 @@ ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
 ms.date: 03/05/2020
-ms.openlocfilehash: 1767f149d9935c86281c7b7be3e684aa82a603f9
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 05d810928a71aec0e3314c32051e5f3565413564
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999050"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94444611"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Развертывание модели для Машинное обучение Azureных экземпляров вычислений
 
@@ -30,7 +30,7 @@ ms.locfileid: "91999050"
 > [!TIP]
 > Развертывание модели из Jupyter Notebook на вычислительном экземпляре в веб-службу на той же виртуальной машине является _локальным развертыванием_. В этом случае "локальный" компьютер является вычислительным экземпляром. Дополнительные сведения о развертываниях см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Рабочая область Машинное обучение Azure с выполняющимся вычислительным экземпляром. Дополнительные сведения см. в статье [Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "91999050"
     * Виртуальная машина записной книжки: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.notebooks.azureml.net/score` . 
     * Вычислительный экземпляр: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.instances.azureml.net/score` . 
 
-    Например: 
+    Например, 
     * Виртуальная машина записной книжки: `https://vm-name-6789.northcentralus.notebooks.azureml.net/score` 
     * Вычислительный экземпляр: `https://vm-name-6789.northcentralus.instances.azureml.net/score`
 
@@ -63,7 +63,7 @@ ms.locfileid: "91999050"
 > [!NOTE]
 > При проверке подлинности в развертывании на вычислительном экземпляре выполняется проверка подлинности с помощью Azure Active Directory. При вызове `interactive_auth.get_authentication_header()` в примере кода выполняется проверка подлинности с помощью AAD и возвращается заголовок, который затем можно использовать для проверки подлинности в службе на вычислительном экземпляре. Дополнительные сведения см. в статье [Настройка проверки подлинности ресурсов и рабочих процессов Машинного обучения Azure](how-to-setup-authentication.md#interactive-authentication).
 >
-> При проверке подлинности в развертывании в службе Kubernetes Azure или экземплярах контейнеров Azure используется другой метод проверки подлинности. Дополнительные сведения о см. в разделе [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](how-to-setup-authentication.md#web-service-authentication).
+> При проверке подлинности в развертывании в службе Kubernetes Azure или экземплярах контейнеров Azure используется другой метод проверки подлинности. Дополнительные сведения о см. в статье [Настройка проверки подлинности для моделей компьютеров Azure, развернутых в качестве веб-служб](how-to-authenticate-web-service.md).
 
 ```python
 import requests

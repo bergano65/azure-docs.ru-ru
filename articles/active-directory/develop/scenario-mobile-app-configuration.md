@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 43cb891ad63a23353437082f7cb1b1e45f146e5b
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: a18a36b8583f8534b2a2e643e5c155dc7a2d65e2
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92204224"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94444067"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>Настройка мобильного приложения, вызывающего веб-API
 
@@ -367,5 +367,4 @@ MSAL для iOS и macOS использует URL-адреса для вызов
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Получение маркера](scenario-mobile-acquire-token.md)
+Перейдите к следующей статье в этом сценарии, [получая маркер](scenario-mobile-acquire-token.md).

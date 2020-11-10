@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f6953f145621e11506a009fa59d67a5f40508a13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90fc356929a9ea5713a8d359dfaa83286017b8f8
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91539577"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445444"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
@@ -49,7 +49,7 @@ ms.locfileid: "91539577"
 |---------------------|------------------------------|------------------------------|
 | Клиент, используемый для запросов и заполнения индекса. | [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) | [сеарчклиент](/dotnet/api/azure.search.documents.searchclient) |
 | Клиент, используемый для индексов, анализаторов, сопоставлений синонимов | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) |
-| Клиент, используемый для индексаторов, источников данных, навыков | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [Сеарчиндексерклиент (**новое**)](/dotnet/api/azure.search.documents.indexes.searchindexerclient) |
+| Клиент, используемый для индексаторов, источников данных, навыков | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [Сеарчиндексерклиент ( **новое** )](/dotnet/api/azure.search.documents.indexes.searchindexerclient) |
 
 > [!Important]
 > `SearchIndexClient` существует в обеих версиях, но поддерживает различные вещи. В версии 10 `SearchIndexClient` Создайте индексы и другие объекты. В версии 11 `SearchIndexClient` работает с существующими индексами. Чтобы избежать путаницы при обновлении кода, учитывать порядок обновления клиентских ссылок. После выполнения последовательности [действий по обновлению](#UpgradeSteps) необходимо устранить любые проблемы замены строк.
@@ -81,7 +81,7 @@ ms.locfileid: "91539577"
 | [стандардтокенизер](/dotnet/api/microsoft.azure.search.models.standardtokenizer) | [Луценестандардтокенизер](/dotnet/api/azure.search.documents.indexes.models.lucenestandardtokenizer) (также `StandardTokenizerV2` `LuceneStandardTokenizerV2` ) |
 | [токенинфо](/dotnet/api/microsoft.azure.search.models.tokeninfo) | [анализедтокенинфо](/dotnet/api/azure.search.documents.indexes.models.analyzedtokeninfo) |
 | [Разметчика](/dotnet/api/microsoft.azure.search.models.tokenizer) | [Лексикалтокенизер](/dotnet/api/azure.search.documents.indexes.models.lexicaltokenizer) (также `TokenizerName` `LexicalTokenizerName` ) |
-| [SynonymMap. Format](/dotnet/api/microsoft.azure.search.models.synonymmap.format) | Нет. Удалите ссылки на `Format` . |
+| [SynonymMap. Format](/dotnet/api/microsoft.azure.search.models.synonymmap.format) | Отсутствует. Удалите ссылки на `Format` . |
 
 Определения полей упрощаются: [сеарчаблефиелд](/dotnet/api/azure.search.documents.indexes.models.searchablefield), [симплефиелд](/dotnet/api/azure.search.documents.indexes.models.simplefield), [Комплексфиелд](/dotnet/api/azure.search.documents.indexes.models.complexfield) — это новые интерфейсы API для создания определений полей.
 
@@ -170,6 +170,24 @@ ms.locfileid: "91539577"
 
 1. Добавление новых клиентских ссылок для объектов, связанных с индексатором. Если используются индексаторы, источники данных или навыков, измените ссылки клиента на [сеарчиндексерклиент](/dotnet/api/azure.search.documents.indexes.searchindexerclient). Этот клиент впервые помещается в версии 11 и не имеет предшествующей задачи.
 
+1. Повторное посещение коллекций. В новом пакете SDK все списки доступны только для чтения, чтобы избежать возникновения проблем, если список содержит значения NULL. Изменение кода заключается в добавлении элементов в список. Например, вместо того, чтобы назначать строки свойству Select, необходимо добавить их следующим образом:
+
+   ```csharp
+   var options = new SearchOptions
+    {
+       SearchMode = SearchMode.All,
+       IncludeTotalCount = true
+    };
+
+    // Select fields to return in results.
+    options.Select.Add("HotelName");
+    options.Select.Add("Description");
+    options.Select.Add("Tags");
+    options.Select.Add("Rooms");
+    options.Select.Add("Rating");
+    options.Select.Add("LastRenovationDate");
+   ```
+
 1. Обновление клиентских ссылок для запросов и импорта данных. Экземпляры [SearchIndexClient](/dotnet/api/microsoft.azure.search.searchindexclient) должны быть изменены на [сеарчклиент](/dotnet/api/azure.search.documents.searchclient). Чтобы избежать путаницы с именами, убедитесь, что все экземпляры перехватываются перед переходом к следующему шагу.
 
 1. Обновление клиентских ссылок для объектов index, индексатора, преобразования синонимов и анализатора. Экземпляры [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) должны быть изменены на [SearchIndexClient](/dotnet/api/microsoft.azure.search.searchindexclient). 
@@ -192,7 +210,7 @@ ms.locfileid: "91539577"
 
 + [Упорядоченные результаты](search-query-odata-orderby.md) для значений NULL были изменены в этой версии, и значения NULL появлялись первыми, если сортировка имеет значение `asc` и последний `desc` . Если вы написали код, который обрабатывает, как сортируются значения NULL, следует проверить и, возможно, удалить этот код, если он больше не нужен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/)
 + [Примеры на GitHub](https://github.com/azure/azure-sdk-for-net/tree/Azure.Search.Documents_11.0.0/sdk/search/Azure.Search.Documents/samples)

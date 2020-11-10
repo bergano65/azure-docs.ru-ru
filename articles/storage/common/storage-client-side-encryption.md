@@ -5,17 +5,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 10/20/2017
+ms.date: 11/10/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4e8623ecb351fa99a437de70a9b74a70fb6228cd
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 5f2d3ba12fa65beb7156e056c23e44b028cbb520
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151150"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445070"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Шифрование на стороне клиента для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -167,7 +167,7 @@ ms.locfileid: "92151150"
   * Сопоставитель ключа вызывается, если он нужен для получения ключа. Если сопоставитель указан, но он не имеет данных, сопоставимых с идентификатором ключа, возникает ошибка.
 
 ### <a name="requireencryption-mode-v11-only"></a>Режим RequireEncryption (только версии 11)
-При необходимости можно включить режим работы, где все передачи и загрузки должны быть зашифрованы. В этом режиме все попытки клиента передать данные без политики шифрования или загрузить данные, которые не зашифрованы в службе, закончатся ошибкой. Это поведение контролирует свойство **RequireEncryption** объекта параметров запроса. Если приложение будет шифровать все объекты из службы хранилища Azure, то можно задать свойство **requireEncryption** в параметрах запроса по умолчанию для объекта клиента службы. Например, задайте для **CloudBlobClient.DefaultRequestOptions.RequireEncryption** значение **true**, чтобы требовать шифрования всех операций с большими двоичными объектами, выполненных посредством этого объекта клиента.
+При необходимости можно включить режим работы, где все передачи и загрузки должны быть зашифрованы. В этом режиме все попытки клиента передать данные без политики шифрования или загрузить данные, которые не зашифрованы в службе, закончатся ошибкой. Это поведение контролирует свойство **RequireEncryption** объекта параметров запроса. Если приложение будет шифровать все объекты из службы хранилища Azure, то можно задать свойство **requireEncryption** в параметрах запроса по умолчанию для объекта клиента службы. Например, задайте для **CloudBlobClient.DefaultRequestOptions.RequireEncryption** значение **true** , чтобы требовать шифрования всех операций с большими двоичными объектами, выполненных посредством этого объекта клиента.
 
 
 ### <a name="blob-service-encryption"></a>Шифрование службы BLOB-объектов
@@ -223,7 +223,7 @@ BlobClient clientSideEncryptionBlob = plaintextBlob.WithClientSideEncryptionOpti
 ```
 
 # <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
-Создайте объект **BlobEncryptionPolicy** и задайте его в параметрах запроса (для каждого API или на уровне клиента с помощью параметра **DefaultRequestOptions**). Все остальные задачи решаются клиентской библиотекой.
+Создайте объект **BlobEncryptionPolicy** и задайте его в параметрах запроса (для каждого API или на уровне клиента с помощью параметра **DefaultRequestOptions** ). Все остальные задачи решаются клиентской библиотекой.
 
 ```csharp
 // Create the IKey used for encryption.
@@ -324,7 +324,7 @@ Debug.Assert(messages.Length == 4)
 ```
 
 # <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
-Создайте объект **QueueEncryptionPolicy** и задайте его в параметрах запроса (для каждого API или на уровне клиента с помощью параметра **DefaultRequestOptions**). Все остальные задачи решаются клиентской библиотекой.
+Создайте объект **QueueEncryptionPolicy** и задайте его в параметрах запроса (для каждого API или на уровне клиента с помощью параметра **DefaultRequestOptions** ). Все остальные задачи решаются клиентской библиотекой.
 
 ```csharp
 // Create the IKey used for encryption.

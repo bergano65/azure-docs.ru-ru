@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 576eaf2ad9350651e4400d980e6fedce236dfa57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0dfd729a48b7e81028078fd035b3b900f4d7b9bc
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91257611"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94444126"
 ---
 # <a name="daemon-app-that-calls-web-apis---call-a-web-api-from-the-app"></a>Управляющее приложение, вызывающее веб-API — вызов веб-API из приложения
 
@@ -65,21 +65,18 @@ JSONObject responseObject = HttpClientHelper.processResponse(responseCode, respo
 
 Для приложений управляющей программы необходимо предварительно утвердить веб-API, которые вызываются. Нет добавочного согласия с приложениями управляющей программы. (Нет взаимодействия с пользователем.) Администратор клиента должен заранее предоставить согласие на доступ к приложению и всем разрешениям API. Если требуется вызвать несколько API, необходимо получить маркер для каждого ресурса, каждый раз вызывая `AcquireTokenForClient` . MSAL будет использовать кэш маркеров приложений, чтобы избежать ненужных вызовов служб.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-> [!div class="nextstepaction"]
-> [Приложение управляющей программы — переместить в рабочую среду](./scenario-daemon-production.md?tabs=dotnet)
+Перейдите к следующей статье в этом сценарии, [перейдите в рабочую среду](./scenario-daemon-production.md?tabs=dotnet).
 
 # <a name="python"></a>[Python](#tab/python)
 
-> [!div class="nextstepaction"]
-> [Приложение управляющей программы — переместить в рабочую среду](./scenario-daemon-production.md?tabs=python)
+Перейдите к следующей статье в этом сценарии, [перейдите в рабочую среду](./scenario-daemon-production.md?tabs=python).
 
 # <a name="java"></a>[Java](#tab/java)
 
-> [!div class="nextstepaction"]
-> [Приложение управляющей программы — переместить в рабочую среду](./scenario-daemon-production.md?tabs=java)
+Перейдите к следующей статье в этом сценарии, [перейдите в рабочую среду](./scenario-daemon-production.md?tabs=java).
 
 ---

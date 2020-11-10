@@ -11,12 +11,12 @@ author: lobrien
 ms.date: 8/25/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
-ms.openlocfilehash: dea38705dbb6c2b7abd8a9786ef9adb66ad56ad7
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: fd5c0905b4a5d050eaf35456353122fd26f8cbf7
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320437"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445274"
 ---
 # <a name="publish-and-track-machine-learning-pipelines"></a>Публикация и мониторинг конвейеров машинного обучения
 
@@ -74,7 +74,7 @@ ms.locfileid: "93320437"
 Все опубликованные конвейеры используют конечную точку REST. Конечная точка конвейера позволяет запускать конвейер из любых внешних систем, включая клиентов, не относящихся к Python. Эта конечная точка обеспечивает управляемую повторяемость для сценариев пакетной оценки и переобучения.
 
 > [!IMPORTANT]
-> Если вы используете управление доступом на основе ролей (RBAC) для управления доступом к конвейеру, [Задайте разрешения для сценария конвейера (обучение или оценка)](how-to-assign-roles.md#q-what-are-the-permissions-needed-to-perform-some-common-scenarios-in-the-azure-machine-learning-service).
+> Если вы используете управление доступом на основе ролей (RBAC) для управления доступом к конвейеру, [Задайте разрешения для сценария конвейера (обучение или оценка)](how-to-assign-roles.md#common-scenarios).
 
 Чтобы вызвать выполнение предыдущего конвейера, необходим маркер заголовка проверки подлинности Azure Active Directory. Этот маркер описан в справочнике по [классам азуреклиаусентикатион](/python/api/azureml-core/azureml.core.authentication.azurecliauthentication?preserve-view=true&view=azure-ml-py) и в [проверке подлинности в машинное обучение Azure](https://aka.ms/pl-restep-auth) записной книжке.
 
@@ -90,7 +90,7 @@ response = requests.post(published_pipeline1.endpoint,
 
 `json`Аргумент для запроса POST должен содержать, для `ParameterAssignments` ключа, словарь, содержащий параметры конвейера и их значения. Кроме того, `json` аргумент может содержать следующие ключи:
 
-| Клавиши | Описание |
+| Ключ | Описание |
 | --- | --- | 
 | `ExperimentName` | Имя эксперимента, связанного с этой конечной точкой |
 | `Description` | Произвольный текст, описывающий конечную точку | 

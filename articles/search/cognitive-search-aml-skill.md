@@ -8,12 +8,12 @@ ms.author: magottei
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: 6a3916a41635a1c76bddbb092294f6d362fc6050
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1e6f4e16e3eda8519913a9e2ae14f7cc909bf61
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88924717"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445461"
 ---
 # <a name="aml-skill-in-an-azure-cognitive-search-enrichment-pipeline"></a>Навык AML в конвейере Когнитивный поиск обогащения Azure
 
@@ -58,9 +58,9 @@ Microsoft. Skills. Custom. Амлскилл
 
 Требуемые параметры навыков AML зависят от того, какая проверка подлинности использует служба AML, если таковая имеется. Службы AML предоставляют три варианта проверки подлинности:
 
-* [Проверка подлинности на основе ключей](../machine-learning/concept-enterprise-security.md#authentication-for-web-service-deployment). Для проверки подлинности запросов оценки от навыков AML предоставляется статический ключ
+* [Проверка подлинности на основе ключей](../machine-learning/how-to-authenticate-web-service.md#key-based-authentication). Для проверки подлинности запросов оценки от навыков AML предоставляется статический ключ
   * Использование _URI_ и параметров _ключа_
-* [Проверка подлинности на основе маркеров](../machine-learning/concept-enterprise-security.md#authentication). Служба AML [развертывается с использованием проверки подлинности на основе маркеров](../machine-learning/how-to-deploy-azure-kubernetes-service.md#authentication-with-tokens). [Управляемому удостоверению](../active-directory/managed-identities-azure-resources/overview.md) службы когнитивный Поиск Azure предоставляется [роль читателя](../machine-learning/how-to-assign-roles.md) в рабочей области службы AML. Затем навык AML использует управляемое удостоверение службы Когнитивный поиск Azure для проверки подлинности в службе AML, не требующей статических ключей.
+* [Проверка подлинности на основе маркеров](../machine-learning/how-to-authenticate-web-service.md#token-based-authentication). Служба AML [развертывается с использованием проверки подлинности на основе маркеров](../machine-learning/how-to-authenticate-web-service.md#token-based-authentication). [Управляемому удостоверению](../active-directory/managed-identities-azure-resources/overview.md) службы когнитивный Поиск Azure предоставляется [роль читателя](../machine-learning/how-to-assign-roles.md) в рабочей области службы AML. Затем навык AML использует управляемое удостоверение службы Когнитивный поиск Azure для проверки подлинности в службе AML, не требующей статических ключей.
   * Используйте параметр _resourceId_ .
   * Если служба Когнитивный поиск Azure находится в другом регионе в рабочей области AML, используйте параметр _Region_ , чтобы задать регион, в котором развернута служба AML.
 * Без поверки подлинности. Для использования службы AML не требуется проверка подлинности
@@ -168,7 +168,7 @@ Microsoft. Skills. Custom. Амлскилл
 
 В случаях, когда служба AML недоступна или возвращает ошибку HTTP, в журнал выполнения индексатора будет добавлена понятная ошибка с любыми доступными сведениями об ошибке HTTP.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Устранение неполадок службы AML](../machine-learning/how-to-troubleshoot-deployment.md)
