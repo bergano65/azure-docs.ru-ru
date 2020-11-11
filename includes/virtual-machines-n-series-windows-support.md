@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: bfb7d1d52549d7fda9547b65a259fe2ce73f8839
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 22d2ddc65616bbeb0c511afa6f60bc12c6ec67ef
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997905"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94482766"
 ---
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
 
@@ -34,12 +34,12 @@ ms.locfileid: "91997905"
 
 Корпорация Майкрософт повторно распространяет установщики драйверов сетки NVIDIA для виртуальных машин серии NV и NVv3, используемых в качестве виртуальных рабочих станций или для виртуальных приложений. Устанавливайте только эти драйверы сетки на виртуальных машинах Azure серии NV только в операционных системах, перечисленных в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure. Вам не нужно настраивать сервер лицензий на программное обеспечение NVIDIA GPU.
 
-Драйверы сетки, распространяемые Azure, не работают на виртуальных машинах серии, отличных от NV, таких как NC, NCv2, NCv3, ND и NDv2.
+Драйверы сетки, распространяемые Azure, не работают на виртуальных машинах серии, отличных от NV, таких как NC, NCv2, NCv3, ND и NDv2. Единственным исключением является NCas_T4_V3 серия виртуальных машин, в которой драйверы сетки будут включать графические функции, аналогичные возможностям серии NV.
 
 Обратите внимание, что расширение NVIDIA всегда установит последнюю версию драйвера. Мы предоставляем ссылки на предыдущую версию для клиентов, которые имеют зависимость от более старой версии.
 
 Для Windows Server 2019, Windows Server 2016 и Windows 10 (до сборки 2004):
-- [Сетка 11 (452,39)](https://go.microsoft.com/fwlink/?linkid=874181) (. exe)
+- [Сетка 11,1 (452,39)](https://go.microsoft.com/fwlink/?linkid=874181) (. exe)
 - [Сетка 11,0 (451,48)](https://download.microsoft.com/download/C/1/4/c147a482-1364-4d12-b9e3-0beda0f00a13/451.48_grid_win10_server2016_server2019_64bit_international.exe) (. exe) 
 
 Для Windows Server 2012 R2: 
