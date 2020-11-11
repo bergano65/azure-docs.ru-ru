@@ -7,16 +7,16 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3e9674916ea9bb5e756a5e57ff18517f53ca7497
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 05502b344b1224dff5d12f95b96b05baace98970
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427564"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491007"
 ---
 # <a name="configure-an-openvpn-client-for-azure-virtual-wan"></a>Настройка клиента Опенвпн для виртуальной глобальной сети Azure
 
-Эта статья поможет вам настроить **клиенты &reg; протокола опенвпн** . Для подключения через протокол Опенвпн можно также использовать VPN-клиент Azure для Windows 10. 
+Эта статья поможет вам настроить **клиенты &reg; протокола опенвпн** . Для подключения через протокол Опенвпн можно также использовать VPN-клиент Azure для Windows 10. Дополнительные инструкции можно найти [здесь](openvpn-azure-ad-client.md) .
 
 ## <a name="before-you-begin"></a>Подготовка к работе
 
@@ -24,7 +24,7 @@ ms.locfileid: "94427564"
 
 [!INCLUDE [configuration steps](../../includes/vpn-gateway-vwan-config-openvpn-clients.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о VPN пользователей (точка-сеть) см. в разделе [Создание VPN-подключений пользователей](virtual-wan-point-to-site-portal.md).
 

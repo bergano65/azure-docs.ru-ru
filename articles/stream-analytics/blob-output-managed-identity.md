@@ -6,12 +6,12 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 03/11/2020
-ms.openlocfilehash: 7eb610f741681be89ef44f8288ed47674c1d6440
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: f14ded89ad294abbfaf9861e5f4caf17dd82fb98
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348582"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94490718"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure
 
@@ -223,6 +223,10 @@ ms.locfileid: "93348582"
 3.    Если вы включили его, нажмите кнопку **сохранить**.
 
    ![Включить доступ к виртуальной сети](./media/stream-analytics-managed-identities-blob-output-preview/stream-analytics-vnet-exception.png)
+
+## <a name="remove-managed-identity"></a>Удалить управляемое удостоверение
+
+Управляемое удостоверение, созданное для задания Stream Analytics, удаляется только при удалении задания. Невозможно удалить управляемое удостоверение, не удаляя задание. Если вы больше не хотите использовать управляемое удостоверение, можно изменить метод проверки подлинности для выходных данных. Управляемое удостоверение будет продолжать существовать до тех пор, пока задание не будет удалено, и будет использоваться при повторном использовании проверки подлинности с управляемым удостоверением.
 
 ## <a name="limitations"></a>Ограничения
 Ниже приведены текущие ограничения этой функции.

@@ -3,12 +3,12 @@ title: Программное создание политик
 description: В статье описано, как программно создавать политики для службы "Политика Azure" и управлять ими с помощью Azure CLI, Azure PowerShell и REST API.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 9b0c2e50536a847555dfa5cc6b9c823cfc1a4cfa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2bf2b1864331fd785ecdd70be4af79be01f1e5e0
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89047061"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491806"
 ---
 # <a name="programmatically-create-policies"></a>Программное создание политик
 
@@ -88,11 +88,11 @@ ms.locfileid: "89047061"
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
 
    Параметр **Scope** в `New-AzPolicyAssignment` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно.
-   Замените `{rType}`**типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
+   Замените `{rType}`**типом ресурса** , таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
    - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subId}/resourceGroups/{rgName}`
-   - Подписка — `/subscriptions/{subId}/`
+   - Подписка — `/subscriptions/{subId}`
    - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
 Дополнительные сведения об управлении политиками ресурсов с помощью модуля диспетчер ресурсов PowerShell см. в разделе [AZ. Resources](/powershell/module/az.resources/#policies).
@@ -207,8 +207,8 @@ ms.locfileid: "89047061"
 
    При вызове без параметров расположения `az policy definition creation` по умолчанию сохраняет определение политики в выбранной подписке контекста сеансов. Чтобы сохранить определение в другом месте, используйте следующие параметры:
 
-   - **subscription** — сохранение в другой подписке. Требуется значение _GUID_ для идентификатора подписки или значение _строки_ для имени подписки.
-   - **management-group** — сохранение в группе управления. Требуется значение _строки_.
+   - **subscription**  — сохранение в другой подписке. Требуется значение _GUID_ для идентификатора подписки или значение _строки_ для имени подписки.
+   - **management-group**  — сохранение в группе управления. Требуется значение _строки_.
 
 1. Чтобы создать назначение политики, выполните следующую команду: Замените данные в символах &lt;&gt; на собственные значения.
 
@@ -216,7 +216,7 @@ ms.locfileid: "89047061"
    az policy assignment create --name '<name>' --scope '<scope>' --policy '<policy definition ID>'
    ```
 
-   Параметр **scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Формат параметра **scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}`**типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
+   Параметр **scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Формат параметра **scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}`**типом ресурса** , таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
    - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subID}/resourceGroups/{rgName}`

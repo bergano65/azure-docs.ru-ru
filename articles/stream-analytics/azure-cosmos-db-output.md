@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: e322135cfdb7aaff331367e84c603e8344436528
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a086d9fe150766c6b31210f29bf802a75e0ee4ec
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906251"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491738"
 ---
 # <a name="azure-cosmos-db-output-from-azure-stream-analytics"></a>Azure Cosmos DB выходные данные Azure Stream Analytics
 
@@ -34,12 +34,12 @@ ms.locfileid: "90906251"
 | Идентификатор учетной записи | Имя или универсальный код ресурса (URI) конечной точки учетной записи Azure Cosmos DB. |
 | Ключ учетной записи | Общедоступный ключ доступа к учетной записи Azure Cosmos DB. |
 | База данных | Имя базы данных Azure Cosmos DB. |
-| Имя контейнера | Имя используемого контейнера, который должен существовать в Cosmos DB. Пример  <br /><ul><li> _MyContainer_: Контейнер с именем "MyContainer" должен существовать.</li>|
+| Имя контейнера | Имя используемого контейнера, который должен существовать в Cosmos DB. Пример  <br /><ul><li> _MyContainer_ : Контейнер с именем "MyContainer" должен существовать.</li>|
 | Идентификатор документа |Необязательный параметр. Имя поля в выходных событиях, используемое для указания первичного ключа, на котором основываются операции вставки или обновления.
 
 ## <a name="partitioning"></a>Секционирование
 
-Ключ секции основан на предложении PARTITION BY в запросе. Количество модулей записи вывода соответствует входному секционированию для [полностью параллельных запросов](stream-analytics-scale-jobs.md). Stream Analytics преобразует ключ секции Cosmos DB вывода в строку. Например, если имеется ключ секции со значением 1 типа bigint, он преобразуется в «1» типа String.
+Ключ секции основан на предложении PARTITION BY в запросе. Количество модулей записи вывода соответствует входному секционированию для [полностью параллельных запросов](stream-analytics-scale-jobs.md). Stream Analytics преобразует ключ секции Cosmos DB вывода в строку. Например, если имеется ключ секции со значением 1 типа bigint, он преобразуется в «1» типа String. Это преобразование всегда происходит независимо от того, записывается ли свойство секции в Cosmos DB.
 
 ## <a name="output-batch-size"></a>Размер выходного пакета
 

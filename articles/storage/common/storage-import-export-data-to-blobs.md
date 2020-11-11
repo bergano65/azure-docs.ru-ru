@@ -9,12 +9,12 @@ ms.date: 10/29/2020
 ms.author: alkohli
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 32187b7aedd43a57ffe77c2f8524c54049ba10ae
-ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
+ms.openlocfilehash: d23560e8ee387ca8bc9cb4bba4211f6c8272addd
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93234126"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94490888"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "93234126"
 7. Чтобы подготовить диск, выполните следующую команду. **В зависимости от размера данных это может занять от нескольких часов до нескольких дней.**
 
     ```powershell
-    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /blobtype:<BlockBlob or PageBlob> /skipwrite
+    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /blobtype:<BlockBlob or PageBlob> /skipwrite
     ```
 
     Файл журнала создается в той же папке, где вы запустили средство. Также создаются два других файла: файл *XML* (папка, в которой выполняется средство) и файл *drive-manifest.xml* (папка, в которой хранятся данные).
@@ -101,17 +101,17 @@ ms.locfileid: "93234126"
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 
 1. Войдите в систему по адресу https://portal.azure.com/.
-2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта** .
+2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта**.
 
     ![Перейдите к разделу "Задания импорта или экспорта"](./media/storage-import-export-data-to-blobs/import-to-blob1.png)
 
-3. Щелкните **создать задание импорта и экспорта** .
+3. Щелкните **создать задание импорта и экспорта**.
 
     ![Нажмите кнопку "Создание задания импорта и экспорта".](./media/storage-import-export-data-to-blobs/import-to-blob2.png)
 
 4. В разделе **Основные сведения** :
 
-   * Выберите **Импорт в Azure** .
+   * Выберите **Импорт в Azure**.
    * Введите описательное имя для задания импорта. Вы будете использовать его для отслеживания хода выполнения заданий.
        * Имя может содержать только строчные буквы, цифры и дефисы.
        * Имя должно начинаться с буквы и не может содержать пробелы.
@@ -337,7 +337,7 @@ Install-Module -Name Az.ImportExport
 
 Отслеживание задания до завершения. После завершения задания убедитесь, что данные переданы в Azure. Удалите локальные данные только после подтверждения, что загрузка прошла успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 * [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)

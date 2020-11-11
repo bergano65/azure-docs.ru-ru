@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: edd79d08d18e95d27e557a26f0adc36868097bb3
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: f034cd07b481f9d72cb3f753b30e1779bf672ac2
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900270"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491942"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
@@ -73,9 +73,9 @@ Azure Spring Cloud поддерживает Java 8 и 11. См. раздел [�
 
 ### <a name="where-can-i-view-my-spring-cloud-application-logs-and-metrics"></a>Где можно просматривать журналы и метрики приложений весны облака?
 
-Метрики находятся на вкладке "Обзор приложения" и [Azure Monitor](../azure-monitor/platform/data-platform-metrics.md#interacting-with-azure-monitor-metrics).
+Метрики находятся на вкладке "Обзор приложения" и [Azure Monitor](../azure-monitor/platform/data-platform-metrics.md#metrics-explorer).
 
-Azure Веснного облака поддерживает экспорт журналов облачных приложений и метрик в службу хранилища Azure, EventHub и [log Analytics](../azure-monitor/platform/data-platform-logs.md#log-queries). Имя таблицы в Log Analytics — *аппплатформлогсфорспринг* . Сведения о том, как ее включить, см. в разделе [службы диагностики](diagnostic-services.md).
+Azure Веснного облака поддерживает экспорт журналов облачных приложений и метрик в службу хранилища Azure, EventHub и [log Analytics](../azure-monitor/platform/data-platform-logs.md). Имя таблицы в Log Analytics — *аппплатформлогсфорспринг*. Сведения о том, как ее включить, см. в разделе [службы диагностики](diagnostic-services.md).
 
 ### <a name="does-azure-spring-cloud-support-distributed-tracing"></a>Поддерживает ли Azure Spring Cloud распределенную трассировку?
 
@@ -209,6 +209,6 @@ RetryableEurekaHttpClient: Request execution failure with status code 401; retry
 Мы улучшаем эту часть и не будем использовать эту ошибку в приложениях пользователей в течение короткого будущего времени.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если у вас возникнут другие вопросы, см. [руководство по устранению неполадок в облаке Azure весны](spring-cloud-troubleshoot.md).

@@ -4,15 +4,15 @@ description: Узнайте, как использовать большой дв
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-author: keferna
-ms.author: keferna
+author: trkeya
+ms.author: trkeya
 ms.date: 05/01/2020
-ms.openlocfilehash: dea9c0eec275c6a0596636c8625e52b8978bb9a6
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: bd2f3d40b1aea1c0133f95e069ebfd527d30bd59
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130550"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491109"
 ---
 # <a name="use-azure-blob-storage-to-manage-commercial-marketplace-leads"></a>Использование хранилища BLOB-объектов Azure для управления потенциальными клиентами на коммерческом рынке
 
@@ -31,8 +31,8 @@ ms.locfileid: "93130550"
 2. Войдите на [портал Azure](https://portal.azure.com), после того как учетная запись Azure станет активна.
 
 3. На портале Azure создайте учетную запись хранения, выполнив указанные ниже действия.  
-    1. В меню слева выберите **+Создать ресурс** .  Справа появится панель **Новый** (колонка).
-    2. На панели **Новый** выберите **Хранилище** .  Справа отобразится список **Подборка** .
+    1. В меню слева выберите **+Создать ресурс**.  Справа появится панель **Новый** (колонка).
+    2. На панели **Новый** выберите **Хранилище**.  Справа отобразится список **Подборка**.
     3. Выберите **Учетная запись хранения** , чтобы приступить к созданию учетной записи.  Следуйте [инструкциям](../../storage/common/storage-account-create.md?tabs=azure-portal) по созданию учетной записи хранения.
 
     ![Шаги по созданию учетной записи хранения Azure](./media/commercial-marketplace-lead-management-instructions-azure-blob/azure-storage-create.png)
@@ -53,11 +53,11 @@ ms.locfileid: "93130550"
 
     ![Снимок экрана, на котором показана страница "ключи доступа" с выделенным текстовым полем "строка подключения".](./media/commercial-marketplace-lead-management-instructions-azure-blob/azure-storage-keys-2.png)
 
-6. На странице учетной записи хранения выберите **Большие двоичные объекты** .
+6. На странице учетной записи хранения выберите **Большие двоичные объекты**.
 
    ![Снимок экрана со страницей учетной записи хранения Azure с выбранными BLOB-объектами](./media/commercial-marketplace-lead-management-instructions-azure-blob/select-blobs.png)
 
-7. На странице больших двоичных объектов нажмите кнопку **+Контейнер** .
+7. На странице больших двоичных объектов нажмите кнопку **+Контейнер**.
 
 8. Введите **имя** для нового контейнера. Все знаки в имени контейнера должны быть строчными. Оно должно начинаться с буквы или цифры и может содержать только буквы, цифры и дефисы (-). Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
@@ -74,11 +74,11 @@ ms.locfileid: "93130550"
 После того как все готово к настройке сведений об управлении потенциальными клиентами для вашего предложения на портале публикации, выполните указанные ниже действия.
 
 1. Перейдите на страницу **Настройка предложения** для своего предложения.
-2. В разделе **Потенциальные клиенты** выберите **Подключить** .
+2. В разделе **Потенциальные клиенты** выберите **Подключить**.
 
     :::image type="content" source="./media/commercial-marketplace-lead-management-instructions-azure-blob/customer-leads.png" alt-text="Потенциальные клиенты":::
 
-3. Во всплывающем окне со сведениями о подключении в качестве назначения потенциального клиента выберите **BLOB-объект Azure** .
+3. Во всплывающем окне со сведениями о подключении в качестве назначения потенциального клиента выберите **BLOB-объект Azure**.
 
     ![Сведения о подключении](./media/commercial-marketplace-lead-management-instructions-azure-blob/connect-details.png) 
 
@@ -87,7 +87,7 @@ ms.locfileid: "93130550"
     * Пример имени контейнера: `marketplaceleadcontainer`
     * Пример строки подключения к учетной записи хранения: `DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.windows.net` ![Сведения о подключении](./media/commercial-marketplace-lead-management-instructions-azure-blob/connection-details.png) 
 
-5. Щелкните **Сохранить** .
+5. Щелкните **Сохранить**.
 
     > [!NOTE]
     > Завершите настройку остальной части предложения и опубликуйте его, прежде чем вы сможете получать сведения о потенциальных клиентах для своего предложения.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 51c611b2565ae0a5a054a45f0aedcb039351b46b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 582dafba40012e9ff9c59bc09adb1a0831e999f5
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88208372"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491228"
 ---
 # <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Мониторинг функций Azure с помощью журналов Azure Monitor
 
@@ -22,23 +22,23 @@ ms.locfileid: "88208372"
 Azure Monitor использует версию [языка запросов Kusto](/azure/kusto/query/), который применяется в Azure Data Explorer. Он позволяет выполнять простые запросы к журналам, но также включает и расширенную функциональность, например функции агрегирования, объединения и интеллектуальную аналитику. Доступно [множество уроков](../azure-monitor/log-query/get-started-queries.md) для быстрого изучения этого языка.
 
 > [!NOTE]
-> Интеграция с журналами Azure Monitor в настоящее время доступна в общедоступной предварительной версии для приложений-функций, работающих в планах использования Windows, Premium и на основе специальных планов размещения.
+> Интеграция с журналами Azure Monitor в настоящее время доступна в общедоступной предварительной версии для приложений-функций версии 2 и 3, работающих на основе использования Windows, Premium и специальных планов размещения.
 
 ## <a name="setting-up"></a>Настройка
 
-1. В разделе **мониторинг** приложения функции в [портал Azure](https://portal.azure.com)выберите **параметры диагностики**, а затем щелкните **Добавить параметр диагностики**.
+1. В разделе **мониторинг** приложения функции в [портал Azure](https://portal.azure.com)выберите **параметры диагностики** , а затем щелкните **Добавить параметр диагностики**.
 
    :::image type="content" source="media/functions-monitor-log-analytics/diagnostic-settings-add.png" alt-text="Выбор параметров диагностики":::
 
-1. На странице **параметры диагностики** в разделе **сведения о категории** и **Журнал**выберите **функтионапплогс**.
+1. На странице **параметры диагностики** в разделе **сведения о категории** и **Журнал** выберите **функтионапплогс**.
 
    Таблица **функтионапплогс** содержит нужные журналы.
 
-1. В разделе **сведения о назначении**выберите **Отправить log Analytics**. затем выберите свою **рабочую область log Analytics**. 
+1. В разделе **сведения о назначении** выберите **Отправить log Analytics**. затем выберите свою **рабочую область log Analytics**. 
 
-1. Введите **имя параметров диагностики**и нажмите кнопку **сохранить**.
+1. Введите **имя параметров диагностики** и нажмите кнопку **сохранить**.
 
-   :::image type="content" source="media/functions-monitor-log-analytics/choose-table.png" alt-text="Выбор параметров диагностики":::
+   :::image type="content" source="media/functions-monitor-log-analytics/choose-table.png" alt-text="Добавление параметра диагностики":::
 
 ## <a name="user-generated-logs"></a>Журналы, созданные пользователем
 
@@ -89,7 +89,7 @@ logging.info('My app logs here.')
 
    Функции Azure записывают все журналы в таблицу **функтионапплогс** в разделе **логманажемент**. 
 
-   :::image type="content" source="media/functions-monitor-log-analytics/querying.png" alt-text="Выбор параметров диагностики":::
+   :::image type="content" source="media/functions-monitor-log-analytics/querying.png" alt-text="Окно запроса в Log Analytics рабочей области":::
 
 Ниже приведены некоторые примеры запросов.
 
@@ -121,7 +121,7 @@ FunctionAppLogs
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
 - Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md).

@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 09/18/2020
+ms.date: 11/10/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1, devx-track-azurecli
-ms.openlocfilehash: 325931ea024221bc89df3b2e25f3e7844130f4dc
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 53628f5aa0bc5ab5dedde5deb9950c7b13fb4bf6
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741067"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94490752"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Устранение неполадок в Azure RBAC
 
@@ -68,6 +68,7 @@ $ras.Count
     ```azurecli
     az role assignment create --assignee-object-id 11111111-1111-1111-1111-111111111111  --role "Contributor" --scope "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
     ```
+- Если вы попытаетесь удалить последнее назначение роли владельца для подписки, может появиться сообщение об ошибке "не удается удалить последнее назначение администратора RBAC. Удаление назначения роли последнего владельца для подписки не поддерживается, чтобы избежать потери подписки. Если вы хотите отменить подписку, см. статью [Отмена подписки Azure](../cost-management-billing/manage/cancel-azure-subscription.md).
 
 ## <a name="problems-with-custom-roles"></a>Проблемы с пользовательскими ролями
 
@@ -120,7 +121,7 @@ $ras.Count
 
 Однако если этот субъект безопасности не является недавно приглашенным пользователем, он может быть удаленным субъектом безопасности. Если назначить роль субъекту безопасности, а затем удалить этот субъект безопасности без предварительного удаления назначения ролей, то субъект безопасности будет указан как **удостоверение не найдено** и **неизвестный** тип.
 
-Если вы перечислите назначение этой роли с помощью Azure PowerShell, то может отобразиться пустое `DisplayName` значение, а `ObjectType` для параметра задано **неизвестное** . Например, командлет [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment) Возвращает назначение роли, похожее на следующие выходные данные:
+Если вы перечислите назначение этой роли с помощью Azure PowerShell, то может отобразиться пустое `DisplayName` значение, а `ObjectType` для параметра задано **неизвестное**. Например, командлет [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment) Возвращает назначение роли, похожее на следующие выходные данные:
 
 ```
 RoleAssignmentId   : /subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.Authorization/roleAssignments/22222222-2222-2222-2222-222222222222
@@ -239,13 +240,13 @@ Azure Resource Manager иногда кэширует конфигурации и
 
 ## <a name="azure-functions-and-write-access"></a>Функции Azure и доступ для записи
 
-Для некоторых компонентов решения [Функции Azure](../azure-functions/functions-overview.md) требуется доступ на запись. Например, если пользователю назначена роль [читателя](built-in-roles.md#reader) , он не сможет просматривать функции в приложении-функции. На портале отобразится текст **(Нет доступа)** .
+Для некоторых компонентов решения [Функции Azure](../azure-functions/functions-overview.md) требуется доступ на запись. Например, если пользователю назначена роль [читателя](built-in-roles.md#reader) , он не сможет просматривать функции в приложении-функции. На портале отобразится текст **(Нет доступа)**.
 
 ![Сообщение об отсутствии доступа в приложении-функции](./media/troubleshooting/functionapps-noaccess.png)
 
 Пользователь с ролью читателя может щелкнуть вкладку **Функции платформы** и выбрать **Все параметры** , чтобы просмотреть некоторые параметры, связанные с приложением-функцией (так же, как для веб-приложения), но не может изменить эти параметры. Для доступа к этим возможностям потребуется роль [участника](built-in-roles.md#contributor) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Устранение неполадок для гостевых пользователей](role-assignments-external-users.md#troubleshoot)
 - [Добавление и удаление назначений ролей Azure с помощью портала Azure](role-assignments-portal.md)

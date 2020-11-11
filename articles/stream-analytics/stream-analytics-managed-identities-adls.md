@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 04/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 551f0065f1547e94d93993a38795234f455b9eef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b20391c4d856a5c52b6017ae892ec0b86873dbca
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86044402"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491891"
 ---
 # <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Проверка подлинности Stream Analytics для Azure Data Lake Storage 1-го поколения с помощью управляемых удостоверений
 
@@ -34,7 +34,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
    ![Идентификатор субъекта-службы Stream Analytics](./media/stream-analytics-managed-identities-adls/stream-analytics-principal-id.png)
  
-   Субъект-служба имеет то же имя, что и задание Stream Analytics. Например, если имя задания — **MyASAJob**, имя созданного субъекта-службы будет также **MyASAJob**.
+   Субъект-служба имеет то же имя, что и задание Stream Analytics. Например, если имя задания — **MyASAJob** , имя созданного субъекта-службы будет также **MyASAJob**.
 
 3. В окне Выходные свойства приемника выходных данных ADLS 1-го поколения щелкните раскрывающийся список режим проверки подлинности и выберите * * управляемое удостоверение * *.
 
@@ -58,7 +58,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
    ![Выбор разрешений на запись и выполнение](./media/stream-analytics-managed-identities-adls/stream-analytics-select-permissions.png)
  
-9. Субъект-служба находится в списке **Назначенные разрешения** в области **Доступ**, как показано ниже. Теперь вы можете вернуться назад и приступить к заданию Stream Analytics.
+9. Субъект-служба находится в списке **Назначенные разрешения** в области **Доступ** , как показано ниже. Теперь вы можете вернуться назад и приступить к заданию Stream Analytics.
 
    ![Список доступа Stream Analytics на портале](./media/stream-analytics-managed-identities-adls/stream-analytics-access-list.png)
 
@@ -175,14 +175,18 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
    Дополнительные сведения о команде PowerShell см. в документации по [Set-аздаталакестореитемаклентри](/powershell/module/az.datalakestore/set-azdatalakestoreitemaclentry) .
 
+## <a name="remove-managed-identity"></a>Удалить управляемое удостоверение
+
+Управляемое удостоверение, созданное для задания Stream Analytics, удаляется только при удалении задания. Невозможно удалить управляемое удостоверение, не удаляя задание. Если вы больше не хотите использовать управляемое удостоверение, можно изменить метод проверки подлинности для выходных данных. Управляемое удостоверение будет продолжать существовать до тех пор, пока задание не будет удалено, и будет использоваться при повторном использовании проверки подлинности с управляемым удостоверением.
+
 ## <a name="limitations"></a>Ограничения
 Эта функция не поддерживает следующие компоненты:
 
 1. **Многоклиентский доступ**. субъект-служба, созданная для данного задания Stream Analytics, будет находиться в Azure Active Directoryном клиенте, на котором было создано задание, и не может использоваться для ресурса, который находится в другом клиенте Azure Active Directory. Таким образом, можно использовать только MSI для ресурсов ADLS Gen 1, которые находятся в том же Azure Active Directory клиенте, что и задание Azure Stream Analytics. 
 
-2. **[Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md)**:, не поддерживается. Это означает, что пользователь не может ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба создается Azure Stream Analytics.
+2. **[Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md)** :, не поддерживается. Это означает, что пользователь не может ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба создается Azure Stream Analytics.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание выходных данных Data Lake Store с помощью Stream Analytics](../data-lake-store/data-lake-store-stream-analytics.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)

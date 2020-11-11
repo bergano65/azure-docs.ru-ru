@@ -2,13 +2,13 @@
 title: Кнопка "Развертывание в Azure"
 description: Используйте кнопку для развертывания шаблонов Azure Resource Manager из репозитория GitHub.
 ms.topic: conceptual
-ms.date: 10/22/2020
-ms.openlocfilehash: 62a0a8b0336d9a7fcf00efb172775b9606bcef98
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 11/10/2020
+ms.openlocfilehash: 7d002508f6b2402f8cff40fb0369896080ecbbad
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675391"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94490905"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub
 
@@ -35,7 +35,7 @@ ms.locfileid: "92675391"
 
 ## <a name="create-url-for-deploying-template"></a>Создание URL-адреса для развертывания шаблона
 
-Чтобы создать URL-адрес для шаблона, начните с необработанного URL-адреса шаблона в репозитории. Чтобы просмотреть необработанный URL-адрес, выберите **необработанный** .
+Чтобы создать URL-адрес для шаблона, начните с необработанного URL-адреса шаблона в репозитории. Чтобы просмотреть необработанный URL-адрес, выберите **необработанный**.
 
 :::image type="content" source="./media/deploy-to-azure-button/select-raw.png" alt-text="выбрать необработанный":::
 
@@ -71,6 +71,14 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 
 У вас есть полный URL-адрес ссылки.
 
+Если вы используете [Git с Azure Repos](/azure/devops/repos/git/) вместо репозитория GitHub, вы по-прежнему можете использовать кнопку Развертывание в Azure. Убедитесь, что репозиторий является общедоступным. Используйте [операцию Items](/rest/api/azure/devops/git/items/get) для получения шаблона. Ваш запрос должен иметь следующий формат:
+
+```http
+https://dev.azure.com/{organization-name}/{project-name}/_apis/git/repositories/{repository-name}/items?scopePath={url-encoded-path}&api-version=6.0
+```
+
+Закодировать этот URL-адрес запроса.
+
 ## <a name="create-deploy-to-azure-button"></a>Кнопка "создать развертывание в Azure"
 
 Наконец, разместите ссылку и изображение вместе.
@@ -89,6 +97,12 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 </a>
 ```
 
+Для Git с репозиторием Azure кнопка имеет формат:
+
+```markdown
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fdev.azure.com%2Forgname%2Fprojectname%2F_apis%2Fgit%2Frepositories%2Freponame%2Fitems%3FscopePath%3D%252Freponame%252Fazuredeploy.json%26api-version%3D6.0)
+```
+
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
 Чтобы протестировать полное решение, нажмите следующую кнопку:
@@ -99,6 +113,6 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 
 ![Развертывание с помощью портала](./media/deploy-to-azure-button/portal.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о шаблонах см. [в разделе Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).

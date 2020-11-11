@@ -9,12 +9,12 @@ ms.date: 10/29/2020
 ms.author: alkohli
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7d969392c3245eb81ed07889bd956d2b8e8fb82f
-ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
+ms.openlocfilehash: 859325bffe1db9cd6a7afc7e5013681c88209eff
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93234106"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491789"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -51,14 +51,14 @@ ms.locfileid: "93234106"
 2. Создайте один том NTFS на каждом диске. Присвойте ему букву диска. Не используйте точки подключения.
 3. Измените файл *dataset.csv* в корневой папке, в которой находится средство. В зависимости от того, что импортируется, — файл, папка или и то и другое, добавьте записи в файл *dataset.csv* , как показано в следующем примере.
 
-   - **Чтобы импортировать файл** : в следующем примере данные для копирования находятся на диске F:. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1* . Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
+   - **Чтобы импортировать файл** : в следующем примере данные для копирования находятся на диске F:. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1*. Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
 
        ```
            BasePath,DstItemPathOrPrefix,ItemType,Disposition,MetadataFile,PropertiesFile
            "F:\MyFolder1\MyFile1.txt","MyAzureFileshare1/MyFile1.txt",file,rename,"None",None
 
        ```
-   - **Чтобы импортировать папку** . Все файлы и папки, расположенные в *MyFolder2_original* , будут рекурсивно скопированы в общую папку. Структура папок сохраняется.
+   - **Чтобы импортировать папку**. Все файлы и папки, расположенные в *MyFolder2_original* , будут рекурсивно скопированы в общую папку. Структура папок сохраняется.
 
        ```
            "F:\MyFolder2\","MyAzureFileshare1/",file,rename,"None",None
@@ -97,7 +97,7 @@ ms.locfileid: "93234106"
 5. Используйте параметр `PrepImport`, чтобы скопировать и подготовить данные для диска. Для первого сеанса копирования каталогов и файлов в рамках нового сеанса копирования выполните следующую команду:
 
     ```cmd
-    .\WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] [/sk:<StorageAccountKey>] [/silentmode] [/InitialDriveSet:<driveset.csv>] DataSet:<dataset.csv>
+    .\WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] [/sk:<StorageAccountKey>] [/silentmode] [/InitialDriveSet:<driveset.csv>]/DataSet:<dataset.csv>
     ```
 
    Ниже приведен пример импорта такого файла.
@@ -119,17 +119,17 @@ ms.locfileid: "93234106"
 
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 1. Войдите в систему по адресу https://portal.azure.com/.
-2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта** .
+2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта**.
 
     ![Перейдите к импорту и экспорту](./media/storage-import-export-data-to-blobs/import-to-blob1.png)
 
-3. Щелкните **создать задание импорта и экспорта** .
+3. Щелкните **создать задание импорта и экспорта**.
 
     ![Щелкните "Задание импорта и экспорта"](./media/storage-import-export-data-to-blobs/import-to-blob2.png)
 
 4. В разделе **Основные сведения** :
 
-    - Выберите **Импорт в Azure** .
+    - Выберите **Импорт в Azure**.
     - Введите описательное имя для задания импорта. Это имя будет использоваться для отслеживания выполняемых заданий, а также после их завершения.
         -  Это имя может содержать только буквы в нижнем регистре, цифры, дефисы и символы подчеркивания.
         -  Имя должно начинаться с буквы и не может содержать пробелы.
@@ -357,7 +357,7 @@ Install-Module -Name Az.ImportExport
 
 Чтобы **добавить дополнительные диски** , создайте файл с набором дисков и выполните приведенную ниже команду.
 
-Для последующих сеансов копирования на диски, указанные в файле *InitialDriveset.csv* , создайте еще один *CSV-файл* с набором дисков и укажите его в качестве значения параметра `AdditionalDriveSet`. Используйте **то же имя файла журнала** и укажите **новый идентификатор сеанса** . Формат CSV-файлов AdditionalDriveset и InitialDriveSet совпадает.
+Для последующих сеансов копирования на диски, указанные в файле *InitialDriveset.csv* , создайте еще один *CSV-файл* с набором дисков и укажите его в качестве значения параметра `AdditionalDriveSet`. Используйте **то же имя файла журнала** и укажите **новый идентификатор сеанса**. Формат CSV-файлов AdditionalDriveset и InitialDriveSet совпадает.
 
 ```cmd
 WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> /AdditionalDriveSet:<driveset.csv>
@@ -372,7 +372,7 @@ WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#3  /AdditionalDrive
 
 Чтобы добавить дополнительные данные в тот же файл с набором дисков, используйте команду PrepImport для последующих сеансов копирования и скопируйте дополнительные файлы или папки.
 
-Для последующих сеансов копирования на те же жесткие диски, указанные в файле *InitialDriveset.csv* , укажите имя **того же файла журнала** и **новый идентификатор сеанса** . Указывать ключ учетной записи хранения не требуется.
+Для последующих сеансов копирования на те же жесткие диски, указанные в файле *InitialDriveset.csv* , укажите имя **того же файла журнала** и **новый идентификатор сеанса**. Указывать ключ учетной записи хранения не требуется.
 
 ```cmd
 WAImportExport PrepImport /j:<JournalFile> /id:<SessionId> /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] DataSet:<dataset.csv>
@@ -384,7 +384,7 @@ WAImportExport PrepImport /j:<JournalFile> /id:<SessionId> /j:<JournalFile> /id:
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /DataSet:dataset-2.csv
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 * [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)

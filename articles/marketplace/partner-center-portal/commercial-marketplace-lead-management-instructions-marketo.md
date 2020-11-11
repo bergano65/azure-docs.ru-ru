@@ -4,15 +4,15 @@ description: Узнайте, как настроить систему CRM для
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-author: keferna
-ms.author: keferna
+author: trkeya
+ms.author: trkeya
 ms.date: 03/30/2020
-ms.openlocfilehash: be1f21f927b01d66e19dc5e97b38e5c35e6664cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cbd12481312d310add15bf3d41e21e9c416f1c39
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86120268"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491081"
 ---
 # <a name="use-marketo-to-manage-commercial-marketplace-leads"></a>Использование Marketo для управления потенциальными клиентами на коммерческой платформе
 
@@ -30,7 +30,7 @@ ms.locfileid: "86120268"
 
     ![Новая форма Marketo](./media/commercial-marketplace-lead-management-instructions-marketo/marketo-2.png)
 
-1.  Заполните необходимые поля в диалоговом окне **Новая форма**, а затем выберите **Создать**.
+1.  Заполните необходимые поля в диалоговом окне **Новая форма** , а затем выберите **Создать**.
 
     ![Создание новой формы Marketo](./media/commercial-marketplace-lead-management-instructions-marketo/marketo-3.png)
 
@@ -79,7 +79,7 @@ ms.locfileid: "86120268"
 
     ![Выберите назначение потенциального клиента](./media/commercial-marketplace-lead-management-instructions-marketo/choose-lead-destination.png)
 
-1. Укажите **идентификатор сервера**, **идентификатор учетной записи Munchkin** и **идентификатор формы**.
+1. Укажите **идентификатор сервера** , **идентификатор учетной записи Munchkin** и **идентификатор формы**.
 
     > [!NOTE]
     > Прежде чем вы сможете получать сведения о потенциальных клиентах для своего предложения необходимо завершить настройку его остальной части и опубликовать его. 

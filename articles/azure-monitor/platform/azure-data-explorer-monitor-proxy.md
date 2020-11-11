@@ -7,12 +7,12 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 8a503a5456fc28bd1b3ebb69c784fc59b3c6e7df
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 9b434c426264fcfee0dfe663a7d1b21a354badec
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050076"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94491262"
 ---
 # <a name="query-data-in-azure-monitor-using-azure-data-explorer-preview"></a>Запрос данных в Azure Monitor с помощью обозреватель данных Azure (Предварительная версия)
 Кластер Azure обозреватель данных прокси позволяет выполнять перекрестные запросы между обозреватель данных Azure, Log Analytics рабочими областями и классическими Application Insights приложениями в Azure Monitor. Вы можете сопоставлять Log Analytics рабочие области в Azure Monitor или классические Application Insights приложениях в качестве кластерных прокси-серверов. Затем можно выполнить запрос к кластеру прокси-сервера с помощью средств обозреватель данных Azure и обратиться к нему в межкластерном запросе. В этой статье показано, как подключиться к прокси-кластеру, добавить прокси-кластер в Azure обозреватель данных Web UI и выполнить запросы к рабочим областям Log Analytics или классическим Application Insights приложениям из Azure обозреватель данных.
@@ -28,7 +28,7 @@ ms.locfileid: "92050076"
 ## <a name="connect-to-the-proxy"></a>Подключение к прокси-серверу
 Чтобы подключить рабочую область Log Analytics или классическое приложение Application Insights, откройте[Пользовательский веб-интерфейс Azure обозреватель данных](https://dataexplorer.azure.com/clusters). Прежде чем подключиться к кластеру Log Analytics или Application Insights, убедитесь, что в меню слева находится собственный кластер Azure обозреватель данных (например, " *Справочный* кластер)".
 
-:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-data-explorer-web-ui-help-cluster.png" alt-text="Поток прокси обозревателя данных Azure.":::
+:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-data-explorer-web-ui-help-cluster.png" alt-text="Azure обозреватель данных собственный кластер.":::
 
 Щелкните **Добавить кластер** , а затем добавьте URL-адрес кластера Log Analytics или Application Insights в одном из следующих форматов. 
     
@@ -37,14 +37,14 @@ ms.locfileid: "92050076"
 
 Нажмите кнопку **Добавить** , чтобы установить соединение.
 
-:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-monitor-proxy-add-cluster.png" alt-text="Поток прокси обозревателя данных Azure.":::
+:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-monitor-proxy-add-cluster.png" alt-text="Добавить кластер.":::
  
 > [!NOTE]
 > При добавлении подключения к нескольким кластерам прокси-серверов присвойте каждому из них другое имя. В противном случае все они будут иметь одинаковое имя в левой области.
 
 После установки подключения Log Analytics или Application Insights кластер будет отображаться в левой области с помощью собственного кластера Azure обозреватель данных. 
 
-:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-monitor-azure-data-explorer-clusters.png" alt-text="Поток прокси обозревателя данных Azure.":::
+:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-monitor-azure-data-explorer-clusters.png" alt-text="Log Analytics и кластеры обозреватель данных Azure.":::
  
 > [!NOTE]
 > Количество Azure Monitor рабочих областей, которые могут быть сопоставлены, ограничено 100.
@@ -70,7 +70,7 @@ ms.locfileid: "92050076"
 Perf | take 10 // Demonstrate query through the proxy on the Log Analaytics workspace
 ```
 
-:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-monitor-proxy-query-la.png" alt-text="Поток прокси обозревателя данных Azure.":::
+:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-monitor-proxy-query-la.png" alt-text="Запрос Log Analytics рабочей области.":::
 
 ### <a name="cross-query-of-your-log-analytics-or-application-insights-proxy-cluster-and-the-azure-data-explorer-native-cluster"></a>Перекрестный запрос Log Analytics или кластера Application Insights прокси-сервера и собственного кластера Azure обозреватель данных
 
@@ -85,7 +85,7 @@ union StormEvents, cluster('https://ade.loganalytics.io/subscriptions/<subscript
 let CL1 = 'https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>';
 union <Azure Data Explorer table>, cluster(CL1).database(<workspace-name>).<table name>
 ```
-При использовании [ `join` оператора](/azure/data-explorer/kusto/query/joinoperator?pivots=azuredataexplorer)вместо объединения может потребоваться [Указание](/azure/data-explorer/kusto/query/joinoperator?pivots=azuredataexplorer#join-hints) на его выполнение в собственном кластере Azure обозреватель данных (а не на прокси-сервере). 
+При использовании [ `join` оператора](/azure/data-explorer/kusto/query/joinoperator?pivots=azuremonitor)вместо объединения может потребоваться [Указание](/azure/data-explorer/kusto/query/joinoperator?pivots=azuremonitor#join-hints) на его выполнение в собственном кластере Azure обозреватель данных (а не на прокси-сервере). 
 
 ### <a name="join-data-from-an-azure-data-explorer-cluster-in-one-tenant-with-an-azure-monitor-resource-in-another"></a>Присоединение данных из кластера Azure обозреватель данных в одном клиенте с ресурсом Azure Monitor в другом
 
@@ -113,7 +113,7 @@ Kusto Explorer автоматически подписывает вас в кл�
 
 На следующем рисунке показан пример запроса табличной функции из пользовательского веб-интерфейса Azure обозреватель данных. Чтобы использовать функцию, запустите ее имя в окне запроса.
 
-:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-monitor-proxy-function-query.png" alt-text="Поток прокси обозревателя данных Azure.":::
+:::image type="content" source="media/azure-data-explorer-monitor-proxy/azure-monitor-proxy-function-query.png" alt-text="Запрос табличной функции из пользовательского веб-интерфейса Azure обозреватель данных.":::
  
 > [!NOTE]
 > Azure Monitor поддерживает только табличные функции, которые не поддерживают параметры.
@@ -124,12 +124,12 @@ Kusto Explorer автоматически подписывает вас в кл�
 
 |Описание синтаксиса  |Application Insights  |Log Analytics  |
 |----------------|---------|---------|
-| База данных в кластере, которая содержит только определенный ресурс в этой подписке (**рекомендуется для запросов между кластерами**) |   кластер ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>').database('<ai-app-name>` ) | кластер ( `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>').database('<workspace-name>` )     |
+| База данных в кластере, которая содержит только определенный ресурс в этой подписке ( **рекомендуется для запросов между кластерами** ) |   кластер ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>').database('<ai-app-name>` ) | кластер ( `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>').database('<workspace-name>` )     |
 | Кластер, содержащий все приложения и рабочие области в этой подписке    |     кластер ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>` )    |    кластер ( `https://ade.loganalytics.io/subscriptions/<subscription-id>` )     |
 |Кластер, содержащий все приложения и рабочие области в подписке и входящие в эту группу ресурсов    |   кластер ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>` )      |    кластер ( `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>` )      |
 |Кластер, содержащий только определенный ресурс в этой подписке      |    кластер ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>` )    |  кластер ( `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>` )     |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [структуре данных рабочих областей log Analytics и Application Insights](data-platform-logs.md).
 - Узнайте, как [писать запросы в Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/write-queries).
