@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/06/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: e1a0cd42407963acd0d631777ad95a7b35845f89
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: fdb5d5825310de66d45e77a9904b273c656b500d
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101856"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94367783"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-nodejs"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Node.js
 
@@ -43,7 +43,7 @@ ms.locfileid: "93101856"
     let https = require ('https');
     ```
 
-2. Создайте переменные для хоста и пути конечной точки API, вашего ключа подписки, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поискового запроса. Вы можете использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
+2. Создайте переменные для хоста и пути конечной точки API, вашего ключа подписки, [рыночного кода](/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поискового запроса. Вы можете использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```javascript
     // Replace the subscriptionKey string value with your valid subscription key.
@@ -198,4 +198,4 @@ A successful response is returned in JSON, as shown in the following example:
 > [Создание одностраничного веб-приложения](../tutorials/autosuggest.md)
 
 - [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
-- [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)
+- [Справочник по API автозаполнения Bing версии 7](/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)

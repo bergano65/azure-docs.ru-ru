@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 12/09/2019
 ms.author: swmachan
 ms.topic: quickstart
-ms.openlocfilehash: f24c9c372ff91db5836a62ac2d08b569434ff253
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 4fbac2c2d77d838ac7fc4f3caaa73983633c3e03
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91761585"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94366066"
 ---
 # <a name="quickstart-build-deploy-and-use-a-custom-model-for-translation"></a>Краткое руководство. Создание, развертывание и использование пользовательской модели перевода
 
@@ -22,14 +22,14 @@ ms.locfileid: "91761585"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Чтобы войти на портал [Custom Translator](https://portal.customtranslator.azure.ai) и использовать его, вам потребуется [учетная запись Майкрософт](https://signup.live.com) или [Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) (размещенная в Azure учетная запись организации).
+1. Чтобы войти на портал [Custom Translator](https://portal.customtranslator.azure.ai) и использовать его, вам потребуется [учетная запись Майкрософт](https://signup.live.com) или [Azure AD](../../../active-directory/fundamentals/active-directory-whatis.md) (размещенная в Azure учетная запись организации).
 
-2. Подписка на API перевода текстов, которую можно получить на портале Azure. Вам потребуется связать ключ подписки API перевода текстов с рабочей областью в Custom Translator. [Сведения о регистрации для использования API перевода текстов](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup).
+2. Подписка на API перевода текстов, которую можно получить на портале Azure. Вам потребуется связать ключ подписки API перевода текстов с рабочей областью в Custom Translator. [Сведения о регистрации для использования API перевода текстов](../translator-how-to-signup.md).
 
 3. Если у вас есть все указанные выше компоненты, войдите на портал [Пользовательского переводчика](https://portal.customtranslator.azure.ai), чтобы создавать рабочие области и проекты, загружать файлы, а также создавать и развертывать модели.
 
 >[!Note]
->Компонент "Пользовательский переводчик" не поддерживает создание рабочей области для ресурса API "Перевод текстов", созданного в [включенной виртуальной сети](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet).
+>Компонент "Пользовательский переводчик" не поддерживает создание рабочей области для ресурса API "Перевод текстов", созданного в [включенной виртуальной сети](../../../api-management/api-management-using-with-vnet.md).
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
 
@@ -92,7 +92,7 @@ ms.locfileid: "91761585"
 
 ## <a name="use-a-deployed-model"></a>Использование развернутой модели
 
-Доступ к развернутым моделям можно получить через [API перевода текстов Майкрософт версии 3, указав идентификатор категории](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl). Дополнительные сведения об API перевода текстов можно найти на [этой веб-странице](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference).
+Доступ к развернутым моделям можно получить через [API перевода текстов Майкрософт версии 3, указав идентификатор категории](../reference/v3-0-translate.md?tabs=curl). Дополнительные сведения об API перевода текстов можно найти на [этой веб-странице](../reference/v3-0-reference.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,19 +8,19 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/27/2020
 ms.author: aahi
-ms.openlocfilehash: ec0ffdcf86e67a7126a3100c1e20b6e5c3474e35
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 92df45e38a926b4a791315f731e1d1cb078d5852
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "78253052"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94371636"
 ---
 Приступите к работе с клиентской библиотекой службы Пользовательский поиск Bing для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба "API пользовательского поиска Bing" позволяет создавать специально адаптированные интерфейсы поиска без рекламы по темам, которые действительно важны для вас. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/master/samples/search/custom_search_samples.py).
 
 Клиентская библиотека Пользовательского поиска Bing для Python позволяет выполнить следующее.
 * Найти результаты поиска в Интернете из вашего экземпляра API Пользовательского поиска Bing.
 
-[Справочная документация](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customsearch?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-search-customsearch) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-search-customsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/)
+[Справочная документация](/python/api/azure-cognitiveservices-search-customsearch/?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-search-customsearch) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-search-customsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/)
 
 
 ## <a name="prerequisites"></a>Предварительные требования

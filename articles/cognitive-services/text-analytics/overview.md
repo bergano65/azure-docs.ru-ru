@@ -12,18 +12,18 @@ ms.date: 11/02/2020
 ms.author: aahi
 keywords: интеллектуальный анализ текста, анализ тональности, анализ текста
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: d58c501af3d90fec1eea43d13fa2383c8e847f18
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 6d10161609abda321ed1be9dfda0acabf2030c9e
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289689"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94365301"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Что такое API "Анализ текста"?
 
 API Анализа текста — это облачная служба, которая предоставляет функцию обработки естественного языка (NLP) для интеллектуального анализа текста, включая: анализ тональности, интеллектуальный анализ мнений, извлечение ключевых фраз, определение языка и распознавание именованных сущностей.
 
-API — это компонент [Microsoft Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/), коллекции алгоритмов машинного обучения и ИИ в облаке для использования в проектах по разработке. Эти функции можно использовать с [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) или [клиентской библиотекой](quickstarts/text-analytics-sdk.md).
+API — это компонент [Microsoft Cognitive Services](../index.yml), коллекции алгоритмов машинного обучения и ИИ в облаке для использования в проектах по разработке. Эти функции можно использовать с [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) или [клиентской библиотекой](quickstarts/text-analytics-sdk.md).
 
 > [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Understanding-Text-using-Cognitive-Services/player]
 
@@ -73,18 +73,18 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 * Минимальный опыт программирования:
     * [Извлечение сведений в Excel с помощью службы "Анализ текста" и Power Automate](tutorials/extract-excel-information.md)
-    * [Использование API Анализа текста и MS Flow для определения тональности комментариев в группе Yammer](https://docs.microsoft.com/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure?toc=%2F%2Fazure%2Fcognitive-services%2Ftext-analytics%2Ftoc.json&bc=%2F%2Fazure%2Fbread%2Ftoc.json)
+    * [Использование API Анализа текста и MS Flow для определения тональности комментариев в группе Yammer](/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure?bc=%252f%252fazure%252fbread%252ftoc.json&toc=%252f%252fazure%252fcognitive-services%252ftext-analytics%252ftoc.json)
     * [Интеграция Power BI с API Анализа текста для анализа отзывов пользователей](tutorials/tutorial-power-bi-key-phrases.md)
 * Рекомендуемый опыт программирования:
-    * [Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-sentiment-analysis-cognitive-services?toc=%2F%2Fazure%2Fcognitive-services%2Ftext-analytics%2Ftoc.json&bc=%2F%2Fazure%2Fbread%2Ftoc.json)
-    * [Создание приложения Flask для перевода текста, анализа тональности и синтеза речи](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis?toc=%2F%2Fazure%2Fcognitive-services%2Ftext-analytics%2Ftoc.json&bc=%2F%2Fazure%2Fbread%2Ftoc.json)
+    * [Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks](/azure/databricks/scenarios/databricks-sentiment-analysis-cognitive-services?bc=%252f%252fazure%252fbread%252ftoc.json&toc=%252f%252fazure%252fcognitive-services%252ftext-analytics%252ftoc.json)
+    * [Создание приложения Flask для перевода текста, анализа тональности и синтеза речи](../translator/tutorial-build-flask-app-translation-synthesis.md?bc=%252f%252fazure%252fbread%252ftoc.json&toc=%252f%252fazure%252fcognitive-services%252ftext-analytics%252ftoc.json)
 
 
 <a name="supported-languages"></a>
 
 ## <a name="supported-languages"></a>Поддерживаемые языки
 
-Этот раздел перемещен в отдельную статью, чтобы оптимизировать поиск информации. Соответствующее содержимое см. в статье [Language and region support for the Text Analytics API](text-analytics-supported-languages.md) (Поддержка языков и регионов для API "Анализ текста").
+Этот раздел перемещен в отдельную статью, чтобы оптимизировать поиск информации. Соответствующее содержимое см. в статье [Language and region support for the Text Analytics API](./language-support.md) (Поддержка языков и регионов для API "Анализ текста").
 
 <a name="data-limits"></a>
 
@@ -94,7 +94,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 ## <a name="unicode-encoding"></a>Кодировка Юникод
 
-API анализа текста использует кодировку Юникод для текстового представления и подсчета количества символов. Запросы могут быть представлены как в UTF-8, так и в UTF-16 без каких-либо измеримых различий в количестве символов. Кодовые точки Юникод используются в качестве эвристики для определения длины символов и считаются эквивалентными для ограничения данных анализа текста. Если вы используете [`StringInfo.LengthInTextElements`](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo.lengthintextelements), чтобы получить число символов, вы используете тот же метод, который используется для измерения объема данных.
+API анализа текста использует кодировку Юникод для текстового представления и подсчета количества символов. Запросы могут быть представлены как в UTF-8, так и в UTF-16 без каких-либо измеримых различий в количестве символов. Кодовые точки Юникод используются в качестве эвристики для определения длины символов и считаются эквивалентными для ограничения данных анализа текста. Если вы используете [`StringInfo.LengthInTextElements`](/dotnet/api/system.globalization.stringinfo.lengthintextelements), чтобы получить число символов, вы используете тот же метод, который используется для измерения объема данных.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -104,6 +104,6 @@ API анализа текста использует кодировку Юник
 
 + Сведения о новых выпусках и возможностях см. в статье [What's new in the Text Analytics API?](whats-new.md) (Новые возможности API "Анализ текста").
 
-+ Углубите свои знания с помощью [руководства по анализу тональности](https://docs.microsoft.com/azure/azure-databricks/databricks-sentiment-analysis-cognitive-services), используя Azure Databricks.
++ Углубите свои знания с помощью [руководства по анализу тональности](/azure/databricks/scenarios/databricks-sentiment-analysis-cognitive-services), используя Azure Databricks.
 
 + Ознакомьтесь со списком публикаций в блоге и другими видеороликами о том, как использовать API "Анализ текста" с другими инструментами и технологиями на нашей [странице внешнего контента и контента сообщества](text-analytics-resource-external-community.md).

@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 08/14/2020
 ms.author: aahi
 ms.reviewer: chtufts
-ms.openlocfilehash: 068c2dc698e9f0b6d6f2f6486dff863c1343b178
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 905dde6932afb440c34bcccb563bfda98f23eb7c
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88258286"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94363839"
 ---
 # <a name="data-and-rate-limits-for-the-text-analytics-api"></a>Ограничения данных и частоты для использования API "Анализ текста"
 <a name="data-limits"></a>
@@ -31,7 +31,7 @@ ms.locfileid: "88258286"
 
 | Ограничение | Значение |
 |------------------------|---------------|
-| Максимальный размер одного документа | 5 120 символов, измеряемых [StringInfo.LengthInTextElements](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo.lengthintextelements). Это также относится к API "Анализ текста" для контейнерной службы для сферы здравоохранения. |
+| Максимальный размер одного документа | 5 120 символов, измеряемых [StringInfo.LengthInTextElements](/dotnet/api/system.globalization.stringinfo.lengthintextelements). Это также относится к API "Анализ текста" для контейнерной службы для сферы здравоохранения. |
 | Максимальный размер всего запроса | 1 МБ, Это также относится к API "Анализ текста" для контейнерной службы для сферы здравоохранения. |
 
 Максимальное число документов, которые можно отправить в одном запросе, зависит от используемой версии и возможностей API.

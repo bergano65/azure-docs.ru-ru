@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: overview
 ms.date: 12/18/2019
 ms.author: aahi
-ms.openlocfilehash: 83a398b114a8bf0ac25d875e037208d775debc4b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 4490142a278d5e724fade42e697d8cf2206c0da8
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077346"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94367341"
 ---
 # <a name="what-is-the-bing-custom-search-api"></a>Знакомство с API Пользовательского поиска Bing
 
@@ -50,16 +50,15 @@ ms.locfileid: "93077346"
 
 Дополнительные сведения о настройке экземпляра поиска см. в статье [Определение экземпляра пользовательского поиска](define-your-custom-view.md).
 
-Чтобы узнать больше об использовании поисковых результатов в службах и приложениях, прочтите статью [Требования к использованию и отображению API-интерфейсов поиска Bing](./use-and-display-requirements.md).
+Чтобы узнать больше об использовании поисковых результатов в службах и приложениях, прочтите статью [Требования к использованию и отображению API-интерфейсов поиска Bing](../bing-web-search/use-display-requirements.md).
 
-Сведения о других доступных API Поиск Bing см. на [главной странице](../bing-web-search/search-the-web.md).
+Сведения о других доступных API Поиск Bing см. на [главной странице](../bing-web-search/overview.md).
 
 Ознакомьтесь со справочными материалами по каждой конечной точке пользовательского поиска. Руководство содержит список конечных точек, заголовков и параметров запроса, которые будут использоваться для запроса результатов поиска. Оно также содержит определения объектов ответа.
 
 [!INCLUDE [cognitive-services-bing-url-note](../../../includes/cognitive-services-bing-url-note.md)]
 
-- [API пользовательского поиска](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference)
-- [API пользовательского изображения](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference)
-- [API для поиска пользовательских видео](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-videos-api-v7-reference)
-- [API пользовательского автозаполнения](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-autosuggest-api-v7-reference)
-
+- [API пользовательского поиска](/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference)
+- [API пользовательского изображения](/rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference)
+- [API для поиска пользовательских видео](/rest/api/cognitiveservices-bingsearch/bing-custom-videos-api-v7-reference)
+- [API пользовательского автозаполнения](/rest/api/cognitiveservices-bingsearch/bing-custom-autosuggest-api-v7-reference)

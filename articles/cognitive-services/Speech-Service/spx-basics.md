@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/04/2020
 ms.author: trbye
-ms.openlocfilehash: 7ca290b7b7df9e4e03aec78b611361ba52942523
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: bead348e64fcee4cc5b790f975c9da5200ee796b
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286687"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422405"
 ---
 # <a name="learn-the-basics-of-the-speech-cli"></a>Основные сведения об интерфейсе командной строки службы "Речь"
 
@@ -141,6 +141,18 @@ audio.input.id    recognizer.session.started.sessionid    recognizer.recognized.
 sample_1    07baa2f8d9fd4fbcb9faea451ce05475    A sample wave file.
 sample_2    8f9b378f6d0b42f99522f1173492f013    Sample text synthesized.
 ```
+
+## <a name="synthesize-speech-to-a-file"></a>Синтезирование речи в файл
+
+Выполните следующую команду, чтобы изменить выходные данные со своего динамика, сохраняемые в файл `.wav`.
+
+```bash
+spx synthesize --text "The speech synthesizer greets you!" --audio output greetings.wav
+```
+
+Интерфейс командной строки службы "Речь" воспроизведет фразу на естественном английском языке в аудиофайл `greetings.wav`.
+В среде Windows вы можно воспроизвести этот файл, введя команду `start greetings.wav`.
+
 
 ## <a name="batch-text-to-speech-synthesis"></a>Пакетный синтез речи из текста
 

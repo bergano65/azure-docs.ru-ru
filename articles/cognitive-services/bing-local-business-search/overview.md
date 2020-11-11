@@ -10,12 +10,12 @@ ms.subservice: bing-local-business
 ms.topic: overview
 ms.date: 03/24/2020
 ms.author: aahi
-ms.openlocfilehash: 6b715d4b801159b451957c30ee9ef7b406f3a2f4
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ee31eac55298c86a7bdd784ea54c9a0c8caa47a4
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095379"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94364621"
 ---
 # <a name="what-is-bing-local-business-search"></a>Что такое Bing Local Business Search?
 
@@ -35,7 +35,7 @@ API Bing Local Business Search — это служба RESTful, которая �
 ## <a name="workflow"></a>Рабочий процесс
 Вызывайте API Bing Local Business Search с помощью любого языка программирования, который может отправлять HTTP-запросы и анализировать ответы JSON. Эта служба доступна через REST API.
  
-1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).   
+1. Создайте [учетную запись API Cognitive Services](../cognitive-services-apis-create-account.md) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).   
 2. Закодируйте условия поиска в URL-адресе параметра запроса `q=""`. Например, `q=nearby+restaurant` или `q=nearby%20restaurant`. При необходимости также задайте разбиение на страницы. 
 3. Отправьте [запрос к API Bing Local Business Search](quickstarts/local-quickstart.md). 
 4. Проанализируйте ответ JSON. 
@@ -49,4 +49,4 @@ API Bing Local Business Search — это служба RESTful, которая �
 - [Sending and using Bing Local Business Search API queries and responses](local-search-query-response.md) (Отправление и использование запросов и ответов API Bing Local Business Search)
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
 - [Bing Local Business Search API v7 reference](local-search-reference.md) (Справочник по API Bing Local Business Search версии 7)
-- [Требования к использованию и отображению](use-display-requirements.md)
+- [Требования к использованию и отображению](../bing-web-search/use-display-requirements.md)

@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: quickstart
 ms.date: 07/06/2020
 ms.author: marhamil
-ms.openlocfilehash: 444b76a594e768face892462da12a1cbb35a5106
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 37239f9c7857a8e72bb293cfa3caeb429962a542
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324681"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94363346"
 ---
 # <a name="getting-started"></a>Начало работы
 
@@ -31,7 +31,7 @@ ms.locfileid: "93324681"
 
 ### <a name="cloud-services"></a>Облачные службы
 
-Облачные службы Cognitive Services — это интеллектуальные алгоритмы, размещаемые в Azure. Эти службы готовы к использованию без обучения, требуется только подключение к Интернету. [Службы Cognitive Services можно создать на портале Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows) или с помощью [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows).
+Облачные службы Cognitive Services — это интеллектуальные алгоритмы, размещаемые в Azure. Эти службы готовы к использованию без обучения, требуется только подключение к Интернету. [Службы Cognitive Services можно создать на портале Azure](../cognitive-services-apis-create-account.md?tabs=multiservice%2Cwindows) или с помощью [Azure CLI](../cognitive-services-apis-create-account-cli.md?tabs=windows).
 
 ### <a name="containerized-services-optional"></a>Контейнерные службы (необязательно)
 
@@ -45,7 +45,7 @@ ms.locfileid: "93324681"
 
 * **Высокий уровень масштабируемости.** Контейнерные службы не имеют ограничений скорости и выполняются на компьютерах, управляемых пользователем. Таким образом, вы можете свободно масштабировать Cognitive Services, чтобы обрабатывать очень большие рабочие нагрузки.
 
-См. [это руководство](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support?tabs=luis), чтобы создать контейнерный экземпляр Cognitive Services.
+См. [это руководство](../cognitive-services-container-support.md?tabs=luis), чтобы создать контейнерный экземпляр Cognitive Services.
 
 ## <a name="create-an-apache-spark-cluster"></a>Создание кластера Apache Spark
 
@@ -55,8 +55,8 @@ ms.locfileid: "93324681"
 
 Azure Databricks — это платформа для аналитики на базе Apache Spark. Она настраивается одним щелчком, упрощает рабочие процессы и предоставляет интерактивную рабочую область, а также часто используется для совместной работы инженеров, бизнес-аналитиков и специалистов по обработке и анализу данных. Чтобы использовать Cognitive Services для больших данных в Azure Databricks, сделайте следующее:
 
-1. [Создайте рабочую область Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal#create-an-azure-databricks-workspace).
-1. [Создание кластера Spark в Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal#create-a-spark-cluster-in-databricks)
+1. [Создайте рабочую область Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal#create-an-azure-databricks-workspace).
+1. [Создание кластера Spark в Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal#create-a-spark-cluster-in-databricks)
 1. Установка Cognitive Services для больших данных
     * Создайте библиотеку в рабочей области Databricks.  
        <img src="media/create-library.png" alt="Create library" width="50%"/>
@@ -69,8 +69,8 @@ Azure Databricks — это платформа для аналитики на �
 
 При необходимости для создания кластера Spark можно использовать Synapse Analytics. Azure Synapse Analytics объединяет корпоративные хранилища данных и аналитику больших данных. Эта служба позволяет вам запрашивать данные в соответствии с вашими требованиями, используя бессерверные ресурсы по запросу или подготовленные ресурсы в большом масштабе. Чтобы начать работу с Synapse Analytics, сделайте следующее:
 
-1. [Создайте рабочую область Synapse (предварительная версия).](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace)
-1. [Создание бессерверного пула Apache Spark (предварительная версия) с помощью портала Azure.](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal)
+1. [Создайте рабочую область Synapse (предварительная версия).](../../synapse-analytics/quickstart-create-workspace.md)
+1. [Создание бессерверного пула Apache Spark (предварительная версия) с помощью портала Azure.](../../synapse-analytics/quickstart-create-apache-spark-pool-portal.md)
 
 В Synapse Analytics компонент больших данных для Cognitive Services устанавливается по умолчанию.
 
@@ -80,9 +80,9 @@ Azure Databricks — это платформа для аналитики на �
 
 Чтобы начать работу со Службой Azure Kubernetes, сделайте следующее:
 
-1. [Развертывание кластера Службы Azure Kubernetes (AKS) с помощью портала Azure](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal)
+1. [Развертывание кластера Службы Azure Kubernetes (AKS) с помощью портала Azure](../../aks/kubernetes-walkthrough-portal.md)
 1. [Установите чарт Helm Apache Spark 2.4.0.](https://hub.helm.sh/charts/microsoft/spark)
-1. [Установите контейнер Cognitive Services с помощью Helm.](https://docs.microsoft.com/azure/cognitive-services/computer-vision/deploy-computer-vision-on-premises)
+1. [Установите контейнер Cognitive Services с помощью Helm.](../computer-vision/deploy-computer-vision-on-premises.md)
 
 ## <a name="try-a-sample"></a>Выполнение примера
 

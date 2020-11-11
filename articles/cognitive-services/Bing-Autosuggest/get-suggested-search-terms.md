@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: overview
 ms.date: 12/18/2019
 ms.author: scottwhi
-ms.openlocfilehash: d55ff4ed8717a449628e94a940c0896d31818da2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a0187a5d2be6b2f93897fc358e26ad095e5a70f7
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101941"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94364587"
 ---
 # <a name="what-is-bing-autosuggest"></a>Что такое API Автозаполнения Bing?
 
@@ -36,7 +36,7 @@ ms.locfileid: "93101941"
 
 API автозаполнения Bing является веб-службой RESTful, которую легко вызвать с помощью любого языка программирования, поддерживающего выполнение HTTP-запросов и анализ JSON.
 
-1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+1. Создайте [учетную запись API Cognitive Services](../cognitive-services-apis-create-account.md) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 2. Отправляйте запрос этому API каждый раз, когда пользователь вводит новый символ в поле поиска вашего приложения.
 3. Обработайте ответ API путем анализа возвращенного сообщения JSON.
 
@@ -52,11 +52,11 @@ API автозаполнения Bing является веб-службой RES
 
 Сведения о том, как быстро создать первый запрос, см. в статье [Краткое руководство по API автозаполнения Bing с использованием C#](quickstarts/csharp.md).
 
-Ознакомьтесь с руководством [API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference). Руководство содержит список конечных точек, заголовков и параметров запроса, которые будут использоваться для запроса предложенных терминов запроса, а также определения объектов ответа.
+Ознакомьтесь с руководством [API автозаполнения Bing версии 7](/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference). Руководство содержит список конечных точек, заголовков и параметров запроса, которые будут использоваться для запроса предложенных терминов запроса, а также определения объектов ответа.
 
-Сведения о других доступных API "Поиск Bing" см. на [главной странице](../bing-web-search/search-the-web.md).
+Сведения о других доступных API "Поиск Bing" см. на [главной странице](../bing-web-search/overview.md).
 
 
-Узнайте, как выполнять поиск в Интернете с помощью статьи [Документация по API Bing для поиска в Интернете](../bing-web-search/search-the-web.md), а также изучите другие [API Поиск Bing](../bing-web-search/index.yml).
+Узнайте, как выполнять поиск в Интернете с помощью статьи [Документация по API Bing для поиска в Интернете](../bing-web-search/overview.md), а также изучите другие [API Поиск Bing](../bing-web-search/index.yml).
 
-Обязательно прочтите [эту статью](./useanddisplayrequirements.md), чтобы не нарушать какие-либо правила использования результатов поиска.
+Обязательно прочтите [эту статью](../bing-web-search/use-display-requirements.md), чтобы не нарушать какие-либо правила использования результатов поиска.

@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 09/14/2020
 ms.author: pafarley
 zone_pivot_groups: programming-languages-set-ten
-ms.openlocfilehash: e8628d051db7f5066a81171567f6f7e54fb0ab97
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1fd748a0184c1718ac9450aaca3e2db1a185051a
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91262456"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368956"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-management-client-library"></a>Краткое руководство. Создание ресурса Cognitive Services с помощью клиентской библиотеки управления Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "91262456"
 
 Azure Cognitive Services — это облачные службы с REST API и пакетами SDK клиентских библиотек, которые помогают разработчикам без опыта работы со средствами искусственного интеллекта (ИИ) и обработки и анализа данных создавать когнитивные интеллектуальные приложения. С помощью Azure Cognitive Services разработчики могут без усилий добавлять в свои приложения когнитивные функции, создавая когнитивные решения, которые могут видеть, слышать, говорить, понимать и даже в некоторой степени размышлять.
 
-Отдельные службы ИИ представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, которые вы создаете в своей подписке Azure. После создания ресурса вы можете использовать созданные ключи и конечную точку для аутентификации приложений.
+Отдельные службы ИИ представлены [ресурсами](../azure-resource-manager/management/manage-resources-portal.md) Azure, которые вы создаете в своей подписке Azure. После создания ресурса вы можете использовать созданные ключи и конечную точку для аутентификации приложений.
 
 ::: zone pivot="programming-language-csharp"
 

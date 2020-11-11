@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/22/2020
 ms.custom: devx-track-java
 ms.author: scottwhi
-ms.openlocfilehash: f33b5f5274fcaf8f64f898e2b7aebe8a27470033
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7ad674b9326f3e55d8e17f738fd68faf26bd1c9a
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93086539"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368123"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-java"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и Java
 
@@ -25,11 +25,11 @@ ms.locfileid: "93086539"
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
 > Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
-Используйте это краткое руководство, чтобы выполнить вызов к API "Визуальный поиск Bing". Это приложение Java отправляет изображение в API и отображает возвращенные данные о нем. Это приложение создано на языке Java. Но API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы выполнить вызов к API "Визуальный поиск Bing". Это приложение Java отправляет изображение в API и отображает возвращенные данные о нем. Хотя это приложение написано на Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Комплект SDK Java (JDK) 7 или 8](https://aka.ms/azure-jdks).
+* [Комплект SDK Java (JDK) 7 или 8](/azure/developer/java/fundamentals/java-jdk-long-term-support).
 * [Библиотеки Gson Java](https://github.com/google/gson).
 * [Apache HttpComponents](https://hc.apache.org/downloads.cgi).
 

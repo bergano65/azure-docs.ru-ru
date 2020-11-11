@@ -9,20 +9,20 @@ ms.subservice: translator-text
 ms.date: 12/09/2019
 ms.author: swmachan
 ms.topic: overview
-ms.openlocfilehash: d84a0190e13d7bb7664e8792e0047338fe4bf5e2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 55555d81eb531ae5a4d946fa3f661796b3294897
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85961240"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94365505"
 ---
 # <a name="what-is-custom-translator"></a>Что такое Пользовательский переводчик?
 
 [Custom Translator](https://portal.customtranslator.azure.ai) — компонент службы Microsoft Translator, который позволяет переводческим компаниям, разработчикам приложений и поставщикам языковой службы создавать настраиваемую систему нейронного машинного перевода (NMT). Настраиваемые системы перевода легко интегрируются с существующими приложениями, рабочими процессами и веб-сайтами. [Custom Translator](https://portal.customtranslator.azure.ai/) предоставляет те же возможности, что и [Microsoft Translator Hub](https://hub.microsofttranslator.com/) для систем статистического машинного перевода (SMT), но только для систем нейронного машинного перевода (NMT).
 
-Системы перевода, созданные с использованием [Custom Translator](https://portal.customtranslator.azure.ai), доступны через один облачный [безопасный](https://cognitive.uservoice.com/knowledgebase/articles/1147537-api-and-customization-confidentiality) высокопроизводительный и высокомасштабируемый [API перевода текстов Майкрософт версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl), который выполняет миллиарды переводов каждый день.
+Системы перевода, созданные с использованием [Custom Translator](https://portal.customtranslator.azure.ai), доступны через один облачный [безопасный](https://cognitive.uservoice.com/knowledgebase/articles/1147537-api-and-customization-confidentiality) высокопроизводительный и высокомасштабируемый [API перевода текстов Майкрософт версии 3](../reference/v3-0-translate.md?tabs=curl), который выполняет миллиарды переводов каждый день.
 
-Custom Translator поддерживает более трех десятков языков и напрямую сопоставляется с языками, доступными для NMT. Полный список см. в статье [Поддержка языков и регионов в API перевода текстов](https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization).
+Custom Translator поддерживает более трех десятков языков и напрямую сопоставляется с языками, доступными для NMT. Полный список см. в статье [Поддержка языков и регионов в API перевода текстов](../language-support.md#customization).
 
 ## <a name="features"></a>Компоненты
 
@@ -34,7 +34,7 @@ Custom Translator предоставляет разные возможности
 |[Создание систем, которые знают терминологию вашей бизнес-отрасли](what-are-parallel-documents.md)     |  Настройка и сборка систем перевода с помощью параллельных документов, которые понимают особую терминологию вашего бизнеса и отрасли.       |
 |[Использование словаря для создания моделей](what-is-dictionary.md)     |   Если у вас нет набора данных для обучения, вы можете обучить модель только с использованием данных из словаря.       |
 |[Совместная работа с другими пользователями](how-to-manage-settings.md#share-your-workspace)     |   Взаимодействие с другими участниками команды путем совместного использования результатов работы.     |
-|[Доступ к вашей пользовательской модели перевода](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)     |  Ваши существующие приложения или программы могут в любое время получать доступ к вашей пользовательской модели перевода с помощью API перевода текстов Майкрософт версии 3.       |
+|[Доступ к вашей пользовательской модели перевода](../reference/v3-0-translate.md?tabs=curl)     |  Ваши существующие приложения или программы могут в любое время получать доступ к вашей пользовательской модели перевода с помощью API перевода текстов Майкрософт версии 3.       |
 
 ## <a name="get-better-translations"></a>Получение лучшего перевода
 
