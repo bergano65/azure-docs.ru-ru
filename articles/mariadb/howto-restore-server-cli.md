@@ -8,27 +8,26 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/27/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5073cd33d9dada666324e92f3418b2548d9af374
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 98782f02c871f676ec3506d0bad45cd8cce079a8
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87502568"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94516532"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-cli"></a>Как создать резервную копию сервера в службе "База данных Azure для MariaDB" и восстановить его с помощью Azure CLI
 
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для MariaDB" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
+## <a name="prerequisites"></a>Обязательные условия
 
-- [сервер Базы данных Azure для MariaDB и база данных](quickstart-create-mariadb-server-database-using-azure-cli.md).
+- Вам потребуется [база данных Azure для сервера и базы данных MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-> [!IMPORTANT]
-> Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы проверить версию, в командной строке Azure CLI введите `az --version`. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI]( /cli/azure/install-azure-cli).
+- В этом пошаговом руководство требуется версия 2,0 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="set-backup-configuration"></a>Настройка конфигурации резервного копирования
 
@@ -70,9 +69,9 @@ az mariadb server restore --resource-group myresourcegroup --name mydemoserver-r
 
 Для команды `az mariadb server restore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | Описание  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | restore-point-in-time | 2018-03-13T13:59:00Z | Выберите точку во времени, до которой необходимо выполнить восстановление. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Можно использовать местный часовой пояс, например `2018-03-13T05:59:00-08:00`. Также можно использовать формат UTC Zulu, например `2018-03-13T13:59:00Z`. |
 | source-server | mydemoserver | Имя или идентификатор исходного сервера, с которого необходимо выполнить восстановление. |
@@ -101,7 +100,7 @@ az mariadb server restore --resource-group myresourcegroup --name mydemoserver-r
 az mariadb server georestore --resource-group myresourcegroup --name mydemoserver-georestored --source-server mydemoserver --location eastus --sku-name GP_Gen5_8
 ```
 
-С помощью этой команды можно создать сервер *mydemoserver-georestored* в восточной части США, который будет принадлежать группе ресурсов *myresourcegroup*. Это сервер общего назначения 5-го поколения с 8 виртуальными ядрами. Он создан на основе геоизбыточных резервных копий *mydemoserver*, которые также расположены в группе ресурсов *myresourcegroup*.
+С помощью этой команды можно создать сервер *mydemoserver-georestored* в восточной части США, который будет принадлежать группе ресурсов *myresourcegroup*. Это сервер общего назначения 5-го поколения с 8 виртуальными ядрами. Он создан на основе геоизбыточных резервных копий *mydemoserver* , которые также расположены в группе ресурсов *myresourcegroup*.
 
 Если необходимо создать сервер в другой группе ресурсов с имеющегося сервера, в параметре `--source-server` необходимо определить имя сервера следующим образом.
 
@@ -112,7 +111,7 @@ az mariadb server georestore --resource-group newresourcegroup --name mydemoserv
 
 Для команды `az mariadb server georestore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | Описание  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 |resource-group| myresourcegroup | Имя группы ресурсов, к которой будет принадлежать новый сервер.|
 |name | mydemoserver-georestored | Имя нового сервера. |

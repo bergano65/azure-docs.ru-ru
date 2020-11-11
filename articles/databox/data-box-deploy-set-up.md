@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/10/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 53309023a838f4b256327a37866408f556c81d29
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: ac87d5040cd572635d81be51308f48a57ddd38e3
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87924162"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94335474"
 ---
 ::: zone target="docs"
 
@@ -119,7 +119,7 @@ ms.locfileid: "87924162"
 2. Подключитесь к порту MGMT устройства и войдите в локальный пользовательский веб-интерфейс по адресу https\://192.168.100.10. Это может занять до 5 минут, после того как вы включите устройство.
 3. Щелкните **Details** (Сведения), а затем — **Go on to the webpage** (Перейти на веб-страницу).
 
-   ![Подключение к локальному пользовательскому веб-интерфейсу](media/data-box-deploy-set-up/data-box-connect-local-web-ui.png) 
+   ![Подключение к локальному пользовательскому веб-интерфейсу](media/data-box-deploy-set-up/data-box-connect-local-web-ui.png)
 
 4. В локальном пользовательском веб-интерфейсе отобразится страница **Sign in** (Вход). Убедитесь, что серийный номер устройства совпадает на пользовательском интерфейсе портала и локальном пользовательском веб-интерфейсе. После этого устройство будет заблокировано.
 5. Войдите на [портал Azure](https://portal.azure.com).

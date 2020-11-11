@@ -6,18 +6,18 @@ ms.author: jegeib
 ms.service: security
 ms.topic: article
 ms.date: 07/29/2020
-ms.openlocfilehash: fc343f292fa32ed2db67dd74aba7a66dbc00d6ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3e6fcd52ad9cb6c127c14bac2f33223fb921519e
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317843"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94516379"
 ---
 # <a name="threat-modeling-tool-update-release-73007291---07292020"></a>Threat Modeling Tool обновления выпуска 7.3.00729.1 — 07/29/2020
 
 Версия 7.3.00729.1 Microsoft Threat Modeling Tool (ТМТ) была выпущена 29 2020 июля и содержит следующие изменения:
 
-- Исправления ошибок
+- Исправленные ошибки
  
 ## <a name="known-issues"></a>Известные проблемы
 
@@ -33,7 +33,7 @@ The threat model file '$PATH\TMT7.application' could not be deserialized. File i
 
 Эта ошибка возникает из-за того, что некоторые браузеры изначально не поддерживают установку ClickOnce. В таких случаях файл приложения ClickOnce загружается на жесткий диск пользователя.
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Эта ошибка будет отображаться, если Threat Modeling Tool запускается двойным щелчком по файлу TMT7. Application. Однако после обойти ошибку средство будет работать нормально. Вместо того чтобы запускать Threat Modeling Tool, дважды щелкнув файл TMT7. Application, пользователи должны использовать ярлыки, созданные в меню Windows во время установки, чтобы запустить Threat Modeling Tool.
 
@@ -48,8 +48,8 @@ The threat model file '$PATH\TMT7.application' could not be deserialized. File i
 
 ## <a name="documentation-and-feedback"></a>Документация и отзывы
 
-- Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool) и содержит информацию [об использовании средства](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool-getting-started).
+- Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](./threat-modeling-tool.md) и содержит информацию [об использовании средства](./threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

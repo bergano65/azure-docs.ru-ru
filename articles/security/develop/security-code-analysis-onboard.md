@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 5366da1048e7c6d9612ad8b6b1f1694068bb35fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4fe13c418452a7a88dcd97939d6e853039f3fb64
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87543033"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94517076"
 ---
 # <a name="onboarding-and-installing"></a>Подключение и установка
 
@@ -90,9 +90,9 @@ ms.locfileid: "87543033"
 > - Всегда выбирайте параметр **продолжать при ошибке** для задач сборки с безопасной наработкой. Даже в случае сбоя одного средства другие могут запуститься. Между инструментами нет взаимозависимостей.
 > - Задачи сборки анализа кода безопасности Майкрософт завершаются сбоем, только если не удается успешно запустить средство. Но они будут успешны, даже если средство выявляет проблемы в коде. С помощью задачи построения после анализа можно настроить сбой сборки, если средство выявляет проблемы в коде.
 > - Некоторые задачи сборки Azure DevOps не поддерживаются при выполнении через конвейер выпуска. В частности, Azure DevOps не поддерживает задачи, которые публикуют артефакты из конвейера выпуска.
-> - Список стандартных переменных в Azure DevOps Team Build, которые можно указать в качестве параметров, см. в статье [переменные сборки DevOps Azure](https://docs.microsoft.com/azure/devops/pipelines/build/variables?tabs=batch&view=vsts).
+> - Список стандартных переменных в Azure DevOps Team Build, которые можно указать в качестве параметров, см. в статье [переменные сборки DevOps Azure](/azure/devops/pipelines/build/variables?tabs=batch&view=vsts).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке задач сборки см. в нашем [руководству по настройке](security-code-analysis-customize.md) или [YAML](yaml-configuration.md).
 

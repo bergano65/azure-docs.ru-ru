@@ -6,18 +6,18 @@ ms.author: jegeib
 ms.service: security
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: 8cea0ab15b79a94f76350c2264b24e6c258490a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60ab9290dd204b9e65fcc612d1b590785450ebed
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317877"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94516873"
 ---
 # <a name="threat-modeling-tool-update-release-73007142---07142020"></a>Threat Modeling Tool обновления выпуска 7.3.00714.2 — 07/14/2020
 
 Версия 7.3.00714.2 Microsoft Threat Modeling Tool (ТМТ) была выпущена 14 2020 июля и содержит следующие изменения:
 
-- Улучшения специальных возможностей
+- Улучшение специальных возможностей
 
 ## <a name="system-requirements"></a>Требования к системе
 
@@ -30,8 +30,8 @@ ms.locfileid: "91317877"
 
 ## <a name="documentation-and-feedback"></a>Документация и отзывы
 
-- Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool) и содержит информацию [об использовании средства](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool-getting-started).
+- Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](./threat-modeling-tool.md) и содержит информацию [об использовании средства](./threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).
