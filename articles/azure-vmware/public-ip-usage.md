@@ -3,12 +3,12 @@ title: Как использовать функции общедоступног
 description: В этой статье объясняется, как использовать функциональность общедоступного IP-адреса в виртуальной глобальной сети Azure.
 ms.topic: how-to
 ms.date: 10/28/2020
-ms.openlocfilehash: f51f00a9adc1fd122e723909ecaa6193c152d496
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 63475b478a951632c068b168353acf2e0bb7061c
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912673"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94490395"
 ---
 # <a name="how-to-use-the-public-ip-functionality-in-azure-vmware-solution"></a>Как использовать функции общедоступного IP-адреса в решении Azure VMware
 
@@ -29,7 +29,7 @@ ms.locfileid: "92912673"
 
 В этой статье подробно описывается, как можно использовать функции общедоступного IP-адреса в виртуальной глобальной сети.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Среда решения Azure VMware
 - Сервер, работающий в среде решения Azure VMware.
@@ -50,21 +50,21 @@ ms.locfileid: "92912673"
 
 ## <a name="deploy-virtual-wan"></a>Развернуть виртуальную глобальную сеть
 
-1. Войдите в портал Azure, а затем найдите и выберите **решение VMware для Azure** .
+1. Войдите в портал Azure, а затем найдите и выберите **решение VMware для Azure**.
 
 1. Выберите решение Azure VMware частное облако.
 
-   :::image type="content" source="media/public-ip-usage/avs-private-cloud-resource.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/avs-private-cloud-resource.png":::
+   :::image type="content" source="media/public-ip-usage/avs-private-cloud-resource.png" alt-text="Снимок экрана частного облака решения Azure VMware." border="true" lightbox="media/public-ip-usage/avs-private-cloud-resource.png":::
 
-1. В разделе **Управление** выберите **Подключение** .
+1. В разделе **Управление** выберите **Подключение**.
 
-   :::image type="content" source="media/public-ip-usage/avs-private-cloud-manage-menu.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/avs-private-cloud-manage-menu.png":::
+   :::image type="content" source="media/public-ip-usage/avs-private-cloud-manage-menu.png" alt-text="Снимок экрана: раздел &quot;подключение&quot;." border="true" lightbox="media/public-ip-usage/avs-private-cloud-manage-menu.png":::
 
-1. Перейдите на вкладку **общедоступный IP-адрес** и нажмите кнопку **настроить** .
+1. Перейдите на вкладку **общедоступный IP-адрес** и нажмите кнопку **настроить**.
 
-   :::image type="content" source="media/public-ip-usage/connectivity-public-ip-tab.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/connectivity-public-ip-tab.png":::
+   :::image type="content" source="media/public-ip-usage/connectivity-public-ip-tab.png" alt-text="Снимок экрана, на котором показано, где начать настройку общедоступного IP-адреса" border="true" lightbox="media/public-ip-usage/connectivity-public-ip-tab.png":::
 
-1. Примите значения по умолчанию или измените их, а затем нажмите кнопку **создать** .
+1. Примите значения по умолчанию или измените их, а затем нажмите кнопку **создать**.
 
    - Группа ресурсов виртуальной глобальной сети
 
@@ -83,44 +83,44 @@ ms.locfileid: "92912673"
 
 Чтобы проверить и добавить дополнительные общедоступные IP-адреса, выполните следующие действия.
 
-1. В портал Azure найдите и выберите **брандмауэр** .
+1. В портал Azure найдите и выберите **брандмауэр**.
 
-1. Выберите развернутый брандмауэр, а затем щелкните " **посетить диспетчер брандмауэра Azure", чтобы настроить этот брандмауэр и управлять им** .
+1. Выберите развернутый брандмауэр, а затем щелкните " **посетить диспетчер брандмауэра Azure", чтобы настроить этот брандмауэр и управлять им**.
 
-   :::image type="content" source="media/public-ip-usage/configure-manage-deployed-firewall.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/configure-manage-deployed-firewall.png":::
+   :::image type="content" source="media/public-ip-usage/configure-manage-deployed-firewall.png" alt-text="Снимок экрана, показывающий возможность настройки и управления брандмауэром" border="true" lightbox="media/public-ip-usage/configure-manage-deployed-firewall.png":::
 
 1. Выберите **защищенные виртуальные концентраторы** и в списке выберите виртуальный концентратор.
 
-   :::image type="content" source="media/public-ip-usage/select-virtual-hub.png" alt-text="Схема архитектуры общедоступных IP-адресов" lightbox="media/public-ip-usage/select-virtual-hub.png":::
+   :::image type="content" source="media/public-ip-usage/select-virtual-hub.png" alt-text="Снимок экрана диспетчера брандмауэра" lightbox="media/public-ip-usage/select-virtual-hub.png":::
 
-1. На странице Виртуальный концентратор выберите **общедоступную IP-конфигурацию** и добавьте общедоступный IP-адрес, а затем нажмите кнопку **Добавить** . 
+1. На странице Виртуальный концентратор выберите **общедоступную IP-конфигурацию** и добавьте общедоступный IP-адрес, а затем нажмите кнопку **Добавить**. 
 
-   :::image type="content" source="media/public-ip-usage/virtual-hub-page-public-ip-configuration.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/virtual-hub-page-public-ip-configuration.png":::
+   :::image type="content" source="media/public-ip-usage/virtual-hub-page-public-ip-configuration.png" alt-text="Снимок экрана добавления общедоступной IP-конфигурации в Диспетчер брандмауэров" border="true" lightbox="media/public-ip-usage/virtual-hub-page-public-ip-configuration.png":::
 
-1. Укажите необходимое число IP-адресов и нажмите кнопку **Добавить** .
+1. Укажите необходимое число IP-адресов и нажмите кнопку **Добавить**.
 
-   :::image type="content" source="media/public-ip-usage/add-number-of-ip-addresses-required.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true":::
+   :::image type="content" source="media/public-ip-usage/add-number-of-ip-addresses-required.png" alt-text="Снимок экрана: Добавление указанного числа общедоступных IP-конфигураций" border="true":::
 
 
 ## <a name="create-firewall-policies"></a>Создание политик брандмауэра
 
 После развертывания всех компонентов их можно увидеть в добавленной группе ресурсов. Следующим шагом является добавление политики брандмауэра.
 
-1. В портал Azure найдите и выберите **брандмауэр** .
+1. В портал Azure найдите и выберите **брандмауэр**.
 
-1. Выберите развернутый брандмауэр, а затем щелкните " **посетить диспетчер брандмауэра Azure", чтобы настроить этот брандмауэр и управлять им** .
+1. Выберите развернутый брандмауэр, а затем щелкните " **посетить диспетчер брандмауэра Azure", чтобы настроить этот брандмауэр и управлять им**.
 
-   :::image type="content" source="media/public-ip-usage/configure-manage-deployed-firewall.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/configure-manage-deployed-firewall.png":::
+   :::image type="content" source="media/public-ip-usage/configure-manage-deployed-firewall.png" alt-text="Снимок экрана, показывающий возможность настройки и управления брандмауэром" border="true" lightbox="media/public-ip-usage/configure-manage-deployed-firewall.png":::
 
-1. Выберите **политики брандмауэра Azure** , а затем щелкните **создать политику брандмауэра Azure** .
+1. Выберите **политики брандмауэра Azure** , а затем щелкните **создать политику брандмауэра Azure**.
 
-   :::image type="content" source="media/public-ip-usage/create-firewall-policy.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/create-firewall-policy.png":::
+   :::image type="content" source="media/public-ip-usage/create-firewall-policy.png" alt-text="Снимок экрана создания политики брандмауэра в диспетчере брандмауэра" border="true" lightbox="media/public-ip-usage/create-firewall-policy.png":::
 
-1. На вкладке " **основные** " укажите необходимые сведения и нажмите кнопку **Далее: параметры DNS** . 
+1. На вкладке " **основные** " укажите необходимые сведения и нажмите кнопку **Далее: параметры DNS**. 
 
-1. На вкладке **DNS** выберите **Отключить** , а затем нажмите кнопку **Далее: правила** .
+1. На вкладке **DNS** выберите **Отключить** , а затем нажмите кнопку **Далее: правила**.
 
-1. Выберите **Добавить коллекцию правил** , укажите следующие сведения, а затем выберите **Добавить** , а затем нажмите кнопку **Далее: анализ угроз** .
+1. Выберите **Добавить коллекцию правил** , укажите следующие сведения, а затем выберите **Добавить** , а затем нажмите кнопку **Далее: анализ угроз**.
 
    -  Имя
    -  Тип коллекции правил — ДНаТ
@@ -136,27 +136,25 @@ ms.locfileid: "92912673"
    -  Адрес для переведенного — **частный IP-адрес сервера решения Azure VMware**
    -  Переведенный порт — **порт веб-сервера решения Azure VMware**
 
-1. Оставьте значение по умолчанию и нажмите кнопку **Далее: центры** .
+1. Оставьте значение по умолчанию и нажмите кнопку **Далее: центры**.
 
-1. Выберите **связать виртуальный концентратор** .
+1. Выберите **связать виртуальный концентратор**.
 
-   :::image type="content" source="media/public-ip-usage/associate-virtual-hubs-azure-firewall-policy.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/associate-virtual-hubs-azure-firewall-policy.png":::
+1. Выберите концентратор из списка и нажмите кнопку **Добавить**.
 
-1. Выберите концентратор из списка и нажмите кнопку **Добавить** .
+   :::image type="content" source="media/public-ip-usage/secure-hubs-with-azure-firewall-polcy.png" alt-text="Снимок экрана, на котором показаны выбранные концентраторы, которые будут преобразованы в виртуальные концентраторы Сцекуред." border="true" lightbox="media/public-ip-usage/secure-hubs-with-azure-firewall-polcy.png":::
 
-   :::image type="content" source="media/public-ip-usage/secure-hubs-with-azure-firewall-polcy.png" alt-text="Схема архитектуры общедоступных IP-адресов" border="true" lightbox="media/public-ip-usage/secure-hubs-with-azure-firewall-polcy.png":::
+1. Выберите **Далее: Теги**. 
 
-1. Выберите **Далее: Теги** . 
+1. Используемых Создайте пары "имя — значение", чтобы классифицировать ресурсы. 
 
-1. Используемых Создайте пары "имя-значение", чтобы классифицировать ресурсы. 
-
-1. Нажмите кнопку **Далее: Проверьте и создайте** , а затем выберите **создать** .
+1. Нажмите кнопку **Далее: Проверьте и создайте** , а затем выберите **создать**.
 
 ## <a name="limitations"></a>Ограничения
 
 У вас может быть 100 общедоступных IP-адресов на Сддкс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше об использовании общедоступных IP-адресов с помощью [виртуальной глобальной сети Azure](../virtual-wan/virtual-wan-about.md).
 

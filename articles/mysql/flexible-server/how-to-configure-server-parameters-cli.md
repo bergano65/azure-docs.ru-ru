@@ -6,16 +6,20 @@ ms.author: ambhatna
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: how-to
-ms.date: 10/19/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 87ec99a68c538e8133d64351cdecbbf8b10459e6
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 58e7c024d6494aee745884997e42b527c51ab237
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92525167"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94489545"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mysql-flexible-server-using-the-azure-cli"></a>Настройка параметров сервера в базе данных Azure для гибкого сервера MySQL с помощью Azure CLI
+
+> [!IMPORTANT] 
+> Сейчас предоставляется общедоступная предварительная версия Гибкого сервера Базы данных Azure для MySQL.
+
 Вы можете вывести список, просмотреть и обновить параметры для гибкого сервера базы данных Azure для MySQL с помощью Azure CLI, служебной программы командной строки Azure. При создании сервера для параметров сервера настраиваются значения по умолчанию и Рекомендуемые.  
 
 В этой статье описывается, как вывести, отобразить и обновить параметры сервера с помощью Azure CLI.
@@ -31,7 +35,7 @@ ms.locfileid: "92525167"
 ## <a name="list-server-parameters-for-azure-database-for-mysql-flexible-server"></a>Вывод списка параметров сервера для гибкого сервера базы данных Azure для MySQL
 Чтобы получить список всех параметров на сервере и их значения, выполните команду [AZ MySQL гибкий-Server parameter list](/cli/azure/mysql/flexible-server/parameter) .
 
-Вы можете вывести список параметров сервера для сервера **mydemoserver.MySQL.Database.Azure.com** в разделе **myresourcegroup**группы ресурсов.
+Вы можете вывести список параметров сервера для сервера **mydemoserver.MySQL.Database.Azure.com** в разделе **myresourcegroup** группы ресурсов.
 ```azurecli-interactive
 az mysql flexible-server parameter list --resource-group myresourcegroup --server-name mydemoserver
 ```
@@ -40,7 +44,7 @@ az mysql flexible-server parameter list --resource-group myresourcegroup --serve
 ## <a name="show-server-parameter-details"></a>Отобразить сведения о параметрах сервера
 Чтобы отобразить сведения о конкретном параметре для сервера, выполните команду [AZ MySQL гибкий-Server Parameter отобразить](/cli/azure/mysql/flexible-server/parameter) .
 
-В этом примере показаны подробные сведения о параметре сервера ** \_ \_ журнала** **mydemoserver.MySQL.Database.Azure.com** запросов для сервера в разделе **myresourcegroup** группы ресурсов.
+В этом примере показаны подробные сведения о параметре сервера **\_ \_ журнала** **mydemoserver.MySQL.Database.Azure.com** запросов для сервера в разделе **myresourcegroup** группы ресурсов.
 ```azurecli-interactive
 az mysql flexible-server parameter show --name slow_query_log --resource-group myresourcegroup --server-name mydemoserver
 ```
@@ -55,7 +59,7 @@ az mysql flexible-server parameter set --name slow_query_log --resource-group my
 ```azurecli-interactive
 az mysql flexible-server parameter set --name slow_query_log --resource-group myresourcegroup --server-name mydemoserver
 ```
-Этот код сбрасывает ** \_ \_ Журнал задолгох запросов** до значения по умолчанию **Off**. 
+Этот код сбрасывает **\_ \_ Журнал задолгох запросов** до значения по умолчанию **Off**. 
 
 ## <a name="setting-non-modifiable-server-parameters"></a>Задание неизменяемых параметров сервера
 

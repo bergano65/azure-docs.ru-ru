@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 03/31/2019
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d62ea00246123dedb386f168355cbf2834efc2ef
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 14b32e4d666a81b8cba0e23c99b5878b1d9d4351
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93088800"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368072"
 ---
 # <a name="tutorial-crop-an-image-with-the-bing-visual-search-sdk-for-c"></a>Руководство по Обрезка изображения при помощи SDK визуального поиска Bing — C#
 
@@ -119,4 +119,4 @@ Console.WriteLine("\r\n" + "ActionType: " + i.ActionType + " -> WebSearchUrl: " 
 > [Create a Visual Search single-page web app](tutorial-bing-visual-search-single-page-app.md) (Создание одностраничного веб-приложения Визуального поиска)
 
 ## <a name="see-also"></a>См. также раздел
-> [Знакомство с API Визуального поиска Bing](https://docs.microsoft.com/azure/cognitive-services/bing-visual-search/overview)
+> [Знакомство с API Визуального поиска Bing](./overview.md)

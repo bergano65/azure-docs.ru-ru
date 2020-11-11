@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 03/31/2020
 ms.author: scottwhi
 ms.custom: devx-track-js
-ms.openlocfilehash: 8ecea9dce3509e064d9244a8b725add21747a03e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a0afee57eaaa0708ebde2a2aeaced76f008ebd9f
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93102210"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94366134"
 ---
 # <a name="tutorial-upload-images-to-the-bing-visual-search-api"></a>Руководство по отправке изображений в API "Визуальный поиск Bing"
 
@@ -477,7 +477,7 @@ function addDivContent(div, tag, json) {
 
 ## <a name="display-insights-for-different-actions"></a>Отображение сведений для разных действий
 
-Следующие функции отображают сведения для разных действий. Эти функции создают изображение или текст с активной ссылкой, которая ведет на веб-страницу с дополнительными сведениями об изображении. Эта страница размещается на сайте Bing.com или на веб-сайте с исходным изображением. В приложении отображаются не все данные. Чтобы просмотреть все доступные поля аналитических сведений, ознакомьтесь со [справочником по Визуальному поиску изображений Bing](https://aka.ms/bingvisualsearchreferencedoc).
+Следующие функции отображают сведения для разных действий. Эти функции создают изображение или текст с активной ссылкой, которая ведет на веб-страницу с дополнительными сведениями об изображении. Эта страница размещается на сайте Bing.com или на веб-сайте с исходным изображением. В приложении отображаются не все данные. Чтобы просмотреть все доступные поля аналитических сведений, ознакомьтесь со [справочником по Визуальному поиску изображений Bing](/rest/api/cognitiveservices/bingvisualsearch/images/visualsearch).
 
 > [!NOTE]
 > Существуют требования к минимальному объему сведений, отображаемых на странице результатов. Дополнительные сведения см. в статье о [требованиях к использованию и отображению API "Визуальный поиск Bing"](../bing-web-search/use-display-requirements.md).

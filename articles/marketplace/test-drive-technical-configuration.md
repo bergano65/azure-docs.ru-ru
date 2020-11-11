@@ -5,14 +5,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 08/13/2019
-author: keferna
-ms.author: keferna
-ms.openlocfilehash: bf253c4e3b273bc1500e5abbd4dfc045a7909ffd
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+author: trkeya
+ms.author: trkeya
+ms.openlocfilehash: b3f46f934241d924789b97c24cf9b68213d94d63
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93125688"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94490089"
 ---
 # <a name="test-drive-technical-configuration"></a>Техническая конфигурация тестового выпуска
 
@@ -74,7 +74,7 @@ ms.locfileid: "93125688"
 
 - **Идентификатор приложения Azure AD** (обязательно) — введите [идентификатор приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)Azure Active Directory (AD). Чтобы найти этот идентификатор, войдите в [портал Azure](https://portal.azure.com/), выберите вкладку Active Directory в меню слева, выберите **Регистрация приложений** , а затем найдите **идентификатор приложения** в списке (например, `50c464d3-4930-494c-963c-1e951d15360e` ).
 
-- **Секрет клиента приложения Azure AD** (обязательно) — введите [секрет клиента](../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)приложения Azure AD. Чтобы найти это значение, войдите на [портал Azure](https://portal.azure.com/). Выберите вкладку **Azure Active Directory** в меню слева, выберите **Регистрация приложений** и выберите приложение тестового диска. Затем выберите **Сертификаты и секреты** , затем **новый секрет клиента** , введите описание, выберите **никогда** в поле **срок действия** и нажмите кнопку **Добавить** . Обязательно скопируйте значение. Не выйдите из страницы перед копированием значения.
+- **Секрет клиента приложения Azure AD** (обязательно) — введите [секрет клиента](../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)приложения Azure AD. Чтобы найти это значение, войдите на [портал Azure](https://portal.azure.com/). Выберите вкладку **Azure Active Directory** в меню слева, выберите **Регистрация приложений** и выберите приложение тестового диска. Затем выберите **Сертификаты и секреты** , затем **новый секрет клиента** , введите описание, выберите **никогда** в поле **срок действия** и нажмите кнопку **Добавить**. Обязательно скопируйте значение. Не выйдите из страницы перед копированием значения.
 
 ## <a name="test-drive-listings"></a>Списки тестовых дисков
 
@@ -93,14 +93,9 @@ ms.locfileid: "93125688"
 
 Если в данный момент вы создаете тестовый диск в центре партнеров, выберите **Сохранить черновик** , прежде чем продолжить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Рекомендации по тестированию](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
 - [Обзор](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf)(PDF; убедитесь, что блокирование всплывающих окон отключено)
 - [Обновление имеющегося предложения на коммерческой платформе Marketplace](partner-center-portal/update-existing-offer.md)
-
-## <a name="additional-resources"></a>Дополнительные ресурсы
-
-## <a name="feedback"></a>Обратная связь
-
-Отправка и Просмотр отзывов для [этого продукта](https://feedback.azure.com/forums/216369-azure-marketplace)
+- [Форум обратной связи Azure Marketplace](https://feedback.azure.com/forums/216369-azure-marketplace)

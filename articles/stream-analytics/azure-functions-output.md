@@ -7,18 +7,18 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: f3f6e33c7c37089f7a9e87ab61bb00c966d8ccc7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ffaf66cbb5d9fa0b294f5749a1923684f16c2979
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90881912"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488111"
 ---
 # <a name="azure-functions-output-from-azure-stream-analytics"></a>Выходные данные функций Azure из Azure Stream Analytics
 
 Функции Azure — это бессерверная служба вычислений, которая позволяет выполнять код по требованию без необходимости явно подготавливать или администрировать инфраструктуру. Они позволяют реализовать код, который запускается событиями, возникающими в Azure или партнерских службах. Эта возможность Функций Azure реагировать на триггеры упрощает вывод данных Azure Stream Analytics. Этот выходной адаптер позволяет пользователям подключать Stream Analytics к Функциям Azure и запускать сценарий или часть кода в ответ на ряд событий.
 
-Выходные данные Функций Azure из Stream Analytics в настоящее время недоступны в регионах Azure для Китая (21Vianet) и Azure для Германии (T-Systems International).
+Выходные данные функций Azure из Stream Analytics недоступны в регионах Azure для Китая и Azure для Германии (Международная система T-Systems). Подключение к функциям Azure в виртуальной сети (VNet) из задания Stream Analytics, которое выполняется в кластере с несколькими клиентами, также не поддерживается.
 
 Azure Stream Analytics вызывает Функции Azure через триггеры HTTP. Адаптер выходных данных функции Azure доступен со следующими настраиваемыми свойствами:
 

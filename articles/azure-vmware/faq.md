@@ -4,18 +4,18 @@ description: Содержит ответы на некоторые распро�
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: dikamath
-ms.openlocfilehash: 9f0eb1ec7c979e6f35c21f49cad9ab9975a221fc
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 33250b0ba9209f7806346668dac0ef308101e7c2
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357299"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94487798"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
 Ответы на часто задаваемые вопросы о решении Azure VMware.
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
 #### <a name="what-is-azure-vmware-solution"></a>Что такое Решение Azure VMware?
 
@@ -194,6 +194,12 @@ Azure бастиона — это служба, рекомендуемая дл�
 
 Да. Вам нужно с помощью NSX-T Manager создать брандмауэр, который ограничивает доступ к Интернету из виртуальных машин.
 
+
+#### <a name="can-azure-vmware-solution-use-azure-virtual-wan-hosted-expressroute-gateways"></a>Может ли решение Azure VMware использовать шлюзы ExpressRoute, размещенные в виртуальной сети Azure?
+Да.
+
+#### <a name="can-transit-connectivity-be-established-between-on-premises-and-azure-vmware-solution-through-azure-virtual-wan-over-expressroute-global-reach"></a>Можно ли установить подключение между локальной сетью и решением VMware Azure через виртуальную сеть Azure через ExpressRoute Global Reach?
+Виртуальная глобальная сеть Azure не обеспечивает транзитную маршрутизацию между двумя подключенными каналами ExpressRoute и невиртуальным шлюзом WAN ExpressRoute. С помощью ExpressRoute Global Reach обеспечивается подключение между локальной средой и решением VMware Azure, а также Глобальная сеть Майкрософт, а не виртуальный концентратор глобальной сети.
 
 
 ## <a name="accounts-and-privileges"></a>Учетные записи и привилегии

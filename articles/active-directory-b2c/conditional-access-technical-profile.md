@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f88548b57cee9b5f637247fda1536488382ae2f6
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: bc811ab3cab4b79b81b16dd94a2c72225046e35a
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042632"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488284"
 ---
 # <a name="define-a-conditional-access-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля условного доступа в Azure Active Directory B2C настраиваемой политике
 
@@ -78,7 +78,7 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
 | Сложности | Да |stringCollection | Список действий для исправления обнаруженной угрозы. Возможные значения: `block` |
 | мултикондитионалакцессстатус | Да | stringCollection |  |
 
-Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения исходящих утверждений или создания новых.
+Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation** , которые используются для изменения исходящих утверждений или создания новых.
 
 ### <a name="example-evaluation"></a>Пример: Оценка
 
@@ -130,9 +130,9 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
 
 ### <a name="output-claims"></a>Исходящие утверждения
 
-Поставщик протокола условного доступа не возвращает никаких **OutputClaims**, поэтому нет необходимости указывать выходные утверждения. Однако можно включать утверждения, которые не возвращаются поставщиком протокола условного доступа, при условии, что задан `DefaultValue` атрибут.
+Поставщик протокола условного доступа не возвращает никаких **OutputClaims** , поэтому нет необходимости указывать выходные утверждения. Однако можно включать утверждения, которые не возвращаются поставщиком протокола условного доступа, при условии, что задан `DefaultValue` атрибут.
 
-Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения исходящих утверждений или создания новых.
+Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation** , которые используются для изменения исходящих утверждений или создания новых.
 
 
 ### <a name="example-remediation"></a>Пример: исправление
@@ -428,7 +428,7 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
             </Precondition>
             <Precondition Type="ClaimEquals" ExecuteActionsIf="true">
               <Value>CAChallengeIsMfa</Value>
-              <Value>false</Value>
+              <Value>False</Value>
               <Action>SkipThisOrchestrationStep</Action>
             </Precondition>
           </Preconditions>
@@ -458,7 +458,7 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
             </Precondition>
             <Precondition Type="ClaimEquals" ExecuteActionsIf="false">
               <Value>CAChallengeIsBlock</Value>
-              <Value>true</Value>
+              <Value>True</Value>
               <Action>SkipThisOrchestrationStep</Action>
             </Precondition>
           </Preconditions>
@@ -522,6 +522,6 @@ Web.TPEngine.Providers.ConditionalAccessProtocolProvider, Web.TPEngine, Version=
 </TrustFrameworkPolicy>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Пример политики условного доступа можно найти на сайте [GitHub](https://github.com/azure-ad-b2c/samples/tree/master/policies/conditional-access).

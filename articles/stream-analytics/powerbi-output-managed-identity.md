@@ -6,12 +6,12 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 3/10/2020
-ms.openlocfilehash: 29f02f80aa5bff1304dc593d68954e15fe6e66bb
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 469610d7195835a4b68e4d887c5be57a8926ba37
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346440"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94489511"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi"></a>Используйте управляемое удостоверение для проверки подлинности задания Azure Stream Analytics для Power BI
 
@@ -19,7 +19,7 @@ ms.locfileid: "93346440"
 
 В этой статье показано, как включить управляемое удостоверение для Power BI выходных данных Stream Analytics задания с помощью портал Azure и Azure Resource Manager развертывания.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этой функции необходимо следующее:
 
@@ -210,6 +210,10 @@ POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
 }
 ```
 
+## <a name="remove-managed-identity"></a>Удалить управляемое удостоверение
+
+Управляемое удостоверение, созданное для задания Stream Analytics, удаляется только при удалении задания. Невозможно удалить управляемое удостоверение, не удаляя задание. Если вы больше не хотите использовать управляемое удостоверение, можно изменить метод проверки подлинности для выходных данных. Управляемое удостоверение будет продолжать существовать до тех пор, пока задание не будет удалено, и будет использоваться при повторном использовании проверки подлинности с управляемым удостоверением.
+
 ## <a name="limitations"></a>Ограничения
 Ниже перечислены ограничения этой функции.
 
@@ -221,7 +225,7 @@ POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
 
 - [Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md) , не поддерживается. Это означает, что вы не можете ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба необходимо создавать с помощью Azure Stream Analytics.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Интеграция панели мониторинга Power BI с Azure Stream Analytics](./stream-analytics-power-bi-dashboard.md)
 * [Описание выходных данных из Azure Stream Analytics](./stream-analytics-define-outputs.md)

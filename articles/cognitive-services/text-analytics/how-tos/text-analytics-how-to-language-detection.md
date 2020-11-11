@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 10/16/2020
 ms.author: aahi
-ms.openlocfilehash: 5fa895964c30021452b8ce7b070a8b127d65e972
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a3ef198c79683786a7d6fb36a46cd0c989071c9e
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305949"
+ms.locfileid: "93346899"
 ---
 # <a name="example-detect-language-with-text-analytics"></a>Пример Определение языка с помощью API "Анализ текста"
 
@@ -39,30 +39,30 @@ ms.locfileid: "93305949"
 Размер документа не должен превышать 5120 символов. На каждую коллекцию может приходиться до 1000 элементов (ИД). Коллекция передается в тексте запроса. Ниже приведен пример содержимого, который вы можете предоставить для распознавания языка.
 
 ```json
-    {
-        "documents": [
-            {
-                "id": "1",
-                "text": "This document is in English."
-            },
-            {
-                "id": "2",
-                "text": "Este documento está en inglés."
-            },
-            {
-                "id": "3",
-                "text": "Ce document est en anglais."
-            },
-            {
-                "id": "4",
-                "text": "本文件为英文"
-            },
-            {
-                "id": "5",
-                "text": "Этот документ на английском языке."
-            }
-        ]
-    }
+{
+    "documents": [
+        {
+            "id": "1",
+            "text": "This document is in English."
+        },
+        {
+            "id": "2",
+            "text": "Este documento está en inglés."
+        },
+        {
+            "id": "3",
+            "text": "Ce document est en anglais."
+        },
+        {
+            "id": "4",
+            "text": "本文件为英文"
+        },
+        {
+            "id": "5",
+            "text": "Этот документ на английском языке."
+        }
+    ]
+}
 ```
 
 ## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
@@ -99,55 +99,67 @@ ms.locfileid: "93305949"
 
 ```json
 {
-    "documents": [
+    "documents":[
         {
-            "id": "1",
-            "detectedLanguage": {
-                "name": "English",
-                "iso6391Name": "en",
-                "confidenceScore": 1.0
+            "detectedLanguage":{
+                "confidenceScore":0.99,
+                "iso6391Name":"en",
+                "name":"English"
             },
-            "warnings": []
+            "id":"1",
+            "warnings":[
+                
+            ]
         },
         {
-            "id": "2",
-            "detectedLanguage": {
-                "name": "Spanish",
-                "iso6391Name": "es",
-                "confidenceScore": 1.0
+            "detectedLanguage":{
+                "confidenceScore":1.0,
+                "iso6391Name":"es",
+                "name":"Spanish"
             },
-            "warnings": []
+            "id":"2",
+            "warnings":[
+                
+            ]
         },
         {
-            "id": "3",
-            "detectedLanguage": {
-                "name": "French",
-                "iso6391Name": "fr",
-                "confidenceScore": 1.0
+            "detectedLanguage":{
+                "confidenceScore":1.0,
+                "iso6391Name":"fr",
+                "name":"French"
             },
-            "warnings": []
+            "id":"3",
+            "warnings":[
+                
+            ]
         },
         {
-            "id": "4",
-            "detectedLanguage": {
-                "name": "Chinese_Simplified",
-                "iso6391Name": "zh_chs",
-                "confidenceScore": 1.0
+            "detectedLanguage":{
+                "confidenceScore":1.0,
+                "iso6391Name":"zh_chs",
+                "name":"Chinese_Simplified"
             },
-            "warnings": []
+            "id":"4",
+            "warnings":[
+                
+            ]
         },
         {
-            "id": "5",
-            "detectedLanguage": {
-                "name": "Russian",
-                "iso6391Name": "ru",
-                "confidenceScore": 1.0
+            "detectedLanguage":{
+                "confidenceScore":1.0,
+                "iso6391Name":"ru",
+                "name":"Russian"
             },
-            "warnings": []
+            "id":"5",
+            "warnings":[
+                
+            ]
         }
     ],
-    "errors": [],
-    "modelVersion": "2019-10-01"
+    "errors":[
+        
+    ],
+    "modelVersion":"2020-09-01"
 }
 ```
 
@@ -160,19 +172,19 @@ ms.locfileid: "93305949"
 **Ввод**
 
 ```json
-    {
-        "documents": [
-            {
-                "id": "1",
-                "text": "impossible"
-            },
-            {
-                "id": "2",
-                "text": "impossible",
-                "countryHint": "fr"
-            }
-        ]
-    }
+{
+    "documents": [
+        {
+            "id": "1",
+            "text": "impossible"
+        },
+        {
+            "id": "2",
+            "text": "impossible",
+            "countryHint": "fr"
+        }
+    ]
+}
 ```
 
 Теперь служба имеет дополнительный контекст для принятия более взвешенного решения: 
@@ -180,46 +192,60 @@ ms.locfileid: "93305949"
 **Выходные данные**
 
 ```json
-    {
-        "documents": [
-            {
-                "id": "1",
-                "detectedLanguage": [
-                    {
-                        "name": "English",
-                        "iso6391Name": "en",
-                        "confidenceScore": 1
-                    }
-                ]
+{
+    "documents":[
+        {
+            "detectedLanguage":{
+                "confidenceScore":0.62,
+                "iso6391Name":"en",
+                "name":"English"
             },
-            {
-                "id": "2",
-                "detectedLanguage": [
-                    {
-                        "name": "French",
-                        "iso6391Name": "fr",
-                        "confidenceScore": 1
-                    }
-                ]
-            }
-        ],
-        "errors": []
-    }
+            "id":"1",
+            "warnings":[
+                
+            ]
+        },
+        {
+            "detectedLanguage":{
+                "confidenceScore":1.0,
+                "iso6391Name":"fr",
+                "name":"French"
+            },
+            "id":"2",
+            "warnings":[
+                
+            ]
+        }
+    ],
+    "errors":[
+        
+    ],
+    "modelVersion":"2020-09-01"
+}
 ```
 
 Если анализатору не удается выполнить синтаксический анализ входных данных,он возвращается `(Unknown)`. Например, текстовый блок, состоящий исключительно из арабских цифр.
 
 ```json
-    {
-        "id": "5",
-        "detectedLanguage": [
-            {
-                "name": "(Unknown)",
-                "iso6391Name": "(Unknown)",
-                "confidenceScore": "NaN"
-            }
-        ]
-    }
+{
+    "documents":[
+        {
+            "detectedLanguage":{
+                "confidenceScore":0.0,
+                "iso6391Name":"(Unknown)",
+                "name":"(Unknown)"
+            },
+            "id":"1",
+            "warnings":[
+                
+            ]
+        }
+    ],
+    "errors":[
+        
+    ],
+    "modelVersion":"2020-09-01"
+}
 ```
 
 ### <a name="mixed-language-content"></a>Содержание на разных языках
@@ -229,14 +255,14 @@ ms.locfileid: "93305949"
 **Ввод**
 
 ```json
-    {
-      "documents": [
+{
+    "documents": [
         {
-          "id": "1",
-          "text": "Hello, I would like to take a class at your University. ¿Se ofrecen clases en español? Es mi primera lengua y más fácil para escribir. Que diriez-vous des cours en français?"
+            "id": "1",
+            "text": "Hello, I would like to take a class at your University. ¿Se ofrecen clases en español? Es mi primera lengua y más fácil para escribir. Que diriez-vous des cours en français?"
         }
-      ]
-    }
+    ]
+}
 ```
 
 **Выходные данные**
@@ -244,21 +270,25 @@ ms.locfileid: "93305949"
 Итоговые выходные данные состоят из преобладающего языка, с оценкой не менее 1.0, что указывает на менее надежный уровень достоверности.
 
 ```json
-    {
-      "documents": [
+{
+    "documents":[
         {
-          "id": "1",
-          "detectedLanguage": [
-            {
-              "name": "Spanish",
-              "iso6391Name": "es",
-              "confidencescore": 0.94
-            }
-          ]
+            "detectedLanguage":{
+                "confidenceScore":0.94,
+                "iso6391Name":"es",
+                "name":"Spanish"
+            },
+            "id":"1",
+            "warnings":[
+                
+            ]
         }
-      ],
-      "errors": []
-    }
+    ],
+    "errors":[
+        
+    ],
+    "modelVersion":"2020-09-01"
+}
 ```
 
 ## <a name="summary"></a>Сводка

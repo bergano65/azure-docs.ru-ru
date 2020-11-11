@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: bf1dcb34b762c3dcae39316d804b617edbf2302d
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 263509ce7d348e51bf4a2a1d7ad83fb5dfdb5e29
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360740"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94489443"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "93360740"
 
 Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azureными функциями [обучения, такими](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) как [скриптрунконфиг](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), а также [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 
@@ -254,9 +254,10 @@ src.run_config.source_directory_data_store = "workspaceblobstore"
 
 ## <a name="notebook-examples"></a>Примеры записных книжек
 
-В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
++ В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
++ См. статью как [параметизе наборы данных в конвейерах машинного обучения](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-dataset-and-pipelineparameter.ipynb).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Автоматическое обучение моделей машинного обучения](how-to-auto-train-remote.md) с помощью табулардатасетс.
 

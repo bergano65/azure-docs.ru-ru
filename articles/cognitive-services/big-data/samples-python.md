@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: sample
 ms.date: 07/06/2020
 ms.author: marhamil
-ms.openlocfilehash: caf492c2cd3940fd7f37e2a4462c8376a127f393
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 590ddef27315f37719da5b28c68b6c402371e986
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86189329"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94363261"
 ---
 # <a name="python-samples-for-cognitive-services-for-big-data"></a>Примеры Python для Cognitive Services для больших данных
 
@@ -33,7 +33,7 @@ ms.locfileid: "86189329"
 1. Создав записную книжку в Azure Databricks, скопируйте **общий код** ниже и вставьте его в новую ячейку записной книжки.
 1. Выберите пример службы ниже и скопируйте его во вторую новую ячейку записной книжки.
 1. Замените все заполнители ключа подписки службы своим ключом.
-1. Нажмите кнопку выполнения (значок с треугольником) в правом верхнем углу ячейки и щелкните **Выполнить ячейку** .
+1. Нажмите кнопку выполнения (значок с треугольником) в правом верхнем углу ячейки и щелкните **Выполнить ячейку**.
 1. Просмотрите результаты в таблице под ячейкой.
 
 ## <a name="shared-code"></a>Общий код
@@ -56,7 +56,7 @@ assert service_key != "ADD_YOUR_SUBSCRIPION_KEY"
 
 ## <a name="text-analytics-sample"></a>Пример для службы "Анализ текста"
 
-Служба [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) предоставляет несколько алгоритмов для извлечения интеллектуальной аналитики из текста. Например, можно определить тональность заданного входного текста. Служба вернет оценку между 0,0 и 1,0: низкий показатель указывает на отрицательную тональность, а высокий — на положительную.  В этом примере используются три простых предложения. Для каждого из них возвращается тональность.
+Служба [Анализ текста](../text-analytics/index.yml) предоставляет несколько алгоритмов для извлечения интеллектуальной аналитики из текста. Например, можно определить тональность заданного входного текста. Служба вернет оценку между 0,0 и 1,0: низкий показатель указывает на отрицательную тональность, а высокий — на положительную.  В этом примере используются три простых предложения. Для каждого из них возвращается тональность.
 
 ```python
 from pyspark.sql.functions import col
@@ -78,20 +78,20 @@ sentiment = (TextSentiment()
     .setLanguageCol("language"))
 
 # Show the results of your text query in a table format
-display(sentiment.transform(df).select("text", col("sentiment")[0].getItem("score").alias("sentiment")))
+display(sentiment.transform(df).select("text", col("sentiment")[0].getItem("sentiment").alias("sentiment")))
 ```
 
 ### <a name="expected-result"></a>Ожидаемый результат
 
 | text                                      | Тональность                                             |
 |:------------------------------------------|:------------------------------------------------------|
-| I am so happy today, its sunny!           | 0.9789592027664185                                    |
-| I am frustrated by this rush hour traffic | 0.023795604705810547                                  |
-| The cognitive services on spark aint bad  | 0.8888956308364868                                    |
+| I am so happy today, its sunny!           | Позитивная                                              |
+| I am frustrated by this rush hour traffic | Негативная                                              |
+| The cognitive services on spark aint bad  | Позитивная                                              |
 
 ## <a name="computer-vision-sample"></a>Пример для службы "Компьютерное зрение"
 
-Служба [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/) анализирует изображения для выявления таких структур, как лица, объекты и описания на естественном языке. В этом примере мы отметим тегами список изображений. Теги — это описания вещей, выраженные одним словом, например распознаваемых объектов, людей, пейзажей и действий.
+Служба [Компьютерное зрение](../computer-vision/index.yml) анализирует изображения для выявления таких структур, как лица, объекты и описания на естественном языке. В этом примере мы отметим тегами список изображений. Теги — это описания вещей, выраженные одним словом, например распознаваемых объектов, людей, пейзажей и действий.
 
 ```python
 
@@ -126,7 +126,7 @@ display(analysis.transform(df).select("image", "analysis_results.description.tag
 
 ## <a name="bing-image-search-sample"></a>Пример для службы "Поиск изображений Bing"
 
-[Поиск изображений Bing](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview) — поиск в Интернете изображений, соответствующих запросу пользователя на естественном языке. В этом примере мы используем текстовый запрос для поиска изображений с кавычками. Он возвращает список URL-адресов изображений, содержащих фотографии, связанные с нашим запросом.
+[Поиск изображений Bing](../bing-image-search/overview.md) — поиск в Интернете изображений, соответствующих запросу пользователя на естественном языке. В этом примере мы используем текстовый запрос для поиска изображений с кавычками. Он возвращает список URL-адресов изображений, содержащих фотографии, связанные с нашим запросом.
 
 ```python
 from pyspark.ml import PipelineModel
@@ -171,7 +171,7 @@ display(pipeline.transform(bingParameters))
 
 
 ## <a name="speech-to-text-sample"></a>Пример преобразования речи в текст
-Служба [Преобразование речи в текст](https://docs.microsoft.com/azure/cognitive-services/speech-service/index-speech-to-text) преобразует потоки или файлы с речью в текст. В этом примере мы транскрибируем два звуковых файла. Первый файл легко распознать, а второй — несколько сложнее.
+Служба [Преобразование речи в текст](../speech-service/index-speech-to-text.yml) преобразует потоки или файлы с речью в текст. В этом примере мы транскрибируем два звуковых файла. Первый файл легко распознать, а второй — несколько сложнее.
 
 ```python
 
@@ -205,7 +205,7 @@ display(speech_to_text.transform(df).select("url", "text.DisplayText"))
 
 ## <a name="anomaly-detector-sample"></a>Пример для службы "Детектор аномалий"
 
-[Детектор аномалий](https://docs.microsoft.com/azure/cognitive-services/anomaly-detector/) — удобное средство для обнаружения несоответствующих данных во временных рядах. В этом примере мы используем службу для поиска аномалий во всех временных рядах.
+[Детектор аномалий](../anomaly-detector/index.yml) — удобное средство для обнаружения несоответствующих данных во временных рядах. В этом примере мы используем службу для поиска аномалий во всех временных рядах.
 
 ```python
 from pyspark.sql.functions import lit

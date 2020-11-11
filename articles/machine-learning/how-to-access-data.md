@@ -11,14 +11,14 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 11/03/2020
 ms.custom: how-to, contperfq1, devx-track-python, data4ml
-ms.openlocfilehash: f60d864bd367b5f44869abc9ccac4e4cc266075a
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 7f2c7e99117c338d07abc2ed8760c2be18955d66
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358105"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94489307"
 ---
-# <a name="connect-to-storage-services-azure"></a>Подключение к службам хранилища Azure
+# <a name="connect-to-storage-services-on-azure"></a>Подключение к службам хранилища в Azure
 
 Из этой статьи вы узнаете, как **подключиться к службам хранилища в Azure с помощью машинное обучение Azure хранилищ данных**. Хранилища данных безопасно подключаются к службе хранилища Azure, не заключая учетные данные проверки подлинности и целостность исходного источника. Они хранят сведения о подключении, такие как идентификатор подписки и авторизация маркера, в [Key Vault](https://azure.microsoft.com/services/key-vault/) , связанных с рабочей областью, чтобы обеспечить безопасный доступ к хранилищу без необходимости жесткого кодирования в скриптах. Для создания и регистрации хранилищ данных можно использовать [пакет SDK для машинное обучение Azure Python](#python) или [машинное обучение Azure Studio](how-to-connect-data-ui.md) .
 

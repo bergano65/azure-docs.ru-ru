@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: 010b65a170d05fb0d2cc55e7519fd27df8b751e1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c47a4fbf51b14d9a13237f77c75dbf2839fb5f80
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095447"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381292"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 
@@ -36,7 +36,7 @@ ms.locfileid: "93095447"
 > * Управление ключами подписки
 > * Обработка ошибок
 
-Чтобы использовать это приложение, требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API-интерфейсами поиска Bing.
+Чтобы использовать это приложение, требуется [учетная запись Azure Cognitive Services](../cognitive-services-apis-create-account.md) с API-интерфейсами поиска Bing.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -86,7 +86,7 @@ npm install
 
 ## <a name="query-options"></a>Параметры запроса
 
-HTML-форма содержит параметры, которые соответствуют параметрам запросов в [API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters). В этой таблице содержатся подробные сведения о том, как пользователи могут фильтровать результаты поиска с помощью примера приложения:
+HTML-форма содержит параметры, которые соответствуют параметрам запросов в [API Bing для поиска в Интернете версии 7](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters). В этой таблице содержатся подробные сведения о том, как пользователи могут фильтровать результаты поиска с помощью примера приложения:
 
 | Параметр | Описание |
 |-----------|-------------|
@@ -99,7 +99,7 @@ HTML-форма содержит параметры, которые соотве
 | `offset` | Скрытое поле. Смещение первого результата поиска в запросе. Используется для разбиения по страницам. Сбрасывается к `0` при каждом новом запросе. |
 
 > [!NOTE]
-> API Bing для поиска в Интернете предоставляет дополнительные параметры запроса, чтобы уточнить результаты поиска. В этом примере используются всего несколько из них. Полный список доступных параметров см. в [этом разделе](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters).
+> API Bing для поиска в Интернете предоставляет дополнительные параметры запроса, чтобы уточнить результаты поиска. В этом примере используются всего несколько из них. Полный список доступных параметров см. в [этом разделе](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters).
 
 Функция `bingSearchOptions()` преобразует эти параметры, чтобы они соответствовали формату, требуемому API поиска Bing.
 
@@ -303,7 +303,7 @@ function handleBingResponse() {
 
 ## <a name="display-search-results"></a>Отображение результатов поиска.
 
-Существуют [требования к использованию и отображению](useanddisplayrequirements.md) для результатов, возвращаемых API Bing для поиска в Интернете. Так как ответ может содержать различные типы результатов, то недостаточно выполнить итерацию коллекции верхнего уровня `WebPages`. Вместо этого пример приложения использует `RankingResponse` для упорядочения результатов по спецификациям.
+Существуют [требования к использованию и отображению](./use-display-requirements.md) для результатов, возвращаемых API Bing для поиска в Интернете. Так как ответ может содержать различные типы результатов, то недостаточно выполнить итерацию коллекции верхнего уровня `WebPages`. Вместо этого пример приложения использует `RankingResponse` для упорядочения результатов по спецификациям.
 
 > [!NOTE]
 > Если требуется только один тип результата, используйте параметр запроса `responseFilter` или стоит воспользоваться другой конечной точкой Поиска Bing, например Поиском изображений Bing.

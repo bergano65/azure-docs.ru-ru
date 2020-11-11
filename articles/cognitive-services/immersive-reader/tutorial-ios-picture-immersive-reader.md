@@ -9,18 +9,18 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 01/14/2020
 ms.author: metang
-ms.openlocfilehash: 73084f5116083b190b6fa31e504ffc5e8f6f39f6
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: d8ee6b2344f0c953233195a693e774e410a8a8ea
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636499"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368208"
 ---
 # <a name="tutorial-create-an-ios-app-that-launches-the-immersive-reader-with-content-from-a-photo-swift"></a>Руководство по Созданию приложения для iOS, которое запускает иммерсивное средство чтения с содержимым из фотографии (Swift)
 
 [Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
 
-[API чтение службы Cognitive Service "Компьютерное зрение"](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text) обнаруживает текстовое содержимое в изображении, используя новейшие модели распознавания Майкрософт и преобразует обнаруженный текст в поток символов, пригодный для машинного чтения.
+[API чтение службы Cognitive Service "Компьютерное зрение"](../computer-vision/concept-recognizing-text.md) обнаруживает текстовое содержимое в изображении, используя новейшие модели распознавания Майкрософт и преобразует обнаруженный текст в поток символов, пригодный для машинного чтения.
 
 В этом руководстве вы создадите приложение для iOS с нуля, интегрируете API чтения, а также Иммерсивное средство чтения с помощью пакета SDK Ииммерсивного средства чтения. Полностью рабочий пример этого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/ios).
 
@@ -38,7 +38,7 @@ ms.locfileid: "92636499"
 
 ![Создать проект](./media/ios/xcode-create-project.png)
 
-Выберите **Приложение одного представления** .
+Выберите **Приложение одного представления**.
 
 ![Новое приложение одного представления](./media/ios/xcode-single-view-app.png)
 

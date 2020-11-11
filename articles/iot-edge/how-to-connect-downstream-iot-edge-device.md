@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 83db314070f4c8857ebaa10b26d0adf51372776f
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: d5da6576258d3e33296781bbc262494220140ddc
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94447789"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94489290"
 ---
 # <a name="connect-a-downstream-iot-edge-device-to-an-azure-iot-edge-gateway-preview"></a>Подключение подчиненного IoT Edge устройства к шлюзу Azure IoT Edge (Предварительная версия)
 
@@ -43,7 +43,7 @@ ms.locfileid: "94447789"
 
 * Бесплатный или стандартный центр Интернета вещей.
 * По крайней мере два **IOT Edge устройства** , одно из которых является устройством верхнего уровня и одним или несколькими устройствами более низкого уровня. Если у вас нет доступных IoT Edge устройств, можно [запустить Azure IOT EDGE на виртуальных машинах Ubuntu](how-to-install-iot-edge-ubuntuvm.md).
-* Если вы используете Azure CLI для создания устройств и управления ими, установите Azure CLI v 2.3.1 с расширением Azure IoT v 0.9.10 или более поздней версии.
+* Если вы используете Azure CLI для создания устройств и управления ими, установите Azure CLI v 2.3.1 с расширением Azure IoT v 0.10.6 или более поздней версии.
 
 Эта статья содержит подробные инструкции и параметры, помогающие создать подходящую иерархию шлюза для вашего сценария. Пошаговые инструкции см. в статье [Создание иерархии IOT Edge устройств с помощью шлюзов](tutorial-nested-iot-edge.md).
 
@@ -441,7 +441,7 @@ agent:
 1. Выберите **Проверка + создать** , чтобы перейти к последнему шагу.
 1. Выберите **создать** для развертывания на устройстве.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Использование устройства IoT Edge в качестве шлюза](iot-edge-as-gateway.md)
 

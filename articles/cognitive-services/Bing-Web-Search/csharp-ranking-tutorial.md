@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 06/24/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9131dbff9b732ecfc7f6edb62b42959abcc17da8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c6b6aea6a3b0856b3db345e20b87d2a12ad055e1
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93078685"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94380336"
 ---
 # <a name="build-a-console-app-search-client-in-c"></a>Создание клиента поиска в виде консольного приложения на C#
 
@@ -228,7 +228,7 @@ static void RunQueryAndDisplayResults(string userQuery)
 }
 ```
 
-Объект JSON `rankingResponse` (подробнее описан в [документации](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#rankingresponse)) предоставляет правильный порядок отображения для результатов поиска. Он содержит одну или несколько следующих групп с учетом приоритета:
+Объект JSON `rankingResponse` (подробнее описан в [документации](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#rankingresponse)) предоставляет правильный порядок отображения для результатов поиска. Он содержит одну или несколько следующих групп с учетом приоритета:
 
 - `pole`: Результаты поиска, которые должны отображаться наиболее заметным образом (например, над основной частью и боковой панелью).
 - `mainline`: Результаты поиска для отображения в основном поле.

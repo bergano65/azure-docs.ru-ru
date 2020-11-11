@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: 1414f2ce53d1764e788749fc2d225c56f624bcdc
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 6f92c138a02c9dbdc1d22ca04c733cfbee69dcd0
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94370245"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488525"
 ---
 # <a name="how-to-configure-your-azure-application-offer-properties"></a>Настройка свойств предложения приложения Azure
 
@@ -76,12 +76,8 @@ ms.locfileid: "94370245"
 
 1. В разделе **Юридическая информация** убедитесь, что флажок **использовать стандартный контракт для коммерческого рынка Майкрософт** снят.
 1. В поле **условий** введите до 10 000 символов текста.
-
-   > [!NOTE]
-   > Если вам требуется более длинное описание, введите один веб-адрес, указывающий на место, где можно найти условия. Он будет отображаться для клиентов как активная ссылка.
-
 1. Выберите **Сохранить черновик** , прежде чем перейти к следующей вкладке: список предложений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Как настроить сведения о списке предложений приложений Azure](create-new-azure-apps-offer-listing.md)

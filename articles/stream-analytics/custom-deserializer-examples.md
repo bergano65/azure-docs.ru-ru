@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 1/28/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9a69ca707577ceddc56ae691d6e5e701458cae28
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 4adf0b8a7c12abed9689b9ac0cc9c5d5c8c3f980
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346607"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488440"
 ---
 # <a name="read-input-in-any-format-using-net-custom-deserializers"></a>Считывание входных данных любого формата с помощью пользовательских десериализаторов .NET
 
@@ -249,9 +249,9 @@ namespace ExampleCustomCode.Serialization
 
 После реализации десериализатора вы можете помочь другим пользователям, поделившись им с сообществом. Отправьте код в [репозиторий GitHub Azure Stream Analytics](https://github.com/Azure/azure-stream-analytics/tree/master/CustomDeserializers).
 
-### <a name="what-are-the-other-limitation-of-using-custom-deserializers-in-stream-analytics"></a>Каковы другие ограничения использования пользовательских десериализаторов в Stream Analytics?
+### <a name="what-are-the-other-limitations-of-using-custom-deserializers-in-stream-analytics"></a>Каковы другие ограничения использования пользовательских десериализаторов в Stream Analytics?
 
-Если входные данные имеют формат Protobuf с схемой, содержащей тип MapField, то реализовать пользовательский десериализатор будет невозможно. Мы работаем над включением поддержки этого типа.
+Если входные данные имеют формат protobuf с схемой `MapField` , содержащей тип, вы не сможете реализовать пользовательский десериализатор. Кроме того, пользовательские десериализаторы не поддерживают образцы данных или данные для предварительного просмотра. 
 
 ## <a name="next-steps"></a>Next Steps
 
