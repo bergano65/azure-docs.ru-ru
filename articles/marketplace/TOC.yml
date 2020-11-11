@@ -37,6 +37,10 @@
           href: test-drive-technical-configuration.md
         - name: Тестовый выпуск для Azure Resource Manager
           href: azure-resource-manager-test-drive.md
+        - name: Подробная конфигурация для размещенного тестового выпуска
+          href: test-drive-hosted-detailed-config.md
+        - name: Настройка подписки Azure для размещенных тестовых выпусков
+          href: test-drive-azure-subscription-setup.md
     - name: Определение потребления услуг Azure клиентами партнеров
       href: azure-partner-customer-usage-attribution.md
     - name: Варианты выхода на рынок
@@ -270,15 +274,15 @@
     - name: Аналитика коммерческой платформы
       href: partner-center-portal/analytics.md
     - name: Панель мониторинга "Сводка"
-      href: partner-center-portal/summary-dashboard.md
+      href: summary-dashboard.md
     - name: Панель мониторинга заказов
-      href: partner-center-portal/orders-dashboard.md
+      href: orders-dashboard.md
     - name: Панель мониторинга использования
-      href: partner-center-portal/usage-dashboard.md
+      href: usage-dashboard.md
     - name: Панель мониторинга клиентов
-      href: partner-center-portal/customer-dashboard.md
+      href: customer-dashboard.md
     - name: Панель мониторинга аналитики Marketplace
-      href: partner-center-portal/insights-dashboard.md
+      href: insights-dashboard.md
     - name: Панель мониторинга скачиваний
       href: partner-center-portal/downloads-dashboard.md
     - name: Панель мониторинга оценок и рецензий

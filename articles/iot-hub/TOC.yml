@@ -471,7 +471,7 @@
       items:
         - name: Мониторинг операций
           href: iot-hub-operations-monitoring.md
-        - name: Перенос в параметры диагностики
+        - name: Миграция в Azure Monitor
           href: iot-hub-migrate-to-diagnostics-settings.md
         - name: "Прекращение поддержки протоколов TLS\_1.0 и 1.1"
           href: iot-hub-tls-deprecating-1-0-and-1-1.md

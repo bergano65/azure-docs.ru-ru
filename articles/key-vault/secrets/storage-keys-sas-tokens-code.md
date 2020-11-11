@@ -9,19 +9,19 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0d2d28a525f38aad3f48e439992a23abde0b7718
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 2a0202c5259ccebedf03ade217f57b6305b9fa1b
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92786077"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94444934"
 ---
 # <a name="create-sas-definition-and-fetch-shared-access-signature-tokens-in-code"></a>Создание определения SAS и получение маркеров SAS в коде
 
 Вы можете управлять учетной записью хранения с помощью маркеров подписанного URL-адреса (SAS), хранящихся в хранилище ключей. Дополнительные сведения см. в статье [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../../storage/common/storage-sas-overview.md).
 
 > [!NOTE]
-> Мы рекомендуем защитить учетную запись хранения с помощью [управления доступом на основе ролей (RBAC)](../../storage/common/storage-auth-aad.md), чтобы усилить защиту и упростить авторизацию с использованием общего ключа.
+> Мы рекомендуем защитить учетную запись хранения с помощью [управления доступом на основе ролей Azure (Azure RBAC)](../../storage/common/storage-auth-aad.md), чтобы усилить защиту и упростить авторизацию с использованием общего ключа.
 
 В этой статье представлены примеры кода .NET, который создает определение SAS и извлекает маркеры SAS. Полные сведения, включая созданный клиент для учетных записей хранения, управляемых Key Vault, см. в нашем примере [ShareLink](/samples/azure/azure-sdk-for-net/share-link/). Сведения о создании и хранении маркеров SAS см. в статьях об управлении ключами учетной записи хранения с помощью [Key Vault и Azure CLI](overview-storage-keys.md) или с помощью [Key Vault и Azure PowerShell](overview-storage-keys-powershell.md).
 

@@ -111,7 +111,7 @@
       items:
         - name: Просмотр метрик в Azure Monitor
           href: troubleshoot-metrics.md
-        - name: Включение журналов диагностики
+        - name: Включение журналов диагностики и обращение к ним
           href: troubleshoot-diagnostics.md
         - name: Включение оповещений
           href: troubleshoot-alerts.md

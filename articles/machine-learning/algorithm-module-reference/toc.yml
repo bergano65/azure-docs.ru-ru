@@ -92,6 +92,8 @@
           href: multiclass-neural-network.md
         - name: "Многоклассовый классификатор \"один\_— все\""
           href: one-vs-all-multiclass.md
+        - name: "Многоклассовый классификатор \"один\_— один\""
+          href: one-vs-one-multiclass.md
         - name: Двухклассовое усредненное восприятие
           href: two-class-averaged-perceptron.md
         - name: Двухклассовое увеличивающееся дерево принятия решений;

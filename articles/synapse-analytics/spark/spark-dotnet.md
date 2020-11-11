@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 05/01/2020
 ms.author: mamccrea
 ms.reviewer: jrasnick
-ms.openlocfilehash: 44c9dbb0eed5e8f7a868832af93a3b841f67f784
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d0ae4ef48bfb79130180cc477eb2a6fbeb470eb6
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310699"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506436"
 ---
 # <a name="use-net-for-apache-spark-with-azure-synapse-analytics"></a>Использование .NET для Apache Spark с помощью Azure Synapse Analytics
 
@@ -48,15 +48,15 @@ ms.locfileid: "93310699"
 
     **В Windows:**
 
-Используйте программу извлечения, например [7-Zip](https://www.7-zip.org/) или [WinZip](https://www.winzip.com/), чтобы извлечь файл в каталог bin со всеми опубликованными двоичными файлами.
+    Используйте программу извлечения, например [7-Zip](https://www.7-zip.org/) или [WinZip](https://www.winzip.com/), чтобы извлечь файл в каталог bin со всеми опубликованными двоичными файлами.
 
-     **On Linux:**
+    **В Linux:**
 
-     1. Open a bash shell and cd into the bin directory with all the published binaries and run the following command.
+    Откройте оболочку Bash и компакт-диск в каталоге bin со всеми опубликованными двоичными файлами и выполните следующую команду.
 
-       ```bash
-       zip -r publish.zip
-       ```
+    ```bash
+    zip -r publish.zip
+    ```
 
 ## <a name="net-for-apache-spark-in-azure-synapse-analytics-notebooks"></a>.NET для Apache Spark в записных книжках Azure Synapse Analytics 
 

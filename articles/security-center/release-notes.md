@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/27/2020
 ms.author: memildin
-ms.openlocfilehash: 6de06e4ab9a302517a09b34de56c1b5535b245a9
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 375dff1dacc949dd4373bbf26908feb504750224
+ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357816"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94372347"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -32,6 +32,12 @@ ms.locfileid: "93357816"
 
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
+
+В ноябре добавлены следующие обновления:
+
+- [добавлены 29 рекомендаций для предварительной версии, чтобы повысить охват тестов производительности системы безопасности Azure](#29-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark);
+- [на панель мониторинга соответствия нормативным требованиям в Центре безопасности добавлен стандарт NIST SP 800 171 R2](#nist-sp-800-171-r2-added-to-security-centers-regulatory-compliance-dashboard).
+
 
 ### <a name="29-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark"></a>Добавлены 29 рекомендаций для предварительной версии, чтобы повысить охват Тестов производительности системы безопасности Azure
 
@@ -61,10 +67,21 @@ ms.locfileid: "93357816"
 - [Дополнительные сведения о Базе данных Azure для PostgreSQL](../postgresql/overview.md).
 
 
+### <a name="nist-sp-800-171-r2-added-to-security-centers-regulatory-compliance-dashboard"></a>На панель мониторинга соответствия нормативным требованиям в Центре безопасности добавлен стандарт NIST SP 800 171 R2
+
+Стандарт NIST SP 800-171 R2 теперь доступен как встроенная инициатива для использования с панелью мониторинга соответствия нормативным требованиям в Центре безопасности Azure. Сопоставления для элементов управления описаны в статье [Сведения о встроенной инициативе по соответствию требованиям стандарта NIST SP 800-171 R2](../governance/policy/samples/nist-sp-800-171-r2.md). 
+
+Чтобы применить стандарт к подпискам и постоянно отслеживать состояние соответствия требованиям, воспользуйтесь инструкциями из статьи [Настройка набора стандартов на панели мониторинга соответствия нормативным требованиям](update-regulatory-compliance-packages.md).
+
+:::image type="content" source="media/release-notes/nist-sp-800-171-r2-standard.png" alt-text="Стандарт NIST SP 800 171 R2 на панели мониторинга соответствия нормативным требованиям в Центре безопасности":::
+
+Дополнительные сведения об этом стандарте соответствия см. на странице описания [NIST SP 800-171 R2](https://csrc.nist.gov/publications/detail/sp/800-171/rev-2/final) (специальной публикации Национального института стандартов и технологий).
+
 
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 
+В октябре добавлены следующие обновления:
 - [Оценка уязвимостей для компьютеров в локальной среде и нескольких облаках (предварительная версия)](#vulnerability-assessment-for-on-premise-and-multi-cloud-machines-preview)
 - [Добавлена рекомендация Брандмауэра Azure (предварительная версия)](#azure-firewall-recommendation-added-preview)
 - [Рекомендация "В службах Kubernetes нужно определить разрешенные диапазоны IP-адресов" обновлена с помощью быстрого исправления](#authorized-ip-ranges-should-be-defined-on-kubernetes-services-recommendation-updated-with-quick-fix)

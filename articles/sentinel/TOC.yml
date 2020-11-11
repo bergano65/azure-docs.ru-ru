@@ -199,6 +199,8 @@
           href: bookmarks.md
         - name: Поиск с помощью потоковой передачи
           href: livestream.md
+        - name: "Управление запросами поиска с помощью REST\_API"
+          href: hunting-with-rest-api.md
     - name: Удаление Azure Sentinel
       href: offboard.md
 - name: Справочник (новый)

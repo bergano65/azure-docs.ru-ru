@@ -7,12 +7,12 @@ ms.date: 08/27/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 3fdc9a9f99b239f68022067a5aedbc7e6e0d12a4
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 7423114d2da23207dfcc1a329675b8c902b1f320
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287493"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445546"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Проверка подлинности в Azure Key Vault
 
@@ -62,7 +62,7 @@ Key Vault поддерживает два отдельных уровня авт
 
     Сейчас Key Vault поддерживает роль [Участник](../../role-based-access-control/built-in-roles.md#key-vault-contributor), которая позволяет выполнять операции управления с ресурсами Key Vault. Также предоставляются предварительные версии некоторых других ролей. Кроме того, вы можете создавать пользовательские роли, как описано в статье [Пользовательские роли Azure](../../role-based-access-control/custom-roles.md).
 
-    Общие сведения о ролях см. в статье [Что такое управление доступом на основе ролей в Azure (RBAC)?](../../role-based-access-control/overview.md).
+    Общие сведения о ролях см. в статье [Что такое управление доступом на основе ролей в Azure (Azure RBAC)?](../../role-based-access-control/overview.md)
 
 
 > [!IMPORTANT]
