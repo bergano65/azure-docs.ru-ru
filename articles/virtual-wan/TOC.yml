@@ -15,10 +15,6 @@
       href: virtual-wan-expressroute-portal.md
 - name: Основные понятия
   items:
-    - name: Безопасность
-      items:
-        - name: Основные способы защиты
-          href: security-baseline.md
     - name: Дистанционная работа
       items:
         - name: Поддержка дистанционной работы
@@ -109,6 +105,8 @@
           href: about-vpn-profile-download.md
         - name: Глобальный профиль и профиль на основе концентратора
           href: global-hub-profile.md
+        - name: "Настройка VPN-клиента Azure для Windows\_10"
+          href: openvpn-azure-ad-client.md
         - name: Настройка клиентов OpenVPN
           href: howto-openvpn-clients.md?
         - name: Настройка VPN-туннеля Always On для пользователя
@@ -119,8 +117,6 @@
           href: openvpn-azure-ad-mfa.md
         - name: "Настройка проверки подлинности Azure\_AD"
           href: virtual-wan-point-to-site-azure-ad.md
-        - name: "Настройка VPN-клиента Azure для Windows\_10"
-          href: openvpn-azure-ad-client.md
         - name: "Настройка проверка подлинности Azure\_AD в нескольких приложениях"
           href: openvpn-azure-ad-tenant-multi-app.md
     - name: Маршрутизация

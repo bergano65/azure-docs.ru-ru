@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 10/19/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9dbed0de3cf6cc911111825a75430d0c616f4dc4
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: d391586ade9e9a58344f9b1666802a453770152a
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217589"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94386611"
 ---
 Клиентская библиотека Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение C#. Из этого краткого руководства вы узнаете, как создать экземпляр клиента, отправить запрос и вывести ответ.
 
@@ -36,7 +36,7 @@ ms.locfileid: "92217589"
 > [!TIP]
 > Получите последнюю версию кода, предоставленного в решении Visual Studio, с сайта [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/).
 
-Первым шагом является создание проекта консольного приложения. Если вам требуется помощь с настройкой проекта консольного приложения, см. статью [Руководство по программированию на C#. Создание первой программы Hello World](https://docs.microsoft.com/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Чтобы использовать в приложении SDK Поиска в Интернете Bing, необходимо установить `Microsoft.Azure.CognitiveServices.Search.WebSearch` с помощью диспетчера пакетов NuGet.
+Первым шагом является создание проекта консольного приложения. Если вам требуется помощь с настройкой проекта консольного приложения, см. статью [Руководство по программированию на C#. Создание первой программы Hello World](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Чтобы использовать в приложении SDK Поиска в Интернете Bing, необходимо установить `Microsoft.Azure.CognitiveServices.Search.WebSearch` с помощью диспетчера пакетов NuGet.
 
 [Пакет SDK Поиска в Интернете](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.WebSearch/1.2.0) также устанавливает следующее:
 
@@ -424,4 +424,3 @@ dotnet run
 
 > [!div class="nextstepaction"]
 > [Примеры использования пакета SDK Cognitive Services для Node.js](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/)
-                                    

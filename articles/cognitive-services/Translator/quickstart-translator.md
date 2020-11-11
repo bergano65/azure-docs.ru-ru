@@ -12,12 +12,12 @@ ms.date: 09/14/2020
 ms.author: erhopf
 ms.custom: cog-serv-seo-aug-2020
 keywords: переводчик, служба переводчик, перевод текста, транслитерация текста, распознавание языка
-ms.openlocfilehash: 8250141c2baa92478c5929a300ec7b17b8ed7131
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 68bbb31ae87ebbb84cda752c2f4a7c1bd1116dda
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322514"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369534"
 ---
 # <a name="quickstart-get-started-with-translator"></a>Краткое руководство. Начало работы с Переводчиком
 
@@ -105,7 +105,7 @@ ms.locfileid: "93322514"
   <th>Описание</th>
   <tr>
     <td>Заголовки для проверки подлинности</td>
-    <td><em>Обязательный заголовок запроса</em>.<br/><code>Ocp-Apim-Subscription-Key</code><br/><br/><em>Заголовок запроса обязателен, если используется ресурс Cognitive Services. Он необязателен, если используется ресурс Переводчика.</em>.<br/><code>Ocp-Apim-Subscription-Region</code><br/><br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
+    <td><em>Обязательный заголовок запроса</em>.<br/><code>Ocp-Apim-Subscription-Key</code><br/><br/><em>Заголовок запроса обязателен, если используется ресурс Cognitive Services. Он необязателен, если используется ресурс Переводчика.</em>.<br/><code>Ocp-Apim-Subscription-Region</code><br/><br/>См. <a href="/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -123,7 +123,7 @@ ms.locfileid: "93322514"
 
 ## <a name="keys-and-endpoints"></a>Ключи и конечные точки
 
-Для простоты в примерах на этой странице используются жестко запрограммированные ключи и конечные точки. Не забудьте **удалить ключ из кода, когда закончите** , и **никогда не публикуйте его в открытом доступе**. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security).
+Для простоты в примерах на этой странице используются жестко запрограммированные ключи и конечные точки. Не забудьте **удалить ключ из кода, когда закончите** , и **никогда не публикуйте его в открытом доступе**. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](../cognitive-services-security.md).
 
 ## <a name="translate-text"></a>Перевод текста 
 
@@ -686,7 +686,7 @@ print(json.dumps(response, sort_keys=True, ensure_ascii=False, indent=4, separat
 
 ### <a name="detect-source-language-without-translation"></a>Определение языка исходного текста без перевода
 
-Службу "Переводчик" можно использовать для определения языка исходного текста без выполнения перевода. Для этого используется конечная точка [`/detect`](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect). 
+Службу "Переводчик" можно использовать для определения языка исходного текста без выполнения перевода. Для этого используется конечная точка [`/detect`](./reference/v3-0-detect.md). 
 
 # <a name="c"></a>[C#](#tab/csharp)
 

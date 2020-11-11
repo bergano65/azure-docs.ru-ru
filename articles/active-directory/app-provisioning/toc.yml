@@ -12,6 +12,8 @@
   items:
     - name: Создание конечной точки SCIM и настройка подготовки
       href: use-scim-to-provision-users-and-groups.md
+    - name: Настройка сопоставлений атрибутов
+      href: customize-application-attributes.md
     - name: Руководства по подготовке определенных приложений
       href: /azure/active-directory/saas-apps
 - name: Основные понятия
@@ -30,8 +32,6 @@
   items:
     - name: Настройка подготовки для приложения из коллекции
       href: configure-automatic-user-provisioning-portal.md
-    - name: Настройка сопоставлений атрибутов
-      href: customize-application-attributes.md
     - name: Включение и пользователей и групп в область и их исключение оттуда
       items:
         - name: Фильтрация подготавливаемых пользователей или групп по областям

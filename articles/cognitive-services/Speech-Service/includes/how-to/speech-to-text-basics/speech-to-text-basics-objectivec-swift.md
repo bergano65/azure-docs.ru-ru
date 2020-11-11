@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 9/22/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 8eb74d13c15be619512376da326a94876563f898
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: bc67c3433c939be39453c954ada1171dc210b692
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91761637"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425162"
 ---
 Вы можете преобразовывать речь в текст с помощью пакета SDK службы "Речь" для Swift и Objective-C.
 
@@ -27,7 +27,4 @@ ms.locfileid: "91761637"
 * [Распознавание речи в iOS с помощью Swift](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/swift/ios/from-microphone)
 * [Дополнительные примеры для Objective-C в iOS](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/objective-c/ios)
 
-Мы также предоставляем [онлайн-справку по пакету SDK службы "Речь" для Objective-C](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
-
-
-
+Мы также предоставляем [онлайн-справку по пакету SDK службы "Речь" для Objective-C](/objectivec/cognitive-services/speech/).

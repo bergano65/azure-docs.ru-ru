@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: aahi
-ms.openlocfilehash: 6bcfb9057739277c1f57b5ebd98b99877f759e9b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 8362f5b4d3436e83cbd033fcc3cd088d52122b58
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93094104"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94379860"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-php"></a>Краткое руководство. Поиск видео с помощью REST API Bing для поиска видео и PHP
 
@@ -36,7 +36,7 @@ ms.locfileid: "93094104"
 
 ## <a name="running-the-application"></a>Запуск приложения
 
-[API Bing для поиска видео](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference) возвращает результаты поиска видео из поисковой системы Bing.
+[API Bing для поиска видео](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference) возвращает результаты поиска видео из поисковой системы Bing.
 
 1. Включите поддержку безопасного HTTP-подключения в файле `php.ini`, раскомментировав строку `;extension=php_openssl.dll`, как описано в приведенном ниже коде.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.

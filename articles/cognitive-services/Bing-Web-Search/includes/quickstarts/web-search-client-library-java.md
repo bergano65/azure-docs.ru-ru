@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 03/05/2020
 ms.custom: devx-track-java
 ms.author: aahi
-ms.openlocfilehash: 3723345b10524b2063b3ec8fe43608f49b5b279b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 042a3edf8efe080064a3c41fd55975a40bf47e5e
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87375530"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94386591"
 ---
 Клиентская библиотека Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение Java. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
 
@@ -24,7 +24,7 @@ ms.locfileid: "87375530"
 
 Для работы с этим кратким руководством вам потребуется следующее:
 
-* [пакет JDK 7 или 8](https://aka.ms/azure-jdks);
+* [пакет JDK 7 или 8](/azure/developer/java/fundamentals/java-jdk-long-term-support);
 * [Apache Maven](https://maven.apache.org/download.cgi) или другой инструмент автоматизации сборки;
 * ключ подписки;
 
@@ -295,4 +295,4 @@ mvn compile exec:java
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Ссылка на пакет SDK для Java в Azure](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingwebsearchapi?view=azure-java-stable)
+* [Ссылка на пакет SDK для Java в Azure](/java/api/overview/azure/cognitiveservices/client/bingwebsearchapi?view=azure-java-stable)

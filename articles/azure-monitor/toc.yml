@@ -114,15 +114,7 @@
     - name: Источники данных
       href: platform/data-sources.md
     - name: Платформа данных
-      items:
-        - name: Обзор
-          href: platform/data-platform.md
-        - name: Журналы
-          href: platform/data-platform-logs.md
-        - name: Метрики
-          href: platform/data-platform-metrics.md
-        - name: Потоковая передача данных в Центры событий
-          href: platform/stream-monitoring-data-event-hubs.md
+      href: platform/data-platform.md
     - name: Безопасность данных
       items:
         - name: Данные журнала
@@ -137,7 +129,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: видны узлы
+    - name: Предупреждения
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -188,98 +180,13 @@
               href: app/pricing.md
             - name: Использование данных журнала и затраты на использование
               href: platform/manage-cost-storage.md
-    - name: Журналы платформы
+    - name: Журналы Azure Monitor
       items:
         - name: Обзор
-          displayName: 'Platform logs, Resource logs, Activity log'
-          href: platform/platform-logs-overview.md
-        - name: Журнал действий
-          href: platform/activity-log.md
-        - name: Журналы ресурсов
-          href: platform/resource-logs.md
-        - name: Параметры диагностики
-          displayName: 'Platform logs, Resource logs, Activity log'
-          href: platform/diagnostic-settings.md
-    - name: Log Analytics
-      items:
-        - name: Обзор
-          displayname: 'Log Analytics, log query, log queries, query, queries'
-          href: log-query/log-query-overview.md
-        - name: Учебник
-          displayname: 'Log Analytics workspace, log query, log queries, query, queries'
-          href: log-query/get-started-portal.md
-        - name: Область запроса
-          href: log-query/scope.md
-        - name: Отправка запросов с помощью Azure Data Explorer
-          href: platform/azure-data-explorer-monitor-proxy.md
-        - name: Запросы журнала
-          items:
-            - name: Стандартные столбцы
-              href: platform/log-standard-columns.md
-            - name: Аудит запросов
-              href: log-query/query-audit.md
-            - name: Оптимизация запросов
-              href: log-query/query-optimization.md
-            - name: Функции
-              href: log-query/functions.md
-            - name: Анализ текстовых данных
-              href: log-query/parse-text.md
-            - name: Примеры запросов
-              href: log-query/saved-queries.md
-            - name: Группы компьютеров
-              href: platform/computer-groups.md
-        - name: Язык запросов
-          items:
-            - name: Справочник по KQL
-              href: /azure/data-explorer/kusto/query/
-            - name: Отличие от Azure Data Explorer
-              href: log-query/data-explorer-difference.md
-            - name: Примеры
-              href: log-query/examples.md
-            - name: Примеры смарт-аналитики
-              href: log-query/smart-analytics.md
-            - name: Занятия
-              items:
-                - name: Операции со строками
-                  href: log-query/string-operations.md
-                - name: Операции с датой и временем
-                  href: log-query/datetime-operations.md
-                - name: Агрегатные функции
-                  href: log-query/aggregations.md
-                - name: Расширенные агрегатные функции
-                  href: log-query/advanced-aggregations.md
-                - name: Соединения
-                  href: log-query/joins.md
-                - name: JSON и структуры данных
-                  href: log-query/json-data-structures.md
-                - name: Составление расширенных запросов
-                  href: log-query/advanced-query-writing.md
-                - name: Схемы и диаграммы
-                  href: log-query/charts.md
-                - name: Поисковые запросы
-                  href: log-query/search-queries.md
-            - name: Памятки
-              items:
-                - name: SQL
-                  href: log-query/sql-cheatsheet.md
-                - name: Splunk
-                  href: log-query/splunk-cheatsheet.md
-        - name: Запросы между несколькими ресурсами
-          items:
-            - name: Обзор
-              href: log-query/cross-workspace-query.md
-            - name: Выражение app
-              href: log-query/app-expression.md
-            - name: Выражение workspace
-              href: log-query/workspace-expression.md
-            - name: Выражение resource
-              href: log-query/resource-expression.md
-            - name: Централизация ресурсов данных приложения
-              href: log-query/unify-app-resource-data.md
+          displayname: 'Azure Monitor Logs, Logs, Log Analytics, log query, log queries, query, queries'
+          href: platform/data-platform-logs.md
         - name: Рабочие области и кластеры
           items:
-            - name: Проектирование развертывания рабочей области
-              href: platform/design-logs-deployment.md
             - name: Создание рабочей области
               items:
                 - name: Портал Azure
@@ -288,6 +195,8 @@
                   href: learn/quick-create-workspace-cli.md
                 - name: PowerShell
                   href: platform/powershell-workspace-configuration.md
+            - name: Проектирование развертывания рабочей области
+              href: platform/design-logs-deployment.md
             - name: Мониторинг рабочей области
               href: platform/monitor-workspace.md
             - name: Удаление и восстановление рабочей области
@@ -301,6 +210,50 @@
               href: platform/service-providers.md
             - name: Кластеры категории "Выделенный"
               href: log-query/logs-dedicated-clusters.md
+        - name: Log Analytics
+          items:
+            - name: Обзор
+              displayname: 'Log Analytics, log query, log queries, query, queries'
+              href: log-query/log-analytics-overview.md
+            - name: Учебник
+              displayname: 'Log Analytics workspace, log query, log queries, query, queries'
+              href: log-query/log-analytics-tutorial.md
+            - name: Область запроса
+              href: log-query/scope.md
+            - name: Примеры запросов
+              href: log-query/example-queries.md
+        - name: Запросы журнала
+          items:
+            - name: Обзор
+              displayname: 'log query, log queries, query, queries'
+              href: log-query/log-query-overview.md
+            - name: Справочник по KQL
+              href: /azure/data-explorer/kusto/query/
+            - name: Примеры запросов
+              href: /azure/data-explorer/kusto/query/samples?&pivots=azuremonitor
+            - name: Стандартные столбцы
+              href: platform/log-standard-columns.md
+            - name: Оптимизация запросов
+              href: log-query/query-optimization.md
+            - name: Функции
+              href: log-query/functions.md
+            - name: Анализ текстовых данных
+              href: log-query/parse-text.md
+            - name: Группы компьютеров
+              href: platform/computer-groups.md
+            - name: Запросы между несколькими ресурсами
+              items:
+                - name: Обзор
+                  displayname: cross-resource queries
+                  href: log-query/cross-workspace-query.md
+                - name: Выражение app
+                  href: log-query/app-expression.md
+                - name: Выражение workspace
+                  href: log-query/workspace-expression.md
+                - name: Выражение resource
+                  href: log-query/resource-expression.md
+                - name: Централизация ресурсов данных приложения
+                  href: log-query/unify-app-resource-data.md
         - name: Экспорт данных
           items:
             - name: Экспорт данных рабочей области
@@ -309,16 +262,33 @@
               href: platform/logs-export-logic-app.md
             - name: Запросы к экспортированным данным с использованием Data Explorer
               href: platform/azure-data-explorer-query-storage.md
-    - name: Обозреватель метрик
+    - name: Метрики Azure Monitor
       items:
-        - name: Начало работы с обозревателем метрик
-          href: platform/metrics-getting-started.md
-        - name: Расширенные возможности обозревателя метрик
-          href: platform/metrics-charts.md
-        - name: Примеры диаграмм метрик
-          href: platform/metric-chart-samples.md
-        - name: Устранение неполадок с диаграммами метрик
-          href: platform/metrics-troubleshoot.md
+        - name: Обзор
+          displayname: Metrics
+          href: platform/data-platform-metrics.md
+        - name: Обозреватель метрик
+          items:
+            - name: Начало работы с обозревателем метрик
+              href: platform/metrics-getting-started.md
+            - name: Расширенные возможности обозревателя метрик
+              href: platform/metrics-charts.md
+            - name: Примеры диаграмм метрик
+              href: platform/metric-chart-samples.md
+            - name: Устранение неполадок с диаграммами метрик
+              href: platform/metrics-troubleshoot.md
+    - name: Журналы платформы
+      items:
+        - name: Обзор
+          displayName: 'Platform logs, Resource logs, Activity log'
+          href: platform/platform-logs-overview.md
+        - name: Журнал действий
+          href: platform/activity-log.md
+        - name: Журналы ресурсов
+          href: platform/resource-logs.md
+        - name: Параметры диагностики
+          displayName: 'Platform logs, Resource logs, Activity log'
+          href: platform/diagnostic-settings.md
     - name: Сбор данных
       items:
         - name: Правила сбора данных

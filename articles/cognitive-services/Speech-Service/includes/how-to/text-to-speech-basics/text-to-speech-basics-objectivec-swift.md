@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 9/22/2020
 ms.author: v-demjoh
-ms.openlocfilehash: e2551952b2d70199b73ac7972a6a6934aa34dd2a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 213d2a0e6f5c156ee0592a1f1389e1fd6e569b29
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91332528"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425336"
 ---
 Вы можете выполнить синтез речи из текста с помощью пакета SDK службы "Речь" для Swift и Objective-C.
 
@@ -27,4 +27,4 @@ ms.locfileid: "91332528"
 * [Синтез речи в iOS с помощью Swift](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/swift/ios/text-to-speech)
 * [Дополнительные примеры для Objective-C в iOS](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/objective-c/ios)
 
-Мы также предоставляем [онлайн-справку по пакету SDK службы "Речь" для Objective-C](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
+Мы также предоставляем [онлайн-справку по пакету SDK службы "Речь" для Objective-C](/objectivec/cognitive-services/speech/).

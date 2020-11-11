@@ -158,6 +158,8 @@
           items:
             - name: Управление резервными копиями виртуальных машин Azure
               href: backup-azure-manage-vms.md
+            - name: Управление точками восстановления
+              href: manage-recovery-points.md
     - name: "Резервное копирование базы данных SQL\_Server на виртуальной машине Azure"
       items:
         - name: Обзор

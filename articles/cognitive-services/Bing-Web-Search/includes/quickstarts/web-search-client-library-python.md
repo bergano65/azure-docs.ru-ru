@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: bdbd183ba161c96e0ed8e160ce602da2ec30dfb7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 13e08d2c273b242a902203abf0879fd11fbdf801
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85940416"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94386646"
 ---
 Клиентская библиотека Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение Python. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
 
@@ -177,7 +177,7 @@ python -m pip install azure-cognitiveservices-search-websearch
 
 ### <a name="limit-the-number-of-results-returned-by-bing"></a>Ограничение числа результатов, возвращаемых Bing
 
-В этом примере используются параметры `count` и `offset`, которые позволяют ограничить число результатов, возвращаемых [методом `search`](https://docs.microsoft.com/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python) пакета SDK. Для первого результата возвращаются `name` и `url`.
+В этом примере используются параметры `count` и `offset`, которые позволяют ограничить число результатов, возвращаемых [методом `search`](/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python) пакета SDK. Для первого результата возвращаются `name` и `url`.
 
 1. Добавьте следующий код в проект Python:
 
@@ -266,7 +266,7 @@ python -m pip install azure-cognitiveservices-search-websearch
 
 ### <a name="use-safe-search-answer-count-and-the-promote-filter"></a>Использование безопасного поиска, счетчика ответов и фильтра повышения уровня
 
-В этом примере используются параметры `answer_count`, `promote` и `safe_search` для фильтрации результатов поиска в [методе `search`](https://docs.microsoft.com/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python) пакета SDK. Для первого результата возвращаются `name` и `url`.
+В этом примере используются параметры `answer_count`, `promote` и `safe_search` для фильтрации результатов поиска в [методе `search`](/python/api/azure-cognitiveservices-search-websearch/azure.cognitiveservices.search.websearch.operations.weboperations?view=azure-python) пакета SDK. Для первого результата возвращаются `name` и `url`.
 
 1. Добавьте следующий код в проект Python:
 
@@ -320,4 +320,4 @@ python -m pip install azure-cognitiveservices-search-websearch
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Справочник по пакету SDK Azure для Python](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/websearch)
+* [Справочник по пакету SDK Azure для Python](/python/api/azure-cognitiveservices-search-websearch/?view=azure-python)

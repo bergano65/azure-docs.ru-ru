@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 10/22/2020
 ms.author: nitinme
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 82531466c80917087ca007900ca79b3485f38a21
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: d134532e7f285f391b6791a9fc73d5e3251ddac8
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546268"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369415"
 ---
 # <a name="what-are-azure-cognitive-services"></a>Общие сведения об Azure Cognitive Services
 
@@ -39,59 +39,59 @@ Azure Cognitive Services — это облачные службы с REST API 
 
 |Имя службы|Описание службы|
 |:-----------|:------------------|
-|[Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/ "API Компьютерного зрения")|Служба Компьютерного зрения предоставляет доступ к передовым когнитивным алгоритмам обработки изображений и возврата данных.|
-|[Пользовательское визуальное распознавание](https://docs.microsoft.com/azure/cognitive-services/Custom-Vision-Service/home "Служба "Пользовательское визуальное распознавание"")|Пользовательская служба визуального распознавания позволяет создавать пользовательские классификаторы изображений.|
-|[Распознавание лиц](https://docs.microsoft.com/azure/cognitive-services/face/ "Распознавание лиц")| Служба "Распознавание лиц" обеспечивает доступ к расширенным алгоритмам, позволяя определять и распознавать лица на основе атрибутов.|
-|[Распознаватель документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/ "Распознаватель документов")|Распознаватель документов идентифицирует и извлекает пары "ключ —значение" и данные таблиц из документов, а затем выводит структурированные данные, включая отношения в исходном файле.|
-|[Распознаватель рукописного текста](https://docs.microsoft.com/azure/cognitive-services/ink-recognizer/ "Распознаватель рукописного текста") (прекращение использования)|Распознаватель рукописного текста позволяет распознавать и анализировать данные мазка кистью рукописного ввода, документы и рукописное содержимое, а также выводить структуру документа со всеми распознанными объектами.|
-|[Индексатор видео](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview "Индексатор видео")|Индексатор видео позволяет извлекать аналитические сведения из видео.|
+|[Компьютерное зрение](./computer-vision/index.yml "API Компьютерного зрения")|Служба Компьютерного зрения предоставляет доступ к передовым когнитивным алгоритмам обработки изображений и возврата данных.|
+|[Пользовательское визуальное распознавание](./custom-vision-service/overview.md "Служба "Пользовательское визуальное распознавание"")|Пользовательская служба визуального распознавания позволяет создавать пользовательские классификаторы изображений.|
+|[Распознавание лиц](./face/index.yml "Распознавание лиц")| Служба "Распознавание лиц" обеспечивает доступ к расширенным алгоритмам, позволяя определять и распознавать лица на основе атрибутов.|
+|[Распознаватель документов](./form-recognizer/index.yml "Распознаватель документов")|Распознаватель документов идентифицирует и извлекает пары "ключ —значение" и данные таблиц из документов, а затем выводит структурированные данные, включая отношения в исходном файле.|
+|[Распознаватель рукописного текста](./ink-recognizer/index.yml "Распознаватель рукописного текста") (прекращение использования)|Распознаватель рукописного текста позволяет распознавать и анализировать данные мазка кистью рукописного ввода, документы и рукописное содержимое, а также выводить структуру документа со всеми распознанными объектами.|
+|[Индексатор видео](../media-services/video-indexer/video-indexer-overview.md "Индексатор видео")|Индексатор видео позволяет извлекать аналитические сведения из видео.|
 
 ## <a name="speech-apis"></a>API, связанные с речью
 
 |Имя службы|Описание службы|
 |:-----------|:------------------|
-|[Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/ "Служба "Речь"")|Служба "Речь" позволяет добавлять в приложения функции с поддержкой речи. Служба речи включает в себя различные возможности, такие как преобразование речи в текст, преобразование текста в речь и многое другое.|
+|[Служба распознавания речи](./speech-service/index.yml "Служба "Речь"")|Служба "Речь" позволяет добавлять в приложения функции с поддержкой речи. Служба речи включает в себя различные возможности, такие как преобразование речи в текст, преобразование текста в речь и многое другое.|
 <!--
-|[Speaker Recognition API](https://docs.microsoft.com/azure/cognitive-services/speaker-recognition/home "Speaker Recognition API") (Preview)|The Speaker Recognition API provides algorithms for speaker identification and verification.|
-|[Bing Speech](https://docs.microsoft.com/azure/cognitive-services/speech/home "Bing Speech") (Retiring)|The Bing Speech API provides you with an easy way to create speech-enabled features in your applications.|
-|[Translator Speech](https://docs.microsoft.com/azure/cognitive-services/translator-speech/ "Translator Speech") (Retiring)|Translator Speech is a machine translation service.|
+|[Speaker Recognition API](./speech-service/speaker-recognition-overview.md "Speaker Recognition API") (Preview)|The Speaker Recognition API provides algorithms for speaker identification and verification.|
+|[Bing Speech](./speech-service/how-to-migrate-from-bing-speech.md "Bing Speech") (Retiring)|The Bing Speech API provides you with an easy way to create speech-enabled features in your applications.|
+|[Translator Speech](/azure/cognitive-services/translator-speech/ "Translator Speech") (Retiring)|Translator Speech is a machine translation service.|
 -->
 ## <a name="language-apis"></a>API, связанные с языком
 
 |Имя службы|Описание службы|
 |:-----------|:------------------|
-|[Распознавание речи (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/ "Распознавание речи")|Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов.|
-|[QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/index "QnA Maker")|Служба QnA Maker позволяет создавать службу для работы с вопросами и ответами на основе частично структурированного содержимого.|
-|[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/ "Анализ текста")| Служба "Анализ текста" — это служба обработки естественного языка, выполняющая анализ тональности необработанного текста, извлечение ключевых фраз и определение языка.|
-|[Переводчик](https://docs.microsoft.com/azure/cognitive-services/translator/ "API перевода")|Переводчик выполняет машинный перевод текстов почти в реальном времени.|
-| [Иммерсивное средство чтения](https://docs.microsoft.com/azure/cognitive-services/immersive-reader/ "Иммерсивное средство чтения") | Иммерсивное средство чтения добавляет в приложения возможности чтения и анализа данных экрана. |
+|[Распознавание речи (LUIS)](./luis/index.yml "Распознавание речи")|Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов.|
+|[QnA Maker](./qnamaker/index.yml "QnA Maker")|Служба QnA Maker позволяет создавать службу для работы с вопросами и ответами на основе частично структурированного содержимого.|
+|[Анализ текста](./text-analytics/index.yml "Анализ текста")| Служба "Анализ текста" — это служба обработки естественного языка, выполняющая анализ тональности необработанного текста, извлечение ключевых фраз и определение языка.|
+|[Переводчик](./translator/index.yml "API перевода")|Переводчик выполняет машинный перевод текстов почти в реальном времени.|
+| [Иммерсивное средство чтения](./immersive-reader/index.yml "Иммерсивное средство чтения") | Иммерсивное средство чтения добавляет в приложения возможности чтения и анализа данных экрана. |
 
 ## <a name="decision-apis"></a>API-интерфейсы принятия решений
 
 |Имя службы|Описание службы|
 |:-----------|:------------------|
-|[Детектор аномалий](https://docs.microsoft.com/azure/cognitive-services/anomaly-detector/ "Детектор аномалий") |Детектор аномалий позволяет отслеживать и обнаруживать отклонения в данных временных рядов.|
-|[Content Moderator](https://docs.microsoft.com/azure/cognitive-services/content-moderator/overview "Content Moderator")|Content Moderator позволяет отслеживать потенциально оскорбительное, нежелательное и представляющее риск содержимое.|
-|[Помощник по метрикам](https://docs.microsoft.com/azure/cognitive-services/metrics-advisor) (предварительная версия) | Помощник по метрикам обеспечивает настраиваемое обнаружение аномалий для многовариантных данных временных рядов с использованием полнофункционального веб-портала.|
-|[Персонализатор](https://docs.microsoft.com/azure/cognitive-services/personalizer/ "Персонализатор")|Персонализатор позволяет выбирать максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.|
+|[Детектор аномалий](./anomaly-detector/index.yml "Детектор аномалий") |Детектор аномалий позволяет отслеживать и обнаруживать отклонения в данных временных рядов.|
+|[Content Moderator](./content-moderator/overview.md "Content Moderator")|Content Moderator позволяет отслеживать потенциально оскорбительное, нежелательное и представляющее риск содержимое.|
+|[Помощник по метрикам](./metrics-advisor/index.yml) (предварительная версия) | Помощник по метрикам обеспечивает настраиваемое обнаружение аномалий для многовариантных данных временных рядов с использованием полнофункционального веб-портала.|
+|[Персонализатор](./personalizer/index.yml "Персонализатор")|Персонализатор позволяет выбирать максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.|
 
 ## <a name="search-apis"></a>Интерфейсы API для поиска
 
 > [!NOTE]
-> Хотите узнать о [Когнитивном поиске Azure](https://docs.microsoft.com/azure/search/)? Хотя для некоторых задач используется Cognitive Services, это другая технология поиска, поддерживающая иные сценарии.
+> Хотите узнать о [Когнитивном поиске Azure](../search/index.yml)? Хотя для некоторых задач используется Cognitive Services, это другая технология поиска, поддерживающая иные сценарии.
 
 |Имя службы|Описание службы|
 |:-----------|:------------------|
-|[Поиск новостей Bing](https://docs.microsoft.com/azure/cognitive-services/bing-news-search/ "API Поиска новостей Bing")|Служба "Поиск новостей Bing" выполняет поиск новостных статей релевантных запросу пользователя.|
-|[Поиск видео Bing](https://docs.microsoft.com/azure/cognitive-services/Bing-Video-Search/ "API Поиска видео Bing")|Служба "Поиск видео Bing" выполняет поиск видео, релевантных запросу пользователя.|
-|[Поиск в Интернете Bing](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/ "API Поиска в Интернете Bing")|Служба "Поиск в Интернете Bing" выполняет поиск материалов в Интернете, релевантных запросу пользователя.|
-|[Автозаполнение Bing](https://docs.microsoft.com/azure/cognitive-services/Bing-Autosuggest "API Автозаполнения Bing")|Служба "Автозаполнение Bing" предлагает отправлять в Bing часть слова поискового запроса и получать список предлагаемых запросов.|
-|[Пользовательский поиск Bing](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search "Пользовательский поиск Bing")|Служба "Пользовательский поиск Bing" позволяет выполнять пользовательскую настройку функции поиска требуемых материалов.|
-|[Поиск сущностей Bing](https://docs.microsoft.com/azure/cognitive-services/bing-entities-search/ "API Поиска сущностей Bing")|Служба "Поиск сущностей Bing" возвращает сведения о сущностях, которые Bing определяет как релевантные запросу пользователя.|
-|[Поиск изображений Bing](https://docs.microsoft.com/azure/cognitive-services/bing-image-search "API Поиска изображений Bing")|Служба "Поиск изображений Bing" отображает изображения, релевантные запросу пользователя.|
-|[Визуальный поиск Bing](https://docs.microsoft.com/azure/cognitive-services/bing-visual-search "Визуальный поиск Bing")|Служба "Визуальный поиск Bing" возвращает аналитические сведения об изображении, например визуально схожие изображения, ресурсы, на которых можно купить продукты, найденные на изображении, а также связанные результаты поиска.|
-|[Поиск местных компаний Bing](https://docs.microsoft.com/azure/cognitive-services/bing-local-business-search/ "Поиск местных компаний Bing")| С помощью API Поиска местных компаний Bing для приложений можно находить контактную информацию о местных компаниях, а также сведения об их расположении на основе поисковых запросов.|
-|[Проверка орфографии Bing](https://docs.microsoft.com/azure/cognitive-services/bing-spell-check/ "API Проверки орфографии Bing")|Служба "Проверка орфографии Bing" предназначена для контекстной проверки грамматики и орфографии.|
+|[Поиск новостей Bing](/azure/cognitive-services/bing-news-search/ "API Поиска новостей Bing")|Служба "Поиск новостей Bing" выполняет поиск новостных статей релевантных запросу пользователя.|
+|[Поиск видео Bing](/azure/cognitive-services/Bing-Video-Search/ "API Поиска видео Bing")|Служба "Поиск видео Bing" выполняет поиск видео, релевантных запросу пользователя.|
+|[Поиск в Интернете Bing](./bing-web-search/index.yml "API Поиска в Интернете Bing")|Служба "Поиск в Интернете Bing" выполняет поиск материалов в Интернете, релевантных запросу пользователя.|
+|[Автозаполнение Bing](/azure/cognitive-services/Bing-Autosuggest "API Автозаполнения Bing")|Служба "Автозаполнение Bing" предлагает отправлять в Bing часть слова поискового запроса и получать список предлагаемых запросов.|
+|[Пользовательский поиск Bing](/azure/cognitive-services/bing-custom-search "Пользовательский поиск Bing")|Служба "Пользовательский поиск Bing" позволяет выполнять пользовательскую настройку функции поиска требуемых материалов.|
+|[Поиск сущностей Bing](/azure/cognitive-services/bing-entities-search/ "API Поиска сущностей Bing")|Служба "Поиск сущностей Bing" возвращает сведения о сущностях, которые Bing определяет как релевантные запросу пользователя.|
+|[Поиск изображений Bing](/azure/cognitive-services/bing-image-search "API Поиска изображений Bing")|Служба "Поиск изображений Bing" отображает изображения, релевантные запросу пользователя.|
+|[Визуальный поиск Bing](/azure/cognitive-services/bing-visual-search "Визуальный поиск Bing")|Служба "Визуальный поиск Bing" возвращает аналитические сведения об изображении, например визуально схожие изображения, ресурсы, на которых можно купить продукты, найденные на изображении, а также связанные результаты поиска.|
+|[Поиск местных компаний Bing](/azure/cognitive-services/bing-local-business-search/ "Поиск местных компаний Bing")| С помощью API Поиска местных компаний Bing для приложений можно находить контактную информацию о местных компаниях, а также сведения об их расположении на основе поисковых запросов.|
+|[Проверка орфографии Bing](/azure/cognitive-services/bing-spell-check/ "API Проверки орфографии Bing")|Служба "Проверка орфографии Bing" предназначена для контекстной проверки грамматики и орфографии.|
 
 ## <a name="development-options"></a>Варианты разработки 
 
@@ -111,7 +111,7 @@ Azure Cognitive Services — это облачные службы с REST API 
 * [Портал Azure](cognitive-services-apis-create-account.md?tabs=multiservice%2Cwindows "Портал Azure")
 * [Azure CLI](cognitive-services-apis-create-account-cli.md?tabs=windows "Azure CLI")
 * [Клиентские библиотеки пакетов Azure SDK](cognitive-services-apis-create-account-cli.md?tabs=windows "cognitive-services-apis-create-account-client-library?pivots=programming-language-csharp")
-* [Шаблоны Azure Resource Manager (ARM)](resource-manager-template.md?tabs=portal "Шаблоны Azure Resource Manager (ARM)")
+* [Шаблоны Azure Resource Manager (ARM)](./create-account-resource-manager-template.md?tabs=portal "Шаблоны Azure Resource Manager (ARM)")
 
 <!--
 ## Subscription management

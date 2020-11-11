@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/09/2020
 ms.author: v-jawe
-ms.openlocfilehash: 029cb1e59876eb01c609ef8b7ba0412ed35a2a1b
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 8a877e1773431053c5ad7344209076cb868a0ee3
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91940755"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425337"
 ---
 Из этого краткого руководства вы узнаете, как преобразовать текст в речь с помощью службы "Речь" и cURL.
 
@@ -26,7 +26,7 @@ ms.locfileid: "91940755"
 - Регион службы "Речь".
 
 Также может потребоваться изменить следующие значения.
-- Значение заголовка `X-Microsoft-OutputFormat`, которое определяет формат аудиовыхода. Список поддерживаемых форматов аудиовыхода см. в [справочнике по REST API для преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech#audio-outputs).
+- Значение заголовка `X-Microsoft-OutputFormat`, которое определяет формат аудиовыхода. Список поддерживаемых форматов аудиовыхода см. в [справочнике по REST API для преобразования текста в речь](../../../rest-text-to-speech.md#audio-outputs).
 - Голос речевого вывода. Список голосов, доступных для вашей конечной точки службы "Речь", см. в следующем разделе.
 - Выходной файл. В этом примере мы направляем ответ от сервера в файл `output.wav`.
 

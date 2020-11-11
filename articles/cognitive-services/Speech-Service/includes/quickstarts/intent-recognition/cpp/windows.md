@@ -6,12 +6,12 @@ ms.date: 04/04/2020
 ms.topic: include
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 9c0c2673acf12ddf80b77be57acc5af55e7f160c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d1fab57adfb675e8cc4ea604980e6f04a3f4a89f
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87298776"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425379"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -46,14 +46,14 @@ ms.locfileid: "87298776"
 Вставьте код в метод `recognizeIntent()`. Обязательно обновите следующие значения:
 
 * Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS.
-* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS.  Использование **идентификатор региона** из [региона](https://aka.ms/speech/sdkregion)
+* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS.  Использование **идентификатор региона** из [региона](../../../../regions.md)
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
 
 [!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=25)]
 
-В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig) (Класс SpeechConfig).
+В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](/cpp/cognitive-services/speech/speechconfig) (Класс SpeechConfig).
 
 Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 

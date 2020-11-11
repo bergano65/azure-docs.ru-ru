@@ -6,12 +6,12 @@ ms.date: 04/04/2020
 ms.topic: include
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 7572e5c5621b514c375e44ca44ddfc4102f5d714
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 44c4427540e1b94ebcaf00e6875723e0a654e9ef
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87298840"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425284"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -41,14 +41,14 @@ ms.locfileid: "87298840"
 Вставьте этот код в `quickstart.py`. Обязательно обновите следующие значения:
 
 * Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS.
-* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS. Используйте **идентификатор региона** из [региона](https://aka.ms/speech/sdkregion)
+* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS. Используйте **идентификатор региона** из [региона](../../../../regions.md)
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
 
 [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=12)]
 
-В этом примере создается объект `SpeechConfig` с использованием ключа и региона LUIS. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig) (Класс SpeechConfig).
+В этом примере создается объект `SpeechConfig` с использованием ключа и региона LUIS. Полный список доступных методов см. в статье [SpeechConfig Class](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig) (Класс SpeechConfig).
 
 Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 

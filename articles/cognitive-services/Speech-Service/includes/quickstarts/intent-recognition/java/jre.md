@@ -6,12 +6,12 @@ ms.date: 04/04/2020
 ms.topic: include
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 8bcc3e41f87570822f48a111fe98d1fdaf72679f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 09b537d82ce4e9e44c36df628d120623e69abfaf
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92470989"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94424817"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -41,14 +41,14 @@ ms.locfileid: "92470989"
 Вставьте этот код в блок try / catch в `main()`. Обязательно обновите следующие значения:
 
 * Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS.
-* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS. Используйте **идентификатор региона** из [региона](https://aka.ms/speech/sdkregion)
+* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS. Используйте **идентификатор региона** из [региона](../../../../regions.md)
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
 
 [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=27)]
 
-В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet&preserve-view=true) (Класс SpeechConfig).
+В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet) (Класс SpeechConfig).
 
 Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 
@@ -104,7 +104,7 @@ ms.locfileid: "92470989"
 
 ## <a name="build-and-run-your-app"></a>Создание и запуск приложения
 
-Нажмите клавишу <kbd>F11</kbd> или выберите **Запустить** > **Отладка** .
+Нажмите клавишу <kbd>F11</kbd> или выберите **Запустить** > **Отладка**.
 Слова, произносимые в микрофон, в течение следующих 15 секунд будут распознаны и записаны в окне консоли.
 
 ## <a name="next-steps"></a>Дальнейшие действия
