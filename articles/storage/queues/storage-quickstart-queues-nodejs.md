@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 1446b501b9d91c94c12c82755d0e31f361f8cd8f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: f72d8b332f00b3d298f4d5a1a04937f562647f9e
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92783425"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93347171"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для JavaScript
 
@@ -21,26 +21,26 @@ ms.locfileid: "92783425"
 
 Клиентскую библиотеку Хранилища очередей Azure версии 12 для JavaScript можно использовать для выполнения следующих задач.
 
-* Создание очереди
-* Добавление сообщений в очередь
-* Просмотр сообщений из очереди
-* Обновление сообщений в очереди
-* Получение сообщений из очереди
-* Удаление сообщений из очереди
-* Удаление очереди
+- Создание очереди
+- Добавление сообщений в очередь
+- Просмотр сообщений из очереди
+- Обновление сообщений в очереди
+- Получение сообщений из очереди
+- Удаление сообщений из очереди
+- Удаление очереди
 
 Дополнительные ресурсы:
 
-* [Справочная документация по API](/javascript/api/@azure/storage-queue/)
-* [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue)
-* [Пакет (диспетчер пакетов узла)](https://www.npmjs.com/package/@azure/storage-queue)
-* [Примеры](../common/storage-samples-javascript.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
+- [Справочная документация по API](/javascript/api/@azure/storage-queue/)
+- [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue)
+- [Пакет (диспетчер пакетов узла)](https://www.npmjs.com/package/@azure/storage-queue)
+- [Примеры](../common/storage-samples-javascript.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись хранения Azure — [создайте такую учетную запись](../common/storage-account-create.md).
-* Последняя версия [Node.js](https://nodejs.org/en/download/) для вашей операционной системы.
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Учетная запись хранения Azure — [создайте такую учетную запись](../common/storage-account-create.md).
+- Последняя версия [Node.js](https://nodejs.org/en/download/) для вашей операционной системы.
 
 ## <a name="setting-up"></a>Настройка
 
@@ -48,7 +48,7 @@ ms.locfileid: "92783425"
 
 ### <a name="create-the-project"></a>Создание проекта
 
-Создайте приложение Node.js с именем *queues-quickstart-v12* .
+Создайте приложение Node.js с именем *queues-quickstart-v12*.
 
 1. В окне консоли (командная строка, PowerShell или Bash) создайте каталог для проекта.
 
@@ -56,13 +56,13 @@ ms.locfileid: "92783425"
     mkdir queues-quickstart-v12
     ```
 
-1. Перейдите в только что созданный каталог *queues-quickstart-v12* .
+1. Перейдите в только что созданный каталог *queues-quickstart-v12*.
 
     ```console
     cd queues-quickstart-v12
     ```
 
-1. Создайте текстовый файл *package.json* . Этот файл определяет проект Node.js. Сохраните этот файл в каталоге *queues-quickstart-v12* . Ниже приведено содержимое файла.
+1. Создайте текстовый файл *package.json*. Этот файл определяет проект Node.js. Сохраните этот файл в каталоге *queues-quickstart-v12*. Ниже приведено содержимое файла.
 
     ```json
     {
@@ -118,7 +118,7 @@ npm install
 
     ```
 
-1. Сохраните новый файл как *queues-quickstart-v12.js* в каталоге *queues-quickstart-v12* .
+1. Сохраните новый файл как *queues-quickstart-v12.js* в каталоге *queues-quickstart-v12*.
 
 [!INCLUDE [storage-quickstart-credentials-include](../../../includes/storage-quickstart-credentials-include.md)]
 
@@ -126,9 +126,9 @@ npm install
 
 Хранилище очередей Azure — это служба для хранения большого количества сообщений. Максимальный размер сообщения в очереди составляет 64 КБ. Очередь может содержать миллионы сообщений вплоть до лимита всей емкости учетной записи хранения. Очереди обычно используются для создания списка невыполненных заданий для асинхронной обработки. В Хранилище очередей предлагается три типа ресурсов:
 
-* учетная запись хранения;
-* очередь в учетной записи хранилища;
-* сообщения в очереди.
+- учетная запись хранения;
+- очередь в учетной записи хранилища;
+- сообщения в очереди.
 
 На следующей схеме показана связь между этими ресурсами.
 
@@ -136,22 +136,22 @@ npm install
 
 Используйте следующие классы JavaScript для взаимодействия с этими ресурсами.
 
-* [QueueServiceClient](/javascript/api/@azure/storage-queue/queueserviceclient). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
-* [QueueClient](/javascript/api/@azure/storage-queue/queueclient). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
-* [QueueMessage](/javascript/api/@azure/storage-queue/queuemessage). Класс `QueueMessage` представляет отдельные объекты, которые возвращаются при вызове [receiveMessages](/javascript/api/@azure/storage-queue/queueclient#receivemessages-queuereceivemessageoptions-) для очереди.
+- [QueueServiceClient](/javascript/api/@azure/storage-queue/queueserviceclient). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
+- [QueueClient](/javascript/api/@azure/storage-queue/queueclient). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
+- [QueueMessage](/javascript/api/@azure/storage-queue/queuemessage). Класс `QueueMessage` представляет отдельные объекты, которые возвращаются при вызове [receiveMessages](/javascript/api/@azure/storage-queue/queueclient#receivemessages-queuereceivemessageoptions-) для очереди.
 
 ## <a name="code-examples"></a>Примеры кода
 
 В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки Хранилища очередей Azure для JavaScript.
 
-* [Получение строки подключения](#get-the-connection-string)
-* [Создание очереди](#create-a-queue)
-* [Добавление сообщений в очередь](#add-messages-to-a-queue)
-* [Просмотр сообщений из очереди](#peek-at-messages-in-a-queue)
-* [Обновление сообщений в очереди](#update-a-message-in-a-queue)
-* [Получение сообщений из очереди](#receive-messages-from-a-queue)
-* [Удаление сообщений из очереди](#delete-messages-from-a-queue)
-* [Удаление очереди](#delete-a-queue)
+- [Получение строки подключения](#get-the-connection-string)
+- [Создание очереди](#create-a-queue)
+- [Добавление сообщений в очередь](#add-messages-to-a-queue)
+- [Просмотр сообщений из очереди](#peek-at-messages-in-a-queue)
+- [Обновление сообщений в очереди](#update-a-message-in-a-queue)
+- [Получение сообщений из очереди](#receive-messages-from-a-queue)
+- [Удаление сообщений из очереди](#delete-messages-from-a-queue)
+- [Удаление очереди](#delete-a-queue)
 
 ### <a name="get-the-connection-string"></a>Получение строки подключения
 
@@ -249,7 +249,7 @@ console.log("Message updated, requestId:", updateMessageResponse.requestId);
 
 ### <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
 
-Чтобы скачать ранее добавленные сообщения, вызовите метод [receiveMessages](/javascript/api/@azure/storage-queue/queueclient#receivemessages-queuereceivemessageoptions-).  В поле `numberOfMessages` передайте максимальное число получаемых сообщений для этого вызова.
+Чтобы скачать ранее добавленные сообщения, вызовите метод [receiveMessages](/javascript/api/@azure/storage-queue/queueclient#receivemessages-queuereceivemessageoptions-). В поле `numberOfMessages` передайте максимальное число получаемых сообщений для этого вызова.
 
 Добавьте следующий код в конец функции `main`.
 
@@ -356,5 +356,5 @@ Done
 > [!div class="nextstepaction"]
 > [Документация по работе с Azure для JavaScript](/azure/developer/javascript/).
 
-* Дополнительные сведения см в документации по [клиентской библиотеке Хранилища очередей Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue).
-* Дополнительные примеры приложений для Хранилища очередей Azure версии 12 для JavaScript собраны [здесь](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples).
+- Дополнительные сведения см в документации по [клиентской библиотеке Хранилища очередей Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue).
+- Дополнительные примеры приложений для Хранилища очередей Azure версии 12 для JavaScript собраны [здесь](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples).

@@ -7,12 +7,12 @@ ms.date: 12/20/2018
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc, devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: b36a71899be43f40ec16c76b5e53c8c3e7fb3552
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2ea92ad2e9c81b568e11ff97d7b6a88eeb4f188e
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124532"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93346593"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-using-azure-powershell"></a>Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "93124532"
 
 * Для работы с этим кратким руководством требуется модуль Azure PowerShell. Запустите `Get-Module -ListAvailable Az`, чтобы найти версию, установленную на вашем локальном компьютере. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
-* Некоторые действия Центра Интернета вещей не поддерживаются в Azure PowerShell. Их нужно выполнять с помощью Azure CLI версии 2.0.70 или более поздней и расширения Интернета вещей для Azure CLI. [Установите Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и используйте `az extension add --name azure-iot` для установки расширения Интернета вещей.
+* Некоторые действия Центра Интернета вещей не поддерживаются в Azure PowerShell. Их нужно выполнять с помощью Azure CLI версии 2.0.70 или более поздней и расширения Интернета вещей для Azure CLI. [Установите Azure CLI](/cli/azure/install-azure-cli) и используйте `az extension add --name azure-iot` для установки расширения Интернета вещей.
 
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
@@ -68,9 +68,9 @@ New-AzResourceGroup `
 
 Следующий блок кода Azure CLI выполняет много команд, чтобы подготовить входные данные, необходимые для задания. Просмотрите разделы, чтобы понять код.
 
-1. В окне PowerShell запустите команду [az login](/cli/azure/authenticate-azure-cli?view=azure-cli-latest), чтобы войти в учетную запись Azure.
+1. В окне PowerShell запустите команду [az login](/cli/azure/authenticate-azure-cli), чтобы войти в учетную запись Azure.
 
-    После успешного входа Azure CLI возвращает список подписок. Скопируйте подписку, используемую для этого краткого руководства, и выполните команду [az account set](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#change-the-active-subscription), чтобы выбрать эту подписку. Выберите ту же подписку, что и в предыдущем разделе при использовании PowerShell. Не забудьте заменить `<your subscription name>` именем своей подписки.
+    После успешного входа Azure CLI возвращает список подписок. Скопируйте подписку, используемую для этого краткого руководства, и выполните команду [az account set](/cli/azure/manage-azure-subscriptions-azure-cli#change-the-active-subscription), чтобы выбрать эту подписку. Выберите ту же подписку, что и в предыдущем разделе при использовании PowerShell. Не забудьте заменить `<your subscription name>` именем своей подписки.
 
     ```azurecli
     az login
@@ -84,7 +84,7 @@ New-AzResourceGroup `
     az iot hub create --name "<your IoT Hub name>" --resource-group $resourceGroup --sku S1
     ```
 
-    После создания Центра Интернета вещей получите его строку подключения с помощью команды [az iot hub show-connection-string](/cli/azure/iot/hub?view=azure-cli-latest). Скопируйте всю строку подключения и сохраните ее, чтобы использовать во время добавления Центра Интернета вещей в качестве источника входных данных в задание Stream Analytics.
+    После создания Центра Интернета вещей получите его строку подключения с помощью команды [az iot hub show-connection-string](/cli/azure/iot/hub). Скопируйте всю строку подключения и сохраните ее, чтобы использовать во время добавления Центра Интернета вещей в качестве источника входных данных в задание Stream Analytics.
 
     ```azurecli
     az iot hub show-connection-string --hub-name "MyASAIoTHub"

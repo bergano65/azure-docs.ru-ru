@@ -8,12 +8,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 08/26/2020
 ms.author: victorh
-ms.openlocfilehash: 7ccc83a61ac4ffe6e1bb6767a9c611bd3fcc0edf
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 52bc2a20be0d7113583b7f23cc569dbb9503d364
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88892785"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93397252"
 ---
 # <a name="what-is-azure-application-gateway"></a>Что такое шлюз приложений Azure?
 
@@ -28,7 +28,7 @@ ms.locfileid: "88892785"
 >[!NOTE]
 > Azure предоставляет набор полностью управляемых решений балансировки нагрузки для пользовательских сценариев. Если вам нужна высокая производительность, низкая задержка, балансировка нагрузки уровня 4, см. статью [Что такое Azure Load Balancer](../load-balancer/load-balancer-overview.md). Если вам нужна глобальная балансировка нагрузки DNS, ознакомьтесь со статьей [Что такое диспетчер трафика](../traffic-manager/traffic-manager-overview.md). В комплексных сценариях может быть целесообразно объединить эти решения.
 >
-> Сравнение параметров балансировки нагрузки Azure см. в статье [Overview of load-balancing options in Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) (Общие сведения о параметрах балансировки нагрузки в Azure).
+> Сравнение параметров балансировки нагрузки Azure см. в статье [Overview of load-balancing options in Azure](/azure/architecture/guide/technology-choices/load-balancing-overview) (Общие сведения о параметрах балансировки нагрузки в Azure).
 
 ## <a name="features"></a>Компоненты
 

@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 08/07/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 399c078481fb205221a683e44f74b4d70c383cbe
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7fd52376e6b2d435e3ac6a60243f85ab34e59381
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096569"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94412958"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.6) — поддержка возможностей и синтаксиса
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -148,7 +148,7 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 |$currentOp|    нет|
 |$listLocalSessions    |нет|
 |$listSessions    |нет|
-|$graphLookup    |нет|
+|$graphLookup    |Да|
 
 ### <a name="boolean-expressions"></a>Логические выражения
 
@@ -496,10 +496,10 @@ $nearSphere |  Да |
 $geometry |  Да |
 $minDistance | Да |
 $maxDistance | Да |
-$center | нет |
-$centerSphere | нет |
-$box | нет |
-$polygon |  нет |
+$center | Нет |
+$centerSphere | Нет |
+$box | Нет |
+$polygon |  Нет |
 
 ## <a name="cursor-methods"></a>Методы курсора
 

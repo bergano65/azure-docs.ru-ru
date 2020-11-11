@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/30/2020
-ms.openlocfilehash: 7ec4515d5f1d096cfb83f06c398da4c1254279f6
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7433c51b45b0d8459ad1959b29f61660537b8851
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099153"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337463"
 ---
 # <a name="quickstart-create-your-first-logic-apps-workflow---azure-portal"></a>Краткое руководство. Создание первого рабочего процесса Logic Apps на портале Azure
 
@@ -112,7 +112,7 @@ ms.locfileid: "93099153"
 
 ## <a name="add-the-send-email-action"></a>Добавление действия "отправить сообщение"
 
-[Добавив триггер для приложения логики](#add-rss-trigger), необходимо добавить [действие](../logic-apps/logic-apps-overview.md#logic-app-concepts), чтобы определить ответ на обнаружение приложением логики в веб-канале RSS нового элемента. Вы также можете создавать приложения логики с гораздо более сложными действиями, например, с действиями, описанными в руководстве по [обработке сообщений электронной почты с помощью Logic Apps, Функций Azure и службы хранилища Azure](/tutorial-process-email-attachments-workflow.md).
+[Добавив триггер для приложения логики](#add-rss-trigger), необходимо добавить [действие](../logic-apps/logic-apps-overview.md#logic-app-concepts), чтобы определить ответ на обнаружение приложением логики в веб-канале RSS нового элемента. Вы также можете создавать приложения логики с гораздо более сложными действиями, например, с действиями, описанными в руководстве по [обработке сообщений электронной почты с помощью Logic Apps, Функций Azure и службы хранилища Azure](/azure/logic-apps/tutorial-process-email-attachments-workflow).
 
 > [!NOTE]
 > В этом примере в качестве службы электронной почты используется Office 365 Outlook. Если вы используете другую поддерживаемую службу электронной почты в приложении логики, пользовательский интерфейс может отличаться. Однако основные понятия, связанные с подключением к другой службе электронной почты, будут такими же.

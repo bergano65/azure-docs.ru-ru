@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/22/2020
-ms.openlocfilehash: ff14f8a9f236701889aea95911f2a1e381eabf83
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: fce098767fffd36376399bbd9396699e3d9fbfd3
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945241"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93392084"
 ---
 # <a name="deploy-azure-sql-edge-with-docker"></a>Развертывание SQL Azure для пограничных вычислений с помощью Docker
 
@@ -28,7 +28,7 @@ ms.locfileid: "90945241"
 - Драйвер хранилища **overlay2** Docker. По умолчанию он используется большинством пользователей. Если вы не используете этот поставщик хранилища и хотите изменить его, см. инструкции и предупреждения в [документации по Docker для настройки overlay2](https://docs.docker.com/storage/storagedriver/overlayfs-driver/#configure-docker-with-the-overlay-or-overlay2-storage-driver).
 - Не менее 10 ГБ места на диске.
 - Не менее 1 ГБ ОЗУ.
-- [Требования к оборудованию для SQL Azure для пограничных вычислений](https://docs.microsoft.com/azure/azure-sql-edge/features#hardware-support).
+- [Требования к оборудованию для SQL Azure для пограничных вычислений](./features.md#hardware-support).
 
 
 ## <a name="pull-and-run-the-container-image"></a>Извлечение и запуск образа контейнера
@@ -70,7 +70,7 @@ ms.locfileid: "90945241"
     | Параметр | Описание |
     |-----|-----|
     | **-e "ACCEPT_EULA=Y"** |  Присвойте переменной **ACCEPT_EULA** любое значение, чтобы подтвердить свое согласие с [лицензионным соглашением](https://go.microsoft.com/fwlink/?linkid=2139274). Обязательный параметр для образа SQL Azure для пограничных вычислений. |
-    | **-e "MSSQL_SA_PASSWORD=yourStrong(!)Password"** | Укажите свой надежный пароль длиной не меньше восьми символов, соответствующий [требованиям к паролям в SQL Azure для пограничных вычислений](https://docs.microsoft.com/sql/relational-databases/security/password-policy). Обязательный параметр для образа SQL Azure для пограничных вычислений. |
+    | **-e "MSSQL_SA_PASSWORD=yourStrong(!)Password"** | Укажите свой надежный пароль длиной не меньше восьми символов, соответствующий [требованиям к паролям в SQL Azure для пограничных вычислений](/sql/relational-databases/security/password-policy). Обязательный параметр для образа SQL Azure для пограничных вычислений. |
     | **-p 1433:1433** | Сопоставление TCP-порта среды узла (первое значение) с TCP-портом в контейнере (второе значение). В нашем примере SQL Azure для пограничных вычислений прослушивает TCP-порт 1433 в контейнере, который перенаправляется на порт 1433 на узле. |
     | **--name azuresqledge** | Укажите свое имя для контейнера вместо сгенерированного случайным образом. При запуске нескольких контейнеров использовать одинаковые имена запрещено. |
     | **-d** | Запустите контейнер в фоновом режиме (управляющая программа) |
@@ -104,7 +104,7 @@ ms.locfileid: "90945241"
 
 1. Назначьте для пользователя SA надежный пароль.
 
-2. Используйте `docker exec` для запуска **sqlcmd**, чтобы изменить пароль с помощью Transact-SQL. В следующем примере замените старый пароль `<YourStrong!Passw0rd>` и новый пароль `<YourNewStrong!Passw0rd>`собственными паролями.
+2. Используйте `docker exec` для запуска **sqlcmd** , чтобы изменить пароль с помощью Transact-SQL. В следующем примере замените старый пароль `<YourStrong!Passw0rd>` и новый пароль `<YourNewStrong!Passw0rd>`собственными паролями.
 
    ```bash
    sudo docker exec -it azuresqledge /opt/mssql-tools/bin/sqlcmd \
@@ -134,7 +134,7 @@ ms.locfileid: "90945241"
    > [!TIP]
    > Вы можете опустить пароль в командной строке. В этом случае вы получите приглашение для его ввода.
 
-3. Если все сработает должным образом, вы перейдете к приглашению команды **sqlcmd**: `1>`.
+3. Если все сработает должным образом, вы перейдете к приглашению команды **sqlcmd** : `1>`.
 
 ## <a name="create-and-query-data"></a>Создание и запрос данных
 
@@ -204,7 +204,7 @@ ms.locfileid: "90945241"
 
 ### <a name="exit-the-sqlcmd-command-prompt"></a>Выход из приглашения команды sqlcmd
 
-1. Чтобы завершить сеанс **sqlcmd**, введите `QUIT`:
+1. Чтобы завершить сеанс **sqlcmd** , введите `QUIT`:
 
    ```sql
    QUIT

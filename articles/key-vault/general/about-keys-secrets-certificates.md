@@ -6,15 +6,16 @@ author: msmbaldwin
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
+ms.subservice: general
 ms.topic: overview
 ms.date: 04/17/2020
 ms.author: mbaldwin
-ms.openlocfilehash: c02a2658325fdd88ef1052937edc3b84c4545872
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 78f228a5e188bc930a9e7484f4c982ba746331dd
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91296843"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357782"
 ---
 # <a name="azure-key-vault-keys-secrets-and-certificates-overview"></a>Общие сведения о ключах, секретах и сертификатах Azure Key Vault
 
@@ -80,9 +81,9 @@ Azure для государственных организаций США | *.va
 
 Идентификатор объекта имеет следующий общий формат (в зависимости от типа контейнера):  
 
-- **Для хранилищ**: `https://{vault-name}.vault.azure.net/{object-type}/{object-name}/{object-version}`.  
+- **Для хранилищ** : `https://{vault-name}.vault.azure.net/{object-type}/{object-name}/{object-version}`.  
 
-- **Для пулов управляемых устройств HSM**: `https://{hsm-name}.managedhsm.azure.net/{object-type}/{object-name}/{object-version}`.  
+- **Для пулов управляемых устройств HSM** : `https://{hsm-name}.managedhsm.azure.net/{object-type}/{object-name}/{object-version}`.  
 
 > [!NOTE]
 > Сведения о типах объектов, поддерживаемых каждым типом контейнера, см. в [этом разделе](#object-types).

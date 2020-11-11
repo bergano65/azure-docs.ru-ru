@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 10/22/2020
 ms.custom: contperfq1
-ms.openlocfilehash: d045014cd92df084e4dd409012fdb668d312de1a
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: f9a5197b982958fe0a0ff21c4b442142beb38882
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442326"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422473"
 ---
 # <a name="what-is-azure-cognitive-search"></a>Что собой представляет Когнитивный поиск Azure?
 
@@ -78,7 +78,7 @@ ms.locfileid: "92442326"
 
 ### <a name="step-4-send-queries-and-handle-responses"></a>Шаг 4. Отправка запросов и обработка ответов
 
-Заполнив индекс, вы сможете [отправлять запросы поиска](search-query-overview.md) к конечной точке службы с помощью простых HTTP-запросов, используя [REST API](/rest/api/searchservice/Search-Documents) или пакет [SDK для .NET](/dotnet/api/microsoft.azure.search.idocumentsoperations).
+Заполнив индекс, вы сможете [отправлять запросы поиска](search-query-overview.md) к конечной точке службы с помощью простых HTTP-запросов, используя [REST API](/rest/api/searchservice/Search-Documents) или пакет [SDK для .NET](/dotnet/api/azure.search.documents.searchclient.search).
 
 Выполните инструкции из руководства по [созданию приложения для поиска](tutorial-csharp-create-first-app.md), чтобы создать и расширить веб-страницу, которая собирает вводимые пользователем данные и обрабатывает результаты. Чтобы запросить существующий индекс, также можно использовать [Postman для интерактивных вызовов REST](search-get-started-postman.md) или встроенный [обозреватель поиска](search-explorer.md) на портале Azure.
 

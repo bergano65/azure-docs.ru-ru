@@ -9,16 +9,16 @@ ms.subservice: queues
 ms.topic: quickstart
 ms.reviewer: dineshm
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d73f225f0e6f230509c856af0d15bc02e80fcd98
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: f7368025993c91490d808ef0ae5f5f66233fe666
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425881"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93345624"
 ---
 # <a name="quickstart-use-the-azure-storage-sdk-v11-for-net-to-manage-a-queue"></a>Краткое руководство. Использование пакета SDK службы хранилища Azure версии 11 для .NET, чтобы управлять очередью
 
-Из этого краткого руководства вы узнаете, как использовать клиентскую библиотеку службы хранилища Azure версии 11 для .NET, чтобы создавать очередь и добавлять в нее сообщения, а также читать и обрабатывать сообщения из очереди. 
+Из этого краткого руководства вы узнаете, как использовать клиентскую библиотеку службы хранилища Azure версии 11 для .NET, чтобы создавать очередь и добавлять в нее сообщения, а также читать и обрабатывать сообщения из очереди.
 
 > [!NOTE]
 > В этом кратком руководстве используется устаревшая версия клиентской библиотеки Хранилища очередей Azure. Сведения о том, как начать работу с последней версией, см. в статье [Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для .NET](storage-quickstart-queues-dotnet.md)
@@ -32,7 +32,7 @@ ms.locfileid: "92425881"
 ### <a name="windows"></a>Windows
 
 - Установите [.NET Core для Windows](https://www.microsoft.com/net/download/windows) или [.NET Framework](https://www.microsoft.com/net/download/windows) (входит в состав Visual Studio для Windows).
-- Установите [Visual Studio для Windows](https://www.visualstudio.com/). Если вы используете .NET Core, устанавливать Visual Studio не обязательно.  
+- Установите [Visual Studio для Windows](https://www.visualstudio.com/). Если вы используете .NET Core, устанавливать Visual Studio не обязательно.
 
 Сведения о выборе между .NET Core и .NET Framework см. в статье [Выбор между .NET Core и .NET Framework для серверных приложений](/dotnet/standard/choosing-core-framework-server).
 
@@ -50,13 +50,13 @@ ms.locfileid: "92425881"
 
 Пример приложения, используемый в этом кратком руководстве, является простым консольным приложением. Пример приложения можно найти на сайте [GitHub](https://github.com/Azure-Samples/storage-queues-dotnet-quickstart).
 
-Используйте команду [git](https://git-scm.com/), чтобы скачать копию приложения в среду разработки. 
+Используйте команду [git](https://git-scm.com/), чтобы скачать копию приложения в среду разработки.
 
 ```bash
 git clone https://github.com/Azure-Samples/storage-queues-dotnet-quickstart.git
 ```
 
-Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку *storage-queues-dotnet-quickstart* , откройте ее и дважды щелкните файл *storage-queues-dotnet-quickstart.sln* . 
+Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку *storage-queues-dotnet-quickstart* , откройте ее и дважды щелкните файл *storage-queues-dotnet-quickstart.sln*.
 
 [!INCLUDE [storage-copy-connection-string-portal](../../../includes/storage-copy-connection-string-portal.md)]
 
@@ -72,7 +72,7 @@ git clone https://github.com/Azure-Samples/storage-queues-dotnet-quickstart.git
 setx storageconnectionstring "<yourconnectionstring>"
 ```
 
-После добавления переменной среды может потребоваться перезапустить все запущенные приложения, которым может понадобиться считать переменную среды, в том числе окно консоли. Например, если вы используете Visual Studio в качестве редактора, перезапустите Visual Studio перед запуском примера. 
+После добавления переменной среды может потребоваться перезапустить все запущенные приложения, которым может понадобиться считать переменную среды, в том числе окно консоли. Например, если вы используете Visual Studio в качестве редактора, перезапустите Visual Studio перед запуском примера.
 
 ### <a name="linux"></a>Linux
 
@@ -98,7 +98,7 @@ export STORAGE_CONNECTION_STRING=<yourconnectionstring>
 
 ### <a name="windows"></a>Windows
 
-Если вы используете Visual Studio в качестве редактора, нажмите клавишу **F5** для запуска. 
+Если вы используете Visual Studio в качестве редактора, нажмите клавишу **F5** для запуска.
 
 Или перейдите к каталогу приложения и запустите приложение с помощью команды `dotnet run`.
 
@@ -148,7 +148,7 @@ Press any key to delete the sample queue.
 
 ### <a name="try-parsing-the-connection-string"></a>Разбор строки подключения
 
-Сначала в примере проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, в приложении используется метод [TryParse](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount.tryparse). Если результаты выполнения метода **TryParse** успешны, он инициализирует переменную *storageAccount* и возвращает значение **true** .
+Сначала в примере проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, в приложении используется метод [TryParse](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount.tryparse). Если результаты выполнения метода **TryParse** успешны, он инициализирует переменную *storageAccount* и возвращает значение **true**.
 
 ```csharp
 // Retrieve the connection string for use with the application. The storage connection string is stored
@@ -161,7 +161,7 @@ string storageConnectionString = Environment.GetEnvironmentVariable("storageconn
 if (CloudStorageAccount.TryParse(storageConnectionString, out storageAccount))
 {
     // If the connection string is valid, proceed with calls to Azure Queues here.
-    ...    
+    ...
 }
 else
 {
@@ -174,11 +174,11 @@ else
 
 ### <a name="create-the-queue"></a>Создание очереди
 
-В примере приложения сначала создается очередь и в нее добавляется сообщение. 
+В примере приложения сначала создается очередь и в нее добавляется сообщение.
 
 ```csharp
-// Create a queue called 'quickstartqueues' and append a GUID value so that the queue name 
-// is unique in your storage account. 
+// Create a queue called 'quickstartqueues' and append a GUID value so that the queue name
+// is unique in your storage account.
 queue = cloudQueueClient.GetQueueReference("quickstartqueues-" + Guid.NewGuid().ToString());
 await queue.CreateAsync();
 
@@ -188,7 +188,7 @@ Console.WriteLine();
 
 ### <a name="add-a-message"></a>Добавление сообщения
 
-Затем сообщение добавляется в конец очереди. 
+Затем сообщение добавляется в конец очереди.
 
 Сообщение должно быть в формате, допустимом для передачи XML-запросов с кодированием UTF-8. Размер сообщения не должен превышать 64 КБ. Если сообщение содержит двоичные данные, мы советуем использовать кодировку Base64 для сообщения.
 
@@ -215,8 +215,8 @@ await queue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, null)
 В примере показано, как просмотреть сообщение из очереди. Во время просмотра сообщения можно считывать его содержимое. Но сообщение продолжает отображаться для других клиентов, чтобы другой клиент впоследствии смог извлечь и обработать его.
 
 ```csharp
-// Peek at the message at the front of the queue. Peeking does not alter the message's 
-// visibility, so that another client can still retrieve and process it. 
+// Peek at the message at the front of the queue. Peeking does not alter the message's
+// visibility, so that another client can still retrieve and process it.
 CloudQueueMessage peekedMessage = await queue.PeekMessageAsync();
 
 // Display the ID and contents of the peeked message.
@@ -231,7 +231,7 @@ Console.WriteLine();
 Если приложению не удается обработать сообщение из-за сбоя оборудования или программного обеспечения, по завершении указанного периода сообщение снова становится видимым. Другой клиент может получить это же сообщение и повторить попытку.
 
 ```csharp
-// Retrieve the message at the front of the queue. The message becomes invisible for 
+// Retrieve the message at the front of the queue. The message becomes invisible for
 // a specified interval, during which the client attempts to process it.
 CloudQueueMessage retrievedMessage = await queue.GetMessageAsync();
 
@@ -267,8 +267,8 @@ if (queue != null)
 ### <a name="binaries-and-source-code"></a>Двоичные файлы и исходный код
 
 - Скачайте пакеты NuGet для последней версии [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage).
-    - [Common](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
-    - [Очереди](https://www.nuget.org/packages/Azure.Storage.Queues/)
+  - [Common](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
+  - [Очереди](https://www.nuget.org/packages/Azure.Storage.Queues/)
 - См. [исходный код клиентской библиотеки .NET](https://github.com/Azure/azure-storage-net) на сайте GitHub.
 
 ### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
@@ -278,7 +278,7 @@ if (queue != null)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как добавлять сообщения в очередь, просматривать их и выводить из очереди, а также обрабатывать сообщения с помощью .NET. 
+Из этого краткого руководства вы узнали, как добавлять сообщения в очередь, просматривать их и выводить из очереди, а также обрабатывать сообщения с помощью .NET.
 
 > [!div class="nextstepaction"]
 > [Обмен данными между приложениями с помощью хранилища очередей Azure](/learn/modules/communicate-between-apps-with-azure-queue-storage/index)

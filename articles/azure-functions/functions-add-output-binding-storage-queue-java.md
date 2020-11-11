@@ -7,24 +7,24 @@ ms.author: karler
 ms.date: 10/14/2019
 ms.topic: quickstart
 zone_pivot_groups: java-build-tools-set
-ms.openlocfilehash: faa4df8633c34b23703a3fe9fa405bad959ec894
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: b4381c4acbea8a3b7d86d9c32aaf9cea24cf15fa
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167208"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422660"
 ---
 # <a name="connect-your-java-function-to-azure-storage"></a>Подключение функции Java к службе хранилища Azure
 
 [!INCLUDE [functions-add-storage-binding-intro](../../includes/functions-add-storage-binding-intro.md)]
 
-В этой статье приведены сведения об интеграции функции, которая была создана в [предыдущей статье](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java&tabs=bash,browser), с помощью очереди службы хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает в сообщение очереди данные HTTP-запроса.
+В этой статье приведены сведения об интеграции функции, которая была создана в [предыдущей статье](./create-first-function-cli-java.md?tabs=bash,browser), с помощью очереди службы хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает в сообщение очереди данные HTTP-запроса.
 
 Большинство привязок требуют сохраненную строку подключения, которая будет использоваться Функциями Azure для доступа к привязанным службам. Чтобы упростить это подключение, вам следует использовать учетную запись хранения, созданную в приложении-функции. Подключение к этой учетной записи уже хранится в параметрах приложения под названием `AzureWebJobsStorage`.  
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы с этой статьей следует завершить все шаги из [части 1 краткого руководства по Java](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java&tabs=bash,browser).
+Перед началом работы с этой статьей следует завершить все шаги из [части 1 краткого руководства по Java](./create-first-function-cli-java.md?tabs=bash,browser).
 
 ## <a name="download-the-function-app-settings"></a>Загрузка параметров приложения-функции
 
