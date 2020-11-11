@@ -8,19 +8,19 @@ ms.topic: include
 ms.date: 07/22/2019
 ms.author: bwren
 ms.custom: include file
-ms.openlocfilehash: 83754842eeb4b5d609596045c11451e898960b9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 83e046ca97ceee249e707e30f478fad89345f4de
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90064853"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94503900"
 ---
 ### <a name="general-query-limits"></a>Общие ограничения запросов
 
 | Ограничение | Описание |
 |:---|:---|
 | Язык запросов | Azure Monitor использует тот же [язык запросов Kusto](/azure/kusto/query/), что и Azure Data Explorer. Элементы языка KQL, которые не поддерживаются в Azure Monitor, см. в статье [Различия в языках запросов журнала Azure Monitor](../articles/azure-monitor/log-query/data-explorer-difference.md). |
-| Регионы Azure | При выполнении запросов журналов может возникать чрезмерная нагрузка, если данные охватывают рабочие области Log Analytics в нескольких регионах Azure. См. раздел [Ограничения на запросы](../articles/azure-monitor/log-query/scope.md#query-limits). |
+| Регионы Azure | При выполнении запросов журналов может возникать чрезмерная нагрузка, если данные охватывают рабочие области Log Analytics в нескольких регионах Azure. См. раздел [Ограничения на запросы](../articles/azure-monitor/log-query/scope.md#query-scope-limits). |
 | Запросы между несколькими ресурсами | Максимальное число ресурсов Application Insights и рабочих областей Log Analytics в одном запросе ограничено 100.<br>Запросы между несколькими ресурсами не поддерживаются в конструкторе представлений.<br>Запрос между разными ресурсами в оповещениях журнала поддерживается в новом API правил запросов по расписанию.<br>См. раздел [Ограничения запросов между ресурсами](../articles/azure-monitor/log-query/cross-workspace-query.md#cross-resource-query-limits). |
 
 ### <a name="user-query-throttling"></a>Регулирование запросов пользователей

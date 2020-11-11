@@ -3,12 +3,12 @@ title: Создание туннеля IPSec в решении VMware для Azu
 description: Узнайте, как создать виртуальный концентратор глобальной сети для создания туннеля IPSec в решениях VMware для Azure.
 ms.topic: how-to
 ms.date: 10/02/2020
-ms.openlocfilehash: 63318b9fdd0de5e0ce102fafe332f40f595f38f1
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 9f869f04bf165f4791f13c626b63257ea98a7ca9
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357850"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506453"
 ---
 # <a name="create-an-ipsec-tunnel-into-azure-vmware-solution"></a>Создание туннеля IPSec в решении VMware для Azure
 
@@ -16,7 +16,7 @@ ms.locfileid: "94357850"
 
 ## <a name="topology"></a>Топология
 
-![Архитектура туннеля VPN типа "сеть — сеть".](media/create-ipsec-tunnel/vpn-s2s-tunnel-architecture.png)
+![Схема, демонстрирующая архитектуру туннеля VPN типа "сеть — сеть".](media/create-ipsec-tunnel/vpn-s2s-tunnel-architecture.png)
 
 Виртуальный концентратор Azure содержит шлюз ExpressRoute решения Azure VMware и шлюз VPN типа "сеть — сеть". Он подключает локальное VPN-устройство к конечной точке решения VMware Azure.
 
@@ -39,17 +39,17 @@ ms.locfileid: "94357850"
    | **Тип** | Выберите **стандартный** , что позволит использовать не только трафик VPN-шлюза.  |
 
 
-    :::image type="content" source="media/create-ipsec-tunnel/create-wan.png" alt-text="Создайте глобальную сеть.":::
+    :::image type="content" source="media/create-ipsec-tunnel/create-wan.png" alt-text="Снимок экрана, показывающий страницу создания глобальной сети в портал Azure.":::
 
 3. В портал Azure выберите виртуальную глобальную сеть, созданную на предыдущем шаге, щелкните **создать виртуальный концентратор** , введите необходимые поля, а затем выберите **Далее: сайт-сайт**. 
 
    | Поле | Значение |
    | --- | --- |
    | **Регион** | Выбор региона требуется с точки зрения управления.  |
-   | **Имя** |    |
+   | **имя** ; |    |
    | **Пространство частных адресов концентратора** | Введите подсеть с помощью `/24` (минимум).  |
 
-    :::image type="content" source="media/create-ipsec-tunnel/create-virtual-hub.png" alt-text="Создайте виртуальный концентратор.":::
+    :::image type="content" source="media/create-ipsec-tunnel/create-virtual-hub.png" alt-text="Снимок экрана, показывающий страницу создания виртуального концентратора.":::
 
 4. На вкладке " **сеть — сеть** " определите шлюз "сеть — сеть", задав общую пропускную способность из раскрывающегося списка **единицы масштабирования шлюза** . 
 
@@ -70,14 +70,14 @@ ms.locfileid: "94357850"
 2. В **обзоре** виртуального концентратора выберите **Подключение**  >  **VPN (сеть-сеть)** , а затем выберите **создать новый VPN-сайт**.
 
 
-    :::image type="content" source="media/create-ipsec-tunnel/create-vpn-site-basics.png" alt-text="Создайте VPN-сайт.":::  
+    :::image type="content" source="media/create-ipsec-tunnel/create-vpn-site-basics.png" alt-text="Снимок экрана со страницей обзора для виртуального концентратора с VPN-подключением типа &quot;сеть — сеть&quot; и выбранным параметром &quot;создать новый VPN-сайт&quot;.":::  
  
 3. На вкладке **Основные сведения** введите необходимые поля и нажмите кнопку **Далее: ссылки**. 
 
    | Поле | Значение |
    | --- | --- |
    | **Регион** | Тот же регион, который вы указали в предыдущем разделе.  |
-   | **Имя** |  |
+   | **имя** ; |  |
    | **Поставщик устройства** |  |
    | **Протокол BGP** | Установите для **включения** , чтобы обеспечить как решение Azure VMware, так и локальные серверы, объявляющие их маршруты через туннель. Если этот параметр отключен, подсети, которые необходимо объявить, должны поддерживаться вручную. Если подсети отсутствуют, ХККС не сможет сформировать сетку службы. Дополнительные сведения см. в статье  [об BGP с VPN-шлюзом Azure](../vpn-gateway/vpn-gateway-bgp-overview.md). |
    | **Частное адресное пространство**  | Введите локальный блок CIDR.  Он используется для маршрутизации всего трафика, привязанного к локальной сети по туннелю.  Блок CIDR требуется только в том случае, если не включен протокол BGP. |
@@ -93,14 +93,14 @@ ms.locfileid: "94357850"
 
 2. Выберите имя VPN-сайта, а затем многоточие (...) в правом углу; затем выберите **изменить VPN-подключение к этому концентратору**.
  
-    :::image type="content" source="media/create-ipsec-tunnel/edit-vpn-section-to-this-hub.png" alt-text="Изменение VPN-подключения к этому концентратору." lightbox="media/create-ipsec-tunnel/edit-vpn-section-to-this-hub.png":::
+    :::image type="content" source="media/create-ipsec-tunnel/edit-vpn-section-to-this-hub.png" alt-text="Снимок экрана страницы в Azure для сайта концентратора виртуальной глобальной сети с многоточием, выбранным для доступа к узлу &quot;изменить VPN-подключение к этому концентратору&quot;." lightbox="media/create-ipsec-tunnel/edit-vpn-section-to-this-hub.png":::
 
 3. Измените подключение между сайтом VPN и концентратором, а затем нажмите кнопку **сохранить**.
    - Internet Protocol Security (IPSec), выберите **Custom (настраиваемая** ).
    - Используйте селектор трафика на основе политики, выберите **включить** .
    - Укажите сведения для **IKE-этапа 1** и **IKE Phase 2 (IPSec)**. 
  
-    :::image type="content" source="media/create-ipsec-tunnel/edit-vpn-connection.png" alt-text="Изменение VPN-подключения"::: 
+    :::image type="content" source="media/create-ipsec-tunnel/edit-vpn-connection.png" alt-text="Снимок экрана: страница &quot;изменение VPN-подключения&quot;"::: 
  
     Селекторы трафика или подсети, которые являются частью домена шифрования на основе политик, должны быть:
     
@@ -122,14 +122,14 @@ ms.locfileid: "94357850"
 
     Перейдите к разделу **подключения** в частном облаке решения Azure VMware. На вкладке **ExpressRoute** выберите **+ запрос ключа авторизации**. Присвойте ему имя и выберите **создать**. (Создание ключа может занять около 30 секунд.) Скопируйте идентификатор ExpressRoute и ключ авторизации. 
 
-    :::image type="content" source="media/create-ipsec-tunnel/express-route-connectivity.png" alt-text="Скопируйте идентификатор и ключ авторизации Express Route.":::
+    :::image type="content" source="media/create-ipsec-tunnel/express-route-connectivity.png" alt-text="Снимок экрана со страницей подключения для частного облака с запросом ключа авторизации, выбранного на вкладке ExpressRoute.":::
 
     > [!NOTE]
     > Ключ авторизации исчезнет через некоторое время, поэтому скопируйте его сразу после того, как он появится.
 
 4. Теперь мы свяжем решение Azure VMware и VPN-шлюз вместе в виртуальном концентраторе глобальной сети. В портал Azure Откройте виртуальную глобальную сеть, созданную ранее. Выберите созданный виртуальный концентратор глобальной сети, а затем в левой области выберите **ExpressRoute** . Выберите **+ активировать ключ авторизации**.
 
-    :::image type="content" source="media/create-ipsec-tunnel/redeem-authorization-key.png" alt-text="Активировать ключ авторизации.":::
+    :::image type="content" source="media/create-ipsec-tunnel/redeem-authorization-key.png" alt-text="Снимок экрана: страница ExpressRoute для частного облака с выбранным ключом авторизации активации.":::
 
     Вставьте ключ авторизации в поле ключа авторизации и идентификатор ExpressRoute в поле **URI одноранговой цепи** . Обязательно установите флажок **автоматически связывать этот канал ExpressRoute с концентратором.** Нажмите кнопку **Добавить** , чтобы установить связь. 
 

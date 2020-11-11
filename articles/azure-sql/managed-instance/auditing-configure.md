@@ -13,12 +13,12 @@ author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 05/26/2020
-ms.openlocfilehash: 393fceaa91600ab143912bb3af38c349f29f770a
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 31a1169ca6c2194b8d5564e5d0df50116dd25084
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427944"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94505671"
 ---
 # <a name="get-started-with-azure-sql-managed-instance-auditing"></a>Приступая к работе с аудитом Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "94427944"
 
 В следующем разделе описывается настройка аудита для управляемого экземпляра.
 
-1. Перейдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 2. Создайте **контейнер** службы хранилища Azure для хранения журналов аудита.
 
    1. Перейдите к учетной записи хранения Azure, в которой вы хотите хранить журналы аудита.
@@ -59,7 +59,7 @@ ms.locfileid: "94427944"
   
 3. После создания контейнера для журналов аудита существует два способа настроить его в качестве цели для журналов аудита: [с помощью T-SQL](#blobtsql) или [пользовательского интерфейса SQL Server Management Studio (SSMS)](#blobssms):
 
-   - <a id="blobtsql"></a>Настройка хранилища больших двоичных объектов для журналов аудита с помощью T-SQL:
+   - <a id="blobtsql"></a>**Настройка хранилища больших двоичных объектов для журналов аудита с помощью T-SQL:**
 
      1. В списке контейнеров щелкните только что созданный контейнер, а затем **Свойства контейнера**.
 
@@ -120,7 +120,7 @@ ms.locfileid: "94427944"
 
      1. Продолжайте [Создание спецификации аудита сервера или спецификации аудита базы данных](#createspec).
 
-   - <a id="blobssms"></a>Настройка хранилища BLOB-объектов для журналов аудита с помощью SQL Server Management Studio 18 (Предварительная версия):
+   - <a id="blobssms"></a>**Настройте хранилище BLOB-объектов для журналов аудита с помощью SQL Server Management Studio 18:**
 
      1. Подключитесь к управляемому экземпляру с помощью пользовательского интерфейса SQL Server Management Studio.
 
@@ -143,8 +143,8 @@ ms.locfileid: "94427944"
         ![Выберите подписку Azure, учетную запись хранения и контейнер больших двоичных объектов.](./media/auditing-configure/13_mi_SSMS_select_subscription_account_container.png)
 
      1. В диалоговом окне **Создание аудита** нажмите кнопку **ОК** .
-
-4. <a id="createspec"></a>После настройки контейнера больших двоичных объектов в качестве целевого для журналов аудита создайте и включите спецификацию аудита сервера или спецификацию аудита базы данных, как в случае SQL Server.
+     
+     1. <a id="createspec"></a>После настройки контейнера больших двоичных объектов в качестве целевого для журналов аудита создайте и включите спецификацию аудита сервера или спецификацию аудита базы данных, как в случае SQL Server.
 
    - [Инструкции по созданию спецификации аудита сервера T-SQL](/sql/t-sql/statements/create-server-audit-specification-transact-sql)
    - [Инструкции по созданию спецификации аудита базы данных T-SQL](/sql/t-sql/statements/create-database-audit-specification-transact-sql)

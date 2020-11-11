@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: d825a30cf43b3e7f9017638138df91d5145d280e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: cdc6cbbea8b222007d94ecac99902bc4498a42fe
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791602"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94505263"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -56,6 +56,11 @@ ms.locfileid: "92791602"
 Событие в реальном времени поддерживает получение различных пропорций входных данных. Режим Stretch позволяет клиентам указать поведение растяжения для выходных данных.
 
 Кодирование в реальном времени теперь добавляет возможность вывода фрагментов фиксированных кадров с интервалом от 0,5 до 20 секунд.
+
+## <a name="accounts"></a>Учетные записи
+
+> [!WARNING]
+> Если вы создаете учетную запись служб мультимедиа с версией API 2020-05-01, она не будет работать с RESTv2 
 
 ## <a name="august-2020"></a>Август 2020 г.
 
@@ -275,10 +280,10 @@ ms.locfileid: "92791602"
 
 Обновления от выпуска общедоступной версии API V3 включают:
        
-* Свойства **PresentationTimeRange** больше не имеют значение "required" для **AssetFilters** и **AccountFilters** . 
+* Свойства **PresentationTimeRange** больше не имеют значение "required" для **AssetFilters** и **AccountFilters**. 
 * Параметры запроса $top и $skip для **заданий** и **преобразований** были удалены, а $orderby добавлен. В рамках добавления новой функциональности упорядочивания было обнаружено, что параметры $top и $skip были случайно выставлены ранее, даже если они не реализованы.
 * Расширение перечисления было повторно включено. Эта функция была включена в предыдущих версиях пакета SDK и случайно отключена в общедоступной версии.
-* Две стандартные политики потоковой передачи были переименованы. **SecureStreaming** теперь — **MultiDrmCencStreaming** . **SecureStreamingWithFairPlay**  — **Predefined_MultiDrmStreaming** .
+* Две стандартные политики потоковой передачи были переименованы. **SecureStreaming** теперь — **MultiDrmCencStreaming**. **SecureStreamingWithFairPlay**  — **Predefined_MultiDrmStreaming**.
 
 ## <a name="november-2018"></a>Ноябрь 2018 г.
 

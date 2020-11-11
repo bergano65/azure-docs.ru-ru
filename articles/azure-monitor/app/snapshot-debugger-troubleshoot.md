@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: bb2ac221169cea84205d087cbe0aadfd035d22db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49a4ab0315dad539a594a20e53eae9fd2890e551
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91760518"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94504974"
 ---
 # <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Устранение неполадок, связанных с включением Application Insights Snapshot Debugger или просмотром моментальных снимков
 Если вы включили Application Insights Snapshot Debugger для приложения, но не видите моментальные снимки для исключений, эти инструкции можно использовать для устранения неполадок. Существует множество причин, по которым моментальные снимки могут не создаваться. Проверку работоспособности моментальных снимков можно выполнить для определения некоторых возможных распространенных причин.
@@ -57,19 +57,21 @@ ms.locfileid: "91760518"
 > Если targetFramework имеет значение 4,7 или выше, Windows определяет доступные протоколы. В службе приложений Azure доступен TLS-1,2. Однако при использовании собственной виртуальной машины может потребоваться включить TLS 1,2 в ОС.
 
 ## <a name="preview-versions-of-net-core"></a>Предварительные версии .NET Core
-Если приложение использует предварительную версию .NET Core и Snapshot Debugger было включено через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) на портале, Snapshot Debugger может не запуститься. Следуйте инструкциям в разделе [включение snapshot Debugger для других сред](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) , чтобы включить пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) с приложением ***в дополнение*** к включению через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json).
+Если приложение использует предварительную версию .NET Core и Snapshot Debugger было включено через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) на портале, Snapshot Debugger может не запуститься. Следуйте инструкциям в разделе [включение snapshot Debugger для других сред](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) , чтобы включить пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) с приложением * **в дополнение** _ для включения через [панель Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json).
 
 
 ## <a name="upgrade-to-the-latest-version-of-the-nuget-package"></a>Обновление пакета NuGet до последней версии
 
 Если Snapshot Debugger был включен с помощью [панели Application Insights на портале](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json), то в приложении должен быть уже установлен последний пакет NuGet. Если Snapshot Debugger был включен, включив пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) , используйте диспетчер пакетов NuGet Visual Studio, чтобы убедиться, что вы используете последнюю версию Microsoft. ApplicationInsights. SnapshotCollector.
 
+Последние обновления и исправления ошибок см. [в заметках о выпуске](./snapshot-collector-release-notes.md).
+
 ## <a name="check-the-uploader-logs"></a>Проверьте журналы отправителя
 
 После создания моментального снимка на диске создается файл минидампа (.dmp). Этот файл минидампа и любые связанные PDB-файлы создаются в отдельном процессе передачи в хранилище Snapshot Debugger Application Insights. После успешной передачи минидамп удаляется с диска. Файлы журнала для процесса передачи сохраняются на диске. В среде службы приложений эти журналы можно найти в `D:\Home\LogFiles`. Используйте веб-сайт управления Kudu для службы приложений, чтобы найти эти файлы журнала.
 
 1. Откройте службу приложений на портале Azure.
-2. Щелкните **Дополнительные инструменты** или выполните поиск по запросу **Kudu**.
+2. Щелкните значок _ * дополнительные инструменты * * или выполните поиск по запросу **KUDU**.
 3. Нажмите кнопку **Переход**.
 4. В раскрывающемся списке **Debug console** (Консоль отладки) выберите **CMD** (Команда).
 5. Щелкните **LogFiles**.

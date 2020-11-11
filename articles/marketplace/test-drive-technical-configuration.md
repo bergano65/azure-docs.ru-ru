@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/13/2019
 author: trkeya
 ms.author: trkeya
-ms.openlocfilehash: b3f46f934241d924789b97c24cf9b68213d94d63
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 6faecdd561d7c434d2948e70886d6f1b19115d9f
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490089"
+ms.locfileid: "94504838"
 ---
 # <a name="test-drive-technical-configuration"></a>Техническая конфигурация тестового выпуска
 
@@ -93,9 +93,10 @@ ms.locfileid: "94490089"
 
 Если в данный момент вы создаете тестовый диск в центре партнеров, выберите **Сохранить черновик** , прежде чем продолжить.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="additional-resources"></a>Дополнительные ресурсы
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Рекомендации по тестированию](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
 - [Обзор](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf)(PDF; убедитесь, что блокирование всплывающих окон отключено)
 - [Обновление имеющегося предложения на коммерческой платформе Marketplace](partner-center-portal/update-existing-offer.md)
-- [Форум обратной связи Azure Marketplace](https://feedback.azure.com/forums/216369-azure-marketplace)
