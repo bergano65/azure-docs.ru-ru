@@ -160,6 +160,8 @@
         - name: Общие сведения об обеспечении безопасности на уровне предприятия
           displayName: authorization authentication encryption aad azure active directory
           href: concept-enterprise-security.md
+        - name: Шифрование данных
+          href: concept-data-encryption.md
         - name: Базовые средства безопасности
           href: security-baseline.md
     - name: Ответственный подход к машинному обучению
@@ -182,12 +184,15 @@
       items:
         - name: управление удостоверениями и доступом;
           items:
-            - name: Настройка проверки подлинности
+            - name: Проверка подлинности для рабочей области
               displayName: 'authentication, auth, oauth'
               href: how-to-setup-authentication.md
-            - name: управление пользователями и ролями;
+            - name: Проверка подлинности веб-службы
+              displayName: 'authentication, model, web service'
+              href: how-to-authenticate-web-service.md
+            - name: Управление доступом (авторизация)
               href: how-to-assign-roles.md
-            - name: Использование управляемых удостоверений для управления доступом
+            - name: Управляемые удостоверения для управления доступом
               href: how-to-use-managed-identities.md
             - name: "Использование удостоверений Azure\_AD в развертываниях AKS"
               href: how-to-use-azure-ad-identity.md

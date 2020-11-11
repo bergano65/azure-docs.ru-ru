@@ -36,6 +36,20 @@
       href: quickstart-multi-container.md
 - name: Учебники
   items:
+    - name: Доступ защищенного приложения к хранилищу и Microsoft Graph
+      items:
+        - name: Обзор
+          href: scenario-secure-app-overview.md
+        - name: Настройка проверки подлинности в Службе приложений
+          href: scenario-secure-app-authentication-app-service.md
+        - name: Доступ защищенного приложения к хранилищу
+          href: scenario-secure-app-access-storage.md
+        - name: Доступ защищенного приложения к Microsoft Graph от имени пользователя
+          href: scenario-secure-app-access-microsoft-graph-as-user.md
+        - name: Безопасный доступ приложения к Microsoft Graph от имени приложения
+          href: scenario-secure-app-access-microsoft-graph-as-app.md
+        - name: Очистка ресурсов
+          href: scenario-secure-app-clean-up-resources.md
     - name: Использование приложения с базой данных
       items:
         - name: .NET Core с базой данных SQL

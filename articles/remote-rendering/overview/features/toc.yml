@@ -18,6 +18,8 @@
   href: color-materials.md
 - name: Отрисовка структуры
   href: outlines.md
+- name: Отрисовка оболочки
+  href: shell-effect.md
 - name: Односторонняя отрисовка
   href: single-sided-rendering.md
 - name: Пространственные запросы

@@ -13,7 +13,7 @@
       href: diagnose-vm-network-traffic-filtering-problem-powershell.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью Azure CLI
       href: diagnose-vm-network-traffic-filtering-problem-cli.md
-    - name: Настройка журналов потоков NSG с помощью шаблона Resource Manager
+    - name: Настройка журналов потоков NSG с помощью шаблона ARM
       displayName: Resource Manager
       href: quickstart-configure-network-security-group-flow-logs-from-arm-template.md
 - name: Учебники
@@ -29,7 +29,7 @@
 - name: Основные понятия
   items:
     - name: Монитор подключений (предварительная версия)
-      href: connection-monitor-preview.md
+      href: connection-monitor-overview.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины
       href: network-watcher-ip-flow-verify-overview.md
     - name: Диагностика правил NSG и фильтрация трафика
@@ -61,9 +61,9 @@
     - name: Создание Монитора подключений (предварительная версия)
       items:
         - name: Использование портала Azure
-          href: connection-monitor-preview-create-using-portal.md
+          href: connection-monitor-create-using-portal.md
         - name: Использование ARMClient
-          href: connection-monitor-preview-create-using-arm-client.md
+          href: connection-monitor-create-using-template.md
         - name: Регистрация с помощью PowerShell
           href: connection-monitor-create-using-powershell.md
     - name: Миграция в Монитор подключений (предварительная версия)
