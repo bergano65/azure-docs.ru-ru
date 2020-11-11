@@ -7,27 +7,28 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/24/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0aba88c10304cf7d87277ad851ae38eae8eb5bf3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8e532902e1e6da90d4c81320b34a0b2b5dd1133f
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87497126"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94518113"
 ---
 # <a name="configure-and-access-azure-database-for-maria-db-audit-logs-in-the-azure-cli"></a>Настройка и доступ к журналам аудита базы данных Azure для Марии в Azure CLI
 
 Вы можете настроить [журналы аудита базы данных Azure для MariaDB](concepts-audit-logs.md) из Azure CLI.
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
+## <a name="prerequisites"></a>Обязательные условия
 
-- [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md)
+Для работы с этим руководством выполните следующие действия.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+- Необходим [сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md).
 
-> [!IMPORTANT]
-> Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы проверить версию, в командной строке Azure CLI введите `az --version`. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI]( /cli/azure/install-azure-cli).
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+- Для работы с этой статьей требуется версия 2,0 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="configure-audit-logging"></a>Настройка ведения журнала аудита
 

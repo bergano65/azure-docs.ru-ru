@@ -6,34 +6,28 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: how-to
 ms.date: 03/25/2020
-ms.openlocfilehash: 990380d553cc12d1a87b2e1c7ca9b09864801294
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a60a6889217ce6ca8dccd5ebf5ee74b8f67a7757
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334004"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94518215"
 ---
 # <a name="configure-a-virtual-machine-scale-set-with-an-existing-azure-load-balancer-using-the-azure-cli"></a>Настройка масштабируемого набора виртуальных машин с использованием существующего Azure Load Balancer с помощью Azure CLI
 
-В этой статье вы узнаете, как настроить в масштабируемом наборе виртуальных машин существующую Azure Load Balancer. 
+В этой статье вы узнаете, как настроить в масштабируемом наборе виртуальных машин существующую Azure Load Balancer.
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-- Подписка Azure.
-- Существующий стандартный балансировщик нагрузки SKU в подписке, в которой будет развернут масштабируемый набор виртуальных машин.
-- Виртуальная сеть Azure для масштабируемого набора виртуальных машин.
+## <a name="prerequisites"></a>Обязательные условия 
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
+- В подписке, в которой будет развернут масштабируемый набор виртуальных машин, необходим существующий стандартный балансировщик нагрузки SKU.
 
-Если вы решили использовать CLI локально, в этой статье необходимо установить версию Azure CLI версии 2.0.28 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+- Для масштабируемого набора виртуальных машин требуется виртуальная сеть Azure.
+ 
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-## <a name="sign-in-to-azure-cli"></a>Вход в Azure CLI
-
-Войдите в Azure.
-
-```azurecli-interactive
-az login
-```
+- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="deploy-a-virtual-machine-scale-set-with-existing-load-balancer"></a>Развертывание масштабируемого набора виртуальных машин с помощью существующей подсистемы балансировки нагрузки
 
@@ -81,7 +75,7 @@ az vmss create \
 > [!NOTE]
 > После создания масштабируемого набора невозможно изменить внутренний порт для правила балансировки нагрузки, используемого зондом работоспособности балансировщика нагрузки. Чтобы изменить порт, можно удалить проверку работоспособности, обновив масштабируемый набор виртуальных машин Azure, обновить порт, а затем снова настроить зонд работоспособности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы развернули масштабируемый набор виртуальных машин с существующим Azure Load Balancer.  Дополнительные сведения о масштабируемых наборах виртуальных машин и подсистеме балансировки нагрузки см. в следующих статьях:
 

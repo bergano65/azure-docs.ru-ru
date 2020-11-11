@@ -7,12 +7,12 @@ ms.date: 05/06/2020
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 58bbe01c8de0bbe606f4fc428032cd213f05d386
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f598ed3e2aef2f53b90b213d0bd1b002f56bd30c
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88068341"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94517756"
 ---
 # <a name="configure-azure-image-builder-service-permissions-using-azure-cli"></a>Настройка разрешений службы Azure Image Builder с помощью Azure CLI
 
@@ -22,7 +22,7 @@ ms.locfileid: "88068341"
 > Конструктор образов Azure сейчас поддерживается в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
 ## <a name="register-the-features"></a>Регистрация функций
 
@@ -236,6 +236,6 @@ az role assignment create \
 
 Дополнительные сведения об управляемом удостоверении, назначенном пользователем, см. в разделе [Создание пользовательского образа, который будет использовать управляемое удостоверение User-Assigned Azure для доступа к файлам службы хранилища Azure](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts/7_Creating_Custom_Image_using_MSI_to_Access_Storage#create-a-custom-image-that-will-use-an-azure-user-assigned-managed-identity-to-seemlessly-access-files-azure-storage). Краткое руководство посвящено созданию и настройке управляемого удостоверения, назначаемого пользователем, для доступа к учетной записи хранения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [Общие сведения о построителе образов Azure](image-builder-overview.md).

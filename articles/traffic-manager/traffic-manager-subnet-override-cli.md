@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: traffic-manager
 ms.date: 09/18/2019
 ms.author: duau
-ms.openlocfilehash: c43b85f3c4b8d1b750e9f97e0be812bee683c702
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 984cdfb3e60717f7632ea1fdcd05a4681dd6a1fd
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90600812"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94517943"
 ---
 # <a name="traffic-manager-subnet-override-using-azure-cli"></a>Переопределение подсети диспетчера трафика с помощью Azure CLI
 
@@ -34,11 +34,9 @@ ms.locfileid: "90600812"
 
 Чтобы создать переопределение подсети диспетчера трафика, можно использовать Azure CLI, чтобы добавить подсети для переопределения в конечную точку диспетчера трафика.
 
-## <a name="azure-cli"></a>Azure CLI
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="update-the-traffic-manager-endpoint-with-subnet-override"></a>Обновите конечную точку диспетчера трафика с переопределением подсети.
 Используйте Azure CLI для обновления конечной точки с помощью команды [AZ Network трафика — обновление конечной точки диспетчера](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update).

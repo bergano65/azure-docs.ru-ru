@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: has-adal-ref, devx-track-js, devx-track-csharp
-ms.openlocfilehash: c26acb1460516781b34a5dcc861164e9ef87a37a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1f4d4a3bb78da82753d651e1a73cf244096d5df
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331630"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94518107"
 ---
 # <a name="security-frame-session-management"></a>Механизм безопасности. Управление сеансами
 | Продукт или служба | Статья |
@@ -159,7 +159,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 | **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный шаблон |
 | **Атрибуты**              | EnvironmentType: OnPrem |
-| **Справочные материалы**              | [Элемент httpCookies (схема параметров ASP.NET)](https://msdn.microsoft.com/library/ms228262(v=vs.100).aspx), [Свойство HttpCookie.Secure](https://msdn.microsoft.com/library/system.web.httpcookie.secure.aspx) |
+| **Справочные материалы**              | [Элемент httpCookies (схема параметров ASP.NET)](/previous-versions/dotnet/netframework-4.0/ms228262(v=vs.100)), [Свойство HttpCookie.Secure](/dotnet/api/system.web.httpcookie.secure) |
 | **Шаги** | Как правило, файлы cookie доступны только в домене, для которого они были заданы. К сожалению, определение "домен" не включает в себя протокол, и поэтому файлы cookie, созданные по протоколу HTTPS, доступны по протоколу HTTP. Атрибут secure указывает браузеру, что файлы cookie доступны только по протоколу HTTPS. Убедитесь, что во всех этих файлах, заданных по протоколу HTTPS, используется атрибут **secure**. Это требование можно выполнить в файле web.config, задав атрибуту requireSSL значение true. Мы рекомендуем использовать этот подход, так как он позволяет применить атрибут **secure** для всех текущих и будущих файлов cookie, не внося дополнительные изменения в код.|
 
 ### <a name="example"></a>Пример
@@ -221,7 +221,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 | **Этап SDL**               | Сборка |  
 | **Применимые технологии** | веб-формы |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Свойство FormsAuthentication.RequireSSL](https://msdn.microsoft.com/library/system.web.security.formsauthentication.requiressl.aspx) |
+| **Справочные материалы**              | [Свойство FormsAuthentication.RequireSSL](/dotnet/api/system.web.security.formsauthentication.requiressl) |
 | **Шаги** | Значение свойства RequireSSL задается в файле конфигурации web.config для приложения ASP.NET с помощью атрибута requireSSL. Вы можете указать в файле Web.config приложения ASP.NET, требуется ли протокол TLS, ранее известный как SSL (SSL), для возврата файла cookie проверки подлинности форм на сервер путем установки атрибута requireSSL.|
 
 ### <a name="example"></a>Пример 
@@ -238,7 +238,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 | **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC5 |
 | **Атрибуты**              | EnvironmentType: OnPrem |
-| **Справочные материалы**              | [Запись блога о конфигурации Windows Identity Foundation (WIF). Часть 2](https://blogs.msdn.microsoft.com/alikl/2011/02/01/windows-identity-foundation-wif-configuration-part-ii-cookiehandler-chunkedcookiehandler-customcookiehandler/) |
+| **Справочные материалы**              | [Запись блога о конфигурации Windows Identity Foundation (WIF). Часть 2](/archive/blogs/alikl/windows-identity-foundation-wif-configuration-part-ii-cookiehandler-chunkedcookiehandler-customcookiehandler) |
 | **Шаги** | Чтобы задать атрибут httpOnly для файлов cookie FedAuth, атрибут hideFromCsript должен иметь значение true. |
 
 ### <a name="example"></a>Пример
@@ -358,7 +358,7 @@ void ValidateRequestHeader(HttpRequestMessage request)
 | **Этап SDL**               | Сборка |  
 | **Применимые технологии** | веб-формы |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Сведения о предотвращении сетевых атак с помощью встроенных функций ASP.NET](https://msdn.microsoft.com/library/ms972969.aspx#securitybarriers_topic2) |
+| **Справочные материалы**              | [Сведения о предотвращении сетевых атак с помощью встроенных функций ASP.NET](/previous-versions/dotnet/articles/ms972969(v=msdn.10)#securitybarriers_topic2) |
 | **Шаги** | Подделку межсайтовых запросов в приложениях на основе веб-форм можно предотвратить, добавив параметр ViewStateUserKey в случайную строку, уникальную для каждого пользователя, например в строку с идентификатором пользователя, а еще лучше с идентификатором сеанса. По разным техническим и социальным причинам идентификатор сеанса подходит гораздо лучше, так как его нельзя предсказать, время его ожидания истекает и он уникальный для каждого пользователя.|
 
 ### <a name="example"></a>Пример
@@ -378,7 +378,7 @@ void Page_Init (object sender, EventArgs e) {
 | **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный шаблон |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Свойство HttpSessionState.Timeout](https://msdn.microsoft.com/library/system.web.sessionstate.httpsessionstate.timeout(v=vs.110).aspx) |
+| **Справочные материалы**              | [Свойство HttpSessionState.Timeout](/dotnet/api/system.web.sessionstate.httpsessionstate.timeout) |
 | **Шаги** | Время ожидания сеанса представляет событие, возникающее, когда пользователь не выполняет никаких действий на веб-сайте в течение интервала (определенного веб-сервером). Это событие на стороне сервера изменяет состояние сеанса пользователя на "Недопустимый" (например, "больше не используется") и дает указание веб-серверу уничтожить его (удалить все данные сеанса). Пример кода ниже задает для атрибута времени ожидания сеанса значение 15 минут в файле web.config.|
 
 ### <a name="example"></a>Пример
@@ -398,7 +398,7 @@ void Page_Init (object sender, EventArgs e) {
 | **Этап SDL**               | Сборка |  
 | **Применимые технологии** | веб-формы |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Элемент Forms для проверки подлинности (схема параметров ASP.NET)](https://msdn.microsoft.com/library/1d3t3c61(v=vs.100).aspx) |
+| **Справочные материалы**              | [Элемент Forms для проверки подлинности (схема параметров ASP.NET)](/previous-versions/dotnet/netframework-4.0/1d3t3c61(v=vs.100)) |
 | **Шаги** | Задайте для параметра времени ожидания билета проверки подлинности (файла cookie) значение, не превышающее 15 минут.|
 
 ### <a name="example"></a>Пример

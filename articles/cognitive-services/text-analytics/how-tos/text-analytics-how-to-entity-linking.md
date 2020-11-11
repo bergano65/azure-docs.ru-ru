@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 10/16/2020
+ms.date: 11/11/2020
 ms.author: aahi
-ms.openlocfilehash: 0ca0c4eacce88bfb53582f7969ed7acbfd75bb8a
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: cabde27591159b5751435a97a909a5f6f8c3081b
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358717"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94518232"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -300,7 +300,7 @@ API Анализа текста не учитывает состояние. Ни
 * Запросы POST отправляются на одну или несколько конечных точек, используя персонализированный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) , допустимую для вашей подписки.
 * Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Использование клиентской библиотеки Анализа текста](../quickstarts/text-analytics-sdk.md)
