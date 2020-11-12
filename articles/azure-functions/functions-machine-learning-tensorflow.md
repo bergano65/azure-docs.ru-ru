@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 01/15/2020
 ms.author: antchu
 ms.custom: mvc, devx-track-python, devx-track-azurepowershell
-ms.openlocfilehash: e9bbfd311d6a05d0dd328a63c7d11e14ab0d7e4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca9ce27583168dfee1a597fce559afad38a3a8c7
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89069618"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422932"
 ---
 # <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство по Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
 
@@ -49,10 +49,10 @@ ms.locfileid: "89069618"
     cd functions-python-tensorflow-tutorial
     ```
 
-    - *start* — это папка для работы с этим учебником;
-    - *end* — справочная папка с итоговым результатом проекта и полной его реализацией;
-    - *resources* — папка с моделью машинного обучения и вспомогательными библиотеками;
-    - *frontend* — папка с веб-сайтом, который вызывает приложение-функцию.
+    - *start*  — это папка для работы с этим учебником;
+    - *end*  — справочная папка с итоговым результатом проекта и полной его реализацией;
+    - *resources*  — папка с моделью машинного обучения и вспомогательными библиотеками;
+    - *frontend*  — папка с веб-сайтом, который вызывает приложение-функцию.
     
 ## <a name="create-and-activate-a-python-virtual-environment"></a>Создание и активация виртуальной среды Python
 
@@ -122,7 +122,7 @@ py -3.7 -m venv .venv
     func init --worker-runtime python
     ```
 
-    После инициализации папка *start* содержит различные файлы проекта, включая файлы конфигурации [local.settings.json](functions-run-local.md#local-settings-file) и [host.json](functions-host-json.md). Файл *local.settings.json* может содержать секреты, скачанные из Azure, поэтому файл по умолчанию исключен из системы управления версиями в *GITIGNORE*-файле.
+    После инициализации папка *start* содержит различные файлы проекта, включая файлы конфигурации [local.settings.json](functions-run-local.md#local-settings-file) и [host.json](functions-host-json.md). Файл *local.settings.json* может содержать секреты, скачанные из Azure, поэтому файл по умолчанию исключен из системы управления версиями в *GITIGNORE* -файле.
 
     > [!TIP]
     > Так как проект функций привязан к определенной среде выполнения, все функции в проекте должны быть написаны на одном языке.
@@ -133,12 +133,12 @@ py -3.7 -m venv .venv
     func new --name classify --template "HTTP trigger"
     ```
 
-    Эта команда создает папку *classify*, которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py*, содержащий код функции, и *function.json*, который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в разделе [об изучении содержимого файла](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python#optional-examine-the-file-contents) краткого руководства по программированию на Python.
+    Эта команда создает папку *classify* , которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py* , содержащий код функции, и *function.json* , который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в разделе [об изучении содержимого файла](./create-first-function-cli-python.md#optional-examine-the-file-contents) краткого руководства по программированию на Python.
 
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
-1. Активируйте функцию, запустив локальное хост-приложение среды выполнения Функций Azure в папке *start*:
+1. Активируйте функцию, запустив локальное хост-приложение среды выполнения Функций Azure в папке *start* :
 
     ```
     func start
@@ -182,7 +182,7 @@ py -3.7 -m venv .venv
     
 1. Убедитесь, что файлы *model.pb* и *labels.txt* находятся в папке *classify*. В противном случае убедитесь, что вы выполнили команду в папке *start*.
 
-1. В папке *start* выполните следующую команду, чтобы скопировать файл с вспомогательным кодом в папку *classify*:
+1. В папке *start* выполните следующую команду, чтобы скопировать файл с вспомогательным кодом в папку *classify* :
 
     # <a name="bash"></a>[bash](#tab/bash)
     
@@ -216,7 +216,7 @@ py -3.7 -m venv .venv
     
 1. Сохраните файл *requirements.txt*.
 
-1. Установите зависимости, выполнив следующую команду в папке *start*: Установка может занять несколько минут. В это время можно перейти к изменению функции в следующем разделе.
+1. Установите зависимости, выполнив следующую команду в папке *start* : Установка может занять несколько минут. В это время можно перейти к изменению функции в следующем разделе.
 
     ```
     pip install --no-cache-dir -r requirements.txt
@@ -229,7 +229,7 @@ py -3.7 -m venv .venv
 
 ## <a name="update-the-function-to-run-predictions"></a>Обновление функции для выполнения прогнозов
 
-1. Чтобы импортировать стандартную библиотеку JSON и вспомогательные функции *predict*, откройте файл *classify/\_\_init\_\_.py* в текстовом редакторе и добавьте следующие строки после существующих инструкций `import`.
+1. Чтобы импортировать стандартную библиотеку JSON и вспомогательные функции *predict* , откройте файл *classify/\_\_init\_\_.py* в текстовом редакторе и добавьте следующие строки после существующих инструкций `import`.
 
     :::code language="python" source="~/functions-python-tensorflow-tutorial/end/classify/__init__.py" range="1-6" highlight="5-6":::
 
@@ -293,7 +293,7 @@ py -3.7 -m venv .venv
     - `https://raw.githubusercontent.com/Azure-Samples/functions-python-tensorflow-tutorial/master/resources/assets/samples/dog1.png`
     - `https://raw.githubusercontent.com/Azure-Samples/functions-python-tensorflow-tutorial/master/resources/assets/samples/dog2.png`
     
-1. Нажмите кнопку **Отправить**, чтобы вызвать конечную точку функции для классификации изображения.
+1. Нажмите кнопку **Отправить** , чтобы вызвать конечную точку функции для классификации изображения.
 
     ![Снимок экрана готового проекта](media/functions-machine-learning-tensorflow/functions-machine-learning-tensorflow-screenshot.png)
 

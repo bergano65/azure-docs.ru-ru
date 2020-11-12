@@ -11,12 +11,12 @@ ms.author: laobri
 ms.reviewer: laobri
 ms.date: 10/13/2020
 ms.custom: contperfq4, devx-track-python
-ms.openlocfilehash: 3f131e1f8d5604e566c8d7b41fa9d45cb7d2a7a2
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: f7d1cffb44914535fe218980c750270ebba14445
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92054888"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309455"
 ---
 # <a name="tutorial-build-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Руководство по Создание конвейеров Машинного обучения Azure для пакетной оценки
 
@@ -63,7 +63,7 @@ ws = Workspace.from_config()
 
 В учетной записи `pipelinedata` извлеките образец общедоступных данных вычисления ImageNet из общедоступного контейнера больших двоичных объектов `sampledata`. Выполните вызов `register_azure_blob_container()`, чтобы предоставить рабочей области `images_datastore` доступ к данным. Затем задайте хранилище данных рабочей области по умолчанию в качестве выходного. Используйте выходное хранилище данных для оценки выходных данных в конвейере.
 
-Дополнительные сведения о доступе к данным см. в [этом разделе](https://docs.microsoft.com/azure/machine-learning/how-to-access-data#python-sdk).
+Дополнительные сведения о доступе к данным см. в [этом разделе](./how-to-access-data.md).
 
 ```python
 from azureml.core.datastore import Datastore
@@ -142,7 +142,7 @@ model = Model.register(model_path="models/inception_v3.ckpt",
 
 Конвейеры машинного обучения невозможно запустить локально, поэтому их можно запускать в облачных ресурсах или *удаленных целевых объектах вычислений*. Удаленный целевой объект вычислений — это повторно используемая виртуальная среда вычислений, в которой выполняются эксперименты и рабочие процессы машинного обучения. 
 
-Выполните приведенный ниже код, чтобы создать целевой объект [`AmlCompute`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py&preserve-view=true) с поддержкой GPU, а затем вложите его в свою рабочую область. Дополнительные сведения о целевых объектах вычислений см. в [тематической статье](https://docs.microsoft.com/azure/machine-learning/concept-compute-target).
+Выполните приведенный ниже код, чтобы создать целевой объект [`AmlCompute`](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?preserve-view=true&view=azure-ml-py) с поддержкой GPU, а затем вложите его в свою рабочую область. Дополнительные сведения о целевых объектах вычислений см. в [тематической статье](./concept-compute-target.md).
 
 
 ```python
@@ -305,7 +305,7 @@ parallel_run_config = ParallelRunConfig(
 * входные и выходные данные и любые пользовательские параметры;
 * ссылку на скрипт или логику пакета SDK для запуска во время выполнения шага.
 
-Несколько классов наследуют от родительского класса [`PipelineStep`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.builder.pipelinestep?view=azure-ml-py&preserve-view=true). Для создания шага можно выбрать классы для использования конкретных платформ или стеков. В этом примере используется класс `ParallelRunStep` для определения логики шага с помощью пользовательского скрипта Python. Если аргумент вашего скрипта является вводом или выводом шага, его необходимо определить *в* массиве `arguments`*и* в параметре `input` или `output` соответственно. 
+Несколько классов наследуют от родительского класса [`PipelineStep`](/python/api/azureml-pipeline-core/azureml.pipeline.core.builder.pipelinestep?preserve-view=true&view=azure-ml-py). Для создания шага можно выбрать классы для использования конкретных платформ или стеков. В этом примере используется класс `ParallelRunStep` для определения логики шага с помощью пользовательского скрипта Python. Если аргумент вашего скрипта является вводом или выводом шага, его необходимо определить *в* массиве `arguments`*и* в параметре `input` или `output` соответственно. 
 
 Ссылка на объект в массиве `outputs` становится доступной в качестве *входных данных* для последующего шага конвейера в сценариях с несколькими шагами.
 
@@ -329,7 +329,7 @@ batch_score_step = ParallelRunStep(
 )
 ```
 
-Список всех классов для разных типов шагов см. в [этой статье](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps?view=azure-ml-py&preserve-view=true).
+Список всех классов для разных типов шагов см. в [этой статье](/python/api/azureml-pipeline-steps/azureml.pipeline.steps?preserve-view=true&view=azure-ml-py).
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
@@ -386,9 +386,9 @@ published_pipeline
 
 Чтобы запустить конвейер из конечной точки REST, вам потребуется заголовок проверки подлинности типа OAuth2 Bearer. В следующем примере для иллюстрации используется интерактивная проверка подлинности, но для большинства производственных сценариев, требующих автоматической или автономной проверки подлинности, необходимо использовать проверку подлинности субъекта-службы, как [описано в этой статье](how-to-setup-authentication.md).
 
-Проверка подлинности субъекта-службы включает в себя создание *регистрации приложения* в *Azure Active Directory*. Сначала необходимо создать секрет клиента, а затем предоставить субъекту-службе *доступ роли* к вашей рабочей области машинного обучения. Используйте класс [`ServicePrincipalAuthentication`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.serviceprincipalauthentication?view=azure-ml-py&preserve-view=true) для управления потоком проверки подлинности. 
+Проверка подлинности субъекта-службы включает в себя создание *регистрации приложения* в *Azure Active Directory*. Сначала необходимо создать секрет клиента, а затем предоставить субъекту-службе *доступ роли* к вашей рабочей области машинного обучения. Используйте класс [`ServicePrincipalAuthentication`](/python/api/azureml-core/azureml.core.authentication.serviceprincipalauthentication?preserve-view=true&view=azure-ml-py) для управления потоком проверки подлинности. 
 
-[`InteractiveLoginAuthentication`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.interactiveloginauthentication?view=azure-ml-py&preserve-view=true) и `ServicePrincipalAuthentication` наследуются от `AbstractAuthentication`. В обоих случаях используйте функцию [`get_authentication_header()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.abstractauthentication?view=azure-ml-py&preserve-view=true#&preserve-view=trueget-authentication-header--) для извлечения заголовка:
+[`InteractiveLoginAuthentication`](/python/api/azureml-core/azureml.core.authentication.interactiveloginauthentication?preserve-view=true&view=azure-ml-py) и `ServicePrincipalAuthentication` наследуются от `AbstractAuthentication`. В обоих случаях используйте функцию [`get_authentication_header()`](/python/api/azureml-core/azureml.core.authentication.abstractauthentication?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-authentication-header--) для извлечения заголовка:
 
 ```python
 from azureml.core.authentication import InteractiveLoginAuthentication

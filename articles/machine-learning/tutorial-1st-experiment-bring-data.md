@@ -11,18 +11,18 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 13d43eb788c750a2f24033a6138ebf00ac57fffe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 123e55202de8a33bca88afcfd1f0dc0c7edeae77
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372581"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93320093"
 ---
 # <a name="tutorial-use-your-own-data-part-4-of-4"></a>Руководство по использованию собственных данных (часть 4 из 4)
 
 В этом учебнике показано, как отправлять и использовать собственные данные для обучения моделей Машинного обучения Azure.
 
-Этот учебник является *четвертой частью серии из четырех учебников*, в рамках которой вы ознакомитесь с основами Машинного обучения Azure и выполните задачи машинного обучения на основе заданий в Azure. Этот учебник создан на основе работы, выполненной в рамках статьи [Часть 1. настройка](tutorial-1st-experiment-sdk-setup-local.md), [Части 2: запуск скрипта "Hello World!"](tutorial-1st-experiment-hello-world.md) и [Часть 3: обучение моделей](tutorial-1st-experiment-sdk-train.md).
+Этот учебник является *четвертой частью серии из четырех учебников* , в рамках которой вы ознакомитесь с основами Машинного обучения Azure и выполните задачи машинного обучения на основе заданий в Azure. Этот учебник создан на основе работы, выполненной в рамках статьи [Часть 1. настройка](tutorial-1st-experiment-sdk-setup-local.md), [Части 2: запуск скрипта "Hello World!"](tutorial-1st-experiment-hello-world.md) и [Часть 3: обучение моделей](tutorial-1st-experiment-sdk-train.md).
 
 В [Части 3: обучение моделей](tutorial-1st-experiment-sdk-train.md) данные были скачаны с помощью встроенного метода `torchvision.datasets.CIFAR10` в API PyTorch. Однако во многих случаях при запуске удаленного обучения необходимо использовать собственные данные. В этой статье показан рабочий процесс, который можно использовать для работы с собственными данными в Машинном обучении Azure.
 
@@ -202,7 +202,7 @@ datastore.upload(src_dir='./data', target_path='datasets/cifar10', overwrite=Tru
 Значение `target_path` указывает путь хранилища данных, куда будут переданы данные CIFAR10.
 
 >[!TIP] 
-> При использовании Машинного обучения Azure для передачи данных можно использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для отправки ad-hoc-файлов. Если вам требуется средство извлечения, преобразования и загрузки, для приема данных в Azure можно использовать [Фабрику данных Azure](https://docs.microsoft.com/azure/data-factory/introduction).
+> При использовании Машинного обучения Azure для передачи данных можно использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для отправки ad-hoc-файлов. Если вам требуется средство извлечения, преобразования и загрузки, для приема данных в Azure можно использовать [Фабрику данных Azure](../data-factory/introduction.md).
 
 Запустите файл Python, чтобы передать данные. (отправка должна выполняться быстро — меньше чем за 60 секунд.)
 
@@ -271,7 +271,7 @@ if __name__ == "__main__":
       `dataset = Dataset.File.from_files( ... )`
    :::column-end:::
    :::column span="2":::
-      Параметр [dataset](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py&preserve-view=true) используется для ссылки на данные, отправленные в хранилище BLOB-объектов Azure. Наборы данных — это слой абстрагирования над вашими данными, предназначенный для повышения надежности.
+      Параметр [dataset](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py) используется для ссылки на данные, отправленные в хранилище BLOB-объектов Azure. Наборы данных — это слой абстрагирования над вашими данными, предназначенный для повышения надежности.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -279,7 +279,7 @@ if __name__ == "__main__":
       `config = ScriptRunConfig(...)`
    :::column-end:::
    :::column span="2":::
-      [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true) изменен для включения списка аргументов, которые будут переданы в `train.py`. Аргумент `dataset.as_named_input('input').as_mount()` означает, что указанный каталог будет _подключен_ к целевому объекту вычислений.
+      [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py) изменен для включения списка аргументов, которые будут переданы в `train.py`. Аргумент `dataset.as_named_input('input').as_mount()` означает, что указанный каталог будет _подключен_ к целевому объекту вычислений.
    :::column-end:::
 :::row-end:::
 

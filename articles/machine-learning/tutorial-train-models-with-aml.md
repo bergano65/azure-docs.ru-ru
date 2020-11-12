@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 09/28/2020
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 40ee7ad74d1a1daaf6df5e76b5e51db52feea304
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 003056ae9d3f236d37ddc10764812c15a3c6c695
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91535075"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321294"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Руководство по обучению моделей классификации изображений с использованием данных MNIST и Scikit-learn 
 
@@ -37,7 +37,7 @@ ms.locfileid: "91535075"
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 >[!NOTE]
-> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) версии 1.13.0.
+> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) версии 1.13.0.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -159,7 +159,7 @@ else:
 
 ### <a name="download-the-mnist-dataset"></a>Скачивание набора данных MNIST
 
-Используйте Открытые наборы данных Azure для получения необработанных файлов данных MNIST. [Открытые наборы данных Azure](https://docs.microsoft.com/azure/open-datasets/overview-what-are-open-datasets) — это проверенные общедоступные наборы данных, которые можно использовать для добавления функций конкретных сценариев в решения машинного обучения для создания более точных моделей. Каждый набор данных использует соответствующий класс (в данном случае — `MNIST`) для получения данных различными способами.
+Используйте Открытые наборы данных Azure для получения необработанных файлов данных MNIST. [Открытые наборы данных Azure](../open-datasets/overview-what-are-open-datasets.md) — это проверенные общедоступные наборы данных, которые можно использовать для добавления функций конкретных сценариев в решения машинного обучения для создания более точных моделей. Каждый набор данных использует соответствующий класс (в данном случае — `MNIST`) для получения данных различными способами.
 
 Этот код получает данные в виде объекта `FileDataset`, который является подклассом `Dataset`. `FileDataset` ссылается на один или несколько файлов в любом формате, размещенных в хранилищах данных или доступных по общедоступным URL-адресам. С помощью этого класса вы можете скачивать их или подключать к вычислительной среде, создав ссылку на расположение источника данных. Кроме того, вы регистрируете набор данных в своей рабочей области, чтобы упростить получение данных во время обучения.
 
@@ -309,7 +309,7 @@ joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')
 
 ### <a name="configure-the-training-job"></a>Настройка задания обучения
 
-Создайте объект [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true), чтобы указать сведения о конфигурации для вашего задания обучения, в том числе скрипт обучения, используемую среду и целевой объект вычислений, на котором будет выполняться задание. Настройте ScriptRunConfig, указав следующее:
+Создайте объект [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), чтобы указать сведения о конфигурации для вашего задания обучения, в том числе скрипт обучения, используемую среду и целевой объект вычислений, на котором будет выполняться задание. Настройте ScriptRunConfig, указав следующее:
 
 * Выберите каталог, который содержит скрипт. Все файлы в этом каталоге передаются в узел кластера для выполнения.
 * Целевой объект вычисления. В этом примере используется созданный вычислительный кластер Службы машинного обучения Azure.
@@ -382,7 +382,7 @@ run
 
 ### <a name="jupyter-widget"></a>Мини-приложение Jupyter
 
-Отслеживайте ход выполнения с помощью [мини-приложения Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py&preserve-view=true). Как и отправка выполнения, мини-приложение работает асинхронно и в реальном времени предоставляет обновления каждые 10–15 секунд, пока не завершит задание.
+Отслеживайте ход выполнения с помощью [мини-приложения Jupyter](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py). Как и отправка выполнения, мини-приложение работает асинхронно и в реальном времени предоставляет обновления каждые 10–15 секунд, пока не завершит задание.
 
 ```python
 from azureml.widgets import RunDetails
@@ -393,7 +393,7 @@ RunDetails(run).show()
 
 ![Мини-приложение записной книжки](./media/tutorial-train-models-with-aml/widget.png)
 
-Если необходимо отменить выполнение, вы можете выполнить [эти инструкции](https://aka.ms/aml-docs-cancel-run).
+Если необходимо отменить выполнение, вы можете выполнить [эти инструкции](./how-to-manage-runs.md).
 
 ### <a name="get-log-results-upon-completion"></a>Получение результатов записи по завершении
 

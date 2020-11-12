@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 09/29/2020
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 8c8dcd01c7e97f77e994d021e39ce6a5e591ff9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ea68b8a6cf26db2e4ba440140cfa900cebbb4aa
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537588"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94335661"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
 
@@ -35,7 +35,7 @@ ms.locfileid: "91537588"
 
 * учетная запись пакетной службы и связанная учетная запись службы хранилища Azure. Чтобы создать эти учетные записи, см. примеры быстрого начала работы с пакетной службой с помощью [портала Azure](quick-create-portal.md) или [Azure CLI](quick-create-cli.md).
 
-* [64-разрядная версия ffmpeg 4.3.1 для Windows](https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-4.3.1-2020-09-21-full_build.zip) (.zip). Загрузите ZIP-файл на локальный компьютер. Для этого руководства вам нужен только ZIP-файл. Вам не нужно распаковывать или локально устанавливать файл.
+* [64-разрядная версия ffmpeg 4.3.1 для Windows](https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-4.3.1-2020-10-01-essentials_build.7z) (.zip). Загрузите ZIP-файл на локальный компьютер. Для этого руководства вам нужен только ZIP-файл. Вам не нужно распаковывать или локально устанавливать файл.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -124,7 +124,7 @@ Elapsed time: 00:09:14.3418742
 
 ![Тепловая карта пула](./media/tutorial-parallel-dotnet/pool.png)
 
-Обычное время выполнения — примерно **10 минут**, если для приложения задана конфигурация по умолчанию. Для создания пула потребуется больше всего времени.
+Обычное время выполнения — примерно **10 минут** , если для приложения задана конфигурация по умолчанию. Для создания пула потребуется больше всего времени.
 
 [!INCLUDE [batch-common-tutorial-download](../../includes/batch-common-tutorial-download.md)]
 

@@ -9,16 +9,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: c2782d15d8be82d07f14f7ada5732b1dbef699c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59567cf2dc03952a78852f3288e78ba06aa769ee
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91338387"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325681"
 ---
 # <a name="tutorial-2-train-credit-risk-models---azure-machine-learning-studio-classic"></a>Руководство 2. Обучение моделей кредитных рисков в Студии машинного обучения Azure (классическая версия)
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
+**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 В этом руководстве подробно описывается процесс разработки решения прогнозной аналитики. Мы создадим в Студии машинного обучения (классической) простую модель,  а затем развернем ее в качестве веб-службы машинного обучения Azure.  Развернутая модель позволяет создавать прогнозы на основе новых данных. Это руководство представляет собой **вторую часть серии, состоящей из трех частей**.
@@ -100,7 +100,7 @@ ms.locfileid: "91338387"
 
 1. Найдите модуль [Two-Class Support Vector Machine][two-class-support-vector-machine] (Двухклассовый метод опорных векторов) на палитре модулей и перетащите его на холст.
 
-1. Щелкните правой кнопкой мыши модуль [Train Model][train-model] (Обучение модели), выберите **Копировать**, а затем щелкните холст правой кнопкой мыши и выберите **Вставить**. Обратите внимание, что копия модуля [Train Model][train-model] (Обучение модели) имеет тот же набор выбранных столбцов, что и оригинал.
+1. Щелкните правой кнопкой мыши модуль [Train Model][train-model] (Обучение модели), выберите **Копировать** , а затем щелкните холст правой кнопкой мыши и выберите **Вставить**. Обратите внимание, что копия модуля [Train Model][train-model] (Обучение модели) имеет тот же набор выбранных столбцов, что и оригинал.
 
 1. Соедините вывод модуля [Two-Class Support Vector Machine][two-class-support-vector-machine] (Двухклассовый метод опорных векторов) с левым портом ввода второго модуля [Train Model][train-model] (Обучение модели).
 
@@ -118,7 +118,7 @@ ms.locfileid: "91338387"
 
 1. Щелкните модуль [Normalize Data][normalize-data] (Нормализация данных), чтобы выбрать его. На панели **Properties** (Свойства) выберите для параметра **Transformation method** (Метод преобразования) значение **Tanh**.
 
-1. Щелкните **Запустить средство выбора столбцов** (Launch column selector), укажите для параметра **Begin With** (Начало с) значение No columns (Без столбцов). В первом раскрывающемся списке выберите пункт **Включение**, во втором — **column type** (тип столбца), а в третьем — **Числовой**. Это указывает, что будут преобразованы все числовые столбцы (и только числовые).
+1. Щелкните **Запустить средство выбора столбцов** (Launch column selector), укажите для параметра **Begin With** (Начало с) значение No columns (Без столбцов). В первом раскрывающемся списке выберите пункт **Включение** , во втором — **column type** (тип столбца), а в третьем — **Числовой**. Это указывает, что будут преобразованы все числовые столбцы (и только числовые).
 
 1. Щелкните знак плюса (+) в правой части этой строки. Это позволит создать строку с раскрывающимися списками. Выберите в первом раскрывающемся списке значение **Exclude** (Исключить), во втором раскрывающемся списке выберите **column names** (Имена столбцов), затем введите текст "Credit risk" в текстовом поле. Так мы сообщим модулю, что столбец Credit Risk (Кредитный риск) нужно игнорировать. В противном случае этот столбец будет преобразован, так как является числовым.
 
@@ -195,7 +195,7 @@ ms.locfileid: "91338387"
 - [Интерпретация результатов модели в Студии машинного обучения Azure (классическая версия)](interpret-model-results.md)
 
 > [!TIP]
-> При каждом выполнении эксперимента запись об этой итерации сохраняется в журнале выполнения. Эти итерации можно просмотреть и вернуться к любой из них, нажав кнопку **ПРОСМОТР ЖУРНАЛА ВЫПОЛНЕНИЯ** под холстом. Можно также щелкнуть **Prior Run** (Предыдущее выполнение) на панели **Свойства**, чтобы открыть результаты предыдущей попытки сравнения.
+> При каждом выполнении эксперимента запись об этой итерации сохраняется в журнале выполнения. Эти итерации можно просмотреть и вернуться к любой из них, нажав кнопку **ПРОСМОТР ЖУРНАЛА ВЫПОЛНЕНИЯ** под холстом. Можно также щелкнуть **Prior Run** (Предыдущее выполнение) на панели **Свойства** , чтобы открыть результаты предыдущей попытки сравнения.
 > 
 > Можно сделать копию любой итерации эксперимента, нажав кнопку **SAVE AS** (Сохранить как) под холстом. 
 > Чтобы отслеживать, какие данные вы сравнивали на каждом этапе выполнения эксперимента, используйте свойства эксперимента **Сводка** и **Описание**.
@@ -224,14 +224,14 @@ ms.locfileid: "91338387"
 
 
 <!-- Module References -->
-[execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
-[edit-metadata]: https://msdn.microsoft.com/library/azure/370b6676-c11c-486f-bf73-35349f842a66/
-[split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
-[evaluate-model]: https://msdn.microsoft.com/library/azure/927d65ac-3b50-4694-9903-20f6c1672089/
-[execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
-[normalize-data]: https://msdn.microsoft.com/library/azure/986df333-6748-4b85-923d-871df70d6aaf/
-[score-model]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
-[train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
-[two-class-boosted-decision-tree]: https://msdn.microsoft.com/library/azure/e3c522f8-53d9-4829-8ea4-5c6a6b75330c/
-[two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
+[execute-r-script]: /azure/machine-learning/studio-module-reference/execute-r-script
+[edit-metadata]: /azure/machine-learning/studio-module-reference/edit-metadata
+[split]: /azure/machine-learning/studio-module-reference/split-data
+[evaluate-model]: /azure/machine-learning/studio-module-reference/evaluate-model
+[execute-r-script]: /azure/machine-learning/studio-module-reference/execute-r-script
+[normalize-data]: /azure/machine-learning/studio-module-reference/normalize-data
+[score-model]: /azure/machine-learning/studio-module-reference/score-model
+[train-model]: /azure/machine-learning/studio-module-reference/train-model
+[two-class-boosted-decision-tree]: /azure/machine-learning/studio-module-reference/two-class-boosted-decision-tree
+[two-class-support-vector-machine]: /azure/machine-learning/studio-module-reference/two-class-support-vector-machine
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/

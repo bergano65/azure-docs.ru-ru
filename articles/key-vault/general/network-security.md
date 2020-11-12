@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: sudbalas
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c375defe5fd8356d64879a65d6f09f40ea30271d
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: d1b1c27fe0136220d5a1851af4a5c24102a37da1
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042479"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93288630"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Настройка брандмауэров и виртуальных сетей Azure Key Vault
 
@@ -27,13 +27,13 @@ ms.locfileid: "92042479"
 
 ### <a name="key-vault-firewall-disabled-default"></a>Брандмауэр Key Vault отключен (по умолчанию)
 
-По умолчанию при создании нового хранилища ключей брандмауэр Azure Key Vault отключен. Все приложения и службы Azure имеют доступ к хранилищу ключей и отправляют запросы в хранилище ключей. Обратите внимание, что эта конфигурация не означает, что любой пользователь сможет выполнять операции в хранилище ключей. Доступ к хранилищу ключей по-прежнему ограничен секретами, ключами и сертификатами, хранящимися в хранилище ключей, что требует от Azure Active Directory разрешений в политике проверки подлинности и доступа. Дополнительные сведения о проверке подлинности в хранилище ключей см. в документе с описанием проверки подлинности в хранилище ключей [здесь](https://docs.microsoft.com/azure/key-vault/general/authentication-fundamentals).
+По умолчанию при создании нового хранилища ключей брандмауэр Azure Key Vault отключен. Все приложения и службы Azure имеют доступ к хранилищу ключей и отправляют запросы в хранилище ключей. Обратите внимание, что эта конфигурация не означает, что любой пользователь сможет выполнять операции в хранилище ключей. Доступ к хранилищу ключей по-прежнему ограничен секретами, ключами и сертификатами, хранящимися в хранилище ключей, что требует от Azure Active Directory разрешений в политике проверки подлинности и доступа. Дополнительные сведения о проверке подлинности в хранилище ключей см. в документе с описанием проверки подлинности в хранилище ключей [здесь](./authentication-fundamentals.md).
 
 ### <a name="key-vault-firewall-enabled-trusted-services-only"></a>Брандмауэр Key Vault включен (только доверенные службы)
 
 При включении брандмауэра Key Vault вы получите параметр "Разрешить доверенным службам Майкрософт обходить этот брандмауэр". Список доверенных служб содержит не все службы Azure. Например, Azure DevOps не находится в списке доверенных служб. **Это не означает, что службы, которые не отображаются в списке доверенных служб, не являются доверенными или небезопасны.** Список доверенных служб содержит службы, в которых Майкрософт контролирует весь код, выполняемый в службе. Так как пользователи могут писать пользовательский код в таких службах Azure, как Azure DevOps, корпорация Майкрософт не предоставляет возможность создать утверждение параметров для этой службы. Более того, только то, что служба отображается в списке доверенных служб, не означает, что она разрешена для всех сценариев.
 
-Чтобы определить, находится ли служба, которую вы пытаетесь использовать, в списке доверенных служб, см. документ [здесь](https://docs.microsoft.com/azure/key-vault/general/overview-vnet-service-endpoints#trusted-services).
+Чтобы определить, находится ли служба, которую вы пытаетесь использовать, в списке доверенных служб, см. документ [здесь](./overview-vnet-service-endpoints.md#trusted-services).
 
 ### <a name="key-vault-firewall-enabled-ipv4-addresses-and-ranges---static-ips"></a>Брандмауэр Key Vault включен (адреса и диапазоны IPv4 — статические IP-адреса)
 
@@ -63,7 +63,7 @@ ms.locfileid: "92042479"
 
 ### <a name="key-vault-firewall-enabled-private-link"></a>Брандмауэр Key Vault включен (Приватный канал)
 
-Чтобы узнать, как настроить подключение к Приватному каналу в хранилище ключей, ознакомьтесь с документом [здесь](https://docs.microsoft.com/azure/key-vault/general/private-link-service).
+Чтобы узнать, как настроить подключение к Приватному каналу в хранилище ключей, ознакомьтесь с документом [здесь](./private-link-service.md).
 
 > [!IMPORTANT]
 > Когда правила брандмауэра начнут действовать, пользователи смогут выполнять запросы на операции [плоскости данных](secure-your-key-vault.md#data-plane-access-control) в Key Vault только из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это относится и к получению доступа к Key Vault с портала Azure. Пользователь сможет перейти в хранилище ключей с портала Azure, но не сможет получить список ключей, секретов и сертификатов, если клиентский компьютер не включен в список разрешенных. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи смогут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают доступ их клиентским компьютерам.
@@ -84,7 +84,7 @@ ms.locfileid: "92042479"
 4. Чтобы добавить имеющиеся виртуальные сети в правила брандмауэров и виртуальных сетей, выберите **+ Добавить существующие виртуальные сети**.
 5. В новой открывшейся колонке выберите подписку, виртуальные сети и подсети, которым нужно предоставить доступ к этому хранилищу ключей. Если в выбранных вами виртуальных сетях и подсетях нет включенных конечных точек службы, подтвердите, что вы хотите включить конечные точки службы, и нажмите кнопку **Включить**. Эта настройка вступит в силу в течение 15 минут.
 6. В разделе **IP-сети** добавьте диапазоны IPv4-адресов, введя их с использованием [нотации CIDR](https://tools.ietf.org/html/rfc4632), или укажите отдельные IP-адреса.
-7. Если вы хотите разрешить доверенным службам Майкрософт обход брандмауэра Key Vault, выберите "Да". Полный список текущих доверенных служб Key Vault см. по следующей ссылке. [Доверенные службы Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/overview-vnet-service-endpoints#trusted-services)
+7. Если вы хотите разрешить доверенным службам Майкрософт обход брандмауэра Key Vault, выберите "Да". Полный список текущих доверенных служб Key Vault см. по следующей ссылке. [Доверенные службы Azure Key Vault](./overview-vnet-service-endpoints.md#trusted-services)
 7. Щелкните **Сохранить**.
 
 Вы также можете добавить новые виртуальные сети и подсети, а потом включить конечные точки службы для них, выбрав **+ Добавить новую виртуальную сеть**. Затем следуйте инструкциям на экране.
@@ -93,7 +93,7 @@ ms.locfileid: "92042479"
 
 Брандмауэры и виртуальные сети Key Vault можно настроить с помощью Azure CLI следующим образом:
 
-1. [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) и [войдите в систему](https://docs.microsoft.com/cli/azure/authenticate-azure-cli).
+1. [Установите Azure CLI](/cli/azure/install-azure-cli) и [войдите в систему](/cli/azure/authenticate-azure-cli).
 
 2. Перечислите доступные правила виртуальной сети. Если вы не настроили каких-либо правил для этого хранилища ключей, список будет пуст.
    ```azurecli
@@ -132,7 +132,7 @@ ms.locfileid: "92042479"
 
 Брандмауэры и виртуальные сети Key Vault можно настроить с помощью PowerShell следующим образом:
 
-1. Установите последнюю версию [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) и [выполните вход](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
+1. Установите последнюю версию [Azure PowerShell](/powershell/azure/install-az-ps) и [выполните вход](/powershell/azure/authenticate-azureps).
 
 2. Перечислите доступные правила виртуальной сети. Если вы не настроили каких-либо правил для этого хранилища ключей, список будет пуст.
    ```powershell
@@ -166,9 +166,9 @@ ms.locfileid: "92042479"
    ```
 
 ## <a name="references"></a>Ссылки
-* Справочник по шаблонам ARM: [Справочник по шаблону ARM Azure Key Vault](https://docs.microsoft.com/azure/templates/Microsoft.KeyVault/vaults).
-* Команда Azure CLI: [az keyvault network-rule](https://docs.microsoft.com/cli/azure/keyvault/network-rule?view=azure-cli-latest).
-* Командлеты Azure PowerShell: [Get-AzKeyVault](https://docs.microsoft.com/powershell/module/az.keyvault/get-azkeyvault), [Add-AzKeyVaultNetworkRule](https://docs.microsoft.com/powershell/module/az.KeyVault/Add-azKeyVaultNetworkRule), [Remove-AzKeyVaultNetworkRule](https://docs.microsoft.com/powershell/module/az.KeyVault/Remove-azKeyVaultNetworkRule), [Update-AzKeyVaultNetworkRuleSet](https://docs.microsoft.com/powershell/module/az.KeyVault/Update-azKeyVaultNetworkRuleSet).
+* Справочник по шаблонам ARM: [Справочник по шаблону ARM Azure Key Vault](/azure/templates/Microsoft.KeyVault/vaults).
+* Команда Azure CLI: [az keyvault network-rule](/cli/azure/keyvault/network-rule?view=azure-cli-latest).
+* Командлеты Azure PowerShell: [Get-AzKeyVault](/powershell/module/az.keyvault/get-azkeyvault), [Add-AzKeyVaultNetworkRule](/powershell/module/az.KeyVault/Add-azKeyVaultNetworkRule), [Remove-AzKeyVaultNetworkRule](/powershell/module/az.KeyVault/Remove-azKeyVaultNetworkRule), [Update-AzKeyVaultNetworkRuleSet](/powershell/module/az.KeyVault/Update-azKeyVaultNetworkRuleSet).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

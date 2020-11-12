@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 02/28/2020
 ms.author: gopalv
 ms.custom: devx-track-python, devx-track-azurepowershell
-ms.openlocfilehash: dd8de1b56927e158a181df952ce0dbeed140d6b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8891c29e5d8d06df6292d06ec06e5e57fb9880e7
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89078662"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422847"
 ---
 # <a name="tutorial-deploy-a-pre-trained-image-classification-model-to-azure-functions-with-pytorch"></a>Руководство по развертыванию предварительно обученной модели классификации изображений в Функциях Azure с помощью PyTorch
 
@@ -49,10 +49,10 @@ ms.locfileid: "89078662"
     cd functions-python-pytorch-tutorial
     ```
 
-    - *start* — это папка для работы с этим учебником;
-    - *end* — справочная папка с итоговым результатом проекта и полной его реализацией;
-    - *resources* — папка с моделью машинного обучения и вспомогательными библиотеками;
-    - *frontend* — папка с веб-сайтом, который вызывает приложение-функцию.
+    - *start*  — это папка для работы с этим учебником;
+    - *end*  — справочная папка с итоговым результатом проекта и полной его реализацией;
+    - *resources*  — папка с моделью машинного обучения и вспомогательными библиотеками;
+    - *frontend*  — папка с веб-сайтом, который вызывает приложение-функцию.
 
 ## <a name="create-and-activate-a-python-virtual-environment"></a>Создание и активация виртуальной среды Python
 
@@ -104,7 +104,7 @@ py -m venv .venv
     func init --worker-runtime python
     ```
 
-    После инициализации папка *start* содержит различные файлы проекта, включая файлы конфигурации [local.settings.json](functions-run-local.md#local-settings-file) и [host.json](functions-host-json.md). Файл *local.settings.json* может содержать секреты, скачанные из Azure, поэтому файл по умолчанию исключен из системы управления версиями в *GITIGNORE*-файле.
+    После инициализации папка *start* содержит различные файлы проекта, включая файлы конфигурации [local.settings.json](functions-run-local.md#local-settings-file) и [host.json](functions-host-json.md). Файл *local.settings.json* может содержать секреты, скачанные из Azure, поэтому файл по умолчанию исключен из системы управления версиями в *GITIGNORE* -файле.
 
     > [!TIP]
     > Так как проект функций привязан к определенной среде выполнения, все функции в проекте должны быть написаны на одном языке.
@@ -115,12 +115,12 @@ py -m venv .venv
     func new --name classify --template "HTTP trigger"
     ```
 
-    Эта команда создает папку *classify*, которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py*, содержащий код функции, и *function.json*, который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в разделе [об изучении содержимого файла](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python#optional-examine-the-file-contents) краткого руководства по программированию на Python.
+    Эта команда создает папку *classify* , которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py* , содержащий код функции, и *function.json* , который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в разделе [об изучении содержимого файла](./create-first-function-cli-python.md#optional-examine-the-file-contents) краткого руководства по программированию на Python.
 
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
-1. Активируйте функцию, запустив локальное хост-приложение среды выполнения Функций Azure в папке *start*:
+1. Активируйте функцию, запустив локальное хост-приложение среды выполнения Функций Azure в папке *start* :
 
     ```
     func start
@@ -172,7 +172,7 @@ py -m venv .venv
     torchvision==0.6.0+cpu
     ```
 
-1. Сохраните *requirements.txt*, а затем выполните следующую команду из папки *start*, чтобы установить зависимости.
+1. Сохраните *requirements.txt* , а затем выполните следующую команду из папки *start* , чтобы установить зависимости.
 
 
     ```
@@ -185,7 +185,7 @@ py -m venv .venv
 
 ## <a name="update-the-function-to-run-predictions"></a>Обновление функции для выполнения прогнозов
 
-1. Чтобы импортировать стандартную библиотеку JSON и вспомогательные функции *predict*, откройте файл *classify/\_\_init\_\_.py* в текстовом редакторе и добавьте следующие строки после существующих инструкций `import`.
+1. Чтобы импортировать стандартную библиотеку JSON и вспомогательные функции *predict* , откройте файл *classify/\_\_init\_\_.py* в текстовом редакторе и добавьте следующие строки после существующих инструкций `import`.
 
     :::code language="python" source="~/functions-pytorch/end/classify/__init__.py" range="1-6" highlight="5-6":::
 
@@ -248,7 +248,7 @@ py -m venv .venv
     - `https://github.com/Azure-Samples/functions-python-pytorch-tutorial/blob/master/resources/assets/bald-eagle.jpg?raw=true`
     - `https://raw.githubusercontent.com/Azure-Samples/functions-python-pytorch-tutorial/master/resources/assets/penguin.jpg`
 
-1. Нажмите кнопку **Отправить**, чтобы вызвать конечную точку функции для классификации изображения.
+1. Нажмите кнопку **Отправить** , чтобы вызвать конечную точку функции для классификации изображения.
 
     ![Снимок экрана готового проекта](media/machine-learning-pytorch/screenshot.png)
 

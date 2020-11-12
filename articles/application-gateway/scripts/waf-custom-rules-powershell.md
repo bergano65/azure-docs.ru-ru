@@ -7,12 +7,12 @@ ms.topic: sample
 ms.date: 6/7/2019
 ms.author: victorh
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8bf19052c11301412a299c31a2cd73ed2f9ffc7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 312f052671036d8153dd19fcf4e559e825fd8464
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89079903"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93396997"
 ---
 # <a name="create-web-application-firewall-waf-custom-rules-with-azure-powershell"></a>Создание настраиваемых правил брандмауэра веб-приложения с помощью Azure PowerShell
 
@@ -70,6 +70,6 @@ Remove-AzResourceGroup -Name CustomRulesTest
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о настраиваемых правил WAF см. в статье о [настраиваемых правилах для брандмауэра веб-приложения](../custom-waf-rules-overview.md).
+- Дополнительные сведения о настраиваемых правил WAF см. в статье о [настраиваемых правилах для брандмауэра веб-приложения](../../web-application-firewall/ag/custom-waf-rules-overview.md).
 - Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 - Другие примеры скриптов PowerShell можно найти в [документации по шлюзу приложений Azure](../powershell-samples.md).

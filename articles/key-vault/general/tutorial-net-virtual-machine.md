@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/20/2020
 ms.author: mbaldwin
 ms.custom: mvc, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: f8e794a51a6789ba58d9475bb1ca78a442d7e315
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 9557ada8001022d460c35a091fdac7699ac5e5ec
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741368"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289396"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-virtual-machine-in-net"></a>Руководство по Использование Azure Key Vault с виртуальной машиной в .NET
 
@@ -204,4 +204,4 @@ using Azure.Security.KeyVault.Secrets;
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Справочник по REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)
+> [Справочник по REST API для Azure Key Vault](/rest/api/keyvault/)

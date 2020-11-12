@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 04/30/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 3a6ce5860704e6fd16b79fc253650dd45ec743e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f7746f079e740493348731376d0a5a7b1a9e954
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87852622"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93317862"
 ---
 # <a name="tutorial-convert-ml-experiments-to-production-python-code"></a>Руководство по Преобразование экспериментов машинного обучения в рабочий код Python
 
@@ -67,7 +67,7 @@ args = {
 }
 
 reg_model = Ridge(**args)
-reg.fit(data["train"]["X"], data["train"]["y"])
+reg_model.fit(data["train"]["X"], data["train"]["y"])
 
 preds = reg_model.predict(data["test"]["X"])
 mse = mean_squared_error(preds, y_test)
@@ -527,5 +527,5 @@ def test_train_model():
 Теперь, когда вы понимаете, как преобразовать эксперимент в рабочий код, воспользуйтесь приведенными ниже ссылками, чтобы получить дополнительные сведения и дальнейшие инструкции.
 
 + [MLOpsPython.](https://github.com/microsoft/MLOpsPython/blob/master/docs/custom_model.md) Создайте конвейер CI/CD, чтобы обучать, вычислять и развертывать собственную модель с помощью Azure Pipelines и службы "Машинное обучение Azure".
-+ [Мониторинг запусков и метрик экспериментов в Машинном обучении Azure](https://docs.microsoft.com/azure/machine-learning/how-to-track-experiments)
-+ [Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения](https://docs.microsoft.com/azure/machine-learning/how-to-enable-app-insights)
++ [Мониторинг запусков и метрик экспериментов в Машинном обучении Azure](./how-to-track-experiments.md)
++ [Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения](./how-to-enable-app-insights.md)

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/06/2018
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: a7d0a899b4a2ef86153e82a4e3f04e7ec430a1bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b32ff0926aa2b797bdb8dfcbb01cf845080a0ce9
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185879"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93376188"
 ---
 1. Перейдите к [консоли Google Cloud](https://console.developers.google.com/cloud-resource-manager)и войдите в нее с помощью учетной записи Google. 
 2. Выберите **Создать проект** на панели инструментов. 
@@ -23,7 +23,7 @@ ms.locfileid: "67185879"
 4. На панели инструментов щелкните значок **оповещений** и выберите проект в списке. Откроется панель мониторинга проекта. Вы также можете перейти непосредственно к панели мониторинга, используя URL-адрес `https://console.developers.google.com/home/dashboard?project=<YOUR PROJECT NAME>`.
 
     ![Выбор проекта в окне оповещений](./media/mobile-services-enable-google-cloud-messaging/alert-new-project.png)
-5. Запишите **номер проекта**, который отображается на плитке **Project info** (Сведения о проекте) панели мониторинга. 
+5. Запишите **номер проекта** , который отображается на плитке **Project info** (Сведения о проекте) панели мониторинга. 
 
     ![Идентификатор проекта](./media/mobile-services-enable-google-cloud-messaging/project-number.png)
 6. На плитке **APIs** (API-интерфейсы) панели мониторинга щелкните **Go to APIs overview** (Перейти к обзору API-интерфейсов). 
@@ -43,7 +43,7 @@ ms.locfileid: "67185879"
     ![Кнопка "Create credentials" (Создать учетные данные)](./media/mobile-services-enable-google-cloud-messaging/create-credentials-button.png)
 11. На странице **Add credentials to your project** (Добавление учетных данных в проект) щелкните ссылку на **ключ API**. 
 
-    ![Кнопка "Create credentials" (Создать учетные данные)](./media/mobile-services-enable-google-cloud-messaging/api-key-button.png)    
+    ![Добавление учетных данных](./media/mobile-services-enable-google-cloud-messaging/api-key-button.png)    
 12. На странице **API key** (Ключ API) нажмите кнопку **Create** (Создать) или Save (Сохранить). В следующем примере выбран параметр **IP addresses** (IP-адреса) и для разрешенных IP-адресов указан диапазон **0.0.0.0/0**. Задайте соответствующие ограничения ключа API. 
 
     ![Страница ключа API — кнопка Create (Создать)](./media/mobile-services-enable-google-cloud-messaging/api-key-create-button.png)

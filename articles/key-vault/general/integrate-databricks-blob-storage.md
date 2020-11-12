@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.service: key-vault
 ms.topic: tutorial
 ms.date: 06/16/2020
-ms.openlocfilehash: bb574bb3dd000682090c6c3f861e885761753e19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba80d78cbc7d34b1496daffbd489a1d0dbfed8b4
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88588523"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93285664"
 ---
 # <a name="tutorial-access-azure-blob-storage-using-azure-databricks-and-azure-key-vault"></a>Руководство по Получение доступа к Хранилищу BLOB-объектов Azure с помощью Azure Databricks и Azure Key Vault
 
@@ -29,11 +29,11 @@ ms.locfileid: "88588523"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-Перед началом работы с этим руководством установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest).
+Перед началом работы с этим руководством установите [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest).
 
 ## <a name="create-a-storage-account-and-blob-container-with-azure-cli"></a>Создание контейнера больших двоичных объектов и учетной записи хранения с помощью Azure CLI
 
-Для использования больших двоичных объектов сначала необходимо создать учетную запись хранения общего назначения. Если у вас нет [группы ресурсов](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create), создайте ее перед выполнением команды. Приведенная ниже команда позволяет создать и отобразить метаданные контейнера хранилища. Скопируйте указанный здесь **идентификатор**.
+Для использования больших двоичных объектов сначала необходимо создать учетную запись хранения общего назначения. Если у вас нет [группы ресурсов](/cli/azure/group?view=azure-cli-latest#az-group-create), создайте ее перед выполнением команды. Приведенная ниже команда позволяет создать и отобразить метаданные контейнера хранилища. Скопируйте указанный здесь **идентификатор**.
 
 ```azurecli
 az storage account create --name contosoblobstorage5 --resource-group contosoResourceGroup --location eastus --sku Standard_ZRS --encryption-services blob
@@ -41,7 +41,7 @@ az storage account create --name contosoblobstorage5 --resource-group contosoRes
 
 ![Вывод в консоль при выполнении указанной выше команды. Идентификатор выделен зеленым цветом для удобства пользователя.](../media/databricks-command-output-1.png)
 
-Прежде чем создать контейнер, в который вы отправите большой двоичный объект, необходимо назначить себе роль [Участник данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor). В нашем примере эта роль будет назначена ранее созданной учетной записи хранения.
+Прежде чем создать контейнер, в который вы отправите большой двоичный объект, необходимо назначить себе роль [Участник данных BLOB-объектов хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor). В нашем примере эта роль будет назначена ранее созданной учетной записи хранения.
 
 ```azurecli
 az role assignment create --role "Storage Blob Data Contributor" --assignee t-trtr@microsoft.com --scope "/subscriptions/885e24c8-7a36-4217-b8c9-eed31e110504/resourceGroups/contosoResourceGroup5/providers/Microsoft.Storage/storageAccounts/contosoblobstorage5
@@ -86,7 +86,7 @@ az keyvault create --name contosoKeyVault10 --resource-group contosoResourceGrou
 ![Изображение](../media/databricks-command-output-4.png)
 ![Вывод в консоль при выполнении указанной выше команды. Значение ID и vaultUri выделены зеленым цветом для удобства пользователя.](../media/databricks-command-output-5.png)
 
-Чтобы создать секрет, выполните приведенную ниже команду. Присвойте секрету значение **key1**, полученное из учетной записи хранения.
+Чтобы создать секрет, выполните приведенную ниже команду. Присвойте секрету значение **key1** , полученное из учетной записи хранения.
 
 ```azurecli
 az keyvault secret set --vault-name contosoKeyVault10 --name storageKey --value "value of your key1"
@@ -94,7 +94,7 @@ az keyvault secret set --vault-name contosoKeyVault10 --name storageKey --value 
 
 ## <a name="create-an-azure-databricks-workspace-and-add-key-vault-secret-scope"></a>Создание рабочей области Azure Databricks и добавление области секретов Key Vault
 
-Действия, описанные в этом разделе, нельзя выполнить из командной строки. Воспользуйтесь [этим руководством](https://docs.microsoft.com/azure/azure-databricks/store-secrets-azure-key-vault#create-an-azure-databricks-workspace-and-add-a-secret-scope). Вам потребуется применить [портал Azure](https://ms.portal.azure.com/#home) для выполнения следующих действий:
+Действия, описанные в этом разделе, нельзя выполнить из командной строки. Воспользуйтесь [этим руководством](/azure/databricks/scenarios/store-secrets-azure-key-vault#create-an-azure-databricks-workspace-and-add-a-secret-scope). Вам потребуется применить [портал Azure](https://ms.portal.azure.com/#home) для выполнения следующих действий:
 
 1. создание ресурса Azure Databricks;
 1. запуск рабочей области;
@@ -102,10 +102,10 @@ az keyvault secret set --vault-name contosoKeyVault10 --name storageKey --value 
 
 ## <a name="access-your-blob-container-from-azure-databricks-workspace"></a>Получение доступа к контейнеру больших двоичных объектов из рабочей области Azure Databricks
 
-Действия, описанные в этом разделе, нельзя выполнить из командной строки. Воспользуйтесь [этим руководством](https://docs.microsoft.com/azure/azure-databricks/store-secrets-azure-key-vault#access-your-blob-container-from-azure-databricks). Вам придется применить рабочую область Azure Databricks, чтобы выполнить следующие действия:
+Действия, описанные в этом разделе, нельзя выполнить из командной строки. Воспользуйтесь [этим руководством](/azure/databricks/scenarios/store-secrets-azure-key-vault#access-your-blob-container-from-azure-databricks). Вам придется применить рабочую область Azure Databricks, чтобы выполнить следующие действия:
 
-1. создание **нового кластера**;
-1. создание **нового Notebook**;
+1. создание **нового кластера** ;
+1. создание **нового Notebook** ;
 1. заполнение полей в скрипте Python;
 1. выполнение скрипта Python.
 
@@ -124,4 +124,4 @@ df.show()
 
 Убедитесь, что хранилище ключей можно восстановить:
 > [!div class="nextstepaction"]
-> [Очистка ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/management/delete-resource-group?tabs=azure-powershell)
+> [Очистка ресурсов](../../azure-resource-manager/management/delete-resource-group.md?tabs=azure-powershell)

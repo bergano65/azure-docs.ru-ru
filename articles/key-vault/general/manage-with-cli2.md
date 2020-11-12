@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: dc60d2b6cef8ad19526c5ec243ae1c43529954a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb7e047d998342125a52af5ea3ae1e88fe88d313
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87504540"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93289899"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
@@ -120,7 +120,7 @@ az provider register -n Microsoft.KeyVault
 
 Для создания хранилища ключей используйте команду `az keyvault create` . Этот сценарий предусматривает три обязательных параметра: имя группы ресурсов, имя хранилища ключей и географическое расположение.
 
-Чтобы создать новое хранилище с именем **ContosoKeyVault**, в группе ресурсов **ContosoResourceGroup**, находящейся в местоположении **Восточная Азия**, введите: 
+Чтобы создать новое хранилище с именем **ContosoKeyVault** , в группе ресурсов **ContosoResourceGroup** , находящейся в местоположении **Восточная Азия** , введите: 
 
 ```azurecli
 az keyvault create --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --location "East Asia"
@@ -194,7 +194,7 @@ az keyvault certificate list --vault-name "ContosoKeyVault"
 
 Для получения маркера приложение должно предоставить Azure Active Directory оба этих значения. Настройка приложения для получения маркера будет зависеть от приложения. В [примере приложения, использующего Key Vault](https://www.microsoft.com/download/details.aspx?id=45343), владелец приложения задает эти значения в файле app.config.
 
-Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статьях [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](../../active-directory/develop/active-directory-integrating-applications.md), [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md) и [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli).
+Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статьях [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](../../active-directory/develop/quickstart-register-app.md), [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md) и [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli).
 
 Чтобы зарегистрировать приложение в Azure Active Directory:
 

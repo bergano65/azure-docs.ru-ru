@@ -8,12 +8,12 @@ ms.subservice: iomt
 ms.topic: tutorial
 ms.date: 08/03/2020
 ms.author: punagpal
-ms.openlocfilehash: 3b2e4a1ae5ff43283893b286dafb38491a1181b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee286540d4fd740c5e7c1f8bd693fddd625eeae2
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91308231"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93398153"
 ---
 # <a name="tutorial-receive-device-data-through-azure-iot-hub"></a>Руководство по Получение данных устройства через Центр Интернета вещей Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "91308231"
 
 - Активная подписка Azure — [создайте подписку бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - Azure API для FHIR хотя бы с одним соединителем "Azure IoT для FHIR" — [разверните соединитель "Azure IoT для FHIR" с помощью портала Azure (предварительная версия)](iot-fhir-portal-quickstart.md).
-- Ресурс Центра Интернета вещей Azure, подключенный к реальным или имитированным устройствам — [создайте Центр Интернета вещей с помощью портала Azure](https://docs.microsoft.com/azure/iot-hub/quickstart-send-telemetry-dotnet).
+- Ресурс Центра Интернета вещей Azure, подключенный к реальным или имитированным устройствам — [создайте Центр Интернета вещей с помощью портала Azure](../iot-hub/quickstart-send-telemetry-dotnet.md).
 
 > [!TIP]
 > Если вы используете приложение для имитированного устройства в Центре Интернета вещей Azure, вы можете выбрать любое приложение из разных поддерживаемых языков и систем.
@@ -36,15 +36,15 @@ ms.locfileid: "91308231"
 
 ## <a name="connect-azure-iot-hub-with-the-azure-iot-connector-for-fhir-preview"></a>Подключение Центра Интернета вещей Azure к соединителю "Azure IoT для FHIR" (предварительная версия)
 
-Центр Интернета вещей Azure поддерживает [маршрутизацию сообщений](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c). Эта возможность позволяет отправлять данные устройства в разные службы Azure, например в концентратор событий, учетную запись хранения или служебную шину. Соединитель "Azure IoT для FHIR" использует эту возможность для подключения и отправки данных устройства из Центра Интернета вещей Azure в конечную точку концентратора событий.
+Центр Интернета вещей Azure поддерживает [маршрутизацию сообщений](../iot-hub/iot-hub-devguide-messages-d2c.md). Эта возможность позволяет отправлять данные устройства в разные службы Azure, например в концентратор событий, учетную запись хранения или служебную шину. Соединитель "Azure IoT для FHIR" использует эту возможность для подключения и отправки данных устройства из Центра Интернета вещей Azure в конечную точку концентратора событий.
 
 > [!NOTE] 
-> Сейчас [создать маршрутизацию сообщений](https://docs.microsoft.com/azure/iot-hub/tutorial-routing) можно только с помощью команд PowerShell или CLI, так как концентратор событий соединителя "Azure IoT для FHIR" не размещается в подписке клиента и не доступен через портал Azure. Когда объекты маршрута добавляются с помощью PowerShell или CLI, они появляются на портале Azure, и вы можете управлять ими там.
+> Сейчас [создать маршрутизацию сообщений](../iot-hub/tutorial-routing.md) можно только с помощью команд PowerShell или CLI, так как концентратор событий соединителя "Azure IoT для FHIR" не размещается в подписке клиента и не доступен через портал Azure. Когда объекты маршрута добавляются с помощью PowerShell или CLI, они появляются на портале Azure, и вы можете управлять ими там.
 
 Настройка маршрутизации сообщений состоит из двух этапов.
 
 ### <a name="add-an-endpoint"></a>Добавление конечной точки
-Этот шаг определяет конечную точку, к которой Центр Интернета вещей будет направлять данные. Для создания конечной точки выполните команду PowerShell [Add-AzIotHubRoutingEndpoint](https://docs.microsoft.com/powershell/module/az.iothub/Add-AzIotHubRoutingEndpoint) или команду CLI [az iot hub routing-endpoint create](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?#az-iot-hub-routing-endpoint-create) (в зависимости от предпочтений).
+Этот шаг определяет конечную точку, к которой Центр Интернета вещей будет направлять данные. Для создания конечной точки выполните команду PowerShell [Add-AzIotHubRoutingEndpoint](/powershell/module/az.iothub/Add-AzIotHubRoutingEndpoint) или команду CLI [az iot hub routing-endpoint create](/cli/azure/iot/hub/routing-endpoint#az-iot-hub-routing-endpoint-create) (в зависимости от предпочтений).
 
 Ниже приведен список параметров, которые можно использовать с командой для создания конечной точки.
 
@@ -59,7 +59,7 @@ ms.locfileid: "91308231"
 |ConnectionString|Строка подключения|Строка подключения к соединителю "Azure IoT для FHIR". Используйте значение, полученное на предыдущем шаге.|
 
 ### <a name="add-a-message-route"></a>Добавление маршрута сообщений
-На этом шаге определяется маршрут сообщений на основе созданной выше конечной точки. Создайте маршрут с помощью команды PowerShell [Add-AzIotHubRoute](https://docs.microsoft.com/powershell/module/az.iothub/Add-AzIoTHubRoute) или команды CLI [az iot hub route create](https://docs.microsoft.com/cli/azure/iot/hub/route#az-iot-hub-route-create) (в зависимости от предпочтений).
+На этом шаге определяется маршрут сообщений на основе созданной выше конечной точки. Создайте маршрут с помощью команды PowerShell [Add-AzIotHubRoute](/powershell/module/az.iothub/Add-AzIoTHubRoute) или команды CLI [az iot hub route create](/cli/azure/iot/hub/route#az-iot-hub-route-create) (в зависимости от предпочтений).
 
 Ниже приведен список параметров, которые можно использовать с командой для добавления маршрута сообщений.
 

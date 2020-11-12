@@ -4,18 +4,20 @@ description: Узнайте, как импортировать или прини
 author: ealsur
 ms.author: maquaran
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: tutorial
 ms.date: 09/21/2020
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cfab8ba88c7da84efb3f6aed6f95bb100507f8da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6e50fe1f5b1658458a2d561f8157f04d1cbceb41
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90981933"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341252"
 ---
 # <a name="bulk-import-data-to-azure-cosmos-db-sql-api-account-by-using-the-net-sdk"></a>Массовый импорт данных в учетную запись API SQL Azure Cosmos DB с помощью пакета SDK для .NET
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этом руководстве описывается, как создать консольное приложение .NET, которое оптимизирует подготовленную пропускную способность (ЕЗ/с), необходимую для импорта данных в Azure Cosmos DB. В этом руководстве вы будете считывать данные из примера источника данных и импортировать их в контейнер Azure Cosmos.
 Для работы с этим руководством используется [версия 3.0 или более поздняя версия](https://www.nuget.org/packages/Microsoft.Azure.Cosmos) пакета SDK .NET для Azure Cosmos DB, предназначенного для .NET Framework или .NET Core.

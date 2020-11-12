@@ -4,18 +4,20 @@ description: Руководство по выполнению запросов S
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.custom: tutorial-develop, mvc
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.reviewer: sngun
-ms.openlocfilehash: dd76a6848c9ff6a5c7a29e328814fe0054655691
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c206b68495b09988e49f37433ccd5616acd29cb7
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92476439"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93337784"
 ---
 # <a name="tutorial-query-azure-cosmos-db-by-using-the-sql-api"></a>Руководство по Выполнение запросов в Azure Cosmos DB с использованием API SQL
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 [API SQL](./introduction.md) базы данных Azure Cosmos DB позволяет выполнять запросы к документам с помощью SQL. В этой статье содержится пример документа и два примера SQL-запросов и результатов.
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/20/2020
 ms.author: mbaldwin
 ms.custom: mvc, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 89118f13bc009ce60d4fd1c82dfe7688bf1e551b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ae62bf353f8a92c4408d4a38a91771ad60a13107
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741275"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93285314"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-virtual-machine-in-python"></a>Руководство по Использование Azure Key Vault с виртуальной машиной в Python
 
@@ -66,7 +66,7 @@ az login
 | [PowerShell](../../virtual-machines/linux/quick-create-powershell.md) | [PowerShell](../../virtual-machines/windows/quick-create-powershell.md) |
 | [Портал Azure](../../virtual-machines/linux/quick-create-portal.md) | [Портал Azure](../../virtual-machines/windows/quick-create-portal.md) |
 
-Чтобы создать виртуальную машину Linux с помощью Azure CLI, используйте команду [az vm create](/cli/azure/vm).  В примере ниже добавляется учетная запись пользователя с именем *azureuser* . Параметр `--generate-ssh-keys` автоматически создает ключ SSH и сохраняет его в стандартное расположение ( *~/.ssh* ). 
+Чтобы создать виртуальную машину Linux с помощью Azure CLI, используйте команду [az vm create](/cli/azure/vm).  В примере ниже добавляется учетная запись пользователя с именем *azureuser*. Параметр `--generate-ssh-keys` автоматически создает ключ SSH и сохраняет его в стандартное расположение ( *~/.ssh* ). 
 
 ```azurecli-interactive
 az vm create \
@@ -129,7 +129,7 @@ pip3 install azure.identity
 
 ## <a name="create-and-edit-the-sample-python-script"></a>Создание и изменение примера скрипта Python
 
-На виртуальной машине создайте файл Python с именем **sample.py** . Измените файл, чтобы он содержал следующий код, заменив "<your-unique-keyvault-name>" именем своего хранилища ключей:
+На виртуальной машине создайте файл Python с именем **sample.py**. Измените файл, чтобы он содержал следующий код, заменив "<your-unique-keyvault-name>" именем своего хранилища ключей:
 
 ```python
 from azure.keyvault.secrets import SecretClient
@@ -148,7 +148,7 @@ print(f"The value of secret '{secretName}' in '{keyVaultName}' is: '{retrieved_s
 
 ## <a name="run-the-sample-python-app"></a>Запуск примера приложения Python
 
-Теперь выполните **sample.py** . Если все прошло хорошо, должно вернуться значение секрета:
+Теперь выполните **sample.py**. Если все прошло хорошо, должно вернуться значение секрета:
 
 ```bash
 python3 sample.py
@@ -166,4 +166,4 @@ az group delete -g myResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Справочник по REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)
+[Справочник по REST API для Azure Key Vault](/rest/api/keyvault/)
