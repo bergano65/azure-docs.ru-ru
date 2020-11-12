@@ -1,17 +1,17 @@
 ---
 title: Управление репликами чтения — портал Azure — база данных Azure для MariaDB
 description: В этой статье описывается, как настроить и управлять репликами чтения в базе данных Azure для MariaDB с помощью портала.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/10/2020
-ms.openlocfilehash: 5faed87995d1c49ab635f39264354a791f729b57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ca6ef3c368a5f578cc90fae3923caa89f3b076a
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742865"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537753"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью портал Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "91742865"
 
     ![База данных Azure для MariaDB — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
 
-7. Нажмите кнопку **ОК**, чтобы подтвердить создание реплики.
+7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
 
 > [!NOTE]
 > Реплики чтения создаются с той же конфигурацией сервера, что и у главного сервера. Вы можете изменить созданную конфигурацию сервера-реплики. Рекомендуется, чтобы конфигурация сервера реплики хранилась в значении, превышающем значение источника, чтобы реплика могла поддерживать базу данных master.
@@ -97,7 +97,7 @@ ms.locfileid: "91742865"
 
    ![База данных Azure для MariaDB — удаление реплики](./media/howto-read-replica-portal/delete-replica.png)
 
-5. Введите имя реплики и нажмите кнопку **Удалить**, чтобы подтвердить удаление реплики.  
+5. Введите имя реплики и нажмите кнопку **Удалить** , чтобы подтвердить удаление реплики.  
 
    ![Подтверждение удаления реплики базы данных Azure для MariaDB](./media/howto-read-replica-portal/delete-replica-confirm.png)
 

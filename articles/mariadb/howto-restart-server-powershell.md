@@ -1,18 +1,18 @@
 ---
 title: Перезапуск сервера-Azure PowerShell — база данных Azure для MariaDB
 description: В этой статье описывается, как можно перезапустить сервер базы данных Azure для MariaDB с помощью PowerShell.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 5/26/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ad8ea20e26c71a4775e98d3457204ff2181ee493
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 14cde5b1302c46b819bb7d841fb5b84a43c580c0
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425815"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94538960"
 ---
 # <a name="restart-azure-database-for-mariadb-server-using-powershell"></a>Перезапуск базы данных Azure для сервера MariaDB с помощью PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "92425815"
 
 Количество времени, необходимое для выполнения перезагрузки, зависит от процесса восстановления MariaDB. Чтобы сократить время перезапуска, рекомендуется свести к минимальному объему действий, происходящих на сервере, до перезапуска.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 

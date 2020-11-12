@@ -1,18 +1,18 @@
 ---
 title: Мониторинг — база данных Azure для MariaDB
 description: В этой статье описываются метрики для мониторинга и создания предупреждений в Базе данных Azure для MariaDB, включая ЦП, хранилище и статистику подключений.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 10/21/2020
-ms.openlocfilehash: d2d34e95642308dcdacba20879945f2c965db955
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 5790094571563d3ca8576480a6296a73756fb6a6
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425201"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94540422"
 ---
 # <a name="monitoring-in-azure-database-for-mariadb"></a>Мониторинг в Базе данных Azure для MariaDB
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для MariaDB предоставляет различные метрики, позволяющие понять действия сервера.
@@ -25,7 +25,7 @@ ms.locfileid: "92425201"
 ### <a name="list-of-metrics"></a>Список метрик
 Для Базы данных Azure для MariaDB доступны следующие метрики:
 
-|Метрика|Отображаемое имя метрики|Unit|Описание|
+|Метрика|Отображаемое имя метрики|Единицы|Описание|
 |---|---|---|---|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
 |memory_percent|Процент памяти|Процент|Процент используемой памяти.|

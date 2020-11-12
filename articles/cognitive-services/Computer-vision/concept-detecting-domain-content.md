@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 8d6dc91ae7bb0f6d7a24064749d9295558a7d39c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5cd872d66088e165bfc8356ab6d96a0a6135a0e0
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "68946338"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94538314"
 ---
 # <a name="detect-domain-specific-content"></a>Обнаружение содержимого, связанного с определенными предметными областями
 
@@ -26,7 +26,7 @@ ms.locfileid: "68946338"
 
 ### <a name="scoped-analysis"></a>Ограниченный анализ
 
-Вы можете проанализировать изображение, используя только выбранную модель для конкретного домена, вызвав API [Models/ \<model\> /Analyze](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200) .
+Вы можете проанализировать изображение, используя только выбранную модель для конкретного домена, вызвав API [Models/ \<model\> /Analyze](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) .
 
 Ниже приведен пример ответа JSON, возвращаемого API **models/celebrities/analysis** для следующего изображения.
 
@@ -57,7 +57,7 @@ ms.locfileid: "68946338"
 
 ### <a name="enhanced-categorization-analysis"></a>Расширенный анализ классификации
 
-Вы также можете использовать модели для предметной области для дополнения общего анализа образа. Вы можете сделать это как часть [высокоуровневой категоризации](concept-categorizing-images.md), определяя модели для предметной области в параметре *details* вызова API [Analyze](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa).
+Вы также можете использовать модели для предметной области для дополнения общего анализа образа. Вы можете сделать это как часть [высокоуровневой категоризации](concept-categorizing-images.md), определяя модели для предметной области в параметре *details* вызова API [Analyze](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b).
 
 При вызове этого метода сначала вызывается классификатор таксономии на 86 категориях. Если какая-либо из обнаруженных категорий имеет соответствующую модель для предметной области, образ также передается с помощью этой модели и добавляются результаты.
 
@@ -100,12 +100,12 @@ ms.locfileid: "68946338"
 
 Сейчас Компьютерное зрение поддерживает следующие модели для предметной области.
 
-| name | Описание |
+| Имя | Описание |
 |------|-------------|
 | celebrities | Распознавание знаменитостей; поддерживается для изображений, которые были классифицированы как относящиеся к категории `people_` |
 | landmarks | Распознавание ориентиров; поддерживается для изображений, которые были классифицированы как относящиеся к категории `outdoor_` или `building_` |
 
-Вызов API [Models](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fd) вернет информацию вместе с категориями, к которым может применяться каждая модель.
+Вызов API [Models](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20e) вернет информацию вместе с категориями, к которым может применяться каждая модель.
 
 ```json
 {

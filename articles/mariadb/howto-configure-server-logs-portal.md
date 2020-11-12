@@ -1,29 +1,29 @@
 ---
 title: Доступ к журналам запросов с высокой производительностью. портал Azure — база данных Azure для MariaDB
 description: В этой статье описывается, как настроить и получить доступ к журналам запросов в базе данных Azure для MariaDB из портал Azure.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 4/13/2020
-ms.openlocfilehash: a2642ebbad7c8d7a2e092a6e00929e32b72b52d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c5ee948daecafc061910f36d2ac95d15338bfb38
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86104985"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94539946"
 ---
 # <a name="configure-and-access-azure-database-for-maria-db-slow-query-logs-from-the-azure-portal"></a>Настройка журналов запросов базы данных Azure для Марии и доступ к ним из портал Azure
 
 Вы можете настроить, перечислить и скачать [базу данных Azure для MariaDB с помощью журналов запросов с высокой](concepts-server-logs.md) загрузкой из портал Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 Для выполнения действий, описанных в этой статье, требуется [сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md).
 
 ## <a name="configure-logging"></a>Настройка журнала
 Настройте доступ к журналу медленных запросов. 
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
 2. Выберите сервер Базы данных Azure для MariaDB.
 
@@ -38,7 +38,7 @@ ms.locfileid: "86104985"
 
 7. Измените все необходимые параметры. 
 
-8. Щелкните **Сохранить**. 
+8. Нажмите кнопку **Сохранить**. 
 
    :::image type="content" source="./media/howto-configure-server-logs-portal/3-save-discard.png" alt-text="Снимок экрана параметров журнала &quot;замедляют запрос&quot; и &quot;Сохранить&quot;.":::
 
@@ -47,7 +47,7 @@ ms.locfileid: "86104985"
 ## <a name="view-list-and-download-logs"></a>Просмотр списка журналов и их скачивание
 После начала ведения журнала можно просмотреть список доступных журналов запросов с высокой загрузкой и загрузить отдельные файлы журналов. 
 
-1. Перейдите на портал Azure.
+1. Откройте портал Azure.
 
 2. Выберите сервер Базы данных Azure для MariaDB.
 

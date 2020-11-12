@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/09/2020
-ms.openlocfilehash: 2234b1507e6e0fdb0b668fc18a7c8533e3ea7cc1
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: eaaedc4404419e6028250a994077dd3df20b83d4
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441789"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94539657"
 ---
 # <a name="enterprise-security-and-governance-for-azure-machine-learning"></a>Корпоративная безопасность и управление для Машинное обучение Azure
 
@@ -123,10 +123,11 @@ ms.locfileid: "94441789"
 
 Существует несколько сценариев мониторинга с Машинное обучение Azure в зависимости от роли и того, что отслеживается.
 
-| Роль | Мониторинг для использования |
-| ---- | ----- |
-| Admin, DevOps, Млопс | [Метрики Azure Monitor](#azure-monitor), [Журнал действий](#activity-log), [сканирование уязвимостей](#vulnerability-scanning) |
-| Анализу данных, Млопс | [Отслеживание выполнений](#monitor-runs) |
+| Роль | Мониторинг для использования | Описание |
+| ---- | ----- | ----- |
+| Admin, DevOps, Млопс | [Метрики Azure Monitor](#azure-monitor), [Журнал действий](#activity-log), [сканирование уязвимостей](#vulnerability-scanning) | Сведения об уровне обслуживания |
+| Анализу данных, Млопс | [Отслеживание выполнений](#monitor-runs) | Сведения, регистрируемые во время обучения |
+| MLOps | [Получение данных модели](how-to-enable-data-collection.md), [мониторинг с помощью Application Insights](how-to-enable-app-insights.md) | Данные, регистрируемые моделями, развернутыми в виде веб-служб или модулей IoT Edge|
 
 ### <a name="monitor-runs"></a>Отслеживание выполнений
 

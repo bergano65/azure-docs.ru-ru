@@ -1,17 +1,17 @@
 ---
 title: Миграция с помощью дампа и восстановления — база данных Azure для MySQL
 description: В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MySQL с помощью таких средств, как mysqldump, MySQL Workbench и PHPMyAdmin.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/30/2020
-ms.openlocfilehash: 336021792b7e5340e35a0c59e0f113d4dad9307d
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: f21587fe6a48d042ed98c126beb2a7dcaa39b7d8
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128969"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537923"
 ---
 # <a name="migrate-your-mysql-database-to-azure-database-for-mysql-using-dump-and-restore"></a>Перенос базы данных MySQL в базу данных Azure для MySQL с помощью дампа и восстановления
 
@@ -73,7 +73,7 @@ ms.locfileid: "93128969"
 
 Добавьте сведения о подключении в MySQL Workbench.
 
-:::image type="content" source="./media/concepts-migrate-dump-restore/2_setup-new-connection.png" alt-text="Поиск сведений о подключении на портале Azure":::
+:::image type="content" source="./media/concepts-migrate-dump-restore/2_setup-new-connection.png" alt-text="Строка подключения MySQL Workbench":::
 
 ## <a name="preparing-the-target-azure-database-for-mysql-server-for-fast-data-loads"></a>Подготовка целевого сервера базы данных Azure для MySQL для быстрой загрузки данных
 Чтобы подготовить целевой сервер базы данных Azure для MySQL для ускорения загрузки данных, необходимо изменить следующие параметры и конфигурацию сервера.
@@ -151,10 +151,10 @@ $ mysql -h mydemoserver.mysql.database.azure.com -u myadmin -p testdb < testdb_b
 Для экспорта можно использовать распространенный инструмент phpMyAdmin, который уже может быть установлен в вашей локальной среде. Чтобы экспортировать базу данных MySQL с помощью PHPMyAdmin, выполните следующие действия:
 1. Откройте phpMyAdmin.
 2. Выберите свою базу данных. Щелкните имя базы данных в списке слева.
-3. Щелкните ссылку **Экспорт** . Появится страница для просмотра дампа базы данных.
+3. Щелкните ссылку **Экспорт**. Появится страница для просмотра дампа базы данных.
 4. В области экспорта щелкните ссылку **Выбрать все** , чтобы выбрать все таблицы в базе данных.
 5. В области параметров SQL щелкните необходимые параметры.
-6. Щелкните параметр **Сохранить как файл** , выберите соответствующий вариант сжатия, а затем нажмите кнопку **Перейти** . Появится диалоговое окно, предлагающее сохранить файл локально.
+6. Щелкните параметр **Сохранить как файл** , выберите соответствующий вариант сжатия, а затем нажмите кнопку **Перейти**. Появится диалоговое окно, предлагающее сохранить файл локально.
 
 ### <a name="import-using-phpmyadmin"></a>Импорт с помощью PHPMyAdmin
 Импорт базы данных выполняется подобно экспорту. Выполните следующие действия:

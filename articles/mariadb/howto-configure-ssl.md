@@ -1,18 +1,18 @@
 ---
 title: Настройка SSL — база данных Azure для MariaDB
 description: Инструкции по настройке базы данных Azure для MariaDB и связанных приложений для правильного использования SSL-соединений
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 07/08/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1b7127fd4807e1ddd3d5181d73c7f8e77f10cf77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f505ad3090470d2afeb9b16ffbe5c872cb9586b
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90055991"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94538110"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mariadb"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MariaDB
 База данных Azure для MariaDB поддерживает подключение сервера базы данных Azure для MariaDB к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
@@ -66,7 +66,7 @@ az mariadb server update --resource-group myresource --name mydemoserver --ssl-e
 ```
 
 ## <a name="verify-the-ssl-connection"></a>Проверка SSL-соединения
-Выполните команду mysql **status**, чтобы проверить наличие подключения к серверу MariaDB с помощью протокола SSL.
+Выполните команду mysql **status** , чтобы проверить наличие подключения к серверу MariaDB с помощью протокола SSL.
 ```sql
 status
 ```

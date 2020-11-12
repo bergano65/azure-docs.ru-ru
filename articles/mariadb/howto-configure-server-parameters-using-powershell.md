@@ -1,19 +1,19 @@
 ---
 title: Настройка параметров сервера — Azure PowerShell — база данных Azure для MariaDB
 description: В этой статье описывается, как настроить параметры службы в базе данных Azure для MariaDB с помощью PowerShell.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.devlang: azurepowershell
 ms.topic: how-to
 ms.date: 10/1/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: d116bdec2974fa2c39c6a56364e54ca7d776b682
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 8ace6306bec4c79cbce0a1572360db1acd2cea97
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426029"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94538246"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mariadb-using-powershell"></a>Настройка параметров сервера в базе данных Azure для MariaDB с помощью PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "92426029"
 >[!Note]
 > Параметры сервера можно обновлять глобально на уровне сервера с помощью [Azure CLI](./howto-configure-server-parameters-cli.md), [PowerShell](./howto-configure-server-parameters-using-powershell.md)или [портала Azure](./howto-server-parameters.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -53,7 +53,7 @@ Get-AzMariaDbConfiguration -ResourceGroupName myresourcegroup -ServerName mydemo
 
 Чтобы отобразить сведения о конкретном параметре конфигурации для сервера, выполните `Get-AzMariaDbConfiguration` командлет и укажите параметр **Name** .
 
-В этом примере показаны подробные сведения о параметре конфигурации сервера ** \_ \_ log** **mydemoserver** для сервера в разделе **myresourcegroup**группы ресурсов.
+В этом примере показаны подробные сведения о параметре конфигурации сервера **\_ \_ log** **mydemoserver** для сервера в разделе **myresourcegroup** группы ресурсов.
 
 ```azurepowershell-interactive
 Get-AzMariaDbConfiguration -Name slow_query_log -ResourceGroupName myresourcegroup -ServerName mydemoserver
@@ -63,7 +63,7 @@ Get-AzMariaDbConfiguration -Name slow_query_log -ResourceGroupName myresourcegro
 
 Вы также можете изменить значение определенного параметра конфигурации сервера. При этом обновляется базовое значение конфигурации для ядра СУБД сервера MariaDB. Чтобы обновить конфигурацию, используйте `Update-AzMariaDbConfiguration` командлет.
 
-Чтобы обновить параметр конфигурации сервера ** \_ \_ log** **mydemoserver** для сервера в разделе **myresourcegroup**группы ресурсов.
+Чтобы обновить параметр конфигурации сервера **\_ \_ log** **mydemoserver** для сервера в разделе **myresourcegroup** группы ресурсов.
 
 ```azurepowershell-interactive
 Update-AzMariaDbConfiguration -Name slow_query_log -ResourceGroupName myresourcegroup -ServerName mydemoserver -Value On

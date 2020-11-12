@@ -1,17 +1,17 @@
 ---
 title: 'База данных Azure для MySQL: рекомендации по повышению производительности'
 description: В этой статье описывает функция предоставления рекомендаций по повышению производительности в Базе данных Azure для MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/3/2020
-ms.openlocfilehash: 6f41863f45bdc90cb9fe589ba0a5011dea84a67c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1445ad3d6be020326c34d60c555c24c435548fd0
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84485242"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537651"
 ---
 # <a name="performance-recommendations-in-azure-database-for-mysql"></a>Рекомендации по повышению производительности в Базе данных Azure для MySQL
 
@@ -35,7 +35,7 @@ ms.locfileid: "84485242"
 
 В окне **Рекомендации** отобразится список рекомендаций, если они были найдены, и связанный идентификатор запроса, создавшего эту рекомендацию. С помощью идентификатора запроса можно получить дополнительные сведения о нем в представлении [mysql.query_store](concepts-query-store.md#mysqlquery_store).
 
-:::image type="content" source="./media/concepts-performance-recommendations/performance-recommendations-result.png" alt-text="Целевая страница рекомендаций по повышению производительности":::
+:::image type="content" source="./media/concepts-performance-recommendations/performance-recommendations-result.png" alt-text="Новая страница рекомендаций по производительности":::
 
 Найденные рекомендации не применяются автоматически. Чтобы применить рекомендацию, скопируйте текст запроса и выполните его в клиенте по своему выбору. Не забудьте протестировать и отследить результаты применения рекомендации, чтобы оценить ее.
 

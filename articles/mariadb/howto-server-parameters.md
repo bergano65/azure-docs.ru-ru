@@ -1,31 +1,31 @@
 ---
 title: Настройка параметров сервера — портал Azure — база данных Azure для MariaDB
 description: В этой статье описывается, как настроить параметры сервера MariaDB в базе данных Azure для MariaDB с помощью портала Azure.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 10/1/2020
-ms.openlocfilehash: 9d0b6865c7fb5b59f379568d15bd9b96883202e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7081535bb709e6731a9a15436334e8742e7bdd08
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91626434"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94539462"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mariadb-using-the-azure-portal"></a>Настройка параметров сервера в базе данных Azure для MariaDB с помощью портал Azure
 
 База данных Azure для MariaDB поддерживает настройку некоторых параметров сервера. В этой статье описывается настройка этих параметров с помощью портала Azure. Не все параметры сервера можно настроить.
 
 >[!Note]
-> Параметры сервера можно обновлять глобально на уровне сервера, использовать [Azure CLI](./howto-configure-server-parameters-cli.md), [PowerShell](./howto-configure-server-parameters-using-powershell.md)или [портал Azure](./howto-server-parameters.md).
+> Параметры сервера можно обновлять глобально на уровне сервера с помощью [Azure CLI](./howto-configure-server-parameters-cli.md), [PowerShell](./howto-configure-server-parameters-using-powershell.md)или [портала Azure](./howto-server-parameters.md).
 
 ## <a name="configure-server-parameters"></a>Настройка параметров сервера
 
 1. Войдите на портал Azure, а затем найдите свой сервер базы данных Azure для MariaDB.
-2. В разделе **Параметры** щелкните **Параметры сервера**, чтобы открыть страницу параметров сервера для сервера базы данных Azure для MariaDB.
+2. В разделе **Параметры** щелкните **Параметры сервера** , чтобы открыть страницу параметров сервера для сервера базы данных Azure для MariaDB.
 ![Страница параметров сервера на портале Azure](./media/howto-server-parameters/azure-portal-server-parameters.png)
-3. Найдите все параметры, которые необходимо настроить. Просмотрите столбец **Описание**, чтобы понять назначение и допустимые значения.
+3. Найдите все параметры, которые необходимо настроить. Просмотрите столбец **Описание** , чтобы понять назначение и допустимые значения.
 ![Раскрывающийся список для перечисляемого типа](./media/howto-server-parameters/3-toggle_parameter.png)
 4. Нажмите кнопку  **сохранить** , чтобы сохранить изменения.
 ![Сохранение или отмена изменений](./media/howto-server-parameters/4-save_parameters.png)
@@ -36,12 +36,12 @@ ms.locfileid: "91626434"
 
 Если параметр сервера, который требуется обновить, не указан в портал Azure, можно при необходимости задать параметр на уровне соединения с помощью `init_connect` . Это задает параметры сервера для каждого клиента, подключающегося к серверу. 
 
-1. В разделе **Параметры** щелкните **Параметры сервера**, чтобы открыть страницу параметров сервера для сервера базы данных Azure для MariaDB.
+1. В разделе **Параметры** щелкните **Параметры сервера** , чтобы открыть страницу параметров сервера для сервера базы данных Azure для MariaDB.
 2. Поиск `init_connect`
 3. Добавьте параметры сервера в формате. `SET parameter_name=YOUR_DESIRED_VALUE` значение в столбце значение.
 
     Например, можно изменить кодировку сервера, задав `init_connect` для значение `SET character_set_client=utf8;SET character_set_database=utf8mb4;SET character_set_connection=latin1;SET character_set_results=latin1;`
-4. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
+4. Нажмите кнопку **Сохранить** , чтобы сохранить изменения.
 
 ## <a name="working-with-the-time-zone-parameter"></a>Работа с параметром часового пояса
 

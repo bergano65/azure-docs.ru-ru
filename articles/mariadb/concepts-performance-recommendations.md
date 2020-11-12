@@ -1,17 +1,17 @@
 ---
 title: Рекомендации по производительности — база данных Azure для MariaDB
 description: В этой статье описывается функция рекомендации по повышению производительности в базе данных Azure для MariaDB.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 6/3/2020
-ms.openlocfilehash: 05bc0f1ae50f74cc7c8ab2b236d73bdb4a6fe787
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a20b8a43c8955e1afea7a7157e3e73425fb0d806
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84484709"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94540473"
 ---
 # <a name="performance-recommendations-in-azure-database-for-mariadb"></a>Рекомендации по повышению производительности в Базе данных Azure для MariaDB
 
@@ -35,7 +35,7 @@ ms.locfileid: "84484709"
 
 В окне **Рекомендации** отобразится список рекомендаций, если они были найдены, и связанный идентификатор запроса, создавшего эту рекомендацию. С помощью идентификатора запроса можно получить дополнительные сведения о нем в представлении [mysql.query_store](concepts-query-store.md#mysqlquery_store).
 
-:::image type="content" source="./media/concepts-performance-recommendations/performance-recommendations-result.png" alt-text="Целевая страница рекомендаций по повышению производительности":::
+:::image type="content" source="./media/concepts-performance-recommendations/performance-recommendations-result.png" alt-text="Новая страница рекомендаций по производительности":::
 
 Найденные рекомендации не применяются автоматически. Чтобы применить рекомендацию, скопируйте текст запроса и выполните его в клиенте по своему выбору. Не забудьте протестировать и отследить результаты применения рекомендации, чтобы оценить ее.
 

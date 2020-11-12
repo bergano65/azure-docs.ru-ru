@@ -1,19 +1,19 @@
 ---
 title: Доступ к журналам запросов с высокой производительностью. Azure CLI — база данных Azure для MariaDB
 description: В этой статье описывается, как получить доступ к журналам ожидания в базе данных Azure для MariaDB с помощью служебной программы командной строки Azure CLI.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 4/13/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: cd74feaebe5a89667668c05e332ed9d3c7cdad5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cea1571a48afe00350dde247c3c10e222a446247
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87490257"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94539878"
 ---
 # <a name="configure-and-access-azure-database-for-maria-db-slow-query-logs-by-using-azure-cli"></a>Настройка журналов запросов базы данных Azure для Марии и доступ к ним с помощью Azure CLI
 
@@ -27,7 +27,7 @@ ms.locfileid: "87490257"
 ## <a name="configure-logging"></a>Настройка журнала
 Можно настроить на сервере доступ к журналу медленных запросов MySQL, выполнив следующие действия:
 1. Включите ведение журнала для запросов, задав для **параметра \_ \_ журнала скорости запроса** значение ON.
-2. Выберите место вывода журналов для использования ** \_ выходных данных журнала**. Чтобы отправить журналы в локальное хранилище и Azure Monitor журналы диагностики, выберите **файл**. Чтобы отправить журналы только в Azure Monitor журналы, выберите **нет** .
+2. Выберите место вывода журналов для использования **\_ выходных данных журнала**. Чтобы отправить журналы в локальное хранилище и Azure Monitor журналы диагностики, выберите **файл**. Чтобы отправить журналы только в Azure Monitor журналы, выберите **нет** .
 3. Настройте другие параметры, такие как **long\_query\_time** и **log\_slow\_admin\_statements**.
 
 Ознакомьтесь со статьей [Настройка параметров конфигурации сервера с помощью Azure CLI](howto-configure-server-parameters-cli.md), чтобы узнать, как задать значение этих параметров с помощью Azure CLI.

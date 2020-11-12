@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 4e6c2db5333962d7ae43534998ffc1c48b0dba45
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6623693a7079056cfe107fc8246e0fd43e2c0b8c
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80244568"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94538196"
 ---
 # <a name="detecting-image-types-with-computer-vision"></a>Определение типов изображений с помощью API компьютерного зрения
 
-С помощью API [анализа изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) компьютерное зрение может анализировать тип содержимого изображений, указывая, является ли изображение картинкой или графиком.
+С помощью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) компьютерное зрение может анализировать тип содержимого изображений, указывая, является ли изображение картинкой или графиком.
 
 ## <a name="detecting-clip-art"></a>Определение картинки
 
@@ -115,7 +115,7 @@ ms.locfileid: "80244568"
 
 ## <a name="use-the-api"></a>Использование API
 
-Функция обнаружения типов изображений является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `ImageType` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"imageType"` раздела.
+Функция обнаружения типов изображений является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `ImageType` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"imageType"` раздела.
 
 * [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
 * [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

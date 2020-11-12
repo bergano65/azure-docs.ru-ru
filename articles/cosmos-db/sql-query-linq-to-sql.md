@@ -5,19 +5,19 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 7/29/2020
+ms.date: 11/11/2020
 ms.author: tisande
-ms.openlocfilehash: 38d37d03c99bd3a39b00276da110ea0ef6bb962e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 35f212ea246e03be02fa082ef1b55dcb7cae1575
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93332378"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94538654"
 ---
 # <a name="linq-to-sql-translation"></a>Трансляция из LINQ в SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Поставщик запросов Azure Cosmos DB выполняет наилучшее сопоставление запроса LINQ с запросом на Cosmos DB SQL. Если требуется получить SQL-запрос, преобразованный из LINQ, используйте `ToString()` метод для созданного `IQueryable` объекта. Следующее описание предполагает базовое знание [LINQ](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries).
+Поставщик запросов Azure Cosmos DB выполняет наилучшее сопоставление запроса LINQ с запросом на Cosmos DB SQL. Если требуется получить SQL-запрос, преобразованный из LINQ, используйте `ToString()` метод для созданного `IQueryable` объекта. Следующее описание предполагает базовое знание [LINQ](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries). Помимо LINQ, Azure Cosmos DB также поддерживает [Entity Framework Core](/ef/core/providers/cosmos/?tabs=dotnet-core-cli) , который работает с API SQL.
 
 Система типов поставщиков запросов поддерживает только типы-примитивы JSON: numeric, Boolean, String и NULL.
 
@@ -344,7 +344,7 @@ using (FeedIterator<Book> setIterator = container.GetItemLinqQueryable<Book>()
       WHERE c.familyName = f.parents[0].familyName
   ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Данные документов модели](modeling-data.md)

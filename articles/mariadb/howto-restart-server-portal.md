@@ -1,17 +1,17 @@
 ---
 title: Перезапуск сервера-портал Azure — база данных Azure для MariaDB
 description: В этой статье объясняется, как перезапустить сервер Базы данных Azure для MariaDB с помощью портала Azure.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 369d19d98946f8309c7f2053f4453e09a7ed902f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0c16cf8d67394f6aa50cb30a44b4ff5a677159de
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86121067"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94538892"
 ---
 # <a name="restart-azure-database-for-mariadb-server-using-azure-portal"></a>Перезапуск сервера Базы данных Azure для MariaDB с помощью портала Azure
 В этой статье объясняется, как перезапустить сервер Базы данных Azure для MariaDB. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
@@ -20,7 +20,7 @@ ms.locfileid: "86121067"
 
 Время, необходимое для завершения перезапуска, зависит от процесса восстановления MariaDB. Чтобы уменьшить время перезапуска, рекомендуем свести к минимуму объем действий, выполняемых на сервере перед перезапуском.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [Сервер базы данных Azure для MariaDB](./quickstart-create-mariadb-server-database-using-azure-portal.md)
 
@@ -34,7 +34,7 @@ ms.locfileid: "86121067"
 
    ![База данных Azure для MariaDB. Обзор. Кнопка перезапуска](./media/howto-restart-server-portal/2-server.png)
 
-3. Нажмите кнопку **Да**, чтобы подтвердить перезапуск сервера.
+3. Нажмите кнопку **Да** , чтобы подтвердить перезапуск сервера.
 
    ![База данных Azure для MariaDB. Подтверждение перезапуска](./media/howto-restart-server-portal/3-restart-confirm.png)
 

@@ -1,18 +1,18 @@
 ---
 title: Управление репликами чтения — Azure CLI, REST API — база данных Azure для MySQL
 description: Узнайте, как настроить реплики чтения и управлять ими в базе данных Azure для MySQL с помощью Azure CLI или REST API.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/10/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 747b8bc1abbf19c861e180faf17e2fa1a143a237
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 1a5bc9638e2e6eeff8f2176247f579b64beede90
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546319"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94540218"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-cli-and-rest-api"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MySQL с помощью Azure CLI и REST API
 
@@ -96,7 +96,7 @@ az mysql server replica stop --name mydemoreplicaserver --resource-group myresou
 
 ### <a name="delete-a-replica-server"></a>Удаление сервера-реплики
 
-Сервер реплики чтения можно удалить, выполнив команду **[az mysql server delete](/cli/azure/mysql/server)** .
+Сервер реплики чтения можно удалить, выполнив команду **[az mysql server delete](/cli/azure/mysql/server)**.
 
 ```azurecli-interactive
 az mysql server delete --resource-group myresourcegroup --name mydemoreplicaserver

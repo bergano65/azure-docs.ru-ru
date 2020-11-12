@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: ac3edc466d640fdb98fd38ba59938aa13fe00f73
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 4eb2835bd09e6548149ee90cb7232bf230de0300
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489154"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94538756"
 ---
 # <a name="optical-character-recognition-ocr"></a>Оптическое распознавание текста (OCR)
 
@@ -186,7 +186,7 @@ API чтения поддерживает изображения и докуме
 
 ## <a name="ocr-api"></a>API OCR
 
-[API OCR](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) использует старую модель распознавания, поддерживает только изображения и выполняется синхронно, возвращая немедленно с обнаруженным текстом. См. [языки, поддерживаемые OCR](https://docs.microsoft.com/azure/cognitive-services/computer-vision/language-support#optical-character-recognition-ocr) , и API чтения.
+[API OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20d) использует старую модель распознавания, поддерживает только изображения и выполняется синхронно, возвращая немедленно с обнаруженным текстом. См. [языки, поддерживаемые OCR](https://docs.microsoft.com/azure/cognitive-services/computer-vision/language-support#optical-character-recognition-ocr) , и API чтения.
 
 ## <a name="data-privacy-and-security"></a>Конфиденциальность и безопасность данных
 
@@ -195,7 +195,7 @@ API чтения поддерживает изображения и докуме
 > [!NOTE]
 > Операции Рекогнизетекст Computer Висон 2,0 в данный процесс являются нерекомендуемыми в пользу нового API для чтения, рассмотренного в этой статье. Существующие клиенты должны [Перейти на использование операций чтения](upgrade-api-versions.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Приступая к работе с [краткими руководствами по компьютерное зрение Read SDK](./quickstarts-sdk/client-library.md) на C#, Java, JavaScript или Python.
 - Используйте [краткие руководства по чтению REST API](./QuickStarts/CSharp-hand-text.md) в C#, Java, JavaScript или Python, чтобы узнать, как использовать интерфейсы API.

@@ -10,22 +10,18 @@ ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
 ms.date: 05/2/2020
 ms.author: derekol
-ms.openlocfilehash: ef573817927cf732da3426d802f8f26e2e9cd4ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7b696ba052b2aca9e14628327c07275845607ad
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399029"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94540592"
 ---
 # <a name="register-a-peering-service-connection-by-using-the-azure-cli"></a>Регистрация подключения к службе пиринга с помощью Azure CLI
 
 Служба пиринга Azure — это сетевая служба, расширяющая возможности клиентов по подключению к облачным службам Майкрософт, таким как Microsoft 365, Dynamics 365, SaaS (программное обеспечение как услуга), Azure и любым службам корпорации Майкрософт, которые работают через общедоступный Интернет. В этой статье вы узнаете, как зарегистрировать подключение службы пиринга с помощью Azure CLI.
 
-Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) прямо сейчас.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.0.28 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Выполните команду [az version](/cli/azure/reference-index#az_version), чтобы узнать установленную версию и зависимые библиотеки. Чтобы обновиться до последней версии, выполните команду [az upgrade](/cli/azure/reference-index#az_upgrade).
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
@@ -41,19 +37,11 @@ ms.locfileid: "91399029"
 
 Убедитесь, что поставщики услуг подключения имеют партнерские отношения с корпорацией Майкрософт.
 
-### <a name="1-sign-in-to-your-azure-account-and-select-your-subscription"></a>1. Войдите в учетную запись Azure и выберите свою подписку.
+[!INCLUDE [azure-cli-prepare-your-environment-h3.md](../../includes/azure-cli-prepare-your-environment-h3.md)]
 
-Чтобы начать настройку, войдите в свою учетную запись Azure. Если вы используете параметр Cloud Shell **попробовать** , вы вошли автоматически. Используйте следующие примеры для подключения.
+- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-```azurecli-interactive
-az login
-```
-
-Просмотрите подписки учетной записи.
-
-```azurecli-interactive
-az account list
-```
+### <a name="1-select-your-subscription"></a>1. Выберите подписку.
 
 Выберите подписку, для которой необходимо зарегистрировать подключение службы пиринга.
 
@@ -102,7 +90,7 @@ az peering service prefix create \
   --resource-group  -g myResourceGroup\
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о подключении службы пиринга см. в статье [Подключение к службе пиринга](connection.md).
 - Дополнительные сведения о телеметрии см. в статье [Телеметрия для подключения Службы пиринга](connection-telemetry.md).

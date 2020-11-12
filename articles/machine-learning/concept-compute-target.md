@@ -1,7 +1,7 @@
 ---
 title: Что такое целевые показатели вычислений
 titleSuffix: Azure Machine Learning
-description: Определите, где вы хотите обучить или развернуть модель с помощью Машинное обучение Azure.
+description: Узнайте, как назначить ресурс или среду для обучения или развертывания модели с помощью Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/29/2020
-ms.openlocfilehash: 72cdfe2ebe79abb9649ac497a6ecddda8918b951
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2a19183f5ba5b1ea4d50cd5cfba6115f7dede6cd
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322278"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94540052"
 ---
 # <a name="what-are-compute-targets-in-azure-machine-learning"></a>Что такое целевые объекты вычислений в Машинном обучении Azure?
 
@@ -100,21 +100,21 @@ ms.locfileid: "93322278"
 
 | **Поддерживаемые серии виртуальных машин**  | **Ограничения** |
 |------------|------------|
-| D | Нет. |
-| Dv2 | Нет. |  
-| Dv3 | Нет.|
-| DSv2 | Нет. | 
-| DSv3 | Нет.|
-| Серия fsv2 | Нет. | 
+| D | Отсутствует. |
+| Dv2 | Отсутствует. |  
+| Dv3 | Отсутствует.|
+| DSv2 | Отсутствует. | 
+| DSv3 | Отсутствует.|
+| Серия fsv2 | Отсутствует. | 
 | HBv2 | Требуется утверждение. |  
 | HCS | Требуется утверждение. |  
 | M | Требуется утверждение. |
-| NC | Нет. |    
+| NC | Отсутствует. |    
 | NCsv2 | Требуется утверждение. |
 | NCsv3 | Требуется утверждение. |  
 | Структура | Требуется утверждение. |
 | NDv2 | Требуется утверждение. |
-| NV | Нет. |
+| NV | Отсутствует. |
 | NVv3 | Требуется утверждение. | 
 
 

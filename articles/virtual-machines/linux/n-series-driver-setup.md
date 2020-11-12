@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: vikancha
-ms.openlocfilehash: 9b6e752f8352db565239aba4a990752b1c397f5f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: b80a09c82b1e932fb93b4c85ee250773aa7d3c38
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517265"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94539759"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -98,7 +98,9 @@ sudo reboot
   
    sudo reboot
 
-2. Install the latest [Linux Integration Services for Hyper-V and Azure](https://www.microsoft.com/download/details.aspx?id=55106).
+2. Install the latest [Linux Integration Services for Hyper-V and Azure](https://www.microsoft.com/download/details.aspx?id=55106). Check if LIS is required by verifying the results of lspci. If all GPU devices are listed as expected, installing LIS is not required.
+
+Skip this step if you plan to use CentOS 7.8(or higher) as LIS is no longer required for these versions.
 
    ```bash
    wget https://aka.ms/lis
@@ -150,7 +152,7 @@ sudo reboot
 
 ## <a name="rdma-network-connectivity"></a>Сетевое подключение RDMA
 
-Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в одной группе доступности или одной группе размещения в масштабируемом наборе виртуальных машин. Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих Intel MPI 5.x или более поздней версии. Дополнительные требования приведены ниже.
+Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в той же группе доступности или в пределах одной группы размещения в масштабируемом наборе виртуальных машин. Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих Intel MPI 5.x или более поздней версии. Дополнительные требования приведены ниже.
 
 ### <a name="distributions"></a>Дистрибутивы
 
@@ -264,7 +266,7 @@ sudo reboot
    sudo yum install hyperv-daemons
    ```
 
-2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NV2 используйте только драйвер NVIDIA.) Чтобы сделать это, создайте в `/etc/modprobe.d` файл с именем `nouveau.conf` и следующим содержимым:
+2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (Используйте драйвер NVIDIA только на виртуальных машинах NV или NV3.) Для этого создайте файл с `/etc/modprobe.d` именем `nouveau.conf` со следующим содержимым:
 
    ```
    blacklist nouveau
@@ -272,7 +274,9 @@ sudo reboot
    blacklist lbm-nouveau
    ```
  
-3. Перезагрузите виртуальную машину, повторно подключитесь и установите последнюю версию [служб интеграции Linux для Hyper-V и Azure](https://www.microsoft.com/download/details.aspx?id=55106).
+3. Перезагрузите виртуальную машину, повторно подключитесь и установите последнюю версию [служб интеграции Linux для Hyper-V и Azure](https://www.microsoft.com/download/details.aspx?id=55106). Проверьте, требуется ли LIS, проверив результаты lspci. Если все устройства GPU указаны ожидаемым образом, установка LIS не требуется. 
+
+Пропустите этот шаг, если вы используете CentOS/RHEL 7,8 и более поздней версии.
  
    ```bash
    wget https://aka.ms/lis
@@ -373,6 +377,7 @@ fi
 
 * Когда необходимо запрашивать карты, для быстрого получения выходных данных команды можно задать режим сохранения с помощью команды `nvidia-smi`. Чтобы задать режим сохранения, выполните `nvidia-smi -pm 1`. Обратите внимание, что в случае перезапуска виртуальной машины настройка режима не сохранится. Всегда можно написать сценарий настройки режима для выполнения при запуске.
 * Если вы обновили драйверы CUDA NVIDIA до последней версии и обнаруживаете, что подключение RDMA больше не работает, [переустановите драйверы RDMA](#rdma-network-connectivity), чтобы восстановить подключение. 
+* Если определенная версия ОС CentOS/RHEL (или ядро) не поддерживается для LIS, выдается ошибка "неподдерживаемая версия ядра". Сообщите об этой ошибке вместе с версиями ОС и ядра.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
