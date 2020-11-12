@@ -4,15 +4,15 @@ description: Узнайте, как создать в Службе прилож�
 keywords: служба приложений azure, веб-приложение, linux, docker, compose, многоконтейнерное, несколько контейнеров, веб-приложение для контейнеров, много контейнеров, контейнер, wordpress, azure db для mysql, рабочая база данных с контейнерами
 author: msangapu-msft
 ms.topic: tutorial
-ms.date: 04/29/2019
+ms.date: 10/31/2020
 ms.author: msangapu
 ms.custom: cli-validate, devx-track-azurecli
-ms.openlocfilehash: 7945c6c6f834de068665e3400440d2be5dd713ff
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: f2f1713866eb06b4b514ff988ef3e010491e1efc
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92743453"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93131349"
 ---
 # <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство по Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
 
@@ -63,7 +63,7 @@ cd multicontainerwordpress
 
 [!INCLUDE [resource group intro text](../../includes/resource-group.md)]
 
-В Cloud Shell создайте группу ресурсов с помощью команды [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *Центрально-южная часть США* . Чтобы просмотреть все поддерживаемые расположения для службы приложений в Linux на уровне **Стандартный** , выполните команду [`az appservice list-locations --sku S1 --linux-workers-enabled`](/cli/azure/appservice?view=azure-cli-latest#az-appservice-list-locations).
+В Cloud Shell создайте группу ресурсов с помощью команды [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *Центрально-южная часть США*. Чтобы просмотреть все поддерживаемые расположения для службы приложений в Linux на уровне **Стандартный** , выполните команду [`az appservice list-locations --sku S1 --linux-workers-enabled`](/cli/azure/appservice?view=azure-cli-latest#az-appservice-list-locations).
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location "South Central US"
@@ -151,7 +151,7 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 В следующей команде замените _&lt;mysql-server-name>_ именем своего сервера MySQL везде, где встречается этот заполнитель. Допустимые символы: `a-z`, `0-9` и `-`. Это имя является частью имени узла сервера MySQL (`<mysql-server-name>.database.windows.net`). Оно должно быть глобально уникальным.
 
 ```azurecli-interactive
-az mysql server create --resource-group myResourceGroup --name <mysql-server-name>  --location "South Central US" --admin-user adminuser --admin-password My5up3rStr0ngPaSw0rd! --sku-name B_Gen4_1 --version 5.7
+az mysql server create --resource-group myResourceGroup --name <mysql-server-name>  --location "South Central US" --admin-user adminuser --admin-password My5up3rStr0ngPaSw0rd! --sku-name B_Gen5_1 --version 5.7
 ```
 
 Создание сервера может занять несколько минут. После создания сервера MySQL в Cloud Shell отображаются следующие сведения:
@@ -262,14 +262,14 @@ az webapp config appsettings set --resource-group myResourceGroup --name <app-na
 * [добавлен подключаемый модуль Redis Object Cache 1.3.8 для WordPress.](https://github.com/Azure-Samples/multicontainerwordpress/blob/5669a89e0ee8599285f0e2e6f7e935c16e539b92/docker-entrypoint.sh#L74)
 * [задан параметр приложения для имени узла Redis в файле wp-config.php WordPress.](https://github.com/Azure-Samples/multicontainerwordpress/blob/5669a89e0ee8599285f0e2e6f7e935c16e539b92/docker-entrypoint.sh#L162)
 
-Чтобы применить пользовательский образ, нужно обновить файл docker-compose-wordpress.yml. В Cloud Shell введите `nano docker-compose-wordpress.yml`, чтобы открыть текстовый редактор Nano. Измените `image: wordpress` на `image: microsoft/multicontainerwordpress`. Вам больше не понадобится контейнер базы данных. Удалите разделы `db`, `environment`, `depends_on` и `volumes` из файла конфигурации. Файл должен выглядеть примерно так, как в следующем коде:
+Чтобы применить пользовательский образ, нужно обновить файл docker-compose-wordpress.yml. В Cloud Shell введите `nano docker-compose-wordpress.yml`, чтобы открыть текстовый редактор Nano. Измените `image: wordpress` на `image: mcr.microsoft.com/azuredocs/multicontainerwordpress`. Вам больше не понадобится контейнер базы данных. Удалите разделы `db`, `environment`, `depends_on` и `volumes` из файла конфигурации. Файл должен выглядеть примерно так, как в следующем коде:
 
 ```yaml
 version: '3.3'
 
 services:
    wordpress:
-     image: microsoft/multicontainerwordpress
+     image: mcr.microsoft.com/azuredocs/multicontainerwordpress
      ports:
        - "8000:80"
      restart: always
@@ -345,7 +345,7 @@ version: '3.3'
 
 services:
    wordpress:
-     image: microsoft/multicontainerwordpress
+     image: mcr.microsoft.com/azuredocs/multicontainerwordpress
      volumes:
       - ${WEBAPP_STORAGE_HOME}/site/wwwroot:/var/www/html
      ports:
@@ -401,13 +401,15 @@ version: '3.3'
 
 services:
    wordpress:
-     image: microsoft/multicontainerwordpress
+     image: mcr.microsoft.com/azuredocs/multicontainerwordpress
      ports:
        - "8000:80"
      restart: always
 
    redis:
-     image: redis:3-alpine
+     image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
+     environment: 
+      - ALLOW_EMPTY_PASSWORD=yes
      restart: always
 ```
 
@@ -474,7 +476,7 @@ az webapp config container set --resource-group myResourceGroup --name <app-name
 
 ![Активация Redis][3]
 
-Щелкните **Параметры** .
+Щелкните **Параметры**.
 
 ![Щелкните Settings (Параметры).][4]
 
@@ -486,7 +488,7 @@ WordPress подключится к серверу Redis. **Состояние**
 
 ![WordPress подключится к серверу Redis. **Состояние** подключения, отображаемое на той же странице][6]
 
-**Поздравляем!** Вы подключили WordPress к Redis. Сейчас в готовом для рабочей среды приложении используется **база данных Azure для MySQL, постоянное хранилище и Redis** . Теперь вы можете горизонтального увеличивать масштаб плана службы приложений до нескольких экземпляров.
+**Поздравляем!** Вы подключили WordPress к Redis. Сейчас в готовом для рабочей среды приложении используется **база данных Azure для MySQL, постоянное хранилище и Redis**. Теперь вы можете горизонтального увеличивать масштаб плана службы приложений до нескольких экземпляров.
 
 ## <a name="find-docker-container-logs"></a>Поиск журналов контейнера Docker
 

@@ -9,14 +9,15 @@ ms.topic: tutorial
 ms.date: 04/20/2020
 ms.author: dech
 ms.custom: devx-track-js
-ms.openlocfilehash: b1e0f8c301d40ff10dbf977731d457a31b096328
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 1115d7bb0d6857aa39f246743df54a6cf3fd3676
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92478003"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93098668"
 ---
 # <a name="tutorial-build-a-nodejs-console-app-with-the-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство по Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-get-started.md)
@@ -85,7 +86,7 @@ ms.locfileid: "92478003"
 
 1. Откройте файл *config.js* в любом текстовом редакторе.
 
-1. Скопируйте и вставьте приведенный ниже фрагмент кода в файл *config.js* , после чего задайте URI конечной точки и первичный ключ Azure Cosmos DB в качестве значений для свойств `endpoint` и `key`. В базе данных контейнеры имеют имена **Tasks** и **Items** . Для этого приложения будет использоваться ключ раздела **/category** .
+1. Скопируйте и вставьте приведенный ниже фрагмент кода в файл *config.js* , после чего задайте URI конечной точки и первичный ключ Azure Cosmos DB в качестве значений для свойств `endpoint` и `key`. В базе данных контейнеры имеют имена **Tasks** и **Items**. Для этого приложения будет использоваться ключ раздела **/category**.
 
    :::code language="javascript" source="~/cosmosdb-nodejs-get-started/config.js":::
 
@@ -93,7 +94,7 @@ ms.locfileid: "92478003"
 
    :::image type="content" source="media/sql-api-nodejs-get-started/node-js-tutorial-keys.png" alt-text="Снимок экрана получения ключей на портале Azure":::
 
-В пакете SDK для JavaScript используются универсальные термины — *контейнер* и *элемент* . Контейнер может представлять собой коллекцию, граф или таблицу. Элемент может представлять собой документ, ребро, вершину или запись и является содержимым внутри контейнера. В предыдущем фрагменте кода `module.exports = config;` используется для экспорта объекта конфигурации, чтобы на него можно было ссылаться в файле *app.js* .
+В пакете SDK для JavaScript используются универсальные термины — *контейнер* и *элемент*. Контейнер может представлять собой коллекцию, граф или таблицу. Элемент может представлять собой документ, ребро, вершину или запись и является содержимым внутри контейнера. В предыдущем фрагменте кода `module.exports = config;` используется для экспорта объекта конфигурации, чтобы на него можно было ссылаться в файле *app.js*.
 
 ## <a name="create-a-database-and-a-container"></a>Создание базы данных и контейнера
 
@@ -103,7 +104,7 @@ ms.locfileid: "92478003"
 
    :::code language="javascript" source="~/cosmosdb-nodejs-get-started/data/databaseContext.js" id="createDatabaseAndContainer":::
 
-   База данных представляет собой логический контейнер элементов, разделенных между контейнерами. Чтобы создать базу данных, используйте метод `createIfNotExists` или функцию create из класса **Databases** . Контейнер состоит из элементов, которые в случае API SQL являются документами JSON. Контейнер создается с помощью метода `createIfNotExists` или функции create из класса **Containers** . После создания контейнера вы сможете сохранять и запрашивать данные.
+   База данных представляет собой логический контейнер элементов, разделенных между контейнерами. Чтобы создать базу данных, используйте метод `createIfNotExists` или функцию create из класса **Databases**. Контейнер состоит из элементов, которые в случае API SQL являются документами JSON. Контейнер создается с помощью метода `createIfNotExists` или функции create из класса **Containers**. После создания контейнера вы сможете сохранять и запрашивать данные.
 
    > [!WARNING]
    > Создание контейнера связано с ценовыми требованиями. Посетите нашу [страницу с ценами](https://azure.microsoft.com/pricing/details/cosmos-db/), чтобы знать, чего следует ожидать.
@@ -151,13 +152,13 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 ## <a name="update-an-item"></a><a id="ReplaceItem"></a>Обновление элемента
 
-Azure Cosmos DB поддерживает замену содержимого элементов. Скопируйте следующий код и вставьте его в файл *app.js* . Этот код позволяет получить элемент из контейнера и обновить поле *isComplete* , присвоив ему значение true.
+Azure Cosmos DB поддерживает замену содержимого элементов. Скопируйте следующий код и вставьте его в файл *app.js*. Этот код позволяет получить элемент из контейнера и обновить поле *isComplete* , присвоив ему значение true.
 
 :::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="UpdateItem":::
 
 ## <a name="delete-an-item"></a><a id="DeleteItem"></a>Удаление элемента
 
-Azure Cosmos DB поддерживает удаление элементов JSON. В следующем примере кода показано, как получить и удалить элемент по его идентификатору. Скопируйте следующий код и вставьте его в файл *app.js* .
+Azure Cosmos DB поддерживает удаление элементов JSON. В следующем примере кода показано, как получить и удалить элемент по его идентификатору. Скопируйте следующий код и вставьте его в файл *app.js*.
 
 :::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="DeleteItem":::
 

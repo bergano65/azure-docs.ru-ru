@@ -9,14 +9,15 @@ ms.date: 07/23/2020
 author: sakash279
 ms.author: akshanka
 ms.custom: devx-track-js
-ms.openlocfilehash: 43ac175e2c1caa39bfe88a7c1a5f42318db343fb
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 2d40b70d49b1934c9dd2d911369245b1b2e4f2ff
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92477289"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93079714"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
+[!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
 
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 [!INCLUDE [storage-table-applies-to-storagetable-and-cosmos](../../includes/storage-table-applies-to-storagetable-and-cosmos.md)]
@@ -268,7 +269,7 @@ tableSvc.executeBatch('mytable', batch, function (error, result, response) {
 
 ## <a name="retrieve-an-entity-by-key"></a>Получение сущности по ключу
 
-Чтобы возвратить определенную сущность на основе значений ключей **PartitionKey** и **RowKey** , используйте метод **retrieveEntity** .
+Чтобы возвратить определенную сущность на основе значений ключей **PartitionKey** и **RowKey** , используйте метод **retrieveEntity**.
 
 ```javascript
 tableSvc.retrieveEntity('mytable', 'hometasks', '1', function(error, result, response){
@@ -299,7 +300,7 @@ var query = new azure.TableQuery()
   .where('PartitionKey eq ?', 'hometasks');
 ```
 
-Так как параметр **select** не используется, возвращаются все поля. Чтобы выполнить запрос сущности в таблице, используйте **queryEntities** . В следующем примере используется запрос для возврата сущностей из таблицы 'mytable'.
+Так как параметр **select** не используется, возвращаются все поля. Чтобы выполнить запрос сущности в таблице, используйте **queryEntities**. В следующем примере используется запрос для возврата сущностей из таблицы 'mytable'.
 
 ```javascript
 tableSvc.queryEntities('mytable',query, null, function(error, result, response) {
@@ -314,7 +315,7 @@ tableSvc.queryEntities('mytable',query, null, function(error, result, response) 
 ### <a name="query-a-subset-of-entity-properties"></a>Запрос подмножества свойств сущности
 
 Запрос к таблице может получить лишь несколько полей сущности.
-Этот позволяет снизить потребление пропускной способности и может повысить производительность запросов, особенно для крупных сущностей. С помощью предложения **select** передайте имена возвращаемых полей. Например, следующий запрос возвратит только поля **description** и **dueDate** .
+Этот позволяет снизить потребление пропускной способности и может повысить производительность запросов, особенно для крупных сущностей. С помощью предложения **select** передайте имена возвращаемых полей. Например, следующий запрос возвратит только поля **description** и **dueDate**.
 
 ```javascript
 var query = new azure.TableQuery()
@@ -357,7 +358,7 @@ tableSvc.deleteTable('mytable', function(error, response){
 });
 ```
 
-Если неизвестно, существует ли таблица, используйте **deleteTableIfExists** .
+Если неизвестно, существует ли таблица, используйте **deleteTableIfExists**.
 
 ## <a name="use-continuation-tokens"></a>Использование маркеров продолжения
 
@@ -455,7 +456,7 @@ var sharedAccessPolicy = {
 };
 ```
 
-В этом примере код получает текущий список ACL для таблицы **hometasks** , а затем добавляет новые политики с помощью **setTableAcl** . Такой подход допускает выполнение:
+В этом примере код получает текущий список ACL для таблицы **hometasks** , а затем добавляет новые политики с помощью **setTableAcl**. Такой подход допускает выполнение:
 
 ```javascript
 var extend = require('extend');

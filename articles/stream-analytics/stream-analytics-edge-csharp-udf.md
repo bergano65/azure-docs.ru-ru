@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: b1a361b2c1b1010c6593defa37ef92a3c36b0693
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d53f13cb740b3feb39dc64ce012ff320afbb1db5
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89015617"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130499"
 ---
 # <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-job-preview"></a>Руководство по написанию определяемой пользователем функции на C# для задания Azure Stream Analytics (предварительная версия)
 
@@ -36,7 +36,7 @@ ms.locfileid: "89015617"
 
 ## <a name="create-a-container-in-your-azure-storage-account"></a>Создание контейнера в учетной записи хранения
 
-Созданный контейнер будет использоваться для хранения скомпилированного пакета C#. При создании задания Edge учетная запись хранения также будет использоваться для развертывания пакета на устройстве IoT Edge. Для каждого задания Stream Analytics используйте отдельный контейнер. Использование одного и того же контейнера для разных заданий Edge в Stream Analytics не поддерживается. Если у вас уже есть учетная запись хранения с существующими контейнерами, вы можете их использовать. Если нет, [создайте новый контейнер](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal). 
+Созданный контейнер будет использоваться для хранения скомпилированного пакета C#. При создании задания Edge учетная запись хранения также будет использоваться для развертывания пакета на устройстве IoT Edge. Для каждого задания Stream Analytics используйте отдельный контейнер. Использование одного и того же контейнера для разных заданий Edge в Stream Analytics не поддерживается. Если у вас уже есть учетная запись хранения с существующими контейнерами, вы можете их использовать. Если нет, [создайте новый контейнер](../storage/blobs/storage-quickstart-blobs-portal.md). 
 
 ## <a name="create-a-stream-analytics-project-in-visual-studio"></a>Создание проекта Stream Analytics в Visual Studio
 
@@ -46,7 +46,7 @@ ms.locfileid: "89015617"
 
 3. Из списка шаблонов слева выберите **Stream Analytics** и щелкните **Приложение Stream Analytics для пограничных устройств** или **Приложение Azure Stream Analytics**.
 
-4.  Введите в проекте**Имя**, **Расположение** и **Имя решения**, а затем нажмите кнопку **ОК**.
+4.  Введите в проекте **Имя** , **Расположение** и **Имя решения** , а затем нажмите кнопку **ОК**.
 
     ![Создание проекта Edge в Azure Stream Analytics с помощью Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-create-edge-app.png)
 
@@ -69,7 +69,7 @@ ms.locfileid: "89015617"
 
 
 ## <a name="write-a-c-udf-with-codebehind"></a>Написание пользовательской функции C# с помощью кода программной части
-Файл кода программной части — это файл C#, связанный с одним сценарием запросов в ASA. Средства Visual Studio автоматически архивируют файл кода программной части и после передачи отправляют его в вашу учетную запись хранения. Все классы должны быть определены как *public*, а объекты — как *static public*.
+Файл кода программной части — это файл C#, связанный с одним сценарием запросов в ASA. Средства Visual Studio автоматически архивируют файл кода программной части и после передачи отправляют его в вашу учетную запись хранения. Все классы должны быть определены как *public* , а объекты — как *static public*.
 
 1. В **обозревателе решений** разверните **Script.asql** и найдите файл кода программной части **Script.asaql.cs**.
 
@@ -111,7 +111,7 @@ ms.locfileid: "89015617"
 
 1. Скачайте [файл данных с примером симулятора температуры](https://raw.githubusercontent.com/Azure/azure-stream-analytics/master/Sample%20Data/TemperatureSampleData.json).
 
-2. В **обозревателе решений** разверните **Входные данные**, щелкните правой кнопкой мыши **Input.json** и выберите команду **Добавить локальный ввод**.
+2. В **обозревателе решений** разверните **Входные данные** , щелкните правой кнопкой мыши **Input.json** и выберите команду **Добавить локальный ввод**.
 
    ![Добавление локальных входных данных в задание Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-add-local-input.png)
 
@@ -123,7 +123,7 @@ ms.locfileid: "89015617"
 
     ![Выполнение задания Azure Stream Analytics на локальном компьютере с помощью Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-run-locally.png)
 
-5. Вы также можете выбрать команду **Открыть папку результатов**, чтобы увидеть необработанные файлы в формате JSON и CSV.
+5. Вы также можете выбрать команду **Открыть папку результатов** , чтобы увидеть необработанные файлы в формате JSON и CSV.
 
     ![Просмотр результатов локального задания Azure Stream Analytics с помощью Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-view-local-results.png)
 
@@ -134,7 +134,7 @@ ms.locfileid: "89015617"
 
     ![Добавление точек останова в пользовательскую функцию Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-breakpoints.png)
 
-2. Нажмите клавишу **F5**, чтобы запустить отладку. Программа будет останавливаться в точках останова.
+2. Нажмите клавишу **F5** , чтобы запустить отладку. Программа будет останавливаться в точках останова.
 
     ![Просмотр результатов отладки определяемой пользователем функции Stream Analytics](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-debug.png)
 
@@ -144,7 +144,7 @@ ms.locfileid: "89015617"
 ![Отправка задания Edge в Stream Analytics из Visual Studio в Azure](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-submit-job.png)
 
 ## <a name="deploy-to-iot-edge-devices"></a>Развертывание на устройствах IoT Edge
-Если вы решили создать задание Edge в Stream Analytics, теперь его можно развернуть как модуль IoT Edge. Согласно [краткому руководству по IoT Edge](https://docs.microsoft.com/azure/iot-edge/quickstart) создайте центр IoT, зарегистрируйте устройство IoT Edge, а затем установите и запустите среду выполнения IoT Edge на своем устройстве. Далее в соответствии с руководством по [развертыванию заданий](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics#deploy-the-job) разверните задание Stream Analytics как модуль IoT Edge. 
+Если вы решили создать задание Edge в Stream Analytics, теперь его можно развернуть как модуль IoT Edge. Согласно [краткому руководству по IoT Edge](../iot-edge/quickstart.md) создайте центр IoT, зарегистрируйте устройство IoT Edge, а затем установите и запустите среду выполнения IoT Edge на своем устройстве. Далее в соответствии с руководством по [развертыванию заданий](../iot-edge/tutorial-deploy-stream-analytics.md#deploy-the-job) разверните задание Stream Analytics как модуль IoT Edge. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

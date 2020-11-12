@@ -9,14 +9,15 @@ ms.topic: tutorial
 ms.date: 05/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 74a4178cc6b9645f3cb22bf3d1c7c0ee942c3f5f
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 774c829b3f9c36cef33f8f334825440b92582f4e
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92485296"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097317"
 ---
 # <a name="tutorial-build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Руководство по Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-dotnet-application.md)
@@ -67,15 +68,15 @@ ms.locfileid: "92485296"
 
 1. Сначала необходимо создать проект Java. В меню Eclipse выберите **File** (Файл), щелкните **New** (Создать), а затем выберите **Dynamic Web Project** (Динамический веб-проект). Если элемента **Dynamic Web Project** (Динамический веб-проект) нет в списке доступных проектов, откройте меню **File** (Файл), щелкните пункт **New** (Создать), а затем выберите **Project** (Проект), разверните список **Web** (Интернет), выберите **Dynamic Web Project** (Динамический веб-проект) и нажмите кнопку **Next** (Далее).
    
-    :::image type="content" source="./media/sql-api-java-application/image10.png" alt-text="Приложение My ToDo List на Java":::
+    :::image type="content" source="./media/sql-api-java-application/image10.png" alt-text="Разработка приложений JSP Java":::
 
 1. Введите имя проекта в **соответствующем** поле и в раскрывающемся меню **Target Runtime** (Целевая среда выполнения). Если необходимо, выберите значение (например, Apache Tomcat v7.0), а затем нажмите кнопку **Finish** (Готово). Выбор целевой среды выполнения позволит вам запустить локальный проект через Eclipse.
 
 1. В обозревателе проектов Eclipse разверните проект. Щелкните правой кнопкой мыши **WebContent** , выберите **Создать** , затем щелкните **JSP File** (JSP-файл).
 
-1. В диалоговом окне **New JSP File** (Новый JSP-файл) укажите для файла имя **index.jsp** . Сохраните родительскую папку с именем **WebContent** , как показано на следующей иллюстрации, и нажмите кнопку **Next** (Далее).
+1. В диалоговом окне **New JSP File** (Новый JSP-файл) укажите для файла имя **index.jsp**. Сохраните родительскую папку с именем **WebContent** , как показано на следующей иллюстрации, и нажмите кнопку **Next** (Далее).
    
-    :::image type="content" source="./media/sql-api-java-application/image11.png" alt-text="Приложение My ToDo List на Java":::
+    :::image type="content" source="./media/sql-api-java-application/image11.png" alt-text="Создание файла JSP — учебник по разработке веб-приложений Java":::
 
 1. В диалоговом окне **Select JSP Template** (Выбор шаблона JSP) в целях обучения выберите **New JSP File (html)** (Новый JSP-файл (html)) и нажмите кнопку **Finish** (Готово).
 
@@ -87,11 +88,11 @@ ms.locfileid: "92485296"
    </body>
    ```
 
-1. Сохраните файл *index.jsp* .
+1. Сохраните файл *index.jsp*.
 
 1. Если вы задали целевую среду выполнения в рамках шага 2, можете щелкнуть **Project** (Проект), а затем **Run** (Запуск) для локального запуска приложения JSP:
 
-   :::image type="content" source="./media/sql-api-java-application/image12.png" alt-text="Приложение My ToDo List на Java":::
+   :::image type="content" source="./media/sql-api-java-application/image12.png" alt-text="Hello World — руководство по разработке приложений Java":::
 
 ## <a name="install-the-sql-java-sdk"></a><a id="InstallSDK"></a>Установка пакета Java SDK для SQL
 
@@ -129,7 +130,7 @@ ms.locfileid: "92485296"
 
 ### <a name="add-a-model"></a>Добавление модели
 
-Сначала определим модель в новом файле *TodoItem.java* . Класс `TodoItem` определяет схему элемента вместе с методами получения и задания:
+Сначала определим модель в новом файле *TodoItem.java*. Класс `TodoItem` определяет схему элемента вместе с методами получения и задания:
 
 :::code language="java" source="~/samples-cosmosdb-java-v4-web-app/src/com/microsoft/azure/documentdb/sample/model/TodoItem.java":::
 
@@ -161,7 +162,7 @@ ms.locfileid: "92485296"
 
 ### <a name="add-a-controller"></a>Добавление контроллера
 
-Добавьте в приложение контроллер *TodoItemController* . В этом проекте вы используете [проект Lombok](https://projectlombok.org/) для создания конструктора, получателя, задания и построителя. Кроме того, можно написать следующий код вручную либо создать его в IDE.
+Добавьте в приложение контроллер *TodoItemController*. В этом проекте вы используете [проект Lombok](https://projectlombok.org/) для создания конструктора, получателя, задания и построителя. Кроме того, можно написать следующий код вручную либо создать его в IDE.
 
 :::code language="java" source="~/samples-cosmosdb-java-v4-web-app/src/com/microsoft/azure/documentdb/sample/controller/TodoItemController.java":::
 
@@ -183,7 +184,7 @@ ms.locfileid: "92485296"
 
    :::code language="java" source="~/samples-cosmosdb-java-v4-web-app/WebContent/assets/todo.js":::
 
-1. Теперь осталось протестировать приложение. Запустите приложение локально и добавьте несколько элементов Todo, заполнив имя элемента и категории и нажав кнопку **Add Task** (Добавить задачу). После появления элемента вы можете проверить его завершение, отметив флажком и щелкнув команду **Обновить задачи** .
+1. Теперь осталось протестировать приложение. Запустите приложение локально и добавьте несколько элементов Todo, заполнив имя элемента и категории и нажав кнопку **Add Task** (Добавить задачу). После появления элемента вы можете проверить его завершение, отметив флажком и щелкнув команду **Обновить задачи**.
 
 ## <a name="deploy-your-java-application-to-azure-web-sites"></a><a id="Deploy"></a>Развертывание приложения Java на веб-сайтах Azure
 
@@ -195,9 +196,9 @@ ms.locfileid: "92485296"
    
    * В поле веб-проекта введите azure-documentdb-java-sample.
    * В поле Destination (Назначение) выберите место назначения для сохранения WAR-файла.
-   * Нажмите кнопку **Готово** .
+   * Нажмите кнопку **Готово**.
 
-1. Теперь, когда вы создали WAR-файл, можно просто передать его на веб-сайт Azure в каталог **webapps** . Инструкции по передаче файла см. в статье [Добавление приложения Java в веб-приложения службы приложений Azure](../app-service/quickstart-java.md). После загрузки WAR-файла в каталог веб-приложения среда выполнения обнаруживает, что вы добавили его, и автоматически его загрузит.
+1. Теперь, когда вы создали WAR-файл, можно просто передать его на веб-сайт Azure в каталог **webapps**. Инструкции по передаче файла см. в статье [Добавление приложения Java в веб-приложения службы приложений Azure](../app-service/quickstart-java.md). После загрузки WAR-файла в каталог веб-приложения среда выполнения обнаруживает, что вы добавили его, и автоматически его загрузит.
 
 1. Чтобы оценить готовый продукт, перейдите к `http://YOUR\_SITE\_NAME.azurewebsites.net/azure-java-sample/` и приступайте к добавлению задач.
 
@@ -215,7 +216,7 @@ ms.locfileid: "92485296"
 
 1. На экране **Select Repository Source** (Выбрать источник репозитория) щелкните **Clone URI** (Клон URI).
 
-1. На экране **исходного репозитория Git** в поле **URI** введите https://github.com/Azure-Samples/documentdb-java-todo-app.git, а затем нажмите кнопку **Далее** .
+1. На экране **исходного репозитория Git** в поле **URI** введите https://github.com/Azure-Samples/documentdb-java-todo-app.git, а затем нажмите кнопку **Далее**.
 
 1. На экране **Branch Selection** (Выбор ветви) выберите значение **master** и нажмите кнопку **Next** (Далее).
 
@@ -229,15 +230,15 @@ ms.locfileid: "92485296"
 
 1. В **обозревателе проектов** щелкните правой кнопкой элемент **azure-documentdb-java-sample** , а затем выберите **Build Path** (Путь сборки) и щелкните **Configure Build Path** (Настройка пути сборки).
 
-1. На экране **Java Build Path** (Путь сборки Java) в правой области откройте вкладку **Libraries** (Библиотеки) и щелкните **Add External JAR** (Добавить внешние JAR-файлы). Перейдите в расположение файла lombok.jar, щелкните **Open** (Открыть), а затем нажмите кнопку **ОК** .
+1. На экране **Java Build Path** (Путь сборки Java) в правой области откройте вкладку **Libraries** (Библиотеки) и щелкните **Add External JAR** (Добавить внешние JAR-файлы). Перейдите в расположение файла lombok.jar, щелкните **Open** (Открыть), а затем нажмите кнопку **ОК**.
 
 1. Используйте инструкцию из шага 12, то есть снова откройте окно **Properties** (Свойства), а затем в левой области щелкните **Targeted Runtimes** (Целевые среды выполнения).
 
-1. На экране **Targeted Runtimes** (Целевые среды выполнения) щелкните **New** (Создать), выберите **Apache Tomcat v7.0** и нажмите кнопку **ОК** .
+1. На экране **Targeted Runtimes** (Целевые среды выполнения) щелкните **New** (Создать), выберите **Apache Tomcat v7.0** и нажмите кнопку **ОК**.
 
 1. Используйте инструкцию из шага 12, то есть снова откройте окно **Properties** (Свойства), а затем в левой области щелкните **Project Facets** (Аспекты проекта).
 
-1. На экране **Project Facets** (Аспекты проекта) выберите **Dynamic Web Module** (Динамический веб-модуль) и **Java** , а затем нажмите кнопку **ОК** .
+1. На экране **Project Facets** (Аспекты проекта) выберите **Dynamic Web Module** (Динамический веб-модуль) и **Java** , а затем нажмите кнопку **ОК**.
 
 1. На вкладке **Servers** (Серверы) в нижней части экрана щелкните правой кнопкой мыши **Tomcat v7.0 Server at localhost** (Tomcat v7.0 Server на localhost), а затем нажмите кнопку **Add and Remove** (Добавить или удалить).
 

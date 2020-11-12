@@ -10,14 +10,15 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18, devx-track-js
 ms.reviewer: sngun
-ms.openlocfilehash: 3116038939a07084f13db22819726dcbb2622a10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c8e2c707566b08219b495e76be7f6f6130d876ab
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91292428"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93081320"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---add-crud-functions-to-the-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Добавление функций CRUD в приложение
+[!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к [учетной записи Cosmos, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md). Часть 6 руководства основана на [части 5](tutorial-develop-mongodb-nodejs-part5.md). В этой части рассматриваются следующие задачи:
 
@@ -88,11 +89,11 @@ ms.locfileid: "91292428"
 
 6. Теперь вернитесь в браузер и откройте вкладку с параметрами сети в инструментах разработчика. На большинстве компьютеров эта вкладка открывается нажатием клавиши F12. Перейдите по адресу `http://localhost:3000` для просмотра вызовов по сети.
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/add-new-hero.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/add-new-hero.png" alt-text="Вкладка с параметрами сети в браузере Chrome с отображением действий в сети":::
 
 7. Добавьте новый элемент hero, нажав кнопку **Add New Hero** (Добавить героя). Введите идентификатор 999, имя Fred и фразу Hello. Затем нажмите кнопку **Save** (Сохранить). На вкладке с параметрами сети вы увидите, отправленный запрос POST для нового элемента hero. 
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/post-new-hero.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/post-new-hero.png" alt-text="Вкладка с параметрами сети в браузере Chrome с отображением функций Get и Post в сети":::
 
     Теперь добавим в приложение функции Put и Delete.
 
@@ -177,11 +178,11 @@ ms.locfileid: "91292428"
 
     Теперь выберите идентификатор на вкладке с параметрами сети, чтобы отобразить полезные данные. Вы увидите в полезных данных, что фраза героя поменялась на "Bye".
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/put-hero-function.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code"::: 
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/put-hero-function.png" alt-text="Приложение Heroes на вкладке с параметрами сети с отображением полезных данных"::: 
 
     Вы можете удалить из пользовательского интерфейса один элемент hero, чтобы узнать, сколько времени занимает операция удаления. Попробуйте нажать кнопку Delete (Удалить) рядом с героем Fred.
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/times.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code"::: 
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/times.png" alt-text="Приложение Heroes на вкладке с параметрами сети с отображением времени выполнения функций"::: 
 
     Если обновить страницу, на вкладке с параметрами сети отобразится время, требуемое для получения элементов hero. Хотя эти операции выполняются быстро, многое зависит от расположения данных в мире и вашей возможности выполнять георепликацию в ближайшую к пользователям область. Дополнительные сведения о георепликации см. в следующем руководстве, которое скоро появится.
 

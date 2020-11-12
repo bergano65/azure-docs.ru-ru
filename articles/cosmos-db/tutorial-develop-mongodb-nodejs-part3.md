@@ -10,14 +10,15 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18, devx-track-js
 ms.reviewer: sngun
-ms.openlocfilehash: c16d7ccba24680604bc7f083f7242edd53abe102
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 181af5cf26d19a9f51e8d456e777badf7efa224d
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282907"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93097827"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---build-the-ui-with-angular"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание пользовательского интерфейса с помощью Angular
+[!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к [учетной записи Cosmos, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md).
 
@@ -55,14 +56,14 @@ ms.locfileid: "91282907"
 
     Давайте рассмотрим файлы, которые были созданы и обновлены. 
 
-3. В Visual Studio Code в области **Обозреватель** перейдите к новой папке **src\app** и откройте новый файл **heroes.component.ts**, созданный с помощью папки приложения. Этот файл компонента TypeScript был создан предыдущей командой.
+3. В Visual Studio Code в области **Обозреватель** перейдите к новой папке **src\app** и откройте новый файл **heroes.component.ts** , созданный с помощью папки приложения. Этот файл компонента TypeScript был создан предыдущей командой.
 
     > [!TIP]
     > Если в Visual Studio Code не отображается папка приложения, нажмите клавиши CMD + SHIFT + P на компьютере Mac или Ctrl + Shift + P на компьютере Windows, чтобы открыть палитру команд. Затем введите *Reload Window* (Перезагрузить окно), чтобы применить изменение системы.
 
 4. В той же папке откройте файл **app.module.ts** и обратите внимание, что компонент `HeroesComponent` добавлен к объявлениям в строке 5 и импортирован в строку 10.
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/app-module-file.png" alt-text="Установка компонентов Hero":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/app-module-file.png" alt-text="Открытие файла app-module.ts":::
 
 5. Вернитесь к файлу **heroes.component.html** и скопируйте в него указанный ниже код. `<div>` — это контейнер для всей страницы. В контейнере содержится список компонентов Hero, которые нам нужно создать, чтобы при щелчке компонента можно было выбрать, изменить или удалить его в пользовательском интерфейсе. В HTML-коде есть несколько стилей, которые можно применить, чтобы выделить выбранный компонент. Также предусмотрена область редактирования для добавления нового компонента Hero или изменения существующего. 
 
@@ -103,7 +104,7 @@ ms.locfileid: "91282907"
     </div>
     ```
 
-7. Теперь, когда мы получили код HTML, нужно добавить его в файл **heroes.component.ts**, чтобы обеспечить взаимодействие с шаблоном. Следующий код добавляет шаблон в файл компонента. Добавлен конструктор, который позволяет получать некоторые компоненты Hero и инициализировать компонент службы Hero, чтобы получить все данные. Кроме того, этот код добавляет все необходимые методы для обработки событий в пользовательском интерфейсе. Вы можете скопировать указанный ниже код поверх существующего кода в файле **heroes.component.ts**. Могут отобразиться ошибки в области Hero и HeroService, так как соответствующие компоненты не импортируются, но их можно будет исправить в следующем разделе. 
+7. Теперь, когда мы получили код HTML, нужно добавить его в файл **heroes.component.ts** , чтобы обеспечить взаимодействие с шаблоном. Следующий код добавляет шаблон в файл компонента. Добавлен конструктор, который позволяет получать некоторые компоненты Hero и инициализировать компонент службы Hero, чтобы получить все данные. Кроме того, этот код добавляет все необходимые методы для обработки событий в пользовательском интерфейсе. Вы можете скопировать указанный ниже код поверх существующего кода в файле **heroes.component.ts**. Могут отобразиться ошибки в области Hero и HeroService, так как соответствующие компоненты не импортируются, но их можно будет исправить в следующем разделе. 
 
     ```ts
     import { Component, OnInit } from '@angular/core';
@@ -192,7 +193,7 @@ ms.locfileid: "91282907"
 
 1. В области Explorer откройте файл **src/styles.scss**.
 
-2. Скопируйте следующий код в файл **styles.scss**, заменив его текущее содержимое.
+2. Скопируйте следующий код в файл **styles.scss** , заменив его текущее содержимое.
 
     ```css
     /* You can add global styles to this file, and also import other style files */
@@ -353,7 +354,7 @@ ms.locfileid: "91282907"
 
 Теперь, когда у нас есть компонент, нужно обеспечить его отображение на экране. Давайте изменим компоненты по умолчанию в файле **app.component.ts**.
 
-1. В области Explorer откройте файл **/app/app.component.ts**, измените заголовок на Heroes и добавьте имя компонента, который создан в **heroes.components.ts** (app-heroes), чтобы добавить ссылку на этот новый компонент. Содержимое файла должно выглядеть следующим образом: 
+1. В области Explorer откройте файл **/app/app.component.ts** , измените заголовок на Heroes и добавьте имя компонента, который создан в **heroes.components.ts** (app-heroes), чтобы добавить ссылку на этот новый компонент. Содержимое файла должно выглядеть следующим образом: 
 
     ```ts
     import { Component } from '@angular/core';
@@ -374,7 +375,7 @@ ms.locfileid: "91282907"
 
     ```
 
-2. В **heroes.components.ts** есть и другие компоненты, на которые добавляются ссылки так же, как и на компонент Hero. Их также нужно создать. В командной строке Angular CLI используйте указанную ниже команду, чтобы создать модель Hero и файл с именем **hero.ts**, где g = создать, cl = класс и hero = имя класса.
+2. В **heroes.components.ts** есть и другие компоненты, на которые добавляются ссылки так же, как и на компонент Hero. Их также нужно создать. В командной строке Angular CLI используйте указанную ниже команду, чтобы создать модель Hero и файл с именем **hero.ts** , где g = создать, cl = класс и hero = имя класса.
 
     ```bash
     ng g cl hero
@@ -394,7 +395,7 @@ ms.locfileid: "91282907"
 
 5. Щелкните левой кнопкой мыши термин `Hero`, и в Visual Studio отобразится значок лампочки в левой части блока кода. 
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/light-bulb.png" alt-text="Установка компонентов Hero":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/light-bulb.png" alt-text="Значок лампочки в Visual Studio Code":::
 
 6. Щелкните значок лампочки и выберите команду **Import Hero from "/app/hero"** (Импортировать компонент Hero из папки /app/hero). или **Import Hero from "./hero".** (Импортировать компонент Hero из ./hero.). Сообщение зависит от настроек.
 
@@ -408,7 +409,7 @@ ms.locfileid: "91282907"
 
 ## <a name="create-the-service"></a>Создание службы
 
-1. В командной строке Angular CLI введите указанную ниже команду, чтобы создать службу Hero в **app.module.ts**, где g = создать, s = служба, hero = имя службы, -m = поместить в app.module.
+1. В командной строке Angular CLI введите указанную ниже команду, чтобы создать службу Hero в **app.module.ts** , где g = создать, s = служба, hero = имя службы, -m = поместить в app.module.
 
     ```bash
     ng g s hero -m app.module
@@ -490,7 +491,7 @@ ms.locfileid: "91282907"
 
 3. Теперь откройте браузер и перейдите по адресу **localhost:3000**. Как видите, приложение выполняется локально.
 
-     :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/azure-cosmos-db-mongodb-mean-app.png" alt-text="Установка компонентов Hero":::
+     :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/azure-cosmos-db-mongodb-mean-app.png" alt-text="Приложение Hero, которое выполняется в локальной среде":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 18ab9a4108d6d9effaa25fe69ce42a18ca4ba0dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e87432ad4437f41e70d988e7e2b3cd82aa3bd82
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903836"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93123393"
 ---
 # <a name="tutorial-deploy-an-azure-stream-analytics-job-with-cicd-using-azure-pipelines"></a>Руководство по Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines
 В этом руководстве описано, как настроить непрерывную интеграцию и развертывание для задания Azure Stream Analytics с помощью CI/CD и Azure Pipelines. 
@@ -35,7 +35,7 @@ ms.locfileid: "90903836"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [Visual Studio](stream-analytics-tools-for-visual-studio-install.md) и рабочие нагрузки **разработки Azure** или **службы хранения и обработки данных**.
-* Создайте [проект Stream Analytics в Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-vs).
+* Создайте [проект Stream Analytics в Visual Studio](./stream-analytics-quick-create-vs.md).
 * Создайте организацию [Azure DevOps](https://visualstudio.microsoft.com/team-services/).
 
 ## <a name="configure-nuget-package-dependency"></a>Настройка зависимостей пакета NuGet
@@ -54,7 +54,7 @@ ms.locfileid: "90903836"
 
 Поместите исходные файлы приложения в проект Azure DevOps, чтобы создавать сборки.  
 
-1. Создайте новый локальный репозиторий Git, выбрав **Добавить в систему управления версиями**, а затем**Git** в строке состояния в правом нижнем углу Visual Studio. 
+1. Создайте новый локальный репозиторий Git, выбрав **Добавить в систему управления версиями** , а затем **Git** в строке состояния в правом нижнем углу Visual Studio. 
 
 2. В представлении **Синхронизация** в **Team Explorer** нажмите кнопку **Опубликовать репозиторий Git** в разделе **Принудительная отправка в Azure DevOps Services**.
 
@@ -67,32 +67,32 @@ ms.locfileid: "90903836"
     При публикации репозитория в вашей организации создается новый проект с тем же именем, что и у локального репозитория. Чтобы создать репозиторий в существующем проекте, щелкните **Расширенный** рядом с **именем репозитория** и выберите нужный проект. Код можно просматривать в браузере, выбрав **Просмотреть на веб-сайте**.
  
 ## <a name="configure-continuous-delivery-with-azure-devops"></a>Настройка непрерывной поставки с помощью Azure DevOps
-Конвейер сборки в Azure Pipelines описывает рабочий процесс, состоящий из шагов сборки, которые выполняются последовательно. Дополнительные сведения [о конвейерах сборки в Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav&preserve-view=true).
+Конвейер сборки в Azure Pipelines описывает рабочий процесс, состоящий из шагов сборки, которые выполняются последовательно. Дополнительные сведения [о конвейерах сборки в Azure Pipelines](/azure/devops/pipelines/get-started-designer?preserve-view=true&tabs=new-nav&view=vsts).
 
-Конвейер выпуска Azure Pipelines описывает рабочий процесс, развертывающий пакет приложения в кластере. При совместном использовании конвейер сборки и конвейер выпуска выполняют весь рабочий процесс от получения файлов с исходным кодом до запуска приложения в кластере. Дополнительные сведения [о конвейерах выпуска Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts&preserve-view=true).
+Конвейер выпуска Azure Pipelines описывает рабочий процесс, развертывающий пакет приложения в кластере. При совместном использовании конвейер сборки и конвейер выпуска выполняют весь рабочий процесс от получения файлов с исходным кодом до запуска приложения в кластере. Дополнительные сведения [о конвейерах выпуска Azure Pipelines](/azure/devops/pipelines/release/define-multistage-release-process?preserve-view=true&view=vsts).
 
 ### <a name="create-a-build-pipeline"></a>Создание конвейера сборки
 Откройте браузер и перейдите к только что созданному проекту [Azure DevOps](https://app.vsaex.visualstudio.com/). 
 
-1. На вкладке **Сборка и выпуск** выберите **Сборки**, а затем **+ создать**.  Выберите **Git Azure DevOps Services** и щелкните **Продолжить**.
+1. На вкладке **Сборка и выпуск** выберите **Сборки** , а затем **+ создать**.  Выберите **Git Azure DevOps Services** и щелкните **Продолжить**.
     
     ![Выбор источника Git DevOps в Azure DevOps](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-select-source-devops.png)
 
-2. В разделе**Выбор шаблона** щелкните **Пустой процесс**, чтобы запустить пустой конвейер.
+2. В разделе **Выбор шаблона** щелкните **Пустой процесс** , чтобы запустить пустой конвейер.
     
     ![Выбор пустого процесса в разделе параметров шаблона в DevOps](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-select-template-empty-process.png)
 
-3. В разделе **Триггеры** включите непрерывную интеграцию, установив флажок рядом с состоянием триггера **Включить непрерывную интеграцию**.  Щелкните **Сохранить и поместить в очередь**, чтобы выполнить сборку вручную. 
+3. В разделе **Триггеры** включите непрерывную интеграцию, установив флажок рядом с состоянием триггера **Включить непрерывную интеграцию**.  Щелкните **Сохранить и поместить в очередь** , чтобы выполнить сборку вручную. 
     
     ![Состояние триггера непрерывной интеграции](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-trigger-status-ci.png)
 
 4. Сборки также активируются после принудительного запуска или возврата. Чтобы проверить ход сборки, перейдите на вкладку **Сборки**.  Убедившись, что сборка запускается успешно, необходимо создать конвейер выпуска, который развертывает приложение в кластер. Щелкните правой кнопкой мыши троеточие рядом с конвейером сборки и выберите пункт **Правка**.
 
-5.  В **Задачах**, введите "Размещен" в качестве значения параметра **Очередь агента**.
+5.  В **Задачах** , введите "Размещен" в качестве значения параметра **Очередь агента**.
     
     ![Выбор параметра "Очередь агентов" в меню задач](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-agent-queue-task.png) 
 
-6. На **этапе 1**, щелкните **+** и добавьте задачу **NuGet**.
+6. На **этапе 1** , щелкните **+** и добавьте задачу **NuGet**.
     
     ![Добавление задачи NuGet в разделе "Очередь агентов"](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-add-nuget-task.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "90903836"
 
    ![Настройка задачи восстановления NuGet](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-nuget-restore-config.png)
 
-8. На **этапе 1**, щелкните **+** и добавьте задачу **MSBuild**.
+8. На **этапе 1** , щелкните **+** и добавьте задачу **MSBuild**.
 
    ![Добавление задачи NuGet в разделе "Очередь агентов"](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-add-msbuild-task.png)
 
@@ -112,7 +112,7 @@ ms.locfileid: "90903836"
 
    ![Настройка задачи MSBuild в DevOps](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-config-msbuild-task.png)
 
-10. На **этапе 1**, щелкните **+** и добавьте задачу **развертывания группы ресурсов Azure**. 
+10. На **этапе 1** , щелкните **+** и добавьте задачу **развертывания группы ресурсов Azure**. 
     
     ![Добавление задачи развертывания группы ресурсов Azure](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-add-resource-group-deployment.png)
 
@@ -129,7 +129,7 @@ ms.locfileid: "90903836"
     
     ![Установка свойств для развертывания группы ресурсов Azure](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-deployment-properties.png)
 
-12. Щелкните **Сохранить и поместить в очередь**, чтобы проверить конвейер сборки.
+12. Щелкните **Сохранить и поместить в очередь** , чтобы проверить конвейер сборки.
     
     ![Сохранение и сборки и помещение ее в очередь в DevOps](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-save-and-queue-build.png)
 
@@ -147,7 +147,7 @@ ms.locfileid: "90903836"
 
     ![Фиксация изменений репозитория в Visual Studio](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-commit-changes-visual-studio.png)
 
-2. Щелкните значок неопубликованных изменений в строке состояния или "представлении синхронизации" в Team Explorer. Выберите **Отправить**, чтобы обновить код в Azure DevOps.
+2. Щелкните значок неопубликованных изменений в строке состояния или "представлении синхронизации" в Team Explorer. Выберите **Отправить** , чтобы обновить код в Azure DevOps.
 
     ![Отправка изменений из Visual Studio](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-push-changes-visual-studio.png)
 
@@ -157,8 +157,8 @@ ms.locfileid: "90903836"
 
 Ставшие ненужными группу ресурсов, задание потоковой передачи и все связанные ресурсы можно удалить. При удалении задания будет прекращена тарификация за единицы потоковой передачи, потребляемые заданием. Если вы планируете использовать это задание в будущем, вы можете остановить и перезапустить его позже. Если вы не собираетесь использовать это задание дальше, удалите все ресурсы, созданные в ходе работы с этим руководством, выполнив следующие шаги:
 
-1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите имя созданного ресурса.  
-2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите имя ресурса для удаления и щелкните **Удалить**.
+1. В меню слева на портале Azure щелкните **Группы ресурсов** , а затем выберите имя созданного ресурса.  
+2. На странице группы ресурсов щелкните **Удалить** , в текстовом поле введите имя ресурса для удаления и щелкните **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
