@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 477349f1addf71a30e8ecb179266d8eac5510887
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43359c47b4d2c1b8895938271c74dab03f7731f7
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80244756"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541782"
 ---
 # <a name="categorize-images-by-subject-matter"></a>Категоризация изображений по темам
 
@@ -62,7 +62,7 @@ ms.locfileid: "80244756"
 
 ## <a name="use-the-api"></a>Использование API
 
-Функция классификации является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Categories` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"categories"` раздела.
+Функция классификации является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Categories` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"categories"` раздела.
 
 * [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
 * [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

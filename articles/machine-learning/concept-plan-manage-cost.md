@@ -1,7 +1,7 @@
 ---
 title: Планирование затрат и управление ими
 titleSuffix: Azure Machine Learning
-description: Планирование и управление затратами для Машинное обучение Azure с анализом затрат в портал Azure. При создании моделей машинного обучения изучите дополнительные советы по экономии затрат, чтобы снизить затраты.
+description: Планирование и управление затратами для Машинное обучение Azure с анализом затрат в портал Azure. Изучите дополнительные советы по экономии затрат, чтобы снизить затраты при создании моделей машинного обучения.
 author: sdgilley
 ms.author: sgilley
 ms.custom: subject-cost-optimization
@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: e8554bf4385c7ddad540b8ba807988618fe80b53
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a0e0f61da52ce00fb2eb4b4a7d95ab74082f9472
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322983"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541714"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Планирование и управление затратами для Машинное обучение Azure
 

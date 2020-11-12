@@ -1,19 +1,19 @@
 ---
 title: Настройка параметров сервера — Azure CLI — база данных Azure для MySQL
 description: В этой статье описывается настройка параметров службы в базе данных Azure для MySQL с помощью служебной программы командной строки CLI Azure.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 10/1/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: dfb1d59335f2e35ce3d4661f043b6eed53d2a109
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a5a84d93400e713f66545387fd146148ee735c06
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627165"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541544"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mysql-using-the-azure-cli"></a>Настройка параметров сервера в базе данных Azure для MySQL с помощью Azure CLI
 С помощью служебной программы командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера базы данных Azure для MySQL, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено. 
@@ -45,7 +45,7 @@ az mysql server configuration show --name slow_query_log --resource-group myreso
 ## <a name="modify-a-server-configuration-parameter-value"></a>Изменение значения параметра конфигурации сервера
 Вы также можете изменить значение определенного параметра конфигурации сервера. При этом обновляется базовое значение конфигурации для ядра СУБД сервера MySQL. Чтобы обновить конфигурацию, выполните команду [az mysql server configuration set](/cli/azure/mysql/server/configuration#az-mysql-server-configuration-set). 
 
-Чтобы обновить параметры конфигурации **slow\_query\_log** для сервера **mydemoserver.mysql.database.azure.com** в группе ресурсов **myresourcegroup**, используйте следующую команду:
+Чтобы обновить параметры конфигурации **slow\_query\_log** для сервера **mydemoserver.mysql.database.azure.com** в группе ресурсов **myresourcegroup** , используйте следующую команду:
 ```azurecli-interactive
 az mysql server configuration set --name slow_query_log --resource-group myresourcegroup --server mydemoserver --value ON
 ```
@@ -89,7 +89,7 @@ SELECT name FROM mysql.time_zone_name;
 
 Часовой пояс глобального уровня можно задать с помощью команды [az mysql server configuration set](/cli/azure/mysql/server/configuration#az-mysql-server-configuration-set).
 
-Чтобы обновить параметр конфигурации **time\_zone** для сервера **mydemoserver.mysql.database.azure.com** в группе ресурсов **myresourcegroup** и задать для него значение **US/Pacific**, используйте следующую команду.
+Чтобы обновить параметр конфигурации **time\_zone** для сервера **mydemoserver.mysql.database.azure.com** в группе ресурсов **myresourcegroup** и задать для него значение **US/Pacific** , используйте следующую команду.
 
 ```azurecli-interactive
 az mysql server configuration set --name time_zone --resource-group myresourcegroup --server mydemoserver --value "US/Pacific"

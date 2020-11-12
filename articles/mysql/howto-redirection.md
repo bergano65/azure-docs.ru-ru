@@ -1,17 +1,17 @@
 ---
 title: Подключение c перенаправлением (База данных Azure для MySQL)
 description: В этой статье описывается, как настроить в приложении подключение с перенаправлением к Базе данных Azure для MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/8/2020
-ms.openlocfilehash: be660101a28d5ef289de1b25f8f7d33fbe9f617b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bea618b34809544308caba46a0ffbdecee91d69f
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86107824"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541816"
 ---
 # <a name="connect-to-azure-database-for-mysql-with-redirection"></a>Подключение с перенаправлением к Базе данных Azure для MySQL
 

@@ -1,17 +1,17 @@
 ---
 title: Журналы запросов с высокой производительностью — база данных Azure для MariaDB
 description: Описание журналов, доступных в базе данных Azure для MariaDB, и параметров для включения различных уровней ведения журналов.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 11/6/2020
-ms.openlocfilehash: 2f9c4cc5bac27e4734c9aabe7895002a045d583d
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: a5acf3b6447b2e3722a27951700138f756a99251
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357017"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541119"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Журналы запросов в базе данных Azure для MariaDB
 В базе данных Azure для MariaDB пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -143,6 +143,6 @@ Azure Monitor журналы диагностики позволяют пере�
     | where query_time_d > 10
     ```    
     
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 - [Настройка журналов запросов от портал Azure](howto-configure-server-logs-portal.md)
 - [Настройка журналов запросов от Azure CLI](howto-configure-server-logs-cli.md)

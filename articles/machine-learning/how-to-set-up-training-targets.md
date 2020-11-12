@@ -1,7 +1,7 @@
 ---
 title: Настройка обучающего запуска
 titleSuffix: Azure Machine Learning
-description: Обучение модели машинного обучения в различных средах обучения (целевые объекты вычислений). Вы можете с легкостью переключаться между средами обучения. Начните обучение на локальном компьютере. Если вам потребуется горизонтально увеличить масштаб, переключитесь на облачный целевой объект вычислений.
+description: Обучение модели машинного обучения в различных средах обучения (целевые объекты вычислений). Вы можете с легкостью переключаться между средами обучения.
 services: machine-learning
 author: sdgilley
 ms.author: sgilley
@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: 8280af20d63da969504cda8ffe875405d4bf0218
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: cb10eb0f89ce37bc484c8570995ebaa098c696f1
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324717"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541306"
 ---
 # <a name="configure-and-submit-training-runs"></a>Настройка и отправка запуска на выполнение обучения
 

@@ -1,17 +1,17 @@
 ---
 title: Репликация данных — база данных Azure для MySQL
 description: Сведения об использовании репликации данных для синхронизации с внешнего сервера в службе "база данных Azure для MySQL".
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 8/7/2020
-ms.openlocfilehash: e84f0c9beaee8a755499467925d28a83ba3139fc
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 99beddba470f73d6eadb448dfe1b77453ce6426d
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544058"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541595"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -46,7 +46,7 @@ ms.locfileid: "92544058"
 - Убедитесь, что компьютер, на котором размещается исходный сервер, допускает входящий и исходящий трафик через порт 3306.
 - Убедитесь, что исходный сервер имеет **общедоступный IP-адрес** , DNS является общедоступным или имеет полное доменное имя (FQDN).
 
-### <a name="other"></a>Другие
+### <a name="other"></a>Другое
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 - Идентификаторы глобальных транзакций (GTID) не поддерживаются.
 

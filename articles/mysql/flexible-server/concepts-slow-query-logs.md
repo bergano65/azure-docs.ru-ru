@@ -1,17 +1,17 @@
 ---
 title: Журналы запросов с высокой занесениеми. база данных Azure для MySQL — гибкий сервер
 description: Описание журналов запросов с высокой производительностью, доступных в базе данных Azure для гибкого сервера MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
-ms.openlocfilehash: 512a103f5ac116f1f4eb18631cdc8e4a8b9380c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dde9575a70ea80ad262bc01bb9d5d0015c803427
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399216"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543023"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql-flexible-server-preview"></a>Журналы запросов в базе данных Azure для гибкого сервера MySQL (Предварительная версия)
 
@@ -27,10 +27,10 @@ ms.locfileid: "91399216"
 
 Другие параметры, которые можно настроить для управления поведением журнала запросов с задержкой, включают:
 
-- **long_query_time**: заносить в журнал запрос, если его выполнение занимает больше времени `long_query_time` (в секундах). Значение по умолчанию — 10 секунд.
-- **log_slow_admin_statements**: определяет, являются ли инструкции администрирования (например, `ALTER_TABLE`, `ANALYZE_TABLE` ) записываются в журнал.
-- **log_queries_not_using_indexes**: определяет, заносятся ли в журнал запросы, не использующие индексы.
-- **log_throttle_queries_not_using_indexes**: ограничивает количество неиндексированных запросов, которые могут быть записаны в журнал запросов с задержкой. Этот параметр вступает в силу `log_queries_not_using_indexes` , если для задано значение *On* .
+- **long_query_time** : заносить в журнал запрос, если его выполнение занимает больше времени `long_query_time` (в секундах). Значение по умолчанию — 10 секунд.
+- **log_slow_admin_statements** : определяет, являются ли инструкции администрирования (например, `ALTER_TABLE`, `ANALYZE_TABLE` ) записываются в журнал.
+- **log_queries_not_using_indexes** : определяет, заносятся ли в журнал запросы, не использующие индексы.
+- **log_throttle_queries_not_using_indexes** : ограничивает количество неиндексированных запросов, которые могут быть записаны в журнал запросов с задержкой. Этот параметр вступает в силу `log_queries_not_using_indexes` , если для задано значение *On* .
 
 > [!IMPORTANT]
 > Если таблицы не индексируются, установка `log_queries_not_using_indexes` `log_throttle_queries_not_using_indexes` параметров и в значение **On** может повлиять на производительность MySQL, так как все запросы к этим неиндексированным таблицам будут записываться в журнал медленных запросов.
@@ -129,7 +129,7 @@ ms.locfileid: "91399216"
     | where query_time_d > 10
     ```    
     
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [журналах аудита](concepts-audit-logs.md)
 - Настройка журналов запросов от [портал Azure](how-to-configure-slow-query-logs-portal.md)
 <!-- - [How to configure slow query logs from the Azure CLI](howto-configure-server-logs-in-cli.md). -->

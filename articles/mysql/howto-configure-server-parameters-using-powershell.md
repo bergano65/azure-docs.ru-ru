@@ -1,28 +1,28 @@
 ---
 title: Настройка параметров сервера — Azure PowerShell — база данных Azure для MySQL
 description: В этой статье описывается, как настроить параметры службы в базе данных Azure для MySQL с помощью PowerShell.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.devlang: azurepowershell
 ms.topic: how-to
 ms.date: 10/1/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3888e83738d8617d6ec1433a3b760a2c518b874c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 973025dfd8c0141ed0884539fe5207cc64ec822c
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627216"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541867"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mysql-using-powershell"></a>Настройка параметров сервера в базе данных Azure для MySQL с помощью PowerShell
 
 Вы можете вывести список, отобразить и обновить параметры конфигурации для сервера базы данных Azure для MySQL с помощью PowerShell. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено.
 
 >[!Note]
-> Параметры сервера можно обновлять глобально на уровне сервера, использовать [Azure CLI](./howto-configure-server-parameters-using-cli.md), [PowerShell](./howto-configure-server-parameters-using-powershell.md)или [портал Azure](./howto-server-parameters.md).
+> Параметры сервера можно обновлять глобально на уровне сервера с помощью [Azure CLI](./howto-configure-server-parameters-using-cli.md), [PowerShell](./howto-configure-server-parameters-using-powershell.md)или [портала Azure](./howto-server-parameters.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -53,7 +53,7 @@ Get-AzMySqlConfiguration -ResourceGroupName myresourcegroup -ServerName mydemose
 
 Чтобы отобразить сведения о конкретном параметре конфигурации для сервера, выполните `Get-AzMySqlConfiguration` командлет и укажите параметр **Name** .
 
-В этом примере показаны подробные сведения о параметре конфигурации сервера ** \_ \_ log** **mydemoserver** для сервера в разделе **myresourcegroup**группы ресурсов.
+В этом примере показаны подробные сведения о параметре конфигурации сервера **\_ \_ log** **mydemoserver** для сервера в разделе **myresourcegroup** группы ресурсов.
 
 ```azurepowershell-interactive
 Get-AzMySqlConfiguration -Name slow_query_log -ResourceGroupName myresourcegroup -ServerName mydemoserver
@@ -63,13 +63,13 @@ Get-AzMySqlConfiguration -Name slow_query_log -ResourceGroupName myresourcegroup
 
 Вы также можете изменить значение определенного параметра конфигурации сервера. При этом обновляется базовое значение конфигурации для ядра СУБД сервера MySQL. Чтобы обновить конфигурацию, используйте `Update-AzMySqlConfiguration` командлет.
 
-Чтобы обновить параметр конфигурации сервера ** \_ \_ log** **mydemoserver** для сервера в разделе **myresourcegroup**группы ресурсов.
+Чтобы обновить параметр конфигурации сервера **\_ \_ log** **mydemoserver** для сервера в разделе **myresourcegroup** группы ресурсов.
 
 ```azurepowershell-interactive
 Update-AzMySqlConfiguration -Name slow_query_log -ResourceGroupName myresourcegroup -ServerName mydemoserver -Value On
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Автоматическое увеличение объема хранилища в базе данных Azure для сервера MySQL с помощью PowerShell](howto-auto-grow-storage-powershell.md).

@@ -1,17 +1,17 @@
 ---
 title: Расширенная защита от угроз — портал Azure — база данных Azure для MySQL
 description: Узнайте, как настроить расширенную защиту от угроз для обнаружения аномальных действий базы данных, указывающих на потенциальные угрозы безопасности для базы данных.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 96f6993f92192a1149e3b243c68fdf5fe96fdc66
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: b30bd36dca6f866b8f3e6e8a0b133a6dd61b239b
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541457"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541442"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
@@ -28,7 +28,7 @@ ms.locfileid: "92541457"
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
 1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com) .
-2. Перейдите на страницу настройки сервера Базы данных Azure для MySQL, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)** .
+2. Перейдите на страницу настройки сервера Базы данных Azure для MySQL, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)**.
 3. На странице настройки **Расширенная защита от угроз (предварительная версия)** сделайте следующее:
 
    - Включите расширенную защиту от угроз на сервере.
@@ -42,15 +42,15 @@ ms.locfileid: "92541457"
  
 1. Щелкните ссылку **View recent alerts** (Просмотреть последние оповещения) в электронном сообщении, чтобы запустить портал Azure и открыть страницу оповещений центра безопасности Azure. На этой странице содержится обзор активных угроз, обнаруженных в базе данных SQL.
     
-    :::image type="content" source="./media/howto-database-threat-protection-portal/anomalous-activity-report.png" alt-text="Настройка обнаружения угроз":::
+    :::image type="content" source="./media/howto-database-threat-protection-portal/anomalous-activity-report.png" alt-text="Отчеты об аномальных действиях":::
 
     Просмотрите активные угрозы:
 
-    :::image type="content" source="./media/howto-database-threat-protection-portal/active-threats.png" alt-text="Настройка обнаружения угроз":::
+    :::image type="content" source="./media/howto-database-threat-protection-portal/active-threats.png" alt-text="Активные угрозы":::
 
 2. Щелкните определенное оповещение, чтобы отобразить дополнительные сведения и действия для изучения этой угрозы и устранения будущих угроз.
     
-    :::image type="content" source="./media/howto-database-threat-protection-portal/specific-alert.png" alt-text="Настройка обнаружения угроз":::
+    :::image type="content" source="./media/howto-database-threat-protection-portal/specific-alert.png" alt-text="Определенное оповещение":::
 
 ## <a name="explore-threat-detection-alerts"></a>Анализ оповещений об обнаружении угроз
 
@@ -58,7 +58,7 @@ ms.locfileid: "92541457"
 
 Щелкните **Threat detection alert** (Оповещение об обнаружении угроз), чтобы запустить страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных.
 
-   :::image type="content" source="./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png" alt-text="Настройка обнаружения угроз":::
+   :::image type="content" source="./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png" alt-text="Оповещение об обнаружении угроз":::
    
 
 ## <a name="next-steps"></a>Дальнейшие действия

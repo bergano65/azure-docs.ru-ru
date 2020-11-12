@@ -1,7 +1,7 @@
 ---
 title: Обучение и развертывание модели TensorFlow
 titleSuffix: Azure Machine Learning
-description: Узнайте, как запускать скрипты обучения TensorFlow в масштабе с помощью Машинное обучение Azure.
+description: Узнайте, как Машинное обучение Azure позволяет масштабировать задание обучения TensorFlow с помощью эластичных облачных ресурсов.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: mx-iao
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 5c1c6af5f8304fd9093aa0351078b84d3f4d0b5d
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 9b8d48139e6cbabfbc5bf63f85d2d03c64d7efd9
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360757"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542292"
 ---
 # <a name="train-tensorflow-models-at-scale-with-azure-machine-learning"></a>Обучение моделей TensorFlow в масштабе с помощью Машинное обучение Azure
 

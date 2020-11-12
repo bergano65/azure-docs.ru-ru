@@ -1,19 +1,19 @@
 ---
 title: Доступ к журналам запросов с высокой производительностью. Azure CLI — база данных Azure для MySQL
 description: В этой статье описывается, как получить доступ к журналам запросов к службе "база данных Azure для MySQL" с помощью Azure CLI.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 4/13/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a662fe9300d78591cc7ae1fcff67f9b3f93ab8c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 945a67f81010a61adf814f6f6f422eba5001b48d
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87501224"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541578"
 ---
 # <a name="configure-and-access-slow-query-logs-by-using-azure-cli"></a>Настройка и доступ к журналам запросов с высокой занесением с помощью Azure CLI
 Вы можете скачать журналы запросов к базе данных Azure для MySQL с помощью Azure CLI, служебной программы командной строки Azure.
@@ -26,7 +26,7 @@ ms.locfileid: "87501224"
 ## <a name="configure-logging"></a>Настройка журнала
 Можно настроить на сервере доступ к журналу медленных запросов MySQL, выполнив следующие действия:
 1. Включите ведение журнала для запросов, задав для **параметра \_ \_ журнала скорости запроса** значение ON.
-2. Выберите место вывода журналов для использования ** \_ выходных данных журнала**. Чтобы отправить журналы в локальное хранилище и Azure Monitor журналы диагностики, выберите **файл**. Чтобы отправить журналы только в Azure Monitor журналы, выберите **нет** .
+2. Выберите место вывода журналов для использования **\_ выходных данных журнала**. Чтобы отправить журналы в локальное хранилище и Azure Monitor журналы диагностики, выберите **файл**. Чтобы отправить журналы только в Azure Monitor журналы, выберите **нет** .
 3. Настройте другие параметры, такие как **long\_query\_time** и **log\_slow\_admin\_statements**.
 
 Ознакомьтесь со статьей [Настройка параметров конфигурации сервера с помощью Azure CLI](howto-configure-server-parameters-using-cli.md), чтобы узнать, как задать значение этих параметров с помощью Azure CLI.

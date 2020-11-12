@@ -1,17 +1,17 @@
 ---
 title: Использование sys_schema — База данных Azure для MySQL
 description: Узнайте, как использовать средство sys_schema для поиска проблем с производительностью и обслуживания базы данных в службе "База данных Azure для MySQL".
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 3/30/2020
-ms.openlocfilehash: 74aa0bf84c19b9d663b92d529604c08bf5800c45
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a20510ee2800a54f9a51a2f498ee8ae8a3e51d55
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544857"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543155"
 ---
 # <a name="how-to-use-sys_schema-for-performance-tuning-and-database-maintenance-in-azure-database-for-mysql"></a>Как использовать sys_schema для настройки производительности и обслуживания базы данных в службе "База данных Azure для MySQL"
 
@@ -29,31 +29,31 @@ ms.locfileid: "92544857"
 - User: Потребляемые ресурсы, сгруппированные по пользователям. Примерами являются операции ввода-вывода файлов, подключения и память.
 - Wait: события ожидания, сгруппированные по узлу или пользователю.
 
-Теперь рассмотрим некоторые общие шаблоны использования sys_schema. Для начала сгруппируем шаблоны использования в две категории: **Настройка производительности** и **Обслуживание баз данных** .
+Теперь рассмотрим некоторые общие шаблоны использования sys_schema. Для начала сгруппируем шаблоны использования в две категории: **Настройка производительности** и **Обслуживание баз данных**.
 
 ## <a name="performance-tuning"></a>Настройка производительности
 
 ### <a name="sysuser_summary_by_file_io"></a>*sys.user_summary_by_file_io*
 
-Операции ввода-вывода являются наиболее ресурсоемкими операциями в базе данных. Мы можем узнать среднюю задержку операций ввода-вывода, запросив представление *sys.user_summary_by_file_io* . При использовании подготовленного хранилища по умолчанию размером 125 ГБ задержка ввода-вывода составляет около 15 секунд.
+Операции ввода-вывода являются наиболее ресурсоемкими операциями в базе данных. Мы можем узнать среднюю задержку операций ввода-вывода, запросив представление *sys.user_summary_by_file_io*. При использовании подготовленного хранилища по умолчанию размером 125 ГБ задержка ввода-вывода составляет около 15 секунд.
 
-:::image type="content" source="./media/howto-troubleshoot-sys-schema/io-latency-125GB.png" alt-text="Представления sys_schema":::
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/io-latency-125GB.png" alt-text="Задержка ввода-вывода: 125 ГБ":::
 
 Так как База данных Azure для MySQL масштабирует операции ввода-вывода в соответствии с хранилищем, после увеличения объема подготовленного хранилища до 1 ТБ задержка операций ввода-вывода уменьшается до 571 мс.
 
-:::image type="content" source="./media/howto-troubleshoot-sys-schema/io-latency-1TB.png" alt-text="Представления sys_schema":::
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/io-latency-1TB.png" alt-text="Задержка ввода-вывода: 1 ТБ":::
 
 ### <a name="sysschema_tables_with_full_table_scans"></a>*sys.schema_tables_with_full_table_scans*
 
-Несмотря на тщательное планирование, многие запросы могут по-прежнему привести к сканированию всей таблицы. Дополнительные сведения о типах индексов и способах их оптимизации см. в следующей статье: [Решение проблем с производительностью запросов](./howto-troubleshoot-query-performance.md). Полное сканирование таблиц является ресурсоемким и снижает производительность вашей базы данных. Самый быстрый способ поиска таблиц с полным сканированием — запросить представление *sys.schema_tables_with_full_table_scans* .
+Несмотря на тщательное планирование, многие запросы могут по-прежнему привести к сканированию всей таблицы. Дополнительные сведения о типах индексов и способах их оптимизации см. в следующей статье: [Решение проблем с производительностью запросов](./howto-troubleshoot-query-performance.md). Полное сканирование таблиц является ресурсоемким и снижает производительность вашей базы данных. Самый быстрый способ поиска таблиц с полным сканированием — запросить представление *sys.schema_tables_with_full_table_scans*.
 
-:::image type="content" source="./media/howto-troubleshoot-sys-schema/full-table-scans.png" alt-text="Представления sys_schema":::
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/full-table-scans.png" alt-text="Сканирование всей таблицы":::
 
 ### <a name="sysuser_summary_by_statement_type"></a>*sys.user_summary_by_statement_type*
 
 Чтобы устранить проблемы с производительностью базы данных, может быть полезно просто выявить события, происходящие внутри базы данных, а представление *sys.user_summary_by_statement_type* выведет необходимые сведения по типу инструкций.
 
-:::image type="content" source="./media/howto-troubleshoot-sys-schema/summary-by-statement.png" alt-text="Представления sys_schema":::
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/summary-by-statement.png" alt-text="Сводка по инструкциям":::
 
 В этом примере База данных Azure для MySQL потратила 53 минуты на сканирование журнала подробных поисковых запросов 44 579 раз. Это занимает много времени и требует множества операций ввода-вывода. Вы можете уменьшить эту активность, отключив журнал медленных запросов либо уменьшив частоту внесения в него записей на портале Azure.
 
@@ -64,9 +64,9 @@ ms.locfileid: "92544857"
 [!IMPORTANT]
 > Запрос этого представления может повлиять на производительность. Устранение неполадок следует запланировать на нерабочее время.
 
-Буферный пул InnoDB находится в памяти и является основным механизмом кэширования между СУБД и хранилищем. Размер буферного пула привязан к уровню производительности. Его можно изменить, только выбрав другой номер SKU продукта. Как и с памятью в операционной системе, старые страницы выгружаются, чтобы освободить место для новых данных. Чтобы узнать, какие таблицы используют больше всего памяти буферного пула InnoDB, можно запросить представление *sys.innodb_buffer_stats_by_table* .
+Буферный пул InnoDB находится в памяти и является основным механизмом кэширования между СУБД и хранилищем. Размер буферного пула привязан к уровню производительности. Его можно изменить, только выбрав другой номер SKU продукта. Как и с памятью в операционной системе, старые страницы выгружаются, чтобы освободить место для новых данных. Чтобы узнать, какие таблицы используют больше всего памяти буферного пула InnoDB, можно запросить представление *sys.innodb_buffer_stats_by_table*.
 
-:::image type="content" source="./media/howto-troubleshoot-sys-schema/innodb-buffer-status.png" alt-text="Представления sys_schema":::
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/innodb-buffer-status.png" alt-text="Состояние буфера InnoDB":::
 
 На рисунке выше видно, что, за исключением системных таблиц и представлений, каждая таблица базы данных mysqldatabase033, которая размещает один из сайтов WordPress, занимает 16 КБ или 1 страницу данных в памяти.
 
@@ -74,9 +74,9 @@ ms.locfileid: "92544857"
 
 Индексы являются эффективным инструментом повышения производительности чтения, однако они влекут дополнительные затраты, связанные с операциями вставки и хранением. *sys.schema_unused_indexes* и *sys.schema_redundant_indexes* предоставляют сведения об неиспользуемых или повторяющихся индексах.
 
-:::image type="content" source="./media/howto-troubleshoot-sys-schema/unused-indexes.png" alt-text="Представления sys_schema":::
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/unused-indexes.png" alt-text="Неиспользуемые индексы":::
 
-:::image type="content" source="./media/howto-troubleshoot-sys-schema/redundant-indexes.png" alt-text="Представления sys_schema":::
+:::image type="content" source="./media/howto-troubleshoot-sys-schema/redundant-indexes.png" alt-text="Избыточные индексы":::
 
 ## <a name="conclusion"></a>Заключение
 

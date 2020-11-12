@@ -1,17 +1,17 @@
 ---
 title: Журналы аудита — база данных Azure для MySQL — гибкий сервер
 description: Описание журналов аудита, доступных в базе данных Azure для гибкого сервера MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
-ms.openlocfilehash: e630ccec744c4edf0dc80d374ecc93526f960d44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5aab78ad99b80ff1d7be92bd36847b01dbc0e33b
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91295995"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542224"
 ---
 # <a name="track-database-activity-with-audit-logs-in-azure-database-for-mysql-flexible-server"></a>Мониторинг активности базы данных с помощью журналов аудита в базе данных Azure для гибкого сервера MySQL
 
@@ -80,7 +80,7 @@ ms.locfileid: "91295995"
 | `db_s` | Имя базы данных, подключенной к |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-### <a name="general"></a>Общие сведения
+### <a name="general"></a>Общее
 
 Приведенная ниже схема относится к типам событий GENERAL, DML_SELECT, DML_NONSELECT, DML, DDL, ДКЛ и ADMIN.
 
@@ -195,7 +195,7 @@ ms.locfileid: "91295995"
     | order by TimeGenerated asc nulls last
     ``` 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [журналах медленных запросов](concepts-slow-query-logs.md)
 - Настройка журналов запросов аудита из [портал Azure](how-to-configure-audit-logs-portal.md)
 <!-- - [How to configure audit logs in the Azure portal](howto-configure-audit-logs-portal.md)-->

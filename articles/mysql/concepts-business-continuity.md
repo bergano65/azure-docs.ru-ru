@@ -1,17 +1,17 @@
 ---
 title: Непрерывность бизнес-процессов — база данных Azure для MySQL
 description: Сведения о непрерывности бизнес-процессов (восстановление на момент времени, сбой центра обработки данных, геовосстановление) при использовании службы "база данных Azure для MySQL".
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 7/7/2020
-ms.openlocfilehash: b21062256896ebfc9c11b031413538b39620d1e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15fde6e7558c685537d36f45bcc7e3ff341544ff
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89613976"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542500"
 ---
 # <a name="understand-business-continuity-in-azure-database-for-mysql"></a>Сведения о непрерывности бизнес-процессов в базе данных Azure для MySQL
 
@@ -56,7 +56,7 @@ ms.locfileid: "89613976"
 ### <a name="where-does-azure-database-for-mysql-store-customer-data"></a>Где база данных Azure для MySQL хранит данные клиента?
 По умолчанию база данных Azure для MySQL не перемещает и не хранит данные клиента вне региона, в котором они развернуты. Тем не менее клиенты могут дополнительно включить [геоизбыточные резервные копии](concepts-backup.md#backup-redundancy-options) или создать [реплику чтения между регионами](concepts-read-replicas.md#cross-region-replication) для хранения данных в другом регионе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об автоматическом создании резервных копий в Базе данных Azure для MySQL см. в [этой статье](concepts-backup.md).
 - Дополнительные сведения см. в статьях [Как заархивировать и восстановить сервер в базе данных Azure для PostgreSQL с помощью портала Azure](howto-restore-server-portal.md) или [Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI](howto-restore-server-cli.md).

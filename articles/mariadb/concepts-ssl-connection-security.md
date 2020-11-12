@@ -1,17 +1,17 @@
 ---
 title: Подключение SSL/TLS — база данных Azure для MariaDB
 description: Сведения о настройке базы данных Azure для MariaDB и связанных приложений для правильного использования SSL-соединений
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: 4eb4ad48554b8ca2ce6af9f89652fad685998a2a
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: d2d916f3cba27f6b38a781b81e403ee9b6f0fab3
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126060"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541051"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mariadb"></a>Подключение SSL/TLS в базе данных Azure для MariaDB
 База данных Azure для MariaDB поддерживает подключение сервера базы данных к клиентским приложениям с помощью SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
@@ -71,7 +71,7 @@ ms.locfileid: "92126060"
 *   TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
 *   TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [правилах брандмауэра сервера](concepts-firewall-rules.md)
 - Узнайте, как [настроить SSL](howto-configure-ssl.md)
 - Узнайте, как [настроить TLS](howto-tls-configurations.md)

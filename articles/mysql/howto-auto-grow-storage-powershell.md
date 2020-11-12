@@ -1,18 +1,18 @@
 ---
 title: Автоматическое увеличение хранилища Azure PowerShell — база данных Azure для MySQL
 description: В этой статье описывается, как включить автоматическое расширение хранилища с помощью PowerShell в базе данных Azure для MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 4/28/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5fa9f9b07eb20c995bc0cf47dd3bf72f236c3112
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: e8c9f6f66e484fbd9ebe5c15934936d6e5c59073
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546829"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542037"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mysql-server-using-powershell"></a>Автоматическое увеличение объема хранилища в базе данных Azure для сервера MySQL с помощью PowerShell
 
@@ -23,7 +23,7 @@ ms.locfileid: "92546829"
 > [!IMPORTANT]
 > Помните, что хранилище можно масштабировать только вверх, а не вниз.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 

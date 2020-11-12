@@ -1,17 +1,17 @@
 ---
 title: Параметры сервера — база данных Azure для MariaDB
 description: В этом разделе приводятся рекомендации по настройке параметров сервера в базе данных Azure для MariaDB.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 6/25/2020
-ms.openlocfilehash: b5064e3cef7def1aca5aa0c97d031d519fd610cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4432178d5908d4360cda05a62b62d05687be4235
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91626400"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541136"
 ---
 # <a name="server-parameters-in-azure-database-for-mariadb"></a>Параметры сервера в базе данных Azure для MariaDB
 
@@ -233,7 +233,7 @@ MariaDB хранит таблицу InnoDB в разных табличных п
 
 Для остальных параметров сервера, которые не перечислены выше, устанавливаются значения MariaDB по умолчанию для [MariaDB](https://mariadb.com/kb/en/server-system-variables/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [настроить параметры сервера с помощью портал Azure](./howto-server-parameters.md)
 - Узнайте, как [настроить параметры сервера с помощью Azure CLI](./howto-configure-server-parameters-cli.md)

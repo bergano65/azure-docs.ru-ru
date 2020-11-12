@@ -1,33 +1,32 @@
 ---
 title: Доступ к журналам аудита — Azure CLI — база данных Azure для MySQL
 description: В этой статье описывается, как настроить и получить доступ к журналам аудита в базе данных Azure для MySQL из Azure CLI.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/24/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 568f49565c6e6d8062f8869566cf3879b7c97eaa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db7ffabae785a589bacf349356079f6046039f9c
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87503333"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542003"
 ---
 # <a name="configure-and-access-audit-logs-in-the-azure-cli"></a>Настройка и доступ к журналам аудита в Azure CLI
 
 Вы можете настроить [журналы аудита базы данных Azure для MySQL](concepts-audit-logs.md) из Azure CLI.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
-Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
+Для пошагового руководства выполните следующие действия.
 
-- [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
+- Необходим [сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-> [!IMPORTANT]
-> Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы проверить версию, в командной строке Azure CLI введите `az --version`. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI]( /cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется версия 2,0 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="configure-audit-logging"></a>Настройка ведения журнала аудита
 

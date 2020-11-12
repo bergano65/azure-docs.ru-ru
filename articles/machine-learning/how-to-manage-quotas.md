@@ -1,7 +1,7 @@
 ---
 title: Управление ресурсами и квотами
 titleSuffix: Azure Machine Learning
-description: Сведения о квотах на ресурсы для Машинное обучение Azure и о том, как запросить увеличение квоты.
+description: Сведения о квотах и ограничениях на ресурсы для Машинное обучение Azure и о том, как запросить увеличение квоты.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.author: nigup
 ms.date: 10/13/2020
 ms.topic: conceptual
 ms.custom: troubleshooting,contperfq4, contperfq2
-ms.openlocfilehash: 9bcf6ac9991c1ad070f823c97b5bd0460eff07c2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d82cbafbbdeb379c8eb97494ca8d3243f356b7a1
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309083"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542122"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-machine-learning"></a>Управление и увеличение квот для ресурсов с помощью Машинное обучение Azure
 
@@ -49,7 +49,7 @@ Azure использует ограничения и квоты, чтобы пр
 + Вычислительная среда Машинного обучения Azure
 + Конвейеры Машинное обучение Azure
 + Экземпляры контейнеров Azure
-+ Хранилище Azure
++ Служба хранилища Azure
 
 > [!IMPORTANT]
 > Границы могут измениться. Последние сведения см. в статье [Подписка Azure, ограничения службы, квоты и ограничения](../azure-resource-manager/management/azure-subscription-service-limits.md) для всех Azure.
@@ -102,7 +102,7 @@ Azure использует ограничения и квоты, чтобы пр
 
 Дополнительные сведения см. в разделе [ограничения экземпляров контейнеров](../azure-resource-manager/management/azure-subscription-service-limits.md#container-instances-limits).
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Память
 В службе хранилища Azure предусмотрено ограничение в 250 учетных записей хранения на регион для каждой подписки. Это ограничение включает учетные записи хранения уровня "Стандартный" и "Премиум".
 
 Чтобы увеличить это ограничение, выполните запрос через [службу поддержки Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Команда разработчиков службы хранилища Azure просматривает ваш случай и может утвердить до 250 учетных записей хранения для региона.

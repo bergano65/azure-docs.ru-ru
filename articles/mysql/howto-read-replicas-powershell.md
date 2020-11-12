@@ -1,18 +1,18 @@
 ---
 title: Управление репликами чтения — Azure PowerShell — база данных Azure для MySQL
 description: Узнайте, как настраивать реплики чтения и управлять ими в базе данных Azure для MySQL с помощью PowerShell.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 8/24/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e9c8ce7519c6e2c84ef47fc78897c4b67b89e56a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe33730fc11bfc18b7d67471e1077fb9490385d4
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541022"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541952"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "91541022"
 
 Вы можете создавать реплики чтения и управлять ими с помощью PowerShell.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -54,9 +54,9 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 
 Для команды `New-AzMySqlReplica` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
+| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
 | Имя | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 
 Чтобы создать реплику чтения между регионами, используйте параметр **Location** . В следующем примере создается реплика в регионе " **Западная часть США** ".
@@ -83,9 +83,9 @@ Get-AzMySqlReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
 
 Для команды `Get-AzMySqlReplica` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
+| ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | ServerName | mydemoserver | Имя или идентификатор исходного сервера. |
 
 ### <a name="delete-a-replica-server"></a>Удаление сервера-реплики
@@ -107,7 +107,7 @@ Remove-AzMySqlServer -Name mydemoreplicaserver -ResourceGroupName myresourcegrou
 Remove-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перезапуск базы данных Azure для сервера MySQL с помощью PowerShell](howto-restart-server-powershell.md)

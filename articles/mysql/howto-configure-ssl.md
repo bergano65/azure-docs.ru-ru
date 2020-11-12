@@ -1,18 +1,18 @@
 ---
 title: Настройка SSL — база данных Azure для MySQL
 description: Инструкции по настройке базы данных Azure для MySQL и связанных приложений для правильного использования SSL-соединений.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 07/08/2020
 ms.custom: devx-track-python, devx-track-csharp
-ms.openlocfilehash: 1bedeb752a18d7a0212ede2b34526efb8ea09287
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 71e6d024b27ecad09b3339a7b0a8c406c7a3eda1
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90905823"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541527"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mysql"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL
 
@@ -63,7 +63,7 @@ mysql.exe -h mydemoserver.mysql.database.azure.com -u Username@mydemoserver -p -
 
 С помощью портала Azure перейдите к серверу базы данных Azure для MySQL и щелкните **Безопасность подключения**. Воспользуйтесь выключателем для включения или отключения параметра **Enforce SSL connection** (Применять SSL-соединение), а затем щелкните **Сохранить**. Для повышения безопасности корпорация Майкрософт рекомендует всегда включать параметр **Enforce SSL connection** (Применять SSL-соединение).
 
-:::image type="content" source="./media/howto-configure-ssl/enable-ssl.png" alt-text="Сохранить конфигурацию SSL":::
+:::image type="content" source="./media/howto-configure-ssl/enable-ssl.png" alt-text="Снимок экрана портал Azure для принудительного применения SSL-подключений в базе данных Azure для MySQL":::
 
 ### <a name="using-azure-cli"></a>Использование Azure CLI
 
@@ -75,7 +75,7 @@ az mysql server update --resource-group myresource --name mydemoserver --ssl-enf
 
 ## <a name="step-4-verify-the-ssl-connection"></a>Шаг 4. Проверка SSL-соединения
 
-Выполните команду mysql **status**, чтобы проверить наличие подключения к серверу MySQL с помощью протокола SSL.
+Выполните команду mysql **status** , чтобы проверить наличие подключения к серверу MySQL с помощью протокола SSL.
 
 ```dos
 mysql> status
@@ -252,6 +252,6 @@ using (var connection = new MySqlConnection(builder.ConnectionString))
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о вариантах подключения приложений см. в статье [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).

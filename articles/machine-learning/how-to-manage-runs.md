@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 01/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 2f7d102ad6bf2aba2056456acfe6207a0b0643ba
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 0da4127960450a13b64ec23908b4a4fd4c69bd7e
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357986"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542020"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
 
@@ -29,6 +29,10 @@ ms.locfileid: "93357986"
 * Отмена или сбой выполнения.
 * Создание дочерних запусков.
 * Теги и поиск запусков.
+
+> [!TIP]
+> Дополнительные сведения о мониторинге службы Машинное обучение Azure и связанных служб Azure см. [в разделе мониторинг машинное обучение Azure](monitor-azure-machine-learning.md).
+> Сведения о мониторинге моделей, развернутых в виде веб-служб или модулей IoT Edge, см. в разделе [сбора данных модели](how-to-enable-data-collection.md) и [мониторинга с помощью Application Insights](how-to-enable-app-insights.md).
 
 ## <a name="prerequisites"></a>Обязательные условия
 

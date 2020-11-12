@@ -1,7 +1,7 @@
 ---
 title: Создание вычислительного экземпляра и управление им
 titleSuffix: Azure Machine Learning
-description: Узнайте, как создать вычислительный экземпляр и управлять им в рабочей области Машинное обучение Azure. Используйте вычислительный экземпляр в качестве среды разработки, а также для обучения и разработки и тестирования.
+description: Узнайте, как создать вычислительный экземпляр Машинное обучение Azure и управлять им. Используйте в качестве среды разработки или в качестве целевого объекта вычислений для целей разработки и тестирования.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 6e0d80c35a4822ad46973c94b32cf71b129ad1e1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: bdae8d77dc5e51cf4a181459ab2e159f31f06e31
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318021"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94543108"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Создание Машинное обучение Azure вычислительного экземпляра и управление им
 
@@ -40,7 +40,7 @@ ms.locfileid: "93318021"
 
 * [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
-## <a name="create"></a>Создать
+## <a name="create"></a>Создание
 
 **Оценка времени** : приблизительно 5 минут.
 

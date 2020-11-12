@@ -1,17 +1,17 @@
 ---
 title: Резервное копирование и восстановление — база данных Azure для MySQL
 description: Сведения об автоматическом резервном копировании и восстановлении сервера в службе "База данных Azure для MySQL".
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/27/2020
-ms.openlocfilehash: 283befd08c7802a9df6d2fca78465d50cfb2ba7b
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 4438ceaa7bb4e9c29a05de0481acdad571e3bb64
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376822"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542343"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mysql"></a>Резервное копирование и восстановление в службе "База данных Azure для MySQL"
 
@@ -131,7 +131,7 @@ ms.locfileid: "93376822"
 - Убедитесь, что заданы соответствующие данные для входа и разрешений уровня базы данных.
 - Настройте оповещения соответствующим образом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о непрерывности бизнес-процессов см. в  [этой статье](concepts-business-continuity.md).
 - Для восстановления на момент времени с помощью портал Azure см. раздел [восстановление сервера на момент времени с помощью портал Azure](howto-restore-server-portal.md).

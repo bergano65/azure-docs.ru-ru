@@ -1,19 +1,19 @@
 ---
 title: Руководство по проектированию сервера Базы данных Azure для MariaDB с помощью Azure PowerShell
 description: Этот учебник содержит сведения о создании базы данных и сервера Базы данных Azure для MariaDB и управлении ими с помощью PowerShell.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.devlang: azurepowershell
 ms.topic: tutorial
 ms.date: 05/26/2020
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 8087da173c8d1df225456aea6efbdbe5ed8c48be
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 9b4500df459e4d4ef67f97dc4fa923988f30401b
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424925"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542479"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-using-powershell"></a>Руководство по проектированию Базы данных Azure для MariaDB с помощью PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "92424925"
 > Так как модуль PowerShell Az.MariaDb предоставляется в предварительной версии, его нужно установить отдельно от модуля Az PowerShell с помощью команды `Install-Module -Name Az.MariaDb -AllowPrerelease`.
 > Как только модуль PowerShell Az.MariaDb станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и встроен в Azure Cloud Shell.
 
-Если вы впервые используете службу "База данных Azure для MariaDB", необходимо зарегистрировать поставщик ресурсов **Microsoft.DBforMariaDB** .
+Если вы впервые используете службу "База данных Azure для MariaDB", необходимо зарегистрировать поставщик ресурсов **Microsoft.DBforMariaDB**.
 
 ```azurepowershell-interactive
 Register-AzResourceProvider -ProviderNamespace Microsoft.DBforMariaDB
@@ -56,7 +56,7 @@ Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
 
 Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
-В следующем примере создается группа ресурсов с именем **myresourcegroup** в регионе **Западная часть США** .
+В следующем примере создается группа ресурсов с именем **myresourcegroup** в регионе **Западная часть США**.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myresourcegroup -Location westus
@@ -66,7 +66,7 @@ New-AzResourceGroup -Name myresourcegroup -Location westus
 
 Создайте сервер Базы данных Azure для MariaDB с помощью командлета `New-AzMariaDbServer`. Сервер может управлять несколькими базами данных. Как правило, для каждого проекта и для каждого пользователя используется отдельная база данных.
 
-В следующем примере в регионе **Западная часть США** создается сервер MariaDB с именем **mydemoserver** в группе ресурсов **myresourcegroup** с администратором сервера с именем **myadmin** . Это сервер 5-го поколения ценовой категории "Общего назначения" с двумя виртуальными ядрами и геоизбыточным резервным копированием. Запишите пароль, указанный в первой строке примера, так как это пароль для учетной записи администратора сервера MariaDB.
+В следующем примере в регионе **Западная часть США** создается сервер MariaDB с именем **mydemoserver** в группе ресурсов **myresourcegroup** с администратором сервера с именем **myadmin**. Это сервер 5-го поколения ценовой категории "Общего назначения" с двумя виртуальными ядрами и геоизбыточным резервным копированием. Запишите пароль, указанный в первой строке примера, так как это пароль для учетной записи администратора сервера MariaDB.
 
 > [!TIP]
 > Имя сервера сопоставляется с DNS-именем и должно быть глобально уникальным в Azure.
@@ -104,7 +104,7 @@ New-AzMariaDbFirewallRule -Name AllowMyIP -ResourceGroupName myresourcegroup -Se
 
 ## <a name="get-the-connection-information"></a>Получение сведений о подключении
 
-Чтобы подключиться к серверу, необходимо указать сведения об узле и учетные данные для доступа. Чтобы получить сведения о подключении, используйте следующий пример. Запишите значения **FullyQualifiedDomainName** и **AdministratorLogin** .
+Чтобы подключиться к серверу, необходимо указать сведения об узле и учетные данные для доступа. Чтобы получить сведения о подключении, используйте следующий пример. Запишите значения **FullyQualifiedDomainName** и **AdministratorLogin**.
 
 ```azurepowershell-interactive
 Get-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup |

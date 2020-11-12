@@ -1,17 +1,17 @@
 ---
 title: Настройка репликации данных в службе "база данных Azure для MySQL"
 description: В этой статье объясняется, как настроить репликацию входных данных для Базы данных Azure для MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/29/2020
-ms.openlocfilehash: 58df34ae6a6ff3304304da192b429ac83c1b55c3
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: b7f1f16b5182658f42ad6594aace22fb5a1a80fc
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544041"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541408"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Настройка Базы данных Azure для MySQL для репликации входных данных
 
@@ -75,7 +75,7 @@ ms.locfileid: "92544041"
       ```bash
       ping <output of step 2b>
       ``` 
-      Например: 
+      Пример: 
       ```bash      
       C:\Users\testuser> ping e299ae56f000.tr1830.westus1-a.worker.database.windows.net
       Pinging tr1830.westus1-a.worker.database.windows.net (**11.11.111.111**) 56(84) bytes of data.
@@ -140,11 +140,11 @@ ms.locfileid: "92544041"
 
    Введите имя пользователя в поле **Login Name** (Имя входа). 
 
-   :::image type="content" source="./media/howto-data-in-replication/syncuser.png" alt-text="Пользователи и привилегии":::
+   :::image type="content" source="./media/howto-data-in-replication/syncuser.png" alt-text="Синхронизация пользователя":::
  
    Щелкните панель **Administrative Roles** (Роли администрирования), а затем выберите **Replication Slave** (Ведомая роль репликации) из списка **Global Privileges** (Глобальные привилегии). Затем щелкните **Apply** (Применить), чтобы создать роль репликации.
 
-   :::image type="content" source="./media/howto-data-in-replication/replicationslave.png" alt-text="Пользователи и привилегии":::
+   :::image type="content" source="./media/howto-data-in-replication/replicationslave.png" alt-text="Ведомая роль репликации":::
 
 1. Установка исходного сервера в режиме только для чтения
 
@@ -164,7 +164,7 @@ ms.locfileid: "92544041"
    ```
    Результаты должны выглядеть так, как показано ниже. Не забудьте записать имя двоичного файла, так как оно будет использоваться на последующих этапах.
 
-   :::image type="content" source="./media/howto-data-in-replication/masterstatus.png" alt-text="Пользователи и привилегии":::
+   :::image type="content" source="./media/howto-data-in-replication/masterstatus.png" alt-text="Результаты состояния основного сервера":::
  
 ## <a name="dump-and-restore-source-server"></a>Дамп и восстановление исходного сервера
 
@@ -206,7 +206,7 @@ ms.locfileid: "92544041"
        - Этот параметр рекомендуется передавать в виде переменной. См. следующие примеры для получения дополнительных сведений.
 
    > [!NOTE]
-   > Если исходный сервер размещен на виртуальной машине Azure, установите для параметра "разрешить доступ к службам Azure" значение "вкл.", чтобы разрешить серверу-источникам и репликам взаимодействовать друг с другом. Этот параметр можно изменить в параметрах **Безопасность подключения** . Дополнительные сведения см. в разделе [Управление правилами брандмауэра с помощью портала](howto-manage-firewall-using-portal.md).
+   > Если исходный сервер размещен на виртуальной машине Azure, установите для параметра "разрешить доступ к службам Azure" значение "вкл.", чтобы разрешить серверу-источникам и репликам взаимодействовать друг с другом. Этот параметр можно изменить в параметрах **Безопасность подключения**. Дополнительные сведения см. в разделе [Управление правилами брандмауэра с помощью портала](howto-manage-firewall-using-portal.md).
       
    **Примеры**
    

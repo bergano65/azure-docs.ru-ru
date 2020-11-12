@@ -1,17 +1,17 @@
 ---
 title: Журналы аудита — база данных Azure для MariaDB
 description: Описание журналов аудита, доступных в базе данных Azure для MariaDB, и доступных параметров для включения уровней ведения журнала.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 6/24/2020
-ms.openlocfilehash: 7c9d59eee1e1ce69394301023b108952eaf46790
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e66eaf62b54759222421b17ebc7e33b82e018338
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85362430"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541765"
 ---
 # <a name="audit-logs-in-azure-database-for-mariadb"></a>Журналы аудита в базе данных Azure для MariaDB
 
@@ -77,7 +77,7 @@ ms.locfileid: "85362430"
 | `db_s` | Имя базы данных, подключенной к |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-### <a name="general"></a>Общие сведения
+### <a name="general"></a>Общее
 
 Приведенная ниже схема относится к типам событий GENERAL, DML_SELECT, DML_NONSELECT, DML, DDL, ДКЛ и ADMIN.
 

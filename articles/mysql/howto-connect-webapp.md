@@ -1,17 +1,17 @@
 ---
 title: Подключение к службе приложений Azure с базой данных Azure для MySQL
 description: Инструкции по правильному подключению существующей службы приложений Azure к базе данных Azure для MySQL
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: deb99ea4f674c901974ca219a0e1bf831f5b4e51
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6355afe6ce5decbed029db4536b1b1b19f5a876c
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90905846"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541510"
 ---
 # <a name="connect-an-existing-azure-app-service-to-azure-database-for-mysql-server"></a>Подключение существующей службы приложений Azure к базе данных Azure для сервера MySQL
 В этом разделе объясняется, как подключить имеющуюся службу приложений Azure к базе данных Azure для сервера MySQL.
@@ -24,21 +24,23 @@ ms.locfileid: "90905846"
 ## <a name="solution-1---allow-azure-services"></a>Решение 1: разрешение доступа к службам Azure
 База данных Azure для MySQL обеспечивает безопасность доступа, используя брандмауэр для защиты данных. При настройке подключения из службы приложений Azure к базе данных Azure для сервера MySQL имейте в виду, что исходящие IP-адреса службы приложений являются динамическими по своей природе. Если выбрать параметр "Разрешить доступ к службам Azure", служба приложений сможет подключаться к серверу MySQL.
 
-1. В колонке сервера MySQL в разделе "Параметры" щелкните **Безопасность подключения**, чтобы открыть колонку "Безопасность подключения" базы данных Azure для MySQL.
+1. В колонке сервера MySQL в разделе "Параметры" щелкните **Безопасность подключения** , чтобы открыть колонку "Безопасность подключения" базы данных Azure для MySQL.
 
    :::image type="content" source="./media/howto-connect-webapp/1-connection-security.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;":::
 
-2. Выберите значение **ВКЛ.** для параметра **Разрешить доступ к службам Azure**, а затем нажмите кнопку **Сохранить**.
-   :::image type="content" source="./media/howto-connect-webapp/allow-azure.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;":::
+2. Выберите значение **ВКЛ.** для параметра **Разрешить доступ к службам Azure** , а затем нажмите кнопку **Сохранить**.
+   :::image type="content" source="./media/howto-connect-webapp/allow-azure.png" alt-text="Портал Azure: параметр &quot;Разрешить доступ к службам Azure&quot;":::
 
 ## <a name="solution-2---create-a-firewall-rule-to-explicitly-allow-outbound-ips"></a>Решение 2. Создание правила брандмауэра, явно разрешающего исходящие IP-адреса
 Вы можете явно добавить все исходящие IP-адреса службы приложений Azure.
 
 1. В колонке "Свойства службы приложений" обратите внимание на поле **ИСХОДЯЩИЙ IP-АДРЕС**.
 
-   :::image type="content" source="./media/howto-connect-webapp/2_1-outbound-ip-address.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;" для MySQL добавьте исходящие IP-адреса по одному.
+   :::image type="content" source="./media/howto-connect-webapp/2_1-outbound-ip-address.png" alt-text="Портал Azure — просмотр исходящих IP-адресов":::
 
-   :::image type="content" source="./media/howto-connect-webapp/2_2-add-explicit-ips.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;":::
+2. В колонке "Безопасность подключения" для MySQL добавьте исходящие IP-адреса по одному.
+
+   :::image type="content" source="./media/howto-connect-webapp/2_2-add-explicit-ips.png" alt-text="Портал Azure — добавление явных IP-адресов":::
 
 3. Не забывайте **сохранять** правила брандмауэра.
 
@@ -64,5 +66,5 @@ DATABASES = {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о строках подключения см. в [соответствующей статье](howto-connection-string.md).

@@ -1,17 +1,17 @@
 ---
 title: Правила брандмауэра — база данных Azure для MySQL
 description: Узнайте, как использовать правила брандмауэра, чтобы разрешить подключения к серверу базы данных Azure для MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 63b3fd64526f45994919267a2f4ddc730d0b2fd7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4efd9fd814165755d27de1d269b6319890f7190d
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90882656"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541612"
 ---
 # <a name="azure-database-for-mysql-server-firewall-rules"></a>Правила брандмауэра сервера базы данных Azure для MySQL
 Брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -43,7 +43,7 @@ ms.locfileid: "90882656"
 > Параметр **Разрешить доступ к службам Azure** позволяет настроить брандмауэр для разрешения всех подключений из Azure, включая подключения из подписок других клиентов. При выборе этого параметра убедитесь, что используемое имя для входа и разрешения пользователя предоставляют доступ только авторизованным пользователям.
 > 
 
-:::image type="content" source="./media/concepts-firewall-rules/allow-azure-services.png" alt-text="Пример рабочего потока брандмауэра":::
+:::image type="content" source="./media/concepts-firewall-rules/allow-azure-services.png" alt-text="Настройка разрешения доступа к службам Azure на портале":::
 
 ### <a name="connecting-from-a-vnet"></a>Подключение из виртуальной сети
 Чтобы безопасно подключиться к серверу базы данных Azure для MySQL из виртуальной сети, рассмотрите возможность использования [конечных точек службы виртуальной сети](./concepts-data-access-and-security-vnet.md). 
@@ -70,7 +70,7 @@ ms.locfileid: "90882656"
 
    Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:  `FATAL: Client from Azure Virtual Networks is not allowed to access the server`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портал Azure](./howto-manage-firewall-using-portal.md)
 * [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью Azure CLI](./howto-manage-firewall-using-cli.md)

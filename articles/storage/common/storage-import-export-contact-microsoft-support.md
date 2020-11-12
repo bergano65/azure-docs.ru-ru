@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/29/2018
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: ee30e9bba35ad39606fbe201c49e4eed3e656c97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fdee5420fa6a50974250c45260a3727755bfcba7
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88548280"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542598"
 ---
 # <a name="open-a-support-ticket-for-an-importexport-job"></a>Создание запроса в службу поддержки для задания импорта и экспорта
 
@@ -28,7 +28,7 @@ ms.locfileid: "88548280"
 
 1. Перейдите к заданию импорта и экспорта. Перейдите в раздел **Поддержка и устранение неполадок** , а затем выберите **новый запрос в службу поддержки**.
      
-    ![Основы](./media/storage-import-export-contact-microsoft-support/import-export-support1.png)
+    ![Основные сведения](./media/storage-import-export-contact-microsoft-support/import-export-support1.png)
    
 2. В разделе **Новый запрос в службу поддержки** выберите **Основные**. В колонке **Основные** сделайте следующее:
     
@@ -37,9 +37,9 @@ ms.locfileid: "88548280"
     3. В разделе **Служба** установите флажок **Мои службы**. В раскрывающемся списке выберите один из следующих вариантов — **Storage Account Management** (Управление учетными записями хранения), **BLOB-объект** или **Файл**. 
         - Если вы выбрали **Storage Account Management** (Управление учетными записями хранения), щелкните **Ресурс** и **План поддержки**.
             ![Выбор параметра управления учетными записями поддержки](./media/storage-import-export-contact-microsoft-support/import-export-support3.png)
-        - Если вы выбрали **BLOB-объект**, щелкните **Ресурс**, **Имена контейнеров** (необязательно) и **План поддержки**.
+        - Если вы выбрали **BLOB-объект** , щелкните **Ресурс** , **Имена контейнеров** (необязательно) и **План поддержки**.
             ![Выбор большого двоичного объекта](./media/storage-import-export-contact-microsoft-support/import-export-support2.png)
-        - Если вы выбрали **Файл**, щелкните **Ресурс**, **Имена общих папок** (необязательно) и **План поддержки. ** ![Выбор файла](./media/storage-import-export-contact-microsoft-support/import-export-support4.png)
+        - Если вы выбрали **Файл** , щелкните **Ресурс** , **Имена общих папок** (необязательно) и **План поддержки.** ![Выбор файла](./media/storage-import-export-contact-microsoft-support/import-export-support4.png)
     4. Выберите **Далее**.
 
 3. В разделе **Новый запрос в службу поддержки** выберите шаг 2 **Проблема**. В колонке **Проблема** сделайте следующее:
@@ -55,11 +55,11 @@ ms.locfileid: "88548280"
 
        ![Проблема](./media/storage-import-export-contact-microsoft-support/import-export-support5.png)
 
-4. В окне **новый запрос на поддержку**выберите **Шаг 3 Контактная информация**. В колонке **Контактные данные** сделайте следующее:
+4. В окне **новый запрос на поддержку** выберите **Шаг 3 Контактная информация**. В колонке **Контактные данные** сделайте следующее:
 
    1. В поле **Параметры контакта** укажите предпочтительный способ контакта (телефон или электронную почту) и язык. Время ответа выбирается автоматически в зависимости от плана подписки.
    2. В поле Контактные данные укажите ваше имя, электронную почту, дополнительное контактное лицо, страну или регион. Установите флажок **Save contact changes for future support requests** (Сохранить изменения контактных данных для будущих обращений в службу поддержки).
-   3. Нажмите кнопку **создания**.
+   3. Щелкните **Создать**.
    
        ![Контактные данные](./media/storage-import-export-contact-microsoft-support/import-export-support7.png)   
 
@@ -74,17 +74,17 @@ ms.locfileid: "88548280"
 
 1. Чтобы открыть страницу справки и поддержки, последовательно щелкните **Обзор > Справка и поддержка**.
 
-    ![Управление запросами на поддержку](./media/storage-import-export-contact-microsoft-support/manage-support-ticket2.png)   
+    ![На снимке экрана отображается диалоговое окно "Справка".](./media/storage-import-export-contact-microsoft-support/manage-support-ticket2.png)   
 
 2. Список **недавних запросов в службу поддержки** в виде таблицы отображается в разделе **Справка и поддержка**.
 
-    ![Управление запросами на поддержку](./media/storage-import-export-contact-microsoft-support/manage-support-ticket1.png) 
+    ![На снимке экрана показана страница справки и поддержки с запросом на поддержку в открытом состоянии.](./media/storage-import-export-contact-microsoft-support/manage-support-ticket1.png) 
 
 3. Выберите и щелкните запрос на поддержку. Для запроса можно просмотреть состояние и подробные сведения. Выберите **+ создать сообщение** , если вы хотите выполнить этот запрос.
 
-    ![Управление запросами на поддержку](./media/storage-import-export-contact-microsoft-support/manage-support-ticket3.png) 
+    ![На снимке экрана показано новое сообщение, выбранное для этого запроса.](./media/storage-import-export-contact-microsoft-support/manage-support-ticket3.png) 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [использовать службу импорта и экспорта Azure для перемещения данных в службу хранилища Azure и обратно](storage-import-export-service.md).

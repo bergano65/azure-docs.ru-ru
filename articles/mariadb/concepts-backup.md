@@ -1,17 +1,17 @@
 ---
 title: Резервное копирование и восстановление — база данных Azure для MariaDB
 description: Сведения об автоматическом резервном копировании и восстановлении сервера в службе "База данных Azure для MariaDB".
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 8/13/2020
-ms.openlocfilehash: 1d95459797a32ab3e026ee1c3a2cf93fe6e95cc4
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 68605a22dd0d0b2b716b148399c8406a1ea8d89e
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378964"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541748"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mariadb"></a>Резервное копирование и восстановление в службе "База данных Azure для MariaDB"
 
@@ -106,7 +106,7 @@ ms.locfileid: "93378964"
 - Убедитесь, что заданы соответствующие данные для входа и разрешений уровня базы данных.
 - Настройте оповещения соответствующим образом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о непрерывности бизнес-процессов см. в  [этой статье](concepts-business-continuity.md).
 - Для восстановления на момент времени с помощью портал Azure см. раздел [восстановление сервера на момент времени с помощью портал Azure](howto-restore-server-portal.md).

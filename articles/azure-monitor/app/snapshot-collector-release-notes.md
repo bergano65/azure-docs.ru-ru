@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: pharring
 ms.author: pharring
 ms.date: 11/10/2020
-ms.openlocfilehash: faacb78ca7f055bb8e9a469afb894bc30ee87501
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 89c13566c3710e56a4cd737d9aa03c6fb57edc93
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507557"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542734"
 ---
 # <a name="release-notes-for-microsoftapplicationinsightssnapshotcollector"></a>Заметки о выпуске Microsoft. ApplicationInsights. SnapshotCollector
 
@@ -20,7 +20,7 @@ ms.locfileid: "94507557"
 
 Чтобы получить отчеты об ошибках и отзывы, откройте вопрос на сайте GitHub по адресу https://github.com/microsoft/ApplicationInsights-dotnet
 
-## <a name="release-notes"></a>Заметки о выпуске
+## <a name="release-notes"></a>Заметки о выпуске
 
 ## <a name="1373"></a>[1.3.7.3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7.3)
 Выпуск Point для решения нескольких проблем с высоким уровнем влияния.
@@ -70,7 +70,7 @@ Snapshot Collector считывает и анализирует ConnectionString
 - _Экспериментальная функция_ : планы сбора точка прикрепления: Добавление "снапшотонфирстоккуренце". Дополнительные сведения см. [здесь](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
 
 ## <a name="133"></a>[1.3.3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.3)
-- Исправлена ошибка, которая привела к зависанию SnapshotUploader.exe и не отправке моментальных снимков для приложений .NET Core.
+- Исправлена ошибка, которая привела к SnapshotUploader.exe перестает отвечать на запросы и не отправляет моментальные снимки для приложений .NET Core.
 
 ## <a name="132"></a>[1.3.2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.2)
 - _Экспериментальная функция_ : планы сбора точка прикрепления. Дополнительные сведения см. [здесь](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).

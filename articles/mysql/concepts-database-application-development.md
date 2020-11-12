@@ -1,17 +1,17 @@
 ---
 title: Разработка приложений — База данных Azure для MySQL
 description: Представлены рекомендации по проектированию, которые разработчик должен учитывать при написании кода приложения для подключения к базе данных Azure для MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 02ce6b00b6555f849d162b9f3b381c0ab358d712
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20c6841bb596c7f4a32ef689423515a8da59a945
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79532847"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541561"
 ---
 # <a name="application-development-overview-for-azure-database-for-mysql"></a>Обзор разработки приложений для базы данных Azure для MySQL 
 В этой статье рассматриваются рекомендации по проектированию, которые разработчик должен учитывать при написании кода приложения для подключения к базе данных Azure для MySQL. 

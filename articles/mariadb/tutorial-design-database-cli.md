@@ -1,19 +1,19 @@
 ---
 title: Руководство по проектированию Базы данных Azure для MariaDB с помощью Azure CLI
 description: В этом руководстве описано, как создать и администрировать сервер и Базу данных Azure для MariaDB и с помощью Azure CLI 2.0 из командной строки.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 3/18/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 205fe47acb6d10b7596c462476b4e9e718a3d813
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 1fbc68570fb59be14947755a241ab9b005841e99
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424956"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542513"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-using-azure-cli"></a>Руководство по Проектирование Базы данных Azure для MariaDB с помощью Azure CLI
 
@@ -85,7 +85,7 @@ az mariadb server firewall-rule create --resource-group myresourcegroup --server
 az mariadb server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin** .
+Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin**.
 ```json
 {
   "administratorLogin": "myadmin",

@@ -1,17 +1,17 @@
 ---
 title: Расширенная защита от угроз — портал Azure — база данных Azure для MariaDB
 description: Защита от угроз для базы данных Azure для MariaDB обнаруживает аномальные операции с базами данных, указывающие потенциальные угрозы безопасности для базы данных.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 1b5a16a014892764ee26b524489a82744fe6ca82
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 7734feddabb1a4a86e7932da3ef4adc57352637e
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425965"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542700"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mariadb"></a>Расширенная защита от угроз для базы данных Azure для MariaDB
 

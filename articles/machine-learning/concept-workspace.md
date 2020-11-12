@@ -1,7 +1,7 @@
 ---
 title: Что такое Рабочая область
 titleSuffix: Azure Machine Learning
-description: Рабочая область — это ресурс верхнего уровня для Машинного обучения Azure. Он хранит историю всех учебных запусков, включая журналы, метрики, выходные данные и моментальные снимки сценариев. Эти сведения используются для определения того, какая из учебных запусков обеспечивает наилучшую модель.
+description: Рабочая область — это ресурс верхнего уровня для Машинного обучения Azure. Он хранит историю всех учебных запусков, а также журналы, метрики, выходные данные и моментальные снимки сценариев.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/22/2020
-ms.openlocfilehash: 1076b49a101d5657397ef12b8fac672d37e477b0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 65cdf444386d1b10cf225010c55170e5b47b3eb4
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324800"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541357"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое рабочая область Машинного обучения Azure?
 
@@ -76,7 +76,7 @@ ms.locfileid: "93324800"
 
 | Задача управления рабочей областью   | Портал              | Студия | Пакет SDK для Python или пакет SDK для R       | CLI        | VS Code
 |---------------------------|---------|---------|------------|------------|------------|
-| Создание рабочей области        | **&check;**     | | **&check;** | **&check;** | **&check;** |
+| Создать рабочую область        | **&check;**     | | **&check;** | **&check;** | **&check;** |
 | Управление доступом к рабочей области    | **&check;**   || |  **&check;**    ||
 | Создание ресурсов вычислений и управление ими    | **&check;**   | **&check;** | **&check;** |  **&check;**   ||
 | Создание виртуальной машины записной книжки |   | **&check;** | |     ||

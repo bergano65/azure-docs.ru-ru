@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 929181f9a4d159892956274a7958b1daa95cbc10
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 9e00e0e5a34eecd6974e8919ce0d0e16f48757f3
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360077"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94540975"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
 
@@ -26,6 +26,10 @@ ms.locfileid: "93360077"
 ## <a name="prerequisites"></a>Обязательные условия
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
+
+## <a name="ways-to-manage-twins"></a>Способы управления двойников
+
+[!INCLUDE [digital-twins-ways-to-manage.md](../../includes/digital-twins-ways-to-manage.md)]
 
 ## <a name="create-a-digital-twin"></a>Создание цифрового двойника
 
@@ -188,6 +192,17 @@ foreach (string prop in twin.Contents.Keys)
 
 Дополнительные сведения о вспомогательных классах сериализации см. в статье [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
 
+## <a name="view-all-digital-twins"></a>Просмотреть все цифровые двойников
+
+Чтобы просмотреть все цифровые двойников в вашем экземпляре, используйте [запрос](how-to-query-graph.md). Можно выполнить запрос с помощью [API запросов](/rest/api/digital-twins/dataplane/query) или [команд интерфейса командной строки](how-to-use-cli.md).
+
+Ниже приведен основной текст запроса, который вернет список всех цифровых двойников в экземпляре:
+
+```sql
+SELECT *
+FROM DIGITALTWINS
+``` 
+
 ## <a name="update-a-digital-twin"></a>Обновление цифрового двойника
 
 Чтобы обновить свойства цифрового двойника, необходимо записать сведения, которые необходимо заменить в формате [исправления JSON](http://jsonpatch.com/) . Таким образом можно заменить несколько свойств одновременно. Затем вы передаете документ исправления JSON в `UpdateDigitalTwin()` метод:
@@ -259,7 +274,7 @@ await client.UpdateDigitalTwinAsync(twin_Id, updateTwinData);
 
 Эта операция будет выполнена только в том случае, если двойника, измененный исправлением, соответствует новой модели. 
 
-Рассмотрим следующий пример:
+Рассмотрим следующий пример.
 1. Представьте себе цифровой двойника с моделью *foo_old*. *foo_old* определяет требуемое свойство *массы*.
 2. Новая модель *foo_new* определяет масса свойств и добавляет новую *температуру* требуемого свойства.
 3. После установки исправления цифровое двойника должно иметь свойство масса и температура. 
@@ -360,7 +375,7 @@ async Task FindAndDeleteIncomingRelationshipsAsync(string dtId)
 
 Пример того, как удалить все двойников одновременно, можно скачать с помощью примера приложения, используемого в [_Tutorial. Изучите основные сведения с примером клиентского приложения *](tutorial-command-line-app.md). Файл *CommandLoop.CS* делает это в `CommandDeleteAllTwins()` функции.
 
-## <a name="manage-twins-using-runnable-code-sample"></a>Управление двойников с помощью примера готового к запуску кода
+## <a name="runnable-digital-twin-code-sample"></a>Пример готового кода Digital двойника
 
 Вы можете использовать приведенный ниже пример готового к запуску кода, чтобы создать двойника, обновить сведения о нем и удалить двойника. 
 
@@ -535,22 +550,6 @@ namespace minimal
 
 :::image type="content" source="./media/how-to-manage-twin/console-output-manage-twins.png" alt-text="Вывод на консоль, показывающий, что двойника создан, обновлен и удален." lightbox="./media/how-to-manage-twin/console-output-manage-twins.png":::
 
-## <a name="manage-twins-with-cli"></a>Управление двойников с помощью интерфейса командной строки
-
-Двойников также можно управлять с помощью цифрового интерфейса командной строки Azure двойников. Команды можно найти в [_How: используйте интерфейс командной строки Azure Digital двойников](how-to-use-cli.md).
-
-## <a name="view-all-digital-twins"></a>Просмотреть все цифровые двойников
-
-Чтобы просмотреть все цифровые двойников в вашем экземпляре, используйте [запрос](how-to-query-graph.md). Можно выполнить запрос с помощью [API запросов](/rest/api/digital-twins/dataplane/query) или [команд интерфейса командной строки](how-to-use-cli.md).
-
-Ниже приведен основной текст запроса, который вернет список всех цифровых двойников в экземпляре:
-
-```sql
-SELECT *
-FROM DIGITALTWINS
-``` 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как создавать связи между цифровым двойников и управлять ими:
-* [*Руководство. Управление графом двойника с помощью связей*](how-to-manage-graph.md)
+Узнайте, как создавать и администрировать связи между цифровым двойников: _ [ *руководства: Управление диаграммой двойника с помощью связей* .](how-to-manage-graph.md)

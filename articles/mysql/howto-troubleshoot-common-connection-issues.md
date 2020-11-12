@@ -2,17 +2,17 @@
 title: Устранение проблем с подключением — база данных Azure для MySQL
 description: Узнайте, как устранять проблемы с подключением к базе данных Azure для MySQL, включая временные ошибки, связанные с повторными попытками, брандмауэром и простоями.
 keywords: mysql connection,connection string,connectivity issues,transient error,connection error
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 3/18/2020
-ms.openlocfilehash: e4afcb8756f64ab9b66044a1bf1304427330e365
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da500087aeb4ad5e2bf516c3d0ce3cceaf8396af
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82100895"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94540779"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mysql"></a>Узнайте, как устранить проблемы с подключением к Базе данных Azure для MySQL
 
@@ -48,7 +48,7 @@ ms.locfileid: "82100895"
 
 * Конфигурация брандмауэра сервера. Убедитесь, что брандмауэр сервера базы данных Azure для MySQL настроен на разрешение подключений от клиента, включая прокси-серверы и шлюзы.
 * Конфигурация брандмауэра клиента. брандмауэр на клиенте должен разрешать подключения к серверу базы данных. В некоторых брандмауэрах необходимо разрешить IP-адреса и порты сервера, к которым нельзя подключиться, а также приложения, например MySQL.
-* Ошибка пользователя: могут быть заданы недопустимые параметры подключения, такие как имя сервера в строке подключения или пропущенный суффикс * \@ ServerName* в имени пользователя.
+* Ошибка пользователя: могут быть заданы недопустимые параметры подключения, такие как имя сервера в строке подключения или пропущенный суффикс *\@ ServerName* в имени пользователя.
 
 ### <a name="steps-to-resolve-persistent-connectivity-issues"></a>Порядок устранения постоянных проблем подключения
 
