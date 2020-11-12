@@ -1,17 +1,17 @@
 ---
 title: Основные понятия сервера — база данных Azure для MySQL
 description: В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: afbf80810f45f616eac40de16889bbebb1cf4964
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 5477aa0c4eb2a66af816b287a8b6d7da8a53952f
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544806"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94534897"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Основные понятия работы с сервером в базе данных Azure для MySQL
 
@@ -41,7 +41,7 @@ ms.locfileid: "92544806"
 |     |     |
 | :-- | :-- |
 | **Аутентификация и авторизация** | Сервер базы данных Azure для MySQL поддерживает собственную аутентификацию MySQL. Подключиться к серверу и выполнить аутентификацию можно с помощью учетных данных администратора сервера. |
-| **протокол** ; | Служба поддерживает протокол на основе сообщений, используемый MySQL. |
+| **Протокол** | Служба поддерживает протокол на основе сообщений, используемый MySQL. |
 | **TCP/IP** | Протокол работает через TCP/IP, а также через сокеты домена Unix. |
 | **Брандмауэр** | Для защиты данных правило брандмауэра запрещает любой доступ к серверу базы данных, пока не будут указаны компьютеры, которые имеют разрешение. Ознакомьтесь со статьей [Правила брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md). |
 | **SSL** | Служба поддерживает применение SSL-соединений между приложениями и сервером базы данных.  Ознакомьтесь со статьей [Configure SSL connectivity in your application to securely connect to Azure Database for MySQL](./howto-configure-ssl.md) (Настройка SSL-соединений в приложении для безопасного подключения к базе данных Azure для MySQL). |

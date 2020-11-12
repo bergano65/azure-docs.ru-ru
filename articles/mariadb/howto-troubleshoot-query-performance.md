@@ -1,17 +1,17 @@
 ---
 title: Устранение неполадок с производительностью запросов в службе "База данных Azure для MariaDB"
 description: Узнайте, как использовать инструкцию EXPLAIN для устранения неполадок с производительностью запросов в Базе данных Azure для MariaDB.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: troubleshooting
 ms.date: 3/18/2020
-ms.openlocfilehash: ae3637eb5e9f6f70d0f53d7b1cb97bd348c114bc
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 2b7491723ffcff73e4b243fe54ef18608167d636
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424423"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537243"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mariadb"></a>Использование инструкции EXPLAIN для профилирования производительности запросов в Базе данных Azure для MariaDB
 Инструкция **EXPLAIN** представляет собой удобное средство для оптимизации запросов. С помощью инструкций EXPLAIN можно получать информацию о том, как выполняются инструкции SQL. Ниже показан пример выполнения инструкции EXPLAIN.
@@ -97,7 +97,7 @@ possible_keys: NULL
         Extra: Using where; Using temporary; Using filesort
 ```
 
-В этом случае можно создать **охватываемый индекс** по обоим столбцам **c1** и **c2**, добавив при этом значение столбца **c2** непосредственно в индекс для исключения дальнейшего поиска данных.
+В этом случае можно создать **охватываемый индекс** по обоим столбцам **c1** и **c2** , добавив при этом значение столбца **c2** непосредственно в индекс для исключения дальнейшего поиска данных.
 
 ```sql 
 mysql> ALTER TABLE tb1 ADD KEY covered(c1,c2);

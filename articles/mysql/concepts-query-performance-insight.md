@@ -1,17 +1,17 @@
 ---
 title: Анализ производительности запросов в Базе данных Azure для MySQL
 description: В этой статье описана функция анализа производительности запросов в Базе данных Azure для MySQL.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 5/12/2020
-ms.openlocfilehash: 7aefa6cd048c41feb1535f2ae7fa5c87bf628b2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 30457b950e6400c799f35924e7b2ee90d868a465
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90884910"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94535186"
 ---
 # <a name="query-performance-insight-in-azure-database-for-mysql"></a>Анализ производительности запросов в Базе данных Azure для MySQL
 
@@ -60,11 +60,11 @@ ms.locfileid: "90884910"
 
 Статистика ожидания обеспечивает представление событий ожидания, происходящих во время выполнения определенного запроса. Узнайте больше о типах событий ожидания в [документации по ядру MySQL](https://go.microsoft.com/fwlink/?linkid=2098206).
 
-Откройте вкладку **Статистика ожидания**, чтобы посмотреть визуализации ожидания на сервере.
+Откройте вкладку **Статистика ожидания** , чтобы посмотреть визуализации ожидания на сервере.
 
 Сведения, отображаемые в представлении статистики ожидания, группируются по запросам с максимальным временем ожидания на заданном интервале времени.
 
-:::image type="content" source="./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png" alt-text="Анализ производительности медленно выполняющихся запросов":::
+:::image type="content" source="./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png" alt-text="Статистика ожидания в анализе производительности запросов":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

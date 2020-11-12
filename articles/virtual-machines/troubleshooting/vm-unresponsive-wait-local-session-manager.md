@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/22/2020
 ms.author: v-mibufo
-ms.openlocfilehash: ae3d35bea1c75c797447100316ceab9a27fcbe48
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: f2f0177b5fe8bb97773d297319f6c9196d8178d2
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424447"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94536240"
 ---
 # <a name="vm-is-unresponsive-while-waiting-for-the-local-session-manager"></a>Виртуальная машина не отвечает при ожидании локального диспетчера сеансов
 
@@ -29,13 +29,13 @@ ms.locfileid: "93424447"
 
 ![На снимке экрана показана гостевая ОС с сообщением "ожидание локального диспетчера сеансов" в Windows Server 2012 R2.](media/vm-unresponsive-wait-local-session-manager/vm-unresponsive-wait-local-session-manager-1.png)
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Существует несколько причин, по которым виртуальная машина зависает в ожидании локального диспетчера сеансов. Если ожидание диспетчера локальных сеансов является постоянной проблемой, необходимо получить дамп памяти для анализа.
 
 ## <a name="solution"></a>Решение
 
-В некоторых случаях достаточно долго ждать, пока процесс завершится, устраните проблему. Если виртуальная машина зависла на экране ожидания в течение часа, следует получить дамп памяти, а затем обратиться в службу поддержки Майкрософт.
+В некоторых случаях достаточно долго ждать, пока процесс завершится, устраните проблему. Если ваша виртуальная машина не отвечает и остается на экране ожидания в течение часа, необходимо получить дамп памяти, а затем обратиться в службу поддержки Майкрософт.
 
 ### <a name="collect-the-memory-dump-file"></a>Получение файла дампа памяти
 
@@ -54,7 +54,7 @@ ms.locfileid: "93424447"
 
 Дополнительные сведения о вызовах NMI см. [в разделе немаскированные вызовы прерываний (NMI) в последовательном](./serial-console-windows.md#use-the-serial-console-for-nmi-calls) интерфейсе консоли.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 > [!div class="nextstepaction"]
 > [Устранение ошибок загрузки виртуальных машин Azure](boot-error-troubleshoot.md)

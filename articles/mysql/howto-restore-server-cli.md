@@ -1,32 +1,33 @@
 ---
 title: Резервное копирование и восстановление — Azure CLI — база данных Azure для MySQL
 description: Как выполнить резервное копирование и восстановление сервера в базе данных Azure для MySQL с помощью Azure CLI.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/27/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2116b5be4c5d40076aae10ecc2e81d73e7806e6d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee06eed1b8f54877d01a8b316c015938038879cf
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89419509"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94535407"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mysql-using-the-azure-cli"></a>Как создать резервную копию сервера в службе "База данных Azure для MySQL" и восстановить его с помощью портала Azure
 
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для MySQL" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
-Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
-- [Сервер базы данных Azure для MySQL и база данных](quickstart-create-mysql-server-database-using-azure-cli.md)
+## <a name="prerequisites"></a>Обязательные условия
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Для работы с этим руководством должны быть выполнены следующие условия.
 
-> [!IMPORTANT]
-> Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы проверить версию, в командной строке Azure CLI введите `az --version`. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI]( /cli/azure/install-azure-cli).
+- Вам потребуется [база данных Azure для сервера MySQL и база данных](quickstart-create-mysql-server-database-using-azure-cli.md).
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+- Для работы с этой статьей требуется версия 2,0 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="set-backup-configuration"></a>Настройка конфигурации резервного копирования
 
@@ -67,9 +68,9 @@ az mysql server restore --resource-group myresourcegroup --name mydemoserver-res
 
 Для команды `az mysql server restore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | Описание  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | restore-point-in-time | 2018-03-13T13:59:00Z | Выберите точку во времени, до которой необходимо выполнить восстановление. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Можно использовать местный часовой пояс, например `2018-03-13T05:59:00-08:00`. Также можно использовать формат UTC Zulu, например `2018-03-13T13:59:00Z`. |
 | source-server | mydemoserver | Имя или идентификатор исходного сервера, с которого необходимо выполнить восстановление. |
@@ -102,7 +103,7 @@ az mysql server restore --resource-group myresourcegroup --name mydemoserver-res
 ```azurecli-interactive
 az mysql server georestore --resource-group myresourcegroup --name mydemoserver-georestored --source-server mydemoserver --location eastus --sku-name GP_Gen5_8 
 ```
-С помощью этой команды можно создать сервер *mydemoserver-georestored* в восточной части США, который будет принадлежать группе ресурсов *myresourcegroup*. Это сервер общего назначения 5-го поколения с 8 виртуальными ядрами. Он создан на основе геоизбыточных резервных копий *mydemoserver*, которые также расположены в группе ресурсов *myresourcegroup*.
+С помощью этой команды можно создать сервер *mydemoserver-georestored* в восточной части США, который будет принадлежать группе ресурсов *myresourcegroup*. Это сервер общего назначения 5-го поколения с 8 виртуальными ядрами. Он создан на основе геоизбыточных резервных копий *mydemoserver* , которые также расположены в группе ресурсов *myresourcegroup*.
 
 Если необходимо создать сервер в другой группе ресурсов с имеющегося сервера, в параметре `--source-server` необходимо определить имя сервера следующим образом.
 
@@ -113,7 +114,7 @@ az mysql server georestore --resource-group newresourcegroup --name mydemoserver
 
 Для команды `az mysql server georestore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | Описание  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 |resource-group| myresourcegroup | Имя группы ресурсов, к которой будет принадлежать новый сервер.|
 |name | mydemoserver-georestored | Имя нового сервера. |

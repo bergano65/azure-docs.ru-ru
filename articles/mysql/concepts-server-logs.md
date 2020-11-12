@@ -1,17 +1,17 @@
 ---
 title: Журналы запросов с задержкой — база данных Azure для MySQL
 description: Описание журналов запросов, доступных в базе данных Azure для MySQL, и доступных параметров для включения различных уровней ведения журнала.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/6/2020
-ms.openlocfilehash: 1e967c77bc41f0f91674fe55bc622adaf5046f6d
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 0b00db8e89afda8682ddedccfec7e5a6147b7125
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359006"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94534982"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql"></a>Журналы медленных запросов в Базе данных Azure для MySQL
 В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -143,6 +143,6 @@ Azure Monitor журналы диагностики позволяют пере�
     | where query_time_d > 10
     ```    
     
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 - [Настройка журналов запросов от портал Azure](howto-configure-server-logs-in-portal.md)
 - [Настройка журналов запросов от Azure CLI](howto-configure-server-logs-in-cli.md)

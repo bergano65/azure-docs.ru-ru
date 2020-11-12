@@ -1,17 +1,17 @@
 ---
 title: Безопасность — база данных Azure для MySQL
 description: Общие сведения о функциях безопасности в службе "база данных Azure для MySQL".
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 5caed64beb43cbb1e884a3dde6bc0052c617f83e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90855059461fcd5f8ed8d2733d2b6d4addaccde3
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378786"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94535050"
 ---
 # <a name="security-in-azure-database-for-mysql"></a>Безопасность в Базе данных Azure для MySQL
 
@@ -52,5 +52,5 @@ ms.locfileid: "89378786"
 [Ведение журнала аудита](concepts-audit-logs.md) доступно для наблюдения за действиями в базах данных. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-and-security-vnet.md)

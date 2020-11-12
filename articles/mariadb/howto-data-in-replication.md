@@ -1,17 +1,17 @@
 ---
 title: Настройка репликации данных в службе "база данных Azure для MariaDB"
 description: В этой статье описывается, как настроить Репликация входных данных в базе данных Azure для MariaDB.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 9/29/2020
-ms.openlocfilehash: 21a0aaaa9e10a7c3e445145eb178b50b446ba6ae
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: fe7e02cc34dc9c97e540d7b8d96c48ee8d5cfe09
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426002"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94535373"
 ---
 # <a name="configure-data-in-replication-in-azure-database-for-mariadb"></a>Настройка Репликация входных данных в базе данных Azure для MariaDB
 
@@ -54,7 +54,7 @@ ms.locfileid: "92426002"
 
 1. Прежде чем продолжать, ознакомьтесь с [требованиями к главному серверу](concepts-data-in-replication.md#requirements) . 
 
-2. Убедитесь, что исходный сервер разрешает как входящий, так и исходящий трафик через порт 3306 и что исходный сервер имеет общедоступный **IP-адрес**, DNS является публично доступным или имеет полное доменное имя (FQDN). 
+2. Убедитесь, что исходный сервер разрешает как входящий, так и исходящий трафик через порт 3306 и что исходный сервер имеет общедоступный **IP-адрес** , DNS является публично доступным или имеет полное доменное имя (FQDN). 
    
    Проверьте подключение к исходному серверу, выполнив попытку подключения из средства, такого как Командная строка MySQL, размещенного на другом компьютере, или из [Azure Cloud Shell](../cloud-shell/overview.md) , доступных в портал Azure.
 
@@ -149,7 +149,7 @@ ms.locfileid: "92426002"
 
    ![Синхронизация пользователя](./media/howto-data-in-replication/syncuser.png)
  
-   Выберите панель " **административные роли** ", а затем в списке **глобальных привилегий**выберите **репликация Slave**. Нажмите кнопку **Применить** , чтобы создать роль репликации.
+   Выберите панель " **административные роли** ", а затем в списке **глобальных привилегий** выберите **репликация Slave**. Нажмите кнопку **Применить** , чтобы создать роль репликации.
 
    ![Ведомая роль репликации](./media/howto-data-in-replication/replicationslave.png)
 

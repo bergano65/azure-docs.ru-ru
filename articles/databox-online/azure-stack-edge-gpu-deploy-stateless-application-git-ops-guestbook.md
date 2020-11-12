@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 3200cfe290cbba208c61e914b17ffa6cd65e6eee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d323504a46cd35525c889a94d2d044193c1471ac
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90899566"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94535951"
 ---
 # <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Развертывание приложения PHP без отслеживания состояния с помощью Redis на ARC с включенным кластером Kubernetes на Azure Stack ребра Pro GPU
 
@@ -28,7 +28,7 @@ ms.locfileid: "90899566"
 Эта процедура предназначена для тех, кто ознакомился с [Kubernetes рабочими нагрузками на устройстве на Azure Stack пограничной Pro](azure-stack-edge-gpu-kubernetes-workload-management.md) и знаком с концепциями того, [что такое служба Arc Kubernetes (Предварительная версия)](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед развертыванием приложения без отслеживания состояния убедитесь, что выполнены следующие необходимые условия на устройстве и клиент, который будет использоваться для доступа к устройству:
 
@@ -79,9 +79,9 @@ ms.locfileid: "90899566"
 
 1. Перейдите в раздел **конфигурации** и выберите **+ Добавить конфигурацию**.
 
-    ![Переход к конфигурациям](media/azure-stack-edge-gpu-connect-powershell-interface/select-configurations-1.png)
+    ![Снимок экрана с включенным кластером Kubernetes в службе "Дуга Azure" с выбранной конфигурацией "Добавить конфигурацию"](media/azure-stack-edge-gpu-connect-powershell-interface/select-configurations-1.png)
 
-1. В поле **Добавить конфигурацию**введите соответствующие значения для полей и нажмите кнопку **Применить**.
+1. В поле **Добавить конфигурацию** введите соответствующие значения для полей и нажмите кнопку **Применить**.
 
     |Параметр  |Описание |
     |---------|---------|
@@ -100,11 +100,11 @@ ms.locfileid: "90899566"
 
 1. Запускается развертывание конфигурации, и **состояние оператора** отображается как **Ожидание**. 
 
-    ![Переход к конфигурациям](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-1.png)
+    ![На снимке экрана показан кластер Kubernetes с включенной службой Arc Azure в состоянии ожидания, так как он обновляется.](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-1.png)
 
 1. Развертывание займет несколько минут. По завершении развертывания **состояние оператора** отображается как **установлено**.
 
-    ![Переход к конфигурациям](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-2.png)
+    ![На снимке экрана показан кластер Kubernetes с включенной службой "Дуга Azure" в установленном состоянии.](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-2.png)
 
 
 ## <a name="verify-deployment"></a>Проверка развертывания
@@ -174,6 +174,6 @@ C:\Users\user>
 ```-->
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [использовать панель мониторинга Kubernetes для мониторинга развертываний на устройстве Azure Stack ребра Pro](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md) .

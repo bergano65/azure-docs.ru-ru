@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: ee18916a59bb081d65494f46e7aba7c29c7177cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7e41eb0f6a61f7b195e251739ae93207c731cac5
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "71718510"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94535883"
 ---
 # <a name="detect-adult-content"></a>Обнаружение содержимого для взрослых
 
@@ -35,7 +35,7 @@ ms.locfileid: "71718510"
 
 ## <a name="use-the-api"></a>Использование API
 
-Вы можете обнаружить содержимое для взрослых с помощью API [анализа изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . При добавлении значения `Adult` в параметр запроса **висуалфеатурес** API возвращает три логических свойства, &mdash; `isAdultContent` `isRacyContent` и `isGoryContent` &mdash; в ответе JSON. Метод также возвращает соответствующие свойства &mdash; `adultScore` , `racyScore` и, `goreScore` &mdash; которые представляют показатели достоверности между нулем и единицей для каждой соответствующей категории.
+Вы можете обнаружить содержимое для взрослых с помощью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . При добавлении значения `Adult` в параметр запроса **висуалфеатурес** API возвращает три логических свойства, &mdash; `isAdultContent` `isRacyContent` и `isGoryContent` &mdash; в ответе JSON. Метод также возвращает соответствующие свойства &mdash; `adultScore` , `racyScore` и, `goreScore` &mdash; которые представляют показатели достоверности между нулем и единицей для каждой соответствующей категории.
 
 - [Краткое руководство. анализ образа (пакет SDK для .NET)](./quickstarts-sdk/csharp-analyze-sdk.md)
 - [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

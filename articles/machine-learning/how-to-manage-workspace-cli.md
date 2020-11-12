@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 9b55c4873c4d7ee430e7d9ce84d2782a37e522ae
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: dc5dcf20b8c4fb1dae971b9bda4ef1a7552ce9d4
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442146"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94534744"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 
@@ -156,9 +156,12 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 
 ### <a name="customer-managed-key-and-high-business-impact-workspace"></a>Управляемый клиентом ключ и большая рабочая область влияния на бизнес
 
-По умолчанию метрики и метаданные для рабочей области хранятся в экземпляре Azure Cosmos DB, который обслуживает Корпорация Майкрософт. Эти данные шифруются с помощью ключей, управляемых корпорацией Майкрософт. 
+По умолчанию метаданные для рабочей области хранятся в экземпляре Azure Cosmos DB, который обслуживает Корпорация Майкрософт. Эти данные шифруются с помощью ключей, управляемых корпорацией Майкрософт.
 
-Вместо использования ключа, управляемого корпорацией Майкрософт, можно использовать собственный ключ. При этом создается экземпляр Azure Cosmos DB, в котором хранятся метрики и метаданные в подписке Azure. Используйте `--cmk-keyvault` параметр, чтобы указать Azure Key Vault, содержащую ключ, и `--resource-cmk-uri` указать URL-адрес ключа в хранилище.
+> [!NOTE]
+> Azure Cosmos DB __не__ используется для хранения таких сведений, как производительность модели, данные, регистрируемые экспериментами, или сведения, зарегистрированные в процессе развертывания модели. Дополнительные сведения о мониторинге этих элементов см. в разделе [мониторинг и ведение журнала](concept-azure-machine-learning-architecture.md) статьи архитектура и основные понятия.
+
+Вместо использования ключа, управляемого корпорацией Майкрософт, можно использовать собственный ключ. При этом создается экземпляр Azure Cosmos DB, в котором хранятся метаданные в подписке Azure. Используйте `--cmk-keyvault` параметр, чтобы указать Azure Key Vault, содержащую ключ, и `--resource-cmk-uri` указать URL-адрес ключа в хранилище.
 
 Перед использованием `--cmk-keyvault` параметров и `--resource-cmk-uri` необходимо сначала выполнить следующие действия.
 

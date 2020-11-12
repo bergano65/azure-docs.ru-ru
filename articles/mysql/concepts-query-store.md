@@ -1,17 +1,17 @@
 ---
 title: 'Хранилище запросов: База данных Azure для MySQL'
 description: Узнайте о компоненте "Хранилище запросов" в Базе данных Azure для MySQL, который поможет отслеживать производительность с течением времени.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 5/12/2020
-ms.openlocfilehash: 12623dccdc298aaad23ad6779caf33d895c5634a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70e1e5d06ef025801322e15e589d26e31f116fc3
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91766123"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94535084"
 ---
 # <a name="monitor-azure-database-for-mysql-performance-with-query-store"></a>Мониторинг производительности Базы данных Azure для MySQL с помощью хранилища запросов
 
@@ -104,7 +104,7 @@ SELECT * FROM mysql.query_store_wait_stats;
 > [!NOTE]
 > В настоящее время **query_store_capture_mode** заменяет эту конфигурацию, то есть для сбора статистики ожидания нужно присвоить **query_store_capture_mode** и **query_store_wait_sampling_capture_mode** значение ALL. Если параметр **query_store_capture_mode** отключен, то сбор статистики ожидания отключается, так как эта функция использует включенный параметр performance_schema и значение query_text, записанное в хранилище запросов.
 
-Используйте  [портал Azure](howto-server-parameters.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md) для получения значения параметра или задания для него другого значения.
+Используйте [портал Azure](howto-server-parameters.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md), чтобы получить значение для параметра или задать другое значение.
 
 ## <a name="views-and-functions"></a>Представления и функции
 
@@ -116,7 +116,7 @@ SELECT * FROM mysql.query_store_wait_stats;
 
 Это представление возвращает все данные в хранилище запросов. Для каждого отдельного идентификатора базы данных, идентификатора пользователя и идентификатора запроса используется отдельная строка.
 
-| **имя**; | **Тип данных** | **IS_NULLABLE** | **Описание** |
+| **имя** ; | **Тип данных** | **IS_NULLABLE** | **Описание** |
 |---|---|---|---|
 | `schema_name`| varchar(64) | NO | Имя схемы. |
 | `query_id`| bigint(20) | NO| Уникальный идентификатор, сформированный для конкретного запроса. Если тот же запрос выполняется в другой схеме, создается новый идентификатор. |
@@ -149,7 +149,7 @@ SELECT * FROM mysql.query_store_wait_stats;
 
 Это представление возвращает данные событий ожидания в хранилище запросов. Для каждого отдельного идентификатора базы данных, идентификатора пользователя, идентификатора запроса и события используется отдельная строка.
 
-| **имя**;| **Тип данных** | **IS_NULLABLE** | **Описание** |
+| **имя** ;| **Тип данных** | **IS_NULLABLE** | **Описание** |
 |---|---|---|---|
 | `interval_start` | TIMESTAMP | NO| Начало интервала (с приращением по 15 минут).|
 | `interval_end` | TIMESTAMP | NO| Окончание интервала (с приращением по 15 минут).|
@@ -163,7 +163,7 @@ SELECT * FROM mysql.query_store_wait_stats;
 
 ### <a name="functions"></a>Функции
 
-| **имя**;| **Описание** |
+| **имя** ;| **Описание** |
 |---|---|
 | `mysql.az_purge_querystore_data(TIMESTAMP)` | Очистка всех данных хранилища запросов до заданной метки времени. |
 | `mysql.az_procedure_purge_querystore_event(TIMESTAMP)` | Очистка всех данных событий ожидания до заданной метки времени. |
