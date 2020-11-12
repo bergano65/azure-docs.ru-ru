@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/09/2020
 ms.author: alkohli
-ms.openlocfilehash: 99dd3da3f9e8434f9c859afd347bd19d10628083
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b66a184abce53c31fade19fc9e10ffe4c7ff8415
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90938608"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94532449"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge-pro-gpu"></a>Управление доступом, питанием и режимом подключения для графического процессора Azure Stack ребра Pro
 
@@ -49,12 +49,12 @@ ms.locfileid: "90938608"
 
 1. На портале Azure перейдите к **Обзор > Сброс пароля администратора**.
 
-    ![Сброс пароля](media/azure-stack-edge-manage-access-power-connectivity-mode/reset-password-1.png)
+    ![На снимке экрана показано устройство с выбранным параметром сбросить пароль устройства.](media/azure-stack-edge-manage-access-power-connectivity-mode/reset-password-1.png)
 
 
 2. Введите новый пароль и подтвердите его. Длина пароля должна быть не меньше 8 и не больше 16 знаков. Пароль должен содержать 3 знака из следующих категорий: прописные буквы, строчные буквы, цифры и специальные знаки. Выберите **Сброс**.
 
-    ![Сброс пароля](media/azure-stack-edge-manage-access-power-connectivity-mode/reset-password-2.png)
+    ![На снимке экрана показано диалоговое окно сброса пароля устройства.](media/azure-stack-edge-manage-access-power-connectivity-mode/reset-password-2.png)
 
 ## <a name="manage-resource-access"></a>Управление доступом к ресурсам
 
@@ -115,7 +115,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 Чтобы изменить режим устройства, выполните следующие действия:
 
 1. В локальном веб-ИНТЕРФЕЙСе устройства перейдите в раздел **Configuration > Cloud**.
-2. В раскрывающемся списке выберите режим, в котором будет использоваться устройство. Можно выбрать вариант от **полностью подключенных**, **частично подключенных**и **полностью отключенных**. Чтобы запустить устройство в частично автономном режиме, включите **управление порталом Azure**.
+2. В раскрывающемся списке выберите режим, в котором будет использоваться устройство. Можно выбрать вариант от **полностью подключенных** , **частично подключенных** и **полностью отключенных**. Чтобы запустить устройство в частично автономном режиме, включите **управление порталом Azure**.
 
  
 ## <a name="manage-power"></a>Управление питанием
@@ -132,6 +132,6 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 > [!NOTE]
 > При завершении работы физического устройства необходимо будет нажать кнопку питания на устройстве, чтобы включить его.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об управлении общими папками см. [здесь](azure-stack-edge-manage-shares.md).

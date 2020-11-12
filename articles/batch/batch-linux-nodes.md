@@ -1,39 +1,33 @@
 ---
 title: Выполнение вычислительных узлов виртуальных машин под управлением Linux в пакетной службе Azure
-description: Узнайте, как обрабатывать параллельные вычислительные рабочие нагрузки в пулах виртуальных машин Linux в пакетной службе Azure.
+description: Узнайте, как обрабатывать параллельные расчетные рабочие нагрузки в пулах виртуальных машин Linux в пакетной службе Azure.
 ms.topic: how-to
-ms.date: 06/01/2018
+ms.date: 11/10/2020
 ms.custom: H1Hack27Feb2017, devx-track-python, devx-track-csharp
-ms.openlocfilehash: 704b73ab43f40a5542e80ffebc4ab34edfc446dc
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 0a9c801a13af05f077b87f296992da7f50742e4b
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913795"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533503"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Подготовка вычислительных узлов Linux в пулах пакетной службы
 
-Пакетная служба Azure позволяет выполнять параллельные вычислительные рабочие нагрузки на виртуальных машинах Linux и Windows. В этой статье описывается создание пулов вычислительных узлов Linux в пакетной службе с помощью клиентских библиотек [Python][py_batch_package] и [.NET][api_net].
-
-> [!NOTE]
-> Пакеты приложений поддерживаются во всех пулах пакетной службы, созданных после 5 июля 2017 г. Если пул создан с помощью конфигурации облачной службы, пакеты приложений также поддерживаются в пулах пакетной службы, созданных между 10 марта 2016 г. и 5 июля 2017 г. Пулы пакетной службы, созданные до 10 марта 2016 г., не поддерживают пакеты приложений. Дополнительные сведения о развертывании приложений на узлах пакетной службы с помощью пакетов приложений см .в [этой статье](batch-application-packages.md).
->
->
+Пакетная служба Azure позволяет выполнять параллельные вычислительные рабочие нагрузки на виртуальных машинах Linux и Windows. В этой статье описывается создание пулов вычислительных узлов Linux в пакетной службе с помощью клиентских библиотек [Python](https://pypi.python.org/pypi/azure-batch) и [.NET](/dotnet/api/microsoft.azure.batch). 
 
 ## <a name="virtual-machine-configuration"></a>Конфигурация виртуальной машины
-При создании пула вычислительных узлов в пакетной службе есть два варианта для выбора размера узла и операционной системы: Cloud Services Configuration (Конфигурация облачных служб) и "Конфигурация виртуальной машины".
 
-**Cloud Services Configuration** (Конфигурация облачных служб) предоставляет *только* вычислительные узлы Windows. Доступные размеры вычислительных узлов перечислены в статье [Размеры для облачных служб](../cloud-services/cloud-services-sizes-specs.md), а доступные операционные системы — в статье [Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK](../cloud-services/cloud-services-guestos-update-matrix.md). При создании пула, содержащего узлы облачных служб Azure, необходимо указать размер узла и "семейство ОС", которые описаны в упомянутых ранее статьях. Для пулов вычислительных узлов Windows чаще всего используются облачные службы.
+При создании пула вычислительных узлов в пакетной службе есть два варианта для выбора размера узла и операционной системы: Cloud Services Configuration (Конфигурация облачных служб) и "Конфигурация виртуальной машины". Большинство пулов вычислений на узлах Windows используют [конфигурацию облачных служб](nodes-and-pools.md#cloud-services-configuration), которая указывает, что пул состоит из узлов облачных служб Azure. Эти пулы предоставляют только кластерные узлы Windows.
 
-**Virtual Machine Configuration** предоставляет образы Windows и Linux для вычислительных узлов. Доступные размеры вычислительных узлов перечислены в статьях [Размеры виртуальных машин в Azure](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) (Linux) и [Размеры виртуальных машин в Azure](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) (Windows). При создании пула, содержащего узлы конфигурации виртуальных машин, необходимо указать размер узлов, ссылку на образ виртуальной машины и номер SKU агента узла пакетной службы для установки на узлах.
+В отличие от этого, [Конфигурация виртуальной машины](nodes-and-pools.md#virtual-machine-configuration) указывает, что пул состоит из виртуальных машин Azure, которые могут быть созданы из образов Linux или Windows. При создании пула с конфигурацией виртуальной машины необходимо указать [доступный размер вычислений](../virtual-machines/sizes.md), ссылку на образ виртуальной машины и номер SKU агента узла пакетной службы (программа, которая выполняется на каждом узле и предоставляет интерфейс между узлом и пакетной службой) и ссылку на образ виртуальной машины, которая будет установлена на узлах.
 
 ### <a name="virtual-machine-image-reference"></a>Ссылка на образ виртуальной машины
 
-Для предоставления вычислительных узлов в конфигурации виртуальной машины пакетная служба использует [масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/overview.md). Вы можете указать образ из [Azure Marketplace][vm_marketplace] или подготовленный настраиваемый образ. Дополнительные сведения о настраиваемых образах см. в статье [Создание пула с использованием службы "Общая коллекция образов"](batch-sig-images.md).
+Для предоставления вычислительных узлов в конфигурации виртуальной машины пакетная служба использует [масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/overview.md). Вы можете указать образ из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images&page=1)или [использовать коллекцию общих образов для подготовки пользовательского образа](batch-sig-images.md).
 
-При настройке ссылки на образ виртуальной машины задаются свойства образа виртуальной машины. Приведенные ниже свойства являются обязательными при создании ссылки на образ виртуальной машины.
+При создании ссылки на образ виртуальной машины необходимо указать следующие свойства.
 
-| **Свойства ссылки на образ** | **Пример** |
+| **Свойство ссылки на изображение** | **Пример** |
 | --- | --- |
 | Издатель |Canonical |
 | ПРЕДЛОЖЕНИЕ |UbuntuServer |
@@ -41,27 +35,25 @@ ms.locfileid: "92913795"
 | Версия |последняя |
 
 > [!TIP]
-> Дополнительные сведения об этих свойствах и о том, как получить список образов из Marketplace, см. в статье [Выбор образов виртуальных машин Linux с помощью интерфейса командной строки Azure (Azure CLI)](../virtual-machines/linux/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Обратите внимание, что не все образы из Marketplace в настоящее время совместимы с пакетной службой. Дополнительные сведения см. в разделе [Номер SKU агента узла](#node-agent-sku).
->
->
+> Дополнительные сведения об этих свойствах и о том, как указать образы Marketplace, можно найти в статье [Поиск образов виртуальных машин Linux в Azure Marketplace с помощью Azure CLI](../virtual-machines/linux/cli-ps-findimage.md). Обратите внимание, что не все образы из Marketplace в настоящее время совместимы с пакетной службой.
 
 ### <a name="node-agent-sku"></a>Номер SKU агента узла
 
 [Агент узла пакетной](https://github.com/Azure/Batch/blob/master/changelogs/nodeagent/CHANGELOG.md) службы — это программа, которая выполняется на каждом узле в пуле и предоставляет интерфейс управления и контроля между узлом и пакетной службой. Существуют различные реализации агента узла, известные как номера SKU, для различных операционных систем. По существу, при создании конфигурации виртуальной машины сначала следует указать ссылку на образ виртуальной машины, а затем указать агент узла, который будет установлен на этом образе. Как правило, каждый номер SKU агента узла совместим с несколькими образами виртуальных машин. Вот несколько примеров номеров SKU агентов узлов:
 
-* batch.node.ubuntu 18.04
-* batch.node.centos 7
-* batch.node.windows amd64
+- batch.node.ubuntu 18.04
+- batch.node.centos 7
+- batch.node.windows amd64
 
-> [!IMPORTANT]
-> Не все образы виртуальных машин, доступные в Marketplace, совместимы с доступными на данный момент агентами узлов пакетной службы. Для получения списка доступных номеров SKU агентов узлов и образов виртуальных машин, с которыми они совместимы, используйте пакеты SDK пакетной службы. Дополнительные сведения и примеры получения списка допустимых образов в среде выполнения см. далее в этой статье в разделе [Список образов виртуальных машин](#list-of-virtual-machine-images).
->
->
+### <a name="list-of-virtual-machine-images"></a>Список образов виртуальных машин
+
+Не все образы Marketplace совместимы с доступными в настоящее время агентами узлов пакетной службы. Чтобы получить список всех поддерживаемых образов виртуальных машин Marketplace для пакетной службы и соответствующих номеров SKU агентов узлов, используйте [list_supported_images](/python/api/azure-batch/azure.batch.operations.AccountOperations#list-supported-images-account-list-supported-images-options-none--custom-headers-none--raw-false----operation-config-) (Python), [листсуппортедимажес](/dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages) (пакет .NET) или соответствующий API в другом языковом пакете SDK.
 
 ## <a name="create-a-linux-pool-batch-python"></a>Создание пула Linux. Python для пакетной службы
-В следующем фрагменте кода показан пример создания пула вычислительных узлов Ubuntu Server с помощью [клиентской библиотеки пакетной службы Microsoft Azure для Python][py_batch_package]. Справочную документацию по модулю Python пакетной службы находится в [пакете azure.batch][py_batch_docs] на сайте Read the Docs.
 
-В этом фрагменте кода явно создается объект [ImageReference][py_imagereference] и указывается каждое из его свойств (publisher, offer, SKU, version). Однако в рабочем коде рекомендуется использовать метод [list_supported_images][py_list_supported_images] для определения и выбора доступных сочетаний образа и номера SKU агента узла в среде выполнения.
+В следующем фрагменте кода показан пример создания пула вычислительных узлов Ubuntu Server с помощью [клиентской библиотеки пакетной службы Microsoft Azure для Python](https://pypi.python.org/pypi/azure-batch). Дополнительные сведения о модуле Python для пакетной службы см. в [справочной документации](/python/api/overview/azure/batch).
+
+В этом фрагменте кода явно создается объект [ImageReference](/python/api/azure-mgmt-batch/azure.mgmt.batch.models.imagereference) и указывается каждое из его свойств (publisher, offer, SKU, version). Однако в рабочем коде рекомендуется использовать метод [list_supported_images](/python/api/azure-batch/azure.batch.operations.AccountOperations#list-supported-images-account-list-supported-images-options-none--custom-headers-none--raw-false----operation-config-) для выбора из доступных комбинаций образа и номера SKU агента узла во время выполнения.
 
 ```python
 # Import the required modules from the
@@ -96,7 +88,7 @@ start_task.command_line = "printenv AZ_BATCH_NODE_STARTUP_DIR"
 new_pool.start_task = start_task
 
 # Create an ImageReference which specifies the Marketplace
-# virtual machine image to install on the nodes.
+# virtual machine image to install on the nodes
 ir = batchmodels.ImageReference(
     publisher="Canonical",
     offer="UbuntuServer",
@@ -104,8 +96,8 @@ ir = batchmodels.ImageReference(
     version="latest")
 
 # Create the VirtualMachineConfiguration, specifying
-# the VM image reference and the Batch node agent to
-# be installed on the node.
+# the VM image reference and the Batch node agent
+# to install on the node
 vmc = batchmodels.VirtualMachineConfiguration(
     image_reference=ir,
     node_agent_sku_id="batch.node.ubuntu 18.04")
@@ -117,7 +109,7 @@ new_pool.virtual_machine_configuration = vmc
 client.pool.add(new_pool)
 ```
 
-Как упоминалось ранее, вместо явного создания объекта [ImageReference][py_imagereference] мы рекомендуем использовать метод [list_supported_images][py_list_supported_images] для динамического выбора из поддерживаемых в настоящее время сочетаний агента узла и образа из Marketplace. Следующий фрагмент кода Python демонстрирует, как использовать этот метод.
+Как упоминалось ранее, мы рекомендуем использовать метод [list_supported_images](/python/api/azure-batch/azure.batch.operations.AccountOperations#list-supported-images-account-list-supported-images-options-none--custom-headers-none--raw-false----operation-config-) , чтобы динамически выбирать из поддерживаемых в настоящее время сочетаний образа или агента узла (вместо создания явной [ImageReference](/python/api/azure-mgmt-batch/azure.mgmt.batch.models.imagereference) ). Следующий фрагмент кода Python демонстрирует, как использовать этот метод.
 
 ```python
 # Get the list of supported images from the Batch service
@@ -136,16 +128,17 @@ if image is None:
   raise RuntimeError('invalid image reference for desired configuration')
 
 # Create the VirtualMachineConfiguration, specifying the VM image
-# reference and the Batch node agent to be installed on the node.
+# reference and the Batch node agent to be installed on the node
 vmc = batchmodels.VirtualMachineConfiguration(
     image_reference=image.image_reference,
     node_agent_sku_id=image.node_agent_sku_id)
 ```
 
 ## <a name="create-a-linux-pool-batch-net"></a>Создание пула Linux. .NET для пакетной службы
-В следующем фрагменте кода показан пример создания пула вычислительных узлов Ubuntu Server с помощью клиентской библиотеки [.NET для пакетной службы][nuget_batch_net]. [Справочная документация по .NET для пакетной службы][api_net] находится на сайте docs.microsoft.com.
 
-В следующем фрагменте кода используется метод [PoolOperations][net_pool_ops].[ListSupportedImages][net_list_supported_images] для выбора из списка поддерживаемых в настоящее время сочетаний образа из Marketplace и номера SKU агента узла. Этот способ является предпочтительным, так как список поддерживаемых сочетаний может меняться время от времени. Чаще всего добавляются поддерживаемые сочетания.
+В следующем фрагменте кода показан пример создания пула вычислительных узлов Ubuntu Server с помощью клиентской библиотеки [.NET для пакетной службы](https://www.nuget.org/packages/Microsoft.Azure.Batch/). Дополнительные сведения о пакетной службе .NET см. в [справочной документации](/dotnet/api/microsoft.azure.batch).
+
+В следующем фрагменте кода используется метод [PoolOperations. листсуппортедимажес](/dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages) для выбора из списка поддерживаемых комбинаций образов и номеров SKU агента узла в Marketplace. Этот метод рекомендуется, так как список поддерживаемых сочетаний может изменяться со временем. Чаще всего добавляются поддерживаемые сочетания.
 
 ```csharp
 // Pool settings
@@ -189,7 +182,7 @@ CloudPool pool = batchClient.PoolOperations.CreatePool(
 await pool.CommitAsync();
 ```
 
-Несмотря на то что в приведенном ранее фрагменте используется метод [PoolOperations][net_pool_ops].[ListSupportedImages][net_list_supported_images] для динамического перечисления и выбора поддерживаемых сочетаний образа и номера SKU агента узла (рекомендуемый), можно также настроить объект [ImageReference][net_imagereference] явным образом.
+Несмотря на то, что в предыдущем фрагменте используется метод [PoolOperations. истсуппортедимажес](/dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages) для динамического перечисления и выбора из поддерживаемых сочетаний образов и номеров SKU агента узла (рекомендуется), можно также настроить [ImageReference](/dotnet/api/microsoft.azure.batch.imagereference) явным образом:
 
 ```csharp
 ImageReference imageReference = new ImageReference(
@@ -199,11 +192,9 @@ ImageReference imageReference = new ImageReference(
     version: "latest");
 ```
 
-## <a name="list-of-virtual-machine-images"></a>Список образов виртуальных машин
-Чтобы получить список всех поддерживаемых образов виртуальных машин Marketplace для пакетной службы и соответствующих агентов узлов, используйте [list_supported_images][py_list_supported_images] (Python), [ListSupportedImages][net_list_supported_images] (.NET) или соответствующий API в соответствующем языковом пакете SDK по вашему выбору.
-
 ## <a name="connect-to-linux-nodes-using-ssh"></a>Подключение к узлам Linux с помощью SSH
-Во время разработки или устранения неполадок может потребоваться войти на узлы в пуле. В отличие от вычислительных узлов Windows, для подключения к узлам Linux нельзя использовать протокол удаленного рабочего стола (RDP). Вместо этого пакетная служба включает доступ по протоколу SSH на каждом узле для удаленного подключения.
+
+Во время разработки или устранения неполадок может потребоваться войти на узлы в пуле. В отличие от Windows Compute Nodes нельзя использовать протокол удаленного рабочего стола (RDP) для подключения к узлам Linux. Вместо этого пакетная служба включает доступ по протоколу SSH на каждом узле для удаленного подключения.
 
 В следующем фрагменте кода Python создается пользователь на каждом узле пула, который необходим для удаленного подключения. Затем выводятся сведения о подключении SSH для каждого узла.
 
@@ -264,7 +255,7 @@ for node in nodes:
                                          login.remote_login_port))
 ```
 
-Ниже приведен пример выходных данных вышеупомянутого кода для пула, содержащего четыре узла Linux.
+Этот код будет выглядеть примерно так, как показано в следующем примере. В этом случае пул содержит четыре узла Linux.
 
 ```
 Password:
@@ -274,40 +265,15 @@ tvm-1219235766_3-20160414t192511z | ComputeNodeState.idle | 13.91.7.57 | 50002
 tvm-1219235766_4-20160414t192511z | ComputeNodeState.idle | 13.91.7.57 | 50001
 ```
 
-При создании пользователя на узле вместо пароля можно указать открытый ключ SSH. В пакете SDK для Python используйте параметр **ssh_public_key** в [ComputeNodeUser][py_computenodeuser]. В среде .NET используйте свойство [ComputeNodeUser][net_computenodeuser].[SshPublicKey][net_ssh_key].
+При создании пользователя на узле вместо пароля можно указать открытый ключ SSH. В пакете SDK для Python используйте параметр **ssh_public_key** в [ComputeNodeUser](/python/api/azure-batch/azure.batch.models.computenodeuser). В .NET используйте свойство [ComputeNodeUser. SshPublicKey](/dotnet/api/microsoft.azure.batch.computenodeuser.sshpublickey#Microsoft_Azure_Batch_ComputeNodeUser_SshPublicKey) .
 
 ## <a name="pricing"></a>Цены
-Пакетная служба Azure основана на технологии виртуальных машин Azure и облачных служб Azure. Сама пакетная служба предоставляется бесплатно. Это означает, что плата взимается только за вычислительные ресурсы (и связанные с этим расходы), используемые решениями пакетной службы. При выборе режима **Cloud Services Configuration** (Конфигурация облачных служб) плата взимается в зависимости от структуры [цен на облачные службы][cloud_services_pricing]. При выборе режима **Конфигурация виртуальной машины** плата взимается в зависимости от структуры [цен на виртуальные машины][vm_pricing].
+
+Пакетная служба Azure основана на технологии виртуальных машин Azure и облачных служб Azure. Сама пакетная служба предоставляется бесплатно. Это означает, что плата взимается только за вычислительные ресурсы (и связанные с этим расходы), используемые решениями пакетной службы. При выборе режима **Конфигурация виртуальной машины** плата взимается в зависимости от структуры [цен на виртуальные машины](https://azure.microsoft.com/pricing/details/virtual-machines/).
 
 При развертывании приложений на узлах пакетной службы с помощью [пакетов приложений](batch-application-packages.md) также взимается плата за ресурсы службы хранилища Azure, используемые пакетами приложений.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Примеры кода Python][github_samples_py] в репозитории [azure-batch-samples][github_samples] на портале GitHub содержат сценарии, в которых показано, как выполнять распространенные пакетные операции, такие как создание пула, задания и задачи. [Файл сведений][github_py_readme], прилагаемый к примерам кода Python, содержит подробные сведения об установке необходимых пакетов.
-
-[api_net]: /dotnet/api/microsoft.azure.batch
-[api_net_mgmt]: /dotnet/api/overview/azure/batch
-[api_rest]: /rest/api/batchservice/
-[cloud_services_pricing]: https://azure.microsoft.com/pricing/details/cloud-services/
-[github_py_readme]: https://github.com/Azure/azure-batch-samples/blob/master/Python/Batch/README.md
-[github_samples]: https://github.com/Azure/azure-batch-samples
-[github_samples_py]: https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch
-[github_samples_pyclient]: https://github.com/Azure/azure-batch-samples/blob/master/Python/Batch/article_samples/python_tutorial_client.py
-[portal]: https://portal.azure.com
-[net_cloudpool]: /dotnet/api/microsoft.azure.batch.cloudpool
-[net_computenodeuser]: /dotnet/api/microsoft.azure.batch.computenodeuser
-[net_imagereference]: /dotnet/api/microsoft.azure.batch.imagereference
-[net_list_supported_images]: /dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages
-[net_pool_ops]: /dotnet/api/microsoft.azure.batch.pooloperations
-[net_ssh_key]: /dotnet/api/microsoft.azure.batch.computenodeuser.sshpublickey#Microsoft_Azure_Batch_ComputeNodeUser_SshPublicKey
-[nuget_batch_net]: https://www.nuget.org/packages/Microsoft.Azure.Batch/
-[rest_add_pool]: /rest/api/batchservice/pool/add
-[py_account_ops]: http://azure-sdk-for-python.readthedocs.org/en/dev/ref/azure.batch.operations.html#azure.batch.operations.AccountOperations
-[py_azure_sdk]: https://pypi.python.org/pypi/azure
-[py_batch_docs]: https://azure.github.io/azure-sdk-for-python/ref/Batch.html
-[py_batch_package]: https://pypi.python.org/pypi/azure-batch
-[py_computenodeuser]: /python/api/azure-batch/azure.batch.models.computenodeuser
-[py_imagereference]: /python/api/azure-mgmt-batch/azure.mgmt.batch.models.imagereference
-[py_list_supported_images]: /python/api/azure-batch/azure.batch.operations.AccountOperations
-[vm_marketplace]: https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images&page=1
-[vm_pricing]: https://azure.microsoft.com/pricing/details/virtual-machines/
+- Ознакомьтесь с [примерами кода Python](https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch) в [репозитории Azure-Batch-Samples GitHub](https://github.com/Azure/azure-batch-samples) , чтобы узнать, как выполнять общие пакетные операции, такие как создание пулов, заданий и задач. [Файл сведений](https://github.com/Azure/azure-batch-samples/blob/master/Python/Batch/README.md), прилагаемый к примерам кода Python, содержит подробные сведения об установке необходимых пакетов.
+- Узнайте об использовании [виртуальных машин с низким приоритетом](batch-low-pri-vms.md) с помощью пакетной службы.

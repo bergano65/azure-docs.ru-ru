@@ -4,12 +4,12 @@ description: Анализ производительности веб-прило
 ms.topic: conceptual
 ms.date: 03/17/2017
 ms.custom: vs-azure
-ms.openlocfilehash: a3937719fd47ba988cf1e0a93f4c06fcc8112d3e
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: d2de29d897c84496fd44d74d88d58decbc64b7f8
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932215"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94532908"
 ---
 # <a name="debug-your-applications-with-azure-application-insights-in-visual-studio"></a>Отладка приложений с помощью Azure Application Insights в Visual Studio
 В Visual Studio 2015 и более поздних версиях можно анализировать производительность веб-приложения ASP.NET и диагностировать проблемы во время отладки и в рабочей среде с помощью телеметрии из [Azure Application Insights](./app-insights-overview.md).
@@ -53,12 +53,12 @@ ms.locfileid: "91932215"
 
 Щелкните исключение, чтобы просмотреть трассировку стека. Если код приложения открыт в среде Visual Studio, можно щелкнуть трассировку стека в соответствующей строке кода.
 
-![Трассировка стека исключений](./media/visual-studio/17.png)
+![Снимок экрана показывает объект about в трассировке стека.](./media/visual-studio/17.png)
 
 ## <a name="view-request-and-exception-summaries-in-the-code"></a>Просмотр сводки по запросам и исключениям в коде
 В строке CodeLens над каждым методом-обработчиком указано число запросов и исключений, зарегистрированных Application Insights за последние 24 часа.
 
-![Трассировка стека исключений](./media/visual-studio/21.png)
+![Снимок экрана показывает исключение в диалоговом окне контекста.](./media/visual-studio/21.png)
 
 > [!NOTE] 
 > Группа связанных элементов кода показывает данные Application Insights, только если вы [настроили приложение для отправки данных телеметрии на портал Application Insights](./asp-net.md).
@@ -90,7 +90,7 @@ ms.locfileid: "91932215"
   * Чтобы отключить отправку данных телеметрии на портал, закомментируйте строку `<instrumentationkey>...` с ApplicationInsights.config. Когда вы будете готовы отправить данные телеметрии на портал, раскомментируйте его.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  * **[Работа с порталом Application Insights](./overview-dashboard.md)**. Просмотр панелей мониторинга, эффективных средств диагностики и анализа, оповещений, карты динамических зависимостей приложения, а также экспортированных данных телеметрии. 
 

@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7788d45a9cc30cb688d33a629fbb6e53f5ca16cb
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: e2ebc0033f2d2d55571ba45a38b5e0061716673d
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92214912"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94532483"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Примечания о настраиваемых политика в Azure Active Directory B2C для разработчиков
 
@@ -108,16 +108,6 @@ ms.locfileid: "92214912"
 | [Элементы управления отображением](display-controls.md) |  |X  |  |  |
 
 
-### <a name="page-layout-versions"></a>Версии макета страницы
-
-| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
-| ------- | :-----------: | :-------: | :--: | ----- |
-| [2.0.0](page-layout.md) |  | X |  |  |
-| [1.2.0](page-layout.md) |  | X |  |  |
-| [1.1.0](page-layout.md) |  |  | X |  |
-| [1.0.0](page-layout.md) |  |  | X |  |
-| [Поддержка JavaScript](javascript-samples.md) |  | X |  |  |
-
 ### <a name="app-ief-integration"></a>Интеграция приложения с Identity Experience Framework
 
 | Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
@@ -127,6 +117,7 @@ ms.locfileid: "92214912"
 | Вставка данных в формате JSON в путь взаимодействия пользователя с помощью `client_assertion` | X |  |  | Будет считаться устаревшим. |
 | Вставка данных в формате JSON в путь взаимодействия пользователя в виде `id_token_hint` |  | X |  | Правильный подход к передаче данных в формате JSON. |
 | [Передача токена поставщика удостоверений в приложение](idp-pass-through-custom.md) |  | X |  | Например, из Facebook в приложение. |
+
 
 ### <a name="session-management"></a>Управление сеансом
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/08/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: 8a25ead5983e56f56ba0daea23c2775b3332fb8b
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 7ba0f1b6f37da923e389964b99a02295dc3d6050
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057915"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359533"
 ---
 # <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Руководство по Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
 
@@ -41,13 +41,7 @@ ms.locfileid: "92057915"
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
-* У вас есть виртуальная сеть, к которой необходимо подключиться. Ни одна из подсетей локальной сети не должна перекрывать виртуальные сети, к которым вы хотите подключиться. Сведения о создании виртуальной сети на портале Azure см. в [этой статье](../virtual-network/quick-create-portal.md).
-
-* В вашей виртуальной сети не должны находиться виртуальные сетевые шлюзы. Если в виртуальной сети есть шлюз (VPN или ExpressRoute), необходимо удалить его. Эта конфигурация требует, чтобы виртуальные сети были подключены к шлюзу концентратора Виртуальной глобальной сети.
-
-* Получите диапазон IP-адресов для вашего региона концентратора. Концентратор — это виртуальная сеть, которая создается и используется Виртуальной глобальной сетью. Диапазон адресов, который вы указываете для концентратора, не может пересекаться с любой из существующих виртуальных сетей, к которым вы подключаетесь. Она также не может пересекаться с диапазонами адресов, к которым вы подключаетесь локально. Если вы не знаете диапазоны IP-адресов в своей конфигурации локальной сети, найдите того, кто сможет предоставить вам нужную информацию.
-
-* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+[!INCLUDE [Before you begin](../../includes/virtual-wan-before-include.md)]
 
 ## <a name="create-a-virtual-wan"></a><a name="openvwan"></a>Создание виртуальной глобальной сети
 
@@ -107,7 +101,7 @@ ms.locfileid: "92057915"
         "Instance0":"104.45.18.186"
         "Instance1":"104.45.13.195"
         ```
-    * **Сведения о конфигурации подключения к Vpngateway**, такие как протокол BGP, общий ключ и т. д. PSK — это автоматически созданный общий ключ. Вы всегда можете изменить подключение на странице обзора для настраиваемого ключа PSK.
+    * **Сведения о конфигурации подключения к Vpngateway** , такие как протокол BGP, общий ключ и т. д. PSK — это автоматически созданный общий ключ. Вы всегда можете изменить подключение на странице обзора для настраиваемого ключа PSK.
   
 ### <a name="example-device-configuration-file"></a>Пример файла конфигурации устройства
 
@@ -240,7 +234,7 @@ ms.locfileid: "92057915"
 * IP-адрес BGP по умолчанию для VPN-шлюза (назначен Azure).
 * Параметр конфигурации для настраиваемого IP-адреса BGP — это поле зарезервировано для APIPA (автоматическое назначение частных IP-адресов). Azure поддерживает IP-адреса BGP в диапазонах 169.254.21.* и 169.254.22.*. Azure принимает подключения по протоколу BGP в этих диапазонах, но инициирует соединение по IP-адресу BGP по умолчанию.
 
-   :::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-2.png" alt-text="Снимок экрана: страница &quot;VPN (сеть-сеть)&quot;, на которой стрелка указывает на действие &quot;Просмотр и настройка&quot;" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-2-expand.png":::
+   :::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-2.png" alt-text="Просмотр конфигурации" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-2-expand.png":::
 
 ## <a name="clean-up-resources"></a><a name="cleanup"></a>Очистка ресурсов
 

@@ -1,19 +1,19 @@
 ---
 title: Руководство по проектированию сервера Базы данных Azure для MySQL с помощью Azure CLI
 description: Это руководство содержит сведения о создании базы данных и сервера базы данных Azure для MySQL и управлении ими с помощью Azure CLI 2.0 из командной строки.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 12/02/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 3e851c47e67ac6e42d81b7688e457c2f9e17725b
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 06d8b7cdd6edb6ae3dad27a8a5f50443e3fc8969
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92543956"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533622"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по Разработка базы данных Azure для MySQL с помощью Azure CLI
 
@@ -27,6 +27,8 @@ ms.locfileid: "92543956"
 > * Данные запросов
 > * Обновление данных
 > * восстановление данных.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
@@ -60,8 +62,8 @@ az mysql server create --resource-group myresourcegroup --name mydemoserver --lo
 ```
 Значение параметра sku-name соответствует соглашению {ценовая категория}\_{поколение вычислительных ресурсов}\_{количество виртуальных ядер}, как показано в примерах ниже:
 + `--sku-name B_Gen5_2` — ценовая категория "Базовый", поколение 5, 2 виртуальных ядра;
-+ `--sku-name GP_Gen5_32` — "Общего назначения", поколение 5, 32 виртуальных ядра;
-+ `--sku-name MO_Gen5_2` — "Оптимизированная для операций в памяти", поколение 5, 2 виртуальных ядра.
++ `--sku-name GP_Gen5_32` — "Общего назначения", поколение 5, 32 виртуальных ядра;
++ `--sku-name MO_Gen5_2` — "Оптимизированная для операций в памяти", поколение 5, 2 виртуальных ядра.
 
 Допустимые значения для каждого региона и каждого уровня указаны в документации по [ценовым категориям](./concepts-pricing-tiers.md).
 
@@ -85,7 +87,7 @@ az mysql server firewall-rule create --resource-group myresourcegroup --server m
 az mysql server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin** .
+Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin**.
 ```json
 {
   "administratorLogin": "myadmin",
@@ -177,7 +179,7 @@ SELECT * FROM inventory;
 - Точка восстановления. Выберите время до того момента, когда был изменен сервер. Значение точки восстановления должно быть не меньше значения самой старой резервной копии исходной базы данных.
 - Целевой сервер. Укажите новое имя сервера, который нужно восстановить.
 - Исходный сервер. Укажите имя сервера, из которого требуется выполнить восстановление.
-- Расположение. Регион выбрать нельзя. По умолчанию он совпадает с исходным сервером.
+- Расположение. Вы не сможете выбрать регион, по умолчанию он совпадает с исходным сервером.
 
 ```azurecli-interactive
 az mysql server restore --resource-group myresourcegroup --name mydemoserver-restored --restore-point-in-time "2017-05-4 03:10" --source-server-name mydemoserver
@@ -196,12 +198,25 @@ az mysql server restore --resource-group myresourcegroup --name mydemoserver-res
 
 Команда выполняется в синхронном режиме и будет возвращена после восстановления сервера. После завершения восстановления найдите созданный сервер. Убедитесь, что данные восстановлены надлежащим образом.
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+Если эти ресурсы не требуются для изучения другого руководства, вы можете их удалить. Для этого выполните следующую команду: 
+
+```azurecli-interactive
+az group delete --name myresourcegroup
+```
+
+Если вы хотите удалить созданный сервер, выполните команду [az mysql server delete](/cli/azure/mysql/server#az-mysql-server-delete).
+
+```azurecli-interactive
+az mysql server delete --resource-group myresourcegroup --name mydemoserver
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как выполнять следующие операции:
 > [!div class="checklist"]
 > * Создайте сервер базы данных Azure для MySQL.
 > * настройка брандмауэра сервера;
-> * использование [программы командной строки MySQL](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) для создания базы данных.
+> * использование программы командной строки MySQL для создания базы данных;
 > * Загрузка примера данных
 > * Данные запросов
 > * Обновление данных

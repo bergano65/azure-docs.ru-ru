@@ -8,14 +8,15 @@ ms.topic: sample
 ms.date: 10/07/2019
 author: sakash279
 ms.author: akshanka
-ms.openlocfilehash: 50a34f2572e5e9feea0b5adc3e12f72451e5728b
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 79b58b76954cf15289e85dbf763b7a399897635d
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92477340"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94489885"
 ---
 # <a name="how-to-use-azure-table-storage-and-azure-cosmos-db-table-api-with-c"></a>Как использовать хранилище таблиц Azure и API таблиц Azure Cosmos DB в C++
+[!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
 
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 [!INCLUDE [storage-table-applies-to-storagetable-and-cosmos](../../includes/storage-table-applies-to-storagetable-and-cosmos.md)]
@@ -94,11 +95,11 @@ const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=ht
 Чтобы протестировать приложение на локальном компьютере с Windows, можно использовать Эмулятор службы хранилища Azure, устанавливаемый с пакетом [Azure SDK](https://azure.microsoft.com/downloads/). Эмулятор службы хранилища — это служебная программа, моделирующая службы больших двоичных объектов, очередей и таблиц, которые доступны в Azure на локальном компьютере разработки. В следующем примере показано, как объявить статическое поле для размещения строки подключения для эмулятора локального хранилища:  
 
 ```cpp
-// Define the connection string with Azure storage emulator.
+// Define the connection string with Azure Storage Emulator.
 const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 ```
 
-Чтобы запустить Эмулятор службы хранилища Azure с рабочего стола Windows, нажмите кнопку **Пуск** или клавишу Windows. Введите и запустите *эмулятор хранения Microsoft Azure* . Дополнительные сведения см. в статье [Использование Эмулятора службы хранилища Azure для разработки и тестирования](../storage/common/storage-use-emulator.md).
+Чтобы запустить Эмулятор службы хранилища Azure с рабочего стола Windows, нажмите кнопку **Пуск** или клавишу Windows. Введите и запустите *эмулятор хранения Microsoft Azure*. Дополнительные сведения см. в статье [Использование Эмулятора службы хранилища Azure для разработки и тестирования](../storage/common/storage-use-emulator.md).
 
 ### <a name="retrieve-your-connection-string"></a>Получить строку подключения
 
@@ -501,9 +502,9 @@ else
 
 Для выпуска Visual Studio Community: если сборка проекта завершается ошибкой из-за включаемых файлов *storage_account.h* и *table.h* , удалите параметр компилятора **/permissive-** :
 
-1. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите **Свойства** .
-1. В диалоговом окне **Страницы свойств** разверните узел **Свойства конфигурации** , затем разверните **C/C++** и выберите **Язык** .
-1. Для параметра **Режим совместимости** установите значение **Нет** .
+1. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите **Свойства**.
+1. В диалоговом окне **Страницы свойств** разверните узел **Свойства конфигурации** , затем разверните **C/C++** и выберите **Язык**.
+1. Для параметра **Режим совместимости** установите значение **Нет**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

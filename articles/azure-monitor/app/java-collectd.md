@@ -3,17 +3,17 @@ title: Мониторинг производительности веб-прил
 description: Расширенный мониторинг производительности приложений на веб-сайте Java с подключаемым модулем CollectD для Application Insights.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: 63b64226c9e788e060298050a74d9009c8035b89
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: a4ce1ad6a8248680b8bdeec8a98195c3dbfe31a1
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379015"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94532874"
 ---
-# <a name="collectd-linux-performance-metrics-in-application-insights"></a>collectd: метрики производительности Linux в Application Insights
+# <a name="collectd-linux-performance-metrics-in-application-insights-deprecated"></a>собранные: метрики производительности Linux в Application Insights [устарело]
 
 > [!IMPORTANT]
-> Для мониторинга приложений Java рекомендуется использовать автоматическое инструментирование без изменения кода. Следуйте указаниям для [Application Insights агента Java 3,0](./java-in-process-agent.md).
+> Для мониторинга приложений Java **рекомендуется** использовать автоматическое инструментирование без изменения кода. Следуйте указаниям для **[Application Insights агента Java 3,0](./java-in-process-agent.md)**.
 
 Для работы с метриками производительности Linux в [Application Insights](./app-insights-overview.md) установите инструмент [collectd](https://collectd.org/) вместе с его подключаемым модулем Application Insights. Это решение с открытым исходным кодом собирает разнообразные данные системной и сетевой статистики.
 

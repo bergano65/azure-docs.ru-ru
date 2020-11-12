@@ -1,7 +1,7 @@
 ---
 title: Сбор данных рабочих моделей
 titleSuffix: Azure Machine Learning
-description: Сведения о том, как выполнять получение данных из развернутой модели Машинное обучение Azure
+description: Узнайте, как получать данные из Машинное обучение Azureной модели, развернутой в кластере Azure Kubernetes Service (AKS).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,14 @@ author: lostmygithubaccount
 ms.date: 07/14/2020
 ms.topic: conceptual
 ms.custom: how-to, data4ml
-ms.openlocfilehash: 9a9ef4dbe7f6b97675d395baf441530e5bd79320
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: c6b9dc95e1d50481ac5353460910032ca1711ab1
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357649"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94532823"
 ---
 # <a name="collect-data-from-models-in-production"></a>Получение данных из моделей в рабочей среде
-
-
 
 В этой статье показано, как получить данные из Машинное обучение Azureной модели, развернутой в кластере Azure Kubernetes Service (AKS). Собранные данные затем хранятся в хранилище BLOB-объектов Azure.
 
@@ -175,7 +173,7 @@ ms.locfileid: "93357649"
 
     [![Power BI содержимое](./media/how-to-enable-data-collection/pbiContent.png)](././media/how-to-enable-data-collection/pbiContent.png#lightbox)
 
-1. Щелкните **ОК**. Предварительная загрузка данных.
+1. Нажмите кнопку **ОК**. Предварительная загрузка данных.
 
     [![Power BI объединение файлов](./media/how-to-enable-data-collection/pbiCombine.png)](././media/how-to-enable-data-collection/pbiCombine.png#lightbox)
 

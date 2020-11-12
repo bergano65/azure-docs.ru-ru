@@ -1,18 +1,18 @@
 ---
 title: Строки подключения — база данных Azure для MariaDB
 description: В этом документе перечислены все поддерживаемые в настоящее время строки подключения приложений к базе данных Azure для MariaDB, включая ADO.NET (C#), JDBC, Node.js, ODBC, PHP, Python и Ruby.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: 73c91343057c12d7534cd79de346182f32964f72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8119f0bfd1f9007cab0df93ad2c7ef22b4db2199
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91268765"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533010"
 ---
 # <a name="how-to-connect-applications-to-azure-database-for-mariadb"></a>Подключение приложений к базе данных Azure для MariaDB
 В этой статье перечислены типы строк подключения, поддерживаемые базой данных Azure для MariaDB, а также шаблоны и примеры. Строка подключения может содержать различные параметры и настройки.
@@ -63,7 +63,7 @@ client = Mysql2::Client.new(username: "{username@servername}", password: {your_p
 ```
 
 ## <a name="get-the-connection-string-details-from-the-azure-portal"></a>Получение сведений о строке подключения на портале Azure
-На [портале Microsoft Azure](https://portal.azure.com) перейдите к своему серверу базы данных Azure для MariaDB и щелкните **Строки подключения**, чтобы получить список строк для своего экземпляра: ![область строк подключения на портале Microsoft Azure](./media/howto-connection-strings/connection-strings-on-portal.png)
+На [портале Microsoft Azure](https://portal.azure.com) перейдите к своему серверу базы данных Azure для MariaDB и щелкните **Строки подключения** , чтобы получить список строк для своего экземпляра: ![область строк подключения на портале Microsoft Azure](./media/howto-connection-strings/connection-strings-on-portal.png)
 
 Строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных. Измените эти примеры, чтобы использовать собственные параметры, такие как имя базы данных, пароль и т. д. Тогда вы сможете использовать эту строку для подключения к серверу из своего кода и приложений.
 

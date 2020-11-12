@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 78e0bfb0af494ecae2865fcc42679b8fcce44916
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 73aa6f8f6ee36aeeb41fbc54afe217ac776a4ebc
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359584"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533899"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -22,10 +22,16 @@ ms.locfileid: "94359584"
 
 Эта статья посвящена управлению связями и графу в целом. для работы с отдельными цифровыми двойниковми см. раздел [*как управлять цифровыми двойников*](how-to-manage-twin.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
-    
+
+## <a name="ways-to-manage-graph"></a>Способы управления Graph
+
+[!INCLUDE [digital-twins-ways-to-manage.md](../../includes/digital-twins-ways-to-manage.md)]
+
+Вы также можете вносить изменения в граф с помощью примера Azure Digital двойников (ADT) Explorer, который позволяет визуализировать двойников и Graph, а также использовать пакет SDK в фоновом режиме. В следующем разделе подробно описывается этот пример.
+
 [!INCLUDE [visualizing with Azure Digital Twins explorer](../../includes/digital-twins-visualization.md)]
 
 ## <a name="create-relationships"></a>Создавать связи
@@ -219,7 +225,8 @@ private static async Task DeleteRelationship(DigitalTwinsClient client, string s
 ```csharp
 await DeleteRelationship(client, srcId, relId);
 ```
-## <a name="create-a-twin-graph"></a>Создание графа двойника 
+
+## <a name="runnable-twin-graph-sample"></a>Пример готового графа двойника
 
 Следующий готовый к запуску фрагмент кода использует операции связи из этой статьи для создания графа двойника из цифровых двойников и связей.
 
@@ -451,8 +458,8 @@ namespace minimal
 
 |  Идентификатор модели    | Идентификатор двойника (должен быть уникальным) | Имя связи  | Идентификатор целевого двойника  | Данные инициализации двойника |
 | --- | --- | --- | --- | --- |
-| дтми: пример: Floor; 1    | Floor1 | содержит | Room1 | |
-| дтми: пример: Floor; 1    | Floor0 | содержит | Room0 | |
+| дтми: пример: Floor; 1    | Floor1 | contains | Room1 | |
+| дтми: пример: Floor; 1    | Floor0 | contains | Room0 | |
 | дтми: пример: комната; 1    | Room1 | | | {"Температура": 80} |
 | дтми: пример: комната; 1    | Room0 | | | {"Температура": 70} |
 
@@ -575,11 +582,8 @@ namespace creating_twin_graph_from_csv
 }
 
 ```
-## <a name="manage-relationships-with-cli"></a>Управление связями с помощью интерфейса командной строки
 
-Двойников и их отношения также можно управлять с помощью цифрового двойников Azure CLI. Команды можно найти в [*этом пошаговом окне. Используйте интерфейс командной строки Azure Digital двойников*](how-to-use-cli.md).
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о запросах к графу двойников для Azure Digital двойника:
 * [*Основные понятия: язык запросов*](concepts-query-language.md)

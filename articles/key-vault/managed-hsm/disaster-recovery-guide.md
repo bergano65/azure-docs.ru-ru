@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 7dbb7b3fdc15c0a9d502fbe9a0d12d084f9ddf29
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 08c1b415ac075429a9bc89098233fffb8c25b710
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91760399"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94369262"
 ---
 # <a name="managed-hsm-disaster-recovery"></a>Аварийное восстановление управляемого устройства HSM
 
@@ -48,7 +48,7 @@ ms.locfileid: "91760399"
 - расположение Azure;
 - список первых администраторов.
 
-В приведенном ниже примере создается устройство HSM с именем **ContosoMHSM** в группе ресурсов **ContosoResourceGroup**, размещенной в регионе **Восточная часть США 2**, и для него в качестве единственного администратора задается **текущий пользователь, выполнивший вход**.
+В приведенном ниже примере создается устройство HSM с именем **ContosoMHSM** в группе ресурсов **ContosoResourceGroup** , размещенной в регионе **Восточная часть США 2** , и для него в качестве единственного администратора задается **текущий пользователь, выполнивший вход**.
 
 ```azurecli-interactive
 oid=$(az ad signed-in-user show --query objectId -o tsv)
@@ -86,7 +86,7 @@ az keyvault security-domain init-recovery --hsm-name ContosoMHSM2 --sd-exchange-
 - Создает большой двоичный объект для передачи домена безопасности, шифруя его с помощью ключа обмена доменами безопасности, который мы скачали на предыдущем шаге.
 - Отправляет большой двоичный объект для передачи домена безопасности в HSM, где будет завершен процесс восстановления домена безопасности.
 
-В примере ниже используется домен безопасности устройства **ContosoMHSM** и два его закрытых ключа, а результат отправляется на устройство **ContosoMHSM2**, которое ожидает получения домена безопасности. 
+В примере ниже используется домен безопасности устройства **ContosoMHSM** и два его закрытых ключа, а результат отправляется на устройство **ContosoMHSM2** , которое ожидает получения домена безопасности. 
 
 ```azurecli-interactive
 az keyvault security-domain upload --hsm-name ContosoMHSM2 --sd-exchange-key ContosoMHSM-SDE.cer --sd-file ContosoMHSM-SD.json --sd-wrapping-keys cert_0.key cert_1.key
@@ -102,11 +102,12 @@ az keyvault security-domain upload --hsm-name ContosoMHSM2 --sd-exchange-key Con
 - учетная запись хранения, где будет храниться резервная копия;
 - контейнер хранилища BLOB-объектов в этой учетной записи хранения, где процесс резервного копирования создаст новую папку для хранения зашифрованной резервной копии.
 
-Мы используем команду `az keyvault backup`, чтобы создать резервную копию HSM в контейнере хранилища **mhsmbackupcontainer**, размещенном в учетной записи хранения **ContosoBackup**, для приведенного ниже примера. Мы создаем маркер SAS со сроком действия 30 минут и передаем его на управляемое устройство HSM для записи резервной копии.
+Мы используем команду `az keyvault backup`, чтобы создать резервную копию HSM в контейнере хранилища **mhsmbackupcontainer** , размещенном в учетной записи хранения **ContosoBackup** , для приведенного ниже примера. Мы создаем маркер SAS со сроком действия 30 минут и передаем его на управляемое устройство HSM для записи резервной копии.
 
 ```azurecli-interactive
 end=$(date -u -d "30 minutes" '+%Y-%m-%dT%H:%MZ')
 skey=$(az storage account keys list --query '[0].value' -o tsv --account-name ContosoBackup)
+az storage container create --account-name  mhsmdemobackup --name mhsmbackupcontainer  --account-key $skey
 sas=$(az storage container generate-sas -n mhsmbackupcontainer --account-name ContosoBackup --permissions crdw --expiry $end --account-key $skey -o tsv)
 az keyvault backup start --hsm-name ContosoMHSM2 --storage-account-name ContosoBackup --blob-container-name mhsmdemobackupcontainer --storage-container-SAS-token $sas
 

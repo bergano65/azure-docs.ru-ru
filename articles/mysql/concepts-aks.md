@@ -1,17 +1,17 @@
 ---
 title: Подключение к службе Azure Kubernetes. база данных Azure для MySQL
 description: Сведения о подключении Службы Azure Kubernetes к Базе данных Azure для MySQL
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: bc40903de09ebfe04858c631eee0233561784418
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 5c4a5f5d792a60ed3fef07797fdbdfa0c9cfb8fe
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546914"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94534336"
 ---
 # <a name="connecting-azure-kubernetes-service-and-azure-database-for-mysql"></a>Подключение Службы Azure Kubernetes к Базе данных Azure для MySQL
 
@@ -26,11 +26,11 @@ ms.locfileid: "92546914"
 Чтобы проверить, использует ли ваш кластер AKS ускоренную сеть, сделайте следующее:
 1. Перейдите на портал Azure и выберите свой кластер AKS.
 2. Выберите вкладку "Свойства".
-3. Скопируйте имя **группы ресурсов инфраструктуры** .
+3. Скопируйте имя **группы ресурсов инфраструктуры**.
 4. С помощью панели поиска на портале найдите и откройте группу ресурсов инфраструктуры.
 5. Выберите в этой группе ресурсов виртуальную машину.
 6. Перейдите на вкладку **Сети** для виртуальной машины.
-7. Проверьте, включена ли **ускоренная сеть** .
+7. Проверьте, включена ли **ускоренная сеть**.
 
 Или с помощью Azure CLI выполните следующие две команды.
 ```azurecli

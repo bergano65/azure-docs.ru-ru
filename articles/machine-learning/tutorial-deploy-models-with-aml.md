@@ -1,7 +1,7 @@
 ---
 title: Руководство по классификации изображений. Развертывание моделей
 titleSuffix: Azure Machine Learning
-description: Это руководство представляет собой вторую часть серии, состоящей из двух частей. В нем показано, как использовать Машинное обучение Azure для развертывания модели классификации изображений с помощью Scikit-learn в Jupyter Notebook для Python.
+description: В этом руководстве показано, как использовать Машинное обучение Azure для развертывания модели классификации изображений с помощью Scikit-learn в Jupyter Notebook для Python.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 03/18/2020
 ms.custom: seodec18
-ms.openlocfilehash: f0d78fc55ca60fa883c742885acf2fa98ede61ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee6529f36c302cba1dc7b5a4b53aaf96ce58e4a5
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90896587"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94532789"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство по Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 
@@ -358,6 +358,6 @@ service.delete()
 
 + Сведения обо всех [вариантах развертывания Машинного обучения Azure](how-to-deploy-and-where.md).
 + Сведения о [создании клиентов для веб-службы](how-to-consume-web-service.md).
-+  Асинхронное [создание прогнозов на больших объемах данных](how-to-use-parallel-run-step.md).
++  Асинхронное [создание прогнозов на больших объемах данных](./tutorial-pipeline-batch-scoring-classification.md).
 + Мониторинг моделей машинного обучения в Azure с помощью [Application Insights](how-to-enable-app-insights.md).
-+ Ознакомьтесь с руководством по [автоматическому выбору алгоритма](tutorial-auto-train-models.md). 
++ Ознакомьтесь с руководством по [автоматическому выбору алгоритма](tutorial-auto-train-models.md).

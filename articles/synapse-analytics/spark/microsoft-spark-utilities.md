@@ -4,24 +4,27 @@ description: Руководство по использованию Мсспар
 author: ruxu
 services: synapse-analytics
 ms.service: synapse-analytics
-ms.topic: conceptual
+ms.topic: reference
 ms.subservice: spark
 ms.date: 09/10/2020
 ms.author: ruxu
 ms.reviewer: ''
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: 648c5b75f125725ebda2966d3ebc4200ee76b98c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: c03d8e744598386db3d6d03a71e4d1b735d9d71f
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94428684"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533282"
 ---
 # <a name="introduction-of-microsoft-spark-utilities"></a>Введение в служебные программы Microsoft Spark
-Microsoft Spark Utilities (Мсспаркутилс) — это встроенный пакет, который упрощает распространенные задачи. Мсспаркутилс можно использовать для эффективной работы с файловой системой, получения переменных среды и работы с секретами. Мсспаркутилс доступны в `PySpark (Python)` `Scala` `.NET Spark (C#)` записных книжках,, и в конвейерах синапсе.
+
+Microsoft Spark Utilities (Мсспаркутилс) — это встроенный пакет, который упрощает выполнение стандартных задач. Мсспаркутилс можно использовать для работы с файловыми системами, для получения переменных среды и для работы с секретами. Мсспаркутилс доступны в `PySpark (Python)` `Scala` `.NET Spark (C#)` записных книжках,, и в конвейерах синапсе.
 
 ## <a name="pre-requisites"></a>Предварительные условия
+
 ### <a name="configure-access-to-azure-data-lake-storage-gen2"></a>Настройка доступа к Azure Data Lake Storage 2-го поколения 
+
 Записные книжки синапсе используют сквозной доступ Azure Active Directory (Azure AD) для доступа к учетным записям ADLS 2-го поколения. Для доступа к учетной записи ADLS 2-го поколения (или папке) необходимо быть **участником хранилища BLOB-объектов** . 
 
 Для доступа к учетным записям хранения в конвейерах синапсе используется удостоверение рабочей области (MSI). Чтобы использовать Мсспаркутилс в действиях конвейера, удостоверение рабочей области должно быть **участником хранилища BLOB-объектов** для доступа к учетной записи ADLS 2-го поколения (или папке).
@@ -29,8 +32,8 @@ Microsoft Spark Utilities (Мсспаркутилс) — это встроенн
 Выполните следующие действия, чтобы убедиться, что у MSI Azure AD и рабочей области есть доступ к учетной записи ADLS 2-го поколения.
 1. Откройте [портал Azure](https://portal.azure.com/) и учетную запись хранения, к которой требуется получить доступ. Можно перейти к конкретному контейнеру, к которому требуется получить доступ.
 2. На левой панели выберите **элемент управления доступом (IAM)** .
-3. Для роли **участника данных BLOB-объекта хранилища** в учетной записи хранения назначьте **учетную запись Azure AD** и **удостоверение рабочей области** (то же, что и имя рабочей области) или убедитесь, что она уже назначена. 
-4. Выберите команду **Сохранить**.
+3. Назначьте **учетной записи Azure AD** и **удостоверению рабочей области** (то же, что и имя рабочей области) роль **участника данных BLOB-объекта хранилища** в учетной записи хранения, если она еще не назначена. 
+4. Нажмите кнопку **Сохранить**.
 
 Вы можете получить доступ к данным в ADLS 2-го поколения с помощью синапсе Spark по следующему URL-адресу:
 
@@ -45,10 +48,10 @@ Microsoft Spark Utilities (Мсспаркутилс) — это встроенн
 1. Откройте [Azure синапсе Studio](https://web.azuresynapse.net/).
 2. Выберите **Управление** на левой панели и выберите **связанные службы** в списке **внешние подключения**.
 3. Найдите **хранилище BLOB-объектов Azure** на **новой панели связанная служба** справа.
-4. Нажмите кнопку **Continue** (Продолжить).
+4. Выберите **Continue** (Продолжить).
 5. Выберите учетную запись хранилища BLOB-объектов Azure для доступа и настройте имя связанной службы. Рекомендуется использовать **ключ учетной записи** для **метода проверки подлинности**.
-6. Нажмите кнопку **проверить подключение** , чтобы проверить правильность параметров.
-7. Нажмите кнопку **создать** , а затем кнопку **опубликовать все** , чтобы сохранить изменения. 
+6. Выберите **проверить подключение** , чтобы проверить правильность параметров.
+7. Сначала выберите **создать** , а затем щелкните **опубликовать все** , чтобы сохранить изменения. 
 
 Вы можете получить доступ к данным в хранилище больших двоичных объектов Azure с помощью синапсе Spark по следующему URL-адресу:
 
@@ -103,25 +106,25 @@ print('Remote blob path: ' + wasb_path)
 2. Выберите **Управление** на левой панели и выберите **связанные службы** в списке **внешние подключения**.
 3. **Azure Key Vault** поиска на **новой связанной сервисной** панели справа.
 4. Выберите учетную запись Azure Key Vault для доступа и настройки имени связанной службы.
-5. Нажмите кнопку **проверить подключение** , чтобы проверить правильность параметров.
-6. Нажмите кнопку **создать** , а затем — **опубликовать все** , чтобы сохранить изменения. 
+5. Выберите **проверить подключение** , чтобы проверить правильность параметров.
+6. Сначала выберите **создать** , а затем щелкните **опубликовать все** , чтобы сохранить изменения. 
 
 Записные книжки синапсе используют сквозной доступ к Azure Active Directory (Azure AD) для доступа к Azure Key Vault. Для доступа к Azure Key Vault конвейеры синапсе используют удостоверение рабочей области (MSI). Чтобы код работал как в записной книжке, так и в конвейере синапсе, мы рекомендуем предоставить секретное разрешение на доступ как для учетной записи Azure AD, так и для удостоверения рабочей области.
 
 Чтобы предоставить секретный доступ к удостоверению рабочей области, выполните следующие действия:
 1. Откройте [портал Azure](https://portal.azure.com/) и Azure Key Vault, к которым требуется получить доступ. 
 2. Выберите **политики доступа** на панели слева.
-3. Щелкните **Добавить политику доступа** : 
+3. Выберите **Добавить политику доступа** : 
     - Выберите **ключ, секрет, & Управление сертификатами** в качестве шаблона конфигурации.
     - Выберите **учетную запись Azure AD** и **удостоверение рабочей области** (то же, что и имя рабочей области) в поле Выбор участника или убедитесь, что оно уже назначено. 
-4. Щелкните **выбрать** и **Добавить**.
+4. Выберите **выбрать** и **Добавить**.
 5. Нажмите кнопку **сохранить** , чтобы зафиксировать изменения.  
 
 ## <a name="file-system-utilities"></a>Служебные программы файловой системы
 
 `mssparkutils.fs` предоставляет служебные программы для работы с различными файловыми системами, в том числе Azure Data Lake Storage 2-го поколения (ADLS 2-го поколения) и хранилищем BLOB-объектов Azure. Убедитесь, что вы правильно настроили доступ к [Azure Data Lake Storage 2-го поколения](#configure-access-to-azure-data-lake-storage-gen2) и [хранилищу BLOB-объектов Azure](#configure-access-to-azure-blob-storage) .
 
-Выполните следующую команду, чтобы получить общие сведения о доступных методах:
+Чтобы получить общие сведения о доступных методах, выполните следующие команды:
 
 :::zone pivot = "programming-language-python"
 
@@ -196,7 +199,7 @@ FS.Ls("Your directory path")
 
 
 ### <a name="view-file-properties"></a>Просмотр свойств файла.
-Возвращает свойства файла, включая имя файла, путь к файлу, размер файла, будь то каталог и является ли он файлом.
+Возвращает свойства файла, включая имя файла, путь к файлу, размер файла и принадлежность к каталогу и файлу.
 
 :::zone pivot = "programming-language-python"
 
@@ -230,7 +233,8 @@ foreach(var File in Files) {
 ::: zone-end
 
 ### <a name="create-new-directory"></a>Создать новый каталог
-Создает указанный каталог, если он не существует, и создает все необходимые родительские каталоги.
+
+Создает указанный каталог, если он не существует и все необходимые родительские каталоги.
 
 :::zone pivot = "programming-language-python"
 
@@ -256,7 +260,8 @@ FS.Mkdirs("new directory name")
 ::: zone-end
 
 ### <a name="copy-file"></a>Копировать файл
-Копирует файл или каталог, поддерживает копирование в файловых системах.
+
+Копирует файл или каталог. Поддерживает копирование в файловых системах.
 
 :::zone pivot = "programming-language-python"
 
@@ -282,6 +287,7 @@ FS.Cp("source file or directory", "destination file or directory", true) // Set 
 ::: zone-end
 
 ### <a name="preview-file-content"></a>Просмотр содержимого файла
+
 Возвращает до первого байта (Максбитес) заданного файла в виде строки в кодировке UTF-8.
 
 :::zone pivot = "programming-language-python"
@@ -308,7 +314,8 @@ FS.Head("file path", maxBytes to read)
 ::: zone-end
 
 ### <a name="move-file"></a>Переместить файл
-Перемещает файл или каталог, поддерживает перемещение по файловым системам.
+
+Перемещает файл или каталог. Поддерживает перемещение по файловым системам.
 
 :::zone pivot = "programming-language-python"
 
@@ -334,6 +341,7 @@ FS.Mv("source file or directory", "destination directory", true)
 ::: zone-end
 
 ### <a name="write-file"></a>Запись файла
+
 Записывает заданную строку в файл в кодировке UTF-8.
 
 :::zone pivot = "programming-language-python"
@@ -360,6 +368,7 @@ FS.Put("file path", "content to write", true) // Set the last parameter as True 
 ::: zone-end
 
 ### <a name="append-content-to-a-file"></a>Добавление содержимого в файл
+
 Добавляет заданную строку в файл в кодировке UTF-8.
 
 :::zone pivot = "programming-language-python"
@@ -386,6 +395,7 @@ FS.Append("file path","content to append",true) // Set the last parameter as Tru
 ::: zone-end
 
 ### <a name="delete-file-or-directory"></a>Удалить файл или каталог
+
 Удаляет файл или каталог.
 
 :::zone pivot = "programming-language-python"
@@ -414,9 +424,9 @@ FS.Rm("file path", true) // Set the last parameter as True to remove all files a
 
 ## <a name="credentials-utilities"></a>Служебные программы для учетных данных
 
-Служебные программы Мсспаркутилс Credential можно использовать для получения маркеров доступа к связанным службам и управления секретами в Azure Key Vault. 
+Вы можете использовать служебные программы Мсспаркутилс Credential для получения маркеров доступа к связанным службам и управления секретами в Azure Key Vault. 
 
-Выполните следующую команду, чтобы получить общие сведения о доступных методах:
+Чтобы получить общие сведения о доступных методах, выполните следующую команду:
 
 :::zone pivot = "programming-language-python"
 
@@ -454,6 +464,7 @@ putSecret(akvName, secretName, secretValue): puts AKV secret for a given akvName
 ```
 
 ### <a name="get-token"></a>Получение токена
+
 Возвращает маркер Azure AD для данной аудитории, имя (необязательно). В следующей таблице перечислены все доступные типы аудиторий. 
 
 |Тип аудитории|Ключ аудитории|
@@ -492,6 +503,7 @@ mssparkutils.credentials.getToken("audience Key")
 
 
 ### <a name="validate-token"></a>Проверка токена
+
 Возвращает значение true, если срок действия токена не истек.
 
 :::zone pivot = "programming-language-python"
@@ -519,6 +531,7 @@ mssparkutils.credentials.isValidToken("your token")
 
 
 ### <a name="get-connection-string-or-credentials-for-linked-service"></a>Получение строки подключения или учетных данных для связанной службы
+
 Возвращает строку подключения или учетные данные для связанной службы. 
 
 :::zone pivot = "programming-language-python"
@@ -546,6 +559,7 @@ mssparkutils.credentials.getConnectionStringOrCreds("linked service name")
 
 
 ### <a name="get-secret-using-workspace-identity"></a>Получение секрета с помощью удостоверения рабочей области
+
 Возвращает Azure Key Vault секрет для указанного Azure Key Vault имени, имени секрета и имени связанной службы с помощью удостоверения рабочей области. Убедитесь, что вы настроили доступ к [Azure Key Vault](#configure-access-to-azure-key-vault) соответствующим образом.
 
 :::zone pivot = "programming-language-python"
@@ -573,6 +587,7 @@ mssparkutils.credentials.getSecret("azure key vault name","secret name","linked 
 
 
 ### <a name="get-secret-using-user-credentials"></a>Получение секрета с помощью учетных данных пользователя
+
 Возвращает Azure Key Vault секрет для указанного Azure Key Vault имени, имени секрета и имени связанной службы с помощью учетных данных пользователя. 
 
 :::zone pivot = "programming-language-python"
@@ -599,6 +614,7 @@ mssparkutils.credentials.getSecret("azure key vault name","secret name")
 ::: zone-end
 
 ### <a name="put-secret-using-workspace-identity"></a>Размещение секрета с помощью удостоверения рабочей области
+
 Помещает Azure Key Vault секрет для указанного Azure Key Vault имени, имени секрета и имени связанной службы с помощью удостоверения рабочей области. Убедитесь, что вы настроили доступ к [Azure Key Vault](#configure-access-to-azure-key-vault) соответствующим образом.
 
 :::zone pivot = "programming-language-python"
@@ -626,6 +642,7 @@ mssparkutils.credentials.putSecret("azure key vault name","secret name","secret 
 
 
 ### <a name="put-secret-using-user-credentials"></a>Размещение секрета с использованием учетных данных пользователя
+
 Помещает Azure Key Vault секрет для указанного Azure Key Vault имени, имени секрета и имени связанной службы, используя учетные данные пользователя. 
 
 :::zone pivot = "programming-language-python"
@@ -654,7 +671,7 @@ mssparkutils.credentials.putSecret("azure key vault name","secret name","secret 
 
 ## <a name="environment-utilities"></a>Служебные программы 
 
-Выполните следующую команду, чтобы получить общие сведения о доступных методах:
+Выполните следующие команды, чтобы получить общие сведения о доступных методах.
 
 :::zone pivot = "programming-language-python"
 
@@ -689,6 +706,7 @@ getClusterId(): returns cluster id
 ```
 
 ### <a name="get-user-name"></a>Получить имя пользователя
+
 Возвращает имя текущего пользователя.
 
 :::zone pivot = "programming-language-python"
@@ -715,6 +733,7 @@ mssparkutils.env.getUserName()
 ::: zone-end
 
 ### <a name="get-user-id"></a>Получить идентификатор пользователя
+
 Возвращает идентификатор текущего пользователя.
 
 :::zone pivot = "programming-language-python"
@@ -741,6 +760,7 @@ mssparkutils.env.getUserId()
 ::: zone-end
 
 ### <a name="get-job-id"></a>Получение идентификатора задания
+
 Возвращает идентификатор задания.
 
 :::zone pivot = "programming-language-python"
@@ -767,6 +787,7 @@ mssparkutils.env.getJobId()
 ::: zone-end
 
 ### <a name="get-workspace-name"></a>Получить имя рабочей области
+
 Возвращает имя рабочей области.
 
 :::zone pivot = "programming-language-python"
@@ -793,6 +814,7 @@ mssparkutils.env.getWorkspaceName()
 ::: zone-end
 
 ### <a name="get-pool-name"></a>Получение имени пула
+
 Возвращает имя пула Spark.
 
 :::zone pivot = "programming-language-python"
@@ -819,6 +841,7 @@ mssparkutils.env.getPoolName()
 ::: zone-end
 
 ### <a name="get-cluster-id"></a>Получить идентификатор кластера
+
 Возвращает идентификатор текущего кластера.
 
 :::zone pivot = "programming-language-python"
@@ -845,6 +868,7 @@ mssparkutils.env.getClusterId()
 ::: zone-end
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 - [Ознакомьтесь с примерами записных книжек синапсе](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks)
 - [Краткое руководство. Создание пула Apache Spark (предварительная версия) в Azure Synapse Analytics с помощью веб-инструментов](../quickstart-apache-spark-notebook.md)
 - [Что такое Apache Spark в Azure Synapse Analytics](apache-spark-overview.md)

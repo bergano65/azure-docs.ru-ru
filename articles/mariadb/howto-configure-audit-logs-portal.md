@@ -1,17 +1,17 @@
 ---
 title: Доступ к журналам аудита — портал Azure — база данных Azure для MariaDB
 description: В этой статье описывается, как настроить и получить доступ к журналам аудита в базе данных Azure для MariaDB из портал Azure.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/24/2020
-ms.openlocfilehash: 30ca62305c325943e17ee574873cfbbbaee97f77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f1f3cda4ed9cdac6f6e03e88601b0a35d5c53faf
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86113043"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533452"
 ---
 # <a name="configure-and-access-audit-logs-in-the-azure-portal"></a>Настройка и доступ к журналам аудита в портал Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "86113043"
 
 Включение и Настройка ведения журнала аудита.
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
 1. Выберите сервер Базы данных Azure для MariaDB.
 
@@ -46,7 +46,7 @@ ms.locfileid: "86113043"
 1. Добавьте всех пользователей MariaDB, которые будут исключены из ведения журнала, путем обновления параметра **audit_log_exclude_users** . Укажите пользователей, указав имя пользователя MariaDB.
     ![Исключить пользователей из журнала аудита](./media/howto-configure-audit-logs-portal/audit-log-exclude-users.png)
 
-1. После изменения параметров нажмите кнопку **Сохранить**. Также вы можете нажать кнопку **Отменить**, чтобы отменить изменения.
+1. После изменения параметров нажмите кнопку **Сохранить**. Также вы можете нажать кнопку **Отменить** , чтобы отменить изменения.
     ![Сохранить](./media/howto-configure-audit-logs-portal/save-parameters.png)
 
 ## <a name="set-up-diagnostic-logs"></a>Настройка журналов диагностики
