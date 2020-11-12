@@ -3,17 +3,17 @@ title: Документация по Базе данных Azure для MySQL
 summary: База данных Azure для MySQL — это служба реляционных баз данных на основе MySQL Community Edition. Для размещения базы данных MySQL в Azure можно использовать Отдельный сервер или Гибкий сервер (предварительная версия). Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и динамическое масштабирование.
 metadata:
   description: База данных Azure для MySQL — это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на базе MySQL Community Edition. Для развертывания базы данных MySQL в Azure можно выбрать Отдельный сервер или Гибкий сервер (предварительная версия).
-  author: ajlam
-  ms.author: andrela
+  author: savjani
+  ms.author: pariks
   ms.date: 09/03/2019
   ms.service: mysql
   ms.topic: landing-page
-  ms.openlocfilehash: 9ac045aac0587f7080ab7df277522674ca603040
-  ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+  ms.openlocfilehash: 82c736b3256a099aa0dbd2edca14f402a3b935be
+  ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/26/2020
-  ms.locfileid: "92546302"
+  ms.lasthandoff: 11/12/2020
+  ms.locfileid: "94543040"
 landingContent:
 - title: Сведения о Базе данных Azure для MySQL
   linkLists:

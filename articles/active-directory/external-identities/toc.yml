@@ -10,6 +10,8 @@
           href: what-is-b2b.md
         - name: Что собой представляет Azure AD B2C?
           href: ../../active-directory-b2c/overview.md
+        - name: Новые возможности в Документации Майкрософт
+          href: whats-new-docs.md
     - name: Краткие руководства
       items:
         - name: Добавление гостевых пользователей на портале

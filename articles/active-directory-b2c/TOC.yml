@@ -7,6 +7,8 @@
       href: overview.md
     - name: Обзор технических возможностей и компонентов
       href: technical-overview.md
+    - name: Новые возможности в Документации Майкрософт
+      href: whats-new-docs.md
 - name: Краткие руководства
   expanded: true
   items:

@@ -72,7 +72,7 @@
           href: container-instances-vnet.md
         - name: Развертывание из Реестра контейнеров Azure
           href: container-instances-using-azure-container-registry.md
-        - name: Развертывание с помощью GitHub Actions
+        - name: Развертывание с помощью действий GitHub
           href: container-instances-github-action.md
         - name: Шифрование данных развертывания
           href: container-instances-encrypt-data.md
