@@ -4,25 +4,25 @@ description: включить файл
 services: digital-twins
 ms.service: digital-twins
 ms.topic: include
-ms.date: 07/09/2020
+ms.date: 11/11/2020
 author: deepakpalled
 ms.author: dpalled
 manager: diviso
 ms.custom: include file
-ms.openlocfilehash: 7259e1981f873c8385a02fe4f353dcdda495f823
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5ec1f71d13d5d2fb3af86c1c63d5e61ce13d2c82
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287425"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94553241"
 ---
 ### <a name="property-limits"></a>Ограничения свойств
 
-Ограничения свойств "аналитика временных рядов Azure" увеличились до 1 000 с максимальной закрепления 800 в Gen1. Предоставленные свойства событий имеют соответствующие столбцы JSON, CSV и диаграммы, которые можно просмотреть в [обозревателе Gen2 временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-quickstart).
+Ограничения для свойств "аналитика временных рядов Azure" увеличены до 1 000 для горячего хранения и не имеют ограничения на количество свойств для холодного хранения. Предоставленные свойства событий имеют соответствующие столбцы JSON, CSV и диаграммы, которые можно просмотреть в [обозревателе Gen2 временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-quickstart).
 
-| номер SKU | Максимальное число свойств |
+| Номер SKU | Максимальное число свойств |
 | --- | --- |
-| Gen2 (L1) | 1 000 свойства (столбцы) |
+| Gen2 (L1) | 1 000. свойства (столбцы) для горячего хранения и неограниченные для холодного хранения|
 | Gen1 (S1) | 600 свойства (столбцы) |
 | Gen1 (S2) | 800 свойства (столбцы) |
 

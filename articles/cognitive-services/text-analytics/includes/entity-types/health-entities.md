@@ -9,12 +9,12 @@ ms.subservice: text-analytics
 ms.topic: include
 ms.date: 10/02/2020
 ms.author: aahi
-ms.openlocfilehash: 44bce7c6dd2443ea0ed1851325a5b84f325f5fae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 308b2a9cb00f44f0e330d4fef5592d8855ee3394
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91779157"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94553113"
 ---
 ## <a name="text-analytics-for-health-categories-entities-and-attributes"></a>Анализ текста категорий работоспособности, сущностей и атрибутов
 
@@ -49,13 +49,13 @@ ms.locfileid: "91779157"
 :::image type="content" source="../../media/ta-for-health/anatomy-entities-body-structure.png" alt-text="Пример сущности структуры Body.":::
 
 
-:::image type="content" source="../../media/ta-for-health/anatomy-entities-body-structure-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/anatomy-entities-body-structure-2.png" alt-text="Развернутый пример сущности структуры Body.":::
 
 ### <a name="attributes"></a>Атрибуты
 
 Точки **направления направления,** например: Left, бокового смещения, Upper, апостериорные, характеризующая структуру текста.
 
-:::image type="content" source="../../media/ta-for-health/anatomy-attributes.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/anatomy-attributes.png" alt-text="Пример атрибута направления.":::
 
 ### <a name="supported-relations"></a>Поддерживаемые отношения
 
@@ -67,20 +67,20 @@ ms.locfileid: "91779157"
 
 **Age** — все возрастные термины и фразы, включая данные о пациентах, членах семьи и других. Например, 40-летняя-Old, 51 Yo, 3 месяца Old, взрослого, новорожденный, елдерли, Титов, Minor, Ближний возраст.
 
-:::image type="content" source="../../media/ta-for-health/age-entity.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/age-entity.png" alt-text="Пример сущности Age.":::
 
-:::image type="content" source="../../media/ta-for-health/age-entity-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/age-entity-2.png" alt-text="Еще один пример сущности Age.":::
 
 
 **Пол** -условия, которые открывают Пол субъекта. Например, «штекер», «женщина», «женщина», «жентлеман».
 
-:::image type="content" source="../../media/ta-for-health/gender-entity.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/gender-entity.png" alt-text="Пример сущности пола.":::
 
 ### <a name="attributes"></a>Атрибуты
 
 **RELATIONAL_OPERATOR** -фразы, которые выражают отношение между демографическими сущностями и дополнительными сведениями.
 
-:::image type="content" source="../../media/ta-for-health/relational-operator.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/relational-operator.png" alt-text="Пример реляционного оператора.":::
 
 ## <a name="examinations"></a>Экзаменов
 
@@ -88,31 +88,31 @@ ms.locfileid: "91779157"
 
 **EXAMINATION_NAME** — диагностические процедуры и тесты. Например, MRI, ЕКГ, ВИЧ Test, хемоглобин, плателетс Count, такие системы масштабирования, как *Бристол стул Scale*.
 
-:::image type="content" source="../../media/ta-for-health/exam-name-entities.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/exam-name-entities.png" alt-text="Пример сущности экзамена.":::
 
-:::image type="content" source="../../media/ta-for-health/exam-name-entities-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/exam-name-entities-2.png" alt-text="Еще один пример сущности «исследование имени».":::
 
 ### <a name="attributes"></a>Атрибуты
 
 **Направление** — условия, характеризующие изучение.
 
-:::image type="content" source="../../media/ta-for-health/exam-direction-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/exam-direction-attribute.png" alt-text="Пример атрибута Direction с сущностью имени для проверки.":::
 
-**MEASUREMENT_UNIT** — единица проверки. Например, в *хемоглобин > 9,5 g/DL*термин *g/DL* является единицей для теста *хемоглобин* .
+**MEASUREMENT_UNIT** — единица проверки. Например, в *хемоглобин > 9,5 g/DL* термин *g/DL* является единицей для теста *хемоглобин* .
 
-:::image type="content" source="../../media/ta-for-health/exam-unit-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/exam-unit-attribute.png" alt-text="Пример атрибута единицы измерения с сущностью имени для изучения.":::
 
-**MEASUREMENT_VALUE** — значение для проверки. Например, в *хемоглобин > 9,5 g/DL*термин *9,5* является значением для теста *хемоглобин* .
+**MEASUREMENT_VALUE** — значение для проверки. Например, в *хемоглобин > 9,5 g/DL* термин *9,5* является значением для теста *хемоглобин* .
 
-:::image type="content" source="../../media/ta-for-health/exam-value-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/exam-value-attribute.png" alt-text="Пример атрибута значения измерения с сущностью имени для изучения.":::
 
 **RELATIONAL_OPERATOR** — фразы, которые выражают отношение между проверкой и дополнительной информацией. Например, необходимое значение измерения для проверки целевого объекта.
 
-:::image type="content" source="../../media/ta-for-health/exam-relational-operator-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/exam-relational-operator-attribute.png" alt-text="Пример реляционного оператора с сущностью &quot;исследование имени&quot;.":::
 
 **Время** — временные термины, связанные с началом и (или) длиной (продолжительность) проверки. Например, когда произошел тест.
 
-:::image type="content" source="../../media/ta-for-health/exam-time-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/exam-time-attribute.png" alt-text="Пример атрибута времени с сущностью имени для проверки.":::
 
 ### <a name="supported-relations"></a>Поддерживаемые отношения
 
@@ -128,7 +128,7 @@ ms.locfileid: "91779157"
 
 **Ген** — все упоминания генах. Например, МТРР, F2.
 
-:::image type="content" source="../../media/ta-for-health/genomics-entities.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/genomics-entities.png" alt-text="Пример сущности ген.":::
 
 **Вариант** — все упоминания о вариантах ген. Например, c. 524C>T, (МТРР): r.1462_1557del96
   
@@ -138,17 +138,17 @@ ms.locfileid: "91779157"
   
 **ADMINISTRATIVE_EVENT** — события, связанные с системой здравоохранения, но с природой административного или административного администрирования. Например, регистрация, предоставление, пробная версия, ввод в процессе обучения, перемещение, поразрядное использование, больницы и больницы остаются в курсе. 
 
-:::image type="content" source="../../media/ta-for-health/healthcare-event-entity.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/healthcare-event-entity.png" alt-text="Пример сущности события здравоохранения.":::
 
 **CARE_ENVIRONMENT** — среда или расположение, на которых пациентов. Например, в экстренной комнате, кабинете врача, кардиое, хоспицее, больницы.
 
-:::image type="content" source="../../media/ta-for-health/healthcare-environment-entity.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/healthcare-environment-entity.png" alt-text="На этом снимке экрана показан пример сущности среды здравоохранения.":::
 
 **HEALTHCARE_PROFESSION** — специалист по здравоохранения, лицензированный или не лицензированный. Например, дантисту, пасологист, неурологист, радиологист, фармаЦист, Нутритионист, Physical серапист, Чиропрактор.
 
-:::image type="content" source="../../media/ta-for-health/healthcare-profession-entity.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/healthcare-profession-entity.png" alt-text="На этом снимке экрана показан еще один пример сущности среды здравоохранения.":::
 
-:::image type="content" source="../../media/ta-for-health/healthcare-profession-entity-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/healthcare-profession-entity-2.png" alt-text="Еще один пример сущности среды здравоохранения.":::
 
 ## <a name="medical-condition"></a>Медицинское условие
 
@@ -156,15 +156,15 @@ ms.locfileid: "91779157"
 
 **Диагностика** — болезни, синдром, опасные. Например, молочной железы рака, Алзеимер, ХТН, CHF, Спинал шнур травмы.
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-entity.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-entity.png" alt-text="Пример сущности медицинских условий.":::
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-entity-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-entity-2.png" alt-text="Еще один пример сущности медицинских условий.":::
 
 **SYMPTOM_OR_SIGN** — субъективная или целевая свидетельство болезни или других диагностики. Например, сундука трудности, головной боль, диззинесс, поспешны, РЫДАЕТ, Абдомен было мягким, хорошим бовел звуковым, а также науришед.
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-symptom-entity.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-symptom-entity.png" alt-text="Пример записи медицинских условий или сущности симптома.":::
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-symptom-entity-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-symptom-entity-2.png" alt-text="Еще один пример сущности «медицинское условие» или «симптом».":::
 
 ### <a name="attributes"></a>Атрибуты
 
@@ -178,41 +178,41 @@ ms.locfileid: "91779157"
 6.  Масштаб условия. в некоторых случаях условие характеризуется масштабом, который является конечным упорядоченным списком значений. Например, пациентов with этап III панкреатик рака.
 7.  Курс условия: термин, относящийся к курсу или прогрессу условия, например улучшению, ворсенинг, устранение проблемы. 
 
-:::image type="content" source="../../media/ta-for-health/condition-qualifier-diagnosis.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/condition-qualifier-diagnosis.png" alt-text="Пример атрибута квалификатора условия и сущности диагноза.":::
 
-:::image type="content" source="../../media/ta-for-health/condition-qualifier-diagnosis-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/condition-qualifier-diagnosis-2.png" alt-text="Еще один пример атрибута квалификатора условия и сущности диагноза.":::
 
-:::image type="content" source="../../media/ta-for-health/conditional-qualifier-symptom-medication.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/conditional-qualifier-symptom-medication.png" alt-text="Пример атрибута квалификатора Condition с сущностями симптома и лечения.":::
 
-:::image type="content" source="../../media/ta-for-health/condition-qualifier-diagnosis-3.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/condition-qualifier-diagnosis-3.png" alt-text="На этом снимке экрана показан еще один пример атрибута квалификатора условия с сущностью диагноза.":::
 
-:::image type="content" source="../../media/ta-for-health/condition-qualifier-symptom.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/condition-qualifier-symptom.png" alt-text="На этом снимке экрана показан дополнительный пример атрибута квалификатора условия с сущностью диагноза.":::
 
 Правила **направления текста** , характеризующие состояние медицинских условий.
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-direction-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-direction-attribute.png" alt-text="Пример атрибута Direction с сущностью &quot;медицинское условие&quot;.":::
 
 **Периодичность — частота** возникновения или возникновения медицинских условий.
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-frequency-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-frequency-attribute.png" alt-text="Пример атрибута Frequency с сущностью &quot;медицинское условие&quot;.":::
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-frequency-attribute-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-frequency-attribute-2.png" alt-text="Еще один пример атрибута Direction с сущностью &quot;симптом&quot; или &quot;Sign&quot;.":::
 
-**MEASUREMENT_UNIT** — единица, которая характеризует медицинскую ситуацию. Например, в *1,5 x2x1 cm тумор*термин « *cm* » является единицей измерения для *тумор*. 
+**MEASUREMENT_UNIT** — единица, которая характеризует медицинскую ситуацию. Например, в *1,5 x2x1 cm тумор* термин « *cm* » является единицей измерения для *тумор*. 
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-measure-unit-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-measure-unit-attribute.png" alt-text="Пример атрибута единицы измерения с сущностью &quot;медицинское условие&quot;.":::
 
-**MEASUREMENT_VALUE** — значение, которое характеризует медицинскую ситуацию. Например, в *1,5 x2x1 cm тумор*термин *1.5 x2x1* — это значение измерения для *тумор*. 
+**MEASUREMENT_VALUE** — значение, которое характеризует медицинскую ситуацию. Например, в *1,5 x2x1 cm тумор* термин *1.5 x2x1* — это значение измерения для *тумор*. 
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-measure-value-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-measure-value-attribute.png" alt-text="На снимке экрана показан пример атрибута Direction с сущностью &quot;симптом&quot; или &quot;Sign&quot;.":::
 
 **RELATIONAL_OPERATOR** -фразы, которые выражают отношение между дополнительными сведениями об медицинских условиях. Например, значение времени или измерения. 
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-relational-operator.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-relational-operator.png" alt-text="На снимке экрана показан еще один пример атрибута Direction с сущностью &quot;симптом&quot; или &quot;Sign&quot;.":::
 
 **Временные условия** , связанные с началом и (или) длиной (продолжительность) медицинских условий. Например, при запуске симптома (SES) или при возникновении болезни.
 
-:::image type="content" source="../../media/ta-for-health/medical-condition-time-attribute.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medical-condition-time-attribute.png" alt-text="На снимке экрана показан дополнительный пример атрибута Direction с сущностью &quot;симптом&quot; или &quot;Sign&quot;.":::
 
 ### <a name="supported-relations"></a>Поддерживаемые отношения
 
@@ -228,37 +228,37 @@ ms.locfileid: "91779157"
 
 **MEDICATION_CLASS** — набор медикатионс с аналогичным механизмом действия, связанным режимом действия, аналогичной химическим структурой и/или используется для обработки одной и той же болезни. Например, ACE инхибитор, опиоид, антибиотикс, релиеверс.
 
-:::image type="content" source="../../media/ta-for-health/medication-entities-class.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-entities-class.png" alt-text="Пример сущности класса лечения.":::
 
 **MEDICATION_NAME** – лечения упоминания, включая фирменные имена и названия, отличные от фирменных. Например, Адвил, ибупрофен.
 
-:::image type="content" source="../../media/ta-for-health/medication-entities-name.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-entities-name.png" alt-text="Пример сущности лечения Name.":::
 
 ### <a name="attributes"></a>Атрибуты
 
-**Досаже** — объем лечения заказа. Например, дечлориде решение *1000 ml*для натрия.
+**Досаже** — объем лечения заказа. Например, дечлориде решение *1000 ml* для натрия.
 
-:::image type="content" source="../../media/ta-for-health/medication-dosage.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-dosage.png" alt-text="Пример атрибута лечения досаже.":::
 
 **Периодичность** — частота выполнения лечения.
 
-:::image type="content" source="../../media/ta-for-health/medication-frequency.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-frequency.png" alt-text="Пример атрибута частоты лечения.":::
 
-:::image type="content" source="../../media/ta-for-health/medication-frequency-2.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-frequency-2.png" alt-text="Еще один пример атрибута частоты лечения.":::
 
 **MEDICATION_FORM** — форма лечения. Например, Solution, пилюля, капсула, планшет, Patch, GEL, Paste, пенопластовый, распылитель, падения, сируп.
 
-:::image type="content" source="../../media/ta-for-health/medication-form.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-form.png" alt-text="Пример атрибута формы лечения.":::
 
 **MEDICATION_ROUTE** — метод администрирования лечения. Например, устные, вагинал, IV, епидурал, topicd, инхалед.
 
-:::image type="content" source="../../media/ta-for-health/medication-route.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-route.png" alt-text="Пример атрибута лечения Route.":::
 
 **RELATIONAL_OPERATOR** -фразы, которые выражают отношение между лечения и дополнительной информацией. Например, требуемое значение измерения.
 
-:::image type="content" source="../../media/ta-for-health/medication-relational-operator.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-relational-operator.png" alt-text="На снимке экрана показан пример атрибута реляционного оператора с сущностью лечения.":::
 
-:::image type="content" source="../../media/ta-for-health/medication-time.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/medication-time.png" alt-text="На снимке экрана показан еще один пример атрибута реляционного оператора с сущностью лечения.":::
 
 ### <a name="supported-relations"></a>Поддерживаемые отношения
 
@@ -274,25 +274,25 @@ ms.locfileid: "91779157"
 
 **TREATMENT_NAME** — серапеутик процедуры. Например, завяз replacement хирургии, кость марров трансплант, Тави, диету.
 
-:::image type="content" source="../../media/ta-for-health/treatment-entities-name.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/treatment-entities-name.png" alt-text="Пример сущности имени лечения.":::
 
 ### <a name="attributes"></a>Атрибуты
 
 Правила **направления,** которые характеризуют обработку.
 
-:::image type="content" source="../../media/ta-for-health/treatment-direction.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/treatment-direction.png" alt-text="На снимке экрана показан пример атрибута направления лечения.":::
 
 **Периодичность** — частота возникновения или возникновения таких ситуаций.
 
-:::image type="content" source="../../media/ta-for-health/treatment-frequency.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/treatment-frequency.png" alt-text="На снимке экрана показан еще один пример атрибута направления лечения.":::
  
 **RELATIONAL_OPERATOR** -фразы, которые выражают связь между лечения и дополнительной информацией.  Например, сколько времени прошло из предыдущей процедуры.
 
-:::image type="content" source="../../media/ta-for-health/treatment-relational-operator.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/treatment-relational-operator.png" alt-text="Пример атрибута реляционного оператора обработки.":::
 
 **Временные условия** , связанные с началом и (или) длиной (продолжительность) обработки. Например, Дата присвоения обработки.
 
-:::image type="content" source="../../media/ta-for-health/treatment-time.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/treatment-time.png" alt-text="На снимке экрана показан пример атрибута времени обработки.":::
 
 
 ### <a name="supported-relations"></a>Поддерживаемые отношения
@@ -307,4 +307,4 @@ ms.locfileid: "91779157"
 
 **FAMILY_RELATION** — упоминание родственников субъекта. Например, отец, дочерний элемент, родственные элементы, родители.
 
-:::image type="content" source="../../media/ta-for-health/family-relation.png" alt-text="Пример сущности структуры Body.":::
+:::image type="content" source="../../media/ta-for-health/family-relation.png" alt-text="На снимке экрана показан еще один пример атрибута времени обработки.":::
