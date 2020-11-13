@@ -10,13 +10,13 @@ ms.workload: identity
 ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
-ms.date: 02/10/2020
-ms.openlocfilehash: 3106e5a640ed66828558078e6986979ad7195450
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/12/2020
+ms.openlocfilehash: 68a7dd1b9a7af9f2667785c8b822b2771510d00e
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85386221"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94562825"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Мониторинг Azure AD B2C с помощью Azure Monitor
 
@@ -30,221 +30,294 @@ ms.locfileid: "85386221"
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+Из этой статьи вы узнаете, как передавать журналы в рабочую область Azure Log Analytics. Затем можно создать панель мониторинга или создать оповещения, основанные на действиях пользователей Azure AD B2C.
 
-Чтобы выполнить действия, описанные в этой статье, необходимо развернуть шаблон Azure Resource Manager с помощью модуля Azure PowerShell.
+## <a name="deployment-overview"></a>Общие сведения о развертывании
 
-* [Модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 6.13.1 или выше
+Azure AD B2C использует [мониторинг Azure Active Directory](../active-directory/reports-monitoring/overview-monitoring.md). Чтобы включить *параметры диагностики* в Azure Active Directory в клиенте Azure AD B2C, используйте [Azure лигхсаусе](../lighthouse/concepts/azure-delegated-resource-management.md) для [делегирования ресурса](../lighthouse/concepts/azure-delegated-resource-management.md), который позволяет Azure AD B2C ( **поставщику услуг** ) управлять ресурсом Azure AD ( **клиент** ). После выполнения действий, описанных в этой статье, вы получите доступ к группе ресурсов *Azure-AD-B2C-Monitor* , содержащей [рабочую область log Analytics](../azure-monitor/learn/quick-create-workspace.md) на портале **Azure AD B2C** . Вы также сможете передавать журналы из Azure AD B2C в рабочую область Log Analytics.
 
-Можно также использовать [Azure Cloud Shell](https://shell.azure.com), который включает последнюю версию модуля Azure PowerShell.
+Во время этого развертывания вы можете авторизовать пользователя или группу в каталоге Azure AD B2C, чтобы настроить экземпляр рабочей области Log Analytics в клиенте, который содержит подписку Azure. Чтобы создать авторизацию, необходимо развернуть шаблон [Azure Resource Manager](../azure-resource-manager/index.yml) в клиенте Azure AD, который содержит подписку.
 
-## <a name="delegated-resource-management"></a>Управление делегированными ресурсами
+На следующей схеме показаны компоненты, которые вы настраиваете в клиентах Azure AD и Azure AD B2C.
 
-Azure AD B2C использует [мониторинг Azure Active Directory](../active-directory/reports-monitoring/overview-monitoring.md). Чтобы включить *параметры диагностики* в Azure Active Directory в клиенте Azure AD B2C, используйте [Управление делегированными ресурсами](../lighthouse/concepts/azure-delegated-resource-management.md).
+![Проекция группы ресурсов](./media/azure-monitor/resource-group-projection.png)
 
-Вы уполномочены пользователю или группе в каталоге Azure AD B2C ( **поставщик услуг**) настроить экземпляр Azure Monitor в клиенте, который содержит подписку Azure ( **клиент**). Чтобы создать авторизацию, необходимо развернуть шаблон [Azure Resource Manager](../azure-resource-manager/index.yml) в клиенте Azure AD, который содержит подписку. В следующих разделах описывается процесс.
+Во время этого развертывания вы настроите клиент Azure AD B2C и клиент Azure AD, где будет размещена Log Analytics Рабочая область. Учетной записи, используемой для запуска развертывания, должна быть назначена роль [глобального администратора](../active-directory/roles/permissions-reference.md#limit-use-of-global-administrator) в обоих клиентах. Также важно убедиться, что вы вошли в правильный каталог по мере выполнения каждого шага, как описано выше.
 
-## <a name="create-or-choose-resource-group"></a>Создание или выбор группы ресурсов
+## <a name="1-create-or-choose-resource-group"></a>1. Создайте или выберите группу ресурсов.
 
-Это группа ресурсов, содержащая целевую учетную запись хранения Azure, концентратор событий или рабочую область Log Analytics для получения данных от Azure Monitor. Имя группы ресурсов указывается при развертывании шаблона Azure Resource Manager.
+Сначала создайте или выберите группу ресурсов, содержащую целевую рабочую область Log Analytics, которая будет принимать данные от Azure AD B2C. Имя группы ресурсов указывается при развертывании шаблона Azure Resource Manager.
 
-[Создайте группу ресурсов](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) или выберите существующую в клиенте Azure Active Directory (Azure AD), который содержит подписку Azure, а *не* в каталоге, содержащем клиент Azure AD B2C.
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. На панели инструментов портала щелкните значок **Каталог + подписка** , а затем выберите каталог, содержащий ваш **клиент Azure AD**.
+1. [Создайте группу ресурсов](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) или выберите существующую. В этом примере используется группа ресурсов с именем *Azure-AD-B2C-Monitor*.
 
-В этом примере используется группа ресурсов с именем *Azure-AD-B2C-Monitor* в *центральном регионе США* .
+## <a name="2-create-a-log-analytics-workspace"></a>2. Создание рабочей области Log Analytics
 
-## <a name="delegate-resource-management"></a>Делегирование управления ресурсами
+**Log Analytics Рабочая область** — это уникальная среда для Azure Monitor данных журнала. Эта Рабочая область Log Analytics используется для получения данных из [журналов аудита](view-audit-logs.md)Azure AD B2C, а затем для их визуализации с помощью запросов и книг, а также для создания оповещений.
 
-Затем соберите следующие сведения:
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. На панели инструментов портала щелкните значок **Каталог + подписка** , а затем выберите каталог, содержащий ваш **клиент Azure AD**.
+1. [Создайте рабочую область log Analytics](../azure-monitor/learn/quick-create-workspace.md). В этом примере используется рабочая область Log Analytics с именем *AzureAdB2C* в группе ресурсов с именем *Azure-AD-B2C-Monitor*.
 
-**Идентификатор** каталога Azure AD B2C каталога (также известного как идентификатор клиента).
+## <a name="3-delegate-resource-management"></a>3. Делегирование управления ресурсами
 
-1. Войдите в [портал Azure](https://portal.azure.com/) в качестве пользователя с ролью *администратора пользователей* (или выше).
-1. Выберите значок **Каталог и подписка** в верхней панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
-1. Выберите **Azure Active Directory**, а затем — **свойства**.
-1. Запишите **идентификатор каталога**.
+На этом шаге вы выбираете Azure AD B2C клиента в качестве **поставщика услуг**. Вы также определяете разрешения, необходимые для назначения соответствующих встроенных ролей Azure группам в клиенте Azure AD.
 
-**Идентификатор объекта** Azure AD B2C группы или пользователя, которым вы хотите предоставить разрешение *участнику* для группы ресурсов, созданной ранее в каталоге, содержащем подписку.
+### <a name="31-get-your-azure-ad-b2c-tenant-id"></a>3,1. Получение идентификатора клиента Azure AD B2C
 
-Чтобы упростить управление, мы рекомендуем использовать *группы* пользователей Azure AD для каждой роли, позволяя добавлять или удалять отдельных пользователей в группе, а не назначать разрешения непосредственно этому пользователю. В этом пошаговом руководстве вы добавите пользователя.
+Сначала получите **идентификатор клиента** Azure AD B2C каталога (также известного как идентификатор каталога).
 
-1. Выбрав **Azure Active Directory** все еще выбрано в портал Azure, выберите **Пользователи**, а затем выберите пользователя.
-1. Запишите **идентификатор объекта**пользователя.
+1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент **Azure AD B2C** .
+1. Выберите **Azure Active Directory** , а затем — **Обзор**.
+1. Запишите **идентификатор клиента**.
 
-### <a name="create-an-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
+### <a name="32-select-a-security-group"></a>3,2 выберите группу безопасности
 
-Чтобы подключить клиент Azure AD ( **клиент**), создайте [шаблон Azure Resource Manager](../lighthouse/how-to/onboard-customer.md) для вашего предложения со следующими сведениями. `mspOfferName`Значения и `mspOfferDescription` отображаются при просмотре сведений о предложении на [странице поставщики услуг](../lighthouse/how-to/view-manage-service-providers.md) портал Azure.
+Теперь выберите группу Azure AD B2C или пользователя, которой необходимо предоставить разрешение для группы ресурсов, созданной ранее в каталоге, содержащем подписку.  
 
-| Поле   | Определение |
-|---------|------------|
-| `mspOfferName`                     | Имя, описывающее это определение. Например, *Azure AD B2C управляемые службы*. Это значение отображается для клиента в виде заголовка предложения. |
-| `mspOfferDescription`              | Краткое описание предложения. Например, *включает Azure Monitor в Azure AD B2C*.|
-| `rgName`                           | Имя группы ресурсов, созданной ранее в клиенте Azure AD. Например, *Azure-AD-B2C-Monitor*. |
-| `managedByTenantId`                | **Идентификатор каталога** клиента Azure AD B2C (также известный как идентификатор клиента). |
-| `authorizations.value.principalId` | **Идентификатор объекта** группы B2C или пользователя, который будет иметь доступ к ресурсам в этой подписке Azure. В этом пошаговом руководстве укажите идентификатор объекта пользователя, записанный ранее. |
+Чтобы упростить управление, мы рекомендуем использовать *группы* пользователей Azure AD для каждой роли, позволяя добавлять или удалять отдельных пользователей в группе, а не назначать разрешения непосредственно этому пользователю. В этом пошаговом руководстве мы добавим группу безопасности.
 
-Скачайте шаблон Azure Resource Manager и файлы параметров:
+> [!IMPORTANT]
+> Чтобы добавить разрешения для группы Azure AD, **Тип группы** должен быть установлен в значение **Безопасность**. Этот вариант автоматически выбирается при создании группы. Дополнительные сведения см. в статье [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-- [rgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)
-- [rgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)
+1. Выбрав **Azure Active Directory** все еще выбрано в каталоге **Azure AD B2C** , выберите **группы** , а затем выберите группу. Если у вас нет существующей группы, создайте группу **безопасности** , а затем добавьте члены. Для получения дополнительных сведений следуйте процедуре [Создание базовой группы и добавление членов с помощью Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). 
+1. Выберите **Обзор** и запишите **идентификатор объекта** группы.
 
-Затем обновите файл параметров, указав значения, записанные ранее. В следующем фрагменте кода JSON показан пример файла параметров шаблона Azure Resource Manager. Для `authorizations.value.roleDefinitionId` Используйте [встроенное значение роли](../role-based-access-control/built-in-roles.md) для *роли участника* `b24988ac-6180-42a0-ab88-20f7382dd24c` .
+### <a name="33-create-an-azure-resource-manager-template"></a>3,3. Создание шаблона Azure Resource Manager
 
-```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "mspOfferName": {
-            "value": "Azure AD B2C Managed Services"
-        },
-        "mspOfferDescription": {
-            "value": "Enables Azure Monitor in Azure AD B2C"
-        },
-        "rgName": {
-            "value": "azure-ad-b2c-monitor"
-        },
-        "managedByTenantId": {
-            "value": "<Replace with DIRECTORY ID of Azure AD B2C tenant (tenant ID)>"
-        },
-        "authorizations": {
-            "value": [
-                {
-                    "principalId": "<Replace with user's OBJECT ID>",
-                    "principalIdDisplayName": "Azure AD B2C tenant administrator",
-                    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c"
-                }
-            ]
-        }
-    }
-}
-```
+Далее вы создадите шаблон Azure Resource Manager, который предоставляет Azure AD B2C доступ к созданной ранее группе ресурсов Azure AD (например, *Azure-AD-B2C-Monitor* ). Разверните шаблон из примера GitHub с помощью кнопки **развернуть в Azure** , которая открывает портал Azure и позволяет настроить и развернуть шаблон непосредственно на портале. Для выполнения этих действий убедитесь, что вы вошли в клиент Azure AD (а не на Azure AD B2C клиент).
 
-### <a name="deploy-the-azure-resource-manager-templates"></a>Развертывание шаблонов Azure Resource Manager
+1. Войдите на [портал Azure](https://portal.azure.com).
+2. На панели инструментов портала щелкните значок **Каталог + подписка** , а затем выберите каталог, содержащий ваш клиент **Azure AD** .
+3. Используйте кнопку **развертывание в Azure** , чтобы открыть портал Azure и развернуть шаблон непосредственно на портале. Дополнительные сведения см. в разделе [Создание шаблона Azure Resource Manager](../lighthouse/how-to/onboard-customer.md#create-an-azure-resource-manager-template).
 
-После обновления файла параметров разверните шаблон Azure Resource Manager в клиенте Azure в качестве развертывания на уровне подписки. Так как это развертывание уровня подписки, его невозможно инициировать на портале Azure. Развертывание можно выполнить с помощью модуля Azure PowerShell или Azure CLI. Ниже показан метод Azure PowerShell.
+   [![Развертывание в Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Lighthouse-samples%2Fmaster%2Ftemplates%2Frg-delegated-resource-management%2FrgDelegatedResourceManagement.json)
 
-Войдите в каталог, содержащий подписку, с помощью [Connect-азаккаунт](/powershell/azure/authenticate-azureps). Используйте `-tenant` флаг для принудительной проверки подлинности в правильном каталоге.
+5. На странице **Настраиваемое развертывание** введите следующие сведения.
 
-```PowerShell
-Connect-AzAccount -tenant contoso.onmicrosoft.com
-```
+   | Поле   | Определение |
+   |---------|------------|
+   | Подписка |  Выберите каталог, содержащий подписку Azure, в которой была создана группа ресурсов *Azure-AD-B2C-Monitor* . |
+   | Регион| Выберите регион, в котором будет развернут ресурс.  | 
+   | Имя предложения MSP| Имя, описывающее это определение. Например, *Azure AD B2C мониторинг*.  |
+   | Описание предложения MSP| Краткое описание предложения. Например, *включает Azure Monitor в Azure AD B2C*.|
+   | Управляется по идентификатору клиента| **Идентификатор клиента** Azure AD B2C клиента (также известный как идентификатор каталога). |
+   |Authorizations|Укажите массив JSON объектов, включающий Azure AD `principalId` , `principalIdDisplayName` и Azure `roleDefinitionId` . `principalId`— **Идентификатор объекта** группы B2C или пользователя, который будет иметь доступ к ресурсам в этой подписке Azure. В этом пошаговом руководстве укажите идентификатор объекта группы, записанный ранее. Для `roleDefinitionId` Используйте [встроенное значение роли](../role-based-access-control/built-in-roles.md) для *роли участника* `b24988ac-6180-42a0-ab88-20f7382dd24c` .|
+   | Имя группы ресурсов | Имя группы ресурсов, созданной ранее в клиенте Azure AD. Например, *Azure-AD-B2C-Monitor*. |
 
-Используйте командлет [Get-азсубскриптион](/powershell/module/az.accounts/get-azsubscription) , чтобы получить список подписок, к которым текущая учетная запись может получить доступ в клиенте Azure AD. Запишите идентификатор подписки, которую вы хотите проецировать в клиент Azure AD B2C.
+   В следующем примере показан массив авторизаций с одной группой безопасности.
 
-```PowerShell
-Get-AzSubscription
-```
+   ```json
+   [
+       {
+           "principalId": "<Replace with group's OBJECT ID>",
+           "principalIdDisplayName": "Azure AD B2C tenant administrators",
+           "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c"
+       }
+   ]
+   ```
 
-Затем переключитесь на подписку, которую вы хотите проецировать, в клиент Azure AD B2C:
+После развертывания шаблона для завершения проекции ресурсов может потребоваться несколько минут (обычно не более пяти). Вы можете проверить развертывание в клиенте Azure AD и получить сведения о проекции ресурсов. Дополнительные сведения см. в статье [Просмотр поставщиков услуг и управление ими](../lighthouse/how-to/view-manage-service-providers.md).
 
-``` PowerShell
-Select-AzSubscription <subscription ID>
-```
+## <a name="4-select-your-subscription"></a>4. Выберите подписку.
 
-Наконец, разверните файл шаблона Azure Resource Manager и файлы параметров, которые вы скачали и обновили ранее. Замените `Location` значения, `TemplateFile` и `TemplateParameterFile` соответствующим образом.
+После развертывания шаблона и ожидания завершения проекции ресурсов через несколько минут выполните следующие действия, чтобы связать подписку с каталогом Azure AD B2C.
 
-```PowerShell
-New-AzDeployment -Name "AzureADB2C" `
-                 -Location "centralus" `
-                 -TemplateFile "C:\Users\azureuser\Documents\rgDelegatedResourceManagement.json" `
-                 -TemplateParameterFile "C:\Users\azureuser\Documents\rgDelegatedResourceManagement.parameters.json" `
-                 -Verbose
-```
-
-При успешном развертывании шаблона создаются выходные данные, аналогичные приведенным ниже (для краткости результат сокращен):
-
-```Console
-PS /usr/csuser/clouddrive> New-AzDeployment -Name "AzureADB2C" `
->>                  -Location "centralus" `
->>                  -TemplateFile "rgDelegatedResourceManagement.json" `
->>                  -TemplateParameterFile "rgDelegatedResourceManagement.parameters.json" `
->>                  -Verbose
-WARNING: Breaking changes in the cmdlet 'New-AzDeployment' :
-WARNING:  - The cmdlet 'New-AzSubscriptionDeployment' is replacing this cmdlet.
-
-
-WARNING: NOTE : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
-VERBOSE: 7:25:14 PM - Template is valid.
-VERBOSE: 7:25:15 PM - Create template deployment 'AzureADB2C'
-VERBOSE: 7:25:15 PM - Checking deployment status in 5 seconds
-VERBOSE: 7:25:42 PM - Resource Microsoft.ManagedServices/registrationDefinitions '44444444-4444-4444-4444-444444444444' provisioning status is succeeded
-VERBOSE: 7:25:48 PM - Checking deployment status in 5 seconds
-VERBOSE: 7:25:53 PM - Resource Microsoft.Resources/deployments 'rgAssignment' provisioning status is running
-VERBOSE: 7:25:53 PM - Checking deployment status in 5 seconds
-VERBOSE: 7:25:59 PM - Resource Microsoft.ManagedServices/registrationAssignments '11111111-1111-1111-1111-111111111111' provisioning status is running
-VERBOSE: 7:26:17 PM - Checking deployment status in 5 seconds
-VERBOSE: 7:26:23 PM - Resource Microsoft.ManagedServices/registrationAssignments '11111111-1111-1111-1111-111111111111' provisioning status is succeeded
-VERBOSE: 7:26:23 PM - Checking deployment status in 5 seconds
-VERBOSE: 7:26:29 PM - Resource Microsoft.Resources/deployments 'rgAssignment' provisioning status is succeeded
-
-DeploymentName          : AzureADB2C
-Location                : centralus
-ProvisioningState       : Succeeded
-Timestamp               : 1/31/20 7:26:24 PM
-Mode                    : Incremental
-TemplateLink            :
-Parameters              :
-                          Name                   Type                       Value
-                          =====================  =========================  ==========
-                          mspOfferName           String                     Azure AD B2C Managed Services
-                          mspOfferDescription    String                     Enables Azure Monitor in Azure AD B2C
-...
-```
-
-После развертывания шаблона выполнение проекции ресурсов может занять несколько минут. Возможно, потребуется подождать несколько минут (обычно не более пяти), прежде чем переходить к следующему разделу, чтобы выбрать подписку.
-
-## <a name="select-your-subscription"></a>Выберите свою подписку.
-
-После развертывания шаблона и ожидания завершения проекции ресурсов через несколько минут свяжите подписку с Azure AD B2C каталогом, выполнив следующие действия.
-
-1. Выйдите из портал Azure, если вы вошли в **систему** . На этом и следующем шаге выполняется обновление учетных данных в сеансе портала.
-1. Войдите в [портал Azure](https://portal.azure.com) с помощью учетной записи администратора Azure AD B2C.
-1. На панели инструментов портала выберите значок **Каталог + подписка**.
-1. Выберите каталог, который содержит нужную подписку.
+1. Выйдите из портал Azure, если вы вошли в систему (это позволяет обновлять учетные данные сеанса на следующем шаге).
+2. Войдите в [портал Azure](https://portal.azure.com) с помощью учетной записи администратора **Azure AD B2C** . Эта учетная запись должна быть членом группы безопасности, указанной на шаге [делегирования управления ресурсами](#3-delegate-resource-management) .
+3. На панели инструментов портала выберите значок **Каталог + подписка**.
+4. Выберите каталог Azure AD, который содержит подписку Azure и созданную группу ресурсов *Azure-AD-B2C-Monitor* .
 
     ![Переключить каталог](./media/azure-monitor/azure-monitor-portal-03-select-subscription.png)
-1. Убедитесь, что выбран правильный каталог и подписка. В этом примере выбраны все каталоги и подписки.
+
+1. Убедитесь, что выбран правильный каталог и подписка. В этом примере выбираются все каталоги и все подписки.
 
     ![Все каталоги, выбранные в & фильтра подписки на каталог](./media/azure-monitor/azure-monitor-portal-04-subscriptions-selected.png)
 
-## <a name="configure-diagnostic-settings"></a>Настройка параметров диагностики
+## <a name="5-configure-diagnostic-settings"></a>5. Настройка параметров диагностики
 
 Параметры диагностики определяют, где должны отправляться журналы и метрики для ресурса. Возможные места назначения
 
 - [Учетная запись хранения Azure](../azure-monitor/platform/resource-logs-collect-storage.md)
-- Решения для [концентраторов событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
+- Решения [концентраторов событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md)
 - [Рабочая область Log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md)
 
-Если вы этого еще не сделали, создайте экземпляр выбранного типа назначения в группе ресурсов, указанной в [шаблоне Azure Resource Manager](#create-an-azure-resource-manager-template).
+В этом примере мы используем рабочую область Log Analytics для создания панели мониторинга.
 
-### <a name="create-diagnostic-settings"></a>Создание параметров диагностики для отправки журналов платформы и метрик в разные целевые объекты
+### <a name="51-create-diagnostic-settings"></a>5,1. Создание параметров диагностики
 
 Вы можете [создавать параметры диагностики](../active-directory/reports-monitoring/overview-monitoring.md) в портал Azure.
 
 Чтобы настроить параметры мониторинга для журналов действий Azure AD B2C:
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите в [портал Azure](https://portal.azure.com/) с помощью учетной записи администратора Azure AD B2C. Эта учетная запись должна быть членом группы безопасности, указанной на шаге [выберите группу безопасности](#32-select-a-security-group) .
 1. Выберите значок **Каталог и подписка** в верхней панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
 1. Выберите **Azure Active Directory**
 1. В разделе **Мониторинг** выберите **Параметры диагностики**.
-1. Если в ресурсе есть параметры, вы увидите список уже настроенных параметров. Либо выберите **Добавить параметр диагностики** , чтобы добавить новый параметр, либо **измените** параметр, чтобы изменить существующий. Каждый параметр может иметь не более одного из целевых типов.
+1. Если для ресурса существуют параметры, вы увидите список уже настроенных параметров. Выберите **Добавить параметр диагностики** , чтобы добавить новый параметр, или нажмите кнопку **изменить** , чтобы изменить существующий параметр. Каждый параметр может иметь не более одного из целевых типов.
 
     ![Панель "параметры диагностики" в портал Azure](./media/azure-monitor/azure-monitor-portal-05-diagnostic-settings-pane-enabled.png)
 
 1. Присвойте параметру имя, если его еще нет.
-1. Установите флажок для каждого назначения, чтобы отправить журналы. Выберите **настроить** , чтобы указать их параметры, как описано в следующей таблице.
-
-    | Параметр | Описание |
-    |:---|:---|
-    | "Архивировать в учетной записи хранения"; | Имя учетной записи хранения. |
-    | "Передать в концентратор событий"; | Пространство имен, в котором создается концентратор событий (если это первый журнал потоковой передачи) или потоковая передача (если уже есть ресурсы, которые используют потоковую передачу категории журнала в это пространство имен).
-    | Отправка в Log Analytics | Имя рабочей области. |
-
+1. Установите флажок для каждого назначения, чтобы отправить журналы. Выберите **настроить** , чтобы указать их параметры **, как описано в следующей таблице**.
+1. Выберите **отправить log Analytics** , а затем выберите имя созданной ранее **рабочей области** ( `AzureAdB2C` ).
 1. Выберите **AuditLogs** и **сигнинлогс**.
 1. Щелкните **Сохранить**.
 
+> [!NOTE]
+> После выпуска события для [отображения в log Analytics рабочей области](../azure-monitor/platform/data-ingestion-time.md)может пройти до 15 минут. Кроме того, Узнайте больше о [Active Directoryх задержки отчетов](../active-directory/reports-monitoring/reference-reports-latencies.md), которые могут повлиять на устаревшие данные и играют важную роль в отчетности.
+
+Если отображается сообщение об ошибке "Установка параметров диагностики для использования Azure Monitor для каталога Azure AD B2C, необходимо настроить управление делегированными ресурсами". Убедитесь, что вы входите в систему с помощью пользователя, который является членом [группы безопасности](#32-select-a-security-group) , и [выберите свою подписку](#4-select-your-subscription).
+
+## <a name="6-visualize-your-data"></a>6. Визуализация данных
+
+Теперь можно настроить рабочую область Log Analytics для визуализации данных и настройки оповещений. Эти конфигурации можно установить как в клиенте Azure AD, так и в клиенте Azure AD B2C.
+
+### <a name="61-create-a-query"></a>6,1. Создание запроса
+
+Запросы по журналам позволяют с пользой применить все данные, собранные в журналах Azure Monitor. Мощный язык запросов позволяет объединять данные из нескольких таблиц, объединять большие наборы данных и выполнять сложные операции с минимальным кодом. Практически любой вопрос можно ответить и выполнить анализ до тех пор, пока собираются вспомогательные данные, и вы понимаете, как создать правильный запрос. Дополнительные сведения см. [в разделе Приступая к работе с запросами журналов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md).
+
+1. В **log Analytics рабочей области** выберите **журналы** .
+1. В редакторе запросов вставьте следующий запрос [языка запросов Kusto](https://docs.microsoft.com/azure/data-explorer/kusto/query/) . Этот запрос показывает использование политики по операциям за последние x дней. Длительность по умолчанию — 90 дней (90d). Обратите внимание, что запрос связан только с операцией, в которой маркер или код выдается политикой.
+
+    ```kusto
+    AuditLogs
+    | where TimeGenerated  > ago(90d)
+    | where OperationName contains "issue"
+    | extend  UserId=extractjson("$.[0].id",tostring(TargetResources))
+    | extend Policy=extractjson("$.[1].value",tostring(AdditionalDetails))
+    | summarize SignInCount = count() by Policy, OperationName
+    | order by SignInCount desc  nulls last
+    ```
+
+1. Выберите **Запуск**. Результаты запроса отображаются в нижней части экрана.
+1. Чтобы сохранить запрос для последующего использования, нажмите кнопку **сохранить**.
+
+   ![Редактор журналов Log Analytics](./media/azure-monitor/query-policy-usage.png)
+
+1. Введите следующие сведения:
+
+    - **Имя** — введите имя запроса.
+    - **Сохранить как** -выбрать `query` .
+    - **Категория** — выберите `Log` .
+
+1. Щелкните **Сохранить**.
+
+Можно также изменить запрос для визуализации данных с помощью оператора [Render](https://docs.microsoft.com/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) .
+
+```kusto
+AuditLogs
+| where TimeGenerated  > ago(90d)
+| where OperationName contains "issue"
+| extend  UserId=extractjson("$.[0].id",tostring(TargetResources))
+| extend Policy=extractjson("$.[1].value",tostring(AdditionalDetails))
+| summarize SignInCount = count() by Policy
+| order by SignInCount desc  nulls last
+| render  piechart
+```
+
+![Круговая диаграмма Log Analyticsного редактора журналов](./media/azure-monitor/query-policy-usage-pie.png)
+
+Дополнительные примеры см. в Azure AD B2C [репозитории GitHub SIEM](https://aka.ms/b2csiem).
+
+### <a name="62-create-a-workbook"></a>6,2. Создание книги
+
+Книги предоставляют гибкий холст для анализа данных и создания полнофункциональных визуальных отчетов на портале Azure. Они позволяют переходить к нескольким источникам данных из Azure и объединять их в единый интерактивный интерфейс. Дополнительные сведения см. в статье [Azure Monitor книги](../azure-monitor/platform/workbooks-overview.md).
+
+Следуйте приведенным ниже инструкциям, чтобы создать новую книгу с помощью шаблона коллекции JSON. Эта книга предоставляет панель мониторинга **User Insights** и **authentication** для Azure AD B2C клиента.
+
+1. В **log Analytics рабочей области** выберите **книги**.
+1. На панели инструментов выберите **+ создать** , чтобы создать новую книгу.
+1. На странице **Новая книга** выберите **Расширенный редактор** с помощью **</>** параметра на панели инструментов.
+
+     ![Шаблон коллекции](./media/azure-monitor/wrkb-adv-editor.png)
+
+1. Выберите **шаблон коллекции**.
+1. Замените JSON в **шаблоне коллекции**  содержимым из [книги Azure AD B2C Basic](https://raw.githubusercontent.com/azure-ad-b2c/siem/master/workbooks/dashboard.json):
+1. Примените шаблон с помощью кнопки **Применить** .
+1. Нажмите кнопку **done Edit (готово к редактированию** ) на панели инструментов, чтобы завершить редактирование книги.
+1. Наконец, сохраните книгу с помощью кнопки **сохранить** на панели инструментов.
+1. Укажите **заголовок** , например *панель мониторинга Azure AD B2C*.
+1. Щелкните **Сохранить**.
+
+    ![Сохранение книги](./media/azure-monitor/wrkb-title.png)
+
+В книге будут отображаться отчеты в виде панели мониторинга.
+
+![Первая панель мониторинга книги](./media/azure-monitor/wkrb-dashboard-1.png)
+
+![Вторая панель мониторинга книги](./media/azure-monitor/wrkb-dashboard-2.png)
+
+![Третья панель мониторинга книги](./media/azure-monitor/wrkb-dashboard-3.png)
+
+
+## <a name="create-alerts"></a>Создание оповещений
+
+Оповещения создаются в Azure Monitor с помощью правил генерации оповещений и позволяют автоматически через регулярные интервалы выполнять сохраненные запросы или настраиваемые поиски по журналам. Можно создать оповещения, основанные на конкретных метках производительности, создании конкретных событий, отсутствии события или создании ряда событий за определенный период. Например, оповещения могут использоваться для уведомления о том, что среднее число входов в систему превышает определенное пороговое значение. Дополнительные сведения см. в статье [Создание оповещений для базы данных SQL Azure и хранилища данных с помощью портала Azure](../azure-monitor/learn/tutorial-response.md).
+
+
+Используйте приведенные ниже инструкции, чтобы создать новое оповещение Azure, которое будет отправлять [уведомление по электронной почте](../azure-monitor/platform/action-groups.md#configure-notifications) каждый раз, когда в **общем количестве запросов** сравнивается с предыдущим периодом. Оповещение будет выполняться каждые 5 минут и искать удаление в течение последних 24 часов. Оповещения создаются с помощью языка запросов Kusto.
+
+
+1. В **log Analytics рабочей области** выберите **журналы**. 
+1. Создайте новый **запрос Kusto** с помощью приведенного ниже запроса.
+
+    ```kusto
+    let start = ago(24h);
+    let end = now();
+    let threshold = -25; //25% decrease in total requests.
+    AuditLogs
+    | serialize TimeGenerated, CorrelationId, Result
+    | make-series TotalRequests=dcount(CorrelationId) on TimeGenerated in range(start, end, 1h)
+    | mvexpand TimeGenerated, TotalRequests
+    | where TotalRequests > 0
+    | serialize TotalRequests, TimeGenerated, TimeGeneratedFormatted=format_datetime(todatetime(TimeGenerated), 'yyyy-M-dd [hh:mm:ss tt]')
+    | project   TimeGeneratedFormatted, TotalRequests, PercentageChange= ((toreal(TotalRequests) - toreal(prev(TotalRequests,1)))/toreal(prev(TotalRequests,1)))*100
+    | order by TimeGeneratedFormatted
+    | where PercentageChange <= threshold   //Trigger's alert rule if matched.
+    ```
+
+1. Выберите **выполнить** , чтобы проверить запрос. Результаты должны отобразиться, если в общем количестве запросов за последние 24 часа имеется меньше 25% или более.
+1. Чтобы создать правило генерации оповещений на основе приведенного выше запроса, используйте параметр **+ новое правило генерации оповещений** , доступный на панели инструментов.
+1. На странице **Создание правила оповещения** выберите **имя условия** . 
+1. На странице **Настройка логики сигнала** задайте следующие значения, а затем нажмите кнопку **Готово** , чтобы сохранить изменения.
+    * Логика оповещения: задайте **число результатов** **больше** **0**.
+    * Оценка на основе: SELECT **1440** за период (в минутах) и **5** для частоты (в минутах) 
+
+    ![Создание условия для правила оповещения](./media/azure-monitor/alert-create-rule-condition.png)
+
+После создания оповещения перейдите в **log Analytics рабочую область** и выберите **оповещения**. На этой странице отображаются все оповещения, которые были активированы в параметре длительность, заданная в **диапазоне времени** .  
+
+### <a name="configure-action-groups"></a>Настройка групп действий
+
+Оповещения служб Azure Monitor и "Работоспособность служб" используют группы действий для уведомления пользователей о том, что оповещение активировано. Можно включить отправку голоса, SMS, электронной почты; или запуска различных типов автоматических действий. Следуйте указаниям по [созданию групп действий и управлению ими в портал Azure](../azure-monitor/platform/action-groups.md)
+
+Ниже приведен пример сообщения электронной почты с уведомлением. 
+
+   ![Уведомление по электронной почте](./media/azure-monitor/alert-email-notification.png)
+
+## <a name="multiple-tenants"></a>Несколько клиентов
+
+Чтобы подключить несколько Azure AD B2C журналов клиентов к одной и той же Log Analytics рабочей области (или к учетной записи хранения Azure или концентратору событий), вам потребуется отдельное развертывание с различными значениями **имени, предлагаемого MSP** . Убедитесь, что Рабочая область Log Analytics находится в той же группе ресурсов, что и та, что была настроена в области [Создание или выбор группы ресурсов](#1-create-or-choose-resource-group).
+
+При работе с несколькими рабочими областями Log Analytics используйте [запрос между рабочими областями](../azure-monitor/log-query/cross-workspace-query.md) , чтобы создавать запросы, работающие в нескольких рабочих областях. Например, следующий запрос выполняет соединение двух журналов аудита из разных клиентов на основе одной категории (например, проверка подлинности):
+
+```kusto
+workspace("AD-B2C-TENANT1").AuditLogs
+| join  workspace("AD-B2C-TENANT2").AuditLogs
+  on $left.Category== $right.Category
+```
+
+## <a name="change-the-data-retention-period"></a>Изменение срока хранения данных
+
+Журналы Azure Monitor предназначены для масштабирования и поддержки сбора, индексирования и хранения больших объемов данных в день из любого источника в вашей организации или развертывания в Azure. По умолчанию журналы хранятся в течение 30 дней, но длительность хранения может быть увеличена до двух лет. Узнайте, как [управлять использованием и затратами с помощью журналов Azure Monitor](../azure-monitor/platform/manage-cost-storage.md). После выбора ценовой категории можно [изменить срок хранения данных](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о добавлении и настройке параметров диагностики в Azure Monitor см. в разделе [учебник. сбор и анализ журналов ресурсов из ресурса Azure](../azure-monitor/insights/monitor-azure-resource.md).
+* Дополнительные примеры находятся в коллекции Azure AD B2C [SIEM](https://aka.ms/b2csiem). 
 
-Сведения о потоковой передаче журналов Azure AD в концентратор событий см. в статье [учебник. потоковая Azure Active Directory журналов в концентратор событий Azure](../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md).
+* Дополнительные сведения о добавлении и настройке параметров диагностики в Azure Monitor см. в разделе [учебник. сбор и анализ журналов ресурсов из ресурса Azure](../azure-monitor/insights/monitor-azure-resource.md).
+
+* Сведения о потоковой передаче журналов Azure AD в концентратор событий см. в статье [учебник. потоковая Azure Active Directory журналов в концентратор событий Azure](../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md).

@@ -7,22 +7,22 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: chenyl
-ms.openlocfilehash: 04059ac1feae04cb6fa8b09f7b7077b7e11bac4c
-ms.sourcegitcommit: 94ca9e89501e65f4dcccc3789249357c7d5e27e5
+ms.openlocfilehash: 84b83c1dd541418c446a89a6f51be668cb41e54e
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92170377"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94562650"
 ---
 # <a name="how-to-send-events-from-azure-signalr-service-to-event-grid"></a>How to send events from Azure SignalR Service to Event Grid (Отправка событий из службы Azure SignalR в службу "Сетка событий")
 
 Сетка событий Azure — это полностью управляемая служба маршрутизации событий, которая обеспечивает унифицированное потребление событий с помощью модели Pub-подтипа. В этом пошаговом окне вы используете Azure CLI для создания службы Azure SignalR, подписки на события подключения, а затем развертывания примера веб-приложения для получения событий. Наконец, можно подключаться и отключаться и просматривать полезные данные события в примере приложения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-account], прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Команды Azure CLI в этой статье отформатированы для выполнения в оболочке **Bash**. Если вы используете другую оболочку, такую ​​как PowerShell или командную строку, вам может потребоваться соответственно откорректировать символы продолжения строки или строки назначения переменных. В этой статье используются переменные, чтобы минимизировать требуемое изменение команд.
+ - Команды Azure CLI в этой статье отформатированы для выполнения в оболочке **Bash**. Если вы используете другую оболочку, такую ​​как PowerShell или командную строку, вам может потребоваться соответственно откорректировать символы продолжения строки или строки назначения переменных. В этой статье используются переменные, чтобы минимизировать требуемое изменение команд.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -94,7 +94,7 @@ az deployment group create \
 
 ## <a name="subscribe-to-registry-events"></a>Подписка на события реестра
 
-Подпишитесь на *раздел*, чтобы определить в Сетке событий Azure, какие события необходимо отслеживать и куда их отправлять. Следующая команда [AZ eventgrid Event-Subscription создает][az-eventgrid-event-subscription-create] подписку на созданную службу Azure SignalR и указывает URL-адрес вашего веб приложения в качестве конечной точки, в которую он должен отправить события. Переменные среды, которые вы заполнили в предыдущих разделах, используются здесь повторно, поэтому никаких изменений не требуется.
+Подпишитесь на *раздел* , чтобы определить в Сетке событий Azure, какие события необходимо отслеживать и куда их отправлять. Следующая команда [AZ eventgrid Event-Subscription создает][az-eventgrid-event-subscription-create] подписку на созданную службу Azure SignalR и указывает URL-адрес вашего веб приложения в качестве конечной точки, в которую он должен отправить события. Переменные среды, которые вы заполнили в предыдущих разделах, используются здесь повторно, поэтому никаких изменений не требуется.
 
 ```azurecli-interactive
 SIGNALR_SERVICE_ID=$(az signalr show --resource-group $RESOURCE_GROUP_NAME --name $SIGNALR_NAME --query id --output tsv)

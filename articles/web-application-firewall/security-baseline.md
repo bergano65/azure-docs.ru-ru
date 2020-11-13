@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5ecfd5e5ff29b2eade4391976947062d6e8f186f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: cb5fae022957dd5fdc56058ed08b92734929d13e
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516160"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94562304"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Базовые показатели безопасности Azure для брандмауэра веб-приложения Azure
 
-Этот базовый план безопасности применяет рекомендации из [контрольного показателя безопасности Azure версии 1,0](../security/benchmarks/overview-v1.md) к брандмауэру веб-приложения Azure. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в ходе тестирования системы безопасности Azure, и связанным рекомендациям, применимым к брандмауэру веб-приложения Azure. **Элементы управления** , неприменимые к брандмауэру веб-приложения Azure, были исключены. 
+Этот базовый план безопасности применяет рекомендации из [контрольного показателя безопасности Azure версии 1,0](../security/benchmarks/overview-v1.md) к брандмауэру веб-приложения Azure. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в ходе тестирования системы безопасности Azure, и связанным рекомендациям, применимым к брандмауэру веб-приложения Azure. **Элементы управления** , неприменимые к брандмауэру веб-приложения Azure, были исключены. 
 
 Чтобы увидеть, как брандмауэр веб-приложения Azure полностью сопоставлен с тестовым уровнем безопасности Azure, см. [полный базовый файл сопоставления безопасности брандмауэра веб-приложения Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
@@ -41,9 +41,9 @@ ms.locfileid: "92516160"
 
 - [Режимы WAF на передней дверце](afds/afds-overview.md#waf-modes)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: запретите обмен данными с известными вредоносными IP-адресами
 
@@ -53,9 +53,9 @@ ms.locfileid: "92516160"
 
 - [Режимы WAF на передней дверце](afds/afds-overview.md#waf-modes)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
 
@@ -71,9 +71,9 @@ ms.locfileid: "92516160"
 
 - [Группы правил и правила CR брандмауэра веб-приложения](ag/application-gateway-crs-rulegroups-rules.md?tabs=owasp31)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
 
@@ -81,13 +81,13 @@ ms.locfileid: "92516160"
 
 Примените правила и группы правил к политикам брандмауэра веб-приложения Azure (WAF) на основе примененных метаданных тега.
 
-- [Политика WAF в шлюзе приложений](https://docs.microsoft.com/cli/azure/network/application-gateway/waf-policy?view=azure-cli-latest) 
+- [Политика WAF в шлюзе приложений](/cli/azure/network/application-gateway/waf-policy?view=azure-cli-latest) 
 
-- [Политика WAF на передней дверце](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest)
+- [Политика WAF на передней дверце](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
 
@@ -97,27 +97,27 @@ ms.locfileid: "92516160"
 
 Выберите Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 - [Создание виртуальной сети](../virtual-network/quick-create-portal.md)
 
 - [Создание группы безопасности сети с конфигурацией безопасности](../virtual-network/tutorial-filter-network-traffic.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых параметров и ресурсов, связанных с развертываниями брандмауэра веб-приложения Azure (WAF). Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых параметров или ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](/azure/azure-monitor/platform/activity-log-view)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 - [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
@@ -127,9 +127,9 @@ ms.locfileid: "92516160"
 
 **Руководство**. Создайте Сетевое правило для брандмауэра веб-приложения Azure (WAF), чтобы разрешить доступ к серверу NTP с соответствующим портом и протоколом, например порт 123 через UDP.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Совмещаемая блокировка
+**Ответственность** : Совмещаемая блокировка
 
 ### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
@@ -141,11 +141,11 @@ ms.locfileid: "92516160"
 
 - [Журналы диагностики для шлюза приложений](../application-gateway/application-gateway-diagnostics.md)
 
-- [Подключение данных из брандмауэра веб-приложения Майкрософт к Azure Sentinel](/azure/sentinel/connect-microsoft-waf)
+- [Подключение данных из брандмауэра веб-приложения Майкрософт к Azure Sentinel](../sentinel/connect-azure-waf.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
 
@@ -157,7 +157,7 @@ ms.locfileid: "92516160"
 
 - [Общие сведения о журналах платформы Azure](../azure-monitor/platform/platform-logs-overview.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
 **Ответственность**. Customer
 
@@ -166,9 +166,9 @@ ms.locfileid: "92516160"
 **Руководство**. отправка журналов брандмауэра веб-приложения Azure (WAF) в настраиваемую учетную запись хранения и определение политики хранения. Используйте Azure Monitor, чтобы задать срок хранения Log Analytics рабочей области в соответствии с требованиями Организации к соответствию.
 - [Настройка мониторинга учетной записи хранения](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
 
@@ -178,27 +178,27 @@ ms.locfileid: "92516160"
 
 В Azure Sentinel есть встроенная книга событий WAF-Firewall, которая предоставляет обзор событий безопасности в WAF. К ним относятся события, соответствующие и заблокированные правила, а также все остальное, которые записываются в журналы брандмауэра.
 
-- [Как включить параметры диагностики для журнала действий Azure](/azure/azure-monitor) 
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/index.yml) 
 
 - [Включение параметров диагностики для шлюза приложений Azure](../application-gateway/application-gateway-diagnostics.md)
 
 - [Мониторинг метрик и журналов в передней дверце Azure](../frontdoor/front-door-diagnostics.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
 **Руководство**. Включение параметров диагностики журнала действий Azure, а также параметров диагностики для Azure WAF и отправка журналов в рабочую область log Analytics. Выполняйте запросы в Log Analytics для поиска терминов, определения тенденций, анализа шаблонов и предоставления многих других сведений на основе собранных данных. Создание предупреждений для аномальных действий на основе метрик WAF. Например, если заблокированное число запросов превышает "X," Do "Y".
 
-- [Как включить параметры диагностики для журнала действий Azure](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
-- [Создание оповещений в Azure](/azure/azure-monitor/learn/tutorial-response)
+- [Создание оповещений в Azure](../azure-monitor/learn/tutorial-response.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
 
@@ -208,9 +208,9 @@ Azure WAF обеспечивает централизованную защиту
 
 - [Развертывание WAF Azure](ag/create-waf-policy-ag.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
@@ -220,13 +220,13 @@ Azure WAF обеспечивает централизованную защиту
 
 **Руководство**. Azure Active Directory (Azure AD) имеет встроенные роли, которые имеют доступ к запросам и должны быть явно назначены. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов.
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -239,9 +239,9 @@ Azure WAF обеспечивает централизованную защиту
 
 - [Использование Политики Azure](../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directory доступа
 
@@ -251,9 +251,9 @@ Azure WAF обеспечивает централизованную защиту
 
 - [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
 
@@ -263,21 +263,21 @@ Azure WAF обеспечивает централизованную защиту
 
 - [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: журналы и оповещения о подозрительных действиях учетных записей администраторов
 
 **Руководство**. Использование отчетов по безопасности Azure Active Directory (Azure AD) для создания журналов и оповещений при возникновении подозрительных или ненадежных действий в среде. Используйте центр безопасности для мониторинга активности удостоверений и доступа.
 
-- [Как определить пользователей Azure AD, помеченных для события риска](/azure/active-directory/reports-monitoring/concept-user-at-risk)
+- [Как определить пользователей Azure AD, помеченных для события риска](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 **Мониторинг Центра безопасности Azure**. Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
 
@@ -287,30 +287,30 @@ Azure WAF обеспечивает централизованную защиту
 
 - [Условие расположения в Azure Active Directory условного доступа](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для неактивных и транзитных данных, а также для использования случайных значений, хэшей и безопасного хранения учетных данных пользователя.
 - [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) 
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
 
 **Руководство**. Azure Active Directory (Azure AD) предоставляет журналы для облегчения поиска устаревших учетных записей. Используйте проверки доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Регулярно просматривайте доступ пользователей, чтобы обеспечить доступ к ним только для активных пользователей.
 
-- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring)
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
 - [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: монитор пытается получить доступ к отключенным учетным данным
 
@@ -318,17 +318,17 @@ Azure WAF обеспечивает централизованную защиту
 
 Оптимизируйте этот процесс, создав параметры диагностики для учетных записей пользователей Azure Active Directory (Azure AD) и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Настройте нужные оповещения в рабочей области Log Analytics.
 
-- [Как интегрировать журналы действий Azure в Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="312-alert-on-account-sign-in-behavior-deviation"></a>3,12: предупреждение об отклонении при входе в учетную запись
 
 **Руководство**. Использование функций защиты учетных записей (Azure AD) Azure Active Directory и службы "Защита идентификации" для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Прием данных в Azure Sentinel для дальнейшего изучения.
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -336,7 +336,7 @@ Azure WAF обеспечивает централизованную защиту
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="data-protection"></a>Защита данных
 
@@ -345,11 +345,11 @@ Azure WAF обеспечивает централизованную защиту
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Руководство**. Использование тегов для отслеживания брандмауэра веб-приложения Azure (WAF) и связанных ресурсов, в которых хранятся или обрабатываются конфиденциальные данные.
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -357,15 +357,15 @@ Azure WAF обеспечивает централизованную защиту
 
 Управление доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4. Шифрование любой конфиденциальной информации при передаче
 
@@ -375,18 +375,18 @@ Azure WAF обеспечивает централизованную защиту
 
 - [Общие сведения о шифровании при передаче с помощью Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Совмещаемая блокировка
+**Ответственность** : Совмещаемая блокировка
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
 **Руководство**. Управление доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure (Azure RBAC).
 - [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
 
@@ -394,11 +394,11 @@ Azure WAF обеспечивает централизованную защиту
 
 - [Общие сведения о шифровании неактивных в Azure](../security/fundamentals/encryption-atrest.md)
 
-- [Настройка ключей шифрования, управляемых клиентом](/azure/storage/common/storage-encryption-keys-portal)
+- [Настройка ключей шифрования, управляемых клиентом](../storage/common/customer-managed-keys-configure-key-vault.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
@@ -412,9 +412,9 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Режимы WAF на передней дверце](afds/afds-overview.md#waf-modes)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
@@ -428,37 +428,37 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
 
 **Руководство**. Использование тегов в политиках брандмауэра веб-приложения Azure (WAF). Теги могут быть связаны с ресурсами и логически применены для организации доступа к этим ресурсам в клиентской подписке. 
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
 **Руководство**. Используйте теги, группы управления и отдельные подписки, если это необходимо, чтобы упорядочить и отслеживание WAF и связанных ресурсов Azure. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: определение и обслуживание инвентаризации утвержденных ресурсов Azure
 
@@ -470,9 +470,9 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
@@ -483,17 +483,17 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7. Удаление неутвержденных ресурсов Azure и программных приложений
 
 **Руководство**. Отслеживание и удаление неутвержденных ресурсов Azure WAF с помощью политики Azure для запрета развертывания WAF для Azure или определенного типа WAF, например Azure WAF v1 VS v2.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9. Использование только утвержденных служб Azure
 
@@ -501,11 +501,11 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: ограничьте возможность пользователей работать с Azure Resource Manager
 
@@ -513,9 +513,9 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Настройка условного доступа для блокировки доступа к диспетчеру ресурсов Azure](../role-based-access-control/conditional-access-azure-management.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
@@ -527,9 +527,9 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Руководство по выбору модели подписки](/azure/cloud-adoption-framework/decision-guides/subscriptions/)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
@@ -540,13 +540,13 @@ WAF Azure, в режиме предотвращения, блокирует вт
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для сетевых параметров, связанных с развертываниями брандмауэра веб-приложения Azure (WAF).
 Используйте псевдонимы политик Azure в пространстве имен Microsoft. Network, чтобы создать настраиваемые политики для аудита или обеспечения конфигурации сети шлюзов приложений Azure, виртуальных сетей, групп безопасности сети и использования встроенных определений политик.
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
 
@@ -560,9 +560,9 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Общие сведения о шаблонах Azure Resource Manager](../azure-resource-manager/templates/overview.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 
@@ -570,13 +570,13 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 Предоставьте или запретите разрешения определенным пользователям, встроенным группам безопасности или группам, определенным в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps или Active Directory, если они интегрированы с Team Foundation Server (TFS).
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
 - [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
 
@@ -584,11 +584,11 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Документация по службе "Политика Azure"](/azure/governance/policy)
+- [Документация по службе "Политика Azure"](../governance/policy/index.yml)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
 
@@ -598,11 +598,11 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Документация по службе "Политика Azure"](/azure/governance/policy)
+- [Документация по службе "Политика Azure"](../governance/policy/index.yml)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="711-manage-azure-secrets-securely"></a>7.11. Безопасное управление секретами Azure
 
@@ -612,18 +612,18 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Настройка завершения SSL с использованием Key Vault сертификатов с помощью Azure PowerShell](../application-gateway/configure-keyvault-ps.md)
 
-**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
 
 **Руководство**. Реализация средства проверки учетных данных для обнаружения учетных данных в коде, который также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
 - [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="data-recovery"></a>Восстановление данных
 
@@ -633,11 +633,11 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 **Рекомендации**. Убедитесь, что для Azure Key Vault включено обратимое удаление. Обратимое удаление позволяет восстанавливать удаленные хранилища ключей и объекты хранилища, такие как ключи, секреты и сертификаты.
 
-- [Использование обратимого удаления Azure Key Vault](/azure/key-vault/key-vault-soft-delete-powershell)
+- [Использование обратимого удаления Azure Key Vault](../key-vault/general/key-vault-recovery.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
@@ -653,36 +653,36 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Воспользуйтесь руководством по обработке инцидентов компьютерной безопасности NIST, чтобы помочь в создании собственного плана реагирования на инциденты.](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
 **Руководство**. Центр безопасности назначает серьезность каждому оповещению, чтобы определить, какие оповещения следует изучить первыми. Серьезность основывается на том, насколько уверен Центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению.
 Четко Пометьте подписки (например, Рабочий, нерабочий) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure.
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
 **Рекомендации**. Выполните упражнения, чтобы периодически протестировать возможности ваших систем реагировать на угрозы. Выявите слабые точки и пробелов и пересмотрите план по мере необходимости.
 - [Обратитесь к руководству по публикации NIST, чтобы протестировать, обучить и выполнить упражнения для ИТ-планов и возможностей.](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
 **Рекомендации**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены.
 - [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
@@ -692,18 +692,18 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
-**Мониторинг Центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure** : Да
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
 **Руководство**. Использование функции автоматизации рабочих процессов в центре безопасности для автоматического запуска ответов с помощью "Logic Apps" в оповещениях и рекомендациях системы безопасности.
 - [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Customer
+**Ответственность** : Customer
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
@@ -717,11 +717,11 @@ WAF Azure, в режиме предотвращения, блокирует вт
 
 - [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure** : Неприменимо
 
-**Ответственность**: Совмещаемая блокировка
+**Ответственность** : Совмещаемая блокировка
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

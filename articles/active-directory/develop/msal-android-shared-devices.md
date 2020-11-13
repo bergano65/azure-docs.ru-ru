@@ -13,19 +13,17 @@ ms.date: 03/31/2020
 ms.author: marsma
 ms.reviewer: hahamil
 ms.custom: aaddev, identitypla | Azuretformtop40
-ms.openlocfilehash: c1bf6b33176bf7942fbd76fa86ecd61b4f24e154
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: fc32b4f583aea2fa9a34ab8b235f3f99fe4def9d
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366009"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94562174"
 ---
 # <a name="shared-device-mode-for-android-devices"></a>Режим совместной работы с устройством Android
 
-> [!NOTE]
-> Эта функция предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>[!IMPORTANT]
+> Эта функция [!INCLUDE [PREVIEW BOILERPLATE](../../../includes/active-directory-develop-preview.md)]
 
 Фирстлиненые работники, такие как розничные организации, участники рейсов, а также сотрудники службы "поле" часто используют общее мобильное устройство для работы. Это создает проблемы, когда они начинают совместно использовать пароли или ПИН-коды для доступа к данным клиентов и бизнес-данных на общем устройстве.
 
@@ -106,6 +104,6 @@ private IPublicClientApplication mApplication;
 
 ![Жизненный цикл приложения общего устройства](media/v2-shared-device-mode/lifecycle.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте [использовать режим общего устройства в приложении Android](tutorial-v2-shared-device-mode.md) , в котором показано, как запустить фирстлине рабочее приложение на устройстве Android с общим режимом.

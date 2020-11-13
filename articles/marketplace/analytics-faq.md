@@ -5,14 +5,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/10/2020
-author: shganesh-dev
-ms.author: shganesh
-ms.openlocfilehash: 55427f2a9b889c247708d130f651738c50f6bf5a
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+author: sayantanroy83
+ms.author: sroy
+ms.openlocfilehash: 1b98948100c06868cd14f636f2049ca515fec18d
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94497325"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564816"
 ---
 # <a name="commercial-marketplace-analytics-common-questions"></a>Общие вопросы по анализу коммерческих рынков
 
@@ -41,7 +41,7 @@ ms.locfileid: "94497325"
 - Если вы получаете это сообщение, это означает, что у вас есть данные аналитики, но нет данных за выбранный период вычислений. Выберите другой диапазон вычислительного периода или месяца, чтобы просмотреть данные с 2010.
 - Если выбрана одна или несколько категорий из различных измерений в выбранном фильтре, данные аналитики для выбора могут отсутствовать. Попробуйте сбросить фильтр или выбрать другие параметры из фильтра.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о аналитических отчетах, доступных в центре партнеров, см. в статье [доступ к отчетам аналитики для коммерческого рынка в центре партнеров](./partner-center-portal/analytics.md).
 - Сведения о заказах в графическом и загружаемом формате см. в статье  [панель мониторинга заказов в коммерческом Analytics Marketplace](orders-dashboard.md).

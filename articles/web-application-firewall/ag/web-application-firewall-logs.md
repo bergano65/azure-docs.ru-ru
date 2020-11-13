@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 10/25/2019
 ms.author: victorh
-ms.openlocfilehash: a84e48c7fbb6d63a4bf8946b66bd35f354643ccb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 262987b5d5cdccec967193d855b17c5c74e16575
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84753607"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94563398"
 ---
 # <a name="resource-logs-for-azure-web-application-firewall"></a>Журналы ресурсов для брандмауэра веб-приложения Azure
 
@@ -94,7 +94,7 @@ ms.locfileid: "84753607"
 |clientPort     | Порт источника запроса.       |
 |httpMethod     | Метод HTTP, используемый для запроса.       |
 |requestUri     | URI полученного запроса.        |
-|RequestQuery     | **Server-Routed** — экземпляр внутреннего пула, из которого отправлен запрос.</br>**X-AzureApplicationGateway-LOG-ID** — идентификатор корреляции, используемый для запроса. Он может использоваться для устранения неполадок с трафиком на внутренних серверах. </br>**SERVER-STATUS** — код отклика HTTP, полученный шлюзом приложений из серверной части.       |
+|RequestQuery     | **Server-Routed**  — экземпляр внутреннего пула, из которого отправлен запрос.</br>**X-AzureApplicationGateway-LOG-ID**  — идентификатор корреляции, используемый для запроса. Он может использоваться для устранения неполадок с трафиком на внутренних серверах. </br>**SERVER-STATUS**  — код отклика HTTP, полученный шлюзом приложений из серверной части.       |
 |UserAgent     | Агент пользователя из заголовка HTTP-запроса.        |
 |httpStatus     | Код состояния HTTP, возвращаемый клиенту из шлюза приложений.       |
 |httpVersion     | Версия HTTP для запроса.        |
@@ -231,7 +231,7 @@ ms.locfileid: "84753607"
 |ruleSetType     | Тип набора правил. Доступное значение — OWASP.        |
 |ruleSetVersion     | Используемая версия набора правил. Возможные значения: 2.2.9 и 3.0.     |
 |ruleId     | Идентификатор правила события-триггера.        |
-|сообщение     | Понятное сообщение для события-триггера. Дополнительные сведения приведены в разделе details.        |
+|message     | Понятное сообщение для события-триггера. Дополнительные сведения приведены в разделе details.        |
 |action     |  Действие, выполняемое с запросом. Возможные значения: Blocked и Allowed.      |
 |site     | Сайт, для которого создан журнал. В нашем случае возможно только значение Global, так как применяются глобальные правила.|
 |подробности     | Сведения о событии-триггере.        |
@@ -285,7 +285,7 @@ ms.locfileid: "84753607"
 Данные журнала действий можно просматривать и анализировать с помощью любого из следующих методов:
 
 * **Средства Azure.** Информацию из журналов действий можно получать с помощью Azure PowerShell, Azure CLI, REST API Azure или портала Azure. Пошаговые инструкции для каждого метода подробно описаны в статье [Activity operations with Resource Manager](../../azure-resource-manager/management/view-activity-logs.md) (Выполнение операций в журналах действий с помощью Resource Manager).
-* **Power BI**. Если у вас еще нет учетной записи [Power BI](https://powerbi.microsoft.com/pricing) , вы можете попробовать ее бесплатно. С помощью [Power BIных приложений шаблонов](https://docs.microsoft.com/power-bi/service-template-apps-overview)можно анализировать данные.
+* **Power BI**. Если у вас еще нет учетной записи [Power BI](https://powerbi.microsoft.com/pricing) , вы можете попробовать ее бесплатно. С помощью [Power BIных приложений шаблонов](/power-bi/service-template-apps-overview)можно анализировать данные.
 
 ### <a name="view-and-analyze-the-access-performance-and-firewall-logs"></a>Просмотр и анализ журналов доступа, производительности и брандмауэра
 

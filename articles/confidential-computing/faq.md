@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.subservice: workloads
 ms.date: 4/17/2020
 ms.author: jencook
-ms.openlocfilehash: cf90ff5b94eb03f76dffc8b64dd4d92a44ac20ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9df3d9771029e6d72e9d0092a129cddc27be6cd7
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91848914"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564112"
 ---
 # <a name="frequently-asked-questions-for-azure-confidential-computing"></a>Вопросы и ответы о конфиденциальных вычислениях Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "91848914"
 
 **Конфиденциальные вычисления Azure поддерживаются для всех образов ОС?**
 
-Нет. Виртуальные машины могут быть развернуты только на компьютерах 2-го поколения с Ubuntu Server 18.04, Ubuntu Server 16.04, Windows Server 2019 Datacenter и Windows Server 2016 Datacenter. Узнайте больше о виртуальных машинах 2-го поколения для [Linux](../virtual-machines/linux/generation-2.md) и [Windows](../virtual-machines/windows/generation-2.md).
+Нет. Виртуальные машины могут быть развернуты только на компьютерах 2-го поколения с Ubuntu Server 18.04, Ubuntu Server 16.04, Windows Server 2019 Datacenter и Windows Server 2016 Datacenter. Узнайте больше о виртуальных машинах 2-го поколения для [Linux](../virtual-machines/generation-2.md) и [Windows](../virtual-machines/generation-2.md).
 
 **Виртуальные машины DCsv2 неактивны (выделены серым цветом) на портале, и я не могу выбрать нужную.**
 

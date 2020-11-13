@@ -7,21 +7,21 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: e4b112b93a552ff62b08c102e710cd914265ba5c
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b13f5bfffced9afd80663d606e30e028e52643ac
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339331"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94563844"
 ---
 # <a name="manage-azure-cosmos-core-sql-api-resources-using-azure-cli"></a>Управление ресурсами API Azure Cosmos Core (SQL) с помощью Azure CLI
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 В этом руководстве приведены команды Azure CLI, позволяющие автоматизировать управление учетными записями, базами данных и контейнерами Azure Cosmos DB. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](/cli/azure/cosmosdb). Вы также можете найти несколько примеров в [Экземплярах Azure CLI для Azure Cosmos DB](cli-samples.md), в том числе и сведения о том, как создавать и управлять учетными записями, базами данных и контейнерами Cosmos DB для MongoDB, Gremlin, Cassandra и Table API.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.12.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется версия 2.12.1 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 Примеры Azure CLI для других интерфейсов API см. в статьях [Примеры CLI для Cassandra](cli-samples-cassandra.md), [Примеры CLI для API MongoDB](cli-samples-mongodb.md), [Примеры CLI для Gremlin](cli-samples-gremlin.md) и [Примеры CLI для таблиц](cli-samples-table.md).
 
@@ -43,7 +43,7 @@ ms.locfileid: "93339331"
 * [Вывод строк подключения](#list-connection-strings)
 * [Повторное создание ключей учетных записей](#regenerate-account-key)
 
-### <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
+### <a name="create-an-azure-cosmos-db-account"></a>Создание учетной записи Azure Cosmos DB
 
 Создание учетной записи Azure Cosmos DB с помощью API SQL, согласованности сеансов в Западная часть США 2 и Восточная часть США 2.
 
@@ -542,7 +542,7 @@ lockid=$(az lock show --name $containerLockName \
 az lock delete --ids $lockid
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см.:
 

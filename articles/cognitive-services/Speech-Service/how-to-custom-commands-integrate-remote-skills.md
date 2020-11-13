@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: sausin
-ms.openlocfilehash: 6ab3e1e063409832de839da26eba80efd8b3f4d5
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 8c7cb1e9f39b1de7897da29467a607953b42bb24
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344823"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565744"
 ---
 # <a name="export-custom-commands-application-as-a-remote-skill"></a>Экспорт приложения настраиваемых команд в качестве удаленного навыка
 
 В этой статье вы узнаете, как экспортировать приложение настраиваемых команд в качестве удаленного навыка.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 > [!div class="checklist"]
 > * [Основные сведения о навыках платформы Bot](https://aka.ms/speech/cc-skill-overview)
 > * [Основные сведения о манифесте навыков](https://aka.ms/speech/cc-skill-manifest)
@@ -88,4 +88,4 @@ ms.locfileid: "92344823"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Включение процесса CI/CD для вашего приложения Пользовательских голосовых команд](./how-to-custom-commands-deploy-cicd.md)
+> [Обновление команды с клиента](./how-to-custom-commands-update-command-from-client.md)

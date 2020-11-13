@@ -7,12 +7,12 @@ ms.service: firewall
 ms.date: 08/29/2019
 ms.author: victorh
 ms.topic: how-to
-ms.openlocfilehash: 7f00b57edb37cc5bb5c8340663d619e526c2eacb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7c6640b6634a017819735b9d0f7b906f8dc91d0
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89075432"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565880"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Развертывание и настройка брандмауэра Azure с помощью Azure CLI
 
@@ -44,22 +44,11 @@ ms.locfileid: "89075432"
 
 При желании эту процедуру можно выполнить с помощью [портал Azure](tutorial-firewall-deploy-portal.md) или [Azure PowerShell](deploy-ps.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
-
-### <a name="azure-cli"></a>Azure CLI
-
-Если вы решили установить и использовать CLI локально, вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы найти версию, выполните команду **AZ--Version**. Дополнительные сведения об установке или обновлении см. [здесь]( /cli/azure/install-azure-cli).
-
-Установите расширение брандмауэра Azure:
-
-```azurecli-interactive
-az extension add -n azure-firewall
-```
-
+- Для работы с этой статьей требуется версия 2.0.4 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="set-up-the-network"></a>Настройка сети
 
@@ -264,7 +253,7 @@ az network firewall network-rule create \
 
 1. Подключите удаленный рабочий стол к виртуальной машине **Srv-Jump** и выполните вход. После этого откройте подключение к удаленному рабочему столу к частному IP-адресу **SRV** и выполните вход.
 
-3. На **SRV-работе**откройте окно PowerShell и выполните следующие команды:
+3. На **SRV-работе** откройте окно PowerShell и выполните следующие команды:
 
    ```
    nslookup www.google.com

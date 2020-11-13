@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 901c090d26959950d0ffd6a96253bdc36c9331c5
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: a9289fad6f7ae1030628bedcf1a62cacc0b1e23a
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556341"
+ms.locfileid: "94564486"
 ---
 # <a name="prepare-virtual-machines-for-an-fci-sql-server-on-azure-vms"></a>Подготовка виртуальных машин для FCI (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "94556341"
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
-## <a name="prerequisites"></a>Обязательные условия 
+## <a name="prerequisites"></a>Предварительные условия 
 
 - Подписка Microsoft Azure. Начните работу [бесплатно](https://azure.microsoft.com/free/). 
 - Домен Windows на виртуальных машинах Azure или локальный центр обработки данных, который был расширен в Azure с помощью связывания виртуальных сетей.
@@ -58,6 +58,8 @@ ms.locfileid: "94556341"
 
 После настройки доступности виртуальной машины можно приступать к созданию виртуальных машин. Вы можете использовать образ Azure Marketplace, который не имеет SQL Server уже установлен на нем. Однако при выборе образа для SQL Server на виртуальных машинах Azure необходимо удалить SQL Server с виртуальной машины перед настройкой экземпляра отказоустойчивого кластера. 
 
+### <a name="considerations"></a>Рекомендации
+Для отказоустойчивого кластера гостевых виртуальных машин IaaS Azure рекомендуется использовать один сетевой адаптер на сервер (узел кластера) и одну подсеть. Сеть Azure обладает физической избыточностью, что делает ненужными дополнительные сетевые адаптеры и подсети в кластере гостевых виртуальных машин IaaS Azure. Несмотря на то, что отчет о проверке кластера выдаст предупреждение о том, что узлы доступны только в одной сети, это предупреждение можно спокойно проигнорировать в отказоустойчивых кластерах гостевых виртуальных машин IaaS Azure.
 
 Разместите обе виртуальные машины:
 
