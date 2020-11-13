@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/03/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: af2a58ecb97e4c62f437d0c693ec79a4b5f618b0
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 4903f1e48eb2f33c68d62c635201474b841ed146
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579238"
+ms.locfileid: "94591518"
 ---
 # <a name="azure-database-for-mysql-versioning-policy"></a>Политика управления версиями базы данных Azure для MySQL
 
@@ -30,7 +30,7 @@ ms.locfileid: "94579238"
 
 
 ## <a name="major-version-support"></a>Поддержка основного номера версии
-Каждая основная версия MySQL будет поддерживаться базой данных Azure для MySQL в соответствии с датой, с которой Azure начинает поддерживать версию до тех пор, пока версия не будет удалена из сообщества MySQL, как указано в [политике управления версиями](https://en.wikipedia.org/wiki/mysql).
+Каждая основная версия MySQL будет поддерживаться базой данных Azure для MySQL в соответствии с датой, с которой Azure начинает поддерживать версию до тех пор, пока версия не будет удалена из сообщества MySQL, как указано в [политике управления версиями](https://www.mysql.com/support/eol-notice.html).
 
 ## <a name="minor-version-support"></a>Поддержка дополнительных версий
 Служба "база данных Azure для MySQL" автоматически выполняет обновления дополнительных версий до предпочтительной версии MySQL Azure в рамках периодического обслуживания. 

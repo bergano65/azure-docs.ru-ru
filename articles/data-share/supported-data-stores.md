@@ -5,13 +5,13 @@ ms.service: data-share
 author: jifems
 ms.author: jife
 ms.topic: conceptual
-ms.date: 10/30/2020
-ms.openlocfilehash: 47c484268573334057e6b4dd14bbae849f9ce774
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.date: 11/12/2020
+ms.openlocfilehash: 6289395b5d508de8da3e5c8c89caebb4b0e9b817
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577227"
+ms.locfileid: "94592436"
 ---
 # <a name="supported-data-stores-in-azure-data-share"></a>Поддерживаемые хранилища данных в Azure Data Share
 
@@ -55,7 +55,7 @@ ms.locfileid: "94577227"
 Дополнительные сведения см. в разделе [общий доступ и получение данных из хранилища BLOB-объектов Azure и Azure Data Lake Storage](how-to-share-from-storage.md) .
 
 ## <a name="share-from-a-sql-based-source"></a>Общий доступ из источника на основе SQL
-Общий ресурс данных Azure поддерживает общий доступ к таблицам и представлениям из базы данных SQL Azure и Azure синапсе Analytics (ранее — хранилище Azure SQL), а также общий доступ к таблицам из пула SQL Azure синапсе Analytics (Рабочая область). Потребители данных могут принять данные в Azure Data Lake Storage 2-го поколения или хранилище BLOB-объектов Azure в виде CSV-или Parquet-файла, а также в базу данных SQL Azure и Azure синапсе Analytics в качестве таблиц.
+Общий ресурс данных Azure поддерживает общий доступ к таблицам и представлениям из базы данных SQL Azure и Azure синапсе Analytics (ранее — хранилище Azure SQL) и общий доступ к таблицам из выделенного пула SQL Azure синапсе Analytics (Рабочая область). Совместное использование несерверного пула SQL в Azure синапсе Analytics (Рабочая область) в настоящее время не поддерживается. Потребители данных могут принять данные в Azure Data Lake Storage 2-го поколения или хранилище BLOB-объектов Azure в виде CSV-или Parquet-файла, а также в базу данных SQL Azure и Azure синапсе Analytics в качестве таблиц.
 
 При принятии данных в Azure Data Lake Store Gen2 или хранилище BLOB-объектов Azure полные моментальные снимки перезаписывают содержимое целевого файла, если он уже существует.
 При получении данных в таблицу и если Целевая таблица еще не существует, Общая папка данных Azure создает таблицу SQL с исходной схемой. Если целевая таблица с таким именем уже существует, она будет удалена и переписана с использованием последнего полного моментального снимка. Добавочные моментальные снимки в настоящее время не поддерживаются.

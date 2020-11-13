@@ -1,6 +1,6 @@
 ---
 title: Преобразование данных с помощью действия Hive — Azure
-description: Узнайте, как использовать действие Hive в фабрике данных Azure версии 1 для выполнения запросов Hive в вашем кластере HDInsight по запросу или в собственном проекте.
+description: Узнайте, как можно использовать действие Hive в фабрике данных Azure версии 1 для выполнения запросов Hive в собственном кластере HDInsight по требованию или в вашем компьютере.
 services: data-factory
 documentationcenter: ''
 author: djpmsft
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 36e0d8a0c0ee5e5202c47acdd74b869181cfaf9e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 0271029814071b3a692209d3a2015cfdbe5fa941
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371687"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616779"
 ---
 # <a name="transform-data-using-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hive в фабрике данных Azure 
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -26,8 +26,8 @@ ms.locfileid: "92371687"
 > * [Действие MapReduce](data-factory-map-reduce.md)
 > * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md)
-> * [Действие "обновить ресурс" Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-update-resource-activity.md)
+> * [Действие выполнения пакета в Студии машинного обучения Azure (классическая)](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие обновления ресурса в Студии машинного обучения Azure (классическая)](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
@@ -75,14 +75,14 @@ ms.locfileid: "92371687"
 | Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | name |Имя действия. |Да |
-| description |Текст, описывающий, для чего используется действие |Нет |
+| description |Текст, описывающий, для чего используется действие |нет |
 | type |HDInsightHive. |Да |
-| Ввод данных |Входные данные, используемые действием Hive |Нет |
+| Ввод данных |Входные данные, используемые действием Hive |нет |
 | outputs |Выходные данные, создаваемые действием Hive |Да |
 | linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
 | скрипт |Указывается встроенный сценарий Hive. |нет |
-| scriptPath |Путь к файлу сценария Hive в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |Нет |
-| defines |Параметры в виде пары "ключ-значение", ссылки на которые указываются в сценарии Hive с помощью элемента hiveconf. |Нет |
+| scriptPath |Путь к файлу сценария Hive в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |нет |
+| defines |Параметры в виде пары "ключ-значение", ссылки на которые указываются в сценарии Hive с помощью элемента hiveconf. |нет |
 
 ## <a name="example"></a>Пример
 Рассмотрим пример с анализом игровых журналов. Предположим, вы хотите определить время, которое пользователи проводят за игрой, выпущенной вашей компанией. 

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 10/16/2019
-ms.openlocfilehash: 1c08ba51b815386783c3412e9238d2e96da03ff9
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.date: 11/13/2020
+ms.openlocfilehash: 92ef5b372113d0d226335b8ec464a75a5a684bc3
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94377696"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592912"
 ---
 # <a name="one-vs-one-multiclass"></a>Один класс в одном и том же классе
 
@@ -31,6 +31,8 @@ ms.locfileid: "94377696"
 По сути, модуль создает ансамблей отдельных моделей, а затем объединяет результаты, чтобы создать единую модель, которая прогнозирует все классы. Любой двоичный классификатор можно использовать в качестве основания для модели с одним и тем же кодом.  
 
 Например, предположим, что вы настроили модель [аппаратного вектора поддержки двух классов](two-class-support-vector-machine.md) и представими это в качестве входных данных для многоклассового модуля с одним и тем же набором. Модуль будет создавать модели машинного вектора поддержки двух классов для всех членов класса Output. Затем он применяет один и тот же метод, чтобы объединить результаты для всех классов.  
+
+Модуль использует Оневсонеклассифиер из sklearn, и [здесь](https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsOneClassifier.html)можно получить дополнительные сведения.
 
 ## <a name="how-to-configure-the-one-vs-one-multiclass-classifier"></a>Настройка многоклассового классификатора с одним и тем же числом  
 

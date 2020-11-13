@@ -8,19 +8,19 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.author: jhirono
 author: jhirono
-ms.date: 10/05/2020
+ms.date: 11/13/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 168dc342eaf61a9ede632fb429311f6f5c1d4be4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e3d95be52215b03a30dc4b5c7f251357f163b24a
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311562"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616099"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Использование рабочей области с пользовательским DNS-сервером
 
-При использовании Машинное обучение Azure с виртуальной сетью существует [несколько способов обработки разрешения имен DNS](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md). По умолчанию Azure автоматически обрабатывает разрешение имен для рабочей области и частной конечной точки. Однако __при использовании собственного пользовательского DNS-сервера__ необходимо вручную создать записи DNS для рабочей области.
+При использовании Машинное обучение Azure с виртуальной сетью существует [несколько способов обработки разрешения имен DNS](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md). По умолчанию Azure автоматически обрабатывает разрешение имен для рабочей области и частной конечной точки. Если вместо этого _используется собственный настраиваемый DNS-сервер_ , необходимо вручную создать записи DNS для рабочей области.
 
 > [!IMPORTANT]
 > В этой статье описывается, как найти полное доменное имя и IP-адреса для этих записей, которые не предоставляют сведений о настройке записей DNS для этих элементов. Сведения о добавлении записей см. в документации по программному обеспечению DNS.
@@ -40,13 +40,14 @@ ms.locfileid: "93311562"
 Следующий список содержит полные доменные имена (FQDN), используемые рабочей областью и частной конечной точкой.
 
 * `<workspace-GUID>.workspace.<region>.api.azureml.ms`
-* `<workspace-GUID>.studio.workspace.<region>.api.azureml.ms`
-* `cert-<workspace-GUID>.workspace.<region>.api.azureml.ms`
 * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
 * `<workspace-GUID>.workspace.<region>.modelmanagement.azureml.net`
 * `<workspace-GUID>.workspace.<region>.aether.ms`
 * `ml-<workspace-name>-<region>-<workspace-guid>.notebooks.azure.ml`
-* При создании вычислительного экземпляра необходимо также добавить запись для `<instance-name>.<region>.instances.azureml.ms` с частным IP-адресом частной конечной точки рабочей области. Обратите внимание, что доступ к вычислительному экземпляру можно получить только в пределах виртуальной сети.
+* При создании вычислительного экземпляра необходимо также добавить запись для `<instance-name>.<region>.instances.azureml.ms` с частным IP-адресом частной конечной точки рабочей области.
+
+    > [!NOTE]
+    > Доступ к экземплярам вычислений можно получить только в пределах виртуальной сети.
 
 Чтобы найти внутренние IP-адреса для полных доменных имен в виртуальной сети, используйте один из следующих методов.
 
@@ -82,8 +83,6 @@ $workspaceDns.CustomDnsConfigs | format-table
 | Полное доменное имя. | IP-адрес |
 | ----- | ----- |
 | `fb7e20a0-8891-458b-b969-55ddb3382f51.workspace.eastus.api.azureml.ms` | `10.1.0.5` |
-| `fb7e20a0-8891-458b-b969-55ddb3382f51.studio.workspace.eastus.api.azureml.ms` | `10.1.0.5` |
-| `cert-fb7e20a0-8891-458b-b969-55ddb3382f51.workspace.eastus.api.azureml.ms` | `10.1.0.5` |
 | `ml-myworkspace-eastus-fb7e20a0-8891-458b-b969-55ddb3382f51.notebooks.azure.net` | `10.1.0.6` |
 
 > [!IMPORTANT]

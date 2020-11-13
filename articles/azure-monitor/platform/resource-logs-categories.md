@@ -4,12 +4,12 @@ description: Справочник по Azure Monitor сведения о под�
 ms.subservice: logs
 ms.topic: reference
 ms.date: 06/03/2020
-ms.openlocfilehash: 81f79b81c03e7996d7f6d45b002d8160740c3c14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1fd6f07151c93b64c150f01e5c0b5c7f4cffed85
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318306"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94593014"
 ---
 # <a name="supported-categories-for-azure-resource-logs"></a>Поддерживаемые категории для журналов ресурсов Azure
 
@@ -354,7 +354,7 @@ ms.locfileid: "87318306"
 |OperationalLogs|Журналы операций|
 
 
-## <a name="microsofthealthcareapisservices"></a>Microsoft. Хеалскареапис/Services
+## <a name="microsofthealthcareapisservices"></a>Microsoft.HealthcareApis/services
 
 |Категория|Отображаемое имя категории|
 |---|---|
@@ -497,7 +497,6 @@ ms.locfileid: "87318306"
 |Категория|Отображаемое имя категории|
 |---|---|
 |NetworkSecurityGroupEvent|Событие группы безопасности сети|
-|NetworkSecurityGroupFlowEvent|Событие потока правил группы безопасности сети|
 |NetworkSecurityGroupRuleCounter|Счетчик правил группы безопасности сети|
 
 
@@ -709,7 +708,7 @@ ms.locfileid: "87318306"
 |сканлогс|Журналы антивирусной проверки|
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Дополнительные сведения о журналах ресурсов](./platform-logs-overview.md)
 * [Потоковая передача журналов ресурсов в **концентраторы событий**](./resource-logs.md#send-to-azure-event-hubs)

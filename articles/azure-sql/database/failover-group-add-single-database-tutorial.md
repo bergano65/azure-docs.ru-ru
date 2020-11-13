@@ -7,16 +7,16 @@ ms.subservice: high-availability
 ms.custom: sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: tutorial
-author: MashaMSFT
-ms.author: mathoma
-ms.reviewer: sstein
+author: stevestein
+ms.author: sstein
+ms.reviewer: ''
 ms.date: 06/19/2019
-ms.openlocfilehash: e4709bf901ed74e0ea7589824a280651f8b73866
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8298c673ddc707130d0873f686e1baed3677a46f
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793387"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94593961"
 ---
 # <a name="tutorial-add-an-azure-sql-database-to-an-autofailover-group"></a>Руководство по добавлению Базы данных SQL Azure в группу автоматической отработки отказа
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "92793387"
 Для работы с этим руководством требуется следующее:
 
 - Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/), если у вас ее еще нет.
-- Последняя версия [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Последняя версия [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 ---
 
@@ -65,7 +65,7 @@ ms.locfileid: "92793387"
 
 Создайте группу отработки отказа и добавьте в нее базу данных с помощью портала Azure.
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL** . Если **Azure SQL** нет в списке, выберите элемент **Все службы** и введите "Azure SQL" в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL** , чтобы добавить этот элемент в избранное и область навигации слева.
+1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **Azure SQL** нет в списке, выберите элемент **Все службы** и введите "Azure SQL" в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL** , чтобы добавить этот элемент в избранное и область навигации слева.
 1. Выберите базу данных, созданную в разделе 1, например `mySampleDatabase`.
 1. Группы отработки отказа можно настраивать на уровне сервера. Выберите имя сервера в разделе **Имя сервера** , чтобы открыть параметры для этого сервера.
 
@@ -78,10 +78,10 @@ ms.locfileid: "92793387"
 1. На странице **Группа отработки отказа** введите или выберите следующие значения, а затем щелкните **Создать** :
 
    - **Имя группы отработки отказа.** Введите уникальное имя для группы отработки отказа, например `failovergrouptutorial`.
-   - **Сервер-получатель.** Выберите вариант *настройки обязательных параметров* , а затем щелкните элемент **Создать сервер** . Кроме того, вы можете выбрать в качестве сервера-получателя уже существующий сервер. После ввода указанных ниже значений щелкните элемент **Выбрать** .
+   - **Сервер-получатель.** Выберите вариант *настройки обязательных параметров* , а затем щелкните элемент **Создать сервер**. Кроме того, вы можете выбрать в качестве сервера-получателя уже существующий сервер. После ввода указанных ниже значений щелкните элемент **Выбрать**.
       - **Имя сервера** : Введите уникальное имя для сервера-получателя, например `mysqlsecondary`.
-      - **Имя для входа администратора сервера** . Введите `azureuser`.
-      - **Пароль** . Введите сложный пароль, который соответствует требованиям к паролю.
+      - **Имя для входа администратора сервера**. Введите `azureuser`.
+      - **Пароль**. Введите сложный пароль, который соответствует требованиям к паролю.
       - **Расположение.** Выберите расположение из раскрывающегося списка, например `East US`. Это расположение не может совпадать с расположением основного сервера.
 
      > [!NOTE]
@@ -199,7 +199,7 @@ ms.locfileid: "92793387"
 |---|---|
 | [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Создает сервер, на котором размещены базы данных и эластичные пулы. |
 | [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule) | Создает правила брандмауэра сервера. |
-| [az sql failover-group create](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-create) | Создает группу отработки отказа. |
+| [az sql failover-group create](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-create&preserve-view=true) | Создает группу отработки отказа. |
 
 ---
 
@@ -211,7 +211,7 @@ ms.locfileid: "92793387"
 
 Выполните тестовую отработку отказа с помощью портала Azure
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL** . Если **Azure SQL** нет в списке, выберите элемент **Все службы** и введите "Azure SQL" в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL** , чтобы добавить этот элемент в избранное и область навигации слева.
+1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **Azure SQL** нет в списке, выберите элемент **Все службы** и введите "Azure SQL" в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL** , чтобы добавить этот элемент в избранное и область навигации слева.
 1. Выберите базу данных, созданную в разделе 2, например `mySampleDatbase`.
 1. Выберите имя сервера в разделе **Имя сервера** , чтобы открыть параметры для этого сервера.
 
@@ -322,8 +322,8 @@ ms.locfileid: "92793387"
 
 | Get-Help | Примечания |
 |---|---|
-| [az sql failover-group list](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-list) | Перечисляет группы отработки отказа на сервере. |
-| [az sql failover-group set-primary](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-set-primary) | Задает первичную точку группы отработки отказа. Для этого выполняется отработка отказа всех баз данных с текущего сервера-источника. |
+| [az sql failover-group list](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-list&preserve-view=true) | Перечисляет группы отработки отказа на сервере. |
+| [az sql failover-group set-primary](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-set-primary&preserve-view=true) | Задает первичную точку группы отработки отказа. Для этого выполняется отработка отказа всех баз данных с текущего сервера-источника. |
 
 ---
 
@@ -409,14 +409,14 @@ ms.locfileid: "92793387"
 
 | Get-Help | Примечания |
 |---|---|
-| [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) | Позволяет указать подписку в качестве текущей активной подписки. |
+| [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set&preserve-view=true) | Позволяет указать подписку в качестве текущей активной подписки. |
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Отвечает за создание в Базе данных SQL Azure сервера, на котором размещены отдельные базы данных и эластичные пулы. |
 | [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule) | Отвечает за создание правил брандмауэра для IP-адресов на уровне сервера в Базе данных SQL. |
-| [az sql db create](/cli/azure/sql/db?view=azure-cli-latest) | Отвечает за создание базы данных в Базе данных SQL Azure. |
-| [az sql failover-group create](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-create) | Отвечает за создание группы отработки отказа в Базе данных SQL Azure. |
-| [az sql failover-group list](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-list) | Отвечает за перечисление групп отработки отказа на сервере в Базе данных SQL. |
-| [az sql failover-group set-primary](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-set-primary) | Задает первичную точку группы отработки отказа. Для этого выполняется отработка отказа всех баз данных с текущего сервера-источника. |
+| [az sql db create](/cli/azure/sql/db?view=azure-cli-latest&preserve-view=true) | Отвечает за создание базы данных в Базе данных SQL Azure. |
+| [az sql failover-group create](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-create&preserve-view=true) | Отвечает за создание группы отработки отказа в Базе данных SQL Azure. |
+| [az sql failover-group list](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-list&preserve-view=true) | Отвечает за перечисление групп отработки отказа на сервере в Базе данных SQL. |
+| [az sql failover-group set-primary](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-set-primary&preserve-view=true) | Задает первичную точку группы отработки отказа. Для этого выполняется отработка отказа всех баз данных с текущего сервера-источника. |
 | [az group delete](/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 # <a name="the-portal"></a>[Портал](#tab/azure-portal)

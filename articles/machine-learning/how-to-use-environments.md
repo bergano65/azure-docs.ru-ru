@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 32748a996e0622c4b75d887aebf8a1805c5368bd
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: f3056c500453c2249d66a05079334851c851df33
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319086"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616626"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Создание & использование программных сред в Машинное обучение Azure
 
@@ -114,7 +114,7 @@ myenv.docker.enabled = True
 
 #### <a name="use-a-prebuilt-docker-image"></a>Использование предварительно созданного образа DOCKER
 
-По умолчанию служба автоматически использует один из [базовых образов](https://github.com/Azure/AzureML-Containers)на основе Ubuntu Linux, в частности тот, который определен в `azureml.core.environment.DEFAULT_CPU_IMAGE` . Затем он устанавливает все указанные пакеты Python, определенные в предоставленной среде машинного обучения Azure. Также можно использовать [Пользовательский базовый образ DOCKER](./how-to-deploy-custom-docker-image.md#create-a-custom-base-image).
+По умолчанию служба автоматически использует один из [базовых образов](https://github.com/Azure/AzureML-Containers)на основе Ubuntu Linux, в частности тот, который определен в `azureml.core.environment.DEFAULT_CPU_IMAGE` . Затем он устанавливает все указанные пакеты Python, определенные в предоставленной среде машинного обучения Azure. Другие базовые образы ЦП и GPU машинного обучения Azure доступны в [репозитории](https://github.com/Azure/AzureML-Containers)контейнеров. Также можно использовать [Пользовательский базовый образ DOCKER](./how-to-deploy-custom-docker-image.md#create-a-custom-base-image).
 
 ```python
 # Specify custom Docker base image and registry, if you don't want to use the defaults

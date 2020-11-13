@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 10/28/2020
+ms.date: 11/12/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 8f73f2a86e97dad1d6a0b0f05c54f3f896b4b49d
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: b670ec3cee2ebd1cc98ea2e04fb2b0dfd90e4e1a
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579221"
+ms.locfileid: "94594221"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -52,8 +52,8 @@ ms.locfileid: "94579221"
 |Личные домены|Еще не поддерживается|Еще не поддерживается|[Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)|
 |Области шифрования|Еще не поддерживается|Еще не поддерживается|[Создание и управление областями шифрования (Предварительная версия)](encryption-scope-manage.md)|
 |Канал изменений|Еще не поддерживается|Еще не поддерживается|[Поддержка канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md)|
-|Репликация объектов|Еще не поддерживается|Еще не поддерживается|[Настройка репликации объектов для блочных BLOB-объектов (предварительная версия)](object-replication-configure.md)|
-|Управление версиями BLOB-объектов|Еще не поддерживается|Еще не поддерживается|[Включение управления версиями BLOB-объектов и управление ими (Предварительная версия)](versioning-enable.md)|
+|Репликация объектов|Еще не поддерживается|Еще не поддерживается|[Настройка репликации объекта для блочных BLOB-объектов](object-replication-configure.md)|
+|Управление версиями BLOB-объектов|Еще не поддерживается|Еще не поддерживается|[Включение управления версиями BLOB-объектов и работа с ним](versioning-enable.md)|
 
 <div id="blob-container-ACL"><sup>1</sup> можно задать списки управления доступом для корневой папки контейнера, но не для самого контейнера.</div><br>
 

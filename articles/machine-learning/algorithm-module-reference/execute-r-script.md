@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/21/2020
-ms.openlocfilehash: 3e94172096daf5fd06549f8645d05b874948a917
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 1e71d3883b8dacefa9b501ee3a9a0533d5c7d515
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420824"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592674"
 ---
 # <a name="execute-r-script-module"></a>Выполнить модуль R Script
 
@@ -121,10 +121,10 @@ azureml_main <- function(dataframe1, dataframe2){
 
 ## <a name="access-to-registered-dataset"></a>Доступ к зарегистрированному набору данных
 
-Чтобы [получить доступ к зарегистрированным наборам данных](../how-to-create-register-datasets.md) в рабочей области, можно обратиться к следующему примеру кода:
+Чтобы получить доступ к [зарегистрированным наборам данных](../how-to-create-register-datasets.md) в рабочей области, можно обратиться к следующему примеру кода:
 
 ```R
-        azureml_main <- function(dataframe1, dataframe2){
+    azureml_main <- function(dataframe1, dataframe2){
   print("R script run.")
   run = get_current_run()
   ws = run$experiment$workspace
@@ -360,7 +360,7 @@ azureml_main <- function(dataframe1, dataframe2){
 
 | Пакет      | Версия    | 
 |--------------|------------| 
-| аскпасс      | 1.1        | 
+| аскпасс      | 1,1        | 
 | assertthat   | 0.2.1      | 
 | backports    | 1.1.4      | 
 | base         | 3.5.1      | 

@@ -1,6 +1,6 @@
 ---
 title: Преобразование данных с помощью действия Pig в фабрике данных Azure
-description: Узнайте, как использовать действие Pig в фабрике данных Azure версии 1 для запуска скриптов Pig в вашем кластере HDInsight по требованию или в собственном.
+description: Узнайте, как можно использовать действие Pig в фабрике данных Azure версии 1 для запуска скриптов Pig в собственном кластере HDInsight по требованию или в вашем компьютере.
 services: data-factory
 documentationcenter: ''
 author: djpmsft
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 35990312658492e1e41b47096a43748c3a4e653e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: c94d66bf98645e12a6c603f2b35d229080717734
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92359906"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616864"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Pig в фабрике данных Azure
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -26,8 +26,8 @@ ms.locfileid: "92359906"
 > * [Действие MapReduce](data-factory-map-reduce.md)
 > * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md)
-> * [Действие "обновить ресурс" Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-update-resource-activity.md)
+> * [Действие выполнения пакета в Студии машинного обучения Azure (классическая)](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие обновления ресурса в Студии машинного обучения Azure (классическая)](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
@@ -85,14 +85,14 @@ ms.locfileid: "92359906"
 | Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | name |Имя действия. |Да |
-| description |Текст, описывающий, для чего используется действие |Нет |
+| description |Текст, описывающий, для чего используется действие |нет |
 | type |HDinsightPig |Да |
-| Ввод данных |Входные данные, используемые действием Pig. |Нет |
+| Ввод данных |Входные данные, используемые действием Pig. |нет |
 | outputs |Выходные данные, создаваемые действием Pig. |Да |
 | linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
 | скрипт |Указывается встроенный сценарий Pig. |нет |
-| scriptPath |Путь к файлу сценария Pig в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |Нет |
-| defines |Параметры в виде пары "ключ — значение", ссылки на которые указываются в сценарии Pig. |Нет |
+| scriptPath |Путь к файлу сценария Pig в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |нет |
+| defines |Параметры в виде пары "ключ — значение", ссылки на которые указываются в сценарии Pig. |нет |
 
 ## <a name="example"></a>Пример
 Рассмотрим пример с анализом игровых журналов. Предположим, вы хотите определить время, которое игроки проводят за игрой, выпущенной вашей компанией.
@@ -123,7 +123,7 @@ Store PigSampleOut into 'wasb://adfwalkthrough@anandsub14.blob.core.windows.net/
 
 1. Создайте связанную службу для регистрации [собственного вычислительного кластера HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) или настройте [вычислительный кластер HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). Давайте назовем эту связанную службу **HDInsightLinkedService**.
 2. Создайте [связанную службу](data-factory-azure-blob-connector.md) для настройки подключения к хранилищу BLOB-объектов Azure, в котором хранятся данные. Назовем эту связанную службу **StorageLinkedService**.
-3. Создайте [наборы данных](data-factory-create-datasets.md) , указывающие на входные и выходные данные. Назовем входной набор данных **PigSampleIn**, а выходной — **PigSampleOut**.
+3. Создайте [наборы данных](data-factory-create-datasets.md) , указывающие на входные и выходные данные. Назовем входной набор данных **PigSampleIn** , а выходной — **PigSampleOut**.
 4. Скопируйте запрос Pig в файл, настроенный хранилищем BLOB-объектов Azure на шаге 2. Если хранилище BLOB-объектов Azure, размещающее данные, отличается от хранилища, размещающего файл запроса, то создайте отдельную связанную службу хранилища Azure. Добавьте ссылку на эту связанную службу в конфигурации действия. Используйте **scriptPath** , чтобы указать путь к файлу скрипта Pig и **scriptLinkedService**. 
    
    > [!NOTE]
@@ -210,7 +210,7 @@ Store PigSampleOut into 'wasb://adfwalkthrough@anandsub14.blob.core.windows.net/
       }
     }
     ```
-* В сценарии Pig сошлитесь на параметры с помощью **$parameterName**, как показано в следующем примере.
+* В сценарии Pig сошлитесь на параметры с помощью **$parameterName** , как показано в следующем примере.
 
     ```
     PigSampleIn = LOAD '$Input' USING PigStorage(',') AS (ProfileID:chararray, SessionStart:chararray, Duration:int, SrcIPAddress:chararray, GameType:chararray);

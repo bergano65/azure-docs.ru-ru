@@ -1,18 +1,18 @@
 ---
-title: Включение и запрос журналов диагностики
+title: Включение журналов диагностики и обращение к ним
 titleSuffix: Azure Digital Twins
 description: Узнайте, как включить ведение журнала с помощью параметров диагностики, и запросите журналы для немедленного просмотра.
 author: baanders
 ms.author: baanders
 ms.date: 11/9/2020
-ms.topic: troubleshooting
+ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0d775ffa1ce063c01fc6762d77201e5a4caaad87
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: d988617fcaf7479c7bb3356e6ef6f87824ed23a7
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411771"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616660"
 ---
 # <a name="troubleshooting-azure-digital-twins-diagnostics-logging"></a>Устранение неполадок в Azure Digital двойников: ведение журнала диагностики
 
@@ -76,7 +76,7 @@ Azure Digital двойников может получать журналы дл
 | --- | --- |
 | запись | РАЗМЕЩЕНИЕ и исправление |
 | Чтение | GET |
-| Удалить | DELETE |
+| DELETE | DELETE |
 | Действие | POST |
 
 Ниже приведен полный список операций и соответствующих [вызовов Azure Digital двойников REST API](/rest/api/azure-digitaltwins/) , зарегистрированных в каждой категории. 
