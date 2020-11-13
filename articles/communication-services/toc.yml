@@ -76,6 +76,8 @@
       href: concepts/pricing.md
     - name: Конфиденциальность
       href: concepts/privacy.md
+    - name: Модель удостоверений
+      href: concepts/identity-model.md
     - name: Аутентификация
       href: concepts/authentication.md
     - name: Обработка событий

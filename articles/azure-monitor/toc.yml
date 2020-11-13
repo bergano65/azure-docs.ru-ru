@@ -180,6 +180,21 @@
               href: app/pricing.md
             - name: Использование данных журнала и затраты на использование
               href: platform/manage-cost-storage.md
+    - name: Метрики Azure Monitor
+      items:
+        - name: Обзор
+          displayname: Metrics
+          href: platform/data-platform-metrics.md
+        - name: Обозреватель метрик
+          items:
+            - name: Начало работы с обозревателем метрик
+              href: platform/metrics-getting-started.md
+            - name: Расширенные возможности обозревателя метрик
+              href: platform/metrics-charts.md
+            - name: Примеры диаграмм метрик
+              href: platform/metric-chart-samples.md
+            - name: Устранение неполадок с диаграммами метрик
+              href: platform/metrics-troubleshoot.md
     - name: Журналы Azure Monitor
       items:
         - name: Обзор
@@ -262,21 +277,10 @@
               href: platform/logs-export-logic-app.md
             - name: Запросы к экспортированным данным с использованием Data Explorer
               href: platform/azure-data-explorer-query-storage.md
-    - name: Метрики Azure Monitor
-      items:
-        - name: Обзор
-          displayname: Metrics
-          href: platform/data-platform-metrics.md
-        - name: Обозреватель метрик
-          items:
-            - name: Начало работы с обозревателем метрик
-              href: platform/metrics-getting-started.md
-            - name: Расширенные возможности обозревателя метрик
-              href: platform/metrics-charts.md
-            - name: Примеры диаграмм метрик
-              href: platform/metric-chart-samples.md
-            - name: Устранение неполадок с диаграммами метрик
-              href: platform/metrics-troubleshoot.md
+            - name: Отправка в Excel
+              href: log-query/log-excel.md
+            - name: "Отправка в Power\_BI"
+              href: log-query/log-powerbi.md
     - name: Журналы платформы
       items:
         - name: Обзор
@@ -575,12 +579,16 @@
                   displayname: 'ilogger, logging, log'
                   href: app/ilogger.md
             - name: ASP.NET
-              displayname: 'ASP.NET, c#, csharp, .NET, NET, dotnet'
-              href: app/asp-net.md
+              items:
+                - name: Мониторинг приложений ASP.NET
+                  displayname: 'ASP.NET, c#, csharp, .NET, NET, dotnet'
+                  href: app/asp-net.md
+                - name: Устранение неполадок с ASP.NET
+                  href: app/asp-net-troubleshoot-no-data.md
             - name: Приложения не на основе HTTP и фоновые приложения
               displayname: 'console, .NET, .NET Core, dotnet console, dotnet, c#, csharp, NET, worker, background, generic host'
               href: app/worker-service.md
-            - name: Консоль .NET
+            - name: Консоль ASP.NET
               displayname: 'console, .NET, dotnet console, dotnet, c#, csharp, NET'
               href: app/console.md
             - name: Java
@@ -590,18 +598,10 @@
                   href: app/java-get-started.md
                 - name: Трассировки журналов
                   href: app/java-trace-logs.md
-                - name: Метрики Unix
-                  href: app/java-collectd.md
                 - name: Зависимости
                   href: app/java-agent.md
                 - name: Фильтрация данных телеметрии
                   href: app/java-filter-telemetry.md
-                - name: Метрики Micrometer
-                  displayname: java
-                  href: app/micrometer-java.md
-                - name: Приложение Spring Boot
-                  displayname: java
-                  href: /java/azure/spring-framework/configure-spring-boot-java-applicationinsights
                 - name: Диагностика
                   href: app/java-troubleshoot.md
             - name: Node.js
@@ -637,8 +637,6 @@
             - name: Сводка по API Application Insights
               displayname: 'SDK, API, custom events, custom metrics, trackevent,trackmetric, getmetric, trackrequest, trackexception, tracktrace, trackdependency'
               href: app/api-custom-events-metrics.md
-            - name: Устранение неполадок с ASP.NET
-              href: app/asp-net-troubleshoot-no-data.md
             - name: Удаление Application Insights
               href: app/remove-application-insights.md
         - name: Мониторинг без написания кода
@@ -1241,6 +1239,8 @@
               href: app/release-notes.md
             - name: Расширение веб-приложения
               href: app/web-app-extension-release-notes.md
+            - name: Snapshot Debugger
+              href: app/snapshot-collector-release-notes.md
         - name: Модель данных
           items:
             - name: Обзор
@@ -1323,6 +1323,11 @@
           href: platform/resource-logs-blob-format.md
         - name: Аналитика Key Vault (нерекомендуемый компонент)
           href: insights/azure-key-vault-deprecated.md
+        - name: Метрики Unix
+          href: app/java-collectd.md
+        - name: Метрики Micrometer
+          displayname: java
+          href: app/micrometer-java.md
         - name: Представления
           items:
             - name: Конструктор представлений

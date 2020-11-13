@@ -1,7 +1,7 @@
 ---
 title: Импорт данных в конструктор
 titleSuffix: Azure Machine Learning
-description: Узнайте, как импортировать данные в конструктор Машинное обучение Azure из различных источников данных.
+description: Узнайте, как импортировать данные в Машинное обучение Azure конструктор с помощью Машинное обучение Azure наборов данных и модуля импорта Data.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ ms.author: keli19
 ms.date: 09/09/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 15fca48327c46480546764be1b2ab40c1635e874
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ce0bb2a30ec4092d0053adf2de711547595c900
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90985599"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94554722"
 ---
 # <a name="import-data-into-azure-machine-learning-designer"></a>Импорт данных в конструктор Машинное обучение Azure
 
@@ -105,6 +105,6 @@ ms.locfileid: "90985599"
 
 Если Рабочая область находится в виртуальной сети, необходимо выполнить дополнительные действия по настройке для визуализации данных в конструкторе. Дополнительные сведения об использовании хранилищ и наборов данных в виртуальной сети см. в статье [использование машинное обучение Azure Studio в виртуальной сети Azure](how-to-enable-studio-virtual-network.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите основы конструктора с помощью этого [руководства: прогнозирование цены автомобилей с помощью конструктора](tutorial-designer-automobile-price-train-score.md).

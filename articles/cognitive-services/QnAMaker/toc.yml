@@ -119,12 +119,10 @@
       href: qna-maker-encryption-of-data-at-rest.md
     - name: Справочник по REST API
       items:
-        - name: Разработка API-интерфейсов
-          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase'
-        - name: API GenerateAnswer
-          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer'
-        - name: API обучения
-          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train'
+        - name: QnA Maker 4.0
+          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/alterations'
+        - name: "QnA Maker 5.0 (предварительная версия\_1)"
+          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerv5.0-preview.1/alterations'
     - name: Пакеты SDK
       items:
         - name: C#

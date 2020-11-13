@@ -1,7 +1,7 @@
 ---
 title: Повторное обучение моделей с помощью конструктора Машинное обучение Azure
 titleSuffix: Azure Machine Learning
-description: Узнайте, как переучить модели с опубликованными конвейерами в конструкторе Машинное обучение Azure.
+description: Узнайте, как переучить модели машинного обучения с помощью опубликованных конвейеров в конструкторе Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: likebupt
 ms.date: 04/06/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: d43bea855d9ac3dc34b8e72adcd9577e5933e52c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8ef4d9f768d6fdcf976c9317d1abec3d4533824
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90905680"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94554807"
 ---
 # <a name="retrain-models-with-azure-machine-learning-designer"></a>Повторное обучение моделей с помощью конструктора Машинное обучение Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "90905680"
 
 1. В области сведений о модуле справа от холста выберите источник данных.
 
-1. Введите путь к данным. Вы также можете щелкнуть **Выбрать путь**, чтобы просмотреть дерево файлов. 
+1. Введите путь к данным. Вы также можете щелкнуть **Выбрать путь** , чтобы просмотреть дерево файлов. 
 
 1. Наведите мышь на поле **Путь** и нажмите кнопку с многоточием над появившимся полем **Путь**.
 

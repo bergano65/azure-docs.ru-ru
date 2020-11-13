@@ -703,6 +703,8 @@
               href: migrate-java-v4-sdk.md
             - name: "Переход на пакет SDK для .NET версии\_3"
               href: migrate-dotnet-v3.md
+            - name: "Переход на пакет SDK для .NET версии\_2"
+              href: migrate-dotnet-v2.md
         - name: Устранение неполадок
           items:
             - name: Распространенные ошибки

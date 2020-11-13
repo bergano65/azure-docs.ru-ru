@@ -68,7 +68,7 @@
           href: tutorial-migrate-gcp-virtual-machines.md
 - name: Основные понятия
   items:
-    - name: Создание плана миграции с помощью службы "Миграция Azure"
+    - name: Составление плана миграции
       href: concepts-migration-planning.md
     - name: Таблицы поддержки
       items:

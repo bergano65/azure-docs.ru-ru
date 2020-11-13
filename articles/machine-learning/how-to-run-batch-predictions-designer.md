@@ -1,7 +1,7 @@
 ---
 title: Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure
 titleSuffix: Azure Machine Learning
-description: Узнайте, как обучить модель и настроить конвейер пакетного прогнозирования с помощью конструктора. Разверните конвейер как параметризованную веб-службу, которая может быть активирована из любой библиотеки HTTP.
+description: Узнайте, как создать конвейер пакетной прогнозирования. Разверните конвейер в качестве параметризованной веб-службы и активируйте его из любой библиотеки HTTP.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: likebupt
 ms.date: 09/09/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: f070cfc1fd9b4326c5a80ce31f6263aadbe8e8bc
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2ef125f65e13f7a9fa756553b1de148d4849babc
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325443"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94553952"
 ---
 # <a name="run-batch-predictions-using-azure-machine-learning-designer"></a>Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure
 

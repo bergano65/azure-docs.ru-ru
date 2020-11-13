@@ -94,7 +94,7 @@
       href: enable-diagnostic-logging.md
     - name: Экспорт метрик соединителя Интернета вещей Azure для FHIR (предварительная версия) с помощью параметров диагностики
       href: iot-metrics-diagnostics-export.md
-    - name: Просмотр и настройка соединителя Интернета вещей Azure для метрик FHIR (предварительная версия)
+    - name: Отображение и настройка метрик соединителя Интернета вещей Azure для метрик FHIR (предварительная версия)
       href: iot-metrics-display.md
     - name: "Получение маркера для Azure API для FHIR\_— CLI"
       href: get-healthcare-apis-access-token-cli.md

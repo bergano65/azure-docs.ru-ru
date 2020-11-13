@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 5423fc27ecc58bcd79b36a845e4b7569f342f712
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: eef4f6b8ee5821e54b5b7709eee7f8dad8749e63
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286695"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488542"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -93,12 +93,14 @@ ms.locfileid: "93286695"
 | **VaultDelete** |[Удаление хранилища ключей](/rest/api/keyvault/vaults) |
 | **VaultPatch** |[Update a key vault (Создание или обновление хранилища ключей)](/rest/api/keyvault/vaults) |
 | **VaultList** |[Список всех хранилищ ключей в группе ресурсов](/rest/api/keyvault/vaults) |
+| **VaultPurge** |[Очистка удаленного хранилища](/rest/api/keyvault/vaults/purgedeleted) |
+| **VaultRecover** |Восстановление удаленного хранилища|
+| **VaultGetDeleted** |[Получение данных об удаленном хранилище](/rest/api/keyvault/vaults/getdeleted) |
+| **VaultListDeleted** |[Вывод списка удаленных хранилищ](/rest/api/keyvault/vaults/listdeleted) |
 | **KeyCreate** |[Создание ключа](/rest/api/keyvault/createkey) |
 | **KeyGet** |[Получение сведений о ключе](/rest/api/keyvault/getkey) |
 | **KeyImport** |[Импорт ключа в хранилище](/rest/api/keyvault/vaults) |
-| **KeyBackup** |[Резервное копирование ключа](/rest/api/keyvault/backupkey) |
 | **KeyDelete** |[Удаление ключа](/rest/api/keyvault/deletekey) |
-| **KeyRestore** |[Восстановление ключа](/rest/api/keyvault/restorekey) |
 | **KeySign** |[Вход с помощью ключа](/rest/api/keyvault/sign) |
 | **KeyVerify** |[Проверка с помощью ключа](/rest/api/keyvault/vaults) |
 | **KeyWrap** |[Перенос ключа](/rest/api/keyvault/wrapkey) |
@@ -106,14 +108,56 @@ ms.locfileid: "93286695"
 | **KeyEncrypt** |[Шифрование с помощью ключа](/rest/api/keyvault/encrypt) |
 | **KeyDecrypt** |[Расшифровка с помощью ключа](/rest/api/keyvault/decrypt) |
 | **KeyUpdate** |[Обновление ключа](/rest/api/keyvault/updatekey) |
-| **KeyList** |[Перечисление ключей в хранилище](/rest/api/keyvault/vaults) |
+| **KeyList** |[Перечисление ключей в хранилище](/rest/api/keyvault/getkeys) |
 | **KeyListVersions** |[Перечисление версий ключа](/rest/api/keyvault/getkeyversions) |
+| **KeyPurge** |[Очистка ключа](/rest/api/keyvault/purgedeletedkey) |
+| **KeyBackup** |[Создание резервной копии ключа](/rest/api/keyvault/backupkey) |
+| **KeyRestore** |[Восстановление ключа](/rest/api/keyvault/restorekey) |
+| **KeyRecover** |[Восстановление ключа](/rest/api/keyvault/recoverdeletedkey) |
+| **KeyGetDeleted** |[Получение данных об удаленном ключе](/rest/api/keyvault/getdeletedkey) |
+| **KeyListDeleted** |[Вывод списка удаленных ключей в хранилище](/rest/api/keyvault/getdeletedkeys) |
+| **CertificateGet** |[Получение информации о сертификате](/rest/api/keyvault/getcertificate) |
+| **CertificateCreate** |[Создание сертификата](/rest/api/keyvault/createcertificate) |
+| **CertificateImport** |[Импорт сертификата в хранилище](/rest/api/keyvault/importcertificate) |
+| **CertificateUpdate** |[Обновление сертификата](/rest/api/keyvault/updatecertificate) |
+| **CertificateList** |[Вывод списка сертификатов в хранилище](/rest/api/keyvault/getcertificates) |
+| **CertificateListVersions** |[Вывод списка версий сертификата](/rest/api/keyvault/getcertificateversions) |
+| **CertificateDelete** |[Удаление сертификата](/rest/api/keyvault/deletecertificate) |
+| **CertificatePurge** |[Очистка сертификата](/rest/api/keyvault/purgedeletedcertificate) |
+| **CertificateBackup** |[Создание резервной копии сертификата](/rest/api/keyvault/backupcertificate) |
+| **CertificateRestore** |[Восстановление сертификата](/rest/api/keyvault/restorecertificate) |
+| **CertificateRecover** |[Отмена удаления сертификата](/rest/api/keyvault/recoverdeletedcertificate) |
+| **CertificateGetDeleted** |[Получение данных об удаленном сертификате](/rest/api/keyvault/getdeletedcertificate) |
+| **CertificateListDeleted** |[Вывод списка удаленных сертификатов в хранилище](/rest/api/keyvault/getdeletedcertificates) |
+| **CertificatePolicyGet** |[Получение данных о политике сертификата](/rest/api/keyvault/getcertificatepolicy) |
+| **CertificatePolicyUpdate** |[Обновление политики сертификата](/rest/api/keyvault/updatecertificatepolicy) |
+| **CertificatePolicySet** |[Создание политики сертификата](/rest/api/keyvault/createcertificate) |
+| **CertificateContactsGet** |[Получение контактных данных для управления сертификатами](/rest/api/keyvault/getcertificatecontacts) |
+| **CertificateContactsSet** |[Указание контактных данных для управления сертификатами](/rest/api/keyvault/setcertificatecontacts) |
+| **CertificateContactsDelete** |[Удаление контактных данных для управления сертификатами](/rest/api/keyvault/deletecertificatecontacts) |
+| **CertificateIssuerGet** |[Получение данных об издателе сертификата](/rest/api/keyvault/getcertificateissuer) |
+| **CertificateIssuerSet** |[Указание данных об издателе сертификата](/rest/api/keyvault/setcertificateissuer) |
+| **CertificateIssuerUpdate** |[Обновление данных об издателе сертификата](/rest/api/keyvault/updatecertificateissuer) |
+| **CertificateIssuerDelete** |[Удаление издателя сертификата](/rest/api/keyvault/deletecertificateissuer) |
+| **CertificateIssuersList** |[Вывод списка издателей сертификатов](/rest/api/keyvault/getcertificateissuers) |
+| **CertificateEnroll** |Регистрация сертификата |
+| **CertificateRenew** |Обновление сертификата |
+| **CertificatePendingGet** |Получение данных об ожидающем сертификате |
+| **CertificatePendingMerge** |Ожидание слияния сертификатов |
+| **CertificatePendingUpdate** |Ожидание обновления сертификата |
+| **CertificatePendingDelete** |Удаление ожидающего сертификата |
 | **SecretSet** |[Создание секрета](/rest/api/keyvault/updatecertificate) |
 | **SecretGet** |[Получение секрета](/rest/api/keyvault/getsecret) |
 | **SecretUpdate** |[Обновление секрета](/rest/api/keyvault/updatesecret) |
 | **SecretDelete** |[Удаление секрета](/rest/api/keyvault/deletesecret) |
-| **SecretList** |[Список секретов в хранилище](/rest/api/keyvault/vaults) |
+| **SecretList** |[Список секретов в хранилище](/rest/api/keyvault/getsecrets) |
 | **SecretListVersions** |[Список версий секрета](/rest/api/keyvault/getsecretversions) |
+| **SecretPurge** |[Очистка секрета](/rest/api/keyvault/purgedeletedsecret) |
+| **SecretBackup** |[Создание резервной копии для секрета](/rest/api/keyvault/backupsecret) |
+| **SecretRestore** |[Восстановление секрета](/rest/api/keyvault/restoresecret) |
+| **SecretRecover** |[Отмена удаления секрета](/rest/api/keyvault/recoverdeletedsecret) |
+| **SecretGetDeleted** |[Получение данных об удаленном секрете](/rest/api/keyvault/getdeletedsecret) |
+| **SecretListDeleted** |[Вывод списка удаленных секретов в хранилище](/rest/api/keyvault/getdeletedsecrets) |
 | **VaultAccessPolicyChangedEventGridNotification** | Опубликованное событие изменения политики доступа к хранилищу |
 | **SecretNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия секрета |
 | **SecretExpiredEventGridNotification** |Опубликованное событие истечения срока действия секрета |

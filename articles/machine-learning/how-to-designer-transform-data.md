@@ -1,7 +1,7 @@
 ---
 title: Преобразование данных в конструкторе
 titleSuffix: Azure Machine Learning
-description: Сведения о преобразовании данных в конструкторе Машинного обучения Azure для создания собственных наборов данных.
+description: Узнайте, как импортировать и преобразовывать данные в конструкторе Машинное обучение Azure для создания собственных наборов данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ ms.author: peterlu
 ms.date: 06/28/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: f08d0f1be166630d9cf4b0b9236d78228fd78aae
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: be2921f88ad2ecf88c555daf8385f1bd6733e836
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312813"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94554021"
 ---
 # <a name="transform-data-in-azure-machine-learning-designer"></a>Преобразование данных в конструкторе Машинное обучение Azure
 

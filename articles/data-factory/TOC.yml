@@ -451,6 +451,8 @@
           href: copy-activity-fault-tolerance.md
         - name: Проверка согласованности данных
           href: copy-activity-data-consistency.md
+        - name: Журнал действий копирования
+          href: copy-activity-log.md
         - name: Поддержка сжатия и форматирования (устаревшая функция)
           href: supported-file-formats-and-compression-codecs-legacy.md
     - name: Преобразование данных

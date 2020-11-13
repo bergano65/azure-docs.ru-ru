@@ -178,6 +178,8 @@
           href: connect-threat-intelligence.md
         - name: Подключение виртуальных машин Azure Stack
           href: connect-azure-stack.md
+        - name: Мониторинг работоспособности соединителя данных
+          href: monitor-data-connector-health.md
     - name: Включение аналитики поведения пользователей и сущностей
       href: enable-entity-behavior-analytics.md
     - name: Управление несколькими арендаторами (MSSP)

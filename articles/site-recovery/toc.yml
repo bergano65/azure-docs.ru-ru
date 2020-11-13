@@ -48,6 +48,22 @@
           href: tutorial-dr-drill-azure.md
         - name: Отработка отказа с переходом в Azure
           href: vmware-azure-tutorial-failover-failback.md
+    - name: Аварийное восстановление для Решение Azure VMware в Azure
+      items:
+        - name: Подготовка Azure
+          href: avs-tutorial-prepare-azure.md
+        - name: Подготовка Решения Azure VMware
+          href: avs-tutorial-prepare-avs.md
+        - name: Настройка репликации
+          href: avs-tutorial-replication.md
+        - name: Отработка аварийного восстановления
+          href: avs-tutorial-dr-drill-azure.md
+        - name: Отработка отказа с переходом в Azure
+          href: avs-tutorial-failover.md
+        - name: Повторное включение защиты для виртуальных машин
+          href: avs-tutorial-reprotect.md
+        - name: Восстановление размещения из Azure
+          href: avs-tutorial-failback.md
     - name: Аварийное восстановление виртуальной машины Hyper-V в Azure
       items:
         - name: Подготовка Azure

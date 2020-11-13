@@ -287,8 +287,8 @@
       href: partner-center-portal/downloads-dashboard.md
     - name: Панель мониторинга оценок и рецензий
       href: partner-center-portal/ratings-reviews.md
-    - name: Аналитика Центра партнеров (терминология)
-      href: partner-center-portal/faq-terminology.md
+    - name: Часто задаваемые вопросы об аналитике
+      href: analytics-faq.md
 - name: Политики и условия
   items:
     - name: Сведения о политиках и условиях
