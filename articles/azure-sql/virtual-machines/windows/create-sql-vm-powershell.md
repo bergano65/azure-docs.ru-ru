@@ -15,12 +15,12 @@ ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6bf17f85892691fe930d3d4b1e12846da8f9dc58
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c49f8b2732a1b62760cec69626d56751971e6a44
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789817"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556443"
 ---
 # <a name="how-to-use-azure-powershell-to-provision-sql-server-on-azure-virtual-machines"></a>Использование Azure PowerShell для инициализации SQL Server на виртуальных машинах Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "92789817"
 
 ## <a name="configure-your-subscription"></a>Настройка подписки
 
-1. Откройте PowerShell и установите доступ к учетной записи Azure, выполнив команду **Connect-AzAccount** .
+1. Откройте PowerShell и установите доступ к учетной записи Azure, выполнив команду **Connect-AzAccount**.
 
    ```powershell
    Connect-AzAccount
@@ -367,12 +367,17 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualM
 
 ## <a name="install-the-sql-iaas-agent"></a>Установка агента SQL IaaS
 
-Виртуальные машины SQL Server поддерживают функции автоматизированного управления при наличии [расширения агента IaaS SQL Server](sql-server-iaas-agent-extension-automate-management.md). Чтобы установить агент на новой виртуальной машине и зарегистрировать его с помощью поставщика ресурсов, выполните команду [New-азсклвм](/powershell/module/az.sqlvirtualmachine/new-azsqlvm) после создания виртуальной машины. Укажите тип лицензии для виртуальной машины SQL Server, выбрав одну из них с помощью [Преимущества гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/), — с оплатой по мере использования или собственную лицензию. Дополнительные сведения о лицензировании см. [здесь](licensing-model-azure-hybrid-benefit-ahb-change.md). 
+Виртуальные машины SQL Server поддерживают функции автоматизированного управления при наличии [расширения агента IaaS SQL Server](sql-server-iaas-agent-extension-automate-management.md). Чтобы зарегистрировать SQL Server с помощью расширения, выполните команду [New-азсклвм](/powershell/module/az.sqlvirtualmachine/new-azsqlvm) после создания виртуальной машины. Укажите тип лицензии для виртуальной машины SQL Server, выбрав одну из них с помощью [Преимущества гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/), — с оплатой по мере использования или собственную лицензию. Дополнительные сведения о лицензировании см. [здесь](licensing-model-azure-hybrid-benefit-ahb-change.md). 
 
 
    ```powershell
    New-AzSqlVM -ResourceGroupName $ResourceGroupName -Name $VMName -Location $Location -LicenseType <PAYG/AHUB> 
    ```
+
+Существует три способа регистрации в расширении: 
+- [Автоматически для всех текущих и будущих виртуальных машин в подписке](sql-agent-extension-automatic-registration-all-vms.md)
+- [Вручную для одной виртуальной машины](sql-agent-extension-manually-register-single-vm.md)
+- [Ручное копирование нескольких виртуальных машин](sql-agent-extension-manually-register-vms-bulk.md)
 
 
 ## <a name="stop-or-remove-a-vm"></a>Останов или удаление виртуальной машины
@@ -387,7 +392,7 @@ Stop-AzVM -Name $VMName -ResourceGroupName $ResourceGroupName
 
 ## <a name="example-script"></a>Пример сценария
 
-Файл ниже содержит полный сценарий PowerShell для этого руководства. Предполагается, что вы уже настроили подписку Azure для использования с командами **Connect-AzAccount** и **Select-AzSubscription** .
+Файл ниже содержит полный сценарий PowerShell для этого руководства. Предполагается, что вы уже настроили подписку Azure для использования с командами **Connect-AzAccount** и **Select-AzSubscription**.
 
 ```powershell
 # Variables

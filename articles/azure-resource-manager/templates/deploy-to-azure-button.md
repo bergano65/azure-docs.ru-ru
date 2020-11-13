@@ -3,12 +3,12 @@ title: Кнопка "Развертывание в Azure"
 description: Используйте кнопку для развертывания шаблонов Azure Resource Manager из репозитория GitHub.
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: 7d002508f6b2402f8cff40fb0369896080ecbbad
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 25ec5fd7a0c5b356097412ab6f1765cb0886522a
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490905"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94555272"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub
 
@@ -19,11 +19,15 @@ ms.locfileid: "94490905"
 * [группы ресурсов](deploy-to-resource-group.md)
 * [оформления](deploy-to-subscription.md)
 * [группы управления](deploy-to-management-group.md)
-* [Клиенты](deploy-to-tenant.md).
+* [клиентов](deploy-to-tenant.md)
 
 ## <a name="use-common-image"></a>Использовать общий образ
 
 Чтобы добавить кнопку на веб-страницу или в репозиторий, используйте следующий рисунок:
+
+```markdown
+![Deploy to Azure](https://aka.ms/deploytoazurebutton)
+```
 
 ```html
 <img src="https://aka.ms/deploytoazurebutton"/>
@@ -48,6 +52,7 @@ https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-st
 Затем преобразуйте URL-адрес в значение, закодированное URL-адресом. Можно использовать интерактивный кодировщик или выполнить команду. В следующем примере PowerShell показано, как кодировать значение в URL-адрес.
 
 ```powershell
+$url = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json"
 [uri]::EscapeDataString($url)
 ```
 
@@ -70,6 +75,8 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 ```
 
 У вас есть полный URL-адрес ссылки.
+
+Как правило, шаблон размещается в общедоступном репозитории. При использовании частного репозитория необходимо включить маркер для доступа к необработанному содержимому шаблона. Токен, созданный GitHub, действителен в течение короткого времени. Часто приходится обновлять ссылку.
 
 Если вы используете [Git с Azure Repos](/azure/devops/repos/git/) вместо репозитория GitHub, вы по-прежнему можете использовать кнопку Развертывание в Azure. Убедитесь, что репозиторий является общедоступным. Используйте [операцию Items](/rest/api/azure/devops/git/items/get) для получения шаблона. Ваш запрос должен иметь следующий формат:
 
@@ -113,6 +120,6 @@ https://dev.azure.com/{organization-name}/{project-name}/_apis/git/repositories/
 
 ![Развертывание с помощью портала](./media/deploy-to-azure-button/portal.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о шаблонах см. [в разделе Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).

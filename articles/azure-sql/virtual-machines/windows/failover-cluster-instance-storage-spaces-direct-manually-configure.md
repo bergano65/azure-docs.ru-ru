@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
-ms.openlocfilehash: 9b90d13d6f4fa5a33bff38aaa66728a5d0f3d70f
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 01f9ee1ad134c14150d16569fd57e658b160784c
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289942"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556324"
 ---
 # <a name="create-an-fci-with-storage-spaces-direct-sql-server-on-azure-vms"></a>Создание FCI с Локальные дисковые пространства (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "93289942"
    > На основе шаблона в Azure можно создать полное решение. Пример шаблона доступен на странице шаблонов быстрого запуска [Azure](https://github.com/MSBrett/azure-quickstart-templates/tree/master/sql-server-2016-fci-existing-vnet-and-ad) для GitHub. Этот пример не предназначен или не протестирован для какой-либо конкретной рабочей нагрузки. Вы можете запустить шаблон, чтобы создать экземпляр отказоустойчивого кластера SQL Server с хранилищем Локальных дисковых пространств, подключенным к вашему домену. Шаблон можно оценить и изменить в соответствии со своими потребностями.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед выполнением инструкций, приведенных в этой статье, у вас уже должны быть:
 
@@ -217,7 +217,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 ## <a name="register-with-the-sql-vm-rp"></a>Регистрация в RP виртуальной машины SQL
 
-Чтобы управлять виртуальной машиной SQL Server на портале, зарегистрируйте ее с помощью поставщика ресурсов виртуальной машины SQL (RP) в [режиме упрощенного управления](sql-vm-resource-provider-register.md#lightweight-management-mode)(в настоящее время это единственный режим, поддерживаемый с FCI и SQL Server на виртуальных машинах Azure). 
+Чтобы управлять виртуальной машиной SQL Server на портале, зарегистрируйте ее с помощью расширения агента IaaS SQL (RP) в [режиме упрощенного управления](sql-agent-extension-manually-register-single-vm.md#lightweight-management-mode)(в настоящее время это единственный режим, поддерживаемый с FCI и SQL Server на виртуальных машинах Azure). 
 
 
 Регистрация SQL Server виртуальной машины в упрощенном режиме с помощью PowerShell:  
@@ -239,7 +239,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 - Виртуальные машины Azure поддерживают Microsoft координатор распределенных транзакций (MSDTC) в Windows Server 2019 с хранилищем в CSV и [стандартной подсистемой балансировки нагрузки](../../../load-balancer/load-balancer-overview.md).
 - Диски, подключенные как диски с файловой системой NTFS, можно использовать с Локальные дисковые пространства только в том случае, если параметр приемлемость диска не установлен или снят при добавлении хранилища в кластер. 
-- Поддерживается только регистрация в поставщике ресурсов виртуальной машины SQL в [режиме упрощенного управления](sql-server-iaas-agent-extension-automate-management.md#management-modes) .
+- Поддерживается только регистрация с расширением агента IaaS SQL в [режиме упрощенного управления](sql-server-iaas-agent-extension-automate-management.md#management-modes) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

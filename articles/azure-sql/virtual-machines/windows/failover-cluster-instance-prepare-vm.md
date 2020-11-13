@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: e5eff13c9ec672937258cf35274d2f5f7bc66f18
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 901c090d26959950d0ffd6a96253bdc36c9331c5
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164250"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556341"
 ---
 # <a name="prepare-virtual-machines-for-an-fci-sql-server-on-azure-vms"></a>Подготовка виртуальных машин для FCI (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "92164250"
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Обязательные условия 
 
 - Подписка Microsoft Azure. Начните работу [бесплатно](https://azure.microsoft.com/free/). 
 - Домен Windows на виртуальных машинах Azure или локальный центр обработки данных, который был расширен в Azure с помощью связывания виртуальных сетей.
@@ -48,8 +48,8 @@ ms.locfileid: "92164250"
 Тщательно выберите вариант доступности виртуальной машины, соответствующий предполагаемой конфигурации кластера: 
 
  - **Общие диски Azure**. Группа [доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) , настроенная с доменом сбоя и доменом обновления, имеет значение 1 и помещается в [группу размещения](../../../virtual-machines/windows/proximity-placement-groups-portal.md)с учетом расположения.
- - **Общие файловые ресурсы**уровня "Премиум": [Группа доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) или [Зона доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address). Общие файловые ресурсы уровня "Премиум" являются единственным вариантом общего хранилища, если в качестве конфигурации доступности для виртуальных машин выбраны зоны доступности. 
- - **Локальные дисковые пространства**: [Группа доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set).
+ - **Общие файловые ресурсы** уровня "Премиум": [Группа доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) или [Зона доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address). Общие файловые ресурсы уровня "Премиум" являются единственным вариантом общего хранилища, если в качестве конфигурации доступности для виртуальных машин выбраны зоны доступности. 
+ - **Локальные дисковые пространства** : [Группа доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set).
 
 >[!IMPORTANT]
 >После создания виртуальной машины установить или изменить группу доступности невозможно.
@@ -71,15 +71,15 @@ ms.locfileid: "92164250"
 
 ## <a name="uninstall-sql-server"></a>Удаление SQL Server
 
-В рамках процесса создания FCI вы устанавливаете SQL Server как кластеризованный экземпляр в отказоустойчивый кластер. *Если вы развернули виртуальную машину с образом Azure Marketplace без SQL Server, этот шаг можно пропустить.* При развертывании образа с предварительно установленной SQL Server необходимо отменить регистрацию виртуальной машины SQL Server в поставщике ресурсов виртуальной машины SQL, а затем удалить SQL Server. 
+В рамках процесса создания FCI вы устанавливаете SQL Server как кластеризованный экземпляр в отказоустойчивый кластер. *Если вы развернули виртуальную машину с образом Azure Marketplace без SQL Server, этот шаг можно пропустить.* При развертывании образа с предварительно установленной SQL Server необходимо отменить регистрацию виртуальной машины SQL Server из расширения агента IaaS SQL, а затем удалить SQL Server. 
 
-### <a name="unregister-from-the-sql-vm-resource-provider"></a>Отмена регистрации в поставщике ресурсов виртуальной машины SQL
+### <a name="unregister-from-the-sql-iaas-agent-extension"></a>Отменить регистрацию в расширении агента IaaS SQL
 
-SQL Server образы виртуальных машин из Azure Marketplace автоматически регистрируются в поставщике ресурсов виртуальной машины SQL. Перед удалением предварительно установленного экземпляра SQL Server необходимо сначала [отменить регистрацию каждой виртуальной машины SQL Server в поставщике ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md#unregister-from-rp). 
+SQL Server образы виртуальных машин из Azure Marketplace автоматически регистрируются с расширением агента IaaS SQL. Перед удалением предварительно установленного экземпляра SQL Server необходимо сначала [отменить регистрацию каждой виртуальной машины SQL Server из расширения агента IaaS SQL](sql-agent-extension-manually-register-single-vm.md#unregister-from-extension). 
 
 ### <a name="uninstall-sql-server"></a>Удаление SQL Server
 
-После отмены регистрации в поставщике ресурсов можно удалить SQL Server. Выполните следующие действия на каждой виртуальной машине. 
+После отмены регистрации в расширении можно удалить SQL Server. Выполните следующие действия на каждой виртуальной машине. 
 
 1. Подключитесь к виртуальной машине по протоколу RDP.
 
@@ -94,7 +94,7 @@ SQL Server образы виртуальных машин из Azure Marketplace
 
       ![Выбор функций](./media/failover-cluster-instance-prepare-vm/03-remove-features.png)
 
-   1. Щелкните **Далее**, а затем **Удалить**.
+   1. Щелкните **Далее** , а затем **Удалить**.
    1. После успешного удаления экземпляра перезапустите виртуальную машину. 
 
 ## <a name="open-the-firewall"></a>Открытие брандмауэра 
@@ -105,11 +105,11 @@ SQL Server образы виртуальных машин из Azure Marketplace
 
 В этой таблице содержатся сведения о портах, которые может потребоваться открыть, в зависимости от конфигурации FCI: 
 
-   | Назначение | Порт | Примечания
+   | Назначение | Port | Примечания
    | ------ | ------ | ------
-   | SQL Server | TCP 1433 | Обычный порт для экземпляров SQL Server по умолчанию. Если используется образ из коллекции, этот порт будет автоматически открыт. </br> </br> **Используется**: всеми конфигурациями FCI. |
-   | Проверка работоспособности | TCP 59999 | Любой открытый TCP-порт. Настройте [проверку работоспособности](failover-cluster-instance-vnn-azure-load-balancer-configure.md#configure-health-probe) балансировщика нагрузки и кластер для использования этого порта. </br> </br> **Используется**: FCI с подсистемой балансировки нагрузки. |
-   | Общая папка | UDP 445 | Порт, используемый службой файлового ресурса. </br> </br> **Используется**: FCI с общей папкой Premium. |
+   | SQL Server | TCP 1433 | Обычный порт для экземпляров SQL Server по умолчанию. Если используется образ из коллекции, этот порт будет автоматически открыт. </br> </br> **Используется** : всеми конфигурациями FCI. |
+   | Проверка работоспособности | TCP 59999 | Любой открытый TCP-порт. Настройте [проверку работоспособности](failover-cluster-instance-vnn-azure-load-balancer-configure.md#configure-health-probe) балансировщика нагрузки и кластер для использования этого порта. </br> </br> **Используется** : FCI с подсистемой балансировки нагрузки. |
+   | Общая папка | UDP 445 | Порт, используемый службой файлового ресурса. </br> </br> **Используется** : FCI с общей папкой Premium. |
 
 ## <a name="join-the-domain"></a>Присоединение к домену.
 

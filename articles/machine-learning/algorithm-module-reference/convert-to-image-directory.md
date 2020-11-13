@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 10/09/2020
-ms.openlocfilehash: 8abcbc74506599e7896ad6d41b9444e946172283
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 11/12/2020
+ms.openlocfilehash: 1489ce74da2ecff5212feb5a1a2e3c9151b73424
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324908"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94555589"
 ---
 # <a name="convert-to-image-directory"></a>Преобразование в каталог изображений
 
@@ -47,7 +47,8 @@ ms.locfileid: "93324908"
     
     ![Образец набора данных Image](./media/module/image-sample-dataset.png)
 
-    Для оценки необходимо, чтобы папка набора данных изображений содержала только Неклассифицированные изображения.
+    > [!NOTE]
+    > Для вывода на экран необходимо, чтобы папка набора данных изображений содержала Неклассифицированные изображения.
 
 1. [Зарегистрируйте набор данных образа в виде файлового набора данных](../how-to-create-register-datasets.md) в рабочей области, так как входные данные преобразования в модуль каталога изображений должны представлять собой **Файловый набор данных**.
 

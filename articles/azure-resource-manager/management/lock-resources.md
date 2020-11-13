@@ -1,15 +1,15 @@
 ---
 title: Блокировка ресурсов для предотвращения изменений
-description: Запрет на обновление или удаление критических ресурсов Azure для пользователей путем применения блокировки для всех пользователей и ролей.
+description: Запрещает пользователям обновлять или удалять ресурсы Azure, применяя блокировку для всех пользователей и ролей.
 ms.topic: conceptual
-ms.date: 11/03/2020
+ms.date: 11/11/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 57b4fecd0293c714dfd910ae2ad4866397646ce8
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: f1073d8c4a6902ea00a9b4098ef87bc411b3e6c0
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340147"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94555674"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Блокировка ресурсов для предотвращения непредвиденных изменений
 
@@ -74,19 +74,91 @@ ms.locfileid: "93340147"
 
 ### <a name="arm-template"></a>Шаблон ARM
 
-Если для развертывания блокировки используется шаблон Resource Manager, то в зависимости от области блокировки назначаются разные значения имени и типа.
+При использовании шаблона Azure Resource Manager (шаблон ARM) для развертывания блокировки необходимо помнить об области блокировки и области развертывания. Чтобы применить блокировку в области развертывания, например заблокировать группу ресурсов или подписку, не устанавливайте свойство Scope. При блокировке ресурса в области развертывания задайте свойство Scope.
 
-Если блокировка применяется к **ресурсу** , используйте следующие форматы:
+Следующий шаблон применяет блокировку к группе ресурсов, в которой она развернута. Обратите внимание, что в ресурсе блокировки нет свойства Scope, так как область блокировки соответствует области развертывания. Этот шаблон развертывается на уровне группы ресурсов.
 
-* имя — `{resourceName}/Microsoft.Authorization/{lockName}`;
-* тип — `{resourceProviderNamespace}/{resourceType}/providers/locks`.
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {  
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/locks",
+            "apiVersion": "2016-09-01",
+            "name": "rgLock",
+            "properties": {
+                "level": "CanNotDelete",
+                "notes": "Resource Group should not be deleted."
+            }
+        }
+    ]
+}
+```
 
-При применении блокировки к **группе ресурсов** или **подписке** используйте следующие форматы:
+Чтобы создать группу ресурсов и заблокировать ее, разверните следующий шаблон на уровне подписки.
 
-* имя — `{lockName}`;
-* тип — `Microsoft.Authorization/locks`.
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "rgName": {
+            "type": "string"
+        },
+        "rgLocation": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2019-10-01",
+            "name": "[parameters('rgName')]",
+            "location": "[parameters('rgLocation')]",
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "lockDeployment",
+            "resourceGroup": "[parameters('rgName')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Authorization/locks",
+                            "apiVersion": "2016-09-01",
+                            "name": "rgLock",
+                            "properties": {
+                                "level": "CanNotDelete",
+                                "notes": "Resource group and its resources should not be deleted."
+                            }
+                        }
+                    ],
+                    "outputs": {}
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
 
-В следующем примере показан шаблон, который позволяет создать план обслуживания приложений, веб-сайт и блокировку на веб-сайте. Блокировка — это тип ресурса для блокировки и **/providers/locks**. Имя блокировки состоит из имени ресурса, суффикса **/Microsoft.Authorization/** и имени самой блокировки.
+При применении блокировки к **ресурсу** в группе ресурсов добавьте свойство Scope. В поле область задайте имя ресурса для блокировки.
+
+В следующем примере показан шаблон, который позволяет создать план обслуживания приложений, веб-сайт и блокировку на веб-сайте. Область блокировки задается для веб-сайта.
 
 ```json
 {
@@ -95,6 +167,10 @@ ms.locfileid: "93340147"
   "parameters": {
     "hostingPlanName": {
       "type": "string"
+    },
+    "location": {
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]"
     }
   },
   "variables": {
@@ -103,9 +179,9 @@ ms.locfileid: "93340147"
   "resources": [
     {
       "type": "Microsoft.Web/serverfarms",
-      "apiVersion": "2019-08-01",
+      "apiVersion": "2020-06-01",
       "name": "[parameters('hostingPlanName')]",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('location')]",
       "sku": {
         "tier": "Free",
         "name": "f1",
@@ -117,9 +193,9 @@ ms.locfileid: "93340147"
     },
     {
       "type": "Microsoft.Web/sites",
-      "apiVersion": "2019-08-01",
+      "apiVersion": "2020-06-01",
       "name": "[variables('siteName')]",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('location')]",
       "dependsOn": [
         "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
       ],
@@ -128,9 +204,10 @@ ms.locfileid: "93340147"
       }
     },
     {
-      "type": "Microsoft.Web/sites/providers/locks",
+      "type": "Microsoft.Authorization/locks",
       "apiVersion": "2016-09-01",
-      "name": "[concat(variables('siteName'), '/Microsoft.Authorization/siteLock')]",
+      "name": "siteLock",
+      "scope": "[concat('Microsoft.Web/sites/', variables('siteName'))]",
       "dependsOn": [
         "[resourceId('Microsoft.Web/sites', variables('siteName'))]"
       ],
@@ -142,8 +219,6 @@ ms.locfileid: "93340147"
   ]
 }
 ```
-
-Пример настройки блокировки для группы ресурсов см. в разделе [Создание и блокировка группы ресурсов](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-deployments/create-rg-lock-role-assignment).
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 

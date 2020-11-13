@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/09/2019
 ms.author: madsd
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: dbf38c303f024884971e95f7be9d4dfc50d118de
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 954e94063ec91cd2a6d67d154dfd7da553e0935a
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127830"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560899"
 ---
 # <a name="application-gateway-integration-with-service-endpoints"></a>Интеграция шлюза приложений с конечными точками службы
 Существует три варианта службы приложений, требующие немного иной настройки интеграции с шлюзом приложений Azure. Варианты включают в себя обычную службу приложений, которая также называется многоклиентской, внутренней Load Balancer (ILB) Среда службы приложений (ASE) и External ASE. В этой статье описано, как настроить службу приложений (с несколькими клиентами) и обсудить ILB и внешние ASE.
@@ -36,7 +36,7 @@ ms.locfileid: "93127830"
 1. Создайте службу приложений, используя одно из кратких руководств документации по службе приложений, например [.NET Core краткое руководство](../quickstart-dotnetcore.md) .
 2. Создайте шлюз приложений с помощью [краткого руководства по порталу](../../application-gateway/quick-create-portal.md), но пропустите раздел Add серверные целевые объекты.
 3. Настройте [службу приложений в качестве серверной части в шлюзе приложений](../../application-gateway/configure-web-app-portal.md), но перейдите к разделу ограничение доступа.
-4. Наконец, создайте [ограничение доступа с помощью конечных точек службы](../../app-service/app-service-ip-restrictions.md#service-endpoints).
+4. Наконец, создайте [ограничение доступа с помощью конечных точек службы](../../app-service/app-service-ip-restrictions.md#use-service-endpoints).
 
 Теперь вы можете получить доступ к службе приложений через шлюз приложений, но при попытке напрямую обратиться к службе приложений вы получите ошибку HTTP 403, указывающую на остановку веб-сайта.
 

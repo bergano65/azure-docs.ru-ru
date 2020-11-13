@@ -8,24 +8,26 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 11/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3fcf63932db0ad9abe5d99c2e4bf084b0acc750c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: c9a77fc8d6e832165a78b9d83cc0a22b31b65362
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427915"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94555996"
 ---
 # <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Настройка VPN-подключения типа "точка — сеть" к виртуальной сети с помощью собственной аутентификации Azure Certificate: портал Azure
 
 Эта статья поможет вам безопасно подключать отдельные клиенты под управлением Windows, Linux или macOS к виртуальной сети Azure. VPN-подключения типа "точка — сеть" (P2S) эффективны для подключения к виртуальной сети из удаленного расположения, например, если вы дома или на конференции. Вы также можете использовать подключение "точка — сеть" вместо VPN-подключения "сеть — сеть" при наличии небольшого количества клиентов, которым требуется подключение к виртуальной сети. Для подключения типа "точка — сеть" не требуется VPN-устройство или общедоступный IP-адрес. Подключение "точка — сеть" — это VPN-подключение по протоколу SSTP (Secure Socket Tunneling Protocol) или IKEv2. См. дополнительные сведения о [VPN-подключениях "точка — сеть"](point-to-site-about.md).
 
-:::image type="content" source="./media/vpn-gateway-how-to-point-to-site-rm-ps/point-to-site-diagram.png" alt-text="Подключение с компьютера к схеме подключения &quot;точка — сеть&quot; в Azure":::
+:::image type="content" source="./media\vpn-gateway-howto-point-to-site-resource-manager-portal/point-to-site-diagram.png" alt-text="Подключение с компьютера к схеме подключения &quot;точка — сеть&quot; в Azure":::
+
+к:\усерс\черилмк\документс\гисуб\азуре-докс-пр\артиклес\впн-гатевай\медиа\впн-гатевай-ховто-поинт-то-сите-ресаурце-манажер-портал
 
 Дополнительные сведения о VPN-подключениях типа "точка — сеть" см. [в статье о VPN-подключениях типа "точка](point-to-site-about.md)— сеть". Чтобы создать эту конфигурацию с помощью Azure PowerShell, см. раздел [Настройка VPN-подключения типа "точка — сеть" с помощью Azure PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md).
 
 [!INCLUDE [P2S basic architecture](../../includes/vpn-gateway-p2s-architecture.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Убедитесь в том, что у вас уже есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial).
 

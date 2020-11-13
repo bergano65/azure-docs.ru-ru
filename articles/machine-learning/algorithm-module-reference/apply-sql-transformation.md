@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 09/09/2019
-ms.openlocfilehash: 9a195497b4376633bd3c767d7d0ea029109fdf9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/12/2020
+ms.openlocfilehash: c66fbe59fd5b2660d02bfca285f78666d64569fe
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76314544"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94555606"
 ---
 # <a name="apply-sql-transformation"></a>Применение преобразования SQL
 
@@ -29,11 +29,26 @@ ms.locfileid: "76314544"
 -   выполнять инструкции SQL-запроса для фильтрации или изменения данных и получения результатов запроса в виде таблицы данных.  
 
 > [!IMPORTANT]
-> Ядро SQL, используемое в этом модуле, — **SQLite**. Дополнительные сведения о синтаксисе SQLite см. в разделе [SQL как понятное для SQLite](https://www.sqlite.org/index.html) .  
+> Ядро SQL, используемое в этом модуле, — **SQLite**. Дополнительные сведения о синтаксисе SQLite см. в разделе [SQL как понятное для SQLite](https://www.sqlite.org/index.html).
+> Этот модуль будет выполнять данные SQLite, который находится в базе данных памяти, поэтому выполнение модуля требует значительно большего объема памяти и может привести к `Out of memory` ошибке. Убедитесь, что на компьютере достаточно ОЗУ.
 
 ## <a name="how-to-configure-apply-sql-transformation"></a>Настройка преобразования «применение SQL»  
 
 В модуле может содержаться до трех наборов в качестве входных данных. При ссылке на наборы данных, подключенные к каждому порту ввода, необходимо использовать имена `t1` , `t2` и `t3` . Номер таблицы соответствует индексу входного порта.  
+
+Ниже приведен пример кода, демонстрирующий соединение двух таблиц. T1 и T2 — это два набора данных, подключенных к левому и среднему входным портам для **применения преобразования SQL**.
+
+```sql
+SELECT t1.*
+    , t3.Average_Rating
+FROM t1 join
+    (SELECT placeID
+        , AVG(rating) AS Average_Rating
+    FROM t2
+    GROUP BY placeID
+    ) as t3
+on t1.placeID = t3.placeID
+```
   
 Оставшийся параметр — SQL-запрос, в котором используется синтаксис SQLite. При вводе нескольких строк в текстовом поле **скрипт SQL** используйте точку с запятой для завершения каждой инструкции. В противном случае разрывы строки преобразуются в пробелы.  
 

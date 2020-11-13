@@ -1,7 +1,7 @@
 ---
 title: Создание и обучение моделей
 titleSuffix: Azure Machine Learning
-description: Узнайте, как обучить модели с помощью Машинное обучение Azure, включая работу с популярными платформами, такими как Scikit-учиться, TensorFlow и PyTorch. Конвейеры Машинного обучения позволяют легко планировать автоматические запуски, использовать разнородные вычислительные среды и повторно использовать части рабочего процесса. Конфигурации запуска обеспечивают детальный контроль над целевыми объектами вычислений, на которых выполняется процесс обучения.
+description: Узнайте, как обучить модели с помощью Машинное обучение Azure. Изучите различные методы обучения и выберите нужное для своего проекта.
 services: machine-learning
 ms.service: machine-learning
 author: Blackmist
@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 8888393cdbc738525b89ace1cf6f5864b7aa3b6e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2448f5f778f19674aec63291acb72536c65ca6c9
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324812"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94555895"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 

@@ -1,6 +1,6 @@
 ---
 title: Приостановка, возобновление и масштабирование с помощью REST API
-description: Управление вычислительными ресурсами в хранилище данных Azure Synapse Analytics с помощью REST API.
+description: Управление мощностью вычислений для выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе Analytics с помощью API-интерфейсов RESTFUL.
 services: synapse-analytics
 author: antvgski
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 03/29/2019
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: bbb8e82710b4c8ca7736b53d427b3880faf2be05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49702051b5399d5079aacc97c00233a23ba8712d
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213284"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556018"
 ---
-# <a name="rest-apis-for-azure-synapse-analytics-data-warehouse"></a>REST API для хранилища данных Azure Synapse Analytics
+# <a name="rest-apis-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Интерфейсы API-интерфейсов RESTFUL для выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе Analytics
 
-REST API для управления вычислительными ресурсами в хранилище данных Azure Synapse Analytics.
+Интерфейсы API для управления вычислением для выделенного пула SQL (ранее — хранилище данных SQL) в Azure синапсе Analytics.
 
 ## <a name="scale-compute"></a>Масштабирование вычислительных ресурсов
 
@@ -64,7 +64,7 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 ## <a name="get-maintenance-schedule"></a>Получение информации о расписании обслуживания
 
-Проверьте расписание обслуживания, заданное для хранилища данных.
+Проверьте расписание обслуживания, установленное для выделенного пула SQL (ранее — хранилища данных SQL).
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/maintenanceWindows/current?maintenanceWindowName=current&api-version=2017-10-01-preview HTTP/1.1
@@ -73,7 +73,7 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 ## <a name="set-maintenance-schedule"></a>Составление расписания обслуживания
 
-Составление и обновление расписания обслуживания для существующего хранилища данных.
+Для задания и обновления расписания обслуживания в существующем выделенном пуле SQL (ранее — в хранилище данных SQL).
 
 ```
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}/maintenanceWindows/current?maintenanceWindowName=current&api-version=2017-10-01-preview HTTP/1.1

@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 7a7d96c13b47bee9c092be926dc54555979e6c6f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 78b422cd41f4cea72b74257fe70c09471e9d2d5b
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790123"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556590"
 ---
 # <a name="automated-backup-v2-for-azure-virtual-machines-resource-manager"></a>Автоматическое резервное копирование (версия 2) для виртуальных машин Azure (Resource Manager)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "92790123"
 ## <a name="prerequisites"></a>Предварительные требования
 Для использования автоматической архивации версии 2 необходимо выполнить следующие предварительные требования.
 
-**Операционная система** .
+**Операционная система**.
 
 - на нем установлена Windows Server 2012 R2 или более поздней версии;
 
@@ -48,7 +48,7 @@ ms.locfileid: "92790123"
 **Конфигурация базы данных**
 
 - Целевые _пользовательские_ базы данных должны использовать модель полного восстановления. Для системных баз данных нет необходимости использовать модель полного восстановления. Тем не менее, если требуется создавать резервные копии журналов для шаблона базы данных или MSDB, то необходимо использовать модель полного восстановления. Дополнительные сведения о влиянии модели полного восстановления на резервные копии см. в статье [Резервное копирование в модели полного восстановления](/previous-versions/sql/sql-server-2008-r2/ms190217(v=sql.105)). 
-- SQL Server виртуальная машина зарегистрирована в поставщике ресурсов виртуальной машины SQL в [режиме полного управления](sql-vm-resource-provider-register.md#upgrade-to-full). 
+- SQL Server виртуальная машина зарегистрирована с расширением агента IaaS SQL в [режиме полного управления](sql-agent-extension-manually-register-single-vm.md#upgrade-to-full). 
 -  Автоматическая архивация использует полное [расширение агента SQL Server IaaS](sql-server-iaas-agent-extension-automate-management.md). Таким образом, автоматическая архивация поддерживается только для целевых баз данных из экземпляра по умолчанию или одного именованного экземпляра. Если экземпляр по умолчанию отсутствует и несколько именованных экземпляров, то расширение IaaS SQL завершится сбоем, а автоматическая архивация не будет работать. 
 
 ## <a name="settings"></a>Настройки
@@ -86,7 +86,7 @@ ms.locfileid: "92790123"
 - Расписание резервного копирования: **Вручную**
 - Частота полной архивации: **Еженедельно**
 - "Full backup start time" (Время начала создания полной резервной копии): **01:00** ;
-- Full backup time window (Временное окно создания полной резервной копии): **1 час** .
+- Full backup time window (Временное окно создания полной резервной копии): **1 час**.
 
 Это означает, что следующее доступное окно архивации длительностью в 1 час наступит во вторник в 01:00. В это время служба автоматического резервного копирования начнет по очереди выполнять резервное копирование баз данных. В этом сценарии базы данных достаточно велики, чтобы эта служба успела создать резервные копии нескольких первых баз данных. Однако по прошествии 1 часа все базы данных будут заархивированы.
 
@@ -117,7 +117,7 @@ ms.locfileid: "92790123"
 
 При создании виртуальной машины SQL Server 2016 или 2017 с моделью развертывания с помощью Resource Manager настройте автоматическое резервное копирование (версия 2), используя портал Azure.
 
-На вкладке **Настройки SQL Server** выберите **Включить** в разделе **Автоматическое резервное копирование** . На представленном ниже снимке экрана портала Azure показаны параметры **автоматического резервного копирования SQL** .
+На вкладке **Настройки SQL Server** выберите **Включить** в разделе **Автоматическое резервное копирование**. На представленном ниже снимке экрана портала Azure показаны параметры **автоматического резервного копирования SQL**.
 
 ![Настройка автоматического резервного копирования SQL на портале Azure](./media/automated-backup/automated-backup-blade.png)
 
@@ -128,7 +128,7 @@ ms.locfileid: "92790123"
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Чтобы настроить автоматическое резервное копирование для существующих виртуальных машин SQL Server, перейдите к ресурсу [Виртуальные машины SQL](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource) и выберите **Резервные копии** .
+Чтобы настроить автоматическое резервное копирование для существующих виртуальных машин SQL Server, перейдите к ресурсу [Виртуальные машины SQL](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource) и выберите **Резервные копии**.
 
 ![Автоматизированная архивация SQL для существующих виртуальных машин](./media/automated-backup/sql-server-configuration.png)
 
@@ -142,12 +142,12 @@ ms.locfileid: "92790123"
 Для настройки автоматической архивации версии 2 можно также использовать PowerShell. Предварительно необходимо выполнить следующее.
 
 - [Скачайте и установите последнюю версию Azure PowerShell](https://aka.ms/webpi-azps).
-- Откройте Windows PowerShell и свяжите его с учетной записью с помощью команды **Connect-AzAccount** .
+- Откройте Windows PowerShell и свяжите его с учетной записью с помощью команды **Connect-AzAccount**.
 
 [!INCLUDE [updated-for-az.md](../../../../includes/updated-for-az.md)]
 
 ### <a name="install-the-sql-server-iaas-extension"></a>Установка расширения IaaS для SQL Server
-Если виртуальная машина SQL Server подготовлена на портале Azure, то на ней уже должно быть установлено расширение IaaS для SQL Server. Чтобы выяснить, так ли это, выполните команду **Get-AzVM** и проверьте свойство **Extensions** .
+Если виртуальная машина SQL Server подготовлена на портале Azure, то на ней уже должно быть установлено расширение IaaS для SQL Server. Чтобы выяснить, так ли это, выполните команду **Get-AzVM** и проверьте свойство **Extensions**.
 
 ```powershell
 $vmname = "vmname"
@@ -168,7 +168,7 @@ Set-AzVMSqlServerExtension -VMName $vmname `
 ```
 
 ### <a name="verify-current-settings"></a><a id="verifysettings"></a> Проверка текущих параметров
-Если вы включили автоматическое резервное копирование во время подготовки, можете использовать PowerShell для проверки текущей конфигурации. Выполните команду **Get-AzVMSqlServerExtension** и изучите свойство **AutoBackupSettings** .
+Если вы включили автоматическое резервное копирование во время подготовки, можете использовать PowerShell для проверки текущей конфигурации. Выполните команду **Get-AzVMSqlServerExtension** и изучите свойство **AutoBackupSettings**.
 
 ```powershell
 (Get-AzVMSqlServerExtension -VMName $vmname -ResourceGroupName $resourcegroupname).AutoBackupSettings
@@ -231,7 +231,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 
 Установка и настройка агента SQL Server IaaS занимают несколько минут. 
 
-Чтобы включить шифрование, измените предыдущий сценарий таким образом, чтобы он передавал параметр **EnableEncryption** вместе с паролем (защищенной строкой) для параметра **CertificatePassword** . Следующий скрипт активирует параметры автоматической архивации их предыдущего примера и добавляет шифрование.
+Чтобы включить шифрование, измените предыдущий сценарий таким образом, чтобы он передавал параметр **EnableEncryption** вместе с паролем (защищенной строкой) для параметра **CertificatePassword**. Следующий скрипт активирует параметры автоматической архивации их предыдущего примера и добавляет шифрование.
 
 ```powershell
 $password = "P@ssw0rd"
@@ -252,7 +252,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 Чтобы убедиться, что параметры были применены, [проверьте конфигурацию автоматической архивации](#verifysettings).
 
 ### <a name="disable-automated-backup"></a>Отключение автоматической архивации
-Чтобы отключить автоматическую архивацию, выполните тот же сценарий без параметра **-Enable** в команде **New-AzVMSqlServerAutoBackupConfig** . Отсутствие параметра **-Enable** означает, что функцию нужно отключить. Как и установка, отключение автоматической архивации занимает несколько минут.
+Чтобы отключить автоматическую архивацию, выполните тот же сценарий без параметра **-Enable** в команде **New-AzVMSqlServerAutoBackupConfig**. Отсутствие параметра **-Enable** означает, что функцию нужно отключить. Как и установка, отключение автоматической архивации занимает несколько минут.
 
 ```powershell
 $autobackupconfig = New-AzVMSqlServerAutoBackupConfig -ResourceGroupName $storage_resourcegroupname
@@ -314,7 +314,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 
 Другой вариант — воспользоваться преимуществами встроенного компонента Database Mail для отправки уведомлений.
 
-1. Вызовите хранимую процедуру [msdb.managed_backup.sp_set_parameter](/sql/relational-databases/system-stored-procedures/managed-backup-sp-set-parameter-transact-sql), чтобы назначить адрес электронной почты параметру **SSMBackup2WANotificationEmailIds** . 
+1. Вызовите хранимую процедуру [msdb.managed_backup.sp_set_parameter](/sql/relational-databases/system-stored-procedures/managed-backup-sp-set-parameter-transact-sql), чтобы назначить адрес электронной почты параметру **SSMBackup2WANotificationEmailIds**. 
 1. Включите [SendGrid](../../../sendgrid-dotnet-how-to-send-email.md) для отправки электронных сообщений из виртуальной машины Azure.
 1. SMTP-сервер и имя пользователя позволяют настроить компонент Database Mail. Настроить компонент Database Mail можно в SQL Server Management Studio или с помощью команд Transact-SQL. Дополнительные сведения см. в разделе о [компоненте Database Mail](/sql/relational-databases/database-mail/database-mail).
 1. [Настройте почту агента SQL Server для использования компонента Database Mail](/sql/relational-databases/database-mail/configure-sql-server-agent-mail-to-use-database-mail).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
-ms.openlocfilehash: 1994cda9dbf22a81216408ee07d51f635e89cff4
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 56509bfcd267a590946eb750bd74ce1f67aecc00
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285271"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556409"
 ---
 # <a name="create-an-fci-with-a-premium-file-share-sql-server-on-azure-vms"></a>Создание FCI с общей папкой Premium (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "93285271"
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед выполнением инструкций, приведенных в этой статье, у вас уже должны быть:
 
@@ -189,7 +189,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 ## <a name="register-with-the-sql-vm-rp"></a>Регистрация в RP виртуальной машины SQL
 
-Чтобы управлять виртуальной машиной SQL Server на портале, зарегистрируйте ее с помощью поставщика ресурсов виртуальной машины SQL (RP) в [режиме упрощенного управления](sql-vm-resource-provider-register.md#lightweight-management-mode)(в настоящее время это единственный режим, поддерживаемый с FCI и SQL Server на виртуальных машинах Azure). 
+Чтобы управлять виртуальной машиной SQL Server на портале, зарегистрируйте ее с помощью расширения агента IaaS SQL (RP) в [режиме упрощенного управления](sql-agent-extension-manually-register-single-vm.md#lightweight-management-mode)(в настоящее время это единственный режим, поддерживаемый с FCI и SQL Server на виртуальных машинах Azure). 
 
 Регистрация SQL Server виртуальной машины в упрощенном режиме с помощью PowerShell (-LicenseType может быть `PAYG` или `AHUB` ):
 
@@ -210,7 +210,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 - Microsoft координатор распределенных транзакций (MSDTC) не поддерживается в Windows Server 2016 и более ранних версиях. 
 - Функция файлового потока для отказоустойчивых кластеров с общими папками уровня "Премиум" не поддерживается. Чтобы использовать FILESTREAM, разверните кластер с помощью [Локальные дисковые пространства](failover-cluster-instance-storage-spaces-direct-manually-configure.md) или [общих дисков Azure](failover-cluster-instance-azure-shared-disks-manually-configure.md) .
-- Поддерживается только регистрация в поставщике ресурсов виртуальной машины SQL в [режиме упрощенного управления](sql-server-iaas-agent-extension-automate-management.md#management-modes) . 
+- Поддерживается только регистрация с расширением агента IaaS SQL в [режиме упрощенного управления](sql-server-iaas-agent-extension-automate-management.md#management-modes) . 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

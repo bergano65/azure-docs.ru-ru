@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/09/2020
-ms.openlocfilehash: eaaedc4404419e6028250a994077dd3df20b83d4
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: fb1f1d098970927ba04c840e77ec0a0b8d76ca02
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94539657"
+ms.locfileid: "94561324"
 ---
 # <a name="enterprise-security-and-governance-for-azure-machine-learning"></a>Корпоративная безопасность и управление для Машинное обучение Azure
 
@@ -105,7 +105,13 @@ ms.locfileid: "94539657"
 
 Чтобы ограничить физический доступ к ресурсам Машинное обучение Azure, можно использовать виртуальную сеть Azure (VNet). Виртуальных сетей позволяют создавать сетевые среды, частично или полностью изолированные от общедоступного Интернета. Это сокращает область атаки для вашего решения, а также вероятность утечка данных.
 
-Дополнительные сведения см. в статье [Обзор изоляции и конфиденциальности в виртуальной сети](how-to-network-security-overview.md).
+Дополнительные сведения см. в следующих документах:
+
+* [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md)
+* [Защита ресурсов рабочей области](how-to-secure-workspace-vnet.md)
+* [Защита среды обучения](how-to-secure-training-vnet.md)
+* [Безопасная среда вывода](how-to-secure-inferencing-vnet.md)
+* [Использование Studio в защищенной виртуальной сети](how-to-enable-studio-virtual-network.md)
 
 <a id="encryption-at-rest"></a><a id="azure-blob-storage"></a>
 
