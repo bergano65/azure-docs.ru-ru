@@ -6,12 +6,12 @@ ms.author: srranga
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/05/2020
-ms.openlocfilehash: 0e9773e5c08f9d07f76a70bc4f899acf5004d3c2
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: cda305ac705b728e0d2e129d7d42d53ea0251d86
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421815"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591535"
 ---
 # <a name="logical-decoding"></a>Логическое декодирование
  
@@ -37,7 +37,6 @@ ms.locfileid: "93421815"
 * **Реплика** — более подробная, чем **Off**. Это минимальный уровень ведения журнала, необходимый для работы [реплик чтения](concepts-read-replicas.md) . Этот параметр используется по умолчанию на большинстве серверов.
 * **Логический** — более подробный, чем **реплика**. Это минимальный уровень ведения журнала для работы логического декодирования. Реплики чтения также работают с этим параметром.
 
-После изменения этого параметра сервер необходимо перезапустить. На внутреннем уровне этот параметр задает параметры postgres `wal_level` , `max_replication_slots` и `max_wal_senders` .
 
 ### <a name="using-azure-cli"></a>Использование Azure CLI
 
@@ -54,7 +53,7 @@ ms.locfileid: "93421815"
 
 ### <a name="using-azure-portal"></a>Использование портала Azure
 
-1. Задайте для параметра Поддержка репликации Azure значение **логический**. Нажмите кнопку **Сохранить**.
+1. Задайте для параметра Поддержка репликации Azure значение **логический**. Щелкните **Сохранить**.
 
    :::image type="content" source="./media/concepts-logical/replication-support.png" alt-text="База данных Azure для PostgreSQL — репликация — поддержка репликации Azure":::
 
@@ -169,7 +168,7 @@ SELECT pg_drop_replication_slot('test_slot');
 > Если вы прекращаете использовать логическое декодирование, измените azure.replication_support обратно на `replica` или `off` . Сведения о WAL, сохраняемые с помощью, `logical` являются более подробными и должны быть отключены, если не используется логическое декодирование. 
 
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные [сведения о логическом декодировании](https://www.postgresql.org/docs/current/logicaldecoding-explanation.html)см. в документации по postgres.
 * Если у вас возникли вопросы о логическом декодировании, обратитесь к [нашей команде](mailto:AskAzureDBforPostgreSQL@service.microsoft.com) .

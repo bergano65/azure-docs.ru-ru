@@ -9,16 +9,16 @@ ms.subservice: spark
 ms.date: 05/01/2020
 ms.author: mamccrea
 ms.reviewer: jrasnick
-ms.openlocfilehash: d0ae4ef48bfb79130180cc477eb2a6fbeb470eb6
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 9fbf4eab55ec2cf8e4f0e27969ca4a22eb1f27ad
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506436"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578623"
 ---
 # <a name="use-net-for-apache-spark-with-azure-synapse-analytics"></a>Использование .NET для Apache Spark с помощью Azure Synapse Analytics
 
-[.NET для Apache Spark](https://dot.net/spark) обеспечивает бесплатную открытую кроссплатформенную поддержку .NET для Spark. 
+[.NET для Apache Spark](https://dot.net/spark) предоставляет бесплатную поддержку .NET для платформы Spark с [открытым кодом](https://github.com/dotnet/spark)и кросс-платформенный. 
 
 Он предоставляет привязки .NET для Spark, которые позволяют получать доступ к API Spark через C# и F #. С помощью .NET для Apache Spark можно также написать и выполнить определяемые пользователем функции для Spark, написанного на .NET. Интерфейсы API .NET для Spark предоставляют доступ ко всем аспектам Spark DataFrames для анализа данных, включая Spark SQL, Delta Lake и структурированную потоковую передачу.
 
@@ -70,7 +70,13 @@ ms.locfileid: "94506436"
 
 Чтобы использовать .NET для Apache Spark в записной книжке Azure синапсе Analytics, выберите **.NET Spark (C#)** в качестве ядра и подключите записную книжку к существующему бессерверному Apache Spark пулу.
 
-Записная книжка .NET Spark основана на интерактивном интерфейсе .NET и в стандартной конфигурации поддерживает все интерактивные возможности C#, в том числе .NET для Spark, а также имеет заранее определенную переменную сеанса Spark `spark`.
+Записная книжка .NET Spark основана на [интерактивном](https://github.com/dotnet/interactive) интерфейсе .NET и предоставляет интерактивные возможности C# с возможностью использования .NET для Spark из Box с `spark` уже предопределенной переменной сеанса Spark.
+
+### <a name="install-nuget-packages-in-notebooks"></a>Установка пакетов NuGet в записные книжки
+
+Вы можете установить выбранные вами пакеты NuGet в записную книжку, используя `#r` символ перед именем пакета NuGet. На следующей схеме показан пример.
+
+![Снимок экрана, показывающий использование #r для установки пакета NuGet записной книжки .NET для Spark](./media/apache-spark-development-using-notebooks/synapse-spark-dotnet-notebook-nuget.png)
 
 ### <a name="net-for-apache-spark-c-kernel-features"></a>.NET для функций ядра C# в Apache Spark
 
@@ -80,14 +86,15 @@ ms.locfileid: "94506436"
 * Простые инструкции C# (назначения, печать в консоль, создание исключений и т. д.).
 * Многострочные блоки кода C# (операторы условий, циклы foreach, определения классов и т. д.).
 * Доступ к стандартной библиотеке C# (System, LINQ, Enumerables и т. д.).
-* Поддержка [функций языка C# 8.0](/dotnet/csharp/whats-new/csharp-8?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
-* Заранее определенная переменная spark предоставляет доступ к сеансу Apache Spark.
-* Поддержка [определяемых пользователем функций .NET, которые могут выполняться в Apache Spark](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql).
+* Поддержка функций языка C# 8.0.
+* `spark` как предварительно определенная переменная для предоставления доступа к сеансу Apache Spark.
+* Поддержка [определяемых пользователем функций .NET, которые могут выполняться в Apache Spark](/dotnet/spark/how-to-guides/udf-guide). Мы рекомендуем [писать и вызывать определяемые пользователем функции в .NET для Apache Spark интерактивных сред](/dotnet/spark/how-to-guides/dotnet-interactive-udf-issue) , чтобы узнать, как использовать UDF в .net для Apache Spark интерактивного взаимодействия.
 * Поддержка визуализации выходных данных из заданий Spark с использованием нескольких типов диаграмм (график, линейчатая диаграмма или гистограмма) и макетов (одиночный, наложенный и т. п.) благодаря поддержке библиотеки `XPlot.Plotly`.
 * Возможность включения пакетов NuGet в записную книжку C#.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Документация по .NET для Apache Spark](/dotnet/spark?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
-* [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
+* [Документация по .NET для Apache Spark](/dotnet/spark/)
+* [Интерактивные руководства .NET для Apache Spark](/dotnet/spark/how-to-guides/dotnet-interactive-udf-issue)
+* [Azure Synapse Analytics](https://azure.microsoft.com/services/synapse-analytics/)
 * [Интерактивные возможности .NET](https://devblogs.microsoft.com/dotnet/creating-interactive-net-documentation/)

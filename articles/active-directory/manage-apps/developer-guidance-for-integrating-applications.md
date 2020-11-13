@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b24bd190eac9cb6c29ceab6eb597d8d1c48f2ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da1b56e3818d2d9701ecb0252328746dc39bb260
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90605096"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578320"
 ---
 # <a name="develop-line-of-business-apps-for-azure-active-directory"></a>Разработка бизнес-приложений для Azure Active Directory
 В этом разделе представлен обзор разработки бизнес-приложений для Azure Active Directory (AD). Предполагаемая аудитория — Active Directory и Microsoft 365 глобальных администраторов.
@@ -27,7 +27,7 @@ ms.locfileid: "90605096"
 
 Зарегистрируйте свое приложение для использования Azure Active Directory. Регистрация приложения означает, что разработчики смогут использовать Azure AD для аутентификации пользователей и для запроса доступа к ресурсам пользователей, таким как электронная почта, календарь и документы.
 
-Любой член каталога (не являющийся гостем) может зарегистрировать приложение, данный процесс также называется *созданием объекта приложения*.
+Любой член каталога (не являющийся гостем) может зарегистрировать приложение, данный процесс также называется *созданием объекта приложения*. Если вы не можете зарегистрировать приложение, это означает, что глобальный администратор каталога ограничил эту функциональность, и вам может потребоваться обратиться к ним, чтобы [получить соответствующие права](https://docs.microsoft.com/azure/active-directory/roles/delegate-app-roles#assign-built-in-application-admin-roles) на регистрацию приложения. Дополнительные сведения о том, как ограничить доступ пользователей, см. [в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/roles/delegate-app-roles#restrict-who-can-create-applications).
 
 Регистрация приложения позволяет любому пользователю выполнять следующие операции:
 

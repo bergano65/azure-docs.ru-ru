@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 10/25/2020
 ms.author: xujiang1
 ms.reviewer: jrasnick
-ms.openlocfilehash: f2d8953ccae1057d7a7aa2d786fb7b641b3f6284
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: d94ee3145fb073dae982019fd4096cc2ceb7cd86
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93392531"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578337"
 ---
 # <a name="connect-to-synapse-studio-workspace-resources-from-a-restricted-network"></a>Подключение к ресурсам рабочей области синапсе Studio из ограниченной сети
 
@@ -30,7 +30,7 @@ ms.locfileid: "93392531"
 
 ## <a name="step-1-add-network-outbound-security-rules-to-the-restricted-network"></a>Шаг 1. Добавление сетевых правил безопасности для исходящего трафика в сеть с ограниченным доступом
 
-Необходимо добавить четыре правила сетевой безопасности для исходящего трафика с четырьмя тегами службы. Дополнительные сведения о [тегах служб](/azure/virtual-network/service-tags-overview.md) 
+Необходимо добавить четыре правила сетевой безопасности для исходящего трафика с четырьмя тегами службы. Дополнительные сведения о [тегах служб](/azure/virtual-network/service-tags-overview) 
 * AzureResourceManager
 * AzureFrontDoor.Frontend
 * AzureActiveDirectory
@@ -112,7 +112,7 @@ ms.locfileid: "93392531"
 
 Теперь все готово. Вы можете получить доступ к ресурсу рабочей области синапсе Studio.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об [управляемой виртуальной сети рабочей области](./synapse-workspace-managed-vnet.md)
 

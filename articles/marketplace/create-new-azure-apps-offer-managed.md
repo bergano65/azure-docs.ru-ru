@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: 66da9124a6b46fa34d0a13c8992cd3141b095422
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 85f5beb6188b1f6987934f1c39c579d5a3028a5e
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94370492"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579493"
 ---
 # <a name="configure-a-managed-application-plan"></a>Настройка плана управляемого приложения
 
@@ -138,7 +138,7 @@ ms.locfileid: "94370492"
 - В **полном** режиме повторное развертывание приложения клиентом приведет к удалению ресурсов в управляемой группе ресурсов, если ресурсы не определены в [mainTemplate.js](/azure/azure-resource-manager/managed-applications/publish-service-catalog-app?tabs=azure-powershell#create-the-arm-template.md).
 - В **инкрементном** режиме повторное развертывание приложения оставляет существующие ресурсы без изменений.
 
-Дополнительные сведения о режимах развертывания см. в разделе [Режимы развертывания Azure Resource Manager](/azure/azure-resource-manager/deployment-modes.md).
+Дополнительные сведения о режимах развертывания см. в разделе [Режимы развертывания Azure Resource Manager](/azure/azure-resource-manager/deployment-modes).
 
 ### <a name="provide-a-notification-endpoint-url"></a>Указание URL-адреса конечной точки уведомления
 
@@ -185,7 +185,7 @@ ms.locfileid: "94370492"
 - Если состояние плана — " **динамический** ", ссылка в столбце " **действие** " будет либо **прервать продажа плана** , либо **синхронизировать личную аудиторию**. Ссылка на **личную аудиторию синхронизации** будет публиковать только изменения в вашей частной аудитории без публикации других обновлений, которые могли быть внесены в предложение.
 - Чтобы создать другой план для этого предложения, в верхней части вкладки **Обзор плана** выберите **+ создать новый план**. Затем повторите действия, описанные в статье [Создание планов для предложения приложения Azure](create-new-azure-apps-offer-plans.md). В противном случае, если вы готовы создать планы, перейдите к следующему разделу: дальнейшие действия.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как протестировать и опубликовать предложение приложения Azure](create-new-azure-apps-offer-test-publish.md).
 - Узнайте, как выравнивать [предложения приложений Azure](create-new-azure-apps-offer-marketing.md) через совместную продажу с корпорацией Майкрософт и перепродавать их через программы CSP.

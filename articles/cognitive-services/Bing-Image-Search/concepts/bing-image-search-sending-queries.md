@@ -11,19 +11,19 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: f697449fffe6c93d8e5082b210678d3f51c0c736
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6fb1bdbad4455b55c3f6cc3b395526f637339847
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93084416"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592164"
 ---
 # <a name="customize-and-suggest-image-search-queries"></a>Настройка и предложение запросов поиска изображений
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 Используйте эту статью, чтобы узнать, как настроить запросы и предложить условия поиска для отправки в API Bing для поиска изображений.
 
@@ -33,7 +33,7 @@ ms.locfileid: "93084416"
 
 ## <a name="pivot-the-query"></a>Сведение запросов
 
-Если Bing может сегментировать исходный поисковый запрос, возвращаемый объект [Images](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) содержит поле `pivotSuggestions`. Сводка предложений может отображаться в виде необязательных поисковых запросов для пользователя. Например, если исходный запрос был *Microsoft Surface* , Bing может разделить запрос на *Microsoft* и *Surface* и предложить сведения для каждого из них. Эти предложения могут отображаться в виде необязательных поисковых запросов для пользователя.
+Если Bing может сегментировать исходный поисковый запрос, возвращаемый объект [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) содержит поле `pivotSuggestions`. Сводка предложений может отображаться в виде необязательных поисковых запросов для пользователя. Например, если исходный запрос был *Microsoft Surface* , Bing может разделить запрос на *Microsoft* и *Surface* и предложить сведения для каждого из них. Эти предложения могут отображаться в виде необязательных поисковых запросов для пользователя.
 
 В следующем примере показаны предложения сведения для *Microsoft Surface* :  
 
@@ -94,7 +94,7 @@ ms.locfileid: "93084416"
 }
 ```
 
-Поле `pivotSuggestions` содержит список сегментов (сводок), на которые был разбит исходный запрос. Для каждой сводки ответ содержит список объектов [Query](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query_obj), содержащих предлагаемые запросы. Поле `text` содержит предложенные поисковые запросы. Поле `displayText` содержит условие, заменяющее сводку в исходном запросе. Например, дата выпуска Surface.
+Поле `pivotSuggestions` содержит список сегментов (сводок), на которые был разбит исходный запрос. Для каждой сводки ответ содержит список объектов [Query](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query_obj), содержащих предлагаемые запросы. Поле `text` содержит предложенные поисковые запросы. Поле `displayText` содержит условие, заменяющее сводку в исходном запросе. Например, дата выпуска Surface.
 
 Если строка сводного запроса является тем, что ищет пользователь, используйте поля `text` и `thumbnail` для отображения этих строк. Создайте эскиз и текст с помощью URL-адреса `webSearchUrl` или `searchLink`. Используйте поле `webSearchUrl` для отправки пользователю результаты поиска Bing. Если вы предоставляете собственную страницу результатов, используйте поле `searchLink`.
 
@@ -106,13 +106,13 @@ The following shows an example of the pivot queries.
 
 ## <a name="expand-the-query"></a>Расширение запроса
 
-Если Bing может расширить запрос, чтобы сузить исходный поисковый запрос, объект [Images](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) будет содержать поле `queryExpansions`. Например, если запрос был *Microsoft Surface* , расширенные запросы могут иметь вид:
-- Microsoft Surface **Pro 3** .
-- Microsoft Surface **RT** .
-- Microsoft Surface **Phone** .
-- Microsoft Surface **Hub** .
+Если Bing может расширить запрос, чтобы сузить исходный поисковый запрос, объект [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) будет содержать поле `queryExpansions`. Например, если запрос был *Microsoft Surface* , расширенные запросы могут иметь вид:
+- Microsoft Surface **Pro 3**.
+- Microsoft Surface **RT**.
+- Microsoft Surface **Phone**.
+- Microsoft Surface **Hub**.
 
-В следующем примере показаны расширенные запросы для *Microsoft Surface* .
+В следующем примере показаны расширенные запросы для *Microsoft Surface*.
 
 ```json
 {
@@ -152,7 +152,7 @@ The following shows an example of the pivot queries.
 }
 ```
 
-Поле `queryExpansions` содержит список объектов [Query](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query_obj). Поле `text` содержит расширенный поисковый запрос. Поле `displayText` содержит термин, который расширяет запрос. Если строка расширенного запроса является тем, что ищет пользователь, используйте поля `text` и `thumbnail` для отображения этих строк. Создайте эскиз и текст с помощью URL-адреса `webSearchUrl` или `searchLink`. Используйте поле `webSearchUrl` для отправки пользователю результаты поиска Bing. Если вы предоставляете собственную страницу результатов, используйте поле `searchLink`.
+Поле `queryExpansions` содержит список объектов [Query](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query_obj). Поле `text` содержит расширенный поисковый запрос. Поле `displayText` содержит термин, который расширяет запрос. Если строка расширенного запроса является тем, что ищет пользователь, используйте поля `text` и `thumbnail` для отображения этих строк. Создайте эскиз и текст с помощью URL-адреса `webSearchUrl` или `searchLink`. Используйте поле `webSearchUrl` для отправки пользователю результаты поиска Bing. Если вы предоставляете собственную страницу результатов, используйте поле `searchLink`.
 
 <!-- Removing until we can replace with a sanitized image.
 The following shows an example Bing implementation that uses expanded queries. If the user clicks the Microsoft Surface Pro 3 link, they're taken to the Bing search results page, which shows them images of the Pro 3.

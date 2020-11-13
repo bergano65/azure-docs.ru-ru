@@ -4,12 +4,12 @@ description: Узнайте, как разрабатывать Функции Az
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 07/24/2020
-ms.openlocfilehash: 51a7ffe72f8597fbaa11eae12585ebde8bb83153
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 3c363d13933e6554a6eefbeaf02d87dc6b382628
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380969"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578779"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -17,12 +17,13 @@ ms.locfileid: "94380969"
 
 Эта статья описывает разработку функций Azure с помощью C# в библиотеках классов .NET.
 
+Разработчик C# может также заинтересовать одну из следующих статей:
+
+| Начало работы | Основные понятия| Интерактивное обучение и примеры |
+| -- | -- | -- | 
+| <ul><li>[Использование Visual Studio](functions-create-your-first-function-visual-studio.md)</li><li>[Использование Visual Studio Code](create-first-function-vs-code-csharp.md)</li><li>[Использование средств командной строки](create-first-function-cli-csharp.md)</li></ul> | <ul><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li><li>[Разработка в Visual Studio](functions-develop-vs.md)</li><li>[Внедрение зависимостей](functions-dotnet-dependency-injection.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Примеры для C#](/samples/browse/?products=azure-functions&languages=csharp)</li></ul> |
+
 Решение "Функции Azure" поддерживает языки программирования C# и скрипт C#. Рекомендации по [использованию C# на портале Azure](functions-create-function-app-portal.md) см. в [справочнике разработчика скриптов C# (.csx)](functions-reference-csharp.md).
-
-В статье предполагается, что вы уже прочли следующие статьи:
-
-* [Руководство для разработчиков по Функциям Azure](functions-reference.md)
-* [Средства Visual Studio 2019 для функций Azure](functions-develop-vs.md)
 
 ## <a name="supported-versions"></a>Поддерживаемые версии
 

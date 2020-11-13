@@ -5,12 +5,12 @@ author: chrisreddington
 ms.author: chredd
 ms.date: 03/28/2019
 ms.topic: how-to
-ms.openlocfilehash: 4d758d4613f68450be9c444063d3a6188d1aa689
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: e87be0db65cf12a265566e0c05815722ce3cc609
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337582"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578881"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Использование Azure Pipelines для создания и развертывания решений HPC
 
@@ -43,7 +43,7 @@ Azure Pipelines предоставляет ряд современных про�
 
 * Папка **arm-templates** , содержащая несколько шаблонов Azure Resource Manager. Шаблоны описываются далее в этой статье.
 * Папка **client-application** , которая является копией образца [Обработка файлов .NET пакетной службы Azure с помощью ffmpeg](https://github.com/Azure-Samples/batch-dotnet-ffmpeg-tutorial). Для этой статьи она не требуется.
-* Папка **HPC-Application** , которая является Windows 64-разрядной версией [FFmpeg 4.3.1](https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-4.3.1-2020-10-01-essentials_build.7z).
+* Папка **HPC-Application** , которая является Windows 64-разрядной версией [FFmpeg 4.3.1](https://github.com/GyanD/codexffmpeg/releases/tag/4.3.1-2020-11-08).
 * Папка **pipelines**. Содержит файл YAML, описывающий процесс сборки. Описывается далее в статье.
 
 В этом разделе предполагается, что вы знакомы с управлением версиями и разработкой шаблонов Resource Manager. Если вы не знакомы с этими понятиями, дополнительные сведения см. на следующих страницах.

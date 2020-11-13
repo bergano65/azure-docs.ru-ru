@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7e5a64a75ca6cde4172e49eb77dde42a44c06d5e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b9896b62ab347ec3b4751eb517c00222f00ddb1c
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321451"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579408"
 ---
 # <a name="query-csv-files"></a>Запрос CSV-файлов
 
@@ -45,6 +45,11 @@ from openrowset(
 ```
 
 Параметр `firstrow` используется для пропуска первой строки в CSV-файле, представляющей заголовок в этом случае. Убедитесь, что у вас есть доступ к этому файлу. Если файл защищен с помощью ключа SAS или пользовательского удостоверения, необходимо настроить [учетные данные на уровне сервера для входа SQL](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#server-scoped-credential).
+
+> [!IMPORTANT]
+> Если файл CSV содержит символы UTF-8, убедитесь, что используются параметры сортировки базы данных UTF-8 (например `Latin1_General_100_CI_AS_SC_UTF8` ,).
+> Несоответствие между кодировкой текста в файле и параметрами сортировки может привести к непредвиденным ошибкам преобразования.
+> Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью следующей инструкции T-SQL: `alter database current collate Latin1_General_100_CI_AI_SC_UTF8`
 
 ### <a name="data-source-usage"></a>Использование источника данных
 
@@ -90,6 +95,12 @@ from openrowset(
 ```
 
 Числа после типа данных в `WITH` предложении представляют индекс столбца в CSV-файле.
+
+> [!IMPORTANT]
+> Если файл CSV содержит символы UTF-8, убедитесь, что експлиЦилти заданы некоторые параметры сортировки UTF-8 (например `Latin1_General_100_CI_AS_SC_UTF8` ,) для всех столбцов в `WITH` предложении или заданы параметры сортировки UTF-8 на уровне базы данных.
+> Несоответствие между кодировкой текста в файле и параметрами сортировки может привести к непредвиденным ошибкам преобразования.
+> Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью следующей инструкции T-SQL: `alter database current collate Latin1_General_100_CI_AI_SC_UTF8`
+> Параметры сортировки для типов столбцов можно легко задать с помощью следующего определения: `geo_id varchar(6) collate Latin1_General_100_CI_AI_SC_UTF8 8`
 
 В следующих разделах показано, как выполнять запросы к различным типам CSV-файлов.
 

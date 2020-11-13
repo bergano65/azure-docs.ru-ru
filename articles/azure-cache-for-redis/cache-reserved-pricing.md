@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: 76da267ae14a1f58ee2cadbf48f4b2ec419312b4
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 99aa4d9ed6552075b0da4d451201f48ba6adfb1b
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92543531"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578711"
 ---
 # <a name="prepay-for-azure-cache-for-redis-compute-resources-with-reserved-capacity"></a>Предоплата за кэш Azure для Redis вычислений ресурсов с зарезервированной емкостью
 
@@ -37,8 +37,10 @@ ms.locfileid: "92543531"
 
 ## <a name="buy-azure-cache-for-redis-reserved-capacity"></a>Купить кэш Azure для зарезервированной емкости Redis
 
+Зарезервированный экземпляр виртуальной машины можно купить в [портал Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/monthly-payments-reservations.md).
+
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Выберите **Все службы** > **Резервирование** .
+2. Выберите **Все службы** > **Резервирование**.
 3. Нажмите кнопку **Добавить** , а затем в области Покупка резервирования выберите **кэш Azure для Redis** , чтобы приобрести новое резервирование для кэшей.
 4. Заполните поля, необходимые для заполнения полей. Существующие или новые базы данных, соответствующие выбранным атрибутам, будут получать зарезервированную скидку емкости. Фактический номер кэша Azure для экземпляров Redis, которые получают скидку, зависят от выбранной области и количества.
 

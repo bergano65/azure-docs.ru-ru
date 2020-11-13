@@ -11,12 +11,12 @@ ms.date: 09/17/2020
 ms.author: gopalv
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: 2225ef42d8862935e5cd682a3c11a7ce687babab
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 5b05891500ae5fd66e5ec2381066ccd1d26aa7ec
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325563"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578065"
 ---
 # <a name="advanced-entry-script-authoring"></a>Разработка расширенных сценариев ввода
 
@@ -28,7 +28,10 @@ ms.locfileid: "93325563"
 
 ## <a name="automatically-generate-a-swagger-schema"></a>Автоматическое создание схемы Swagger
 
-Чтобы автоматически создать схему для веб-службы, укажите образец входных и (или) выходных данных в конструкторе для одного из объектов определенного типа. Тип и образец используются для автоматического создания схемы. После этого Машинное обучение Azure создает спецификацию [OpenAPI](https://swagger.io/docs/specification/about/) (Swagger) для веб-службы во время развертывания.
+Чтобы автоматически создать схему для веб-службы, укажите образец входных и (или) выходных данных в конструкторе для одного из объектов определенного типа. Тип и образец используются для автоматического создания схемы. После этого Машинное обучение Azure создает спецификацию [OpenAPI](https://swagger.io/docs/specification/about/) (Swagger) для веб-службы во время развертывания. 
+
+> [!WARNING]
+> Для образца ввода или вывода не следует использовать конфиденциальные или закрытые данные. На странице Swagger для размещения, размещенного на AML, отображаются образцы данных. 
 
 В настоящее время поддерживаются следующие типы:
 

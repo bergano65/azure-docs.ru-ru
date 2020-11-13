@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 10/16/2019
-ms.openlocfilehash: 23077d7d6b476bcca0812dcff8660376568f7dd9
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.date: 11/13/2020
+ms.openlocfilehash: 4dfe284a00052cbd1915d62355e1d7772f3712ab
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376338"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591875"
 ---
 # <a name="one-vs-all-multiclass"></a>Многоклассовая классификация "один-все"
 
@@ -31,6 +31,8 @@ ms.locfileid: "94376338"
 По сути, модуль создает ансамблей отдельных моделей, а затем объединяет результаты, чтобы создать единую модель, которая прогнозирует все классы. Любой двоичный классификатор можно использовать в качестве основания для модели "один-ко-всем".  
 
 Например, предположим, что вы настроили модель [однорангового компьютера поддержки двух классов](two-class-support-vector-machine.md) и представим ее в качестве входных данных для модуля Многоклассовый классификатор "один — все". Модуль будет создавать модели машинного вектора поддержки двух классов для всех членов класса Output. Затем он применяет один и тот же метод, чтобы объединить результаты для всех классов.  
+
+Модуль использует Оневсрестклассифиер из sklearn, и [здесь](https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html)можно получить дополнительные сведения.
 
 ## <a name="how-to-configure-the-one-vs-all-multiclass-classifier"></a>Настройка классификатора Многоклассовый классификатор "один — все"  
 

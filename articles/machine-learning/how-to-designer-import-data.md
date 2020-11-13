@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: core
 author: likebupt
 ms.author: keli19
-ms.date: 09/09/2020
+ms.date: 11/13/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 9ce0bb2a30ec4092d0053adf2de711547595c900
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 5569b625b8f0c4ba890c0cd5b1700ca6fe83d968
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94554722"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591994"
 ---
 # <a name="import-data-into-azure-machine-learning-designer"></a>Импорт данных в конструктор Машинное обучение Azure
 
@@ -53,6 +53,8 @@ ms.locfileid: "94554722"
 ### <a name="use-a-dataset"></a>Использование набора данных
 
 Зарегистрированные наборы данных можно найти на палитре модулей в разделе **наборы данных**. Чтобы использовать набор данных, перетащите его на холст конвейера. Затем подключите выходной порт набора данных к другим модулям на холсте. 
+
+При регистрации файлового набора данных тип порта вывода набора данных — **анидиректори**. При регистрации табличного набора данных тип порта вывода набора данных, если **датафрамедиректори**. Обратите внимание, что при подключении порта вывода набора данных к другим модулям в конструкторе тип порта и модули должны быть согласованы.
 
 ![Снимок экрана, показывающий расположение сохраненных наборов данных на палитре конструктора](media/how-to-designer-import-data/use-datasets-designer.png)
 

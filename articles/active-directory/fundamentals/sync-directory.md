@@ -1,6 +1,6 @@
 ---
 title: Синхронизация службы каталогов с Azure Active Directory
-description: Руководство по архитектуре при достижении этого шаблона синхронизации
+description: Руководство по архитектуре для достижения синхронизации каталогов с Azure Active Directory.
 services: active-directory
 author: BarbaraSelden
 manager: daveba
@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 862d17948cb09c18f9372f8b8b981e5efa6be71b
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: c340f973193f9c46735423c86112816003fecfcd
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92114318"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578915"
 ---
 # <a name="directory-synchronization"></a>Синхронизация каталогов
 
@@ -40,15 +40,15 @@ ms.locfileid: "92114318"
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь**: доступ к приложению с помощью Azure AD.
+* **Пользователь** : доступ к приложению с помощью Azure AD.
 
 * **Веб-браузер**. компонент, с которым взаимодействует пользователь, чтобы получить доступ к внешнему URL-адресу приложения.
 
-* **Приложение**: веб-приложение, использующее Azure AD для проверки подлинности и авторизации.
+* **Приложение** : веб-приложение, использующее Azure AD для проверки подлинности и авторизации.
 
-* **Azure AD**: синхронизирует сведения об удостоверениях из локального каталога организации с помощью Azure AD Connect. 
+* **Azure AD** : синхронизирует сведения об удостоверениях из локального каталога организации с помощью Azure AD Connect. 
 
-* **Azure AD Connect**: средство для подключения локальных инфраструктур удостоверений к Microsoft Azure AD. Мастер и интерактивные возможности помогут вам развернуть и настроить необходимые компоненты, требуемые для подключения, включая синхронизацию и вход из Active Directory в Azure AD. 
+* **Azure AD Connect** : средство для подключения локальных инфраструктур удостоверений к Microsoft Azure AD. Мастер и интерактивные возможности помогут вам развернуть и настроить необходимые компоненты, требуемые для подключения, включая синхронизацию и вход из Active Directory в Azure AD. 
 
 * **Active Directory**. Active Directory — это служба каталогов, входящая в большинство операционных систем Windows Server. Серверы, на которых выполняются службы домен Active Directory Services (AD DS), называются контроллерами домена. Они выполняют проверку подлинности и авторизацию всех пользователей и компьютеров в домене.
 

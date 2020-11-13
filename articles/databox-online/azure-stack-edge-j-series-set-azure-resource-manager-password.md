@@ -1,6 +1,6 @@
 ---
 title: Установка Azure Resource Manager пароля на устройстве Azure Stack с графическим процессором Pro
-description: В этой статье описывается, как подключиться к Azure Resource Manager, работающей на графическом процессоре Azure Stack ребра Pro, с помощью Azure PowerShell.
+description: Описание установки Azure Resource Manager пароля для графического процессора Azure Stack ребра Pro с помощью Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: df5fea8101834dae089ab97354c438363321a707
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 915146cd17b90272daea4ce57f5243baf1d49cb3
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904480"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578796"
 ---
 # <a name="set-azure-resource-manager-password-on-azure-stack-edge-pro-gpu-device"></a>Задание Azure Resource Manager пароля для устройства GPU Pro на Azure Stack
 
@@ -21,14 +21,14 @@ ms.locfileid: "90904480"
 
 В этой статье описывается, как задать пароль Azure Resource Manager. Этот пароль необходимо задать при подключении к локальным API-интерфейсам устройства через Azure Resource Manager.
 
-Процедура установки пароля может отличаться в зависимости от того, используется портал Azure или командлеты PowerShell. Каждая из этих процедур описана в следующих разделах.
+Процедура задания пароля может отличаться в зависимости от того, что используется: портал Azure или командлеты PowerShell. Каждая из этих процедур описана в следующих разделах.
 
 
 ## <a name="reset-password-via-the-azure-portal"></a>Сброс пароля с помощью портал Azure
 
 1. В портал Azure перейдите к ресурсу Azure Stackного периметра, созданному для управления устройством. Поочередно выберите **Вычисления Edge > Начало работы**.
 
-2. В области справа на панели команд выберите **сбросить пароль ГРАНИЧНОЙ ARM**. 
+2. В области справа на панели команд выберите **Сбросить пароль Edge ARM**. 
 
     ![Сброс пароля пользователя Еджеарм 1](media/azure-stack-edge-j-series-set-azure-resource-manager-password/set-edgearm-password-1.png)
 
@@ -146,6 +146,6 @@ ms.locfileid: "90904480"
     ```
 Используйте новый пароль для подключения к Azure Resource Manager.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подключение к Azure Resource Manager.](azure-stack-edge-j-series-connect-resource-manager.md)

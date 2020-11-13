@@ -11,19 +11,19 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: scottwhi
-ms.openlocfilehash: a1d233273ced4891c9987ff8ba50e5491ae6071c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 0e8a3ec38a79edb52031d6c18596038ab4c6a8af
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93084465"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592147"
 ---
 # <a name="bing-image-search-api-v7-upgrade-guide"></a>Руководство по обновлению API Bing для поиска изображений до версии 7
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
 
 В этом руководстве по обновлению определены изменения между версиями 5 и 7 API Bing для поиска изображений. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
 
@@ -44,7 +44,7 @@ ms.locfileid: "93084465"
 
 - Коды ошибок версии 5 заменены следующими возможными значениями `code` и `subCode`.
 
-|Код|SubCode (дополнительный код)|Описание
+|Код|SubCode (дополнительный код)|ОПИСАНИЕ
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|Bing возвращает ServerError (ошибку сервера) каждый раз при возникновении любого из условий вложенного кода. Ответ включает в себя ошибки, если код состояния HTTP — 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Блокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса недопустима. Например, отсутствует обязательный параметр или значение параметра недопустимо.<br/><br/>В случае ошибки ParameterMissing или ParameterInvalidValue возвращается код состояния HTTP 400.<br/><br/>При ошибке HttpNotAllowed (HTTP запрещен) будет наблюдаться код состояния HTTP 410.
@@ -79,83 +79,83 @@ InsufficientScope|InsufficientAuthorization
 
 ### <a name="query-parameters"></a>Параметры запроса
 
-- Параметр запроса `modulesRequested` переименован в [modules](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference).  
+- Параметр запроса `modulesRequested` переименован в [modules](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference).  
 
-- Объект Annotations переименован в Tags. Сведения о значении Tags см. в описании параметра [modules](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference).  
+- Объект Annotations переименован в Tags. Сведения о значении Tags см. в описании параметра [modules](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference).  
 
-- Изменен список поддерживаемых рынков для значения фильтра ShoppingSources (доступен только вариант en-US). Ознакомьтесь с описанием параметра [imageType](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype).  
+- Изменен список поддерживаемых рынков для значения фильтра ShoppingSources (доступен только вариант en-US). Ознакомьтесь с описанием параметра [imageType](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype).  
 
 
 ### <a name="image-insights-changes"></a>Изменения в аналитических сведениях об изображении
 
-- Поле `annotations` объекта [ImagesInsights](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsightsresponse) переименовано в `imageTags`.  
+- Поле `annotations` объекта [ImagesInsights](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsightsresponse) переименовано в `imageTags`.  
 
-- Объект `AnnotationModule` переименован в [ImageTagsModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetagsmodule).  
+- Объект `AnnotationModule` переименован в [ImageTagsModule](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetagsmodule).  
 
-- Объект `Annotation` переименован в [Tag](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#tag), а также удалено поле `confidence`.  
+- Объект `Annotation` переименован в [Tag](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#tag), а также удалено поле `confidence`.  
 
-- Поле `insightsSourcesSummary` объекта [Image](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#image) переименовано в `insightsMetadata`.  
+- Поле `insightsSourcesSummary` объекта [Image](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#image) переименовано в `insightsMetadata`.  
 
-- Объект `InsightsSourcesSummary` переименован в [InsightsMetadata](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#insightsmetadata).  
+- Объект `InsightsSourcesSummary` переименован в [InsightsMetadata](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#insightsmetadata).  
 
 - Добавлена конечная точка `https://api.cognitive.microsoft.com/bing/v7.0/images/details`. Используйте эту конечную точку для запроса аналитических сведений об изображении вместо точки /images/search. Ознакомьтесь со статьей, посвященной [аналитическим сведениям об изображении](./image-insights.md).
 
 - Следующие параметры запроса теперь можно использовать только с конечной точкой `/images/details`:  
 
-    -   [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#insightstoken)  
-    -   [модуле](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)  
-    -   [imgUrl](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imgurl)  
-    -   [cab](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#cab)  
-    -   [cal](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#cal)  
-    -   [автомобиле](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#car)  
-    -   [cat](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#cat)  
-    -   [компьютерной](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#ct)  
+    -   [insightsToken](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#insightstoken)  
+    -   [модуле](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)  
+    -   [imgUrl](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imgurl)  
+    -   [cab](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#cab)  
+    -   [cal](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#cal)  
+    -   [автомобиле](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#car)  
+    -   [cat](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#cat)  
+    -   [компьютерной](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#ct)  
 
-- Объект `ImageInsightsResponse` переименован в [ImageInsights](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsights).  
+- Объект `ImageInsightsResponse` переименован в [ImageInsights](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsights).  
 
-- Изменены типы данных указанных ниже полей в объекте [ImageInsights](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsights).  
+- Изменены типы данных указанных ниже полей в объекте [ImageInsights](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsights).  
 
-    -   Тип поля `relatedCollections` изменен с `ImageGallery[]` на [RelatedCollectionsModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#relatedcollectionsmodule).  
+    -   Тип поля `relatedCollections` изменен с `ImageGallery[]` на [RelatedCollectionsModule](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#relatedcollectionsmodule).  
 
-    -   Тип поля `pagesIncluding` изменен с `Image[]` на [ImagesModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagesmodule).  
+    -   Тип поля `pagesIncluding` изменен с `Image[]` на [ImagesModule](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagesmodule).  
 
-    -   Тип поля `relatedSearches` изменен с `Query[]` на [RelatedSearchesModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#relatedsearchesmodule).  
+    -   Тип поля `relatedSearches` изменен с `Query[]` на [RelatedSearchesModule](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#relatedsearchesmodule).  
 
-    -   Тип поля `recipes` изменен с `Recipe[]` на [RecipesModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#recipesmodule).  
+    -   Тип поля `recipes` изменен с `Recipe[]` на [RecipesModule](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#recipesmodule).  
 
-    -   Тип поля `visuallySimilarImages` изменен с `Image[]` на [ImagesModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagesmodule).  
+    -   Тип поля `visuallySimilarImages` изменен с `Image[]` на [ImagesModule](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagesmodule).  
 
-    -   Тип поля `visuallySimilarProducts` изменен с `ProductSummaryImage[]` на [ImagesModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagesmodule).  
+    -   Тип поля `visuallySimilarProducts` изменен с `ProductSummaryImage[]` на [ImagesModule](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagesmodule).  
 
-    -   Удален объект `ProductSummaryImage`, а связанные с продуктом поля перенесены в объект [Image](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#image). Объект `Image` включает в себя связанные с продуктом поля, только если изображение входит в состав визуально похожих продуктов в ответе с аналитическими сведениями об изображении.  
+    -   Удален объект `ProductSummaryImage`, а связанные с продуктом поля перенесены в объект [Image](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#image). Объект `Image` включает в себя связанные с продуктом поля, только если изображение входит в состав визуально похожих продуктов в ответе с аналитическими сведениями об изображении.  
 
-    -   Тип поля `recognizedEntityGroups` изменен с `RecognizedEntityGroup[]` на [RecognizedEntitiesModule](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#recognizedentitiesmodule).  
+    -   Тип поля `recognizedEntityGroups` изменен с `RecognizedEntityGroup[]` на [RecognizedEntitiesModule](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#recognizedentitiesmodule).  
 
--   Поле `categoryClassification` переименовано с [ImageInsights](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsightsresponse) в `annotations`, а его тип изменен на `AnnotationsModule`.  
+-   Поле `categoryClassification` переименовано с [ImageInsights](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsightsresponse) в `annotations`, а его тип изменен на `AnnotationsModule`.  
 
 ### <a name="images-answer"></a>Ответ при поиске изображений
 
--   Из объекта [Images](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) удалены поля displayShoppingSourcesBadges и displayRecipeSourcesBadges.  
+-   Из объекта [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) удалены поля displayShoppingSourcesBadges и displayRecipeSourcesBadges.  
 
--   Поле `nextOffsetAddCount` объекта [Images](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) переименовано в `nextOffset`. Также изменился способ использования смещения. Ранее параметру запроса [offset](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#offset) необходимо было задавать значение `nextOffsetAddCount` + предыдущее значение смещения + число изображений в результатах. Теперь параметру `offset` задается значение `nextOffset`.  
+-   Поле `nextOffsetAddCount` объекта [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) переименовано в `nextOffset`. Также изменился способ использования смещения. Ранее параметру запроса [offset](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#offset) необходимо было задавать значение `nextOffsetAddCount` + предыдущее значение смещения + число изображений в результатах. Теперь параметру `offset` задается значение `nextOffset`.  
 
 
 ## <a name="non-breaking-changes"></a>Некритические изменения
 
 ### <a name="query-parameters"></a>Параметры запроса
 
-- В качестве возможного значения фильтра [imageType](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype) добавлено значение Transparent (Прозрачный). Фильтр Transparent возвращает только изображения с прозрачным фоном.
+- В качестве возможного значения фильтра [imageType](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagetype) добавлено значение Transparent (Прозрачный). Фильтр Transparent возвращает только изображения с прозрачным фоном.
 
-- В качестве возможного значения фильтра [license](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#license) добавлено значение Any (Любой). Фильтр Any возвращает только изображения с лицензией.
+- В качестве возможного значения фильтра [license](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#license) добавлено значение Any (Любой). Фильтр Any возвращает только изображения с лицензией.
 
-- Добавлены параметры запроса [maxFileSize](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#maxfilesize) и [minFileSize](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#minfilesize). Используйте эти фильтры, чтобы возвращать изображения в определенном диапазоне размеров файлов.  
+- Добавлены параметры запроса [maxFileSize](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#maxfilesize) и [minFileSize](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#minfilesize). Используйте эти фильтры, чтобы возвращать изображения в определенном диапазоне размеров файлов.  
 
-- Добавлены параметры запроса [maxHeight](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#maxheight), [minHeight](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#minheight), [maxWidth](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#maxwidth) и [minWidth](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#minwidth). Используйте эти фильтры, чтобы возвращать изображения в определенном диапазоне высоты и ширины.  
+- Добавлены параметры запроса [maxHeight](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#maxheight), [minHeight](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#minheight), [maxWidth](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#maxwidth) и [minWidth](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#minwidth). Используйте эти фильтры, чтобы возвращать изображения в определенном диапазоне высоты и ширины.  
 
 ### <a name="object-changes"></a>Изменения объектов
 
-- В объект [Offer](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#offer) добавлены поля `description` и `lastUpdated`.  
+- В объект [Offer](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#offer) добавлены поля `description` и `lastUpdated`.  
 
-- В объект [ImageGallery](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagegallery) добавлено поле `name`.  
+- В объект [ImageGallery](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imagegallery) добавлено поле `name`.  
 
-- В объект [Images](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) добавлено поле `similarTerms`. В этом поле содержится список условий, которые на смыслу похожи на строку запроса пользователя.  
+- В объект [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) добавлено поле `similarTerms`. В этом поле содержится список условий, которые на смыслу похожи на строку запроса пользователя.

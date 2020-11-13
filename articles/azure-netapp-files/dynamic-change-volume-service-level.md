@@ -12,19 +12,20 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/06/2020
+ms.date: 11/12/2020
 ms.author: b-juche
-ms.openlocfilehash: fe4b2925a34ae7c06bb0b597f0bcdcc3f4d80896
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: e5219e1c87221ade8da68c21209f41b4d6139be2
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363227"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579085"
 ---
 # <a name="dynamically-change-the-service-level-of-a-volume"></a>Динамическое изменение уровня обслуживания тома
 
 > [!IMPORTANT] 
-> Регистрация в общедоступной предварительной версии для этой функции находится на удержании до дальнейшего уведомления. 
+> * Регистрация в общедоступной предварительной версии для этой функции находится на удержании до дальнейшего уведомления. 
+> * Динамическое изменение уровня обслуживания тома назначения репликации сейчас не поддерживается.
 
 Уровень обслуживания существующего тома можно изменить, переместив том в другой пул мощностей, который использует требуемый [уровень обслуживания](azure-netapp-files-service-levels.md) для тома. Это изменение уровня обслуживания для тома выполняется на месте и не требует переноса данных. Он также не влияет на доступ к тому.  
 

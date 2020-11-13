@@ -1,6 +1,6 @@
 ---
-title: Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью Azure PowerShell
-description: Описание создания виртуальных машин и управления ими на устройстве Azure Stack пограничной Pro с помощью Azure PowerShell.
+title: Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью скрипта Azure PowerShell
+description: В этой статье описывается создание виртуальных машин и управление ими на устройстве Azure Stack пограничной Pro с помощью скрипта Azure PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 5ed6de28f1e1b0545ebd675c30249e2f2b4747e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd877a91c7c082ce7845394f2636857f33b7940f
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890641"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578762"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell-script"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью скрипта Azure PowerShell
 
@@ -50,11 +50,11 @@ ms.locfileid: "90890641"
     > [!IMPORTANT]
     > Рекомендуется изменить конфигурацию DNS-сервера для разрешения имен конечных точек.
 
-    1. Откройте **Блокнот** от имени администратора (для сохранения файла требуются привилегии администратора), а затем откройте файл **hosts**, расположенный в `C:\Windows\System32\Drivers\etc`.
+    1. Откройте **Блокнот** от имени администратора (для сохранения файла требуются привилегии администратора), а затем откройте файл **hosts** , расположенный в `C:\Windows\System32\Drivers\etc`.
     
         ![Файл hosts в проводнике](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file.png)
     
-    2. Добавьте следующие записи в файл **hosts**, указав соответствующие значения для вашего устройства:
+    2. Добавьте следующие записи в файл **hosts** , указав соответствующие значения для вашего устройства:
     
         ```
         <Azure consistent services VIP> login.<appliance name>.<DNS domain>
@@ -116,6 +116,6 @@ ms.locfileid: "90890641"
     ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Развертывание виртуальных машин с помощью командлетов Azure PowerShell](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md)

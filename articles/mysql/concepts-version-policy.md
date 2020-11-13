@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/03/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 0670107d84374589aa60cc18f184b9b3d3facce1
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: af2a58ecb97e4c62f437d0c693ec79a4b5f618b0
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331810"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579238"
 ---
 # <a name="azure-database-for-mysql-versioning-policy"></a>Политика управления версиями базы данных Azure для MySQL
 
@@ -40,8 +40,8 @@ ms.locfileid: "94331810"
 
 | Версия | What's New | Дата начала поддержки Azure | Дата вывода|
 | ----- | ----- | ------ | ----- |
-| [MySQL 5,6](https://dev.mysql.com/doc/relnotes/mysql/5.6/)| [Функции](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-49.html)  | 20 марта 2018 г. | Февраль 2021 г.
-| [MySQL 5,7](https://dev.mysql.com/doc/relnotes/mysql/5.7/) | [Функции](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-31.html) | 20 марта 2018 г. | Октябрь 2023 г.
+| [MySQL 5,6](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/)| [Функции](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-49.html)  | 20 марта 2018 г. | Февраль 2021 г.
+| [MySQL 5,7](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/) | [Функции](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-31.html) | 20 марта 2018 г. | Октябрь 2023 г.
 | [MySQL 8](https://mysqlserverteam.com/whats-new-in-mysql-8-0-generally-available/) | [Функции](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html)) | 11 декабря 2019 г. | Апрель 2026
 
 
