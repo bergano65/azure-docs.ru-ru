@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: 78165e9c14d4a83dbc20cbccd2f31dc8ac4c79ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 53b8d74d6eb35347d6ac5b27d12fa5b5eaed2582
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91440871"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566373"
 ---
 # <a name="azure-virtual-wan-logs-and-metrics"></a>Журналы и метрики виртуальной глобальной сети Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "91440871"
 
 4. На странице **метрики** можно просмотреть интересующие вас метрики.
 
-   :::image type="content" source="./media/logs-metrics/metrics-page.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
+   :::image type="content" source="./media/logs-metrics/metrics-page.png" alt-text="Снимок экрана, на котором показана страница &quot;метрики&quot; с выделенными категориями.":::
 
 ## <a name="diagnostic-logs"></a><a name="diagnostic"></a>Журналы диагностики
 
@@ -93,15 +93,15 @@ ms.locfileid: "91440871"
 
 1. На портале перейдите к виртуальному ресурсу глобальной сети. В разделе **Обзор** страницы Виртуальная глобальная сеть на портале выберите **Essentials** , чтобы развернуть представление и получить сведения о группе ресурсов. Скопируйте сведения о группе ресурсов.
 
-   :::image type="content" source="./media/logs-metrics/3.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
+   :::image type="content" source="./media/logs-metrics/3.png" alt-text="Снимок экрана, на котором показан раздел &quot;Обзор&quot; со стрелкой, указывающей на кнопку &quot;Копировать&quot;.":::
 
-2. В разделе Мониторинг перейдите к группе ресурсов. Выберите **параметры диагностики**, а затем введите сведения о ресурсах. Это сведения о ресурсах, скопированные на шаге 2 в разделе [Просмотр метрик шлюза](#metrics-steps) ранее в этой статье.
+2. В разделе Мониторинг перейдите к группе ресурсов. Выберите **параметры диагностики** , а затем введите сведения о ресурсах. Это сведения о ресурсах, скопированные на шаге 2 в разделе [Просмотр метрик шлюза](#metrics-steps) ранее в этой статье.
 
-   :::image type="content" source="./media/logs-metrics/4.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
+   :::image type="content" source="./media/logs-metrics/4.png" alt-text="Снимок экрана, на котором показан раздел &quot;Мониторинг&quot; со стрелкой, указывающей на раскрывающийся список &quot;ресурс&quot;.":::
 
-3. На странице Результаты выберите **+ Добавить параметр диагностики**, а затем выберите параметр. Вы можете отправить Log Analytics, поток в концентратор событий или просто архивировать его в учетную запись хранения.
+3. На странице Результаты выберите **+ Добавить параметр диагностики** , а затем выберите параметр. Вы можете отправить Log Analytics, поток в концентратор событий или просто архивировать его в учетную запись хранения.
 
-   :::image type="content" source="./media/logs-metrics/5.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
+   :::image type="content" source="./media/logs-metrics/5.png" alt-text="страница «метрики»":::
 
 ### <a name="log-analytics-sample-query"></a><a name="sample-query"></a>Log Analytics пример запроса
 
@@ -119,9 +119,9 @@ ms.locfileid: "91440871"
 
 ## <a name="activity-logs"></a><a name="activity-logs"></a>Журналы действий
 
-Записи **журнала действий** собираются по умолчанию и могут быть просмотрены в портал Azure. Журналы действий Azure (ранее известные как *Операционные журналы* и *журналы аудита*) можно использовать для просмотра всех операций, отправленных в подписку Azure.
+Записи **журнала действий** собираются по умолчанию и могут быть просмотрены в портал Azure. Журналы действий Azure (ранее известные как *Операционные журналы* и *журналы аудита* ) можно использовать для просмотра всех операций, отправленных в подписку Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* См. дополнительные сведения об [отслеживании метрик и журналов Брандмауэра Azure](../firewall/tutorial-diagnostics.md).
+* См. дополнительные сведения об [отслеживании метрик и журналов Брандмауэра Azure](../firewall/firewall-diagnostics.md).
 * Дополнительные сведения о метриках в Azure Monitor см. в разделе [метрики в Azure Monitor](../azure-monitor/platform/data-platform-metrics.md).

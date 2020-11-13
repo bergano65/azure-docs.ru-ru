@@ -1,6 +1,6 @@
 ---
 title: Проверка подлинности на основе пароля с помощью Azure Active Directory
-description: Руководство по архитектуре при достижении этого шаблона проверки подлинности
+description: Рекомендации по архитектуре при проверке подлинности на основе пароля с помощью Azure Active Directory.
 services: active-directory
 author: BarbaraSelden
 manager: daveba
@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f05bf8f5f7ec4907c2cd61ff48e3438dfa1e097a
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 74815976036abafc56f97e622351a1018fe30504
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92114361"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94576938"
 ---
 # <a name="password-based-authentication-with-azure-active-directory"></a>Проверка подлинности на основе пароля с помощью Azure Active Directory
 
@@ -35,13 +35,13 @@ ms.locfileid: "92114361"
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь**: доступ к созданному на основе приложения приложению из моих приложений или путем непосредственного посещения сайта. 
+* **Пользователь** : доступ к созданному на основе приложения приложению из моих приложений или путем непосредственного посещения сайта. 
 
 * **Веб-браузер**. компонент, с которым взаимодействует пользователь, чтобы получить доступ к внешнему URL-адресу приложения. Пользователь обращается к приложению на основе форм через расширение MyApps. 
 
-* **Расширение MyApps**: определяет настроенное приложение единого входа на основе пароля и предоставляет учетные данные для входа в форму. Расширение MyApps устанавливается в веб-браузере. 
+* **Расширение MyApps** : определяет настроенное приложение единого входа на основе пароля и предоставляет учетные данные для входа в форму. Расширение MyApps устанавливается в веб-браузере. 
 
-* **Azure AD**: проверяет подлинность пользователя.
+* **Azure AD** : проверяет подлинность пользователя.
 
 ## <a name="implement-password-based-sso-with-azure-ad"></a>Реализация единого входа на основе пароля с помощью Azure AD
 

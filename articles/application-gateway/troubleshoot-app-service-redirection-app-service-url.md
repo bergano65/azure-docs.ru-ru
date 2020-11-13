@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: absha
-ms.openlocfilehash: 676d7c2ad18327471c6e95f3cef26185fa49b78b
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 51249c68407f6b4ca7793b2fdeceab5aa4f7bc5c
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93396895"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94575991"
 ---
 # <a name="troubleshoot-app-service-issues-in-application-gateway"></a>Устранение неполадок службы приложений в шлюзе приложений
 
@@ -44,7 +44,7 @@ ms.locfileid: "93396895"
 - Параметры HTTP: **выбрать имя узла из серверного адреса** включено
 - Проба: **Выбор имени узла из параметров HTTP** включено
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Служба приложений является многоклиентской службой, поэтому она использует заголовок узла в запросе для маршрутизации запроса в правильную конечную точку. Доменное имя по умолчанию для служб приложений, *. azurewebsites.net (скажем, contoso.azurewebsites.net), отличается от доменного имени шлюза приложений (скажем, contoso.com). 
 
@@ -93,7 +93,7 @@ X-Powered-By: ASP.NET
 
 Необходимо быть владельцем личного домена и выполнить следующую процедуру:
 
-- Зарегистрируйте домен в списке личный домен службы приложений. В пользовательском домене должна быть запись CNAME, указывающая на полное доменное имя службы приложений. Дополнительные сведения см. [в статье сопоставьте существующее настраиваемое DNS-имя со службой приложений Azure](//azure/app-service/app-service-web-tutorial-custom-domain).
+- Зарегистрируйте домен в списке личный домен службы приложений. В пользовательском домене должна быть запись CNAME, указывающая на полное доменное имя службы приложений. Дополнительные сведения см. [в статье сопоставьте существующее настраиваемое DNS-имя со службой приложений Azure](/azure/app-service/app-service-web-tutorial-custom-domain).
 
     ![Список пользовательских доменов службы приложений](./media/troubleshoot-app-service-redirection-app-service-url/appservice-2.png)
 
@@ -142,6 +142,6 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
   X-Powered-By: ASP.NET
   ```
-  ## <a name="next-steps"></a>Дальнейшие шаги
+  ## <a name="next-steps"></a>Дальнейшие действия
 
 Если описанные выше действия не помогли устранить проблему, отправьте запрос в [службу поддержки](https://azure.microsoft.com/support/options/).

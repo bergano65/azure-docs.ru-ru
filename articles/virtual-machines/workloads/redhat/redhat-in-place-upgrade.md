@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/16/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 48884e6faa5f26f027c772b44d5f960979a40d1d
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: beede74134affeb3ee0d4bdd20d5da3b4c5e6eda
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94447902"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566628"
 ---
 # <a name="red-hat-enterprise-linux-in-place-upgrades"></a>Red Hat Enterprise Linux обновления на месте
 
@@ -22,10 +22,12 @@ ms.locfileid: "94447902"
 > SQL Server в Red Hat Enterprise Linux предложениях не поддерживают обновление на месте в Azure.
 
 ## <a name="what-to-expect-during-the-upgrade"></a>Что следует предполагать во время обновления
-Во время обновления система перезагрузится несколько раз, и это нормально. При последней перезагрузке виртуальная машина будет обновлена до RHEL 8 последних версий.
+Во время обновления система перезагрузится несколько раз, и это нормально. При последней перезагрузке виртуальная машина будет обновлена до RHEL 8 последних версий. 
+
+Процесс обновления может занять от 20 минут до нескольких часов. это зависит от нескольких факторов, таких как размер виртуальной машины и число пакетов, установленных в системе.
 
 ## <a name="preparations-for-the-upgrade"></a>Подготовка к обновлению
-Обновления на месте являются официально рекомендуемым способом для Red Hat и Azure, что позволяет клиентам обновить систему до следующей основной версии. Прежде чем выполнять обновление, ознакомьтесь с разделом и примите во внимание. 
+Обновление на месте — это официально рекомендуемый способ установки Red Hat и Azure, позволяющий клиентам обновлять систему до следующей основной версии. Прежде чем выполнять обновление, ознакомьтесь с разделом и примите во внимание. 
 
 >[!Important] 
 > Создайте моментальный снимок образа, прежде чем выполнять обновление.
@@ -39,6 +41,12 @@ ms.locfileid: "94447902"
     ```bash
     leapp preupgrade --no-rhsm
     ```
+* Убедитесь, что последовательная консоль работает, так как это позволяет отслеживать во время процесса обновления.
+
+* Включение корневого доступа SSH в `/etc/ssh/sshd_config`
+    1. Откройте файл `/etc/ssh/sshd_config`
+    1. Выполните поиск по запросу "#PermitRootLogin да"
+    1. Удалите "#", чтобы раскомментировать
 
 ## <a name="steps-for-performing-the-upgrade"></a>Шаги для выполнения обновления
 
@@ -46,7 +54,7 @@ ms.locfileid: "94447902"
 
 1. Выполните обновление yum, чтобы получить последние пакеты клиентов.
     ```bash
-    yum update
+    yum update -y
     ```
 
 1. Установите леапп-Client-Package.
@@ -58,35 +66,66 @@ ms.locfileid: "94447902"
     1. Скачайте файл.
     1. Извлеките содержимое и удалите файл с помощью следующей команды:
     ```bash
-     tar -xzf leapp-data12.tar.gz -C /etc/leapp/files && rm leapp-data12.tar.gz
+    tar -xzf leapp-data12.tar.gz -C /etc/leapp/files && rm leapp-data12.tar.gz
     ```
-    
-
 
 1. Добавьте файл "Answers" для "Леапп".
     ```bash
     leapp answer --section remove_pam_pkcs11_module_check.confirm=True --add
-    ```
-    
-1. Включение Пермитрутлогин в каталог/etc/SSH/sshd_config
-    1. Откройте файл каталог/etc/SSH/sshd_config
-    1. Выполните поиск по запросу "#PermitRootLogin да"
-    1. Удалите "#", чтобы раскомментировать
-
-
+    ``` 
 
 1. Выполните обновление "Леапп".
     ```bash
     leapp upgrade --no-rhsm
     ```
+1.  После `leapp upgrade` успешного выполнения команды вручную перезагрузите систему, чтобы завершить процесс. Система перезагрузится несколько раз, в течение которых она будет недоступна. Отслеживайте процесс с помощью последовательной консоли.
+
+1.  Убедитесь, что обновление успешно завершено.
+    ```bash
+    uname -a && cat /etc/redhat-release
+    ```
+
+1. После завершения обновления удалите доступ с правами root SSH.
+    1. Откройте файл `/etc/ssh/sshd_config`
+    1. Выполните поиск по запросу "#PermitRootLogin да"
+    1. Добавить "#" в комментарий
+
 1. Перезапустите службу sshd, чтобы изменения вступили в силу
     ```bash
     systemctl restart sshd
     ```
-1. Повторно закомментируйте Пермитрутлогин в каталог/etc/SSH/sshd_config
-    1. Откройте файл каталог/etc/SSH/sshd_config
-    1. Выполните поиск по запросу "#PermitRootLogin да"
-    1. Добавить "#" в комментарий
+
+## <a name="common-issues"></a>Распространенные проблемы
+Это некоторые распространенные экземпляры, которые `leapp preupgrade` `leapp upgrade` могут завершиться сбоем или процессом.
+
+**Ошибка: для следующих отключенных шаблонов подключаемых модулей совпадения не найдены**
+```plaintext
+STDERR:
+No matches found for the following disabled plugin patterns: subscription-manager
+Warning: Packages marked by Leapp for upgrade not found in repositories metadata: gpg-pubkey
+```
+**Решение**\
+Отключите подключаемый модуль диспетчера подписки, изменив файл `/etc/yum/pluginconf.d/subscription-manager.conf` и выбрав параметр включено `enabled=0` .
+
+Это вызвано включением подключаемого модуля Yum для диспетчера подписки, который не используется для виртуальных машин PAYG.
+
+**Ошибка: возможные проблемы с удаленным входом с помощью root** `leapp preupgrade` Может произойти сбой со следующей ошибкой:
+```structured-text
+============================================================
+                     UPGRADE INHIBITED
+============================================================
+
+Upgrade has been inhibited due to the following problems:
+    1. Inhibitor: Possible problems with remote login using root account
+Consult the pre-upgrade report for details and possible remediation.
+
+============================================================
+                     UPGRADE INHIBITED
+============================================================
+```
+**Решение**\
+Включите корневой доступ в `/etc/sshd_conf` .
+Это вызвано тем, что не включает доступ к корневому SSH в в `/etc/sshd_conf` соответствии с разделом "[Подготовка к обновлению](#preparations-for-the-upgrade)". 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о [образах Red Hat в Azure](./redhat-images.md).

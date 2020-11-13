@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 7a8bdd911db82a07bfcdd1596b7a8203a19a6442
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 0e2406cd35fb2d4dd99da4f5139a9f0f80697912
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341963"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566254"
 ---
 # <a name="set-up-web-endpoints"></a>Настройка конечных веб-точек
 
@@ -58,9 +58,9 @@ ms.locfileid: "92341963"
 
 ## <a name="call-web-endpoints"></a>Вызов конечных веб-точек
 
-1. Перейдите к команде **TurnOnOff**, выберите**ConfirmationResponse** для правила завершения и щелкните **Добавить действие**.
+1. Перейдите к команде **TurnOnOff** , выберите **ConfirmationResponse** для правила завершения и щелкните **Добавить действие**.
 1. В разделе **New Action-Type** (Создание типа действия) выберите **Call web endpoint** (Вызов конечной веб-точки).
-1. В разделе **Изменение действия — конечные точки** выберите **UpdateDeviceState**, то есть созданную нами конечную веб-точку.  
+1. В разделе **Изменение действия — конечные точки** выберите **UpdateDeviceState** , то есть созданную нами конечную веб-точку.  
 1. В разделе **Конфигурация** введите следующие значения: 
    > [!div class="mx-imgBorder"]
    > ![Параметры действия вызова конечных веб-точек](media/custom-commands/setup-web-endpoint-edit-action-parameters.png)
@@ -125,14 +125,14 @@ ms.locfileid: "92341963"
     1. Скопируйте приведенный ниже код JSON в поле **Содержимое действия**.
    ```json
    {
-     "type": "event",
-     "name": "UpdateDeviceState",
-     "state": "{OnOff}",
-     "device": "{SubjectDevice}"
-   }
+      "type": "event",
+      "name": "UpdateDeviceState",
+      "value": {
+        "state": "{OnOff}",
+        "device": "{SubjectDevice}"
+      }
+    }
    ```
-    > [!div class="mx-imgBorder"]
-    > ![Отправка действия при успешном выполнении](media/custom-commands/setup-web-endpoint-edit-action-on-success-send-activity.png)
    
 Теперь вы отправляете действие в клиент только при успешном выполнении запроса к конечной веб-точке.
 
@@ -207,3 +207,4 @@ private async void SyncDeviceState_ButtonClicked(object sender, RoutedEventArgs 
 
 > [!div class="nextstepaction"]
 > [Экспорт приложения настраиваемых команд в качестве удаленного навыка](./how-to-custom-commands-integrate-remote-skills.md)
+

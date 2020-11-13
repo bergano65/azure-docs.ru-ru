@@ -8,7 +8,6 @@
     - name: Поддерживаемые хранилища данных
       href: supported-data-stores.md
 - name: Краткие руководства
-  expanded: true
   items:
     - name: "Общий доступ к данным\_— портал Azure"
       href: share-your-data-portal.md
@@ -16,6 +15,7 @@
       displayName: Resource Manager
       href: share-your-data-arm.md
 - name: Учебники
+  expanded: true
   items:
     - name: Совместное использование данных
       href: share-your-data.md

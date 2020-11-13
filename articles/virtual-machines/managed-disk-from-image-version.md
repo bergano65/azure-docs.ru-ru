@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/27/2020
 ms.author: cynthn
 ms.reviewer: olayemio
-ms.openlocfilehash: 5873f28fed492f9ef906a9d7c1364d8ae07033a7
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 1fbdae2480caef5bf1d190124ca3be6c5b97a2f9
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93336067"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94576365"
 ---
 # <a name="create-a-managed-disk-from-an-image-version"></a>Создание управляемого диска из версии образа
 
@@ -23,7 +23,7 @@ ms.locfileid: "93336067"
 
 ## <a name="cli"></a>CLI
 
-Выведите список версий образа в галерее, выполнив команду [AZ SIG Image-Version List](/cli/azure/sig/image-version.md#az_sig_image_version_list). В этом примере мы ищем все версии изображений, которые являются частью определения образа *мимажедефинитион* в коллекции образов *мигаллери* .
+Выведите список версий образа в галерее, выполнив команду [AZ SIG Image-Version List](/cli/azure/sig/image-version#az_sig_image_version_list). В этом примере мы ищем все версии изображений, которые являются частью определения образа *мимажедефинитион* в коллекции образов *мигаллери* .
 
 ```azurecli-interactive
 az sig image-version list \
@@ -33,7 +33,7 @@ az sig image-version list \
    -o table
 ```
 
-Задайте `source` для переменной идентификатор версии образа, а затем выполните команду [AZ Disk Create](/cli/azure/disk.md#az_disk_create) , чтобы создать управляемый диск. 
+Задайте `source` для переменной идентификатор версии образа, а затем выполните команду [AZ Disk Create](//cli/azure/disk#az_disk_create) , чтобы создать управляемый диск. 
 
 В этом примере мы экспортируем диск операционной системы версии образа, чтобы создать управляемый диск с именем *миманажедосдиск* в регионе *EastUS* в группе ресурсов с именем *myResourceGroup*. 
 
@@ -115,7 +115,7 @@ New-AzDisk -Disk $diskConfig `
    -DiskName myManagedDataDisk
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете создать версию образа на основе управляемого диска с помощью [Azure CLI](image-version-managed-image-cli.md) или [PowerShell](image-version-managed-image-powershell.md).
 

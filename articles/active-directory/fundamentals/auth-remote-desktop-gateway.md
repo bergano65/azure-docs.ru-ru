@@ -1,6 +1,6 @@
 ---
 title: удаленный рабочий стол служб шлюза с Azure Active Directory
-description: Руководство по архитектуре при достижении этого шаблона проверки подлинности
+description: Рекомендации по архитектуре для достижения удаленный рабочий стол служб шлюза с Azure Active Directory.
 services: active-directory
 author: BarbaraSelden
 manager: daveba
@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff099d41970ad4d78d5c6035a60f448f29ab24b1
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 57466cccb71444d5711a9221c324a107757c5e82
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92114354"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94576801"
 ---
 # <a name="remote-desktop-gateway-services"></a>Службы шлюза удаленный рабочий стол
 
@@ -32,11 +32,11 @@ ms.locfileid: "92114354"
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь**: доступ к RDS, обслуживаемой прокси приложения.
+* **Пользователь** : доступ к RDS, обслуживаемой прокси приложения.
 
 * **Веб-браузер**. компонент, с которым взаимодействует пользователь, чтобы получить доступ к внешнему URL-адресу приложения.
 
-* **Azure AD**: проверяет подлинность пользователя. 
+* **Azure AD** : проверяет подлинность пользователя. 
 
 * **Служба прокси приложения**. действует как обратный прокси-сервер для пересылки запроса от пользователя к RDS. Прокси приложения также может применять любые политики условного доступа. 
 

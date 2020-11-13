@@ -3,12 +3,12 @@ title: Общие сведения об агенте Connected Machine для Wi
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 09/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: f1f74ff12d007553c0c0c9b16f56a27371618bbb
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 8a66f99f535013b8aac52fdee43b91a8c734b10a
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370174"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94577589"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "92370174"
 
 * Чтобы подключить компьютеры, необходимо быть членом роли **Подключение компьютеров, подключенных к Azure**.
 
-* Для чтения, изменения, повторно подключитесь и удаления компьютера вы являетесь членом роли **администратора ресурсов подключенного компьютера Azure** . 
+* Для чтения, изменения и удаления компьютера вы являетесь членом роли **администратора ресурсов на компьютере, подключенном к Azure** . 
 
 ### <a name="azure-subscription-and-service-limits"></a>Ограничения подписки и служб Azure
 
@@ -255,7 +255,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
 

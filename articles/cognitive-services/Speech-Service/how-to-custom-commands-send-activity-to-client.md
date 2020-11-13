@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: fc62c87fd12457c60d3eb26cba6814aa1df76f87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 52a4dbc4ff01515af8cd7d2503877184a09f7e64
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839220"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566101"
 ---
 # <a name="send-custom-commands-activity-to-client-application"></a>Отправка действия настраиваемых команд клиентскому приложению
 
@@ -26,7 +26,7 @@ ms.locfileid: "91839220"
 - Определение и Отправка пользовательских полезных данных JSON из приложения пользовательских команд
 - Получение и визуализация содержимого настраиваемой полезной нагрузки JSON из клиентского приложения SDK для языка C# UWP
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 > [!div class = "checklist"]
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) или более поздней версии. В этом руководством используется Visual Studio 2019
 > * Ключ подписки Azure для служб "Речь". [Получите бесплатно](overview.md#try-the-speech-service-for-free) или создайте его на [портале Azure](https://portal.azure.com).
@@ -36,15 +36,17 @@ ms.locfileid: "91839220"
 ## <a name="setup-send-activity-to-client"></a>Настройка отправки действия клиенту 
 1. Откройте созданное ранее приложение пользовательских команд.
 1. Выберите команду **турнонофф** , выберите **конфирматионреспонсе** в разделе правило завершения, а затем выберите **Добавить действие** .
-1. В разделе **новый тип действия**выберите **Отправить действие клиенту** .
+1. В разделе **новый тип действия** выберите **Отправить действие клиенту** .
 1. Скопируйте приведенный ниже код JSON в **содержимое действия** .
    ```json
    {
-     "type": "event",
-     "name": "UpdateDeviceState",
-     "state": "{OnOff}",
-     "device": "{SubjectDevice}"
-   }
+      "type": "event",
+      "name": "UpdateDeviceState",
+      "value": {
+        "state": "{OnOff}",
+        "device": "{SubjectDevice}"
+      }
+    }
    ```
 1. Нажмите кнопку **сохранить** , чтобы создать новое правило с действием Отправить действие, **обучить** и **опубликовать** изменение
 
@@ -55,7 +57,7 @@ ms.locfileid: "91839220"
 
 В [пошаговом окне Настройка клиентского приложения с помощью речевого пакета SDK (Предварительная версия)](./how-to-custom-commands-setup-speech-sdk.md)вы создали клиентское приложение UWP с пакетом SDK для распознавания речи, которое обрабатывает такие команды `turn on the tv` , как, `turn off the fan` . После добавления некоторых визуальных элементов можно увидеть результат этих команд.
 
-Чтобы добавить помеченные поля с текстом, **указывающим** или **выключая**, добавьте следующий XML-блок StackPanel в `MainPage.xaml` .
+Чтобы добавить помеченные поля с текстом, **указывающим** или **выключая** , добавьте следующий XML-блок StackPanel в `MainPage.xaml` .
 
 ```xml
 <StackPanel Orientation="Vertical" H......>
@@ -83,8 +85,8 @@ ms.locfileid: "91839220"
 Так как вы создали полезные данные JSON, необходимо добавить ссылку на библиотеку [JSON.NET](https://www.newtonsoft.com/json) для управления десериализацией.
 
 1. Щелкните правой кнопкой мыши клиентское решение.
-1. Выберите **Управление пакетами NuGet для решения**, нажмите кнопку **Обзор** . 
-1. Если вы уже установили **Newtonsoft.jsв**, убедитесь, что его версия по крайней мере 12.0.3. Если это не так, перейдите к разделу **Управление пакетами NuGet для обновления решения**, выполните поиск по **Newtonsoft.json** , чтобы обновить его. В этом руководством используется версия 12.0.3.
+1. Выберите **Управление пакетами NuGet для решения** , нажмите кнопку **Обзор** . 
+1. Если вы уже установили **Newtonsoft.jsв** , убедитесь, что его версия по крайней мере 12.0.3. Если это не так, перейдите к разделу **Управление пакетами NuGet для обновления решения** , выполните поиск по **Newtonsoft.json** , чтобы обновить его. В этом руководством используется версия 12.0.3.
 
     > [!div class="mx-imgBorder"]
     > ![Отправка полезных данных действия](media/custom-commands/send-activity-to-client-json-nuget.png)
@@ -114,8 +116,8 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
     if (name.Equals("UpdateDeviceState"))
     {
         Debug.WriteLine("Here");
-        var state = activity?.device != null ? activity.state.ToString() : string.Empty;
-        var device = activity?.device != null ? activity.device.ToString() : string.Empty;
+        var state = activity?.value?.state != null ? activity.value.state.ToString() : string.Empty;
+        var device = activity?.value?.device != null ? activity.value.device.ToString() : string.Empty;
 
         if (state.Equals("on") || state.Equals("off"))
         {
@@ -156,7 +158,7 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
    > [!div class="mx-imgBorder"]
    > ![Снимок экрана, на котором показано, что теперь визуальное состояние T V включено.](media/custom-commands/send-activity-to-client-turn-on-tv.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Как настроить конечные веб-точки (Предварительная версия)](./how-to-custom-commands-setup-web-endpoints.md)

@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: sukishen
-ms.openlocfilehash: 83cc7757f31a631af755155b49c7c26753618426
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b2595eaf1e373c3a15014d0bc684d6e3914a665
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399114"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566645"
 ---
 # <a name="interconnect-with-china-using-azure-virtual-wan-and-secure-hub"></a>Взаимодействие с Китаем при помощи Виртуальной глобальной сети Azure и защищенного концентратора
 
@@ -111,7 +111,7 @@ ms.locfileid: "91399114"
 
 Все эти параметры используют защищенный центр виртуальной глобальной сети Azure для прямого Microsoft 365ного подключения в Гонконг. Эти архитектуры также поддерживают требования к соответствию требованиям для [Microsoft 365 Multi-Geo](/microsoft-365/enterprise/microsoft-365-multi-geo) и сохраняют этот трафик около следующего расположения передней дверцы Azure. В результате это также позволяет улучшить использование Microsoft 365 за пределами Китая.
 
-При использовании Виртуальной глобальной сети Azure совместно с подключениями к Интернету каждое подключение может пользоваться дополнительными службами, таких как [Служба пиринга Microsoft Azure (MAPS)](https://docs.microsoft.com/azure/peering-service/about). MAPS были создана для оптимизации трафика, поступающего в глобальную сеть Майкрософт от сторонних поставщиков услуг Интернета.
+При использовании Виртуальной глобальной сети Azure совместно с подключениями к Интернету каждое подключение может пользоваться дополнительными службами, таких как [Служба пиринга Microsoft Azure (MAPS)](../peering-service/about.md). MAPS были создана для оптимизации трафика, поступающего в глобальную сеть Майкрософт от сторонних поставщиков услуг Интернета.
 
 ### <a name="option-1-sdwan-or-vpn"></a><a name="option-1"></a>Вариант 1. SDWAN или VPN
 
@@ -151,4 +151,4 @@ ms.locfileid: "91399114"
 
 * [Настройка защищенного концентратора Виртуальной глобальной сети](../firewall-manager/secure-cloud-network.md)
 
-* [Обзор службы пиринга Azure (предварительная версия)](https://docs.microsoft.com/azure/peering-service/about)
+* [Обзор службы пиринга Azure (предварительная версия)](../peering-service/about.md)

@@ -5,26 +5,26 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 12/12/2018
+ms.date: 11/11/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 2766ea87544f2a21fb654f687eb62dee3c0714ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7db9749adab9a6d6d7b8c350648603f42d0b43d
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80334633"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94573900"
 ---
-**Управляемые диски HDD (цен. категория "Стандартный")**  
+### <a name="standard-hdd-managed-disks"></a>Управляемые диски HDD (цен. категория "Стандартный")
 [!INCLUDE [disk-storage-standard-hdd-sizes](disk-storage-standard-hdd-sizes.md)]
 
-**Управляемые диски SSD (цен. категория "Стандартный")**  
+### <a name="standard-ssd-managed-disks"></a>Управляемые диски SSD (цен. категория "Стандартный")
 [!INCLUDE [disk-storage-standard-ssd-sizes](disk-storage-standard-ssd-sizes.md)]
 
-**Управляемые диски SSD (цен. категория "Премиум"): ограничения для каждого диска**  
+### <a name="premium-ssd-managed-disks-per-disk-limits"></a>Управляемые диски SSD (цен. категория "Премиум"): ограничения для каждого диска 
 [!INCLUDE [disk-storage-premium-ssd-sizes](disk-storage-premium-ssd-sizes.md)]
 
-**Управляемые диски SSD (цен. категория "Премиум"): ограничения для каждой виртуальной машины**
+### <a name="premium-ssd-managed-disks-per-vm-limits"></a>Управляемые диски SSD (цен. категория "Премиум"): ограничения для каждой виртуальной машины
 
 | Ресурс | Ограничение |
 | --- | --- |

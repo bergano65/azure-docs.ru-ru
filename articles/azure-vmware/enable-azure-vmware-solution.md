@@ -2,28 +2,30 @@
 title: Как включить ресурс решения Azure VMware
 description: Узнайте, как отправить запрос в службу поддержки, чтобы включить ресурс решения Azure VMware. Вы также можете запросить дополнительные узлы в существующем частном облаке решения Azure VMware.
 ms.topic: how-to
-ms.date: 09/22/2020
-ms.openlocfilehash: dc90a322b5592ca7f400a82deca65ea753711c27
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.date: 11/12/2020
+ms.openlocfilehash: 7c805e9e622f55593ff1fbb72a355d233b7e3618
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91948737"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94576404"
 ---
 # <a name="how-to-enable-azure-vmware-solution-resource"></a>Как включить ресурс решения Azure VMware
-Узнайте, как отправить запрос в службу поддержки, чтобы включить ресурс решения Azure VMware. Вы также можете запросить дополнительные узлы в существующем частном облаке решения Azure VMware.
+Узнайте, как отправить запрос в службу поддержки, чтобы включить ресурс [решения Azure VMware](introduction.md) . Вы также можете запросить дополнительные узлы в существующем частном облаке решения Azure VMware.
 
 ## <a name="eligibility-criteria"></a>Условия для допуска
 
-* Вам потребуется [Соглашение Enterprise Azure (EA)](../cost-management-billing/manage/ea-portal-agreements.md) с корпорацией Майкрософт.
-* Вам потребуется учетная запись Azure в подписке Azure.
+Вам потребуется учетная запись Azure в подписке Azure. Подписка Azure должна соответствовать одному из следующих критериев:
+
+* Подписка на [Соглашение Enterprise Azure (EA)](../cost-management-billing/manage/ea-portal-agreements.md) с корпорацией Майкрософт.
+* Подписка, управляемая поставщиком облачных решений (CSP), в плане Azure.
 
 
-## <a name="enable-azure-vmware-solution-resource"></a>Включение ресурса решения Azure VMware
+## <a name="enable-azure-vmware-solution-for-ea-customers"></a>Включение решения Azure VMware для клиентов EA
 Перед созданием ресурса Решения Azure VMware необходимо отправить в службу поддержки запрос на выделение узлов. Когда группа поддержки получит ваш запрос, ей потребуется до пяти рабочих дней на его подтверждение и выделение узлов. Если у вас уже есть частное облако Решения Azure VMware и вы хотите выделить для него больше узлов, выполните те же действия.
 
 
-1. В портал Azure в разделе **Справка и поддержка**создайте **[новый запрос на поддержку](https://rc.portal.azure.com/#create/Microsoft.Support)** и предоставьте следующие сведения для билета:
+1. В портал Azure в разделе **Справка и поддержка** создайте **[новый запрос на поддержку](https://rc.portal.azure.com/#create/Microsoft.Support)** и предоставьте следующие сведения для билета:
    - **Тип вопроса:** Технические требования
    - **Подписка:** Выберите подписку
    - **Служба:** Все службы > решение VMware для Azure
@@ -56,3 +58,25 @@ ms.locfileid: "91948737"
    ```
 
    В [списке поставщиков и типов ресурсов](../azure-resource-manager/management/resource-providers-and-types.md) описано, как еще можно зарегистрировать поставщик ресурсов.
+
+## <a name="enable-azure-vmware-solution-for-csp-customers"></a>Включение решения Azure VMware для клиентов CSP 
+
+CSP должны использовать [Центр партнеров Майкрософт](https://partner.microsoft.com) , чтобы включить решение Azure VMware для своих клиентов. 
+
+1. В **центре партнеров** выберите **CSP** для доступа к области **Клиенты** .
+
+   :::image type="content" source="media/enable-azure-vmware-solution/csp-customers-screen.png" alt-text="Область клиентов центра партнеров Майкрософт" lightbox="media/enable-azure-vmware-solution/csp-customers-screen.png":::
+
+1. Выберите клиента, а затем щелкните **Добавить продукты**.
+
+   :::image type="content" source="media/enable-azure-vmware-solution/csp-partner-center.png" alt-text="Центр партнеров Майкрософт" lightbox="media/enable-azure-vmware-solution/csp-partner-center.png":::
+
+1. Выберите **план Azure** , а затем щелкните **Добавить в корзину**. 
+
+1. Проверьте и завершите общие настройки подписки на план Azure для клиента. Дополнительные сведения см. в [документации центра партнеров Майкрософт](https://docs.microsoft.com/partner-center/azure-plan-manage).
+
+После настройки плана Azure и требуемых разрешений RBAC в качестве CSP вы будете привлекать Майкрософт, используя аналогичную процедуру, чтобы включить квоту для подписки на план Azure. После добавления в план Azure клиент или администратор партнера может развернуть частное облако решения Azure VMware с помощью портал Azure. 
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+После включения ресурса решения Azure VMware и правильной работы сети можно [создать частное облако](tutorial-create-private-cloud.md).

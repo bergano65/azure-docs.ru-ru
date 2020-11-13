@@ -2,14 +2,14 @@
 title: Часто задаваемые вопросы
 description: Содержит ответы на некоторые распространенные вопросы о решении Azure VMware.
 ms.topic: conceptual
-ms.date: 09/25/2020
+ms.date: 11/12/2020
 ms.author: dikamath
-ms.openlocfilehash: 33250b0ba9209f7806346668dac0ef308101e7c2
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 99e9e53693e42f907250331894f55ed0160f9e30
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94487798"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94577521"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
@@ -229,9 +229,15 @@ Azure бастиона — это служба, рекомендуемая дл�
 
 Общие вопросы по ценам см. на странице [цен](https://azure.microsoft.com/pricing/details/azure-vmware) на решения VMware для Azure. 
 
+#### <a name="can-azure-vmware-solution-be-purchased-through-a-microsoft-csp"></a>Можно ли приобрести решение Azure VMware через CSP Майкрософт?
+
+Да, клиенты могут развернуть решение VMware для Azure в подписке Azure, управляемой CSP.
+
 #### <a name="who-supports-azure-vmware-solution"></a>Кто поддерживает решение Azure VMware?
 
-Корпорация Майкрософт предоставляет поддержку для решения VMware для Azure. Вы можете отправить [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Корпорация Майкрософт предоставляет поддержку для решения VMware для Azure. Вы можете отправить [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest). 
+
+Для управляемых подписок CSP первый уровень поддержки будет предоставляться поставщиком решений таким же образом, как и CSP для других служб Azure.
 
 #### <a name="what-accounts-do-i-need-to-create-an-azure-vmware-solution-private-cloud"></a>Какие учетные записи нужно создать в частном облаке решения Azure VMware?
 
@@ -246,6 +252,10 @@ Azure бастиона — это служба, рекомендуемая дл�
 VMware HCX Enterprise Edition (EE) предоставляется в составе Решения Azure VMware в виде *предварительной версии* функции или службы. Хотя VMware ХККС EE для Azure VMware находится на этапе предварительной версии, это бесплатная функция или служба, которая подлежит предварительной версии условий обслуживания. Когда служба VMware HCX EE станет общедоступной, за 30 дней до этой даты вы получите уведомление о том, что для нее будет включено выставление счетов. Вы можете отключить службу или отказаться от нее.
 
 #### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Разделы справки запросить увеличение квоты узла для решения VMware для Azure?
+
+Для управляемых подписок CSP клиент должен выполнить запрос к партнеру, и Партнерская группа будет привлекаться к корпорации Майкрософт, чтобы увеличить квоту для подписки. 
+
+Для подписок EA клиент должен выполнить эту процедуру.
 
 * Вам потребуется [Соглашение Enterprise Azure (EA)](../cost-management-billing/manage/ea-portal-agreements.md) с корпорацией Майкрософт.
 * Вам потребуется учетная запись Azure в подписке Azure.
@@ -283,9 +293,12 @@ VMware HCX Enterprise Edition (EE) предоставляется в соста�
 
    ```azurecli-interactive
    az provider register -n Microsoft.AVS --subscription <your subscription ID>
-   `"
 
-   For additional ways to register the resource provider, see [Azure resource providers and types](../azure-resource-manager/management/resource-providers-and-types.md).
+   For additional ways to register the resource provider, see [Azure resource providers and types](../azure-resource-manager/management/resource-providers-and-types.md). 
+
+#### Are Reserved Instances available for purchasing through the Cloud Solution Provider (CSP) program?
+
+Yes. CSP can purchase reserved instances on behalf of their customers, see [Save costs with a reserved instance](reserved-instance.md) article. 
 
 
 ## Customer communication

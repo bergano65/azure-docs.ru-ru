@@ -3,29 +3,27 @@ title: Управление резервными копиями файловых
 description: Узнайте, как использовать Azure CLI для управления и мониторинга файловых ресурсов Azure, резервное копирование которых осуществляется Azure Backup.
 ms.topic: conceptual
 ms.date: 01/15/2020
-ms.openlocfilehash: 44c095d58e2da5a74985ce216268aab15922ed1e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a8a785016845b836a102663a959e4b2f28696b6
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91332752"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566458"
 ---
 # <a name="manage-azure-file-share-backups-with-the-azure-cli"></a>Управление резервными копиями файловых ресурсов Azure с помощью Azure CLI
 
 Azure CLI предоставляет возможности командной строки для управления ресурсами Azure. Это отличный инструмент для создания пользовательской автоматизации для использования ресурсов Azure. В этой статье объясняется, как выполнять задачи по управлению файловыми ресурсами Azure, которые архивируются с помощью [Azure Backup](./backup-overview.md). Эти действия также можно выполнить с помощью [портал Azure](https://portal.azure.com/).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Чтобы установить и использовать интерфейс командной строки локально, необходимо запустить Azure CLI версии 2.0.18 или более поздней. Чтобы получить необходимую версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что у вас уже есть резервная копия общего файлового ресурса Azure, [Azure Backup](./backup-overview.md). Если у вас ее нет, см. раздел [резервное копирование файловых ресурсов Azure с помощью интерфейса командной строки](backup-afs-cli.md) для настройки резервного копирования общих файловых ресурсов. В этой статье вы используете следующие ресурсы:
-
-* **Группа ресурсов**: *azurefiles*
-* **RecoveryServicesVault**: *азурефилесваулт*
-* **Учетная запись хранения**: *афсаккаунт*
-* **Общая папка**: *azurefiles*
+   -  **Группа ресурсов** : *azurefiles*
+   -  **RecoveryServicesVault** : *азурефилесваулт*
+   -  **Учетная запись хранения** : *афсаккаунт*
+   -  **Общая папка** : *azurefiles*
+  
+  [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+   - Для работы с этим руководством требуется версия 2.0.18 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="monitor-jobs"></a>Мониторинг заданий
 
@@ -98,9 +96,9 @@ az backup job list --resource-group azurefiles --vault-name azurefilesvault
 
 Чтобы изменить политику, определите следующие параметры:
 
-* **--Container-Name**: имя учетной записи хранения, в которой размещена общая папка. Чтобы получить **имя** или **понятное имя** контейнера, используйте команду [AZ Backup Container List](/cli/azure/backup/container#az-backup-container-list) .
-* **--Name**: имя общей папки, для которой необходимо изменить политику. Чтобы получить **имя** или **понятное имя** архивированного элемента, используйте команду [AZ Backup Item List](/cli/azure/backup/item#az-backup-item-list) .
-* **--Policy-Name**: имя политики резервного копирования, которую вы хотите задать для общей папки. Чтобы просмотреть все политики для хранилища, можно использовать команду [AZ Backup Policy List](/cli/azure/backup/policy#az-backup-policy-list) .
+* **--Container-Name** : имя учетной записи хранения, в которой размещена общая папка. Чтобы получить **имя** или **понятное имя** контейнера, используйте команду [AZ Backup Container List](/cli/azure/backup/container#az-backup-container-list) .
+* **--Name** : имя общей папки, для которой необходимо изменить политику. Чтобы получить **имя** или **понятное имя** архивированного элемента, используйте команду [AZ Backup Item List](/cli/azure/backup/item#az-backup-item-list) .
+* **--Policy-Name** : имя политики резервного копирования, которую вы хотите задать для общей папки. Чтобы просмотреть все политики для хранилища, можно использовать команду [AZ Backup Policy List](/cli/azure/backup/policy#az-backup-policy-list) .
 
 В следующем примере задается политика резервного копирования *schedule2* для общей папки *azurefiles* , которая находится в учетной записи хранения *афсаккаунт* .
 
@@ -110,8 +108,8 @@ az backup item set-policy --policy-name schedule2 --name azurefiles --vault-name
 
 Можно также выполнить предыдущую команду, используя понятные имена для контейнера и элемента, предоставив следующие два дополнительных параметра:
 
-* **--BACKUP-Management-Type**: *azurestorage*
-* **--Рабочая нагрузка — тип**: *azurefileshare*
+* **--BACKUP-Management-Type** : *azurestorage*
+* **--Рабочая нагрузка — тип** : *azurefileshare*
 
 ```azurecli-interactive
 az backup item set-policy --policy-name schedule2 --name azurefiles --vault-name azurefilesvault --resource-group azurefiles --container-name afsaccount --name azurefiles --backup-management-type azurestorage --out table
@@ -136,8 +134,8 @@ fec6f004-0e35-407f-9928-10a163f123e5  azurefiles
 
 Чтобы отключить защиту для общей папки, определите следующие параметры:
 
-* **--Container-Name**: имя учетной записи хранения, в которой размещена общая папка. Чтобы получить **имя** или **понятное имя** контейнера, используйте команду [AZ Backup Container List](/cli/azure/backup/container#az-backup-container-list) .
-* **--Item-Name**: имя общего файлового ресурса, для которого требуется отключить защиту. Чтобы получить **имя** или **понятное имя** архивированного элемента, используйте команду [AZ Backup Item List](/cli/azure/backup/item#az-backup-item-list) .
+* **--Container-Name** : имя учетной записи хранения, в которой размещена общая папка. Чтобы получить **имя** или **понятное имя** контейнера, используйте команду [AZ Backup Container List](/cli/azure/backup/container#az-backup-container-list) .
+* **--Item-Name** : имя общего файлового ресурса, для которого требуется отключить защиту. Чтобы получить **имя** или **понятное имя** архивированного элемента, используйте команду [AZ Backup Item List](/cli/azure/backup/item#az-backup-item-list) .
 
 ### <a name="stop-protection-and-retain-recovery-points"></a>Отключение защиты и сохранение точек восстановления
 
@@ -151,8 +149,8 @@ az backup protection disable --vault-name azurefilesvault --resource-group azure
 
 Можно также выполнить предыдущую команду, используя понятное имя для контейнера и элемента, предоставив следующие два дополнительных параметра:
 
-* **--BACKUP-Management-Type**: *azurestorage*
-* **--Рабочая нагрузка — тип**: *azurefileshare*
+* **--BACKUP-Management-Type** : *azurestorage*
+* **--Рабочая нагрузка — тип** : *azurefileshare*
 
 ```azurecli-interactive
 az backup protection disable --vault-name azurefilesvault --resource-group azurefiles --container-name afsaccount --item-name azurefiles --workload-type azurefileshare --backup-management-type Azurestorage --out table
@@ -178,8 +176,8 @@ az backup protection disable --vault-name azurefilesvault --resource-group azure
 
 Можно также выполнить предыдущую команду, используя понятное имя для контейнера и элемента, предоставив следующие два дополнительных параметра:
 
-* **--BACKUP-Management-Type**: *azurestorage*
-* **--Рабочая нагрузка — тип**: *azurefileshare*
+* **--BACKUP-Management-Type** : *azurestorage*
+* **--Рабочая нагрузка — тип** : *azurefileshare*
 
 ```azurecli-interactive
 az backup protection disable --vault-name azurefilesvault --resource-group azurefiles --container-name afsaccount --item-name azurefiles --workload-type azurefileshare --backup-management-type Azurestorage --delete-backup-data true --out table
@@ -191,9 +189,9 @@ az backup protection disable --vault-name azurefilesvault --resource-group azure
 
 Чтобы возобновить защиту для общей папки, задайте следующие параметры:
 
-* **--Container-Name**: имя учетной записи хранения, в которой размещена общая папка. Чтобы получить **имя** или **понятное имя** контейнера, используйте команду [AZ Backup Container List](/cli/azure/backup/container#az-backup-container-list) .
-* **--Item-Name**: имя общего файлового ресурса, для которого необходимо возобновить защиту. Чтобы получить **имя** или **понятное имя** архивированного элемента, используйте команду [AZ Backup Item List](/cli/azure/backup/item#az-backup-item-list) .
-* **--Policy-Name**: имя политики резервного копирования, для которой требуется возобновить защиту для общей папки.
+* **--Container-Name** : имя учетной записи хранения, в которой размещена общая папка. Чтобы получить **имя** или **понятное имя** контейнера, используйте команду [AZ Backup Container List](/cli/azure/backup/container#az-backup-container-list) .
+* **--Item-Name** : имя общего файлового ресурса, для которого необходимо возобновить защиту. Чтобы получить **имя** или **понятное имя** архивированного элемента, используйте команду [AZ Backup Item List](/cli/azure/backup/item#az-backup-item-list) .
+* **--Policy-Name** : имя политики резервного копирования, для которой требуется возобновить защиту для общей папки.
 
 В следующем примере используется командлет [AZ Backup Protection Resume](/cli/azure/backup/protection#az-backup-protection-resume) для возобновления защиты файлового ресурса *azurefiles* с помощью политики резервного копирования *schedule1* .
 
@@ -203,8 +201,8 @@ az backup protection resume --vault-name azurefilesvault --resource-group azuref
 
 Можно также выполнить предыдущую команду, используя понятное имя для контейнера и элемента, предоставив следующие два дополнительных параметра:
 
-* **--BACKUP-Management-Type**: *azurestorage*
-* **--Рабочая нагрузка — тип**: *azurefileshare*
+* **--BACKUP-Management-Type** : *azurestorage*
+* **--Рабочая нагрузка — тип** : *azurefileshare*
 
 ```azurecli-interactive
 az backup protection resume --vault-name azurefilesvault --resource-group azurefiles --container-name afsaccount --item-name azurefiles --workload-type azurefileshare --backup-management-type Azurestorage --policy-name schedule2 --out table
@@ -232,12 +230,12 @@ az backup container unregister --vault-name azurefilesvault --resource-group azu
 
 Вы также можете запустить предыдущий командлет, используя понятное имя для контейнера, предоставив следующий дополнительный параметр:
 
-* **--BACKUP-Management-Type**: *azurestorage*
+* **--BACKUP-Management-Type** : *azurestorage*
 
 ```azurecli-interactive
 az backup container unregister --vault-name azurefilesvault --resource-group azurefiles --container-name afsaccount --backup-management-type azurestorage --out table
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Устранение неполадок резервного копирования файловых ресурсов Azure](troubleshoot-azure-files.md).
