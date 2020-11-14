@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/28/2020
+ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 47af4015fa5c6d9a73ee597146890a29b4b9ef9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da79a74121318993f807ec3bde101b652a8b49da
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88119901"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94628141"
 ---
 # <a name="acquire-and-cache-tokens-using-the-microsoft-authentication-library-msal"></a>Получение и кэширование маркеров с помощью библиотеки проверки подлинности Майкрософт (MSAL)
 
@@ -101,7 +101,7 @@ MSAL поддерживает кэш маркеров (или два кэша д
 
 Для конфиденциальных клиентских приложений (веб-приложение, веб-API или управляющее приложение, например служба Windows) вы:
 
-- Получаете токены **для самого приложения**, а не для пользователя, с использованием [потока учетных данных клиента](msal-authentication-flows.md#client-credentials). Этот метод можно использовать для синхронизации средств или средств, которые обрабатывают пользователей как общие, а не для конкретного пользователя.
+- Получаете токены **для самого приложения** , а не для пользователя, с использованием [потока учетных данных клиента](msal-authentication-flows.md#client-credentials). Этот метод можно использовать для синхронизации средств или средств, которые обрабатывают пользователей как общие, а не для конкретного пользователя.
 - Используйте [поток "от имени](msal-authentication-flows.md#on-behalf-of) " для веб-API, чтобы вызвать API от имени пользователя. Приложение идентифицируется с учетными данными клиента, чтобы получить маркер на основе пользовательского утверждения (например, SAML или маркера JWT). Этот поток используется приложениями, которым требуется доступ к ресурсам определенного пользователя в вызовах между службами.
 - Получаете токены с помощью [потока кода авторизации](msal-authentication-flows.md#authorization-code) в веб-приложениях после входа пользователя через URL-адрес запроса авторизации. Этот механизм обычно используется в приложении OpenID Connect, что позволяет пользователю входить в систему с помощью OpenID Connect, а затем получать доступ к веб-API от имени пользователя.
 
@@ -116,7 +116,11 @@ MSAL поддерживает кэш маркеров (или два кэша д
 - Области, для которых выдан токен.
 - Уникальный идентификатор пользователя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="advanced-accessing-the-users-cached-tokens-in-background-apps-and-services"></a>Продвинут Доступ к кэшированным маркерам пользователя в фоновых приложениях и службах
+
+[!INCLUDE [advanced-token-caching](../../../includes/advanced-token-cache.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы используете MSAL для Java, ознакомьтесь с [сериализацией кэша пользовательских маркеров в MSAL для Java](msal-java-token-cache-serialization.md).
 

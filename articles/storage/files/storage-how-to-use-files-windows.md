@@ -8,12 +8,12 @@ ms.date: 06/22/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c8a1d1c0f8de742bdafa130cce6927a472efd8f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e64b7efdd430287a7a3a969c5bf62b0c0e2aec9c
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329352"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94626900"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -32,7 +32,7 @@ ms.locfileid: "91329352"
 | Windows Server 2012 R2 | SMB 3.0 | Да | Да |
 | Windows Server 2012 | SMB 3.0 | Да | Да |
 | Windows 7<sup>3</sup>. | SMB 2.1 | Да | нет |
-| Windows Server 2008 R2<sup>3</sup> | SMB 2.1 | Да | Нет |
+| Windows Server 2008 R2<sup>3</sup> | SMB 2.1 | Да | нет |
 
 <sup>1</sup> Windows 10, версии 1507, 1607, 1803, 1809, 1903, 1909 и 2004.  
 <sup>2</sup> Windows Server, версии 1809, 1903, 1909, 2004.  
@@ -46,7 +46,7 @@ ms.locfileid: "91329352"
 Открытый порт 445. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли брандмауэр порт 445 с помощью `Test-NetConnection` командлета. Дополнительные сведения о способах обхода заблокированного порта 445 см. в разделе [Причина 1. порт 445 заблокирована](storage-troubleshoot-windows-file-connection-problems.md#cause-1-port-445-is-blocked) в нашем руководство по устранению неполадок Windows.
 
 ## <a name="using-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
-Чтобы использовать общую папку Azure в Windows, вы должны либо подключить ее, то есть присвоить ей букву диска или путь точки подключения, либо получить доступ к ней через [UNC-путь](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx). 
+Чтобы использовать общую папку Azure в Windows, вы должны либо подключить ее, то есть присвоить ей букву диска или путь точки подключения, либо получить доступ к ней через [UNC-путь](/windows/win32/fileio/naming-a-file). 
 
 В этой статье предполагается, что для доступа к общей папке используется ключ учетной записи хранения. Это ключ администратора для учетной записи хранения, включая разрешения администратора для всех файлов и папок в общей папке, к которой вы получаете доступ, и для всех общих папок и других ресурсов хранения (большие двоичные объекты, очереди, таблицы и т. д.), которые размещаются в этой учетной записи. Если этого недостаточно для вашей рабочей нагрузки, можно использовать [Синхронизацию файлов Azure](storage-sync-files-planning.md) или [проверку подлинности на основе удостоверений через SMB](storage-files-active-directory-overview.md).
 
@@ -67,12 +67,12 @@ ms.locfileid: "91329352"
 
 1. Выберите **Подключиться**.
 
-    :::image type="content" source="media/storage-how-to-use-files-windows/file-share-connect-icon.png" alt-text="Например":::
+    :::image type="content" source="media/storage-how-to-use-files-windows/file-share-connect-icon.png" alt-text="Снимок экрана с значком подключения для файлового ресурса.":::
 
 1. Выберите букву диска для подключения общей папки.
 1. Скопируйте предоставленный скрипт.
 
-    :::image type="content" source="media/storage-how-to-use-files-windows/files-portal-mounting-cmdlet-resize.png" alt-text="Например":::
+    :::image type="content" source="media/storage-how-to-use-files-windows/files-portal-mounting-cmdlet-resize.png" alt-text="Пример текста":::
 
 1. Вставьте сценарий в оболочку на узле, на котором вы хотите подключить общую папку, и запустите ее.
 
@@ -110,7 +110,7 @@ ms.locfileid: "91329352"
 
 ![Контекстное меню для выбранного каталога](./media/storage-how-to-use-files-windows/snapshot-windows-previous-versions.png)
 
-Выберите пункт **Предыдущие версии**, чтобы просмотреть список моментальных снимков общих ресурсов для этого каталога. Вывод списка может занять несколько секунд в зависимости от скорости сети и количества моментальных снимков в каталоге.
+Выберите пункт **Предыдущие версии** , чтобы просмотреть список моментальных снимков общих ресурсов для этого каталога. Вывод списка может занять несколько секунд в зависимости от скорости сети и количества моментальных снимков в каталоге.
 
 ![Вкладка "Предыдущие версии"](./media/storage-how-to-use-files-windows/snapshot-windows-list.png)
 
@@ -119,7 +119,7 @@ ms.locfileid: "91329352"
 ![Открытый моментальный снимок](./media/storage-how-to-use-files-windows/snapshot-browse-windows.png)
 
 #### <a name="restore-from-a-previous-version"></a>Восстановление из предыдущей версии
-Нажмите кнопку **Восстановить**, чтобы рекурсивно скопировать содержимое всего каталога на момент создания моментального снимка общего ресурса в исходном расположении.
+Нажмите кнопку **Восстановить** , чтобы рекурсивно скопировать содержимое всего каталога на момент создания моментального снимка общего ресурса в исходном расположении.
 
  ![Кнопка "Восстановить" в предупреждающем сообщении](./media/storage-how-to-use-files-windows/snapshot-windows-restore.png) 
 
@@ -196,11 +196,11 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 ### <a name="smb-resources"></a>Ресурсы по SMB
 - [Запись блога о прекращении использования SMB 1](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/)
 - [Центр координации продуктов с SMB 1](https://blogs.technet.microsoft.com/filecab/2017/06/01/smb1-product-clearinghouse/)
-- [Запись блога об обнаружении SMB 1 в своей среде с помощью DSCEA](https://blogs.technet.microsoft.com/ralphkyttle/2017/04/07/discover-smb1-in-your-environment-with-dscea/)
-- [Запись блога об отключении SMB 1 в групповой политике](https://blogs.technet.microsoft.com/secguide/2017/06/15/disabling-smbv1-through-group-policy/)
+- [Запись блога об обнаружении SMB 1 в своей среде с помощью DSCEA](/archive/blogs/ralphkyttle/discover-smb1-in-your-environment-with-dscea)
+- [Запись блога об отключении SMB 1 в групповой политике](/archive/blogs/secguide/disabling-smbv1-through-group-policy)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 - [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-- [Часто задаваемые вопросы](../storage-files-faq.md)
-- [Troubleshoot Azure File storage problems in Windows](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Windows)      
+- [Часто задаваемые вопросы](./storage-files-faq.md)
+- [Troubleshoot Azure File storage problems in Windows](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Windows)

@@ -9,10 +9,10 @@ ms.date: 10/22/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 48f33514510618abadf329a11a9ab71a020be0bd
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
+ms.lasthandoff: 11/14/2020
 ms.locfileid: "92479588"
 ---
 1. Откройте страницу шлюза виртуальной сети. Вы можете перейти к шлюзу, последовательно выбрав элементы **имя виртуальной сети -> Обзор -> Подключенные устройства -> имя шлюза**. Кроме того, есть множество других способов навигации.

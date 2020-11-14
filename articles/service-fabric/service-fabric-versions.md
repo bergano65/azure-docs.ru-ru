@@ -3,12 +3,12 @@ title: Поддерживаемые версии кластера в Azure Servi
 description: Узнайте о версиях кластера в Azure Service Fabric, включая ссылку на последние выпуски из блога группы Service Fabric.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: 4569b31f990687fb9658d2bf251045e27ecf91a2
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: d6469ada7fcb46c732cc7fbe081059ef41d89a40
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480962"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94626781"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
 
@@ -50,7 +50,10 @@ ms.locfileid: "92480962"
 | 7.1.456. * | 7.0.466. * |Меньше или равно версии 4,1 |31 марта 2021 г. |
 | 7.1.458. * | 7.0.466. * |Меньше или равно версии 4,1 |31 марта 2021 г. |
 | 7.1.459. * | 7.0.466. * |Меньше или равно версии 4,1 |31 марта 2021 г. |
+| 7.1.503. * | 7.0.466. * |Меньше или равно версии 4,1 |31 марта 2021 г. |
 | 7.2.413. * | 7.0.470. * |Меньше или равно версии 4,2 |Текущая версия, без даты окончания |
+| 7.2.432. * | 7.0.470. * |Меньше или равно версии 4,2 |Текущая версия, без даты окончания |
+| 7.2.433. * | 7.0.470. * |Меньше или равно версии 4,2 |Текущая версия, без даты окончания |
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
@@ -60,11 +63,11 @@ ms.locfileid: "92480962"
 | --- | --- |
 | Windows Server 2012 R2 | Все версии |
 | Windows Server 2016 | Все версии |
-| Windows Server 1709 | 6,0 |
+| Windows Server 1709 | 6.0 |
 | Windows Server 1803 | 6.4 |
 | Windows Server 1809 | 6.4.654.9590 |
 | Windows Server 2019 | 6.4.654.9590 |
-| Linux Ubuntu 16.04 | 6,0 |
+| Linux Ubuntu 16.04 | 6.0 |
 | Linux Ubuntu 18,04 | 7.1 |
 
 ## <a name="supported-version-names"></a>Поддерживаемые имена версий
@@ -126,5 +129,8 @@ ms.locfileid: "92480962"
 | 7,1 CU3 | 7.1.456.9590 | 7.1.452.1 |
 | 7,1 CU5 | 7.1.458.9590 | 7.1.454.1 |
 | 7,1 CU6 | 7.1.459.9590 | 7.1.455.1 |
+| 7,1 CU8 | 7.1.503.9590 | Н/Д |
 | 7,2 RTO | 7.2.413.9590 | Н/Д |
+| 7,2 CU2 | 7.2.432.9590 | 7.2.431.1 |
+| 7,2 CU3 | 7.2.433.9590 | Н/Д |
 

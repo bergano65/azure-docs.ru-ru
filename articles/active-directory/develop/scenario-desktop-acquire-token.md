@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/18/2020
+ms.date: 11/04/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 8608da33c747f76452a0106e4e2737849e06a75c
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: cdda14bb579fc94414f9da89b8b1f1aa04ec3bf5
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443234"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94628107"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -183,7 +183,7 @@ catch(MsalUiRequiredException)
 
 #### <a name="withparentactivityorwindow"></a>WithParentActivityOrWindow
 
-Пользовательский интерфейс важен, так как он является интерактивным. `AcquireTokenInteractive` имеет один конкретный необязательный параметр, который может указывать родительский пользовательский интерфейс для поддерживающих платформ. При использовании в классическом приложении `.WithParentActivityOrWindow` имеет другой тип, который зависит от платформы. Кроме того, можно опустить необязательный параметр родительского окна, чтобы создать окно, если вы не хотите управлять тем, где на экране появится диалоговое окно входа. Это применимо к приложениям, которые являются командной строкой и используются для передачи вызовов в любую другую серверную службу и не требуют каких бы то ни было окон для взаимодействия с пользователем. 
+Пользовательский интерфейс важен, так как он является интерактивным. `AcquireTokenInteractive` имеет один конкретный необязательный параметр, который может указывать родительский пользовательский интерфейс для поддерживающих платформ. При использовании в классическом приложении `.WithParentActivityOrWindow` имеет другой тип, который зависит от платформы. Кроме того, можно опустить необязательный параметр родительского окна, чтобы создать окно, если вы не хотите управлять тем, где на экране появится диалоговое окно входа. Это применимо к приложениям, которые являются командной строкой и используются для передачи вызовов в любую другую серверную службу и не требуют каких бы то ни было окон для взаимодействия с пользователем.
 
 ```csharp
 // net45
@@ -278,7 +278,7 @@ MSAL предоставляет реализации пользовательс�
 
 ##### <a name="provide-a-great-experience-with-systemwebviewoptions"></a>Удобная работа с SystemWebViewOptions
 
-В MSAL.NET 4.1 [`SystemWebViewOptions`](/dotnet/api/microsoft.identity.client.systemwebviewoptions?view=azure-dotnet) можно указать:
+В MSAL.NET 4.1 [`SystemWebViewOptions`](/dotnet/api/microsoft.identity.client.systemwebviewoptions) можно указать:
 
 - URI для перехода (`BrowserRedirectError`) или отображаемый фрагмент HTML (`HtmlMessageError`) в случае ошибок входа или согласия в системном веб-браузере.
 - URI для перехода (`BrowserRedirectSuccess`) или отображаемый фрагмент HTML (`HtmlMessageSuccess`) в случае успешного входа или согласия.
@@ -304,7 +304,7 @@ var result = app.AcquireTokenInteractive(scopes)
 
 #### <a name="other-optional-parameters"></a>Другие необязательные параметры
 
-Дополнительные сведения о других необязательных параметрах для `AcquireTokenInteractive` см. в разделе [AcquireTokenInteractiveParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder?view=azure-dotnet-preview#methods).
+Дополнительные сведения о других необязательных параметрах для `AcquireTokenInteractive` см. в разделе [AcquireTokenInteractiveParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder#methods).
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -532,7 +532,7 @@ static async Task GetATokenForGraph()
 }
 ```
 
-Список возможных модификаторов AcquireTokenByIntegratedWindowsAuthentication см. в разделе [AcquireTokenByIntegratedWindowsAuthParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokenbyintegratedwindowsauthparameterbuilder?view=azure-dotnet-preview#methods).
+Список возможных модификаторов AcquireTokenByIntegratedWindowsAuthentication см. в разделе [AcquireTokenByIntegratedWindowsAuthParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokenbyintegratedwindowsauthparameterbuilder#methods).
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -832,7 +832,7 @@ static async Task GetATokenForGraph()
 }
 ```
 
-Дополнительные сведения обо всех модификаторах, которые можно применить к `AcquireTokenByUsernamePassword`, см. в разделе [AcquireTokenByUsernamePasswordParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokenbyusernamepasswordparameterbuilder?view=azure-dotnet-preview#methods).
+Дополнительные сведения обо всех модификаторах, которые можно применить к `AcquireTokenByUsernamePassword`, см. в разделе [AcquireTokenByUsernamePasswordParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokenbyusernamepasswordparameterbuilder#methods).
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -1387,6 +1387,10 @@ namespace CommonCacheMsalV3
  }
 }
 ```
+
+## <a name="advanced-accessing-the-users-cached-tokens-in-background-apps-and-services"></a>Продвинут Доступ к кэшированным маркерам пользователя в фоновых приложениях и службах
+
+[!INCLUDE [advanced-token-caching](../../../includes/advanced-token-cache.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

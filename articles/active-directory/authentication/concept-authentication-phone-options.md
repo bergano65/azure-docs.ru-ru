@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/12/2020
+ms.date: 11/13/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74be3f4218149f0cdb9f107c8aba0be76d8da27e
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 65c8baa101df5e24780e5e68b5a21b86985608a6
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593082"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94628124"
 ---
 # <a name="authentication-methods-in-azure-active-directory---phone-options"></a>Методы проверки подлинности в Azure Active Directory параметры телефона
 
@@ -56,6 +56,8 @@ ms.locfileid: "94593082"
 
 Если у вас возникли проблемы с аутентификацией по телефону в Azure AD, ознакомьтесь со следующими действиями по устранению неполадок.
 
+* "Вы достигли предельного числа вызовов проверки" или "вы достигли сообщения об ошибке с кодами проверки текста" во время входа
+   * Используйте приложение предназначенная Authenticator или код проверки для завершения проверки подлинности или повторите попытку позже.
 * Заблокированный идентификатор вызывающего абонента на отдельном устройстве.
    * Проверьте все заблокированные номера, настроенные на устройстве.
 * Неправильный номер телефона или неправильный код страны или региона либо путаница с номерами телефонов (личным и рабочим).

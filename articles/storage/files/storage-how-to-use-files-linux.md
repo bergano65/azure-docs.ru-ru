@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 957e827e621d07ed9b5533a1607f955f05985d9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c271107b85e4903153c29b58aadadd37fb051b76
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90004788"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94626747"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -47,13 +47,13 @@ uname -r
     sudo apt install cifs-utils
     ```
 
-    В **Fedora**, **Red Hat Enterprise Linux 8 +** и **CentOS 8 +**, используйте `dnf` Диспетчер пакетов:
+    В **Fedora** , **Red Hat Enterprise Linux 8 +** и **CentOS 8 +** , используйте `dnf` Диспетчер пакетов:
 
     ```bash
     sudo dnf install cifs-utils
     ```
 
-    В более старых версиях **Red Hat Enterprise Linux** и **CentOS**используйте `yum` Диспетчер пакетов:
+    В более старых версиях **Red Hat Enterprise Linux** и **CentOS** используйте `yum` Диспетчер пакетов:
 
     ```bash
     sudo yum install cifs-utils 
@@ -67,7 +67,7 @@ uname -r
 
     В других дистрибутивах используйте соответствующий диспетчер пакетов или выполните [компиляцию из источника](https://wiki.samba.org/index.php/LinuxCIFS_utils#Download).
 
-* **Самая последняя версия интерфейса командной строки Azure (CLI).** Дополнительные сведения об установке Azure CLI см. в статьях [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и выбор операционной системы. Если вы предпочитаете использовать модуль Azure PowerShell в PowerShell 6 +, вы можете, однако, приведенные ниже инструкции представлены для Azure CLI.
+* **Самая последняя версия интерфейса командной строки Azure (CLI).** Дополнительные сведения об установке Azure CLI см. в статьях [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и выбор операционной системы. Если вы предпочитаете использовать модуль Azure PowerShell в PowerShell 6 +, вы можете, однако, приведенные ниже инструкции представлены для Azure CLI.
 
 * **Откройте порт 445**. Взаимодействие SMB выполняется через TCP-порт 445. Проверьте, чтобы брандмауэр не блокировал TCP-порты 445 с клиентского компьютера.  Замените `<your-resource-group>` , а `<your-storage-account>` затем выполните следующий скрипт:
     ```bash
@@ -99,7 +99,7 @@ uname -r
 При необходимости можно подключить одну общую папку Azure к нескольким точкам подключения.
 
 ### <a name="mount-the-azure-file-share-on-demand-with-mount"></a>Подключение файлового ресурса Azure по запросу с помощью `mount`
-1. **Создайте папку для точки подключения**: Replace `<your-resource-group>` , `<your-storage-account>` и `<your-file-share>` с соответствующей информацией о вашей среде:
+1. **Создайте папку для точки подключения** : Replace `<your-resource-group>` , `<your-storage-account>` и `<your-file-share>` с соответствующей информацией о вашей среде:
 
     ```bash
     resourceGroupName="<your-resource-group>"
@@ -174,7 +174,7 @@ uname -r
     sudo chmod 600 $smbCredentialFile
     ```
 
-1. **Используйте следующую команду, чтобы `/etc/fstab` Добавить следующую строку в **: в примере ниже локальные разрешения для файлов и папок Linux по умолчанию 0755, что означает чтение, запись и выполнение для владельца (на основе владельца файлов и каталогов Linux), чтение и выполнение для пользователей в группе владелец, а также чтение и выполнение для других компонентов в системе. Можно использовать `uid` `gid` Параметры подключения и, чтобы задать идентификатор пользователя и группу для подключения. Кроме того, можно использовать `dir_mode` и `file_mode` для задания пользовательских разрешений. Дополнительные сведения о настройке разрешений см. в разделе [Цифровая нотация UNIX](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) в Википедии.
+1. **Используйте следующую команду, чтобы `/etc/fstab` Добавить следующую строку в** : в примере ниже локальные разрешения для файлов и папок Linux по умолчанию 0755, что означает чтение, запись и выполнение для владельца (на основе владельца файлов и каталогов Linux), чтение и выполнение для пользователей в группе владелец, а также чтение и выполнение для других компонентов в системе. Можно использовать `uid` `gid` Параметры подключения и, чтобы задать идентификатор пользователя и группу для подключения. Кроме того, можно использовать `dir_mode` и `file_mode` для задания пользовательских разрешений. Дополнительные сведения о настройке разрешений см. в разделе [Цифровая нотация UNIX](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) в Википедии.
 
     ```bash
     # This command assumes you have logged in with az login
@@ -207,11 +207,11 @@ uname -r
     sudo apt update
     sudo apt install autofs
     ```
-    В **Fedora**, **Red Hat Enterprise Linux 8 +** и **CentOS 8 +**, используйте `dnf` Диспетчер пакетов:
+    В **Fedora** , **Red Hat Enterprise Linux 8 +** и **CentOS 8 +** , используйте `dnf` Диспетчер пакетов:
     ```bash
     sudo dnf install autofs
     ```
-    В более старых версиях **Red Hat Enterprise Linux** и **CentOS**используйте `yum` Диспетчер пакетов:
+    В более старых версиях **Red Hat Enterprise Linux** и **CentOS** используйте `yum` Диспетчер пакетов:
     ```bash
     sudo yum install autofs 
     ```
@@ -219,7 +219,7 @@ uname -r
     ```bash
     sudo zypper install autofs
     ```
-2. **Создайте точку подключения для общих папок**:
+2. **Создайте точку подключения для общих папок** :
    ```bash
     sudo mkdir /fileshares
     ```
@@ -250,22 +250,22 @@ uname -r
 
 | Distribution | Можно отключить SMB 1 |
 |--------------|-------------------|
-| Ubuntu 14.04 — 16.04 | Нет |
+| Ubuntu 14.04 — 16.04 | нет |
 | Ubuntu 18.04 | Да |
 | Ubuntu 19.04 + | Да |
-| Debian 8-9 | Нет |
+| Debian 8-9 | нет |
 | Debian 10 + | Да |
 | Fedora 29 + | Да |
-| CentOS 7 | Нет | 
+| CentOS 7 | нет | 
 | CentOS 8 + | Да |
-| Red Hat Enterprise Linux 6. x-7. x | Нет |
+| Red Hat Enterprise Linux 6. x-7. x | нет |
 | Red Hat Enterprise Linux 8 + | Да |
-| openSUSE LEAP 15,0 | Нет |
+| openSUSE LEAP 15,0 | нет |
 | openSUSE LEAP 15.1 + | Да |
 | openSUSE Тумблевид | Да |
-| SUSE Linux Enterprise 11. x-12. x | Нет |
-| SUSE Linux Enterprise 15 | Нет |
-| SUSE Linux Enterprise 15,1 | Нет |
+| SUSE Linux Enterprise 11. x-12. x | нет |
+| SUSE Linux Enterprise 15 | нет |
+| SUSE Linux Enterprise 15,1 | нет |
 
 Проверить, поддерживает ли дистрибутив Linux параметр Module, можно с `disable_legacy_dialects` помощью следующей команды.
 
@@ -326,5 +326,5 @@ cat /sys/module/cifs/parameters/disable_legacy_dialects
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-* [Часто задаваемые вопросы](../storage-files-faq.md)
+* [Часто задаваемые вопросы](./storage-files-faq.md)
 * [Устранение неполадок](storage-troubleshoot-linux-file-connection-problems.md)

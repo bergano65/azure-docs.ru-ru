@@ -4,15 +4,15 @@ description: Из этой статьи вы узнаете, как развер
 services: firewall
 author: vhorne
 ms.service: firewall
-ms.date: 08/28/2020
+ms.date: 11/12/2020
 ms.author: victorh
 ms.topic: how-to
-ms.openlocfilehash: c720d7c261421ade9dfce01f0b116123dcab1e55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62640aa02c76c13b2c49b2e33aea742f6b8a09e4
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89071709"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94628355"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-powershell"></a>Развертывание и настройка брандмауэра Azure с помощью Azure PowerShell
 
@@ -29,9 +29,9 @@ ms.locfileid: "89071709"
 
 * **AzureFirewallSubnet** — в этой подсети находится брандмауэр.
 * **Workload-SN** — в этой подсети находится сервер рабочей нагрузки. Трафик этой подсети проходит через брандмауэр.
-* **Jump-SN** — в этой подсети находится сервер перехода. Сервер перехода имеет общедоступный IP-адрес, к которому можно подключиться с помощью удаленного рабочего стола. Затем вы можете подключиться к серверу рабочей нагрузки (используя другой удаленный рабочий стол).
+* **Азуребастионсубнет** — подсеть, используемая для Azure бастиона, которая используется для подключения к серверу рабочей нагрузки. Дополнительные сведения об Azure бастиона см. в статье [что такое Azure бастиона?](../bastion/bastion-overview.md)
 
-![Инфраструктура сети, используемая в руководстве](media/tutorial-firewall-rules-portal/Tutorial_network.png)
+![Инфраструктура сети, используемая в руководстве](media/deploy-ps/tutorial-network.png)
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -63,56 +63,55 @@ ms.locfileid: "89071709"
 New-AzResourceGroup -Name Test-FW-RG -Location "East US"
 ```
 
-### <a name="create-a-vnet"></a>Создание виртуальной сети
+### <a name="create-a-virtual-network-and-azure-bastion-host"></a>Создание виртуальной сети и узла Бастиона Azure
 
-Эта виртуальная сеть имеет три подсети:
+Эта виртуальная сеть имеет четыре подсети:
 
 > [!NOTE]
 > Размер подсети AzureFirewallSubnet равен /26. Дополнительные сведения о размере подсети см. в статье с [часто задаваемыми вопросами о Брандмауэре Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
 
 ```azurepowershell
+$Bastionsub = New-AzVirtualNetworkSubnetConfig -Name AzureBastionSubnet -AddressPrefix 10.0.0.0/27
 $FWsub = New-AzVirtualNetworkSubnetConfig -Name AzureFirewallSubnet -AddressPrefix 10.0.1.0/26
 $Worksub = New-AzVirtualNetworkSubnetConfig -Name Workload-SN -AddressPrefix 10.0.2.0/24
-$Jumpsub = New-AzVirtualNetworkSubnetConfig -Name Jump-SN -AddressPrefix 10.0.3.0/24
 ```
 Теперь создайте виртуальную сеть.
 
 ```azurepowershell
 $testVnet = New-AzVirtualNetwork -Name Test-FW-VN -ResourceGroupName Test-FW-RG `
--Location "East US" -AddressPrefix 10.0.0.0/16 -Subnet $FWsub, $Worksub, $Jumpsub
+-Location "East US" -AddressPrefix 10.0.0.0/16 -Subnet $Bastionsub, $FWsub, $Worksub
 ```
-
-### <a name="create-virtual-machines"></a>Создание виртуальных машин
-
-Теперь создайте виртуальные машины для перехода и рабочей нагрузки и поместите их в соответствующие подсети.
-При появлении запроса введите имя пользователя и пароль для виртуальной машины.
-
-Создайте Srv-Jump виртуальную машину.
+### <a name="create-public-ip-address-for-azure-bastion-host"></a>Создание общедоступного IP-адреса для узла Бастиона Azure
 
 ```azurepowershell
-New-AzVm `
-    -ResourceGroupName Test-FW-RG `
-    -Name "Srv-Jump" `
-    -Location "East US" `
-    -VirtualNetworkName Test-FW-VN `
-    -SubnetName Jump-SN `
-    -OpenPorts 3389 `
-    -Size "Standard_DS2"
+$publicip = New-AzPublicIpAddress -ResourceGroupName Test-FW-RG -Location "East US" `
+   -Name Bastion-pip -AllocationMethod static -Sku standard
 ```
 
-Создайте виртуальную машину рабочей нагрузки без общедоступного IP-адреса.
+### <a name="create-azure-bastion-host"></a>Создание узла-бастиона Azure
+
+```azurepowershell
+New-AzBastion -ResourceGroupName Test-FW-RG -Name Bastion-01 -PublicIpAddress $publicip -VirtualNetwork $testVnet
+```
+### <a name="create-a-virtual-machine"></a>Создание виртуальной машины
+
+Теперь создайте виртуальную машину рабочей нагрузки и поместите ее в соответствующую подсеть.
+При появлении запроса введите имя пользователя и пароль для виртуальной машины.
+
+
+Создайте виртуальную машину рабочей нагрузки.
 При появлении запроса введите имя пользователя и пароль для виртуальной машины.
 
 ```azurepowershell
 #Create the NIC
-$NIC = New-AzNetworkInterface -Name Srv-work -ResourceGroupName Test-FW-RG `
- -Location "East US" -Subnetid $testVnet.Subnets[1].Id 
+$wsn = Get-AzVirtualNetworkSubnetConfig -Name  Workload-SN -VirtualNetwork $testvnet
+$NIC01 = New-AzNetworkInterface -Name Srv-Work -ResourceGroupName Test-FW-RG -Location "East us" -Subnet $wsn
 
 #Define the virtual machine
 $VirtualMachine = New-AzVMConfig -VMName Srv-Work -VMSize "Standard_DS2"
 $VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName Srv-Work -ProvisionVMAgent -EnableAutoUpdate
-$VirtualMachine = Add-AzVMNetworkInterface -VM $VirtualMachine -Id $NIC.Id
-$VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2016-Datacenter' -Version latest
+$VirtualMachine = Add-AzVMNetworkInterface -VM $VirtualMachine -Id $NIC01.Id
+$VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2019-Datacenter' -Version latest
 
 #Create the virtual machine
 New-AzVM -ResourceGroupName Test-FW-RG -Location "East US" -VM $VirtualMachine -Verbose
@@ -127,7 +126,7 @@ New-AzVM -ResourceGroupName Test-FW-RG -Location "East US" -VM $VirtualMachine -
 $FWpip = New-AzPublicIpAddress -Name "fw-pip" -ResourceGroupName Test-FW-RG `
   -Location "East US" -AllocationMethod Static -Sku Standard
 # Create the firewall
-$Azfw = New-AzFirewall -Name Test-FW01 -ResourceGroupName Test-FW-RG -Location "East US" -VirtualNetworkName Test-FW-VN -PublicIpName fw-pip
+$Azfw = New-AzFirewall -Name Test-FW01 -ResourceGroupName Test-FW-RG -Location "East US" -VirtualNetwork $testVnet -PublicIpAddress $FWpip
 
 #Save the firewall private IP address for future use
 
@@ -205,24 +204,20 @@ Set-AzFirewall -AzureFirewall $Azfw
 Для целей тестирования в этой процедуре Настройте основной и дополнительный DNS-адреса сервера. Это не является общим требованием службы "Брандмауэр Azure".
 
 ```azurepowershell
-$NIC.DnsSettings.DnsServers.Add("209.244.0.3")
-$NIC.DnsSettings.DnsServers.Add("209.244.0.4")
-$NIC | Set-AzNetworkInterface
+$NIC01.DnsSettings.DnsServers.Add("209.244.0.3")
+$NIC01.DnsSettings.DnsServers.Add("209.244.0.4")
+$NIC01 | Set-AzNetworkInterface
 ```
 
 ## <a name="test-the-firewall"></a>тестирование брандмауэра.
 
 Теперь проверьте брандмауэр, чтобы убедиться, что он работает должным образом.
 
-1. Запишите частный IP-адрес для виртуальной машины **SRV-работы** :
+1. Подключитесь к виртуальной машине с **SRV-рабочими** с помощью бастиона и выполните вход. 
 
-   ```
-   $NIC.IpConfigurations.PrivateIpAddress
-   ```
+   :::image type="content" source="media/deploy-ps/bastion.png" alt-text="Подключение с помощью бастиона.":::
 
-1. Подключите удаленный рабочий стол к виртуальной машине **Srv-Jump** и выполните вход. После этого откройте подключение к удаленному рабочему столу к частному IP-адресу **SRV** и выполните вход.
-
-3. На **SRV-работе**откройте окно PowerShell и выполните следующие команды:
+3. На **SRV-работе** откройте окно PowerShell и выполните следующие команды:
 
    ```
    nslookup www.google.com
