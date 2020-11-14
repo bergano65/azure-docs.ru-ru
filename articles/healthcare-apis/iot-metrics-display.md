@@ -1,21 +1,21 @@
 ---
-title: Отображение и Настройка соединителя Azure IoT для метрик FHIR (Предварительная версия)
+title: Отображение и настройка метрик соединителя Интернета вещей Azure для метрик FHIR (предварительная версия)
 description: В этой статье объясняется, как отобразить и настроить соединитель Azure IoT для метрик FHIR (Предварительная версия).
 services: healthcare-apis
 author: msjasteppe
 ms.service: healthcare-apis
 ms.subservice: iomt
 ms.topic: how-to
-ms.date: 10/29/2020
+ms.date: 11/13/2020
 ms.author: jasteppe
-ms.openlocfilehash: 9a4e2c4dfe8a9de28688afe0dd036cecb7ce2b39
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 79a7b18986f4bed503cd5493a7d74325a13fe535
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94381224"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94630521"
 ---
-# <a name="display-and-configure-azure-iot-connector-for-fhir-preview-metrics"></a>Отображение и Настройка соединителя Azure IoT для метрик FHIR (Предварительная версия) 
+# <a name="display-and-configure-azure-iot-connector-for-fhir-preview-metrics"></a>Отображение и настройка метрик соединителя Интернета вещей Azure для метрик FHIR (предварительная версия) 
 
 В этой статье вы узнаете, как отобразить и настроить соединитель Azure IoT для быстрого получения ресурсов о взаимодействии в сфере здравоохранения (FHIR&#174;) *.
 
@@ -41,6 +41,9 @@ ms.locfileid: "94381224"
    :::image type="content" source="media/iot-metrics-display/iot-metrics-select-time.png" alt-text="Снимок экрана: панель &quot;соединитель IoT&quot;, отображающая график периода времени &quot;1 час&quot; для &quot;соединителя 1&quot;." lightbox="media/iot-metrics-display/iot-metrics-select-time.png"::: 
  
 ## <a name="metric-types-for-azure-iot-connector-for-fhir-preview"></a>Типы метрик для соединителя Azure IoT для FHIR (Предварительная версия) 
+
+> [!TIP]
+> Дополнительные сведения о потоке данных в соединителе Azure IoT для FHIR см. в статье о службе "соединитель Azure IOT [" для потока данных FHIR (Предварительная версия)](./iot-data-flow.md) и в разделе ["соединитель Azure IOT для устранения неполадок](./iot-troubleshoot-guide.md) ", чтобы узнать больше о сообщениях об ошибках и исправлениях.
 
 Метрики соединителя IoT, которые можно отобразить, перечислены в следующей таблице.
 

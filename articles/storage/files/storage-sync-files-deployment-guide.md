@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/05/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 128a974c41b1c09196ecab2070136d9568b08f5d
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: d39f26d86792214c1ef0300bc39404bf6581826f
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331793"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629484"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -48,7 +48,7 @@ ms.locfileid: "94331793"
     > [!Important]  
     > Если вы планируете использовать пользовательский интерфейс регистрации сервера вместо регистрации непосредственно из PowerShell, необходимо использовать PowerShell 5,1.
 
-1. Если вы выбрали использование PowerShell 5,1, убедитесь, что установлена хотя бы платформа .NET 4.7.2. Дополнительные сведения о [.NET Framework версиях и зависимостях](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) в системе.
+1. Если вы выбрали использование PowerShell 5,1, убедитесь, что установлена хотя бы платформа .NET 4.7.2. Дополнительные сведения о [.NET Framework версиях и зависимостях](/dotnet/framework/migration-guide/versions-and-dependencies) в системе.
 
     > [!Important]  
     > При установке .NET 4.7.2 + в Windows Server Core необходимо установить с `quiet` `norestart` флагами и, иначе установка завершится ошибкой. Например, при установке .NET 4,8 команда будет выглядеть следующим образом:
@@ -56,7 +56,7 @@ ms.locfileid: "94331793"
     > Start-Process -FilePath "ndp48-x86-x64-allos-enu.exe" -ArgumentList "/q /norestart" -Wait
     > ```
 
-1. Модуль AZ PowerShell, который можно установить, следуя приведенным ниже инструкциям: [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+1. Модуль AZ PowerShell, который можно установить, следуя приведенным ниже инструкциям: [Установка и настройка Azure PowerShell](/powershell/azure/install-Az-ps).
      
     > [!Note]  
     > Теперь модуль AZ. StorageSync устанавливается автоматически при установке модуля AZ PowerShell.
@@ -70,13 +70,13 @@ ms.locfileid: "94331793"
 
 1. [Установка Azure CLI](/cli/azure/install-azure-cli)
 
-   При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этом руководстве.  Azure Cloud Shell — это среда интерактивной оболочки, которая используется в браузере.  Начните Cloud Shell с помощью одного из следующих методов:
+   При желании для выполнения шагов, описанных в этом учебнике, вы можете использовать Azure Cloud Shell.  Azure Cloud Shell — это интерактивная оболочка среды, с которой можно работать в браузере.  Запустите Cloud Shell с помощью одного из этих методов:
 
    - Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. **Попробуйте** открыть Azure Cloud Shell, но автоматически не скопирует код в Cloud Shell.
 
-   - Откройте Cloud Shell, перейдя по [https://shell.azure.com](https://shell.azure.com)
+   - Откройте Cloud Shell, перейдя по ссылке: [https://shell.azure.com](https://shell.azure.com)
 
-   - Нажмите кнопку **Cloud Shell** в строке меню в верхнем правом углу [портал Azure](https://portal.azure.com)
+   - Нажмите кнопку **Cloud Shell** в строке меню в правом верхнем углу окна [портала Azure](https://portal.azure.com).
 
 1. Войдите.
 
@@ -573,7 +573,7 @@ Get-StorageSyncSelfServiceRestore [[-Driveletter] <string>]
 
 По умолчанию максимальное количество моментальных снимков VSS на том (64), а также расписание, используемое по умолчанию, приводят к максимуму 45 дней предыдущих версий, в зависимости от количества моментальных снимков VSS, которые можно хранить на томе.
 
-Если параметр max. 64 моментальных снимков VSS на том не подходит для вас, это значение можно [изменить с помощью раздела реестра](https://docs.microsoft.com/windows/win32/backup/registry-keys-for-backup-and-restore#maxshadowcopies).
+Если параметр max. 64 моментальных снимков VSS на том не подходит для вас, это значение можно [изменить с помощью раздела реестра](/windows/win32/backup/registry-keys-for-backup-and-restore#maxshadowcopies).
 Чтобы новое ограничение вступило в силу, необходимо повторно запустить командлет, чтобы включить предыдущую совместимость версий для всех ранее включенных томов, с флагом-Force, который принимает новое максимальное число моментальных снимков VSS на том. Это приведет к появлению нового вычисленного числа совместимых дней. Обратите внимание, что это изменение вступит в силу только для новых многоуровневых файлов и перезапишет настройки, которые могли быть сделаны в расписании VSS.
 
 <a id="proactive-recall"></a>
@@ -599,7 +599,7 @@ Get-StorageSyncSelfServiceRestore [[-Driveletter] <string>]
 
 # <a name="powershell"></a>[PowerShell](#tab/proactive-powershell)
 
-Вы можете изменить свойства конечной точки сервера в PowerShell с помощью командлета [Set-азсторажесинксерверендпоинт](https://docs.microsoft.com/powershell/module/az.storagesync/set-azstoragesyncserverendpoint) .
+Вы можете изменить свойства конечной точки сервера в PowerShell с помощью командлета [Set-азсторажесинксерверендпоинт](/powershell/module/az.storagesync/set-azstoragesyncserverendpoint) .
 
 ```powershell
 # Optional parameter. Default: "UpdateLocallyCachedFiles", alternative behavior: "DownloadNewAndModifiedFiles"

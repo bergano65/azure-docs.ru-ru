@@ -7,16 +7,16 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 02/04/2019
+ms.date: 11/13/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: a50554c73958400f1f16348d3b8fb2bac88ac61b
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: e9811710971b411aaaed64ec0072dcf7b6b116d3
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340283"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94630062"
 ---
 # <a name="troubleshooting-synapse-sql-in-azure-synapse-analytics"></a>Устранение неполадок с Synapse SQL в Azure Synapse Analytics
 
@@ -39,6 +39,12 @@ ms.locfileid: "93340283"
 | В обозревателе объектов Visual Studio отсутствуют пользователи Azure AD           | Это известная проблема  Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Дополнительные сведения об использовании Azure Active Directory с выделенным пулом SQL см. в статье [Аутентификация в Azure синапсе](sql-data-warehouse-authentication.md) . |
 | Создание сценариев вручную, использование мастера создания сценариев или подключение с помощью SSMS происходит медленно, не отвечает или с ошибками. | Убедитесь, что пользователи были созданы в базе данных master. В параметрах создания скриптов также убедитесь, что для выпуска Engine задано значение "Microsoft Azure синапсе Analytics Edition", а тип модуля — "База данных SQL Microsoft Azure". |
 | Создание скриптов в SSMS завершается ошибкой                               | Создание скрипта для выделенного пула SQL завершается ошибкой, если параметру "сформировать скрипт для зависимых объектов" задано значение "true". Чтобы устранить проблему, выберите **Сервис -> Параметры -> Обозреватель объектов SQL Server -> Создать скрипт для зависимых параметров и задайте значение False** |
+
+## <a name="data-ingestion-and-preparation"></a>прием и подготовка данных;
+
+| Проблема                                                        | Решение                                                   |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| Экспорт пустых строк с помощью CETAS приведет к значениям NULL в файлах Parquet и ORC. Примечание. при экспорте пустых строк из столбцов с ограничениями NOT NULL CETAS приведет к отклонению записей, и экспорт может завершиться неудачей. | Удалите пустые строки или столбец, вызывающий ошибку, в инструкции SELECT CETAS. |
 
 ## <a name="performance"></a>Производительность
 

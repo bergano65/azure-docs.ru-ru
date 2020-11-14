@@ -1,7 +1,7 @@
 ---
 title: Создание и выполнение конвейеров машинного обучения
 titleSuffix: Azure Machine Learning
-description: Создание и запуск конвейера машинного обучения с помощью пакета SDK Машинного обучения Azure для Python. Используйте конвейеры машинного обучения для создания рабочих процессов и управления ими, которые объединяют фазы машинного обучения (ML). Эти этапы включают подготовку данных, обучение модели, развертывание модели и выведение/оценка.
+description: Создавайте и запускайте конвейеры машинного обучения для создания и управления рабочими процессами, которые объединяют фазы машинного обучения (ML).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ author: NilsPohlmann
 ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: 76369d3bc3ed152bf9e0b13f7bf4b4386a974c33
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 452904e18a0910c2dd4781ca978042e0cdd4996d
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322093"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94630130"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 

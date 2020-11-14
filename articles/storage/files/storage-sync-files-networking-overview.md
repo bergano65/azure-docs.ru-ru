@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/03/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: b291bd45b4003dd2241f40c810ed9d78af9f8bc9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 76d97e3312c1df51193d8a881f3ee07fcd155d75
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91267794"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629365"
 ---
 # <a name="azure-file-sync-networking-considerations"></a>Рекомендации по настройке сети для службы "Синхронизация файлов Azure"
 Подключиться к общей папке Azure можно двумя способами:
@@ -55,7 +55,7 @@ ms.locfileid: "91267794"
 | Azure Resource Manager | Azure Resource Manager представляет собой интерфейс управления для Azure. Все вызовы управления, в том числе регистрация сервера Синхронизации файлов Azure и текущие задачи сервера синхронизации, выполняются через Azure Resource Manager. | `AzureResourceManager` |
 | Azure Active Directory | Azure Active Directory, или Azure AD, содержит субъекты-пользователи, необходимые для авторизации регистрации сервера в службе синхронизации хранилища, а также субъекты-службы, необходимые для авторизации Синхронизации файлов Azure и доступа к вашим облачным ресурсам. | `AzureActiveDirectory` |
 
-Если вы используете Синхронизацию файлов Azure в Azure, даже если это другой регион, для разрешения трафика в эту службу можно использовать имя тега службы непосредственно в вашей группе безопасности сети. Дополнительные сведения о том, как это делается, см. в статье [Группы безопасности сети](../../virtual-network/security-overview.md). 
+Если вы используете Синхронизацию файлов Azure в Azure, даже если это другой регион, для разрешения трафика в эту службу можно использовать имя тега службы непосредственно в вашей группе безопасности сети. Дополнительные сведения о том, как это делается, см. в статье [Группы безопасности сети](../../virtual-network/network-security-groups-overview.md). 
 
 Если вы используете Синхронизацию файлов Azure в локальной среде, можно с помощью API тегов служб получить конкретные диапазоны IP-адресов для включения в список разрешений брандмауэра. Существует два способа получения этой информации.
 
@@ -65,9 +65,9 @@ ms.locfileid: "91267794"
     - [Azure для Китая](https://www.microsoft.com/download/details.aspx?id=57062)
     - [Azure для Германии](https://www.microsoft.com/download/details.aspx?id=57064)
 - API обнаружения тегов служб (предварительная версия) позволяет получать текущий список тегов служб программными средствами. В предварительной версии API обнаружения тегов служб может возвращать менее актуальную информацию по сравнению с документами JSON, публикуемыми в Центре загрузки Майкрософт. Вы можете использовать поверхность API в соответствии с вашими настройками автоматизации:
-    - [REST API](https://docs.microsoft.com/rest/api/virtualnetwork/servicetags/list)
-    - [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.network/Get-AzNetworkServiceTag)
-    - [Azure CLI](https://docs.microsoft.com/cli/azure/network#az-network-list-service-tags)
+    - [REST API](/rest/api/virtualnetwork/servicetags/list)
+    - [Azure PowerShell](/powershell/module/az.network/Get-AzNetworkServiceTag)
+    - [Azure CLI](/cli/azure/network#az-network-list-service-tags)
 
 Дополнительные сведения об использовании API тегов служб для получения адресов служб см. в разделе [Список разрешений для IP-адресов Синхронизации файлов Azure](storage-sync-files-firewall-and-proxy.md#allow-list-for-azure-file-sync-ip-addresses).
 

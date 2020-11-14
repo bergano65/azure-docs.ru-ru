@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 6b201565ae2bcadccf55cee78ade0e011e603a15
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb74ab16e51fbb3a157757353d5743e889f993dd
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85515387"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629705"
 ---
 # <a name="develop-for-azure-files-with-c"></a>Разработка приложений службы файлов Azure с помощью C++
 
@@ -32,7 +32,7 @@ ms.locfileid: "85515387"
 * Создайте подпись общего доступа (ключ SAS) для файла, который использует политику общего доступа, определенную в общей папке.
 
 > [!Note]  
-> Так как к службе файлов Azure можно обращаться через SMB, вы можете создавать простые приложения, которые получают доступ к общей папке Azure с использованием стандартных классов и функций ввода-вывода в C++. Из этой статьи вы узнаете, как создавать приложения, использующие пакет SDK C++ для службы хранилища Azure, который использует [REST API службы файлов](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api) для взаимодействия со службой файлов Azure.
+> Так как к службе файлов Azure можно обращаться через SMB, вы можете создавать простые приложения, которые получают доступ к общей папке Azure с использованием стандартных классов и функций ввода-вывода в C++. Из этой статьи вы узнаете, как создавать приложения, использующие пакет SDK C++ для службы хранилища Azure, который использует [REST API службы файлов](/rest/api/storageservices/file-service-rest-api) для взаимодействия со службой файлов Azure.
 
 ## <a name="create-a-c-application"></a>Создание приложения на C++
 
@@ -160,7 +160,7 @@ directory.delete_directory_if_exists();
 
 ## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Перечисление файлов и каталогов в общей папке Azure
 
-Получить список файлов и каталогов в общей папке довольно просто, вызвав метод **list_files_and_directorie** по ссылке **cloud_file_directory**. Для доступа к широкому набору свойств и методов возвращаемого объекта **list_file_and_directory_item** необходимо вызвать метод **list_file_and_directory_item.as_file**, чтобы получить объект **cloud_file**, или метод **list_file_and_directory_item.as_directory**, чтобы получить объект **cloud_file_directory**.
+Получить список файлов и каталогов в общей папке довольно просто, вызвав метод **list_files_and_directorie** по ссылке **cloud_file_directory**. Для доступа к широкому набору свойств и методов возвращаемого объекта **list_file_and_directory_item** необходимо вызвать метод **list_file_and_directory_item.as_file** , чтобы получить объект **cloud_file** , или метод **list_file_and_directory_item.as_directory** , чтобы получить объект **cloud_file_directory**.
 
 Следующий код демонстрирует, как получить и вывести URI каждого элемента в корневом каталоге общей папки.
 
@@ -218,9 +218,9 @@ azure::storage::cloud_file file4 =
 file4.upload_from_file(_XPLATSTR("DataFile.txt"));
 ```
 
-## <a name="download-a-file"></a>скачать файл;
+## <a name="download-a-file"></a>Скачивание файла
 
-Чтобы скачать файлы, сначала извлеките ссылку на файл, а затем вызовите метод **download_to_stream** , чтобы передать содержимое файла в объект потока, который затем можно сохранить в локальный файл. Кроме того, можно использовать метод **download_to_file**, чтобы скачать содержимое файла в локальный файл. Вы можете также использовать метод **download_text**, чтобы скачать содержимое файла в виде текстовой строки.
+Чтобы скачать файлы, сначала извлеките ссылку на файл, а затем вызовите метод **download_to_stream** , чтобы передать содержимое файла в объект потока, который затем можно сохранить в локальный файл. Кроме того, можно использовать метод **download_to_file** , чтобы скачать содержимое файла в локальный файл. Вы можете также использовать метод **download_text** , чтобы скачать содержимое файла в виде текстовой строки.
 
 В следующем примере используются методы **download_to_stream** и **download_text** для демонстрации загрузки файлов, которые были созданы в предыдущих разделах.
 

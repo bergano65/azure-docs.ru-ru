@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: bf75537c0baf029bc3fc63e320f6290a1f41a524
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 7680e251d8411ce154e1f7dfb8af1d66514dd579
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738841"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629467"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Создание общей папки NFS
 
@@ -38,7 +38,7 @@ ms.locfileid: "92738841"
     - [Настройте VPN-подключение типа "точка — сеть" (P2S) в Linux для использования с файлами Azure](storage-files-configure-p2s-vpn-linux.md).
     - [Настройте VPN типа "сеть — сеть" для использования с файлами Azure](storage-files-configure-s2s-vpn.md).
     - Настройте [ExpressRoute](../../expressroute/expressroute-introduction.md).
-- Если вы хотите использовать Azure CLI, [установите последнюю версию](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Если вы хотите использовать Azure CLI, [установите последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="register-the-nfs-41-protocol"></a>Регистрация протокола NFS 4,1
 
@@ -86,17 +86,17 @@ az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscr
 
 Теперь, когда вы создали учетную запись Филестораже и настроили сеть, можно создать файловый ресурс NFS. Процесс аналогичен созданию общего ресурса SMB. при создании общей папки выбирается **NFS** вместо **SMB** .
 
-1. Перейдите к своей учетной записи хранения и выберите **Общие папки** .
+1. Перейдите к своей учетной записи хранения и выберите **Общие папки**.
 1. Выберите **+ Общая папка** , чтобы создать новый файловый ресурс.
 1. Назовите общую папку и выберите подготовленную емкость.
-1. В качестве **протокола** выберите **NFS (Предварительная версия)** .
+1. В качестве **протокола** выберите **NFS (Предварительная версия)**.
 1. Для выбора **корневого Squash** сделайте выбор.
 
     - Root Squash (по умолчанию) — доступ для удаленного суперпользователя (root) сопоставляется с UID (65534) и GID (65534).
     - Без корневого Squash — удаленный суперпользователь (root) получает доступ от имени привилегированного пользователя.
     - Все Squash — все пользователи сопоставлены с UID (65534) и GID (65534).
     
-1. Нажмите кнопку **создания** .
+1. Нажмите кнопку **Создать**.
 
     :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/create-nfs-file-share.png" alt-text="Снимок экрана: колонка создания файлового ресурса":::
 
@@ -110,7 +110,7 @@ az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscr
    echo $PSVersionTable.PSVersion.ToString() 
    ```
     
-   Сведения об обновлении версии PowerShell см. в разделе [обновление существующих Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) .
+   Сведения об обновлении версии PowerShell см. в разделе [обновление существующих Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) .
     
 1. Установите последнюю версию модуля PowershellGet.
 
@@ -120,13 +120,13 @@ az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscr
 
 1. Закройте, а затем снова откройте консоль PowerShell.
 
-1. Установите модуль просмотра **AZ. Storage** предварительной версии **2.5.2-Preview** .
+1. Установите модуль просмотра **AZ. Storage** предварительной версии **2.5.2-Preview**.
 
    ```powershell
    Install-Module Az.Storage -Repository PsGallery -RequiredVersion 2.5.2-preview -AllowClobber -AllowPrerelease -Force  
    ```
 
-   Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.0.0) .
+   Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](/powershell/azure/install-az-ps?view=azps-3.0.0) .
    
 1. Чтобы создать файловый ресурс уровня "Премиум" с помощью модуля Azure PowerShell, используйте командлет [New-азрмсторажешаре](/powershell/module/az.storage/new-azrmstorageshare) .
 

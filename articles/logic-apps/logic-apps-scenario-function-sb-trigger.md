@@ -1,22 +1,22 @@
 ---
 title: Вызов приложений логики с помощью решения "Функции Azure"
-description: Создание функций Azure, которые вызывают или активируют приложения логики, прослушиваемые служебной шиной Azure
+description: Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 services: logic-apps
 ms.suite: integration
 ms.reviewer: jehollan, klam, logicappspm
 ms.topic: article
 ms.date: 11/08/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fcf7f1a27633c978c10f541d0a341225fbcb126d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25f761d85ebfd0ac16f182941c5b5c29636066bf
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89013781"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629739"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 
-Вы можете использовать [функции Azure](../azure-functions/functions-overview.md) для активации приложения логики, когда требуется развернуть долгосрочный прослушиватель или задачу. Например, можно создать функцию Azure, которая прослушивает очередь [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) и сразу же запускает приложение логики в качестве триггера push-уведомлений.
+Вы можете использовать [функции Azure](../azure-functions/functions-overview.md) для активации приложения логики, когда требуется развернуть долгосрочный прослушиватель или задачу. Например, можно создать функцию, которая прослушивает очередь [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) и сразу же запускает приложение логики в качестве триггера push-уведомлений.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -24,7 +24,7 @@ ms.locfileid: "89013781"
 
 * Пространство имен служебной шины Azure. Если у вас нет пространства имен, [сначала создайте пространство имен](../service-bus-messaging/service-bus-create-namespace-portal.md).
 
-* Приложение-функция Azure, которое является контейнером для функций Azure. Если у вас нет приложения-функции, [сначала создайте приложение-функцию](../azure-functions/functions-create-first-azure-function.md)и убедитесь, что в качестве стека среды выполнения выбрано .NET.
+* Приложение-функция, представляющее собой контейнер для функций. Если у вас нет приложения-функции, [сначала создайте приложение-функцию](../azure-functions/functions-create-first-azure-function.md)и убедитесь, что в качестве стека среды выполнения выбрано .NET.
 
 * Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -42,7 +42,7 @@ ms.locfileid: "89013781"
 
    С помощью триггера запроса можно также ввести схему JSON, которая будет использоваться с сообщением очереди. Схемы JSON помогают конструктору приложений логики понять структуру входных данных и упростить их использование в рабочем процессе.
 
-1. Чтобы указать схему, введите ее в поле **Схема JSON текста запроса**, например:
+1. Чтобы указать схему, введите ее в поле **Схема JSON текста запроса** , например:
 
    ![Указание схемы JSON](./media/logic-apps-scenario-function-sb-trigger/when-http-request-received-trigger-schema.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "89013781"
 
    1. В триггере запросов выберите **Использовать пример полезной нагрузки, чтобы создать схему**.
 
-   1. В разделе **введите или вставьте пример полезных данных JSON**, введите Пример полезных данных и нажмите кнопку **Готово**.
+   1. В разделе **введите или вставьте пример полезных данных JSON** , введите Пример полезных данных и нажмите кнопку **Готово**.
 
       ![Ввод примера полезных данных](./media/logic-apps-scenario-function-sb-trigger/enter-sample-payload.png)
 
@@ -94,7 +94,7 @@ ms.locfileid: "89013781"
 
    ![Созданный URL-адрес обратного вызова для триггера](./media/logic-apps-scenario-function-sb-trigger/callback-URL-for-trigger.png)
 
-## <a name="create-azure-function"></a>Создание функции Azure
+## <a name="create-a-function"></a>Создание функции
 
 Далее создайте функцию, которая выступает в качестве триггера и ожидает передачи данных из очереди.
 

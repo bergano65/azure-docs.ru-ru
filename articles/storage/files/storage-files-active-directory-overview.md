@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
-ms.openlocfilehash: 48e9fc4c1efa3517f5de46b7198c868a22331c79
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 93dd73b5a9149474be771537f47b448c5c4d7d8f
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92486395"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629331"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Обзор параметров проверки подлинности на основе удостоверений службы файлов Azure для доступа к SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -26,11 +26,11 @@ ms.locfileid: "92486395"
 
 -   **Проверка подлинности Kerberos**
 
-    Kerberos — это протокол проверки подлинности, который используется для проверки удостоверения пользователя или узла. Дополнительные сведения о протоколе Kerberos см. в разделе [Обзор проверки подлинности Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-authentication-overview).
+    Kerberos — это протокол проверки подлинности, который используется для проверки удостоверения пользователя или узла. Дополнительные сведения о протоколе Kerberos см. в разделе [Обзор проверки подлинности Kerberos](/windows-server/security/kerberos/kerberos-authentication-overview).
 
 -  **Протокол SMB (Server Message Block)**
 
-    SMB — это стандартный протокол обмена файлами по сети. SMB также называется Common Internet File System, или CIFS. Дополнительные сведения о SMB см. в разделе [Протокол SMB Майкрософт и обзор протокола CIFS](https://docs.microsoft.com/windows/desktop/FileIO/microsoft-smb-protocol-and-cifs-protocol-overview).
+    SMB — это стандартный протокол обмена файлами по сети. SMB также называется Common Internet File System, или CIFS. Дополнительные сведения о SMB см. в разделе [Протокол SMB Майкрософт и обзор протокола CIFS](/windows/desktop/FileIO/microsoft-smb-protocol-and-cifs-protocol-overview).
 
 -   **Azure Active Directory (Azure AD)**
 
@@ -42,7 +42,7 @@ ms.locfileid: "92486395"
 
 - **Локальные службы домен Active Directory (AD DS)**
 
-    Интеграция локальных домен Active Directory служб (AD DS) с файлами Azure предоставляет методы для хранения данных каталога, делая их доступными для пользователей и администраторов сети. Безопасность интегрирована с AD DS путем проверки подлинности входа и управления доступом к объектам в каталоге. С одним сетевым входом администраторы могут управлять данными каталога и Организацией по всей сети, а полномочные пользователи сети могут получать доступ к ресурсам в любой точке сети. AD DS обычно применяются предприятиями в локальных средах, а AD DS учетные данные используются в качестве удостоверения для контроля доступа. Дополнительные сведения см. в разделе [Обзор служб домен Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
+    Интеграция локальных домен Active Directory служб (AD DS) с файлами Azure предоставляет методы для хранения данных каталога, делая их доступными для пользователей и администраторов сети. Безопасность интегрирована с AD DS путем проверки подлинности входа и управления доступом к объектам в каталоге. С одним сетевым входом администраторы могут управлять данными каталога и Организацией по всей сети, а полномочные пользователи сети могут получать доступ к ресурсам в любой точке сети. AD DS обычно применяются предприятиями в локальных средах, а AD DS учетные данные используются в качестве удостоверения для контроля доступа. Дополнительные сведения см. в разделе [Обзор служб домен Active Directory](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
 
 -   **Управление доступом Azure на основе ролей (Azure RBAC)**
 
@@ -116,7 +116,7 @@ ms.locfileid: "92486395"
 
 - Во вторых, все пользователи, которые существуют в Azure AD, могут пройти проверку подлинности и авторизоваться. Пользователь может быть только облаком или гибридным. Синхронизация из Azure AD в Azure AD DS управляется платформой без необходимости настройки пользователя. Однако клиент должен быть присоединен к домену Azure AD DS, он не может быть присоединен или зарегистрирован в Azure AD. 
 
-:::image type="content" source="media/storage-files-active-directory-overview/Files-Azure-AD-DS-Diagram.png" alt-text="На этой схеме показана локальная проверка подлинности AD DS в файловые ресурсы Azure по протоколу SMB.":::
+:::image type="content" source="media/storage-files-active-directory-overview/Files-Azure-AD-DS-Diagram.png" alt-text="Схема":::
 
 ### <a name="enable-identity-based-authentication"></a>Включить проверку подлинности на основе удостоверений
 
@@ -128,7 +128,7 @@ ms.locfileid: "92486395"
 
 ### <a name="configure-directory-or-file-level-permissions-for-azure-files"></a>Настройка разрешений на уровне каталога или файлов для файлов Azure
 
-Файловые ресурсы Azure обеспечивают стандартные разрешения для файлов Windows на уровне каталога и файлов, включая корневой каталог. Настройка разрешений на уровне каталогов или файлов поддерживается как для SMB, так и для остальных. Подключите целевой файловый ресурс из виртуальной машины и настройте разрешения с помощью проводника Windows File Explorer, Windows [icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls)или команды [Set-ACL](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-6) .
+Файловые ресурсы Azure обеспечивают стандартные разрешения для файлов Windows на уровне каталога и файлов, включая корневой каталог. Настройка разрешений на уровне каталогов или файлов поддерживается как для SMB, так и для остальных. Подключите целевой файловый ресурс из виртуальной машины и настройте разрешения с помощью проводника Windows File Explorer, Windows [icacls](/windows-server/administration/windows-commands/icacls)или команды [Set-ACL](/powershell/module/microsoft.powershell.security/get-acl?view=powershell-6) .
 
 ### <a name="use-the-storage-account-key-for-superuser-permissions"></a>Использование ключа учетной записи хранения для разрешений суперпользователя
 
@@ -139,7 +139,7 @@ ms.locfileid: "92486395"
 
 ### <a name="preserve-directory-and-file-acls-when-importing-data-to-azure-file-shares"></a>Сохранять списки ACL для каталогов и файлов при импорте данных в файловые ресурсы Azure
 
-Служба "файлы Azure" поддерживает сохранение ACL на уровне каталогов или файлов при копировании данных в файловые ресурсы Azure. Списки ACL для каталога или файла можно скопировать в файловые ресурсы Azure с помощью Синхронизация файлов Azure или общих наборов средств перемещения файлов. Например, можно использовать [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) с `/copy:s` флагом для копирования данных, а также списков ACL в файловый ресурс Azure. Списки ACL сохраняются по умолчанию, поэтому не требуется включать проверку подлинности на основе удостоверений в учетной записи хранения для сохранения списков управления доступом.
+Служба "файлы Azure" поддерживает сохранение ACL на уровне каталогов или файлов при копировании данных в файловые ресурсы Azure. Списки ACL для каталога или файла можно скопировать в файловые ресурсы Azure с помощью Синхронизация файлов Azure или общих наборов средств перемещения файлов. Например, можно использовать [Robocopy](/windows-server/administration/windows-commands/robocopy) с `/copy:s` флагом для копирования данных, а также списков ACL в файловый ресурс Azure. Списки ACL сохраняются по умолчанию, поэтому не требуется включать проверку подлинности на основе удостоверений в учетной записи хранения для сохранения списков управления доступом.
 
 ## <a name="pricing"></a>Цены
 Для включения проверки подлинности на основе удостоверений через SMB в вашей учетной записи хранения дополнительная плата за обслуживание не взимается. Дополнительные сведения о ценах см. в статье цены на службу [файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/) и [цены на доменные службы Azure AD](https://azure.microsoft.com/pricing/details/active-directory-ds/).

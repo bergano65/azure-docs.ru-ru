@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 3/18/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: e3ecf29be94074f51ead3173f997154df6dfa88f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 995ae176a8eec58f8dc9522e6fac6fd78170014d
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785618"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94628923"
 ---
 # <a name="migrate-to-azure-file-shares"></a>Переход на общие папки Azure
 
@@ -115,7 +115,7 @@ Azure имеет несколько доступных типов облачно
 
 В следующей таблице приведены средства Майкрософт и их текущее пригодность для файловых ресурсов Azure.
 
-| Рекомендуется | Средство | Поддержка файловых ресурсов Azure | Сохранение точности файла |
+| Рекомендуется | Инструмент | Поддержка файловых ресурсов Azure | Сохранение точности файла |
 | :-: | :-- | :---- | :---- |
 |![Да, рекомендуется](media/storage-files-migration-overview/circle-green-checkmark.png)| RoboCopy | Поддерживается. Файловые ресурсы Azure можно подключить как сетевые диски. | Полная точность. * |
 |![Да, рекомендуется](media/storage-files-migration-overview/circle-green-checkmark.png)| Синхронизация файлов Azure | Встроенная интегрирована в файловые ресурсы Azure. | Полная точность. * |
@@ -134,7 +134,7 @@ Azure имеет несколько доступных типов облачно
 
 #### <a name="robocopy-from-microsoft-corporation"></a>Robocopy от корпорации Майкрософт
 
-Robocopy — это одно из средств, наиболее применимых к миграции файлов. Она входит в состав Windows. Основная [Документация по Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) является полезным ресурсом для многих вариантов этого инструмента.
+Robocopy — это одно из средств, наиболее применимых к миграции файлов. Она входит в состав Windows. Основная [Документация по Robocopy](/windows-server/administration/windows-commands/robocopy) является полезным ресурсом для многих вариантов этого инструмента.
 
 #### <a name="treesize-from-jam-software-gmbh"></a>TreeSize от ЗАСТРЯВШей программы GmbH
 

@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: rogarana
-ms.openlocfilehash: 03b569422b6ce9e74f77637a514c1c0b28011bed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 02b8d72ab88f9eca2e1fac4858c14826dae57dbe
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761147"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629178"
 ---
 # <a name="part-three-configure-directory-and-file-level-permissions-over-smb"></a>Часть 3. Настройка разрешений на уровне каталога и файлов по протоколу SMB 
 
@@ -44,7 +44,7 @@ ms.locfileid: "91761147"
 
 ## <a name="supported-permissions"></a>Поддерживаемые разрешения
 
-Служба файлов Azure поддерживает полный набор списков управления доступом Windows (базовый и расширенный). Вы можете просматривать и настраивать списки управления доступом Windows для каталогов и файлов в общем файловом ресурсе Azure, подключив общую папку, а затем используя проводник файлов Windows, выполнив команду Windows [icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) или команду [Set-ACL](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl) . 
+Служба файлов Azure поддерживает полный набор списков управления доступом Windows (базовый и расширенный). Вы можете просматривать и настраивать списки управления доступом Windows для каталогов и файлов в общем файловом ресурсе Azure, подключив общую папку, а затем используя проводник файлов Windows, выполнив команду Windows [icacls](/windows-server/administration/windows-commands/icacls) или команду [Set-ACL](/powershell/module/microsoft.powershell.security/set-acl) . 
 
 Чтобы настроить списки ACL с разрешениями суперпользователя, необходимо подключить общий ресурс с помощью ключа учетной записи хранения на виртуальной машине, присоединенной к домену. Следуйте инструкциям в следующем разделе, чтобы подключить общую папку Azure из командной строки и настроить списки управления доступом Windows.
 
@@ -85,7 +85,7 @@ else
 
 ```
 
-Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://azure.microsoft.com/blog/new-troubleshooting-diagnostics-for-azure-files-mounting-errors-on-windows/). Мы также предоставляем [рекомендации](https://docs.microsoft.com/azure/storage/files/storage-files-faq#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
+Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://azure.microsoft.com/blog/new-troubleshooting-diagnostics-for-azure-files-mounting-errors-on-windows/). Мы также предоставляем [рекомендации](./storage-files-faq.md#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
 
 ## <a name="configure-windows-acls"></a>Настройка списков управления доступом Windows
 
@@ -114,9 +114,9 @@ else
 icacls <mounted-drive-letter>: /grant <user-email>:(f)
 ```
 
-Дополнительные сведения об использовании icacls для задания списков управления доступом Windows и различных типов поддерживаемых разрешений см. [в справочнике по командной строке для icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls).
+Дополнительные сведения об использовании icacls для задания списков управления доступом Windows и различных типов поддерживаемых разрешений см. [в справочнике по командной строке для icacls](/windows-server/administration/windows-commands/icacls).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда эта функция включена и настроена, перейдите к следующей статье, в которой вы подключаете файловый ресурс Azure с виртуальной машины, присоединенной к домену.
 

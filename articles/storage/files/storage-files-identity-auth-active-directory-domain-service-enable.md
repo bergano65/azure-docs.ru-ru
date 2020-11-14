@@ -8,16 +8,16 @@ ms.date: 04/21/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: contperfq1, devx-track-azurecli
-ms.openlocfilehash: 906ec80ecc198675fdb5b163403267be1d13de00
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 5d900f105728efc6f58c4f9f7412cea157cbfe20
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746841"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94630385"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure
 
-Службы [файлов Azure](storage-files-introduction.md)   поддерживает проверку подлинности на основе удостоверений через протокол SMB с помощью двух типов доменных служб: локальных домен Active Directory служб (AD DS) и Azure Active Directory доменных служб (Azure AD DS). Мы настоятельно рекомендуем ознакомиться с [разделом "как работает](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-overview#how-it-works) ", чтобы выбрать подходящую службу домена для проверки подлинности. Настройка зависит от выбранной службы домена. Эта статья посвящена включению и настройке Azure AD DS для проверки подлинности с помощью файловых ресурсов Azure.
+Службы [файлов Azure](storage-files-introduction.md)   поддерживает проверку подлинности на основе удостоверений через протокол SMB с помощью двух типов доменных служб: локальных домен Active Directory служб (AD DS) и Azure Active Directory доменных служб (Azure AD DS). Мы настоятельно рекомендуем ознакомиться с [разделом "как работает](./storage-files-active-directory-overview.md#how-it-works) ", чтобы выбрать подходящую службу домена для проверки подлинности. Настройка зависит от выбранной службы домена. Эта статья посвящена включению и настройке Azure AD DS для проверки подлинности с помощью файловых ресурсов Azure.
 
 Если вы не знакомы с файловыми ресурсами Azure, рекомендуем ознакомиться с нашим [руководством по планированию](storage-files-planning.md) , прежде чем читать следующую серию статей.
 
@@ -33,9 +33,9 @@ ms.locfileid: "92746841"
 
     Вы можете использовать новый или существующий клиент для выполнения аутентификации Azure AD по протоколу SMB. Клиент и файловый ресурс, к которому вы хотите получить доступ, должны быть связаны с одной и той же подпиской.
 
-    Чтобы создать новый клиент Azure AD, можно [добавить клиент и подписку Azure AD](https://docs.microsoft.com/windows/client-management/mdm/add-an-azure-ad-tenant-and-azure-ad-subscription). Если у вас уже есть клиент Azure AD, но вы хотите создать новый клиент для использования с файловыми ресурсами Azure, см. статью [создание Azure Active Directory клиента](https://docs.microsoft.com/rest/api/datacatalog/create-an-azure-active-directory-tenant).
+    Чтобы создать новый клиент Azure AD, можно [добавить клиент и подписку Azure AD](/windows/client-management/mdm/add-an-azure-ad-tenant-and-azure-ad-subscription). Если у вас уже есть клиент Azure AD, но вы хотите создать новый клиент для использования с файловыми ресурсами Azure, см. статью [создание Azure Active Directory клиента](/rest/api/datacatalog/create-an-azure-active-directory-tenant).
 
-1.  **Включите доменные службы Azure AD в клиенте Azure AD** .
+1.  **Включите доменные службы Azure AD в клиенте Azure AD**.
 
     Чтобы поддерживать аутентификацию с помощью учетных данных Azure AD, нужно включить доменные службы Azure AD для вашего клиента Azure AD. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](../../active-directory-domain-services/tutorial-create-instance.md).
 
@@ -48,7 +48,7 @@ ms.locfileid: "92746841"
     > [!NOTE]
     > Проверка подлинности Azure AD DS через SMB с помощью файловых ресурсов Azure поддерживается только на виртуальных машинах Azure, работающих в версиях ОС выше Windows 7 или Windows Server 2008 R2.
 
-1.  **Выберите или создайте файловый ресурс Azure** .
+1.  **Выберите или создайте файловый ресурс Azure**.
 
     Выберите новый или существующий файловый ресурс, связанный с той же подпиской, что и ваш клиент Azure AD. Дополнительные сведения см. в статье [Создание общей папки в службе файлов Azure](storage-how-to-create-file-share.md).
     Для оптимальной производительности рекомендуется, чтобы общая папка была в том же регионе, что и виртуальная машина, из которой планируется доступ к общей папке.
@@ -87,9 +87,9 @@ ms.locfileid: "92746841"
 Чтобы включить проверку подлинности Azure AD DS в SMB с [портал Azure](https://portal.azure.com), выполните следующие действия.
 
 1. В портал Azure перейдите к существующей учетной записи хранения или [Создайте учетную запись хранения](../common/storage-account-create.md).
-1. В разделе **Параметры** выберите **Конфигурация** .
+1. В разделе **Параметры** выберите **Конфигурация**.
 1. В разделе " **доступ на основе удостоверений" для файловых ресурсов** перейдите в режим **Azure Active Directory службы домена (AAD DS)** в значение " **включено** ".
-1. Щелкните **Сохранить** .
+1. Щелкните **Сохранить**.
 
 На следующем рисунке показано, как включить проверку подлинности Azure AD DS по протоколу SMB для вашей учетной записи хранения.
 
@@ -97,9 +97,9 @@ ms.locfileid: "92746841"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Чтобы включить проверку подлинности Azure AD DS в SMB с Azure PowerShell, установите последний модуль AZ (2,4 или более поздней версии) или AZ. Storage Module (1,5 или более поздней версии). Дополнительные сведения об установке PowerShell см. [в статье установка Azure PowerShell в Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+Чтобы включить проверку подлинности Azure AD DS в SMB с Azure PowerShell, установите последний модуль AZ (2,4 или более поздней версии) или AZ. Storage Module (1,5 или более поздней версии). Дополнительные сведения об установке PowerShell см. [в статье установка Azure PowerShell в Windows с помощью PowerShellGet](/powershell/azure/install-Az-ps).
 
-Чтобы создать новую учетную запись хранения, вызовите командлет [New-азсторажеаккаунт](https://docs.microsoft.com/powershell/module/az.storage/New-azStorageAccount?view=azps-2.5.0), а затем установите для параметра **енаблеазуреактиведиректоридомаинсервицесфорфиле** **значение true** . В следующем примере не забудьте заменить значения заполнителей собственными значениями. (Если использовался предыдущий модуль предварительного просмотра, параметр для включения этой функции — **енаблеазурефилесаадинтегратионфорсмб** .)
+Чтобы создать новую учетную запись хранения, вызовите командлет [New-азсторажеаккаунт](/powershell/module/az.storage/New-azStorageAccount?view=azps-2.5.0), а затем установите для параметра **енаблеазуреактиведиректоридомаинсервицесфорфиле** **значение true**. В следующем примере не забудьте заменить значения заполнителей собственными значениями. (Если использовался предыдущий модуль предварительного просмотра, параметр для включения этой функции — **енаблеазурефилесаадинтегратионфорсмб**.)
 
 ```powershell
 # Create a new storage account
@@ -123,9 +123,9 @@ Set-AzStorageAccount -ResourceGroupName "<resource-group-name>" `
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Чтобы включить проверку подлинности Azure AD по протоколу SMB с Azure CLI, установите последнюю версию CLI (2.0.70 или более поздней версии). Дополнительные сведения об установке Azure CLI см. [в разделе установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Чтобы включить проверку подлинности Azure AD по протоколу SMB с Azure CLI, установите последнюю версию CLI (2.0.70 или более поздней версии). Дополнительные сведения об установке Azure CLI см. [в разделе установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-Чтобы создать новую учетную запись хранения, вызовите команду [AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)и задайте `--enable-files-aadds` для свойства **значение true** . В следующем примере не забудьте заменить значения заполнителей собственными значениями. (Если использовался предыдущий модуль предварительного просмотра, параметром для включения функции является **File-AAD** .)
+Чтобы создать новую учетную запись хранения, вызовите команду [AZ Storage Account Create](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)и задайте `--enable-files-aadds` для свойства **значение true**. В следующем примере не забудьте заменить значения заполнителей собственными значениями. (Если использовался предыдущий модуль предварительного просмотра, параметром для включения функции является **File-AAD**.)
 
 ```azurecli-interactive
 # Create a new storage account

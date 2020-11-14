@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 3/19/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 4b5ce48cf15c890fbdb3dfd90d9d0ab922a2f4b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9abe306668a4b20e42e45c498bf85b540dfaaee5
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320274"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94630198"
 ---
 # <a name="configuring-dns-forwarding-for-azure-files"></a>Настройка перенаправления DNS для Файлов Azure
 Файлы Azure позволяют создавать частные конечные точки для учетных записей хранения, содержащих общие папки. Частные конечные точки используются для разных приложений — в частности для подключения к общим папкам Azure из локальной сети через подключения VPN или ExpressRoute с использованием частного пиринга. 
@@ -43,7 +43,7 @@ ms.locfileid: "91320274"
 
 - Учетная запись хранения с общей папкой Azure, которую вы хотите подключить. Чтобы узнать, как создать учетную запись хранения и общую папку Azure, ознакомьтесь с [этой статьей](storage-how-to-create-file-share.md).
 - Частная конечная точка для учетной записи хранения. Чтобы узнать, как создать частную конечную точку для Файлов Azure, ознакомьтесь с [этой статьей](storage-files-networking-endpoints.md#create-a-private-endpoint).
-- Модуль Azure PowerShell [последней версии](https://docs.microsoft.com/powershell/azure/install-az-ps).
+- Модуль Azure PowerShell [последней версии](/powershell/azure/install-az-ps).
 
 > [!Important]  
 > В этом руководстве предполагается, что вы используете в локальной среде DNS-сервер под управлением Windows Server. Все описанные в этом руководстве действия можно выполнить на любом DNS-сервере, а не только Windows DNS Server.

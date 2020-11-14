@@ -8,12 +8,12 @@ ms.date: 09/19/2017
 ms.custom: devx-track-java
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 2c80d741ca1cf0b4d66bc18488af8ef1da44fd14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 977777aff4aa32bf6876e1d573970d71ec71584e
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89462604"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629773"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Разработка для файлов Azure с использованием языка Java
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "89462604"
 * Передача, загрузка и удаление файлов.
 
 > [!Note]  
-> Так как к файлам Azure можно обращаться через SMB, вы можете создавать приложения, которые получают доступ к общей папке Azure с использованием стандартных классов ввода-вывода в Java. Из этой статьи вы узнаете, как создавать приложения на основе пакета SDK Java для службы хранилища Azure. Этот пакет SDK использует [API REST файлов Azure](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api) для взаимодействия с файлами Azure.
+> Так как к файлам Azure можно обращаться через SMB, вы можете создавать приложения, которые получают доступ к общей папке Azure с использованием стандартных классов ввода-вывода в Java. Из этой статьи вы узнаете, как создавать приложения на основе пакета SDK Java для службы хранилища Azure. Этот пакет SDK использует [API REST файлов Azure](/rest/api/storageservices/file-service-rest-api) для взаимодействия с файлами Azure.
 
 ## <a name="create-a-java-application"></a>Создание приложения Java
 Для создания примеров вам потребуется комплект разработчика Java (JDK) и [Пакет SDK для службы хранилища Azure для Java](https://github.com/Azure/azure-storage-java). Вам также необходимо создать учетную запись хранилища Azure.
@@ -60,7 +60,7 @@ public static final String storageConnectionString =
 > 
 
 ## <a name="connecting-to-an-azure-storage-account"></a>Подключение к учетной записи хранилища Azure
-Чтобы подключиться к учетной записи хранения, необходимо использовать объект **CloudStorageAccount**, передав строку подключения для метода **parse**.
+Чтобы подключиться к учетной записи хранения, необходимо использовать объект **CloudStorageAccount** , передав строку подключения для метода **parse**.
 
 ```java
 // Use the CloudStorageAccount object to connect to your storage account
@@ -186,7 +186,7 @@ CloudFileDirectory rootDir = share.getRootDirectoryReference();
         cloudFile.uploadFromFile(filePath);
 ```
 
-## <a name="download-a-file"></a>скачать файл;
+## <a name="download-a-file"></a>Скачивание файла
 Одной из наиболее частых операций, которые выполняются с файлами Azure, является скачивание файлов. В следующем примере происходит скачивание файла SampleFile.txt с последующим отображением его содержимого.
 
 ```java
@@ -222,14 +222,14 @@ if ( file.deleteIfExists() ) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы хотите узнать больше о других API-интерфейсах Azure, пожалуйста перейдите по следующим ссылкам.
 
 * [Azure для разработчиков Java](/java/azure)/)
 * [Пакет SDK для службы хранилища Azure для Java](https://github.com/azure/azure-storage-java)
 * [Microsoft Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
 * [справочнике по пакету SDK для клиента службы хранилища Azure](https://javadoc.io/doc/com.microsoft.azure/azure-core/0.8.0/index.html)
-* [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
-* [Блог рабочей группы службы хранилища Azure](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
-* [Приступая к работе со служебной программой командной строки AzCopy](../common/storage-use-azcopy.md)
+* [API-интерфейс REST служб хранилища Azure](/rest/api/storageservices/)
+* [Блог рабочей группы службы хранилища Azure](/archive/blogs/windowsazurestorage/)
+* [Приступая к работе со служебной программой командной строки AzCopy](../common/storage-use-azcopy-v10.md)
 * [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)

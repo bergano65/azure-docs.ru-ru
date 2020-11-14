@@ -2,13 +2,13 @@
 title: Использование шлюза приложений Azure для защиты веб-приложений в решении Azure VMware
 description: Настройте шлюз приложений Azure, чтобы безопасно предоставлять веб-приложения, выполняющиеся в решении VMware для Azure.
 ms.topic: how-to
-ms.date: 10/13/2020
-ms.openlocfilehash: 7956ea51421f5cfa893942401c1d9a5871039689
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.date: 11/13/2020
+ms.openlocfilehash: 02e439989c985354dbe06fa3e231d5daf7099d70
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578488"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629053"
 ---
 # <a name="use-azure-application-gateway-to-protect-your-web-apps-on-azure-vmware-solution"></a>Использование шлюза приложений Azure для защиты веб-приложений в решении Azure VMware
 
@@ -21,19 +21,19 @@ ms.locfileid: "94578488"
 
 Полный список функций см. в статье [возможности шлюза приложений Azure](../application-gateway/features.md). 
 
-В этой статье показано, как использовать шлюз Аппликате перед фермой веб-серверов для защиты веб-приложения, работающего в решении VMware для Azure. 
+В этой статье показано, как использовать шлюз приложений перед фермой веб-серверов для защиты веб-приложения, работающего в решении VMware для Azure. 
 
 ## <a name="topology"></a>Топология
 На схеме показано, как шлюз приложений используется для защиты виртуальных машин Azure IaaS (ВМ), масштабируемых наборов виртуальных машин Azure или локальных серверов. Шлюз приложений рассматривает виртуальные машины Azure VMware в качестве локальных серверов. 
 
-![Шлюз приложений защищает виртуальные машины Azure VMware.](media/protect-azure-vmware-solution-with-application-gateway/app-gateway-protects.png)
+![Диаграмма, показывающая, как шлюз приложений защищает виртуальные машины Azure IaaS, масштабируемые наборы виртуальных машин Azure или локальные серверы.](media/protect-azure-vmware-solution-with-application-gateway/app-gateway-protects.png)
 
 > [!IMPORTANT]
 > Шлюз приложений Azure в настоящее время является единственным поддерживаемым методом предоставления веб-приложений, работающих на виртуальных машинах Azure VMware.
 
 На схеме показан сценарий тестирования, используемый для проверки шлюза приложений с помощью веб-приложений решения Azure VMware.
 
-:::image type="content" source="media/hub-spoke/azure-vmware-solution-second-level-traffic-segmentation.png" alt-text="Интеграция шлюза приложений с решением VMware для Azure, которое запускает веб-приложения" border="false":::
+:::image type="content" source="media/hub-spoke/azure-vmware-solution-second-level-traffic-segmentation.png" alt-text="Схема, на которой показан сценарий тестирования, используемый для проверки шлюза приложений с помощью веб-приложений решения Azure VMware." border="false":::
 
 Экземпляр шлюза приложений развертывается в концентраторе в выделенной подсети. Он имеет общедоступный IP-адрес Azure. Рекомендуется активировать стандартную защиту от атак DDoS для виртуальной сети. Веб-сервер размещается в частном облаке решения Azure VMware на основе маршрутизаторов НСКС T0 и T1. Решение VMware для Azure использует [Global REACH ExpressRoute](../expressroute/expressroute-global-reach.md) для подключения к концентратору и локальным системам.
 
@@ -48,7 +48,7 @@ ms.locfileid: "94578488"
 
 2. Укажите основные сведения, как показано на следующем рисунке. затем выберите **Далее:** внешние интерфейсы>. 
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/create-app-gateway.png" alt-text="Создание шлюза приложений":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/create-app-gateway.png" alt-text="Снимок экрана: Создание страницы шлюза приложений в портал Azure.":::
 
 3. Выберите тип внешнего IP-адреса. Для общедоступного выберите существующий общедоступный IP-адрес или создайте новый. Нажмите кнопку **Далее:>в конце**.
 
@@ -92,7 +92,7 @@ ms.locfileid: "94578488"
 
 1. В частном облаке создайте два разных пула виртуальных машин. Один представляет Contoso, а второй — Fabrikam. 
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-avs.png" alt-text="Создайте виртуальные машины.":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool.png" alt-text="Снимок экрана, показывающий сводку сведений о веб-сервере в клиенте VSphere.":::
 
     Для демонстрации этого руководства мы использовали Windows Server 2016 с установленной ролью службы IIS (IIS). После установки виртуальных машин выполните следующие команды PowerShell, чтобы настроить службы IIS на каждой из виртуальных машин. 
 
@@ -103,13 +103,13 @@ ms.locfileid: "94578488"
 
 2. В существующем экземпляре шлюза приложений выберите **серверные пулы** в меню слева, щелкните  **Добавить** и введите сведения о новых пулах. На правой панели выберите **Добавить** .
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-avs-02.png" alt-text="Добавьте серверные пулы." lightbox="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-avs-02.png":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-02.png" alt-text="Снимок экрана со страницей серверных пулов для добавления серверных пулов." lightbox="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-02.png":::
 
 3. В разделе **Listeners (прослушиватели** ) создайте новый прослушиватель для каждого веб-сайта. Введите сведения для каждого прослушивателя и нажмите кнопку **Добавить**.
 
 4. Слева выберите **Параметры HTTP** и нажмите кнопку **Добавить** в левой области. Введите сведения для создания нового параметра HTTP и нажмите кнопку **сохранить**.
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-avs-03.png" alt-text="Введите сведения для создания нового параметра HTTP и нажмите кнопку Сохранить." lightbox="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-avs-03.png":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-03.png" alt-text="Снимок экрана со страницей параметров HTTP для создания нового параметра HTTP." lightbox="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-03.png":::
 
 5. Создайте правила в разделе **правила** в меню слева. Свяжите каждое правило с соответствующим прослушивателем. Выберите **Добавить**.
 
@@ -117,7 +117,7 @@ ms.locfileid: "94578488"
 
 7. Проверьте подключение. Откройте предпочтительный браузер и перейдите на другие веб-сайты, размещенные в среде решения Azure VMware, например http://www.fabrikam.com .
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-avs-07.png" alt-text="Проверьте подключение.":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool-07.png" alt-text="Снимок экрана: страница браузера, показывающая успешное тестирование подключения.":::
 
 ### <a name="routing-by-url"></a>Маршрутизация по URL-адресу
 
@@ -125,7 +125,7 @@ ms.locfileid: "94578488"
 
 1. В частном облаке создайте пул виртуальных машин для представления веб-фермы. 
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-avs.png" alt-text="Создайте пул виртуальных машин в решении VMware для Azure.":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool.png" alt-text="Снимок экрана страницы в клиенте Вмсфере с отображением сводки другой виртуальной машины.":::
 
     Для демонстрации этого руководства используется Windows Server 2016 с установленной ролью IIS. После установки виртуальных машин выполните следующие команды PowerShell, чтобы настроить службы IIS для каждой виртуальной машины. 
 
@@ -160,31 +160,31 @@ ms.locfileid: "94578488"
    1. Выберите **Добавить**. 
    1. Повторите эту процедуру для **contoso-Images** и **contoso-Video** , добавив одну уникальную виртуальную машину в качестве целевого объекта. 
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-avs-02.png" alt-text="Добавьте три новых серверных пула." lightbox="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-avs-02.png":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-02.png" alt-text="Снимок экрана: страница &quot;серверные пулы&quot; с добавлением трех новых серверных пулов." lightbox="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-02.png":::
 
 3. В разделе **прослушиватели** создайте новый прослушиватель типа Basic с помощью порта 8080.
 
 4. На панели навигации слева выберите **Параметры HTTP** и нажмите кнопку **Добавить** в левой области. Введите сведения для создания нового параметра HTTP и нажмите кнопку **сохранить**.
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-avs-04.png" alt-text="Конфигурация параметров ХТП.":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-04.png" alt-text="Снимок экрана: страница &quot;Добавление параметра HTTP&quot; с конфигурацией параметров HTTP.":::
 
 5. Создайте правила в разделе **правила** в меню слева. Свяжите каждое правило с ранее созданным прослушивателем. Затем настройте основной внутренний пул и параметры HTTP. Выберите **Добавить**.
 
-    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-avs-07.png" alt-text="Создайте правила в разделе правила в меню слева.":::
+    :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-07.png" alt-text="Снимок экрана: страница &quot;Добавление правила маршрутизации&quot; для настройки правил маршрутизации для серверной цели.":::
 
 6. Выполните проверку настройки. Получите доступ к шлюзу приложений на портал Azure и скопируйте общедоступный IP-адрес в разделе **Обзор** . 
 
    1. Откройте новое окно браузера и введите URL-адрес `http://<app-gw-ip-address>:8080` . 
 
-      :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-avs-08.png" alt-text="Протестируйте конфигурацию из портал Azure.":::
+      :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-08.png" alt-text="Снимок экрана: страница браузера, показывающая успешное тестирование конфигурации.":::
 
    1. Изменить URL-адрес на `http://<app-gw-ip-address>:8080/images/test.htm`.
 
-      :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-avs-09.png" alt-text="Измените URL-адрес.":::
+      :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-09.png" alt-text="Снимок экрана другого успешного теста с новым URL-адресом.":::
 
    1. Снова измените URL-адрес на `http://<app-gw-ip-address>:8080/video/test.htm` .
 
-      :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-avs-10.png" alt-text="Измените URL-адрес еще раз.":::
+      :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-10.png" alt-text="Снимок экрана успешного теста с окончательным URL-адресом.":::
 
 ## <a name="next-steps"></a>Next Steps
 

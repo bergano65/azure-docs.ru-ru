@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 685373203da14a6aa83c608d90d6416ab2b30ae4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74422318718e318a00d7bd7ebaf8e4093ef75aa6
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85515308"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629280"
 ---
 # <a name="configure-a-point-to-site-p2s-vpn-on-linux-for-use-with-azure-files"></a>Настройка VPN-подключения "точка — сеть" (P2S) в Linux для использования с Файлами Azure
 Вы можете использовать VPN-подключение "точка — сеть" (P2S) для подключения файловых ресурсов Azure по протоколу SMB вне Azure, не открывая порт 445. VPN-подключение "точка — сеть" — это VPN-подключение между Azure и отдельным клиентом. Чтобы использовать VPN-подключение P2S к службе "Файлы Azure", необходимо настроить это подключение для каждого клиента, которому требуется подключиться. Если у вас много клиентов, которым требуется подключение к общим файловым ресурсам Azure из локальной сети, вместо подключения "точка — сеть" для каждого клиента можно использовать VPN-подключение "сеть — сеть" (S2S). Дополнительные сведения см. в статье [Настройка VPN-подключения "сеть — сеть" для использования с Файлами Azure](storage-files-configure-s2s-vpn.md).
@@ -22,7 +22,7 @@ ms.locfileid: "85515308"
 В статье подробно описано, как настроить VPN-подключение "точка — сеть" в Linux для подключения общих файловых ресурсов Azure локально. Если вы хотите направить трафик Синхронизации файлов Azure через VPN, см. статью [Параметры брандмауэра и прокси-сервера Синхронизации файлов Azure](storage-sync-files-firewall-and-proxy.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
-- Последняя версия Azure CLI. Дополнительные сведения об установке Azure CLI см. в статье [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) и выберите операционную систему. Если вы предпочитаете использовать Azure PowerShell в Linux, обратите внимание, что приведенные ниже инструкции представлены для Azure CLI.
+- Последняя версия Azure CLI. Дополнительные сведения об установке Azure CLI см. в статье [Установка Azure CLI](/cli/azure/install-azure-cli) и выберите операционную систему. Если вы предпочитаете использовать Azure PowerShell в Linux, обратите внимание, что приведенные ниже инструкции представлены для Azure CLI.
 
 - Общая папка Azure, которую вы хотите подключить локально. Общие папки Azure развертываются в учетных записях хранения. Эти учетные записи являются компонентами управления, представляющие собой общий пул носителей, который можно использовать для развертывания нескольких общих папок и других ресурсов хранения, например контейнеров больших двоичных объектов или очередей. Дополнительные сведения о развертывании общих папок Azure и учетных записей хранения см. в статье [Создание общей папки Azure](storage-how-to-create-file-share.md).
 
@@ -210,7 +210,7 @@ smbPath="//$storageAccountPrivateIP/$fileShareName"
 sudo mount -t cifs $smbPath $mntPath -o vers=3.0,username=$storageAccountName,password=$storageAccountKey,serverino
 ```
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 - [Рекомендации по работе с сетями службы "Файлы Azure"](storage-files-networking-overview.md)
 - [Настройка VPN-подключения "точка — сеть" (P2S) в Windows для использования с файлами Azure](storage-files-configure-p2s-vpn-windows.md)
 - [Настройка VPN-подключения "сеть — сеть" (S2S) для использования с Файлами Azure](storage-files-configure-s2s-vpn.md)

@@ -8,20 +8,20 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 5149024f8621754451520e0ae249ed61f0b07f99
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 961ba457136d20fbb63ae3315fe8143cffb56be2
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568477"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629314"
 ---
 # <a name="azure-file-share-protocols"></a>Протоколы файловых ресурсов Azure
 
-Служба файлов Azure предлагает два протокола для подключения и подключения файловых ресурсов Azure. [Протокол SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) и [сетевой файловая система (NFS](https://en.wikipedia.org/wiki/Network_File_System) ) (Предварительная версия). В настоящее время служба файлов Azure не поддерживает многопротокольный доступ, поэтому общая папка может быть либо общей папкой NFS, либо общей папкой SMB. Из-за этого мы рекомендуем определить, какой протокол лучше соответствует вашим потребностям, прежде чем создавать файловые ресурсы Azure.
+Служба файлов Azure предлагает два протокола для подключения и подключения файловых ресурсов Azure. [Протокол SMB](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) и [сетевой файловая система (NFS](https://en.wikipedia.org/wiki/Network_File_System) ) (Предварительная версия). В настоящее время служба файлов Azure не поддерживает многопротокольный доступ, поэтому общая папка может быть либо общей папкой NFS, либо общей папкой SMB. Из-за этого мы рекомендуем определить, какой протокол лучше соответствует вашим потребностям, прежде чем создавать файловые ресурсы Azure.
 
 ## <a name="differences-at-a-glance"></a>Краткий обзор различий
 
-|Компонент  |NFS (Предварительная версия)  |SMB  |
+|Функция  |NFS (Предварительная версия)  |SMB  |
 |---------|---------|---------|
 |Протоколы доступа     |NFS 4,1         |SMB 2,1, SMB 3,0         |
 |Поддерживаемая ОС     |Ядро Linux версии 4.3 +         |Windows 2008 R2 +, ядро Linux версии 4.11 +         |
@@ -64,7 +64,7 @@ ms.locfileid: "91568477"
 - [Частная конечная точка](storage-files-networking-overview.md#private-endpoints)
 - [VPN-шлюз Azure](../../vpn-gateway/vpn-gateway-about-vpngateways.md)
     - [VPN типа "точка — сеть" (P2S)](../../vpn-gateway/point-to-site-about.md)
-    - [Сеть — сеть](https://docs.microsoft.com/azure/vpn-gateway/design#s2smulti)
+    - [Сеть — сеть](../../vpn-gateway/design.md#s2smulti)
 - [ExpressRoute](../../expressroute/expressroute-introduction.md)
 - [Ограниченная общедоступная конечная точка](storage-files-networking-overview.md#storage-account-firewall-settings)
 
@@ -74,7 +74,7 @@ ms.locfileid: "91568477"
 
 Файловые ресурсы Azure, подключенные с помощью SMB, предлагают дополнительные функции службы файлов Azure и не имеют ограничений на функции файлов Azure, так как они общедоступны.
 
-### <a name="features"></a>Компоненты
+### <a name="features"></a>Возможности
 
 - Служба синхронизации файлов Azure
 - Проверка подлинности на основе удостоверений
@@ -90,7 +90,7 @@ ms.locfileid: "91568477"
 - Рабочие среды
 - Клиенты, которым требуются функции, перечисленные в [компоненте](#features)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание общей папки NFS](storage-files-how-to-create-nfs-shares.md)
 - [Создание файлового ресурса SMB](storage-how-to-create-file-share.md)

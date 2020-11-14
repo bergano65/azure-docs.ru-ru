@@ -5,16 +5,16 @@ services: storage
 author: normesta
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/03/2020
+ms.date: 11/13/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: subject-cost-optimization
-ms.openlocfilehash: c809a1ae525fb7fab6dceebb3241e229e8a0284e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: a30fe70943c5329b36cbe10b75d47cc0ee3827fc
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781844"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94630419"
 ---
 # <a name="plan-and-manage-costs-for-azure-blob-storage"></a>Планирование и управление затратами для хранилища BLOB-объектов Azure
 
@@ -39,6 +39,9 @@ ms.locfileid: "92781844"
    При изменении значения раскрывающегося списка **тип** также изменяются и другие параметры, отображаемые на этом листе. Используйте ссылки в разделе " **Дополнительные сведения** ", чтобы узнать о том, что означает каждый вариант, а также о том, как эти параметры влияют на цену операций, связанных с хранилищем. 
 
 4. Измените оставшиеся параметры, чтобы увидеть их влияние на вашу оценку.
+
+   > [!NOTE]
+   > Вы можете платить за использование хранилища BLOB-объектов Azure с помощью Azure Соглашение Enterprise денежных обязательств по кредиту. Однако вы не можете использовать денежные обязательства кредита для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
 
 ## <a name="optimize-costs"></a>Оптимизация затрат
 
@@ -87,11 +90,11 @@ ms.locfileid: "92781844"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. Откройте окно **Управление затратами + выставление счетов** , выберите в меню пункт **Управление затратами** , а затем выберите **анализ затрат** . Затем можно изменить область для конкретной подписки из раскрывающегося списка **область** .
+2. Откройте окно **Управление затратами + выставление счетов** , выберите в меню пункт **Управление затратами** , а затем выберите **анализ затрат**. Затем можно изменить область для конкретной подписки из раскрывающегося списка **область** .
 
    ![Снимок экрана с областью действия](./media/storage-plan-manage-costs/cost-analysis-pane.png)
 
-4. Чтобы просмотреть расходы на службу хранилища Azure, щелкните **Добавить фильтр** , а затем выберите **имя службы** . Затем выберите **хранилище** из списка. 
+4. Чтобы просмотреть расходы на службу хранилища Azure, щелкните **Добавить фильтр** , а затем выберите **имя службы**. Затем выберите **хранилище** из списка. 
 
    Ниже приведен пример, в котором показаны затраты только для службы хранилища Azure.
 
@@ -99,11 +102,15 @@ ms.locfileid: "92781844"
 
 В предыдущем примере вы видите текущие затраты на службу. Также отображаются затраты по регионам Azure (расположениям) и по группам ресурсов. Можно также добавить другие фильтры (например, фильтр для просмотра затрат для конкретных учетных записей хранения).
 
+## <a name="export-cost-data"></a>Экспорт данных о затратах
+
+Вы также можете [экспортировать данные о затратах](https://docs.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям требуется выполнить дополнительный анализ данных за затраты. Например, финансовые группы могут анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об управлении затратами с помощью [анализа затрат](../../cost-management-billing/costs/quick-acm-cost-analysis.md).
-
-Дополнительные сведения о ценах на службу хранилища Azure см. в следующих статьях:
-
-- [Общие сведения о ценах на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage/)
-- [Optimize costs for Blob storage with reserved capacity](../blobs/storage-blob-reserved-capacity.md) (Оптимизация затрат на хранилище BLOB-объектов с зарезервированной емкостью)
+- Узнайте больше о том, как цены работают со службой хранилища Azure. См. [Общие сведения о ценах на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage/).
+- [Оптимизируйте затраты на хранилище BLOB-объектов с зарезервированной емкостью](../blobs/storage-blob-reserved-capacity.md).
+- Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](https://docs.microsoft.com/azure/cost-management-billing/costs/cost-mgt-best-practices?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
+- Дополнительные сведения об управлении затратами с помощью [анализа затрат](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Узнайте, как [предотвратить непредвиденные затраты](https://docs.microsoft.com/azure/cost-management-billing/manage/getting-started?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Пройдите курс обучения по [управлению затратами](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .
