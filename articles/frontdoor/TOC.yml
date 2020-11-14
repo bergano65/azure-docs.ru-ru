@@ -36,6 +36,10 @@
       href: front-door-quickstart-template-samples.md
 - name: Основные понятия
   items:
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Серверные компоненты и серверные пулы
       href: front-door-backend-pool.md
     - name: Кэширование с помощью Front Door

@@ -45,7 +45,7 @@
     - name: "13.\_Мониторинг виртуальных машин"
       href: tutorial-monitor.md
     - name: "14.\_Управление безопасностью виртуальных машин"
-      href: tutorial-azure-security.md
+      href: ../tutorial-azure-security.md
     - name: "15a.\_Сборка с помощью Jenkins"
       href: /azure/developer/jenkins/pipeline-with-github-and-docker
     - name: 15b. Интеграция Jenkins с Azure DevOps
@@ -687,7 +687,15 @@
         - name: Синхронизация времени
           href: time-sync.md
         - name: Добавление тега для виртуальной машины
-          href: tag.md
+          items:
+            - name: CLI
+              href: ../tag-cli.md
+            - name: Портал
+              href: ../tag-portal.md
+            - name: PowerShell
+              href: ../tag-powershell.md
+            - name: Шаблон
+              href: ../tag-template.md
         - name: Выполнение скриптов на виртуальной машине
           href: run-scripts-in-vm.md
           items:

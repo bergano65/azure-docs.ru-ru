@@ -46,7 +46,7 @@
     - name: "13.\_Мониторинг виртуальных машин"
       href: tutorial-monitor.md
     - name: "14.\_Управление безопасностью виртуальных машин"
-      href: tutorial-azure-security.md
+      href: ../tutorial-azure-security.md
     - name: "15.\_Установка стека SQL\\IIS\\.NET"
       href: tutorial-iis-sql.md
     - name: "16.\_Защита веб-сервера с помощью SSL"
@@ -648,8 +648,16 @@
         - name: Замена диска ОС
           href: os-disk-swap.md
         - name: Добавление тега для виртуальной машины
-          href: tag.md
-        - name: Синхронизация времени
+          items:
+            - name: Портал
+              href: ../tag-portal.md
+            - name: PowerShell
+              href: ../tag-powershell.md
+            - name: CLI
+              href: ../tag-cli.md
+            - name: Шаблон
+              href: ../tag-template.md
+            - name: Синхронизация времени
           href: time-sync.md
         - name: Выполнение скриптов на виртуальной машине
           href: run-scripts-in-vm.md

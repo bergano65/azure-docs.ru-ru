@@ -143,10 +143,12 @@
               href: azure-vm-create-properties.md
             - name: Настройка списка предложений виртуальных машин
               href: azure-vm-create-listing.md
-            - name: Создание планов виртуальных машин
-              href: azure-vm-create-plans.md
             - name: Добавление предварительной версии аудитории
               href: azure-vm-create-preview.md
+            - name: Создание планов виртуальных машин
+              href: azure-vm-create-plans.md
+            - name: Перепродажа через CSP
+              href: azure-vm-create-resell-csp.md
             - name: Создание технических ресурсов виртуальной машины
               items:
                 - name: Создание виртуальной машины из утвержденной базы

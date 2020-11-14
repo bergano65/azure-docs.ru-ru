@@ -85,12 +85,14 @@
       href: Tutorials/storage-lab-tutorial.md
 - name: Основные понятия
   items:
-    - name: Теги содержимого
-      href: concept-tagging-images.md
+    - name: Оптическое распознавание текста (OCR)
+      href: concept-recognizing-text.md
     - name: Обнаружение объектов
       href: concept-object-detection.md
     - name: Обнаружение торговых марок
       href: concept-brand-detection.md
+    - name: Теги содержимого
+      href: concept-tagging-images.md
     - name: Классификация изображений
       href: concept-categorizing-images.md
     - name: Описания изображений
@@ -105,8 +107,6 @@
       href: concept-detecting-color-schemes.md
     - name: Эскизы со смарт-обрезанием
       href: concept-generating-thumbnails.md
-    - name: Оптическое распознавание текста (OCR)
-      href: concept-recognizing-text.md
     - name: Обнаружение содержимого для взрослых
       href: concept-detecting-adult-content.md
 - name: Ответственный подход к использованию ИИ
