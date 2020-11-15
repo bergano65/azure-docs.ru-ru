@@ -5,12 +5,12 @@ ms.date: 01/28/2020
 ms.topic: conceptual
 description: Найдите ответы на некоторые распространенные вопросы о Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 9870ba52424f6f59cc908e4d70bf1560f7d69165
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: a25ebd88d022ff278b3e3d9cc9cbf4d8b9b670cd
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970305"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636101"
 ---
 # <a name="frequently-asked-questions-about-azure-dev-spaces"></a>Часто задаваемые вопросы о Azure Dev Spaces
 
@@ -72,9 +72,9 @@ Azure Dev Spaces поддерживает все [текущие версии Ku
 
 Да, вы можете использовать Azure Dev Spaces в кластерах AKS с [ограниченным трафиком исходящего трафика для узлов кластера][aks-restrict-egress-traffic] , включенных после того, как правильные полные доменные имена разрешены. Дополнительные сведения об использовании кластеров AKS с ограниченным трафиком исходящего трафика для узлов кластера, включенных с Azure Dev Spaces, можно найти [здесь](configure-networking.md#ingress-and-egress-network-traffic-requirements).
 
-## <a name="can-i-use-azure-dev-spaces-on-rbac-enabled-aks-clusters"></a>Можно ли использовать Azure Dev Spaces в кластерах AKS с поддержкой RBAC?
+## <a name="can-i-use-azure-dev-spaces-on-kubernetes-rbac-enabled-aks-clusters"></a>Можно ли использовать Azure Dev Spaces в кластерах AKS с поддержкой Kubernetes RBAC?
 
-Да, можно использовать Azure Dev Spaces в кластерах AKS с включенным или без RBAC.
+Да, вы можете использовать Azure Dev Spaces в кластерах AKS с включенным управлением доступом на основе ролей Kubernetes (Kubernetes RBAC) или без него.
 
 ## <a name="what-happens-when-i-enable-ingress-for-project-in-visual-studio"></a>Что происходит при включении входящих данных для проекта в Visual Studio?
 

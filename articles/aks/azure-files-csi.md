@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 556aec071ccb59a0223bc07d134f3427755117f3
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b29f4034b12ce43e6c051e454601f196365469f3
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745790"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636986"
 ---
 # <a name="use-azure-files-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Использование драйверов службы файлов хранилища контейнера Azure (CSI) в службе Kubernetes Azure (AKS) (Предварительная версия)
 
@@ -229,7 +229,7 @@ az provider register --namespace Microsoft.Storage
 [Создайте `Premium_LRS` Учетная запись хранения Azure](../storage/files/storage-how-to-create-premium-fileshare.md) со следующими конфигурациями для поддержки общих папок NFS:
 - Тип учетной записи: Филестораже
 - требуется безопасное перемещение (только включение HTTPS-трафика): false
-- Выберите виртуальную сеть узлов агента в окне брандмауэры и виртуальные сети.
+- Выберите виртуальную сеть узлов агента в окне брандмауэры и виртуальные сети. Поэтому вы можете создать учетную запись хранения в MC_ группе ресурсов.
 
 ### <a name="create-nfs-file-share-storage-class"></a>Создание класса хранилища файлового ресурса NFS
 
@@ -239,7 +239,7 @@ az provider register --namespace Microsoft.Storage
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: azurefile-csi
+  name: azurefile-csi-nfs
 provisioner: file.csi.azure.com
 parameters:
   resourceGroup: EXISTING_RESOURCE_GROUP_NAME  # optional, required only when storage account is not in the same resource group as your agent nodes
@@ -275,6 +275,10 @@ Filesystem      Size  Used Avail Use% Mounted on
 accountname.file.core.windows.net:/accountname/pvc-fa72ec43-ae64-42e4-a8a2-556606f5da38  100G     0  100G   0% /mnt/azurefile
 ...
 ```
+
+>[!NOTE]
+> Обратите внимание, что, поскольку общая папка NFS находится в учетной записи Premium, минимальный размер общей папки равен 100 ГБ. При создании PVC с небольшим размером хранилища может возникнуть ошибка "не удалось создать общую папку... Размер (5)... ".
+
 
 ## <a name="windows-containers"></a>Контейнеры Windows
 

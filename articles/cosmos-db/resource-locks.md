@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: mjbrown
-ms.openlocfilehash: 5243419d8e2c4780708e9bdee0d57f2734fe78b2
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 1c8c766208132aec115e1fbeb15af3a057c3de3e
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341966"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636713"
 ---
 # <a name="prevent-azure-cosmos-db-resources-from-being-deleted-or-changed"></a>Предотвращение удаления или изменения Azure Cosmos DB ресурсов
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "93341966"
 
 При применении блокировки к родительской области все ресурсы в этой области наследуют ту же блокировку. Даже ресурсы, добавляемые позже, наследуют блокировку от родительского ресурса. Приоритет имеет наиболее строгая блокировка.
 
-В отличие от управления доступом на основе ролей блокировки управления используются для применения ограничения для всех пользователей и ролей. Дополнительные сведения о RBAC для Azure Cosmos DB см. [в разделе Управление доступом на основе ролей в Azure Cosmos DB](role-based-access-control.md).
+В отличие от управления доступом на основе ролей в Azure, блокировки управления используются для применения ограничений ко всем пользователям и ролям. Дополнительные сведения об Azure RBAC для Azure Cosmos DB см. [в статье Управление доступом на основе ролей Azure в Azure Cosmos DB](role-based-access-control.md).
 
 Блокировки Resource Manager применяются только к операциям, выполняемым в плоскости управления, которая включает в себя операции, передаваемые на https://management.azure.com. Эти блокировки не мешают ресурсам осуществлять свои собственные операции. Ограничиваются изменения ресурсов, но не операции с ними. Например, блокировка ReadOnly в контейнере Cosmos для Azure не позволяет удалить или изменить контейнер. Это не мешает создавать, обновлять и удалять данные в контейнере. Транзакции с данными разрешены, поскольку эти операции не отправляются в https://management.azure.com.
 
@@ -114,6 +114,6 @@ az lock create --name $lockName \
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о блокировках Azure Resource Manager](../azure-resource-manager/management/lock-resources.md)

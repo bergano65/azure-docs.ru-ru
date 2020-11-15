@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: cb783e5da7364f38944ce31ce49a6a6529658fe3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f6d2b126cd9a0acbbbdb8d17ce7345bbf17b556
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903220"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635914"
 ---
 # <a name="connect-to-and-manage-a-kubernetes-cluster-via-kubectl-on-your-azure-stack-edge-pro-gpu-device"></a>Подключение к кластеру Kubernetes и управление им через kubectl на устройстве с графическим процессором Azure Stack. Pro
 
@@ -44,7 +44,7 @@ ms.locfileid: "90903220"
 [!INCLUDE [Connect to admin runspace](../../includes/azure-stack-edge-gateway-connect-minishell.md)]
 
 
-## <a name="configure-cluster-access-via-rbac"></a>Настройка доступа к кластеру через RBAC
+## <a name="configure-cluster-access-via-kubernetes-rbac"></a>Настройка доступа к кластеру через Kubernetes RBAC
 
 После создания кластера Kubernetes можно использовать *kubectl* через cmdline для доступа к кластеру. 
 
@@ -125,7 +125,7 @@ ms.locfileid: "90903220"
     Например, если на главном узле Kubernetes был запущен v 1.15.2, установите на клиенте v 1.15.2.
 
     > [!IMPORTANT]
-    > Скачайте клиент с отклонением не более чем одной дополнительной версии от главного. Версия клиента, но может привести к тому, что основная версия будет вынимать до одной дополнительной версии. Например, мастер v 1.3 должен работать с узлами v 1.1, v 1.2 и v 1.3 и работать с клиентами версии 1.2, v 1.3 и v 1.4. Дополнительные сведения о версии клиента Kubernetes см. в разделе [Политика поддержки отклонения версий и версий Kubernetes](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-version-skew). Дополнительные сведения о версии Kubernetes Server на Azure Stack пограничных Pro см. в статьях получение версии сервера Kubernetes.<!-- insert link-->
+    > Загрузите клиент, версия которого отличается от версии главного узла не более чем на единицу. Версия клиента, но может привести к тому, что основная версия будет вынимать до одной дополнительной версии. Например, мастер v 1.3 должен работать с узлами v 1.1, v 1.2 и v 1.3 и работать с клиентами версии 1.2, v 1.3 и v 1.4. Дополнительные сведения о версии клиента Kubernetes см. в разделе [Политика поддержки отклонения версий и версий Kubernetes](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-version-skew). Дополнительные сведения о версии Kubernetes Server на Azure Stack пограничных Pro см. в статьях получение версии сервера Kubernetes.<!-- insert link-->
     > Иногда `kubectl` предварительно устанавливается в системе, если вы используете DOCKER для Windows или другие средства. Важно скачать определенную версию `kubectl` , как указано в этом разделе, чтобы работать с этим кластером kubernetes. 
 
     Установка займет несколько минут.
@@ -160,7 +160,7 @@ ms.locfileid: "90903220"
 Теперь вы можете развертывать приложения в пространстве имен, а затем просматривать эти приложения и их журналы.
 
 > [!IMPORTANT]   
-> Существует множество команд, которые не могут быть запущены, например команды, для которых требуется административный доступ. Можно выполнять только операции, разрешенные в пространстве имен.
+> Существует множество команд, которые не могут быть запущены, например команды, для которых требуется административный доступ. Вы можете выполнять только операции, разрешенные в пространстве имен.
 
 
 ## <a name="remove-kubernetes-cluster"></a>Удаление кластера Kubernetes
@@ -170,6 +170,6 @@ ms.locfileid: "90903220"
 Подробные инструкции см. в разделе [Удаление конфигурации вычислений](azure-stack-edge-j-series-manage-compute.md#remove-compute-configuration).
    
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Развертывание приложения без отслеживания состояния на Azure Stack пограничной Pro](azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md).

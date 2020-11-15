@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: 98d3beef72d314f93f6a2bc580b1dd5de5735f23
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 23b9774f28f915596abafbd8c1f6c38fc4f55748
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242472"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636271"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-portal"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — один сервер с помощью портала
 
@@ -117,8 +117,8 @@ ms.locfileid: "93242472"
     | Имя администратора| Введите выбранное имя администратора. |
     | Пароль | Введите выбранный пароль. Пароль должен включать минимум 8 символов и соответствовать определенным требованиям. |
     | Расположение | Выберите регион Azure, в котором должен находиться сервер PostgreSQL. |
-    |Version  | Выберите необходимую версию базы данных сервера PostgreSQL.|
-    | Вычисления и хранение| Выберите ценовую категорию, необходимую для сервера в зависимости от рабочей нагрузки. |
+    |Версия  | Выберите необходимую версию базы данных сервера PostgreSQL.|
+    | Вычисления и хранилище| Выберите ценовую категорию, необходимую для сервера в зависимости от рабочей нагрузки. |
     |||
  
 7. Щелкните **ОК**. 
@@ -222,7 +222,7 @@ ms.locfileid: "93242472"
     Address:  10.1.3.4
     ```
 
-3. Проверьте подключение к частной ссылке для сервера PostgreSQL, используя любой доступный клиент. В приведенном ниже примере я использовал [Azure Data Studio](/sql/azure-data-studio/download?view=sql-server-ver15) для выполнения этой операции.
+3. Проверьте подключение к частной ссылке для сервера PostgreSQL, используя любой доступный клиент. В приведенном ниже примере я использовал [Azure Data Studio](/sql/azure-data-studio/download?view=sql-server-ver15&preserve-view=true) для выполнения этой операции.
 
 4. В окне **новое подключение** введите или выберите следующие сведения:
 

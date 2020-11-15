@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 45f5a7e66c80dff5e78e575463becd95bcc7fca1
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: b8aaebdd37f835201ef549e3f97e0c0b657e4fe9
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242200"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636220"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-cli"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — одиночный сервер с помощью интерфейса командной строки
 
@@ -40,7 +40,7 @@ az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet* .
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
 az network vnet create \
@@ -60,13 +60,14 @@ az network vnet subnet update \
  --disable-private-endpoint-network-policies true
 ```
 ## <a name="create-the-vm"></a>Создание виртуальной машины 
-Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM* . 
+Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM*. 
 ```azurecli-interactive
 az vm create \
   --resource-group myResourceGroup \
   --name myVm \
   --image Win2019Datacenter
 ```
+
  Запишите общедоступный IP-адрес виртуальной машины. Этот адрес используется на следующем шаге, чтобы подключиться к виртуальной машине из Интернета.
 
 ## <a name="create-an-azure-database-for-postgresql---single-server"></a>Создание базы данных Azure для PostgreSQL — одиночный сервер 
@@ -99,6 +100,7 @@ az network private-endpoint create \
 
 ## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS 
 Создайте Частная зона DNS зону для домена сервера PostgreSQL и создайте связь связи с виртуальной сетью. 
+
 ```azurecli-interactive
 az network private-dns zone create --resource-group myResourceGroup \ 
    --name  "privatelink.postgres.database.azure.com" 
@@ -126,60 +128,61 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 > [!NOTE]
 > Иногда База данных Azure для PostgreSQL и подсеть виртуальной сети относятся к разным подпискам. В этих случаях необходимо обеспечить следующую конфигурацию:
-> - Убедитесь, что в обеих подписках зарегистрирован поставщик ресурсов **Microsoft. дбфорпостгрескл** . Дополнительные сведения см. в разделе [resource-manager-registration][resource-manager-portal]
+> - Убедитесь, что в обеих подписках зарегистрирован поставщик ресурсов **Microsoft. дбфорпостгрескл** . Дополнительные сведения см. в разделе [поставщики ресурсов](../azure-resource-manager/management/resource-providers-and-types.md).
 
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
 Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
 
-1. На портале в строке поиска введите *myVm* .
+1. На портале в строке поиска введите *myVm*.
 
-1. Нажмите кнопку **Подключиться** . После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
+1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
-1. Щелкните **Скачать RDP-файл** . Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола ( *RDP* ).
+1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола ( *RDP* ).
 
-1. Откройте файл *downloaded.rdp* .
+1. Откройте файл *downloaded.rdp*.
 
-    1. При появлении запроса выберите **Подключиться** .
+    1. При появлении запроса выберите **Подключиться**.
 
     1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
         > [!NOTE]
         > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Щелкните **ОК** .
+1. Щелкните **ОК**.
 
-1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить** .
+1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
 ## <a name="access-the-postgresql-server-privately-from-the-vm"></a>Доступ к серверу PostgreSQL в частном порядке с виртуальной машины
 
-1. Откройте PowerShell на удаленном рабочем столе *myVm* .
+1. Откройте PowerShell на удаленном рабочем столе *myVm*.
 
 2. Введите  `nslookup mydemopostgresserver.privatelink.postgres.database.azure.com`. 
 
-    Должно появиться сообщение следующего вида:
-    ```azurepowershell
-    Server:  UnKnown
-    Address:  168.63.129.16
-    Non-authoritative answer:
-    Name:    mydemopostgresserver.privatelink.postgres.database.azure.com
-    Address:  10.1.3.4
-    ```
+   Должно появиться сообщение следующего вида:
 
-3. Проверьте подключение к частной ссылке для сервера PostgreSQL, используя любой доступный клиент. В приведенном ниже примере я использовал [Azure Data Studio](/sql/azure-data-studio/download?view=sql-server-ver15) для выполнения этой операции.
+   ```azurepowershell
+   Server:  UnKnown
+   Address:  168.63.129.16
+   Non-authoritative answer:
+   Name:    mydemopostgresserver.privatelink.postgres.database.azure.com
+   Address:  10.1.3.4
+   ```
+
+3. Проверьте подключение к частной ссылке для сервера PostgreSQL, используя любой доступный клиент. В следующем примере для выполнения операции используется [Azure Data Studio](/sql/azure-data-studio/download?view=sql-server-ver15&preserve-view=true) .
 
 4. В окне **новое подключение** введите или выберите следующие сведения:
 
-    | Параметр | Значение |
-    | ------- | ----- |
-    | Тип сервера| Выберите **PostgreSQL** .|
-    | Имя сервера| Выбор *mydemopostgresserver.privatelink.postgres.Database.Azure.com* |
-    | Имя пользователя | Введите имя пользователя, username@servername которое предоставляется во время создания сервера PostgreSQL. |
-    |Пароль |Введите пароль, указанный при создании сервера PostgreSQL. |
-    |SSL|Выберите **обязательный** .|
-    ||
+   | Параметр | Значение |
+   | ------- | ----- |
+   | Тип сервера| Выберите **PostgreSQL**.|
+   | Имя сервера| Выбор *mydemopostgresserver.privatelink.postgres.Database.Azure.com* |
+   | Имя пользователя | Введите имя пользователя, username@servername которое предоставляется во время создания сервера PostgreSQL. |
+   |Пароль |Введите пароль, указанный при создании сервера PostgreSQL. |
+   |SSL|Выберите **обязательный**.|
+   ||
 
 5. Нажмите кнопку "Подключиться".
 
@@ -198,6 +201,3 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Подробнее о том [, что такое частная конечная точка Azure](../private-link/private-endpoint-overview.md)
-
-<!-- Link references, to text, Within this same GitHub repo. -->
-[resource-manager-portal]: ../azure-resource-manager/management/resource-providers-and-types.md

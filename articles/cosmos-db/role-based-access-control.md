@@ -1,22 +1,22 @@
 ---
-title: Управление доступом на основе ролей в Azure Cosmos DB
-description: Узнайте, как Azure Cosmos DB обеспечивает защиту базы данных с помощью интеграции с Active Directory (RBAC).
+title: Управление доступом на основе ролей в Azure в Azure Cosmos DB
+description: Узнайте, как Azure Cosmos DB обеспечивает защиту базы данных с помощью интеграции с Active Directory (Azure RBAC).
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: mjbrown
-ms.openlocfilehash: 9f0d42e2e3dfb7e11d3c74ad1280bb867a85e2f8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 950a3c03d5c2c76ad417634833c473ee65adb9b9
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085478"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636645"
 ---
-# <a name="role-based-access-control-in-azure-cosmos-db"></a>Управление доступом на основе ролей в Azure Cosmos DB
+# <a name="azure-role-based-access-control-in-azure-cosmos-db"></a>Управление доступом на основе ролей в Azure в Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Azure Cosmos DB предоставляет встроенные возможности управления доступом на основе ролей (RBAC) для распространенных сценариев управления в Azure Cosmos DB. Пользователь, имеющий профиль в Azure Active Directory, может назначить эти роли Azure пользователям, группам, субъектам-службам или управляемым удостоверениям, чтобы предоставить или запретить доступ к ресурсам и операциям в Azure Cosmos DBных ресурсах. Назначения ролей предоставляются только для доступа к плоскости управления, включая доступ к учетным записям Azure Cosmos, базам данных, контейнерам и предложениям (пропускная способность).
+Azure Cosmos DB предоставляет встроенные возможности управления доступом на основе ролей в Azure (Azure RBAC) для распространенных сценариев управления в Azure Cosmos DB. Пользователь, имеющий профиль в Azure Active Directory, может назначить эти роли Azure пользователям, группам, субъектам-службам или управляемым удостоверениям, чтобы предоставить или запретить доступ к ресурсам и операциям в Azure Cosmos DBных ресурсах. Назначения ролей предоставляются только для доступа к плоскости управления, включая доступ к учетным записям Azure Cosmos, базам данных, контейнерам и предложениям (пропускная способность).
 
 ## <a name="built-in-roles"></a>Встроенные роли
 
@@ -30,11 +30,11 @@ Azure Cosmos DB предоставляет встроенные возможно
 |[Оператор Cosmos DB](../role-based-access-control/built-in-roles.md#cosmos-db-operator)|Может подготавливать учетные записи, базы данных и контейнеры Azure Cosmos. Не удается получить доступ к данным или использовать обозреватель данных.|
 
 > [!IMPORTANT]
-> Поддержка RBAC в Azure Cosmos DB применяется только для операций управления плоскостью. Операции с плоскостью данных защищены с помощью первичных ключей или маркеров ресурсов. Дополнительные сведения см. в разделе [безопасный доступ к данным в Azure Cosmos DB](secure-access-to-data.md)
+> Поддержка Azure RBAC в Azure Cosmos DB относится только к операциям управления плоскостью. Операции с плоскостью данных защищены с помощью первичных ключей или маркеров ресурсов. Дополнительные сведения см. в разделе [безопасный доступ к данным в Azure Cosmos DB](secure-access-to-data.md)
 
 ## <a name="identity-and-access-management-iam"></a>Управление удостоверениями и доступом (IAM)
 
-Панель **управления доступом (IAM)** в портал Azure используется для настройки управления доступом на основе ролей в ресурсах Azure Cosmos. Роли применяются к пользователям, группам, субъектам-службам и управляемым удостоверениям в Active Directory. Для частных пользователей и групп можно использовать встроенные роли или пользовательские роли. На следующем снимке экрана показана Active Directoryная интеграция (RBAC) с использованием управления доступом (IAM) в портал Azure.
+Панель **управления доступом (IAM)** в портал Azure используется для настройки управления доступом на основе ролей Azure в ресурсах Azure Cosmos. Роли применяются к пользователям, группам, субъектам-службам и управляемым удостоверениям в Active Directory. Для частных пользователей и групп можно использовать встроенные роли или пользовательские роли. На следующем снимке экрана показана интеграция Active Directory (Azure RBAC) с использованием управления доступом (IAM) в портал Azure.
 
 :::image type="content" source="./media/role-based-access-control/database-security-identity-access-management-rbac.png" alt-text="Управление доступом (IAM) на портале Azure: демонстрация безопасности базы данных":::
 

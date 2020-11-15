@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7af824d7cdf0c668e4513cd450a1815b88568b3e
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 43d1b7700395bd06960737eae4f318d61aa03717
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540915"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635251"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-vnet-service-endpoints-using-azure-cli"></a>Создание конечных точек службы виртуальной сети Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 
@@ -32,9 +32,9 @@ ms.locfileid: "94540915"
 
 ## <a name="configure-vnet-service-endpoints"></a>Настройка конечных точек служб виртуальной сети
 
-Для настройки виртуальных сетей используется команда [az network vnet](/cli/azure/network/vnet?view=azure-cli-latest).
+Для настройки виртуальных сетей используется команда [az network vnet](/cli/azure/network/vnet).
 
-Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Выберите конкретный идентификатор подписки вашей учетной записи, выполнив команду [az account set](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-set). Подставьте свойство **id** из выходных данных **az login** для вашей подписки в заполнитель для идентификатора подписки.
+Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Выберите конкретный идентификатор подписки вашей учетной записи, выполнив команду [az account set](/cli/azure/account#az-account-set). Подставьте свойство **id** из выходных данных **az login** для вашей подписки в заполнитель для идентификатора подписки.
 
 - Учетная запись должна предоставлять необходимые разрешения для создания виртуальной сети и конечной точки службы.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: v-miegge
-ms.openlocfilehash: 596303223554589ef26938486ccfd2281ccd46f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f83a1820eb931fa075681da7a9661b304059cd2a
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86999111"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635711"
 ---
 # <a name="troubleshoot-os-start-up--windows-update-installation-capacity"></a>Устранение неполадок при запуске ОС, связанных с нехваткой места для установки в Центре обновления Windows
 
@@ -62,8 +62,6 @@ ms.locfileid: "86999111"
 
 1. Проверьте, есть ли свободное место на диске. Если размер диска менее 1 ТБ, увеличьте его до максимального возможного размера 1 ТБ [с помощью PowerShell](../windows/expand-os-disk.md).
 1. Если размер диска уже равен 1 ТБ, придется очистить диск.
-   1. Отсоедините диск данных [от неисправной виртуальной машины](../windows/detach-disk.md).
-   1. Подключите его [к работоспособной виртуальной машине](../windows/attach-disk-ps.md#attach-an-existing-data-disk-to-a-vm).
    1. Освободите место с помощью [средства очистки диска](https://support.microsoft.com/help/4026616/windows-10-disk-cleanup).
 1. Когда изменение размера и (или) очистка завершатся, дефрагментируйте диск с помощью следующей команды:
 
@@ -77,29 +75,29 @@ ms.locfileid: "86999111"
 
 **Рекомендуется**. Прежде чем перестраивать виртуальную машину, включите последовательную консоль и сбор дампов памяти. Для этого выполните следующий скрипт:
 
-1. Откройте сеанс командной строки с повышенными привилегиями (от имени администратора).
+1. Откройте сеанс командной строки с повышенными привилегиями от имени администратора.
 1. Выполните следующие команды:
 
-   **Включите последовательную консоль**:
+   **Включите последовательную консоль.**
    
    ```
    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /ems {<BOOT LOADER IDENTIFIER>} ON 
    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
    ```
 
-1. Убедитесь, что на диске ОС не меньше свободного места, чем объем памяти этой виртуальной машины.
+1. Убедитесь, что размер свободного места на диске ОС превышает объем памяти (ОЗУ) этой виртуальной машины.
 
-   Если места на диске ОС недостаточно, измените расположение создания для файла дампа памяти на любой подключенный к виртуальной машине диск данных, на котором достаточно свободного места. Чтобы изменить расположение, замените значение **%SystemRoot%** буквой нужного диска данных (например, **F:** ) в приведенных ниже командах.
+   Если места на диске ОС недостаточно, измените расположение для создания файла дампа памяти, указав подключенный к виртуальной машине диск данных, на котором достаточно свободного места. Чтобы изменить расположение, замените значение **%SystemRoot%** буквой нужного диска данных (например, **F:** ) в приведенных ниже командах.
 
    Рекомендуемая конфигурация для включения дампа ОС:
 
-    **Загрузка неработающего диска ОС**:
+    **Загрузка неработающего диска ОС** :
 
    ```
    REG LOAD HKLM\BROKENSYSTEM <VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM 
    ```
    
-   **Включение в ControlSet001**:
+   **Включение в ControlSet001** :
 
    ```
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
@@ -107,7 +105,7 @@ ms.locfileid: "86999111"
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
    ```
    
-   **Включение в ControlSet002**:
+   **Включение в ControlSet002** :
 
    ```
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
@@ -115,7 +113,7 @@ ms.locfileid: "86999111"
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
    ```
    
-   **Выгрузка неработающего диска ОС**:
+   **Выгрузка неработающего диска ОС** :
 
    ```
    REG UNLOAD HKLM\BROKENSYSTEM
@@ -123,4 +121,4 @@ ms.locfileid: "86999111"
    
 ### <a name="rebuild-the-vm"></a>Перестроение виртуальной машины
 
-Чтобы заново собрать виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).
+Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).

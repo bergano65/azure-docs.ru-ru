@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: sngun
-ms.openlocfilehash: 683fc553e7712e2a760a0af1b601207cb20f2f55
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a0feaf4a984f40ddee7a30291fe0a8f671b6512a
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93092812"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636849"
 ---
 # <a name="how-to-audit-azure-cosmos-db-control-plane-operations"></a>Аудит операций Azure Cosmos DB плоскости управления
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "93092812"
 
 ## <a name="disable-key-based-metadata-write-access"></a>Отключить доступ на запись метаданных на основе ключей
 
-Прежде чем выполнять аудит операций плоскости управления в Azure Cosmos DB, отключите доступ на запись метаданных на основе ключа в вашей учетной записи. Когда доступ на запись метаданных на основе ключей отключен, клиенты, подключающиеся к учетной записи Cosmos Azure через ключи учетной записи, не смогут получить доступ к этой учетной записи. Доступ на запись можно отключить, задав `disableKeyBasedMetadataWriteAccess` свойству значение true. После установки этого свойства изменения любого ресурса могут происходить от пользователя с правильной ролью управления доступом на основе ролей (RBAC) и учетными данными. Дополнительные сведения о том, как задать это свойство, см. в статье [предотвращение изменений из пакетов SDK](role-based-access-control.md#prevent-sdk-changes) . 
+Прежде чем выполнять аудит операций плоскости управления в Azure Cosmos DB, отключите доступ на запись метаданных на основе ключа в вашей учетной записи. Когда доступ на запись метаданных на основе ключей отключен, клиенты, подключающиеся к учетной записи Cosmos Azure через ключи учетной записи, не смогут получить доступ к этой учетной записи. Доступ на запись можно отключить, задав `disableKeyBasedMetadataWriteAccess` свойству значение true. После задания этого свойства изменения в любом ресурсе могут происходить от пользователя с правильной ролью и учетными данными Azure. Дополнительные сведения о том, как задать это свойство, см. в статье [предотвращение изменений из пакетов SDK](role-based-access-control.md#prevent-sdk-changes) . 
 
 Если после `disableKeyBasedMetadataWriteAccess` включения приложение на базе пакета SDK выполняет операции создания или обновления, ошибка *"операция POST" для ресурса "контаинернамеордатабасенаме" не будет разрешена через конечную точку Azure Cosmos DB* . Необходимо включить доступ к таким операциям для вашей учетной записи или выполнить операции создания или обновления с помощью Azure Resource Manager, Azure CLI или Azure PowerShell. Чтобы переключиться обратно, присвойте параметру Дисаблекэйбаседметадатавритеакцесс **значение false** , используя Azure CLI, как описано в статье о [предотвращении изменений из пакета SDK для Cosmos](role-based-access-control.md#prevent-sdk-changes) . Не забудьте изменить значение `disableKeyBasedMetadataWriteAccess` на false, а не на true.
 
@@ -70,17 +70,17 @@ ms.locfileid: "93092812"
 
 На следующих снимках экрана записываются журналы при изменении уровня согласованности для учетной записи Azure Cosmos.
 
-:::image type="content" source="./media/audit-control-plane-logs/add-ip-filter-logs.png" alt-text="Включить ведение журнала запросов плоскости управления":::
+:::image type="content" source="./media/audit-control-plane-logs/add-ip-filter-logs.png" alt-text="Журналы управляющей плоскости при добавлении виртуальной сети":::
 
 На следующих снимках экрана записываются журналы при создании пространства ключей или таблицы учетной записи Cassandra, а также при обновлении пропускной способности. Журналы плоскости управления для операций создания и обновления базы данных и контейнер регистрируются отдельно, как показано на снимке экрана ниже.
 
-:::image type="content" source="./media/audit-control-plane-logs/throughput-update-logs.png" alt-text="Включить ведение журнала запросов плоскости управления":::
+:::image type="content" source="./media/audit-control-plane-logs/throughput-update-logs.png" alt-text="Журналы плоскости управления при обновлении пропускной способности":::
 
 ## <a name="identify-the-identity-associated-to-a-specific-operation"></a>Идентификация удостоверения, связанного с определенной операцией
 
 Если вы хотите выполнить отладку дальше, можно найти конкретную операцию в **журнале действий** с помощью идентификатора действия или метки времени операции. Отметка времени используется для некоторых диспетчер ресурсов клиентов, где идентификатор действия не передается явным образом. Журнал действий содержит подробные сведения об удостоверении, с помощью которого была инициирована операция. На следующем снимке экрана показано, как использовать идентификатор действия и найти связанные с ним операции в журнале действий:
 
-:::image type="content" source="./media/audit-control-plane-logs/find-operations-with-activity-id.png" alt-text="Включить ведение журнала запросов плоскости управления":::
+:::image type="content" source="./media/audit-control-plane-logs/find-operations-with-activity-id.png" alt-text="Использование идентификатора действия и поиск операций":::
 
 ## <a name="control-plane-operations-for-azure-cosmos-account"></a>Операции плоскости управления для учетной записи Azure Cosmos
 

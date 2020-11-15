@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 16ac28e46e9231918f433c0e9eb077cb0d8cf230
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 21b563bf383dce486de86bc51913feac7863d8e1
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791177"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635166"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure
 
@@ -94,7 +94,7 @@ az ad sp create-for-rbac \
 
 Клиентская библиотека удостоверений Azure считывает значения из трех переменных среды во время выполнения для проверки подлинности субъекта-службы. В следующей таблице описывается значение, которое задается для каждой переменной среды.
 
-|Переменная среды|Значение
+|переменная среды;|Значение
 |-|-
 |`AZURE_CLIENT_ID`|Идентификатор приложения для субъекта-службы
 |`AZURE_TENANT_ID`|Идентификатор клиента Azure AD субъекта-службы
@@ -165,4 +165,4 @@ async static Task CreateBlockBlobAsync(string accountName, string containerName,
 
 - [Управление правами доступа к данным хранилища с помощью Azure RBAC](./storage-auth-aad-rbac-portal.md).
 - [Используйте Azure AD с приложениями службы хранилища](storage-auth-aad-app.md).
-- [Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным большого двоичного объекта](../blobs/authorize-active-directory-powershell.md)
+- [Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным большого двоичного объекта](../blobs/authorize-data-operations-powershell.md)

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 4f83500e539ff5254db290d156dfcf50ea60de14
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 236a604c2c1cecfb18a2d82c3796a88cc4341a34
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372563"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636390"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -48,7 +48,7 @@ ms.locfileid: "94372563"
 
 ### <a name="step-1-provision-the-log-analytics-agent-on-your-sql-servers-host"></a>Шаг 1. Подготавливаете агент Log Analytics на узле SQL Server:
 
-- **SQL Server на виртуальной машине Azure** . Если компьютер SQL размещается на виртуальной машине Azure, можно выполнить [автоматическую инициализацию агента log Analytics](security-center-enable-data-collection.md#workspace-configuration). Кроме того, вы можете выполнить процедуру вручную, чтобы подключить [Azure Stack виртуальные машины](quickstart-onboard-machines.md#onboard-your-azure-stack-vms).
+- **SQL Server на виртуальной машине Azure** . Если компьютер SQL размещается на виртуальной машине Azure, можно [включить автоматическую подготовку log Analytics агента <a name="auto-provision-mma"></a>](security-center-enable-data-collection.md#auto-provision-mma). Кроме того, вы можете выполнить процедуру вручную, чтобы подключить [Azure Stack виртуальные машины](quickstart-onboard-machines.md#onboard-your-azure-stack-vms).
 - **SQL Server в службе** "Дуга Azure". если ваша SQL Server управляется серверами с поддержкой [Arc](../azure-arc/index.yml) , вы можете развернуть агент log Analytics с помощью рекомендации центра безопасности "log Analytics должен быть установлен на компьютерах Arc Azure на базе Windows (Предварительная версия)". Кроме того, можно следовать методам установки, описанным в [документации по службе Arc Azure](../azure-arc/servers/manage-vm-extensions.md).
 
 - **SQL Server локального** компьютера. если ваша SQL Server размещена на локальном компьютере Windows без дуги Azure, у вас есть два варианта подключения его к Azure:
@@ -124,7 +124,7 @@ ms.locfileid: "94372563"
     [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Связанные материалы см. в следующей статье:
 
