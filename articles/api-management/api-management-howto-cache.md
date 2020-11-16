@@ -11,18 +11,21 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 11/13/2020
 ms.author: apimpm
-ms.openlocfilehash: 0a3aa0c26ddb515b8096cce909ca074f6f24a333
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 732abed830afdb759ed52fd933673edd8e5cade6
+ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86250487"
+ms.lasthandoff: 11/16/2020
+ms.locfileid: "94638739"
 ---
 # <a name="add-caching-to-improve-performance-in-azure-api-management"></a>Добавление кэширования для повышения производительности в службе управления API Azure
 
-Операции в управлении API можно настроить для кэширования ответов. Кэширование ответов может значительно уменьшить время задержки API, потребляемую пропускную способность, и нагрузку на веб-службу применительно к данным, которые изменяются редко.
+API-интерфейсы и операции в службе управления API можно настроить с помощью кэширования ответов. Кэширование ответов может значительно снизить задержку для вызовов API и серверной нагрузки для поставщиков API.
+
+> [!IMPORTANT]
+> Встроенный кэш является временным и совместно используется всеми единицами в одном регионе в той же службе управления API.
 
 Дополнительные сведения о кэшировании см. в статьях [Политики кэширования в службе управления API](api-management-caching-policies.md) и [Пользовательское кэширование в службе управления API Azure](api-management-sample-cache-by-key.md).
 

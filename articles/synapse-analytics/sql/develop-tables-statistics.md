@@ -11,12 +11,12 @@ ms.date: 04/19/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.custom: ''
-ms.openlocfilehash: cf85b0ea658ae6459644dd710630a30f78ad99aa
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b3e1c4b8dec0e62bb2a77939a36e38b61837033a
+ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339399"
+ms.lasthandoff: 11/16/2020
+ms.locfileid: "94638858"
 ---
 # <a name="statistics-in-synapse-sql"></a>Статистика в Synapse SQL
 
@@ -812,6 +812,74 @@ DROP STATISTICS census_external_table.sState
 CREATE STATISTICS sState
     on census_external_table (STATENAME)
     WITH FULLSCAN, NORECOMPUTE
+```
+
+### <a name="statistics-metadata"></a>Метаданные статистики
+
+Существует несколько системных представлений и функций, которые можно использовать для поиска информации о статистике. Например, можно узнать, устарел ли объект статистики, воспользовавшись функцией STATS_DATE(). Функция STATS_DATE() позволяет просмотреть время последнего создания или обновления статистики.
+
+> [!NOTE]
+> Метаданные статистики доступны только для столбцов внешней таблицы. Метаданные статистики недоступны для столбцов OPENROWSET.
+
+#### <a name="catalog-views-for-statistics"></a>Представления каталога для статистики
+
+Вот какие системные представления показывают информацию о статистике:
+
+| Представление каталога                                                 | Описание                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [sys.columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Одна строка для каждого столбца.                                     |
+| [sys.objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Одна строка для каждого объекта в базе данных.                     |
+| [sys.schemas](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Одна строка для каждой схемы в базе данных.                     |
+| [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Одна строка для каждого объекта статистики.                          |
+| [sys.stats_columns](/sql/relational-databases/system-catalog-views/sys-stats-columns-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Одна строка для каждого столбца в объекте статистики. Ссылается на sys.columns. |
+| [sys.tables](/sql/relational-databases/system-catalog-views/sys-tables-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Одна строка для каждой таблицы (включая внешние таблицы).           |
+| [sys.table_types](/sql/relational-databases/system-catalog-views/sys-table-types-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Одна строка для каждого типа данных.                                  |
+
+#### <a name="system-functions-for-statistics"></a>Системные функции для статистики
+
+Эти системные функции полезны для работы со статистикой:
+
+| Системная функция                                              | Описание                                  |
+| :----------------------------------------------------------- | :------------------------------------------- |
+| [STATS_DATE](/sql/t-sql/functions/stats-date-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Дата последнего обновления объекта статистики. |
+
+#### <a name="combine-statistics-columns-and-functions-into-one-view"></a>Сочетание столбцов и функций статистики в одном представлении
+
+Это представление содержит столбцы, относящиеся к статистике, и результаты функции STATS_DATE().
+
+```sql
+CREATE VIEW dbo.vstats_columns
+AS
+SELECT
+        sm.[name]                           AS [schema_name]
+,       tb.[name]                           AS [table_name]
+,       st.[name]                           AS [stats_name]
+,       st.[filter_definition]              AS [stats_filter_definition]
+,       st.[has_filter]                     AS [stats_is_filtered]
+,       STATS_DATE(st.[object_id],st.[stats_id])
+                                            AS [stats_last_updated_date]
+,       co.[name]                           AS [stats_column_name]
+,       ty.[name]                           AS [column_type]
+,       co.[max_length]                     AS [column_max_length]
+,       co.[precision]                      AS [column_precision]
+,       co.[scale]                          AS [column_scale]
+,       co.[is_nullable]                    AS [column_is_nullable]
+,       co.[collation_name]                 AS [column_collation_name]
+,       QUOTENAME(sm.[name])+'.'+QUOTENAME(tb.[name])
+                                            AS two_part_name
+,       QUOTENAME(DB_NAME())+'.'+QUOTENAME(sm.[name])+'.'+QUOTENAME(tb.[name])
+                                            AS three_part_name
+FROM    sys.objects                         AS ob
+JOIN    sys.stats           AS st ON    ob.[object_id]      = st.[object_id]
+JOIN    sys.stats_columns   AS sc ON    st.[stats_id]       = sc.[stats_id]
+                            AND         st.[object_id]      = sc.[object_id]
+JOIN    sys.columns         AS co ON    sc.[column_id]      = co.[column_id]
+                            AND         sc.[object_id]      = co.[object_id]
+JOIN    sys.types           AS ty ON    co.[user_type_id]   = ty.[user_type_id]
+JOIN    sys.tables          AS tb ON    co.[object_id]      = tb.[object_id]
+JOIN    sys.schemas         AS sm ON    tb.[schema_id]      = sm.[schema_id]
+WHERE   st.[user_created] = 1
+;
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
