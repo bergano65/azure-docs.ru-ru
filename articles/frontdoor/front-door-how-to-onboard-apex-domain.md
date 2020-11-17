@@ -5,14 +5,14 @@ services: front-door
 author: duongau
 ms.service: frontdoor
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 11/13/2020
 ms.author: duau
-ms.openlocfilehash: 44813a7662420ab4dedcd0bf99cc1eec7e9d9d2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55eefe7a7490df050aa7ebc2bb41fbadcc8d8279
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91819085"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94646344"
 ---
 # <a name="onboard-a-root-or-apex-domain-on-your-front-door"></a>Подключение корневого или вершинного домена в службе Front Door
 Передняя дверца Azure использует записи CNAME для проверки владения доменом для адаптации личных доменов. Передняя дверца не предоставляет интерфейсный IP-адрес, связанный с профилем передней дверцы. Поэтому вы не можете сопоставлять домен вершине с IP-адресом, если ваша цель — подключить ее к передней дверце Azure.
@@ -40,9 +40,9 @@ ms.locfileid: "91819085"
 
 1. Нажмите кнопку **ОК** , чтобы отправить изменения.
 
-    :::image type="content" source="./media/front-door-apex-domain/front-door-apex-alias-record.png" alt-text="Запись псевдонима для вершине зоны&quot;:::
+    :::image type="content" source="./media/front-door-apex-domain/front-door-apex-alias-record.png" alt-text="Запись псевдонима для вершине зоны":::
 
-1. На приведенном выше шаге будет создана запись зоны вершине, указывающая на ресурс передней дверцы, а также сопоставление записи CNAME &quot;афдверифи" (example- `afdverify.contosonews.com` ), которое будет использоваться для подключения домена в профиле передней дверцы.
+1. На приведенном выше шаге будет создана запись зоны вершине, указывающая на ресурс передней дверцы, а также сопоставление записи CNAME "афдверифи" (example- `afdverify.contosonews.com` ), которое будет использоваться для подключения домена в профиле передней дверцы.
 
 ## <a name="onboard-the-custom-domain-on-your-front-door"></a>Подключение пользовательского домена на передней дверце
 
@@ -54,9 +54,7 @@ ms.locfileid: "91819085"
 
 1. Нажмите кнопку **сохранить** , чтобы отправить изменения.
 
-   :::image type="content" source="./media/front-door-apex-domain/front-door-onboard-apex-domain.png" alt-text="Запись псевдонима для вершине зоны&quot;:::
-
-1. На приведенном выше шаге будет создана запись зоны вершине, указывающая на ресурс передней дверцы, а также сопоставление записи CNAME &quot;афдверифи":::
+   :::image type="content" source="./media/front-door-apex-domain/front-door-onboard-apex-domain.png" alt-text="Меню личных доменов":::
 
 ## <a name="enable-https-on-your-custom-domain"></a>Включение протокола HTTPS в пользовательском домене
 
@@ -64,9 +62,7 @@ ms.locfileid: "91819085"
 
 1. Выберите  **тип управления сертификатами** , чтобы *использовать мой собственный сертификат*.
 
-   :::image type="content" source="./media/front-door-apex-domain/front-door-onboard-apex-custom-domain.png" alt-text="Запись псевдонима для вершине зоны&quot;:::
-
-1. На приведенном выше шаге будет создана запись зоны вершине, указывающая на ресурс передней дверцы, а также сопоставление записи CNAME &quot;афдверифи":::    
+   :::image type="content" source="./media/front-door-apex-domain/front-door-onboard-apex-custom-domain.png" alt-text="Параметры HTTPS для пользовательского домена":::    
 
    > [!WARNING]
    > Тип управления управляемыми сертификатами передней дверцы в настоящее время не поддерживается для вершине или корневых доменов. Единственный параметр, доступный для включения HTTPS в вершине или корневом домене для передней дверцы, использует собственный пользовательский сертификат TLS/SSL, размещенный на Azure Key Vault.

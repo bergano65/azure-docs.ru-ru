@@ -112,12 +112,22 @@
   items:
     - name: Аутентификация
       href: authentication.md
-    - name: Список надежных URL-адресов
-      href: safe-url-list.md
     - name: Среда Виртуального рабочего стола Windows
       href: environment-setup.md
-    - name: Определение задержки подключения пользователей
-      href: connection-latency.md
+    - name: Возможность подключения к сети
+      items:
+        - name: Основные сведения о сетевом подключении
+          href: network-connectivity.md
+        - name: Короткий путь RDP
+          href: shortpath.md
+        - name: Обеспечение качества обслуживания (QoS)
+          href: rdp-quality-of-service-qos.md
+        - name: Список надежных URL-адресов
+          href: safe-url-list.md
+        - name: Рекомендации по пропускной способности
+          href: rdp-bandwidth.md
+        - name: Определение задержки подключения пользователей
+          href: connection-latency.md
     - name: Делегированный доступ в Виртуальном рабочем столе Windows
       href: delegated-access-virtual-desktop.md
     - name: Методы балансировки нагрузки пула узлов
@@ -168,8 +178,6 @@
       href: linux-overview.md
     - name: Поддерживаемые параметры RDP-файла
       href: /windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context
-    - name: Руководство по сети
-      href: /windows-server/remote/remote-desktop-services/network-guidance?context=/azure/virtual-desktop/context/context
     - name: Рекомендации по изменению размера виртуальной машины
       href: /windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context
     - name: интерфейс командной строки Azure (CLI)

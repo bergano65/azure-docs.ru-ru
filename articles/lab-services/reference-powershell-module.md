@@ -3,12 +3,12 @@ title: Модуль PowerShell для служб лаборатории Azure | 
 description: В этой статье содержатся сведения о модуле PowerShell, который помогает управлять артефактами в службах лаборатории Azure.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 6f5809dcf981a1ecf30cda06af03d2b8a06d3694
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f990b35a41f040d34fab156d3f3d450ad7561a2
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87078816"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94646531"
 ---
 # <a name="azlabservices-powershell-module-preview"></a>Модуль PowerShell Az.LabServices (предварительная версия)
 AZ. Лабсервицес — это модуль PowerShell, упрощающий управление службами лаборатории Azure. Она предоставляет функции с композицией для создания, запроса, обновления и удаления учетных записей лаборатории, лабораторий, виртуальных машин и образов. Дополнительные сведения об этом модуле см. на [домашней странице AZ. лабсервицес на сайте GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/ClassroomLabs/Modules/Library).
@@ -23,8 +23,8 @@ AZ. Лабсервицес — это модуль PowerShell, упрощающ�
 Get-AzLabAccount | Get-AzLab | Get-AzLabVm -Status Running | Stop-AzLabVm
 ```
 
-## <a name="get-started"></a>Приступая к работе
-1. Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) , если он не существует на вашем компьютере. 
+## <a name="get-started"></a>Начало работы
+1. Установите [Azure PowerShell](/powershell/azure/) , если он не существует на вашем компьютере. 
 2. Скачайте файл [AZ. лабсервицес. PSM1](https://github.com/Azure/azure-devtestlab/blob/master/samples/ClassroomLabs/Modules/Library/Az.LabServices.psm1) на свой компьютер.
 3. Импортируйте модуль:
 

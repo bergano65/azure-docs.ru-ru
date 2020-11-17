@@ -87,7 +87,7 @@
       href: security-center-powershell-onboarding.md
     - name: Включение Центра безопасности для группы управления
       href: onboard-management-group.md
-    - name: Настройка сбора данных
+    - name: Настройка автоматической подготовки
       href: security-center-enable-data-collection.md
     - name: Настройка уведомлений по электронной почте
       href: security-center-provide-security-contact-details.md

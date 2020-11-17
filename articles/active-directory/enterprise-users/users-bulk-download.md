@@ -5,20 +5,20 @@ services: active-directory
 author: curtand
 ms.author: curtand
 manager: daveba
-ms.date: 04/16/2020
+ms.date: 11/15/2020
 ms.topic: how-to
 ms.service: active-directory
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 878f091ac6ac40f6ce434710e809c790f382c1ac
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 0183101d37a9f204b5b471270de4cc7befd50a55
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92376447"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94646769"
 ---
 # <a name="download-a-list-of-users-in-azure-active-directory-portal"></a>Скачивание списка пользователей на портале Azure Active Directory
 
@@ -78,7 +78,7 @@ Azure Active Directory (Azure AD) поддерживает операции мн
 
 Каждое групповое действие по созданию списка пользователей может выполняться в течение одного часа. Это позволяет создавать и скачивать список по крайней мере 500 000 пользователей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Групповое добавление пользователей](users-bulk-add.md)
 - [Массовое удаление пользователей](users-bulk-delete.md)

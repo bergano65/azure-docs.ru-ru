@@ -100,7 +100,7 @@
         - name: Развертывание Синхронизации файлов Azure
           href: storage-sync-files-deployment-guide.md
         - name: Использование SQL Server FCI с общими папками уровня "Премиум"
-          href: ../../virtual-machines/windows/sql/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+          href: ../../azure-sql/virtual-machines/windows/failover-cluster-instance-premium-file-share-manually-configure.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json
     - name: Подключение
       items:
         - name: Подключение общей файловой папки SMB к Windows
@@ -311,7 +311,7 @@
     - name: Заметки о выпуске службы "Синхронизация файлов Azure"
       href: storage-files-release-notes.md
     - name: Служба "Файлы Azure" на сайте Microsoft Q&A
-      href: 'https://docs.microsoft.com/answers/topics/azure-files.html'
+      href: /answers/topics/azure-files.html
     - name: Служба "Файлы Azure" на форуме Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-files'
     - name: Цены на Файлы Azure

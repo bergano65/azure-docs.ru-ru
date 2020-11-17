@@ -8,19 +8,19 @@ manager: daveba
 editor: ''
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: how-to
-ms.date: 10/23/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0e2ce094b792d6f3f7e5f8fe1920d87a9cceea2
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: d0136f7677aa722e578ac54c4f7d34338e47b0f7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517181"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94646616"
 ---
 # <a name="user-management-enhancements-preview-in-azure-active-directory"></a>Улучшения управления пользователями (Предварительная версия) в Azure Active Directory
 
@@ -88,7 +88,7 @@ ms.locfileid: "92517181"
 Выберите запись в столбце " **Издатель удостоверений** " для любого пользователя, чтобы просмотреть дополнительные сведения об издателе, включая тип входа и идентификатор, присвоенный издателю. Записи в столбце " **Издатель удостоверений** " могут иметь несколько значений. Если имеется несколько издателей удостоверения пользователя, вы увидите слово Multiple (несколько) в столбце **Издатель удостоверений** на страницах **все пользователи** и **Удаленные пользователи** , а в области сведений отобразится список все издатели.
 
 > [!NOTE]
-> **Исходный** столбец заменяется несколькими столбцами, в том числе **типом создания**, **синхронизированным каталогом**и **издателем удостоверений** для более детальной фильтрации.
+> **Исходный** столбец заменяется несколькими столбцами, в том числе **типом создания**, **синхронизированным каталогом** и **издателем удостоверений** для более детальной фильтрации.
 
 ## <a name="user-list-search"></a>Поиск по списку пользователей
 

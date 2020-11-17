@@ -9,18 +9,18 @@ manager: daveba
 ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
-ms.subservice: users-groups-roles
-ms.date: 08/13/2020
+ms.subservice: enterprise-users
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56f16dea1f81f7f6a35409d8481550fd000864b1
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: c4f298cf7487e00f6ee6a8aa8913fd32f8c6beee
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92376699"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647109"
 ---
 # <a name="scenarios-limitations-and-known-issues-using-groups-to-manage-licensing-in-azure-active-directory"></a>Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "92376699"
 
 ## <a name="usage-location"></a>Расположение использования
 
-Некоторые службы Майкрософт недоступны во всех расположениях. Прежде чем назначать лицензию, администратор должен указать для пользователя свойство **Место использования**. В [портал Azure](https://portal.azure.com)можно указать место использования в **User** &gt; **Profile** &gt; **параметрах**профиля пользователя.
+Некоторые службы Майкрософт недоступны во всех расположениях. Прежде чем назначать лицензию, администратор должен указать для пользователя свойство **Место использования**. В [портал Azure](https://portal.azure.com)можно указать место использования в **User** &gt; **Profile** &gt; **параметрах** профиля пользователя.
 
 Если лицензии назначаются группам, все пользователи, для которых не указано расположение, наследуют расположение каталога. Если пользователи находятся в нескольких расположениях, убедитесь, что они правильно соответствуют вашим ресурсам пользователя, прежде чем добавлять пользователей в группы с лицензиями.
 
@@ -219,7 +219,7 @@ ms.locfileid: "92376699"
 
   Чтобы обойти эту проблему, связанную с такого рода ограничениями, перейдите в колонку **Группа** в Azure AD и нажмите кнопку **Повторно обработать**. После этого все пользователи в этой группе будут обработаны, и состояние ошибки будет устранено, если это возможно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о других сценариях управления лицензиями на основе группы см. в следующих статьях:
 

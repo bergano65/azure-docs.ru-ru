@@ -56,7 +56,7 @@
           href: database-encryption-at-rest.md
         - name: Теги служб
           href: ../virtual-network/service-tags-overview.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
-        - name: Управление доступом на основе ролей
+        - name: Управление доступом на основе ролей в Azure
           displayName: rbac
           href: role-based-access-control.md
         - name: Поддержка службы "Политика Azure"
