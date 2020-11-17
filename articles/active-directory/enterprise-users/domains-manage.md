@@ -7,19 +7,19 @@ author: curtand
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: how-to
-ms.date: 11/05/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66c7229c7e6d32bbec9a7659329aff7a90e7887d
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: b3f4315f6ef1590c222866fe57644ea75efa4ce7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93393614"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650960"
 ---
 # <a name="managing-custom-domain-names-in-your-azure-active-directory"></a>Управление личными доменными именами в Azure Active Directory
 
@@ -71,14 +71,14 @@ ms.locfileid: "93393614"
 
 ### <a name="forcedelete-option"></a>Параметр ForceDelete
 
-Вы можете применить операцию принудительного удаления ( **ForceDelete** ) к доменному имени в [Центре администрирования Azure AD](https://aad.portal.azure.com) или с помощью [API Microsoft Graph](/graph/api/domain-forcedelete?view=graph-rest-beta&preserve-view=true). В обоих случаях используется асинхронная операция и все ссылки обновляются с имени личного домена, например user@contoso.com, до начального имени домена по умолчанию, например user@contoso.onmicrosoft.com.
+Вы можете применить операцию принудительного удаления (**ForceDelete**) к доменному имени в [Центре администрирования Azure AD](https://aad.portal.azure.com) или с помощью [API Microsoft Graph](/graph/api/domain-forcedelete?view=graph-rest-beta&preserve-view=true). В обоих случаях используется асинхронная операция и все ссылки обновляются с имени личного домена, например user@contoso.com, до начального имени домена по умолчанию, например user@contoso.onmicrosoft.com.
 
 Чтобы вызвать **ForceDelete** на портале Azure, вы должны убедиться, что существует менее 1000 ссылок на доменное имя, а любые ссылки, в которых Exchange является службой подготовки, должны быть обновлены или удалены в [Центре администрирования Exchange](https://outlook.office365.com/ecp/). Сюда входят группы безопасности с поддержкой почты и распределенные списки Exchange. Дополнительные сведения см. в статье [Manage mail-enabled security groups in Exchange Server](/Exchange/recipients/mail-enabled-security-groups?view=exchserver-2019#Remove%20mail-enabled%20security%20groups&preserve-view=true) (Управление группами безопасности с поддержкой почты в Exchange Server). Кроме того, операция **ForceDelete** не будет выполнена, если выполняется любое из следующих условий:
 
 * Вы приобрели домен с помощью служб подписки Microsoft 365 домена.
 * Вы являетесь партнером, управляющим от имени другой организации пользователя.
 
-Следующие действия выполняются как часть операции **ForceDelete** :
+Следующие действия выполняются как часть операции **ForceDelete**:
 
 * Имя участника-пользователя (UPN), электронный адрес (EmailAddress) и адрес прокси-сервера (ProxyAddress) пользователей со ссылками на имя личного домена переименовываются на основе начального имени домена по умолчанию.
 * Электронный адрес (EmailAddress) групп со ссылками на имя личного домена переименовывается на основе начального имени домена по умолчанию.

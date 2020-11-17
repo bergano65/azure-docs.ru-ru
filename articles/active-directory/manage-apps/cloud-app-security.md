@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 02/03/2020
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62a77c1b21a6d602a2d54f56a2ed294fe800ac38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8e3e0c10a7ec6b42420db30955ae4911bca27cc0
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763658"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94651232"
 ---
 # <a name="cloud-app-visibility-and-control"></a>Видимость облачных приложений и управление ими
 
@@ -36,8 +36,8 @@ ms.locfileid: "84763658"
  
 ### <a name="learn-more"></a>Дополнительные сведения
 
-- [Обнаружение и администрирование теневых ИТ в своей сети](https://docs.microsoft.com/cloud-app-security/tutorial-shadow-it)
-- [Приложения, обнаруженные с помощью Cloud App Security ](https://docs.microsoft.com/cloud-app-security/discovered-apps)
+- [Обнаружение и администрирование теневых ИТ в своей сети](/cloud-app-security/tutorial-shadow-it)
+- [Приложения, обнаруженные с помощью Cloud App Security ](/cloud-app-security/discovered-apps)
  
 ## <a name="user-session-visibility-and-control"></a>Наблюдение за сеансом пользователя и управление сеансом 
 
@@ -53,7 +53,7 @@ ms.locfileid: "84763658"
  
 ### <a name="learn-more"></a>Дополнительные сведения
 
-- [Защита приложений с помощью функции управления сеансами в Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Защита приложений с помощью функции управления сеансами в Cloud App Security](/cloud-app-security/proxy-intro-aad)
  
 ## <a name="advanced-app-visibility-and-controls"></a>Расширенные возможности наблюдения и контроля за работой приложений 
 
@@ -61,11 +61,11 @@ ms.locfileid: "84763658"
  
 ### <a name="learn-more"></a>Дополнительные сведения  
 
-- [Подключение приложений в Cloud App Security](https://docs.microsoft.com/cloud-app-security/enable-instant-visibility-protection-and-governance-actions-for-your-apps)
+- [Подключение приложений в Cloud App Security](/cloud-app-security/enable-instant-visibility-protection-and-governance-actions-for-your-apps)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обнаружение и администрирование теневых ИТ в своей сети](https://docs.microsoft.com/cloud-app-security/tutorial-shadow-it)
-- [Приложения, обнаруженные с помощью Cloud App Security ](https://docs.microsoft.com/cloud-app-security/discovered-apps)
-- [Защита приложений с помощью функции управления сеансами в Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-- [Подключение приложений в Cloud App Security](https://docs.microsoft.com/cloud-app-security/enable-instant-visibility-protection-and-governance-actions-for-your-apps)
+- [Обнаружение и администрирование теневых ИТ в своей сети](/cloud-app-security/tutorial-shadow-it)
+- [Приложения, обнаруженные с помощью Cloud App Security ](/cloud-app-security/discovered-apps)
+- [Защита приложений с помощью функции управления сеансами в Cloud App Security](/cloud-app-security/proxy-intro-aad)
+- [Подключение приложений в Cloud App Security](/cloud-app-security/enable-instant-visibility-protection-and-governance-actions-for-your-apps)

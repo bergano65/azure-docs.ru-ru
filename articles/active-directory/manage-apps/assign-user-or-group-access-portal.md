@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/21/2020
 ms.author: kenwith
 ms.reviewer: luleon
-ms.openlocfilehash: f49377743521e27c2312e95491762ca48d8448c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55934e8c33b74740b7398be1ae18a3ef899aee74
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604331"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94651283"
 ---
 # <a name="manage-user-assignment-for-an-app-in-azure-active-directory"></a>Управление назначением пользователей для приложения в Azure Active Directory
 
@@ -58,7 +58,7 @@ ms.locfileid: "90604331"
 Сведения о том, как назначить или отменить назначение пользователя или группы с помощью портал Azure, см. в [руководстве по управлению приложениями](add-application-portal-assign-users.md).
 
 ## <a name="assign-or-unassign-users-and-groups-for-an-app-using-the-graph-api"></a>Назначение или отмена назначения пользователей и групп для приложения с помощью API Graph
-Вы можете использовать API Graph, чтобы назначить или отменить назначение пользователей и групп для приложения. Дополнительные сведения см. в разделе [назначения ролей приложений](https://docs.microsoft.com/graph/api/resources/approleassignment).
+Вы можете использовать API Graph, чтобы назначить или отменить назначение пользователей и групп для приложения. Дополнительные сведения см. в разделе [назначения ролей приложений](/graph/api/resources/approleassignment).
 
 ## <a name="assign-users-and-groups-to-an-app-using-powershell"></a>Назначение пользователей и групп для приложения с помощью PowerShell
 1. Откройте окно Windows PowerShell с повышенными привилегиями.
@@ -81,11 +81,11 @@ ms.locfileid: "90604331"
     # Assign the user to the app role
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
-Дополнительные сведения о том, как назначить пользователю роль в приложении, см. в документации по командлету [New-AzureADUserAppRoleAssignment](https://docs.microsoft.com/powershell/module/azuread/new-azureaduserapproleassignment?view=azureadps-2.0).
+Дополнительные сведения о том, как назначить пользователю роль в приложении, см. в документации по командлету [New-AzureADUserAppRoleAssignment](/powershell/module/azuread/new-azureaduserapproleassignment?view=azureadps-2.0).
 
 Чтобы назначить группу корпоративному приложению, необходимо заменить `Get-AzureADUser` на `Get-AzureADGroup`, а `New-AzureADUserAppRoleAssignment` — на `New-AzureADGroupAppRoleAssignment`.
 
-Дополнительные сведения о том, как назначить группе роль в приложении, см. в документации по командлету [New-AzureADGroupAppRoleAssignment](https://docs.microsoft.com/powershell/module/azuread/new-azureadgroupapproleassignment?view=azureadps-2.0).
+Дополнительные сведения о том, как назначить группе роль в приложении, см. в документации по командлету [New-AzureADGroupAppRoleAssignment](/powershell/module/azuread/new-azureadgroupapproleassignment?view=azureadps-2.0).
 
 ### <a name="example"></a>Пример
 
@@ -154,6 +154,6 @@ ms.locfileid: "90604331"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
-- [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
+- [Удаление назначения пользователя или группы из корпоративного приложения]()
 - [Отключение входа пользователя в корпоративное приложение](disable-user-sign-in-portal.md)
-- [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)
+- [Изменение имени или логотипа корпоративного приложения](./add-application-portal-configure.md)

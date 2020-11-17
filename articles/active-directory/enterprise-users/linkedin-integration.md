@@ -6,19 +6,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: how-to
-ms.date: 11/08/2019
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d27cd30d6543d967cca2648597854a06f8ea4eb7
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d70676e117a71fbd194e921b4755ba5d196871c7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92377466"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650314"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>Интеграция подключений учетных записей LinkedIn в Azure Active Directory
 
@@ -42,7 +42,7 @@ ms.locfileid: "92377466"
 1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com/) с помощью учетной записи глобального администратора организации Azure AD.
 1. Выберите **Пользователи**.
 1. На странице **Пользователи** выберите **Параметры пользователя**.
-1. В разделе **подключения к учетной записи LinkedIn**разрешите пользователям подключать свои учетные записи для доступа к своим подключениям LinkedIn в некоторых приложениях Майкрософт. Никакие данные не предоставляются, пока пользователи не будут иметь согласие на подключение своих учетных записей.
+1. В разделе **подключения к учетной записи LinkedIn** разрешите пользователям подключать свои учетные записи для доступа к своим подключениям LinkedIn в некоторых приложениях Майкрософт. Никакие данные не предоставляются, пока пользователи не будут иметь согласие на подключение своих учетных записей.
 
     * Выберите **"Да"** , чтобы включить службу для всех пользователей в Организации
     * Выберите **выбранную группу** , чтобы включить службу только для группы выбранных пользователей в Организации
@@ -72,7 +72,7 @@ ms.locfileid: "92377466"
 1. Войдите в Microsoft 365 с помощью учетной записи администратора.
 1. Запустите PowerShell.
 1. Установите модуль Azure AD, выполнив `Install-Module AzureAD`
-1. Выполните следующий скрипт:
+1. Выполните следующий сценарий:
 
   ``` PowerShell
   $groupId = "GUID of the target group"
@@ -101,7 +101,7 @@ ms.locfileid: "92377466"
 
 Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Если пользователи отключают LinkedIn в приложениях Office 2016, они по-прежнему могут просматривать функции LinkedIn в Microsoft 365.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Согласие пользователя и общий доступ к данным для LinkedIn](linkedin-user-consent.md)
 

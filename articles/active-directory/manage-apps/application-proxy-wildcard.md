@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b566081459b0bab0aae9831e128ffbee0efaf4e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b2563b238bae310d662220d2c244e863249c9c4
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85367739"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94651946"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Приложения с подстановочным знаком в прокси приложения Azure Active Directory
 
@@ -45,7 +45,7 @@ ms.locfileid: "85367739"
 
 > HTTP (s)://*.\<domain\>
 
-Например: `http(s)://*.adventure-works.com`.
+Например, так: `http(s)://*.adventure-works.com`.
 
 Хотя внутренние и внешние URL-адреса могут содержать разные домены, рекомендуется, чтобы они совпадали. При публикации приложения появится сообщение об ошибке, если один из URL-адресов не содержит подстановочный знак.
 
@@ -72,7 +72,7 @@ ms.locfileid: "85367739"
 
 > `<yourAADTenantId>.tenant.runtime.msappproxy.net`
 
-Чтобы убедиться, что запись CNAME правильно настроена, можно использовать [nslookup](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) на одной из целевых конечных точек, например `expenses.adventure-works.com`.  Полученный ответ должен содержать упомянутый выше псевдоним (`<yourAADTenantId>.tenant.runtime.msappproxy.net`).
+Чтобы убедиться, что запись CNAME правильно настроена, можно использовать [nslookup](/windows-server/administration/windows-commands/nslookup) на одной из целевых конечных точек, например `expenses.adventure-works.com`.  Полученный ответ должен содержать упомянутый выше псевдоним (`<yourAADTenantId>.tenant.runtime.msappproxy.net`).
 
 ## <a name="considerations"></a>Рекомендации
 
@@ -191,5 +191,5 @@ ms.locfileid: "85367739"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о **пользовательских доменах**см. [в статье работа с пользовательскими доменами в AD application proxy Azure](application-proxy-configure-custom-domain.md).
-- Дополнительные сведения о **публикации приложений**см. в статье [Публикация приложений с помощью Azure AD application proxy](application-proxy-add-on-premises-application.md)
+- Дополнительные сведения о **пользовательских доменах** см. [в статье работа с пользовательскими доменами в AD application proxy Azure](application-proxy-configure-custom-domain.md).
+- Дополнительные сведения о **публикации приложений** см. в статье [Публикация приложений с помощью Azure AD application proxy](application-proxy-add-on-premises-application.md)

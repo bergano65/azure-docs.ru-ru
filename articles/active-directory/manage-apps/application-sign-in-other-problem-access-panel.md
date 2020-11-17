@@ -12,12 +12,12 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: e03598ab53a9061a59e18041b2f3f4dc04e1b110
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 8cbc683f06b809ec4d9c63a61d73a0c731a92cd7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424531"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94651624"
 ---
 # <a name="troubleshoot-problems-signing-in-to-an-application-from-azure-ad-my-apps"></a>Устранение неполадок при входе в приложение из моих приложений Azure AD
 
@@ -100,8 +100,8 @@ ms.locfileid: "92424531"
 
 ### <a name="enable-self-service-password-reset"></a>Включение самостоятельного сброса пароля
 Чтобы включить самостоятельный сброс пароля, см. инструкции по развертыванию в следующих статьях.
--   [Разрешение пользователям сбрасывать пароли Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started)
--   [Разрешение пользователям сбрасывать или изменять пароли AD](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started)
+-   [Разрешение пользователям сбрасывать пароли Azure AD](../authentication/tutorial-enable-sspr.md)
+-   [Разрешение пользователям сбрасывать или изменять пароли AD](../authentication/tutorial-enable-sspr.md)
 
 ### <a name="check-a-users-multi-factor-authentication-status"></a>Проверка состояния службы Многофакторной Идентификации
 Чтобы проверить состояние службы Многофакторной идентификации, сделайте следующее:

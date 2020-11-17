@@ -3,22 +3,22 @@ title: Закрытие рабочей или учебной учетной за
 description: Как закрыть рабочую или учебную учетную запись в неуправляемой Azure Active Directory.
 services: active-directory
 author: rolyon
-manager: mtillman
+manager: daveba
 ms.service: active-directory
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 05/20/2019
+ms.date: 11/20/2020
 ms.author: rolyon
 ms.reviewer: ''
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87e03214e2a00a16064763f35f38bdd3ea0e6123
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 142143f96314539051ea44c00c6ff95cb2650566
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92376411"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650212"
 ---
 # <a name="close-your-work-or-school-account-in-an-unmanaged-azure-ad-organization"></a>Закрытие рабочей или учебной учетной записи в неуправляемой Организации Azure AD
 
@@ -45,7 +45,7 @@ ms.locfileid: "92376411"
 
 1. Войдите, чтобы [Закрыть учетную запись](https://go.microsoft.com/fwlink/?linkid=873123), используя учетную запись, которую нужно закрыть.
 
-1. В **окне Мои запросы к данным**выберите **Закрыть учетную запись**.
+1. В **окне Мои запросы к данным** выберите **Закрыть учетную запись**.
 
     ![Мои запросы к данным — закрытие учетной записи](./media/users-close-account/close-account.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "92376411"
 
     ![Мои запросы к данным — подтвердить закрытие](./media/users-close-account/confirm-close.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
 - [Удаление пользователя из неуправляемого клиента](/flow/gdpr-dsr-delete#delete-the-user-from-unmanaged-tenant)

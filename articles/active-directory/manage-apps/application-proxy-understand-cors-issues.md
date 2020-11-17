@@ -11,18 +11,18 @@ ms.topic: troubleshooting
 ms.date: 05/23/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 2019802725e36c2400f57952fedf7af40877c8c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8836295e9f54260c4e9ff6c1da333ef2a86d58fb
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84759935"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94651861"
 ---
 # <a name="understand-and-solve-azure-active-directory-application-proxy-cors-issues"></a>Общие сведения и решение проблем Azure Active Directory Application Proxy CORS
 
-[Общий доступ к ресурсам между источниками (CORS)](https://www.w3.org/TR/cors/)   Иногда может представлять проблемы для приложений и API, которые публикуются с помощью Azure Active Directory Application Proxy. В этой статье обсуждаются проблемы и решения Azure AD Application Proxy CORS.
+[Общий доступ к ресурсам между источниками (CORS)](https://www.w3.org/TR/cors/) иногда может представлять проблемы для приложений и API, которые публикуются с помощью Azure Active Directory Application proxy. В этой статье обсуждаются проблемы и решения Azure AD Application Proxy CORS.
 
-Безопасность в браузере обычно предотвращает выполнение запросов AJAX к другому домену на веб-странице. Это ограничение называется *политикой того же происхождения*и предотвращает чтение вредоносных данных с другого сайта злоумышленником. Однако иногда может потребоваться разрешить другим сайтам вызывать веб-API. CORS — это стандарт консорциума W3C, который позволяет серверу использовать политику одинакового происхождения и разрешать некоторые запросы между источниками, а также отклонять другие.
+Безопасность в браузере обычно предотвращает выполнение запросов AJAX к другому домену на веб-странице. Это ограничение называется *политикой того же происхождения* и предотвращает чтение вредоносных данных с другого сайта злоумышленником. Однако иногда может потребоваться разрешить другим сайтам вызывать веб-API. CORS — это стандарт консорциума W3C, который позволяет серверу использовать политику одинакового происхождения и разрешать некоторые запросы между источниками, а также отклонять другие.
 
 ## <a name="understand-and-identify-cors-issues"></a>Понимание и определение проблем CORS
 
@@ -66,7 +66,7 @@ ms.locfileid: "84759935"
 
 ### <a name="option-1-set-up-a-custom-domain"></a>Вариант 1. Настройка пользовательского домена
 
-Используйте [пользовательский домен](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-custom-domains) AD application proxy Azure для публикации из того же источника, не внося никаких изменений в источники приложений, код или заголовки. 
+Используйте [пользовательский домен](./application-proxy-configure-custom-domain.md) AD application proxy Azure для публикации из того же источника, не внося никаких изменений в источники приложений, код или заголовки. 
 
 ### <a name="option-2-publish-the-parent-directory"></a>Вариант 2. Публикация родительского каталога
 
@@ -117,4 +117,4 @@ X-питание от: ASP.NET \
 ## <a name="see-also"></a>См. также раздел
 - [Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory](application-proxy-add-on-premises-application.md) 
 - [Планирование развертывания Azure AD Application Proxy](application-proxy-deployment-plan.md) 
-- [Удаленный доступ к локальным приложениям через Azure Active Directory Application Proxy](application-proxy.md) 
+- [Удаленный доступ к локальным приложениям через Azure Active Directory Application Proxy](application-proxy.md)

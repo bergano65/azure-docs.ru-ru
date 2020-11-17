@@ -9,18 +9,18 @@ manager: daveba
 ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
-ms.subservice: users-groups-roles
-ms.date: 04/29/2020
+ms.subservice: enterprise-users
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e1b61ca00b83d4c6b43fb5ade68dfb1228f0e0d
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 732a92aea321bac0bc9cea4d3eee5a3979a469b1
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92376598"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650586"
 ---
 # <a name="assign-licenses-to-users-by-group-membership-in-azure-active-directory"></a>Назначение лицензий пользователям в соответствии с членством в группах в Azure Active Directory
 
@@ -39,7 +39,7 @@ ms.locfileid: "92376598"
 
 1. Выберите **лицензии** , чтобы открыть страницу, на которой можно просматривать и управлять всеми лицензиарами продуктов в Организации.
 
-1. В разделе **все продукты**выберите Office 365 Enterprise и Enterprise Mobility + Security E3, выбрав названия продуктов. Чтобы начать назначение, выберите **назначить** в верхней части страницы.
+1. В разделе **все продукты** выберите Office 365 Enterprise и Enterprise Mobility + Security E3, выбрав названия продуктов. Чтобы начать назначение, выберите **назначить** в верхней части страницы.
 
    ![Выберите продукты для назначения лицензий](./media/licensing-groups-assign/licenses-all-products-assign.png)
   
@@ -81,7 +81,7 @@ ms.locfileid: "92376598"
 
 ## <a name="step-3-check-for-license-problems-and-resolve-them"></a>Шаг 3. Проверка наличия проблем лицензирования и их устранение
 
-1. Перейдите в раздел **Azure Active Directory**  >  **группы**и найдите группу, которой были назначены лицензии.
+1. Перейдите в раздел **Azure Active Directory**  >  **группы** и найдите группу, которой были назначены лицензии.
 1. На странице Группа выберите **лицензии**. В уведомлении в верхней части страницы отображается 10 пользователей, которым не удалось назначить лицензии. Откройте его, чтобы просмотреть список всех пользователей в состоянии ошибки лицензирования для этой группы.
 1. Столбец **Failed assignments**(Сбой назначений) указывает, что не удалось назначить пользователям лицензии обоих продуктов. В столбец **Основная причина сбоев** указывается причина сбоя. В данном случае это **Конфликтующие планы обслуживания**.
 
@@ -93,7 +93,7 @@ ms.locfileid: "92376598"
 
 1. Чтобы устранить этот конфликт, удалите пользователя из группы **Пользователи киоска**. После того как служба Azure AD обработает изменение, лицензии группы **Отдел кадров** будут назначены правильно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о наборе функций для назначения лицензий с помощью групп см. в следующих статьях:
 

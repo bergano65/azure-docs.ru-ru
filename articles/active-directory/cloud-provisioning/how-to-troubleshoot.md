@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 34796a435536a48100b7434ed5267802cd2d549f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94cf1f34db590abeb084c5e95367781e50c85efc
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89226953"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650103"
 ---
 # <a name="cloud-provisioning-troubleshooting"></a>Устранение неполадок подготовки облака
 
@@ -22,7 +22,7 @@ ms.locfileid: "89226953"
 
 ## <a name="common-troubleshooting-areas"></a>Распространенные области устранения неполадок
 
-|Имя|Описание|
+|Название|Описание|
 |-----|-----|
 |[Проблемы с агентом](#agent-problems)|Убедитесь, что агент установлен правильно и взаимодействует с Azure Active Directory (Azure AD).|
 |[Проблемы синхронизации объектов](#object-synchronization-problems)|Используйте журналы подготовки для устранения неполадок синхронизации объектов.|
@@ -47,11 +47,11 @@ ms.locfileid: "89226953"
 1. Слева щелкните **Azure Active Directory** > **Azure AD Connect**. Посередине выберите **Управление подготовкой (предварительная версия)** .
 1. На экране **Подготовка Azure AD (предварительная версия)** щелкните **Проверить все агенты**.
 
-   ![Проверка всех агентов](media/how-to-install/install7.png)</br>
+   ![Проверка всех агентов](media/how-to-install/install-7.png)</br>
  
 1. На экране " **локальные агенты подготовки** " вы увидите установленные агенты. Убедитесь, что рассматриваемый агент есть и помечен как *работоспособный*.
 
-   ![Экран локальных агентов подготовки](media/how-to-install/install8.png)</br>
+   ![Экран локальных агентов подготовки](media/how-to-install/install-8.png)</br>
 
 ### <a name="verify-the-port"></a>Проверка порта
 
@@ -59,7 +59,7 @@ ms.locfileid: "89226953"
 
 Этот тест проверяет, могут ли агенты обмениваться данными с Azure через порт 443. Откройте браузер и перейдите к предыдущему URL-адресу с сервера, на котором установлен агент.
 
-![Проверка достижимости порта](media/how-to-install/verify2.png)
+![Проверка достижимости порта](media/how-to-install/verify-2.png)
 
 ### <a name="on-the-local-server"></a>На локальном сервере
 
@@ -122,14 +122,14 @@ ms.locfileid: "89226953"
 
 Чтобы устранить эту проблему, измените политики выполнения PowerShell на сервере. Необходимо, чтобы политики компьютера и пользователя были заданы как *неопределенные* или *RemoteSigned*. Если они заданы как *неограниченные*, вы увидите эту ошибку. Дополнительные сведения см. в разделе [политики выполнения PowerShell](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6). 
 
-### <a name="log-files"></a>Файлы журнала
+### <a name="log-files"></a>файлы журналов.
 
 По умолчанию агент выдает минимальные сообщения об ошибках и сведения о трассировке стека. Эти журналы трассировки можно найти в папке *К:\ПРОГРАМДАТА\МИКРОСОФТ\АЗУРЕ AD Connect подготовка Agent\Trace*.
 
 Чтобы собрать дополнительные сведения для устранения неполадок, связанных с агентом, выполните следующие действия.
 
 1. Закройте службу **Microsoft Azure AD подключить агент подготовки**.
-1. Создайте копию исходного файла конфигурации: *C:\Program Files\Microsoft Azure AD Connect Agent\AADConnectProvisioningAgent.exe.configподготовки *.
+1. Создайте копию исходного файла конфигурации: *C:\Program Files\Microsoft Azure AD Connect Agent\AADConnectProvisioningAgent.exe.configподготовки*.
 1. Замените существующий `<system.diagnostics>` раздел следующим, и все сообщения трассировки будут отправлены в файл *проваженттраце. log*.
 
    ```xml

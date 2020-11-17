@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 65e1b1b5e84c3344a082b73b7768935d788a3394
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 668976e9777b35e514746070f0f4039a12b4e02b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90707413"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94651725"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-ad-application-proxy"></a>Удаленный доступ к локальным приложениям с помощью Azure AD Application Proxy
 
@@ -36,7 +36,7 @@ Azure Active Directory Application Proxy позволяет пользовате
 Application Proxy поддерживает:
 
 * веб-приложения, использующие [встроенную проверку подлинности Windows](application-proxy-configure-single-sign-on-with-kcd.md);
-* веб-приложения, использующие доступ на основе форм или [заголовков](application-proxy-configure-single-sign-on-with-ping-access.md);
+* веб-приложения, использующие доступ на основе форм или [заголовков](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-headers);
 * веб-API, предоставляемые для полнофункциональных приложений на различных устройствах;
 * Приложения, размещенные за [шлюзом удаленный рабочий стол](application-proxy-integrate-with-remote-desktop-services.md)
 * полнофункциональные клиентские приложения, интегрированные с библиотекой проверки подлинности Майкрософт (MSAL).
@@ -72,6 +72,5 @@ Application Proxy поддерживает единый вход. Дополни
 | Active Directory | Active Directory работает локально и выполняет аутентификацию доменных учетных записей. Если настроен единый вход, соединитель взаимодействует со службой Active Directory для выполнения дополнительной аутентификации.
 | Локальное приложение | Когда весь этот процесс завершится, пользователь получает доступ к локальному приложению.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы приступить к использованию прокси приложения, см. раздел [учебник. Добавление локального приложения для удаленного доступа через прокси приложения](application-proxy-add-on-premises-application.md).
-

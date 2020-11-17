@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: how-to
-ms.date: 04/10/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: yukarppa
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbbe37938249ee02c7deb4081a96aa1be2d8b7cb
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 1ccd17dc4112bd286257a6ed95ecc55dd13af428
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92377234"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650756"
 ---
 # <a name="validate-a-dynamic-group-membership-rule-preview-in-azure-active-directory"></a>Проверка правила членства в динамической группе (Предварительная версия) в Azure Active Directory
 
@@ -39,12 +39,12 @@ Azure Active Directory (Azure AD) теперь предоставляет сре
 
 ![Просмотр результатов проверки правила](./media/groups-dynamic-rule-validation/validate-tab-results.png)
 
-Результаты показывают, является ли пользователь членом группы. Если правило недопустимо или возникла сетевая ошибка, результат будет отображаться как **неизвестный**. В случае **неизвестной**ошибки в подробном сообщении об ошибке описываются проблемы и необходимые действия.
+Результаты показывают, является ли пользователь членом группы. Если правило недопустимо или возникла сетевая ошибка, результат будет отображаться как **неизвестный**. В случае **неизвестной** ошибки в подробном сообщении об ошибке описываются проблемы и необходимые действия.
 
 ![Просмотр сведений о результатах проверки правила](./media/groups-dynamic-rule-validation/validate-tab-view-details.png)
 
 Вы можете изменить правило и проверку членства. Чтобы узнать, почему пользователь не является членом группы, щелкните "просмотреть сведения" и сведения о проверке появятся результат каждого выражения, формирующего правило. Нажмите кнопку **ОК** , чтобы выйти.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Правила динамического членства в группах](groups-dynamic-membership.md)
