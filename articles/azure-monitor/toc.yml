@@ -129,7 +129,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: Предупреждения
+    - name: видны узлы
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -275,7 +275,7 @@
               href: platform/logs-data-export.md
             - name: Экспорт с помощью Logic Apps
               href: platform/logs-export-logic-app.md
-            - name: Запросы к экспортированным данным с использованием Data Explorer
+            - name: Запрашивание данных с помощью Azure Data Explorer
               href: platform/azure-data-explorer-query-storage.md
             - name: Отправка в Excel
               href: log-query/log-excel.md

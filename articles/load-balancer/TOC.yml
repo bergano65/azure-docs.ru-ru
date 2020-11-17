@@ -67,9 +67,9 @@
       href: load-balancer-ha-ports-overview.md
     - name: Несколько внешних интерфейсов
       href: load-balancer-multivip-overview.md
-    - name: Исходящий прокси-сервер
+    - name: SNAT для исходящих подключений к Интернету
       href: load-balancer-outbound-connections.md
-    - name: Правила для исходящего трафика
+    - name: Настройка правил исходящих соединений.
       href: outbound-rules.md
     - name: Сброс подключений TCP во время ожидания в режиме простоя
       href: load-balancer-tcp-reset.md

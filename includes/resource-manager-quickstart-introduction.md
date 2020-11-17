@@ -4,11 +4,11 @@ ms.service: azure-resource-manager
 ms.topic: include
 ms.date: 02/26/2020
 ms.author: jgao
-ms.openlocfilehash: e584bb86cbe99c2b0f706c0c914455829f079dbc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa47831db9190161a827f84278acf8a1676d7bbf
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85249331"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488037"
 ---
-[Шаблон ARM](/azure/azure-resource-manager/templates/overview) является файлом нотации объектов JavaScript (JSON), определяющими инфраструктуру и конфигурацию вашего проекта. Шаблон использует декларативный синтаксис, который позволяет указать объект, который вы собираетесь развернуть. При этом, для развертывания объекта, не нужно писать последовательность команд.
+[Шаблон ARM](/azure/azure-resource-manager/templates/overview) является файлом нотации объектов JavaScript (JSON), определяющими инфраструктуру и конфигурацию вашего проекта. В шаблоне используется декларативный синтаксис. В декларативном синтаксисе вы можете описать предполагаемое развертывание без написания последовательности команд программирования для создания развертывания.

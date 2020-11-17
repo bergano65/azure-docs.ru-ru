@@ -4,16 +4,16 @@ description: включить файл
 services: cognitive-services
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: luis
+ms.subservice: qna-maker
 ms.topic: include
 ms.custom: include file
-ms.date: 04/27/2020
-ms.openlocfilehash: fabd79829425147667c46f686a1ec1ceb6a29b00
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 11/09/2020
+ms.openlocfilehash: fa497b69b067d5556f11effdb52505895ecc3bdd
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87132907"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94386513"
 ---
 В этом кратком руководстве описывается, как получить ответ из базы знаний с помощью Postman.
 
@@ -28,6 +28,8 @@ ms.locfileid: "87132907"
 > Когда вы будете готовы создать ответ на вопрос из базы знаний, [обучите](../Quickstarts/create-publish-knowledge-base.md#save-and-train) и [опубликуйте](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) эту базу знаний. После публикации базы знаний на странице **публикации** отображаются параметры запроса HTTP для создания ответа. На вкладке **Postman** отображаются параметры, необходимые для создания ответа.
 
 ## <a name="set-up-postman-for-requests"></a>Настройка получения запросов в Postman
+
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 В этом кратком руководстве применяются те же параметры для запроса **POST** через Postman, а затем настраивается отправка JSON в теле запроса POST, где служба-получатель выбирается в зависимости от нужного результата запроса.
 
@@ -44,6 +46,25 @@ ms.locfileid: "87132907"
     ||`{"question":"<Your question>"}`|Текст запроса POST в формате объекта JSON. Это значение будет изменяться в каждом из следующих разделов в зависимости от того, для чего предназначен очередной запрос.|
 
 1. Откройте Postman и создайте простой запрос **POST** с параметрами опубликованной ранее базы знаний. В следующих разделах JSON в теле POST будет изменяться в соответствии с новыми запросами к базе знаний.
+
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
+
+В этом кратком руководстве применяются те же параметры для запроса **POST** через Postman, а затем настраивается отправка JSON в теле запроса POST, где служба-получатель выбирается в зависимости от нужного результата запроса.
+
+Используйте эту процедуру, чтобы настроить Postman, а из следующих разделов вы узнаете, как настроить JSON в теле запроса POST.
+
+1. На странице **Параметры** для базы знаний щелкните вкладку **Postman**, чтобы увидеть конфигурацию, используемую для создания ответа из базы знаний. Скопируйте следующие данные для использования в Postman.
+
+    |Имя|Параметр|Цель и значение|
+    |--|--|--|
+    |`POST`| `/knowledgebases/replace-with-your-knowledge-base-id/generateAnswer`|Это метод HTTP и маршрут для URL-адреса.|
+    |`Host`|`https://YOUR-RESOURCE_NAME.cognitiveservices.azure.com/qnamaker`|Это узел URL-адреса. Объедините значения Host и Post, чтобы получить полный URL-адрес generateAnswer.|
+    |`Ocp-Apim-Subscription-Key`|`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`|Значение заголовка для авторизации запроса. |
+    |`Content-type`|`application/json`|Значение заголовка для содержимого.|
+    ||`{"question":"<Your question>"}`|Текст запроса POST в формате объекта JSON. Это значение будет изменяться в каждом из следующих разделов в зависимости от того, для чего предназначен очередной запрос.|
+
+1. Откройте Postman и создайте простой запрос **POST** с параметрами опубликованной ранее базы знаний. В следующих разделах JSON в теле POST будет изменяться в соответствии с новыми запросами к базе знаний.
+---
 
 ## <a name="use-metadata-to-filter-answer"></a>Применение метаданных для фильтрации ответов
 

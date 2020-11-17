@@ -106,8 +106,10 @@
           href: concept-disaster-recovery.md
 - name: Практические руководства
   items:
-    - name: Включение функции для подмножества пользователей
+    - name: Включение функции для процента пользователей
       href: howto-feature-filters-aspnet-core.md
+    - name: Включение функции для указанных пользователей или групп
+      href: howto-targetingfilter-aspnet-core.md
     - name: Использование меток для применения разных конфигураций в разных средах
       href: howto-labels-aspnet-core.md
     - name: Импорт и экспорт данных конфигурации

@@ -47,8 +47,6 @@
           href: customize-person-model-overview.md
 - name: Практические руководства
   items:
-    - name: Подключение к Azure
-      href: connect-to-azure.md
     - name: 'Управление учетной записью, подключенной к Azure'
       href: manage-account-connected-to-azure.md
     - name: Отправка и индексирование видео

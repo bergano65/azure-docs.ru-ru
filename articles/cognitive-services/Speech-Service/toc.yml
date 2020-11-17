@@ -28,8 +28,6 @@
       items:
         - name: Изменение исходного языка при распознавании речи
           href: how-to-specify-source-language.md
-        - name: Повышение точности с помощью пользовательского распознавания речи
-          href: how-to-custom-speech.md
         - name: Использование форматов сжатых входных звуковых данных
           href: how-to-use-codec-compressed-audio-input-streams.md
           displayName: 'codec,codecs,compression,compressed,mp3,flac,mulaw,alaw,mp4,mp4a,wav,opus,ogg,pcm,silk'
@@ -45,20 +43,18 @@
           href: tutorial-tenant-model.md
     - name: Настройка
       items:
+        - name: Что такое Пользовательское распознавание речи?
+          href: custom-speech-overview.md
         - name: Тестирование модели с использованием звуковых файлов в Speech Studio
           href: quickstarts/speech-studio-test-model.md
         - name: Подготовка данных для службы пользовательского распознавания речи
           href: how-to-custom-speech-test-and-train.md
         - name: Проверка данных службы пользовательского распознавания речи
           href: how-to-custom-speech-inspect-data.md
-        - name: Оценка точности службы пользовательского распознавание речи
+        - name: Оценка и повышение точности результатов службы "Пользовательское распознавание речи"
           href: how-to-custom-speech-evaluate-data.md
-        - name: Повышение точности результатов службы "Пользовательское распознавание речи"
-          href: how-to-custom-speech-improve-accuracy.md
-        - name: Обучение модели для службы пользовательского распознавания речи
+        - name: Обучение и развертывание модели Пользовательского распознавания речи
           href: how-to-custom-speech-train-model.md
-        - name: Развертывание пользовательской модели
-          href: how-to-custom-speech-deploy-model.md
         - name: CI/CD для набора средств "Пользовательское распознавание речи"
           href: how-to-custom-speech-continuous-integration-continuous-deployment.md
         - name: Создание транскрипций с подписями человека
@@ -391,6 +387,10 @@
                       href: how-to-custom-commands-setup-web-endpoints.md
                     - name: Экспорт приложения Пользовательских голосовых команд в виде навыка
                       href: how-to-custom-commands-integrate-remote-skills.md
+                    - name: Обновление команды из клиентского приложения
+                      href: how-to-custom-commands-update-command-from-client.md
+                    - name: Обновление команды из конечной точки в Интернете
+                      href: how-to-custom-commands-update-command-from-web-endpoint.md
                 - name: Развертывание
                   items:
                     - name: Непрерывное развертывание с помощью Azure DevOps

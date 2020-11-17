@@ -2,6 +2,8 @@
   href: cut-planes.md
 - name: Отладка отрисовки
   href: debug-rendering.md
+- name: Эффект Френеля
+  href: fresnel-effect.md
 - name: Переопределение иерархического состояния
   href: override-hierarchical-state.md
 - name: Камера

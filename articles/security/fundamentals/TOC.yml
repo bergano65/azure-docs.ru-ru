@@ -38,6 +38,21 @@
           href: infrastructure-integrity.md
         - name: Защита данных
           href: protection-customer-data.md
+    - name: Целостность и безопасность платформы
+      href: platform.md
+      items:
+        - name: Безопасность встроенного ПО
+          href: firmware.md
+        - name: Безопасная загрузка
+          href: secure-boot.md
+        - name: Аттестация измеряемой загрузки и узла
+          href: measured-boot-host-attestation.md
+        - name: Проект Cerberus
+          href: project-cerberus.md
+        - name: Шифрование при хранении
+          href: encryption-atrest.md
+        - name: Безопасность гипервизора
+          href: hypervisor.md
     - name: Изоляция в облаке Azure
       href: isolation-choices.md
 - name: Управление удостоверениями

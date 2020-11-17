@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: eb17b8286ce994146c1fa9867cd8131a909c8ace
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: d04f689dec3a3c182c0da23007247c20c4f8063d
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146694"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94504396"
 ---
 # <a name="always-on-availability-group-on-sql-server-on-azure-vms"></a>Группы доступности Always On для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -72,13 +72,13 @@ ms.locfileid: "93146694"
 
 У вас есть несколько вариантов с разным уровнем автоматизации для развертывания групп доступности в SQL Server на виртуальных машинах Azure. 
 
-В следующей таблице собраны данные о доступных вариантах для сравнения. 
+В следующей таблице собраны данные о доступных вариантах для сравнения.
 
-| |**[Портал Azure](availability-group-azure-portal-configure.md)**|**[Azure CLI / PowerShell](./availability-group-az-commandline-configure.md)**|**[Шаблоны быстрого запуска](availability-group-quickstart-template-configure.md)**|**[Вручную](availability-group-manually-configure-prerequisites-tutorial.md)** | 
-|---------|---------|---------|--------- |---------|
+| | портал Azure; | Azure CLI / PowerShell | Шаблоны быстрого запуска | Вручную |
+|---------|---------|---------|---------|---------|
 |**Версия SQL Server** |2016 и выше |2016 и выше|2016 и выше|2012 и выше|
 |**Выпуск SQL Server** |Enterprise |Enterprise |Enterprise |Enterprise, Standard|
-|**Версия Windows Server**| 2016 и выше | 2016 и выше | 2016 и выше | Все| 
+|**Версия Windows Server**| 2016 и выше | 2016 и выше | 2016 и выше | Все|
 |**Автоматическое создание кластера**|Да|Да | Да |Нет|
 |**Автоматическое создание группы доступности** |Да |Нет|Нет|Нет|
 |**Независимое создание прослушивателя и подсистемы балансировки нагрузки** |Нет|Нет|Нет|Да|
@@ -90,9 +90,8 @@ ms.locfileid: "93146694"
 |**Аварийное восстановление с несколькими зонами в одном регионе**|Да|Да|Да|Да|
 |**Распределенная группа доступности без домена приложения**|Нет|Нет|Нет|Да|
 |**Распределенная группа доступности без кластера** |Нет|Нет|Нет|Да|
-||||||
 
-
+Дополнительные сведения см. в статьях о развертывании [вручную](availability-group-manually-configure-prerequisites-tutorial.md), с помощью [портала Azure](availability-group-azure-portal-configure.md), [Azure CLI или PowerShell](./availability-group-az-commandline-configure.md) и [шаблонов быстрого запуска](availability-group-quickstart-template-configure.md).
 
 ## <a name="considerations"></a>Рекомендации 
 

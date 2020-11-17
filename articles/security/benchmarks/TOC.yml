@@ -93,6 +93,8 @@
       href: ../../devtest-labs/security-baseline.md
     - name: Базовые средства безопасности Брандмауэра Azure
       href: ../../firewall/security-baseline.md
+    - name: Базовые средства безопасности Azure Front Door
+      href: ../../frontdoor/security-baseline.md
     - name: Базовые средства безопасности Функций Azure
       href: ../../azure-functions/security-baseline.md
     - name: Базовые средства безопасности Центра Интернета вещей Azure
@@ -139,6 +141,8 @@
       href: ../../container-registry/security-baseline.md
     - name: "Базовая конфигурация безопасности для Cosmos\_DB"
       href: ../../cosmos-db/security-baseline.md
+    - name: Базовые средства безопасности Управления затратами
+      href: ../../cost-management-billing/security-baseline.md
     - name: Базовые уровень безопасности защищенного хранилища
       href: ../fundamentals/customer-lockbox-security-baseline.md
     - name: Базовые средства безопасности Synapse Analytics

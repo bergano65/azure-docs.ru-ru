@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/06/2020
 ms.author: trbye
-ms.openlocfilehash: 6240cdb184e0e226e5d407c8d24fed7395a285c2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 434548d7d00468605ad0f1a52af99fbc4278adc1
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135811"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94482663"
 ---
 Одной из основных функций службы "Речь" является распознавание и преобразование человеческой речи (часто это называется преобразованием речи в текст). Из этого краткого руководство вы узнаете, как использовать пакет SDK для службы "Речь" в приложениях и продуктах для выполнения высококачественного преобразования речи в текст.
 
@@ -31,7 +31,7 @@ ms.locfileid: "93135811"
 
 ## <a name="create-a-speech-configuration"></a>Создание конфигурации службы "Речь"
 
-Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации. Создайте [`SpeechConfig`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig) с помощью ключа и региона. Идентификатор региона можно узнать в разделе о [поддержке регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#speech-sdk).
+Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](/cpp/cognitive-services/speech/speechconfig). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации. Создайте [`SpeechConfig`](/cpp/cognitive-services/speech/speechconfig) с помощью ключа и региона. Сведения о том, как найти пару "ключ-регион", см. в разделе [Поиск ключей и региона](../../../overview.md#find-keys-and-region).
 
 ```cpp
 using namespace std;
@@ -40,7 +40,7 @@ using namespace Microsoft::CognitiveServices::Speech;
 auto config = SpeechConfig::FromSubscription("<paste-your-subscription-key>", "<paste-your-region>");
 ```
 
-Существует несколько других способов инициализации [`SpeechConfig`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig):
+Существует несколько других способов инициализации [`SpeechConfig`](/cpp/cognitive-services/speech/speechconfig):
 
 * С помощью конечной точки: передайте конечную точку службы "Речь". Ключ или маркер авторизации являются необязательными.
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
@@ -51,7 +51,7 @@ auto config = SpeechConfig::FromSubscription("<paste-your-subscription-key>", "<
 
 ## <a name="recognize-from-microphone"></a>Распознавание речи с микрофона
 
-Чтобы распознать речь с микрофона устройства, создайте `AudioConfig` с помощью `FromDefaultMicrophoneInput()`. Затем инициализируйте [`SpeechRecognizer`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer), передав `audioConfig` и `config`.
+Чтобы распознать речь с микрофона устройства, создайте `AudioConfig` с помощью `FromDefaultMicrophoneInput()`. Затем инициализируйте [`SpeechRecognizer`](/cpp/cognitive-services/speech/speechrecognizer), передав `audioConfig` и `config`.
 
 ```cpp
 using namespace Microsoft::CognitiveServices::Speech::Audio;
@@ -68,7 +68,7 @@ cout << "RECOGNIZED: Text=" << result->Text << std::endl;
 
 ## <a name="recognize-from-file"></a>Распознавание речи из файла
 
-Чтобы распознавать речь из аудиофайла, а не с помощью микрофона, вам все равно нужно создать `AudioConfig`. Но при создании [`AudioConfig`](https://docs.microsoft.com/cpp/cognitive-services/speech/audio-audioconfig) вместо вызова `FromDefaultMicrophoneInput()` необходимо вызвать `FromWavFileInput()` и передать путь к файлу.
+Чтобы распознавать речь из аудиофайла, а не с помощью микрофона, вам все равно нужно создать `AudioConfig`. Но при создании [`AudioConfig`](/cpp/cognitive-services/speech/audio-audioconfig) вместо вызова `FromDefaultMicrophoneInput()` необходимо вызвать `FromWavFileInput()` и передать путь к файлу.
 
 ```cpp
 using namespace Microsoft::CognitiveServices::Speech::Audio;
@@ -82,17 +82,17 @@ cout << "RECOGNIZED: Text=" << result->Text << std::endl;
 
 ## <a name="recognize-speech"></a>Распознавание речи
 
-[Класс распознавателя](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer) для пакета SDK службы "Речь" для C++ предоставляет несколько методов, которые можно использовать для распознавания речи.
+[Класс распознавателя](/cpp/cognitive-services/speech/speechrecognizer) для пакета SDK службы "Речь" для C++ предоставляет несколько методов, которые можно использовать для распознавания речи.
 
 ### <a name="single-shot-recognition"></a>Одноразовое распознавание
 
-Под одноразовым распознаванием подразумевается асинхронное распознавание отдельного речевого фрагмента. Конец одного речевого фрагмента определяется путем прослушивания до тишины в конце, или пока не будет обработано максимум 15 секунд аудио. Ниже приведен пример асинхронного одноразового распознавания с помощью [`RecognizeOnceAsync`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer#recognizeonceasync):
+Под одноразовым распознаванием подразумевается асинхронное распознавание отдельного речевого фрагмента. Конец одного речевого фрагмента определяется путем прослушивания до тишины в конце, или пока не будет обработано максимум 15 секунд аудио. Ниже приведен пример асинхронного одноразового распознавания с помощью [`RecognizeOnceAsync`](/cpp/cognitive-services/speech/speechrecognizer#recognizeonceasync):
 
 ```cpp
 auto result = recognizer->RecognizeOnceAsync().get();
 ```
 
-Вам понадобиться написать код, чтобы вычислить результат. В этом примере вычисляется [`result->Reason`](https://docs.microsoft.com/cpp/cognitive-services/speech/recognitionresult#reason):
+Вам понадобиться написать код, чтобы вычислить результат. В этом примере вычисляется [`result->Reason`](/cpp/cognitive-services/speech/recognitionresult#reason):
 
 * Выводит результат распознавания: `ResultReason::RecognizedSpeech`
 * Если совпадений нет, сообщает об этом пользователю: `ResultReason::NoMatch`
@@ -126,9 +126,9 @@ switch (result->Reason)
 
 ### <a name="continuous-recognition"></a>Непрерывное распознавание
 
-Непрерывное распознавание является более сложным, чем одноразовое. Для получения результатов распознавания необходимо подписаться на события `Recognizing`, `Recognized`и `Canceled`. Чтобы отключить распознавание, необходимо вызвать [StopContinuousRecognitionAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer#stopcontinuousrecognitionasync). Ниже приведен пример того, как выполняется непрерывное распознавание входного аудиофайла.
+Непрерывное распознавание является более сложным, чем одноразовое. Для получения результатов распознавания необходимо подписаться на события `Recognizing`, `Recognized`и `Canceled`. Чтобы отключить распознавание, необходимо вызвать [StopContinuousRecognitionAsync](/cpp/cognitive-services/speech/speechrecognizer#stopcontinuousrecognitionasync). Ниже приведен пример того, как выполняется непрерывное распознавание входного аудиофайла.
 
-Начнем с определения входных данных и инициализации [`SpeechRecognizer`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer):
+Начнем с определения входных данных и инициализации [`SpeechRecognizer`](/cpp/cognitive-services/speech/speechrecognizer):
 
 ```cpp
 auto audioInput = AudioConfig::FromWavFileInput("YourAudioFile.wav");
@@ -141,12 +141,12 @@ auto recognizer = SpeechRecognizer::FromConfig(config, audioInput);
 promise<void> recognitionEnd;
 ```
 
-Мы будем подписываться на события, отправленные из [`SpeechRecognizer`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer).
+Мы будем подписываться на события, отправленные из [`SpeechRecognizer`](/cpp/cognitive-services/speech/speechrecognizer).
 
-* [`Recognizing`](https://docs.microsoft.com/cpp/cognitive-services/speech/asyncrecognizer#recognizing): Сигнал для событий, содержащих промежуточные результаты распознавания.
-* [`Recognized`](https://docs.microsoft.com/cpp/cognitive-services/speech/asyncrecognizer#recognized): Сигнал для событий, содержащих окончательные результаты распознавания (указывает на успешность попытки распознавания).
-* [`SessionStopped`](https://docs.microsoft.com/cpp/cognitive-services/speech/asyncrecognizer#sessionstopped): Сигнал для событий, указывающих на окончание распознавания (операция).
-* [`Canceled`](https://docs.microsoft.com/cpp/cognitive-services/speech/asyncrecognizer#canceled): Сигнал для событий, содержащих отмененные результаты распознавания (показывающий попытку распознавания, которая была отменена в результате ошибки распознавания или при прямом запросе об отмене, в случае сбоя транспортировки или протоколирования).
+* [`Recognizing`](/cpp/cognitive-services/speech/asyncrecognizer#recognizing): Сигнал для событий, содержащих промежуточные результаты распознавания.
+* [`Recognized`](/cpp/cognitive-services/speech/asyncrecognizer#recognized): Сигнал для событий, содержащих окончательные результаты распознавания (указывает на успешность попытки распознавания).
+* [`SessionStopped`](/cpp/cognitive-services/speech/asyncrecognizer#sessionstopped): Сигнал для событий, указывающих на окончание распознавания (операция).
+* [`Canceled`](/cpp/cognitive-services/speech/asyncrecognizer#canceled): Сигнал для событий, содержащих отмененные результаты распознавания (показывающий попытку распознавания, которая была отменена в результате ошибки распознавания или при прямом запросе об отмене, в случае сбоя транспортировки или протоколирования).
 
 ```cpp
 recognizer->Recognizing.Connect([](const SpeechRecognitionEventArgs& e)
@@ -187,7 +187,7 @@ recognizer->SessionStopped.Connect([&recognitionEnd](const SessionEventArgs& e)
     });
 ```
 
-Если все настроено, можно вызвать [`StopContinuousRecognitionAsync`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer#startcontinuousrecognitionasync).
+Если все настроено, можно вызвать [`StopContinuousRecognitionAsync`](/cpp/cognitive-services/speech/speechrecognizer#startcontinuousrecognitionasync).
 
 ```cpp
 // Starts continuous recognition. Uses StopContinuousRecognitionAsync() to stop recognition.
@@ -204,7 +204,7 @@ recognizer->StopContinuousRecognitionAsync().get();
 
 При использовании непрерывного распознавания вы можете включить обработку диктовки с помощью соответствующей функции "Включить диктовку". Этот режим приведет к тому, что экземпляр конфигурации речи будет интерпретировать словесные описания структуры предложения, например, пунктуацию. Например, речевой фрагмент "Живете ли вы в городе вопросительный знак" будет интерпретироваться как текст "Живете ли вы в городе?".
 
-Чтобы включить режим диктовки, используйте метод [`EnableDictation`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#enabledictation) в [`SpeechConfig`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig).
+Чтобы включить режим диктовки, используйте метод [`EnableDictation`](/cpp/cognitive-services/speech/speechconfig#enabledictation) в [`SpeechConfig`](/cpp/cognitive-services/speech/speechconfig).
 
 ```cpp
 config->EnableDictation();
@@ -212,13 +212,13 @@ config->EnableDictation();
 
 ## <a name="change-source-language"></a>Изменение исходного языка
 
-Распространенной задачей распознавания речи является указание языка ввода (или исходного языка). Давайте посмотрим, как изменить язык ввода на немецкий. В коде найдите [`SpeechConfig`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig), а затем добавьте следующую строку непосредственно под ней.
+Распространенной задачей распознавания речи является указание языка ввода (или исходного языка). Давайте посмотрим, как изменить язык ввода на немецкий. В коде найдите [`SpeechConfig`](/cpp/cognitive-services/speech/speechconfig), а затем добавьте следующую строку непосредственно под ней.
 
 ```cpp
 config->SetSpeechRecognitionLanguage("de-DE");
 ```
 
-[`SetSpeechRecognitionLanguage`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setspeechrecognitionlanguage) — это параметр, принимающий строку в качестве аргумента. Вы можете указать любое значение в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
+[`SetSpeechRecognitionLanguage`](/cpp/cognitive-services/speech/speechconfig#setspeechrecognitionlanguage) — это параметр, принимающий строку в качестве аргумента. Вы можете указать любое значение в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
 
 ## <a name="improve-recognition-accuracy"></a>Улучшение точности распознавания
 
@@ -227,9 +227,9 @@ config->SetSpeechRecognitionLanguage("de-DE");
 > [!IMPORTANT]
 > Функция "Список фраз" доступна только на английском языке.
 
-Чтобы использовать список фраз, сначала создайте объект [`PhraseListGrammar`](https://docs.microsoft.com/cpp/cognitive-services/speech/phraselistgrammar), а затем добавьте определенные слова и фразы с помощью [`AddPhrase`](https://docs.microsoft.com/cpp/cognitive-services/speech/phraselistgrammar#addphrase).
+Чтобы использовать список фраз, сначала создайте объект [`PhraseListGrammar`](/cpp/cognitive-services/speech/phraselistgrammar), а затем добавьте определенные слова и фразы с помощью [`AddPhrase`](/cpp/cognitive-services/speech/phraselistgrammar#addphrase).
 
-Любые изменения [`PhraseListGrammar`](https://docs.microsoft.com/cpp/cognitive-services/speech/phraselistgrammar) вступают в силу при следующем распознавании или после повторного подключения к службе "Речь".
+Любые изменения [`PhraseListGrammar`](/cpp/cognitive-services/speech/phraselistgrammar) вступают в силу при следующем распознавании или после повторного подключения к службе "Речь".
 
 ```cpp
 auto phraseListGrammar = PhraseListGrammar::FromRecognizer(recognizer);

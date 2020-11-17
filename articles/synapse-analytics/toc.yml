@@ -130,6 +130,8 @@
             - name: Устранение проблем с подключением к Synapse Studio
               href: troubleshoot/troubleshoot-synapse-studio-powershell.md
               displayname: powershell
+            - name: Устранение неполадок с подключением между Synapse Studio и хранилищем
+              href: troubleshoot/troubleshoot-synapse-studio-and-storage-connectivity.md
     - name: Практические руководства
       items:
         - name: Безопасность

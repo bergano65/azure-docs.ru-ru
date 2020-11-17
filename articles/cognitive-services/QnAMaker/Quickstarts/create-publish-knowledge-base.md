@@ -4,13 +4,13 @@ description: Базу знаний QnA Maker можно создать из со
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 05/26/2020
-ms.openlocfilehash: 1646666244eb2247d6e7127c4d4e8d39cb0af5ff
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.date: 11/09/2020
+ms.openlocfilehash: b22c73b3f0626b9938608e88c3382e3f5e8d97fc
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91777681"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94427485"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Краткое руководство. Создание, подготовка и публикация базы знаний QnA Maker
 
@@ -24,36 +24,75 @@ ms.locfileid: "91777681"
 
 ## <a name="create-your-first-qna-maker-knowledge-base"></a>Создание первой базы знаний QnA Maker
 
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
+
 1. Войдите на портал [QnAMaker.ai](https://QnAMaker.ai), используя учетные данные Azure.
 
-1. На портале QnA Maker выберите **Create a knowledge base** (Создать базу знаний).
+2. На портале QnA Maker выберите **Create a knowledge base** (Создать базу знаний).
 
-1. Пропустите **шаг 1** на странице **создания**, если у вас уже есть ресурс QnA Maker.
+3. Пропустите **шаг 1** на странице **создания**, если у вас уже есть ресурс QnA Maker.
 
     Если вы еще не создали ресурс, выберите **Create a QnA service** (Создать службу QnA). Откроется [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) для настройки службы QnA Maker в вашей подписке. Запишите идентификатор Azure Active Directory, подписку и имя ресурса QnA, выбранное при создании ресурса.
 
     Завершив создание ресурса на портале Azure, вернитесь на портал QnA Maker, обновите страницу браузера и продолжайте с **шага 2**.
 
-1. На **шаге 3** выберите Active Directory, подписку, службу (ресурс) и язык для всех баз знаний, созданных в службе.
+4. На **шаге 2** выберите Active Directory, подписку, службу (ресурс) и язык для всех баз знаний, создаваемых в этой службе.
 
     :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/qnaservice-selection.png" alt-text="Снимок экрана с выбранной базой данных и службой QnA Maker":::
 
-1. На **шаге 3** назовите свою базу знаний **Мой пример базы знаний QnA**.
+5. На **шаге 3** назовите свою базу знаний **Мой пример базы знаний QnA**.
 
-1. На **шаге 4** настройте параметры, используя значения из приведенной ниже таблицы.
+6. На **шаге 4** настройте параметры, используя значения из приведенной ниже таблицы.
 
     |Параметр|Значение|
     |--|--|
     |**Enable multi-turn extraction from URLs, .pdf or .docx files** (Включить многоэтапное извлечение из URL-адресов, файлов .pdf или .docx)|Флажок установлен|
-    |**Текст ответа по умолчанию**| `Quickstart - default answer not found.`|
+    |**Многоэтапное извлечение текста по умолчанию**| Выбор и вариант|
     |**Добавление URL-адреса**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
     |**Chit-chat** (Беседа)|Выберите значение **Professional** (Профессиональная)|
 
-1. На **шаге 5** выберите **Create your KB** (Создать базу знаний).
+7. На **шаге 5** выберите **Create your KB** (Создать базу знаний).
 
     Процесс извлечения, во время которого прочитывается документ и определяются вопросы и ответы, занимает несколько минут.
 
     Когда QnA Maker успешно создаст базы знаний, откроется страница **Knowledge base** (База знаний). На этой странице можно изменить содержимое базы знаний.
+
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
+
+1. Войдите на портал [QnAMaker.ai](https://QnAMaker.ai), используя учетные данные Azure.
+
+2. На портале QnA Maker выберите **Create a knowledge base** (Создать базу знаний).
+
+3. Пропустите **шаг 1** на странице **создания**, если у вас уже есть ресурс QnA Maker.
+
+    Если вы еще не создали ресурс, выберите **Create a QnA service** (Создать службу QnA). Откроется [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) для настройки службы QnA Maker в вашей подписке. Запишите идентификатор Azure Active Directory, подписку и имя ресурса QnA, выбранное при создании ресурса.
+
+    Завершив создание ресурса на портале Azure, вернитесь на портал QnA Maker, обновите страницу браузера и продолжайте с **шага 2**.
+
+4. На **шаге 2** выберите Active Directory, подписку, службу (ресурс) и язык для всех баз знаний, создаваемых в этой службе.
+
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/connect-your-knowledge-base.png" alt-text="Снимок экрана: выбор базы знаний в управляемой службе QnA Maker":::
+
+5. На **шаге 2** вы сможете настроить отдельный язык для каждой базы знаний, если вы впервые создаете базу знаний для этой службы. После указания параметров языка для первой базы знаний вы не сможете изменить их позднее.
+
+6. На  **шаге 3** присвойте базе знаний имя  **Мой пример базы знаний QnA**. 
+
+7. На **шаге 4** настройте параметры, используя значения из приведенной ниже таблицы.
+
+    |Параметр|Значение|
+    |--|--|
+    |**Enable multi-turn extraction from URLs, .pdf or .docx files** (Включить многоэтапное извлечение из URL-адресов, файлов .pdf или .docx)|Флажок установлен|
+    |**Многоэтапное извлечение текста по умолчанию**| Выбор и вариант|
+    |**Добавление URL-адреса**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
+    |**Chit-chat** (Беседа)|Выберите значение **Professional** (Профессиональная)|
+
+8. На **шаге 5** выберите **Create your KB** (Создать базу знаний).
+
+    Процесс извлечения, во время которого прочитывается документ и определяются вопросы и ответы, занимает несколько минут.
+
+    Когда QnA Maker успешно создаст базы знаний, откроется страница **Knowledge base** (База знаний). На этой странице можно изменить содержимое базы знаний.
+
+---
 
 ## <a name="add-a-new-question-and-answer-set"></a>Добавление нового набора вопросов и ответов
 
@@ -66,7 +105,7 @@ ms.locfileid: "91777681"
 
     ` * Azure QnA Maker service\n* Azure Cognitive Search\n* Azure web app\n* Azure app plan`
 
-    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/add-question-and-answer.png" alt-text="Снимок экрана с выбранной базой данных и службой QnA Maker":::
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/add-question-and-answer.png" alt-text="Добавьте вопрос в виде текста и ответа, отформатированного с помощью markdown.":::
 
     Символ markdown (`*`) используется для пунктов маркированного списка. Символ `\n` используется для новой строки.
 
@@ -78,16 +117,34 @@ ms.locfileid: "91777681"
 
 ## <a name="test-the-knowledge-base"></a>Проверка базы знаний
 
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
+
 1. На портале QnA Maker в правом верхнем углу выберите **Test** (Тестировать), чтобы проверить, вступили ли в силу внесенные изменения.
-1. В текстовом поле введите пример пользовательского запроса.
+2. В текстовом поле введите пример пользовательского запроса.
 
     `How many Azure services are used by a knowledge base?`
 
-    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-panel-in-qna-maker.png" alt-text="Снимок экрана с выбранной базой данных и службой QnA Maker":::
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-panel-in-qna-maker.png" alt-text="В текстовом поле введите пример пользовательского запроса.":::
 
-1. Выберите **Inspect** (Проверить), чтобы более подробно изучить ответ. Окно тестирования используется для проверки изменений, внесенных в базу знаний, перед публикацией своей базы знаний.
+3. Выберите **Inspect** (Проверить), чтобы более подробно изучить ответ. Окно тестирования используется для проверки изменений, внесенных в базу знаний, перед публикацией своей базы знаний.
 
-1. Выберите панель **Test** (Проверка) еще раз, чтобы закрыть панель **Test** (Проверка).
+4. Выберите панель **Test** (Проверка) еще раз, чтобы закрыть панель **Test** (Проверка).
+
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
+
+1. На портале QnA Maker в правом верхнем углу выберите **Test** (Тестировать), чтобы проверить, вступили ли в силу внесенные изменения.
+2. В текстовом поле введите пример пользовательского запроса.
+
+    `whats the size of the touchscreen`
+
+3. Если для базы знаний включена функция MRC (вариант **Display short answer** (Отображать короткий ответ)), то в области тестирования вместе с основным ответом вы увидите еще и точный ответ, если он доступен. 
+
+    ![Область тестирования с поддержкой управления](../media/conversational-context/test-pane-with-managed.png)
+    
+
+4. Выберите Inspect (Проверить), чтобы более подробно изучить ответ. Окно тестирования используется для проверки изменений, внесенных в базу знаний, перед публикацией своей базы знаний. 
+5. Выберите панель **Test** (Проверка) еще раз, чтобы закрыть панель **Test** (Проверка).
+---
 
 ## <a name="publish-the-knowledge-base"></a>Публикация базы знаний
 
@@ -133,7 +190,7 @@ ms.locfileid: "91777681"
 
     Чат-бот ответит, используя ответ из базы знаний.
 
-    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-web-chat.png" alt-text="Снимок экрана с выбранной базой данных и службой QnA Maker":::
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-web-chat.png" alt-text="Введите запрос пользователя в тестовый веб-чат.":::
 
 ## <a name="what-did-you-accomplish"></a>Что вы сделали
 
@@ -156,5 +213,4 @@ ms.locfileid: "91777681"
 
 * [Формат markdown в ответах](../reference-markdown-format.md)
 * [Источники данных](../concepts/knowledge-base.md) QnA Maker.
-
 

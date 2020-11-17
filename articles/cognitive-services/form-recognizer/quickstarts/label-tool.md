@@ -11,12 +11,12 @@ ms.date: 09/30/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: Обработка документов
-ms.openlocfilehash: 287315440199c4dc3ded1298532167d37d89a877
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 5df8ced885768308369599d94c5734fa0620c507
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976153"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360876"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных
 
@@ -37,6 +37,14 @@ ms.locfileid: "91976153"
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 
 [!INCLUDE [create resource](../includes/create-resource.md)]
+
+## <a name="try-it-out"></a>Попробуйте сейчас
+
+Чтобы протестировать веб-средство маркировки данных Распознавателя документов, перейдите на веб-сайт [FOTT](https://fott-preview.azurewebsites.net/).
+
+> [!div class="nextstepaction"]
+> [Средство маркировки данных Распознавателя документов](https://fott-preview.azurewebsites.net/)
+
 
 ## <a name="set-up-the-sample-labeling-tool"></a>Настройка средства маркировки данных
 
@@ -139,7 +147,7 @@ ms.locfileid: "91976153"
 * **Ключ API** — ключ подписки Распознавателя документов.
 * **Описание** — описание проекта (необязательно).
 
-:::image type="content" source="../media/label-tool/new-project.png" alt-text="Настройка подключения для средства маркировки данных.":::
+:::image type="content" source="../media/label-tool/new-project.png" alt-text="Страница создания проекта в средстве маркировки данных.":::
 
 ## <a name="label-your-forms"></a>Создание меток для форм
 
@@ -155,7 +163,7 @@ ms.locfileid: "91976153"
 
 А также покажет, какие таблицы извлечены автоматически. Щелкните значок таблицы или сетки в левой части документа, чтобы просмотреть извлеченную таблицу. Поскольку в этом кратком руководстве содержимое таблицы извлекается автоматически, мы будем не помечать содержимое таблицы, а полагаться на автоматическое извлечение.
 
-:::image type="content" source="../media/label-tool/table-extraction.png" alt-text="Настройка подключения для средства маркировки данных.":::
+:::image type="content" source="../media/label-tool/table-extraction.png" alt-text="Визуализация таблицы в примере средства маркировки данных.":::
 
 ### <a name="apply-labels-to-text"></a>Применение меток к тексту
 
@@ -201,7 +209,7 @@ ms.locfileid: "91976153"
 
 ---
 
-:::image type="content" source="../media/label-tool/main-editor-2-1.png" alt-text="Настройка подключения для средства маркировки данных.":::
+:::image type="content" source="../media/label-tool/main-editor-2-1.png" alt-text="Окно основного редактора в средстве маркировки данных.":::
 
 
 Выполните описанные выше действия, чтобы пометить как минимум пять форм.
@@ -256,7 +264,7 @@ ms.locfileid: "91976153"
 * Список тегов и оценка точности для каждого из них.
 
 
-:::image type="content" source="../media/label-tool/train-screen.png" alt-text="Настройка подключения для средства маркировки данных.":::
+:::image type="content" source="../media/label-tool/train-screen.png" alt-text="Представление обучения.":::
 
 Когда обучение завершится, оцените значение **средней точности**. Если оно слишком низкое, следует добавить дополнительные документы и повторить описанные выше шаги. Маркированные документы останутся в индексе проекта.
 
@@ -275,7 +283,7 @@ ms.locfileid: "91976153"
 
 Чтобы создать модели в средстве маркировки данных, щелкните значок Model Compose (Составление модели) слева (стрелку объединения). Выберите в левой части модели, которые необходимо объединить. Модели со значком со стрелками уже являются составными моделями. Нажмите кнопку "Составить". Во всплывающем окне назовите новую составную модель и щелкните "Составить". После завершения операции новая составная модель должна появиться в списке. 
 
-:::image type="content" source="../media/label-tool/model-compose.png" alt-text="Настройка подключения для средства маркировки данных.":::
+:::image type="content" source="../media/label-tool/model-compose.png" alt-text="Представление взаимодействия с пользователем при составлении модели.":::
 
 ---
 
