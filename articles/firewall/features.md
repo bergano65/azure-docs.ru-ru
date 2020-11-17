@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 10/08/2020
 ms.author: victorh
-ms.openlocfilehash: 7429be4430b2b520fb2a66b6b2c0dd138af8e501
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6c71d9325ff7c1c5d2e7eff03a587a28335efd72
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91850597"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94652150"
 ---
 # <a name="azure-firewall-features"></a>Функции службы "Брандмауэр Azure"
 
@@ -35,7 +35,7 @@ ms.locfileid: "91850597"
 - [Несколько общедоступных IP-адресов](#multiple-public-ip-addresses)
 - [Ведение журнала Azure Monitor](#azure-monitor-logging)
 - [Принудительное туннелирование](#forced-tunneling)
-- [Сертификаты](#certifications)
+- [Сертификация](#certifications)
 
 ## <a name="built-in-high-availability"></a>высокую доступность;
 
@@ -103,7 +103,7 @@ ms.locfileid: "91850597"
 
 Все события интегрируются с Azure Monitor, позволяя архивировать журналы в учетную запись хранения, передавать события в концентратор событий или отправлять их в журналы Azure Monitor. Примеры журналов Azure Monitor см. в разделе [журналы Azure Monitor для брандмауэра Azure](log-analytics-samples.md).
 
-Дополнительные сведения см. в статье [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md). 
+Дополнительные сведения см. в статье [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./firewall-diagnostics.md). 
 
 Книга брандмауэра Azure предоставляет гибкий холст для анализа данных брандмауэра Azure. Его можно использовать для создания многофункциональных визуальных отчетов в портал Azure. Дополнительные сведения см. в статье [мониторинг журналов с помощью книги брандмауэра Azure](firewall-workbook.md).
 
@@ -115,6 +115,6 @@ ms.locfileid: "91850597"
 
 Брандмауэр Azure соответствует требованиям стандартов Payment Card Industry Data Security Standard (PCI DSS), Международной организация по стандартизации (ISO) и ICSA Labs, а также требованиям к отчетам System and Organization Controls (SOC). Дополнительные сведения см. в статье о [сертификатах соответствия Брандмауэра Azure](compliance-certifications.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Логика обработки правил Брандмауэра Azure](rule-processing.md)

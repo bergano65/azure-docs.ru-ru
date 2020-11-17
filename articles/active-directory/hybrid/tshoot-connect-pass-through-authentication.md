@@ -16,12 +16,12 @@ ms.date: 07/27/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a602405065a41cb26b2ae5303d12c45ed21616f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 224ccaeace91288171db42d2b8b8cf8c21a352e0
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91741199"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94652524"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -85,7 +85,7 @@ ms.locfileid: "91741199"
 
 Перейдите в раздел **Azure Active Directory**  ->  **входы** в [центр администрирования Azure Active Directory](https://aad.portal.azure.com/) и щелкните действие входа конкретного пользователя. Найдите поле **КОД ОШИБКИ ВХОДА**. Сопоставьте значение этого поля c причиной сбоя и способом разрешения с помощью следующей таблицы:
 
-|Код ошибки входа|Причина ошибки входа|Решение
+|Код ошибки входа|Причина ошибки входа|Разрешение
 | --- | --- | ---
 | 50144 | Истек срок действия пароля пользователя Active Directory. | Сбросьте пароль пользователя в локальной службе Active Directory.
 | 80001 | Агент аутентификации недоступен. | Установите и зарегистрируйте агент аутентификации.
@@ -156,6 +156,8 @@ ms.locfileid: "91741199"
 Чтобы посмотреть ошибки, связанные с агентом проверки подлинности, откройте на сервере приложение "Просмотр событий" и проверьте расположение **Application and Service Logs\Microsoft\AzureAdConnect\AuthenticationAgent\Admin**.
 
 Для получения подробных сведений включите журнал "Сеанс" (кликните правой кнопкой мыши в приложении "Просмотр событий", чтобы найти этот параметр). Не запускайте агент аутентификации со включенным журналом во время обычной работы. Используйте его только для устранения неполадок. Содержимое этого журнала будет видно только после того, как он снова будет отключен.
+
+Манифест событий агента PTA можно найти [здесь](https://msazure.visualstudio.com/One/_git/AD-AppProxy?path=%2Fsrc%2FProduct%2FMUC%2FPTADiagnosticsResource%2FPTADiagnosticsResource%2FPTAConnectorDiagnosticsResource%2FPTAConnectorEventManifest.man&_a=contents&version=GBmaster).
 
 ### <a name="detailed-trace-logs"></a>Подробные журналы трассировки
 
