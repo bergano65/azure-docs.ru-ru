@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 11/16/2020
 ms.author: victorh
-ms.openlocfilehash: 3569ae130813eb0aaf14ec3d8d4e5cfac3e98c6f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 95ca4933b97199ba6d8ac1bed7587af5d3bd559f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095653"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648129"
 ---
 # <a name="tls-termination-with-key-vault-certificates"></a>Завершение TLS с сертификатами Key Vault
 
@@ -71,7 +71,9 @@ ms.locfileid: "93095653"
 
 1. **Настройка шлюза приложений**
 
-   После выполнения двух предыдущих шагов можно настроить или изменить существующий шлюз приложений для использования управляемого удостоверения, назначенного пользователем. Можно также настроить SSL-сертификат прослушивателя HTTP, чтобы он указывал на полный URI Key Vault сертификата или секретного идентификатора.
+   После выполнения двух предыдущих шагов можно настроить или изменить существующий шлюз приложений для использования управляемого удостоверения, назначенного пользователем. Дополнительные сведения см. в разделе [Set-азаппликатионгатевайидентити](/powershell/module/az.network/set-azapplicationgatewayidentity).
+
+   Можно также настроить SSL-сертификат прослушивателя HTTP, чтобы он указывал на полный URI Key Vault сертификата или секретного идентификатора.
 
    ![Сертификаты хранилища ключей](media/key-vault-certs/ag-kv.png)
 

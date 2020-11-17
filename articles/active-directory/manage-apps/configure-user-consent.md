@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperfq2
-ms.openlocfilehash: c1c0c3038c687b7f91d3c75d8c4c9589c5e245a3
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 1617015d6d4a026d5dadda667dcd03447a20c288
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427636"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94649506"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Настройка согласия конечных пользователей для приложений
 
@@ -57,7 +57,7 @@ ms.locfileid: "92427636"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Вы можете использовать последний модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview&preserve-view=true), чтобы выбрать политику согласия приложения, определяющую согласие пользователя для приложений.
+Вы можете использовать последний модуль предварительной версии Azure AD PowerShell, [AzureADPreview](/powershell/azure/active-directory/install-adv2?preserve-view=true&view=azureadps-2.0-preview), чтобы выбрать политику согласия приложения, определяющую согласие пользователя для приложений.
 
 #### <a name="disable-user-consent"></a>Отключение согласия пользователя
 
@@ -101,7 +101,7 @@ Set-AzureADMSAuthorizationPolicy `
 
 ## <a name="risk-based-step-up-consent"></a>Согласие на действия на основе риска
 
-Повышение уровня согласия на основе рисков позволяет снизить уязвимость пользователей для вредоносных приложений, которые делают [незаконные запросы на согласие](https://docs.microsoft.com/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants). Если корпорация Майкрософт обнаружит рискованный запрос согласия пользователя, запрос будет перенаправлен администратору. Эта возможность включена по умолчанию, но поведение будет изменено только при включенном согласии конечных пользователей.
+Повышение уровня согласия на основе рисков позволяет снизить уязвимость пользователей для вредоносных приложений, которые делают [незаконные запросы на согласие](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants). Если корпорация Майкрософт обнаружит рискованный запрос согласия пользователя, запрос будет перенаправлен администратору. Эта возможность включена по умолчанию, но поведение будет изменено только при включенном согласии конечных пользователей.
 
 При обнаружении рискованного запроса на согласие будет отображаться сообщение о необходимости утверждения администратором. Если [рабочий процесс запроса согласия администратора](configure-admin-consent-workflow.md) включен, пользователь может отправить запрос администратору для дальнейшей проверки непосредственно из запроса согласия. Если он не включен, отображается следующее сообщение:
 
@@ -114,9 +114,9 @@ Set-AzureADMSAuthorizationPolicy `
 
 ### <a name="disable-or-re-enable-risk-based-step-up-consent-using-powershell"></a>Отключение и повторное включение повышения уровня согласия на основе риска с помощью PowerShell
 
-Вы можете использовать модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true), чтобы отключить перенаправление согласия администратору в случаях, когда корпорация Майкрософт обнаружит риск, или повторно включить его, если оно было отключено.
+Вы можете использовать модуль предварительной версии Azure AD PowerShell, [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview), чтобы отключить перенаправление согласия администратору в случаях, когда корпорация Майкрософт обнаружит риск, или повторно включить его, если оно было отключено.
 
-1. Убедитесь, что используете модуль [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true). Этот важно, если вы установили модуль [AzureAD](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0&preserve-view=true) и модуль [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true).
+1. Убедитесь, что используете модуль [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview). Этот важно, если вы установили модуль [AzureAD](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) и модуль [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview).
 
     ```powershell
     Remove-Module AzureAD
@@ -182,7 +182,7 @@ Set-AzureADMSAuthorizationPolicy `
 * [Настройка рабочего процесса согласия администратора](configure-admin-consent-workflow.md)
 * [Узнайте, как управлять согласием для приложений и оценивать запросы на согласие](manage-consent-requests.md)
 * [Предоставление приложению согласия администратора на уровне арендатора](grant-admin-consent.md)
-* [Разрешения и согласие для платформы удостоверений Майкрософт](../develop/active-directory-v2-scopes.md)
+* [Разрешения и согласие для платформы удостоверений Майкрософт](../develop/v2-permissions-and-consent.md)
 
 Получение справки или ответов на вопросы:
 * [Azure AD в StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

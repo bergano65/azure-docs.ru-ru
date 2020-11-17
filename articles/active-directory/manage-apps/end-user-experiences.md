@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: kenwith
 ms.reviewer: arvindh
-ms.openlocfilehash: 8968fd54968f3115641d2315a534ba61a247a06d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9bcf45cdfbadbf16f48f8f2ac3bd0c6320a2803f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90605130"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94649234"
 ---
 # <a name="end-user-experiences-for-applications-in-azure-active-directory"></a>Возможности для взаимодействия пользователя с приложениями в Azure Active Directory
 
@@ -37,13 +37,13 @@ Azure Active Directory (Azure AD) предоставляет несколько 
 
 Мои приложения отделены от портал Azure и не требует, чтобы у пользователей была подписка Azure или Подписка Microsoft 365.
 
-Дополнительные сведения о моих приложениях Azure AD см. в статье [Введение в мои приложения](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о моих приложениях Azure AD см. в статье [Введение в мои приложения](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="microsoft-365-application-launcher"></a>Средство запуска приложений Microsoft 365
 
 Для организаций, развернутых Microsoft 365, приложения, назначенные пользователям через Azure AD, также будут отображаться на портале Office 365 по адресу [https://portal.office.com/myapps](https://portal.office.com/myapps) . Это упрощает и удобно для пользователей в организации запускать свои приложения без использования второго портала и является рекомендуемым решением для запуска приложений для организаций, использующих Microsoft 365.
 
-Дополнительные сведения о средстве запуска приложений Office 365 см. в статье [Добавление приложений в средство запуска приложений Office 365](https://msdn.microsoft.com/office/office365/howto/connect-your-app-to-o365-app-launcher).
+Дополнительные сведения о средстве запуска приложений Office 365 см. в статье [Добавление приложений в средство запуска приложений Office 365](/previous-versions/office/office-365-api/).
 
 ## <a name="direct-sign-on-to-federated-apps"></a>Прямой вход в федеративные приложения
 

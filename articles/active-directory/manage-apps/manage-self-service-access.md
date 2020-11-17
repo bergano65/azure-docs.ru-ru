@@ -15,16 +15,16 @@ ms.topic: how-to
 ms.date: 04/20/2020
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bd6ddf58b3a6e8eb8c618ded335c699fc93328c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: dfa7530617830de99d752edcf4545300525ddbe8
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362371"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94649217"
 ---
 # <a name="how-to-configure-self-service-application-assignment"></a>Настройка назначения самостоятельного доступа к приложениям
 
-Прежде чем пользователи смогут самостоятельно обнаруживать приложения из своих приложений, необходимо включить **самостоятельный доступ** к приложениям, чтобы пользователи могли самостоятельно обнаруживать и запрашивать доступ к. Эта функция доступна для приложений, добавленных из [коллекции Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app), [AD application proxy Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) или добавленных с помощью [согласия пользователя или администратора](https://docs.microsoft.com/azure/active-directory/develop/application-consent-experience). 
+Прежде чем пользователи смогут самостоятельно обнаруживать приложения из своих приложений, необходимо включить **самостоятельный доступ** к приложениям, чтобы пользователи могли самостоятельно обнаруживать и запрашивать доступ к. Эта функция доступна для приложений, добавленных из [коллекции Azure AD](./add-application-portal.md), [AD application proxy Azure](./application-proxy.md) или добавленных с помощью [согласия пользователя или администратора](../develop/application-consent-experience.md). 
 
 Эта функция представляет собой отличный способ сэкономить время и деньги в ИТ-подразделении. Мы настоятельно рекомендуем использовать ее в развертывании современных приложений с помощью Azure Active Directory.
 
@@ -81,5 +81,5 @@ ms.locfileid: "92362371"
 
 После завершения настройки приложения самообслуживания пользователи могут перейти в раздел " [Мои приложения](https://myapps.microsoft.com/) " и нажать кнопку **добавить приложения самообслуживания** , чтобы найти приложения, которые включены с самостоятельным доступом. Бизнес-утверждающие также видят уведомление в своих [приложениях](https://myapps.microsoft.com/). Вы можете получать уведомления по электронной почте, когда пользователь запрашивает доступ к приложению, требующему утверждения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Настройка Azure Active Directory для самостоятельного управления группами](../enterprise-users/groups-self-service-management.md)

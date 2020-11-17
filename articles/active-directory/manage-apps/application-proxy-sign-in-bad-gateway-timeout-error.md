@@ -16,12 +16,12 @@ ms.date: 05/21/2019
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18c3b0397a0ad3e9e368d1a14e20a999ced5545b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0339e9f7688555b4d99c2d3255461b5675f642ff
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88690278"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94649557"
 ---
 # <a name="cant-access-this-corporate-application-error-when-using-an-application-proxy-application"></a>Ошибка "Can't Access this Corporate Application" (Не удается обратиться к этому корпоративному приложению) при использовании приложения прокси приложения
 
@@ -87,7 +87,7 @@ ms.locfileid: "88690278"
 
 ## <a name="check-for-other-connector-errors"></a>Проверка других ошибок соединителя
 
-Если ничего из приведенного выше не позволяет устранить неполадку, нужно искать проблемы или ошибки в самом соединителе. Некоторые распространенные ошибки приведены в [документе по устранению неполадок](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-troubleshoot#connector-errors).
+Если ничего из приведенного выше не позволяет устранить неполадку, нужно искать проблемы или ошибки в самом соединителе. Некоторые распространенные ошибки приведены в [документе по устранению неполадок](./application-proxy-troubleshoot.md#connector-errors).
 
 Для выявления ошибок можно просмотреть журналы соединителя. Многие сообщения об ошибках содержат более конкретные рекомендации по устранению неполадок. Сведения о просмотре журналов см. в разделе [Как все устроено](application-proxy-connectors.md#under-the-hood).
 

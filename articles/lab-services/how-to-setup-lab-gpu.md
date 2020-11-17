@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: abd182339719f19a521feed95f7cfbed6942b3e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3cbca82ba88baf5ddda2a6d7a6cdd35b62f28b8e
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91404788"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647942"
 ---
 # <a name="set-up-a-lab-with-gpu-virtual-machines"></a>Настройка лаборатории с помощью виртуальных машин GPU
 
@@ -30,14 +30,14 @@ ms.locfileid: "91404788"
 
 | Размер | Ядра | ОЗУ | Описание | 
 | ---- | ----- | --- | ----------- | 
-| Малый GPU (вычисления) | -&nbsp;6 &nbsp; ядер<br>-&nbsp;56 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NC6](https://docs.microsoft.com/azure/virtual-machines/nc-series) |Этот размер лучше всего подходит для ресурсоемких приложений, таких как искусственный интеллект (ии) и глубокое обучение. |
+| Малый GPU (вычисления) | -&nbsp;6 &nbsp; ядер<br>-&nbsp;56 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NC6](../virtual-machines/nc-series.md) |Этот размер лучше всего подходит для ресурсоемких приложений, таких как искусственный интеллект (ии) и глубокое обучение. |
 
 Размеры GPU *визуализации* предназначены для приложений, интенсивно использующих графические объекты.  Например, [тип инженерного класса солидворкс](./class-type-solidworks.md) показывает, что используется **малый размер GPU (визуализация)** .  Графический процессор визуализации подходит для этого типа класса, так как студенты взаимодействуют с средой СОЛИДВОРКС 3D (CAD), предназначенной для моделирования и визуализации сплошных объектов.
 
 | Размер | Ядра | ОЗУ | Описание | 
 | ---- | ----- | --- | ----------- | 
-| Малый GPU (визуализация) | -&nbsp;6 &nbsp; ядер<br>-&nbsp;56 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NV6](https://docs.microsoft.com/azure/virtual-machines/nv-series) | Этот размер лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования, в которых используются такие платформы, как OpenGL и DirectX. |
-| Средний GPU (визуализация) | -&nbsp;12 &nbsp; ядер<br>-&nbsp;112 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NV12](https://docs.microsoft.com/azure/virtual-machines/nv-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) | Этот размер лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования, в которых используются такие платформы, как OpenGL и DirectX. |
+| Малый GPU (визуализация) | -&nbsp;6 &nbsp; ядер<br>-&nbsp;56 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NV6](../virtual-machines/nv-series.md) | Этот размер лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования, в которых используются такие платформы, как OpenGL и DirectX. |
+| Средний GPU (визуализация) | -&nbsp;12 &nbsp; ядер<br>-&nbsp;112 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Этот размер лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования, в которых используются такие платформы, как OpenGL и DirectX. |
 
 > [!NOTE]
 > Некоторые из этих размеров виртуальных машин могут не отображаться в списке при создании лаборатории для аудитории. Этот список заполняется с учетом текущей емкости в расположении лаборатории. Если создатель учетной записи лаборатории [разрешил авторам лабораторий выбрать расположение для лабораторий](allow-lab-creator-pick-lab-location.md), вы можете попробовать другое расположение для лаборатории и узнать, доступен ли там нужный размер виртуальной машины. Сведения о доступности виртуальных машин см. [в разделе продукты, доступные по регионам](https://azure.microsoft.com/regions/services/?products=virtual-machines).
@@ -64,8 +64,8 @@ ms.locfileid: "91404788"
 
    ![Снимок экрана со страницей загрузки драйвера NVIDIA](./media/how-to-setup-gpu/nvidia-driver-download.png) 
 
-   a. В браузере перейдите на [страницу загрузки драйвера NVIDIA](https://www.nvidia.com/Download/index.aspx).  
-   b. Задайте **Тип продукта** **Tesla**.  
+   А. В браузере перейдите на [страницу загрузки драйвера NVIDIA](https://www.nvidia.com/Download/index.aspx).  
+   Б. Задайте **Тип продукта** **Tesla**.  
    c. Присвойте **серии продуктов** **серии K**.  
    d. Укажите **операционную систему** в соответствии с типом базового образа, выбранного при создании лаборатории.  
    д) Задайте для набора **средств CUDA** версию драйвера CUDA, которая вам нужна.  
@@ -76,7 +76,7 @@ ms.locfileid: "91404788"
 1. После установки драйверов и другого программного обеспечения, необходимого для вашего класса, выберите **опубликовать** , чтобы создать виртуальные машины учащихся.
 
 > [!NOTE]
-> Если вы используете образ Linux, после загрузки установщика установите драйверы, следуя инструкциям в [статье Установка драйверов CUDA в Linux](https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup?toc=/azure/virtual-machines/linux/toc.json#install-cuda-drivers-on-n-series-vms).
+> Если вы используете образ Linux, после загрузки установщика установите драйверы, следуя инструкциям в [статье Установка драйверов CUDA в Linux](../virtual-machines/linux/n-series-driver-setup.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#install-cuda-drivers-on-n-series-vms).
 
 #### <a name="install-the-visualization-gpu-drivers"></a>Установка драйверов графического процессора визуализации
 
@@ -85,8 +85,8 @@ ms.locfileid: "91404788"
 1. При [создании лаборатории](./how-to-manage-classroom-labs.md)в мастере создания лаборатории отключите параметр **установить драйверы GPU** .
 1. После создания лаборатории подключитесь к виртуальной машине шаблона, чтобы установить соответствующие драйверы.
 1. Установите драйверы сетки, предоставляемые корпорацией Майкрософт, на виртуальную машину шаблона, следуя инструкциям для вашей операционной системы:
-   -  [Драйверы Windows NVIDIA GRID](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup#nvidia-grid-drivers)
-   -  [Драйверы сетки для Linux NVIDIA](https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup?toc=/azure/virtual-machines/linux/toc.json#nvidia-grid-drivers)
+   -  [Драйверы Windows NVIDIA GRID](../virtual-machines/windows/n-series-driver-setup.md#nvidia-grid-drivers)
+   -  [Драйверы сетки для Linux NVIDIA](../virtual-machines/linux/n-series-driver-setup.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#nvidia-grid-drivers)
   
 1. Перезапустите виртуальную машину шаблона.
 1. Проверьте правильность установки драйверов, следуя инструкциям в разделе [Проверка установленных драйверов](how-to-setup-lab-gpu.md#validate-the-installed-drivers) .
@@ -96,9 +96,9 @@ ms.locfileid: "91404788"
 В этом разделе описывается, как проверить правильность установки драйверов GPU.
 
 #### <a name="windows-images"></a>Образы Windows
-1.  Следуйте инструкциям в разделе "Проверка установки драйвера" статьи [Установка драйверов GPU NVIDIA на виртуальных машинах серии N под управлением Windows](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup#verify-driver-installation).
+1.  Следуйте инструкциям в разделе "Проверка установки драйвера" статьи [Установка драйверов GPU NVIDIA на виртуальных машинах серии N под управлением Windows](../virtual-machines/windows/n-series-driver-setup.md#verify-driver-installation).
 1.  Если вы используете графический процессор *визуализации* , вы также можете:
-    - Просмотр и Настройка параметров GPU на панели управления NVIDIA. Для этого в **панели управления Windows**выберите **оборудование**, а затем щелкните **элемент Панель управления NVIDIA**.
+    - Просмотр и Настройка параметров GPU на панели управления NVIDIA. Для этого в **панели управления Windows** выберите **оборудование**, а затем щелкните **элемент Панель управления NVIDIA**.
 
       ![Снимок экрана: панель управления Windows, отображающая ссылку на панель управления NVIDIA](./media/how-to-setup-gpu/control-panel-nvidia-settings.png) 
 
@@ -110,7 +110,7 @@ ms.locfileid: "91404788"
       > Доступ к параметрам панели управления NVIDIA можно получить только для графических процессоров *визуализации* .  При попытке открыть панель управления NVIDIA для вычислений GPU возникает следующая ошибка: "Параметры экрана NVIDIA недоступны.  В данный момент не используется дисплей, присоединенный к GPU NVIDIA. "  Аналогичным образом сведения о производительности GPU в диспетчере задач предоставляются только для графических процессоров визуализации.
 
 #### <a name="linux-images"></a>Образы Linux
-Следуйте инструкциям в разделе "Проверка установки драйвера" статьи [Установка драйверов GPU NVIDIA на виртуальных машинах серии N под управлением Linux](https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup#verify-driver-installation).
+Следуйте инструкциям в разделе "Проверка установки драйвера" статьи [Установка драйверов GPU NVIDIA на виртуальных машинах серии N под управлением Linux](../virtual-machines/linux/n-series-driver-setup.md#verify-driver-installation).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи:
@@ -118,6 +118,3 @@ ms.locfileid: "91404788"
 - [Создание и администрирование лабораторий для аудитории](how-to-manage-classroom-labs.md)
 - [Тип класса СОЛИДВОРКС Computer-автоматизированного проектирования (CAD)](class-type-solidworks.md)
 - [Тип класса MATLAB (матричная лаборатория)](class-type-matlab.md)
-
-
-

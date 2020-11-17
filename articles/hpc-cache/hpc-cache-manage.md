@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: v-erkel
-ms.openlocfilehash: 19950ca215abbac3a56bdb901448c9d92ad369be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 067b12d4dcfd5ba2b730204ef680b900d79f1b72
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613065"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648078"
 ---
 # <a name="manage-your-cache"></a>Управление кэшем
 
@@ -58,7 +58,7 @@ ms.locfileid: "91613065"
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Временное приостановка кэша с помощью команды [AZ HPC-Cache остановить](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-stop) . Это действие допустимо только в том случае, если состояние кэша является **работоспособным** или **сниженным**.
 
@@ -113,11 +113,11 @@ $ az hpc-cache start --name doc-cache0629
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Используйте [AZ HPC-Cache Flush](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-flush) , чтобы принудительно записать все измененные данные в целевые объекты хранилища.
 
-Пример.
+Пример
 
 ```azurecli
 $ az hpc-cache flush --name doc-cache0629 --resource-group doc-rg
@@ -161,7 +161,7 @@ $
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 На Azure CLI новые сведения о программном обеспечении включаются в конец отчета о состоянии кэша. (Для проверки используйте команду [AZ HPC-Cache](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-show) .) Найдите строку "Упградестатус" в сообщении.
 
@@ -225,11 +225,11 @@ $
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Чтобы окончательно удалить кэш, воспользуйтесь командой Azure CLI [AZ HPC-Cache Delete](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-delete) .
 
-Пример.
+Пример
 ```azurecli
 $ az hpc-cache delete --name doc-cache0629
  - Running ..
@@ -255,7 +255,7 @@ $
 
 Эти диаграммы являются частью встроенных средств мониторинга и анализа Azure. Дополнительные средства и оповещения можно найти на страницах под заголовком **мониторинг** на боковой панели портала. Дополнительные сведения см. в разделе "портал" [документации по Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md#monitoring-in-the-azure-portal).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [метриках и средствах статистики Azure](../azure-monitor/index.yml)
 * Получение [помощи по кэшу Azure HPC](hpc-cache-support-ticket.md)

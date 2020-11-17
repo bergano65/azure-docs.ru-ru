@@ -15,12 +15,12 @@ ms.date: 04/08/2019
 ms.author: kenwith
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16af484e77787ee1d729ce97eec8c666bf925837
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 873a87ed2c75d41e0a249bde4b6a29921b7e5ce5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763590"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648061"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Настройка поведения при входе в Azure Active Directory для приложения с помощью политики обнаружения домашней области
 
@@ -207,7 +207,7 @@ Get-AzureADPolicy
 #### <a name="step-2-locate-the-service-principal-to-which-to-assign-the-policy"></a>Шаг 2. Поиск субъекта-службы для назначения политики  
 Чтобы назначить политику субъектам-службам, необходимо знать их идентификаторы **ObjectID**. Существует несколько способов получения идентификатора **ObjectID** субъектов-служб.    
 
-Можно использовать портал или отправить запрос к [Microsoft Graph](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta). Можно также открыть [Graph Explorer Tool](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD, чтобы просмотреть список всех субъектов-служб в своей организации. 
+Можно использовать портал или отправить запрос к [Microsoft Graph](/graph/api/resources/serviceprincipal?view=graph-rest-beta). Можно также открыть [Graph Explorer Tool](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD, чтобы просмотреть список всех субъектов-служб в своей организации. 
 
 Так как вы используете PowerShell, вы можете использовать следующий командлет, чтобы получить список субъектов-служб и их идентификаторов.
 
@@ -267,6 +267,6 @@ Remove-AzureADServicePrincipalPolicy -id <ObjectId of the Service Principal>  -P
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
 ## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения о принципах работы аутентификации в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
+- Дополнительные сведения о принципах работы аутентификации в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../develop/authentication-vs-authorization.md).
 - Дополнительные сведения о единый вход пользователей см. в статье [единый вход в приложения в Azure Active Directory](what-is-single-sign-on.md).
 - Обзор всего содержимого, связанного с разработчиками, см. на веб- [платформе Microsoft Identity](../develop/v2-overview.md) .

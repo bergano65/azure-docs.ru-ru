@@ -11,16 +11,16 @@ ms.workload: identity
 ms.date: 07/30/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 49191ffc0033559f0668a5330b8c91643dee39d3
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 8fc26b00214106aa08e0e6e4c41f9f05aca9344d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073977"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648044"
 ---
 # <a name="understand-linked-sign-on"></a>Общие сведения о связанном входе
 
-В [серии "быстрый](view-applications-portal.md) запуск" по управлению приложениями вы узнали, как использовать Azure AD в качестве поставщика удостоверений (IDP) для приложения. В руководстве по быстрому использованию вы настраиваете единый вход на основе SAML или OIDC. Также **связан**другой параметр. Эта статья содержит более подробные сведения о связанном параметре.
+В [серии "быстрый](view-applications-portal.md) запуск" по управлению приложениями вы узнали, как использовать Azure AD в качестве поставщика удостоверений (IDP) для приложения. В руководстве по быстрому использованию вы настраиваете единый вход на основе SAML или OIDC. Также **связан** другой параметр. Эта статья содержит более подробные сведения о связанном параметре.
 
 **Связанный** параметр позволяет настроить целевое расположение, когда пользователь выбирает приложение в приложении " [Мои приложения](https://myapps.microsoft.com/) " или на портале Office 365.
 
@@ -40,7 +40,7 @@ ms.locfileid: "92073977"
 > [!IMPORTANT] 
 > Существует несколько сценариев, в которых вариант **единого входа** не будет находиться в навигации для приложения в **корпоративных приложениях**. 
 >
-> Если приложение было зарегистрировано с помощью **Регистрация приложений** то функция единого входа будет настроена для использования OIDC OAuth по умолчанию. В этом случае параметр **единого входа** не отображается в области навигации в разделе **корпоративные приложения**. При использовании **Регистрация приложений** для добавления пользовательского приложения необходимо настроить параметры в файле манифеста. Дополнительные сведения о файле манифеста см. в разделе [Azure Active Directory App manifest](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest). Дополнительные сведения о стандартах единого входа см. в статье [Проверка подлинности и авторизация с помощью платформы Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/authentication-vs-authorization#authentication-and-authorization-using-microsoft-identity-platform). 
+> Если приложение было зарегистрировано с помощью **Регистрация приложений** то функция единого входа будет настроена для использования OIDC OAuth по умолчанию. В этом случае параметр **единого входа** не отображается в области навигации в разделе **корпоративные приложения**. При использовании **Регистрация приложений** для добавления пользовательского приложения необходимо настроить параметры в файле манифеста. Дополнительные сведения о файле манифеста см. в разделе [Azure Active Directory App manifest](../develop/reference-app-manifest.md). Дополнительные сведения о стандартах единого входа см. в статье [Проверка подлинности и авторизация с помощью платформы Microsoft Identity](../develop/authentication-vs-authorization.md#authentication-and-authorization-using-microsoft-identity-platform). 
 >
 > В других сценариях, где в переходе будет отсутствовать **единый вход** , появится сообщение о том, что приложение размещено в другом клиенте или если у вашей учетной записи нет необходимых разрешений (глобальный администратор, администратор облачных приложений, администратор приложения или владелец субъекта-службы). Кроме того, разрешения могут вызвать сценарий, в котором можно открыть **единый вход** , но сохранить его не удастся. Дополнительные сведения об административных ролях Azure AD см. в разделе ( https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) .
 
@@ -52,5 +52,5 @@ ms.locfileid: "92073977"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Assign users and groups to an application in Azure Active Directory](methods-for-assigning-users-and-groups.md) (Назначение пользователей и групп для приложения в Azure Active Directory)
+- [Assign users and groups to an application in Azure Active Directory](./assign-user-or-group-access-portal.md) (Назначение пользователей и групп для приложения в Azure Active Directory)
 - [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)

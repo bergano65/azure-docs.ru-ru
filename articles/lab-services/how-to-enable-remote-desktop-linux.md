@@ -3,12 +3,12 @@ title: Включение удаленного графического инте
 description: Узнайте, как включить удаленный рабочий стол для виртуальных машин Linux в лаборатории в Службах лабораторий Azure.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: b8db01ca57d90739a57cd9bbb3caf63ada5f26fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34c940fec388bb0e79ab5e1db9be6d52fb223873
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91251615"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647959"
 ---
 # <a name="enable-graphical-remote-desktop-for-linux-virtual-machines-in-azure-lab-services"></a>Включение удаленного графического интерфейса для виртуальных машин Linux в Службах лабораторий Azure
 В этой статье показано, как выполнять следующие задачи:
@@ -38,7 +38,7 @@ X2Go использует тот же порт, который уже включ
 > В некоторых случаях, например в Ubuntu LTS 18.04, X2Go обеспечивает лучшую производительность.  Если при работе с RDP вы испытываете задержки во взаимодействии с графическим интерфейсом, попробуйте перейти на X2Go для повышения производительности.
 
 > [!IMPORTANT]
->  В некоторых образах Marketplace уже установлена среда графического интерфейса и сервер удаленного рабочего стола.  Например, [виртуальная машина для обработки и анализа данных для Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804) уже имеет [XFCE и X2Go Server, установленные и настроенные для подключения клиентов](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro#x2go).
+>  В некоторых образах Marketplace уже установлена среда графического интерфейса и сервер удаленного рабочего стола.  Например, [виртуальная машина для обработки и анализа данных для Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804) уже имеет [XFCE и X2Go Server, установленные и настроенные для подключения клиентов](../machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro.md#x2go).
 
 ## <a name="enable-remote-desktop-connection-for-rdp"></a>Разрешение подключения к удаленному рабочему столу для RDP
 
@@ -73,7 +73,7 @@ X2Go использует тот же порт, который уже включ
     ![Строка SSH-подключения](./media/how-to-enable-remote-desktop-linux/ssh-connection-string.png)
 
 4. Установите RDP или X2Go вместе с любой средой графического интерфейса на ваш выбор.  Инструкции по этому процессу вы найдете по этим ссылкам:
-    - [установка и настройка RDP](https://docs.microsoft.com/azure/virtual-machines/linux/use-remote-desktop);
+    - [установка и настройка RDP](../virtual-machines/linux/use-remote-desktop.md);
     - [установка и настройка X2Go](https://github.com/Azure/azure-devtestlab/tree/master/samples/ClassroomLabs/Scripts/X2GoRemoteDesktop).
 
 ## <a name="connect-to-the-template-vm-via-the-gui"></a>Подключение к виртуальной машине шаблона через графический пользовательский интерфейс
@@ -82,7 +82,7 @@ X2Go использует тот же порт, который уже включ
 
 ### <a name="microsoft-remote-desktop-rdp-client"></a>Клиент "Удаленный рабочий стол (Майкрософт)" (RDP)
 
-Клиент "Удаленный рабочий стол (Майкрософт)" (RDP) используется для подключения к виртуальной машине шаблона, на которой настроен протокол RDP.  Этот клиент можно использовать на оборудовании Windows, Chromebook, Mac и т. п.  Дополнительные сведения см. в статье [о клиентах удаленного рабочего стола](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients).
+Клиент "Удаленный рабочий стол (Майкрософт)" (RDP) используется для подключения к виртуальной машине шаблона, на которой настроен протокол RDP.  Этот клиент можно использовать на оборудовании Windows, Chromebook, Mac и т. п.  Дополнительные сведения см. в статье [о клиентах удаленного рабочего стола](/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients).
 
 Выполните описанные ниже действия для того типа компьютера, который вы используете для подключения к виртуальной машине шаблона.
 

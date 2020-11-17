@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 09/30/2020
 ms.author: rolyon
-ms.openlocfilehash: badf10da8af0ed3829deb2498b51b5d5c8ce6a93
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56b6638462acaf43b6353787495e5b7993acb413
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91604413"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648282"
 ---
 # <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
 
@@ -26,7 +26,7 @@ ms.locfileid: "91604413"
 
 ![Субъект безопасности для назначения роли](./media/shared/rbac-security-principal.png)
 
-- Пользователь — человек, имеющий профиль в Azure Active Directory. Роли можно также назначать пользователям в других клиентах. Сведения о пользователях в других организациях см. в статье [Что такое служба совместной работы Azure AD B2B](../active-directory/b2b/what-is-b2b.md).
+- Пользователь — человек, имеющий профиль в Azure Active Directory. Роли можно также назначать пользователям в других клиентах. Сведения о пользователях в других организациях см. в статье [Что такое служба совместной работы Azure AD B2B](../active-directory/external-identities/what-is-b2b.md).
 - Группа — набор пользователей, созданный в Azure Active Directory. При назначении роли группе ее получают все пользователи в этой группе. 
 - Субъект-служба — это идентификатор безопасности, который используется приложениями или службами для доступа к определенным ресурсам Azure. Это что-то вроде *удостоверения пользователя* (имя пользователя и пароль или сертификат) для приложения.
 - Управляемое удостоверение — это удостоверение, управление которым осуществляется автоматически в Azure Active Directory. Как правило, [управляемые удостоверения](../active-directory/managed-identities-azure-resources/overview.md) используются при разработке облачных приложений. Эти удостоверения нужны для управления учетными данными, которые используются при проверке подлинности в службах Azure.

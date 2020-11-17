@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 09/28/2020
 ms.author: rolyon
 ms.custom: contperfq1
-ms.openlocfilehash: 16ead03af14da70b5aaedc21118488c6dd3012c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75f2eb90e2418b57e5e0a358fbd6282b20ddc9e7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91597655"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648367"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-azure-cli"></a>Добавление и удаление назначений ролей Azure с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "91597655"
 Для добавления или удаления назначений ролей необходимо иметь следующее:
 
 - `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
-- [Bash в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure CLI](/cli/azure)
+- [Bash в Azure Cloud Shell](../cloud-shell/overview.md) или [Azure CLI](/cli/azure)
 
 ## <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
 
@@ -359,7 +359,7 @@ az role assignment delete --assignee "alain@example.com" \
 --scope "/providers/Microsoft.Management/managementGroups/marketing-group"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Вывод списка назначений ролей Azure с помощью Azure CLI](role-assignments-list-cli.md)
-- [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/cli-azure-resource-manager.md)
+- [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/management/manage-resources-cli.md)

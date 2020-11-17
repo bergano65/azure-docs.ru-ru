@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 11/03/2020
 ms.custom: generated
-ms.openlocfilehash: e337cef9121dc5992f87b9996cfd01d16d9cc188
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: cf8c8e7d56f4eff351361edd148f91e81a07bfbb
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309376"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94649149"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "93309376"
 
 ## <a name="all"></a>Все
 
-| Общие сведения |
+| Общие |
 | --- |
 | [Microsoft.Addons](#microsoftaddons) |
 | [Microsoft.Marketplace](#microsoftmarketplace) |
@@ -32,7 +32,7 @@ ms.locfileid: "93309376"
 | [Microsoft.MarketplaceOrdering](#microsoftmarketplaceordering) |
 | [Microsoft.ResourceHealth](#microsoftresourcehealth) |
 | [Microsoft. support](#microsoftsupport) |
-| **Среда выполнения приложений** |
+| **Службы вычислений** |
 | [Microsoft.ClassicCompute](#microsoftclassiccompute) |
 | [Microsoft.Compute](#microsoftcompute) |
 | [Microsoft.ServiceFabric](#microsoftservicefabric) |
@@ -161,7 +161,7 @@ ms.locfileid: "93309376"
 | [Microsoft.DigitalTwins](#microsoftdigitaltwins) |
 
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="microsoftaddons"></a>Microsoft.Addons
 
@@ -271,7 +271,7 @@ ms.locfileid: "93309376"
 > | Microsoft. support/Суппорттиккетс/связь/чтение | Перечисление одного или всех сообщений в службу поддержки |
 > | Microsoft. support/Суппорттиккетс/связь/запись | Добавляет новый обмен информацией в службу поддержки |
 
-## <a name="compute"></a>Вычисления
+## <a name="compute"></a>Службы вычислений
 
 ### <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 
@@ -792,7 +792,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftnetwork"></a>Microsoft.Network.
 
-Служба Azure: [шлюз приложений](../application-gateway/index.yml), [Azure бастиона](../bastion/index.yml), [Защита от атак DDoS Azure](../virtual-network/ddos-protection-overview.md), [Azure DNS](../dns/index.yml), [Azure ExpressRoute](../expressroute/index.yml), [брандмауэр Azure](../firewall/index.yml), [Служба "Передняя дверь](../frontdoor/index.yml)", [Частная ссылка Azure](../private-link/index.yml), [Load Balancer](../load-balancer/index.yml), [наблюдатель за сетями](../network-watcher/index.yml), [диспетчер трафика](../traffic-manager/index.yml), [Виртуальная](../virtual-network/index.yml) [Глобальная](../virtual-wan/index.yml)сеть, [VPN-шлюз](../vpn-gateway/index.yml)
+Служба Azure: [шлюз приложений](../application-gateway/index.yml), [Azure бастиона](../bastion/index.yml), [Защита от атак DDoS Azure](../ddos-protection/ddos-protection-overview.md), [Azure DNS](../dns/index.yml), [Azure ExpressRoute](../expressroute/index.yml), [брандмауэр Azure](../firewall/index.yml), [Служба "Передняя дверь](../frontdoor/index.yml)", [Частная ссылка Azure](../private-link/index.yml), [Load Balancer](../load-balancer/index.yml), [наблюдатель за сетями](../network-watcher/index.yml), [диспетчер трафика](../traffic-manager/index.yml), [Виртуальная](../virtual-network/index.yml) [Глобальная](../virtual-wan/index.yml)сеть, [VPN-шлюз](../vpn-gateway/index.yml)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -1343,7 +1343,7 @@ ms.locfileid: "93309376"
 > | Microsoft.Network/vpnsites/delete | Удаление ресурса сети VPN. |
 > | Microsoft. Network/Впнситес/Впнсителинкс/чтение | Возвращает ссылку на VPN-сайт |
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>Память
 
 ### <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
@@ -3850,7 +3850,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftsql"></a>Microsoft.Sql
 
-Служба Azure: [база данных SQL Azure](../azure-sql/database/index.yml), [Azure SQL управляемый экземпляр](../azure-sql/managed-instance/index.yml), [Azure синапсе Analytics (ранее — хранилище данных SQL)](../sql-data-warehouse/index.yml) .
+Служба Azure: [база данных SQL Azure](../azure-sql/database/index.yml), [Azure SQL управляемый экземпляр](../azure-sql/managed-instance/index.yml), [Azure синапсе Analytics (ранее — хранилище данных SQL)](../synapse-analytics/sql-data-warehouse/index.yml) .
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -4306,7 +4306,7 @@ ms.locfileid: "93309376"
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/запись | Создание нового или изменение свойств существующей виртуальной машины SQL |
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/Delete | Удалить существующую виртуальную машину SQL |
 
-## <a name="analytics"></a>Аналитика
+## <a name="analytics"></a>Analytics
 
 ### <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 
@@ -4331,7 +4331,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftdatabricks"></a>Microsoft.Databricks
 
-Служба Azure: [Azure Databricks](https://docs.microsoft.com/azure/databricks/)
+Служба Azure: [Azure Databricks](/azure/databricks/)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -4619,7 +4619,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
 
-Служба Azure: [Power BI Embedded](https://docs.microsoft.com/azure/power-bi-embedded/)
+Служба Azure: [Power BI Embedded](/azure/power-bi-embedded/)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -4712,7 +4712,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftbotservice"></a>Microsoft.BotService
 
-Служба Azure: [служба Azure Bot](https://docs.microsoft.com/azure/bot-service/)
+Служба Azure: [служба Azure Bot](/azure/bot-service/)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -6187,7 +6187,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftrelay"></a>Microsoft.Relay
 
-Служба Azure: [Azure Relay](../service-bus-relay/relay-what-is-it.md)
+Служба Azure: [Azure Relay](../azure-relay/relay-what-is-it.md)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -6257,7 +6257,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftservicebus"></a>Microsoft.ServiceBus
 
-Служба Azure: служебная [шина](../service-bus/index.md)
+Служба Azure: служебная [шина](../service-bus-messaging/index.yml)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -6957,7 +6957,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftvisualstudio"></a>Microsoft.VisualStudio
 
-Служба Azure: [Azure DevOps](https://docs.microsoft.com/azure/devops/)
+Служба Azure: [Azure DevOps](/azure/devops/)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -7436,7 +7436,7 @@ ms.locfileid: "93309376"
 > | Microsoft.OffAzure/VMwareSites/vcenters/read | Получает свойства VMware vCenter. |
 > | Microsoft.OffAzure/VMwareSites/vcenters/write | Создает или обновляет VMware vCenter. |
 
-## <a name="monitor"></a>Azure Monitor
+## <a name="monitor"></a>Монитор
 
 ### <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 
@@ -8824,7 +8824,7 @@ ms.locfileid: "93309376"
 > | Microsoft.Consumption/reservationTransactions/read | Вывод журнала транзакций для зарезервированных экземпляров по группам управления. |
 > | Microsoft.Consumption/tags/read | Вывод списка тегов для EA и подписок. |
 > | Microsoft.Consumption/tenants/register/action | Регистрация действия для области Microsoft.Consumption клиентом. |
-> | Microsoft. потребление/клиенты/чтение | Список клиентов |
+> | Microsoft. потребление/клиенты/чтение | Перечисление клиентов |
 > | Microsoft.Consumption/terms/read | Вывод условий подписки или группы управления. |
 > | Microsoft.Consumption/usageDetails/read | Вывод сведений об использовании для области подписок EA и WebDirect. |
 
@@ -8924,7 +8924,7 @@ ms.locfileid: "93309376"
 
 ### <a name="microsoftkubernetes"></a>Microsoft.Kubernetes
 
-Служба Azure: [Kubernetes с поддержкой дуги Azure](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview)
+Служба Azure: [Kubernetes с поддержкой дуги Azure](../azure-arc/kubernetes/overview.md)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -9673,11 +9673,11 @@ ms.locfileid: "93309376"
 > | Microsoft.Intune/diagnosticsettings/delete | Удаление параметра диагностики. |
 > | Microsoft.Intune/diagnosticsettingscategories/read | Чтение категорий параметра диагностики. |
 
-## <a name="other"></a>Другое
+## <a name="other"></a>Другие
 
 ### <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 
-Служба Azure: [карты Bing](https://docs.microsoft.com/BingMaps/)
+Служба Azure: [карты Bing](/BingMaps/)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |

@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 10/06/2020
 ms.author: rolyon
-ms.openlocfilehash: 3289f8a22e5601552ec6d44c7d37195b06913fde
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: ad0ba3c63f6f0ef6e7e02051031cf215c2e72cce
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545350"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648248"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Перенос подписки Azure в другой каталог Azure AD
 
@@ -73,7 +73,7 @@ ms.locfileid: "92545350"
 | Служба хранилища Azure и Azure Data Lake Storage 2-го поколения | Да | Да |  | Необходимо повторно создать все списки ACL. |
 | Хранилище Azure Data Lake Storage 1-го поколения | Да | Да |  | Необходимо повторно создать все списки ACL. |
 | Файлы Azure | Да | Да |  | Необходимо повторно создать все списки ACL. |
-| Синхронизация файлов Azure | Да | Да |  |  |
+| Служба синхронизации файлов Azure | Да | Да |  |  |
 | управляемые диски Azure. | Да | Да |  |  Если вы используете наборы шифрования дисков для шифрования управляемых дисков с помощью управляемых клиентом ключей, необходимо отключить и повторно включить назначенные системой удостоверения, связанные с наборами шифрования дисков. Кроме того, необходимо повторно создать назначения ролей, т. е. предоставить необходимые разрешения для наборов шифрования дисков в хранилищах ключей. |
 | Служба Azure Kubernetes | Да | Да |  |  |
 | Политика Azure | Да | Нет | Все объекты политики Azure, включая пользовательские определения, назначения, исключения и данные о соответствии. | Необходимо [экспортировать](../governance/policy/how-to/export-resources.md), импортировать и повторно назначить определения. Затем создайте новые назначения политик и все необходимые [исключения политик](../governance/policy/concepts/exemption-structure.md). |
@@ -87,7 +87,7 @@ ms.locfileid: "92545350"
 
 Для выполнения этих действий потребуется:
 
-- [Bash в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure CLI](/cli/azure)
+- [Bash в Azure Cloud Shell](../cloud-shell/overview.md) или [Azure CLI](/cli/azure)
 - Администратор учетной записи подписки, которую вы хотите переместить в исходном каталоге
 - Роль [владельца](built-in-roles.md#owner) в целевом каталоге
 
@@ -111,7 +111,7 @@ ms.locfileid: "92545350"
 
 ### <a name="install-the-azure-resource-graph-extension"></a>Установка расширения графа ресурсов Azure
 
- Расширение Azure CLI для [графа ресурсов Azure](../governance/resource-graph/index.yml), *ресурс-Graph* , позволяет использовать команду [AZ Graph](/cli/azure/ext/resource-graph/graph) для запроса ресурсов, управляемых Azure Resource Manager. Эта команда будет использоваться в последующих шагах.
+ Расширение Azure CLI для [графа ресурсов Azure](../governance/resource-graph/index.yml), *ресурс-Graph*, позволяет использовать команду [AZ Graph](/cli/azure/ext/resource-graph/graph) для запроса ресурсов, управляемых Azure Resource Manager. Эта команда будет использоваться в последующих шагах.
 
 1. Используйте команду [AZ Extension List](/cli/azure/extension#az_extension_list) , чтобы узнать, установлено ли расширение *Resource-Graph* .
 

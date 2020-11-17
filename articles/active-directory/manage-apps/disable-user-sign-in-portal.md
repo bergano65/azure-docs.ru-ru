@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c6fc9a4716f1427257b3bbf18e5fa653567e141
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c208da657d30d4a0f5b6f171693c5c6abc2b358b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763386"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94649189"
 ---
 # <a name="disable-user-sign-ins-for-an-enterprise-app-in-azure-active-directory"></a>Отключение входа пользователя в корпоративное приложение в Azure Active Directory
 
@@ -31,15 +31,15 @@ ms.locfileid: "84763386"
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора каталога.
 1. Выберите **все службы**, введите **Azure Active Directory** в текстовом поле, а затем нажмите клавишу **Ввод**.
-1. В области **Azure Active Directory**  -   ***директоринаме*** (то есть на панели Azure AD для каталога, которым вы управляете) выберите **корпоративные приложения**.
+1. На панели **Azure Active Directory**  -   **_директоринаме_*_ (то есть на панели Azure AD для каталога, которым вы управляете) выберите _* корпоративные приложения**.
 1. В области **корпоративные приложения — все приложения** отображается список приложений, которыми можно управлять. Выберите приложение.
-1. В области ***имя_приложения*** (то есть в области с именем выбранного приложения в заголовке) выберите **Свойства**.
-1. В области ***appname***  -  **Свойства** AppName выберите **нет** для **включенных пользователей для входа в**систему.
+1. На панели **_AppName_*_ (то есть в области с именем выбранного приложения в заголовке) выберите _* свойства**.
+1. На панели **свойства _AppName_*_-_*** выберите **нет** для **включенных пользователей для входа в** систему.
 1. Щелкните **Сохранить** .
 
 ## <a name="use-azure-ad-powershell-to-disable-an-unlisted-app"></a>Отключение приложения, не включенного в список, с помощью Azure AD PowerShell
 
-Если вы знакомы с идентификатором приложения, которое не отображается в списке корпоративных приложений (например, если вы удалили приложение или еще не создали субъект-службу в связи с тем, что приложение предварительно выполнило авторизацию Майкрософт), можно вручную создать субъект-службу для приложения, а затем отключить его с помощью [командлета PowerShell AzureAD](https://docs.microsoft.com/powershell/module/azuread/New-AzureADServicePrincipal?view=azureadps-2.0).
+Если вы знакомы с идентификатором приложения, которое не отображается в списке корпоративных приложений (например, если вы удалили приложение или еще не создали субъект-службу в связи с тем, что приложение предварительно выполнило авторизацию Майкрософт), можно вручную создать субъект-службу для приложения, а затем отключить его с помощью [командлета PowerShell AzureAD](/powershell/module/azuread/New-AzureADServicePrincipal?view=azureadps-2.0).
 
 ```PowerShell
 # The AppId of the app to be disabled
@@ -60,5 +60,5 @@ if ($servicePrincipal) {
 
 * [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 * [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
-* [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
-* [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)
+* [Удаление назначения пользователя или группы из корпоративного приложения](./assign-user-or-group-access-portal.md)
+* [Изменение имени или логотипа корпоративного приложения](./add-application-portal-configure.md)

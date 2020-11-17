@@ -12,16 +12,16 @@ ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperfq2
-ms.openlocfilehash: df50231b03f71008f967c4f09ce09c5b5890802f
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: d5c42675b182fbc34354c75778214463adfe491f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427651"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648146"
 ---
 # <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Настройка согласия владельца группы на приложения, обращающиеся к данным группы
 
-Владельцы групп и групп могут авторизовать приложения, такие как приложения, опубликованные сторонними поставщиками, для доступа к данным Организации, связанным с группой. Например, владелец группы в Microsoft Teams может разрешить приложению читать все сообщения групп в Teams или выводить базовые профили участников группы. Дополнительные сведения см. [в разделе согласие на использование ресурсов в Microsoft Teams](https://docs.microsoft.com/microsoftteams/resource-specific-consent) .
+Владельцы групп и групп могут авторизовать приложения, такие как приложения, опубликованные сторонними поставщиками, для доступа к данным Организации, связанным с группой. Например, владелец группы в Microsoft Teams может разрешить приложению читать все сообщения групп в Teams или выводить базовые профили участников группы. Дополнительные сведения см. [в разделе согласие на использование ресурсов в Microsoft Teams](/microsoftteams/resource-specific-consent) .
 
 ## <a name="manage-group-owner-consent-to-apps"></a>Управление согласием владельца группы для приложений
 
@@ -42,9 +42,9 @@ ms.locfileid: "92427651"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Вы можете использовать модуль предварительной версии Azure AD PowerShell, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true), чтобы разрешить или запретить владельцам групп предоставлять согласие приложениям, обращающимся к данным организации, для групп, которыми они владеют.
+Вы можете использовать модуль предварительной версии Azure AD PowerShell, [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview), чтобы разрешить или запретить владельцам групп предоставлять согласие приложениям, обращающимся к данным организации, для групп, которыми они владеют.
 
-1. Убедитесь, что используете модуль [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true). Этот важно, если вы установили модуль [AzureAD](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0&preserve-view=true) и модуль [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true).
+1. Убедитесь, что используете модуль [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview). Этот важно, если вы установили модуль [AzureAD](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) и модуль [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview).
 
     ```powershell
     Remove-Module AzureAD
@@ -121,7 +121,7 @@ ms.locfileid: "92427651"
 * [Настройка рабочего процесса согласия администратора](configure-admin-consent-workflow.md)
 * [Узнайте, как управлять согласием для приложений и оценивать запросы на согласие](manage-consent-requests.md)
 * [Предоставление приложению согласия администратора на уровне арендатора](grant-admin-consent.md)
-* [Разрешения и согласие для платформы удостоверений Майкрософт](../develop/active-directory-v2-scopes.md)
+* [Разрешения и согласие для платформы удостоверений Майкрософт](../develop/v2-permissions-and-consent.md)
 
 Получение справки или ответов на вопросы:
 * [Azure AD в StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

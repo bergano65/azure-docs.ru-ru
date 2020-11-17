@@ -5,12 +5,12 @@ author: emaher
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
-ms.openlocfilehash: 2d6610a2f69b6da34972510a5619c6d16a605289
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4bf4127dc163bb5f034e077b84664828374ba87
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776448"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647976"
 ---
 # <a name="how-to-create-a-lab-with-a-shared-resource-in-azure-lab-services"></a>Создание лаборатории с общим ресурсом в службах лаборатории Azure
 
@@ -38,12 +38,12 @@ ms.locfileid: "91776448"
 Сервер лицензирования должен быть подключен к виртуальной сети, которая является одноранговым по отношению к лаборатории, поэтому сервер лицензирования должен находиться в том же регионе, что и учетная запись лаборатории.
 
 #### <a name="static-private-ip-and-mac-address"></a>Статический частный IP и MAC-адрес
-По умолчанию виртуальные машины имеют динамический частный IP-адрес. [перед настройкой программного обеспечения частный IP-адрес должен быть статическим](https://docs.microsoft.com/azure/virtual-network/virtual-networks-static-private-ip-arm-pportal). В этом случае частный IP-адрес и МАС-адреса задаются как статические.  
+По умолчанию виртуальные машины имеют динамический частный IP-адрес. [перед настройкой программного обеспечения частный IP-адрес должен быть статическим](../virtual-network/virtual-networks-static-private-ip-arm-pportal.md). В этом случае частный IP-адрес и МАС-адреса задаются как статические.  
 
 #### <a name="control-access"></a>Управление доступом
 Управление доступом к серверу лицензирования является ключом.  После настройки доступ к виртуальной машине будет по-прежнему нужен для обслуживания, устранения неполадок и обновления.  Вот несколько разных способов.
-- [Настройка JIT-доступа в центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-just-in-time?tabs=jit-config-asc%2Cjit-request-asc)
-- [Настройка группы безопасности сети для ограничения доступа.](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview)
+- [Настройка JIT-доступа в центре безопасности Azure.](../security-center/security-center-just-in-time.md?tabs=jit-config-asc%252cjit-request-asc)
+- [Настройка группы безопасности сети для ограничения доступа.](../virtual-network/network-security-groups-overview.md)
 - [Настройте бастиона, чтобы разрешить безопасный доступ к серверу лицензирования.](https://azure.microsoft.com/services/azure-bastion/)
 
 ## <a name="lab-account"></a>Учетная запись лаборатории
