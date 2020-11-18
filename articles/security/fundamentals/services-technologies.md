@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
-ms.openlocfilehash: 553cfe0c1a5e7d569c127f23a11f25f4d150b0bc
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: a4cc6e31e49243af8fa52ac568bcbba660bcde7e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700765"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842742"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "94700765"
 | [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md)|Облачный репозиторий аутентификации, который поддерживает несколько клиентов, облачный каталог и несколько служб управления удостоверениями в рамках Azure.  |
 | [Azure Active Directory B2C](../../active-directory-b2c/overview.md)|Это служба управления идентификацией, которая позволяет администрировать процессы входа и регистрации пользователей, а также управлять их профилями при использовании приложений на основе Azure.   |
 | [Доменные службы Azure Active Directory](../../active-directory-domain-services/overview.md)| Облачная и управляемая версия доменных служб Active Directory. |
-| [Многофакторная идентификация Azure](../../active-directory/authentication/concept-mfa-howitworks.md)| Подготовка безопасности, которая использует несколько различных форм аутентификации и проверки перед предоставлением защищенной информации. |
+| [Многофакторная идентификация Azure AD](../../active-directory/authentication/concept-mfa-howitworks.md)| Подготовка безопасности, которая использует несколько различных форм аутентификации и проверки перед предоставлением защищенной информации. |
 
 ## <a name="backup-and-disaster-recovery"></a>Резервное копирование и аварийное восстановление
 |Служба|Описание|

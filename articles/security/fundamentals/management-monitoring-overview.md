@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 3520cbafc0e9eebfd6057fe92579a45873b25734
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 038f30ee186a5b3a9d87d64054726324051c37b4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698767"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842759"
 ---
 # <a name="azure-security-management-and-monitoring-overview"></a>Обзор управления безопасностью Azure и ее мониторинга
 Эта статья содержит обзор функций безопасности и служб, предоставляемых Azure для упрощения управления облачными службами Azure и виртуальными машинами, а также их мониторинга.
@@ -54,15 +54,15 @@ Azure также поддерживает продукт Symantec Endpoint Prote
 
 ## <a name="multi-factor-authentication"></a>Многофакторная идентификация
 
-Многофакторная идентификация Azure — это метод аутентификации, который требует использования нескольких способов проверки. При ее использовании добавляется второй уровень безопасности, который применяется для входа пользователя в систему и выполнения транзакций.
+Многофакторная идентификация Azure AD — это метод проверки подлинности, требующий использования более одного метода проверки. При ее использовании добавляется второй уровень безопасности, который применяется для входа пользователя в систему и выполнения транзакций.
 
 Многофакторная идентификация помогает защитить доступ к данным и приложениям, при этом не усложняя процесс входа пользователя в систему. Она обеспечивает строгую проверку подлинности с помощью различных способов — телефонного звонка, текстового сообщения, уведомления в мобильном приложении, кода подтверждения или сторонних маркеров OATH.
 
 Дополнительные сведения:
 
 * [Многофакторная идентификация](https://azure.microsoft.com/documentation/services/multi-factor-authentication/)
-* [Что такое Многофакторная идентификация Azure?](../../active-directory/authentication/concept-mfa-howitworks.md)
-* [Принципы работы службы Многофакторной идентификации Azure](../../active-directory/authentication/concept-mfa-howitworks.md)
+* [Что такое многофакторная идентификация Azure AD?](../../active-directory/authentication/concept-mfa-howitworks.md)
+* [Как работает многофакторная идентификация Azure AD](../../active-directory/authentication/concept-mfa-howitworks.md)
 
 ## <a name="expressroute"></a>ExpressRoute
 

@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 09e0b3bbac0bdc1d268aa7f24741aeb12a7d366d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f96365bcdf64d19dc0b894f2f1230233b3137bc7
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89462587"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842657"
 ---
 # <a name="deploy-a-windows-virtual-desktop-classic-management-tool-with-an-azure-resource-manager-template"></a>Развертывание средства управления виртуальным рабочим столом Windows (классическая модель) с помощью шаблона Azure Resource Manager
 
@@ -20,7 +20,7 @@ ms.locfileid: "89462587"
 
 В этой статье содержатся инструкции, которые помогут развернуть пользовательский интерфейс с помощью шаблона Azure Resource Manager.
 
-## <a name="important-considerations"></a>Важные замечания
+## <a name="important-considerations"></a>Важные аспекты
 
 Так как приложению требуется согласие на взаимодействие с Виртуальным рабочим столом Windows, это средство не поддерживает сценарии совместной работы (B2B). Для каждой подписки клиента Azure Active Directory потребуется отдельное развертывание средства управления.
 
@@ -36,7 +36,7 @@ ms.locfileid: "89462587"
 
 Перед развертыванием средства управления потребуется пользователь Azure Active Directory (Azure AD), чтобы создать регистрацию приложения и развернуть пользовательский интерфейс управления. Этот пользователь должен:
 
-- отключить Многофакторную идентификацию Azure (MFA);
+- Отключить многофакторную идентификацию Azure AD (MFA)
 - получить разрешение на создание ресурсов в своей подписке Azure;
 - получить разрешение на создание приложения Azure AD. Чтобы проверить, есть ли у пользователя необходимые разрешения, выполните действия, перечисленные в разделе [Необходимые разрешения](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
@@ -110,6 +110,6 @@ ms.locfileid: "89462587"
 
 Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах Azure Resource Manager для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы научились развертывать средство управления и подключаться к нему, ознакомьтесь со сведениями об использовании справки по службам Azure для мониторинга проблем служб и рекомендаций по работоспособности. Дополнительные сведения см. в руководстве [Настройка оповещений служб](set-up-service-alerts-2019.md).

@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to
+ms.custom: how-to, devx-track-azurecli
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/30/2020
-ms.openlocfilehash: cfa6dcb0b1fc173bdf3612308227b8309491e9fa
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2953f85a5c21cdd670d6e133d09ffacf06f178ef
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312740"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842708"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Настройка частной ссылки Azure для Машинное обучение Azure рабочей области
 
@@ -62,7 +62,7 @@ ws = Workspace.create(name='myworkspace',
     show_output=True)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Create](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_create) . Следующие параметры этой команды можно использовать для создания рабочей области с частной сетью, но для нее требуется существующая виртуальная сеть.
 
@@ -103,7 +103,7 @@ ws.add_private_endpoint(private_endpoint_config=pe, private_endpoint_auto_approv
 
 Дополнительные сведения о классах и методах, используемых в этом примере, см. в разделе [приватиндпоинтконфиг](/python/api/azureml-core/azureml.core.privateendpointconfig?view=azure-ml-py) and [Workspace.add_private_endpoint](/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#add-private-endpoint-private-endpoint-config--private-endpoint-auto-approval-true--location-none--show-output-true--tags-none-).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Add](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_add) .
 
@@ -140,13 +140,13 @@ _, _, connection_name = ws.get_details()['privateEndpointConnections'][0]['id'].
 ws.delete_private_endpoint_connection(private_endpoint_connection_name=connection_name)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Delete](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_delete) .
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-В рабочей области Машинное обучение Azure на портале выберите __подключения к частной конечной точке__ , а затем выберите конечную точку, которую нужно удалить. Наконец, выберите __Удалить__.
+В рабочей области Машинное обучение Azure на портале выберите __подключения к частной конечной точке__, а затем выберите конечную точку, которую нужно удалить. Наконец, выберите __Удалить__.
 
 ---
 
