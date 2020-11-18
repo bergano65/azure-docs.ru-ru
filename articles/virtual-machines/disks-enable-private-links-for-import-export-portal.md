@@ -8,12 +8,12 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 1cf6c6516e01774d0345a3f75f6f1c2826451dce
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 68a308952b63d15aa6db90021400f826ef575c0c
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289865"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537192"
 ---
 # <a name="use-the-azure-portal-to-restrict-importexport-access-for-managed-disks-with-private-links"></a>Использование портала Azure для ограничения доступа на импорт и экспорт управляемых дисков с помощью Приватного канала
 
@@ -27,9 +27,6 @@ ms.locfileid: "93289865"
 
 [!INCLUDE [virtual-machines-disks-private-links-limitations](../../includes/virtual-machines-disks-private-links-limitations.md)]
 
-## <a name="regional-availability"></a>Доступность по регионам
-
-[!INCLUDE [virtual-machines-disks-private-links-regions](../../includes/virtual-machines-disks-private-links-regions.md)]
 
 ## <a name="create-a-disk-access-resource"></a>Создание ресурса доступа к диску
 
@@ -38,7 +35,7 @@ ms.locfileid: "93289865"
     > [!IMPORTANT]
     > Чтобы открыть колонку "Доступ к диску", необходимо использовать [предоставленную ссылку](https://aka.ms/disksprivatelinks). Сейчас в этот раздел на общедоступном портале можно перейти только с помощью ссылки.
 
-1. Выберите **+ Добавить** , чтобы создать новый ресурс доступа к диску.
+1. Выберите **+ Добавить**, чтобы создать новый ресурс доступа к диску.
 1. В колонке создания ресурса выберите подписку, группу ресурсов, введите имя и выберите регион.
 1. Выберите **Review + create** (Просмотреть и создать).
 

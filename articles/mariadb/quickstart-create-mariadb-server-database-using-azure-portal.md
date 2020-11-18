@@ -1,18 +1,18 @@
 ---
 title: Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью портала Azure
 description: В этой статье описывается быстрое (в пределах пяти минут) создание экземпляра сервера Базы данных Azure для MariaDB с помощью портала Azure.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 3/19/2020
-ms.openlocfilehash: e5801f46745b3fda28af19c11e323b9497ebe98a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7b27bff50b4e2cfa57e41919552086ba1d31f217
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88185253"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537056"
 ---
 # <a name="quickstart-create-an-azure-database-for-mariadb-server-by-using-the-azure-portal"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью портала Azure
 

@@ -5,12 +5,12 @@ ms.author: mikben
 ms.date: 10/10/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: dd75e5e97e5dca898ba10e91528782861fb949ec
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 0559a9b763d273579373bb57922606f14ff6e6db
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92114588"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94574071"
 ---
 ## <a name="prerequisites"></a>Обязательные условия
 
@@ -75,6 +75,9 @@ ms.locfileid: "92114588"
 ```javascript
 meetingButton.addEventListener("click", () => {
     
+    // set display name in the meeting
+    callAgent.updateDisplayName('YOUR_NAME');
+    
     // join with meeting link
     call = callAgent.join({meetingLink: 'MEETING_LINK'}, {});
 
@@ -111,5 +114,5 @@ npx webpack-dev-server --entry ./client.js --output bundle.js --debug --devtool 
 
 :::image type="content" source="../media/javascript/calling-javascript-app.png" alt-text="Снимок экрана: готовое приложение JavaScript.":::
 
-Вставьте контекст Teams в текстовое поле и нажмите *Присоединиться к собранию Teams* , чтобы присоединиться к собранию Teams из приложения Служб коммуникации Azure.
+Вставьте контекст Teams в текстовое поле и нажмите *Присоединиться к собранию Teams*, чтобы присоединиться к собранию Teams из приложения Служб коммуникации Azure.
 

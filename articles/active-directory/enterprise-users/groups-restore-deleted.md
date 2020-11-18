@@ -6,19 +6,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 092288d320874488cee4d2f097d7406c0757e8a0
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: e5cec8802fba3852f4600b9fb426ee4c175314b1
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378831"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647126"
 ---
 # <a name="restore-a-deleted-microsoft-365-group-in-azure-active-directory"></a>Восстановление удаленной группы Microsoft 365 в Azure Active Directory
 
@@ -39,14 +39,14 @@ ms.locfileid: "92378831"
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с учетной записью администратора пользователей.
 
-2. Выберите **Группы** и **Удаленные группы** , чтобы просмотреть удаленные группы, доступные для восстановления.
+2. Выберите **Группы** и **Удаленные группы**, чтобы просмотреть удаленные группы, доступные для восстановления.
 
     ![Просмотр групп, доступных для восстановления](./media/groups-restore-deleted/deleted-groups3.png)
 
 3. В колонке **Удаленные группы** можно сделать следующее:
 
-   - Восстановить удаленную группу и ее содержимое, выбрав **Восстановить группу** .
-   - Окончательно удалить группу, выбрав **Удалить навсегда** . Чтобы окончательно удалить группу, вам потребуются права администратора.
+   - Восстановить удаленную группу и ее содержимое, выбрав **Восстановить группу**.
+   - Окончательно удалить группу, выбрав **Удалить навсегда**. Чтобы окончательно удалить группу, вам потребуются права администратора.
 
 ## <a name="view-the-deleted-microsoft-365-groups-that-are-available-to-restore-using-powershell"></a>Просмотр удаленных групп Microsoft 365, которые можно восстановить, с помощью PowerShell
 

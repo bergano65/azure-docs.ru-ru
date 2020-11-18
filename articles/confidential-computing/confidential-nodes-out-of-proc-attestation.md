@@ -6,12 +6,12 @@ author: agowdamsft
 ms.topic: overview
 ms.date: 9/22/2020
 ms.author: amgowda
-ms.openlocfilehash: 90b74e51dce994c3041c15feec729ff1fae2bb00
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b79b3b40f3fbfe7d70550db3aaf7b365aa455e89
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90998539"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564163"
 ---
 # <a name="platform-software-management-with-sgx-quote-helper-daemon-set"></a>Управление программными платформами с помощью набора управляющих программ вспомогательной функции цитирования SGX
 
@@ -126,10 +126,10 @@ spec:
 
 [Примеры для быстрого начала работы с конфиденциальными контейнерами](https://github.com/Azure-Samples/confidential-container-samples)
 
-[Список SKU DCsv2](https://docs.microsoft.com/azure/virtual-machines/dcv2-series)
+[Список SKU DCsv2](../virtual-machines/dcv2-series.md)
 
 <!-- LINKS - external -->
-[Azure Attestation]: https://docs.microsoft.com/en-us/azure/attestation/
+[Azure Attestation]: ../attestation/index.yml
 
 
 <!-- LINKS - internal -->

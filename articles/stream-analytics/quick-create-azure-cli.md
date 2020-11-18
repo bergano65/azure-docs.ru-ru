@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/01/2020
-ms.openlocfilehash: 8c2e7b6a02c0a0fea32fb1effb30b682971c3f6f
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: fa7919f54663387ddef811d02137da6d3ffb9d9b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348820"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94646633"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Краткое руководство. Создание задания Azure Stream Analytics с помощью Azure CLI
 
@@ -23,41 +23,11 @@ ms.locfileid: "93348820"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-## <a name="prepare-your-environment"></a>Подготовка среды
-
-1. Войдите.
-
-   Выполните вход с помощью команды [az login](/cli/azure/reference-index#az-login), если вы используете локальную установку CLI.
-
-    ```azurecli
-    az login
-    ```
-
-    Выполните аутентификацию, следуя инструкциям в окне терминала.
-
-2. Установите расширение Azure CLI.
-
-   При работе со ссылками на расширения для Azure CLI необходимо сначала установить расширение.  Расширения Azure CLI предоставляют доступ к экспериментальным командам и предварительным выпускам команд, которые еще не поставлялись как часть основного CLI.  Дополнительные сведения о расширениях, включая обновление и удаление, см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
-
-   Установите [расширение для Stream Analytics](/cli/azure/ext/stream-analytics/stream-analytics), выполнив следующую команду:
-
-    ```azurecli
-    az extension add --name stream-analytics
-    ```
-
-   Установите [расширение для Azure IoT](/cli/azure/ext/azure-iot), выполнив следующую команду:
-
-    ```azurecli
-    az extension add --name azure-iot
-    ```
-
-3. Создайте группу ресурсов.
-
-   Все ресурсы Azure должны развертываться в группе ресурсов. Группы ресурсов позволяют организовать соответствующие ресурсы Azure и управлять ими.
+- Создайте группу ресурсов. Все ресурсы Azure должны развертываться в группе ресурсов. Группы ресурсов позволяют организовать соответствующие ресурсы Azure и управлять ими.
 
    Для работы с этим кратким руководством создайте группу ресурсов с именем *streamanalyticsrg* в регионе *eastus* с помощью следующей команды [az group create](/cli/azure/group#az-group-create):
 
@@ -270,7 +240,7 @@ az stream-analytics job start
 
 Ставшие ненужными группу ресурсов, задание потоковой передачи и все связанные ресурсы можно удалить. При удалении задания будет прекращена тарификация за единицы потоковой передачи, потребляемые заданием. Если вы планируете использовать задание в дальнейшем, остановите его и не выполняйте процедуру его удаления. Если вам больше не нужно это задание, удалите все ресурсы, созданные в ходе работы с этим кратким руководством, выполнив следующий командлет.
 
-```powershell
+```azurecli
 az group delete \
     --name streamanalyticsrg \
     --no-wait

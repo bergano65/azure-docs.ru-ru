@@ -5,21 +5,21 @@ keywords: ''
 author: curtand
 manager: daveba
 ms.author: curtand
-ms.reviewer: vincesm
-ms.date: 06/16/2020
+ms.reviewer: krbain
+ms.date: 11/15/2020
 ms.topic: overview
 ms.service: active-directory
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.workload: identity
 services: active-directory
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3083bd524ee7918535c3c3915fe14cc0906f3c0f
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: e86d61f71a49a502a91b16761fc9feccea6faafd
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378903"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650943"
 ---
 # <a name="what-is-enterprise-user-management"></a>Управление корпоративными пользователями
 
@@ -62,13 +62,13 @@ ms.locfileid: "92378903"
 
 С помощью Azure AD можно назначить группе доступ к [корпоративным приложениям, развернутым в организации Azure AD](../manage-apps/assign-user-or-group-access-portal.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context). Если объединить динамические группы с назначением групп приложениям, можно автоматизировать назначения пользователям доступа к приложениям по мере роста организации. Для предоставления доступа к корпоративным приложениям вам потребуется лицензия Azure Active Directory Premium P1 или Premium P2.
 
-Azure AD также обеспечивает детальный контроль данных, которые передаются между приложением и группами, к которым вы назначаете доступ. В [корпоративных приложениях](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps) откройте приложение и выберите **Подготовка** , чтобы:
+Azure AD также обеспечивает детальный контроль данных, которые передаются между приложением и группами, к которым вы назначаете доступ. В [корпоративных приложениях](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps) откройте приложение и выберите **Подготовка**, чтобы:
 
 * настроить автоматическую подготовку для приложений, которые ее поддерживают;
 * предоставить учетные данные для подключения к API управления пользователями приложения;
 * настроить сопоставления, которые определяют, какие атрибуты пользователя передаются между Azure AD и приложением при подготовке или обновлении учетных записей пользователей;
 * запускать и останавливать службу подготовки Azure AD для приложения, очищать кэш подготовки или перезапускать службу;
-* просматривать **отчет о действиях по подготовке** , в котором предоставлен журнал всех созданных, обновленных и удаленных пользователей и групп в Azure AD и приложении, и **отчет об ошибках при подготовке** , в котором предоставлены более подробные сообщения об ошибках.
+* просматривать **отчет о действиях по подготовке**, в котором предоставлен журнал всех созданных, обновленных и удаленных пользователей и групп в Azure AD и приложении, и **отчет об ошибках при подготовке**, в котором предоставлены более подробные сообщения об ошибках.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

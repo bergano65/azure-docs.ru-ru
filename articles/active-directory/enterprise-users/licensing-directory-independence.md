@@ -8,18 +8,18 @@ manager: daveba
 ms.service: active-directory
 ms.topic: overview
 ms.workload: identity
-ms.subservice: users-groups-roles
-ms.date: 04/29/2020
+ms.subservice: enterprise-users
+ms.date: 11/15/2020
 ms.author: curtand
 ms.custom: it-pro
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1db812fb9c1503771bec0b1795ee8c15bb70014a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: b35c8630f47910c61e169d405c2117e53d0d536e
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378808"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650533"
 ---
 # <a name="understand-how-multiple-azure-active-directory-organizations-interact"></a>Сведения о том, как взаимодействуют несколько организаций в Azure Active Directory
 
@@ -47,7 +47,7 @@ ms.locfileid: "92378808"
 
 ## <a name="add-an-azure-ad-organization"></a>Добавление организации Azure AD
 
-Чтобы добавить организацию Azure AD с помощью портала Azure, войдите на [портал Azure](https://portal.azure.com) с учетной записью глобального администратора Azure AD и щелкните **Создать** .
+Чтобы добавить организацию Azure AD с помощью портала Azure, войдите на [портал Azure](https://portal.azure.com) с учетной записью глобального администратора Azure AD и щелкните **Создать**.
 
 > [!NOTE]
 > В отличие от других ресурсов Azure, организации AAD не являются дочерними ресурсами подписки Azure. Если подписка Azure будет отменена или истечет срок ее действия, вы сохраните доступ к данным новой организации AAD через PowerShell, API Azure Graph или Центр администрирования Office 365. Вы также можете [связать другую подписку с организацией](../fundamentals/active-directory-how-subscriptions-associated-directory.md).

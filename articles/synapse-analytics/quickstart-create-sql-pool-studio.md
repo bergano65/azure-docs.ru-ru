@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 10/16/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: f3ed5f3940a9b02701ad2f3c779b791e128e288c
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 3644891f12a6475ec9cfec51f572df4742481e8f
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506351"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541850"
 ---
 # <a name="quickstart-create-a-dedicated-sql-pool-using-synapse-studio"></a>Краткое руководство. Создание выделенного пула SQL с помощью Synapse Studio
 
@@ -110,6 +110,7 @@ Azure Synapse Analytics предлагает различные механизм
 1. Подтвердите удаление и нажмите кнопку **Удалить**.
 1. После успешного завершения процесса выделенный пул SQL больше не будет указываться в ресурсах рабочей области.
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие действия
+ 
 - См. [Краткое руководство. Создание записной книжки Apache Spark](quickstart-apache-spark-notebook.md).
 - См. [Краткое руководство. Создание выделенного пула SQL с помощью портала Azure](quickstart-create-sql-pool-portal.md).

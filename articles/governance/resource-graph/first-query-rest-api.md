@@ -3,12 +3,12 @@ title: Краткое руководство. Ваш первый запрос R
 description: В этом кратком руководстве показано, как вызвать конечную точку Resource Graph для REST API и выполнить первый запрос.
 ms.date: 10/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: 8be0556b6aa2fd234c0f3e25d83c0239c8f674bb
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: eafbd0b408ab50f901d52e59efcfbd5f89b46fe5
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057235"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566084"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-rest-api"></a>Краткое руководство. Выполнение первого запроса к Resource Graph с помощью REST API
 
@@ -76,7 +76,6 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
              "{subscriptionID}"
          ],
          "query": "Resources | project name, type | limit 5"
-         }
      }
      ```
 
@@ -99,7 +98,6 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
              "{subscriptionID}"
          ],
          "query": "Resources | project name, type | limit 5 | order by name asc"
-         }
      }
      ```
 
@@ -122,7 +120,6 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
              "{subscriptionID}"
          ],
          "query": "Resources | project name, type | order by name asc | limit 5"
-         }
      }
      ```
 

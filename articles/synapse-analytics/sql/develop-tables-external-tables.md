@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: a5a958228d79c86550604109d7aaf19e68593a57
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a9f58a9cdf8dea9631443d499548f2aee61eda69
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314891"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94553681"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Использование внешних таблиц в Synapse SQL
 
@@ -323,7 +323,7 @@ column_name <data_type>
 
 Имя создаваемой таблицы, состоящее из одной, двух или трех частей. При использовании внешней таблицы бессерверный пул SQL хранит только метаданные таблицы. Сами данные не перемещаются в бессерверный пул SQL и не хранятся там.
 
-<column_definition>, ... *n* ]
+<column_definition>, ...*n* ]
 
 CREATE EXTERNAL TABLE поддерживает возможность настроить имя столбца, тип данных, допустимость значений NULL и параметры сортировки. Параметр DEFAULT CONSTRAINT нельзя использовать с внешними таблицами.
 
@@ -388,8 +388,6 @@ SELECT TOP 1 * FROM census_external_table
 - В системе доступа ARM у вас должен быть доступ к рабочей области по меньшей мере с ролью участника данных BLOB-объектов хранилища для учетной записи ADLS 2-го поколения.
 
 - Вам нужны по меньшей мере [права на создание](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#permissions-2&preserve-view=true) внешних таблиц и на выполнение запросов в пуле SQL или SQL по запросу.
-
-- Связанная служба, настроенная для учетной записи ADLS 2-го поколения, **должна иметь доступ к нужному файлу**. Например, если для связанной службы используется способ проверки подлинности "Управляемое удостоверение", управляемое удостоверение рабочей области должно иметь по меньшей мере роль читателя для BLOB-объектов хранилища в учетной записи хранения.
 
 На панели "Данные" выберите файл, из которого нужно создать внешнюю таблицу.
 > [!div class="mx-imgBorder"]

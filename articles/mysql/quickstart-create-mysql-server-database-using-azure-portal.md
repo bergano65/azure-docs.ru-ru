@@ -1,145 +1,159 @@
 ---
 title: Краткое руководство. Создание сервера Базы данных Azure для MySQL с помощью портала Azure
-description: В этом кратком руководстве описывается быстрое (в пределах пяти минут) создание примера сервера Базы данных Azure для MySQL с помощью портала Azure.
-author: ajlam
-ms.author: andrela
+description: В этой статье описывается создание примера базы данных Azure для сервера MySQL с помощью портала Azure за 5 минут.
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 7/15/2020
-ms.openlocfilehash: 2cae0187643eb596bd98bcd99a588a4d214e6f6e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 11/04/2020
+ms.openlocfilehash: 4282294ff54fd3da3f764f53efc8b040b9522191
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341218"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542258"
 ---
-# <a name="quickstart-create-an-azure-database-for-mysql-server-in-the-azure-portal"></a>Краткое руководство. Создание базы данных Azure для сервера MySQL с помощью портала Azure
+# <a name="quickstart-create-an-azure-database-for-mysql-server-by-using-the-azure-portal"></a>Краткое руководство. Создание базы данных Azure для сервера MySQL с помощью портала Azure
 
-База данных Azure для MySQL — это управляемая служба, которая позволяет запускать, администрировать и масштабировать высокодоступные базы данных MySQL в облаке. В этом кратком руководстве описывается, как за пять минут создать сервер службы "База данных Azure для MySQL" с помощью портала Azure.
+База данных Azure для MySQL — это управляемая служба, которая позволяет запускать, администрировать и масштабировать в облаке базы данных MySQL с высоким уровнем доступности. В этом кратком руководстве описывается создание отдельного сервера Базы данных Azure для MySQL на портале Azure. Здесь также приведены сведения о подключении к серверу.
 
 ## <a name="prerequisites"></a>Предварительные требования
+Требуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
-В браузере откройте [портал Azure](https://portal.azure.com/). Введите свои учетные данные для входа на портал. Панель мониторинга службы является представлением по умолчанию.
-
-## <a name="create-an-azure-database-for-mysql-server"></a>Создайте сервер базы данных Azure для MySQL.
-Сервер базы данных Azure для MySQL создается с определенным набором [вычислительных ресурсов и ресурсов хранения](./concepts-pricing-tiers.md). Он создается в [группе ресурсов Azure](../azure-resource-manager/management/overview.md).
-
-Чтобы создать базу данных Azure для сервера MySQL, сделайте следующее:
-
-1. Выберите **Создать ресурс** (+) в левом верхнем углу страницы портала.
-
-2. Выберите **Базы данных** > **База данных Azure для MySQL**. Чтобы найти службу, вы также можете ввести в поле поиска **MySQL**.
-
-  
->[!div class="mx-imgBorder"]
-> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/2_navigate-to-mysql.png" alt-text="Параметр базы данных Azure для MySQL":::
-
-3. Заполните форму для создания сервера, указав следующую информацию:
-    
->[!div class="mx-imgBorder"]
-> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/4-create-form.png" alt-text="Форма для создания сервера":::
-
-**Параметр** | **Рекомендуемое значение** | **Описание поля** 
----|---|---
-Подписка | Ваша подписка | Выберите подписку Azure, которую вы хотите использовать для сервера. Если у вас есть несколько подписок, выберите ту, в которой взимается плата за использование ресурса.
-Группа ресурсов | *myresourcegroup* | Укажите имя новой или имеющейся группы ресурсов. Группу ресурсов можно использовать для организации зависимостей, принадлежащих одному проекту.
-Имя сервера | Уникальное имя сервера | Введите уникальное имя, идентифицирующее базу данных Azure для сервера MySQL. Например, mysqldbserver. Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Его длина должна составлять от 3 до 63 символов.
-Источник данных |*None* | Чтобы создать сервер с нуля, выберите *Нет*. Если вы создаете сервер из геоизбыточной резервной копии существующего сервера службы "База данных Azure для MySQL", выберите *Резервная копия*.
-учетные данные администратора сервера для входа; | myadmin | Введите имя пользователя для администратора сервера. Не используйте для имени учетной записи администратора такие варианты: **azure_superuser** , **admin** , **administrator** , **root** , **guest** или **public**.
-Пароль | *По своему выбору* | Укажите пароль учетной записи администратора сервера. Длина пароля должна составлять 8–128 символов с комбинацией прописных или строчных букв, цифр и символов, отличных от буквенно-цифровых (!, $, #, %, и т. д.).
-Подтверждение пароля | *По своему выбору*| Подтвердите пароль учетной записи администратора.
-Расположение | *Ближайший к пользователям регион*| Выберите расположение, наиболее близкое к пользователям или другим приложениям Azure.
-Версия | *Последний основной номер версии*| Последний основной номер версии (если нет особых требований использовать другую версию).
-Вычисления и хранилище | **Общего назначения** , **Поколение 5** , **2 виртуальных ядра** , **5 ГБ** , **7 дней** , **Геоизбыточное хранилище** |Конфигурации вычислительных ресурсов, хранилища и резервного копирования для нового сервера. Щелкните **Настройка сервера**. Теперь выберите подходящую ценовую категорию. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/mysql/). Чтобы включить резервные копии сервера в географически избыточном хранилище, выберите **Геоизбыточное хранилище** в **параметрах избыточности резервного копирования**. Щелкните **ОК**.
-
-   > [!NOTE]
-   > Используйте ценовую категорию "Базовый", если для вашей рабочей нагрузки не требуется большое количество вычислительных ресурсов и операций ввода-вывода. Обратите внимание, что серверы, созданные в ценовой категории "Базовый", нельзя масштабировать до ценовых категорий "Общего назначения" или "Оптимизировано для памяти". 
-
-4. Щелкните **Просмотр и создание** , чтобы подготовить сервер. Этот процесс может занять до 20 минут.
-   
-5. На панели инструментов щелкните **Уведомления** (значок колокольчика), чтобы отслеживать процесс развертывания.
-   
-По умолчанию на сервере создаются следующие базы данных: **information_schema** , **mysql** , **performance_schema** и **sys**.
-
-## <a name="configure-a-server-level-firewall-rule"></a>Настройка правила брандмауэра на уровне сервера
-По умолчанию созданный сервер защищен с помощью брандмауэра и не является общедоступным. Чтобы предоставить разрешение на доступ с IP-адреса, перейдите к ресурсу сервера на портале Azure и выберите **Безопасность подключения** в левой части меню для этого ресурса сервера. Если вы не знаете, как найти ресурс, см. раздел об [открытии ресурса](../azure-resource-manager/management/manage-resources-portal.md#open-resources).
-
->[!div class="mx-imgBorder"]
-> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/add-current-ip-firewall.png" alt-text="Безопасность подключения — правила брандмауэра":::
-   
-Теперь выберите **Добавить текущий IP-адрес клиента** и щелкните **Сохранить**. Вы можете добавить дополнительные IP-адреса или указать диапазон адресов, чтобы подключаться к серверу с любого из этих IP-адресов. Дополнительные сведения см. в статье об [управлении правилами брандмауэра для сервера Базы данных Azure для MySQL](./concepts-firewall-rules.md).
-
-> [!NOTE]
-> Проверьте, разрешает ли сеть исходящий трафик на порт 3306, который использует служба "База данных Azure для MySQL", чтобы избежать проблем с подключением.  
-
-## <a name="connect-to-azure-database-for-mysql-server-using-mysql-command-line-client"></a>Подключение к серверу службы "База данных Azure для MySQL" с помощью клиента командной строки mysql
-Вы можете выбрать [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) или [MySQL Workbench](./connect-workbench.md), чтобы подключиться к серверу из локальной среды. В этом кратком руководстве мы запустим **mysql.exe** в [Azure Cloud Shell](../cloud-shell/overview.md) для подключения к серверу.
-
-1. Запустите Azure Cloud Shell на портале, щелкнув выделенный значок в верхней левой части экрана. Запишите имя нового сервера, имя администратора этого сервера, пароль и подписку из раздела **Обзор** , как показано на рисунке ниже.
-
-    >[!NOTE]
-    >Если вы запускаете Cloud Shell первый раз, отобразится запрос на создание группы ресурсов и учетной записи хранения. Это одноразовое действие, которое автоматически применяется для всех сеансов. 
+## <a name="create-an-azure-database-for-mysql-single-server"></a>Создание отдельного сервера Базы данных Azure для MySQL
+1. Чтобы создать отдельный сервер Базы данных Azure для MySQL, перейдите на [портал Azure](https://portal.azure.com/). Найдите и выберите **База данных Azure для MySQL**:
 
    >[!div class="mx-imgBorder"]
-   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/use-in-cloud-shell.png" alt-text="Полное представление портала Cloud Shell":::
-2. Выполните эту команду в терминале Azure Cloud Shell. Замените предложенные значения реальными именами сервера и администратора. Для имени администратора требуется указать "@\<servername>", как показано ниже для службы "База данных Azure для MySQL".  
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/find-azure-mysql-in-portal.png" alt-text="Поиск Базы данных Azure для MySQL":::
 
-  ```azurecli-interactive
-  mysql --host=mydemoserver.mysql.database.azure.com --user=myadmin@mydemoserver -p 
-  ```
+1. Выберите **Добавить**.
 
-  Вот так выглядит этот процесс в терминале Cloud Shell
-  ```
-  Requesting a Cloud Shell.Succeeded.
-  Connecting terminal...
+2. На странице **Select Azure Database for MySQL deployment option** (Выберите вариант развертывания Базы данных Azure для MySQL) выберите **Отдельный сервер**:
+   >[!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/choose-singleserver.png" alt-text="Снимок экрана: параметр &quot;Отдельный сервер&quot;.":::
 
-  Welcome to Azure Cloud Shell
+3. Введите основные параметры для нового отдельного сервера:
 
-  Type "az" to use Azure CLI
-  Type "help" to learn about Cloud Shell
+   >[!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/4-create-form.png" alt-text="Снимок экрана: страница создания сервера MySQL.":::
 
-  user@Azure:~$mysql -h mydemoserver.mysql.database.azure.com -u myadmin@mydemoserver -p
-  Enter password:
-  Welcome to the MySQL monitor.  Commands end with ; or \g.
-  Your MySQL connection id is 64796
-  Server version: 5.6.42.0 Source distribution
+   **Параметр** | **Рекомендуемое значение** | **Описание**
+   ---|---|---
+   Подписка | Ваша подписка | Выберите нужную подписку Azure.
+   Группа ресурсов | **myresourcegroup** | Введите новую группу ресурсов или уже имеющуюся из подписки.
+   Имя сервера | **mydemoserver** | Укажите уникальное имя. Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Длина должна составлять от 3 до 63 символов.
+   Источник данных |**None** | Чтобы создать сервер с нуля, выберите **Нет**. Выберите **Резервная копия**, только если восстановление выполняется из геоизбыточной резервной копии существующего сервера.
+   Расположение |Нужное расположение | Выберите расположение из списка.
+   Версия | Последний основной номер версии| Используйте последний основной номер версии. См. [все поддерживаемые версии](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions).
+   Вычисления и хранилище | Используются значения по умолчанию| Ценовая категория по умолчанию — **Общего назначения** с **4 виртуальными ядрами** и хранилищем объемом **100 ГБ**. Для срока хранения резервных копий задано значение **7 дней** с **геоизбыточным** резервным копированием.<br/>Просмотрите страницу [цен](https://azure.microsoft.com/pricing/details/mysql/) и при необходимости обновите значения по умолчанию.
+   Имя администратора | **mydemoadmin** | Укажите имя администратора сервера. Не используйте для имени учетной записи администратора такие варианты: **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
+   Пароль | Пароль. | Новый пароль для администратора сервера. Длина пароля должна составлять 8–128 символов с комбинацией прописных или строчных букв, цифр и символов, отличных от буквенно-цифровых (!, $, #, % и т. д.).
+  
 
-  Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+   > [!NOTE]
+   > Используйте ценовую категорию "Базовый", если для вашей рабочей нагрузки не требуется большое количество вычислительных ресурсов и операций ввода-вывода. Обратите внимание, что серверы, созданные в ценовой категории "Базовый", нельзя масштабировать до ценовых категорий "Общего назначения" или "Оптимизированная для операций в памяти".
 
-  Oracle is a registered trademark of Oracle Corporation and/or its
-  affiliates. Other names may be trademarks of their respective
-  owners.
+4. Щелкните **Просмотр и создание**, чтобы подготовить сервер.
 
-  Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-  mysql>
-  ```
-3. В том же терминале Azure Cloud Shell создайте базу данных **guest**. 
-  ```
-  mysql> CREATE DATABASE guest;
-  Query OK, 1 row affected (0.27 sec)
-  ```
-4. Перейдите к базе данных **guest**.
-  ```
-  mysql> USE guest;
-  Database changed 
-  ```
-5. Введите ```quit``` и нажмите клавишу ВВОД, чтобы выйти из mysql.   
+5. Дождитесь, пока на странице портала появится сообщение **Развертывание выполнено**. Выберите **Перейти к ресурсу**, чтобы открыть созданную страницу сервера:
+
+   > [!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/deployment-complete.png" alt-text="Снимок экрана с сообщением &quot;Развертывание выполнено&quot;.":::
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/mysql-doc-feedback)
+
+## <a name="configure-a-server-level-firewall-rule"></a>Настройка правила брандмауэра на уровне сервера
+
+По умолчанию новый сервер защищен брандмауэром. Чтобы выполнить подключение, необходимо предоставить доступ к IP-адресу, выполнив следующие действия:
+
+1. Перейдите в раздел **Безопасность подключения** в левой области ресурса сервера. Если вы не знаете, как найти ресурс, см. раздел об [открытии ресурса](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resources-portal#open-resources).
+
+   >[!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/add-current-ip-firewall.png" alt-text="Снимок экрана: раздел &quot;Безопасность подключения&quot; на странице &quot;Правила брандмауэра&quot;.":::
+
+2. Выберите **Добавить текущий IP-адрес клиента** и щелкните **Сохранить**.
+
+   > [!NOTE]
+   > Чтобы избежать проблем с подключением, проверьте, разрешает ли сеть исходящий трафик на порт 3306, который использует служба "База данных Azure для MySQL". 
+
+Вы можете добавить дополнительные IP-адреса или указать диапазон адресов, чтобы подключаться к серверу с любого из этих IP-адресов. Дополнительные сведения см. в статье об [управлении правилами брандмауэра для сервера Базы данных Azure для MySQL](./concepts-firewall-rules.md).
+
+
+[Возникли проблемы? Сообщите нам об этом](https://aka.ms/mysql-doc-feedback)
+
+## <a name="connect-to-the-server-by-using-mysqlexe"></a>Подключение к серверу с помощью mysql.exe
+Вы можете использовать [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) или [MySQL Workbench](./connect-workbench.md), чтобы подключиться к серверу из локальной среды. В этом кратком руководстве показано, как использовать mysql.exe в [Azure Cloud Shell](../cloud-shell/overview.md) для подключения к серверу.
+
+
+1. Откройте Azure Cloud Shell на портале, нажав первую кнопку на панели инструментов, как показано на следующем снимке экрана. Запишите имя нового сервера, имя администратора этого сервера и подписку для сервера из раздела **Обзор**, как показано на снимке экрана.
+
+    > [!NOTE]
+    > Если вы открываете Cloud Shell первый раз, отобразится запрос на создание группы ресурсов и учетной записи хранения. Это одноразовое действие, которое автоматически применяется для всех сеансов.
+
+   >[!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/use-in-cloud-shell.png" alt-text="Снимок экрана: Cloud Shell на портале Azure.":::
+2. Воспользуйтесь следующей командой в терминале Azure Cloud Shell. Замените показанные здесь значения реальными именами сервера и администратора. Для службы "База данных Azure для MySQL" к имени администратора требуется добавить `@\<servername>`, как показано ниже: 
+
+      ```azurecli-interactive
+      mysql --host=mydemoserver.mysql.database.azure.com --user=myadmin@mydemoserver -p
+      ```
+
+      Вот так выглядит этот процесс в терминале Cloud Shell:
+
+      ```
+      Requesting a Cloud Shell.Succeeded.
+      Connecting terminal...
+
+      Welcome to Azure Cloud Shell
+
+      Type "az" to use Azure CLI
+      Type "help" to learn about Cloud Shell
+
+      user@Azure:~$mysql -h mydemoserver.mysql.database.azure.com -u myadmin@mydemoserver -p
+      Enter password:
+      Welcome to the MySQL monitor.  Commands end with ; or \g.
+      Your MySQL connection id is 64796
+      Server version: 5.6.42.0 Source distribution
+
+      Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+      Oracle is a registered trademark of Oracle Corporation and/or its
+      affiliates. Other names may be trademarks of their respective
+      owners.
+
+      Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+      mysql>
+      ```
+3. В том же терминале Azure Cloud Shell создайте базу данных с именем `guest`:
+      ```
+      mysql> CREATE DATABASE guest;
+      Query OK, 1 row affected (0.27 sec)
+      ```
+4. Переключитесь на базу данных `guest`:
+      ```
+      mysql> USE guest;
+      Database changed
+      ```
+5. Введите `quit` и нажмите клавишу **ВВОД**, чтобы выйти из mysql.
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/mysql-doc-feedback)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Вы успешно создали сервер службы "База данных Azure для MySQL" в группе ресурсов.  Если вы ожидаете, что в будущем эти ресурсы вам не понадобятся, их можно удалить, удалив группу ресурсов или сам сервер MySQL. Чтобы удалить группу ресурсов, выполните следующие шаги.
-1. Войдите на портал Azure; найдите в поиске и выберите **Группы ресурсов**. 
-2. В списке групп ресурсов выберите имя нужной группы ресурсов.
-3. На странице "Обзор" для группы ресурсов выберите **Удалить группу ресурсов**.
+Вы создали сервер службы "База данных Azure для MySQL" в группе ресурсов.  Если вы ожидаете, что в будущем эти ресурсы вам не понадобятся, их можно удалить, удалив группу ресурсов или сам сервер MySQL. Чтобы удалить группу ресурсов, выполните следующие шаги.
+1. Войдите на портал Azure; найдите в поиске и выберите **Группы ресурсов**.
+2. В списке групп ресурсов выберите имя группы ресурсов.
+3. На странице **Обзор** для группы ресурсов выберите **Удалить группу ресурсов**.
 4. В диалоговом окне подтверждения введите имя группы ресурсов и щелкните **Удалить**.
 
-Чтобы удалить сервер, можно нажать кнопку **Удалить** на странице **Обзор** для этого сервера, как показано ниже.
+Чтобы удалить сервер, нажмите кнопку **Удалить** на странице **Обзор** сервера, как показано ниже:
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/quickstart-create-mysql-server-database-using-azure-portal/delete-server.png" alt-text="Удаление ресурсов":::
+> :::image type="content" source="media/quickstart-create-mysql-server-database-using-azure-portal/delete-server.png" alt-text="Снимок экрана: кнопка &quot;Удалить&quot; на странице обзора сервера.":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
->[Создание приложения PHP с подключением к MySQL (Windows)](../app-service/tutorial-php-mysql-app.md)
+>[Создание приложения PHP с подключением к MySQL (Windows)](../app-service/app-service-web-tutorial-php-mysql.md) <br/>
+
+> [!div class="nextstepaction"]
+>[Создание приложение PHP в Linux с MySQL](../app-service/containers/tutorial-php-mysql-app.md)<br/><br/>
+
+[Не можете найти нужную информацию? Сообщите нам!](https://aka.ms/mysql-doc-feedback)

@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 7e703137b7954dd152f976069770a0c8c4a0f34c
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 6a88124397812f7599ce54b46b23d22e626cf520
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90564174"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629824"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Краткое руководство: создание общих файловых ресурсов Azure и управление ими с помощью портала Azure 
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В этом руководстве рассматриваются основы работы с файловыми ресурсами Azure с помощью [портала Azure](https://portal.azure.com/).
@@ -33,10 +33,10 @@ ms.locfileid: "90564174"
 4. В поле **Имя** введите *myshare*.
 5. Чтобы создать файловый ресурс Azure, нажмите кнопку **ОК**.
 
-Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы, и они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata).
+Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы, и они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них](/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata).
 
 ## <a name="use-your-azure-file-share"></a>Использование общего файлового ресурса Azure
-Служба "Файлы Azure" обеспечивает три способа работы с файлами и папками в общей папке Azure: стандартный отраслевой [протокол SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx), протокол NFS (предварительная версия) и [протокол File REST](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api). 
+Служба "Файлы Azure" обеспечивает три способа работы с файлами и папками в общей папке Azure: стандартный отраслевой [протокол SMB](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview), протокол NFS (предварительная версия) и [протокол File REST](/rest/api/storageservices/file-service-rest-api). 
 
 Чтобы установить общий файловый ресурс с помощью SMB, ознакомьтесь со следующим документом (с учетом вашей ОС):
 - [Windows](storage-how-to-use-files-windows.md)

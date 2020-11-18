@@ -8,12 +8,12 @@ ms.subservice: workloads
 ms.topic: overview
 ms.date: 09/22/2020
 ms.author: JenCook
-ms.openlocfilehash: 16f45c39a329998f4b4da4ea89315683a0fab790
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 44479db6b29075e87b0d2dcef6f0d9bc1881738c
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90967579"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560831"
 ---
 # <a name="confidential-computing-on-azure"></a>Конфиденциальные вычисления в Azure
 
@@ -84,7 +84,7 @@ Microsoft Azure поможет вам сократить поверхность 
 
 ### <a name="azure-security"></a>Безопасность в Azure 
 Обеспечьте безопасность рабочих нагрузок с помощью методов проверки и управления ключами с привязкой к оборудованию. 
-- Аттестация: [Аттестация Microsoft Azure (предварительная версия)](https://docs.microsoft.com/azure/attestation/overview)
+- Аттестация: [Аттестация Microsoft Azure (предварительная версия)](../attestation/overview.md)
 - Управление ключами: Управляемое устройство HSM (предварительная версия)
 
 ### <a name="develop"></a>Разработка

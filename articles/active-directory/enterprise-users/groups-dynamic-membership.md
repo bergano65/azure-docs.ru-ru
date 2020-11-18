@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: overview
-ms.date: 08/13/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1dc0429ae4507172e95618bc95e6a2c51034d352
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 8a448b510662eb2c3c4c8ae5a68c2ebc2ed448dc
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378891"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647364"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -95,29 +95,29 @@ user.department -eq "Sales"
 
 | Свойства | Допустимые значения | Использование |
 | --- | --- | --- |
-| city |Любое строковое значение или *null* . |(user.city -eq "value") |
-| country |Любое строковое значение или *null* . |(user.country -eq "value") |
-| companyName | Любое строковое значение или *null* . | (user.companyName -eq "value") |
-| department |Любое строковое значение или *null* . |(user.department -eq "value") |
+| city |Любое строковое значение или *null*. |(user.city -eq "value") |
+| country |Любое строковое значение или *null*. |(user.country -eq "value") |
+| companyName | Любое строковое значение или *null*. | (user.companyName -eq "value") |
+| department |Любое строковое значение или *null*. |(user.department -eq "value") |
 | displayName |Любое строковое значение |(user.displayName -eq "value") |
-| employeeId |Любое строковое значение |(user.employeeId -eq "value")<br>(user.employeeId -ne *null* ) |
-| facsimileTelephoneNumber |Любое строковое значение или *null* . |(user.facsimileTelephoneNumber -eq "value") |
-| givenName |Любое строковое значение или *null* . |(user.givenName -eq "value") |
-| jobTitle |Любое строковое значение или *null* . |(user.jobTitle -eq "value") |
+| employeeId |Любое строковое значение |(user.employeeId -eq "value")<br>(user.employeeId -ne *null*) |
+| facsimileTelephoneNumber |Любое строковое значение или *null*. |(user.facsimileTelephoneNumber -eq "value") |
+| givenName |Любое строковое значение или *null*. |(user.givenName -eq "value") |
+| jobTitle |Любое строковое значение или *null*. |(user.jobTitle -eq "value") |
 | mail |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
 | mailNickName |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
-| mobile |Любое строковое значение или *null* . |(user.mobile -eq "value") |
+| mobile |Любое строковое значение или *null*. |(user.mobile -eq "value") |
 | objectId |GUID объекта пользователя. |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
 | onPremisesSecurityIdentifier; | Локальный идентификатор безопасности (SID) для пользователей, которые были синхронизированы из локальной среды в облако. |(user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111") |
 | passwordPolicies |None, DisableStrongPassword, DisablePasswordExpiration, DisablePasswordExpiration, DisableStrongPassword |(user.passwordPolicies -eq "DisableStrongPassword") |
-| physicalDeliveryOfficeName |Любое строковое значение или *null* . |(user.physicalDeliveryOfficeName -eq "value") |
-| postalCode |Любое строковое значение или *null* . |(user.postalCode -eq "value") |
+| physicalDeliveryOfficeName |Любое строковое значение или *null*. |(user.physicalDeliveryOfficeName -eq "value") |
+| postalCode |Любое строковое значение или *null*. |(user.postalCode -eq "value") |
 | preferredLanguage |Код ISO 639-1. |(user.preferredLanguage -eq "en-US") |
-| sipProxyAddress |Любое строковое значение или *null* . |(user.sipProxyAddress -eq "value") |
-| state |Любое строковое значение или *null* . |(user.state -eq "value") |
-| streetAddress |Любое строковое значение или *null* . |(user.streetAddress -eq "value") |
-| surname |Любое строковое значение или *null* . |(user.surname -eq "value") |
-| TelephoneNumber |Любое строковое значение или *null* . |(user.telephoneNumber -eq "value") |
+| sipProxyAddress |Любое строковое значение или *null*. |(user.sipProxyAddress -eq "value") |
+| state |Любое строковое значение или *null*. |(user.state -eq "value") |
+| streetAddress |Любое строковое значение или *null*. |(user.streetAddress -eq "value") |
+| surname |Любое строковое значение или *null*. |(user.surname -eq "value") |
+| TelephoneNumber |Любое строковое значение или *null*. |(user.telephoneNumber -eq "value") |
 | usageLocation |Двухбуквенный код страны/региона |(user.usageLocation -eq "US") |
 | userPrincipalName |Любое строковое значение |(user.userPrincipalName -eq "alias@domain") |
 | userType |member, guest, *null* |(user.userType -eq "Member") |
@@ -190,10 +190,10 @@ Da, Dav, David имеют значение true, aDa имеет значение
 
 ### <a name="use-of-null-values"></a>Использование значений Null
 
-Чтобы указать значение NULL в правиле, можно использовать значение *null* . 
+Чтобы указать значение NULL в правиле, можно использовать значение *null*. 
 
 * Используйте -eq или -ne при сравнении значения *null* в выражении.
-* Используйте кавычки вокруг *null* , если это значение нужно интерпретировать как литеральное строковое значение.
+* Используйте кавычки вокруг *null*, если это значение нужно интерпретировать как литеральное строковое значение.
 * Оператор -not не может использоваться в качестве оператора сравнения со значением null. В противном случае при использовании значения null или $null произойдет ошибка.
 
 Ниже показано, как правильно указывать значение NULL.

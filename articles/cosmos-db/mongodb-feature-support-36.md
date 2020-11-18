@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 08/07/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 7fd52376e6b2d435e3ac6a60243f85ab34e59381
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: bb9efa3fde0ed840589b66db7b28392de67ee8dd
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412958"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635625"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.6) — поддержка возможностей и синтаксиса
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -23,7 +23,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="protocol-support"></a>Поддержка протоколов
 
-API Azure Cosmos DB для MongoDB совместим с сервером MongoDB версии  **3.6** по умолчанию для новых учетных записей. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB. Обратите внимание, что при использовании API Azure Cosmos DB для учетных записей MongoDB, учетные записи версии 3.6 будет иметь конечную точку в формате `*.mongo.cosmos.azure.com`, в то время как в версии 3.2 конечная точка будет иметь формат `*.documents.azure.com`.
+API Azure Cosmos DB для MongoDB совместим с сервером MongoDB версии **3.6** по умолчанию для новых учетных записей. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB. Обратите внимание, что при использовании API Azure Cosmos DB для учетных записей MongoDB, учетные записи версии 3.6 будет иметь конечную точку в формате `*.mongo.cosmos.azure.com`, в то время как в версии 3.2 конечная точка будет иметь формат `*.documents.azure.com`.
 
 ## <a name="query-language-support"></a>Поддержка языка запросов
 
@@ -576,7 +576,7 @@ Cosmos DB поддерживает срок жизни (TTL), определяе
 
 ## <a name="user-and-role-management"></a>Управление пользователями и ролями
 
-Cosmos DB пока не поддерживает концепцию пользователей и ролей. Тем не менее Cosmos DB поддерживает управление доступом на основе ролей (RBAC), а также пароли (ключи) для чтения и записи или только для чтения, которые можно получить с помощью [портала Azure](https://portal.azure.com) (на странице "Строка подключения").
+Cosmos DB пока не поддерживает концепцию пользователей и ролей. Тем не менее Cosmos DB поддерживает управление доступом Azure на основе ролей (Azure RBAC), а также пароли (ключи) для чтения и записи или только для чтения, которые можно получить с помощью [портала Azure](https://portal.azure.com) (на странице "Строка подключения").
 
 ## <a name="replication"></a>Репликация
 

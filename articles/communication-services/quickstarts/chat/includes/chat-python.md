@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 3c05596e16edc5243b8a97002a5cc5990c69ec43
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2b7d00335253772683b867acf0765b77fc493e79
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945625"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94523824"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы нужно сделать следующее:
@@ -85,7 +85,7 @@ chat_client = ChatClient(endpoint, CommunicationUserCredential(<Access Token>))
 Для создания потока чата используйте метод `create_chat_thread`.
 
 - Для указания раздела в этом чате используйте `topic`. Раздел можно обновить после создания потока чата с помощью функции `update_thread`.
-- Используйте `members`, чтобы получить список `ChatThreadMember`, добавляемых в поток чата. `ChatThreadMember` принимает объект `CommunicationUser` типа `user`, который был получен после [создания пользователя](../../access-tokens.md#create-a-user).
+- Используйте `members`, чтобы получить список `ChatThreadMember`, добавляемых в поток чата. `ChatThreadMember` принимает объект `CommunicationUser` типа `user`, который был получен после [создания пользователя](../../access-tokens.md#create-an-identity).
 
 Ответ `chat_thread_client`, который используется для выполнения операций с созданным потоком чата для добавления участников в поток, отправки, удаления сообщения и т. д. Он содержит свойство `thread_id`, которое является уникальным идентификатором потока чата.
 
@@ -158,7 +158,7 @@ chat_messages = chat_thread_client.list_messages()
 Используйте метод `add_members`, чтобы добавить участников потока в определяемый threadId поток.
 
 - Используйте `members`, чтобы получить список участников, добавляемых в поток чата.
-- Свойство `user` (обязательное) — это значение `CommunicationUser`, полученное `CommunicationIdentityClient` при [создании пользователя](../../access-tokens.md#create-a-user).
+- Свойство `user` (обязательное) — это значение `CommunicationUser`, полученное `CommunicationIdentityClient` при [создании пользователя](../../access-tokens.md#create-an-identity).
 - Свойство `display_name` (необязательное) — это отображаемое имя для участника потока.
 - Свойство `share_history_time` (необязательное) — это время, в течение которого участнику предоставляется доступ к журналу чата. Чтобы предоставить общий доступ к журналу с момента запуска потока чата, установите для этого свойства любую дату, равную или меньше времени создания потока. Чтобы не использовать журнал до момента добавления участника, задайте для него текущую дату. Чтобы предоставить общий доступ к части журнала, задайте для него промежуточную дату.
 

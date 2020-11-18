@@ -6,12 +6,12 @@ ms.service: container-service
 ms.topic: overview
 ms.date: 9/22/2020
 ms.author: amgowda
-ms.openlocfilehash: e459f654aa6824bc13b880f042d168b5b7cbafc0
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: cdd886bfcfb02aa46e440d2574b241f9b1cf3134
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368423"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564146"
 ---
 # <a name="enclave-aware-containers"></a>Контейнеры с поддержкой анклавов
 
@@ -65,5 +65,5 @@ Edgeless RT — это проект с открытым кодом, созда�
 
 
 <!-- LINKS - internal -->
-[Виртуальная машина контроллера домена](/azure/confidential-computing/virtual-machine-solutions)
-[Конфиденциальные контейнеры](/azure/confidential-computing/confidential-containers)
+[Виртуальная машина контроллера домена](./virtual-machine-solutions.md)
+[Конфиденциальные контейнеры](./confidential-containers.md)
