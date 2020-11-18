@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/22/2020
-ms.openlocfilehash: 65cdf444386d1b10cf225010c55170e5b47b3eb4
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 7acb555ddde20d6512119af85a8db055bcd9eeed
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541357"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701659"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое рабочая область Машинного обучения Azure?
 
@@ -89,7 +89,7 @@ ms.locfileid: "94541357"
 Существует несколько способов создания рабочей области.  
 
 * Используйте [портал Azure](how-to-manage-workspace.md?tabs=azure-portal#create-a-workspace) для интерфейса «точка-и щелчок», чтобы проанализировать каждый шаг.
-* Использование [пакета SDK машинное обучение Azure для Python](how-to-manage-workspace.md?tabs=python#create-a-workspace) для создания рабочей области на лету из сценариев Python и записных книжек Юпитер
+* Использование [пакета SDK машинное обучение Azure для Python](how-to-manage-workspace.md?tabs=python#create-a-workspace) для создания рабочей области на лету из сценариев Python или записных книжек Jupyter
 * Используйте [шаблон Azure Resource Manager](how-to-create-workspace-template.md) или интерфейс [командной строки машинное обучение Azure](reference-azure-machine-learning-cli.md) , если необходимо автоматизировать или настроить создание с использованием корпоративных стандартов безопасности.
 * При работе в Visual Studio Code используйте [расширение VS Code](how-to-manage-resources-vscode.md#create-a-workspace).
 

@@ -7,22 +7,24 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: e43f324a8c32615eded782e75291b575852c4382
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2bbd7e39ee65ba304ec62697b6fcc77bea133b41
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89393757"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94737258"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-cli"></a>Создание VPN-шлюза на основе маршрута с помощью CLI
 
 В статье кратко описано создание VPN-шлюза в Azure с использованием CLI в Azure. VPN-шлюз используется при создании VPN-подключения к локальной сети. Также вы можете использовать VPN-шлюз для подключения виртуальных сетей.
 
-Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создание шлюза в виртуальной сети может занять 45 минут или более. Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Инструкции в этой статье позволяют создать виртуальную сеть, подсеть, подсеть шлюза и VPN-шлюз на основе маршрутов (шлюз виртуальной сети). Создание шлюза в виртуальной сети может занять 45 минут или более. Создав шлюз, можно создавать подключения. Для этих действий требуется подписка Azure.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+
+- Для работы с этой статьей требуется версия 2.0.4 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -56,7 +58,7 @@ az network vnet subnet create \
   --vnet-name VNet1 \
   -n GatewaySubnet \
   -g TestRG1 \
-  --address-prefix 10.1.255.0/27 
+  --address-prefix 10.1.255.0/27 
 ```
 
 ## <a name="request-a-public-ip-address"></a><a name="PublicIP"></a>Запрос общедоступного IP-адреса
@@ -67,7 +69,7 @@ VPN-шлюз должен иметь динамически выделяемый
 az network public-ip create \
   -n VNet1GWIP \
   -g TestRG1 \
-  --allocation-method Dynamic 
+  --allocation-method Dynamic 
 ```
 
 ## <a name="create-the-vpn-gateway"></a><a name="CreateGateway"></a>Создание VPN-шлюза
@@ -179,7 +181,7 @@ az network public-ip show \
 az group delete --name TestRG1 --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создав шлюз, можно создать подключение между вашей и другой виртуальной сетью. Также можно создать подключение между виртуальной сетью и локальным расположением.
 

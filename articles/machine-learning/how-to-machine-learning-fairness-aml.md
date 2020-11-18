@@ -1,26 +1,24 @@
 ---
 title: Оценка равноправия моделей ML в Python (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Узнайте, как оценить равноправие моделей в Машинное обучение Azure
+description: Узнайте, как оценивать и устранять равноправие моделей машинного обучения с помощью Фаирлеарн и пакета SDK для Python Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.author: mesameki
 author: mesameki
 ms.reviewer: luquinta
-ms.date: 09/01/2020
+ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: bf819e5cff8c6ef008b0e55e156ba3531936b489
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 3fbd4990fd330960bb8dbce2e2a8d1bcb578cf2a
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337888"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701190"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Использование Машинное обучение Azure с пакетом с открытым исходным кодом Фаирлеарн для оценки распределения моделей машинного обучения (Предварительная версия)
-
-
 
 В этом пошаговом руководство вы узнаете, как использовать пакет Python с открытым кодом [фаирлеарн](https://fairlearn.github.io/) с машинное обучение Azure для выполнения следующих задач:
 
@@ -306,7 +304,7 @@ pip install fairlearn==0.4.6
     ```
 
 
-    Как и в предыдущем разделе, можно выполнить один из описанных выше путей (через **эксперименты** или **модели** ) в машинное обучение Azure Studio, чтобы получить доступ к панели мониторинга визуализации и сравнить две модели с точки зрения равномерности и производительности.
+    Как и в предыдущем разделе, можно выполнить один из описанных выше путей (через **эксперименты** или **модели**) в машинное обучение Azure Studio, чтобы получить доступ к панели мониторинга визуализации и сравнить две модели с точки зрения равномерности и производительности.
 
 
 ## <a name="upload-unmitigated-and-mitigated-fairness-insights"></a>Отправка нерешенных и сниженных ценных сведений об равноправии
@@ -321,7 +319,7 @@ pip install fairlearn==0.4.6
 [![Панель мониторинга Фаирлеарн для сравнения моделей](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)
     
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Дополнительные сведения о равномерном использовании модели](concept-fairness-ml.md)
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: 6cd696bf0853b1e6bafc06f2e99b2808970fed25
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 6bcdb4a48f71e28514229116c10bd25747b55616
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686853"
+ms.locfileid: "94701829"
 ---
 # <a name="javascript-code-samples-for-azure-cognitive-search"></a>Примеры кода JavaScript для Azure Когнитивный поиск
 
@@ -38,7 +38,7 @@ ms.locfileid: "94686853"
 | [индексаторов](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/indexers) |  Демонстрирует создание, обновление, получение, перечисление, сброс и удаление [индексаторов](search-indexer-overview.md).|
 | [Набор навыков](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/skillSets) |   Демонстрирует создание, обновление, получение, перечисление и удаление [навыков](cognitive-search-working-with-skillsets.md) , присоединенных индексаторов, и выполнение обогащения на основе искусственного интеллекта во время индексирования. |
 | [synonymMaps](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/synonymMaps) | Демонстрирует создание, обновление, получение, перечисление и удаление [сопоставлений синонимов](search-synonyms.md).  |
-| [Запросы](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/javascript/src/readonlyQuery.js) | Запросы доступны только для чтения. Этот пример запроса выполняется для открытого индекса, размещенного корпорацией Майкрософт.  |
+| [Запросы](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/javascript/src/readonlyQuery.js) | Демонстрирует выполнение запроса к открытому индексу только для чтения, размещенному корпорацией Майкрософт.  |
 
 ## <a name="typescript-samples"></a>Примеры TypeScript
 
@@ -51,7 +51,7 @@ ms.locfileid: "94686853"
 | [индексаторов](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/indexers) |  Демонстрирует создание, обновление, получение, перечисление, сброс и удаление [индексаторов](search-indexer-overview.md).|
 | [Набор навыков](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/skillSets) |   Демонстрирует создание, обновление, получение, перечисление и удаление [навыков](cognitive-search-working-with-skillsets.md) , присоединенных индексаторов, и выполнение обогащения на основе искусственного интеллекта во время индексирования. |
 | [synonymMaps](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/synonymMaps) | Демонстрирует создание, обновление, получение, перечисление и удаление [сопоставлений синонимов](search-synonyms.md).  |
-| [Запросы](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/typescript/src/readonlyQuery.js) | Демонстрирует выполнение запроса к открытому индексу только для чтения, размещенному корпорацией Майкрософт.  |
+| [Запросы](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/typescript/src/readonlyQuery.ts) | Демонстрирует выполнение запроса к открытому индексу только для чтения, размещенному корпорацией Майкрософт.  |
 
 ## <a name="documentation-samples"></a>Примеры документации
 
@@ -59,7 +59,7 @@ ms.locfileid: "94686853"
 
 | Примеры | Описание | 
 |---------|-------------|
-| [QuickStart](https://github.com/Azure-Samples/azure-search-javascript-samples/tree/master/Quickstart) | Исходный код для [краткого руководства: создание индекса поиска в JavaScript](search-get-started-javascript.md).  |
+| [QuickStart](https://github.com/Azure-Samples/azure-search-javascript-samples/tree/master/quickstart/v11) | Исходный код для [краткого руководства: создание индекса поиска в JavaScript](search-get-started-javascript.md).  |
 
 ## <a name="standalone-samples"></a>Автономные примеры
 

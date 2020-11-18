@@ -9,12 +9,12 @@ ms.date: 11/16/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0bd2b295e5e4d4d5ea6e25869c8c109ff8bbbf38
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 906df01587201561fbbfea0661d0885864042925
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660769"
+ms.locfileid: "94701319"
 ---
 # <a name="list-blobs-with-net"></a>Получение списка больших двоичных объектов с помощью .NET
 
@@ -64,6 +64,10 @@ ms.locfileid: "94660769"
 - Если вы используете пакет SDK для .NET версии 12, укажите значение **метаданных** для перечисления [блобтраитс](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.models.blobtraits) .
 
 - Если вы используете пакет SDK для .NET версии 11, укажите значение **метаданных** для перечисления [блоблистингдетаилс](/dotnet/api/microsoft.azure.storage.blob.bloblistingdetails) . Служба хранилища Azure включает метаданные для каждого возвращенного большого двоичного объекта, поэтому вам не нужно вызывать один из методов **FetchAttributes** в этом контексте, чтобы получить метаданные большого двоичного объекта.
+
+### <a name="list-blob-versions-or-snapshots"></a>Вывод списка версий BLOB-объектов или моментальных снимков
+
+Чтобы получить список версий BLOB-объектов или моментальных снимков с клиентской библиотекой .NET 12, укажите параметр [блобстатес](/dotnet/api/azure.storage.blobs.models.blobstates) в поле **версия** или **моментальный снимок** . Версии и моментальные снимки перечислены от старых к новым. Дополнительные сведения о листинге версий см. в разделе [список версий BLOB-объектов](versioning-enable.md#list-blob-versions).
 
 ### <a name="flat-listing-versus-hierarchical-listing"></a>Неструктурированный список и структурированный список
 

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: 11629338a808ae0f83ac513b6475dce7a53814da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d889c82142cda60b920f7b29bd91755cbc34f525
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88190165"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701455"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Контроль доступа в Azure Data Lake Storage 1-го поколения
 
@@ -75,8 +75,8 @@ ms.locfileid: "88190165"
 |-----------|---------------------|-----------|------------|-------------|----------------|
 | Чтение      | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `R--`          |
 | Добавление к | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `RW-`          |
-| DELETE    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
-| Создание    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
+| Удалить    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
+| Создать    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | Список      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |
 | Список      | /Seattle/           |   `--X`   |   `R-X`    |  `---`      | `---`          |
 | Список      | /Seattle/Portland/  |   `--X`   |   `--X`    |  `R-X`      | `---`          |
@@ -280,7 +280,11 @@ def set_default_acls_for_new_child(parent, child):
 
 ### <a name="why-do-i-sometimes-see-guids-in-the-acls-when-im-using-the-azure-portal"></a>Почему при просмотре на портале Azure для списков ACL иногда отображаются идентификаторы GUID?
 
-GUID отображается, если пользователь не существует в AAD. Как правило, это происходит, если пользователь уволился или его учетная запись удалена из AAD.
+GUID отображается, если пользователь не существует в AAD. Как правило, это происходит, если пользователь уволился или его учетная запись удалена из AAD. Кроме того, убедитесь, что вы используете правильный идентификатор для настройки списков управления доступом (подробности см. ниже).
+
+### <a name="when-using-service-principal-what-id-should-i-use-to-set-acls"></a>Какой идентификатор использовать для задания списков управления доступом при использовании субъекта-службы?
+
+На портале Azure перейдите в раздел **Azure Active Directory-> корпоративные приложения** и выберите свое приложение. На вкладке **Обзор** должен отображаться идентификатор объекта, который следует использовать при добавлении списков ACL для доступа к данным (а не идентификатору приложения).
 
 ### <a name="does-data-lake-storage-gen1-support-inheritance-of-acls"></a>Поддерживает ли Data Lake Storage 1-го поколения наследование списков ACL?
 

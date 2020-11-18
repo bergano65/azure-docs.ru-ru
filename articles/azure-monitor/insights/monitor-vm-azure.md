@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: 84db7f58c292cf0a9d01cf90da4b847691f601fb
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 0c1e84695ce40b489fb1005325d501ea241cdaf1
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491636"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94738107"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Мониторинг виртуальных машин Azure с помощью Azure Monitor
 В этой статье описывается, как использовать Azure Monitor для сбора и анализа данных мониторинга с виртуальных машин Azure для поддержания их работоспособности. С помощью Azure Monitor можно отслеживать доступность и производительность виртуальных машин так же, как аналогичные параметры любых [других ресурсов Azure](monitor-azure-resource.md). Однако они отличаются от других ресурсов тем, что, помимо прочего, необходимо отслеживать операционную систему на виртуальной машине и выполняющиеся на ней рабочие нагрузки. 
@@ -86,7 +86,7 @@ ms.locfileid: "94491636"
 
 ![Конфигурация рабочей области](media/monitor-vm-azure/workspace-configuration.png)
 
-В меню рабочей области выберите пункт **Дополнительные параметры** , а затем пункт **Данные** , чтобы настроить источники данных. Для агентов Windows выберите **Журналы событий Windows** и добавьте общие журналы событий, такие как *Система* и *Приложение*. Для агентов Linux выберите **Syslog** и добавьте общие средства, такие как *kern* и *daemon*. Список доступных источников данных и сведения об их настройке см. в статье [Источники данных агента в Azure Monitor](../platform/agent-data-sources.md). 
+В меню рабочей области выберите пункт **Дополнительные параметры**, а затем пункт **Данные**, чтобы настроить источники данных. Для агентов Windows выберите **Журналы событий Windows** и добавьте общие журналы событий, такие как *Система* и *Приложение*. Для агентов Linux выберите **Syslog** и добавьте общие средства, такие как *kern* и *daemon*. Список доступных источников данных и сведения об их настройке см. в статье [Источники данных агента в Azure Monitor](../platform/agent-data-sources.md). 
 
 ![Настройка событий](media/monitor-vm-azure/configure-events.png)
 
@@ -170,7 +170,7 @@ Azure Monitor для виртуальных машин обеспечивает 
 
 
 > [!NOTE]
-> Данные по производительности, собираемые агентом Log Analytics, записываются в таблицу *Perf* , в то время как Azure Monitor для виртуальных машин записывает их в таблицу *InsightsMetrics*. Данные одинаковы, но таблицы имеют разную структуру. Если у вас есть существующие запросы на основе таблицы *Perf* , их потребуется переписать для использования *InsightsMetrics*.
+> Данные по производительности, собираемые агентом Log Analytics, записываются в таблицу *Perf*, в то время как Azure Monitor для виртуальных машин записывает их в таблицу *InsightsMetrics*. Данные одинаковы, но таблицы имеют разную структуру. Если у вас есть существующие запросы на основе таблицы *Perf*, их потребуется переписать для использования *InsightsMetrics*.
 
 
 ## <a name="alerts"></a>видны узлы
@@ -207,7 +207,7 @@ Azure Monitor для виртуальных машин обеспечивает 
 
 ```kusto
 Heartbeat
-| where TimeGenerated < ago(10m)
+| where TimeGenerated > ago(10m)
 | where ResourceGroup == "my-resource-group"
 | summarize max(TimeGenerated) by Computer
 ```
@@ -218,7 +218,7 @@ Heartbeat
 
 ```kusto
 Event
-| where TimeGenerated < ago(1hr)
+| where TimeGenerated > ago(1hr)
 | where EventID == 4625
 ```
 

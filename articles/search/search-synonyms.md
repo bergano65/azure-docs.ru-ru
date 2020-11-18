@@ -8,12 +8,12 @@ ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 08/26/2020
-ms.openlocfilehash: aad953483749d676844221f7e519f50c50b63ad4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8f1fa07b94072d37cf83320b6c8956d3b412f12
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88948646"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701122"
 ---
 # <a name="synonyms-in-azure-cognitive-search"></a>Синонимы в Azure Когнитивный поиск
 
@@ -23,7 +23,7 @@ Synonyms представляет собой поисковые системы, 
 
 ## <a name="create-synonyms"></a>Создание синонимов
 
-На портале не поддерживается создание синонимов, но можно использовать REST API или пакет SDK для .NET. Чтобы начать работу с ОСТАВШЕЙся, мы рекомендуем [использовать POST](search-get-started-postman.md) и формулировку запросов с помощью этого API: [Создание карт синонимов](/rest/api/searchservice/create-synonym-map). Для разработчиков на C# вы можете приступить к работе с [добавлением синонимов в функции поиска в Azure с помощью c#](search-synonyms-tutorial-sdk.md).
+На портале не поддерживается создание синонимов, но можно использовать REST API или пакет SDK для .NET. Чтобы начать работу с ОСТАВШЕЙся, мы рекомендуем [публиковать или Visual Studio Code](search-get-started-rest.md) и формулировку запросов с помощью этого API: [Создание карт синонимов](/rest/api/searchservice/create-synonym-map). Для разработчиков на C# вы можете приступить к работе с [добавлением синонимов в функции поиска в Azure с помощью c#](search-synonyms-tutorial-sdk.md).
 
 При необходимости, если вы используете [управляемые клиентом ключи](search-security-manage-encryption-keys.md) для шифрования на стороне службы, вы можете применить эту защиту к содержимому схемы синонимов.
 
@@ -185,7 +185,7 @@ WA\, USA, WA, Washington
 
 Если у вас есть индекс в среде разработки (не в рабочей среде), поэкспериментируйте с небольшим словарем, чтобы узнать, как добавление синонимов изменяет результаты поиска, включая влияние на профили повышения, выделение совпадений и предложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Создание схемы синонимов](/rest/api/searchservice/create-synonym-map)

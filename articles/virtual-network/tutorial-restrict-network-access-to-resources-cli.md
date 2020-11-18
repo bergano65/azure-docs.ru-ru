@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2be9b5e6fd489b331982d31693bf810d488d92b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a1eab081a7c1e83a57ef4735c6eb5248d92defc
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87484170"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734129"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-cli"></a>Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек служб для виртуальной сети с помощью Azure CLI
 
@@ -35,11 +35,11 @@ ms.locfileid: "87484170"
 * Подтверждение прав доступа к ресурсу из подсети.
 * Подтверждение запрета доступа к ресурсу из подсети и Интернета.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 

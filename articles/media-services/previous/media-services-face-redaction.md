@@ -3,7 +3,7 @@ title: Скрытие лиц с помощью аналитики мультим
 description: Azure Media Redactor — это Аналитика мультимедиа Azureный обработчик мультимедиа, который обеспечивает масштабируемую оттенок в облаке. В этой статье показано, как исправить лица с помощью Azure Media Analytics.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,31 +11,34 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 11/17/2020
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a5b5759f0a7fff0f76e8c65cbf879fcd06337712
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: df2962c8d428694a663acddf5922829f8b913b92
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92017205"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94737495"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Скрытие лиц с помощью аналитики мультимедиа Azure
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 ## <a name="overview"></a>Обзор
-**Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure ](./legacy-components.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом](https://azure.microsoft.com/blog/azure-media-redactor/) блоге.
+
+**Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure](./legacy-components.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий.
 
 Эта статья посвящена **Azure Media Redactor** и способам его использования с пакетом SDK служб мультимедиа для .NET.
 
 ## <a name="face-redaction-modes"></a>Режимы скрытия лиц
+
 Во время работы этой функции в каждом видеокадре лица определяются и отслеживаются на протяжении всей записи. Таким образом, лицо одного и того же человека можно размыть, даже если оно снято с другого ракурса. Автоматическое скрытие — это сложный процесс, который не всегда справляется с поставленной задачей. По этой причине служба "Аналитика мультимедиа" предусматривает несколько способов изменения полученного результата.
 
 Помимо полностью автоматического режима, доступен двухэтапный рабочий процесс, в рамках которого вы можете выбирать и отменять выбор обнаруженных лиц с помощью списка идентификаторов. Кроме того, чтобы сделать изменения в каждом кадре произвольными, обработчик мультимедиа использует файл метаданных в формате JSON. Этот рабочий процесс разделен на два режима: **анализ** и **скрытие**. Эти два режима можно объединить, чтобы они выполнялись в рамках одного задания. Такой режим называется **объединенным**.
 
 ### <a name="combined-mode"></a>Объединенный режим
+
 В результате вы получаете MP4-файл с автоматическим скрытием, который не нужно править вручную.
 
 | Этап | Имя файла | Примечания |
@@ -44,13 +47,8 @@ ms.locfileid: "92017205"
 | Входная конфигурация |Конфигурация задания (предустановка) |{'version':'1.0', 'options': {'mode':'combined'}} |
 | Выходной ресурс-контейнер |foo_redacted.mp4 |Видео с размытием |
 
-#### <a name="input-example"></a>Пример входных данных
-[См. видео](https://ampdemo.azureedge.net/?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fed99001d-72ee-4f91-9fc0-cd530d0adbbc%2FDancing.mp4)
-
-#### <a name="output-example"></a>Пример выходных данных
-[См. видео](https://ampdemo.azureedge.net/?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc6608001-e5da-429b-9ec8-d69d8f3bfc79%2Fdance_redacted.mp4)
-
 ### <a name="analyze-mode"></a>Режим анализа
+
 В режиме **анализа** двухэтапный рабочий процесс принимает входное видео и создает JSON-файл с регистрацией расположения лиц, а также изображения всех обнаруженных лиц в формате JPG.
 
 | Этап | Имя файла | Примечания |
@@ -63,55 +61,56 @@ ms.locfileid: "92017205"
 #### <a name="output-example"></a>Пример выходных данных
 
 ```json
+{
+  "version": 1,
+  "timescale": 24000,
+  "offset": 0,
+  "framerate": 23.976,
+  "width": 1280,
+  "height": 720,
+  "fragments": [
     {
-      "version": 1,
-      "timescale": 24000,
-      "offset": 0,
-      "framerate": 23.976,
-      "width": 1280,
-      "height": 720,
-      "fragments": [
-        {
-          "start": 0,
-          "duration": 48048,
-          "interval": 1001,
-          "events": [
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [
-              {
-                "index": 13,
-                "id": 1138,
-                "x": 0.29537,
-                "y": -0.18987,
-                "width": 0.36239,
-                "height": 0.80335
-              },
-              {
-                "index": 13,
-                "id": 2028,
-                "x": 0.60427,
-                "y": 0.16098,
-                "width": 0.26958,
-                "height": 0.57943
-              }
-            ],
+      "start": 0,
+      "duration": 48048,
+      "interval": 1001,
+      "events": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "index": 13,
+            "id": 1138,
+            "x": 0.29537,
+            "y": -0.18987,
+            "width": 0.36239,
+            "height": 0.80335
+          },
+          {
+            "index": 13,
+            "id": 2028,
+            "x": 0.60427,
+            "y": 0.16098,
+            "width": 0.26958,
+            "height": 0.57943
+          }
+        ],
 
-    … truncated
+    ... truncated
 ```
 
 ### <a name="redact-mode"></a>Режим скрытия
+
 Во время второго этапа рабочий процесс принимает большее количество входных данных для объединения в один ресурс-контейнер.
 
 Сюда входит список идентификаторов размываемых лиц, исходное видео и аннотации в формате JSON. Этот режим использует аннотации для применения размытия ко входному видео.
@@ -127,13 +126,12 @@ ms.locfileid: "92017205"
 | Выходной ресурс-контейнер |foo_redacted.mp4 |Видео с размытием, примененным на основе аннотаций |
 
 #### <a name="example-output"></a>Пример выходных данных
+
 Выходные данные из списка идентификаторов с одним выбранным идентификатором.
 
-[См. видео](https://ampdemo.azureedge.net/?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fad6e24a2-4f9c-46ee-9fa7-bf05e20d19ac%2Fdance_redacted1.mp4)
-
 Пример foo_IDList.txt
- 
-```output
+
+```
 1
 2
 3
@@ -145,16 +143,22 @@ ms.locfileid: "92017205"
 
 Примеры типов размытия можно просмотреть ниже.
 
-### <a name="example-json"></a>Пример JSON:
+### <a name="example-json"></a>Пример JSON
 
 ```json
-    {'version':'1.0', 'options': {'Mode': 'Combined', 'BlurType': 'High'}}
+{
+    'version':'1.0',
+    'options': {
+        'Mode': 'Combined',
+        'BlurType': 'High'
+    }
+}
 ```
 
 #### <a name="low"></a>Низкий
 
 ![Низкий](./media/media-services-face-redaction/blur1.png)
- 
+
 #### <a name="med"></a>Средний
 
 ![Средний](./media/media-services-face-redaction/blur2.png)
@@ -193,11 +197,11 @@ ms.locfileid: "92017205"
             }
     ```
 
-3. Загрузка выходных JSON-файлов. 
+3. Загрузка выходных JSON-файлов.
 
-#### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
+### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и заполните файл app.config данными о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл app.config данными о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md).
 
 #### <a name="example"></a>Пример
 
@@ -374,9 +378,11 @@ namespace FaceRedaction
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
+
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки
+
 [Общие сведения об аналитике служб мультимедиа Azure](./legacy-components.md)
 
 [Демонстрационные материалы для медиааналитики Azure](https://azuremedialabs.azurewebsites.net/demos/Analytics.html)

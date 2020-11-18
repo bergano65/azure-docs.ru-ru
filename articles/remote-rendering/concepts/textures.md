@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 27395fe377972f51c849f8a61f51a628612ed54d
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: b951dab1ad01187c7612fad047bc52eb6aa9700e
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92202673"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701880"
 ---
 # <a name="textures"></a>Текстуры
 
@@ -26,7 +26,7 @@ ms.locfileid: "92202673"
 
 ## <a name="supported-texture-formats"></a>Поддерживаемые форматы текстур
 
-Все текстуры, переданные в ARR, должны быть в [формате DDS](https://en.wikipedia.org/wiki/DirectDraw_Surface). Желательно с MIP-картами и сжатием текстур. Чтобы автоматизировать процесс преобразования, см. [средство командной строки TexConv](../resources/tools/tex-conv.md).
+Все текстуры, переданные в ARR, должны быть в [формате DDS](https://en.wikipedia.org/wiki/DirectDraw_Surface). Желательно с MIP-картами и сжатием текстур.
 
 ## <a name="loading-textures"></a>Загрузка текстур
 

@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: aee3f5602d0bd1ff12717d903d662ce4605de61d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: ee37ab90910058378172223a3435047346f5fe7c
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683766"
+ms.locfileid: "94701793"
 ---
 # <a name="windows-virtual-desktop-rdp-shortpath-preview"></a>Виртуальный рабочий стол RDP Шортпас (Предварительная версия)
 
@@ -176,7 +176,7 @@ New-NetFirewallRule -DisplayName 'Remote Desktop - Shortpath (UDP-In)'  -Action 
 Чтобы убедиться, что сеанс использует транспорт Шортпас RDP, выполните следующие действия.
 
 1. Подключитесь к рабочему столу виртуальной машины с помощью клиента Виртуального рабочего стола Windows.
-2. Запустите Просмотр событий и перейдите к следующему узлу: **журналы приложений и служб > Microsoft > Windows > RemoteDesktopServices-RdpCoreCDV > работает**
+2. Запустите Просмотр событий и перейдите к следующему узлу: **журналы приложений и служб > microsoft > Windows > RemoteDesktopServices-RdpCoreCDV > Microsoft-Windows-ремотедесктопсервицес-рдпкорекдв/эксплуатация** .
 3. Чтобы определить, используется ли транспорт RDP Шортпас, найдите событие с ИДЕНТИФИКАТОРом 131.
 
 ### <a name="using-log-analytics-to-verify-shortpath-connectivity"></a>Проверка подключения Шортпас с помощью Log Analytics
@@ -252,7 +252,7 @@ Get-Process -id (Get-NetUDPEndpoint  -LocalPort 3390 -LocalAddress 0.0.0.0).Owni
 Мы хотели бы узнать о своих впечатлениях в этой общедоступной предварительной версии!
 * Для вопросов, запросов, комментариев и других отзывов [Используйте эту форму обратной связи](https://aka.ms/RDPShortpathFeedback).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о сетевом подключении к виртуальным рабочим столам Windows [см.](network-connectivity.md)
 * Чтобы приступить к работе со службой QoS для виртуальных рабочих столов Windows, см. статью [Реализация качества обслуживания (QoS) для виртуальных рабочих столов Windows](rdp-quality-of-service-qos.md).

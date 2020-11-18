@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: rdhillon
 ms.custom: ''
-ms.openlocfilehash: 53f10996a7f15e32261f151600163f41df4e58ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a080c3953c48227301052a0bb151c8cba96e515a
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666795"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94737393"
 ---
 # <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-the-azure-cli"></a>Управление данными утечка в учетные записи хранения Azure с помощью политик конечной точки службы виртуальной сети с использованием Azure CLI
 
@@ -37,11 +37,11 @@ ms.locfileid: "91666795"
 * Подтвердите доступ к разрешенной учетной записи хранения из подсети.
 * Убедитесь, что доступ запрещен учетной записи хранения, неразрешенной из подсети.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
@@ -335,7 +335,7 @@ sudo mount --types cifs //allowedstorageacc.file.core.windows.net/my-file-share 
 
 ### <a name="confirm-access-is-denied-to-storage-account"></a>Подтверждение запрета доступа к учетной записи хранения
 
-В той же *myVmPrivate*виртуальной машины создайте каталог для точки подключения:
+В той же *myVmPrivate* виртуальной машины создайте каталог для точки подключения:
 
 ```bash
 sudo mkdir /mnt/MyAzureFileShare2
@@ -361,6 +361,6 @@ sudo mount --types cifs //notallowedstorageacc.file.core.windows.net/my-file-sha
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы применили политику конечной точки службы к службе хранилища Azure для конечной точки службы виртуальной сети Azure. Вы создали учетные записи хранения Azure и ограниченный сетевой доступ только к определенным учетным записям хранения (и, таким же, отклонили другие) из подсети виртуальной сети. Дополнительные сведения о политиках конечной точки службы см. в статье [Общие сведения о политиках конечных точек служб](virtual-network-service-endpoint-policies-overview.md).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: genli
-ms.openlocfilehash: e1acfc3216ccfaeac035f1ff31e82c7b67c17daf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f950cb63b5083a85ab5420434abdd9a720115b1a
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76119624"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734554"
 ---
 # <a name="troubleshoot-a-faulty-azure-vm-by-using-nested-virtualization-in-azure"></a>Устранение неполадок с неисправными виртуальными машинами Azure с помощью вложенной виртуализации в Azure
 
@@ -96,12 +96,12 @@ ms.locfileid: "76119624"
 
     ![рисунок добавления нового жесткого диска](media/troubleshoot-vm-by-use-nested-virtualization/create-new-drive.png)    
 
-14. В поле **физический жесткий диск**выберите диск неисправной виртуальной машины, подключенной к виртуальной машине Azure. Если диски в списке отсутствуют, с помощью параметра "Управление дисками" проверьте заданное состояние для диска ("Отключен").
+14. В поле **физический жесткий диск** выберите диск неисправной виртуальной машины, подключенной к виртуальной машине Azure. Если диски в списке отсутствуют, с помощью параметра "Управление дисками" проверьте заданное состояние для диска ("Отключен").
 
     ![рисунок с параметрами подключения диска](media/troubleshoot-vm-by-use-nested-virtualization/mount-disk.png)  
 
 
-15. Нажмите кнопку **Apply** (Применить), а затем нажмите кнопку **ОК**.
+15. Нажмите кнопку **Применить**, а затем кнопку **ОК**.
 
 16. Дважды щелкните виртуальную машину, а затем запустите ее.
 
@@ -111,7 +111,7 @@ ms.locfileid: "76119624"
 
 1.  После возвращения виртуальной машины в оперативный режим завершите ее работу в диспетчере Hyper-V.
 
-2.  [Отключите и отсоедините исправленный диск операционной системы](troubleshoot-recovery-disks-portal-windows.md#unmount-and-detach-original-virtual-hard-disk
+2.  [Отключите и отсоедините исправленный диск операционной системы](troubleshoot-recovery-disks-portal-windows.md#unmount-and-detach-the-original-virtual-hard-disk
 ).
 3.  [Замените диск ОС, используемый виртуальной машиной, исправленным диском ОС](troubleshoot-recovery-disks-portal-windows.md#swap-the-os-disk-for-the-vm
 ).

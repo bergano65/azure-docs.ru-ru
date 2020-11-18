@@ -1,20 +1,20 @@
 ---
 title: Интеграция с Git для Машинное обучение Azure
 titleSuffix: Azure Machine Learning
-description: Узнайте, как Машинное обучение Azure интегрируется с локальным репозиторием Git. При отправке обучающего запуска из локального каталога, который является репозиторием Git, сведения о репозитории, ветви и текущей фиксации отправляются в ходе выполнения.
+description: Узнайте, как Машинное обучение Azure интегрируется с локальным репозиторием Git для хранения сведений о репозитории, ветви и текущей фиксации в процессе обучения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.author: jordane
 author: jpe316
-ms.date: 03/05/2020
-ms.openlocfilehash: f13773a8e3e78451dfb587e55c40a20d1b4b385c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 11/16/2020
+ms.openlocfilehash: 989fc7cb66cf5381d174a3aad12f84f5b055aab8
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324772"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701642"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Интеграция с Git для Машинное обучение Azure
 
@@ -155,7 +155,7 @@ SSH отображает этот отпечаток при подключени
 1. На [портале студии](https://ml.azure.com)выберите рабочую область.
 1. Выберите __эксперименты__ и выберите один из экспериментов.
 1. Выберите один из запусков из столбца __номер запуска__ .
-1. Выберите __выходные данные + журналы__ , а затем разверните __журналы__ и записи __azureml__ . Выберите ссылку, которая начинается с __### \_ Azure__.
+1. Выберите __выходные данные + журналы__, а затем разверните __журналы__ и записи __azureml__ . Выберите ссылку, которая начинается с __### \_ Azure__.
 
 Записанные в журнал данные содержат текст, похожий на следующий код JSON:
 
@@ -194,6 +194,6 @@ az ml run list -e train-on-amlcompute --last 1 -w myworkspace -g myresourcegroup
 
 Дополнительные сведения см. в справочной документации по [AZ ML по запуску](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md)

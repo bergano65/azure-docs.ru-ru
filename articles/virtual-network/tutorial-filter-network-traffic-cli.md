@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9af6311165f50023cfca8f9253f77b4c84c25dd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7589b13dc517a23e8d9d65907fb3342e4e2490a9
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500935"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734367"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-the-azure-cli"></a>Фильтрация сетевого трафика с помощью групп безопасности сети, используя Azure CLI
 
@@ -33,12 +33,11 @@ ms.locfileid: "87500935"
 * Развертывание виртуальных машин в подсеть.
 * Тестирование фильтров трафика
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
-
+- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
@@ -224,13 +223,13 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 ```
 
-Виртуальной машине* myVmWeb * разрешено исходящие подключение к Интернету для извлечения nginx, так как правило безопасности по умолчанию разрешает весь исходящий трафик в Интернет. Закройте сеанс SSH с *myVmWeb*, сохраняя подключение `username@myVmMgmt:~$` к виртуальной машине *myVmMgmt*. Чтобы получить экран приветствия nginx из виртуальной машины *myVmWeb*, введите следующую команду.
+Виртуальной машине *myVmWeb* разрешено исходящие подключение к Интернету для извлечения nginx, так как правило безопасности по умолчанию разрешает весь исходящий трафик в Интернет. Закройте сеанс SSH с *myVmWeb*, сохраняя подключение `username@myVmMgmt:~$` к виртуальной машине *myVmMgmt*. Чтобы получить экран приветствия nginx из виртуальной машины *myVmWeb*, введите следующую команду.
 
 ```bash
 curl myVmWeb
 ```
 
-Выйдите из виртуальной машины *myVmMgmt*. Чтобы убедиться, что вы можете получить доступ к веб-серверу *myVmWeb * извне Azure, введите `curl <publicIpAddress>` на вашем компьютере. Подключение будет установлено, поскольку порту 80 разрешено выполнять вход из Интернета в группу безопасности приложений *myAsgWebServers* , в которой находится сетевой интерфейс, подключенный к виртуальной машине *myVmWeb* .
+Выйдите из виртуальной машины *myVmMgmt*. Чтобы убедиться, что вы можете получить доступ к веб-серверу *myVmWeb* извне Azure, введите `curl <publicIpAddress>` на вашем компьютере. Подключение будет установлено, поскольку порту 80 разрешено выполнять вход из Интернета в группу безопасности приложений *myAsgWebServers* , в которой находится сетевой интерфейс, подключенный к виртуальной машине *myVmWeb* .
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -240,7 +239,7 @@ curl myVmWeb
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали группу безопасности сети и связали ее с подсетью виртуальной сети. Дополнительные сведения о группах безопасности сети см. в статьях [Безопасность сети](security-overview.md) и [Create, change, or delete a network security group](manage-network-security-group.md) (Создание, изменение или удаление группы безопасности сети).
 
