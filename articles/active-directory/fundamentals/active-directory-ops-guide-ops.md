@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: 2de3f78b58e10a4fbf65bb00d516448a089f85b6
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d5a8fe4192c3778e259ed18239a4198398d8807b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370956"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836841"
 ---
 # <a name="azure-active-directory-general-operations-guide-reference"></a>Справочник по общим операциям Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "92370956"
 | Мониторинг гибридных журналов: агенты сквозной проверки подлинности | Группа операций IAM |
 | Мониторинг гибридных журналов: служба обратной записи паролей | Группа операций IAM |
 | Мониторинг гибридных журналов: локальный шлюз защиты паролей | Группа операций IAM |
-| Мониторинг гибридных журналов: расширение NPS для Azure MFA (если применимо) | Группа операций IAM |
+| Мониторинг гибридных журналов: расширение NPS для Azure AD MFA (если применимо) | Группа операций IAM |
 
 При просмотре списка может потребоваться либо назначить владельца для задач, в которых отсутствует владелец, либо настроить владение задачами с владельцами, которые не согласуются с рекомендациями выше.
 
@@ -86,7 +86,7 @@ ms.locfileid: "92370956"
 
 ### <a name="on-premises-agents-logs"></a>Журналы локальных агентов
 
-Для реализации гибридных сценариев в некоторых службах управления удостоверениями и доступом требуются локальные агенты. Примеры: Сброс пароля, сквозная аутентификация (PTA), Azure AD Application Proxy и расширение NPS Azure MFA. Основным показателем группы эксплуатации и мониторингом работоспособности этих компонентов является Архивация и анализ журналов агента компонентов с помощью таких решений, как System Center Operations Manager или SIEM. Это так же важно для команды Infosec Operations или службы поддержки, позволяющей понять, как устранять неполадки в шаблонах ошибок.
+Для реализации гибридных сценариев в некоторых службах управления удостоверениями и доступом требуются локальные агенты. Примеры: Сброс пароля, сквозная аутентификация (PTA), Azure AD Application Proxy и расширение NPS Azure AD MFA. Основным показателем группы эксплуатации и мониторингом работоспособности этих компонентов является Архивация и анализ журналов агента компонентов с помощью таких решений, как System Center Operations Manager или SIEM. Это так же важно для команды Infosec Operations или службы поддержки, позволяющей понять, как устранять неполадки в шаблонах ошибок.
 
 #### <a name="on-premises-agents-logs-recommended-reading"></a>Рекомендуемые для чтения журналы локальных агентов
 
@@ -94,7 +94,7 @@ ms.locfileid: "92370956"
 - [Azure Active Directory: устранение неполадок с самостоятельным сбросом пароля](../authentication/troubleshoot-sspr.md)
 - [Сведения о соединителях прокси приложения Azure AD](../manage-apps/application-proxy-connectors.md)
 - [Azure AD Connect: Устранение неполадок сквозной проверки подлинности](../hybrid/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
-- [Устранение ошибок для расширения NPS Azure MFA](../authentication/howto-mfa-nps-extension-errors.md)
+- [Устранение ошибок для расширения NPS Azure AD MFA](../authentication/howto-mfa-nps-extension-errors.md)
 
 ### <a name="on-premises-agents-management"></a>Управление локальными агентами
 
@@ -172,7 +172,7 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 
 Блокировка доступа к локальным компонентам удостоверений, таким как Azure AD Connect, AD FS и службы SQL, так же, как и для контроллеров домена.
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 Существует семь аспектов безопасной инфраструктуры идентификации. Этот список поможет найти действия, которые необходимо предпринять, чтобы оптимизировать операции для Azure Active Directory (Azure AD).
 
@@ -184,6 +184,6 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 - Блокировка AD FS.
 - Блокировка доступа к компьютерам с помощью локальных компонентов удостоверений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о реализации всех возможностей, которые вы не развернули, см. в статье [планы развертывания Azure AD](active-directory-deployment-plans.md) .

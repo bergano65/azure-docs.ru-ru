@@ -11,12 +11,12 @@ ms.date: 05/06/2020
 ms.author: mimart
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98ead87ce2bd3b4e3ffc45763aa5151168c72078
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 7cddb40a6a43c38079906699d9fa4865c4daf558
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576518"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837096"
 ---
 # <a name="language-customization-in-azure-active-directory-preview"></a>Настройка языка в Azure Active Directory (предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "94576518"
 4. Щелкните **Языки**.
 5. На странице **Языки** для потока пользователя выберите язык, который требуется настроить.
 6. Разверните **страницу сбора атрибутов**
-7. Нажмите кнопку **Скачать значения по умолчанию** (или **Скачать переопределения** , если этот язык ранее менялся).
+7. Нажмите кнопку **Скачать значения по умолчанию** (или **Скачать переопределения**, если этот язык ранее менялся).
 
 В результате будет создан JSON-файл, который можно использовать для изменения строк.
 
@@ -146,7 +146,7 @@ ms.locfileid: "94576518"
 
 ## <a name="supported-languages"></a>Поддерживаемые языки
 
-Azure AD поддерживает следующие языки. Языки потока пользователей предоставляются Azure AD. Языки уведомлений многофакторной идентификации (MFA) предоставляются [Azure MFA](../authentication/concept-mfa-howitworks.md).
+Azure AD поддерживает следующие языки. Языки потока пользователей предоставляются Azure AD. Языки уведомлений многофакторной идентификации (MFA) предоставляются [Azure AD MFA](../authentication/concept-mfa-howitworks.md).
 
 | Язык              | Код языка | Маршруты пользователей         | Уведомления MFA  |
 |-----------------------| :-----------: | :----------------: | :----------------: |

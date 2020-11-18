@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb51e8590e2859a9fe8692f79c5b1238ed5a2098
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0112ab53c501d639d3f8e0d09d82ef3a12cb93a8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88948187"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837252"
 ---
 # <a name="troubleshooting-conditional-access-using-the-what-if-tool"></a>Устранение неполадок с условным доступом с помощью средства What If
 
@@ -78,4 +78,4 @@ ms.locfileid: "88948187"
 * [Что такое условный доступ?](overview.md)
 * [Что такое Защита идентификации Azure Active Directory?](../identity-protection/overview-identity-protection.md)
 * [Что такое удостоверение устройства?](../devices/overview.md)
-* [Принцип работы. Многофакторной идентификации Azure](../authentication/concept-mfa-howitworks.md).
+* [Принцип работы: многофакторная идентификация Azure AD](../authentication/concept-mfa-howitworks.md)

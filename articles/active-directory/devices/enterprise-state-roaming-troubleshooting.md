@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: tanning
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e427a68751cc348a7b0024fb01402bd15ca87d2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: df70891ef090d44769aadbc235273e3193bc780e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90705730"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837215"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Устранение неполадок параметров Enterprise State Roaming в Azure Active Directory
 
@@ -76,7 +76,7 @@ ms.locfileid: "90705730"
 
 ## <a name="enterprise-state-roaming-and-multi-factor-authentication"></a>Enterprise State Roaming и Многофакторная идентификация 
 
-При определенных обстоятельствах, если настроена служба Многофакторной идентификации Azure, в службе Enterprise State Roaming может произойти ошибка синхронизации данных. Дополнительные сведения об этих симптомах см. в документе support [KB3193683](https://support.microsoft.com/kb/3193683). 
+При определенных условиях Enterprise State Roaming может не синхронизировать данные, если настроена многофакторная идентификация Azure AD. Дополнительные сведения об этих симптомах см. в документе support [KB3193683](https://support.microsoft.com/kb/3193683). 
 
 **Потенциальная проблема.** Если на портале Azure Active Directory для вашего устройства настроена обязательная многофакторная проверка подлинности, то не исключено, что вы не сможете синхронизировать параметры при входе на устройство Windows 10 с помощью пароля. Этот тип конфигурации с использованием Многофакторной идентификации предназначен для защиты учетной записи администратора в Azure. Пользователи с правами администратора по-прежнему могут синхронизироваться, войдя на устройства Windows 10 с их Microsoft Passport for Work ПИН-кодом или выполнив многофакторную проверку подлинности при обращении к другим службам Azure, таким как Microsoft 365.
 
@@ -111,7 +111,7 @@ ms.locfileid: "90705730"
 Чтобы предотвратить утечку данных, данные, защищенные с помощью [windows Information Protection](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip) , не будут синхронизироваться с Enterprise State Roaming для устройств, использующих годовщину Windows 10.
 
 **Рекомендуемое действие**  
-Нет. Эта проблема, возможно, будет решена в будущих обновлениях Windows.
+Отсутствует. Эта проблема, возможно, будет решена в будущих обновлениях Windows.
 
 ---
 
@@ -120,7 +120,7 @@ ms.locfileid: "90705730"
 Присоединенные к домену устройства не синхронизируются, если для параметра "Дата, время и регион" установлено значение "Автоматическое время". Использование значения "Автоматическое время" может переопределять другие параметры даты, времени и региона и стать причиной отсутствия синхронизации. 
 
 **Рекомендуемое действие**  
-Нет. 
+Отсутствует. 
 
 ---
 
@@ -138,7 +138,7 @@ ms.locfileid: "90705730"
 При попытке выполнить вход на устройстве Windows с помощью смарт-карты или виртуальной смарт-карты синхронизация параметров перестает работать.     
 
 **Рекомендуемое действие**  
-Нет. Эта проблема, возможно, будет решена в будущих обновлениях Windows.
+Отсутствует. Эта проблема, возможно, будет решена в будущих обновлениях Windows.
 
 ---
 
@@ -180,6 +180,6 @@ ms.locfileid: "90705730"
 **Рекомендуемое действие**  
 Выполните действия, описанные в статье [KB3196528](https://support.microsoft.com/kb/3196528).  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения см. в [обзоре службы Enterprise State Roaming](enterprise-state-roaming-overview.md).

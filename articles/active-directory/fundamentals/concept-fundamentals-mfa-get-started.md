@@ -1,6 +1,6 @@
 ---
-title: Многофакторная идентификация Microsoft Azure для организации — Azure Active Directory
-description: Сведения о доступных функциях Многофакторной идентификации Azure для вашей организации в зависимости от модели лицензирования
+title: Многофакторная идентификация Azure AD для вашей организации — Azure Active Directory
+description: Сведения о доступных функциях многофакторной идентификации Azure AD для вашей организации в зависимости от модели лицензии
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,16 +11,16 @@ author: daveba
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 093d9fdd75b8a4a581faa0708cf97ea67774d734
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 85e7f02f8cbda6218396bf4a9a4654a113b7817c
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241724"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836748"
 ---
-# <a name="overview-of-azure-multi-factor-authentication-for-your-organization"></a>Общие сведения о службе Многофакторной идентификации Azure для организации
+# <a name="overview-of-azure-ad-multi-factor-authentication-for-your-organization"></a>Обзор многофакторной идентификации Azure AD для вашей организации
 
-Существует несколько способов включить Многофакторную идентификацию Azure для пользователей Azure Active Directory (AD) на основе лицензий, которыми владеет ваша организация. 
+Существует несколько способов включить многофакторную идентификацию Azure AD для пользователей Azure Active Directory (AD) на основе лицензий, которыми владеет ваша организация. 
 
 ![Исследование сигналов и принудительное применение MFA при необходимости](./media/concept-fundamentals-mfa-get-started/verify-signals-and-perform-mfa-if-required.png)
 
@@ -36,7 +36,7 @@ ms.locfileid: "93241724"
 
 Для клиентов с Microsoft 365 есть два варианта:
 
-* Многофакторную идентификацию Azure можно включить или отключить для всех пользователей для всех событий входа. Невозможно включить многофакторную проверку подлинности только для подмножества пользователей или только в определенных сценариях. Управление осуществляется через портал Office 365. 
+* Многофакторная идентификация Azure AD включена или отключена для всех пользователей для всех событий входа. Невозможно включить многофакторную проверку подлинности только для подмножества пользователей или только в определенных сценариях. Управление осуществляется через портал Office 365. 
 * Для повышения удобства работы пользователей выполните обновление до Azure AD Premium P1 или P2 и используйте условный доступ. Дополнительные сведения см. в статье Защита ресурсов Microsoft 365 с помощью многофакторной проверки подлинности.
 
 ## <a name="azure-ad-premium-p1"></a>Azure AD Premium P1
@@ -62,6 +62,6 @@ ms.locfileid: "93241724"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы приступить к работе, см. учебник [Защита событий входа с помощью Многофакторной идентификации Azure](../authentication/tutorial-enable-azure-mfa.md).
+Чтобы приступить к работе, см. Руководство по [защите событий входа пользователей с помощью многофакторной идентификации Azure AD](../authentication/tutorial-enable-azure-mfa.md).
 
-Дополнительные сведения о лицензировании см. в разделе [Функции и лицензии для многофакторной идентификации Azure](../authentication/concept-mfa-licensing.md).
+Дополнительные сведения о лицензировании см. в статье [функции и лицензии для многофакторной идентификации Azure AD](../authentication/concept-mfa-licensing.md).

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7aebe6fafea7cbbb0b37469a13262529b568e342
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 92d1e5b8ac6492b0b1d819431e4616d32a092cc8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077971"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836926"
 ---
 # <a name="azure-active-directory-feature-deployment-guide"></a>Руководство по развертыванию компонентов Azure Active Directory
 
@@ -57,7 +57,7 @@ ms.locfileid: "93077971"
 | [Развертывание многофакторной идентификации Azure AD с помощью политик условного доступа](../authentication/howto-mfa-getstarted.md) | Требовать, чтобы пользователи выполняли двухфакторную проверку подлинности при доступе к конфиденциальным приложениям с помощью политик условного доступа. | Azure AD Premium P1 |
 | [Включение Защиты идентификации Azure Active Directory](../identity-protection/overview-identity-protection.md) | Включите отслеживание небезопасных входов в систему и скомпрометированных учетных данных для пользователей в своей организации. | Azure AD Premium P2 |
 | [Использование обнаружения рисков для активации многофакторной проверки подлинности и смены паролей](../authentication/tutorial-risk-based-sspr-mfa.md) | Используйте автоматизацию, позволяющую активировать такие события, как многофакторная проверки подлинности, сброс пароля и блокирование входа в систему в зависимости от степени риска. | Azure AD Premium P2 |
-| [Включить объединенную регистрацию для самостоятельного сброса пароля и службы многофакторной идентификации Azure AD](../authentication/concept-registration-mfa-sspr-combined.md) | Разрешите своим пользователям регистрироваться через один общий интерфейс для использования службы "Многофакторная идентификация Microsoft Azure" и самостоятельного сброса пароля. | Azure AD Premium P1 |
+| [Включить объединенную регистрацию для самостоятельного сброса пароля и службы многофакторной идентификации Azure AD](../authentication/concept-registration-mfa-sspr-combined.md) | Разрешите пользователям регистрироваться в одной из распространенных возможностей многофакторной идентификации Azure AD и самостоятельного сброса пароля. | Azure AD Premium P1 |
 
 ## <a name="phase-2-import-users-enable-synchronization-and-manage-devices"></a>Этап 2. Импорт пользователей, Включение синхронизации и управление устройствами
 
