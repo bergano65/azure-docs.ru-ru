@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: sql
 ms.date: 05/20/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: d578529839afb5393dd013cb10f48c755f08addd
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 302cf97db7c1d2ba489a84b6be912816d20f6091
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316234"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685568"
 ---
 # <a name="create-and-use-views-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Создание и использование представлений с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics
 
@@ -72,7 +72,7 @@ FROM
 
 Представления в запросах можно использовать так же, как и в запросах SQL Server.
 
-Следующий запрос демонстрирует использование представления *population_csv* , созданного в разделе [Создание представления](#create-a-view). Он возвращает названия стран и регионов с численностью населения по состоянию на 2019 г. в убывающем порядке.
+Следующий запрос демонстрирует использование представления *population_csv*, созданного в разделе [Создание представления](#create-a-view). Он возвращает названия стран и регионов с численностью населения по состоянию на 2019 г. в убывающем порядке.
 
 > [!NOTE]
 > Измените первую строку в запросе ([mydbname]), чтобы использовать созданную вами базу данных.

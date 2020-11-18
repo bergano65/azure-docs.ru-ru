@@ -8,38 +8,33 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 06/25/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 1ddc8c2b9531dd78c1c6746e28b8ff5864af563e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: d174e410aaef876dfe97af62750322641de95fd3
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93331970"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659460"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-by-using-the-azure-cli"></a>Краткое руководство. Создание сервера Базы данных Azure для PostgreSQL с помощью Azure CLI
 
 В этом кратком руководстве описывается, как с помощью команд [Azure CLI](/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) создать один сервер Базы данных Azure для PostgreSQL за пять минут. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-[!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-> [!TIP]
-> Рассмотрите возможность использования более простой команды Azure CLI [az postgres up](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up), которая сейчас доступна в предварительной версии. Ознакомьтесь с [кратким руководством](./quickstart-create-server-up-azure-cli.md).
+- Для работы с этой статьей требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-## <a name="prerequisites"></a>Предварительные требования
-Для этой статьи требуется запустить локально Azure CLI версии 2.0 или более поздней. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
+    > [!TIP]
+    >  Рассмотрите возможность использования более простой команды Azure CLI [az postgres up](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up), которая сейчас доступна в предварительной версии. Ознакомьтесь с [кратким руководством](./quickstart-create-server-up-azure-cli.md).
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/reference-index#az-login). Обратите внимание на свойство **id** , которое ссылается на **идентификатор подписки** вашей учетной записи Azure. 
+- Выберите конкретный идентификатор подписки вашей учетной записи с помощью команды [az account set](/cli/azure/account).
 
-```azurecli-interactive
-az login
-```
+    - Запишите значение **id** из выходных данных команды **az login**, чтобы использовать его в команде в качестве значения аргумента **subscription**. 
 
-Выберите конкретный идентификатор подписки вашей учетной записи с помощью команды [az account set](/cli/azure/account). Запишите значение **id** из выходных данных команды **az login** , чтобы использовать его в команде в качестве значения аргумента **subscription**. 
+        ```azurecli
+        az account set --subscription <subscription id>
+        ```
 
-```azurecli
-az account set --subscription <subscription id>
-```
-
-Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все свои подписки, воспользуйтесь командой [az account list](/cli/azure/account#az-account-list).
+    - Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все свои подписки, воспользуйтесь командой [az account list](/cli/azure/account#az-account-list).
 
 ## <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера Базы данных Azure для PostgreSQL
 
@@ -61,7 +56,7 @@ az postgres server create --resource-group myresourcegroup --name mydemoserver  
 name | mydemoserver | Уникальное имя, позволяющее идентифицировать сервер Базы данных Azure для PostgreSQL. Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Длина должна составлять от 3 до 63 символов. Дополнительные сведения см. в статье [Правила именования в службе "База данных Azure для PostgreSQL"](../azure-resource-manager/management/resource-name-rules.md#microsoftdbforpostgresql).
 resource-group | myresourcegroup | Имя группы ресурсов Azure.
 location | westus | Расположение сервера в Azure.
-admin-user | myadmin | Имя пользователя для входа в качестве администратора. Не может иметь значение **azure_superuser** , **admin** , **administrator** , **root** , **guest** или **public**.
+admin-user | myadmin | Имя пользователя для входа в качестве администратора. Не может иметь значение **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
 admin-password | *Надежный пароль* | Пароль администратора. Должен содержать от 8 до 128 знаков из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры и небуквенно-цифровые знаки.
 sku-name|GP_Gen5_2| Имя ценовой категории и конфигурация вычислительных ресурсов. В сокращенной записи соответствует схеме {ценовая категория} _{поколение вычислительных ресурсов}_ {число виртуальных ядер}. Дополнительные сведения см. на странице [цен на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/postgresql/server/).
 

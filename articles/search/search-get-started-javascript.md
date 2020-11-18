@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 10/26/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5ccbe1035c5cc73993e069c7683d6b15ae18e21c
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 0e1b7aa0eb56d5668b6561b36a0f63e719974573
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92795531"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698902"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-using-the-javascript-sdk"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" с помощью пакета SDK для JavaScript
 > [!div class="op_single_selector"]
@@ -24,10 +24,10 @@ ms.locfileid: "92795531"
 > * [Портал](search-get-started-portal.md)
 > * [PowerShell](./search-get-started-powershell.md)
 > * [Python](search-get-started-python.md)
-> * [Postman](search-get-started-postman.md)
+> * [REST](search-get-started-rest.md)
 
 
-Чтобы создать приложение Node.js на JavaScript, которое создает, загружает и запрашивает индекс поиска, используйте [пакет SDK для Javascript/Typscript для Когнитивного поиска Azure](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme?view=azure-node-latest).
+Чтобы создать приложение Node.js на JavaScript, которое создает, загружает и запрашивает индекс поиска, используйте [пакет SDK для Javascript/Typscript для Когнитивного поиска Azure](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme).
 
 Здесь вы найдете пошаговое руководство по созданию приложения. Вы также можете [скачать исходный код и данные](https://github.com/Azure-Samples/azure-search-javascript-samples/tree/master/quickstart/v11) и запустить приложение из командной строки.
 
@@ -58,7 +58,7 @@ ms.locfileid: "92795531"
 
 2. В разделе **Параметры** > **Ключи** получите ключ администратора с полным доступом к службе, требуемый для создания и удаления объектов. Существует две взаимозаменяемых пары первичного и вторичного ключей. Вы можете использовать любую из этих пар.
 
-   ![Получение конечной точки HTTP и ключа доступа](media/search-get-started-postman/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+   ![Получение конечной точки HTTP и ключа доступа](media/search-get-started-rest/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -80,7 +80,7 @@ ms.locfileid: "92795531"
     ```
      Примите значения по умолчанию, за исключением лицензии, которая должна иметь значение MIT. 
 
-3. Установите `@azure/search-documents` — [пакет SDK для Javascript/Typscript для Когнитивного поиска Azure](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme?view=azure-node-latest).
+3. Установите `@azure/search-documents` — [пакет SDK для Javascript/Typscript для Когнитивного поиска Azure](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme).
 
     ```cmd
     npm install @azure/search-documents
@@ -126,7 +126,7 @@ ms.locfileid: "92795531"
 
 ### <a name="create-indexjs-file"></a>Создание файла index.js
 
-Далее мы создадим файл **index.js**  — основной файл, в котором будет размещен наш код.
+Далее мы создадим файл **index.js** — основной файл, в котором будет размещен наш код.
 
 В верхней части этого файла мы импортируем библиотеку `@azure/search-documents`:
 
@@ -305,7 +305,7 @@ main().catch((err) => {
 }
 ```
 
-После определения индекса мы импортируем **hotels_quickstart_index.json** в верхней части файла **index.js** , чтобы функция main могла получить доступ к определению индекса.
+После определения индекса мы импортируем **hotels_quickstart_index.json** в верхней части файла **index.js**, чтобы функция main могла получить доступ к определению индекса.
 
 ```javascript
 const indexDefinition = require('./hotels_quickstart_index.json');
@@ -450,7 +450,7 @@ node index.js
 }
 ```
 
-Как и в случае с indexDefinition, нам также нужно импортировать `hotels.json` в верхней части **index.js** , чтобы к данным можно было получить доступ в нашей функции main.
+Как и в случае с indexDefinition, нам также нужно импортировать `hotels.json` в верхней части **index.js**, чтобы к данным можно было получить доступ в нашей функции main.
 
 ```javascript
 const hotelData = require('./hotels.json');
@@ -480,7 +480,7 @@ let indexDocumentsResult = await searchClient.mergeOrUploadDocuments(hotelData['
 console.log(`Index operations succeeded: ${JSON.stringify(indexDocumentsResult.results[0].succeeded)}`);
 ```
 
-Снова запустите программу командой `node index.js`. Теперь набор сообщений будет немного отличаться от тех, которые вы видели на шаге 1. На этот раз индекс уже *существует* , а вы получите сообщение о его удалении перед тем, как приложение создаст новый индекс и поместит в него данные. 
+Снова запустите программу командой `node index.js`. Теперь набор сообщений будет немного отличаться от тех, которые вы видели на шаге 1. На этот раз индекс уже *существует*, а вы получите сообщение о его удалении перед тем, как приложение создаст новый индекс и поместит в него данные. 
 
 Прежде чем выполнять запросы на следующем шаге, определите функцию, чтобы программа ожидала в течение одной секунды. Это делается только для целей тестирования и демонстрации, чтобы обеспечить завершение индексирования и доступность документов в индексе для запросов.
 

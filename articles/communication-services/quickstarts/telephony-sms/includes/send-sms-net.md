@@ -10,12 +10,12 @@ ms.date: 07/28/2020
 ms.topic: include
 ms.custom: include file
 ms.author: dademath
-ms.openlocfilehash: c8bce6afd914a22be80a57ae234e39161d182b7f
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: a084295aec2cafadd07d47e85a0116a89d37c985
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92499234"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94816929"
 ---
 Начало работы со Службами коммуникации Azure с помощью клиентской библиотеки SMS Служб коммуникации Azure для C# для отправки SMS-сообщений.
 
@@ -41,7 +41,7 @@ ms.locfileid: "92499234"
 
 ### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
-В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `SmsQuickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: **Program.cs** .
+В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `SmsQuickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: **Program.cs**.
 
 ```console
 dotnet new console -o SmsQuickstart
@@ -59,10 +59,10 @@ dotnet build
 Оставаясь в каталоге приложения, установите пакет клиентской библиотеки Служб коммуникации SMS для .NET с помощью команды `dotnet add package`.
 
 ```console
-dotnet add package Azure.Communication.Sms --version 1.0.0-beta.2
+dotnet add package Azure.Communication.Sms --version 1.0.0-beta.3
 ```
 
-Добавьте директиву `using` в начало **Program.cs** , чтобы включить пространство имен `Azure.Communication`.
+Добавьте директиву `using` в начало **Program.cs**, чтобы включить пространство имен `Azure.Communication`.
 
 ```csharp
 
@@ -95,7 +95,7 @@ SmsClient smsClient = new SmsClient(connectionString);
 
 ## <a name="send-an-sms-message"></a>Отправка SMS-сообщения
 
-Отправьте SMS-сообщение, вызвав метод Send. Добавьте следующий код в конец метода `Main` в **Program.cs** :
+Отправьте SMS-сообщение, вызвав метод Send. Добавьте следующий код в конец метода `Main` в **Program.cs**:
 
 ```csharp
 smsClient.Send(

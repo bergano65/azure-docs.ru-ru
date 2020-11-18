@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: sql
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: a0fbcab194b90bbe89948fee1efb604266dbbb0f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 7c6de17e4ed4f5666554908e9b13fb9e299b027a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311753"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682066"
 ---
 # <a name="manage-access-to-workspaces-data-and-pipelines"></a>Управление доступом к рабочим областям, данным и конвейерам
 
@@ -52,10 +52,10 @@ ms.locfileid: "93311753"
 3. Перейдите к контейнеру (файловой системы), выбранному для рабочей области Azure Synapse.
 4. Щелкните **Управление доступом (IAM)** .
 5. Назначьте указанные ниже роли:
-   1. Роль **Читатель**  для: `Synapse_WORKSPACENAME_Users`
-   2. Роль **Владелец данных BLOB-объектов хранилища**  для `Synapse_WORKSPACENAME_Admins`
-   3. Роль **Участник данных BLOB-объектов хранилища**  для `Synapse_WORKSPACENAME_Users`
-   4. Роль **Владелец данных BLOB-объектов хранилища**  для `WORKSPACENAME`
+   1. Роль **Читатель** для: `Synapse_WORKSPACENAME_Users`
+   2. Роль **Владелец данных BLOB-объектов хранилища** для `Synapse_WORKSPACENAME_Admins`
+   3. Роль **Участник данных BLOB-объектов хранилища** для `Synapse_WORKSPACENAME_Users`
+   4. Роль **Владелец данных BLOB-объектов хранилища** для `WORKSPACENAME`
 
 > [!NOTE]
 > Замените параметр WORKSPACENAME действительным именем рабочей области.

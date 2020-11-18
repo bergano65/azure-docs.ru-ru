@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 08/25/2020
 ms.author: alehall
 ms.reviewer: jrasnick
-ms.openlocfilehash: a5c9b47bf5d638f3c15416416a435653eeb68505
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 46ab1df1b776bf8dc9d6d917e5394c3efeec0de4
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172047"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659392"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-with-azure-cli"></a>Краткое руководство. Создание рабочей области Azure Synapse с помощью Azure CLI
 
@@ -22,7 +22,7 @@ Azure CLI — это интерфейс командной строки Azure д
 
 В этом кратком руководстве вы узнаете, как создать рабочую область Synapse с помощью Azure CLI.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись, прежде чем начинать работу](https://azure.microsoft.com/free/).
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -32,28 +32,7 @@ Azure CLI — это интерфейс командной строки Azure д
     > [!IMPORTANT]
     > В рабочей области Azure Synapse должна быть возможность считывать данные в выбранной учетной записи ADLS 2-го поколения и выполнять запись в нее. Кроме того, для любой учетной записи хранения, связываемой в качестве основной учетной записи хранения, при создании учетной записи хранения необходимо включить **иерархическое пространство имен**, как описано на странице [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account). 
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-## <a name="install-the-azure-cli-locally"></a>Установка Azure CLI в локальной среде
-
-Если вы решили установить и использовать Azure CLI локально, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-Если вы используете Azure CLI на локальном компьютере, необходимо войти в систему и пройти проверку подлинности. В этом шаге нет необходимости, если вы используете Azure Cloud Shell. Чтобы войти в Azure CLI, запустите `az login` и пройдите проверку подлинности в окне браузера:
-
-```azurecli
-az login
-```
-
-Дополнительные сведения о проверке подлинности с помощью Azure CLI см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
-
-## <a name="install-azure-synapse-extension-for-azure-cli"></a>Установка расширения Azure Synapse для Azure CLI
-
-```azurecli
-az extension add --name synapse
-```
-
-> [!WARNING]
-> Расширение Azure Synapse для Azure CLI находится в режиме предварительной версии.
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="create-an-azure-synapse-workspace-using-the-azure-cli"></a>Создание рабочей области Azure Synapse с помощью Azure CLI
 

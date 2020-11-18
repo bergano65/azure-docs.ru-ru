@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 4d825d2e4daee5778c7f8e3ef216c3e72d89b1c4
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 8a8e6f12a8709935a6fa9551261c56fc8f2aabbd
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747473"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832081"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Обмен данными с приложением устройства с помощью C# и потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -24,9 +24,7 @@ ms.locfileid: "92747473"
 
 [Потоки устройств Центра Интернета вещей](./iot-hub-device-streams-overview.md) позволяют службам и приложениям устройств безопасным и подходящим методом обмениваться данными с брандмауэром. Это краткое руководство включает в себя две программы C#, использующие преимущества потоков устройств для обмена данными (вывод на экран).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,22 +35,20 @@ ms.locfileid: "92747473"
   * Юго-Восточная Азия
 
 * Два примера приложений, запускаемые в рамках этого краткого руководства, написаны на языке C#. На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1.0 или более поздней.
-  * Скачайте [пакет SDK для .NET Core с поддержкой нескольких платформ](https://www.microsoft.com/net/download/all).
-  * Проверьте текущую версию C# на компьютере, на котором ведется разработка, используя следующую команду:
 
-   ```
-   dotnet --version
-   ```
+    Скачайте [пакет SDK для .NET Core с поддержкой нескольких платформ](https://www.microsoft.com/net/download/all).
 
-* Чтобы добавить расширение Интернета вещей Azure для Azure CLI в экземпляр Cloud Shell, выполните приведенную ниже команду. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и Службы подготовки устройств к добавлению в центр Интернета вещей (DPS).
+    Проверьте текущую версию C# на компьютере, на котором ведется разработка, используя следующую команду:
 
-    ```azurecli-interactive
-    az extension add --name azure-iot
+    ```
+    dotnet --version
     ```
 
-[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
-
 * [Скачайте примеры Azure IoT на C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip) и извлеките ZIP-архив. Он понадобится на стороне устройства и на стороне службы.
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -66,7 +62,7 @@ ms.locfileid: "92747473"
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice* , как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice

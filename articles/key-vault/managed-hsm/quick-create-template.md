@@ -7,15 +7,15 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: managed-hsm
 ms.topic: quickstart
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.date: 09/15/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 4d1488d6dd2e5d08ae774ca88b7ab41b2020efe5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d47935f76347b2d5272b386942a85643a732e643
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90998510"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831758"
 ---
 # <a name="quickstart-create-an-key-vault-managed-hsm-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание управляемого устройства HSM в Key Vault с помощью шаблона Azure Resource Manager
 
@@ -79,7 +79,6 @@ az ad user show --id <your-email-address> --query "objectId"
     - **Группа ресурсов.** Щелкните **Создать**, введите уникальное имя группы ресурсов и нажмите кнопку **ОК**.
     - **Расположение.** Выберите расположение. Например, **центрально-южная часть США**.
     - **managedHSMName**: введите имя управляемого устройства HSM.
-    - **SKU**: введите имя и семейство управляемого устройства HSM, которое вы хотите создать.  В рамках этого краткого руководства введите Standard_B1 в качестве имени и B в качестве семейства.
     - **Идентификатор арендатора**: функция шаблона автоматически получает идентификатор клиента. Не изменяйте значение по умолчанию.  Если значение отсутствует, введите идентификатор клиента, полученный в разделе [Необходимые компоненты](#prerequisites).
     * **initialAdminObjectIds**: введите идентификатор объекта, полученный в разделе [Необходимые компоненты](#prerequisites).
 

@@ -9,20 +9,20 @@ ms.topic: quickstart
 ms.date: 10/15/2019
 ms.author: cavoeg
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b09a72538dd7a6886811b9a23c915316627da093
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 3340cd0a39b0f5311487fec5b05d37e3376d433a
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92339447"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659258"
 ---
 # <a name="quickstart-deploy-azure-api-for-fhir-using-azure-cli"></a>Краткое руководство. Развертывание Azure API для FHIR с помощью Azure CLI
 
 В этом кратком руководстве показано, как развернуть Azure API для FHIR в Azure с помощью Azure CLI.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 ## <a name="add-healthcareapis-extension"></a>Добавление расширения HealthcareAPIs
 
@@ -60,7 +60,7 @@ curl --url "https://nameoffhiraccount.azurehealthcareapis.com/metadata"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы не собираетесь использовать это приложение в дальнейшем, удалите группу ресурсов, выполнив следующие действия.
+Если вы не собираетесь использовать это приложение в дальнейшем, удалите группу ресурсов, выполнив следующие действия:
 
 ```azurecli-interactive
 az group delete --name "myResourceGroup"
@@ -68,7 +68,7 @@ az group delete --name "myResourceGroup"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве показано, как развернуть Azure API для FHIR в своей подписке. Чтобы задать дополнительные параметры в Azure API для FHIR, см. соответствующее руководство. Если вы уже готовы к использованию Azure API для FHIR, ознакомьтесь с процессом регистрации приложений.
+В этом кратком руководстве показано, как развернуть Azure API для FHIR в своей подписке. Чтобы задать дополнительные параметры в Azure API для FHIR, см. соответствующее руководство. Если вы уже готовы к использованию API Azure для FHIR, ознакомьтесь с процессом регистрации приложений.
 
 >[!div class="nextstepaction"]
 >[Дополнительные параметры в Azure API для FHIR](azure-api-for-fhir-additional-settings.md)

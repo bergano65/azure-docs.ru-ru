@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: ''
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: fb4c7f8ba49cf701ef13cb57ab2b323a94c928cc
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3af28ef575f770a5b8c3fb73ade1f9c53be66843
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323827"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685755"
 ---
 # <a name="connect-to-synapse-sql-with-azure-data-studio-preview"></a>Подключение к Synapse SQL с помощью Azure Data Studio (предварительная версия)
 
@@ -46,26 +46,26 @@ ms.locfileid: "93323827"
 >
 > - `<Azure Synapse workspace name>`-ondemand.sql.azuresynapse.net.
 >
-> Если же вы хотите использовать **выделенный пул SQL** , URL-адрес должен выглядеть так:
+> Если же вы хотите использовать **выделенный пул SQL**, URL-адрес должен выглядеть так:
 >
 > - `<Azure Synapse workspace name>`.sql.azuresynapse.net
 
-Выберите в качестве **типа проверки подлинности** **Проверка подлинности Windows** , **Azure Active Directory** или **Имя входа SQL**.
+Выберите в качестве **типа проверки подлинности** **Проверка подлинности Windows**, **Azure Active Directory** или **Имя входа SQL**.
 
 Чтобы использовать **Имя входа SQL** в качестве типа проверки подлинности, добавьте параметры имени пользователя или пароля:
 
-* **Пользователь** : пользователь сервера в формате `<User>`
+* **Пользователь**: пользователь сервера в формате `<User>`
 * **Пароль:** пароль, связанный с пользователем
 
 Чтобы использовать Azure Active Directory, следует выбрать необходимый тип проверки подлинности.
 
 ![Проверка подлинности AAD](./media/get-started-azure-data-studio/3-aad-auth.png)
 
-На следующем снимке экрана показаны **сведения о подключении** для **проверки подлинности Windows** :
+На следующем снимке экрана показаны **сведения о подключении** для **проверки подлинности Windows**:
 
 ![Проверка подлинности Windows](./media/get-started-azure-data-studio/3-windows-auth.png)
 
-На следующем снимке экрана показаны **сведения о подключении** с использованием **имени для входа SQL** :
+На следующем снимке экрана показаны **сведения о подключении** с использованием **имени для входа SQL**:
 
 ![Имя входа SQL](./media/get-started-azure-data-studio/2-database-details.png)
 

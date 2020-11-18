@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurepowershell
 ms.date: 09/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: d8375b4a47df8454ceb4aba4cb2e695255161409
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c28dbc25abfd701450cf9f232ea1a4b5e16841aa
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324755"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686197"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-powershell"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью PowerShell
 
@@ -45,9 +45,9 @@ New-AzResourceGroup -Name ContosoResourceGroup -Location EastUS
 
 Хотя мы используем Contoso KeyVault2 как имя для Key Vault в рамках работы с этим руководством, вы должны использовать уникальное имя.
 
-- **Имя хранилища** : Contoso-Vault2.
-- **Имя группы ресурсов** : ContosoResourceGroup.
-- **Расположение** : восточная часть США.
+- **Имя хранилища**: Contoso-Vault2.
+- **Имя группы ресурсов**: ContosoResourceGroup.
+- **Расположение**: восточная часть США.
 
 ```azurepowershell-interactive
 New-AzKeyVault -Name 'Contoso-Vault2' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US'
@@ -69,7 +69,7 @@ Set-AzKeyVaultAccessPolicy -VaultName 'Contoso-Vault2' -UserPrincipalName 'user@
 
 ## <a name="adding-a-secret-to-key-vault"></a>Добавление секрета в Key Vault
 
-Чтобы добавить секрет в хранилище, вам просто нужно выполнить несколько шагов. В этом случае вы добавите пароль, который может быть использован приложением. Пароль называется **ExamplePassword** , и в нем хранится значение **hVFkk965BuUv**.
+Чтобы добавить секрет в хранилище, вам просто нужно выполнить несколько шагов. В этом случае вы добавите пароль, который может быть использован приложением. Пароль называется **ExamplePassword**, и в нем хранится значение **hVFkk965BuUv**.
 
 Сначала преобразуйте значение **hVFkk965BuUv** в безопасную строку, выполнив следующую команду:
 
@@ -77,11 +77,14 @@ Set-AzKeyVaultAccessPolicy -VaultName 'Contoso-Vault2' -UserPrincipalName 'user@
 $secretvalue = ConvertTo-SecureString 'hVFkk965BuUv' -AsPlainText -Force
 ```
 
-Затем введите команды PowerShell ниже, чтобы создать секрет в Key Vault с именем **ExamplePassword** и значением **hVFkk965BuUv** :
+Затем введите команды PowerShell ниже, чтобы создать секрет в Key Vault с именем **ExamplePassword** и значением **hVFkk965BuUv**:
+
 
 ```azurepowershell-interactive
 $secret = Set-AzKeyVaultSecret -VaultName 'Contoso-Vault2' -Name 'ExamplePassword' -SecretValue $secretvalue
 ```
+
+## <a name="retrieve-a-secret-from-key-vault"></a>получение секрета из Key Vault.
 
 Чтобы просмотреть содержащееся в секрете значение в виде обычного текста, введите следующее:
 

@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 994f2829d260223567dcb5aed859812aa1fef3d1
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: a76c6467dac69fd3d21aa659c52227046c166938
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91828835"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94816689"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы нужно сделать следующее:
@@ -46,7 +46,7 @@ dotnet build
 Установите клиентскую библиотеку чата Служб коммуникации Azure для .NET.
 
 ```PowerShell
-dotnet add package Azure.Communication.Chat --version 1.0.0-beta.2
+dotnet add package Azure.Communication.Chat --version 1.0.0-beta.3
 ``` 
 
 ## <a name="object-model"></a>Объектная модель
@@ -77,7 +77,7 @@ ChatClient chatClient = new ChatClient(endpoint, communicationUserCredential);
 
 Для создания потока чата используйте метод `createChatThread`.
 - Для указания раздела в этом чате используйте `topic`. Раздел можно обновить после создания потока чата с помощью функции `UpdateThread`.
-- Используйте свойство `members` для передачи списка объектов `ChatThreadMember`, добавляемых в поток чата. Объект `ChatThreadMember` инициализирован с помощью объекта `CommunicationUser`. Чтобы получить объект `CommunicationUser`, необходимо передать идентификатор доступа, созданный с помощью инструкции для [создания пользователя](../../access-tokens.md#create-a-user).
+- Используйте свойство `members` для передачи списка объектов `ChatThreadMember`, добавляемых в поток чата. Объект `ChatThreadMember` инициализирован с помощью объекта `CommunicationUser`. Чтобы получить объект `CommunicationUser`, необходимо передать идентификатор доступа, созданный с помощью инструкции для [создания пользователя](../../access-tokens.md#create-an-identity).
 
 Ответ `chatThreadClient`, который используется для выполнения операций с созданным потоком чата для добавления участников в поток, отправки, удаления сообщения и т. д. Он содержит атрибут `Id`, который является уникальным идентификатором потока чата. 
 

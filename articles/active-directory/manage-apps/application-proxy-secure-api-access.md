@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/12/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: e38d8261bf141248fd143f27c74e0761e54f73f9
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: eaa4a8f92809dcf44969958573231ad37d908daa
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649336"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835703"
 ---
 # <a name="secure-access-to-on-premises-apis-with-azure-ad-application-proxy"></a>Безопасный доступ к локальным API с помощью Azure AD Application Proxy
 
@@ -36,7 +36,7 @@ ms.locfileid: "94649336"
 
 AD Application Proxy Azure формирует основу решения, работает как общедоступную конечную точку для доступа через API и обеспечивает проверку подлинности и авторизацию. Доступ к API-интерфейсам можно получить из огромного массива платформ с помощью библиотек [библиотеки проверки подлинности Майкрософт (MSAL)](../azuread-dev/active-directory-authentication-libraries.md) .
 
-Так как проверка подлинности и авторизация Azure AD Application Proxy созданы на основе Azure AD, вы можете использовать условный доступ Azure AD, чтобы предоставить доступ к API, опубликованным через прокси приложения, только доверенным устройствам. Используйте присоединение к Azure AD или гибридное подключение Azure AD для настольных компьютеров и Intune, управляемых для устройств. Вы также можете воспользоваться преимуществами Azure Active Directory Premium функций, таких как многофакторная идентификация Azure, и защитой с помощью машинного обучения [защиты идентификации Azure](../identity-protection/overview-identity-protection.md).
+Так как проверка подлинности и авторизация Azure AD Application Proxy созданы на основе Azure AD, вы можете использовать условный доступ Azure AD, чтобы предоставить доступ к API, опубликованным через прокси приложения, только доверенным устройствам. Используйте присоединение к Azure AD или гибридное подключение Azure AD для настольных компьютеров и Intune, управляемых для устройств. Вы также можете воспользоваться преимуществами Azure Active Directory Premiumных функций, таких как многофакторная идентификация Azure AD, и защитой с помощью машинного обучения [защиты идентификации Azure](../identity-protection/overview-identity-protection.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

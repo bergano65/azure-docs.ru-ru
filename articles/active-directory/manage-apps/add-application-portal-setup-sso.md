@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.openlocfilehash: 2e5c588db6f372a50b2a80afd8a2a023ece34502
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 235c5c19c9a6e587106b3fd41691a3f775caa84f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92203626"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656621"
 ---
 # <a name="quickstart-set-up-saml-based-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка единого входа на основе SAML для приложения в арендаторе Azure Active Directory (Azure AD)
 
@@ -43,27 +43,27 @@ ms.locfileid: "92203626"
 
 Чтобы настроить единый вход для приложения, сделайте следующее:
 
-1. На портале Azure AD выберите элемент **Корпоративные приложения** . Найдите и выберите приложение, для которого нужно настроить единый вход.
-1. В разделе **Управление** выберите **Единый вход** , чтобы открыть область **Единый вход** для изменения.
+1. На портале Azure AD выберите элемент **Корпоративные приложения**. Найдите и выберите приложение, для которого нужно настроить единый вход.
+1. В разделе **Управление** выберите **Единый вход**, чтобы открыть область **Единый вход** для изменения.
 
     > [!IMPORTANT]
     > Если для единого входа приложение использует стандарт OpenID Connect (OIDC), в области навигации не будет отображаться параметр единого входа. Сведения о настройке единого входа на основе OIDC см. в соответствующем кратком руководстве.
 
     :::image type="content" source="media/add-application-portal-setup-sso/configure-sso.png" alt-text="Снимок экрана со страницей настройки единого входа на портале Azure AD.":::
 
-1. Выберите **SAML** , чтобы открыть страницу настройки единого входа. В этом примере мы настраиваем для единого входа приложение GitHub. После настройки приложения GitHub пользователи смогут входить в GitHub с помощью своих учетных данных из арендатора Azure AD.
+1. Выберите **SAML**, чтобы открыть страницу настройки единого входа. В этом примере мы настраиваем для единого входа приложение GitHub. После настройки приложения GitHub пользователи смогут входить в GitHub с помощью своих учетных данных из арендатора Azure AD.
 
-    :::image type="content" source="media/add-application-portal-setup-sso/github-sso.png" alt-text="Снимок экрана со страницей настройки единого входа на портале Azure AD.":::
+    :::image type="content" source="media/add-application-portal-setup-sso/github-sso.png" alt-text="Снимок экрана со страницей настройки единого входа в GitHub.":::
 
-1. Процесс настройки приложения для использования Azure AD для единого входа на основе SAML зависит от приложения. Доступна ссылка на руководство для GitHub. Инструкции для других приложений см. в статье [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/).
+1. Процесс настройки приложения для использования Azure AD для единого входа на основе SAML зависит от приложения. Доступна ссылка на руководство для GitHub. Инструкции для других приложений см. в статье [Руководства по интеграции приложений SaaS с Azure Active Directory](/azure/active-directory/saas-apps/).
 1. Следуйте указаниям по настройке единого входа для приложения. Многие приложения имеют определенные требования к подписке для включения единого входа. Например, приложение GitHub требует наличия подписки Enterprise.
     > [!TIP]
     > Дополнительные сведения о параметрах конфигурации SAML см. в разделе [Настройка единого входа на основе SAML](configure-saml-single-sign-on.md).
 
-    :::image type="content" source="media/add-application-portal-setup-sso/github-pricing.png" alt-text="Снимок экрана со страницей настройки единого входа на портале Azure AD.":::
+    :::image type="content" source="media/add-application-portal-setup-sso/github-pricing.png" alt-text="Снимок экрана с параметром единого входа в подписке Enterprise на странице цен на GitHub.":::
 
 > [!TIP]
-> Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](https://docs.microsoft.com/graph/application-saml-sso-configure-api).
+> Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](/graph/application-saml-sso-configure-api).
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

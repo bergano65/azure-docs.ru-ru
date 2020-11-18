@@ -1,75 +1,93 @@
 ---
 title: Краткое руководство. Подключение к Базе данных Azure для MySQL с помощью PHP
 description: В этом кратком руководстве представлены примеры кода PHP, которые можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 5/26/2020
-ms.openlocfilehash: ec406208f862eac2450cc6352f13f3596a7c9775
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 10/28/2020
+ms.openlocfilehash: ae767905e24e2d7ddf3b8e12ec77b1efe782cf85
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337393"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94535611"
 ---
 # <a name="quickstart-use-php-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью PHP
-В этом кратком руководстве объясняется, как подключиться к базе данных Azure для MySQL с помощью приложения [PHP](https://secure.php.net/manual/intro-whatis.php). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на языке PHP и вы только начали работу с базой данных Azure для MySQL.
+В этом кратком руководстве объясняется, как подключиться к базе данных Azure для MySQL с помощью приложения [PHP](https://secure.php.net/manual/intro-whatis.php). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных.
 
 ## <a name="prerequisites"></a>Предварительные требования
-В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
-- [Create an Azure Database for MySQL server using Azure portal](./quickstart-create-mysql-server-database-using-azure-portal.md) (Создание базы данных Azure для сервера MySQL с помощью портала Azure)
-- [Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md)
+Для целей этого краткого руководства понадобится:
 
-> [!IMPORTANT] 
-> Убедитесь, что IP-адрес, с которого вы подключаетесь, добавлен в правила брандмауэра на сервере через [портал Azure](./howto-manage-firewall-using-portal.md) или [Azure CLI](./howto-manage-firewall-using-cli.md).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free) бесплатно.
+- Создание отдельного сервера Базы данных Azure для MySQL с помощью [портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md) <br/> или с помощью [Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md), если он еще не создан.
+- Выполнить **ОДНО** из действий (в зависимости от того, пользуетесь вы общим или частным доступом), чтобы настроить возможность подключения.
 
-## <a name="install-php"></a>Установка PHP
-Установите PHP на своем сервере или создайте [веб-приложение](../app-service/overview.md) Azure с PHP.
+    |Действие| Метод подключения|Практическое руководство|
+    |:--------- |:--------- |:--------- |
+    | **Настройка правил брандмауэра** | Общие | [Портал](./howto-manage-firewall-using-portal.md) <br/> [CLI](./howto-manage-firewall-using-cli.md)|
+    | **Настройка конечной точки службы** | Общие | [Портал](./howto-manage-vnet-using-portal.md) <br/> [CLI](./howto-manage-vnet-using-cli.md)|
+    | **Настройка приватного канала** | Private | [Портал](./howto-configure-privatelink-portal.md) <br/> [CLI](./howto-configure-privatelink-cli.md) |
 
-### <a name="macos"></a>MacOS
-- Скачайте [PHP версии 7.1.4](https://secure.php.net/downloads.php).
-- Установите PHP и выполните настройку согласно инструкциям в [руководстве по PHP](https://secure.php.net/manual/install.macosx.php).
+- [Создание базы данных и пользователя без прав администратора](/howto-create-users?tabs=single-server).
+- Установка последней версии PHP для вашей операционной системы:
+    - [PHP в macOS](https://secure.php.net/manual/install.macosx.php);
+    - [PHP в Linux](https://secure.php.net/manual/install.unix.php);
+    - [PHP в Windows](https://secure.php.net/manual/install.windows.php)
 
-### <a name="linux-ubuntu"></a>Linux (Ubuntu)
-- Скачайте [PHP 7.1.4 (x64) непотокобезопасной версии](https://secure.php.net/downloads.php).
-- Установите PHP и выполните настройку согласно инструкциям в [руководстве по PHP](https://secure.php.net/manual/install.unix.php).
-
-### <a name="windows"></a>Windows
-- Скачайте [PHP 7.1.4 (x64) непотокобезопасной версии](https://windows.php.net/download#php-7.1).
-- Установите PHP и выполните настройку согласно инструкциям в [руководстве по PHP](https://secure.php.net/manual/install.windows.php).
+> [!NOTE]
+> При работе с этим кратким руководством мы используем библиотеку [MySQLi](https://www.php.net/manual/en/book.mysqli.php) для управления подключением и выполнения запросов к серверу.
 
 ## <a name="get-connection-information"></a>Получение сведений о подключении
-Получите сведения о подключении, необходимые для подключения к базе данных Azure.для MySQL. Вам потребуется полное имя сервера и учетные данные для входа.
+Чтобы получить сведения о подключении сервера базы данных с портала Azure, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver** ).
-3. Щелкните имя сервера.
-4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- :::image type="content" source="./media/connect-php/1_server-overview-name-login.png" alt-text="Имя сервера базы данных Azure для MySQL":::
+2. Перейдите на страницу Базы данных Azure для MySQL. Найдите и выберите **База данных Azure для MySQL**.
+:::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/find-azure-mysql-in-portal.png" alt-text="Поиск Базы данных Azure для MySQL":::
 
-## <a name="connect-and-create-a-table"></a>Подключение и создание таблицы
-Используйте указанный ниже код с инструкцией SQL **CREATE TABLE** для подключения и создания таблицы. 
+2. Выберите свой сервер MySQL (например, **mydemoserver**).
+3. На странице **Обзор** скопируйте полное имя сервера рядом с полем **Имя сервера** и имя администратора рядом с полем **Имя для входа администратора сервера**. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
 
-В коде используется класс **улучшенного расширения MySQL** (mysqli), включенный в PHP. Код вызывает методы [mysqli_init](https://secure.php.net/manual/mysqli.init.php) и [mysqli_real_connect](https://secure.php.net/manual/mysqli.real-connect.php), чтобы подключиться к MySQL. Затем код вызывает метод [mysqli_query](https://secure.php.net/manual/mysqli.query.php) для выполнения запроса и метод [mysqli_close](https://secure.php.net/manual/mysqli.close.php), чтобы разорвать подключение.
+> [!IMPORTANT]
+> - Если вы забыли свой пароль, его можно [сбросить](./howto-create-manage-server-portal.md#update-admin-password).
+> - Замените значения параметров **host, username, password** и **db_name** своими значениями**.
 
-Замените значения параметров host, username, password и db_name своими значениями. 
+## <a name="step-1-connect-to-the-server"></a>Шаг 1. Подключение к серверу
+Протокол SSL включен по умолчанию. Для подключения из локальной среды может потребоваться скачать [SSL-сертификат DigiCertGlobalRootG2](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem). Этот код вызывает:
+- [mysqli_init](https://secure.php.net/manual/mysqli.init.php) для инициализации MySQLi.
+- [mysqli_ssl_set](https://www.php.net/manual/en/mysqli.ssl-set.php) для указания пути SSL-сертификата. Это необходимо для локальной среды, но не требуется для веб-приложения Службы приложений или виртуальных машин Azure.
+- [mysqli_real_connect](https://secure.php.net/manual/mysqli.real-connect.php) для подключения к MySQL.
+- [mysqli_close](https://secure.php.net/manual/mysqli.close.php) для закрытия подключения.
+
 
 ```php
-<?php
 $host = 'mydemoserver.mysql.database.azure.com';
 $username = 'myadmin@mydemoserver';
 $password = 'your_password';
 $db_name = 'your_database';
 
-//Establishes the connection
+//Initializes MySQLi
 $conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
 
+// If using  Azure Virtual machines or Azure Web App, 'mysqli-ssl_set()' is not required as the certificate is already installed on the machines.
+mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+
+// Establish the connection
+mysqli_real_connect($conn, 'mydemoserver.mysql.database.azure.com', 'myadmin@mydemoserver', 'yourpassword', 'quickstartdb', 3306, MYSQLI_CLIENT_SSL);
+
+//If connection failed, show the error
+if (mysqli_connect_errno($conn))
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+```
+[Возникли проблемы? Сообщите нам об этом](https://aka.ms/mysql-doc-feedback)
+
+## <a name="step-2-create-a-table"></a>Шаг 2. Создание таблицы
+Для подключения используйте следующий код. Этот код вызывает:
+- [mysqli_query](https://secure.php.net/manual/mysqli.query.php) для запуска запроса.
+```php
 // Run the create table query
 if (mysqli_query($conn, '
 CREATE TABLE Products (
@@ -82,139 +100,56 @@ PRIMARY KEY (`Id`)
 ')) {
 printf("Table created\n");
 }
-
-//Close the connection
-mysqli_close($conn);
-?>
 ```
 
-## <a name="insert-data"></a>Добавление данных
-Используйте указанный ниже код с инструкцией SQL **INSERT** для подключения и вставки данных.
+## <a name="step-3-insert-data"></a>Шаг 3. Добавление данных
+Используйте указанный ниже код с инструкцией SQL **INSERT** для вставки данных. Этот код использует методы:
+- [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) для создания подготовленной инструкции INSERT.
+- [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php) для привязки параметров для каждого вставленного значения столбца.
+- [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php).
+- [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php) для закрытия инструкции с помощью метода.
 
-В коде используется класс **улучшенного расширения MySQL** (mysqli), включенный в PHP. Метод [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) используется для создания подготовленной инструкции INSERT, а затем с помощью метода [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php) привязываются параметры для каждого вставленного значения столбца. Код выполняет инструкцию, используя метод [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php), и закрывает ее с помощью метода [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php).
-
-Замените значения параметров host, username, password и db_name своими значениями. 
 
 ```php
-<?php
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin@mydemoserver';
-$password = 'your_password';
-$db_name = 'your_database';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-
 //Create an Insert prepared statement and run it
 $product_name = 'BrandNewProduct';
 $product_color = 'Blue';
 $product_price = 15.5;
-if ($stmt = mysqli_prepare($conn, "INSERT INTO Products (ProductName, Color, Price) VALUES (?, ?, ?)")) {
-mysqli_stmt_bind_param($stmt, 'ssd', $product_name, $product_color, $product_price);
-mysqli_stmt_execute($stmt);
-printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
-mysqli_stmt_close($stmt);
+if ($stmt = mysqli_prepare($conn, "INSERT INTO Products (ProductName, Color, Price) VALUES (?, ?, ?)"))
+{
+    mysqli_stmt_bind_param($stmt, 'ssd', $product_name, $product_color, $product_price);
+    mysqli_stmt_execute($stmt);
+    printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
+    mysqli_stmt_close($stmt);
 }
 
-// Close the connection
-mysqli_close($conn);
-?>
 ```
 
-## <a name="read-data"></a>Чтение данных
-Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных.  В коде используется класс **улучшенного расширения MySQL** (mysqli), включенный в PHP. В коде используется метод [mysqli_query](https://secure.php.net/manual/mysqli.query.php) для выполнения SQL-запроса и метод [mysqli_fetch_assoc](https://secure.php.net/manual/mysqli-result.fetch-assoc.php) для получения результирующих строк.
-
-Замените значения параметров host, username, password и db_name своими значениями. 
+## <a name="step-4-read-data"></a>Шаг 4. Чтение данных
+Используйте указанный ниже код с инструкцией SQL **SELECT** для чтения данных.  Этот код использует методы:
+- [mysqli_query](https://secure.php.net/manual/mysqli.query.php) для выполнения запроса **SELECT**.
+- [mysqli_fetch_assoc](https://secure.php.net/manual/mysqli-result.fetch-assoc.php) для получения результирующих строк.
 
 ```php
-<?php
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin@mydemoserver';
-$password = 'your_password';
-$db_name = 'your_database';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-
 //Run the Select query
 printf("Reading data from table: \n");
 $res = mysqli_query($conn, 'SELECT * FROM Products');
-while ($row = mysqli_fetch_assoc($res)) {
-var_dump($row);
-}
+while ($row = mysqli_fetch_assoc($res))
+ {
+    var_dump($row);
+ }
 
-//Close the connection
-mysqli_close($conn);
-?>
-```
-
-## <a name="update-data"></a>Обновление данных
-Используйте указанный ниже код с инструкцией SQL **UPDATE** для подключения и обновления данных.
-
-В коде используется класс **улучшенного расширения MySQL** (mysqli), включенный в PHP. Метод [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) используется для создания подготовленной инструкции UPDATE, а затем с помощью метода [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php) привязываются параметры для каждого обновленного значения столбца. Код выполняет инструкцию, используя метод [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php), и закрывает ее с помощью метода [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php).
-
-Замените значения параметров host, username, password и db_name своими значениями. 
-
-```php
-<?php
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin@mydemoserver';
-$password = 'your_password';
-$db_name = 'your_database';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-
-//Run the Update statement
-$product_name = 'BrandNewProduct';
-$new_product_price = 15.1;
-if ($stmt = mysqli_prepare($conn, "UPDATE Products SET Price = ? WHERE ProductName = ?")) {
-mysqli_stmt_bind_param($stmt, 'ds', $new_product_price, $product_name);
-mysqli_stmt_execute($stmt);
-printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
-
-//Close the connection
-mysqli_stmt_close($stmt);
-}
-
-mysqli_close($conn);
-?>
 ```
 
 
-## <a name="delete-data"></a>Удаление данных
-Используйте следующий код с инструкцией SQL **DELETE** для подключения и чтения данных. 
-
-В коде используется класс **улучшенного расширения MySQL** (mysqli), включенный в PHP. Метод [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) используется для создания подготовленной инструкции DELETE, а затем с помощью метода [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php) привязываются параметры для предложения WHERE в инструкции. Код выполняет инструкцию, используя метод [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php), и закрывает ее с помощью метода [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php).
-
-Замените значения параметров host, username, password и db_name своими значениями. 
+## <a name="step-5-delete-data"></a>Шаг 5. Удаление данных
+Используйте указанный ниже код с инструкцией SQL **DELETE** для удаления строк. Этот код использует методы:
+- [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) для создания подготовленной инструкции DELETE.
+- [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php) для привязки параметров.
+- [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php) для создания подготовленной инструкции DELETE.
+- [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php) для закрытия инструкции.
 
 ```php
-<?php
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin@mydemoserver';
-$password = 'your_password';
-$db_name = 'your_database';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-
 //Run the Delete statement
 $product_name = 'BrandNewProduct';
 if ($stmt = mysqli_prepare($conn, "DELETE FROM Products WHERE ProductName = ?")) {
@@ -223,10 +158,6 @@ mysqli_stmt_execute($stmt);
 printf("Delete: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 mysqli_stmt_close($stmt);
 }
-
-//Close the connection
-mysqli_close($conn);
-?>
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -241,4 +172,9 @@ az group delete \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Подключение к службе "База данных Azure для MySQL" по SSL](howto-configure-ssl.md)
+> [Управление сервером службы "База данных Azure для MySQL" через портал](./howto-create-manage-server-portal.md)<br/>
+
+> [!div class="nextstepaction"]
+> [Управление сервером службы "База данных Azure для MySQL" с помощью CLI](./how-to-manage-single-server-cli.md)
+
+[Не можете найти нужную информацию? Сообщите нам!](https://aka.ms/mysql-doc-feedback)

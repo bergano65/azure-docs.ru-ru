@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 10/14/2020
 ms.custom: references_regions
-ms.openlocfilehash: b33f3e58f82d52e77437c29f7e5219926b2578c3
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 21e0cfd56a37304d1ec333f8713894504282541f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92106983"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660667"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
 
@@ -32,7 +32,7 @@ ms.locfileid: "92106983"
 
 - Активная подписка Azure. Если у вас нет ее, перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-- Рабочая область Log Analytics. Узнайте, как [создать рабочую область Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md). Дополнительные сведения о рабочих областях Log Analytics см. в статье [Designing your Azure Monitor Logs deployment](../azure-monitor/platform/design-logs-deployment.md) (Планирование развертывания журналов Azure Monitor).
+- Рабочая область Log Analytics. Узнайте, как [создать рабочую область Log Analytics](../azure-monitor/learn/quick-create-workspace.md). Дополнительные сведения о рабочих областях Log Analytics см. в статье [Designing your Azure Monitor Logs deployment](../azure-monitor/platform/design-logs-deployment.md) (Планирование развертывания журналов Azure Monitor).
 
 - Чтобы включить Azure Sentinel, в подписке, в которой находится рабочая область Azure Sentinel, потребуются разрешения участника. 
 - Чтобы использовать Azure Sentinel, требуются разрешения участника или читателя в группе ресурсов, к которой принадлежит рабочая область.

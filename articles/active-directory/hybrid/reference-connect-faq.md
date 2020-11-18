@@ -15,12 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f6c75337c27e14fb77161cf641cde0a582901e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff2651d2fed9c307bbb90623572b4a74d750d3a4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90014639"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836076"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -261,7 +261,7 @@ ms.locfileid: "90014639"
 ## <a name="operational-best-practice"></a>Практические рекомендации    
 Ниже приведены некоторые рекомендации, которые следует реализовать при синхронизации между Windows Server Active Directory и Azure Active Directory.
 
-**Применить многофакторную проверку подлинности для всех синхронизированных учетных записей** Многофакторная идентификация Azure помогает защитить доступ к данным и приложениям, одновременно обеспечивая простоту для пользователей. Эта служба предлагает дополнительную защиту за счет дополнительного способа аутентификации и, используя ряд простых методов проверки подлинности, обеспечивает строгую проверку. Направление пользователям запросов о необходимости Многофакторной идентификации зависит от настроек, заданных администратором. Дополнительные сведения о MFA можно узнать здесь: https://www.microsoft.com/security/business/identity/mfa?rtc=1
+**Применить многофакторную проверку подлинности для всех синхронизированных учетных записей** Многофакторная идентификация Azure AD помогает защитить доступ к данным и приложениям, одновременно обеспечивая простоту для пользователей. Эта служба предлагает дополнительную защиту за счет дополнительного способа аутентификации и, используя ряд простых методов проверки подлинности, обеспечивает строгую проверку. Направление пользователям запросов о необходимости Многофакторной идентификации зависит от настроек, заданных администратором. Дополнительные сведения о MFA можно узнать здесь: https://www.microsoft.com/security/business/identity/mfa?rtc=1
 
 **Следуйте рекомендациям по безопасности Azure AD Connect Server** Сервер Azure AD Connect содержит важные данные идентификации и должен рассматриваться как компонент уровня 0, как описано в [модели административного уровня Active Directory](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material). См. также [рекомендации по обеспечению безопасности сервера AADConnect](./how-to-connect-install-prerequisites.md#azure-ad-connect-server).
 

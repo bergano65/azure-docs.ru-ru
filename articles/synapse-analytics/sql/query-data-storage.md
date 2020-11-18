@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: sql
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3fd3a94efd6e7870ae3919a011fc24f66b97c559
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c7a8fb63f775a76342849957f070861fd200a9d3
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310951"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685670"
 ---
 # <a name="query-storage-files-with-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Отправка запросов к файлам хранилища с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics
 
@@ -66,7 +66,7 @@ WITH (C1 int, C2 varchar(20), C3 as varchar(max)) as rows
 - ESCAPE_CHAR = 'char'. Определяет символ в файле, который используется для экранирования самого себя и всех значений разделителей. Если за escape-символом следует значение, отличное от него самого или какого-либо из значений разделителей, при считывании этого значения escape-символ пропускается.
 Параметр ESCAPE_CHAR будет применяться независимо от того, включен ли параметр FIELDQUOTE. Он не будет использоваться для экранирования символа кавычек. Символ кавычек нужно экранировать другим символом кавычек. Такой символ может использоваться в значении столбца только в том случае, если значение инкапсулировано с помощью символов кавычек.
 - FIELDTERMINATOR ='field_terminator'. Определяет используемый признак конца поля. По умолчанию признаком конца поля считается запятая ( **,** ).
-- ROWTERMINATOR ='row_terminator'. Определяет используемый признак конца строки. По умолчанию признаком конца строки считается символ новой строки ( **\r\n** ).
+- ROWTERMINATOR ='row_terminator'. Определяет используемый признак конца строки. По умолчанию признаком конца строки считается символ новой строки ( **\r\n**).
 
 ## <a name="file-schema"></a>Схема файла
 
@@ -228,7 +228,7 @@ OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/myroot/*/mysubfolder/*
 
 ### <a name="demo-setup"></a>Настройка демонстрации
 
-Для начала **создайте базу данных** , в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. 
+Для начала **создайте базу данных**, в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. 
 
 Этот скрипт создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются для чтения данных в этих примерах.
 

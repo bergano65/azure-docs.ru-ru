@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 336f58635465f77c60d04c53bb1893cb60f5f35f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 2ab87dfdeb18f97265c3bb2f34616c942a345c1e
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791228"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698953"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Java с помощью REST API
 > [!div class="op_single_selector"]
@@ -25,7 +25,7 @@ ms.locfileid: "92791228"
 > * [Портал](search-get-started-portal.md)
 > * [PowerShell](./search-get-started-powershell.md)
 > * [Python](search-get-started-python.md)
-> * [Postman](search-get-started-postman.md)
+> * [REST](search-get-started-rest.md)
 
 Создайте консольное приложение Java, которое создает, загружает и опрашивает индекс поиска с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/) и [REST API Когнитивного поиска Azure](/rest/api/searchservice/). Эта статья содержит пошаговые инструкции по созданию приложения. Кроме того, можно [скачать и установить готовую версию приложения](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
 
@@ -64,10 +64,10 @@ ms.locfileid: "92791228"
 ### <a name="create-the-project"></a>Создание проекта
 
 1. Откройте IntelliJ IDEA и выберите **Create New Project** (Создать проект).
-1. Выберите **Maven** .
+1. Выберите **Maven**.
 1. В списке **Project SDK** (Пакет SDK проекта) выберите Java 11 SDK (Пакет SDK для Java 11).
 
-    :::image type="content" source="media/search-get-started-java/java-quickstart-create-new-maven-project.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
+    :::image type="content" source="media/search-get-started-java/java-quickstart-create-new-maven-project.png" alt-text="Создание проекта Maven" border="false":::
 
 1. Для параметров **GroupId** и **ArtifactId** введите значение `AzureSearchQuickstart`.
 1. Для остальных параметров подтвердите значения по умолчанию, чтобы открыть проект.
@@ -76,9 +76,9 @@ ms.locfileid: "92791228"
 
 1. Щелкните **File** (Файл) > **Settings** (Параметры).
 1. В окне **Settings** (Параметры) выберите **Build, Execution, Deployment** (Сборка, выполнение, развертывание) > **Build Tools** (Средства сборки) > **Maven** > **Importing** (Импорт).
-1. Установите флажок **Import Maven projects automatically** (Импортировать проекты Maven автоматически) и щелкните **OK** , чтобы закрыть это окно. Подключаемые модули Maven и другие зависимости теперь автоматически синхронизируются, когда вы обновите файл pom.xml на следующем шаге.
+1. Установите флажок **Import Maven projects automatically**(Импортировать проекты Maven автоматически) и щелкните **OK**, чтобы закрыть это окно. Подключаемые модули Maven и другие зависимости теперь автоматически синхронизируются, когда вы обновите файл pom.xml на следующем шаге.
 
-    :::image type="content" source="media/search-get-started-java/java-quickstart-settings-import-maven-auto.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
+    :::image type="content" source="media/search-get-started-java/java-quickstart-settings-import-maven-auto.png" alt-text="Параметры импорта Maven в настройках IntelliJ" border="false":::
 
 1. Откройте файл pom.xml и замените его содержимое следующими параметрами настройки Maven. Сюда входят ссылки на [подключаемый модуль Exec Maven](https://www.mojohaus.org/exec-maven-plugin/) и [API интерфейса JSON](https://javadoc.io/doc/org.glassfish/javax.json/1.0.2).
 
@@ -140,7 +140,7 @@ ms.locfileid: "92791228"
 
     По завершении дерево проектов должно выглядеть как на следующем изображении.
 
-    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
+    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree.png" alt-text="Структура каталогов проекта" border="false":::
 
 1. Нажмите кнопку **ОК** , чтобы закрыть окно.
 
@@ -373,10 +373,10 @@ ms.locfileid: "92791228"
 
 1. Убедитесь, что проект имеет следующую структуру.
 
-    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree-plus-classes.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
+    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree-plus-classes.png" alt-text="Структура каталогов и классы проекта" border="false":::
 
 1. Откройте окно инструментов **Maven** и выполните такую цель Maven: `verify exec:java`
-:::image type="content" source="media/search-get-started-java/java-quickstart-execute-maven-goal.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
+:::image type="content" source="media/search-get-started-java/java-quickstart-execute-maven-goal.png" alt-text="Execute maven goal: verify exec:java" border="false":::
 
 Когда обработка завершится, найдите сообщение BUILD SUCCESS с нулевым (0) кодом выхода после него.
 
