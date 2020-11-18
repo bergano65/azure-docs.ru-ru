@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 03/12/2018
 ms.author: guybo
-ms.openlocfilehash: 73e07c612486d5f48b1ad3eca8044a561549092b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f35adcc797e903bb44852e9ba52e1a023f51a0d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292121"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659528"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Подготовка виртуальной машины SLES или openSUSE для Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "87292121"
 
 Вместо того чтобы создать собственный виртуальный жесткий диск, SUSE публикует образы BYOS (использование собственной подписки) для SLES в каталоге [VM Depot](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/04/using-and-contributing-vms-to-vm-depot.pdf).
 
-## <a name="prepare-suse-linux-enterprise-server-11-sp4"></a>Подготовка SUSE Linux Enterprise Server 11 с пакетом обновления 4 (SP4)
+## <a name="prepare-suse-linux-enterprise-server-for-azure"></a>Подготовка SUSE Linux Enterprise Server для Azure
 1. На центральной панели диспетчера Hyper-V выберите виртуальную машину.
 2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
 3. Зарегистрируйте систему SUSE Linux Enterprise, чтобы позволить ей скачивать обновления и устанавливать пакеты.
@@ -41,57 +41,53 @@ ms.locfileid: "87292121"
     ```console
     # sudo zypper update
     ```
-
-1. Установите агент Linux для Azure из репозитория SLES (SLE11-Public-Cloud-Module).
+    
+5. Установка агента Linux для Azure и Cloud-init
 
     ```console
+    # SUSEConnect -p sle-module-public-cloud/15.2/x86_64  (SLES 15 SP2)
     # sudo zypper install python-azure-agent
+    # sudo zypper install cloud-init
     ```
 
-1. Убедитесь, что waagent в chkconfig имеет значение on. Если указано другое значение, включите для службы waagent автоматический запуск.
+6. Включение waagent & Cloud-init для запуска при загрузке
 
     ```console
     # sudo chkconfig waagent on
+    # systemctl enable cloud-init-local.service
+    # systemctl enable cloud-init.service
+    # systemctl enable cloud-config.service
+    # systemctl enable cloud-final.service
+    # systemctl daemon-reload
+    # cloud-init clean
     ```
 
-7. Убедитесь, что служба waagent работает. Если она не работает, запустите ее: 
+7. Обновление конфигурации waagent и Cloud-init
 
     ```console
-    # sudo service waagent start
+    # sudo sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    # sudo sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+
+    # sudo sh -c 'printf "datasource:\n  Azure:" > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg'
+    # sudo sh -c 'printf "reporting:\n  logging:\n    type: log\n  telemetry:\n    type: hyperv" > /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg'
     ```
 
-8. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл "/boot/grub/menu.lst" в текстовом редакторе и убедитесь, что ядро по умолчанию включает следующие параметры:
+8. Измените файл/etc/default/grub, чтобы обеспечить отправку журналов консоли в последовательный порт, а затем обновите основной файл конфигурации с помощью grub2-mkconfig-o/Boot/grub2/GRUB.cfg
 
     ```config-grub
     console=ttyS0 earlyprintk=ttyS0 rootdelay=300
     ```
-
     Это гарантирует отправку всех сообщений консоли на первый последовательный порт, что может помочь технической поддержке Azure в плане отладки.
-9. Убедитесь, что файлы /boot/grub/menu.lst и /etc/fstab ссылаются на диск с помощью его UUID (by-uuid), а не с помощью идентификатора диска (by-id). 
-   
-    Получение UUID диска
-
-    ```console
-    # ls /dev/disk/by-uuid/
-    ```
-
-    Если используется /dev/disk/by-id, обновите файлы /boot/grub/menu.lst и /etc/fstab правильным значением uuid.
-   
-    Перед изменением
-   
-    `root=/dev/disk/by-id/SCSI-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx-part1`
-   
-    После изменения
-   
-    `root=/dev/disk/by-uuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
-
+    
+9. Убедитесь, что файл/etc/fstab ссылается на диск по его UUID (по UUID)
+         
 10. Переместите или удалите правила udev, чтобы не создавать статические правила для интерфейса Ethernet. Эти правила приводят к появлению проблем при клонировании виртуальной машины в Microsoft Azure или Hyper-V:
 
     ```console
     # sudo ln -s /dev/null /etc/udev/rules.d/75-persistent-net-generator.rules
     # sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
     ```
-
+   
 11. Рекомендуется отредактировать файл /etc/sysconfig/network/dhcp и изменить параметр `DHCLIENT_SET_HOSTNAME` следующим образом:
 
     ```config
@@ -105,7 +101,8 @@ ms.locfileid: "87292121"
     ALL    ALL=(ALL) ALL   # WARNING! Only use this together with 'Defaults targetpw'!
     ```
 
-13. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки.  Обычно это сделано по умолчанию.
+13. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки. Обычно это сделано по умолчанию.
+
 14. Не создавайте пространство подкачки на диске с ОС.
     
     Агент Linux для Azure может автоматически настраивать пространство подкачки с использованием диска на локальном ресурсе, подключенном к виртуальной машине после подготовки для работы в среде Azure. Следует отметить, что локальный диск ресурсов является *временным* диском и должен быть очищен при отмене подготовки виртуальной машины. После установки агента Linux для Azure (см. предыдущий шаг) измените следующие параметры в /etc/waagent.conf соответствующим образом:
@@ -133,7 +130,7 @@ ms.locfileid: "87292121"
 2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
 3. В консоли оболочки выполните команду`zypper lr`. Если эта команда возвращает результат следующего вида, то репозитории настроены надлежащим образом, и никаких изменений не требуется (обратите внимание, что номера версий могут отличаться):
 
-   | # | Псевдоним                 | name                  | Включен | Обновить
+   | # | Псевдоним                 | Имя                  | Активировано | Обновить
    | - | :-------------------- | :-------------------- | :------ | :------
    | 1 | Облако: Tools_13.1      | Облако: Tools_13.1      | Да     | Да
    | 2 | openSUSE_13 openSUSE_13.1_OSS     | openSUSE_13 openSUSE_13.1_OSS     | Да     | Да

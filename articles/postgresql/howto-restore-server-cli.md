@@ -8,27 +8,25 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 10/25/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c7e8f0fc3a90a0811d38840004f7ae12a9a225ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef397eb67c1f60c14fb36bf455236d84b730f611
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708515"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659579"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Как создать резервную копию и восстановить сервер в базе данных Azure для PostgreSQL — один сервер с помощью Azure CLI
 
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для PostgreSQL" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
-- [Сервер базы данных Azure для PostgreSQL и база данных](quickstart-create-server-database-azure-cli.md)
+Для работы с этим руководством должны быть выполнены следующие условия.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+- Вам потребуется [база данных Azure для сервера и базы данных PostgreSQL](quickstart-create-server-database-azure-cli.md).
 
- 
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-> [!IMPORTANT]
-> Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы проверить версию, в командной строке Azure CLI введите `az --version`. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI]( /cli/azure/install-azure-cli).
+ - Для работы с этой статьей требуется версия 2,0 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="set-backup-configuration"></a>Настройка конфигурации резервного копирования
 
@@ -69,9 +67,9 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 
 Для команды `az postgres server restore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | Описание  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | restore-point-in-time | 2018-03-13T13:59:00Z | Выберите точку во времени, до которой необходимо выполнить восстановление. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Можно использовать местный часовой пояс, например `2018-03-13T05:59:00-08:00`. Также можно использовать формат UTC Zulu, например `2018-03-13T13:59:00Z`. |
 | source-server | mydemoserver | Имя или идентификатор исходного сервера, с которого необходимо выполнить восстановление. |
@@ -109,7 +107,7 @@ az postgres server georestore --resource-group newresourcegroup --name mydemoser
 
 Для команды `az postgres server georestore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | Описание  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 |resource-group| myresourcegroup | Имя группы ресурсов, к которой будет принадлежать новый сервер.|
 |name | mydemoserver-georestored | Имя нового сервера. |
@@ -123,7 +121,7 @@ az postgres server georestore --resource-group newresourcegroup --name mydemoser
 
 На новом сервере, созданном во время восстановления, нет правил брандмауэра или конечных точек службы виртуальной сети, которые настроены на сервере-источнике. Для этого нового сервера правила нужно настроить отдельно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [резервных копиях](concepts-backup.md) службы
 - Дополнительные сведения о [репликах](concepts-read-replicas.md)
 - Дополнительные сведения о возможностях обеспечения [непрерывности бизнес-процессов](concepts-business-continuity.md)
