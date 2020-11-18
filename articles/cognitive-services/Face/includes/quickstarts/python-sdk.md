@@ -7,24 +7,24 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: include
-ms.date: 10/26/2020
+ms.date: 11/10/2020
 ms.author: pafarley
-ms.openlocfilehash: ec23ec58a020cc314f301e33b72b4787f4e32e14
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: cf7b82ec1da660ac68c6031434c0e0748ee67b3d
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92918724"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94523988"
 ---
 В этом руководстве показано, как начать работу с клиентской библиотекой API Распознавания лиц для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 
 Клиентская библиотека Распознавания лиц для Python позволяет выполнять такие задачи:
 
-* Определение лиц на изображении
-* Поиск похожих лиц
-* Создание и обучение на основе изображения группы людей
-* опознание лиц;
-* Проверка лиц
+* [Определение лиц на изображении](#detect-faces-in-an-image)
+* [поиск похожих лиц](#find-similar-faces);
+* [создание и обучение на основе изображения группы людей](#create-and-train-a-person-group);
+* [опознание лица](#identify-a-face);
+* [Проверка лиц](#verify-faces)
 
 [Справочная документация](/python/api/azure-cognitiveservices-vision-face/?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-face) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-face/) | [Примеры](/samples/browse/?products=azure&term=face)
 
@@ -60,7 +60,7 @@ pip install --upgrade azure-cognitiveservices-vision-face
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_subvars)]
 
 > [!IMPORTANT]
-> Перейдите на портал Azure. Если ресурс [название продукта], созданный в соответствии с указаниями в разделе **Предварительные требования** , успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
+> Перейдите на портал Azure. Если ресурс [название продукта], созданный в соответствии с указаниями в разделе **Предварительные требования**, успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
 >
 > Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Например, [хранилище ключей Azure](../../../../key-vault/general/overview.md).
 
@@ -73,9 +73,9 @@ pip install --upgrade azure-cognitiveservices-vision-face
 |[FaceClient](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient?view=azure-python) | Этот класс реализует авторизацию для использования Распознавания лиц и требуется для реализации всех ее функций. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов. |
 |[FaceOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python)|Этот класс обрабатывает основные задачи по обнаружению и распознаванию лиц. |
 |[DetectedFace](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface?view=azure-python)|Этот класс представляет все данные об отдельном лице, обнаруженном на изображении. Его можно использовать для получения подробных сведений о лице.|
-|[FaceListOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.facelistoperations?view=azure-python)|Этот класс управляет хранимыми в облаке конструкциями **FaceList** , которые включают систематизированную коллекцию лиц. |
-|[PersonGroupPersonOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations?view=azure-python)| Этот класс управляет хранимыми в облаке конструкциями **Person** , в которых хранится коллекция лиц одного человека.|
-|[PersonGroupOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongroupoperations?view=azure-python)| Этот класс управляет хранимыми в облаке конструкциями **PersonGroup** , в которых хранится систематизированная коллекция объектов **Person**. |
+|[FaceListOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.facelistoperations?view=azure-python)|Этот класс управляет хранимыми в облаке конструкциями **FaceList**, которые включают систематизированную коллекцию лиц. |
+|[PersonGroupPersonOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations?view=azure-python)| Этот класс управляет хранимыми в облаке конструкциями **Person**, в которых хранится коллекция лиц одного человека.|
+|[PersonGroupOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongroupoperations?view=azure-python)| Этот класс управляет хранимыми в облаке конструкциями **PersonGroup**, в которых хранится систематизированная коллекция объектов **Person**. |
 |[SnapshotOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.snapshotoperations?view=azure-python)|Этот класс управляет функцией создания моментального снимка. Его можно использовать для временного сохранения всех хранимых в облаке данных о лицах и переноса этих данных в новую подписку Azure. |
 
 ## <a name="code-examples"></a>Примеры кода
@@ -161,13 +161,13 @@ pip install --upgrade azure-cognitiveservices-vision-face
 
 ### <a name="train-persongroup"></a>Обучение PersonGroup
 
-После назначения лиц необходимо обучить объект **PersonGroup** , чтобы он мог опознавать визуальные черты, связанные с каждым из его объектов **Person**. Следующий код вызывает асинхронный метод **train** , запрашивает результат и выводит состояние в консоль.
+После назначения лиц необходимо обучить объект **PersonGroup**, чтобы он мог опознавать визуальные черты, связанные с каждым из его объектов **Person**. Следующий код вызывает асинхронный метод **train**, запрашивает результат и выводит состояние в консоль.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_persongroup_train)]
 
 ## <a name="identify-a-face"></a>опознание лиц;
 
-Операция идентификации (Identify) принимает изображение человека или нескольких людей и пытается опознать каждое лицо на этом изображении (поиск с распознаванием лиц). Он сравнивает каждое обнаруженное лицо с **PersonGroup** , которая является базой данных объектов **Person** с известными характеристиками лиц.
+Операция идентификации (Identify) принимает изображение человека или нескольких людей и пытается опознать каждое лицо на этом изображении (поиск с распознаванием лиц). Он сравнивает каждое обнаруженное лицо с **PersonGroup**, которая является базой данных объектов **Person** с известными характеристиками лиц.
 
 > [!IMPORTANT]
 > Чтобы выполнить этот пример, сначала необходимо выполнить код из раздела [Создание и обучение на основе изображения группы людей](#create-and-train-a-person-group).
@@ -180,13 +180,13 @@ pip install --upgrade azure-cognitiveservices-vision-face
 
 ### <a name="identify-faces"></a>Идентификация лиц
 
-Метод **identify** принимает массив обнаруженных лиц и сравнивает их с **PersonGroup**. Если он находит совпадение с **Person** , он сохраняет результат. Этот код выводит в консоль подробные сведения о совпадении.
+Метод **identify** принимает массив обнаруженных лиц и сравнивает их с **PersonGroup**. Если он находит совпадение с **Person**, он сохраняет результат. Этот код выводит в консоль подробные сведения о совпадении.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_identify)]
 
 ## <a name="verify-faces"></a>Проверка лиц
 
-Операция проверки принимает идентификатор лица, идентификатор другого лица или объекта **Person** , а затем определяет, связаны ли они с одним и тем же человеком.
+Операция проверки принимает идентификатор лица, идентификатор другого лица или объекта **Person**, а затем определяет, связаны ли они с одним и тем же человеком.
 
 Следующий код определяет лица на двух исходных изображениях, а затем сопоставляет их с лицом, определенным на целевом изображении.
 
