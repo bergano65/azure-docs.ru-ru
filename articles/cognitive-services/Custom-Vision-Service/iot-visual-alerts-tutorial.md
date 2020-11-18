@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: tutorial
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: ebc6ca630ea3cabb519805ae8505abf336a2a9ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 833ec0f706786ebb86a54fb3c5b13d9c6e5c6062
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604297"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616235"
 ---
 # <a name="tutorial-use-custom-vision-with-an-iot-device-to-report-visual-states"></a>Руководство по использованию Пользовательского визуального распознавания с устройством Интернета вещей для сообщения о визуальных состояниях
 
@@ -41,7 +41,7 @@ ms.locfileid: "90604297"
 * Вам также потребуется [создать ресурс Центра Интернета вещей](https://ms.portal.azure.com/#create/Microsoft.IotHub) в Azure.
 * [Visual Studio 2015 или более поздней версии](https://www.visualstudio.com/downloads/).
 * При необходимости устройство Интернета вещей под управлением ОС Windows 10 IoT Базовая версии 17763 или более поздней. Можно также запустить приложение непосредственно на компьютере.
-   * Для Raspberry Pi 2 и 3 можно настроить Windows 10 непосредственно в приложении панели мониторинга Интернета вещей. На других устройствах, таких как DrangonBoard, необходимо установить ПО с помощью [метода eMMC](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup#flashing-with-emmc-for-dragonboard-410c-other-qualcomm-devices). Дополнительные сведения о настройке нового устройства см. в статье [Настройка устройства](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup) в документации по Windows IoT.
+   * Для Raspberry Pi 2 и 3 можно настроить Windows 10 непосредственно в приложении панели мониторинга Интернета вещей. На других устройствах, таких как DrangonBoard, необходимо установить ПО с помощью [метода eMMC](/windows/iot-core/tutorials/quickstarter/devicesetup#flashing-with-emmc-for-dragonboard-410c-other-qualcomm-devices). Дополнительные сведения о настройке нового устройства см. в статье [Настройка устройства](/windows/iot-core/tutorials/quickstarter/devicesetup) в документации по Windows IoT.
 
 ## <a name="about-the-visual-alerts-app"></a>Сведения о приложении визуальных оповещений
 
@@ -142,5 +142,5 @@ ms.locfileid: "90604297"
 > [Пример IoTVisualAlerts (GitHub)](https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates/tree/master/IoTVisualAlerts)
 
 * Добавьте метод Центра Интернета вещей, чтобы переключить приложение непосредственно в состояние **Waiting For Trained Model** (Ожидание обученной модели). Таким образом, модель можно обучить с помощью изображений, которые не записываются самим устройством, а затем отправить новую модель на устройство по команде.
-* Чтобы создать панель мониторинга Power BI для визуализации оповещений Центра Интернета вещей, отправленных из примера, следуйте указаниям, приведенным в [этом учебнике](https://docs.microsoft.com/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi).
-* Чтобы создать приложение логики, которое реагирует на оповещения Центра Интернета вещей при обнаружении визуальных состояний, ознакомьтесь с [этим учебником](https://docs.microsoft.com/azure/iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps).
+* Чтобы создать панель мониторинга Power BI для визуализации оповещений Центра Интернета вещей, отправленных из примера, следуйте указаниям, приведенным в [этом учебнике](../../iot-hub/iot-hub-live-data-visualization-in-power-bi.md).
+* Чтобы создать приложение логики, которое реагирует на оповещения Центра Интернета вещей при обнаружении визуальных состояний, ознакомьтесь с [этим учебником](../../iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md).

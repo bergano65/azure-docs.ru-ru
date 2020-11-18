@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 0c2ee767e231fea47d0cf8205d7c256f827193de
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 83679af635de13040ed7d8f314c9a358d162deda
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095889"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591954"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-ruby"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Ruby
 
@@ -150,7 +150,7 @@ puts "Url to the thumbnail of the first returned search result: #{first_result}"
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Знакомство с API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
+* [Знакомство с API Bing для поиска изображений](../overview.md)  
 * [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)   
-* [Просмотрите документацию по Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
-* [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
+* [Просмотрите документацию по Cognitive Services](../../index.yml)
+* [Справочник по API Bing для поиска изображений](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

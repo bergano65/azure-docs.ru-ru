@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: a62133737d48a8ebf454b5fab83ef52ef2daad09
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a9dba9222816ef2cc7891ff7f803e6a7409802a4
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098439"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94593456"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-image-search-api"></a>Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска изображений
 
@@ -122,7 +122,7 @@ bingSearchOptions(this), getSubscriptionKey())">
 
 ![[Форма Bing для поиска изображений]](media/cognitive-services-bing-images-api/image-search-spa-form.png)
 
-API Bing для поиска изображений предоставляет несколько [параметров запроса фильтров](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#filter-query-parameters) для сужения и фильтрации результатов поиска. HTML-формы в этом приложении используют и отображают следующие параметры:
+API Bing для поиска изображений предоставляет несколько [параметров запроса фильтров](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#filter-query-parameters) для сужения и фильтрации результатов поиска. HTML-формы в этом приложении используют и отображают следующие параметры:
 
 | Параметр | Описание |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

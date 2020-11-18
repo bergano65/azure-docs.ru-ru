@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/21/2020
 ms.author: aahi
-ms.openlocfilehash: 122e44da7bbf4229f932eefdae4c70dc49f43bfe
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 247aea49d60c2d953d8b6dff37d22188a5442a1f
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371292"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94625429"
 ---
 Воспользуйтесь сведениями из краткого руководства и выполните первый поиск изображения с помощью клиентской библиотеки Поиска изображений Bing. 
 
@@ -46,12 +46,12 @@ ms.locfileid: "92371292"
 1. Добавьте [пакет NuGet для Когнитивного поиска изображений](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.ImageSearch).
     1. В **Обозревателе решений** щелкните проект правой кнопкой мыши.
     1. Выберите **Manage NuGet Packages...** (Управление пакетами NuGet...).
-    1. Найдите и выберите *Microsoft.Azure.CognitiveServices.Search.ImageSearch* , а затем установите этот пакет.
+    1. Найдите и выберите *Microsoft.Azure.CognitiveServices.Search.ImageSearch*, а затем установите этот пакет.
     
 # <a name="vs-code"></a>[Код VS](#tab/vscode)
 
 1. Откройте окно терминала в VS Code.
-1. Создайте консольный проект с именем *BingImageSearch* , введя в окне терминала следующий код:
+1. Создайте консольный проект с именем *BingImageSearch*, введя в окне терминала следующий код:
     
     ```bash
     dotnet new console -n BingImageSearch
@@ -129,12 +129,12 @@ if (imageResults != null)
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по одностраничным приложениям для API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/tutorial-bing-image-search-single-page-app)
+> [Руководство по одностраничным приложениям для API Bing для поиска изображений](../../tutorial-bing-image-search-single-page-app.md)
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Что такое API Bing для поиска изображений?](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
+* [Что такое API Bing для поиска изображений?](../../overview.md)  
 * [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)  
 * [Примеры .NET для пакета SDK в Azure Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7)
-* [Документация по службам Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
-* [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
+* [Документация по службам Azure Cognitive Services](../../../index.yml)
+* [Справочник по API Bing для поиска изображений](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

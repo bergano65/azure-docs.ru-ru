@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 08/05/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: d7d66e247c6a6240bd6fde08612b8eb770bd3b92
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b85b2d9b81e84ec6c6e09fef16c66a919aa30cd7
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737546"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616762"
 ---
 # <a name="tutorial-recognize-azure-service-logos-in-camera-pictures"></a>Руководство по Распознавание логотипов служб Azure на изображениях с камеры
 
@@ -34,9 +34,9 @@ ms.locfileid: "92737546"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/)
-- Рабочая нагрузка Xamarin для Visual Studio (см. дополнительные сведения в статье [Установка Xamarin в Visual Studio 2017](https://docs.microsoft.com/xamarin/cross-platform/get-started/installation/windows)).
+- Рабочая нагрузка Xamarin для Visual Studio (см. дополнительные сведения в статье [Установка Xamarin в Visual Studio 2017](/xamarin/cross-platform/get-started/installation/windows)).
 - эмулятор iOS или Android для Visual Studio;
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest) (необязательно).
+- [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest) (необязательно).
 
 ## <a name="get-the-source-code"></a>Получение исходного кода
 
@@ -50,13 +50,13 @@ ms.locfileid: "92737546"
 
 ## <a name="upload-and-tag-images"></a>Отправка и снабжение тегами изображений
 
-Теперь обучите алгоритм обнаружения логотипов, отправив изображения логотипов служб Azure и вручную присвоив им теги. В репозитории AIVisualProvision есть набор изображений, которые можно использовать для обучения. Нажмите на веб-сайте кнопку **Add images** (Добавить изображения), которую вы найдете на вкладке **Training Images** (Изображения для обучения). Затем перейдите к папке репозитория **Documents/Images/Training_DataSet** . Вам придется вручную добавить теги логотипов к каждому изображению. Если этот проект вам нужен только для теста, лучше загрузить только часть изображений. Отправьте по меньшей мере 15 примеров для каждого тега, который вы намерены использовать.
+Теперь обучите алгоритм обнаружения логотипов, отправив изображения логотипов служб Azure и вручную присвоив им теги. В репозитории AIVisualProvision есть набор изображений, которые можно использовать для обучения. Нажмите на веб-сайте кнопку **Add images** (Добавить изображения), которую вы найдете на вкладке **Training Images** (Изображения для обучения). Затем перейдите к папке репозитория **Documents/Images/Training_DataSet**. Вам придется вручную добавить теги логотипов к каждому изображению. Если этот проект вам нужен только для теста, лучше загрузить только часть изображений. Отправьте по меньшей мере 15 примеров для каждого тега, который вы намерены использовать.
 
 После загрузки обучающих изображений выберите на экране первое из них. Откроется окно расстановки тегов. На каждом изображении выделите рамкой каждый логотип и присвойте ему тег. 
 
 ![Добавление тегов на веб-сайте службы "Пользовательское визуальное распознавание"](media/azure-logo-tutorial/tag-logos.png)
 
-Это приложение настроено на работу с конкретным форматом строк для тегов. Определения можно найти в файле *Source\VisualProvision\Services\Recognition\RecognitionService.cs* :
+Это приложение настроено на работу с конкретным форматом строк для тегов. Определения можно найти в файле *Source\VisualProvision\Services\Recognition\RecognitionService.cs*:
 
 [!code-csharp[Tag definitions](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/RecognitionService.cs?name=snippet_constants)]
 
@@ -74,27 +74,27 @@ ms.locfileid: "92737546"
 
 ![Веб-сайт Пользовательского визуального распознавания, на котором открыто окно API прогнозирования со значениями URL-адреса и ключа API](media/azure-logo-tutorial/cusvis-endpoint.png)
 
-Скопируйте URL-адрес конечной точки и значение **Prediction-Key** в соответствующие поля в файле *Source\VisualProvision\AppSettings.cs* :
+Скопируйте URL-адрес конечной точки и значение **Prediction-Key** в соответствующие поля в файле *Source\VisualProvision\AppSettings.cs*:
 
 [!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?name=snippet_cusvis_keys)]
 
 ## <a name="examine-custom-vision-usage"></a>Проверка работы Пользовательского визуального распознавания
 
-Откройте файл *Source/VisualProvision/Services/Recognition/CustomVisionService.cs* , чтобы проверить, как ключ и URL-адрес конечной точки Пользовательского визуального распознавания используются в приложении. Метод **PredictImageContentsAsync** принимает поток байтов файла изображения с токеном отмены (для управления асинхронными задачами), вызывает API прогнозирования Пользовательского визуального распознавания и возвращает результат прогнозирования. 
+Откройте файл *Source/VisualProvision/Services/Recognition/CustomVisionService.cs*, чтобы проверить, как ключ и URL-адрес конечной точки Пользовательского визуального распознавания используются в приложении. Метод **PredictImageContentsAsync** принимает поток байтов файла изображения с токеном отмены (для управления асинхронными задачами), вызывает API прогнозирования Пользовательского визуального распознавания и возвращает результат прогнозирования. 
 
 [!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/CustomVisionService.cs?name=snippet_prediction)]
 
-Этот результат принимает форму экземпляра **PredictionResult** , который в свою очередь содержит список экземпляров **Prediction** . Экземпляр **Prediction** содержит обнаруженный тег и расположение ограничивающего прямоугольника на изображении.
+Этот результат принимает форму экземпляра **PredictionResult**, который в свою очередь содержит список экземпляров **Prediction**. Экземпляр **Prediction** содержит обнаруженный тег и расположение ограничивающего прямоугольника на изображении.
 
 [!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/Prediction.cs?name=snippet_prediction_class)]
 
-Чтобы узнать больше о том, как приложение обрабатывает эти данные, изучите метод **GetResourcesAsync** . Этот метод определен в файле *Source/VisualProvision/Services/Recognition/RecognitionService.cs* .  
+Чтобы узнать больше о том, как приложение обрабатывает эти данные, изучите метод **GetResourcesAsync**. Этот метод определен в файле *Source/VisualProvision/Services/Recognition/RecognitionService.cs*.  
 
 ## <a name="add-computer-vision"></a>Добавление API "Компьютерное зрение"
 
 Итак, мы завершили настройку службы "Пользовательское визуальное распознавание" для примера из этого руководства. Если вы хотите запустить это приложение, интегрируйте в него еще и службу "Компьютерное зрение". Приложение использует функцию распознавания текста из службы "Компьютерное зрение", чтобы дополнить процесс обнаружения логотипов. Логотип Azure можно распознать как по внешнему виду, так *и* по размещенному рядом с ним тексту. В отличие от моделей Пользовательского визуального распознавания, служба "Компьютерное зрение" предварительно обучена для выполнения определенных операций с изображениями или видео.
 
-Оформите подписку на службу "Компьютерное зрение", чтобы получить ключ и URL-адрес конечной точки. Дополнительные инструкции по этому шагу см. в статье [Получение ключей подписки](https://docs.microsoft.com/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtosubscribe).
+Оформите подписку на службу "Компьютерное зрение", чтобы получить ключ и URL-адрес конечной точки. Дополнительные инструкции по этому шагу см. в статье [Получение ключей подписки](../cognitive-services-apis-create-account.md?tabs=singleservice%2Cwindows).
 
 ![Служба Компьютерного зрения на портале Azure, где в меню выбран элемент "Быстрый запуск". Здесь выделены ссылка на ключи и URL-адрес конечной точки API.](media/azure-logo-tutorial/comvis-keys.png)
 
@@ -104,7 +104,7 @@ ms.locfileid: "92737546"
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Для развертывания служб в подписке Azure приложению потребуется учетная запись субъекта-службы. Субъект-служба позволяет делегировать приложению определенные разрешения с помощью управления доступом на основе ролей в Azure. Дополнительные сведения см. в статье [Предоставление приложениям доступа к ресурсам Azure Stack за счет создания субъектов-служб](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-create-service-principals).
+Для развертывания служб в подписке Azure приложению потребуется учетная запись субъекта-службы. Субъект-служба позволяет делегировать приложению определенные разрешения с помощью управления доступом на основе ролей в Azure. Дополнительные сведения см. в статье [Предоставление приложениям доступа к ресурсам Azure Stack за счет создания субъектов-служб](/azure-stack/operator/azure-stack-create-service-principals).
 
 Вы можете создать субъект-службу с помощью Azure Cloud Shell или Azure CLI, как показано далее. Для начала выполните вход и выберите подписку, которую вы намерены использовать.
 
@@ -132,7 +132,7 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
 }
 ```
 
-Запишите значения `clientId` и `tenantId`. Введите их в соответствующие поля в файле *Source\VisualProvision\AppSettings.cs* .
+Запишите значения `clientId` и `tenantId`. Введите их в соответствующие поля в файле *Source\VisualProvision\AppSettings.cs*.
 
 [!code-csharp[Computer Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?name=snippet_serviceprincipal)]
 
@@ -146,22 +146,22 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
 
 Чтобы запустить приложение, сделайте следующее.
 
-1. В обозревателе решений Visual Studio выберите проект **VisualProvision.Android** или **VisualProvision.iOS** . Выберите подходящий эмулятор или подключенное мобильное устройство в раскрывающемся меню на главной панели инструментов. Затем запустите приложение.
+1. В обозревателе решений Visual Studio выберите проект **VisualProvision.Android** или **VisualProvision.iOS**. Выберите подходящий эмулятор или подключенное мобильное устройство в раскрывающемся меню на главной панели инструментов. Затем запустите приложение.
 
     > [!NOTE]
     > Для выполнения эмулятора iOS вам потребуется устройство MacOS.
 
-1. На первом экране введите идентификатор клиента для субъекта-службы, идентификатор арендатора и пароль. Нажмите кнопку **Вход** .
+1. На первом экране введите идентификатор клиента для субъекта-службы, идентификатор арендатора и пароль. Нажмите кнопку **Вход**.
 
     > [!NOTE]
-    > В некоторых эмуляторах кнопка **Вход** может быть неактивной на этом этапе. В таком случае остановите приложение и откройте файл *Source/VisualProvision/Pages/LoginPage.xaml* . Найдите в нем элемент `Button` с меткой **LOGIN BUTTON** и удалите следующую строку, а затем снова запустите приложение.
+    > В некоторых эмуляторах кнопка **Вход** может быть неактивной на этом этапе. В таком случае остановите приложение и откройте файл *Source/VisualProvision/Pages/LoginPage.xaml*. Найдите в нем элемент `Button` с меткой **LOGIN BUTTON** и удалите следующую строку, а затем снова запустите приложение.
     >  ```xaml
     >  IsEnabled="{Binding IsValid}"
     >  ```
     
     ![Экран приложения с полями для ввода учетных данных субъекта-службы](media/azure-logo-tutorial/app-credentials.png)
 
-1. На следующем экране выберите подписку Azure в раскрывающемся списке. (Это меню должно содержать все подписки, к которым субъект-служба имеет доступ.) Нажмите кнопку **Продолжить** . На этом этапе приложение может выдать запрос на доступ к камере и хранилищу фотографий на вашем устройстве. Предоставьте требуемый доступ.
+1. На следующем экране выберите подписку Azure в раскрывающемся списке. (Это меню должно содержать все подписки, к которым субъект-служба имеет доступ.) Нажмите кнопку **Продолжить**. На этом этапе приложение может выдать запрос на доступ к камере и хранилищу фотографий на вашем устройстве. Предоставьте требуемый доступ.
 
     ![Экран приложения с раскрывающимся полем "Целевая подписка Azure"](media/azure-logo-tutorial/app-az-subscription.png)
 

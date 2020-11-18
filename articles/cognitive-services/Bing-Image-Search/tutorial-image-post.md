@@ -11,21 +11,21 @@ ms.topic: tutorial
 ms.date: 12/06/2019
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: 76670c6a061ce3f257d9df8cfe61b1cc020194c6
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: cef39b940f0d61fc60ea10156acfd781289157de
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100224"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591977"
 ---
 # <a name="tutorial-extract-image-details-using-the-bing-image-search-api-and-c"></a>Руководство по Извлечение сведений об изображении с помощью API Bing для поиска изображений и C#
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
-Существует несколько [конечных точек](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-search-endpoint), доступ к которым можно получить с помощью API Bing для поиска изображений. Конечная точка `/details` принимает запрос POST с изображением и может возвращать различные сведения об изображении. Это приложение C# отправляет изображение с помощью этого API и отображает сведения, возвращенные Bing, которые являются объектами JSON, например следующие:
+Существует несколько [конечных точек](./image-search-endpoint.md), доступ к которым можно получить с помощью API Bing для поиска изображений. Конечная точка `/details` принимает запрос POST с изображением и может возвращать различные сведения об изображении. Это приложение C# отправляет изображение с помощью этого API и отображает сведения, возвращенные Bing, которые являются объектами JSON, например следующие:
 
 ![[Результаты JSON]](media/cognitive-services-bing-images-api/jsonResult.jpg)
 
