@@ -142,6 +142,6 @@
   expanded: true
   items:
     - name: "Проверки доступа\_— API Graph"
-      href: /graph/api/resources/accessreviews-root?view=graph-rest-beta
+      href: /graph/api/resources/accessreviewsv2-root?view=graph-rest-beta
     - name: "Управление правами\_— API Graph"
       href: /graph/api/resources/entitlementmanagement-root?view=graph-rest-beta

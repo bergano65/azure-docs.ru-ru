@@ -3,12 +3,12 @@ title: Службы лаборатории Azure — Отправка польз
 description: Описывает, как отправить пользовательский образ в коллекцию общих образов. ИТ-отделы университета найдут импорт изображений особенно выгодно.
 ms.date: 09/30/2020
 ms.topic: how-to
-ms.openlocfilehash: cd701215eb375b7f9b867ba05082afc7ed348ff7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93b4141636b629168e9bb7a73e71a9fe4bfc39f5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91712415"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654649"
 ---
 # <a name="upload-a-custom-image-to-shared-image-gallery"></a>Отправка пользовательского образа в Общую коллекцию образов
 
@@ -35,36 +35,36 @@ ms.locfileid: "91712415"
        
         :::image type="content" source="./media/upload-custom-image-shared-image-gallery/connect-virtual-hard-disk.png" alt-text="Подключение виртуального жесткого диска":::   
     1. Выобразировать виртуальную машину как обычно.
-1. [Подключитесь к виртуальной машине и подготовьте ее для Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
-    1. [Настройка конфигурации Windows для Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#set-windows-configurations-for-azure)
-    1. [Проверьте службы Windows, которые являются минимальными необходимыми для обеспечения возможности подключения к виртуальной машине.](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#check-the-windows-services)
-    1. [Обновление параметров реестра для удаленного рабочего стола](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#update-remote-desktop-registry-settings)
-    1. [Настройка правил брандмауэра Windows](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#configure-windows-firewall-rules)
+1. [Подключитесь к виртуальной машине и подготовьте ее для Azure](../virtual-machines/windows/prepare-for-upload-vhd-image.md).
+    1. [Настройка конфигурации Windows для Azure](../virtual-machines/windows/prepare-for-upload-vhd-image.md#set-windows-configurations-for-azure)
+    1. [Проверьте службы Windows, которые являются минимальными необходимыми для обеспечения возможности подключения к виртуальной машине.](../virtual-machines/windows/prepare-for-upload-vhd-image.md#check-the-windows-services)
+    1. [Обновление параметров реестра для удаленного рабочего стола](../virtual-machines/windows/prepare-for-upload-vhd-image.md#update-remote-desktop-registry-settings)
+    1. [Настройка правил брандмауэра Windows](../virtual-machines/windows/prepare-for-upload-vhd-image.md#configure-windows-firewall-rules)
     1. Установка обновлений Windows
-    1. [Установите агент виртуальной машины Azure и дополнительную конфигурацию, как показано здесь.](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#complete-the-recommended-configurations) 
+    1. [Установите агент виртуальной машины Azure и дополнительную конфигурацию, как показано здесь.](../virtual-machines/windows/prepare-for-upload-vhd-image.md#complete-the-recommended-configurations) 
     
-    Описанные выше действия будут создавать Специализированный образ. При создании обобщенного образа вам также потребуется запустить [Sysprep](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#determine-when-to-use-sysprep). <br/>
+    Описанные выше действия будут создавать Специализированный образ. При создании обобщенного образа вам также потребуется запустить [Sysprep](../virtual-machines/windows/prepare-for-upload-vhd-image.md#determine-when-to-use-sysprep). <br/>
         Если вы хотите сохранить каталог пользователя (который может содержать файлы, данные учетной записи пользователя и т. д.), необходимые для программного обеспечения, включенного в образ, следует создать специализированный образ.
 1. Так как **Hyper-V** по умолчанию создает файл **VHDX** , его необходимо преобразовать в VHD-файл.
     1. Перейдите к действию **диспетчера Hyper-V**  ->  **действие**  ->  **изменить диск**.
     1. Здесь у вас есть возможность **преобразовать** диск из VHDX в VHD.
     1. При попытке увеличить размер диска убедитесь, что он не превышает 128 ГБ.        
-        :::image type="content" source="./media/upload-custom-image-shared-image-gallery/choose-action.png" alt-text="Подключение виртуального жесткого диска":::   
+        :::image type="content" source="./media/upload-custom-image-shared-image-gallery/choose-action.png" alt-text="Выбор действия":::   
 1. Отправьте VHD в Azure, чтобы создать управляемый диск.
-    1. В командной строке можно использовать либо Обозреватель службы хранилища, либо AzCopy, как описано в статье [Отправка VHD в Azure или копирование управляемого диска в другой регион](https://docs.microsoft.com/azure/virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell).        
+    1. В командной строке можно использовать либо Обозреватель службы хранилища, либо AzCopy, как описано в статье [Отправка VHD в Azure или копирование управляемого диска в другой регион](../virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell.md).        
     Если компьютер переходит в спящий режим или блокировки, процесс передачи может быть прерван и завершится ошибкой.
     1. В результате этого шага у вас появится управляемый диск, который можно увидеть в портал Azure. 
         Для выбора размера диска можно использовать вкладку портал Azure "Сизе\перформанце". Как упоминалось ранее, размер должен быть не > 128 ГБ.
 1. Создание моментального снимка управляемого диска.
-    Это можно сделать из PowerShell, используя портал Azure или из Обозреватель службы хранилища, как описано в разделе [Создание моментального снимка с помощью портала или PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/snapshot-copy-managed-disk).
+    Это можно сделать из PowerShell, используя портал Azure или из Обозреватель службы хранилища, как описано в разделе [Создание моментального снимка с помощью портала или PowerShell](../virtual-machines/windows/snapshot-copy-managed-disk.md).
 1. В коллекции общих образов Создайте определение образа и версию:
-    1. [Создание определения образа](https://docs.microsoft.com/azure/virtual-machines/windows/shared-images-portal#create-an-image-definition).
+    1. [Создание определения образа](../virtual-machines/windows/shared-images-portal.md#create-an-image-definition).
     1. Здесь также нужно указать, создается ли специализированный или обобщенный образ.
 1. Создайте лабораторию в службах лаборатории Azure и выберите пользовательский образ из коллекции общих образов.
 
-    Если вы развернули диск после установки операционной системы на исходной виртуальной машине Hyper-V, вам потребуется также расширить диск C в Windows, чтобы использовать нераспределенное дисковое пространство. Для этого войдите в виртуальную машину шаблона после создания лаборатории и выполните действия, аналогичные тому, что показано в разделе [расширение базового тома](https://docs.microsoft.com/windows-server/storage/disk-management/extend-a-basic-volume). Это можно сделать с помощью пользовательского интерфейса и PowerShell.
+    Если вы развернули диск после установки операционной системы на исходной виртуальной машине Hyper-V, вам потребуется также расширить диск C в Windows, чтобы использовать нераспределенное дисковое пространство. Для этого войдите в виртуальную машину шаблона после создания лаборатории и выполните действия, аналогичные тому, что показано в разделе [расширение базового тома](/windows-server/storage/disk-management/extend-a-basic-volume). Это можно сделать с помощью пользовательского интерфейса и PowerShell.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор коллекции общих образов](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries)
+* [Обзор коллекции общих образов](../virtual-machines/windows/shared-image-galleries.md)
 * [Использование коллекции общих образов](how-to-use-shared-image-gallery.md)

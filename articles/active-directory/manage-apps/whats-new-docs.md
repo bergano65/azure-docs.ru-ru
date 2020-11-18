@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 7c011c55728db53f0c64ac063c3372a610ef8f2f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 10861438334bc804d1b1e4b9a669280f7e09ffde
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542462"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654015"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory Управление приложениями: новые возможности
 
@@ -43,7 +43,7 @@ ms.locfileid: "94542462"
 ### <a name="new-articles"></a>Новые статьи
 - [Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-setup-oidc-sso.md)
 - [Краткое руководство. Назначение пользователей приложению, которое использует Azure AD в качестве поставщика удостоверений](add-application-portal-assign-users.md)
-- [Новые возможности в документах](whats-new-docs.md)
+- [Новые возможности документации](whats-new-docs.md)
 
 
 ### <a name="updated-articles"></a>Обновленные статьи
@@ -70,7 +70,7 @@ ms.locfileid: "94542462"
 - [Что собой представляет единый вход?](what-is-single-sign-on.md)
 - [Выполнение действий с недостаточными или подозрительными приложениями в Azure Active Directory](manage-application-permissions.md)
 - [Краткое руководство. Настройка свойств приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-configure.md)
-- [Автоматизация настройки единого входа на основе SAML для приложений с помощью API Microsoft Graph](application-saml-sso-configure-api.md)
+- [Автоматизация настройки единого входа на основе SAML для приложений с помощью API Microsoft Graph](/graph/application-saml-sso-configure-api)
 
 
 ## <a name="july-2020"></a>Июль 2020 г.

@@ -6,55 +6,20 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 07/08/2020
 ms.author: v-erkel
-ms.openlocfilehash: 7d0844e699c012d987c23a75e2b0874005cf535a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13f45c96a830110bd0f4a2d4a2b422921d7a2e31
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87100334"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654462"
 ---
 # <a name="set-up-azure-cli-for-azure-hpc-cache"></a>Настройка Azure CLI для Azure HPC Cache
 
 Выполните следующие действия, чтобы подготовить среду перед использованием Azure CLI для создания кэша Azure HPC или управления им.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-## <a name="install-azure-cli"></a>Установка Azure CLI
-
-Для кэша HPC Azure требуется версия 2,7 или более поздняя Azure CLI. Запустите `az --version`, чтобы узнать установленную версию и зависимые библиотеки. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-```azurecli-interactive
-az --version
-```
-
-### <a name="install-the-azure-hpc-cache-extension"></a>Установка расширения кэша Azure HPC
-
-Функции кэша HPC Azure не являются частью основной базы кода, поэтому также необходимо установить ссылку на расширение. Выполните приведенные далее инструкции.
-
-1. Войти
-
-   Выполните вход с помощью команды [AZ login](/cli/azure/reference-index#az-login) , если вы используете локальную версию интерфейса командной строки.
-
-    ```azurecli
-    az login
-    ```
-
-    Выполните аутентификацию, следуя инструкциям в окне терминала.
-
-   > [!TIP]
-   > Если у вас несколько подписок, необходимо выбрать одну из них. Выберите его при запуске Cloud Shell сеанса на портале Azure или следуйте инструкциям в статье [Приступая к работе с Azure CLI](/cli/azure/get-started-with-azure-cli#sign-in) , чтобы настроить подписку из командной строки.
-
-2. Установка расширения Azure CLI
-
-   Функции кэширования Azure HPC предоставляются в виде расширения Azure CLI — они еще не являются частью основного пакета интерфейса командной строки. Необходимо установить ссылку на расширение, прежде чем ее можно будет использовать.
-
-   Расширения Azure CLI предоставляют доступ к экспериментальным и предварительным командам. Дополнительные сведения о расширениях, включая обновление и удаление, см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
-
-   Установите расширение для кэша HPC Azure, выполнив следующую команду:
-
-    ```azurecli-interactive
-    az extension add --name hpc-cache
-   ```
+ - Для кэша HPC Azure требуется версия 2,7 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="set-default-resource-group-optional"></a>Задать группу ресурсов по умолчанию (необязательно)
 

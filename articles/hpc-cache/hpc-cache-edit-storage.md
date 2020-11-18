@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: 70f350204796099e02f7afe829a6e2e1fdf653c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b7bc87f83925baed15bc6a411f5b4e4f78df6cc
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613127"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654513"
 ---
 # <a name="edit-storage-targets"></a>Изменение целевых расположений хранилищ
 
@@ -40,7 +40,7 @@ ms.locfileid: "91613127"
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Чтобы удалить целевой объект хранилища из кэша, используйте команду [AZ HPC-Cache Storage — Remove](/cli/azure/ext/hpc-cache/hpc-cache/storage-target#ext-hpc-cache-az-hpc-cache-storage-target-remove) .
 
@@ -79,7 +79,7 @@ $ az hpc-cache storage-target remove --resource-group cache-rg --cache-name doc-
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Чтобы изменить пространство имен целевого объекта хранилища BLOB-объектов на Azure CLI, используйте команду [AZ HPC-Cache большого двоичного объекта — хранилище — обновление целевого объекта](/cli/azure/ext/hpc-cache/hpc-cache/blob-storage-target#ext-hpc-cache-az-hpc-cache-blob-storage-target-update). `--virtual-namespace-path`Можно изменить только значение.
 
@@ -117,7 +117,7 @@ $ az hpc-cache storage-target remove --resource-group cache-rg --cache-name doc-
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 ``--junction``Для изменения пути к пространству имен, экспорта NFS или экспорта подкаталога используйте параметр в команде [AZ HPC-Cache NFS-Storage-Target Update](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target) .
 
@@ -127,7 +127,7 @@ $ az hpc-cache storage-target remove --resource-group cache-rg --cache-name doc-
 * ``nfs-export`` — Экспорт системы хранения, связываемый с путем, ориентированным на клиента
 * ``target-path`` (необязательно) — подкаталог экспорта (при необходимости).
 
-Например, ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``.
+Пример: ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``
 
 Необходимо указать все три значения для каждого пути в ``--junction`` операторе. Используйте существующие значения для любых значений, которые не нужно изменять.
 
@@ -159,13 +159,13 @@ az hpc-cache nfs-storage-target update --cache-name mycache \
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Используйте команду [AZ HPC-Cache NFS-Storage](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target?view=azure-cli-latest#ext-hpc-cache-az-hpc-cache-nfs-storage-target-update) .
 
 Команда Update почти идентична команде, используемой для добавления целевого объекта хранилища NFS. Дополнительные сведения и примеры см. в статье [Создание целевого объекта хранилища NFS](hpc-cache-add-storage.md#create-an-nfs-storage-target) .
 
-Чтобы изменить модель использования, обновите ``--nfs3-usage-model`` параметр. Например, ``--nfs3-usage-model WRITE_WORKLOAD_15``.
+Чтобы изменить модель использования, обновите ``--nfs3-usage-model`` параметр. Пример: ``--nfs3-usage-model WRITE_WORKLOAD_15``
 
 Также требуются значения имени кэша, имени целевого объекта хранилища и группы ресурсов.
 
@@ -175,7 +175,7 @@ az hpc-cache nfs-storage-target update --cache-name mycache \
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об этих параметрах см. в статье [Добавление целевых объектов хранилища](hpc-cache-add-storage.md) .
 * Дополнительные советы по использованию виртуальных путей см. [в статье Планирование обобщенного пространства имен](hpc-cache-namespace.md) .

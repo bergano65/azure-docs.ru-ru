@@ -5,15 +5,15 @@ services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 09/01/2020
+ms.date: 11/16/2020
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: 6f16e4b1f9728ae8d9cb36ab442603083e83eb92
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: c9dd39ffa68d8261f5c5d301d4c351c52b3f27c1
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331385"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654598"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -128,7 +128,7 @@ ms.locfileid: "94331385"
 
 - **Сообщение.** `An error occurred while sending the request.`
 
-- **Причина** : было прервано сетевое подключение к службе "кирпичы".
+- **Причина**: было прервано сетевое подключение к службе "кирпичы".
 
 - **Рекомендация**. Если вы используете локальную среду выполнения интеграции, убедитесь, что сетевое подключение надежно от узлов среды выполнения интеграции. Если вы используете среду выполнения интеграции Azure, обычно используется повторная попытка.
  
@@ -772,7 +772,7 @@ ms.locfileid: "94331385"
 
 - **Сообщение.** `User name and password cannot be null or empty to connect to the HDInsight cluster.`
 
-- **Причина** : имя пользователя или пароль пусты.
+- **Причина**: имя пользователя или пароль пусты.
 
 - **Рекомендация**. Укажите правильные учетные данные для подключения к HDI и повторите попытку.
 
@@ -1005,10 +1005,19 @@ ms.locfileid: "94331385"
 
 Дополнительные сведения см. на странице [начала работы с Fiddler](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler).
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие
 
 ### <a name="activity-stuck-issue"></a>Проблемы с задержанным действием
+
 Если вы следите за тем, чтобы действие выполнялось намного дольше обычного выполнения, не выполняя никаких действий, может произойти зависание. Вы можете попробовать отменить его и повторить попытку, чтобы узнать, помогает ли он. Если это действие копирования, можно узнать о мониторинге производительности и устранении неполадок при [устранении неполадок, связанных с действиями копирования](copy-activity-performance-troubleshooting.md). Если это поток данных, ознакомьтесь с руководством по настройке [производительности потоков данных](concepts-data-flow-performance.md) .
+
+### <a name="payload-is-too-large"></a>Полезная нагрузка слишком велика
+
+**Сообщение об ошибке:**`The payload including configurations on activity/dataSet/linked service is too large. Please check if you have settings with very large value and try to reduce its size.`
+
+**Причина:** Полезные данные для каждого выполнения действия включают конфигурацию действия, связанные наборы данных и конфигурации связанных служб, если таковые имеются, и небольшую часть системных свойств, созданных для каждого типа действия. Ограничение такого размера полезных данных — 896KB, как упоминалось в разделе [ограничения фабрики данных](../azure-resource-manager/management/azure-subscription-service-limits.md#data-factory-limits) .
+
+**Рекомендации:** Это может быть вызвано тем, что вы передаете одно или несколько значений больших параметров из вышестоящего или внешнего выходного действия, особенно если передаются фактические данные между действиями в потоке управления. Проверьте, можно ли уменьшить размер значений больших параметров, или настройте логику конвейера, чтобы избежать передачи таких значений между действиями и обработки их внутри действия.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

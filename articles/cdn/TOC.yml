@@ -35,6 +35,10 @@
       href: 'https://azure.microsoft.com/resources/samples/?service=cdn'
 - name: Основные понятия
   items:
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Как выполняется кэширование
       href: cdn-how-caching-works.md
     - name: Доставка содержимого для Китая

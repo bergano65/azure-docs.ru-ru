@@ -21,7 +21,7 @@ ms.locfileid: "92217946"
 1. На странице Виртуальная сеть выберите тип подключения, которое требуется просмотреть. Например, **подключения "сеть — сеть**".
 
    :::image type="content" source="./media/vpn-gateway-verify-connection-azureportal-classic/site-to-site.png" alt-text="Локальный сайт" lightbox="./media/vpn-gateway-verify-connection-azureportal-classic/site-to-site.png":::
-1. На странице **подключения "сеть — сеть** " в поле **имя**выберите подключение сайта, которое требуется просмотреть.
+1. На странице **подключения "сеть — сеть** " в поле **имя** выберите подключение сайта, которое требуется просмотреть.
 
-   :::image type="content" source="./media/vpn-gateway-verify-connection-azureportal-classic/name.png" alt-text="Локальный сайт":::
+   :::image type="content" source="./media/vpn-gateway-verify-connection-azureportal-classic/name.png" alt-text="Имя локального сайта":::
 1. На странице **Свойства** просмотрите сведения о подключении.

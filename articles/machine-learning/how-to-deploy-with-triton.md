@@ -11,12 +11,12 @@ ms.date: 09/23/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: afa1d958e054a769ea0f19b82afdf55a94c3d0cf
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3a7d750caed297dfa364e2f1ef176ee19ad35480
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309714"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654212"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Высокопроизводительный обслуживание с помощью сервера вывода Тритон (Предварительная версия) 
 
@@ -66,7 +66,11 @@ ms.locfileid: "93309714"
 1. Убедитесь, что вы можете отправить запросы к модели, развернутой в Тритон.
 1. Внедрите код, относящийся к Тритон, в развертывание AML.
 
-## <a name="optional-define-a-model-config-file"></a>Используемых Определение файла конфигурации модели
+## <a name="verify-that-triton-can-serve-your-model"></a>Убедитесь, что Тритон может обслуживать вашу модель
+
+Сначала выполните следующие действия, чтобы убедиться, что сервер вывода Тритон может обслуживать модель.
+
+### <a name="optional-define-a-model-config-file"></a>Используемых Определение файла конфигурации модели
 
 Файл конфигурации модели сообщает Тритон, сколько входных данных должно рассчитываться и какие измерения будут такими входными данными. Дополнительные сведения о создании файла конфигурации см. в разделе [Конфигурация модели](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_configuration.html) в документации по NVIDIA.
 
@@ -75,7 +79,7 @@ ms.locfileid: "93309714"
 > 
 > Дополнительные сведения об этом параметре см. в разделе [Создание конфигурации модели](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_configuration.html#generated-model-configuration) в документации по NVIDIA.
 
-## <a name="directory-structure"></a>Структура каталогов
+### <a name="use-the-correct-directory-structure"></a>Использовать правильную структуру каталогов
 
 При регистрации модели с Машинное обучение Azure можно зарегистрировать отдельные файлы или структуру каталогов. Для использования Тритон регистрация модели должна быть представлена для структуры каталогов, содержащей каталог с именем `triton` . Общая структура этого каталога:
 
@@ -93,7 +97,7 @@ models
 > [!IMPORTANT]
 > Эта структура каталогов является репозиторием модели Тритон и требуется для работы ваших моделей с Тритон. Дополнительные сведения см. в статье [Тритон Model репозитория](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_repository.html) в документации по NVIDIA.
 
-## <a name="test-with-triton-and-docker"></a>Тестирование с помощью Тритон и DOCKER
+### <a name="test-with-triton-and-docker"></a>Тестирование с помощью Тритон и DOCKER
 
 Чтобы проверить модель, чтобы убедиться, что она работает с Тритон, можно использовать DOCKER. Следующие команды запрашивают контейнер Тритон на локальном компьютере, а затем запускают сервер Тритон:
 
@@ -146,7 +150,7 @@ models
 
 Дополнительные сведения о запуске Тритон с помощью DOCKER см. в разделе [Запуск Тритон в системе с графическим процессором](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/run.html#running-triton-on-a-system-with-a-gpu) и [Запуск Тритон в системе без GPU](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/run.html#running-triton-on-a-system-without-a-gpu).
 
-## <a name="register-your-model"></a>Регистрация модели
+### <a name="register-your-model"></a>Регистрация модели
 
 Теперь, убедившись, что модель работает с Тритон, зарегистрируйте ее с помощью Машинное обучение Azure. Регистрация модели хранит файлы модели в рабочей области Машинное обучение Azure и используется при развертывании с помощью пакета SDK для Python и Azure CLI.
 
@@ -176,9 +180,9 @@ az ml model register --model-path='triton' \
 
 <a id="processing"></a>
 
-## <a name="add-pre-and-post-processing"></a>Добавление предварительной и завершающей обработки
+## <a name="verify-you-can-call-into-your-model"></a>Проверка возможности вызова модели
 
-Убедившись, что веб-служба работает, можно добавить код до и после обработки, определив _сценарий записи_. Этот файл называется `score.py` . Дополнительные сведения о сценариях входа см. в разделе [Определение записи](how-to-deploy-and-where.md#define-an-entry-script).
+Убедившись, что Тритон способен обслуживать модель, можно добавить предварительную и последующей обработку кода, определив _сценарий записи_. Этот файл называется `score.py` . Дополнительные сведения о сценариях входа см. в разделе [Определение записи](how-to-deploy-and-where.md#define-an-entry-script).
 
 Два основных этапа — инициализация HTTP-клиента Тритон в `init()` методе и вызов этого клиента в `run()` функции.
 

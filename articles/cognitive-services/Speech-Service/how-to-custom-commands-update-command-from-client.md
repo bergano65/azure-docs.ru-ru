@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/20/2020
 ms.author: encorona
-ms.openlocfilehash: 290f9ee9c23071ac56b1ff0c65ddc03decbc7344
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 1bffb09d0f49bbd0059e8a528d67bfe215f0650d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94571219"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654353"
 ---
 # <a name="update-a-command-from-the-client"></a>Обновление команды с клиента
 
 Из этой статьи вы узнаете, как обновить текущую команду из клиентского приложения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 > [!div class = "checklist"]
 > * Предварительно [созданное приложение Пользовательских голосовых команд](quickstart-custom-commands-application.md).
 
@@ -121,19 +121,32 @@ ms.locfileid: "94571219"
 Чтобы протестировать этот сценарий, давайте создадим новую команду в текущем приложении.
 1. Создайте новую команду с именем Жетдевицеинфо.
 1. Добавьте пример предложения с параметром "получить сведения об устройстве".
-1. В правиле завершения "Готово" добавьте действие "Отправка речевого ответа".
+1. В правиле завершения "Готово" добавьте действие отправки речевого ответа, содержащее атрибуты clientContext.
     > ![Отправка речевого ответа с контекстом](media/custom-commands/send-speech-response-context.png)
-1. Сохраните и обучите приложение.
-1. Протестируйте приложение.
+1. Сохраните, обучите и протестируйте приложение.
+1. В окне тестирование отправьте действие для обновления контекста клиента.
+    > ```json
+    >{
+    >   "type": "event",
+    >   "name": "RemoteUpdate",
+    >   "value": {
+    >     "clientContext": {
+    >       "deviceId": "12345",
+    >       "deviceName": "My device"
+    >     },
+    >     "processTurn": false
+    >   }
+    >}
+    > ```
+1. Отправьте текст "получение сведений об устройстве".
     > ![Отправка действия контекста клиента](media/custom-commands/send-client-context-activity.png)
 
 Обратите внимание на несколько вещей.
 1. Это действие необходимо отправить только один раз (в идеале сразу после начала подключения).
-1. Для ClientContext можно использовать сложные объекты.
-1. Можно использовать ClientContext в речевых ответах для отправки действий и вызова конечных веб-точек.
-
+1. Для clientContext можно использовать сложные объекты.
+1. Можно использовать clientContext в речевых ответах для отправки действий и вызова конечных веб-точек.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Обновление команды из конечной точки веб-сайта](./how-to-custom-commands-update-command-from-web-endpoint.md)
+> [Обновление команды из конечной точки в Интернете](./how-to-custom-commands-update-command-from-web-endpoint.md)
