@@ -2,15 +2,15 @@
 title: Создание и развертывание спецификации шаблона
 description: Узнайте, как создать спецификацию шаблона на основе шаблона ARM. Затем разверните спецификацию шаблона в группе ресурсов в подписке.
 author: tfitzmac
-ms.date: 10/02/2020
+ms.date: 11/10/2020
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: e1bd2f3da8204cf5947d0cf423cd57b023674608
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.openlocfilehash: 96ef5796aac1d0ee02e6bbafc40b7d3bcdea4e2f
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91728783"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506368"
 ---
 # <a name="quickstart-create-and-deploy-template-spec-preview"></a>Краткое руководство. Создание и развертывание спецификации шаблона (предварительная версия)
 
@@ -88,7 +88,7 @@ ms.locfileid: "91728783"
 1. Когда вы используете шаблон ARM для создания спецификации шаблона, шаблон внедряется в определение ресурса. Скопируйте следующий шаблон и сохраните его локально с именем **azuredeploy.json**. В этом кратком руководстве предполагается, что вы сохранили путь **c:\Templates\azuredeploy.json**, однако можете использовать любой другой путь.
 
     > [!NOTE]
-    > Во внедренном шаблоне все левые скобки необходимо экранировать с помощью второй левой скобки. Используйте `[[` вместо `[`.
+    > Во внедренном шаблоне все [выражения шаблона](template-expressions.md) необходимо экранировать с помощью второй левой скобки. Используйте `"[[` вместо `"[`. Массивы JSON по-прежнему используют одинарную левую скобку.
 
     ```json
     {

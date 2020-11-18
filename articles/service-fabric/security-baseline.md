@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 77ea96b1bd1b1d661bb835e7bb48d58ce4c3e118
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dc66de09a5918b19c60aaa0d3e9ab662876dc31a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309157"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684327"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Базовый план безопасности Azure для Service Fabric
 
@@ -144,7 +144,7 @@ ms.locfileid: "92309157"
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для сетевых ресурсов, связанных с кластером Azure Service Fabric. Используйте псевдонимы политик Azure в пространствах имен Microsoft. ServiceFabric и Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительного применения конфигурации сети кластера Azure Service Fabric.
 
-Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны Azure Resource Manager, элементы управления RBAC и политики, в одном определении схемы. Простое применение схемы к новым подпискам и средам, а также управление точной настройкой и управление с помощью версионирования.
+Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны Azure Resource Manager, элементы управления RBAC в Azure и политики, в одном определении схемы. Простое применение схемы к новым подпискам и средам, а также управление точной настройкой и управление с помощью версионирования.
 
 * [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 

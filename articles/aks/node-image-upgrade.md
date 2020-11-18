@@ -3,13 +3,13 @@ title: Обновление образов узлов Azure Kubernetes Service (
 description: Узнайте, как обновить образы на узлах кластера AKS и пулах узлов.
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 08/17/2020
-ms.openlocfilehash: b6abb0eb98e2548e53ff67a943970613e6981c2b
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.date: 11/17/2020
+ms.openlocfilehash: 211190228c1ea9c98004b55da96ad38808821d67
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631127"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682389"
 ---
 # <a name="azure-kubernetes-service-aks-node-image-upgrade"></a>Обновление образа узла службы Azure Kubernetes Service (AKS)
 
@@ -133,6 +133,6 @@ az aks nodepool show \
 [upgrade-cluster]: upgrade-cluster.md
 [security-update]: node-updates-kured.md
 [use-multiple-node-pools]: use-multiple-node-pools.md
-[max-surge]: upgrade-cluster.md#customize-node-surge-upgrade-preview
+[max-surge]: upgrade-cluster.md#customize-node-surge-upgrade
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update

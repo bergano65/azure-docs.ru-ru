@@ -1,20 +1,20 @@
 ---
-title: Использование Azure AD и RBAC для кластеров
+title: Использование Azure AD и Kubernetes RBAC для кластеров
 titleSuffix: Azure Kubernetes Service
-description: Узнайте, как использовать членство в группах Azure Active Directory для ограничения доступа к ресурсам кластера с помощью управления доступом на основе ролей (RBAC) в службе Kubernetes Azure (AKS).
+description: Узнайте, как использовать членство в группах Azure Active Directory, чтобы ограничить доступ к ресурсам кластера с помощью управления доступом на основе ролей Kubernetes (Kubernetes RBAC) в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
 ms.date: 07/21/2020
-ms.openlocfilehash: 2845a091c8a89f22e8892141dd2dad26d6049447
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f49e9f6b4f5aaf58ff055043b52cfe99e3e39f19
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88006848"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684293"
 ---
-# <a name="control-access-to-cluster-resources-using-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Управление доступом к ресурсам кластера с помощью управления доступом на основе ролей и удостоверений Azure Active Directory в службе Azure Kubernetes
+# <a name="control-access-to-cluster-resources-using-kubernetes-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Управление доступом к ресурсам кластера с помощью управления доступом на основе ролей Kubernetes и удостоверений Azure Active Directory в службе Kubernetes Azure
 
-Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы входите в кластер AKS с помощью маркера проверки подлинности Azure AD. Можно также настроить Kubernetes управления доступом на основе ролей (RBAC), чтобы ограничить доступ к ресурсам кластера на основе удостоверения пользователя или членства в группе.
+Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы входите в кластер AKS с помощью маркера проверки подлинности Azure AD. Можно также настроить Kubernetes управления доступом на основе ролей (Kubernetes RBAC), чтобы ограничить доступ к ресурсам кластера на основе удостоверения пользователя или членства в группе.
 
 В этой статье показано, как использовать членство в группах Azure AD для управления доступом к пространствам имен и ресурсам кластера с помощью Kubernetes RBAC в кластере AKS. Примеры групп и пользователей создаются в Azure AD, а затем роли и Ролебиндингс создаются в кластере AKS, чтобы предоставить соответствующие разрешения на создание и просмотр ресурсов.
 
@@ -79,7 +79,7 @@ az role assignment create \
 
 ## <a name="create-demo-users-in-azure-ad"></a>Создание демонстрационных пользователей в Azure AD
 
-С помощью двух примеров групп, созданных в Azure AD для разработчиков приложений и Срес, теперь можно создать двух примеров пользователей. Чтобы протестировать интеграцию RBAC в конце статьи, войдите в кластер AKS с этими учетными записями.
+С помощью двух примеров групп, созданных в Azure AD для разработчиков приложений и Срес, теперь можно создать двух примеров пользователей. Чтобы протестировать интеграцию Kubernetes RBAC в конце статьи, войдите в кластер AKS с этими учетными записями.
 
 Создайте первую учетную запись пользователя в Azure AD с помощью команды [AZ AD user Create][az-ad-user-create] .
 
@@ -129,7 +129,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --ad
 kubectl create namespace dev
 ```
 
-В Kubernetes *роли* определяют разрешения, которые необходимо предоставить, и *ролебиндингс* их применение к нужным пользователям или группам. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. в статье об [Использовании авторизации RBAC][rbac-authorization].
+В Kubernetes *роли* определяют разрешения, которые необходимо предоставить, и *ролебиндингс* их применение к нужным пользователям или группам. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. [в разделе Использование авторизации KUBERNETES RBAC][rbac-authorization].
 
 Сначала создайте роль для пространства имен *dev* . Эта роль предоставляет полные разрешения на пространство имен. В рабочей среде можно указать более детализированные разрешения для разных пользователей или групп.
 
@@ -388,7 +388,7 @@ az ad group delete --group appdev
 az ad group delete --group opssre
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о защите кластеров Kubernetes см. в разделе [параметры доступа и удостоверений для AKS][rbac-authorization].
 
@@ -410,5 +410,5 @@ az ad group delete --group opssre
 [az-ad-user-create]: /cli/azure/ad/user#az-ad-user-create
 [az-ad-group-member-add]: /cli/azure/ad/group/member#az-ad-group-member-add
 [az-ad-group-show]: /cli/azure/ad/group#az-ad-group-show
-[rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-control-rbac
+[rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-control-kubernetes-rbac
 [operator-best-practices-identity]: operator-best-practices-identity.md

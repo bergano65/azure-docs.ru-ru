@@ -5,20 +5,39 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 3e84db3aa13ae77f931a46683f0c5e4572f6ce44
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c7d41d889692856a9818aacd265e67b0c2d3d1ad
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87852639"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422876"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-command-line-tools"></a>Подключение Функций Azure к службе хранилища Azure с помощью средств командной строки
 
-Из этой статьи вы узнаете, как интегрировать очередь службы хранилища Azure с функцией и учетной записью хранения, созданными в [предыдущем кратком руководстве](functions-create-first-azure-function-azure-cli.md). Чтобы реализовать такую интеграцию, используется *выходная привязка*, которая записывает в сообщение очереди данные из HTTP-запроса. Выполнение шагов из этой статьи не влечет за собой никаких дополнительных затрат, помимо нескольких центов США, потраченных при выполнении предыдущего краткого руководства. Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md).
+Из этой статьи вы узнаете, как интегрировать очередь службы хранилища Azure с функцией и учетной записью хранения, созданными при работе с предыдущим кратким руководством. Чтобы реализовать такую интеграцию, используется *выходная привязка*, которая записывает в сообщение очереди данные из HTTP-запроса. Выполнение шагов из этой статьи не влечет за собой никаких дополнительных затрат, помимо нескольких центов США, потраченных при выполнении предыдущего краткого руководства. Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md).
 
 ## <a name="configure-your-local-environment"></a>Настройка локальной среды
 
-Перед началом работы необходимо выполнить действия, описанные в статье [Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы](functions-create-first-azure-function-azure-cli.md). Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию и связанные ресурсы в Azure.
+Перед началом работы необходимо выполнить действия, описанные в статье [Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы][previous-quickstart]. Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию и связанные ресурсы в Azure.
+
+::: zone pivot="programming-language-csharp"  
+Перед началом работы необходимо выполнить действия, описанные в статье [Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы](create-first-function-cli-csharp.md). Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию и связанные ресурсы в Azure.  
+::: zone-end  
+::: zone pivot="programming-language-javascript"  
+Перед началом работы необходимо выполнить действия, описанные в статье [Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы](create-first-function-cli-node.md). Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию и связанные ресурсы в Azure.  
+::: zone-end   
+::: zone pivot="programming-language-java"  
+Перед началом работы необходимо выполнить действия, описанные в статье [Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы](create-first-function-cli-java.md). Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию и связанные ресурсы в Azure.  
+::: zone-end   
+::: zone pivot="programming-language-typescript"  
+Перед началом работы необходимо выполнить действия, описанные в статье [Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы](create-first-function-cli-typescript.md). Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию и связанные ресурсы в Azure.  
+::: zone-end   
+::: zone pivot="programming-language-python"  
+Перед началом работы необходимо выполнить действия, описанные в статье [Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы](create-first-function-cli-python.md). Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию и связанные ресурсы в Azure.  
+::: zone-end   
+::: zone pivot="programming-language-powershell"  
+Перед началом работы необходимо выполнить действия, описанные в статье [Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы](create-first-function-cli-powershell.md). Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию и связанные ресурсы в Azure.  
+::: zone-end   
 
 [!INCLUDE [functions-cli-get-storage-connection](../../includes/functions-cli-get-storage-connection.md)]
 
@@ -129,33 +148,41 @@ az group delete --name AzureFunctionsQuickstart-rg
 
 + [Работа с Azure Functions Core Tools](functions-run-local.md).  
 
++ [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
+
 ::: zone pivot="programming-language-csharp"  
 + [Примеры полных проектов Функций на C#](/samples/browse/?products=azure-functions&languages=csharp).
 
 + [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md)  
+
+[previous-quickstart]: create-first-function-cli-csharp.md
+
 ::: zone-end 
 ::: zone pivot="programming-language-javascript"  
 + [Примеры полных проектов Функций на JavaScript](/samples/browse/?products=azure-functions&languages=javascript).
 
 + [Руководство разработчика JavaScript для Функций Azure](functions-reference-node.md)  
+
+[previous-quickstart]: create-first-function-cli-javascript.md
 ::: zone-end  
 ::: zone pivot="programming-language-typescript"  
 + [Примеры полных проектов Функций на TypeScript](/samples/browse/?products=azure-functions&languages=typescript).
 
 + [Руководство разработчика TypeScript для Функций Azure](functions-reference-node.md#typescript).  
+
+[previous-quickstart]: create-first-function-cli-typescript.md
 ::: zone-end  
 ::: zone pivot="programming-language-python"  
 + [Примеры полных проектов Функций на Python](/samples/browse/?products=azure-functions&languages=python).
 
 + [Azure Functions Python Developer Guide](functions-reference-python.md) (Справочник по Функциям Azure для разработчика Python)  
+
+[previous-quickstart]: create-first-function-cli-python.md
 ::: zone-end  
 ::: zone pivot="programming-language-powershell"  
 + [Примеры полных проектов Функций в PowerShell](/samples/browse/?products=azure-functions&languages=azurepowershell).
 
 + [Руководство разработчика PowerShell для Функций Azure](functions-reference-powershell.md). 
+
+[previous-quickstart]: create-first-function-cli-powershell.md
 ::: zone-end
-+ [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
-
-+ [Страница цен на Функции Azure](https://azure.microsoft.com/pricing/details/functions/)
-
-+ [Оценка затрат на план потребления](functions-consumption-costs.md). 

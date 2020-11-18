@@ -2,20 +2,20 @@
 title: включить файл
 description: включить файл
 services: azure-communication-services
-author: matthewrobertson
-manager: nimag
+author: tomaschladek
+manager: nmurav
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
 ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
-ms.author: marobert
-ms.openlocfilehash: 5c9066f369183de3b4cfe19cc5635e8f1b4a94a2
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.author: tchladek
+ms.openlocfilehash: 50819e8746860e72feda194915f75c4630677d0c
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91779434"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506262"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,16 +27,16 @@ ms.locfileid: "91779434"
 
 ### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
-В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `UserAccessTokensQuickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: **Program.cs**.
+В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `AccessTokensQuickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: **Program.cs**.
 
 ```console
-dotnet new console -o UserAccessTokensQuickstart
+dotnet new console -o AccessTokensQuickstart
 ```
 
 Измените каталог на только что созданную папку приложения и выполните команду `dotnet build`, чтобы скомпилировать приложение.
 
 ```console
-cd UserAccessTokensQuickstart
+cd AccessTokensQuickstart
 dotnet build
 ```
 
@@ -62,22 +62,19 @@ dotnet add package Azure.Communication.Administration --version 1.0.0-beta.2
 using System;
 using Azure.Communication.Administration;
 
-namespace UserAccessTokensQuickstart
+namespace AccessTokensQuickstart
 {
     class Program
     {
         static async System.Threading.Tasks.Task Main(string[] args)
         {
-            Console.WriteLine("Azure Communication Services - User Access Tokens Quickstart");
+            Console.WriteLine("Azure Communication Services - Access Tokens Quickstart");
 
             // Quickstart code goes here
         }
     }
 }
 ```
-
-[!INCLUDE [User Access Tokens Object Model](user-access-tokens-object-model.md)]
-
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 Инициализируйте экземпляр `CommunicationIdentityClient` с использованием строки подключения. Приведенный ниже код извлекает строку подключения для ресурса из переменной среды с именем `COMMUNICATION_SERVICES_CONNECTION_STRING`. См. сведения о том, как [управлять строкой подключения ресурса](../create-communication-resource.md#store-your-connection-string).
@@ -91,47 +88,57 @@ string ConnectionString = Environment.GetEnvironmentVariable("COMMUNICATION_SERV
 var client = new CommunicationIdentityClient(ConnectionString);
 ```
 
-## <a name="create-a-user"></a>Создание пользователя
+## <a name="create-an-identity"></a>Создание удостоверения
 
-Службы коммуникации Azure позволяют использовать упрощенный каталог удостоверений. Чтобы создать новую запись в каталоге с уникальным идентификатором (`Id`), используйте метод `createUser`. Необходимо обеспечить сопоставление между пользователями приложения и удостоверениями, созданными Службами коммуникации (например, храня удостоверения в базе данных сервера приложений).
+Службы коммуникации Azure позволяют использовать упрощенный каталог удостоверений. Используйте метод `createUser`, чтобы создать новую запись в каталоге с уникальным значением `Id`. Магазин получил удостоверение с сопоставлением с пользователями приложения. Например, сохраните их в базе данных сервера приложений. Удостоверение потребуется позже для выдачи маркеров доступа.
 
 ```csharp
-var userResponse = await client.CreateUserAsync();
-var user = userResponse.Value;
-Console.WriteLine($"\nCreated a user with ID: {user.Id}");
+var identityResponse = await client.CreateUserAsync();
+var identity = identityResponse.Value;
+Console.WriteLine($"\nCreated an identity with ID: {identity.Id}");
 ```
 
-## <a name="issue-user-access-tokens"></a>Выдача маркеров доступа пользователей
+## <a name="issue-identity-access-tokens"></a>Выдача маркеров доступа идентификаторов
 
-Чтобы выдать маркер доступа для пользователя Служб коммуникации, используйте метод `issueToken`. Если не указать необязательный параметр `user`, новый пользователь будет создан и возвращен вместе с маркером.
+Чтобы выдать маркер доступа для имеющегося удостоверения Служб коммуникации, используйте метод `issueToken`. Параметр `scopes` определяет набор базовых функций, которые будут авторизовать этот маркер доступа. Ознакомьтесь со [списком поддерживаемых действий](../../concepts/authentication.md). Новый экземпляр параметра `communicationUser` можно создать на основе строкового представления удостоверения Служб коммуникации Azure.
 
 ```csharp
-// Issue an access token with the "voip" scope for a new user
-var tokenResponse = await client.IssueTokenAsync(user, scopes: new [] { CommunicationTokenScope.VoIP });
+// Issue an access token with the "voip" scope for an identity
+var tokenResponse = await client.IssueTokenAsync(identity, scopes: new [] { CommunicationTokenScope.VoIP });
 var token =  tokenResponse.Value.Token;
 var expiresOn = tokenResponse.Value.ExpiresOn;
-Console.WriteLine($"\nIssued a token with 'voip' scope that expires at {expiresOn}:");
+Console.WriteLine($"\nIssued an access token with 'voip' scope that expires at {expiresOn}:");
 Console.WriteLine(token);
 ```
 
-Маркеры доступа пользователей — это кратковременные учетные данные, которые необходимо повторно выдавать, чтобы предотвратить сбои в работе служб. Свойство ответа `expiresOn` указывает на время существования маркера.
+Маркеры доступа — это недолговечные учетные данные, которые необходимо выдавать повторно. Если этого не сделать, это может привести к нарушению работы пользователей приложения. Свойство ответа `expiresOn` указывает время существования маркера доступа. 
 
-## <a name="revoke-user-access-tokens"></a>Отзыв маркеров доступа пользователей
+## <a name="refresh-access-tokens"></a>Обновление токенов доступа
 
-Иногда может потребоваться явно отозвать маркеры доступа пользователя, например когда пользователь изменяет пароль, используемый для проверки подлинности в службе. Такая возможность реализуется посредством клиентской библиотеки администрирования для Служб коммуникации Azure.
+Чтобы обновить маркер доступа, используйте объект `CommunicationUser` для повторной выдачи:
 
 ```csharp  
-await client.RevokeTokensAsync(user);
-Console.WriteLine($"\nSuccessfully revoked all tokens for user with ID: {user.Id}");
+// Value existingIdentity represents identity of Azure Communication Services stored during identity creation
+identity = new CommunicationUser(existingIdentity);
+tokenResponse = await client.IssueTokenAsync(identity, scopes: new [] { CommunicationTokenScope.VoIP });
 ```
 
-## <a name="delete-a-user"></a>Удаление пользователя
+## <a name="revoke-access-tokens"></a>Отмена маркеров доступа
 
-При удалении удостоверения отзываются все активные маркеры и запрещается выдача последующих маркеров для удостоверений. Вместе с этим удаляется и все хранимое содержимое, связанное с пользователем.
+В некоторых случаях вы можете явно отменить маркеры доступа. Например, когда пользователь приложения меняет пароль, который он использует для проверки подлинности в службе. Метод `RevokeTokensAsync` аннулирует все активные маркеры доступа, выданные удостоверению.
+
+```csharp  
+await client.RevokeTokensAsync(identity);
+Console.WriteLine($"\nSuccessfully revoked all access tokens for identity with ID: {identity.Id}");
+```
+
+## <a name="delete-an-identity"></a>Удаление удостоверения
+
+При удалении идентификатора отменяются все активные маркеры доступа и запрещается выдача последующих маркеров для идентификатора. Вместе с этим удаляется и все хранимое содержимое, связанное с удостоверением.
 
 ```csharp
-await client.DeleteUserAsync(user);
-Console.WriteLine($"\nDeleted the user with ID: {user.Id}");
+await client.DeleteUserAsync(identity);
+Console.WriteLine($"\nDeleted the identity with ID: {identity.Id}");
 ```
 
 ## <a name="run-the-code"></a>Выполнение кода

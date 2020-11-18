@@ -1,6 +1,6 @@
 ---
 title: Учебник по Azure Toolkit for IntelliJ (для приложения Spark)
-description: Учебник. Использование Azure Toolkit for IntelliJ для разработки приложений Spark на языке Scala и их отправка в пул Apache Spark (предварительной версии)
+description: Учебник. Использование Azure Toolkit for IntelliJ для разработки приложений Spark на языке Scala и их отправка в бессерверный пул Apache Spark (предварительной версии)
 services: synapse-analytics
 author: hrasheed-msft
 ms.author: jejiang
@@ -9,16 +9,16 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 04/15/2020
-ms.openlocfilehash: be127d4214577e017522aec6a1b61b8f62638ed9
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 5a9fcf3e13c2f86a11e9626be486a585ec659044
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368746"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93325222"
 ---
 # <a name="tutorial-create-an-apache-spark-application-with-intellij-using-a-synapse-workspace"></a>Руководство по созданию приложения Apache Spark с помощью IntelliJ и рабочей области Synapse
 
-В этом учебнике показано, как с помощью подключаемого модуля Azure Toolkit for IntelliJ разрабатывать приложения Apache Spark на языке [Scala](https://www.scala-lang.org/) и отправлять их в пул Spark (предварительной версии) напрямую из интегрированной среды разработки (IDE) IntelliJ. С помощью подключаемого модуля можно выполнять следующие действия:
+В этом учебнике показано, как с помощью подключаемого модуля Azure Toolkit for IntelliJ разрабатывать приложения Apache Spark на языке [Scala](https://www.scala-lang.org/) и отправлять их в бессерверный пул Apache Spark (предварительной версии) напрямую из интегрированной среды разработки (IDE) IntelliJ. С помощью подключаемого модуля можно выполнять следующие действия:
 
 - разрабатывать и отправлять приложения Spark на Scala в пул Spark.
 - получать доступ к ресурсам пулов Spark.
@@ -40,12 +40,12 @@ ms.locfileid: "92368746"
 - Приведенное ниже предварительное требование предназначено только для пользователей Windows.
 
   При запуске локального приложения Spark Scala на компьютере с Windows может возникнуть исключение, описанное в статье о [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл WinUtils.exe.
-  Чтобы устранить эту ошибку, [скачайте этот исполняемый файл WinUtils](http://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe), например, в папку **C:\WinUtils\bin** . После этого добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils** .
+  Чтобы устранить эту ошибку, [скачайте этот исполняемый файл WinUtils](http://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe), например, в папку **C:\WinUtils\bin**. После этого добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
 
 ## <a name="create-a-spark-scala-application-for-a-spark-pool"></a>Создание приложения Spark Scala для пула Spark
 
 1. Запустите IntelliJ IDEA и выберите **Create New Project** (Создать проект), чтобы открыть окно **New Project** (Новый проект).
-2. На панели слева выберите **Azure Spark/HDInsight** .
+2. На панели слева выберите **Azure Spark/HDInsight**.
 3. В главном окне выберите **Spark Project with Samples(Scala)** (Проект Spark с примерами (Scala)).
 4. Из раскрывающегося списка **Build tool** (Инструмент сборки) выберите один из следующих вариантов:
 
@@ -54,7 +54,7 @@ ms.locfileid: "92368746"
 
     ![Диалоговое окно нового проекта в IntelliJ IDEA](./media/intellij-tool-synapse/create-synapse-application01.png)
 
-5. Выберите **Далее** .
+5. Выберите **Далее**.
 6. В окне **New Project** (Новый проект) укажите следующую информацию:
 
     | Свойство | Описание |
@@ -62,12 +62,12 @@ ms.locfileid: "92368746"
     |Имя проекта| Введите имя. В этом учебнике используется `myApp`.|
     |Project&nbsp;location (Расположение проекта)| Введите необходимое расположение для сохранения проекта.|
     |Project SDK (Пакет SDK проекта)| Это поле может быть пустым при первом использовании IDEA. Выберите **New...** (Создать...) и перейдите к JDK.|
-    |Версия Spark|Мастер создания интегрирует правильную версию пакетов SDK для Spark и Scala. Synapse поддерживает только **Spark 2.4.0** .|
+    |Версия Spark|Мастер создания интегрирует правильную версию пакетов SDK для Spark и Scala. Synapse поддерживает только **Spark 2.4.0**.|
     |||
 
     ![Выбор пакета SDK для Apache Spark](./media/intellij-tool-synapse/create-synapse-application02.png)
 
-7. Нажмите кнопку **Готово** . Может пройти несколько минут, прежде чем проект станет доступным.
+7. Нажмите кнопку **Готово**. Может пройти несколько минут, прежде чем проект станет доступным.
 8. Проект Spark автоматически создает артефакт. Чтобы просмотреть артефакт, выполните указанные ниже действия.
 
    а. В строке меню выберите **File** (Файл) > **Project Structure...** (Структура проекта…).
@@ -78,7 +78,7 @@ ms.locfileid: "92368746"
 
     ![Сведения об артефакте в диалоговом окне](./media/intellij-tool-synapse/default-artifact-dialog.png)
 
-9. Найдите раздел **LogQuery** в каталоге **myApp** > **src** > **main** > **scala**> **sample**> **LogQuery** . В этом учебнике для запуска используется **LogQuery** .
+9. Найдите раздел **LogQuery** в каталоге **myApp** > **src** > **main** > **scala**> **sample**> **LogQuery**. В этом учебнике для запуска используется **LogQuery**.
 
    ![Команды для создания класса Scala в проекте](./media/intellij-tool-synapse/select-run-file.png)
 
@@ -88,15 +88,15 @@ ms.locfileid: "92368746"
 
 ### <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
 
-1. В строке меню выберите **Представление** > **Окно инструментов** > **Azure Explorer** .
+1. В строке меню выберите **Представление** > **Окно инструментов** > **Azure Explorer**.
 
    ![В IntelliJ IDEA отображается Аzure Еxplorer](./media/intellij-tool-synapse/show-azure-explorer1.png)
 
-2. В Azure Explorer щелкните правой кнопкой мыши узел **Azure** , а затем выберите **Войти** .
+2. В Azure Explorer щелкните правой кнопкой мыши узел **Azure**, а затем выберите **Войти**.
 
    ![Щелчок правой кнопкой мыши в Azure Explorer для IntelliJ IDEA](./media/intellij-tool-synapse/explorer-rightclick-azure.png)
 
-3. В диалоговом окне **Вход в Azure** выберите **Имя пользователя устройства** , а затем — **Войти** .
+3. В диалоговом окне **Вход в Azure** выберите **Имя пользователя устройства**, а затем — **Войти**.
 
     ![Вход в Azure для IntelliJ IDEA](./media/intellij-tool-synapse/intellij-view-explorer2.png)
 
@@ -104,7 +104,7 @@ ms.locfileid: "92368746"
 
    ![Вход устройства Azure для IntelliJ IDEA](./media/intellij-tool-synapse/intellij-view-explorer5.png)
 
-5. В интерфейсе браузера вставьте код и нажмите кнопку **Далее** .
+5. В интерфейсе браузера вставьте код и нажмите кнопку **Далее**.
 
    ![Ввод кода в диалоговом окне HDI на сайте Microsoft](./media/intellij-tool-synapse/intellij-view-explorer6.png)
 
@@ -136,7 +136,7 @@ ms.locfileid: "92368746"
 
     ![Команда 2 Submit Spark Application to HDInsight (Отправить приложение Spark в HDInsight)](./media/intellij-tool-synapse/create-synapse-configuration02.png)
 
-3. В окне **Run/Debug Configurations** (Конфигурации запуска и отладки) укажите следующие значения, а затем нажмите кнопку **ОК** .
+3. В окне **Run/Debug Configurations** (Конфигурации запуска и отладки) укажите следующие значения, а затем нажмите кнопку **ОК**.
 
     |Свойство |Значение |
     |----|----|
@@ -154,7 +154,7 @@ ms.locfileid: "92368746"
 
     ![Диалоговое окно 1 Spark Submission (Отправка в Spark)](./media/intellij-tool-synapse/create-synapse-configuration03.png)
 
-4. Щелкните значок **SparkJobRun** , чтобы отправить проект в выбранный пул Spark. На вкладке **Remote Spark Job in Cluster** (Удаленное задание Spark в кластере) внизу показан ход выполнения задания. Чтобы остановить работу приложения, нажмите красную кнопку.
+4. Щелкните значок **SparkJobRun**, чтобы отправить проект в выбранный пул Spark. На вкладке **Remote Spark Job in Cluster** (Удаленное задание Spark в кластере) внизу показан ход выполнения задания. Чтобы остановить работу приложения, нажмите красную кнопку.
 
     ![Окно отправки Apache Spark](./media/intellij-tool-synapse/remotely-run-synapse.png)
 
@@ -178,7 +178,7 @@ ms.locfileid: "92368746"
 
     ![Локальное выполнение конфигураций запуска и отладки в IntelliJ (2)](./media/intellij-tool-synapse/local-run-synapse01.png)
 
-3. После завершения локального выполнения, если скрипт содержит выходные данные, можно проверить выходной файл в папке **data** > **__default__** .
+3. После завершения локального выполнения, если скрипт содержит выходные данные, можно проверить выходной файл в папке **data** > **__default__**.
 
     ![Результат локального запуска проекта IntelliJ (1)](./media/intellij-tool-synapse/spark-local-run-result.png)
 
@@ -191,7 +191,7 @@ ms.locfileid: "92368746"
 
 ## <a name="access-and-manage-synapse-workspace"></a>Доступ к рабочей области Synapse и управление ею
 
-В Azure Explorer можно выполнять различные операции в Azure Toolkit для IntelliJ. В строке меню выберите **Представление** > **Окно инструментов** > **Azure Explorer** .
+В Azure Explorer можно выполнять различные операции в Azure Toolkit для IntelliJ. В строке меню выберите **Представление** > **Окно инструментов** > **Azure Explorer**.
 
 ### <a name="launch-workspace"></a>Запуск рабочей области
 
@@ -199,7 +199,7 @@ ms.locfileid: "92368746"
 
     ![Основное представление IntelliJ IDEA в Azure Explorer](./media/intellij-tool-synapse/azure-explorer-workspace.png)
 
-2. Щелкните правой кнопкой мыши рабочую область, а затем выберите команду **Запуск рабочей области** , после чего откроется веб-сайт.
+2. Щелкните правой кнопкой мыши рабочую область, а затем выберите команду **Запуск рабочей области**, после чего откроется веб-сайт.
 
     ![Представление задания Spark, сведения о приложении (1)](./media/intellij-tool-synapse/launch-workspace-synapse.png)
 
@@ -216,7 +216,7 @@ ms.locfileid: "92368746"
 1. В строке меню выберите **Run (Запуск)**  > **Edit Configurations...** (Изменить конфигурации).
 2. В левой области окна **Run/Debug Configurations** (Конфигурации запуска и отладки) выберите элементы **Apache Spark on Synapse** (Apache Spark в Synapse) >  **[Spark on Synapse] myApp** (myApp [Spark в Synapse]).
 3. В главном окне выберите вкладку **Locally Run** (Локальный запуск).
-4. Укажите следующие значения и нажмите кнопку **ОК** :
+4. Укажите следующие значения и нажмите кнопку **ОК**:
 
     |Свойство |Значение |
     |----|----|
@@ -225,7 +225,7 @@ ms.locfileid: "92368746"
 
     ![Настройка конфигурации в локальной консоли](./media/intellij-tool-synapse/local-console-synapse01.png)
 
-5. В проекте перейдите в **myApp** > **src** > **main** > **scala** > **myApp** .
+5. В проекте перейдите в **myApp** > **src** > **main** > **scala** > **myApp**.
 6. В строке меню выберите **Tools (Средства)**  > **Spark Console (Консоль Spark)**  > **Run Spark Local Console(Scala)** (Запустить локальную консоль Spark (Scala)).
 7. После этого могут появиться два диалоговых окна с запросом на автоматическое исправление зависимостей. Если нужно исправить их, выберите **Auto Fix** (Автоматическое исправление).
 
@@ -247,7 +247,7 @@ ms.locfileid: "92368746"
 
 3. В главном окне выберите вкладку **Remotely Run in Cluster** (Удаленный запуск в кластере).
 
-4. Укажите следующие значения и нажмите кнопку **ОК** :
+4. Укажите следующие значения и нажмите кнопку **ОК**:
 
     |Свойство |Значение |
     |----|----|
@@ -257,7 +257,7 @@ ms.locfileid: "92368746"
 
     ![Настройка конфигурации в интерактивной консоли](./media/intellij-tool-synapse/interactive-console-configuration.png)
 
-5. В проекте перейдите в **myApp** > **src** > **main** > **scala** > **myApp** .
+5. В проекте перейдите в **myApp** > **src** > **main** > **scala** > **myApp**.
 
 6. В строке меню выберите **Tools (Средства)**  > **Spark Console (Консоль Spark)**  > **Run Spark Livy Interactive Session Console(Scala)** (Запустить консоль интерактивного сеанса Spark Livy (Scala)).
 7. Консоль должна выглядеть примерно так, как показано ниже. В окне консоли введите `sc.appName` и нажмите клавиши CTRL+ВВОД. Отобразится результат. Чтобы закрыть локальную консоль, нажмите красную кнопку.

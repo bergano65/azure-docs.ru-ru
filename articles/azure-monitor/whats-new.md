@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: c9679fec1d9c5d501ead03bcfbf28132d9e3b90a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 6ed00931e8cca1febac0b9b72b53eeb7e81042ea
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151807"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94487998"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
@@ -157,7 +157,7 @@ ms.locfileid: "92151807"
 ### <a name="alerts"></a>видны узлы
 - [Правила действий для оповещений Azure Monitor](platform/alerts-action-rules.md) — добавлены процессы CLI.
 - [Создание групп действий и управление ими на портале Azure](platform/action-groups.md) — обновлено с учетом изменений в пользовательском интерфейсе.
-- [Сохраненные запросы в Log Analytics Azure Monitor](log-query/saved-queries.md) — новая статья.
+- [Примеры запросов в Log Analytics Azure Monitor](log-query/example-queries.md) — новая статья.
 - [Устранение неполадок, связанных с оповещениями журналов в Azure Monitor,](platform/alerts-troubleshoot-log.md) — добавлен раздел о квоте правила генерации оповещений.
 - [Устранение неполадок с оповещениями о метриках Azure](platform/alerts-troubleshoot-metric.md) — добавлен раздел о правиле генерации оповещений для пользовательской метрики, которая еще не выдается.
 - [Сведения о работе оповещений о метриках в Azure Monitor](platform/alerts-metric-overview.md) — добавлены рекомендации по выбору степени детализации агрегации.

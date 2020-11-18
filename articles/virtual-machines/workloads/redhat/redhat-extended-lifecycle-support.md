@@ -1,5 +1,5 @@
 ---
-title: Поддержка расширенного жизненного цикла Red Hat Enterprise Linux
+title: Расширенная поддержка жизненного цикла в Red Hat Enterprise Linux
 description: Дополнительные сведения о добавлении поддержки расширенного жизненного цикла выпуска Red Hat Enterprise
 author: mathapli
 ms.service: virtual-machines-linux
@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/16/2020
 ms.author: mathapli
 ms.reviewer: cynthn
-ms.openlocfilehash: e7c9f9b158d01204536712f8024ed098cd7a5037
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 124ff65087887a437e0b82fbd7b1e4c72e4f7b4c
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372881"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684361"
 ---
 # <a name="red-hat-enterprise-linux-rhel-extended-lifecycle-support"></a>Расширенная поддержка жизненного цикла Red Hat Enterprise Linux (RHEL)
 В этой статье приводятся сведения о поддержке расширенного жизненного цикла для корпоративных образов Red Hat.
@@ -21,7 +21,7 @@ ms.locfileid: "94372881"
 ## <a name="red-hat-enterprise-linux-6-lifecycle"></a>Жизненный цикл Red Hat Enterprise Linux 6
 Начиная с 30 ноября 2020 Red Hat Enterprise Linux 6 будет достигнут конец этапа обслуживания. За этапом обслуживания следует Расширенный жизненный цикл. Как Red Hat Enterprise Linux 6 переходов с этапов полного или технического обслуживания, настоятельно рекомендуется обновление до Red Hat Enterprise Linux 7 или 8. Если клиенты должны остаться в Red Hat Enterprise Linux 6, рекомендуется добавить надстройку поддержки Red Hat Enterprise Linux расширенного жизненного цикла (ELS).
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 #### <a name="im-running-red-hat-enterprise-linux-6-and-cant-migrate-to-a-later-version-at-this-time-what-options-do-i-have"></a>Я использую Red Hat Enterprise Linux 6 и не может выполнить миграцию на более позднюю версию в настоящее время. Какие существуют варианты?
 * Продолжайте работать Red Hat Enterprise Linux 6 и приобретайте поддержку расширенного жизненного цикла (ELS) Add-On репозитории, чтобы по-прежнему получить ограниченное обслуживание программного обеспечения и техническую поддержку (см. статью Обновление и сведения о ценах ниже).
@@ -40,9 +40,9 @@ ms.locfileid: "94372881"
 
 #### <a name="what-is-the-process-to-add-extended-life-cycle-support-els-repositories-to-continue-to-receive-software-maintenance-bug-and-security-fixes-and--support-for-red-hat-enterprise-linux-6"></a>В чем заключается процедура добавления репозиториев поддержки расширенного жизненного цикла (ELS), чтобы продолжить получение сведений об обслуживании программного обеспечения (исправления ошибок и безопасности) и поддержку Red Hat Enterprise Linux 6?
 
-Сквозной процесс регистрации в ELS будет доступен в ближайшее время (от 15 ноября до 2020).
+Сквозной процесс регистрации в ELS будет доступен вскоре здесь (до 30 ноября, 2020).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный список образов RHEL в Azure см. в статье [образы Red Hat Enterprise Linux (RHEL), доступные в Azure](./redhat-imagelist.md).
 * Дополнительные сведения о инфраструктуре обновления Red Hat для Azure см. в разделе [инфраструктура обновления Red Hat для виртуальных машин RHEL по запросу в Azure](./redhat-rhui.md).

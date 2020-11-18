@@ -3,12 +3,12 @@ title: Введение
 description: Сведения о преимуществах и возможностях решения Azure VMware для развертывания рабочих нагрузок на основе VMware и управления ими в Azure.
 ms.topic: overview
 ms.date: 05/04/2020
-ms.openlocfilehash: b71427402e08167e5868128ed1e553c69bef425d
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 1875f535a5ca3e346362409c143da82cb8c07a12
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91574469"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488593"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Что такое Решение Azure VMware?
 
@@ -44,7 +44,7 @@ ms.locfileid: "91574469"
 
 ## <a name="monitoring-your-private-cloud"></a>Мониторинг частного облака
 
-После развертывания Решения Azure VMware в вашей подписке [журналы Azure Monitor](../azure-monitor/overview.md) будут созданы автоматически. Кроме того, вы можете выполнять сбор журналов на каждой виртуальной машине в частном облаке. Вы можете [скачать агент MMA и установить его](../azure-monitor/platform/log-analytics-agent.md#installation-options) на виртуальных машинах Linux и Windows, которые работают в частных облаках Решения Azure VMware, а также включить [расширение диагностики Azure](../azure-monitor/platform/diagnostics-extension-overview.md). Вы даже можете выполнять на виртуальных машинах те же запросы, что и обычно. Дополнительные сведения о создании запросов см. в [этой статье](../azure-monitor/log-query/log-query-overview.md#how-can-i-learn-how-to-write-queries). Шаблоны мониторинга в Решении Azure VMware аналогичны шаблонам Виртуальных машин Azure на платформе IaaS. Дополнительные сведения и практические руководства см. в статье [Мониторинг виртуальных машин Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md).
+После развертывания Решения Azure VMware в вашей подписке [журналы Azure Monitor](../azure-monitor/overview.md) будут созданы автоматически. Кроме того, вы можете выполнять сбор журналов на каждой виртуальной машине в частном облаке. Вы можете [скачать агент MMA и установить его](../azure-monitor/platform/log-analytics-agent.md#installation-options) на виртуальных машинах Linux и Windows, которые работают в частных облаках Решения Azure VMware, а также включить [расширение диагностики Azure](../azure-monitor/platform/diagnostics-extension-overview.md). Вы даже можете выполнять на виртуальных машинах те же запросы, что и обычно. Дополнительные сведения о создании запросов см. в статье [Обзор журналов Azure Monitor](../azure-monitor/platform/data-platform-logs.md). Шаблоны мониторинга в Решении Azure VMware аналогичны шаблонам Виртуальных машин Azure на платформе IaaS. Дополнительные сведения и практические руководства см. в статье [Мониторинг виртуальных машин Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

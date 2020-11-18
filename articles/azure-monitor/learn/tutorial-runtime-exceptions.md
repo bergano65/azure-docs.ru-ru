@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/19/2017
 ms.custom: mvc
-ms.openlocfilehash: af8479f6460a6cc555d7ea67dcfe65c779878624
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 057b211179c6932d4214e6118e3fa97b95145ba0
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91357868"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92926637"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 
@@ -81,7 +81,7 @@ Application Insights собирает сведения об ошибках в в
 
 3. Первый вызов с допустимыми значениями — это **ValidZipCode**. Мы можем увидеть, что почтовый индекс содержал буквы, которые нельзя преобразовать в целевое число.  Это вызовет ошибку в коде, которую необходимо исправить.
 
-    ![Отладка моментального снимка](media/tutorial-runtime-exceptions/debug-snapshot-02.png)
+    ![Снимок экрана: демонстрация того, что ошибку в коде необходимо исправить.    ](media/tutorial-runtime-exceptions/debug-snapshot-02.png)
 
 4. После этого можно загрузить моментальный снимок в Visual Studio, где мы можем определить фактический код, который нужно исправить. Для этого щелкните **Скачать моментальный снимок**.
 5. Моментальный снимок будет загружен в Visual Studio.

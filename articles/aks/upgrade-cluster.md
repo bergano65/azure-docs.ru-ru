@@ -3,13 +3,13 @@ title: Обновление кластера службы Azure Kubernetes (AKS)
 description: Узнайте, как обновить кластер Azure Kubernetes Service (AKS), чтобы получить новейшие функции и обновления для системы безопасности.
 services: container-service
 ms.topic: article
-ms.date: 10/21/2020
-ms.openlocfilehash: 046c010cdd811b53ef8ef35624ed41a673af43d3
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.date: 11/17/2020
+ms.openlocfilehash: 262905c9f840850795ba9555912e81eca61369d1
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461453"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683239"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -51,7 +51,7 @@ default  myResourceGroup   1.12.8           1.12.8             1.13.9, 1.13.10
 ERROR: Table output unavailable. Use the --query option to specify an appropriate query. Use --debug for more info.
 ```
 
-## <a name="customize-node-surge-upgrade-preview"></a>Настройка обновления нехватка узлов (Предварительная версия)
+## <a name="customize-node-surge-upgrade"></a>Настройка обновления нехватка узлов
 
 > [!Important]
 > Исчерпание узлов требует квоты подписки на запрошенное максимальное число скачков для каждой операции обновления. Например, кластер с 5 пулами узлов, каждый из которых имеет количество 4 узлов, всего 20 узлов. Если для каждого пула узлов задано максимальное значение всплеска напряжения 50%, для завершения обновления требуется дополнительная квота вычислений и IP-адреса, равная 10 узлам (2 узла * 5 пулов).
@@ -66,21 +66,7 @@ AKS принимает целочисленные значения и проце
 
 Во время обновления максимальное значение всплеска напряжения может быть не менее 1, а максимальное значение равно количеству узлов в пуле узлов. Можно задать большие значения, но максимальное количество узлов, используемых для максимального всплеска напряжения, не будет превышать число узлов в пуле во время обновления.
 
-### <a name="set-up-the-preview-feature-for-customizing-node-surge-upgrade"></a>Настройка функции предварительной версии для настройки обновления нехватка узлов
-
-```azurecli-interactive
-# register the preview feature
-az feature register --namespace "Microsoft.ContainerService" --name "MaxSurgePreview"
-```
-
-Регистрация займет несколько минут. Используйте приведенную ниже команду, чтобы убедиться, что компонент зарегистрирован.
-
-```azurecli-interactive
-# Verify the feature is registered:
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/MaxSurgePreview')].{Name:name,State:properties.state}"
-```
-
-На этапе предварительной версии требуется расширение CLI *AKS-Preview* , чтобы использовать максимальный всплеск. Используйте команду [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
+До CLI версии 2.16.0 + вам потребуется расширение CLI *AKS-Preview* , чтобы использовать максимальный всплеск. Используйте команду [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -107,7 +93,7 @@ az aks nodepool update -n mynodepool -g MyResourceGroup --cluster-name MyManaged
 
 ## <a name="upgrade-an-aks-cluster"></a>Обновление кластера AKS
 
-С помощью команды [az aks upgrade][az-aks-upgrade] обновите кластер AKS, используя список доступных версий. В процессе обновления AKS добавляет новый узел буфера (или количество узлов, настроенных в параметре [Max всплеска](#customize-node-surge-upgrade-preview)) к кластеру, на котором запущена указанная версия Kubernetes. Затем он будет [Cordon и стокировать][kubernetes-drain] один из старых узлов, чтобы минимизировать перебои в работе приложений (если вы используете параметр max всплеска, он будет [Cordon и стокировать][kubernetes-drain] как количество узлов в то же время, сколько указано в буфере). Если старый узел полностью остановлен, он будет создан повторно, чтобы получить новую версию, и он станет узлом буфера для обновления следующего узла. Этот процесс повторяется до тех пор, пока не будут обновлены все узлы в кластере. В конце процесса последний сток будет удален, сохраняя количество узлов существующего агента.
+С помощью команды [az aks upgrade][az-aks-upgrade] обновите кластер AKS, используя список доступных версий. В процессе обновления AKS добавляет новый узел буфера (или количество узлов, настроенных в параметре [Max всплеска](#customize-node-surge-upgrade)) к кластеру, на котором запущена указанная версия Kubernetes. Затем он будет [Cordon и стокировать][kubernetes-drain] один из старых узлов, чтобы минимизировать перебои в работе приложений (если вы используете параметр max всплеска, он будет [Cordon и стокировать][kubernetes-drain] как количество узлов в то же время, сколько указано в буфере). Если старый узел полностью остановлен, он будет создан повторно, чтобы получить новую версию, и он станет узлом буфера для обновления следующего узла. Этот процесс повторяется до тех пор, пока не будут обновлены все узлы в кластере. В конце процесса последний сток будет удален, сохраняя количество узлов существующего агента.
 
 ```azurecli-interactive
 az aks upgrade \

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 419b61527b68299c82dec4f2f5da6b0220859cc1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5b2ec220bbf14a79247ed2c78a0e84f4717fae3
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77593747"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684242"
 ---
 # <a name="install-linkerd-in-azure-kubernetes-service-aks"></a>Установка Linkerd в службе Kubernetes Azure (AKS)
 
@@ -35,7 +35,7 @@ ms.locfileid: "77593747"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-В действиях, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным RBAC) и установили `kubectl` Подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
+В шагах, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным KUBERNETES RBAC) и установили `kubectl` Подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
 
 Все Linkerd Pod должны быть запланированы для запуска на узлах Linux. Эта настройка используется по умолчанию в описанном ниже методе установки и не требует дополнительной настройки.
 

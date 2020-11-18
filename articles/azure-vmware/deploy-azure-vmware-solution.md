@@ -3,13 +3,13 @@ title: Развертывание и настройка Решения Azure VMw
 description: Узнайте, как использовать собранную на этапе планирования информацию для развертывания частного облака Решения Azure VMware.
 ms.topic: tutorial
 ms.author: tredavis
-ms.date: 10/02/2020
-ms.openlocfilehash: 0839048c2d0ad5944566a48f54cca07a4daeb754
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.date: 11/09/2020
+ms.openlocfilehash: 264ad99b21150f391c367eba2da31f0d08f4ab08
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152024"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94336341"
 ---
 # <a name="deploy-and-configure-azure-vmware-solution"></a>Развертывание и настройка Решения Azure VMware
 
@@ -35,7 +35,7 @@ ms.locfileid: "92152024"
 ## <a name="create-the-jump-box"></a>Создание переходной среды
 
 >[!IMPORTANT]
->Если вы решили не задавать значение для параметра **Виртуальная сеть** на этапе начальной подготовки на экране **Создание частного облака** , выполните действия, описанные в статье [Руководство по настройке сети для частного облака VMware в Azure](tutorial-configure-networking.md), **перед тем** как продолжать работу с этим разделом.  
+>Если вы решили не задавать значение для параметра **Виртуальная сеть** на этапе начальной подготовки на экране **Создание частного облака**, выполните действия, описанные в статье [Руководство по настройке сети для частного облака VMware в Azure](tutorial-configure-networking.md), **перед тем** как продолжать работу с этим разделом.  
 
 Развернув Решение Azure VMware, вы создадите переходную среду для виртуальной сети, которая подключается к vCenter и NSX. После настройки каналов ExpressRoute и Global Reach ExpressRoute переходная среда больше не потребуется.  Однако с ее помощью можно легко получить доступ к vCenter и NSX в Решении Azure VMware.  
 
@@ -59,7 +59,7 @@ ms.locfileid: "92152024"
 
 В списке фактических маршрутов должны быть сети, созданные при развертывании Решения Azure VMware. Вы увидите несколько сетей, которые являются производными от [`/22`сети, указанной](production-ready-deployment-steps.md#ip-address-segment) [на шаге развертывания](#deploy-azure-vmware-solution), описанном ранее в этой статье.
 
-:::image type="content" source="media/pre-deployment/azure-vmware-solution-effective-routes.png" alt-text="Создание инсталляционного сервера в Решении Azure VMware" lightbox="media/pre-deployment/azure-vmware-solution-effective-routes.png":::
+:::image type="content" source="media/pre-deployment/azure-vmware-solution-effective-routes.png" alt-text="Проверка сетевых маршрутов, объявляемых Решением Azure VMware виртуальной сети Azure" lightbox="media/pre-deployment/azure-vmware-solution-effective-routes.png":::
 
 В этом примере на основе сети 10.74.72.0/22, настроенной во время развертывания, создаются производные сети /24.  Если отображаются примерно такие же данные, вы можете подключаться к vCenter в Решении Azure VMware.
 
@@ -67,7 +67,7 @@ ms.locfileid: "92152024"
 
 Войдите в переходную среду, созданную на предыдущем шаге. После входа откройте веб-браузер, перейдите к консоли администрирования vCenter и NSX-T и выполните вход.  
 
-IP-адреса и учетные данные консоли администрирования vCenter и NSX-T можно найти на портале Azure.  Выберите частное облако, а затем в представлении **Обзор** щелкните **Удостоверение > По умолчанию** . 
+IP-адреса и учетные данные консоли администрирования vCenter и NSX-T можно найти на портале Azure.  Выберите частное облако, а затем в представлении **Обзор** щелкните **Удостоверение > По умолчанию**. 
 
 ## <a name="create-a-network-segment-on-azure-vmware-solution"></a>Создание сегмента сети в Решении Azure VMware
 
@@ -97,10 +97,10 @@ IP-адреса и учетные данные консоли администр
 
 Если вы планируете использовать DHCP в сегментах NSX-T, продолжайте работу с этим разделом. В противном случае перейдите к разделу [Добавление виртуальной машины в сегмент сети NSX-T](#add-a-vm-on-the-nsx-t-network-segment).  
 
-Теперь, когда вы создали свой сегмент сети NSX-T, вы можете выбрать ОДИН из следующих вариантов:
+Теперь, когда вы создали сегмент сети NSX-T, вы можете создавать и администрировать DHCP в Решении Azure VMware двумя способами:
 
-* Использовать NSX-T в качестве DHCP-сервера для созданных сегментов. Для этого варианта необходимо [создать DHCP-сервер в NSX-T](manage-dhcp.md#create-dhcp-server) и [выполнить ретрансляцию в этот сервер](manage-dhcp.md#create-dhcp-relay-service).
-* Ретранслировать запросы DHCP из сегментов NSX-T в DHCP-сервер в любом расположении вашей среды. Для этого варианта [необходимо только настроить ретрансляцию](manage-dhcp.md#create-dhcp-relay-service).
+* Если вы используете NSX-T для размещения DHCP-сервера, необходимо [создать DHCP-сервер](manage-dhcp.md#create-a-dhcp-server) и [ретранслятор для этого сервера](manage-dhcp.md#create-dhcp-relay-service). 
+* Если вы используете сторонний внешний DHCP-сервер в сети, необходимо [создать службу ретранслятора DHCP](manage-dhcp.md#create-dhcp-relay-service).  Для этого варианта [необходимо только настроить ретрансляцию](manage-dhcp.md#create-dhcp-relay-service).
 
 
 ## <a name="add-a-vm-on-the-nsx-t-network-segment"></a>Добавление виртуальной машины в сегмент сети NSX-T

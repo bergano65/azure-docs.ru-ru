@@ -1,5 +1,5 @@
 ---
-title: Руководство по развертыванию веб-сайтов Next.js с рендерингом на стороне сервера в Статических веб-приложениях Azure
+title: Руководство по Развертывание статических веб-сайтов Next.js в Статических веб-приложениях Azure
 description: Создавайте и развертывайте динамические сайты Next.js с помощью Статических веб-приложений Azure.
 services: static-web-apps
 author: christiannwamba
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: chnwamba
 ms.custom: devx-track-js
-ms.openlocfilehash: 835ee926de776b7a25295485d18ce25f883a2c5f
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 20a3337ab054ca1feefc2f5f08f8e6398417fb9e
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951168"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441619"
 ---
-# <a name="deploy-server-rendered-nextjs-websites-on-azure-static-web-apps-preview"></a>Развертывание веб-сайтов Next.js с рендерингом на стороне сервера в Статических веб-приложениях Azure (предварительная версия)
+# <a name="deploy-static-rendered-nextjs-websites-on-azure-static-web-apps-preview"></a>Развертывание статических веб-сайтов Next.js в Статических веб-приложениях Azure (предварительная версия)
 
 Из этого учебника вы узнаете, как развернуть созданный статический веб-сайт [Next.js](https://nextjs.org) в [Статических веб-приложениях Azure](overview.md). Для начала вы узнаете, как установить, настроить и развернуть приложение Next.js. В ходе этого процесса вы также научитесь решать распространенные проблемы, которые часто возникают при создании статических страниц с помощью Next.js.
 
@@ -63,7 +63,7 @@ ms.locfileid: "91951168"
 
 Щелкнув платформу или библиотеку, вы увидите страницу со сведениями о выбранном элементе:
 
-:::image type="content" source="media/deploy-nextjs/start-nextjs-details.png" alt-text="Запуск приложения Next.js":::
+:::image type="content" source="media/deploy-nextjs/start-nextjs-details.png" alt-text="Страница сведений":::
 
 ## <a name="generate-a-static-website-from-nextjs-build"></a>Создание статического веб-сайта из сборки Next.js
 
@@ -146,7 +146,7 @@ ms.locfileid: "91951168"
 1. В раскрывающемся списке *Регион* выберите ближайший к вам регион.
 1. Из раскрывающегося списка номеров SKU выберите **Бесплатный**.
 
-   :::image type="content" source="media/deploy-nextjs/create-static-web-app.png" alt-text="Запуск приложения Next.js":::
+   :::image type="content" source="media/deploy-nextjs/create-static-web-app.png" alt-text="Создание статического веб-приложения":::
 
 ### <a name="add-a-github-repository"></a>Добавление репозитория GitHub
 
@@ -157,7 +157,7 @@ ms.locfileid: "91951168"
 1. Найдите и выберите имя созданного ранее репозитория.
 1. Выберите **master** в качестве ветви в раскрывающемся списке *Ветвь*.
 
-   :::image type="content" source="media/deploy-nextjs/connect-github.png" alt-text="Запуск приложения Next.js":::
+   :::image type="content" source="media/deploy-nextjs/connect-github.png" alt-text="Подключение GitHub":::
 
 ### <a name="configure-the-build-process"></a>Настройка процесса сборки
 
@@ -165,7 +165,7 @@ ms.locfileid: "91951168"
 
 1. Щелкните вкладку **Сборка**, чтобы настроить статическую выходную папку.
 
-   :::image type="content" source="media/deploy-nextjs/build-tab.png" alt-text="Запуск приложения Next.js":::
+   :::image type="content" source="media/deploy-nextjs/build-tab.png" alt-text="Вкладка &quot;Сборка&quot;":::
 
 2. Введите **out** в текстовом поле *App artifact location* (Расположение артефакта приложения).
 
@@ -195,7 +195,7 @@ https://github.com/<YOUR_GITHUB_USERNAME>/nextjs-starter/actions
 
 Перейдите к только что развернутому сайту и щелкните один из логотипов платформы или библиотеки. Вместо страницы сведений вы получаете страницу с ошибкой 404.
 
-:::image type="content" source="media/deploy-nextjs/404-in-production.png" alt-text="Запуск приложения Next.js":::
+:::image type="content" source="media/deploy-nextjs/404-in-production.png" alt-text="Ошибка 404 для динамических маршрутов":::
 
 Причина этой ошибки заключается в том, что Next.js создает только домашнюю страницу на основе конфигурации приложения.
 
@@ -231,7 +231,7 @@ https://github.com/<YOUR_GITHUB_USERNAME>/nextjs-starter/actions
 
 2. Отправьте новые изменения в репозиторий GitHub и подождите несколько минут, пока GitHub Actions еще раз выполнит сборку сайта. По завершении сборки ошибка 404 исчезнет.
 
-   :::image type="content" source="media/deploy-nextjs/404-in-production-fixed.png" alt-text="Запуск приложения Next.js":::
+   :::image type="content" source="media/deploy-nextjs/404-in-production-fixed.png" alt-text="Ошибка 404 для динамических маршрутов устранена":::
 
 > [!div class="nextstepaction"]
 > [Настройка личного домена](custom-domain.md)

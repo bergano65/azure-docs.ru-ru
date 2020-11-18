@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: dastrebe
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 2f47ded22209a9d53510c7d0a2f8270096161354
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c5ad53c0040009e9ed1f28072540b46ce7b0b9a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86244142"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683925"
 ---
 # <a name="install-and-use-consul-in-azure-kubernetes-service-aks"></a>Установка и использование Consul в службе Kubernetes Azure (AKS)
 
@@ -33,7 +33,7 @@ ms.locfileid: "86244142"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-В действиях, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным RBAC) и установили `kubectl` Подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart]. Убедитесь, что кластер содержит по крайней мере 3 узла в пуле узлов Linux.
+В шагах, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным KUBERNETES RBAC) и установили `kubectl` Подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart]. Убедитесь, что кластер содержит по крайней мере 3 узла в пуле узлов Linux.
 
 Вам потребуется [Helm][helm] , чтобы выполнить эти инструкции и установить Consul. Рекомендуется правильно установить и настроить последнюю стабильную версию в кластере. Если вам нужна помощь с установкой Helm, см. [руководство по установке AKS Helm][helm-install]. Все Consul Pod также должны быть запланированы для запуска на узлах Linux.
 

@@ -9,12 +9,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 76c45e586ea7101015cb878d198cab73ed32498e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d83745db6c720a2fdc2260a07a4e3e66b1a0771d
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89018252"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422218"
 ---
 # <a name="install-software-and-set-up-resources-for-the-tutorial"></a>Установка программного обеспечения и настройка ресурсов для учебника
 
@@ -23,14 +23,16 @@ ms.locfileid: "89018252"
 ## <a name="prerequisites"></a>Предварительные требования
 
 1. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
-2. Установите [Python 3.6.8](https://www.python.org/downloads/release/python-368/).
-      * Использование исполняемого установщика Windows x86-x64
-      * Добавьте `python.exe` в загрузки переменной среды PATH/). Загрузку можно выполнить в разделе "Средства для Visual Studio 2019".
-3. Установите [Microsoft ODBC Driver for SQL Server версии 17](https://www.microsoft.com/download/details.aspx?id=56567).
-4. Установите [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio/)
-5. Откройте Azure Data Studio и настройте Python для записных книжек. Дополнительные сведения см. в разделе [Настройка Python для записных книжек](/sql/azure-data-studio/sql-notebooks#configure-python-for-notebooks). Этот шаг может занять несколько минут.
-6. Установите [последнюю версию](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020) Azure CLI. Для следующих сценариев требуется, чтобы зона доступности PowerShell была последней версией (3.5.0, февраль 2020).
-7. Скачайте [DACPAC](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/DACPAC) и [файлы образа DOCKER для AMD/ARM](https://www.docker.com/blog/multi-arch-images/), которые понадобятся при работе с этим руководством.
+2. Установите Visual Studio 2019 со 
+      * средствами Azure IoT Edge;
+      * средствами кросс-платформенной разработки .NET Core;
+      * Средства разработки контейнеров
+3. Установите [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio/)
+4. Откройте Azure Data Studio и настройте Python для записных книжек. Подробные сведения см. в разделе [Настройка Python для Записных книжек](/sql/azure-data-studio/sql-notebooks#configure-python-for-notebooks). Это может занять несколько минут.
+5. Установите [последнюю версию](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020) Azure CLI. Для следующих сценариев требуется, чтобы зона доступности PowerShell была последней версией (3.5.0, февраль 2020).
+6. Настройте среду для отладки, запуска и тестирования решения IoT Edge, установив [средство разработки Azure IoT EdgeHub](https://pypi.org/project/iotedgehubdev/).
+7. Установить Docker.
+8. Скачайте файл [DACPAC](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/DACPAC), который вам понадобится для работы с этим учебником. 
 
 ## <a name="deploy-azure-resources-using-powershell-script"></a>Развертывание ресурсов Azure с помощью скрипта PowerShell
 
@@ -154,26 +156,7 @@ ms.locfileid: "89018252"
    }
    ```
 
-10. Отправьте образы docker ARM/AMD в реестр контейнеров.
-
-    ```powershell
-    $containerRegistryCredentials = Get-AzContainerRegistryCredential -ResourceGroupName $ResourceGroup -Name $containerRegistryName
-    
-    $amddockerimageFile = Read-Host "Please Enter the location to the amd docker tar file:"
-    $armdockerimageFile = Read-Host "Please Enter the location to the arm docker tar file:"
-    $amddockertag = $containerRegistry.LoginServer + "/silicaprediction" + ":amd64"
-    $armdockertag = $containerRegistry.LoginServer + "/silicaprediction" + ":arm64"
-    
-    docker login $containerRegistry.LoginServer --username $containerRegistryCredentials.Username --password $containerRegistryCredentials.Password
-    
-    docker import $amddockerimageFile $amddockertag
-    docker push $amddockertag
-    
-    docker import $armdockerimageFile $armdockertag
-    docker push $armdockertag
-    ```
-
-11. Создайте группу безопасности сети в группе ресурсов.
+10. Создайте группу безопасности сети в группе ресурсов.
 
     ```powershell
     $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName $ResourceGroup -Name $NetworkSecGroup 
@@ -193,7 +176,7 @@ ms.locfileid: "89018252"
     }
     ```
 
-12. Создайте виртуальную машину Azure с поддержкой SQL Azure для пограничных вычислений. Эта виртуальная машина будет работать в качестве пограничного устройства.
+11. Создайте виртуальную машину Azure с поддержкой SQL Azure для пограничных вычислений. Эта виртуальная машина будет работать в качестве пограничного устройства.
 
     ```powershell
     $AzVM = Get-AzVM -ResourceGroupName $ResourceGroup -Name $EdgeDeviceId
@@ -226,7 +209,7 @@ ms.locfileid: "89018252"
     }
     ```
 
-13. Создайте центр Интернета вещей в группе ресурсов.
+12. Создайте центр Интернета вещей в группе ресурсов.
 
     ```powershell
     $iotHub = Get-AzIotHub -ResourceGroupName $ResourceGroup -Name $IoTHubName
@@ -241,7 +224,7 @@ ms.locfileid: "89018252"
     }
     ```
 
-14. Добавьте пограничное устройство в центр Интернета вещей. На этом шаге создается только цифровое удостоверение устройства.
+13. Добавьте пограничное устройство в центр Интернета вещей. На этом шаге создается только цифровое удостоверение устройства.
 
     ```powershell
     $deviceIdentity = Get-AzIotHubDevice -ResourceGroupName $ResourceGroup -IotHubName $IoTHubName -DeviceId $EdgeDeviceId
@@ -257,7 +240,7 @@ ms.locfileid: "89018252"
     $deviceIdentity = Get-AzIotHubDevice -ResourceGroupName $ResourceGroup -IotHubName $IoTHubName -DeviceId $EdgeDeviceId
     ```
 
-15. Получите основную строку подключения устройства. Это потребуется позже для виртуальной машины. Следующая команда для развертываний использует Azure CLI.
+14. Получите основную строку подключения устройства. Это потребуется позже для виртуальной машины. Следующая команда для развертываний использует Azure CLI.
 
     ```powershell
     $deviceConnectionString = az iot hub device-identity show-connection-string --device-id $EdgeDeviceId --hub-name $IoTHubName --resource-group $ResourceGroup --subscription $SubscriptionName
@@ -265,18 +248,19 @@ ms.locfileid: "89018252"
     $connString
     ```
 
-16. Обновите строку подключения в файле конфигурации IoT Edge на пограничном устройстве. Следующие команды используют Azure CLI для развертываний.
+15. Обновите строку подключения в файле конфигурации IoT Edge на пограничном устройстве. Следующие команды используют Azure CLI для развертываний.
 
     ```powershell
     $script = "/etc/iotedge/configedge.sh '" + $connString + "'"
     az vm run-command invoke -g $ResourceGroup -n $EdgeDeviceId  --command-id RunShellScript --script $script
     ```
 
-17. Создайте рабочую область "Машинное обучение Azure" в группе ресурсов.
+16. Создайте рабочую область "Машинное обучение Azure" в группе ресурсов.
 
     ```powershell
     az ml workspace create -w $MyWorkSpace -g $ResourceGroup
     ```
+
 
 ## <a name="next-steps"></a>Next Steps
 

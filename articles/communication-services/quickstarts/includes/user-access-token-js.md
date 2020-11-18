@@ -2,20 +2,20 @@
 title: включить файл
 description: включить файл
 services: azure-communication-services
-author: matthewrobertson
-manager: nimag
+author: tomaschladek
+manager: nmurav
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
 ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
-ms.author: marobert
-ms.openlocfilehash: 22cfe369561eab1ca334c7ff2450162dfae3e761
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.author: tchladek
+ms.openlocfilehash: af5af26a8970409b07eda6195b0853c3fa931b3f
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92347080"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506259"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,7 +30,7 @@ ms.locfileid: "92347080"
 Откройте терминал или командное окно, создайте каталог для своего приложения и перейдите к нему.
 
 ```console
-mkdir user-tokens-quickstart && cd user-tokens-quickstart
+mkdir access-tokens-quickstart && cd access-tokens-quickstart
 ```
 
 Воспользуйтесь командой `npm init -y`, чтобы создать файл **package.json** с параметрами по умолчанию.
@@ -65,7 +65,7 @@ npm install @azure/communication-administration --save
 const { CommunicationIdentityClient } = require('@azure/communication-administration');
 
 const main = async () => {
-  console.log("Azure Communication Services - User Access Tokens Quickstart")
+  console.log("Azure Communication Services - Access Tokens Quickstart")
 
   // Quickstart code goes here
 };
@@ -76,9 +76,7 @@ main().catch((error) => {
 })
 ```
 
-1. Сохраните новый файл как **issue-token.js** в каталоге *user-tokens-quickstart*.
-
-[!INCLUDE [User Access Tokens Object Model](user-access-tokens-object-model.md)]
+1. Сохраните новый файл как **issue-access-token.js** в каталоге *access-tokens-quickstart*.
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
@@ -91,64 +89,67 @@ main().catch((error) => {
 // from an environment variable.
 const connectionString = process.env['COMMUNICATION_SERVICES_CONNECTION_STRING'];
 
-// Instantiate the user token client
+// Instantiate the identity client
 const identityClient = new CommunicationIdentityClient(connectionString);
 ```
 
-## <a name="create-a-user"></a>Создание пользователя
+## <a name="create-an-identity"></a>Создание удостоверения
 
-Службы коммуникации Azure позволяют использовать упрощенный каталог удостоверений. Чтобы создать новую запись в каталоге с уникальным идентификатором (`Id`), используйте метод `createUser`. Необходимо обеспечить сопоставление между пользователями приложения и удостоверениями, созданными Службами коммуникации (например, храня удостоверения в базе данных сервера приложений).
+Службы коммуникации Azure позволяют использовать упрощенный каталог удостоверений. Чтобы создать новую запись в каталоге с уникальным идентификатором (`Id`), используйте метод `createUser`. Сохраните полученное удостоверение с сопоставлением с пользователями вашего приложения. Например, сохраните их в базе данных сервера приложений. Удостоверение потребуется позже для выдачи маркеров доступа.
 
 ```javascript
-let userResponse = await identityClient.createUser();
-console.log(`\nCreated a user with ID: ${userResponse.communicationUserId}`);
+let identityResponse = await identityClient.createUser();
+console.log(`\nCreated an identity with ID: ${identityResponse.communicationUserId}`);
 ```
 
-## <a name="issue-user-access-tokens"></a>Выдача маркеров доступа пользователей
+## <a name="issue-access-tokens"></a>Выпуск маркеров доступа
 
-Чтобы выдать маркер доступа для пользователя Служб коммуникации, используйте метод `issueToken`. Если не указать необязательный параметр `user`, новый пользователь будет создан и возвращен вместе с маркером.
+Чтобы выдать маркер доступа для имеющегося удостоверения Служб коммуникации, используйте метод `issueToken`. Параметр `scopes` определяет набор базовых функций, которые будут авторизовать этот маркер доступа. Ознакомьтесь со [списком поддерживаемых действий](../../concepts/authentication.md). Новый экземпляр параметра `communicationUser` можно создать на основе строкового представления удостоверения Служб коммуникации Azure.
 
 ```javascript
-// Issue an access token with the "voip" scope for a new user
-let tokenResponse = await identityClient.issueToken(userResponse, ["voip"]);
+// Issue an access token with the "voip" scope for an identity
+let tokenResponse = await identityClient.issueToken(identityResponse, ["voip"]);
 const { token, expiresOn } = tokenResponse;
-console.log(`\nIssued a token with 'voip' scope that expires at ${expiresOn}:`);
+console.log(`\nIssued an access token with 'voip' scope that expires at ${expiresOn}:`);
 console.log(token);
 ```
 
-Маркеры доступа пользователей — это кратковременные учетные данные, которые необходимо повторно выдавать, чтобы предотвратить сбои в работе служб. Свойство ответа `expiresOn` указывает на время существования маркера.
+Маркеры доступа — это недолговечные учетные данные, которые необходимо выдавать повторно. Если этого не сделать, это может привести к нарушению работы пользователей приложения. Свойство ответа `expiresOn` указывает время существования маркера доступа.
 
-## <a name="revoke-user-access-tokens"></a>Отзыв маркеров доступа пользователей
 
-Иногда может потребоваться явно отозвать маркеры доступа пользователя, например когда пользователь изменяет пароль, используемый для проверки подлинности в службе. При этом используется метод `revokeTokens`, чтобы сделать недействительными все маркеры доступа пользователя.
+## <a name="refresh-access-tokens"></a>Обновление токенов доступа
 
-```javascript  
-await identityClient.revokeTokens(userResponse);
-console.log(`\nSuccessfully revoked all tokens for user with Id: ${userResponse.communicationUserId}`);
-```
-
-## <a name="refresh-user-access-tokens"></a>Обновление маркеров доступа пользователей
-
-Чтобы обновить маркер, используйте объект `CommunicationUser` для перевыпуска:
+Чтобы обновить маркер доступа, используйте объект `CommunicationUser` для повторной выдачи:
 
 ```javascript  
-let userResponse = new CommunicationUser(existingUserId);
-let tokenResponse = await identityClient.issueToken(userResponse, ["voip"]);
+// Value existingIdentity represents identity of Azure Communication Services stored during identity creation
+identityResponse = new CommunicationUser(existingIdentity);
+tokenResponse = await identityClient.issueToken(identityResponse, ["voip"]);
 ```
 
-## <a name="delete-a-user"></a>Удаление пользователя
 
-При удалении пользователя отзываются все активные маркеры и запрещается выдача последующих маркеров для удостоверений. Вместе с этим удаляется и все хранимое содержимое, связанное с пользователем.
+## <a name="revoke-access-tokens"></a>Отмена маркеров доступа
+
+В некоторых случаях вы можете явно отменить маркеры доступа. Например, когда пользователь приложения меняет пароль, который он использует для проверки подлинности в службе. Метод `revokeTokens` отменяет все активные маркеры доступа, выданные идентификатору.
+
+```javascript  
+await identityClient.revokeTokens(identityResponse);
+console.log(`\nSuccessfully revoked all access tokens for identity with Id: ${identityResponse.communicationUserId}`);
+```
+
+## <a name="delete-an-identity"></a>Удаление удостоверения
+
+При удалении удостоверения отзываются все активные маркеры доступа и запрещается выдача последующих маркеров для удостоверения. Вместе с этим удаляется и все хранимое содержимое, связанное с удостоверением.
 
 ```javascript
-await identityClient.deleteUser(userResponse);
-console.log(`\nDeleted the user with Id: ${userResponse.communicationUserId}`);
+await identityClient.deleteUser(identityResponse);
+console.log(`\nDeleted the identity with Id: ${identityResponse.communicationUserId}`);
 ```
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-В окне консоли перейдите в каталог, содержащий файл *issue-token.py* , а затем выполните команду `node`, чтобы запустить приложение.
+В окне консоли перейдите в каталог, содержащий файл *issue-access-token.js*, а затем выполните команду `node`, чтобы запустить приложение.
 
 ```console
-node ./issue-token.js
+node ./issue-access-token.js
 ```

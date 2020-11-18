@@ -1,19 +1,19 @@
 ---
 title: Руководство по устранению неполадок для Службы Azure SignalR
-description: Обучение
+description: Сведения об устранении распространенных неполадок
 author: YanJin
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: 5b8360134ace3852fb3c7fbe458ca2572f45b624
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 11ea348a80bc226b6a96bea1e7c023ee9c06b13a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663786"
+ms.locfileid: "94684123"
 ---
-# <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
+# <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Руководство по устранению неполадок службы Azure SignalR
 
 Это руководство содержит полезные рекомендации по устранению неполадок на основе распространенных проблем, которые пользователи составили и устраняют за последние годы.
 
@@ -347,3 +347,9 @@ finally
 
     * [Клиент ASP.NET JavaScript](https://github.com/Azure/azure-signalr/tree/dev/samples/AspNet.ChatSample/AspNet.ChatSample.JavaScriptClient/wwwroot/index.html#L71)
 
+## <a name="next-steps"></a>Дальнейшие действия
+
+В этом руководство вы узнали, как решать распространенные проблемы. Вы также можете узнать больше об общих методах устранения неполадок. 
+
+> [!div class="nextstepaction"]
+> [Устранение проблем с подключением и доставкой сообщений](./signalr-howto-troubleshoot-method.md)

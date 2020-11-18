@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 07/31/2020
-ms.openlocfilehash: a8b5ec48b64341ad9eabd087d7ee20bb703198c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c09f741b37e06010a0bfbab40317980793240e29
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816241"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683511"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
@@ -186,13 +186,13 @@ oc adm policy \
 
 ### <a name="which-unix-rights-in-iaas-are-available-for-mastersinfraapp-nodes"></a>Какие права UNIX (в IaaS) доступны для образцов, а так и для узлов с инфракрасными или приложениями?
 
-Для кластеров 4. x доступ к узлу можно получить с помощью роли администратора кластера. Дополнительные сведения см. в разделе [Общие сведения о RBAC](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).
+Для кластеров 4. x доступ к узлу можно получить с помощью роли администратора кластера. Дополнительные сведения см. в разделе [Общие сведения о KUBERNETES RBAC](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).
 
 Для кластеров 3,11 доступ к узлу запрещен.
 
 ### <a name="which-ocp-rights-do-we-have-cluster-admin-project-admin"></a>Какие права OCP у нас есть? Кластер — администратор? Проект — администратор?
 
-Для кластеров 4. x доступна роль администратора кластера. Дополнительные сведения см. в разделе [Общие сведения о RBAC](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).
+Для кластеров 4. x доступна роль администратора кластера. Дополнительные сведения см. в разделе [Общие сведения о KUBERNETES RBAC](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).
 
 Дополнительные сведения о кластерах 3,11 см. в разделе [Общие сведения об администрировании кластера](https://docs.openshift.com/aro/admin_guide/index.html) .
 
@@ -202,7 +202,7 @@ oc adm policy \
 
 Для кластеров 3,11 можно использовать интеграцию Azure AD. 
 
-## <a name="storage"></a>Память
+## <a name="storage"></a>Служба хранилища
 
 ### <a name="is-data-on-my-cluster-encrypted"></a>Зашифрованы ли данные в кластере?
 

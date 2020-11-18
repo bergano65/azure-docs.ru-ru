@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.openlocfilehash: d9f25fc419a92d125dffe5c14b9b4c19cd795c6e
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 30b09d43cbe510318ac4f48e0655d5483491c215
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318445"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682780"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Настройка ключей, управляемых клиентом, для шифрования неактивных данных в средах службы интеграции (Исес) в Azure Logic Apps
 
@@ -33,13 +33,13 @@ Azure Logic Apps использует хранилище Azure для хране
 
 * В течение *30 минут* после отправки запроса HTTPS-размещения, который создает интегрированную среду сценариев, необходимо [предоставить Key Vault доступ к удостоверению, назначенному системой ISE](#identity-access-to-key-vault). В противном случае создание интегрированной среды сценариев завершается сбоем и вызывает ошибку разрешений.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Те же [условия](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) и [требования, необходимые для обеспечения доступа к интегрированной среде сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) , как при создании интегрированной среды сценариев в портал Azure
 
 * Хранилище ключей Azure, в котором включены **обратимое удаление** и **не** удаляются свойства.
 
-  Дополнительные сведения о включении этих свойств см. в разделах [обзор Azure Key Vault обратимого удаления](../key-vault/general/soft-delete-overview.md) и [Настройка ключей, управляемых клиентом, с помощью Azure Key Vault](../storage/common/customer-managed-keys-configure-key-vault.md). Если вы не знакомы с Azure Key Vault, Узнайте, [как создать хранилище ключей](../key-vault/secrets/quick-create-portal.md#create-a-vault) с помощью портал Azure или с помощью команды Azure PowerShell [New-азкэйваулт](/powershell/module/az.keyvault/new-azkeyvault).
+  Дополнительные сведения о включении этих свойств см. в разделах [обзор Azure Key Vault обратимого удаления](../key-vault/general/soft-delete-overview.md) и [Настройка ключей, управляемых клиентом, с помощью Azure Key Vault](../storage/common/customer-managed-keys-configure-key-vault.md). Если вы не знакомы с [Azure Key Vault](../key-vault/general/overview.md), Узнайте, как создать хранилище ключей с помощью [портал Azure](../key-vault/general/quick-create-portal.md), [Azure CLI](../key-vault/general/quick-create-cli.md)или [Azure PowerShell](../key-vault/general/quick-create-powershell.md).
 
 * В хранилище ключей — ключ, который создается со следующими значениями свойств:
 
@@ -84,7 +84,7 @@ Azure Logic Apps использует хранилище Azure для хране
 
 * `Authorization`: Задайте для этого свойства токен носителя для клиента, который имеет доступ к подписке Azure или группе ресурсов, которые вы хотите использовать.
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 В тексте запроса включите поддержку этих дополнительных элементов, предоставив сведения в определении интегрированной среды сценариев:
 
@@ -219,7 +219,7 @@ Azure Logic Apps использует хранилище Azure для хране
 
       ![Выберите "Управление ключами" > "разрешения ключа".](./media/customer-managed-keys-integration-service-environment/select-key-permissions.png)
 
-   1. В **параметре выбрать субъект**выберите **нет выбрано**. После открытия области **участника** в поле поиска найдите и выберите интегрированную среду сценариев. Когда все будет готово, нажмите **кнопку Выбрать**  >  **добавить**.
+   1. В **параметре выбрать субъект** выберите **нет выбрано**. После открытия области **участника** в поле поиска найдите и выберите интегрированную среду сценариев. Когда все будет готово, нажмите **кнопку Выбрать**  >  **добавить**.
 
       ![Выберите интегрированную среду сценариев для использования в качестве участника](./media/customer-managed-keys-integration-service-environment/select-service-principal-ise.png)
 

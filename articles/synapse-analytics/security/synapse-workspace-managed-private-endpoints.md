@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 10/16/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 60087dc23b804dac6644dc09cddc031526fb0f8f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 930c1f94446eb145a093bf7a8706485d40eec210
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313776"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93379673"
 ---
 # <a name="synapse-managed-private-endpoints-preview"></a>Управляемые частные конечные точки в Azure Synapse.
 
@@ -49,7 +49,7 @@ Azure Synapse поддерживает приватные каналы. Прив
 
 При создании рабочей области Azure Synapse создает в ней две управляемые частные конечные точки — по одной для выделенного и бессерверного пулов SQL. 
 
-Эти конечные точки указываются в Azure Synapse Studio. Выберите в левой области навигации раздел **Управление** , а затем выберите **Managed Virtual Networks** (Управляемые виртуальные сети), чтобы увидеть эти сети в Synapse Studio.
+Эти управляемые конечные точки указываются в Synapse Studio. Выберите в левой области навигации раздел **Управление**, а затем выберите **Managed private endpoints** (Управляемые частные конечные точки), чтобы увидеть эти конечные точки в Studio.
 
 Управляемая частная конечная точка, предназначенная для выделенного пула SQL, называется *synapse-ws-sql--\<workspacename\>* , а для бессерверного пула SQL — *synapse-ws-sqlOnDemand--\<workspacename\>* .
 

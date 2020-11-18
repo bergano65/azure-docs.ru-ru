@@ -1,5 +1,5 @@
 ---
-title: Учебник. Приступая к анализу с помощью Spark
+title: Краткое руководство. Начало анализа с помощью Spark
 description: Из этого учебника вы узнаете, как анализировать данные с помощью Apache Spark.
 services: synapse-analytics
 author: saveenr
@@ -10,16 +10,16 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: ec6af7c23f781d25114794066a228adbfe7528d0
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 89bc2723a0d7c99160c651fb433db6f8892ee676
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093622"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321076"
 ---
 # <a name="analyze-with-apache-spark"></a>Анализ с помощью Apache Spark
 
-## <a name="analyze-nyc-taxi-data-in-blob-storage--using-spark"></a>Анализ данных такси Нью-Йорка в Хранилище BLOB-объектов с помощью Spark
+## <a name="analyze-nyc-taxi-data-in-blob-storage-using-spark"></a>Анализ данных такси Нью-Йорка в Хранилище BLOB-объектов с помощью Spark
 
 В этом учебнике описываются основные шаги по загрузке и анализу данных с помощью Apache Spark для Azure Synapse.
 
@@ -32,8 +32,8 @@ ms.locfileid: "92093622"
     data_df = data.to_spark_dataframe()
     display(data_df.limit(10))
     ```
-1. В записной книжке в меню **Присоединить к** выберите пул Spark.
-1. В ячейке щелкните **Выполнить**.
+1. В записной книжке в меню **Присоединить к** выберите бессерверный пул Spark.
+1. В ячейке выберите элемент **Выполнить**.
 
 ## <a name="load-the-nyc-taxi-data-into-the-spark-nyctaxi-database"></a>Загрузка данных нью-йоркского такси в базу данных Spark "nyctaxi"
 
@@ -53,8 +53,8 @@ ms.locfileid: "92093622"
 
 1. Перейдите в центр **Данные**, щелкните правой кнопкой мыши **Базы данных** и потом выберите **Обновить**. Вы должны видеть такие базы данных:
 
-    - **SQLDB1** (пул SQL)
-    - **nyctaxi** (Spark)
+    - **SQLDB1** (выделенный пул SQL);
+    - **nyctaxi** (бессерверный пул Apache Spark).
 
 ## <a name="analyze-the-nyc-taxi-data-using-spark-and-notebooks"></a>Анализ данных нью-йоркского такси с помощью Spark и записных книжек
 
@@ -67,7 +67,7 @@ ms.locfileid: "92093622"
    display(df)
    ```
 
-1. Выполните приведенный ниже код, чтобы провести тот же анализ, который был сделан ранее с помощью пула SQL **SQLDB1**. Этот код сохраняет результаты анализа в таблицу с именем **nyctaxi.passengercountstats** и визуализирует результаты.
+1. Выполните приведенный ниже код, чтобы провести тот же анализ, который был сделан ранее с помощью выделенного пула SQL **SQLDB1**. Этот код сохраняет результаты анализа в таблицу с именем **nyctaxi.passengercountstats** и визуализирует результаты.
 
    ```py
    %%pyspark
@@ -105,11 +105,11 @@ matplotlib.pyplot.show()
 
 
 
-## <a name="load-data-from-a-spark-table-into-a-sql-pool-table"></a>Загрузка данных из таблицы Spark в таблицу пула SQL
+## <a name="load-data-from-a-spark-table-into-a-dedicated-sql-pool-table"></a>Загрузка данных из таблицы Spark в таблицу выделенного пула SQL
 
-Ранее мы скопировали данные из таблицы пула SQL **SQLDB1. dbo.Trip** в таблицу Spark **nyctaxi.trip**. Затем, используя Spark, данные были агрегированы в таблицу Spark **nyctaxi.passengercountstats**. Теперь скопируйте данные из **nyctaxi.passengercountstats** в таблицу пула SQL с именем **SQLDB1.dbo.PassengerCountStats**.
+Ранее мы скопировали данные из таблицы выделенного пула SQL **SQLDB1. dbo.Trip** в таблицу Spark **nyctaxi.trip**. Затем, используя Spark, данные были агрегированы в таблицу Spark **nyctaxi.passengercountstats**. Теперь скопируйте данные из **nyctaxi.passengercountstats** в таблицу выделенного пула SQL с именем **SQLDB1.dbo.PassengerCountStats**.
 
-Запустите следующую ячейку в записной книжке. Сводная таблица Spark копируется обратно в таблицу пула SQL.
+Запустите следующую ячейку в записной книжке. Сводная таблица Spark копируется обратно в таблицу выделенного пула SQL.
 
 ```scala
 %%spark
@@ -120,6 +120,6 @@ df.write.sqlanalytics("SQLDB1.dbo.PassengerCountStats", Constants.INTERNAL )
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Анализ данных с помощью SQL по запросу](get-started-analyze-sql-on-demand.md)
+> [Анализ данных с помощью бессерверного пула SQL](get-started-analyze-sql-on-demand.md)
 
 

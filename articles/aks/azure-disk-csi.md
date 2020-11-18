@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 260631e36d113b6ccd190f66ce61caa7ba1b187b
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 2dba9fbcbddbc7a66763636986f3d98f4f95332c
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900880"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683137"
 ---
 # <a name="use-the-azure-disk-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Использование драйверов интерфейса хранилища контейнера дисков Azure (CSI) в службе Kubernetes Azure (AKS) (Предварительная версия)
 Драйвер интерфейса хранилища контейнеров дисков Azure (CSI) — это драйвер, совместимый с [спецификациями CSI](https://github.com/container-storage-interface/spec/blob/master/spec.md), используемый службой Kubernetes Azure (AKS) для управления жизненным циклом дисков Azure.
@@ -275,7 +275,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 ## <a name="shared-disk"></a>Общий диск
 
-[Общие диски Azure](../virtual-machines/windows/disks-shared.md) — это функция управляемых дисков Azure, которая позволяет подключать диск Azure к узлам агента одновременно. Присоединение управляемого диска к нескольким узлам агентов позволяет, например, развернуть новые или перенести существующие кластерные приложения в Azure.
+[Общие диски Azure](../virtual-machines/disks-shared.md) — это функция управляемых дисков Azure, которая позволяет подключать диск Azure к узлам агента одновременно. Присоединение управляемого диска к нескольким узлам агентов позволяет, например, развернуть новые или перенести существующие кластерные приложения в Azure.
 
 > [!IMPORTANT] 
 > В настоящее время `volumeMode: Block` драйвер CSI диска Azure поддерживает только необработанные блочные устройства (). Приложения должны управлять координацией и контролем операций записи, чтения, блокировки, кэширования, подключений и ограждения на общем диске, доступ к которым предоставляется в виде необработанного блочного устройства.

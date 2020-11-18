@@ -8,22 +8,18 @@ ms.date: 09/30/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 1efd4baf80c9ba30b1d1ea35390386bc4e7659d3
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 661d4ba575eafa4e261a1c92c1112a259b95eac7
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747783"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683598"
 ---
 # <a name="enable-shared-disk"></a>Включить общий диск
 
 В этой статье описывается, как включить функцию "Общие диски" для управляемых дисков Azure. Общие диски Azure — это новая функция для управляемых дисков Azure, которая позволяет подключать управляемые диски одновременно к нескольким виртуальным машинам. Подключение управляемого диска к нескольким виртуальным машинам позволяет разворачивать новые или переносить существующие кластеризованные приложения в Azure. 
 
-Если вы ищете основные сведения об управляемых дисках с включенными общими дисками, см. следующие разделы:
-
-* Для Linux: [Общие диски Azure](linux/disks-shared.md)
-
-* Для Windows: [Общие диски Azure](windows/disks-shared.md)
+Если вы ищете основные сведения об управляемых дисках с включенными общими дисками, см. статью [Общие диски Azure](disks-shared.md).
 
 ## <a name="limitations"></a>Ограничения
 
@@ -46,7 +42,7 @@ ms.locfileid: "92747783"
 > [!IMPORTANT]
 > Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для см. в разделе [размеры дисков](#disk-sizes) `maxShares` .
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az disk create -g myResourceGroup -n mySharedDisk --size-gb 1024 -l westcentralus --sku Premium_LRS --max-shares 2
@@ -76,7 +72,7 @@ New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'mySharedDisk' -Disk $
 > Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для см. в разделе [размеры дисков](#disk-sizes) `maxShares` .
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ##### <a name="regional-disk-example"></a>Пример для регионального диска
 

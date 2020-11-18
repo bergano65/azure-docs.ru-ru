@@ -6,18 +6,18 @@ author: TomGeske
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: thomasge
-ms.openlocfilehash: ab25ec5406c75316aaa1ee8efd0192dc0207ad79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4aa63493bb14db69821ac04db1d2c5a846de7dbe
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88612424"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682474"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli-legacy"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI (прежних версий)
 
-Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы можете войти в кластер AKS с помощью маркера проверки подлинности Azure AD. Операторы кластера также могут настраивать Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов.
+Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы можете войти в кластер AKS с помощью маркера проверки подлинности Azure AD. Операторы кластера также могут настраивать Kubernetes управления доступом на основе ролей (Kubernetes RBAC) на основе удостоверения пользователя или членства в группе каталогов.
 
-В этой статье показано, как создать необходимые компоненты Azure AD, а затем развернуть кластер с поддержкой Azure AD и создать базовую роль RBAC в кластере AKS.
+В этой статье показано, как создать необходимые компоненты Azure AD, а затем развернуть кластер с поддержкой Azure AD и создать базовую роль Kubernetes в кластере AKS.
 
 Полный пример скрипта, используемый в этой статье, см. в разделе [Azure CLI Samples AKS Integration by Azure AD][complete-script].
 
@@ -26,7 +26,7 @@ ms.locfileid: "88612424"
 
 ## <a name="the-following-limitations-apply"></a>Действительны следующие ограничения.
 
-- Azure AD можно включить только в кластере с поддержкой RBAC.
+- Azure AD можно включить только в кластере с поддержкой Kubernetes RBAC.
 - Устаревшую интеграцию Azure AD можно включить только во время создания кластера.
 
 ## <a name="before-you-begin"></a>Перед началом
@@ -164,9 +164,9 @@ az aks create \
 az aks get-credentials --resource-group myResourceGroup --name $aksname --admin
 ```
 
-## <a name="create-rbac-binding"></a>Создание привязки RBAC
+## <a name="create-kubernetes-rbac-binding"></a>Создание привязки RBAC Kubernetes
 
-Прежде чем использовать учетную запись Azure Active Directory с кластером AKS, необходимо создать привязку роли или привязку роли кластера. *Роли* определяют разрешения для предоставления, а *привязки* применяют их к желаемым пользователям. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. в статье об [Использовании авторизации RBAC][rbac-authorization].
+Прежде чем использовать учетную запись Azure Active Directory с кластером AKS, необходимо создать привязку роли или привязку роли кластера. *Роли* определяют разрешения для предоставления, а *привязки* применяют их к желаемым пользователям. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. [в разделе Использование авторизации KUBERNETES RBAC][rbac-authorization].
 
 Получите имя участника-пользователя (UPN) для пользователя, вошедшего в систему, с помощью команды [AZ AD выполнившего вход — User демонстрация][az-ad-signed-in-user-show] . В следующем шаге эта учетная запись пользователя включена для интеграции с Azure AD.
 
@@ -175,7 +175,7 @@ az ad signed-in-user show --query userPrincipalName -o tsv
 ```
 
 > [!IMPORTANT]
-> Если пользователь, которому вы предоставляете привязку RBAC для, находится в том же клиенте Azure AD, назначьте разрешения на основе *userPrincipalName*. Если пользователь находится в другом клиенте Azure AD, вместо него следует запрашивать и использовать свойство *ObjectID* .
+> Если пользователь, которому вы предоставляете привязку Kubernetes RBAC для, находится в том же клиенте Azure AD, назначьте разрешения на основе *userPrincipalName*. Если пользователь находится в другом клиенте Azure AD, вместо него следует запрашивать и использовать свойство *ObjectID* .
 
 Создайте манифест YAML с именем `basic-azure-ad-binding.yaml` и вставьте следующее содержимое. В последней строке замените *userPrincipalName_or_objectId*  на выходные данные имени участника-пользователя или идентификатора объекта из предыдущей команды:
 
@@ -251,7 +251,7 @@ error: You must be logged in to the server (Unauthorized)
 
 Полный сценарий, содержащий команды, приведенные в этой статье, см. в разделе [сценарий интеграции Azure AD в репозитории примеров AKS][complete-script].
 
-Сведения об использовании пользователей и групп Azure AD для управления доступом к ресурсам кластера см. [в статье Управление доступом к ресурсам кластера с помощью управления доступом на основе ролей и удостоверений Azure AD в AKS][azure-ad-rbac].
+Сведения об использовании пользователей и групп Azure AD для управления доступом к ресурсам кластера см. в статье [Управление доступом к ресурсам кластера с помощью управления доступом на основе ролей Kubernetes и удостоверений Azure AD в AKS][azure-ad-rbac].
 
 Дополнительные сведения о защите кластеров Kubernetes см. в разделе [параметры доступа и удостоверений для AKS][rbac-authorization].
 
@@ -281,7 +281,7 @@ error: You must be logged in to the server (Unauthorized)
 [az-ad-signed-in-user-show]: /cli/azure/ad/signed-in-user#az-ad-signed-in-user-show
 [install-azure-cli]: /cli/azure/install-azure-cli
 [az-ad-sp-credential-reset]: /cli/azure/ad/sp/credential#az-ad-sp-credential-reset
-[rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-control-rbac
+[rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-control-kubernetes-rbac
 [operator-best-practices-identity]: operator-best-practices-identity.md
 [azure-ad-rbac]: azure-ad-rbac.md
 [managed-aad]: managed-aad.md

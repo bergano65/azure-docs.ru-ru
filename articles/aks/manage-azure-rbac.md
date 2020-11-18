@@ -1,5 +1,5 @@
 ---
-title: Управление RBAC в Kubernetes из Azure
+title: Управление Azure RBAC в Kubernetes из Azure
 titleSuffix: Azure Kubernetes Service
 description: Узнайте, как использовать Azure RBAC для авторизации Kubernetes в службе Kubernetes Azure (AKS).
 services: container-service
@@ -7,27 +7,27 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 3f878389f22f3928bc1fc8c89b04353583326da6
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: a2a385b2be4e1005a7aabd76261b3190ecd2a506
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346049"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684225"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
 Сейчас вы уже можете использовать [встроенную проверку подлинности между Azure Active Directory (Azure AD) и AKS](managed-aad.md). Если эта интеграция включена, клиенты могут использовать пользователей, группы или субъекты-службы Azure AD в качестве субъектов в Kubernetes RBAC. Дополнительные сведения см. [здесь](azure-ad-rbac.md).
-Эта функция освобождает вас от необходимости отдельно управлять удостоверениями пользователей и учетными данными для Kubernetes. Тем не менее, по-прежнему необходимо настроить и управлять Azure RBAC и Kubernetes RBAC отдельно. Дополнительные сведения о проверке подлинности, авторизации и RBAC в AKS см. [здесь](concepts-identity.md).
+Эта функция освобождает вас от необходимости отдельно управлять удостоверениями пользователей и учетными данными для Kubernetes. Тем не менее, по-прежнему необходимо настроить и управлять Azure RBAC и Kubernetes RBAC отдельно. Дополнительные сведения о проверке подлинности и авторизации с помощью RBAC в AKS см. [здесь](concepts-identity.md).
 
 В этом документе рассматривается новый подход, обеспечивающий унифицированный контроль и управление доступом к ресурсам Azure, AKS и Kubernetes.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-Возможность управления RBAC для ресурсов Kubernetes из Azure дает возможность управлять RBAC для ресурсов кластера с помощью Azure или собственных механизмов Kubernetes. Если этот параметр включен, субъекты Azure AD будут проверяться исключительно в Azure RBAC, а обычные пользователи Kubernetes и учетные записи служб будут проверены только с помощью Kubernetes RBAC. Дополнительные сведения о проверке подлинности, авторизации и RBAC в AKS см. [здесь](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview).
+Возможность управления RBAC для ресурсов Kubernetes из Azure дает возможность управлять RBAC для ресурсов кластера с помощью Azure или собственных механизмов Kubernetes. Если этот параметр включен, субъекты Azure AD будут проверяться исключительно в Azure RBAC, а обычные пользователи Kubernetes и учетные записи служб будут проверены только с помощью Kubernetes RBAC. Дополнительные сведения о проверке подлинности и авторизации с помощью RBAC в AKS см. [здесь](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview).
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-### <a name="prerequisites"></a>Обязательные условия 
+### <a name="prerequisites"></a>Предварительные требования 
 - Убедитесь, что у вас Azure CLI версии 2.9.0 или более поздней.
 - Убедитесь, что `EnableAzureRBACPreview` включен флаг компонента.
 - Убедитесь, что установлено `aks-preview` [расширение CLI][az-extension-add] v 0.4.55 или более поздней версии.
@@ -272,7 +272,7 @@ az group delete -n MyResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о проверке подлинности AKS, авторизации и RBAC см. [здесь](concepts-identity.md).
+- Дополнительные сведения о проверке подлинности AKS, авторизации, Kubernetes RBAC и Azure RBAC см. [здесь](concepts-identity.md).
 - Дополнительные сведения об Azure RBAC см. [здесь](../role-based-access-control/overview.md).
 - Узнайте больше о всех действиях, которые можно использовать для детального определения настраиваемых ролей Azure [для авторизации Kubernetes](../role-based-access-control/resource-provider-operations.md#microsoftcontainerservice).
 

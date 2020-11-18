@@ -5,13 +5,13 @@ author: djpmsft
 ms.author: daperlov
 ms.service: data-factory
 ms.topic: tutorial
-ms.date: 10/13/2020
-ms.openlocfilehash: 90b0791387e8b4966f8f2c56d3838f54457beef5
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.date: 11/02/2020
+ms.openlocfilehash: 2fbdaa2329ba2765da7c7ad4023ef164a56aa497
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044060"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93359380"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Видеоматериалы по потоку данных для сопоставления
 
@@ -86,6 +86,8 @@ ms.locfileid: "92044060"
 [Преобразование иерархических данных](https://youtu.be/oAEh21NFgWQ)
 
 [Ранжирование данных](https://youtu.be/6XvgkbMtws0)
+
+[Кэшированный поиск](https://www.youtube.com/watch?v=HqCn42FaRJs)
 
 ## <a name="source-and-sink"></a>Источник и приемник
 

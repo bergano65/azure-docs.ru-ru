@@ -5,12 +5,12 @@ ms.date: 3/5/2020
 ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: subject-armqs
-ms.openlocfilehash: 362ff5cd59982c1d848ed59af8381090344f5c5e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1e623405faa89ff41eccdaa57578bc8ac94cd78c
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88642271"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422830"
 ---
 # <a name="quickstart-create-and-deploy-azure-functions-resources-from-an-arm-template"></a>Краткое руководство. Создание и развертывание ресурсов Функций Azure с помощью шаблона ARM
 
@@ -38,7 +38,14 @@ ms.locfileid: "88642271"
 
 # <a name="visual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-[Создание локального проекта функций в Visual Studio Code](functions-create-first-function-vs-code.md#create-an-azure-functions-project)
+Создайте локальный проект функций на выбранном языке в Visual Studio Code:  
+
++ [C#](create-first-function-vs-code-csharp.md)
++ [Java](create-first-function-vs-code-java.md)
++ [JavaScript](create-first-function-vs-code-node.md)
++ [PowerShell](create-first-function-vs-code-powershell.md)
++ [Python](create-first-function-vs-code-python.md)
++ [TypeScript](create-first-function-vs-code-typescript.md)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
@@ -46,7 +53,14 @@ ms.locfileid: "88642271"
 
 # <a name="command-line"></a>[Командная строка](#tab/command-line)
 
-[Создание локального проекта функций из командной строки](functions-create-first-azure-function-azure-cli.md#create-a-local-function-project)
+Создайте локальный проект функций на выбранном языке из командной строки:
+
++ [C#](create-first-function-cli-csharp.md)
++ [Java](create-first-function-cli-java.md)
++ [JavaScript](create-first-function-cli-node.md)
++ [PowerShell](create-first-function-cli-powershell.md)
++ [Python](create-first-function-cli-python.md)
++ [TypeScript](create-first-function-cli-typescript.md)
 
 ---
 
@@ -117,7 +131,7 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 
 1. После завершения публикации скопируйте **URL-адрес сайта**.
 
-    :::image type="content" source="media/functions-create-first-function-arm/publish-summary-site-url.png" alt-text="Выбор существующего целевого объекта публикации":::
+    :::image type="content" source="media/functions-create-first-function-arm/publish-summary-site-url.png" alt-text="Копирование URL-адреса сайта из сводки публикации":::
 
 1. Добавьте путь `/api/<FUNCTION_NAME>?name=Functions`, где `<FUNCTION_NAME>` соответствует имени функции. URL-адрес для вызова функции, активируемой HTTP-запросом, указывается в следующем формате:
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/14/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 6f819d9b6ba4d74612da304aafea0118f9094bde
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7831eaaa478a3f28ff158d5c9599abaf8a107c15
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91451534"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684438"
 ---
 Общие диски Azure — это новая функция для управляемых дисков Azure, которая позволяет подключать управляемые диски одновременно к нескольким виртуальным машинам. Подключение управляемого диска к нескольким виртуальным машинам позволяет разворачивать новые или переносить существующие кластеризованные приложения в Azure.
 
@@ -54,9 +54,9 @@ ms.locfileid: "91451534"
 ### <a name="linux"></a>Linux
 
 Общие диски Azure поддерживаются в:
-- [SUSE SLE для SAP и SUSE SLE HA 15 с пакетом обновления 1 (SP1) и выше](https://documentation.suse.com/sle-ha/15-SP1/single-html/SLE-HA-guide/index.html)
+- [SUSE SLE для SAP и SUSE SLE HA 15 с пакетом обновления 1 (SP1) и выше](https://www.suse.com/c/azure-shared-disks-excercise-w-sles-for-sap-or-sle-ha/)
 - [Ubuntu 18,04 и более поздние версии](https://discourse.ubuntu.com/t/ubuntu-high-availability-corosync-pacemaker-shared-disk-environments/14874)
-- [Предварительная версия RHEL Developer в любой версии RHEL 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/index)
+- [Предварительная версия RHEL Developer в любой версии RHEL 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/deploying_red_hat_enterprise_linux_8_on_public_cloud_platforms/index?lb_target=production#azure-configuring-shared-block-storage_configuring-rhel-high-availability-on-azure)
 - [Oracle Enterprise Linux](https://docs.oracle.com/en/operating-systems/oracle-linux/8/availability/hacluster-1.html)
 
 Кластеры Linux могут использовать диспетчеры кластеров, например [Pacemaker](https://wiki.clusterlabs.org/wiki/Pacemaker). Pacemaker построен на основе [Corosync](http://corosync.github.io/corosync/) и обеспечивает связь с кластером для приложений, развернутых в средах с высокой доступностью. Некоторые распространенные кластерные файловые системы включают [ocfs2](https://oss.oracle.com/projects/ocfs2/) и [gfs2](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/global_file_system_2/ch-overview-gfs2). Для арбитратинг доступа к диску можно использовать модели кластеризации постоянного резервирования SCSI (SCSI PR) и/или STONITH Block Device (SBD). При использовании интерфейса SCSI можно управлять резервированием и регистрацией с помощью таких служебных программ, как [fence_scsi](http://manpages.ubuntu.com/manpages/eoan/man8/fence_scsi.8.html) и [sg_persist](https://linux.die.net/man/8/sg_persist).
@@ -131,19 +131,19 @@ ms.locfileid: "91451534"
 
 Ниже приведен пример кластера WSFC с двумя узлами, использующего кластеризованные общие тома. В такой конфигурации обе виртуальные машины имеют одновременный доступ на запись к диску, что приводит к `ReadWrite` разбиению регулирования между двумя виртуальными машинами и `ReadOnly` неиспользуемым регулированием.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-example.png" alt-text="Изображение таблицы, описывающее доступ &quot;только для чтения&quot; или &quot;чтение/запись&quot; для владельца резервирования, зарегистрированного и других.":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-example.png" alt-text="Пример CSV с двумя узлами (цен. категория Ультра)":::
 
 ##### <a name="two-node-cluster-without-cluster-share-volumes"></a>Кластер с двумя узлами без общих томов кластера
 
 Ниже приведен пример кластера WSFC с двумя узлами, не использующего кластеризованные общие тома. В такой конфигурации только одна виртуальная машина имеет доступ на запись к диску. В результате регулирование будет `ReadWrite` использоваться исключительно для основной виртуальной машины и `ReadOnly` регулирование используется только вторичной репликой.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-no-csv.png" alt-text="Изображение таблицы, описывающее доступ &quot;только для чтения&quot; или &quot;чтение/запись&quot; для владельца резервирования, зарегистрированного и других.":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-no-csv.png" alt-text="Пример CSV с двумя узлами без диска CSV в цен. категории Ультра":::
 
 ##### <a name="four-node-linux-cluster"></a>Кластер с четырьмя узлами Linux
 
 Ниже приведен пример кластера Linux с 4 узлами с одним модулем записи и тремя модулями чтения с горизонтальным масштабированием. В такой конфигурации только одна виртуальная машина имеет доступ на запись к диску. В результате регулирование будет `ReadWrite` использоваться исключительно для основной виртуальной машины, а `ReadOnly` регулирование будет разбито на вторичные виртуальные машины.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-four-node-example.png" alt-text="Изображение таблицы, описывающее доступ &quot;только для чтения&quot; или &quot;чтение/запись&quot; для владельца резервирования, зарегистрированного и других.":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-four-node-example.png" alt-text="Пример регулирования Ультра на четырех узлах":::
 
 #### <a name="ultra-pricing"></a>Ultra ценах
 

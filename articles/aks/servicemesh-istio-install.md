@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/02/2020
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 285fa34db3886cf405a3682438a27a17c75d81ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c42e9c31397e9313898d7029366bc8de169d368e
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666731"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683834"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
@@ -35,7 +35,7 @@ ms.locfileid: "91666731"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-В действиях, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.16` и выше, с включенным RBAC) и установили `kubectl` Подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
+В шагах, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.16` и выше, с включенным KUBERNETES RBAC) и установили `kubectl` Подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
 
 Убедитесь, что вы прочитали документацию по [производительности и масштабируемости Istio](https://istio.io/docs/concepts/performance-and-scalability/) , чтобы понять требования к дополнительным ресурсам для запуска Istio в кластере AKS. Требования к основному и оперативной памяти будут зависеть от конкретной рабочей нагрузки. Выберите подходящее количество узлов и размер виртуальной машины для настройки.
 
@@ -310,7 +310,7 @@ kubectl delete ns istio-system
 kubectl delete ns istio-operator
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об установке и параметрах конфигурации для Istio см. в следующих официальных руководствах по Istio:
 

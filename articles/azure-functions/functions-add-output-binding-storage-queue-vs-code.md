@@ -5,18 +5,18 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-js
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 4f4733a52d1d58cbec4413140a613a93c8074188
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b709981e199d63c32426381ba48665402de820ce
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91323436"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422711"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-visual-studio-code"></a>Подключение Функций Azure к службе хранилища Azure с помощью Visual Studio Code
 
 [!INCLUDE [functions-add-storage-binding-intro](../../includes/functions-add-storage-binding-intro.md)]
 
-В этой статье приведены сведения об использовании Visual Studio Code для подключения функции, которая была создана в рамках [предыдущей статьи](functions-create-first-function-vs-code.md), к службе хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает данные HTTP-запроса в сообщение очереди Хранилища очередей Azure. 
+В этой статье описано, как использовать Visual Studio Code для подключения службы хранилища Azure к функции, которая была создана при работе с предыдущим кратким руководством. Выходная привязка, которая была добавлена в эту функцию, записывает данные HTTP-запроса в сообщение очереди Хранилища очередей Azure. 
 
 Большинство привязок требуют сохраненную строку подключения, которая будет использоваться Функциями Azure для доступа к привязанным службам. Чтобы упростить процесс, вам следует использовать учетную запись хранения, созданную в приложении-функции. Подключение к этой учетной записи уже хранится в параметрах приложения под названием `AzureWebJobsStorage`.  
 
@@ -32,7 +32,24 @@ ms.locfileid: "91323436"
 * Установите [средства .NET Core CLI](/dotnet/core/tools/?tabs=netcore2x).
 ::: zone-end
 
-* Выполните инструкции, приведенные в статье [Создание функции в Azure с помощью Visual Studio Code](functions-create-first-function-vs-code.md). 
+::: zone pivot="programming-language-csharp"  
+* Выполните инструкции, приведенные в статье [Создание функции в Azure с помощью Visual Studio Code](create-first-function-vs-code-csharp.md). 
+::: zone-end  
+::: zone pivot="programming-language-javascript"  
+* Выполните инструкции, приведенные в статье [Создание функции в Azure с помощью Visual Studio Code](create-first-function-vs-code-node.md). 
+::: zone-end   
+::: zone pivot="programming-language-java"  
+* Выполните инструкции, приведенные в статье [Создание функции в Azure с помощью Visual Studio Code](create-first-function-vs-code-java.md). 
+::: zone-end   
+::: zone pivot="programming-language-typescript"  
+* Выполните инструкции, приведенные в статье [Создание функции в Azure с помощью Visual Studio Code](create-first-function-vs-code-typescript.md). 
+::: zone-end   
+::: zone pivot="programming-language-python"  
+* Выполните инструкции, приведенные в статье [Создание функции в Azure с помощью Visual Studio Code](create-first-function-vs-code-python.md). 
+::: zone-end   
+::: zone pivot="programming-language-powershell"  
+* Выполните инструкции, приведенные в статье [Создание функции в Azure с помощью Visual Studio Code](create-first-function-vs-code-powershell.md). 
+::: zone-end   
 
 В этой статье предполагается, что вы уже выполнили вход в подписку Azure из Visual Studio Code. Вы можете войти в систему, выполнив команду `Azure: Sign In` в палитре команд. 
 
@@ -205,33 +222,42 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage
 
 Вы создали ресурсы для завершения этих кратких руководств. Вам могут быть выставлены счета за эти ресурсы в зависимости от [состояния учетной записи](https://azure.microsoft.com/account/) и [цен на службы](https://azure.microsoft.com/pricing/). Если вам больше не нужны ресурсы, их можно удалить следующим образом:
 
-[!INCLUDE [functions-cleanup-resources-vs-code.md](../../includes/functions-cleanup-resources-vs-code.md)]
+[!INCLUDE [functions-cleanup-resources-vs-code-inner.md](../../includes/functions-cleanup-resources-vs-code-inner.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Вы обновили функцию, активируемую HTTP, которую теперь можно использовать для записи данных в очередь хранилища. Теперь вы можете посмотреть дополнительные сведения о разработке Функций с помощью Visual Studio Code.
 
 + [Разработка Функций Azure с помощью Visual Studio Code](functions-develop-vs-code.md)
+
++ [Azure Functions triggers and bindings](functions-triggers-bindings.md) (Основные понятия триггеров и привязок в Функциях Azure)
 ::: zone pivot="programming-language-csharp"  
 + [Примеры полных проектов Функций на C#](/samples/browse/?products=azure-functions&languages=csharp).
+
 + [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md)  
 ::: zone-end 
 ::: zone pivot="programming-language-javascript"  
 + [Примеры полных проектов Функций на JavaScript](/samples/browse/?products=azure-functions&languages=javascript).
+
 + [Руководство разработчика JavaScript для Функций Azure](functions-reference-node.md)  
+::: zone-end  
+::: zone pivot="programming-language-java"  
++ [Примеры полный проектов Функций на Java](/samples/browse/?products=azure-functions&languages=java).
+
++ [Руководство разработчика Java по Функциям Azure](functions-reference-java.md)  
 ::: zone-end  
 ::: zone pivot="programming-language-typescript"  
 + [Примеры полных проектов Функций на TypeScript](/samples/browse/?products=azure-functions&languages=typescript).
+
 + [Руководство разработчика TypeScript для Функций Azure](functions-reference-node.md#typescript).  
 ::: zone-end  
 ::: zone pivot="programming-language-python"  
 + [Примеры полных проектов Функций на Python](/samples/browse/?products=azure-functions&languages=python).
+
 + [Azure Functions Python Developer Guide](functions-reference-python.md) (Справочник по Функциям Azure для разработчика Python)  
 ::: zone-end  
 ::: zone pivot="programming-language-powershell"  
 + [Примеры полных проектов Функций в PowerShell](/samples/browse/?products=azure-functions&languages=azurepowershell).
+
 + [Руководство разработчика PowerShell для Функций Azure](functions-reference-powershell.md). 
 ::: zone-end
-+ [Azure Functions triggers and bindings](functions-triggers-bindings.md) (Основные понятия триггеров и привязок в Функциях Azure)
-+ [Страница цен на Функции Azure](https://azure.microsoft.com/pricing/details/functions/)
-+ Статья [Estimating Consumption plan costs](functions-consumption-costs.md) (Оценка затрат на план потребления).

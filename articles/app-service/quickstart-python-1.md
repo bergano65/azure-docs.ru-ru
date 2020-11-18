@@ -5,14 +5,15 @@ ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python
 zone_pivot_groups: python-frameworks-01
-ms.openlocfilehash: eef0a4f24ba65fea4bb33c68f7e7d15f592e808d
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+adobe-target: true
+ms.openlocfilehash: 8b88b8ef81dc8186c122a24896d85114ef8a163d
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92915475"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506470"
 ---
-# <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
+# <a name="quickstart-create-a-python-app-in-azure-app-service-for-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure для Linux
 
 В этом кратком руководстве описывается процесс развертывания веб-приложения Python для [службы приложений на платформе Linux](overview.md#app-service-on-linux), высокомасштабируемой службы веб-размещения Azure с самостоятельной установкой исправлений. Для развертывания примера с помощью платформ Flask или Django на компьютерах Mac, Linux или Windows используется [интерфейс командной строки Azure (CLI)](/cli/azure/install-azure-cli). Веб-приложение, которое вы настраиваете, использует бесплатный уровень Службы приложений, поэтому в процессе выполнения этого руководства затраты на ресурсы Azure не изменяются.
 
@@ -99,7 +100,7 @@ cd python-docs-hello-django
 
 ## <a name="deploy-the-sample"></a>Развертывание примера
 
-Разверните код в локальной папке ( *python-docs-hello-world* ) с помощью команды `az webapp up`.
+Разверните код в локальной папке (*python-docs-hello-world*) с помощью команды `az webapp up`.
 
 ```azurecli
 az webapp up --sku F1 --name <app-name>
@@ -107,10 +108,10 @@ az webapp up --sku F1 --name <app-name>
 
 - Если команда `az` не распознана, проверьте, установили ли вы Azure CLI согласно сведениям, указанным в разделе [Настройка начальной среды](#set-up-your-initial-environment).
 - Если команда `webapp` не распознается, убедитесь, что вы используете Azure CLI версии 2.0.80 или более поздней. Если нет, [установите последнюю версию](/cli/azure/install-azure-cli).
-- Замените `<app_name>` именем, уникальным для всех регионов Azure ( *допустимыми символами являются `a-z`, `0-9`и `-`* ). Рекомендуется использовать сочетание названия компании и идентификатора приложения.
+- Замените `<app_name>` именем, уникальным для всех регионов Azure (*допустимыми символами являются `a-z`, `0-9`и `-`* ). Рекомендуется использовать сочетание названия компании и идентификатора приложения.
 - Аргумент `--sku F1` создает веб-приложение в ценовой категории "Бесплатный". Этот аргумент можно опустить, чтобы использовать более быструю ценовую категорию "Премиум" с почасовой оплатой.
 - При необходимости вы можете использовать аргумент `--location <location-name>`, где `<location_name>` является доступным регионом Azure. Список допустимых регионов для учетной записи Azure можно получить, выполнив команду [`az account list-locations`](/cli/azure/appservice#az-appservice-list-locations).
-- Если отображается сообщение об ошибке Could not auto-detect the runtime stack of your app (Не удалось автоматически определить стек среды выполнения приложения), убедитесь, что вы выполняете команду в папке *python-docs-hello-world*  (Flask) или в папке *python-docs-hello-django*  (Django), где находится файл *requirements.txt*. (см. статью об [устранение неполадок с автоматическим обнаружением с помощью команды az webapp up](https://github.com/Azure/app-service-linux-docs/blob/master/AzWebAppUP/runtime_detection.md) на сайте GitHub).
+- Если отображается сообщение об ошибке Could not auto-detect the runtime stack of your app (Не удалось автоматически определить стек среды выполнения приложения), убедитесь, что вы выполняете команду в папке *python-docs-hello-world* (Flask) или в папке *python-docs-hello-django* (Django), где находится файл *requirements.txt*. (см. статью об [устранение неполадок с автоматическим обнаружением с помощью команды az webapp up](https://github.com/Azure/app-service-linux-docs/blob/master/AzWebAppUP/runtime_detection.md) на сайте GitHub).
 
 Выполнение этой команды может занять несколько минут. Во время выполнения она предоставляет сообщения о создании группы ресурсов, плане службы приложений и приложении размещения, настройке ведения журнала и последующем выполнении развертывания ZIP-файла. Затем оно выдает сообщение You can launch the app at http://&lt;app-name&gt;.azurewebsites.net (Вы можете запустить приложение по адресу http://<app-name>.azurewebsites.net). Это URL-адрес приложения в Azure.
 
@@ -149,13 +150,13 @@ az webapp up --sku F1 --name <app-name>
     flask run
     ```
     
-    По умолчанию сервер предполагает, что модулем записи приложения является *app.py* , как в примере. (Если вы используете другое имя модуля, задайте это имя для переменной среды `FLASK_APP`.)
+    По умолчанию сервер предполагает, что модулем записи приложения является *app.py*, как в примере. (Если вы используете другое имя модуля, задайте это имя для переменной среды `FLASK_APP`.)
 
 1. Откройте веб-браузер и перейдите к примеру приложения по адресу `http://localhost:5000/`. Приложение отображает сообщение **Hello World!** .
 
     ![Локальный запуск примера приложения Python](./media/quickstart-python/run-hello-world-sample-python-app-in-browser-localhost.png)
     
-1. В окне терминала нажмите клавиши **CTRL**+**C** , чтобы выйти из сервера разработки.
+1. В окне терминала нажмите клавиши **CTRL**+**C**, чтобы выйти из сервера разработки.
 ::: zone-end
 
 ::: zone pivot="python-framework-django"
@@ -193,7 +194,7 @@ az webapp up --sku F1 --name <app-name>
 
     ![Локальный запуск примера приложения Python](./media/quickstart-python/run-hello-world-sample-python-app-in-browser-localhost.png)
     
-1. В окне терминала нажмите клавиши **CTRL**+**C** , чтобы выйти из сервера разработки.
+1. В окне терминала нажмите клавиши **CTRL**+**C**, чтобы выйти из сервера разработки.
 ::: zone-end
 
 [Возникли проблемы? Сообщите нам!](https://aka.ms/FlaskCLIQuickstartHelp)
@@ -227,7 +228,7 @@ def hello(request):
 az webapp up
 ```
 
-Эта команда использует значения, которые кэшируются локально в файле *.azure/config* , включая имя приложения, группу ресурсов и план службы приложений.
+Эта команда использует значения, которые кэшируются локально в файле *.azure/config*, включая имя приложения, группу ресурсов и план службы приложений.
 
 После завершения развертывания вернитесь в окно браузера и откройте `http://<app-name>.azurewebsites.net`. Обновите страницу, на которой должно отобразиться измененное сообщение:
 
@@ -268,7 +269,7 @@ az webapp log tail
 
 ![Переход к приложению Python в Службе приложений на портале Azure](./media/quickstart-python/navigate-to-app-in-app-services-in-the-azure-portal.png)
 
-При выборе приложения открывается страница **Обзор** , где можно выполнять основные задачи управления, такие как обзор, завершение, запуск, перезапуск и удаление.
+При выборе приложения открывается страница **Обзор**, где можно выполнять основные задачи управления, такие как обзор, завершение, запуск, перезапуск и удаление.
 
 ![Управление приложением Python на странице "Обзор" на портале Azure](./media/quickstart-python/manage-an-app-in-app-services-in-the-azure-portal.png)
 

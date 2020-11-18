@@ -10,50 +10,55 @@ ms.custom:
 - devx-track-python
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 5/26/2020
-ms.openlocfilehash: 8d181483032deed35adfd6eebcbf870b89593407
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 10/28/2020
+ms.openlocfilehash: 12452367de0e8f936d30387df709d5d2779bfcb1
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93332072"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94427638"
 ---
 # <a name="quickstart-use-python-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью Python
 
 Из этого краткого руководства вы узнаете, как подключиться к Базе данных Azure для MySQL с использованием Python. Также вы узнаете, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных на платформах Windows, Mac и Ubuntu Linux. 
 
-В этой статье предполагается, что у вас уже есть опыт разработки на языке Python, но вы только начали работу со службой "База данных Azure для MySQL".
-
 ## <a name="prerequisites"></a>Предварительные требования
+Для целей этого краткого руководства понадобится:
 
-- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
-- Сервер Базы данных Azure для MySQL. Создайте сервер Базы данных Azure для MySQL с помощью [портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free) бесплатно.
+- Создание отдельного сервера Базы данных Azure для MySQL с помощью [портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md) <br/> или с помощью [Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md), если он еще не создан.
+- Выполнить **ОДНО** из действий (в зависимости от того, пользуетесь вы общим или частным доступом), чтобы настроить возможность подключения.
 
-> [!IMPORTANT] 
-> Убедитесь, что IP-адрес, с которого вы подключаетесь, добавлен в правила брандмауэра на сервере через [портал Azure](./howto-manage-firewall-using-portal.md) или [Azure CLI](./howto-manage-firewall-using-cli.md).
+   |Действие| Метод подключения|Практическое руководство|
+   |:--------- |:--------- |:--------- |
+   | **Настройка правил брандмауэра** | Общие | [Портал](./howto-manage-firewall-using-portal.md) <br/> [CLI](./howto-manage-firewall-using-cli.md)|
+   | **Настройка конечной точки службы** | Общие | [Портал](./howto-manage-vnet-using-portal.md) <br/> [CLI](./howto-manage-vnet-using-cli.md)| 
+   | **Настройка приватного канала** | Private | [Портал](./howto-configure-privatelink-portal.md) <br/> [CLI](./howto-configure-privatelink-cli.md) | 
+
+- [Создание базы данных и пользователя без прав администратора](./howto-create-users.md)
 
 ## <a name="install-python-and-the-mysql-connector"></a>Установка Python и соединителя MySQL
 
 Установите Python и соединитель MySQL для Python на компьютере с помощью приведенных ниже шагов. 
 
 > [!NOTE]
-> В этом кратком руководстве при подключении к MySQL используются простые SQL-запросы. Если вы применяете веб-платформу, используйте для нее рекомендуемый соединитель, например, [mysqlclient](https://pypi.org/project/mysqlclient/) для Django.
+> В этом кратком руководстве используется [руководство для разработчика соединителя MySQL или Python](https://dev.mysql.com/doc/connector-python/en/).
 
 1. Загрузите и установите [Python 3.7 или выше](https://www.python.org/downloads/) для вашей ОС. Не забудьте добавить Python в `PATH`, потому что это нужно для соединителя MySQL.
    
-1. Откройте командную строку или оболочку `bash` и проверьте версию Python, запустив `python -V` с помощью коммутатора V прописными буквами.
+2. Откройте командную строку или оболочку `bash` и проверьте версию Python, запустив `python -V` с помощью коммутатора V прописными буквами.
    
-1. Установщик пакетов `pip` включено в последние версии Python. Обновите `pip` до последней версии, запустив `pip install -U pip`. 
+3. Установщик пакетов `pip` включено в последние версии Python. Обновите `pip` до последней версии, запустив `pip install -U pip`. 
    
    Если `pip` не установлен, можно скачать и установить его с `get-pip.py`. Дополнительные сведения см. в разделе [Установка](https://pip.pypa.io/en/stable/installing/). 
    
-1. Используйте `pip` чтоб установить соединитель MySQL для Python и его зависимости.
+4. Используйте `pip` чтоб установить соединитель MySQL для Python и его зависимости.
    
    ```bash
    pip install mysql-connector-python
    ```
    
-   Соединитель Python для MySQL также можно установить из [mysql.com](https://dev.mysql.com/downloads/connector/python/). Дополнительные сведения о соединителе MySQL для Python см. в руководстве [MySQL Connector/Python Developer Guide](https://dev.mysql.com/doc/connector-python/en/) (Соединитель MySQL/Руководство разработчика Python). 
+[Возникли проблемы? Сообщите нам об этом](https://aka.ms/mysql-doc-feedback)
 
 ## <a name="get-connection-information"></a>Получение сведений о подключении
 
@@ -69,23 +74,17 @@ ms.locfileid: "93332072"
    
    :::image type="content" source="./media/connect-python/azure-database-for-mysql-server-overview-name-login.png" alt-text="Имя сервера Базы данных Azure для MySQL (2)":::
 
-## <a name="run-the-python-examples"></a>Выполнение примеров кода Python
+## <a name="step-1-create-a-table-and-insert-data"></a>Шаг 1. Создание таблицы и вставка данных
 
-Для каждого примера кода в этой статье сделайте следующее:
+Используйте следующий код для подключения к серверу и базе данных, создания таблицы и загрузки данных с помощью инструкции SQL **INSERT**. Код импортирует библиотеку mysql.connector и использует следующие методы:
+- [connect()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) используется для подключения Базы данных Azure для MySQL с помощью [аргументов](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html) из коллекции конфигураций; 
+- [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) выполняет запрос SQL к базе данных MySQL; 
+- [cursor.close()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-close.html) используется при завершении работы с курсором;
+- [mysqli_close](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlconnection-close.html) используется, чтобы закрыть подключение.
 
-1. Создайте файл в текстовом редакторе.
-1. Добавьте пример кода в файл. В коде замените заполнители `<mydemoserver>`, `<myadmin>`, `<mypassword>`, и заполнители `<mydatabase>` значениями для сервера MySQL и базы данных.
-1. Сохраните файл в папку проекта с расширением *.ру* , например *С:\pythonmysql\createtable.py* или */home/username/pythonmysql/createtable.py*.
-1. Чтобы запустить код, откройте командную строку или оболочку `bash` и измените каталог в папке проекта, например `cd pythonmysql`. Введите команду `python` за которой следует имя файла, например `python createtable.py`, и нажмите клавишу ВВОД. 
-   
-   > [!NOTE]
-   > В Windows, если файл *python.exe* не найден, может потребоваться добавить путь Python в переменную среды PATH или указать полный путь к *python.exe* , например `C:\python27\python.exe createtable.py`.
-
-## <a name="create-a-table-and-insert-data"></a>Создание таблицы и вставка данных
-
-Используйте следующий код для подключения к серверу и базе данных, создания таблицы и загрузки данных с помощью инструкции SQL **INSERT**. 
-
-Код импортирует библиотеку mysql.connector и использует функцию [connect ()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) для подключения к базе данных Azure для MySQL с помощью [аргументов](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html) в коллекции конфигураций. Код использует курсор при подключении, а метод [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) выполняет SQL-запрос к базе данных MySQL. 
+> [!IMPORTANT]
+> - Протокол SSL включен по умолчанию. Для подключения из локальной среды может потребоваться скачать [SSL-сертификат DigiCertGlobalRootG2](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
+> - В коде замените заполнители `<mydemoserver>`, `<myadmin>`, `<mypassword>` и `<mydatabase>` значениями для сервера MySQL и базы данных.
 
 ```python
 import mysql.connector
@@ -96,7 +95,9 @@ config = {
   'host':'<mydemoserver>.mysql.database.azure.com',
   'user':'<myadmin>@<mydemoserver>',
   'password':'<mypassword>',
-  'database':'<mydatabase>'
+  'database':'<mydatabase>',
+  'client_flags': [ClientFlag.SSL],
+  'ssl_cert': '/var/wwww/html/DigiCertGlobalRootG2.crt.pem'
 }
 
 # Construct connection string
@@ -136,40 +137,15 @@ else:
   print("Done.")
 ```
 
-## <a name="read-data"></a>Чтение данных
+[Возникли проблемы? Сообщите нам об этом](https://aka.ms/mysql-doc-feedback)
 
-Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. 
+## <a name="step-2-read-data"></a>Шаг 2. Чтение данных
 
-Код импортирует библиотеку mysql.connector и использует функцию [connect ()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) для подключения к базе данных Azure для MySQL с помощью [аргументов](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html) в коллекции конфигураций. Код использует курсор при подключении, а метод [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) выполняет SQL-запрос к базе данных MySQL. 
+Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. Код импортирует библиотеку mysql.connector и использует метод [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) для выполнения запроса SQL к базе данных MySQL. 
 
 Код считывает строки данных с помощью метода [fetchall()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-fetchall.html), сохраняет набор результатов в строке коллекции и использует итератор `for` для циклического перемещения по строкам.
 
 ```python
-import mysql.connector
-from mysql.connector import errorcode
-
-# Obtain connection string information from the portal
-config = {
-  'host':'<mydemoserver>.mysql.database.azure.com',
-  'user':'<myadmin>@<mydemoserver>',
-  'password':'<mypassword>',
-  'database':'<mydatabase>'
-}
-
-# Construct connection string
-try:
-   conn = mysql.connector.connect(**config)
-   print("Connection established")
-except mysql.connector.Error as err:
-  if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-    print("Something is wrong with the user name or password")
-  elif err.errno == errorcode.ER_BAD_DB_ERROR:
-    print("Database does not exist")
-  else:
-    print(err)
-else:
-  cursor = conn.cursor()
-
   # Read data
   cursor.execute("SELECT * FROM inventory;")
   rows = cursor.fetchall()
@@ -179,97 +155,27 @@ else:
   for row in rows:
     print("Data row = (%s, %s, %s)" %(str(row[0]), str(row[1]), str(row[2])))
 
-  # Cleanup
-  conn.commit()
-  cursor.close()
-  conn.close()
-  print("Done.")
 ```
 
-## <a name="update-data"></a>Обновление данных
+## <a name="step-3-update-data"></a>Шаг 3. Обновление данных
 
-Используйте указанный ниже код с инструкцией SQL **UPDATE** для подключения и обновления данных. 
-
-Код импортирует библиотеку mysql.connector и использует функцию [connect ()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) для подключения к базе данных Azure для MySQL с помощью [аргументов](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html) в коллекции конфигураций. Код использует курсор при подключении, а метод [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) выполняет SQL-запрос к базе данных MySQL. 
+Используйте указанный ниже код с инструкцией SQL **UPDATE** для подключения и обновления данных. Код импортирует библиотеку mysql.connector и использует метод [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) для выполнения запроса SQL к базе данных MySQL. 
 
 ```python
-import mysql.connector
-from mysql.connector import errorcode
-
-# Obtain connection string information from the portal
-config = {
-  'host':'<mydemoserver>.mysql.database.azure.com',
-  'user':'<myadmin>@<mydemoserver>',
-  'password':'<mypassword>',
-  'database':'<mydatabase>'
-}
-
-# Construct connection string
-try:
-   conn = mysql.connector.connect(**config)
-   print("Connection established")
-except mysql.connector.Error as err:
-  if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-    print("Something is wrong with the user name or password")
-  elif err.errno == errorcode.ER_BAD_DB_ERROR:
-    print("Database does not exist")
-  else:
-    print(err)
-else:
-  cursor = conn.cursor()
-
   # Update a data row in the table
   cursor.execute("UPDATE inventory SET quantity = %s WHERE name = %s;", (200, "banana"))
   print("Updated",cursor.rowcount,"row(s) of data.")
-
-  # Cleanup
-  conn.commit()
-  cursor.close()
-  conn.close()
-  print("Done.")
 ```
 
-## <a name="delete-data"></a>Удаление данных
+## <a name="step-4-delete-data"></a>Шаг 4. Удаление данных
 
-Используйте указанный ниже код с инструкцией SQL **DELETE** для подключения и удаления данных. 
-
-Код импортирует библиотеку mysql.connector и использует функцию [connect ()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) для подключения к базе данных Azure для MySQL с помощью [аргументов](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html) в коллекции конфигураций. Код использует курсор при подключении, а метод [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) выполняет SQL-запрос к базе данных MySQL. 
+Используйте указанный ниже код с инструкцией SQL **DELETE** для подключения и удаления данных. Код импортирует библиотеку mysql.connector и использует метод [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) для выполнения запроса SQL к базе данных MySQL. 
 
 ```python
-import mysql.connector
-from mysql.connector import errorcode
-
-# Obtain connection string information from the portal
-config = {
-  'host':'<mydemoserver>.mysql.database.azure.com',
-  'user':'<myadmin>@<mydemoserver>',
-  'password':'<mypassword>',
-  'database':'<mydatabase>'
-}
-
-# Construct connection string
-try:
-   conn = mysql.connector.connect(**config)
-   print("Connection established.")
-except mysql.connector.Error as err:
-  if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-    print("Something is wrong with the user name or password.")
-  elif err.errno == errorcode.ER_BAD_DB_ERROR:
-    print("Database does not exist.")
-  else:
-    print(err)
-else:
-  cursor = conn.cursor()
 
   # Delete a data row in the table
   cursor.execute("DELETE FROM inventory WHERE name=%(param1)s;", {'param1':"orange"})
   print("Deleted",cursor.rowcount,"row(s) of data.")
-
-  # Cleanup
-  conn.commit()
-  cursor.close()
-  conn.close()
-  print("Done.")
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -283,6 +189,10 @@ az group delete \
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+> [!div class="nextstepaction"]
+> [Управление сервером службы "База данных Azure для MySQL" через портал](./howto-create-manage-server-portal.md)<br/>
 
 > [!div class="nextstepaction"]
-> [Перенос базы данных с помощью экспорта и импорта](./concepts-migrate-import-export.md)
+> [Управление сервером службы "База данных Azure для MySQL" с помощью CLI](./how-to-manage-single-server-cli.md)
+
+[Не можете найти нужную информацию? Сообщите нам!](https://aka.ms/mysql-doc-feedback)

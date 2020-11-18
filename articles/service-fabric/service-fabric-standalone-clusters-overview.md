@@ -3,12 +3,12 @@ title: Общие сведения о автономных кластерах Se
 description: Кластеры Service Fabric выполняются в Windows Server и Linux, позволяя разворачивать и размещать приложения Service Fabric везде, где можно запустить Windows Server или Linux.
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.openlocfilehash: c57d1ef6db295400ad986adadb804fb942a723e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3162a3d02510ce8efab6c5bcac0f1fdd2b2539b
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91841073"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684004"
 ---
 # <a name="overview-of-service-fabric-standalone-clusters"></a>Общие сведения об изолированных кластерах Service Fabric
 
@@ -43,10 +43,10 @@ ms.locfileid: "91841073"
 
 Дополнительные сведения см. в разделе [Безопасность обмена данными между клиентами и узлами](service-fabric-cluster-security.md#client-to-node-security).
 
-### <a name="role-based-access-control-rbac"></a>Управление доступа на основе ролей
+### <a name="service-fabric-role-based-access-control"></a>Service Fabric управления доступом на основе ролей
 Service Fabric также поддерживает управление доступом, чтобы ограничить доступ к определенным операциям в кластере для разных групп пользователей. Это позволит обеспечить более надежную защиту кластера. Для клиентов, подключающихся к кластеру, поддерживаются два типа управления доступом: роль администратора и роль пользователя.  
 
-Дополнительные сведения см. в разделе [Управление доступом на основе ролей](service-fabric-cluster-security.md#role-based-access-control-rbac).
+Дополнительные сведения см. в статье [Service Fabric управление доступом на основе ролей](service-fabric-cluster-security.md#service-fabric-role-based-access-control).
 
 ## <a name="scaling"></a>Масштабирование
 
@@ -68,7 +68,7 @@ Service Fabric также поддерживает управление дост
 * Windows Server 2016 
 * Windows Server 2019
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со статьями [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md), [Масштабирование автономных кластеров Service Fabric](service-fabric-cluster-scaling-standalone.md) и [Обновление изолированного кластера Service Fabric](service-fabric-cluster-upgrade-standalone.md), касающихся изолированных кластеров.
 

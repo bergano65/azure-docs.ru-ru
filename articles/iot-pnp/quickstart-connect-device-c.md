@@ -1,18 +1,18 @@
 ---
-title: Подключение примера кода C устройства IoT Plug and Play к Центру Интернета вещей | Документация Майкрософт
-description: Создайте и запустите в Linux или Windows пример кода устройства IoT Plug and Play, который подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
+title: Краткое руководство. Подключение примера кода C устройства IoT Plug and Play к Центру Интернета вещей Azure | Документация Майкрософт
+description: Краткое руководство. Создание и запуск в Linux или Windows примера кода устройства IoT Plug and Play, который подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/14/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: e490171fd533783aab9fd44798a9c81c55faf89f
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: d69eca10a3ee19919d7cd9e748486e30db95e749
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047936"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421674"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-running-on-linux-or-windows-to-iot-hub-c"></a>Краткое руководство. Подключение примера приложения устройства IoT Plug and Play в Linux или Windows к Центру Интернета вещей (C)
 
