@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/27/2020
 ms.author: errobin
-ms.openlocfilehash: 2168ee05ab93655cc0ad87221bff29c1b6b1035d
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d57dfd0a496e71c1f0e6ddea839723da35bc5f76
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897608"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686248"
 ---
 # <a name="using-insights-to-monitor-and-configure-your-azure-load-balancer"></a>Использование аналитики для мониторинга и настройки Azure Load Balancer
 
-С помощью [Azure Monitor для сетей](https://docs.microsoft.com/azure/azure-monitor/insights/insights-overview#azure-monitor-for-networks-preview)вы предоставляете визуализации функциональной зависимости и предварительно настроенную панель мониторинга метрик для подсистем балансировки нагрузки. Эти визуальные элементы помогают принимать информированные решения по проектированию и быстро локализовать, диагностировать и устранять ошибки.
+С помощью Azure Monitor для сетей вы предоставляете визуализации функциональной зависимости и предварительно настроенную панель мониторинга метрик для подсистем балансировки нагрузки. Эти визуальные элементы помогают принимать информированные решения по проектированию и быстро локализовать, диагностировать и устранять ошибки.
 
 >[!NOTE] 
 >Обратите внимание, что эта функция доступна в режиме предварительной версии, и представление функциональной зависимости и предварительно настроенная панель мониторинга могут измениться для улучшения этого процесса.

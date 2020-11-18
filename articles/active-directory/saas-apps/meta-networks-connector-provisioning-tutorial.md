@@ -1,6 +1,6 @@
 ---
-title: Учебник. Настройка соединителя meta Networks для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в соединителе meta Networks.
+title: Руководство по Настройка автоматической подготовки пользователей в Meta Networks Connector с помощью Azure Active Directory | Документация Майкрософт
+description: Сведения о том, как настроить в Azure Active Directory автоматическую подготовку и отзыв учетных записей пользователей для Meta Networks Connector.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,19 +8,19 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/01/2019
 ms.author: Zhchia
-ms.openlocfilehash: 2fe0d8e6ad2056a244ec0d811f1b2dcb67e7bd84
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: ac41fb5ed6fd1e46719fcc39ccaf5b29375e7410
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516813"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359907"
 ---
-# <a name="tutorial-configure-meta-networks-connector-for-automatic-user-provisioning"></a>Учебник. Настройка соединителя meta Networks для автоматической подготовки пользователей
+# <a name="tutorial-configure-meta-networks-connector-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Meta Networks Connector
 
-Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить в соединителе мета-сетей и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и (или) групп в соединитель meta Networks.
+В этом руководстве описаны шаги, которые нужно выполнить в Meta Networks Connector и Azure Active Directory (Azure AD), чтобы настроить автоматическую подготовку, а также отзыв пользователей и групп в AAD для Meta Networks Connector.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
@@ -32,69 +32,69 @@ ms.locfileid: "92516813"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * клиент Azure AD;
-* [Клиент соединителя мета-сетей](https://www.metanetworks.com/)
-* Учетная запись пользователя в соединителе meta Networks с разрешениями администратора.
+* [клиент Meta Networks Connector](https://www.metanetworks.com/);
+* учетная запись пользователя Meta Networks Connector с разрешениями администратора.
 
-## <a name="assigning-users-to-meta-networks-connector"></a>Назначение пользователей соединителю meta Networks
+## <a name="assigning-users-to-meta-networks-connector"></a>Назначение пользователей для Meta Networks Connector
 
-В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки учетных записей пользователей синхронизируются только пользователи и группы, назначенные приложению в Azure AD.
+В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки синхронизируются только те пользователи и (или) группы, которые были назначены конкретному приложению в Azure AD.
 
-Перед настройкой и включением автоматической подготовки пользователей следует решить, каким пользователям и (или) группам в Azure AD требуется доступ к соединителю meta Networks. После этого можно назначить этих пользователей или группы соединителю meta Networks, выполнив приведенные здесь инструкции.
+Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи или группы в Azure AD должны иметь доступ к Meta Networks Connector. Когда этот вопрос будет решен, этих пользователей и (или) группы можно будет назначить приложению Meta Networks Connector по приведенным ниже инструкциям.
 * [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
-## <a name="important-tips-for-assigning-users-to-meta-networks-connector"></a>Важные советы по назначению пользователей в соединитель meta Networks
+## <a name="important-tips-for-assigning-users-to-meta-networks-connector"></a>Важные замечания о назначении пользователей для Meta Networks Connector
 
-* Рекомендуется назначить одного пользователя Azure AD соединителю meta Networks для проверки конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется назначить одного пользователя Azure AD для Meta Networks Connector, чтобы проверить конфигурацию автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя в соединитель meta Networks необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя для Meta Networks Connector в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (если это доступно). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
-## <a name="setup-meta-networks-connector-for-provisioning"></a>Настройка соединителя meta Networks для подготовки
+## <a name="setup-meta-networks-connector-for-provisioning"></a>Настройка подготовки в Meta Networks Connector
 
-1. Войдите в [консоль администрирования соединителя meta Networks](https://login.metanetworks.com/login/) , используя название вашей организации. Перейдите в **раздел администрирование > ключи API**.
+1. Войдите в [консоль администрирования Meta Networks Connector](https://login.metanetworks.com/login/), указав название организации. Откройте раздел **Administration (Администрирование) > API Keys (Ключи API)** .
 
-    ![Консоль администрирования соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/apikey.png)
+    ![Консоль администрирования Meta Networks Connector](media/meta-networks-connector-provisioning-tutorial/apikey.png)
 
-2.  Щелкните знак "плюс" в верхней правой части экрана, чтобы создать **ключ API**.
+2.  Щелкните значок "плюс" в верхней правой части экрана, чтобы создать новый **ключ API**.
 
-    ![Значок соединителя meta Networks Plus](media/meta-networks-connector-provisioning-tutorial/plusicon.png)
+    ![Meta Networks Connector — значок "плюс"](media/meta-networks-connector-provisioning-tutorial/plusicon.png)
 
-3.  Задайте **имя ключа API** и **Описание ключа API**.
+3.  Задайте значения **API Key Name** (Имя ключа API) и **API Key Description** (Описание ключа API).
 
-    :::image type="content" source="media/meta-networks-connector-provisioning-tutorial/keyname.png" alt-text="Снимок экрана консоли администрирования соединителя мета-сетей с выделенным именем ключа P I и значением описания ключа P I в Azure A D и ключом P I." border="false":::
+    :::image type="content" source="media/meta-networks-connector-provisioning-tutorial/keyname.png" alt-text="Снимок экрана для консоли администрирования Meta Networks Connector, где выделены значения API Key Name (Имя ключа API) и API Key Description (Описание ключа API) для AAD и ключа API." border="false":::
 
-4.  Включите привилегии **записи** для **групп** и **пользователей**.
+4.  Включите права **Write** (Запись) для элементов **Groups** (Группы) и **Users** (Пользователи).
 
-    ![Привилегии соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/privileges.png)
+    ![Meta Networks Connector — права](media/meta-networks-connector-provisioning-tutorial/privileges.png)
 
-5.  Щелкните **Добавить**. Скопируйте **секрет** и сохраните его, так как это будет единственный момент, когда вы сможете его просмотреть. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения соединителя meta Networks в портал Azure.
+5.  Щелкните **Добавить**. Скопируйте значение **SECRET** (Секрет) и сохраните его, так как больше вы не сможете открыть его для просмотра. Его нужно будет ввести в поле "Секретный токен" на вкладке "Подготовка" для приложения Meta Networks Connector на портале Azure.
 
-    :::image type="content" source="media/meta-networks-connector-provisioning-tutorial/token.png" alt-text="Снимок экрана консоли администрирования соединителя мета-сетей с выделенным именем ключа P I и значением описания ключа P I в Azure A D и ключом P I." border="false":::
+    :::image type="content" source="media/meta-networks-connector-provisioning-tutorial/token.png" alt-text="Снимок экрана: окно с сообщением о добавлении ключа API. Выделено поле Secret (Секрет), в котором содержится не поддающееся определению значение." border="false":::
 
-6.  Добавьте IdP, перейдя в **> администрирование параметры > IdP > создать новый**.
+6.  Добавьте поставщик удостоверений, открыв раздел **Administration (Администрирование) > Settings (Параметры) > IdP (Поставщик удостоверений) > Create New (Создать новый)** .
 
-    ![Соединитель meta Networks Add IdP](media/meta-networks-connector-provisioning-tutorial/newidp.png)
+    ![Meta Networks Connector — добавление поставщика удостоверений](media/meta-networks-connector-provisioning-tutorial/newidp.png)
 
-7.  На странице **Конфигурация IDP** можно задать **имя** конфигурации IDP и выбрать **значок**.
+7.  На странице **IdP Configuration** (Конфигурация поставщика удостоверений) вы можете присвоить этой конфигурации имя (**Name**) и выбрать значок (**Icon**).
 
-    ![Имя IdP соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/idpname.png)
+    ![Meta Networks Connector — имя поставщика удостоверений](media/meta-networks-connector-provisioning-tutorial/idpname.png)
 
-    ![Значок IdP соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/icon.png)
+    ![Meta Networks Connector — значок поставщика удостоверений](media/meta-networks-connector-provisioning-tutorial/icon.png)
 
-8.  В разделе **Настройка scim** выберите имя ключа API, созданное на предыдущих шагах. Щелкните **Save**(Сохранить).
+8.  В разделе **Configure SCIM** (Настройка SCIM) выберите имя ключа API, который вы создали на предыдущих шагах. Щелкните **Save**(Сохранить).
 
-    ![Соединитель meta Networks configure SCIM](media/meta-networks-connector-provisioning-tutorial/configure.png)
+    ![Meta Networks Connector — Configure SCIM (Настройка SCIM)](media/meta-networks-connector-provisioning-tutorial/configure.png)
 
-9.  Перейдите в раздел **администрирование > параметры > вкладку IDP**. Щелкните имя конфигурации IdP, созданной на предыдущих шагах, чтобы просмотреть **идентификатор IDP**. Этот **идентификатор** добавляется в конец **URL-адреса клиента** при вводе значения в поле **URL-адрес клиента** на вкладке Подготовка приложения соединителя meta Networks в портал Azure.
+9.  Откройте вкладку **Administration (Администрирование) > Settings (Параметры) > IdP (Поставщик удостоверений)** . Щелкните имя конфигурации поставщика удостоверений, которую вы создали на предыдущих шагах, чтобы отобразилось значение **IdP ID** (Идентификатор поставщика удостоверений). Этот **идентификатор** добавляется в конец значения **URL-адреса клиента** при заполнении поля **URL-адрес клиента** на вкладке "Подготовка" для приложения Meta Networks Connector на портале Azure.
 
-    ![Идентификатор IdP соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/idpid.png)
+    ![Meta Networks Connector — идентификатор поставщика удостоверений](media/meta-networks-connector-provisioning-tutorial/idpid.png)
 
-## <a name="add-meta-networks-connector-from-the-gallery"></a>Добавление соединителя meta Networks из коллекции
+## <a name="add-meta-networks-connector-from-the-gallery"></a>Добавление Meta Networks Connector из коллекции
 
-Перед настройкой соединителя meta Networks для автоматической подготовки пользователей с помощью Azure AD необходимо добавить соединитель meta Networks из коллекции приложений Azure AD в список управляемых приложений SaaS.
+Прежде чем настроить в Meta Networks Connector автоматическую подготовку пользователей в Azure AD, необходимо добавить Meta Networks Connector из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить соединитель meta Networks из коллекции приложений Azure AD, выполните следующие действия.**
+**Чтобы добавить Meta Networks Connector из коллекции приложений AAD, выполните следующие действия:**
 
-1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory**.
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева выберите элемент **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -102,22 +102,22 @@ ms.locfileid: "92516813"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **новое приложение** в верхней части области.
+3. Чтобы добавить новое приложение, в области сверху нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **соединитель meta Networks**, выберите **соединитель meta Networks** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **Meta Networks Connector** и выберите элемент **Meta Networks Connector** на панели результатов. Затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Meta Networks Connector в списке результатов](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-meta-networks-connector"></a>Настройка автоматической подготовки пользователей в соединителе meta Networks 
+## <a name="configuring-automatic-user-provisioning-to-meta-networks-connector"></a>Настройке автоматической подготовки пользователей в Meta Networks Connector 
 
-В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в соединителе meta-сетей на основе назначений пользователей и групп в Azure AD.
+В этом разделе объясняется, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Meta Networks Connector на основе их назначений в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для соединителя meta Networks, следуя инструкциям, приведенным в [руководстве по единому входу в соединители meta-сетей](./metanetworksconnector-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Кроме того, вы можете настроить для Meta Networks Connector единый вход на основе SAML, используя инструкции из [руководства по единому входу для Meta Networks Connector](./metanetworksconnector-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
 
-### <a name="to-configure-automatic-user-provisioning-for-meta-networks-connector-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для соединителя meta Networks в Azure AD, сделайте следующее:
+### <a name="to-configure-automatic-user-provisioning-for-meta-networks-connector-in-azure-ad"></a>Для настройки автоматической подготовки пользователей в AAD для Meta Networks Connector сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
 
@@ -129,13 +129,13 @@ ms.locfileid: "92516813"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите `https://api.metanetworks.com/v1/scim/<IdP ID>` **URL-адрес клиента**. Введите значение **маркера проверки подлинности scim** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к соединителю meta-сетей. Если подключение не выполняется, убедитесь, что у учетной записи соединителя meta Networks есть разрешения администратора, и повторите попытку.
+5. В разделе **Учетные данные администратора** введите значение `https://api.metanetworks.com/v1/scim/<IdP ID>` в поле **URL-адрес клиента**. Введите полученное ранее значение **токена проверки подлинности SCIM** в поле **Секретный токен**. Щелкните элемент **Проверить подключение** и убедитесь, что Azure AD может подключиться к Meta Networks Connector. Если установить подключение не удалось, убедитесь, что у учетной записи Meta Networks Connector есть разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -145,29 +145,29 @@ ms.locfileid: "92516813"
 
 7. Выберите команду **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с соединителем meta Networks**.
+8. В разделе **Сопоставления** выберите параметр **Синхронизировать пользователей Azure Active Directory с Meta Networks Connector**.
 
-    ![Сопоставления пользователей соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/usermappings.png)
+    ![Сопоставления пользователей Meta Networks Connector](media/meta-networks-connector-provisioning-tutorial/usermappings.png)
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в соединитель meta Networks, в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в соединителе meta Networks для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей, которые синхронизируются из Azure AD в Meta Networks Connector. Атрибуты, выбранные как свойства с меткой **Сопоставление**, используются для сопоставления учетных записей пользователей в Meta Networks Connector при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/userattributes.png)
+    ![Атрибуты пользователя Meta Networks Connector](media/meta-networks-connector-provisioning-tutorial/userattributes.png)
 
-10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с соединителем meta Networks**.
+10. В разделе **Сопоставления** выберите параметр **Синхронизировать группы Azure Active Directory с Meta Networks Connector**.
 
-    ![Сопоставления группы соединителей meta Networks](media/meta-networks-connector-provisioning-tutorial/groupmappings.png)
+    ![Сопоставления групп Meta Networks Connector](media/meta-networks-connector-provisioning-tutorial/groupmappings.png)
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в соединитель meta Networks, в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в соединителе meta Networks для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. В разделе **Сопоставления атрибутов** просмотрите атрибуты групп, которые синхронизируются из Azure AD в Meta Networks Connector. Атрибуты, выбранные как свойства с меткой **Сопоставление**, используются для сопоставления групп в Meta Networks Connector при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты группы соединителей meta Networks](media/meta-networks-connector-provisioning-tutorial/groupattributes.png)
+    ![Атрибуты групп Meta Networks Connector](media/meta-networks-connector-provisioning-tutorial/groupattributes.png)
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Чтобы включить службу подготовки Azure AD для соединителя meta Networks, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+13. Чтобы включить службу подготовки Azure AD для Meta Networks Connector, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-14. Определите пользователей и (или) группы, которые вы хотите подготавливать к соединителю мета-сетей, выбрав нужные значения в **области** в разделе **Параметры** .
+14. Укажите пользователей или группы для подготовки в Meta Networks Connector, выбрав нужные значения в поле **Область** раздела **Параметры**.
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
@@ -175,7 +175,7 @@ ms.locfileid: "92516813"
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые в соединителе службы подготовки Azure AD для соединителя meta Networks.
+После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Текущее состояние** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD с приложением Meta Networks Connector.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 

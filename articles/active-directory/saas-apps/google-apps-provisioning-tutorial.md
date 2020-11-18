@@ -8,37 +8,37 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: ebbcb8dd8c895c61858952fbd4498bd57e06d36b
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: 6643ec72ec5126866b0ad6e924a92f02170bd278
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92448662"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359669"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Руководство по настройке G Suite для автоматической подготовки пользователей
 
-В этом учебнике описываются действия, которые необходимо выполнить в G Suite и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически подготавливает и отменяет подготовку пользователей и групп к [G Suite](https://gsuite.google.com/) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md). 
+В этом руководстве описаны действия, которые нужно выполнить в G Suite и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически осуществляет и отменяет подготовку пользователей и групп для [G Suite](https://gsuite.google.com/) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 > [!NOTE]
-> Соединитель G Suite был недавно обновлен в 2019 октября. В соединитель G Suite внесены следующие изменения:
+> Соединитель G Suite был обновлен относительно недавно, в октябре 2019 года. В соединитель G Suite внесены следующие изменения:
 >
-> * Добавлена поддержка дополнительных атрибутов пользователей и групп G Suite.
-> * Обновлены имена целевых атрибутов G Suite в соответствии с определенным [здесь](https://developers.google.com/admin-sdk/directory).
-> * Обновлены сопоставления атрибутов по умолчанию.
+> * Добавлена поддержка дополнительных атрибутов пользователей и групп G Suite.
+> * Обновлены целевые имена атрибутов G Suite для соответствия приведенному [здесь](https://developers.google.com/admin-sdk/directory) определению.
+> * Обновлены стандартные сопоставления атрибутов.
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
 > [!div class="checklist"]
-> * Создание пользователей в G Suite
-> * Удалять пользователей из G Suite, когда им больше не нужен доступ
-> * Синхронизация атрибутов пользователей между Azure AD и G Suite
-> * Подготавливайте группы и членство в группах в G Suite
-> * [Единый вход](./google-apps-tutorial.md) в G Suite (рекомендуется)
+> * Создание пользователей в G Suite.
+> * Удаление пользователей в G Suite, которым больше не нужен доступ.
+> * Синхронизация атрибутов пользователей между Azure AD и G Suite.
+> * Подготовка групп и членства в группах в G Suite.
+> * [Единый вход](./google-apps-tutorial.md) в G Suite (рекомендуется).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -46,82 +46,82 @@ ms.locfileid: "92448662"
 
 * [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md) 
 * Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
-* [Клиент G Suite](https://gsuite.google.com/pricing.html)
-* Учетная запись пользователя в G Suite с разрешениями администратора.
+* [Клиент G Suite.](https://gsuite.google.com/pricing.html)
+* Учетная запись пользователя G Suite с разрешениями администратора.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
 1. Узнайте, [как работает служба подготовки](../app-provisioning/user-provisioning.md).
 2. Определите, кто будет находиться в [области подготовки](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Определите, какие данные следует [сопоставлять между Azure AD и G Suite](../app-provisioning/customize-application-attributes.md). 
+3. Определите, какие данные следует [сопоставлять между Azure AD и G Suite](../app-provisioning/customize-application-attributes.md). 
 
-## <a name="step-2-configure-g-suite-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка G Suite для поддержки подготовки с помощью Azure AD
+## <a name="step-2-configure-g-suite-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка G Suite для поддержки подготовки с помощью Azure AD
 
-Перед настройкой G Suite для автоматической подготовки пользователей с помощью Azure AD необходимо включить подготовку SCIM в G Suite.
+Прежде чем настраивать автоматическую подготовку пользователей в Azure AD для G Suite, нужно включить подготовку SCIM для G Suite.
 
-1. Войдите в [консоль администрирования G Suite](https://admin.google.com/) , используя учетную запись администратора, а затем выберите **Безопасность**. Если эта ссылка не отображается, она может быть скрыта в меню **More Controls** (Другие элементы управления) в нижней части экрана.
+1. Войдите в [консоль администрирования G Suite](https://admin.google.com/) с учетной записью администратора, а затем выберите **Security** (Безопасность). Если эта ссылка не отображается, она может быть скрыта в меню **More Controls** (Другие элементы управления) в нижней части экрана.
 
-    ![Безопасность G Suite](./media/google-apps-provisioning-tutorial/gapps-security.png)
+    ![G Suite: Security (Безопасность)](./media/google-apps-provisioning-tutorial/gapps-security.png)
 
 2. На странице **Security** (Безопасность) выберите **API Reference** (Справочник по API).
 
-    ![API G Suite](./media/google-apps-provisioning-tutorial/gapps-api.png)
+    ![G Suite: API](./media/google-apps-provisioning-tutorial/gapps-api.png)
 
 3. Выберите **Включить доступ через API**.
 
-    ![API G Suite включен](./media/google-apps-provisioning-tutorial/gapps-api-enabled.png)
+    ![G Suite: включен доступ через API](./media/google-apps-provisioning-tutorial/gapps-api-enabled.png)
 
     > [!IMPORTANT]
-   > Для каждого пользователя, который вы собираетесь подготавливать к G Suite, его имя пользователя в Azure AD **должно** быть привязано к личному домену. Например, такие имена пользователей, как bob@contoso.onmicrosoft.com, не будут приняты G Suite. а bob@contoso.com — будут. Вы можете изменить домен существующего пользователя, следуя приведенным [здесь](../fundamentals/add-custom-domain.md)инструкциям.
+   > Имя каждого пользователя в Azure AD, которого вы хотите подготовить для G Suite, **должно** быть связано с личным доменом. Например, такие имена пользователей, как bob@contoso.onmicrosoft.com, не будут приняты G Suite. а bob@contoso.com — будут. Чтобы изменить домен для существующего пользователя, воспользуйтесь [этой инструкцией](../fundamentals/add-custom-domain.md).
 
-4. После добавления и проверки требуемых пользовательских доменов в Azure AD их необходимо проверить снова с помощью G Suite. Чтобы проверить домены в G Suite, ознакомьтесь со следующими шагами:
+4. Завершив добавление и проверку личных доменов в Azure AD, их необходимо еще раз проверить, на этот раз в G Suite. Чтобы проверить домены в G Suite, выполните следующие действия:
 
-    a. В [консоли администрирования G Suite](https://admin.google.com/)выберите **домены**.
+    a. В [консоли администрирования G Suite](https://admin.google.com/) выберите **Domains** (Домены).
 
-    ![Домены G Suite](./media/google-apps-provisioning-tutorial/gapps-domains.png)
+    ![G Suite: домены](./media/google-apps-provisioning-tutorial/gapps-domains.png)
 
     b. Выберите **Add a domain or a domain alias** (Добавить домен или псевдоним домена).
 
-    ![Добавление домена G Suite](./media/google-apps-provisioning-tutorial/gapps-add-domain.png)
+    ![G Suite: добавление домена](./media/google-apps-provisioning-tutorial/gapps-add-domain.png)
 
     c. Выберите **Add another domain** (Добавить другой домен), а затем введите имя домена, который нужно добавить.
 
-    ![Добавить еще один пакет G Suite](./media/google-apps-provisioning-tutorial/gapps-add-another.png)
+    ![G Suite: добавление другого домена](./media/google-apps-provisioning-tutorial/gapps-add-another.png)
 
-    d. Выберите **Continue and verify domain ownership** (Перейти к проверке владельца домена). Затем выполните действия, подтверждающие, что вы владеете доменным именем. Подробные инструкции по проверке домена с помощью Google см. в статье [Проверка принадлежности сайта](https://support.google.com/webmasters/answer/35179).
+    d. Выберите **Continue and verify domain ownership** (Перейти к проверке владельца домена). Затем выполните действия, подтверждающие, что вы владеете доменным именем. Подробные инструкции по проверке домена в Google см. на странице [Как подтвердить право собственности на сайт](https://support.google.com/webmasters/answer/35179).
 
-    д. Повторите предыдущие шаги для всех дополнительных доменов, которые вы собираетесь добавить в G Suite.
+    д) Повторите описанные выше шаги для других доменов, которые нужно добавить в G Suite.
 
-5. Затем определите учетную запись администратора, которую вы хотите использовать для управления подготовкой пользователей в G Suite. Перейдите к **роли администратора**.
+5. Затем определите, какую учетную запись администратора вы хотите использовать для управления подготовкой пользователей в G Suite. Перейдите к разделу **Admin Roles** (Роли администратора).
 
-    ![Администратор G Suite](./media/google-apps-provisioning-tutorial/gapps-admin.png)
+    ![G Suite: администратор](./media/google-apps-provisioning-tutorial/gapps-admin.png)
 
-6. Для **роли администратора** этой учетной записи измените **права доступа** для этой роли. Убедитесь, что для учетной записи выбраны все параметры в разделе **Admin API Privileges** (Административные права доступа к API). Это позволит использовать ее для подготовки.
+6. Для **роли администратора** этой учетной записи измените свойство **Privileges** (Привилегии). Убедитесь, что для учетной записи выбраны все параметры в разделе **Admin API Privileges** (Административные права доступа к API). Это позволит использовать ее для подготовки.
 
-    ![Права администратора G Suite](./media/google-apps-provisioning-tutorial/gapps-admin-privileges.png)
+    ![G Suite: права администратора](./media/google-apps-provisioning-tutorial/gapps-admin-privileges.png)
 
-## <a name="step-3-add-g-suite-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление G Suite из коллекции приложений Azure AD
+## <a name="step-3-add-g-suite-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление G Suite из коллекции приложений Azure AD
 
-Добавьте G Suite из коллекции приложений Azure AD, чтобы начать управление подготовкой к работе с G Suite. Если вы ранее настроили G Suite для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](../manage-apps/add-application-portal.md). 
+Добавьте G Suite из коллекции приложений Azure AD, чтобы начать управление подготовкой в G Suite. Если вы уже настроили единый вход в G Suite, можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](../manage-apps/add-application-portal.md). 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
 Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* При назначении пользователей и групп в G Suite необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп для G Suite нужно выбрать роль, отличную от роли **Доступ по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить дополнительные роли. 
 
 * Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-g-suite"></a>Шаг 5. Настройка автоматической подготовки пользователей в G Suite 
+## <a name="step-5-configure-automatic-user-provisioning-to-g-suite"></a>Шаг 5. Настройка автоматической подготовки пользователей в G Suite 
 
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в TestApp на основе их назначений в Azure AD.
 
 > [!NOTE]
-> Дополнительные сведения о конечной точке API каталога G Suite см. в разделе [API каталога](https://developers.google.com/admin-sdk/directory).
+> Дополнительные сведения о конечной точке API каталога G Suite можно найти [здесь](https://developers.google.com/admin-sdk/directory).
 
-### <a name="to-configure-automatic-user-provisioning-for-g-suite-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для G Suite в Azure AD, сделайте следующее:
+### <a name="to-configure-automatic-user-provisioning-for-g-suite-in-azure-ad"></a>Для настройки автоматической подготовки пользователей в Azure AD для G Suite сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**. Пользователям потребуется войти в portal.azure.com и не сможет использовать aad.portal.azure.com
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**. Пользователям придется выполнять вход на сайте portal.azure.com, а сайт aad.portal.azure.com они не увидят.
 
     ![Колонка "Корпоративные приложения"](./media/google-apps-provisioning-tutorial/enterprise-applications.png)
 
@@ -133,23 +133,23 @@ ms.locfileid: "92448662"
 
 3. Выберите вкладку **Подготовка**. Нажмите кнопку **Начало работы**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
       ![Колонка "Начало работы"](./media/google-apps-provisioning-tutorial/get-started.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** щелкните **авторизовать**. Вы будете перенаправлены в диалоговое окно "Авторизация Google" в новом окне браузера.
+5. В разделе **Учетные данные администратора** щелкните **Авторизовать**. Вы перейдете к новому окну браузера, где откроется диалоговое окно авторизации Google.
 
-      ![Разрешающий G Suite](./media/google-apps-provisioning-tutorial/authorize-1.png)
+      ![G Suite: авторизация](./media/google-apps-provisioning-tutorial/authorize-1.png)
 
-6. Подтвердите, что вы хотите предоставить разрешения Azure AD на внесение изменений в клиент G Suite. Нажмите кнопку **Принять**.
+6. Подтвердите, что вы готовы предоставить Azure AD разрешение на внесение изменений в клиент G Suite. Выберите **Принять**.
 
-     ![Проверка подлинности клиента G Suite](./media/google-apps-provisioning-tutorial/gapps-auth.png)
+     ![G Suite: аутентификация клиента](./media/google-apps-provisioning-tutorial/gapps-auth.png)
 
-7. В портал Azure щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к G Suite. Если подключение не выполняется, убедитесь, что у учетной записи G Suite есть разрешения администратора, и повторите попытку. Затем повторите шаг **авторизации**.
+7. На портале Azure щелкните **Проверить подключение** и убедитесь, что Azure AD может подключиться к G Suite. Если установить подключение не удалось, убедитесь, что у учетной записи G Suite есть разрешения администратора, и повторите попытку. Затем повторите шаг **авторизации**.
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 
@@ -159,103 +159,103 @@ ms.locfileid: "92448662"
 
 8. В разделе **Сопоставления** выберите **Подготовка пользователей Azure Active Directory**.
 
-9. Изучите пользовательские атрибуты, которые синхронизированы из Azure AD, с G Suite в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в G Suite для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API G Suite поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей, которые синхронизируются из Azure AD в G Suite. Атрибуты, выбранные как свойства с меткой **Сопоставление**, используются для сопоставления учетных записей пользователей в G Suite при операциях обновления. Если вы решили изменить [целевой атрибут сопоставления](../app-provisioning/customize-application-attributes.md), потребуется убедиться, что API G Suite поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|
-   |примаремаил|Строка|
-   |соответствие. [Type EQ "Manager"]. Value|Строка|
+   |primaryEmail|Строка|
+   |relations.[type eq "manager"].value|Строка|
    |name.familyName|Строка|
    |name.givenName|Строка|
    |suspended (приостановлено)|Строка|
-   |Екстерналидс. [Type EQ "Custom"]. значение|Строка|
-   |Екстерналидс. [Type EQ "Организация"]. значение|Строка|
-   |Addresses. [Введите EQ "Рабочая"]. Country|Строка|
-   |Addresses. [Введите EQ "Рабочий"]. streetAddress|Строка|
-   |Addresses. [Type EQ "Рабочая"]. регион|Строка|
-   |Addresses. [Введите EQ "Рабочий"]. локальное значение|Строка|
-   |Addresses. [Type EQ "Рабочий"]. postalCode|Строка|
-   |сообщений электронной почты. [Введите EQ "Рабочий"]. адрес|Строка|
-   |включающ. [Введите EQ "Рабочая"]. Department|Строка|
-   |включающ. [Введите EQ "Рабочий"]. Title|Строка|
-   |Фоненумберс. [Type EQ "Рабочий"]. значение|Строка|
-   |Фоненумберс. [Введите EQ "мобильное"]. значение|Строка|
-   |Фоненумберс. [Type EQ "work_fax"]. Value|Строка|
-   |сообщений электронной почты. [Введите EQ "Рабочий"]. адрес|Строка|
-   |включающ. [Введите EQ "Рабочая"]. Department|Строка|
-   |включающ. [Введите EQ "Рабочий"]. Title|Строка|
-   |Фоненумберс. [Type EQ "Рабочий"]. значение|Строка|
-   |Фоненумберс. [Введите EQ "мобильное"]. значение|Строка|
-   |Фоненумберс. [Type EQ "work_fax"]. Value|Строка|
-   |Addresses. [Введите EQ "Домашняя страница"]. страна|Строка|
-   |Addresses. [Введите EQ "Home"]. форматированный|Строка|
-   |Addresses. [Введите EQ "Home"]. локальность|Строка|
-   |Addresses. [Type EQ "Home"]. postalCode|Строка|
-   |Addresses. [Type EQ "Home"]. регион|Строка|
-   |Addresses. [Введите EQ "Home"]. streetAddress|Строка|
-   |Addresses. [Введите EQ "другое"]. Country|Строка|
-   |Addresses. [Введите EQ "Other"]. форматированный|Строка|
-   |Addresses. [Введите EQ "Other"]. локальное значение|Строка|
-   |Addresses. [Введите EQ "Other"]. postalCode|Строка|
-   |Addresses. [Введите EQ "Other"]. регион|Строка|
-   |Addresses. [Введите EQ "Other"]. streetAddress|Строка|
-   |Addresses. [Введите EQ "Рабочий"]. форматированный|Строка|
-   |чанжепассвордатнекстлогин|Строка|
-   |сообщений электронной почты. [Введите EQ "Home"]. адрес|Строка|
-   |сообщений электронной почты. [Введите EQ "Other"]. адрес|Строка|
-   |Екстерналидс. [тип EQ "учетная запись"]. значение|Строка|
-   |Екстерналидс. [Type EQ "Custom"]. Кустомтипе|Строка|
-   |Екстерналидс. [Введите EQ "Customer"]. значение|Строка|
-   |Екстерналидс. [Type EQ "login_id"]. Value|Строка|
-   |Екстерналидс. [Type EQ "сеть"]. значение|Строка|
-   |Тип пола.|Строка|
-   |женератедиммутаблеид|Строка|
+   |externalIds.[type eq "custom"].value|Строка|
+   |externalIds.[type eq "organization"].value|Строка|
+   |addresses.[type eq "work"].country|Строка|
+   |addresses.[type eq "work"].streetAddress|Строка|
+   |addresses.[type eq "work"].region|Строка|
+   |addresses.[type eq "work"].locality|Строка|
+   |addresses.[type eq "work"].postalCode|Строка|
+   |emails.[type eq "work"].address|Строка|
+   |organizations.[type eq "work"].department|Строка|
+   |organizations.[type eq "work"].title|Строка|
+   |phoneNumbers.[type eq "work"].value|Строка|
+   |phoneNumbers.[type eq "mobile"].value|Строка|
+   |phoneNumbers.[type eq "work_fax"].value|Строка|
+   |emails.[type eq "work"].address|Строка|
+   |organizations.[type eq "work"].department|Строка|
+   |organizations.[type eq "work"].title|Строка|
+   |phoneNumbers.[type eq "work"].value|Строка|
+   |phoneNumbers.[type eq "mobile"].value|Строка|
+   |phoneNumbers.[type eq "work_fax"].value|Строка|
+   |addresses.[type eq "home"].country|Строка|
+   |addresses.[type eq "home"].formatted|Строка|
+   |addresses.[type eq "home"].locality|Строка|
+   |addresses[type eq "home"].postalCode|Строка|
+   |addresses[type eq "home"].region|Строка|
+   |addresses.[type eq "home"].streetAddress|Строка|
+   |addresses.[type eq "other"].country|Строка|
+   |addresses.[type eq "other"].formatted|Строка|
+   |addresses.[type eq "other"].locality|Строка|
+   |addresses.[type eq "other"].postalCode|Строка|
+   |addresses.[type eq "other"].region|Строка|
+   |addresses.[type eq "other"].streetAddress|Строка|
+   |addresses.[type eq "work"].formatted|Строка|
+   |changePasswordAtNextLogin|Строка|
+   |emails.[type eq "home"].address|Строка|
+   |emails.[type eq "other"].address|Строка|
+   |externalIds.[type eq "account"].value|Строка|
+   |externalIds.[type eq "custom"].customType|Строка|
+   |externalIds.[type eq "customer"].value|Строка|
+   |externalIds.[type eq "login_id"].value|Строка|
+   |externalIds.[type eq "network"].value|Строка|
+   |gender.type|Строка|
+   |GeneratedImmutableId|Строка|
    |Идентификатор|Строка|
-   |мгновен. [Введите EQ "Home"]. Протокол|Строка|
-   |мгновен. [Введите EQ "Other"]. Протокол|Строка|
-   |мгновен. [Введите EQ "Рабочий"]. Протокол|Строка|
-   |инклудеинглобаладдресслист|Строка|
-   |ипвхителистед|Строка|
-   |включающ. [Type EQ "школа"]. costCenter|Строка|
-   |включающ. [Type EQ "School"]. Department|Строка|
-   |включающ. [Type EQ "School"]. domain|Строка|
-   |включающ. [Type EQ "школа"]. Фуллтимикуивалент|Строка|
-   |включающ. [Type EQ "School"]. Location|Строка|
-   |включающ. [Type EQ "школа"]. имя|Строка|
-   |включающ. [Type EQ "School"]. Symbol|Строка|
-   |включающ. [Введите EQ "школа"]. Title|Строка|
-   |включающ. [Введите EQ "Рабочий"]. costCenter|Строка|
-   |включающ. [Введите EQ "Рабочий"]. домен|Строка|
-   |включающ. [Введите EQ "Рабочий"]. Фуллтимикуивалент|Строка|
-   |включающ. [Введите EQ "Рабочий"]. расположение|Строка|
-   |включающ. [Введите EQ "Рабочий"]. имя|Строка|
-   |включающ. [Введите EQ "Рабочий"]. Symbol|Строка|
-   |оргунитпас|Строка|
-   |Фоненумберс. [Type EQ "Home"]. значение|Строка|
-   |Фоненумберс. [Введите EQ "другое"]. значение|Строка|
-   |веб-сайтов. [Type EQ "Home"]. значение|Строка|
-   |веб-сайтов. [Введите EQ "другое"]. значение|Строка|
-   |веб-сайтов. [Type EQ "Рабочий"]. значение|Строка|
+   |ims.[type eq "home"].protocol|Строка|
+   |ims.[type eq "other"].protocol|Строка|
+   |ims.[type eq "work"].protocol|Строка|
+   |includeInGlobalAddressList|Строка|
+   |ipWhitelisted|Строка|
+   |organizations.[type eq "school"].costCenter|Строка|
+   |organizations.[type eq "school"].department|Строка|
+   |organizations.[type eq "school"].domain|Строка|
+   |organizations.[type eq "school"].fullTimeEquivalent|Строка|
+   |organizations.[type eq "school"].location|Строка|
+   |organizations.[type eq "school"].name|Строка|
+   |organizations.[type eq "school"].symbol|Строка|
+   |organizations.[type eq "school"].title|Строка|
+   |organizations.[type eq "work"].costCenter|Строка|
+   |organizations.[type eq "work"].domain|Строка|
+   |organizations.[type eq "work"].fullTimeEquivalent|Строка|
+   |organizations.[type eq "work"].location|Строка|
+   |organizations.[type eq "work"].name|Строка|
+   |organizations.[type eq "work"].symbol|Строка|
+   |OrgUnitPath|Строка|
+   |phoneNumbers.[type eq "home"].value|Строка|
+   |phoneNumbers.[type eq "other"].value|Строка|
+   |websites.[type eq "home"].value|Строка|
+   |websites.[type eq "other"].value|Строка|
+   |websites.[type eq "work"].value|Строка|
    
 
-10. В разделе **сопоставления** выберите **подготавливать Azure Active Directory группы**.
+10. В разделе **Сопоставления** выберите **Provision Azure Active Directory Groups** (Подготовка групп Azure Active Directory).
 
-11. Изучите атрибуты группы, синхронизированные из Azure AD, с G Suite в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в G Suite для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. В разделе **Сопоставления атрибутов** просмотрите атрибуты групп, которые синхронизируются из Azure AD в G Suite. Атрибуты, выбранные как свойства с меткой **Сопоставление**, используются для сопоставления групп в G Suite при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
       |attribute|Тип|
       |---|---|
       |email|Строка|
-      |Участники|Строка|
+      |Элементы|Строка|
       |name|Строка|
-      |description|Строка|
+      |description;|Строка|
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Чтобы включить службу подготовки Azure AD для G Suite, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+13. Чтобы включить службу подготовки Azure AD для G Suite, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-14. Определите пользователей и (или) группы, которые вы хотите подготавливать к G Suite, выбрав нужные значения в **области** в разделе **Параметры** .
+14. Укажите пользователей и (или) группы для подготовки в G Suite, выбрав нужные значения в поле **Область** раздела **Параметры**.
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
@@ -266,7 +266,7 @@ ms.locfileid: "92448662"
 После этого начнется цикл начальной синхронизации всех пользователей и групп, определенных в поле **Область** в разделе **Параметры**. Начальный цикл занимает больше времени, чем последующие циклы. Пока служба подготовки Azure AD запущена, они выполняются примерно каждые 40 минут.
 
 > [!NOTE]
-> Если у пользователей уже есть Персональная учетная запись или пользователь, использующий адрес электронной почты пользователя Azure AD, это может привести к возникновению проблемы, которую можно разрешить с помощью средства Google, прежде чем выполнять синхронизацию каталога.
+> Если у пользователей уже есть личные или потребительские учетные записи для адреса электронной почты, который указан в Azure AD, могут возникнуть некоторые проблемы, для устранения которых следует применить средство переноса Google перед выполнением синхронизации каталогов.
 
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.

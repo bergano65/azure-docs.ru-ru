@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: abc0a9f6fa6baefc7cc4b29c84ff179f0851dc30
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ec59b7cc124a87b3939d095d03ee4a8bae9070f
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90028922"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685772"
 ---
 # <a name="assign-variables-with-synapse-sql"></a>Назначение переменных с помощью синапсе SQL
 
@@ -37,7 +37,7 @@ DECLARE @v  INT = (SELECT TOP 1 c_customer_sk FROM Customer where c_last_name = 
 ;
 ```
 
-Нельзя инициализировать и использовать переменную в одной и той же инструкции DECLARE. Следующий пример не допускается, так как * \@ P1* инициализирован и используется в одной и той же инструкции DECLARE. Следующий пример приводит к возникновению ошибки.
+Нельзя инициализировать и использовать переменную в одной и той же инструкции DECLARE. Следующий пример не допускается, так как *\@ P1* инициализирован и используется в одной и той же инструкции DECLARE. Следующий пример приводит к возникновению ошибки.
 
 ```sql
 DECLARE @p1 int = 0
@@ -64,6 +64,6 @@ SET     @v +=1;
 
 Нельзя использовать UPDATE для назначения переменных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные советы по разработке см. в статье [Общие сведения о разработке СИНАПСЕ SQL](develop-overview.md) .

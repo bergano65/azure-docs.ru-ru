@@ -11,12 +11,12 @@ ms.date: 09/23/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: 3a7d750caed297dfa364e2f1ef176ee19ad35480
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: eed1a3d403a6012e2010a6b9a47a60f815044565
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654212"
+ms.locfileid: "94685908"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Высокопроизводительный обслуживание с помощью сервера вывода Тритон (Предварительная версия) 
 
@@ -50,6 +50,17 @@ ms.locfileid: "94654212"
 * Для запросов вывода используется __URI оценки__. Например, `https://myserevice.azureml.net/score`.
 
 :::image type="content" source="./media/how-to-deploy-with-triton/normal-deploy.png" alt-text="Схема архитектуры развертывания &quot;Стандартный&quot;, Тритон":::
+
+### <a name="setting-the-number-of-workers"></a>Задание количества рабочих ролей
+
+Чтобы задать число рабочих ролей в развертывании, задайте переменную среды `WORKER_COUNT` . При наличии объекта [среды](https://docs.microsoft.compython/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true) с именем `env` можно выполнить следующие действия.
+
+```{py}
+env.environment_variables["WORKER_COUNT"] = "1"
+```
+
+Это укажет Azure ML, что будет вычислено указанное количество рабочих ролей.
+
 
 **Развертывание конфигурации определения с помощью Тритон**
 
@@ -169,7 +180,7 @@ model = Model.register(
     workspace=ws
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az ml model register --model-path='triton' \
@@ -272,7 +283,7 @@ print(local_service.state)
 print(local_service.scoring_uri)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 > [!TIP]
 > Дополнительные сведения о создании конфигурации вывода см. в разделе [Схема конфигурации вывода](./reference-azure-machine-learning-cli.md#inference-configuration-schema).

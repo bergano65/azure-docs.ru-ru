@@ -9,14 +9,14 @@ editor: ''
 ms.service: api-management
 ms.workload: integration
 ms.topic: article
-ms.date: 06/12/2020
+ms.date: 11/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 8a7fa295bdc8881c0c1ba58c95872a9380231b81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db1a8238cf9ddae57d73438d43daa54294ce6860
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85558032"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686231"
 ---
 # <a name="use-managed-identities-in-azure-api-management"></a>Использование управляемых удостоверений в службе управления API Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "85558032"
 
 1. Создайте экземпляр управления API на портале как обычно. Перейдите к нему на портале.
 2. Выберите **управляемые удостоверения**.
-3. На вкладке **назначенная система** переключите **состояние** **на вкл**. Щелкните **Сохранить**.
+3. На вкладке **назначенная система** переключите **состояние** **на вкл**. Нажмите кнопку **Сохранить**.
 
     :::image type="content" source="./media/api-management-msi/enable-system-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного системой" border="true":::
 
@@ -123,9 +123,9 @@ ms.locfileid: "85558032"
 > [!NOTE]
 > Экземпляр управления API может одновременно иметь как назначенные системой, так и назначенные пользователем удостоверения. В этом случае свойство будет `type` иметь значение `SystemAssigned,UserAssigned` .
 
-### <a name="supported-scenarios"></a>Поддерживаемые сценарии
+## <a name="supported-scenarios-using-system-assigned-identity"></a>Поддерживаемые сценарии с использованием удостоверения, назначенного системой
 
-#### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault"></a>Получите настраиваемый сертификат TLS/SSL для экземпляра управления API из Azure Key Vault
+### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault"></a>Получите настраиваемый сертификат TLS/SSL для экземпляра управления API из Azure Key Vault
 Для получения настраиваемых сертификатов TLS/SSL, хранящихся в Azure Key Vault, можно использовать назначенное системой удостоверение экземпляра управления API. Затем эти сертификаты можно назначить пользовательским доменам в экземпляре управления API. Придерживайтесь следующих рекомендаций:
 
 - Тип содержимого секрета должен быть *Application/x-PKCS12*.
@@ -262,7 +262,7 @@ ms.locfileid: "85558032"
 }
 ```
 
-#### <a name="authenticate-to-the-back-end-by-using-an-api-management-identity"></a>Проверка подлинности в серверной части с помощью удостоверения управления API
+### <a name="authenticate-to-the-back-end-by-using-an-api-management-identity"></a>Проверка подлинности в серверной части с помощью удостоверения управления API
 
 Вы можете использовать назначенное системой удостоверение для проверки подлинности в серверной части с помощью политики [аутентификации, управляемой удостоверениями](api-management-authentication-policies.md#ManagedIdentity) .
 
@@ -279,9 +279,9 @@ ms.locfileid: "85558032"
 1. Создайте экземпляр управления API на портале как обычно. Перейдите к нему на портале.
 2. Выберите **управляемые удостоверения**.
 3. На вкладке **Назначенные пользователи** выберите **Добавить**.
-4. Найдите созданное ранее удостоверение и выберите его. Выберите **Добавить**.
+4. Найдите созданное ранее удостоверение и выберите его. Нажмите **Добавить**.
 
-   :::image type="content" source="./media/api-management-msi/enable-user-assigned-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного системой" border="true":::
+   :::image type="content" source="./media/api-management-msi/enable-user-assigned-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного пользователем" border="true":::
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -387,9 +387,32 @@ ms.locfileid: "85558032"
 > [!NOTE]
 > Экземпляр управления API может одновременно иметь как назначенные системой, так и назначенные пользователем удостоверения. В этом случае свойство будет `type` иметь значение `SystemAssigned,UserAssigned` .
 
-### <a name="supported-scenarios"></a>Поддерживаемые сценарии
+## <a name="supported-scenarios-using-user-assigned-managed-identity"></a>Поддерживаемые сценарии с использованием управляемого удостоверения, назначенного пользователем
 
-#### <a name="authenticate-to-the-back-end-by-using-a-user-assigned-identity"></a>Проверка подлинности в серверной части с помощью назначенного пользователем удостоверения
+### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault-ua"></a>Получите настраиваемый сертификат TLS/SSL для экземпляра управления API из Azure Key Vault
+Для установления отношений доверия между экземпляром управления API и KeyVault можно использовать любое назначенное пользователем удостоверение. Это отношение доверия можно использовать для получения настраиваемых сертификатов TLS/SSL, хранящихся в Azure Key Vault. Затем эти сертификаты можно назначить пользовательским доменам в экземпляре управления API. 
+
+Придерживайтесь следующих рекомендаций:
+
+- Тип содержимого секрета должен быть *Application/x-PKCS12*.
+- Используйте секретную конечную точку сертификата Key Vault, которая содержит секрет.
+
+> [!Important]
+> Если вы не предложит версию объекта сертификата, управление API автоматически получит более новую версию сертификата в течение четырех часов после обновления в Key Vault.
+
+Полный шаблон см. в разделе [Управление API с помощью SSL на основе KeyVault с использованием удостоверения, назначенного пользователем](https://github.com/Azure/azure-quickstart-templates/blob/master/101-api-management-key-vault-create/azuredeploy.json).
+
+В этом шаблоне будут развернуты перечисленные ниже компоненты.
+
+* Служба управления Azure API
+* Удостоверение, назначенное пользователем, управляемым Azure
+* Azure KeyVault для хранения сертификата SSL/TLS
+
+Чтобы выполнить развертывание автоматически, нажмите следующую кнопку.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-api-management-key-vault-create%2Fazuredeploy.json)
+
+### <a name="authenticate-to-the-back-end-by-using-a-user-assigned-identity"></a>Проверка подлинности в серверной части с помощью назначенного пользователем удостоверения
 
 Вы можете использовать назначенное пользователем удостоверение для проверки подлинности в серверной части с помощью политики [аутентификации, управляемой удостоверениями](api-management-authentication-policies.md#ManagedIdentity) .
 

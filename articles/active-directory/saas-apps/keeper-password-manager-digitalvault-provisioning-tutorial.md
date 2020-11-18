@@ -1,6 +1,6 @@
 ---
-title: Учебник. Настройка & цифрового хранилища для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в диспетчере паролей, & Digital Vault.
+title: Руководство по Настройка автоматической подготовки пользователей в Keeper Password Manager & Digital Vault с помощью Azure Active Directory | Документация Майкрософт
+description: Сведения о том, как настроить в Azure Active Directory автоматическую подготовку и отзыв учетных записей пользователей для Keeper Password Manager & Digital Vault.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,19 +8,19 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 05/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 26f12b18e2199fb45e6eb94f2a136d2af2b1576c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 2670dc0cb56805a2afa966bee1d2aa52b6c8e46a
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317605"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358989"
 ---
-# <a name="tutorial-configure-keeper-password-manager--digital-vault-for-automatic-user-provisioning"></a>Учебник. Настройка диспетчера паролей для автоматической подготовки пользователей & Digital Vault
+# <a name="tutorial-configure-keeper-password-manager--digital-vault-for-automatic-user-provisioning"></a>Руководство по Настройка автоматической подготовки пользователей в Keeper Password Manager & Digital Vault
 
-Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить в диспетчере паролей, & Digital Vault и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и/или групп в диспетчере паролей, & Digital Vault.
+В этом учебнике описаны шаги, которые нужно выполнить в Keeper Password Manager & Digital Vault и Azure Active Directory (Azure AD), чтобы настроить автоматическую подготовку и отзыв пользователей и групп в AAD для Keeper Password Manager & Digital Vault.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
@@ -32,16 +32,16 @@ ms.locfileid: "91317605"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * клиент Azure AD;
-* [Диспетчер паролей, & клиентом Digital Vault](https://keepersecurity.com/pricing.html?t=e)
-* Учетная запись пользователя в диспетчере паролей & Digital Vault с разрешениями администратора.
+* [клиент Keeper Password Manager & Digital Vault](https://keepersecurity.com/pricing.html?t=e);
+* учетная запись пользователя Keeper Password Manager & Digital Vault с разрешениями администратора.
 
-## <a name="add-keeper-password-manager--digital-vault-from-the-gallery"></a>Добавление управляющего пароля & Digital Vault из коллекции
+## <a name="add-keeper-password-manager--digital-vault-from-the-gallery"></a>Добавление Keeper Password Manager & Digital Vault из коллекции
 
-Перед настройкой & цифрового хранилища для автоматической подготовки пользователей с помощью Azure AD необходимо добавить диспетчер защищенных паролей & Digital Vault из коллекции приложений Azure AD в список управляемых приложений SaaS.
+Прежде чем настроить в Keeper Password Manager & Digital Vault автоматическую подготовку пользователей в Azure AD, нужно добавить Keeper Password Manager & Digital Vault из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить диспетчер паролей для & Digital Vault из коллекции приложений Azure AD, выполните следующие действия.**
+**Чтобы добавить Keeper Password Manager & Digital Vault из коллекции приложений Azure AD, выполните следующие действия:**
 
-1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory**.
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева выберите элемент **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -49,36 +49,36 @@ ms.locfileid: "91317605"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **новое приложение** в верхней части области.
+3. Чтобы добавить новое приложение, в области сверху нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите " **Диспетчер паролей & цифрового хранилища**", выберите **Диспетчер паролей & Digital Vault** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **Keeper Password Manager & Digital Vault**, выберите **Keeper Password Manager & Digital Vault** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Keeper Password Manager & Digital Vault в списке результатов](common/search-new-app.png)
 
-## <a name="assigning-users-to-keeper-password-manager--digital-vault"></a>Назначение пользователям диспетчера паролей для & цифрового хранилища
+## <a name="assigning-users-to-keeper-password-manager--digital-vault"></a>Назначение пользователей для Keeper Password Manager & Digital Vault
 
-В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки учетных записей пользователей синхронизируются только пользователи и группы, назначенные приложению в Azure AD.
+В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки синхронизируются только те пользователи и (или) группы, которые были назначены конкретному приложению в Azure AD.
 
-Перед настройкой и включением автоматической подготовки пользователей следует решить, какие пользователи и (или) группы в Azure AD нуждаются в доступе к диспетчеру паролей для & Digital Vault. После принятия решения эти пользователи и (или) группы можно будет назначить диспетчеру паролей для & Digital Vault, следуя приведенным ниже инструкциям.
+Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи и группы в Azure AD должны иметь доступ к Keeper Password Manager & Digital Vault. Когда этот вопрос будет решен, этих пользователей и (или) группы можно будет назначить приложению Keeper Password Manager & Digital Vault с помощью следующих действий:
 
 * [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
-### <a name="important-tips-for-assigning-users-to-keeper-password-manager--digital-vault"></a>Важные советы по назначению пользователей в Диспетчер паролей & Digital Vault
+### <a name="important-tips-for-assigning-users-to-keeper-password-manager--digital-vault"></a>Важные замечания о назначении пользователей для Keeper Password Manager & Digital Vault
 
-* Рекомендуется назначить одного пользователя Azure AD диспетчеру паролей & Digital Vault для проверки конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется назначить одного пользователя Azure AD для Keeper Password Manager & Digital Vault, чтобы проверить конфигурацию автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя диспетчеру паролей для & Digital Vault в диалоговом окне назначения необходимо выбрать допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя для Keeper Password Manager & Digital Vault в диалоговом окне назначения нужно выбрать действительную роль для конкретного приложения (если доступно). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
-## <a name="configuring-automatic-user-provisioning-to-keeper-password-manager--digital-vault"></a>Настройка автоматической подготовки пользователей в диспетчере паролей для синхронизации & цифрового хранилища 
+## <a name="configuring-automatic-user-provisioning-to-keeper-password-manager--digital-vault"></a>Настройка автоматической подготовки пользователей в Keeper Password Manager & Digital Vault 
 
-В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и/или групп в диспетчере паролей для & цифрового хранилища на основе назначений пользователей и групп в Azure AD.
+В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Keeper Password Manager & Digital Vault на основе их назначений в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для диспетчера паролей для & Digital Vault, следуя инструкциям в руководстве по использованию [диспетчера паролей & Digital Vault](keeperpasswordmanager-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
+> Вы также можете настроить для Keeper Password Manager & Digital Vault единый вход на основе SAML, выполнив инструкции из [руководства по единому входу для Keeper Password Manager & Digital Vault](keeperpasswordmanager-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
 
-### <a name="to-configure-automatic-user-provisioning-for-keeper-password-manager--digital-vault-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для диспетчера паролей & Digital Vault в Azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-keeper-password-manager--digital-vault-in-azure-ad"></a>Для настройки автоматической подготовки пользователей в Azure AD для Keeper Password Manager & Digital Vault выполните следующие действия:
 
 1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
 
@@ -90,31 +90,31 @@ ms.locfileid: "91317605"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** для диспетчера паролей службы & учетной записи Digital Vault, как описано в шаге 6.
+5. В разделе **Учетные данные администратора** введите **URL-адрес арендатора** и **секретный токен** учетной записи Keeper Password Manager & Digital Vault, как описано на шаге 6.
 
-6. Войдите в [консоль администратора](https://keepersecurity.com/console/#login). Щелкните **Администратор** и выберите существующий узел или создайте новый. Перейдите на вкладку **Подготовка** и нажмите кнопку **Добавить метод**.
+6. Войдите в [консоль администрирования Keeper Password Manager & Digital Vault](https://keepersecurity.com/console/#login). Щелкните **Admin** (Администратор), затем выберите существующий узел или создайте новый. Перейдите на вкладку **Provisioning** (Подготовка) и щелкните **Add Method** (Добавить метод).
 
-    ![Консоль администратора для сохранения](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-admin-console.png)
+    ![Консоль администрирования Keeper Password Manager & Digital Vault](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-admin-console.png)
 
-    Выберите **scim (система для управления междоменными удостоверениями)**.
+    Выберите **SCIM (System for Cross-Domain Identity Management)** .
 
-    ![Добавить SCIM](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-add-scim.png)
+    ![Добавление SCIM в Keeper Password Manager & Digital Vault](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-add-scim.png)
 
-    Щелкните **создать токен подготовки**.
+    Щелкните **Create Provisioning Token** (Создать маркер подготовки).
 
-    ![Создать конечную точку](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-endpoint.png)
+    ![Создание конечной точки для Keeper Password Manager & Digital Vault](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-endpoint.png)
 
-    Скопируйте значения **URL-адреса** и **токена** и вставьте их в **URL-адрес клиента** и **маркер секрета** в Azure AD. Нажмите кнопку **сохранить** , чтобы завершить настройку подготовки.
+    Скопируйте значения **URL** (URL-адрес) и **Token** (Токен), затем вставьте их в поля **URL-адрес арендатора** и **Секретный токен** в Azure AD. Щелкните **Save** (Сохранить), чтобы завершить настройку подготовки в Keeper.
 
-    ![Токен создания для сохранения](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-token.png)
+    ![Создание токена в Keeper Password Manager & Digital Vault](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-token.png)
 
-7. После заполнения полей, показанных на шаге 5, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к диспетчеру паролей & Digital Vault. В случае сбоя подключения убедитесь, что диспетчер паролей службы & учетной записи Digital Vault имеет разрешения администратора, и повторите попытку.
+7. Завершив заполнение полей, которые указаны на шаге 5, щелкните **Проверить подключение** и убедитесь, что Azure AD может подключиться к Keeper Password Manager & Digital Vault. Если установить подключение не удалось, убедитесь, что у учетной записи Keeper Password Manager & Digital Vault есть разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -124,29 +124,29 @@ ms.locfileid: "91317605"
 
 9. Выберите команду **Сохранить**.
 
-10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с диспетчером паролей & Digital Vault**.
+10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Keeper Password Manager & Digital Vault**.
 
-    ![Пользовательские сопоставления пользователей](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-user-mappings.png)
+    ![Сопоставления пользователей в Keeper Password Manager & Digital Vault](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-user-mappings.png)
 
-11. Ознакомьтесь с атрибутами пользователей, которые синхронизированы из Azure AD, с помощью диспетчера паролей & Digital Vault в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в диспетчере паролей, & Digital Vault для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей, которые синхронизируются из Azure AD в Keeper Password Manager & Digital Vault. Атрибуты, выбранные как свойства с меткой **Соответствие**, используются для сопоставления учетных записей пользователей в Keeper Password Manager & Digital Vault при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя для сохранения](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-user-attributes.png)
+    ![Атрибуты пользователя Keeper](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-user-attributes.png)
 
-12. В разделе **сопоставления** выберите **синхронизировать Azure Active Directoryные группы с диспетчером паролей & Digital Vault**.
+12. В разделе **Сопоставления** выберите **Синхронизировать группы Azure Active Directory с Keeper Password Manager & Digital Vault**.
 
-    ![Сопоставления групп удержания](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-group-mappings.png)
+    ![Сопоставления групп в Keeper Password Manager & Digital Vault](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-group-mappings.png)
 
-13. Изучите атрибуты группы, синхронизированные из Azure AD, с диспетчером паролей & Digital Vault в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в диспетчере паролей службы & Digital Vault для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+13. В разделе **Сопоставления атрибутов** просмотрите атрибуты групп, которые синхронизируются из Azure AD в Keeper Password Manager & Digital Vault. Атрибуты, выбранные как свойства с меткой **Соответствие**, используются для сопоставления групп в Keeper Password Manager & Digital Vault при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты группы удержания](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-group-attributes.png)
+    ![Атрибуты групп в Keeper](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-group-attributes.png)
 
 14. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-15. Чтобы включить службу подготовки Azure AD для диспетчера паролей для & Digital Vault, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+15. Чтобы включить службу подготовки Azure AD для Keeper Password Manager & Digital Vault, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-16. Определите пользователей и (или) группы, которые вы хотите подготавливать для диспетчера паролей, & Digital Vault, выбрав нужные значения в поле **область** в разделе **Параметры** .
+16. Укажите пользователей и (или) группы для подготовки в Keeper Password Manager & Digital Vault, выбрав нужные значения в поле **Область** раздела **Параметры**.
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
@@ -154,14 +154,14 @@ ms.locfileid: "91317605"
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD в диспетчере паролей, & Digital Vault.
+После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD с приложением Keeper Password Manager & Digital Vault.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="connector-limitations"></a>Ограничения соединителя
 
-* Диспетчер паролей для & Digital Vault требует, чтобы **сообщения электронной почты** и **имя пользователя** имели одно и то же исходное значение, так как любое обновление любого из этих атрибутов изменит другое значение.
-* Диспетчер паролей & Digital Vault не поддерживает удаления пользователей, только отключает. Отключенные пользователи будут отображаться как заблокированные в пользовательском интерфейсе консоли администратора.
+* Для Keeper Password Manager & Digital Vault важно, чтобы атрибуты **emails** (адреса электронной почты) и **userName** (имя пользователя) имели одинаковые значения в источнике данных, так как любое изменение одного из этих атрибутов автоматически изменяет значение второго.
+* Keeper Password Manager & Digital Vault не поддерживает удаление пользователей, а только их отключение. Отключенные пользователи отображаются как заблокированные в пользовательском интерфейсе консоли администрирования Keeper Password Manager & Digital Vault.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

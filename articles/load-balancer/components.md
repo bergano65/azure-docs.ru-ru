@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/04/2020
 ms.author: allensu
-ms.openlocfilehash: 97b872c5fe0a155bb6e474f327f8d0c65e22b21f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: d2cd05251e7bf1a0b0ebcd24e6d3d0202f277969
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92317445"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685517"
 ---
 # <a name="azure-load-balancer-components"></a>Компоненты Azure Load Balancer
 
@@ -82,7 +82,7 @@ Load Balancer ценовой категории "Базовый" не подде
 
 ## <a name="high-availability-ports"></a>Порты с высоким уровнем доступности
 
-Правило подсистемы балансировки нагрузки, для которого настроены значения **protocol — all и port — 0** . 
+Правило подсистемы балансировки нагрузки, для которого настроены значения **protocol — all и port — 0**. 
 
 Это позволяет указать единое правило балансировки нагрузки для всех потоков TCP и UDP, поступающих на все порты внутренней подсистемы Load Balancer (цен. категория "Стандартный"). 
 
@@ -139,7 +139,7 @@ Load Balancer ценовой категории "Базовый" не подде
 - Чтобы приступить к работе с Load Balancer, см. [Create a public Standard Load Balancer](quickstart-load-balancer-standard-public-portal.md) (Создание общедоступного Load Balancer (цен. категория "Стандартный")).
 - [Дополнительные сведения об Azure Load Balancer](load-balancer-overview.md).
 - Сведения об [общедоступном IP-адресе](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address).
-- Сведения о [частном IP-адресе](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#private-ip-addresses).
+- Сведения о [частном IP-адресе](../virtual-network/private-ip-addresses.md).
 - Дополнительные сведения о [Load Balancer (цен. категория "Стандартный") и зонах доступности](load-balancer-standard-availability-zones.md).
 - [Metrics and health diagnostics for Standard Load Balancer](load-balancer-standard-diagnostics.md) (Метрики и проверки работоспособности Load Balancer уровня "Стандартный")
 - Сведения о [сбросе TCP-подключений при простое](load-balancer-tcp-reset.md).

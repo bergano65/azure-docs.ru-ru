@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2786a45ef779b9c66edda4c765a1cf2140f1bf9f
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 37db72b2b5dadfba930ca003121140fd99c4736d
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425288"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686078"
 ---
 # <a name="azure-security-baseline-for-azure-load-balancer"></a>Базовый план безопасности Azure для Azure Load Balancer
 
@@ -30,7 +30,7 @@ Azure предлагает два типа предложений Load Balancer,
 
 Использование Load Balancer (цен. категория "Стандартный") рекомендуется для рабочих нагрузок, и обычно базовый Load Balancer используется только для тестирования, так как базовый тип открыт для подключений из Интернета по умолчанию и не требует групп безопасности сети для работы. 
 
-- [Исходящие подключения в Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#outboundrule)
+- [Исходящие подключения в Azure](load-balancer-outbound-connections.md)
 
 - [Обновление общедоступных Load Balancer Azure](https://docs.microsoft.com/azure/load-balancer/upgrade-basic-standard)
 
@@ -442,7 +442,7 @@ Load Balancer (цен. категория "Стандартный") по умо�
 
 Обеспечьте соответствующие разрешения (чтение) в клиенте и перечислите все подписки и ресурсы Azure в ваших подписках.
 
-- [Создание запросов с помощью обозревателя графа ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью обозревателя Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
 
 - [Просмотр подписок Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
@@ -496,7 +496,7 @@ Load Balancer (цен. категория "Стандартный") по умо�
 
 - [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-- [Создание запросов с помощью обозревателя графа ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью обозревателя Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 5845a3bdc4b86fbbe44c92779e5aae95044eb6b2
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: d5bd2fc150ee1d35127eeb9dbf3dc1eeffdc9659
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556376"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685942"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Экземпляры отказоустойчивого кластера с SQL Server на Виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -46,7 +46,7 @@ SQL Server на Виртуальных машинах Azure использует
 
 SQL Server на Виртуальных машинах Azure предлагает различные варианты в качестве решения общего хранилища для развертывания экземпляров отказоустойчивого кластера SQL Server: 
 
-||[Общие диски Azure](../../../virtual-machines/windows/disks-shared.md)|[Общие папки ценовой категории "Премиум"](../../../storage/files/storage-how-to-create-premium-fileshare.md) |[Локальные дисковые пространства (S2D)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
+||[Общие диски Azure](../../../virtual-machines/disks-shared.md)|[Общие папки ценовой категории "Премиум"](../../../storage/files/storage-how-to-create-premium-fileshare.md) |[Локальные дисковые пространства (S2D)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
 |---------|---------|---------|---------|
 |**Минимальная версия ОС**| All |Windows Server 2012|Windows Server 2016|
 |**Минимальная версия SQL Server**|All|SQL Server 2012|SQL Server 2016|
@@ -58,7 +58,7 @@ SQL Server на Виртуальных машинах Azure предлагает
 
 ### <a name="azure-shared-disks"></a>Общие диски Azure
 
-[Общие диски Azure](../../../virtual-machines/windows/disks-shared.md) — это функция [управляемых дисков Azure](../../../virtual-machines/managed-disks-overview.md). Отказоустойчивая кластеризация Windows Server поддерживает использование общих дисков Azure с экземпляром отказоустойчивого кластера. 
+[Общие диски Azure](../../../virtual-machines/disks-shared.md) — это функция [управляемых дисков Azure](../../../virtual-machines/managed-disks-overview.md). Отказоустойчивая кластеризация Windows Server поддерживает использование общих дисков Azure с экземпляром отказоустойчивого кластера. 
 
 **Поддерживаемая ОС:** All   
 **Поддерживаемая версия SQL:** All     

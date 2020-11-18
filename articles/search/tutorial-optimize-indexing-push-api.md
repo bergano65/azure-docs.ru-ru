@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 10/12/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 13825422358fdddf6742353fbabaac0303b0c82e
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d22ff5c863617a3feb2a08d4b1889d0a7c10cd3a
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973450"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94693405"
 ---
 # <a name="tutorial-optimize-indexing-with-the-push-api"></a>Руководство по Оптимизация индексирования с помощью API Push
 
@@ -73,7 +73,7 @@ ms.locfileid: "91973450"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-   ![Получение конечной точки HTTP и ключа доступа](media/search-get-started-postman/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+   ![Получение конечной точки HTTP и ключа доступа](media/search-get-started-rest/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
 
 ## <a name="2---set-up-your-environment"></a>2\. Настройка среды
 
@@ -162,7 +162,7 @@ List<Hotel> hotels = dg.GetHotels(numDocuments, "large");
 Для загрузки одного или нескольких документов в индекс служба "Когнитивный поиск Azure" поддерживает следующие интерфейсы API:
 
 + [добавление, обновление и удаление документов (REST API)](/rest/api/searchservice/AddUpdate-or-Delete-Documents);
-+ [класс IndexDocumentsAction](/dotnet/api/azure.search.documents.models.indexdocumentsaction?view=azure-dotnet) или [класс IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch?view=azure-dotnet).
++ [класс IndexDocumentsAction](/dotnet/api/azure.search.documents.models.indexdocumentsaction) или [класс IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch).
 
 Пакетное индексирование документов значительно повысит производительность индексирования. Каждый пакет может содержать до 1000 документов или до 16 МБ данных.
 

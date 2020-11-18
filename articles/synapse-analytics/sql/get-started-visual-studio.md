@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 098256c3174f5a737bec4f6a62cb1d2af99e6f4f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a284e453a621860c0aebf68bef13d30e77971f88
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311078"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686163"
 ---
 # <a name="connect-to-synapse-sql-with-visual-studio-and-ssdt"></a>Подключение к Synapse SQL с помощью Visual Studio и SSDT
 
@@ -52,7 +52,7 @@ ms.locfileid: "93311078"
    
     ![Подключение к серверу](./media/get-started-visual-studio/connection-dialog.png)
    
-   * **Имя сервера** : Введите найденное **имя сервера** .
+   * **Имя сервера**: Введите найденное **имя сервера** .
    * **Аутентификация**. Выберите **Проверка подлинности SQL Server** или **Встроенная проверка подлинности Active Directory**.
    * **Имя пользователя** и **пароль**. Если вы выбрали проверку подлинности SQL Server, введите имя пользователя и пароль.
    * Нажмите кнопку **Соединить**.
