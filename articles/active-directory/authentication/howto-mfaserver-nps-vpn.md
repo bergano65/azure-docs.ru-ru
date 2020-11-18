@@ -11,21 +11,21 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d28ecfeb9312a6bf5a0b37e07919f9d781de50ea
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 1ba0d359079a8999b3c4f2a41f4beadb835ccacc
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968588"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838235"
 ---
 # <a name="advanced-scenarios-with-azure-mfa-server-and-third-party-vpn-solutions"></a>Расширенные сценарии с сервером Azure MFA и VPN-решениями сторонних производителей
 
 Сервер Многофакторной идентификации Azure (сервер Azure MFA) можно использовать для беспроблемного подключения к различным сторонним решениям VPN. Эта статья посвящена &reg; VPN-устройству Cisco ASA, VPN-устройству Citrix NETSCALER SSL и Juniper Networks Secure Access/Pulse Secure Connect Secure SSL VPN-устройство. Мы разработали руководства по настройке для этих трех распространенных устройств. Сервер Azure MFA также может интегрироваться с большинством других систем, использующих RADIUS, LDAP, IIS или проверку подлинности на основе утверждений, для AD FS. Дополнительные сведения см. в [настройках сервера Azure MFA](howto-mfaserver-deploy.md#next-steps).
 
 > [!IMPORTANT]
-> По состоянию на 2019 1 июля корпорация Майкрософт больше не предлагает сервер MFA для новых развертываний. Новые клиенты, которым требуется требовать многофакторную проверку подлинности (MFA) во время входа в систему, должны использовать службу многофакторной идентификации Azure на основе облака.
+> По состоянию на 2019 1 июля корпорация Майкрософт больше не предлагает сервер MFA для новых развертываний. Новые клиенты, которым требуется требовать многофакторную проверку подлинности (MFA) во время входа в систему, должны использовать службу многофакторной идентификации Azure AD на основе облака.
 >
-> Чтобы приступить к работе с MFA в облаке, см. раздел [учебник. Защита событий входа пользователя с помощью многофакторной идентификации Azure](tutorial-enable-azure-mfa.md).
+> Чтобы приступить к работе с MFA в облаке, см. раздел [учебник. Защита событий входа пользователя с помощью многофакторной идентификации Azure AD](tutorial-enable-azure-mfa.md).
 >
 > Если вы используете службу MFA на основе облака, см. статью [интеграция инфраструктуры VPN с Azure MFA](howto-mfa-nps-extension-vpn.md).
 >

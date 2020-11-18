@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b763a1cda91886946bba211f589c37940e7c3ae1
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: a779fee89d52442207358cf90c8cf87e7ef221c2
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042809"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837657"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -34,7 +34,7 @@ ms.locfileid: "93042809"
 
 При предоставлении доступа администраторы могут выбрать принудительное применение одного или нескольких элементов управления. К этим элементам управления относятся следующие параметры. 
 
-- [Требовать многофакторную проверку подлинности (многофакторная идентификация Azure)](../authentication/concept-mfa-howitworks.md)
+- [Требовать многофакторную проверку подлинности (многофакторная идентификация Azure AD)](../authentication/concept-mfa-howitworks.md)
 - [Требовать, чтобы устройство было помечено как соответствующее (Microsoft Intune)](/intune/protect/device-compliance-get-started)
 - [Требовать гибридное устройство, присоединенное к Azure AD](../devices/concept-azure-ad-join-hybrid.md)
 - [Требовать утвержденное клиентское приложение](app-based-conditional-access.md)
@@ -50,7 +50,7 @@ ms.locfileid: "93042809"
 
 ### <a name="require-multi-factor-authentication"></a>Требование многофакторной идентификации
 
-Если установить этот флажок, пользователи должны будут выполнять многофакторную идентификацию Azure. Дополнительные сведения о развертывании многофакторной идентификации Azure см. в статье [Планирование развертывания многофакторной идентификации Azure на основе облачных служб](../authentication/howto-mfa-getstarted.md).
+Если установить этот флажок, пользователи должны будут выполнять многофакторную идентификацию Azure AD. Дополнительные сведения о развертывании многофакторной идентификации Azure AD см. в статье [Планирование развертывания службы многофакторной идентификации Azure AD на основе облачных](../authentication/howto-mfa-getstarted.md)служб.
 
 ### <a name="require-device-to-be-marked-as-compliant"></a>Требовать, чтобы устройство было отмечено как соответствующее
 
@@ -106,7 +106,7 @@ ms.locfileid: "93042809"
 **Замечания**
 
 - Утвержденные клиентских приложения поддерживают функцию управления мобильными приложениями Intune.
-- Функция **Требовать утвержденное клиентское приложение** :
+- Функция **Требовать утвержденное клиентское приложение**:
    - поддерживает только iOS и Android для условия платформы устройства;
    - Для регистрации устройства требуется приложение брокера. В iOS приложение брокера Microsoft Authenticator, а на Android — Корпоративный портал Intune приложении.
 - Условный доступ не может рассматривать Microsoft ребро в режиме InPrivate в утвержденном клиентском приложении.

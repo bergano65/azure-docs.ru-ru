@@ -1,6 +1,6 @@
 ---
-title: Сбор данных пользователя Azure MFA — Azure Active Directory
-description: Какие сведения используются для проверки подлинности пользователей в службе "Многофакторная идентификация Azure"?
+title: Сбор данных пользователя Azure AD MFA — Azure Active Directory
+description: Какие сведения используются для проверки подлинности пользователей с помощью многофакторной идентификации Azure AD?
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,22 +11,22 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03ec8eddf55c6b3e90b56501a2e3b657bef6fc8c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ed0d4b754911dda49776379fb318390eae411000
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964202"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839018"
 ---
-# <a name="azure-multi-factor-authentication-user-data-collection"></a>Сбор данных о пользователях в службе "Многофакторная идентификация Azure"
+# <a name="azure-ad-multi-factor-authentication-user-data-collection"></a>Сбор данных пользователя многофакторной идентификации Azure AD
 
-В этом документе объясняется, как найти сведения о пользователе, собранные сервером Многофакторной идентификации (MFA) и облачной службой "Многофакторная идентификация Azure", если вы захотите ее удалить.
+В этом документе объясняется, как найти сведения о пользователе, собираемые Azure сервер Многофакторной идентификации (сервер MFA) и Azure AD MFA (на основе облака) в случае, если вы хотите удалить его.
 
 [!INCLUDE [gdpr-hybrid-note](../../../includes/gdpr-hybrid-note.md)]
 
 ## <a name="information-collected"></a>Собираемые сведения
 
-Сервер MFA, расширение сервера политики сети и адаптер многофакторной проверки подлинности AD FS для Windows Server 2016 собирают и хранят в течение 90 дней следующие сведения.
+Сервер MFA, расширение NPS и Windows Server 2016 Azure AD MFA AD FS Adapter собираются и хранят следующие сведения в течение 90 дней.
 
 Попытки пройти проверку подлинности (для создания отчетов и устранения неполадок):
 
@@ -163,26 +163,26 @@ ms.locfileid: "91964202"
 
 - Для полного удаления данных может потребоваться до 30 дней.
 
-## <a name="gather-data-from-windows-server-2016-azure-mfa-ad-fs-adapter"></a>Сбор данных с использованием адаптера многофакторной проверки подлинности AD FS для Windows Server 2016
+## <a name="gather-data-from-windows-server-2016-azure-ad-mfa-ad-fs-adapter"></a>Сбор данных из Windows Server 2016 Azure AD MFA AD FS Adapter
 
 Используйте [Портал конфиденциальности корпорации Майкрософт](https://portal.azure.com/#blade/Microsoft_Azure_Policy/UserPrivacyMenuBlade/Overview), чтобы создать запрос на экспорт. 
 
 - В запрос на экспорт включается информация о многофакторной проверки подлинности, и на его выполнение может потребоваться несколько часов или дней.
 - Вхождения имени пользователя в журналы событий AD FS для трассировки и отладки (если они включены) считаются эксплуатационными и дублирующими информацию, включаемую в экспорт.
 
-## <a name="delete-data-from-windows-server-2016-azure-mfa-ad-fs-adapter"></a>Удаление данных через адаптер многофакторной проверки подлинности AD FS для Windows Server 2016
+## <a name="delete-data-from-windows-server-2016-azure-ad-mfa-ad-fs-adapter"></a>Удаление данных из адаптера AD FS Windows Server 2016 Azure AD MFA
 
 Используйте [Портал конфиденциальности корпорации Майкрософт](https://portal.azure.com/#blade/Microsoft_Azure_Policy/UserPrivacyMenuBlade/Overview), чтобы создать запрос на закрытие учетной записи с удалением всех данных, собранных в облачной службе MFA для соответствующего пользователя.
 
 - Для полного удаления данных может потребоваться до 30 дней.
 
-## <a name="gather-data-for-azure-mfa"></a>Сбор данных для Azure MFA
+## <a name="gather-data-for-azure-ad-mfa"></a>Сбор данных для Azure AD MFA
 
 Используйте [Портал конфиденциальности корпорации Майкрософт](https://portal.azure.com/#blade/Microsoft_Azure_Policy/UserPrivacyMenuBlade/Overview), чтобы создать запрос на экспорт.
 
 - В запрос на экспорт включается информация о многофакторной проверки подлинности, и на его выполнение может потребоваться несколько часов или дней.
 
-## <a name="delete-data-for-azure-mfa"></a>Удаление данных для Azure MFA
+## <a name="delete-data-for-azure-ad-mfa"></a>Удаление данных для Azure AD MFA
 
 Используйте [Портал конфиденциальности корпорации Майкрософт](https://portal.azure.com/#blade/Microsoft_Azure_Policy/UserPrivacyMenuBlade/Overview), чтобы создать запрос на закрытие учетной записи с удалением всех данных, собранных в облачной службе MFA для соответствующего пользователя.
 

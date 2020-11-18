@@ -1,39 +1,39 @@
 ---
-title: Двухфакторная проверка подлинности Azure MFA и ADFS — Azure Active Directory
-description: Эта страница содержит сведения о службе Azure Multi-Factor Authentication, описывающие начало работы с Azure MFA и AD FS.
+title: Двухфакторная проверка подлинности Azure AD MFA и ADFS — Azure Active Directory
+description: Это страница многофакторной идентификации Azure AD, в которой описывается, как приступить к работе с Azure AD MFA и AD FS.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fbbba49ddf2252e22cb32a0b8adc6fa2070e999
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 247ebfa70de3e916894cccfc9374c4ddd4e761c2
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74847139"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837946"
 ---
-# <a name="getting-started-with-azure-multi-factor-authentication-and-active-directory-federation-services"></a>Приступая к работе со службой Многофакторной идентификации Azure и службами федерации Active Directory
+# <a name="getting-started-with-azure-ad-multi-factor-authentication-and-active-directory-federation-services"></a>Приступая к работе с многофакторной идентификацией Azure AD и службы федерации Active Directory (AD FS)
 
 <center>
 
-![Azure MFA и Приступая к работе с ADFS](./media/multi-factor-authentication-get-started-adfs/adfs.png)</center>
+![Azure AD MFA и Приступая к работе с ADFS](./media/multi-factor-authentication-get-started-adfs/adfs.png)</center>
 
-Если в организации создана федерация локальной службы Active Directory со службой Azure Active Directory с помощью служб федерации Active Directory, доступны два варианта использования Многофакторной идентификации Azure.
+Если ваша организация использует Федеративные локальные Active Directory с Azure Active Directory с помощью AD FS, существует два варианта использования многофакторной идентификации Azure AD.
 
-* Защита облачных ресурсов с помощью службы Многофакторной идентификации Azure и служб федерации Active Directory
+* Защита облачных ресурсов с помощью многофакторной идентификации Azure AD или службы федерации Active Directory (AD FS)
 * Защита облачных и локальных ресурсов с помощью сервера Многофакторной идентификации Azure
 
-В следующей таблице перечислены возможности проверки для защиты ресурсов с помощью Многофакторной идентификации Azure и служб федерации Active Directory.
+В следующей таблице приведена сводка проверки безопасности ресурсов с помощью многофакторной идентификации Azure AD и AD FS
 
 | Проверка для браузерных приложений | Проверка для небраузерных приложений |
 |:--- |:--- |
-| Защита ресурсов Azure AD с помощью службы Многофакторной идентификации Azure |<li>Первый этап проверки выполняется локально с помощью служб федерации Active Directory.</li> <li>Второй этап выполняется с использованием телефона для облачной проверки подлинности.</li> |
+| Защита ресурсов Azure AD с помощью многофакторной идентификации Azure AD |<li>Первый этап проверки выполняется локально с помощью служб федерации Active Directory.</li> <li>Второй этап выполняется с использованием телефона для облачной проверки подлинности.</li> |
 | Защита ресурсов Azure AD с помощью служб федерации Active Directory |<li>Первый этап проверки выполняется локально с помощью служб федерации Active Directory.</li><li>Второй этап выполняется локально путем обработки утверждения.</li> |
 
 Разъяснения касательно паролей приложений для федеративных пользователей.
@@ -43,8 +43,8 @@ ms.locfileid: "74847139"
 * У вас нет возможности вести журнал локальной проверки подлинности для паролей приложений.
 * Отключение или удаление учетной записи может занять до 3 часов с учетом синхронизации каталогов, которая задерживает процесс отключения или удаления паролей приложений в облачном удостоверении.
 
-Дополнительные сведения о настройке службы или сервера Многофакторной идентификации Azure с помощью служб федерации Active Directory см. в таких статьях:
+Сведения о настройке многофакторной идентификации Azure AD или сервер Многофакторной идентификации Azure с AD FS см. в следующих статьях:
 
-* [Защита облачных ресурсов с помощью службы Многофакторной идентификации Azure и служб AD FS](howto-mfa-adfs.md)
+* [Защита облачных ресурсов с помощью многофакторной идентификации Azure AD и AD FS](howto-mfa-adfs.md)
 * [Защита облачных и локальных ресурсов с помощью сервера Многофакторной идентификации Azure и сервера Windows Server 2012 R2 AD FS](howto-mfaserver-adfs-2012.md)
 * [Защита облачных и локальных ресурсов с помощью сервера Многофакторной идентификации Azure и AD FS 2.0](howto-mfaserver-adfs-2.md)
