@@ -5,19 +5,19 @@ keywords: шифрование данных, ключ шифрования, ши
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: how-to
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 ms.date: 11/02/2020
-ms.openlocfilehash: 45aca00adab8ef5b33a376af34642261c5e73255
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 257abf03994c7006b1c3789174f550515dcd309a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321621"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841467"
 ---
 # <a name="configure-always-encrypted-by-using-azure-key-vault"></a>Настройка Always Encrypted с помощью Azure Key Vault 
 
@@ -51,11 +51,11 @@ Always Encrypted — это технология шифрования данны
 
 Необходимо разрешить клиентскому приложению доступ к базе данных в базе данных SQL, настроив приложение Azure Active Directory (Azure AD) и скопировав *идентификатор приложения* и *ключ* , которые понадобятся для проверки подлинности приложения.
 
-Чтобы получить *идентификатор приложения* и *ключ* , ознакомьтесь с процедурой в разделе [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md).
+Чтобы получить *идентификатор приложения* и *ключ*, ознакомьтесь с процедурой в разделе [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md).
 
 ## <a name="create-a-key-vault-to-store-your-keys"></a>Создание хранилища ключей для хранения ваших ключей
 
-Теперь, когда клиентское приложение настроено и у вас есть идентификатор приложения, пора создать хранилище ключей и настроить его политику доступа таким образом, чтобы ваше приложение могло обращаться к секретам в хранилище (ключам Always Encrypted). Для создания главного ключа столбца и настройки шифрования с помощью SQL Server Management Studio необходимы разрешения *create* , *get* , *list* , *sign* , *verify* , *wrapKey* и *unwrapKey*.
+Теперь, когда клиентское приложение настроено и у вас есть идентификатор приложения, пора создать хранилище ключей и настроить его политику доступа таким образом, чтобы ваше приложение могло обращаться к секретам в хранилище (ключам Always Encrypted). Для создания главного ключа столбца и настройки шифрования с помощью SQL Server Management Studio необходимы разрешения *create*, *get*, *list*, *sign*, *verify*, *wrapKey* и *unwrapKey*.
 
 Можно быстро создать хранилище ключей, выполнив следующий сценарий. Подробное описание этих команд и дополнительные сведения о создании и настройке хранилища ключей см. в разделе [что такое Azure Key Vault?](../../key-vault/general/overview.md).
 
@@ -83,7 +83,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $vaultName -ResourceGroupName $resourceGro
 Set-AzKeyVaultAccessPolicy  -VaultName $vaultName  -ResourceGroupName $resourceGroupName -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 $subscriptionName = '<subscriptionName>'
@@ -147,19 +147,19 @@ GO
 В SSMS есть мастер, с помощью которого можно легко настроить функцию Always Encrypted. Он позволяет настроить главный ключ столбца, ключ шифрования столбца и зашифрованные столбцы.
 
 1. Разверните узел **базы данных**  >  **Clinic**  >  **таблицы** курса.
-2. Щелкните правой кнопкой мыши таблицу **Patients** и выберите пункт **Зашифровать столбцы** , чтобы открыть мастер настройки Always Encrypted.
+2. Щелкните правой кнопкой мыши таблицу **Patients** и выберите пункт **Зашифровать столбцы**, чтобы открыть мастер настройки Always Encrypted.
 
     ![Снимок экрана, на котором выделены столбцы шифрования... пункт меню.](./media/always-encrypted-azure-key-vault-configure/encrypt-columns.png)
 
-Мастер настройки Always Encrypted содержит следующие разделы: **Выбор столбца** , **Настройка главного ключа** , **Проверка** и **Сводка**.
+Мастер настройки Always Encrypted содержит следующие разделы: **Выбор столбца**, **Настройка главного ключа**, **Проверка** и **Сводка**.
 
 ### <a name="column-selection"></a>Выполните действия на странице Выбор столбцов.
 
-На странице **Введение** нажмите кнопку **Далее** , чтобы открыть страницу **Выбор столбца**. На этой странице можно будет выбрать столбцы для шифрования, [тип шифрования и используемый ключ шифрования столбца (CEK)](/sql/relational-databases/security/encryption/always-encrypted-wizard#Anchor_2) .
+На странице **Введение** нажмите кнопку **Далее**, чтобы открыть страницу **Выбор столбца**. На этой странице можно будет выбрать столбцы для шифрования, [тип шифрования и используемый ключ шифрования столбца (CEK)](/sql/relational-databases/security/encryption/always-encrypted-wizard#Anchor_2) .
 
 Для каждого пациента необходимо зашифровать данные в столбцах **SSN** и **BirthDate**. Для столбца SSN будет использоваться детерминированное шифрование, которое поддерживает уточняющие запросы на соответствие условию, операции объединения и группировки, а для столбца BirthDate — случайное шифрование, которое не поддерживает какие-либо операции.
 
-Задайте для параметра **Тип шифрования** столбца SSN значение **Детерминированное** , а для столбца BirthDate — **Случайное**. Щелкните **Далее**.
+Задайте для параметра **Тип шифрования** столбца SSN значение **Детерминированное**, а для столбца BirthDate — **Случайное**. Щелкните **Далее**.
 
 ![Шифрование столбцов…](./media/always-encrypted-azure-key-vault-configure/column-selection.png)
 
@@ -179,7 +179,7 @@ GO
 
 Можно зашифровать столбцы сейчас или сохранить сценарий PowerShell и выполнить его позже. Для целей этого руководства выберите **Перейти к завершению** и нажмите кнопку **Далее**.
 
-### <a name="summary"></a>Итоги
+### <a name="summary"></a>Сводка
 
 Убедитесь, что все параметры настроены правильно, и нажмите кнопку **Готово** , чтобы завершить настройку Always Encrypted.
 
@@ -564,7 +564,7 @@ namespace AlwaysEncryptedConsoleAKVApp {
 
 ## <a name="verify-that-the-data-is-encrypted"></a>Как проверить, что данные шифруются
 
-Вы можете быстро проверить, действительно ли данные на сервере зашифрованы. Для этого можно запросить данные таблицы Patients с помощью SSMS (используя текущее подключение, где не задан параметр **Column Encryption Setting** ).
+Вы можете быстро проверить, действительно ли данные на сервере зашифрованы. Для этого можно запросить данные таблицы Patients с помощью SSMS (используя текущее подключение, где не задан параметр **Column Encryption Setting**).
 
 Выполните следующий запрос к базе данных Clinic.
 
@@ -576,7 +576,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 
    ![Снимок экрана, на котором показано, что зашифрованные столбцы не содержат никаких данных в виде открытого текста.](./media/always-encrypted-azure-key-vault-configure/ssms-encrypted.png)
 
-Чтобы получить доступ к данным в виде открытого текста, сначала убедитесь, что пользователь имеет необходимые разрешения в Azure Key Vault: *get* , *unwrapKey* и *verify*. Дополнительные сведения см. в статье [Создание и хранение главных ключей столбцов (постоянное шифрование)](/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted).
+Чтобы получить доступ к данным в виде открытого текста, сначала убедитесь, что пользователь имеет необходимые разрешения в Azure Key Vault: *get*, *unwrapKey* и *verify*. Дополнительные сведения см. в статье [Создание и хранение главных ключей столбцов (постоянное шифрование)](/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted).
 
 Затем во время подключения добавьте параметр *Column Encryption Setting=enabled*.
 

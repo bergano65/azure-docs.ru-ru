@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 11/09/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 45357092784bd9c8821a81b07ce3c381c4ce7989
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 7819c934ab97d597d52d4809c11e5c59fb87c89a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410510"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840674"
 ---
 # <a name="localization-string-ids"></a>Идентификаторы строк локализации
 
@@ -27,33 +27,44 @@ ms.locfileid: "94410510"
 
 Следующие идентификаторы используются для определения содержимого с ИДЕНТИФИКАТОРом `api.signuporsignin` и [самостоятельно подтвержденным техническим профилем](self-asserted-technical-profile.md).
 
-| ID | Значение по умолчанию |
-| -- | ------------- |
-| **local_intro_email** | Войти, используя имеющуюся учетную запись |
-| **logonIdentifier_email** | Электронная почта |
-| **requiredField_email** | Введите свой адрес электронной почты |
-| **invalid_email** | Введите действительный адрес электронной почты |
-| **email_pattern** | ^[a-zA-Z0-9.!#$%&'' *+/=?^_\`{\|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)* $ |
-| **local_intro_username** | Войти, используя свое имя пользователя |
-| **logonIdentifier_username** | Имя пользователя |
-| **requiredField_username** | Введите свое имя пользователя |
-| **password** | Пароль |
-| **requiredField_password** | Введите пароль |
-| **invalid_password** | Введенный пароль не соответствует ожидаемому формату. |
-| **forgotpassword_link** | Забыли пароль? |
-| **createaccount_intro** | Нет учетной записи? |
-| **createaccount_link** | Зарегистрируйтесь сейчас |
-| **divider_title** | OR |
-| **cancel_message** | Пользователь забыл свой пароль |
-| **button_signin** | Вход |
-| **social_intro** | Войти, используя учетную запись социальной сети |
-  **remember_me** |Оставаться в системе. |
-| **unknown_error** | Возникли проблемы со входом в систему. Повторите попытку позже. |
+| ID | Значение по умолчанию | Версия макета страницы |
+| -- | ------------- | ------ |
+| **forgotpassword_link** | Забыли пароль? | `All` |
+| **createaccount_intro** | Нет учетной записи? | `All` |
+| **button_signin** | Вход | `All` |
+| **social_intro** | Войти, используя учетную запись социальной сети | `All` |
+| **remember_me** |Оставаться в системе. | `All` |
+| **unknown_error** | Возникли проблемы со входом в систему. Повторите попытку позже. | `All` |
+| **divider_title** | OR | `All` |
+| **local_intro_email** | Войти, используя имеющуюся учетную запись | `< 2.0.0` |
+| **logonIdentifier_email** | Электронная почта | `< 2.0.0` |
+| **requiredField_email** | Введите свой адрес электронной почты | `< 2.0.0` |
+| **invalid_email** | Введите действительный адрес электронной почты | `< 2.0.0` |
+| **email_pattern** | ^ [a-zA-Z0-9.! # $% & ' ' \* +/=? ^ \_ \` { \| } ~-] + @ [a-zA-Z0-9-] + (?: \\ . [ a-zA-Z0-9-] +) \* $ |`< 2.0.0` |
+| **local_intro_username** | Войти, используя свое имя пользователя | `< 2.0.0` |
+| **logonIdentifier_username** | Имя пользователя | `< 2.0.0` |
+| **requiredField_username** | Введите свое имя пользователя | `< 2.0.0` |
+| **password** | Пароль | `< 2.0.0` |
+| **requiredField_password** | Введите пароль | `< 2.0.0` |
+| **createaccount_link** | Зарегистрируйтесь сейчас | `< 2.0.0` |
+| **cancel_message** | Пользователь забыл свой пароль | `< 2.0.0` |
+| **invalid_password** | Введенный пароль не соответствует ожидаемому формату. | `< 2.0.0` |
+| **createaccount_one_link** | Зарегистрируйтесь сейчас | `>= 2.0.0` |
+| **createaccount_two_links** | Зарегистрироваться с помощью {0} или {1} | `>= 2.0.0` |
+| **createaccount_three_links** | Регистрация с помощью {0} , {1} или {2} | `>= 2.0.0` |
+| **local_intro_generic** | Войдите с помощью {0} | `>= 2.1.0` |
+| **requiredField_generic** | Укажите {0} | `>= 2.1.0` |
+| **invalid_generic** | Введите допустимый {0} | `>= 2.1.1` |
+| **направляющ** | Войти | `>= 2.1.1` |
+
+
+> [!NOTE]
+> * Заполнители, такие как {0} , будут автоматически заполнены `DisplayName` значением `ClaimType` . 
+> * Дополнительные сведения о локализации `ClaimType` см. в статье [Пример регистрации или входа в](#signupsigninexample)систему.
 
 В следующем примере показано использование некоторых элементов пользовательского интерфейса на странице регистрации или входа в систему:
 
-![Элементы пользовательского интерфейса страницы регистрации или входа](./media/localization-string-ids/localization-susi.png)
-
+![Элементы пользовательского интерфейса страницы регистрации или входа](./media/localization-string-ids/localization-susi-2.png)
 
 ### <a name="sign-up-or-sign-in-identity-providers"></a>Поставщики удостоверений регистрации или входа
 
@@ -95,32 +106,28 @@ ms.locfileid: "94410510"
 | **UserMessageIfUserAccountLocked** | Ваша учетная запись временно заблокирована, чтобы предотвратить ее несанкционированное использование. Повторите попытку позже. |
 | **AADRequestsThrottled** | Сейчас слишком много запросов. Подождите и повторите попытку. |
 
+<a name="signupsigninexample"></a>
 ### <a name="sign-up-or-sign-in-example"></a>Пример регистрации или входа
 
 ```xml
 <LocalizedResources Id="api.signuporsignin.en">
   <LocalizedStrings>
-    <LocalizedString ElementType="UxElement" StringId="logonIdentifier_email">Email Address</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="requiredField_email">Please enter your email</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="logonIdentifier_username">Username</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="password">Password</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="createaccount_link">Sign up now</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="requiredField_username">Please enter your user name</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="createaccount_intro">Don't have an account?</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="forgotpassword_link">Forgot your password?</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="divider_title">OR</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="cancel_message">The user has forgotten their password</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="button_signin">Sign in</LocalizedString>
+    <LocalizedString ElementType="ClaimType" ElementId="email" StringId="DisplayName">Email Address</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="heading">Sign in</LocalizedString>
     <LocalizedString ElementType="UxElement" StringId="social_intro">Sign in with your social account</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="local_intro_generic">Sign in with your {0}</LocalizedString>
     <LocalizedString ElementType="UxElement" StringId="requiredField_password">Please enter your password</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="invalid_password">The password you entered is not in the expected format.</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="local_intro_username">Sign in with your user name</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="local_intro_email">Sign in with your existing account</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="invalid_email">Please enter a valid email address</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="requiredField_generic">Please enter your {0}</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="invalid_generic">Please enter a valid {0}</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="createaccount_one_link">Sign up now</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="createaccount_two_links">Sign up with {0} or {1}</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="createaccount_three_links">Sign up with {0}, {1}, or {2}</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="forgotpassword_link">Forgot your password?</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="button_signin">Sign in</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="divider_title">OR</LocalizedString>
     <LocalizedString ElementType="UxElement" StringId="unknown_error">We are having trouble signing you in. Please try again later.</LocalizedString>
     <!-- Uncomment the remember_me only if the keep me signed in is activated. 
     <LocalizedString ElementType="UxElement" StringId="remember_me">Keep me signed in</LocalizedString> -->
-    <LocalizedString ElementType="UxElement" StringId="email_pattern">^[a-zA-Z0-9.!#$%&amp;’'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$</LocalizedString>
     <LocalizedString ElementType="ClaimsProvider" StringId="FacebookExchange">Facebook</LocalizedString>
     <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfInvalidPassword">Your password is incorrect.</LocalizedString>
     <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfPasswordExpired">Your password has expired.</LocalizedString>
@@ -433,9 +440,9 @@ ms.locfileid: "94410510"
 </LocalizedResources>
 ```
 
-## <a name="azure-mfa-error-messages"></a>Сообщения об ошибках Azure MFA
+## <a name="azure-ad-mfa-error-messages"></a>Сообщения об ошибках Azure AD MFA
 
-Ниже приведены идентификаторы для сообщения об ошибках [технического профиля Azure MFA](multi-factor-auth-technical-profile.md):
+Ниже приведены идентификаторы сообщений об ошибках [технического профиля Azure AD MFA](multi-factor-auth-technical-profile.md) .
 
 | ID | Значение по умолчанию |
 | -- | ------------- |
@@ -446,7 +453,7 @@ ms.locfileid: "94410510"
 |UserMessageIfThrottled | Ваш запрос отрегулирован, повторите попытку позже.|
 |UserMessageIfWrongCodeEntered|Указан неправильный код, повторите попытку.|
 
-### <a name="azure-mfa-example"></a>Пример Azure MFA
+### <a name="azure-ad-mfa-example"></a>Пример Azure AD MFA
 
 ```xml
 <LocalizedResources Id="api.localaccountsignup.en">

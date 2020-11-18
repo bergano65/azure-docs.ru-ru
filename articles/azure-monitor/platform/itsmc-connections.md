@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: a75dd24769a4f1af018981ffcec279afc2a88b5a
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: f7980ca7bc6f23c383ea013c2b017b3bd61e2d25
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682424"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842300"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -41,6 +41,7 @@ ms.locfileid: "94682424"
 - Создайте и настройте гибридное подключение. Дополнительные сведения: [Настройка гибридного подключения](#configure-the-hybrid-connection).
 - Поддерживаемые версии Service Manager:  2012 R2 или 2016.
 - Роль пользователя:  [оператор с расширенными правами](/previous-versions/system-center/service-manager-2010-sp1/ff461054(v=technet.10)).
+- Сегодня оповещения, отправленные из Azure Monitor, могут создаваться в System Center Service Manager инцидентах.
 
 > [!NOTE]
 > 
@@ -186,7 +187,7 @@ ms.locfileid: "94682424"
 Выполните указанные ниже предварительные требования.
 - ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
 - Поддерживаемые версии ServiceNow: Орландо, Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки, Geneva.
-- Сегодня оповещения, отправленные из Azure Monitor могут быть созданы в ServiceNow одним из следующих элементов: Events, Инцедентс или Alerts.
+- Сегодня оповещения, отправленные из Azure Monitor могут быть созданы в ServiceNow один из следующих элементов: события, инциденты или оповещения.
 > [!NOTE]
 > ITSMC поддерживает только официальное предложение SaaS из Service Now. Закрытые развертывания Service Now не поддерживаются. 
 

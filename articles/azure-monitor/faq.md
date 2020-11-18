@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 0812716ab9d952969ccfc14fc0a1e833fae1c9e1
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b52cc38c40d8b6a39961ab28d9f0600ea7ee2201
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94653799"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841909"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -81,7 +81,7 @@ Azure Monitor собирает данные из различных источн
 
 ### <a name="how-do-i-retrieve-log-data"></a>Как извлечь данные журналов?
 Все данные из рабочей области Log Analytics извлекаются с помощью запросов к журналам, написанных на языке запросов Kusto (KQL). Вы можете создавать собственные запросы или использовать решения для мониторинга и службы аналитики, в которых есть готовые запросы к журналам для определенного приложения или службы. См. статью [Общие сведения о запросах к журналам в Azure Monitor](log-query/log-query-overview.md).
-
+p
 ### <a name="can-i-delete-data-from-a-log-analytics-workspace"></a>Можно ли удалить данные из рабочей области Log Analytics?
 Данные удаляются из рабочей области в соответствии с сроком [хранения](platform/manage-cost-storage.md#change-the-data-retention-period). Вы можете удалить определенные данные в соответствии с требованиями к конфиденциальности или соответствию. Дополнительные сведения см. [в разделе Экспорт и удаление закрытых данных](platform/personal-data-mgmt.md#how-to-export-and-delete-private-data) .
 
@@ -594,10 +594,6 @@ WireData
 
 
 ## <a name="azure-monitor-for-containers"></a>Azure Monitor для контейнеров
-
-### <a name="health-feature-is-in-private-preview"></a>Функция проверки работоспособности доступна в закрытой предварительной версии
-
-Мы планируем внести ряд изменений, чтобы расширить ее возможности и учесть ваши отзывы. Функция доступна в закрытой предварительной версии с конца июня 2020 г. Дополнительные сведения см. на [этой странице](https://azure.microsoft.com/updates/ci-health-limited-preview/).
 
 ### <a name="what-does-other-processes-represent-under-the-node-view"></a>Для чего нужен параметр *Другие процессы* в представлении узла?
 

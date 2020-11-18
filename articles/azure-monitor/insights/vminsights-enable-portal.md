@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: ba6ae9262fb0e55c53e1b1421c075e555fae8d98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55e5ff2af62c903efeab5c4932eae0c9dc9b535c
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87328367"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842317"
 ---
 # <a name="enable-azure-monitor-for-single-virtual-machine-or-virtual-machine-scale-set-in-the-azure-portal"></a>Включение Azure Monitor для одной виртуальной машины или масштабируемого набора виртуальных машин на портале Azure
 В этой статье описывается, как включить Azure Monitor для виртуальных машин для виртуальной машины или масштабируемого набора виртуальных машин с помощью портал Azure. Эту процедуру можно использовать для следующих действий:
@@ -27,7 +27,7 @@ ms.locfileid: "87328367"
 
 ## <a name="enable-azure-monitor-for-vms"></a>Включение Azure Monitor для виртуальных машин
 
-На портал Azure выберите **виртуальные машины**, **масштабируемые наборы виртуальных машин**или компьютеры в **службе "Дуга Azure** " и выберите ресурс из списка. В разделе **мониторинг** меню выберите **Insights** , а затем **включите**. В следующем примере показана виртуальная машина Azure, но меню аналогично масштабируемому набору виртуальных машин Azure или службе "Дуга Azure".
+В портал Azure выберите **виртуальные машины**, **масштабируемые наборы виртуальных машин** или серверы в **службе "Дуга Azure** " и выберите ресурс из списка. В разделе **мониторинг** меню выберите **Insights** , а затем **включите**. В следующем примере показана виртуальная машина Azure, но меню аналогично масштабируемому набору виртуальных машин Azure или службе "Дуга Azure".
 
 ![Включение Azure Monitor для виртуальной машины](media/vminsights-enable-single-vm/enable-vminsights-vm-portal.png)
 

@@ -11,17 +11,17 @@ author: GithubMirek
 ms.author: MirekS
 ms.reviewer: vanto
 ms.date: 04/23/2020
-ms.openlocfilehash: bef6e6c5ef795c192a846700fc046aa20274502d
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 93831ec4c1dc3e34c2ea144e71b67dae711ee870
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92673402"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841654"
 ---
-# <a name="connect-to-azure-sql-database-with-azure-multi-factor-authentication"></a>Подключение к базе данных SQL Azure с помощью многофакторной идентификации Azure
+# <a name="connect-to-azure-sql-database-with-azure-ad-multi-factor-authentication"></a>Подключение к базе данных SQL Azure с помощью многофакторной идентификации Azure AD
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-В этой статье представлена программа на C#, которая подключается к базе данных SQL Azure. Программа использует интерактивный режим проверки подлинности, поддерживающий [многофакторную идентификацию Azure](../../active-directory/authentication/concept-mfa-howitworks.md).
+В этой статье представлена программа на C#, которая подключается к базе данных SQL Azure. Программа использует интерактивный режим проверки подлинности, поддерживающий [многофакторную идентификацию Azure AD](../../active-directory/authentication/concept-mfa-howitworks.md).
 
 Дополнительные сведения о поддержке многофакторной идентификации для средств SQL см. [в разделе поддержка Azure Active Directory в SQL Server Data Tools (SSDT)](/sql/ssdt/azure-active-directory).
 
@@ -35,11 +35,11 @@ ms.locfileid: "92673402"
 
    Если политика Azure AD накладывает многофакторную проверку подлинности для пользователя, отображаются два следующих диалоговых окна.
 
-* В первый раз, когда пользователь проходит через многофакторную проверку подлинности, система отображает диалоговое окно с запросом номера мобильного телефона для отправки текстовых сообщений. Каждое сообщение содержит *код проверки* , который пользователь должен ввести в следующем диалоговом окне.
+* В первый раз, когда пользователь проходит через многофакторную проверку подлинности, система отображает диалоговое окно с запросом номера мобильного телефона для отправки текстовых сообщений. Каждое сообщение содержит *код проверки*, который пользователь должен ввести в следующем диалоговом окне.
 
 * Диалоговое окно, запрашивающее код проверки многофакторной проверки подлинности, который система отправила на мобильный телефон.
 
-Сведения о настройке использования многофакторной идентификации в Azure AD см. [в статье Приступая к работе с многофакторной идентификацией Azure в облаке](../../active-directory/authentication/howto-mfa-getstarted.md).
+Сведения о настройке использования многофакторной идентификации в Azure AD см. [в статье Приступая к работе с многофакторной идентификацией Azure AD в облаке](../../active-directory/authentication/howto-mfa-getstarted.md).
 
 Снимки экрана с этими диалоговыми окнами см. в статье [Настройка многофакторной проверки подлинности для SQL Server Management Studio и Azure AD](authentication-mfa-ssms-configure.md).
 
@@ -56,11 +56,11 @@ ms.locfileid: "92673402"
 
 Чтобы использовать проверку подлинности Azure AD, ваша программа C# должна быть зарегистрирована как приложение Azure AD. Чтобы зарегистрировать приложение, необходимо быть администратором Azure AD или пользователем с назначенной ролью *разработчика приложений* Azure AD. Дополнительные сведения о назначении ролей см. [в статье назначение ролей администратора и пользователей, не являющихся администраторами, с помощью Azure Active Directory](../../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
 
-При выполнении регистрации приложения создается и отображается **идентификатор приложения** . Для возможности подключения программа должна включать этот идентификатор.
+При выполнении регистрации приложения создается и отображается **идентификатор приложения**. Для возможности подключения программа должна включать этот идентификатор.
 
 Чтобы зарегистрировать приложение и задать для него необходимые разрешения:
 
-1. В портал Azure выберите **Azure Active Directory**  >  **Регистрация приложений**  >  **Новая регистрация** .
+1. В портал Azure выберите **Azure Active Directory**  >  **Регистрация приложений**  >  **Новая регистрация**.
 
     ![Регистрация приложения](./media/active-directory-interactive-connect-azure-sql-db/image1.png)
 
@@ -68,15 +68,15 @@ ms.locfileid: "92673402"
 
     ![Отображение идентификатора приложения](./media/active-directory-interactive-connect-azure-sql-db/image2.png)
 
-2. Выберите **Разрешения API** > **Добавить разрешение** .
+2. Выберите **Разрешения API** > **Добавить разрешение**.
 
     ![Параметры разрешений для зарегистрированного приложения](./media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-c32.png)
 
-3. Выберите **интерфейсы API, используемые моей организацией** > введите **базу данных sql Azure** в > поиска и выберите **базу данных SQL Azure** .
+3. Выберите **интерфейсы API, используемые моей организацией** > введите **базу данных sql Azure** в > поиска и выберите **базу данных SQL Azure**.
 
     ![Добавление доступа через API для службы "База данных SQL Azure"](./media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-Azure-sql-db-d11.png)
 
-4. Выберите **делегированные разрешения**  >  **user_impersonation**  >  **Добавить разрешения** .
+4. Выберите **делегированные разрешения**  >  **user_impersonation**  >  **Добавить разрешения**.
 
     ![Делегирование разрешений API для службы "База данных SQL Azure"](./media/active-directory-interactive-connect-azure-sql-db/sshot-add-api-access-azure-sql-db-delegated-permissions-checkbox-e14.png)
 
@@ -84,7 +84,7 @@ ms.locfileid: "92673402"
 
 Для запуска программы C# логическому администратору [SQL Server](logical-servers.md) необходимо назначить администратора Azure AD для вашего сервера.
 
-На странице **SQL Server** выберите **Active Directory администратор**  >  **задать администратора** .
+На странице **SQL Server** выберите **Active Directory администратор**  >  **задать администратора**.
 
 Дополнительные сведения об администраторах и пользователях Azure AD для базы данных SQL Azure см. на снимках экрана в разделе [Настройка проверки подлинности Azure Active Directory и управление ею с помощью базы данных SQL](authentication-aad-configure.md#provision-azure-ad-admin-sql-database).
 
@@ -138,12 +138,12 @@ ms.locfileid: "92673402"
 
 ### <a name="verify-azure-active-directory-multi-factor-authentication"></a>Проверка многофакторной проверки подлинности Azure Active Directory
 
-Запустите SSMS еще раз, на этот раз для параметра **authentication** установлено значение **Azure Active Directory-Universal с MFA** . Этот параметр требует SSMS версии 17.5 или более поздней.
+Запустите SSMS еще раз, на этот раз для параметра **authentication** установлено значение **Azure Active Directory-Universal с MFA**. Этот параметр требует SSMS версии 17.5 или более поздней.
 
 Дополнительные сведения см. в статье [Настройка многофакторной идентификации для SSMS и Azure AD](authentication-mfa-ssms-configure.md).
 
 > [!NOTE]
-> Если вы являетесь гостевым пользователем в базе данных, необходимо также указать доменное имя Azure AD для базы данных: выберите **Параметры**  >  **доменное имя AD или идентификатор клиента** . Чтобы найти имя домена в портал Azure, выберите **Azure Active Directory**  >  **пользовательские доменные имена** . В программе C# можно не предоставлять доменное имя.
+> Если вы являетесь гостевым пользователем в базе данных, необходимо также указать доменное имя Azure AD для базы данных: выберите **Параметры**  >  **доменное имя AD или идентификатор клиента**. Чтобы найти имя домена в портал Azure, выберите **Azure Active Directory**  >  **пользовательские доменные имена**. В программе C# можно не предоставлять доменное имя.
 
 ## <a name="c-code-example"></a>Пример кода C#
 
@@ -152,7 +152,7 @@ ms.locfileid: "92673402"
 
 Пример программы C# основан на сборке библиотеки DLL [*Microsoft.IdentityModel.Clients.ActiveDirectory*](/dotnet/api/microsoft.identitymodel.clients.activedirectory).
 
-Чтобы установить этот пакет, в Visual Studio выберите **проект**  >  **Управление пакетами NuGet** . Выполните поиск библиотеки **Microsoft.IdentityModel.Clients.ActiveDirectory** и установите ее.
+Чтобы установить этот пакет, в Visual Studio выберите **проект**  >  **Управление пакетами NuGet**. Выполните поиск библиотеки **Microsoft.IdentityModel.Clients.ActiveDirectory** и установите ее.
 
 Это пример исходного кода C#.
 

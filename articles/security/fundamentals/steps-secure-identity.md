@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/29/2020
 ms.author: martinco
-ms.openlocfilehash: 4fa5ba935e77055936b2abc4faab49b5d10cb5c0
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 4703a76ff0a0b55a438f9f0d164cd7f2d3242a02
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410068"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842028"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Пять шагов по защите инфраструктуры удостоверений
 
@@ -48,7 +48,7 @@ ms.locfileid: "94410068"
 
 Перед выполнением задач в этом контрольном списке убедитесь, что во время чтения этого списка ваша безопасность не пострадает. Сначала необходимо защитить привилегированные учетные записи.
 
-Злоумышленники, получившие доступ к привилегированным учетным записям, могут причинить значительный ущерб, поэтому очень важно в первую очередь защитить именно эти учетные записи. Включите и требуйте [многофакторную идентификацию Azure](../../active-directory/authentication/concept-mfa-howitworks.md) (MFA) для всех администраторов в организации, использующих [параметры безопасности Azure AD по умолчанию](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md) или [условный доступ](../../active-directory/conditional-access/plan-conditional-access.md). Если вы еще не реализовали многофакторную идентификацию, сделайте это сейчас! Это очень важно.
+Злоумышленники, получившие доступ к привилегированным учетным записям, могут причинить значительный ущерб, поэтому очень важно в первую очередь защитить именно эти учетные записи. Включите и запросите [многофакторную идентификацию Azure AD](../../active-directory/authentication/concept-mfa-howitworks.md) (MFA) для всех администраторов в Организации, используя [Параметры безопасности Azure AD по умолчанию](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md) или [Условный доступ](../../active-directory/conditional-access/plan-conditional-access.md). Если вы еще не реализовали многофакторную идентификацию, сделайте это сейчас! Это очень важно.
 
 Все сделано? Начнем работу по контрольному списку.
 
@@ -59,9 +59,9 @@ ms.locfileid: "94410068"
 
 ### <a name="make-sure-your-organization-uses-strong-authentication"></a>В организации должна действовать строгая проверка подлинности.
 
-Принимая во внимание частоту подбора, фишинга, кражи паролей вредоносными программами или повторное использование паролей, крайне важно защитить пароли с помощью надежных учетных данных определенного вида — [узнайте больше о многофакторной идентификации Azure](../../active-directory/authentication/concept-mfa-howitworks.md).
+Учитывая частоту взлома паролей, фишинга, кражи вредоносных программ или повторного использования, очень важно вернуть пароль в виде надежной учетной записи. Дополнительные сведения об [многофакторной идентификации Azure AD](../../active-directory/authentication/concept-mfa-howitworks.md).
 
-Быстро и легко включить базовый уровень безопасности удостоверений можно с помощью [параметров безопасности по умолчанию](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md). Параметры безопасности по умолчанию применяют Azure MFA для всех пользователей в клиенте и блокируют вход, выполняемый по устаревшим протоколам, в масштабе клиента.
+Быстро и легко включить базовый уровень безопасности удостоверений можно с помощью [параметров безопасности по умолчанию](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md). Параметры безопасности по умолчанию применяют Azure AD MFA для всех пользователей в клиенте и блокируют вход из устаревших протоколов на уровне клиента.
 
 ### <a name="start-banning-commonly-attacked-passwords-and-turn-off-traditional-complexity-and-expiration-rules"></a>Начните с применения запрета к часто атакуемым паролям, откажитесь от традиционных требований к сложности, отключите правила истечения срока действия.
 

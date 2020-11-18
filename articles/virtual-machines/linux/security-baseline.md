@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ab266e1a94a647c4c1f0c42cc75fe6b6a68d9afa
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: f9835a0bb67fd276096153c54a569ebb58161799
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205155"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842419"
 ---
 # <a name="azure-security-baseline-for-linux-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Linux
 
@@ -602,7 +602,7 @@ ms.locfileid: "92205155"
 
 * [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
 
-* [Ведение журнала Аналитики Службы хранилища Azure](../../storage/common/storage-analytics-logging.md)
+* [Ведение журнала аналитики службы хранилища Azure](../../storage/common/storage-analytics-logging.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -978,7 +978,7 @@ ms.locfileid: "92205155"
 
 * [Интеграция с управляемыми удостоверениями Azure](../../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-* [Создание Key Vault](../../key-vault/secrets/quick-create-portal.md)
+* [Создание Key Vault](../../key-vault/general/quick-create-portal.md)
 
 * [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md)
 

@@ -14,12 +14,12 @@ ms.custom:
 - devx-track-azurecli
 ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: ad9c64f2846b59fcc833ad56c4da378f7819dae3
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ef5f81090f4d06f15f1a7263699961cd360e12e5
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747416"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842198"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
@@ -37,15 +37,7 @@ ms.locfileid: "92747416"
 
 * Порт 8883, открытый в брандмауэре. Пример устройства в этом кратком руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-### <a name="add-azure-iot-extension"></a>Добавление расширения Azure IoT
-
-Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
-
-```azurecli-interactive
-az extension add --name azure-iot
-```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
@@ -59,9 +51,9 @@ az extension add --name azure-iot
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyAndroidDevice** . Это имя регистрируемого устройства. Рекомендуется использовать **MyAndroidDevice** , как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyAndroidDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyAndroidDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyAndroidDevice
@@ -69,7 +61,7 @@ az extension add --name azure-iot
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-    **YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
+    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyAndroidDevice --output table
@@ -83,7 +75,7 @@ az extension add --name azure-iot
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
-1. В Android Studio откройте пример проекта Android, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java): *\azure-iot-samples-java\iot-hub\Samples\device\AndroidSample* .
+1. В Android Studio откройте пример проекта Android, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java): *\azure-iot-samples-java\iot-hub\Samples\device\AndroidSample*.
 
 2. В Android Studio откройте *gradle.properties* для примера проекта и замените заполнитель **Device_Connection_String** строкой подключения устройства, которую вы записали ранее.
 
@@ -112,7 +104,7 @@ az extension add --name azure-iot
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
 
-   **YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub monitor-events --hub-name {YourIoTHubName} --output table

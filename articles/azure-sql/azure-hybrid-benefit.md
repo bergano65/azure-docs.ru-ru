@@ -5,18 +5,18 @@ description: Используйте существующие лицензии SQ
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: features
-ms.custom: sqldbrb=4
+ms.custom: sqldbrb=4, devx-track-azurecli
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
 ms.date: 11/13/2019
-ms.openlocfilehash: 186721fbb52ae153bd51076a9fe3a7413f29d1b4
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 872b36eae9142473885885d5bf5ad3fa10ae5ccb
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92479125"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841603"
 ---
 # <a name="azure-hybrid-benefit---azure-sql-database--sql-managed-instance"></a>Преимущество гибридного использования Azure — база данных SQL Azure & SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "92479125"
 - [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance)
 - [Set-AzSqlInstance](/powershell/module/az.sql/set-azsqlinstance)
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы задать или обновить тип лицензии с помощью Azure CLI:
 
@@ -94,7 +94,7 @@ ms.locfileid: "92479125"
 |||
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о выборе варианта развертывания Azure SQL см. в разделе [Выбор правильного развертывания в SQL Azure](azure-sql-iaas-vs-paas-what-is-overview.md).
 - Сравнение функций базы данных SQL и Управляемый экземпляр SQL см. в разделе [SQL database & sql управляемый экземпляр Features](database/features-comparison.md).

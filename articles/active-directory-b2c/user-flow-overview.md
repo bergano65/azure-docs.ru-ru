@@ -12,12 +12,12 @@ ms.date: 07/30/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7a7736602fafb740d1d76fa09fd26da25e4ff9f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 06253b571fd71623501c27fd5b0d9d4013727fc2
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87481603"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840199"
 ---
 # <a name="user-flows-in-azure-active-directory-b2c"></a>Потоки пользователей в Azure Active Directory B2C
 
@@ -25,7 +25,7 @@ ms.locfileid: "87481603"
 
 - типы учетных записей, используемые для входа в систему, такие как учетные записи социальных сетей, например Facebook, или локальные учетные записи;
 - атрибуты, которые нужно получить от пользователя, например имя, почтовый индекс и размер обуви;
-- Многофакторная идентификация Azure
+- Многофакторная идентификация Azure AD
 - настройка пользовательского интерфейса;
 - сведения, которые приложение получает в виде утверждений в токене.
 

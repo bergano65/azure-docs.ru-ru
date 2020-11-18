@@ -8,13 +8,13 @@ ms.author: jukullam
 ms.reviewer: dineshm
 ms.date: 09/11/2020
 ms.subservice: blobs
-ms.custom: devx-track-javascript, github-actions-azure
-ms.openlocfilehash: 7213cea0796197e230cc5914f7cebfac7c69ae49
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.custom: devx-track-javascript, github-actions-azure, devx-track-azurecli
+ms.openlocfilehash: 3adbc0a2d55a2adc2ab7c1f82b0a358542eefc2a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93395739"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842453"
 ---
 # <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Настройка рабочего процесса GitHub Actions для развертывания статического веб-сайта в службе хранилища Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "93395739"
 > Если вы используете [статические веб-приложения Azure](https://docs.microsoft.com/azure/static-web-apps/), вам не нужно вручную настраивать рабочий процесс для действий GitHub.
 > Статические веб-приложения Azure автоматически создают рабочий процесс для действий GitHub. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Подписка Azure и учетная запись GitHub. 
 
@@ -184,7 +184,7 @@ ms.locfileid: "93395739"
 
 Если статический веб-сайт и репозиторий GitHub больше не требуются, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о статических веб-приложениях Azure](https://docs.microsoft.com/azure/static-web-apps/)

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 09/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7417e2d39371066a5c5e8576040cbe22e7632043
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d61471e07dda8fcf0c715dcffe85ad3e39ed8ac3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90562882"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840378"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Технические профили в пользовательских политиках Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "90562882"
 
 - [Application Insights](application-insights-technical-profile.md) — отправка данных событий в [Application Insights](../azure-monitor/app/app-insights-overview.md).
 - [Azure Active Directory](active-directory-technical-profile.md): обеспечивает управление пользователями Azure Active Directory B2C.
-- [Многофакторная идентификация Azure](multi-factor-auth-technical-profile.md) . обеспечивает поддержку проверки номера телефона с помощью многофакторной идентификации Azure (MFA). 
+- [Многофакторная идентификация Azure AD](multi-factor-auth-technical-profile.md) . обеспечивает поддержку проверки номера телефона с помощью многофакторной идентификации (MFA) Azure AD. 
 - [Преобразование утверждений](claims-transformation-technical-profile.md): вызов преобразований исходящих утверждений для изменения значений утверждений, их проверки или установки значений по умолчанию для набора исходящих утверждений.
 - [Указание токена идентификатора](id-token-hint.md) — проверяет `id_token_hint` подпись маркера JWT, имя издателя и аудиторию маркера и извлекает утверждение из входящего токена.
 - [Издатель маркеров безопасности JWT](jwt-issuer-technical-profile.md): выдает маркер безопасности JWT, который возвращается в приложение проверяющей стороны.

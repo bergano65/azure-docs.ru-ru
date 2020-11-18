@@ -6,13 +6,13 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/16/2020
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c64e01253652ea3b49ad6221f161bb78f499b6ed
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: c38fa77951aaeb5559dc2030f1401a896d7c238d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150539"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841926"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 
@@ -47,7 +47,7 @@ ms.locfileid: "92150539"
 
 ![Свойства решения](media/solutions/solution-properties.png)
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы получить список решений для мониторинга, установленных в вашей подписке, используйте команду [AZ Monitor log-Analytics Solution List](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-list) .   Перед выполнением `list` команды следуйте предварительным требованиям, приведенным в [статье Установка решения для мониторинга](#install-a-monitoring-solution).
 
@@ -111,11 +111,11 @@ Get-AzMonitorLogAnalyticsSolution -ResourceGroupName MyResourceGroup
 
 1. Установка Azure CLI
 
-   Необходимо [установить Azure CLI](/cli/azure/install-azure-cli) перед выполнением справочных команд CLI.  При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этой статье.  Azure Cloud Shell — это среда интерактивной оболочки, которая используется в браузере.  Начните Cloud Shell с помощью одного из следующих методов:
+   Необходимо [установить Azure CLI](/cli/azure/install-azure-cli) перед выполнением справочных команд CLI.  При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этой статье.  Azure Cloud Shell — это интерактивная оболочка среды, с которой можно работать в браузере.  Запустите Cloud Shell с помощью одного из этих методов:
 
-   - Откройте Cloud Shell, перейдя по [https://shell.azure.com](https://shell.azure.com)
+   - Откройте Cloud Shell, перейдя по ссылке: [https://shell.azure.com](https://shell.azure.com)
 
-   - Нажмите кнопку **Cloud Shell** в строке меню в верхнем правом углу [портал Azure](https://portal.azure.com)
+   - Нажмите кнопку **Cloud Shell** в строке меню в правом верхнем углу окна [портала Azure](https://portal.azure.com).
 
 1. Войдите.
 
@@ -173,14 +173,14 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
 
 1. Установите Azure PowerShell
 
-   Перед выполнением команд Azure PowerShell REFERENCES необходимо [установить Azure PowerShell](/powershell/azure/install-az-ps) . При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этой статье. Azure Cloud Shell — это среда интерактивной оболочки, которая используется в браузере. Начните Cloud Shell с помощью одного из следующих методов:
+   Перед выполнением команд Azure PowerShell REFERENCES необходимо [установить Azure PowerShell](/powershell/azure/install-az-ps) . При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этой статье. Azure Cloud Shell — это интерактивная оболочка среды, с которой можно работать в браузере. Запустите Cloud Shell с помощью одного из этих методов:
 
-   - Откройте Cloud Shell, перейдя по [https://shell.azure.com](https://shell.azure.com)
+   - Откройте Cloud Shell, перейдя по ссылке: [https://shell.azure.com](https://shell.azure.com)
 
-   - Нажмите кнопку **Cloud Shell** в строке меню в верхнем правом углу [портал Azure](https://portal.azure.com)
+   - Нажмите кнопку **Cloud Shell** в строке меню в правом верхнем углу окна [портала Azure](https://portal.azure.com).
 
    > [!IMPORTANT]
-   > Пока модуль PowerShell **AZ. мониторингсолутионс** находится на этапе предварительной версии, его необходимо установить отдельно с помощью `Install-Module` командлета. После того как модуль PowerShell станет общедоступным, он будет частью будущих выпусков AZ PowerShell и доступен по умолчанию в Azure Cloud Shell.
+   > Пока модуль PowerShell **AZ. мониторингсолутионс** находится на этапе предварительной версии, его необходимо установить отдельно с помощью `Install-Module` командлета. Как только этот модуль PowerShell станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и по умолчанию встроен в Azure Cloud Shell.
 
    ```azurepowershell-interactive
    Install-Module -Name Az.MonitoringSolutions
@@ -240,7 +240,7 @@ New-AzMonitorLogAnalyticsSolution -Type Containers -ResourceGroupName MyResource
 
 Чтобы удалить установленное решение с помощью портала, выберите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы удалить установленное решение с помощью Azure CLI, используйте команду [AZ Monitor log-Analytics решение Delete](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-delete) .
 

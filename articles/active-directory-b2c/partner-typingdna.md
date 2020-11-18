@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 06/25/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: f7d89942ad5209b854b8df486ad3e59a3976edfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: edbc944e77d2483d32574f8044c72fc3d1292e2a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259057"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840440"
 ---
 # <a name="tutorial-for-configuring-typingdna-with-azure-active-directory-b2c"></a>Руководство по настройке Типингдна с помощью Azure Active Directory B2C
 
 В этом пошаговом руководстве описано, как интегрировать пример Интернет-приложения оплаты в Azure Active Directory B2C с приложением Типингдна. Используя приложение Типингдна, клиенты Azure AD B2C могут соответствовать требованиям к транзакциям [директивы оплаты 2](https://www.typingdna.com/use-cases/sca-strong-customer-authentication) (PSD2) с помощью нажатия клавиши Dynamics и надежной проверки подлинности клиента. Дополнительные сведения о Типингдна см. [здесь](https://www.typingdna.com/).
 
- Azure AD B2C использует технологии Типингдна для записи пользовательских характеристик и их записи и анализа для ознакомления с каждой проверкой подлинности. Это добавляет уровень защиты, связанный с степенью риска проверки подлинности, и оценивает уровни риска. Azure AD B2C могут вызывать другие механизмы для предоставления дополнительной уверенности, что пользователь является его автором, путем вызова Azure MFA, принудительной проверки электронной почты или любой другой пользовательской логики для вашего сценария.
+ Azure AD B2C использует технологии Типингдна для записи пользовательских характеристик и их записи и анализа для ознакомления с каждой проверкой подлинности. Это добавляет уровень защиты, связанный с степенью риска проверки подлинности, и оценивает уровни риска. Azure AD B2C могут вызывать другие механизмы для предоставления дополнительной уверенности, что пользователь является его автором, вызывая Azure AD MFA, принудительную проверку электронной почты или любую другую пользовательскую логику для вашего сценария.
 
 >[!NOTE]
 > Этот пример политики основан на [соЦиаландлокалаккаунтсвисмфа](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/SocialAndLocalAccountsWithMfa) Starter Pack.
@@ -113,7 +113,7 @@ API должен возвращать утверждение,  `saveTypingPatter
 
 - После того как API оценит `net_score` , он должен вернуть логическое утверждение B2C- `promptMFA` .
 
-- `promptMFA`Утверждение используется в предварительном условии для условного выполнения Azure mfa.
+- `promptMFA`Утверждение используется в предварительном условии для условного выполнения Azure AD mfa.
 
 ```xml
 
@@ -173,9 +173,9 @@ API должен возвращать утверждение,  `saveTypingPatter
 2. Выберите ранее созданный **поток пользователя**.
 3. Выбор **запуска** потока пользователя
 
-    a. **Приложение** — выбор зарегистрированного приложения (пример — JWT)
+    А. **Приложение** — выбор зарегистрированного приложения (пример — JWT)
 
-    b. **URL-адрес ответа** — выберите URL-адрес перенаправления
+    Б. **URL-адрес ответа** — выберите URL-адрес перенаправления
 
     c. Выберите **Выполнить поток пользователя**.
   
@@ -190,7 +190,7 @@ API должен возвращать утверждение,  `saveTypingPatter
 
 • Зарегистрируйтесь [здесь](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SU_TDNA&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms/&scope=openid&response_type=id_token&prompt=login) и войдите [здесь](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SI_TDNA&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms/&scope=openid&response_type=id_token&prompt=login)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

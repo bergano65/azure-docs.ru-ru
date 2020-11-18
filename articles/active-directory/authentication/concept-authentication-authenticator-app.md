@@ -10,16 +10,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c8fe6c7ead587d58775984854260bd071215e42
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: eab1a3f81666cd3bddea9954f210e5825a538356
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965579"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840123"
 ---
 # <a name="authentication-methods-in-azure-active-directory---microsoft-authenticator-app"></a>Методы проверки подлинности в приложении Azure Active Directory Microsoft Authenticator
 
-Microsoft Authenticator приложение предоставляет дополнительный уровень безопасности для вашей рабочей или учебной учетной записи Azure AD или вашей учетная запись Майкрософт и доступен для [Android](https://go.microsoft.com/fwlink/?linkid=866594) и [iOS](https://go.microsoft.com/fwlink/?linkid=866594). С помощью приложения Microsoft Authenticator пользователи могут проходить проверку подлинности без пароля во время входа в систему или использовать его как дополнительный вариант проверки во время самостоятельного сброса пароля (SSPR) или событий многофакторной идентификации Azure.
+Microsoft Authenticator приложение предоставляет дополнительный уровень безопасности для вашей рабочей или учебной учетной записи Azure AD или вашей учетная запись Майкрософт и доступен для [Android](https://go.microsoft.com/fwlink/?linkid=866594) и [iOS](https://go.microsoft.com/fwlink/?linkid=866594). С помощью приложения Microsoft Authenticator пользователи могут проходить проверку подлинности без пароля во время входа в систему или как дополнительный параметр проверки во время самостоятельного сброса пароля (SSPR) или событий многофакторной идентификации Azure AD.
 
 Пользователи могут получить уведомление через мобильное приложение (которое они могут принять или отклонить) или использовать приложение Authenticator для создания кода проверки OATH, который можно ввести в интерфейсе входа в систему. Если включить и уведомление, и проверочный код, пользователи, регистрирующие приложение Authenticator, могут использовать для подтверждения личности любой способ.
 
