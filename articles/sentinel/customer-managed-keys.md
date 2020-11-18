@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/12/2020
 ms.author: yelevin
-ms.openlocfilehash: ecb4203c822f5b72068e11d0ad4b988d294aab0d
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: bd85936c86656a8ae59a04ccdf53a62bd852368f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427060"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655278"
 ---
 # <a name="set-up-azure-sentinel-customer-managed-key"></a>Настройка ключа, управляемого клиентом, в Azure Sentinel
 
@@ -59,7 +59,7 @@ ms.locfileid: "94427060"
 
 ### <a name="step-1-create-an-azure-key-vault-and-storing-key"></a>Шаг 1. Создание Azure Key Vault и ключа хранилища
 
-1.  [Создайте ресурс Azure Key Vault](https://docs.microsoft.com/azure-stack/user/azure-stack-key-vault-manage-portal), затем создайте или импортируйте ключ, который будет использоваться для шифрования данных.
+1.  [Создайте ресурс Azure Key Vault](/azure-stack/user/azure-stack-key-vault-manage-portal), затем создайте или импортируйте ключ, который будет использоваться для шифрования данных.
     > [!NOTE]
     >  Для Azure Key Vault нужно настроить возможность восстановления, чтобы обезопасить ключи и доступ.
 
@@ -132,6 +132,5 @@ Azure Sentinel и Log Analytics поддерживают смену ключей
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как настроить ключ, управляемый клиентом, в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
-- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](./tutorial-detect-threats-built-in.md).
 - [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
-

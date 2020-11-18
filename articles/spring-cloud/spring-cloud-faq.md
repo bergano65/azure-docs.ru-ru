@@ -8,18 +8,18 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: f034cd07b481f9d72cb3f753b30e1779bf672ac2
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: a8180088e5a0db613d5f04106fe102f58594bf72
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491942"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655057"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
 В этой статье содержатся ответы на часто задаваемые вопросы о Microsoft Azure Веснного облака.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="why-azure-spring-cloud"></a>Вопросы и ответы по Azure Spring Cloud.
 
@@ -93,6 +93,21 @@ Azure Веснного облака поддерживает экспорт жу
 ### <a name="can-i-view-add-or-move-persistent-volumes-from-inside-my-applications"></a>Можно ли просматривать, добавлять или перемещать постоянные тома в приложениях?
 
 Да.
+
+### <a name="how-many-outbound-public-ip-addresses-does-an-azure-spring-cloud-instance-have"></a>Сколько исходящих общедоступных IP-адресов использует экземпляр облака Azure весны?
+
+Количество исходящих общедоступных IP-адресов может отличаться в зависимости от уровней и других факторов. 
+
+| Тип экземпляра Azure весны облака | Число исходящих общедоступных IP-адресов по умолчанию |
+| -------------------------------- | ---------------------------------------------- |
+| Экземпляры уровня Basic             | 1                                              |
+| Экземпляры уровня "Стандартный"          | 2                                              |
+| Экземпляры внедрения виртуальной сети         | 1                                              |
+
+
+### <a name="can-i-increase-the-number-of-outbound-public-ip-addresses"></a>Можно ли увеличить число исходящих общедоступных IP-адресов?
+
+Да, вы можете отправить запрос в [службу поддержки](https://azure.microsoft.com/support/faq/)  , чтобы запросить дополнительные исходящие общедоступные IP-адреса.
 
 ### <a name="when-i-deletemove-an-azure-spring-cloud-service-instance-will-its-extension-resources-be-deletedmoved-as-well"></a>При удалении или перемещении экземпляра облачной службы Azure весны ресурсы расширения будут удалены и перемещены?
 
@@ -209,6 +224,6 @@ RetryableEurekaHttpClient: Request execution failure with status code 401; retry
 Мы улучшаем эту часть и не будем использовать эту ошибку в приложениях пользователей в течение короткого будущего времени.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникнут другие вопросы, см. [руководство по устранению неполадок в облаке Azure весны](spring-cloud-troubleshoot.md).

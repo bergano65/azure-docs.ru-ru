@@ -1,5 +1,5 @@
 ---
-title: Учебник. подготовка пользователей — LinkedIn Sales Navigator, Azure AD
+title: Руководство по Подготовка пользователей для LinkedIn Sales Navigator — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в LinkedIn Sales Navigator.
 services: active-directory
 author: ArvindHarinder1
@@ -7,15 +7,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: arvinh
-ms.openlocfilehash: e908c8d19a4640995c536580b6584558212ada3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 458b527194c1123e266bd6abedf25de18e0cee09
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361583"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359363"
 ---
 # <a name="tutorial-configure-linkedin-sales-navigator-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Sales Navigator для автоматической подготовки пользователей
 
@@ -71,12 +71,12 @@ ms.locfileid: "91361583"
     > [!NOTE]
     > Если автоматическое назначение лицензии отключено, синхронизируются только данные пользователя.
 
-    ![На снимке экрана показаны глобальные параметры центра учетных записей LinkedIn.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_1.PNG)
+    ![Снимок экрана: глобальные параметры центра учетных записей LinkedIn.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_1.PNG)
 
     > [!NOTE]
     > При автоматическом назначении лицензии необходимо отметить экземпляр приложения и тип лицензии. Лицензии назначаются по мере получения запросов до тех пор, пока все лицензии не будут заняты.
 
-    ![На снимке экрана показана страница настройки S C M.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_2.PNG)
+    ![Снимок экрана: страница "Настройка SCIM".](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_2.PNG)
 
 5. Щелкните **Создать токен**. Токен доступа должен появиться в поле **Токен доступа**.
 
@@ -90,7 +90,7 @@ ms.locfileid: "91361583"
 
 10. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![На снимке экрана показана страница подготовки к повышению привилегий LinkedIn.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_3.PNG)
+    ![Снимок экрана: страница "Подготовка LinkedIn Elevate".](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_3.PNG)
 
 11. Заполните следующие поля в разделе **Учетные данные администратора**:
 
@@ -106,7 +106,7 @@ ms.locfileid: "91361583"
 
 14. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей и групп, которые будут синхронизированы из Azure AD в LinkedIn Sales Navigator. Обратите внимание, что атрибуты, которые выбраны в качестве свойств **сопоставления**, будут использоваться для сопоставления учетных записей пользователей и групп для операций обновления в LinkedIn Sales Navigator. Нажмите кнопку "Сохранить", чтобы подтвердить все изменения.
 
-    ![На снимке экрана показаны сопоставления, включая сопоставления атрибутов.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_4.PNG)
+    ![Снимок экрана: сопоставления, включая сопоставления атрибутов.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_4.PNG)
 
 15. Чтобы включить службу подготовки Azure AD для LinkedIn Sales Navigator, в разделе **Параметры** установите переключатель **Состояние подготовки** в положение **Включено**.
 

@@ -22,6 +22,6 @@ ms.locfileid: "92217961"
 
    :::image type="content" source="./media/vpn-gateway-verify-connection-portal-rm-include/connections.png" alt-text="Просмотр подключений" lightbox="./media/vpn-gateway-verify-connection-portal-rm-include/connections-expand.png":::
 
-1. Щелкните имя подключения, которое необходимо проверить. В **Essentials**можно просмотреть дополнительные сведения о подключении. При успешном соединении значения **состояния** будут "успешно" и "подключено".
+1. Щелкните имя подключения, которое необходимо проверить. В **Essentials** можно просмотреть дополнительные сведения о подключении. При успешном соединении значения **состояния** будут "успешно" и "подключено".
 
-   :::image type="content" source="./media/vpn-gateway-verify-connection-portal-rm-include/essentials.png" alt-text="Просмотр подключений" lightbox="./media/vpn-gateway-verify-connection-portal-rm-include/essentials-expand.png":::
+   :::image type="content" source="./media/vpn-gateway-verify-connection-portal-rm-include/essentials.png" alt-text="Проверка подключений" lightbox="./media/vpn-gateway-verify-connection-portal-rm-include/essentials-expand.png":::

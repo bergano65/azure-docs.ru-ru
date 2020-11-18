@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/13/2019
 ms.author: yelevin
-ms.openlocfilehash: e9e892ae08c65ee5c5008bbdc1b419d8dec30183
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 756c245fe06ae81545a125dd98f30fb27fdff2dd
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90938479"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655585"
 ---
 # <a name="connect-data-from-microsoft-365-defender-to-azure-sentinel"></a>Подключение данных из защитника Microsoft 365 к Azure Sentinel
 
@@ -31,11 +31,11 @@ ms.locfileid: "90938479"
 >
 > Вы можете увидеть, что старые имена по-прежнему используются в течение определенного периода времени.
 
-## <a name="background"></a>История
+## <a name="background"></a>Фон
 
-Новый соединитель [защитника Microsoft 365](https://docs.microsoft.com/microsoft-365/security/mtp/microsoft-threat-protection) позволяет выполнять потоковую передачу **расширенных** журналов подразделений — тип данных необработанных событий — от Microsoft 365 защитника до Azure Sentinel. 
+Новый соединитель [защитника Microsoft 365](/microsoft-365/security/mtp/microsoft-threat-protection) позволяет выполнять потоковую передачу **расширенных** журналов подразделений — тип данных необработанных событий — от Microsoft 365 защитника до Azure Sentinel. 
 
-С интеграцией [защитника Майкрософт для конечной точки (мдатп)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) в защищенный тег безопасности защитника Microsoft 365 теперь вы можете собирать свои события защитника Майкрософт для [расширенного](https://aka.ms/mdatpAH) поисковых событий конечной точки с помощью соединителя Microsoft 365 Defender, а также выполнять потоковую передачу в новые встроенные таблицы в рабочей области Sentinel Azure. Эти таблицы построены на той же схеме, которая используется на портале защитника Microsoft 365, что дает вам полный доступ к набору расширенных журналов подсчета и позволяет выполнять следующие действия:
+С интеграцией [защитника Майкрософт для конечной точки (мдатп)](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) в защищенный тег безопасности защитника Microsoft 365 теперь вы можете собирать свои события защитника Майкрософт для [расширенного](/windows/security/threat-protection/microsoft-defender-atp/advanced-hunting-overview) поисковых событий конечной точки с помощью соединителя Microsoft 365 Defender, а также выполнять потоковую передачу в новые встроенные таблицы в рабочей области Sentinel Azure. Эти таблицы построены на той же схеме, которая используется на портале защитника Microsoft 365, что дает вам полный доступ к набору расширенных журналов подсчета и позволяет выполнять следующие действия:
 
 - Вы сможете легко скопировать существующий расширенный поисковый запрос ATP в защитнике Майкрософт в Azure Sentinel.
 
@@ -49,7 +49,7 @@ ms.locfileid: "90938479"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Необходимо иметь действительную лицензию для защитника Майкрософт для конечной точки, как описано в разделе [Настройка защитника Майкрософт для развертывания конечных точек](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/licensing). 
+- Необходимо иметь действительную лицензию для защитника Майкрософт для конечной точки, как описано в разделе [Настройка защитника Майкрософт для развертывания конечных точек](/windows/security/threat-protection/microsoft-defender-atp/licensing). 
 
 - Пользователю должна быть назначена роль глобального администратора в клиенте (в Azure Active Directory).
 
@@ -98,7 +98,7 @@ let Now = now();
 
 На вкладке **дальнейшие действия** вы найдете несколько примеров запросов, которые были добавлены. Их можно запустить в месте или изменить и сохранить.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как получить необработанные данные о событиях из защитника Майкрософт для конечной точки в Azure Sentinel с помощью соединителя защитника Microsoft 365. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
-- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](./tutorial-detect-threats-built-in.md).

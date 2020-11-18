@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: d1de9270534a3550d8db043fdd6bcfe56ec31bda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 72b2ba0ea444fb14ef9fc1bc3ea6aea3654677df
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90895591"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655533"
 ---
 # <a name="connect-alerts-from-microsoft-defender-for-endpoint-formerly-microsoft-defender-atp"></a>Подключение оповещений от защитника Майкрософт к конечной точке (прежнее название — ATP в защитнике Майкрософт)
 
@@ -33,15 +33,15 @@ ms.locfileid: "90895591"
 > Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-[Защитник Майкрософт для соединителя конечной точки](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) позволяет передавать оповещения от защитника Майкрософт для конечной точки в Azure Sentinel. Это позволит вам более детально анализировать события безопасности в Организации и создавать модули PlayBook для эффективного и немедленного реагирования.
+[Защитник Майкрософт для соединителя конечной точки](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) позволяет передавать оповещения от защитника Майкрософт для конечной точки в Azure Sentinel. Это позволит вам более детально анализировать события безопасности в Организации и создавать модули PlayBook для эффективного и немедленного реагирования.
 
 > [!NOTE]
 >
-> Чтобы принять новые журналы необработанных данных от защитника Майкрософт для [расширенного](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/advanced-hunting-overview)обнаружения конечной точки, используйте новый соединитель для Microsoft 365ного защитника (ранее — Microsoft Threat Protection, [см. документацию](./connect-microsoft-365-defender.md)).
+> Чтобы принять новые журналы необработанных данных от защитника Майкрософт для [расширенного](/windows/security/threat-protection/microsoft-defender-atp/advanced-hunting-overview)обнаружения конечной точки, используйте новый соединитель для Microsoft 365ного защитника (ранее — Microsoft Threat Protection, [см. документацию](./connect-microsoft-365-defender.md)).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Необходимо иметь действительную лицензию для защитника Майкрософт для конечной точки, как описано в разделе [Настройка защитника Майкрософт для развертывания конечных точек](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/licensing). 
+- Необходимо иметь действительную лицензию для защитника Майкрософт для конечной точки, как описано в разделе [Настройка защитника Майкрософт для развертывания конечных точек](/windows/security/threat-protection/microsoft-defender-atp/licensing). 
 
 - Вы должны быть глобальным администратором или администратором безопасности для клиента Sentinel Azure.
 
@@ -55,7 +55,7 @@ ms.locfileid: "90895591"
 
 1. Чтобы запросить у защитника Майкрософт оповещения о конечных точках в **журналах**, введите **секуритялерт** в окне запроса и добавьте фильтр, где **имя поставщика** — **мдатп**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить защитник Майкрософт для конечной точки к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
-- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](./tutorial-detect-threats-built-in.md).

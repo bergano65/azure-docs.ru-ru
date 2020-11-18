@@ -10,12 +10,12 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/18/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e8ae0463633940ba3192815af6a07a6356901044
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 47427f8d3690218060fd1e6221b1b089c68d6e1d
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426992"
+ms.locfileid: "94441840"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-the-azure-cli"></a>Управление ключами учетной записи хранения с помощью Key Vault и Azure CLI
 
@@ -34,11 +34,11 @@ ms.locfileid: "94426992"
 
 Azure AD позволяет проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. Вы можете использовать [управляемое удостоверение Azure AD](../../active-directory/managed-identities-azure-resources/index.yml) при запуске в Azure. Управляемые удостоверения устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
 
-Для управления авторизацией, которая также поддерживается Key Vault, Azure AD использует управление доступом на основе ролей (RBAC).
+Для управления авторизацией, которая также поддерживается Key Vault, Azure AD использует управление доступом на основе ролей Azure (Azure RBAC).
 
 ## <a name="service-principal-application-id"></a>Идентификатор приложения субъекта-службы
 
-Арендатор Azure AD предоставляет каждому зарегистрированному приложению [субъект-службу](../../active-directory/develop/developer-glossary.md#service-principal-object). Субъект-служба выступает в качестве идентификатора приложения, который используется во время настройки авторизации для доступа к другим ресурсам Azure с использованием RBAC.
+Арендатор Azure AD предоставляет каждому зарегистрированному приложению [субъект-службу](../../active-directory/develop/developer-glossary.md#service-principal-object). Субъект-служба выступает в качестве идентификатора приложения, который используется во время настройки авторизации для получения доступа к другим ресурсам Azure с помощью Azure RBAC.
 
 Key Vault — это приложение Майкрософт, которое предварительно зарегистрировано во всех клиентах Azure AD. Key Vault регистрируется с одним и тем же идентификатором приложения в каждом облаке Azure.
 

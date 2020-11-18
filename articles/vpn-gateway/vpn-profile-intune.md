@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: 7105597ec34e804c2f2b85b01feb4824d63005c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 63b1d7f95711017feba52cad97f05128d83734da
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91578127"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655176"
 ---
 # <a name="create-an-intune-profile-to-deploy-vpn-client-profiles"></a>Создание профиля Intune для развертывания профилей VPN-клиента
 
@@ -35,7 +35,7 @@ ms.locfileid: "91578127"
 * Автоматическое подключение
 * Обнаружение доверенной сети включено.
 
-Другие поддерживаемые параметры см. в статье [Поддержка VPNV2 CSP](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) .
+Другие поддерживаемые параметры см. в статье [Поддержка VPNV2 CSP](/windows/client-management/mdm/vpnv2-csp) .
 
 1. Скачайте профиль VPN из портал Azure и извлеките файл *azurevpnconfig.xml* из пакета.
 1. Скопируйте приведенный ниже текст и вставьте его в новый файл текстового редактора.
@@ -69,25 +69,25 @@ ms.locfileid: "91578127"
 1. Войдите в Intune и перейдите к элементу **устройства-> профили конфигурации**. Выберите **+ создать профиль**.
 
    :::image type="content" source="./media/create-profile-intune/configuration-profile.png" alt-text="профили конфигурации.":::
-1. В поле **Платформа** выберите **Windows 10 и более поздние версии**. В качестве **профиля**выберите **Custom (настраиваемый**). Затем выберите **Создать**.
+1. В поле **Платформа** выберите **Windows 10 и более поздние версии**. В качестве **профиля** выберите **Custom (настраиваемый**). Затем выберите **Создать**.
 1. Присвойте профилю имя и описание, а затем нажмите кнопку **Далее**.
 1. На вкладке **Параметры конфигурации** нажмите кнопку **Добавить**.
 
     * **Имя:** Введите имя конфигурации.
     * **Описание:** Необязательное описание.
-    * **OMA-URI:** ```./User/Vendor/MSFT/VPNv2/<name of your connection>/ProfileXML``` (эти сведения можно найти в файле azurevpnconfig.xml в <name> </name> теге).
+    * **OMA-URI:** ```./User/Vendor/MSFT/VPNv2/<name of your connection>/ProfileXML``` (эти сведения можно найти в файле azurevpnconfig.xml в <name></name> теге).
     * **Тип данных:** Строка (XML-файл).
 
-   Щелкните значок папки и выберите файл, сохраненный на шаге 6, в разделе [XML-](#xml) действия. Выберите **Добавить**.
+   Щелкните значок папки и выберите файл, сохраненный на шаге 6, в разделе [XML-](#xml) действия. Нажмите **Добавить**.
 
-   :::image type="content" source="./media/create-profile-intune/configuration-settings.png" alt-text="профили конфигурации." lightbox="./media/create-profile-intune/configuration-settings.png":::
+   :::image type="content" source="./media/create-profile-intune/configuration-settings.png" alt-text="Параметры конфигурации" lightbox="./media/create-profile-intune/configuration-settings.png":::
 1. Выберите **Далее**.
-1. В разделе **назначения**выберите группу, в которую необходимо принудительно отправить конфигурацию. Затем нажмите кнопку **Далее**.
+1. В разделе **назначения** выберите группу, в которую необходимо принудительно отправить конфигурацию. Затем нажмите кнопку **Далее**.
 1. Правила применимости являются необязательными. При необходимости определите любые правила, а затем нажмите кнопку **Далее**.
 1. На странице " **Проверка и создание** " выберите **создать**.
 
-    :::image type="content" source="./media/create-profile-intune/create-profile.png" alt-text="профили конфигурации.":::
-1. Теперь ваш настраиваемый профиль создан. Дополнительные Microsoft Intune действиях по развертыванию этого профиля см. в разделе [Назначение профилей пользователей и устройств](https://docs.microsoft.com/mem/intune/configuration/device-profile-assign).
+    :::image type="content" source="./media/create-profile-intune/create-profile.png" alt-text="Создание профиля":::
+1. Теперь ваш настраиваемый профиль создан. Дополнительные Microsoft Intune действиях по развертыванию этого профиля см. в разделе [Назначение профилей пользователей и устройств](/mem/intune/configuration/device-profile-assign).
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

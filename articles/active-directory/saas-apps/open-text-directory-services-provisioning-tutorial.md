@@ -1,6 +1,6 @@
 ---
-title: Руководство. Настройка служб каталогов OpenText для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в службы каталогов OpenText.
+title: Руководство по настройке OpenText Directory Services для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+description: Сведения о настройке автоматической подготовки и отзыва учетных записей пользователей из Azure AD в OpenText Directory Services.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -12,27 +12,27 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: Zhchia
-ms.openlocfilehash: c0858c2e5b1ada866d252e45113f0f90b73caaf8
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
-ms.translationtype: MT
+ms.openlocfilehash: c023d9b79b81257419814c3087b78f65e1cb6dd5
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428966"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94355997"
 ---
-# <a name="tutorial-configure-opentext-directory-services-for-automatic-user-provisioning"></a>Учебник. Настройка служб каталогов OpenText для автоматической подготовки пользователей
+# <a name="tutorial-configure-opentext-directory-services-for-automatic-user-provisioning"></a>Руководство по настройке OpenText Directory Services для автоматической подготовки пользователей
 
-В этом учебнике описываются действия, которые необходимо выполнить в OpenText Directory Services и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически подготавливает и отменяет подготовку пользователей и групп для OpenText служб каталогов с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md). 
+В этом учебнике описаны действия, которые необходимо выполнить в OpenText Directory Services и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически подготавливает и отзывает пользователей и группы в OpenText Directory Services с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
 > [!div class="checklist"]
-> * Создание пользователей в службах каталогов OpenText
-> * Удалять пользователей в службах каталогов OpenText, когда им больше не нужен доступ
-> * Синхронизация атрибутов пользователей между Azure AD и службами каталогов OpenText
-> * Подготавливайте группы и членство в группах в OpenText Directory Services
+> * Создание пользователей в OpenText Directory Services.
+> * Удаление пользователей из OpenText Directory Services, когда доступ им больше не нужен.
+> * Синхронизация атрибутов пользователей между Azure AD и OpenText Directory Services.
+> * Подготовка групп и членства в группах в OpenText Directory Services.
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/opentext-directory-services-tutorial) в OpenText Directory Services (рекомендуется)
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -41,60 +41,60 @@ ms.locfileid: "92428966"
 
 * [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) настраивать подготовку (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
-* Установка ОТДС, доступная в Azure AD.
+* Установка OTDS, доступная в Azure AD.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
 1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Определите, какие данные должны [сопоставляться между службами каталогов Azure AD и OpenText](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+3. Определите, какие данные следует [сопоставлять между Azure AD и OpenText Directory Services](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
 
-## <a name="step-2-configure-opentext-directory-services-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка служб каталогов OpenText для поддержки подготовки с помощью Azure AD
+## <a name="step-2-configure-opentext-directory-services-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка OpenText Directory Services для поддержки подготовки с помощью Azure AD
 
 > [!NOTE]
-> Приведенные ниже действия применимы к установке служб каталогов OpenText. Они не применяются к клиентам OpenText Корешаре или OpenText OT2.
+> Приведенные ниже шаги применяются к установке OpenText Directory Services. Они неприменимы для клиентов OpenText CoreShare или OpenText OT2.
 
-1. Создайте выделенный конфиденциальный **клиент OAuth**.
+1. Создание выделенного конфиденциального **клиента OAuth**.
 2. Задайте длительное **время существования маркера доступа**.
 
-      ![Жизненный цикл доступа к маркеру](media/open-text-directory-services-provisioning-tutorial/token-life.png)
+      ![Время жизни маркера доступа](media/open-text-directory-services-provisioning-tutorial/token-life.png)
 
-3. Не указывайте URL-адреса перенаправления. Они не являются обязательными. 
-4. ОТДС создаст и отобразит **секрет клиента**. Сохраните **идентификатор клиента** и **секрет клиента** в безопасном месте.
+3. Не указывайте URL-адреса перенаправления. Они не требуются. 
+4. OTDS создаст и отобразит **секрет клиента**. Сохраните значения **идентификатор клиента** и **секрет клиента** в секретном расположении.
 
       ![Секрет клиента](media/open-text-directory-services-provisioning-tutorial/client-secret.png)
 
-5. Создайте секцию для пользователей и групп, которые будут синхронизированы из Azure AD.
+5. Создайте раздел для пользователей и групп, которые будут синхронизированы из Azure AD.
 
-      ![Страница секционирования](media/open-text-directory-services-provisioning-tutorial/partition.png)
+      ![Страница раздела](media/open-text-directory-services-provisioning-tutorial/partition.png)
 
-6. Предоставьте административные права клиенту OAuth, созданному в разделе, который будет использоваться для синхронизации пользователей и групп Azure AD.    
-      * Действия Partition->-> изменение администраторов
+6. Предоставьте административные права клиенту OAuth, созданному в разделе, который будете использоваться для синхронизируемых пользователей и групп Azure AD.    
+      * Раздел -> Действия ->Изменение администраторов
 
       ![Страница администратора](media/open-text-directory-services-provisioning-tutorial/administrator.png)
 
-5. Маркер секрета должен быть извлечен и настроен в Azure AD. Для этого можно использовать любое клиентское приложение HTTP. Ниже приведены инструкции по получению с помощью приложения API Swagger, входящего в ОТДС.
-      * В веб-браузере перейдите по адресу {ОТДС URL}/otdsws/OAuth2
-      * Перейдите по адресу/Token и щелкните значок замка в правом верхнем углу. Введите идентификатор и секрет клиента OAuth, полученные ранее, в качестве имени пользователя и пароля соответственно. Нажмите кнопку "Авторизовать".
+5. Секретный токен необходимо получить и настроить в Azure AD. Для этого можно воспользоваться любым клиентским приложением HTTP. Ниже приведены шаги по получению с помощью приложения Swagger API, включенного в OTDS.
+      * В веб-браузере перейдите по адресу {OTDS URL}/otdsws/oauth2
+      * Перейдите в раздел /token и щелкните значок блокировки в правом верхнем углу. Введите идентификатор клиента OAuth и полученный ранее секрет в качестве имени пользователя и пароля соответственно. Нажмите кнопку "Авторизовать".
 
       ![Кнопка авторизации](media/open-text-directory-services-provisioning-tutorial/authorization.png)
 
-6. Выберите **client_credentials** для grant_type и нажмите кнопку **выполнить**.
+6. Выберите **client_credentials** для grant_type и щелкните **Выполнить**.
 
-      ![Выполнить настраиваемой](media/open-text-directory-services-provisioning-tutorial/execute.png)
+      ![Кнопка выполнения](media/open-text-directory-services-provisioning-tutorial/execute.png)
 
-7. Маркер доступа в ответе следует использовать в поле **секретного токена** в Azure AD.
+7. Маркер доступа в ответе следует использовать в поле **Секретный токен** в Azure AD.
 
       ![Маркер доступа](media/open-text-directory-services-provisioning-tutorial/access-token.png)
 
-## <a name="step-3-add-opentext-directory-services-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление служб каталогов OpenText из коллекции приложений Azure AD
+## <a name="step-3-add-opentext-directory-services-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление OpenText Directory Services из коллекции приложений Azure AD
 
-Добавьте службы каталогов OpenText из коллекции приложений Azure AD, чтобы начать управление подготовкой к работе со службами каталогов OpenText. Если вы ранее настроили службы каталогов OpenText для единого входа, можно использовать одно и то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
+Добавьте OpenText Directory Services из коллекции приложений Azure AD, чтобы начать управление подготовкой для OpenText Directory Services. Если вы ранее настроили единый вход в OpenText Directory Services, можно использовать это же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
 Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
 
-* При назначении пользователей и групп службам каталогов OpenText необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп для OpenText Directory Services необходимо выбрать роль, отличающуюся от роли **Доступ по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
 
 * Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
 
@@ -103,7 +103,7 @@ ms.locfileid: "92428966"
 
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в TestApp на основе их назначений в Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-opentext-directory-services-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для служб каталогов OpenText в Azure AD, сделайте следующее:
+### <a name="to-configure-automatic-user-provisioning-for-opentext-directory-services-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в OpenText Directory Services, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
 
@@ -111,7 +111,7 @@ ms.locfileid: "92428966"
 
 2. В списке приложений выберите **OpenText Directory Services**.
 
-    ![Ссылка на службы каталогов OpenText в списке "приложения"](common/all-applications.png)
+    ![Ссылка на OpenText Directory Services в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -119,13 +119,13 @@ ms.locfileid: "92428966"
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Автоматическая вкладка подготовки](common/provisioning-automatic.png)
+    ![Вкладка "Подготовка" с выделенным значением "Авто"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите URL-адрес клиента службы каталогов OpenText.
-   * URL-адрес клиента, не являющегося спеЦифк: {URL-адрес ОТДС}/СЦим/{партитионнаме}
-   * Указанный URL-адрес клиента: {ОТДС URL}/Отдстенант/{тенантид}/сЦим/{партитионнаме}
+5. В разделе **Учетные данные администратора** введите URL-адрес клиента OpenText Directory Services.
+   * URL-адрес без указания клиента: {OTDS URL}/scim/{partitionName}
+   * URL-адрес с указанием клиента: {OTDS URL}/otdstenant/{tenantID}/scim/{partitionName}
 
-6. Введите маркер секрета, полученный на шаге 2. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к службам каталогов OpenText. В случае сбоя подключения убедитесь, что учетная запись служб каталогов OpenText имеет разрешения администратора, и повторите попытку.
+6. Введите секретный токен, полученный на шаге 2. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к OpenText Directory Services. Если установить подключение не удалось, убедитесь, что у учетной записи OpenText Directory Services есть разрешения администратора, и повторите попытку.
 
       ![Токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -135,9 +135,9 @@ ms.locfileid: "92428966"
 
 7. Щелкните **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с OpenText Directory Services**.
+8. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с OpenText Directory Services**.
 
-9. Изучите пользовательские атрибуты, синхронизированные из Azure AD, с OpenText Directory Services в разделе **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в OpenText Directory Services для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), необходимо убедиться, что API службы каталогов OpenText поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. В разделе **Сопоставления атрибутов** просмотрите пользовательские атрибуты, которые синхронизируются из Azure AD в OpenText Directory Services. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в OpenText Directory Services для операций обновления. Если вы решили изменить [целевой атрибут сопоставления](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), сначала убедитесь, что API OpenText Directory Services поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|
@@ -164,9 +164,9 @@ ms.locfileid: "92428966"
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник| 
 
-10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы со службами каталогов OpenText**.
+10. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Groups to OpenText Directory Services** (Синхронизировать группы Azure Active Directory с OpenText Directory Services).
 
-11. Изучите атрибуты группы, синхронизированные из Azure AD, с OpenText Directory Services в разделе **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в OpenText Directory Services для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. В разделе **Сопоставления атрибутов** просмотрите атрибуты группы, которые синхронизируются из Azure AD в OpenText Directory Services. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления групп в OpenText Directory Services в операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
       |attribute|Тип|
       |---|---|
@@ -176,11 +176,11 @@ ms.locfileid: "92428966"
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Чтобы включить службу подготовки Azure AD для служб каталогов OpenText, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+13. Чтобы включить службу подготовки Azure AD для OpenText Directory Services, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-14. Определите пользователей и (или) группы, которые вы хотите подготавливать к службам каталогов OpenText, выбрав нужные значения в **области** в разделе **Параметры** .
+14. Определите пользователей и (или) группы для подготовки в OpenText Directory Services, выбрав нужные значения в поле **Область** раздела **Параметры**.
 
     ![Область действия подготовки](common/provisioning-scope.png)
 

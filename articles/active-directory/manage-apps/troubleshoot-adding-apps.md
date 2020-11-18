@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/11/2018
 ms.author: kenwith
-ms.openlocfilehash: e9e97aec66d99d149320938540c48b9ad68eaf0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 714cbb06506cc3e0dffe74007712d9cbad072284
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90068036"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655074"
 ---
 # <a name="troubleshoot-common-problem-adding-or-removing-an-application-to-azure-active-directory"></a>Устранение распространенных неполадок при добавлении или удалении приложения для Azure Active Directory
 Эта статья поможет вам понять распространенные проблемы, с которыми сталкиваются пользователи при добавлении или удалении приложения для Azure Active Directory.
@@ -31,9 +31,9 @@ ms.locfileid: "90068036"
 Если при нажатии кнопки **Добавить** возникнет ошибка, для этого **уведомления** отобразится состояние **Ошибка**. Если вам нужны дополнительные сведения об этой ошибке или вы хотите передать информацию инженеру службы поддержки, выполните действия, описанные в разделе [Как просмотреть сведения об уведомлении на портале](#how-to-see-the-details-of-a-portal-notification).
 
 ## <a name="i-dont-know-how-to-set-up-my-application-once-ive-added-it"></a>Приложение добавлено, но я не знаю, как его настроить
-Если вам нужна помощь в изучении приложений, то лучше всего начать [работу со списком учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list) статьей.
+Если вам нужна помощь в изучении приложений, то лучше всего начать [работу со списком учебников по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md) статьей.
 
-Кроме того, статья [Управление приложениями с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-apps-index) поможет вам узнать о том, что такое единый вход Azure AD и как он работает.
+Кроме того, статья [Управление приложениями с помощью Azure Active Directory](./what-is-application-management.md) поможет вам узнать о том, что такое единый вход Azure AD и как он работает.
 
 ## <a name="i-want-to-delete-an-application-but-the-delete-button-is-disabled"></a>Я хочу удалить приложение, но кнопка "Удалить" отключена
 
@@ -43,7 +43,7 @@ ms.locfileid: "90068036"
 
 - Для приложения Майкрософт вы не сможете удалить их из пользовательского интерфейса независимо от вашей роли.
 
-- Для свойства serviceprincipals, соответствующих управляемому удостоверению. Субъекты-службы управляемых удостоверений нельзя удалить в колонке "корпоративные приложения". Для управления им необходимо обратиться к ресурсу Azure. Подробнее об [управляемом удостоверении](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)
+- Для свойства serviceprincipals, соответствующих управляемому удостоверению. Субъекты-службы управляемых удостоверений нельзя удалить в колонке "корпоративные приложения". Для управления им необходимо обратиться к ресурсу Azure. Подробнее об [управляемом удостоверении](../managed-identities-azure-resources/overview.md)
 
 ## <a name="how-to-see-the-details-of-a-portal-notification"></a>Как просмотреть сведения об уведомлении на портале
 Чтобы просмотреть сведения об уведомлении на портале, выполните следующие действия:

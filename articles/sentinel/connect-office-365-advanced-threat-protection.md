@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/06/2020
 ms.author: yelevin
-ms.openlocfilehash: 5ac72c9861e06773ffab87dcbf4e730562b798fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5140bcd85606213f00185d4ba1f50dbe70dba63
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91346599"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655500"
 ---
 # <a name="connect-alerts-from-microsoft-defender-for-office-365"></a>Подключение оповещений от защитника Майкрософт для Office 365 
 
@@ -31,7 +31,7 @@ ms.locfileid: "91346599"
 >
 > - Прием оповещений Microsoft Defender для Office 365 в настоящее время находится в общедоступной предварительной версии. Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
  
-[Microsoft Defender для Office 365](https://docs.microsoft.com/office365/servicedescriptions/office-365-advanced-threat-protection-service-description) защищает вашу организацию от неизвестных и других сложных угроз, вызванных неизвестными вредоносными программами в сообщениях электронной почты, ссылками на вредоносные URL-адреса и средства совместной работы. Принимая Microsoft Defender для оповещений Office 365 в Azure Sentinel, вы сможете использовать сведения об электронной почте, обмене файлами и угрозах на основе URL-адресов в операциях безопасности. Затем можно более детально анализировать события безопасности в Организации и создавать модули PlayBook для эффективного и немедленного реагирования.
+[Microsoft Defender для Office 365](/office365/servicedescriptions/office-365-advanced-threat-protection-service-description) защищает вашу организацию от неизвестных и других сложных угроз, вызванных неизвестными вредоносными программами в сообщениях электронной почты, ссылками на вредоносные URL-адреса и средства совместной работы. Принимая Microsoft Defender для оповещений Office 365 в Azure Sentinel, вы сможете использовать сведения об электронной почте, обмене файлами и угрозах на основе URL-адресов в операциях безопасности. Затем можно более детально анализировать события безопасности в Организации и создавать модули PlayBook для эффективного и немедленного реагирования.
 
 Соединитель импортирует следующие оповещения:
 
@@ -55,7 +55,7 @@ ms.locfileid: "91346599"
 
 - Вы должны быть глобальным администратором или администратором безопасности в клиенте рабочей области Azure Sentinel.
 
-- Необходимо иметь действительную лицензию на [office 365 ATP (план 2](https://docs.microsoft.com/microsoft-365/security/office-365-security/office-365-atp#office-365-atp-plan-1-and-plan-2) ) (входит в состав лицензий Office 365, Office 365 A5 и Microsoft 365, а также приобрести их отдельно). 
+- Необходимо иметь действительную лицензию на [office 365 ATP (план 2](/microsoft-365/security/office-365-security/office-365-atp#office-365-atp-plan-1-and-plan-2) ) (входит в состав лицензий Office 365, Office 365 A5 и Microsoft 365, а также приобрести их отдельно). 
 
 ## <a name="connect-to-microsoft-defender-for-office-365"></a>Подключение к Microsoft Defender для Office 365
 
@@ -73,8 +73,8 @@ ms.locfileid: "91346599"
 
 1. Перейдите на вкладку **дальнейшие действия** , чтобы просмотреть и использовать шаблоны образцов запросов и правил аналитики, Объединенные с соединителем Microsoft Защитник для Office 365.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить Microsoft Defender для Office 365 к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
-- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](./tutorial-detect-threats-built-in.md).
