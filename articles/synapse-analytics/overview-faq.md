@@ -2,19 +2,19 @@
 title: Вопросы и ответы — Azure Synapse Analytics (предварительная версия рабочих областей)
 description: Вопросы и ответы для Azure Synapse Analytics (предварительная версия рабочих областей)
 services: synapse-analytics
-author: ArnoMicrosoft
+author: saveenr
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: overview
 ms.date: 04/15/2020
-ms.author: acomet
+ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: d7e8ea231dd6db9eab6cf9115f6ce2e62893371a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 530ebe09ee0ca44b0a5fbd4b8da2784e2c7ae7ea
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305418"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843899"
 ---
 # <a name="azure-synapse-analytics-workspaces-preview-frequently-asked-questions"></a>Вопросы и ответы по Azure Synapse Analytics (предварительная версия рабочих областей)
 
@@ -101,8 +101,6 @@ A. Да, вы можете использовать для подключени�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание рабочей области](quickstart-create-workspace.md)
-- [Использование Synapse Studio](quickstart-synapse-studio.md)
-- [Создание выделенного пула SQL](quickstart-create-sql-pool-portal.md)
-- [Использование бессерверного пула SQL](quickstart-sql-on-demand.md)
-- [Создание бессерверного пула Apache Spark](quickstart-create-apache-spark-pool-portal.md) 
+* [Начало работы с Azure Synapse Analytics](get-started.md)
+* [Создание рабочей области](quickstart-create-workspace.md)
+* [Использование бессерверного пула SQL](quickstart-sql-on-demand.md)

@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 98f6ce7eee799b1baf29782d7eca11d62cf62353
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 64e5ac46fbeb71706f7b1ae2d3682260e3cbc651
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207297"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843202"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -62,7 +62,7 @@ ms.locfileid: "92207297"
 **Ответственность:** Пользовательских
 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
-***Руководство.** В Azure Monitor задайте срок хранения журнала для рабочих областей Log Analytics, связанных с экземплярами Azure DevTest Labs в соответствии с правилами соответствия вашей организации.
+**_Руководство._* В Azure Monitor задайте срок хранения журнала для рабочих областей Log Analytics, связанных с экземплярами Azure DevTest Labs в соответствии с правилами соответствия вашей организации.
 
 Дополнительные сведения см. в следующей статье: [как задать параметры хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) .
 
@@ -175,9 +175,9 @@ DevTest Labs не имеет концепции паролей по умолча
 - [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)  
 - [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
-**Мониторинг центра безопасности Azure:*** да
+**Мониторинг центра безопасности Azure:** _ да
 
-**Ответственность:** Пользовательских
+_ *Обязанность:** клиент
 
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
@@ -387,7 +387,7 @@ DevTest Labs не имеет концепции паролей по умолча
 **Ответственность:** Пользовательских
 
 ### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5.3. Развертывание автоматизированного решения для управления исправлениями ПО сторонних производителей
-***Руководство.*** Как администратор лаборатории вы можете использовать [артефакты DevTest Labs](add-artifact-vm.md) для автоматизации обновления пользовательских образов лаборатории, включая исправления безопасности и другие обновления. 
+**_Руководство._* _ в качестве администратора лаборатории вы можете использовать [артефакты DevTest Labs](add-artifact-vm.md) для автоматизации обновления пользовательских образов лаборатории, включая исправления системы безопасности и другие обновления. 
 
 Узнайте больше о [фабрике образов DevTest Labs](image-factory-create.md), которая представляет собой решение конфигурации как код, которое регулярно создает и распространяет образы автоматически на основе всех требуемых конфигураций. 
 
@@ -396,7 +396,7 @@ DevTest Labs не имеет концепции паролей по умолча
 - [Решение для управления обновлениями в Azure](../automation/update-management/update-mgmt-overview.md)
 - [Управление обновлениями и исправлениями для виртуальных машин](../automation/update-management/update-mgmt-overview.md)
 
-**Мониторинг центра безопасности Azure:** Неприменимо
+_ *Мониторинг центра безопасности Azure:** не применимо
 
 **Ответственность:** Пользовательских
 
@@ -515,7 +515,7 @@ DevTest Labs не имеет концепции паролей по умолча
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-Дополнительные сведения см. в следующих статьях: 
+См. следующие статьи: 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 - [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
@@ -692,7 +692,7 @@ DevTest Labs не имеет концепции паролей по умолча
 
 - [Настройка управляемого удостоверения для развертывания сред Azure Resource Manager в DevTest Labs](use-managed-identities-environments.md)
 - [Настройка управляемого удостоверения для развертывания виртуальных машин в DevTest Labs](enable-managed-identities-lab-vms.md)
-- [Создание хранилища ключей](../key-vault/secrets/quick-create-portal.md)
+- [Создание хранилища ключей](../key-vault/general/quick-create-portal.md)
 - [Проверка подлинности в Key Vault](../key-vault/general/authentication.md)
 - [Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-portal.md)
 

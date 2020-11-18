@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1abbabd3c231a70ca473c4b64e9a8c75d2119c89
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 7d116010d5e6fea5e1ba8a66431b874194506283
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445529"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843457"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовая конфигурация системы безопасности Azure для Key Vault
 
@@ -39,9 +39,9 @@ ms.locfileid: "94445529"
 https://docs.microsoft.com/azure/key-vault/private-link-service
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>1.2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
@@ -51,18 +51,18 @@ https://docs.microsoft.com/azure/key-vault/private-link-service
 
 https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
 **Рекомендации**. Неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4. Запрет взаимодействия с известными опасными IP-адресами
 
@@ -74,9 +74,9 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 Обнаружение угроз для уровня служб Azure в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="15-record-network-packets-and-flow-logs"></a>1.5. Запись сетевых пакетов и журналов потоков
 
@@ -90,9 +90,9 @@ https://docs.microsoft.com/azure/key-vault/private-link-service
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6. Развертывание сетевых систем обнаружения и предотвращения вторжений (IDS/IPS)
 
@@ -106,18 +106,18 @@ https://docs.microsoft.com/azure/security-center/advanced-threat-protection-key-
 
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
 
 **Рекомендации**. Неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
 
@@ -126,9 +126,9 @@ https://docs.microsoft.com/azure/security-center/advanced-threat-protection-key-
 Общие сведения о тегах служб Azure: https://docs.microsoft.com/azure/virtual-network/service-tags-overview
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
 
@@ -149,9 +149,9 @@ https://docs.microsoft.com/azure/governance/policy/samples/#networ
 https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
 
@@ -166,9 +166,9 @@ https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
@@ -183,9 +183,9 @@ https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view
 https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
@@ -193,12 +193,12 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
-**Руководство** : неприменимо; Корпорация Майкрософт поддерживает источник времени, используемый для ресурсов Azure, например Azure Key Vault, для меток времени в журналах.
+**Руководство**: неприменимо; Корпорация Майкрософт поддерживает источник времени, используемый для ресурсов Azure, например Azure Key Vault, для меток времени в журналах.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Microsoft
+**Ответственность**: Microsoft
 
 ### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
@@ -213,9 +213,9 @@ https://docs.microsoft.com/azure/key-vault/key-vault-logging
 https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
 
@@ -226,18 +226,18 @@ https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 https://docs.microsoft.com/azure/key-vault/key-vault-logging
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="24-collect-security-logs-from-operating-systems"></a>2.4. Сбор журналов безопасности из операционных систем
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
@@ -246,9 +246,9 @@ https://docs.microsoft.com/azure/key-vault/key-vault-logging
 Измените срок хранения данных: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
 
@@ -267,9 +267,9 @@ https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
 https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7. Включение оповещений об аномальных действиях
 
@@ -288,36 +288,36 @@ https://docs.microsoft.com/azure/security-center/security-center-managing-and-re
 https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
 
-**Руководство** : неприменимо; Azure Key Vault не обрабатывает и не создает журналы, связанные с защитой от вредоносных программ.
+**Руководство**: неприменимо; Azure Key Vault не обрабатывает и не создает журналы, связанные с защитой от вредоносных программ.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="29-enable-dns-query-logging"></a>2.9. Включение ведения журнала запросов DNS
 
-**Руководство** : неприменимо; Azure Key Vault не обрабатывает и не создает журналы, связанные с DNS.
+**Руководство**: неприменимо; Azure Key Vault не обрабатывает и не создает журналы, связанные с DNS.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ## <a name="identity-and-access-control"></a>Идентификатор и управление доступом
 
@@ -338,18 +338,18 @@ https://docs.microsoft.com/azure/key-vault/key-vault-manage-with-cli2#registerin
 https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
-**Руководство** : неприменимо; Azure Key Vault не имеет концепции паролей по умолчанию, так как проверка подлинности обеспечивается Active Directory и защищена с помощью управления доступом на основе ролей Azure (Azure RBAC).
+**Руководство**: неприменимо; Azure Key Vault не имеет концепции паролей по умолчанию, так как проверка подлинности обеспечивается Active Directory и защищена с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -360,9 +360,9 @@ https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault
 https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
 
@@ -374,15 +374,15 @@ https://docs.microsoft.com/azure/key-vault/service-to-service-authentication
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
 
 **Рекомендации**. Включите многофакторную проверку подлинности Azure Active Directory и следуйте рекомендациям центра безопасности Azure по управлению удостоверениями и доступом (в настоящее время в предварительной версии) для защиты ресурсов, включенных в концентратор событий.
 
-Планирование развертывания многофакторной идентификации Azure на основе облачных служб:
+Планирование развертывания с использованием многофакторной идентификации Azure AD в облачной среде:
 
 https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
@@ -391,23 +391,23 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
 
-**Руководство**. Используйте рабочую станцию привилегированного доступа (привилегированным доступом) с поддержкой многофакторной идентификации Azure (MFA), настроенной для входа в систему и настройки ресурсов KEY Vault. 
+**Руководство**. Используйте рабочую станцию привилегированного доступа (привилегированным доступом) с помощью многофакторной идентификации Azure AD (MFA), настроенной для входа в систему и настройки ресурсов, включенных Key Vault. 
 
 Рабочие станции привилегированного доступа: https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations 
 
-Планирование развертывания многофакторной идентификации Azure на основе облачных служб: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+Планирование развертывания с использованием многофакторной идентификации Azure AD в облачной среде: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7. Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
 
@@ -427,9 +427,9 @@ Azure Active Directory обнаружения рисков: https://docs.microso
 
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
 
@@ -439,9 +439,9 @@ Azure Active Directory обнаружения рисков: https://docs.microso
 
 
 
-**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
@@ -454,9 +454,9 @@ Azure Active Directory обнаружения рисков: https://docs.microso
 https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant
 
 
-**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
 
@@ -471,9 +471,9 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/
 https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3.11. Отслеживание попыток доступа к отключенным учетным записям
 
@@ -485,9 +485,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12. Предупреждение при подозрительном входе в учетную запись
 
@@ -500,21 +500,21 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 Как подключить метку Azure:  https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13. Предоставление корпорации Майкрософт доступа к соответствующим данным клиентов в рамках сценариев поддержки
 
-**Руководство** : неприменимо; Защищенное хранилище не поддерживается для Azure Key Vault.
+**Руководство**: неприменимо; Защищенное хранилище не поддерживается для Azure Key Vault.
 
 Поддерживаемые службы и сценарии в общем доступе: https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ## <a name="data-protection"></a>Защита данных
 
@@ -528,9 +528,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -544,9 +544,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 
 
-**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
 
@@ -560,9 +560,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4. Шифрование любой конфиденциальной информации при передаче
 
@@ -574,18 +574,18 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**. Microsoft
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5. Использование средства активного обнаружения для распознавания конфиденциальных данных
 
-**Руководство** : неприменимо; все данные в Azure Key Vault (секреты, ключи и сертификаты) считаются конфиденциальными.
+**Руководство**: неприменимо; все данные в Azure Key Vault (секреты, ключи и сертификаты) считаются конфиденциальными.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
@@ -596,9 +596,9 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault
 
 
-**Мониторинг центра безопасности Azure** : неприменимо
+**Мониторинг центра безопасности Azure**: неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
@@ -613,9 +613,9 @@ https://docs.microsoft.com/azure/key-vault/key-vault-overview
 https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Microsoft
+**Ответственность**: Microsoft
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
 
@@ -626,9 +626,9 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 - [Модель шифрования и таблица управления ключами](../../security/fundamentals/encryption-atrest.md)
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Microsoft
+**Ответственность**: Microsoft
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
@@ -640,9 +640,9 @@ https://docs.microsoft.com/azure/azure-monitor/insights/azure-key-vault
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="vulnerability-management"></a>Управление уязвимостями
 
@@ -653,34 +653,34 @@ https://docs.microsoft.com/azure/azure-monitor/insights/azure-key-vault
 **Руководство**. Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих Azure Key Vault.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Microsoft
+**Ответственность**: Microsoft
 
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2. Развертывание автоматизированного решения для управления исправлениями операционной системы
 
-**Руководство** : н/д; Корпорация Майкрософт выполняет управление исправлениями в базовых системах, поддерживающих Key Vault.
+**Руководство**: н/д; Корпорация Майкрософт выполняет управление исправлениями в базовых системах, поддерживающих Key Vault.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5.3: Развертывание автоматизированного решения для управления исправлениями ПО сторонних производителей
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="54-compare-back-to-back-vulnerability-scans"></a>5.4: Сравнение проверок смежных уязвимостей
 
 **Руководство**. Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих Key Vault.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Microsoft
+**Ответственность**: Microsoft
 
 ### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5.5. Использование процесса оценки рисков для определения приоритета в устранении обнаруженных уязвимостей
 
@@ -691,9 +691,9 @@ https://docs.microsoft.com/azure/azure-monitor/insights/azure-key-vault
 https://docs.microsoft.com/azure/security-center/security-center-secure-score
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
@@ -715,9 +715,9 @@ https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view
 
 https://docs.microsoft.com/azure/role-based-access-control/overview
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
 
@@ -727,9 +727,9 @@ https://docs.microsoft.com/azure/role-based-access-control/overview
 
 https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
@@ -746,17 +746,17 @@ https://docs.microsoft.com/azure/governance/management-groups/create
 Используйте теги для Организации ресурсов Azure: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="64-maintain-an-inventory-of-approved-azure-resources-and-software-titles"></a>6.4. Ведение каталога утвержденных ресурсов Azure и наименований программного обеспечения
 
 **Руководство**. Определение списка утвержденных ресурсов Azure и утвержденного программного обеспечения для ресурсов вычислений
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
@@ -774,36 +774,36 @@ https://docs.microsoft.com/azure/governance/management-groups/create
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6. Отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7: Удаление неутвержденных ресурсов Azure и программных приложений
 
-**Руководство** : неприменимо; Эта рекомендация предназначена для Azure как к целому, так и к расчетным ресурсам.
+**Руководство**: неприменимо; Эта рекомендация предназначена для Azure как к целому, так и к расчетным ресурсам.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="68-use-only-approved-applications"></a>6.8: Использование только утвержденных приложений
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9: Использование только утвержденных служб Azure
 
@@ -819,18 +819,18 @@ https://docs.microsoft.com/azure/governance/management-groups/create
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="610-implement-approved-application-list"></a>6.10. Реализация списка утвержденных приложений
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="611-limit-users-ability-to-interact-with-azureresources-manager-via-scripts"></a>6,11: ограничьте возможность пользователей взаимодействовать с Азурересаурцес Manager с помощью сценариев
 
@@ -841,27 +841,27 @@ https://docs.microsoft.com/azure/governance/management-groups/create
 https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12. Ограничение возможности пользователей выполнять сценарии в ресурсах вычислений
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ## <a name="secure-configuration"></a>Настройка безопасности
 
@@ -892,18 +892,18 @@ https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="72-establish-secure-operating-system-configurations"></a>7.2. Сохранение безопасных конфигураций для операционных систем
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3: Сохранение безопасных конфигураций для ресурсов Azure
 
@@ -919,18 +919,18 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="74-maintain-secure-operating-system-configurations"></a>7.4. Сохранение безопасных конфигураций для операционных систем
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5: Безопасное хранение конфигурации ресурсов Azure
 
@@ -944,18 +944,18 @@ https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
 
 https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="77-deploy-system-configuration-management-tools"></a>7.7: Развертывание инструментов управления конфигурацией системы
 
@@ -965,18 +965,18 @@ https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8. Развертывание средств управления конфигурацией системы для операционных систем
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-services"></a>7.9: Реализация автоматизированного мониторинга конфигурации для служб Azure
 
@@ -988,18 +988,18 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
 
-**Руководство** : неприменимо; Этот тест производительности предназначен для расчетных ресурсов.
+**Руководство**: неприменимо; Этот тест производительности предназначен для расчетных ресурсов.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="711-manage-azure-secrets-securely"></a>7.11: Безопасное управление секретами Azure
 
@@ -1021,9 +1021,9 @@ https://docs.microsoft.com/azure/key-vault/general/authentication
 
 https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="712-manage-identities-securely-and-automatically"></a>7.12. Безопасное и автоматическое управление удостоверениями
 
@@ -1039,9 +1039,9 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 * [Назначение политики доступа Key Vault](assign-access-policy-portal.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
 
@@ -1049,9 +1049,9 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
   
  Настройка сканера учетных данных: https://secdevtools.azurewebsites.net/helpcredscan.html
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
@@ -1062,9 +1062,9 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт обрабатывает Антивредоносные программы для базовой платформы.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8.2. Предварительная проверка файлов для отправки в ресурсы Azure, не являющиеся вычислительными
 
@@ -1074,18 +1074,18 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 Сведения о антивредоносном по Майкрософт для облачных служб и виртуальных машин Azure: https://docs.microsoft.com/azure/security/fundamentals/antimalware
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов. Корпорация Майкрософт обрабатывает Антивредоносные программы для базовой платформы.
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Неприменимо
+**Ответственность**: Неприменимо
 
 ## <a name="data-recovery"></a>Восстановление данных
 
@@ -1093,7 +1093,7 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
-**Рекомендации** : регулярное автоматическое резервное копирование сертификатов Key Vault, ключей, управляемых учетных записей хранения и секретов с помощью следующих команд PowerShell:
+**Рекомендации**: регулярное автоматическое резервное копирование сертификатов Key Vault, ключей, управляемых учетных записей хранения и секретов с помощью следующих команд PowerShell:
 
 - Backup-AzKeyVaultCertificate
 
@@ -1117,9 +1117,9 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2. Выполнение полного резервного копирования системы и любых ключей, управляемых клиентом
 
@@ -1147,9 +1147,9 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9.3. Проверка всех резервных копий, включая управляемые клиентом ключи
 
@@ -1172,9 +1172,9 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 Восстановление секретов Key Vault: https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultsecret?view=azurermps-6.13.0
 
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4. Обеспечение защиты резервных копий и управляемых клиентом ключей
 
@@ -1184,9 +1184,9 @@ https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal
 
 https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell
 
-**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
@@ -1212,18 +1212,18 @@ https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-sec
 
 https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
 **Руководство**. Центр безопасности назначает каждому оповещению серьезность, которая поможет определить, какие предупреждения следует расследовать первыми. Серьезность основывается на том, насколько уверен Центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению. Кроме того, четко помечайте подписки тегами (например, Рабочая, не производственная) и создайте систему именования для четкого обнаружения и классификации ресурсов Azure, особенно для обработки конфиденциальных данных, таких как Azure Key Vault секреты.
 
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
@@ -1233,9 +1233,9 @@ https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
 
 https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
@@ -1245,9 +1245,9 @@ https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
 
 https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
@@ -1265,9 +1265,9 @@ https://docs.microsoft.com/azure/security-center/continuous-export
 
 https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
 
-**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
@@ -1279,9 +1279,9 @@ https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
 
 https://docs.microsoft.com/azure/security-center/workflow-automation
 
-**Мониторинг Центра безопасности Azure** : в настоящее время недоступен.
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
@@ -1299,9 +1299,9 @@ https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
 https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

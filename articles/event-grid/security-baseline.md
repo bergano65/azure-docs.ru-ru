@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/21/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2a1396f67c94b34b4fdef0bdaf7e01770da91246
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: ccc39513505f299e85cbc270e2daeafeac6ca6fd
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331521"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845192"
 ---
 # <a name="azure-security-baseline-for-event-grid"></a>Базовый план безопасности Azure для службы "Сетка событий"
 
@@ -802,7 +802,7 @@ Azure Resource Manager может экспортировать шаблон в �
 
 - [Использование управляемых удостоверений для ресурсов Azure](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-- [Создание Key Vault](../key-vault/secrets/quick-create-portal.md)
+- [Создание Key Vault](../key-vault/general/quick-create-portal.md)
 
 - [Проверка подлинности в Key Vault](../key-vault/general/authentication.md)
 

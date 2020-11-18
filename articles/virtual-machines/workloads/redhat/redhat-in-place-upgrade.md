@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/16/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: beede74134affeb3ee0d4bdd20d5da3b4c5e6eda
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 1160bc43db0dc9ec1714b1766c8cadf09660e291
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566628"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844574"
 ---
 # <a name="red-hat-enterprise-linux-in-place-upgrades"></a>Red Hat Enterprise Linux обновления на месте
 
@@ -124,8 +124,8 @@ Consult the pre-upgrade report for details and possible remediation.
 ============================================================
 ```
 **Решение**\
-Включите корневой доступ в `/etc/sshd_conf` .
-Это вызвано тем, что не включает доступ к корневому SSH в в `/etc/sshd_conf` соответствии с разделом "[Подготовка к обновлению](#preparations-for-the-upgrade)". 
+Включите корневой доступ в `/etc/sshd_config` .
+Это вызвано тем, что не включает доступ к корневому SSH в в `/etc/sshd_config` соответствии с разделом "[Подготовка к обновлению](#preparations-for-the-upgrade)". 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о [образах Red Hat в Azure](./redhat-images.md).

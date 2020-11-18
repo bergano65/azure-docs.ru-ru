@@ -3,12 +3,12 @@ title: Общие сведения о предварительной верси�
 description: Запустите записные книжки Jupyter в облаке, используя предварительную версию бесплатной службы "Записные книжки Azure", не требующую настройки.
 ms.topic: overview
 ms.date: 04/05/2019
-ms.openlocfilehash: d229e48e5c49a9a672c533fb24231e9329e524c0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d59faaf85a1fdbad776e954e974bafa300f93d85
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85831409"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845141"
 ---
 # <a name="overview-of-azure-notebooks-preview"></a>Общие сведения о предварительной версии службы "Записные книжки Azure"
 
@@ -111,4 +111,4 @@ ms.locfileid: "85831409"
   - [Представление слайд-шоу](present-jupyter-notebooks-slideshow.md)
   - [Работа с файлами данных](work-with-project-data-files.md)
   - [Доступ к ресурсам данных](access-data-resources-jupyter-notebooks.md)
-  - [Использование Машинного обучения Azure](use-machine-learning-services-jupyter-notebooks.md)
+  - [Использование Машинного обучения Azure](../machine-learning/samples-notebooks.md)

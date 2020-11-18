@@ -10,13 +10,13 @@ ms.date: 09/21/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 9c742ca2fd9779589a3c8aea7f030460c5db8b5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 2f57e801720c6b546a58b216422629d192e8d2e6
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90995981"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843321"
 ---
 # <a name="configure-encryption-with-customer-managed-keys-stored-in-azure-key-vault-managed-hsm-preview"></a>Настройка шифрования с помощью управляемых клиентом ключей, хранящихся в Azure Key Vault управляемом HSM (Предварительная версия)
 
@@ -94,7 +94,7 @@ az storage account update
 
 При ручном обновлении версии ключа необходимо обновить параметры шифрования учетной записи хранения, чтобы использовать новую версию. Сначала запросите универсальный код ресурса (URI) хранилища ключей, вызвав команду [AZ keyvault показывать](/cli/azure/keyvault#az-keyvault-show), а для версии key [— вызов AZ keyvault Key List-Versions](/cli/azure/keyvault/key#az-keyvault-key-list-versions). Затем вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , чтобы обновить параметры шифрования учетной записи хранения для использования новой версии ключа, как показано в предыдущем примере.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)
 - [Управляемые клиентом ключи для шифрования службы хранилища Azure](customer-managed-keys-overview.md)

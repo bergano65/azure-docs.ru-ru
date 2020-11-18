@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: 4c817194bbe0e4cf211992920bad9deb40bf05f4
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: b4902e1fb7a2a181d3d5b2ce2ac6d1d458500fce
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632215"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844188"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 
@@ -121,14 +121,14 @@ ms.locfileid: "92632215"
 
 ### <a name="error-message-microsoft-ole-db-provider-for-analysis-services-hresult-0x80004005-description-com-error-com-error-mscorlib-exception-has-been-thrown-by-the-target-of-an-invocation"></a>Сообщение об ошибке: "поставщик OLE DB Майкрософт для Analysis Services. "HRESULT: описание 0x80004005:" ошибка COM: ошибка COM: mscorlib; Исключение вызвано целевым объектом вызова "
 
-Одна из возможных причин заключается в том, что имя пользователя или пароль с включенной многофакторной идентификацией Azure настроены для проверки подлинности Azure Analysis Services. Эта проверка подлинности не поддерживается в среде выполнения интеграции SSIS. Попробуйте использовать субъект-службу для проверки подлинности Azure Analysis Services:
+Одна из возможных причин заключается в том, что имя пользователя или пароль с включенной многофакторной идентификацией Azure AD настроены для проверки подлинности Azure Analysis Services. Эта проверка подлинности не поддерживается в среде выполнения интеграции SSIS. Попробуйте использовать субъект-службу для проверки подлинности Azure Analysis Services:
 
 1. Подготовьте субъект-службу, как описано в статье [Автоматизация с помощью субъектов-служб](../analysis-services/analysis-services-service-principal.md).
-2. В диспетчере соединений настройте **использовать указанные имя пользователя и пароль** : задайте **AppID** в качестве имени пользователя и **clientSecret** в качестве пароля.
+2. В диспетчере соединений настройте **использовать указанные имя пользователя и пароль**: задайте **AppID** в качестве имени пользователя и **clientSecret** в качестве пароля.
 
 ### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-a-managed-identity"></a>Сообщение об ошибке: "источнику АДОНЕТ не удалось получить подключение {GUID} со следующим сообщением об ошибке: при использовании управляемого удостоверения не удалось войти в систему пользователя NT AUTHORITY\ANONYMOUS logon»" "
 
-Убедитесь, что метод проверки подлинности диспетчера соединений не настроен как **Active Directory проверки подлинности** с помощью пароля, если параметр *Коннектусингманажедидентити* имеет **значение true** . Вместо этого можно настроить **проверку подлинности SQL** , что не учитывается, если задан параметр *коннектусингманажедидентити* .
+Убедитесь, что метод проверки подлинности диспетчера соединений не настроен как **Active Directory проверки подлинности** с помощью пароля, если параметр *Коннектусингманажедидентити* имеет **значение true**. Вместо этого можно настроить **проверку подлинности SQL** , что не учитывается, если задан параметр *коннектусингманажедидентити* .
 
 ### <a name="error-message-0xc020801f-at--odata-source--cannot-acquire-a-managed-connection-from-the-run-time-connection-manager"></a>Сообщение об ошибке: "0xC020801F at..., источник OData [...]: не удается получить управляемое соединение от диспетчера соединений времени выполнения"
 

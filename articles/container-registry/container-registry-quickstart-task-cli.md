@@ -3,13 +3,13 @@ title: Краткое руководство. Создание образа ко
 description: Узнайте, как использовать команды Реестра контейнеров для быстрого создания, отправки и выполнения образа контейнера Docker по запросу в облаке Azure.
 ms.topic: quickstart
 ms.date: 09/25/2020
-ms.custom: contperfq1
-ms.openlocfilehash: 1b4dcc05747ceae52c649c366c3faf437e77b560
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.custom: contperfq1, devx-track-azurecli
+ms.openlocfilehash: adb63b716172c979ca31f1ef70bf1523ff1ad5cc
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098932"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845073"
 ---
 # <a name="quickstart-build-and-run-a-container-image-using-azure-container-registry-tasks"></a>Краткое руководство. Сборка и запуск образа контейнера с помощью Задач Реестра контейнеров Azure
 
@@ -42,11 +42,11 @@ az acr create --resource-group myResourceGroup \
   --name myContainerRegistry008 --sku Basic
 ```
 
-В этом примере создается реестр ценовой категории *Базовый* ; это экономный вариант для разработчиков, изучающих Реестр контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Уровни служб реестра контейнеров][container-registry-skus].
+В этом примере создается реестр ценовой категории *Базовый*; это экономный вариант для разработчиков, изучающих Реестр контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Уровни служб реестра контейнеров][container-registry-skus].
 
 ## <a name="build-and-push-image-from-a-dockerfile"></a>Создание и отправка образа с помощью Dockerfile
 
-Используйте Реестр контейнеров Azure для создания и отправки образа. Сначала создайте локальный рабочий каталог, а затем создайте Dockerfile с именем *Dockerfile* , содержащий одну строку: `FROM mcr.microsoft.com/hello-world`. Это простой пример того, как создать образ контейнера Linux на основе образа `hello-world`, размещенного в Реестре контейнеров Майкрософт. Вы можете создавать собственные стандартные образы Dockerfile и образы сборки для других платформ. Если вы работаете в оболочке bash, создайте Dockerfile с помощью следующей команды:
+Используйте Реестр контейнеров Azure для создания и отправки образа. Сначала создайте локальный рабочий каталог, а затем создайте Dockerfile с именем *Dockerfile*, содержащий одну строку: `FROM mcr.microsoft.com/hello-world`. Это простой пример того, как создать образ контейнера Linux на основе образа `hello-world`, размещенного в Реестре контейнеров Майкрософт. Вы можете создавать собственные стандартные образы Dockerfile и образы сборки для других платформ. Если вы работаете в оболочке bash, создайте Dockerfile с помощью следующей команды:
 
 ```bash
 echo FROM mcr.microsoft.com/hello-world > Dockerfile

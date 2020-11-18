@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - devx-track-azurecli
 ms.date: 04/03/2019
-ms.openlocfilehash: 728218959c385c768804f8890157a8b2ec794170
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 1a8ba18e1e690e6be2b552bd37605ef638b2b47d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748623"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843236"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-ios"></a>Краткое руководство. Отправка данных телеметрии из устройства в центр Интернета вещей (iOS)
 
@@ -27,9 +27,7 @@ ms.locfileid: "92748623"
 
 В этой статье используется предварительно написанное приложение Swift для отправки телеметрии и служебная программа CLI для чтения телеметрии из Центра Интернета вещей.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -41,14 +39,9 @@ ms.locfileid: "92748623"
 
 - Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом кратком руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-- Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-   [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -60,9 +53,9 @@ ms.locfileid: "92748623"
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **myiOSdevice** . Это имя регистрируемого устройства. Рекомендуется использовать **myiOSdevice** , как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **myiOSdevice**. Это имя регистрируемого устройства. Рекомендуется использовать **myiOSdevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
    ```azurecli-interactive
    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id myiOSdevice
@@ -70,7 +63,7 @@ ms.locfileid: "92748623"
 
 1. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-   **YourIoTHubName** . Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
    ```azurecli-interactive
    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id myiOSdevice --output table
@@ -96,7 +89,7 @@ CocoaPods управляет зависимостями проектов iOS, к
 cd quickstart/sample-device
 ```
 
-Убедитесь, что XCode закрыт, а затем выполните следующую команду, чтобы установить CocoaPods, объявленный в файле **podfile** :
+Убедитесь, что XCode закрыт, а затем выполните следующую команду, чтобы установить CocoaPods, объявленный в файле **podfile**:
 
 ```sh
 pod install
@@ -112,15 +105,15 @@ pod install
    open "MQTT Client Sample.xcworkspace"
    ```
 
-2. Разверните проект **Пример клиента MQTT** , а затем разверните папку с тем же именем.  
+2. Разверните проект **Пример клиента MQTT**, а затем разверните папку с тем же именем.  
 3. Откройте **ViewController.swift** для редактирования в XCode. 
 4. Найдите переменную **connectionString** и обновите значение с помощью строки подключения устройства, записанной ранее.
 5. Сохраните изменения. 
-6. Выполните проект в эмуляторе устройства, нажав кнопку **Сборка и запуск** или клавиши **COMMAND+R** . 
+6. Выполните проект в эмуляторе устройства, нажав кнопку **Сборка и запуск** или клавиши **COMMAND+R**. 
 
    ![Запуск проекта](media/quickstart-send-telemetry-ios/run-sample.png)
 
-7. В открывшемся эмуляторе в примере приложения выберите **Запустить** .
+7. В открывшемся эмуляторе в примере приложения выберите **Запустить**.
 
 На следующем снимке экрана показан пример выходных данных, когда приложение отправляет имитируемую телеметрию в Центр Интернета вещей:
 

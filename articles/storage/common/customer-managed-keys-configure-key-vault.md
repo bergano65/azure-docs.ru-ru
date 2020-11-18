@@ -10,13 +10,13 @@ ms.date: 09/16/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 219fe82f16dd9bbc887c9b17b067c706230c63dd
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 02661c9c2a581ab21a2ae9dc31e5da95426c0edd
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782388"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843389"
 ---
 # <a name="configure-encryption-with-customer-managed-keys-stored-in-azure-key-vault"></a>Настройка шифрования с помощью управляемых клиентом ключей, хранящихся в Azure Key Vault
 
@@ -35,15 +35,15 @@ ms.locfileid: "92782388"
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Сведения о создании хранилища ключей с портал Azure см. в разделе Краткое руководство [. Создание хранилища ключей с помощью портал Azure](../../key-vault/general/quick-create-portal.md). При создании хранилища ключей выберите **включить защиту от удаления** , как показано на следующем рисунке.
+Сведения о создании хранилища ключей с портал Azure см. в разделе Краткое руководство [. Создание хранилища ключей с помощью портал Azure](../../key-vault/general/quick-create-portal.md). При создании хранилища ключей выберите **включить защиту от удаления**, как показано на следующем рисунке.
 
 :::image type="content" source="media/customer-managed-keys-configure-key-vault/configure-key-vault-portal.png" alt-text="Снимок экрана, показывающий, как включить защиту от очистки при создании хранилища ключей":::
 
 Чтобы включить защиту от очистки в существующем хранилище ключей, выполните следующие действия.
 
 1. Перейдите к хранилищу ключей в портал Azure.
-1. В разделе **Параметры** выберите **свойства** .
-1. В разделе **Защита от вирусов** выберите **включить защиту от очистки** .
+1. В разделе **Параметры** выберите **свойства**.
+1. В разделе **Защита от вирусов** выберите **включить защиту от очистки**.
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -81,7 +81,7 @@ Set-AzKeyVaultAccessPolicy `
     -PermissionsToKeys wrapkey,unwrapkey,get
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы создать новое хранилище ключей с помощью Azure CLI, вызовите команду [AZ keyvault Create](/cli/azure/keyvault#az-keyvault-create). Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
@@ -145,7 +145,7 @@ $key = Add-AzKeyVaultKey -VaultName $keyVault.VaultName `
     -Destination 'Software'
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы добавить ключ с Azure CLI, вызовите команду [AZ keyvault Key Create](/cli/azure/keyvault/key#az-keyvault-key-create). Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
 
@@ -175,12 +175,12 @@ az keyvault key create \
 Чтобы настроить ключи, управляемые клиентом, с помощью автоматического обновления ключа версии в портал Azure выполните следующие действия.
 
 1. Войдите в свою учетную запись хранения.
-1. В колоне **параметров** для учетной записи хранения выберите **Шифрование** . Выберите параметр **управляемые ключи клиента** , как показано на следующем рисунке.
+1. В колоне **параметров** для учетной записи хранения выберите **Шифрование**. Выберите параметр **управляемые ключи клиента** , как показано на следующем рисунке.
 
     ![Снимок экрана портала с параметром шифрования](./media/customer-managed-keys-configure-key-vault/portal-configure-encryption-keys.png)
 
-1. Выберите параметр **Выбрать в Key Vault** .
-1. Выберите **выбрать хранилище ключей и ключ** .
+1. Выберите параметр **Выбрать в Key Vault**.
+1. Выберите **выбрать хранилище ключей и ключ**.
 1. Выберите хранилище ключей, содержащее ключ, который вы хотите использовать.
 1. Выберите ключ из хранилища ключей.
 
@@ -190,7 +190,7 @@ az keyvault key create \
 
 После указания ключа портал Azure указывает, что автоматическое обновление версии ключа включено и отображает текущую версию ключа, используемую для шифрования.
 
-:::image type="content" source="media/customer-managed-keys-configure-key-vault/portal-auto-rotation-enabled.png" alt-text="Снимок экрана, показывающий, как включить защиту от очистки при создании хранилища ключей":::
+:::image type="content" source="media/customer-managed-keys-configure-key-vault/portal-auto-rotation-enabled.png" alt-text="Снимок экрана с включенным автоматическим обновлением версии ключа":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -208,7 +208,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
     -KeyVaultUri $keyVault.VaultUri
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы настроить ключи, управляемые клиентом, с помощью автоматического обновления ключа версии с Azure CLI, установите [Azure CLI версии 2.4.0](/cli/azure/release-notes-azure-cli#april-21-2020) или более поздней. Дополнительные сведения см. в статье [Установка Azure CLI](/cli/azure/install-azure-cli).
 
@@ -270,7 +270,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
 
 При ручном обновлении версии ключа необходимо обновить параметры шифрования учетной записи хранения, чтобы использовать новую версию. Сначала вызовите [Get-азкэйваулткэй](/powershell/module/az.keyvault/get-azkeyvaultkey) , чтобы получить последнюю версию ключа. Затем вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) , чтобы обновить параметры шифрования учетной записи хранения для использования новой версии ключа, как показано в предыдущем примере.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы настроить ключи, управляемые клиентом, с обновлением версии ключа вручную, необходимо явно указать версию ключа при настройке шифрования для учетной записи хранения. Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , как показано в следующем примере. Включите `--encryption-key-source` параметр и установите его в значение, `Microsoft.Keyvault` чтобы включить управляемые клиентом ключи для учетной записи.
 
@@ -316,7 +316,7 @@ az storage account update
 
 Чтобы изменить ключ с помощью PowerShell, вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) , как показано в разделе [Настройка шифрования с помощью управляемых клиентом ключей](#configure-encryption-with-customer-managed-keys) и предоставление нового имени и версии ключа. Если новый ключ находится в другом хранилище ключей, необходимо также обновить URI хранилища ключей.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы изменить ключ с Azure CLI, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , как показано в разделе [Настройка шифрования с помощью управляемых клиентом ключей](#configure-encryption-with-customer-managed-keys) и предоставление нового имени и версии ключа. Если новый ключ находится в другом хранилище ключей, необходимо также обновить URI хранилища ключей.
 
@@ -339,7 +339,7 @@ Remove-AzKeyVaultAccessPolicy -VaultName $keyVault.VaultName `
     -ObjectId $storageAccount.Identity.PrincipalId `
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Вы можете отозвать ключи, управляемые клиентом, удалив политику доступа к хранилищу ключей. Чтобы отозвать ключ, управляемый клиентом, с Azure CLI, вызовите команду [AZ keyvault Delete-Policy](/cli/azure/keyvault#az-keyvault-delete-policy) , как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
 
@@ -372,7 +372,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
     -StorageEncryption  
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы отключить управляемые клиентом ключи с помощью Azure CLI, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) и задайте `--encryption-key-source parameter` для значение `Microsoft.Storage` , как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
 

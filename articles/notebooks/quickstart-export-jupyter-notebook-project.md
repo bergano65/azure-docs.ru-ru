@@ -3,12 +3,12 @@ title: Экспорт проекта Jupyter Notebook из Записных кн
 description: Быстрый экспорт проекта Jupyter Notebook.
 ms.topic: quickstart
 ms.date: 06/29/2020
-ms.openlocfilehash: 3153247b9d15167ab437d6c46142bbd41f8e4b23
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: ea16bd61b542217fb6f2d5ba1d926a0bc19d4cce
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90030452"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844426"
 ---
 # <a name="quickstart-export-a-jupyter-notebook-project-in-azure-notebooks-preview"></a>Экспорт проекта Jupyter Notebook в Записные книжки Azure (предварительная версия)
 
@@ -79,7 +79,7 @@ ms.locfileid: "90030452"
 1. В области навигации слева выберите **Записные книжки**.
 1. Нажмите кнопку **Отправить файлы** и отправьте файлы проекта, скачанные из Записных книжек Azure.
 
-Дополнительные сведения о Машинном обучении Azure и запуске записных книжек Jupyter Notebook см. в [этой документации](../machine-learning/how-to-run-jupyter-notebooks.md) или модуле [Введение в машинное обучение Azure](https://docs.microsoft.com/learn/modules/intro-to-azure-machine-learning-service/) на сайте Microsoft Learn.
+Дополнительные сведения о Машинном обучении Azure и запуске записных книжек Jupyter Notebook см. в [этой документации](../machine-learning/how-to-run-jupyter-notebooks.md) или модуле [Введение в машинное обучение Azure](/learn/modules/intro-to-azure-machine-learning-service/) на сайте Microsoft Learn.
 
 
 ## <a name="use-azure-lab-services"></a>Использование Служб лабораторий Azure

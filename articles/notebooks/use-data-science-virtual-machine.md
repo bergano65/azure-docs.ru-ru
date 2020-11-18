@@ -6,12 +6,12 @@ manager: andneil
 ms.author: getroyer
 ms.topic: how-to
 ms.date: 06/13/2019
-ms.openlocfilehash: 291f1ac093568f50ad6146b70fa1ef69263b7b5b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d65a39c1a1d302e565b59db1644af2c08befb6b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85830318"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843168"
 ---
 # <a name="use-azure-data-science-virtual-machines"></a>Использование виртуальных машин Azure для обработки и анализа данных
 
@@ -24,7 +24,7 @@ ms.locfileid: "85830318"
 
 ## <a name="create-a-dsvm-instance"></a>Создание экземпляра DSVM
 
-Чтобы создать экземпляр DSVM, следуйте инструкциям в статье [Подготовка виртуальной машины Linux (Ubuntu) для обработки и анализа данных](/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro). Дополнительные сведения, включая сведения о ценах, см. в разделе Виртуальные машины для обработки и [анализа данных](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/).
+Чтобы создать экземпляр DSVM, следуйте инструкциям в статье [Подготовка виртуальной машины Linux (Ubuntu) для обработки и анализа данных](../machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro.md). Дополнительные сведения, включая сведения о ценах, см. в разделе Виртуальные машины для обработки и [анализа данных](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/).
 
 ## <a name="connect-to-the-dsvm"></a>Подключение к DSVM
 
@@ -68,4 +68,4 @@ ms.locfileid: "85830318"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Dsvm см. в статье [Введение в виртуальные машины Azure для обработки и анализа данных](/azure/machine-learning/data-science-virtual-machine/overview).
+Дополнительные сведения о Dsvm см. в статье [Введение в виртуальные машины Azure для обработки и анализа данных](../machine-learning/data-science-virtual-machine/overview.md).

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 28b3bc5adfc3c2e83de658947193b6046a455c32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 00594c3ec060076ad249af7e93e0a3d5a1eccdb4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89231509"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845158"
 ---
 # <a name="azure-security-baseline-for-network-watcher"></a>Базовый план безопасности Azure для наблюдателя за сетями
 
@@ -291,11 +291,11 @@ ms.locfileid: "89231509"
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
 
-**Руководство**. Использование рабочей станции привилегированного доступа (привилегированным доступом) с поддержкой многофакторной идентификации Azure (MFA) для входа и настройки ресурсов, связанных с Sentinel Azure.
+**Руководство**. Использование рабочей станции привилегированного доступа (привилегированным доступом) с включенной многофакторной идентификацией Azure AD (MFA) для входа и настройки ресурсов, связанных с Sentinel Azure.
 
 * [Рабочие станции c привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-* [Планирование развертывания облачной службы Многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Планирование развертывания службы многофакторной идентификации Azure AD на основе облачных служб](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

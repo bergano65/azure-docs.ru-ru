@@ -7,13 +7,13 @@ ms.subservice: security
 ms.topic: how-to
 ms.author: jofrance
 ms.date: 03/17/2020
-ms.custom: seodec18
-ms.openlocfilehash: c8ffe78e885eedd84c4cf6948954a7d3477a5cff
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: 46d2c039806e4e6a72e091458d44e7b21b3dfa70
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92911823"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843525"
 ---
 # <a name="configure-lvm-and-raid-on-encrypted-devices"></a>Настройка LVM и RAID на зашифрованных устройствах
 
@@ -287,7 +287,7 @@ cat /etc/fstab
 
 ### <a name="configure-lvm-on-top-of-the-encrypted-layers"></a>Настройка LVM поверх зашифрованных слоев
 #### <a name="create-the-physical-volumes"></a>Создание физических томов
-Вы получите предупреждение о том, что можете очистить подпись файловой системы. Продолжайте, введя **y** , или используйте **echo "y"** , как показано ниже:
+Вы получите предупреждение о том, что можете очистить подпись файловой системы. Продолжайте, введя **y**, или используйте **echo "y"** , как показано ниже:
 
 ```bash
 echo "y" | pvcreate /dev/mapper/c49ff535-1df9-45ad-9dad-f0846509f052
@@ -298,7 +298,7 @@ echo "y" | pvcreate /dev/mapper/4159c60a-a546-455b-985f-92865d51158c
 ![Проверка создания физического тома](./media/disk-encryption/lvm-raid-on-crypt/014-lvm-raid-pvcreate.png)
 
 >[!NOTE] 
->Имена/Дев/маппер/девице необходимо заменить на фактические значения на основе выходных данных **лсблк** .
+>Имена/Дев/маппер/девице необходимо заменить на фактические значения на основе выходных данных **лсблк**.
 
 #### <a name="verify-the-information-for-physical-volumes"></a>Проверьте данные для физических томов.
 ```bash
@@ -406,7 +406,7 @@ mdadm --create /dev/md10 \
 ![Сведения о настроенном RAID-массиве с помощью команды mdadm](./media/disk-encryption/lvm-raid-on-crypt/019-lvm-raid-md-creation.png)
 
 >[!NOTE] 
->Имена/Дев/маппер/девице необходимо заменить фактическими значениями на основе выходных данных **лсблк** .
+>Имена/Дев/маппер/девице необходимо заменить фактическими значениями на основе выходных данных **лсблк**.
 
 ### <a name="checkmonitor-raid-creation"></a>Проверка и мониторинг создания RAID-массива
 ```bash

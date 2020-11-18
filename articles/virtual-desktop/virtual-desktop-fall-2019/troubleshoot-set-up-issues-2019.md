@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: eed1b0e1b01d5d13330b927429eca9a28ff80658
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31219fda04095d48b55165f59c27f3dee85485a9
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88009262"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843644"
 ---
 # <a name="tenant-and-host-pool-creation-in-windows-virtual-desktop-classic"></a>Создание пула клиентов и узлов в виртуальном рабочем столе Windows (классическая модель)
 
@@ -20,13 +20,13 @@ ms.locfileid: "88009262"
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
 ## <a name="acquiring-the-windows-10-enterprise-multi-session-image"></a>Получение многосеансового образа Windows 10 Корпоративная
 
-Чтобы использовать многосеансовый образ Windows 10 Enterprise, перейдите в Azure Marketplace, выберите начало **работы**с  >  **Microsoft Windows 10** > и [Windows 10 Корпоративная для виртуальных рабочих столов версии 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
+Чтобы использовать многосеансовый образ Windows 10 Enterprise, перейдите в Azure Marketplace, выберите начало **работы** с  >  **Microsoft Windows 10** > и [Windows 10 Корпоративная для виртуальных рабочих столов версии 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана: выбор Windows 10 Корпоративная для виртуальных рабочих столов версии 1809.](../media/AzureMarketPlace.png)
@@ -375,7 +375,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDefinitionName "RDS Contributor" -SignInName <UPN>
 ```
 
-### <a name="error-user-requires-azure-multi-factor-authentication-mfa"></a>Ошибка. Пользователь должен пройти Многофакторную идентификацию Azure (MFA).
+### <a name="error-user-requires-azure-ad-multi-factor-authentication-mfa"></a>Ошибка: пользователю требуется многофакторная идентификация Azure AD (MFA)
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана развертывания не удалось выполнить из-за отсутствия многофакторной проверки подлинности (MFA)](../media/MFARequiredError.png)
@@ -386,7 +386,7 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 "message": "{\r\n  \"status\": \"Failed\",\r\n  \"error\": {\r\n    \"code\": \"ResourceDeploymentFailure\",\r\n    \"message\": \"The resource operation completed with terminal provisioning state 'Failed'.\",\r\n    \"details\": [\r\n      {\r\n        \"code\": \"VMExtensionProvisioningError\",\r\n        \"message\": \"VM has reported a failure when processing extension 'dscextension'. Error message: \\\"DSC Configuration 'FirstSessionHost' completed with error(s). Following are the first few: PowerShell DSC resource MSFT_ScriptResource  failed to execute Set-TargetResource functionality with error message: One or more errors occurred.  The SendConfigurationApply function did not succeed.\\\".\"\r\n      }\r\n    ]\r\n  }\r\n}"
 ```
 
-**Причина:** Для входа указанному администратору клиента виртуальных рабочих столов Windows требуется служба многофакторной идентификации Azure (MFA).
+**Причина:** Для входа указанному администратору клиента виртуальных рабочих столов Windows требуется многофакторная идентификация Azure AD (MFA).
 
 **Исправление:** Создайте субъект-службу и назначьте ему роль для вашего клиента виртуальных рабочих столов Windows, выполнив действия, описанные в разделе [учебник. создание субъектов-служб и назначение ролей с помощью PowerShell](create-service-principal-role-powershell.md). Убедившись, что вы можете войти в виртуальный рабочий стол Windows с помощью субъекта-службы, перезапустите предложение Azure Marketplace или шаблон Azure Resource Manager GitHub в зависимости от того, какой метод вы используете. Следуйте приведенным ниже инструкциям, чтобы ввести правильные параметры для метода.
 

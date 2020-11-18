@@ -6,18 +6,19 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: how-to
 ms.date: 08/31/2020
-ms.openlocfilehash: 6c93408bce8da9f8cd0e4a0d0bab615e2bd362dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 743fe146042c7b52394cc4ee8ced49a0f540e79c
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89267332"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844290"
 ---
 # <a name="how-to-create-an-overlay-with-media-encoder-standard"></a>Создание наложения с помощью Media Encoder Standard
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Стандартный кодировщик служб мультимедиа позволяет наложить изображение на существующее видео. В настоящее время поддерживаются следующие форматы: png, jpg, gif и bmp.
+Media Encoder Standard позволяет наложить изображение, звуковой файл или другое видео на другое видео. Входные данные должны указывать ровно один файл. Можно указать файл изображения в формате JPG, PNG, GIF или BMP или звуковой файл (например, файл WAV, MP3, WMA или M4A) или видеофайл.
+
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -32,7 +33,7 @@ ms.locfileid: "89267332"
     "AccountName": "",
     "ArmAadAudience": "https://management.core.windows.net/",
     "ArmEndpoint": "https://management.azure.com/",
-    "Region": "",
+    "Location": "",
     "ResourceGroup": "",
     "SubscriptionId": ""
     }
@@ -50,6 +51,6 @@ ms.locfileid: "89267332"
 
 Скачайте [образец мультимедиа-Services-Overlay](https://github.com/Azure-Samples/media-services-overlays) , чтобы начать работу с наложением.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подрезать видео при кодировании с помощью служб мультимедиа — .NET](subclip-video-dotnet-howto.md)

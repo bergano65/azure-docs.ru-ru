@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: ccbf7e8aaab5463abf8fa9e129ba9f0ea8599c4e
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 33dfd298224962617891f3ab1d540462b2b88954
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91969846"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844614"
 ---
 # <a name="frequently-asked-questions-about-classic-to-azure-resource-manager-migration"></a>Часто задаваемые вопросы о миграции из классической модели в модель Azure Resource Manager
 
@@ -72,9 +72,9 @@ ms.locfileid: "91969846"
 
 Нет. Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
 
-## <a name="what-if-i-had-configured-role-based-access-control-policies-for-my-classic-iaas-resources"></a>Что произойдет, если для классических ресурсов IaaS настроено управление доступом на основе ролей? 
+## <a name="what-if-i-had-configured-azure-role-based-access-control-policies-for-my-classic-iaas-resources"></a>Что делать, если я настроил политики управления доступом на основе ролей в Azure для классических ресурсов IaaS? 
 
-Во время миграции ресурсы преобразуются из классической модели в модель Resource Manager. Поэтому рекомендуется спланировать обновления политики RBAC, которые следует применить после миграции.
+Во время миграции ресурсы преобразуются из классической модели в модель Resource Manager. Поэтому рекомендуется спланировать обновления политики RBAC в Azure, которые должны быть выполнены после миграции.
 
 ## <a name="i-backed-up-my-classic-vms-in-a-vault-can-i-migrate-my-vms-from-classic-mode-to-resource-manager-mode-and-protect-them-in-a-recovery-services-vault"></a>Резервные копии классических виртуальных машин находятся в хранилище. Можно ли переключить виртуальные машины из классического режима в режим Resource Manager и защитить их в хранилище служб восстановления?
 

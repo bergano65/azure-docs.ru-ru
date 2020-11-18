@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 11/17/2020
 ms.author: inhenkel
 ms.custom: has-adal-ref, devx-track-csharp
-ms.openlocfilehash: b9b72e8340722f8ddc97b3769ce22e607974a508
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d4f232d87209a3a5676cac22e67a38b17af6917
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297405"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844324"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API служб мультимедиа v3 — .NET
 
@@ -43,7 +43,7 @@ ms.locfileid: "89297405"
 
 Пример приложения в этом разделе: targets `netcoreapp2.0` . В коде используется "Async Main", который доступен начиная с C# 7,1. Дополнительные сведения см. в этом [блоге](/archive/blogs/benwilli/async-main-is-available-but-hidden) .
 
-## <a name="add-required-nuget-packages"></a>Добавьте необходимые пакеты NuGet
+## <a name="add-required-nuget-packagesassemblies"></a>Добавление необходимых пакетов или сборок NuGet
 
 1. В Visual Studio выберите **инструменты**  >  **Диспетчер пакетов NuGet**  >  **консоль диспетчера NuGet**.
 2. В окне **консоли диспетчера пакетов** используйте команду, `Install-Package` чтобы добавить следующие пакеты NuGet. Например, `Install-Package Microsoft.Azure.Management.Media`.
@@ -51,10 +51,14 @@ ms.locfileid: "89297405"
 |Пакет|Описание|
 |---|---|
 |`Microsoft.Azure.Management.Media`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что вы используете последний пакет служб мультимедиа Azure, проверьте [Microsoft. Azure. Management. Media](https://www.nuget.org/packages/Microsoft.Azure.Management.Media).|
-|`Microsoft.Rest.ClientRuntime.Azure.Authentication`|Библиотека проверки подлинности ADAL для пакета Azure SDK для NET|
-|`Microsoft.Extensions.Configuration.EnvironmentVariables`|Чтение значений конфигурации из переменных среды и локальных файлов JSON|
-|`Microsoft.Extensions.Configuration.Json`|Чтение значений конфигурации из переменных среды и локальных файлов JSON
-|`WindowsAzure.Storage`|Пакет SDK для службы хранилища|
+
+### <a name="other-required-assemblies"></a>Другие необходимые сборки
+
+- Azure. Storage. BLOB
+- Microsoft.Extensions.Configuration
+- Microsoft.Extensions.Configфигурации. EnvironmentVariables
+- Microsoft.Extensions.Configuration.Json
+- Microsoft.Rest.ClientRuntime.Azure.Authentication
 
 ## <a name="create-and-configure-the-app-settings-file"></a>Создание и Настройка файла параметров приложения
 
@@ -136,9 +140,9 @@ namespace ConsoleApp1
             get { return new Uri(_config["ArmEndpoint"]); }
         }
 
-        public string Region
+        public string Location
         {
-            get { return _config["Region"]; }
+            get { return _config["Location"]; }
         }
     }
 }
@@ -229,7 +233,7 @@ namespace ConsoleApp1
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Учебник. Отправка, кодирование и потоковая передача видео — .NET](stream-files-tutorial-with-api.md) 
 - [Руководство. потоковая передача в реальном времени с помощью служб мультимедиа v3 — .NET](stream-live-tutorial-with-api.md)
@@ -243,7 +247,7 @@ namespace ConsoleApp1
 - [Создание фильтров с помощью Служб мультимедиа для .NET](filters-dynamic-manifest-dotnet-howto.md)
 - [Дополнительные примеры видео по запросу с использованием Функций Azure версии 2 и Cлужб мультимедиа версии 3](https://aka.ms/ams3functions)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
-* [Справочник по .NET](/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)
+* [Справочник по .NET](/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet&preserve-view=true)
 * Дополнительные примеры кода см. в репозитории [примеров пакета SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet) .

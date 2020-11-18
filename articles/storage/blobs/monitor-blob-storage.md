@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
-ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: cdd5a8b518a374340af35d5f866d51d016e5ac79
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
+ms.openlocfilehash: cb6680482466018f86779d9c0318bbfe4e749be1
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745198"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843151"
 ---
 # <a name="monitoring-azure-blob-storage"></a>Мониторинг хранилища BLOB-объектов Azure
 
@@ -80,14 +80,14 @@ ms.locfileid: "92745198"
 
 2. Войдите в свою учетную запись хранения.
 
-3. В разделе **мониторинг** щелкните **параметры диагностики (Предварительная версия)** .
+3. В разделе **мониторинг** щелкните **параметры диагностики (Предварительная версия)**.
 
    > [!div class="mx-imgBorder"]
    > ![Портал — журналы диагностики](media/monitor-blob-storage/diagnostic-logs-settings-pane.png)   
 
 4. Выберите **BLOB-объект** в качестве типа хранилища, для которого необходимо включить журналы.
 
-5. Щелкните **Добавить параметр диагностики** .
+5. Щелкните **Добавить параметр диагностики**.
 
    > [!div class="mx-imgBorder"]
    > ![Портал — журналы ресурсов — Добавление параметра диагностики](media/monitor-blob-storage/diagnostic-logs-settings-pane-2.png)
@@ -189,7 +189,7 @@ Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -WorkspaceId <
 
 Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-stream-log-store).
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Сначала откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) или, если вы [установили](https://docs.microsoft.com/cli/azure/install-azure-cli) Azure CLI локально, откройте командное консольное приложение (например, Windows PowerShell).
 
@@ -255,13 +255,13 @@ az monitor diagnostic-settings create --name <setting-name> --workspace <log-ana
 
 ## <a name="analyzing-metrics"></a>Анализ метрик
 
-Вы можете анализировать метрики для службы хранилища Azure с помощью метрик из других служб Azure, используя обозреватель метрик. Откройте обозреватель метрик, выбрав **Метрики** в меню **Azure Monitor** . Подробные сведения об использовании этого средства см. на странице [Начало работы с обозревателем метрик Azure](../../azure-monitor/platform/metrics-getting-started.md). 
+Вы можете анализировать метрики для службы хранилища Azure с помощью метрик из других служб Azure, используя обозреватель метрик. Откройте обозреватель метрик, выбрав **Метрики** в меню **Azure Monitor**. Подробные сведения об использовании этого средства см. на странице [Начало работы с обозревателем метрик Azure](../../azure-monitor/platform/metrics-getting-started.md). 
 
 В этом примере показано, как просмотреть **транзакции** на уровне учетной записи.
 
 ![Снимок экрана осуществления доступа к метрикам на портале Azure](./media/monitor-blob-storage/access-metrics-portal.png)
 
-Для метрик с поддержкой измерений можно выполнить фильтрацию по нужному значению измерения. В этом примере объясняется, как просмотреть **транзакции** на уровне учетной записи для определенной операции, выбрав значения для измерения **Имя API** .
+Для метрик с поддержкой измерений можно выполнить фильтрацию по нужному значению измерения. В этом примере объясняется, как просмотреть **транзакции** на уровне учетной записи для определенной операции, выбрав значения для измерения **Имя API**.
 
 ![Снимок экрана осуществления доступа к метрикам с поддержкой измерений на портале Azure](./media/monitor-blob-storage/access-metrics-portal-with-dimension.png)
 
@@ -485,7 +485,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 - Успешные запросы.
 - Неудачные запросы, в том числе из-за ошибок, связанных с временем ожидания, регулированием, сетью, авторизацией и др.
 - Запросы, в которых используется подписанный URL-адрес (SAS) или OAuth, в том числе неудачные и успешные запросы.
-- Запросы к данным аналитики (классические данные журнала в контейнере **$logs** и данные метрик класса в таблицах **$metric** ).
+- Запросы к данным аналитики (классические данные журнала в контейнере **$logs** и данные метрик класса в таблицах **$metric**).
 
 Запросы, выполняемые самой службой хранилища BLOB-объектов, например создание или удаление журнала, не регистрируются. Полный список регистрируемых данных приведен на страницах об [операциях с протоколированием и сообщениях о состоянии службы хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [формате журналов службы хранилища](monitor-blob-storage-reference.md).
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 36d3fdbe05a4fac63415e34aea879a9ef576b725
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 6c2a15ac8d0863539ca878a048940b19794e920d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127103"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842913"
 ---
 # <a name="azure-security-baseline-for-azure-data-box"></a>Базовый план безопасности Azure для Azure Data Box
 
@@ -271,11 +271,11 @@ ms.locfileid: "92127103"
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
 
-**Руководство**. Использование рабочей станции привилегированного доступа (привилегированным доступом) с поддержкой многофакторной идентификации Azure (MFA) для входа и настройки заказов на Azure Data Box.
+**Руководство**. Использование рабочей станции привилегированного доступа (привилегированным доступом) с включенной многофакторной идентификацией Azure AD (MFA) для входа и настройки заказов на Azure Data Box.
 
 * [Рабочие станции c привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-* [Планирование развертывания облачной службы Многофакторной идентификации Azure](../active-directory/authentication/howto-mfa-getstarted.md)
+* [Планирование развертывания службы многофакторной идентификации Azure AD на основе облачных служб](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

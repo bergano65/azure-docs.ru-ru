@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to
+ms.custom: how-to, devx-track-azurecli
 ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: bdae8d77dc5e51cf4a181459ab2e159f31f06e31
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 40882f2a0c1a65650d633d0784214afbeef9ae63
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543108"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842895"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Создание Машинное обучение Azure вычислительного экземпляра и управление им
 
@@ -42,7 +42,7 @@ ms.locfileid: "94543108"
 
 ## <a name="create"></a>Создание
 
-**Оценка времени** : приблизительно 5 минут.
+**Оценка времени**: приблизительно 5 минут.
 
 Создание вычислительного экземпляра выполняется один раз для рабочей области. Вы можете повторно использовать это вычисление как рабочую станцию разработки или как целевой объект вычислений для обучения. К рабочей области можно присоединить несколько экземпляров вычислений.
 
@@ -87,7 +87,7 @@ except ComputeTargetException:
 * [ComputeInstance.wait_for_completion](/python/api/azureml-core/azureml.core.compute.computeinstance(class)?preserve-view=true&view=azure-ml-py#wait-for-completion-show-output-false--is-delete-operation-false-)
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
@@ -138,7 +138,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.get_status()
     ```
 
-* Стоп
+* Остановить
 
     ```python
     # stop() is used to stop the ComputeInstance
@@ -168,11 +168,11 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.delete(wait_for_completion=True, show_output=True)
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 В приведенных ниже примерах имя вычислительного экземпляра — **instance** .
 
-* Стоп
+* Остановить
 
     ```azurecli-interactive
     az ml computetarget stop computeinstance -n instance -v
@@ -206,7 +206,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
 # <a name="studio"></a>[Студия](#tab/azure-studio)
 
-В рабочей области в студии Машинного обучения Azure выберите **Вычисление** , а затем вверху выберите **Вычислительный экземпляр**.
+В рабочей области в студии Машинного обучения Azure выберите **Вычисление**, а затем вверху выберите **Вычислительный экземпляр**.
 
 ![Управление вычислительным экземпляром](./media/concept-compute-instance/manage-compute-instance.png)
 
@@ -258,7 +258,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 Или можно установить из окна терминала. Установите пакеты Python в среду **python 3,6-AzureML** .  Установите пакеты R в среде **R**.
 
 > [!NOTE]
-> Для управления пакетами в записной книжке используйте функции " **% PIP** " или " **% conda** Magic" для автоматической установки пакетов в **выполняющийся в настоящее время ядре** , а не в разделе **! PIP** или **! conda** , который ссылается на все пакеты (включая пакеты вне текущего выполняющегося ядра).
+> Для управления пакетами в записной книжке используйте функции " **% PIP** " или " **% conda** Magic" для автоматической установки пакетов в **выполняющийся в настоящее время ядре**, а не в разделе **! PIP** или **! conda** , который ссылается на все пакеты (включая пакеты вне текущего выполняющегося ядра).
 
 ## <a name="add-new-kernels"></a>Добавление новых ядер
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: sandeo
-ms.openlocfilehash: fef1870c396055cb9121aa5d8c7859440d107f98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 882df9d0dcb01d6321455b845fed087a5e14ccc6
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88002332"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843083"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "88002332"
 | Distribution | Версия |
 | --- | --- |
 | CentOS | CentOS 6, CentOS 7 |
-| Debian | Debian 9 |
+| Debian | Debian 9 |
 | openSUSE | openSUSE Leap 42.3 |
 | RedHat Enterprise Linux | RHEL 6, RHEL 7 | 
 | SUSE Linux Enterprise Server | SLES 12 |
@@ -138,7 +138,7 @@ az role assignment create \
 
 Дополнительные сведения об использовании Azure RBAC для управления доступом к ресурсам подписки Azure см. в разделе Использование [Azure CLI](../../role-based-access-control/role-assignments-cli.md), [портал Azure](../../role-based-access-control/role-assignments-portal.md)или [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
-Также можно настроить Azure AD, чтобы при входе конкретного пользователя на виртуальную машину Linux требовалось пройти аутентификацию MFA. Дополнительные сведения см. в статье о [начале работы с MFA Azure в облаке](../../active-directory/authentication/howto-mfa-getstarted.md).
+Также можно настроить Azure AD, чтобы при входе конкретного пользователя на виртуальную машину Linux требовалось пройти аутентификацию MFA. Дополнительные сведения см. в статье Начало [работы с многофакторной идентификацией Azure AD в облаке](../../active-directory/authentication/howto-mfa-getstarted.md).
 
 ## <a name="log-in-to-the-linux-virtual-machine"></a>Вход на виртуальную машину Linux
 
@@ -212,6 +212,6 @@ Access denied
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

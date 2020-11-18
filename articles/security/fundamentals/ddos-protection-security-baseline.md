@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e18b12170aea646654b0d453803ed29fbf25ab57
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: c57ad181f35d3c0498804f65390792d0e600f1ff
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412822"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843423"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Базовый план безопасности Azure для Azure от атак DDoS Protection Standard
 
@@ -28,9 +28,9 @@ ms.locfileid: "94412822"
 
 - [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "94412822"
 
 - [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**. Customer
 
@@ -52,9 +52,9 @@ ms.locfileid: "94412822"
 
 - [Настройка параметров хранения журнала](../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
 
@@ -66,9 +66,9 @@ ms.locfileid: "94412822"
 
 - [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](../../azure-monitor/platform/activity-log.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
@@ -82,9 +82,9 @@ ms.locfileid: "94412822"
 
 - [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-log.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
@@ -102,17 +102,17 @@ ms.locfileid: "94412822"
 
 - [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
 **Рекомендации**. В Azure AD нет концепции паролей по умолчанию. Другие ресурсы Azure, которым требуется пароль, принудительно запрашивают пароль с требованиями к сложности и минимальной длиной пароля, которая зависит от службы. Вы несете ответственность за сторонние приложения и службы Marketplace, которые могут использовать пароли по умолчанию.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -130,9 +130,9 @@ ms.locfileid: "94412822"
 
 - [Использование Политики Azure](../../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="34-use-azure-active-directory-single-sign-on-sso"></a>3,4. Использование единого входа Azure Active Directory (SSO)
 
@@ -144,9 +144,9 @@ ms.locfileid: "94412822"
 
 - [Сведения об API защиты от атак DDoS в Azure](/rest/api/virtual-network/)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directory доступа
 
@@ -156,21 +156,21 @@ ms.locfileid: "94412822"
 
 - [Мониторинг идентификации и доступа в Центре безопасности Azure](../../security-center/security-center-identity-access.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач 
 
-**Руководство**. Использование защищенной рабочей станции под управлением Azure с поддержкой многофакторной идентификации Azure (MFA) для входа и настройки запросов защищенное хранилище Azure.
+**Руководство**. Использование защищенной рабочей станции, управляемой Azure, с поддержкой многофакторной идентификации Azure AD (MFA) для входа и настройки запросов защищенное хранилище Azure.
 
 - [Развертывание защищенной рабочей станции, управляемой Azure](../../active-directory/devices/howto-azure-managed-workstation.md)
 
-- [Планирование развертывания облачной службы Многофакторной идентификации Azure](../../active-directory/authentication/howto-mfa-getstarted.md)
+- [Планирование развертывания службы многофакторной идентификации Azure AD на основе облачных служб](../../active-directory/authentication/howto-mfa-getstarted.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: журналы и оповещения о подозрительных действиях учетных записей администраторов
 
@@ -182,9 +182,9 @@ ms.locfileid: "94412822"
 
 - [Общие сведения об обнаружении рисков в Azure AD](../../active-directory/identity-protection/overview-identity-protection.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
 
@@ -192,9 +192,9 @@ ms.locfileid: "94412822"
 
 - [Настройка именованных расположений Azure AD](../../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
@@ -202,9 +202,9 @@ ms.locfileid: "94412822"
 
 - [Создание и настройка экземпляра Azure AD](../../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
 
@@ -214,9 +214,9 @@ ms.locfileid: "94412822"
 
 - [Использование проверок доступа Azure AD](../../active-directory/governance/access-reviews-overview.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: монитор пытается получить доступ к отключенным учетным данным
 
@@ -230,9 +230,9 @@ ms.locfileid: "94412822"
 
 - [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="312-alert-on-account-sign-in-behavior-deviation"></a>3,12: предупреждение об отклонении при входе в учетную запись
 
@@ -246,7 +246,7 @@ ms.locfileid: "94412822"
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="data-protection"></a>Защита данных
 
@@ -258,9 +258,9 @@ ms.locfileid: "94412822"
 
 - [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
@@ -268,9 +268,9 @@ ms.locfileid: "94412822"
 
 - [Управление доступом на основе ролей Azure (Azure RBAC) в Azure от атак DDoS Protection](../../virtual-network/manage-ddos-protection.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
@@ -278,9 +278,9 @@ ms.locfileid: "94412822"
 
 - [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
@@ -296,9 +296,9 @@ ms.locfileid: "94412822"
 
 - [Просмотр подписок Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
 
@@ -306,9 +306,9 @@ ms.locfileid: "94412822"
 
 - [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
@@ -326,17 +326,17 @@ ms.locfileid: "94412822"
 
 - [Создание и использование тегов](../../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: определение и обслуживание инвентаризации утвержденных ресурсов Azure
 
 **Руководство**. Создание инвентаризации утвержденных ресурсов Azure и утвержденного программного обеспечения для ресурсов вычислений в соответствии с потребностями Организации.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
@@ -348,9 +348,9 @@ ms.locfileid: "94412822"
 
 - [Как создавать запросы с помощью Azure Resource Graph](../../governance/resource-graph/first-query-portal.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9. Использование только утвержденных служб Azure
 
@@ -364,9 +364,9 @@ ms.locfileid: "94412822"
 
 - [Как отказаться от определенного типа ресурса с помощью Политики Azure](../../governance/policy/samples/index.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: ограничьте возможность пользователей работать с Azure Resource Manager
 
@@ -376,7 +376,7 @@ ms.locfileid: "94412822"
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
@@ -390,9 +390,9 @@ ms.locfileid: "94412822"
 
 - [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
 
@@ -402,9 +402,9 @@ ms.locfileid: "94412822"
 
 - [Общие сведения о влиянии политики Azure](../../governance/policy/concepts/effects.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 
@@ -416,7 +416,7 @@ ms.locfileid: "94412822"
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
 
@@ -424,9 +424,9 @@ ms.locfileid: "94412822"
 
 - [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
 
@@ -434,9 +434,9 @@ ms.locfileid: "94412822"
 
 - [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
 
@@ -444,9 +444,9 @@ ms.locfileid: "94412822"
 
 - [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
@@ -458,9 +458,9 @@ ms.locfileid: "94412822"
 
 Вы отвечаете за предварительную проверку содержимого, которое передается в ресурсы Azure, не являющиеся ресурсами вычислений. Корпорация Майкрософт не может получить доступ к данным клиентов, поэтому не может проводить проверку содержимого клиентов от вредоносных программ от вашего имени.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
@@ -476,9 +476,9 @@ ms.locfileid: "94412822"
 
 - [Использование руководства по обработке инцидентов безопасности компьютера от NIST для создания собственного плана реагирования на инциденты](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
@@ -490,9 +490,9 @@ ms.locfileid: "94412822"
 
 - [использование тегов для упорядочения ресурсов в Azure](../../azure-resource-manager/management/tag-resources.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
@@ -504,9 +504,9 @@ ms.locfileid: "94412822"
 
 - [Публикация NIST — руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://csrc.nist.gov/publications/detail/sp/800-84/final)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
@@ -514,9 +514,9 @@ ms.locfileid: "94412822"
 
 - [Как задать контакт безопасности центра безопасности Azure](../../security-center/security-center-provide-security-contact-details.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
@@ -530,9 +530,9 @@ ms.locfileid: "94412822"
 
 - [Как выполнить потоковую передачу оповещений в Azure Sentinel](../../sentinel/connect-azure-security-center.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
@@ -540,9 +540,9 @@ ms.locfileid: "94412822"
 
 - [Как настроить автоматизацию рабочего процесса и Logic Apps](../../security-center/workflow-automation.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
@@ -556,9 +556,9 @@ ms.locfileid: "94412822"
 
 - [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
