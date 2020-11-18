@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/12/2020
+ms.date: 11/17/2020
 ms.author: alkohli
-ms.openlocfilehash: e67b507baf1c3271a7fe32318597722e52fd3890
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de41bd030ea73ac68bfac5fbfbd03ae14cf7980f
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891377"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874242"
 ---
 # <a name="certificate-requirements"></a>Требования к сертификатам
 
@@ -30,12 +30,13 @@ ms.locfileid: "90891377"
 * Поле " *Кому выдан* " сертификата не должно совпадать с именем *, выданным в поле "кем выдан"* , за исключением сертификатов корневого ЦС.
 
 
-
 ## <a name="certificate-algorithms"></a>Алгоритмы сертификатов
 
 Алгоритмы сертификатов должны иметь следующие требования.
 
 * Сертификаты должны использовать алгоритм ключа RSA.
+
+* Поддерживаются только сертификаты RSA с поставщиком служб шифрования Microsoft RSA/SChannel.
 
 * Алгоритм подписи сертификата не может быть SHA1.
 
@@ -74,7 +75,7 @@ ms.locfileid: "90891377"
 
 * В сертификате должен использоваться алгоритм шифрования PFX 3DES. Это шифрование по умолчанию, используемое при экспорте из клиента Windows 10 в хранилище сертификатов Windows Server 2016. Дополнительные сведения о 3DES см. в разделе [тройной алгоритм DES](https://en.wikipedia.org/wiki/Triple_DES).
 
-* PFX-файлы сертификата должны иметь действительную *цифровую подпись* и *KeyEncipherment* значения в поле *использования ключа* .
+* PFX-файлы сертификата должны иметь действительную *цифровую подпись* и значения *KeyEncipherment* в поле " *Использование ключа* ".
 
 * В поле " *Расширенное использование ключа* " для PFX-файлов сертификата должны быть заданы значения *Проверка подлинности сервера (1.3.6.1.5.5.7.3.1)* и *Проверка подлинности клиента (1.3.6.1.5.5.7.3.2)* .
 
@@ -82,9 +83,11 @@ ms.locfileid: "90891377"
 
 * Пароль для PFX-файла сертификата должен быть сложным паролем. Запишите этот пароль, так как он используется в качестве параметра развертывания.
 
+* Используйте только сертификаты RSA с поставщиком служб шифрования Microsoft RSA/SChannel.
+
 Дополнительные сведения см. [в статье экспорт сертификатов PFX с помощью закрытого ключа](azure-stack-edge-j-series-manage-certificates.md#export-certificates-as-pfx-format-with-private-key).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Использование сертификатов с Azure Stack пограничным Pro](azure-stack-edge-j-series-manage-certificates.md)
 

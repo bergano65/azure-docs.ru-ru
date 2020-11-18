@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 11/17/2020
 ms.author: alkohli
-ms.openlocfilehash: 544625fe9fd2dbd87ad7330d7277494cbfbe6eb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e5cb077868a224620d1a23e1ff1aac9c8d9f095
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891085"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874480"
 ---
 # <a name="create-certificates-for-your-azure-stack-edge-pro-using-azure-stack-hub-readiness-checker-tool"></a>Создание сертификатов для Azure Stack ребра Pro с помощью средства проверки готовности центра Azure Stack 
 
@@ -42,7 +42,7 @@ ms.locfileid: "90891085"
 Чтобы создать специалиста по обслуживанию Azure Stack для развертывания устройств с пограничным назначением, убедитесь в том, что: 
 
 - У вас есть клиент под управлением Windows 10 или Windows Server 2016 или более поздней версии. 
-- Вы скачали средство проверки готовности Microsoft Azure Stack Hub 1.2002.1133.85 [из коллекция PowerShell](https://aka.ms/AzsReadinessChecker) в этой системе. Может потребоваться выполнить поиск этого пакета. Только эта версия средства может создавать сертификаты для устройств Azure Stack пограничной Pro.
+- Средство проверки готовности к установке центра Microsoft Azure Stack загружено [из коллекция PowerShell](https://aka.ms/AzsReadinessChecker) в этой системе.
 - Для сертификатов имеются следующие сведения.
   - Имя устройства
   - Серийный номер узла
@@ -56,7 +56,7 @@ ms.locfileid: "90891085"
 2. Установите средство проверки готовности центра Azure Stack. В командной строке PowerShell введите следующую команду: 
 
     ```azurepowershell
-    Install-Module -Name Microsoft.AzureStack.ReadinessChecker -RequiredVersion 1.2002.1133.85 -Force
+    Install-Module -Name Microsoft.AzureStack.ReadinessChecker
     ```
 
     Чтобы проверить установленную версию, введите:  
@@ -150,6 +150,6 @@ ms.locfileid: "90891085"
 
     `Invoke-AzsCertificateValidation -CertificateType AzureStackEdge -DeviceName mytea1 -NodeSerialNumber VM1500-00025 -externalFQDN azurestackedge.contoso.com -CertificatePath $ENV:USERPROFILE\Documents\AzureStackCSR\AzureStackEdge -pfxPassword $pfxPassword`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Развертывание устройства Azure Stack пограничной Pro](azure-stack-edge-gpu-deploy-prep.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2468bde9dd969ad604f96835a3dc0bfad06c1cd2
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8f2498dbb3a555db262c591c9badacbe0e4e2548
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844665"
+ms.locfileid: "94874667"
 ---
 # <a name="azure-security-baseline-for-azure-machine-learning"></a>Базовый план безопасности Azure для Машинное обучение Azure
 
@@ -529,6 +529,7 @@ ms.locfileid: "94844665"
 **Руководство**. машинное обучение Azure поддерживает использование Azure Active Directory (Azure AD) для авторизации запросов к машинное обучение ресурсам. С помощью Azure AD можно использовать управление доступом на основе ролей (RBAC) Azure для предоставления разрешений субъекту безопасности, который может быть пользователем или субъектом-службой приложения.
 
 - [Управление доступом к рабочей области Машинного обучения Azure](how-to-assign-roles.md)
+- [Использование Azure RBAC для авторизации Kubernetes](../aks/manage-azure-rbac.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -911,6 +912,8 @@ Azure Resource Manager может экспортировать шаблон в �
 - [Настройка Azure RBAC](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
 - [Обзор коллекции общих образов](../virtual-machines/windows/shared-image-galleries.md)
+
+- [Использование Azure RBAC для авторизации Kubernetes](../aks/manage-azure-rbac.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 

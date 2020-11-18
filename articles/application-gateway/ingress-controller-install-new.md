@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 04d8a77cd051823559aba42d5dfc1418e6343ecc
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 5e3473a9afefe73fe7b07d3efda1f53675264fc8
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397388"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874633"
 ---
 # <a name="how-to-install-an-application-gateway-ingress-controller-agic-using-a-new-application-gateway"></a>Установка контроллера входящего трафика шлюза приложений (АГИК) с помощью нового шлюза приложений
 
@@ -40,7 +40,7 @@ ms.locfileid: "93397388"
 
 Выполните следующие действия, чтобы создать [объект субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object)Azure Active Directory (AAD). Запишите `appId` значения, `password` и, `objectId` которые будут использоваться в следующих шагах.
 
-1. Создание субъекта-службы AD ([Подробнее о RBAC](../role-based-access-control/overview.md)):
+1. Создайте субъект-службу AD ([Подробнее об Azure RBAC](../role-based-access-control/overview.md)):
     ```azurecli
     az ad sp create-for-rbac --skip-assignment -o json > auth.json
     appId=$(jq -r ".appId" auth.json)
@@ -66,7 +66,7 @@ ms.locfileid: "93397388"
     }
     EOF
     ```
-    Чтобы развернуть кластер с поддержкой **RBAC** , задайте `aksEnableRBAC` для поля значение. `true`
+    Чтобы развернуть кластер с поддержкой **KUBERNETES RBAC** , задайте `aksEnableRBAC` для поля значение. `true`
 
 ## <a name="deploy-components"></a>Развертывание компонентов
 На этом шаге в подписку будут добавлены следующие компоненты:
@@ -131,13 +131,13 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
 
 Чтобы установить удостоверение AAD Pod в кластер, выполните следующие действия.
 
-   - *RBAC включен* Кластер AKS
+   - *KUBERNETES RBAC включен* Кластер AKS
 
      ```bash
      kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
      ```
 
-   - *RBAC отключен* Кластер AKS
+   - *KUBERNETES RBAC отключен* Кластер AKS
 
      ```bash
      kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
@@ -148,7 +148,7 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
 
 1. Установите [Helm](../aks/kubernetes-helm.md) и выполните следующую команду, чтобы добавить `application-gateway-kubernetes-ingress` пакет Helm:
 
-    - *RBAC включен* Кластер AKS
+    - *KUBERNETES RBAC включен* Кластер AKS
 
         ```bash
         kubectl create serviceaccount --namespace kube-system tiller-sa
@@ -156,7 +156,7 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
         helm init --tiller-namespace kube-system --service-account tiller-sa
         ```
 
-    - *RBAC отключен* Кластер AKS
+    - *KUBERNETES RBAC отключен* Кластер AKS
 
         ```bash
         helm init
@@ -228,7 +228,7 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
     #    secretJSON: <<Generate this value with: "az ad sp create-for-rbac --subscription <subscription-uuid> --sdk-auth | base64 -w0" >>
     
     ################################################################################
-    # Specify if the cluster is RBAC enabled or not
+    # Specify if the cluster is Kubernetes RBAC enabled or not
     rbac:
         enabled: false # true/false
     

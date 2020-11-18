@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: ccd070d2d7a6fcccab6d243567dfbe02960cc870
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 5185e7d0bd60eec239f1233db7f9789cbefc2c10
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376447"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873545"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -23,7 +23,7 @@ ms.locfileid: "94376447"
 
 ## <a name="create-a-new-qna-maker-service"></a>Создание службы QnA Maker
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 Эта процедура создает ресурсы Azure, необходимые для управления содержимым базы знаний. После выполнения этих действий вы найдете ключи _подписки_ на странице **ключи** для ресурса в портал Azure.
 
@@ -117,7 +117,7 @@ ms.locfileid: "94376447"
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Найдите и выберите службу приложений для QnA Maker ресурса. Он будет иметь то же имя, что и ресурс QnA Maker, но будет иметь другой **тип** службы приложений.
 1. Найдите **Параметры** и выберите **Конфигурация**.
-1. На панели конфигурация выберите **Общие параметры** , найдите **Always on** и выберите **в** качестве значения.
+1. На панели конфигурация выберите **Общие параметры**, найдите **Always on** и выберите **в** качестве значения.
 
     > [!div class="mx-imgBorder"]
     > ![На панели конфигурация выберите * * Общие параметры * *, затем найдите * * Always on * * и выберите в качестве значения * * on * *.](../media/qnamaker-how-to-upgrade-qnamaker/configure-app-service-idle-timeout.png)
@@ -133,6 +133,7 @@ ms.locfileid: "94376447"
 2. Предоставьте доступ к службе приложений и разрешите доступность QnA Maker как:
     * Общедоступная — по умолчанию
     * Тег службы DNS: `CognitiveServicesManagement`
+3. Создайте QnA Makerный экземпляр службы (Microsoft. CognitiveServices/Accounts) с помощью Azure Resource Manager, где QnA Maker конечная точка должна иметь значение Среда службы приложений.
 
 ### <a name="network-isolation-for-app-service"></a>Сетевая изоляция для службы приложений
 
@@ -143,8 +144,6 @@ ms.locfileid: "94376447"
 * Перейдите к разделу "сети" ресурса службы приложений и щелкните "настроить ограничение доступа", чтобы добавить IP-адреса в разрешенных.
 
 Кроме того, у нас есть автоматизированный сценарий для того, чтобы сделать то же самое для службы приложений. Вы можете найти [сценарий PowerShell для настройки разрешенных](https://github.com/pchoudhari/QnAMakerBackupRestore/blob/master/AddRestrictedIPAzureAppService.ps1) на GitHub. Необходимо ввести идентификатор подписки, группу ресурсов и фактическое имя службы приложений в качестве параметров скрипта. При выполнении скрипта будут автоматически добавлены IP-адреса в службу приложений разрешенных.
-    
-1. Создайте QnA Makerный экземпляр службы (Microsoft. CognitiveServices/Accounts) с помощью Azure Resource Manager, где QnA Maker конечная точка должна иметь значение Среда службы приложений.
 
 ### <a name="business-continuity-with-traffic-manager"></a>Непрерывность бизнес-процессов с помощью диспетчера трафика
 
@@ -169,7 +168,7 @@ ms.locfileid: "94376447"
 
 1. Наконец, используйте конечную точку диспетчера трафика в боте или приложении.
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
 Эта процедура создает ресурсы Azure, необходимые для управления содержимым базы знаний. После выполнения этих действий вы найдете ключи *подписки* на странице **ключи** для ресурса в портал Azure.
 
@@ -203,7 +202,7 @@ ms.locfileid: "94376447"
 
 ## <a name="find-authoring-keys-in-the-azure-portal"></a>Поиск ключей разработки в портал Azure
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 Вы можете просматривать и сбрасывать ключи разработки из портал Azure, где был создан QnA Maker ресурс. Эти ключи могут называться ключами подписки.
 
@@ -211,7 +210,7 @@ ms.locfileid: "94376447"
 
     ![Список ресурсов QnA Maker](../media/qnamaker-how-to-key-management/qnamaker-resource-list.png)
 
-2. К **ключам** :
+2. К **ключам**:
 
     ![Ключ подписки](../media/qnamaker-how-to-key-management/subscription-key.PNG)
 
@@ -221,7 +220,7 @@ ms.locfileid: "94376447"
 
 Ключами конечной точки можно управлять на [портале QnA Maker](https://qnamaker.ai).
 
-1. Войдите на [портал QnA Maker](https://qnamaker.ai), перейдите к своему профилю и выберите **Параметры службы** :
+1. Войдите на [портал QnA Maker](https://qnamaker.ai), перейдите к своему профилю и выберите **Параметры службы**:
 
     ![Ключ конечной точки](../media/qnamaker-how-to-key-management/Endpoint-keys.png)
 
@@ -233,7 +232,7 @@ ms.locfileid: "94376447"
     >[!NOTE]
     >Обновите ключи, если считаете, что они скомпрометированы. Для этого может потребоваться внести соответствующие изменения в код клиентского приложения или бота.
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
 Вы можете просмотреть и сбросить ключи разработки из портал Azure, в которой был создан QnA Maker управляемый (предварительный) ресурс. Эти ключи могут называться ключами подписки.
 
@@ -241,7 +240,7 @@ ms.locfileid: "94376447"
 
     ![Список ресурсов для управляемого (предварительной версии) QnA Maker](../media/qnamaker-how-to-key-management/qnamaker-v2-resource-list.png)
 
-2. Перейдите к **разделу ключи и конечная точка** :
+2. Перейдите к **разделу ключи и конечная точка**:
 
     ![Ключ подписки управляемого (Предварительная версия) QnA Maker](../media/qnamaker-how-to-key-management/subscription-key-v2.png)
 
@@ -253,7 +252,7 @@ ms.locfileid: "94376447"
 
 ## <a name="upgrade-the-azure-cognitive-search-service"></a>Обновление службы Когнитивный поиск Azure
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 Если вы планируете использовать множество баз знаний, обновите ценовую категорию службы Когнитивный поиск Azure.
 
@@ -265,7 +264,7 @@ ms.locfileid: "94376447"
 
 1. Восстановите индексы из исходного ресурса Поиска Azure на новый. См. [пример кода для восстановления резервной копии](https://github.com/pchoudhari/QnAMakerBackupRestore).
 
-1. После восстановления данных перейдите к новому ресурсу поиска Azure, выберите **ключи** и запишите **имя** и **ключ администратора** :
+1. После восстановления данных перейдите к новому ресурсу поиска Azure, выберите **ключи** и запишите **имя** и **ключ администратора**:
 
     ![Ключи поиска Azure в QnA Maker](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-azuresearch-keys.png)
 
@@ -295,7 +294,7 @@ ms.locfileid: "94376447"
 
 1. Войдите в [портал Azure](https://portal.azure.com) и найдите **службу приложений** , связанную с ресурсом QnA Maker. Оба с имеют одинаковое имя.
 
-1. Выберите **Параметры** , а затем **Конфигурация**. Отобразятся все существующие параметры для службы приложений QnA Maker.
+1. Выберите **Параметры**, а затем **Конфигурация**. Отобразятся все существующие параметры для службы приложений QnA Maker.
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана портал Azure отображение параметров конфигурации службы приложений](../media/qnamaker-how-to-upgrade-qnamaker/change-search-service-app-service-configuration.png)
@@ -305,7 +304,7 @@ ms.locfileid: "94376447"
     * **азуресеарчадминкэй**
     * **азуресеарчнаме**
 
-1. Чтобы использовать новые параметры, необходимо перезапустить службу приложений. Выберите **Обзор** , а затем щелкните **перезапустить**.
+1. Чтобы использовать новые параметры, необходимо перезапустить службу приложений. Выберите **Обзор**, а затем щелкните **перезапустить**.
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана портал Azure перезапуска службы приложений после изменения параметров конфигурации](../media/qnamaker-how-to-upgrade-qnamaker/screenshot-azure-portal-restart-app-service.png)
@@ -342,7 +341,7 @@ ms.locfileid: "94376447"
 
 Бесплатные ресурсы поиска удаляются через 90 дней без получения вызова API.
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
 Если вы планируете использовать множество баз знаний, обновите ценовую категорию службы Когнитивный поиск Azure.
 
@@ -382,7 +381,7 @@ ms.locfileid: "94376447"
 
 Если удалить любой из ресурсов Azure, используемых для ваших баз знаний QnA Maker, базы знаний перестанут работать. Перед удалением любых ресурсов на странице **Настройки** убедитесь, что вы экспортируете свои базы знаний.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [службе приложений](../../../app-service/index.yml) и службе [поиска](../../../search/index.yml).
 

@@ -4,12 +4,12 @@ description: Содержит ответы на некоторые распро�
 ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: dikamath
-ms.openlocfilehash: 2d71c30d2fb08629674c352ae812d8890463abfe
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: f2b46b37fc8c773062402c52f2903a7a10acc2c4
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695107"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874718"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
@@ -237,7 +237,7 @@ Azure бастиона — это служба, рекомендуемая дл�
 
 Корпорация Майкрософт предоставляет поддержку для решения VMware для Azure. Вы можете отправить [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest). 
 
-Для управляемых подписок CSP первый уровень поддержки будет предоставляться поставщиком решений таким же образом, как и CSP для других служб Azure.
+Для подписок, управляемых CSP, поставщик решений будет предоставлять первый уровень поддержки таким же образом, как и CSP для других служб Azure.
 
 #### <a name="what-accounts-do-i-need-to-create-an-azure-vmware-solution-private-cloud"></a>Какие учетные записи нужно создать в частном облаке решения Azure VMware?
 
@@ -253,12 +253,12 @@ VMware HCX Enterprise Edition (EE) предоставляется в соста�
 
 #### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Разделы справки запросить увеличение квоты узла для решения VMware для Azure?
 
-Для управляемых подписок CSP клиент должен выполнить запрос к партнеру, и Партнерская группа будет привлекаться к корпорации Майкрософт, чтобы увеличить квоту для подписки. Дополнительные сведения см. в [статье о том, как включить ресурсы решения VMware для Azure](enable-azure-vmware-solution.md) . 
+Для подписок, управляемых CSP, клиент должен отправить запрос партнеру. Затем Партнерская группа Взаимодействуйте с корпорацией Майкрософт, чтобы увеличить квоту для подписки. Дополнительные сведения см. в [статье Включение ресурсов для решения VMware в Azure](enable-azure-vmware-solution.md) . 
 
-Для подписок EA клиент должен выполнить эту процедуру.
+Для подписок EA используйте следующую процедуру. Во первых, вам потребуется:
 
-* Вам потребуется [Соглашение Enterprise Azure (EA)](../cost-management-billing/manage/ea-portal-agreements.md) с корпорацией Майкрософт.
-* Вам потребуется учетная запись Azure в подписке Azure.
+* [Соглашение Enterprise Azure (EA)](../cost-management-billing/manage/ea-portal-agreements.md) с корпорацией Майкрософт.
+* Учетная запись Azure в подписке Azure.
 
 Перед созданием ресурса решения Azure VMware необходимо отправить запрос в службу поддержки, чтобы выделить узлы. Подтверждение запроса и выделение узлов занимает до пяти рабочих дней. Если у вас уже есть частное облако Решения Azure VMware и вы хотите выделить для него больше узлов, выполните те же действия.
 
@@ -298,11 +298,15 @@ VMware HCX Enterprise Edition (EE) предоставляется в соста�
 
 #### Are Reserved Instances available for purchasing through the Cloud Solution Provider (CSP) program?
 
-Yes. CSP can purchase reserved instances on behalf of their customers, see [Save costs with a reserved instance](reserved-instance.md) article. 
+Yes. CSP can purchase reserved instances for their customers. For more information, see the [Save costs with a reserved instance](reserved-instance.md) article. 
 
 #### Does Azure VMware Solution offer multi-tenancy for hosting CSP partners?
 
-No. Currently Azure VMware Solution does not offer multi-tenancy.
+No. Currently Azure VMware Solution doesn't offer multi-tenancy.
+
+#### Will traffic between on-premises and Azure VMware Solution over ExpressRoute incur any outbound data transfer charge in the metered data plan?
+
+Traffic in the Azure VMware Solution ExpressRoute circuit isn't metered in any way. Traffic from your ExpressRoute circuit connecting to your on-premises to Azure is charged according to ExpressRoute pricing plans.
 
 
 ## Customer communication

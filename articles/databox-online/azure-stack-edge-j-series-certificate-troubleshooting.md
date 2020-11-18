@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: troubleshooting
-ms.date: 09/29/2020
+ms.date: 11/17/2020
 ms.author: alkohli
-ms.openlocfilehash: f0f9dfa6e3d6ae02f66ac71f62586953cb21517e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18e90bcfe7238ae998ac677a9d7eebef0ffa8939
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568358"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874259"
 ---
 # <a name="troubleshooting-certificate-errors"></a>Устранение ошибок сертификата
 
@@ -46,6 +46,7 @@ ms.locfileid: "91568358"
 | CertificateManagement_MissingServerOid | Сертификат с именем субъекта {0} не имеет OID проверки подлинности сервера. Проверьте свойства сертификата и при необходимости подключите новый сертификат.|
 | CertificateManagement_NameMismatch | Несоответствие типа сертификата. Ожидалась область: {0} , обнаружено {1} . Отправьте соответствующий сертификат.|
 | CertificateManagement_NoPrivateKeyPresent | Для сертификата с именем субъекта отсутствует {0} закрытый ключ. Отправьте PFX-сертификат с закрытым ключом.|
+| CertificateManagement_NoRSACryptoPrivateKey | Закрытый ключ для сертификата с именем субъекта {0} недоступен. Убедитесь, что используется поддерживаемый сертификат. Поддерживается только поставщик служб шифрования Microsoft RSA/SChannel. |
 | CertificateManagement_NotSelfSignedCertificate | Сертификат с именем субъекта {0} не подписан. Корневые сертификаты должны иметь собственную подпись |
 | CertificateManagement_NotSupportedOnVirtualAppliance | Эта операция не поддерживается на виртуальном устройстве. Эта ошибка означает, что подписывание выполняется только при Шлюз Data Box, работающем в облачном устройстве тактических. Эта ошибка возникает при управлении устройством с помощью Windows PowerShell.|
 | CertificateManagement_SelfSignedCertificate | Сертификат с именем субъекта {0} имеет собственную подпись. Отправьте сертификат, который подписан правильно.|
@@ -57,7 +58,9 @@ ms.locfileid: "91568358"
 | цертификатеимпортфаилуре | Сертификат с отпечатком {0} не был импортирован на узел {1} . Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт. |
 | цертификатеапплифаилуре | Сертификат с отпечатком {0} не был применен к {1} узлу. Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт.|
 | ноденотреачабле | Не удалось проверить сертификат в {0} . Проверьте работоспособность оборудования и программного обеспечения системы.|
+| ПОЛУЧИТЬ КОД ОШИБКИ | Закрытый ключ для этого сертификата недоступен. Убедитесь, что используется поддерживаемый сертификат. Поддерживается только поставщик служб шифрования Microsoft RSA/SChannel. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+
+## <a name="next-steps"></a>Следующие шаги
 
 [Требования к сертификатам](azure-stack-edge-j-series-certificate-requirements.md)

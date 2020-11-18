@@ -1,6 +1,6 @@
 ---
-title: Установка агента Azure AD Connect Health | Документация Майкрософт
-description: Это страница Azure AD Connect Health, на которой описана процедура установки агента для AD FS и синхронизации.
+title: Установите агенты работоспособности Connect в Azure Active Directory
+description: В этой статье Azure AD Connect Health описывается установка агента для службы федерации Active Directory (AD FS) (AD FS) и для синхронизации.
 services: active-directory
 documentationcenter: ''
 author: zhiweiwangmsft
@@ -17,251 +17,265 @@ ms.topic: how-to
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: da3ae5e86833eb3e7eb71d7e47cb6f963d37b9cf
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: b680c275b92340cc7efba187769cb17602b08b45
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410731"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873443"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
-В этом документе описываются этапы установки и настройки агентов Azure AD Connect Health. Загрузить агенты можно [отсюда](how-to-connect-install-roadmap.md#download-and-install-azure-ad-connect-health-agent):
+В этой статье вы узнаете, как установить и настроить агенты Azure Connect Health для Azure Active Directory. Сведения о загрузке агентов см. в [этих инструкциях](how-to-connect-install-roadmap.md#download-and-install-azure-ad-connect-health-agent).
 
 ## <a name="requirements"></a>Требования
 
-В таблице ниже приведен список предварительных требований для использования Azure AD Connect Health.
+В следующей таблице перечислены требования для использования Azure AD Connect Health.
 
 | Требование | Описание |
 | --- | --- |
-| Azure AD Premium |Служба Azure AD Connect Health относится к Azure AD Premium и требует наличия выпуска Azure AD Premium. <br /><br />Дополнительные сведения см. в статье [Приступая к работе с Azure AD Premium](../fundamentals/active-directory-get-started-premium.md) <br />Чтобы получить бесплатную 30-дневную пробную версию, перейдите [по этой ссылке](https://azure.microsoft.com/trial/get-started-active-directory/). |
-| Для начала работы с Azure AD Connect Health требуются права глобального администратора Azure AD  |По умолчанию только глобальный администратор может установить и настроить агенты работоспособности, чтобы приступить к работе, получить доступ к порталу и начать выполнять любые операции в Azure AD Connect Health. Дополнительные сведения см. в статье [Администрирование каталога Azure AD](../fundamentals/active-directory-whatis.md). <br /><br /> С помощью управления доступом на основе ролей Azure (Azure RBAC) можно разрешить доступ к Azure AD Connect Health другим пользователям в Организации. Дополнительные сведения см. в статье [Управление доступом на основе ролей Azure (Azure RBAC) для Azure AD Connect Health.](how-to-connect-health-operations.md#manage-access-with-azure-rbac) <br /><br />**Важно!** Учетная запись, которая используется во время установки агентов, должна быть рабочей или учебной. Учетную запись Майкрософт для этого использовать нельзя. Дополнительные сведения см. в статье [Подпишитесь на Azure как организация](../fundamentals/sign-up-organization.md). |
-| Агент Azure AD Connect Health следует установить на всех целевых серверах | Для использования Azure AD Connect Health на целевых серверах необходимо установить и настроить агенты работоспособности, чтобы получать данные и предоставлять возможности мониторинга и аналитики. <br /><br />Например, для получения данных об инфраструктуре AD FS необходимо установить агент на серверы AD FS и прокси-серверы веб-приложений. Аналогично, для получения данных о локальной инфраструктуре AD DS агент необходимо установить на контроллеры домена. <br /><br /> |
-| Исходящие подключения к конечным точкам службы Azure | Во время установки и выполнения агенту требуется подключение к конечным точкам службы Azure AD Connect Health. При блокировке исходящего подключения с помощью брандмауэров убедитесь, что в список разрешенных добавлены указанные ниже конечные точки. См. [здесь](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints). |
-|Исходящие подключения на основе IP-адресов | Дополнительные сведения о фильтрации на основе IP-адресов в брандмауэрах см. в статье о [диапазонах IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653).|
-| Проверка TLS для исходящего трафика фильтруется или отключается. | Выполнение этапа регистрации агента или операции передачи данных может завершиться ошибкой, если для исходящего трафика на сетевом уровне имеется проверка TLS или прерывание. Подробнее о [настройке проверки TLS](/previous-versions/tn-archive/ee796230(v=technet.10)) |
-| Порты брандмауэра на сервере с агентом |Агент требует открытия следующих портов брандмауэра для обмена данными с конечными точками службы Azure AD Health.<br /><br /><li>TCP-порт 443</li><li>TCP-порт 5671</li> <br />Обратите внимание на то, что для последней версии агента больше не нужен порт 5671. Для обновления до последней версии требуется только порт 443. Ознакомьтесь с дополнительными сведениями о [включении портов брандмауэра](/previous-versions/sql/sql-server-2008/ms345310(v=sql.100)). |
-| Внесите следующие веб-сайты в список разрешенных, если включена политика усиленной безопасности IE |Если на сервере, на котором будет установлен агент, включена конфигурация усиленной безопасности, потребуется открыть доступ для следующих веб-сайтов:<br /><br /><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com</li><li>https:\//login.windows.net</li><li>HTTPS: \/ /aadcdn.msftauth.NET</li><li>Сервер федерации вашей организации должен быть доверенным для Azure Active Directory. Например: https:\//sts.contoso.com.</li> Дополнительные сведения о [настройке IE см. в](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing)этой статье. Если у вас есть прокси-сервер в вашей сети, см. Примечание ниже.|
-| Установлена служба PowerShell 4.0 или более поздней версии | <li>Windows Server 2012 поставляется вместе с PowerShell версии 3.0, что недостаточно для агента.</li><li>Windows Server 2012 R2 и более поздней версии поставляется с последней версией PowerShell.</li>|
-|Отключение FIPS|FIPS не поддерживается агентами Azure Active Directory Connect Health.|
+| Azure AD Premium установлен. |Azure AD Connect Health — это функция Azure AD Premium. Дополнительные сведения см. в статье [Регистрация в Azure AD Premium](../fundamentals/active-directory-get-started-premium.md). <br /><br />Чтобы запустить бесплатную 30-дневную пробную версию, см. статью [Запуск пробной версии](https://azure.microsoft.com/trial/get-started-active-directory/). |
+| Вы являетесь глобальным администратором в Azure AD. |По умолчанию только глобальные администраторы могут устанавливать и настраивать агенты работоспособности, получать доступ к порталу и выполнять любые операции в Azure AD Connect Health. Дополнительные сведения см. в статье [Администрирование каталога Azure AD](../fundamentals/active-directory-whatis.md). <br /><br /> С помощью управления доступом на основе ролей Azure (Azure RBAC) можно разрешить другим пользователям в организации получать доступ к Azure AD Connect Health. Дополнительные сведения см. в разделе [Azure RBAC for Azure AD Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac). <br /><br />**Важно**. для установки агентов используйте рабочую или учебную учетную запись. Нельзя использовать учетная запись Майкрософт. Дополнительные сведения см. в статье [Регистрация в Azure в качестве организации](../fundamentals/sign-up-organization.md). |
+| Агент Azure AD Connect Health установлен на каждом целевом сервере. | Агенты работоспособности должны быть установлены и настроены на целевых серверах, чтобы они могли получать данные и предоставлять возможности мониторинга и аналитики. <br /><br />Например, чтобы получить данные из инфраструктуры службы федерации Active Directory (AD FS) (AD FS), необходимо установить агент на AD FS сервере и прокси-сервере веб – приложения. Аналогично, чтобы получить данные из локальной инфраструктуры доменных служб Azure AD (Azure AD DS), необходимо установить агент на контроллерах домена.  |
+| Конечные точки службы Azure имеют исходящее подключение. | Во время установки и выполнения агенту требуется подключение к конечным точкам службы Azure AD Connect Health. Если брандмауэры блокируют исходящие подключения, добавьте [конечные точки исходящего подключения](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) в список разрешений. |
+|Исходящее подключение основано на IP-адресах. | Сведения о фильтрации брандмауэра по IP-адресам см. в разделе [диапазоны IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653).|
+| Проверка TLS для исходящего трафика фильтруется или отключается. | Выполнение этапа регистрации агента или операции передачи данных может завершиться ошибкой, если проверка TLS или завершение исходящего трафика на сетевом уровне. Дополнительные сведения см. в разделе [Настройка проверки TLS](/previous-versions/tn-archive/ee796230(v=technet.10)). |
+| Порты брандмауэра на сервере запускаются агентом. |Для работы агента необходимо открыть следующие порты брандмауэра, чтобы он мог взаимодействовать с конечными точками службы Azure AD Connect Health: <br /><li>TCP-порт 443</li><li>TCP-порт 5671</li> <br />Для последней версии агента не требуется порт 5671. Обновите до последней версии, чтобы требовалось только порт 443. Дополнительные сведения см. в статье [необходимые порты и протоколы для гибридной идентификации](./reference-connect-ports.md). |
+| Если включена усиленная безопасность Internet Explorer, разрешите указанные веб-сайты.  |Если включена усиленная безопасность Internet Explorer, разрешите следующие веб-сайты на сервере, где устанавливается агент:<br /><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com</li><li>https:\//login.windows.net</li><li>HTTPS: \/ /aadcdn.msftauth.NET</li><li>Сервер федерации для вашей организации, которому доверяет Azure AD (например, HTTPS: \/ /STS.contoso.com);</li> <br />Дополнительные сведения см. [в разделе Настройка Internet Explorer](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing). Если у вас есть прокси-сервер в сети, см. Примечание, которое отображается в конце этой таблицы.|
+| Установлена версия PowerShell 4,0 или более поздняя. | Windows Server 2012 включает PowerShell версии 3,0. Эта *версия недостаточно для* агента.</br></br> Windows Server 2012 R2 и более поздних версий включает в себя достаточно последнюю версию PowerShell.|
+|FIPS (Федеральный стандарт обработки информации) отключен.|Агенты Azure AD Connect Health не поддерживают FIPS.|
 
 > [!IMPORTANT]
-> Установка агента Azure AD Connect Health в Windows Server Core не поддерживается.
+> Windows Server Core не поддерживает установку агента Azure AD Connect Health.
 
 
 > [!NOTE]
-> При наличии сильно заблокированной и очень ограниченной среды вам потребуется добавить URL-адреса, указанные в списках конечных точек службы, в дополнение к тем, которые перечислены в разрешенной выше конфигурации усиленной безопасности IE. 
+> При наличии сильно заблокированной и ограниченной среды необходимо добавить больше URL-адресов, чем список таблиц для усиленной безопасности Internet Explorer. Также добавьте URL-адреса, перечисленные в таблице в следующем разделе.  
 
 
 ### <a name="outbound-connectivity-to-the-azure-service-endpoints"></a>Исходящие подключения к конечным точкам службы Azure
 
- Во время установки и выполнения агенту требуется подключение к конечным точкам службы Azure AD Connect Health. При блокировке исходящего подключения с помощью брандмауэров убедитесь, что в список запрещенных не были по умолчанию добавлены указанные ниже URL-адреса. Не отключайте мониторинг безопасности или проверку URL-адресов, но предоставьте им разрешения такие же, как и интернет-трафику. Они разрешают обмен данными с конечными точками службы Azure AD Connect Health. Узнайте, как [проверить исходящие подключения с помощью Test-AzureADConnectHealthConnectivity](#test-connectivity-to-azure-ad-connect-health-service).
+Во время установки и выполнения агенту требуется подключение к конечным точкам службы Azure AD Connect Health. Если брандмауэры блокируют исходящие подключения, убедитесь, что URL-адреса в следующей таблице по умолчанию не заблокированы. 
+
+Не отключайте мониторинг безопасности или проверку этих URL-адресов. Вместо этого разрешите им как можно более другой Интернет. 
+
+Эти URL-адреса позволяют обмениваться данными с конечными точками службы Azure AD Connect Health. Далее в этой статье вы узнаете, как [проверить исходящие подключения](#test-connectivity-to-azure-ad-connect-health-service) с помощью `Test-AzureADConnectHealthConnectivity` .
 
 | Доменная среда | Требуемые конечные точки службы Azure |
 | --- | --- |
-| Общедоступная сеть | <li>&#42;.blob.core.windows.net </li><li>&#42;.aadconnecthealth.azure.com </li><li>&#42;. servicebus.windows.net-Port: 5671 (не требуется в последней версии агента)</li><li>&#42;.adhybridhealth.azure.com/;</li><li>https:\//management.azure.com </li><li>https:\//policykeyservice.dc.ad.msft.net/</li><li>https:\//login.windows.net</li><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
-| Azure для Германии | <li>*.blob.core.cloudapi.de; </li><li>*.servicebus.cloudapi.de; </li> <li>*.aadconnecthealth.microsoftazure.de; </li><li>https:\//management.microsoftazure.de </li><li>https:\//policykeyservice.aadcdi.microsoftazure.de </li><li>https:\//login.microsoftonline.de </li><li>https:\//secure.aadcdn.microsoftonline-p.de </li><li>https:\//www.office.de. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
-| Azure для государственных организаций | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
+| Общие открытые | <li>&#42;.blob.core.windows.net </li><li>&#42;.aadconnecthealth.azure.com </li><li>&#42;. servicebus.windows.net-Port: 5671 (Эта конечная точка не является обязательной в последней версии агента).</li><li>&#42;.adhybridhealth.azure.com/;</li><li>https:\//management.azure.com </li><li>https:\//policykeyservice.dc.ad.msft.net/</li><li>https:\//login.windows.net</li><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>HTTPS: \/ /www.Office.com (Эта конечная точка используется только для целей обнаружения во время регистрации.)</li> |
+| Azure для Германии | <li>*.blob.core.cloudapi.de; </li><li>*.servicebus.cloudapi.de; </li> <li>*.aadconnecthealth.microsoftazure.de; </li><li>https:\//management.microsoftazure.de </li><li>https:\//policykeyservice.aadcdi.microsoftazure.de </li><li>https:\//login.microsoftonline.de </li><li>https:\//secure.aadcdn.microsoftonline-p.de </li><li>HTTPS: \/ /www.Office.de (Эта конечная точка используется только для целей обнаружения во время регистрации.)</li> |
+| Azure для государственных организаций | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>HTTPS: \/ /www.Office.com (Эта конечная точка используется только для целей обнаружения во время регистрации.)</li> |
 
 
-## <a name="download-and-install-the-azure-ad-connect-health-agent"></a>Скачивание и установка агента Azure AD Connect Health
+## <a name="install-the-agent"></a>Установка агента.
 
-* Обязательно [выполните требования](how-to-connect-health-agent-install.md#requirements) для Azure AD Connect Health.
-* Приступая к работе с Azure AD Connect Health для AD FS
-    * [Скачайте агент Azure AD Connect Health для AD FS.](https://go.microsoft.com/fwlink/?LinkID=518973)
-    * [См. инструкции по установке](#installing-the-azure-ad-connect-health-agent-for-ad-fs).
-* Приступая к работе с Azure AD Connect Health для синхронизации
-    * [Скачайте и установите последнюю версию Azure AD Connect.](https://go.microsoft.com/fwlink/?linkid=615771) Агент Azure AD Connect Health для синхронизации будет установлен вместе с Azure AD Connect (версии 1.0.9125.0 или более поздней).
-* Приступая к работе с Azure AD Connect Health для AD DS
-    * [Скачайте агент Azure AD Connect Health для AD DS](https://go.microsoft.com/fwlink/?LinkID=820540).
-    * [См. инструкции по установке](#installing-the-azure-ad-connect-health-agent-for-ad-ds).
+Чтобы скачать и установить агент Azure AD Connect Health, выполните следующие действия. 
 
-## <a name="installing-the-azure-ad-connect-health-agent-for-ad-fs"></a>Установка агента Azure AD Connect Health для AD FS
+* Убедитесь, что соблюдены [требования](how-to-connect-health-agent-install.md#requirements) для Azure AD Connect Health.
+* Приступая к работе с Azure AD Connect Health для AD FS:
+    * [Скачайте агент Azure AD Connect Health для AD FS](https://go.microsoft.com/fwlink/?LinkID=518973).
+    * См. [инструкции по установке](#install-the-agent-for-ad-fs).
+* Начало работы с Azure AD Connect Health для синхронизации:
+    * [Скачайте и установите последнюю версию Azure AD Connect.](https://go.microsoft.com/fwlink/?linkid=615771) Агент работоспособности для синхронизации устанавливается в составе Azure AD Connect установки (версия 1.0.9125.0 или более поздняя).
+* Приступая к работе с Azure AD Connect Health для Azure AD DS:
+    * [Скачайте агент Azure AD Connect Health для Azure AD DS](https://go.microsoft.com/fwlink/?LinkID=820540).
+    * См. [инструкции по установке](#install-the-agent-for-azure-ad-ds).
+
+## <a name="install-the-agent-for-ad-fs"></a>Установка агента для AD FS
 
 > [!NOTE]
 > Сервер AD FS должен отличаться от сервера синхронизации. Не устанавливайте агент AD FS на сервере синхронизации.
 >
 
-Перед установкой убедитесь, что имя узла сервера AD FS является уникальным и не существует в службе AD FS.
-Дважды щелкните скачанный EXE-файл, чтобы начать установку агента. На первом экране щелкните «Установить».
+Перед установкой агента убедитесь, что имя узла сервера AD FS уникально и отсутствует в службе AD FS.
+Чтобы запустить установку агента, дважды щелкните загруженный *exe* -файл. В первом окне выберите Install ( **установить**).
 
-![Запуск AD FS установки Azure AD Connect Health](./media/how-to-connect-health-agent-install/install1.png)
+![Снимок экрана, показывающий окно установки агента Azure AD Connect Health AD FS.](./media/how-to-connect-health-agent-install/install1.png)
 
-После завершения установки нажмите кнопку «Настроить сейчас».
+После завершения установки нажмите кнопку **настроить сейчас**.
 
-![Завершение установки AD FS Azure AD Connect Health](./media/how-to-connect-health-agent-install/install2.png)
+![Снимок экрана, показывающий сообщение с подтверждением для установки агента Azure AD Connect Health AD FS.](./media/how-to-connect-health-agent-install/install2.png)
 
-Откроется окно PowerShell, и начнется процесс регистрации агента. При появлении запроса войдите с помощью учетной записи Azure AD, которая имеет доступ на выполнение регистрации агента. По умолчанию учетная запись глобального администратора имеет такой доступ.
+Откроется окно PowerShell для запуска процесса регистрации агента. При появлении запроса войдите в систему, используя учетную запись Azure AD с разрешениями на регистрацию агента. По умолчанию учетная запись глобального администратора имеет разрешения.
 
-![Azure AD Connect Health AD FS настроить вход](./media/how-to-connect-health-agent-install/install3.png)
+![Снимок экрана, показывающий окно входа для Azure AD Connect Health AD FS.](./media/how-to-connect-health-agent-install/install3.png)
 
-После входа PowerShell продолжит выполнять команду. После завершения можно закрыть PowerShell. Настройка завершена.
+После входа в систему PowerShell продолжится. По завершении вы можете закрыть PowerShell. Настройка завершена.
 
-На этом этапе службы агента должны запуститься автоматически, благодаря чему агент сможет безопасно загрузить необходимые данные в облачную службу.
+На этом этапе службы агента должны запускаться автоматически, чтобы агент был безопасно загружать необходимые данные в облачную службу.
 
-Если вы не выполнили все необходимые предварительные требования, которые были описаны в предыдущих разделах, в окне PowerShell будут отображаться предупреждения. Обязательно выполните эти [требования](how-to-connect-health-agent-install.md#requirements), прежде чем устанавливать агент. В качестве примера этих ошибок приведен следующий снимок экрана.
+Если вы не удовлетворены всеми необходимыми компонентами, в окне PowerShell появятся предупреждения. Обязательно выполните [требования](how-to-connect-health-agent-install.md#requirements) перед установкой агента. На следующем снимке экрана показан пример этих предупреждений.
 
-![Azure AD Connect Health AD FS настроить скрипт](./media/how-to-connect-health-agent-install/install4.png)
+![Снимок экрана, показывающий Azure AD Connect Health AD FS настроить скрипт.](./media/how-to-connect-health-agent-install/install4.png)
 
-Чтобы проверить, установлен ли агент, найдите на сервере приведенные ниже службы. Если вы выполнили настройку, эти службы должны работать. Они не запустятся, пока не будет выполнена настройка.
+Чтобы проверить, установлен ли агент, найдите на сервере следующие службы. Если вы выполнили настройку, эти службы должны работать. В противном случае они останавливаются до завершения настройки.
 
 * Служба диагностики AD FS Azure AD Connect Health
 * Служба AD FS получения ценной информации из данных о работоспособности Azure AD Connect
 * Служба наблюдения AD FS Azure AD Connect Health
 
-![Службы AD FS Azure AD Connect Health](./media/how-to-connect-health-agent-install/install5.png)
+![Снимок экрана, показывающий Azure AD Connect Health AD FS Services.](./media/how-to-connect-health-agent-install/install5.png)
 
 
 ### <a name="enable-auditing-for-ad-fs"></a>Включение аудита для AD FS
 
 > [!NOTE]
-> Этот раздел относится только к серверам AD FS. Эти действия не нужно выполнять на прокси-серверах веб-приложений.
+> Этот раздел относится только к AD FSным серверам. Вам не нужно выполнять эти действия на прокси-серверах приложений.
 >
 
-Чтобы функция аналитики по использованию могла осуществлять сбор и анализ данных, агенту Azure AD Connect Health нужна информация из журналов аудита AD FS. По умолчанию эти журналы не включены. Используйте следующие процедуры для включения аудита AD FS и поиска журналов аудита AD FS на серверах AD FS.
+Функция анализа использования должна собирать и анализировать данные. Поэтому агенту Azure AD Connect Health требуются сведения в журналах аудита AD FS. Эти журналы не включены по умолчанию. Используйте следующие процедуры для включения аудита AD FS и выявления AD FS журналов аудита на серверах AD FS.
 
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2012-r2"></a>Включение аудита для AD FS на Windows Server 2012 R2
 
-1. Из раздела **Диспетчер сервера** на начальном экране или на панели задач откройте диалоговое окно **Локальная политика безопасности**. Затем выберите **Сервис/Локальная политика безопасности**.
-2. Перейдите к папке **Параметры безопасности\Локальные политики\Назначение прав пользователей** , а затем дважды щелкните **Создание аудитов безопасности**.
-3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS. Если она отсутствует, щелкните ссылку **Добавление пользователя или группы** , добавьте запись в список и нажмите кнопку **ОК**.
-4. Чтобы включить аудит, откройте командную строку с повышенным уровнем привилегий и выполните следующую команду: ```auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable```.
-5. Закройте вкладку **Параметры локальной безопасности**.
-<br />   -- **Следующие шаги требуются только для основных серверов AD FS.** -- <br />
-6. Откройте оснастку **Управление AD FS** (в разделе "Диспетчер сервера" выберите меню "Сервис" и щелкните "Управление AD FS").
-7. В области **Действия** щелкните ссылку **Изменить свойства службы федерации**.
-8. В диалоговом окне **Свойства службы федерации** перейдите на вкладку **События**.
-9. Установите флажки для **успешных и неудачных событий аудита** и нажмите кнопку **ОК**.
-10. Подробное ведение журнала можно включить с помощью PowerShell, выполнив команду: ```Set-AdfsProperties -LOGLevel Verbose``` .
+1. На начальном экране откройте **Диспетчер сервера**, а затем откройте **локальную политику безопасности**. На панели задач откройте **Диспетчер сервера**, а затем выберите **Сервис/локальная политика безопасности**.
+2. Перейдите к папке *Security локальные Policies\User rightsing* . Затем дважды щелкните **создать аудит безопасности**.
+3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS. Если он отсутствует в списке, выберите **Добавить пользователя или группу** и добавьте его в список. Нажмите кнопку **ОК**.
+4. Чтобы включить аудит, откройте окно командной строки с повышенными привилегиями. Затем выполните следующую команду. 
+    
+    `auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable`
+1. Закройте вкладку **Параметры локальной безопасности**.
+    >[!Important]
+    >Следующие шаги необходимы только для основных серверов AD FS. 
+1. Откройте оснастку **Управление AD FS**. (В **Диспетчер сервера** выберите **инструменты**  >  . **Управление AD FS**.)
+1. На панели **действия** выберите **изменить служба федерации свойства**.
+1. В диалоговом окне **свойства служба федерации** выберите вкладку **события** .
+1. Установите флажки **успешный аудит и аудит сбоев** , а затем нажмите кнопку **ОК**.
+1. Чтобы включить подробное ведение журнала с помощью PowerShell, используйте следующую команду: 
+
+    `Set-AdfsProperties -LOGLevel Verbose`
 
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2016"></a>Включение аудита для AD FS на Windows Server 2016
 
-1. Из раздела **Диспетчер сервера** на начальном экране или на панели задач откройте диалоговое окно **Локальная политика безопасности**. Затем выберите **Сервис/Локальная политика безопасности**.
-2. Перейдите к папке **Параметры безопасности\Локальные политики\Назначение прав пользователей** , а затем дважды щелкните **Создание аудитов безопасности**.
-3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS. Если она отсутствует, щелкните **Добавить пользователя или группу** , добавьте учетную запись службы AD FS в список и нажмите кнопку **ОК**.
-4. Чтобы включить аудит, откройте командную строку с повышенным уровнем привилегий и выполните следующую команду: <code>auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable</code>.
-5. Закройте вкладку **Параметры локальной безопасности**.
-<br />   -- **Следующие шаги требуются только для основных серверов AD FS.** -- <br />
-6. Откройте оснастку **Управление AD FS** (в разделе "Диспетчер сервера" выберите меню "Сервис" и щелкните "Управление AD FS").
-7. В области **Действия** щелкните ссылку **Изменить свойства службы федерации**.
-8. В диалоговом окне **Свойства службы федерации** перейдите на вкладку **События**.
-9. Установите флажки для **успешных и неудачных событий аудита** и нажмите кнопку **ОК**. Этот параметр должен быть включен по умолчанию.
-10. Откройте окно PowerShell и выполните следующую команду: ```Set-AdfsProperties -AuditLevel Verbose```.
+1. На начальном экране откройте **Диспетчер сервера**, а затем откройте **локальную политику безопасности**. На панели задач откройте **Диспетчер сервера**, а затем выберите **Сервис/локальная политика безопасности**.
+2. Перейдите в папку *Security локальные Policies\User rightsing* , а затем дважды щелкните **создать Аудиты безопасности**.
+3. На вкладке **Параметр локальной безопасности** убедитесь, что в списке указана учетная запись службы AD FS. Если он отсутствует в списке, выберите **Добавить пользователя или группу** и добавьте учетную запись службы AD FS в список. Нажмите кнопку **ОК**.
+4. Чтобы включить аудит, откройте окно командной строки с повышенными привилегиями. Затем выполните следующую команду. 
 
-Обратите внимание, что по умолчанию включен "базовый" уровень аудита. См. дополнительные сведения об [усовершенствовании аудита AD FS в Windows Server 2016](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server).
+    `auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable`
+1. Закройте вкладку **Параметры локальной безопасности**.
+    >[!Important]
+    >Следующие шаги необходимы только для основных серверов AD FS.
+1. Откройте оснастку **Управление AD FS**. (В **Диспетчер сервера** выберите **инструменты**  >  . **Управление AD FS**.)
+1. На панели **действия** выберите **изменить служба федерации свойства**.
+1. В диалоговом окне **свойства служба федерации** выберите вкладку **события** .
+1. Установите флажки **успешный аудит и аудит сбоев** , а затем нажмите кнопку **ОК**. Аудит успехов и аудит отказов должны быть включены по умолчанию.
+1. Откройте окно PowerShell и выполните следующую команду: 
+
+    `Set-AdfsProperties -AuditLevel Verbose`
+
+Уровень аудита "базовый" включен по умолчанию. Дополнительные сведения см. [в разделе AD FS аудит улучшений в Windows Server 2016](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server).
 
 
 #### <a name="to-locate-the-ad-fs-audit-logs"></a>Поиск журналов аудита AD FS
 
 1. Откройте средство **просмотра событий**.
-2. Перейдите к разделу "Журналы Windows" и выберите пункт **Безопасность**.
-3. Справа щелкните **Фильтровать текущие журналы**.
-4. В разделе «Источник события» выберите **Аудит AD FS**.
+2. Перейдите в раздел **журналы Windows** и выберите **Безопасность**.
+3. Справа выберите **фильтровать текущие журналы**.
+4. В качестве **источника событий** выберите **AD FS аудит**.
 
-    Краткое [примечание из раздела часто задаваемых вопросов](reference-connect-health-faq.md#operations-questions) о журналах аудита.
+    Дополнительные сведения о журналах аудита см. в разделе [Operations](reference-connect-health-faq.md#operations-questions)informations.
 
-![Журналы аудита AD FS](./media/how-to-connect-health-agent-install/adfsaudit.png)
+    ![Снимок экрана, показывающий окно фильтра текущий журнал. В поле "источники событий" выбран параметр "аудит AD FS".](./media/how-to-connect-health-agent-install/adfsaudit.png)
 
 > [!WARNING]
-> Групповая политика может отключить аудит AD FS. Если аудит AD FS отключен, аналитика по использованию в отношении действий входа недоступна. Убедитесь, что групповая политика, которая может отключить аудит AD FS, отсутствует.>
+> Групповая политика может отключить аудит AD FS. Если AD FS аудит отключен, аналитика использования сведений о действиях входа недоступна. Убедитесь, что у вас нет групповой политики, которая отключает аудит AD FS.
 >
 
 
-## <a name="installing-the-azure-ad-connect-health-agent-for-sync"></a>Установка агента Azure AD Connect Health для синхронизации
+## <a name="install-the-agent-for-sync"></a>Установка агента для синхронизации
 
-В последней сборке Azure AD Connect агент Azure AD Connect Health для синхронизации устанавливается автоматически. Чтобы использовать Azure AD Connect для синхронизации, скачайте и установите последнюю версию Azure AD Connect. Последнюю версию можно загрузить [здесь](https://www.microsoft.com/download/details.aspx?id=47594).
+Агент Azure AD Connect Health для синхронизации устанавливается автоматически в последней версии Azure AD Connect. Чтобы использовать Azure AD Connect для синхронизации, [скачайте последнюю версию Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) и установите ее.
 
-Чтобы проверить, установлен ли агент, найдите на сервере приведенные ниже службы. Если вы выполнили настройку, эти службы должны работать. Они не запустятся, пока не будет выполнена настройка.
+Чтобы проверить, установлен ли агент, найдите на сервере приведенные ниже службы. Если вы завершили настройку, службы уже должны быть запущены. В противном случае службы останавливаются до завершения настройки.
 
 * Служба Sync Insights Azure AD Connect Health
 * Служба Sync Monitoring Azure AD Connect Health
 
-![Проверка Azure AD Connect Health для синхронизации](./media/how-to-connect-health-agent-install/services.png)
+![Снимок экрана, на котором показана работающая Azure AD Connect Health для служб Sync Services на сервере.](./media/how-to-connect-health-agent-install/services.png)
 
 > [!NOTE]
-> Помните, что для использования службы Azure AD Connect Health требуется Azure AD Premium. Если Azure AD Premium отсутствует, вы не сможете завершить конфигурацию на портале Azure. Дополнительные сведения о требованиях см. [здесь](how-to-connect-health-agent-install.md#requirements).
+> Помните, что для использования Azure AD Connect Health необходимо иметь Azure AD Premium. Если у вас нет Azure AD Premium, вы не сможете завершить настройку в портал Azure. Дополнительные сведения см. в разделе [требования](how-to-connect-health-agent-install.md#requirements).
 >
 >
 
-## <a name="manual-azure-ad-connect-health-for-sync-registration"></a>Регистрация агента Azure AD Connect Health для синхронизации вручную
+## <a name="manually-register-azure-ad-connect-health-for-sync"></a>Регистрация Azure AD Connect Health для синхронизации вручную
 
-Если после успешной установки Azure AD Connect произойдет сбой регистрации агента Azure AD Connect Health для синхронизации, можно использовать следующую команду PowerShell, чтобы зарегистрировать агент вручную.
+Если Azure AD Connect Health для регистрации агента синхронизации не удается выполнить после успешной установки Azure AD Connect, можно зарегистрировать агент вручную с помощью команды PowerShell.
 
 > [!IMPORTANT]
-> Использование этой команды PowerShell необходимо только в том случае, если после установки Azure AD Connect произошел сбой регистрации агента.
+> Используйте эту команду PowerShell только в случае сбоя регистрации агента после установки Azure AD Connect.
 >
 >
 
-Следующая команда PowerShell требуется, ТОЛЬКО если регистрация агента работоспособности завершается сбоем даже после успешной установки и настройки Azure AD Connect. Службы Azure AD Connect Health запустятся после того, как агент будет успешно зарегистрирован.
-
-Агент Azure AD Connect Health для синхронизации можно зарегистрировать вручную с помощью следующей команды PowerShell:
+Вручную Зарегистрируйте агент Azure AD Connect Health для синхронизации с помощью следующей команды PowerShell. Службы Azure AD Connect Health запустятся после того, как агент будет успешно зарегистрирован.
 
 `Register-AzureADConnectHealthSyncAgent -AttributeFiltering $false -StagingMode $false`
 
 Команда принимает следующие параметры:
 
-* AttributeFiltering. Значение $true (по умолчанию) используется, если служба Azure AD Connect не синхронизирует набор атрибутов по умолчанию и была настроена для использования отфильтрованного набора атрибутов. В противном случае используется значение $false.
-* StagingMode. Значение $false (по умолчанию) используется, если сервер Azure AD Connect НЕ находится в промежуточном режиме, $true — если сервер настроен на пребывание в промежуточном режиме.
+* **Аттрибутефилтеринг**: `$true` (по умолчанию), если Azure AD Connect не синхронизируется набор атрибутов по умолчанию и был настроен для использования отфильтрованного набора атрибутов. В противном случае используйте коллекцию `$false`.
+* **Стагингмоде**: `$false` (по умолчанию), если Azure AD Connect сервер *не* находится в промежуточном режиме. Если сервер настроен для работы в промежуточном режиме, используйте `$true` .
 
-При появлении запроса на аутентификацию следует использовать учетную запись глобального администратора (например, admin@domain.onmicrosoft.com) которая использовалась для настройки Azure AD Connect.
+При появлении запроса на проверку подлинности используйте ту же учетную запись глобального администратора (например admin@domain.onmicrosoft.com ,), которая использовалась для настройки Azure AD Connect.
 
-## <a name="installing-the-azure-ad-connect-health-agent-for-ad-ds"></a>Установка агента Azure AD Connect Health для AD DS
+## <a name="install-the-agent-for-azure-ad-ds"></a>Установка агента для Azure AD DS
 
-Дважды щелкните скачанный EXE-файл, чтобы начать установку агента. На первом экране щелкните «Установить».
+Чтобы запустить установку агента, дважды щелкните загруженный *exe* -файл. В первом окне выберите Install ( **установить**).
 
-![Агент Azure AD Connect Health для AD DS запуска установки](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install1.png)
+![Снимок экрана, показывающий Azure AD Connect Health агент для AD DS установки.](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install1.png)
 
-После завершения установки нажмите кнопку «Настроить сейчас».
+После завершения установки нажмите кнопку **настроить сейчас**.
 
-![Агент Azure AD Connect Health для AD DS завершения установки](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install2.png)
+![Снимок экрана, показывающий окно, которое завершает установку агента Azure AD Connect Health для AD DS Azure.](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install2.png)
 
-Это приведет к запуску командной строки и оболочки PowerShell, которая выполнит команду Register-AzureADConnectHealthADDSAgent. При появлении запроса на вход войдите в Azure.
+Откроется окно командной строки. Выполняется PowerShell `Register-AzureADConnectHealthADDSAgent` . При появлении запроса войдите в Azure.
 
-![Агент Azure AD Connect Health для AD DS настройки входа](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install3.png)
+![Снимок экрана, показывающий окно входа для агента Azure AD Connect Health для AD DS Azure.](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install3.png)
 
-После входа PowerShell продолжит выполнять команду. После завершения можно закрыть PowerShell. Настройка завершена.
+После входа в систему PowerShell продолжится. По завершении вы можете закрыть PowerShell. Настройка завершена.
 
-На этом этапе службы должны запускаться автоматически, а агент будет выполнять мониторинг и сбор данных. Если вы не выполнили все необходимые предварительные требования, которые были описаны в предыдущих разделах, в окне PowerShell будут отображаться предупреждения. Обязательно выполните эти [требования](how-to-connect-health-agent-install.md#requirements), прежде чем устанавливать агент. В качестве примера этих ошибок приведен следующий снимок экрана.
+На этом этапе службы должны запускаться автоматически, позволяя агенту отслеживать и собирать данные. Если вы не удовлетворены всеми предварительными требованиями, описанными в предыдущих разделах, в окне PowerShell появятся предупреждения. Обязательно выполните [требования](how-to-connect-health-agent-install.md#requirements) перед установкой агента. На следующем снимке экрана показан пример этих предупреждений.
 
-![Агент Azure AD Connect Health для AD DS настройки скрипта](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install4.png)
+![Снимок экрана с предупреждением агента Azure AD Connect Health для AD DS конфигурации Azure.](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install4.png)
 
-Чтобы проверить, установлен ли агент, найдите приведенные ниже службы в контроллере домена.
+Чтобы проверить, установлен ли агент, найдите следующие службы на контроллере домена:
 
 * служба AD DS для Azure AD Connect Health;
 * служба наблюдения AD DS Azure AD Connect Health.
 
-Если вы выполнили настройку, эти службы должны работать. Они не запустятся, пока не будет выполнена настройка.
+Если вы выполнили настройку, эти службы должны работать. В противном случае они останавливаются до завершения настройки.
 
-![Агент Azure AD Connect Health для служб AD DS](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install5.png)
+![Снимок экрана, показывающий выполняющиеся службы на контроллере домена.](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install5.png)
 
-### <a name="quick-agent-installation-in-multiple-servers"></a>Быстрая установка агентов на нескольких серверах
+### <a name="quickly-install-the-agent-on-multiple-servers"></a>Быстрая установка агента на нескольких серверах
 
-1. Создание учетной записи пользователя в Azure AD с паролем.
-2. Назначьте роль **владельца** для этой локальной учетной записи AAD в Azure AD Connect Health через портал. Следуйте инструкциям, которые приводятся [здесь](how-to-connect-health-operations.md#manage-access-with-azure-rbac). Назначьте роль всем экземплярам службы. 
-3. Скачайте exe MSI файл на локальном контроллере домена для установки.
-4. Выполните следующий скрипт для регистрации. Замените параметры новой созданной учетной записью пользователя и паролем. 
+1. Создайте учетную запись пользователя в Azure AD. Защитите его с помощью пароля.
+2. Назначьте роль **владельца** для этой локальной учетной записи Azure AD в Azure AD Connect Health с помощью портала. Выполните [следующие действия](how-to-connect-health-operations.md#manage-access-with-azure-rbac). Назначьте роль всем экземплярам службы. 
+3. Скачайте *exe* MSI файл на локальном контроллере домена для установки.
+4. Выполните следующий сценарий. Замените параметры новой учетной записью пользователя и паролем. 
 
-```powershell
-AdHealthAddsAgentSetup.exe /quiet
-Start-Sleep 30
-$userName = "NEWUSER@DOMAIN"
-$secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
-$myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
-import-module "C:\Program Files\Azure Ad Connect Health Adds Agent\PowerShell\AdHealthAdds"
- 
-Register-AzureADConnectHealthADDSAgent -Credential $myCreds
+    ```powershell
+    AdHealthAddsAgentSetup.exe /quiet
+    Start-Sleep 30
+    $userName = "NEWUSER@DOMAIN"
+    $secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
+    $myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
+    import-module "C:\Program Files\Azure Ad Connect Health Adds Agent\PowerShell\AdHealthAdds"
+     
+    Register-AzureADConnectHealthADDSAgent -Credential $myCreds
+    
+    ```
 
-```
+По завершении можно удалить доступ для локальной учетной записи, выполнив одну или несколько следующих задач. 
+* Удалите назначение ролей для локальной учетной записи для Azure AD Connect Health.
+* Смена пароля для локальной учетной записи. 
+* Отключите локальную учетную запись Azure AD.
+* Удалите локальную учетную запись Azure AD.  
 
-1. После этого можно будет удалить доступ к локальной учетной записи, выполнив одно или несколько из следующих действий. 
-    * Удаление назначения роли для локальной учетной записи для службы AAD Connect Health
-    * Смена пароля для локальной учетной записи. 
-    * Отключение локальной учетной записи AAD
-    * Удаление локальной учетной записи AAD  
+## <a name="register-the-agent-by-using-powershell"></a>Регистрация агента с помощью PowerShell
 
-## <a name="agent-registration-using-powershell"></a>Регистрация агента с помощью PowerShell
-
-После установки установочного файла для соответствующего агента в зависимости от роли вы можете зарегистрировать агент с помощью следующих команд PowerShell. Откройте окно PowerShell и выполните соответствующую команду.
+После установки соответствующего файла *setup.exe* агента можно зарегистрировать агент с помощью следующих команд PowerShell в зависимости от роли. Откройте окно PowerShell и выполните соответствующую команду:
 
 ```powershell
     Register-AzureADConnectHealthADFSAgent
@@ -270,10 +284,10 @@ Register-AzureADConnectHealthADDSAgent -Credential $myCreds
 
 ```
 
-Эти команды принимают учетные данные в качестве параметра, чтобы завершить регистрацию в неинтерактивном режиме или на основном серверном компьютере.
-* Учетные данные можно указать в переменной PowerShell, которая передается в качестве параметра.
-* Можно указать любое удостоверение Azure AD, которое имеет доступ на регистрацию агентов и в котором отключена Многофакторная идентификация.
-* По умолчанию глобальные администраторы имеют доступ на выполнение регистрации агента. Можно также разрешить выполнять этот шаг другим, менее привилегированным пользователям. Узнайте больше об [управлении доступом на основе ролей в Azure (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-azure-rbac).
+Эти команды принимаются в `Credential` качестве параметра для завершения регистрации в неинтерактивном режиме или для завершения регистрации на компьютере, на котором выполняется Server Core. Помните о следующем:
+* Вы можете записать `Credential` переменную PowerShell, которая передается в качестве параметра.
+* Вы можете указать любое удостоверение Azure AD, имеющее разрешения на регистрацию агентов и *не* поддерживающих многофакторную проверку подлинности.
+* По умолчанию глобальные администраторы имеют разрешения на регистрацию агентов. Для этого шага можно также разрешить удостоверения с меньшими привилегиями. Дополнительные сведения см. в разделе [Azure RBAC](how-to-connect-health-operations.md#manage-access-with-azure-rbac).
 
 ```powershell
     $cred = Get-Credential
@@ -281,59 +295,60 @@ Register-AzureADConnectHealthADDSAgent -Credential $myCreds
 
 ```
 
-## <a name="configure-azure-ad-connect-health-agents-to-use-http-proxy"></a>Настройка агентов Azure AD Connect Health для использования HTTP-прокси
+## <a name="configure-azure-ad-connect-health-agents-to-use-http-proxy"></a>Настройка агентов Azure AD Connect Health для использования прокси-сервера HTTP
 
-Вы можете настроить агенты Azure AD Connect Health на работу с HTTP-прокси.
+Можно настроить агенты Azure AD Connect Health для работы с прокси-сервером HTTP.
 
 > [!NOTE]
-> * Команда Netsh WinHttp set ProxyServerAddress не поддерживается, потому что для создания веб-запросов агент применяет System.Net, а не службы Microsoft Windows HTTP.
-> * Настроенный адрес прокси-сервера HTTP будет использоваться для передачи зашифрованных сообщений HTTPS.
+> * Тип `Netsh WinHttp set ProxyServerAddress` не поддерживается. Для выполнения веб-запросов агент использует System.Net вместо служб HTTP Windows.
+> * Настроенный адрес прокси-сервера HTTP используется для передачи зашифрованных сообщений HTTPS.
 > * Прокси-серверы с проверкой подлинности (с помощью HTTPBasic) не поддерживаются.
 >
 >
 
-### <a name="change-health-agent-proxy-configuration"></a>Изменение конфигурации прокси-сервера агента работоспособности
+### <a name="change-the-agent-proxy-configuration"></a>Изменение конфигурации прокси-сервера агента
 
-Доступны следующие варианты настройки агента Azure AD Connect Health для использования HTTP-прокси.
+Чтобы настроить агент Azure AD Connect Health для использования прокси-сервера HTTP, можно:
+* Импорт существующих параметров прокси-сервера.
+* Укажите адреса прокси-сервера вручную.
+* Очистите существующую конфигурацию прокси-сервера.
 
 > [!NOTE]
-> Необходимо перезапустить все службы агента Azure AD Connect Health, чтобы обновить параметры прокси-сервера. Выполните следующую команду:<br />
-> Restart-Service Азуреадконнексеалс *
+> Чтобы обновить параметры прокси-сервера, необходимо перезапустить все службы Azure AD Connect Health Agent. Выполните следующую команду:
 >
->
+> `Restart-Service AzureADConnectHealth*`
 
-#### <a name="import-existing-proxy-settings"></a>Импорт имеющихся параметров прокси-сервера
+#### <a name="import-existing-proxy-settings"></a>Импорт существующих параметров прокси-сервера
 
-##### <a name="import-from-internet-explorer"></a>Импорт из Internet Explorer
-
-Можно импортировать параметры прокси-сервера HTTP из Internet Explorer для использования агентами Azure AD Connect Health. Для этого на каждом сервере, где запущен агент работоспособности, выполните следующую команду PowerShell:
+Можно импортировать параметры прокси-сервера HTTP Internet Explorer, чтобы агенты Azure AD Connect Health могли использовать эти параметры. На каждом из серверов, на которых выполняется агент работоспособности, выполните следующую команду PowerShell:
 
 ```powershell
 Set-AzureAdConnectHealthProxySettings -ImportFromInternetSettings
 ```
 
-##### <a name="import-from-winhttp"></a>Импорт из WinHTTP
-
-Можно импортировать параметры WinHTTP для использования агентами Azure AD Connect Health. Для этого на каждом сервере, где запущен агент работоспособности, выполните следующую команду PowerShell:
+Вы можете импортировать параметры прокси-сервера WinHTTP, чтобы агенты Azure AD Connect Health могли их использовать. На каждом из серверов, на которых выполняется агент работоспособности, выполните следующую команду PowerShell:
 
 ```powershell
 Set-AzureAdConnectHealthProxySettings -ImportFromWinHttp
 ```
 
-#### <a name="specify-proxy-addresses-manually"></a>Задание адресов прокси-сервера вручную
+#### <a name="specify-proxy-addresses-manually"></a>Указание адресов прокси-сервера вручную
 
-Вы можете вручную задать адрес прокси-сервера, выполнив следующую команду PowerShell на каждом сервере, где запущен агент работоспособности.
+Вы можете вручную указать прокси-сервер. На каждом из серверов, на которых выполняется агент работоспособности, выполните следующую команду PowerShell:
 
 ```powershell
 Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress address:port
 ```
 
-Пример: *Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress myproxyserver:443*.
+Пример: 
 
-* Значение "address" может быть именем сервера, разрешимым в DNS, или адресом IPv4.
-* Значение "port" можно опустить. Если это значение не указано, в качестве порта по умолчанию используется 443.
+`Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress myproxyserver: 443`
 
-#### <a name="clear-existing-proxy-configuration"></a>Очистка существующей конфигурации прокси-сервера
+В этом примере:
+* `address`Параметр может быть разрешимым именем сервера DNS или IPv4-адресом.
+* Можно опустить `port` . В этом случае по умолчанию используется порт 443.
+
+#### <a name="clear-the-existing-proxy-configuration"></a>Очистка существующей конфигурации прокси-сервера
 
 Чтобы очистить текущую конфигурацию прокси-сервера, выполните следующую команду:
 
@@ -343,7 +358,7 @@ Set-AzureAdConnectHealthProxySettings -NoProxy
 
 ### <a name="read-current-proxy-settings"></a>Считывание текущих параметров прокси-сервера
 
-Вы можете считать текущие параметры прокси-сервера с помощью следующей команды:
+Вы можете прочитать текущие параметры прокси-сервера, выполнив следующую команду:
 
 ```powershell
 Get-AzureAdConnectHealthProxySettings
@@ -351,9 +366,11 @@ Get-AzureAdConnectHealthProxySettings
 
 ## <a name="test-connectivity-to-azure-ad-connect-health-service"></a>Проверка подключения к службе Azure AD Connect Health
 
-Существуют проблемы, при которых агент Azure AD Connect Health может потерять соединение со службой Azure AD Connect Health. К ним относятся проблемы с сетью, с правами доступа и другие причины.
+Иногда агент Azure AD Connect Health может потерять связь со службой Azure AD Connect Health. Причиной такой потери может быть проблема с сетью, проблемы с разрешениями и другие проблемы.
 
-Если агент не может отправить данные службе Azure AD Connect Health более 2 часов, на портале появится следующее оповещение: "Данные службы работоспособности неактуальны". Чтобы проверить, может ли затронутый агент Azure AD Connect Health передавать данные в службу Azure AD Connect Health, выполните следующую команду PowerShell:
+Если агент не может отправлять данные в службу Azure AD Connect Health дольше двух часов, на портале появляется следующее предупреждение: "служба работоспособности данные не являются актуальными". 
+
+Вы можете узнать, может ли затронутый агент Azure AD Connect Health отправлять данные в службу Azure AD Connect Health, выполнив следующую команду PowerShell:
 
 ```powershell
 Test-AzureADConnectHealthConnectivity -Role ADFS
@@ -366,16 +383,18 @@ Test-AzureADConnectHealthConnectivity -Role ADFS
 * ADDS
 
 > [!NOTE]
-> Чтобы использовать средство подключения, необходимо сначала завершить регистрацию агента. Если зарегистрировать агент не получается, убедитесь, что соблюдены все [требования](how-to-connect-health-agent-install.md#requirements) для Azure AD Connect Health. Эта проверка подключения выполняется по умолчанию во время регистрации агента.
+> Чтобы использовать средство подключения, необходимо сначала зарегистрировать агент. Если вы не можете завершить регистрацию агента, убедитесь, что выполнены все [требования](how-to-connect-health-agent-install.md#requirements) к Azure AD Connect Health. Подключение проверяется по умолчанию во время регистрации агента.
 >
 >
 
-## <a name="related-links"></a>Связанные ссылки
+## <a name="next-steps"></a>Следующие шаги
+
+Ознакомьтесь со следующими статьями:
 
 * [Azure AD Connect Health](./whatis-azure-ad-connect.md)
-* [Операции Azure AD Connect Health](how-to-connect-health-operations.md)
+* [Azure AD Connect Health операции](how-to-connect-health-operations.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)
 * [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md)
-* [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md)
+* [Использование Azure AD Connect Health с Azure AD DS](how-to-connect-health-adds.md)
 * [Часто задаваемые вопросы об Azure AD Connect Health](reference-connect-health-faq.md)
-* [Журнал версий Azure AD Connect Health](reference-connect-health-version-history.md)
+* [Журнал версий Azure AD Connect Health](reference-connect-health-version-history.md)

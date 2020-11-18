@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/23/2020
 ms.custom: contperfq4, tracking-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: 6508db654cd27ca4b3844f6037f13fb504173e11
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 3bd4d328c6b0b73a51f325adde988c8f0988ea8a
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93361171"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873817"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности среды вывода службы "Машинное обучение Azure" с помощью виртуальных сетей
 
@@ -36,7 +36,7 @@ ms.locfileid: "93361171"
 > - Экземпляры контейнеров Azure (ACI)
 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 
@@ -115,6 +115,8 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 Когда завершится процесс создания, вы сможете выполнять анализ или оценку моделей в кластере AKS за виртуальной сетью. Дополнительные сведения см. в статье [о развертывании в Службе Azure Kubernetes](how-to-deploy-and-where.md).
 
+Дополнительные сведения об использовании Role-Based управления доступом с помощью Kubernetes см. в статье [Использование Azure RBAC для авторизации Kubernetes](../aks/manage-azure-rbac.md).
+
 ## <a name="network-contributor-role"></a>Роль "участник сети"
 
 > [!IMPORTANT]
@@ -122,7 +124,7 @@ aks_target = ComputeTarget.create(workspace=ws,
 >
 > Чтобы добавить удостоверение в качестве участника сети, выполните следующие действия.
 
-1. Чтобы найти субъект-службу или идентификатор управляемого удостоверения для AKS, используйте следующие Azure CLI команды. Замените `<aks-cluster-name>` именем кластера. Замените `<resource-group-name>` именем группы ресурсов, которая _содержит кластер AKS_ :
+1. Чтобы найти субъект-службу или идентификатор управляемого удостоверения для AKS, используйте следующие Azure CLI команды. Замените `<aks-cluster-name>` именем кластера. Замените `<resource-group-name>` именем группы ресурсов, которая _содержит кластер AKS_:
 
     ```azurecli-interactive
     az aks show -n <aks-cluster-name> --resource-group <resource-group-name> --query servicePrincipalProfile.clientId
@@ -267,7 +269,7 @@ aks_target.wait_for_completion(show_output = True)
 
 Если вы не хотите использовать правила исходящего трафика по умолчанию и вы хотите ограничить исходящий доступ к виртуальной сети, необходимо разрешить доступ к реестру контейнеров Azure. Например, убедитесь, что группы безопасности сети (NSG) содержат правило, которое разрешает доступ к тегу службы __азуреконтаинеррегистри. RegionName__ , где "{RegionName}" — это имя региона Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Эта статья является третьей частью серии виртуальных сетей из четырех частей. Ознакомьтесь с остальными статьями, чтобы узнать, как защитить виртуальную сеть.
 

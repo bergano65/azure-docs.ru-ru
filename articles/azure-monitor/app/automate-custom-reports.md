@@ -4,12 +4,12 @@ description: Автоматизация настраиваемых ежедне�
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
-ms.openlocfilehash: f35b7cbde7b719a91b23b19481ab704c445485cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d465666ce5d631a234644d1adc85afcf6e3c1e27
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91827738"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873716"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 
@@ -31,7 +31,7 @@ ms.locfileid: "91827738"
 
 Для создания настраиваемых отчетов по расписанию можно [программно запрашивать данные Application Insights](https://dev.applicationinsights.io/). Указанные ниже варианты помогут быстро приступить к работе.
 
-* [Автоматизация отчетов с помощью Microsoft Flow](../platform/logicapp-flow-connector.md)
+* [Автоматизация отчетов с помощью автоматизированного управления питанием](../platform/logicapp-flow-connector.md)
 * [Автоматизация отчетов с помощью Logic Apps](automate-with-logic-apps.md)
 * В сценарии мониторинга используйте [функцию Azure](../../azure-functions/functions-create-first-azure-function.md) "Дайджест по расписанию AppInsights". Для доставки сообщения электронной почты эта функция использует SendGrid. 
 
@@ -148,7 +148,7 @@ availabilityResults
 
    ![Снимок экрана "Копирование ключа API"](./media/automate-custom-reports/function-app-17.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о создании [запросов Analytics](../log-query/get-started-queries.md).
 * Дополнительные сведения о [программных запросах к данным Application Insights](https://dev.applicationinsights.io/).
