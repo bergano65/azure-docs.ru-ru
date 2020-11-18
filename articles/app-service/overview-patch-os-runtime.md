@@ -3,13 +3,13 @@ title: Ритмичность исправления операционной с
 description: Узнайте, как служба приложений Azure обновляет операционную систему и среды выполнения, какие уровни среды выполнения и обновления имеют ваши приложения, а также как можно получить объявления об обновлениях.
 ms.topic: article
 ms.date: 02/02/2018
-ms.custom: seodec18
-ms.openlocfilehash: 831ba5f055b70e2f46cb8c6a941c0401df347dd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: 31b2d39f5d0d125d2bf23ac72718d9b386b48923
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88961522"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833492"
 ---
 # <a name="os-and-runtime-patching-in-azure-app-service"></a>Установка исправлений для ОС и среды выполнения в Службе приложений Azure
 

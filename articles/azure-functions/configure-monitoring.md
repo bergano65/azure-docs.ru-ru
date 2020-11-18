@@ -3,13 +3,13 @@ title: Настройка мониторинга для функций Azure
 description: Узнайте, как подключить приложение функции к Application Insights для мониторинга и настройки сбора данных.
 ms.date: 8/31/2020
 ms.topic: how-to
-ms.custom: contperfq2
-ms.openlocfilehash: 50705eeedf9c985a053600a8c0b27c823231e9a3
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.custom: contperfq2, devx-track-azurecli
+ms.openlocfilehash: f5b1b00c534abf1e7f82d2aca69dd4763b40d5ad
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217190"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833084"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Настройка мониторинга для функций Azure
 
@@ -258,7 +258,16 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
     | **Новое название ресурса** | Уникальное имя приложения | Проще всего использовать имя приложения-функции, которое должно быть уникальным в вашей подписке. | 
     | **Расположение** | Западная Европа | Если возможно, используйте [регион](https://azure.microsoft.com/regions/) приложения-функции или ближайший от него. |
 
-    :::image type="content" source="media/configure-monitoring/ai-general.png" alt-text="Включение Application Insights с помощью портала" использовали встроенный мониторинг, который больше не рекомендуется. При включении интеграции Application Insights для такого приложения-функции необходимо также [отключить встроенное ведение журналов](#disable-built-in-logging).  
+    :::image type="content" source="media/configure-monitoring/ai-general.png" alt-text="Создание ресурса Application Insights":::
+
+1. Нажмите кнопку **Применить**. 
+
+   Ресурс Application Insights создается в той же группе ресурсов и подписке, что и приложение-функция. После создания ресурса закройте окно Application Insights.
+
+1. В приложении-функции выберите **Конфигурация** в разделе **Параметры** и выберите **Параметры приложения**. Если появится параметр `APPINSIGHTS_INSTRUMENTATIONKEY`, это означает, что для приложения-функции в Azure включена интеграция с Application Insights. Если по какой либо причине эта настройка не существует, добавьте ее с помощью ключа инструментирования Application Insights в качестве значения.
+
+> [!NOTE]
+> Ранние версии решения "Функции" использовали встроенный мониторинг, который больше не рекомендуется. При включении интеграции Application Insights для такого приложения-функции необходимо также [отключить встроенное ведение журналов](#disable-built-in-logging).  
 
 ## <a name="disable-built-in-logging"></a>Отключение встроенного ведения журнала
 

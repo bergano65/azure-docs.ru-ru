@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 09/14/2020
 ms.author: jafreebe
 ms.reviewer: ushan
-ms.custom: devx-track-python, github-actions-azure
-ms.openlocfilehash: 6c768df964d46364a8ca501c078dbecaf1aaa21f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.custom: devx-track-python, github-actions-azure, devx-track-azurecli
+ms.openlocfilehash: e2432ca4cecb3c36d2fae19907c1ad17d9ef2505
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095566"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833509"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в Службе приложений с помощью GitHub Actions
 
@@ -71,16 +71,16 @@ ms.locfileid: "93095566"
 
 1. Перейдите к службе приложений в портал Azure. 
 
-1. На странице **Обзор** выберите **получить профиль публикации** .
+1. На странице **Обзор** выберите **получить профиль публикации**.
 
 1. Сохраните скачанный файл. Вы будете использовать содержимое файла для создания секрета GitHub.
 
 > [!NOTE]
-> По состоянию на Октябрь 2020 для веб-приложений Linux потребуется параметр приложения, `WEBSITE_WEBDEPLOY_USE_SCM` установленный в значение `true` **перед скачиванием профиля публикации** . Это требование будет удалено в будущем.
+> По состоянию на Октябрь 2020 для веб-приложений Linux потребуется параметр приложения, `WEBSITE_WEBDEPLOY_USE_SCM` установленный в значение `true` **перед скачиванием профиля публикации**. Это требование будет удалено в будущем.
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/userlevel)
 
-Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать**.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -110,7 +110,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 # <a name="publish-profile"></a>[Опубликовать профиль](#tab/applevel)
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
 
 Чтобы использовать [учетные данные уровня приложения](#generate-deployment-credentials), вставьте содержимое скачанного файла профиля публикации в поле значение секрета. Назовите секрет `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
@@ -124,7 +124,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/userlevel)
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
 
 Чтобы использовать [учетные данные на уровне пользователя](#generate-deployment-credentials), вставьте все выходные данные JSON из команды Azure CLI в поле значения секрета. Присвойте секрету имя `AZURE_CREDENTIALS`.
 

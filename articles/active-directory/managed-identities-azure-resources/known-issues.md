@@ -16,13 +16,13 @@ ms.workload: identity
 ms.date: 08/06/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.custom: has-adal-ref
-ms.openlocfilehash: cf9f484a3f9285d1be06443b39bd50ec73ccf632
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: has-adal-ref, devx-track-azurecli
+ms.openlocfilehash: c41ec06b1f985296377d27dcbe72b5f41224809b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665299"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835413"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе
 
@@ -129,7 +129,7 @@ az vm update -n <VM Name> -g <Resource Group> --remove tags.fixVM
  - Управляемые удостоверения, назначаемые системой, нужно отключить и снова включить. 
  - Управляемые удостоверения, назначаемые пользователем, нужно удалить, повторно создать и присоединить к необходимым ресурсам (например, виртуальным машинам).
 
-Дополнительные сведения см. в статье [Перенос подписки Azure в другой каталог Azure AD](../../role-based-access-control/transfer-subscription.md).
+Дополнительные сведения см. в статье [Перенос подписки Azure в другой каталог Azure AD](../../role-based-access-control/transfer-subscription.md).
 
 ### <a name="moving-a-user-assigned-managed-identity-to-a-different-resource-groupsubscription"></a>Перемещение управляемого удостоверения, назначаемого пользователем, в другую группу ресурсов/подписку
 

@@ -17,12 +17,12 @@ ms.date: 11/05/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98b9a2da11ad32e35704a49cfcf1788f95276dda
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: bc5f902d75084d649f211d589e53041f1eb37f0e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93393461"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94834716"
 ---
 # <a name="how-long-does-azure-ad-store-reporting-data"></a>Как долго Azure AD хранит данные отчетов?
 
@@ -65,7 +65,7 @@ ms.locfileid: "93393461"
 | :--                    | :--           | :--                 | :--                 |
 | Журналы аудита             | 7 дней        | 30 дней             | 30 дней             |
 | Вход в систему               | 7 дней        | 30 дней             | 30 дней             |
-| Использование Azure MFA        | 30 дней       | 30 дней             | 30 дней             |
+| Использование Azure AD MFA        | 30 дней       | 30 дней             | 30 дней             |
 
 Данные о действиях аудита и входа в систему можно хранить дольше указанных выше сроков хранения по умолчанию, направив их в учетную запись хранения с помощью Azure Monitor. Дополнительные сведения см. в статье [Архивация журналов Azure AD в учетной записи хранения Azure](quickstart-azure-monitor-route-logs-to-storage-account.md).
 
@@ -80,6 +80,6 @@ ms.locfileid: "93393461"
 
 ### <a name="can-i-see-last-months-data-after-getting-an-azure-ad-premium-license"></a>Можно ли просмотреть данные за прошлый месяц после получения лицензии Azure AD Premium?
 
-**Нет** , вы не можете. Azure хранит до семи дней с данными о действиях для бесплатной версии. Это означает, что при переключении с бесплатной версии на в до уровня "Премиум" вы можете просмотреть только до 7 дней.
+**Нет**, вы не можете. Azure хранит до семи дней с данными о действиях для бесплатной версии. Это означает, что при переключении с бесплатной версии на в до уровня "Премиум" вы можете просмотреть только до 7 дней.
 
 ---

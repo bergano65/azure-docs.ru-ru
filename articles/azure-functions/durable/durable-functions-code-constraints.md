@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: ee1561e85e769bf8a82ce96d5ce010eece92a0fa
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: dc301cf7149ad9fcd5bd5c02226afedc4df5e3ee
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93392622"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833101"
 ---
 # <a name="orchestrator-function-code-constraints"></a>Ограничения кода функции Orchestrator
 
@@ -18,7 +18,7 @@ ms.locfileid: "93392622"
 
 ## <a name="orchestrator-code-constraints"></a>Ограничения кода оркестратора
 
-Функции Orchestrator используют [источники событий](/azure/architecture/patterns/event-sourcing) для обеспечения надежного выполнения и поддержания состояния локальной переменной. [Поведение воспроизведения](durable-functions-orchestrations.md#reliability) кода Orchestrator создает ограничения на тип кода, который можно написать в функции Orchestrator. Например, функции Orchestrator должны быть *детерминированными* : функция Orchestrator будет воспроизведена несколько раз, и она должна выдавать один и тот же результат каждый раз.
+Функции Orchestrator используют [источники событий](/azure/architecture/patterns/event-sourcing) для обеспечения надежного выполнения и поддержания состояния локальной переменной. [Поведение воспроизведения](durable-functions-orchestrations.md#reliability) кода Orchestrator создает ограничения на тип кода, который можно написать в функции Orchestrator. Например, функции Orchestrator должны быть *детерминированными*: функция Orchestrator будет воспроизведена несколько раз, и она должна выдавать один и тот же результат каждый раз.
 
 ### <a name="using-deterministic-apis"></a>Использование детерминированных интерфейсов API
 
@@ -28,10 +28,10 @@ ms.locfileid: "93392622"
 
 В следующей таблице приведены примеры интерфейсов API, которые следует избегать, поскольку они *не* являются детерминированными. Эти ограничения относятся только к функциям Orchestrator. Другие типы функций не имеют таких ограничений.
 
-| Категория API | Причина | Обходной путь |
+| Категория API | Причина | Возможное решение |
 | ------------ | ------ | ---------- |
-| Даты и время  | API, возвращающие текущую дату или время, являются недетерминированными, поскольку возвращаемое значение отличается для каждого воспроизведения. | Используйте `CurrentUtcDateTime` API в .NET, `currentUtcDateTime` API в JavaScript или `current_utc_datetime` API в Python, который является надежным для воспроизведения. |
-| Идентификаторы GUID и UUID  | API-интерфейсы, возвращающие случайный идентификатор GUID или UUID, являются недетерминированными, поскольку сформированное значение отличается для каждого воспроизведения. | Используйте `NewGuid` в .NET или `newGuid` JavaScript для безопасного создания случайных идентификаторов GUID. |
+| Даты и время  | API, возвращающие текущую дату или время, являются недетерминированными, поскольку возвращаемое значение отличается для каждого воспроизведения. | Используйте свойство [CurrentUtcDateTime](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationcontext.currentutcdatetime) в .NET, `currentUtcDateTime` API в JavaScript или `current_utc_datetime` API в Python, которые являются надежными для воспроизведения. |
+| Идентификаторы GUID и UUID  | API-интерфейсы, возвращающие случайный идентификатор GUID или UUID, являются недетерминированными, поскольку сформированное значение отличается для каждого воспроизведения. | Используйте [NewGuid](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationcontext.newguid) в .NET или `newGuid` JavaScript для безопасного создания случайных идентификаторов GUID. |
 | Случайные числа | API-интерфейсы, возвращающие случайные числа, являются недетерминированными, поскольку сформированное значение отличается для каждого воспроизведения. | Используйте функцию действия для возврата случайных чисел в согласование. Возвращаемые значения функций действий всегда являются надежными для воспроизведения. |
 | Привязки | Входные и выходные привязки обычно выполняют операции ввода-вывода и являются недетерминированными. Функция Orchestrator не должна напрямую использовать даже [клиент оркестрации](durable-functions-bindings.md#orchestration-client) и привязки [клиента сущности](durable-functions-bindings.md#entity-client) . | Используйте входные и выходные привязки внутри функций клиента или действия. |
 | Сеть | Сетевые вызовы содержат внешние системы и являются недетерминированными. | Используйте функции действий для выполнения сетевых вызовов. Если необходимо выполнить HTTP-вызов из функции Orchestrator, можно также использовать [устойчивые API HTTP](durable-functions-http-features.md#consuming-http-apis). |
@@ -57,7 +57,7 @@ ms.locfileid: "93392622"
 > [!NOTE]
 > Этот раздел содержит сведения о внутренней реализации платформы устойчивых задач. Вы можете использовать устойчивые функции, не зная этих сведений. Она предназначена только для того, чтобы помочь вам понять поведение воспроизведения.
 
-Задачи, которые могут безопасно ожидать в функциях Orchestrator, иногда называют *устойчивыми задачами*. Платформа устойчивых задач создает и управляет этими задачами. Примерами являются задачи, возвращаемые **каллактивитясинк** , **ваитфорекстерналевент** и **CreateTimer** в функциях .NET Orchestrator.
+Задачи, которые могут безопасно ожидать в функциях Orchestrator, иногда называют *устойчивыми задачами*. Платформа устойчивых задач создает и управляет этими задачами. Примерами являются задачи, возвращаемые **каллактивитясинк**, **ваитфорекстерналевент** и **CreateTimer** в функциях .NET Orchestrator.
 
 Эти устойчивые задачи внутренне управляются списком `TaskCompletionSource` объектов в .NET. Во время воспроизведения эти задачи создаются в ходе выполнения кода Orchestrator. Они завершаются, так как диспетчер перечисляет соответствующие события журнала.
 
@@ -67,7 +67,7 @@ ms.locfileid: "93392622"
 
 Чтобы узнать больше о том, как платформа устойчивых задач выполняет функции Orchestrator, просмотрите [Исходный код устойчивой задачи на сайте GitHub](https://github.com/Azure/durabletask). В частности, см. раздел [TaskOrchestrationExecutor.CS](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationExecutor.cs) and [TaskOrchestrationContext.CS](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationContext.cs).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как вызывать подсистемы взаимодействия](durable-functions-sub-orchestrations.md)

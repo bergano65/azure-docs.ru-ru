@@ -4,18 +4,26 @@ description: В этой статье описывается, как разве�
 ms.date: 11/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 59c984f4adaec2261d1b08748aa5a91c8246418d
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: bf0a3e0940efc7e79adbe9f763ffdf34ea690fac
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359121"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833271"
 ---
 # <a name="enable-azure-vm-extensions-using-the-azure-cli"></a>Включение расширений виртуальной машины Azure с помощью Azure CLI
 
 В этой статье показано, как развернуть и удалить расширения виртуальной машины Azure, поддерживаемые серверами с поддержкой ARC в Azure, на гибридный компьютер под управлением Linux или Windows с помощью Azure CLI.
 
 [!INCLUDE [Azure CLI Prepare your environment](../../../includes/azure-cli-prepare-your-environment.md)]
+
+## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
+
+Команды Коннектедмачине не поставляются в составе Azure CLI. Прежде чем использовать Azure CLI для управления расширениями виртуальной машины на гибридном сервере, управляемом серверами с поддержкой Arc, необходимо загрузить расширение Коннектедмачине. Выполните следующую команду, чтобы получить его:
+
+```azurecli
+az extension add --name connectedmachine
+```
 
 ## <a name="enable-extension"></a>Включить расширение
 
@@ -43,7 +51,7 @@ az connectedmachine machine-extension create --resource-group "resourceGroupName
 
 Чтобы получить список расширений виртуальной машины на сервере с поддержкой Arc, выполните команду [AZ коннектедмачине Machine-Extension List](/cli/azure/ext/connectedmachine/connectedmachine/machine-extension#ext_connectedmachine_az_connectedmachine_machine_extension_list) с `--machine-name` `--resource-group` параметрами и.
 
-Пример
+Пример.
 
 ```azurecli
 az connectedmachine machine-extension list --machine-name "myMachineName" --resource-group "myResourceGroup"
@@ -74,7 +82,7 @@ az connectedmachine machine-extension list --machine-name "myMachineName" --reso
 az connectedmachine machine-extension delete --machine-name "myMachineName" --name "OmsAgentforLinux" --resource-group "myResourceGroup"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Расширения виртуальных машин можно развертывать, администрировать и удалять с помощью [Azure PowerShell](manage-vm-extensions-powershell.md), из [портал Azure](manage-vm-extensions-portal.md)или [шаблонов Azure Resource Manager](manage-vm-extensions-template.md).
 

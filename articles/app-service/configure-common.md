@@ -5,13 +5,13 @@ keywords: служба приложений Azure, веб-приложение, 
 ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
-ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 86f9f227c0ea92b7b52a3037759426cc87f6d937
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
+ms.openlocfilehash: 1ab6f5e9c7b602ce124116c02584c5a48a3f597f
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152042"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833662"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -224,7 +224,7 @@ ms.locfileid: "92152042"
 
 ## <a name="configure-path-mappings"></a>Настройка сопоставлений путей
 
-На [Портал Azure] найдите и выберите **Службы приложений**, а затем выберите приложение. В меню слева приложения выберите **Configuration**  >  **сопоставления путей**конфигурации.
+На [Портал Azure] найдите и выберите **Службы приложений**, а затем выберите приложение. В меню слева приложения выберите **Configuration**  >  **сопоставления путей** конфигурации.
 
 ![Сопоставления путей](./media/configure-common/open-path.png)
 
@@ -236,7 +236,7 @@ ms.locfileid: "92152042"
 
 Сопоставления обработчиков позволяют добавить обработчики пользовательских скриптов для обработки запросов к конкретным расширениям файлов. Чтобы добавить пользовательский обработчик, нажмите кнопку **создать обработчик**. Настройте обработчик следующим образом:
 
-- **Расширение**. Расширение файла, которое требуется обработано, например * \* PHP* или *handler. FCGI*.
+- **Расширение**. Расширение файла, которое требуется обработано, например *\* PHP* или *handler. FCGI*.
 - **Обработчик скриптов**. Абсолютный путь к обработчику скрипта. Запросы к файлам, которые соответствуют расширению файла, обрабатываются обработчиком скриптов. Используйте путь `D:\home\site\wwwroot` для указания корневого каталога веб-приложения.
 - **Аргументы**. Необязательные аргументы командной строки для обработчика скриптов.
 
@@ -281,7 +281,7 @@ ms.locfileid: "92152042"
 - [Настройка личного доменного имени в службе приложений Azure]
 - [Настройка промежуточных сред в Службе приложений Azure]
 - [Защита пользовательского доменного имени с помощью привязки TLS/SSL в Службе приложений Azure](configure-ssl-bindings.md)
-- [Включение журналов диагностики](troubleshoot-diagnostic-logs.md)
+- [Включить журналы диагностики](troubleshoot-diagnostic-logs.md)
 - [Масштабирование приложения в службе приложений Azure]
 - [Основы мониторинга в службе приложений Azure]
 - [Изменение параметров applicationHost.config с помощью applicationHost. xdt](https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples)
@@ -289,7 +289,7 @@ ms.locfileid: "92152042"
 <!-- URL List -->
 
 [ASP.NET SignalR]: https://www.asp.net/signalr
-[портале Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/
 [Настройка личного доменного имени в службе приложений Azure]: ./app-service-web-tutorial-custom-domain.md
 [Настройка промежуточных сред в Службе приложений Azure]: ./deploy-staging-slots.md
 [How to: Monitor web endpoint status]: ./web-sites-monitor.md
