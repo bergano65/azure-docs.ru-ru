@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 02/13/2019
 ms.author: curtand
-ms.openlocfilehash: 133e6b533a3d87ef519d0f586ea59db1bbce28b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c96be79a349478db7d0452cae1ff07ee1c48aaa3
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83744485"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700103"
 ---
 # <a name="set-up-the-microsoft-authenticator-app-as-your-verification-method"></a>Настройка приложения Microsoft Authenticator в качестве способа проверки
 
@@ -45,6 +45,11 @@ ms.locfileid: "83744485"
 ## <a name="set-up-the-microsoft-authenticator-app-from-the-security-info-page"></a>Настройка приложения Microsoft Authenticator на странице сведений для защиты
 
 В зависимости от параметров организации у вас может быть возможность настроить приложение аутентификации в качестве одного из методов в сведениях для защиты. Если приложение Microsoft Authenticator не требуется использовать, вы можете выбрать другое приложение во время настройки. Однако в рамках этой статьи используется приложение Microsoft Authenticator.
+
+>[!Important]
+> Если программа установки Microsoft Authenticator приложение на 5 различных устройствах или 5 аппаратных токенов, вы не сможете настроить шестой адрес и может увидеть следующее сообщение об ошибке.
+> 
+> **Вы не можете установить Microsoft Authenticator, так как у вас уже есть пять приложений или маркеров оборудования для проверки подлинности. Обратитесь к администратору, чтобы удалить одно из приложений или маркеров оборудования для проверки подлинности.**
 
 ### <a name="to-set-up-the-microsoft-authenticator-app"></a>Настройка приложения Microsoft Authenticator
 

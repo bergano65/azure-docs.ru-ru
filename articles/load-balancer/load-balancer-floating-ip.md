@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/13/2020
 ms.author: allensu
-ms.openlocfilehash: e15aab3ebfe82fa97f5716769b5ff9675b4b3dc4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 01cca2f2233ed5cdfb3003bb44c40f481bcf9bda
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91637441"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699412"
 ---
 # <a name="azure-load-balancer-floating-ip-configuration"></a>Azure Load Balancer конфигурация с плавающей IP-адресом
 
@@ -45,4 +45,4 @@ Load Balancer предоставляет указанные ниже возмо�
 - [Дополнительные сведения об Azure Load Balancer](load-balancer-overview.md).
 - Дополнительные сведения о [пробах работоспособности](load-balancer-custom-probe-overview.md).
 - [Metrics and health diagnostics for Standard Load Balancer](load-balancer-standard-diagnostics.md) (Метрики и проверки работоспособности Load Balancer уровня "Стандартный")
-- Узнайте больше о [группах безопасности сети](../virtual-network/security-overview.md).
+- Узнайте больше о [группах безопасности сети](../virtual-network/network-security-groups-overview.md).

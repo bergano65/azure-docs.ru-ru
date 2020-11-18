@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: c3812cef9b90a15870733441c9e830daf32e0b18
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 1ed477c6cf069dbb402e5bda9c1f48f7bc208f18
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408946"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698807"
 ---
 # <a name="security-control-v2-backup-and-recovery"></a>Управление безопасностью версии 2: резервное копирование и восстановление
 
@@ -36,7 +36,7 @@ ms.locfileid: "94408946"
 
 - [Включение восстановления между регионами](../../backup/backup-azure-arm-restore-vms.md#cross-region-restore)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -58,7 +58,7 @@ ms.locfileid: "94408946"
 
 Для локальных резервных копий, использующих Azure Backup, шифрование неактивных данных предоставляется с помощью предоставленной парольной фразы. Для обычных резервных копий служб Azure данные резервного копирования автоматически шифруются с помощью ключей, управляемых платформой Azure. Вы можете выбрать шифрование резервных копий с помощью управляемого клиентом ключа. В этом случае убедитесь, что этот ключ, управляемый клиентом, в хранилище ключей также находится в области резервного копирования. 
 
-Используйте управление доступом на основе ролей в Azure Backup, Azure Key Vault или других ресурсах для защиты резервных копий и управляемых клиентом ключей. Кроме того, можно включить дополнительные функции безопасности, чтобы требовать MFA, прежде чем можно будет изменить или удалить резервные копии.
+Используйте управление доступом на основе ролей Azure в Azure Backup, Azure Key Vault или других ресурсах для защиты резервных копий и управляемых клиентом ключей. Кроме того, можно включить дополнительные функции безопасности, чтобы требовать MFA, прежде чем можно будет изменить или удалить резервные копии.
 
 - [Общие сведения о средствах безопасности в Azure Backup](../../backup/security-overview.md)
 
@@ -68,7 +68,7 @@ ms.locfileid: "94408946"
 
 - [Функции безопасности, помогающие защитить гибридные резервные копии от атак](../../backup/backup-azure-security-feature.md#prevent-attacks)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -90,7 +90,7 @@ ms.locfileid: "94408946"
 
 - [Восстановление ключей Key Vault в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -108,7 +108,7 @@ ms.locfileid: "94408946"
 
 - [Включение обратимого удаления и очистки защиты в Key Vault](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 

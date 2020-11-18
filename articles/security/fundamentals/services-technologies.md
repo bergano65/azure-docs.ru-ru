@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
-ms.openlocfilehash: 46b1cbbd620cf2de8d875927f5745e91fcf608c5
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 553cfe0c1a5e7d569c127f23a11f25f4d150b0bc
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410051"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700765"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -64,10 +64,10 @@ ms.locfileid: "94410051"
 | [Аудит базы данных SQL Azure](../../azure-sql/database/auditing-overview.md)|Возможность аудита базы данных SQL, позволяющая отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure.  |
 
 
-## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
+## <a name="identity-and-access-management"></a>управление удостоверениями и доступом;
 |Служба|Описание|
 |------|--------|
-| [Управление доступом&nbsp;на основе&nbsp;ролей&nbsp;Azure](../../role-based-access-control/role-assignments-portal.md)|Функция контроля доступа, которая позволяет предоставлять пользователям доступ только к ресурсам, доступ к которым основан на их ролях в рамках организации.  |
+| [&nbsp;Управление доступом на основе ролей в Azure &nbsp;](../../role-based-access-control/role-assignments-portal.md)|Функция контроля доступа, которая позволяет предоставлять пользователям доступ только к ресурсам, доступ к которым основан на их ролях в рамках организации.  |
 | [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md)|Облачный репозиторий аутентификации, который поддерживает несколько клиентов, облачный каталог и несколько служб управления удостоверениями в рамках Azure.  |
 | [Azure Active Directory B2C](../../active-directory-b2c/overview.md)|Это служба управления идентификацией, которая позволяет администрировать процессы входа и регистрации пользователей, а также управлять их профилями при использовании приложений на основе Azure.   |
 | [Доменные службы Azure Active Directory](../../active-directory-domain-services/overview.md)| Облачная и управляемая версия доменных служб Active Directory. |

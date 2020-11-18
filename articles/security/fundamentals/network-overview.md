@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
-ms.openlocfilehash: a26228b33a7d90df558de2ecdf4686910e606a54
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 526947c4d2db9fd87727fdd60c33bcaa9e75c6ff
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413298"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699871"
 ---
 # <a name="azure-network-security-overview"></a>Обзор сетевой безопасности Azure
 
@@ -81,7 +81,7 @@ Azure поддерживает несколько типов контроля д
 
 #### <a name="asc-just-in-time-vm-access"></a>Своевременный доступ к виртуальным машинам при помощи ASC
 
-[Центр безопасности Azure](../../security-center/security-center-introduction.md) может управлять группами безопасности сети на виртуальных машинах и блокировать доступ к виртуальной машине, пока доступ не будет запрошен пользователем с соответствующими разрешениями управления доступом на основе ролей [RBAC](../../role-based-access-control/overview.md). Когда пользователь успешно авторизован, ASC вносит изменения в группу NSG, чтобы разрешить доступ к выбранным портам на указанное время. По истечении времени группы безопасности сети вернутся в исходное состояние защиты.
+[Центр безопасности Azure](../../security-center/security-center-introduction.md) может управлять группы безопасности сети на виртуальных машинах и блокировать доступ к виртуальной машине, пока пользователь с соответствующим доступом на основе РОЛЕЙ Azure [RBAC](../../role-based-access-control/overview.md) не запрашивает доступ. Когда пользователь успешно авторизован, ASC вносит изменения в группу NSG, чтобы разрешить доступ к выбранным портам на указанное время. По истечении времени группы безопасности сети вернутся в исходное состояние защиты.
 
 Дополнительные сведения:
 
