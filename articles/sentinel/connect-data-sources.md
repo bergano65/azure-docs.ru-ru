@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 97873c9f59dc0d99293d2b1ebaf87af309dbcf47
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 432104c7e2cb9486dfb47a793ae73829d8705b60
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92208300"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655822"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -137,17 +137,17 @@ Azure Sentinel поддерживает следующие методы подк
 | AzureActivity | [Подключение действий Azure](connect-azure-activity.md) и [обзора журналов действий](../azure-monitor/platform/platform-logs-overview.md)| &#10003; | |
 | AuditLogs | [Подключение Azure AD](connect-azure-active-directory.md)  | &#10003; | |
 | SigninLogs | [Подключение Azure AD](connect-azure-active-directory.md)  | &#10003; | |
-| AzureFirewall |[Система диагностики Azure](../firewall/tutorial-diagnostics.md) | &#10003; | |
-| InformationProtectionLogs_CL  | [Отчеты Azure Information Protection](https://docs.microsoft.com/azure/information-protection/reports-aip)<br>[Подключение Azure Information Protection](connect-azure-information-protection.md)  | &#10003; | Обычно в этом случае в дополнение к типу данных используется функция **InformationProtectionEvents**. Дополнительные сведения см. статью [Как изменять отчеты и создавать пользовательские запросы](https://docs.microsoft.com/azure/information-protection/reports-aip#how-to-modify-the-reports-and-create-custom-queries)|
+| AzureFirewall |[Система диагностики Azure](../firewall/firewall-diagnostics.md) | &#10003; | |
+| InformationProtectionLogs_CL  | [Отчеты Azure Information Protection](/azure/information-protection/reports-aip)<br>[Подключение Azure Information Protection](connect-azure-information-protection.md)  | &#10003; | Обычно в этом случае в дополнение к типу данных используется функция **InformationProtectionEvents**. Дополнительные сведения см. статью [Как изменять отчеты и создавать пользовательские запросы](/azure/information-protection/reports-aip#how-to-modify-the-reports-and-create-custom-queries)|
 | AzureNetworkAnalytics_CL  | [Схема аналитики трафика](../network-watcher/traffic-analytics.md) [Аналитика трафика](../network-watcher/traffic-analytics.md)  | | |
 | CommonSecurityLog  | [Подключение CEF](connect-common-event-format.md)  | &#10003; | |
 | OfficeActivity | [Подключение Office 365](connect-office-365.md) | &#10003; | |
-| SecurityEvents | [Подключение событий безопасности Windows](connect-windows-security-events.md)  | &#10003; | Книги небезопасных протоколов см. в разделе [Настройка книг небезопасных протоколов](/azure/sentinel/quickstart-get-visibility#use-built-in-workbooks)  |
+| SecurityEvents | [Подключение событий безопасности Windows](connect-windows-security-events.md)  | &#10003; | Книги небезопасных протоколов см. в разделе [Настройка книг небезопасных протоколов](./quickstart-get-visibility.md#use-built-in-workbooks)  |
 | Системный журнал | [Подключение системного журнала](connect-syslog.md) | &#10003; | |
-| Брандмауэр веб-приложений Майкрософт (WAF) – (AzureDiagnostics) |[Подключение брандмауэра веб-приложений Майкрософт](connect-microsoft-waf.md) | &#10003; | |
+| Брандмауэр веб-приложений Майкрософт (WAF) – (AzureDiagnostics) |[Подключение брандмауэра веб-приложений Майкрософт](./connect-azure-waf.md) | &#10003; | |
 | SymantecICDx_CL | [Подключение Symantec](connect-symantec.md) | &#10003; | |
 | ThreatIntelligenceIndicator  | [Подключение аналитики угроз](connect-threat-intelligence.md)  | &#10003; | |
-| VMConnection <br> ServiceMapComputer_CL<br> ServiceMapProcess_CL|  [Схема службы Azure Monitor](../azure-monitor/insights/service-map.md)<br>[Подключение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/insights/vminsights-onboard.md) <br> [Включение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Подключение одиночной виртуальной машины](../azure-monitor/insights/vminsights-enable-single-vm.md)<br>  [Использование подключения через политику](../azure-monitor/insights/vminsights-enable-at-scale-policy.md)| &#10007; | Книга аналитики виртуальных машин  |
+| VMConnection <br> ServiceMapComputer_CL<br> ServiceMapProcess_CL|  [Схема службы Azure Monitor](../azure-monitor/insights/service-map.md)<br>[Подключение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Включение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Подключение одиночной виртуальной машины](../azure-monitor/insights/vminsights-enable-portal.md)<br>  [Использование подключения через политику](../azure-monitor/insights/vminsights-enable-policy.md)| &#10007; | Книга аналитики виртуальных машин  |
 | DnsEvents | [Подключение DNS](connect-dns.md) | &#10003; | |
 | W3CIISLog | [Подключение журналов IIS](../azure-monitor/platform/data-sources-iis-logs.md)  | &#10007; | |
 | Данные передачи | [Подключение передаваемых данных](../azure-monitor/insights/wire-data.md) | &#10007; | |
@@ -157,7 +157,7 @@ Azure Sentinel поддерживает следующие методы подк
 | SecurityAlert сертификатов службы приложений  | [Подключение оповещений защитника Azure](connect-azure-security-center.md) из центра безопасности Azure  | &#10003; | |
 | MCAS SecurityAlert  | [Подключение Microsoft Cloud App Security](connect-cloud-app-security.md)  | &#10003; | |
 | SecurityAlert | | | |
-| Sysmon (событие) | [Подключение Sysmon](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Подключение событий Windows](../azure-monitor/platform/data-sources-windows-events.md) <br> [Получение средства синтаксического анализа Sysmon](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/Sysmon/Sysmon-v10.42-Parser.txt)| &#10007; | По умолчанию на виртуальных машинах не установлена коллекция Sysmon. Дополнительные сведения об установке агента Sysmon см. в разделе [Sysmon](https://docs.microsoft.com/sysinternals/downloads/sysmon). |
+| Sysmon (событие) | [Подключение Sysmon](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Подключение событий Windows](../azure-monitor/platform/data-sources-windows-events.md) <br> [Получение средства синтаксического анализа Sysmon](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/Sysmon/Sysmon-v10.42-Parser.txt)| &#10007; | По умолчанию на виртуальных машинах не установлена коллекция Sysmon. Дополнительные сведения об установке агента Sysmon см. в разделе [Sysmon](/sysinternals/downloads/sysmon). |
 | ConfigurationData  | [Автоматизация учета виртуальной машины](../automation/change-tracking/overview.md)| &#10007; | |
 | ConfigurationChange  | [Автоматизация отслеживания виртуальной машины](../automation/change-tracking/overview.md) | &#10007; | |
 | F5 BIG-IP | [Подключение F5 BIG-IP](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel)  | &#10007; | |

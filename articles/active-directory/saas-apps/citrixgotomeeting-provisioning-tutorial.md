@@ -7,15 +7,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 4abd16d6b5c9593cb1a4df52a7135a658c513410
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: ff377b0f93968eb6743187e4e659f4e888e5010e
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455943"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358905"
 ---
 # <a name="tutorial-configure-gotomeeting-for-automatic-user-provisioning"></a>Руководство по настройке GoToMeeting для автоматической подготовки пользователей
 
@@ -52,15 +52,15 @@ ms.locfileid: "92455943"
 
 ### <a name="to-configure-automatic-user-account-provisioning"></a>Настройка автоматической подготовки учетных записей пользователей:
 
-1. В [портал Azure](https://portal.azure.com)перейдите в раздел **Azure Active Directory > корпоративные приложения > все приложения** .
+1. На [портале Azure](https://portal.azure.com) перейдите в раздел **Azure Active Directory > Корпоративные приложения > Все приложения**.
 
 1. Если вы уже настроили единый вход для GoToMeeting, найдите свой экземпляр GoToMeeting с помощью поиска. В противном случае щелкните **Добавить** и найдите **GoToMeeting** в коллекции приложений. Выберите GoToMeeting в результатах поиска и добавьте это приложение в свой список приложений.
 
 1. Выберите свой экземпляр GoToMeeting и перейдите на вкладку **Подготовка**.
 
-1. Установите для режима **подготовки** значение **автоматически**. 
+1. Для параметра **Режим подготовки** выберите значение **Автоматический**. 
 
-    ![Снимок экрана: вкладка "подготовка" для GoToMeeting в портал Azure. Для режима подготовки задано значение автоматически и имя пользователя администратора, подключение пароля и тестового подключения выделены.](./media/citrixgotomeeting-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: вкладка "Подготовка" для GoToMeeting на портале Azure. Для параметра "Режим подготовки" задано значение "Автоматически". Выделены поля "Имя администратора" и "Пароль", а также кнопка "Проверить подключение".](./media/citrixgotomeeting-provisioning-tutorial/provisioning.png)
 
 1. В разделе "Учетные данные администратора" выполните следующие действия:
    

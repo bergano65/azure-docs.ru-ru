@@ -7,15 +7,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: jeedes
-ms.openlocfilehash: 3a0a69784be3b03b030ef599037b57c2c20ea2c6
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: 185b61f77b275ed78050f5d8efb820c5333f6e1f
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92454683"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358581"
 ---
 # <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Руководство по настройке DocuSign для автоматической подготовки пользователей
 
@@ -57,7 +57,7 @@ ms.locfileid: "92454683"
 
 В этом разделе показано, как включить подготовку учетных записей пользователей Active Directory для DocuSign.
 
-1. В [портал Azure](https://portal.azure.com)перейдите в раздел **Azure Active Directory > корпоративные приложения > все приложения** .
+1. На [портале Azure](https://portal.azure.com) перейдите в раздел **Azure Active Directory > Корпоративные приложения > Все приложения**.
 
 1. Если в DocuSign уже настроен единый вход, найдите свой экземпляр DocuSign с помощью поиска. В противном случае щелкните **Добавить** и найдите **DocuSign** в коллекции приложений. Выберите DocuSign в результатах поиска и добавьте его в список приложений.
 
@@ -65,7 +65,7 @@ ms.locfileid: "92454683"
 
 1. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически). 
 
-    ![Снимок экрана: вкладка "подготовка" для DocuSign в портал Azure. Для режима подготовки задано значение автоматически и имя пользователя администратора, подключение пароля и тестового подключения выделены.](./media/docusign-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: вкладка "Подготовка" для DocuSign на портале Azure. Для параметра "Режим подготовки" задано значение "Автоматически". Выделены поля "Имя администратора" и "Пароль", а также кнопка "Проверить подключение".](./media/docusign-provisioning-tutorial/provisioning.png)
 
 1. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
    
@@ -74,7 +74,7 @@ ms.locfileid: "92454683"
     b. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 
 > [!NOTE]
-> Если выполняется настройка единого входа и подготовки пользователей, то учетные данные авторизации, используемые для подготовки, должны быть настроены для работы с SSO и именем пользователя и паролем.
+> Если выполняется настройка единого входа и подготовка пользователей, учетные данные авторизации, используемые для подготовки, должны быть настроены для работы как с SSO, так и с именем пользователя и паролем.
 
 1. На портале Azure щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению DocuSign.
 
@@ -95,9 +95,9 @@ ms.locfileid: "92454683"
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
-* Подготовка роли или профиля разрешений для пользователя в DocuSign можно выполнить с помощью выражения в сопоставлениях атрибутов с помощью функций [switch](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#switch) и [синглеаппролеассигнмент](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#singleapproleassignment) . Например, приведенное ниже выражение подготавливает идентификатор "8032066", когда пользователь имеет роль "Администратор DS", назначенную в Azure AD. Если пользователю не назначена роль на стороне Azure AD, то профиль разрешений не будет подготавливаться. Идентификатор можно получить на [портале](https://support.docusign.com/articles/Default-settings-for-out-of-the-box-DocuSign-Permission-Profiles)DocuSign.
+* Подготовку роли или профиля разрешений для пользователя в DocuSign можно выполнить с помощью выражения в сопоставлениях атрибутов с помощью функций [switch](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#switch) и [singleAppRoleAssignment](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#singleapproleassignment). Например, приведенное ниже выражение подготавливает идентификатор 8032066, когда пользователь имеет роль "Администратор DS", назначенную в Azure AD. Если пользователю не назначена роль на стороне Azure AD, профиль разрешений не будет подготавливаться. Идентификатор можно получить на [портале DocuSign](https://support.docusign.com/articles/Default-settings-for-out-of-the-box-DocuSign-Permission-Profiles).
 
-Switch (Синглеаппролеассигнмент ([appRoleAssignments]), "", "8032066", "Администратор DS")
+Switch(SingleAppRoleAssignment([appRoleAssignments])," ", "8032066", "DS Admin")
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

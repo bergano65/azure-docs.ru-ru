@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: milismsft
 ms.author: adrianmi
 ms.date: 09/21/2020
-ms.openlocfilehash: e87985154226369cd47cc6437fc82c59602a78d9
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6ffd5670a8b84f0f4a5b7d3dee8a7a5080be26f5
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085587"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357323"
 ---
 # <a name="azure-cosmos-emulator---release-notes-and-download-information"></a>Эмулятор Azure Cosmos. Заметки о выпуске и сведения о скачивании
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -26,6 +26,10 @@ ms.locfileid: "93085587"
 |**Начало работы**|[Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде](local-emulator.md)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="2118-6-november-2020"></a>2.11.8 (6 ноября 2020 г.)
+
+ - Этот выпуск включает обновление обозревателя данных эмулятора Cosmos и исправление ошибки с его открытием клиентами TLS 1.3.
 
 ### <a name="2116-6-october-2020"></a>2.11.6 (6 октября 2020 г.)
 

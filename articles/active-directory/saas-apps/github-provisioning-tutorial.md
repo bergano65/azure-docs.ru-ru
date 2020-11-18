@@ -1,5 +1,5 @@
 ---
-title: Учебник. подготовка пользователей для GitHub — Azure AD
+title: Руководство по Подготовка пользователей для GitHub — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в GitHub.
 services: active-directory
 author: Zhchia
@@ -7,15 +7,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: Zhchia
-ms.openlocfilehash: b9b7a82d611743f2ba76e20f47670771e2e38904
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: f1600dfc5705ca97f16e8966a796b54fc556d216
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92448968"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359268"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство по настройке GitHub для автоматической подготовки пользователей
 
@@ -27,13 +27,13 @@ ms.locfileid: "92448968"
 
 * клиент Azure Active Directory;
 * Организация GitHub, созданная в облаке [GitHub Enterprise](https://help.github.com/articles/github-s-products/#github-enterprise), которой требуется [план выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
-* Учетная запись пользователя в GitHub с разрешениями администратора для Организации.
-* [SAML, настроенный для Организации в облаке GitHub Enterprise](./github-tutorial.md)
-* Убедитесь, что для вашей организации предоставлен доступ OAuth, как описано [здесь](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization) .
-* SCIM подготовка для одной организации поддерживается, только если единый вход включен на уровне Организации.
+* Учетная запись пользователя в GitHub с разрешениями администратора организации.
+* [SAML с конфигурацией для организации GitHub Enterprise Cloud](./github-tutorial.md).
+* Убедитесь, что вашей организации предоставлен доступ OAuth, как описано [здесь](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
+* Подготовка SCIM для одной организации поддерживается, только если единый вход включен на уровне организации.
 
 > [!NOTE]
-> Интеграция подготовки Azure AD зависит от [API GITHUB scim](https://developer.github.com/v3/scim/), который доступен для клиентов [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) в [плане выставления счетов на GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
+> Интеграция подготовки в Azure AD зависит от [API SCIM GitHub](https://developer.github.com/v3/scim/), доступного для клиентов [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) с [планом выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
 
 ## <a name="assigning-users-to-github"></a>Назначение пользователей в GitHub
 
@@ -65,15 +65,15 @@ ms.locfileid: "92448968"
 
     ![Подготовка GitHub](./media/github-provisioning-tutorial/GitHub1.png)
 
-5. В разделе **Учетные данные администратора** щелкните **Авторизовать**. В новом окне браузера откроется диалоговое окно авторизации GitHub. Обратите внимание, что вы должны убедиться, что вы утверждены для авторизации доступа. Следуйте инструкциям, описанным [здесь](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
+5. В разделе **Учетные данные администратора** щелкните **Авторизовать**. В новом окне браузера откроется диалоговое окно авторизации GitHub. Вам нужно убедиться, что вы утверждены для авторизации доступа. Следуйте инструкциям, описанным [здесь](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
 
 6. В новом окне войдите в GitHub с использованием учетной записи администратора. В открывшемся диалоговом окне авторизации выберите команду GitHub, для которой необходимо включить подготовку, а затем щелкните **Авторизовать**. После завершения вернитесь на портал Azure для завершения настройки подготовки.
 
-    ![На снимке экрана показана страница входа для GitHub.](./media/github-provisioning-tutorial/GitHub2.png)
+    ![Снимок экрана: страница входа для GitHub.](./media/github-provisioning-tutorial/GitHub2.png)
 
 7. На портале Azure введите **URL-адрес клиента** и щелкните **Проверить подключение**, чтобы убедиться в том, что Azure AD может подключиться к вашему приложению GitHub. Если установить подключение не удалось, убедитесь, что у вашей учетной записи GitHub имеются разрешения администратора и **URL-адрес клиента** введен правильно, а затем повторите авторизацию (**URL-адрес клиента** можно указать в формате `https://api.github.com/scim/v2/organizations/<Organization_name>`, а свои организации можно найти в учетной записи GitHub, выбрав **Параметры** > **Организации**).
 
-    ![На снимке экрана показана страница "Организации" в GitHub.](./media/github-provisioning-tutorial/GitHub3.png)
+    ![Снимок экрана: страница Organizations (Организации) в GitHub.](./media/github-provisioning-tutorial/GitHub3.png)
 
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок "Отправить уведомление по электронной почте при сбое".
 

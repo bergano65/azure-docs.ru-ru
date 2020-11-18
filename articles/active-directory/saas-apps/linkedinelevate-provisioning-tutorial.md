@@ -1,5 +1,5 @@
 ---
-title: Руководство. подготовка пользователей к повышению прав для LinkedIn — Azure AD
+title: Руководство по Подготовка пользователей для LinkedIn Elevate — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в LinkedIn Elevate.
 services: active-directory
 author: ArvindHarinder1
@@ -7,15 +7,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: arvinh
-ms.openlocfilehash: 429ccacea8eb4fd66336543615b11179af3e9276
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 5e972475530ad36a188f73990bb9eca35748c36c
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361590"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358955"
 ---
 # <a name="tutorial-configure-linkedin-elevate-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Elevate для автоматической подготовки пользователей
 
@@ -70,16 +70,16 @@ ms.locfileid: "91361590"
     > [!NOTE]
     > Если автоматическое назначение лицензии отключено, синхронизируются только данные пользователя.
 
-    ![На снимке экрана показаны глобальные параметры центра учетных записей LinkedIn.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate1.PNG)
+    ![Снимок экрана: глобальные параметры центра учетных записей LinkedIn.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate1.PNG)
 
     > [!NOTE]
     > При автоматическом назначении лицензии необходимо отметить экземпляр приложения и тип лицензии. Лицензии назначаются по мере получения запросов до тех пор, пока все лицензии не будут заняты.
 
-    ![На снимке экрана показана страница настройки S C M.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate2.PNG)
+    ![Снимок экрана: страница "Настройка SCIM".](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate2.PNG)
 
 5. Щелкните **Создать токен**. Токен доступа должен появиться в поле **Токен доступа**.
 
-6. Сохраните маркер доступа в буфере обмена или на компьютере, прежде чем покинуть страницу.
+6. Прежде чем закрыть эту страницу, сохраните маркер доступа в буфере обмена или на компьютере.
 
 7. Затем войдите на [портал Azure](https://portal.azure.com) и перейдите в раздел **Azure Active Directory > Корпоративные приложения > Все приложения**.
 
@@ -89,7 +89,7 @@ ms.locfileid: "91361590"
 
 10. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![На снимке экрана показана страница подготовки к повышению привилегий LinkedIn.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate3.PNG)
+    ![Снимок экрана: страница "Подготовка LinkedIn Elevate".](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate3.PNG)
 
 11. Заполните следующие поля в разделе **Учетные данные администратора**:
 
@@ -105,7 +105,7 @@ ms.locfileid: "91361590"
 
 14. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей и групп, которые будут синхронизированы из Azure AD в LinkedIn Elevate. Обратите внимание, что атрибуты, которые выбраны в качестве свойств **Сопоставления**, будут использоваться для сопоставления учетных записей пользователей и групп для операций обновления в LinkedIn Elevate. Нажмите кнопку "Сохранить", чтобы подтвердить все изменения.
 
-    ![На снимке экрана показаны сопоставления, включая сопоставления атрибутов.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate4.PNG)
+    ![Снимок экрана: сопоставления, включая сопоставления атрибутов.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate4.PNG)
 
 15. Чтобы включить службу подготовки Azure AD для LinkedIn Elevate, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 

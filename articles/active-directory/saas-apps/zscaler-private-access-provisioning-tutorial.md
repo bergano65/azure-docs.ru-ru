@@ -1,6 +1,6 @@
 ---
-title: Руководство. Настройка частного доступа Zscaler (ZPA) для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в Zscaler закрытый доступ (ZPA).
+title: Руководство по настройке автоматической подготовки пользователей в Zscaler Private Access (ZPA) с помощью Azure Active Directory | Документация Майкрософт
+description: Сведения о том, как настроить в Azure Active Directory автоматическую подготовку и отзыв учетных записей пользователей для Zscaler Private Access (ZPA).
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,19 +8,19 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: 5ecb4d249c8c2167ec61740eb9515fd1937230b0
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: a93e2a88201f32ed99698f2bfbab631c81ed8b35
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519747"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357714"
 ---
-# <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Руководство. Настройка частного доступа Zscaler (ZPA) для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Zscaler Private Access (ZPA)
 
-Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить в Zscaler Private Access (ZPA) и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и (или) групп для Zscaler закрытого доступа (ZPA).
+В этом руководстве описаны шаги, которые нужно выполнить в Zscaler Private Access (ZPA) и Azure Active Directory (Azure AD), чтобы настроить автоматическую подготовку и отзыв пользователей и групп в Azure AD для Zscaler Private Access (ZPA).
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
@@ -32,68 +32,68 @@ ms.locfileid: "92519747"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * клиент Azure AD;
-* [Клиент Zscaler Private Access (ZPA)](https://www.zscaler.com/pricing-and-plans#contact-us)
-* Учетная запись пользователя в Zscaler Private Access (ZPA) с разрешениями администратора.
+* [клиент Zscaler Private Access (ZPA);](https://www.zscaler.com/pricing-and-plans#contact-us)
+* учетная запись пользователя Zscaler Private Access (ZPA) с разрешениями администратора.
 
-## <a name="assigning-users-to-zscaler-private-access-zpa"></a>Назначение пользователей Zscaler закрытому доступу (ZPA)
+## <a name="assigning-users-to-zscaler-private-access-zpa"></a>Назначение пользователей для Zscaler Private Access (ZPA)
 
-В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки учетных записей пользователей синхронизируются только пользователи и группы, назначенные приложению в Azure AD.
+В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки синхронизируются только те пользователи и (или) группы, которые были назначены конкретному приложению в Azure AD.
 
-Перед настройкой и включением автоматической подготовки пользователей следует решить, каким пользователям и (или) группам в Azure AD требуется доступ к Zscaler Private Access (ZPA). После принятия решения эти пользователи и (или) группы можно будет назначить Zscaler закрытому доступу (ZPA), следуя приведенным ниже инструкциям.
+Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи или группы в Azure AD должны иметь доступ к Zscaler Private Access (ZPA). Когда этот вопрос будет решен, этих пользователей и (или) группы можно будет назначить приложению Zscaler Private Access (ZPA), следуя приведенным ниже инструкциям.
 * [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
-## <a name="important-tips-for-assigning-users-to-zscaler-private-access-zpa"></a>Важные советы по назначению пользователей для Zscaler закрытого доступа (ZPA)
+## <a name="important-tips-for-assigning-users-to-zscaler-private-access-zpa"></a>Важные замечания о назначении пользователей для Zscaler Private Access (ZPA)
 
-* Рекомендуется назначить одного пользователя Azure AD в Zscaler Private Access (ZPA) для проверки конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Чтобы проверить конфигурацию автоматической подготовки пользователей, рекомендуем назначить одного пользователя Azure AD для Zscaler Private Access (ZPA). Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя в Zscaler Private Access (ZPA) необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя для Zscaler Private Access (ZPA) в диалоговом окне назначения нужно выбрать действительную роль для конкретного приложения (при наличии). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
-## <a name="set-up-zscaler-private-access-zpa-for-provisioning"></a>Настройка частного доступа Zscaler (ZPA) для подготовки
+## <a name="set-up-zscaler-private-access-zpa-for-provisioning"></a>Настройка подготовки в Zscaler Private Access (ZPA)
 
-1. Войдите в [консоль администрирования Zscaler Private Access (ZPA)](https://admin.private.zscaler.com/). Перейдите в раздел **администрирование > конфигурация IDP**.
+1. Войдите в [консоль администрирования Zscaler Private Access (ZPA)](https://admin.private.zscaler.com/). Перейдите к разделу **Administration > IdP Configuration** (Администрирование > Конфигурация поставщика удостоверений).
 
     ![Консоль администрирования Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/idpconfig.png)
 
-2.  Убедитесь, что настроен IdP для **единого входа** . Если IdP не настроен, добавьте его, щелкнув значок "плюс" в правом верхнем углу экрана.
+2.  Убедитесь, что для **единого входа** настроен поставщик удостоверений. Если поставщик удостоверений не настроен, добавьте его, щелкнув значок "плюс" в правом верхнем углу экрана.
 
-    ![Zscaler частный доступ (ZPA) Add SCIM](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
+    ![Zscaler Private Access (ZPA) — добавление SCIM](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
 
-3. Чтобы добавить IdP, выполните действия, описанные в мастере **добавления конфигурации IDP** . Оставьте в поле **единого входа** значение **User**. Укажите **имя** и выберите **домены** из раскрывающегося списка. Нажмите кнопку **Далее** , чтобы вернуться к следующему окну.
+3. Выполните инструкции мастера настройки **Add IdP Configuration** (Добавление поставщиков удостоверений), чтобы добавить поставщик удостоверений. В поле **Single sign-on** (Единый вход) оставьте значение **User** (Пользователь). Укажите значение **Name** (Имя) и выберите домены из раскрывающегося списка **Domains**. Щелкните **Next** (Далее), чтобы перейти к следующему окну.
 
-    ![Zscaler частный доступ (ZPA) Add IdP](media/zscaler-private-access-provisioning-tutorial/addidp.png)
+    ![Zscaler Private Access (ZPA) — добавление поставщика удостоверений](media/zscaler-private-access-provisioning-tutorial/addidp.png)
 
-4. Скачайте **сертификат поставщика услуг**. Нажмите кнопку **Далее** , чтобы вернуться к следующему окну.
+4. Скачайте **Service Provider Certificate** (Сертификат поставщика услуг). Щелкните **Next** (Далее), чтобы перейти к следующему окну.
 
-    ![Сертификат Zscaler частного доступа (ZPA)](media/zscaler-private-access-provisioning-tutorial/spcertificate.png)
+    ![Zscaler Private Access (ZPA) — сертификат поставщика услуг](media/zscaler-private-access-provisioning-tutorial/spcertificate.png)
 
-5. В следующем окне отправьте **сертификат поставщика услуг** , скачанный ранее.
+5. В следующем окне отправьте скачанный ранее **сертификат поставщика услуг**.
 
-    ![Сертификат для отправки частного доступа Zscaler (ZPA)](media/zscaler-private-access-provisioning-tutorial/uploadfile.png)
+    ![Zscaler Private Access (ZPA) — отправка сертификата](media/zscaler-private-access-provisioning-tutorial/uploadfile.png)
 
-6.  Прокрутите вниз, чтобы указать **URL-адрес единого входа** и **идентификатор сущности IDP**.
+6.  Прокрутите страницу вниз, чтобы ввести значения **Single sign-On URL** (URL-адрес единого входа) и **IdP Entity ID** (Идентификатор сущности поставщика удостоверений).
 
-    ![Zscaler частный доступ (ZPA) идентификатор IdP](media/zscaler-private-access-provisioning-tutorial/idpid.png)
+    ![Zscaler Private Access (ZPA) — идентификатор поставщика удостоверений](media/zscaler-private-access-provisioning-tutorial/idpid.png)
 
-7.  Прокрутите вниз, чтобы **включить синхронизацию scim**. Нажмите кнопку " **создать новый токен** ". Скопируйте **токен носителя**. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения Zscaler Private Access (ZPA) в портал Azure.
+7.  Прокрутите страницу вниз до раздела **Enable SCIM Sync** (Включить синхронизацию SCIM). Нажмите кнопку **Generate New Token** (Сгенерировать новый токен). Скопируйте значение **Bearer Token** (Токен носителя). Его нужно будет ввести в поле "Секретный токен" на вкладке "Подготовка" для приложения Zscaler Private Access (ZPA) на портале Azure.
 
-    ![Zscaler частный доступ (ZPA) создание токена](media/zscaler-private-access-provisioning-tutorial/token.png)
+    ![Zscaler Private Access (ZPA) — создание токена](media/zscaler-private-access-provisioning-tutorial/token.png)
 
-8.  Чтобы найти **URL-адрес клиента** , перейдите в раздел **Администрирование > конфигурация IDP**. Щелкните имя вновь добавленной конфигурации IdP, указанной на странице.
+8.  Чтобы найти значение **Tenant URL** (URL-адрес клиента), перейдите к разделу **Administration > IdP Configuration** (Администрирование > Конфигурация поставщика удостоверений). Щелкните имя недавно добавленной конфигурации поставщика удостоверений, которая отображается в списке на этой странице.
 
-    ![Имя IDP закрытого доступа Zscaler (ZPA)](media/zscaler-private-access-provisioning-tutorial/idpname.png)
+    ![Zscaler Private Access (ZPA) — имя поставщика удостоверений](media/zscaler-private-access-provisioning-tutorial/idpname.png)
 
-9.  Прокрутите вниз, чтобы просмотреть **конечную точку поставщика услуг scim** в конце страницы. Скопируйте **конечную точку поставщика службы scim**. Это значение будет указано в поле URL-адрес клиента на вкладке Подготовка приложения Zscaler Private Access (ZPA) в портал Azure.
+9.  Прокрутите страницу вниз до элемента **SCIM Service Provider Endpoint** (Конечная точка SCIM поставщика услуг), который находится в самом низу страницы. Скопируйте значение **SCIM Service Provider Endpoint** (Конечная точка SCIM поставщика услуг). Его нужно будет ввести в поле "URL-адрес клиента" на вкладке "Подготовка" для приложения Zscaler Private Access (ZPA) на портале Azure.
 
-    ![URL-адрес SCIM закрытого доступа Zscaler (ZPA)](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
+    ![Zscaler Private Access (ZPA) — URL-адрес SCIM](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
 
 
-## <a name="add-zscaler-private-access-zpa-from-the-gallery"></a>Добавление частного доступа Zscaler (ZPA) из коллекции
+## <a name="add-zscaler-private-access-zpa-from-the-gallery"></a>Добавление Zscaler Private Access (ZPA) из коллекции
 
-Перед настройкой частного доступа Zscaler (ZPA) для автоматической подготовки пользователей с помощью Azure AD необходимо добавить Zscaler частный доступ (ZPA) из коллекции приложений Azure AD в список управляемых приложений SaaS.
+Прежде чем настроить в Zscaler Private Access (ZPA) автоматическую подготовку пользователей в Azure AD, нужно добавить Zscaler Private Access (ZPA) из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить Zscaler Private Access (ZPA) из коллекции приложений Azure AD, выполните следующие действия.**
+**Чтобы добавить Zscaler Private Access (ZPA) из коллекции приложений Azure AD, выполните следующие действия.**
 
-1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory**.
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева выберите элемент **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -101,25 +101,25 @@ ms.locfileid: "92519747"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **новое приложение** в верхней части области.
+3. Чтобы добавить новое приложение, в области сверху нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Zscaler частный доступ (ZPA)**, выберите **Zscaler частный доступ (ZPA)** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **Zscaler Private Access (ZPA)** , выберите **Zscaler Private Access (ZPA)** в области результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Zscaler Private Access (ZPA) в списке результатов](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-zscaler-private-access-zpa"></a>Настройка автоматической подготовки пользователей для Zscaler закрытого доступа (ZPA) 
+## <a name="configuring-automatic-user-provisioning-to-zscaler-private-access-zpa"></a>Настройка автоматической подготовки пользователей в Zscaler Private Access (ZPA) 
 
-В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Zscaler Private Access (ZPA) на основе назначений пользователей и групп в Azure AD.
+В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Zscaler Private Access (ZPA) на основе их назначений в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Zscaler Private Access (ZPA), следуя инструкциям, приведенным в [руководстве по единому входу в Zscaler Private Access (ZPA)](./zscalerprivateaccess-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете настроить для Zscaler Private Access (ZPA) единый вход на основе SAML, используя инструкции из [руководства по единому входу для Zscaler Private Access (ZPA)](./zscalerprivateaccess-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
 
 > [!NOTE]
-> Дополнительные сведения о конечной точке SCIM для закрытого доступа Zscaler см. [здесь](https://www.zscaler.com/partners/microsoft).
+> Дополнительные сведения о конечной точке SCIM для Zscaler Private Access см. [здесь](https://www.zscaler.com/partners/microsoft).
 
-### <a name="to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Zscaler Private Access (ZPA) в Azure AD, сделайте следующее:
+### <a name="to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad"></a>Для настройки автоматической подготовки пользователей в Azure AD для Zscaler Private Access (ZPA) сделайте следующее.
 
 1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
 
@@ -131,13 +131,13 @@ ms.locfileid: "92519747"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите значение **конечной точки поставщика службы scim** , полученное ранее в поле **URL-адрес клиента**. Введите значение **токена носителя** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Zscaler закрытому доступу (ZPA). В случае сбоя подключения убедитесь, что учетная запись Zscaler Private Access (ZPA) имеет разрешения администратора, и повторите попытку.
+5. В разделе **Учетные данные администратора** введите в поле **URL-адрес клиента** полученное ранее значение **SCIM Service Provider Endpoint** (Конечная точка SCIM поставщика услуг). Введите полученное ранее значение **Bearer Token** (Токен носителя) в поле **Секретный токен**. Щелкните **Проверить подключение** и убедитесь, что Azure AD может подключиться к Zscaler Private Access (ZPA). Если установить подключение не удалось, убедитесь, что у учетной записи Zscaler Private Access (ZPA) есть разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -147,29 +147,29 @@ ms.locfileid: "92519747"
 
 7. Выберите команду **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler закрытым доступом (ZPA)**.
+8. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Zscaler Private Access (ZPA)** .
 
     ![Сопоставления пользователей Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/usermappings.png)
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Zscaler Private Access (ZPA) в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Zscaler Private Access (ZPA) для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей, которые синхронизируются из Azure AD в Zscaler Private Access (ZPA). Атрибуты, выбранные как свойства **Сопоставление**, используются для сопоставления учетных записей пользователей в Zscaler Private Access (ZPA) при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/userattributes.png)
+    ![Атрибуты пользователей Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/userattributes.png)
 
-10. В разделе " **сопоставления** " выберите **синхронизировать Azure Active Directory группы к Zscaler закрытый доступ (ZPA)**.
+10. В разделе **Сопоставления** выберите **Синхронизировать группы Azure Active Directory с Zscaler Private Access (ZPA)** .
 
-    ![Сопоставления группы Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/groupmappings.png)
+    ![Сопоставления групп Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/groupmappings.png)
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Zscaler Private Access (ZPA) в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Zscaler Private Access (ZPA) для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. В разделе **Сопоставления атрибутов** просмотрите атрибуты групп, которые синхронизируются из Azure AD в Zscaler Private Access (ZPA). Атрибуты, выбранные как свойства **Сопоставление**, используются для сопоставления групп в Zscaler Private Access (ZPA) при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты группы Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/groupattributes.png)
+    ![Атрибуты групп Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/groupattributes.png)
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Чтобы включить службу подготовки Azure AD для Zscaler Private Access (ZPA), измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+13. Чтобы включить службу подготовки Azure AD для Zscaler Private Access (ZPA), измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-14. Определите пользователей и (или) группы, которые вы хотите подготавливать к Zscaler закрытому доступу (ZPA), выбрав нужные значения в **области** в разделе **Параметры** .
+14. Укажите пользователей или группы для подготовки в Zscaler Private Access (ZPA), выбрав нужные значения в поле **Область** раздела **Параметры**.
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
@@ -177,7 +177,7 @@ ms.locfileid: "92519747"
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD на Zscaler Private Access (ZPA).
+После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Текущее состояние** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD с приложением Zscaler Private Access (ZPA).
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 

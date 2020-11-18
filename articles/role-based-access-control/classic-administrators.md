@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 01/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: dc8a23d8cdb923f86d581d1af2967112d226c847
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d61d49fdd90f1f916141ca636e2c2a4dbe0b9bcd
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370633"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657750"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Классические администраторы подписок Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "92370633"
 
 - Гостевой пользователь должен иметь присутствие в вашем каталоге. Это означает, что пользователь приглашен в ваш каталог и принял приглашение.
 
-Дополнительные сведения о добавлении гостевого пользователя в каталог см. [в разделе добавление Azure Active Directory пользователей службы совместной работы B2B в портал Azure](../active-directory/b2b/add-users-administrator.md).
+Дополнительные сведения о добавлении гостевого пользователя в каталог см. [в разделе добавление Azure Active Directory пользователей службы совместной работы B2B в портал Azure](../active-directory/external-identities/add-users-administrator.md).
 
 ### <a name="differences-for-guest-users"></a>Отличия гостевых пользователей
 
@@ -126,7 +126,7 @@ ms.locfileid: "92370633"
 | Учетная запись администратора учетной записи | Может ли администратор службы изменить другой учетная запись Майкрософт? | Может ли администратор службы изменить учетную запись Azure AD в том же каталоге? | Может ли администратор службы изменить учетную запись Azure AD в другом каталоге? |
 | --- | --- | --- | --- |
 | Учетная запись Майкрософт | Да | Нет | Нет |
-| учетная запись Azure AD; | Да | Да | Нет |
+| Учетная запись Azure AD | Да | Да | Нет |
 
 Если администратор учетной записи является учетной записью Azure AD, можно изменить ее администратора на учетную запись Azure AD в том же каталоге, но не в другом каталоге. Например, abby@contoso.com может изменить администратора службы на bob@contoso.com , но не сможет изменить администратора службы до john@notcontoso.com тех пор, пока john@notcontoso.com в каталоге contoso.com не будет присутствия.
 
@@ -148,7 +148,7 @@ ms.locfileid: "92370633"
 
     ![Снимок экрана с отображением администратора учетной записи](./media/classic-administrators/account-admin.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения о различных ролях](../role-based-access-control/rbac-and-directory-admin-roles.md)
 * [Добавление и удаление назначений ролей Azure с помощью портала Azure](../role-based-access-control/role-assignments-portal.md)

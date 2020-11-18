@@ -12,12 +12,12 @@ ms.date: 08/13/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: 860d29d3fff2187e770a5ff00b7145fc188a497c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: e43ad9dedf4212e9b30a08f0c978cb8d1a86776c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426495"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657420"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-sso-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для единого входа (SSO) в приложения с помощью прокси приложения
 
@@ -42,9 +42,9 @@ ms.locfileid: "92426495"
 ## <a name="prerequisites"></a>Предварительные требования
 Прежде чем организовать единый вход для приложений IWA, проверьте готовность следующих параметров и настроек в своей среде.
 
-* Настройте свои приложения, например веб-приложения SharePoint, на использование встроенной проверки подлинности Windows. Дополнительные сведения см. в статье [Включение поддержки протокола проверки подлинности Kerberos](https://technet.microsoft.com/library/dd759186.aspx) или (для SharePoint) в статье [Планирование проверки подлинности Kerberos в SharePoint 2013](https://technet.microsoft.com/library/ee806870.aspx).
+* Настройте свои приложения, например веб-приложения SharePoint, на использование встроенной проверки подлинности Windows. Дополнительные сведения см. в статье [Включение поддержки протокола проверки подлинности Kerberos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759186(v=ws.11)) или (для SharePoint) в статье [Планирование проверки подлинности Kerberos в SharePoint 2013](/SharePoint/security-for-sharepoint-server/kerberos-authentication-planning).
 * Все приложения имеют [имена субъектов-служб](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spns-setspn-syntax-setspn-exe.aspx).
-* Сервер, на котором работает соединитель, и сервер, на котором работает приложение, должны быть присоединены к домену и должны быть частью одного и того же домена или доверенных доменов. Дополнительные сведения о присоединении к домену см. в разделе [Присоединение компьютера к домену](https://technet.microsoft.com/library/dd807102.aspx).
+* Сервер, на котором работает соединитель, и сервер, на котором работает приложение, должны быть присоединены к домену и должны быть частью одного и того же домена или доверенных доменов. Дополнительные сведения о присоединении к домену см. в разделе [Присоединение компьютера к домену](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807102(v=ws.11)).
 * Сервер, на котором работает соединитель, должен иметь доступ на чтение атрибута TokenGroupsGlobalAndUniversal у пользователей. Эта стандартная настройка может измениться в случае усиления защиты среды.
 
 ### <a name="configure-active-directory"></a>Настройка Active Directory
@@ -61,7 +61,7 @@ ms.locfileid: "92426495"
    ![Окно свойств соединителя SVR (снимок экрана)](./media/application-proxy-configure-single-sign-on-with-kcd/properties.jpg)
 
 #### <a name="connector-and-application-server-in-different-domains"></a>Соединитель и сервер приложения находятся в разных доменах
-1. Список предварительных требований для работы с ограниченным делегированием Kerberos в разных доменах см. в статье [Ограниченное делегирование Kerberos в разных доменах](https://technet.microsoft.com/library/hh831477.aspx).
+1. Список предварительных требований для работы с ограниченным делегированием Kerberos в разных доменах см. в статье [Ограниченное делегирование Kerberos в разных доменах](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11)).
 2. Используйте `principalsallowedtodelegateto` свойство учетной записи службы (компьютера или выделенной учетной записи пользователя домена) веб-приложения, чтобы включить делегирование проверки подлинности Kerberos от прокси приложения (соединителя). Сервер приложений выполняется в контексте `webserviceaccount` , а делегированный сервер — `connectorcomputeraccount` . Выполните приведенные ниже команды на контроллере домена (под управлением Windows Server 2012 R2 или более поздней версии) в домене `webserviceaccount` . Для обеих учетных записей используйте неструктурированные имена (не UPN).
 
    Если `webserviceaccount` используется учетная запись компьютера, используйте следующие команды:
@@ -153,4 +153,3 @@ ms.locfileid: "92426495"
 
 * [Настройка приложения прокси приложения для использования ограниченного делегирования Kerberos](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)
-

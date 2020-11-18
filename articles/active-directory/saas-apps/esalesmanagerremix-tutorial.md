@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 06/12/2018
 ms.author: jeedes
-ms.openlocfilehash: df993aae4e6c572c8f99688fd0053bdd07aefd56
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: c06595b683092abf52300481068daab26394c4cb
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92453935"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358751"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
 
@@ -96,9 +96,9 @@ ms.locfileid: "92453935"
 
     ![Сведения о домене и URL-адресах единого входа для E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_url.png)
 
-    a. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: *https:// \<Server-Based-URL> / \<sub-domain> /есалес-ПК*.
+    a. В поле **URL-адрес входа** введите URL-адрес в следующем формате: *https://\<Server-Based-URL>/\<sub-domain>/esales-pc*.
 
-    b. В поле **идентификатор** введите URL-адрес в следующем формате: *https:// \<Server-Based-URL> / \<sub-domain> / *.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: *https://\<Server-Based-URL>/\<sub-domain>/* .
 
     c. Запишите значение **идентификатора**, оно вам понадобится далее в этом руководстве.
     
@@ -115,19 +115,19 @@ ms.locfileid: "92453935"
 
     Откроется окно **Изменение атрибута**.
 
-1. Скопируйте из него значения параметров **Пространство имен** и **Имя**. Создайте значение в шаблоне *\<Namespace>/\<Name>* и сохраните его для дальнейшего использования в этом руководстве.
+1. Скопируйте из него значения параметров **Пространство имен** и **Имя**. Создайте значение в формате *\<Namespace>/\<Name>* и сохраните его, чтобы использовать дальше при работе с этим руководством.
 
     ![Окно "Изменение атрибута"](./media/esalesmanagerremix-tutorial/configure2.png)
 
-1. В разделе **Конфигурация E Sales Manager Remix ** выберите **Настроить E Sales Manager Remix**.
+1. В разделе **Конфигурация E Sales Manager Remix** выберите **Настроить E Sales Manager Remix**.
 
-    ![Снимок экрана, на котором показан раздел "E Sales Manager Remix Configuration" с выбранным параметром "настроить E Sales Manager Remix".](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_configure.png) 
+    ![Снимок экрана: раздел "Конфигурация E Sales Manager Remix" с выбранным параметром "Настроить E Sales Manager Remix".](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_configure.png) 
 
     Откроется окно **Настройка единого входа**
 
 1. Из раздела **Краткий справочник** скопируйте URL-адрес выхода и URL-адрес службы единого входа SAML.
 
-1. Нажмите **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
     ![Кнопка "Сохранить"](./media/esalesmanagerremix-tutorial/tutorial_general_400.png)
 
@@ -137,7 +137,7 @@ ms.locfileid: "92453935"
 
     ![Команда "To Administrator Menu" (К меню администратора)](./media/esalesmanagerremix-tutorial/configure4.png)
 
-1. В левой области выберите **Параметры системы**  >  **взаимодействие с внешней системой**.
+1. В левой области выберите **System settings** > **Cooperation with external system** (Параметры системы > Взаимодействие с внешней системой).
 
     ![Ссылки "Параметры системы" и "Взаимодействие с внешней системой"](./media/esalesmanagerremix-tutorial/configure5.png)
     
@@ -157,16 +157,16 @@ ms.locfileid: "92453935"
 
     d. В текстовое поле **Issuer (entity ID)** (Издатель или идентификатор сущности) вставьте значение идентификатора, скопированное ранее из раздела **Домены и URL-адреса приложения E Sales Manager Remix** на портале Azure.
 
-    д. Чтобы передать скачанный с портала Azure сертификат, щелкните **File selection** (Выбор файла).
+    д) Чтобы передать скачанный с портала Azure сертификат, щелкните **File selection** (Выбор файла).
 
-    f. В поле **ID provider login URL** (URL-адрес входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
+    е) В поле **ID provider login URL** (URL-адрес входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
 
     ж. В поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте URL-адрес выхода, скопированный на портале Azure.
 
     h. Выберите **Setting complete** (Завершить настройку).
 
 > [!TIP]
-> Настроив приложение, вы можете прочитать краткую версию предыдущих инструкций на [портале Azure](https://portal.azure.com). После добавления приложения в раздел **Active Directory**  >  **корпоративные приложения** выберите вкладку **единый вход** , а затем откройте внедренную документацию в разделе **конфигурации** внизу. На [этой странице]( https://go.microsoft.com/fwlink/?linkid=845985) вы можете получить дополнительную информацию о встроенной документации Azure AD.
+> Настроив приложение, вы можете прочитать краткую версию предыдущих инструкций на [портале Azure](https://portal.azure.com). Добавив приложение из раздела **Active Directory** > **Корпоративные приложения**, выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** внизу. На [этой странице]( https://go.microsoft.com/fwlink/?linkid=845985) вы можете получить дополнительную информацию о встроенной документации Azure AD.
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -175,11 +175,11 @@ ms.locfileid: "92453935"
 
 ![Создание тестового пользователя Azure AD][100]
 
-1. В портал Azure в левой области выберите **Azure Active Directory**.
+1. На портале Azure в области слева щелкните **Azure Active Directory**.
 
     ![Ссылка на Azure Active Directory](./media/paloaltoadmin-tutorial/create_aaduser_01.png)
 
-1. Чтобы отобразить список текущих пользователей, выберите **Пользователи и группы**  >  **все пользователи**.
+1. Чтобы отобразить список активных пользователей, выберите **Пользователи и группы** > **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/paloaltoadmin-tutorial/create_aaduser_02.png)
 
@@ -197,9 +197,9 @@ ms.locfileid: "92453935"
 
     b. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
-    c. Установите флажок **Показать пароль** и обратите внимание на значение, отображаемое в поле **пароль** .
+    c. Установите флажок **Показать пароль** и сохраните значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **создания**.
  
 ### <a name="create-an-e-sales-manager-remix-test-user"></a>Создание тестового пользователя E Sales Manager Remix
 
@@ -209,7 +209,7 @@ ms.locfileid: "92453935"
 
     ![Конфигурация E Sales Manager Remix](./media/esalesmanagerremix-tutorial/configure4.png)
 
-1. Выберите **Параметры компании**  >  **обслуживание отделов и сотрудников**, а затем выберите **зарегистрированные сотрудники**.
+1. Выберите **Your company's settings** > **Maintenance of departments and employees** (Параметры вашей компании > Обслуживание отделов и сотрудников), а затем щелкните **Employees registered** (Зарегистрированные сотрудники).
 
     ![Вкладка "Employees registered" (Зарегистрированные сотрудники)](./media/esalesmanagerremix-tutorial/user1.png)
 
@@ -243,7 +243,7 @@ ms.locfileid: "92453935"
 
     ![Ссылка на приложение E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_app.png)  
 
-1. В левой области выберите **Пользователи и группы**.
+1. В области слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 

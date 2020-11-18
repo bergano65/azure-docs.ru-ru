@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 11/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 4b0d2c6c3d70e73be25038c763f05ef572b56ebe
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 8e73ea3650e631bed277ab95092b714eef7596d4
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515685"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359163"
 ---
 # <a name="atlassian-jira-and-confluence-admin-guide-for-azure-active-directory"></a>Atlassian JIRA и Confluence в руководстве администратора для Azure Active Directory
 
@@ -50,7 +50,7 @@ ms.locfileid: "92515685"
 * Приложения Jira или Confluence также доступны вне сети компании.
 * Подключаемый модуль работает только с локальными версиями Jira и Confluence.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать установку подключаемого модуля, убедитесь в выполнении следующих требований.
 
@@ -91,7 +91,7 @@ ms.locfileid: "92515685"
 
 2. Откройте консоль администрирования Jira или Confluence и установите флажок **Надстройки**.
 
-3. В центре загрузки Майкрософт Скачайте [подключаемый модуль единого входа Microsoft SAML для JIRA](https://www.microsoft.com/download/details.aspx?id=56506) /  .[подключаемый модуль единого входа Microsoft SAML для Confluence](https://www.microsoft.com/download/details.aspx?id=56503).
+3. В центре загрузки Майкрософт скачайте [Подключаемый модуль SAML SSO для Jira от Microsoft](https://www.microsoft.com/download/details.aspx?id=56506)/ [Подключаемый модуль SAML SSO для Confluence от Microsoft](https://www.microsoft.com/download/details.aspx?id=56503).
 
    Соответствующая версия подключаемого модуля появится в результатах поиска.
 
@@ -109,11 +109,11 @@ ms.locfileid: "92515685"
 
 * **URL-адрес метаданных**. URL-адрес для получения метаданных федерации из Azure AD.
 
-* **Идентификаторы**. URL-адрес, который используется в Azure AD для проверки источника запроса. Это поле соответствует элементу **Идентификатор** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как https:// *\<domain:port>* /.
+* **Идентификаторы**. URL-адрес, который используется в Azure AD для проверки источника запроса. Это поле соответствует элементу **Идентификатор** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес в формате https:// *\<domain:port>* /.
 
-* **URL-адрес ответа**. URL-адрес ответа в поставщике удостоверений (IdP), который инициирует вход SAML. Это поле сопоставляется с элементом **URL-адрес ответа** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как https:// *\<domain:port>* /плугинс/сервлет/самл/АУС.
+* **URL-адрес ответа**. URL-адрес ответа в поставщике удостоверений (IdP), который инициирует вход SAML. Это поле сопоставляется с элементом **URL-адрес ответа** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес в формате https:// *\<domain:port>* /plugins/servlet/saml/auth.
 
-* **Sign On URL** (URL-адрес для входа). URL-адрес входа в поставщик удостоверений, который инициирует вход SAML. Он сопоставляется с элементом **Вход** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как https:// *\<domain:port>* /плугинс/сервлет/самл/АУС.
+* **Sign On URL** (URL-адрес для входа). URL-адрес входа в поставщик удостоверений, который инициирует вход SAML. Он сопоставляется с элементом **Вход** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес в формате https:// *\<domain:port>* /plugins/servlet/saml/auth.
 
 * **IdP Entity ID** (Идентификатор сущности IdP). Идентификатор сущности, который использует поставщик удостоверений. Это поле заполняется, если URL-адрес метаданных разрешен.
 

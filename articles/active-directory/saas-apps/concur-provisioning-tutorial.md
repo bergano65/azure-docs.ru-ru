@@ -7,15 +7,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 65db3bcbad905626a47b617c3c34935ec5cd0e88
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: edb21287b30f8ba77d6312ec6b456e20aa260598
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455426"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358218"
 ---
 # <a name="tutorial-configure-concur-for-automatic-user-provisioning"></a>Руководство по настройке Concur для автоматической подготовки пользователей
 
@@ -88,7 +88,7 @@ ms.locfileid: "92455426"
    
     ![Подтверждение действия](./media/concur-provisioning-tutorial/ic721732.png "Подтверждение действия")
 
-6. В [портал Azure](https://portal.azure.com)перейдите в раздел **Azure Active Directory > корпоративные приложения > все приложения** .
+6. На [портале Azure](https://portal.azure.com) перейдите в раздел **Azure Active Directory > Корпоративные приложения > Все приложения**.
 
 7. Если в Concur уже настроен единый вход, найдите свой экземпляр Concur с помощью поля поиска. В противном случае щелкните **Добавить** и выполните поиск **Concur** в коллекции приложений. Выберите Concur в результатах поиска и добавьте его в список приложений.
 
@@ -96,7 +96,7 @@ ms.locfileid: "92455426"
 
 9. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически). 
  
-    ![Снимок экрана: вкладка "подготовка" для Concur в портал Azure. Режим подготовки имеет значение автоматически, а кнопка Проверить подключение выделена.](./media/concur-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: вкладка "Подготовка" для Concur на портале Azure. Для параметра "Режим подготовки" задано значение "Автоматически". Выделена кнопка "Проверить подключение".](./media/concur-provisioning-tutorial/provisioning.png)
 
 10. В разделе **Учетные данные администратора** введите **имя пользователя** и **пароль** вашего администратора Concur.
 

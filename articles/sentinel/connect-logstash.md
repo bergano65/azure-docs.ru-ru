@@ -15,19 +15,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2020
 ms.author: yelevin
-ms.openlocfilehash: 7fe47289dcc6b6d6af4d13b36b5c3b1dae3baaf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 247abafd7abec38e43794b76268ee52538aee508
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89664727"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655686"
 ---
 # <a name="use-logstash-to-connect-data-sources-to-azure-sentinel"></a>Использование Logstash для подключения источников данных к Azure Sentinel
 
 > [!IMPORTANT]
 > Прием данных с помощью подключаемого модуля вывода Logstash в настоящее время находится в общедоступной предварительной версии. Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-С помощью нового подключаемого модуля **выходных данных для**Sentinel-метки Azure вы можете отправить любой тип журнала через Logstash непосредственно в log Analytics рабочую область в Azure Sentinel. Ваши журналы будут отправлены в настраиваемую таблицу, которая будет определяться с помощью подключаемого модуля вывода.
+С помощью нового подключаемого модуля **выходных данных для** Sentinel-метки Azure вы можете отправить любой тип журнала через Logstash непосредственно в log Analytics рабочую область в Azure Sentinel. Ваши журналы будут отправлены в настраиваемую таблицу, которая будет определяться с помощью подключаемого модуля вывода.
 
 Дополнительные сведения о работе с подсистемой сбора данных Logstash см. в статье [Приступая к работе с Logstash](https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html).
 
@@ -48,8 +48,8 @@ ms.locfileid: "89664727"
 
 Подключаемый модуль выходных данных Azure Sentinel для Logstash отправляет данные в формате JSON в рабочую область Log Analytics с помощью REST API сборщика данных Log Analytics HTTP. Данные принимаются в пользовательские журналы.
 
-- Дополнительные сведения о [Log Analytics REST API](https://docs.microsoft.com/rest/api/loganalytics/create-request).
-- Дополнительные сведения о [пользовательских журналах](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-custom-logs).
+- Дополнительные сведения о [Log Analytics REST API](/rest/api/loganalytics/create-request).
+- Дополнительные сведения о [пользовательских журналах](../azure-monitor/platform/data-sources-custom-logs.md).
 
 ## <a name="deploy-the-azure-sentinel-output-plugin-in-logstash"></a>Развертывание подключаемого модуля выходных данных Azure Sentinel в Logstash
 
@@ -57,7 +57,7 @@ ms.locfileid: "89664727"
 
 Подключаемый модуль выходных данных Azure-Sentinel доступен в коллекции Logstash.
 
-- Чтобы установить подключаемый модуль ***Microsoft-Logstash-Output-Azure-loganalytics*** , следуйте инструкциям в документе Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) .
+- Чтобы установить подключаемый модуль **_Microsoft-Logstash-Output-Azure-loganalytics_* _, следуйте инструкциям в документе Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) .
    
 - Если у вашей системы Logstash нет доступа к Интернету, следуйте инструкциям в документе по [управлению подключаемым модулем Logstash offline](https://www.elastic.co/guide/en/logstash/current/offline-plugins.html) , чтобы подготовить и использовать автономный пакет подключаемого модуля. (Для этого потребуется создать другую систему Logstash с доступом к Интернету.)
 
@@ -67,7 +67,7 @@ ms.locfileid: "89664727"
 
 | Имя поля | Тип данных | Описание |
 |----------------|---------------|-----------------|
-| `workspace_id` | строка | Введите идентификатор GUID рабочей области. * |
+| `workspace_id` | строка | Введите идентификатор GUID рабочей области. _ |
 | `workspace_key` | строка | Введите идентификатор GUID первичного ключа рабочей области. * |
 | `custom_log_table_name` | строка | Задайте имя таблицы, в которую будут поступать журналы. Можно настроить только одно имя таблицы для каждого подключаемого модуля вывода. Таблица журнала появится в столбце Метка Azure в разделе **журналы** **в категории** **пользовательские журналы** с `_CL` суффиксом. |
 | `endpoint` | строка | Дополнительное поле. По умолчанию это конечная точка Log Analytics. Используйте это поле, чтобы задать альтернативную конечную точку. |
@@ -162,7 +162,7 @@ ms.locfileid: "89664727"
 
 1. Чтобы просмотреть записи в таблице, запросите таблицу, используя имя таблицы в качестве схемы.
 
-   :::image type="content" source="./media/connect-logstash/logstash-custom-logs-query.png" alt-text="Снимок экрана: журналы с пользовательскими журналами.":::
+   :::image type="content" source="./media/connect-logstash/logstash-custom-logs-query.png" alt-text="Снимок экрана запроса на пользовательский журнал для скрытия журнала.":::
 
 ## <a name="monitor-output-plugin-audit-logs"></a>Мониторинг журналов аудита подключаемого модуля вывода
 
@@ -170,7 +170,7 @@ ms.locfileid: "89664727"
 
 Если вы не видите данные в этом файле журнала, создайте и отправьте некоторые события локально (через подключаемые модули ввода и фильтрации), чтобы убедиться, что подключаемый модуль вывода получает данные. Sentinel Azure будет поддерживать только проблемы, связанные с подключаемым модулем вывода.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как использовать Logstash для подключения внешних источников данных к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

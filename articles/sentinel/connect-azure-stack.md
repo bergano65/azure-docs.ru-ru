@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: 9ff70e7c05ca8de49f560fba3d59f0609785b8c4
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 9ac4aa9e93ac296913d7a62e83b182d673015bae
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636781"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655975"
 ---
 # <a name="connect-azure-stack-hub-virtual-machines-to-azure-sentinel"></a>Подключение виртуальных машин Azure Stack HUB к Azure Sentinel
 
@@ -34,8 +34,8 @@ ms.locfileid: "94636781"
 
 Добавьте расширение виртуальной машины **Azure Monitor, Update и Configuration Management** в виртуальные машины, работающие в центре Azure Stack. 
 
-1. На новой вкладке браузера Войдите на [портал центра Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-use-portal#access-the-portal).
-2. Перейдите на страницу **виртуальные машины** , выберите виртуальную машину, которую необходимо защитить с помощью Azure Sentinel. Сведения о том, как создать виртуальную машину в центре Azure Stack, см. в статье Создание виртуальной машины [Windows Server с помощью портала Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-windows-portal) или [Создание виртуальной машины сервера Linux с помощью портала концентратора Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-linux-portal).
+1. На новой вкладке браузера Войдите на [портал центра Azure Stack](/azure-stack/user/azure-stack-use-portal#access-the-portal).
+2. Перейдите на страницу **виртуальные машины** , выберите виртуальную машину, которую необходимо защитить с помощью Azure Sentinel. Сведения о том, как создать виртуальную машину в центре Azure Stack, см. в статье Создание виртуальной машины [Windows Server с помощью портала Azure Stack](/azure-stack/user/azure-stack-quick-windows-portal) или [Создание виртуальной машины сервера Linux с помощью портала концентратора Azure Stack](/azure-stack/user/azure-stack-quick-linux-portal).
 3. Выберите **Расширения**. Появится список расширений виртуальных машин, которые установлены на этой виртуальной машине.
 4. Откройте вкладку **Добавить**. Откроется колонка меню **Новый ресурс** и отобразится список доступных расширений виртуальных машин. 
 5. Выберите расширение **управления Azure Monitor, обновление и настройка** и нажмите кнопку **создать**. Откроется окно **Установка расширения** конфигурации.
@@ -61,7 +61,7 @@ ms.locfileid: "94636781"
 Чтобы удалить расширение, сделайте следующее:
 
 1. Откройте **портал центра Azure Stack**.
-2. Перейдите к странице **Виртуальные машины** , выберите виртуальную машину, с которой нужно удалить расширение.
+2. Перейдите к странице **Виртуальные машины**, выберите виртуальную машину, с которой нужно удалить расширение.
 3. Выберите **Расширения** и щелкните расширение **Microsoft.EnterpriseCloud.Monitoring**.
 4. Щелкните **Удалить** и подтвердите выбор.
 

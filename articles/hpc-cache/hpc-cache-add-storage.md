@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: c1edbaf394a4abd36e47843a6f419eb9d62f08d7
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: b2497a49703ab675bde50c7845995c92de32f376
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340314"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657182"
 ---
 # <a name="add-storage-targets"></a>Добавление целевых объектов хранилища
 
@@ -103,9 +103,9 @@ ms.locfileid: "92340314"
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
-
 ### <a name="prerequisite-storage-account-access"></a>Необходимое условие: доступ к учетной записи хранения
+
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Перед добавлением целевого объекта хранилища BLOB-объектов убедитесь, что кэш имеет нужные роли для доступа к учетной записи хранения, и что параметры брандмауэра допускают создание целевого объекта хранилища.
 
@@ -185,9 +185,9 @@ az hpc-cache blob-storage-target add --resource-group "hpc-cache-group" \
 
 | Модель использования                   | Режим кэширования | Проверка серверной части | Максимальная задержка записи на сервер |
 |-------------------------------|--------------|-----------------------|--------------------------|
-| Частое чтение, редкие операции записи | Чтение         | Никогда                 | None                     |
+| Частое чтение, редкие операции записи | Чтение         | Никогда                 | Нет                     |
 | Более 15% операций записи       | Чтение/запись   | Никогда                 | 1 час                   |
-| Клиенты обходят кэш      | Чтение         | 30 секунд            | None                     |
+| Клиенты обходят кэш      | Чтение         | 30 секунд            | Нет                     |
 
 ### <a name="create-an-nfs-storage-target"></a>Создание целевого объекта хранилища NFS
 
@@ -217,7 +217,7 @@ az hpc-cache blob-storage-target add --resource-group "hpc-cache-group" \
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Чтобы создать целевой объект хранилища, используйте команду Azure CLI [AZ HPC-Cache NFS-Storage-Target Add](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target#ext-hpc-cache-az-hpc-cache-nfs-storage-target-add) .
 
@@ -244,7 +244,7 @@ az hpc-cache blob-storage-target add --resource-group "hpc-cache-group" \
   * ``nfs-export`` — Экспорт системы хранения, связываемый с путем, ориентированным на клиента
   * ``target-path`` (необязательно) — подкаталог экспорта (при необходимости).
 
-  Например, ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``.
+  Пример: ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``
 
   Дополнительные сведения о функции виртуального пространства имен см. в статье [Настройка агрегированного пространства имен](hpc-cache-namespace.md) .
 
@@ -301,7 +301,7 @@ az hpc-cache nfs-storage-target add --resource-group "hpc-cache-group" --cache-n
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Настройте Azure CLI для кэша HPC Azure](./az-cli-prerequisites.md).
 
 Чтобы отобразить существующие целевые объекты хранилища для кэша, воспользуйтесь параметром [AZ HPC-Cache Storage-Target List](/cli/azure/ext/hpc-cache/hpc-cache/storage-target#ext-hpc-cache-az-hpc-cache-storage-target-list) . Укажите имя кэша и группу ресурсов (если вы не настроили ее глобально).
 
@@ -343,7 +343,7 @@ $
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания целевых объектов хранилища продолжите выполнение этих задач, чтобы подготовить кэш к использованию:
 

@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 05/21/2018
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 7babe23426cafe01cadc7a5557f91896aa9bbae4
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 0b7fee330f93097b561714ecc938eaf3fee8f2b5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108207"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657335"
 ---
 # <a name="problem-installing-the-application-proxy-agent-connector"></a>Проблема при установке соединителя агента прокси приложения
 
@@ -39,7 +39,7 @@ ms.locfileid: "92108207"
 
 **Цель:** Убедитесь, что компьютер соединителя может подключаться к конечной точке регистрации прокси приложения, а также к странице входа Майкрософт.
 
-1.  На сервере соединителя выполните проверку порта с помощью [Telnet](https://docs.microsoft.com/windows-server/administration/windows-commands/telnet) или другого средства тестирования портов, чтобы убедиться, что порты 443 и 80 открыты.
+1.  На сервере соединителя выполните проверку порта с помощью [Telnet](/windows-server/administration/windows-commands/telnet) или другого средства тестирования портов, чтобы убедиться, что порты 443 и 80 открыты.
 
 2.  Если какой-либо из этих портов не прошел успешно, убедитесь, что брандмауэр или серверный прокси имеет доступ к нужным доменам и портам, а затем [Подготовьте локальную среду](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
 
@@ -77,8 +77,8 @@ ms.locfileid: "92108207"
 Возможные значения **исинусерсторе** : **true** и **false**. Значение **true** означает, что автоматически обновленный сертификат хранится в личном контейнере в хранилище сертификатов пользователя сетевой службы. Значение **false** означает, что сертификат клиента был создан во время установки или регистрации, инициированного Register-AppProxyConnectorной командой, и хранится в личном контейнере в хранилище сертификатов на локальном компьютере.
 
 Если значение равно **true**, выполните следующие действия для проверки сертификата:
-1. Скачать [PsTools.zip](https://docs.microsoft.com/sysinternals/downloads/pstools)
-2. Извлеките [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec) из пакета и выполните команду **PsExec-i-u "NT authority\network Service" cmd.exe** из командной строки с повышенными привилегиями.
+1. Скачать [PsTools.zip](/sysinternals/downloads/pstools)
+2. Извлеките [PsExec](/sysinternals/downloads/psexec) из пакета и выполните команду **PsExec-i-u "NT authority\network Service" cmd.exe** из командной строки с повышенными привилегиями.
 3. Запустите **CertMgr. msc** в вновь появившийся командной строке.
 4. В консоли управления разверните личный контейнер и щелкните Сертификаты.
 5. Определение местонахождения сертификата, выданного **connectorregistrationca.msappproxy.NET**
@@ -101,7 +101,7 @@ Import-module AppProxyPSModule
 Register-AppProxyConnector
 ```
 
-Дополнительные сведения о команде Register-AppProxyConnector см. в статье [Создание сценария автоматической установки для соединителя AD application proxy Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-register-connector-powershell) .
+Дополнительные сведения о команде Register-AppProxyConnector см. в статье [Создание сценария автоматической установки для соединителя AD application proxy Azure](./application-proxy-register-connector-powershell.md) .
 
 ## <a name="verify-admin-is-used-to-install-the-connector"></a>Проверка прав администратора у пользователя, устанавливающего соединитель
 

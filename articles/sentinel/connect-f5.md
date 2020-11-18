@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/20/2020
 ms.author: yelevin
-ms.openlocfilehash: 63e20467750e9a4b0c85de33180d4fa51831e59b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 81a0f0e01827c48518f2eb1fba062e9e6536d9df
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85555406"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655703"
 ---
 # <a name="connect-f5-asm-to-azure-sentinel"></a>Подключение F5 ASM к Azure Sentinel
 
@@ -43,6 +43,5 @@ ms.locfileid: "85555406"
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить F5 ASM к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
-- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](./tutorial-detect-threats-built-in.md).
 - [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
-

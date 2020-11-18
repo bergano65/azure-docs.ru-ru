@@ -9,12 +9,12 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 08/30/2020
 ms.author: yelevin
-ms.openlocfilehash: 05a2869152def0fc9a44defaa21f0643d9fdbb08
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4dffaac329f1581d9082fd8ab2c314f52b1730ab
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504882"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656026"
 ---
 # <a name="connect-data-from-azure-firewall"></a>Подключение данных из брандмауэра Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "89504882"
 
 Вы можете подключить журналы брандмауэра Azure к Azure Sentinel, что позволит просматривать данные журналов в книгах, использовать их для создания пользовательских оповещений и внедрять их для улучшения расследования.
 
-Дополнительные сведения о [мониторинге журналов брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-diagnostics).
+Дополнительные сведения о [мониторинге журналов брандмауэра Azure](../firewall/firewall-diagnostics.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -60,7 +60,7 @@ ms.locfileid: "89504882"
 >
 > С этим конкретным соединителем данных индикаторы состояния подключения (цветовая полоса в коллекции соединителей данных и значки подключения рядом с именами типов данных) отображаются как *подключенные* (зеленые), только если данные были приняты в течение последних двух недель. По прошествии двух недель без приема данных соединитель будет отображаться как отключенный. В то время, когда поступает больше данных, состояние *Connected* будет возвращено.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить журналы брандмауэра Azure к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
