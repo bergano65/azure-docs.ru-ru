@@ -44,6 +44,8 @@
       href: concepts-identity.md
     - name: Управление доступом на основе ролей
       href: concepts-role-based-access-control.md
+    - name: Мониторинг и восстановление частных облаков
+      href: concepts-monitor-repair-private-cloud.md
     - name: Обновления частного облака
       href: concepts-upgrades.md
 - name: Практические руководства

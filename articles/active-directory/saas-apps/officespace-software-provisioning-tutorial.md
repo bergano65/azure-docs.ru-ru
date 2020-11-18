@@ -1,6 +1,6 @@
 ---
-title: Руководство. Настройка программного обеспечения Officespace Software для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в программном обеспечении Officespace Software.
+title: Руководство по настройке OfficeSpace Software для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в OfficeSpace Software.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,19 +8,19 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/02/2019
 ms.author: Zhchia
-ms.openlocfilehash: fe48cef0fb235d217f95012e81d7daf501928300
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: fc67d649e3a7cd094eb2c3d633244077abcab308
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518574"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359935"
 ---
-# <a name="tutorial-configure-officespace-software-for-automatic-user-provisioning"></a>Учебник. Настройка программного обеспечения Officespace Software для автоматической подготовки пользователей
+# <a name="tutorial-configure-officespace-software-for-automatic-user-provisioning"></a>Руководство по настройке OfficeSpace Software для автоматической подготовки пользователей
 
-Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить в Officespace Software Software и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и (или) групп в Officespace Software Software.
+В этом учебнике описаны шаги, которые необходимо выполнить в OfficeSpace Software и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в OfficeSpace Software.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
@@ -32,43 +32,43 @@ ms.locfileid: "92518574"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * клиент Azure AD;
-* [Клиент Officespace Software Software](https://www.officespacesoftware.com/)
-* Учетная запись пользователя в Officespace Software Software с разрешениями администратора.
+* [клиент OfficeSpace Software](https://www.officespacesoftware.com/);
+* учетная запись пользователя в OfficeSpace Software с разрешениями администратора.
 
-## <a name="assigning-users-to-officespace-software"></a>Назначение пользователей для Officespace Software Software
+## <a name="assigning-users-to-officespace-software"></a>Назначение пользователей OfficeSpace Software
 
-В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки учетных записей пользователей синхронизируются только пользователи и группы, назначенные приложению в Azure AD.
+В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая *назначением*. В контексте автоматической подготовки синхронизируются только те пользователи и (или) группы, которые были назначены конкретному приложению в Azure AD.
 
-Перед настройкой и включением автоматической подготовки пользователей следует решить, какие пользователи и (или) группы в Azure AD должны иметь доступ к программному обеспечению Officespace Software. После принятия решения вы можете назначить этих пользователей и (или) группы для Officespace Software программного обеспечения, следуя приведенным ниже инструкциям.
+Перед настройкой и включением автоматической подготовки пользователей необходимо решить, какие пользователи или группы в Azure AD будут иметь доступ к OfficeSpace Software. После этого пользователей и (или) группы можно будет назначить OfficeSpace Software, следуя приведенным ниже указаниям.
 * [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
-## <a name="important-tips-for-assigning-users-to-officespace-software"></a>Важные советы по назначению пользователей в Officespace Software Software
+## <a name="important-tips-for-assigning-users-to-officespace-software"></a>Важные рекомендации по назначению пользователей OfficeSpace Software
 
-* Рекомендуется назначить одного пользователя Azure AD в Officespace Software Software для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется назначить одного пользователя Azure AD платформе OfficeSpace Software для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя Officespace Software Software необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя OfficeSpace Software в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (если доступно). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
-## <a name="set-up-officespace-software-for-provisioning"></a>Настройка программного обеспечения Officespace Software для подготовки
+## <a name="set-up-officespace-software-for-provisioning"></a>Настройка OfficeSpace Software для подготовки
 
-1. Войдите в [консоль администратора программного обеспечения officespace Software](https://support.officespacesoftware.com/hc). Перейдите в раздел **параметры > соединители**.
+1. Войдите в [консоль OfficeSpace Software](https://support.officespacesoftware.com/hc). Выберите **Settings > Connectors** (Параметры > Соединители).
 
-    ![Консоль администрирования программного обеспечения Officespace Software](media/officespace-software-provisioning-tutorial/settings.png)
+    ![Консоль OfficeSpace Software](media/officespace-software-provisioning-tutorial/settings.png)
 
-2.  Перейдите в **Каталог синхронизация > scim**.
+2.  Последовательно выберите **Directory Synchronization > SCIM** (Синхронизация каталогов > SCIM).
 
-    ![Officespace Software Software Add SCIM](media/officespace-software-provisioning-tutorial/scim.png)
+    ![Добавление SCIM в OfficeSpace Software](media/officespace-software-provisioning-tutorial/scim.png)
 
-3.  Скопируйте **маркер проверки подлинности scim**. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения Officespace Software Software на портал Azure.
+3.  Скопируйте **токен проверки подлинности SCIM**. Его нужно будет ввести в поле "Секретный токен" на вкладке "Подготовка" для приложения OfficeSpace Software на портале Azure.
 
-    ![Токен создания программного обеспечения Officespace Software](media/officespace-software-provisioning-tutorial/token.png)
+    ![Создание токена OfficeSpace Software](media/officespace-software-provisioning-tutorial/token.png)
 
-## <a name="add-officespace-software-from-the-gallery"></a>Добавление программного обеспечения Officespace Software из коллекции
+## <a name="add-officespace-software-from-the-gallery"></a>Добавление OfficeSpace Software из коллекции
 
-Перед настройкой программного обеспечения Officespace Software для автоматической подготовки пользователей с помощью Azure AD необходимо добавить Officespace Software Software из коллекции приложений Azure AD в список управляемых приложений SaaS.
+Перед настройкой OfficeSpace Software для автоматической подготовки пользователей в Azure AD необходимо добавить OfficeSpace Software из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить программное обеспечение Officespace Software из коллекции приложений Azure AD, выполните следующие действия.**
+**Чтобы добавить OfficeSpace Software из коллекции приложений Azure AD, сделайте следующее.**
 
-1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory**.
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева выберите элемент **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -76,22 +76,22 @@ ms.locfileid: "92518574"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **новое приложение** в верхней части области.
+3. Чтобы добавить новое приложение, в области сверху нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Officespace Software Software**, выберите **officespace Software Software** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **OfficeSpace Software**, выберите **OfficeSpace Software** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![OfficeSpace Software в списке результатов](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-officespace-software"></a>Настройка автоматической подготовки пользователей в Officespace Software Software 
+## <a name="configuring-automatic-user-provisioning-to-officespace-software"></a>Настройка автоматической подготовки пользователей в OfficeSpace Software 
 
-В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Officespace Software Software на основе назначений пользователей и групп в Azure AD.
+В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в OfficeSpace Software на основе их назначений в Azure AD.
 
 > [!TIP]
-> Вы также можете включить единый вход на основе SAML для Officespace Software Software, следуя инструкциям в [руководстве по единому входу в Officespace Software Software](./officespace-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две функции дополняют друг друга.
+> Вы также можете настроить для OfficeSpace Software единый вход на основе SAML, следуя инструкциям из [учебника по единому входу в OfficeSpace Software](./officespace-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
 
-### <a name="to-configure-automatic-user-provisioning-for-officespace-software-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для программного обеспечения Officespace Software в Azure AD, сделайте следующее:
+### <a name="to-configure-automatic-user-provisioning-for-officespace-software-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей OfficeSpace Software в Azure AD, сделайте следующее.
 
 1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
 
@@ -103,13 +103,13 @@ ms.locfileid: "92518574"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите `https://<subdomain>.officespacesoftware.com/api/scim/v2/` Формат URL-адреса в поле **URL-адрес клиента**. Например, `https://contoso.officespacesoftware.com/api/scim/v2/`. Введите значение **маркера проверки подлинности scim** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключаться к программному обеспечению officespace Software. В случае сбоя подключения убедитесь, что учетная запись программного обеспечения Officespace Software имеет разрешения администратора, и повторите попытку.
+5. В разделе **Учетные данные администратора** в поле **URL-адрес клиента** введите URL-адрес в формате `https://<subdomain>.officespacesoftware.com/api/scim/v2/`. Например, `https://contoso.officespacesoftware.com/api/scim/v2/`. Введите полученное ранее значение **токена проверки подлинности SCIM** в поле **Секретный токен**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к OfficeSpace Software. Если установить подключение не удалось, убедитесь, что у учетной записи OfficeSpace Software есть разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -119,21 +119,21 @@ ms.locfileid: "92518574"
 
 7. Выберите команду **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с officespace Software Software**.
+8. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с OfficeSpace Software**.
 
-    ![Сопоставления пользователей с программным обеспечением Officespace Software](media/officespace-software-provisioning-tutorial/usermappings.png)
+    ![Сопоставления пользователей OfficeSpace Software](media/officespace-software-provisioning-tutorial/usermappings.png)
 
-9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Officespace Software Software в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в officespace Software Software для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в OfficeSpace Software. Атрибуты, выбранные как свойства в разделе **Сопоставление**, используются для сопоставления учетных записей пользователей в OfficeSpace Software для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя Officespace Software Software](media/officespace-software-provisioning-tutorial/userattributes.png)
+    ![Атрибуты пользователя OfficeSpace Software](media/officespace-software-provisioning-tutorial/userattributes.png)
 
 11. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-12. Чтобы включить службу подготовки Azure AD для Officespace Software Software, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+12. Чтобы включить службу подготовки Azure AD для OfficeSpace Software, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-13. Определите пользователей и (или) группы, которые вы хотите подготавливать для Officespace Software Software, выбрав нужные значения в **области** в разделе **Параметры** .
+13. Определите пользователей или группы для подготовки в OfficeSpace Software, выбрав нужные значения в поле **Область** раздела **Параметры**.
 
     ![Область действия подготовки](common/provisioning-scope.png)
 
@@ -141,7 +141,7 @@ ms.locfileid: "92518574"
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов по подготовке, в которых описаны все действия, выполняемые службой подготовки Azure AD в officespace Software Software.
+После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD с приложением OfficeSpace Software.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 

@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: bf2282c5fda29cd266778a322efa4a0a33139c35
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: aed1aa03527481014a63c636181725b91b17a1e8
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372388"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697311"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>How to index Cosmos DB data using an indexer in Azure Cognitive Search (Индексирование данных Cosmos DB с помощью индексатора в службе "Когнитивный поиск Azure") 
 
@@ -137,7 +137,7 @@ ms.locfileid: "94372388"
 
 ### <a name="1---assemble-inputs-for-the-request"></a>1. формирование входных данных для запроса
 
-Для каждого запроса необходимо указать имя службы и ключ администратора для Azure Когнитивный поиск (в заголовке POST), а также имя и ключ учетной записи хранения для хранилища BLOB-объектов. Вы можете использовать [POST](search-get-started-postman.md) для отправки HTTP-запросов в Azure когнитивный Поиск.
+Для каждого запроса необходимо указать имя службы и ключ администратора для Azure Когнитивный поиск (в заголовке POST), а также имя и ключ учетной записи хранения для хранилища BLOB-объектов. Для отправки HTTP-запросов в Когнитивный поиск Azure можно использовать [POST или Visual Studio Code](search-get-started-rest.md) .
 
 Скопируйте следующие четыре значения в блокнот, чтобы их можно было вставить в запрос:
 
@@ -194,7 +194,7 @@ ms.locfileid: "94372388"
 Вы можете указать SQL-запрос для преобразования вложенных свойств или массивов в плоскую структуру, проецирования свойств JSON, а также для фильтрации данных, подлежащих индексированию. 
 
 > [!WARNING]
-> Пользовательские запросы не поддерживаются для **API MongoDB** , **api Gremlin** и **API Cassandra** : `container.query` параметр должен иметь значение null или быть пропущен. Если вам нужно использовать пользовательский запрос, сообщите нам об этом через сайт [User Voice](https://feedback.azure.com/forums/263029-azure-search).
+> Пользовательские запросы не поддерживаются для **API MongoDB**, **api Gremlin** и **API Cassandra**: `container.query` параметр должен иметь значение null или быть пропущен. Если вам нужно использовать пользовательский запрос, сообщите нам об этом через сайт [User Voice](https://feedback.azure.com/forums/263029-azure-search).
 
 Пример документа:
 
@@ -278,7 +278,7 @@ SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @High
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
-| Другие объекты JSON |Н/Д |
+| Другие объекты JSON |Недоступно |
 
 ### <a name="4---configure-and-run-the-indexer"></a>4. Настройка и запуск индексатора
 

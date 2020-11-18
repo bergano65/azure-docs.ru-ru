@@ -7,15 +7,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: arvinh
-ms.openlocfilehash: 41ed942ea8962e845b7392656639e0d6bcdccbf5
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 58fe99164c390d8a9435e5aa65e55fe7fca5d6db
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515930"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359482"
 ---
 # <a name="tutorial-configure-slack-for-automatic-user-provisioning"></a>Руководство по настройке Slack для автоматической подготовки пользователей
 
@@ -73,11 +73,11 @@ ms.locfileid: "92515930"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
 5. В разделе **Учетные данные администратора** щелкните **Авторизовать**. В новом окне браузера откроется диалоговое окно авторизации Slack.
 

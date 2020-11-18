@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 351503db52e4c62414cd5dcbae1f750032a37eb7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eea3c8525d31a3ca551e9cbc7d21d7dde163b5cc
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542280"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698008"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
 Ознакомьтесь с ответами на часто задаваемые вопросы, шаблонами и рекомендациями относительно службы управления API Azure.
@@ -71,18 +71,7 @@ ms.locfileid: "91542280"
 * командлетов PowerShell для [развертывания служб](/powershell/module/wds) и [управления ими](/powershell/azure/servicemanagement/overview).
 
 ### <a name="how-do-i-add-a-user-to-the-administrators-group"></a>Как добавить пользователя в группу администраторов?
-Есть несколько способов добавления пользователя в эту группу:
-
-1. Войдите на [портал Azure](https://portal.azure.com).
-2. Перейдите в группу ресурсов, где содержится экземпляр службы управления API, который нужно обновить.
-3. В службе управления API назначьте пользователю роль **участника "Служба управления API** ".
-
-Теперь добавленный участник сможет использовать [командлеты](/powershell/azure/) Azure PowerShell. Войдите в систему от имени администратора:
-
-1. Используйте командлет `Connect-AzAccount`, чтобы войти.
-2. Задайте контекст для подписки, содержащей службу, используя `Set-AzContext -SubscriptionID <subscriptionGUID>`.
-3. Получите URL-адрес единого входа, выполнив `Get-AzApiManagementSsoToken -ResourceGroupName <rgName> -Name <serviceName>`.
-4. Используйте этот URL-адрес, чтобы войти на портал администрирования.
+Группы администраторов являются неизменяемыми системными группами. Администраторы подписки Azure являются членами этой группы. Невозможно добавить пользователя в эту группу. Дополнительные сведения см. в статье [Создание и использование групп для управления учетными записями разработчиков в службе управления API Azure](./api-management-howto-create-groups.md) .
 
 ### <a name="why-is-the-policy-that-i-want-to-add-unavailable-in-the-policy-editor"></a>Почему политика, которую я хочу добавить, недоступна в редакторе политик?
 Если в редакторе политик нужная политика отображается серым цветом или недоступна, убедитесь в правильности области ее действия. Каждый оператор предназначен для использования в конкретной области и разделе политики. Разделы политики и области ее действия см. в подразделе об использовании в разделе [API Management policies](./api-management-policies.md) (Политики управления API).

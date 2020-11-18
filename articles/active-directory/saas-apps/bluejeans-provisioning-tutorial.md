@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 7d3aafe93c92a1c756358dfb60a2ca976036d8b8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 204cdc689d5a117df428bb314a81a35081f7b13c
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273713"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357663"
 ---
 # <a name="tutorial-configure-bluejeans-for-automatic-user-provisioning"></a>Руководство по настройке BlueJeans для автоматической подготовки пользователей
 
@@ -42,7 +42,7 @@ ms.locfileid: "91273713"
 
 **Чтобы добавить BlueJeans из коллекции приложений Azure AD, выполните следующие действия:**
 
-1. В **[портал Azure](https://portal.azure.com)** на панели навигации слева выберите **Azure Active Directory**.
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева выберите элемент **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -50,11 +50,11 @@ ms.locfileid: "91273713"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **новое приложение** в верхней части области.
+3. Чтобы добавить новое приложение, в области сверху нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **BlueJeans**, выберите **BlueJeans** на панели результатов, а затем нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **BlueJeans**, выберите **BlueJeans** в области результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![BlueJeans в списке результатов](common/search-new-app.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "91273713"
 
 ### <a name="to-configure-automatic-user-provisioning-for-bluejeans-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в BlueJeans:
 
-1. Войдите в [портал Azure](https://portal.azure.com) и выберите **корпоративные приложения**, выберите **все приложения**, а затем щелкните **BlueJeans**.
+1. Войдите на [портал Azure](https://portal.azure.com), а затем выберите **Корпоративные приложения**, **Все приложения** и **BlueJeans**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -91,11 +91,11 @@ ms.locfileid: "91273713"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Снимок экрана боковой панели приложения BlueJeans Enterprise с выделенным и вызываемым параметром подготовки.](./media/bluejeans-provisioning-tutorial/BluejeansProvisioningTab.png)
+    ![Снимок экрана: боковая панель приложения BlueJeans Enterprise Application с выделенным параметром Provisioning (Подготовка).](./media/bluejeans-provisioning-tutorial/BluejeansProvisioningTab.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана страницы подготовки с вызываемыми разделами "режим подготовки" и "учетные данные администратора".](./media/bluejeans-provisioning-tutorial/Bluejeans1.png)
+    ![Снимок экрана: страница Provisioning (Подготовка) с выделенными разделами Provisioning Mode (Режим подготовки) и Admin Credentials (Учетные данные администратора).](./media/bluejeans-provisioning-tutorial/Bluejeans1.png)
 
 5. В разделе **Учетные данные администратора** введите **учетные данные** и **пароль** администратора своей учетной записи BlueJeans. Примеры этих значений:
 
@@ -105,17 +105,17 @@ ms.locfileid: "91273713"
 
 6. После заполнения поля, указанного в шаге 5, щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к BlueJeans. Если установить подключение не удалось, убедитесь, что учетной записи BlueJeans назначены разрешения администратора, и повторите попытку.
 
-    ![Снимок экрана раздела "учетные данные администратора" с вызываемым параметром "проверить подключение".](./media/bluejeans-provisioning-tutorial/BluejeansTestConnection.png)
+    ![Снимок экрана: раздел Admin Credentials (Учетные данные администратора) и кнопка Test Connection (Протестировать подключение).](./media/bluejeans-provisioning-tutorial/BluejeansTestConnection.png)
 
 7. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
-    ![Снимок экрана: текстовое поле уведомления по электронной почте.](./media/bluejeans-provisioning-tutorial/BluejeansNotificationEmail.png)
+    ![Снимок экрана: текстовое поле Notification Email (Адрес электронной почты для уведомлений).](./media/bluejeans-provisioning-tutorial/BluejeansNotificationEmail.png)
 
 8. Выберите команду **Сохранить**.
 
 9. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Users to BlueJeans** (Синхронизировать пользователей Azure Active Directory с BlueJeans).
 
-    ![Снимок экрана раздела "сопоставления" с выделенным параметром "синхронизировать Azure Active Directory пользователей с BlueJeans".](./media/bluejeans-provisioning-tutorial/BluejeansMapping.png)
+    ![Снимок экрана: раздел Mappings (Сопоставления) с выделенным параметром Synchronize Azure Active Directory Users to BlueJeans (Синхронизировать пользователей Azure Active Directory с BlueJeans).](./media/bluejeans-provisioning-tutorial/BluejeansMapping.png)
 
 10. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в BlueJeans. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в BlueJeans для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
@@ -125,15 +125,15 @@ ms.locfileid: "91273713"
 
 12. Чтобы включить службу подготовки Azure AD для BlueJeans, в разделе **Параметры** измените значение параметра **Состояние подготовки** на **Включено**.
 
-    ![Снимок экрана раздела параметров с параметром "состояние подготовки", установленным в значение "вкл.".](./media/bluejeans-provisioning-tutorial/BluejeansProvisioningStatus.png)
+    ![Снимок экрана: раздел Settings (Параметры) со значением On (Вкл.) для параметра Provisioning Status (Состояние подготовки).](./media/bluejeans-provisioning-tutorial/BluejeansProvisioningStatus.png)
 
 13. Определите пользователей или группы для подготовки в BlueJeans, выбрав нужные значения в поле **Область** раздела **Параметры**.
 
-    ![Снимок экрана настройки области с выделенным параметром "синхронизировать только назначенные пользователи и группы".](./media/bluejeans-provisioning-tutorial/UserGroupSelection.png)
+    ![Снимок экрана: параметр Scope (Область) с выделенным параметром Sync only assigned users and groups (Синхронизировать только назначенных пользователей и группы).](./media/bluejeans-provisioning-tutorial/UserGroupSelection.png)
 
 14. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
 
-    ![Снимок экрана боковой панели приложения BlueJeans Enterprise с вызываемым параметром Save.](./media/bluejeans-provisioning-tutorial/SaveProvisioning.png)
+    ![Снимок экрана: боковая панель приложения BlueJeans Enterprise Application с выделенной кнопкой Save (Сохранить).](./media/bluejeans-provisioning-tutorial/SaveProvisioning.png)
 
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые с приложением BlueJeans службой подготовки Azure AD.
 

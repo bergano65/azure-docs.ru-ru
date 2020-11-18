@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 04/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 9880834cf722b1898316ef1dfcfe89ad945ffadf
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: f060a6ee2b5968c1d1daf3c668b6e7009b6ccd69
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92459266"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358139"
 ---
 # <a name="tutorial-configure-juno-journey-for-automatic-user-provisioning"></a>Руководство по Настройка Juno Journey для автоматической подготовки пользователей
 
@@ -77,15 +77,15 @@ ms.locfileid: "92459266"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
 5. В разделе **Учетные данные администратора** введите в поле **URL-адрес арендатора** значение URL-адреса, полученное ранее. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Щелкните **Проверить подключение** и убедитесь, что Azure AD может подключиться к Juno Journey. Если подключение установить не удалось, убедитесь, что у учетной записи Juno Journey есть разрешения администратора, и повторите попытку.
 
-    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/juno-journey-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: диалоговое окно учетных данных администратора, в котором можно ввести URL-адрес клиента и секретный токен.](./media/juno-journey-provisioning-tutorial/provisioning.png)
 
 6. В поле **Электронная почта для уведомлений** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

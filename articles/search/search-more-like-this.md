@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: cd6b64f118460a115963ed0bf105641d80334348
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1c2f8058a85bbc0643ed31a7dc910339d0f6d9dd
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934996"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697056"
 ---
 # <a name="morelikethis-preview-in-azure-cognitive-search"></a>moreLikeThis (Предварительная версия) в Azure Когнитивный поиск
 
@@ -66,9 +66,9 @@ GET /indexes/hotels-sample-index/docs?moreLikeThis=20&searchFields=Description&$
 GET /indexes/hotels-sample-index/docs?moreLikeThis=20&searchFields=Description&$filter=(Category eq 'Budget' and Rating gt 3.5)&$top=3&$select=HotelId,HotelName,Rating&api-version=2020-06-30-Preview
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для экспериментов с этой функцией можно использовать любое средство веб-тестирования.  Мы рекомендуем использовать POST в этом упражнении.
 
 > [!div class="nextstepaction"]
-> [Знакомство с Azure Когнитивный поиск API-интерфейсами RESTFUL с помощью POST](search-get-started-postman.md)
+> [Знакомство с интерфейсами API службы Azure Когнитивный поиск](search-get-started-rest.md)

@@ -1,7 +1,7 @@
 ---
 title: Подключение к вычислительному экземпляру в Visual Studio Code (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Узнайте, как подключиться к вычислительному экземпляру Машинное обучение Azure в Visual Studio Code
+description: Узнайте, как подключиться к вычислительному экземпляру Машинное обучение Azure в Visual Studio Code для выполнения рабочих нагрузок интерактивного Jupyter Notebook и удаленной разработки.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.custom: how-to
 ms.author: jmartens
 author: j-martens
-ms.date: 09/03/2020
-ms.openlocfilehash: 6ac116b315d4a11b51b37c5b51edf35aa0676713
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/16/2020
+ms.openlocfilehash: 2abad31173992a891e908bdbb61c37e905907d69
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708379"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697584"
 ---
 # <a name="connect-to-an-azure-machine-learning-compute-instance-in-visual-studio-code-preview"></a>Подключение к вычислительному экземпляру Машинное обучение Azure в Visual Studio Code (Предварительная версия)
 
@@ -134,7 +134,7 @@ Host azmlci1
 |----|---------|
 |Узел|Использование любой краткой формы для вычислительного экземпляра |
 |HostName|Это IP-адрес вычислительного экземпляра |
-|Порт|Это порт, показанный в диалоговом окне SSH выше |
+|Port|Это порт, показанный в диалоговом окне SSH выше |
 |Пользователь|Это должно быть `azureuser` |
 |идентитифиле|Должен указывать на файл, в который был сохранен закрытый ключ |
 
@@ -150,7 +150,7 @@ Host azmlci1
 
 С этого момента вы полностью работаете с вычислительным экземпляром, и теперь можете редактировать, отлаживать, использовать Git, использовать расширения и т. д., как и в случае с локальными Visual Studio Code.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы настроили Visual Studio Code удаленно, вы можете использовать вычислительный экземпляр в качестве удаленного вычислений от Visual Studio Code для [интерактивной отладки кода](how-to-debug-visual-studio-code.md).
 

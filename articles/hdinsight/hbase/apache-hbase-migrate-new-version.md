@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
-ms.openlocfilehash: 3e35dc35746f08f48150a738b927433065fc1c67
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 8ce25780e197c26e0e5b102670e093031e1a2582
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92910276"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697668"
 ---
 # <a name="migrate-an-apache-hbase-cluster-to-a-new-version"></a>Перенос данных кластера Apache HBase в новую версию
 
@@ -54,7 +54,7 @@ ms.locfileid: "92910276"
 
    ![Используйте ту же учетную запись хранения, но создайте другой контейнер](./media/apache-hbase-migrate-new-version/same-storage-different-container.png)
 
-1. Очистите исходный кластер HBase, который представляет собой обновляемый кластер. HBase записывает входящие данные в хранилище в памяти, которое называется _memstore_ . После того как memstore достигнет определенного размера, HBase записывает его на диск для долгосрочного хранения в учетной записи хранения кластера. При удалении старого кластера memstore очищается, что может привести к потере данных. Чтобы вручную перенести данные memstore для каждой таблицы на диск, выполните следующий скрипт. Последнюю версию этого скрипта можно найти на [GitHub](https://raw.githubusercontent.com/Azure/hbase-utils/master/scripts/flush_all_tables.sh) для Azure.
+1. Очистите исходный кластер HBase, который представляет собой обновляемый кластер. HBase записывает входящие данные в хранилище в памяти, которое называется _memstore_. После того как memstore достигнет определенного размера, HBase записывает его на диск для долгосрочного хранения в учетной записи хранения кластера. При удалении старого кластера memstore очищается, что может привести к потере данных. Чтобы вручную перенести данные memstore для каждой таблицы на диск, выполните следующий скрипт. Последнюю версию этого скрипта можно найти на [GitHub](https://raw.githubusercontent.com/Azure/hbase-utils/master/scripts/flush_all_tables.sh) для Azure.
 
     ```bash
     #!/bin/bash
@@ -191,7 +191,7 @@ ms.locfileid: "92910276"
    hdfs dfs -cp hdfs://mycluster/hbasewal /hbase-wal-backup**
    ```
     
-1. Войдите в Ambari в новом кластере HDInsight. Измените параметр HDFS `fs.defaultFS`, чтобы указать имя контейнера, используемого в исходном кластере. Этот параметр находится в разделе **HDFS > Configs (Конфигурации) > Advanced (Расширенные) > Advanced core-site (Расширенный основной сайт)** .
+1. Войдите в Ambari в новом кластере HDInsight. Измените параметр HDFS `fs.defaultFS`, чтобы указать имя контейнера, используемого в исходном кластере. Этот параметр находится в разделе **HDFS > Configs (Конфигурации) > Advanced (Расширенные) > Advanced core-site (Расширенный основной сайт)**.
 
    ![В Ambari щелкните службы > HDFS > configs > дополнительно.](./media/apache-hbase-migrate-new-version/hdfs-advanced-settings.png)
 
@@ -223,9 +223,9 @@ ms.locfileid: "92910276"
    hdfs dfs -cp /hbase-wal-backup/hbasewal hdfs://mycluster/**
    ```
    
-1. Если вы обновляете HDInsight 3,6 до 4,0, выполните описанные ниже действия, в противном случае перейдите к шагу 10.
+1. Если вы обновляете HDInsight 3,6 до 4,0, выполните описанные ниже действия, в противном случае перейдите к шагу 13.
 
-    1. Перезапустите все необходимые службы в Ambari, выбрав **службы**  >  **все необходимые для перезапуска** .
+    1. Перезапустите все необходимые службы в Ambari, выбрав **службы**  >  **все необходимые для перезапуска**.
     1. Завершите работу службы HBase.
     1. Подключитесь к узлу Zookeeper по протоколу SSH и выполните команду [zkCli](https://github.com/go-zkcli/zkcli) , `rmr /hbase-unsecure` чтобы удалить корневой Znode будет удален HBase из Zookeeper.
     1. Перезапустите HBase.
@@ -243,7 +243,7 @@ ms.locfileid: "92910276"
 
 1. Если новый кластер подходит, удалите исходный кластер.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [Apache HBase](https://hbase.apache.org/) и обновлении кластеров HDInsight см. в следующих статьях:
 

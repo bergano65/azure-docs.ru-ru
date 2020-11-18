@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: e2c6f627c69316b8f146d3ac82b8d29801ec3902
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 834e4fe8c7b3923f40a07c02c0310200db222308
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91740689"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697260"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Создание простого запроса в Azure Когнитивный поиск
 
@@ -27,7 +27,7 @@ ms.locfileid: "91740689"
 
 В следующих примерах используется индекс поиска вакансий в Нью-Йорке, состоящий из вакансий, доступных на основе набора данных, полученных в рамках инициативы [City of New York OpenData](https://nycopendata.socrata.com/). Эти данные не являются текущими или завершенными. Индекс находится в службе "песочницы", предоставляемой корпорацией Майкрософт. Это означает, что для работы с этими запросами не требуется подписка Azure или Azure Когнитивный поиск.
 
-Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в разделе [Краткое руководство. изучение когнитивный Поиск Azure REST API с помощью процедуры POST](search-get-started-postman.md).
+Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в разделе [Краткое руководство. изучение REST API когнитивный Поиск Azure](search-get-started-rest.md).
 
 ### <a name="set-the-request-header"></a>Настройка заголовка запроса
 
@@ -43,7 +43,7 @@ ms.locfileid: "91740689"
 
 Запрос — это команда GET с URL-адресом, содержащим конечную точку Когнитивный поиск Azure и строку поиска.
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="Запрос POST заголовка GET" border="false":::
 
 URL-адрес содержит следующие элементы.
 
@@ -97,7 +97,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 Результат запроса должен выглядеть, как на снимке экрана ниже.
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-sample-results.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/postman-sample-results.png" alt-text="Пример ответа Postman" border="false":::
 
 Вы могли заметить оценку поиска в ответе. Универсальная оценка 1 отображается, если приоритет не указан, потому что выполнен поиск не всего текста или не указано условие. Для нулевого поиска без критериев строки возвращаются в произвольном порядке. Когда вы добавите условие поиска, вы увидите, как оценки поиска превратятся в понятные значения.
 
@@ -133,7 +133,7 @@ POST /indexes/nycjobs/docs/search?api-version=2020-06-30
 
 Если они используются вместе, сначала ко всему индексу применяется фильтр, а затем в результатах фильтрации выполняется поиск. Поэтому фильтры могут повысить производительность запросов, так как они уменьшают количество документов, которые поисковый запрос должен обработать.
 
-  :::image type="content" source="media/search-query-simple-examples/filtered-query.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/filtered-query.png" alt-text="Фильтр ответа на запрос" border="false":::
 
 Если вы хотите попробовать это в Postman, используя GET, вы можете вставить эту строку:
 
@@ -167,7 +167,7 @@ POST /indexes/nycjobs/docs/search?api-version=2020-06-30
       "count": "true"
     }
 ```
-  :::image type="content" source="media/search-query-simple-examples/rangefilternumeric.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/rangefilternumeric.png" alt-text="Фильтр диапазона для числовых диапазонов" border="false":::
 
 
 ```http
@@ -181,7 +181,7 @@ POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     }
 ```
 
-  :::image type="content" source="media/search-query-simple-examples/rangefiltertext.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/rangefiltertext.png" alt-text="Фильтр диапазона для текстовых диапазонов" border="false":::
 
 Вы также можете попробовать их в Postman, используя GET:
 
@@ -251,14 +251,14 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchMode=any&search="fire department"  -"Metrotech Center"
 ```
 
-  :::image type="content" source="media/search-query-simple-examples/searchmodeany.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/searchmodeany.png" alt-text="режим поиска &quot;любой&quot;" border="false":::
 
 Изменение значения параметра searchMode на `all` обеспечивает эффект накопления условий и возвращает меньший результирующий набор — 21 документ. Это документы, содержащие фразу ""fire department", кроме вакансий по адресу Metrotech Center.
 
 ```http
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchMode=all&search="fire department"  -"Metrotech Center"
 ```
-  :::image type="content" source="media/search-query-simple-examples/searchmodeall.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/searchmodeall.png" alt-text="режим поиска &quot;все&quot;" border="false":::
 
 ## <a name="example-8-structuring-results"></a>Пример 8. Структурирование результатов
 
@@ -285,7 +285,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=5
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Попробуйте указать запросы в коде. Чтобы узнать о том, как настроить поисковые запросы для .NET и REST API, используя простой синтаксис по умолчанию, воспользуйтесь приведенными ссылками.
 
 * [Запрос индекса с помощью пакета SDK для .NET](./search-get-started-dotnet.md)

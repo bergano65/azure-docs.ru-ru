@@ -8,15 +8,15 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 05/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 5ea7211ea895c5f6db3e84e382632737468898fb
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: MT
+ms.openlocfilehash: 25767a7ddb83acf3ad10698f9f2ff8949a0ad55f
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319098"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357204"
 ---
 # <a name="tutorial-configure-8x8-for-automatic-user-provisioning"></a>Руководство по Настройка 8x8 для автоматической подготовки пользователей
 
@@ -94,17 +94,17 @@ ms.locfileid: "92319098"
 
 3. Выберите вкладку **Подготовка**. Нажмите кнопку **Начало работы**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
    ![Колонка "Начало работы"](./media/8x8-provisioning-tutorial/get-started.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
 5. В разделе **Учетные данные администратора** скопируйте **URL-адрес 8x8** из Configuration Manager в поле **URL-адрес клиента**. Скопируйте **маркер API 8x8** из Configuration Manager в поле **Секретный маркер**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к 8x8. Если установить подключение не удалось, убедитесь, что у учетной записи 8x8 есть разрешения администратора, и повторите попытку.
 
-    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/8x8-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: диалоговое окно учетных данных администратора, в котором можно ввести URL-адрес клиента и секретный токен.](./media/8x8-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 
