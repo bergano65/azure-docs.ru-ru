@@ -4,12 +4,12 @@ description: Содержит ответы на некоторые распро�
 ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: dikamath
-ms.openlocfilehash: 99e9e53693e42f907250331894f55ed0160f9e30
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 2d71c30d2fb08629674c352ae812d8890463abfe
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577521"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695107"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
@@ -253,7 +253,7 @@ VMware HCX Enterprise Edition (EE) предоставляется в соста�
 
 #### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Разделы справки запросить увеличение квоты узла для решения VMware для Azure?
 
-Для управляемых подписок CSP клиент должен выполнить запрос к партнеру, и Партнерская группа будет привлекаться к корпорации Майкрософт, чтобы увеличить квоту для подписки. 
+Для управляемых подписок CSP клиент должен выполнить запрос к партнеру, и Партнерская группа будет привлекаться к корпорации Майкрософт, чтобы увеличить квоту для подписки. Дополнительные сведения см. в [статье о том, как включить ресурсы решения VMware для Azure](enable-azure-vmware-solution.md) . 
 
 Для подписок EA клиент должен выполнить эту процедуру.
 
@@ -299,6 +299,10 @@ VMware HCX Enterprise Edition (EE) предоставляется в соста�
 #### Are Reserved Instances available for purchasing through the Cloud Solution Provider (CSP) program?
 
 Yes. CSP can purchase reserved instances on behalf of their customers, see [Save costs with a reserved instance](reserved-instance.md) article. 
+
+#### Does Azure VMware Solution offer multi-tenancy for hosting CSP partners?
+
+No. Currently Azure VMware Solution does not offer multi-tenancy.
 
 
 ## Customer communication

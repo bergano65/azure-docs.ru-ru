@@ -9,12 +9,12 @@ tags: Lucene query analyzer syntax
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: 3d2172f76faecfc8347d7e0ca13fb506817f25de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae4dd8b82e40b46da52a1b1f396569fda1dfea2b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91740706"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94694632"
 ---
 # <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-cognitive-search"></a>Использование полного синтаксиса поиска Lucene (расширенные запросы в Azure Когнитивный поиск)
 
@@ -30,7 +30,7 @@ ms.locfileid: "91740706"
 
 В следующих примерах используется индекс поиска вакансий в Нью-Йорке, состоящий из вакансий, доступных на основе набора данных, полученных в рамках инициативы [City of New York OpenData](https://opendata.cityofnewyork.us/). Эти данные не являются текущими или завершенными. Индекс находится в службе "песочницы", предоставляемой корпорацией Майкрософт. Это означает, что для работы с этими запросами не требуется подписка Azure или Azure Когнитивный поиск.
 
-Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в статье [Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman](search-get-started-postman.md).
+Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в статье [Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman](search-get-started-rest.md).
 
 ### <a name="set-the-request-header"></a>Настройка заголовка запроса
 
@@ -46,7 +46,7 @@ ms.locfileid: "91740706"
 
 Запрос — это команда GET с URL-адресом, содержащим конечную точку Когнитивный поиск Azure и строку поиска.
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="Запрос POST заголовка GET" border="false":::
 
 URL-адрес содержит следующие элементы.
 
@@ -137,7 +137,7 @@ $select=business_title, posting_type&search=business_title:(senior NOT junior) A
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&$select=business_title&search=business_title:(senior NOT junior)
 ```
 
-  :::image type="content" source="media/search-query-lucene-examples/intrafieldfilter.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/intrafieldfilter.png" alt-text="Пример выражения поиска ответа после примера" border="false":::
 
 Можно определить операцию поиска по полю с помощью синтаксиса **fieldname: сеарчекспрессион** , где выражение поиска может представлять собой одно слово или фразу или более сложное выражение в круглых скобках, при необходимости с логическими операторами. Вот несколько примеров.
 
@@ -199,7 +199,7 @@ searchFields=business_title&$select=business_title&search=business_title:%22seni
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:%22senior%20analyst%22~1
 ```
-  :::image type="content" source="media/search-query-lucene-examples/proximity-before.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/proximity-before.png" alt-text="Запрос с учетом расположения" border="false":::
 
 Выполните эту операцию поиска снова, при этом не допуская разделения словосочетания "senior analyst" другими словами. Обратите внимание на то, что для этого запроса возвращены 8 документов, в отличие от 10 документов для предыдущего запроса.
 
@@ -217,7 +217,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:computer%20analyst
 ```
-  :::image type="content" source="media/search-query-lucene-examples/termboostingbefore.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/termboostingbefore.png" alt-text="Повышение приоритета термина before" border="false":::
 
 В запросе after выполните этот поиск снова, при этом повышая приоритет результатов, содержащих термин *analyst*, относительно результатов, содержащих слово *computer*, если оба слова не встречаются одновременно. 
 
@@ -226,7 +226,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 ```
 Более понятная для человека версия приведенного выше запроса: `search=business_title:computer analyst^2`. Для работоспособности запроса `^2` кодируется как `%5E2`, что сложнее для чтения.
 
-  :::image type="content" source="media/search-query-lucene-examples/termboostingafter.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/termboostingafter.png" alt-text="Повышение приоритета термина after" border="false":::
 
 Повышение приоритета терминов отличается от профилей повышения, так как они повышают приоритет определенных полей, а не определенных терминов. В следующем примере показаны эти различия.
 
@@ -253,7 +253,7 @@ searchFields=business_title&$select=business_title&search=business_title:/(Sen|J
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:/(Sen|Jun)ior/
 ```
 
-  :::image type="content" source="media/search-query-lucene-examples/regex.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/regex.png" alt-text="Запрос регулярных выражений" border="false":::
 
 > [!Note]
 > Запросы с регулярными выражениями не [анализируются](./search-lucene-query-architecture.md#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
@@ -275,13 +275,13 @@ searchFields=business_title&$select=business_title&search=business_title:prog*
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:prog*
 ```
-  :::image type="content" source="media/search-query-lucene-examples/wildcard.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/wildcard.png" alt-text="Запрос с подстановочным знаком" border="false":::
 
 > [!Note]
 > Запросы с подстановочными знаками не [анализируются](./search-lucene-query-architecture.md#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Попробуйте указать средство синтаксического анализа запросов Lucene в коде. Чтобы узнать о том, как настроить запросы поиска для .NET и REST API, воспользуйтесь приведенными ссылками. В этих ссылках используется простой синтаксис по умолчанию, поэтому потребуется применить полученные из этой статьи знания, чтобы задать **queryType**.
 
 * [Запрос индекса с помощью пакета SDK для .NET](./search-get-started-dotnet.md)
@@ -292,4 +292,4 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 + [Примеры запросов с использованием простого синтаксиса](search-query-simple-examples.md)
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
 + [Простой синтаксис запросов](/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [Полный синтаксис запросов Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search)
++ [Полный синтаксис запроса Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search)

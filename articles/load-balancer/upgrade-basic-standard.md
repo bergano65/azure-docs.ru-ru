@@ -7,15 +7,15 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: 66c56ae6730043022a0d8bf3c94f7c6ce14d9852
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd0617536147787f436e5817f3f2367a19ba6aa4
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84809341"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696189"
 ---
 # <a name="upgrade-azure-public-load-balancer"></a>Обновление общедоступных Load Balancer Azure
-[Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus).
+[Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](./skus.md#skus).
 
 Обновление состоит из трех этапов.
 
@@ -34,7 +34,7 @@ ms.locfileid: "84809341"
 
 ### <a name="caveatslimitations"></a>кавеатс\лимитатионс
 
-* Скрипт поддерживает только общедоступные Load Balancer обновления. Инструкции по внутреннему обновлению базового Load Balancer см. на [этой странице](https://docs.microsoft.com/azure/load-balancer/upgrade-basicinternal-standard) .
+* Скрипт поддерживает только общедоступные Load Balancer обновления. Инструкции по внутреннему обновлению базового Load Balancer см. на [этой странице](./upgrade-basicinternal-standard.md) .
 * Load Balancer (цен. категория "Стандартный") имеет новый общедоступный адрес. Невозможно легко переместить IP-адреса, связанные с существующими базовыми Load Balancer, в Load Balancer (цен. категория "Стандартный"), так как они имеют разные номера SKU.
 * Если стандартный балансировщик нагрузки создан в другом регионе, вы не сможете связать существующие виртуальные машины в старом регионе с вновь созданной Load Balancer (цен. категория "Стандартный"). Чтобы обойти это ограничение, обязательно создайте новую виртуальную машину в новом регионе.
 * Если у Load Balancer нет внешней IP-конфигурации или серверного пула, то, скорее всего, будет обнаружена ошибка, которая вызвала бы выполнение скрипта. Убедитесь, что они не пусты.
@@ -103,16 +103,16 @@ ms.locfileid: "84809341"
    
     1. Выберите внутренний пул, соответствующий внутреннему пулу базового Load Balancer, выберите следующее значение: 
       - **Виртуальная машина**: раскрывающийся список и выберите виртуальные машины из соответствующего серверного пула базовых Load Balancer.
-    1. Щелкните **Сохранить**.
+    1. Нажмите кнопку **Сохранить**.
     >[!NOTE]
     >Для виртуальных машин, имеющих общедоступные IP-адреса, необходимо сначала создать стандартные, но не гарантируют, что IP-адрес не гарантируется. Отменяйте связь между виртуальными машинами и свяжите их с новыми стандартными IP-адресами. Затем вы сможете выполнить инструкции по добавлению виртуальных машин в серверный пул Load Balancer (цен. категория "Стандартный"). 
 
 * **Создание новых виртуальных машин для добавления в серверные пулы вновь созданного стандартного Общедоступного Load Balancer**.
-    * Дополнительные инструкции о том, как создать виртуальную машину и связать ее с Load Balancer (цен. категория "Стандартный"), можно найти [здесь](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal#create-virtual-machines).
+    * Дополнительные инструкции о том, как создать виртуальную машину и связать ее с Load Balancer (цен. категория "Стандартный"), можно найти [здесь](./quickstart-load-balancer-standard-public-portal.md#create-virtual-machines).
 
 ### <a name="create-an-outbound-rule-for-outbound-connection"></a>Создание правила исходящего трафика для исходящего подключения
 
-Следуйте [инструкциям](https://docs.microsoft.com/azure/load-balancer/configure-load-balancer-outbound-portal#create-outbound-rule-configuration) , чтобы создать правило исходящего трафика, чтобы можно было
+Следуйте [инструкциям](./quickstart-load-balancer-standard-public-powershell.md#create-outbound-rule-configuration) , чтобы создать правило исходящего трафика, чтобы можно было
 * Определение исходящего NAT с нуля.
 * Масштабирование и Настройка поведения существующего исходящего NAT.
 
@@ -130,6 +130,6 @@ ms.locfileid: "84809341"
   
 Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

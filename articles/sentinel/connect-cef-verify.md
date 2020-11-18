@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 8bdc9d588e89f498b973db7d1de299b0b26a3d02
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 974418a1b3c1e7fe93b2f6839c16169e5bd5abc5
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655737"
+ms.locfileid: "94697005"
 ---
 # <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
@@ -44,7 +44,7 @@ ms.locfileid: "94655737"
 1. Выполните следующий скрипт на стороне сервера пересылки журналов (вместо заполнителя используйте идентификатор рабочей области), чтобы проверить подключение между решением безопасности, пересылкой журнала и Sentinel Azure. Этот сценарий проверяет, что управляющая программа прослушивает правильные порты, что пересылка настроена правильно и что ничто не блокирует обмен данными между управляющей программой и агентом Log Analytics. Он также отправляет фиктивные сообщения "Тесткоммоневентформат" для проверки сквозного подключения. <br>
 
     ```bash
-    sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]` 
+    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]` 
     ```
 
    - Вы можете получить сообщение с запросом на выполнение команды для устранения проблемы с **сопоставлением поля *компьютер***. Дополнительные сведения см. в описании [в скрипте проверки](#mapping-command) .
@@ -244,7 +244,8 @@ ms.locfileid: "94655737"
     ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
+
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](./tutorial-detect-threats-built-in.md).

@@ -10,12 +10,12 @@ ms.service: load-balancer
 ms.topic: troubleshooting
 ms.date: 04/27/2020
 ms.author: anavin
-ms.openlocfilehash: 527f71b1980b5a62d3db94fe89a1bce98142e31a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae3899a61e942695fed1e3da5fc543b298a42e24
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84221010"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695560"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-load-balancer"></a>Устранение распространенных ошибок при развертывании в Azure с использованием Azure Load Balancer
 
@@ -35,11 +35,11 @@ ms.locfileid: "84221010"
 |CannotUseInactiveHealthProbe| Вы не можете применить пробу, которая не используется ни одним правилом, настроенным для проверки работоспособности масштабируемого набора виртуальных машин. Убедитесь, что настроенная проба активно используется. |
 |VMScaleSetCannotUseMultipleLoadBalancersOfSameType| Вы не можете использовать несколько экземпляров Load Balancer одного типа (внутренний, общедоступный). Вы можете использовать только один внутренний и один общедоступный экземпляр Load Balancer. |
 |VMScaleSetCannotReferenceLoadbalancerWhenLargeScaleOrCrossAZ | Load Balancer ценовой категории "Базовый" не поддерживается для масштабируемых наборов виртуальных машин с несколькими размещениями или несколькими зонами доступности. Используйте Load Balancer ценовой категории "Стандартный". |
-|MarketplacePurchaseEligibilityFailed | Переключитесь на правильную учетную запись администратора, чтобы разрешить покупки, так как используется подписка EA. С дополнительными сведениями вы можете ознакомиться [здесь](https://docs.microsoft.com/azure/marketplace/marketplace-faq-publisher-guide#what-could-block-a-customer-from-completing-a-purchase). |
+|MarketplacePurchaseEligibilityFailed | Переключитесь на правильную учетную запись администратора, чтобы разрешить покупки, так как используется подписка EA. С дополнительными сведениями вы можете ознакомиться [здесь](../marketplace/marketplace-faq-publisher-guide.md#what-could-block-a-customer-from-completing-a-purchase). |
 |ResourceDeploymentFailure| Если подсистема балансировки нагрузки находится в состоянии сбоя, выполните следующие шаги, чтобы устранить это состояние:<ol><li>Перейдите на сайт https://resources.azure.com и выполните вход с учетными данными для портала Azure.</li><li>Выберите **Чтение и запись**.</li><li>В области слева разверните узел **Подписки**, а затем разверните подписку, в которой нужно обновить Load Balancer.</li><li>Разверните узел **Группы ресурсов**, а затем разверните группу ресурсов, в которой нужно обновить Load Balancer.</li><li>Выберите **Microsoft.Network** > **LoadBalancers**, а затем выберите обновляемый экземпляр Load Balancer (в нашем примере это **LoadBalancer_1**).</li><li>На странице сведений о **LoadBalancer_1** щелкните **GET** > **Правка**.</li><li>Обновите параметр **ProvisioningState**, указав вместо **Failed** значение **Succeeded**.</li><li>Выберите **PUT**.</li></ol>|
 |  |  |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в [таблице сравнения ценовых категорий для Azure Load Balancer](./skus.md).
-* Изучите сведения о [лимитах для Azure Load Balancer](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#load-balancer).
+* Изучите сведения о [лимитах для Azure Load Balancer](../azure-resource-manager/management/azure-subscription-service-limits.md#load-balancer).

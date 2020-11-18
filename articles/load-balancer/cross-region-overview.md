@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: 898b0d00fcad99a1059e01ad54ce13d192f1227f
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 8b2f8e82cac1d26689659286a5a0f81f06fb68ca
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93398017"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695067"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Балансировщик нагрузки между регионами (Предварительная версия)
 
@@ -74,7 +74,7 @@ Azure Load Balancer (цен. категория "Стандартный") под
 
 Настроенный режим распределения нагрузки региональных подсистем балансировки нагрузки используется для принятия окончательного решения о маршрутизации, когда для географического сходства используются несколько региональных подсистем балансировки нагрузки.
 
-Дополнительные сведения см. в разделе [Настройка режима распределения для Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-distribution-mode).
+Дополнительные сведения см. в разделе [Настройка режима распределения для Azure Load Balancer](./load-balancer-distribution-mode.md).
 
 
 ### <a name="ability-to-scale-updown-behind-a-single-endpoint"></a>Возможность увеличения или уменьшения масштаба за одну конечную точку
@@ -84,7 +84,7 @@ Azure Load Balancer (цен. категория "Стандартный") под
 <!---To learn about how to add or remove a regional deployment from the backend, read more [here](TODO: Insert CLI doc here).--->
 
 ### <a name="static-ip"></a>Статический IP-адрес
-Балансировщик нагрузки между регионами поставляется со статическим общедоступным IP-адресом, который обеспечивает неизменность IP-адреса. Дополнительные сведения о статическом IP-адресе см. [здесь](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses#allocation-method) .
+Балансировщик нагрузки между регионами поставляется со статическим общедоступным IP-адресом, который обеспечивает неизменность IP-адреса. Дополнительные сведения о статическом IP-адресе см. [здесь](../virtual-network/public-ip-addresses.md#allocation-method) .
 
 ### <a name="client-ip-preservation"></a>Сохранение IP-адресов клиентов
 Балансировщик нагрузки между регионами — это сквозной балансировщик сетевой нагрузки уровня 4. Этот транзитный сервер сохраняет исходный IP-адрес пакета.  Исходный IP-адрес доступен для кода, выполняющегося на виртуальной машине. Такое сохранение позволяет применять логику, относящуюся к IP-адресу.
@@ -100,7 +100,7 @@ Azure Load Balancer (цен. категория "Стандартный") под
 * восточная часть США 2
 * западная часть США
 * Западная Европа
-* Юго-Восточная Азия
+* Southeast Asia
 * Центральная часть США
 * Северная Европа
 * Восточная Азия
@@ -124,9 +124,9 @@ Azure Load Balancer (цен. категория "Стандартный") под
 * Центрально-южная часть США 
 * Западная часть США 2 
 * южная часть Соединенного Королевства 
-* Юго-Восточная Азия 
+* Southeast Asia 
 * Центрально-северная часть США 
-* Восточная Япония 
+* Japan East 
 * Восточная Азия 
 * центрально-западная часть США 
 * Australia Southeast 

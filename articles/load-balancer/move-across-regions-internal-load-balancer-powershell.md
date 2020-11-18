@@ -6,18 +6,18 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: 63083c4bd058c63e21a40f2d245312a3f010b696
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 73a9356de555e33996b92f05c3bbbabb651f1c9f
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84808357"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94694803"
 ---
 # <a name="move-azure-internal-load-balancer-to-another-region-using-powershell"></a>Перемещение внутренних Load Balancer Azure в другой регион с помощью PowerShell
 
 Существуют различные сценарии, в которых необходимо переместить имеющуюся внутреннюю подсистему балансировки нагрузки из одного региона в другой. Например, может потребоваться создать внутреннюю подсистему балансировки нагрузки с той же конфигурацией для тестирования. Также может потребоваться переместить внутреннюю подсистему балансировки нагрузки в другой регион в рамках планирования аварийного восстановления.
 
-Внутренние подсистемы балансировки нагрузки Azure невозможно переместить из одного региона в другой. Однако можно использовать шаблон Azure Resource Manager для экспорта существующей конфигурации и виртуальной сети внутренней подсистемы балансировки нагрузки.  Затем можно разместить ресурс в другом регионе, экспортировав подсистему балансировки нагрузки и виртуальную сеть в шаблон, изменив параметры в соответствии с регионом назначения, а затем развернув шаблоны в новом регионе.  Дополнительные сведения о Resource Manager и шаблонах см. в разделе [Экспорт групп ресурсов в шаблоны](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-powershell#export-resource-groups-to-templates)
+Внутренние подсистемы балансировки нагрузки Azure невозможно переместить из одного региона в другой. Однако можно использовать шаблон Azure Resource Manager для экспорта существующей конфигурации и виртуальной сети внутренней подсистемы балансировки нагрузки.  Затем можно разместить ресурс в другом регионе, экспортировав подсистему балансировки нагрузки и виртуальную сеть в шаблон, изменив параметры в соответствии с регионом назначения, а затем развернув шаблоны в новом регионе.  Дополнительные сведения о Resource Manager и шаблонах см. в разделе [Экспорт групп ресурсов в шаблоны](../azure-resource-manager/management/manage-resource-groups-powershell.md#export-resource-groups-to-templates)
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -32,7 +32,7 @@ ms.locfileid: "84808357"
 
 - Убедитесь, что подписка Azure позволяет создавать внутренние подсистемы балансировки нагрузки в используемом целевом регионе. Свяжитесь со службой поддержки, чтобы включить необходимые квоты.
 
-- Убедитесь, что у вашей подписки достаточно ресурсов для поддержки добавления подсистем балансировки нагрузки для этого процесса.  См. раздел [Подписка Azure, пределы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits) .
+- Убедитесь, что у вашей подписки достаточно ресурсов для поддержки добавления подсистем балансировки нагрузки для этого процесса.  См. раздел [Подписка Azure, пределы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits) .
 
 
 ## <a name="prepare-and-move"></a>Подготовка и перемещение
@@ -43,18 +43,18 @@ ms.locfileid: "84808357"
 
 ### <a name="export-the-virtual-network-template-and-deploy-from-azure-powershell"></a>Экспорт шаблона виртуальной сети и развертывание из Azure PowerShell
 
-1. С помощью команды [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
+1. С помощью команды [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
     
     ```azurepowershell-interactive
     Connect-AzAccount
     ```
-2.  Получите идентификатор ресурса виртуальной сети, которую необходимо переместить в целевой регион, и поместите ее в переменную с помощью команды [Get-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
+2.  Получите идентификатор ресурса виртуальной сети, которую необходимо переместить в целевой регион, и поместите ее в переменную с помощью команды [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
 
     ```azurepowershell-interactive
     $sourceVNETID = (Get-AzVirtualNetwork -Name <source-virtual-network-name> -ResourceGroupName <source-resource-group-name>).Id
 
     ```
-3. Экспортируйте исходную виртуальную сеть в файл JSON в каталог, в котором выполняется команда [Export-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0):
+3. Экспортируйте исходную виртуальную сеть в файл JSON в каталог, в котором выполняется команда [Export-AzResourceGroup](/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0):
    
    ```azurepowershell-interactive
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceVNETID -IncludeParameterDefaultValue
@@ -98,16 +98,16 @@ ms.locfileid: "84808357"
 
     ```
   
-7. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
+7. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
 
     ```azurepowershell-interactive
 
     Get-AzLocation | format-table
     
     ```
-8.  Кроме того, можно изменить другие параметры в файле ** \<resource-group-name> JSON** , если выбрать, и они необязательны в зависимости от требований.
+8.  Кроме того, можно изменить другие параметры в файле **\<resource-group-name> JSON** , если выбрать, и они необязательны в зависимости от требований.
 
-    * **Адресное пространство** . адресное пространство виртуальной сети можно изменить перед сохранением, изменив раздел **Resources**  >  **аддрессспаце** и изменив свойство **аддресспрефиксес** в ** \<resource-group-name> JSON** -файле:
+    * **Адресное пространство** . адресное пространство виртуальной сети можно изменить перед сохранением, изменив раздел **Resources**  >  **аддрессспаце** и изменив свойство **аддресспрефиксес** в **\<resource-group-name> JSON** -файле:
 
         ```json
                 "resources": [
@@ -127,7 +127,7 @@ ms.locfileid: "84808357"
 
         ```
 
-    * **Подсеть** — имя подсети и адресное пространство подсети можно изменить или добавить в, изменив раздел **подсети** ** \<resource-group-name> JSON** -файла. Имя подсети можно изменить, изменив свойство **Name** . Адресное пространство подсети можно изменить, изменив свойство **addressPrefix** в ** \<resource-group-name> JSON** -файле:
+    * **Подсеть** — имя подсети и адресное пространство подсети можно изменить или добавить в, изменив раздел **подсети** **\<resource-group-name> JSON** -файла. Имя подсети можно изменить, изменив свойство **Name** . Адресное пространство подсети можно изменить, изменив свойство **addressPrefix** в **\<resource-group-name> JSON** -файле:
 
         ```json
                 "subnets": [
@@ -158,7 +158,7 @@ ms.locfileid: "84808357"
                 ]
         ```
 
-         Чтобы изменить префикс адреса в ** \<resource-group-name> JSON** , необходимо изменить его в двух местах: в разделе, приведенном выше, и в разделе **Type** , приведенном ниже.  Измените свойство **addressPrefix** , чтобы оно совпадало с указанным выше:
+         Чтобы изменить префикс адреса в **\<resource-group-name> JSON** , необходимо изменить его в двух местах: в разделе, приведенном выше, и в разделе **Type** , приведенном ниже.  Измените свойство **addressPrefix** , чтобы оно совпадало с указанным выше:
 
         ```json
          "type": "Microsoft.Network/virtualNetworks/subnets",
@@ -196,20 +196,20 @@ ms.locfileid: "84808357"
 
 9.  Сохраните файл **\<resource-group-name>.json**.
 
-10. Создайте группу ресурсов в целевом регионе для развертывания целевой виртуальной сети с помощью [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0) .
+10. Создайте группу ресурсов в целевом регионе для развертывания целевой виртуальной сети с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0) .
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
     
-11. Разверните измененный файл **\<resource-group-name>.json** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+11. Разверните измененный файл **\<resource-group-name>.json** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 
     New-AzResourceGroupDeployment -ResourceGroupName <target-resource-group-name> -TemplateFile <source-resource-group-name>.json
     
     ```
-12. Чтобы проверить, созданы ли ресурсы в целевом регионе, используйте [Get-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
+12. Чтобы проверить, созданы ли ресурсы в целевом регионе, используйте [Get-азресаурцеграуп](/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
     
     ```azurepowershell-interactive
 
@@ -224,19 +224,19 @@ ms.locfileid: "84808357"
     ```
 ### <a name="export-the-internal-load-balancer-template-and-deploy-from-azure-powershell"></a>Экспорт шаблона внутренней подсистемы балансировки нагрузки и развертывание из Azure PowerShell
 
-1. С помощью команды [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
+1. С помощью команды [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
     
     ```azurepowershell-interactive
     Connect-AzAccount
     ```
 
-2. Получите идентификатор ресурса внутренней подсистемы балансировки нагрузки, которую необходимо переместить в целевой регион, и поместите ее в переменную с помощью команды [Get-азлоадбаланцер](https://docs.microsoft.com/powershell/module/az.network/get-azloadbalancer?view=azps-2.6.0):
+2. Получите идентификатор ресурса внутренней подсистемы балансировки нагрузки, которую необходимо переместить в целевой регион, и поместите ее в переменную с помощью команды [Get-азлоадбаланцер](/powershell/module/az.network/get-azloadbalancer?view=azps-2.6.0):
 
     ```azurepowershell-interactive
     $sourceIntLBID = (Get-AzLoadBalancer -Name <source-internal-lb-name> -ResourceGroupName <source-resource-group-name>).Id
 
     ```
-3. Экспортируйте конфигурацию внутренней подсистемы балансировки нагрузки в файл JSON в каталог, в котором выполняется команда [Export-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0):
+3. Экспортируйте конфигурацию внутренней подсистемы балансировки нагрузки в файл JSON в каталог, в котором выполняется команда [Export-азресаурцеграуп](/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0):
    
    ```azurepowershell-interactive
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceIntLBID -IncludeParameterDefaultValue
@@ -263,7 +263,7 @@ ms.locfileid: "84808357"
              }
     ```
  
-6. Чтобы изменить целевую виртуальную сеть, которая была перемещена выше, сначала необходимо получить идентификатор ресурса, а затем скопировать и вставить его в ** \<resource-group-name> JSON** .  Чтобы получить идентификатор, используйте команду [Get-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
+6. Чтобы изменить целевую виртуальную сеть, которая была перемещена выше, сначала необходимо получить идентификатор ресурса, а затем скопировать и вставить его в **\<resource-group-name> JSON** .  Чтобы получить идентификатор, используйте команду [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
    
    ```azurepowershell-interactive
     $targetVNETID = (Get-AzVirtualNetwork -Name <target-vnet-name> -ResourceGroupName <target-resource-group-name>).Id
@@ -275,7 +275,7 @@ ms.locfileid: "84808357"
     /subscriptions/7668d659-17fc-4ffd-85ba-9de61fe977e8/resourceGroups/myResourceGroupVNET-Move/providers/Microsoft.Network/virtualNetworks/myVNET2-Move
     ```
 
-7.  В файле ** \<resource-group-name> . JSON** вставьте **идентификатор ресурса** из переменной вместо **DefaultValue** во втором параметре для целевого идентификатора виртуальной сети, убедитесь, что путь заключен в кавычки:
+7.  В файле **\<resource-group-name> . JSON** вставьте **идентификатор ресурса** из переменной вместо **DefaultValue** во втором параметре для целевого идентификатора виртуальной сети, убедитесь, что путь заключен в кавычки:
    
     ```json
          "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -291,7 +291,7 @@ ms.locfileid: "84808357"
              }
     ```
 
-8. Чтобы изменить целевой регион, в который будет перемещена конфигурация внутренней подсистемы балансировки нагрузки, измените свойство **Location** в разделе **ресурсы** в файле ** \<resource-group-name> . JSON** :
+8. Чтобы изменить целевой регион, в который будет перемещена конфигурация внутренней подсистемы балансировки нагрузки, измените свойство **Location** в разделе **ресурсы** в файле **\<resource-group-name> . JSON** :
 
     ```json
         "resources": [
@@ -306,7 +306,7 @@ ms.locfileid: "84808357"
                 },
     ```
 
-11. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
+11. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
 
     ```azurepowershell-interactive
 
@@ -315,7 +315,7 @@ ms.locfileid: "84808357"
     ```
 12. Кроме того, при необходимости можно изменить другие параметры в шаблоне:
     
-    * **SKU** . номер SKU внутренней подсистемы балансировки нагрузки можно изменить в конфигурации с Standard на Basic или Basic на Standard, изменив **sku**  >  свойство**имя** SKU в ** \<resource-group-name> JSON** -файле:
+    * **SKU** . номер SKU внутренней подсистемы балансировки нагрузки можно изменить в конфигурации с Standard на Basic или Basic на Standard, изменив **sku**  >  свойство **имя** SKU в **\<resource-group-name> JSON** -файле:
 
         ```json
         "resources": [
@@ -329,9 +329,9 @@ ms.locfileid: "84808357"
                 "tier": "Regional"
             },
         ```
-      Дополнительные сведения о различиях между подсистемами балансировки нагрузки уровня "базовый" и "Стандартный" см. в статье [обзор Load Balancer (цен. Категория "Стандартный") Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview) .
+      Дополнительные сведения о различиях между подсистемами балансировки нагрузки уровня "базовый" и "Стандартный" см. в статье [обзор Load Balancer (цен. Категория "Стандартный") Azure](./load-balancer-overview.md) .
 
-    * **Правила балансировки нагрузки** . в конфигурацию можно добавить или удалить правила балансировки нагрузки, добавив или удалив записи в разделе **лоадбаланЦингрулес** ** \<resource-group-name> JSON** -файла:
+    * **Правила балансировки нагрузки** . в конфигурацию можно добавить или удалить правила балансировки нагрузки, добавив или удалив записи в разделе **лоадбаланЦингрулес** **\<resource-group-name> JSON** -файла:
 
         ```json
         "loadBalancingRules": [
@@ -361,9 +361,9 @@ ms.locfileid: "84808357"
                     }
                 ]
         ```
-       Дополнительные сведения о правилах балансировки нагрузки см [. в разделе что такое Azure Load Balancer?](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)
+       Дополнительные сведения о правилах балансировки нагрузки см [. в разделе что такое Azure Load Balancer?](./load-balancer-overview.md)
 
-    * **Пробы** . Вы можете добавить или удалить пробу для балансировщика нагрузки в конфигурации, добавив или удалив записи в разделе **зонды** ** \<resource-group-name> JSON** -файла:
+    * **Пробы** . Вы можете добавить или удалить пробу для балансировщика нагрузки в конфигурации, добавив или удалив записи в разделе **зонды** **\<resource-group-name> JSON** -файла:
 
         ```json
         "probes": [
@@ -381,9 +381,9 @@ ms.locfileid: "84808357"
                     }
                 ],
         ```
-       Дополнительные сведения о Azure Load Balancer зондах работоспособности см. в разделе [проверки работоспособности Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview) .
+       Дополнительные сведения о Azure Load Balancer зондах работоспособности см. в разделе [проверки работоспособности Load Balancer](./load-balancer-custom-probe-overview.md) .
 
-    * **Правила NAT для входящего трафика** . Вы можете добавить или удалить правила NAT для входящего трафика для подсистемы балансировки нагрузки, добавив или удалив записи в разделе **inboundNatRules** ** \<resource-group-name> JSON** -файла:
+    * **Правила NAT для входящего трафика** . Вы можете добавить или удалить правила NAT для входящего трафика для подсистемы балансировки нагрузки, добавив или удалив записи в разделе **inboundNatRules** **\<resource-group-name> JSON** -файла:
 
         ```json
         "inboundNatRules": [
@@ -405,7 +405,7 @@ ms.locfileid: "84808357"
                     }
                 ]
         ```
-        Чтобы завершить добавление или удаление правила NAT для входящего трафика, оно должно присутствовать или удалено в качестве свойства **типа** в конце ** \<resource-group-name> JSON** -файла:
+        Чтобы завершить добавление или удаление правила NAT для входящего трафика, оно должно присутствовать или удалено в качестве свойства **типа** в конце **\<resource-group-name> JSON** -файла:
 
         ```json
         {
@@ -429,16 +429,16 @@ ms.locfileid: "84808357"
             }
         }
         ```
-        Дополнительные сведения о правилах NAT для входящего трафика см. в разделе [что такое Azure Load Balancer?](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)
+        Дополнительные сведения о правилах NAT для входящего трафика см. в разделе [что такое Azure Load Balancer?](./load-balancer-overview.md)
     
 13. Сохраните файл **\<resource-group-name>.json**.
     
-10. Создайте или группу ресурсов в целевом регионе для развертывания целевой внутренней подсистемы балансировки нагрузки с помощью [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0). Существующую группу ресурсов, приведенную выше, можно также использовать повторно в рамках этого процесса:
+10. Создайте или группу ресурсов в целевом регионе для развертывания целевой внутренней подсистемы балансировки нагрузки с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0). Существующую группу ресурсов, приведенную выше, можно также использовать повторно в рамках этого процесса:
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
-11. Разверните измененный файл **\<resource-group-name>.json** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+11. Разверните измененный файл **\<resource-group-name>.json** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 
@@ -446,7 +446,7 @@ ms.locfileid: "84808357"
     
     ```
 
-12. Чтобы проверить, созданы ли ресурсы в целевом регионе, используйте [Get-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-азлоадбаланцер](https://docs.microsoft.com/powershell/module/az.network/get-azloadbalancer?view=azps-2.6.0):
+12. Чтобы проверить, созданы ли ресурсы в целевом регионе, используйте [Get-азресаурцеграуп](/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-азлоадбаланцер](/powershell/module/az.network/get-azloadbalancer?view=azps-2.6.0):
     
     ```azurepowershell-interactive
 
@@ -462,7 +462,7 @@ ms.locfileid: "84808357"
 
 ## <a name="discard"></a>Игнорировать 
 
-Если после развертывания вы хотите начать или удалить виртуальную сеть и подсистему балансировки нагрузки в целевом объекте, удалите группу ресурсов, созданную в целевом объекте, и перемещенную виртуальную сеть и подсистему балансировки нагрузки будут удалены.  Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
+Если после развертывания вы хотите начать или удалить виртуальную сеть и подсистему балансировки нагрузки в целевом объекте, удалите группу ресурсов, созданную в целевом объекте, и перемещенную виртуальную сеть и подсистему балансировки нагрузки будут удалены.  Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
 
 ```azurepowershell-interactive
 
@@ -472,7 +472,7 @@ Remove-AzResourceGroup -Name <resource-group-name>
 
 ## <a name="clean-up"></a>Очистка
 
-Чтобы зафиксировать изменения и завершить перемещение NSG, удалите исходный NSG или группу ресурсов, используйте [Remove-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0) или Remove- [Азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/remove-azvirtualnetwork?view=azps-2.6.0) и [Remove-азлоадбаланцер](https://docs.microsoft.com/powershell/module/az.network/remove-azloadbalancer?view=azps-2.6.0) .
+Чтобы зафиксировать изменения и завершить перемещение NSG, удалите исходный NSG или группу ресурсов, используйте [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0) или Remove- [Азвиртуалнетворк](/powershell/module/az.network/remove-azvirtualnetwork?view=azps-2.6.0) и [Remove-азлоадбаланцер](/powershell/module/az.network/remove-azloadbalancer?view=azps-2.6.0) .
 
 ```azurepowershell-interactive
 
@@ -489,10 +489,10 @@ Remove-AzVirtualNetwork -Name <virtual-network-name> -ResourceGroupName <resourc
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы переместили внутренний балансировщик нагрузки Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийном восстановлении в Azure см. по следующей ссылке:
 
 
-- [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)
-- [Перенос виртуальных машин Azure в другой регион](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate)
+- [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/management/move-resource-group-and-subscription.md)
+- [Перенос виртуальных машин Azure в другой регион](../site-recovery/azure-to-azure-tutorial-migrate.md)

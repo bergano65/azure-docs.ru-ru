@@ -35,7 +35,7 @@
     - name: JavaScript
       href: search-get-started-javascript.md
     - name: REST
-      href: search-get-started-postman.md
+      href: search-get-started-rest.md
     - name: PowerShell
       href: search-get-started-powershell.md
     - name: Python
@@ -81,13 +81,13 @@
 - name: Примеры
   items:
     - name: Примеры для C#
-      href: /samples/browse/?languages=csharp&products=azure-cognitive-search
+      href: samples-dotnet.md
     - name: Примеры для Java
-      href: /samples/browse/?languages=java&products=azure-cognitive-search
+      href: samples-java.md
     - name: Примеры для JavaScript
-      href: /samples/browse/?languages=javascript&products=azure-cognitive-search
+      href: samples-javascript.md
     - name: Примеры для Python
-      href: /samples/browse/?languages=python&products=azure-cognitive-search
+      href: samples-python.md
     - name: Примеры REST
       href: /samples/browse/?expanded=azure&languages=http&products=azure-cognitive-search
 - name: Основные понятия
@@ -548,5 +548,5 @@
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'
-    - name: Видео
+    - name: Видеоролики
       href: 'https://azure.microsoft.com/resources/videos/index/?services=search'

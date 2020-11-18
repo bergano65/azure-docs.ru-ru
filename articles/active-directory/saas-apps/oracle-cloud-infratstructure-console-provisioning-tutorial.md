@@ -1,6 +1,6 @@
 ---
-title: Руководство. Настройка консоли облачной инфраструктуры Oracle для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в консоли облачной инфраструктуры Oracle.
+title: Руководство по настройке Oracle Cloud Infrastructure Console для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+description: Сведения о настройке автоматической подготовки и отзыва учетных записей пользователей из Azure AD в Oracle Cloud Infrastructure Console.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,28 +8,28 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 7f34eca7ce92a2f465cc34bdde48ada15b21860d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 92aeedd25a4a60b49de54aaaa90ee4a31490c444
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515701"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359839"
 ---
-# <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Руководство. Настройка консоли облачной инфраструктуры Oracle для автоматической подготовки пользователей
+# <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Oracle Cloud Infrastructure Console
 
-В этом учебнике описываются действия, которые необходимо выполнить в консоли облачной инфраструктуры Oracle и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. При настройке Azure AD автоматически подготавливает и отменяет подготовку пользователей и групп к [консоли облачной инфраструктуры Oracle](https://www.oracle.com/cloud/free/?source=:ow:o:p:nav:0916BCButton&intcmp=:ow:o:p:nav:0916BCButton) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md). 
+В этом учебнике описаны действия, которые необходимо выполнить в Oracle Cloud Infrastructure Console и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически подготавливает и отзывает пользователей и группы в [Oracle Cloud Infrastructure Console](https://www.oracle.com/cloud/free/?source=:ow:o:p:nav:0916BCButton&intcmp=:ow:o:p:nav:0916BCButton) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
 > [!div class="checklist"]
-> * Создание пользователей в консоли облачной инфраструктуры Oracle
-> * Удаление пользователей в консоли облачной инфраструктуры Oracle, когда им больше не нужен доступ
-> * Синхронизация атрибутов пользователей между Azure AD и консолью облачной инфраструктуры Oracle
-> * Предоставление групп и членств в группах в консоли облачной инфраструктуры Oracle
-> * [Единый вход](./oracle-cloud-tutorial.md) в консоль инфраструктуры облака Oracle (рекомендуется)
+> * Создание пользователей в Oracle Cloud Infrastructure Console.
+> * Удаление пользователей из Oracle Cloud Infrastructure Console, когда доступ им больше не нужен.
+> * Синхронизация атрибутов пользователей между Azure AD и Oracle Cloud Infrastructure Console.
+> * Подготовка групп и членство в группе в Oracle Cloud Infrastructure Console.
+> * [Единый вход](./oracle-cloud-tutorial.md) в Oracle Cloud Infrastructure Console (рекомендуется)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,58 +37,58 @@ ms.locfileid: "92515701"
 
 * [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md) 
 * Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
-* [Клиент](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton)управления облачной инфраструктурой Oracle.
-* Учетная запись пользователя в системе управления облачной инфраструктурой Oracle с разрешениями администратора.
+* [Клиент](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton) Oracle Cloud Infrastructure Control.
+* Учетная запись пользователя в Oracle Cloud Infrastructure Control с разрешениями администратора.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
 1. Узнайте, [как работает служба подготовки](../app-provisioning/user-provisioning.md).
 2. Определите, кто будет находиться в [области подготовки](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Определите, какие данные должны [сопоставляться между консолью облачной инфраструктуры Azure AD и Oracle](../app-provisioning/customize-application-attributes.md). 
+3. Определите, какие данные следует [сопоставлять между Azure AD и Oracle Cloud Infrastructure Console](../app-provisioning/customize-application-attributes.md). 
 
-## <a name="step-2-configure-oracle-cloud-infrastructure-console-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка консоли облачной инфраструктуры Oracle для поддержки подготовки с помощью Azure AD
+## <a name="step-2-configure-oracle-cloud-infrastructure-console-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка в Oracle Cloud Infrastructure Console поддержки подготовки с помощью Azure AD
 
-1. Войдите на портал администрирования для консоли облачной инфраструктуры Oracle. В левом верхнем углу экрана перейдите к **удостоверению > Федерация**.
+1. Войдите на портал администрирования Oracle Cloud Infrastructure Console. В верхнем правом углу экрана выберите **Удостоверение > Федерация**.
 
     ![Администратор Oracle](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/identity.png)
 
-2. Щелкните URL-адрес, отображаемый на странице рядом с консолью облачной службы удостоверения Oracle.
+2. Щелкните URL-адрес, отображаемый на странице рядом с Oracle Identity Cloud Service Console.
 
     ![URL-адрес Oracle](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/url.png)
 
-3. Щелкните **Добавить поставщик удостоверений** , чтобы создать новый поставщик удостоверений. Сохраните идентификатор IdP, который будет использоваться как часть URL-адреса клиента. Щелкните значок "плюс" рядом с вкладкой " **приложения** ", чтобы создать клиент OAuth и предоставить идкс AppRole "Администратор домена удостоверений".
+3. Щелкните **Добавить поставщик удостоверений**, чтобы создать поставщик удостоверений. Сохраните идентификатор поставщика удостоверений для использования как часть URL-адреса клиента. Щелкните значок плюса рядом со вкладкой **Приложения**, чтобы создать клиент OAuth и AppRole администратора домена предоставления удостоверений IDCS.
 
     ![Значок Oracle Cloud](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/add.png)
 
-4. Следуйте приведенным ниже снимкам экрана, чтобы настроить приложение. После завершения настройки нажмите кнопку **сохранить**.
+4. Настройте приложение, выполнив действия, указанные на приведенных ниже снимках экрана. Завершив настройку, щелкните **Сохранить**.
 
     ![Конфигурация Oracle](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/configuration.png)
 
-    ![Политика выдачи маркеров Oracle](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/token-issuance.png)
+    ![Политика выдачи токенов Oracle](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/token-issuance.png)
 
-5. На вкладке конфигурации приложения разверните параметр **Общие сведения** , чтобы получить идентификатор клиента и секрет клиента.
+5. На вкладке конфигураций приложения разверните параметр **Общие сведения**, чтобы извлечь идентификатор и секрет клиента.
 
-    ![Создание маркеров Oracle](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/general-information.png)
+    ![Создание токена Oracle](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/general-information.png)
 
-6. Чтобы создать маркер секрета Base64, необходимо закодировать идентификатор клиента и секрет клиента в формате **идентификатор клиента: Секрет клиента**. Сохраните секретный токен. Это значение будет указано в поле **секретный токен** на вкладке Подготовка консольного приложения облачной инфраструктуры Oracle на портал Azure.
+6. Чтобы сгенерировать секретный токен, закодируйте идентификатор клиента и секрет клиента в Base64-формат **client ID:Client Secret**. Сохраните секретный токен. Это значение нужно будет ввести в поле **Секретный токен** на вкладке подготовки для приложения Oracle Cloud Infrastructure Console на портале Azure.
 
-## <a name="step-3-add-oracle-cloud-infrastructure-console-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление консоли облачной инфраструктуры Oracle из коллекции приложений Azure AD
+## <a name="step-3-add-oracle-cloud-infrastructure-console-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Oracle Cloud Infrastructure Console из коллекции приложений Azure AD
 
-Добавьте консоль облачной инфраструктуры Oracle из коллекции приложений Azure AD, чтобы начать управление подготовкой в консоль облачной инфраструктуры Oracle. Если вы ранее настроили консоль инфраструктуры облака Oracle для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](../manage-apps/add-application-portal.md). 
+Добавьте Oracle Cloud Infrastructure Console из коллекции приложений Azure AD, чтобы начать управление подготовкой в Oracle Cloud Infrastructure Console. Если вы ранее настроили единый вход в e Cloud Infrastructure Console, можно использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](../manage-apps/add-application-portal.md). 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
 Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-* При назначении пользователей и групп для консоли облачной инфраструктуры Oracle необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп для Oracle Cloud Infrastructure Console необходимо выбрать роль, отличную от роли **Доступ по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить дополнительные роли. 
 
 * Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-oracle-cloud-infrastructure-console"></a>Шаг 5. Настройка автоматической подготовки пользователей в консоли облачной инфраструктуры Oracle 
+## <a name="step-5-configure-automatic-user-provisioning-to-oracle-cloud-infrastructure-console"></a>Шаг 5. Настройка автоматической подготовки пользователей в Oracle Cloud Infrastructure Console 
 
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в TestApp на основе их назначений в Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-oracle-cloud-infrastructure-console-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для консоли облачной инфраструктуры Oracle в Azure AD, сделайте следующее:
+### <a name="to-configure-automatic-user-provisioning-for-oracle-cloud-infrastructure-console-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в Oracle Cloud Infrastructure Console, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
 
@@ -96,19 +96,19 @@ ms.locfileid: "92515701"
 
 2. В списке приложений выберите **Oracle Cloud Infrastructure Console**.
 
-    ![Ссылка на консоль инфраструктуры облака Oracle в списке приложений](common/all-applications.png)
+    ![Ссылка на Oracle Cloud Infrastructure Console в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
+    ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список "Режим подготовки" с выделенным параметром "Автоматически".](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите **URL-адрес клиента** в формате `https://<IdP ID>.identity.oraclecloud.com/admin/v1` . Например, `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к консоли облачной инфраструктуры Oracle. В случае сбоя подключения убедитесь, что учетная запись консоли облачной инфраструктуры Oracle имеет разрешения администратора, и повторите попытку.
+5. В разделе **Учетные данные администратора** введите **URL-адрес клиента** в формате `https://<IdP ID>.identity.oraclecloud.com/admin/v1`. Например, `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Oracle Cloud Infrastructure Console. Если установить подключение не удалось, убедитесь, что у учетной записи Oracle Cloud Infrastructure Console есть разрешения администратора, и повторите попытку.
 
-    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: диалоговое окно учетных данных администратора, в котором можно ввести URL-адрес клиента и секретный токен.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 
@@ -116,9 +116,9 @@ ms.locfileid: "92515701"
 
 7. Щелкните **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с консолью облачной инфраструктуры Oracle**.
+8. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Users to Oracle Cloud Infrastructure Console** (Синхронизировать пользователей Azure Active Directory с Oracle Cloud Infrastructure Console).
 
-9. Ознакомьтесь с атрибутами пользователей, которые синхронизированы из Azure AD с консолью облачной инфраструктуры Oracle, в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в консоли облачной инфраструктуры Oracle для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), необходимо убедиться, что API консоли облачной инфраструктуры Oracle поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+9. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Oracle Cloud Infrastructure Console. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Oracle Cloud Infrastructure Console для операций обновления. Если вы решили изменить [целевой атрибут сопоставления](../app-provisioning/customize-application-attributes.md), потребуется убедиться, что API Oracle Cloud Infrastructure Console поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
       |attribute|Тип|
       |---|---|
@@ -142,12 +142,12 @@ ms.locfileid: "92515701"
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
-      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Бипасснотификатион|Логическое значение|
-      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Исфедератедусер|Логическое значение|
+      |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification|логический|
+      |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser|логический|
 
-10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с консолью облачной инфраструктуры Oracle**.
+10. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Groups to Oracle Cloud Infrastructure Console** (Синхронизировать группы Azure Active Directory с Oracle Cloud Infrastructure Console).
 
-11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в консоль облачной инфраструктуры Oracle, в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в консоли облачной инфраструктуры Oracle для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. В разделе **Сопоставление атрибутов** просмотрите атрибуты группы, которые синхронизированы из Azure AD в Oracle Cloud Infrastructure Console. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления групп в Oracle Cloud Infrastructure Console при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
       |attribute|Тип|
       |---|---|
@@ -157,11 +157,11 @@ ms.locfileid: "92515701"
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Чтобы включить службу подготовки Azure AD для консоли облачной инфраструктуры Oracle, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+13. Чтобы включить службу подготовки Azure AD для Oracle Cloud Infrastructure Console, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
     ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
-14. Определите пользователей и (или) группы, которые вы хотите подготавливать к консоли облачной инфраструктуры Oracle, выбрав нужные значения в **области** в разделе **Параметры** .
+14. Определите пользователей и (или) группы для подготовки в Oracle Cloud Infrastructure Console, выбрав нужные значения в поле **Область** раздела **Параметры**.
 
     ![Область действия подготовки](common/provisioning-scope.png)
 

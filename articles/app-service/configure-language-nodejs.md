@@ -6,12 +6,12 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 7f925854f4ef09ccc74c0ec1e8fdcca6b71d1437
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 8bdf637ab773e90a5eac42bcaa443cf6741db636
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92744057"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696019"
 ---
 # <a name="configure-a-nodejs-app-for-azure-app-service"></a>Настройка приложения Node.js для службы приложений Azure
 
@@ -85,6 +85,36 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ::: zone-end
 
+## <a name="get-port-number"></a>Получение номера порта
+
+Для получения входящих запросов приложение Node.js должно прослушивать правильный порт.
+
+::: zone pivot="platform-windows"  
+
+В службе приложений в Windows Node.js приложения размещаются с помощью [IISNode](https://github.com/Azure/iisnode), а Node.js приложение должно прослушивать порт, указанный в `process.env.PORT` переменной. В следующем примере показано, как это сделать в простом приложении Express:
+
+::: zone-end
+
+::: zone pivot="platform-linux"  
+
+Служба приложений устанавливает переменную среды `PORT` в контейнере Node.js и перенаправляет входящие запросы в контейнер по этому номеру порта. Чтобы получать запросы, приложение должно прослушивать этот порт с помощью `process.env.PORT` . В следующем примере показано, как это сделать в простом приложении Express:
+
+::: zone-end
+
+```javascript
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+```
+
 ::: zone pivot="platform-linux"
 
 ## <a name="customize-build-automation"></a>Настройка автоматизации сборки
@@ -94,7 +124,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 1. Запустите пользовательский скрипт, если он указан `PRE_BUILD_SCRIPT_PATH`.
 1. Запустите `npm install` без флагов, включая NPM `preinstall` и `postinstall` сценарии, а также устанавливает `devDependencies` .
 1. Выполните, `npm run build` Если в *package.jsна* выбран скрипт сборки.
-1. Выполните `npm run build:azure` , если сборка: Скрипт Azure указан в *package.jsна* .
+1. Выполните `npm run build:azure` , если сборка: Скрипт Azure указан в *package.jsна*.
 1. Запустите пользовательский скрипт, если он указан `POST_BUILD_SCRIPT_PATH`.
 
 > [!NOTE]
@@ -123,7 +153,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ### <a name="run-custom-command"></a>Выполнить пользовательскую команду
 
-Служба приложений может запустить приложение с помощью пользовательской команды, такой как исполняемый файл, например *Run.sh* . Например, чтобы выполнить `npm run start:prod` , выполните следующую команду в [Cloud Shell](https://shell.azure.com):
+Служба приложений может запустить приложение с помощью пользовательской команды, такой как исполняемый файл, например *Run.sh*. Например, чтобы выполнить `npm run start:prod` , выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "npm run start:prod"
@@ -164,7 +194,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 Можно также настроить пользовательский файл запуска со следующими расширениями:
 
 - *JS* -файл
-- [Файл PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) с расширением *JSON* , *.config.js* , *YAML* или *. yml*
+- [Файл PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) с расширением *JSON*, *.config.js*, *YAML* или *. yml*
 
 Чтобы добавить пользовательский начальный файл, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
@@ -177,7 +207,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 > [!NOTE]
 > Удаленная отладка сейчас доступна в предварительной версии.
 
-Вы можете выполнить удаленную отладку приложения Node.js в [Visual Studio Code](https://code.visualstudio.com/) , если он настроен для [работы с PM2](#run-with-pm2), за исключением случая, когда он выполняется с помощью * .config.js, *. yml или *. YAML* .
+Вы можете выполнить удаленную отладку приложения Node.js в [Visual Studio Code](https://code.visualstudio.com/) , если он настроен для [работы с PM2](#run-with-pm2), за исключением случая, когда он выполняется с помощью * .config.js, *. yml или *. YAML*.
 
 В большинстве случаев для приложения не требуется дополнительная настройка. Если приложение запускается с *process.js* файла (по умолчанию или настраиваемого), оно должно иметь `script` свойство в корне JSON. Пример:
 
@@ -191,9 +221,9 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 Чтобы настроить Visual Studio Code для удаленной отладки, установите [расширение службы приложений](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). Следуйте инструкциям на странице расширение и войдите в Azure в Visual Studio Code.
 
-В Azure Explorer найдите приложение, которое нужно отладить, щелкните его правой кнопкой мыши и выберите команду **запустить удаленную отладку** . Нажмите кнопку **Да** , чтобы включить его для приложения. Служба приложений запускает прокси-сервер туннеля и присоединяет отладчик. Затем можно выполнить запросы к приложению и увидеть, что отладчик приостанавливается в точках останова.
+В Azure Explorer найдите приложение, которое нужно отладить, щелкните его правой кнопкой мыши и выберите команду **запустить удаленную отладку**. Нажмите кнопку **Да** , чтобы включить его для приложения. Служба приложений запускает прокси-сервер туннеля и присоединяет отладчик. Затем можно выполнить запросы к приложению и увидеть, что отладчик приостанавливается в точках останова.
 
-После завершения отладки закройте отладчик, выбрав **Отключить** . При появлении запроса нажмите кнопку **Да** , чтобы отключить удаленную отладку. Чтобы отключить его позже, снова щелкните свое приложение в Azure Explorer и выберите **Отключить удаленную отладку** .
+После завершения отладки закройте отладчик, выбрав **Отключить**. При появлении запроса нажмите кнопку **Да** , чтобы отключить удаленную отладку. Чтобы отключить его позже, снова щелкните свое приложение в Azure Explorer и выберите **Отключить удаленную отладку**.
 
 ::: zone-end
 
@@ -227,7 +257,7 @@ npm install kuduscript -g
 kuduscript --node --scriptType bash --suppressPrompt
 ```
 
-Корневой каталог репозитория теперь содержит два дополнительных файла: *. Deployment* и *deploy.sh* .
+Корневой каталог репозитория теперь содержит два дополнительных файла: *. Deployment* и *deploy.sh*.
 
 Откройте *deploy.sh* и найдите `Deployment` раздел, который выглядит следующим образом:
 
@@ -312,7 +342,7 @@ if (req.secure) {
 
 ::: zone-end
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Когда работающий Node.js приложение работает иначе в службе приложений или с ошибками, попробуйте выполнить следующие действия.
 
@@ -329,7 +359,7 @@ if (req.secure) {
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство. Приложение Node.js с MongoDB](tutorial-nodejs-mongodb-app.md)

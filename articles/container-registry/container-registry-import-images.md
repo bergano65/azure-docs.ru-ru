@@ -3,12 +3,12 @@ title: Импорт образов контейнеров
 description: Импорт образов контейнеров в Реестр контейнеров Azure с помощью API-интерфейсов Azure без использования команд Docker.
 ms.topic: article
 ms.date: 09/18/2020
-ms.openlocfilehash: 2c99d3c32bf6dad3a1950da56b29f47d2a988161
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3950b9fb24b80db4d9654a615521c0eb82914499
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541583"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695611"
 ---
 # <a name="import-container-images-to-a-container-registry"></a>Импорт образов контейнеров в реестр контейнеров
 
@@ -144,7 +144,7 @@ az acr import \
   --source sourceregistry.azurecr.io/sourcerrepo:tag \
   --image targetimage:tag \
   --username <SP_App_ID> \
-  –-password <SP_Passwd>
+  --password <SP_Passwd>
 ```
 
 ## <a name="import-from-an-azure-container-registry-in-a-different-ad-tenant"></a>Импорт из реестра контейнеров Azure в другом клиенте AD
@@ -157,7 +157,7 @@ az acr import \
   --source sourceregistry.azurecr.io/sourcerrepo:tag \
   --image targetimage:tag \
   --username <SP_App_ID> \
-  –-password <SP_Passwd>
+  --password <SP_Passwd>
 ```
 
 ## <a name="import-from-a-non-azure-private-container-registry"></a>Импорт из закрытого реестра контейнеров, не относящегося к Azure
@@ -173,7 +173,7 @@ az acr import \
   --password <password>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали об импорте образов контейнеров в Реестр контейнеров Azure из общедоступного реестра или другого частного реестра. Сведения о дополнительных вариантах импорта см. в справочнике по командам [az acr import][az-acr-import]. 
 

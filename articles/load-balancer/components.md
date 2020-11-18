@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/04/2020
 ms.author: allensu
-ms.openlocfilehash: d2cd05251e7bf1a0b0ebcd24e6d3d0202f277969
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: bf7a35e8cedbe62aafb29aa6d9dc8fcb42e90b2e
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685517"
+ms.locfileid: "94693772"
 ---
 # <a name="azure-load-balancer-components"></a>Компоненты Azure Load Balancer
 
@@ -128,7 +128,7 @@ Load Balancer ценовой категории "Базовый" не подде
 
 ## <a name="limitations"></a>Ограничения
 
-- См. дополнительные сведения об [ограничениях](https://aka.ms/lblimits) Load Balancer. 
+- См. дополнительные сведения об [ограничениях](../azure-resource-manager/management/azure-subscription-service-limits.md) Load Balancer. 
 - Подсистема балансировки нагрузки обеспечивает балансировку нагрузки и перенаправление портов для конкретных протоколов TCP или UDP. Правила балансировки нагрузки и правила NAT для входящего трафика поддерживают TCP и UDP, но не другие протоколы IP, включая ICMP.
 - Перенаправление исходящего потока от внутренней виртуальной машины к внешнему интерфейсу внутреннего экземпляра Load Balancer завершится сбоем.
 - Правило подсистемы балансировки нагрузки не может охватывать две виртуальные сети.  Внешние интерфейсы и их внутренние экземпляры должны быть расположены в одной виртуальной сети.  
@@ -138,12 +138,12 @@ Load Balancer ценовой категории "Базовый" не подде
 
 - Чтобы приступить к работе с Load Balancer, см. [Create a public Standard Load Balancer](quickstart-load-balancer-standard-public-portal.md) (Создание общедоступного Load Balancer (цен. категория "Стандартный")).
 - [Дополнительные сведения об Azure Load Balancer](load-balancer-overview.md).
-- Сведения об [общедоступном IP-адресе](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address).
+- Сведения об [общедоступном IP-адресе](../virtual-network/virtual-network-public-ip-address.md).
 - Сведения о [частном IP-адресе](../virtual-network/private-ip-addresses.md).
 - Дополнительные сведения о [Load Balancer (цен. категория "Стандартный") и зонах доступности](load-balancer-standard-availability-zones.md).
 - [Metrics and health diagnostics for Standard Load Balancer](load-balancer-standard-diagnostics.md) (Метрики и проверки работоспособности Load Balancer уровня "Стандартный")
 - Сведения о [сбросе TCP-подключений при простое](load-balancer-tcp-reset.md).
 - Дополнительные сведения об [использовании Load Balancer (цен. категория "Стандартный") с правилами балансировки нагрузки портов высокого уровня доступности](load-balancer-ha-ports-overview.md).
-- Узнайте больше о [группах безопасности сети](../virtual-network/security-overview.md).
-- Дополнительные сведения об [ограничениях подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#load-balancer).
-- Сведения об использовании [перенаправления портов](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-port-forwarding-portal).
+- Узнайте больше о [группах безопасности сети](../virtual-network/network-security-groups-overview.md).
+- Дополнительные сведения об [ограничениях подсистемы балансировки нагрузки](../azure-resource-manager/management/azure-subscription-service-limits.md#load-balancer).
+- Сведения об использовании [перенаправления портов](./tutorial-load-balancer-port-forwarding-portal.md).

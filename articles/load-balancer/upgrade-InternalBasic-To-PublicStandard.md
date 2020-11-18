@@ -7,15 +7,15 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: 225252f2cd47c36de2c7eed4ed1e5dae3ebd81b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1c69f528328d5ff983c7de9d7fad052a7c41285
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87078760"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696257"
 ---
 # <a name="upgrade-azure-internal-load-balancer---outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — требуется исходящее подключение
-[Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus). Так как стандартный внутренний Load Balancer не предоставляет исходящего подключения, мы предоставляем решение для создания стандартного общедоступного Load Balancer.
+[Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](./skus.md#skus). Так как стандартный внутренний Load Balancer не предоставляет исходящего подключения, мы предоставляем решение для создания стандартного общедоступного Load Balancer.
 
 Обновление состоит из четырех этапов.
 
@@ -104,21 +104,21 @@ ms.locfileid: "87078760"
    
     1. Выберите внутренний пул, соответствующий внутреннему пулу базового Load Balancer, выберите следующее значение: 
       - **Виртуальная машина**: раскрывающийся список и выберите виртуальные машины из соответствующего серверного пула базовых Load Balancer.
-    1. Щелкните **Сохранить**.
+    1. Нажмите кнопку **Сохранить**.
     >[!NOTE]
     >Для виртуальных машин, имеющих общедоступные IP-адреса, необходимо сначала создать стандартные, но не гарантируют, что IP-адрес не гарантируется. Отменяйте связь между виртуальными машинами и свяжите их с новыми стандартными IP-адресами. Затем вы сможете выполнить инструкции по добавлению виртуальных машин в серверный пул Load Balancer (цен. категория "Стандартный"). 
 
 * **Создание новых виртуальных машин для добавления в серверные пулы вновь созданного стандартного Общедоступного Load Balancer**.
-    * Дополнительные инструкции о том, как создать виртуальную машину и связать ее с Load Balancer (цен. категория "Стандартный"), можно найти [здесь](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal#create-virtual-machines).
+    * Дополнительные инструкции о том, как создать виртуальную машину и связать ее с Load Balancer (цен. категория "Стандартный"), можно найти [здесь](./quickstart-load-balancer-standard-public-portal.md#create-virtual-machines).
 
 ### <a name="create-an-outbound-rule-for-outbound-connection"></a>Создание правила исходящего трафика для исходящего подключения
 
-Следуйте [инструкциям](https://docs.microsoft.com/azure/load-balancer/configure-load-balancer-outbound-portal#create-outbound-rule-configuration) , чтобы создать правило исходящего трафика, чтобы можно было
+Следуйте [инструкциям](./quickstart-load-balancer-standard-public-powershell.md#create-outbound-rule-configuration) , чтобы создать правило исходящего трафика, чтобы можно было
 * Определение исходящего NAT с нуля.
 * Масштабирование и Настройка поведения существующего исходящего NAT.
 
 ### <a name="create-nsg-rules-for-vms-which-to-refrain-communication-from-or-to-the-internet"></a>Создание правил NSG для виртуальных машин, которые отменяют связь между или Интернетом
-Если вы хотите отдержать Интернет к виртуальным машинам, вы можете создать [правило NSG](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group) для сетевого интерфейса виртуальных машин.
+Если вы хотите отдержать Интернет к виртуальным машинам, вы можете создать [правило NSG](../virtual-network/manage-network-security-group.md) для сетевого интерфейса виртуальных машин.
 
 ## <a name="common-questions"></a>Часто задаваемые вопросы
 
@@ -134,6 +134,6 @@ ms.locfileid: "87078760"
   
 Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

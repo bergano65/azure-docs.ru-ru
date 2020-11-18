@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
-ms.openlocfilehash: 93dd73b5a9149474be771537f47b448c5c4d7d8f
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 0493b66928d944e251e6fe4abda4f1d3d8fb7e23
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629331"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695900"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Обзор параметров проверки подлинности на основе удостоверений службы файлов Azure для доступа к SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "94629331"
 
 -   **Azure Active Directory (Azure AD)**
 
-    Azure Active Directory (Azure AD) — это облачный каталог и служба управления удостоверениями Майкрософт, основанная на нескольких клиентах. Azure AD объединяет в себе базовые службы каталогов, функции управления доступом к приложениям и защиту удостоверений. Виртуальные машины Windows, присоединенные к Azure AD, могут получить доступ к файловым ресурсам Azure с помощью учетных данных Azure AD. Дополнительные сведения см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).
+    Azure Active Directory (Azure AD) — это облачный каталог и служба управления удостоверениями Майкрософт, основанная на нескольких клиентах. Azure AD объединяет в себе базовые службы каталогов, функции управления доступом к приложениям и защиту удостоверений. Виртуальные машины Windows, присоединенные к Azure AD, не могут получить доступ к файловым ресурсам Azure с учетными данными Azure AD. Дополнительные сведения см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).
 
 -   **доменные службы Azure Active Directory (Azure AD DS);**
 
@@ -144,7 +144,7 @@ ms.locfileid: "94629331"
 ## <a name="pricing"></a>Цены
 Для включения проверки подлинности на основе удостоверений через SMB в вашей учетной записи хранения дополнительная плата за обслуживание не взимается. Дополнительные сведения о ценах см. в статье цены на службу [файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/) и [цены на доменные службы Azure AD](https://azure.microsoft.com/pricing/details/active-directory-ds/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о службе файлов Azure и аутентификации на основе удостоверений по протоколу SMB см. в следующих ресурсах:
 
 - [Планирование развертывания Файлов Azure](storage-files-planning.md)

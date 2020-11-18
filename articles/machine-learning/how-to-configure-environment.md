@@ -1,22 +1,22 @@
 ---
 title: Настройка среды разработки Python
 titleSuffix: Azure Machine Learning
-description: Узнайте, как настроить среду разработки Python для Машинное обучение Azure. Используйте среды Conda, Создавайте файлы конфигурации и настраивайте собственный облачный сервер записных книжек, записные книжки Jupyter, Azure Databricks, IDE, редакторы кода и виртуальную машину для обработки и анализа данных.
+description: Настройка Машинное обучение Azure сред разработки Python в записных книжках Jupyter, Visual Studio Code, Azure Databricks и в виртуальных машинах для обработки и анализа данных.
 services: machine-learning
 author: rastala
 ms.author: roastala
 ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: larryfr
-ms.date: 09/30/2020
+ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: 451ad33a9d041635c3f51e323539b423378d02d1
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 03d10f71b585090157eff164cc98246f50608fe1
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422915"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695373"
 ---
 # <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Настройка среды разработки Python для Машинное обучение Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "93422915"
 
 * Visual Studio Code. при использовании Visual Studio Code [расширение машинное обучение Azure](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai) включает расширенную языковую поддержку для Python, а также функции, позволяющие работать с машинное обучение Azure гораздо более удобной и продуктивной.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область Машинное обучение Azure. Если у вас ее нет, можно создать рабочую область Машинное обучение Azure с помощью шаблонов [портал Azure](how-to-manage-workspace.md), [Azure CLI](how-to-manage-workspace-cli.md#create-a-workspace)и [Azure Resource Manager](how-to-create-workspace-template.md).
 
@@ -61,7 +61,7 @@ ms.locfileid: "93422915"
 
 * Портал Azure
 
-    **Скачайте файл** : в [портал Azure](https://ms.portal.azure.com)выберите  **скачать config.jsв** разделе **Обзор** рабочей области.
+    **Скачайте файл**: в [портал Azure](https://ms.portal.azure.com)выберите  **скачать config.jsв** разделе **Обзор** рабочей области.
 
     ![Портал Azure](./media/how-to-configure-environment/configure.png)
 
@@ -214,7 +214,7 @@ ms.locfileid: "93422915"
 Дополнительные сведения о Виртуальных машинах для обработки и анализа данных см. [здесь](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Обучение модели](tutorial-train-models-with-aml.md) на машинное обучение Azure с помощью набора данных MNIST.
 - См. [Справочник по машинное обучение Azure SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). 

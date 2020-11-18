@@ -7,19 +7,19 @@ ms.service: load-balancer
 ms.topic: troubleshooting
 ms.date: 05/7/2020
 ms.author: errobin
-ms.openlocfilehash: b75c85b85674def84d9fcee62549a6458abf9174
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 516576f4e005cc9fe2303945ecb1a13489908a5d
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684852"
+ms.locfileid: "94696359"
 ---
 # <a name="troubleshooting-outbound-connections-failures"></a><a name="obconnecttsg"></a> Устранение сбоев исходящих подключений
 
 Эта статья предназначена для решения распространенных проблем, связанных с исходящими подключениями из Azure Load Balancer. Большинство проблем с исходящими подключениями клиентов из-за нехватки портов SNAT и превышения времени ожидания подключения, приводящего к удаленным пакетам. В этой статье приводятся шаги по устранению каждой из этих проблем.
 
 ## <a name="managing-snat-pat-port-exhaustion"></a><a name="snatexhaust"></a>Управление нехваткой портов SNAT (PAT)
-[Временные порты](load-balancer-outbound-connections.md) , используемые для [Pat](load-balancer-outbound-connections.md) , — это ограниченным ресурсом ресурс, как описано в разделе [Автономная виртуальная машина без общедоступного IP-адреса](load-balancer-outbound-connections.md) и [виртуальной машины с БАЛАНСИРОВКОЙ нагрузки без общедоступного IP-адреса](load-balancer-outbound-connections.md). Вы можете отслеживать использование временных портов и сравнивать его с текущим выделением, чтобы определить риск или подтвердить нехватку SNAT с помощью [этого](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-diagnostics#how-do-i-check-my-snat-port-usage-and-allocation) руководством.
+[Временные порты](load-balancer-outbound-connections.md) , используемые для [Pat](load-balancer-outbound-connections.md) , — это ограниченным ресурсом ресурс, как описано в разделе [Автономная виртуальная машина без общедоступного IP-адреса](load-balancer-outbound-connections.md) и [виртуальной машины с БАЛАНСИРОВКОЙ нагрузки без общедоступного IP-адреса](load-balancer-outbound-connections.md). Вы можете отслеживать использование временных портов и сравнивать его с текущим выделением, чтобы определить риск или подтвердить нехватку SNAT с помощью [этого](./load-balancer-standard-diagnostics.md#how-do-i-check-my-snat-port-usage-and-allocation) руководством.
 
 При инициировании множества исходящих TCP- или UDP-подключений к одним и тем же конечным IP-адресу и порту подключения будут завершаться сбоем или же вы будете получать уведомления от службы поддержки о нехватке SNAT (выделенных [временных портов](load-balancer-outbound-connections.md#preallocatedports), используемых для [PAT](load-balancer-outbound-connections.md)). У вас есть несколько вариантов устранения этой проблемы. Ознакомьтесь с ними, чтобы выбрать доступный и подходящий вариант для своего сценария. Возможно, один или несколько вариантов помогут вам решить проблему.
 

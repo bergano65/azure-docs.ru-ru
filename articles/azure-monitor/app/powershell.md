@@ -3,12 +3,12 @@ title: Автоматизация Azure Application Insights с помощью P
 description: Автоматизация создания ресурсов, оповещений и тестов доступности и управления ими с помощью PowerShell и шаблона Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 05/02/2020
-ms.openlocfilehash: b5f3ba12fe8a730ce45e64b896ccc9c32b17b30c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4dabb29abe4530307ef5204659297f4675376605
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91760909"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94694611"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Управление ресурсами Application Insights с помощью PowerShell
 
@@ -431,7 +431,6 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
    
     С каждым веб-тестом связано правило оповещения, поэтому скопировать необходимо оба элемента.
    
-    Можно также добавить оповещения для метрик. [Имена метрик](powershell-alerts.md#metric-names).
 5. Вставьте в каждый ресурс следующую строку.
    
     `"apiVersion": "2015-05-01",`
@@ -470,7 +469,6 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 Другие статьи об автоматизации:
 
 * [Создание ресурса Application Insights](./create-new-resource.md#creating-a-resource-automatically) — быстрый метод без использования шаблона.
-* [Настройка оповещений](powershell-alerts.md)
 * [Creating an Application Insights Web Test and Alert Programmatically](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/)
 * [Отправка данных системы диагностики Azure в Application Insights](powershell-azure-diagnostics.md)
 * [Создание заметок выпуска](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)
