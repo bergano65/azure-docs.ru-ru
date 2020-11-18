@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: yelevin
-ms.openlocfilehash: 17c0ba7306ab4cc51fe8bbe3709d5b6bc85fa487
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6a891a301d5869603a7d90d28bb9063d7d5bdb1d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91347511"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660582"
 ---
 # <a name="bring-your-own-machine-learning-ml-into-azure-sentinel"></a>Перевод собственного Машинное обучение (машинного обучения) в Azure Sentinel
 
@@ -32,7 +32,7 @@ ms.locfileid: "91347511"
 
 ## <a name="what-is-the-bring-your-own-machine-learning-byo-ml-platform"></a>Что такое собственная платформа Машинное обучение (BYO-ML)?
 
-Для организаций, которые имеют ресурсы ML и хотели бы создавать настраиваемые модели машинного обучения для своих уникальных бизнес-задач, мы предлагаем **платформу BYO-ML**. Платформа использует [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) / [Apache Spark](http://spark.apache.org/) среды и записные книжки Jupyter для создания среды ML. Он предоставляет следующие компоненты:
+Для организаций, которые имеют ресурсы ML и хотели бы создавать настраиваемые модели машинного обучения для своих уникальных бизнес-задач, мы предлагаем **платформу BYO-ML**. Платформа использует [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks) / [Apache Spark](http://spark.apache.org/) среды и записные книжки Jupyter для создания среды ML. Он предоставляет следующие компоненты:
 
 - пакет BYO-ML, который включает библиотеки для доступа к данным и отправки результатов в Log Analytics (LA), что позволяет интегрировать результаты с обнаружением, исследованием и поиском. 
 
@@ -95,7 +95,7 @@ ms.locfileid: "91347511"
 
 ### <a name="setup-the-databricksspark-environment"></a>Настройка среды "кирпичи" или "Spark"
 
-Если у вас ее еще нет, необходимо настроить собственную среду для работы с модулями. Инструкции см. в документе с [кратким руководством по модулям](https://docs.microsoft.com/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal?tabs=azure-portal) .
+Если у вас ее еще нет, необходимо настроить собственную среду для работы с модулями. Инструкции см. в документе с [кратким руководством по модулям](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal?tabs=azure-portal) .
 
 ### <a name="auto-export-instruction"></a>Инструкция по автоматическому экспорту
 
@@ -103,7 +103,7 @@ ms.locfileid: "91347511"
 
 В этом примере необходимо иметь обучающие данные для журнала доступа к общей папке в хранилище BLOB-объектов Azure. Формат данных задокументирован в записной книжке и библиотеках.
 
-Вы можете автоматически экспортировать данные из Log Analytics с помощью [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/monitor/log-analytics). 
+Вы можете автоматически экспортировать данные из Log Analytics с помощью [интерфейса командной строки Azure (CLI)](/cli/azure/monitor/log-analytics). 
 
 Для выполнения команд необходимо назначить роль **участника** в рабочей области log Analytics, вашей учетной записи хранения и в ресурсе EventHub. 
 
@@ -159,18 +159,18 @@ az monitor log-analytics workspace data-export list --resource-group "RG_NAME" -
 
 Чтобы просмотреть оцененные результаты вместе со сведениями о связанном журнале, вернитесь на портал Azure Sentinel. В **журналах** > пользовательские журналы отобразятся результаты в таблице **AnomalousResourceAccessResult_CL** (или в собственном имени настраиваемой таблицы). Эти результаты можно использовать для улучшения расследования и поиска.
 
-:::image type="content" source="./media/bring-your-own-ml/anomalous-resource-access-logs.png" alt-text="платформа машинного обучения":::
+:::image type="content" source="./media/bring-your-own-ml/anomalous-resource-access-logs.png" alt-text="журналы аномального доступа к ресурсам":::
 
 ### <a name="build-custom-analytics-rule-with-ml-results"></a>Создание настраиваемого правила аналитики с помощью результатов ML
 
 После подтверждения того, что результаты машинного обучения находятся в таблице пользовательские журналы, и вы удовлетворены достоверностью оценок, вы можете создать обнаружение на основе результатов. Перейдите к **аналитике** на портале Sentinel Azure и [Создайте новое правило обнаружения](tutorial-detect-threats-custom.md). Ниже приведен пример запроса, используемого для создания обнаружения.
 
-:::image type="content" source="./media/bring-your-own-ml/create-byo-ml-analytics-rule.png" alt-text="платформа машинного обучения":::
+:::image type="content" source="./media/bring-your-own-ml/create-byo-ml-analytics-rule.png" alt-text="создать настраиваемое правило аналитики для обнаружений B Y O M L":::
 
 ### <a name="view-and-respond-to-incidents"></a>Просмотр инцидентов и реагирование на них
 После настройки правила аналитики на основе результатов машинного обучения, если результаты выше порогового значения, заданного в запросе, создается инцидент и отображается на странице **инциденты** в Azure Sentinel. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как использовать платформу BYO-ML в Azure Sentinel для создания или импорта собственных алгоритмов машинного обучения для анализа данных и обнаружения угроз.
 

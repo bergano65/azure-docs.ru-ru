@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/29/2020
 ms.author: cherylmc
-ms.openlocfilehash: b6df7aa919721576aad10d6a476be976ef81df7d
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: ed0a60c88c33af70b7d780d6c4735c5f8e65b35b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145877"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660412"
 ---
 # <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-powershell"></a>Настройка VPN-подключения типа "точка — сеть" к виртуальной сети с помощью собственной аутентификации Azure на основе сертификата: PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "93145877"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки Azure, вы можете активировать преимущества для [подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial).
+Убедитесь в том, что у вас уже есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial).
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -110,7 +110,7 @@ $DNS = "10.2.1.4"
 
 На этом шаге вы настраиваете и создаете шлюз виртуальной сети для своей сети.
 
-* У параметра -GatewayType должно быть значение **Vpn** , а у параметра -VpnType — **RouteBased**.
+* У параметра -GatewayType должно быть значение **Vpn**, а у параметра -VpnType — **RouteBased**.
 * Параметр -VpnClientProtocol используется, чтобы указать типы туннелей, которые необходимо включить. Параметры туннеля: **опенвпн, SSTP** и **IKEv2**. Вы можете включить одну из них или любую поддерживаемую комбинацию. Если требуется включить несколько типов, укажите имена, разделенные запятыми. Опенвпн и SSTP нельзя включить одновременно. Для подключения клиент strongSwan в Android и Linux и собственный VPN-клиент IKEv2 в iOS и OSX используют только туннель IKEv2. Клиенты Windows сначала пытаются подключиться через IKEv2, и если им это не удается, возвращаются к SSTP. Клиент Опенвпн можно использовать для подключения к типу туннеля Опенвпн.
 * SKU "базовый" шлюза виртуальной сети не поддерживает проверку подлинности IKEv2, Опенвпн или RADIUS. Если вы планируете подключение к своей виртуальной сети клиентов Mac, не используйте SKU "Базовый".
 * Создание VPN-шлюза может занять до 45 минут в зависимости от выбранного [номера SKU шлюза](vpn-gateway-about-vpn-gateway-settings.md). В этом примере используется IKEv2.
@@ -229,7 +229,7 @@ $profile.VPNProfileSASUrl
 ### <a name="mac-vpn-client"></a>VPN-клиент для Mac
 
 В диалоговом окне Network (Сеть) найдите необходимый клиентский профиль и нажмите кнопку **Connect** (Подключиться).
-Ознакомьтесь с подробными инструкциями в разделе [Установка Mac (OS X)](https://docs.microsoft.com/azure/vpn-gateway/point-to-site-vpn-client-configuration-azure-cert#installmac). Если у вас возникают неполадки подключения, убедитесь, что шлюз виртуальной сети не использует SKU "Базовый". SKU "Базовый" не поддерживается для клиентов Mac.
+Ознакомьтесь с подробными инструкциями в разделе [Установка Mac (OS X)](./point-to-site-vpn-client-configuration-azure-cert.md#installmac). Если у вас возникают неполадки подключения, убедитесь, что шлюз виртуальной сети не использует SKU "Базовый". SKU "Базовый" не поддерживается для клиентов Mac.
 
   ![Подключение для Mac](./media/vpn-gateway-howto-point-to-site-rm-ps/applyconnect.png)
 
@@ -324,7 +324,7 @@ $profile.VPNProfileSASUrl
 
 **Для отмены:**
 
-1. Получите отпечаток сертификата клиента. Дополнительные сведения см. в разделе [Получение отпечатка сертификата](https://msdn.microsoft.com/library/ms734695.aspx).
+1. Получите отпечаток сертификата клиента. Дополнительные сведения см. в разделе [Получение отпечатка сертификата](/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate).
 
 1. Скопируйте данные в текстовый редактор и удалите все пробелы, чтобы предоставить отпечаток в виде непрерывной строки. Далее эта строка будет объявлена в качестве переменной.
 
@@ -385,6 +385,6 @@ $profile.VPNProfileSASUrl
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/). Дополнительные сведения о сетях и виртуальных машинах см. в статье [Azure и Linux: обзор сетей виртуальных машин](../virtual-machines/linux/azure-vm-network-overview.md).
+Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](../index.yml). Дополнительные сведения о сетях и виртуальных машинах см. в статье [Azure и Linux: обзор сетей виртуальных машин](../virtual-machines/network-overview.md).
 
 Дополнительные сведения об устранении неполадок подключения "точка — сеть" см. в руководстве [Устранение неполадок подключения типа "точка — сеть" Azure](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md).

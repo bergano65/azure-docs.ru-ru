@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 428c24236aad9a57a9d52eb0a6ff3a7aeb9fe541
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b9502f3fbd50aad756e15daa4db1badda2abf9ab
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91442149"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660072"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI
 
@@ -134,7 +134,7 @@ ms.locfileid: "91442149"
    ```azurecli
    az network vnet create -n TestVNet1 -g TestRG1 --address-prefix 10.11.0.0/16 -l eastus --subnet-name FrontEnd --subnet-prefix 10.11.0.0/24
    ```
-3. Создайте дополнительное адресное пространство для внутренней подсети. Обратите внимание, что на этом шаге мы указываем созданное ранее адресное пространство, а также дополнительное адресное пространство, которое нужно добавить. Это связано с тем, что команда [az network vnet update](https://docs.microsoft.com/cli/azure/network/vnet) перезаписывает предыдущие параметры. При использовании этой команды обязательно укажите все префиксы адресов.
+3. Создайте дополнительное адресное пространство для внутренней подсети. Обратите внимание, что на этом шаге мы указываем созданное ранее адресное пространство, а также дополнительное адресное пространство, которое нужно добавить. Это связано с тем, что команда [az network vnet update](/cli/azure/network/vnet) перезаписывает предыдущие параметры. При использовании этой команды обязательно укажите все префиксы адресов.
 
    ```azurecli
    az network vnet update -n TestVNet1 --address-prefixes 10.11.0.0/16 10.12.0.0/16 -g TestRG1
@@ -214,10 +214,10 @@ ms.locfileid: "91442149"
    ```
    "activeActive": false, 
    "bgpSettings": { 
-    "asn": 65515, 
-    "bgpPeeringAddress": "10.12.255.30", 
-    "peerWeight": 0 
-   }, 
+    "asn": 65515, 
+    "bgpPeeringAddress": "10.12.255.30", 
+    "peerWeight": 0 
+   }, 
    "enableBgp": false, 
    "etag": "W/\"ecb42bc5-c176-44e1-802f-b0ce2962ac04\"", 
    "gatewayDefaultSite": null, 
@@ -356,7 +356,7 @@ ms.locfileid: "91442149"
 
    Скопируйте значение "id":. Отправьте идентификатор и имя шлюза виртуальной сети (VNet5GW) администратору подписки 1 по электронной почте или другим способом.
 
-3. **[Подписка 1].** На этом шаге вы создадите подключение между TestVNet1 и TestVNet5. Вы можете использовать собственные значения общего ключа, но они должны совпадать для обоих подключений. Создание подключения может занять некоторое время.Обязательно подключитесь к подписке 1.
+3. **[Подписка 1].** На этом шаге вы создадите подключение между TestVNet1 и TestVNet5. Вы можете использовать собственные значения общего ключа, но они должны совпадать для обоих подключений. Создание подключения может занять некоторое время. Обязательно подключитесь к подписке 1.
 
    ```azurecli
    az network vpn-connection create -n VNet1ToVNet5 -g TestRG1 --vnet-gateway1 /subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW -l eastus --shared-key "eeffgg" --vnet-gateway2 /subscriptions/e7e33b39-fe28-4822-b65c-a4db8bbff7cb/resourceGroups/TestRG5/providers/Microsoft.Network/virtualNetworkGateways/VNet5GW
@@ -376,7 +376,7 @@ ms.locfileid: "91442149"
 ## <a name="vnet-to-vnet-faq"></a><a name="faq"></a>Часто задаваемые вопросы о подключениях типа "виртуальная сеть — виртуальная сеть"
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения см. в [документации по виртуальным машинам](https://docs.microsoft.com/azure/).
+* Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения см. в [документации по виртуальным машинам](../index.yml).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

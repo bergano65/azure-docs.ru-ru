@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2019
 ms.author: yelevin
-ms.openlocfilehash: cceeb1fc9715dfd7b1ac714c424421c51d292757
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca483d993290e4d66ba257d4cb5de7fc3c952405
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85552278"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660837"
 ---
 # <a name="hunt-for-threats-with-azure-sentinel"></a>Поиск угроз с помощью Azure Sentinel
 
@@ -66,7 +66,7 @@ ms.locfileid: "85552278"
 
 ## <a name="query-language"></a>Язык запросов 
 
-Поиск в Azure Sentinel основан на языке запросов Kusto. Дополнительные сведения о языке запросов и поддерживаемых операторах см. в разделе [Справочник по языку запросов](/azure/azure-monitor/log-query/get-started-queries).
+Поиск в Azure Sentinel основан на языке запросов Kusto. Дополнительные сведения о языке запросов и поддерживаемых операторах см. в разделе [Справочник по языку запросов](../azure-monitor/log-query/get-started-queries.md).
 
 ## <a name="public-hunting-query-github-repository"></a>Общий репозиторий GitHub для запросов поиска
 

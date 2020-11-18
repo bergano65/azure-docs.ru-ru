@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2020
 ms.author: yelevin
-ms.openlocfilehash: 9d8d0fc46a463bda31595988d807854ef146d333
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 408913fed864ee5f966b96c81afbfee4b2dc8678
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88761732"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660735"
 ---
 # <a name="manage-your-soc-better-with-incident-metrics"></a>Улучшенное управление SOC с помощью метрик инцидентов
 
@@ -39,7 +39,7 @@ ms.locfileid: "88761732"
 
 Каждый раз при создании или обновлении инцидента в таблицу будет добавлена новая запись журнала. Это позволяет относить изменения, внесенные в инциденты, и обеспечивает еще более эффективные метрики SOC, но при формировании запросов для этой таблицы необходимо быть учитыватьм, так как может потребоваться удалить дубликаты записей для инцидента (в зависимости от конкретного выполняемого запроса). 
 
-Например, если требуется возвратить список всех инцидентов, отсортированных по номеру инцидента, но только последний журнал для каждого инцидента, это можно сделать с помощью [оператора суммирования](https://docs.microsoft.com/azure/data-explorer/kusto/query/summarizeoperator) ККЛ с `arg_max()` [статистической функцией](https://docs.microsoft.com/azure/data-explorer/kusto/query/arg-max-aggfunction).
+Например, если требуется возвратить список всех инцидентов, отсортированных по номеру инцидента, но только последний журнал для каждого инцидента, это можно сделать с помощью [оператора суммирования](/azure/data-explorer/kusto/query/summarizeoperator) ККЛ с `arg_max()` [статистической функцией](/azure/data-explorer/kusto/query/arg-max-aggfunction).
 
 
 ```Kusto
@@ -82,9 +82,9 @@ SecurityIncident
 
 Этот новый шаблон книги можно найти, выбрав пункт **книги** в меню навигации меток Azure и выбрав вкладку **шаблоны** . Выберите в галерее **эффективность операций безопасности** и щелкните одну из кнопок **просмотреть сохраненную книгу** и **просмотреть шаблон** .
 
-:::image type="content" source="./media/manage-soc-with-incident-metrics/security-incidents-workbooks-gallery.png" alt-text="Таблица инцидентов безопасности":::
+:::image type="content" source="./media/manage-soc-with-incident-metrics/security-incidents-workbooks-gallery.png" alt-text="Коллекция книг инцидентов безопасности":::
 
-:::image type="content" source="./media/manage-soc-with-incident-metrics/security-operations-workbook-1.png" alt-text="Таблица инцидентов безопасности":::
+:::image type="content" source="./media/manage-soc-with-incident-metrics/security-operations-workbook-1.png" alt-text="Книга &quot;инциденты безопасности&quot; завершена":::
 
 Шаблон можно использовать для создания собственных настраиваемых книг, соответствующих вашим потребностям.
 

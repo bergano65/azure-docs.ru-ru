@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: yushwang
-ms.openlocfilehash: 93916bb1eb92447da45ebae7ccb2e61c5af1dd9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 168bb9e06c73ec27ec1304813023889c9549b8e6
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441584"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660701"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection-classic"></a>Добавление подключения типа "сеть-сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза (классическая модель)
 
@@ -71,8 +71,8 @@ ms.locfileid: "89441584"
 2. Настройте новый шлюз и создайте VPN-туннель. Инструкции см. в разделе [Указание SKU и типа VPN](vpn-gateway-howto-site-to-site-classic-portal.md#sku). Убедитесь, что для типа маршрутизации задано значение "Динамический".
 
 ### <a name="if-you-dont-have-a-site-to-site-virtual-network"></a>Если у вас нет виртуальной сети типа "сеть — сеть"
-1. Создайте виртуальную сеть с VPN-подключением типа "сеть — сеть" с помощью указаний в [этой статье](vpn-gateway-site-to-site-create.md).  
-2. Настройте шлюз с динамической маршрутизацией с помощью следующей процедуры: [Настройка VPN-шлюза](vpn-gateway-configure-vpn-gateway-mp.md). Не забудьте выбрать **динамическую маршрутизацию** в качестве типа шлюза.
+1. Создайте виртуальную сеть с VPN-подключением типа "сеть — сеть" с помощью указаний в [этой статье](./vpn-gateway-howto-site-to-site-classic-portal.md).  
+2. Настройте шлюз с динамической маршрутизацией с помощью следующей процедуры: [Настройка VPN-шлюза](./vpn-gateway-howto-site-to-site-classic-portal.md). Не забудьте выбрать **динамическую маршрутизацию** в качестве типа шлюза.
 
 ## <a name="2-export-the-network-configuration-file"></a><a name="export"></a>2. Экспортируйте файл конфигурации сети.
 
@@ -218,6 +218,6 @@ Get-AzureVnetConnection -VNetName VNET1
     OperationStatus           : Succeeded
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы больше узнать о VPN-шлюзах, см. статью [Шлюзы VPN](vpn-gateway-about-vpngateways.md).

@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: storage
 ms.subservice: blobs
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 19a9abe3a03a384a69950a8ed9b63353e6e36588
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 37dc6d234d243c79fe9bac206caaaa28bb29aa2d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676254"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659953"
 ---
 # <a name="quickstart-route-storage-events-to-web-endpoint-with-azure-cli"></a>Краткое руководство. Маршрутизация событий хранилища в конечную точку веб-узла с Azure CLI
 
@@ -28,11 +28,9 @@ ms.locfileid: "92676254"
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется последняя версия Azure CLI (2.0.70 или более поздней версии). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
-
-Если вы не используете Cloud Shell, сначала выполните вход с помощью `az login`.
+- Для работы с этой статьей требуется версия 2.0.70 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -40,7 +38,7 @@ ms.locfileid: "92676254"
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). 
 
-В следующем примере создается группа ресурсов с именем `<resource_group_name>` в расположении *westcentralus* .  Замените `<resource_group_name>` уникальным именем для группы ресурсов.
+В следующем примере создается группа ресурсов с именем `<resource_group_name>` в расположении *westcentralus*.  Замените `<resource_group_name>` уникальным именем для группы ресурсов.
 
 ```azurecli-interactive
 az group create --name <resource_group_name> --location westcentralus

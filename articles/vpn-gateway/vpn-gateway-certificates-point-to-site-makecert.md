@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 926de9f3fd357cd9d9ca067e4f7beff7d03eec95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55e22ebec5853d6b4f10b53be8e24f4dbebe4e1f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89394198"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659783"
 ---
 # <a name="generate-and-export-certificates-for-point-to-site-connections-using-makecert"></a>Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью MakeCert
 
@@ -26,7 +26,7 @@ ms.locfileid: "89394198"
 
 Ниже приведены инструкции по созданию самозаверяющего сертификата с помощью MakeCert. Они не зависят от модели развертывания. Они подходят как для модели с использованием диспетчера ресурсов, так и для классической модели.
 
-1. Скачайте и установите [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968(v=vs.85).aspx).
+1. Скачайте и установите [MakeCert](/windows/win32/seccrypto/makecert).
 2. После установки можно найти служебную программу makecert.exe по указанному пути: "C:\Program Files (x86) \Windows Kits\10\bin \<arch> ". Однако возможно, что она была установлена в другое место. Откройте командную строку от имени администратора и перейдите в расположение служебной программы MakeCert. Вы можете использовать следующий пример, чтобы указать правильное расположение:
 
    ```cmd
@@ -77,7 +77,7 @@ ms.locfileid: "89394198"
 
 См. инструкции по [установке сертификата клиента](point-to-site-how-to-vpn-client-install-azure-cert.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Продолжайте настраивать параметры конфигурации типа "точка-сеть". 
 

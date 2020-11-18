@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/16/2019
 ms.author: genli
-ms.openlocfilehash: 8c439113907c2eb28c41aed3c21c1d27398d5207
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5456c53ca891a7c88797f9661a6a3b9b9935e08
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84987087"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660913"
 ---
 # <a name="integrate-azure-vpn-gateway-radius-authentication-with-nps-server-for-multi-factor-authentication"></a>Интеграция аутентификации RADIUS шлюза Azure с NPS-сервером для обеспечения Многофакторной идентификации 
 
@@ -52,7 +52,7 @@ ms.locfileid: "84987087"
 ### <a name="step-2-configure-the-nps-for-azure-mfa"></a>Шаг 2. Настройка сервера политики сети для Azure MFA
 
 1. [Установите расширение NPS для MFA Azure](../active-directory/authentication/howto-mfa-nps-extension.md#install-the-nps-extension) на NPS-сервере.
-2. Откройте консоль NPS, щелкните правой кнопкой мыши **клиенты RADIUS**и выберите **создать**. Создайте клиент RADIUS, указав следующие параметры:
+2. Откройте консоль NPS, щелкните правой кнопкой мыши **клиенты RADIUS** и выберите **создать**. Создайте клиент RADIUS, указав следующие параметры:
 
     - **Понятное имя**. Введите любое имя.
     - **Адрес (IP или DNS)**. Введите подсеть шлюза, созданную на шаге 1.
@@ -65,13 +65,13 @@ ms.locfileid: "84987087"
 
     ![Изображение с дополнительными параметрами клиента RADIUS](./media/vpn-gateway-radiuis-mfa-nsp/create-radius-client2.png)
 
-4. Перейдите в раздел **политики**политики  >  **сети**, дважды щелкните **подключения к политике сервера маршрутизации и удаленного доступа Майкрософт** , выберите **предоставить доступ**, а затем нажмите кнопку **ОК**.
+4. Перейдите в раздел **политики** политики  >  **сети**, дважды щелкните **подключения к политике сервера маршрутизации и удаленного доступа Майкрософт** , выберите **предоставить доступ**, а затем нажмите кнопку **ОК**.
 
 ### <a name="step-3-configure-the-virtual-network-gateway"></a>Шаг 3. Настройка шлюза виртуальной сети
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Откройте шлюз виртуальной сети, который вы создали. Убедитесь, что для него указан тип шлюза **VPN** и тип VPN **На основе маршрута**.
-3. Последовательно выберите **пункты Конфигурация сайта**  >  **настроить сейчас**и укажите следующие параметры.
+3. Последовательно выберите **пункты Конфигурация сайта**  >  **настроить сейчас** и укажите следующие параметры.
 
     - **Пул адресов**. Введите подсеть шлюза, созданную на шаге 1.
     - **Тип проверки подлинности**. Выберите **Проверка подлинности RADIUS**.
@@ -81,5 +81,5 @@ ms.locfileid: "84987087"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Многофакторная идентификация Azure](../active-directory/authentication/multi-factor-authentication.md)
+- [Многофакторная идентификация Azure](../active-directory/authentication/concept-mfa-howitworks.md)
 - [Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure](../active-directory/authentication/howto-mfa-nps-extension.md)

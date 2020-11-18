@@ -5,12 +5,12 @@ author: emaher
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
-ms.openlocfilehash: 49f1528f1bb8b422374050512a9ae642ad129fac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bed43e586beff890f0aa8947140ae7d8e50439f3
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85444018"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659834"
 ---
 # <a name="set-up-a-lab-to-teach-database-management-for-relational-databases"></a>Настройка лаборатории для обучения управления базой данных для реляционных баз данных
 
@@ -20,11 +20,11 @@ ms.locfileid: "85444018"
 
 ## <a name="lab-configuration"></a>Настройка лаборатории
 
-Для настройки этой лабораторной работы требуется подписка Azure и учетная запись лаборатории. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. После получения подписки Azure можно создать новую учетную запись лаборатории в службах лаборатории Azure. Дополнительные сведения о создании учетной записи лаборатории см. в разделе [учебник по настройке учетной записи лаборатории](tutorial-setup-lab-account.md).  Можно также использовать существующую учетную запись лаборатории.
+Для настройки этой лабораторной работы требуется подписка Azure и учетная запись лаборатории. Если у вас нет подписки Azure, перед началом работы [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). После получения подписки Azure можно создать новую учетную запись лаборатории в службах лаборатории Azure. Дополнительные сведения о создании учетной записи лаборатории см. в разделе [учебник по настройке учетной записи лаборатории](tutorial-setup-lab-account.md).  Можно также использовать существующую учетную запись лаборатории.
 
 ### <a name="lab-account-settings"></a>Параметры учетной записи лаборатории
 
-Включите параметры, описанные в таблице ниже, для учетной записи лаборатории. Дополнительные сведения о том, как включить образы Marketplace, см. [в разделе Указание образов Marketplace, доступных авторам лабораторий](https://docs.microsoft.com/azure/lab-services/classroom-labs/specify-marketplace-images).
+Включите параметры, описанные в таблице ниже, для учетной записи лаборатории. Дополнительные сведения о том, как включить образы Marketplace, см. [в разделе Указание образов Marketplace, доступных авторам лабораторий](./specify-marketplace-images.md).
 
 | Настройки учетной записи лаборатории | Instructions |
 | ------------------- | ------------ |
@@ -36,12 +36,12 @@ ms.locfileid: "85444018"
 
 | Параметры лаборатории | Значение или инструкции |
 | ------------ | ------------------ |
-|Размер виртуальной машины| Средний. Этот размер лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики.|
+|Размер виртуальной машины| Средняя. Этот размер лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики.|
 |Образ виртуальной машины| SQL Server 2019 Standard на Windows Server 2019|
 
 ## <a name="template-machine-configuration"></a>Конфигурация компьютера шаблона
 
-Чтобы установить MySQL на Windows Server 2019, выполните действия, описанные в [статье Установка и запуск сервера MySQL Community Server на виртуальной машине](https://docs.microsoft.com/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json#install-and-run-mysql-community-server-on-the-virtual-machine).
+Чтобы установить MySQL на Windows Server 2019, выполните действия, описанные в [статье Установка и запуск сервера MySQL Community Server на виртуальной машине](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%252fazure%252fvirtual-machines%252fwindows%252fclassic%252ftoc.json#install-and-run-mysql-community-server-on-the-virtual-machine).
 
 SQL Server 2019 предварительно установлен в образ виртуальной машины, который мы выбрали при создании лабораторной работы.
 

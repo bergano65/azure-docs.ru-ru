@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 087ee796fbd3c0563b8019a062acab9c7ad80bb1
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 2ffc524c14b9ba281d7e386f7f8c726093f11dbf
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579391"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661024"
 ---
 # <a name="query-azure-cosmos-db-data-with-serverless-sql-pool-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью несвязанного с сервером пула SQL в Azure синапсе Link (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "94579391"
 В этой статье вы узнаете, как написать запрос к неиспользуемому для сервера пулу SQL, который будет запрашивать данные из Azure Cosmos DB контейнеров, Синапсеных с включенной ссылкой. Затем вы можете узнать больше о создании бессерверных представлений пула SQL в Azure Cosmos DB контейнерах и подключении их к Power BI моделям в [этом](./tutorial-data-analyst.md) руководстве. 
 
 > [!IMPORTANT]
-> В этом руководстве используется контейнер с [четко определенной схемой Azure Cosmos DB](../../cosmos-db/analytical-store-introduction.md#schema-representation). Работа запросов, которая обеспечивается в бессерверном пуле SQL для [Azure Cosmos DB полной схеме точности](#full-fidelity-schema) , является временным поведением, которое будет изменено на основе отзывов о предварительной версии. Не полагайтесь на схему результирующего набора `OPENROWSET` функций без `WITH` предложения, считывающего данные из контейнера с полной схемой точности, так как работа запроса может быть изменена и согласована с четко определенной схемой. Опубликуйте свои отзывы на [форуме обратной связи Azure синапсе Analytics](https://feedback.azure.com/forums/307516-azure-synapse-analytics) или обратитесь к [группе разработчиков по ссылке синапсе](mailto:cosmosdbsynapselink@microsoft.com) , чтобы отправить отзыв.
+> В этом руководстве используется контейнер с [четко определенной схемой Azure Cosmos DB](../../cosmos-db/analytical-store-introduction.md#schema-representation). Работа запроса, которую серверный пул SQL предоставляет для [схемы Azure Cosmos DB полной точности](#full-fidelity-schema) , является временным поведением, которое будет изменено на основе отзывов о предварительной версии. Не полагайтесь на схему результирующего набора `OPENROWSET` функции без `WITH` предложения, считывающего данные из контейнера с полной схемой точности, так как работа запроса может быть согласована с и изменяется на основе четко определенной схемы. Опубликуйте свой отзыв на [форуме обратной связи Azure синапсе Analytics](https://feedback.azure.com/forums/307516-azure-synapse-analytics) или обратитесь к [группе разработчиков по ссылке синапсе](mailto:cosmosdbsynapselink@microsoft.com) , чтобы отправить отзыв.
 
 ## <a name="overview"></a>Обзор
 

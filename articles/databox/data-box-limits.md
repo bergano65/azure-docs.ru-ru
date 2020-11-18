@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 10/01/2020
+ms.date: 11/16/2020
 ms.author: alkohli
-ms.openlocfilehash: b193247fee843796da0cb2fcfc1a874b1a1b72fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 00ba711661d69bbaf53ff51fb2cb833d9b1c1ae2
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91660927"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660429"
 ---
 # <a name="azure-data-box-limits"></a>Ограничения Azure Data Box
 
@@ -28,7 +28,7 @@ ms.locfileid: "91660927"
 - Data Box может хранить не более 500 000 000 файлов как для импорта, так и для экспорта.
 - Data Box поддерживает не более 512 контейнеров или общих папок в облаке. Каталоги верхнего уровня в общей папке пользователя преобразуются в контейнеры или общие файловые ресурсы Azure в облаке. 
 - Емкость Data Box использования может быть меньше 80 ТБ из-за использования пространства метаданных ReFS.
-- Data Box поддерживает не более 5 клиентских подключений одновременно в общем ресурсе NFS. 
+- Data Box поддерживает не более 10 клиентских подключений за раз в общем ресурсе NFS.
 
 ## <a name="azure-storage-limits"></a>Ограничения службы хранилища Azure
 

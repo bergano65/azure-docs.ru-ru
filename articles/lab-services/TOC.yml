@@ -167,7 +167,7 @@
 - name: Справочник
   items:
     - name: REST API
-      href: 'https://docs.microsoft.com/rest/api/labservices/'
+      href: /rest/api/labservices/
     - name: Модуль PowerShell Az.LabServices (предварительная версия)
       href: reference-powershell-module.md
 - name: Ресурсы

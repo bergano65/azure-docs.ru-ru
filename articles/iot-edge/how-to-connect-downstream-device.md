@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: 979ed3d21986ad43d805446a520a59333a6798ed
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 78600b7b57a7c30fc609434a700f13fa21e079ce
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149321"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659647"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
 
@@ -109,7 +109,7 @@ import-certificate  <file path>\azure-iot-test-only.root.ca.cert.pem -certstorel
 Сертификаты также можно установить с помощью служебной программы **certlm** :
 
 1. В меню "Пуск" выполните поиск по элементу **Управление сертификатами компьютеров**. Откроется служебная программа **certlm**.
-2. Перейдите к разделу **Сертификаты — локальные**  >  **Доверенные корневые центры сертификации**компьютера.
+2. Перейдите к разделу **Сертификаты — локальные**  >  **Доверенные корневые центры сертификации** компьютера.
 3. Щелкните правой кнопкой мыши элемент **Сертификаты** и выберите **Все задачи** > **Импорт**. Откроется мастер импорта сертификатов.
 4. Выполните действия по его подсказкам и импортируйте файл сертификата `<path>/azure-iot-test-only.root.ca.cert.pem`. По завершении вы увидите сообщение "Импорт выполнен".
 
@@ -168,11 +168,15 @@ var options = {
 3. В файле iotedge_downstream_device_sample.c измените переменные **connectionString** и **edge_ca_cert_path**.
 4. В документации по пакету SDK вы найдете инструкции по запуску примера на конкретном устройстве.
 
+
 Пакет SDK для устройств Azure IoT для C предоставляет возможность зарегистрировать сертификат ЦС при настройке клиента. Эта операция не устанавливает сертификат, а просто использует сертификат в текстовом формате прямо из памяти. Сохраненный сертификат предоставляется базовому стеку TLS при установке подключения.
 
 ```C
 (void)IoTHubDeviceClient_SetOption(device_handle, OPTION_TRUSTED_CERT, cert_string);
 ```
+
+>[!NOTE]
+> Метод регистрации сертификата ЦС при настройке клиента может измениться при использовании [управляемого](https://github.com/Azure/azure-iot-sdk-c#packages-and-libraries) пакета или библиотеки. Например, [Библиотека IDE на основе Arduino](https://github.com/azure/azure-iot-arduino) потребует добавления сертификата ЦС в массив сертификатов, определенный в файле Global [certs. c](https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c) , вместо использования `IoTHubDeviceClient_LL_SetOption` операции.  
 
 Если вы не используете OpenSSL или другую библиотеку TLS, на узлах Windows пакет SDK по умолчанию применяет Schannel. Чтобы обеспечить правильную работу Schannel, сертификат корневого ЦС для IoT Edge должен быть установлен в хранилище сертификатов Windows, а не с помощью операции `IoTHubDeviceClient_SetOption`.
 

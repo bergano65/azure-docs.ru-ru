@@ -15,18 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/06/2020
 ms.author: yelevin
-ms.openlocfilehash: ca60b9350171cee55462c9df28915c811e1cfd25
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: cd52f22004bf72f3328d1e6a0d1ec988c2406317
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94377706"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660854"
 ---
 # <a name="manage-hunting-and-livestream-queries-in-azure-sentinel-using-rest-api"></a>Управление запросами на поиск и облаку в Sentinel Azure с помощью REST API
 
 Azure Sentinel, которая встроена в Azure Monitor Log Analytics, позволяет использовать Log Analytics "REST API для управления запросами поиском и облаку. В этом документе показано, как создавать запросы на поиск и управлять ими с помощью REST API.  Созданные таким образом запросы будут отображаться в пользовательском интерфейсе Sentinel Azure.
 
-Дополнительные сведения об [API сохраненных поисков](https://docs.microsoft.com/rest/api/loganalytics/savedsearches)см. в подробном справочнике по REST API.
+Дополнительные сведения об [API сохраненных поисков](/rest/api/loganalytics/savedsearches)см. в подробном справочнике по REST API.
 
 ## <a name="api-examples"></a>Примеры с API
 
@@ -46,7 +46,7 @@ Azure Sentinel, которая встроена в Azure Monitor Log Analytics, 
 
 ### <a name="example-1"></a>Пример 1
 
-В этом примере показано, как создать или обновить запрос поиска для заданной рабочей области Sentinel Azure.  Для запроса облаку замените *«Category»: «Поиск запросов»* на *«Category»: «облаку Queries»* в **тексте запроса** : 
+В этом примере показано, как создать или обновить запрос поиска для заданной рабочей области Sentinel Azure.  Для запроса облаку замените *«Category»: «Поиск запросов»* на *«Category»: «облаку Queries»* в **тексте запроса**: 
 
 #### <a name="request-header"></a>Заголовок запроса
 
