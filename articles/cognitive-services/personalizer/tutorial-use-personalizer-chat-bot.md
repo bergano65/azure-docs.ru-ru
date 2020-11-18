@@ -6,12 +6,12 @@ ms.subservice: personalizer
 ms.topic: tutorial
 ms.date: 07/17/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3ae22294d86ab65be0f09b734735885177c1cf63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c4920eaa7a5619be37d38afd763e7be416d3124
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777315"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565727"
 ---
 # <a name="tutorial-use-personalizer-in-net-chat-bot"></a>Руководство по использованию Персонализатора в чат-боте .NET
 
@@ -130,7 +130,7 @@ git clone https://github.com/Azure-Samples/cognitive-services-personalizer-sampl
 
 Чтобы использовать этот чат-бот, необходимо создать ресурсы Azure для Персонализатора и Распознавания речи (LUIS).
 
-* [Создание ресурсов LUIS.](../luis/luis-how-to-azure-subscription.md#create-luis-resources-in-azure-portal) На шаге создания выберите **оба** ресурса (для разработки и прогнозирования).
+* [Создание ресурсов LUIS.](../luis/luis-how-to-azure-subscription.md#create-luis-resources-in-the-azure-portal) На шаге создания выберите **оба** ресурса (для разработки и прогнозирования).
 * [Создайте ресурс Персонализатора](how-to-create-resource.md), затем скопируйте ключ и конечную точку на портале Azure. Эти значения нужно будет задать в файле `appsettings.json` проекта .NET.
 
 ### <a name="create-luis-app"></a>Создание приложения LUIS
@@ -178,18 +178,18 @@ git clone https://github.com/Azure-Samples/cognitive-services-personalizer-sampl
 
 1. Откройте Bot Framework Emulator и выберите **Open Bot** (Открыть бот).
 
-    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-startup.png" alt-text="Снимок экрана: браузер, отображающий веб-сайт чат-бота.":::
+    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-startup.png" alt-text="Снимок экрана начального экрана эмулятора бота.":::
 
 
 1. Настройте бот, используя следующий **URL-адрес бота**, а затем нажмите кнопку **Connect** (Подключить):
 
     `http://localhost:3978/api/messages`
 
-    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-open-bot-settings.png" alt-text="Снимок экрана: браузер, отображающий веб-сайт чат-бота.":::
+    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-open-bot-settings.png" alt-text="Снимок экрана эмулятора бота: параметры открытия бота.":::
 
     Эмулятор подключается к чат-боту и отображает пояснительный текст, а также данные журнала и отладки, полезные для локальной разработки.
 
-    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-bot-conversation-first-turn.png" alt-text="Снимок экрана: браузер, отображающий веб-сайт чат-бота.":::
+    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-bot-conversation-first-turn.png" alt-text="Снимок экрана эмулятора бота: начало диалога.":::
 
 ## <a name="use-the-bot-in-the-bot-emulator"></a>Использование бота в эмуляторе бота
 
