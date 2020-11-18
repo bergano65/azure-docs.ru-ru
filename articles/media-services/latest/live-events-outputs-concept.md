@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 10/23/2020
 ms.author: inhenkel
-ms.openlocfilehash: f7f73efff266e012616ac68d956abd921afaac2a
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: a74dcb3cae74605e747a63f8fbb102404d8cc80e
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337429"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94741830"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>События и выходные данные прямой трансляции в Службах мультимедиа
 
@@ -38,7 +38,7 @@ ms.locfileid: "94337429"
 
 Для [события Live](/rest/api/media/liveevents) можно задать *транзитный* (локальный динамический кодировщик отправляет поток с несколькими скоростями) или *кодирование в реальном времени* (локальный динамический кодировщик отправляет односкоростной поток). Типы задаются во время создания с помощью [лививентенкодингтипе](/rest/api/media/liveevents/create#liveeventencodingtype):
 
-* **Лививентенкодингтипе. None** : локальный динамический кодировщик отправляет поток с несколькими скоростями. Принимающий поток проходит через событие Live без дальнейшей обработки. Также называется сквозным режимом.
+* **Лививентенкодингтипе. None**: локальный динамический кодировщик отправляет поток с несколькими скоростями. Принимающий поток проходит через событие Live без дальнейшей обработки. Также называется сквозным режимом.
 * **Лививентенкодингтипе. Standard**. локальный динамический кодировщик отправляет односкоростной поток в Live Event, а службы мультимедиа — несколько потоков с несколькими скоростями. Если веб-канал публикации имеет 720p или более высокое разрешение, Предустановка **Default720p** кодирует набор из 6 пар "разрешение/скорость".
 * **Лививентенкодингтипе. Premium1080p**. локальный динамический кодировщик отправляет односкоростной поток в Live Event, а службы мультимедиа — несколько потоков с несколькими скоростями. Предустановка Default1080p указывает выходной набор пар "разрешение-скорость".
 
@@ -136,7 +136,7 @@ ms.locfileid: "94337429"
     Режим именного является предпочтительным для больших трансляций мультимедиа, использующих кодировщики аппаратной рассылки и не требующих перенастройки кодировщиков при запуске интерактивного мероприятия. Этим вещательным каналам нужен прогнозируемый URL-адрес приема, который не изменяется со временем.
 
     > [!NOTE]
-    > В портал Azure URL-адрес именного имеет имя " *статический префикс имени узла* ".
+    > В портал Azure URL-адрес именного имеет имя "*статический префикс имени узла*".
 
     Чтобы указать этот режим в API, задайте значение `useStaticHostName` `true` во время создания (по умолчанию — `false` ). Если `useStaticHostname` для параметра задано значение true, то `hostnamePrefix` указывает первую часть имени узла, назначенную для предварительной версии интерактивных событий и принимающих конечные точки. Последним именем узла будет сочетание этого префикса, имя учетной записи службы мультимедиа и короткий код для центра обработки данных служб мультимедиа Azure.
 
@@ -150,13 +150,13 @@ ms.locfileid: "94337429"
     |---|---|---|
     |REST|[Properties. Ванитюрл](/rest/api/media/liveevents/create#liveevent)|[Лививентинпут. accessToken](/rest/api/media/liveevents/create#liveeventinput)|
     |CLI|[--именного — URL-адрес](/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access — токен](/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
-    |.NET|[Лививент. Ванитюрл](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
+    |.NET|[Лививент. Ванитюрл](/dotnet/api/microsoft.azure.management.media.models.liveevent.md?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
 
 ### <a name="live-ingest-url-naming-rules"></a>Правила именования URL-адресов динамического приема
 
 * *Случайная* строка ниже представляет собой 128-разрядное шестнадцатеричное число (состоящее из 32 знаков: 0–9 и a–f).
-* *маркер доступа* : допустимая строка GUID, заданная при использовании режима именного. Например, `"1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`.
-* *имя потока* : указывает имя потока для конкретного соединения. Значение имени потока обычно добавляется используемым динамическим кодировщиком. Можно настроить динамический кодировщик для использования любого имени для описания соединения, например: "video1_audio1", "video2_audio1", "Stream".
+* *маркер доступа*: допустимая строка GUID, заданная при использовании режима именного. Например, `"1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`.
+* *имя потока*: указывает имя потока для конкретного соединения. Значение имени потока обычно добавляется используемым динамическим кодировщиком. Можно настроить динамический кодировщик для использования любого имени для описания соединения, например: "video1_audio1", "video2_audio1", "Stream".
 
 #### <a name="non-vanity-url"></a>Незапоминающийся URL-адрес
 
@@ -205,7 +205,7 @@ ms.locfileid: "94337429"
 
 Подробные сведения о динамических выходных данных см. в разделе [Использование DVR для облака](live-event-cloud-dvr.md).
 
-## <a name="frequently-asked-questions"></a>Вопросы и ответы
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 См. статью с [часто задаваемыми вопросами](frequently-asked-questions.md#live-streaming) .
 

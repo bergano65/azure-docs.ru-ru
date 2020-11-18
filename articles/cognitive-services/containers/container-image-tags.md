@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: reference
-ms.date: 11/06/2020
+ms.date: 11/17/2020
 ms.author: aahi
-ms.openlocfilehash: 0efb278c217ede94f67b47250633622501a24414
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: ba51776942ad28fc8d4b0db7dd2d0e162e5322b5
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412550"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94743343"
 ---
 # <a name="azure-cognitive-services-container-image-tags-and-release-notes"></a>Теги образа контейнера Cognitive Services Azure и заметки о выпуске
 
@@ -36,7 +36,7 @@ Azure Cognitive Services предлагает множество образов 
 | `latest`                      |       |
 | `1.1.013560003-amd64-preview` |      |
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
@@ -65,7 +65,7 @@ Azure Cognitive Services предлагает множество образов 
 | `latest`                      |       |
 | `2.0.013250001-amd64-preview` |  |
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 Заметки о выпуске `1.1.013050001-amd64-preview`
 
@@ -110,7 +110,7 @@ Azure Cognitive Services предлагает множество образов 
 | `1.1.009301-amd64-preview`    |       |
 
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
@@ -574,6 +574,39 @@ Azure Cognitive Services предлагает множество образов 
 
 Этот образ контейнера имеет следующие доступные теги. Полный список тегов можно также найти [на мкр](https://mcr.microsoft.com/v2/azure-cognitive-services/speechservices/neural-text-to-speech/tags/list).
 
+
+# <a name="latest-version"></a>[Последняя версия](#tab/current)
+
+Заметки о выпуске для `v1.3.0` :
+* Контейнер нейронного текста в речь теперь является общедоступным. 
+
+| Теги изображений                                  | Примечания                                                                      |
+|---------------------------------------------|:---------------------------------------------------------------------------|
+| `latest`                                    | Образ контейнера с `en-US` локальным и `en-US-AriaNeural` голосовым языком.      |
+| `1.3.0-amd64-<locale-and-voice>`    | Замените `<locale>` на один из доступных языков, перечисленных ниже. Например, `1.3.0-amd64-en-us-arianeural`. |
+
+
+| Языковые стандарты и голоса 1.3.0 v           | Примечания                                                                      |
+|---------------------------------------------|:---------------------------------------------------------------------------|
+| `de-de-katjaneural`                 | Образ контейнера с `de-DE` локальным и `de-DE-KatjaNeural` голосовым языком.     |
+| `en-au-natashaneural`               | Образ контейнера с `en-AU` локальным и `en-AU-NatashaNeural` голосовым языком.   |
+| `en-ca-claraneural`                 | Образ контейнера с `en-CA` локальным и `en-CA-ClaraNeural` голосовым языком.     |
+| `en-gb-libbyneural`                 | Образ контейнера с `en-GB` локальным и `en-GB-LibbyNeural` голосовым языком.     |
+| `en-gb-mianeural`                   | Образ контейнера с `en-GB` локальным и `en-GB-MiaNeural` голосовым языком.       |
+| `en-us-arianeural`                  | Образ контейнера с `en-US` локальным и `en-US-AriaNeural` голосовым языком.      |
+| `en-us-guyneural`                   | Образ контейнера с `en-US` локальным и `en-US-GuyNeural` голосовым языком.       |
+| `es-es-elviraneural`                | Образ контейнера с `es-ES` локальным и `es-ES-ElviraNeural` голосовым языком.    |
+| `es-mx-dalianeural`                 | Образ контейнера с `es-MX` локальным и `es-MX-DaliaNeural` голосовым языком.     |
+| `fr-ca-sylvieneural`                | Образ контейнера с `fr-CA` локальным и `fr-CA-SylvieNeural` голосовым языком.    |
+| `fr-fr-deniseneural`                | Образ контейнера с `fr-FR` локальным и `fr-FR-DeniseNeural` голосовым языком.    |
+| `it-it-elsaneural`                  | Образ контейнера с `it-IT` локальным и `it-IT-ElsaNeural` голосовым языком.      |
+| `ja-jp-nanamineural`                | Образ контейнера с `ja-JP` локальным и `ja-JP-NanamiNeural` голосовым языком.    |
+| `ko-kr-sunhineural`                 | Образ контейнера с `ko-KR` локальным и `ko-KR-SunHiNeural` голосовым языком.     |
+| `pt-br-franciscaneural`             | Образ контейнера с `pt-BR` локальным и `pt-BR-FranciscaNeural` голосовым языком. |
+| `zh-cn-xiaoxiaoneural`              | Образ контейнера с `zh-CN` локальным и `zh-CN-XiaoxiaoNeural` голосовым языком.  |
+
+# <a name="previous-version"></a>[Предыдущая версия](#tab/previous)
+
 | Теги изображений                                  | Примечания                                                                      |
 |---------------------------------------------|:---------------------------------------------------------------------------|
 | `latest`                                    | Образ контейнера с `en-US` локальным и `en-US-AriaNeural` голосовым языком.      |
@@ -600,6 +633,8 @@ Azure Cognitive Services предлагает множество образов 
 | `pt-br-franciscaneural-preview`             | Образ контейнера с `pt-BR` локальным и `pt-BR-FranciscaNeural` голосовым языком. |
 | `zh-cn-xiaoxiaoneural-preview`              | Образ контейнера с `zh-CN` локальным и `zh-CN-XiaoxiaoNeural` голосовым языком.  |
 
+---
+
 ## <a name="speech-language-detection"></a>Распознавание языка речи
 
 Образ контейнера [обнаружения языка распознавания речи][sp-lid] можно найти в разделе " `mcr.microsoft.com` Открытие реестра контейнеров". Он находится в `azure-cognitive-services/speechservices/` репозитории и называется `language-detection` . Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/speechservices/language-detection` .
@@ -625,7 +660,7 @@ Azure Cognitive Services предлагает множество образов 
 | `latest`                      |       |
 | `1.1.013570001-amd64` |       |
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
@@ -649,7 +684,7 @@ Azure Cognitive Services предлагает множество образов 
 | `1.1.013570001-amd64` | |
    
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 
 | Теги изображений                    | Примечания |

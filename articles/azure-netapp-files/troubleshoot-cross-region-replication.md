@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 09/16/2020
+ms.date: 11/17/2020
 ms.author: b-juche
-ms.openlocfilehash: 3aaa5d2bc6fdbda0d1db212539c719aa65cae61b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6fbb9b054433905d41d0171ab08b4647618be466
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90709173"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94745689"
 ---
 # <a name="troubleshoot-cross-region-replication"></a>Устранение неполадок с репликацией между регионами
 
@@ -27,7 +27,7 @@ ms.locfileid: "90709173"
 
 ## <a name="errors-creating-replication"></a>Ошибки при создании репликации  
 
-|     Сообщение об ошибке    |     Решение    |
+|     Сообщение об ошибке    |     Разрешение    |
 |-|-|
 |     `Volume {0} cannot   be used as source because it is already in replication`    |     Невозможно создать репликацию с исходным томом, который уже находится в отношении репликации данных.    |
 |     `Peered region   '{0}' is not accepted`    |     Вы пытаетесь создать репликацию между неравноправными регионами.    |
@@ -35,7 +35,7 @@ ms.locfileid: "90709173"
 
 ## <a name="errors-authorizing-volume"></a>Ошибки авторизации тома  
 
-|     Сообщение об ошибке    |     Решение    |
+|     Сообщение об ошибке    |     Разрешение    |
 |-|-|
 |     `Missing value   for 'AuthorizeSourceReplication'`    |     В   `RemoteResourceID` пользовательском интерфейсе или запросе API отсутствует или является недопустимым (исправьте сообщение об ошибке).    |
 |     `Missing value   for 'RemoteVolumeResourceId'`    |     В   `RemoteResourceID` пользовательском интерфейсе или запросе API отсутствует или является недопустимым.    |
@@ -46,25 +46,26 @@ ms.locfileid: "90709173"
 
 ## <a name="errors-deleting-replication"></a>Ошибки при удалении репликации
 
-|     Сообщение об ошибке    |     Решение    |
+|     Сообщение об ошибке    |     Разрешение    |
 |-|-|
 |     `Replication   cannot be deleted, mirror state needs to be in status: Broken before deleting`    |     Проверьте, что какая-либо репликация была разорвана или не была инициализирована и неактивна (сбой инициализации).    |
 |     `Cannot delete   source replication`    |     Удаление репликации с исходной стороны не допускается. Убедитесь, что вы удаляете репликацию с конечной стороны.    |
+| `Volume with replication cannot be deleted`  |  Удалите репликацию перед удалением тома. См. раздел [Удаление репликации](cross-region-replication-delete.md). Для этой операции необходимо разорвать пиринг перед удалением репликации для тома. 
 
 ## <a name="errors-resyncing-volume"></a>Ошибки при повторной синхронизации тома
 
-|     Сообщение об ошибке    |     Решение    |
+|     Сообщение об ошибке    |     Разрешение    |
 |-|-|
 |     `Volume Replication is in invalid status: (Mirrored|Uninitialized) for operation: 'ResyncReplication'`     |     Проверьте, что репликация тома находится в состоянии "нарушено".    |
 
 ## <a name="errors-deleting-snapshot"></a>Ошибки при удалении моментального снимка 
 
-|     Сообщение об ошибке    |     Решение    |
+|     Сообщение об ошибке    |     Разрешение    |
 |-|-|
 |     `Snapshot   cannot be deleted, parent volume is a Data Protection volume with a   replication object`    |     Убедитесь, что репликация тома была нарушена, если вы хотите удалить этот моментальный снимок.    |
 |     `Cannot delete   volume replication generated snapshot`    |     Удаление базовых моментальных снимков репликации запрещено.    |
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 * [Репликация между регионами](cross-region-replication-introduction.md)
 * [Требования и рекомендации по использованию репликации между регионами](cross-region-replication-requirements-considerations.md)

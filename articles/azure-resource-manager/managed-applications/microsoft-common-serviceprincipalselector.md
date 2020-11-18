@@ -1,30 +1,42 @@
 ---
 title: Элемент пользовательского интерфейса СервицепринЦипалселектор
-description: Описывает элемент пользовательского интерфейса Microsoft. Common. СервицепринЦипалселектор для портал Azure. Предоставляет раскрывающийся список для выбора идентификатора приложения и текстового поля для ввода пароля или отпечатка сертификата.
+description: Описывает элемент пользовательского интерфейса Microsoft. Common. СервицепринЦипалселектор для портал Azure. Предоставляет элемент управления для выбора приложения и текстового поля для ввода пароля или отпечатка сертификата.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 09/29/2020
+ms.date: 11/17/2020
 ms.author: tomfitz
-ms.openlocfilehash: 73b242754bfae53b6df5abd9c2c8dee33b973dad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9d41e41f110e927f436b38d6291719c138defa53
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576002"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94745820"
 ---
 # <a name="microsoftcommonserviceprincipalselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft. Common. СервицепринЦипалселектор
 
-Элемент управления, позволяющий пользователям выбрать существующий субъект-службу или зарегистрировать новый. При выборе **создать новый**необходимо выполнить действия по регистрации нового приложения. При выборе существующего приложения элемент управления предоставляет текстовое поле для ввода пароля или отпечатка сертификата.
+Элемент управления, позволяющий пользователям выбрать существующий [субъект-службу](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) или зарегистрировать новое приложение. При выборе **создать новый** необходимо выполнить действия по регистрации нового приложения. При выборе существующего приложения элемент управления предоставляет текстовое поле для ввода пароля или отпечатка сертификата.
 
-## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
+## <a name="ui-samples"></a>Примеры пользовательского интерфейса
 
-Представление по умолчанию определяется значениями в `defaultValue` свойстве. Если `principalId` свойство содержит допустимый глобальный уникальный идентификатор (GUID), элемент управления ищет идентификатор объекта приложения. Значение по умолчанию применяется, если пользователь не делает выбор из раскрывающегося списка.
+Можно использовать приложение по умолчанию, создать новое приложение или использовать существующее приложение.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-initial.png" alt-text="Начальное представление Microsoft. Common. СервицепринЦипалселектор":::
+### <a name="use-default-application-or-create-new"></a>Используйте приложение по умолчанию или создайте новое
 
-При выборе **создать новый** или существующий идентификатор приложения из раскрывающегося списка **тип проверки подлинности** отображается для ввода пароля или отпечатка сертификата в текстовом поле.
+Представление по умолчанию определяется значениями в `defaultValue` свойстве, а для **типа субъекта-службы** — значение **создать новый**. Если `principalId` свойство содержит допустимый глобальный уникальный идентификатор (GUID), элемент управления ищет приложение `objectId` . Значение по умолчанию применяется, если пользователь не делает выбор из элемента управления.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-selection.png" alt-text="Начальное представление Microsoft. Common. СервицепринЦипалселектор":::
+Если требуется зарегистрировать новое приложение, нажмите кнопку **изменить выбор** и отобразится диалоговое окно **Регистрация приложения** . Введите **имя**, **поддерживаемый тип учетной записи** и нажмите кнопку **зарегистрировать** .
+
+:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-default.png" alt-text="Начальное представление Microsoft. Common. СервицепринЦипалселектор.":::
+
+После регистрации нового приложения используйте **тип проверки подлинности** для ввода пароля или отпечатка сертификата.
+
+:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-authenticate.png" alt-text="Проверка подлинности Microsoft. Common. СервицепринЦипалселектор.":::
+
+### <a name="use-existing-application"></a>Использовать существующее приложение
+
+Чтобы использовать существующее приложение, щелкните **выбрать существующий** и выберите **сделать выбор**. Используйте диалоговое окно **Выбор приложения** для поиска имени приложения. В результатах выберите приложение, а затем нажмите кнопку **выбрать** . После выбора приложения элемент управления отображает **тип проверки подлинности** для ввода пароля или отпечатка сертификата.
+
+:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-existing.png" alt-text="Microsoft. Common. СервицепринЦипалселектор выберите существующее приложение.":::
 
 ## <a name="schema"></a>схема
 
@@ -33,14 +45,12 @@ ms.locfileid: "91576002"
   "name": "ServicePrincipal",
   "type": "Microsoft.Common.ServicePrincipalSelector",
   "label": {
-    "principalId": "App Id",
     "password": "Password",
     "certificateThumbprint": "Certificate thumbprint",
     "authenticationType": "Authentication Type",
     "sectionHeader": "Service Principal"
   },
   "toolTip": {
-    "principalId": "App Id",
     "password": "Password",
     "certificateThumbprint": "Certificate thumbprint",
     "authenticationType": "Authentication Type"
@@ -61,15 +71,15 @@ ms.locfileid: "91576002"
 }
 ```
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
-- Обязательные свойства:
+- Ниже приведены обязательные свойства.
   - `name`
   - `type`
   - `label`
   - `defaultValue`: Указывает значения по умолчанию `principalId` и `name` .
 
-- Необязательные свойства:
+- Ниже приведены необязательные свойства.
   - `toolTip`: Присоединяет подсказку `infoBalloon` к каждой метке.
   - `visible`: Скрытие или отображение элемента управления.
   - `options`: Указывает, следует ли сделать параметр отпечатка сертификата доступным.
@@ -95,14 +105,12 @@ ms.locfileid: "91576002"
             "name": "ServicePrincipal",
             "type": "Microsoft.Common.ServicePrincipalSelector",
             "label": {
-              "principalId": "App Id",
               "password": "Password",
               "certificateThumbprint": "Certificate thumbprint",
               "authenticationType": "Authentication Type",
               "sectionHeader": "Service Principal"
             },
             "toolTip": {
-              "principalId": "App Id",
               "password": "Password",
               "certificateThumbprint": "Certificate thumbprint",
               "authenticationType": "Authentication Type"
@@ -138,9 +146,9 @@ ms.locfileid: "91576002"
 
 ## <a name="example-output"></a>Пример выходных данных
 
-`appId`— Это идентификатор регистрации приложения, который вы выбрали или создали. `objectId`Представляет собой массив ObjectID для субъектов-служб, настроенных для регистрации выбранного приложения.
+`appId`— Это идентификатор регистрации приложения, который вы выбрали или создали. `objectId`— Это массив идентификаторов объектов для субъектов-служб, настроенных для регистрации выбранного приложения.
 
-Если выборка не сделана из раскрывающегося списка, то `newOrExisting` значение свойства — **New**:
+Если выборка не сделана из элемента управления, `newOrExisting` значение свойства — **New**:
 
 ```json
 {
@@ -165,7 +173,7 @@ ms.locfileid: "91576002"
 }
 ```
 
-При выборе параметра **создать новый** или существующий идентификатор приложения из раскрывающегося списка `newOrExisting` значение свойства является **существующим**:
+Если в элементе управления выбрано **Создание нового** или существующее приложение, то `newOrExisting` значение свойства является **существующим**:
 
 ```json
 {
@@ -190,7 +198,7 @@ ms.locfileid: "91576002"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 - Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

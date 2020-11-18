@@ -8,12 +8,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 4d307b2a16262645919423ef89c0d87636639bf1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b99ec4158b1df5ab558026c05b9ec1024fb0722e
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378718"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94742579"
 ---
 # <a name="marketplace-rewards"></a>Marketplace Rewards
 
@@ -21,7 +21,7 @@ ms.locfileid: "89378718"
 
 Программа создает положительный цикл обратной связи: преимущества на каждом этапе роста помогут вам перейти на следующий этап, что поможет вам расширить свой бизнес для клиентов корпорации Майкрософт, с помощью поля Майкрософт и канала Майкрософт, используя коммерческий магазин в качестве платформы.
 
-Ваши преимущества зависят от того, к какой категории относится предложение: [список, пробная версия или транзакция](../determine-your-listing-type.md#choose-a-listing-option).
+Ваши преимущества различны в зависимости от того, связаны ли ваши предложения с [мной, бесплатной пробной версией или инструкцией transactа](../determine-your-listing-type.md).
 
 Когда ваше предложение будет доступно клиентам и вы получите право на соответствующие преимущества, с вами свяжется член команды Rewards.
 

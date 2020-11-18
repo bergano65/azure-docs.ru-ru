@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для Azure Service Fabric
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Service Fabric. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 83f75695d91f8a8d0d68a429380099a212f76e2f
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 393e4a6557585b5efde28273dfe14243b3b304df
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331963"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94743630"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-service-fabric"></a>Встроенные определения в Политике Azure для Azure Service Fabric
 
