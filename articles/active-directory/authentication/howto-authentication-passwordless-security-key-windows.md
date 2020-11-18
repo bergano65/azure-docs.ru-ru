@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b88b2ca0a420295a7a53608f02923e72045e1c44
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 8fba2610b3343744c448e390bc2d713b38da481d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964746"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839477"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Включение входа с использованием ключа безопасности без пароля для устройств Windows 10 с Azure Active Directory (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "91964746"
 
 | Тип устройства | присоединение к Azure AD; | присоединение к Azure AD (гибридные устройства). |
 | --- | --- | --- |
-| [Многофакторная идентификация Azure](howto-mfa-getstarted.md) | X | X |
+| [Многофакторная идентификация Azure AD](howto-mfa-getstarted.md) | X | X |
 | [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md) | X | X |
 | Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys) | X | X |
 | Для WebAuthN требуется Windows 10 версии 1903 или более поздней. | X | X |
@@ -79,8 +79,8 @@ ms.locfileid: "91964746"
 Чтобы включить использование ключей безопасности с помощью Intune, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Перейдите к **Microsoft Intune**  >  **регистрации устройства**регистрация  >  **Windows**  >  **Свойства Windows Hello для бизнеса**  >  **Properties**.
-1. В разделе **Параметры**установите флажок **использовать ключи безопасности для входа** в значение **включено**.
+1. Перейдите к **Microsoft Intune**  >  **регистрации устройства** регистрация  >  **Windows**  >  **Свойства Windows Hello для бизнеса**  >  **Properties**.
+1. В разделе **Параметры** установите флажок **использовать ключи безопасности для входа** в значение **включено**.
 
 Настройка ключей безопасности для входа не зависит от настройки Windows Hello для бизнеса.
 
@@ -164,4 +164,4 @@ ms.locfileid: "91964746"
 
 [Дополнительные сведения о регистрации устройств](../devices/overview.md)
 
-[Дополнительные сведения о службе Многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)
+[Дополнительные сведения о многофакторной идентификации Azure AD](../authentication/howto-mfa-getstarted.md)

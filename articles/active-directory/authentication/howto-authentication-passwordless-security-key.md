@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f99d57e084a6a765b8598ba7f8eebbd7ddb34d74
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 7d9c4dff1e4a3ba7c7a2b11311e97eb5e66a1585
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964644"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839307"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Включить вход в систему без пароля (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "91964644"
 
 ## <a name="requirements"></a>Требования
 
-- [Многофакторная идентификация Azure](howto-mfa-getstarted.md)
+- [Многофакторная идентификация Azure AD](howto-mfa-getstarted.md)
 - Разрешить [объединенную предварительную версию регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md)
 - Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys)
 - Для WebAuthN требуется Windows 10 версии 1903 или более поздней * *
@@ -51,8 +51,8 @@ ms.locfileid: "91964644"
 ### <a name="enable-fido2-security-key-method"></a>Включить метод ключа безопасности FIDO2
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Перейдите к **Azure Active Directory**  >  **Security**  >  **методы проверки подлинности**безопасности  >  **метод проверки подлинности (Предварительная версия)**.
-1. В разделе метод **FIDO2 ключ безопасности**выберите следующие параметры.
+1. Перейдите к **Azure Active Directory**  >  **Security**  >  **методы проверки подлинности** безопасности  >  **метод проверки подлинности (Предварительная версия)**.
+1. В разделе метод **FIDO2 ключ безопасности** выберите следующие параметры.
    1. **Включить** -да или нет
    1. **Target** — все пользователи или выбранные пользователи
 1. **Сохраните** конфигурацию.
@@ -62,8 +62,8 @@ ms.locfileid: "91964644"
 1. Перейдите по ссылке [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
 1. Войдите, если он еще не создан.
 1. Щелкните **сведения о безопасности**.
-   1. Если у пользователя уже есть по крайней мере один зарегистрированный метод многофакторной идентификации Azure, он может немедленно зарегистрировать ключ безопасности FIDO2.
-   1. Если у них нет хотя бы одного метода многофакторной идентификации Azure, он должен добавить один из них.
+   1. Если у пользователя уже есть по крайней мере один зарегистрированный метод многофакторной идентификации Azure AD, он может немедленно зарегистрировать ключ безопасности FIDO2.
+   1. Если у них нет хотя бы одного метода многофакторной проверки подлинности Azure AD, он должен добавить один из них.
 1. Добавьте ключ безопасности FIDO2, нажав кнопку **Добавить метод** и выбрав **ключ безопасности**.
 1. Выберите **USB-устройство** или **устройство NFC**.
 1. Получите ключ и нажмите кнопку **Далее**.
@@ -105,4 +105,4 @@ ms.locfileid: "91964644"
 
 [Дополнительные сведения о регистрации устройств](../devices/overview.md)
 
-[Дополнительные сведения о службе Многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)
+[Дополнительные сведения о многофакторной идентификации Azure AD](../authentication/howto-mfa-getstarted.md)

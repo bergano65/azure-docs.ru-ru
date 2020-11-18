@@ -1,6 +1,6 @@
 ---
-title: Защита ресурсов с помощью Azure MFA и ADFS — Azure Active Directory
-description: Эта страница посвящена Azure Multi-Factor Authentication. Она содержит сведения по началу работы с Azure MFA и AD FS в облаке.
+title: Защита ресурсов с помощью Azure AD MFA и ADFS — Azure Active Directory
+description: Это страница многофакторной идентификации Azure AD, в которой описывается, как приступить к работе с Azure AD MFA и AD FS в облаке.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5167d9041e8edfd6e829bdd1a78f826f73eea4d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 999fb350aaa5f11510db0d4ecc036e188d76e20f
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964593"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839341"
 ---
-# <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Защита облачных ресурсов с помощью Многофакторной идентификации Azure и AD FS
+# <a name="securing-cloud-resources-with-azure-ad-multi-factor-authentication-and-ad-fs"></a>Защита облачных ресурсов с помощью многофакторной идентификации Azure AD и AD FS
 
-Если в организации настроена федерация с Azure Active Directory, используйте Многофакторную идентификацию Azure или службы федерации Active Directory (AD FS), чтобы обеспечить безопасность ресурсов, доступных для Azure AD. Чтобы защитить ресурсы Azure Active Directory с помощью Многофакторной идентификации Azure или служб федерации Active Directory, следуйте инструкциям, приведенным ниже.
+Если ваша организация является Федеративной с Azure Active Directory, используйте многофакторную идентификацию Azure AD или службы федерации Active Directory (AD FS) (AD FS) для защиты ресурсов, доступных в Azure AD. Используйте следующие процедуры для защиты ресурсов Azure Active Directory с помощью многофакторной идентификации Azure AD или службы федерации Active Directory (AD FS).
 
 ## <a name="secure-azure-ad-resources-using-ad-fs"></a>Защита ресурсов Azure AD с помощью AD FS
 
@@ -48,7 +48,7 @@ ms.locfileid: "91964593"
 
 ## <a name="trusted-ips-for-federated-users"></a>Доверенные IP-адреса для федеративных пользователей
 
-Надежные IP-адреса позволяют администраторам обойти двухфакторную проверку подлинности для конкретных IP-адресов или для федеративных пользователей, запросы от которых формируются в их собственной интрасети. В следующих разделах описывается настройка Многофакторной идентификации Azure с надежными IP-адресами для федеративных пользователей и для обхода двухфакторной проверки подлинности, когда запросы от федеративных пользователей формируются в их собственной интрасети. Для этого необходимо настроить транзит в службе федерации Active Directory или отфильтровывать входящие шаблоны утверждения с типом утверждения в корпоративной сети.
+Надежные IP-адреса позволяют администраторам обойти двухфакторную проверку подлинности для конкретных IP-адресов или для федеративных пользователей, запросы от которых формируются в их собственной интрасети. В следующих разделах описывается настройка надежных IP-адресов многофакторной идентификации Azure AD с федеративными пользователями и выполнение двухфакторной проверки подлинности при порождении запроса из интрасети федеративных пользователей. Для этого необходимо настроить транзит в службе федерации Active Directory или отфильтровывать входящие шаблоны утверждения с типом утверждения в корпоративной сети.
 
 В этом примере для отношений доверия проверяющей стороны используется Microsoft 365.
 
@@ -80,11 +80,11 @@ ms.locfileid: "91964593"
 ```
 
 13. Нажмите кнопку **Готово**.
-14. Нажмите кнопку **Применить**.
+14. Щелкните **Применить**.
 15. Нажмите кнопку **ОК**.
 16. Откройте оснастку управления AD FS.
 
-### <a name="configure-azure-multi-factor-authentication-trusted-ips-with-federated-users"></a>Настройка Многофакторной идентификации с доверенными IP-адресами в Azure для федеративных пользователей
+### <a name="configure-azure-ad-multi-factor-authentication-trusted-ips-with-federated-users"></a>Настройка надежных IP-адресов многофакторной идентификации Azure AD с федеративными пользователями
 
 Теперь, когда утверждения добавлены, можно настроить надежные IP-адреса.
 
