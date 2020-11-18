@@ -8,12 +8,12 @@ ms.reviewer: amberb
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.author: banders
-ms.openlocfilehash: 02919cf2e35fdd4d981f3fde53085c2174f11bd1
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: c13670df26e5d0f7774b5a2aac81f656de94c960
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132573"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844716"
 ---
 # <a name="grant-access-to-create-azure-enterprise-subscriptions-preview"></a>Предоставление доступа к созданию подписок Azure Enterprise (предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "92132573"
 
 ## <a name="grant-access"></a>Предоставление доступа
 
-Чтобы [создать подписки в учетной записи регистрации](programmatically-create-subscription.md), вам нужна [роль владельца RBAC](../../role-based-access-control/built-in-roles.md#owner) для этой учетной записи. Вы можете предоставить пользователю или группе пользователей роль владельца RBAC Azure для учетной записи регистрации, выполнив следующие действия:
+Чтобы [создать подписки в учетной записи регистрации](programmatically-create-subscription-enterprise-agreement.md), вам нужна [роль владельца RBAC](../../role-based-access-control/built-in-roles.md#owner) для этой учетной записи. Вы можете предоставить пользователю или группе пользователей роль владельца RBAC Azure для учетной записи регистрации, выполнив следующие действия:
 
 1. Получите идентификатор объекта учетной записи регистрации, к которой вы хотите предоставить доступ.
 
@@ -174,7 +174,7 @@ ms.locfileid: "92132573"
     az role assignment create --role Owner --assignee-object-id <userObjectId> --scope /providers/Microsoft.Billing/enrollmentAccounts/<enrollmentAccountObjectId>
     ```
 
-    Когда пользователь становится владельцем RBAC Azure для учетной записи регистрации, он получает возможность [программно создавать подписки](programmatically-create-subscription.md) в этой учетной записи. Для подписки, созданной делегированным пользователем, администратором службы по-прежнему остается исходный владелец учетной записи. Но этот делегированный пользователь по умолчанию становится владельцем RBAC Azure.
+    Когда пользователь становится владельцем RBAC Azure для учетной записи регистрации, он получает возможность [программно создавать подписки](programmatically-create-subscription-enterprise-agreement.md) в этой учетной записи. Для подписки, созданной делегированным пользователем, администратором службы по-прежнему остается исходный владелец учетной записи. Но этот делегированный пользователь по умолчанию становится владельцем RBAC Azure.
 
     ---
 
@@ -193,7 +193,7 @@ ms.locfileid: "92132573"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Когда пользователь или субъект-служба имеют разрешение на создание подписки, можно использовать его для [программного создания подписок Azure Enterprise](programmatically-create-subscription.md).
+* Когда пользователь или субъект-служба имеют разрешение на создание подписки, можно использовать его для [программного создания подписок Azure Enterprise](programmatically-create-subscription-enterprise-agreement.md).
 * Создание подписок с помощью .NET: [пример кода на сайте GitHub](https://github.com/Azure-Samples/create-azure-subscription-dotnet-core).
 * Дополнительные сведения о Azure Resource Manager и его интерфейсах API см. в статье [Обзор Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 * Дополнительные сведения о переносе большого числа подписок с помощью групп управления см. в руководстве по [упорядочиванию ресурсов с помощью групп управления Azure](../../governance/management-groups/overview.md).

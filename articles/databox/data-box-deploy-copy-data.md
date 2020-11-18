@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 10/20/2020
+ms.date: 11/11/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 7ecccd64921b2d95155318fe91c897725e340b7e
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: c68f76e56f49f055466f7332d7751ac468e034d8
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94334675"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616745"
 ---
 ::: zone target="docs"
 
@@ -74,7 +74,7 @@ ms.locfileid: "94334675"
 
     ![Получение учетных данных для общих папок SMB](media/data-box-deploy-copy-data/get-share-credentials1.png)
 
-2. В диалоговом окне "Доступ к общей папке и копирование данных" скопируйте **имя пользователя** и **пароль**, соответствующие необходимой общей папке. Если пароль включает специальные знаки, заключите его в двойные кавычки. Нажмите кнопку **ОК**.
+2. В диалоговом окне "Доступ к общей папке и копирование данных" скопируйте **имя пользователя** и **пароль**, соответствующие необходимой общей папке. Нажмите кнопку **ОК**.
     
     ![Получение имени пользователя и пароля для общей папки](media/data-box-deploy-copy-data/get-share-credentials2.png)
 
@@ -87,11 +87,11 @@ ms.locfileid: "94334675"
     - Страничный BLOB-объект Azure — `\\10.126.76.138\utSAC1_202006051000_PageBlob`.
     - Файлы Azure — `\\10.126.76.138\utSAC1_202006051000_AzFile`.
 
-4. При отображении соответствующего запроса введите пароль для общей папки. В примере ниже показан процесс подключения к общей папке с помощью указанной выше команды.
+4. При отображении соответствующего запроса введите пароль для общей папки. Если пароль включает специальные знаки, заключите его в двойные кавычки. В примере ниже показан процесс подключения к общей папке с помощью указанной выше команды.
 
     ```
     C:\Users\Databoxuser>net use \\10.126.76.138\utSAC1_202006051000_BlockBlob /u:testuser1
-    Enter the password for 'testuser1' to connect to '10.126.76.138':
+    Enter the password for 'testuser1' to connect to '10.126.76.138': "ab1c2def$3g45%6h7i&j8kl9012345"
     The command completed successfully.
     ```
 
