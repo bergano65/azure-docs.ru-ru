@@ -7,13 +7,13 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 01/30/2019
-ms.openlocfilehash: 896254a5577dad1bdcf474b963b9544029a4c81a
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.date: 11/16/2020
+ms.openlocfilehash: 8f0d10b6ed69cd31249447b59114c590bdbeb078
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040118"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832375"
 ---
 # <a name="window-transformation-in-mapping-data-flow"></a>Преобразование окна в потоке данных сопоставления
 
@@ -22,6 +22,8 @@ ms.locfileid: "93040118"
 Преобразование окна позволяет определять агрегирования столбцов на основе окон в ваших потоках данных. В построителе выражений вы можете определить различные типы объединений на основе данных или временных окон (предложение SQL OVER, например LEAD, LAG, NTILE, CUMEDIST, RANK и т. д.). В ваших выходных данных будет сгенерировано новое поле, которое будет включать такие агрегаты. Вы также можете включить дополнительные поля "Группировать по".
 
 ![Снимок экрана показывает окно, выбранное в меню.](media/data-flow/windows1.png "Windows 1")
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4IAVu]
 
 ## <a name="over"></a>Over
 Задайте секционирование данных столбцов для своего преобразования окна. Эквивалент в SQL — это параметр ```Partition By``` в предложении Over в SQL. Если вы хотите создать расчет или выражение для секционирования, вы можете сделать это, наведя курсор на имя столбца и выбрав "Вычисляемый столбец".

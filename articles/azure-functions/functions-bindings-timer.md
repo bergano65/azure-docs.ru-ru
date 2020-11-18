@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 6423ec481c65155b511e398885b4954522bbb376
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 6baebdab06a72d3a4af05b4d2e04bc9eee6acb60
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93025907"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833016"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure"
 
@@ -56,7 +56,7 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 
 В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. [`TimerInfo`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerInfo.cs)Объект передается в функцию.
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 ```json
 {
@@ -99,7 +99,7 @@ public void keepAlive(
 
 В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. [Объект Timer](#usage) передается в функцию.
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 ```json
 {
@@ -163,9 +163,9 @@ Write-Host "PowerShell timer trigger function ran! TIME: $currentU
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере используется привязка триггера таймера, конфигурация которой описана в *function.js* файле. Фактическая [функция Python](functions-reference-python.md) , использующая привязку, описана в файле *__init__ . корректировки* . Объект, переданный в функцию, имеет тип [Azure. functions. тимеррекуест](/python/api/azure-functions/azure.functions.timerrequest). Логика функции записывает в журналы, указывающие, вызван ли текущий вызов из-за пропущенного события расписания.
+В следующем примере используется привязка триггера таймера, конфигурация которой описана в *function.js* файле. Фактическая [функция Python](functions-reference-python.md) , использующая привязку, описана в файле *__init__. корректировки* . Объект, переданный в функцию, имеет тип [Azure. functions. тимеррекуест](/python/api/azure-functions/azure.functions.timerrequest). Логика функции записывает в журналы, указывающие, вызван ли текущий вызов из-за пропущенного события расписания.
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 ```json
 {
@@ -300,7 +300,7 @@ public void keepAlive(
 |Тип  |Пример  |Когда активируется  |
 |---------|---------|---------|
 |Определенное значение |<nobr>"0 5 * * *"</nobr>|в hh:05:00, где hh — каждый час (один раз в час)|
-|Все значения (`*`)|<nobr>"0 * 5 * * *"</nobr>|в 5:mm:00 каждый день, где mm — каждая минута часа (60 раз в день)|
+|Все значения (`*`)|<nobr>"0 * 5 * * *"</nobr>|в 5: мм: 00 каждый день, где mm — каждая минута часа (60 раз в указанный час)|
 |Диапазон (оператор `-`)|<nobr>"5-7 * * * * *"</nobr>|в hh:mm:05, hh:mm:06 и hh:mm:07, где hh:mm — каждая минута каждого часа (3 раза в минуту)|
 |Набор значений (оператор `,`)|<nobr>"5,8,10 * * * * *"</nobr>|в hh:mm:05, hh:mm:08 и hh:mm:10, где hh:mm — каждая минута каждого часа (3 раза в минуту)|
 |Значение интервала (оператор `/`)|<nobr>"0 */5 * * * *"</nobr>|в чч: 00:00, чч: 05:00, чч: 10:00 и т. д. по чч: 55:00, где HH — каждый час (12 раз в час)|

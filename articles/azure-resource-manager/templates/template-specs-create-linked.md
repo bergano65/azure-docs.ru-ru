@@ -2,13 +2,13 @@
 title: Создание спецификации шаблона со связанными шаблонами
 description: Узнайте, как создать спецификацию шаблона со связанными шаблонами.
 ms.topic: conceptual
-ms.date: 11/03/2020
-ms.openlocfilehash: b1862789ede4a9d2ab8c57bdb913c449a560dc58
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 11/17/2020
+ms.openlocfilehash: d86b46a88dde7ebffea81cdeb8dc184dd275c0da
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321587"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94747440"
 ---
 # <a name="tutorial-create-a-template-spec-with-linked-templates-preview"></a>Учебник. Создание спецификации шаблона со связанными шаблонами (Предварительная версия)
 
@@ -19,7 +19,7 @@ ms.locfileid: "93321587"
 Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
 > [!NOTE]
-> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/templateSpecOnboarding).
+> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать его, необходимо установить последнюю версию PowerShell или Azure CLI. Для Azure PowerShell используйте [версию 5.0.0 или более позднюю](/powershell/azure/install-az-ps). Для Azure CLI используйте [версию 2.14.2 или более позднюю](/cli/azure/install-azure-cli).
 
 ## <a name="create-linked-templates"></a>Создание связанных шаблонов
 
@@ -162,7 +162,7 @@ ms.locfileid: "93321587"
 
 ## <a name="create-template-spec"></a>Создание спецификации шаблона
 
-Спецификации шаблонов хранятся в группах ресурсов.  Создайте группу ресурсов, а затем создайте шаблон спецификации со следующим скриптом. Название спецификации шаблона — «имя- **Спецификация** ».
+Спецификации шаблонов хранятся в группах ресурсов.  Создайте группу ресурсов, а затем создайте шаблон спецификации со следующим скриптом. Название спецификации шаблона — «имя- **Спецификация**».
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

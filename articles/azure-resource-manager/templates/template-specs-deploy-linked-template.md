@@ -2,13 +2,13 @@
 title: Развертывание спецификации шаблона в качестве связанного шаблона
 description: Узнайте, как развернуть существующую спецификацию шаблона в связанном развертывании.
 ms.topic: conceptual
-ms.date: 11/03/2020
-ms.openlocfilehash: 9755774f79ee4901c8aa691054da749f37756742
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 11/17/2020
+ms.openlocfilehash: 65ad5767817457133d0fbc34c7735cf52ff2c3f3
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321570"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94747474"
 ---
 # <a name="tutorial-deploy-a-template-spec-as-a-linked-template-preview"></a>Руководство. Развертывание спецификации шаблона в качестве связанного шаблона (Предварительная версия)
 
@@ -19,7 +19,7 @@ ms.locfileid: "93321570"
 Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
 > [!NOTE]
-> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/templateSpecOnboarding).
+> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать его, необходимо установить последнюю версию PowerShell или Azure CLI. Для Azure PowerShell используйте [версию 5.0.0 или более позднюю](/powershell/azure/install-az-ps). Для Azure CLI используйте [версию 2.14.2 или более позднюю](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-template-spec"></a>Создание спецификации шаблона
 

@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to
+ms.custom: how-to, devx-track-azurecli
 ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: ce80c6bbd3e4a5154e80317c3918776c771e67fb
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 0bbf70016dc9b93120b3158e8954c336095ea211
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318210"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832693"
 ---
 # <a name="create-an-azure-machine-learning-compute-cluster"></a>Создание вычислительного кластера Машинного обучения Azure
 
@@ -58,9 +58,9 @@ ms.locfileid: "93318210"
 > Кластеры обычно масштабируются до 100 узлов при наличии достаточной квоты для требуемого числа ядер. По умолчанию кластеры настроены с поддержкой взаимодействия между их узлами, например для поддержки заданий MPI. Однако вы можете масштабировать кластеры до тысяч узлов, просто [вызывая запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)и запрашивая разрешение на получение списка подписки, рабочей области или конкретного кластера для отключения взаимодействия между узлами. 
 
 
-## <a name="create"></a>Создать
+## <a name="create"></a>Создание
 
-**Оценка времени** : приблизительно 5 минут.
+**Оценка времени**: приблизительно 5 минут.
 
 Вычислительную среду Машинного обучения Azure можно многократно использовать при различных запусках. Результаты вычислений могут использоваться совместно с другими пользователями в рабочей области. Они сохраняются для последующих запусков, а число узлов в них автоматически масштабируется в зависимости от числа отправленных запросов на запуск и заданного для кластера значения max_nodes. С помощью параметра min_nodes можно контролировать минимально доступное количество узлов.
 
@@ -83,7 +83,7 @@ ms.locfileid: "93318210"
 При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?preserve-view=true&view=azure-ml-py).
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 
 ```azurecli-interactive
@@ -112,7 +112,7 @@ compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2',
                                                             max_nodes=4)
 ```
     
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Задайте `vm-priority` :
     
@@ -173,7 +173,7 @@ az ml computetarget create amlcompute --name lowpriocluster --vm-size Standard_N
                                     identity_id=['/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'])
         ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 * Создание нового управляемого кластера вычислений с управляемым удостоверением
 
