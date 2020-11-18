@@ -16,16 +16,16 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f7a1b63864f0fbd945b97d6c2e285bfccbf934f
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 558c6dc24f6d0d17c9a82bbc79f39649f63dc7f4
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91874549"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658491"
 ---
 # <a name="unexpected-error-when-performing-consent-to-an-application"></a>Непредвиденная ошибка при предоставлении согласия для приложения
 
-В этой статье описаны ошибки, возникающие при предоставлении согласия для приложения. Если вы получаете непредвиденные запросы на продолжение, не содержащие сообщения об ошибках, см. статью [Сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-scenarios).
+В этой статье описаны ошибки, возникающие при предоставлении согласия для приложения. Если вы получаете непредвиденные запросы на продолжение, не содержащие сообщения об ошибках, см. статью [Сценарии проверки подлинности в Azure AD](../develop/authentication-vs-authorization.md).
 
 Для правильной работы многим приложениям, интегрирующимся с Azure Active Directory, нужны разрешения на доступ к другим ресурсам. Если эти ресурсы также интегрированы с Azure Active Directory, доступ к ним часто запрашивается с помощью общей инфраструктуры согласия. Поступает запрос на продолжение, что обычно происходит при первом использовании приложения, но может встречаться и при дальнейшем использовании.
 
@@ -88,10 +88,8 @@ ms.locfileid: "91874549"
 
 Конечные пользователи не смогут предоставить согласие для приложений, которые были обнаружены как рискованные. Администраторы могут, но должны оценивать приложение очень осторожно и продолжить работу. Если приложение кажется подозрительным при дальнейшей проверке, его можно сообщить в корпорацию Майкрософт на экране согласия. 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
-[Приложения, разрешения и согласие в Azure Active Directory (конечная точка версии 1)](https://docs.microsoft.com/azure/active-directory/active-directory-apps-permissions-consent)<br>
+[Приложения, разрешения и согласие в Azure Active Directory (конечная точка версии 1)](../develop/quickstart-register-app.md)<br>
 
-[Области, разрешения и согласие в Azure Active Directory (конечная точка версии 2.0)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)
-
-
+[Области, разрешения и согласие в Azure Active Directory (конечная точка версии 2.0)](../develop/v2-permissions-and-consent.md)

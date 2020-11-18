@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: a91d0e11c44657a2d4cdd267ffa6490ca89532a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e60c829831bde3b454ab180d1a39ec46cb346963
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89069414"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658661"
 ---
 # <a name="deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -48,7 +48,7 @@ ms.locfileid: "89069414"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этой статьей необходимо запустить PowerShell локально. Необходимо установить модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Для работы с этой статьей необходимо запустить PowerShell локально. Необходимо установить модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 Чтобы этот сценарий работал правильно, есть три ключевых требования:
 
@@ -68,9 +68,9 @@ ms.locfileid: "89069414"
 >[!NOTE]
 >Трафик между виртуальными сетями с прямым пирингом передается напрямую, даже если маршрут UDR указывает на Брандмауэр Azure как шлюз по умолчанию. Чтобы маршрутизировать трафик между подсетями к брандмауэру в этом сценарии, в UDR для обеих подсетей нужно явно указать префикс целевой подсети.
 
-Связанную справочную документацию по Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/module/az.network/new-azfirewall).
+Связанную справочную документацию по Azure PowerShell см. [здесь](/powershell/module/az.network/new-azfirewall).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас нет подписки Azure, перед началом работы [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="declare-the-variables"></a>Объявление переменных
 
@@ -496,4 +496,4 @@ Set-AzFirewall -AzureFirewall $azfw
 
 Теперь вы можете отследить журналы Брандмауэра Azure.
 
-[Руководство. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+[Руководство. Мониторинг журналов и метрик Брандмауэра Azure](./firewall-diagnostics.md)

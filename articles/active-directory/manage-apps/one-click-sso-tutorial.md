@@ -16,12 +16,12 @@ ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c7e72718e13106b9d895921a2335f1525a7b88c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe4e981782878ce4f86dd7dcb8ae635a60b2405a
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763131"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658712"
 ---
 # <a name="one-click-app-configuration-of-single-sign-on"></a>Конфигурация приложения одним щелчком для единого входа
 
@@ -40,7 +40,7 @@ ms.locfileid: "84763131"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Активная подписка приложения для настройки с помощью единого входа. Также нужны учетные данные администратора.
-- **Расширение защищенного входа на страницу "Мои приложения"** от корпорации Майкрософт, установленное в браузере. Дополнительные сведения см. в разделе [Доступ и использование приложений на портале "Мои приложения"](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access).
+- **Расширение защищенного входа на страницу "Мои приложения"** от корпорации Майкрософт, установленное в браузере. Дополнительные сведения см. в разделе [Доступ и использование приложений на портале "Мои приложения"](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="one-click-sso-configuration-steps"></a>Действия для настройки единого входа одним щелчком
 
@@ -84,6 +84,5 @@ ms.locfileid: "84763131"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)
-* [Что такое расширения браузера "Безопасный вход в мои приложения"?](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access).
- 
+* [Список учебников по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md)
+* [Что такое расширения браузера "Безопасный вход в мои приложения"?](../user-help/my-apps-portal-end-user-access.md).

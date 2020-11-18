@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68993a460ba3d6a672a27eb8da5ced85b29d3d12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0c3188571e9188add7bc8f4f4d07ea5a562a79b3
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764559"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658117"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Обеспечение удаленного доступа к Power BI Mobile с помощью Azure Active Directory Application Proxy
 
@@ -32,12 +32,12 @@ ms.locfileid: "84764559"
 В этой статье предполагается, что вы уже развернули службы Reporting Services и [включили прокси приложения](application-proxy-add-on-premises-application.md).
 
 - Для включения прокси приложения необходимо установить соединитель на сервере Windows Server и выполнить [необходимые условия](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) , чтобы соединитель мог обмениваться данными со СЛУЖБАМИ Azure AD.
-- При публикации Power BI рекомендуется использовать те же внутренние и внешние домены. Дополнительные сведения о пользовательских доменах см. [в статье работа с пользовательскими доменами в прокси приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain).
+- При публикации Power BI рекомендуется использовать те же внутренние и внешние домены. Дополнительные сведения о пользовательских доменах см. [в статье работа с пользовательскими доменами в прокси приложения](./application-proxy-configure-custom-domain.md).
 - Эта интеграция доступна для приложения **Power BI Mobile iOS и Android** .
 
 ## <a name="step-1-configure-kerberos-constrained-delegation-kcd"></a>Шаг 1. Настройка ограниченного делегирования Kerberos (KCD)
 
-Для локальных приложений, использующих проверку подлинности Windows, единый вход можно обеспечить с помощью протокола проверки подлинности Kerberos и функции, называемой ограниченным делегированием Kerberos (KCD). При настройке KCD позволяет соединителю прокси приложения получить маркер Windows для пользователя, даже если пользователь не вошел в Windows напрямую. Дополнительные сведения о KCD см. в статье [Общие сведения о ограниченном делегировании Kerberos](https://technet.microsoft.com/library/jj553400.aspx) и [ограниченном делегировании Kerberos для единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md).
+Для локальных приложений, использующих проверку подлинности Windows, единый вход можно обеспечить с помощью протокола проверки подлинности Kerberos и функции, называемой ограниченным делегированием Kerberos (KCD). При настройке KCD позволяет соединителю прокси приложения получить маркер Windows для пользователя, даже если пользователь не вошел в Windows напрямую. Дополнительные сведения о KCD см. в статье [Общие сведения о ограниченном делегировании Kerberos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) и [ограниченном делегировании Kerberos для единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md).
 
 На стороне служб Reporting Services не требуется сложная настройка. Чтобы обеспечить правильную проверку подлинности Kerberos, убедитесь, что у вас есть допустимое имя субъекта-службы (SPN). Также убедитесь, что Reporting Services сервер включен для проверки подлинности согласования.
 
@@ -45,7 +45,7 @@ ms.locfileid: "84764559"
 
 ### <a name="configure-the-service-principal-name-spn"></a>Настройка имени субъекта-службы (SPN)
 
-Имя субъекта-службы — это уникальный идентификатор для службы, которая использует проверку подлинности Kerberos. Необходимо убедиться, что у вас есть правильное имя участника-службы HTTP для сервера отчетов. Руководство по настройке правильного имени субъекта-службы (SPN) для сервера отчетов см. в статье о [регистрации имени субъекта-службы (SPN) для сервера отчетов](https://msdn.microsoft.com/library/cc281382.aspx).
+Имя субъекта-службы — это уникальный идентификатор для службы, которая использует проверку подлинности Kerberos. Необходимо убедиться, что у вас есть правильное имя участника-службы HTTP для сервера отчетов. Руководство по настройке правильного имени субъекта-службы (SPN) для сервера отчетов см. в статье о [регистрации имени субъекта-службы (SPN) для сервера отчетов](/sql/reporting-services/report-server/register-a-service-principal-name-spn-for-a-report-server).
 Чтобы проверить добавление имени субъекта-службы, выполните команду Setspn с параметром -L. Дополнительные сведения о команде setspn см. в [этой статье](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spn-setspn-syntax.aspx).
 
 ### <a name="enable-negotiate-authentication"></a>Включить проверку подлинности согласованием
@@ -60,7 +60,7 @@ ms.locfileid: "84764559"
 </AuthenticationTypes>
 ```
 
-Дополнительные сведения см. в статьях об [изменении файла конфигурации Reporting Services ](https://msdn.microsoft.com/library/bb630448.aspx) и [настройке проверки подлинности Windows на сервере отчетов](https://msdn.microsoft.com/library/cc281253.aspx).
+Дополнительные сведения см. в статьях об [изменении файла конфигурации Reporting Services ](/sql/reporting-services/report-server/modify-a-reporting-services-configuration-file-rsreportserver-config) и [настройке проверки подлинности Windows на сервере отчетов](/sql/reporting-services/security/configure-windows-authentication-on-the-report-server).
 
 ### <a name="ensure-the-connector-is-trusted-for-delegation-to-the-spn-added-to-the-reporting-services-application-pool-account"></a>Убедитесь, что соединитель является доверенным для делегирования имени участника-службы, добавленного в учетную запись пула приложений Reporting Services.
 Настройте KCD таким образом, чтобы служба AD Application Proxy Azure могла делегировать удостоверения пользователей в учетную запись пула приложений Reporting Services. Для этого настройте для соединителя прокси приложения возможность получать билеты Kerberos для пользователей, которые прошли проверку подлинности в Azure AD. Затем этот сервер передает контекст в целевое приложение или Reporting Services в этом случае.
@@ -84,16 +84,16 @@ ms.locfileid: "84764559"
 1. Опубликуйте службы отчетов через прокси приложения со следующими параметрами. Пошаговые инструкции по публикации приложения с помощью Application Proxy приведены в статье [Публикация приложений с помощью Azure AD Application Proxy](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
    - **Внутренний URL-адрес**: введите URL-адрес сервера отчетов, к которому соединитель может подключиться в корпоративной сети. Убедитесь, что этот URL-адрес доступен с сервера, на котором установлен соединитель. Рекомендуется использовать домен верхнего уровня, например `https://servername/`, чтобы избежать проблем с вложенными путями, опубликованными через Application Proxy. Например, рекомендуется использовать `https://servername/`, но не `https://servername/reports/` или `https://servername/reportserver/`.
      > [!NOTE]
-     > Мы рекомендуем использовать безопасное HTTPS-соединение с сервером отчетов. Дополнительные практические рекомендации доступны в разделе [Настройка соединений SSL для сервера отчетов, работающего в собственном режиме](https://docs.microsoft.com/sql/reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server?view=sql-server-2017).
+     > Мы рекомендуем использовать безопасное HTTPS-соединение с сервером отчетов. Дополнительные практические рекомендации доступны в разделе [Настройка соединений SSL для сервера отчетов, работающего в собственном режиме](/sql/reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server?view=sql-server-2017).
    - **Внешний URL-адрес**: введите общедоступный URL-адрес, к которому будет подключаться мобильное приложение Power BI. Например, он может иметь вид `https://reports.contoso.com`, если используется личный домен. Чтобы использовать личный домен, передайте сертификат для домена и добавьте домен msappproxy.net по умолчанию в запись DNS для своего приложения. Подробные инструкции доступны в разделе [Работа с пользовательскими доменами в прокси приложения Azure AD](application-proxy-configure-custom-domain.md).
 
    - **Метод предварительной проверки подлинности**: Azure Active Directory
 
 2. После публикации приложения необходимо настроить параметры единого входа с помощью следующих действий:
 
-   a. На странице приложения на портале выберите **Единый вход**.
+   А. На странице приложения на портале выберите **Единый вход**.
 
-   b. Для **единого входа** выберите режим **Встроенная проверка подлинности Windows**.
+   Б. Для **единого входа** выберите режим **Встроенная проверка подлинности Windows**.
 
    c. Задайте для параметра **Внутреннее имя субъекта-службы приложения** значение, заданное ранее.
 
@@ -112,13 +112,13 @@ ms.locfileid: "84764559"
 3. Выберите приложение, а затем щелкните **Аутентификация**.
 4. Добавьте следующие универсальные коды ресурса (URI) перенаправления, в зависимости от используемой платформы.
 
-   При настройке приложения для Power BI Mobile **iOS**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
+   При настройке приложения для Power BI Mobile **iOS** добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
    - `msauth://code/mspbi-adal%3a%2f%2fcom.microsoft.powerbimobile`
    - `msauth://code/mspbi-adalms%3a%2f%2fcom.microsoft.powerbimobilems`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `mspbi-adalms://com.microsoft.powerbimobilems`
 
-   При настройке приложения для Power BI Mobile **Android**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
+   При настройке приложения для Power BI Mobile **Android** добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
    - `urn:ietf:wg:oauth:2.0:oob`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `msauth://com.microsoft.powerbim/g79ekQEgXBL5foHfTlO2TPawrbI%3D`
@@ -148,13 +148,13 @@ Microsoft Intune можно использовать для управления
 5. В разделе API, которые **использует Моя организация**, выполните поиск по фразе "Управление мобильными приложениями Майкрософт" и выберите его.
 6. Добавление разрешения **девицеманажементманажедаппс. ReadWrite** в приложение
 7. Щелкните **предоставить согласие администратора** , чтобы предоставить разрешение на доступ к приложению.
-8. Настройте нужную политику Intune, обратившись к [созданию и назначению политик защиты приложений](https://docs.microsoft.com/intune/app-protection-policies).
+8. Настройте нужную политику Intune, обратившись к [созданию и назначению политик защиты приложений](/intune/app-protection-policies).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Если приложение возвращает страницу ошибки после попытки загрузить отчет более чем через несколько минут, может потребоваться изменить параметр времени ожидания. По умолчанию прокси приложения поддерживает приложения, которые отреагируют на запрос до 85 секунд. Чтобы увеличить значение этого параметра на 180 секунд, выберите время ожидания серверной части **на странице** параметры прокси приложения для приложения. Советы по созданию быстрых и надежных отчетов см. в разделе [Power BI отчеты рекомендации](https://docs.microsoft.com/power-bi/power-bi-reports-performance).
+Если приложение возвращает страницу ошибки после попытки загрузить отчет более чем через несколько минут, может потребоваться изменить параметр времени ожидания. По умолчанию прокси приложения поддерживает приложения, которые отреагируют на запрос до 85 секунд. Чтобы увеличить значение этого параметра на 180 секунд, выберите время ожидания серверной части **на странице** параметры прокси приложения для приложения. Советы по созданию быстрых и надежных отчетов см. в разделе [Power BI отчеты рекомендации](/power-bi/power-bi-reports-performance).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Включение собственного клиентского приложения для взаимодействия с прокси-приложениями](application-proxy-configure-native-client-application.md)
-- [Просмотр локальных отчетов на сервере отчетов и ключевых показателей эффективности в мобильных приложениях Power BI](https://docs.microsoft.com/power-bi/consumer/mobile/mobile-app-ssrs-kpis-mobile-on-premises-reports)
+- [Просмотр локальных отчетов на сервере отчетов и ключевых показателей эффективности в мобильных приложениях Power BI](/power-bi/consumer/mobile/mobile-app-ssrs-kpis-mobile-on-premises-reports)

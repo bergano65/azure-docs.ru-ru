@@ -12,12 +12,12 @@ ms.date: 03/25/2020
 ms.author: kenwith
 ms.reviewer: kasimpso
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23d2d6645bea6e99e9f62e36364adf8816329c26
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f0a103ac9b8e6d29830b5ecd6732cd19547014b0
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90601145"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659069"
 ---
 # <a name="hide-enterprise-applications-from-end-users-in-azure-active-directory"></a>Скрыть корпоративные приложения от конечных пользователей в Azure Active Directory
 
@@ -40,14 +40,14 @@ ms.locfileid: "90601145"
 5.  Найдите приложение, которое нужно скрыть, а затем щелкните его.  Откроется колонка обзора приложения.
 6.  Нажмите кнопку **Свойства**. 
 7.  Для вопроса **Видно пользователям?** выберите **Нет**.
-8.  Выберите команду **Сохранить**.
+8.  Нажмите кнопку **Сохранить**.
 
 > [!NOTE]
 > Эти инструкции относятся только к корпоративным приложениям.
 
 ## <a name="use-azure-ad-powershell-to-hide-an-application"></a>Использование Azure AD PowerShell для скрытия приложения
 
-Чтобы скрыть приложение на панели "MyApps", можно вручную добавить тег Хидеапп к субъекту-службе для приложения. Выполните следующие команды [PowerShell AzureAD](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#service_principals) , чтобы задать для приложения значение **нет**. для свойства **Visible** . 
+Чтобы скрыть приложение на панели "MyApps", можно вручную добавить тег Хидеапп к субъекту-службе для приложения. Выполните следующие команды [PowerShell AzureAD](/powershell/module/azuread/?view=azureadps-2.0#service_principals) , чтобы задать для приложения значение **нет**. для свойства **Visible** . 
 
 ```PowerShell
 Connect-AzureAD
@@ -74,6 +74,5 @@ Set-AzureADServicePrincipal -ObjectId $objectId -Tags $tags
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 * [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
-* [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
-* [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)
-
+* [Удаление назначения пользователя или группы из корпоративного приложения](./assign-user-or-group-access-portal.md)
+* [Изменение имени или логотипа корпоративного приложения](./add-application-portal-configure.md)

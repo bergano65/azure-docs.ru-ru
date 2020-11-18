@@ -1,26 +1,28 @@
 ---
 title: Скрипт CLI для создания сервера службы "База данных Azure для MariaDB"
 description: Этот пример скрипта CLI создает сервер Базы данных Azure для MariaDB и настраивает правило брандмауэра на уровне сервера.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc, devx-track-azurecli
 ms.date: 11/28/2018
-ms.openlocfilehash: b3a646e7f59f4002892edf9210658a966cbc051f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a9a0ce595da1aecc3cd2ebdc071c99e42944ef9f
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498656"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94536811"
 ---
 # <a name="create-a-mariadb-server-and-configure-a-firewall-rule-using-the-azure-cli"></a>Создание сервера MariaDB и настройка правила брандмауэра с помощью Azure CLI
 Этот пример скрипта CLI создает сервер Базы данных Azure для MariaDB и настраивает правило брандмауэра на уровне сервера. После успешного выполнения скрипта доступ к серверу MariaDB можно получить из всех служб Azure, а также по настроенному IP-адресу.
 
-[!INCLUDE [cloud-shell-try-it](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-Если вы решили выполнять CLI локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Проверьте версию, выполнив команду `az --version`. Дополнительные сведения об установке или обновлении вашей версии Azure CLI см. в разделе [Установка Azure CLI]( /cli/azure/install-azure-cli).
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
+
+- Для работы с этой статьей требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="sample-script"></a>Пример скрипта
 В этом примере скрипта отредактируйте выделенные строки, чтобы изменить имя пользователя и пароль администратора на собственные.

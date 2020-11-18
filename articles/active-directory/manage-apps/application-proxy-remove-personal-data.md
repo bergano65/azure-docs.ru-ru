@@ -15,12 +15,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e78efd71943332e8a40e5b44b6b78f88e516649a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99fb466debd5a2ee4bb659aea3494469a8bbe8e1
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84759969"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658423"
 ---
 # <a name="remove-personal-data-for-azure-active-directory-application-proxy"></a>Удаление персональных данных в Azure Active Directory Application Proxy
 
@@ -35,7 +35,7 @@ ms.locfileid: "84759969"
 
 ## <a name="remove-personal-data-from-windows-event-logs"></a>Удаление персональных данных из журналов событий Windows
 
-Сведения о том, как настроить хранение данных журналов событий Windows, приведены в разделе [Settings for Event Logs](https://technet.microsoft.com/library/cc952132.aspx) (Параметры журналов событий). Чтобы узнать о журналах событий Windows, ознакомьтесь с разделом [Using Windows Event Log](https://msdn.microsoft.com/library/windows/desktop/aa385772.aspx) (Использование журнала событий Windows).
+Сведения о том, как настроить хранение данных журналов событий Windows, приведены в разделе [Settings for Event Logs](https://technet.microsoft.com/library/cc952132.aspx) (Параметры журналов событий). Чтобы узнать о журналах событий Windows, ознакомьтесь с разделом [Using Windows Event Log](/windows/win32/wes/using-windows-event-log) (Использование журнала событий Windows).
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-hybrid-note.md)]
 
@@ -54,7 +54,7 @@ ms.locfileid: "84759969"
 
 Чтобы просмотреть или экспортировать определенные данные, найдите связанные записи в каждом из журналов событий соединителя. Журналы можно найти в папке `C:\ProgramData\Microsoft\Microsoft AAD Application Proxy Connector\Trace`.
 
-Так как журналы — это текстовые файлы, для поиска текстовых записей, относящихся к пользователю, можно использовать [findstr](https://docs.microsoft.com/windows-server/administration/windows-commands/findstr).  
+Так как журналы — это текстовые файлы, для поиска текстовых записей, относящихся к пользователю, можно использовать [findstr](/windows-server/administration/windows-commands/findstr).  
 
 Чтобы найти персональные данные, ищите в файлах журнала значение UserID.
 

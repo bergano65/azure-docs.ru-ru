@@ -12,12 +12,12 @@ ms.date: 7/10/2020
 ms.author: mimart
 ms.reviewer: luleonpla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95e13cedc0cdbaedc8c00b9d855057da7e631c19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ff97d0a69efbe624e959f92f5320f921476a306
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88510884"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658984"
 ---
 # <a name="take-action-on-overprivileged-or-suspicious-applications-in-azure-active-directory"></a>Выполнение действий с недостаточными или подозрительными приложениями в Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "88510884"
 
 Чтобы выполнить следующие действия, необходимо войти в систему как глобальный администратор, администратор приложения или администратор облачных приложений.
 
-Чтобы ограничить доступ к приложениям, необходимо запросить назначение пользователя, а затем назначить пользователей или группы приложению.  Подробнее см. статью [Методы назначения пользователей и групп](methods-for-assigning-users-and-groups.md).
+Чтобы ограничить доступ к приложениям, необходимо запросить назначение пользователя, а затем назначить пользователей или группы приложению.  Подробнее см. статью [Методы назначения пользователей и групп](./assign-user-or-group-access-portal.md).
 
 Чтобы получить контекстные скрипты PowerShell для выполнения действий, можно воспользоваться порталом Azure AD.
  
@@ -76,7 +76,7 @@ ms.locfileid: "88510884"
 3. Выберите **Azure Active Directory**  >  **корпоративные приложения**.
 5. Выберите приложение, доступ к которому необходимо ограничить.
 6. Выберите **Свойства**, а затем задайте для параметра **требование к пользователю** значение **Да**.
-7. Выберите **разрешения**и проверьте разрешения, предоставленные администратором и пользователем.
+7. Выберите **разрешения** и проверьте разрешения, предоставленные администратором и пользователем.
 
 При необходимости с помощью PowerShell можно:
 
@@ -169,7 +169,7 @@ ms.locfileid: "88510884"
             Revoke-AzureADUserAllRefreshToken -ObjectId $_.PrincipalId
         }
 ```
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Управление согласия для приложений и оценка запроса согласия](manage-consent-requests.md)
 - [Настройка согласия пользователя](configure-user-consent.md)
 - [Настройка рабочего процесса согласия администратора](configure-admin-consent-workflow.md)

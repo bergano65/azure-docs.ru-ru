@@ -2,49 +2,59 @@
 title: Типы ресурсов расширения
 description: Список типов ресурсов Azure, используемых для расширения возможностей других типов ресурсов.
 ms.topic: conceptual
-ms.date: 09/22/2020
-ms.openlocfilehash: 8b80c63d361f3ad8199fd669178f7bf88dabe02e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/14/2020
+ms.openlocfilehash: 5561c480dd5a2849588ed2288eb5bcc35fc1446c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90969743"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658457"
 ---
 # <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Типы ресурсов, расширяющие возможности других ресурсов
 
 Ресурс расширения — это ресурс, который добавляет к возможностям другого ресурса. Например, блокировка ресурса является ресурсом расширения. Блокировка ресурса применяется к другому ресурсу, чтобы предотвратить его удаление или изменение. Не имеет смысла создавать блокировку ресурса самим по себе. Ресурс расширения всегда применяется к другому ресурсу.
 
-## <a name="extension-resource-types"></a>Типы ресурсов расширения
+## <a name="microsoftadvisor"></a>Microsoft.Advisor
 
 - Microsoft. Advisor и конфигурации
 - Microsoft. Advisor/рекомендации
 - Microsoft. Advisor и подавления
+
+## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
+
 - Microsoft. Алертсманажемент/Alerts
-- Microsoft. Алертсманажемент/Алертссуммари
-- Microsoft. Authorization/Акцессревиевсчедуледефинитионс
-- Microsoft. Authorization/Акцессревиевсчедулесеттингс
-- Microsoft. Authorization/checkAccess
+
+## <a name="microsoftauthorization"></a>Microsoft.Authorization
+
 - Microsoft. Authorization/Деняссигнментс
-- Microsoft. Authorization/Финдорфанролеассигнментс
 - Microsoft.Authorization/locks
-- Microsoft. Authorization/разрешения
 - Microsoft.Authorization/policyAssignments
 - Microsoft. Authorization/policyDefinitions
 - Microsoft. Authorization/Полициексемптионс
 - Microsoft. Authorization/Полицисетдефинитионс
 - Microsoft. Authorization/ПривателинкассоЦиатионс
 - Microsoft.Authorization/roleAssignments
-- Microsoft. Authorization/Ролеассигнментсусажеметрикс
 - Microsoft. Authorization/roleDefinitions
+
+## <a name="microsoftautomanage"></a>Microsoft. Управление
+
 - Microsoft. Manage/Конфигуратионпрофилеассигнментс
+
+## <a name="microsoftbilling"></a>Microsoft.Billing
+
 - Microsoft. Billing/Биллингпериодс
 - Microsoft. Billing/Биллингпермиссионс
 - Microsoft. Billing/Биллингролеассигнментс
 - Microsoft. Billing/Биллингроледефинитионс
 - Microsoft. Billing/Креатебиллингролеассигнмент
+
+## <a name="microsoftblueprint"></a>Microsoft.Blueprint
+
 - Microsoft. чертеж/Блуепринтассигнментс
 - Microsoft. чертеж/чертежи
-- Microsoft. Чанжеаналисис/Ресаурцечанжес
+
+## <a name="microsoftconsumption"></a>Microsoft.Consumption
+
 - Microsoft. потребление/Аггрегатедкост
 - Microsoft. потребление/балансы
 - Microsoft. потребление/бюджеты
@@ -55,8 +65,6 @@ ms.locfileid: "90969743"
 - Microsoft. потребление/прогнозы
 - Microsoft. потребление/лоты
 - Microsoft. потребление/Marketplace
-- Microsoft. потребление/Оператионресултс
-- Microsoft. потребление/значение operationstatus
 - Microsoft. потребление/Прицешитс
 - Microsoft. потребление/продукты
 - Microsoft. потребление/Ресерватиондетаилс
@@ -64,14 +72,15 @@ ms.locfileid: "90969743"
 - Microsoft. потребление/Ресерватионрекоммендатионс
 - Microsoft. потребление/Ресерватионсуммариес
 - Microsoft. потребление/Ресерватионтрансактионс
-- Microsoft. потребление/Теги
-- Microsoft. потребление/клиенты
-- Microsoft. потребление/условия
-- Microsoft. потребление/UsageDetails
+
+## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
+
 - Microsoft. Контаинеринстанце/СервицеассоЦиатионлинкс
+
+## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
+
 - Microsoft. Костманажемент/Alerts
 - Microsoft. Костманажемент/бюджеты
-- Microsoft. Костманажемент/Косталлокатионрулес
 - Microsoft. Костманажемент/измерения
 - Microsoft. Костманажемент/EXPORTS
 - Microsoft. Костманажемент/Екстерналсубскриптионс
@@ -80,24 +89,31 @@ ms.locfileid: "90969743"
 - Microsoft. Костманажемент/запрос
 - Microsoft. Костманажемент/Репортконфигс
 - Microsoft. Костманажемент/отчеты
-- Microsoft. Костманажемент/Шовбаккрулес
 - Microsoft. Костманажемент/представления
+
+## <a name="microsoftcustomproviders"></a>Microsoft.CustomProviders
+
 - Microsoft.CustomProviders/associations
+
+## <a name="microsofteventgrid"></a>Microsoft.EventGrid
+
 - Microsoft.EventGrid/eventSubscriptions
 - Microsoft.EventGrid/extensionTopics
+
+## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
+
 - Microsoft. Гуестконфигуратион/Конфигуратионпрофилеассигнментс
 - Microsoft. Гуестконфигуратион/Гуестконфигуратионассигнментс
 - Microsoft. Гуестконфигуратион/Software
-- Microsoft. Гуестконфигуратион/Софтвареупдатепрофиле
-- Microsoft. Гуестконфигуратион/Софтвареупдатес
+
+## <a name="microsoftinsights"></a>microsoft.insights
+
 - Microsoft. Insights/базовый план
-- Microsoft. Insights/калкулатебаселине
 - Microsoft. Insights/ДатаколлектионрулеассоЦиатионс
 - Microsoft. Insights/diagnosticSettings
 - Microsoft. Insights/Диагностиксеттингскатегориес
 - Microsoft. Insights/евенттипес
 - Microsoft. Insights/Екстендеддиагностиксеттингс
-- Microsoft. Insights/Женерателиветокен
 - Microsoft. Insights/ГуестдиагностиксеттингсассоЦиатион
 - Microsoft. Insights/Логдефинитионс
 - Microsoft. Insights/журналы
@@ -108,45 +124,78 @@ ms.locfileid: "90969743"
 - Microsoft. Insights/Миворкбукс
 - Microsoft. Insights/топология
 - Microsoft. Insights/Transactions
-- Microsoft. Insights/Вминсигхтсонбоардингстатусес
+
+## <a name="microsoftkubernetesconfiguration"></a>Microsoft.KubernetesConfiguration
+
 - Microsoft. Кубернетесконфигуратион/Extensions
 - Microsoft. Кубернетесконфигуратион/Саурцеконтролконфигуратионс
+
+## <a name="microsoftmaintenance"></a>Microsoft.Maintenance
+
 - Microsoft. Maintenance/Апплюпдатес
 - Microsoft. Maintenance/Конфигуратионассигнментс
 - Microsoft. Обслуживание и обновления
+
+## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
+
 - Microsoft. ManagedIdentity/удостоверения
+
+## <a name="microsoftmanagedservices"></a>Microsoft.ManagedServices
+
 - Microsoft. ManagedServices/Регистратионассигнментс
 - Microsoft. ManagedServices/Регистратиондефинитионс
+
+## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
+
 - Microsoft. OperationalInsights/Сторажеинсигхтконфигс
+
+## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
+
 - Microsoft. OperationsManagement/манажементассоЦиатионс
+
+## <a name="microsoftpolicyinsights"></a>Microsoft.PolicyInsights
+
 - Microsoft. Полициинсигхтс/аттестации
 - Microsoft. Полициинсигхтс/Полициевентс
 - Microsoft. Полициинсигхтс/Полицистатес
 - Microsoft. Полициинсигхтс/Полицитраккедресаурцес
 - Microsoft.PolicyInsights/remediations
+
+## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
+
 - Microsoft. RecoveryServices/Баккуппротектедитемс
 - Microsoft. RecoveryServices/Репликатионелигибилитиресултс
-- Microsoft. Ресаурцехеалс/Аваилабилитистатусес
-- Microsoft. Ресаурцехеалс/Чилдаваилабилитистатусес
+
+## <a name="microsoftresourcehealth"></a>Microsoft.ResourceHealth
+
 - Microsoft. Ресаурцехеалс/Чилдресаурцес
 - Microsoft. Ресаурцехеалс/события
 - Microsoft. Ресаурцехеалс/Импактедресаурцес
 - Microsoft. Ресаурцехеалс/уведомления
+
+## <a name="microsoftresources"></a>Microsoft.Resources
+
 - Microsoft. Resources/Links
 - Microsoft. Resources/Tags
+
+## <a name="microsoftsecurity"></a>Microsoft.Security
+
 - Microsoft. Security/Адаптивенетворкхарденингс
 - Microsoft. Security/Адванцедсреатпротектионсеттингс
 - Microsoft. Security/Ассессментметадата
 - Microsoft. Security/оценки
-- Microsoft. Security/Комплианцересултс
 - Microsoft. Security/соответствие требованиям
 - Microsoft. Security/Датаколлектионажентс
+- Microsoft. Security/Devices
 - Microsoft. Security/Девицесекуритиграупс
 - Microsoft. Security/ИнформатионпротектионполиЦиес
 - Microsoft. Security/Иотсенсорс
 - Microsoft. Security/ЖитполиЦиес
 - Microsoft. Security/Сервервулнерабилитяссессментс
 - Microsoft. Security/Склвулнерабилитяссессментс
+
+## <a name="microsoftsecurityinsights"></a>Microsoft.SecurityInsights
+
 - Microsoft. Секуритинсигхтс/агрегаты
 - Microsoft. Секуритинсигхтс/alertRules
 - Microsoft. Секуритинсигхтс/Алертрулетемплатес
@@ -156,21 +205,31 @@ ms.locfileid: "90969743"
 - Microsoft. Секуритинсигхтс/Connects
 - Microsoft. Секуритинсигхтс/Датаконнекторсчеккрекуирементс
 - Microsoft. Секуритинсигхтс/сущности
-- Microsoft. Секуритинсигхтс/Ентитикуериес
 - Microsoft. Секуритинсигхтс/инциденты
-- Microsoft. Секуритинсигхтс/Оффицеконсентс
 - Microsoft. Секуритинсигхтс/параметры
 - Microsoft. Секуритинсигхтс/Среатинтеллиженце
 - Microsoft. Секуритинсигхтс/ватчлистс
+
+## <a name="microsoftserialconsoleppe"></a>Microsoft. Сериалконсоле. PPE
+
+- Microsoft. Сериалконсоле. PPE/Сериалпортс
+
+## <a name="microsoftsoftwareplan"></a>Microsoft.SoftwarePlan
+
 - Microsoft. Софтвареплан/Хибридусебенефитс
-- Microsoft. Subscription/Креатесубскриптион
+
+## <a name="microsoftsupport"></a>microsoft.support
+
 - Microsoft. support/суппорттиккетс
+
+## <a name="microsoftworkloadmonitor"></a>Microsoft.WorkloadMonitor
+
 - Microsoft. WorkloadMonitor/компоненты
 - Microsoft. WorkloadMonitor/Мониторинстанцес
 - Microsoft. WorkloadMonitor/monitors
 - Microsoft. WorkloadMonitor/Нотификатионсеттингс
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы получить идентификатор ресурса для расширения ресурса в шаблоне Azure Resource Manager, используйте [екстенсионресаурцеид](../templates/template-functions-resource.md#extensionresourceid).
 - Пример создания ресурса расширения в шаблоне см. в разделе подписки на [События сетки событий](/azure/templates/microsoft.eventgrid/2019-06-01/eventsubscriptions).

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 09/16/2019
 ms.author: genli
-ms.openlocfilehash: 09056846ee3e531724f597ee35f92d812ce2c335
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 674b8ab8266921a4eef8bbf212f3c556b1e587d7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86037840"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658355"
 ---
 # <a name="troubleshooting-an-azure-site-to-site-vpn-connection-cannot-connect-and-stops-working"></a>Устранение проблемы подключения VPN типа "сеть — сеть" Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "86037840"
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 
-Чтобы устранить эту проблему, попробуйте сначала [сбросить VPN-шлюз Azure](vpn-gateway-resetgw-classic.md), а также сбросить туннель в локальном VPN-устройстве. Если проблему устранить не удалось, выполните действия ниже, чтобы определить причину проблемы.
+Чтобы устранить эту проблему, попробуйте сначала [сбросить VPN-шлюз Azure](./reset-gateway.md), а также сбросить туннель в локальном VPN-устройстве. Если проблему устранить не удалось, выполните действия ниже, чтобы определить причину проблемы.
 
 ### <a name="prerequisite-step"></a>Предварительные действия
 

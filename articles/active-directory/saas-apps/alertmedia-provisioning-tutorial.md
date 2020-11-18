@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 086f79239fd4f6b01f4b76d1385598bac52bb471
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 9a7c19e30c6c26d7bf7f11d6f03a0acaee160c9a
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358978"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578660"
 ---
 # <a name="tutorial-configure-alertmedia-for-automatic-user-provisioning"></a>Руководство по настройке AlertMedia для автоматической подготовки пользователей
 
@@ -95,9 +95,9 @@ ms.locfileid: "94358978"
     ![Вкладка "Подготовка" с выделенным значением "Авто"](common/provisioning-automatic.png)
 
 5. В разделе **Учетные данные администратора** введите **URL-адрес клиента** AlertMedia в одном из следующих форматов:
-      * https://dashboard.alertmedia.com/api/scim/v3 (не личный домен);
+      * `https://dashboard.alertmedia.com/api/scim/v3` (не личный домен);
 
-      * https://subdomain.alertmedia.com/api/scim/v3 (личный домен).
+      * `https://subdomain.alertmedia.com/api/scim/v3` (личный домен).
 
       Введите в поле **Секретный токен** значение, полученное ранее на шаге 2. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к AlertMedia. Если установить подключение не удалось, убедитесь, что у учетной записи AlertMedia есть разрешения администратора, и повторите попытку.
 

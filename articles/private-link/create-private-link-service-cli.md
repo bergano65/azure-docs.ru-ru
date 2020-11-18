@@ -7,19 +7,20 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: a2b97bcc9fe902480364ade19efdae863556ac1e
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 87fe02aed19ae7e5858715748a2b4c4da87a07b3
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629433"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658576"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Создание службы частной связи с помощью Azure CLI
 В этой статье показано, как создать службу частной связи в Azure с помощью Azure CLI.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать Azure CLI локально, в этом кратком руководстве вам потребуется использовать последнюю версию Azure CLI. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется последняя версия Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+
 ## <a name="create-a-private-link-service"></a>Создание службы "Приватный канал"
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -29,7 +30,7 @@ ms.locfileid: "94629433"
 az group create --name myResourceGroup --location westcentralus
 ```
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с одной подсетью с именем *mySubnet* :
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с одной подсетью с именем *mySubnet*:
 
 ```azurecli-interactive
 az network vnet create --resource-group myResourceGroup --name myVirtualNetwork --address-prefix 10.0.0.0/16  
@@ -62,7 +63,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 
 ### <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
 
-Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) создайте правило LB с именем *myHTTPRule* для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd* , и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool* , который также использует порт 80. 
+Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) создайте правило LB с именем *myHTTPRule* для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80. 
 
 ```azurecli-interactive
   az network lb rule create \
@@ -111,7 +112,7 @@ az network private-link-service create \
 ## <a name="private-endpoints"></a>Частные конечные точки
 
 ### <a name="create-the-virtual-network"></a>Создание виртуальной сети 
-Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet#az-network-vnet-create). В этом примере создается виртуальная сеть с именем  *мипевнет*   в группе ресурсов с именем *myResourcegroup* : 
+Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet#az-network-vnet-create). В этом примере создается виртуальная сеть с именем  *мипевнет*   в группе ресурсов с именем *myResourcegroup*: 
 ```azurecli-interactive
 az network vnet create \
 --resource-group myResourceGroup \
@@ -119,7 +120,7 @@ az network vnet create \
 --address-prefix 10.0.0.0/16  
 ```
 ### <a name="create-the-subnet"></a>Создание подсети 
-Создайте подсеть в виртуальной сети с помощью команды [AZ Network vnet подсети Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). В этом примере создается подсеть с именем  *mySubnet*   в виртуальной сети с именем *мипевнет* в группе ресурсов с именем *myResourcegroup* : 
+Создайте подсеть в виртуальной сети с помощью команды [AZ Network vnet подсети Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). В этом примере создается подсеть с именем  *mySubnet*   в виртуальной сети с именем *мипевнет* в группе ресурсов с именем *myResourcegroup*: 
 
 ```azurecli-interactive 
 az network vnet subnet create \
@@ -152,7 +153,7 @@ az network private-endpoint create \
 --location westcentralus 
 ```
 Вы можете получить *частный-Connection-Resource-id* с помощью `az network private-link-service show` службы Private Link. Идентификатор будет выглядеть следующим образом:   
-/Субскриптионс/субид/ресаурцеграупс/ *resourcegroupname* /провидерс/Микрософт.Нетворк/привателинксервицес/ **privatelinkservicename** 
+/Субскриптионс/субид/ресаурцеграупс/*resourcegroupname*/провидерс/Микрософт.Нетворк/привателинксервицес/**privatelinkservicename** 
  
 ## <a name="show-private-link-service-connections"></a>Показывать подключения службы частной связи 
  

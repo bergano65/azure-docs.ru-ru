@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: df7bad806fb5af198d0484af93e9fb79cb75e2d5
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 7de5f125789b0ed3782224024a9ee9c80d359e77
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540910"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659375"
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell
 
@@ -184,7 +184,7 @@ $gwipconfig = New-AzVirtualNetworkGatewayIpConfig -Name gwipconfig1 -SubnetId $s
 
 Используйте следующие значения.
 
-* Для конфигурации "сеть — сеть" задайте для параметра *-GatewayType* значение *Vpn* . Тип шлюза всегда зависит от реализуемой конфигурации. Например, для других конфигураций шлюза может потребоваться тип шлюза ExpressRoute.
+* Для конфигурации "сеть — сеть" задайте для параметра *-GatewayType* значение *Vpn*. Тип шлюза всегда зависит от реализуемой конфигурации. Например, для других конфигураций шлюза может потребоваться тип шлюза ExpressRoute.
 * Параметр *-VpnType* может быть *RouteBased* (в некоторых документах он называется динамическим шлюзом) или *PolicyBased* (в некоторых документах он называется статическим шлюзом). Дополнительные сведения о типах VPN-шлюзов см. в статье [Основные сведения о VPN-шлюзах Azure](vpn-gateway-about-vpngateways.md).
 * Выберите SKU шлюза, который нужно использовать. К определенным номерам SKU применяются ограничения настройки. Дополнительные сведения см. в разделе о [номерах SKU шлюзов](vpn-gateway-about-vpn-gateway-settings.md#gwsku). Если при создании VPN-шлюза вы получаете сообщение об ошибке с -GatewaySku, убедитесь, что установлена последняя версия командлетов PowerShell.
 
@@ -212,7 +212,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 
 ## <a name="7-create-the-vpn-connection"></a><a name="CreateConnection"></a>7. Создание VPN-подключения
 
-Далее вам нужно создать VPN-подключение типа "сеть — сеть" между шлюзом виртуальной сети и VPN-устройством. Обязательно подставьте собственные значения. Общий ключ должен соответствовать значению, использованному в конфигурации VPN-устройства. Обратите внимание, что для подключения типа "сеть — сеть" параметр -ConnectionType имеет значение **IPsec** .
+Далее вам нужно создать VPN-подключение типа "сеть — сеть" между шлюзом виртуальной сети и VPN-устройством. Обязательно подставьте собственные значения. Общий ключ должен соответствовать значению, использованному в конфигурации VPN-устройства. Обратите внимание, что для подключения типа "сеть — сеть" параметр -ConnectionType имеет значение **IPsec**.
 
 1. Задайте переменные.
    ```azurepowershell-interactive
@@ -261,7 +261,7 @@ Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-*  Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/).
+*  Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](../index.yml).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).
 * Сведения о создании VPN-подключения типа "сеть — сеть" с помощью шаблона Azure Resource Manager см. [в разделе Создание VPN-подключения](https://azure.microsoft.com/resources/templates/101-site-to-site-vpn-create/)типа "сеть — сеть".
 * Сведения о создании VPN-подключения между виртуальными сетями с помощью шаблона Azure Resource Manager см. в статье [развертывание георепликации HBase](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-replication-geo/).

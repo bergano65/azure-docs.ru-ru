@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: b87340fbb3f94eee106fc5d0d72117d30e331035
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7e9544fb73c8599b219ef7a566032adfe5e33d08
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75862719"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658508"
 ---
 # <a name="community-suggested-third-party-vpn-or-firewall-device-settings-for-azure-vpn-gateway"></a>Предлагаемые сообществом сторонние параметры устройств VPN или брандмауэра для VPN-шлюза Azure
 
@@ -41,7 +41,6 @@ ms.locfileid: "75862719"
 
 ## <a name="next-step"></a>Следующий шаг
 
-[Параметры IPsec/IKE](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices)
+[Параметры IPsec/IKE](./vpn-gateway-about-vpn-devices.md)
 
-[VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices)
-
+[VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз](./vpn-gateway-about-vpn-devices.md)

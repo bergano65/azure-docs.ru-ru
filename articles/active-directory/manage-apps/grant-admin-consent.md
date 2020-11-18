@@ -12,12 +12,12 @@ ms.date: 11/04/2019
 ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9680c9bee6d0cf5c9605ce7b6009a500abd81ffb
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 7e56968250c10bb46553e618fd278df7d642683f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369103"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659086"
 ---
 # <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление приложению согласия администратора на уровне арендатора
 
@@ -25,12 +25,12 @@ ms.locfileid: "92369103"
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../roles/permissions-reference.md#global-administrator--company-administrator), [Администратор приложения](../roles/permissions-reference.md#application-administrator)или [Администратор облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
 
 > [!IMPORTANT]
-> Когда приложению было предоставлено согласие администратора на уровне клиента, все пользователи смогут войти в приложение, если оно не настроено для обязательного назначения пользователей. Чтобы ограничить круг пользователей, которые могут входить в приложение, требуется назначение пользователей и назначьте приложению пользователей или группы. Подробнее см. статью [Методы назначения пользователей и групп](methods-for-assigning-users-and-groups.md).
+> Когда приложению было предоставлено согласие администратора на уровне клиента, все пользователи смогут войти в приложение, если оно не настроено для обязательного назначения пользователей. Чтобы ограничить круг пользователей, которые могут входить в приложение, требуется назначение пользователей и назначьте приложению пользователей или группы. Подробнее см. статью [Методы назначения пользователей и групп](./assign-user-or-group-access-portal.md).
 >
 > Роль глобального администратора необходима для предоставления согласия администратора на разрешения приложений для Microsoft Graph API.
 
@@ -93,12 +93,12 @@ https://login.microsoftonline.com/{tenant-id}/adminconsent?client_id={client-id}
 > [!WARNING]
 > Предоставление согласия администратора на уровне клиента с помощью этого URL-адреса приведет к отмене всех разрешений, которые ранее были предоставлены для всего клиента. Разрешения, которые ранее были предоставлены пользователям от своего имени, не затрагиваются. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка согласия конечных пользователей для приложений](configure-user-consent.md)
 
 [Настройка рабочего процесса согласия администратора](configure-admin-consent-workflow.md)
 
-[Разрешения и согласие для платформы удостоверений Майкрософт](../develop/active-directory-v2-scopes.md)
+[Разрешения и согласие для платформы удостоверений Майкрософт](../develop/v2-permissions-and-consent.md)
 
 [Azure AD в StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

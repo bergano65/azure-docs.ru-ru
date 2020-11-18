@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/22/2020
 ms.subservice: app-mgmt
 ms.author: kenwith
-ms.openlocfilehash: 3f6b1bb189390f6ddd02e9ea2d636dcaa66a4f19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8000d07824c27f60dd5d8d6a457521691fe2b7d7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88210864"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658406"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Azure AD Application Proxy: журнал выпусков версий
 В этой статье перечислены версии и функции прокси-сервера приложения Azure Active Directory (Azure AD), которые были выпущены. Команда Azure AD регулярно обновляет прокси приложения с помощью новых функций и функций. Соединители прокси приложения обновляются автоматически при выпуске новой версии. 
@@ -25,7 +25,7 @@ ms.locfileid: "88210864"
 
 Ниже приведен список связанных ресурсов.
 
-Ресурс |  Подробнее
+Ресурс |  Сведения
 --------- | --------- |
 Как включить прокси приложения | В этом [руководстве](application-proxy-add-on-premises-application.md)описаны предварительные требования для включения прокси приложения и установки и регистрации соединителя.
 Сведения о соединителях прокси приложения Azure AD | Дополнительные сведения об [управлении соединителями](application-proxy-connectors.md) и том, как соединители подходят к [автоматическому обновлению](application-proxy-connectors.md#automatic-updates).
@@ -38,7 +38,7 @@ ms.locfileid: "88210864"
 22 июля 2020 г. выпуск для загрузки эта версия доступна только для установки с помощью страницы загрузки. Выпуск автоматического обновления этой версии будет выпущен позже.
 
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
--   Улучшенная поддержка облачных сред Azure для государственных организаций. Инструкции по правильной установке соединителя для облака Azure для государственных организаций см. в статье [Предварительные требования](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud#allow-access-to-urls) и [этапы установки](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud#install-the-agent-for-the-azure-government-cloud).
+-   Улучшенная поддержка облачных сред Azure для государственных организаций. Инструкции по правильной установке соединителя для облака Azure для государственных организаций см. в статье [Предварительные требования](../hybrid/reference-connect-government-cloud.md#allow-access-to-urls) и [этапы установки](../hybrid/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 - Поддержка использования веб-клиента службы удаленных рабочих столов с прокси приложения. Дополнительные сведения см. [в статье публикация удаленный рабочий стол с помощью AD application proxy Azure](application-proxy-integrate-with-remote-desktop-services.md) .
 - Улучшенные согласования расширений WebSocket. 
 
@@ -126,6 +126,6 @@ ms.locfileid: "88210864"
 
 Если вы используете версию соединителя прокси приложения, предшествующую 1.5.36.0, обновите ее до последней версии, чтобы убедиться в наличии новейших полностью поддерживаемых функций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об [удаленном доступе к локальным приложениям с помощью Azure AD application proxy](application-proxy.md).
 - Чтобы приступить к использованию прокси приложения, см. раздел [учебник. Добавление локального приложения для удаленного доступа через прокси приложения](application-proxy-add-on-premises-application.md).

@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 2a6e5be900dc37928351886d22b7586ce5ae77cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5f2905a88f7c769ed9bdcfadcdc91ec23107e3bb
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88506940"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659358"
 ---
 # <a name="get-all-application-proxy-apps-and-list-by-connector-group"></a>Получение сведений обо всех приложениях Application Proxy по группам соединителей
 
@@ -28,7 +28,7 @@ ms.locfileid: "88506940"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Для работы с этим примером требуется [модуль AzureAD PowerShell (версии 2) для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [предварительная версия модуля AzureAD PowerShell (версии 2) для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
+Для работы с этим примером требуется [модуль AzureAD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [предварительная версия модуля AzureAD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -38,14 +38,14 @@ ms.locfileid: "88506940"
 
 | Get-Help | Примечания |
 |---|---|
-|[Get-AzureADServicePrincipal](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Получает субъект-службу. |
-|[Get-AzureADApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Получает приложение Azure AD. |
-|[Get-AzureADApplicationProxyApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Извлекает приложение, настроенное для Application Proxy в Azure AD. |
-| [Get-AzureADApplicationProxyConnectorGroup](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyconnectorgroup?view=azureadps-2.0) | Получает список всех групп соединителей или, если группа указана, выводит сведения о такой группе соединителей. |
+|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Получает субъект-службу. |
+|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Получает приложение Azure AD. |
+|[Get-AzureADApplicationProxyApplication](/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Извлекает приложение, настроенное для Application Proxy в Azure AD. |
+| [Get-AzureADApplicationProxyConnectorGroup](/powershell/module/azuread/get-azureadapplicationproxyconnectorgroup?view=azureadps-2.0) | Получает список всех групп соединителей или, если группа указана, выводит сведения о такой группе соединителей. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure AD PowerShell см. в этом [обзоре](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
+Дополнительные сведения о модуле Azure AD PowerShell см. в этом [обзоре](/powershell/azure/active-directory/overview?view=azureadps-2.0).
 
 См. другие [примеры Azure AD PowerShell для Azure AD Application Proxy](../application-proxy-powershell-samples.md).

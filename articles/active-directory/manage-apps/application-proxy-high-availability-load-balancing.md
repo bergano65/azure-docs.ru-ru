@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ab3b340654fd6d824edef0a33d1ea363a913654
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 403fa4cab94ad6149e388b10acccd9d5e7a2b7a8
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764593"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658168"
 ---
 # <a name="high-availability-and-load-balancing-of-your-application-proxy-connectors-and-applications"></a>Высокий уровень доступности и балансировка нагрузки соединителей прокси приложения и приложений
 
@@ -39,7 +39,7 @@ ms.locfileid: "84764593"
 
 1. Пользователь клиентского устройства пытается получить доступ к локальному приложению, опубликованному через прокси приложения.
 2. Запрос проходит через Azure Load Balancer, чтобы определить, какой экземпляр службы прокси приложения должен принимать запрос. Для каждого региона доступно десятки экземпляров, которые могут принять запрос. Этот метод позволяет равномерно распределить трафик между экземплярами службы.
-3. Запрос отправляется в [служебную шину](https://docs.microsoft.com/azure/service-bus-messaging/).
+3. Запрос отправляется в [служебную шину](../../service-bus-messaging/index.yml).
 4. Служебная шина передает сигнал доступному соединителю. Затем соединитель выбирает запрос из служебной шины.
    - На шаге 2 запросы отправляются в разные экземпляры службы прокси приложения, поэтому подключение с разными соединителями скорее всего будет создано. В результате соединители почти равномерно используются в группе.
 5. Соединитель передает запрос серверу серверной части приложения. Затем приложение отправляет ответ обратно в соединитель.
@@ -98,4 +98,4 @@ ms.locfileid: "84764593"
 - [Включение единого входа](application-proxy-configure-single-sign-on-with-kcd.md)
 - [Включить условный доступ](application-proxy-integrate-with-sharepoint-server.md)
 - [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)
-- [Узнайте, как архитектура Azure AD поддерживает высокий уровень доступности](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-architecture)
+- [Узнайте, как архитектура Azure AD поддерживает высокий уровень доступности](../fundamentals/active-directory-architecture.md)

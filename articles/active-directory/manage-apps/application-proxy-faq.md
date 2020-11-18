@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: 38bff38ebe44d9018299444b89d7743c4cc92b72
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: ef38c5364a0df1df63be825e2c46009174840b72
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424206"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658134"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -58,7 +58,7 @@ ms.locfileid: "92424206"
 Соединитель прокси приложения выполняет проверку подлинности на основе сертификата в Azure. Прерывание TLS (проверка или ускорение TLS/HTTPS) прерывает этот метод проверки подлинности и не поддерживается. Трафик из соединителя в Azure должен обходить любые устройства, выполняющие завершение TLS.  
 
 ### <a name="is-tls-12-required-for-all-connections"></a>Требуется ли TLS 1,2 для всех подключений?
-Да. Для обеспечения лучшего в своем классе шифрования прокси-служба приложения поддерживает доступ только по протоколам TLS 1.2. Эти изменения внедрялись поэтапно и окончательно вступили в силу 31 августа 2019 г. Убедитесь, что все ваши комбинации "клиент-сервер" и "браузер-сервер" обновлены для использования протокола TLS 1.2 и смогут обеспечить подключение к прокси-службе приложения. Это также касается клиентов, с помощью которых ваши пользователи получают доступ к приложениям, опубликованным через прокси приложения. Полезные ссылки и ресурсы см. в статье [Подготовка к использованию TLS 1.2 в Office 365](https://docs.microsoft.com/microsoft-365/compliance/prepare-tls-1.2-in-office-365).
+Да. Для обеспечения лучшего в своем классе шифрования прокси-служба приложения поддерживает доступ только по протоколам TLS 1.2. Эти изменения внедрялись поэтапно и окончательно вступили в силу 31 августа 2019 г. Убедитесь, что все ваши комбинации "клиент-сервер" и "браузер-сервер" обновлены для использования протокола TLS 1.2 и смогут обеспечить подключение к прокси-службе приложения. Это также касается клиентов, с помощью которых ваши пользователи получают доступ к приложениям, опубликованным через прокси приложения. Полезные ссылки и ресурсы см. в статье [Подготовка к использованию TLS 1.2 в Office 365](/microsoft-365/compliance/prepare-tls-1.2-in-office-365).
 
 ### <a name="can-i-place-a-forward-proxy-device-between-the-connector-servers-and-the-back-end-application-server"></a>Можно ли разместить устройство с прямым прокси-сервером между серверами соединителей и сервером серверных приложений?
 Да, этот сценарий поддерживается начиная с соединителя версии 1.5.1526.0. См. раздел [Работа с существующими локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md).
@@ -102,7 +102,7 @@ ms.locfileid: "92424206"
 
 ### <a name="how-do-i-change-the-landing-page-my-application-loads"></a>Разделы справки изменить целевую страницу, с которой загружается приложение?
 
-На странице регистрации приложений можно изменить URL-адрес домашней страницы на требуемый внешний URL-адрес целевой странице. Указанная страница будет загружаться при запуске приложения из папки "Мои приложения" или с портала Office 365. Инструкции по настройке см. в разделе [Настройка пользовательской домашней страницы для опубликованных приложений с помощью Azure AD application proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-home-page)
+На странице регистрации приложений можно изменить URL-адрес домашней страницы на требуемый внешний URL-адрес целевой странице. Указанная страница будет загружаться при запуске приложения из папки "Мои приложения" или с портала Office 365. Инструкции по настройке см. в разделе [Настройка пользовательской домашней страницы для опубликованных приложений с помощью Azure AD application proxy](./application-proxy-configure-custom-home-page.md)
 
 ### <a name="can-only-iis-based-applications-be-published-what-about-web-applications-running-on-non-windows-web-servers-does-the-connector-have-to-be-installed-on-a-server-with-iis-installed"></a>Можно ли публиковать только приложения на основе IIS? Как насчет веб-приложений, работающих на веб-серверах, отличных от Windows? Нужно ли устанавливать соединитель на сервере с установленными службами IIS?
 
@@ -131,7 +131,7 @@ ms.locfileid: "92424206"
 
 В этом случае будет использоваться резервное имя участника-пользователя. Дополнительные сведения о сценарии B2B см. в статье [предоставление пользователям B2B в Azure AD доступа к локальным приложениям](../external-identities/hybrid-cloud-to-on-premises.md).
 
-## <a name="pass-through-authentication"></a>Сквозная аутентификация
+## <a name="pass-through-authentication"></a>Сквозная проверка подлинности
 
 ### <a name="can-i-use-conditional-access-policies-for-applications-published-with-pass-through-authentication"></a>Можно ли использовать политики условного доступа для приложений, опубликованных с помощью сквозной проверки подлинности?
 
@@ -171,7 +171,7 @@ ms.locfileid: "92424206"
 
 ### <a name="can-i-use-the-sharepoint-mobile-app-ios-android-to-access-a-published-sharepoint-server"></a>Можно ли использовать мобильное приложение SharePoint (iOS и Android) для доступа к опубликованному серверу SharePoint?
 
-[Мобильное приложение SharePoint](https://docs.microsoft.com/sharepoint/administration/supporting-the-sharepoint-mobile-apps-online-and-on-premises) не поддерживает Azure Active Directory предварительную проверку подлинности в настоящее время.
+[Мобильное приложение SharePoint](/sharepoint/administration/supporting-the-sharepoint-mobile-apps-online-and-on-premises) не поддерживает Azure Active Directory предварительную проверку подлинности в настоящее время.
 
 ## <a name="active-directory-federation-services-ad-fs-publishing"></a>Публикация службы федерации Active Directory (AD FS) (AD FS) 
 
@@ -193,7 +193,7 @@ ms.locfileid: "92424206"
 
 Да. Преобразование ссылок влияет на производительность. Служба прокси приложения просматривает приложение на наличие жестко закодированных ссылок и заменяет их соответствующими опубликованными внешними URL-адресами перед их представлением пользователю. 
 
-Для лучшей производительности рекомендуется использовать идентичные внутренние и внешние URL-адреса, настроив [Личные домены](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain). Если использование пользовательских доменов невозможно, можно улучшить производительность преобразования ссылок с помощью расширения для безопасного входа в мои приложения или браузера Microsoft ребра на мобильных устройствах. См. раздел [Перенаправление жестко закодированных ссылок для приложений, опубликованных с помощью Azure AD application proxy](application-proxy-configure-hard-coded-link-translation.md).
+Для лучшей производительности рекомендуется использовать идентичные внутренние и внешние URL-адреса, настроив [Личные домены](./application-proxy-configure-custom-domain.md). Если использование пользовательских доменов невозможно, можно улучшить производительность преобразования ссылок с помощью расширения для безопасного входа в мои приложения или браузера Microsoft ребра на мобильных устройствах. См. раздел [Перенаправление жестко закодированных ссылок для приложений, опубликованных с помощью Azure AD application proxy](application-proxy-configure-hard-coded-link-translation.md).
 
 ## <a name="wildcards"></a>подстановочные знаки;
 
@@ -204,5 +204,5 @@ ms.locfileid: "92424206"
 1. Опубликуйте URL-адреса HTTP и HTTPS как отдельные приложения с подстановочным знаком, но присвойте каждому из них другой личный домен. Эта конфигурация будет работать, так как у них разные внешние URL-адреса.
 
 2. Опубликуйте URL-адрес HTTPS с помощью приложения с подстановочными знаками. Опубликуйте приложения HTTP отдельно с помощью этих командлетов PowerShell для прокси приложения:
-   - [Управление приложениями прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management&preserve-view=true)
-   - [Управление соединителем прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management&preserve-view=true)
+   - [Управление приложениями прокси приложения](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management&preserve-view=true)
+   - [Управление соединителем прокси приложения](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management&preserve-view=true)
