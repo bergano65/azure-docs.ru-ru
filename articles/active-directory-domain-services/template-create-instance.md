@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: sample
 ms.date: 07/09/2020
 ms.author: joflore
-ms.openlocfilehash: f257a186f05dc94923d1d39829b5ed68b518f20c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 30fc6b0b7eae6b3dd3477944a5d9ddacf83c677a
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967636"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93041685"
 ---
 # <a name="create-an-azure-active-directory-domain-services-managed-domain-using-an-azure-resource-manager-template"></a>Создание управляемого домена доменных служб Azure Active Directory с помощью шаблона Azure Resource Manager
 
@@ -71,10 +71,10 @@ ms.locfileid: "91967636"
 Register-AzResourceProvider -ProviderNamespace Microsoft.AAD
 ```
 
-Создайте субъект-службу Azure AD с помощью командлета [New-AzureADServicePrincipal][New-AzureADServicePrincipal] для Azure AD DS, чтобы обеспечить возможность взаимодействия и проверки подлинности. Используется определенный идентификатор приложения с названием *Domain Controller Services*(Службы контроллера домена) и номером идентификатора *2565bd9d-da50-47d4-8b85-4c97f669dc36*. Не изменяйте этот идентификатор приложения.
+Создайте субъект-службу Azure AD с помощью командлета [New-AzureADServicePrincipal][New-AzureADServicePrincipal] для Azure AD DS, чтобы обеспечить возможность взаимодействия и проверки подлинности. Используется определенный идентификатор приложения с названием *Domain Controller Services*(Службы контроллера домена) и номером идентификатора *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. Не изменяйте этот идентификатор приложения.
 
 ```powershell
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-AzureADServicePrincipal -AppId "6ba9a5d4-8456-4118-b521-9c5ca10cdf84"
 ```
 
 Создайте группу Azure AD с именем *Администраторы контроллера домена AAD* с помощью командлета [New-AzureADGroup][New-AzureADGroup]. Пользователи, добавленные в эту группу, получают разрешения на выполнение задач администрирования в управляемом домене.

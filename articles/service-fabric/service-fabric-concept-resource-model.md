@@ -4,12 +4,12 @@ description: В этой статье содержатся общие сведе
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: sfrev
-ms.openlocfilehash: 7ad0d4f6d92ba8d85383df281bd14681f43bb6d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3968fde0222dcee8047e7490dba78879ab6110e2
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86258745"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681692"
 ---
 # <a name="service-fabric-application-resource-model"></a>Модель ресурсов приложения Service Fabric
 
@@ -55,7 +55,7 @@ ms.locfileid: "86258745"
 Ресурсы в кластере можно защитить, задав для общего уровня доступа значение **частный**. Предоставить доступ можно несколькими способами:
 
 * Авторизуйте доступ к BLOB-объектам и очередям с помощью [Azure Active Directory](../storage/common/storage-auth-aad-app.md).
-* Предоставьте доступ к данным большого двоичного объекта и очереди Azure с помощью [RBAC в портал Azure](../storage/common/storage-auth-aad-rbac-portal.md).
+* Предоставьте доступ к данным большого двоичного объекта и очереди Azure с помощью [Azure RBAC в портал Azure](../storage/common/storage-auth-aad-rbac-portal.md).
 * Делегирование доступа с помощью [подписанного](/rest/api/storageservices/delegate-access-with-shared-access-signature)URL-доступа.
 
 Пример на следующем снимке экрана использует анонимный доступ на чтение для больших двоичных объектов.

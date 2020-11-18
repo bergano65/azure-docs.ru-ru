@@ -1,20 +1,20 @@
 ---
-title: Использование MQTT для создания клиента устройства IoT Plug and Play | Документация Майкрософт
-description: Используя протокол MQTT напрямую, вы можете создать клиент устройства IoT Plug and Play, не применяя пакеты SDK для устройств Azure IoT.
+title: Учебник. Использование MQTT для создания клиента устройства Azure IoT Plug and Play | Документация Майкрософт
+description: Учебник. Использование протокола MQTT напрямую для создания клиента устройства IoT Plug and Play без применения пакетов SDK для устройств Azure IoT.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 05/13/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: d0ac0f000b6a096ae3de1f4f00a17b64f1948c1e
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 6852b0532b23e46c7b986926b21cd0b7e9f9736d
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046287"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421385"
 ---
-# <a name="use-mqtt-to-develop-an-iot-plug-and-play-device-client"></a>Использование MQTT для разработки клиента устройства IoT Plug and Play
+# <a name="tutorial---use-mqtt-to-develop-an-iot-plug-and-play-device-client"></a>Учебник. Использование MQTT для разработки клиента устройства IoT Plug and Play
 
 При возможности в процессе создания клиентов устройств IoT Plug and Play вы должны использовать один из пакетов SDK для устройств Azure IoT. Но в некоторых сценариях, например при ограниченном объеме памяти на устройстве, возможно, потребуется использовать библиотеку MQTT для обмена данными с центром Интернета вещей.
 
@@ -96,7 +96,7 @@ cd vcpkg
 
 В обозревателе Интернета вещей Azure вы увидите, что устройство не является устройством IoT Plug and Play:
 
-:::image type="content" source="media/tutorial-use-mqtt/non-pnp-iot-explorer.png" alt-text="Выходные данные примера приложения MQTT":::
+:::image type="content" source="media/tutorial-use-mqtt/non-pnp-iot-explorer.png" alt-text="Устройство, не относящееся к IoT Plug and Play, в обозревателе Интернета вещей Azure":::
 
 ### <a name="make-the-device-an-iot-plug-and-play-device"></a>Включение IoT Plug and Play для устройства
 
@@ -117,11 +117,11 @@ cd vcpkg
 
 Двойник устройства теперь включает идентификатор модели:
 
-:::image type="content" source="media/tutorial-use-mqtt/model-id-iot-explorer.png" alt-text="Выходные данные примера приложения MQTT":::
+:::image type="content" source="media/tutorial-use-mqtt/model-id-iot-explorer.png" alt-text="Просмотр идентификатора модели в обозревателе Azure IoT":::
 
 Теперь вы можете перейти к компоненту IoT Plug and Play:
 
-:::image type="content" source="media/tutorial-use-mqtt/components-iot-explorer.png" alt-text="Выходные данные примера приложения MQTT":::
+:::image type="content" source="media/tutorial-use-mqtt/components-iot-explorer.png" alt-text="Просмотр компонентов в обозревателе Интернета вещей Azure":::
 
 Теперь вы можете изменить код устройства для реализации телеметрии, свойств и команд, определенных в вашей модели. Пример реализации устройства термостата с использованием библиотеки Mosquitto см. на странице [Использование MQTT PnP с Центром Интернета вещей Azure без пакета SDK для Интернета вещей в Windows](https://github.com/Azure-Samples/IoTMQTTSample/tree/master/src/Windows/PnPMQTTWin32) на сайте GitHub.
 

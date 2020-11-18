@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 09/15/2020
-ms.openlocfilehash: dd055eecaef00a2f3b555034f44f3c04684a1722
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 461fabd0dd9948e8967ac61919f77e3e23a981b9
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171867"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94331963"
 ---
 # <a name="explore-the-synapse-knowledge-center"></a>Изучение центра знаний Synapse
 
@@ -37,9 +37,9 @@ ms.locfileid: "92171867"
 * **Browser available sample** (Просмотреть доступный пример). Этот параметр позволяет связать примеры наборов данных и добавить пример кода в виде скриптов SQL, записных книжек и конвейеров.
 * **Tour Synapse studio** (Обзор Synapse Studio). С помощью этого параметра можно перейти к краткому обзору основных частей Synapse Studio. Этот параметр будет для вас полезным, если ранее вы никогда не использовали Synapse Studio.
 
-## <a name="exploring-blob-storage-with-sql-on-demand"></a>Изучение хранилища BLOB-объектов с помощью SQL по запросу
+## <a name="exploring-blob-storage-with-serverless-sql-pool"></a>Изучение хранилища BLOB-объектов с помощью бессерверного пула SQL
 
-1. В разделе **Центр знаний** щелкните **Use samples immediately** (Использовать примеры немедленно).
+1. Перейдите в **Центр знаний** и щелкните **Use samples immediately** (Использовать примеры немедленно).
 1. Выберите **Query data with SQL** (Запросить данные с помощью SQL). 
 1. Щелкните **Use samples immediately** (Использовать примеры немедленно).
 1. Будет создан новый скрипт SQL.
@@ -47,7 +47,7 @@ ms.locfileid: "92171867"
 1. Щелкните "Выполнить". Выбранный текст будет выполнен.
 
 ## <a name="loading-more-nyc-taxi-data"></a>Загрузка дополнительных данных NYC Taxi
-1. В разделе **Центр знаний** щелкните **Browse available samples** (Просмотреть доступные примеры). 
+1. Перейдите в **Центр знаний** и щелкните **Browse available samples** (Посмотреть доступные примеры). 
 1. Выберите вкладку **Скрипты SQL** в верхней части экрана
 1. Выберите **Load the New York Taxicab dataset** (Загрузить набор данных New York Taxicab).
 1. В разделе **Входные данные** выберите **Выбрать существующий пул**, а затем — **SQLDB1**.
@@ -60,4 +60,4 @@ ms.locfileid: "92171867"
 
 * [Начало работы с Azure Synapse Analytics](get-started.md)
 * [Создание рабочей области](quickstart-create-workspace.md)
-* [Использование службы SQL по запросу](quickstart-sql-on-demand.md)
+* [Использование бессерверного пула SQL](quickstart-sql-on-demand.md)

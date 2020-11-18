@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 04/04/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: db18c71b09cd9beb58799ad4fbcbc944061153fb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6471d1b5a5ad2b8ba34080ae1220872fa0e2e232
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87921764"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421062"
 ---
 # <a name="quickstart-set-up-sign-in-for-a-single-page-app-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в одностраничное приложение с помощью Azure Active Directory B2C
 
@@ -29,12 +29,12 @@ Azure Active Directory (Azure AD) B2C обеспечивает управлен�
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org/en/download/)
 - Учетная запись социальных сетей Facebook, Google или Майкрософт
-- Пример кода из GitHub: [active-directory-b2c-javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp)
+- Пример кода из GitHub: [ms-identity-b2c-javascript-spa](https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa).
 
-    Вы можете [скачать ZIP-архив](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp/archive/master.zip) или клонировать репозиторий:
+    Вы можете [скачать ZIP-архив](https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa/archive/main.zip) или клонировать репозиторий:
 
     ```console
-    git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
+    git clone https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa.git
     ```
 
 ## <a name="run-the-application"></a>Выполнение приложения
@@ -42,7 +42,6 @@ Azure Active Directory (Azure AD) B2C обеспечивает управлен�
 1. Запустите сервер, выполнив в командной строке Node.js следующие команды:
 
     ```console
-    cd active-directory-b2c-javascript-msal-singlepageapp
     npm install && npm update
     npm start
     ```
@@ -60,7 +59,7 @@ Azure Active Directory (Azure AD) B2C обеспечивает управлен�
 ## <a name="sign-in-using-your-account"></a>Вход с помощью учетной записи
 
 1. Выберите **Вход**, чтобы начать путь взаимодействия пользователя.
-1. В Azure AD B2C в качестве примера веб-приложения предоставляется пользовательская страница входа для вымышленной компании Fabrikam. Чтобы зарегистрироваться с помощью поставщика удостоверений в социальных сетях, нажмите кнопку поставщика удостоверений, которого нужно использовать.
+1. В Azure AD B2C в качестве примера веб-приложения предоставляется страница входа для вымышленной компании Fabrikam. Чтобы зарегистрироваться с помощью поставщика удостоверений в социальных сетях, нажмите кнопку поставщика удостоверений, которого нужно использовать.
 
     ![Страница входа или регистрации с кнопками поставщика удостоверений](./media/quickstart-single-page-app/sign-in-or-sign-up-spa.png)
 

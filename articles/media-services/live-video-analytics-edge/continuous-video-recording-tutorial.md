@@ -3,12 +3,12 @@ title: Руководство по непрерывной записи виде�
 description: Из этого руководства мы узнаем, как с помощью службы Аналитики видеотрансляции Azure в Azure IoT Edge осуществлять непрерывную запись видео в облако и транслировать произвольные фрагменты этого видео в режиме потоковой передачи с помощью Служб мультимедиа Azure.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 4333ceb9c02f39629e4bd06d3d9634b97bb2e2d7
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 7e8bf1202e95cb4e76b54473f9d84076d24accea
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91774034"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93346372"
 ---
 # <a name="tutorial-continuous-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство по Непрерывная запись видео в облако и его воспроизведение
 
@@ -93,7 +93,7 @@ ms.locfileid: "91774034"
     Строка подключения к Центру Интернета вещей позволяет использовать Visual Studio Code для отправки команд модулям Edge через Центр Интернета вещей Azure.
     
 1. Затем перейдите в папку src/edge и создайте файл с именем **.env**.
-1. Скопируйте содержимое файла ~/clouddrive/lva-sample/.env. Текст должен выглядеть так:
+1. Скопируйте содержимое файла ~/clouddrive/lva-sample/edge-deployment/.env. Текст должен выглядеть так:
 
     ```
     SUBSCRIPTION_ID="<Subscription ID>"  
@@ -164,10 +164,63 @@ ms.locfileid: "91774034"
 1. Щелкните правой кнопкой мыши и выберите **Параметры расширения**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Граф мультимедиа" (Показывать подробное сообщение).
+    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Параметры расширения":::
+1. Найдите и включите параметр "Show Verbose Message" (Показывать подробное сообщение).
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Граф мультимедиа"
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Show Verbose Message"::: (Показывать подробное сообщение)
+1. <!--In Visual Studio Code, go-->Перейдите к файлу src/cloud-to-device-console-app/operations.json.
+1. В узле **GraphTopologySet** внесите следующие изменения:
+
+    `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json" `
+1. Затем убедитесь, что в узлах **GraphInstanceSet** и **GraphTopologyDelete** значение **topologyName** соответствует значению свойства **name** в топологии вышеприведенного графа:
+
+    `"topologyName" : "CVRToAMSAsset"`  
+1. Откройте [топологию](https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json) в браузере и найдите параметр assetNamePattern. Чтобы название ресурса было уникальным, можно изменить название экземпляра графа в файле operations.json (по умолчанию он называется Sample-Graph-1).
+
+    `"assetNamePattern": "sampleAsset-${System.GraphTopologyName}-${System.GraphInstanceName}"`    
+1. Чтобы запустить сеанс отладки, нажмите клавишу F5. В окне **ТЕРМИНАЛ** начнут появляться сообщения.
+1. Файл operations.json начнет выполнение операций с вызова GraphTopologyList и GraphInstanceList. Если вы очистили ресурсы после выполнения действий, описанных в предыдущих кратких руководствах или учебниках, это действие возвратит пустые списки, а затем выполнение будет приостановлено, пока вы не нажмете клавишу **ВВОД**, как показано ниже:
+
+    ```
+    --------------------------------------------------------------------------
+    Executing operation GraphTopologyList
+    -----------------------  Request: GraphTopologyList  --------------------------------------------------
+    {
+      "@apiVersion": "1.0"
+    }
+    ---------------  Response: GraphTopologyList - Status: 200  ---------------
+    {
+      "value": []
+    }
+    --------------------------------------------------------------------------
+    Executing operation WaitForInput
+    Press Enter to continue
+    ```
+
+1. После нажатия клавиши **ВВОД** в окне **ТЕРМИНАЛ** будет вызвана следующая серия прямых методов:
+   * Вызов GraphTopologySet с использованием предыдущего topologyUrl
+   * Вызов GraphInstanceSet с использованием приведенного ниже кода
+     
+     ```
+     {
+       "@apiVersion": "1.0",
+       "name": "Sample-Graph-1",
+       "properties": {
+         "topologyName": "CVRToAMSAsset",
+         "description": "Sample graph description",
+         "parameters": [
+           {
+             "name": "rtspUrl",
+             "value": "rtsp://rtspsim:554/media/camera-300s.mkv"
+           },
+           {
+             "name": "rtspUserName",
+             "value": "testuser"
+           },
+           {
+             "name": "rtspPassword",
+             "value": "testpassword"
            }
          ]
        }

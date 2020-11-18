@@ -1,18 +1,18 @@
 ---
-title: Подключение примера кода C устройства IoT Plug and Play к Центру Интернета вещей | Документация Майкрософт
-description: Создание и запуск примера кода C устройства IoT Plug and Play, который использует несколько компонентов и подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
+title: Учебник. Подключение примера кода C устройства IoT Plug and Play к Центру Интернета вещей Azure | Документация Майкрософт
+description: Учебник. Создание и запуск примера кода C устройства IoT Plug and Play, который использует несколько компонентов и подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: e1a2a45d0f5743874ce0c0b20190d7d396094e43
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 0bf0e45f6e9b088567dd48d3eb12ae979ba679e4
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046389"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421487"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-multiple-component-device-applications-running-on-linux-or-windows-to-iot-hub-c"></a>Руководство по подключению приложений устройства IoT Plug and Play с несколькими компонентами в Linux или Windows к Центру Интернета вещей (C)
 

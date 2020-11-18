@@ -1,198 +1,283 @@
 ---
 title: Краткое руководство. Создание частной конечной точки Azure с помощью Azure CLI
-description: В этом кратком руководстве содержатся сведения о частной конечной точке Azure
+description: Из этого краткого руководства вы узнаете, как создать частную конечную точку с помощью Azure CLI.
 services: private-link
-author: malopMSFT
+author: asudbring
 ms.service: private-link
 ms.topic: quickstart
-ms.date: 09/16/2019
+ms.date: 11/07/2020
 ms.author: allensu
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: e7c098ba06086781306960f76978aac9e4fa06bc
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bba912930a9dff0a79e0b0d81025b7524c238db0
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87502670"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368684"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-cli"></a>Краткое руководство. Создание частной конечной точки с помощью Azure CLI
 
-Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (ВМ), обмениваться данными с ресурсами частной ссылки в частном порядке. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети и сервер базы данных SQL с частной конечной точкой, используя Azure CLI. После этого вы сможете получить доступ к виртуальной машине и получить безопасный доступ к ресурсу частной ссылки (в этом примере это частный сервер базы данных SQL).
+Чтобы начать работу с Приватным каналом Azure, воспользуйтесь частной конечной точкой для безопасного подключения к веб-приложению Azure.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Из этого краткого руководства вы узнаете, как создать частную конечную точку для веб-приложения Azure и развернуть виртуальную машину для тестирования частного подключения.  
 
-Если вы решили установить и использовать Azure CLI локально, для выполнения инструкций из этого руководства вам потребуется использовать Azure CLI 2.0.28 или более поздней версии. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
+Частные конечные точки можно создавать для служб Azure разных типов, например Azure SQL и службы хранилища Azure.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+* Веб-приложение Azure с уровнем **Премиум версии 2** или планом для службы приложений более высокого уровня, развернутое в подписке Azure.  
+    * Дополнительные сведения и пример см. в статье [кратком руководстве по созданию веб-приложения ASP.NET Core в Azure](../app-service/quickstart-dotnetcore.md). 
+    * Подробные инструкции по созданию веб-приложения и конечной точки см. в [учебнике по подключению к веб-приложению с помощью частной конечной точки Azure](tutorial-private-endpoint-webapp-portal.md).
+* Войдите на портал Azure и убедитесь, что ваша подписка активна, выполнив команду `az login`.
+* Проверьте версию Azure CLI в терминале или в командном окне, выполнив команду `az --version`. Сведения о последней версии см. в [заметках о выпуске](/cli/azure/release-notes-azure-cli?tabs=azure-cli).
+  * Если у вас нет последней версии, обновите установку, следуя указаниям в [руководстве по установке операционной системы или платформы](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Перед созданием любого ресурса необходимо создать группу ресурсов, которая будет содержать эту виртуальную сеть. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В этом примере создается группа ресурсов с именем *myResourceGroup* в расположении *westcentralus*.
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create):
+
+* с именем **CreatePrivateEndpointQS-rg**; 
+* в расположении **eastus**.
 
 ```azurecli-interactive
-az group create --name myResourceGroup --location westcentralus
+az group create \
+    --name CreatePrivateEndpointQS-rg \
+    --location eastus
 ```
 
-## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
+## <a name="create-a-virtual-network-and-bastion-host"></a>Создание виртуальной сети и узла бастиона
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+В этом разделе вы создадите виртуальную сеть, подсеть и узел бастиона. 
+
+Для безопасного подключения к виртуальной машине с целью тестирования частной конечной точки будет использоваться узел бастиона.
+
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create):
+
+* с именем **myVNet**;
+* с префиксом адреса **10.0.0.0/16**;
+* с именем подсети **myBackendSubnet**;
+* с префиксом подсети **10.0.0.0/24**;
+* в группе ресурсов **CreatePrivateEndpointQS-rg**;
+* расположении **eastus**.
 
 ```azurecli-interactive
 az network vnet create \
- --name myVirtualNetwork \
- --resource-group myResourceGroup \
- --subnet-name mySubnet
+    --resource-group CreatePrivateEndpointQS-rg\
+    --location eastus \
+    --name myVNet \
+    --address-prefixes 10.0.0.0/16 \
+    --subnet-name myBackendSubnet \
+    --subnet-prefixes 10.0.0.0/24
 ```
 
-## <a name="disable-subnet-private-endpoint-policies"></a>Отключение политик подсети частной конечной точки
-
-Поскольку Azure развертывает ресурсы в подсеть виртуальной сети, чтобы отключить политики сети частной конечной точки, вам следует создать или обновить подсеть. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
+Измените настройки подсети, чтобы отключить сетевые политики для частной конечной точки, с помощью команды [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
 az network vnet subnet update \
- --name mySubnet \
- --resource-group myResourceGroup \
- --vnet-name myVirtualNetwork \
- --disable-private-endpoint-network-policies true
+    --name myBackendSubnet \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --vnet-name myVNet \
+    --disable-private-endpoint-network-policies true
 ```
 
-## <a name="create-the-vm"></a>Создание виртуальной машины
+Чтобы создать общедоступный IP-адрес узла-бастиона, воспользуйтесь командой [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create):
 
-Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM*.
+* создайте стандартный избыточный между зонами общедоступный IP-адрес с именем **myPublicIP**;
+* в **CreatePrivateEndpointQS-rg**.
+
+```azurecli-interactive
+az network public-ip create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name myBastionIP \
+    --sku Standard
+```
+
+Используйте команду [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create), чтобы создать подсеть бастиона:
+
+* с именем **AzureBastionSubnet**;
+* с префиксом адреса **10.0.1.0/24**;
+* виртуальная сеть **myVNet**;
+* в группе ресурсов **CreatePrivateEndpointQS-rg**.
+
+```azurecli-interactive
+az network vnet subnet create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name AzureBastionSubnet \
+    --vnet-name myVNet \
+    --address-prefixes 10.0.1.0/24
+```
+
+Используйте команду [az network bastion create](/cli/azure/network/bastion#az-network-bastion-create) для создания узла-бастиона:
+
+* с именем **myBastionHost**;
+* в **CreatePrivateEndpointQS-rg**;
+* связанного с общедоступным IP-адресом **myBastionIP**;
+* связанного с виртуальной сетью **myVNet**;
+* в расположении **eastus**.
+
+```azurecli-interactive
+az network bastion create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name myBastionHost \
+    --public-ip-address myBastionIP \
+    --vnet-name myVNet \
+    --location eastus
+```
+
+Развертывание узла-бастиона может занять несколько минут.
+
+## <a name="create-test-virtual-machine"></a>Создание тестовой виртуальной машины
+
+В этом разделе вы создадите виртуальную машину, которая будет использоваться для тестирования частной конечной точки.
+
+Создайте виртуальную машину с помощью команды  [az vm create](/cli/azure/vm#az_vm_create). При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину:
+
+* с именем **myVM**;
+* в **CreatePrivateEndpointQS-rg**;
+* в сети **myVNet**;
+* подсеть **myBackendSubnet**;
+* с образом сервера **Win2019Datacenter**.
 
 ```azurecli-interactive
 az vm create \
-  --resource-group myResourceGroup \
-  --name myVm \
-  --image Win2019Datacenter
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name myVM \
+    --image Win2019Datacenter \
+    --public-ip-address "" \
+    --vnet-name myVNet \
+    --subnet myBackendSubnet \
+    --admin-username azureuser
 ```
 
-Запишите общедоступный IP-адрес виртуальной машины. Этот адрес используется на следующем шаге, чтобы подключиться к виртуальной машине из Интернета.
+## <a name="create-private-endpoint"></a>Создание частной конечной точки
 
-## <a name="create-a-server-in-sql-database"></a>Создание сервера базы данных SQL
+Используя сведения из этого раздела, вы создадите частную конечную точку.
 
-Создайте сервер базы данных SQL с помощью команды az sql server create. Помните, что имя сервера должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
+Используйте команду [az webapp list](/cli/azure/webapp#az_webapp_list), чтобы разместить идентификатор ресурса созданного ранее веб-приложения в переменную оболочки.
 
-```azurecli-interactive
-# Create a server in the resource group
-az sql server create \
-    --name "myserver"\
-    --resource-group myResourceGroup \
-    --location WestUS \
-    --admin-user "sqladmin" \
-    --admin-password "CHANGE_PASSWORD_1"
+Создайте конечную точку и подключение с помощью команды [az network private-endpoint create](/cli/azure/network/private-endpoint#az_network_private_endpoint_create):
 
-# Create a database in the server with zone redundancy as false
-az sql db create \
-    --resource-group myResourceGroup  \
-    --server myserver \
-    --name mySampleDatabase \
-    --sample-name AdventureWorksLT \
-    --edition GeneralPurpose \
-    --family Gen4 \
-    --capacity 1
-```
-
-Идентификатор сервера аналогичный  ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/myserver.```. Вы будете использовать идентификатор сервера в следующем шаге.
-
-## <a name="create-the-private-endpoint"></a>Создание частной конечной точки
-
-Создайте частную конечную точку для логического сервера SQL в виртуальной сети:
+* с именем **myPrivateEndpoint**;
+* в группе ресурсов **CreatePrivateEndpointQS-rg**;
+* виртуальная сеть **myVNet**;
+* подсеть **myBackendSubnet**;
+* с именем подключения **myConnection**;
+* с веб-приложением **\<webapp-resource-group-name>** .
 
 ```azurecli-interactive
-az network private-endpoint create \  
-    --name myPrivateEndpoint \  
-    --resource-group myResourceGroup \  
-    --vnet-name myVirtualNetwork  \  
-    --subnet mySubnet \  
-    --private-connection-resource-id "<server ID>" \  
-    --group-ids sqlServer \  
+id=$(az webapp list \
+    --resource-group <webapp-resource-group-name> \
+    --query '[].[id]' \
+    --output tsv)
+
+az network private-endpoint create \
+    --name myPrivateEndpoint \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --vnet-name myVNet --subnet myBackendSubnet \
+    --private-connection-resource-id $id \
+    --group-id sites \
     --connection-name myConnection  
- ```
+```
 
 ## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS
 
-Создайте частную зону DNS для домена базы данных SQL, создайте ассоциированную связь с виртуальной сетью и создайте группу зоны DNS, чтобы связать частную конечную точку с частной зоной DNS. 
+Используя сведения из этого раздела, вы создадите и настроите частную зону DNS с помощью [az network private-dns zone create](/cli/azure/ext/privatedns/network/private-dns/zone#ext_privatedns_az_network_private_dns_zone_create).  
+
+Воспользуйтесь командой [az network private-dns link vnet create](/cli/azure/ext/privatedns/network/private-dns/link/vnet#ext_privatedns_az_network_private_dns_link_vnet_create), чтобы создать в виртуальной сети ссылку на зону DNS.
+
+Вы создадите группу зоны DNS с помощью команды [az network private-endpoint dns-zone-group create](/cli/azure/network/private-endpoint/dns-zone-group#az_network_private_endpoint_dns_zone_group_create):
+
+* с именем зоны **privatelink.azurewebsites.net**;
+* виртуальная сеть **myVNet**;
+* в группе ресурсов **CreatePrivateEndpointQS-rg**;
+* с именем ссылки на DNS **myDNSLink**;
+* связанную с **myPrivateEndpoint**;
+* с именем группы зон **MyZoneGroup**.
 
 ```azurecli-interactive
-az network private-dns zone create --resource-group myResourceGroup \
-   --name  "privatelink.database.windows.net"
-az network private-dns link vnet create --resource-group myResourceGroup \
-   --zone-name  "privatelink.database.windows.net"\
-   --name MyDNSLink \
-   --virtual-network myVirtualNetwork \
-   --registration-enabled false
+az network private-dns zone create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name "privatelink.azurewebsites.net"
+
+az network private-dns link vnet create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --zone-name "privatelink.azurewebsites.net" \
+    --name MyDNSLink \
+    --virtual-network myVNet \
+    --registration-enabled false
+
 az network private-endpoint dns-zone-group create \
-   --resource-group myResourceGroup \
+   --resource-group CreatePrivateEndpointQS-rg \
    --endpoint-name myPrivateEndpoint \
    --name MyZoneGroup \
-   --private-dns-zone "privatelink.database.windows.net" \
-   --zone-name sql
+   --private-dns-zone "privatelink.azurewebsites.net" \
+   --zone-name webapp
 ```
 
-## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
+## <a name="test-connectivity-to-private-endpoint"></a>Проверка подключения к частной конечной точке
 
-Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
+В этом разделе описано, как использовать виртуальную машину, созданную на предыдущем шаге, для подключения к серверу SQL через частную конечную точку.
 
-1. На портале в строке поиска введите *myVm*.
+1. Войдите на [портал Azure](https://portal.azure.com) 
+ 
+2. В области навигации слева выберите **Группы ресурсов**.
 
-1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
+3. Выберите **CreatePrivateEndpointQS-rg**.
 
-1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
+4. Выберите **myVM**.
 
-1. Откройте скачанный RDP-файл*.
+5. На обзорной странице для **myVM** выберите **Подключиться**, а затем — **Бастион**.
 
-    1. При появлении запроса выберите **Подключиться**.
+6. Нажмите синюю кнопку **Использовать Бастион**.
 
-    1. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
+7. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
 
-        > [!NOTE]
-        > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
+8. После подключения откройте на сервере Windows PowerShell.
 
-1. Щелкните **ОК**.
+9. Введите `nslookup <your-webapp-name>.azurewebsites.net`. Замените **\<your-webapp-name>** именем веб-приложения, созданного на предыдущих шагах.  Вы получите сообщение, аналогичное показанному ниже:
 
-1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
-
-1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
-
-## <a name="access-sql-database-privately-from-the-vm"></a>Доступ с виртуальной машины к базе данных SQL в частном порядке
-
-В этом разделе вы будете подключаться к базе данных SQL из виртуальной машины с помощью частной конечной точки.
-
-1. Откройте PowerShell на удаленном рабочем столе *myVm*.
-2. Введите myserver.database.windows.net
-
-   Должно появиться сообщение следующего вида:
-
-    ```
+    ```powershell
     Server:  UnKnown
     Address:  168.63.129.16
+
     Non-authoritative answer:
-    Name:    myserver.privatelink.database.windows.net
+    Name:    mywebapp8675.privatelink.azurewebsites.net
     Address:  10.0.0.5
-    Aliases:  myserver.database.windows.net
+    Aliases:  mywebapp8675.azurewebsites.net
     ```
 
-3. Установите SQL Server Management Studio
-4. В окне "Подключение к серверу" введите или выберите приведенные ниже сведения.
+    Для имени веб-приложения возвращается частный IP-адрес **10.0.0.5**.  Этот адрес находится в подсети виртуальной сети, созданной ранее.
 
-   - Тип сервера: Выберите "Ядро СУБД".
-   - Имя сервера: Выберите myserver.database.windows.net
-   - Имя пользователя: Введите имя пользователя, указанное во время создания.
-   - Пароль: Введите пароль, указанный во время создания.
-   - Запомнить пароль: Выберите "Да".
+10. В окне подключения бастиона к **myVM** откройте Internet Explorer.
 
-5. Выберите **Подключиться**.
-6. В меню слева выберите **Базы данных**.
-7. (Дополнительно) Создание или запрос информации из базы данных *mydatabase*
-8. Закройте подключение к удаленному рабочему столу *myVm*.
+11. Введите URL-адрес веб-приложения **https://\<your-webapp-name>.azurewebsites.net**.
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
+12. Если приложение не развернуто, вы получите страницу веб-приложения по умолчанию.
 
-Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду "az group delete".
+    :::image type="content" source="./media/create-private-endpoint-portal/web-app-default-page.png" alt-text="Страница веб-приложения по умолчанию." border="true":::
+
+13. Закройте подключение к **myVM**.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов 
+По завершении использования частной конечной точки и виртуальной машины удалите группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [az group delete](/cli/azure/group#az_group_delete):
 
 ```azurecli-interactive
-az group delete --name myResourceGroup --yes
+az group delete \
+    --name CreatePrivateEndpointQS-rg
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о службе [Приватный канал Azure](private-link-overview.md)
+В этом кратком руководстве вы узнали, как создать:
+
+* виртуальную сеть и узел-бастион;
+* виртуальную машину;
+* частную конечную точку для веб-приложения Azure.
+
+Вы использовали виртуальную машину для безопасного тестирования подключения к веб-приложению через частную конечную точку.
+
+Дополнительные сведения о службах, поддерживающих частную конечную точку, см. в следующей статье:
+> [!div class="nextstepaction"]
+> [Доступность Приватного канала](private-link-overview.md#availability)

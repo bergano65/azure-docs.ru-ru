@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/14/2020
 ms.author: johndaw
-ms.openlocfilehash: fc67012dff5931fb86452ea95c2ea074a426953c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee431df89128a516e3a1cabeb43b5cbe9e356dae
+ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89075684"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92927861"
 ---
 # <a name="tutorial--deploying-hsms-into-an-existing-virtual-network-using-powershell"></a>Руководство. Развертывание выделенных устройств HSM в существующей виртуальной сети с помощью PowerShell
 
@@ -233,7 +233,7 @@ Get-AzResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGroupNa
 
 Выходные данные должны быть аналогичны показанным на снимке экрана ниже.
 
-![Состояние подготовки к работе](media/tutorial-deploy-hsm-powershell/output.png)
+![Снимок экрана: выходные данные команды hsm show.](media/tutorial-deploy-hsm-powershell/output.png)
 
 На этом этапе вы выделили все ресурсы для высокодоступного развертывания двух устройств HSM, а также убедились, что они доступны и работают. Дальнейшие операции по конфигурации или проверке требуют взаимодействия с самим устройством HSM. Для этого выполните инструкции, изложенные в разделе 7 руководства администратора Gemalto Luna Network HSM 7, где описаны действия по инициализации устройства HSM и созданию разделов. Вся документация и ПО доступны непосредственно на веб-сайте Gemalto после регистрации на портале поддержки клиентов Gemalto и получения идентификатора клиента. Скачайте клиентское программное обеспечение версии 7.2, чтобы получить все необходимые компоненты.
 

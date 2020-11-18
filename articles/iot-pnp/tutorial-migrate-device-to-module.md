@@ -1,18 +1,18 @@
 ---
-title: Подключение универсального модуля IoT Plug and Play | Документация Майкрософт
-description: Используйте пример кода устройства IoT Plug and Play на C# в универсальном модуле.
+title: Учебник. Подключение универсального модуля Azure IoT Plug and Play | Документация Майкрософт
+description: Учебник. Использование примера кода устройства IoT Plug and Play на C# в универсальном модуле.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 9/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: d425152f83821e1d157065370bd02e2d990ec876
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: dc86340026ec7b85afc9e5208ea8ef8c32d8bac6
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426940"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421470"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-module-c"></a>Руководство по подключению модуля IoT Plug and Play (C#)
 
@@ -33,11 +33,11 @@ ms.locfileid: "92426940"
 
 Используйте средство Обозревателя Интернета вещей Azure, чтобы добавить новое устройство с именем **my-module-device** в центр Интернета вещей.
 
-Добавьте модуль с именем **my-module** в **my-module-device** :
+Добавьте модуль с именем **my-module** в **my-module-device**:
 
 1. В средстве Обозревателя Интернета вещей Azure перейдите к устройству **my-module-device**.
 
-1. Выберите **Удостоверение модуля** , а затем выберите **Добавить**.
+1. Выберите **Удостоверение модуля**, а затем выберите **Добавить**.
 
 1. Введите **my-module** в качестве имени удостоверения модуля и нажмите кнопку **Сохранить**.
 
@@ -109,7 +109,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
 Чтобы изменить код для работы в качестве модуля, а не устройства, выполните следующие действия.
 
-1. В Visual Studio откройте файл *Parameter.cs* и измените строку, которая задает переменную **PrimaryConnectionString** , следующим образом:
+1. В Visual Studio откройте файл *Parameter.cs* и измените строку, которая задает переменную **PrimaryConnectionString**, следующим образом:
 
     ```csharp
     public string PrimaryConnectionString { get; set; } = Environment.GetEnvironmentVariable("IOTHUB_MODULE_CONNECTION_STRING");

@@ -3,12 +3,12 @@ title: Развертывание и обновление с помощью Azur
 description: Узнайте, как развертывать приложения и службы в кластере Service Fabric с помощью шаблона Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 12/06/2017
-ms.openlocfilehash: a849bdff0d2719f02b6b5f2d7159b87ce664c13f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb866eb24fb1b286f496bad9845d1ee557baa221
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86256515"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681675"
 ---
 # <a name="manage-applications-and-services-as-azure-resource-manager-resources"></a>Управление приложениями и службами как ресурсами Azure Resource Manager
 
@@ -18,7 +18,7 @@ ms.locfileid: "86256515"
 
 Если это возможно, следует управлять приложениями как ресурсами Resource Manager, чтобы улучшить:
 * Журнал аудита: Resource Manager выполняется аудит каждой операции и хранит подробный *журнал действий*, позволяющий отслеживать все изменения, внесенные в эти приложения и кластер.
-* Управление доступом на основе ролей (RBAC): управление доступом к кластерам, а также приложениям, развернутым в кластере, можно осуществлять с помощью того же шаблона Resource Manager.
+* Управление доступом на основе ролей Azure (Azure RBAC). Управление доступом к кластерам, а также приложениям, развернутым в кластере, можно выполнить с помощью одного и того же шаблона диспетчер ресурсов.
 * Azure Resource Manager (посредством портала Azure) становится единым центром управления кластером и развертываниями важных приложений.
 
 В следующем фрагменте кода показаны различные ресурсы, которыми можно управлять с помощью шаблона.

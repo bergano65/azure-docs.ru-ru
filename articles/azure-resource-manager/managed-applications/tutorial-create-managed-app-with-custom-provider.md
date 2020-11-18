@@ -6,12 +6,12 @@ ms.author: lazinnat
 author: lazinnat
 ms.date: 06/20/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ace58bd3bb89f9e8545bf125f272e62c3a134061
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: f327749d1bdfb8cf2cba00cf4c5f68b4b2b77999
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91949836"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93379559"
 ---
 # <a name="tutorial-create-managed-application-with-custom-actions-and-resources"></a>Руководство по созданию управляемого приложения с настраиваемыми действиями и ресурсами
 
@@ -41,7 +41,7 @@ ms.locfileid: "91949836"
 
 В рамках этого учебника вы создадите управляемое приложение и группу управляемых ресурсов, содержащую экземпляр настраиваемого поставщика, учетную запись хранения и функцию. Используемая в этом примере функция Azure реализует API, который обрабатывает операции настраиваемого поставщика для действий и ресурсов. Учетная запись хранения Azure используется в качестве основного хранилища для ресурсов настраиваемого поставщика.
 
-Определение пользовательского интерфейса для создания экземпляра управляемого приложения включает следующие входные элементы: `funcname` и `storagename`. Имена учетной записи хранения и функции должны быть глобально уникальными. По умолчанию файлы функции будут развернуты из [примера пакета функций](https://github.com/Azure/azure-quickstart-templates/tree/master/101-custom-rp-with-function/artifacts/functionzip), но вы можете изменить его, добавив входной элемент для ссылки на пакет в файл *createUIDefinition.json*:
+Определение пользовательского интерфейса для создания экземпляра управляемого приложения включает следующие входные элементы: `funcname` и `storagename`. Имена учетной записи хранения и функции должны быть глобально уникальными. По умолчанию файлы функции будут развернуты из [примера пакета функций](https://github.com/Azure/azure-quickstart-templates/tree/master/101-custom-rp-with-function/artifacts/functionzip), но вы можете изменить его, добавив входной элемент для ссылки на пакет в файл *createUiDefinition.json*:
 
 ```json
 {
@@ -74,7 +74,7 @@ ms.locfileid: "91949836"
 }
 ```
 
-и выходной элемент в файл *createUIDefinition.json*:
+и выходной элемент в файл *createUiDefinition.json*:
 
 ```json
   "funcname": "[steps('applicationSettings').funcname]",
@@ -82,13 +82,13 @@ ms.locfileid: "91949836"
   "zipFileBlobUri": "[steps('applicationSettings').zipFileBlobUri]"
 ```
 
-Полный пример *createUIDefinition.json* можно найти в статье [Reference: User interface elements artifact](reference-createuidefinition-artifact.md) (Справочные материалы. Артефакт элементов пользовательского интерфейса).
+Полный пример *createUiDefinition.json* можно найти в статье [Reference: User interface elements artifact](reference-createuidefinition-artifact.md) (Справочные материалы. Артефакт элементов пользовательского интерфейса).
 
 ## <a name="template-with-custom-provider"></a>Шаблон с настраиваемым поставщиком
 
 Для создания экземпляра управляемого приложения с настраиваемым поставщиком вам потребуется определить в файле **mainTemplate.json** ресурс настраиваемого поставщика с именем **public** и типом **Microsoft.CustomProviders/resourceProviders**. В этом ресурсе определяются типы ресурсов и действия для службы. Чтобы развернуть экземпляры функции Azure и учетной записи хранения Azure, определите ресурсы типа `Microsoft.Web/sites` и `Microsoft.Storage/storageAccounts` соответственно.
 
-В рамках этого учебника вы создадите один тип ресурса `users`, а также настраиваемые действия `ping` и `users/contextAction`, которые будут выполняться в контексте настраиваемого ресурса `users`. Для каждого типа ресурса и действия предоставьте конечную точку, указывающую на функцию с именем, предоставленным в файле [createUIDefinition.json](#user-interface-definition). Укажите для **routingType** значение `Proxy,Cache` для типов ресурсов и `Proxy` — для действий:
+В рамках этого учебника вы создадите один тип ресурса `users`, а также настраиваемые действия `ping` и `users/contextAction`, которые будут выполняться в контексте настраиваемого ресурса `users`. Для каждого типа ресурса и действия предоставьте конечную точку, указывающую на функцию с именем, предоставленным в файле [createUiDefinition.json](#user-interface-definition). Укажите для **routingType** значение `Proxy,Cache` для типов ресурсов и `Proxy` — для действий:
 
 ```json
 {
@@ -339,11 +339,11 @@ az managedapp create \
 
 * Перейдите на страницу "Пользователи" и нажмите кнопку "Добавить". Укажите входные данные для создания ресурса и отправьте форму:
 
-![Создание настраиваемого ресурса](./media/tutorial-create-managed-app-with-custom-provider/create-custom-resource.png)
+![Снимок экрана: кнопка "Добавить", выбранная на странице "Пользователи".](./media/tutorial-create-managed-app-with-custom-provider/create-custom-resource.png)
 
 * Перейдите на страницу "Пользователи", выберите ресурс users и щелкните Custom Context Action (Настраиваемое действие контекста):
 
-![Создание настраиваемого ресурса](./media/tutorial-create-managed-app-with-custom-provider/perform-custom-resource-action.png)
+![Снимок экрана: выбранное настраиваемое действие контекста.](./media/tutorial-create-managed-app-with-custom-provider/perform-custom-resource-action.png)
 
 [!INCLUDE [clean-up-section-portal](../../../includes/clean-up-section-portal.md)]
 

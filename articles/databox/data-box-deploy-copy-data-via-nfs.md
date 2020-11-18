@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 09/29/2020
 ms.author: alkohli
-ms.openlocfilehash: eee5119336be02621a27b315cb26ca8dd1fd9cb4
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: bbebe3b3f63e6ccbb5f351abfc9ba3b846ca6fbe
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91766268"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337667"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-nfs"></a>Руководство по Копирование данных в Azure Data Box через NFS
 
@@ -62,7 +62,7 @@ ms.locfileid: "91766268"
 
 2. Укажите IP-адрес NFS-клиента и щелкните **Добавить**. Вы можете настроить доступ для нескольких NFS-клиентов, выполнив это действие для каждого клиента. Нажмите кнопку **ОК**.
 
-    ![Настройка клиентского доступа NFS 2](media/data-box-deploy-copy-data/nfs-client-access2.png)
+    ![Настройка IP-адреса на NFS-клиенте](media/data-box-deploy-copy-data/nfs-client-access2.png)
 
 2. Убедитесь, что на главном компьютере с ОС Linux установлен NFS-клиент [поддерживаемой версии](data-box-system-requirements.md). Используйте версию, подходящую для используемого вами дистрибутива ОС Linux. 
 

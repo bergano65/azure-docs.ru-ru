@@ -12,12 +12,12 @@ ms.date: 10/21/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 49bba8054065123d7409f26b61d1dfc2580ef720
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: e56748df2fb69ace4e9b8d9f6908bc8013176a19
+ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636057"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93287803"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Примеры кода для платформы удостоверений Майкрософт (конечная точка версии 2.0)
 
@@ -55,23 +55,25 @@ ms.locfileid: "92636057"
 
 | Платформа | Только вход пользователей | Выполняет вход пользователей и вызывает Microsoft Graph |
 | -------- | ------------------- | --------------------------------- |
-| ![На этом изображении показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | [Руководство по входу пользователей в систему для веб-приложений ASP.NET Core](https://aka.ms/aspnetcore-webapp-sign-in) | Тот же пример на этапе [Веб-приложение ASP.NET Core вызывает Microsoft Graph](https://aka.ms/aspnetcore-webapp-call-msgraph) |
-| ![На этом изображении показан логотип ASP.NET](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [Краткое руководство по ASP.NET](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
+| ![На этом изображении показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | [Руководство по входу пользователей в систему для веб-приложений ASP.NET Core](https://aka.ms/aspnetcore-webapp-sign-in) | Тот же пример на этапе [Веб-приложение ASP.NET Core вызывает Microsoft Graph](https://aka.ms/aspnetcore-webapp-call-msgraph)</p>Расширенный пример [Доступ к кэшу маркеров выполнившего вход пользователя из фоновых приложений, интерфейсов API и служб](https://github.com/Azure-Samples/ms-identity-dotnet-advanced-token-cache) |
+| ![На этом изображении показан логотип ASP.NET Framework](media/sample-v2-code/logo_NETframework.png)</p>ASP.NET Core | [Сборник схем для разработчиков, посвященный миграции приложений из AD FS в Azure AD](https://github.com/Azure-Samples/ms-identity-dotnet-adfs-to-aad). Узнайте, как безопасно переносить приложения, интегрированные со службами федерации Active Directory (AD FS), в Azure Active Directory (Azure AD). | |
+| ![На этом изображении показан логотип ASP.NET Framework](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [Краткое руководство по ASP.NET](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
 | ![На этом изображении показан логотип Java](media/sample-v2-code/logo_java.png)  |                   | [ms-identity-java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp) |
 | ![На этом изображении показан логотип Python](media/sample-v2-code/logo_python.png)  | [ms-identity-python-flask-webapp-authentication](https://github.com/Azure-Samples/ms-identity-python-flask-webapp-authentication) | [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp) |
 | ![На этом изображении показан логотип Ruby](media/sample-v2-code/logo_ruby.png) |                   | [msgraph-training-rubyrailsapp](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) |
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Общедоступные клиентские приложения — классические и мобильные
 
-В приведенных ниже примерах показаны общедоступные клиентские приложения (классические или мобильные), которые обращаются к API Microsoft Graph или веб-API от имени пользователя. Кроме примера *классического (консольного) приложения с WAM* , все эти клиентские приложения используют библиотеку аутентификации Майкрософт (MSAL).
+В приведенных ниже примерах показаны общедоступные клиентские приложения (классические или мобильные), которые обращаются к API Microsoft Graph или веб-API от имени пользователя. Кроме примера *классического (консольного) приложения с WAM*, все эти клиентские приложения используют библиотеку аутентификации Майкрософт (MSAL).
 
 | Клиентское приложение | Платформа | Поток или способ предоставления | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET Core |
 | ------------------ | -------- |  ----------| ---------- | ------------------------- |
-| Классическое приложение (WPF)      | ![На этом изображении показан логотип .NET/C#](media/sample-v2-code/logo_NET.png) | [Код авторизации](msal-authentication-flows.md#authorization-code)| [dotnet-desktop-msgraph-v2](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [dotnet-native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi) |
-| Классическое приложение (консольное)   | ![На этом изображении показан логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NET.png) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication) | [dotnet-iwa-v2](https://github.com/azure-samples/active-directory-dotnet-iwa-v2) |  |
+| Руководство по классическим приложениям (.NET Core) — необязательное использование:</p>кросс-платформенного кэша маркеров;</p>пользовательского веб-интерфейса. | ![На этом изображении показан логотип .NET/C#](media/sample-v2-code/logo_NETcore.png) | [Код авторизации](msal-authentication-flows.md#authorization-code)| [ms-identity-dotnet-desktop-tutorial](https://github.com/azure-samples/ms-identity-dotnet-desktop-tutorial) | |
+| Классическое приложение (WPF)      | ![На этом изображении показан логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NET.png) | [Код авторизации](msal-authentication-flows.md#authorization-code)| [dotnet-desktop-msgraph-v2](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [dotnet-native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi) |
+| Классическое приложение (консольное)   | ![Изображение: логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NET.png) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication) | [dotnet-iwa-v2](https://github.com/azure-samples/active-directory-dotnet-iwa-v2) |  |
 | Классическое приложение (консольное)   | ![На этом изображении показан логотип Java](media/sample-v2-code/logo_java.png) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication) |[ms-identity-java-desktop](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
-| Классическое приложение (консольное)   | ![На этом изображении показан логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NETcore.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[dotnetcore-up-v2](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) |  |
-| Классическое (консольное) приложение с WAM  | ![На этом изображении показан логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NETcore.png) | Интерактивный с использованием [диспетчера учетных веб-записей](/windows/uwp/security/web-account-manager) (WAM) |[dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) |  |
+| Классическое приложение (консольное)   | ![Логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NETcore.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[dotnetcore-up-v2](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) |  |
+| Классическое (консольное) приложение с WAM  | ![Логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NETcore.png) | Интерактивный с использованием [диспетчера учетных веб-записей](/windows/uwp/security/web-account-manager) (WAM) |[dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) |  |
 | Классическое приложение (консольное)   | ![На этом изображении показан логотип Java](media/sample-v2-code/logo_java.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[ms-identity-java-desktop](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
 | Классическое приложение (консольное)   | ![На этом изображении показан логотип Python](media/sample-v2-code/logo_python.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[ms-identity-python-desktop](https://github.com/Azure-Samples/ms-identity-python-desktop) |  |
 | Мобильное приложение (Android, iOS, UWP)   | ![На этом изображении показан логотип .NET/C# (для Xamarin)](media/sample-v2-code/logo_xamarin.png) | [Код авторизации](msal-authentication-flows.md#authorization-code) |[xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) |  |
@@ -87,7 +89,7 @@ ms.locfileid: "92636057"
 | Клиентское приложение | Платформа | Поток или предоставление | Вызывает Microsoft Graph |
 | ------------------ | -------- | ---------- | -------------------- |
 | Консоль | ![На этом изображении показан логотип .NET Core](media/sample-v2-code/logo_NETcore.png)</p> ASP.NET  | [Учетные данные клиента](msal-authentication-flows.md#client-credentials) | [dotnetcore-daemon-v2](https://github.com/azure-samples/active-directory-dotnetcore-daemon-v2) |
-| Веб-приложение | ![На этом изображении показан логотип ASP.NET](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET  | [Учетные данные клиента](msal-authentication-flows.md#client-credentials) | [dotnet-daemon-v2](https://github.com/azure-samples/active-directory-dotnet-daemon-v2) |
+| Веб-приложение | ![Снимок экрана: логотип ASP.NET](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET  | [Учетные данные клиента](msal-authentication-flows.md#client-credentials) | [dotnet-daemon-v2](https://github.com/azure-samples/active-directory-dotnet-daemon-v2) |
 | Консоль | ![На этом изображении показан логотип Java](media/sample-v2-code/logo_java.png) | [Учетные данные клиента](msal-authentication-flows.md#client-credentials) | [ms-identity-java-daemon](https://github.com/Azure-Samples/ms-identity-java-daemon) |
 | Консоль | ![На этом изображении показан логотип Python](media/sample-v2-code/logo_python.png) | [Учетные данные клиента](msal-authentication-flows.md#client-credentials) | [ms-identity-python-daemon](https://github.com/Azure-Samples/ms-identity-python-daemon) |
 
@@ -141,4 +143,4 @@ ms.locfileid: "92636057"
 
 ## <a name="see-also"></a>См. также раздел
 
-[Основные понятия и справочные материалы по API Microsoft Graph](/graph/use-the-api?context=graph%2fapi%2fbeta&view=graph-rest-beta)
+[Основные понятия и справочные материалы по API Microsoft Graph](/graph/use-the-api?context=graph%2fapi%2fbeta&view=graph-rest-beta&preserve-view=true)

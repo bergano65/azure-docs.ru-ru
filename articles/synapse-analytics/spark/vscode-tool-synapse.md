@@ -1,6 +1,6 @@
 ---
 title: Руководство по Spark & Hive Tools для VSCode (приложение Spark)
-description: Учебник. Использование Spark & Hive Tools для VSCode для разработки приложений Spark на языке Python и их отправка в пул Apache Spark (предварительной версии).
+description: Учебник. Использование Spark & Hive Tools для VSCode для разработки приложений Spark на языке Python и их отправка в бессерверный пул Apache Spark (предварительной версии).
 services: synapse-analytics
 author: hrasheed-msft
 ms.author: jejiang
@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 09/03/2020
-ms.openlocfilehash: 6778d78ff5e342d97c1c9bc477c1a88eca42a10a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99b2b04d0f29d92b503cc0bed2460b79cfa6c354
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91338110"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93315669"
 ---
 # <a name="tutorial-create-an-apache-spark-applications-with-vscode-using-a-synapse-workspace"></a>Руководство по созданию приложений Apache Spark с помощью VSCode и рабочей области Synapse
 
@@ -26,7 +26,7 @@ Spark & Hive Tools можно установить на платформах, 
 
 Для выполнения действий, описанных в этой статье, необходимо следующее:
 
-- Пул Apache Spark. Сведения о создании пула Apache Spark см. в статье [Создание пула Apache Spark с помощью портала Azure](../../synapse-analytics/quickstart-create-apache-spark-pool-portal.md).
+- Бессерверный пул Apache Spark. Сведения о создании бессерверного пула Apache Spark см. в статье [Создание пула Apache Spark с помощью портала Azure](../../synapse-analytics/quickstart-create-apache-spark-pool-portal.md).
 - [Visual Studio Code](https://code.visualstudio.com/).
 - [Mono](https://www.mono-project.com/docs/getting-started/install/). Mono требуется только для Linux и macOS.
 - [Интерактивная среда PySpark для Visual Studio Code](../../hdinsight/set-up-pyspark-interactive-environment.md).

@@ -17,12 +17,12 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: bc763a99c945925b80171738f4076e6305d92df9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3443cb73e85fc69349e7293597a5f4a723959d3
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89229465"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130057"
 ---
 # <a name="tutorial-get-data-using-the-azure-active-directory-reporting-api-with-certificates"></a>Руководство по Получение данных с помощью API отчетов Azure Active Directory с сертификатами
 
@@ -85,15 +85,17 @@ ms.locfileid: "89229465"
    ``` 
 6. Теперь вы можете получить маркер доступа для API Microsoft Graph, используя этот сертификат. Используйте командлет **Get MSCloudIdMSGraphAccessTokenFromCert** из PowerShell-модуля MSCloudIdUtils, передав идентификатор приложения и отпечаток, полученный на предыдущем шаге. 
 
-   ![Портал Azure](./media/tutorial-access-api-with-certificates/getaccesstoken.png)
+   ![Снимок экрана: окно PowerShell с командой, которая создает маркер доступа.](./media/tutorial-access-api-with-certificates/getaccesstoken.png)
 
 7. Используйте маркер доступа в скрипте PowerShell для отправки запроса в API Graph. Используйте командлет **Invoke-MSCloudIdMSGraphQuery** из модуля MSCloudIDUtils для перечисления операций входа и запроса конечной точки diectoryAudits. Этот командлет обрабатывает результаты с разбивкой на несколько страниц и отправляет их в конвейер PowerShell.
 
 8. Запросите конечную точку directoryAudits для получения журналов аудита. 
-   ![Портал Azure](./media/tutorial-access-api-with-certificates/query-directoryAudits.png)
+
+   ![Снимок экрана: окно PowerShell с командой для отправки запроса к конечной точке directoryAudits с использованием полученного ранее маркера доступа.](./media/tutorial-access-api-with-certificates/query-directoryAudits.png)
 
 9. Запросите конечную точку signins для получения журналов входа в систему.
-    ![Портал Azure](./media/tutorial-access-api-with-certificates/query-signins.png)
+
+    ![Снимок экрана: окно PowerShell с командой для отправки запроса к конечной точке signins с использованием полученного ранее маркера доступа.](./media/tutorial-access-api-with-certificates/query-signins.png)
 
 10. Теперь можно экспортировать эти данные в CSV-файл и сохранить его в системе SIEM. Также можно перенести скрипт в запланированную задачу, чтобы периодически получать данные Azure AD из клиента без необходимости сохранять ключи приложений в исходном коде. 
 

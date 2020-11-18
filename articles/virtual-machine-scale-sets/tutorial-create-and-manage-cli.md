@@ -1,5 +1,5 @@
 ---
-title: Руководство по созданию масштабируемого набора виртуальных машин Azure и управлению им — Azure CLI
+title: Руководство по Создание масштабируемого набора виртуальных машин и управление им с помощью Azure CLI
 description: Сведения об использовании Azure CLI для создания масштабируемого набора виртуальных машин и выполнения некоторых стандартных задач управления, включая запуск и остановку экземпляра или изменение емкости масштабируемого набора.
 author: ju-shim
 ms.author: jushiman
@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 03/27/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: e7267ca90ea11e63c5523dec0a3ee414f7b655b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0f94823b958ae5f95789dd4ef9a62057bdf764a8
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87501650"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94517472"
 ---
 # <a name="tutorial-create-and-manage-a-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство по Создание масштабируемого набора виртуальных машин и управление им с помощью Azure CLI
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. На протяжении жизненного цикла масштабируемого набора виртуальных машин может возникнуть необходимость выполнить одну или несколько задач управления. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -26,11 +26,11 @@ ms.locfileid: "87501650"
 > * Масштабирование масштабируемого набора вручную.
 > * Выполнение стандартных задач управления масштабируемым набором.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.29 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+- Для работы с этой статьей требуется Azure CLI версии 2.0.29 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена. 
 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов

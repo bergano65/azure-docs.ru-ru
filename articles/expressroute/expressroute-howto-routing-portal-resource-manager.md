@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: tutorial
-ms.date: 10/08/2020
+ms.date: 10/26/2020
 ms.author: duau
-ms.openlocfilehash: cad098ed2dedc7abba57394ef1e26b9b7c87cd9c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb55e4633ef64bee0577b1c1defba27dad24a3b7
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855477"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515963"
 ---
 # <a name="tutorial-create-and-modify-peering-for-an-expressroute-circuit-using-the-azure-portal"></a>Руководство по Создание и изменение пиринга для канала ExpressRoute с помощью портала Azure
 
@@ -67,17 +67,15 @@ ms.locfileid: "91855477"
 
    **Канал — состояние поставщика: не подготовлено**
 
-   [![Снимок экрана: страница обзора с примером канала ExpressRoute, где для параметра "Состояние поставщика" установлено значение "Не подготовлено".](./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-m.png)](./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-m-lightbox.png#lightbox)
-
+    :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/not-provisioned.png" alt-text="Снимок экрана: страница обзора с примером канала ExpressRoute, где для параметра &quot;Состояние поставщика&quot; установлено значение &quot;Не подготовлено&quot;.":::
 
    **Канал — состояние поставщика: подготовлено**
 
-   [![Снимок экрана: страница обзора с примером канала ExpressRoute, где для параметра "Состояние поставщика" установлено значение "Подготовлено".](./media/expressroute-howto-routing-portal-resource-manager/provisioned-m.png)](./media/expressroute-howto-routing-portal-resource-manager/provisioned-m-lightbox.png#lightbox)
+    :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/provisioned.png" alt-text="Снимок экрана: страница обзора с примером канала ExpressRoute, где для параметра &quot;Состояние поставщика&quot; установлено значение &quot;Подготовлено&quot;.":::
 
 2. Настройте пиринг Майкрософт для этого канала. Прежде чем продолжить, убедитесь, что у вас есть следующие сведения.
 
-   * Подсеть /30 для основной ссылки. Блок адресов должен быть представлен префиксом допустимого общедоступного адреса IPv4, принадлежащего вам и зарегистрированного в RIR/IRR. Из этой подсети вы назначите первый готовый к применению IP-адрес для своего маршрутизатора, так как корпорация Майкрософт использует второй IP-адрес для маршрутизатора Майкрософт.
-   * Подсеть /30 для дополнительной ссылки. Блок адресов должен быть представлен префиксом допустимого общедоступного адреса IPv4, принадлежащего вам и зарегистрированного в RIR/IRR. Из этой подсети вы назначите первый готовый к применению IP-адрес для своего маршрутизатора, так как корпорация Майкрософт использует второй IP-адрес для маршрутизатора Майкрософт.
+   * Пара подсетей /30, принадлежащих вам и зарегистрированных в RIR/IRR. Это должны быть допустимые префиксы общедоступного адреса IPv4. Одна подсеть будет использоваться в качестве основной ссылки, а вторая — в качестве дополнительной. Из каждой подсети вы назначите первый готовый к применению IP-адрес для своего маршрутизатора, так как корпорация Майкрософт использует второй IP-адрес для маршрутизатора Майкрософт.
    * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале. Для основной и дополнительной связей необходимо использовать тот же идентификатор виртуальной локальной сети.
    * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
    * Объявленные префиксы: предоставьте список всех префиксов, которые вы планируете объявить во время сеанса BGP. Допускаются только общедоступные префиксы IP-адресов. Если вы планируете отправить набор префиксов, их можно оформить в виде списка, разделенного запятыми. Эти префиксы должны быть зарегистрированы в RIR/IRR на ваше имя.
@@ -86,10 +84,11 @@ ms.locfileid: "91855477"
    * **Необязательно.** Хэш MD5, если вы решите его использовать.
 3. Вы можете выбрать пиринг, который необходимо настроить, как показано в следующем примере. Выберите строку пиринга Майкрософт.
 
-   [![Выбор строки пиринга Майкрософт](./media/expressroute-howto-routing-portal-resource-manager/select-peering-m.png "Выбор строки пиринга Майкрософт")](./media/expressroute-howto-routing-portal-resource-manager/select-peering-m-lightbox.png#lightbox)
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/select-microsoft-peering.png" alt-text="Выбор строки пиринга Майкрософт":::
+
 4. Настройте пиринг Майкрософт. Задав все параметры, **сохраните** конфигурацию. На следующем изображении показан пример конфигурации:
 
-   ![Настройка пиринга Майкрософт](./media/expressroute-howto-routing-portal-resource-manager/configuration-m.png)
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/configuration-m-validation-needed.png" alt-text="Требуется проверка настройки пиринга Майкрософт для канала":::
 
 > [!IMPORTANT]
 > Корпорация Майкрософт проверяет, назначены ли вам указанные объявленные открытые префиксы (Advertised public prefixes) и одноранговый узел ASN (Peer ASN) или ASN клиента (Customer ASN) в реестре маршрутизации в Интернете. Если вы получаете открытые префиксы из другой сущности и если назначение не записано в реестре маршрутизации, автоматическая проверка не будет завершена и потребуется проверка вручную. Если автоматическую проверку не получится выполнить, вы увидите сообщение Validation needed (Требуется проверка). 
@@ -99,22 +98,23 @@ ms.locfileid: "91855477"
 
    Если канал переходит в состояние Validation needed (Требуется проверка), следует создать запрос в службу поддержки и предоставить ее специалистам доказательство того, что вы владеете префиксами. Запрос в службу поддержки можно создать непосредственно на портале, как показано в следующем примере:
 
-   ![Validation needed (Требуется проверка) — запрос в службу поддержки](./media/expressroute-howto-routing-portal-resource-manager/ticket-portal-m.png)
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/ticket-portal-m.png" alt-text="Validation needed (Требуется проверка) — запрос в службу поддержки":::
 
 5. После подтверждения настройки вы увидите примерно следующее:
 
-   ![Состояние пиринга: настроено](./media/expressroute-howto-routing-portal-resource-manager/configured-m.png "Состояние пиринга: Настроено")
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/microsoft-peering-validation-configured.png" alt-text="Состояние пиринга: настроено":::
 
 ### <a name="to-view-microsoft-peering-details"></a><a name="getmsft"></a>Просмотр сведений о пиринге Майкрософт
 
 Чтобы посмотреть свойства пиринга Майкрософт, выберите соответствующую строку.
 
-[![Просмотр свойств пиринга Майкрософт](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m.png "Просмотреть свойства")](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m-lightbox.png#lightbox)
+:::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/view-peering-m.png" alt-text="Просмотр свойств пиринга Майкрософт":::
+
 ### <a name="to-update-microsoft-peering-configuration"></a><a name="updatemsft"></a>Обновление конфигурации пиринга Майкрософт
 
 Вы можете выбрать строку для пиринга, который требуется изменить, а затем изменить его свойства и сохранить изменения.
 
-![Выбор строки пиринга](./media/expressroute-howto-routing-portal-resource-manager/update-peering-m.png)
+:::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/configuration-m.png" alt-text="Выбор строки пиринга":::
 
 ## <a name="azure-private-peering"></a><a name="private"></a>Частный пиринг Azure
 
@@ -128,60 +128,60 @@ ms.locfileid: "91855477"
 
    **Канал — состояние поставщика: не подготовлено**
 
-   [![Снимок экрана: страница обзора с примером канала ExpressRoute, где для параметра "Состояние поставщика" установлено значение "Не подготовлено".](./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-p.png)](./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-p-lightbox.png#lightbox)
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-private.png" alt-text="Снимок экрана: страница обзора с примером канала ExpressRoute, где для параметра &quot;Состояние поставщика&quot; установлено значение &quot;Не подготовлено&quot;.":::
 
    **Канал — состояние поставщика: подготовлено**
 
-   [![Снимок экрана: страница обзора с примером канала ExpressRoute, где для параметра "Состояние поставщика" установлено значение "Подготовлено".](./media/expressroute-howto-routing-portal-resource-manager/provisioned-p.png)](./media/expressroute-howto-routing-portal-resource-manager/provisioned-p-lightbox.png#lightbox)
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/provisioned-private-peering.png" alt-text="Снимок экрана: страница обзора с примером канала ExpressRoute, где для параметра &quot;Состояние поставщика&quot; установлено значение &quot;Подготовлено&quot;.":::
 
 2. Настройте для канала частный пиринг Azure. Прежде чем продолжить, убедитесь в наличии следующих элементов:
 
-   * Подсеть /30 для основной ссылки. Эта подсеть не должна входить в адресное пространство, зарезервированное для виртуальных сетей. Из этой подсети вы назначите первый готовый к применению IP-адрес для своего маршрутизатора, так как корпорация Майкрософт использует второй IP-адрес для маршрутизатора Майкрософт.
-   * Подсеть /30 для дополнительной ссылки. Эта подсеть не должна входить в адресное пространство, зарезервированное для виртуальных сетей. Из этой подсети вы назначите первый готовый к применению IP-адрес для своего маршрутизатора, так как корпорация Майкрософт использует второй IP-адрес для маршрутизатора Майкрософт.
+   * Пара подсетей /30, принадлежащих вам и зарегистрированных в RIR/IRR. Одна подсеть будет использоваться в качестве основной ссылки, а вторая — в качестве дополнительной. Из каждой подсети вы назначите первый готовый к применению IP-адрес для своего маршрутизатора, так как корпорация Майкрософт использует второй IP-адрес для маршрутизатора Майкрософт. Существует три варианта пары подсетей:
    * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале. Для основной и дополнительной связей необходимо использовать тот же идентификатор виртуальной локальной сети.
    * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS. Можно использовать частный номер AS для этого пиринга, за исключением номеров с 65515 по 65520 включительно.
    * Вам нужно объявить маршруты от локального пограничного маршрутизатора к Azure через BGP при настройке частного пиринга.
    * **Необязательно.** Хэш MD5, если вы решите его использовать.
 3. Выберите строку частного пиринга Azure, как показано в следующем примере:
 
-   [![Выбор строки частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/select-peering-p.png "Выбор строки частного пиринга")](./media/expressroute-howto-routing-portal-resource-manager/select-peering-p-lightbox.png#lightbox)
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/select-private-peering.png" alt-text="Выбор строки частного пиринга":::
+
 4. Настройте частный пиринг. Задав все параметры, **сохраните** конфигурацию.
 
-   ![Настройка частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/configuration-p.png)
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/private-peering-configuration.png" alt-text="Настройка частного пиринга":::
+
 5. После подтверждения настройки отобразится примерно такой результат:
 
-   ![Сохраненный частный пиринг](./media/expressroute-howto-routing-portal-resource-manager/save-p.png)
+   :::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/save-private-peering.png" alt-text="Сохраненный частный пиринг":::
 
 ### <a name="to-view-azure-private-peering-details"></a><a name="getprivate"></a>Просмотр сведений о частном пиринге Azure
 
 Чтобы посмотреть свойства частного пиринга Azure, выберите нужный пиринг.
 
-[![Просмотр свойств частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/view-p.png "Просмотр свойств частного пиринга")](./media/expressroute-howto-routing-portal-resource-manager/view-p-lightbox.png#lightbox)
+:::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/view-peering-m.png" alt-text="Просмотр свойств частного пиринга":::
 
 ### <a name="to-update-azure-private-peering-configuration"></a><a name="updateprivate"></a>Обновление конфигурации частного пиринга Azure
 
 Щелкнув строку пиринга, вы сможете изменить свойства пиринга. После обновления сохраните изменения.
 
-![Обновление частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/update-peering-p.png)
+:::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/update-private-peering.png" alt-text="Обновление частного пиринга":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 ### <a name="to-delete-microsoft-peering"></a><a name="deletemsft"></a>Удаление пиринга Майкрософт
 
-Конфигурацию пиринга можно удалить, щелкнув значок удаления, как показано на следующем изображении:
+Конфигурацию пиринга Майкрософт можно удалить, щелкнув пиринг правой кнопкой мыши и выбрав **Удалить**, как показано на следующем изображении:
 
-![Удаление пиринга](./media/expressroute-howto-routing-portal-resource-manager/delete-peering-m.png)
+:::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/delete-microsoft-peering.png" alt-text="Удаление пиринга Майкрософт":::
 
 ### <a name="to-delete-azure-private-peering"></a><a name="deleteprivate"></a>Удаление частного пиринга Azure
 
-Конфигурацию пиринга можно удалить, щелкнув значок "Удалить", как показано на следующем изображении:
+Конфигурацию частного пиринга можно удалить, щелкнув пиринг правой кнопкой мыши и выбрав **Удалить**, как показано на следующем изображении:
 
 > [!WARNING]
-> Перед запуском этого примера обязательно убедитесь, что все виртуальные сети и подключения Global Reach к ExpressRoute удалены. 
-> 
+> Перед запуском этой операции обязательно убедитесь, что все виртуальные сети и подключения Global Reach к ExpressRoute удалены. 
 > 
 
-![Удаление частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/delete-p.png)
+:::image type="content" source="./media/expressroute-howto-routing-portal-resource-manager/delete-private-peering.png" alt-text="Удаление частного пиринга":::
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

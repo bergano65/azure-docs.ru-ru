@@ -8,16 +8,16 @@ ms.author: manoskow
 ms.date: 10/23/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 4921078e9e7b5d9de06fbbc9a97dc4a964569e04
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ff3e7fee87661fb89ba930b7368bd54e71ad57bf
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92754681"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93357629"
 ---
 # <a name="troubleshooting-in-azure-communication-services"></a>Устранение неполадок в Службах коммуникации Azure
 
-Эта документация поможет вам получить сведения, необходимые для устранения неполадок в решении "Службы коммуникации".
+Эта документация поможет вам устранить неполадки, которые могут возникнуть в решении "Службы коммуникации". Если вы устраняете неполадки с SMS, вы можете [включить отчеты о доставке с помощью Сетки событий](../quickstarts/telephony-sms/handle-sms-events.md) для сбора сведений о доставке SMS.
 
 ## <a name="getting-help"></a>Получение справки
 
@@ -33,6 +33,8 @@ ms.locfileid: "92754681"
 * **ИД MS-CV**. Этот идентификатор используется для устранения неполадок при вызовах и сообщениях. 
 * **ИД вызова**. Этот идентификатор используется для идентификации вызовов Служб коммуникации.
 * **ИД SMS-сообщений**. Этот идентификатор используется для идентификации SMS-сообщений.
+* **Журналы вызовов**. В этих журналах содержится подробная информация, которую можно использовать для устранения проблем с вызовами и сетью.
+
 
 ## <a name="access-your-ms-cv-id"></a>Доступ к ИД MS-CV
 
@@ -126,6 +128,44 @@ console.log(result); // your message ID will be in the result
 }
 ```
 ---
+
+## <a name="enable-and-access-call-logs"></a>Включение журналов вызовов и доступ к ним
+
+
+
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Следующий код можно использовать для настройки `AzureLogger` для вывода журналов на консоль с помощью клиентской библиотеки JavaScript:
+
+```javascript
+import { AzureLogger } from '@azure/logger'; 
+
+AzureLogger.verbose = (...args) => { console.info(...args); } 
+AzureLogger.info = (...args) => { console.info(...args); } 
+AzureLogger.warning = (...args) => { console.info(...args); } 
+AzureLogger.error = (...args) => { console.info(...args); } 
+
+callClient = new CallClient({logger: AzureLogger}); 
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+При разработке для iOS ваши журналы хранятся в файлах `.blog`. Обратите внимание, что вы не можете просматривать журналы напрямую, потому что они зашифрованы.
+
+Доступ к ним можно получить, открыв Xcode. Последовательно выберите Windows > Devices and Simulators (Устройства и симуляторы) > Devices (Устройства). Выберите свое устройство. В разделе "Установленные приложения" выберите свое приложение и нажмите Download container (Загрузить контейнер). 
+
+Таким образом, вы получите файл `xcappdata`. Щелкните этот файл правой кнопкой мыши и выберите Show package contents (Показать содержимое пакета). Затем вы увидите файлы `.blog`, которые затем можно будет прикрепить к запросу в службу поддержки Azure.
+
+# <a name="android"></a>[Android](#tab/android)
+
+При разработке для Android ваши журналы хранятся в файлах `.blog`. Обратите внимание, что вы не можете просматривать журналы напрямую, потому что они зашифрованы.
+
+В Android Studio перейдите в проводник файлов устройства, последовательно выбрав View > Tool Windows > Device File Explorer (Вид >Окна инструментов > Проводник файлов устройства) как в симуляторе, так и на устройстве. Файл `.blog` будет находиться в каталоге приложения, которое должно выглядеть примерно так: `/data/data/[app_name_space:com.contoso.com.acsquickstartapp]/files/acs_sdk.blog`. Вы можете прикрепить этот файл к запросу в службу поддержки. 
+   
+
+---
+
 
 ## <a name="related-information"></a>Дополнительные сведения
 - [Журналы и диагностика](logging-and-diagnostics.md)

@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 8a42711bba8f77070e2b30a9b07d29d5b5095945
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 9ff05f2cf9f29ef86a6db9955e7d28c9035e1bf4
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973892"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94376967"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Виртуальные машины Windows в Azure
 
@@ -104,6 +104,12 @@ Azure предоставляет множество [образов из Marketp
 | [Общедоступный IP-адрес](../../virtual-network/public-ip-addresses.md) |Нет |Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес. |
 | [Сетевой интерфейс](../../virtual-network/virtual-network-network-interface.md) |Да |Для обмена данными в сети виртуальной машине нужен сетевой интерфейс. |
 | [Диски данных](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |Нет |Виртуальная машина может содержать диски данных для расширения объема ресурсов хранения. |
+
+
+## <a name="data-residency"></a>Местонахождение данных
+
+В Azure функция хранения данных клиентов в одном регионе сейчас доступна только для регионов "Юго-Восточная Азия (Сингапур)" в Азиатско-Тихоокеанском географическом регионе и "Южная Бразилия" (штат Сан-Паулу) в географическом регионе "Бразилия". Для всех других регионов данные клиента хранятся в геообъектах. Дополнительные сведения см. на [этой странице](https://azuredatacentermap.azurewebsites.net/).
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

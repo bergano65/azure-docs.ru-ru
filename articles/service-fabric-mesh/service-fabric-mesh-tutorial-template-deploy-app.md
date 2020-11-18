@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: 3727e9a83827261bf9e8a526ffedb6d3fc644afa
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b02c16c63d83fc33be5512d26eafb0ca0d6c9b98
+ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745978"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93145894"
 ---
 # <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
 
@@ -61,7 +61,7 @@ az account set --subscription "<subscriptionName>"
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. С помощью следующей команды создайте группу ресурсов с именем *myResourceGroup* в расположении *eastus* .
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. С помощью следующей команды создайте группу ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -69,7 +69,7 @@ az group create --name myResourceGroup --location eastus
 
 ### <a name="create-the-container-registry"></a>Создание реестра контейнеров
 
-Создайте экземпляр ACR с помощью команды `az acr create`. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В следующем примере используется имя *myContainerRegistry* . Если отобразится сообщение о том, что это имя уже используется, выберите другое имя.
+Создайте экземпляр ACR с помощью команды `az acr create`. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В следующем примере используется имя *myContainerRegistry*. Если отобразится сообщение о том, что это имя уже используется, выберите другое имя.
 
 ```azurecli
 az acr create --resource-group myResourceGroup --name myContainerRegistry --sku Basic
@@ -103,6 +103,11 @@ az acr create --resource-group myResourceGroup --name myContainerRegistry --sku 
 В этом руководстве используется пример приложения списка дел.  Образы контейнера для [WebFrontEnd](https://hub.docker.com/r/seabreeze/azure-mesh-todo-webfrontend/) и службы [ToDoService](https://hub.docker.com/r/seabreeze/azure-mesh-todo-service/) можно найти в центре Docker. Дополнительные сведения о том, как создать приложение в Visual Studio, см. в статье [Руководство по созданию, отладке, развертыванию и обновлению приложения на базе нескольких служб в Сетке Service Fabric](service-fabric-mesh-tutorial-create-dotnetcore.md). Сетка Service Fabric может запускать контейнеры Docker Windows или Linux.  Если вы работаете с контейнерами Linux, выберите **Переключиться на контейнеры Linux** в Docker.  Если вы работаете с контейнерами Windows, выберите **Переключиться на контейнеры Windows** в Docker.
 
 Чтобы отправить образ в экземпляр ACR, сначала нужно получить образ контейнера. Если у вас еще нет локальных образов контейнера, используйте команду [docker pull](https://docs.docker.com/engine/reference/commandline/pull/), чтобы извлечь образы [WebFrontEnd](https://hub.docker.com/r/seabreeze/azure-mesh-todo-webfrontend/) и [ToDoService](https://hub.docker.com/r/seabreeze/azure-mesh-todo-service/) из Docker Hub.
+
+>[!NOTE]
+> Начиная с 2 ноября 2020 года [ограничения скорости скачивания](https://docs.docker.com/docker-hub/download-rate-limit/) применяются к анонимным и прошедшим проверку подлинности запросам к Docker Hub из учетных записей бесплатных планов Docker по IP-адресу. 
+> 
+> Эти команды используют общедоступные образы из Docker Hub. Обратите внимание, что скорость может быть ограничена. Дополнительные сведения см. в разделе [Проверка подлинности с помощью Docker Hub](https://docs.microsoft.com/azure/container-registry/buffer-gate-public-content#authenticate-with-docker-hub).
 
 Извлеките образы Windows:
 
@@ -156,7 +161,7 @@ seabreeze/azure-mesh-todo-webfrontend
 seabreeze/azure-mesh-todo-service
 ```
 
-В следующем примере перечисляются теги в репозитории **azure-mesh-todo-service** .
+В следующем примере перечисляются теги в репозитории **azure-mesh-todo-service**.
 
 ```azurecli
 az acr repository show-tags --name myContainerRegistry --repository seabreeze/azure-mesh-todo-service --output table
@@ -196,9 +201,9 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
 В этом руководстве используется пример приложения списка дел.  Вместо создания новых файлов шаблона и параметров скачайте файлы [шаблона развертывания mesh_rp.windows.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.json) и [параметров mesh_rp.windows.parameter.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.parameters.json).
 
 ### <a name="parameters"></a>Параметры
-Если в шаблоне есть значения, которые изменятся после развертывания приложения или которые вы хотели бы изменять для разных развертываний (если планируете повторно использовать этот шаблон), рекомендуется параметризировать эти значения. Лучше всего создать раздел "parameters" в верхней части шаблона развертывания и указать в нем имена и свойства параметров, которые встречаются ниже в шаблоне развертывания. Каждое определение параметра включает *type* , *defaultValue* и дополнительный раздел *metadata* с *description* .
+Если в шаблоне есть значения, которые изменятся после развертывания приложения или которые вы хотели бы изменять для разных развертываний (если планируете повторно использовать этот шаблон), рекомендуется параметризировать эти значения. Лучше всего создать раздел "parameters" в верхней части шаблона развертывания и указать в нем имена и свойства параметров, которые встречаются ниже в шаблоне развертывания. Каждое определение параметра включает *type*, *defaultValue* и дополнительный раздел *metadata* с *description*.
 
-Раздел параметров определяется в верхней части шаблона развертывания, сразу над разделом *recources* :
+Раздел параметров определяется в верхней части шаблона развертывания, сразу над разделом *recources*:
 
 ```json
 {
@@ -408,4 +413,4 @@ az mesh code-package-log get --resource-group myResourceGroup --application-name
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]
-> [масштабирование приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-scale-services.md);
+> [Масштабирование приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-scale-services.md)

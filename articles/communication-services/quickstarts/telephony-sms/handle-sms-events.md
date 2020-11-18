@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e66d5c4dd4fc1c6c641da975b0ac2254f459642a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e153c873305cc128ce97ae7c6a907a8f592f8b32
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976935"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93357476"
 ---
 # <a name="quickstart-handle-sms-events"></a>Краткое руководство. Обработка событий SMS
 
@@ -63,13 +63,15 @@ ms.locfileid: "91976935"
 
 Подпишитесь на соответствующие события, чтобы определить в Сетке событий Azure, какие события SMS необходимо отслеживать и куда их отправлять. В раскрывающемся меню выберите события, на которые вы хотите подписаться. Для SMS можно выбрать варианты `SMS Received` и `SMS Delivery Report Received`. 
 
+Если вам требуется указать **имя системного раздела**, вы можете задать уникальный идентификатор, который также позволяет фильтровать события после их выдачи.
+
 Просмотрите полный список [событий, поддерживаемых Службами коммуникации Azure](../../concepts/event-handling.md).
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-eventsub.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-eventsub.png" alt-text="Снимок экрана: выбранные типы событий &quot;SMS получено&quot; и &quot;Получен отчет о доставке SMS&quot;.":::
 
 Выберите значение **Веб-перехватчик** для параметра **Тип конечной точки**. 
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-linkwebhook.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-linkwebhook.png" alt-text="Снимок экрана: поле &quot;Тип конечной точки&quot;, для которого задан веб-перехватчик.":::
 
 В разделе **Конечная точка** щелкните **Выбрать конечную точку** и введите URL-адрес веб-приложения.
 
@@ -77,7 +79,7 @@ ms.locfileid: "91976935"
 
 Нажмите кнопку **Подтвердить выбор**.
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-selectwebhook-epadd.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-selectwebhook-epadd.png" alt-text="Снимок экрана: подтверждение конечной точки веб-перехватчика.":::
 
 ## <a name="viewing-sms-events"></a>Просмотр событий SMS
 
@@ -94,9 +96,9 @@ ms.locfileid: "91976935"
 
 После выполнения любого из приведенных выше действий вы увидите, что события `SMS Received` и `SMS Delivery Report Received` отправляются в конечную точку. Эти события будут отображаться в [примере средства просмотра Сетки событий Azure](https://docs.microsoft.com/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/), который мы настроили в начале. Чтобы просмотреть все полезные данные, можно нажать значок глаза рядом с событием. События будут выглядеть так:
 
-:::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
+:::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Снимок экрана: схема Сетки событий для события &quot;SMS получено&quot;.":::
 
-:::image type="content" source="./media/handle-sms-events/sms-delivery-report-received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
+:::image type="content" source="./media/handle-sms-events/sms-delivery-report-received.png" alt-text="Снимок экрана: схема Сетки событий для события &quot;Получен отчет о доставке SMS&quot;.":::
 
 Дополнительные сведения см. в статье [Обработка событий в Службах коммуникации Azure](../../concepts/event-handling.md).
 

@@ -4,12 +4,12 @@ description: Руководство по Описывается, как пере
 ms.topic: tutorial
 ms.date: 07/07/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 64d4b9769e1a228294bd7d8741f6f4b1260fb0dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4fb26bf92e6af1fd9e97f3b9434b4ab5e76316b3
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91270565"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93305274"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство по Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из Хранилища BLOB-объектов в Azure Synapse Analytics (прежнее название — Хранилище данных SQL).
@@ -165,7 +165,7 @@ ms.locfileid: "91270565"
 ### <a name="create-a-table-in-azure-synapse-analytics"></a>Создание таблицы в Azure Synapse Analytics
 Создайте таблицу в хранилище данных, выполнив сценарий [CreateDataWarehouseTable.sql](https://github.com/Azure/azure-event-hubs/blob/master/samples/e2e/EventHubsCaptureEventGridDemo/scripts/CreateDataWarehouseTable.sql). Чтобы запустить скрипт, воспользуйтесь Visual Studio или редактором запросов на портале. В следующих шагах продемонстрировано, как использовать редактор запросов. 
 
-1. В списке ресурсов группы ресурсов выберите свой **пул Synapse SQL (хранилище данных)** . 
+1. В списке ресурсов в группе ресурсов выберите свой **выделенный пул SQL**. 
 2. На странице Azure Synapse Analytics в левом меню выберите **Редактор запросов (предварительная версия)** . 
 
     ![Страница Azure Synapse Analytics](media/event-grid-event-hubs-integration/sql-data-warehouse-page.png)

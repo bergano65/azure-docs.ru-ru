@@ -4,12 +4,12 @@ description: Узнайте, как обнаружить локальные фи
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: e7cbd7939248686a251fdf56bf1a5f1acc952a3a
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 83ff63392c6cbcaa6a2ea011eb60199f61844bb1
+ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314087"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93148343"
 ---
 # <a name="tutorial-discover-physical-servers-with-server-assessment"></a>Руководство по обнаружению физических серверов с помощью средства оценки серверов
 
@@ -75,11 +75,15 @@ ms.locfileid: "92314087"
 
 Настройте учетную запись, которую устройство может использовать для доступа к физическим серверам.
 
-- Настройте локальную учетную запись для всех серверов Windows, которые вы хотите включить в обнаружение. Добавьте учетную запись пользователя в следующие группы: "Пользователи удаленного управления", "Пользователи системного монитора" и "Пользователи журналов производительности".
-- Для серверов Linux вам потребуются права суперпользователя на серверах Linux, которые вы хотите обнаружить. Кроме того, настройте параметры доступа следующим образом:
-    - setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/fdisk
-    - setcap CAP_DAC_READ_SEARCH+eip /sbin/fdisk (если /usr/sbin/fdisk отсутствует)<br/> setcap cap_dac_override, cap_dac_read_search, cap_fowner,cap_fsetid, cap_setuid, cap_setpcap, cap_net_bind_service, cap_net_admin, cap_sys_chroot, cap_sys_admin, cap_sys_resource, cap_audit_control, cap_setfcap=+eip /sbin/lvm
-    - setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/dmidecode chmod a+r /sys/class/dmi/id/product_uuid
+- При работе с серверами Windows используйте учетную запись домена для присоединенных к домену компьютеров, а также локальную учетную запись для компьютеров, которые не присоединены к домену. Учетная запись пользователя должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи Монитора производительности" и "Пользователи журналов производительности".
+- Для серверов Linux вам потребуются права суперпользователя на серверах Linux, которые вы хотите обнаружить. Кроме того, можно задать некорневую учетную запись с необходимыми возможностями с помощью следующих команд:
+
+**Command** | **Назначение**
+--- | --- |
+setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/fdisk <br></br> setcap CAP_DAC_READ_SEARCH+eip /sbin/fdisk _(если /usr/sbin/fdisk отсутствует)_ | Получение данных конфигурации дисков
+setcap "cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_setuid,<br>cap_setpcap,cap_net_bind_service,cap_net_admin,cap_sys_chroot,cap_sys_admin,<br>cap_sys_resource,cap_audit_control,cap_setfcap=+eip" /sbin/lvm | Получение данных о производительности дисков
+setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/dmidecode | Получение серийного номера BIOS
+chmod a+r /sys/class/dmi/id/product_uuid | Получение GUID BIOS
 
 
 ## <a name="set-up-a-project"></a>Настройка проекта
@@ -137,13 +141,13 @@ ms.locfileid: "92314087"
 3.  Проверьте последние версии и хэш-значения устройств:
     - Для общедоступного облака:
 
-        **Сценарий** | **Загрузка*** | **Значение хэша**
+        **Сценарий** | **Скачать** _ | _ *Значение хэша**
         --- | --- | ---
         Физический сервер (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140334) | ce5e6f0507936def8020eb7b3109173dad60fc51dd39c3bd23099bc9baaabe29
 
     - Для Azure для государственных организаций:
 
-        **Сценарий** | **Загрузка*** | **Значение хэша**
+        **Сценарий** | **Скачать** _ | _ *Значение хэша**
         --- | --- | ---
         Физический сервер (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140338) | ae132ebc574caf231bf41886891040ffa7abbe150c8b50436818b69e58622276
  

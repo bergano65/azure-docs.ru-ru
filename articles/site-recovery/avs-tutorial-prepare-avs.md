@@ -1,5 +1,5 @@
 ---
-title: Подготовка к аварийному восстановлению виртуальных машин Решения Azure VMware с помощью Azure Site Recovery
+title: Подготовка Решения Azure VMware для аварийного восстановления в Azure Site Recovery
 description: Узнайте, как подготовить серверы Решения Azure VMware для аварийного восстановления в Azure с помощью службы Azure Site Recovery.
 author: Harsha-CS
 manager: rochakm
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 09/29/2020
 ms.author: harshacs
 ms.custom: MVC
-ms.openlocfilehash: 9b04faf6797d04404dc0c5d617af2fd62a68c49a
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.openlocfilehash: 8e77ede7b04c95bfd6b6b8f660c8d811e7434c0f
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814309"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395450"
 ---
-# <a name="prepare-azure-vmware-solution-servers-for-disaster-recovery-to-azure"></a>Подготовка серверов Решения Azure VMware для аварийного восстановления в Azure
+# <a name="prepare-azure-vmware-solution-for-disaster-recovery-to-azure-site-recovery"></a>Подготовка Решения Azure VMware для аварийного восстановления в Azure Site Recovery
 
 В этой статье описано, как подготовить серверы Решения Azure VMware для аварийного восстановления в Azure с помощью служб [Azure Site Recovery](site-recovery-overview.md). 
 

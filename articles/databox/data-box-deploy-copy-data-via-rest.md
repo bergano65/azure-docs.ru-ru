@@ -9,12 +9,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 07/02/2020
 ms.author: alkohli
-ms.openlocfilehash: 17fa361fa4cef194d910d08d4a0afe075b119109
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb0a90db0595c655191006969071bc5b9cceaa75
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742525"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337599"
 ---
 # <a name="tutorial-use-rest-apis-to-copy-data-to-azure-data-box-blob-storage"></a>Руководство по использованию REST API для копирования данных в хранилище BLOB-объектов Azure Data Box  
 
@@ -111,15 +111,15 @@ ms.locfileid: "91742525"
 1. Щелкните правой кнопкой мыши файл `.cer` и выберите **Установить сертификат**. Запустится мастер импорта сертификатов.
 2. В качестве **Расположения хранилища** выберите **Локальный компьютер**, а затем нажмите кнопку **Далее**.
 
-    ![Импорт сертификата с помощью PowerShell](media/data-box-deploy-copy-data-via-rest/import-cert-ws-1.png)
+    ![Мастер импорта сертификатов, Windows Server](media/data-box-deploy-copy-data-via-rest/import-cert-ws-1.png)
 
 3. Выберите **Поместить все сертификаты в следующее хранилище**, затем нажмите кнопку **Обзор**. Перейдите в корневое хранилище удаленного узла и нажмите кнопку **Далее**.
 
-    ![Импорт сертификата с помощью PowerShell (2)](media/data-box-deploy-copy-data-via-rest/import-cert-ws-2.png)
+    ![Мастер импорта сертификатов, хранилище сертификатов](media/data-box-deploy-copy-data-via-rest/import-cert-ws-2.png)
 
 4. Нажмите кнопку **Готово**. Появится сообщение о том, что импорт успешно выполнен.
 
-    ![Импорт сертификата с помощью PowerShell (3)](media/data-box-deploy-copy-data-via-rest/import-cert-ws-3.png)
+    ![Мастер импорта сертификатов, завершение импорта](media/data-box-deploy-copy-data-via-rest/import-cert-ws-3.png)
 
 #### <a name="use-a-linux-system"></a>Использование системы Linux
 
@@ -173,7 +173,7 @@ ms.locfileid: "91742525"
 2. В левой области разверните учетную запись хранения, в которой собираетесь создать контейнер больших двоичных объектов.
 3. Щелкните правой кнопкой мыши **Контейнеры больших двоичных объектов** и выберите в контекстном меню **Создать контейнер BLOB-объектов**.
 
-   ![Контекстное меню для создания контейнеров BLOB-объектов](media/data-box-deploy-copy-data-via-rest/create-blob-container-1.png)
+   ![Контекстное меню контейнера BLOB-объектов, пункт для создания контейнера BLOB-объектов](media/data-box-deploy-copy-data-via-rest/create-blob-container-1.png)
 
 4. Под папкой **Контейнеры больших двоичных объектов** отобразится текстовое поле. Введите имя контейнера больших двоичных объектов. В разделе о [создании контейнера и настройке разрешений](../storage/blobs/storage-quickstart-blobs-dotnet.md) см. сведения о правилах и ограничениях для именования контейнеров больших двоичных объектов.
 5. Нажмите клавишу **ВВОД**, чтобы создать контейнер больших двоичных объектов, или **ESC** для отмены. После успешного создания контейнера больших двоичных объектов он отобразится в папке **Контейнеры больших двоичных объектов** выбранной учетной записи хранения.

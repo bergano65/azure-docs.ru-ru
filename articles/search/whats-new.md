@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 09/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: ddf418c90857b5bb7eca97eb2c6943cc93fce9ab
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 7f71cacee86edd5b3f054f0996893c2148c626eb
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518931"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422677"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "92518931"
 
 |Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
 |---------|------------------|-------------|---------------|
-| [Клиентская библиотека Azure.Search.Documents](/dotnet/api/overview/azure/search.documents-readme) | Azure SDK для .NET | Клиентская библиотека .NET, выпущенная командой разработчиков пакетов SDK для Azure, которая предназначена для обеспечения согласованности с другими клиентскими библиотеками .NET. <br/><br/>Версия 11 нацелена на REST API службы "Поиск" версии 2020-06-30, но еще не поддерживает хранилище знаний, геопространственные типы или [FieldBuilder](/dotnet/api/microsoft.azure.search.fieldbuilder). <br/><br/>Дополнительные сведения см. в статье [Краткое руководство. Создание индекса](search-get-started-dotnet.md) и [Обновление до Azure.Search.Documents (версия 11)](search-dotnet-sdk-migration-version-11.md). | Общедоступная версия. </br> Установите [пакет Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/) из NuGet. |
+| [Клиентская библиотека Azure.Search.Documents](/dotnet/api/overview/azure/search.documents-readme) | Azure SDK для .NET | Клиентская библиотека .NET, выпущенная командой разработчиков пакетов SDK для Azure, которая предназначена для обеспечения согласованности с другими клиентскими библиотеками .NET. <br/><br/>Версия 11 ориентирована на REST API службы "Поиск" версии 2020-06-30, но еще не поддерживает хранилище знаний или геопространственные типы. <br/><br/>Дополнительные сведения см. в статье [Краткое руководство. Создание индекса](search-get-started-dotnet.md) и [Обновление до Azure.Search.Documents (версия 11)](search-dotnet-sdk-migration-version-11.md). | Общедоступная версия. </br> Установите [пакет Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/) из NuGet. |
 | [Клиентская библиотека Azure.Search.Documents](/python/api/overview/azure/search-documents-readme)  | SDK Azure для Python| Клиентская библиотека Python, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками Python. <br/><br/>Версия 11 нацелена на REST API поиска версии 2020-06-30. | Общедоступная версия. </br> Установите [пакет azure-search-documents](https://pypi.org/project/azure-search-documents/) из PyPI. |
 | [Клиентская библиотека @azure/search-documents](/javascript/api/overview/azure/search-documents-readme)  | Пакет Azure SDK для JavaScript | Клиентская библиотека JavaScript, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками JavaScript. <br/><br/>Версия 11 нацелена на REST API поиска версии 2020-06-30. | Общедоступная версия. </br> Установите [пакет @azure/search-documents](https://www.npmjs.com/package/@azure/search-documents) из npm. |
 
@@ -119,7 +119,7 @@ ms.locfileid: "92518931"
 
 ## <a name="new-service-name"></a>Новое имя службы
 
-Теперь Поиск Azure будет называться **Когнитивный поиск Azure** , чтобы правильно отражать расширенную (но не обязательную!) возможность использовать когнитивные навыки и искусственный интеллект для базовых операций. Все версии API, пакеты NuGet, пространства имен и конечные точки остаются прежними. Изменение имени службы никак не затронет существующие и новые решения поиска.
+Теперь Поиск Azure будет называться **Когнитивный поиск Azure**, чтобы правильно отражать расширенную (но не обязательную!) возможность использовать когнитивные навыки и искусственный интеллект для базовых операций. Все версии API, пакеты NuGet, пространства имен и конечные точки остаются прежними. Изменение имени службы никак не затронет существующие и новые решения поиска.
 
 ## <a name="service-updates"></a>Обновления службы
 

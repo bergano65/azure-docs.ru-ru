@@ -9,12 +9,12 @@ ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: dineshm
 ms.custom: devx-track-python
-ms.openlocfilehash: b5f1d0712098e4fe331607860f6e0ed488d29c1c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 394e735be5da65ffa75e10200589a4adb4e7cad2
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87848798"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93313923"
 ---
 # <a name="tutorial-azure-data-lake-storage-gen2-azure-databricks--spark"></a>Руководство по Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark
 
@@ -33,7 +33,7 @@ ms.locfileid: "87848798"
 
 * Создайте учетную запись Azure Data Lake Storage 2-го поколения.
 
-  Ознакомьтесь со статьей о [создании учетной записи Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
+  См. статью [Создание учетной записи хранения для использования с Azure Data Lake Storage 2-го поколения](create-data-lake-storage-account.md).
 
 * Убедитесь, что учетная запись пользователя содержит назначенную ей [роль участника для данных хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac).
 

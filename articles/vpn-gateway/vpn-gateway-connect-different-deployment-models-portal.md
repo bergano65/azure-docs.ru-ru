@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/24/2019
 ms.author: cherylmc
-ms.openlocfilehash: 2bcd919629eb03581c35a2090d53e451141d94a4
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: f307ff9e7d609628bc22374fc5874dcbf993e4c2
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487107"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661194"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Подключение виртуальных сетей из разных моделей развертывания с помощью портала
 
@@ -28,7 +28,7 @@ ms.locfileid: "92487107"
 
 Если у вас нет шлюза виртуальной сети и вы не хотите его создавать, то вместо этого можно подключить виртуальные сети с помощью пиринга виртуальных сетей. При пиринговой связи между виртуальными сетями VPN-шлюз не используется. Дополнительную информацию см. в статье [Пиринговая связь между виртуальными сетями](../virtual-network/virtual-network-peering-overview.md).
 
-### <a name="before-you-begin"></a><a name="before"></a>Перед началом работы
+### <a name="before-you-begin"></a><a name="before"></a>Перед началом
 
 
 
@@ -86,7 +86,7 @@ ms.locfileid: "92487107"
 
 ### <a name="1-create-a-classic-vnet"></a>1. <a name="classicvnet"></a> Создание классической виртуальной сети
 
-Если у вас нет классической виртуальной сети и вы выполняете действия из этой статьи в качестве упражнения, вы можете создать виртуальную сеть с помощью [этой статьи](../virtual-network/virtual-networks-create-vnet-classic-pportal.md), используя [примеры](#values) значений параметров выше.
+Если у вас нет классической виртуальной сети и вы выполняете действия из этой статьи в качестве упражнения, вы можете создать виртуальную сеть с помощью [этой статьи](/previous-versions/azure/virtual-network/virtual-networks-create-vnet-classic-pportal), используя [примеры](#values) значений параметров выше.
 
 Если у вас уже есть виртуальная сеть с VPN-шлюзом, убедитесь, что шлюз динамический. Если он является статическим, необходимо сначала удалить VPN-шлюз, прежде чем перейти к [настройке локального сайта](#local).
 

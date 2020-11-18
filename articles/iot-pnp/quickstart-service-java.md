@@ -1,6 +1,6 @@
 ---
-title: Взаимодействие с устройством IoT Plug and Play, подключенным к решению Интернета вещей Azure (Java) | Документация Майкрософт
-description: Подключение к устройству IoT Plug and Play, подключенному к решению Azure IoT, а также взаимодействие с ним с помощью Java.
+title: Краткое руководство. Взаимодействие с устройством IoT Plug and Play, подключенным к решению Интернета вещей Azure (Java) | Документация Майкрософт
+description: Краткое руководство. Подключение к устройству IoT Plug and Play, подключенному к решению Azure IoT, а также взаимодействие с ним с помощью Java.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 9/17/2020
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: ce41e6b502aef1c44cf96f3b4a5efe401fba3173
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 7229eedc82dfa7b76ae4a22d095f20c41f102e16
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046491"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421538"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-java"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play с помощью Java
 

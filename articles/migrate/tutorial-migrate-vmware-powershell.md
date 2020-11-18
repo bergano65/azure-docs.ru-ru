@@ -7,12 +7,12 @@ manager: bsiva
 ms.topic: tutorial
 ms.date: 10/1/2020
 ms.author: rahugup
-ms.openlocfilehash: eed10f13b9495ab2cccfd9c57ae14ccc5d8e4a63
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 185979fcc0eeaebbe1c3b09d74050e05899737af
+ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043550"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93376805"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless---powershell"></a>Миграция виртуальных машин VMware в Azure (без агента) — PowerShell
 
@@ -87,6 +87,9 @@ $MigrateProject | ConvertTo-JSON
 
 Чтобы извлечь конкретную виртуальную машину VMware в проекте Миграции Azure, укажите имя проекта Миграции Azure (`ProjectName`), группу ресурсов этого проекта (`ResourceGroupName`) и имя виртуальной машины (`DisplayName`). 
 
+> [!NOTE]
+> **В значении параметра имени виртуальной машины (`DisplayName`) учитывается регистр**.
+
 ```azurepowershell
 # Get a specific VMware VM in an Azure Migrate project
 $DiscoveredServer = Get-AzMigrateDiscoveredServer -ProjectName $MigrateProject.Name -ResourceGroupName $ResourceGroup.ResourceGroupName -DisplayName "MyTestVM"
@@ -146,7 +149,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/Azure/azure-docs-powershell-
 - **Целевая виртуальная сеть и подсеть**. С помощью параметров `TargetNetworkId` и `TargetSubnetName` укажите, соответственно, идентификатор виртуальной сети Azure и имя подсети, в которую должна быть перенесена виртуальная машина. 
 - **Имя целевой виртуальной машины**. С помощью параметра `TargetVMName` укажите имя виртуальной машины Azure, которую следует создать.
 - **Размер целевой виртуальной машины**. С помощью параметра `TargetVMSize` укажите размер виртуальной машины Azure, который будет использоваться для репликации виртуальной машины. Например, чтобы перенести виртуальную машину в D2_v2 в Azure, укажите для `TargetVMSize` значение Standard_D2_v2.  
-- **Лицензия**. Чтобы применить Преимущество гибридного использования Azure к компьютерам с Windows Server, включенным в активные программы Software Assurance или подписки Windows Server, укажите для параметра `LicenseType` значение AHUB. В противном случае укажите для параметра `LicenseType` значение NoLicenseType.
+- **Лицензия**. Чтобы применить Преимущество гибридного использования Azure к компьютерам с Windows Server, включенным в активные программы Software Assurance или подписки Windows Server, укажите для параметра `LicenseType` значение WindowsServer. В противном случае укажите для параметра `LicenseType` значение NoLicenseType.
 - **Диск ОС**. Укажите уникальный идентификатор диска с загрузчиком операционной системы и установщиком. Используемый идентификатор диска — это свойство, определяющее уникальный идентификатор (UUID) для диска, извлеченного с помощью командлета `Get-AzMigrateServer`.
 - **Тип диска**. Укажите значение для параметра `DiskType`, как показано ниже.
     - Чтобы использовать управляемые диски уровня "Премиум", укажите для параметра `DiskType` значение Premium_LRS. 
@@ -156,7 +159,8 @@ Invoke-WebRequest https://raw.githubusercontent.com/Azure/azure-docs-powershell-
     - "Зона доступности", чтобы закрепить перенесенный компьютер в определенной зоне доступности в регионе. Используйте этот параметр для распределения серверов, образующих уровень приложения с несколькими узлами, по зонам доступности. Этот параметр доступен только в том случае, если в целевом регионе, выбранном для миграции, поддерживаются Зоны доступности. Чтобы использовать зоны доступности, укажите зону доступности в качестве значения параметра `TargetAvailabilityZone`.
     - "Группа доступности", чтобы поместить перенесенную виртуальную машину в группу доступности. Чтобы использовать этот параметр, выбранная целевая группа ресурсов должна содержать одну или несколько групп доступности. Чтобы использовать группу доступности, укажите ее идентификатор в качестве значения параметра `TargetAvailabilitySet`. 
 
-Из этого учебника вы узнаете, как реплицировать все диски обнаруженной виртуальной машины и указать новое имя для виртуальной машины в Azure. Первый диск обнаруженного сервера будет указан в качестве диска ОС. Все диски будут перенесены как HDD (цен. категория "Стандартный"). Диск ОС — это диск с загрузчиком операционной системы и установщиком.
+### <a name="replicate-vms-with-all-disks"></a>Репликация виртуальных машин со всеми дисками
+Из этого учебника вы узнаете, как реплицировать все диски обнаруженной виртуальной машины и указать новое имя для виртуальной машины в Azure. Первый диск обнаруженного сервера будет указан в качестве диска ОС. Все диски будут перенесены как HDD (цен. категория "Стандартный"). Диск ОС — это диск с загрузчиком операционной системы и установщиком. Командлет возвращает задание, которое можно отслеживать для мониторинга состояния операции. 
 
 ```azurepowershell
 # Retrieve the resource group that you want to migrate to
@@ -178,6 +182,7 @@ while (($MigrateJob.State -eq "InProgress") -or ($MigrateJob.State -eq "NotStart
 Write-Output $MigrateJob.State
 ```
 
+### <a name="replicate-vms-with-select-disks"></a>Репликация виртуальных машин с выбранными дисками
 Вы также можете выборочно реплицировать диски обнаруженной виртуальной машины. Для этого воспользуйтесь командлетом `New-AzMigrateDiskMapping` и предоставьте его результат в качестве входных данных для параметра `DiskToInclude` в командлете `New-AzMigrateServerReplication`. С помощью командлета `New-AzMigrateDiskMapping` можно также отдельно указать разные типы целевых дисков для каждого реплицируемого диска. 
 
 Укажите значения для следующих параметров командлета `New-AzMigrateDiskMapping`.
@@ -186,7 +191,7 @@ Write-Output $MigrateJob.State
 - **IsOSDisk**. Укажите значение true, если диск, который требуется перенести, является диском ОС виртуальной машины. В противном случае укажите false.
 - **DiskType**. Укажите тип диска, который будет использоваться в Azure. 
 
-В следующем примере показано, как реплицировать только два диска обнаруженной виртуальной машины. Мы укажем диск ОС и используем различные типы дисков для каждого диска, который необходимо реплицировать.
+В следующем примере показано, как реплицировать только два диска обнаруженной виртуальной машины. Мы укажем диск ОС и используем различные типы дисков для каждого диска, который необходимо реплицировать. Командлет возвращает задание, которое можно отслеживать для мониторинга состояния операции. 
 
 ```azurepowershell
 # View disk details of the discovered server
@@ -308,9 +313,18 @@ $replicatingserver.ProviderSpecificDetail | convertto-json
 - Во время начальной репликации создается снимок виртуальной машины. Дисковые данные из моментального снимка реплицируются в управляемые диски реплики в Azure.
 - После завершения начальной репликации начинается разностная репликация. Добавочные изменения локальных дисков периодически реплицируются на диски реплики в Azure.
 
+## <a name="retrieve-the-status-of-a-job"></a>Получение сведений о состоянии задания
+
+Состояние задания можно отслеживать с помощью командлета `Get-AzMigrateJob`. 
+
+```azurepowershell
+# Retrieve the updated status for a job
+$job = Get-AzMigrateJob -InputObject $job
+```
+
 ## <a name="update-properties-of-a-replicating-vm"></a>Обновление свойств выполняющей репликацию виртуальной машины
 
-Средство [Миграция Azure: миграция серверов](migrate-services-overview.md#azure-migrate-server-migration-tool) позволяет изменять целевые значения свойств, например имя, размер, группу ресурсов, конфигурацию сетевой карты и т. п., для выполняющей репликацию виртуальной машины. 
+Средство [Миграция Azure: миграция серверов](migrate-services-overview.md#azure-migrate-server-migration-tool) позволяет изменять целевые значения свойств, например имя, размер, группу ресурсов, конфигурацию сетевой карты и т. п., для выполняющей репликацию виртуальной машины. Командлет возвращает задание, которое можно отслеживать для мониторинга состояния операции. 
 
 ```azurepowershell
 # Retrieve the replicating VM details by using the discovered VM identifier
@@ -348,6 +362,15 @@ $NicMapping += $NicMapping2
 
 # Update the name, size and NIC configuration of a replicating server
 $UpdateJob = Set-AzMigrateServerReplication -InputObject $ReplicatingServer -TargetVMSize "Standard_DS13_v2" -TargetVMName "MyMigratedVM" -NicToUpdate $NicMapping
+
+# Track job status to check for completion
+while (($UpdateJob.State -eq "InProgress") -or ($UpdateJob.State -eq "NotStarted")){
+        #If the job hasn't completed, sleep for 10 seconds before checking the job status again
+        sleep 10;
+        $UpdateJob = Get-AzMigrateJob -InputObject $UpdateJob
+}
+#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded"
+Write-Output $UpdateJob.State
 ```
 
 Вы также можете вывести список всех выполняющих репликацию серверов в проекте Миграции Azure, а затем использовать идентификатор выполняющей репликацию виртуальной машины для обновления свойств виртуальной машины.
@@ -363,7 +386,7 @@ $ReplicatingServer = Get-AzMigrateServerReplication -TargetObjectID $Replicating
 
 ## <a name="run-a-test-migration"></a>Выполнение тестовой миграции
 
-Когда начинается разностная репликация, вы можете запустить тестовую миграцию для виртуальных машин перед выполнением полной миграции в Azure. Мы настоятельно рекомендуем сначала выполнить тестовую миграцию каждой машины хотя бы один раз.
+Когда начинается разностная репликация, вы можете запустить тестовую миграцию для виртуальных машин перед выполнением полной миграции в Azure. Мы настоятельно рекомендуем сначала выполнить тестовую миграцию каждой машины хотя бы один раз. Командлет возвращает задание, которое можно отслеживать для мониторинга состояния операции. 
 
 - Тестовая миграция позволяет проверить, будет ли миграция выполняться должным образом. Она не влияет на локальный компьютер, который остается работоспособным и продолжает выполнять репликацию. 
 - Тестовая миграция моделирует миграцию путем создания виртуальной машины Azure с использованием реплицированных данных (обычно выполняется миграция в нерабочую виртуальную сеть в вашей подписке Azure).
@@ -377,32 +400,69 @@ $TestVirtualNetwork = Get-AzVirtualNetwork -Name MyTestVirtualNetwork
 
 # Start test migration for a replicating server
 $TestMigrationJob = Start-AzMigrateTestMigration -InputObject $ReplicatingServer -TestNetworkID $TestVirtualNetwork.Id
+
+# Track job status to check for completion
+while (($TestMigrationJob.State -eq "InProgress") -or ($TestMigrationJob.State -eq "NotStarted")){
+        #If the job hasn't completed, sleep for 10 seconds before checking the job status again
+        sleep 10;
+        $TestMigrationJob = Get-AzMigrateJob -InputObject $TestMigrationJob
+}
+#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded"
+Write-Output $TestMigrationJob.State
 ```
 
-После завершения тестирования выполните очистку тестовой миграции с помощью командлета `Start-AzMigrateTestMigrationCleanup`.
+После завершения тестирования выполните очистку тестовой миграции с помощью командлета `Start-AzMigrateTestMigrationCleanup`. Командлет возвращает задание, которое можно отслеживать для мониторинга состояния операции. 
 
 ```azurepowershell
 # Clean-up test migration for a replicating server
 $CleanupTestMigrationJob = Start-AzMigrateTestMigrationCleanup -InputObject $ReplicatingServer
+
+# Track job status to check for completion
+while (($CleanupTestMigrationJob.State -eq "InProgress") -or ($CleanupTestMigrationJob.State -eq "NotStarted")){
+        #If the job hasn't completed, sleep for 10 seconds before checking the job status again
+        sleep 10;
+        $CleanupTestMigrationJob = Get-AzMigrateJob -InputObject $CleanupTestMigrationJob
+}
+#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded"
+Write-Output $CleanupTestMigrationJob.State
 ```
 
 ## <a name="migrate-vms"></a>Перенос виртуальных машин
 
-Убедившись, что тестовая миграция работает должным образом, вы можете выполнить миграцию выполняющего репликацию сервера с помощью следующего командлета.
+Убедившись, что тестовая миграция работает должным образом, вы можете выполнить миграцию выполняющего репликацию сервера с помощью следующего командлета. Командлет возвращает задание, которое можно отслеживать для мониторинга состояния операции. 
+
+Если вы не хотите отключать исходный сервер, не используйте параметр `TurnOffSourceServer`.
 
 ```azurepowershell
 # Start migration for a replicating server and turn off source server as part of migration
 $MigrateJob = Start-AzMigrateServerMigration -InputObject $ReplicatingServer -TurnOffSourceServer 
+
+# Track job status to check for completion
+while (($MigrateJob.State -eq "InProgress") -or ($MigrateJob.State -eq "NotStarted")){
+        #If the job hasn't completed, sleep for 10 seconds before checking the job status again
+        sleep 10;
+        $MigrateJob = Get-AzMigrateJob -InputObject $MigrateJob
+}
+#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded"
+Write-Output $MigrateJob.State
 ```
-Если вы не хотите отключать исходный сервер, не используйте параметр `TurnOffSourceServer`.
 
 ## <a name="complete-the-migration"></a>Выполнение миграции
 
-1. После завершения миграции отключите репликацию для локального компьютера и очистите сведения о состоянии репликации для виртуальной машины с помощью следующего командлета.
+1. После завершения миграции отключите репликацию для локального компьютера и очистите сведения о состоянии репликации для виртуальной машины с помощью следующего командлета. Командлет возвращает задание, которое можно отслеживать для мониторинга состояния операции. 
 
 ```azurepowershell
 # Stop replication for a migrated server
 $StopReplicationJob = Remove-AzMigrateServerReplication -InputObject $ReplicatingServer 
+
+# Track job status to check for completion
+while (($StopReplicationJob.State -eq "InProgress") -or ($StopReplicationJob.State -eq "NotStarted")){
+        #If the job hasn't completed, sleep for 10 seconds before checking the job status again
+        sleep 10;
+        $StopReplicationJob = Get-AzMigrateJob -InputObject $StopReplicationJob
+}
+#Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded"
+Write-Output $StopReplicationJob.State
 ```
 
 2. Установите агент виртуальной машины Azure для [Windows](../virtual-machines/extensions/agent-windows.md) или [Linux](../virtual-machines/extensions/agent-linux.md) на перенесенных компьютерах.

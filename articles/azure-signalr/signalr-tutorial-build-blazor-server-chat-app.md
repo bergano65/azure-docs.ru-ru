@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: jixin
-ms.openlocfilehash: d1c13c5d4bea8bfdb0f70e67ce8f264a1929b8a2
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 16fd15a5939cc6c268a80e88401f05042a206075
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150898"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94516821"
 ---
 # <a name="tutorial-build-a-blazor-server-chat-app"></a>Руководство по Создание приложения чата Blazor Server
 
@@ -96,7 +96,7 @@ ms.locfileid: "92150898"
    dotnet add package Microsoft.AspNetCore.SignalR.Client --version 3.1.7
    ```
 
-1. Создайте `ChartRoom.razor` в папке `Pages`, чтобы реализовать клиент SignalR. Выполните приведенные ниже действия или просто скопируйте [ChatRoom.razor](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/BlazorChat/Pages/ChatRoom.razor).
+1. Создайте `ChatRoom.razor` в папке `Pages`, чтобы реализовать клиент SignalR. Выполните приведенные ниже действия или просто скопируйте [ChatRoom.razor](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/BlazorChat/Pages/ChatRoom.razor).
 
    1. Добавьте ссылку на страницу и ссылку.
       

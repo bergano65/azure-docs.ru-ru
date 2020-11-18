@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: d1b17a3e4556f6a963f3ecacd31472ce3f75b0fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93360e48dad13b9ec57175d31ecb61d32974f066
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85248553"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93128408"
 ---
 # <a name="tutorial-create-a-pipeline-with-copy-activity-using-data-factory-copy-wizard"></a>Руководство по Создание конвейера с действием копирования с помощью мастера копирования фабрики данных
 > [!div class="op_single_selector"]
@@ -100,10 +100,10 @@ ms.locfileid: "85248553"
    1. Дважды щелкните папку **adftutorial**.
    2. Выберите **emp.txt** и нажмите кнопку **Выбрать**.
       
-      ![Средство копирования — выбор входного файла или папки](./media/data-factory-copy-data-wizard-tutorial/copy-tool-choose-input-file-or-folder.png)
+      ![Снимок экрана: вариант выбора для входного файла.](./media/data-factory-copy-data-wizard-tutorial/copy-tool-choose-input-file-or-folder.png)
 6. На странице **Choose the input file or folder** (Выбор входного файла или папки) нажмите кнопку **Далее**. Не устанавливайте флажок **Binary copy**(Двоичное копирование). 
    
-    ![Средство копирования — выбор входного файла или папки](./media/data-factory-copy-data-wizard-tutorial/chose-input-file-folder.png) 
+    ![Снимок экрана: вариант копирования двоичного файла для входного файла.](./media/data-factory-copy-data-wizard-tutorial/chose-input-file-folder.png) 
 7. На странице **File format settings** (Параметры формата файла) отображаются разделители и схема, которые мастер определяет автоматически при анализе файла. Можно также ввести разделители вручную, чтобы остановить автоопределение с помощью мастера копирования или переопределить. Проверив разделители и просмотрев предварительные данные, нажмите кнопку **Далее**. 
    
     ![Средство копирования — параметры формата файла](./media/data-factory-copy-data-wizard-tutorial/copy-tool-file-format-settings.png)  
@@ -128,10 +128,10 @@ ms.locfileid: "85248553"
     ![Средство копирования — сопоставление схем](./media/data-factory-copy-data-wizard-tutorial/schema-mapping-page.png)
 12. На странице **Performance settings** (Параметры производительности) нажмите кнопку **Далее**. 
     
-    ![Средство копирования — параметры производительности](./media/data-factory-copy-data-wizard-tutorial/performance-settings.png)
+    ![Снимок экрана: страница параметров производительности с кнопкой "Далее".](./media/data-factory-copy-data-wizard-tutorial/performance-settings.png)
 13. Просмотрите сведения на странице **Сводка** и нажмите кнопку **Готово**. Мастер создаст две связанные службы, два набора данных (входной и выходной) и один конвейер в фабрике данных (из которой вы запустили мастер копирования). 
     
-    ![Средство копирования — параметры производительности](./media/data-factory-copy-data-wizard-tutorial/summary-page.png)
+    ![Снимок экрана: страница сводки с кнопкой "Далее".](./media/data-factory-copy-data-wizard-tutorial/summary-page.png)
 
 ## <a name="launch-monitor-and-manage-application"></a>Запуск приложения для отслеживания и управления
 1. На странице **развертывания** щелкните ссылку: `Click here to monitor copy pipeline`.

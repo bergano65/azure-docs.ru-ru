@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b205665a0e5fc06fdc784efa91036f26da5d3cde
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 95e4ac884e0eda3b4f469484226962e3fd2e2eea
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88654350"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94375386"
 ---
 # <a name="linux-virtual-machines-in-azure"></a>Виртуальные машины Linux в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "88654350"
 Вы можете увеличить масштаб виртуальных машин, используемых приложением, а также развернуть дополнительные виртуальные машины в соответствии с требованиями.
 
 ## <a name="what-do-i-need-to-think-about-before-creating-a-vm"></a>О чем следует подумать перед созданием виртуальной машины?
-При создании инфраструктуры приложения в Azure всегда нужно учитывать множество [рекомендаций по проектированию](/azure/architecture/reference-architectures/n-tier/windows-vm). Перед началом работы следует подумать о следующих аспектах для виртуальной машины:
+При создании инфраструктуры приложения в Azure всегда нужно учитывать множество [рекомендаций по проектированию](/azure/architecture/reference-architectures/n-tier/linux-vm). Перед началом работы следует подумать о следующих аспектах для виртуальной машины:
 
 * имена ресурсов приложения;
 * расположение, в котором хранятся ресурсы;
@@ -74,24 +74,24 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 Вы также можете управлять пользовательскими образами в одной учетной записи хранения на каждый регион Azure и использовать их для создания сотен виртуальных машин в одной подписке. Дополнительные сведения об управляемых дисках см. в [этой статье](../managed-disks-overview.md).
 
 ## <a name="distributions"></a>Дистрибутивы 
-Microsoft Azure поддерживает различные дистрибутивы Linux, которые предоставляются и обслуживаются партнерами.  В Azure Marketplace можно найти такие дистрибутивы, как Red Hat Enterprise, CentOS, SUSE Linux Enterprise, Debian, Ubuntu, CoreOS, RancherOS, FreeBSD и многие другие. Майкрософт активно сотрудничает с разными сообществами Linux, чтобы расширить список [рекомендованных дистрибутивов Linux для Azure](endorsed-distros.md).
+Microsoft Azure поддерживает различные дистрибутивы Linux, которые предоставляются и обслуживаются партнерами.  Доступные дистрибутивы можно найти в Azure Marketplace. Майкрософт активно сотрудничает с разными сообществами Linux, чтобы расширить список [рекомендованных дистрибутивов Linux для Azure](endorsed-distros.md).
 
 Если в коллекции отсутствует необходимый дистрибутив Linux, вы всегда можете использовать свою виртуальную машину Linux, [создав VHD-файл виртуальной машины Linux и передав его в Azure](create-upload-generic.md).
 
-Корпорация Майкрософт тесно сотрудничает с партнерами, чтобы гарантировать обновление и оптимизацию доступных образов для среды выполнения Azure.  Дополнительные сведения о партнерах Azure см. по следующим ссылкам.
+Корпорация Майкрософт тесно сотрудничает с партнерами, чтобы гарантировать обновление и оптимизацию доступных образов для среды выполнения Azure.  Дополнительные сведения о предложениях партнеров Azure см. по следующим ссылкам:
 
 * Linux в Azure — [рекомендованные дистрибутивы](endorsed-distros.md)
-* SUSE — [Azure Marketplace — SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/marketplace/apps?search=suse%20sles&page=1)
-* RedHat — [Azure Marketplace — Red Hat Enterprise Linux 8.1](https://azuremarketplace.microsoft.com/marketplace/apps/RedHat.RedHatEnterpriseLinux81-ARM)
+* SUSE — [Azure Marketplace — SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=suse)
+* RedHat — [Azure Marketplace — Red Hat Enterprise Linux](https://azuremarketplace.microsoft.com/marketplace/apps?search=Red%20Hat%20Enterprise%20Linux)
 * Canonical — [Azure Marketplace — Ubuntu Server](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer)
-* Debian — [Azure Marketplace — Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.debian)
-* FreeBSD — [Azure Marketplace —FreeBSD 10.4](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD104)
-* CoreOS — [Azure Marketplace — Container Linux от CoreOS](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS)
+* Debian — [Azure Marketplace — Debian](https://azuremarketplace.microsoft.com/marketplace/apps?search=Debian&page=1)
+* FreeBSD — [Azure Marketplace —FreeBSD](https://azuremarketplace.microsoft.com/marketplace/apps?search=freebsd&page=1)
+* Flatcar — [Azure Marketplace — Flatcar Container Linux](https://azuremarketplace.microsoft.com/marketplace/apps?search=Flatcar&page=1)
 * RancherOS — [Azure Marketplace —RancherOS](https://azuremarketplace.microsoft.com/marketplace/apps/rancher.rancheros)
 * Bitnami — [Bitnami Library для Azure](https://azure.bitnami.com/)
 * Mesosphere — [Azure Marketplace — Mesosphere DC/OS в Azure](https://azure.microsoft.com/services/kubernetes-service/mesosphere/)
 * Docker — [Azure Marketplace — образы Docker](https://azuremarketplace.microsoft.com/marketplace/apps?search=docker&page=1&filters=virtual-machine-images)
-* Jenkins — [Azure Marketplace — платформа CloudBees Jenkins](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cloudbees.cloudbees-core-contact)
+* Jenkins — [Azure Marketplace — платформа CloudBees Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/cloudbees.cloudbees-core-contact)
 
 
 ## <a name="cloud-init"></a>Cloud-init 
@@ -99,7 +99,7 @@ Microsoft Azure поддерживает различные дистрибути
 В соответствии с правильной культурой разработки и операций, всю инфраструктуру необходимо включить в код.  Когда вся инфраструктура находится в коде, ее можно легко воссоздать.  Azure работает со всеми основными средствами автоматизации, включая Ansible, SaltStack, Puppet и Chef.  Кроме того, в Azure имеются собственные средства автоматизации:
 
 * [Шаблоны Azure](create-ssh-secured-vm-from-template.md);
-* [Azure VMAccess](../extensions/vmaccess.md).
+* [Azure `VMaccess`](../extensions/vmaccess.md)
 
 Azure поддерживает пакет [cloud-init](https://cloud-init.io/) для большинства дистрибутивов Linux, которые поддерживают его.  Мы активно сотрудничаем с нашими утвержденными партнерами, работающими над дистрибутивами Linux, чтобы образы с поддержкой cloud-init стали доступными в Azure Marketplace. Эти образы обеспечивают бесперебойную работу развертываний и конфигураций cloud-init с виртуальными машинами и масштабируемыми наборами виртуальных машин.
 
@@ -115,6 +115,11 @@ Azure поддерживает пакет [cloud-init](https://cloud-init.io/) �
 * [IP-адреса в Azure](../../virtual-network/public-ip-addresses.md)
 * [Открытие портов для виртуальной машины Linux в Azure](nsg-quickstart.md)
 * [Создание полного доменного имени на портале Azure](portal-create-fqdn.md)
+
+
+## <a name="data-residency"></a>Местонахождение данных
+
+В Azure функция хранения данных клиентов в одном регионе сейчас доступна только для регионов "Юго-Восточная Азия (Сингапур)" в Азиатско-Тихоокеанском географическом регионе и "Южная Бразилия" (штат Сан-Паулу) в географическом регионе "Бразилия". Для всех других регионов данные клиента хранятся в геообъектах. Дополнительные сведения см. на [этой странице](https://azuredatacentermap.azurewebsites.net/).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: d0805aaf694f1569e613ab74135c95e454adbdc0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: df0198ba77e1661bb18aa72285e100ca070966a8
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93315069"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94331742"
 ---
 # <a name="cetas-with-synapse-sql"></a>CETAS в SQL Synapse
 
@@ -68,7 +68,7 @@ DATA_SOURCE = *external_data_source_name*
 
 FILE_FORMAT = *external_file_format_name*
 
-Задает имя объекта формата внешнего файла, который хранит формат внешнего файла данных. Чтобы создать формат внешнего файла, используйте [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](develop-tables-external-tables.md#create-external-file-format). В настоящее время поддерживаются только форматы внешний файлов с FORMAT_TYPE=PARQUET и FORMAT_TYPE=DELIMITEDTEXT.
+Задает имя объекта формата внешнего файла, который хранит формат внешнего файла данных. Чтобы создать формат внешнего файла, используйте [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](develop-tables-external-tables.md#create-external-file-format). В настоящее время поддерживаются только форматы внешний файлов с FORMAT_TYPE=PARQUET и FORMAT_TYPE=DELIMITEDTEXT. Сжатие GZip для формата DELIMITEDTEXT не поддерживается.
 
 WITH  *<common_table_expression>*
 
@@ -144,32 +144,30 @@ CETAS можно использовать для хранения результ
 - varbinary
 - char
 - varchar
+- nchar
+- nvarchar
+- smalldate
 - Дата
-- time
+- DATETIME
 - datetime2
+- datetimeoffset
+- time
 - Decimal
 - NUMERIC
 - FLOAT
 - real
 - BIGINT
-- INT
-- smallint
 - tinyint
+- smallint
+- INT
+- BIGINT
 - bit
-
-> [!NOTE]
-> LOB нельзя использовать с CETAS.
-
-В части SELECT в CETAS нельзя использовать следующие типы данных:
-
-- nchar
-- nvarchar
-- DATETIME
-- smalldatetime
-- datetimeoffset
 - money
 - smallmoney
 - UNIQUEIDENTIFIER
+
+> [!NOTE]
+> Большие объекты (LOB) размером более 1 МБ нельзя использовать с CETAS.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

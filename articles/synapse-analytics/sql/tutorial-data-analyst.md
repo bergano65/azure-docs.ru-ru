@@ -1,6 +1,6 @@
 ---
-title: Руководство по Анализ Открытых наборов данных Azure в Azure Synapse Studio (предварительная версия) с помощью службы SQL по запросу (предварительная версия)
-description: В этом руководстве показано, как без усилий выполнять исследовательский анализ данных, объединяя разные Открытые наборы данных Azure с помощью SQL по запросу (предварительная версия), и визуализировать результаты в Azure Synapse Studio.
+title: Руководство по Анализ Открытых наборов данных Azure в Azure Synapse Studio (предварительная версия) с помощью бессерверного пула SQL (предварительная версия)
+description: В этом руководстве показано, как без усилий выполнять исследовательский анализ данных, объединяя разные Открытые наборы данных Azure с помощью бессерверного пула SQL (предварительная версия), и визуализировать результаты в Azure Synapse Studio.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0471bd594dcf1b0654d6b4c496e5d39ade2739fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cec16041edd10a57088df4ae9cfe0587906919eb
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91539526"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309292"
 ---
-# <a name="tutorial-use-sql-on-demand-to-analyze-azure-open-datasets-and-visualize-the-results-in-azure-synapse-studio"></a>Руководство по Анализ Открытых наборов данных Azure и визуализация результатов в Azure Synapse Studio с помощью службы SQL по запросу
+# <a name="tutorial-use-serverless-sql-pool-to-analyze-azure-open-datasets-and-visualize-the-results-in-azure-synapse-studio"></a>Руководство по Анализ Открытых наборов данных Azure и визуализация результатов в Azure Synapse Studio с помощью бессерверного пула SQL
 
-Из этого руководства вы узнаете, как выполнять исследовательский анализ данных, объединяя различные Открытые наборы данных Azure с помощью службы SQL по запросу, а затем визуализировать результаты в Azure Synapse Studio.
+В этом руководстве показано, как выполнять исследовательский анализ данных, объединяя различные Открытые наборы данных Azure с помощью бессерверного пула SQL, а затем визуализировать результаты в Azure Synapse Studio.
 
 В частности, вы проанализируете [набор данных о такси Нью-Йорка](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/), который включает следующие данные:
 
@@ -213,9 +213,9 @@ WHERE countryorregion = 'US' AND CAST([datetime] AS DATE) = '2016-01-23' AND sta
 - Было холодно (ниже нуля по Цельсию).
 - Было ветрено (скорость ветра около 10 м/с).
 
-Итак, из этого руководства для специалистов по анализу данных вы узнали, как быстро выполнять разведочный анализ данных, легко объединять наборы данных с использованием службы SQL по запросу и визуализировать результаты с помощью Azure Synapse Studio.
+Из этого руководства для специалистов по анализу данных вы узнали, как быстро выполнять исследовательский анализ данных, легко объединять наборы данных с помощью бессерверного пула SQL и визуализировать результаты в Azure Synapse Studio.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, [как подключить службу SQL по запросу к Power BI Desktop и создавать отчеты](tutorial-connect-power-bi-desktop.md).
+Узнайте, [как подключить бессерверный пул SQL к Power BI Desktop и создавать отчеты](tutorial-connect-power-bi-desktop.md).
  

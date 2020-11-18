@@ -9,27 +9,27 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: fe30a2a0885e1a579eb32ad84ef467f7162febe4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 03995166df5d40f7f8be7054aed0727be254ed73
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310329"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94376899"
 ---
 # <a name="transact-sql-features-supported-in-azure-synapse-sql"></a>Функции T-SQL, которые поддерживаются в Azure Synapse SQL
 
 Azure Synapse SQL — это служба аналитики больших данных, которая позволяет выполнять запросы и анализ данных с помощью языка T-SQL. Вы можете использовать для анализа данных диалект SQL, соответствующий стандарту ANSI, который используется в SQL Server и Базе данных SQL Azure. 
 
-Язык Transact-SQL используется в Synapse SQL бессерверно, а подготовленная модель может ссылаться на разные объекты и имеет некоторые отличия в наборе поддерживаемых функций. На этой странице перечислены основные отличия языка Transact-SQL в разных моделях потребления Synapse SQL.
+Язык Transact-SQL используется в Synapse SQL бессерверно, а выделенная модель может ссылаться на разные объекты и имеет некоторые отличия в наборе поддерживаемых функций. На этой странице перечислены основные отличия языка Transact-SQL в разных моделях потребления Synapse SQL.
 
 ## <a name="database-objects"></a>Объекты базы данных
 
 Модели потребления в Synapse SQL позволяют использовать разные объекты базы данных. В следующей таблице представлено сравнение поддерживаемых типов объектов.
 
-|   | Подготовлено | Бессерверные приложения |
+|   | Выделенные | Бессерверные приложения |
 | --- | --- | --- |
 | **Таблицы** | [Да](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Нет, бессерверная модель может запрашивать только внешние данные, размещенные в [службе хранилище Azure](#storage-options) |
-| **Представления** | [Да.](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) Представления могут использовать [элементы языка запросов](#query-language), доступные в подготовленной модели. | [Да.](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) Представления могут использовать [элементы языка запросов](#query-language), доступные в бессерверной модели. |
+| **Представления** | [Да.](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) Представления могут использовать [элементы языка запросов](#query-language), доступные в выделенной модели. | [Да.](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) Представления могут использовать [элементы языка запросов](#query-language), доступные в бессерверной модели. |
 | **Схемы** | [Да](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | [Да](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) |
 | **Временные таблицы** | [Да](../sql-data-warehouse/sql-data-warehouse-tables-temporary.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) | Нет |
 | **Процедуры** | [Да](/sql/t-sql/statements/create-procedure-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Нет |
@@ -48,7 +48,7 @@ Azure Synapse SQL — это служба аналитики больших д�
 
 Языки запросов, используемые в Synapse SQL, могут поддерживать разный набор функций в зависимости от модели потребления. В следующей таблице приведены наиболее важные отличия в диалектах языка запросов для Transact-SQL:
 
-|   | Подготовлено | Бессерверные приложения |
+|   | Выделенные | Бессерверные приложения |
 | --- | --- | --- |
 | **Инструкция SELECT** | Да. Не поддерживаются предложения запроса Transact-SQL [FOR XML/FOR JSON](/sql/t-sql/queries/select-for-clause-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [MATCH](/sql/t-sql/queries/match-sql-graph?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). | Да. Не поддерживаются предложения запроса Transact-SQL [FOR XML](/sql/t-sql/queries/select-for-clause-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), [MATCH](/sql/t-sql/queries/match-sql-graph?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [PREDICT](/sql/t-sql/queries/predict-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), а также указания запроса. [OFFSET/FETCH](/sql/t-sql/queries/select-order-by-clause-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#using-offset-and-fetch-to-limit-the-rows-returned) и [PIVOT/UNPIVOT](/sql/t-sql/queries/from-using-pivot-and-unpivot?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) можно использовать только для запросов по системным объектам (а не внешним данным). |
 | **Инструкция INSERT** | Да | Нет |
@@ -73,7 +73,7 @@ Azure Synapse SQL — это служба аналитики больших д�
 
 Synapse SQL позволяет использовать встроенные функции безопасности для защиты данных и управления доступом. В следующей таблице перечислены основные различия между моделями потребления в Synapse SQL.
 
-|   | Подготовлено | Бессерверные приложения |
+|   | Выделенные | Бессерверные приложения |
 | --- | --- | --- |
 | **Имена входа** | Недоступно (в базах данных поддерживаются только автономные пользователи). | Да |
 | **Пользователи** |  Недоступно (в базах данных поддерживаются только автономные пользователи). | Да |
@@ -109,7 +109,7 @@ Synapse SQL позволяет использовать встроенные ф�
 
 Вы можете использовать разные средства, чтобы подключиться к Synapse SQL для запроса по данным.
 
-|   | Подготовлено | Бессерверные приложения |
+|   | Выделенные | Бессерверные приложения |
 | --- | --- | --- |
 | **Synapse Studio** | Да, скрипты SQL. | Да, скрипты SQL. |
 | **Power BI** | Да | [Да](tutorial-connect-power-bi-desktop.md) |
@@ -120,13 +120,13 @@ Synapse SQL позволяет использовать встроенные ф�
 > [!NOTE]
 > С помощью SSMS можно подключиться к бессерверному пулу SQL (предварительная версия) и выполнить запрос. Эти средства частично поддерживаются, начиная с версии 18.5, и используется только для подключения и выполнения запросов.
 
-Большинство приложений используют стандартный язык Transact-SQL, который может выполнять запросы по подготовленным и бессерверным моделям потребления в Synapse SQL.
+Большинство приложений используют стандартный язык Transact-SQL, который может выполнять запросы по выделенным и бессерверным моделям потребления в Synapse SQL.
 
 ## <a name="storage-options"></a>Варианты хранилищ
 
 Анализируемые данные могут храниться в разных типах хранилищ. Все доступные варианты хранилищ перечислены в следующей таблице.
 
-|   | Подготовлено | Бессерверные приложения |
+|   | Выделенные | Бессерверные приложения |
 | --- | --- | --- |
 | **Внутреннее хранилище** | Да | Нет |
 | **Azure Data Lake версии 2** | Да | Да |
@@ -137,7 +137,7 @@ Synapse SQL позволяет использовать встроенные ф�
 
 Анализируемые данные могут храниться в разных форматах. Все доступные для анализа варианты форматов перечислены в следующей таблице.
 
-|   | Подготовлено | Бессерверные приложения |
+|   | Выделенные | Бессерверные приложения |
 | --- | --- | --- |
 | **С разделителями** | [Да](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | [Да](query-single-csv-file.md) |
 | **CSV** | Да (многосимвольные разделители не поддерживаются). | [Да](query-single-csv-file.md) |

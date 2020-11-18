@@ -12,18 +12,24 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 09/30/2020
+ms.date: 11/05/2020
 ms.author: b-juche
-ms.openlocfilehash: 56ae3ac1331ed054a1fb808ae06e990b67c06bae
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 3f13d997f73e9737b8770eec7e0742d50bf1abb8
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932419"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421708"
 ---
 # <a name="whats-new-in-azure-netapp-files"></a>Новые возможности Azure NetApp Files
 
 Azure NetApp Files регулярно обновляется. Эта статья содержит сводные сведения о новейших возможностях и улучшениях. 
+
+## <a name="november-2020"></a>Ноябрь 2020 г.
+
+* [Отмена изменений моментального снимка](azure-netapp-files-manage-snapshots.md#revert-a-volume-using-snapshot-revert)
+
+    Функция отмены изменений моментальных снимков позволяет быстро вернуть том в состояние, в котором он находился при создании определенного моментального снимка. В большинстве случаев отмена изменений для тома выполняется гораздо быстрее, чем восстановление отдельных файлов из моментального снимка в активную файловую систему. Эта функция также позволяет сэкономить больше пространства по сравнению с восстановлением моментального снимка на новый том.
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 

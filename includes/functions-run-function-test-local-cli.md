@@ -2,61 +2,45 @@
 author: ggailey777
 ms.service: azure-functions
 ms.topic: include
-ms.date: 02/09/2020
+ms.date: 10/18/2020
 ms.author: glenga
-ms.openlocfilehash: 55c64048e0604987c5a4c26961e5617106358e76
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0bb0c22227946cba6790b536b3cb8db24af3ccbc
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "84436103"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422869"
 ---
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
-Выполните функцию, запустив локальное хост-приложение среды выполнения Функций Azure из папки *LocalFunctionProj*:
+1. Выполните функцию, запустив локальное хост-приложение среды выполнения Функций Azure из папки *LocalFunctionProj*:
 
-::: zone pivot="programming-language-csharp,programming-language-powershell,programming-language-javascript,programming-language-python"
-```
-func start
-```
-::: zone-end
+    ```
+    func start
+    ```
 
-::: zone pivot="programming-language-typescript"
-```
-npm install
-npm start
-```
-::: zone-end
+    Ближе к концу выходных данных появятся следующие строки: 
+    
+    <pre>
+    ...
+    
+    Now listening on: http://0.0.0.0:7071
+    Application started. Press Ctrl+C to shut down.
+    
+    Http Functions:
+    
+            HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
+    ...
+    
+    </pre>
+    
+    >[!NOTE]  
+    > Если результат HttpExample не похож на пример ниже, скорее всего, вы запустили хост-приложение из папки, отличной от корневой папки проекта. В этом случае остановите хост-приложение клавишами **CTRL**+**C**, перейдите в корневую папку проекта и снова выполните указанную выше команду.
 
-::: zone pivot="programming-language-java"
-```
-mvn clean package 
-mvn azure-functions:run
-```
-::: zone-end
+1. Скопируйте URL-адрес функции `HttpExample` из этих выходных данных в браузер и добавьте строку запроса `?name=<YOUR_NAME>`, сформировав полный URL-адрес, например `http://localhost:7071/api/HttpExample?name=Functions`. В браузере должно отобразиться сообщение, например `Hello Functions`:
 
-Ближе к концу выходных данных появятся следующие строки: 
+    ![Получившаяся функция выполняется локально в браузере](./media/functions-run-function-test-local-cli/function-test-local-browser.png)
 
-<pre>
-...
+1. Терминал, в котором вы запустили проект, также выводит данные журнала при выполнении запросов.
 
-Now listening on: http://0.0.0.0:7071
-Application started. Press Ctrl+C to shut down.
-
-Http Functions:
-
-        HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
-...
-
-</pre>
-
->[!NOTE]  
-> Если результат HttpExample не похож на пример ниже, скорее всего, вы запустили хост-приложение из папки, отличной от корневой папки проекта. В этом случае остановите хост-приложение клавишами **CTRL**+**C**, перейдите в корневую папку проекта и снова выполните указанную выше команду.
-
-Скопируйте URL-адрес функции `HttpExample` из этих выходных данных в браузер и добавьте строку запроса `?name=<your-name>`, сформировав полный URL-адрес, например `http://localhost:7071/api/HttpExample?name=Functions`. В браузере должно отобразиться сообщение, например `Hello Functions`:
-
-![Получившаяся функция выполняется локально в браузере](./media/functions-run-function-test-local-cli/function-test-local-browser.png)
-
-Терминал, в котором вы запустили проект, также выводит данные журнала при выполнении запросов.
-
-Когда все будет готово, нажмите клавиши **Ctrl**+**C** и выберите `y`, чтобы отключить хост-приложение функции.
+1. Когда все будет готово, нажмите клавиши **CTRL**+**C** и выберите `y`, чтобы отключить хост-приложение функции.

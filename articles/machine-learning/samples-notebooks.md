@@ -1,7 +1,7 @@
 ---
 title: Примеры записных книжек Jupyter
 titleSuffix: Azure Machine Learning
-description: Узнайте, как работать с пакетом SDK Машинного обучения Azure для Python, используя примеры записных книжек Jupyter.
+description: Сведения о том, как находить и использовать записные книжки Jupyter, которые помогут вам изучить пакет SDK и которые можно использовать в качестве моделей для проектов машинного обучения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: f8b4256f33a143c711a23a3564c2a46c69e0783b
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 3f5cb2831a58ce9d0d30039b80815e281401e883
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675776"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542564"
 ---
 # <a name="explore-azure-machine-learning-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Машинном обучении Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "92675776"
 - [Виртуальные машины для обработки и анализа данных](#dsvm)
 
 > [!NOTE]
-> Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials** , а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml**.
+> Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials**, а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml**.
 
 <a name="notebookvm"></a>
 ## <a name="get-samples-on-azure-machine-learning-compute-instance"></a>Получение примеров вычислительных операций Машинного обучения Azure
@@ -47,7 +47,7 @@ ms.locfileid: "92675776"
 
 [!INCLUDE [aml-your-server](../../includes/aml-your-server.md)]
 
-Выполнив эти инструкции вы установите основные пакеты SDK, требуемые для работы с руководствами по использованию записных книжек. Другие примеры записных книжек могут потребовать установки дополнительных компонентов. См. подробнее об [установке пакета SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install).
+Выполнив эти инструкции вы установите основные пакеты SDK, требуемые для работы с руководствами по использованию записных книжек. Другие примеры записных книжек могут потребовать установки дополнительных компонентов. См. подробнее об [установке пакета SDK Машинного обучения Azure для Python](/python/api/overview/azure/ml/install).
 
 <a name="dsvm"></a>
 ## <a name="get-samples-on-dsvm"></a>Получение примеров в среде "Виртуальная машина для обработки и анализа данных"

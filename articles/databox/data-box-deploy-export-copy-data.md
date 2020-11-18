@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/10/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: fb1415874c42e3913d98d4a674732a4d9b98a0c5
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: ecc6e1e1a543f3190e9f73512ca0b9ae45cc3fe9
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123914"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94335219"
 ---
 # <a name="tutorial-copy-data-from-azure-data-box-via-smb-preview"></a>Руководство по Копирование данных из Azure Data Box через SMB (предварительная версия)
 
@@ -54,7 +54,7 @@ ms.locfileid: "92123914"
 
 2. В диалоговом окне "Доступ к общей папке и копирование данных" скопируйте **имя пользователя** и **пароль**, соответствующие необходимой общей папке. Щелкните **ОК**.
     
-    ![Получение учетных данных для доступа к общей папке 2](media/data-box-deploy-export-copy-data/get-share-credentials-2.png)
+    ![Получение учетных данных общей папки, доступ к ней и копирование данных](media/data-box-deploy-export-copy-data/get-share-credentials-2.png)
 
 3. Чтобы получить доступ к общим папкам, связанным с вашей учетной записью хранения (*exportbvtdataset2* в следующем примере) на главном компьютере, откройте окно командной строки. В командной строке введите:
 
@@ -73,13 +73,13 @@ ms.locfileid: "92123914"
     The command completed successfully.
     ```
 
-4. Нажмите клавиши WINDOWS+R. В окне **Выполнить** введите `\\<device IP address>`. Нажмите кнопку **ОК**, чтобы открыть проводник.
+5. Нажмите клавиши WINDOWS+R. В окне **Выполнить** введите `\\<device IP address>`. Нажмите кнопку **ОК**, чтобы открыть проводник.
     
-    ![Подключение к общей папке с помощью проводника](media/data-box-deploy-export-copy-data/connect-shares-file-explorer-1.png)
+    ![Подключение к общей папке с помощью проводника, ввод IP-адреса устройства](media/data-box-deploy-export-copy-data/connect-shares-file-explorer-1.png)
 
     Должны отобразиться папки, в том числе общие.
     
-    ![Подключение к общей папке с помощью проводника 2](media/data-box-deploy-export-copy-data/connect-shares-file-explorer-2.png)
+    ![Подключение к общей папке с помощью проводника, просмотр общих папок](media/data-box-deploy-export-copy-data/connect-shares-file-explorer-2.png)
 
     
 Если вы используете клиент Linux, вставьте общий ресурс SMB с помощью следующей команды. Параметр "vers" указывает версию SMB, которую поддерживает ваш узел Linux. Вставьте необходимую версию в указанную ниже команду. Версии SMB, которые поддерживает Data Box, см. в разделе [Поддерживаемые файловые системы для клиентов Linux](./data-box-system-requirements.md#supported-file-transfer-protocols-for-clients) 

@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 10/02/2020
 ms.author: joflore
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4b2ea0806f70d9f99982b9d9af9c462ff0099966
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 46fdaed4a3e1dbbe5575cd573061a480bf330389
+ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967959"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93041955"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-powershell"></a>Включение доменных служб Azure Active Directory с помощью PowerShell
 
@@ -44,12 +44,12 @@ ms.locfileid: "91967959"
 
 Для доменных служб Azure Active Directory требуется субъект-служба и группа Azure AD. Эти ресурсы позволяют управляемому домену доменной службы Azure Active Directory синхронизировать данные и определять, каким пользователям предоставлять административные разрешения в управляемом домене.
 
-Сначала создайте субъект-службу Azure AD, чтобы обеспечить для Azure AD DS возможность взаимодействия и проверки подлинности. Используется определенный идентификатор приложения с названием *Domain Controller Services*(Службы контроллера домена) и номером идентификатора *2565bd9d-da50-47d4-8b85-4c97f669dc36*. Не изменяйте этот идентификатор приложения.
+Сначала создайте субъект-службу Azure AD, чтобы обеспечить для Azure AD DS возможность взаимодействия и проверки подлинности. Используется определенный идентификатор приложения с названием *Domain Controller Services*(Службы контроллера домена) и номером идентификатора *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. Не изменяйте этот идентификатор приложения.
 
 Создайте субъект-службу Azure AD с помощью командлета [New-AzureADServicePrincipal][New-AzureADServicePrincipal]:
 
 ```powershell
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-AzureADServicePrincipal -AppId "6ba9a5d4-8456-4118-b521-9c5ca10cdf84"
 ```
 
 Создайте группу Azure AD с именем *Администраторы контроллера домена AAD*. Пользователи, добавленные в эту группу, получают разрешения на выполнение задач администрирования в управляемом домене.
@@ -252,7 +252,7 @@ Connect-AzureAD
 Connect-AzAccount
 
 # Create the service principal for Azure AD Domain Services.
-New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+New-AzureADServicePrincipal -AppId "6ba9a5d4-8456-4118-b521-9c5ca10cdf84"
 
 # First, retrieve the object ID of the 'AAD DC Administrators' group.
 $GroupObjectId = Get-AzureADGroup `

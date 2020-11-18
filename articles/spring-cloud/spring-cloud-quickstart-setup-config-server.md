@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 09/08/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 2f6051277f1ddb89e67ce8013c78571a2a7314b7
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 55e47b09ac4a6256a125a75c8a0f856e867e7c0e
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089134"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337793"
 ---
 # <a name="quickstart-set-up-azure-spring-cloud-configuration-server"></a>Краткое руководство. Настройка сервера конфигурации Azure Spring Cloud
 
@@ -70,9 +70,33 @@ az spring-cloud config-server git set -n <service instance name> --uri https://g
 ```azurecli
 az spring-cloud config-server git set -n <service instance name> --uri https://github.com/Azure-Samples/piggymetrics-config
 ```
-
 ---
 ::: zone-end
+
+## <a name="troubleshooting-of-azure-spring-cloud-config-server"></a>Устранение неполадок с сервером конфигурации Azure Spring Cloud
+
+Далее объясняется, как устранить неполадки с параметрами сервера конфигурации.
+
+1. На портале Azure перейдите на страницу **Обзор** службы и выберите **Журналы**. 
+1. Щелкните **Запросы** и **Отобразить журналы приложения, которые содержат термины "ошибка" или "исключение"** . 
+1. Нажмите кнопку **Запустить**. 
+1. Если в журналах обнаружена ошибка **java.lang.illegalStateException**, это означает, что служба Spring Cloud не может найти свойства на сервере конфигурации.
+
+    [ ![Портал ASC — выполнение запроса](media/spring-cloud-quickstart-setup-config-server/setup-config-server-query.png) ](media/spring-cloud-quickstart-setup-config-server/setup-config-server-query.png)
+
+1. Вернитесь на страницу **Обзор** службы.
+1. Выберите колонку **Диагностика и решение проблем**. 
+1. Выберите средство обнаружения **Config Server**.
+
+    [ ![Портал ASC —  диагностика проблем](media/spring-cloud-quickstart-setup-config-server/setup-config-server-diagnose.png) ](media/spring-cloud-quickstart-setup-config-server/setup-config-server-diagnose.png)
+
+3. Щелкните **Проверка работоспособности Config Server**.
+
+    [ ![Портал ASC — Genie](media/spring-cloud-quickstart-setup-config-server/setup-config-server-genie.png) ](media/spring-cloud-quickstart-setup-config-server/setup-config-server-genie.png)
+
+4. Щелкните **Состояние Config Server**, чтобы просмотреть дополнительные сведения от средства обнаружения.
+
+    [ ![Портал ASC — состояние работоспособности](media/spring-cloud-quickstart-setup-config-server/setup-config-server-health-status.png) ](media/spring-cloud-quickstart-setup-config-server/setup-config-server-health-status.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

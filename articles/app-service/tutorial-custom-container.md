@@ -7,12 +7,12 @@ ms.author: msangapu
 keywords: служба приложений azure, веб-приложение, linux, windows, docker, контейнер
 ms.custom: devx-track-csharp, mvc, seodec18, devx-track-python, devx-track-azurecli
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: f3c687d5c8b4e4c6d0b7f4ff912137066fe10bbb
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b5682275a9e5f3993de715ab5f23a708d5df47ae
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92743727"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93130125"
 ---
 # <a name="migrate-custom-software-to-azure-app-service-using-a-custom-container"></a>Перенос пользовательского программного обеспечения в Службу приложений Azure с помощью пользовательского контейнера
 
@@ -29,8 +29,8 @@ ms.locfileid: "92743727"
 - <a href="https://hub.docker.com/" target="_blank">зарегистрируйте учетную запись центра Docker</a>.
 - <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">Установите Docker для ОС Windows</a>.
 - <a href="/virtualization/windowscontainers/quick-start/quick-start-windows-10" target="_blank">Переключите Docker для запуска контейнеров Windows</a>.
-- <a href="https://www.visualstudio.com/downloads/" target="_blank">Установите Visual Studio 2019</a>, а также следующие рабочие нагрузки: **ASP.NET и веб-разработка** и **разработка Azure** . Если у вас уже установлена версия Visual Studio 2019, сделайте следующее.
-    - Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить наличие обновлений** .
+- <a href="https://www.visualstudio.com/downloads/" target="_blank">Установите Visual Studio 2019</a>, а также следующие рабочие нагрузки: **ASP.NET и веб-разработка** и **разработка Azure**. Если у вас уже установлена версия Visual Studio 2019, сделайте следующее.
+    - Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить наличие обновлений**.
     - Добавьте рабочие нагрузки в Visual Studio, выбрав **Инструменты** > **Get Tools and Features** (Получить инструменты и компоненты).
 
 ## <a name="set-up-the-app-locally"></a>Настройка приложения в локальной среде
@@ -40,13 +40,13 @@ ms.locfileid: "92743727"
 На этом шаге вы настроите локальный проект .NET.
 
 - [Загрузите пример проекта](https://github.com/Azure-Samples/custom-font-win-container/archive/master.zip).
-- Извлеките (распакуйте) содержимое файла *custom-font-win-container.zip* .
+- Извлеките (распакуйте) содержимое файла *custom-font-win-container.zip*.
 
 Пример проекта содержит простое приложение ASP.NET, которое использует пользовательский шрифт, устанавливаемый в библиотеку шрифтов Windows. Устанавливать шрифты не обязательно, но это пример приложения, интегрированного с базовой ОС. Чтобы перенести такое приложение в службу приложений, переработайте код, чтобы удалить интеграцию, либо перенесите его "как есть" в пользовательском контейнере Windows.
 
 ### <a name="install-the-font"></a>Установка шрифта
 
-В проводнике Windows перейдите в папку _custom-font-win контейнер master/CustomFontSample_ , щелкните правой кнопкой мыши файл _FrederickatheGreat Regular.ttf_ и выберите **Установить** .
+В проводнике Windows перейдите в папку _custom-font-win контейнер master/CustomFontSample_, щелкните правой кнопкой мыши файл _FrederickatheGreat Regular.ttf_ и выберите **Установить**.
 
 Этот шрифт находится в свободном доступе на веб-сайте [Google Fonts](https://fonts.google.com/specimen/Fredericka+the+Great).
 
@@ -64,13 +64,13 @@ ms.locfileid: "92743727"
 
 В обозревателе решений щелкните правой кнопкой мыши проект **CustomFontSample** и выберите **Добавить** > **Container Orchestration Support** (Поддержка оркестрации контейнеров).
 
-:::image type="content" source="media/tutorial-custom-container/enable-container-orchestration.png" alt-text="Снимок экрана: приложение, отображаемое в браузере по умолчанию.":::
+:::image type="content" source="media/tutorial-custom-container/enable-container-orchestration.png" alt-text="Снимок экрана: окно &quot;Обозреватель решений&quot;, в котором отображаются выбранный проект CustomFontSample и элементы меню &quot;Добавить&quot; > &quot;Поддержка оркестратора контейнеров&quot;.":::
 
-Выберите **Docker Compose** > **ОК** .
+Выберите **Docker Compose** > **ОК**.
 
-Теперь проект настроен для запуска в контейнере Windows. Объект _Dockerfile_ добавлен в проект **CustomFontSample** , а проект **docker-compose** добавлен в решение. 
+Теперь проект настроен для запуска в контейнере Windows. Объект _Dockerfile_ добавлен в проект **CustomFontSample**, а проект **docker-compose** добавлен в решение. 
 
-В обозревателе решений откройте **Dockerfile** .
+В обозревателе решений откройте **Dockerfile**.
 
 Необходимо использовать [поддерживаемый родительский образ](configure-custom-container.md#supported-parent-images). Измените родительский образ, заменив строку `FROM` приведенным ниже кодом.
 
@@ -84,7 +84,7 @@ FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-ltsc2019
 RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 ```
 
-Файл _InstallFont.ps1_ можно найти в проекте **CustomFontSample** . Это простой сценарий, который устанавливает шрифт. Более сложную версию этого сценария можно найти в [Центре сценариев](https://gallery.technet.microsoft.com/scriptcenter/fb742f92-e594-4d0c-8b79-27564c575133).
+Файл _InstallFont.ps1_ можно найти в проекте **CustomFontSample**. Это простой сценарий, который устанавливает шрифт. Более сложную версию этого сценария можно найти в [Центре сценариев](https://gallery.technet.microsoft.com/scriptcenter/fb742f92-e594-4d0c-8b79-27564c575133).
 
 > [!NOTE]
 > Чтобы локально проверить контейнер Windows, убедитесь, что на локальном компьютере запущен Docker.
@@ -96,15 +96,15 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 ### <a name="open-publish-wizard"></a>Открытие мастера публикации
 
-Щелкните правой кнопкой мыши проект **CustomFontSample** в обозревателе решений и выберите **Опубликовать** .
+Щелкните правой кнопкой мыши проект **CustomFontSample** в обозревателе решений и выберите **Опубликовать**.
 
-:::image type="content" source="media/tutorial-custom-container/open-publish-wizard.png" alt-text="Снимок экрана: приложение, отображаемое в браузере по умолчанию.":::
+:::image type="content" source="media/tutorial-custom-container/open-publish-wizard.png" alt-text="Снимок экрана: окно &quot;Обозреватель решений&quot;, в котором выделены проект CustomFontSample и пункт меню &quot;Опубликовать&quot;.":::
 
 ### <a name="create-registry-and-publish"></a>Создание реестра и публикация
 
-В мастере публикации выберите **Реестр контейнеров** > **Создать реестр контейнеров Azure** > **Опубликовать** .
+В мастере публикации выберите **Реестр контейнеров** > **Создать реестр контейнеров Azure** > **Опубликовать**.
 
-:::image type="content" source="media/tutorial-custom-container/create-registry.png" alt-text="Снимок экрана: приложение, отображаемое в браузере по умолчанию.":::
+:::image type="content" source="media/tutorial-custom-container/create-registry.png" alt-text="Снимок экрана: мастер публикации, в котором выделены такие элементы: &quot;Реестр контейнеров&quot;, &quot;Создать реестр контейнеров Azure&quot; и кнопка &quot;Опубликовать&quot;.":::
 
 ### <a name="sign-in-with-azure-account"></a>Вход с учетной записью Azure
 
@@ -114,12 +114,12 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 ### <a name="configure-the-registry"></a>Настройка реестра
 
-Настройте новый реестр контейнеров в соответствии с предлагаемыми значениями в следующей таблице. По завершении нажмите кнопку **Создать** .
+Настройте новый реестр контейнеров в соответствии с предлагаемыми значениями в следующей таблице. По завершении нажмите кнопку **Создать**.
 
 | Параметр  | Рекомендуемое значение | Дополнительные сведения |
 | ----------------- | ------------ | ----|
 |**DNS-префикс**| Оставьте имя созданного реестра или измените его, указав другое уникальное имя. |  |
-|**Группа ресурсов**| Щелкните **Создать** , введите имя **myResourceGroup** и нажмите кнопку **ОК** . |  |
+|**Группа ресурсов**| Щелкните **Создать**, введите имя **myResourceGroup** и нажмите кнопку **ОК**. |  |
 |**SKU**| Basic | [Ценовые категории](https://azure.microsoft.com/pricing/details/container-registry/)|
 |**Расположение реестра**| Западная Европа | |
 
@@ -133,7 +133,7 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
-В меню слева выберите **Создать ресурс** > **Веб** > **Веб-приложение для контейнеров** .
+В меню слева выберите **Создать ресурс** > **Веб** > **Веб-приложение для контейнеров**.
 
 ### <a name="configure-app-basics"></a>Настройка основных сведений приложения
 
@@ -142,12 +142,12 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 | Параметр  | Рекомендуемое значение | Дополнительные сведения |
 | ----------------- | ------------ | ----|
 |**Подписка**| Убедитесь, что отображается правильная подписка. |  |
-|**Группа ресурсов**| Выберите **Создать** , введите **myResourceGroup** и щелкните **ОК** . |  |
-|**имя** ;| Введите уникальное имя. | URL-адрес веб-приложения: `http://<app-name>.azurewebsites.net`, где `<app-name>` — имя приложения. |
+|**Группа ресурсов**| Выберите **Создать**, введите **myResourceGroup** и щелкните **ОК**. |  |
+|**имя**;| Введите уникальное имя. | URL-адрес веб-приложения: `http://<app-name>.azurewebsites.net`, где `<app-name>` — имя приложения. |
 |**Опубликовать**| Контейнер Docker | |
 |**Операционная система**| Windows | |
 |**Регион**| Западная Европа | |
-|**План Windows**| Выберите **Создать** , введите **myAppServicePlan** и щелкните **ОК** . | |
+|**План Windows**| Выберите **Создать**, введите **myAppServicePlan** и щелкните **ОК**. | |
 
 Вкладка **Основные сведения** должна выглядеть следующим образом:
 
@@ -155,7 +155,7 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 ### <a name="configure-windows-container"></a>Настройка контейнера Windows
 
-На вкладке **Docker** настройте свой пользовательский контейнер Windows, как показано в следующей таблице, и выберите **Просмотр и создание** .
+На вкладке **Docker** настройте свой пользовательский контейнер Windows, как показано в следующей таблице, и выберите **Просмотр и создание**.
 
 | Параметр  | Рекомендуемое значение |
 | ----------------- | ------------ |
@@ -174,9 +174,9 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 ![Показано сообщение о том, что операция Azure завершена.](media/tutorial-custom-container/portal-create-finished.png)
 
-1. Щелкните **Перейти к ресурсу** .
+1. Щелкните **Перейти к ресурсу**.
 
-2. На странице приложения щелкните ссылку в разделе **URL-адрес** .
+2. На странице приложения щелкните ссылку в разделе **URL-адрес**.
 
 В браузере откроется следующая страница:
 
@@ -278,9 +278,9 @@ cd docker-django-webapp-linux
 
 Вместо клонирования с помощью Git вы можете открыть страницу [https://github.com/Azure-Samples/docker-django-webapp-linux](https://github.com/Azure-Samples/docker-django-webapp-linux), а затем выбрать действие **Clone** (Клонировать) и **Download ZIP** (Скачать ZIP-файл). 
 
-Распакуйте ZIP-файл в папку с именем *docker-django-webapp-linux* . 
+Распакуйте ZIP-файл в папку с именем *docker-django-webapp-linux*. 
 
-Затем откройте окно терминала в этой папке *docker-django-webapp-linux* .
+Затем откройте окно терминала в этой папке *docker-django-webapp-linux*.
 
 ## <a name="optional-examine-the-docker-file"></a>(Необязательно) Анализ файл Docker
 
@@ -318,6 +318,10 @@ ENTRYPOINT ["init.sh"]
 * В последней строке файла (`ENTRYPOINT ["init.sh"]`) вызывается `init.sh` для запуска службы SSH и сервера Python.
 
 ## <a name="build-and-test-the-image-locally"></a>Сборка и тестирование образа в локальной среде
+
+> [!NOTE]
+> Docker Hub имеет [квоты на число анонимных вытягиваний с одного IP-адреса и на число аутентифицированных вытягиваний от одного бесплатного пользователя (см. сведения о **передаче данных**)](https://www.docker.com/pricing). Если вы заметили, что число вытягиваний из Docker Hub ограничено, попробуйте выполнить команду `docker login`, если вы еще не вошли в систему.
+> 
 
 1. Запустите сборку образа с помощью следующей команды.
 
@@ -497,7 +501,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
 
 В этом разделе вы внесете изменения в код веб-приложения, перестроите контейнер и отправите его в реестр. Затем Служба приложений автоматически извлечет обновленный образ из реестра и обновит работающее веб-приложение.
 
-1. В локальной папке *docker-django-webapp-linux* откройте файл *app/templates/app/index.html* .
+1. В локальной папке *docker-django-webapp-linux* откройте файл *app/templates/app/index.html*.
 
 1. Измените первый элемент HTML в соответствии со следующим кодом.
 
@@ -561,7 +565,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
 
     Вы также можете проверить файлы журнала в браузере на странице `https://<app-name>.scm.azurewebsites.net/api/logs/docker`.
 
-1. Чтобы остановить потоковую передачу журналов, нажмите клавиши **CTRL**+**C** .
+1. Чтобы остановить потоковую передачу журналов, нажмите клавиши **CTRL**+**C**.
 
 ## <a name="connect-to-the-container-using-ssh"></a>Подключение контейнера с помощью SSH.
 

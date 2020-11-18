@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/17/2018
 ms.author: cherylmc
-ms.openlocfilehash: 2c9b8a769dec1a2aa461a34203c98a228cf71d16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 63505f470410234f720dd28c29e87c4a2a6d123f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082058"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661143"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-powershell"></a>Подключение виртуальных сетей из различных моделей развертывания с использованием PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "87082058"
 
 ### <a name="prerequisites"></a><a name="pre"></a>Предварительные требования
 
-* Обе виртуальные сети уже созданы. Если требуется создать виртуальную сеть Resource Manager, ознакомьтесь с [этой статьей](../virtual-network/quick-create-powershell.md#create-a-resource-group-and-a-virtual-network). Сведения о создании классической виртуальной сети см. в статье [Создание (классической) виртуальной сети](https://docs.microsoft.com/azure/virtual-network/create-virtual-network-classic).
+* Обе виртуальные сети уже созданы. Если требуется создать виртуальную сеть Resource Manager, ознакомьтесь с [этой статьей](../virtual-network/quick-create-powershell.md#create-a-resource-group-and-a-virtual-network). Сведения о создании классической виртуальной сети см. в статье [Создание (классической) виртуальной сети](/previous-versions/azure/virtual-network/create-virtual-network-classic).
 * Диапазоны адресов для виртуальных сетей не перекрываются между собой или с другими диапазонами подключений, к которым могут быть подключены шлюзы.
 * В системе установлена последняя версия командлетов Azure PowerShell. Дополнительные сведения см. в статье [Как установить и настроить Azure PowerShell](/powershell/azure/). Командлеты управления службой и Resource Manager должны быть установлены. 
 
@@ -90,7 +90,7 @@ ms.locfileid: "87082058"
    ```azurepowershell
    Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
    ```
-3. Откройте скачанный XML-файл, чтобы внести изменения. Пример файла конфигурации сети см. в [схеме конфигурации сети](https://msdn.microsoft.com/library/jj157100.aspx).
+3. Откройте скачанный XML-файл, чтобы внести изменения. Пример файла конфигурации сети см. в [схеме конфигурации сети](/previous-versions/azure/reference/jj157100(v=azure.100)).
 
 ### <a name="2-verify-the-gateway-subnet"></a>2. Проверка подсети шлюза
 В элементе **VirtualNetworkSites** добавьте подсеть шлюза в виртуальную сеть, если она еще не создана. При работе с файлом конфигурации сети для подсети шлюза необходимо задать имя GatewaySubnet. В противном случае Azure не удастся распознать и использовать ее в качестве подсети шлюза.

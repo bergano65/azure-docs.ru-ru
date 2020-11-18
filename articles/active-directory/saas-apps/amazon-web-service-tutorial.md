@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/14/2020
+ms.date: 11/03/2020
 ms.author: jeedes
-ms.openlocfilehash: fe591c55065372245d95210ab0282a0070c96434
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 764342f237452d9322d44c86ebdb41691b44495d
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318789"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360723"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
@@ -27,6 +27,9 @@ ms.locfileid: "92318789"
 * Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+
+> [!Note]
+> Azure AD не поддерживает интеграцию единого входа с AWS SSO, так как это продукт, отличный от AWS. Хотя об этом упоминается на странице [AWS](https://docs.aws.amazon.com/singlesignon/latest/userguide/azure-ad-idp.html), Azure AD рекомендует клиентам использовать вместо этого интеграцию AWS IAM, чтобы обеспечить лучшую защиту с помощью политик условного доступа для отдельных учетных записей, а также улучшить управление этими приложениями.
 
 ![Схема связи между Azure AD и AWS](./media/amazon-web-service-tutorial/tutorial_amazonwebservices_image.png)
 
@@ -61,7 +64,6 @@ ms.locfileid: "92318789"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Amazon Web Services (AWS) поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
-* После настройки Amazon Web Services (AWS) можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
 
 > [!NOTE]
 > Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
@@ -280,7 +282,7 @@ ms.locfileid: "92318789"
 
     b. В поле **Description** (Описание) введите текст: **Эта политика позволит получать роли из учетных записей AWS**.
 
-    c. Выберите**Create policy** (Создать политику).
+    c. Выберите **Create policy** (Создать политику).
 
 17. Создайте учетную запись пользователя в службе IAM AWS.
 
@@ -364,37 +366,40 @@ ms.locfileid: "92318789"
 
 ## <a name="test-sso"></a>Проверка единого входа
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов. 
 
-Щелкнув плитку Amazon Web Services (AWS) на панели доступа, вы автоматически войдете в приложение Amazon Web Services (AWS), для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
+#### <a name="sp-initiated"></a>Инициация поставщиком услуг:
+
+* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Amazon Web Services (AWS), где можно инициировать поток входа.  
+
+* Перейдите по URL-адресу для входа в Amazon Web Services (AWS) и инициируйте поток входа.
+
+#### <a name="idp-initiated"></a>Вход, инициированный поставщиком удостоверений
+
+* На портале Azure выберите **Тестировать приложение**, и вы автоматически войдете в приложение Amazon Web Services (AWS), для которого настроен единый вход. 
+
+Вы можете также использовать Панель доступа корпорации Майкрософт для тестирования приложения в любом режиме. Щелкнув плитку Amazon Web Services (AWS) на Панели доступа, вы перейдете на страницу входа приложения, если выполнены настройки для использования в режиме поставщика услуг, или автоматически войдете в приложение Amazon Web Services (AWS), для которого настроен единый вход, если выполнены настройки для использования в режиме поставщика удостоверений. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+
 
 ## <a name="known-issues"></a>Известные проблемы
 
  * В разделе **Подготовка** в подразделе **Сопоставление** отображается сообщение "Идет загрузка...", но никогда не отображаются сопоставления атрибутов. Единственный рабочий процесс подготовки, поддерживаемый сегодня, — импорт ролей из AWS в Azure AD для выбора во время назначения пользователя или группы. Сопоставления атрибутов для этого определены заранее и не настраиваются.
 
- * Раздел **Подготовка** поддерживает ввод только одного набора учетных данных для одного клиента AWS за раз. Все импортированные роли записываются в свойство `appRoles`[объекта `servicePrincipal`](/graph/api/resources/serviceprincipal?view=graph-rest-beta) Azure AD для клиента AWS.
+ * Раздел **Подготовка** поддерживает ввод только одного набора учетных данных для одного клиента AWS за раз. Все импортированные роли записываются в свойство `appRoles`[объекта `servicePrincipal`](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) Azure AD для клиента AWS.
 
    Вы можете добавить несколько клиентов AWS (представленных как `servicePrincipals`) в Azure AD из коллекции для подготовки. При этом существует известная проблема, когда не удается автоматически записывать все импортированные роли из нескольких `servicePrincipals` AWS, используемых для объединения в `servicePrincipal` и включения возможности единого входа.
 
-   В качестве решения можно использовать [Microsoft Graph API](/graph/api/resources/serviceprincipal?view=graph-rest-beta) для извлечения всех `appRoles`, импортируемых во все `servicePrincipal` AWS с настроенной подготовкой. Потом вы сможете добавить эти строки ролей в `servicePrincipal` AWS с настроенным единым входом.
+   В качестве решения можно использовать [Microsoft Graph API](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) для извлечения всех `appRoles`, импортируемых во все `servicePrincipal` AWS с настроенной подготовкой. Потом вы сможете добавить эти строки ролей в `servicePrincipal` AWS с настроенным единым входом.
 
 * Роли должны отвечать следующим требованиям, чтобы быть доступными для импорта из AWS в Azure AD:
 
   * Роли должны иметь только один поставщик SAML, определенный в AWS.
+  * Общая длина ARN (Имя ресурса Amazon) роли и ARN поставщика SAML не должна превышать 120 символов.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
+После настройки Amazon Web Services (AWS) вы сможете применить функцию управления сеансом, которая защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-
-- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
-
-- [Попробуйте Amazon Web Services (AWS) с Azure AD](https://aad.portal.azure.com/)
-
-- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
-
-- [Как защитить Amazon Web Services (AWS) с улучшенной видимостью и контролем](/cloud-app-security/protect-aws)
 
 [11]: ./media/amazon-web-service-tutorial/ic795031.png
 [12]: ./media/amazon-web-service-tutorial/ic795032.png

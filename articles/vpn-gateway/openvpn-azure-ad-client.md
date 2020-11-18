@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/15/2020
 ms.author: alzam
-ms.openlocfilehash: 09d39acc867124acfd5c3c38d5c26053218972e7
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 7c2c1930b8f801db7f70baa5b713a641606be644
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109108"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661177"
 ---
 # <a name="azure-active-directory-authentication-configure-a-vpn-client-for-p2s-openvpn-protocol-connections"></a>Azure Active Directory проверка подлинности: Настройка VPN-клиента для подключений по протоколу P2S Опенвпн
 
@@ -30,7 +30,7 @@ ms.locfileid: "92109108"
 
 1. Последовательно выберите пункты Пуск и параметры > конфиденциальность > фоновые приложения.
 2. В разделе фоновые приложения убедитесь, что **приложение разрешить запуск в фоновом режиме** включено.
-3. В разделе Выберите приложения **, которые могут**выполняться в фоновом режиме, а затем включите параметры для VPN-клиента Azure.
+3. В разделе Выберите приложения **, которые могут** выполняться в фоновом режиме, а затем включите параметры для VPN-клиента Azure.
 
   ![разрешение](./media/openvpn-azure-ad-client/backgroundpermission.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "92109108"
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    !["Удалить"](./media/openvpn-azure-ad-client/delete/delete2.jpg)
+    ![удалить](./media/openvpn-azure-ad-client/delete/delete2.jpg)
 
 ## <a name="create-a-connection"></a><a name="connection"></a>Создание подключения
 
@@ -160,7 +160,7 @@ ms.locfileid: "92109108"
 
 ### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Разделы справки добавить DNS-суффиксы к VPN-клиенту?
 
-Вы можете изменить скачанный XML-файл профиля и добавить ** \<dnssuffixes> \<dnssufix> \</dnssufix> \</dnssuffixes> ** Теги.
+Вы можете изменить скачанный XML-файл профиля и добавить **\<dnssuffixes> \<dnssufix> \</dnssufix> \</dnssuffixes>** Теги.
 
 ```
 <azvpnprofile>
@@ -178,7 +178,7 @@ ms.locfileid: "92109108"
 
 ### <a name="how-do-i-add-custom-dns-servers-to-the-vpn-client"></a>Разделы справки добавить пользовательские DNS-серверы в VPN-клиент?
 
-Вы можете изменить скачанный XML-файл профиля и добавить ** \<dnsservers> \<dnsserver> \</dnsserver> \</dnsservers> ** Теги.
+Вы можете изменить скачанный XML-файл профиля и добавить **\<dnsservers> \<dnsserver> \</dnsserver> \</dnsservers>** Теги.
 
 ```
 <azvpnprofile>
@@ -194,12 +194,12 @@ ms.locfileid: "92109108"
 ```
 
 > [!NOTE]
-> Клиент Azure AD Опенвпн использует записи DNS таблица политики разрешения имен (NRPT). Это означает, что DNS-серверы не будут перечислены в выходных данных `ipconfig /all` . Чтобы подтвердить использование параметров DNS, обратитесь к разделу [Get-днсклиентнрптполици](https://docs.microsoft.com/powershell/module/dnsclient/get-dnsclientnrptpolicy?view=win10-ps&preserve-view=true) в PowerShell.
+> Клиент Azure AD Опенвпн использует записи DNS таблица политики разрешения имен (NRPT). Это означает, что DNS-серверы не будут перечислены в выходных данных `ipconfig /all` . Чтобы подтвердить использование параметров DNS, обратитесь к разделу [Get-днсклиентнрптполици](/powershell/module/dnsclient/get-dnsclientnrptpolicy?preserve-view=true&view=win10-ps) в PowerShell.
 >
 
 ### <a name="how-do-i-add-custom-routes-to-the-vpn-client"></a>Разделы справки добавить настраиваемые маршруты к VPN-клиенту?
 
-Вы можете изменить скачанный XML-файл профиля и добавить ** \<includeroutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</includeroutes> ** Теги.
+Вы можете изменить скачанный XML-файл профиля и добавить **\<includeroutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</includeroutes>** Теги.
 
 ```
 <azvpnprofile>
@@ -217,7 +217,7 @@ ms.locfileid: "92109108"
 
 ### <a name="how-do-i-block-exclude-routes-from-the-vpn-client"></a>Разделы справки блокировать (исключить) маршруты от VPN-клиента?
 
-Вы можете изменить скачанный XML-файл профиля и добавить ** \<excluderoutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</excluderoutes> ** Теги.
+Вы можете изменить скачанный XML-файл профиля и добавить **\<excluderoutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</excluderoutes>** Теги.
 
 ```
 <azvpnprofile>

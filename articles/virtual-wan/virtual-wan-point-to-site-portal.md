@@ -5,27 +5,28 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 10/06/2020
+ms.date: 11/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3d03d0267ff4fb16042d5cc2016e87139b88281a
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: e7e65d5d2941765df98b3bf3b7fb8ff2e89b7e9f
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056588"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94411207"
 ---
 # <a name="tutorial-create-a-user-vpn-connection-using-azure-virtual-wan"></a>Руководство по созданию пользовательского соединения VPN с помощью Виртуальной глобальной сети Azure
 
-В этом руководстве показано, как создать подключение к ресурсам в Azure через VPN-соединение IPsec/IKE (IKEv2) или OpenVPN с помощью Виртуальной глобальной сети. Этот тип подключения требует, чтобы клиент был настроен на клиентском компьютере. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
+В этом руководстве показано, как создать подключение к ресурсам в Azure через VPN-соединение IPsec/IKE (IKEv2) или OpenVPN с помощью Виртуальной глобальной сети. Этот тип подключения требует, чтобы VPN-клиент был настроен на клиентском компьютере. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
 
 В этом руководстве описано следующее:
 
 > [!div class="checklist"]
-> * Создание глобальной сети.
+> * Создание виртуальной глобальной сети
 > * Создание конфигурации подключения "точка — сеть"
-> * Создание концентратора.
+> * Создание виртуального концентратора
 > * Указание DNS-серверов
-> * Скачивание профиля VPN-клиента
+> * Создание пакета конфигурации профиля VPN-клиента
+> * Настройка VPN-клиентов
 > * Просмотр виртуальной глобальной сети
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwanp2s.png)
@@ -42,27 +43,28 @@ ms.locfileid: "92056588"
 
 Конфигурация подключения типа "точка — сеть" (P2S) определяет параметры для подключения удаленных клиентов.
 
-[!INCLUDE [Create client profiles](../../includes/virtual-wan-p2s-configuration-include.md)]
+[!INCLUDE [Create P2S configuration](../../includes/virtual-wan-p2s-configuration-include.md)]
 
-## <a name="create-hub-with-point-to-site-gateway"></a><a name="hub"></a>Создание концентратора с шлюзом типа "точка — сеть"
+## <a name="create-virtual-hub-and-gateway"></a><a name="hub"></a>Создание виртуального концентратора и шлюза
 
 [!INCLUDE [Create hub](../../includes/virtual-wan-p2s-hub-include.md)]
 
 ## <a name="specify-dns-server"></a><a name="dns"></a>Указание DNS-сервера
 
-Виртуальные частные шлюзы виртуальной глобальной сети позволяют указать до пяти DNS-серверов. Их можно настроить при создании концентратора или изменить позднее. Для этого найдите нужный виртуальный концентратор. В разделе **VPN пользователя (точка — сеть)** щелкните действие **настройки** и введите IP-адреса DNS-серверов в текстовые поля **Пользовательские DNS-серверы**.
+Эти параметры можно настроить при создании концентратора или изменить позже. Для этого найдите нужный виртуальный концентратор. В разделе **VPN пользователя (точка — сеть)** щелкните **Настроить** и введите IP-адреса DNS-серверов в текстовые поля **Пользовательские DNS-серверы**. Можно указать до 5 DNS-серверов.
 
    :::image type="content" source="media/virtual-wan-point-to-site-portal/custom-dns.png" alt-text="Пользовательские DNS-серверы" lightbox="media/virtual-wan-point-to-site-portal/custom-dns-expand.png":::
 
-## <a name="download-vpn-profile"></a><a name="download"></a>Загрузка профиля VPN
+## <a name="generate-vpn-client-profile-package"></a><a name="download"></a>Создание пакета профиля VPN-клиента
 
-Используйте профиль VPN для настройки клиентов.
+Создайте и скачайте пакет профиля VPN-клиента для настройки VPN-клиентов.
 
 [!INCLUDE [Download profile](../../includes/virtual-wan-p2s-download-profile-include.md)]
 
-### <a name="configure-user-vpn-clients"></a>Настройка клиентов VPN пользователя
+## <a name="configure-vpn-clients"></a><a name="configure-client"></a>Настройка VPN-клиентов
 
-Используйте загруженный профиль для настройки клиентов удаленного доступа. Процедуры для каждой операционной системы отличаются, поэтому следуйте инструкциям, применимым к вашей операционной системе.
+Используйте загруженный пакет профиля для настройки VPN-клиентов удаленного доступа. Процедуры для каждой операционной системы отличаются, поэтому следуйте соответствующим инструкциям.
+Завершив настройку клиента, можно установить подключение.
 
 [!INCLUDE [Configure clients](../../includes/virtual-wan-p2s-configure-clients-include.md)]
 

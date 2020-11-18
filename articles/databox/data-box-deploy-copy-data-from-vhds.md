@@ -7,14 +7,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 09/03/2019
+ms.date: 10/20/2019
 ms.author: alkohli
-ms.openlocfilehash: 28232981d007e7be04d520ec46739408d03d90b4
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 1394cf6511a65a0e406e51229953e8666d4d4d8d
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92124019"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337684"
 ---
 # <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Руководство по Использование Data Box для импорта данных в качестве управляемых дисков в Azure.
 
@@ -76,11 +76,11 @@ ms.locfileid: "92124019"
     > [!NOTE]
     > Учетные данные всех общих папок для управляемых дисков идентичны.
 
-    ![Получение учетных данных для доступа к общей папке](media/data-box-deploy-copy-data-from-vhds/get-share-credentials1.png)
+    ![Страница "Подключение и копирование", получение учетных данных общей папки](media/data-box-deploy-copy-data-from-vhds/get-share-credentials1.png)
 
-2. В диалоговом окне "Доступ к общей папке и копирование данных" скопируйте **имя пользователя** и **пароль** для общей папки. Нажмите кнопку **ОК**.
+2. В диалоговом окне **Доступ к общей папке и копирование данных** скопируйте **имя пользователя** и **пароль** для общей папки. Нажмите кнопку **ОК**.
     
-    ![Получение учетных данных для доступа к общей папке 2](media/data-box-deploy-copy-data-from-vhds/get-share-credentials2.png)
+    ![Страница "Подключение и копирование", копирование учетных данных общей папки](media/data-box-deploy-copy-data-from-vhds/get-share-credentials2.png)
 
 3. Чтобы получить доступ к общим папкам, связанным с вашим ресурсом (в следующем примере *mydbmdrg1*) на главном компьютере, откройте командное окно. В командной строке введите:
 
@@ -100,13 +100,13 @@ ms.locfileid: "92124019"
     C: \>
     ```
 
-4. Нажмите клавиши WINDOWS+R. В окне **Выполнить** введите `\\<device IP address>\<ShareName>`. Нажмите кнопку **ОК**, чтобы открыть проводник.
+5. Нажмите клавиши WINDOWS+R. В окне **Выполнить** введите `\\<device IP address>\<ShareName>`. Нажмите кнопку **ОК**, чтобы открыть проводник.
     
     ![Подключение к общей папке с помощью проводника](media/data-box-deploy-copy-data-from-vhds/connect-shares-file-explorer1.png)
 
     Следующие предварительно созданные папки теперь отображаются внутри каждой общей папки.
     
-    ![Подключение к общей папке с помощью проводника 2](media/data-box-deploy-copy-data-from-vhds/connect-shares-file-explorer2.png)
+    ![Подключение к общей папке с помощью проводника, папки для общей папки](media/data-box-deploy-copy-data-from-vhds/connect-shares-file-explorer2.png)
 
 
 ### <a name="connect-to-data-box-via-nfs"></a>Подключение к Data Box с помощью NFS
@@ -119,7 +119,7 @@ ms.locfileid: "92124019"
 
 2. Укажите IP-адрес NFS-клиента и щелкните **Добавить**. Вы можете настроить доступ для нескольких NFS-клиентов, выполнив это действие для каждого клиента. Нажмите кнопку **ОК**.
 
-    ![Настройка клиентского доступа NFS 2](media/data-box-deploy-copy-data-from-vhds/nfs-client-access2.png)
+    ![Настройка IP-адреса клиента NFS](media/data-box-deploy-copy-data-from-vhds/nfs-client-access2.png)
 
 2. Убедитесь, что на главном компьютере с ОС Linux установлен NFS-клиент [поддерживаемой версии](data-box-system-requirements.md). Используйте версию, подходящую для используемого вами дистрибутива ОС Linux.
 

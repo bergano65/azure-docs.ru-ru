@@ -9,12 +9,12 @@ ms.date: 08/20/2019
 ms.author: normesta
 ms.reviewer: sumameh
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f8b4b86656e7b1b4dfd8b69cbc8386f5b6ff6a8c
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 791b50f1458ba7ee127d45ee374b5589ade588e0
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92674930"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308195"
 ---
 # <a name="tutorial-implement-the-data-lake-capture-pattern-to-update-a-databricks-delta-table"></a>Руководство по Реализация шаблона сохранения озера данных для обновления таблицы Databricks Delta
 
@@ -37,7 +37,7 @@ ms.locfileid: "92674930"
 
 * Создайте учетную запись хранения, которая использует иерархическое пространство имен (Azure Data Lake Storage 2-го поколения). В рамках этого руководства используется учетная запись хранения с именем `contosoorders`. Убедитесь, что учетная запись пользователя содержит назначенную ей [роль участника для данных хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac).
 
-  Ознакомьтесь со статьей о [создании учетной записи Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
+   См. статью [Создание учетной записи хранения для использования с Azure Data Lake Storage 2-го поколения](create-data-lake-storage-account.md).
 
 * Создание субъекта-службы. В разделе [Руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
@@ -155,9 +155,9 @@ ms.locfileid: "92674930"
     > [!NOTE]
     > При настройке рабочей среды рассмотрите возможность сохранения ключа проверки подлинности в Azure Databricks. Затем в блоке кода замените ключ проверки подлинности ключом поиска. <br><br>Например, вместо использования строки кода `spark.conf.set("fs.azure.account.oauth2.client.secret", "<password>")` следует использовать строку `spark.conf.set("fs.azure.account.oauth2.client.secret", dbutils.secrets.get(scope = "<scope-name>", key = "<key-name-for-service-credential>"))`. <br><br>Выполнив инструкции из этого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
 
-2. Нажмите клавиши **SHIFT + ВВОД** , чтобы запустить код в этом блоке.
+2. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
-3. Скопируйте приведенный ниже блок кода и вставьте его в другую ячейку записной книжки. Затем нажмите сочетание клавиш **SHIFT+ВВОД** , чтобы выполнить этот блок кода.
+3. Скопируйте приведенный ниже блок кода и вставьте его в другую ячейку записной книжки. Затем нажмите сочетание клавиш **SHIFT+ВВОД**, чтобы выполнить этот блок кода.
 
    ```Python
    from pyspark.sql.types import StructType, StructField, DoubleType, IntegerType, StringType
@@ -254,7 +254,7 @@ ms.locfileid: "92674930"
 
    ![Управление учетной записью](./media/data-lake-storage-events/generate-token.png "Параметры пользователей")
 
-2. Нажмите кнопку **Создать новый токен** , а затем кнопку **Создать**.
+2. Нажмите кнопку **Создать новый токен**, а затем кнопку **Создать**.
 
    Не забудьте скопировать значение токена в надежное расположение. Этот токен потребуется функции Azure для аутентификации в Databricks, чтобы запустить задание.
   
@@ -262,7 +262,7 @@ ms.locfileid: "92674930"
 
    ![Создание функции Azure](./media/data-lake-storage-events/function-app-create-flow.png "Создание функции Azure")
 
-4. На странице **Создание** для приложения-функция выберите стек среды выполнения **.NET Core** , а также настройте экземпляр Application Insights.
+4. На странице **Создание** для приложения-функция выберите стек среды выполнения **.NET Core**, а также настройте экземпляр Application Insights.
 
    ![Настройка приложения-функции](./media/data-lake-storage-events/new-function-app.png "Настройка приложения-функции")
 
@@ -287,13 +287,13 @@ ms.locfileid: "92674930"
 
 8. Щелкните **Azure Event Grid Trigger** (Триггер Сетки событий Azure).
 
-   Установите расширение **Microsoft.Azure.WebJobs.Extensions.EventGrid** , если появится такое предложение. Если потребуется установить расширение, повторно щелкните **Azure Event Grid Trigger** (Триггер Сетки событий Azure), чтобы создать функцию.
+   Установите расширение **Microsoft.Azure.WebJobs.Extensions.EventGrid**, если появится такое предложение. Если потребуется установить расширение, повторно щелкните **Azure Event Grid Trigger** (Триггер Сетки событий Azure), чтобы создать функцию.
 
    Появится область **Новая функция**.
 
 9. В области **Новая функция** присвойте этой функции имя **UpsertOrder** и нажмите кнопку **Создать**.
 
-10. Замените содержимое файла приведенным ниже кодом и нажмите кнопку **Сохранить** :
+10. Замените содержимое файла приведенным ниже кодом и нажмите кнопку **Сохранить**:
 
     ```cs
     using "Microsoft.Azure.EventGrid"
@@ -337,7 +337,7 @@ ms.locfileid: "92674930"
     }
     ```
 
-   Этот код позволяет проанализировать сведения о возникшем событии хранилища и создать сообщение запроса с URL-адресом файла, вызвавшего событие. В составе этого сообщения функция передает значение в мини-приложение **source_file** , которое вы создали ранее. С помощью кода функции сообщение отправляется в задание Databricks Delta и для аутентификации применяется токен, который вы получили ранее.
+   Этот код позволяет проанализировать сведения о возникшем событии хранилища и создать сообщение запроса с URL-адресом файла, вызвавшего событие. В составе этого сообщения функция передает значение в мини-приложение **source_file**, которое вы создали ранее. С помощью кода функции сообщение отправляется в задание Databricks Delta и для аутентификации применяется токен, который вы получили ранее.
 
 ## <a name="create-an-event-grid-subscription"></a>Создание подписки Сетки событий
 

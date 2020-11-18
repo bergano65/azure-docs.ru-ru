@@ -8,12 +8,12 @@ ms.devlang: json
 ms.topic: tutorial
 ms.date: 12/02/2019
 ms.custom: mvc
-ms.openlocfilehash: 66d09503f5db95811f807aa7faa83b92facca992
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a6923f0a1d568cc695b86d1538ba55a3eb3444da
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92543701"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93341490"
 ---
 # <a name="tutorial-provision-an-azure-database-for-mysql-server-using-azure-resource-manager-template"></a>Руководство по Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
 
@@ -29,6 +29,8 @@ Azure Resource Manager с помощью базового REST API объявл�
 > * Загрузка примера данных
 > * Данные запросов
 > * Обновление данных
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
@@ -115,7 +117,7 @@ az group deployment create -g $ ExampleResourceGroup   --template-file $ {templa
 az mysql server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin** .
+Результаты выводятся в формате JSON. Запишите значения **fullyQualifiedDomainName** и **administratorLogin**.
 ```json
 {
   "administratorLogin": "myadmin",
@@ -199,13 +201,47 @@ UPDATE inventory SET quantity = 200 WHERE name = 'banana';
 SELECT * FROM inventory;
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите ненужную группу ресурсов, когда надобность в ней отпадет. Ресурсы в ней также будут удалены.
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
+1. На [портале Azure](https://portal.azure.com) найдите и выберите элемент **Группы ресурсов**.
+
+2. В списке групп ресурсов выберите имя нужной группы ресурсов.
+
+3. На странице **Обзор** для этой группы ресурсов выберите **Удалить группу ресурсов**.
+
+4. В диалоговом окне подтверждения введите имя группы ресурсов и щелкните **Удалить**.
+
+# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
+
+```azurepowershell-interactive
+$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
+Remove-AzResourceGroup -Name $resourceGroupName
+Write-Host "Press [ENTER] to continue..."
+```
+
+# <a name="cli"></a>[CLI](#tab/CLI)
+
+```azurecli-interactive
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+az group delete --name $resourceGroupName &&
+echo "Press [ENTER] to continue ..."
+```
+
+---
+
 ## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как выполнять следующие операции:
 > [!div class="checklist"]
 > * Создание Базы данных Azure для сервера MySQL с конечной точкой службы в виртуальной сети с помощью шаблона Azure Resource Manager
-> * использование [программы командной строки MySQL](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) для создания базы данных.
+> * использование программы командной строки MySQL для создания базы данных;
 > * Загрузка примера данных
 > * Данные запросов
 > * Обновление данных
-> 
+
+> [!div class="nextstepaction"]
 > [Как подключить приложения к базе данных Azure для MySQL](./howto-connection-string.md)

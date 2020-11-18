@@ -11,18 +11,18 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: afc851be08e6708efc0138dc45931cda147c67c1
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 20173c4ba02f53a526167a5a8e22bd0cedc85594
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895891"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93393224"
 ---
 # <a name="tutorial-run-a-hello-world-python-script-part-2-of-4"></a>Руководство по выполнению скрипта "Hello world!" Сценарий Python (часть 2 из 4)
 
 В рамках этого учебника вы узнаете, как использовать пакет SDK Машинного обучения Azure для Python, чтобы отправить и запустить скрипт Python "Hello world!" .
 
-Этот учебник является *второй частью серии учебников из четырех частей* , в рамках которой вы ознакомитесь с основами Машинного обучения Azure и выполните задачи машинного обучения на основе заданий в Azure. Этот учебник создан на основе работы, выполненной в рамках статьи [Часть 1. Настройка локального компьютера для службы "Машинное обучение Azure"](tutorial-1st-experiment-sdk-setup-local.md).
+Этот учебник является *второй частью серии учебников из четырех частей*, в рамках которой вы ознакомитесь с основами Машинного обучения Azure и выполните задачи машинного обучения на основе заданий в Azure. Этот учебник создан на основе работы, выполненной в рамках статьи [Часть 1. Настройка локального компьютера для службы "Машинное обучение Azure"](tutorial-1st-experiment-sdk-setup-local.md).
 
 Выполняя данное руководство, вы сделаете следующее:
 
@@ -99,7 +99,7 @@ print(aml_url)
       `ws = Workspace.from_config()`
    :::column-end:::
    :::column span="2":::
-      [Workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true) подключается к рабочей области Машинного обучения Azure, чтобы можно было взаимодействовать с ресурсами Машинного обучения Azure.
+      [Workspace](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) подключается к рабочей области Машинного обучения Azure, чтобы можно было взаимодействовать с ресурсами Машинного обучения Azure.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -107,7 +107,7 @@ print(aml_url)
       `experiment =  Experiment( ... )`
    :::column-end:::
    :::column span="2":::
-      [Experiment](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py&preserve-view=true) предоставляет простой способ организации нескольких запусков с одним именем. В дальнейшем можно увидеть, как эксперименты упрощают сравнение метрик множества запусков.
+      [Experiment](/python/api/azureml-core/azureml.core.experiment.experiment?preserve-view=true&view=azure-ml-py) предоставляет простой способ организации нескольких запусков с одним именем. В дальнейшем можно увидеть, как эксперименты упрощают сравнение метрик множества запусков.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -115,7 +115,7 @@ print(aml_url)
       `config = ScriptRunConfig( ... )` 
    :::column-end:::
    :::column span="2":::
-      [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true) создает оболочку для кода `hello.py` и передает его в рабочую область. Как следует из названия, этот класс можно использовать для _настройки_ _запуска_ _скрипта_ в Машинном обучении Azure. Кроме того, он указывает, на каком целевом объекте вычислений будет выполняться скрипт. В этом коде целевым объектом является вычислительный кластер, созданный в рамках [учебника по настройке](tutorial-1st-experiment-sdk-setup-local.md).
+      [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py) создает оболочку для кода `hello.py` и передает его в рабочую область. Как следует из названия, этот класс можно использовать для _настройки_ _запуска_ _скрипта_ в Машинном обучении Azure. Кроме того, он указывает, на каком целевом объекте вычислений будет выполняться скрипт. В этом коде целевым объектом является вычислительный кластер, созданный в рамках [учебника по настройке](tutorial-1st-experiment-sdk-setup-local.md).
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -123,7 +123,7 @@ print(aml_url)
       `run = experiment.submit(config)`
    :::column-end:::
    :::column span="2":::
-       Отправляет скрипт. Эта отправка называется [запуском](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true). Запуск инкапсулирует одно выполнение кода. Используйте запуск, чтобы отслеживать ход выполнения скрипта, записывать выходные данные, анализировать результаты, визуализировать метрики и многое другое.
+       Отправляет скрипт. Эта отправка называется [запуском](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py). Запуск инкапсулирует одно выполнение кода. Используйте запуск, чтобы отслеживать ход выполнения скрипта, записывать выходные данные, анализировать результаты, визуализировать метрики и многое другое.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -138,6 +138,14 @@ print(aml_url)
 ## <a name="submit-and-run-your-code-in-the-cloud"></a>Отправка и выполнение кода в облаке
 
 Запустите скрипт элемента управления, который затем выполняет `hello.py` в вычислительном кластере, созданном во время работы с [учебником по установке](tutorial-1st-experiment-sdk-setup-local.md).
+
+Первое выполнение займет 5–10 минут. Это происходит по следующей причине:
+
+* в облаке создается образ Docker;
+* размер вычислительного кластера изменяется с 0 на 1 узел;
+* Образ Docker загружается в вычислительный кластер. 
+
+Последующие выполнения происходят гораздо быстрее (в течение 15 секунд), так как образ Docker кэшируется в вычислительном кластере. Это можно проверить, повторно отправив приведенный ниже код после первого выполнения.
 
 ```bash
 python 03-run-hello.py

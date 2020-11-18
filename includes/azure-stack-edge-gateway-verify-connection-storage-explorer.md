@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 12/02/2019
 ms.author: alkohli
-ms.openlocfilehash: 3474a97f4b05fd1f944e18abebcef927232453e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 203c977fe9109cd8b2b6de561e975e20aacf700e
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89081055"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93376156"
 ---
 Если вы используете Обозреватель службы хранилища впервые, выполните следующие действия.
 
@@ -24,11 +24,11 @@ ms.locfileid: "89081055"
 
 1. В Обозревателе службы хранилища выберите учетные записи хранения. Щелкните пункт правой кнопкой мыши и выберите параметр **Подключиться к хранилищу Azure**. 
 
-    ![Настройка Обозревателя службы хранилища](media/azure-stack-edge-gateway-verify-connection-storage-explorer/connect-with-storage-explorer-2.png)
+    ![Настройка Обозревателя службы хранилища 2](media/azure-stack-edge-gateway-verify-connection-storage-explorer/connect-with-storage-explorer-2.png)
 
 2. В диалоговом окне **Подключение к службе хранилища Azure** выберите **Использовать имя и ключ учетной записи хранения**.
 
-    ![Настройка Обозревателя службы хранилища](media/azure-stack-edge-gateway-verify-connection-storage-explorer/connect-with-storage-explorer-3.png)
+    ![Настройка Обозревателя службы хранилища 3](media/azure-stack-edge-gateway-verify-connection-storage-explorer/connect-with-storage-explorer-3.png)
 
 2. В диалоговом окне **Подключение с именем и ключом** выполните приведенные ниже действия.
 
@@ -39,11 +39,11 @@ ms.locfileid: "89081055"
     5. Установите флажок **Использовать HTTP**, так как передача осуществляется через *HTTP*. 
     6. Выберите **Далее**.
 
-    ![Настройка Обозревателя службы хранилища](media/azure-stack-edge-gateway-verify-connection-storage-explorer/connect-with-storage-explorer-4.png)    
+    ![Настройка Обозревателя службы хранилища 4](media/azure-stack-edge-gateway-verify-connection-storage-explorer/connect-with-storage-explorer-4.png)    
 
 3. Проверьте сведения в диалоговом окне **Сводка подключения**. Щелкните **Подключить**.
 
-    ![Настройка Обозревателя службы хранилища](media/azure-stack-edge-gateway-verify-connection-storage-explorer/connect-with-storage-explorer-5.png)
+    ![Настройка Обозревателя службы хранилища 5](media/azure-stack-edge-gateway-verify-connection-storage-explorer/connect-with-storage-explorer-5.png)
 
 4. Успешно добавленная учетная запись отображается в левой области Обозревателя службы хранилища, а к ее имени будет добавлен текст (Внешняя, Другая). Выберите **Контейнеры больших двоичных объектов**, чтобы просмотреть контейнер.
 
@@ -59,27 +59,27 @@ ms.locfileid: "89081055"
 
 2. В диалоговом окне **Отправить файлы** перейдите к файлам, которые необходимо отправить, и выберите их. Выберите **Далее**.
 
-    ![Проверка передачи данных](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-2.png)
+    ![Проверка передачи данных 2](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-2.png)
 
 3. Убедитесь, что файлы отправлены. Отправленные файлы появятся в контейнере.
 
-    ![Проверка передачи данных](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-3.png)
+    ![Проверка передачи данных 3](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-3.png)
 
 4. Затем вы подключитесь к учетной записи хранения Azure, которая была сопоставлена с этой учетной записью хранения Edge. Любые данные, которые отправляются в учетную запись хранения Edge, должны автоматически распределяться по уровням в учетной записи хранения Azure. 
     
     Чтобы получить строку подключения для учетной записи хранения Azure, последовательно выберите **Учетная запись хранения Azure > Ключи доступа** и скопируйте строку подключения.
 
-    ![Проверка передачи данных](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-5.png)
+    ![Проверка передачи данных 4](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-5.png)
 
     Используйте строку подключения, чтобы присоединить учетную запись хранения Azure.  
 
-    ![Проверка передачи данных](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-4.png)
+    ![Проверка передачи данных 5](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-4.png)
 
 
 5. Проверьте сведения в диалоговом окне **Сводка подключения**. Щелкните **Подключить**.
 
-    ![Проверка передачи данных](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-6.png)
+    ![Проверка передачи данных 6](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-6.png)
 
 6. Вы увидите, что файлы, которые вы отправили в учетную запись хранения Edge, были перенесены в учетную запись хранения Azure.
 
-    ![Проверка передачи данных](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-7.png)
+    ![Проверка передачи данных 7](media/azure-stack-edge-gateway-verify-connection-storage-explorer/verify-data-transfer-7.png)

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: e7713239391b49663328a7a058f8f6fd5b444335
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b08e834233e1ce12392d940cb0ccc0bef7e96158
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341337"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337752"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Использование OPENROWSET с бессерверным пулом SQL (предварительная версия) в Azure Synapse Analytics
 
@@ -129,7 +129,7 @@ WITH ( {'column_name' 'column_type' [ 'column_ordinal'] })
 Позволяет задать путь в хранилище, указывающий на папку или файл, который нужно считать. Если путь указывает на контейнер или папку, все файлы будут считываться только из этого контейнера или папки. Файлы во вложенных папках не включаются. 
 
 Для выбора нескольких файлов или папок можно использовать подстановочные знаки. Допускается использование нескольких подстановочных знаков, если они размещены не подряд.
-Ниже приведен пример для считывания всех файлов *.csv* , в начале имени которых указано *population* , из всех папок, в начале имени которых указано */csv/population* :  
+Ниже приведен пример для считывания всех файлов *.csv*, в начале имени которых указано *population*, из всех папок, в начале имени которых указано */csv/population*:  
 `https://sqlondemandstorage.blob.core.windows.net/csv/population*/population*.csv`
 
 Если указать, что unstructured_data_path является папкой, тогда запрос бессерверного пула SQL будет извлекать файлы из этой папки. 
@@ -261,12 +261,12 @@ DATAFILETYPE = { 'char' | 'widechar' }
 | BINARY |UTF8 |varchar \*(параметры сортировки UTF8) |
 | BINARY |STRING |varchar \*(параметры сортировки UTF8) |
 | BINARY |ENUM|varchar \*(параметры сортировки UTF8) |
-| BINARY |UUID |UNIQUEIDENTIFIER |
+| FIXED_LEN_BYTE_ARRAY |UUID |UNIQUEIDENTIFIER |
 | BINARY |DECIMAL |Decimal |
-| BINARY |JSON |varchar(max) \*(параметры сортировки UTF8) |
-| BINARY |BSON |varbinary(max) |
+| BINARY |JSON |varchar(8000) \*(параметры сортировки UTF8) |
+| BINARY |BSON | Не поддерживается |
 | FIXED_LEN_BYTE_ARRAY |DECIMAL |Decimal |
-| BYTE_ARRAY |INTERVAL |varchar(max), сериализованный в стандартизированный формат |
+| BYTE_ARRAY |INTERVAL | Не поддерживается |
 | INT32 |INT(8, true) |smallint |
 | INT32 |INT(16, true) |smallint |
 | INT32 |INT(32, true) |INT |
@@ -279,10 +279,10 @@ DATAFILETYPE = { 'char' | 'widechar' }
 | INT64 |INT(64, true) |BIGINT |
 | INT64 |INT(64, false) |decimal(20,0) |
 | INT64 |DECIMAL |Decimal |
-| INT64 |TIME (MICROS / NANOS) |time |
-|INT64 |TIMESTAMP (MILLIS / MICROS / NANOS) |datetime2 |
-|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#lists) |Список |varchar(max), сериализованный в JSON |
-|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#maps)|MAP|varchar(max), сериализованный в JSON |
+| INT64 |TIME (MICROS) |time — TIME(NANOS) не поддерживается |
+|INT64 |TIMESTAMP (MILLIS / MICROS) |datetime2 — TIMESTAMP(NANOS) не поддерживается |
+|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#lists) |Список |varchar(8000), сериализованный в JSON |
+|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#maps)|MAP|varchar(8000), сериализованный в JSON |
 
 ## <a name="examples"></a>Примеры
 

@@ -1,5 +1,5 @@
 ---
-title: Подготовка ресурсов для аварийного восстановления Решения Azure VMware с помощью Azure Site Recovery
+title: Подготовка ресурсов Azure Site Recovery для аварийного восстановления виртуальных машин Решения VMware
 description: Сведения о подготовке ресурсов для аварийного восстановления компьютеров Решения Azure VMware с помощью службы Azure Site Recovery.
 services: site-recovery
 author: Harsha-CS
@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.date: 09/29/2020
 ms.author: harshacs
 ms.custom: MVC
-ms.openlocfilehash: 83e2c46e1ce1977d0dd136e821c90843ce2de481
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.openlocfilehash: 2bd305e3760a8c3d743037e7d90b71f5e9579eda
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814306"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93395484"
 ---
-# <a name="prepare-azure-resources-for-disaster-recovery-of-azure-vmware-solution-to-azure"></a>Подготовка ресурсов для аварийного восстановления Решения Azure VMware в Azure
+# <a name="prepare-azure-site-recovery-resources-for-disaster-recovery-of-azure-vmware-solution-vms"></a>Подготовка ресурсов Azure Site Recovery для аварийного восстановления виртуальных машин Решения VMware
 
 В этой статье описывается подготовка ресурсов и компонентов Azure таким образом, чтобы вы могли настроить аварийное восстановление виртуальных машин Решения Azure VMware с помощью службы [Azure Site Recovery](site-recovery-overview.md). [Решение Azure VMware](../azure-vmware/introduction.md) предоставляет частные облака на платформе Azure. Эти частные облака содержат кластеры vSphere, созданные на основе выделенной инфраструктуры Azure без операционной системы.
 
@@ -63,7 +63,7 @@ ms.locfileid: "91814306"
 2. Щелкните **Backup and Site Recovery** и на соответствующей странице нажмите кнопку **Создать**. 
 3. На странице **Создание хранилища Служб восстановления** выберите **Подписки**. Мы используем **подписку Contoso**.
 4. В разделе **Группа ресурсов** создайте группу ресурсов или выберите имеющуюся. При работе с этим руководством используется **contosoRG**.
-5. В поле **Имя хранилища**введите понятное имя для идентификации хранилища. В этой серии руководств используется имя **ContosoVMVault**.
+5. В поле **Имя хранилища** введите понятное имя для идентификации хранилища. В этой серии руководств используется имя **ContosoVMVault**.
 6. В поле **Регион** выберите регион, в котором будет размещаться хранилище. выбираем значение **Западная Европа**.
 7. Выберите **Review + create** (Просмотреть и создать).
 

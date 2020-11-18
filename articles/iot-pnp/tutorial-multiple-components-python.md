@@ -1,18 +1,18 @@
 ---
-title: Подключение примера кода устройства IoT Plug and Play компонента Python к Центру Интернета вещей | Документация Майкрософт
-description: Создайте и запустите пример кода Python устройства IoT Plug and Play, который использует несколько компонентов и подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
+title: Учебник. Подключение примера кода Python устройства IoT Plug and Play к Центру Интернета вещей Azure | Документация Майкрософт
+description: Учебник. Создание и запуск примера кода Python устройства IoT Plug and Play, который использует несколько компонентов и подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 7/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 1b329206dcc41d8f7fcb3874da037f5b57142722
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 0a4130688d479902f7836ae09c4006bb36fc16d2
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91613668"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421402"
 ---
 # <a name="tutorial-connect-a-sample-iot-plug-and-play-multiple-component-device-application-to-iot-hub-python"></a>Руководство по подключению примера приложения многокомпонентного устройства IoT Plug and Play к Центру Интернета вещей (Python)
 
@@ -93,7 +93,7 @@ git clone https://github.com/Azure/azure-iot-sdk-python
     - Обновляет доступные для чтения свойства своих компонентов путем вызова `patch_twin_reported_properties`.
 
     - Начинает прослушивание запросов команд с помощью функции `execute_command_listener`. Функция настраивает прослушиватель для запросов команд от службы. При настройке прослушивателя вы предоставляете параметры `method_name`, `user_command_handler` и дополнительный параметр `create_user_response_handler`.
-        - `method_name` определяет запрос команды. В этом примере модель определяет команды **перезагрузки**и **getMaxMinReport**.
+        - `method_name` определяет запрос команды. В этом примере модель определяет команды **перезагрузки** и **getMaxMinReport**.
         - Функция `user_command_handler` определяет действия устройства при получении команды.
         - Функция `create_user_response_handler` создает ответ, который будет отправлен в Центр Интернета вещей при успешном выполнении команды. Этот ответ можно просмотреть на портале. Если эта функция не указана, в службу отправляется общий ответ.
 
