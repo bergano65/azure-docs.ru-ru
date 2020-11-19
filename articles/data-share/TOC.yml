@@ -25,6 +25,10 @@
       displayName: 'Azure CLI, az datashare consumer invitation, az datashare consumer share-subscription'
 - name: Основные понятия
   items:
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Терминология Azure Data Share
       href: terminology.md
     - name: Роли и требования

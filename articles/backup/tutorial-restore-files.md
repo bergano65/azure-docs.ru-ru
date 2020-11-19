@@ -4,12 +4,12 @@ description: Сведения о процедуре восстановления
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: cf55b9d64d7d716aee9862b0e1e3e24966629286
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 236b2c2c7799ef6a0df1da2ddded0e689349e222
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746687"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842215"
 ---
 # <a name="restore-files-to-a-virtual-machine-in-azure"></a>Восстановление файлов на виртуальной машине в Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "92746687"
 
 Чтобы восстановить файлы, служба архивации Azure предоставляет сценарий для запуска на виртуальной машине: она подключает точку восстановления как локальный диск. Вы можете просмотреть этот локальный диск, восстановить файлы на виртуальной машине, а затем отключить точку восстановления. Служба архивации Azure продолжает выполнять резервное копирование данных согласно назначенной политике расписания и хранения.
 
-1. Чтобы создать список точек восстановления для виртуальной машины, используйте команду [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az-backup-recoverypoint-list). В этом примере мы выбираем последнюю точку восстановления для виртуальной машины с именем *myVM* , защищенной в хранилище *myRecoveryServicesVault* :
+1. Чтобы создать список точек восстановления для виртуальной машины, используйте команду [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az-backup-recoverypoint-list). В этом примере мы выбираем последнюю точку восстановления для виртуальной машины с именем *myVM*, защищенной в хранилище *myRecoveryServicesVault*:
 
     ```azurecli-interactive
     az backup recoverypoint list \
@@ -89,7 +89,7 @@ ms.locfileid: "92746687"
         --output tsv
     ```
 
-2. Чтобы получить сценарий, который подключает точку восстановления к виртуальной машине, используйте команду [az backup restore files mount-rp](/cli/azure/backup/restore/files#az-backup-restore-files-mount-rp). В следующем примере мы получаем скрипт для виртуальной машины с именем *myVM* , защищенной в хранилище *myRecoveryServicesVault* .
+2. Чтобы получить сценарий, который подключает точку восстановления к виртуальной машине, используйте команду [az backup restore files mount-rp](/cli/azure/backup/restore/files#az-backup-restore-files-mount-rp). В следующем примере мы получаем скрипт для виртуальной машины с именем *myVM*, защищенной в хранилище *myRecoveryServicesVault*.
 
     Замените *myRecoveryPointName* именем точки восстановления, полученной в предыдущей команде:
 
@@ -119,7 +119,7 @@ ms.locfileid: "92746687"
 Скопировав сценарий восстановления на виртуальную машину, вы можете подключить точку восстановления и восстановить файлы.
 
 >[!NOTE]
-> Прежде чем продолжить работу, проверьте [здесь](backup-azure-restore-files-from-vm.md#selecting-the-right-machine-to-run-the-script), удастся ли запустить этот сценарий на виртуальной машине.
+> Прежде чем продолжить работу, проверьте [здесь](backup-azure-restore-files-from-vm.md#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script), удастся ли запустить этот сценарий на виртуальной машине.
 
 1. Подключитесь к виртуальной машине по протоколу SSH. Замените *publicIpAddress* общедоступным IP-адресом виртуальной машины следующим образом:
 
@@ -127,7 +127,7 @@ ms.locfileid: "92746687"
     ssh publicIpAddress
     ```
 
-2. Чтобы сценарий работал правильно, необходимо добавить разрешения на выполнение с помощью команды **chmod** . Введите имя собственного сценария:
+2. Чтобы сценарий работал правильно, необходимо добавить разрешения на выполнение с помощью команды **chmod**. Введите имя собственного сценария:
 
     ```bash
     chmod +x myVM_we_1571974050985163527.sh
@@ -141,7 +141,7 @@ ms.locfileid: "92746687"
 
     Во время выполнения скрипта вам будет предложено ввести пароль для доступа к точке восстановления. Введите пароль, указанный в выходных данных предыдущей команды [az backup restore files mount-rp](/cli/azure/backup/restore/files#az-backup-restore-files-mount-rp), с помощью которой был создан сценарий восстановления.
 
-    В выходных данных сценария будет указан путь к точке подключения. В следующем примере выходные данные указывают, что точка восстановления подключена по адресу */home/azureuser/myVM-20170919213536/Volume1* :
+    В выходных данных сценария будет указан путь к точке подключения. В следующем примере выходные данные указывают, что точка восстановления подключена по адресу */home/azureuser/myVM-20170919213536/Volume1*:
 
     ```output
     Microsoft Azure VM Backup - File Recovery
@@ -163,7 +163,7 @@ ms.locfileid: "92746687"
     ************ Open File Explorer to browse for files. ************
     ```
 
-4. Используйте команду **cp** , чтобы скопировать веб-страницу по умолчанию NGINX из подключенной точки восстановления обратно в исходное расположение файла. Замените точку подключения */home/azureuser/myVM-20170919213536/Volume1* именем вашего расположения:
+4. Используйте команду **cp**, чтобы скопировать веб-страницу по умолчанию NGINX из подключенной точки восстановления обратно в исходное расположение файла. Замените точку подключения */home/azureuser/myVM-20170919213536/Volume1* именем вашего расположения:
 
     ```bash
     sudo cp /home/azureuser/myVM-20170919213536/Volume1/var/www/html/index.nginx-debian.html /var/www/html/
@@ -179,7 +179,7 @@ ms.locfileid: "92746687"
     exit
     ```
 
-7. Отключите точку восстановления от виртуальной машины с помощью команды [az backup restore files unmount-rp](/cli/azure/backup/restore/files#az-backup-restore-files-unmount-rp). В следующем примере выполняется отключение точки восстановления от виртуальной машины *myVM* в хранилище *myRecoveryServicesVault* .
+7. Отключите точку восстановления от виртуальной машины с помощью команды [az backup restore files unmount-rp](/cli/azure/backup/restore/files#az-backup-restore-files-unmount-rp). В следующем примере выполняется отключение точки восстановления от виртуальной машины *myVM* в хранилище *myRecoveryServicesVault*.
 
     Замените *myRecoveryPointName* именем вашей собственной точки восстановления, полученной в предыдущей команде:
 

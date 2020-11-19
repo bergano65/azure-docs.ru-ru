@@ -4,13 +4,13 @@ description: В этом руководстве по Службе Azure Kubernet
 services: container-service
 ms.topic: tutorial
 ms.date: 09/30/2020
-ms.custom: mvc
-ms.openlocfilehash: 6619d7c9f7d2b0cd78f3941ce431e80342b6f563
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: c8401a81a36d86b871df9fc428c393007b97c400
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576444"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833917"
 ---
 # <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство. Обновление приложения в службе Azure Kubernetes
 
@@ -145,7 +145,7 @@ kubectl get service azure-vote-front
 
 Теперь откройте IP-адрес вашей службы в локальном веб-браузере.
 
-:::image type="content" source="media/container-service-kubernetes-tutorials/vote-app-updated-external.png" alt-text="Снимок экрана с примером обновленного образа контейнера приложения Azure для голосования, открытого с помощью локального веб-браузера и локального узла.":::
+:::image type="content" source="media/container-service-kubernetes-tutorials/vote-app-updated-external.png" alt-text="Снимок экрана с примером обновленного приложения Azure для голосования, открытого в локальном веб-браузере.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

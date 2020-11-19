@@ -114,8 +114,8 @@
           href: overview-authentication-authorization.md
         - name: Установка исправлений для ОС и среды выполнения
           href: overview-patch-os-runtime.md
-        - name: Встроенные средства управления безопасностью
-          href: app-service-security-controls.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md

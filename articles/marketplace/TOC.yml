@@ -386,5 +386,7 @@
       href: partner-center-portal/commercial-marketplace-co-sell-countries.md
     - name: Коды состояния для совместной продажи
       href: partner-center-portal/commercial-marketplace-co-sell-states.md
+    - name: Категории и подкатегории
+      href: categories.md
     - name: Поддерживаемые теги HTML
       href: supported-html-tags.md

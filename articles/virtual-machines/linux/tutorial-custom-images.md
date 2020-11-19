@@ -10,12 +10,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
 ms.reviewer: akjosh
-ms.openlocfilehash: 7fff8539f330c7cbc886577eaf6dbe4417411999
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22609465abfa0cbf30165bc9327d786b3244357e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498146"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844784"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-the-azure-cli"></a>Руководство по Создание пользовательского образа виртуальной машины Azure с помощью Azure CLI
 
@@ -156,7 +156,7 @@ az vm create --resource-group myResourceGroup \
 
 ## <a name="share-the-gallery"></a>Предоставление общего доступа к коллекции
 
-Вы можете предоставить общий доступ к образам в разных подписках, используя механизм управления доступом на основе ролей (RBAC). Такой доступ к образам можно предоставить на уровне коллекции, определения образа или версии образа. Любой пользователь с разрешениями на чтение версии образа, даже из другой подписки, сможет развернуть виртуальную машину с помощью версии образа.
+Вы можете предоставить общий доступ к образам в разных подписках, используя механизм управления доступом на основе ролей Azure (Azure RBAC). Такой доступ к образам можно предоставить на уровне коллекции, определения образа или версии образа. Любой пользователь с разрешениями на чтение версии образа, даже из другой подписки, сможет развернуть виртуальную машину с помощью версии образа.
 
 Мы рекомендуем предоставлять общий доступ другим пользователям на уровне коллекции. Чтобы получить идентификатор объекта коллекции, используйте команду [az sig show](/cli/azure/sig#az-sig-show).
 
@@ -176,7 +176,7 @@ az role assignment create \
    --scope <gallery ID>
 ```
 
-Дополнительные сведения о предоставлении общего доступа к ресурсам с помощью RBAC см. в статье [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md).
+Дополнительные сведения о совместном использовании ресурсов с помощью Azure RBAC см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md).
 
 ## <a name="azure-image-builder"></a>Средство создания образов Azure
 

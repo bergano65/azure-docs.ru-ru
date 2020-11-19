@@ -13,6 +13,10 @@
         - name: Шаблон ARM
           displayName: Resource Manager
           href: advisor-alerts-arm.md
+- name: Основные понятия
+  items:
+    - name: Базовые средства безопасности
+      href: security-baseline.md
 - name: Учебники
   items:
     - name: Начало работы с Помощником

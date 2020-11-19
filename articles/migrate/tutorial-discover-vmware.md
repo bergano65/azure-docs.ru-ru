@@ -4,12 +4,12 @@ description: Узнайте, как обнаружить локальные ви
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: f3e8f61c898b08cc0638597e77fd3260cb4593b2
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 8a09f4583bd5cdae977b927be9649897a2d24ee6
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311290"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832659"
 ---
 # <a name="tutorial-discover-vmware-vms-with-server-assessment"></a>Руководство по обнаружению виртуальных машин VMware с помощью средства оценки серверов
 
@@ -174,7 +174,7 @@ ms.locfileid: "92311290"
     
         **Алгоритм** | **Загрузить** | **SHA256**
         --- | --- | ---
-        VMware (11,9 ГБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140333) | bd5c19eec93a62d52cc507a6b7b408d07f33f92b7d39b8a1e3dfec4ec62830d7
+        VMware (11,9 ГБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140333) | e9c9a1fe4f3ebae81008328e8f3a7933d78ff835ecd871d1b17f367621ce3c74
 
     - Для Azure для государственных организаций:
     

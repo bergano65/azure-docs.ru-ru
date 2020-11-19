@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 0202c15a86c6ba36abb210eee28d4daa47bfe10e
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 9286d284bbe19edcb0d5d097327a01292d32f188
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318629"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699708"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security Benchmark
 
@@ -48,7 +48,7 @@ ms.locfileid: "92318629"
 |Ведение журналов и мониторинг |5.1.4 |Обеспечение того, что профиль журнала собирает журналы действий по всем регионам, включая глобальный |[Azure Monitor должен собирать журналы действий из всех регионов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F41388f1c-2db0-4c25-95b2-35d7f5ccbfa9) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_CaptureAllRegions.json) |
 |Ведение журналов и мониторинг |5.1.6 |Обеспечение того, что учетная запись хранения, содержащая контейнер с журналами действий, зашифрована с помощью BYOK |[Учетная запись хранения, содержащая контейнер с журналами действий, должна быть зашифрована с помощью BYOK](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffbb99e8e-e444-4da0-9ff1-75c92f5a85b2) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_StorageAccountBYOK_Audit.json) |
 |Ведение журналов и мониторинг |5.1.7 |Обеспечение того, что для параметр ведения журнала для Azure KeyVault включен |[Журналы диагностики в Key Vault должны быть включены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
-|Ведение журналов и мониторинг |5.2.1 |Обеспечение того, что для операции создания назначения политики существует оповещение журнала действий |[Для определенных операций политики должно существовать оповещение журнала действий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |
+|Ведение журналов и мониторинг |5.2.1 |Обеспечение того, что для операции создания назначения политики существует оповещение журнала действий |[Для определенных операций политики должно существовать оповещение журнала действий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |
 |Ведение журналов и мониторинг |5.2.2 |Обеспечение того, что для операции создания или обновления группы безопасности сети существует оповещение журнала действий |[Для выполнения определенных административных операций должно существовать оповещение журнала действий.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb954148f-4c11-4c38-8221-be76711e194a) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_AdministrativeOperations_Audit.json) |
 |Ведение журналов и мониторинг |5.2.3 |Обеспечение того, что для операции удаления группы безопасности сети существует оповещение журнала действий |[Для выполнения определенных административных операций должно существовать оповещение журнала действий.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb954148f-4c11-4c38-8221-be76711e194a) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_AdministrativeOperations_Audit.json) |
 |Ведение журналов и мониторинг |5.2.4 |Обеспечение того, что для операции создания или обновления правила группы безопасности сети существует оповещение журнала действий |[Для выполнения определенных административных операций должно существовать оповещение журнала действий.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb954148f-4c11-4c38-8221-be76711e194a) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_AdministrativeOperations_Audit.json) |

@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: b844f61963081bf355837fd26254915112cbce11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b63ce25d6839e8672027240099859dc7aad96c5
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666948"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886079"
 ---
 # <a name="client-and-server-architecture"></a>Архитектура клиента и сервера
 
@@ -37,19 +37,19 @@ ms.locfileid: "91666948"
 
 :::image type="content" source="../media/scenarios/archdiagram-access.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
 
-Дополнительные сведения см. в рекомендациях по [управлению удостоверениями](https://docs.microsoft.com/azure/security/fundamentals/identity-management-best-practices) .
+Дополнительные сведения см. в рекомендациях по [управлению удостоверениями](../../security/fundamentals/identity-management-best-practices.md) .
 
 ## <a name="browser-communication"></a>Взаимодействие с браузером
 
 Клиентские библиотеки JavaScript для связи Azure позволяют веб-приложениям с богатым текстом, голосовым и видео. Приложение напрямую взаимодействует со службами связи Azure через клиентскую библиотеку для доступа к плоскости данных и передачи текста, голоса и видео в режиме реального времени. Пример последовательности архитектуры можно найти ниже:
 
-:::image type="content" source="../media/scenarios/archdiagram-browser.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
+:::image type="content" source="../media/scenarios/archdiagram-browser.png" alt-text="Схема, демонстрирующая архитектуру браузера для служб связи.":::
 
 ## <a name="native-app-communication"></a>Взаимодействие собственного приложения
 
 Многие сценарии лучше обслуживаются в собственных приложениях. Службы связи Azure поддерживают взаимодействие "браузер-приложение" и "приложение-приложение".  При создании собственного приложения с помощью push-уведомлений пользователи могут получать вызовы, даже если приложение не выполняется. Службы связи Azure упрощают это с помощью интегрированных push-уведомлений в Google Firebase, Cлужба push-уведомлений Apple и Push-уведомления Windows. Пример последовательности архитектуры можно найти ниже:
 
-:::image type="content" source="../media/scenarios/archdiagram-app.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
+:::image type="content" source="../media/scenarios/archdiagram-app.png" alt-text="Схема, демонстрирующая архитектуру служб связи для взаимодействия с собственным приложением.":::
 
 ## <a name="voice-and-sms-over-the-public-switched-telephony-network-pstn"></a>Голосовой связи и SMS через общедоступную коммутируемую сеть (PSTN)
 
@@ -58,7 +58,7 @@ ms.locfileid: "91666948"
 > [!Note]
 > Во время общедоступной предварительной версии подготовка телефонных номеров США доступна клиентам с адресами для выставления счетов, расположенными в США и Канаде. 
 
-:::image type="content" source="../media/scenarios/archdiagram-pstn.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
+:::image type="content" source="../media/scenarios/archdiagram-pstn.png" alt-text="Схема, показывающая архитектуру PSTN служб связи.":::
 
 Дополнительные сведения о решениях PSTN и SMS см. в статье [Планирование решения PSTN и SMS](../concepts/telephony-sms/plan-solution.md) .
 
@@ -66,7 +66,7 @@ ms.locfileid: "91666948"
 
 Службы связи Azure поддерживают обмен данными между системами, а также текстовыми и голосовыми каналами со службами, которые напрямую обращаются к плоскости данных служб связи Azure. Например, программа-робот может отвечать на входящие телефонные звонки или участвовать в чате. Службы связи Azure предоставляют клиентские библиотеки, которые позволяют использовать эти сценарии для вызова и разговора. Пример последовательности архитектуры можно найти ниже:
 
-:::image type="content" source="../media/scenarios/archdiagram-bot.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
+:::image type="content" source="../media/scenarios/archdiagram-bot.png" alt-text="Схема, показывающая архитектуру &quot;службы связи&quot; (Bot).":::
 
 ## <a name="networking"></a>Сеть
 
@@ -75,7 +75,7 @@ ms.locfileid: "91666948"
 - **Вызов клиентской библиотеки** — устройства в вызове имеют доступ к интерфейсам API для отправки и получения данных через канал вызова. Это самый простой способ добавить обмен данными с существующим взаимодействием.
 - **Стун/turn** . службы связи Azure делают Стун, совместимые со стандартами, и включают службы, доступные вам. Это позволяет создавать сильно настроенный транспортный уровень поверх этих стандартизованных примитивов. Вы можете создать собственный клиент, совместимый с стандартов, или использовать библиотеки с открытым кодом, такие как [винртк](https://github.com/microsoft/winrtc).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание маркеров доступа пользователей](../quickstarts/access-tokens.md)

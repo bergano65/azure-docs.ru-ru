@@ -3,12 +3,12 @@ title: Примеры записных книжек Jupyter для предва�
 description: Эти примеры отлично подходят для знакомства с записными книжками Jupyter, работающими в бесплатных облачных службах "Записные книжки Azure".
 ms.topic: sample
 ms.date: 01/11/2019
-ms.openlocfilehash: 397e40f628e6e935fef74d2225d2e477aac7b276
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8282a4047ede7d1344551a052ccf1b0143dae66
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85834001"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845063"
 ---
 # <a name="discover-and-use-sample-notebooks-in-azure-notebooks-preview"></a>Обнаружение и использование примеров записных книжек в предварительной версии службы "Записные книжки Microsoft Azure"
 
@@ -36,4 +36,4 @@ ms.locfileid: "85834001"
 - [Руководство. Настройка проектов и управление ими](configure-manage-azure-notebooks-projects.md)
 - [Руководство. Работа с файлами данных](work-with-project-data-files.md)
 - [Руководство. Доступ к ресурсам данных](access-data-resources-jupyter-notebooks.md)
-- [Руководство. Использование Машинного обучения Azure](use-machine-learning-services-jupyter-notebooks.md)
+- [Руководство. Использование Машинного обучения Azure](../machine-learning/samples-notebooks.md)

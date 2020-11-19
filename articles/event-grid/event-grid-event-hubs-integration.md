@@ -3,13 +3,13 @@ title: Руководство по Отправка данных Центров 
 description: Руководство по Описывается, как перенести данные в Azure Synapse Analytics с помощью службы "Сетка событий Azure" и Центров событий Хранилище данных SQL использует функцию Azure, чтобы получить файл записи.
 ms.topic: tutorial
 ms.date: 07/07/2020
-ms.custom: devx-track-csharp
-ms.openlocfilehash: 4fb26bf92e6af1fd9e97f3b9434b4ab5e76316b3
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: devx-track-csharp, devx-track-azurecli
+ms.openlocfilehash: e6dfcac17d79edd417af07179224fdf922906c4e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305274"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841382"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство по Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из Хранилища BLOB-объектов в Azure Synapse Analytics (прежнее название — Хранилище данных SQL).
