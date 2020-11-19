@@ -65,6 +65,8 @@
       href: use-editor-create-project.md
     - name: Внедрение мини-приложений в приложение
       href: video-indexer-embed-widgets.md
+    - name: Рекомендации по использованию Индексатора видео в большом масштабе
+      href: considerations-when-use-at-scale.md
     - name: Аварийное восстановление
       href: video-indexer-disaster-recovery.md
     - name: Настройка моделей содержимого

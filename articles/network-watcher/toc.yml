@@ -28,7 +28,7 @@
       href: network-watcher-nsg-flow-logging-portal.md
 - name: Основные понятия
   items:
-    - name: Монитор подключений (предварительная версия)
+    - name: Монитор подключений
       href: connection-monitor-overview.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины
       href: network-watcher-ip-flow-verify-overview.md
@@ -58,7 +58,7 @@
   items:
     - name: Настройка Наблюдателя за сетями
       href: network-watcher-create.md
-    - name: Создание Монитора подключений (предварительная версия)
+    - name: Создание монитора подключения
       items:
         - name: Использование портала Azure
           href: connection-monitor-create-using-portal.md
@@ -66,11 +66,11 @@
           href: connection-monitor-create-using-template.md
         - name: Регистрация с помощью PowerShell
           href: connection-monitor-create-using-powershell.md
-    - name: Миграция в Монитор подключений (предварительная версия)
+    - name: Миграция в Монитор подключений
       items:
         - name: Из Монитора производительности сети
           href: migrate-to-connection-monitor-preview-from-network-performance-monitor.md
-        - name: Из Монитора подключений
+        - name: Из Монитора подключений (классическая версия)
           href: migrate-to-connection-monitor-preview-from-connection-monitor.md
     - name: Диагностика проблем с сетью виртуальных машин
       items:

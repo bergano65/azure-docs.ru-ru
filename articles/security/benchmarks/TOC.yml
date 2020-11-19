@@ -139,6 +139,8 @@
       href: ../../container-instances/security-baseline.md
     - name: Базовая конфигурация безопасности для Реестра контейнеров
       href: ../../container-registry/security-baseline.md
+    - name: Базовые средства безопасности сети доставки содержимого
+      href: ../../cdn/security-baseline.md
     - name: "Базовая конфигурация безопасности для Cosmos\_DB"
       href: ../../cosmos-db/security-baseline.md
     - name: Базовые средства безопасности Управления затратами

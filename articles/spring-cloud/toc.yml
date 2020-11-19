@@ -81,6 +81,8 @@
           href: spring-cloud-howto-start-stop-delete.md
         - name: Использование постоянного хранилища
           href: spring-cloud-howto-persistent-storage.md
+        - name: Определение исходящих общедоступных IP-адресов
+          href: spring-cloud-howto-outbound-public-ip.md
     - name: Монитор
       items:
         - name: Распределенная трассировка и App Insights

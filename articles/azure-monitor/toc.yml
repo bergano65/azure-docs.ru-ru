@@ -944,14 +944,28 @@
           href: insights/vminsights-maps.md
         - name: Мониторинг производительности
           href: insights/vminsights-performance.md
-        - name: Мониторинг изменений
-          href: insights/vminsights-change-analysis.md
+        - name: Мониторинг работоспособности гостевых систем (предварительная версия)
+          items:
+            - name: Обзор
+              href: insights/vminsights-health-overview.md
+            - name: Включить
+              href: insights/vminsights-health-enable.md
+            - name: видны узлы
+              href: insights/vminsights-health-alerts.md
+            - name: Настройка мониторов на портале
+              href: insights/vminsights-health-configure.md
+            - name: Настройка мониторов в большом масштабе
+              href: insights/vminsights-health-configure-dcr.md
+            - name: Диагностика
+              href: insights/vminsights-health-troubleshoot.md
         - name: Анализ данных с помощью запросов к журналу
           href: insights/vminsights-log-search.md
+        - name: Мониторинг производительности
+          href: insights/vminsights-alerts.md
+        - name: Мониторинг изменений
+          href: insights/vminsights-change-analysis.md
         - name: Визуализация данных с помощью книг
           href: insights/vminsights-workbooks.md
-        - name: Создание правил генерации оповещений
-          href: insights/vminsights-alerts.md
         - name: Отключение мониторинга
           href: insights/vminsights-optout.md
     - name: Azure Monitor для контейнеров

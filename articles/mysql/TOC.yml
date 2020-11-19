@@ -287,6 +287,10 @@
           items:
             - name: Остановка и запуск сервера MySQL
               href: how-to-stop-start-server.md
+        - name: Обновление основных версий
+          items:
+            - name: Обновление основных версий
+              href: how-to-major-version-upgrade.md
         - name: Автоматическое увеличение хранилища
           items:
             - name: Портал Azure

@@ -3,6 +3,8 @@
   items:
     - name: Сведения о Средах службы приложений
       href: intro.md
+    - name: "Среда службы приложений версии\_3 (предварительная версия)"
+      href: overview.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -10,11 +12,13 @@
       href: create-external-ase.md
     - name: Создание внутренней среды ASE
       href: create-ilb-ase.md
+    - name: "Создание ASE версии\_3 (предварительная версия)"
+      href: creation.md
 - name: Учебники
   items:
     - name: Интеграция с WAF
       href: app-service-app-service-environment-web-application-firewall.md
-    - name: Настройка TLS
+    - name: Настраиваемые параметры ASE
       href: app-service-app-service-environment-custom-settings.md
 - name: Примеры
   items:
@@ -28,12 +32,12 @@
       href: network-info.md
     - name: Географически распределенное масштабирование
       href: app-service-app-service-environment-geo-distributed-scale.md
-    - name: ASE версии 1
-      href: app-service-app-service-environment-intro.md
     - name: Диагностика
       href: ../overview-diagnostics.md
     - name: Сертификаты
       href: certificates.md
+    - name: "Сетевые подключения ASE версии\_3 (предварительная версия)"
+      href: networking.md
 - name: Руководства
   items:
     - name: Использование ASE
@@ -48,12 +52,16 @@
       href: firewall-integration.md
     - name: Избыточность в пределах зоны
       href: zone-redundancy.md
+    - name: "Использование ASE версии\_3 (предварительная версия)"
+      href: using.md
 - name: Справочник
   items:
     - name: Адреса управления
       href: management-addresses.md
     - name: "Документация по ASE версии\_1"
       items:
+        - name: ASE версии 1
+          href: app-service-app-service-environment-intro.md
         - name: Создание ASEv1
           href: app-service-web-how-to-create-an-app-service-environment.md
         - name: "Настройка среды ASE версии\_1"

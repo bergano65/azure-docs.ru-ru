@@ -98,6 +98,12 @@
           href: signalr-howto-diagnostic-logs.md
         - name: Аудит соответствия требованиям с помощью службы "Политика Azure"
           href: signalr-howto-azure-policy.md
+    - name: Устранение неполадок
+      items:
+        - name: Руководства по устранению неполадок
+          href: signalr-howto-troubleshoot-guide.md
+        - name: Методы устранения неполадок
+          href: signalr-howto-troubleshoot-method.md
 - name: Ссылки
   items:
     - name: Azure CLI

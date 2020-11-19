@@ -336,7 +336,9 @@
         - name: Резервное копирование и аварийное восстановление дисков
           href: ../backup-and-disaster-recovery-for-azure-iaas-disks.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Общие диски
-          href: disks-shared.md
+          href: ../disks-shared.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+        - name: Уровни производительности дисков
+          href: ../disks-change-performance.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Временные диски ОС
           href: ../ephemeral-os-disks.md
     - name: Сеть
@@ -971,8 +973,10 @@
               href: add-disk.md
             - name: Портал Azure
               href: attach-disk-portal.md
-        - name: Изменение уровня диска
+        - name: Изменение уровня диска в PowerShell или CLI
           href: ../disks-performance-tiers.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+        - name: Изменение уровня диска на портале
+          href: ../disks-performance-tiers-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Отсоединение диска
           href: detach-disk.md
         - name: Развертывание дисков с помощью шаблона ARM
@@ -1148,6 +1152,8 @@
               href: upload-vhd.md
             - name: Использование Azure Site Recovery
               href: ../../site-recovery/migrate-overview.md?bc=/azure/virtual-machines/linux/breadcrumb/toc.json&toc=/azure/virtual-machines/linux/toc.json
+        - name: Миграция из WebLogic в Azure
+          href: /azure/developer/java/migration/migrate-weblogic-to-virtual-machines
 - name: Справочник
   items:
     - name: Azure CLI
