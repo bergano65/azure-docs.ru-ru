@@ -13,12 +13,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 10/11/2017
 ms.author: routlaw
-ms.openlocfilehash: c3d35940a445b73ecb9285355f36b141c3a151b8
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 48fc9f7e021ba5158182344ddfdba3c8eafaf781
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92475062"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659222"
 ---
 # <a name="install-the-elastic-stack-on-an-azure-vm"></a>Установка Elastic Stack на виртуальной машине в Azure
 
@@ -211,7 +211,7 @@ sudo /usr/share/logstash/bin/logstash -f vm-syslog-logstash.conf
 Измените `/etc/kibana/kibana.yml` и IP-адрес, на котором Kibana ожидает передачи данных, чтобы получить к нему доступ из веб-браузера.
 
 ```bash
-server.host:"0.0.0.0"
+server.host: "0.0.0.0"
 ```
 
 Запустите Kibana с помощью следующей команды:
@@ -226,7 +226,7 @@ sudo systemctl start kibana.service
 az vm open-port --port 5601 --resource-group myResourceGroup --name myVM
 ```
 
-Откройте консоль Kibana и нажмите кнопку **Создать** , чтобы создать индекс по умолчанию, основанный на данных системного журнала, отправленных ранее в Elasticsearch. 
+Откройте консоль Kibana и нажмите кнопку **Создать**, чтобы создать индекс по умолчанию, основанный на данных системного журнала, отправленных ранее в Elasticsearch. 
 
 ![Снимок экрана: консоль Kibana, где выделена кнопка создания.](media/elasticsearch-install/kibana-index.png)
 

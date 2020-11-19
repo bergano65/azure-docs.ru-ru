@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 09/25/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e04c7da40719f77ca478f2ce577688af773f523d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 960657d27be4b9dab9f242428592bbb404a49d86
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399233"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697175"
 ---
 # <a name="tutorial-index-azure-sql-data-using-the-net-sdk"></a>Руководство по Индексирование данных SQL Azure с помощью пакета SDK для .NET
 
@@ -69,7 +69,7 @@ ms.locfileid: "91399233"
 
 1. Выберите файл и нажмите **Открыть**. Скрипт должен выглядеть, как на следующем снимке экрана:
 
-   :::image type="content" source="media/search-indexer-tutorial/sql-script.png" alt-text="Страница создания базы данных" border="false":::
+   :::image type="content" source="media/search-indexer-tutorial/sql-script.png" alt-text="Скрипт SQL" border="false":::
 
 1. Нажмите **Выполнить** для выполнения запроса. В области результатов появится сообщение об успешном выполнении запроса для 3 строк.
 
@@ -99,7 +99,7 @@ ms.locfileid: "91399233"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-   :::image type="content" source="media/search-get-started-postman/get-url-key.png" alt-text="Страница создания базы данных" border="false":::
+   :::image type="content" source="media/search-get-started-rest/get-url-key.png" alt-text="Получение конечной точки HTTP и ключа доступа" border="false":::
 
 ## <a name="2---set-up-your-environment"></a>2. Настройка среды
 
@@ -201,7 +201,7 @@ public string HotelName { get; set; }
 
 Нажмите клавишу F5 для сборки и запуска решения. Программа выполняется в режиме отладки. В окне консоли отображаются сведения о состоянии каждой операции.
 
-   :::image type="content" source="media/search-indexer-tutorial/console-output.png" alt-text="Страница создания базы данных" border="false":::
+   :::image type="content" source="media/search-indexer-tutorial/console-output.png" alt-text="Выходные данные консоли" border="false":::
 
 Код выполняется локально в Visual Studio. Устанавливается подключение к службе поиска в Azure, которая в свою очередь подключается к Базе данных SQL Azure, чтобы получить набор данных. При таком большом количестве операций есть несколько возможных точек сбоя. Если поступает сообщение об ошибке, прежде всего проверьте следующее:
 
@@ -217,7 +217,7 @@ public string HotelName { get; set; }
 
 1. [Войдите на портал Azure](https://portal.azure.com/), откройте страницу **Обзор** для службы поиска и поочередно откройте каждый список, чтобы убедиться в том, что объект создан. В списках **Индексы**, **Индексаторы** и **Источники данных** должны присутствовать элементы hotels, azure-sql-indexer и azure-sql соответственно.
 
-   :::image type="content" source="media/search-indexer-tutorial/tiles-portal.png" alt-text="Страница создания базы данных" border="false":::
+   :::image type="content" source="media/search-indexer-tutorial/tiles-portal.png" alt-text="Плитки для индексаторов и источников данных" border="false":::
 
 1. Выберите индекс hotels. На странице индекса hotels на первой вкладке вы найдете **обозреватель поиска**. 
 
@@ -225,7 +225,7 @@ public string HotelName { get; set; }
 
    В индексе возвращаются три записи в виде документов JSON. Проводник поиска возвращает документы в формате JSON, чтобы можно было просматривать всю структуру.
 
-   :::image type="content" source="media/search-indexer-tutorial/portal-search.png" alt-text="Страница создания базы данных" border="false":::
+   :::image type="content" source="media/search-indexer-tutorial/portal-search.png" alt-text="Запрос индекса" border="false":::
    
 1. Затем введите строку поиска `search=river&$count=true`. 
 

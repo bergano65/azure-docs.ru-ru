@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: 9c35c08889892e877ecfac20910607ddf85b2282
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a9b66d7b37397fe509cce5c66d30da0a3ae63465
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82735493"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94648265"
 ---
 # <a name="tutorial-grant-a-user-access-to-azure-resources-using-azure-powershell"></a>Руководство по Предоставление доступа пользователям к ресурсам Azure с помощью Azure PowerShell
 
@@ -40,7 +40,7 @@ ms.locfileid: "82735493"
 Для выполнения этого руководства потребуется следующее:
 
 - разрешения на создание пользователей в Azure Active Directory (или наличие существующего пользователя);
-- [Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell);
+- [Azure Cloud Shell](../cloud-shell/quickstart-powershell.md);
 
 ## <a name="role-assignments"></a>Назначения ролей
 

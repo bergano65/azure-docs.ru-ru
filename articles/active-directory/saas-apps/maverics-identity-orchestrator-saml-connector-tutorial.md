@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/12/2020
 ms.author: jeedes
-ms.openlocfilehash: a9d5988f25b833480c4809ba116c48022566b7a0
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: f4fe368e9a56e5ac4c9dfa2648ce4af15a1b5ac0
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92458189"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684460"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-with-maverics-identity-orchestrator-saml-connector"></a>Руководство по интеграции единого входа Azure AD с Maverics Identity Orchestrator SAML Connector
 
@@ -67,9 +67,9 @@ Strata предоставляет программное обеспечение,
 
     `sudo systemctl status maverics`
 
-По умолчанию Maverics устанавливается в каталог */usr/local/bin* .
+По умолчанию Maverics устанавливается в каталог */usr/local/bin*.
 
-После установки Maverics в каталоге */etc/maverics* создается файл по умолчанию *maverics.yaml* . Прежде чем вы отредактируете конфигурацию, включив в нее `workflows` и `connectors`, ваш файл конфигурации будет выглядеть следующим образом:
+После установки Maverics в каталоге */etc/maverics* создается файл по умолчанию *maverics.yaml*. Прежде чем вы отредактируете конфигурацию, включив в нее `workflows` и `connectors`, ваш файл конфигурации будет выглядеть следующим образом:
 
 ```yaml
 # © Strata Identity Inc. 2020. All Rights Reserved. Patents Pending.
@@ -115,15 +115,15 @@ includeFiles:
   - connector/siteminder.yaml
   ```
 
-В этом учебнике используется один файл конфигурации *maverics.yaml* .
+В этом учебнике используется один файл конфигурации *maverics.yaml*.
 
 ## <a name="use-azure-key-vault-as-your-secrets-provider"></a>Использование Azure Key Vault в качестве поставщика секретов
 
 ### <a name="manage-secrets"></a>Управление секретами
 
-Для загрузки секретов Maverics может интегрироваться с различными решениями по управлению секретами. Текущие интеграции включают файл, Hashicorp Vault и Azure Key Vault. Если решение для управления секретами не указано, Maverics по умолчанию будет их загружать в виде обычного текста из файла *maverics.yaml* .
+Для загрузки секретов Maverics может интегрироваться с различными решениями по управлению секретами. Текущие интеграции включают файл, Hashicorp Vault и Azure Key Vault. Если решение для управления секретами не указано, Maverics по умолчанию будет их загружать в виде обычного текста из файла *maverics.yaml*.
 
-Чтобы объявить значение как секрет в файле конфигурации *maverics.yaml* , заключите секрет в угловые скобки:
+Чтобы объявить значение как секрет в файле конфигурации *maverics.yaml*, заключите секрет в угловые скобки:
 
   ```yaml
   connectors:
@@ -158,7 +158,7 @@ secrets:
 
 **Использование портала Azure**
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. [Создайте хранилище ключей](../../key-vault/secrets/quick-create-portal.md#create-a-vault).
+1. [Создайте хранилище ключей](../../key-vault/general/quick-create-portal.md).
 1. [Добавьте секреты в хранилище ключей](../../key-vault/secrets/quick-create-portal.md#add-a-secret-to-key-vault).
 1. [Зарегистрируйте приложение в Azure AD](../develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal).
 1. [Разрешите приложению использовать секрет](../../key-vault/secrets/quick-create-portal.md#add-a-secret-to-key-vault).
@@ -193,7 +193,7 @@ secrets:
     generated in the previous step
     ```
 
-1. Чтобы загрузить секреты из хранилища ключей Azure, задайте переменную среды `MAVERICS_SECRET_PROVIDER`в файле */etc/maverics/maverics.env* с учетными данными, найденными в файле *azure-credentials.json* , используя следующий формат:
+1. Чтобы загрузить секреты из хранилища ключей Azure, задайте переменную среды `MAVERICS_SECRET_PROVIDER`в файле */etc/maverics/maverics.env* с учетными данными, найденными в файле *azure-credentials.json*, используя следующий формат:
  
    `MAVERICS_SECRET_PROVIDER='azurekeyvault://<KEYVAULT NAME>.vault.azure.net?clientID=<APPID>&clientSecret=<PASSWORD>&tenantID=<TENANT>'`
 
@@ -201,25 +201,25 @@ secrets:
 
 ## <a name="configure-your-application-in-azure-ad-for-saml-based-sso"></a>Настройка приложения в Azure AD для единого входа на основе SAML
 
-1. В клиенте Azure AD перейдите в раздел **Корпоративные приложения** , найдите приложение **Maverics Identity Orchestrator SAML Connector** и выберите его.
+1. В клиенте Azure AD перейдите в раздел **Корпоративные приложения**, найдите приложение **Maverics Identity Orchestrator SAML Connector** и выберите его.
 
 1. На панели **Properties** (Свойства) страницы Maverics Identity Orchestrator SAML Connector установите для параметра **User assignment required?** (Требуется ли назн. польз.?) значение **No** (Нет), чтобы недавно перенесенные пользователи могли использовать приложение.
 
-1. На панели **Overview** (Обзор) страницы Maverics Identity Orchestrator SAML Connector Overview выберите **Set up single sign-on** (Настройка единого входа), а затем — **SAML** .
+1. На панели **Overview** (Обзор) страницы Maverics Identity Orchestrator SAML Connector Overview выберите **Set up single sign-on** (Настройка единого входа), а затем — **SAML**.
 
-1. На панели **SAML-based sign on** (Вход на основе SAML) страницы Maverics Identity Orchestrator SAML Connector измените **базовую конфигурацию SAML** , нажав кнопку **редактирования** (значок карандаша).
+1. На панели **SAML-based sign on** (Вход на основе SAML) страницы Maverics Identity Orchestrator SAML Connector измените **базовую конфигурацию SAML**, нажав кнопку **редактирования** (значок карандаша).
 
    ![Снимок экрана: кнопка редактирования базовой конфигурации SAML.](common/edit-urls.png)
 
-1. Введите **идентификатор сущности** , указав URL-адрес в следующем формате: `https://<SUBDOMAIN>.maverics.org`. Идентификатор сущности должен быть уникальным для всех приложений в клиенте. Сохраните введенное значение, чтобы включить его в конфигурацию Maverics.
+1. Введите **идентификатор сущности**, указав URL-адрес в следующем формате: `https://<SUBDOMAIN>.maverics.org`. Идентификатор сущности должен быть уникальным для всех приложений в клиенте. Сохраните введенное значение, чтобы включить его в конфигурацию Maverics.
 
 1. Введите **URL-адрес ответа** в следующем формате: `https://<AZURECOMPANY.COM>/<MY_APP>/`. 
 
 1. Введите **URL-адрес для входа** в следующем формате: `https://<AZURE-COMPANY.COM>/<MY_APP>/<LOGIN PAGE>`. 
 
-1. Щелкните **Сохранить** .
+1. Щелкните **Сохранить**.
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку **Копировать** , чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
+1. В разделе **Сертификат подписи SAML** нажмите кнопку **Копировать**, чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
     ![Снимок экрана: "Сертификат подписи SAML" с кнопкой "Копировать".](common/copy-metadataurl.png)
 
@@ -277,13 +277,13 @@ Maverics Identity Orchestrator Azure AD Connector поддерживает OpenI
 
 ### <a name="configure-your-application-permissions-in-azure-ad-to-create-users"></a>Настройка разрешения приложения в Azure AD для создания пользователей.
 
-1. В своем клиенте Azure AD перейдите в раздел `App registrations` и выберите приложение **Mavericks Identity Orchestrator SAML Connector** .
+1. В своем клиенте Azure AD перейдите в раздел `App registrations` и выберите приложение **Mavericks Identity Orchestrator SAML Connector**.
 
-1. На странице **Maverics Identity Orchestrator SAML Connector на панели Certificates & secrets (Сертификаты и секреты)** выберите `New client secret`, а затем — вариант истечения срока. Нажмите кнопку **Копировать** , чтобы скопировать секрет и сохранить его на своем компьютере.
+1. На странице **Maverics Identity Orchestrator SAML Connector на панели Certificates & secrets (Сертификаты и секреты)** выберите `New client secret`, а затем — вариант истечения срока. Нажмите кнопку **Копировать**, чтобы скопировать секрет и сохранить его на своем компьютере.
 
 1. На странице **Maverics Identity Orchestrator SAML Connector на панели API permissions (Разрешения API)** выберите **Add permission** (Добавить разрешение), а затем в разделе **Request API permissions** (Запрос разрешений API) выберите **Microsoft Graph** и **Application permissions** (Разрешения приложения). 
 
-1. На следующем экране выберите **User.ReadWrite.All** , а затем — **Add permissions** (Добавить разрешения). 
+1. На следующем экране выберите **User.ReadWrite.All**, а затем — **Add permissions** (Добавить разрешения). 
 
 1. Вернувшись на панель **API permissions** (Разрешения API) выберите **Grant admin consent** (Предоставление согласия администратора).
 
@@ -388,7 +388,7 @@ connectors:
 
 Для настройки рабочего процесса миграции выполните указанные ниже действия.
 
-1. Присвойте рабочему процессу имя (например, **Миграция с SiteMinder на Azure AD** ).
+1. Присвойте рабочему процессу имя (например, **Миграция с SiteMinder на Azure AD**).
 1. Укажите `endpoint`, представляющий собой HTTP-путь, по которому отображается рабочий процесс, запускающий `actions` этого рабочего процесса в ответ на запросы. `endpoint` обычно соответствует приложению с прокси-сервером (например, `/my_app`). Значение должно включать как начальную, так и конечную косую черту.
 1. Добавьте соответствующий объект `actions` в рабочий процесс.
 
@@ -428,7 +428,7 @@ connectors:
 
 После проверки подлинности созданный в результате маркер сеанса передается в Maverics. Метод `emulate` соединителя SiteMinder используется для имитации сеанса на основе файлов cookie или сеанса на основе заголовка, а затем для дополнения запроса любыми атрибутами, необходимыми для применения.
 
-1. Присвойте рабочему процессу имя (например, **SiteMinder Session Abstraction** ).
+1. Присвойте рабочему процессу имя (например, **SiteMinder Session Abstraction**).
 1. Укажите объект `endpoint`, который соответствует приложению с прокси-сервером. Значение должно включать как начальную, так и конечную косую черту (например, `/my_app/`).
 1. Добавьте соответствующий объект `actions` в рабочий процесс.
 

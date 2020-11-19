@@ -12,19 +12,19 @@ ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57efd88b9d194442920496107d4c37ba2baf94d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: efe71fd77e9e4edb7fc7df4c633ae8f81177097b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85554986"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657826"
 ---
 # <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Примеры Azure AD PowerShell для прокси приложения Azure AD
 
-В следующей таблице содержатся ссылки на примеры скриптов PowerShell для прокси приложения Azure AD. Для этих примеров требуется [модуль Azure AD PowerShell (версии 2) для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) или [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview), если не указано иное.
+В следующей таблице содержатся ссылки на примеры скриптов PowerShell для прокси приложения Azure AD. Для этих примеров требуется [модуль Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) или [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview), если не указано иное.
 
 
-Дополнительные сведения о командлетах, используемых в этих примерах, см. в разделах [Управление приложением прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management) и [Управление соединителем прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management).
+Дополнительные сведения о командлетах, используемых в этих примерах, см. в разделах [Управление приложением прокси приложения](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management) и [Управление соединителем прокси приложения](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management).
 
 | Ссылка | Описание |
 |---|---|
@@ -32,7 +32,7 @@ ms.locfileid: "85554986"
 | [Вывод основных сведений обо всех приложениях прокси приложения](scripts/powershell-get-all-app-proxy-apps-basic.md) | Выводит список основных сведений (AppId, DisplayName, ObjId) по всем приложениям прокси приложения в каталоге. |
 | [Вывод подробных сведений обо всех приложениях прокси приложения](scripts/powershell-get-all-app-proxy-apps-extended.md) | Выводит список подробных сведений (AppId, DisplayName, ExternalUrl, InternalUrl, ExternalAuthenticationType) обо всех приложениях прокси приложения в каталоге.  |
 | [Получение списка приложений прокси приложения по группам соединителей](scripts/powershell-get-all-app-proxy-apps-by-connector-group.md) | Выводит сведения обо всех приложениях прокси приложения в каталоге с информацией о том, каким группам соединителей назначены эти приложения. |
-| [Получение всех приложений прокси приложения с политикой срока действия маркеров](scripts/powershell-get-all-app-proxy-apps-with-policy.md) | Выводит список всех приложений прокси приложения в каталоге, для которых применяется политика срока действия маркера, и сведения об этой политике. Для работы с этим примером требуется [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview). |
+| [Получение всех приложений прокси приложения с политикой срока действия маркеров](scripts/powershell-get-all-app-proxy-apps-with-policy.md) | Выводит список всех приложений прокси приложения в каталоге, для которых применяется политика срока действия маркера, и сведения об этой политике. Для работы с этим примером требуется [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview). |
 |**Группы соединителей**||
 | [Получение всех групп соединителей и соединителей в каталоге](scripts/powershell-get-all-connectors.md) | Выводит список всех групп соединителей и соединителей в каталоге. |
 | [Перемещение всех приложений, назначенных группе соединителей, в другую группу соединителей](scripts/powershell-move-all-apps-to-connector-group.md) | Перемещает все приложения, в этот момент назначенные некоторой группе соединителей, в другую группу соединителей. |

@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6a1a7e19e598980b21ee6c41f6984de38d6a6f2b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c9d9c43ae1be755ccb30fc377692257a81332ea8
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791619"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94593728"
 ---
 # <a name="tutorial-index-from-multiple-data-sources-using-the-net-sdk"></a>Руководство по Индексирование из нескольких источников данных с помощью пакета SDK для .NET
 
@@ -66,21 +66,21 @@ ms.locfileid: "92791619"
 
 1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к странице обзора для учетной записи Azure Cosmos DB.
 
-1. Выберите раздел **Обозреватель данных** , а затем — команду **Новая база данных** .
+1. Выберите раздел **Обозреватель данных**, а затем — команду **Новая база данных**.
 
    :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-newdb.png" alt-text="Создание базы данных" border="false":::
 
-1. Введите имя **hotel-rooms-db** . Примите значения по умолчанию для остальных параметров.
+1. Введите имя **hotel-rooms-db**. Примите значения по умолчанию для остальных параметров.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-dbname.png" alt-text="Создание базы данных" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-dbname.png" alt-text="Настройка базы данных" border="false":::
 
-1. Создайте новый контейнер. Используйте имеющуюся базу данных, которую вы только что создали. В качестве имени контейнера введите **hotels** , а имени ключа секции — **/HotelId** .
+1. Создайте новый контейнер. Используйте имеющуюся базу данных, которую вы только что создали. В качестве имени контейнера введите **hotels**, а имени ключа секции — **/HotelId**.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-add-container.png" alt-text="Создание базы данных" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-add-container.png" alt-text="Добавление контейнера" border="false":::
 
-1. В разделе **hotels** выберите **Элементы** , а затем на панели команд щелкните **Upload Item** (Отправить элемент). Перейдите к файлу **cosmosdb/HotelsDataSubset_CosmosDb.json** в папке проекта и выберите его.
+1. В разделе **hotels** выберите **Элементы**, а затем на панели команд щелкните **Upload Item** (Отправить элемент). Перейдите к файлу **cosmosdb/HotelsDataSubset_CosmosDb.json** в папке проекта и выберите его.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-upload.png" alt-text="Создание базы данных" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-upload.png" alt-text="Отправка в коллекцию Azure Cosmos DB" border="false":::
 
 1. С помощью кнопки "Обновить" освежите представление элементов в коллекции hotels. Вы увидите в списке семь новых документов базы данных.
 
@@ -88,17 +88,17 @@ ms.locfileid: "92791619"
 
 ### <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
 
-1. Войдите на [портал Azure](https://portal.azure.com), перейдите к учетной записи хранения Azure, щелкните **Большие двоичные объекты** , а затем — **+ Container** (+ Контейнер).
+1. Войдите на [портал Azure](https://portal.azure.com), перейдите к учетной записи хранения Azure, щелкните **Большие двоичные объекты**, а затем — **+ Container** (+ Контейнер).
 
-1. [Создайте контейнер больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md) с именем **hotel-rooms** , в котором будут храниться JSON-файлы с примерами данных о номерах отелей. Можно задать любое из допустимых значений уровня общего доступа.
+1. [Создайте контейнер больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md) с именем **hotel-rooms**, в котором будут храниться JSON-файлы с примерами данных о номерах отелей. Можно задать любое из допустимых значений уровня общего доступа.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/blob-add-container.png" alt-text="Создание базы данных" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/blob-add-container.png" alt-text="Создание контейнера больших двоичных объектов" border="false":::
 
-1. Откройте контейнер после создания и на панели команд выберите **Загрузить** . Перейдите к папке, содержащей примеры файлов. Выберите их, а затем щелкните **Загрузить** .
+1. Откройте контейнер после создания и на панели команд выберите **Загрузить**. Перейдите к папке, содержащей примеры файлов. Выберите их, а затем щелкните **Загрузить**.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/blob-upload.png" alt-text="Создание базы данных" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/blob-upload.png" alt-text="Передача файлов" border="false":::
 
-1. Скопируйте название учетной записи хранения и строку подключения со страницы **Ключи доступа** в блокнот. Позднее вам понадобятся оба эти значения для файла **appsettings.json** .
+1. Скопируйте название учетной записи хранения и строку подключения со страницы **Ключи доступа** в блокнот. Позднее вам понадобятся оба эти значения для файла **appsettings.json**.
 
 ### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
 
@@ -112,23 +112,23 @@ ms.locfileid: "92791619"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-   :::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="Создание базы данных" border="false":::
+   :::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
 ## <a name="2---set-up-your-environment"></a>2\. Настройка среды
 
-1. Запустите Visual Studio. В меню **Средства** выберите **Диспетчер пакетов NuGet** , а затем — **Управление пакетами NuGet для решения...** . 
+1. Запустите Visual Studio. В меню **Средства** выберите **Диспетчер пакетов NuGet**, а затем — **Управление пакетами NuGet для решения...** . 
 
 1. Во вкладке **Обзор** найдите и установите **Azure.Search.Documents** (версия 11.0 или более поздняя). Для завершения установки нужно пройти серию дополнительных диалоговых окон.
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png" alt-text="Создание базы данных" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png" alt-text="Добавление библиотек Azure с помощью NuGet" border="false":::
 
-1. Найдите и установите пакеты NuGet **Microsoft.Extensions.Configuration** и **Microsoft.Extensions.Configuration.Json** .
+1. Найдите и установите пакеты NuGet **Microsoft.Extensions.Configuration** и **Microsoft.Extensions.Configuration.Json**.
 
-1. Откройте файл решения **/v11/AzureSearchMultipleDataSources.sln** .
+1. Откройте файл решения **/v11/AzureSearchMultipleDataSources.sln**.
 
-1. В обозревателе решений измените файл **appsettings.json** , добавив сведения о подключении.  
+1. В обозревателе решений измените файл **appsettings.json**, добавив сведения о подключении.  
 
     ```json
     {
@@ -240,7 +240,7 @@ private static async Task CreateAndRunCosmosDbIndexerAsync(string indexName, Sea
     await indexerClient.CreateOrUpdateDataSourceConnectionAsync(cosmosDbDataSource);
 ```
 
-После создания источника данных программа настраивает индексатор Azure Cosmos DB с именем **hotel-rooms-cosmos-indexer** .
+После создания источника данных программа настраивает индексатор Azure Cosmos DB с именем **hotel-rooms-cosmos-indexer**.
 
 Программа обновляет все существующие индексаторы с одинаковыми названиями, перезаписывая существующий индексатор содержимым приведенного выше кода. Она также содержит команды сброса и выполнения, если вы хотите несколько раз запустить пример.
 
@@ -306,7 +306,7 @@ private static async Task CreateAndRunBlobIndexerAsync(string indexName, SearchI
     await indexerClient.CreateOrUpdateDataSourceConnectionAsync(blobDataSource);
 ```
 
-После создания источника данных программа настраивает для него индексатор с именем **hotel-rooms-blob-indexer** , как показано ниже.
+После создания источника данных программа настраивает для него индексатор с именем **hotel-rooms-blob-indexer**, как показано ниже.
 
 Большие двоичные объекты в формате JSON содержат поля ключа с именем **`Id`** вместо **`HotelId`** . В коде используется класс `FieldMapping`, сообщающий индексатору о необходимости направить значения поля **`Id`** в ключ документа **`HotelId`** в индексе.
 
@@ -350,7 +350,7 @@ await indexerClient.CreateOrUpdateIndexerAsync(blobIndexer);
 try
 {
     // Run the indexer.
-    await searchService.Indexers.RunAsync(cosmosDbIndexer.Name);
+    await searchService.Indexers.RunAsync(blobIndexer.Name);
 }
 catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
 {
@@ -361,15 +361,15 @@ catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
 Так как индекс уже был заполнен данными об отелях из базы данных Azure Cosmos DB, индексатор больших двоичных объектов просто обновляет существующие документы в индексе, добавляя в них сведения о номерах.
 
 > [!NOTE]
-> Если в обоих источниках данных есть одинаковые поля, не являющиеся ключевыми, и данные в этих полях не совпадают, то итоговый индекс будет содержать значения от того индексатора, который выполнялся последним. В нашем примере оба источники данных содержат поля **HotelName** . Если по какой-либо причине данные в этом поле различаются, то для документов с одинаковым значением ключа будет сохранено значение **HotelName** из того источника данных, который был проиндексирован позднее.
+> Если в обоих источниках данных есть одинаковые поля, не являющиеся ключевыми, и данные в этих полях не совпадают, то итоговый индекс будет содержать значения от того индексатора, который выполнялся последним. В нашем примере оба источники данных содержат поля **HotelName**. Если по какой-либо причине данные в этом поле различаются, то для документов с одинаковым значением ключа будет сохранено значение **HotelName** из того источника данных, который был проиндексирован позднее.
 
 ## <a name="5---search"></a>5\. Поиск
 
 Вы можете изучить заполненный индекс поиска на портале после выполнения программы с помощью компонента [**Обозреватель поиска**](search-explorer.md).
 
-На портале Azure откройте страницу **Обзор** для службы поиска и найдите в списке **Индексы** созданный индекс **hotel-rooms-sample** .
+На портале Azure откройте страницу **Обзор** для службы поиска и найдите в списке **Индексы** созданный индекс **hotel-rooms-sample**.
 
-  :::image type="content" source="media/tutorial-multiple-data-sources/index-list.png" alt-text="Создание базы данных" border="false":::
+  :::image type="content" source="media/tutorial-multiple-data-sources/index-list.png" alt-text="Список индексов службы Когнитивный поиск Azure" border="false":::
 
 Щелкните индекс hotel-rooms-sample в этом списке. Вы увидите интерфейс обозревателя поиска для этого индекса. Введите запрос для поиска термина, например Luxury. Вы увидите результат поиска с хотя бы одним документом, в котором отображается список объектов номеров из массива rooms.
 

@@ -11,12 +11,12 @@ ms.date: 05/19/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e771a988faca98d009b97b1e705ddac7110a255f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77a8e6948b9912061801fefaa63d2f49611014aa
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91266502"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94651708"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
@@ -122,17 +122,17 @@ ms.locfileid: "91266502"
 2. Скачайте агент подготовки облака Azure AD Connect, выполнив описанную [здесь](how-to-install.md#install-the-agent) процедуру.
 3. Запустите подготовку облака Azure AD Connect (AADConnectProvisioningAgent.Installer).
 3. На экране-заставке **примите** условия лицензионного соглашения и щелкните **Установить**.</br>
-![Снимок экрана: экран-заставка Microsoft Azure AD Connect Provisioning Agent (Агент подготовки Microsoft Azure AD Connect).](media/how-to-install/install1.png)</br>
+![Снимок экрана: экран-заставка Microsoft Azure AD Connect Provisioning Agent (Агент подготовки Microsoft Azure AD Connect).](media/how-to-install/install-1.png)</br>
 
 4. После завершения этой операции откроется мастер настройки.  Войдите с учетной записью глобального администратора Azure AD.
 5. На экране **Connect Active Directory** (Подключение Active Directory) щелкните **Добавить каталог** и выполните вход с учетной записью администратора Active Directory.  Эта операция добавляет локальный каталог.  Щелкните **Далее**.</br>
-![Снимок экрана: экран Connect Active Directory (Подключение Active Directory) с введенным значением каталога.](media/how-to-install/install3.png)</br>
+![Снимок экрана: экран Connect Active Directory (Подключение Active Directory) с введенным значением каталога.](media/how-to-install/install-3.png)</br>
 
 6. На странице **Конфигурация завершена** щелкните **Подтвердить**.  Эта операция регистрирует и перезапускает агент.</br>
-![Снимок экрана: экран "Конфигурация завершена" с выбранной кнопкой "Подтвердить".](media/how-to-install/install4.png)</br>
+![Снимок экрана: экран "Конфигурация завершена" с выбранной кнопкой "Подтвердить".](media/how-to-install/install-4a.png)</br>
 
 7. После завершения операции появится сообщение **Your was successfully verified** (Вас успешно проверили).  Здесь можно щелкнуть **Выйти**.</br>
-![Экран приветствия](media/how-to-install/install5.png)</br>
+![Экран приветствия](media/how-to-install/install-5.png)</br>
 8. Если вы по-прежнему видите начальный экран-заставку, щелкните **Закрыть**.
 
 ## <a name="verify-agent-installation"></a>Проверка установки агента
@@ -143,12 +143,12 @@ ms.locfileid: "91266502"
 
 1. Войдите на портал Azure.
 2. Слева выберите **Azure Active Directory**, щелкните **Azure AD Connect** и в центре выберите **Управление подготовкой (предварительная версия)** .</br>
-![Портал Azure](media/how-to-install/install6.png)</br>
+![Портал Azure](media/how-to-install/install-6.png)</br>
 
 3.  На экране **Подготовка Azure AD (предварительная версия)** щелкните **Проверить все агенты**.
-![Подготовка Azure AD](media/how-to-install/install7.png)</br>
+![Подготовка Azure AD](media/how-to-install/install-7.png)</br>
  
-4. На экране **локальных агентов подготовки** вы увидите установленные агенты.  Убедитесь, что нужный агент присутствует в этом списке с пометкой **Disabled** (Отключено).  По умолчанию агент подготовки отключен. ![Агенты подготовки](media/how-to-install/verify1.png)</br>
+4. На экране **локальных агентов подготовки** вы увидите установленные агенты.  Убедитесь, что нужный агент присутствует в этом списке с пометкой **Disabled** (Отключено).  По умолчанию агент подготовки отключен. ![Агенты подготовки](media/how-to-install/verify-1.png)</br>
 
 ### <a name="on-the-local-server"></a>На локальном сервере
 Чтобы убедиться, что агент выполняется, сделайте следующее.
@@ -156,7 +156,7 @@ ms.locfileid: "91266502"
 1.  Войдите на сервер с учетной записью администратора.
 2.  Откройте страницу **Службы**, перейдя к ней в интерфейсе или выполнив команду Services.msc в строке запуска из меню "Пуск".
 3.  В разделе **Службы** убедитесь, что **агент обновления Microsoft Azure AD Connect** и **агент подготовки Microsoft Azure AD Connect** присутствуют в списке и имеют состояние **Выполняется**.
-![Службы](media/how-to-troubleshoot/troubleshoot1.png)
+![Службы](media/how-to-install/troubleshoot-1.png)
 
 ## <a name="configure-azure-ad-connect-cloud-provisioning"></a>Настройка процесса подготовки облака Azure AD Connect
 Чтобы настроить процесс подготовки, выполните следующие действия.
