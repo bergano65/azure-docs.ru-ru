@@ -3,12 +3,12 @@ title: Агент Службы восстановления Microsoft Azure (MAR
 description: Здесь рассматриваются распространенные вопросы о резервном копировании файлов и папок с помощью Azure Backup.
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.openlocfilehash: 9fb9e3993d6f56833e43a4d451c0865b7fd732d3
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 1edfaed99e60409774496c5ae75df8be99a8fe1f
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172512"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917364"
 ---
 # <a name="frequently-asked-questions---microsoft-azure-recovery-services-mars-agent"></a>Часто задаваемые вопросы — агент Службы восстановления Microsoft Azure (MARS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "92172512"
 
 ### <a name="where-can-i-download-the-vault-credentials-file"></a>Где можно скачать файл учетных данных хранилища?
 
-В портал Azure перейдите к **свойствам** хранилища. В разделе **учетные данные архивации**установите флажок, чтобы **уже использовать последний агент служб восстановления**. Щелкните **Скачать**.
+В портал Azure перейдите к **свойствам** хранилища. В разделе **учетные данные архивации** установите флажок, чтобы **уже использовать последний агент служб восстановления**. Выберите **Загрузить**.
 
 ![Загрузка учетных данных](./media/backup-azure-file-folder-backup-faq/download-credentials.png)
 
@@ -72,6 +72,10 @@ ms.locfileid: "92172512"
 
 Да, установка агента MARS и Настройка резервного копирования с помощью консоли MARS требуют, чтобы пользователь был локальным администратором на защищенном сервере.
 
+### <a name="what-is-the-impact-on-mars-agent-backups-of-transferring-the-vault-subscription-to-a-different-azure-ad-directory"></a>Каково влияние на резервное копирование агента MARS на передачу подписки хранилища в другой каталог Azure AD?
+
+Изменение каталога Azure AD не повлияет на резервное копирование агентов MARS. 
+
 ## <a name="manage-backups"></a>Управление резервными копиями
 
 ### <a name="what-happens-if-i-rename-a-windows-machine-configured-for-backup"></a>Что произойдет, если переименовать компьютер Windows, настроенный для архивации?
@@ -80,7 +84,7 @@ ms.locfileid: "92172512"
 
 * Необходимо зарегистрировать новое имя компьютера в хранилище службы архивации.
 * При регистрации нового имени в хранилище первая операция является *полной* резервной копией.
-* Если необходимо восстановить данные из резервной копии в хранилище с прежним именем сервера, используйте параметр для восстановления в альтернативное расположение в мастере восстановления данных. [Подробнее.](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine)
+* Если необходимо восстановить данные из резервной копии в хранилище с прежним именем сервера, используйте параметр для восстановления в альтернативное расположение в мастере восстановления данных. [Подробнее](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine).
 
 ### <a name="what-is-the-maximum-file-path-length-for-backup"></a>Какова максимальная длина пути к файлу для резервного копирования?
 
@@ -112,7 +116,7 @@ ms.locfileid: "92172512"
 1. По умолчанию вспомогательная папка находится в папке `\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
 2. Убедитесь, что путь к расположению временной папки совпадает со значениями разделов реестра, показанными ниже:
 
-    | Путь к элементу реестра | Раздел реестра . | Значение |
+    | Путь к элементу реестра | Ключ реестра | Значение |
     | --- | --- | --- |
     | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config` |ScratchLocation |*Новое расположение папки кэша* |
     | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider` |ScratchLocation |*Новое расположение папки кэша* |
@@ -127,7 +131,7 @@ ms.locfileid: "92172512"
 4. Скопируйте всю `\Scratch` папку на другой диск с достаточным объемом свободного места. Убедитесь, что содержимое скопировано, а не перемещено.
 5. Обновите следующие записи реестра, указав путь к вновь перемещенной временной папке.
 
-    | Путь к элементу реестра | Раздел реестра . | Значение |
+    | Путь к элементу реестра | Ключ реестра | Значение |
     | --- | --- | --- |
     | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config` |ScratchLocation |*Новое расположение вспомогательной папки* |
     | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider` |ScratchLocation |*Новое расположение вспомогательной папки* |
@@ -163,7 +167,7 @@ ms.locfileid: "92172512"
 
 ### <a name="is-there-a-way-to-adjust-the-amount-of-bandwidth-used-for-backup"></a>Существует ли способ настройки объема пропускной способности, используемой для резервного копирования?
 
-Да, можно использовать параметр **изменить свойства** в АГЕНТе Mars, чтобы настроить пропускную способность и время. [Подробнее.](backup-windows-with-mars-agent.md#enable-network-throttling)
+Да, можно использовать параметр **изменить свойства** в АГЕНТе Mars, чтобы настроить пропускную способность и время. [Подробнее](backup-windows-with-mars-agent.md#enable-network-throttling).
 
 ## <a name="restore"></a>Восстановить
 

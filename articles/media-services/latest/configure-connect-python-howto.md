@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 11/18/2020
 ms.author: inhenkel
 ms.custom: devx-track-python
-ms.openlocfilehash: 1a72b0d90a33b011468b5ac42d529befb7acae42
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 76df8baaf170b05762b93478a496eb1e9ed802d5
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844903"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916752"
 ---
 # <a name="connect-to-media-services-v3-api---python"></a>Подключение к API служб мультимедиа v3 — Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "94844903"
 
 В этой статье показано, как подключиться к пакету SDK для служб мультимедиа Azure v3 для Python с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Скачать Python из [Python.org](https://www.python.org/downloads/)
 - Обязательно задайте `PATH` переменную среды.
@@ -43,6 +43,8 @@ ms.locfileid: "94844903"
 
 * `azure-mgmt-resource`Модуль, который включает модули Azure для Active Directory.
 * `azure-mgmt-media`Модуль, который включает сущности служб мультимедиа.
+
+    Обязательно получите [последнюю версию пакета SDK служб мультимедиа для Python](https://pypi.org/project/azure-mgmt-media/).
 
 Откройте программу командной строки и используйте следующие команды для установки модулей.
 
@@ -104,7 +106,7 @@ pip3 install azure-mgmt-media==3.0.0
 
 1. Запуск файла
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Используйте [пакет SDK для Python](https://aka.ms/ams-v3-python-sdk).
 - Ознакомьтесь со справочной документации по [Python](/python/api/overview/azure/mediaservices/management) Служб мультимедиа.

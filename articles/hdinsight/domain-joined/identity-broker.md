@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: df4faf367951402914abb03285498e0da6f3105f
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 9a2bda0a526c307ae17d8415f6f24423ddf51b63
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337682"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917772"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Брокер ИДЕНТИФИКАТОРов Azure HDInsight (ХИБ)
 
@@ -137,6 +137,25 @@ curl -k -v -H "Authorization: Bearer Access_TOKEN" -H "Content-Type: application
 ``` 
 
 Для использования Beeline и Livy можно также воспользоваться приведенными [здесь](https://github.com/Azure-Samples/hdinsight-enterprise-security/tree/main/HIB/HIBSamples) кодами примеров, чтобы настроить клиент для использования OAuth и подключения к кластеру.
+
+## <a name="faq"></a>Вопросы и ответы
+### <a name="what-app-is-created-by-hdinsight-in-aad"></a>Какое приложение создано в HDInsight в AAD?
+Для каждого кластера стороннее приложение будет зарегистрировано в AAD с универсальным кодом ресурса (URI) кластера в качестве identifierUri (например, https://clustername.azurehdinsight.net ).
+
+### <a name="why-are-users-prompted-for-consent-before-using-hib-enabled-clusters"></a>Почему пользователям предлагается согласие перед использованием кластеров с поддержкой ХИБ?
+В AAD согласие требуется для всех сторонних приложений, прежде чем оно сможет проходить проверку подлинности пользователей или доступа к данным.
+
+### <a name="can-the-consent-be-approved-programatically"></a>Может ли согласие быть утверждено программно?
+Microsoft Graph API позволяет автоматизировать согласие, см. [документацию по API](https://docs.microsoft.com/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0) . последовательность действий для автоматизации согласия:
+
+* Зарегистрируйте приложение и предоставьте приложению. ReadWrite. ALL разрешения на доступ к Microsoft Graph
+* После создания кластера запросите приложение кластера на основе URI идентификатора.
+* Регистрация согласия для приложения
+
+При удалении кластера HDInsight удаляет приложение, и нет необходимости очищать какие-либо разрешения.
+
+ 
+
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

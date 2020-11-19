@@ -11,13 +11,13 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 11/15/2020
-ms.openlocfilehash: 48bd32569b7eb7fa09f83f81190bf96baa42fae0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.date: 11/19/2020
+ms.openlocfilehash: a79055a77ec73ce2b267bb4f16fa91f37e22ea75
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659987"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916786"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в фабрике данных Azure
 
@@ -175,8 +175,10 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 1. Установите пользовательские или сторонние компоненты, предназначенные для SQL Server 2017, на Azure-SSIS IR с помощью [стандартных или Экспресс-настраиваемых настроек](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup).
 
-1. Создайте следующие разделы реестра Дтспас на самостоятельно размещенном IR, если они еще не существуют: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` и `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` .
- 
+1. Создайте следующие разделы реестра Дтспас на самостоятельно размещенном IR, если они еще не существуют:
+   1. `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` имеет значение `C:\Program Files\Microsoft SQL Server\140\DTS\`
+   1. `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` имеет значение `C:\Program Files (x86)\Microsoft SQL Server\140\DTS\`
+   
 1. Установите пользовательские или сторонние компоненты, предназначенные для SQL Server 2017, на самостоятельно размещенном IR в разделе Дтспас выше и убедитесь, что ваш процесс установки:
 
    1. Создает `<DTSPath>` `<DTSPath>/Connections` папки,, `<DTSPath>/PipelineComponents` и, `<DTSPath>/UpgradeMappings` если они еще не существуют.
@@ -185,7 +187,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
    
    1. Устанавливает все сборки, на которые ссылаются пользовательские или сторонние сборки компонентов в глобальном кэше сборок (GAC).
 
-Ниже приведен [Пример стороннего компонента](https://www.aecorsoft.com/blog/2020/11/8/using-azure-data-factory-to-bring-sap-data-to-azure-via-self-hosted-ir-and-ssis-ir) , в котором для Azure-SSIS IR используется Экспресс-настраиваемая Настройка и локально размещенная IR.
+Ниже приведены примеры наших партнеров, [Сеобалд Software](https://kb.theobald-software.com/xtract-is/XIS-for-Azure-SHIR) и [аекорсофт](https://www.aecorsoft.com/blog/2020/11/8/using-azure-data-factory-to-bring-sap-data-to-azure-via-self-hosted-ir-and-ssis-ir), которые адаптируют свои компоненты для использования нашей экспресс-установки и самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR.
 
 ## <a name="enforce-tls-12"></a>Принудительное применение TLS 1.2
 

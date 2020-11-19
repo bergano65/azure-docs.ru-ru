@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-js, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 86b5c1dc396a755d898f0c3c332ab59933236afe
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 0d98f3c61191d5d5b333072682abe740761901f0
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747436"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831894"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-nodejs-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств Центра Интернета вещей с помощью приложения прокси Node.js (предварительная версия)
 
@@ -30,13 +30,15 @@ ms.locfileid: "92747436"
 
 * [Node.js версии 10 и выше](https://nodejs.org).
 
+    Текущую версию Node.js на компьютере для разработки можно проверить, используя следующую команду:
+
+    ```cmd/sh
+    node --version
+    ```
+
 * [Пример проекта Node.js](https://github.com/Azure-Samples/azure-iot-samples-node/archive/streams-preview.zip).
 
-Текущую версию Node.js на компьютере для разработки можно проверить, используя следующую команду:
-
-```cmd/sh
-node --version
-```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 Центр Интернета вещей Microsoft Azure поддерживает потоки устройств, которые сейчас доступны в режиме [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -47,8 +49,6 @@ node --version
 > * Центральная часть США (EUAP)
 > * Северная Европа
 > * Юго-Восточная Азия
-  
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ### <a name="add-azure-iot-extension"></a>Добавление расширения Azure IoT
 
@@ -76,13 +76,13 @@ az extension add --name azure-iot
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice* , как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice
     ```
 
-1. Чтобы разрешить внутреннему приложению подключаться к центру Интернета вещей и получать сообщения, вам необходима *строка подключения к службе* . Получите эту строку для своего центра Интернета вещей с помощью следующей команды.
+1. Чтобы разрешить внутреннему приложению подключаться к центру Интернета вещей и получать сообщения, вам необходима *строка подключения к службе*. Получите эту строку для своего центра Интернета вещей с помощью следующей команды.
 
    > [!NOTE]
    > Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
@@ -128,7 +128,7 @@ az extension add --name azure-iot
    SET PROXY_PORT=2222
    ```
 
-   Измените заполнитель ServiceConnectionString, чтобы он соответствовал строке подключения к службе, и **MyDevice** , чтобы он соответствовал коду устройства, если вы указали другое имя.
+   Измените заполнитель ServiceConnectionString, чтобы он соответствовал строке подключения к службе, и **MyDevice**, чтобы он соответствовал коду устройства, если вы указали другое имя.
 
 1. Перейдите к каталогу `Quickstarts/device-streams-service` в распакованной папке проекта. Выполните следующий код, чтобы запустить приложение локального прокси-сервера службы:
 

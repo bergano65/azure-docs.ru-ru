@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 64334b17060879a2e587b13b062c81e86df33831
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: d47abaade13958b4e28d3ad5f62b88e8a53e89a9
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94743445"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917847"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Обзор миграции: SQL Server для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -57,6 +57,8 @@ ms.locfileid: "94743445"
 - Жизненный цикл поддержки существующих продуктов
 - Окно для простоя приложения во время миграции
 
+:::image type="content" source="media/sql-server-to-sql-on-azure-vm-individual-databases-guide/virtual-machine-migration-downtime.png" alt-text="простой миграции виртуальной машины":::
+
 В следующей таблице описаны различия в двух стратегиях миграции.
 <br />
 
@@ -90,7 +92,7 @@ ms.locfileid: "94743445"
 | **[Резервное копирование на URL-адрес](/sql/relational-databases/backup-restore/sql-server-backup-to-url)** | SQL Server 2012 SP1 CU2 | SQL Server 2012 SP1 CU2| 12,8 ТБ для SQL Server 2016; в противном случае 1 ТБ | Альтернативный способ перемещения файла резервной копии на виртуальную машину с помощью службы хранилища Azure. Используйте сжатие, чтобы максимально сжать резервный размер для перемещения. <br /><br /> **Автоматизация & скриптов**:  [T-SQL или план обслуживания](/sql/relational-databases/backup-restore/sql-server-backup-to-url) |
 | **[Помощник по переносу баз данных (DMA)](/sql/dma/dma-overview)** | SQL Server 2005| SQL Server 2008 SP4| [Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |  [DMA](/sql/dma/dma-overview) оценивает SQL Server локально, а затем без проблем обновляет до более поздних версий SQL Server или переносит на SQL Server на виртуальных машинах Azure, в базе данных SQL azure или управляемый экземпляр SQL Azure. <br /><br /> Не следует использовать в пользовательских базах данных с поддержкой FILESTREAM.<br /><br /> DMA также включает возможность переноса [имен входа SQL и Windows](/sql/dma/dma-migrateserverlogins) и оценки [пакетов служб SSIS](/sql/dma/dma-assess-ssis). <br /><br /> **Автоматизация & скриптов**: [интерфейс командной строки](/sql/dma/dma-commandline) |
 | **[Отсоединение и присоединение](../../virtual-machines/windows/migrate-to-vm-from-sql-server.md#detach-and-attach-from-a-url)** | SQL Server 2008 SP4 | SQL Server 2014 | [Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) | Используйте этот метод, если вы планируете [хранить эти файлы с помощью службы хранилища BLOB-объектов Azure](/sql/relational-databases/databases/sql-server-data-files-in-microsoft-azure) и подключаете их к экземпляру SQL Server на виртуальной машине Azure, особенно полезном при работе с очень большими базами данных или когда время резервного копирования и восстановления слишком велико. <br /><br /> **Автоматизация & скриптов**:  [T-SQL](/sql/relational-databases/databases/detach-a-database#TsqlProcedure) и [AzCopy в хранилище BLOB-объектов](../../../storage/common/storage-use-azcopy-v10.md)|
-|**[Доставка журналов](sql-server-to-sql-on-azure-vm-individual-databases-guide.md#migrate)** | SQL Server 2008 SP4 (только для Windows) | SQL Server 2008 SP4 (только для Windows) | [Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) | Доставка журналов реплицирует файлы журналов транзакций из локальной среды в экземпляр SQL Server на виртуальной машине Azure. <br /><br /> Это обеспечивает минимальный простой во время отработки отказа и требует меньше затрат на настройку, чем настройка группы доступности Always On. <br /><br /> **Автоматизация & скриптов**: [T-SQL](/sql/database-engine/log-shipping/log-shipping-tables-and-stored-procedures)  |
+|**[доставка журналов;](sql-server-to-sql-on-azure-vm-individual-databases-guide.md#migrate)** | SQL Server 2008 SP4 (только для Windows) | SQL Server 2008 SP4 (только для Windows) | [Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) | Доставка журналов реплицирует файлы журналов транзакций из локальной среды в экземпляр SQL Server на виртуальной машине Azure. <br /><br /> Это обеспечивает минимальный простой во время отработки отказа и требует меньше затрат на настройку, чем настройка группы доступности Always On. <br /><br /> **Автоматизация & скриптов**: [T-SQL](/sql/database-engine/log-shipping/log-shipping-tables-and-stored-procedures)  |
 | **[Распределенная группа доступности](../../virtual-machines/windows/business-continuity-high-availability-disaster-recovery-hadr-overview.md#hybrid-it-disaster-recovery-solutions)** | SQL Server 2016| SQL Server 2016 | [Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |  [Распределенная группа доступности](/sql/database-engine/availability-groups/windows/distributed-availability-groups) — это особый тип группы доступности, охватывающий две отдельные группы доступности. Группы доступности, участвующие в распределенной группе доступности, не должны находиться в одном расположении и включать междоменную поддержку. <br /><br /> Этот метод сокращает время простоя, используя, когда группа доступности настроена в локальной среде. <br /><br /> **Автоматизация & скриптов**: [T-SQL](/sql/t-sql/statements/alter-availability-group-transact-sql)  |
 | | | | | |
 
@@ -126,7 +128,7 @@ ms.locfileid: "94743445"
 При подготовке к переносу баз данных SQL Server в SQL Server на виртуальных машинах Azure следует учитывать поддерживаемые версии SQL Server. Список текущих поддерживаемых версий SQL Server на виртуальных машинах Azure см. на [SQL Server на виртуальных машинах Azure](../../virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-server-vms).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приступить к переносу баз данных SQL Server в SQL Server на виртуальных машинах Azure, ознакомьтесь с [руководством по миграции отдельных баз данных](sql-server-to-sql-on-azure-vm-individual-databases-guide.md). 
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 3e53937122b8721aff5db435ac447b686ea16643
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: adf0f42b34a4bd7e5df2d2994408dbc175c5e01b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748680"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831928"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств центра Интернета вещей с помощью прокси-приложения C# (предварительная версия)
 
@@ -43,9 +43,7 @@ ms.locfileid: "92748680"
 > [!NOTE]
 > Трафик SSH, передаваемый по потоку устройств, будет туннелироваться через конечную точку потоковой передачи центра Интернета вещей, а не напрямую между службой и устройством. Дополнительные сведения см. в [списке преимуществ использования потоков устройств центра Интернета вещей](iot-hub-device-streams-overview.md#benefits).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -58,28 +56,21 @@ ms.locfileid: "92748680"
 
 * Два примера приложений, запускаемые в рамках этого краткого руководства, написаны на языке C#. На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1.0 или более поздней.
 
-  Пакет SDK для .NET Core, предназначенный для нескольких платформ, можно скачать из [раздела, посвященного .NET](https://www.microsoft.com/net/download/all).
+    Пакет SDK для .NET Core, предназначенный для нескольких платформ, можно скачать из [раздела, посвященного .NET](https://www.microsoft.com/net/download/all).
 
-* Проверьте текущую версию C# на компьютере, на котором ведется разработка, используя следующую команду:
+    Проверьте текущую версию C# на компьютере, на котором ведется разработка, используя следующую команду:
 
     ```
     dotnet --version
     ```
 
-* Выполните следующую команду, чтобы добавить расширение Интернета вещей Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и Службы подготовки устройств к добавлению в центр Интернета вещей (DPS).
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
-
 * [Скачайте примеры Azure IoT на C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip) и извлеките ZIP-архив.
 
 * Необходима действительная учетная запись пользователя и учетные данные на устройстве (Windows или Linux) для проверки подлинности пользователя.
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -93,7 +84,7 @@ ms.locfileid: "92748680"
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice* , как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice
@@ -195,7 +186,7 @@ ssh {username}@localhost -p 2222
 
 ![Вывод приложения локального прокси-сервера службы](./media/quickstart-device-streams-proxy-csharp/service-console-output.png)
 
-Вывод на консоль в приложении локального прокси-сервера устройства, который подключается к управляющей программе SSH по *IP_address:22* :
+Вывод на консоль в приложении локального прокси-сервера устройства, который подключается к управляющей программе SSH по *IP_address:22*:
 
 ![Вывод приложения локального прокси-сервера устройства](./media/quickstart-device-streams-proxy-csharp/device-console-output.png)
 

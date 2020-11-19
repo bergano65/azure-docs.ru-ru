@@ -12,17 +12,18 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/11/2019
-ms.openlocfilehash: 41f3505388e72fba15277067a94cf4e473008f20
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: fab52fcea03a2f65c868cfac27f8a8cef115b2be
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790429"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917653"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-В этой статье вы узнаете о первичных методах переноса базы данных SQL Server 2005 или более поздней версии в базу данных SQL Azure. Сведения о миграции на Управляемый экземпляр Azure SQL см. в статье [Перенос экземпляра SQL Server в управляемый экземпляр Azure SQL](../managed-instance/migrate-to-instance-from-sql-server.md). Сведения о миграции из других платформ см. [здесь](https://datamigration.microsoft.com/).
+В этой статье вы узнаете о первичных методах переноса базы данных SQL Server 2005 или более поздней версии в базу данных SQL Azure. Сведения о миграции на Управляемый экземпляр Azure SQL см. в статье [Перенос экземпляра SQL Server в управляемый экземпляр Azure SQL](../migration-guides/managed-instance/sql-server-to-managed-instance-overview.md). Рекомендации по выбору параметров миграции и средств для переноса в SQL Azure см. в статье [Миграция в Azure SQL](../migration-guides/index.yml) .
+
 
 ## <a name="migrate-to-a-single-database-or-a-pooled-database"></a>Перенос в отдельную базу данных или базу данных в пуле
 
@@ -119,7 +120,7 @@ ms.locfileid: "92790429"
 > [!IMPORTANT]
 > Управляемый экземпляр Azure SQL позволяет перенести существующий экземпляр SQL Server и его базы данных с минимальными затратами на проблемы с совместимостью. См. раздел [что такое управляемый экземпляр](../managed-instance/sql-managed-instance-paas-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure для [отслеживания использования базы данных TempDB во время миграции](/archive/blogs/azuresqlemea/lesson-learned-10-monitoring-tempdb-usage).
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](/archive/blogs/azuresqlemea/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database).

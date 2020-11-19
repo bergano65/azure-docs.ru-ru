@@ -12,14 +12,14 @@ ms.devlang: multiple
 ms.topic: how-to
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 10/23/2020
+ms.date: 11/18/2020
 ms.author: inhenkel
-ms.openlocfilehash: 92da9f399f0ebb1bd2c561b2fb8cd6039452deb0
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: f4ed68d891cb194e03d48abbc441c784a9669313
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92525203"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917881"
 ---
 # <a name="create-a-basic-audio-transform"></a>Создание базового преобразования звука
 
@@ -38,6 +38,6 @@ ms.locfileid: "92525203"
 [!INCLUDE [media-services-cli-instructions.md](./includes/task-create-basic-audio-rest.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)

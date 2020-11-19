@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4b3256591c0aa2536fd42bcdbb2ef339fc1d5c48
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 3ceead297ea726e256d806c08c22810b39296793
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356813"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917177"
 ---
 # <a name="how-to-use-azuresearchdocuments-in-a-c-net-application"></a>Использование Azure.Search.Docументс в приложении .NET на C#
 
@@ -231,6 +231,22 @@ private static void WriteDocuments(SearchResults<Hotel> searchResults)
 }
 ```
 
+Альтернативным подходом является добавление полей непосредственно в индекс. В следующем примере показано лишь несколько полей.
+
+   ```csharp
+    SearchIndex index = new SearchIndex(indexName)
+    {
+        Fields =
+            {
+                new SimpleField("hotelId", SearchFieldDataType.String) { IsKey = true, IsFilterable = true, IsSortable = true },
+                new SearchableField("hotelName") { IsFilterable = true, IsSortable = true },
+                new SearchableField("hotelCategory") { IsFilterable = true, IsSortable = true },
+                new SimpleField("baseRate", SearchFieldDataType.Int32) { IsFilterable = true, IsSortable = true },
+                new SimpleField("lastRenovationDate", SearchFieldDataType.DateTimeOffset) { IsFilterable = true, IsSortable = true }
+            }
+    };
+   ```
+
 ### <a name="field-definitions"></a>Определения полей
 
 Ваша модель данных в .NET и соответствующая схема индексов должны поддерживать возможности поиска, которые вы хотите предоставить конечному пользователю. Каждый объект верхнего уровня в .NET, например документ поиска в индексе поиска, соответствует результату поиска, который будет представлен в пользовательском интерфейсе. Например, в приложении поиска отеля конечные пользователи могут захотеть искать по имени Гостиницы, функциям отеля или характеристикам определенной комнаты. 
@@ -436,7 +452,7 @@ UploadDocuments(searchClient);
 
 ## <a name="run-queries"></a>Выполнение запросов
 
-Сначала настройте объект `SearchClient` , считывающий конечную точку поиска и ключ API запроса из **appsettings.js** :
+Сначала настройте объект `SearchClient` , считывающий конечную точку поиска и ключ API запроса из **appsettings.js**:
 
 ```csharp
 private static SearchClient CreateSearchClientForQueries(string indexName, IConfigurationRoot configuration)
@@ -621,7 +637,7 @@ WriteDocuments(results);
 
 В этом разделе приводится заключение в пакет SDK для .NET, но здесь не стоит останавливаться. В следующем разделе предлагаются дополнительные ресурсы для изучения программирования с помощью Azure Когнитивный поиск.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 + Просмотрите справочную документацию по API для [Azure.Search.Docументс](/dotnet/api/azure.search.documents) и [REST API](/rest/api/searchservice/)
 

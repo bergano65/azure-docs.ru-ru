@@ -2,14 +2,14 @@
 title: Настройка частных конечных точек для разделов и доменов службы "Сетка событий Azure"
 description: В этой статье описывается, как настроить частные конечные точки для разделов или доменов службы "Сетка событий Azure".
 ms.topic: how-to
-ms.date: 07/07/2020
+ms.date: 11/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e2e164d55f61f7a08e689aea106eac678b553c82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8e0cfc0a850ae15ea6d03ff6ca8b90003adbfc9
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324150"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916988"
 ---
 # <a name="configure-private-endpoints-for-azure-event-grid-topics-or-domains"></a>Настройка частных конечных точек для разделов и доменов службы "Сетка событий Azure"
 [Частные конечные точки](../private-link/private-endpoint-overview.md) можно использовать, чтобы разрешить прием событий непосредственно из виртуальной сети в разделы и домены, защищенные по [частной ссылке](../private-link/private-link-overview.md) , без использования общедоступного Интернета. Частная конечная точка использует IP-адрес из адресного пространства виртуальной сети для вашего раздела или домена. Дополнительные сведения см. в разделе [Сетевая безопасность](network-security.md).
@@ -37,15 +37,15 @@ ms.locfileid: "91324150"
 3. На странице **Ресурс** выполните следующие действия. 
     1. Если **в моем каталоге выбран вариант подключиться к ресурсу Azure**, то для метода подключения выполните следующие действия. В этом примере показано, как подключиться к ресурсу Azure в вашем каталоге. 
         1. Выберите **подписку Azure** , в которой находится **раздел или домен** . 
-        1. Для типа **ресурса**выберите **Microsoft. EventGrid/Topics** или **Microsoft. EventGrid/Domains** для **типа ресурса**.
-        2. В поле **ресурс**выберите раздел или домен из раскрывающегося списка. 
+        1. Для типа **ресурса** выберите **Microsoft. EventGrid/Topics** или **Microsoft. EventGrid/Domains** для **типа ресурса**.
+        2. В поле **ресурс** выберите раздел или домен из раскрывающегося списка. 
         3. Убедитесь, что **целевой подресурс** имеет значение **раздел** или **домен** (в зависимости от выбранного типа ресурса).    
         4. По завершении выберите **Next: Конфигурация >**  в нижней части страницы. 
 
             ![Снимок экрана, на котором показана страница "Создание частной конечной точки — ресурс".](./media/configure-private-endpoints/resource-page.png)
-    2. При выборе **подключения к ресурсу с помощью идентификатора ресурса или псевдонима**выполните следующие действия.
+    2. При выборе **подключения к ресурсу с помощью идентификатора ресурса или псевдонима** выполните следующие действия.
         1. Введите идентификатор ресурса. Например: `/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>`.  
-        2. Для **ресурса**введите **раздел** или **домен**. 
+        2. Для **ресурса** введите **раздел** или **домен**. 
         3. используемых Добавление сообщения запроса. 
         4. По завершении выберите **Next: Конфигурация >**  в нижней части страницы. 
 
@@ -108,7 +108,7 @@ ms.locfileid: "91324150"
 
 1. Выберите **закрытую конечную точку** , которую вы хотите отклонить, и на панели инструментов выберите **отклонить** .
 
-    ![Снимок экрана, показывающий, что выбран параметр "отклонить подключения к частным конечным точкам (Предварительная версия)".](./media/configure-private-endpoints/reject-button.png)
+    ![Снимок экрана, показывающий, что выбрано "отклонить подключения к частным конечным точкам".](./media/configure-private-endpoints/reject-button.png)
 1. В диалоговом окне **отклонить подключение** введите комментарий (необязательно) и нажмите **кнопку Да**. 
 
     ![Частная конечная точка — отклонение](./media/configure-private-endpoints/reject.png)
@@ -121,7 +121,7 @@ ms.locfileid: "91324150"
 
 
 ## <a name="use-azure-cli"></a>Использование Azure CLI
-Чтобы создать частную конечную точку, используйте метод [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create) , как показано в следующем примере:
+Чтобы создать частную конечную точку, используйте метод [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint?#az-network-private-endpoint-create) , как показано в следующем примере:
 
 ```azurecli-interactive
 az network private-endpoint create \
@@ -135,12 +135,12 @@ az network private-endpoint create \
     --group-ids topic
 ```
 
-Описание параметров, используемых в примере, см. в документации по команде [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create). В этом примере необходимо отметить несколько моментов: 
+Описание параметров, используемых в примере, см. в документации по команде [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint?#az-network-private-endpoint-create). В этом примере необходимо отметить несколько моментов: 
 
 - Для `private-connection-resource-id` Укажите идентификатор ресурса **раздела** или **домена**. В предыдущем примере используется тип: Topic.
 - для `group-ids` укажите `topic` или `domain` . В предыдущем примере `topic` используется. 
 
-Чтобы удалить закрытую конечную точку, используйте метод [AZ Network частный-Endpoint Delete](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-delete) , как показано в следующем примере:
+Чтобы удалить закрытую конечную точку, используйте метод [AZ Network частный-Endpoint Delete](/cli/azure/network/private-endpoint?#az-network-private-endpoint-delete) , как показано в следующем примере:
 
 ```azurecli-interactive
 az network private-endpoint delete --resource-group <RESOURECE GROUP NAME> --name <PRIVATE ENDPOINT NAME>
@@ -165,7 +165,7 @@ az extension add -n eventgrid
 ```
 
 ### <a name="create-a-private-endpoint"></a>Создание частной конечной точки
-Чтобы создать частную конечную точку, используйте метод [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create) , как показано в следующем примере:
+Чтобы создать частную конечную точку, используйте метод [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint?#az-network-private-endpoint-create) , как показано в следующем примере:
 
 ```azurecli-interactive
 az network private-endpoint create \
@@ -179,12 +179,12 @@ az network private-endpoint create \
     --group-ids topic
 ```
 
-Описание параметров, используемых в примере, см. в документации по команде [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create). В этом примере необходимо отметить несколько моментов: 
+Описание параметров, используемых в примере, см. в документации по команде [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint?#az-network-private-endpoint-create). В этом примере необходимо отметить несколько моментов: 
 
 - Для `private-connection-resource-id` Укажите идентификатор ресурса **раздела** или **домена**. В предыдущем примере используется тип: Topic.
 - для `group-ids` укажите `topic` или `domain` . В предыдущем примере `topic` используется. 
 
-Чтобы удалить закрытую конечную точку, используйте метод [AZ Network частный-Endpoint Delete](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-delete) , как показано в следующем примере:
+Чтобы удалить закрытую конечную точку, используйте метод [AZ Network частный-Endpoint Delete](/cli/azure/network/private-endpoint?#az-network-private-endpoint-delete) , как показано в следующем примере:
 
 ```azurecli-interactive
 az network private-endpoint delete --resource-group <RESOURECE GROUP NAME> --name <PRIVATE ENDPOINT NAME>
@@ -480,6 +480,6 @@ Invoke-RestMethod -Method 'Get'
 
 Вы можете одобрить подключение даже после его отклонения через API. При использовании портал Azure нельзя утвердить конечную точку, которая была отклонена. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения о настройке параметров брандмауэра IP см. в разделе [Настройка брандмауэра IP для разделов и доменов службы "Сетка событий Azure](configure-firewall.md)".
 * Сведения об устранении неполадок с сетевым подключением см. в разделе [Устранение неполадок с сетевым подключением](troubleshoot-network-connectivity.md)

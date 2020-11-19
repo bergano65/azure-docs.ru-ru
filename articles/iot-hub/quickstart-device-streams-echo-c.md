@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: ad31eb04f53197c4c3ccdd173cd57564c65d5a35
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: de310846ad0449a0dac7eccd60d82d4c68ef519b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747461"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832217"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в C с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -36,25 +36,19 @@ ms.locfileid: "92747461"
 
 Код демонстрирует процесс инициализации потока устройств, а также его использование для отправки и получения данных.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Вам потребуется сделать следующее:
 
-* Установите [Visual Studio 2019](https://www.visualstudio.com/vs/) с включенной рабочей нагрузкой **Разработка классических приложений на C++** .
+* Установите [Visual Studio 2019](https://www.visualstudio.com/vs/) с включенной рабочей нагрузкой **Разработка классических приложений на C++**.
 
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
-* Выполните следующую команду, чтобы добавить расширение Интернета вещей Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и Службы подготовки устройств к добавлению в центр Интернета вещей (DPS).
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-   [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 Предварительная версия потоков устройств сейчас поддерживается только в центрах Интернета вещей, созданных в следующих регионах:
 
@@ -68,7 +62,7 @@ ms.locfileid: "92747461"
 При работе с этим кратким руководством используйте [пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md). Вы подготовите среду разработки, которая используется для клонирования и сборки [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c) с сайта GitHub. Пакет SDK на сайте GitHub содержит пример кода, используемый в этом кратком руководстве.
 
    > [!NOTE]
-   > Перед началом этой процедуры убедитесь, что Visual Studio устанавливается вместе с рабочей нагрузкой **Разработка классических приложений на C++** .
+   > Перед началом этой процедуры убедитесь, что Visual Studio устанавливается вместе с рабочей нагрузкой **Разработка классических приложений на C++**.
 
 1. Установите [систему сборки CMake](https://cmake.org/download/), как описано на странице скачивания.
 
@@ -89,7 +83,7 @@ ms.locfileid: "92747461"
     cd cmake
     ```
 
-1. Выполните приведенную ниже команду из каталога *cmake* , чтобы создать версию пакета SDK для используемой клиентской платформы разработки.
+1. Выполните приведенную ниже команду из каталога *cmake*, чтобы создать версию пакета SDK для используемой клиентской платформы разработки.
 
    * В Linux:
 
@@ -98,7 +92,7 @@ ms.locfileid: "92747461"
       make -j
       ```
 
-   * В Windows откройте [командную строку разработчика для Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs). Выполните команду для своей версии Visual Studio. В этом кратком руководстве используется Visual Studio 2019. Эти команды также создают решение Visual Studio для имитированного устройства в каталоге *cmake* .
+   * В Windows откройте [командную строку разработчика для Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs). Выполните команду для своей версии Visual Studio. В этом кратком руководстве используется Visual Studio 2019. Эти команды также создают решение Visual Studio для имитированного устройства в каталоге *cmake*.
 
       ```cmd
       rem For VS2015
@@ -126,7 +120,7 @@ ms.locfileid: "92747461"
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice* , как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice

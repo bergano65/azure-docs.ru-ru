@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 1f71c01d53a89ce1b459826689eb5b2e4899b3a2
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c015561e66d77e6df352e601bf1a67da5996d4d5
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886733"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915480"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -136,7 +136,7 @@ startCallOptions.setVideoOptions(videoOptions);
 Call call = callAgent.call(context, participants, startCallOptions);
 ```
 
-### <a name="join-a-group-call"></a>Вызов группы
+### <a name="join-a-group-call"></a>Присоединение к групповому вызову
 Чтобы начать новый вызов группы или присоединиться к текущему вызову группы, необходимо вызвать метод "Join" и передать объект со `groupId` свойством. Значение должно быть идентификатором GUID.
 ```java
 Context appContext = this.getApplicationContext();
@@ -153,7 +153,7 @@ call = callAgent.join(context, groupCallContext, joinCallOptions);
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Учетная запись Firebase, настроенная с включенной облачной службой обмена сообщениями (FCM), и с Firebase облачной службы обмена сообщениями, подключенной к экземпляру центра уведомлений Azure. Дополнительные сведения см. в разделе [уведомления служб связи](https://docs.microsoft.com/azure/communication-services/concepts/notifications) .
+Учетная запись Firebase, настроенная с включенной облачной службой обмена сообщениями (FCM), и с Firebase облачной службы обмена сообщениями, подключенной к экземпляру центра уведомлений Azure. Дополнительные сведения см. в разделе [уведомления служб связи](../../../concepts/notifications.md) .
 Кроме того, в учебнике предполагается, что вы используете Android Studio версии 3,6 или более поздней для создания приложения.
 
 Для приложения Android требуется набор разрешений, чтобы получать уведомления от Firebase Cloud Messaging. В `AndroidManifest.xml` файле добавьте следующий набор разрешений сразу после *манифеста<... >* или под *</application>* тегом.

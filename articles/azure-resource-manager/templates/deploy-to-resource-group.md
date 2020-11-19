@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в группах ресурсов
 description: Описывает развертывание ресурсов в шаблоне Azure Resource Manager. В нем показано, как ориентироваться на несколько групп ресурсов.
 ms.topic: conceptual
-ms.date: 10/26/2020
-ms.openlocfilehash: fd211641d7fcc02a1db154053597497583b21ae5
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 11/18/2020
+ms.openlocfilehash: 5e33f0d505759944ccaf2233aa122b6ab701c91f
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92681670"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917432"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Развертывание группы ресурсов с помощью шаблонов ARM
 
@@ -83,6 +83,8 @@ New-AzResourceGroupDeployment `
 
 * Целевая группа ресурсов из операции
 * другие группы ресурсов в той же подписке или других подписках
+* Любая подписка в клиенте
+* Клиент для группы ресурсов
 * [ресурсы расширения](scope-extension-resources.md) можно применять к ресурсам
 
 Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
@@ -95,6 +97,8 @@ New-AzResourceGroupDeployment `
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-rg.json" highlight="5":::
 
+Пример шаблона см. в разделе [развертывание в целевую группу ресурсов](#deploy-to-target-resource-group).
+
 ### <a name="scope-to-resource-group-in-same-subscription"></a>Область действия группы ресурсов в одной подписке
 
 Чтобы развернуть ресурсы в другой группе ресурсов в той же подписке, добавьте вложенное развертывание и включите `resourceGroup` свойство. Если не указать идентификатор подписки или группу ресурсов, используются подписка и группа ресурсов из родительского шаблона. Все группы ресурсов необходимо создать до выполнения развертывания.
@@ -103,18 +107,48 @@ New-AzResourceGroupDeployment `
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/same-sub-to-resource-group.json" highlight="9,13":::
 
+Пример шаблона см. в разделе [развертывание в несколько групп ресурсов](#deploy-to-multiple-resource-groups).
+
 ### <a name="scope-to-resource-group-in-different-subscription"></a>Область действия группы ресурсов в другой подписке
 
 Чтобы развернуть ресурсы в группе ресурсов в другой подписке, добавьте вложенное развертывание и включите `subscriptionId` `resourceGroup` Свойства и. В следующем примере вложенное развертывание предназначено для группы ресурсов с именем `demoResourceGroup` .
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/different-sub-to-resource-group.json" highlight="9,10,14":::
 
-## <a name="cross-resource-groups"></a>Перекрестные группы ресурсов
+Пример шаблона см. в разделе [развертывание в несколько групп ресурсов](#deploy-to-multiple-resource-groups).
+
+### <a name="scope-to-subscription"></a>Область действия для подписки
+
+Чтобы развернуть ресурсы в подписке, добавьте вложенное развертывание и включите `subscriptionId` свойство. Подписка может быть подпиской для целевой группы ресурсов или любой другой подписки в клиенте. Кроме того, задайте `location` свойство для вложенного развертывания.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-to-subscription.json" highlight="9,10,14":::
+
+Пример шаблона см. в разделе [Создание группы ресурсов](#create-resource-group).
+
+### <a name="scope-to-tenant"></a>Область для клиента
+
+Вы можете создавать ресурсы в клиенте, присвоив параметру `scope` значение `/` . Пользователь, развертывающий шаблон, должен иметь [необходимый доступ для развертывания в клиенте](deploy-to-tenant.md#required-access).
+
+Можно использовать вложенное развертывание с `scope` и `location` задать.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-to-tenant.json" highlight="9,10,14":::
+
+Или можно задать область `/` для некоторых типов ресурсов, например для групп управления.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-create-mg.json" highlight="12,15":::
+
+## <a name="deploy-to-target-resource-group"></a>Развертывание в целевую группу ресурсов
+
+Чтобы развернуть ресурсы в Целевой группе ресурсов, определите эти ресурсы в разделе **ресурсов** шаблона. Следующий шаблон создает учетную запись хранения в группе ресурсов, указанной в операции развертывания.
+
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-outputs/azuredeploy.json":::
+
+## <a name="deploy-to-multiple-resource-groups"></a>Развертывание в нескольких группах ресурсов
 
 Можно выполнить развертывание в несколько групп ресурсов в одном шаблоне ARM. Чтобы выбрать группу ресурсов, которая отличается от указанной в родительском шаблоне, используйте [вложенный или связанный шаблон](linked-templates.md). В обозначении типа ресурса для развертывания укажите идентификатор подписки и группу ресурсов, в которых вы намерены развернуть этот вложенный шаблон. Эти группы ресурсов могут находиться в разных подписках.
 
 > [!NOTE]
-> В рамках одного развертывания можно выполнять развертывание **в 800 группах ресурсов** . Как правило, это ограничение означает, что для развертывания используется одна группа ресурсов из родительского шаблона и не более 799 групп ресурсов из вложенных или связанных развертываний. Но если родительский шаблон содержит только вложенные или связанные шаблоны и сам не развертывает ресурсы, то вложенные или связанные развертывания могут включать до 800 групп ресурсов.
+> В рамках одного развертывания можно выполнять развертывание **в 800 группах ресурсов**. Как правило, это ограничение означает, что для развертывания используется одна группа ресурсов из родительского шаблона и не более 799 групп ресурсов из вложенных или связанных развертываний. Но если родительский шаблон содержит только вложенные или связанные шаблоны и сам не развертывает ресурсы, то вложенные или связанные развертывания могут включать до 800 групп ресурсов.
 
 Следующий пример создает две учетные записи хранения. Первая учетная запись хранения развертывается в той группе ресурсов, которая указана в операции развертывания. Вторая учетная запись хранения развертывается в группе ресурсов, которая указана в параметрах `secondResourceGroup` и `secondSubscriptionID`:
 
@@ -126,7 +160,7 @@ New-AzResourceGroupDeployment `
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке** , используйте следующий код:
+Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке**, используйте следующий код:
 
 ```azurepowershell-interactive
 $firstRG = "primarygroup"
@@ -143,7 +177,7 @@ New-AzResourceGroupDeployment `
   -secondStorageLocation eastus
 ```
 
-Чтобы развернуть две учетные записи хранения в **двух подписках** , используйте следующий код:
+Чтобы развернуть две учетные записи хранения в **двух подписках**, используйте следующий код:
 
 ```azurepowershell-interactive
 $firstRG = "primarygroup"
@@ -152,10 +186,10 @@ $secondRG = "secondarygroup"
 $firstSub = "<first-subscription-id>"
 $secondSub = "<second-subscription-id>"
 
-Select-AzSubscription -Subscription $secondSub
+Set-AzContext -Subscription $secondSub
 New-AzResourceGroup -Name $secondRG -Location eastus
 
-Select-AzSubscription -Subscription $firstSub
+Set-AzContext -Subscription $firstSub
 New-AzResourceGroup -Name $firstRG -Location southcentralus
 
 New-AzResourceGroupDeployment `
@@ -169,7 +203,7 @@ New-AzResourceGroupDeployment `
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке** , используйте следующий код:
+Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке**, используйте следующий код:
 
 ```azurecli-interactive
 firstRG="primarygroup"
@@ -184,7 +218,7 @@ az deployment group create \
   --parameters storagePrefix=tfstorage secondResourceGroup=$secondRG secondStorageLocation=eastus
 ```
 
-Чтобы развернуть две учетные записи хранения в **двух подписках** , используйте следующий код:
+Чтобы развернуть две учетные записи хранения в **двух подписках**, используйте следующий код:
 
 ```azurecli-interactive
 firstRG="primarygroup"
@@ -208,6 +242,76 @@ az deployment group create \
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="create-resource-group"></a>Создать группу ресурсов
+
+В развертывании группы ресурсов можно переключиться на уровень подписки и создать группу ресурсов. Следующий шаблон развертывает учетную запись хранения в целевую группу ресурсов и создает новую группу ресурсов в указанной подписке.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storagePrefix": {
+            "type": "string",
+            "maxLength": 11
+        },
+        "newResourceGroupName": {
+            "type": "string"
+        },
+        "nestedSubscriptionID": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
+        }
+    },
+    "variables": {
+        "storageName": "[concat(parameters('storagePrefix'), uniqueString(resourceGroup().id))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "name": "[variables('storageName')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "Storage",
+            "properties": {
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "demoSubDeployment",
+            "location": "westus",
+            "subscriptionId": "[parameters('nestedSubscriptionID')]",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Resources/resourceGroups",
+                            "apiVersion": "2020-06-01",
+                            "name": "[parameters('newResourceGroupName')]",
+                            "location": "[parameters('location')]",
+                            "properties": {}
+                        }
+                    ],
+                    "outputs": {}
+                }
+            }
+        }
+    ]
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
