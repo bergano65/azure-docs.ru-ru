@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/13/2020
+ms.date: 11/18/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39555c5b396e8a8fd3449331cd2fd68b96ad2087
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4510dac833d0576273472b6f925d546b55257614
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840004"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886810"
 ---
 # <a name="authentication-methods-in-azure-active-directory---phone-options"></a>Методы проверки подлинности в Azure Active Directory параметры телефона
 
@@ -57,7 +57,7 @@ ms.locfileid: "94840004"
 Если у вас возникли проблемы с аутентификацией по телефону в Azure AD, ознакомьтесь со следующими действиями по устранению неполадок.
 
 * "Вы достигли предельного числа вызовов проверки" или "вы достигли сообщения об ошибке с кодами проверки текста" во время входа
-   * Используйте приложение предназначенная Authenticator или код проверки для завершения проверки подлинности или повторите попытку позже.
+   * Корпорация Майкрософт может ограничить повторные попытки проверки подлинности, выполняемые одним и тем же пользователем в течение короткого периода времени. Это ограничение не распространяется на Microsoft Authenticator или код проверки. Если вы достигли этих ограничений, вы можете использовать приложение для проверки подлинности, код проверки или повторить попытку входа через несколько минут.
 * Заблокированный идентификатор вызывающего абонента на отдельном устройстве.
    * Проверьте все заблокированные номера, настроенные на устройстве.
 * Неправильный номер телефона или неправильный код страны или региона либо путаница с номерами телефонов (личным и рабочим).

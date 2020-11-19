@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 1/22/2020
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 03850315a05f569d2c6ba9405b6ec38bb6b1305d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36cdaa813e0eccb23563301052aee268ab61533a
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78330401"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888510"
 ---
 <!---Customer intent: I want to host files for a static website in Blob storage and access the website from an Azure endpoint.--->
 
@@ -77,14 +77,24 @@ ms.locfileid: "78330401"
 1. Откройте файл *index.html* в редакторе, вставьте следующий текст в файл и сохраните его:
 
     ```
-    <h1>Hello World!</h1>
+    <!DOCTYPE html>
+    <html>
+      <body>
+        <h1>Hello World!</h1>
+      </body>
+    </html>
     ```
 
 1. Создайте файл ошибок по умолчанию и назовите его *404.html*.
 1. Откройте файл *404.html* в редакторе, вставьте следующий текст в файл и сохраните его:
 
     ```
-    <h1>404</h1>
+    <!DOCTYPE html>
+    <html>
+      <body>
+        <h1>404</h1>
+      </body>
+    </html>
     ```
 
 1. Щелкните правой кнопкой мыши папку *mywebsite* на панели **Проводник** и выберите **Deploy to Static Website...** (Развернуть на статическом веб-сайте...), чтобы развернуть веб-сайт. Вам будет предложено войти в Azure для получения списка подписок.

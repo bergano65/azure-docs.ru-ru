@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 838d6244127bc1b3609ab5e925e54dbab7fe3a2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e845efa2c1df47c80fcc10e7fb758f05af9fbecc
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212687"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94887422"
 ---
 # <a name="azure-cosmos-db-trigger-for-azure-functions-2x-and-higher"></a>Триггер Azure Cosmos DB для функций Azure 2. x и более поздних версий
 
@@ -184,9 +184,8 @@ namespace CosmosDBSamplesV2
 
 ```csharp
     [FunctionName("DocumentUpdates")]
-    public static void Run(
-        [CosmosDBTrigger("database", "collection", ConnectionStringSetting = "myCosmosDB")]
-    IReadOnlyList<Document> documents,
+    public static void Run([CosmosDBTrigger("database", "collection", ConnectionStringSetting = "myCosmosDB")]
+        IReadOnlyList<Document> documents,
         ILogger log)
     {
         ...
@@ -228,7 +227,7 @@ namespace CosmosDBSamplesV2
 |**леасеконнектионстрингсеттинг** | **LeaseConnectionStringSetting** | Используемых Имя параметра приложения, содержащего строку подключения к учетной записи Azure Cosmos DB, в которой находится сбор аренд. Если значение не задано, используется значение `connectionStringSetting`. Этот параметр задается автоматически при создании привязки на портале. Строка подключения для коллекции аренд должна иметь разрешения на запись.|
 |**леаседатабасенаме** |**LeaseDatabaseName** | (Необязательно.) Имя базы данных, в которой содержится коллекция, используемая для хранения аренд. Если значение не задано, используется значение параметра `databaseName`. Этот параметр задается автоматически при создании привязки на портале. |
 |**леасеколлектионнаме** | **LeaseCollectionName** | (Необязательно.) Имя коллекции, используемой для хранения аренд. Если значение не задано, используется значение `leases`. |
-|**креателеасеколлектионифнотексистс** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. Значение по умолчанию — `false`. |
+|**креателеасеколлектионифнотексистс** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. Значение по умолчанию — `false`. |
 |**leasesCollectionThroughput**| **леасесколлектионсраугхпут**| Используемых Определяет число единиц запроса, назначаемых при создании коллекции аренд. Этот параметр используется, только если `createLeaseCollectionIfNotExists` для задано значение `true` . Этот параметр задается автоматически при создании привязки с помощью портала.
 |**леасеколлектионпрефикс**| **LeaseCollectionPrefix**| Используемых Если этот параметр задан, значение добавляется в качестве префикса в аренду, созданную в коллекции аренд для этой функции. Использование префикса позволяет двум отдельным функциям Azure совместно использовать одну и ту же коллекцию аренд, используя разные префиксы.
 |**фидполлделай**| **FeedPollDelay**| Используемых Время (в миллисекундах) задержки между опросом секции для новых изменений в веб-канале после того, как все текущие изменения будут остановлены. Значение по умолчанию — 5 000 миллисекунд или 5 секунд.
@@ -251,7 +250,7 @@ namespace CosmosDBSamplesV2
 
 Триггер не указывает, был ли документ обновлен или вставлен. Вместо этого он представляет сам документ. Если операции обновления и вставки необходимо обрабатывать по-разному, это можно сделать, внедрив поля меток времени для операций обновления и вставки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Чтение Azure Cosmos DB документа (входная привязка)](./functions-bindings-cosmosdb-v2-input.md)
 - [Сохранение изменений в документе Azure Cosmos DB (Выходная привязка)](./functions-bindings-cosmosdb-v2-output.md)

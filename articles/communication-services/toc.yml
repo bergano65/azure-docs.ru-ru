@@ -103,15 +103,15 @@
     - name: Обзор справочной документации
       href: concepts/reference.md
     - name: Документация по REST API
-      href: 'https://docs.microsoft.com/rest/api/communication/'
+      href: /rest/api/communication/
     - name: Вызов библиотек
       items:
         - name: Вызов (JavaScript)
-          href: 'https://docs.microsoft.com/javascript/api/azure-communication-services/@azure/communication-calling/?view=azure-communication-services-js'
+          href: /javascript/api/azure-communication-services/@azure/communication-calling/?view=azure-communication-services-js
         - name: Вызов (Android/Java)
-          href: 'https://docs.microsoft.com/java/api/com.azure.communication.calling?view=communication-services-java-android'
+          href: /java/api/com.azure.communication.calling?view=communication-services-java-android
         - name: Вызов (iOS)
-          href: 'https://docs.microsoft.com/objectivec/communication-services/calling/'
+          href: /objectivec/communication-services/calling/
     - name: Библиотеки чатов
       items:
         - name: Чат (JavaScript)

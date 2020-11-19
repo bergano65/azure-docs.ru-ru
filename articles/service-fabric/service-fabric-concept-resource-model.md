@@ -4,12 +4,12 @@ description: В этой статье содержатся общие сведе
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: sfrev
-ms.openlocfilehash: 3968fde0222dcee8047e7490dba78879ab6110e2
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 886b7d6b40bebf6234064b0627017db1d8cfe31f
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681692"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888833"
 ---
 # <a name="service-fabric-application-resource-model"></a>Модель ресурсов приложения Service Fabric
 
@@ -91,6 +91,7 @@ ms.locfileid: "94681692"
 >
 >
 
+
 | Параметр              | Описание                                 | Пример                                                      | Комментарии                                                     |
 | ---------------------- | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | clusterName            | Имя кластера, в который выполняется развертывание | SF-cluster123                                                |                                                              |
@@ -137,6 +138,11 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
 ```
 
 ## <a name="upgrade-the-service-fabric-application-by-using-resource-manager"></a>Обновление Service Fabric приложения с помощью диспетчер ресурсов
+
+
+> [!IMPORTANT]
+> Любая служба, развернутая с помощью определения JSON в ARM, должна быть удалена из раздела Дефаултсервицес соответствующего файла ApplicationManifest.xml.
+
 
 Вы можете обновить приложение, которое уже развернуто в кластере Service Fabric, по одной из следующих причин:
 

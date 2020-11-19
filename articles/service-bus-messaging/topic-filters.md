@@ -3,12 +3,12 @@ title: Фильтры разделов в служебной шине Azure | Д
 description: В этой статье объясняется, как подписчики могут определить, какие сообщения они хотят получить из раздела, указав фильтры.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 5df343ff63c01a7cf10315b758e3d6fba8ac5674
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04ae585c42f8acfbf338bf23befb32a5521fcf57
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88066752"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889037"
 ---
 # <a name="topic-filters-and-actions"></a>Фильтры и действия разделов
 
@@ -18,7 +18,7 @@ ms.locfileid: "88066752"
 
 Служебная шина поддерживает три условия фильтрации:
 
--   *Логические фильтры*. **TrueFilter** отбирает все поступившие сообщения (**true**), а **FalseFilter** не отбирает ни одного сообщения (**false**).
+-   *Логические фильтры*. **TrueFilter** отбирает все поступившие сообщения (**true**), а **FalseFilter** не отбирает ни одного сообщения (**false**). Эти два фильтра являются производными от фильтра SQL. 
 
 -   *Фильтры SQL*. **SqlFilter** содержит SQL-подобное условное выражение, которое вычисляется в брокере для определяемых пользователем свойств и системных свойств каждого поступившего сообщения. Все системные свойства в условном выражении предваряются префиксом `sys.`. [Подмножество языка SQL для условий фильтра](service-bus-messaging-sql-filter.md) проверяет наличие свойств ( `EXISTS` ), значений NULL ( `IS NULL` ), ЛОГИЧЕСКИХ операторов Not/and/or, операторам отношения, простой числовой арифметической операции и простому текстовому шаблону, совпадающему с `LIKE` .
 
@@ -52,6 +52,75 @@ ms.locfileid: "88066752"
 При секционировании фильтры распределяют сообщения по нескольким подпискам на разделы так, что каждое сообщение попадает только в один строго прогнозируемый раздел. Метод секционирования удобен в том случае, если масштаб системы требует обрабатывать много идентичных по функциональности секций, каждая из которых имеет свой контекст и содержит определенное подмножество данных. В качестве примера можно указать данные профилей клиентов. Издатель, отправляющий сообщение в определенный раздел, не обязан понимать, как работает модель секционирования, и даже знать о ее существовании. Сообщение помещается в нужную подписку, из которой его получает обработчик сообщений, настроенный для этой секции.
 
 При маршрутизации фильтры распределяют сообщения между подписками на разделы прогнозируемым образом, но не обязательно уникально. В сочетании с функцией [автоматической переадресации](service-bus-auto-forwarding.md) фильтры разделов позволяют создавать сложные схемы маршрутов в пространстве имен сервисной шины и распространять сообщения внутри региона Azure. Если вы примените Функции Azure или Azure Logic Apps в качестве моста между пространствами имен Служебной шины Azure, вы получите возможность создавать еще более сложные глобальные топологии с прямой интеграцией в бизнес-приложения.
+
+## <a name="examples"></a>Примеры
+
+### <a name="set-rule-action-for-a-sql-filter"></a>Задание действия правила для фильтра SQL
+
+```csharp
+// instantiate the ManagementClient
+this.mgmtClient = new ManagementClient(connectionString);
+
+// create the SQL filter
+var sqlFilter = new SqlFilter("source = @stringParam");
+
+// assign value for the parameter
+sqlFilter.Parameters.Add("@stringParam", "orders");
+
+// instantiate the Rule = Filter + Action
+var filterActionRule = new RuleDescription
+{
+    Name = "filterActionRule",
+    Filter = sqlFilter,
+    Action = new SqlRuleAction("SET source='routedOrders'")
+};
+
+// create the rule on Service Bus
+await this.mgmtClient.CreateRuleAsync(topicName, subscriptionName, filterActionRule);
+```
+
+### <a name="sql-filter-on-a-system-property"></a>Фильтр SQL для системного свойства
+
+```csharp
+sys.Label LIKE '%bus%'`
+```
+
+### <a name="using-or"></a>Использование или 
+
+```csharp
+sys.Label LIKE '%bus%' OR user.tag IN ('queue', 'topic', 'subscription')
+```
+
+### <a name="using-in-and-not-in"></a>Использование IN и NOT IN
+
+```csharp
+StoreId IN('Store1', 'Store2', 'Store3')"
+
+sys.To IN ('Store5','Store6','Store7') OR StoreId = 'Store8'
+
+sys.To NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8') OR StoreId NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8')
+```
+
+Пример для C# с использованием этих фильтров см. [в разделе Пример фильтров разделов на сайте GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Azure.Messaging.ServiceBus/BasicSendReceiveTutorialwithFilters).
+
+### <a name="correlation-filter-using-correlationid"></a>Фильтр корреляции с использованием CorrelationID
+
+```csharp
+new CorrelationFilter("Contoso");
+```
+
+Он фильтрует сообщения с параметром, имеющим `CorrelationID` значение `Contoso` . 
+
+### <a name="correlation-filter-using-system-and-user-properties"></a>Фильтр корреляции с использованием свойств системы и пользователя
+
+```csharp
+var filter = new CorrelationFilter();
+filter.Label = "Important";
+filter.ReplyTo = "johndoe@contoso.com";
+filter.Properties["color"] = "Red";
+```
+
+Это эквивалентно следующему: `sys.ReplyTo = 'johndoe@contoso.com' AND sys.Label = 'Important' AND color = 'Red'`
 
 
 > [!NOTE]

@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/03/2020
+ms.date: 11/18/2020
 ms.author: alzam
-ms.openlocfilehash: e2451796cb99f57501ed74aba1dc7a3077b51881
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f10799ab32b6cb26a8b3b5b343f65b960d71357
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441618"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889105"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Настройка оповещений о событиях журнала ресурсов из VPN-шлюза
 
@@ -20,20 +20,20 @@ ms.locfileid: "89441618"
 
 В Azure доступны следующие журналы ресурсов:
 
-|***Имя*** | ***Описание*** |
+|***Имя** _ | _*_Описание_*_ |
 |---        | ---               |
 |GatewayDiagnosticLog | Содержит журналы ресурсов для событий настройки шлюза, основные изменения и события обслуживания. |
 |TunnelDiagnosticLog | Содержит события изменения состояния туннеля. События подключения и отключения туннеля имеют обобщенную причину изменения состояния, если применимо |
 |RouteDiagnosticLog | Регистрирует изменения статических маршрутов и событий BGP, происходящих в шлюзе. |
 |IKEDiagnosticLog | Регистрирует сообщения управления IKE и события в шлюзе |
-|P2SDiagnosticLog | Регистрирует сообщения управления точка-сеть и события на шлюзе. Сведения об источнике подключения предоставляются только для подключений по протоколу IKEv2 |
+|P2SDiagnosticLog | Регистрирует сообщения управления точка-сеть и события на шлюзе. Сведения об источнике подключения предоставляются только для подключений по протоколу IKEv2 и Опенвпн |
 
 ## <a name="set-up-alerts-in-the-azure-portal"></a><a name="setup"></a>Настройка оповещений на портале Azure
 
 В следующем примере показано, как создать предупреждение для события отключения, включающего туннель VPN типа "сеть — сеть".
 
 
-1. В портал Azure найдите **log Analytics** в разделе **все службы** и выберите **log Analytics рабочие области**.
+1. В портал Azure выполните поиск _ *log Analytics** в разделе **все службы** и выберите **log Analytics рабочие области**.
 
    ![Параметры для перехода в Log Analytics рабочие области](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Создание")
 
@@ -64,7 +64,7 @@ ms.locfileid: "89441618"
 
    ![Варианты создания нового правила генерации оповещений](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert6.png  "Выберите пункт")
 
-   ![точка-сеть](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert6.png  "Выберите пункт")
+   ![точка — сеть](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert6.png  "Выберите пункт")
 8. Выберите рабочую область Log Analytics и ресурс.
 
    ![Параметры для рабочей области и ресурса](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert7.png  "Выберите пункт")
@@ -195,6 +195,6 @@ ms.locfileid: "89441618"
        -Name 'The Azure to Redmond tunnel is disconnected'
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о настройке оповещений в метриках туннеля см. в разделе [Настройка оповещений в метриках VPN-шлюза](vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric.md).

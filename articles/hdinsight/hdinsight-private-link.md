@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: 3c6bee570312009af5fbdf42a018ad2b387662d9
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 66c9a3afb91aaff448d6eadc86175d8515be766c
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422303"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889088"
 ---
 # <a name="secure-and-isolate-azure-hdinsight-clusters-with-private-link-preview"></a>Защита и изоляция кластеров Azure HDInsight с помощью частной ссылки (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "93422303"
 
 ## <a name="remove-public-ip-addresses"></a>Удаление общедоступных IP-адресов
 
-По умолчанию HDInsight RP использует *входящее* подключение к кластеру с помощью общедоступных IP-адресов. Если `resourceProviderConnection` для свойства Network задано значение *Исходящие* , то он обращается к RP HDInsight, чтобы подключения всегда инициирулись из кластера в RP. Без входящего подключения не требуется наличие тегов входящей службы или общедоступных IP-адресов.
+По умолчанию HDInsight RP использует *входящее* подключение к кластеру с помощью общедоступных IP-адресов. Если `resourceProviderConnection` для свойства Network задано значение *Исходящие*, то он обращается к RP HDInsight, чтобы подключения всегда инициирулись из кластера в RP. Без входящего подключения не требуется наличие тегов входящей службы или общедоступных IP-адресов.
 
 Базовые подсистемы балансировки нагрузки, используемые в архитектуре виртуальной сети по умолчанию, автоматически предоставляют общедоступный NAT (преобразование сетевых адресов) для доступа к необходимым исходящим зависимостям, таким как HDInsight RP. Если вы хотите ограничить исходящие подключения к общедоступному Интернету, можно [настроить брандмауэр](./hdinsight-restrict-outbound-traffic.md), но это не обязательно.
 
@@ -54,7 +54,7 @@ ms.locfileid: "93422303"
 
 Частная ссылка, которая отключена по умолчанию, требует обширных сведений о сети для настройки определяемых пользователем маршрутов (UDR) и правил брандмауэра перед созданием кластера. Использование этого параметра является необязательным, но оно доступно только в том случае, если `resourceProviderConnection` для свойства Network задано значение *Исходящие* , как описано в предыдущем разделе.
 
-Если параметр `privateLink` *включен* , создаются внутренние подсистемы [балансировки нагрузки](../load-balancer/load-balancer-overview.md) (SLB), а для каждого SLB подготавливается служба частной связи Azure. Служба частной связи позволяет получить доступ к кластеру HDInsight из частных конечных точек.
+Если параметр `privateLink` *включен*, создаются внутренние подсистемы [балансировки нагрузки](../load-balancer/load-balancer-overview.md) (SLB), а для каждого SLB подготавливается служба частной связи Azure. Служба частной связи позволяет получить доступ к кластеру HDInsight из частных конечных точек.
 
 Стандартные подсистемы балансировки нагрузки не обеспечивают автоматическое предоставление [общедоступного исходящего трафика NAT](../load-balancer/load-balancer-outbound-connections.md) , такого как базовые подсистемы балансировки нагрузки. Для исходящих зависимостей необходимо предоставить собственное решение NAT, например [NAT виртуальной сети](../virtual-network/nat-overview.md) или [брандмауэр](./hdinsight-restrict-outbound-traffic.md). Кластеру HDInsight по-прежнему требуется доступ к его исходящим зависимостям. Если эти исходящие зависимости не допускаются, создание кластера может завершиться ошибкой.
 
@@ -86,7 +86,8 @@ ms.locfileid: "93422303"
 
 :::image type="content" source="media/hdinsight-private-link/access-private-clusters.png" alt-text="Схема архитектуры частной связи":::
 
-## <a name="arm-template-properties"></a>Свойства шаблона ARM
+## <a name="how-to-create-clusters"></a>Как создавать кластеры?
+### <a name="use-arm-template-properties"></a>Использование свойств шаблона ARM
 
 В следующем фрагменте кода JSON содержатся два свойства сети, которые необходимо настроить в шаблоне ARM для создания частного кластера HDInsight.
 
@@ -99,7 +100,14 @@ networkProperties: {
 
 Полный шаблон с множеством функций безопасности в HDInsight Enterprise, включая частную ссылку, см. в статье [шаблон безопасности в hdinsight Enterprise](https://github.com/Azure-Samples/hdinsight-enterprise-security/tree/main/ESP-HIB-PL-Template).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+### <a name="use-azure-powershell"></a>Использование Azure PowerShell
+
+Чтобы использовать PowerShell, см. пример [здесь](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster?view=azps-5.1.0#example-4--create-an-azure-hdinsight-cluster-with-relay-outbound-and-private-link-feature).
+
+### <a name="use-azure-cli"></a>Использование Azure CLI
+Чтобы использовать Azure CLI, см. пример [здесь](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az_hdinsight_create-examples).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Корпоративный пакет безопасности для Azure HDInsight](enterprise-security-package.md)
 * [Общие сведения и рекомендации по корпоративной безопасности в Azure HDInsight](./domain-joined/general-guidelines.md)

@@ -9,12 +9,12 @@ ms.author: tchladek
 ms.date: 10/26/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: f172bfcb6e4f11520eb9082052968626efe6fecb
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: dd2ffacb176ed3733acba8699d4e870b15dd3c42
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651249"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888714"
 ---
 # <a name="identity-model"></a>Модель удостоверений
 
@@ -63,7 +63,7 @@ ms.locfileid: "94651249"
 
 Удостоверению нужен способ запроса нового маркера доступа из службы на стороне сервера. Параметр *Scope* определяет непустой набор примитивов, которые можно использовать. Службы связи Azure поддерживают следующие области для маркеров доступа.
 
-|Название|Описание|
+|Имя|Описание|
 |---|---|
 |Чат|  Предоставляет возможность участвовать в чате|
 |VoIP|  Предоставляет возможность вызова удостоверений и телефонных номеров|
@@ -83,6 +83,6 @@ ms.locfileid: "94651249"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Общие сведения об управлении маркерами доступа см. в статье [Создание маркеров доступа и управление ими](https://docs.microsoft.com/azure/communication-services/quickstarts/access-tokens).
-* Общие сведения о проверке подлинности см. [в статье аутентификация в службах связи Azure](https://docs.microsoft.com/azure/communication-services/concepts/authentication).
-* Общие сведения о местонахождение данных и конфиденциальности см. в разделе [доступность регионов и местонахождение данных](https://docs.microsoft.com/azure/communication-services/concepts/privacy).
+* Общие сведения об управлении маркерами доступа см. в статье [Создание маркеров доступа и управление ими](../quickstarts/access-tokens.md).
+* Общие сведения о проверке подлинности см. [в статье аутентификация в службах связи Azure](./authentication.md).
+* Общие сведения о местонахождение данных и конфиденциальности см. в разделе [доступность регионов и местонахождение данных](./privacy.md).
