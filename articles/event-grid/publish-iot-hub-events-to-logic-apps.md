@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/14/2020
 ms.author: philmea
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5092aa0b5b23f04af1f49933bca234815f03f454
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 857ae8d824443e9a8abdac7c4a66e2b014be2be0
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604601"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566356"
 ---
 # <a name="tutorial-send-email-notifications-about-azure-iot-hub-events-using-event-grid-and-logic-apps"></a>Руководство по отправке уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Сетки событий и Logic Apps
 
@@ -21,13 +21,13 @@ ms.locfileid: "90604601"
 
 В этой статье рассматривается пример конфигурации, в котором используется Центр Интернета вещей и Сетка событий. По завершении работы с этим учебником у вас будет приложение логики Azure, настроенное на отправку уведомлений электронной почты при каждом подключении устройства к центру Интернета вещей или отключении от него. Сетку событий можно использовать для своевременного получения уведомлений о том, что критические устройства отключаются. Отображение метрик и диагностик в журналах или оповещениях может занять несколько (например, 20 или более) минут. Это может быть неприемлемым для критически важной инфраструктуры.
 
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Активная подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps, например Office 365 Outlook или Outlook.com. Такая учетная запись используется для отправки уведомлений о событиях.
 
-* Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps, например Office 365 Outlook или Outlook.com. Такая учетная запись используется для отправки уведомлений о событиях. 
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="create-an-iot-hub"></a>Создание центра Интернета вещей
 
@@ -59,7 +59,7 @@ ms.locfileid: "90604601"
 
 ### <a name="create-a-logic-app-resource"></a>Создание ресурса приложения логики
 
-1. На [портале Azure](https://portal.azure.com) выберите **Создать ресурс**, а затем в поле поиска введите "приложение логики" и нажмите клавишу ВВОД. Выберите **Приложение логики**в списке результатов.
+1. На [портале Azure](https://portal.azure.com) выберите **Создать ресурс**, а затем в поле поиска введите "приложение логики" и нажмите клавишу ВВОД. Выберите **Приложение логики** в списке результатов.
 
    ![Создание приложения логики](./media/publish-iot-hub-events-to-logic-apps/select-logic-app.png)
 
