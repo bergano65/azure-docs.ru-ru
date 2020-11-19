@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 63cc4448034b6a2ae2d74f4a2d9a0a62296678cf
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: ff197f8add65782a594d64661ffecdaced4598c2
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886487"
+ms.locfileid: "94919630"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mysql---single-server"></a>Уведомление о плановом обслуживании в базе данных Azure для MySQL — одиночный сервер
 
@@ -76,9 +76,9 @@ ms.locfileid: "94886487"
 Временная ошибка, также известная как временный сбой, является ошибкой, которая устраняется автоматически. Во время обслуживания могут возникать [временные ошибки](./concepts-connectivity.md#transient-errors) . Большинство из этих событий автоматически устраняются системой менее чем за 60 секунд. Временные ошибки следует обрабатывать с помощью [логики повторных попыток](./concepts-connectivity.md#handling-transient-errors).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Если у вас есть вопросы и предложения по работе с базой данных Azure для MySQL, отправьте сообщение электронной почты для команды "база данных Azure для MySQL" по адресу **AskAzureDBforMySQL@service.microsoft.com** .
+- На вопросы и предложения, которые могут возникнуть при работе с базой данных Azure для MySQL, отправьте сообщение электронной почты для команды базы данных Azure для MySQL по адресу AskAzureDBforMySQL@service.microsoft.com
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-on-metric.md).
 - [Устранение проблем с подключением к базе данных Azure для MySQL — одиночный сервер](howto-troubleshoot-common-connection-issues.md)
 - [Обрабатывайте временные ошибки и эффективно Подключайтесь к базе данных Azure для MySQL — один сервер](concepts-connectivity.md)

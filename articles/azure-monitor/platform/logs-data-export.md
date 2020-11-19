@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: adac986cfa1a975ced7ef579c088ed2739778bf5
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1813da8a8a812eeded235d71c351ec352c42707c
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841813"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920089"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
@@ -117,7 +117,11 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.insights
 ### <a name="create-or-update-data-export-rule"></a>Создать или обновить правило экспорта данных
 Правило экспорта данных определяет экспортируемые данные для набора таблиц в одном месте назначения. Для каждого назначения можно создать правило.
 
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
 Используйте следующую команду CLI для просмотра таблиц в рабочей области. Он поможет скопировать нужные таблицы и включить их в правило экспорта данных.
+
 ```azurecli
 az monitor log-analytics workspace table list -resource-group resourceGroupName --workspace-name workspaceName --query [].name --output table
 ```
@@ -133,6 +137,8 @@ az monitor log-analytics workspace data-export create --resource-group resourceG
 ```azurecli
 az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $eventHubsNamespacesId
 ```
+
+# <a name="rest"></a>[REST](#tab/rest)
 
 Используйте следующий запрос, чтобы создать правило экспорта данных с помощью REST API. Запрос должен использовать авторизацию токена носителя и тип содержимого Application/JSON.
 
@@ -193,26 +199,38 @@ PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
   }
 }
 ```
+---
 
 ## <a name="view-data-export-configuration"></a>Просмотр конфигурации экспорта данных
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
 Используйте следующую команду, чтобы просмотреть конфигурацию правила экспорта данных с помощью интерфейса командной строки.
 
 ```azurecli
 az monitor log-analytics workspace data-export show --resource-group resourceGroupName --workspace-name workspaceName --name ruleName
 ```
 
+# <a name="rest"></a>[REST](#tab/rest)
+
 Используйте следующий запрос, чтобы просмотреть конфигурацию правила экспорта данных с помощью REST API. Запрос должен использовать авторизацию токена носителя.
 
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports/<data-export-name>?api-version=2020-08-01
 ```
+---
 
 ## <a name="disable-an-export-rule"></a>Отключение правила экспорта
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
 Можно отключить правила экспорта, чтобы вы могли отменить экспорт, когда не нужно хранить данные в течение определенного периода, например при выполнении тестирования. Используйте следующую команду, чтобы отключить правило экспорта данных с помощью интерфейса командной строки.
 
 ```azurecli
 az monitor log-analytics workspace data-export update --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --enable false
 ```
+
+# <a name="rest"></a>[REST](#tab/rest)
 
 Используйте следующий запрос, чтобы отключить правило экспорта данных с помощью REST API. Запрос должен использовать авторизацию токена носителя.
 
@@ -234,32 +252,45 @@ Content-type: application/json
     }
 }
 ```
+---
 
 ## <a name="delete-an-export-rule"></a>Удаление правила экспорта
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
 Используйте следующую команду, чтобы удалить правило экспорта данных с помощью интерфейса командной строки.
 
 ```azurecli
 az monitor log-analytics workspace data-export delete --resource-group resourceGroupName --workspace-name workspaceName --name ruleName
 ```
 
+# <a name="rest"></a>[REST](#tab/rest)
+
 Используйте следующий запрос, чтобы удалить правило экспорта данных с помощью REST API. Запрос должен использовать авторизацию токена носителя.
 
 ```rest
 DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports/<data-export-name>?api-version=2020-08-01
 ```
+---
 
 ## <a name="view-all-data-export-rules-in-a-workspace"></a>Просмотр всех правил экспорта данных в рабочей области
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
 Используйте следующую команду, чтобы просмотреть все правила экспорта данных в рабочей области с помощью интерфейса командной строки.
 
 ```azurecli
 az monitor log-analytics workspace data-export list --resource-group resourceGroupName --workspace-name workspaceName
 ```
 
+# <a name="rest"></a>[REST](#tab/rest)
+
 Используйте следующий запрос, чтобы просмотреть все правила экспорта данных в рабочей области с помощью REST API. Запрос должен использовать авторизацию токена носителя.
 
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports?api-version=2020-08-01
 ```
+---
 
 ## <a name="unsupported-tables"></a>Неподдерживаемые таблицы
 Если правило экспорта данных включает неподдерживаемую таблицу, то конфигурация будет выполнена, но данные для этой таблицы не будут экспортированы. Если таблица в дальнейшем поддерживается, в это время будут экспортированы ее данные.
@@ -445,6 +476,6 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | ввдманажемент | |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Запросите экспортированные данные из обозреватель данных Azure](azure-data-explorer-query-storage.md).

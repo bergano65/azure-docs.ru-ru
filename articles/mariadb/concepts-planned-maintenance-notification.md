@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 61313a1790fe51cb26168622cc871076c40bb511
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 1c9ae694fefcede599331d5d57a298bda4739f53
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887439"
+ms.locfileid: "94920531"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mariadb"></a>Уведомление о плановом обслуживании в базе данных Azure для MariaDB
 
@@ -76,9 +76,9 @@ ms.locfileid: "94887439"
 Временная ошибка, также известная как временный сбой, является ошибкой, которая устраняется автоматически. Во время обслуживания могут возникать [временные ошибки](./concepts-connectivity.md#transient-errors) . Большинство из этих событий автоматически устраняются системой менее чем за 60 секунд. Временные ошибки следует обрабатывать с помощью [логики повторных попыток](./concepts-connectivity.md#handling-transient-errors).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Если у вас есть вопросы и предложения по работе с базой данных Azure для MariaDB, отправьте сообщение электронной почты для команды "база данных Azure для MariaDB" по адресу **AskAzureDBforMariaDB@service.microsoft.com**
+- Если у вас есть вопросы и предложения по работе с базой данных Azure для MariaDB, отправьте сообщение электронной почты для команды "база данных Azure для MariaDB" по адресу AskAzureDBforMariaDB@service.microsoft.com
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-metric.md).
 - [Устранение проблем с подключением к Базе данных Azure для MariaDB](howto-troubleshoot-common-connection-issues.md)
 - [Обрабатывайте временные ошибки и эффективно Подключайтесь к базе данных Azure для MariaDB](concepts-connectivity.md)

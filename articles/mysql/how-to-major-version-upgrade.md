@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: how-to
 ms.date: 11/16/2020
-ms.openlocfilehash: 78c35e42cefa8897d9f93c3a941b4c0e8b81e5f9
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 4dd4729589e429cb1b028b183fdfd144617d1d1b
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686959"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920650"
 ---
 # <a name="major-version-upgrade-in-azure-database-for-mysql-single-server-using-the-azure-portal"></a>Обновление основной версии в базе данных Azure для MySQL на одном сервере с помощью портал Azure
 
@@ -34,6 +34,9 @@ ms.locfileid: "94686959"
 
 Выполните следующие действия, чтобы выполнить обновление основной версии для базы данных Azure сервера MySQL 5,6.
 
+> [!IMPORTANT]
+> Рекомендуется сначала выполнить обновление на восстановленной копии сервера, а не напрямую обновлять рабочую среду. См. раздел [как выполнить восстановление до точки во времени](howto-restore-server-portal.md#point-in-time-restore).
+
 1. В [портал Azure](https://portal.azure.com/)выберите существующий сервер базы данных Azure для MySQL 5,6.
 
 2. На странице **Обзор** нажмите кнопку **Обновить** на панели инструментов.
@@ -44,6 +47,6 @@ ms.locfileid: "94686959"
 
 4. В уведомлении будет подтверждено, что обновление прошло успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о [политике управления версиями базы данных Azure для MySQL](concepts-version-policy.md).

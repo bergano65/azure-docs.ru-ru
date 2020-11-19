@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 1803a0070321ff4d895203f027f839601bb726ee
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 0691411f57944f8203120ec2a6ed19013135458c
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887150"
+ms.locfileid: "94920259"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-postgresql---single-server"></a>Уведомление о плановом обслуживании в Базе данных Azure для PostgreSQL — один сервер
 
@@ -76,9 +76,9 @@ ms.locfileid: "94887150"
 Временная ошибка, также известная как временный сбой, является ошибкой, которая устраняется автоматически. Во время обслуживания могут возникать [временные ошибки](./concepts-connectivity.md#transient-errors) . Большинство из этих событий автоматически устраняются системой менее чем за 60 секунд. Временные ошибки следует обрабатывать с помощью [логики повторных попыток](./concepts-connectivity.md#handling-transient-errors).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Чтобы получить ответы на любые вопросы и предложения по работе с базой данных Azure для PostgreSQL, отправьте сообщение электронной почты для команды PostgreSQL базы данных Azure по адресу *AskAzureDBforPostgreSQL@service.microsoft.com* .
+- Если у вас есть вопросы и предложения по работе с базой данных Azure для PostgreSQL, отправьте сообщение электронной почты для команды "база данных Azure для PostgreSQL" по адресу AskAzureDBforPostgreSQL@service.microsoft.com
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-on-metric.md).
 - [Устранение проблем с подключением к базе данных Azure для PostgreSQL — один сервер](howto-troubleshoot-common-connection-issues.md)
 - [Обрабатывайте временные ошибки и эффективно Подключайтесь к базе данных Azure для PostgreSQL-Single Server](concepts-connectivity.md)

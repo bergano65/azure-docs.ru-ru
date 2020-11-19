@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: c8b3ab965c5a85bd6f25e5325fdca24026aec787
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 0f2b9476c9b8c0b5164bfbf29d65d260340effe4
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873834"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94919766"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Создание и подключение кластера службы Kubernetes Azure
 
@@ -43,6 +43,8 @@ ms.locfileid: "94873834"
 - Если вы **подключаете** кластер AKS с [разрешенным диапазоном IP-адресов для доступа к серверу API](../aks/api-server-authorized-ip-ranges.md), включите диапазоны IP-адресов плоскости управления AML для кластера AKS. Плоскость управления AML развертывается в парных регионах и развертывает модули определения вывода в кластере AKS. Без доступа к серверу API невозможно развернуть модули не выводу. Используйте [диапазоны IP-адресов](https://www.microsoft.com/download/confirmation.aspx?id=56519) для [парных регионов](../best-practices-availability-paired-regions.md) при включении диапазонов IP-адресов в кластере AKS.
 
     IP-диапазоны авторизации работают только с Load Balancer (цен. категория "Стандартный").
+
+- При **присоединении** кластера AKS он должен находиться в той же подписке Azure, что и рабочая область машинное обучение Azure.
 
 - Если вы хотите использовать частный кластер AKS (с помощью частного канала Azure), сначала необходимо создать кластер, а затем **подключить** его к рабочей области. Дополнительные сведения см. [в статье Создание частного кластера службы Kubernetes Azure](../aks/private-clusters.md).
 

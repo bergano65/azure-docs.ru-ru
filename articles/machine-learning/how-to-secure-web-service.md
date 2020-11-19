@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
-ms.date: 03/05/2020
+ms.date: 11/18/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: a9b68b2d4298c5e692782e529bae9a9df6359953
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 97017e104ecff38ebf4e475fb5f6ae42707ef10e
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331164"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94919596"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинного обучения Azure.
 
@@ -30,7 +30,7 @@ ms.locfileid: "94331164"
 >
 > В частности, веб-службы, развернутые с помощью Машинное обучение Azure, поддерживают TLS версии 1,2 для AKS и ACI новых развертываний. Для развертываний ACI, если вы используете более старую версию TLS, мы рекомендуем повторно выполнить развертывание, чтобы получить последнюю версию TLS.
 
-Протоколы TLS и SSL используют *цифровые сертификаты* , которые помогают в шифровании и проверке личности. Дополнительные сведения о работе цифровых сертификатов см. в статье об [инфраструктуре открытых ключей](https://en.wikipedia.org/wiki/Public_key_infrastructure)в разделе Википедии.
+Протоколы TLS и SSL используют *цифровые сертификаты*, которые помогают в шифровании и проверке личности. Дополнительные сведения о работе цифровых сертификатов см. в статье об [инфраструктуре открытых ключей](https://en.wikipedia.org/wiki/Public_key_infrastructure)в разделе Википедии.
 
 > [!WARNING]
 > Если для веб-службы не используется протокол HTTPS, данные, отправляемые в службу и из нее, могут быть видны другим пользователям в Интернете.
@@ -87,6 +87,9 @@ ms.locfileid: "94331164"
 
 Метод **enable_ssl** может использовать сертификат, предоставляемый корпорацией Майкрософт или сертификатом, который вы приобрели.
 
+> [!WARNING]
+> Если в кластере AKS настроен внутренний балансировщик нагрузки, использование сертификата, предоставленного корпорацией Майкрософт, __не поддерживается__. Для использования сертификата, предоставленного корпорацией Майкрософт, требуется ресурс общедоступного IP-адреса в Azure, который недоступен для AKS при настройке для внутренней подсистемы балансировки нагрузки.
+
   * При использовании сертификата от корпорации Майкрософт необходимо использовать параметр *leaf_domain_label* . Этот параметр создает DNS-имя для службы. Например, значение Contoso создает доменное имя Contoso \<six-random-characters> . \<azureregion> cloudapp.azure.com ", где \<azureregion> — регион, содержащий службу. При необходимости можно использовать параметр *overwrite_existing_domain* для перезаписи существующего *leaf_domain_label*.
 
     Чтобы развернуть (или повторно развернуть) службу с включенным протоколом TLS, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
@@ -115,7 +118,7 @@ ms.locfileid: "94331164"
     attach_config.enable_ssl(leaf_domain_label = "contoso")
     ```
 
-  * При использовании *приобретенного сертификата* вы используете параметры *ssl_cert_pem_file* , *ssl_key_pem_file* и *ssl_cname* . В следующем примере показано, как использовать *PEM* -файлы для создания конфигурации, использующей приобретенный сертификат TLS/SSL.
+  * При использовании *приобретенного сертификата* вы используете параметры *ssl_cert_pem_file*, *ssl_key_pem_file* и *ssl_cname* . В следующем примере показано, как использовать *PEM* -файлы для создания конфигурации, использующей приобретенный сертификат TLS/SSL.
 
     ```python
     from azureml.core.compute import AksCompute
@@ -132,7 +135,7 @@ ms.locfileid: "94331164"
 
 Дополнительные сведения о *enable_ssl* см. в разделе [AksProvisioningConfiguration.enable_ssl ()](/python/api/azureml-core/azureml.core.compute.aks.aksprovisioningconfiguration?preserve-view=true&view=azure-ml-py#&preserve-view=trueenable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-) и [AksAttachConfiguration.enable_ssl ()](/python/api/azureml-core/azureml.core.compute.aks.aksattachconfiguration?preserve-view=true&view=azure-ml-py#&preserve-view=trueenable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-).
 
-### <a name="deploy-on-azure-container-instances"></a>Развертывание в службе "экземпляры контейнеров Azure"
+### <a name="deploy-on-azure-container-instances"></a>Развертывание в Экземплярах контейнеров Azure
 
 При развертывании в службе "экземпляры контейнеров Azure" вы предоставляете значения для параметров, связанных с TLS, как показано в следующем фрагменте кода:
 
@@ -159,7 +162,8 @@ aci_config = AciWebservice.deploy_configuration(
 
   > [!WARNING]
   > Если вы использовали *leaf_domain_label* для создания службы с помощью сертификата от Майкрософт, не обновляйте вручную значение DNS для кластера. Значение должно быть задано автоматически.
-
+  >
+  > Если в кластере AKS настроен внутренний балансировщик нагрузки, использование предоставленного Майкрософт сертификата (путем установки *leaf_domain_label*) __не поддерживается__. Для использования сертификата, предоставленного корпорацией Майкрософт, требуется ресурс общедоступного IP-адреса в Azure, который недоступен для AKS при настройке для внутренней подсистемы балансировки нагрузки.
   Обновите DNS общедоступного IP-адреса кластера AKS на вкладке **Конфигурация** в разделе **Параметры** в левой области. (См. следующее изображение.) Общедоступный IP-адрес — это тип ресурса, который создается в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
 
   [![Машинное обучение Azure: Защита веб-служб с помощью TLS](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)

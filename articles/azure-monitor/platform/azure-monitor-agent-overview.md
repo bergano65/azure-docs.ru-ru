@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
-ms.openlocfilehash: 466851ce04a047f3edabcf33b45dba9cab0db20e
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 76f541a45c56669d17103f16997f3d036955b773
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132709"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94919694"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Общие сведения об агенте Azure Monitor (Предварительная версия)
 Агент Azure Monitor (АМА) собирает данные мониторинга из гостевой операционной системы виртуальных машин и доставляет их в Azure Monitor. В этой статье содержатся общие сведения об агенте Azure Monitor, включая инструкции по его установке и настройке сбора данных.
@@ -76,7 +76,7 @@ Azure Monitor агент сосуществовать с [общедоступн
 
 Агент Azure Monitor отправляет данные в метрики Azure Monitor или в Log Analytics рабочую область, поддерживающую журналы Azure Monitor.
 
-| Источник данных | Назначения | Описание |
+| Источник данных | Места назначения | Описание |
 |:---|:---|:---|
 | Производительность        | Метрики Azure Monitor<br>Рабочая область Log Analytics | Числовые значения, представляющие собой оценки производительности разных элементов операционной системы и рабочих нагрузок. |
 | Журналы событий Windows | Рабочая область Log Analytics | Информация, отправляемая системой ведения журналов событий Windows. |
@@ -99,8 +99,8 @@ Azure Monitor агент сосуществовать с [общедоступн
 
 | Свойство | Windows | Linux |
 |:---|:---|:---|
-| Издатель | Microsoft. Azure. Monitor  | Microsoft. Azure. Monitor |
-| Тип      | азуремониторвиндовсажент | азуремониторлинуксажент  |
+| Publisher | Microsoft. Azure. Monitor  | Microsoft. Azure. Monitor |
+| Type      | азуремониторвиндовсажент | азуремониторлинуксажент  |
 | TypeHandlerVersion  | 1.0 | 1.5 |
 
 Установите агент Azure Monitor с помощью любого из методов установки агентов виртуальной машины, включая следующие с помощью PowerShell или CLI. Кроме того, можно установить агент и настроить сбор данных на виртуальных машинах в подписке Azure с помощью портала, как описано в разделе [Настройка сбора данных для агента Azure Monitor (Предварительная версия)](data-collection-rule-azure-monitor-agent.md#create-using-the-azure-portal).
@@ -134,7 +134,7 @@ az vm extension set --name AzureMonitorLinuxAgent --publisher Microsoft.Azure.Mo
 # <a name="powershell"></a>[PowerShell](#tab/PowerShell2)
 
 ```powershell
-Set-AzVMExtension -Name AMALinux -ExtensionType AzureMonitorLinuxAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName {Resource Group Name} -VMName {VM name} -Location eastus
+Set-AzVMExtension -Name AMALinux -ExtensionType AzureMonitorLinuxAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName {Resource Group Name} -VMName {VM name} -Location eastus -TypeHandlerVersion 1.5
 ```
 ---
 
