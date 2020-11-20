@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/03/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 5d0835114844069d4ebdc992b872f9be1f0b3ca6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48fc8533ee1fd206e69e16d4c03e4b4acf047135
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259226"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953698"
 ---
 # <a name="tutorial-for-configuring-onfido-with-azure-active-directory-b2c"></a>Руководство по настройке Онфидо с помощью Azure Active Directory B2C
 
@@ -28,9 +28,9 @@ ms.locfileid: "91259226"
 
 Чтобы приступить к работе, вам потребуется:
 
-- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-- [Клиент Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с вашей подпиской Azure.
+- [Клиент Azure AD B2C](./tutorial-create-tenant.md) , связанный с вашей подпиской Azure.
 
 - [Пробная учетная запись](https://onfido.com/signup/)онфидо.
 
@@ -74,7 +74,7 @@ ms.locfileid: "91259226"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-- Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/OnFido-Combined/API/Onfido.Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+- Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/OnFido-Combined/API/Onfido.Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 - Настройка CORS, добавление **разрешенного источника** как HTTPS://{your_tenant_name}. b2clogin. com
 
 >[!NOTE]
@@ -82,7 +82,7 @@ ms.locfileid: "91259226"
 
 #### <a name="adding-sensitive-configuration-settings"></a>Добавление конфиденциальных параметров конфигурации
 
-Параметры приложения можно настроить в [службе приложений в Azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). Служба приложений позволяет безопасно настроить параметры, не проверяя их в репозитории. API-интерфейсу для остальных компонентов необходимо присвоить следующие параметры:
+Параметры приложения можно настроить в [службе приложений в Azure](../app-service/configure-common.md#configure-app-settings). Служба приложений позволяет безопасно настроить параметры, не проверяя их в репозитории. API-интерфейсу для остальных компонентов необходимо присвоить следующие параметры:
 
 | Имя параметра приложения | Источник | Примечания |
 |:-------------------------|:-------|:-------|
@@ -92,7 +92,7 @@ ms.locfileid: "91259226"
 
 #### <a name="configure-your-storage-location"></a>Настройка расположения хранилища
 
-1. Настройка [контейнера хранилища BLOB-объектов в учетной записи хранения](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container)
+1. Настройка [контейнера хранилища BLOB-объектов в учетной записи хранения](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)
 
 2. Храните файлы пользовательского интерфейса из [папки пользовательского интерфейса](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/OnFido-Combined/UI) в контейнер больших двоичных объектов.
 
@@ -100,7 +100,7 @@ ms.locfileid: "91259226"
 
    a. Выберите **Параметры**  > **разрешенный источник**, введите `https://{your_tenant_name}.b2clogin.com` . Замените имя клиента на имя клиента Azure AD B2C. Например, https://fabrikam.b2clogin.com . При вводе имени клиента используйте все строчные буквы.
 
-   b. Для **разрешенных методов**выберите `GET` и `PUT` .
+   b. Для **разрешенных методов** выберите `GET` и `PUT` .
 
    В. Нажмите кнопку **Сохранить**.
 
@@ -110,7 +110,7 @@ ms.locfileid: "91259226"
 
 2. Откройте каждый HTML-файл.
 
-3. Найдите и замените {My-UI-BLOB-Container-URL} URL-адресом расположения папок **ocean_blue**, **расп**и **Assets** пользовательского интерфейса.
+3. Найдите и замените {My-UI-BLOB-Container-URL} URL-адресом расположения папок **ocean_blue**, **расп** и **Assets** пользовательского интерфейса.
 
 4. Найдите и замените {ваш-Intermediate-API-URL} URL-адресом промежуточной службы приложений API.
 
@@ -118,7 +118,7 @@ ms.locfileid: "91259226"
 
 1. Храните файлы пользовательского интерфейса из папки пользовательского интерфейса в контейнер больших двоичных объектов.
 
-2. Используйте [Обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-use-storage-explorer-managed-disks) для управления файлами и разрешениями на доступ.
+2. Используйте [Обозреватель службы хранилища Azure](../virtual-machines/disks-use-storage-explorer-managed-disks.md) для управления файлами и разрешениями на доступ.
 
 ### <a name="part-3---configure-azure-ad-b2c"></a>Часть 3. Настройка Azure AD B2C
 
@@ -135,14 +135,14 @@ ms.locfileid: "91259226"
 | {your_tenant_extensions_appid}                         | Идентификатор приложения для хранилища вашего клиента                                      | 01234567-89ab-cdef-0123-456789abcdef         |
 | {your_tenant_extensions_app_objectid}                  | Идентификатор объекта приложения хранилища вашего клиента                                   | 01234567-89ab-cdef-0123-456789abcdef         |
 | {your_app_insights_instrumentation_key} | Ключ инструментирования экземпляра App Insights *| 01234567-89ab-cdef-0123-456789abcdef|
-|{your_ui_file_base_url}| URL-адрес расположения, в котором находятся папки пользовательского интерфейса **ocean_blue**, **расп**и **Assets** | https://yourstorage.blob.core.windows.net/UI/|
+|{your_ui_file_base_url}| URL-адрес расположения, в котором находятся папки пользовательского интерфейса **ocean_blue**, **расп** и **Assets** | https://yourstorage.blob.core.windows.net/UI/|
 | {your_app_service_URL}                                 | URL-адрес настроенной службы приложений                                             | `https://yourapp.azurewebsites.net`          |
 
 * App Insights может находиться в другом клиенте. Это необязательный шаг. Удалите соответствующие TechnicalProfiles и Орчестратионстепс, если они не требуются.
 
 ### <a name="part-4---configure-the-azure-ad-b2c-policy"></a>Часть 4. Настройка политики Azure AD B2C
 
-Инструкции по настройке клиента Azure AD B2C и настройке политик см. в этом [документе](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) .
+Инструкции по настройке клиента Azure AD B2C и настройке политик см. в этом [документе](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) .
 
 >[!NOTE]
 > Рекомендуется, чтобы клиенты добавили уведомление о согласия на страницу коллекции атрибутов. Уведомлять пользователей о том, что сведения будут отправляться сторонним службам для проверки личности.
@@ -165,10 +165,10 @@ ms.locfileid: "91259226"
 
 5. Служба онфидо будет вызываться во время потока, после создания пользовательского атрибута. Если поток неполон, убедитесь, что пользователь не сохранен в каталоге.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Пользовательские политики в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Пользовательские политики в Azure AD B2C](./custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

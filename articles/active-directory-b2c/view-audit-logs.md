@@ -12,12 +12,12 @@ ms.date: 02/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4fc25edb873a2dfe84f6ca716a71cf028c74cb2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9485fb09d3ac7684ba91bcd37720a0e55603404b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85383943"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952732"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -53,7 +53,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 |Section|Поле|Описание|
 |-------|-----|-----------|
-| Действие | name | Какое действие выполнялось. Например, *выдайте приложению id_token*, которое завершает фактический вход пользователя. |
+| Действие | Имя | Какое действие выполнялось. Например, *выдайте приложению id_token*, которое завершает фактический вход пользователя. |
 | "Кем инициировано (субъект)". | ObjectId | **Идентификатор объекта** приложения B2C, в котором выполняется вход пользователя. Этот идентификатор недоступен в портал Azure, но доступен через API Microsoft Graph. |
 | "Кем инициировано (субъект)". | Имени | **Идентификатор** приложения B2C, в котором выполняется вход пользователя. |
 | "Целевые объекты"; | ObjectId | **Идентификатор объекта** пользователя, который подписывается. |
@@ -84,7 +84,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 ## <a name="get-audit-logs-with-the-azure-ad-reporting-api"></a>Получение журналов аудита с помощью API отчетов Azure AD
 
-Журналы аудита публикуются в том же конвейере, что и другие действия для Azure Active Directory, поэтому к ним можно обратиться через [API отчетов Azure Active Directory](https://docs.microsoft.com/graph/api/directoryaudit-list). Дополнительные сведения см. [в статье Приступая к работе с API отчетов Azure Active Directory](../active-directory/reports-monitoring/concept-reporting-api.md).
+Журналы аудита публикуются в том же конвейере, что и другие действия для Azure Active Directory, поэтому к ним можно обратиться через [API отчетов Azure Active Directory](/graph/api/directoryaudit-list). Дополнительные сведения см. [в статье Приступая к работе с API отчетов Azure Active Directory](../active-directory/reports-monitoring/concept-reporting-api.md).
 
 ### <a name="enable-reporting-api-access"></a>Включить доступ к API отчетов
 
@@ -221,6 +221,6 @@ if ($oauth.access_token -ne $null) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Можно автоматизировать другие задачи администрирования, например [управлять Azure AD B2C учетными записями пользователей с помощью Microsoft Graph](manage-user-accounts-graph-api.md).

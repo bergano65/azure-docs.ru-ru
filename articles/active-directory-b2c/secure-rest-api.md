@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: adb9bf48800062d2cc6976a88ec48c1993858dec
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 18979ba8cbc4e68bf79275059c6c1c976578c407
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089542"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953378"
 ---
 # <a name="secure-your-restful-services"></a>Защита служб с поддержкой RESTful 
 
@@ -111,7 +111,7 @@ ms.locfileid: "92089542"
 
 ### <a name="prepare-a-self-signed-certificate-optional"></a>Подготовка самозаверяющего сертификата (необязательно)
 
-Если у вас еще нет сертификата, для всех сред, кроме рабочей, можно использовать самозаверяющий сертификат. В Windows для создания сертификата используется командлет PowerShell [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate).
+Если у вас еще нет сертификата, для всех сред, кроме рабочей, можно использовать самозаверяющий сертификат. В Windows для создания сертификата используется командлет PowerShell [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 1. Выполните эту команду PowerShell, чтобы создать самозаверяющий сертификат. Измените аргумент `-Subject`, указав реальные значения приложения и имени клиента Azure  AD B2C. Можно также скорректировать дату `-NotAfter`, чтобы указать другой срок действия сертификата.
     ```powershell
@@ -230,9 +230,9 @@ Authorization: Bearer <token>
 
 ### <a name="acquiring-an-access-token"></a>Получение маркера доступа 
 
-Маркер доступа можно получить любым из нескольких способов: от [поставщика федеративного удостоверения](idp-pass-through-custom.md), с помощью REST API, который возвращает маркер доступа, с помощью [потока ROPC](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth-ropc) или [потока учетных данных клиента](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow).  
+Маркер доступа можно получить любым из нескольких способов: от [поставщика федеративного удостоверения](idp-pass-through-custom.md), с помощью REST API, который возвращает маркер доступа, с помощью [потока ROPC](../active-directory/develop/v2-oauth-ropc.md) или [потока учетных данных клиента](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md).  
 
-В следующем примере используется технический профиль REST API для выполнения запроса к конечной точке маркера Azure AD с учетными данными клиента, которые передаются в формате обычной аутентификации через HTTP. Чтобы настроить этот механизм в Azure AD, см. статью [Платформа удостоверений Майкрософт и поток учетных данных клиента OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow). Возможно, вам придется изменить его с учетом методов взаимодействия с поставщиком удостоверений. 
+В следующем примере используется технический профиль REST API для выполнения запроса к конечной точке маркера Azure AD с учетными данными клиента, которые передаются в формате обычной аутентификации через HTTP. Чтобы настроить этот механизм в Azure AD, см. статью [Платформа удостоверений Майкрософт и поток учетных данных клиента OAuth 2.0](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md). Возможно, вам придется изменить его с учетом методов взаимодействия с поставщиком удостоверений. 
 
 В параметре ServiceUrl замените заполнитель your-tenant-name именем вашего клиента Azure AD. Доступные варианты описаны в документации [по техническому профилю RESTful](restful-technical-profile.md).
 
@@ -367,4 +367,4 @@ Authorization: Bearer <token>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. дополнительные сведения об элементе [технического профиля RESTful](restful-technical-profile.md). 
+- См. дополнительные сведения об элементе [технического профиля RESTful](restful-technical-profile.md).

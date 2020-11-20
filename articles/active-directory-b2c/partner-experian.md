@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: a88894bb7462e9ac3afd16d69ae820dd98543a5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 29116d880a51444eb45a351e2118a07d13873043
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259379"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953854"
 ---
 # <a name="tutorial-for-configuring-experian-with-azure-active-directory-b2c"></a>Руководство по настройке Experian с помощью Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "91259379"
 
 В этом примере используется интегрированная цифровая идентификация Experian и угроза риска мошенничества **кросскоре** . Кросскоре — это служба проверки ИДЕНТИФИКАТОРов, которая используется для проверки идентификации пользователя. Он выполняет анализ рисков на основе нескольких фрагментов информации, предоставляемых пользователем во время регистрации. Кросскоре используется, чтобы определить, должен ли пользователь продолжать входить в систему или нет. В анализе рисков Кросскоре можно использовать следующие атрибуты:
 
-- Email
+- Электронная почта
 - IP-адрес
 - Заданное имя
 - Второе имя
@@ -40,9 +40,9 @@ ms.locfileid: "91259379"
 
 Чтобы приступить к работе, вам потребуется:
 
-- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-- [Клиент Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с вашей подпиской Azure.
+- [Клиент Azure AD B2C](./tutorial-create-tenant.md) , связанный с вашей подпиской Azure.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -77,14 +77,14 @@ ms.locfileid: "91259379"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Experian/CrossCoreIntegrationApi/CrossCoreIntegrationApi.sln) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Experian/CrossCoreIntegrationApi/CrossCoreIntegrationApi.sln) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 >[!NOTE]
 >Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
 
 ### <a name="part-2---deploy-the-client-certificate"></a>Часть 2. Развертывание сертификата клиента
 
-Вызов API Experian защищен сертификатом клиента. Этот сертификат клиента будет предоставляться Experian. Следуя инструкциям, указанным в этом [документе](https://docs.microsoft.com/azure/app-service/environment/certificates#private-client-certificate), сертификат необходимо отправить в службу приложений Azure. В примере политики эти ключи используются в процессе.
+Вызов API Experian защищен сертификатом клиента. Этот сертификат клиента будет предоставляться Experian. Следуя инструкциям, указанным в этом [документе](../app-service/environment/certificates.md#private-client-certificate), сертификат необходимо отправить в службу приложений Azure. В примере политики эти ключи используются в процессе.
 
 - Загрузка сертификата
 
@@ -92,7 +92,7 @@ ms.locfileid: "91259379"
 
 ### <a name="part-3---configure-the-api"></a>Часть 3. Настройка API
 
-Параметры приложения можно [настроить в службе приложений в Azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). С помощью этого метода параметры можно безопасно настроить без их возврата в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
+Параметры приложения можно [настроить в службе приложений в Azure](../app-service/configure-common.md#configure-app-settings). С помощью этого метода параметры можно безопасно настроить без их возврата в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
 
 | Параметры приложений | Источник | Примечания |
 | :-------- | :------------| :-----------|
@@ -110,7 +110,7 @@ ms.locfileid: "91259379"
 
 ### <a name="part-4---create-api-policy-keys"></a>Часть 4. Создание ключей политики API
 
-Ознакомьтесь с этим [документом](https://docs.microsoft.com/azure/active-directory-b2c/secure-rest-api#add-rest-api-username-and-password-policy-keys) и создайте два ключа политики: один для имени пользователя API, а другой — для пароля API, определенного выше для обычной проверки подлинности HTTP.
+Ознакомьтесь с этим [документом](./secure-rest-api.md#add-rest-api-username-and-password-policy-keys) и создайте два ключа политики: один для имени пользователя API, а другой — для пароля API, определенного выше для обычной проверки подлинности HTTP.
 
 >[!NOTE]
 >Ключи для настройки политик потребуются позже.
@@ -133,7 +133,7 @@ ms.locfileid: "91259379"
 
 ### <a name="part-6---configure-the-azure-ad-b2c-policy"></a>Часть 6. Настройка политики Azure AD B2C
 
-Инструкции по настройке клиента Azure AD B2C и настройке политик см. в этом [документе](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) .
+Инструкции по настройке клиента Azure AD B2C и настройке политик см. в этом [документе](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) .
 
 >[!NOTE]
 >Этот пример политики основан на [начальном пакете локальных учетных записей](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts).
@@ -163,10 +163,10 @@ ms.locfileid: "91259379"
 
 7. После ввода **"продолжить"** появится окно головоломки кросскоре.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Пользовательские политики в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Пользовательские политики в Azure AD B2C](./custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

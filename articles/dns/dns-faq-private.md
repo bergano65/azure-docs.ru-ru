@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 10/05/2019
 ms.author: rohink
-ms.openlocfilehash: 9d183f2da7b916b1547fa1f81aa877b1b5488b41
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 24f2ca238288854b99160a25c3d4dcedf8ce3368
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91308441"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952392"
 ---
 # <a name="azure-private-dns-faq"></a>Частная зона DNS: часто задаваемые вопросы
 
@@ -34,7 +34,7 @@ ms.locfileid: "91308441"
 
 ## <a name="can-the-same-private-zone-be-used-for-several-virtual-networks-for-resolution"></a>Можно ли использовать одну частную зону для разрешения имен в нескольких виртуальных сетях?
 
-Да. Вы можете связать частную зону DNS с тысячами виртуальных сетей. Дополнительные сведения см. в разделе [ограничения Azure DNS](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-dns-limits)
+Да. Вы можете связать частную зону DNS с тысячами виртуальных сетей. Дополнительные сведения см. в разделе [ограничения Azure DNS](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-dns-limits)
 
 ## <a name="can-a-virtual-network-that-belongs-to-a-different-subscription-be-linked-to-a-private-zone"></a>Можно ли связать с частной зоной виртуальную сеть, принадлежащую другой подписке?
 
@@ -75,11 +75,11 @@ ms.locfileid: "91308441"
 ## <a name="will-the-dns-suffix-on-virtual-machines-within-a-linked-virtual-network-be-changed-to-that-of-the-private-zone"></a>Изменится ли DNS-суффикс виртуальных машин в связанной виртуальной сети с учетом этой частной зоны?
 
 Нет. В настоящее время DNS-суффикс виртуальных машин в связанной виртуальной сети сохраняет формат суффикса Azure по умолчанию ("*.internal.cloudapp.net"). Однако можно вручную изменить этот DNS-суффикс на виртуальных машинах, указав частную зону.
-Инструкции по изменению этого суффикса см. в статье [Использование динамического DNS для регистрации имен узлов на собственном DNS-сервере](https://docs.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-ddns#windows-clients) .
+Инструкции по изменению этого суффикса см. в статье [Использование динамического DNS для регистрации имен узлов на собственном DNS-сервере](../virtual-network/virtual-networks-name-resolution-ddns.md#windows-clients) .
 
 ## <a name="what-are-the-usage-limits-for-azure-dns-private-zones"></a>Каковы ограничения использования для Azure DNS частных зон?
 
-Дополнительные сведения об ограничениях использования для Azure DNS частных зон см. в разделе [ограничения Azure DNS](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-dns-limits) .
+Дополнительные сведения об ограничениях использования для Azure DNS частных зон см. в разделе [ограничения Azure DNS](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-dns-limits) .
 
 ## <a name="why-dont-my-existing-private-dns-zones-show-up-in-new-portal-experience"></a>Почему мои существующие частные зоны DNS не отображаются в новом интерфейсе портала?
 
@@ -89,6 +89,6 @@ ms.locfileid: "91308441"
 
 Настоятельно рекомендуется как можно скорее перейти на новую модель ресурсов. Поддержка устаревшей модели ресурсов будет поддерживаться, однако дополнительные функции не будут разрабатываться поверх этой модели. В будущем мы планируем использовать ее в пользу новой модели ресурсов. Инструкции по переносу существующих частных зон DNS в новую модель ресурсов см. в[руководстве по миграции для Azure DNS частных зон](private-dns-migration-guide.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Дополнительные сведения об Azure Частная зона DNS](private-dns-overview.md)

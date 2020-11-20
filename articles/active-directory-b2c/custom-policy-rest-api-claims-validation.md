@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 30273c0103d8a0fde12b1b7c6f66d16dd4ea84cb
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 761bc4db7760ef5e84e3fc3c8a5deea5d4508f51
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089525"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951933"
 ---
 # <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-to-validate-user-input"></a>Пошаговое руководство. интеграция обмена REST APIми утверждениями в Azure AD B2C пути взаимодействия пользователя для проверки вводимых пользователем данных
 
@@ -65,7 +65,7 @@ ms.locfileid: "92089525"
 }
 ```
 
-В рамках этой статьи настройка конечной точки REST API не рассматривается. Вы создали пример [Функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-reference). Полный код функции Azure доступен на сайте [GitHub](https://github.com/azure-ad-b2c/rest-api/tree/master/source-code/azure-function).
+В рамках этой статьи настройка конечной точки REST API не рассматривается. Вы создали пример [Функций Azure](../azure-functions/functions-reference.md). Полный код функции Azure доступен на сайте [GitHub](https://github.com/azure-ad-b2c/rest-api/tree/master/source-code/azure-function).
 
 ## <a name="define-claims"></a>Определение утверждений
 
@@ -233,11 +233,11 @@ ms.locfileid: "92089525"
 1. Убедитесь, что вы используете каталог с клиентом Azure AD, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом Azure AD.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 1. Выберите **Инфраструктура процедур идентификации**.
-1. Выберите **Отправить настраиваемую политику**, а затем отправьте измененные файлы политики: *TrustFrameworkExtensions.xml*и *SignUpOrSignin.xml*. 
+1. Выберите **Отправить настраиваемую политику**, а затем отправьте измененные файлы политики: *TrustFrameworkExtensions.xml* и *SignUpOrSignin.xml*. 
 1. Выберите отправленную вами политику регистрации или входа и нажмите кнопку **Выполнить**.
 1. Вы сможете зарегистрироваться, используя адрес электронной почты.
 1. Щелкните ссылку **Зарегистрировать сейчас** .
-1. В поле **идентификатор программы лояльности**введите 1234 и нажмите кнопку **продолжить**. На этом этапе следует получить сообщение об ошибке проверки.
+1. В поле **идентификатор программы лояльности** введите 1234 и нажмите кнопку **продолжить**. На этом этапе следует получить сообщение об ошибке проверки.
 1. Измените значение на другое и нажмите кнопку **продолжить**.
 1. Токен, отправленный обратно в ваше приложение, включает утверждение `promoCode`.
 

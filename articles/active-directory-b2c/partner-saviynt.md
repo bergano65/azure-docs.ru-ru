@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 8406074933489e53e9235a8a6a05b68f1dd42a85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 184616058cb2a86025eb75b4923e374ab42ebf05
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259142"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953565"
 ---
 # <a name="tutorial-for-configuring-saviynt-with-azure-active-directory-b2c"></a>Руководство по настройке Савийнт с помощью Azure Active Directory B2C
 
@@ -34,9 +34,9 @@ ms.locfileid: "91259142"
 
 Чтобы приступить к работе, вам потребуется:
 
-- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-- [Клиент Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant). Клиент связан с вашей подпиской Azure.
+- [Клиент Azure AD B2C](./tutorial-create-tenant.md). Клиент связан с вашей подпиской Azure.
 
 - [Подписка](https://saviynt.com/contact-us/) савийнт
 
@@ -48,7 +48,7 @@ ms.locfileid: "91259142"
 
 - [Савийнт](https://saviynt.com/integrations/azure-ad/for-b2c/) — платформа управления удостоверениями, обеспечивающая детальное администрирование, которое обеспечивает управление жизненным циклом и доступом пользователей Azure AD B2C пользователей.  
 
-- [Microsoft Graph API](https://docs.microsoft.com/graph/use-the-api) — этот API предоставляет интерфейсы для савийнт для управления пользователями Azure AD B2C и их доступом в Azure AD B2C.
+- [Microsoft Graph API](/graph/use-the-api) — этот API предоставляет интерфейсы для савийнт для управления пользователями Azure AD B2C и их доступом в Azure AD B2C.
 
 Реализация показана на следующей схеме архитектуры.
 
@@ -69,7 +69,7 @@ ms.locfileid: "91259142"
 
 1. Чтобы создать учетную запись Савийнт, обратитесь в [савийнт](https://saviynt.com/contact-us/)
 
-2. Создание политик делегированного администрирования и назначение пользователей в качестве [полномочных администраторов](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-concept-delegation) с помощью различных ролей.
+2. Создание политик делегированного администрирования и назначение пользователей в качестве [полномочных администраторов](../active-directory/users-groups-roles/roles-concept-delegation.md) с помощью различных ролей.
 
 ## <a name="configure-azure-ad-b2c-with-saviynt"></a>Настройка Azure AD B2C с помощью Савийнт
 
@@ -91,7 +91,7 @@ ms.locfileid: "91259142"
 
 8. Перейдите на следующую страницу и выберите **разрешения приложения**.
 
-9. Выберите **Каталог**и установите флажки **каталог. чтение. все** и **Directory. ReadWrite. ALL** .
+9. Выберите **Каталог** и установите флажки **каталог. чтение. все** и **Directory. ReadWrite. ALL** .
 
 10. Выберите **Добавить разрешения**. Ознакомьтесь с добавленными разрешениями.
 
@@ -104,7 +104,7 @@ ms.locfileid: "91259142"
     >[!NOTE]
     > Секрет клиента потребуется позже.
 
-14. Перейдите к разделу **Обзор** и получите **идентификатор клиента** и **идентификатор**клиента.
+14. Перейдите к разделу **Обзор** и получите **идентификатор клиента** и **идентификатор** клиента.
 
 15. Для завершения установки в Савийнт потребуется идентификатор клиента, идентификатор и секрет клиента.
 
@@ -113,7 +113,7 @@ ms.locfileid: "91259142"
 Ниже описаны действия по включению Савийнт для выполнения операций удаления пользователей в Azure AD B2C.
 
 >[!NOTE]
->[Оцените риск, прежде чем предоставлять роли администратора доступ к субъекту-службе.](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)
+>[Оцените риск, прежде чем предоставлять роли администратора доступ к субъекту-службе.](../active-directory/develop/app-objects-and-service-principals.md)
 
 1. Установите последнюю версию модуля PowerShell MSOnline на рабочей станции или сервере Windows.
 
@@ -129,12 +129,12 @@ Add-MsolRoleMember -RoleName "Company Administrator" -RoleMemberType ServicePrin
 
 Перейдите к своему клиенту приложения Савийнт и протестируйте управление жизненным циклом пользователей, а для управления доступом — вариант использования.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Пользовательские политики в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Пользовательские политики в Azure AD B2C](./custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
 
-- [Создание приложения веб-API](https://docs.microsoft.com/azure/active-directory-b2c/add-web-api-application)
+- [Создание приложения веб-API](./add-web-api-application.md)

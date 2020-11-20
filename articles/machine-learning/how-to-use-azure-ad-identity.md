@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 7b76c81a78bfd3eb57a54f1d23ba1b154b09b3e6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: bcf5f75cf5cabe42f530a6a179c2cafd43b5520d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660157"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952545"
 ---
 # <a name="use-azure-ad-identity-with-your-machine-learning-web-service-in-azure-kubernetes-service"></a>Использование удостоверения Azure AD с веб-службой машинного обучения в Службе Azure Kubernetes
 
@@ -32,13 +32,13 @@ ms.locfileid: "94660157"
 
 ## <a name="create-and-install-an-azure-identity"></a>Создание и установка удостоверения Azure
 
-1. Чтобы определить, включен ли в кластере AKS RBAC, используйте следующую команду:
+1. Чтобы определить, включен ли кластер AKS Kubernetes RBAC, используйте следующую команду:
 
     ```azurecli-interactive
     az aks show --name <AKS cluster name> --resource-group <resource group name> --subscription <subscription id> --query enableRbac
     ```
 
-    Эта команда возвращает значение, `true` Если RBAC включен. Это значение определяет команду, которая будет использоваться на следующем шаге.
+    Эта команда возвращает значение, `true` Если включен KUBERNETES RBAC. Это значение определяет команду, которая будет использоваться на следующем шаге.
 
 1. Установите [удостоверение Azure AD Pod](https://azure.github.io/aad-pod-identity/docs/getting-started/installation/) в кластере AKS.
 
@@ -148,7 +148,7 @@ blob_data = blob_client.download_blob()
 blob_data.readall()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об использовании клиентской библиотеки удостоверений Azure для Python см. в [репозитории](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/identity/azure-identity#azure-identity-client-library-for-python) на сайте GitHub.
 * Подробное руководство по развертыванию моделей в кластерах службы Kubernetes Azure [см. в](how-to-deploy-azure-kubernetes-service.md)этом разделе.

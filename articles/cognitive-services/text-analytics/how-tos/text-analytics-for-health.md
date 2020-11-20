@@ -8,38 +8,39 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 08/06/2020
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: e3e0ae444e2b3b6ac195a83653baf4b71bac6644
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.custom: references_regions
+ms.openlocfilehash: e7f017c1f3dc189af2b0fc053912decca3459478
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363873"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952766"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Как использовать Анализ текста для работоспособности (Предварительная версия)
-
-> [!NOTE]
-> Анализ текста для контейнера работоспособности недавно обновлялись. Дополнительные сведения о последних изменениях см. в разделе [новые](../whats-new.md) возможности. Не забудьте извлечь последний контейнер для использования перечисленных обновлений.
 
 > [!IMPORTANT] 
 > Анализ текста для работоспособности — это возможность предварительной версии, предоставленная "как есть" и "со всеми ОШИБКАми". Таким образом, **анализ текста для работоспособности (Предварительная версия) не следует реализовывать и развертывать в любом рабочем использовании.** Анализ текста для обеспечения работоспособности не предназначены для использования в качестве медицинских устройств, поддержки клинической практике, диагностического средства или других технологий, предназначенных для диагностики, получения, устранения, обработки или предотвращения болезни или других условий, и ни одна из лицензий или прав не предоставляется корпорацией Майкрософт для использования этой возможности в таких целях. Эта возможность не предназначена для реализации или развертывания в качестве замены для профессиональных медицинских консультаций или здравоохранения, диагностики, лечения или клинической практике, которые являются нежелательными специалистами здравоохранения и не должны использоваться. Клиент несет ответственность за использование Анализ текста для работоспособности. Корпорация Майкрософт не гарантирует, что Анализ текста для обеспечения работоспособности или каких бы то ни было материалов, предоставляемых в связи с этой возможностью, будет достаточно для любых медицинских целей или иным образом соответствовать требованиям или медицинских нужд любого человека. 
 
 
-Анализ текста для работоспособности — это Контейнерная служба, которая извлекает и помечает соответствующие медицинские сведения из неструктурированных текстов, таких как заметки Doctor, сводки разрядов, документы клинической практике и электронные записи о работоспособности.  
+Анализ текста для работоспособности — это функция службы API анализа текста, которая извлекает и помечает соответствующие медицинские сведения из неструктурированных текстов, таких как заметки Doctor, сводки разрядов, документы клинической практике и электронные записи о работоспособности.  Использовать эту службу можно двумя способами: 
+
+* Веб-API (асинхронный) 
+* Контейнер DOCKER (синхронный);   
 
 ## <a name="features"></a>Компоненты
 
-Анализ текста для контейнера работоспособности в настоящее время выполняет распознавание имен сущностей (NER), извлечение отношений, отрицание сущностей и связывание сущностей для английского языка в собственной среде разработки, которая соответствует вашим требованиям к безопасности и управлению данными.
+Анализ текста для проверки работоспособности: распознавание сущностей (NER), извлечение отношений, отрицание сущностей и связывание сущностей на английском языке для получения аналитических сведений в неструктурированном клинической практике и специальном тексте.
 
-#### <a name="named-entity-recognition"></a>[Распознавание именованных сущностей](#tab/ner)
+### <a name="named-entity-recognition"></a>[Распознавание именованных сущностей](#tab/ner)
 
 Распознавание именованных сущностей обнаруживает слова и фразы, упомянутые в неструктурированном тексте, которые могут быть связаны с одним или несколькими семантическими типами, такими как диагностика, имя лечения, симптом, подпись или возраст.
 
 > [!div class="mx-imgBorder"]
 > ![NER работоспособности](../media/ta-for-health/health-named-entity-recognition.png)
 
-#### <a name="relation-extraction"></a>[Извлечение связей](#tab/relation-extraction)
+### <a name="relation-extraction"></a>[Извлечение связей](#tab/relation-extraction)
 
 Извлечение связей определяет осмысленные соединения между понятиями, упомянутыми в тексте. Например, связь "время условия" обнаруживается путем связывания имени условия с временем. 
 
@@ -47,7 +48,7 @@ ms.locfileid: "94363873"
 > ![Повтор работоспособности](../media/ta-for-health/health-relation-extraction.png)
 
 
-#### <a name="entity-linking"></a>[Связывание сущностей](#tab/entity-linking)
+### <a name="entity-linking"></a>[Связывание сущностей](#tab/entity-linking)
 
 Сущность, связывающая сущности различения, сопоставляя именованные сущности, упомянутые в тексте, с концепциями, найденными в предопределенной базе данных концепций. Например, единая медицинское языковая система (УМЛС).
 
@@ -56,7 +57,7 @@ ms.locfileid: "94363873"
 
 Анализ текста для работоспособности поддерживает связывание с работоспособностью и биомедицинских словари, найденных в источнике знаний об метасесаурусе единой системы обработки медицинских языков ([умлс](https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html)).
 
-#### <a name="negation-detection"></a>[Обнаружение отрицания](#tab/negation-detection) 
+### <a name="negation-detection"></a>[Обнаружение отрицания](#tab/negation-detection) 
 
 Значение медицинских материалов сильно влияет на модификаторы, такие как отрицание, которое может иметь критически важное значение при неточной диагностике. Анализ текста для работоспособности поддерживает обнаружение отрицания для различных сущностей, упомянутых в тексте. 
 
@@ -67,173 +68,189 @@ ms.locfileid: "94363873"
 
 Полный список поддерживаемых сущностей см. в статье [категории сущностей](../named-entity-types.md?tabs=health) , возвращенных анализ текста.
 
-## <a name="supported-languages"></a>Поддерживаемые языки
+### <a name="supported-languages-and-regions"></a>Поддерживаемые языки и регионы
 
-Анализ текста для работоспособности поддерживает только документы на английском языке.
+Анализ текста для работоспособности поддерживает только документы на английском языке. 
 
-## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
+Анализ текста для веб-API, размещенного в состоянии работоспособности, сейчас доступны только в следующих регионах: Западная часть США 2, Восточная часть США 2, Центральная часть США, Северная Европа и Западная Европа.
 
-Заполните и отправьте [форму запроса Cognitive Services контейнеров](https://aka.ms/csgate) , чтобы запросить доступ к контейнеру. В настоящее время вам не будет выставлен счет за Анализ текста для использования работоспособности. 
+## <a name="request-access-to-the-public-preview"></a>Запрос доступа к общедоступной предварительной версии
 
-[!INCLUDE [Request access to the container registry](../../../../includes/cognitive-services-containers-request-access-only.md)]
+Заполните и отправьте [форму запроса Cognitive Services](https://aka.ms/csgate) , чтобы запросить доступ к анализ текста для общедоступной предварительной версии работоспособности. Вам не будет выставлен счет за Анализ текста для использования работоспособности. 
 
-[!INCLUDE [Authenticate to the container registry](../../../../includes/cognitive-services-containers-access-registry.md)]
+В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. После отправки формы команда Azure Cognitive Services будет просматривать ее и отправлять вам решение.
 
-## <a name="install-the-container"></a>Установка контейнера
+> [!IMPORTANT]
+> * В форме необходимо использовать адрес электронной почты, связанный с ИДЕНТИФИКАТОРом подписки Azure.
+> * Используемый ресурс Azure должен быть создан с утвержденным ИДЕНТИФИКАТОРом подписки Azure. 
+> * Проверьте электронную почту (папки "Входящие" и "спам") на наличие обновлений для приложения от корпорации Майкрософт.
 
-Существует несколько способов установки и запуска контейнера. 
+## <a name="using-the-docker-container"></a>Использование контейнера DOCKER 
 
-- Используйте [портал Azure](text-analytics-how-to-install-containers.md?tabs=healthcare) , чтобы создать анализ текста ресурс, и используйте DOCKER для получения контейнера.
-- Используйте следующие сценарии PowerShell и [Azure CLI](/cli/azure/?view=azure-cli-latest) для автоматизации конфигурации контейнера развертывания ресурсов.
+Чтобы запустить Анализ текста для контейнера работоспособности в своей среде, выполните следующие [инструкции, чтобы скачать и установить контейнер](../how-tos/text-analytics-how-to-install-containers.md?tabs=healthcare).
 
-### <a name="install-the-container-using-azure-web-app-for-containers"></a>Установка контейнера с помощью Azure Веб-приложение для контейнеров
+## <a name="using-the-client-library"></a>Использование клиентской библиотеки
 
-Azure [веб-приложение для контейнеров](https://azure.microsoft.com/services/app-service/containers/) — это ресурс Azure, предназначенный для выполнения контейнеров в облаке. Она предоставляет готовые возможности, такие как автоматическое масштабирование, поддержка контейнеров DOCKER и создание прикрепления DOCKER, Поддержка HTTPS и многое другое.
-
-> [!NOTE]
-> С помощью веб-приложения Azure вы автоматически получите домен в виде `<appservice_name>.azurewebsites.net`
-
-Запустите этот скрипт PowerShell с помощью Azure CLI, чтобы создать Веб-приложение для контейнеров, используя подписку и образ контейнера по протоколу HTTPS. Дождитесь завершения сценария (приблизительно 25-30 минут) перед отправкой первого запроса.
-
-```bash
-$subscription_name = ""                    # THe name of the subscription you want you resource to be created on.
-$resource_group_name = ""                  # The name of the resource group you want the AppServicePlan
-                                           #    and AppSerivce to be attached to.
-$resources_location = ""                   # This is the location you wish the AppServicePlan to be deployed to.
-                                           #    You can use the "az account list-locations -o table" command to
-                                           #    get the list of available locations and location code names.
-$appservice_plan_name = ""                 # This is the AppServicePlan name you wish to have.
-$appservice_name = ""                      # This is the AppService resource name you wish to have.
-$TEXT_ANALYTICS_RESOURCE_API_KEY = ""      # This should be taken from the Text Analytics resource.
-$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT = "" # This should be taken from the Text Analytics resource.
-$DOCKER_REGISTRY_SERVER_PASSWORD = ""      # This will be provided separately.
-$DOCKER_REGISTRY_SERVER_USERNAME = ""      # This will be provided separately.
-$DOCKER_IMAGE_NAME = "containerpreview.azurecr.io/microsoft/cognitive-services-healthcare:latest"
-
-az login
-az account set -s $subscription_name
-az appservice plan create -n $appservice_plan_name -g $resource_group_name --is-linux -l $resources_location --sku P3V2
-az webapp create -g $resource_group_name -p $appservice_plan_name -n $appservice_name -i $DOCKER_IMAGE_NAME -s $DOCKER_REGISTRY_SERVER_USERNAME -w $DOCKER_REGISTRY_SERVER_PASSWORD
-az webapp config appsettings set -g $resource_group_name -n $appservice_name --settings Eula=accept Billing=$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT ApiKey=$TEXT_ANALYTICS_RESOURCE_API_KEY
-
-# Once deployment complete, the resource should be available at: https://<appservice_name>.azurewebsites.net
-```
-
-### <a name="install-the-container-using-azure-container-instance"></a>Установка контейнера с помощью экземпляра контейнера Azure
-
-Вы также можете использовать экземпляр контейнера Azure (ACI), чтобы упростить развертывание. ACI — это ресурс, который позволяет запускать контейнеры DOCKER по запросу в управляемой среде Azure, не поддерживающей работу сервера. 
-
-Инструкции по развертыванию ресурса ACI с помощью портал Azure см. в статье Использование службы " [экземпляры контейнеров Azure](text-analytics-how-to-use-container-instances.md) ". Вы также можете использовать приведенный ниже сценарий PowerShell с помощью Azure CLI, который создаст ACI в подписке с помощью образа контейнера.  Дождитесь завершения сценария (приблизительно 25-30 минут) перед отправкой первого запроса.  Из-за ограничения на максимальное число ЦП на ресурс ACI не выбирайте этот параметр, если предполагается отправлять более 5 больших документов (примерно 5000 символов каждый) для каждого запроса.
-Сведения о доступности см. в статье [ACI региональные службы поддержки](../../../container-instances/container-instances-region-availability.md) . 
-
-> [!NOTE] 
-> В службе "экземпляры контейнеров Azure" не включена поддержка HTTPS для встроенных доменов. Если требуется протокол HTTPS, необходимо настроить его вручную, включая создание сертификата и регистрацию домена. Инструкции для этого можно найти в NGINX ниже.
-
-```bash
-$subscription_name = ""                    # The name of the subscription you want you resource to be created on.
-$resource_group_name = ""                  # The name of the resource group you want the AppServicePlan
-                                           # and AppService to be attached to.
-$resources_location = ""                   # This is the location you wish the web app to be deployed to.
-                                           # You can use the "az account list-locations -o table" command to
-                                           # Get the list of available locations and location code names.
-$azure_container_instance_name = ""        # This is the AzureContainerInstance name you wish to have.
-$TEXT_ANALYTICS_RESOURCE_API_KEY = ""      # This should be taken from the Text Analytics resource.
-$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT = "" # This should be taken from the Text Analytics resource.
-$DOCKER_REGISTRY_SERVER_PASSWORD = ""      # This will be provided separately.
-$DOCKER_REGISTRY_SERVER_USERNAME = ""      # This will be provided separately.
-$DNS_LABEL = ""                            # This is the DNS label name you wish your ACI will have
-$DOCKER_REGISTRY_LOGIN_SERVER = "containerpreview.azurecr.io"
-$DOCKER_IMAGE_NAME = "containerpreview.azurecr.io/microsoft/cognitive-services-healthcare:latest"
-
-az login
-az account set -s $subscription_name
-az container create --resource-group $resource_group_name --name $azure_container_instance_name --image $DOCKER_IMAGE_NAME --cpu 4 --memory 12 --registry-login-server $DOCKER_REGISTRY_LOGIN_SERVER --registry-username $DOCKER_REGISTRY_SERVER_USERNAME --registry-password $DOCKER_REGISTRY_SERVER_PASSWORD --port 5000 --dns-name-label $DNS_LABEL --environment-variables Eula=accept Billing=$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT ApiKey=$TEXT_ANALYTICS_RESOURCE_API_KEY
-
-# Once deployment complete, the resource should be available at: http://<unique_dns_label>.<resource_group_region>.azurecontainer.io:5000
-```
-
-### <a name="secure-aci-connectivity"></a>Безопасное подключение ACI
-
-По умолчанию при использовании ACI с API контейнера безопасность не предоставляется. Это связано с тем, что обычно контейнеры будут выполняться как часть модуля, который защищен от внешней сети сетевым мостом. Однако можно изменить контейнер с интерфейсным компонентом, сохранив конечную точку контейнера закрытой. В следующих примерах используется [nginx](https://www.nginx.com) в качестве входящего шлюза для поддержки проверки подлинности по протоколам HTTPS/SSL и Client-Certificate.
-
-> [!NOTE]
-> NGINX — это высокопроизводительный и прокси-сервер HTTP с открытым исходным кодом. Контейнер NGINX можно использовать для завершения подключения TLS для одного контейнера. Также возможны более сложные решения завершения TLS на основе NGINX.
-
-#### <a name="set-up-nginx-as-an-ingress-gateway"></a>Настройка NGINX в качестве входящего шлюза
-
-NGINX использует [файлы конфигурации](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/) для включения компонентов во время выполнения. Чтобы включить завершение TLS для другой службы, необходимо указать SSL-сертификат для завершения подключения TLS и  `proxy_pass` указать адрес службы. Пример приведен ниже.
+Последняя Предварительная версия клиентской библиотеки Анализ текста позволяет вызывать Анализ текста для работоспособности с помощью клиентского объекта. См. справочную документацию и примеры на сайте GitHub:
+* [C#](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics)
+* [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/)
+* [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics)
 
 
-> [!NOTE]
-> `ssl_certificate` в локальной файловой системе контейнера NGINX требуется указать путь. Адрес, указанный для, `proxy_pass` должен быть доступен в сети контейнера nginx.
 
-Контейнер NGINX загрузит все файлы в `_.conf_` , которые будут подключены к `/etc/nginx/conf.d/` пути конфигурации HTTP.
+## <a name="sending-a-rest-api-request"></a>Отправка запроса к REST API 
 
-```nginx
-server {
-  listen              80;
-  return 301 https://$host$request_uri;
-}
-server {
-  listen              443 ssl;
-  # replace with .crt and .key paths
-  ssl_certificate     /cert/Local.crt;
-  ssl_certificate_key /cert/Local.key;
+### <a name="preparation"></a>Подготовка
 
-  location / {
-    proxy_pass http://cognitive-service:5000;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Real-IP  $remote_addr;
-  }
+Анализ текста для работоспособности позволяет получить более качественный результат, если вы придаете ему меньшее количество текста для работы. Это противоположено некоторым другим Анализ текстаным функциям, таким как извлечение ключевых фраз, которые лучше подходят для больших блоков текста. Чтобы получить наилучшие результаты из этих операций, рассмотрите возможность реструктуризации входных данных соответствующим образом.
+
+Необходимы документы JSON в следующем формате: ID, текст и язык. 
+
+Размер документа должен быть менее 5120 символов. Максимальное число документов, разрешенных в коллекции, см. в статье [ограничения данных](../concepts/data-limits.md?tabs=version-3) в разделе Основные понятия. Коллекция передается в тексте запроса.
+
+### <a name="structure-the-api-request-for-the-hosted-asynchronous-web-api"></a>Структурирование запроса API для размещенного асинхронного веб-API
+
+Для контейнера и размещенного веб-API необходимо создать запрос POST. Чтобы быстро создать и отправить запрос POST в размещенный веб-API в нужном регионе, можно [воспользоваться командой POST](text-analytics-how-to-call-api.md), фигурой или **консолью тестирования API** в [анализ текста](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Health) . 
+
+Ниже приведен пример JSON-файла, присоединенного к Анализ текста для текста POST запроса API работоспособности:
+
+```json
+example.json
+
+{
+  "documents": [
+    {
+      "language": "en",
+      "id": "1",
+      "text": "Subject was administered 100mg remdesivir intravenously over a period of 120 min"
+    }
+  ]
 }
 ```
 
-#### <a name="example-docker-compose-file"></a>Пример файла создания DOCKER
+### <a name="hosted-asynchronous-web-api-response"></a>Размещенный асинхронный ответ веб-API 
 
-В приведенном ниже примере показано, как можно создать файл- [сокомпозицию DOCKER](https://docs.docker.com/compose/reference/overview) для развертывания NGINX и анализ текста для контейнеров работоспособности.
+Так как этот запрос POST используется для отправки задания для асинхронной операции, в объекте Response нет текста.  Однако для выполнения запроса GET для проверки состояния задания и выходных данных требуется значение ключа Operation-Location в заголовках ответа.  Ниже приведен пример значения ключа Location операции в заголовке ответа запроса POST:
 
-```yaml
-version: "3.7"
-services:
-  cognitive-service:
-    image: {IMAGE_ID}
-    ports:
-      - 5000:5000
-    environment:
-      - eula=accept
-      - billing={ENDPOINT_URI}
-      - apikey={API_KEY}
-      - Logging:Disk:Format=json
-    volumes:
-        # replace with path to logs folder
-      - <path-to-logs-folder>:/output
-  nginx:
-    image: nginx
-    ports:
-      - 443:443
-    volumes:
-        # replace with paths for certs and conf folders
-      - <path-to-certs-folder>:/cert
-      - <path-to-conf-folder>:/etc/nginx/conf.d/
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/health/jobs/<jobID>`
+
+Чтобы проверить состояние задания, выполните запрос GET к URL-адресу в заголовке ключа операции запроса POST.  Для отражения состояния задания используются следующие состояния: `NotStarted` , `running` ,,,, `succeeded` `failed` `rejected` `cancelling` и `cancelled` .  
+
+Можно отменить задание с `NotStarted` состоянием или, `running` используя вызов HTTP DELETE с тем же URL-адресом, что и у запроса GET.  Дополнительные сведения о вызове DELETE доступны в [анализ текста для Справочника по API, размещенного в исправности](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/CancelHealthJob).
+
+Ниже приведен пример ответа на запрос GET.  Обратите внимание, что выходные данные доступны для получения до тех пор, пока не `expirationDateTime` прошло (24 часа со времени создания задания), после чего выходные данные очищаются.
+
+```json
+{
+    "jobId": "b672c6f5-7c0d-4783-ba8c-4d0c47213454",
+    "lastUpdateDateTime": "2020-11-18T01:45:00Z",
+    "createdDateTime": "2020-11-18T01:44:55Z",
+    "expirationDateTime": "2020-11-19T01:44:55Z",
+    "status": "succeeded",
+    "errors": [],
+    "results": {
+        "documents": [
+            {
+                "id": "1",
+                "entities": [
+                    {
+                        "offset": 25,
+                        "length": 5,
+                        "text": "100mg",
+                        "category": "Dosage",
+                        "confidenceScore": 1.0,
+                        "isNegated": false
+                    },
+                    {
+                        "offset": 31,
+                        "length": 10,
+                        "text": "remdesivir",
+                        "category": "MedicationName",
+                        "confidenceScore": 1.0,
+                        "isNegated": false,
+                        "links": [
+                            {
+                                "dataSource": "UMLS",
+                                "id": "C4726677"
+                            },
+                            {
+                                "dataSource": "MSH",
+                                "id": "C000606551"
+                            },
+                            {
+                                "dataSource": "NCI",
+                                "id": "C152185"
+                            },
+                            {
+                                "dataSource": "NCI_FDA",
+                                "id": "3QKI37EEHE"
+                            }
+                        ]
+                    },
+                    {
+                        "offset": 42,
+                        "length": 13,
+                        "text": "intravenously",
+                        "category": "MedicationRoute",
+                        "confidenceScore": 1.0,
+                        "isNegated": false
+                    },
+                    {
+                        "offset": 56,
+                        "length": 4,
+                        "text": "over",
+                        "category": "Time",
+                        "confidenceScore": 0.87,
+                        "isNegated": false
+                    },
+                    {
+                        "offset": 73,
+                        "length": 7,
+                        "text": "120 min",
+                        "category": "Time",
+                        "confidenceScore": 0.99,
+                        "isNegated": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "relationType": "DosageOfMedication",
+                        "bidirectional": false,
+                        "source": "#/results/documents/0/entities/0",
+                        "target": "#/results/documents/0/entities/1"
+                    },
+                    {
+                        "relationType": "RouteOfMedication",
+                        "bidirectional": false,
+                        "source": "#/results/documents/0/entities/2",
+                        "target": "#/results/documents/0/entities/1"
+                    },
+                    {
+                        "relationType": "TimeOfMedication",
+                        "bidirectional": false,
+                        "source": "#/results/documents/0/entities/3",
+                        "target": "#/results/documents/0/entities/1"
+                    },
+                    {
+                        "relationType": "TimeOfMedication",
+                        "bidirectional": false,
+                        "source": "#/results/documents/0/entities/4",
+                        "target": "#/results/documents/0/entities/1"
+                    }
+                ],
+                "warnings": []
+            }
+        ],
+        "errors": [],
+        "modelVersion": "2020-09-03"
+    }
+}
 ```
 
-Чтобы инициировать этот файл создания DOCKER, выполните следующую команду в консоли на корневом уровне файла:
 
-```bash
-docker-compose up
-```
+### <a name="structure-the-api-request-for-the-container"></a>Структурирование запроса API для контейнера
 
-Дополнительные сведения см. в документации по NGINX на [nginx SSL](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/).
-
-
-## <a name="example-api-request"></a>Пример запроса к API
-Контейнер предоставляет интерфейсы REST API конечной точки прогнозирования запросов.  Мы также предоставили средство визуализации в контейнере, доступ к которому можно получить, добавив **демонстрацию** в конечную точку контейнера, например:
-
-```bash
-http://<serverURL>:5000/demo
-```
-
-Используйте приведенный ниже запрос в виде фигурной скобки, чтобы отправить запрос в развернутый контейнер, заменив `serverURL` переменную соответствующим значением.
+Чтобы отправить запрос в развернутый контейнер, можно [использовать POST](text-analytics-how-to-call-api.md) или пример запроса с фигурными скобками, заменив `serverURL` переменную соответствующим значением.  Обратите внимание, что версия API в URL-адресе для контейнера отличается от размещенного API.
 
 ```bash
 curl -X POST 'http://<serverURL>:5000/text/analytics/v3.2-preview.1/entities/health' --header 'Content-Type: application/json' --header 'accept: application/json' --data-binary @example.json
@@ -261,9 +278,9 @@ example.json
 }
 ```
 
-## <a name="api-response-body"></a>Текст ответа API
+### <a name="container-response-body"></a>Тело ответа контейнера
 
-Следующий код JSON является примером Анализ текста для текста ответа API работоспособности:
+Следующий код JSON является примером Анализ текста для текста ответа API работоспособности из контейнерного синхронного вызова:
 
 ```json
 {
@@ -273,81 +290,65 @@ example.json
             "entities": [
                 {
                     "id": "0",
-                    "offset": 17,
-                    "length": 11,
-                    "text": "itchy sores",
-                    "category": "SymptomOrSign",
-                    "confidenceScore": 1.0,
-                    "isNegated": false
-                }
-            ]
-        },
-        {
-            "id": "2",
-            "entities": [
-                {
-                    "id": "0",
-                    "offset": 11,
-                    "length": 4,
-                    "text": "50mg",
+                    "offset": 25,
+                    "length": 5,
+                    "text": "100mg",
                     "category": "Dosage",
                     "confidenceScore": 1.0,
                     "isNegated": false
                 },
                 {
                     "id": "1",
-                    "offset": 16,
-                    "length": 8,
-                    "text": "benadryl",
+                    "offset": 31,
+                    "length": 10,
+                    "text": "remdesivir",
                     "category": "MedicationName",
                     "confidenceScore": 1.0,
                     "isNegated": false,
                     "links": [
                         {
                             "dataSource": "UMLS",
-                            "id": "C0700899"
-                        },
-                        {
-                            "dataSource": "CHV",
-                            "id": "0000044903"
-                        },
-                        {
-                            "dataSource": "MMSL",
-                            "id": "899"
+                            "id": "C4726677"
                         },
                         {
                             "dataSource": "MSH",
-                            "id": "D004155"
+                            "id": "C000606551"
                         },
                         {
                             "dataSource": "NCI",
-                            "id": "C300"
+                            "id": "C152185"
                         },
                         {
-                            "dataSource": "NCI_DTP",
-                            "id": "NSC0033299"
-                        },
-                        {
-                            "dataSource": "PDQ",
-                            "id": "CDR0000039163"
-                        },
-                        {
-                            "dataSource": "PSY",
-                            "id": "05760"
-                        },
-                        {
-                            "dataSource": "RXNORM",
-                            "id": "203457"
+                            "dataSource": "NCI_FDA",
+                            "id": "3QKI37EEHE"
                         }
                     ]
                 },
                 {
                     "id": "2",
-                    "offset": 32,
-                    "length": 11,
-                    "text": "twice daily",
-                    "category": "Frequency",
+                    "offset": 42,
+                    "length": 13,
+                    "text": "intravenously",
+                    "category": "MedicationRoute",
                     "confidenceScore": 1.0,
+                    "isNegated": false
+                },
+                {
+                    "id": "3",
+                    "offset": 56,
+                    "length": 4,
+                    "text": "over",
+                    "category": "Time",
+                    "confidenceScore": 0.87,
+                    "isNegated": false
+                },
+                {
+                    "id": "4",
+                    "offset": 73,
+                    "length": 7,
+                    "text": "120 min",
+                    "category": "Time",
+                    "confidenceScore": 0.99,
                     "isNegated": false
                 }
             ],
@@ -355,26 +356,38 @@ example.json
                 {
                     "relationType": "DosageOfMedication",
                     "bidirectional": false,
-                    "source": "#/documents/1/entities/0",
-                    "target": "#/documents/1/entities/1"
+                    "source": "#/documents/0/entities/0",
+                    "target": "#/documents/0/entities/1"
                 },
                 {
-                    "relationType": "FrequencyOfMedication",
+                    "relationType": "RouteOfMedication",
                     "bidirectional": false,
-                    "source": "#/documents/1/entities/2",
-                    "target": "#/documents/1/entities/1"
+                    "source": "#/documents/0/entities/2",
+                    "target": "#/documents/0/entities/1"
+                },
+                {
+                    "relationType": "TimeOfMedication",
+                    "bidirectional": false,
+                    "source": "#/documents/0/entities/3",
+                    "target": "#/documents/0/entities/1"
+                },
+                {
+                    "relationType": "TimeOfMedication",
+                    "bidirectional": false,
+                    "source": "#/documents/0/entities/4",
+                    "target": "#/documents/0/entities/1"
                 }
             ]
         }
     ],
     "errors": [],
-    "modelVersion": "2020-07-24"
+    "modelVersion": "2020-09-03"
 }
 ```
 
 ### <a name="negation-detection-output"></a>Вывод обнаружения отрицания
 
-При использовании обнаружения отрицания в некоторых случаях один термин отрицания может одновременно обращаться к нескольким терминам. Отрицание распознанной сущности представлено в выходных данных JSON по логическому значению `isNegated` флага:
+При использовании обнаружения отрицания в некоторых случаях один термин отрицания может одновременно обращаться к нескольким терминам. Отрицание распознанной сущности представлено в выходных данных JSON логическим значением `isNegated` флага, например:
 
 ```json
 {

@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: SAP
 ms.assetid: d7c59cc1-b2d0-4d90-9126-628f9c7a5538
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/11/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ec29b6489712eeb67783aef03261a3606a390125
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 54f3f0e1b57525a3bd425575ff03a9f3c91b0044
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92926620"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951219"
 ---
 # <a name="sap-workload-on-azure-virtual-machine-supported-scenarios"></a>Поддерживаемые сценарии использования рабочей нагрузки SAP в виртуальных машинах Azure
 Проектирование архитектуры SAP NetWeaver, Business 1 `Hybris` или S/4HANA в Azure открывает множество различных возможностей для различных архитектур и средств, используемых для перехода к масштабируемому, эффективному и высоко доступному развертыванию. Несмотря на то, что зависит от используемой операционной системы или СУБД, существуют ограничения. Кроме того, не все сценарии, которые поддерживаются в локальной среде, поддерживаются аналогичным образом в Azure. В этом документе приводится пошаговая поддержка конфигураций с высоким уровнем доступности и конфигураций и архитектур с высокой доступностью с использованием виртуальных машин Azure исключительно. Для сценариев, поддерживаемых [крупными экземплярами Hana](./hana-overview-architecture.md), ознакомьтесь со статьей [Поддерживаемые сценарии для крупных экземпляров Hana](./hana-supported-scenario.md). 

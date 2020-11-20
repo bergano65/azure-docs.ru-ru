@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 718ccbaa57ffe9f4ebaf4e8df448b602ba8cc3fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1b2c7513562e951e1098cf327780387ddf6a495
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89293157"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953548"
 ---
 # <a name="tutorial-for-configuring-whoiam-with-azure-active-directory-b2c"></a>Руководство по настройке Вхоиам с помощью Azure Active Directory B2C
 
@@ -28,9 +28,9 @@ ms.locfileid: "89293157"
 
 Чтобы приступить к работе, вам потребуется:
 
-- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-- [Azure AD B2C клиент](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с подпиской Azure.
+- [Azure AD B2C клиент](./tutorial-create-tenant.md) , связанный с подпиской Azure.
 
 - [Пробная учетная запись](https://www.whoiam.ai/contact-us/)вхоиам.
 
@@ -72,7 +72,7 @@ ms.locfileid: "89293157"
 
     - [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/): используется для хранения и извлечения параметров.
 
-    - [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview#:~:text=Application%20Insights%2C%20a%20feature%20of%20Azure%20Monitor%2C%20is,professionals.%20Use%20it%20to%20monitor%20your%20live%20applications) (необязательно): используется для входа как в API, так и на портал администрирования.
+    - [Application Insights](../azure-monitor/app/app-insights-overview.md) (необязательно): используется для входа как в API, так и на портал администрирования.
 
 3. Развертывание API БРИМС и портала администрирования БРИМС в среде Azure.
 
@@ -88,9 +88,9 @@ ms.locfileid: "89293157"
 
 3. Выберите **выполнить поток пользователя** , а затем:
 
-   a. Для **приложения**выберите зарегистрированное приложение (пример — JWT).
+   a. Для **приложения** выберите зарегистрированное приложение (пример — JWT).
 
-   b. В поле **URL-адрес ответа**выберите **URL-адрес перенаправления**.
+   b. В поле **URL-адрес ответа** выберите **URL-адрес перенаправления**.
 
    c. Выберите **Выполнить поток пользователя**.
 
@@ -98,10 +98,10 @@ ms.locfileid: "89293157"
 
 5. Служба БРИМС будет вызываться во время последовательности после создания пользовательского атрибута. Если поток неполон, убедитесь, что пользователь не сохранен в каталоге.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Пользовательские политики в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Пользовательские политики в Azure AD B2C](./custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

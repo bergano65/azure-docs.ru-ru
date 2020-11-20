@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 4e5becdd026b0a1c9e848b183ebeee5833654461
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3a8881b9fe44727caf07b3cc0d5ee19f0444e98
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259277"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953667"
 ---
 # <a name="tutorial-for-configuring-jumio-with-azure-active-directory-b2c"></a>Руководство по настройке Жумио с помощью Azure Active Directory B2C
 
@@ -26,9 +26,9 @@ ms.locfileid: "91259277"
 
 Чтобы приступить к работе, вам потребуется:
 
-- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-- [Azure AD B2C клиент](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с подпиской Azure.
+- [Azure AD B2C клиент](./tutorial-create-tenant.md) , связанный с подпиской Azure.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -65,7 +65,7 @@ ms.locfileid: "91259277"
 
 ### <a name="deploy-the-api"></a>Развертывание API
 
-Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Jumio/API/Jumio.Api) в службе Azure. Вы можете опубликовать код из Visual Studio, следуя [этим инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Jumio/API/Jumio.Api) в службе Azure. Вы можете опубликовать код из Visual Studio, следуя [этим инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 >[!NOTE]
 >Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
@@ -85,7 +85,7 @@ ms.locfileid: "91259277"
 
    Затем сертификат экспортируется в расположение, указанное в параметре ``{your-local-path}`` .
 
-3. Импортируйте сертификат в службу приложений Azure, выполнив инструкции, приведенные в [этой статье](https://docs.microsoft.com/azure/app-service/configure-ssl-certificate#upload-a-private-certificate).
+3. Импортируйте сертификат в службу приложений Azure, выполнив инструкции, приведенные в [этой статье](../app-service/configure-ssl-certificate.md#upload-a-private-certificate).
 
 ### <a name="create-a-signingencryption-key"></a>Создание ключа подписи или шифрования
 
@@ -102,7 +102,7 @@ ms.locfileid: "91259277"
 
 ### <a name="configure-the-api"></a>Настройка API
 
-[Параметры приложения можно настроить в службе приложений Azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). С помощью этого метода можно безопасно настроить параметры, не отвлекая их в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
+[Параметры приложения можно настроить в службе приложений Azure](../app-service/configure-common.md#configure-app-settings). С помощью этого метода можно безопасно настроить параметры, не отвлекая их в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
 
 | Параметры приложений | Источник | Примечания |
 | :-------- | :------------| :-----------|
@@ -118,7 +118,7 @@ ms.locfileid: "91259277"
 
 ### <a name="deploy-the-ui"></a>Развертывание пользовательского интерфейса
 
-1. Настройте [контейнер хранилища BLOB-объектов в учетной записи хранения](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
+1. Настройте [контейнер хранилища BLOB-объектов в учетной записи хранения](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container).
 
 2. Храните файлы пользовательского интерфейса из [папки пользовательского интерфейса](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Jumio/UI) в контейнере больших двоичных объектов.
 
@@ -139,7 +139,7 @@ ms.locfileid: "91259277"
 
 1. Перейдите к [политике Azure AD B2C](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Jumio/Policies) в папке политики.
 
-2. Чтобы скачать [LocalAccounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts), выполните инструкции из [этой статьи](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) .
+2. Чтобы скачать [LocalAccounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts), выполните инструкции из [этой статьи](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) .
 
 3. Настройте политику для клиента Azure AD B2C.
 
@@ -154,9 +154,9 @@ ms.locfileid: "91259277"
 
 3. Выберите **выполнить поток пользователя** , а затем:
 
-   a. Для **приложения**выберите зарегистрированное приложение (пример — JWT).
+   a. Для **приложения** выберите зарегистрированное приложение (пример — JWT).
 
-   b. В поле **URL-адрес ответа**выберите **URL-адрес перенаправления**.
+   b. В поле **URL-адрес ответа** выберите **URL-адрес перенаправления**.
 
    c. Выберите **Выполнить поток пользователя**.
 
@@ -164,10 +164,10 @@ ms.locfileid: "91259277"
 
 5. Служба Жумио будет вызываться во время последовательности после создания пользовательского атрибута. Если поток неполон, убедитесь, что пользователь не сохранен в каталоге.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Пользовательские политики в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Пользовательские политики в Azure AD B2C](./custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

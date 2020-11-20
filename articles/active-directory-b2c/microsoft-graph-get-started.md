@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d95b45b9be0893282a532bae9ec0278c3a141686
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61e32f50e02e45487830c5ea7ff476a0571960f6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85385932"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954007"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Управление Azure AD B2C с помощью Microsoft Graph
 
@@ -52,7 +52,7 @@ ms.locfileid: "85385932"
 1. Щелкните **Регистрация приложений** и выберите **Новая регистрация**.
 1. Введите **имя** приложения. Например, *managementapp1*.
 1. Выберите **учетные записи только в этом каталоге Организации**.
-1. В разделе **разрешения**снимите флажок *предоставить согласие администратора на OpenID Connect и offline_access разрешения* .
+1. В разделе **разрешения** снимите флажок *предоставить согласие администратора на OpenID Connect и offline_access разрешения* .
 1. Выберите **Зарегистрировать**.
 1. Запишите **идентификатор приложения (клиента)** , который отображается на странице Обзор приложения. Это значение используется на более позднем этапе.
 
@@ -66,7 +66,7 @@ ms.locfileid: "85385932"
 
 [!INCLUDE [active-directory-b2c-client-secret](../../includes/active-directory-b2c-client-secret.md)]
 
-Теперь у вас есть приложение, имеющее разрешение на *Создание*, *Чтение*, *Обновление*и *Удаление* пользователей в клиенте Azure AD B2C. Перейдите к следующему разделу, чтобы добавить разрешения на *Обновление пароля* .
+Теперь у вас есть приложение, имеющее разрешение на *Создание*, *Чтение*, *Обновление* и *Удаление* пользователей в клиенте Azure AD B2C. Перейдите к следующему разделу, чтобы добавить разрешения на *Обновление пароля* .
 
 ## <a name="enable-user-delete-and-password-update"></a>Включить удаление пользователя и обновление пароля
 
@@ -76,21 +76,21 @@ ms.locfileid: "85385932"
 
 1. Войдите в [портал Azure](https://portal.azure.com) и используйте фильтр **Directory + Subscription** , чтобы переключиться на клиент Azure AD B2C.
 1. Найдите и выберите **Azure AD B2C**.
-1. В разделе **Управление**выберите **роли и администраторы**.
+1. В разделе **Управление** выберите **роли и администраторы**.
 1. Выберите роль **администратора пользователей** .
 1. Выберите **добавить назначения**.
 1. В текстовом поле **Выбор** введите имя зарегистрированного ранее приложения, например *managementapp1*. Выберите приложение, которое появится в результатах поиска.
 1. Выберите **Добавить**. Для полного распространения разрешений может потребоваться несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы зарегистрировали приложение управления и предоставили ему необходимые разрешения, ваши приложения и службы (например, Azure Pipelines) могут использовать свои учетные данные и разрешения для взаимодействия с Microsoft Graph API. 
 
-* [Получение токена доступа из Azure AD](https://docs.microsoft.com/graph/auth-v2-service#4-get-an-access-token)
-* [Используйте маркер доступа для вызова Microsoft Graph](https://docs.microsoft.com/graph/auth-v2-service#4-get-an-access-token)
+* [Получение токена доступа из Azure AD](/graph/auth-v2-service#4-get-an-access-token)
+* [Используйте маркер доступа для вызова Microsoft Graph](/graph/auth-v2-service#4-get-an-access-token)
 * [Операции B2C, поддерживаемые Microsoft Graph](microsoft-graph-operations.md)
 * [Управление Azure AD B2C учетными записями пользователей с помощью Microsoft Graph](manage-user-accounts-graph-api.md)
 * [Получение журналов аудита с помощью API отчетов Azure AD](view-audit-logs.md#get-audit-logs-with-the-azure-ad-reporting-api)
 
 <!-- LINKS -->
-[ms-graph]: https://docs.microsoft.com/graph/
+[ms-graph]: /graph/
 [ms-graph-api]: https://docs.microsoft.com/graph/api/overview

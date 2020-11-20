@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 708ec35524f25314ca568944b738ba2cdf60d55c
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 79a99d9f0ca117d8f47d56d76399210a72b91bb7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132080"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951661"
 ---
 # <a name="define-an-id-token-hint-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля указания маркера идентификации в настраиваемой политике Azure Active Directory B2C
 
@@ -137,7 +137,7 @@ $newClientSecret
    Префикс `B2C_1A_` может быть добавлен автоматически.
 1. В поле **секрет** введите созданный ранее ключ входа.
 1. Для параметра **Использование ключа** задайте значение **Шифрование**.
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Создать**.
 1. Убедитесь, что вы создали ключ `B2C_1A_IdTokenHintKey`.
 
 
@@ -189,7 +189,7 @@ $newClientSecret
 
 #### <a name="step-1-prepare-a-self-signed-certificate"></a>Шаг 1. Подготовка самозаверяющего сертификата
 
-Если у вас еще нет сертификата, вы можете использовать самозаверяющий сертификат для этого руководства. В Windows для создания сертификата используется командлет PowerShell [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate).
+Если у вас еще нет сертификата, вы можете использовать самозаверяющий сертификат для этого руководства. В Windows для создания сертификата используется командлет PowerShell [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 Выполните эту команду PowerShell, чтобы создать самозаверяющий сертификат. Измените аргумент `-Subject`, указав реальные значения приложения и имени клиента Azure  AD B2C. Можно также скорректировать дату `-NotAfter`, чтобы указать другой срок действия сертификата.
 
@@ -282,6 +282,6 @@ New-SelfSignedCertificate `
 https://tenant-name.b2clogin.com/tenant-name.onmicrosoft.com/B2C_1A_signup_signin/oauth2/v2.0/authorize?client_id=63ba0d17-c4ba-47fd-89e9-31b3c2734339&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login&id_token_hint=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6IiBKb2huIFNtaXRoIiwidXNlcklkIjoiam9obi5zQGNvbnRvc28uY29tIiwibmJmIjoxNTk5NDgyNTE1LCJleHAiOjE2MDAwODczMTUsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0IiwiYXVkIjoiYTQ4OWZjNDQtM2NjMC00YTc4LTkyZjYtZTQxM2NkODUzZWFlIn0.nPmLXydI83PQCk5lRBYUZRu_aX58pL1khahHyQuupig
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Проверьте [регистрацию с помощью решения "пригласить электронное письмо](https://github.com/azure-ad-b2c/samples/blob/master/policies/invite/README.md) " в репозитории сообщества GitHub Azure AD B2C.

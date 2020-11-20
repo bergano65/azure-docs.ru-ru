@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0dba5f96d90304418d7ebd297419c1f36244f868
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 4dd9f98f174144cef455157162694a470aa1065f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363935"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951769"
 ---
 # <a name="deploy-custom-policies-with-azure-pipelines"></a>Развертывание настраиваемых политик с помощью Azure Pipelines
 
@@ -29,9 +29,9 @@ ms.locfileid: "92363935"
 1. Настройка конвейера Azure
 
 > [!IMPORTANT]
-> Управление Azure AD B2C пользовательскими политиками с помощью конвейера Azure в настоящее время использует операции **предварительной версии** , доступные в `/beta` конечной точке API Microsoft Graph. Использование этих API для приложений в рабочей среде не поддерживается. Дополнительные сведения см. в [справочнике по конечной точке бета-версии Microsoft Graph REST API](https://docs.microsoft.com/graph/api/overview?toc=./ref/toc.json&view=graph-rest-beta).
+> Управление Azure AD B2C пользовательскими политиками с помощью конвейера Azure в настоящее время использует операции **предварительной версии** , доступные в `/beta` конечной точке API Microsoft Graph. Использование этих API для приложений в рабочей среде не поддерживается. Дополнительные сведения см. в [справочнике по конечной точке бета-версии Microsoft Graph REST API](/graph/api/overview?toc=.%252fref%252ftoc.json&view=graph-rest-beta).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Azure AD B2C клиент](tutorial-create-tenant.md)и учетные данные для пользователя в каталоге с ролью [администратора политики B2C инфраструктура процедур идентификации](../active-directory/roles/permissions-reference.md#b2c-ief-policy-administrator)
 * [Пользовательские политики](custom-policy-get-started.md) , отправленные в клиент
@@ -40,7 +40,7 @@ ms.locfileid: "92363935"
 
 ## <a name="client-credentials-grant-flow"></a>Поток предоставления учетных данных клиента
 
-Описываемый здесь сценарий использует вызовы между службами между Azure Pipelines и Azure AD B2C с помощью [потока предоставления учетных данных клиента](../active-directory/develop/v1-oauth2-client-creds-grant-flow.md)OAuth 2,0. Этот поток предоставления позволяет веб-службе, такой как Azure Pipelines (конфиденциальный клиент), использовать собственные учетные данные вместо олицетворения пользователя для проверки подлинности при вызове другой веб-службы (в данном случае Microsoft Graph API). Azure Pipelines получает маркер в неинтерактивном режиме, а затем выполняет запросы к API Microsoft Graph.
+Описываемый здесь сценарий использует вызовы между службами между Azure Pipelines и Azure AD B2C с помощью [потока предоставления учетных данных клиента](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md)OAuth 2,0. Этот поток предоставления позволяет веб-службе, такой как Azure Pipelines (конфиденциальный клиент), использовать собственные учетные данные вместо олицетворения пользователя для проверки подлинности при вызове другой веб-службы (в данном случае Microsoft Graph API). Azure Pipelines получает маркер в неинтерактивном режиме, а затем выполняет запросы к API Microsoft Graph.
 
 ## <a name="register-an-application-for-management-tasks"></a>Регистрация приложения для задач управления
 
@@ -58,7 +58,7 @@ ms.locfileid: "92363935"
 1. [Создайте новый проект][devops-create-project] или выберите существующий проект.
 1. В проекте перейдите по адресу **репозиториев** и выберите страницу **файлы** . Выберите существующий репозиторий или создайте его для этого упражнения.
 1. Создайте папку с именем *B2CAssets*. Назовите требуемый файл заполнителя *readme.md* и **зафиксируйте** файл. При необходимости этот файл можно удалить позже.
-1. Добавьте файлы политики Azure AD B2C в папку *B2CAssets* . Сюда входят *TrustFrameworkBase.xml*, *TrustFrameWorkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml*, *PasswordReset.xml*и другие созданные политики. Запишите имя каждого файла политики Azure AD B2C для использования на более позднем шаге (они используются в качестве аргументов сценария PowerShell).
+1. Добавьте файлы политики Azure AD B2C в папку *B2CAssets* . Сюда входят *TrustFrameworkBase.xml*, *TrustFrameWorkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml*, *PasswordReset.xml* и другие созданные политики. Запишите имя каждого файла политики Azure AD B2C для использования на более позднем шаге (они используются в качестве аргументов сценария PowerShell).
 1. Создайте папку с именем *Scripts* в корневом каталоге репозитория, присвойте имя файлу заполнителя *DeployToB2c.ps1*. Не зафиксируйте файл на этом этапе, вы сделаете это на следующем шаге.
 1. Вставьте следующий скрипт PowerShell в *DeployToB2c.ps1*, а затем **зафиксируйте** файл. Сценарий получает маркер из Azure AD и вызывает API Microsoft Graph, чтобы передать политики в папку *B2CAssets* в клиент Azure AD B2C.
 
@@ -115,14 +115,14 @@ ms.locfileid: "92363935"
 
 1. Войдите в организацию Azure DevOps Services и перейдите к своему проекту.
 1. В проекте выберите **конвейеры**  >  **выпускают**  >  **Новый конвейер**.
-1. В разделе **Выбор шаблона**выберите **пустое задание**.
+1. В разделе **Выбор шаблона** выберите **пустое задание**.
 1. Введите **имя этапа**, например *деплойкустомполиЦиес*, а затем закройте панель.
-1. Выберите **Добавить артефакт**и в разделе **тип источника**выберите **репозиторий Azure**.
+1. Выберите **Добавить артефакт** и в разделе **тип источника** выберите **репозиторий Azure**.
     1. Выберите исходный репозиторий, содержащий папку *Scripts* , заполненную сценарием PowerShell.
     1. Выберите **ветвь по умолчанию**. Если вы создали новый репозиторий в предыдущем разделе, ветвь по умолчанию — *master*.
     1. Оставьте параметр **версии по умолчанию** *Последняя из ветви по умолчанию*.
     1. Введите **Псевдоним источника** для репозитория. Например, *полицирепо*. Не включайте пробелы в имя псевдонима.
-1. Выберите **Добавить**.
+1. Нажмите **Добавить**
 1. Переименуйте конвейер, чтобы он отражал свое намерение. Например, *разверните пользовательский конвейер политики*.
 1. Нажмите кнопку **сохранить** , чтобы сохранить конфигурацию конвейера.
 
@@ -211,10 +211,10 @@ PublicPolicyUri="http://contoso.onmicrosoft.com/B2C_1A_TrustFrameworkBase">
 
 См. также:
 
-* [Вызовы между службами с использованием учетных данных клиента](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)
-* [Azure DevOps Services](https://docs.microsoft.com/azure/devops/user-guide/?view=azure-devops)
+* [Вызовы между службами с использованием учетных данных клиента](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md)
+* [Azure DevOps Services](/azure/devops/user-guide/?view=azure-devops)
 
 <!-- LINKS - External -->
-[devops]: https://docs.microsoft.com/azure/devops/?view=azure-devops
-[devops-create-project]:  https://docs.microsoft.com/azure/devops/organizations/projects/create-project?view=azure-devops
-[devops-pipelines]: https://docs.microsoft.com/azure/devops/pipelines
+[devops]: /azure/devops/?view=azure-devops
+[devops-create-project]:  /azure/devops/organizations/projects/create-project?view=azure-devops
+[devops-pipelines]: /azure/devops/pipelines

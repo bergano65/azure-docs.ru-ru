@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cfce5b42d37908d0ba89cff9c4831cb25b968524
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07a8f785cf2b9a64f3acb9f44c4fca5023c4fcf3
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259328"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953752"
 ---
 # <a name="tutorial-for-configuring-idology-with-azure-active-directory-b2c"></a>Руководство по настройке Идологи с помощью Azure Active Directory B2C 
 
@@ -26,7 +26,7 @@ ms.locfileid: "91259328"
 
 Чтобы приступить к работе, вам потребуется:
 
-* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Клиент Azure AD B2C](tutorial-create-tenant.md) , связанный с вашей подпиской Azure.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -67,13 +67,13 @@ ms.locfileid: "91259328"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/IDology/Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/IDology/Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
 
 ### <a name="part-2---configure-the-api"></a>Часть 2. Настройка API 
 
-Параметры приложения можно [настроить в службе приложений в Azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). С помощью этого метода параметры можно безопасно настроить без их возврата в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
+Параметры приложения можно [настроить в службе приложений в Azure](../app-service/configure-common.md#configure-app-settings). С помощью этого метода параметры можно безопасно настроить без их возврата в репозиторий. Необходимо предоставить следующие параметры для API-интерфейса RESTful:
 
 | Параметры приложений | Источник | Примечания |
 | :-------- | :------------| :-----------|
@@ -119,7 +119,7 @@ ms.locfileid: "91259328"
 
 ## <a name="test-the-user-flow"></a>Тестирование потока пользователя
 
-1. Откройте клиент Azure AD B2C и в разделе **политики**выберите **потоки пользователей**.
+1. Откройте клиент Azure AD B2C и в разделе **политики** выберите **потоки пользователей**.
 
 2. Выберите ранее созданный **поток пользователя**.
 
@@ -137,13 +137,12 @@ ms.locfileid: "91259328"
 
 6. Пройдите по потоку входа.
 
-7. После ввода **продолжения**появится головоломка идологи.
+7. После ввода **продолжения** появится головоломка идологи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 
 - [Пользовательские политики в Azure AD B2C](custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](custom-policy-get-started.md?tabs=applications) 
-
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](custom-policy-get-started.md?tabs=applications)

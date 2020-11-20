@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d8d898d3825fa40cbfd13337067c24cf14f9a544
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 9db46d13c9a798204958a7c295df9cca169fc08f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102023"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954041"
 ---
 # <a name="microsoft-graph-operations-available-for-azure-ad-b2c"></a>Microsoft Graph операции, доступные для Azure AD B2C
 
@@ -26,17 +26,17 @@ ms.locfileid: "92102023"
 
 ## <a name="user-management"></a>Управление пользователями
 
-- [Список пользователей](https://docs.microsoft.com/graph/api/user-list)
-- [Создание пользователя-получателя](https://docs.microsoft.com/graph/api/user-post-users)
-- [Получение пользователя](https://docs.microsoft.com/graph/api/user-get)
-- [Обновление пользователя](https://docs.microsoft.com/graph/api/user-update)
-- [Удаление пользователя](https://docs.microsoft.com/graph/api/user-delete)
+- [Список пользователей](/graph/api/user-list)
+- [Создание пользователя-получателя](/graph/api/user-post-users)
+- [Получение пользователя](/graph/api/user-get)
+- [Обновление пользователя](/graph/api/user-update)
+- [Удаление пользователя](/graph/api/user-delete)
 
 Дополнительные сведения об управлении учетными записями пользователей Azure AD B2C с помощью Microsoft Graph API см. в статье [Управление учетными записями пользователей Azure AD B2C с помощью Microsoft Graph](manage-user-accounts-graph-api.md).
 
 ## <a name="user-phone-number-management"></a>Управление номером телефона пользователя
 
-- [Добавление](https://docs.microsoft.com/graph/api/authentication-post-phonemethods)
+- [Добавить](https://docs.microsoft.com/graph/api/authentication-post-phonemethods)
 - [Получить](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get)
 - [Обновление](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update)
 - [Удаление](https://docs.microsoft.com/graph/api/phoneauthenticationmethod-delete)
@@ -47,70 +47,70 @@ ms.locfileid: "92102023"
 
 Управление поставщиками удостоверений, доступными для пользователя, в клиенте Azure AD B2C.
 
-- [Список поставщиков удостоверений, зарегистрированных в клиенте Azure AD B2C](https://docs.microsoft.com/graph/api/identityprovider-list)
-- [Создание поставщика удостоверений](https://docs.microsoft.com/graph/api/identityprovider-post-identityproviders)
-- [Получение поставщика удостоверений](https://docs.microsoft.com/graph/api/identityprovider-get)
-- [Обновление поставщика удостоверений](https://docs.microsoft.com/graph/api/identityprovider-update)
-- [Удаление поставщика удостоверений](https://docs.microsoft.com/graph/api/identityprovider-delete)
+- [Список поставщиков удостоверений, зарегистрированных в клиенте Azure AD B2C](/graph/api/identityprovider-list)
+- [Создание поставщика удостоверений](/graph/api/identityprovider-post-identityproviders)
+- [Получение поставщика удостоверений](/graph/api/identityprovider-get)
+- [Обновление поставщика удостоверений](/graph/api/identityprovider-update)
+- [Удаление поставщика удостоверений](/graph/api/identityprovider-delete)
 
 ## <a name="user-flow"></a>Поток пользователя
 
 Настройте предварительно созданные политики для регистрации, входа, объединения и входа в систему, сброса пароля и обновления профиля.
 
-- [Перечисление потоков пользователей](https://docs.microsoft.com/graph/api/identityuserflow-list)
-- [Создание потока пользователей](https://docs.microsoft.com/graph/api/identityuserflow-post-userflows)
-- [Получение потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-get)
-- [Удаление потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-delete)
+- [Перечисление потоков пользователей](/graph/api/identityuserflow-list)
+- [Создание потока пользователей](/graph/api/identityuserflow-post-userflows)
+- [Получение потока пользователя](/graph/api/identityuserflow-get)
+- [Удаление потока пользователя](/graph/api/identityuserflow-delete)
 
 ## <a name="custom-policies"></a>Пользовательские политики
 
 Следующие операции позволяют управлять политиками инфраструктуры доверия Azure AD B2C, называемыми [пользовательскими политиками](custom-policy-overview.md).
 
-- [Вывод списка всех политик инфраструктуры доверия, настроенных в клиенте](https://docs.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies)
-- [Создание политики инфраструктуры доверия](https://docs.microsoft.com/graph/api/trustframework-post-trustframeworkpolicy)
-- [Чтение свойств существующей политики инфраструктуры доверия](https://docs.microsoft.com/graph/api/trustframeworkpolicy-get)
-- [Обновите или создайте политику инфраструктуры доверия.](https://docs.microsoft.com/graph/api/trustframework-put-trustframeworkpolicy)
-- [Удаление существующей политики инфраструктуры доверия](https://docs.microsoft.com/graph/api/trustframeworkpolicy-delete)
+- [Вывод списка всех политик инфраструктуры доверия, настроенных в клиенте](/graph/api/trustframework-list-trustframeworkpolicies)
+- [Создание политики инфраструктуры доверия](/graph/api/trustframework-post-trustframeworkpolicy)
+- [Чтение свойств существующей политики инфраструктуры доверия](/graph/api/trustframeworkpolicy-get)
+- [Обновите или создайте политику инфраструктуры доверия.](/graph/api/trustframework-put-trustframeworkpolicy)
+- [Удаление существующей политики инфраструктуры доверия](/graph/api/trustframeworkpolicy-delete)
 
 ## <a name="policy-keys"></a>Ключи политики
 
 Инфраструктура процедур идентификации хранит секреты, на которые ссылается пользовательская политика, для установления отношений доверия между компонентами. Эти секреты могут быть симметричными или асимметричными ключами или значениями. В портал Azure эти сущности отображаются в виде **ключей политики**.
 
-Ресурс верхнего уровня для ключей политики в Microsoft Graph API — это [набор ключей доверенной платформы](https://docs.microsoft.com/graph/api/resources/trustframeworkkeyset). Каждый **набор ключей** содержит по крайней мере один **ключ**. Чтобы создать ключ, сначала создайте пустой набор ключей, а затем создайте ключ в наборе ключей. Можно создать секрет вручную, отправить сертификат или PKCS12 ключ. Ключ может быть созданным секретом, определяемой вами строкой (например, секретом приложения Facebook) или отправленным сертификатом. Если набор ключей содержит несколько ключей, то активен только один из них.
+Ресурс верхнего уровня для ключей политики в Microsoft Graph API — это [набор ключей доверенной платформы](/graph/api/resources/trustframeworkkeyset). Каждый **набор ключей** содержит по крайней мере один **ключ**. Чтобы создать ключ, сначала создайте пустой набор ключей, а затем создайте ключ в наборе ключей. Можно создать секрет вручную, отправить сертификат или PKCS12 ключ. Ключ может быть созданным секретом, определяемой вами строкой (например, секретом приложения Facebook) или отправленным сертификатом. Если набор ключей содержит несколько ключей, то активен только один из них.
 
 ### <a name="trust-framework-policy-keyset"></a>Набор ключей политики доверенной инфраструктуры
 
-- [Перечисление инфраструктуры доверия формируются](https://docs.microsoft.com/graph/api/trustframework-list-keysets)
-- [Создание инфраструктуры доверия формируются](https://docs.microsoft.com/graph/api/trustframework-post-keysets)
-- [Получение набора ключей](https://docs.microsoft.com/graph/api/trustframeworkkeyset-get)
-- [Обновление инфраструктуры доверия формируются](https://docs.microsoft.com/graph/api/trustframeworkkeyset-update)
-- [Удаление инфраструктуры доверия формируются](https://docs.microsoft.com/graph/api/trustframeworkkeyset-delete)
+- [Перечисление инфраструктуры доверия формируются](/graph/api/trustframework-list-keysets)
+- [Создание инфраструктуры доверия формируются](/graph/api/trustframework-post-keysets)
+- [Получение набора ключей](/graph/api/trustframeworkkeyset-get)
+- [Обновление инфраструктуры доверия формируются](/graph/api/trustframeworkkeyset-update)
+- [Удаление инфраструктуры доверия формируются](/graph/api/trustframeworkkeyset-delete)
 
 ### <a name="trust-framework-policy-key"></a>Ключ политики инфраструктуры доверия
 
-- [Получить активный в данный момент ключ в наборе ключей](https://docs.microsoft.com/graph/api/trustframeworkkeyset-getactivekey)
-- [Создание ключа в наборе ключей](https://docs.microsoft.com/graph/api/trustframeworkkeyset-generatekey)
-- [Отправка секрета на основе строки](https://docs.microsoft.com/graph/api/trustframeworkkeyset-uploadsecret)
-- [Отправка сертификата X. 509](https://docs.microsoft.com/graph/api/trustframeworkkeyset-uploadcertificate)
-- [Отправка сертификата формата PKCS12](https://docs.microsoft.com/graph/api/trustframeworkkeyset-uploadpkcs12)
+- [Получить активный в данный момент ключ в наборе ключей](/graph/api/trustframeworkkeyset-getactivekey)
+- [Создание ключа в наборе ключей](/graph/api/trustframeworkkeyset-generatekey)
+- [Отправка секрета на основе строки](/graph/api/trustframeworkkeyset-uploadsecret)
+- [Отправка сертификата X. 509](/graph/api/trustframeworkkeyset-uploadcertificate)
+- [Отправка сертификата формата PKCS12](/graph/api/trustframeworkkeyset-uploadpkcs12)
 
 ## <a name="applications"></a>Приложения
 
-- [Список приложений](https://docs.microsoft.com/graph/api/application-list)
-- [Создание приложения](https://docs.microsoft.com/graph/api/resources/application)
-- [Update application](https://docs.microsoft.com/graph/api/application-update)
-- [Создание servicePrincipal](https://docs.microsoft.com/graph/api/resources/serviceprincipal)
-- [Создание oauth2Permission Grant](https://docs.microsoft.com/graph/api/resources/oauth2permissiongrant)
-- [Удаление приложения](https://docs.microsoft.com/graph/api/application-delete)
+- [Список приложений](/graph/api/application-list)
+- [Создание приложения](/graph/api/resources/application)
+- [Update application](/graph/api/application-update)
+- [Создание servicePrincipal](/graph/api/resources/serviceprincipal)
+- [Создание oauth2Permission Grant](/graph/api/resources/oauth2permissiongrant)
+- [Удаление приложения](/graph/api/application-delete)
 
 ## <a name="application-extension-properties"></a>Свойства расширения приложения
 
-- [Список свойств расширения](https://docs.microsoft.com/graph/api/application-list-extensionproperty)
+- [Список свойств расширения](/graph/api/application-list-extensionproperty)
 
 Azure AD B2C предоставляет каталог, который может содержать 100 настраиваемых атрибутов для каждого пользователя. Для потоков пользователей эти свойства расширения [управляются с помощью портал Azure](custom-policy-custom-attributes.md). Для настраиваемых политик Azure AD B2C создает свойство для вас в первый раз, когда политика записывает значение в свойство расширения.
 
 ## <a name="audit-logs"></a>Журналы аудита
 
-- [Список журналов аудита](https://docs.microsoft.com/graph/api/directoryaudit-list)
+- [Список журналов аудита](/graph/api/directoryaudit-list)
 
 Дополнительные сведения о доступе к журналам аудита Azure AD B2C с помощью Microsoft Graph API см. в разделе [доступ к журналам аудита Azure AD B2C](view-audit-logs.md).
