@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/26/2020
 ms.author: damendo
-ms.openlocfilehash: 6d16d878b0cf7a73c87b5d6e9263a24c4dfb4383
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8db4d4ae56a5a0ee0c92de5d9822614a3270b1c5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84738147"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948686"
 ---
 # <a name="configure-nsg-flow-logs-from-an-azure-resource-manager-template"></a>Настройка журналов потоков NSG из шаблона Azure Resource Manager
 
@@ -31,15 +31,15 @@ ms.locfileid: "84738147"
 > - [Azure Resource Manager](network-watcher-nsg-flow-logging-azure-resource-manager.md)
 
 
-[Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/) — это нативный эффективный способ управления [инфраструктурой как кодом](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code).
+[Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/) — это нативный эффективный способ управления [инфраструктурой как кодом](/azure/devops/learn/what-is-infrastructure-as-code).
 
-В этой статье показано, как включить [журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview) программным способом с помощью шаблона Azure Resource Manager и Azure PowerShell. Сначала мы рассмотрим свойства объекта журнала потоков NSG, а также несколько примеров шаблонов. Затем мы развернем шаблон с помощью локального экземпляра PowerShell.
+В этой статье показано, как включить [журналы потоков NSG](./network-watcher-nsg-flow-logging-overview.md) программным способом с помощью шаблона Azure Resource Manager и Azure PowerShell. Сначала мы рассмотрим свойства объекта журнала потоков NSG, а также несколько примеров шаблонов. Затем мы развернем шаблон с помощью локального экземпляра PowerShell.
 
 
 ## <a name="nsg-flow-logs-object"></a>Объект журналов потоков NSG
 
 Ниже показан объект журналов потоков NSG со всеми параметрами.
-Полный обзор свойств см. в [справочнике по шаблонам журналов потоков NSG](https://docs.microsoft.com/azure/templates/microsoft.network/2019-11-01/networkwatchers/flowlogs#RetentionPolicyParameters).
+Полный обзор свойств см. в [справочнике по шаблонам журналов потоков NSG](/azure/templates/microsoft.network/2019-11-01/networkwatchers/flowlogs#RetentionPolicyParameters).
 
 ```json
 {
@@ -76,8 +76,8 @@ ms.locfileid: "84738147"
 
 Если вы используете шаблоны Azure Resource Manager в первый раз, вы можете узнать больше о них, перейдя по указанным ниже ссылкам.
 
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-powershell#deploy-local-template)
-* [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell)
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md#deploy-local-template)
+* [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](../azure-resource-manager/templates/template-tutorial-create-first-template.md?tabs=azure-powershell)
 
 
 Ниже приведены два примера готовых шаблонов для настройки журналов потоков NSG.
@@ -172,14 +172,14 @@ New-AzResourceGroupDeployment -Name EnableFlowLog -ResourceGroupName NetworkWatc
 
 ## <a name="verifying-your-deployment"></a>Проверка развертывания
 
-Существует несколько способов проверить, успешно ли выполнено развертывание. В консоли PowerShell для параметра ProvisioningState должно отобразиться значения Succeeded. Кроме того, вы можете посетить страницу [журналов потоков NSG на портале](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs), чтобы подтвердить изменения. Если возникнут проблемы с развертыванием, см. статью [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/common-deployment-errors).
+Существует несколько способов проверить, успешно ли выполнено развертывание. В консоли PowerShell для параметра ProvisioningState должно отобразиться значения Succeeded. Кроме того, вы можете посетить страницу [журналов потоков NSG на портале](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs), чтобы подтвердить изменения. Если возникнут проблемы с развертыванием, см. статью [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](../azure-resource-manager/templates/common-deployment-errors.md).
 
 ## <a name="deleting-your-resource"></a>Удаление ресурса
-Azure позволяет удалять ресурсы с помощью полного режима развертывания. Чтобы удалить ресурс журналов потоков, укажите развертывание в полном режиме, не включая ресурс, который нужно удалить. См. сведения о [полном режиме развертывания](https://docs.microsoft.com/azure/azure-resource-manager/templates/deployment-modes#complete-mode).
+Azure позволяет удалять ресурсы с помощью полного режима развертывания. Чтобы удалить ресурс журналов потоков, укажите развертывание в полном режиме, не включая ресурс, который нужно удалить. См. сведения о [полном режиме развертывания](../azure-resource-manager/templates/deployment-modes.md#complete-mode).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как визуализировать данные NSG Flow с помощью следующих средств:
 * [Microsoft Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md)
 * [Средства с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md)
-* [Аналитика трафика Azure](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+* [Аналитика трафика Azure](./traffic-analytics.md)

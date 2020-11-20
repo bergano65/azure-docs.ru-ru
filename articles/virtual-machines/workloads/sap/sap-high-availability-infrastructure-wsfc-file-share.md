@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 2ce38add-1078-4bb9-a1da-6f407a9bc910
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 14ffcbf2e111e052f4b45259b0b25664049d3b3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62803bd450db351290bbc12d650d23a4148a4536
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855369"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951202"
 ---
 # <a name="prepare-azure-infrastructure-for-sap-high-availability-by-using-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances"></a>Подготовка высокодоступной инфраструктуры Azure для SAP с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS
 
@@ -259,9 +260,9 @@ ms.locfileid: "88855369"
 * При использовании Windows Server 2016 рекомендуется настроить [облако-свидетель Azure][deploy-cloud-witness].
 
 
-## <a name="deploy-the-scale-out-file-server-cluster-manually"></a>Развертывание кластера масштабируемых файловых серверов вручную 
+## <a name="deploy-the-scale-out-file-server-cluster-manually"></a>Развертывание кластера масштабируемых файловых серверов вручную 
 
-Можно развернуть кластер масштабируемых файловых серверов вручную, как описано в блоге [Storage Spaces Direct in Azure][ms-blog-s2d-in-azure], выполнив следующий код.  
+Можно развернуть кластер масштабируемых файловых серверов вручную, как описано в блоге [Storage Spaces Direct in Azure][ms-blog-s2d-in-azure], выполнив следующий код.  
 
 
 ```powershell
@@ -340,6 +341,6 @@ _**Рис. 2**. экран пользовательского интерфейс
 
 Эти параметры были протестированы у клиентов, они обеспечивают удачный компромисс. Они достаточно устойчивы, но они также обеспечивают достаточную отработку отказа в реальных условиях возникновения ошибок или сбоя виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Установка высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]

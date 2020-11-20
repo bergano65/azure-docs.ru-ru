@@ -10,12 +10,12 @@ ms.devlang: NA
 ms.topic: how-to
 ms.date: 07/15/2020
 ms.author: alkohli
-ms.openlocfilehash: e9033caf903967432b713afa00a509bd2d966d8b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ff70df225b5ed27960c96889d409d7005f0fbcc4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972022"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950741"
 ---
 # <a name="restore-a-storsimple-volume-from-a-backup-set"></a>Восстановление тома StorSimple из резервного набора данных
 
@@ -63,7 +63,7 @@ ms.locfileid: "91972022"
 
 * `Set-HcsRehydrationJob` — этот командлет позволяет приостановить, остановить, возобновить задание расконсервации, когда расконсервация все еще выполняется.
 
-Дополнительные сведения о командлетах расконсервации см. в [справочнике по командлетам Windows PowerShell для StorSimple](https://technet.microsoft.com/library/dn688168.aspx).
+Дополнительные сведения о командлетах расконсервации см. в [справочнике по командлетам Windows PowerShell для StorSimple](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps).
 
 При использовании автоматической расконсервации производительность промежуточного чтения обычно повышается. Фактический размах улучшений зависит от различных факторов, таких как шаблон доступа, обработка данных и тип данных. 
 
@@ -134,7 +134,6 @@ ms.locfileid: "91972022"
 
 Чтобы завершить операцию восстановления, переведите том в автономный режим на узле и повторите операцию восстановления. Обратите внимание, что любые изменения, внесенные в данные тома во время процесса восстановления, будут потеряны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте об [управлении томами StorSimple](storsimple-8000-manage-volumes-u2.md).
 * Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
-

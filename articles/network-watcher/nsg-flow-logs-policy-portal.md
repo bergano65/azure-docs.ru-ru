@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/01/2020
 ms.author: damendo
-ms.openlocfilehash: a603f55bd5bff7b2ed68623e9c712faaf8ac766f
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 54b87da73d4427234e65e406d183525d55c6c00d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877033"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948550"
 ---
 # <a name="quickstart-deploy-and-manage-nsg-flow-logs-using-azure-policy"></a>Краткое руководство. Развертывание журналов потоков NSG и управление ими с помощью политики Azure 
 
@@ -25,8 +25,8 @@ ms.locfileid: "91877033"
 Политика Azure помогает применять организационные стандарты и оценивать соответствие в больших масштабах. Политика Azure широко применяется для реализации средств контроля за согласованностью ресурсов, соответствием нормативным требованиям, безопасностью, расходами и управлением. В этой статье мы будем использовать две встроенные политики, доступные для журналов потоков NSG, чтобы управлять настройкой журналов потоков. Первая политика помечает все группы безопасности сети без включенных журналов потоков. Вторая политика автоматически развертывает журналы потоков для группы безопасности сети без включенных журналов потоков. 
 
 При создании политики Azure в первый раз можно прочесть следующие сведения: 
-- [Общие сведения о политике Azure](https://docs.microsoft.com/azure/governance/policy/overview) 
-- [Учебник по созданию политики](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal#create-a-policy-assignment).
+- [Общие сведения о политике Azure](../governance/policy/overview.md) 
+- [Учебник по созданию политики](../governance/policy/assign-policy-portal.md#create-a-policy-assignment).
 
 
 ## <a name="locate-the-policies"></a>Определение политик
@@ -132,7 +132,7 @@ ms.locfileid: "91877033"
 ![Результаты политики проверять](./media/network-watcher-builtin-policy/7_2_dine-policy-results.png)  
 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Следующие шаги 
 
--   Используйте этот [учебник](https://docs.microsoft.com/azure/network-watcher/quickstart-configure-network-security-group-flow-logs-from-arm-template) Подробнее, используя шаблоны ARM для развертывания журналов потоков и аналитика трафика.
--   Дополнительные сведения о [наблюдателе за сетями](https://docs.microsoft.com/azure/network-watcher/)
+-   Используйте этот [учебник](./quickstart-configure-network-security-group-flow-logs-from-arm-template.md) Подробнее, используя шаблоны ARM для развертывания журналов потоков и аналитика трафика.
+-   Дополнительные сведения о [наблюдателе за сетями](./index.yml)

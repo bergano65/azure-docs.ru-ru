@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/27/2020
 ms.author: vinigam
 ms.custom: mvc
-ms.openlocfilehash: 5dbb8d508fe824d0264043625c988f43092f3f78
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 13b379fd3b4f788d79cbb6a9bf6d40cb1693eaf9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699242"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949001"
 ---
 # <a name="network-connectivity-monitoring-with-connection-monitor"></a>Мониторинг сетевых подключений с помощью монитора подключений
 
@@ -34,7 +34,7 @@ ms.locfileid: "94699242"
 - Гибридному приложению требуется подключение к конечной точке службы хранилища Azure. Локальный сайт и приложение Azure подключаются к одной конечной точке службы хранилища Azure. Необходимо сравнить задержки локального сайта с задержкой приложения Azure.
 - Необходимо проверить подключение между локальными настройками и виртуальными машинами Azure, на которых размещается ваше облачное приложение.
 
-Монитор подключения сочетает в себе преимущества двух компонентов: монитор подключения наблюдателя за сетями [(классический)](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#monitor-communication-between-a-virtual-machine-and-an-endpoint) и [монитор подключения службы](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor-service-connectivity)монитор производительности сети (NPM), [мониторинг ExpressRoute](https://docs.microsoft.com/azure/expressroute/how-to-npm)и функции [мониторинга производительности](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor-performance-monitor) .
+Монитор подключения сочетает в себе преимущества двух компонентов: монитор подключения наблюдателя за сетями [(классический)](./network-watcher-monitoring-overview.md#monitor-communication-between-a-virtual-machine-and-an-endpoint) и [монитор подключения службы](../azure-monitor/insights/network-performance-monitor-service-connectivity.md)монитор производительности сети (NPM), [мониторинг ExpressRoute](../expressroute/how-to-npm.md)и функции [мониторинга производительности](../azure-monitor/insights/network-performance-monitor-performance-monitor.md) .
 
 Ниже приведены некоторые преимущества монитора подключения.
 
@@ -65,7 +65,7 @@ ms.locfileid: "94699242"
 
 Чтобы монитор подключения распознал виртуальные машины Azure в качестве источников мониторинга, установите на них расширение виртуальной машины агента наблюдателя за сетями. Это расширение также называется *расширением наблюдателя за сетями*. Для виртуальных машин Azure требуется расширение, чтобы активировать сквозное наблюдение и другие расширенные функции. 
 
-Расширение наблюдателя за сетями можно установить при [создании виртуальной машины](https://docs.microsoft.com/azure/network-watcher/connection-monitor#create-the-first-vm). Вы также можете отдельно установить, настроить и устранить неполадки расширения наблюдателя за сетями для [Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-linux) и [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-windows).
+Расширение наблюдателя за сетями можно установить при [создании виртуальной машины](./connection-monitor.md#create-the-first-vm). Вы также можете отдельно установить, настроить и устранить неполадки расширения наблюдателя за сетями для [Linux](../virtual-machines/extensions/network-watcher-linux.md) и [Windows](../virtual-machines/extensions/network-watcher-windows.md).
 
 Правила для группы безопасности сети (NSG) или брандмауэра могут блокировать обмен данными между источником и назначением. Монитор подключения обнаруживает эту ошибку и показывает ее как диагностическое сообщение в топологии. Чтобы включить мониторинг подключения, убедитесь, что правила NSG и брандмауэра разрешают пакеты по протоколу TCP или ICMP между источником и назначением.
 
@@ -73,7 +73,7 @@ ms.locfileid: "94699242"
 
 Чтобы монитор подключения распознал локальные компьютеры как источники для мониторинга, установите агент Log Analytics на компьютерах. Затем включите решение Монитор производительности сети. Эти агенты связаны с рабочими областями Log Analytics, поэтому необходимо настроить идентификатор и первичный ключ рабочей области, прежде чем агенты смогут начать мониторинг.
 
-Сведения об установке агента Log Analytics для компьютеров Windows см. в разделе [Azure Monitor расширение виртуальной машины для Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows).
+Сведения об установке агента Log Analytics для компьютеров Windows см. в разделе [Azure Monitor расширение виртуальной машины для Windows](../virtual-machines/extensions/oms-windows.md).
 
 Если путь включает брандмауэры или сетевые виртуальные устройства (NVA), убедитесь, что назначение доступно.
 
@@ -81,7 +81,7 @@ ms.locfileid: "94699242"
 
 Для всех подписок с виртуальной сетью используется наблюдатель за сетями. При создании виртуальной сети в подписке наблюдатель за сетями автоматически включается в регионе и подписке виртуальной сети. Это автоматическое включение не влияет на ресурсы или стоимость. Убедитесь, что наблюдатель за сетями не отключен явным образом в вашей подписке. 
 
-Дополнительные сведения см. в разделе [Включение наблюдателя за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-create).
+Дополнительные сведения см. в разделе [Включение наблюдателя за сетями](./network-watcher-create.md).
 
 ## <a name="create-a-connection-monitor"></a>Создание монитора подключения 
 
@@ -111,7 +111,7 @@ ms.locfileid: "94699242"
 
  ![Схема, показывающая монитор подключения, определение связи между группами тестов и тестами](./media/connection-monitor-2-preview/cm-tg-2.png)
 
-Монитор подключения можно создать с помощью [портал Azure](connection-monitor-preview-create-using-portal.md) или [ARMClient](connection-monitor-preview-create-using-arm-client.md) .
+Монитор подключения можно создать с помощью [портал Azure](./connection-monitor-create-using-portal.md) или [ARMClient](./connection-monitor-create-using-template.md) .
 
 Все источники, назначения и конфигурации тестов, добавленные в тестовую группу, будут разбиты на отдельные тесты. Ниже приведен пример разрыва работы источников и назначений.
 
@@ -123,7 +123,7 @@ ms.locfileid: "94699242"
 
 | Номер теста | Источник | Назначение | Конфигурация теста |
 | --- | --- | --- | --- |
-| 1 | А | D | Конфигурация 1 |
+| 1 | Объект | D | Конфигурация 1 |
 | 2 | A | D | Конфигурация 2 |
 | 3 | A | E | Конфигурация 1 |
 | 4 | A | E | Конфигурация 2 |
@@ -136,7 +136,7 @@ ms.locfileid: "94699242"
 | 11 | C | E | Конфигурация 1 |
 | 12 | C | E | Конфигурация 2 |
 
-### <a name="scale-limits"></a>Ограничения масштабирования
+### <a name="scale-limits"></a> Ограничения масштабирования
 
 Мониторы подключений имеют следующие ограничения масштабирования:
 
@@ -213,7 +213,7 @@ ms.locfileid: "94699242"
 Для отображения только неудачных тестов в мониторе подключения, где назначением является outlook.office365.com:
 1. Измените представление на " **тестирование**".
 1. Для фильтра, основанного на состоянии, выберите **сбой**.
-1. В поле поиска введите *Outlook.Office365.com* .
+1. В поле поиска введите *Office.Live.com* .
 1. В **области** в фильтре верхнего уровня выберите **назначения**.
   
   :::image type="content" source="./media/connection-monitor-2-preview/tests-view.png" alt-text="Снимок экрана, показывающий представление, которое отфильтровано для отображения только неудачных тестов для назначения Outlook.Office365.com" lightbox="./media/connection-monitor-2-preview/tests-view.png":::
@@ -273,9 +273,9 @@ ms.locfileid: "94699242"
 
 | Метрика | Отображаемое имя | Единицы | Тип агрегирования | Описание | Измерения |
 | --- | --- | --- | --- | --- | --- |
-| ProbesFailedPercent | Доля проб с ошибками, в процентах | Процент | Средний | Сбой пробы мониторинга подключения. | Нет измерений |
+| ProbesFailedPercent | Доля проб с ошибками, в процентах | Процент | Среднее | Сбой пробы мониторинга подключения. | Нет измерений |
 | AverageRoundtripMs | Среднее Время приема-передачи (мс) | Миллисекунды | Среднее | Среднее время приема сетевого соединения для проверок мониторинга подключения, отправляемых между источником и назначением. |             Нет измерений |
-| Чекксфаиледперцент (Предварительная версия) | % Проверок с ошибками (Предварительная версия) | Процент | Средний | Процент неудачных проверок для теста. | коннектионмониторресаурцеид <br>саурцеаддресс <br>SourceName <br>Значение sourceresourceid <br>Тип источника <br>Протокол <br>DestinationAddress <br>DestinationName <br>дестинатионресаурцеид <br>DestinationType <br>DestinationPort <br>тестграупнаме <br>тестконфигуратионнаме <br>Регион |
+| Чекксфаиледперцент (Предварительная версия) | % Проверок с ошибками (Предварительная версия) | Процент | Среднее | Процент неудачных проверок для теста. | коннектионмониторресаурцеид <br>саурцеаддресс <br>SourceName <br>Значение sourceresourceid <br>Тип источника <br>Протокол <br>DestinationAddress <br>DestinationName <br>дестинатионресаурцеид <br>DestinationType <br>DestinationPort <br>тестграупнаме <br>тестконфигуратионнаме <br>Регион |
 | Раундтриптимемс (Предварительная версия) | Время приема-передачи (МС) (Предварительная версия) | Миллисекунды | Среднее | RTT для проверок, отправленных между источником и назначением. Это значение не является средним. | коннектионмониторресаурцеид <br>саурцеаддресс <br>SourceName <br>Значение sourceresourceid <br>Тип источника <br>Протокол <br>DestinationAddress <br>DestinationName <br>дестинатионресаурцеид <br>DestinationType <br>DestinationPort <br>тестграупнаме <br>тестконфигуратионнаме <br>Регион |
 
 #### <a name="metric-based-alerts-for-connection-monitor"></a>Оповещения на основе метрик для монитора подключения
@@ -348,5 +348,5 @@ ms.locfileid: "94699242"
 
 ## <a name="next-steps"></a>Next Steps
     
-   * Узнайте [, как создать монитор подключений с помощью портал Azure](connection-monitor-preview-create-using-portal.md)  
-   * Узнайте [, как создать монитор подключений с помощью ARMClient](connection-monitor-preview-create-using-arm-client.md)  
+   * Узнайте [, как создать монитор подключений с помощью портал Azure](./connection-monitor-create-using-portal.md)  
+   * Узнайте [, как создать монитор подключений с помощью ARMClient](./connection-monitor-create-using-template.md)

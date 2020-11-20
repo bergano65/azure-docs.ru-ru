@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: bba3666fbce6a8ea591654d1abdad319f1e0857c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65e9657c3948d8ce5883cd33ca8720f501352105
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86999523"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950675"
 ---
 # <a name="use-windows-powershell-for-storsimple-to-administer-your-device"></a>Администрирование устройства с помощью Windows PowerShell для StorSimple
 
@@ -28,7 +28,7 @@ Windows PowerShell для StorSimple — это интерфейс команд�
 * Получить справку по Windows PowerShell для StorSimple.
 
 > [!NOTE]
-> * Командлеты Windows PowerShell для StorSimple позволяют управлять устройствами StorSimple через последовательную консоль или удаленно с помощью удаленного взаимодействия Windows PowerShell. Дополнительные сведения о каждом отдельном командлете, который можно использовать в этом интерфейсе, см. в [справочнике по командлетам Windows PowerShell для StorSimple](https://technet.microsoft.com/library/dn688168.aspx).
+> * Командлеты Windows PowerShell для StorSimple позволяют управлять устройствами StorSimple через последовательную консоль или удаленно с помощью удаленного взаимодействия Windows PowerShell. Дополнительные сведения о каждом отдельном командлете, который можно использовать в этом интерфейсе, см. в [справочнике по командлетам Windows PowerShell для StorSimple](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps).
 > * Командлеты Azure PowerShell для StorSimple — это другая коллекция командлетов, которые позволяют автоматизировать задачи обновления и миграции StorSimple с помощью командной строки. Дополнительные сведения о командлетах Azure PowerShell для StorSimple см. в [справочной документации по командлетам Azure StorSimple](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0&viewFallbackFrom=azuresmps-3.7.0#azure).
 
 
@@ -178,4 +178,3 @@ Windows PowerShell для StorSimple — это интерфейс команд�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Если при выполнении одного из указанных выше рабочих процессов возникнут проблемы с устройством StorSimple, см. раздел [Средства для устранения неполадок в развертываниях StorSimple](storsimple-8000-troubleshoot-deployment.md#tools-for-troubleshooting-storsimple-deployments).
-

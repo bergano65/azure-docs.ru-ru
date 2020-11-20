@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b34d5cdd95f44082d05153390209de5145e56d3f
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 84053df34ffda0d4686ad80a9e5f3af00ac53d72
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089576"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949502"
 ---
 # <a name="walkthrough-add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Пошаговое руководство. Добавление возможности обмена утверждениями REST API в настраиваемые политики в Azure Active Directory B2C
 
@@ -53,7 +53,7 @@ Azure Active Directory B2C (Azure AD B2C) позволяет разработч�
 }
 ```
 
-В рамках этой статьи настройка конечной точки REST API не рассматривается. Вы создали пример [Функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-reference). Полный код функции Azure доступен на сайте [GitHub](https://github.com/azure-ad-b2c/rest-api/tree/master/source-code/azure-function).
+В рамках этой статьи настройка конечной точки REST API не рассматривается. Вы создали пример [Функций Azure](../azure-functions/functions-reference.md). Полный код функции Azure доступен на сайте [GitHub](https://github.com/azure-ad-b2c/rest-api/tree/master/source-code/azure-function).
 
 ## <a name="define-claims"></a>Определение утверждений
 

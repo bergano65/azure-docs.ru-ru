@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: 929a2feeb53e8903d675644dcb72b422eceb2858
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: c80f2aaf26c0f0e89014c997151599c8bddbe903
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699106"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948822"
 ---
 # <a name="create-a-connection-monitor-using-the-armclient"></a>Создание монитора подключения с помощью ARMClient
 
 Узнайте, как создать монитор подключения для отслеживания взаимодействия между ресурсами с помощью ARMClient. Он поддерживает Гибридные развертывания в облаке Azure.
 
-## <a name="before-you-begin"></a>Перед началом 
+## <a name="before-you-begin"></a>Подготовка к работе 
 
 В мониторах подключений, создаваемых в мониторе подключения, можно добавить локальные компьютеры и виртуальные машины Azure в качестве источников. Эти мониторы соединений также могут отслеживать подключение к конечным точкам. Конечные точки могут находиться в Azure или на любом другом URL-адресе или IP.
 
@@ -368,7 +368,7 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
 * Тестовые группы
     * Имя — имя группы тестов.
     * Тестконфигуратионс — конфигурации тестирования в зависимости от того, какие конечные точки источника подключаются к конечным точкам
-    * источники — выберите конечные точки, созданные выше. Для конечных точек источника на основе Azure должно быть установлено расширение наблюдателя за сетями Azure, а в других конечных точках источника, созданных на основе Azure, требуется Хавеазуре Log Analytics Agent. Сведения об установке агента для источника см. в разделе [Install Monitoring](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#install-monitoring-agents)Agents.
+    * источники — выберите конечные точки, созданные выше. Для конечных точек источника на основе Azure должно быть установлено расширение наблюдателя за сетями Azure, а в других конечных точках источника, созданных на основе Azure, требуется Хавеазуре Log Analytics Agent. Сведения об установке агента для источника см. в разделе [Install Monitoring](./connection-monitor-overview.md#install-monitoring-agents)Agents.
     * назначения — выберите созданные ранее конечные точки. Вы можете наблюдать за подключением к виртуальным машинам Azure или любой конечной точке (общедоступным IP-АДРЕСом или полным доменным именем), указав их в качестве назначений. В одной тестовой группе можно добавить виртуальные машины Azure, URL-адреса Office 365, URL-адреса Dynamics 365 и пользовательские конечные точки.
     * отключить — используйте это поле, чтобы отключить наблюдение для всех источников и назначений, которые указывает группа тестирования.
 
@@ -389,7 +389,7 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
         * Чекксфаиледперцент — задайте процент проверок, которые могут завершаться ошибкой, когда источники проверяют подключение к местам назначения, используя указанные критерии. Для протокола TCP или ICMP процент неудачных проверок может равняться проценту потери пакетов. Для протокола HTTP это поле представляет процент HTTP-запросов, которые не получили ответа.
         * Раундтриптимемс — задайте время приема-передачи в миллисекундах, в течение которого источники могут быть выбраны для подключения к назначению в конфигурации теста.
 
-## <a name="scale-limits"></a>Ограничения масштабирования
+## <a name="scale-limits"></a> Ограничения масштабирования
 
 Мониторы подключений имеют следующие ограничения масштабирования:
 
@@ -400,5 +400,5 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте, [как анализировать данные мониторинга и настраивать оповещения](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#analyze-monitoring-data-and-set-alerts) .
-* Узнайте [, как диагностировать проблемы в сети](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#diagnose-issues-in-your-network)
+* Узнайте, [как анализировать данные мониторинга и настраивать оповещения](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts) .
+* Узнайте [, как диагностировать проблемы в сети](./connection-monitor-overview.md#diagnose-issues-in-your-network)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: 532f045233f26a9a2933a19ae7a0a893195ad33f
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: fa8b2d967a336343d23c5f6aa4477ebcf2396407
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94384148"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949043"
 ---
 # <a name="create-a-connection-monitor-using-powershell"></a>Создание монитора подключения с помощью PowerShell
 
@@ -89,7 +89,7 @@ New-AzNetworkWatcherConnectionMonitor -NetworkWatcherName $nw -ResourceGroupName
 * Тестовые группы
     * Имя — имя группы тестов.
     * Тестконфигуратионс — конфигурации тестирования в зависимости от того, какие конечные точки источника подключаются к конечным точкам
-    * источники — выберите конечные точки, созданные выше. Для конечных точек источника на основе Azure должно быть установлено расширение наблюдателя за сетями Azure, а в других конечных точках источника, созданных на основе Azure, требуется Хавеазуре Log Analytics Agent. Сведения об установке агента для источника см. в разделе [Install Monitoring](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#install-monitoring-agents)Agents.
+    * источники — выберите конечные точки, созданные выше. Для конечных точек источника на основе Azure должно быть установлено расширение наблюдателя за сетями Azure, а в других конечных точках источника, созданных на основе Azure, требуется Хавеазуре Log Analytics Agent. Сведения об установке агента для источника см. в разделе [Install Monitoring](./connection-monitor-overview.md#install-monitoring-agents)Agents.
     * назначения — выберите созданные ранее конечные точки. Вы можете наблюдать за подключением к виртуальным машинам Azure или любой конечной точке (общедоступным IP-АДРЕСом или полным доменным именем), указав их в качестве назначений. В одной тестовой группе можно добавить виртуальные машины Azure, URL-адреса Office 365, URL-адреса Dynamics 365 и пользовательские конечные точки.
     * отключить — используйте это поле, чтобы отключить наблюдение для всех источников и назначений, которые указывает группа тестирования.
 
@@ -104,7 +104,7 @@ New-AzNetworkWatcherConnectionMonitor -NetworkWatcherName $nw -ResourceGroupName
         * Чекксфаиледперцент — задайте процент проверок, которые могут завершаться ошибкой, когда источники проверяют подключение к местам назначения, используя указанные критерии. Для протокола TCP или ICMP процент неудачных проверок может равняться проценту потери пакетов. Для протокола HTTP это поле представляет процент HTTP-запросов, которые не получили ответа.
         * Раундтриптимемс — задайте время приема-передачи в миллисекундах, в течение которого источники могут быть выбраны для подключения к назначению в конфигурации теста.
 
-## <a name="scale-limits"></a>Ограничения масштабирования
+## <a name="scale-limits"></a> Ограничения масштабирования
 
 Мониторы подключений имеют следующие ограничения масштабирования:
 
@@ -113,7 +113,7 @@ New-AzNetworkWatcherConnectionMonitor -NetworkWatcherName $nw -ResourceGroupName
 * Максимальное число источников и назначений на монитор подключения: 100
 * Максимальное число конфигураций тестов на монитор каждого подключения: 20
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте, [как анализировать данные мониторинга и настраивать оповещения](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#analyze-monitoring-data-and-set-alerts) .
-* Узнайте [, как диагностировать проблемы в сети](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#diagnose-issues-in-your-network)
+* Узнайте, [как анализировать данные мониторинга и настраивать оповещения](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts) .
+* Узнайте [, как диагностировать проблемы в сети](./connection-monitor-overview.md#diagnose-issues-in-your-network)

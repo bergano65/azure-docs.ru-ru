@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 01/24/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: efd3f0f19325bdaccf98d10306c90488c78b3de7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b506ada0bc072a4174de6f884d1814a63f1f93ca
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88653772"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949366"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure
 
@@ -1022,7 +1023,7 @@ _**Рисунок 15.** Правила балансировки нагрузк�
 
    Например, если требуется изменить номер экземпляра ASCS по умолчанию с 00 на 31, то необходимо внести изменения для всех портов, указанных в таблице 1.
 
-   Ниже приведен пример обновления *lbrule3200*для порта.
+   Ниже приведен пример обновления *lbrule3200* для порта.
 
    ![Рисунок 16. Изменение правил балансировки нагрузки ASCS/SCS по умолчанию для внутренней подсистемы балансировки нагрузки Azure.][sap-ha-guide-figure-3005]
 

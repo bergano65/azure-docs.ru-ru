@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/06/2020
 ms.author: vinigam
-ms.openlocfilehash: 31d0de63185c56eafda8c42efbe44d8e7ffcaf1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be69e7fc0c836257b92aa8573826fe1e8a36d770
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87022469"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948448"
 ---
 # <a name="sample-queries-with-new-fields-in-the-traffic-analytics-schema-august-2019-schema-update"></a>Примеры запросов с новыми полями в схеме Аналитика трафика (обновление схемы 2019 августа)
 
-[Схема журнала аналитика трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema) содержит следующие новые поля: **SrcPublicIPs_s**, **DestPublicIPs_s**, **NSGRule_s**. Новые поля предоставляют сведения об исходном и целевом IP-адресах и упрощают запросы.
+[Схема журнала аналитика трафика](./traffic-analytics-schema.md) содержит следующие новые поля: **SrcPublicIPs_s**, **DestPublicIPs_s**, **NSGRule_s**. Новые поля предоставляют сведения об исходном и целевом IP-адресах и упрощают запросы.
 
 В ближайшие несколько месяцев следующие старые поля будут устаревшими: **VMIP_s**, **Subscription_g**, **Region_s**, **NSGRules_s**, **Subnet_s**, **VM_s**, **NIC_s** **, PublicIPs_s,** **FlowCount_d**.
 
@@ -120,7 +120,7 @@ FlowCountProcessedByRule = AllowedInFlows_d + DeniedInFlows_d + AllowedOutFlows_
 
 В зависимости от условий мы понимаем, какое из четырех полей будет заполнено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы получить ответы на часто задаваемые вопросы, см. раздел [аналитика трафика FAQ](traffic-analytics-faq.md).
 - Дополнительные сведения о функциональных возможностях см. в [документации по Аналитика трафика](traffic-analytics.md).

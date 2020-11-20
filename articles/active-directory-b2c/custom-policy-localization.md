@@ -10,18 +10,18 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cdd7f4957b22eb4c87d60e3d57b0cec675659963
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 7ba0604c0fb1a51c5276f2a28fb0e39b878b7639
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131808"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949570"
 ---
 # <a name="localize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Локализация пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Настройка языка в Azure Active Directory B2C (Azure AD B2C) позволяет применить различные языки в соответствии с потребностями ваших клиентов. Корпорация Майкрософт предоставляет переводы на [36 языках](https://docs.microsoft.com/azure/active-directory-b2c/user-flow-language-customization#supported-languages). Кроме того, вы можете предоставить собственный перевод на любой язык. Даже если вам требуется только один язык, на странице можно настроить любой текст. 
+Настройка языка в Azure Active Directory B2C (Azure AD B2C) позволяет применить различные языки в соответствии с потребностями ваших клиентов. Корпорация Майкрософт предоставляет переводы на [36 языках](./user-flow-language-customization.md#supported-languages). Кроме того, вы можете предоставить собственный перевод на любой язык. Даже если вам требуется только один язык, на странице можно настроить любой текст. 
 
 В этой статье описано, как включить поддержку нескольких языковых стандартов или языков в политике для путей взаимодействия пользователя. Для локализации нужно выполнить три шага: настроить явный список поддерживаемых языков, предоставить строки и коллекции для каждого языка и изменить [определение содержимого](contentdefinitions.md) для страницы. 
 
@@ -265,4 +265,3 @@ https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1A_signup_s
 
 - Узнайте больше об элементе [локализации](localization.md) в справочных материалах по IEF.
 - Ознакомьтесь со списком [идентификаторов строк локализации](localization-string-ids.md), доступных в Azure AD B2C.
-

@@ -7,17 +7,18 @@ author: hermanndms
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ums.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/01/2020
 ms.author: juergent
-ms.openlocfilehash: 183273e6f93bbfda8ed4e5fe913192994a0b6ce2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13bdf4b10ec586bf83a70434f003cc1573aca469
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87833391"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950267"
 ---
 # <a name="sap-hana-azure-backup-on-file-level"></a>Резервное копирование SAP HANA в Azure на уровне файлов
 
@@ -117,6 +118,6 @@ Microsoft Azure предлагают собственные общие ресу�
 
 Хранение SAP HANA файлов резервных копий в службе файлов Azure может быть интересным вариантом. Особенно с улучшенной задержкой и пропускной способностью файлов Azure Premium.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * Общие сведения и информацию о начале работы см. в [руководстве по резервному копированию SAP HANA на виртуальных машинах Azure](sap-hana-backup-guide.md).
 * Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).

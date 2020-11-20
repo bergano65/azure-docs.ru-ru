@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: damendo
-ms.openlocfilehash: ae87771e8a557ad7cb58c9cad9231784606cdd74
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 25f4ae0dbfd7827a36dede6a889c342ea490e273
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426536"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948482"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "92426536"
 
 3. Чтобы получить список всех ролей, назначенных указанному пользователю, используйте  **Get-азролеассигнмент-SignInName [адрес электронной почты пользователя]-инклудеклассикадминистраторс**. 
 
-Если вы не видите выходные данные, обратитесь к соответствующему администратору подписки, чтобы получить доступ к запуску команд. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
+Если вы не видите выходные данные, обратитесь к соответствующему администратору подписки, чтобы получить доступ к запуску команд. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 
 
 ## <a name="in-which-azure-regions-is-traffic-analytics-available"></a>В каких регионах Azure доступна Аналитика трафика?
@@ -126,7 +126,7 @@ ms.locfileid: "92426536"
 
 ## <a name="can-i-use-an-existing-workspace"></a>Можно ли использовать имеющуюся рабочую область?
 
-Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Дополнительные сведения о новом языке запросов см. в разделе [Azure Monitor журналы обновление до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md).
+Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Дополнительные сведения о новом языке запросов см. в разделе [Azure Monitor журналы обновление до нового поиска по журналам](../azure-monitor/log-query/log-query-overview.md).
 
 ## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Возможен ли сценарий, когда учетная запись службы хранилища Azure и рабочая область Log Analytics работают на разных подписках?
 
@@ -176,7 +176,7 @@ ms.locfileid: "92426536"
 
 ## <a name="can-i-configure-traffic-analytics-using-powershell-or-an-azure-resource-manager-template-or-client"></a>Можно ли настроить решение "Аналитика трафика" с помощью PowerShell, шаблона или клиента Azure Resource Manager?
 
-Вы можете настроить решение "Аналитика трафика" с помощью Windows PowerShell, начиная с версии 6.2.1. Сведения о настройке ведения журнала потоков и анализа трафика для определенного NSG с помощью командлета Set см. в разделе [Set-азнетворкватчерконфигфловлог](https://docs.microsoft.com/powershell/module/az.network/set-aznetworkwatcherconfigflowlog). Сведения о получении журнала потоков и состояния аналитики трафика для определенного NSG см. в разделе [Get-азнетворкватчерфловлогстатус](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkwatcherflowlogstatus).
+Вы можете настроить решение "Аналитика трафика" с помощью Windows PowerShell, начиная с версии 6.2.1. Сведения о настройке ведения журнала потоков и анализа трафика для определенного NSG с помощью командлета Set см. в разделе [Set-азнетворкватчерконфигфловлог](/powershell/module/az.network/set-aznetworkwatcherconfigflowlog). Сведения о получении журнала потоков и состояния аналитики трафика для определенного NSG см. в разделе [Get-азнетворкватчерфловлогстатус](/powershell/module/az.network/get-aznetworkwatcherflowlogstatus).
 
 В настоящее время вы не можете использовать шаблон Azure Resource Manager для настройки решения "Аналитика трафика".
 
@@ -250,7 +250,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 
 ## <a name="how-frequently-does-traffic-analytics-process-data"></a>Как часто Аналитика трафика обрабатывать данные?
 
-См. [раздел агрегирование данных](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema#data-aggregation) в схеме аналитика трафика и документе агрегирования данных.
+См. [раздел агрегирование данных](./traffic-analytics-schema.md#data-aggregation) в схеме аналитика трафика и документе агрегирования данных.
 
 ## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Как Аналитика трафика решает, что IP-адрес является вредоносным? 
 
@@ -262,7 +262,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 - Вы можете использовать шортлинк для Log Analytics в Аналитика трафика. 
 - Используйте [схему, описанную здесь](traffic-analytics-schema.md) для написания запросов 
 - Щелкните "создать правило генерации оповещений", чтобы создать оповещение.
-- Сведения о создании оповещения см. в [документации по оповещениям журнала](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) .
+- Сведения о создании оповещения см. в [документации по оповещениям журнала](../azure-monitor/platform/alerts-log.md) .
 
 ## <a name="how-do-i-check-which-vms-are-receiving-most-on-premises-traffic"></a>Разделы справки проверить, какие виртуальные машины получают наибольший объем локального трафика?
 
@@ -400,4 +400,4 @@ destIPs = iif(isempty(DestIP_s), split(DestPublicIPs_s," ") , pack_array(DestIP_
 - Чтобы переместиться от одного выделенного узла (**Подсеть**) в представлении топологии, выберите любой фильтр на баннере и нажмите клавиши `Ctrl+F6`.
 - Чтобы перейти к другим выделенным узлам в представлении топологии, используйте клавиши `Shift+Right arrow` для перемещения вперед. 
 - На выделенных узлах фокус перемещается на **панель элементов "Информация"** для этого узла. По умолчанию фокус перемещается на кнопку **Дополнительные сведения****панели элементов "Информация"**. Для дальнейшего перемещения в представлении **панели** используйте клавиши `Right arrow` и `Left arrow`, чтобы переходить вперед и назад соответственно. Нажатие клавиши `Enter` действует так же, как кнопка с фокусом на **панели элементов "Информация"**.
-- При выборе любых подобных узлов можно просмотреть все их подключения, одно за одним, нажимая клавиши `Shift+Left arrow`. Фокус перемещается на **панель элементов "Информация"** этого подключения. В любой момент фокус можно сдвинуть обратно на узел, нажав клавиши `Shift+Right arrow` еще раз.    
+- При выборе любых подобных узлов можно просмотреть все их подключения, одно за одним, нажимая клавиши `Shift+Left arrow`. Фокус перемещается на **панель элементов "Информация"** этого подключения. В любой момент фокус можно сдвинуть обратно на узел, нажав клавиши `Shift+Right arrow` еще раз.

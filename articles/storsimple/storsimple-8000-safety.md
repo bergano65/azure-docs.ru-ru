@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/04/2017
 ms.author: alkohli
-ms.openlocfilehash: 556a84acb3461fb39b3eb0390b54878254bafabf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3adbd292d42fd6fd2a0e149e103c17968a6f084b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514534"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950760"
 ---
 # <a name="safely-install-and-operate-your-storsimple-device"></a>Безопасная установка и эксплуатация устройства StorSimple
 ![Значок "Внимание!"](./media/storsimple-safety/IC740879.png)
@@ -114,7 +114,7 @@ ms.locfileid: "85514534"
 
 Меры предотвращения травм, удара электрическим током или смерти.
 
-* Не снимайте крышки с модулей PCM. Они находятся под высоким напряжением. Чтобы обменять модуль PCM на новый, [обратитесь в службу технической поддержки Майкрософт](storsimple-contact-microsoft-support.md).
+* Не снимайте крышки с модулей PCM. Они находятся под высоким напряжением. Чтобы обменять модуль PCM на новый, [обратитесь в службу технической поддержки Майкрософт](./storsimple-8000-contact-microsoft-support.md).
 
 ![Значок "Примечание"](./media/storsimple-safety/IC740881.png) **ПРИМЕЧАНИЕ.**
 
@@ -152,7 +152,7 @@ ms.locfileid: "85514534"
 
 Ознакомившись с этими рекомендациями по безопасности, распакуйте устройство, установите его в стойку и подключите все необходимые кабели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Для устройства 8100 перейдите к разделу [Установите ваше устройство StorSimple 8100](storsimple-8100-hardware-installation.md).
 * Для устройства 8600 перейдите к разделу [Установите ваше устройство StorSimple 8600](storsimple-8600-hardware-installation.md).

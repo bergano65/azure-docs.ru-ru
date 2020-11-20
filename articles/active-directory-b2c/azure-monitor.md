@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 11/12/2020
-ms.openlocfilehash: 68a7dd1b9a7af9f2667785c8b822b2771510d00e
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: b41f5e9a3bd4d3cbe52cf2e1c567d24de8a661f4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94562825"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949961"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Мониторинг Azure AD B2C с помощью Azure Monitor
 
@@ -25,7 +25,7 @@ ms.locfileid: "94562825"
 События журнала можно направить в:
 
 * [Учетная запись хранения](../storage/blobs/storage-blobs-introduction.md)Azure.
-* [Рабочая область log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md) (для анализа данных, создания панелей мониторинга и оповещения о конкретных событиях).
+* [Рабочая область log Analytics](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) (для анализа данных, создания панелей мониторинга и оповещения о конкретных событиях).
 * [Концентратор событий](../event-hubs/event-hubs-about.md) Azure (и интегрируется с экземплярами логики Splunk и Sumo).
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
@@ -34,7 +34,7 @@ ms.locfileid: "94562825"
 
 ## <a name="deployment-overview"></a>Общие сведения о развертывании
 
-Azure AD B2C использует [мониторинг Azure Active Directory](../active-directory/reports-monitoring/overview-monitoring.md). Чтобы включить *параметры диагностики* в Azure Active Directory в клиенте Azure AD B2C, используйте [Azure лигхсаусе](../lighthouse/concepts/azure-delegated-resource-management.md) для [делегирования ресурса](../lighthouse/concepts/azure-delegated-resource-management.md), который позволяет Azure AD B2C ( **поставщику услуг** ) управлять ресурсом Azure AD ( **клиент** ). После выполнения действий, описанных в этой статье, вы получите доступ к группе ресурсов *Azure-AD-B2C-Monitor* , содержащей [рабочую область log Analytics](../azure-monitor/learn/quick-create-workspace.md) на портале **Azure AD B2C** . Вы также сможете передавать журналы из Azure AD B2C в рабочую область Log Analytics.
+Azure AD B2C использует [мониторинг Azure Active Directory](../active-directory/reports-monitoring/overview-monitoring.md). Чтобы включить *параметры диагностики* в Azure Active Directory в клиенте Azure AD B2C, используйте [Azure лигхсаусе](../lighthouse/concepts/azure-delegated-resource-management.md) для [делегирования ресурса](../lighthouse/concepts/azure-delegated-resource-management.md), который позволяет Azure AD B2C ( **поставщику услуг**) управлять ресурсом Azure AD ( **клиент**). После выполнения действий, описанных в этой статье, вы получите доступ к группе ресурсов *Azure-AD-B2C-Monitor* , содержащей [рабочую область log Analytics](../azure-monitor/learn/quick-create-workspace.md) на портале **Azure AD B2C** . Вы также сможете передавать журналы из Azure AD B2C в рабочую область Log Analytics.
 
 Во время этого развертывания вы можете авторизовать пользователя или группу в каталоге Azure AD B2C, чтобы настроить экземпляр рабочей области Log Analytics в клиенте, который содержит подписку Azure. Чтобы создать авторизацию, необходимо развернуть шаблон [Azure Resource Manager](../azure-resource-manager/index.yml) в клиенте Azure AD, который содержит подписку.
 
@@ -70,7 +70,7 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент **Azure AD B2C** .
-1. Выберите **Azure Active Directory** , а затем — **Обзор**.
+1. Выберите **Azure Active Directory**, а затем — **Обзор**.
 1. Запишите **идентификатор клиента**.
 
 ### <a name="32-select-a-security-group"></a>3,2 выберите группу безопасности
@@ -82,12 +82,12 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 > [!IMPORTANT]
 > Чтобы добавить разрешения для группы Azure AD, **Тип группы** должен быть установлен в значение **Безопасность**. Этот вариант автоматически выбирается при создании группы. Дополнительные сведения см. в статье [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-1. Выбрав **Azure Active Directory** все еще выбрано в каталоге **Azure AD B2C** , выберите **группы** , а затем выберите группу. Если у вас нет существующей группы, создайте группу **безопасности** , а затем добавьте члены. Для получения дополнительных сведений следуйте процедуре [Создание базовой группы и добавление членов с помощью Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). 
+1. Выбрав **Azure Active Directory** все еще выбрано в каталоге **Azure AD B2C** , выберите **группы**, а затем выберите группу. Если у вас нет существующей группы, создайте группу **безопасности** , а затем добавьте члены. Для получения дополнительных сведений следуйте процедуре [Создание базовой группы и добавление членов с помощью Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). 
 1. Выберите **Обзор** и запишите **идентификатор объекта** группы.
 
 ### <a name="33-create-an-azure-resource-manager-template"></a>3,3. Создание шаблона Azure Resource Manager
 
-Далее вы создадите шаблон Azure Resource Manager, который предоставляет Azure AD B2C доступ к созданной ранее группе ресурсов Azure AD (например, *Azure-AD-B2C-Monitor* ). Разверните шаблон из примера GitHub с помощью кнопки **развернуть в Azure** , которая открывает портал Azure и позволяет настроить и развернуть шаблон непосредственно на портале. Для выполнения этих действий убедитесь, что вы вошли в клиент Azure AD (а не на Azure AD B2C клиент).
+Далее вы создадите шаблон Azure Resource Manager, который предоставляет Azure AD B2C доступ к созданной ранее группе ресурсов Azure AD (например, *Azure-AD-B2C-Monitor*). Разверните шаблон из примера GitHub с помощью кнопки **развернуть в Azure** , которая открывает портал Azure и позволяет настроить и развернуть шаблон непосредственно на портале. Для выполнения этих действий убедитесь, что вы вошли в клиент Azure AD (а не на Azure AD B2C клиент).
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. На панели инструментов портала щелкните значок **Каталог + подписка** , а затем выберите каталог, содержащий ваш клиент **Azure AD** .
@@ -162,7 +162,7 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 
 1. Присвойте параметру имя, если его еще нет.
 1. Установите флажок для каждого назначения, чтобы отправить журналы. Выберите **настроить** , чтобы указать их параметры **, как описано в следующей таблице**.
-1. Выберите **отправить log Analytics** , а затем выберите имя созданной ранее **рабочей области** ( `AzureAdB2C` ).
+1. Выберите **отправить log Analytics**, а затем выберите имя созданной ранее **рабочей области** ( `AzureAdB2C` ).
 1. Выберите **AuditLogs** и **сигнинлогс**.
 1. Щелкните **Сохранить**.
 
@@ -239,7 +239,7 @@ AuditLogs
 1. Примените шаблон с помощью кнопки **Применить** .
 1. Нажмите кнопку **done Edit (готово к редактированию** ) на панели инструментов, чтобы завершить редактирование книги.
 1. Наконец, сохраните книгу с помощью кнопки **сохранить** на панели инструментов.
-1. Укажите **заголовок** , например *панель мониторинга Azure AD B2C*.
+1. Укажите **заголовок**, например *панель мониторинга Azure AD B2C*.
 1. Щелкните **Сохранить**.
 
     ![Сохранение книги](./media/azure-monitor/wrkb-title.png)
@@ -279,7 +279,7 @@ AuditLogs
     | where PercentageChange <= threshold   //Trigger's alert rule if matched.
     ```
 
-1. Выберите **выполнить** , чтобы проверить запрос. Результаты должны отобразиться, если в общем количестве запросов за последние 24 часа имеется меньше 25% или более.
+1. Выберите **выполнить**, чтобы проверить запрос. Результаты должны отобразиться, если в общем количестве запросов за последние 24 часа имеется меньше 25% или более.
 1. Чтобы создать правило генерации оповещений на основе приведенного выше запроса, используйте параметр **+ новое правило генерации оповещений** , доступный на панели инструментов.
 1. На странице **Создание правила оповещения** выберите **имя условия** . 
 1. На странице **Настройка логики сигнала** задайте следующие значения, а затем нажмите кнопку **Готово** , чтобы сохранить изменения.
@@ -314,7 +314,7 @@ workspace("AD-B2C-TENANT1").AuditLogs
 
 Журналы Azure Monitor предназначены для масштабирования и поддержки сбора, индексирования и хранения больших объемов данных в день из любого источника в вашей организации или развертывания в Azure. По умолчанию журналы хранятся в течение 30 дней, но длительность хранения может быть увеличена до двух лет. Узнайте, как [управлять использованием и затратами с помощью журналов Azure Monitor](../azure-monitor/platform/manage-cost-storage.md). После выбора ценовой категории можно [изменить срок хранения данных](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные примеры находятся в коллекции Azure AD B2C [SIEM](https://aka.ms/b2csiem). 
 

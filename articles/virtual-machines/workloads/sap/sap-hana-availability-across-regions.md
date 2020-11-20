@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3de5a449e90452307f3c9b02c725050df6fdd873
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 799034d9060e8afe101e86e7b98ac7e01c28d191
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925685"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950250"
 ---
 # <a name="sap-hana-availability-across-azure-regions"></a>Доступность SAP HANA в разных регионах Azure
 
@@ -82,7 +83,7 @@ ms.locfileid: "92925685"
 > [!IMPORTANT]
 > Режимы работы на различных уровнях должны быть одинаковыми. **Нельзя** использовать режим работы logreply на уровнях 1 и 2 и delta_datashipping на уровне 3. Можно выбрать только один режим работы для всех уровней. Поскольку delta_datashipping не обеспечивает показатель RPO, равный 0, для многоуровневой конфигурации следует использовать только режим работы logreplay. Подробные сведения о режимах работы при репликации системы SAP HANA и некоторые ограничения см. в [этой статье](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/627bd11e86c84ec2b9fcdf585d24011c.html). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Пошаговое руководство по настройке этих конфигураций в Azure см. в следующих статьях:
 

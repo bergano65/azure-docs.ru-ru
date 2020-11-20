@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 888e2287c869200434e198204881d5bd5014f87d
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 29db2214ddabeb6df2aa937c4ccd1f9938143969
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363867"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949451"
 ---
 # <a name="manage-azure-ad-b2c-custom-policies-with-azure-powershell"></a>Управление Azure AD B2C пользовательскими политиками с помощью Azure PowerShell
 
@@ -27,11 +27,11 @@ Azure PowerShell предоставляет несколько командле�
 * Отправка новой политики в клиент Azure AD B2C
 * Удаление настраиваемой политики из клиента
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Azure AD B2C клиент](tutorial-create-tenant.md)и учетные данные для пользователя в каталоге с ролью [администратора политики B2C инфраструктура процедур идентификации](../active-directory/roles/permissions-reference.md#b2c-ief-policy-administrator)
 * [Пользовательские политики](custom-policy-get-started.md) , отправленные в клиент
-* [**Модуль предварительной версии** Azure AD PowerShell для Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
+* [**Модуль предварительной версии** Azure AD PowerShell для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
 
 ## <a name="connect-powershell-session-to-b2c-tenant"></a>Подключение сеанса PowerShell к клиенту B2C
 
@@ -191,15 +191,15 @@ Message: Validation failed: 1 validation error(s) found in policy "B2C_1A_SIGNUP
 ...
 ```
 
-Сведения об устранении неполадок настраиваемых политик см. в разделе [Устранение неполадок Azure AD B2C пользовательских политик и инфраструктуры процедур идентификации](active-directory-b2c-guide-troubleshooting-custom.md).
+Сведения об устранении неполадок настраиваемых политик см. в разделе [Устранение неполадок Azure AD B2C пользовательских политик и инфраструктуры процедур идентификации](./troubleshoot-custom-policies.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об использовании PowerShell для развертывания настраиваемых политик в рамках конвейера непрерывной интеграции и непрерывной поставки (CI/CD) см. в статье [развертывание настраиваемых политик в конвейере Azure DevOps](deploy-custom-policies-devops.md).
 
 <!-- LINKS - External -->
-[Connect-AzureAD]: https://docs.microsoft.com/powershell/module/azuread/get-azureadmstrustframeworkpolicy
-[Get-AzureADMSTrustFrameworkPolicy]: https://docs.microsoft.com/powershell/module/azuread/get-azureadmstrustframeworkpolicy
-[New-AzureADMSTrustFrameworkPolicy]: https://docs.microsoft.com/powershell/module/azuread/new-azureadmstrustframeworkpolicy
-[Remove-AzureADMSTrustFrameworkPolicy]: https://docs.microsoft.com/powershell/module/azuread/remove-azureadmstrustframeworkpolicy
-[Set-AzureADMSTrustFrameworkPolicy]: https://docs.microsoft.com/powershell/module/azuread/set-azureadmstrustframeworkpolicy
+[Connect-AzureAD]: /powershell/module/azuread/get-azureadmstrustframeworkpolicy
+[Get-AzureADMSTrustFrameworkPolicy]: /powershell/module/azuread/get-azureadmstrustframeworkpolicy
+[New-AzureADMSTrustFrameworkPolicy]: /powershell/module/azuread/new-azureadmstrustframeworkpolicy
+[Remove-AzureADMSTrustFrameworkPolicy]: /powershell/module/azuread/remove-azureadmstrustframeworkpolicy
+[Set-AzureADMSTrustFrameworkPolicy]: /powershell/module/azuread/set-azureadmstrustframeworkpolicy

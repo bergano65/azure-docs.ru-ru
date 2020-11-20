@@ -8,16 +8,16 @@ services: iot-dps
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: xujing
-ms.openlocfilehash: 3cbab09c6b50abb590cfe9f2720713a8fa547aa7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d68314aab636180ff17e330c49c9859b8851b06
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75646478"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950692"
 ---
 # <a name="troubleshooting-with-azure-iot-hub-device-provisioning-service"></a>Устранение неполадок с помощью службы подготовки устройств для центра Интернета вещей Azure
 
-Проблемы с подключением для устройств IoT могут быть трудно устранять, поскольку существует множество возможных сбоев, таких как сбои аттестации, ошибки регистрации и т. д. В этой статье содержатся рекомендации по обнаружению и устранению проблем с подключением устройств с помощью [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview).
+Проблемы с подключением для устройств IoT могут быть трудно устранять, поскольку существует множество возможных сбоев, таких как сбои аттестации, ошибки регистрации и т. д. В этой статье содержатся рекомендации по обнаружению и устранению проблем с подключением устройств с помощью [Azure Monitor](../azure-monitor/overview.md).
 
 ## <a name="using-azure-monitor-to-view-metrics-and-set-up-alerts"></a>Использование Azure Monitor для просмотра метрик и настройки оповещений
 
@@ -81,5 +81,5 @@ ms.locfileid: "75646478"
 | 401 | Не удается проверить маркер авторизации; Например, срок действия истек или не применяется к URI запроса. Этот код ошибки также возвращается на устройства как часть потока аттестации доверенного платформенного модуля. | 401 — недостаточно прав|
 | 404 | Экземпляр службы подготовки устройств или ресурс (например, регистрация) не существует. |404 — не найдено |
 | 412 | ETag в запросе не совпадает с ETag существующего ресурса согласно RFC7232). | 412. предусловие не выполнено |
-| 429 | Операции регулируется службой. Конкретные ограничения службы см. в разделе [ограничения службы подготовки устройств](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#iot-hub-device-provisioning-service-limits)к добавлению в центр Интернета вещей. | 429. слишком много запросов |
-| 500 | Внутренняя ошибка. | 500 Internal Server Error (внутренняя ошибка сервера)|
+| 429 | Операции регулируется службой. Конкретные ограничения службы см. в разделе [ограничения службы подготовки устройств](../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-device-provisioning-service-limits)к добавлению в центр Интернета вещей. | 429. слишком много запросов |
+| 500 | Произошла внутренняя ошибка. | 500 Internal Server Error (внутренняя ошибка сервера)|
