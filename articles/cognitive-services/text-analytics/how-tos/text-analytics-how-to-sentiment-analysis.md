@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 10/16/2020
+ms.date: 11/11/2020
 ms.author: aahi
-ms.openlocfilehash: 3bc2d339ade7dade3cf3be6e63e150c77d3c44b4
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 87e6ad488438ae28467f6e904fbb57f7ca5448ff
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366763"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94518181"
 ---
 # <a name="how-to-detect-sentiment-using-the-text-analytics-api"></a>Руководство. Определение тональность с помощью API Анализа текста
 
@@ -40,7 +40,7 @@ ms.locfileid: "94366763"
 
 Анализ тональности в версии 3 применяет к тексту метки тональности, возвращаемые на уровне предложения и документа, с оценкой достоверности для каждого из них. 
 
-Применяются такие метки: *positive* , *negative* и *neutral*. На уровне документа может также возвращаться метка тональности *mixed*. Тональность документа определяется следующим образом.
+Применяются такие метки: *positive*, *negative* и *neutral*. На уровне документа может также возвращаться метка тональности *mixed*. Тональность документа определяется следующим образом.
 
 | Тональность предложения                                                                            | Полученная метка документа |
 |-----------------------------------------------------------------------------------------------|-------------------------|
@@ -76,11 +76,11 @@ ms.locfileid: "94366763"
 
 ## <a name="structure-the-request"></a>Структурирование запроса
 
-Создайте запрос POST. Вы можете использовать [средство Postman](text-analytics-how-to-call-api.md) или **консоль тестирования API** , доступные по следующим ссылкам, чтобы быстро оформить и отправить запрос. 
+Создайте запрос POST. Вы можете использовать [средство Postman](text-analytics-how-to-call-api.md) или **консоль тестирования API**, доступные по следующим ссылкам, чтобы быстро оформить и отправить запрос. 
 
-#### <a name="version-31-preview1"></a>[Версия 3.1 — предварительная версия 1](#tab/version-3-1)
+#### <a name="version-31-preview2"></a>[Версия 3.1 (предварительная версия 2)](#tab/version-3-1)
 
-[Справочные материалы по анализу тональности версии 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/Sentiment)
+[Справочные материалы по анализу тональности версии 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/Sentiment)
 
 #### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
@@ -95,13 +95,13 @@ ms.locfileid: "94366763"
 > [!NOTE]
 > Ключ и конечную точку для ресурса Анализа текста можно найти на портале Azure. Они находятся на странице ресурса **Быстрый запуск** в разделе **Управление ресурсами**. 
 
-#### <a name="version-31-preview1"></a>[Версия 3.1 — предварительная версия 1](#tab/version-3-1)
+#### <a name="version-31-preview2"></a>[Версия 3.1 (предварительная версия 2)](#tab/version-3-1)
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/sentiment`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/sentiment`
 
 Чтобы получить результаты интеллектуального анализа данных, необходимо добавить параметр `opinionMining=true`. Пример:
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/sentiment?opinionMining=true`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/sentiment?opinionMining=true`
 
 По умолчанию этот параметр имеет значение `false`. 
 
@@ -142,7 +142,7 @@ API Анализа текста не учитывает состояние. Ни
 
 Вывод возвращается немедленно. Результаты можно передать в приложение, которое принимает JSON, или сохранить результаты в файл в локальной системе. Затем импортируйте выходные данные в приложение, которое можно использовать для сортировки, поиска и управления данными. В связи с поддержкой многоязычности и эмодзи, ответ может содержать смещения текста. Дополнительные сведения см. в статье [Смещение текста в выводе API Анализа текста](../concepts/text-offsets.md).
 
-#### <a name="version-31-preview1"></a>[Версия 3.1 — предварительная версия 1](#tab/version-3-1)
+#### <a name="version-31-preview2"></a>[Версия 3.1 (предварительная версия 2)](#tab/version-3-1)
 
 ### <a name="sentiment-analysis-v31-example-response"></a>Пример ответа от API анализа тональности версии 3.1
 
