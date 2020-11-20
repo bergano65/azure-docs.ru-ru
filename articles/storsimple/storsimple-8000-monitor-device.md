@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 10/17/2017
 ms.author: alkohli
-ms.openlocfilehash: 7ffb13912780edcf3d92093e672d1dae983e50a8
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: de4cae90f2cc1223271672d9fc5ba5b42e4409e4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977414"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962439"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-monitor-your-storsimple-device"></a>Использование службы диспетчера устройств StorSimple для мониторинга устройства StorSimple
 
@@ -138,7 +138,6 @@ Growth (%) = [{Usage(last day) - Usage(first day)} X 100]/Usage(first day)
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте об [использовании панели мониторинга устройств службы диспетчера устройств StorSimple](storsimple-device-dashboard.md).
-* Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-manager-service-administration.md).
-
+## <a name="next-steps"></a>Следующие шаги
+* Узнайте об [использовании панели мониторинга устройств службы диспетчера устройств StorSimple](./storsimple-8000-device-dashboard.md).
+* Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](./storsimple-8000-manager-service-administration.md).

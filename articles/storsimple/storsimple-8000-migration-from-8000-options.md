@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 03/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 78ac7e849a3a8f1742701006638a2cb72299bad7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4839f8211e678f5fc2fb3572c7eaa545fbee6c6c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90055781"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961198"
 ---
 # <a name="options-to-migrate-data-from-storsimple-8000-series"></a>Параметры для переноса данных из серии StorSimple 8000
 
@@ -31,7 +31,7 @@ ms.locfileid: "90055781"
 
 Этот новый вариант миграции позволяет клиентам хранить файловые ресурсы своей организации в службе файлов Azure. Затем эти файловые ресурсы централизуются для локального доступа с помощью службы "Синхронизация файлов Azure" (AFS). AFS можно развернуть на узле Windows Server. Фактический перенос данных выполняется с помощью средства миграции или путем перемещения копии узла.
 
-Дополнительные сведения о том, как выполнить миграцию данных в Синхронизация файлов Azure, см. в [Синхронизация файлов Azureах StorSimple 8100 и 8600](https://docs.microsoft.com/azure/storage/files/storage-files-migration-storsimple-8000).
+Дополнительные сведения о том, как выполнить миграцию данных в Синхронизация файлов Azure, см. в [Синхронизация файлов Azureах StorSimple 8100 и 8600](../storage/files/storage-files-migration-storsimple-8000.md).
 
 ### <a name="third-party-options"></a>Сторонние решения
 
@@ -109,6 +109,6 @@ A. При использовании Синхронизация файлов Azu
 
 A. Время переноса данных зависит от объема данных и выбранного варианта обновления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-* [Перенос данных из серии StorSimple 8000 в Синхронизация файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-migration-storsimple-8000)
+* [Перенос данных из серии StorSimple 8000 в Синхронизация файлов Azure](../storage/files/storage-files-migration-storsimple-8000.md)

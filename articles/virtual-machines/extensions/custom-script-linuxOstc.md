@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
-ms.openlocfilehash: 8b2099a6a48c9393b6e9e8b983a4acac2933bf06
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: afce76c8f5330f7d73ff58cc9b9307af2b8832f4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973841"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962133"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
 
@@ -353,6 +354,6 @@ Name                  ProvisioningState    Publisher                   Version  
 CustomScriptForLinux  Succeeded            Microsoft.OSTCExtensions        1.5  True
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/azure-linux-extensions/tree/master/CustomScript).

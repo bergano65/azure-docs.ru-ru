@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 156da7504a1a5e2a704e52a783fcd3e437a59867
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2efd3e9c9ca97ea3d94b03bd5e440cd24d5da5da
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90986271"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960611"
 ---
 # <a name="analyze-your-virtual-machine-security-with-security-group-view-using-rest-api"></a>Анализ безопасности виртуальной машины с использованием представления группы безопасности в REST API
 
@@ -27,14 +27,14 @@ ms.locfileid: "90986271"
 > - [REST API](network-watcher-security-group-view-rest.md)
 
 > [!NOTE]
-> API представления группы безопасности больше не поддерживается и скоро станет устаревшим. Используйте [действующие правила безопасности](https://docs.microsoft.com/azure/network-watcher/network-watcher-security-group-view-overview) , которые предоставляют те же функциональные возможности. 
+> API представления группы безопасности больше не поддерживается и скоро станет устаревшим. Используйте [действующие правила безопасности](./network-watcher-security-group-view-overview.md) , которые предоставляют те же функциональные возможности. 
 
 Представление группы безопасности возвращает настроенные и действующие правила сетевой безопасности, применяемые к виртуальной машине. Эта возможность полезна для аудита и диагностики групп безопасности сети и настроенных на виртуальной машине правил, позволяющих обеспечить разрешение или отклонение трафика соответствующим образом. В этой статье мы покажем, как получить эффективные правила безопасности и применить их к виртуальной машине с помощью REST API.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этом сценарии вы вызовите REST API Наблюдателя за сетями, чтобы получить представление группы безопасности для виртуальной машины. Чтобы вызвать REST API при помощи командлетов PowerShell, вам потребуется ARMClient. ARMClient находится на шоколадном [ARMClientе в шоколаде](https://chocolatey.org/packages/ARMClient)
 
@@ -183,8 +183,6 @@ armclient post "https://management.azure.com/subscriptions/${subscriptionId}/Res
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об автоматизации проверки групп безопасности сети см. в статье [Auditing Network Security Groups (NSG) with Network Watcher](network-watcher-security-group-view-powershell.md) (Выполнение аудита групп безопасности сети с помощью Наблюдателя за сетями).
-
-

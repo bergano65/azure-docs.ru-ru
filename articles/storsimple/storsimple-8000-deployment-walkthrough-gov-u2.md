@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/22/2017
 ms.author: alkohli
-ms.openlocfilehash: fbbb298dd9e5b568e6a1dc2c4ef731b8521f8308
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d736c09fc1c9490f79dfc526895970e01b8b45cc
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85556028"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963187"
 ---
 # <a name="deploy-your-on-premises-storsimple-device-in-the-government-portal"></a>Развертывание локального устройства StorSimple на портале для государственных организаций
 
@@ -153,7 +153,7 @@ ms.locfileid: "85556028"
 
 > [!IMPORTANT]
 > * Чтобы обеспечить высокую доступность решения StorSimple, рекомендуется перед настройкой iSCSI настроить MPIO на серверах узлов (необязательно). Настройка MPIO на серверах узлов обеспечит устойчивость серверов к сбоям канала связи, сети или интерфейса.
-> * Инструкции по установке и настройке MPIO и iSCSI на узле Windows Server см. в статье [Настройка функции Multipath I/O для устройства StorSimple](storsimple-configure-mpio-windows-server.md). Эти инструкции также содержат шаги по подключению, инициализации и форматированию томов StorSimple.
+> * Инструкции по установке и настройке MPIO и iSCSI на узле Windows Server см. в статье [Настройка функции Multipath I/O для устройства StorSimple](./storsimple-8000-configure-mpio-windows-server.md). Эти инструкции также содержат шаги по подключению, инициализации и форматированию томов StorSimple.
 > * Инструкции по установке и настройке MPIO и iSCSI на узле Linux можно найти в статье [Настройка MPIO для узла Linux StorSimple](storsimple-configure-mpio-on-linux.md)
 
 Если вы решили не настраивать MPIO, выполните следующие действия для подключения, инициализации и форматирования томов StorSimple на узле Windows Server.
@@ -172,7 +172,7 @@ ms.locfileid: "85556028"
 ## <a name="configure-a-new-storage-account-for-the-service"></a>Настройка новой учетной записи хранения для службы
 Это необязательный шаг, который вам потребуется выполнить, только если вы не использовали возможность автоматически создать учетную запись хранения для вашей службы. Учетная запись хранения Microsoft Azure необходима для создания контейнера томов StorSimple.
 
-Если вам нужно создать учетную запись хранения Azure в другом регионе, см. пошаговые инструкции в статье [Об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md).
+Если вам нужно создать учетную запись хранения Azure в другом регионе, см. пошаговые инструкции в статье [Об учетных записях хранения Azure](../storage/common/storage-account-create.md).
 
 На странице **службы диспетчера устройств StorSimple** на портале для государственных организаций сделайте следующее.
 
@@ -196,7 +196,6 @@ ms.locfileid: "85556028"
 
 [!INCLUDE [Create a manual backup](../../includes/storsimple-8000-create-manual-backup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Настройте [виртуальное устройство](storsimple-8000-cloud-appliance-u2.md).
 * Используйте [службу storsimple Device Manager](storsimple-8000-manager-service-administration.md) для управления устройством StorSimple.
-

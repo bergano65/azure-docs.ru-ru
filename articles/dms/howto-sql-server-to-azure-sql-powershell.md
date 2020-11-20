@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019, devx-track-azurepowershell
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: a2d0ff6810326f7f375595e8dcebbe81b55055ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87505557653e70aab7f1392aeea8dbdf505327e0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330355"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962762"
 ---
 # <a name="migrate-a-sql-server-database-to-azure-sql-database-using-azure-powershell"></a>Перенос базы данных SQL Server в базу данных SQL Azure с помощью Azure PowerShell
 
@@ -36,26 +36,26 @@ ms.locfileid: "91330355"
 Для выполнения этих действий вам потребуется следующее:
 
 * [SQL Server 2016 или более поздней версии](https://www.microsoft.com/sql-server/sql-server-downloads) (любой выпуск).
-* При установке SQL Server Express включите протокол TCP/IP, который отключен по умолчанию. Для этого выполните инструкции в разделе [Использование диспетчера конфигурации SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol#SSMSProcedure) статьи "Включение или отключение сетевого протокола сервера".
-* [Настройте брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
-* Экземпляр Базы данных SQL Azure. Экземпляр базы данных SQL Azure можно создать, следуя сведениям в статье [Создание базы данных в базе данных SQL Azure на портал Azure](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal).
+* При установке SQL Server Express включите протокол TCP/IP, который отключен по умолчанию. Для этого выполните инструкции в разделе [Использование диспетчера конфигурации SQL Server](/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol#SSMSProcedure) статьи "Включение или отключение сетевого протокола сервера".
+* [Настройте брандмауэр Windows для доступа к ядру СУБД](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
+* Экземпляр Базы данных SQL Azure. Экземпляр базы данных SQL Azure можно создать, следуя сведениям в статье [Создание базы данных в базе данных SQL Azure на портал Azure](../azure-sql/database/single-database-create-quickstart.md).
 * [Помощник по миграции данных](https://www.microsoft.com/download/details.aspx?id=53595) 3.3 или более поздней версии.
-* Чтобы создать виртуальная сеть Microsoft Azure с помощью модели развертывания Azure Resource Manager, которая предоставляет Azure Database Migration Service с подключением типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
-* Чтобы выполнить оценку локальной базы данных и миграции схемы с помощью Помощник по миграции данных, как описано в статье [выполнение SQL Serverной оценки миграции](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem) .
-* Чтобы скачать и установить модуль AZ. Migration из коллекция PowerShell, используйте [командлет PowerShell Install-Module](https://docs.microsoft.com/powershell/module/powershellget/Install-Module?view=powershell-5.1). не забудьте открыть командное окно PowerShell с помощью команды Запуск от имени администратора.
-* Убедитесь, что учетные данные, используемые для подключения к исходному экземпляру SQL Server, имеют разрешение [CONTROL SERVER](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql).
+* Чтобы создать виртуальная сеть Microsoft Azure с помощью модели развертывания Azure Resource Manager, которая предоставляет Azure Database Migration Service с подключением типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](../expressroute/expressroute-introduction.md) или [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
+* Чтобы выполнить оценку локальной базы данных и миграции схемы с помощью Помощник по миграции данных, как описано в статье [выполнение SQL Serverной оценки миграции](/sql/dma/dma-assesssqlonprem) .
+* Чтобы скачать и установить модуль AZ. Migration из коллекция PowerShell, используйте [командлет PowerShell Install-Module](/powershell/module/powershellget/Install-Module?view=powershell-5.1). не забудьте открыть командное окно PowerShell с помощью команды Запуск от имени администратора.
+* Убедитесь, что учетные данные, используемые для подключения к исходному экземпляру SQL Server, имеют разрешение [CONTROL SERVER](/sql/t-sql/statements/grant-server-permissions-transact-sql).
 * Убедитесь, что учетные данные, используемые для подключения к целевому экземпляру Базы данных SQL Azure, имеют разрешение на управление базами данных в целевой базе данных SQL Azure.
 * Подписка Azure. Если у вас ее нет, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись, прежде чем начинать работу.
 
 ## <a name="log-in-to-your-microsoft-azure-subscription"></a>Вход в подписку Microsoft Azure
 
-Чтобы войти в подписку Azure с помощью PowerShell, следуйте инструкциям в статье [Вход с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
+Чтобы войти в подписку Azure с помощью PowerShell, следуйте инструкциям в статье [Вход с помощью Azure PowerShell](/powershell/azure/authenticate-azureps).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Прежде чем создать виртуальную машину, создайте группу ресурсов.
 
-Создайте группу ресурсов с помощью команды [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) .
+Создайте группу ресурсов с помощью команды [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup) .
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *EastUS* .
 
@@ -67,11 +67,11 @@ New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 
 Вы можете создать экземпляр Azure Database Migration Service, выполнив командлет `New-AzDataMigrationService`. Для этого командлета нужно передать следующие обязательные параметры:
 
-* *Имя группы ресурсов Azure*. Вы можете использовать команду [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) , чтобы создать группу ресурсов Azure, как показано выше, и указать ее имя в качестве параметра.
+* *Имя группы ресурсов Azure*. Вы можете использовать команду [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup) , чтобы создать группу ресурсов Azure, как показано выше, и указать ее имя в качестве параметра.
 * *Имя службы*. Строка, соответствующая требуемому уникальному имени службы для Azure Database Migration Service. 
 * *Расположение*. Указывает расположение службы. Укажите расположение центра обработки данных Azure, например западная часть США или Юго-Восточная Азия.
 * *Номер SKU*. Этот параметр соответствует имени SKU DMS. Поддерживаемое сейчас имя Sku — *GeneralPurpose_4vCores*.
-* *VirtualSubnetId.* Для создания подсети можно использовать командлет [New-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig) . 
+* *VirtualSubnetId.* Для создания подсети можно использовать командлет [New-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) . 
 
 В указанном ниже примере создается служба с именем *MyDMS* в группе ресурсов *MyDMSResourceGroup*, которая расположена в регионе *Восточная часть США*, с использованием виртуальной сети с именем *MyVNET* и подсети с именем *MySubnet*.
 
@@ -151,7 +151,7 @@ $project = New-AzDataMigrationProject -ResourceGroupName myResourceGroup `
 
 ### <a name="create-credential-parameters-for-source-and-target"></a>Создание параметров учетных данных для исходного и целевого подключения
 
-Учетные данные безопасности подключения можно создать в качестве объекта [PSCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+Учетные данные безопасности подключения можно создать в качестве объекта [PSCredential](/dotnet/api/system.management.automation.pscredential?view=powershellsdk-1.1.0).
 
 В следующем примере показано создание объектов *PSCredential* для исходного и целевого подключения. Пароли представлены в качестве строковых переменных *$sourcePassword* и *$targetPassword*.
 
@@ -195,8 +195,8 @@ $selectedDbs = New-AzDmsSelectedDB -MigrateSqlServerSqlDb -Name AdventureWorks20
 * *Имя_задания*. Имя задачи, которая будет создана. 
 * *SourceConnection*. Объект Аздмсконнинфо, представляющий соединение с источником SQL Server.
 * *TargetConnection.* Объект Аздмсконнинфо, представляющий целевое подключение к базе данных SQL Azure.
-* *SourceCred.* Объект [PSCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential?redirectedfrom=MSDN&view=powershellsdk-1.1.0) для подключения к исходному серверу.
-* *TargetCred.* Объект [PSCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential?redirectedfrom=MSDN&view=powershellsdk-1.1.0) для подключения к целевому серверу.
+* *SourceCred.* Объект [PSCredential](/dotnet/api/system.management.automation.pscredential?view=powershellsdk-1.1.0) для подключения к исходному серверу.
+* *TargetCred.* Объект [PSCredential](/dotnet/api/system.management.automation.pscredential?view=powershellsdk-1.1.0) для подключения к целевому серверу.
 * *SelectedDatabase.* Объект Аздатамигратионселектеддб, представляющий сопоставление исходного и целевого базы данных.
 * *Счемавалидатион*. (необязательный, параметр Switch) После миграции выполняется сравнение сведений о схеме между источником и целевым объектом.
 * *Датаинтегритивалидатион*. (необязательный, параметр Switch) После миграции выполняется проверка целостности данных на основе контрольной суммы между исходным и целевым версиями.

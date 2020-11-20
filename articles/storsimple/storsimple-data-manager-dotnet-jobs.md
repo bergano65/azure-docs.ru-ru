@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: e34701640de24a4c3c13f8d10073b4392af2f28a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b18627d2806662d6d966af95d51873d5623b2393
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88183655"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961130"
 ---
 # <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK для .NET
 
@@ -33,7 +33,7 @@ ms.locfileid: "88183655"
 
     - Visual Studio 2012, 2013, 2015 или 2017.
 
-    - Azure PowerShell. [Скачать Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
+    - Azure PowerShell. [Скачать Azure PowerShell](/powershell/azure/).
 *   Правильно настроенное определение задания в диспетчере данных StorSimple в одной группе ресурсов.
 *   Все необходимые библиотеки DLL. Их можно скачать из [репозитория GitHub](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/tree/master/Data_Manager_Job_Run/dlls).
 *   [`Get-ConfigurationParams.ps1`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/blob/master/Data_Manager_Job_Run/Get-ConfigurationParams.ps1) Скрипт из репозитория GitHub.
@@ -192,6 +192,6 @@ ms.locfileid: "88183655"
 
     ![Полный фрагмент кода для запуска задания .NET](media/storsimple-data-manager-dotnet-jobs/start-dotnet-job-code-snippet.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Используйте диспетчер данных StorSimple пользовательский интерфейс для преобразования данных](storsimple-data-manager-ui.md).

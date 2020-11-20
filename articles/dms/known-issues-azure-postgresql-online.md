@@ -14,12 +14,12 @@ ms.custom:
 - seo-dt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 14722f46f06351504583da7231179d206f7a3c26
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: db2f6e95153610e0a1b79cf5d30cea3c917333d3
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893736"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962575"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения миграции при оперативной миграции из PostgreSQL в базу данных Azure для PostgreSQL
 
@@ -96,13 +96,13 @@ ms.locfileid: "91893736"
 - **Ошибка**. "The Default value of column '{column}' in table '{table}' in database '{database}' is different on source and target servers. It's '{value on source}' on source and '{value on target}' on target" (Значение по умолчанию столбца "{столбец}" в таблице "{таблица}" в базе данных "{база данных}" на исходном сервере не совпадает с таким же параметром на целевом сервере. Это значение "{значение на исходном сервере}" на исходном сервере и "{значение на целевом сервере}" на целевом).
 
   **Ограничение**. Эта ошибка возникает, когда значение по умолчанию для схемы столбца отличается между исходной и целевой базами данных.
-  **Обходное решение**. Убедитесь, что схема на целевом объекте соответствует схеме в источнике. Дополнительные сведения о переносе схемы см. в [документации по миграции Azure PostgreSQL Online](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema).
+  **Обходное решение**. Убедитесь, что схема на целевом объекте соответствует схеме в источнике. Дополнительные сведения о переносе схемы см. в [документации по миграции Azure PostgreSQL Online](./tutorial-postgresql-azure-postgresql-online.md#migrate-the-sample-schema).
 
 - **Ошибка**. "Target database '{database}' has '{number of tables}' tables where as source database '{database}' has '{number of tables}' tables. The number of tables on source and target databases should match" (Количество таблиц в целевой базе данных "{база данных}": {количество таблиц}. Количество таблиц в базе данных-источнике "{база данных}": {количество таблиц}. Количество таблиц в базах данных-источнике и целевой базе данных должно совпадать).
 
   **Ограничение**. Эта ошибка возникает, когда число таблиц отличается между исходной и целевой базами данных.
 
-  **Обходное решение**. Убедитесь, что схема на целевом объекте соответствует схеме в источнике. Дополнительные сведения о переносе схемы см. в [документации по миграции Azure PostgreSQL Online](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema).
+  **Обходное решение**. Убедитесь, что схема на целевом объекте соответствует схеме в источнике. Дополнительные сведения о переносе схемы см. в [документации по миграции Azure PostgreSQL Online](./tutorial-postgresql-azure-postgresql-online.md#migrate-the-sample-schema).
 
 - **Ошибка:** База данных-источник {Database} пуста.
 
@@ -113,7 +113,7 @@ ms.locfileid: "91893736"
 - **Ошибка:** Целевая база данных {Database} пуста. Перенесите схему.
 
   **Ограничение**. Эта ошибка возникает, если в целевой базе данных нет схемы. Убедитесь, что схема на целевом объекте соответствует схеме в источнике.
-  **Обходное решение**. Убедитесь, что схема на целевом объекте соответствует схеме в источнике. Дополнительные сведения о переносе схемы см. в [документации по миграции Azure PostgreSQL Online](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema).
+  **Обходное решение**. Убедитесь, что схема на целевом объекте соответствует схеме в источнике. Дополнительные сведения о переносе схемы см. в [документации по миграции Azure PostgreSQL Online](./tutorial-postgresql-azure-postgresql-online.md#migrate-the-sample-schema).
 
 ## <a name="other-limitations"></a>Другие ограничения
 

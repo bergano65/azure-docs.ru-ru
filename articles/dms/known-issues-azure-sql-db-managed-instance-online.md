@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 6393624cb4520ccd28dff41dd97746873bc13f59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d5c79a141dbe1310762dc90b447fe78848ac10d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330304"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962490"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-managed-instance"></a>Известные проблемы и ограничения миграции при оперативной миграции на Azure SQL Управляемый экземпляр
 
@@ -31,14 +31,14 @@ ms.locfileid: "91330304"
 
     Azure Database Migration Service использует метод резервного копирования и восстановления для переноса локальных баз данных в Управляемый экземпляр SQL. Azure Database Migration Service поддерживает только резервные копии, созданные с использованием контрольной суммы.
 
-    [Включение или отключение контрольных сумм резервных копий во время резервного копирования или восстановления (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017)
+    [Включение или отключение контрольных сумм резервных копий во время резервного копирования или восстановления (SQL Server)](/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017)
 
     > [!NOTE]
     > Если вы передаете резервные копии базы данных с помощью сжатия, контрольная сумма является поведением по умолчанию, если явно не отключено.
 
     При использовании автономных миграций, если выбрать параметр **я буду позволять Azure Database Migration Service...**, после чего Azure Database Migration Service будет использовать резервную копию базы данных с включенной контрольной суммой.
 
-- **Носитель резервной копии**
+- **Тип носителя резервной копии**
 
     Обязательно выполните каждую резервную копию на отдельном носителе резервных копий (файлы резервных копий). Azure Database Migration Service не поддерживает резервные копии, добавляемые в один файл резервной копии. Создание полных резервных копий и резервные копии журналов для отдельных файлов резервных копий.
 

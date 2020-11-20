@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 6809e8a44120eddbae4965bff30f80b617bdd024
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c308824afdcae5f5c04a316c199bad71ad84a429
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88272167"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962014"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Создание экземпляра Наблюдателя за сетями Azure
 
@@ -125,11 +125,11 @@ New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWa
 Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, имея экземпляр Наблюдателя за сетями, узнайте о его возможностях:
 
-* [Топология](network-watcher-topology-overview.md)
+* [Топология](./view-network-topology.md)
 * [Запись пакетов](network-watcher-packet-capture-overview.md)
 * [Проверка IP-потока](network-watcher-ip-flow-verify-overview.md)
 * [Следующий прыжок](network-watcher-next-hop-overview.md)

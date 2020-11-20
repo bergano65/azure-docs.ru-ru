@@ -3,16 +3,17 @@ title: Устранение известных проблем с помощью 
 description: Сведения об устранении известных проблем с размерами виртуальных машин HPC и GPU в Azure.
 author: vermagit
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 10/19/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: a96042045eaab440d099f96782c020067eedfa18
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: f4e93deb40799cbcc9c86aff454e250f1ab71712
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282113"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963340"
 ---
 # <a name="known-issues-with-h-series-and-n-series-vms"></a>Известные проблемы с виртуальными машинами серий H и N
 
@@ -105,7 +106,7 @@ echo 3 > /proc/sys/vm/drop_caches [cleans page-cache and slab objects]
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения об оптимальной настройке рабочих нагрузок для производительности и масштабируемости см. в статье с обзором виртуальных машин серии [HB](hb-series-overview.md) и [HC](hc-series-overview.md).
 - Ознакомьтесь с последними объявлениями и некоторыми примерами HPC, а также результатами в [блогах технического сообщества службы вычислений](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).

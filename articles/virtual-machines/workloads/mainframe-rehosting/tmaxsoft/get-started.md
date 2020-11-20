@@ -6,12 +6,13 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: virtual-machines-linux
-ms.openlocfilehash: 408e0166e52af9efd3d4c64f1b29bddcfc1cca4c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.subservice: workloads
+ms.openlocfilehash: 215a17ced6be4cc8792ac1a06115450bfbccac99
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61485543"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963272"
 ---
 # <a name="get-started-with-tmaxsoft-openframe-on-azure"></a>Начало работы с Тмакссофт Опенфраме в Azure
 
@@ -40,6 +41,6 @@ ms.locfileid: "61485543"
 
 ![Архитектура Опенфраме](media/openframe-02.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Установка Тмакссофт Опенфраме в Azure](./install-openframe-azure.md)

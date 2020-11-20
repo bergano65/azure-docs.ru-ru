@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: cf17ab2b-8d7e-4078-b6df-955c6d5071c2
 ms.service: virtual-machines-linux
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: mimckitt
-ms.openlocfilehash: 3c3dac8c8798b9c56b746a2e4e232f43ef967ebe
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 24d1992db5f1826045fdb47397e44dc2e2fbdaf9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91960309"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962167"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -499,5 +500,5 @@ az vm extension list -g myResourceGroup --vm-name myVM
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/custom-script-extension-linux).

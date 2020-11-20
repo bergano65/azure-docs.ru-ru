@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: reference
 ms.date: 01/08/2020
-ms.openlocfilehash: 5839de1fde8e4a4d5e661d232ae91099a9483bcb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae036b7d893eb268ea55026054bf364dad0b610e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91291577"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961555"
 ---
 # <a name="network-topologies-for-azure-sql-managed-instance-migrations-using-azure-database-migration-service"></a>Сетевые топологии для миграции Управляемый экземпляр Azure SQL с помощью Azure Database Migration Service
 
@@ -29,10 +29,10 @@ ms.locfileid: "91291577"
 
 ![Сетевая топология для гибридных рабочих нагрузок](media/resource-network-topologies/hybrid-workloads.png)
 
-**Requirements**
+**Требования**
 
 - В этом сценарии Управляемый экземпляр SQL и экземпляр Azure Database Migration Service создаются в одном виртуальная сеть Microsoft Azure, но они используют разные подсети.  
-- Виртуальная сеть, используемая в этом сценарии, также подключается к локальной сети с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
+- Виртуальная сеть, используемая в этом сценарии, также подключается к локальной сети с помощью [ExpressRoute](../expressroute/expressroute-introduction.md) или [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
 ## <a name="sql-managed-instance-isolated-from-the-on-premises-network"></a>Управляемый экземпляр SQL изолированы от локальной сети
 
@@ -44,10 +44,10 @@ ms.locfileid: "91291577"
 
 ![Сетевая топология для Управляемого экземпляра Базы данных SQL Azure, изолированного от локальной сети](media/resource-network-topologies/mi-isolated-workload.png)
 
-**Requirements**
+**Требования**
 
-- Виртуальная сеть, которая Azure Database Migration Service используется для этого сценария, также должна быть подключена к локальной сети с помощью ( https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN-подключения](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)).
-- Настройте [пиринг сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) виртуальной сети между виртуальной сетью, используемой для SQL Управляемый экземпляр и Azure Database Migration Service.
+- Виртуальная сеть, которая Azure Database Migration Service используется для этого сценария, также должна быть подключена к локальной сети с помощью ( https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN-подключения](../vpn-gateway/vpn-gateway-about-vpngateways.md)).
+- Настройте [пиринг сети](../virtual-network/virtual-network-peering-overview.md) виртуальной сети между виртуальной сетью, используемой для SQL Управляемый экземпляр и Azure Database Migration Service.
 
 ## <a name="cloud-to-cloud-migrations-shared-virtual-network"></a>Миграция из облака в облако: общая виртуальная сеть
 
@@ -55,7 +55,7 @@ ms.locfileid: "91291577"
 
 ![Топология сети для миграции из облака в облако с помощью общей виртуальной сети](media/resource-network-topologies/cloud-to-cloud.png)
 
-**Requirements**
+**Требования**
 
 - Дополнительных требований нет.
 
@@ -69,9 +69,9 @@ ms.locfileid: "91291577"
 
 ![Топология сети для миграции из облака в облако с помощью изолированной виртуальной сети](media/resource-network-topologies/cloud-to-cloud-isolated.png)
 
-**Requirements**
+**Требования**
 
-- Настройте [пиринг сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) виртуальной сети между виртуальной сетью, используемой для SQL Управляемый экземпляр и Azure Database Migration Service.
+- Настройте [пиринг сети](../virtual-network/virtual-network-peering-overview.md) виртуальной сети между виртуальной сетью, используемой для SQL Управляемый экземпляр и Azure Database Migration Service.
 
 ## <a name="inbound-security-rules"></a>Правила безопасности для входящего трафика
 
@@ -86,17 +86,17 @@ ms.locfileid: "91291577"
 | управление                | 443,9354                                              | TCP          | Любой        | Любой                       | Allow      | Взаимодействие плоскости управления через служебную шину и хранилище BLOB-объектов Azure. <br/>(Если включен пиринг Майкрософт, это правило может не понадобиться.)                                                             |
 | Диагностика               | 12000                                                 | TCP          | Любой        | Любой                       | Allow      | DMS использует это правило для сбора диагностических сведений для устранения неполадок.                                                                                                                      |
 | Исходный SQL Server         | 1433 (или порт TCP IP, который прослушивает SQL Server) | TCP          | Любой        | локальное адресное пространство; | Allow      | Возможность подключения к исходному экземпляру SQL Server из DMS. <br/>(Если есть подключение типа "сайт-сайт", это правило может не понадобиться.)                                                                                       |
-| Именованный экземпляр SQL Server | 1434                                                  | Протокол UDP          | Любой        | локальное адресное пространство; | Allow      | Возможность подключения к исходному именованному экземпляру SQL Server из DMS. <br/>(Если есть подключение типа "сайт-сайт", это правило может не понадобиться.)                                                                        |
+| Именованный экземпляр SQL Server | 1434                                                  | UDP          | Любой        | локальное адресное пространство; | Allow      | Возможность подключения к исходному именованному экземпляру SQL Server из DMS. <br/>(Если есть подключение типа "сайт-сайт", это правило может не понадобиться.)                                                                        |
 | Общий доступ по SMB                 | 445                                                   | TCP          | Любой        | локальное адресное пространство; | Allow      | Общий сетевой доступ по SMB в DMS для хранения файлов резервных копий базы данных с целью переноса в управляемый экземпляр Базы данных SQL Azure и SQL Server на виртуальной машине Azure. <br/>(Если есть подключение типа "сайт-сайт", это правило может не понадобиться.) |
 | DMS_subnet                | Любой                                                   | Любой          | Любой        | DMS_subnet                | Allow      |                                                                                                                                                                                                  |
 
 ## <a name="see-also"></a>См. также
 
-- [Миграция SQL Server в SQL Управляемый экземпляр](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance)
-- [Общие сведения о предварительных требованиях для использования Azure Database Migration Service](https://docs.microsoft.com/azure/dms/pre-reqs)
-- [Создание виртуальной сети с помощью портала Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+- [Миграция SQL Server в SQL Управляемый экземпляр](./tutorial-sql-server-to-managed-instance.md)
+- [Общие сведения о предварительных требованиях для использования Azure Database Migration Service](./pre-reqs.md)
+- [Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения о Azure Database Migration Service см. в статье [что такое Azure Database Migration Service?](dms-overview.md).
 - Текущие сведения о региональных доступности Azure Database Migration Service см. на странице доступность [продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration) .

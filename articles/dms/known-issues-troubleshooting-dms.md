@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: f0ec9d2a3794ea910339b4d329bb28f23c5a76b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4baca7f261aa7544b54992a5e1ddf620794774f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91297364"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962286"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Устранение распространенных проблем и ошибок Azure Database Migration Service
 
@@ -25,7 +25,7 @@ ms.locfileid: "91297364"
 > [!NOTE]
 > Обмен данными без смещения
 >
-> Корпорация Майкрософт поддерживает различные и включенные среды. Эта статья содержит ссылки на слово _Slave_. В соответствии с [руководством по стилю Майкрософт для обмена данными без](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) пересчета этот термин распознается как исключение. Это слово используется в этой статье для обеспечения согласованности, так как в настоящее время это слово, которое отображается в программном обеспечении. При обновлении программного обеспечения для удаления слова эта статья будет обновлена для выравнивания.
+> Корпорация Майкрософт поддерживает принципы инклюзивности, а также этнического и социокультурного многообразия. В версии этой статьи на английском языке используется термин _slave_ (раб, ведомый). В [руководстве по стилю для политкорректной коммуникации](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) корпорации Майкрософт это слово указано как недопустимое. Термин приводится в версии этой статьи на английском языке в целях согласования, так как сейчас он используется в программном обеспечении. После обновления программного обеспечения с удалением этого слова статья будет изменена соответствующим образом.
 >
 
 ## <a name="migration-activity-in-queued-state"></a>Действие миграции в состоянии очереди
@@ -54,7 +54,7 @@ ms.locfileid: "91297364"
 
 | Причина         | Решение |
 | ------------- | ------------- |
-| Эта ошибка может возникать, когда у пользователя, выполняющего миграцию, отсутствует роль ReplicationAdmin и (или) привилегии клиента репликации, РЕПЛИКи репликации и SUPER (более ранних версий, чем MySQL 5.6.6).<br><br><br><br><br><br><br><br><br><br><br><br><br> | Убедитесь, что необходимые [привилегии](https://docs.microsoft.com/azure/dms/tutorial-mysql-azure-mysql-online#prerequisites) для учетной записи пользователя правильно настроены в экземпляре базы данных Azure для MySQL. Например, можно выполнить следующие действия, чтобы создать пользователя с именем "мигратеусер" с необходимыми привилегиями:<br>1. Создайте migrateuser@ пользователя "%", ИДЕНТИФИЦИРУЕМого "Secret"; <br>2. Предоставьте всем привилегиям db_name. * значение "мигратеусер" @ "%", идентифицируемое по "Secret"; Повторите этот шаг, чтобы предоставить доступ к нескольким базам данных. <br>3. Предоставьте ведомую репликацию на *.* в "мигратеусер" @ "%", идентифицируемое по "Secret";<br>4. Предоставьте клиент репликации на *.* в "мигратеусер" @ "%", идентифицируемое по "Secret";<br>5. разрешения на очистку; |
+| Эта ошибка может возникать, когда у пользователя, выполняющего миграцию, отсутствует роль ReplicationAdmin и (или) привилегии клиента репликации, РЕПЛИКи репликации и SUPER (более ранних версий, чем MySQL 5.6.6).<br><br><br><br><br><br><br><br><br><br><br><br><br> | Убедитесь, что необходимые [привилегии](./tutorial-mysql-azure-mysql-online.md#prerequisites) для учетной записи пользователя правильно настроены в экземпляре базы данных Azure для MySQL. Например, можно выполнить следующие действия, чтобы создать пользователя с именем "мигратеусер" с необходимыми привилегиями:<br>1. Создайте migrateuser@ пользователя "%", ИДЕНТИФИЦИРУЕМого "Secret"; <br>2. Предоставьте всем привилегиям db_name. * значение "мигратеусер" @ "%", идентифицируемое по "Secret"; Повторите этот шаг, чтобы предоставить доступ к нескольким базам данных. <br>3. Предоставьте ведомую репликацию на *.* в "мигратеусер" @ "%", идентифицируемое по "Secret";<br>4. Предоставьте клиент репликации на *.* в "мигратеусер" @ "%", идентифицируемое по "Secret";<br>5. разрешения на очистку; |
 
 ## <a name="error-when-attempting-to-stop-azure-database-migration-service"></a>Ошибка при попытке завершения Azure Database Migration Service
 
@@ -84,7 +84,7 @@ ms.locfileid: "91297364"
 
 | Причина         | Решение    |
 | ------------- | ------------- |
-| Эта ошибка означает, что субъект приложения, используемый для оперативной миграции с SQL Server на SQL Управляемый экземпляр, не имеет разрешения на участие в подписке. Некоторые вызовы API с Управляемый экземпляр в настоящее время должны иметь это разрешение в подписке для операции восстановления. <br><br><br><br><br><br><br><br><br><br><br><br><br><br> | Используйте `Get-AzureADServicePrincipal` командлет PowerShell с параметром, `-ObjectId` доступным в сообщении об ошибке, чтобы вывести отображаемое имя используемого идентификатора приложения.<br><br> Проверьте разрешения для этого приложения и убедитесь, что у него есть [роль участника](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) на уровне подписки. <br><br> Группа инженеров Azure Database Migration Service работает над тем, чтобы ограничить необходимый доступ из текущей роли участия в подписке. Если у вас есть бизнес-требование, которое не позволяет использовать роль Contribute, обратитесь в службу поддержки Azure за дополнительной справкой. |
+| Эта ошибка означает, что субъект приложения, используемый для оперативной миграции с SQL Server на SQL Управляемый экземпляр, не имеет разрешения на участие в подписке. Некоторые вызовы API с Управляемый экземпляр в настоящее время должны иметь это разрешение в подписке для операции восстановления. <br><br><br><br><br><br><br><br><br><br><br><br><br><br> | Используйте `Get-AzureADServicePrincipal` командлет PowerShell с параметром, `-ObjectId` доступным в сообщении об ошибке, чтобы вывести отображаемое имя используемого идентификатора приложения.<br><br> Проверьте разрешения для этого приложения и убедитесь, что у него есть [роль участника](../role-based-access-control/built-in-roles.md#contributor) на уровне подписки. <br><br> Группа инженеров Azure Database Migration Service работает над тем, чтобы ограничить необходимый доступ из текущей роли участия в подписке. Если у вас есть бизнес-требование, которое не позволяет использовать роль Contribute, обратитесь в службу поддержки Azure за дополнительной справкой. |
 
 ## <a name="error-when-deleting-nic-associated-with-azure-database-migration-service"></a>Ошибка при удалении сетевого адаптера, связанного с Azure Database Migration Service
 
@@ -102,7 +102,7 @@ ms.locfileid: "91297364"
 
 | Причина         | Решение    |
 | ------------- | ------------- |
-| При использовании [ExpressRoute](https://azure.microsoft.com/services/expressroute/)Azure Database Migration Service [требуется](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) подготовка трех конечных точек службы в подсети виртуальной сети, связанной со службой:<br> --Конечная точка служебной шины<br> --Конечная точка хранилища<br> --Целевая конечная точка базы данных (например, конечная точка SQL, Cosmos DBная конечная точка)<br><br><br><br><br> | [Включите](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) необходимые конечные точки службы для подключения ExpressRoute между источником и Azure Database Migration Service. <br><br><br><br><br><br><br><br> |
+| При использовании [ExpressRoute](https://azure.microsoft.com/services/expressroute/)Azure Database Migration Service [требуется](./tutorial-sql-server-azure-sql-online.md) подготовка трех конечных точек службы в подсети виртуальной сети, связанной со службой:<br> --Конечная точка служебной шины<br> --Конечная точка хранилища<br> --Целевая конечная точка базы данных (например, конечная точка SQL, Cosmos DBная конечная точка)<br><br><br><br><br> | [Включите](./tutorial-sql-server-azure-sql-online.md) необходимые конечные точки службы для подключения ExpressRoute между источником и Azure Database Migration Service. <br><br><br><br><br><br><br><br> |
 
 ## <a name="lock-wait-timeout-error-when-migrating-a-mysql-database-to-azure-db-for-mysql"></a>Ошибка времени ожидания блокировки при переносе базы данных MySQL в Azure DB для MySQL
 
@@ -126,13 +126,13 @@ ms.locfileid: "91297364"
 
 ## <a name="additional-known-issues"></a>Дополнительные известные проблемы
 
-* [Известные проблемы и ограничения миграции при оперативной миграции в базу данных SQL Azure](https://docs.microsoft.com/azure/dms/known-issues-azure-sql-online)
-* [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для MySQL](https://docs.microsoft.com/azure/dms/known-issues-azure-mysql-online)
-* [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/dms/known-issues-azure-postgresql-online)
+* [Известные проблемы и ограничения миграции при оперативной миграции в базу данных SQL Azure](./known-issues-azure-sql-online.md)
+* [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для MySQL](./known-issues-azure-mysql-online.md)
+* [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для PostgreSQL](./known-issues-azure-postgresql-online.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-* Просмотрите статью [Azure Database Migration Service PowerShell](https://docs.microsoft.com/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
-* Ознакомьтесь со статьей [Настройка параметров сервера в базе данных Azure для MySQL с помощью портал Azure](https://docs.microsoft.com/azure/mysql/howto-server-parameters).
-* Ознакомьтесь со статьей [Обзор предварительных требований для использования Azure Database Migration Service](https://docs.microsoft.com/azure/dms/pre-reqs).
-* См. [вопросы и ответы об использовании Azure Database Migration Service](https://docs.microsoft.com/azure/dms/faq).
+* Просмотрите статью [Azure Database Migration Service PowerShell](/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
+* Ознакомьтесь со статьей [Настройка параметров сервера в базе данных Azure для MySQL с помощью портал Azure](../mysql/howto-server-parameters.md).
+* Ознакомьтесь со статьей [Обзор предварительных требований для использования Azure Database Migration Service](./pre-reqs.md).
+* См. [вопросы и ответы об использовании Azure Database Migration Service](./faq.md).

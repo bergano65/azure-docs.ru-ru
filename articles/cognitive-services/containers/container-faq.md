@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: aahi
-ms.openlocfilehash: 3d35a1f6913d0b657956489d0e57836a05f9eb1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 188a348b497a485be0a8091b50a3f2c11b6493c0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90900049"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960756"
 ---
 # <a name="azure-cognitive-services-containers-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о контейнерах Azure Cognitive Services
 
@@ -50,7 +50,7 @@ Cognitive Services конфигурации контейнеров ресурс�
 
 Ответ **.** Не все знакомы с термином «независимых Cloud», поэтому начнем с определения:
 
-> "Независимых Cloud" состоит из облаков [Azure для государственных организаций](../../azure-government/documentation-government-welcome.md), [Azure для Германии](../../germany/germany-welcome.md)и [Azure для Китая](https://docs.microsoft.com/azure/china/overview-operations) .
+> "Независимых Cloud" состоит из облаков [Azure для государственных организаций](../../azure-government/documentation-government-welcome.md), [Azure для Германии](../../germany/germany-welcome.md)и [Azure для Китая](/azure/china/overview-operations) .
 
 К сожалению, контейнеры Cognitive Services изначально *не* поддерживаются в облаках независимых. Контейнеры могут быть запущены в этих облаках, но они будут извлечены из общедоступного облака и необходимо будет отправить данные об использовании в общедоступную конечную точку.
 

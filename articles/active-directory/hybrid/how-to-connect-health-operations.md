@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a83d1a4bdc2496f874a963b8858192273260cc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91b7bd6d05ee0b992ee166b9acb13aff2e605a2c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89276275"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961011"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Операции Azure Active Directory Connect Health
 В этой статье описаны различные операции, которые можно выполнить с помощью Azure Active Directory (Azure AD) Connect Health.
@@ -136,9 +136,9 @@ Azure AD Connect Health поддерживает управление досту
 2. Выберите **Добавить**.
 3. В области **Выбор роли** выберите роль (например, **Владелец**).<br>
    ![Снимок экрана Azure AD Connect Health и меню настройки Azure RBAC](./media/how-to-connect-health-operations/RBAC_add.png)
-4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Нажмите кнопку **Выбрать**.
-   ![Снимок экрана Azure AD Connect Health и списка ролей RBAC Azure](./media/how-to-connect-health-operations/RBAC_select_users.png)
-5. Щелкните **ОК**.<br>
+4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Щелкните **Выбрать**.
+   ![Снимок экрана Azure AD Connect Health и списка ролей Azure](./media/how-to-connect-health-operations/RBAC_select_users.png)
+5. Нажмите кнопку **ОК**.<br>
 6. После назначения ролей пользователи и группы отобразятся в списке.<br>
    ![Снимок экрана с выделенными Azure AD Connect Health и Azure RBAC и новыми пользователями](./media/how-to-connect-health-operations/RBAC_user_list.png)
 
@@ -166,7 +166,7 @@ Azure AD Connect Health поддерживает управление досту
 
 [//]: # (Конец раздела RBAC)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * [Azure AD Connect Health](./whatis-azure-ad-connect.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)

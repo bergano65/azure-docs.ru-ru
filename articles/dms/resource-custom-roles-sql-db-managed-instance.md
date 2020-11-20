@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: conceptual
 ms.date: 10/25/2019
-ms.openlocfilehash: e950e34a1965e309d226c42bf4b3128cbe3bf3c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dad02735228bb639981bf3f053a74f29d1944e5a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91291509"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961487"
 ---
 # <a name="custom-roles-for-sql-server-to-azure-sql-managed-instance-online-migrations"></a>Пользовательские роли для SQL Server в Azure SQL Управляемый экземпляр оперативные миграции
 
@@ -32,7 +32,7 @@ Azure Database Migration Service использует идентификатор
 > [!NOTE]
 > Последнее требование пользовательской роли может быть удалено по мере развертывания нового кода SQL Управляемый экземпляр в Azure.
 
-**Настраиваемая роль для идентификатора приложения**. Эта роль необходима для Azure Database Migration Service миграции на уровне *ресурсов* или *групп ресурсов* (Дополнительные сведения об идентификаторе приложения см. в статье [Использование портала для создания приложения Azure AD и субъекта-службы, который имеет доступ к ресурсам](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)).
+**Настраиваемая роль для идентификатора приложения**. Эта роль необходима для Azure Database Migration Service миграции на уровне *ресурсов* или *групп ресурсов* (Дополнительные сведения об идентификаторе приложения см. в статье [Использование портала для создания приложения Azure AD и субъекта-службы, который имеет доступ к ресурсам](../active-directory/develop/howto-create-service-principal-portal.md)).
 
 ```json
 {
@@ -83,7 +83,7 @@ Azure Database Migration Service использует идентификатор
 
 Приведенный выше код JSON должен храниться в трех текстовых файлах. для создания ролей можно использовать командлеты AzureRM, AZ PowerShell или Azure CLI, чтобы создать роли с помощью **New-AzureRmRoleDefinition (AzureRM)** или **New-азроледефинитион (AZ)**.
 
-Дополнительные сведения см. в статье [пользовательские роли Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).
+Дополнительные сведения см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md).
 
 После создания этих пользовательских ролей необходимо добавить назначения ролей для пользователей и ИДЕНТИФИКАТОРов приложений в соответствующие ресурсы или группы ресурсов:
 
@@ -148,6 +148,6 @@ Azure Database Migration Service использует идентификатор
 
   ИДЕНТИФИКАТОРы приложений теперь отображаются на вкладке **назначения ролей** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь с руководством по миграции для вашего сценария в [руководстве по миграции базы данных](https://datamigration.microsoft.com/)Майкрософт.
