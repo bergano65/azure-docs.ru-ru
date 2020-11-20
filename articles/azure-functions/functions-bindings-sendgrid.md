@@ -6,12 +6,12 @@ ms.topic: reference
 ms.custom: devx-track-csharp
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: 32734ff9df2e55d24789742cd49984d8da212a17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3d09ec4c4ab578a87f0d983c0f243bee2a84597
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212185"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94991236"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
 
@@ -41,6 +41,7 @@ ms.locfileid: "88212185"
 
 ```cs
 using SendGrid.Helpers.Mail;
+using System.Text.Json;
 
 ...
 
@@ -49,7 +50,7 @@ public static void Run(
     [ServiceBusTrigger("myqueue", Connection = "ServiceBusConnection")] Message email,
     [SendGrid(ApiKey = "CustomSendGridKeyAppSettingName")] out SendGridMessage message)
 {
-var emailObject = JsonConvert.DeserializeObject<OutgoingEmail>(Encoding.UTF8.GetString(email.Body));
+var emailObject = JsonSerializer.Deserialize<OutgoingEmail>(Encoding.UTF8.GetString(email.Body));
 
 message = new SendGridMessage();
 message.AddTo(emailObject.To);
@@ -71,15 +72,16 @@ public class OutgoingEmail
 
 ```cs
 using SendGrid.Helpers.Mail;
+using System.Text.Json;
 
 ...
 
 [FunctionName("SendEmail")]
-public static async void Run(
+public static async Task Run(
  [ServiceBusTrigger("myqueue", Connection = "ServiceBusConnection")] Message email,
  [SendGrid(ApiKey = "CustomSendGridKeyAppSettingName")] IAsyncCollector<SendGridMessage> messageCollector)
 {
- var emailObject = JsonConvert.DeserializeObject<OutgoingEmail>(Encoding.UTF8.GetString(email.Body));
+ var emailObject = JsonSerializer.Deserialize<OutgoingEmail>(Encoding.UTF8.GetString(email.Body));
 
  var message = new SendGridMessage();
  message.AddTo(emailObject.To);
@@ -189,7 +191,7 @@ public class Message
 ```javascript
 module.exports = function (context, input) {
     var message = {
-         "personalizations": [ { "to": [ { "email": "sample@sample.com" } ] } ],
+         "personalizations": [ { "to": [ { "email": "sample@sample.com" } ] } ],
         from: { email: "sender@contoso.com" },
         subject: "Azure news",
         content: [{
@@ -357,13 +359,13 @@ public static void Run(
 
 | *function.js* свойства | Свойство атрибута или заметки | Описание | Необязательный |
 |--------------------------|-------------------------------|-------------|----------|
-| type |Недоступно| Нужно задать значение `sendGrid`.| Нет |
-| direction |Недоступно| Нужно задать значение `out`.| Нет |
-| name |Недоступно| Имя переменной, используемое в коде функции для запроса или текста запроса. Это значение равно `$return` при наличии только одного возвращаемого значения. | Нет |
-| apiKey | ApiKey | Имя параметра приложения, в котором содержится ваш ключ API. Если параметр не задан, по умолчанию используется имя параметра приложения *AzureWebJobsSendGridApiKey*.| Нет |
+| тип |Недоступно| Нужно задать значение `sendGrid`.| нет |
+| direction |Недоступно| Нужно задать значение `out`.| нет |
+| name |Недоступно| Имя переменной, используемое в коде функции для запроса или текста запроса. Это значение равно `$return` при наличии только одного возвращаемого значения. | нет |
+| apiKey | ApiKey | Имя параметра приложения, в котором содержится ваш ключ API. Если параметр не задан, по умолчанию используется имя параметра приложения *AzureWebJobsSendGridApiKey*.| нет |
 | значение| Кому | Адрес электронной почты получателя. | Да |
-| из| Как получить | Адрес электронной почты отправителя. |  Да |
-| subject| Тема | Тема сообщения электронной почты. | Да |
+| из| От | Адрес электронной почты отправителя. |  Да |
+| subject| Субъект | Тема сообщения электронной почты. | Да |
 | text| Текст | Содержимое электронной почты. | Да |
 
 Необязательные свойства могут иметь значения по умолчанию, определенные в привязке, а также добавлять или переопределять программно.
@@ -395,7 +397,7 @@ public static void Run(
 |из|Недоступно|Адрес электронной почты для всех функций.| 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

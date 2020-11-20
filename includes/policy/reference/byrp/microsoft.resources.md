@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: f9916500aeca20ef66a0765255cb1862f6a8e6ad
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 32ee2ce40533a885e59cbfd834cc295fb56f8a3e
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94744786"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94988718"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -19,7 +19,9 @@ ms.locfileid: "94744786"
 |[Для подписки нужно указать номер телефона контактного лица по вопросам безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb4d66858-c922-44e3-9566-5cdb7a7be744) |Введите номер телефона для получения уведомлений при обнаружении скомпрометированных ресурсов в Центре безопасности Azure |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Security_contact_phone_number.json) |
 |[Журнал действий должен храниться как минимум один год](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb02aacc0-b073-424e-8298-42b22829ee0a) |Эта политика осуществляет аудит журнала действий, если не настроен неограниченный период хранения или срок хранения, равный 365 дням (задано 0 дней хранения). |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLogRetention_365orGreater.json) |
 |[Добавление тегов в группы ресурсов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F726aca4c-86e9-4b04-b0c5-073027359532) |Добавляет указанный тег и значение при создании или обновлении любой группы ресурсов, пропустившей этот тег. Существующие группы ресурсов можно исправить, активировав задачу исправления. Если тег существует с другим значением, он не изменится. |modify |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Tags/AddTag_ResourceGroup_Modify.json) |
+|[Добавление тега к подпискам](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F96d9a89c-0d67-41fc-899d-2b9599f76a24) |Добавляет указанный тег и значение в подписки через задачу исправления. Если тег существует с другим значением, он не изменится. [https://aka.ms/azurepolicyremediation](https://aka.ms/azurepolicyremediation)Дополнительные сведения об исправлении политик см. в разделе. |modify |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Tags/AddTag_Subscription_Modify.json) |
 |[Добавление или замена тегов в группах ресурсов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fd157c373-a6c4-483d-aaad-570756956268) |Добавляет или заменяет указанный тег и значение при создании или обновлении любой группы ресурсов. Существующие группы ресурсов можно исправить, активировав задачу исправления. |modify |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Tags/AddOrReplaceTag_ResourceGroup_Modify.json) |
+|[Добавление или замена тега в подписках](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F61a4d60b-7326-440e-8051-9f94394d4dd1) |Добавляет или заменяет заданный тег и значение в подписках с помощью задачи исправления. Существующие группы ресурсов можно исправить, активировав задачу исправления. [https://aka.ms/azurepolicyremediation](https://aka.ms/azurepolicyremediation)Дополнительные сведения об исправлении политик см. в разделе. |modify |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Tags/AddOrReplaceTag_Subscription_Modify.json) |
 |[Разрешенные расположения для групп ресурсов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe765b5de-1225-4ba3-bd56-1ac6695af988) |Эта политика позволяет ограничить расположения, которые ваша организация может указать при создании групп ресурсов. Используется для соблюдения географических требований. |deny |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/ResourceGroupAllowedLocations_Deny.json) |
 |[Для выполнения определенных административных операций должно существовать оповещение журнала действий.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb954148f-4c11-4c38-8221-be76711e194a) |Эта политика выполняет аудит определенных административных операций без настроенных оповещений журнала действий. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_AdministrativeOperations_Audit.json) |
 |[Для определенных операций политики должно существовать оповещение журнала действий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |Эта политика выполняет аудит определенных операций политики без настроенных оповещений журнала действий. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |

@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: c7a94a24bd825249859ff699ab82ce4d3ae8fce1
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b309ce01595e2e62bea7f78ae728d83bc7d9b9be
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842249"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992171"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -107,7 +107,7 @@ ms.locfileid: "94842249"
 > [!NOTE]
 >
 > - Проверка подлинности Azure AD записывается в журналы аудита SQL Azure, но не в журналы входа Azure AD.
-> - Разрешения RBAC, предоставленные в Azure, не применяются к базе данных SQL Azure или к разрешениям SQL Управляемый экземпляр. Такие разрешения должны создаваться и сопоставляться вручную с помощью существующих разрешений SQL.
+> - Разрешения RBAC Azure, предоставленные в Azure, не применяются к базе данных SQL Azure или к разрешениям SQL Управляемый экземпляр. Такие разрешения должны создаваться и сопоставляться вручную с помощью существующих разрешений SQL.
 > - На стороне клиента для аутентификации Azure AD требуется доступ к Интернету или через определенный пользователем маршрут (UDR) к виртуальной сети.
 > - Маркер доступа Azure AD кэшируется на стороне клиента, и его время существования зависит от конфигурации токена. См. статью Настройка [времени жизни маркеров в Azure Active Directory](../../active-directory/develop/active-directory-configurable-token-lifetimes.md)
 > - Рекомендации по устранению неполадок аутентификация Azure AD см. в следующем блоге: [Устранение неполадок Azure AD](https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991).

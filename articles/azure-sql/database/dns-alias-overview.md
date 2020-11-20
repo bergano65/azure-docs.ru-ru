@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: genemi, jrasnick, vanto
 ms.date: 06/26/2019
-ms.openlocfilehash: 4be3f8c6cd416743c2d1118cf2de01073c3022ff
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 25c2157a8de237d0ec66caa72d59c810d419ac76
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790497"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989128"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>Псевдоним DNS для Базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "92790497"
   - При удалении сервера система Azure также удаляет все псевдонимы DNS, которые ссылаются на сервер.
 - *Отсутствие привязки к какому-либо региону.* Псевдонимы DNS не привязаны к региону. Любые псевдонимы DNS могут быть обновлены для ссылки на сервер, находящийся в любом географическом регионе.
   - Однако при этом оба сервера должны находится в одной *подписке* Azure.
-- *Разрешения.* Для управления псевдонимом DNS пользователю нужно разрешение *Участник на уровне сервера* или разрешение с большими правами. Дополнительные сведения см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).
+- *Разрешения.* Для управления псевдонимом DNS пользователю нужно разрешение *Участник на уровне сервера* или разрешение с большими правами. Дополнительные сведения см. в статье Начало [работы с управлением доступом на основе ролей Azure в портал Azure](../../role-based-access-control/overview.md).
 
 ## <a name="manage-your-dns-aliases"></a>Управление псевдонимами DNS
 

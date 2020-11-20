@@ -12,12 +12,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 08/17/2020
-ms.openlocfilehash: a9ef15bf595d84613b5f41a73e5526cb0fe79d5b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: c5caf48dd4e2860ec5f4815eb38629ad66391a2c
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841416"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990114"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL
 
@@ -105,7 +105,7 @@ ms.locfileid: "94841416"
 
 7. На странице Администратор Azure AD найдите пользователя, выберите пользователя или группу в качестве администратора, а затем нажмите **кнопку Выбрать**.
 
-   На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователей или группы, которые выделены серым цветом, нельзя выбрать; они не поддерживаются ролью администратора Azure AD. Список поддерживаемых администраторов приведен в разделе [Функции и ограничения Azure AD](authentication-aad-overview.md#azure-ad-features-and-limitations). Управление доступом на основе ролей (RBAC) применяется только к портал Azure и не распространяется на базу данных SQL, Управляемый экземпляр SQL или Azure синапсе.
+   На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователей или группы, которые выделены серым цветом, нельзя выбрать; они не поддерживаются ролью администратора Azure AD. Список поддерживаемых администраторов приведен в разделе [Функции и ограничения Azure AD](authentication-aad-overview.md#azure-ad-features-and-limitations). Управление доступом на основе ролей Azure (Azure RBAC) применяется только к портал Azure и не распространяется на базу данных SQL, Управляемый экземпляр SQL или Azure синапсе.
 
     ![Добавление администратора Azure Active Directory](./media/authentication-aad-configure/add-azure-active-directory-admin.png)
 
@@ -214,7 +214,7 @@ Set-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup0
 Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstanceName01" -Confirm -PassThru
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Вы также можете подготавливать администратора Azure AD для Управляемый экземпляр SQL, вызвав следующие команды интерфейса командной строки:
 
@@ -253,7 +253,7 @@ Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGro
 
     ![Серверы SQL Server, настроенные Active Directory Admin](./media/authentication-aad-configure/sql-servers-set-active-directory-admin.png)  
 
-5. На странице **Добавление администратора** найдите пользователя, выберите пользователя или группу в качестве администратора, а затем нажмите **кнопку Выбрать**. На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователей или группы, которые выделены серым цветом, нельзя выбрать; они не поддерживаются ролью администратора Azure AD. (См. список поддерживаемых администраторов в разделе **функции и ограничения Azure AD** в статье [Использование Azure Active Directory проверки подлинности для проверки подлинности с помощью базы данных SQL или Azure синапсе](authentication-aad-overview.md).) Управление доступом на основе ролей (RBAC) применяется только к порталу и не распространяется на SQL Server.
+5. На странице **Добавление администратора** найдите пользователя, выберите пользователя или группу в качестве администратора, а затем нажмите **кнопку Выбрать**. На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователей или группы, которые выделены серым цветом, нельзя выбрать; они не поддерживаются ролью администратора Azure AD. (См. список поддерживаемых администраторов в разделе **функции и ограничения Azure AD** в статье [Использование Azure Active Directory проверки подлинности для проверки подлинности с помощью базы данных SQL или Azure синапсе](authentication-aad-overview.md).) Управление доступом на основе ролей Azure (Azure RBAC) применяется только к порталу и не распространяется на SQL Server.
 
     ![Выбор Azure Active Directory администратора](./media/authentication-aad-configure/select-azure-active-directory-admin.png)  
 
@@ -320,7 +320,7 @@ Get-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -Serve
 Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server"
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Вы можете подготавливать администратора Azure AD, вызвав следующие команды интерфейса командной строки:
 

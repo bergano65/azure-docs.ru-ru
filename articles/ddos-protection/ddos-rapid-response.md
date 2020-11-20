@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 36e61c8d1e0e41fd981f5483eff1f30814b22b92
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 3655b117b641a6179bd6539aaf3f75af07f21a1a
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905567"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992375"
 ---
 # <a name="azure-ddos-rapid-response"></a>Быстрый отклик Azure от атак DDoS
 
 При активном доступе клиенты стандарта защиты Azure от атак DDoS имеют доступ к группе от атак DDoS быстрого реагирования (ДРР), которая может помочь при расследовании атак и анализе после атаки.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Прежде чем выполнять действия, описанные в этом руководстве, необходимо создать [план защиты Azure от атак DDoS Standard](manage-ddos-protection.md).
 
@@ -38,7 +38,7 @@ ms.locfileid: "92905567"
 ## <a name="engage-drr-during-an-active-attack"></a>Привлечение ДРР во время активной атаки
 
 1. В портал Azure при создании нового запроса на поддержку выберите **тип проблемы** в качестве технической.
-2. Выберите **Служба** как **Защита от атак DDoS** .
+2. Выберите **Служба** как **Защита от атак DDoS**.
 3. Выберите ресурс в раскрывающемся меню ресурсов. _Необходимо выбрать план от атак DDoS, связанный с виртуальной сетью, защищенной с помощью от атак DDoS Protection Standard, для привлечения ДРР._
 
     ![Выбор ресурса](./media/ddos-rapid-response/choose-resource.png)
@@ -51,7 +51,7 @@ ms.locfileid: "92905567"
 
 ДРР соответствует модели поддержки Azure Rapid Response. Дополнительные сведения о быстром отклике см. в разделе [Поддержка области действия и скорости реагирования](https://azure.microsoft.com/en-us/support/plans/response/) .
 
-Дополнительные сведения см. в [стандартной документации по защите от атак DDoS](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview).
+Дополнительные сведения см. в [стандартной документации по защите от атак DDoS](./ddos-protection-overview.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

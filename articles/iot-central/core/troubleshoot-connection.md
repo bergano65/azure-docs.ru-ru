@@ -8,12 +8,12 @@ ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
 ms.custom: device-developer, devx-track-azurecli
-ms.openlocfilehash: f4f35aed10465fb06460f2818a876444bf989e01
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 2bbf400840c968587de3a0a0951d28c7c35b210f
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843967"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990896"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, при которых данные с устройств не отображаются в Azure IoT Central
 
@@ -132,10 +132,10 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 
 | Состояние подготовки устройства | Описание | Возможное устранение рисков |
 | - | - | - |
-| Подготовлено | Не удается немедленно распознать ошибку. | Недоступно |
+| Подготовлено | Не удается немедленно распознать ошибку. | Н/Д |
 | Зарегистрировано | Устройство еще не подключено к IoT Central. | Проверьте журналы устройств на наличие проблем с подключением. |
 | Блокировано | Устройству запрещено подключаться к IoT Central. | Устройству запрещено подключаться к IoT Central приложению. Разблокируйте устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [блочные устройства](concepts-get-connected.md#device-status-values). |
-| Неутвержденные | Устройство не утверждено. | Устройство не утверждено для подключения к IoT Central приложению. Утвердите устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [утверждение устройств](concepts-get-connected.md#connect-without-registering-devices) . |
+| Неутвержденные | Устройство не утверждено. | Устройство не утверждено для подключения к IoT Central приложению. Утвердите устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [утверждение устройств](concepts-get-connected.md#device-registration) . |
 | Несвязанные | Устройство не связано с шаблоном устройства. | Свяжите устройство с шаблоном устройства, чтобы IoT Central знала, как анализировать данные. |
 
 Дополнительные сведения о [кодах состояния устройств](concepts-get-connected.md#device-status-values).

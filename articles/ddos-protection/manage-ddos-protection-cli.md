@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 47733f4b141b0064e966d0c083fd6414405f65f9
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: e2f5528fde977520dc0aa0215a480a40ef8f1e7d
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095549"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989621"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard-using-azure-cli"></a>Краткое руководство. Создание и Настройка стандарта защиты от атак DDoS Azure с помощью Azure CLI
 
@@ -39,7 +39,7 @@ ms.locfileid: "93095549"
 
 В Azure выделите связанные ресурсы группе ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую.
 
-Для создания группы ресурсов используйте команду [az group create](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create&preserve-view=true). В этом примере мы назовем нашу группу ресурсов _MyResourceGroup_ и используем расположение _восточной части США_ :
+Для создания группы ресурсов используйте команду [az group create](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-create). В этом примере мы назовем нашу группу ресурсов _MyResourceGroup_ и используем расположение _восточной части США_ :
 
 ```azurecli-interactive
 az group create \
@@ -47,7 +47,7 @@ az group create \
     --location eastus
 ```
 
-Теперь создайте план защиты от атак DDoS с именем _миддоспротектионплан_ :
+Теперь создайте план защиты от атак DDoS с именем _миддоспротектионплан_:
 
 ```azurecli-interactive
 az network ddos-protection create \
@@ -59,7 +59,7 @@ az network ddos-protection create \
 
 ### <a name="enable-ddos-protection-for-a-new-virtual-network"></a>Включение защиты от атак DDoS для новой виртуальной сети
 
-Вы можете включить защиту от атак DDoS при создании виртуальной сети. В этом примере мы назовем нашу виртуальную сеть _MyVnet_ : 
+Вы можете включить защиту от атак DDoS при создании виртуальной сети. В этом примере мы назовем нашу виртуальную сеть _MyVnet_: 
 
 ```azurecli-interactive
 az network vnet create \
@@ -73,7 +73,7 @@ az network vnet create \
 
 ### <a name="enable-ddos-protection-for-an-existing-virtual-network"></a>Включение защиты от атак DDoS для существующей виртуальной сети
 
-При [создании плана защиты от атак DDoS](#create-a-ddos-protection-plan)можно связать с планом одну или несколько виртуальных сетей. Чтобы добавить несколько виртуальных сетей, просто перечислите имена или идентификаторы, разделенные пробелами. В этом примере мы добавим _MyVnet_ :
+При [создании плана защиты от атак DDoS](#create-a-ddos-protection-plan)можно связать с планом одну или несколько виртуальных сетей. Чтобы добавить несколько виртуальных сетей, просто перечислите имена или идентификаторы, разделенные пробелами. В этом примере мы добавим _MyVnet_:
 
 ```azurecli-interactive
 az group create \
@@ -111,7 +111,7 @@ az network ddos-protection show \
 
 Вы можете разместить ресурсы для следующего руководства. Удалите группу ресурсов _MyResourceGroup_ , если она больше не нужна. При удалении группы ресурсов также удаляется план защиты от атак DDoS и все связанные с ним ресурсы. 
 
-Чтобы удалить группу ресурсов, выполните команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az_group_delete&preserve-view=true).
+Чтобы удалить группу ресурсов, выполните команду [az group delete](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az_group_delete).
 
 ```azurecli-interactive
 az group delete \

@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 28e977ed68a3f288f9f86a0c2be02af4cbb26ba4
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 96e22beb9f9b088e698f0db12104f526af2b936b
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886567"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989459"
 ---
 # <a name="configure-ddos-attack-mitigation-reports-and-flow-logs"></a>Настройка журналов потоков и отчетов об устранении рисков атак DDoS 
 
-Защита от атак DDoS Azure (цен. категория "Стандартный") обеспечивает подробные сведения об атаках и визуализацию с помощью аналитики атак DDoS. Клиенты, защищающие виртуальные сети от атак DDoS, могут просматривать подробные сведения о трафике атаки и действиях, предпринятых для устранения атак, благодаря отчетам об устранении рисков атак и журналам потоков устранения рисков. Расширенные телеметрические данные предоставляются через Azure Monitor включая подробные метрики в течение от атак DDoS атаки. Предупреждения можно настроить для любой метрики Azure Monitor, предоставленной с помощью службы "Защита от атак DDoS". Ведение журнала может быть дополнительно интегрировано с [Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-ddos-protection), Splunk (концентраторы событий Azure), OMS log Analytics и хранилищем Azure для расширенного анализа через интерфейс диагностики Azure Monitor.
+Защита от атак DDoS Azure (цен. категория "Стандартный") обеспечивает подробные сведения об атаках и визуализацию с помощью аналитики атак DDoS. Клиенты, защищающие виртуальные сети от атак DDoS, могут просматривать подробные сведения о трафике атаки и действиях, предпринятых для устранения атак, благодаря отчетам об устранении рисков атак и журналам потоков устранения рисков. Расширенные телеметрические данные предоставляются через Azure Monitor включая подробные метрики в течение от атак DDoS атаки. Предупреждения можно настроить для любой метрики Azure Monitor, предоставленной с помощью службы "Защита от атак DDoS". Ведение журнала может быть дополнительно интегрировано с [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (концентраторы событий Azure), OMS log Analytics и хранилищем Azure для расширенного анализа через интерфейс диагностики Azure Monitor.
 
-В этом руководстве вы узнаете, как:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Просмотр и настройка отчетов об устранении уязвимости от атак DDoS
@@ -44,9 +44,9 @@ ms.locfileid: "94886567"
 5. Для параметра **Тип ресурса** выберите значение **Общедоступный IP-адрес**, затем выберите общедоступный IP-адрес, для метрик которого требуется вести журнал.
 6. Выберите **Turn on diagnostics to collect the DDoSMitigationReports log** (Включить диагностику для сбора журнала DDoSMitigationReports) и выберите необходимые параметры из перечисленных ниже.
 
-    - **Archive to a storage account** (Архивация в учетную запись хранения). Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [архивирование журналов ресурсов](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Stream to an event hub** (Потоковая передача в концентратор событий). Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в статье [потоковая передача журналов ресурсов в концентратор событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Send to log Analytics**: записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. [в разделе Получение журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    - **Archive to a storage account** (Архивация в учетную запись хранения). Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [архивирование журналов ресурсов](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage).
+    - **Stream to an event hub** (Потоковая передача в концентратор событий). Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в статье [потоковая передача журналов ресурсов в концентратор событий](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs).
+    - **Send to log Analytics**: записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. [в разделе Получение журналов для использования в журналах Azure Monitor](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-log-analytics-workspace).
 
 Добавочный отчет об устранении рисков и отчет после устранения рисков атаки содержат приведенные ниже поля.
 - "Attack vectors" (Направления атаки).
@@ -66,15 +66,15 @@ ms.locfileid: "94886567"
 5. Для параметра **Тип ресурса** выберите значение **Общедоступный IP-адрес**, затем выберите общедоступный IP-адрес, для метрик которого требуется вести журнал.
 6. Выберите **Turn on diagnostics to collect the DDoSMitigationFlowLogs log** (Включить диагностику для сбора журнала DDoSMitigationFlowLogs) и выберите необходимые параметры из перечисленных ниже.
 
-    - **Archive to a storage account** (Архивация в учетную запись хранения). Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [архивирование журналов ресурсов](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Stream to an event hub** (Потоковая передача в концентратор событий). Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в статье [потоковая передача журналов ресурсов в концентратор событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Send to log Analytics**: записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. [в разделе Получение журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    - **Archive to a storage account** (Архивация в учетную запись хранения). Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [архивирование журналов ресурсов](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage).
+    - **Stream to an event hub** (Потоковая передача в концентратор событий). Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в статье [потоковая передача журналов ресурсов в концентратор событий](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs).
+    - **Send to log Analytics**: записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. [в разделе Получение журналов для использования в журналах Azure Monitor](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-log-analytics-workspace).
 
 Этот [шаблон](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Enable%20Diagnostic%20Logging/Azure%20Policy) создает определение политики Azure, чтобы включить ведение журнала диагностики.
 
 ### <a name="azure-sentinel-data-connector"></a>Соединитель данных Sentinel Azure
 
-Вы можете подключить к Azure Sentinel, просматривать и анализировать данные в книгах, создавать пользовательские оповещения и внедрять их в процессы исследования. Чтобы подключиться к Azure Sentinel, см. статью [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-ddos-protection). 
+Вы можете подключить к Azure Sentinel, просматривать и анализировать данные в книгах, создавать пользовательские оповещения и внедрять их в процессы исследования. Чтобы подключиться к Azure Sentinel, см. статью [Подключение к Azure Sentinel](../sentinel/connect-azure-ddos-protection.md). 
 
 ![Соединитель от атак DDoS Azure Sentinel](./media/ddos-attack-telemetry/azure-sentinel-ddos.png)
 
@@ -121,4 +121,3 @@ ms.locfileid: "94886567"
 
 > [!div class="nextstepaction"]
 > [Тестирование через моделирования](test-through-simulations.md)
-

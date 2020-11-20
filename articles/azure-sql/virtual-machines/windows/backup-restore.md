@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: a386ea5149b36a4e82b4c935e2373f505c6c83cf
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: db270224a753f815a2d94e6a1fa79ebbedf49278
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789885"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94991576"
 ---
 # <a name="backup-and-restore-for-sql-server-on-azure-vms"></a>Резервное копирование и восстановление SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -71,7 +71,7 @@ ms.locfileid: "92789885"
 - **15-минутная целевая точка восстановления (RPO).** Резервное копирование журналов транзакций SQL можно настроить на каждые 15 минут.
 - **Восстановление до точки во времени.** С помощью портала базы данных можно восстанавливать до определенной точки во времени без необходимости вручную восстанавливать полные и разностные резервные копии, а также резервные копии журналов.
 - **Консолидированные оповещения об ошибках по электронной почте.** Настройте отправку консолидированных уведомлений по электронной почте в случае возникновения каких-либо сбоев.
-- **Управление доступом на основе ролей.** На портале можно определить пользователей, которые могут управлять резервным копированием и восстановлением.
+- **Управление доступом на основе ролей в Azure**. Определите, кто может управлять операциями резервного копирования и восстановления с помощью портала.
 
 Краткий обзор и демонстрация этой возможности представлена в следующем видео:
 
@@ -110,7 +110,7 @@ ms.locfileid: "92789885"
 
 - **SQL Server 2016 и 2017:** [Резервное копирование SQL Server в указанное расположение](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service).
 - **SQL Server 2014:** [Резервное копирование SQL Server 2014 в указанное расположение](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service?viewFallbackFrom=sql-server-2014).
-- **SQL Server 2012** : [Резервное копирование SQL Server 2012 в указанное расположение](/previous-versions/sql/sql-server-2012/jj919148(v=sql.110)).
+- **SQL Server 2012**: [Резервное копирование SQL Server 2012 в указанное расположение](/previous-versions/sql/sql-server-2012/jj919148(v=sql.110)).
 
 ### <a name="managed-backup"></a>Управляемое резервное копирование
 

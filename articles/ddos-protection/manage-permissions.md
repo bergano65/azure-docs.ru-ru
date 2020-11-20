@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 10b10309e438bab3c99cb2ed7202eaa272d24abe
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: dec2c845780b62e9a595c73504037142c511c0e6
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905639"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989417"
 ---
 # <a name="manage-ddos-protection-plans-permissions-and-restrictions"></a>Управление планами защиты от атак DDoS: разрешения и ограничения
 
 План защиты от атак DDoS работает в разных регионах и подписках. Один и тот же план можно связать с виртуальными сетями из других подписок в разных регионах по всему клиенту. Для подписки, с которой связан план, выставляется ежемесячный счет за его использование, а также за избыточное использование в случае, если количество защищенных общедоступных IP-адресов превышает 100. Дополнительные сведения о ценах на защиту от атак DDoS приведены [здесь](https://azure.microsoft.com/pricing/details/ddos-protection/).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Прежде чем выполнять действия, описанные в этом руководстве, необходимо создать [план защиты Azure от атак DDoS Standard](manage-ddos-protection.md).
 
@@ -37,7 +37,7 @@ ms.locfileid: "92905639"
 | Microsoft.Network/ddosProtectionPlans/delete      | Удаление плана защиты от атак DDoS.            |
 | Microsoft.Network/ddosProtectionPlans/join/action | Присоединение плана защиты от атак DDoS.              |
 
-Чтобы включить защиту от атак DDoS для виртуальной сети, учетной записи также должны быть назначены соответствующие [действия для виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#permissions).
+Чтобы включить защиту от атак DDoS для виртуальной сети, учетной записи также должны быть назначены соответствующие [действия для виртуальных сетей](../virtual-network/manage-virtual-network.md#permissions).
 
 ## <a name="azure-policy"></a>Политика Azure
 
@@ -51,4 +51,4 @@ ms.locfileid: "92905639"
 Чтобы узнать, как просмотреть и настроить данные телеметрии для плана защиты от атак DDoS, перейдите к руководствам.
 
 > [!div class="nextstepaction"]
-> [Просмотр и настройка телеметрии защиты от атак DDoS](telemetry-monitoring-alerting.md)
+> [Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии](telemetry-monitoring-alerting.md)

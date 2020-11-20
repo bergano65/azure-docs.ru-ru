@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/28/2020
-ms.openlocfilehash: 25f2c4f4698785326f80c24d3749e7585e85d5bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e49b713aca23c0373fa71d772ef7567372abe456
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91309512"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990573"
 ---
 # <a name="devops-practices-for-luis"></a>Рекомендации по использованию DevOps с LUIS
 
@@ -54,11 +54,11 @@ ms.locfileid: "91309512"
 
 > [!TIP]
 > Если вы работаете с экспортом JSON приложения LUIS, [его можно преобразовать в лудовн](https://github.com/microsoft/botframework-cli/tree/master/packages/luis#bf-luisconvert) с помощью [BotBuilder-Tools Luis CLI](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS). Используйте `--sort` параметр, чтобы обеспечить сортировку целей и фразы продолжительностью в алфавитном порядке.  
-> Обратите внимание, что **. ** Функция экспорта Lu, встроенная в портал Luis, уже Сортирует выходные данные.
+> Обратите внимание, что **.** Функция экспорта Lu, встроенная в портал Luis, уже Сортирует выходные данные.
 
 ### <a name="build-the-luis-app-from-source"></a>Создание приложения LUIS из источника
 
-Для приложения *Luis для* [создания новой версии приложения Luis путем импорта `.lu` источника](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) , [обучения версии](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и[ее публикации](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app). Это можно сделать на портале LUIS или в командной строке:
+Для приложения *Luis для* [создания новой версии приложения Luis путем импорта `.lu` источника](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) , [обучения версии](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [ее публикации](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app). Это можно сделать на портале LUIS или в командной строке:
 
 - Используйте портал LUIS для [импорта `.lu` версии](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) приложения из системы управления версиями, [обучения](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [публикации](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app) приложения.
 
@@ -74,7 +74,7 @@ ms.locfileid: "91309512"
 
 - [Файлы пакетного теста](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-batch-test#batch-file-format) (фразы продолжительностью и ожидаемые результаты), используемые для тестирования производительности
 
-### <a name="credentialsand-keys-are-not-checked-in"></a>Учетные данные и ключи не возвращены
+### <a name="credentials-and-keys-are-not-checked-in"></a>Учетные данные и ключи не возвращены
 
 Не включайте ключи подписок или аналогичные конфиденциальные значения в файлы, которые вы верните в репозиторий, где они могут быть видны неавторизованному персоналу. Ключи и другие значения, которые следует запретить при возврате, включают:
 
@@ -211,7 +211,7 @@ ms.locfileid: "91309512"
 
 Когда изменения в запросе на вытягивание объединяются в главную базу, то есть следует применить управление версиями, чтобы все обновления в главной базе были установлены независимо.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [тестировании для Luis DevOps](luis-concept-devops-testing.md)
 * Узнайте, как [реализовать DevOps для Luis с GitHub](luis-how-to-devops-with-github.md)

@@ -5,14 +5,14 @@ services: web-application-firewall
 ms.topic: article
 author: winthrop28
 ms.service: web-application-firewall
-ms.date: 11/19/2020
+ms.date: 11/20/2020
 ms.author: victorh
-ms.openlocfilehash: 9fb8bf689e2767f681994258c4d2c51be41d6c68
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b546b043b856fd6ec69acd63fd69a01c48d0553b
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952137"
+ms.locfileid: "94990131"
 ---
 # <a name="azure-web-application-firewall-waf-policy-overview"></a>Обзор политики брандмауэра веб-приложения Azure (WAF)
 
@@ -43,7 +43,7 @@ ms.locfileid: "94952137"
 
 Как и в случае с политиками WAF для каждого сайта, более конкретные политики переопределяют менее конкретные. Это означает, что политика на основе универсального кода ресурса (URI) на карте URL-пути переопределяет любую политику для каждого или глобального WAF, расположенную выше.
 
-## <a name="example"></a>Пример
+### <a name="example"></a>Пример
 
 Предположим, у вас есть три сайта: contoso.com, fabrikam.com и adatum.com, которые находятся за одним шлюзом приложений. Вы хотите применить WAF ко всем трем сайтам, но вам потребуется дополнительная защита с помощью adatum.com, так как клиенты могут посещать, просматривать и покупать продукты.
 
@@ -60,6 +60,6 @@ ms.locfileid: "94952137"
 Все новые параметры WAF брандмауэра веб-приложения (настраиваемые правила, конфигурации набора управляемых правил, исключения и т. д.) существуют в политике WAF. Если у вас уже есть WAF, эти параметры могут по-прежнему существовать в конфигурации WAF. Дополнительные сведения о переходе к новой политике WAF см. [в статье Миграция конфигурации WAF в политику WAF](./migrate-policy.md). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создайте политики "на сайт" и "на универсальный код ресурса" с помощью Azure PowerShell](per-site-policies.md).
