@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 07/31/2020
-ms.openlocfilehash: b3919cbbe0ba7a796a21ae566afb8e2d9fa784db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0362c9ed4f736474dbd49e1bfaf1373e0f48acd6
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88716679"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992715"
 ---
 # <a name="transform-json-and-xml-using-liquid-templates-as-maps-in-azure-logic-apps"></a>Преобразование JSON и XML с помощью шаблонов жидкостей в виде карт в Azure Logic Apps
 
@@ -80,7 +80,7 @@ ms.locfileid: "88716679"
 
    ![Выбор учетной записи интеграции](./media/logic-apps-enterprise-integration-liquid-transform/select-integration-account.png)
 
-1. В области **Обзор** в разделе **компоненты**выберите **Maps**.
+1. В области **Обзор** в разделе **компоненты** выберите **Maps**.
 
     ![Выберите плитку "карты"](./media/logic-apps-enterprise-integration-liquid-transform/select-maps-tile.png)
 
@@ -152,7 +152,7 @@ ms.locfileid: "88716679"
 
   * Если шаблон использует [фильтры жидкостей](https://shopify.github.io/liquid/basics/introduction/#filters), убедитесь, что соблюдены [соглашения об именовании DotLiquid и C#](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers#filter-and-output-casing), в которых используется *регистр предложений*. Для всех преобразований жидкость убедитесь, что имена фильтров в шаблоне также используют регистр предложений. В противном случае фильтры не будут работать.
 
-    Например, при использовании `replace` фильтра используйте `Replace` , а не `replace` . То же правило применяется при попытке испытать примеры в [DotLiquid Online](http://dotliquidmarkup.org/try-online). Дополнительные сведения см. в разделе [Shopify жидкость Filters](https://shopify.dev/docs/themes/liquid/reference/filters) and [DotLiquid жидкость Filters](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Developers#create-your-own-filters). Спецификация Shopify включает примеры для каждого фильтра, поэтому для сравнения можно попробовать эти примеры в [DotLiquid-Try в Интернете](https://dotliquidmarkup.org/try-online).
+    Например, при использовании `replace` фильтра используйте `Replace` , а не `replace` . То же правило применяется при попытке испытать примеры в [DotLiquid Online](http://dotliquidmarkup.org/try-online). Дополнительные сведения см. в разделе [Shopify жидкость Filters](https://shopify.dev/docs/themes/liquid/reference/filters) and [DotLiquid жидкость Filters](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Developers#create-your-own-filters). Спецификация Shopify включает примеры для каждого фильтра, поэтому для сравнения можно попробовать эти примеры в [DotLiquid-Try в Интернете](http://dotliquidmarkup.org/try-online).
 
   * `json`Фильтр из фильтров расширений Shopify в настоящее время [не реализован в DotLiquid](https://github.com/dotliquid/dotliquid/issues/384). Как правило, этот фильтр можно использовать для подготовки текстового вывода для синтаксического анализа строк JSON, но вместо этого необходимо использовать `Replace` фильтр.
 
@@ -244,7 +244,7 @@ ms.locfileid: "88716679"
 
 * [Язык и примеры Shopify жидкости](https://shopify.github.io/liquid/basics/introduction/)
 * [DotLiquid](http://dotliquidmarkup.org/)
-* [DotLiquid — попробуйте в Интернете](https://dotliquidmarkup.org/try-online)
+* [DotLiquid — попробуйте в Интернете](http://dotliquidmarkup.org/try-online)
 * [DotLiquid GitHub](https://github.com/dotliquid/dotliquid)
 * [Проблемы GitHub DotLiquid](https://github.com/dotliquid/dotliquid/issues/)
 * Дополнительные сведения о [картах](../logic-apps/logic-apps-enterprise-integration-maps.md)
