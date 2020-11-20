@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.date: 02/07/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4
-ms.openlocfilehash: 119436cbe03e619b0d09df30ab2c5dc34126b0ce
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 20d44fd3150f9da31e9c242017e597d4f46e4d5d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629399"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963935"
 ---
 # <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Запуск конвейера Машинное обучение из приложения логики
 
@@ -60,7 +60,7 @@ ms.locfileid: "94629399"
     > [!NOTE]
     > Этот триггер будет отслеживать выбранный контейнер, но не будет отслеживать вложенные папки.
 
-1. Добавьте действие HTTP, которое будет выполняться при обнаружении нового или измененного большого двоичного объекта. Выберите **+ новый шаг** , затем найдите и выберите действие HTTP.
+1. Добавьте действие HTTP, которое будет выполняться при обнаружении нового или измененного большого двоичного объекта. Выберите **+ новый шаг**, затем найдите и выберите действие HTTP.
 
   > [!div class="mx-imgBorder"]
   > ![Поиск действия HTTP](media/how-to-trigger-published-pipeline/search-http.png)
@@ -96,7 +96,7 @@ ms.locfileid: "94629399"
 1. Выберите **сохранить** , и ваше расписание теперь готово.
 
 > [!IMPORTANT]
-> Если вы используете управление доступом на основе ролей (RBAC) для управления доступом к конвейеру, [Задайте разрешения для сценария конвейера (обучение или оценка)](how-to-assign-roles.md#common-scenarios).
+> Если вы используете управление доступом на основе ролей Azure (Azure RBAC) для управления доступом к конвейеру, [Задайте разрешения для сценария конвейера (обучение или оценка)](how-to-assign-roles.md#common-scenarios).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

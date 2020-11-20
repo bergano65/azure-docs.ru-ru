@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/06/2017
 ms.author: alkohli
-ms.openlocfilehash: a33e01d68a31585e216faa51ac8af193d86c6123
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 639efab3a9eaef400b3fbe3d0b134d02f458b865
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90053282"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966298"
 ---
 # <a name="install-and-configure-the-storsimple-adapter-for-sharepoint"></a>Установка и настройка адаптера StorSimple для SharePoint
 ## <a name="overview"></a>Обзор
@@ -53,7 +53,7 @@ ms.locfileid: "90053282"
 Перемещение содержимого больших двоичных объектов в файловую систему может предоставить другие преимущества и сэкономить затраты. Например, с помощью RBS можно снизить потребность в дорогостоящих хранилищах уровня 1. RBS также позволяет уменьшить количество баз данных, необходимых для фермы серверов SharePoint, так как в RBS базы данных содержимого сжимаются. Однако на требования к хранилищу также могут повлиять и другие факторы, такие как максимальный размер базы данных и объем содержимого, не находящегося в RBS. Дополнительные сведения о затратах и преимуществах при использовании RBS приведены в статьях [Планирование удаленного хранилища больших двоичных объектов (SharePoint Foundation 2010)][4] и [Принятие решения об использовании удаленного хранилища больших двоичных объектов в SharePoint 2013][5].
 
 ### <a name="capacity-and-performance-limits"></a>Ограничения емкости и производительности
-Прежде чем рассматривать использование RBS в решении SharePoint, следует ознакомиться с тестовой производительностью и ограничениями емкости SharePoint Server 2010 и SharePoint Server 2013 и влиянием этих ограничений на допустимую производительность. Дополнительные сведения см. в статье [Ограничения, связанные с программным обеспечением, в SharePoint 2013](https://technet.microsoft.com/library/cc262787.aspx).
+Прежде чем рассматривать использование RBS в решении SharePoint, следует ознакомиться с тестовой производительностью и ограничениями емкости SharePoint Server 2010 и SharePoint Server 2013 и влиянием этих ограничений на допустимую производительность. Дополнительные сведения см. в статье [Ограничения, связанные с программным обеспечением, в SharePoint 2013](/SharePoint/install/software-boundaries-and-limits-0).
 
 Перед настройкой RBS сделайте следующее.
 
@@ -208,7 +208,7 @@ ms.locfileid: "90053282"
 > Большие двоичные объекты необходимо вернуть в базы данных содержимого до удаления программного обеспечения адаптера.
 
 
-### <a name="before-you-begin"></a>Перед началом
+### <a name="before-you-begin"></a>Подготовка к работе
 Прежде чем возвращать данные в базы данных содержимого SQL Server и начинать процесс удаления адаптера, соберите следующие сведения.
 
 * Имена всех баз данных, для которых включен RBS.
@@ -226,7 +226,7 @@ ms.locfileid: "90053282"
 4. Нажмите на странице **Configure StorSimple Adapter** (Настройка адаптера StorSimple) кнопку **Отключить**, расположенную под каждой из баз данных контента, которую требуется удалить из внешнего хранилища больших двоичных объектов. 
 5. Удалите объекты из SharePoint, а затем загрузите их снова.
 
-Кроме того, можно использовать командлет Microsoft `RBS Migrate()` PowerShell, входящий в состав SharePoint. Дополнительные сведения см. в статье о [переносе содержимого в RBS и из RBS](https://technet.microsoft.com/library/ff628255.aspx).
+Кроме того, можно использовать командлет Microsoft `RBS Migrate()` PowerShell, входящий в состав SharePoint. Дополнительные сведения см. в статье о [переносе содержимого в RBS и из RBS](/previous-versions/office/sharepoint-foundation-2010/ff628255(v=office.14)).
 
 После возврата больших двоичных объектов в базу данных содержимого перейдите к следующему шагу: [Удаление адаптера](#uninstall-the-adapter).
 
@@ -238,7 +238,7 @@ ms.locfileid: "90053282"
 2. Дважды щелкните программу установки адаптера StorSimple для SharePoint. Откроется мастер установки.
    
     ![Мастер установки](./media/storsimple-adapter-for-sharepoint/sasp2.png)
-3. Щелкните **Далее**. Откроется следующая страница.
+3. Нажмите кнопку **Далее**. Откроется следующая страница.
    
     ![Мастер установки: страница удаления](./media/storsimple-adapter-for-sharepoint/sasp3.png)
 4. Чтобы выбрать процесс удаления, нажмите кнопку **Удалить**. Откроется следующая страница.
@@ -253,13 +253,13 @@ ms.locfileid: "90053282"
 1. Откройте панель управления и выберите пункт **Программы и компоненты**.
 2. Выберите **Адаптер StorSimple для SharePoint** и нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 [Узнайте больше о StorSimple](storsimple-overview.md).
 
 <!--Reference links-->
 [1]: https://www.microsoft.com/download/details.aspx?id=44073
-[2]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
-[3]: https://technet.microsoft.com/library/ff628583(v=office.14).aspx
-[4]: https://technet.microsoft.com/library/ff628569(v=office.14).aspx
-[5]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
-[8]: https://technet.microsoft.com/library/ff943565.aspx
+[2]: /SharePoint/administration/rbs-planning
+[3]: /previous-versions/office/sharepoint-server-2010/ff628583(v=office.14)
+[4]: /previous-versions/office/sharepoint-foundation-2010/ff628569(v=office.14)
+[5]: /SharePoint/administration/rbs-planning
+[8]: /SharePoint/administration/maintain-rbs

@@ -3,16 +3,17 @@ title: Обзор виртуальных машин серии HC. виртуа�
 description: Дополнительные сведения о поддержке предварительной версии для виртуальной машины серии HC в Azure.
 author: vermagit
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 08/19/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 97e0ae9ea4914cda5d92f5180199a740c02ecdf4
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 672175d5bb92c8ab6dc347ece5ad6b14d8232ef4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91994360"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965448"
 ---
 # <a name="hc-series-virtual-machine-overview"></a>Обзор виртуальных машин серии HC
 
@@ -55,7 +56,7 @@ Intel Xeon Platinum, Gold и серебряные процессоры такж�
 | Поддержка ОС для SRIOV RDMA   | CentOS/RHEL 7.6 +, SLES 12 SP4 +, WinServer 2016 +  |
 | Поддержка Orchestrator        | Циклеклауд, пакетная  |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения об [архитектуре Intel Xeon SP](https://bit.ly/2RCYkiE).
 - Ознакомьтесь с последними объявлениями и некоторыми примерами HPC, а также результатами в [блогах технического сообщества службы вычислений](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).

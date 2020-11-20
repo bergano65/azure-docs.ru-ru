@@ -8,17 +8,18 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: akjosh
-ms.openlocfilehash: 4491171062e582db8388c3eff380d67ea1a0c51c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 82ed1d57d72a4479005d8bfd2234c124a97096ee
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87085662"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965992"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -37,9 +38,9 @@ ms.locfileid: "87085662"
 
 | Distribution | Версия |
 |---|---|
-| Windows 10 | Основные сведения |
-| Windows Server 2016 | Основные сведения |
-| Windows Server 2012 R2 | Основные сведения |
+| Windows 10 | Ядро |
+| Windows Server 2016 | Ядро |
+| Windows Server 2012 R2 | Ядро |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 

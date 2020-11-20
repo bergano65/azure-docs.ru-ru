@@ -1,14 +1,14 @@
 ---
 title: Основные сведения о языке запросов
 description: Описание таблиц Resource Graph и доступных типов данных, операторов и функций Kusto, которые можно использовать с Azure Resource Graph.
-ms.date: 10/28/2020
+ms.date: 11/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7c3ad55a0f1af623211852c02aabd37560c00bc6
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 34aaaa60ed9d757cc1a63ffaebb2225900cff61f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92926093"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966689"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -24,28 +24,28 @@ ms.locfileid: "92926093"
 
 ## <a name="resource-graph-tables"></a>Таблицы Resource Graph
 
-Граф ресурсов предоставляет несколько таблиц для хранения данных о Azure Resource Manager типах ресурсов и их свойствах. Эти таблицы можно использовать с оператором `join` или `union` для получения свойств из связанных типов ресурсов. Ниже приведен список таблиц, доступных в Resource Graph.
+Граф ресурсов предоставляет несколько таблиц для хранения данных о Azure Resource Manager типах ресурсов и их свойствах. Некоторые таблицы можно использовать с `join` `union` операторами или для получения свойств из связанных типов ресурсов. Ниже приведен список таблиц, доступных в Resource Graph.
 
-|Таблицы Resource Graph |Описание |
+|Таблица графиков ресурсов |Возможно `join` ? |Описание |
 |---|---|
-|Ресурсы |Таблица по умолчанию, если таблица в запросе не определена. В ней содержится большинство типов ресурсов Resource Manager и их свойств. |
-|ResourceContainers |Содержит подписку (в предварительной версии — `Microsoft.Resources/subscriptions`) и типы ресурсов и данные группы ресурсов (`Microsoft.Resources/subscriptions/resourcegroups`). |
-|AdvisorResources |Содержит ресурсы, _связанные_ с `Microsoft.Advisor`. |
-|AlertsManagementResources |Содержит ресурсы, _связанные_ с `Microsoft.AlertsManagement`. |
-|гуестконфигуратионресаурцес |Содержит ресурсы, _связанные_ с `Microsoft.GuestConfiguration`. |
-|MaintenanceResources |Содержит ресурсы, _связанные_ с `Microsoft.Maintenance`. |
-|полициресаурцес |Содержит ресурсы, _связанные_ с `Microsoft.PolicyInsights`. ( **Предварительная версия** )|
-|SecurityResources |Содержит ресурсы, _связанные_ с `Microsoft.Security`. |
-|сервицехеалсресаурцес |Содержит ресурсы, _связанные_ с `Microsoft.ResourceHealth`. |
+|Ресурсы |Да |Таблица по умолчанию, если таблица в запросе не определена. В ней содержится большинство типов ресурсов Resource Manager и их свойств. |
+|ResourceContainers |Да |Содержит подписку (в предварительной версии — `Microsoft.Resources/subscriptions`) и типы ресурсов и данные группы ресурсов (`Microsoft.Resources/subscriptions/resourcegroups`). |
+|AdvisorResources |Нет |Содержит ресурсы, _связанные_ с `Microsoft.Advisor`. |
+|AlertsManagementResources |Нет |Содержит ресурсы, _связанные_ с `Microsoft.AlertsManagement`. |
+|гуестконфигуратионресаурцес |Нет |Содержит ресурсы, _связанные_ с `Microsoft.GuestConfiguration`. |
+|MaintenanceResources |Нет |Содержит ресурсы, _связанные_ с `Microsoft.Maintenance`. |
+|полициресаурцес |Нет |Содержит ресурсы, _связанные_ с `Microsoft.PolicyInsights`. (**Предварительная версия**)|
+|SecurityResources |Нет |Содержит ресурсы, _связанные_ с `Microsoft.Security`. |
+|сервицехеалсресаурцес |Нет |Содержит ресурсы, _связанные_ с `Microsoft.ResourceHealth`. |
 
 Полный список, включая типы ресурсов, см. в [справочнике по поддерживаемым таблицам и типам ресурсов](../reference/supported-tables-resources.md).
 
 > [!NOTE]
-> _Resources_  — это таблица по умолчанию. При запросе таблицы _Resources_ не требуется указывать имя таблицы, если не используется `join` или `union`. Однако рекомендуется всегда включать в запрос начальную таблицу.
+> _Resources_ — это таблица по умолчанию. При запросе таблицы _Resources_ не требуется указывать имя таблицы, если не используется `join` или `union`. Однако рекомендуется всегда включать в запрос начальную таблицу.
 
 Используйте обозреватель Resource Graph на портале, чтобы узнать, какие типы ресурсов доступны в каждой таблице. В качестве альтернативы можно использовать такой запрос, как `<tableName> | distinct type`, чтобы получить список имеющихся в среде типов ресурсов, которые поддерживаются данной таблицей Resource Graph.
 
-В приведенном ниже запросе показана простая операция `join`. В результате запроса столбцы объединяются, а ко всем дублирующимся именам столбцов из соединяемой таблицы (в этом примере _ResourceContainers_ ) добавляется **1** . Так как таблица _ResourceContainers_ содержит типы как для подписок, так и для групп ресурсов, любой из этих типов может использоваться для соединения с ресурсом из таблицы _ресурсов_ .
+В приведенном ниже запросе показана простая операция `join`. В результате запроса столбцы объединяются, а ко всем дублирующимся именам столбцов из соединяемой таблицы (в этом примере _ResourceContainers_) добавляется **1**. Так как таблица _ResourceContainers_ содержит типы как для подписок, так и для групп ресурсов, любой из этих типов может использоваться для соединения с ресурсом из таблицы _ресурсов_.
 
 ```kusto
 Resources
@@ -53,7 +53,7 @@ Resources
 | limit 1
 ```
 
-В приведенном ниже запросе показано более сложное использование `join`. Запрос ограничивает объединенную таблицу до ресурсов подписки, а `project` включает только исходное поле _subscriptionId_ и поле _name_ , переименованное в _SubName_ . Переименование полей позволяет избежать `join`, добавляя его как _name1_ , так как поле уже существует в _Resources_ . Исходная таблица фильтруется с `where`, а следующая `project` включает столбцы из обеих таблиц. Результатом запроса является одно хранилище ключей, отображающее тип, имя хранилища ключей и имя подписки, в которой оно находится.
+В приведенном ниже запросе показано более сложное использование `join`. Запрос ограничивает объединенную таблицу до ресурсов подписки, а `project` включает только исходное поле _subscriptionId_ и поле _name_, переименованное в _SubName_. Переименование полей позволяет избежать `join`, добавляя его как _name1_, так как поле уже существует в _Resources_. Исходная таблица фильтруется с `where`, а следующая `project` включает столбцы из обеих таблиц. Результатом запроса является одно хранилище ключей, отображающее тип, имя хранилища ключей и имя подписки, в которой оно находится.
 
 ```kusto
 Resources
@@ -64,11 +64,11 @@ Resources
 ```
 
 > [!NOTE]
-> При ограничении результатов `join` с помощью `project` свойство, используемое `join` для связывания двух таблиц ( _subscriptionId_ в приведенном выше примере), должно включаться в `project`.
+> При ограничении результатов `join` с помощью `project` свойство, используемое `join` для связывания двух таблиц (_subscriptionId_ в приведенном выше примере), должно включаться в `project`.
 
 ## <a name="extended-properties-preview"></a><a name="extended-properties"></a>Расширенные свойства (Предварительная версия)
 
-В качестве функции _предварительной версии_ некоторые типы ресурсов в графе ресурсов имеют дополнительные свойства, связанные с типом, которые могут запрашиваться за пределами свойств, предоставляемых Azure Resource Manager. Этот набор значений, известный как _Расширенные свойства_ , существует в поддерживаемом типе ресурсов в `properties.extended` . Чтобы узнать, какие типы ресурсов имеют _Расширенные свойства_ , используйте следующий запрос:
+В качестве функции _предварительной версии_ некоторые типы ресурсов в графе ресурсов имеют дополнительные свойства, связанные с типом, которые могут запрашиваться за пределами свойств, предоставляемых Azure Resource Manager. Этот набор значений, известный как _Расширенные свойства_, существует в поддерживаемом типе ресурсов в `properties.extended` . Чтобы узнать, какие типы ресурсов имеют _Расширенные свойства_, используйте следующий запрос:
 
 ```kusto
 Resources
@@ -125,7 +125,7 @@ Resources
 |[count](/azure/kusto/query/countoperator) |[Число хранилищ ключей](../samples/starter.md#count-keyvaults) | |
 |[distinct](/azure/kusto/query/distinctoperator) |[Отображение уникальных значений для конкретного псевдонима](../samples/starter.md#distinct-alias-values) | |
 |[extend](/azure/kusto/query/extendoperator) |[Подсчет виртуальных машин по типу ОС](../samples/starter.md#count-os) | |
-|[join](/azure/kusto/query/joinoperator) |[Хранилище ключей с именем подписки](../samples/advanced.md#join) |Поддерживаемые разновидности оператора соединения: [innerunique](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). Не более 3 `join` в одном запросе. Пользовательские стратегии соединения, такие как широковещательное соединение, не допускаются. Может использоваться в одной таблице или между таблицами _Resources_ и _ResourceContainers_ . |
+|[join](/azure/kusto/query/joinoperator) |[Хранилище ключей с именем подписки](../samples/advanced.md#join) |Поддерживаемые разновидности оператора соединения: [innerunique](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). Не более 3 `join` в одном запросе. Пользовательские стратегии соединения, такие как широковещательное соединение, не допускаются. Сведения о том, какие таблицы могут использоваться `join` , см. в разделе [таблицы Graph ресурсов](#resource-graph-tables). |
 |[limit](/azure/kusto/query/limitoperator) |[Вывод списка общедоступных IP-адресов](../samples/starter.md#list-publicip) |Синоним `take` . Не работает с [Skip](./work-with-data.md#skipping-records). |
 |[mvexpand](/azure/kusto/query/mvexpandoperator) | | Устаревший оператор, используйте вместо него `mv-expand`. Максимальное значение _RowLimit_ равно 400. Значение по умолчанию — 128. |
 |[mv-expand](/azure/kusto/query/mvexpandoperator) |[Список Cosmos DB с конкретным указанием расположений записи](../samples/advanced.md#mvexpand-cosmosdb) |Максимальное значение _RowLimit_ равно 400. Значение по умолчанию — 128. |
@@ -136,7 +136,7 @@ Resources
 |[summarize](/azure/kusto/query/summarizeoperator) |[Подсчет ресурсов Azure](../samples/starter.md#count-resources) |Только первая упрощенная страница |
 |[take](/azure/kusto/query/takeoperator) |[Вывод списка общедоступных IP-адресов](../samples/starter.md#list-publicip) |Синоним `limit` . Не работает с [Skip](./work-with-data.md#skipping-records). |
 |[В начало](/azure/kusto/query/topoperator) |[Отображение первых пяти виртуальных машин по имени и типу ОС](../samples/starter.md#show-sorted) | |
-|[union](/azure/kusto/query/unionoperator) |[Объединение результатов из двух запросов в один результат](../samples/advanced.md#unionresults) |Допускается одна таблица: _T_ `| union` \[`kind=` `inner`\|`outer`\] \[`withsource=`_ColumnName_\] _Table_ . Не более 3 разветвлений `union` в одном запросе. Нечеткое разрешение таблиц разветвлений `union` не допускается. Может использоваться в одной таблице или между таблицами _Resources_ и _ResourceContainers_ . |
+|[union](/azure/kusto/query/unionoperator) |[Объединение результатов из двух запросов в один результат](../samples/advanced.md#unionresults) |Допускается одна таблица: _T_ `| union` \[`kind=` `inner`\|`outer`\] \[`withsource=`_ColumnName_\] _Table_. Не более 3 разветвлений `union` в одном запросе. Нечеткое разрешение таблиц разветвлений `union` не допускается. Может использоваться в одной таблице или между таблицами _Resources_ и _ResourceContainers_. |
 |[where](/azure/kusto/query/whereoperator) |[Отображение ресурсов, которые содержат хранилище](../samples/starter.md#show-storage) | |
 
 ## <a name="query-scope"></a>Область запроса
@@ -169,7 +169,7 @@ Resources
 
 - `.` — заключите имя свойства следующим образом: `['propertyname.withaperiod']`
   
-  Пример запроса, в котором заключается свойство _odata.type_ :
+  Пример запроса, в котором заключается свойство _odata.type_:
 
   ```kusto
   where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.['odata.type']
@@ -185,7 +185,7 @@ Resources
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.\$type
     ```
 
-  - **cmd**  — не экранируйте символ `$`.
+  - **cmd** — не экранируйте символ `$`.
 
   - **PowerShell** - ``` ` ```
 

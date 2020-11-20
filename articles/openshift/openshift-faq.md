@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 07/31/2020
-ms.openlocfilehash: c09f741b37e06010a0bfbab40317980793240e29
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 3a474228776c689dbbd6f15ddd926f29383400ce
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683511"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964717"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
@@ -21,7 +21,7 @@ ms.locfileid: "94683511"
 
 ### <a name="which-azure-regions-are-supported"></a>Какие регионы Azure поддерживаются?
 
-Список поддерживаемых регионов для Azure Red Hat OpenShift 4. x см. в разделе [Доступные регионы](https://docs.openshift.com/aro/4/welcome/index.html#available-regions).
+Список поддерживаемых регионов для Azure Red Hat OpenShift 4. x см. в разделе [Доступные регионы](https://azure.microsoft.com/global-infrastructure/services/?products=openshift&regions=all).
 
 Список поддерживаемых регионов для Azure Red Hat OpenShift 3,11 см. в разделе [продукты, доступные по регионам](supported-resources.md#azure-regions).
 
@@ -202,7 +202,7 @@ oc adm policy \
 
 Для кластеров 3,11 можно использовать интеграцию Azure AD. 
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>Память
 
 ### <a name="is-data-on-my-cluster-encrypted"></a>Зашифрованы ли данные в кластере?
 

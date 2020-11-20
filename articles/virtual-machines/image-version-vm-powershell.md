@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 757b297d3d74365928cda0934485c0018f28ffee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a7ca8236307bbf8a419d2988e1a6dc1e4c40597
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88225654"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964870"
 ---
 # <a name="preview-create-an-image-from-a-vm"></a>Предварительная версия: создание образа из виртуальной машины
 
@@ -27,7 +27,7 @@ ms.locfileid: "88225654"
 - **Версия образа** — это то, что используется для создания виртуальной машины при использовании общей коллекции образов. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. При создании виртуальной машины используется версия образа для создания новых дисков для виртуальной машины. Версии образов можно использовать несколько раз.
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для работы с этой статьей необходимо иметь имеющуюся коллекцию общих образов и существующую виртуальную машину в Azure для использования в качестве источника. 
 
@@ -81,7 +81,7 @@ Stop-AzVM `
 
 Создайте определение образа с помощью командлета [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). 
 
-В этом примере определение образа называется *мимажедефинитион*и предназначено для специализированной виртуальной машины под Windows. Чтобы создать определение для образов с помощью Linux, используйте `-OsType Linux` . 
+В этом примере определение образа называется *мимажедефинитион* и предназначено для специализированной виртуальной машины под Windows. Чтобы создать определение для образов с помощью Linux, используйте `-OsType Linux` . 
 
 ```azurepowershell-interactive
 $imageDefinition = New-AzGalleryImageDefinition `
@@ -105,7 +105,7 @@ $imageDefinition = New-AzGalleryImageDefinition `
 
 В этом примере используется версия образа *1.0.0*, которая реплицируется в центры обработки данных в регионах *центрально-западная часть США* и *центрально-южная часть США*. При выборе целевых регионов для репликации Помните, что также необходимо включить *Исходный* регион в качестве цели для репликации.
 
-Чтобы создать версию образа на основе виртуальной машины, используйте для параметра `-Source` значение `$vm.Id.ToString()`.
+Чтобы создать версию образа на основе виртуальной машины, используйте для параметра `-SourceImageId` значение `$vm.Id.ToString()`.
 
 ```azurepowershell-interactive
    $region1 = @{Name='South Central US';ReplicaCount=1}
@@ -119,7 +119,7 @@ $job = $imageVersion = New-AzGalleryImageVersion `
    -ResourceGroupName $gallery.ResourceGroupName `
    -Location $gallery.Location `
    -TargetRegion $targetRegions  `
-   -Source $sourceVm.Id.ToString() `
+   -SourceImageId $sourceVm.Id.ToString() `
    -PublishingProfileEndOfLifeDate '2020-12-01' `  
    -asJob 
 ```
@@ -136,7 +136,7 @@ $job.State
 > Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS` [хранилище или избыточное в зону](../storage/common/storage-redundancy.md) , добавив `-StorageAccountType Standard_ZRS` его при создании версии образа.
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Убедившись, что новая версия образа работает правильно, можно создать виртуальную машину. Создайте виртуальную машину на основе [специализированной версии образа](vm-specialized-image-version-powershell.md) или [обобщенной версии образа](vm-generalized-image-version-powershell.md).
 

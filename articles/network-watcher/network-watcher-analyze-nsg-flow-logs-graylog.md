@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: damendo
-ms.openlocfilehash: 62f4a06ec729d896dc11a290bc7a5ccc7c321683
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b363d90d05e95b017c3a655b57dbabc3712a155
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90984054"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965550"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog
 
@@ -40,7 +40,7 @@ ms.locfileid: "90984054"
 
 ### <a name="enable-network-security-group-flow-logging"></a>Включение журналов потоков для групп безопасности сети
 
-В рамках этого сценария вам нужно включить ведение журнала потоков по меньшей мере для одной группы безопасности сети в учетной записи. Инструкции по включению журналов потоков для групп безопасности сети см. в статье [Общие сведения о ведении журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md).
+В рамках этого сценария вам нужно включить ведение журнала потоков по меньшей мере для одной группы безопасности сети в учетной записи. Инструкции по включению журналов потоков для групп безопасности сети см. в статье [Introduction to flow logging for Network Security Groups](network-watcher-nsg-flow-logging-overview.md) (Общие сведения о журналах потоков для групп безопасности сети).
 
 ### <a name="setting-up-graylog"></a>Установка Graylog
 
@@ -53,7 +53,7 @@ ms.locfileid: "90984054"
 
 Есть несколько способов установки Graylog. Их можно выбирать в соответствии с используемой платформой и предпочтениями. Полный список возможных методов см. в официальной [документации](https://docs.graylog.org/en/2.2/pages/installation.html) Graylog. Серверное приложение Graylog выполняется на дистрибутивах ОС Linux. Для его работы требуются следующие компоненты:
 
--  Java SE 8 или более поздней версии — [документация по JDK Azul для Azure](https://aka.ms/azure-jdks).
+-  Java SE 8 или более поздней версии — [документация по JDK Azul для Azure](/azure/developer/java/fundamentals/java-jdk-long-term-support).
 -  Elastic Search 2.x (2.1.0 или более поздней версии) (см. [документацию по установке Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html));
 -  MongoDB 2.4 или более поздней версии (см. [документацию по установке MongoDB](https://docs.mongodb.com/manual/administration/install-on-linux/)).
 
@@ -244,6 +244,6 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
 Интеграция Наблюдателя за сетями с Graylog обеспечивает удобное централизованное управление журналами потоков для групп безопасности сети и позволяет визуализировать данные журналов. Graylog располагает рядом мощных возможностей, таких как потоки данных и предупреждения. Они помогают в управлении журналами потоков и анализе сетевого трафика. Мы завершили настройку системы Graylog и подключили ее к Azure. Теперь можно приступать к изучению ее функций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения см. в статье  [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md).
+Дополнительные сведения см. в статье [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md).

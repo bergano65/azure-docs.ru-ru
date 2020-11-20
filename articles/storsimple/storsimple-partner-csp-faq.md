@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 2f606a2ff036c6bc3b4e3c508632d48ae8d40f15
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36b96581d98465b860b630fe2f9a8aa64cf0f64f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400049"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964938"
 ---
 # <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>StorSimple для программы поставщиков облачных решений — часто задаваемые вопросы
 
@@ -59,7 +59,7 @@ ms.locfileid: "91400049"
 Есть несколько доступных решений.
 
 - Партнер может продавать виртуальный массив StorSimple. 
-- Партнер может предоставлять решения, использующие StorSimple и другие службы Azure, а также стороннее программное обеспечение. Дополнительные сведения можно найти в неполном списке [решений, которые можно создать на базе StorSimple](https://aka.ms/storsimple-build-solutions).
+- Партнер может предоставлять решения, использующие StorSimple и другие службы Azure, а также стороннее программное обеспечение. Дополнительные сведения можно найти в неполном списке [решений, которые можно создать на базе StorSimple](./storsimple-disaster-recovery-using-azure-site-recovery.md).
 - Также партнеры могут разработать новые бизнес-модели предоставления управляемых служб.
 
 ### <a name="what-are-the-incentives-available-for-storsimple-csp-partners-do-i-qualify-for-any-csp-program-incentives"></a>Какие вознаграждения предлагаются для партнеров StorSimple CSP? Могу ли я получить вознаграждения по программе CSP?
@@ -97,5 +97,5 @@ ms.locfileid: "91400049"
 - [Центр партнеров](https://partnercenter.microsoft.com/) 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Если вы уже готовы развернуть StorSimple, перейдите к статье [Deploy your StorSimple in CSP](storsimple-partner-csp-deploy.md) (Развертывание StorSimple в рамках программы CSP).

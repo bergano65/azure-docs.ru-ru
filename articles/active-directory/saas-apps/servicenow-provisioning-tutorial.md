@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 1d6213d49c98f5e09f22e7310183315800d0c6f6
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: fe2d09315dcb2a0958f8a1b8efe7532c64c111d8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359788"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966553"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Руководство по Настройка ServiceNow для автоматической подготовки пользователей
 
@@ -56,13 +56,6 @@ ms.locfileid: "94359788"
 
    ![Роль администратора ServiceNow](media/servicenow-provisioning-tutorial/servicenow-admin-role.png)
 
-3. Убедитесь, что следующие параметры **отключены** в ServiceNow:
-
-   1. Выберите **System Security** > **High security settings** > **Require basic authentication for incoming SCHEMA requests** (Безопасность системы > Параметры высокого уровня безопасности > Требовать базовую аутентификацию для входящих запросов SCHEMA).
-   2. Выберите **System Properties** > **Web Services** > **Require basic authorization for incoming SOAP requests** (Свойства системы > Веб-службы > Требовать базовую авторизацию для входящих запросов SOAP).
-     
-   > [!IMPORTANT]
-   > Если эти параметры *включены*, подсистема подготовки не сможет обмениваться данными с ServiceNow.
 
 ## <a name="step-3-add-servicenow-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление ServiceNow из коллекции приложений Azure AD
 

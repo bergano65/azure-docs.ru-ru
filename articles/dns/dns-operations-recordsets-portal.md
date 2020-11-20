@@ -7,22 +7,22 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 10/6/2018
 ms.author: rohink
-ms.openlocfilehash: 111d94db1cbec658daabfb1a4c38c8160d6f50b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22ceba69ecf865d906021068a39a9d273b842ca2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84696837"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965737"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>Управление записями и наборами записей DNS с помощью портала Azure
 
 В этой статье описывается, как управлять наборами записей и записями для зоны DNS с помощью портала Azure.
 
-Важно понимать различие между наборами записей DNS и отдельными записями DNS. Набор записей — это коллекция записей в зоне, которые имеют одно имя и один тип. Дополнительные сведения см. в статье [Создание наборов записей и записей DNS с помощью портала Azure](dns-getstarted-create-recordset-portal.md).
+Важно понимать различие между наборами записей DNS и отдельными записями DNS. Набор записей — это коллекция записей в зоне, которые имеют одно имя и один тип. Дополнительные сведения см. в статье [Создание наборов записей и записей DNS с помощью портала Azure](./dns-getstarted-portal.md).
 
 ## <a name="create-a-new-record-set-and-record"></a>Создание нового набора записей и записи
 
-Чтобы создать набор записей на портале Azure, см. [эту статью](dns-getstarted-create-recordset-portal.md).
+Чтобы создать набор записей на портале Azure, см. [эту статью](./dns-getstarted-portal.md).
 
 ## <a name="view-a-record-set"></a>Просмотр набора записей
 
@@ -107,7 +107,7 @@ ms.locfileid: "84696837"
 
 Вы не можете удалять наборы записей типа SOA и NS на вершине зоны (имя = "\@"), которые создаются автоматически вместе с зоной. Они удаляются автоматически при удалении зоны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об Azure DNS см. в статье [Обзор Azure DNS](dns-overview.md).
 * Дополнительные сведения об автоматизации DNS см. в статье [Создание зон и наборов записей DNS с помощью пакета SDK для .NET](dns-sdk.md).

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9055bb9689895a9b74f3d6b5affa325a3b594d65
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 2cdf89fa3281e070d6b1ac762d30d7c391f4126f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874684"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963646"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -707,10 +707,11 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
 | microsoft.directory/devices/delete | Удаление устройств в Azure Active Directory. |
 | microsoft.directory/devices/disable | Отключение устройств в Azure Active Directory. |
 | microsoft.directory/devices/enable | Включение устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/атрибутов ExtensionAttribute/Update | Обновите все значения свойства Devices. атрибутов ExtensionAttribute в Azure Active Directory. |
 | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и Настройка работоспособности службы Microsoft 365. |
@@ -731,6 +732,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/applications/allProperties/allTasks | Создание и удаление приложений, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/appRoleAssignments/allProperties/allTasks | Создание и удаление объектов appRoleAssignment, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
 | microsoft.directory/contacts/allProperties/allTasks | Создание и удаление контактов, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/contracts/allProperties/allTasks | Создание и удаление контрактов, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/devices/allProperties/allTasks | Создание и удаление устройств, а также чтение и изменение всех свойств в Azure Active Directory. |
@@ -1087,6 +1089,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/applications/basic/read    | Чтение стандартных свойств приложений в Azure Active Directory. |
 | microsoft.directory/applications/owners/read    | Чтение свойства applications.owners в Azure Active Directory. |
 | microsoft.directory/applications/policies/read    | Чтение свойства applications.policies в Azure Active Directory. |
+| Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
 | microsoft.directory/contacts/basic/read    | Чтение базовых свойств контактов в Azure Active Directory. |
 | microsoft.directory/contacts/memberOf/read    | Чтение свойства contacts.memberOf в Azure Active Directory. |
 | microsoft.directory/contracts/basic/read    | Чтение базовых свойств контрактов в Azure Active Directory. |
@@ -1267,13 +1270,16 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
+| Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
 | microsoft.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
 | microsoft.directory/devices/basic/update | Обновление базовых свойств устройств в Azure Active Directory. |
-| microsoft.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
 | microsoft.directory/devices/create | Создание устройств в Azure Active Directory. |
 | microsoft.directory/devices/delete | Удаление устройств в Azure Active Directory. |
+| microsoft.directory/devices/disable | Отключение устройств в Azure Active Directory. |
+| microsoft.directory/devices/enable | Включение устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/атрибутов ExtensionAttribute/Update | Обновите все значения свойства Devices. атрибутов ExtensionAttribute в Azure Active Directory. |
 | microsoft.directory/devices/registeredOwners/update | Изменение свойства devices.registeredOwners в Azure Active Directory. |
 | microsoft.directory/devices/registeredUsers/update | Изменение свойства devices.registeredUsers в Azure Active Directory. |
 | microsoft.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
@@ -1654,9 +1660,9 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
+| Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
 | microsoft.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
 | Microsoft. Directory/Идентитипротектион/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
 | Microsoft. Directory/Идентитипротектион/Аллпропертиес/Update | Обновление всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
@@ -1706,7 +1712,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
 | microsoft.directory/policies/conditionalAccess/basic/read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
 | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |

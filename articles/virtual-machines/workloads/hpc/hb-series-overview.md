@@ -3,16 +3,17 @@ title: Обзор виртуальных машин серии ХБ. вирту�
 description: Дополнительные сведения о поддержке предварительной версии для виртуальной машины серии ХБ в Azure.
 author: vermagit
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 08/19/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: d11ec99d10d74956c43c24145abbd291d9e2d2a9
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 1e37f13bc6e819079c63c583a1eeda12af5e213c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996243"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965465"
 ---
 # <a name="hb-series-virtual-machines-overview"></a>Обзор виртуальных машин серии ХБ
 
@@ -55,7 +56,7 @@ ms.locfileid: "91996243"
 | Поддержка ОС для SRIOV RDMA   | CentOS/RHEL 7.6 +, SLES 12 SP4 +, WinServer 2016 +  |
 | Поддержка Orchestrator        | Циклеклауд, пакетная  |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [архитектуре AMD ЕПИК](https://bit.ly/2Epv3kC) и [архитектурах с несколькими микросхемами](https://bit.ly/2GpQIMb). Дополнительные сведения см. в описании [рекомендаций по настройке HPC для процессоров AMD ЕПИК](https://bit.ly/2T3AWZ9).
 - Ознакомьтесь с последними объявлениями и некоторыми примерами HPC, а также результатами в [блогах технического сообщества службы вычислений](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).

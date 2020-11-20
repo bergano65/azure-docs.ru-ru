@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 09/19/2016
 ms.author: rohink
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 92509ff96af0ed2a7d77799edca8447ff6839ab6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8e116096afbd01af4914be49d5675881724d5069
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019663"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965601"
 ---
 # <a name="create-dns-zones-and-record-sets-using-the-net-sdk"></a>Создание зон и наборов записей DNS с помощью пакета SDK для .NET
 
@@ -79,7 +79,7 @@ dnsClient.SubscriptionId = subscriptionId;
 > [!NOTE]
 > DnsManagementClient поддерживает три режима работы: синхронный (CreateOrUpdate), асинхронный (CreateOrUpdateAsync) или асинхронный с доступом к HTTP-ответу (CreateOrUpdateWithHttpMessagesAsync).  Вы можете выбрать любой из этих режимов в зависимости от потребностей приложения.
 
-Служба Azure DNS поддерживает оптимистичный параллелизм с помощью [тегов Etag](dns-getstarted-create-dnszone.md). В этом примере значение * для заголовка If-None-Match сообщает Azure DNS о необходимости создать зону DNS, если она еще не существует.  Вызов завершится сбоем, если зона с указанным именем уже существует в заданной группе ресурсов.
+Служба Azure DNS поддерживает оптимистичный параллелизм с помощью [тегов Etag](./dns-getstarted-powershell.md). В этом примере значение * для заголовка If-None-Match сообщает Azure DNS о необходимости создать зону DNS, если она еще не существует.  Вызов завершится сбоем, если зона с указанным именем уже существует в заданной группе ресурсов.
 
 ```cs
 // Create zone parameters
@@ -165,6 +165,6 @@ while (page.NextPageLink != null)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Загрузите [пример проекта SDK .NET для Azure DNS](https://www.microsoft.com/en-us/download/details.aspx?id=47268&WT.mc_id=DX_MVP4025064&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True), который содержит дополнительные примеры использования пакета SDK .NET для Azure DNS, а также примеры других типов записей DNS.

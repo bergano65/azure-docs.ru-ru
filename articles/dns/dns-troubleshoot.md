@@ -7,18 +7,18 @@ ms.service: dns
 ms.topic: troubleshooting
 ms.date: 09/20/2019
 ms.author: rohink
-ms.openlocfilehash: a63a0c1e0044f5dcd6babb4941e1f4409404cdd2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fae63c61949302e25c9dee2899577fa4f0d2a975
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84711193"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965584"
 ---
 # <a name="azure-dns-troubleshooting-guide"></a>Руководство по устранению неполадок службы DNS Azure
 
 Эта статья содержит сведения об устранении распространенных неполадок службы Azure DNS.
 
-Если с помощью описанных действий вам не удалось решить проблему, воспользуйтесь поиском или запросите помощь сообщества на [странице вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-virtual-network.html) либо обратитесь в службу поддержки Azure.
+Если с помощью описанных действий вам не удалось решить проблему, воспользуйтесь поиском или запросите помощь сообщества на [странице вопросов и ответов на сайте Майкрософт](/answers/topics/azure-virtual-network.html) либо обратитесь в службу поддержки Azure.
 
 
 ## <a name="i-cant-create-a-dns-zone"></a>Не удается создать зону DNS
@@ -34,7 +34,7 @@ ms.locfileid: "84711193"
 ### <a name="recommended-articles"></a>Рекомендованные статьи
 
 * [Зоны и записи DNS](dns-zones-records.md)
-* [Создание зоны DNS](dns-getstarted-create-dnszone-portal.md)
+* [Создание зоны DNS](./dns-getstarted-portal.md)
 
 ## <a name="i-cant-create-a-dns-record"></a>Не удается создать запись DNS
 
@@ -50,7 +50,7 @@ ms.locfileid: "84711193"
 ### <a name="recommended-articles"></a>Рекомендованные статьи
 
 * [Зоны и записи DNS](dns-zones-records.md)
-* [Создание зоны DNS](dns-getstarted-create-dnszone-portal.md)
+* [Создание зоны DNS](./dns-getstarted-portal.md)
 
 
 
@@ -85,13 +85,12 @@ Azure DNS управляет записями DNS как наборами зап
 ### <a name="recommended-articles"></a>Рекомендованные статьи
 
 * [Зоны и записи DNS](dns-zones-records.md)
-* [Get started with Azure DNS using the Azure portal](dns-getstarted-create-recordset-portal.md) (Начало работы с Azure DNS с использованием портала Azure)
+* [Get started with Azure DNS using the Azure portal](./dns-getstarted-portal.md) (Начало работы с Azure DNS с использованием портала Azure)
 * [SRV-запись (Википедия)](https://en.wikipedia.org/wiki/SRV_record)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей [Зоны и записи DNS](dns-zones-records.md).
-* Чтобы начать работу с Azure DNS, узнайте, как [создать зону DNS](dns-getstarted-create-dnszone-portal.md) и [записи DNS](dns-getstarted-create-recordset-portal.md).
+* Чтобы начать работу с Azure DNS, узнайте, как [создать зону DNS](./dns-getstarted-portal.md) и [записи DNS](./dns-getstarted-portal.md).
 * Чтобы перенести имеющуюся зону DNS, узнайте, как [импортировать и экспортировать файл зоны DNS](dns-import-export.md).
-

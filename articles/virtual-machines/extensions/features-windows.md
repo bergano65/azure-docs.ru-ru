@@ -9,18 +9,19 @@ editor: ''
 tags: azure-service-management,azure-resource-manager
 ms.assetid: 999d63ee-890e-432e-9391-25b3fc6cde28
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 00cb63f63ffb1f2e10a276cfdeee9c5e8e1022de
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 565f98126cea8cc03874bb4f83ecdc2c65f8d5fb
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427383"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966060"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -76,7 +77,7 @@ ms.locfileid: "94427383"
 
 ## <a name="discover-vm-extensions"></a>Поиск расширений ВМ
 
-Существует множество разных расширений виртуальных машин, которые можно использовать с виртуальными машинами Azure. Их полный список можно получить с помощью командлета [Get-AzVMExtensionImage](/powershell/module/az.compute/get-azvmextensionimage). В следующем примере перечислены все расширения, доступные в расположении *WestUS* :
+Существует множество разных расширений виртуальных машин, которые можно использовать с виртуальными машинами Azure. Их полный список можно получить с помощью командлета [Get-AzVMExtensionImage](/powershell/module/az.compute/get-azvmextensionimage). В следующем примере перечислены все расширения, доступные в расположении *WestUS*:
 
 ```powershell
 Get-AzVmImagePublisher -Location "WestUS" | `
@@ -92,7 +93,7 @@ Get-AzVMExtensionImage | Select Type, Version
 
 ### <a name="powershell"></a>PowerShell
 
-Есть несколько команд PowerShell, позволяющих выполнять отдельные модули. Чтобы просмотреть список, используйте [Get-Command](/powershell/module/microsoft.powershell.core/get-command) с фильтрацией по значению *Extension* :
+Есть несколько команд PowerShell, позволяющих выполнять отдельные модули. Чтобы просмотреть список, используйте [Get-Command](/powershell/module/microsoft.powershell.core/get-command) с фильтрацией по значению *Extension*:
 
 ```powershell
 Get-Command Set-Az*Extension* -Module Az.Compute
@@ -140,7 +141,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 С помощью команды `Set-AzVMExtension` можно запустить любое расширение виртуальной машины. Дополнительные сведения см. в разделе справки [о командлете Set-AzVMExtension](/powershell/module/az.compute/set-azvmextension).
 
 
-### <a name="azure-portal"></a>портал Azure;
+### <a name="azure-portal"></a>Портал Azure
 
 Расширения виртуальных машин можно устанавливать на имеющиеся виртуальные машины через портал Azure. Выберите на портале нужную виртуальную машину, затем щелкните **Расширения** и **Добавить**. Выберите нужное расширение из списка доступных расширений и следуйте инструкциям мастера.
 
@@ -220,7 +221,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 }
 ```
 
-Переместив свойство **commandToExecute** в конфигурацию **protected** , вы защитите данные из строки выполнения, как показано в следующем примере:
+Переместив свойство **commandToExecute** в конфигурацию **protected**, вы защитите данные из строки выполнения, как показано в следующем примере:
 
 ```json
 {
@@ -252,7 +253,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 }
 ```
 
-На виртуальной машине Azure IaaS, использующей расширения, в консоли сертификатов могут отображаться сертификаты с темой " **_генератор сертификатов Microsoft Azure CRP_** ". На классической виртуальной машине RDFE эти сертификаты имеют имя субъекта **_Управление службами Windows Azure для расширений_**.
+На виртуальной машине Azure IaaS, использующей расширения, в консоли сертификатов могут отображаться сертификаты с темой " **_генератор сертификатов Microsoft Azure CRP_**". На классической виртуальной машине RDFE эти сертификаты имеют имя субъекта **_Управление службами Windows Azure для расширений_**.
 
 Эти сертификаты обеспечивают безопасность обмена данными между виртуальной машиной и ее узлом во время передачи защищенных параметров (пароля, других учетных данных), используемых расширениями. Сертификаты создаются контроллером структуры Azure и передаются агенту виртуальной машины. Если вы останавливаете и запускаете виртуальную машину каждый день, контроллер структуры может создавать сертификат. Сертификат хранится в хранилище личных сертификатов компьютера. Эти сертификаты можно удалять. При необходимости агент виртуальной машины повторно создает сертификаты.
 
@@ -263,7 +264,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 Когда обновление становится доступно, оно устанавливается на виртуальных машинах только при внесении изменений в расширения или другие элементы модели виртуальной машины, как например:
 
 - Диски данных
-- Расширения
+- Модули
 - контейнер диагностики загрузки;
 - секреты гостевой ОС;
 - Размер виртуальной машины
@@ -286,7 +287,7 @@ Microsoft.Compute     CustomScriptExtension                1.9
 
 #### <a name="agent-updates"></a>Обновления агентов
 
-Гостевой агент Windows содержит только *код обработки расширений* , а *код подготовки Windows* отделен от него. Гостевой агент Windows можно удалить. Автоматическое обновление гостевого агента Windows отключить невозможно.
+Гостевой агент Windows содержит только *код обработки расширений*, а *код подготовки Windows* отделен от него. Гостевой агент Windows можно удалить. Автоматическое обновление гостевого агента Windows отключить невозможно.
 
 *Код обработки расширений* отвечает за взаимодействие со структурой Azure и обработку операций расширения виртуальных машин, такие как установка, отправка отчетов о состоянии, обновление и удаление отдельных расширений. Обновления содержат исправления безопасности, исправления ошибок и улучшения в *коде обработки расширения*.
 
@@ -294,7 +295,7 @@ Microsoft.Compute     CustomScriptExtension                1.9
 
 #### <a name="extension-updates"></a>Обновление расширений
 
-Когда становится доступно обновление расширения, гостевой агент Windows скачивает его и обновляет расширение. Автоматические обновления расширений классифицируются как *дополнения* или *исправления*. При подготовке расширения вы можете согласиться на установку обновлений категории *Дополнения* либо отказаться от них. В следующем примере показано, как можно автоматически обновлять дополнительные версии в шаблоне Resource Manager с помощью параметра *autoUpgradeMinorVersion": true,* :
+Когда становится доступно обновление расширения, гостевой агент Windows скачивает его и обновляет расширение. Автоматические обновления расширений классифицируются как *дополнения* или *исправления*. При подготовке расширения вы можете согласиться на установку обновлений категории *Дополнения* либо отказаться от них. В следующем примере показано, как можно автоматически обновлять дополнительные версии в шаблоне Resource Manager с помощью параметра *autoUpgradeMinorVersion": true,*:
 
 ```json
     "properties": {
@@ -322,7 +323,7 @@ Microsoft.Compute     CustomScriptExtension                1.9
  $vm.Extensions
 ```
 
-Выходные данные в следующем примере указывают, что параметр *autoUpgradeMinorVersion* имеет значение *true* :
+Выходные данные в следующем примере указывают, что параметр *autoUpgradeMinorVersion* имеет значение *true*:
 
 ```powershell
 ForceUpdateTag              :
@@ -336,7 +337,7 @@ AutoUpgradeMinorVersion     : True
 
 Чтобы узнать, когда становится доступно обновление для расширения, изучите журналы агента на виртуальной машине, расположенные по адресу *C:\WindowsAzure\Logs\WaAppAgent.log*
 
-В следующем примере мы видим, что на виртуальной машине установлена версия *Microsoft.Compute.CustomScriptExtension 1.8*. И для этого расширения доступно обновление категории "Исправление" до версии *1.9* :
+В следующем примере мы видим, что на виртуальной машине установлена версия *Microsoft.Compute.CustomScriptExtension 1.8*. И для этого расширения доступно обновление категории "Исправление" до версии *1.9*:
 
 ```powershell
 [INFO]  Getting plugin locations for plugin 'Microsoft.Compute.CustomScriptExtension'. Current Version: '1.8', Requested Version: '1.9'
@@ -428,6 +429,6 @@ Remove-AzVMExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Name "
 | Расширение Диагностики Azure |Управляет системой диагностики Azure |[Расширение система диагностики Azure](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
 | Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение для доступа к виртуальной машине для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

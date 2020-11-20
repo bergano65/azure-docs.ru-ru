@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/18/2018
 ms.author: alkohli
-ms.openlocfilehash: 4598f71f9b611e68f8eb00676138784833c39f32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 72bf252488878c8b6fabb2ea2d61658a2cd87e14
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75891512"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966213"
 ---
 # <a name="storsimple-security-and-data-protection"></a>Защита устройства StorSimple и данных
 
@@ -219,7 +219,7 @@ StorSimple использует следующие алгоритмы шифро
 
 Дополнительные сведения см. в политике конфиденциальности Майкрософт в [центре управления безопасностью](https://www.microsoft.com/trustcenter).
 
-## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
+## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 
 Ниже приведены часто задаваемые вопросы о безопасности и Microsoft Azure StorSimple, а также ответы на них.
 
@@ -258,7 +258,7 @@ StorSimple использует следующие алгоритмы шифро
 * [Изменение ключа шифрования данных службы](storsimple-8000-manage-service.md#change-the-service-data-encryption-key)
 * [Настройка CHAP для устройства StorSimple](storsimple-8000-configure-chap.md)
 
-**Вопрос.** Я хочу отправить пароль диспетчера моментальных снимков StorSimple на узел, который подключается к устройству StorSimple, но пароль недоступен. Что можно сделать?
+**Вопрос.** Я хочу отправить пароль диспетчера моментальных снимков StorSimple на узел, который подключается к устройству StorSimple, но пароль недоступен. Что я могу сделать?
 
 **Ответ.** Если вы забыли пароль, создайте новый. После этого сообщите всем существующим пользователям, что пароль был изменен, чтобы они обновили его в своих клиентах. Подробные инструкции описаны в разделе
 
@@ -269,7 +269,7 @@ StorSimple использует следующие алгоритмы шифро
 
 **Ответ.** Можно скачать новый сертификат из службы диспетчера устройств StorSimple, а затем предоставить его для установки в хранилище сертификатов на клиентах удаленного доступа. Подробные инструкции описаны в разделе
 
-* [Командлет Import-Certificate](https://docs.microsoft.com/powershell/module/pkiclient/import-certificate)
+* [Командлет Import-Certificate](/powershell/module/pkiclient/import-certificate)
 
 **Вопрос.** Остаются ли мои данные защищенными, если служба диспетчера устройств StorSimple скомпрометирована?
 
@@ -285,7 +285,6 @@ StorSimple использует следующие алгоритмы шифро
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Развертывание устройства StorSimple](storsimple-8000-deployment-walkthrough-u2.md)
-

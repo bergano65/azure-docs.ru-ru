@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: SAP, Azure, Oracle, Data Guard
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/20/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4e72c9d64a71fceb90d0a6ae9984997f73c1b5c6
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 3e99b3a8960eb49856e9a016eb054eed41eccde9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963539"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965261"
 ---
 # <a name="azure-virtual-machines-oracle-dbms-deployment-for-sap-workload"></a>Виртуальные машины Azure развертывание СУБД Oracle для рабочей нагрузки SAP
 
@@ -380,7 +381,7 @@ Oracle Database и файлы журнала повторяемых операц
 | \oracle\<SID>\origlogaB & mirrlogA | Premium или Ultra Disk | None | Не требуется. |
 | \oracle\<SID>\sapdata1...n | Premium или Ultra Disk | Только для чтения | Можно использовать для Premium |
 | \oracle\<SID>\oraarch | Standard | None | Не требуется. |
-| Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | | Не требуется. |
+| Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | | Не требуется |
 
 
 Выбор дисков для размещения журналов повторов в сети должен осуществляться с помощью требований операций ввода-вывода в секунду. Есть возможность хранить все табличные пространства (sapdata1...n) на одном подключенном диске, если он соответствует всем требованиям по размеру, операциям ввода-вывода в секунду и пропускной способности. 
@@ -527,7 +528,7 @@ sudo curl -so /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules https://raw.gi
 </code></pre>
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Читать статью 
 
 - [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: damendo
-ms.openlocfilehash: 28d5ae1451b97c19576baa3f9760b8f784db3175
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 099ead37b8d6b46b767ef59ff24a7e7ff9dc9e3c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84736736"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966451"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-the-portal"></a>Управление записью пакетов с помощью Наблюдателя за сетями Azure на портале Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "84736736"
 
 В этой статье описано, как запустить, остановить, скачать и удалить запись пакетов. 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для записи пакетов требуется следующее исходящее подключение TCP:
 - к выбранной учетной записи хранения через порт 443
@@ -67,14 +67,14 @@ ms.locfileid: "84736736"
      > [!NOTE]
      > Значения портов и IP-адресов могут представлять собой одиночное значение, ряд значений или диапазон, например 80–1024 (для порта). Можно определить любое число фильтров.
 
-4. Щелкните **ОК**.
+4. Нажмите кнопку **ОК**.
 
 По достижении ограничения на время записи пакетов процесс будет остановлен и можно будет просмотреть результаты. Также сеанс записи пакетов можно остановить вручную.
 
 > [!NOTE]
 > Портал автоматически выполняет следующие действия:
 >  * создает наблюдатель за сетями в том же регионе, где существует выбранная виртуальная машина, если в этом регионе еще нет наблюдателя за сетями;
->  * добавляет к виртуальной машине расширение *AzureNetworkWatcherExtension для * [Linux](../virtual-machines/linux/extensions-nwa.md) или [Windows](../virtual-machines/windows/extensions-nwa.md), если оно еще не установлено.
+>  * добавляет к виртуальной машине расширение *AzureNetworkWatcherExtension для* [Linux](../virtual-machines/extensions/network-watcher-linux.md) или [Windows](../virtual-machines/extensions/network-watcher-windows.md), если оно еще не установлено.
 
 ## <a name="delete-a-packet-capture"></a>Удаление записи пакета
 
@@ -100,7 +100,7 @@ https://{storageAccountName}.blob.core.windows.net/network-watcher-logs/subscrip
 
 Если при создании записи был выбран вариант **Файл**, можно просмотреть или скачать этот файл из папки, настроенной на виртуальной машине.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
 - Чтобы определить, разрешен ли определенный входящий или исходящий трафик на виртуальной машине, см. статью о [диагностике проблем фильтрации трафика виртуальной машины](diagnose-vm-network-traffic-filtering-problem.md).

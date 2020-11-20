@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d168ff36e63cc07dc1b334ae7817bfed45b4fcd0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a8d6fc6acb33af0c36978aa79dc90aeac3cf596
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87042267"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966757"
 ---
 # <a name="how-to-monitor-sap-hana-large-instances-on-azure"></a>Мониторинг SAP HANA на крупных экземплярах Azure
 
@@ -27,7 +28,7 @@ SAP HANA на крупных экземплярах Azure ничем не отл
 - ЦП
 - Память
 - Пропускная способность сети
-- Место на диске
+- Пространство на диске
 
 В случае с виртуальными машинами Azure необходимо выяснить, достаточно ли перечисленных выше классов ресурсов или они будут исчерпаны. Ниже представлены подробные сведения о каждом классе.
 
@@ -48,6 +49,6 @@ SAP HANA на крупных экземплярах Azure ничем не отл
 tar  -czvf health_check_logs.tar.gz /var/log/health_check
 ```
 
-**Следующие шаги**
+**Дальнейшие действия**
 
 - См. статью [Как устранять неполадки и отслеживать работу SAP HANA (крупные экземпляры) в Azure](./hana-monitor-troubleshoot.md).

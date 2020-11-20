@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 10/23/2017
 ms.author: alkohli
-ms.openlocfilehash: 8b74e23147e4dcc6f786c1c08b8a03bd07dd0b9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5f2a86fb7c776436ea707ef293a66c033014c33
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91744038"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966332"
 ---
 # <a name="use-azure-automation-runbooks-to-manage-storsimple-devices"></a>Управление устройствами StorSimple с помощью Runbook службы автоматизации Azure
 
@@ -186,7 +186,7 @@ ms.locfileid: "91744038"
 
        ![На снимке экрана показана панель Добавление учетной записи службы автоматизации со значениями для подписки, создание учетной записи запуска от имени Azure и создание 2.](./media/storsimple-8000-automation-azurerm-runbook/create-automation-account.png)
 
-      После успешного создания учетной записи автоматизации вы получите уведомление. Дополнительные сведения о создании учетной записи автоматизации см. в статье [Обновление проверки подлинности учетных записей службы автоматизации с использованием учетных записей запуска от имени](https://docs.microsoft.com/azure/automation/automation-create-runas-account).
+      После успешного создания учетной записи автоматизации вы получите уведомление. Дополнительные сведения о создании учетной записи автоматизации см. в статье [Обновление проверки подлинности учетных записей службы автоматизации с использованием учетных записей запуска от имени](../automation/manage-runas-account.md).
 
 3. Чтобы убедится, что созданная учетная запись службы автоматизации имеем доступ к службе диспетчера устройств StorSimple, необходимо присвоить этой учетной записи соответствующие разрешения. Перейдите в раздел **Управление доступом** в службе диспетчера устройств StorSimple. Щелкните **+ Добавить** и укажите имя учетной записи службы автоматизации Azure. **Сохраните** параметры.
 
@@ -206,7 +206,7 @@ ms.locfileid: "91744038"
 
     ![click-new-runbook](./media/storsimple-8000-automation-azurerm-runbook/verify-runbook-created.png)
 
-8. Измените модуль Runbook и щелкните **Тестовая область**. Укажите параметры, такие как имя службы диспетчера устройства StorSimple, а также имя устройства StorSimple и подписку. **Запустите** тест. После завершения выполнения создается отчет. Дополнительные сведения см. в разделе [Шаг 3. Тестирование модуля Runbook](../automation/automation-first-runbook-textual-powershell.md#step-3---test-the-runbook).
+8. Измените модуль Runbook и щелкните **Тестовая область**. Укажите параметры, такие как имя службы диспетчера устройства StorSimple, а также имя устройства StorSimple и подписку. **Запустите** тест. После завершения выполнения создается отчет. Дополнительные сведения см. в разделе [Шаг 3. Тестирование модуля Runbook](../automation/learn/automation-tutorial-runbook-textual-powershell.md#step-3---test-the-runbook).
 
     ![На снимке экрана показано тестовое панорамирование, в котором вы канентер значения параметров и запускаете тест](./media/storsimple-8000-automation-azurerm-runbook/test-runbook.png)
 
@@ -214,6 +214,6 @@ ms.locfileid: "91744038"
 
     ![На снимке экрана показана панель редактирования Runbook PowerShell, в которой предлагается перейти к публикации Runbook](./media/storsimple-8000-automation-azurerm-runbook/publish-runbook.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

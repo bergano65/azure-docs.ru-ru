@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: damendo
-ms.openlocfilehash: 18023f5a5b36dd971080d7a62fdd44698a205bb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f9b9e91cda93a986fdaaf0f53d8987544e783a2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88272541"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966469"
 ---
 # <a name="read-nsg-flow-logs"></a>Чтение журналов потоков NSG
 
 Узнайте, как читать записи журналов потоков групп безопасности сети (NSG) с помощью PowerShell.
 
-Журналы потоков NSG хранятся в учетной записи хранения в [блочных BLOB-объектах](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). Блочные BLOB-объекты состоят из небольших блоков. Каждый журнал — это отдельный блочный BLOB-объект, который создается один раз в час. Каждый час создается по журналу, а новые записи добавляются в журнал каждые несколько минут, используя самые актуальные данные. В этой статье показано, как читать части этих журналов потоков.
+Журналы потоков NSG хранятся в учетной записи хранения в [блочных BLOB-объектах](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). Блочные BLOB-объекты состоят из небольших блоков. Каждый журнал — это отдельный блочный BLOB-объект, который создается один раз в час. Каждый час создается по журналу, а новые записи добавляются в журнал каждые несколько минут, используя самые актуальные данные. В этой статье показано, как читать части этих журналов потоков.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88272541"
 
 ## <a name="retrieve-the-block-list"></a>Получение списка блоков
 
-Следующий сценарий PowerShell задает переменные, которые необходимы для запроса BLOB-объекта журнала потоков NSG и отображения списка блоков внутри блочного BLOB-объекта [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblockblob). Обновите сценарий, указав допустимые значения для своей среды.
+Следующий сценарий PowerShell задает переменные, которые необходимы для запроса BLOB-объекта журнала потоков NSG и отображения списка блоков внутри блочного BLOB-объекта [CloudBlockBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob). Обновите сценарий, указав допустимые значения для своей среды.
 
 ```powershell
 function Get-NSGFlowLogCloudBlockBlob {
@@ -184,11 +184,11 @@ A","1497646742,10.0.0.4,168.62.32.14,44942,443,T,O,A","1497646742,10.0.0.4,52.24
 
 Этот сценарий является примером того, как прочитать записи в журналах потоков NSG, не анализируя весь журнал. Вы можете считывать новые записи в журнале по мере их записывания, используя идентификатор блока или отслеживая длину блоков, сохраненных в блочном BLOB-объекте. Это позволяет считывать только новые записи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 
 Для дополнительных сведений о способах просмотра журналов потоков NSG см. статьи [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md), [Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana](network-watcher-nsg-grafana.md), и [Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog](network-watcher-analyze-nsg-flow-logs-graylog.md). Функция Azure с открытым исходным кодом для использования больших двоичных объектов, которые можно использовать непосредственно и передать различным потребителям log Analytics, находится здесь: [соединитель журналов потоков NSG для наблюдателя за сетями Azure](https://github.com/Microsoft/AzureNetworkWatcherNSGFlowLogsConnector).
 
-[Аналитика трафика Azure](https://docs.microsoft.com/azure/network-watcher/traffic-analytics) можно использовать для получения ценной информации о потоках трафика. Аналитика трафика использует [log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal) , чтобы сделать запрос трафика необработанным.
+[Аналитика трафика Azure](./traffic-analytics.md) можно использовать для получения ценной информации о потоках трафика. Аналитика трафика использует [log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md) , чтобы сделать запрос трафика необработанным.
 
 Дополнительные сведения о больших двоичных объектах хранилища см. в статье [Привязки хранилища BLOB-объектов для Функций Azure](../azure-functions/functions-bindings-storage-blob.md).

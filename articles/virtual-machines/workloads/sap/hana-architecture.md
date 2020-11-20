@@ -7,18 +7,19 @@ author: msjuergent
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fa059ec8159779969c7ef7a5f4c97f3e985993a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a23a177945316bca89aa5cbcc46f840213dbe832
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082194"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964819"
 ---
 # <a name="sap-hana-large-instances-architecture-on-azure"></a>Архитектура SAP HANA (крупные экземпляры) в Azure
 
@@ -60,5 +61,5 @@ ms.locfileid: "87082194"
 
 Сведения о доступных номерах SKU см. в статье [Available SKUs for HLII](hana-available-skus.md) (Доступные номера SKU для HLI).
 
-**Следующие шаги**
+**Дальнейшие действия**
 - См. статью о [сетевой архитектуре SAP HANA в Azure (крупные экземпляры)](hana-network-architecture.md).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/20/2020
 ms.author: damendo
-ms.openlocfilehash: a6be3a7fd19b43bd1b18af05d0dbfaf5053fb181
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 2e6a92a4d08f1603f480a990ad437a90302a8189
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682967"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966094"
 ---
 # <a name="data-residency-for-azure-network-watcher"></a>Местонахождение данных для наблюдателя за сетями Azure
 За исключением службы монитора подключений (Предварительная версия), наблюдатель за сетями Azure не хранит данные клиента.
@@ -30,6 +30,6 @@ ms.locfileid: "94682967"
 ## <a name="data-residency"></a>Местонахождение данных
 В Azure функция, позволяющая хранить данные клиентов в одном регионе, в настоящее время доступна только в регионе Юго-Восточной Азии (Сингапур) в регионе Азиатско-Тихоокеанский регион Geo and Южная Бразилия (Сан-Паулу State) географического региона Бразилии. Для всех других регионов данные клиента хранятся в геообъектах. Дополнительные сведения см. в [центре управления безопасностью](https://azuredatacentermap.azurewebsites.net/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Ознакомьтесь с обзором [наблюдателя за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview).
+* Ознакомьтесь с обзором [наблюдателя за сетями](./network-watcher-monitoring-overview.md).

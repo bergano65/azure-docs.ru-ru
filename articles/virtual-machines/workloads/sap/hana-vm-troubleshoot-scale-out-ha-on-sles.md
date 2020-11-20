@@ -7,17 +7,18 @@ author: hermanndms
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
-ms.openlocfilehash: 5c3a24bc9d754a15a0b372667fbcd689365a9aec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7cf18e2d375d7a45c3641876b8a3ed5974882927
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87088314"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965431"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Проверка и устранение неполадок при настройке горизонтального масштабирования SAP HANA с высоким уровнем доступности в SLES 12 SP3 
 
@@ -550,7 +551,7 @@ Last change: Wed Sep 12 07:46:54 2018 by root via cibadmin on hso-hana-vm-s2-1
 7 nodes configured
 17 resources configured
 
-              *** Resource management is DISABLED ***
+              **_ Resource management is DISABLED _*_
   The cluster will not attempt to start, stop or recover services
 
 Online: [ hso-hana-dm hso-hana-vm-s1-0 hso-hana-vm-s1-1 hso-hana-vm-s1-2 hso-hana-vm-s2-0 hso-hana-vm-s2-1 hso-hana-vm-s2-2 ]
@@ -586,7 +587,7 @@ crm configure property maintenance-mode=false
 </code></pre>
 
 
-Другая команда **crm** получает полную конфигурацию кластера и открывает ее в редакторе, где вы можете ее изменить. После сохранения изменений кластер запускает соответствующие действия:
+Другая команда _ *CRM** возвращает полную конфигурацию кластера в редактор, поэтому ее можно изменить. После сохранения изменений кластер запускает соответствующие действия:
 
 <pre><code>
 crm configure edit
@@ -682,7 +683,7 @@ watch SAPHanaSR-showAttr
 
 Существует несколько повторных попыток, чтобы избежать ненужных отработок отказа. Кластер реагирует только при изменении состояния с **Ok** (возвращаемое значение **4**) на **error** (возвращаемое значение **1**). Таким образом, если в выходных данных команды **SAPHanaSR-showAttr** отображается виртуальная машина с состоянием **offline**, то все в порядке. Однако пока что нет действий для переключения между основным и второстепенным ресурсами. Действия кластера не запускаются, пока SAP HANA не возвращает ошибку.
 
-Вы можете отслеживать состояние работоспособности SAP HANA ландшафт в качестве пользователя ** \<HANA SID\> ADM** , вызвав сценарий SAP Python следующим образом. Возможно, потребуется адаптировать путь:
+Вы можете отслеживать состояние работоспособности SAP HANA ландшафт в качестве пользователя **\<HANA SID\> ADM** , вызвав сценарий SAP Python следующим образом. Возможно, потребуется адаптировать путь:
 
 <pre><code>
 watch python /hana/shared/HSO/exe/linuxx86_64/HDB_2.00.032.00.1533114046_eeaf4723ec52ed3935ae0dc9769c9411ed73fec5/python_support/landscapeHostConfiguration.py
@@ -976,6 +977,6 @@ https://&ltnode&gt:7630
 ![Один переход Hawk](media/hana-vm-scale-out-HA-troubleshooting/hawk-5.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве по устранению неполадок описываются вопросы высокой доступности для SAP HANA в конфигурации горизонтального масштабирования. Еще один важный компонент ландшафта SAP, помимо базы данных, — стек SAP NetWeaver. Узнайте о [высоком уровне доступности для SAP NetWeaver на виртуальных машинах Azure, использующих SUSE Enterprise Linux Server][sap-nw-ha-guide-sles].

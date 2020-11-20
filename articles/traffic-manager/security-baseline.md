@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9ed6a57dadb70daed9cdf02421b91d310b4b0f07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4523319c04703c04a293471124329512e31a265
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631466"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964683"
 ---
 # <a name="azure-security-baseline-for-azure-traffic-manager"></a>Базовый план безопасности Azure для диспетчера трафика Azure
 
@@ -270,7 +270,7 @@ ms.locfileid: "91631466"
 
 В Resource Manager в диспетчер трафика можно добавить конечные точки из любой подписки при условии, что у пользователя, настраивающего профиль диспетчера трафика, есть доступ на чтение к этим конечным точкам.
 
-Диспетчер трафика Azure имеет предопределенную роль RBAC Azure с именем "участник диспетчера трафика Azure", который можно назначить пользователям.
+У диспетчера трафика Azure есть предопределенная роль Azure с именем "участник диспетчера трафика", которую можно назначить пользователям.
 
 - [Добавление и удаление назначений ролей Azure с помощью портала Azure](../role-based-access-control/role-assignments-portal.md)
 
@@ -304,7 +304,7 @@ ms.locfileid: "91631466"
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью обозревателя графа ресурсов Azure, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсов.
 
-- [Создание запросов с помощью обозревателя графа ресурсов Azure](../governance/resource-graph/first-query-portal.md)
+- [Как создавать запросы с помощью обозревателя Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
 - [Просмотр подписок Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
