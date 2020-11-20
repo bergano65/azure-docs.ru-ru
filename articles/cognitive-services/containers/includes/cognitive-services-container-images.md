@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/03/2020
 ms.author: aahi
-ms.openlocfilehash: 3f2611c9535b9721cccadf35e56bdd21a3020257
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 2c2ebe9b419100163ae55c1be85dd1464904e841
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677434"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94978605"
 ---
 ### <a name="container-repositories-and-images"></a>Репозитории и образы контейнеров
 
@@ -89,9 +89,8 @@ ms.locfileid: "92677434"
 |--|--|--|
 | [Компьютерное зрение](../../Computer-vision/computer-vision-how-to-install-containers.md) | Read v 2.0 | `mcr.microsoft.com/azure-cognitive-services/vision/read:2.0-preview` |
 | [Компьютерное зрение](../../Computer-vision/computer-vision-how-to-install-containers.md) | Для чтения, версия 3.1 | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview` |
-| [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-container) | Пространственный анализ | `mcr.microsoft.com/azure-cognitive-services/vision/spatial-analysis` |
+| [Компьютерное зрение](../../computer-vision/spatial-analysis-container.md) | Пространственный анализ | `mcr.microsoft.com/azure-cognitive-services/vision/spatial-analysis` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=ctts) | Пользовательский текст в речь | `mcr.microsoft.com/azure-cognitive-services/speechservices/custom-text-to-speech` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=lid) | Распознавание языка | `mcr.microsoft.com/azure-cognitive-services/speechservices/language-detection` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=ntts) | Преобразование текста в речь для нейронов | `mcr.microsoft.com/azure-cognitive-services/speechservices/neural-text-to-speech` |
-| [Анализ текста для работоспособности](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=health) | Анализ текста для сферы здравоохранения | `containerpreview.azurecr.io/microsoft/cognitive-services-healthcare` |
-
+| [Анализ текста для сферы здравоохранения](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=health) | Анализ текста для сферы здравоохранения | `containerpreview.azurecr.io/microsoft/cognitive-services-healthcare` |
