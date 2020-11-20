@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: eliotgra
-ms.openlocfilehash: 2a030d9ca5422e12856dcb81b29f8327e684c97e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6b6649d03da319171b24baa24983972bf270679
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90528659"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954551"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
-В этой статье описывается, как использовать службу подготовки устройств для центра Интернета вещей Azure для [подготовки](about-iot-dps.md#provisioning-process) DevKit MXChip IOT в центре Интернета вещей Azure. В этом руководстве описано следующее:
+В этой статье описывается, как использовать службу подготовки устройств для центра Интернета вещей Azure для [подготовки](about-iot-dps.md#provisioning-process) DevKit MXChip IOT в центре Интернета вещей Azure. В этом руководстве вы узнаете, как:
 
 * настройка глобальной конечной точки службы подготовки устройств на устройстве;
 * создание сертификата X.509 с помощью уникального секрета устройства (UDS);
@@ -26,13 +26,13 @@ ms.locfileid: "90528659"
 
 [MXChip IoT DevKit](https://aka.ms/iot-devkit) — это универсальная совместимая с Arduino плата со множеством периферийных устройств и датчиков. Решения для нее можно разрабатывать с помощью [Azure IoT Device Workbench](https://aka.ms/iot-workbench) или пакета расширений [Инструменты Azure IoT](https://aka.ms/azure-iot-tools) в Visual Studio Code. DevKit предоставляется с расширяющимся [каталогом проектов](https://microsoft.github.io/azure-iot-developer-kit/docs/projects/), чтобы помочь вам выполнить прототипирование решений Интернета вещей, использующих службы Azure.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для работы с этим руководством сначала следует выполнить следующие задачи:
 
-* Настройте Wi-Fi DevKit и подготовьте среду разработки, следуя инструкциям в разделе "Подготовка среды разработки" статьи [Подключение Интернета вещей DEVKIT AZ3166 к центру Интернета вещей Azure в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment).
+* Настройте Wi-Fi DevKit и подготовьте среду разработки, следуя инструкциям в разделе "Подготовка среды разработки" статьи [Подключение Интернета вещей DEVKIT AZ3166 к центру Интернета вещей Azure в облаке](../iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started.md#prepare-the-development-environment).
 * Обновите новейшее встроенное ПО до версии 1.3.0 или более новой, воспользовавшись руководством по [обновлению встроенного ПО DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
-* Создайте и свяжите Центр Интернета вещей с экземпляром службы подготовки устройств, следуя шагам из руководства [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](/azure/iot-dps/quick-setup-auto-provision).
+* Создайте и свяжите Центр Интернета вещей с экземпляром службы подготовки устройств, следуя шагам из руководства [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 
 ## <a name="open-sample-project"></a>Открытие примера проекта
 
@@ -74,7 +74,7 @@ ms.locfileid: "90528659"
 
 ## <a name="update-the-global-device-endpoint-and-id-scope"></a>Обновление глобальной конечной точки устройства и области идентификаторов
 
-В коде устройства необходимо указать [конечную точку подготовки устройства](/azure/iot-dps/concepts-service#device-provisioning-endpoint) и область идентификаторов, чтобы обеспечить изоляцию клиента.
+В коде устройства необходимо указать [конечную точку подготовки устройства](./concepts-service.md#device-provisioning-endpoint) и область идентификаторов, чтобы обеспечить изоляцию клиента.
 
 1. В портал Azure выберите панель **Обзор** службы подготовки устройств и запишите значения **глобальных конечных точек устройства** и **области идентификаторов** .
   ![Глобальная конечная точка Службы подготовки устройств и область идентификатора](media/how-to-connect-mxchip-iot-devkit/dps-global-endpoint.png)
@@ -90,7 +90,7 @@ ms.locfileid: "90528659"
 
 ## <a name="generate-x509-certificate"></a>Создание сертификата X.509
 
-[Механизма аттестации](/azure/iot-dps/concepts-device#attestation-mechanism), используемый в этом примере, — сертификат X.509. Необходимо использовать программу для его создания.
+[Механизма аттестации](./concepts-service.md#attestation-mechanism), используемый в этом примере, — сертификат X.509. Необходимо использовать программу для его создания.
 
 1. В VS Code щелкните `F1`, введите и выберите **Открыть новый терминал**, чтобы открыть окно терминала.
 
@@ -141,4 +141,3 @@ ms.locfileid: "90528659"
 > * проверка устройства на наличие регистрации.
 
 Дополнительные сведения см. в статье [Создание и подготовка имитированного устройства доверенного платформенного модуля (ТРМ) с помощью пакета SDK для устройства C для службы подготовки устройств Центра Интернета вещей](./quick-create-simulated-device.md).
-

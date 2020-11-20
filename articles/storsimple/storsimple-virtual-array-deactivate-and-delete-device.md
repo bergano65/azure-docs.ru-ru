@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2016
 ms.author: alkohli
-ms.openlocfilehash: c787df901fc33c2dcd2c8a901202c72ea6de45d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84fd1a2d3d0dc4ce6960469ea3212b8ca1d4d07c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85513612"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956778"
 ---
 # <a name="deactivate-and-delete-a-storsimple-virtual-array"></a>Отключение и удаление виртуального массива StorSimple
 
@@ -30,7 +30,7 @@ ms.locfileid: "85513612"
 * Отключение устройства 
 * Удаление отключенного устройства
 
-Сведения, приведенные в этой статье, относятся только к виртуальным массивам StorSimple. Сведения об устройствах серии 8000 см. в статье [Отключение и удаление устройства StorSimple](storsimple-deactivate-and-delete-device.md).
+Сведения, приведенные в этой статье, относятся только к виртуальным массивам StorSimple. Сведения об устройствах серии 8000 см. в статье [Отключение и удаление устройства StorSimple](./storsimple-8000-deactivate-and-delete-device.md).
 
 ## <a name="when-to-deactivate"></a>Сценарии отключения
 
@@ -86,9 +86,8 @@ ms.locfileid: "85513612"
    
     После удаления устройства список устройств будет обновлен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о выполнении отработки отказа см. статье [Аварийное восстановление и отработка отказа устройства для виртуального массива StorSimple](storsimple-virtual-array-failover-dr.md).
 
-* Дополнительные сведения об управлении устройством с помощью службы диспетчера устройств StorSimple см. в [этой статье](storsimple-virtual-array-manager-service-administration.md). 
-
+* Дополнительные сведения об управлении устройством с помощью службы диспетчера устройств StorSimple см. в [этой статье](storsimple-virtual-array-manager-service-administration.md).

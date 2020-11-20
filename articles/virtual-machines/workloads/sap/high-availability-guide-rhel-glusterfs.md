@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: radeltch
-ms.openlocfilehash: e6b8708edeeb4b3b69dab82265d13db2a4c22e08
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41699625b7062daa005e6908ce9e4249dd86f1fa
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87051660"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956404"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
 
@@ -98,7 +99,7 @@ ms.locfileid: "87051660"
    4. Имя пользователя и пароль администратора или ключ SSH  
       Создается учетная запись пользователя, которую можно использовать для входа на компьютер.
    5. Идентификатор подсети  
-      Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно выглядит так:/Subscriptions/** &lt; Subscription ID &gt; **/ResourceGroups/** &lt; &gt; **** &lt; &gt; **имя группы ресурсов/провидерс/Микрософт.Нетворк/виртуалнетворкс/имя виртуальной сети/субнетс/** &lt; &gt; имя подсети** .
+      Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно выглядит так:/Subscriptions/**&lt; Subscription ID &gt;**/ResourceGroups/**&lt; &gt;****&lt; &gt;** имя группы ресурсов/провидерс/Микрософт.Нетворк/виртуалнетворкс/имя виртуальной сети/субнетс/**&lt; &gt; имя подсети** .
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Развертывание Linux вручную с помощью портала Azure
 
@@ -348,7 +349,7 @@ ms.locfileid: "87051660"
    sudo gluster volume start <b>NW2</b>-aers
    </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-rhel.md)
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]

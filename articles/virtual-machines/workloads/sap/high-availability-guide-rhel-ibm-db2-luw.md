@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: SAP
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: juergent
-ms.openlocfilehash: d613da4d9abdfe22fc20f1b74da41e4a65cbff33
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: be455de2a1f8aebc7327af4741e0652a4be76665
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151574"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956438"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-red-hat-enterprise-linux-server"></a>Обеспечение высокого уровня доступности IBM DB2 LUW на виртуальных машинах Azure в Red Hat Enterprise Linux Server
 
@@ -144,7 +145,7 @@ HADR — это только функция репликации. Он не им
 
 ## <a name="create-the-pacemaker-cluster"></a>Создание кластера Pacemaker
     
-Сведения о создании базового кластера Pacemaker для этого сервера IBM DB2 см. в статье [Настройка Pacemaker на Red Hat Enterprise Linux в Azure][rhel-pcs-azr]. 
+Сведения о создании базового кластера Pacemaker для этого сервера IBM DB2 см. в статье [Настройка Pacemaker на Red Hat Enterprise Linux в Azure][rhel-pcs-azr]. 
 
 ## <a name="install-the-ibm-db2-luw-and-sap-environment"></a>Установка среды IBM DB2 LUW и SAP
 
@@ -409,11 +410,11 @@ Online: [AZ-idb01 AZ-idb02]
 
 1. Создайте интерфейсный пул IP-адресов:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
+   a. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов** и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
 
-   c. Установите статическое **назначение** и **Static**введите IP-адрес **Virtual-IP** , определенный в начале.
+   c. Установите статическое **назначение** и **Static** введите IP-адрес **Virtual-IP** , определенный в начале.
 
    d. Щелкните **ОК**.
 
@@ -421,9 +422,9 @@ Online: [AZ-idb01 AZ-idb02]
 
 1. Создайте пул серверной части:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
+   a. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы** и нажмите кнопку **Добавить**.
 
-   b. Введите имя нового пула серверной части (например, **DB2-Серверная**часть).
+   b. Введите имя нового пула серверной части (например, **DB2-Серверная** часть).
 
    c. Щелкните **Добавить виртуальную машину**.
 
@@ -435,11 +436,11 @@ Online: [AZ-idb01 AZ-idb02]
 
 1. Создание пробы работоспособности:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
+   a. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности** и нажмите кнопку **Добавить**.
 
    b. Введите имя новой проверки работоспособности (например, **DB2-HP**).
 
-   c. Выберите **TCP** в качестве протокола и порта **62500**. Установите для параметра **интервал** значение **5**и установите для параметра **порог неработоспособности** значение **2**.
+   c. Выберите **TCP** в качестве протокола и порта **62500**. Установите для параметра **интервал** значение **5** и установите для параметра **порог неработоспособности** значение **2**.
 
    d. Щелкните **ОК**.
 
@@ -451,7 +452,7 @@ Online: [AZ-idb01 AZ-idb02]
 
    c. Выберите интерфейсный IP-адрес, пул внутренних серверов и пробы работоспособности, созданные ранее (например, **DB2-** Front).
 
-   d. Установите для параметра **протокол** значение **TCP**и введите порт *связи с базой данных*порта.
+   d. Установите для параметра **протокол** значение **TCP** и введите порт *связи с базой данных* порта.
 
    д) Увеличьте **время ожидания** до 30 минут.
 
@@ -509,7 +510,7 @@ j2ee/dbhost = db-virt-hostname
 
 Рекомендуется настроить общий общий ресурс NFS или Глустерфс, где журналы записываются из обоих узлов. Общий ресурс NFS или Глустерфс должен быть высокодоступным. 
 
-Вы можете использовать существующие общие папки NFS высокой доступности или Глустерфс для транспорта или каталога профиля. Дополнительные сведения можно найти в разделе
+Вы можете использовать существующие общие папки NFS высокой доступности или Глустерфс для транспорта или каталога профиля. Дополнительные сведения см. в разделе:
 
 - [GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver][glusterfs] 
 - [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP][anf-rhel]
@@ -616,8 +617,8 @@ sudo pcs resource clear Db2_HADR_<b>ID2</b>-master
 </code></pre>
 
 - **Перемещение ресурсов ПК \<res_name> <host> :** создает ограничения расположения и может вызвать проблемы с перенаправление
-- **ресурсы ПК Clear \<res_name> **: очищает ограничения расположения
-- **Очистка \<res_name> ресурсов ПК **: очищает все ошибки ресурса.
+- **ресурсы ПК Clear \<res_name>**: очищает ограничения расположения
+- **Очистка \<res_name> ресурсов ПК**: очищает все ошибки ресурса.
 
 ### <a name="test-a-manual-takeover"></a>Тестирование перенаправление вручную
 
@@ -817,7 +818,7 @@ rsc_st_azure    (stonith:fence_azure_arm):      Started az-idb02
      vip_db2id2_ID2     (ocf::heartbeat:IPaddr2):       Started az-idb02
      nc_db2id2_ID2      (ocf::heartbeat:azure-lb):      Started az-idb02</code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Высокодоступная архитектура и сценарии для SAP NetWeaver](./sap-high-availability-architecture-scenarios.md)
 - [Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure][rhel-pcs-azr]
 

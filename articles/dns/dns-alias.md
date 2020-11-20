@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 08/09/2019
 ms.author: rohink
-ms.openlocfilehash: 3378036c4800b274d879743abf937c7860e63ded
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b2576669357aae7e5fe423515933c2ce4a23a7d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82926237"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954483"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Обзор записей псевдонимов Azure DNS
 
@@ -27,7 +27,7 @@ ms.locfileid: "82926237"
 > [!NOTE]
 > Если вы планируете использовать запись псевдонима для записей типов A или AAAA, чтобы указать на [профиль диспетчера трафика Azure](../traffic-manager/quickstart-create-traffic-manager-profile.md), необходимо убедиться в том, что профиль диспетчера трафика имеет только [внешние конечные точки](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints). Укажите IPv4- или IPv6-адрес для внешних конечных точек в диспетчере трафика. В конечных точках нельзя использовать полные доменные имена (FQDN). Рекомендуется использовать статические IP-адреса.
 
-## <a name="capabilities"></a>Возможности
+## <a name="capabilities"></a>Характеристики
 
 - **Выберите ресурс общедоступного IP-адреса из набора DNS-записей A/AAAA**. Вы можете создать набор записей A/AAAA и сделать его набором записей псевдонима, чтобы он указывал на общедоступный IP-ресурс (Standard или Basic). Набор записей DNS изменяется автоматически при изменении или удалении общедоступного IP-адреса. Несвязанные DNS-записи, которые указывают на неправильные IP-адреса, не используются.
 
@@ -73,10 +73,10 @@ ms.locfileid: "82926237"
 > [!NOTE]
 > Указание зоны, вершине в конечные точки CDN для Azure CDN из Akamai, в настоящее время не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о записях псевдонима см. в следующих статьях:
 
 - [Руководство по записи псевдонима для ссылки на общедоступный IP-адрес Azure](tutorial-alias-pip.md)
 - [Руководство. Настройка записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика](tutorial-alias-tm.md)
-- [Вопросы и ответы о DNS](https://docs.microsoft.com/azure/dns/dns-faq#alias-records)
+- [Вопросы и ответы о DNS](./dns-faq.md#alias-records)

@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: d7c59cc1-b2d0-4d90-9126-628f9c7a5538
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/23/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4ed99145a2d3860849c4a8117a93a9a0f24d227c
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 1cd6f5f7865d18461ac7a635530e9aabfde380a6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540932"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955418"
 ---
 # <a name="azure-storage-types-for-sap-workload"></a>Типы Службы хранилища Azure для рабочей нагрузки SAP
 В Azure существует множество типов хранилищ, которые значительно отличаются возможностями, пропускной способностью, задержкой и ценами. Некоторые типы хранилищ не имеют ограничений, или их можно использовать только для сценариев SAP. В то время как несколько типов хранилища Azure хорошо подходят или оптимизированы для конкретных сценариев рабочей нагрузки SAP. В частности, для SAP HANA некоторые типы хранилищ Azure сертифицированы на использование с SAP HANA. В этом документе мы собираемся выполнять различные типы хранилища и описать их возможности и удобство использования с рабочими нагрузками SAP и компонентами SAP.

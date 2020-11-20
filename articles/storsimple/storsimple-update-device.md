@@ -14,16 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: dec354767875d91c6062cdfbb0009e857dbe2636
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: faf06775b78c5a7c90cea000ac0a1eb768107ef4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90056557"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956846"
 ---
 # <a name="update-your-storsimple-8000-series-device"></a>Обновление устройства StorSimple серии 8000
 > [!NOTE]
-> Классический портал StorSimple устарел. Диспетчеры устройств StorSimple автоматически перейдут на новый портал Azure в соответствии с графиком устаревания. Вы получите сообщение электронной почты и уведомление с портала, касающиеся этого перехода. Этот документ скоро также перестанет использоваться. Сведения, связанные с переходом, см. в [ответах на вопросы о перемещении на портал Azure](storsimple-8000-move-azure-portal-faq.md).
+> Классический портал StorSimple устарел. Диспетчеры устройств StorSimple автоматически перейдут на новый портал Azure в соответствии с графиком устаревания. Вы получите сообщение электронной почты и уведомление с портала, касающиеся этого перехода. Этот документ скоро также перестанет использоваться. Сведения, связанные с переходом, см. в [ответах на вопросы о перемещении на портал Azure](./index.yml).
 
 ## <a name="overview"></a>Обзор
 Функции обновления StorSimple позволяют легко поддерживать устройство StorSimple в актуальном состоянии. В зависимости от типа обновлений можно применить обновления к устройству с помощью классического портала Azure или интерфейса Windows PowerShell. В этом учебнике описываются типы обновлений и способы установки каждого из них.
@@ -119,7 +119,6 @@ Windows PowerShell для StorSimple используется, чтобы при
 ## <a name="what-happens-to-updates-if-you-perform-a-factory-reset-of-the-device"></a>Что происходит с обновлениями при выполнении сброса параметров к значениям по умолчанию?
 Если для устройства выполнить сброс параметров к значениям по умолчанию, все обновления будут потеряны. После того как устройство, для которого выполнен сброс параметров, будет зарегистрировано и настроено, необходимо будет вручную установить обновления с помощью классического портала Azure или Windows PowerShell для StorSimple. Дополнительные сведения о сбросе параметров см. в разделе [Восстановление на устройстве заводских настроек](storsimple-8000-manage-device-controller.md#reset-the-device-to-factory-default-settings).
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* Узнайте больше об [использовании Windows PowerShell для администрирования устройства StorSimple](storsimple-windows-powershell-administration.md).
-* Узнайте больше об [использовании службы StorSimple Manager для администрирования устройства StorSimple](storsimple-manager-service-administration.md).
-
+## <a name="next-steps"></a>Следующие шаги
+* Узнайте больше об [использовании Windows PowerShell для администрирования устройства StorSimple](./storsimple-8000-windows-powershell-administration.md).
+* Узнайте больше об [использовании службы StorSimple Manager для администрирования устройства StorSimple](./storsimple-8000-manager-service-administration.md).

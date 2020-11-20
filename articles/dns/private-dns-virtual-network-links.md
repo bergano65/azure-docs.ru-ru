@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 9/24/2019
 ms.author: rohink
-ms.openlocfilehash: 9181ef93dfedbc28b297bef48a0bc37ba6d69798
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e43ad35cdaad89d5b9f43007bad8782f358c1a6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75646767"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954347"
 ---
 # <a name="what-is-a-virtual-network-link"></a>Что такое связь виртуальной сети?
 
@@ -23,7 +23,7 @@ ms.locfileid: "75646767"
 
 ## <a name="registration-virtual-network"></a>Виртуальная сеть регистрации
 
-При [создании связи](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network) между частной зоной DNS и виртуальной сетью у вас есть возможность включить [авторегистрацию](./private-dns-autoregistration.md) записей DNS для виртуальных машин. При выборе этого параметра виртуальная сеть станет виртуальной сетью регистрации для частной зоны DNS. Для виртуальных машин, развертываемых в сети, автоматически создается запись DNS. Записи DNS создаются для виртуальных машин, которые уже развернуты в виртуальной сети. С точки зрения виртуальной сети частная зона DNS станет зоной регистрации для этой виртуальной сети.
+При [создании связи](./private-dns-getstarted-portal.md#link-the-virtual-network) между частной зоной DNS и виртуальной сетью у вас есть возможность включить [авторегистрацию](./private-dns-autoregistration.md) записей DNS для виртуальных машин. При выборе этого параметра виртуальная сеть станет виртуальной сетью регистрации для частной зоны DNS. Для виртуальных машин, развертываемых в сети, автоматически создается запись DNS. Записи DNS создаются для виртуальных машин, которые уже развернуты в виртуальной сети. С точки зрения виртуальной сети частная зона DNS станет зоной регистрации для этой виртуальной сети.
 Одна частная зона DNS может иметь несколько виртуальных сетей регистрации, но каждая виртуальная сеть может иметь только одну связанную с ней зону регистрации.
 
 ## <a name="resolution-virtual-network"></a>Разрешение виртуальной сети
@@ -33,7 +33,7 @@ ms.locfileid: "75646767"
 
 ## <a name="limits"></a>Ограничения
 
-Чтобы понять, сколько сетей регистрации и разрешения можно связать с частными зонами DNS, см. [Azure DNS ограничения](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-dns-limits) .
+Чтобы понять, сколько сетей регистрации и разрешения можно связать с частными зонами DNS, см. [Azure DNS ограничения](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-dns-limits) .
 
 ## <a name="other-considerations"></a>Другие замечания
 
@@ -47,9 +47,9 @@ ms.locfileid: "75646767"
 
 * При удалении виртуальной сети все ссылки на виртуальные сети и автоматически зарегистрированные записи DNS, связанные с ним в разных частных зонах DNS, автоматически удаляются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте, как связать виртуальную сеть с частной зоной DNS с помощью [портал Azure](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network)
+* Узнайте, как связать виртуальную сеть с частной зоной DNS с помощью [портал Azure](./private-dns-getstarted-portal.md#link-the-virtual-network)
 
 * Узнайте, как создать частную зону в Azure DNS с помощью [Azure PowerShell](./private-dns-getstarted-powershell.md) или [интерфейса командной строки Azure](./private-dns-getstarted-cli.md).
 

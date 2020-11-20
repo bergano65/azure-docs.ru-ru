@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/19/2017
 ms.author: alkohli
-ms.openlocfilehash: baa035269f4a5b2f39263264f23183b308264ead
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 090797549cc61aa27945114e5ef8b666226b66e2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85513949"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956999"
 ---
 # <a name="manage-your-storsimple-device-controllers"></a>Управление контроллерами устройства StorSimple
 
@@ -117,7 +117,7 @@ ms.locfileid: "85513949"
    
     `Reset-HcsFactoryDefault`
    
-    Для сброса одного контроллера выполните командлет [Reset-HcsFactoryDefault](https://technet.microsoft.com/library/dn688132.aspx) с параметром `-scope`.
+    Для сброса одного контроллера выполните командлет [Reset-HcsFactoryDefault](/previous-versions/windows/powershell-scripting/dn688132(v=wps.630)) с параметром `-scope`.
    
     Система перезагрузится несколько раз. После успешного восстановления заводских настроек вы получите уведомление. В зависимости от модели системы завершение этого процесса может занять 45–60 минут для устройства 8100 и 60–90 минут для устройства 8600.
    
@@ -158,7 +158,6 @@ ms.locfileid: "85513949"
 
 **Ответ.** Чтобы вернуть контроллер в службу, нужно вставить его в корпус согласно инструкциям в разделе [Замена модуля контроллера в устройстве StorSimple](storsimple-8000-controller-replacement.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Если возникли затруднения с контроллерами устройства StorSimple, которые не удается разрешить с помощью процедур, описанных в этом учебнике, [обратитесь в службу поддержки Майкрософт](storsimple-8000-contact-microsoft-support.md).
 * Дополнительные сведения об использовании службы диспетчера устройств StorSimple см. в статье [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
-

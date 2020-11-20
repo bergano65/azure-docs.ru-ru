@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 10/07/2020
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: b13d82780a01771c6bb8e87091a7808ea22ca111
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: b90fe6b7e0937a9ac3b300e904085122610d5645
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371191"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957084"
 ---
 # <a name="text-analytics-api-v3-language-support"></a>Поддержка языков API анализа текста v3 
 
 [!INCLUDE [v3 region availability](includes/v3-region-availability.md)]
 
 
-#### <a name="sentiment-analysis"></a>[Анализ тональности](#tab/sentiment-analysis).
+#### <a name="sentiment-analysis"></a>[анализ тональности](#tab/sentiment-analysis);
 
 | Язык              | Код языка | Поддержка v2 | Поддержка v3 | Начальная версия модели V3: |              Примечания |
 |:----------------------|:-------------:|:----------:|:----------:|:--------------------------:|-------------------:|
@@ -35,12 +35,13 @@ ms.locfileid: "92371191"
 | Французский                |     `fr`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | Немецкий                |     `de`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | Греческий                 |     `el`      |     ✓      |            |                            |                    |
-| Hindi                 |     `hi`      |           |      ✓      |          2020-04-01                  |                    |
+| Hindi                 |     `hi`      |            |      ✓     |          2020-04-01        |                    |
 | Итальянский               |     `it`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | Японский              |     `ja`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | Корейский                |     `ko`      |            |     ✓      |         2019-10-01         |                    |
-| Норвежский (букмол)   |     `no`      |     ✓      |     ✓       |        01.07.2020         |                    |
+| Норвежский (букмол)   |     `no`      |     ✓      |     ✓      |         01.07.2020         |                    |
 | Польский                |     `pl`      |     ✓      |            |                            |                    |
+| Португальский (Бразилия)   |    `pt-BR`    |            |     ✓      |         2020-04-01         |                    |
 | Португальский (Португалия) |    `pt-PT`    |     ✓      |     ✓      |         2019-10-01         | Также допускается `pt` |
 | Русский               |     `ru`      |     ✓      |            |                            |                    |
 | Испанский               |     `es`      |     ✓      |     ✓      |         2019-10-01         |                    |
@@ -221,6 +222,6 @@ API анализа текста может обнаруживать широки
 ---
 
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 * [Что такое API анализа текста?](overview.md)   

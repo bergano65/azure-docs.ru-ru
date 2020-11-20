@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/17/2018
 ms.author: rohink
-ms.openlocfilehash: a27c4519024d6d3d2f3852534619b5f8c2bb5e43
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 85b681cbeb1b06784529e321c9e907ab2bdecb73
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489614"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954653"
 ---
 # <a name="azure-dns-metrics-and-alerts"></a>Метрики и оповещения Azure DNS
 Azure DNS является службой размещения доменов DNS, осуществляющей разрешение имен на базе инфраструктуры Microsoft Azure. В этой статье описываются метрики и оповещения службы Azure DNS.
@@ -62,7 +62,7 @@ Azure DNS предоставляет клиентам метрики, позво
 *Рисунок. Метрики "Использование емкости, доступной для наборов записей" Azure DNS*
 
 ## <a name="alerts-in-azure-dns"></a>Оповещения Azure DNS
-Azure Monitor предоставляет возможность создания оповещений о доступных значениях метрик. Метрики DNS доступны в новой конфигурации "Оповещения". Как подробно описывается в [документации по оповещениям в Azure Monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md), зону DNS можно выбрать как ресурс, выбрать тип сигнала "Метрика" и настроить логику оповещений, а также другие параметры, такие как **срок** и **частота**. Детализацию можно углубить, определив [группу действий](../azure-monitor/platform/action-groups.md), которые будут выполняться при удовлетворении условия оповещения. При этом оповещение будет выдаваться в соответствии с выбранными действиями. Дополнительные сведения о настройке оповещений для метрик Azure Monitor см. в статье [Создание и просмотр оповещений, а также управление ими с помощью Azure Monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md). 
+Azure Monitor предоставляет возможность создания оповещений о доступных значениях метрик. Метрики DNS доступны в новой конфигурации "Оповещения". Как подробно описывается в [документации по оповещениям в Azure Monitor](../azure-monitor/platform/alerts-metric.md), зону DNS можно выбрать как ресурс, выбрать тип сигнала "Метрика" и настроить логику оповещений, а также другие параметры, такие как **срок** и **частота**. Детализацию можно углубить, определив [группу действий](../azure-monitor/platform/action-groups.md), которые будут выполняться при удовлетворении условия оповещения. При этом оповещение будет выдаваться в соответствии с выбранными действиями. Дополнительные сведения о настройке оповещений для метрик Azure Monitor см. в статье [Создание и просмотр оповещений, а также управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-metric.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о [Azure DNS](dns-overview.md).

@@ -7,18 +7,19 @@ author: saghorpa
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/04/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c7a9c8fce87b48b47f4bf82e5fd25fda12a25758
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 7c1b09cdcf987c7ed0e489a8a67f77a4099e39a9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553511"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955469"
 ---
 # <a name="operating-system-upgrade"></a>Обновление операционной системы
 В этом документе описывается обновление операционной системы в HANA (крупные экземпляры).
@@ -147,6 +148,6 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 * Перезагрузка системы.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Ознакомьтесь с [резервным копированием и восстановлением](hana-overview-high-availability-disaster-recovery.md) операционной системы для номеров SKU класса I.
 - См. статью [резервное копирование ОС для номеров SKU типа II версий 3](os-backup-type-ii-skus.md) для класса SKU типа II.

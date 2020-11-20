@@ -12,16 +12,16 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: 12725c28c3e128317301bc51f9ce93f76021cc2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 249667dfa8c0491027f0244d4aa5e49d19399ab0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91291373"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955044"
 ---
 # <a name="tutorial-migrate-rds-sql-server-to-azure-sql-database-or-an-azure-sql-managed-instance-online-using-dms"></a>Руководство по миграции из SQL Server RDS в Базу данных SQL Azure или Управляемый экземпляр Базы данных SQL Azure по сети с помощью DMS
 
-Вы можете использовать Azure Database Migration Service для переноса баз данных из экземпляра SQL Server RDS в [Базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/) или [Управляемый экземпляр SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-index) с минимальным временем простоя в работе приложений. В этом руководстве показано, как перенести базу данных **Adventureworks2012**, восстановленную в экземпляре SQL Server RDS версии SQL Server 2012 (или более поздней), в Базу данных SQL или Управляемый экземпляр SQL с помощью Azure Database Migration Service.
+Вы можете использовать Azure Database Migration Service для переноса баз данных из экземпляра SQL Server RDS в [Базу данных SQL Azure](/azure/sql-database/) или [Управляемый экземпляр SQL Azure](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md) с минимальным временем простоя в работе приложений. В этом руководстве показано, как перенести базу данных **Adventureworks2012**, восстановленную в экземпляре SQL Server RDS версии SQL Server 2012 (или более поздней), в Базу данных SQL или Управляемый экземпляр SQL с помощью Azure Database Migration Service.
 
 В этом руководстве описано следующее:
 > [!div class="checklist"]
@@ -48,12 +48,12 @@ ms.locfileid: "91291373"
 Для работы с этим руководством вам потребуется следующее:
 
 * Создайте [базу данных SQL Server RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.SQLServer.html).
-* Создайте базу данных в [Базе данных SQL Azure на портале Azure](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal) или [Управляемом экземпляре SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started), а затем создайте пустую базу данных с именем **AdventureWorks2012**. 
+* Создайте базу данных в [Базе данных SQL Azure на портале Azure](../azure-sql/database/single-database-create-quickstart.md) или [Управляемом экземпляре SQL](../azure-sql/managed-instance/instance-create-quickstart.md), а затем создайте пустую базу данных с именем **AdventureWorks2012**. 
 * Скачайте и установите [Помощник по миграции данных](https://www.microsoft.com/download/details.aspx?id=53595) (DMA) версии 3.3 или более поздней.
-* Создайте виртуальную сеть Azure для Azure Database Migration Service, используя модель развертывания с помощью Azure Resource Manager. Если вы выполняете миграцию в Управляемый экземпляр SQL, создайте экземпляр DMS в той же виртуальной сети, которая используется для Управляемого экземпляра SQL, но в другой подсети.  Если же для DMS используется другая виртуальная сеть, создайте пиринг между этими двумя виртуальными сетями. Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
+* Создайте виртуальную сеть Azure для Azure Database Migration Service, используя модель развертывания с помощью Azure Resource Manager. Если вы выполняете миграцию в Управляемый экземпляр SQL, создайте экземпляр DMS в той же виртуальной сети, которая используется для Управляемого экземпляра SQL, но в другой подсети.  Если же для DMS используется другая виртуальная сеть, создайте пиринг между этими двумя виртуальными сетями. Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](../virtual-network/index.yml). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
 
     > [!NOTE]
-    > Если вы используете ExpressRoute с пиринговым подключением к сети, управляемой Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
+    > Если вы используете ExpressRoute с пиринговым подключением к сети, управляемой Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](../virtual-network/virtual-network-service-endpoints-overview.md):
     >
     > * целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
     > * конечную точку службы хранилища;
@@ -61,10 +61,10 @@ ms.locfileid: "91291373"
     >
     > Эта настройка необходима, потому что у Azure Database Migration Service нет подключения к Интернету. 
 
-* Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445, 12000. См. дополнительные сведения о [фильтрации трафика, предназначенного для виртуальной сети, с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
-* Настройте [брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
+* Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445, 12000. См. дополнительные сведения о [фильтрации трафика, предназначенного для виртуальной сети, с помощью групп безопасности сети](../virtual-network/virtual-network-vnet-plan-design-arm.md).
+* Настройте [брандмауэр Windows для доступа к ядру СУБД](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу SQL Server. По умолчанию это TCP-порт 1433.
-* Для Базы данных SQL создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) на уровне сервера, чтобы предоставить службе Azure Database Migration Service доступ к целевой базе данных. Задайте диапазон подсети в виртуальной сети, которая используется для Azure Database Migration Service.
+* Для Базы данных SQL создайте [правило брандмауэра](../azure-sql/database/firewall-configure.md) на уровне сервера, чтобы предоставить службе Azure Database Migration Service доступ к целевой базе данных. Задайте диапазон подсети в виртуальной сети, которая используется для Azure Database Migration Service.
 * Убедитесь, что учетные данные, используемые для подключения к исходному экземпляру SQL Server RDS, принадлежат учетной записи с ролью сервера Processadmin и ролью базы данных db_owner во всех базах данных, которые необходимо перенести.
 * Убедитесь, что учетные данные, используемые для подключения к целевой базе данных, имеют разрешение CONTROL DATABASE для целевой базы данных в Базе данных SQL и член роли sysadmin при миграции в базу данных в Управляемом экземпляре SQL.
 * Требуемая версия исходного сервера SQL Server RDS — SQL Server 2012 и выше. См. дополнительные сведения о том, как [определить версию, выпуск и уровень обновления системы SQL Server и ее компонентов](https://support.microsoft.com/help/321185/how-to-determine-the-version-edition-and-update-level-of-sql-server-an).
@@ -94,7 +94,7 @@ ms.locfileid: "91291373"
     select * from sys.triggers
     DISABLE TRIGGER (Transact-SQL)
     ```
-    Дополнительные сведения см. в статье [DISABLE TRIGGER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/disable-trigger-transact-sql?view=sql-server-2017).
+    Дополнительные сведения см. в статье [DISABLE TRIGGER (Transact-SQL)](/sql/t-sql/statements/disable-trigger-transact-sql?view=sql-server-2017).
 
 ## <a name="migrate-the-sample-schema"></a>Перенос примера схемы
 Используйте DMA для миграции схемы.
@@ -171,7 +171,7 @@ ms.locfileid: "91291373"
 
     Виртуальная сеть предоставляет Azure Database Migration Service доступ к исходному экземпляру SQL Server и целевому экземпляру Базы данных SQL или Управляемому экземпляру SQL.
 
-    См. статью [Краткое руководство. Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
+    См. статью [Краткое руководство. Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md).
 
 6. Выберите ценовую категорию. Для этой миграции по сети необходимо выбрать ценовую категорию "Премиум".
 
@@ -295,6 +295,6 @@ ms.locfileid: "91291373"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об известных проблемах и ограничениях см. в статье [Известные проблемы и ограничения при миграции в Базу данных SQL Azure по сети](known-issues-azure-sql-online.md).
-* Дополнительные сведения о Database Migration Service см. в статье [Что такое служба Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).
-* Дополнительные сведения о Базе данных SQL см. в статье [Что такое База данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview).
-* Дополнительные сведения об управляемых экземплярах SQL см. в статье [Что такое Управляемый экземпляр SQL Azure](https://docs.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview).
+* Дополнительные сведения о Database Migration Service см. в статье [Что такое служба Azure Database Migration Service](./dms-overview.md).
+* Дополнительные сведения о Базе данных SQL см. в статье [Что такое База данных SQL Azure](../azure-sql/database/sql-database-paas-overview.md).
+* Дополнительные сведения об управляемых экземплярах SQL см. в статье [Что такое Управляемый экземпляр SQL Azure](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md).
