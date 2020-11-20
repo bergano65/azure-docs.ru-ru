@@ -8,12 +8,12 @@ ms.date: 11/19/2020
 ms.topic: conceptual
 ms.service: digital-twins
 ms.custom: contperfq2
-ms.openlocfilehash: 6533cbde10dfc924bd982357def859229eb1714a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 9aa1156da48ba39672d59858d0640619581329ee
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94963170"
+ms.locfileid: "94981125"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -277,7 +277,7 @@ AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name)
 
 Например, рассмотрим ситуацию, в которой *здания* содержат *Пол* и *этаж* , содержащие *комнаты*. Для поиска комнат в рамках сборки, которые являются горячими, один из способов состоит в выполнении этих действий.
 
-1. Поиск этажей в построении на основе `contains` связи
+1. Поиск этажей в построении на основе `contains` связи.
 
     ```sql
     SELECT Floor

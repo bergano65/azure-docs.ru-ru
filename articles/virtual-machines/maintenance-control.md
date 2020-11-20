@@ -5,14 +5,14 @@ author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 04/22/2020
+ms.date: 11/19/2020
 ms.author: cynthn
-ms.openlocfilehash: 4d126d1e6bb92d2079ac3c0d95f754cb9aab3c21
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 4b9dec0fe684e002fadbac2db375c354db2b6d01
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978617"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94981176"
 ---
 # <a name="managing-platform-updates-with-maintenance-control"></a>Управление обновлениями платформы с помощью управления обслуживанием 
 
@@ -23,12 +23,13 @@ ms.locfileid: "91978617"
 С помощью управления обслуживанием можно:
 - Пакетных обновлений в одном пакете обновления.
 - Подождите 35 дней, чтобы применить обновления. 
-- Автоматизируйте обновление платформы для окна обслуживания с помощью [функций Azure](https://github.com/Azure/azure-docs-powershell-samples/tree/master/maintenance-auto-scheduler).
+- Автоматизируйте обновление платформы, настроив расписание обслуживания или используя [функции Azure](https://github.com/Azure/azure-docs-powershell-samples/tree/master/maintenance-auto-scheduler).
 - Конфигурации обслуживания работают в подписках и группах ресурсов. 
 
 ## <a name="limitations"></a>Ограничения
 
 - Виртуальные машины должны находиться на [выделенном узле](./dedicated-hosts.md)или быть созданы с использованием [ИЗОЛИРОВАННОГО размера виртуальной машины](isolation.md).
+- Если расписание обслуживания объявлено, оно должно быть не менее 2 часов.
 - Через 35 дней будет автоматически применено обновление.
 - Пользователь должен иметь доступ к **участнику ресурсов** .
 
@@ -42,6 +43,6 @@ ms.locfileid: "91978617"
 
 Пример использования функций Azure см. в разделе [Планирование обновлений обслуживания с помощью функции управления обслуживанием и функций Azure](https://github.com/Azure/azure-docs-powershell-samples/tree/master/maintenance-auto-scheduler).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

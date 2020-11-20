@@ -10,6 +10,10 @@
       href: tutorial-deploy-hsm-cli.md
     - name: Развертывание устройств HSM в существующей виртуальной сети с помощью PowerShell
       href: tutorial-deploy-hsm-powershell.md
+- name: Краткие руководства
+  items:
+    - name: Создание Выделенного устройства HSM Azure с помощью Azure PowerShell
+      href: quickstart-create-hsm-powershell.md
 - name: Основные понятия
   items:
     - name: Высокий уровень доступности

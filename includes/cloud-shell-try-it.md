@@ -20,15 +20,15 @@ ms.locfileid: "85367820"
 | Параметр | Пример и ссылка |
 |-----------------------------------------------|---|
 | Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При нажатии кнопки **Попробовать** код не копируется в Cloud Shell автоматически. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/hdi-azure-cli-try-it.png) |
-| Перейдите по адресу [https://shell.azure.com](https://shell.azure.com) или нажмите кнопку **Запуск Cloud Shell** , чтобы открыть Cloud Shell в браузере. | [![Запуск Cloud Shell в новом окне](media/cloud-shell-try-it/hdi-launch-cloud-shell.png)](https://shell.azure.com) |
+| Перейдите по адресу [https://shell.azure.com](https://shell.azure.com) или нажмите кнопку **Запуск Cloud Shell**, чтобы открыть Cloud Shell в браузере. | [![Запуск Cloud Shell в новом окне](media/cloud-shell-try-it/hdi-launch-cloud-shell.png)](https://shell.azure.com) |
 | Нажмите кнопку **Cloud Shell** в строке меню в правом верхнем углу окна [портала Azure](https://portal.azure.com). | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/hdi-cloud-shell-menu.png) |
 
 Чтобы выполнить код из этой статьи в Azure Cloud Shell, выполните следующие действия:
 
 1. Запустите Cloud Shell.
 
-1. В блоке кода нажмите кнопку **Копировать** , чтобы скопировать код.
+1. В блоке кода нажмите кнопку **Копировать**, чтобы скопировать код.
 
 1. Вставьте код в окно сеанса Cloud Shell, нажав клавиши **CTRL**+**SHIFT**+**V** в Windows и Linux или **CMD**+**SHIFT**+**V** в macOS.
 
-1. Нажмите клавишу **ВВОД** , чтобы выполнить код.
+1. Нажмите клавишу **ВВОД**, чтобы выполнить код.

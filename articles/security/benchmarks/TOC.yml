@@ -61,10 +61,14 @@
       href: security-baselines-overview.md
     - name: Базовые показатели безопасности Управления API
       href: ../../api-management/security-baseline.md
+    - name: Базовые показатели безопасности Службы приложений
+      href: ../../app-service/security-baseline.md
     - name: Базовые уровень безопасности Шлюза приложений
       href: ../../application-gateway/security-baseline.md
     - name: Базовые показатели безопасности службы автоматизации
       href: ../../automation/security-baseline.md
+    - name: Базовые показатели безопасности Помощника по Azure
+      href: ../../advisor/security-baseline.md
     - name: Базовые средства безопасности Azure Backup
       href: ../../backup/security-baseline.md
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
@@ -97,6 +101,8 @@
       href: ../../frontdoor/security-baseline.md
     - name: Базовые средства безопасности Функций Azure
       href: ../../azure-functions/security-baseline.md
+    - name: Базовые показатели безопасности Azure Information Protection
+      href: /azure/information-protection/security-baseline
     - name: Базовые средства безопасности Центра Интернета вещей Azure
       href: ../../iot-hub/security-baseline.md
     - name: Базовые средства безопасности Службы Azure Kubernetes

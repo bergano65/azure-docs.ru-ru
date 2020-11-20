@@ -12,12 +12,12 @@ metadata:
   ms.author: joflore
   ms.date: 02/11/2020
   ms.collection: M365-identity-device-management
-  ms.openlocfilehash: 17775be39e534d0825596973452dabc13054ee8d
-  ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+  ms.openlocfilehash: d484600da9be9d84b6af7ad31754ea86bf6b6873
+  ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/13/2020
-  ms.locfileid: "91968231"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94838057"
 landingContent:
 - title: Об аутентификации
   linkLists:
@@ -51,21 +51,21 @@ landingContent:
       url: howto-sspr-deployment.md
     - text: Включение сброса пароля на экране входа в Windows
       url: howto-sspr-windows.md
-- title: Включение Многофакторной идентификации Azure
+- title: Включение Многофакторной идентификации Azure AD
   linkLists:
   - linkListType: concept
     links:
-    - text: Принципы работы службы Многофакторной идентификации Azure
+    - text: Принципы работы Многофакторной идентификации Azure AD
       url: concept-mfa-howitworks.md
   - linkListType: tutorial
     links:
-    - text: Включение Многофакторной идентификации Azure
+    - text: Включение Многофакторной идентификации Azure AD
       url: tutorial-enable-azure-mfa.md
-    - text: Включение Многофакторной идентификации Azure на основе рисков
+    - text: Включение Многофакторной идентификации Azure AD на основе рисков
       url: tutorial-risk-based-sspr-mfa.md
   - linkListType: deploy
     links:
-    - text: Руководство по развертыванию Многофакторной идентификации Azure
+    - text: Руководство по развертыванию Многофакторной идентификации Azure AD
       url: howto-mfa-getstarted.md
     - text: Использование расширения NPS для интеграции локальных приложений
       url: howto-mfa-nps-extension.md

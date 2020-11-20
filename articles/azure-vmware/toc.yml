@@ -42,7 +42,7 @@
       href: concepts-storage.md
     - name: Получение доступа и использование удостоверений для частных облаков
       href: concepts-identity.md
-    - name: Управление доступом на основе ролей
+    - name: Управление доступом на основе ролей vSphere
       href: concepts-role-based-access-control.md
     - name: Мониторинг и восстановление частных облаков
       href: concepts-monitor-repair-private-cloud.md

@@ -504,14 +504,16 @@
                   href: ./spark/synapse-spark-sql-pool-import-export.md
 - name: Synapse Link
   items:
+    - name: Обзор
+      items:
+        - name: Synapse Link для Azure Cosmos DB
+          href: ../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: Краткие руководства
       items:
         - name: "Подключение к Synapse Link для Cosmos\_DB"
           href: quickstart-connect-synapse-link-cosmos-db.md
     - name: Основные понятия
       items:
-        - name: Synapse Link для Azure Cosmos DB
-          href: ../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Общие сведения об аналитическом хранилище
           href: ../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Поддерживаемые функции Synapse Link
@@ -967,7 +969,7 @@
   items:
     - name: Обзор
       items:
-        - name: Что собой представляет машинное обучение в Synapse Analytics?
+        - name: Что такое машинное обучение в Azure Synapse?
           href: machine-learning/what-is-machine-learning.md
     - name: Краткие руководства
       items:

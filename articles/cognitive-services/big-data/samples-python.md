@@ -85,9 +85,9 @@ display(sentiment.transform(df).select("text", col("sentiment")[0].getItem("sent
 
 | text                                      | Тональность                                             |
 |:------------------------------------------|:------------------------------------------------------|
-| I am so happy today, its sunny!           | Позитивная                                              |
-| I am frustrated by this rush hour traffic | Негативная                                              |
-| The cognitive services on spark aint bad  | Позитивная                                              |
+| I am so happy today, its sunny!           | позитивная тональность                                              |
+| I am frustrated by this rush hour traffic | негативная тональность                                              |
+| The cognitive services on spark aint bad  | позитивная тональность                                              |
 
 ## <a name="computer-vision-sample"></a>Пример для службы "Компьютерное зрение"
 

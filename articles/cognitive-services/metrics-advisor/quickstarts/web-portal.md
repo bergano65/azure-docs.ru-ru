@@ -97,7 +97,7 @@ ms.locfileid: "92048242"
 |**Пропуск**     | Игнорировать выбранный столбец.        |         |
 
 
-:::image type="content" source="../media/schema-configuration.png" alt-text="Параметры подключения" lightbox="../media/schema-configuration.png"::: (Конфигурация схемы)
+:::image type="content" source="../media/schema-configuration.png" alt-text="Schema configuration" lightbox="../media/schema-configuration.png"::: (Конфигурация схемы)
 
 ### <a name="automatic-roll-up-settings"></a>Параметры автоматического сведения
 
@@ -117,7 +117,7 @@ ms.locfileid: "92048242"
 - изменение конфигурации обнаружения в соответствии с ожидаемыми результатами;
 - настройка уведомлений об обнаруженных аномалиях.
 
-:::image type="content" source="../media/metric-details.png" alt-text="Параметры подключения" lightbox="../media/metric-details.png"::: (Сведения о метрике)
+:::image type="content" source="../media/metric-details.png" alt-text="Metric details" lightbox="../media/metric-details.png"::: (Сведения о метрике)
 
 ## <a name="view-the-diagnostic-insights"></a>Просмотр диагностических сведений
 
@@ -125,13 +125,13 @@ ms.locfileid: "92048242"
 
 Чтобы просмотреть диагностические сведения, щелкните красные точки на визуализациях временных рядов, которые представляют обнаруженные аномалии. Откроется окно со ссылкой на страницу анализа инцидента. 
 
-:::image type="content" source="../media/incident-link.png" alt-text="Параметры подключения" lightbox="../media/incident-link.png"::: (Ссылка на инцидент)
+:::image type="content" source="../media/incident-link.png" alt-text="Incident link" lightbox="../media/incident-link.png"::: (Ссылка на инцидент)
 
 Щелкнув эту ссылку, вы перейдете на страницу анализа инцидентов с информацией об аномалии, включая разные диагностические сведения. В верхней части вы увидите статистические данные об инциденте, например: **Severity** (Серьезность), **Anomalies involved** (Связанные аномалии), **Start time** (Время начала) и **End time** (Время окончания). 
 
 Далее вы увидите родительскую аномалию для этого инцидента и автоматический совет по анализу основных причин. Этот совет создается по результатам анализа дерева инцидентов для всех связанных аномалий, в котором учитываются отклонение, распространение и вклад в родительские аномалии. 
 
-:::image type="content" source="../media/incident-diagnostic.png" alt-text="Параметры подключения" lightbox="../media/incident-diagnostic.png"::: (Диагностика инцидентов)
+:::image type="content" source="../media/incident-diagnostic.png" alt-text="Incident diagnostics" lightbox="../media/incident-diagnostic.png"::: (Диагностика инцидентов)
 
 На основе этих данных вы можете сразу получить обобщенное представление о том, что происходит, о последствиях инцидента и наиболее вероятной его причине. Это позволит вам как можно скорее выполнить некоторые действия для разрешения инцидента. 
 

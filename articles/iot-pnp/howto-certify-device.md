@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: b20dab7719e4c55c5868032db3178bb7baaddda0
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 7aa84336a3d71349c127ad15a90af98ffe2133fe
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748485"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980241"
 ---
 # <a name="how-to-certify-iot-plug-and-play-devices"></a>Сертификация устройств Plug and Play IoT
 
@@ -44,6 +44,10 @@ ms.locfileid: "92748485"
 - Опубликуйте модель и все необходимые интерфейсы в [репозитории общедоступной модели Azure IOT](https://devicemodels.azureiotsolutions.com/) .
 - Отправьте идентификатор модели во время [регистрации DPS](concepts-developer-guide-device-csharp.md#dps-payload) в полезных данных подготовки DPS.
 - Объявите идентификатор модели во время [подключения MQTT](concepts-developer-guide-device-csharp.md#model-id-announcement).
+- Все модели устройств должны быть совместимы с [Azure IOT Central](https://aka.ms/pnp-iotc-getstarted).
+
+> [!NOTE]
+> В настоящее время IoT Central Azure не поддерживает полную поддержку типов данных **Array** и **геопространственных** дтдл.
 
 ## <a name="test-with-the-azure-iot-extension-cli"></a>Тестирование с помощью расширения Azure IoT для Azure CLI
 
@@ -182,7 +186,7 @@ az iot product test task create --type QueueTestRun --test-id d45d53d9-656d-4be7
 
 Чтобы сертифицировать устройство, необходимо сначала создать новый проект.
 
-Перейдите на [портал сертификации](https://aka.ms/acdp). На странице **проекты** выберите *+ создать новый проект* . Затем введите имя проекта, имя устройства и выберите класс устройства.
+Перейдите на [портал сертификации](https://aka.ms/acdp). На странице **проекты** выберите *+ создать новый проект*. Затем введите имя проекта, имя устройства и выберите класс устройства.
 
 Сведения о продукте, которые вы предоставляете во время процесса сертификации, делятся на четыре категории:
 
@@ -209,6 +213,6 @@ az iot product test task create --type QueueTestRun --test-id d45d53d9-656d-4be7
 
 Когда устройство сертифицировано, вы можете опубликовать сведения о продукте в каталоге сертифицированных устройств Azure с помощью функции **опубликовать в каталоге** на странице сводки по продукту.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После завершения отправки устройства вы можете обратиться к группе сертификации устройств по адресу, [iotcert@microsoft.com](mailto:iotcert@microsoft.com) чтобы перейти к дальнейшим действиям, в том числе Microsoft Partner Network проверки членства и ознакомиться с руководствами по началу работы. После соблюдения всех требований можно выбрать включение устройства в список [сертифицировано для каталога устройств Azure IOT](https://aka.ms/devicecatalog).

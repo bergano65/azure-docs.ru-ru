@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: duau
-ms.openlocfilehash: 73cf0d18c68baf7e0e19d15d621a7a3d87a486a2
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 6d58f0178535cf01a413056b2096553e4bd06371
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748124"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94981023"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -32,7 +32,7 @@ ms.locfileid: "92748124"
 Регионы Azure — это глобальные центры обработки данных, в которых размещаются ресурсы вычислений, сети и хранилища Azure. При создании ресурса Azure клиенту необходимо выбрать расположение ресурса. Расположение ресурса определяет, в каком центре обработки данных Azure (или в какой зоне доступности) создается этот ресурс.
 
 ## <a name="expressroute-locations"></a>Расположения ExpressRoute
-Расположения ExpressRoute (которые иногда называют расположениями пиринга) — это объекты совместного размещения, в которых установлены устройства Microsoft Enterprise Edge (MSEE). Расположения ExpressRoute являются точкой входа в сеть корпорации Майкрософт. Они распределены по всему миру, предоставляя клиентам возможность подключаться к сети корпорации Майкрософт в любом регионе. Именно в этих расположениях партнеры ExpressRoute и клиенты ExpressRoute Direct создают перекрестные подключения к сети корпорации Майкрософт. В общем случае расположения ExpressRoute не обязаны соответствовать регионам Azure. Например, клиент может создать канал ExpressRoute в расположении пиринга *Сиэтл* для доступа к ресурсу в регионе *Восточная часть США* .
+Расположения ExpressRoute (которые иногда называют расположениями пиринга) — это объекты совместного размещения, в которых установлены устройства Microsoft Enterprise Edge (MSEE). Расположения ExpressRoute являются точкой входа в сеть корпорации Майкрософт. Они распределены по всему миру, предоставляя клиентам возможность подключаться к сети корпорации Майкрософт в любом регионе. Именно в этих расположениях партнеры ExpressRoute и клиенты ExpressRoute Direct создают перекрестные подключения к сети корпорации Майкрософт. В общем случае расположения ExpressRoute не обязаны соответствовать регионам Azure. Например, клиент может создать канал ExpressRoute в расположении пиринга *Сиэтл* для доступа к ресурсу в регионе *Восточная часть США*.
 
 Вы сможете получить доступ ко всем службам Azure во всех регионах соответствующего геополитического региона, если вы подключены по меньшей мере к одному расположению ExpressRoute в этом регионе. 
 
@@ -69,7 +69,7 @@ ms.locfileid: "92748124"
 
 В таблице ниже приведены расположения для подключения и поставщики услуг в каждом расположении. Поставщики услуг и расположения, в которых они предоставляют услуги, перечислены в разделе [Расположения поставщиков услуг подключения](expressroute-locations.md).
 
-* **Локальные регионы Azure**  — это те, к которым могут получить доступ сети [ExpressRoute ценовой категории "Локальный"](expressroute-faqs.md) в каждом расположении пиринга. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении пиринга.
+* **Локальные регионы Azure** — это те, к которым могут получить доступ сети [ExpressRoute ценовой категории "Локальный"](expressroute-faqs.md) в каждом расположении пиринга. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении пиринга.
 
 * **Зоны** определяют [цены](https://azure.microsoft.com/pricing/details/expressroute/).
 
@@ -100,12 +100,12 @@ ms.locfileid: "92748124"
 | **Женева** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Западная Швейцария | 10G, 100G | Equinix, Megaport |
 | **Специальный административный регион Гонконг** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | 10G | Aryaka Networks, British Telecom, CenturyLink Cloud Connect, Chief Telecom, China Telecom Global, Equinix, InterCloud, Megaport, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telia Carrier, Verizon |
 | **Гонконг 2** | [MEGA-i](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | Восточная Азия | 10G | Китайская, Международная, Китайская, Глобальная, ПККВ, SingTel |
-| **Джакарта** | Telkom Indonesia | 4 | Недоступно | 10G | |
+| **Джакарта** | Телин, для абонентов Telkom Индонезия | 4 | Недоступно | 10G | |
 | **Йоханнесбург** | [Teraco JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР; | 10G | BCX, British Telecom, Internet Solutions — Cloud Connect, Liquid Telecom, Orange, Teraco |
 | **Куала-Лумпур** | [TIME dotCom Menara AIMS](https://www.time.com.my/enterprise/connectivity/direct-cloud) | 2 | Недоступно | Недоступно | TIME dotCom |
 | **Лас-Вегас** | [Switch LV](https://www.switch.com/las-vegas) | 1 | Недоступно | 10G, 100G | CenturyLink Cloud Connect, Orange, Паккетфабрик |
 | **Лондон** | [Equinix LD5](https://www.equinix.com/locations/europe-colocation/united-kingdom-colocation/london-data-centers/ld5/) | 1 | южная часть Соединенного Королевства | 10G, 100G | AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc, Level 3 Communications, Megaport, MTN, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telehouse - KDDI, Telenor, Telia Carrier, Verizon, Vodafone, Zayo |
-| **Лондон 2** | [Telehouse North Two](https://www.telehouse.net/data-centres/emea/uk-data-centres/london-data-centres/north-two) | 1 | южная часть Соединенного Королевства | 10G, 100G | CenturyLink Cloud Connect, Colt, ГТТ, IX REACH, Equinix, Orange, SES, дом — KDDI |
+| **Лондон 2** | [Telehouse North Two](https://www.telehouse.net/data-centres/emea/uk-data-centres/london-data-centres/north-two) | 1 | южная часть Соединенного Королевства | 10G, 100G | CenturyLink Cloud Connect, Colt, ГТТ, IX REACH, Equinix, Orange, SES, Сохонет, дом — KDDI |
 | **Лос-Анджелес** | [CoreSite LA1](https://www.coresite.com/data-centers/locations/los-angeles/one-wilshire) | 1 | Недоступно | 10G, 100G | CoreSite, Equinix, Megaport, Neutrona Networks, NTT, Zayo |
 | **Лос-Angeles2** | [Equinix LA1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/los-angeles-data-centers/la1/) | 1 | Недоступно | 10G, 100G | Equinix |
 | **Марсель** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Южная Франция | Недоступно | DE-CIX, GEANT, Interxion, Jaguar Network, Ooredoo Cloud Connect |
@@ -121,7 +121,7 @@ ms.locfileid: "92748124"
 | **Ньюпорт (Уэльс)** | [Next Generation Data](https://www.nextgenerationdata.co.uk) | 1 | западная часть Соединенного Королевства | Недоступно | Британская телекоммуникации, Colt, JISC, связь уровня 3, данные следующего поколения |
 | **Осака** | [Equinix OS1](https://www.equinix.com/locations/asia-colocation/japan-colocation/osaka-data-centers/os1/) | 2 | Западная Япония | 10G, 100G | В Токио, Colt, Equinix, Интернет-инициатива Япония Inc. — IIJ, Orange, NTT Communications, NTT Смартконнект, Softbank " |
 | **Осло** | [DigiPlex Ulven](https://www.digiplex.com/locations/oslo-datacentre) | 1 | Восточная Норвегия; | 10G, 100G | Глобальная связь, Orange, Telenor, оператор Телиа |
-| **Париж** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | 1 | Центральная Франция | 10G, 100G | Британская телекоммуникации, CenturyLink Cloud Connect, Colt, Equinix, в облаке, Interxion, оранжевый, Телиа перевозчике, Zayo |
+| **Париж** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | 1 | Центральная Франция | 10G, 100G | Британская телекоммуникации, CenturyLink Cloud Connect, Colt, Equinix, в облаке, Interxion, Жагуар Network, оранжевый, Телиа, Zayo |
 | **Перт** | [NextDC P1](https://www.nextdc.com/data-centres/p1-perth-data-centre) | 2 | Недоступно | 10G | Megaport, NextDC |
 | **Phoenix** | [Еджеконнекс PHX01](https://www.edgeconnex.com/locations/north-america/phoenix-az/) | 1 | Недоступно | 10G | |
 | **Квебек** | [Vantage](https://vantage-dc.com/data_centers/quebec-city-data-center-campus/) | 1 | Восточная Канада | Недоступно | Bell Canada, Megaport |

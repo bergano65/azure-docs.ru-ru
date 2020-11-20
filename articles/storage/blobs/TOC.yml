@@ -733,8 +733,10 @@
           items:
             - name: Миграция из Data Lake Storage 1-го поколения
               href: data-lake-storage-migrate-gen1-to-gen2.md
-            - name: Перенос локального хранилища HDFS
+            - name: Перенос хранилища HDFS в автономном режиме
               href: data-lake-storage-migrate-on-premises-HDFS-cluster.md
+            - name: Перенос хранилища HDFS в подключенном режиме
+              href: migrate-gen2-wandisco-live-data-platform.md
         - name: Управление
           items:
             - name: .NET

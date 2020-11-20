@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/19/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9122d6716aa94a7e0164c9c7774c7c8d85be814a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 81bcfdf5e63d49280fb798773559310cbd912a26
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968015"
+ms.locfileid: "94980530"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Создание средства подбора для включения автозаполнения и предлагаемых результатов в запросе
 
@@ -119,29 +119,26 @@ ms.locfileid: "94968015"
 
 ## <a name="create-using-net"></a>Создание с помощью .NET
 
-В C# Определите [объект сеарчсугжестер](/dotnet/api/azure.search.documents.indexes.models.searchsuggester). `Suggesters` является коллекцией объекта Сеарчиндекс, но может принимать только один элемент. 
+В C# Определите [объект сеарчсугжестер](/dotnet/api/azure.search.documents.indexes.models.searchsuggester). `Suggesters` является коллекцией объекта Сеарчиндекс, но может принимать только один элемент. Добавьте предложение в определение индекса.
 
 ```csharp
-private static async Task CreateIndexAsync(string indexName, SearchIndexClient indexClient)
+private static void CreateIndex(string indexName, SearchIndexClient indexClient)
 {
-    var definition = new SearchIndex()
-    {
-        FieldBuilder builder = new FieldBuilder();
-        Fields = builder.Build(typeof(Hotel);
-        Suggesters = new List<Suggester>() {new Suggester()
-            {
-                Name = "sg",
-                SourceFields = new string[] { "HotelName", "Category" }
-            }}
-    }
+    FieldBuilder fieldBuilder = new FieldBuilder();
+    var searchFields = fieldBuilder.Build(typeof(Hotel));
 
-    await indexClient.CreateIndexAsync(definition);
+    var definition = new SearchIndex(indexName, searchFields);
+
+    var suggester = new SearchSuggester("sg", new[] { "HotelName", "Category", "Address/City", "Address/StateProvince" });
+    definition.Suggesters.Add(suggester);
+
+    indexClient.CreateOrUpdateIndex(definition);
 }
 ```
 
 ## <a name="property-reference"></a>Справочные данные по свойствам
 
-|Свойство      |Описание      |
+|Свойство.      |Описание      |
 |--------------|-----------------|
 |`name`        | Задается в определении средства подбора, но также вызывается в запросе автозаполнения или предложений. |
 |`sourceFields`| Указывается в определении предложения. Это список из одного или нескольких полей в индексе, которые являются источником содержимого для предложений. Поля должны иметь тип `Edm.String` и `Collection(Edm.String)` . Если в поле указан анализатор, он должен быть именованным лексическим анализатором из [этого списка](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername) (а не настраиваемого анализатора).<p/> Рекомендуется указывать только те поля, которые приведут себя к ожидаемому и соответствующему ответу, будь то заполненная строка в строке поиска или раскрывающемся списке.<p/>Имя отеля является хорошим кандидатом, поскольку имеет точность. Поля с подробными сведениями, такие как описания и комментарии, слишком сжимаются. Аналогичным образом, повторяющиеся поля, такие как категории и теги, менее эффективны. В примерах мы все равно включаем «Category», чтобы показать, что можно включить несколько полей. |

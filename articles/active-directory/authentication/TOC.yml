@@ -9,7 +9,7 @@
   items:
     - name: Включение самостоятельного сброса пароля
       href: tutorial-enable-sspr.md
-    - name: Включение Многофакторной идентификации Azure
+    - name: Включение Многофакторной идентификации Azure AD
       href: tutorial-enable-azure-mfa.md
     - name: Включение компонента обратной записи паролей в локальной среде
       href: tutorial-enable-sspr-writeback.md
@@ -80,7 +80,7 @@
           href: howto-sspr-authenticationdata.md
         - name: Самостоятельный сброс пароля для клиентов Windows
           href: howto-sspr-windows.md
-    - name: Многофакторная идентификация Azure
+    - name: Многофакторная идентификация Azure AD
       items:
         - name: Руководство по развертыванию
           href: howto-mfa-getstarted.md
@@ -108,7 +108,7 @@
               href: howto-mfa-nps-extension.md
             - name: Расширенная конфигурация для расширения NPS
               href: howto-mfa-nps-extension-advanced.md
-            - name: Azure VPN и Azure MFA
+            - name: Azure VPN и Azure AD MFA
               href: ../../vpn-gateway/vpn-gateway-radius-mfa-nsp.md
             - name: Шлюз удаленных рабочих столов
               href: howto-mfa-nps-extension-rdg.md

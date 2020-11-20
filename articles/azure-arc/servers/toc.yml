@@ -57,6 +57,12 @@
               href: manage-vm-extensions-template.md
         - name: Управление агентом
           href: manage-agent.md
+    - name: Сценарии
+      items:
+        - name: Подключение к Azure Sentinel
+          href: scenario-onboard-azure-sentinel.md
+        - name: Подключение к Центру безопасности Azure
+          href: /security-center/quickstart-onboard-machines.md
     - name: Устранение неполадок
       items:
         - name: Проблемы с подключением агента

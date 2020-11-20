@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 04/14/2019
 ms.author: glenga
-ms.openlocfilehash: aae89e1c6f8db2fb657ac2a43c4bce0396ab3ddd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca8d8edd334d89e03624793a35c49971ba8161ec
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91376556"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94885394"
 ---
 ## <a name="local-settings-file"></a>Файл с локальными параметрами
 
@@ -52,7 +52,7 @@ ms.locfileid: "91376556"
 
 | Параметр | Значения | Описание |
 |-----|-----|-----|
-|**`AzureWebJobsStorage`**| Строка подключения учетной записи хранения или<br/>`UseDevelopmentStorage=true`| Содержит строку подключения для учетной записи хранения Azure Требуется при использовании триггеров, отличающихся от HTTP. См. справочник по [`AzureWebJobsStorage`].<br/>При наличии локального [эмулятора хранилища Azure](../articles/storage/common/storage-use-emulator.md) вы можете задать для [`AzureWebJobsStorage`] значение `UseDevelopmentStorage=true`, чтобы в Core Tools использовался эмулятор. Эмулятор удобно использовать во время разработки, но перед развертыванием следует проверить работу с реальным подключением к хранилищу.| 
+|**`AzureWebJobsStorage`**| Строка подключения учетной записи хранения или<br/>`UseDevelopmentStorage=true`| Содержит строку подключения для учетной записи хранения Azure Требуется при использовании триггеров, отличающихся от HTTP. См. справочник по [`AzureWebJobsStorage`].<br/>При наличии локального [эмулятора службы хранилища Azure](../articles/storage/common/storage-use-emulator.md) вы можете задать для [`AzureWebJobsStorage`] значение `UseDevelopmentStorage=true`, чтобы в Core Tools использовался эмулятор. Эмулятор удобно использовать во время разработки, но перед развертыванием следует проверить работу с реальным подключением к хранилищу.| 
 |**`AzureWebJobs.<FUNCTION_NAME>.Disabled`**| `true`\|`false` | Чтобы отключить функцию при локальном выполнении, добавьте в коллекцию `"AzureWebJobs.<FUNCTION_NAME>.Disabled": "true"`, где `<FUNCTION_NAME>` — имя функции. См. сведения о том, как [отключать и включать функции в Функциях Azure](../articles/azure-functions/disable-function.md#localsettingsjson). |
 |**`FUNCTIONS_WORKER_RUNTIME`** | `dotnet`<br/>`node`<br/>`java`<br/>`powershell`<br/>`python`| Указывает целевой язык среды выполнения Функций. Требуется для среды выполнения Функций версии 2.x и выше. Этот параметр создается для проекта с помощью Core Tools. См. справочник по [`FUNCTIONS_WORKER_RUNTIME`](../articles/azure-functions/functions-app-settings.md#functions_worker_runtime).|
 | **`FUNCTIONS_WORKER_RUNTIME_VERSION`** | `~7` |Указывает, что PowerShell 7 будет использоваться при локальном запуске. Если параметр не задан, используется PowerShell Core 6. Этот параметр используется только при локальном запуске. При запуске в Azure версия среды выполнения PowerShell определяется параметром конфигурации сайта `powerShellVersion`, который можно [настроить на портале](../articles/azure-functions/functions-reference-powershell.md#changing-the-powershell-version). | 
