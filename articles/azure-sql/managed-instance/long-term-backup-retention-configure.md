@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 04/29/2020
-ms.openlocfilehash: 8b0d6665b440516d29cc9aeb0b6e50f509528574
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: ec193eab02d937e9d93b8632fa171fec8227d6c2
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503442"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94987530"
 ---
 # <a name="manage-azure-sql-managed-instance-long-term-backup-retention-powershell"></a>Управление Azure SQL Управляемый экземпляр долгосрочного хранения резервных копий (PowerShell)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "92503442"
 
 ## <a name="azure-roles-to-manage-long-term-retention"></a>Роли Azure для управления долгосрочным хранением
 
-Для **Get-азсклинстанцедатабаселонгтермретентионбаккуп** и **RESTORE-азсклинстанцедатабасе**необходимо иметь одну из следующих ролей:
+Для **Get-азсклинстанцедатабаселонгтермретентионбаккуп** и **RESTORE-азсклинстанцедатабасе** необходимо иметь одну из следующих ролей:
 
 - Роль владельца подписки или
 - Роль участника Управляемый экземпляр или
@@ -39,7 +39,7 @@ ms.locfileid: "92503442"
   - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionManagedInstanceBackups/read`
   - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/read`
 
-Для **Remove-азсклинстанцедатабаселонгтермретентионбаккуп**необходимо иметь одну из следующих ролей:
+Для **Remove-азсклинстанцедатабаселонгтермретентионбаккуп** необходимо иметь одну из следующих ролей:
 
 - Роль владельца подписки или
 - Пользовательская роль со следующим разрешением:
@@ -48,7 +48,7 @@ ms.locfileid: "92503442"
 > [!NOTE]
 > Роль участника Управляемый экземпляр не имеет разрешения на удаление резервных копий слева направо.
 
-Разрешения RBAC можно предоставить в *подписке* или области *группы ресурсов* . Однако для доступа к резервным копиям LTR, принадлежащим удаленному экземпляру, разрешение должно быть предоставлено в области действия *подписки* этого экземпляра.
+Разрешения RBAC для Azure можно предоставить в *подписке* или области *группы ресурсов* . Однако для доступа к резервным копиям LTR, принадлежащим удаленному экземпляру, разрешение должно быть предоставлено в области действия *подписки* этого экземпляра.
 
 - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/delete`
 

@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик в Политике Azure для Azure Data Lake Storage 1-го поколения
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Data Lake Storage 1-го поколения. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: reference
 author: twooley
 ms.author: twooley
 ms.service: data-lake-store
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 8f2e54a364d46670f39af1c5ac3d9ebf36b82f93
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 6c895c65e122154afeb2a29cb2d905460316538f
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94736907"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94988446"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-data-lake-storage-gen1"></a>Встроенные определения в Политике Azure для Azure Data Lake Storage 1-го поколения
 

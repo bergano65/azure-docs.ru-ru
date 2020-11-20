@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 11/16/2020
-ms.openlocfilehash: e91a3cc0a96add1f53d220e04fb98d63cc7c33f4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 0d2248b9c0a289f5e4f9f2f8e987365ab58c49c0
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841093"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94988550"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -142,15 +142,15 @@ ms.locfileid: "94841093"
 
 ### <a name="create-failover-group"></a>Создание группы отработки отказа
 
-Чтобы создать группу отработки отказа, необходим доступ на запись RBAC к серверам-источнику и серверу-получателю, а также ко всем базам данных в группе отработки отказа. Для Управляемый экземпляр SQL требуется доступ на запись RBAC для основного и дополнительного Управляемый экземпляр SQL, но разрешения для отдельных баз данных не важны, так как отдельные базы данных SQL Управляемый экземпляр нельзя добавлять в группу отработки отказов или удалять из нее.
+Чтобы создать группу отработки отказа, необходим доступ на запись в Azure RBAC к серверам-источнику и серверу-получателю, а также ко всем базам данных в группе отработки отказа. Для Управляемый экземпляр SQL требуется доступ на запись в Azure RBAC к основному и дополнительному Управляемый экземпляр SQL, но разрешения для отдельных баз данных не являются значимыми, так как отдельные базы данных SQL Управляемый экземпляр нельзя добавлять в группу отработки отказов или удалять из нее.
 
 ### <a name="update-a-failover-group"></a>Обновление группы отработки отказа
 
-Чтобы обновить группу отработки отказа, требуется доступ на запись RBAC к группе отработки отказа и все базы данных на текущем сервере-источнике или управляемом экземпляре.  
+Чтобы обновить группу отработки отказа, требуется доступ на запись Azure RBAC к группе отработки отказа и ко всем базам данных на текущем сервере-источнике или управляемом экземпляре.  
 
 ### <a name="fail-over-a-failover-group"></a>Переключение группы отработки отказа
 
-Для переключения группы отработки отказа требуется доступ на запись RBAC к группе отработки отказа на новом сервере-источнике или управляемом экземпляре.
+Для переключения группы отработки отказа требуется доступ на запись в Azure RBAC к группе отработки отказа на новом сервере-источнике или управляемом экземпляре.
 
 ## <a name="best-practices-for-sql-database"></a>Рекомендации по работе с базой данных SQL
 
@@ -409,7 +409,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 ## <a name="programmatically-managing-failover-groups"></a>Программное управление группами отработки отказа
 
-Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](/rest/api/sql/) и [командлеты Azure PowerShell](/powershell/azure/). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о реализации ролей доступа см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
+Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](/rest/api/sql/) и [командлеты Azure PowerShell](/powershell/azure/). Для этих API требуется использование групп ресурсов и поддержка управления доступом на основе ролей в Azure (Azure RBAC). Дополнительные сведения о реализации ролей доступа см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="manage-sql-database-failover"></a>Управление отработкой отказа базы данных SQL
 
@@ -424,7 +424,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Активирует отработку отказа группы отработки отказа на сервер-получатель |
 | [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Добавляет одну или несколько баз данных в группу отработки отказа|
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 | Команда | Описание |
 | --- | --- |
@@ -462,7 +462,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 | [Remove-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/remove-azsqldatabaseinstancefailovergroup) | Удаляет группу отработки отказа.|
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 | Команда | Описание |
 | --- | --- |

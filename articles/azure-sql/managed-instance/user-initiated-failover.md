@@ -10,12 +10,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
 ms.date: 08/31/2020
-ms.openlocfilehash: 7bcdabdb4e49d198b9acb7a1c57312b31a5b4fff
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 51e9e66e2fd8ff60dd20c275a66fd13c047cc629
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842232"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94985524"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр
 
@@ -37,16 +37,16 @@ ms.locfileid: "94842232"
 
 ## <a name="initiate-manual-failover-on-sql-managed-instance"></a>Запуск отработки отказа вручную на Управляемый экземпляр SQL
 
-### <a name="rbac-permissions-required"></a>Требуются разрешения RBAC
+### <a name="azure-rbac-permissions-required"></a>Требуются разрешения RBAC Azure
 
-Пользователь, инициирующий отработку отказа, должен иметь одну из следующих ролей RBAC:
+Пользователь, инициирующий отработку отказа, должен иметь одну из следующих ролей Azure:
 
 - Роль владельца подписки или
 - Роль участника Управляемый экземпляр или
 - Пользовательская роль со следующим разрешением:
   - `Microsoft.Sql/managedInstances/failover/action`
 
-### <a name="using-powershell"></a>Использование PowerShell
+### <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 Минимальная версия AZ. SQL должна быть [v 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0). Рассмотрите возможность использования [Azure Cloud Shell](../../cloud-shell/overview.md) из портал Azure, где всегда доступна последняя версия PowerShell. 
 

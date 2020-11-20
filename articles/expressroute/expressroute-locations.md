@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 10/26/2020
 ms.author: duau
-ms.openlocfilehash: 064c9e77876423d0c46f5f9890497a76331481ae
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 8eb4fd4cf0645248804ca31e310933167ba9a39b
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94336766"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94987836"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -121,7 +121,7 @@ ms.locfileid: "94336766"
 | **[Internet Solutions - Cloud Connect](https://www.is.co.za/solution/cloud-connect/)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург, Лондон |
 | **[Interxion](https://www.interxion.com/why-interxion/colocate-with-the-clouds/Microsoft-Azure/)** |Поддерживается |Поддерживается |Амстердам, Амстердам 2, Копенгаген, Дублин, Франкфурт, Лондон, Марсель, Париж, Цюрих |
 | **[IX Reach](https://www.ixreach.com/partners/cloud-partners/microsoft-azure/)**|Поддерживается |Поддерживается | Амстердам, Лондон 2, Кремниевая долина, Торонто, Вашингтон (округ Колумбия) |
-| **Jaguar Network** |Поддерживается |Поддерживается |Марсель|
+| **Jaguar Network** |Поддерживается |Поддерживается |Марселе, Париж |
 | **[Jisc](https://www.jisc.ac.uk/microsoft-azure-expressroute)** |Поддерживается |Поддерживается |Лондон, Ньюпорт (то есть) |
 | **[KINX](https://www.kinx.net/service/network/cloudhub/ms-expressroute/?lang=en)** |Поддерживается |Поддерживается |Сеул |
 | **[Kordia](https://www.kordia.co.nz/cloudconnect)** | Поддерживается |Поддерживается |Окленд, Сидней |
@@ -138,7 +138,7 @@ ms.locfileid: "94336766"
 | **[Нумерация](https://www.nos.pt/empresas/corporate/cloud/cloud/Pages/nos-cloud-connect.aspx)** |Поддерживается |Поддерживается |Амстердам 2 |
 | **[NTT Communications](https://www.ntt.com/en/services/network/virtual-private-network.html)** |Поддерживается |Поддерживается |Амстердам, Гонконг (САР), Лондон, Лос-Анджелес, Осака, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[NTT EAST](https://business.ntt-east.co.jp/service/crossconnect/)** |Поддерживается |Поддерживается |Токио |
-| **[Глобальные центры обработки данных NTT в регионе "Европа, Ближний Восток и Африка"](https://www.ntt.com/en/services/data-center.html)** |Поддерживается |Поддерживается |Берлин |
+| **[Глобальные центры обработки данных NTT в регионе "Европа, Ближний Восток и Африка"](https://hello.global.ntt/)** |Поддерживается |Поддерживается |Amsterdam2, Берлин |
 | **[NTT SmartConnect](https://cloud.nttsmc.com/cxc/azure.html)** |Поддерживается |Поддерживается |Осака |
 | **[Ooredoo Cloud Connect](https://www.ooredoo.qa/portal/OoredooQatar/cloud-connect-expressroute)** |Поддерживается |Поддерживается |Марсель |
 | **[Optus](https://www.optus.com.au/enterprise/)** |Поддерживается |Поддерживается |Мельбурн, Сидней |
@@ -152,6 +152,7 @@ ms.locfileid: "94336766"
 | **[SIFY](http://telecom.sify.com/azure-expressroute.html)** |Поддерживается |Поддерживается |Ченнаи, Мумбаи 2 |
 | **[SingTel](https://www.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** |Поддерживается |Поддерживается |Гонконг, Kong2, Сингапур, Сингапур 2 |
 | **[Softbank](https://www.softbank.jp/biz/cloud/cloud_access/direct_access_for_az/)** |Поддерживается |Поддерживается |Осака, Токио |
+| **[сохонет](https://www.sohonet.com/fastlane/)** |Поддерживается |Поддерживается |Лондон 2 |
 | **[Spark NZ](https://www.sparkdigital.co.nz/solutions/connectivity/cloud-connect/)** |Поддерживается |Поддерживается |Окленд, Сидней |
 | **[Спринт](https://business.sprint.com/solutions/cloud-networking/)** |Поддерживается |Поддерживается |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[Swisscom](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/microsoft-cloud-services/microsoft-azure-von-swisscom.html)** | Поддерживается | Поддерживается | Цюрих |
@@ -160,6 +161,7 @@ ms.locfileid: "94336766"
 | **[Telehouse — KDDI](https://www.telehouse.net/solutions/cloud-services/cloud-link)** |Поддерживается |Поддерживается |Лондон, Лондон 2 |
 | **Telenor** |Поддерживается |Поддерживается |Амстердам, Лондон, Осло |
 | **[Telia Carrier](https://www.teliacarrier.com/)** | Поддерживается | Поддерживается |Амстердам, Чикаго, Даллас, Франкфурт, Гонконг, Лондон, Осло, Париж, Кремниевая долина, Стокгольм, Вашингтон (округ Колумбия) |
+| **[телин](https://www.telin.net/)** | Поддерживается | Поддерживается |Джакарта |
 | **Telmex Uninet**| Поддерживается | Поддерживается | Даллас |
 | **[Telstra Corporation](https://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** |Поддерживается |Поддерживается |Мельбурн, Сингапур, Сидней |
 | **[Telus](https://www.telus.com)** |Поддерживается |Поддерживается |Монреаль, Сиэтл, Торонто, Vancouver |

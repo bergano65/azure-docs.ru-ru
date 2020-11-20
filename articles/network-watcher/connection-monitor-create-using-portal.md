@@ -1,5 +1,5 @@
 ---
-title: Создание монитора подключения — портал Azure
+title: Создание монитора подключений (Предварительная версия) — портал Azure
 titleSuffix: Azure Network Watcher
 description: В этой статье описывается, как создать монитор в мониторе подключения с помощью портал Azure.
 services: network-watcher
@@ -12,18 +12,22 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: d652f1eae62270fa8968d64a2bd15a1261dca673
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f1ba23d53d79587c9d75c1d840c1d3857725d8dd
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949196"
+ms.locfileid: "94984385"
 ---
-# <a name="create-a-monitor-in-connection-monitor-by-using-the-azure-portal"></a>Создание монитора в мониторе соединений с помощью портал Azure
+# <a name="create-a-monitor-in-connection-monitor-preview-by-using-the-azure-portal"></a>Создание монитора в мониторе подключения (Предварительная версия) с помощью портал Azure
 
 Узнайте, как использовать монитор подключения для отслеживания взаимодействия между ресурсами. В этой статье описывается, как создать монитор с помощью портал Azure. Монитор подключений поддерживает Гибридные развертывания в облаке Azure.
 
-## <a name="before-you-begin"></a>Подготовка к работе 
+> [!IMPORTANT]
+> Сейчас монитор подключения находится в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+## <a name="before-you-begin"></a>Подготовка 
 
 В мониторах подключений, создаваемых с помощью монитора подключения, можно добавить локальные компьютеры и виртуальные машины Azure в качестве источников. Эти мониторы соединений также могут отслеживать подключение к конечным точкам. Конечные точки могут находиться в Azure или на любом другом URL-адресе или IP.
 
@@ -199,7 +203,7 @@ ms.locfileid: "94949196"
 * Максимальное число источников и назначений на монитор подключения: 100
 * Максимальное число конфигураций тестов на монитор каждого подключения: 2 через портал Azure
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как анализировать данные мониторинга и настраивать оповещения](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts).
 * Узнайте [, как диагностировать проблемы в сети](./connection-monitor-overview.md#diagnose-issues-in-your-network).

@@ -1,5 +1,5 @@
 ---
-title: Миграция в монитор подключения из Монитор производительности сети
+title: Миграция в монитор подключения (Предварительная версия) с Монитор производительности сети
 titleSuffix: Azure Network Watcher
 description: Узнайте, как выполнить миграцию в монитор подключения с Монитор производительности сети.
 services: network-watcher
@@ -12,16 +12,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/20/2020
 ms.author: vinigam
-ms.openlocfilehash: 949f717c56892f8a1d0826e8e6f1f2164a4a142c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 38ea682b4f3894f373d16908b942b4fa578741c4
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94974933"
+ms.locfileid: "94985813"
 ---
-# <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Миграция в монитор подключения из Монитор производительности сети
+# <a name="migrate-to-connection-monitor-preview-from-network-performance-monitor"></a>Миграция в монитор подключения (Предварительная версия) с Монитор производительности сети
 
 Можно выполнить миграцию тестов из Монитор производительности сети (NPM) в новый, Улучшенный монитор подключения одним щелчком и с нулевым временем простоя. Дополнительные сведения о преимуществах см. в разделе [монитор подключения](./connection-monitor-overview.md).
+
+> [!IMPORTANT]
+> Сейчас монитор подключения находится в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 >[!NOTE]
 > В монитор подключения можно перенести только тесты из монитора подключения служб.
@@ -70,7 +74,7 @@ ms.locfileid: "94974933"
 * Перенесите все внешние интеграции в таблицу ConnectionMonitor_CL. Примерами внешних интеграций являются панели мониторинга в Power BI и Grafana, а также интеграция с системами управления сведениями о безопасности и событиями (SIEM).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о мониторе подключений см. в следующих статьях:
 * [Миграция из монитора подключения в монитор подключений](/azure/network-watcher/migrate-to-connection-monitor-from-connection-monitor-classic)

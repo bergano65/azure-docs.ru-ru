@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 11/19/2020
 ms.author: cynthn
-ms.openlocfilehash: f4cb57eb8d3396667e6c9cb40b7e41b1e97622ed
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: f33cb7d4d005f15d0a5fcc70d56ebd4698f86694
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94981193"
+ms.locfileid: "94988227"
 ---
 # <a name="control-updates-with-maintenance-control-and-azure-powershell"></a>Управление обновлениями с помощью управления обслуживанием и Azure PowerShell
 
@@ -69,7 +69,7 @@ Get-AzMaintenanceConfiguration | Format-Table -Property Name,Id
 
 ### <a name="create-a-maintenance-configuration-with-scheduled-window"></a>Создание конфигурации обслуживания с запланированным окном
 
-Используйте New-AzMaintenanceConfiguration, чтобы создать конфигурацию обслуживания с запланированным окном, когда Azure будет применять обновления к ресурсам. В этом примере создается конфигурация обслуживания с именем myConfig с запланированным периодом 5 часов в четвертом понедельнике каждого месяца. После создания запланированного окна вам больше не нужно применять обновления вручную.
+Вы также можете объявить запланированное окно, когда Azure будет применять обновления к ресурсам. В этом примере создается конфигурация обслуживания с именем myConfig с запланированным периодом 5 часов в четвертом понедельнике каждого месяца. После создания запланированного окна вам больше не нужно применять обновления вручную.
 
 ```azurepowershell-interactive
 $config = New-AzMaintenanceConfiguration `
@@ -85,12 +85,10 @@ $config = New-AzMaintenanceConfiguration `
 > [!IMPORTANT]
 > **Длительность** обслуживания должна составлять *2 часа* или больше. Для **периодичности** обслуживания должно быть задано значение по крайней мере один раз в 35 дней.
 
-**Повторение** обслуживания можно выразить следующим образом:
- | Значение | Пример |
-      |-------|-------------|
-      | обновляется | Рекуревери: Day **или** Рекуревери: 3Days | 
-      | weekly | Рекуревери: 3Weeks **или** Рекуревери: Week Суббота, воскресенье | 
-      | Семейный | Рекуревери: month day23, day24 **или** Рекуревери: month прошлого воскресенье **или** Рекуревери: month четвертый понедельник | 
+**Повторение** обслуживания может быть выражено ежедневно, еженедельно или ежемесячно. Некоторые примеры.
+ - Daily — "Рекуревери: Day" **или** "Рекуревери: 3Days" 
+ - Weekly — "Рекуревери: 3Weeks" **или** "Рекуревери: Week Суббота, воскресенье" 
+ - ежемесячно — "Рекуревери: month day23, day24" **или** "Рекуревери: month прошлого воскресенье" **или** "Рекуревери: month четвертый понедельник"  
       
 
 ## <a name="assign-the-configuration"></a>Назначение конфигурации
@@ -261,5 +259,5 @@ Remove-AzMaintenanceConfiguration `
    -Name $config.Name
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).
