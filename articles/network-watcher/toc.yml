@@ -69,17 +69,17 @@
     - name: Миграция в Монитор подключений
       items:
         - name: Из Монитора производительности сети
-          href: migrate-to-connection-monitor-preview-from-network-performance-monitor.md
+          href: migrate-to-connection-monitor-from-network-performance-monitor.md
         - name: Из Монитора подключений (классическая версия)
-          href: migrate-to-connection-monitor-preview-from-connection-monitor.md
+          href: migrate-to-connection-monitor-from-connection-monitor-classic.md
     - name: Диагностика проблем с сетью виртуальных машин
       items:
         - name: Установка расширения виртуальной машины
           items:
             - name: Windows
-              href: ../virtual-machines/windows/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json
+              href: ../virtual-machines/extensions/network-watcher-windows.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json
             - name: Linux
-              href: ../virtual-machines/linux/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json
+              href: ../virtual-machines/extensions/network-watcher-linux.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json
         - name: Диагностика проблем с маршрутизацией
           items:
             - name: Azure PowerShell
@@ -184,7 +184,7 @@
     - name: Определение относительной задержки между конкретным расположением и регионом Azure
       href: view-relative-latencies.md
     - name: Мониторинг производительности сети
-      href: ../log-analytics/log-analytics-network-performance-monitor.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json
+      href: ../azure-monitor/insights/network-performance-monitor.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json
     - name: Перемещение ресурсов
       items:
         - name: Перемещение ресурсов Наблюдателя за сетями
@@ -214,7 +214,7 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
+      href: /answers/topics/azure-virtual-network.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/network-watcher/'
     - name: Обновления службы

@@ -8,6 +8,10 @@
   items:
     - name: Проектирование агрегированного пространства имен
       href: hpc-cache-namespace.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Предварительные требования

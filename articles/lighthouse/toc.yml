@@ -36,6 +36,10 @@
     - name: Azure Lighthouse и управляемые приложения Azure
       displayName: 'managed apps, ama'
       href: ./concepts/managed-applications.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Подключение клиента к Azure Lighthouse

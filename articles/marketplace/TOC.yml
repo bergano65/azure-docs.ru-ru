@@ -15,7 +15,7 @@
       href: partner-center-portal/account-migration-from-cpp-to-pc.md
 - name: Основные понятия
   items:
-    - name: Варианты публикации и рекомендации
+    - name: Варианты выставления на продажу
       href: determine-your-listing-type.md
     - name: Транзакции на коммерческой платформе
       href: marketplace-commercial-transaction-capabilities-and-considerations.md
@@ -349,15 +349,14 @@
       items:
         - name: Обзор API исполнения SaaS
           href: partner-center-portal/pc-saas-fulfillment-apis.md
-          items:
-            - name: Регистрация приложения SaaS
-              href: partner-center-portal/pc-saas-registration.md
-            - name: "API исполнения SaaS версии\_2"
-              href: partner-center-portal/pc-saas-fulfillment-api-v2.md
-            - name: "API исполнения SaaS версии\_1 (не рекомендуется)"
-              href: partner-center-portal/pc-saas-fulfillment-api-v1.md
-            - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
-              href: partner-center-portal/saas-fulfillment-apis-faq.md
+        - name: Регистрация приложения SaaS
+          href: partner-center-portal/pc-saas-registration.md
+        - name: "API исполнения SaaS версии\_2"
+          href: partner-center-portal/pc-saas-fulfillment-api-v2.md
+        - name: "API исполнения SaaS версии\_1 (не рекомендуется)"
+          href: partner-center-portal/pc-saas-fulfillment-api-v1.md
+        - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
+          href: partner-center-portal/saas-fulfillment-apis-faq.md
 - name: Ресурсы
   items:
     - name: Вопросы и ответы о коммерческой платформе

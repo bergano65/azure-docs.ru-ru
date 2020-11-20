@@ -106,8 +106,6 @@
       items:
         - name: Azure CLI
           href: sample-scripts-azure-cli.md
-        - name: Встроенные компоненты Политики Azure
-          href: ./policy-reference.md
     - name: Основные понятия
       items:
         - name: Серверы
@@ -147,6 +145,9 @@
             - name: Двойное шифрование инфраструктуры
               href: concepts-infrastructure-double-encryption.md
               displayName: 'security, infrastructure encryption'
+            - name: Элементы управления безопасностью службы "Политика Azure"
+              displayName: 'regulatory, compliance, standards, domains'
+              href: ./security-controls-policy.md
             - name: Базовые средства безопасности
               href: security-baseline.md
         - name: Сеть
@@ -638,6 +639,9 @@
       href: /rest/api/postgresql
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.dbforpostgresql/allversions
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

@@ -57,8 +57,12 @@
       href: concept-security-alerts.md
     - name: Настраиваемые оповещения системы безопасности
       href: concept-customizable-security-alerts.md
-    - name: Рекомендации по обеспечению безопасности
-      href: concept-recommendations.md
+    - name: Безопасность
+      items:
+        - name: Рекомендации по обеспечению безопасности
+          href: concept-recommendations.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Базовый
       href: concept-baseline.md
     - name: Агрегация событий
