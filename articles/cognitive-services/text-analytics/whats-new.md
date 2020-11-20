@@ -8,23 +8,40 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 10/16/2020
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: f0204f5b923cf3363d85be9642d2866436df155a
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.custom: references_regions
+ms.openlocfilehash: 8743e765a050bfc4a2ba93a1b3e0344a960edb76
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369466"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966893"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
 API анализа текста обновляется на постоянной основе. В этой статье содержатся сведения о новых выпусках и функциях, чтобы оставаться в курсе последних нововведений.
 
+## <a name="november-2020"></a>Ноябрь 2020 г.
+
+* [Новая конечная точка](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Analyze) с API анализа текста v 3.1-Preview. 3 для нового асинхронного [API-интерфейса анализа](how-tos/text-analytics-how-to-call-api.md?tabs=analyze), который поддерживает пакетную обработку для операций извлечения NER, PII и ключевых фраз.
+* [Новая конечная точка](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Health) с API анализа текста версии 3.1-Preview. 3 для нового асинхронного [анализ текста для API службы работоспособности](how-tos/text-analytics-for-health.md) с поддержкой пакетной обработки.
+* Новые функции, перечисленные выше, доступны только в следующих регионах: `West US 2` , `East US 2` , `Central US` `North Europe` и `West Europe` .
+* Поддержка португальского языка (Бразилия) `pt-BR` теперь поддерживается в [Анализ тональности](how-tos/text-analytics-how-to-sentiment-analysis.md) v3. x, начиная с версии модели `2020-04-01` . Он добавляет к существующей `pt-PT` поддержке португальского языка.
+* Обновлены клиентские библиотеки, которые включают в себя асинхронное анализ и Анализ текста для операций работоспособности. Примеры можно найти на сайте GitHub:
+
+    * [C#](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics)
+    * [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/)
+    * [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics)
+
+
+> [!div class="nextstepaction"]
+> [Дополнительные сведения о API анализа текста версии 3.1-Preview. 3](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Languages)
+
 ## <a name="october-2020"></a>Октябрь 2020 г.
 
 * Поддержка хинди для анализ тональности v3. x, начиная с версии модели `2020-04-01` . 
-* Модель версии `2020-09-01` для конечной точки/лангуажес v3, которая расширяет возможности определения и точности языка.
+* Версия модели `2020-09-01` для конечной точки/лангуажес v3, которая расширяет возможности определения и точности языка.
 * v3 доступность в Центральной Индии и Северной ОАЭ.
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
@@ -147,7 +164,7 @@ API анализа текста v3 теперь общедоступен со с
 
 ### <a name="text-analytics-api-v31-public-preview"></a>Общедоступная Предварительная версия API анализа текста версии 3.1
    * Новое анализ тональности функции — [интеллектуальный анализ данных](how-tos/text-analytics-how-to-sentiment-analysis.md#opinion-mining)
-   * Новый [личный `PII` фильтр домена ()](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features) для защищенных сведений о работоспособности ( `PHI` ).
+   * Новый личный `PII` фильтр домена () для защищенных сведений о работоспособности ( `PHI` ).
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о предварительной версии API анализа текста v 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/Languages)
@@ -162,7 +179,7 @@ API анализа текста v3 теперь общедоступен со с
    * [JavaScript (Node.js)](./quickstarts/text-analytics-sdk.md?pivots=programming-language-javascript&tabs=version-3)
    * [Java](./quickstarts/text-analytics-sdk.md?pivots=programming-language-java&tabs=version-3)
    
-   > [!div class="nextstepaction"]
+> [!div class="nextstepaction"]
 > [Дополнительные сведения о пакете SDK для API анализа текста v3](./quickstarts/text-analytics-sdk.md?tabs=version-3)
 
 ### <a name="named-entity-recognition-v3-public-preview"></a>Общедоступная Предварительная версия распознавания имен сущностей v3
@@ -178,16 +195,13 @@ API анализа текста v3 теперь общедоступен со с
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
     * Модель Person
-    * План
+    * Организация
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
     * Электронная почта 
     * Номер телефона (только США)
     * URL-адрес
     * IP-адрес
-
-> [!div class="nextstepaction"]
-> [Дополнительные сведения о распознавании имен сущностей v3](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features)
 
 ### <a name="october-2019"></a>Октябрь 2019 г.
 
@@ -219,7 +233,7 @@ API анализа текста v3 теперь общедоступен со с
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое API "Анализ текста"?](overview.md)  
 * [Примеры пользовательских сценариев](text-analytics-user-scenarios.md)

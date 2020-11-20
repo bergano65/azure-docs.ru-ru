@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 10/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 4a53dd803b22899b7dd15db0aa1ff411641a11dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3339f883d177366a64187e0c090752527802c8d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88183264"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968780"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
 
@@ -57,7 +57,7 @@ ms.locfileid: "88183264"
     * В среде Windows следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-az-ps). Если необходимо, вы можете установить Azure PowerShell на узле Windows Server для StorSimple.
     * В среде Linux или MacOS следуйте инструкциям в статье [Установка и настройка Azure PowerShell в macOS и Linux](/powershell/azure/install-az-ps).
 
-Дополнительные сведения об использовании Azure PowerShell см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+Дополнительные сведения об использовании Azure PowerShell см. в статье [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps).
 
 ### <a name="run-azure-powershell-script"></a>Запуск сценария Azure PowerShell
 
@@ -166,6 +166,6 @@ PS C:\Scripts\StorSimpleSDKTools>
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

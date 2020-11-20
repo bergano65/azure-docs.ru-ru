@@ -10,12 +10,12 @@ ms.author: ravokkar
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 7683f5d60c5d788707e2f89774cee42e7820db87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a7ec2f4f8fdf631a6bc5096296275291ec41751
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87924212"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967131"
 ---
 # <a name="communicate-with-your-dps-using-the-mqtt-protocol"></a>Обмен данными с DP с помощью протокола MQTT
 
@@ -29,13 +29,13 @@ ms.locfileid: "87924212"
 Все взаимодействия устройств с DPS необходимо защищать с помощью TLS/SSL. Таким образом, служба DPS не поддерживает небезопасные подключения через порт 1883.
 
  > [!NOTE] 
- > В настоящее время служба DPS не поддерживает устройства, использующие [механизм аттестации](https://docs.microsoft.com/azure/iot-dps/concepts-device#attestation-mechanism) TPM по протоколу MQTT.
+ > В настоящее время служба DPS не поддерживает устройства, использующие [механизм аттестации](./concepts-service.md#attestation-mechanism) TPM по протоколу MQTT.
 
 ## <a name="connecting-to-dps"></a>Подключение к службе DPS
 
 Устройство может использовать протокол MQTT для подключения к службе DPS с помощью любого из следующих параметров.
 
-* Библиотеки в пакетах [SDK для подготовки Azure IOT](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks#microsoft-azure-provisioning-sdks).
+* Библиотеки в пакетах [SDK для подготовки Azure IOT](../iot-hub/iot-hub-devguide-sdks.md#microsoft-azure-provisioning-sdks).
 * Непосредственно с помощью протокола MQTT.
 
 ## <a name="using-the-mqtt-protocol-directly-as-a-device"></a>Непосредственное использование протокола MQTT (как устройство)
@@ -44,7 +44,7 @@ ms.locfileid: "87924212"
 
 * В поле **ClientID** используйте **registrationId**.
 
-* В поле **username (имя пользователя** ) укажите `{idScope}/registrations/{registration_id}/api-version=2019-03-31` , где `{idScope}` — [idScope](https://docs.microsoft.com/azure/iot-dps/concepts-device#id-scope) политики DPS.
+* В поле **username (имя пользователя** ) укажите `{idScope}/registrations/{registration_id}/api-version=2019-03-31` , где `{idScope}` — [idScope](./concepts-service.md#id-scope) политики DPS.
 
 * В поле **Пароль** укажите маркер SAS. Формат маркера SAS аналогичен описанному для протоколов HTTPS и AMQP:
 
@@ -70,8 +70,8 @@ ms.locfileid: "87924212"
 
 Чтобы зарегистрировать устройство через службу DPS, устройство должно подписаться, используя `$dps/registrations/res/#` в качестве **фильтра разделов**. Многоуровневый подстановочный знак `#` в параметре Topic Filter (Фильтр разделов) используется только для того, чтобы разрешить устройству получать дополнительные свойства в имени раздела. Служба DPS не разрешает использование `#` `?` подстановочных знаков или для фильтрации подразделов. Так как DP не является посредником обмена сообщениями общего назначения, он поддерживает только документированные названия разделов и фильтры разделов.
 
-Устройство должно публиковать сообщение Register в службу DPS, используя `$dps/registrations/PUT/iotdps-register/?$rid={request_id}` в качестве **имени раздела**. Полезная нагрузка должна содержать объект [регистрации устройства](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice#deviceregistration) в формате JSON.
-В случае успеха устройство получит ответ на `$dps/registrations/res/202/?$rid={request_id}&retry-after=x` имя раздела, где x — это значение Retry-After в секундах. Полезные данные отклика будут содержать объект [регистратионоператионстатус](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice#registrationoperationstatus) в формате JSON.
+Устройство должно публиковать сообщение Register в службу DPS, используя `$dps/registrations/PUT/iotdps-register/?$rid={request_id}` в качестве **имени раздела**. Полезная нагрузка должна содержать объект [регистрации устройства](/rest/api/iot-dps/runtimeregistration/registerdevice#deviceregistration) в формате JSON.
+В случае успеха устройство получит ответ на `$dps/registrations/res/202/?$rid={request_id}&retry-after=x` имя раздела, где x — это значение Retry-After в секундах. Полезные данные отклика будут содержать объект [регистратионоператионстатус](/rest/api/iot-dps/runtimeregistration/registerdevice#registrationoperationstatus) в формате JSON.
 
 ## <a name="polling-for-registration-operation-status"></a>Опрос состояния операции регистрации
 

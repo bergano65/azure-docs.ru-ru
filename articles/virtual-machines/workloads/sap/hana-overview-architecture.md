@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e1575ee02a520fd39a1c659eadaeda5822207539
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0144c57549e374404d3dde0fe997ba41adc8606b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87171128"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967590"
 ---
 #  <a name="what-is-sap-hana-on-azure-large-instances"></a>Что такое SAP HANA в Azure (большие экземпляры)?
 
@@ -58,5 +59,5 @@ SAP HANA в Azure (крупные экземпляры) — это уникал�
 - [Резервное копирование и восстановление ОС для номеров SKU типа II для версий 3](./os-backup-type-ii-skus.md)
 - [Экономия на SAP HANA (крупные экземпляры) благодаря резервированию Azure](../../../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md)
 
-**Следующие шаги**
+**Дальнейшие действия**
 - См. раздел [Know the terms](hana-know-terms.md) (Определение терминов)

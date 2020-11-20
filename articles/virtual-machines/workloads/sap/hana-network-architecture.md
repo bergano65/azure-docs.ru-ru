@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b99e744fb949f707467286c3d79de0f4e76a49c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf9fd361dea43b1cfa6ae45710a3a7bbf4e4de03
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87835516"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967675"
 ---
 # <a name="sap-hana-large-instances-network-architecture"></a>Сетевая архитектура SAP HANA в Azure (крупные экземпляры)
 
@@ -199,5 +200,5 @@ ms.locfileid: "87835516"
 > [!IMPORTANT] 
 > Если используется несколько каналов ExpressRoute, чтобы обеспечить правильную маршрутизацию трафика, следует использовать атрибут AS PATH и настройки локального предпочтения BGP.
 
-**Следующие шаги**
+**Дальнейшие действия**
 - Дополнительные сведения см. в статье [Архитектура хранилища SAP HANA (крупные экземпляры)](hana-storage-architecture.md).

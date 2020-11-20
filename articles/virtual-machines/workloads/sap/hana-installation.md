@@ -7,18 +7,19 @@ author: hermanndms
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 60d889b232857ae69372df8ebabbd0edd01a2f17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1430b32c0e74be7a0e50fa4c5c183018b2b55e0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91529836"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967777"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
 
@@ -211,7 +212,7 @@ HANA usr/sap предоставляет общий доступ к тому. В 
 Для изучения макета хранилища вашей архитектуры см. статью [Поддерживаемые сценарии для крупных экземпляров HANA](hana-supported-scenario.md).
 
 
-**Следующие шаги**
+**Дальнейшие действия**
 
 - См. статью [Пример установки SAP HANA на крупных экземплярах HANA](hana-example-installation.md).
 

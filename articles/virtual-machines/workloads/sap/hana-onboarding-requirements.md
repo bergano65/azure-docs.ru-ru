@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 01/31/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 141a75a75a214ff4a6f136df7570d6e81f7f4e82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f72342a318e3436fb80fb06b2312f664c9d04969
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77616998"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967624"
 ---
 # <a name="onboarding-requirements"></a>Требования для подключения
 
@@ -70,7 +71,7 @@ ms.locfileid: "77616998"
 - Лицензии и компоненты установки программного обеспечения для любых приложений SAP, которые подключаются к SAP HANA, и связанные договора на поддержку SAP.
 - Лицензии и компоненты установки программного обеспечения для всех приложений других поставщиков (не SAP), используемых со средой SAP HANA в Azure (крупные экземпляры), и связанные договора на поддержку.
 
-**Им**
+**Навыки**
 
 - Опыт работы со средой Azure IaaS и ее компонентами и общие знания о них.
 - Общие знания о развертывании рабочей нагрузки SAP в Azure.
@@ -82,5 +83,5 @@ ms.locfileid: "77616998"
 - Ожидается, что вы являетесь клиентом SAP и у вас есть договор на поддержку с SAP.
 - Специально для реализации номеров SKU крупных экземпляров HANA 2 класса рекомендуется проконсультироваться со специалистами SAP о версиях SAP HANA и окончательной конфигурации крупного вертикально масштабируемого оборудования.
 
-**Следующие шаги**
+**Дальнейшие действия**
 - См. статью [Архитектура SAP HANA (крупные экземпляры) в Azure](hana-architecture.md)

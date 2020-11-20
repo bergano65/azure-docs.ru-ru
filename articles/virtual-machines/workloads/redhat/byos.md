@@ -3,16 +3,17 @@ title: Red Hat Enterprise Linux образы Azure с собственной п�
 description: Узнайте о собственных образах подписки на Red Hat Enterprise Linux в Azure.
 author: asinn826
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 06/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 3a597b6454b3fb738ca192fa7750ca94fdb873ab
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 6f2c15518a12a99ca1390284165ad2d48156e06a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372801"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968678"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
@@ -208,7 +209,7 @@ ms.locfileid: "94372801"
 
 - Если вы используете автоматизацию для инициализации виртуальных машин из образов RHEL BYOS, необходимо указать параметры плана, аналогичные показанным в примерах команд. Например, если вы используете terraform, вы предоставляете сведения о плане в [блоке плана](https://www.terraform.io/docs/providers/azurerm/r/virtual_machine.html#plan).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о облачном доступе к Red Hat доступны в [документации по Red Hat в общедоступном облаке](https://access.redhat.com/public-cloud) .
 - Пошаговые руководства и сведения о программе для доступа к облаку см. в [документации по облачному доступу для Red Hat](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/index).

@@ -3,20 +3,20 @@ title: Обзор виртуальных машин серии HBv2. вирту�
 description: Сведения о размере виртуальной машины серии HBv2 в Azure.
 services: virtual-machines
 author: vermagit
-manager: gwallace
 tags: azure-resource-manager
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 09/28/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 48366f205ed8eb2d179bdc39c8da3d673f066a69
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: be66f29881250843f70ba85b8ef7c80ae8b31aa6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332642"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966944"
 ---
 # <a name="hbv2-series-virtual-machine-overview"></a>Обзор виртуальных машин серии HBv2 
 
@@ -59,7 +59,7 @@ ms.locfileid: "92332642"
 | Поддержка Orchestrator        | Циклеклауд, пакетная                                         | 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [архитектуре AMD ЕПИК](https://bit.ly/2Epv3kC) и [архитектурах с несколькими микросхемами](https://bit.ly/2GpQIMb). Дополнительные сведения см. в описании [рекомендаций по настройке HPC для процессоров AMD ЕПИК](https://bit.ly/2T3AWZ9).
 - Ознакомьтесь с последними объявлениями и некоторыми примерами HPC в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).

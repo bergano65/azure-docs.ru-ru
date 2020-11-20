@@ -4,18 +4,18 @@ description: IoT Edge извлечение и отправку журнала м
 author: v-tcassi
 manager: philmea
 ms.author: v-tcassi
-ms.date: 09/14/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 64264028706c1493f687f032a7ec39e69188bd45
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 97cdc4ad0b1d5e7dfb6642fa0163f810be5d7171
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171911"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966927"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Получение журналов из IoT Edge развертываний
 
@@ -63,7 +63,7 @@ ms.locfileid: "92171911"
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | schemaVersion | строка | Установите значение `1.0` |
 | items | Массив JSON | Массив с `id` `filter` кортежами и. |
@@ -74,8 +74,8 @@ ms.locfileid: "92171911"
 | until | Целое число | Возвращать журналы только до указанного времени, в виде метки времени rfc3339, метки времени UNIX или длительности (1 d, 90 м, 2 дня 3 часа 2 минуты). OPTIONAL. |
 | уровень ведения журнала | Целое число | Фильтровать строки журнала, которые меньше или равны указанному уровню ведения журнала. Строки журнала должны следовать рекомендуемому формату ведения журнала и использовать стандарт [уровня серьезности syslog](https://en.wikipedia.org/wiki/Syslog#Severity_level) . OPTIONAL. |
 | regex | строка | Фильтрация строк журнала, имеющих содержимое, совпадающее с указанным регулярным выражением, с использованием формата [регулярных выражений .NET](/dotnet/standard/base-types/regular-expressions) . OPTIONAL. |
-| encoding | строка | `gzip` или `none`. Значение по умолчанию — `none`. |
-| сontentType | строка | `json` или `text`. Значение по умолчанию — `text`. |
+| encoding | строка | `gzip` или `none`. По умолчанию — `none`. |
+| сontentType | строка | `json` или `text`. По умолчанию — `text`. |
 
 > [!NOTE]
 > Если содержимое журнала превышает предельное значение размера ответа для прямых методов, которое в настоящее время 128 КБ, ответ возвращает ошибку.
@@ -141,6 +141,14 @@ az iot hub invoke-module-method \
 
 Используйте прямой метод **уплоадмодулелогс** , чтобы отправить запрошенные журналы в указанный контейнер хранилища BLOB-объектов Azure.
 
+<!-- 1.2.0 -->
+::: moniker range=">=iotedge-2020-11"
+
+> [!NOTE]
+> Если вы хотите передать журналы с устройства, расположенного за устройством шлюза, вам потребуется настроить [прокси API и модули хранилища BLOB-объектов](how-to-configure-api-proxy-module.md) , настроенные на устройстве верхнего уровня. Эти модули направляют журналы с устройства более низкого уровня через устройство шлюза в хранилище в облаке.
+
+::: moniker-end
+
 Этот метод принимает полезные данные JSON, аналогичные **жетмодулелогс**, с добавлением ключа "sasUrl":
 
 ```json
@@ -164,7 +172,7 @@ az iot hub invoke-module-method \
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer). |
 
@@ -178,7 +186,7 @@ az iot hub invoke-module-method \
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
@@ -261,6 +269,14 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
 
 Используйте прямой метод **уплоадсуппортбундле** для объединения и передачи ZIP-файла IOT Edge журналов модулей в доступный контейнер хранилища BLOB-объектов Azure. Этот прямой метод запускает [`iotedge support-bundle`](./troubleshoot.md#gather-debug-information-with-support-bundle-command) команду на устройстве IOT Edge для получения журналов.
 
+<!-- 1.2.0 -->
+::: moniker range=">=iotedge-2020-11"
+
+> [!NOTE]
+> Если вы хотите передать журналы с устройства, расположенного за устройством шлюза, вам потребуется настроить [прокси API и модули хранилища BLOB-объектов](how-to-configure-api-proxy-module.md) , настроенные на устройстве верхнего уровня. Эти модули направляют журналы с устройства более низкого уровня через устройство шлюза в хранилище в облаке.
+
+::: moniker-end
+
 Этот метод принимает полезные данные JSON со следующей схемой:
 
 ```json
@@ -273,7 +289,7 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | schemaVersion | строка | Установите значение `1.0` |
 | sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer) |
@@ -294,7 +310,7 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
@@ -352,7 +368,7 @@ az iot hub invoke-module-method --method-name 'UploadSupportBundle' -n <hub name
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
@@ -381,6 +397,6 @@ az iot hub invoke-module-method --method-name 'GetTaskStatus' -n <hub name> -d <
 
 ![Вызов прямого метода "Жеттаскстатус" в портал Azure](./media/how-to-retrieve-iot-edge-logs/invoke-get-task-status.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Свойства двойников модулей агента IoT Edge и центра IoT Edge](module-edgeagent-edgehub.md)

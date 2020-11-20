@@ -9,12 +9,12 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/18/2017
 ms.author: rohink
-ms.openlocfilehash: 19189af6424960b8e20be686af745b10f2d8578b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41eb15a38c97532951723f12d1ac74c90c838eb1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85846830"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968202"
 ---
 # <a name="overview-of-dns-zones-and-records"></a>Обзор зон и записей DNS
 
@@ -141,7 +141,7 @@ Azure DNS поддерживает использование тегов Azure R
 
 [!INCLUDE [dns-limits](../../includes/dns-limits.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Чтобы начать работу с Azure DNS, узнайте, как [создать зону DNS](dns-getstarted-create-dnszone-portal.md) и [записи DNS](dns-getstarted-create-recordset-portal.md).
+* Чтобы начать работу с Azure DNS, узнайте, как [создать зону DNS](./dns-getstarted-portal.md) и [записи DNS](./dns-getstarted-portal.md).
 * Чтобы перенести имеющуюся зону DNS, узнайте, как [импортировать и экспортировать файл зоны DNS](dns-import-export.md).

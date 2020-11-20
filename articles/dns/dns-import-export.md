@@ -8,12 +8,12 @@ ms.service: dns
 ms.date: 7/30/2020
 ms.author: rohink
 ms.topic: how-to
-ms.openlocfilehash: 8f17d7f32d774cac283ec335c372e8f68d50931f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2b998432f6c4417da0242d86347ed43acb5071a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87424228"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968236"
 ---
 # <a name="import-and-export-a-dns-zone-file-using-the-azure-cli"></a>Импорт и экспорт файла зоны DNS с помощью Azure CLI
 
@@ -177,8 +177,8 @@ az network dns zone export -g <resource group> -n <zone name> -f <zone file name
 az network dns zone export -g myresourcegroup -n contoso.com -f contoso.com.txt
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте, как [управлять наборами записей и записями](dns-getstarted-create-recordset-cli.md) в зоне DNS.
+* Узнайте, как [управлять наборами записей и записями](./dns-getstarted-cli.md) в зоне DNS.
 
 * Узнайте, как [делегировать свой домен в Azure DNS](dns-domain-delegation.md).

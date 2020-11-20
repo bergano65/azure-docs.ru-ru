@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: eliotga
-ms.openlocfilehash: f67ed44fffe6bd690d6bd76fcefa19d9ee23e52b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc33dcd2c80b2a6d4a1cc27778e49dc06ac48b34
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90529406"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967318"
 ---
 # <a name="how-to-provision-devices-using-symmetric-key-enrollment-groups"></a>Как подготавливать устройства с помощью групп регистрации симметричных ключей
 
@@ -49,7 +49,7 @@ ms.locfileid: "90529406"
 
 Приведенные ниже предварительные требования касаются среды разработки Windows. При использовании Linux или macOS ознакомьтесь с соответствующим разделом в статье [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) из документации к пакету SDK.
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://docs.microsoft.com/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
 
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
@@ -88,7 +88,7 @@ ms.locfileid: "90529406"
     cmake -Dhsm_type_symm_key:BOOL=ON -Duse_prov_client:BOOL=ON  ..
     ```
     
-    Если `cmake` не удастся найти компилятор C++, могут возникнуть ошибки сборки во время выполнения предыдущей команды. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs). 
+    Если `cmake` не удастся найти компилятор C++, могут возникнуть ошибки сборки во время выполнения предыдущей команды. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs). 
 
     После успешного создания последние несколько строк выходных данных будут выглядеть следующим образом:
 
@@ -286,19 +286,8 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
 * [Краткое руководство по подготовке имитированного устройства с использованием симметричных ключей](quick-create-simulated-device-symm-key.md)
-* Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) . 
-
-
-
-
-
-
-
-
-
-
-
+* Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) .

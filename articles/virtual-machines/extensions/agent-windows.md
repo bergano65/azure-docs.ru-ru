@@ -2,17 +2,18 @@
 title: Обзор агента виртуальной машины Azure
 description: Обзор агента виртуальной машины Azure
 services: virtual-machines-windows
+ms.subservice: extensions
 author: mimckitt
 ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 07/20/2019
 ms.author: mimckitt
-ms.openlocfilehash: 1ef2c9ef4e2a2296ceb214c89bb6e3fb98dcb26f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 3724b8a2afb89594c73f7dae782658ec8978963a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91974912"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968440"
 ---
 # <a name="azure-virtual-machine-agent-overview"></a>Обзор агента виртуальной машины Azure
 Агент виртуальной машины Microsoft Azure — это защищенный упрощенный процесс, который управляет взаимодействием виртуальной машины с контроллером структуры Azure. Основная роль агента виртуальной машины — это включение и выполнение расширений виртуальной машины Azure. Расширения виртуальной машины позволяют выполнять дополнительные действия по настройке виртуальной машины после развертывания, например устанавливать и настраивать программное обеспечение. Они также предоставляют возможности восстановления, такие как сброс пароля администратора виртуальной машины. Расширения виртуальной машины не могут выполняться без агента виртуальной машины Azure.
@@ -123,5 +124,5 @@ foreach ($vm in $vms) {
 Дополнительные сведения о сертификатах масштабируемых наборов виртуальных машин см [. в разделе масштабируемые наборы виртуальных машин — разделы справки удалить устаревшие сертификаты?](../../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.md#how-do-i-remove-deprecated-certificates)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

@@ -7,18 +7,19 @@ author: saghorpa
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5fdaa1346e4837b3bf611d964158d132dcdfeeda
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 42333a3feae19b6c3c77494f7e843cac1d9bc078
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282684"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968134"
 ---
 # <a name="backup-and-restore-of-sap-hana-on-hana-large-instances"></a>Резервное копирование и восстановление SAP HANA в крупных экземплярах HANA
 
@@ -338,7 +339,7 @@ SAP HANA регулярно записывает данные на том /hana/
 
 Дополнительные сведения о скрипте см. в разделе "Удаление моментального снимка azure_hana_snapshot_delete" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
-Запустите сценарий от имени **привилегированного**пользователя.
+Запустите сценарий от имени **привилегированного** пользователя.
 
 >[!IMPORTANT]
 >Если имеются данные, которые существуют только в моментальном снимке, который планируется удалить, то после удаления моментального снимка данные теряются навсегда.
@@ -438,19 +439,19 @@ SAP HANA регулярно записывает данные на том /hana/
 
 1. На странице SAP HANA подписка выберите вложенную страницу **группы ресурсов** .
 
-   :::image type="content" source="./media/snapcenter/solution-lab-subscription-resource-groups.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/solution-lab-subscription-resource-groups.png":::
+   :::image type="content" source="./media/snapcenter/solution-lab-subscription-resource-groups.png" alt-text="Группа ресурсов подписки лаборатории решений" lightbox="./media/snapcenter/solution-lab-subscription-resource-groups.png":::
 
 1. Выберите подходящую группу ресурсов в регионе.
 
-   :::image type="content" source="./media/snapcenter/select-appropriate-resource-group-in-region.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/select-appropriate-resource-group-in-region.png":::
+   :::image type="content" source="./media/snapcenter/select-appropriate-resource-group-in-region.png" alt-text="Выберите соответствующую группу ресурсов в регионе." lightbox="./media/snapcenter/select-appropriate-resource-group-in-region.png":::
 
 1. Выберите запись номера SKU, соответствующую SAP HANA в службе хранилища Azure.
 
-   :::image type="content" source="./media/snapcenter/select-sku-entry-corresponding-to-sap-hana.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/select-sku-entry-corresponding-to-sap-hana.png":::
+   :::image type="content" source="./media/snapcenter/select-sku-entry-corresponding-to-sap-hana.png" alt-text="Выберите запись SKU, соответствующую SAP HANA" lightbox="./media/snapcenter/select-sku-entry-corresponding-to-sap-hana.png":::
 
 1. Откройте новый запрос в службу **поддержки** , выделенный красным цветом.
 
-   :::image type="content" source="./media/snapcenter/open-new-support-ticket-request.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="./media/snapcenter/open-new-support-ticket-request.png" alt-text="Открыть новый запрос в службу поддержки":::
 
 1. На вкладке **основы** укажите следующие сведения для билета:
 
@@ -468,7 +469,7 @@ SAP HANA регулярно записывает данные на том /hana/
    * Настройка Снапцентер для ХЛИ
    * Открытый ключ для пользователя Снапцентер (снапцентер. PEM). см. пример создания открытого ключа ниже.
 
-     :::image type="content" source="./media/snapcenter/new-support-request-details.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/new-support-request-details.png":::
+     :::image type="content" source="./media/snapcenter/new-support-request-details.png" alt-text="Новый запрос в службу поддержки — вкладка &quot;сведения&quot;" lightbox="./media/snapcenter/new-support-request-details.png":::
 
 1. Выберите **проверить и создать** , чтобы проверить свой запрос в службу поддержки. 
 
@@ -525,7 +526,7 @@ SAP HANA регулярно записывает данные на том /hana/
 
 1. Настройте учетные данные пользователя для Снапцентер. По умолчанию он заполняет учетные данные пользователя Windows, используемые для установки приложения. 
 
-   :::image type="content" source="media/snapcenter/installation-user-inputs-dialog.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей"::: 
+   :::image type="content" source="media/snapcenter/installation-user-inputs-dialog.png" alt-text="Диалоговое окно установки входных данных пользователя"::: 
 
 1. При запуске сеанса сохраните исключение безопасности и запустится графический интерфейс пользователя.
 
@@ -534,22 +535,22 @@ SAP HANA регулярно записывает данные на том /hana/
 
 ### <a name="set-up-the-storage-system"></a>Настройка системы хранения
 
-1. В Снапцентер выберите **система хранения**и щелкните **+ создать**. 
+1. В Снапцентер выберите **система хранения** и щелкните **+ создать**. 
 
-   :::image type="content" source="./media/snapcenter/snapcenter-storage-connections-window.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="./media/snapcenter/snapcenter-storage-connections-window.png":::
+   :::image type="content" source="./media/snapcenter/snapcenter-storage-connections-window.png" alt-text="Подключения к хранилищу Снапцентер" lightbox="./media/snapcenter/snapcenter-storage-connections-window.png":::
 
    Значение по умолчанию — один SVM для каждого клиента. Если у клиента несколько клиентов или Хлис в нескольких регионах, рекомендуется настроить все SVM в Снапцентер
 
 1. В окне Добавление системы хранения данных укажите сведения о системе хранения, которую требуется добавить, имя пользователя и пароль Снапцентер, а затем нажмите кнопку **Отправить**.
 
-   :::image type="content" source="./media/snapcenter/new-storage-connection.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="./media/snapcenter/new-storage-connection.png" alt-text="Новое подключение к хранилищу":::
 
    >[!NOTE]
    >Значение по умолчанию — один SVM для каждого клиента.  При наличии нескольких клиентов рекомендуется настроить все SVM здесь в Снапцентер. 
 
 1. В Снапцентер выберите **узлы** и выберите **+ Добавить** , чтобы настроить подключаемый модуль Hana и узлы базы данных Hana.  Последняя версия Снапцентер автоматически обнаруживает базу данных HANA на узле.
 
-   :::image type="content" source="media/snapcenter/managed-hosts-new-host.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/managed-hosts-new-host.png":::
+   :::image type="content" source="media/snapcenter/managed-hosts-new-host.png" alt-text="В Снапцентер выберите узлы и нажмите кнопку Добавить." lightbox="media/snapcenter/managed-hosts-new-host.png":::
 
 1. Укажите сведения для нового узла:
    1. Выберите операционную систему для типа узла.
@@ -557,7 +558,7 @@ SAP HANA регулярно записывает данные на том /hana/
    1. Укажите учетные данные, которые вы хотите использовать.
    1. Выберите параметры **Microsoft Windows** и **SAP HANA** , а затем нажмите кнопку **Отправить**.
 
-   :::image type="content" source="media/snapcenter/add-new-host-operating-system-credentials.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/add-new-host-operating-system-credentials.png" alt-text="Сведения для нового узла":::
 
    >[!IMPORTANT]
    >Перед установкой первого узла Снапцентер позволяет пользователю, не являющемуся корневым, устанавливать подключаемые модули в базе данных.  Сведения о том, как включить пользователя, не являющегося корневым, см. в разделе [Добавление непривилегированного пользователя и настройка привилегий sudo](https://library.netapp.com/ecmdocs/ECMLP2590889/html/GUID-A3EEB5FC-242B-4C2C-B407-510E48A8F131.html).
@@ -566,7 +567,7 @@ SAP HANA регулярно записывает данные на том /hana/
 
 1. После установки подключаемого модуля в Снапцентер выберите **узлы** и нажмите кнопку **+ Добавить** , чтобы добавить узел Hana.
 
-   :::image type="content" source="media/snapcenter/add-hana-node.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/add-hana-node.png":::
+   :::image type="content" source="media/snapcenter/add-hana-node.png" alt-text="Добавление узла HANA" lightbox="media/snapcenter/add-hana-node.png":::
 
 1. Укажите сведения для узла HANA:
    1. Выберите операционную систему для типа узла.
@@ -574,15 +575,15 @@ SAP HANA регулярно записывает данные на том /hana/
    1. Выберите, **+** чтобы добавить учетные данные, настроенные в операционной системе узла Hana DB, а затем нажмите кнопку **ОК**.
    1. Выберите **SAP HANA** и нажмите кнопку **Отправить**.
 
-   :::image type="content" source="media/snapcenter/add-hana-node-details.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/add-hana-node-details.png" alt-text="Сведения об узле SAP HANA":::
 
 1. Подтвердите отпечаток, а затем нажмите кнопку **подтвердить и отправить**.
 
-   :::image type="content" source="media/snapcenter/confirm-submit-fingerprint.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/confirm-submit-fingerprint.png" alt-text="Подтверждение и отправка отпечатка":::
 
 1. В узле Hana в разделе Системная база данных выберите **Безопасность**  >  **Пользователи**  >  **снапцентер** , чтобы создать пользователя снапцентер.
 
-   :::image type="content" source="media/snapcenter/create-snapcenter-user-hana-system-db.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/create-snapcenter-user-hana-system-db.png" alt-text="Создание пользователя Снапцентер в HANA (системная БД)":::
 
 
 
@@ -595,15 +596,15 @@ SAP HANA регулярно записывает данные на том /hana/
 
 1. В Снапцентер выберите **ресурсы** и **San Hana** (в верхней части), а затем выберите **+ Добавить SAP HANA базу данных** (справа).
 
-   :::image type="content" source="media/snapcenter/manual-hana-setup.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/manual-hana-setup.png":::
+   :::image type="content" source="media/snapcenter/manual-hana-setup.png" alt-text="Установка HANA вручную" lightbox="media/snapcenter/manual-hana-setup.png":::
 
 1. Укажите сведения о ресурсах пользователя администратора HANA, настроенного на узле Linux, или на узле, где установлены подключаемые модули. Резервная копия будет управляться из подключаемого модуля в системе Linux.
 
-   :::image type="content" source="media/snapcenter/provide-resource-details-sap-hana-database.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/provide-resource-details-sap-hana-database.png" alt-text="Укажите сведения о ресурсах пользователя администратора HANA, настроенного на узле Linux.":::
 
 1. Выберите том данных, для которого необходимо создать моментальные снимки, выберите **сохранить** и нажмите кнопку **Готово**.
 
-   :::image type="content" source="media/snapcenter/provide-storage-footprint.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/provide-storage-footprint.png" alt-text="Выберите том данных, для которого необходимо создать моментальные снимки, выберите сохранить и нажмите кнопку Готово.":::
 
 ### <a name="create-a-snapshot-policy"></a>Создание политики моментальных снимков
 
@@ -611,53 +612,53 @@ SAP HANA регулярно записывает данные на том /hana/
 
 1. В Снапцентер выберите **ресурсы** , а затем выберите базу данных.
 
-   :::image type="content" source="media/snapcenter/select-database-create-policy.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/select-database-create-policy.png" alt-text="В Снапцентер выберите ресурсы, а затем выберите базу данных.":::
 
 1. Следуйте указаниям рабочего процесса мастера настройки, чтобы настроить планировщик моментальных снимков.
 
-   :::image type="content" source="media/snapcenter/follow-workflow-configuration-wizard.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/follow-workflow-configuration-wizard.png":::
+   :::image type="content" source="media/snapcenter/follow-workflow-configuration-wizard.png" alt-text="Следуйте указаниям рабочего процесса мастера настройки, чтобы настроить планировщик моментальных снимков." lightbox="media/snapcenter/follow-workflow-configuration-wizard.png":::
 
 1. Укажите параметры для настройки команд, выполняемых до и после публикации, и специальных ключей SSL.  В этом примере не используются специальные параметры.
 
-   :::image type="content" source="media/snapcenter/configuration-options-pre-post-commands.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/configuration-options-pre-post-commands.png":::
+   :::image type="content" source="media/snapcenter/configuration-options-pre-post-commands.png" alt-text="Укажите параметры для настройки команд, предшествующих POST, и специальных ключей SSL." lightbox="media/snapcenter/configuration-options-pre-post-commands.png":::
 
 1. Выберите **Добавить** , чтобы создать политику моментальных снимков, которая также может использоваться для других баз данных Hana. 
 
-   :::image type="content" source="media/snapcenter/select-one-or-more-policies.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/select-one-or-more-policies.png" alt-text="Выберите Добавить, чтобы создать политику моментальных снимков, которая также может использоваться для других баз данных HANA.":::
 
 1. Введите имя и описание политики.
 
-   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy.png" alt-text="Введите имя и описание политики.":::
 
 
 1. Выберите тип и частоту резервного копирования.
 
-   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-settings.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-settings.png" alt-text="Выберите тип и частоту резервного копирования.":::
 
 1. Настройте **Параметры хранения резервных копий по запросу**.  В нашем примере мы настраиваете хранение на три копии моментальных снимков для сохранения.
 
-   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-retention-settings.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-retention-settings.png" alt-text="Настройте параметры хранения резервных копий по запросу.":::
 
 1. Настройте **Параметры ежечасного хранения**. 
 
-   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-hourly-retention-settings.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-hourly-retention-settings.png" alt-text="Настройте параметры ежечасного хранения.":::
 
 1. Если настройка SnapMirror настроена, выберите **Обновить SnapMirror после создания локальной копии моментального снимка**.
 
-   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-snapmirror.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/new-sap-hana-backup-policy-snapmirror.png" alt-text="Если требуется SnapMirror, выберите Update SnapMirror (обновить) после создания локальной копии моментального снимка.":::
 
 1. Нажмите кнопку **Готово** , чтобы проверить сводку по новой политике резервного копирования. 
-1. В разделе **Настройка расписания**выберите **Добавить**.
+1. В разделе **Настройка расписания** выберите **Добавить**.
 
-   :::image type="content" source="media/snapcenter/configure-schedules-for-selected-policies.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/configure-schedules-for-selected-policies.png" alt-text="В разделе Настройка расписания выберите Добавить.":::
 
 1. Выберите **дату начала**, **истекает** дату и частоту.
 
-   :::image type="content" source="media/snapcenter/add-schedules-for-policy.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/add-schedules-for-policy.png" alt-text="Выберите дату начала, истекает дату и частоту.":::
 
 1. Укажите сведения об электронной почте для уведомлений.
 
-   :::image type="content" source="media/snapcenter/backup-policy-notification-settings.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/backup-policy-notification-settings.png" alt-text="Укажите сведения об электронной почте для уведомлений.":::
 
 1.  Нажмите кнопку **Готово** , чтобы создать политику архивации.
 
@@ -704,11 +705,11 @@ SAP HANA регулярно записывает данные на том /hana/
 
 1. Восстановите файлы базы данных с помощью Снапцентер.  Выберите базу данных и нажмите кнопку **восстановить**.  
 
-   :::image type="content" source="media/snapcenter/restore-database-via-snapcenter.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/restore-database-via-snapcenter.png":::
+   :::image type="content" source="media/snapcenter/restore-database-via-snapcenter.png" alt-text="Выберите базу данных и нажмите кнопку восстановить." lightbox="media/snapcenter/restore-database-via-snapcenter.png":::
 
 1. Выберите тип восстановления.  В нашем примере мы восстанавливаем полный ресурс. 
 
-   :::image type="content" source="media/snapcenter/restore-database-select-restore-type.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/restore-database-select-restore-type.png" alt-text="Выберите тип восстановления.":::
 
    >[!NOTE]
    >При установке по умолчанию не нужно указывать команды для локального восстановления из моментального снимка на диске. 
@@ -720,27 +721,27 @@ SAP HANA регулярно записывает данные на том /hana/
    
    Снапцентер восстанавливает данные в исходное расположение, чтобы можно было начать процесс восстановления в HANA. Кроме того, так как Снапцентер не может изменить каталог резервных копий (база данных не работает), выводится предупреждение.
 
-   :::image type="content" source="media/snapcenter/restore-database-job-details-warning.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/restore-database-job-details-warning.png" alt-text="Так как Снапцентер не может изменить каталог резервного копирования, выводится предупреждение. ":::
 
-1. Так как все файлы базы данных восстановлены, запустите процесс восстановления в HANA. В Hana Studio в разделе **системы**щелкните правой кнопкой мыши системную базу данных и выберите **резервное копирование и восстановление**  >  **восстановить системную базу данных**.
+1. Так как все файлы базы данных восстановлены, запустите процесс восстановления в HANA. В Hana Studio в разделе **системы** щелкните правой кнопкой мыши системную базу данных и выберите **резервное копирование и восстановление**  >  **восстановить системную базу данных**.
 
-   :::image type="content" source="media/snapcenter/hana-studio-backup-recovery.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/hana-studio-backup-recovery.png" alt-text="Запустите процесс восстановления в HANA.":::
 
 1. Выберите тип восстановления.
 
-   :::image type="content" source="media/snapcenter/restore-database-select-recovery-type.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/restore-database-select-recovery-type.png" alt-text="Выберите тип восстановления.":::
 
 1. Выберите расположение каталога резервных копий.
 
-   :::image type="content" source="media/snapcenter/restore-database-select-location-backup-catalog.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/restore-database-select-location-backup-catalog.png" alt-text="Выберите расположение каталога резервных копий.":::
 
 1. Выберите резервную копию для восстановления базы данных SAP HANA.
 
-   :::image type="content" source="media/snapcenter/restore-database-select-backup.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей":::
+   :::image type="content" source="media/snapcenter/restore-database-select-backup.png" alt-text="Выберите резервную копию для восстановления базы данных SAP HANA.":::
 
    После восстановления базы данных появится сообщение с **восстановленным временем** и **восстановлено до метки расположения журнала** .
 
-1. В разделе **системы**щелкните правой кнопкой мыши системную базу данных и выберите **резервное копирование и восстановление**  >  **восстановить базу данных клиента**.
+1. В разделе **системы** щелкните правой кнопкой мыши системную базу данных и выберите **резервное копирование и восстановление**  >  **восстановить базу данных клиента**.
 1. Следуйте указаниям рабочего процесса мастера, чтобы завершить восстановление базы данных клиента. 
 
 Дополнительные сведения о восстановлении базы данных см. в разделе [SAP HANA резервное копирование и восстановление с помощью снапцентер](https://www.netapp.com/us/media/tr-4614.pdf).
@@ -753,7 +754,7 @@ SAP HANA регулярно записывает данные на том /hana/
 
 Перед клонированием необходимо установить ту же версию HANA, что и исходная база данных. Идентификаторы SID и ID могут отличаться. 
 
-:::image type="content" source="media/snapcenter/system-cloning-diagram.png" alt-text="Создание обращения в службу поддержки для настройки хранилища пользователей" lightbox="media/snapcenter/system-cloning-diagram.png" border="false":::
+:::image type="content" source="media/snapcenter/system-cloning-diagram.png" alt-text="SAP HANA клонирование системы" lightbox="media/snapcenter/system-cloning-diagram.png" border="false":::
 
 1. Создание хранилища пользователя базы данных HANA для базы данных H34 из/usr/sap/H34/HDB40.
 
@@ -777,7 +778,7 @@ SAP HANA регулярно записывает данные на том /hana/
 1. В Снапцентер добавьте целевой узел, на котором будет подключен клон. Дополнительные сведения см. [в разделе Добавление узлов и установка подключаемых пакетов на удаленных узлах](http://docs.netapp.com/ocsc-43/index.jsp?topic=%2Fcom.netapp.doc.ocsc-dpg-sap-hana%2FGUID-246C0810-4F0B-4BF7-9A35-B729AD69954A.html).
    1. Укажите сведения о учетных данных запуска от имени, которые требуется добавить. 
    1. Выберите операционную систему сервера и введите сведения об узле.
-   1. В разделе **устанавливаемые подключаемые модули**выберите версию, введите путь установки и выберите **SAP HANA**.
+   1. В разделе **устанавливаемые подключаемые модули** выберите версию, введите путь установки и выберите **SAP HANA**.
    1. Выберите **проверить** , чтобы выполнить предварительную установку проверок.
 
 1. Отключите HANA и отключите старый том данных.  Клон будет подключен из Снапцентер.  
@@ -830,7 +831,7 @@ SAP HANA регулярно записывает данные на том /hana/
    >[!NOTE]
    >Дополнительные сведения см. в разделе [клонирование из резервной копии](https://docs.netapp.com/ocsc-43/index.jsp?topic=%2Fcom.netapp.doc.ocsc-dpg-cpi%2FGUID-F6E7FF73-0183-4B9F-8156-8D7DA17A8555.html).
 
-1. В разделе **сценарии**укажите следующее.
+1. В разделе **сценарии** укажите следующее.
 
    * **Команда подключения:** /Нетапп/СК-систем-РЕФРЕШ.ш Mount H34% hana_data_h31_mnt00001_t250_vol_Clone
    * **Команда POST Clone:** /нетапп/СК-систем-РЕФРЕШ.ш Recover H34
@@ -935,5 +936,5 @@ cd /opt/NetApp/snapcenter/spl/installation/plugins
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - См. раздел [принципы аварийного восстановления и подготовка](hana-concept-preparation.md).

@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6785ae821f701121185f0064c6317c69d50191ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b65190c0fd2fcac132f762116a63357a08e6bf02
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77617051"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967743"
 ---
 # <a name="know-the-terms"></a>Определение терминов
 
@@ -47,5 +48,5 @@ ms.locfileid: "77617051"
 
 Существует множество дополнительных ресурсов, посвященных развертыванию рабочих нагрузок SAP в облаке. Если вы планируете развернуть SAP HANA в Azure, рекомендуется ознакомиться с особенностями сред Azure IaaS и подготовиться к развертыванию рабочих нагрузок SAP в такой среде. Прежде чем продолжить работу с руководством, ознакомьтесь со статьей [Размещение и выполнение сценариев рабочей нагрузки SAP с помощью Azure](get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). 
 
-**Следующие шаги**
+**Дальнейшие действия**
 - См. раздел [HLI Certification](hana-certification.md) (Сертификация HLI)

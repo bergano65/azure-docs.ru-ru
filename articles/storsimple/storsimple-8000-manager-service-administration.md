@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/12/2017
 ms.author: alkohli
-ms.openlocfilehash: c8d8e3b9058b753dc2a6da35878449c94399225e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69a36f38cc76693f596b45d4df6e232bc01584d5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85508050"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967981"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-device"></a>Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple
 
@@ -65,7 +65,7 @@ ms.locfileid: "85508050"
 | Получение сведений о записях контроля доступа</br>Создание записи контроля доступа</br>Изменение записи контроля доступа</br>Удаление записи контроля доступа |[Управление записями контроля доступа](storsimple-8000-manage-acrs.md) |
 | Просмотр сведений о задании</br>Отмена задания |[Управление заданиями](storsimple-8000-manage-jobs-u2.md) |
 | Получать уведомления об оповещениях</br>Управление оповещениями</br>Просмотр оповещений |[Просмотр оповещений StorSimple и управление ими](storsimple-8000-manage-alerts.md) |
-| Создать диаграммы мониторинга. |[Мониторинг устройства StorSimple](storsimple-monitor-device.md) |
+| Создать диаграммы мониторинга. |[Мониторинг устройства StorSimple](./storsimple-8000-monitor-device.md) |
 | Добавление контейнера томов</br>Изменение контейнера томов</br>Удаление контейнера томов |[Управление контейнерами томов](storsimple-8000-manage-volume-containers.md) |
 | Добавление тома</br>Изменение тома</br>Отключение тома</br>Удаление тома</br>Мониторинг тома |[Управление томами](storsimple-8000-manage-volumes-u2.md) |
 | изменение параметров устройства;</br>изменение параметров времени;</br>Изменение параметров DNS.md</br>Настроить сетевые интерфейсы |[Изменение конфигурации устройства StorSimple](storsimple-8000-modify-device-config.md) |
@@ -73,14 +73,14 @@ ms.locfileid: "85508050"
 | Изменить пароль администратора устройства</br>Изменить пароль диспетчера моментальных снимков StorSimple |[Изменение паролей StorSimple](storsimple-8000-change-passwords.md) |
 | Настройка удаленного управления |[Удаленное подключение к устройству StorSimple](storsimple-8000-remote-connect.md) |
 | Настроить параметры оповещений. |[Просмотр оповещений StorSimple и управление ими](storsimple-8000-manage-alerts.md) |
-| Настроить CHAP для устройства StorSimple. |[Настройка CHAP для устройства StorSimple](storsimple-configure-chap.md) |
+| Настроить CHAP для устройства StorSimple. |[Настройка CHAP для устройства StorSimple](./storsimple-8000-configure-chap.md) |
 | Добавить политику резервного копирования</br>Добавление или изменение расписания</br>Удаление политики архивации</br>Создание резервной копии вручную</br>Создание пользовательской политики архивации с несколькими томами и расписаниями |[Управление политиками резервного копирования](storsimple-8000-manage-backup-policies-u2.md) |
 | Остановить контроллеры устройства</br>Перезапуск контроллеров устройства</br>Завершение работы контроллеров устройства</br>Восстановление параметров устройства по умолчанию</br>(перечисленные выше действия доступны только для локальных устройств) |[Управление контроллером устройства StorSimple](storsimple-8000-manage-device-controller.md) |
 | Узнать о компонентах оборудования StorSimple</br>Мониторинг состояния оборудования</br>(перечисленные выше действия доступны только для локальных устройств) |[Мониторинг компонентов оборудования](storsimple-8000-monitor-hardware-status.md) |
 | Создать пакет поддержки. |[Создание пакетов поддержки и управление ими](storsimple-8000-contact-microsoft-support.md#start-a-support-session-in-windows-powershell-for-storsimple) |
 | Установка обновлений программного обеспечения |[Обновление устройства](storsimple-update-device.md) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 При возникновении проблем с ежедневной работой устройства StorSimple или любого из его аппаратных компонентов см. следующие источники.
 
@@ -88,4 +88,3 @@ ms.locfileid: "85508050"
 * [Использование индикаторов мониторинга StorSimple](storsimple-monitoring-indicators.md)
 
 Если вы не можете устранить проблемы и необходимо создать запрос на обслуживание, см. статью [Обращение в службу поддержки Майкрософт](storsimple-8000-contact-microsoft-support.md).
-

@@ -8,12 +8,12 @@ services: iot-dps
 ms.topic: conceptual
 ms.date: 02/24/2020
 ms.author: menchi
-ms.openlocfilehash: e9b5a549d550f117e080fc64193fbe29658f401d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d22a01bab81fc330484e7715a65c89a1cfd7802c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85298231"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967182"
 ---
 # <a name="encryption-of-data-at-rest-with-customer-managed-keys-for-device-provisioning-service"></a>Шифрование неактивных данных с помощью управляемых клиентом ключей для службы подготовки устройств
 
@@ -24,8 +24,8 @@ ms.locfileid: "85298231"
 Для этой возможности требуется создать новую службу DPS. Чтобы испытать эту возможность, свяжитесь с нами через [службу поддержки Майкрософт](https://azure.microsoft.com/support/create-ticket/). Поделитесь своим названием организации и ИДЕНТИФИКАТОРом подписки при обращении в службу поддержки Майкрософт.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Дополнительные сведения о службе подготовки устройств](https://docs.microsoft.com/azure/iot-dps/)
+* [Дополнительные сведения о службе подготовки устройств](./index.yml)
 
-* [Дополнительные сведения о Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
+* [Дополнительные сведения о Azure Key Vault](../key-vault/general/overview.md)

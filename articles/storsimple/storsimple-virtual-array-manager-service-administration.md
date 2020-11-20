@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/1/2016
 ms.author: alkohli
-ms.openlocfilehash: d7c7cf335336cc552adaf5d9490bc58d64b0cdc9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2395e3c6f2026bc1024de38122bc20959fdcf9b7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85515442"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967097"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-virtual-array"></a>Администрирование виртуального массива StorSimple с помощью службы диспетчера устройств StorSimple
 ![Последовательность операций процесса настройки](./media/storsimple-virtual-array-manager-service-administration/manage4.png)
@@ -34,7 +34,7 @@ ms.locfileid: "85515442"
 * управлять виртуальным массивом StorSimple с помощью службы диспетчера устройств StorSimple.
 
 > [!NOTE]
-> Сведения о работе с устройствами StorSimple 8000 см. в статье [Использование службы StorSimple Manager для администрирования устройства StorSimple](storsimple-manager-service-administration.md).
+> Сведения о работе с устройствами StorSimple 8000 см. в статье [Использование службы StorSimple Manager для администрирования устройства StorSimple](./storsimple-8000-manager-service-administration.md).
 > 
 > 
 
@@ -76,6 +76,5 @@ ms.locfileid: "85515442"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения о веб-интерфейсе и способах его использования см. в статье [Использование веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
-

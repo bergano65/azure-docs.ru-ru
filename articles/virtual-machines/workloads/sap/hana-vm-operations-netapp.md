@@ -9,22 +9,23 @@ editor: ''
 tags: azure-resource-manager
 keywords: SAP, Azure, использовании, HANA, Azure NetApp Files, моментальный снимок
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/28/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 02755c164e72e3149497ee8e3c1fdc19141fd54f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 511801962d07e5fb99000b2fc19adce2489b46d3
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973637"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967488"
 ---
 # <a name="nfs-v41-volumes-on-azure-netapp-files-for-sap-hana"></a>Тома NFS версии 4.1 в Azure NetApp Files для SAP HANA
 
-Azure NetApp Files предоставляет собственные общие папки NFS, которые можно использовать для томов **/Hana/Shared**, **/Hana/Data**и **/Hana/log** . Использование общих ресурсов NFS на основе использовании для томов **/Hana/Data** и **/Hana/log** требует использования протокола NFS версии 4.1. Протокол NFS v3 не поддерживается для использования томов **/Hana/Data** и **/Hana/log** при создании общих папок на использовании. 
+Azure NetApp Files предоставляет собственные общие папки NFS, которые можно использовать для томов **/Hana/Shared**, **/Hana/Data** и **/Hana/log** . Использование общих ресурсов NFS на основе использовании для томов **/Hana/Data** и **/Hana/log** требует использования протокола NFS версии 4.1. Протокол NFS v3 не поддерживается для использования томов **/Hana/Data** и **/Hana/log** при создании общих папок на использовании. 
 
 
 > [!IMPORTANT]
@@ -66,7 +67,7 @@ Azure NetApp Files предоставляет собственные общие 
 | Размер  | Стандартная пропускная способность | Пропускная способность Premium | Пропускная способность Ultra |
 | --- | --- | --- | --- |
 | 1 TБ | 16 МБ/с | 64 МБ/с | 128 МБ/с |
-| 2 ТБ | 32 МБ/с | 128 МБ/с | 256 МБ/с |
+| 2 ТБ | 32 МБ/с | 128 МБ/с | 256 МБ/с |
 | 4 TБ | 64 МБ/с | 256 МБ/с | 512 МБ/с |
 | 10 ТБ | 160 МБ/с | 640 МБ/с | 1,280 МБ/с |
 | 15 ТБ | 240 МБ/с | 960 МБ/с | 1,400 МБ/с |
@@ -80,8 +81,8 @@ Azure NetApp Files предоставляет собственные общие 
 
 | Тип тома и тип ввода-вывода | Минимальный ключевой показатель эффективности, требуемый SAP | Уровень обслуживания Premium | Уровень Ultra Service |
 | --- | --- | --- | --- |
-| Запись тома журнала | 250 МБ/с | 4 TБ | 2 ТБ |
-| Запись тома данных | 250 МБ/с | 4 TБ | 2 ТБ |
+| Запись тома журнала | 250 МБ/с | 4 TБ | 2 ТБ |
+| Запись тома данных | 250 МБ/с | 4 TБ | 2 ТБ |
 | Объем данных для чтения | 400 МБ в секунду | 6,3 ТБ | 3,2 ТБ |
 
 Так как требуются все три ключевых показателя эффективности, том **/Hana/Data** должен иметь больший размер, чтобы обеспечить максимальную емкость для выполнения минимальных требований к чтению.
@@ -130,7 +131,7 @@ Azure NetApp Files предоставляет собственные общие 
 То же самое относится к тому, что используется для записи полных резервных копий базы данных HANA в.  
  
 
-## <a name="backup"></a>Резервное копирование
+## <a name="backup"></a>Backup
 Помимо потоковых резервных копий и резервного копирования Azure резервное копирование SAP HANA баз данных, как описано в статье [руководство по резервному копированию для SAP HANA на виртуальных машинах Azure](./sap-hana-backup-guide.md), Azure NetApp Files открывает возможность выполнять резервное копирование моментальных снимков на основе хранилища. 
 
 SAP HANA поддерживает:
@@ -192,7 +193,7 @@ Saving to: ‘azcopy_v10.tar.gz’
 root # > azcopy sync '/hana/data/SID/mnt00001/.snapshot' 'https://azacsnaptmytestblob01.blob.core.windows.net/abc?sv=2021-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2021-02-04T08:25:26Z&st=2021-02-04T00:25:26Z&spr=https&sig=abcdefghijklmnopqrstuvwxyz' --recursive=true --delete-destination=true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со статьей:
 
 - [Обеспечение высокого уровня доступности для SAP HANA на виртуальных машинах Azure](./sap-hana-availability-overview.md)

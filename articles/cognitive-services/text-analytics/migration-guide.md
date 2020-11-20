@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 10/19/2020
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: 056009c34aec97a8c5c45aea4b93ba41977fa7a6
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 31cba884cff490d43341a4c52f24c32b1e253e42
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94518198"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967335"
 ---
 # <a name="migrate-to-version-3x-of-the-text-analytics-api"></a>Переход на версию 3. x API анализа текста
 
 [!INCLUDE [v3 region availability](includes/v3-region-availability.md)]
 
-Если вы используете версию 2,1 API анализа текста, эта статья поможет вам обновить приложение для использования версии 3. x. Версия 3,0 является общедоступной и содержит новые функции, такие как расширенное [Распознавание сущностей (NER)](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features) и [Управление версиями модели](concepts/model-versioning.md). Также доступна предварительная версия версии 3.1 (версия 3.1-Preview. x), которая добавляет такие функции, как [интеллектуальный анализ данных об мнениях](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features). Модели, используемые в версии 2, не получат будущие обновления. 
+Если вы используете версию 2,1 API анализа текста, эта статья поможет вам обновить приложение для использования версии 3. x. Версия 3,0 является общедоступной и содержит новые функции, такие как расширенное [Распознавание сущностей (NER)](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-features-and-versions) и [Управление версиями модели](concepts/model-versioning.md). Также доступна предварительная версия версии 3.1 (версия 3.1-Preview. x), которая добавляет такие функции, как [интеллектуальный анализ данных об мнениях](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features). Модели, используемые в версии 2, не получат будущие обновления. 
 
 #### <a name="sentiment-analysis"></a>[Пример. Как определить тональность с помощью Анализа текста](#tab/sentiment-analysis)
 
@@ -38,7 +38,7 @@ ms.locfileid: "94518198"
 Примеры ответа JSON см. в справочной документации.
 * [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9)
 * [Версия 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Sentiment) 
-* [Версия 3.1 (предварительная версия)](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/Sentiment)
+* [Версия 3.1 (предварительная версия)](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Sentiment)
 
 ### <a name="client-libraries"></a>Клиентские библиотеки
 
@@ -70,7 +70,7 @@ NER
 Примеры ответа JSON см. в справочной документации.
 * [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 * [Версия 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesRecognitionGeneral) 
-* [Версия 3.1 (предварительная версия)](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/EntitiesRecognitionGeneral)
+* [Версия 3.1 (предварительная версия)](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/EntitiesRecognitionGeneral)
 
 ### <a name="client-libraries"></a>Клиентские библиотеки
 
@@ -92,7 +92,7 @@ NER
 Примеры ответа JSON см. в справочной документации.
 * [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7)
 * [Версия 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages) 
-* [Версия 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/Languages)
+* [Версия 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Languages)
 
 ### <a name="client-libraries"></a>Клиентские библиотеки
 
@@ -109,7 +109,7 @@ NER
 
 ### <a name="rest-api"></a>REST API
 
-Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для извлечения ключевых фраз. Пример: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
+Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для извлечения ключевых фраз. Например: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
 
 Примеры ответа JSON см. в справочной документации.
 * [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6)

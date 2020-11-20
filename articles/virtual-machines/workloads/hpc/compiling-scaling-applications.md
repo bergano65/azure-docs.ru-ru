@@ -3,16 +3,17 @@ title: Масштабирование приложений HPC с виртуал
 description: Узнайте, как масштабировать приложения HPC на виртуальных машинах Azure.
 author: vermagit
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 2c20fcf2624c1f620b68b46e56e0602f15041348
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 7e05d64420cd920242a887b206fd38cd4a655509
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993829"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967012"
 ---
 # <a name="scaling-hpc-applications"></a>Масштабирование приложений HPC
 
@@ -79,6 +80,6 @@ gcc $(OPTIMIZATIONS) $(OMP) $(STACK) $(STREAM_PARAMETERS) stream.c -o stream.gcc
 * Некоторые приложения с крайней чувствительностью к пропускной способности памяти могут использовать меньшее количество ядер на КККС. Для этих приложений использование 3 или 2 ядер на КККС может уменьшить количество конфликтов с пропускной способностью памяти и повышает производительность в реальном мире или более последовательную масштабируемость. В частности, MPI онлайн-обучение может выиграть от этого.
 * Для выполнения значительно большего масштаба рекомендуется использовать обновления или гибридные транспорты RC + обновления. Многие библиотеки MPI и библиотеки времени выполнения выполняют это внутренне (например, УККС или MVAPICH2). Проверьте конфигурации транспорта для крупномасштабных запусков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [HPC](/azure/architecture/topics/high-performance-computing/) в Azure.

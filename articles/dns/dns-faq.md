@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 6/15/2019
 ms.author: rohink
-ms.openlocfilehash: baa03e9a9bbbc7f8eefc1e0ba57a0a8b18da6e29
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 2f7e4eadc25028db4668db8d245803c7ddba8688
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92328765"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968253"
 ---
 # <a name="azure-dns-faq"></a>Вопросы и ответы об Azure DNS
 
@@ -80,7 +80,7 @@ Azure DNS поддерживает только размещение "стати
 
 ### <a name="does-azure-dns-support-zone-transfers-axfrixfr"></a>Поддерживает ли Azure DNS передачу зон (AXFR-IXFR)?
 
-Нет. Сейчас Azure DNS не поддерживает передачу зон. Зоны DNS можно [импортировать в Azure DNS с помощью Azure CLI](dns-import-export.md). Затем записями DNS можно управлять с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), нашего [REST API](https://docs.microsoft.com/powershell/module/az.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
+Нет. Сейчас Azure DNS не поддерживает передачу зон. Зоны DNS можно [импортировать в Azure DNS с помощью Azure CLI](dns-import-export.md). Затем записями DNS можно управлять с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), нашего [REST API](/powershell/module/az.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
 
 Функция передачи зон отслеживается в очереди невыполненной работы Azure DNS. Вы можете воспользоваться нашим сайтом для отзывов, чтобы [поддержать эту функцию](https://feedback.azure.com/forums/217313-networking/suggestions/12925503-extend-azure-dns-to-support-zone-transfers-so-it-c).
 
@@ -149,7 +149,7 @@ Azure DNS поддерживает только размещение "стати
 
 Чтобы настроить совместное размещение, измените записи NS для домена, чтобы они указывали на серверы имен обоих поставщиков. Сервер доменных имен (NS) записывает элемент управления, для домена которого поставщики получают запросы DNS. Эти записи NS можно изменить в Azure DNS, в другом поставщике и в родительской зоне. Родительская зона обычно настраивается с помощью регистратора доменных имен. Дополнительные сведения о делегировании DNS см. в разделе [Делегирование зон DNS с помощью Azure DNS](dns-domain-delegation.md).
 
-Кроме того, убедитесь, что записи DNS для домена синхронизированы между обоими поставщиками DNS. Сейчас Azure DNS не поддерживает передачу зон DNS. Необходимо синхронизировать записи DNS с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), [REST API](https://docs.microsoft.com/rest/api/dns/), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
+Кроме того, убедитесь, что записи DNS для домена синхронизированы между обоими поставщиками DNS. Сейчас Azure DNS не поддерживает передачу зон DNS. Необходимо синхронизировать записи DNS с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), [REST API](/rest/api/dns/), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
 
 ### <a name="do-i-have-to-delegate-my-domain-to-all-four-azure-dns-name-servers"></a>Мне следует делегировать мой домен на все четыре DNS-сервера Azure?
 
@@ -195,7 +195,7 @@ Azure DNS поддерживает только размещение "стати
 
 Чтобы настроить имена IDN в Azure DNS, преобразуйте имя зоны или набора записей в punycode. Azure DNS в настоящее время не поддерживает встроенное преобразование в punycode.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные [сведения о Azure DNS](dns-overview.md).
 

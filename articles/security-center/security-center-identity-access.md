@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: memildin
-ms.openlocfilehash: 575c139a3b417eb9429695d3ea6be26bf5625de5
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 12e5a6db7257678b3d4d14d7583a1a30da0d3a87
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371075"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967148"
 ---
 # <a name="monitor-identity-and-access"></a>Мониторинг идентификации и доступа
 
@@ -30,7 +30,7 @@ ms.locfileid: "92371075"
 
 Центр безопасности Azure имеет два выделенных средства управления безопасностью для обеспечения соответствия требованиям к удостоверениям и безопасности вашей организации. 
 
- - **Управление доступом и разрешениями** . Мы рекомендуем использовать [модель с минимальными правами доступа](/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models) и предоставить пользователям доступ только для тех задач, которые необходимы для их работы. Этот элемент управления также включает рекомендации по реализации [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) для управления доступом к ресурсам.
+ - **Управление доступом и разрешениями** . Мы рекомендуем использовать [модель с минимальными правами доступа](/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models) и предоставить пользователям доступ только для тех задач, которые необходимы для их работы. Этот элемент управления также включает рекомендации по реализации [управления доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md) для управления доступом к ресурсам.
  
  - **Включение MFA** . при включенном [MFA](https://www.microsoft.com/security/business/identity/mfa) ваши учетные записи более безопасны, и пользователи по-прежнему могут проходить проверку подлинности практически для любого приложения с помощью единого входа.
 
@@ -87,7 +87,7 @@ ms.locfileid: "92371075"
 > Кроме того, вы можете использовать оценку метода REST API для центра безопасности [— получить](/rest/api/securitycenter/assessments/get).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о рекомендациях, относящихся к другим типам ресурсов Azure, см. в следующей статье:
 
 - [Защита сети в центре безопасности Azure.](security-center-network-recommendations.md)

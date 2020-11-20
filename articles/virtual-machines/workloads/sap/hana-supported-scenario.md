@@ -7,18 +7,19 @@ author: saghorpa
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/26/2019
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b4946524768d0cff483feb4045a2cc5fba169a7a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f33ef81282dd8e60eba64cc77cbd95ab8dbc557
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86507953"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967573"
 ---
 # <a name="supported-scenarios-for-hana-large-instances"></a>Поддерживаемые сценарии для крупных экземпляров HANA
 В этой статье описываются поддерживаемые сценарии и сведения об архитектуре для крупных экземпляров HANA (ХЛИ).
@@ -56,7 +57,7 @@ ms.locfileid: "86507953"
 
 Каждый подготовленный сервер имеет предварительно настроенные наборы интерфейсов Ethernet. Интерфейсы Ethernet, настроенные на каждом ХЛИ единице, делятся на четыре типа:
 
-- Ответ **. используется**для или с помощью клиентского доступа.
+- Ответ **. используется** для или с помощью клиентского доступа.
 - **Б**. используется для обмена данными между узлами. Этот интерфейс настраивается на всех серверах (независимо от запрошенной топологии), но используется только для сценариев горизонтального масштабирования.
 - **C**: используется для подключения "узел — хранилище".
 - **D**: используется для подключения к устройству "узел-iSCSI" для установки STONITH. Этот интерфейс настраивается только при запросе установки HSR.  
@@ -792,6 +793,6 @@ ms.locfileid: "86507953"
 - [Global REACH](../../../expressroute/expressroute-global-reach.md) используется для связи каналов ExpressRoute с целью создания частной сети между региональными сетями.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Инфраструктура и подключение](./hana-overview-infrastructure-connectivity.md) для крупных экземпляров Hana
 - [Высокий уровень доступности и аварийное восстановление](./hana-overview-high-availability-disaster-recovery.md) для крупных экземпляров Hana

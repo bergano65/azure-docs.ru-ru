@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2a02f0e1b05b9de8105126d1c9e4e3f79057285f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7cbd50fae2b53d801f7aa09fae2b4540eef13c9e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77617230"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967896"
 ---
 # <a name="certification"></a>Сертификация
 
@@ -40,5 +41,5 @@ ms.locfileid: "77617230"
 - Помимо описанных выше решений вы можете установить другие компоненты в подписке Azure, которая подключена к SAP HANA в Azure (крупные экземпляры). Например, компоненты, обеспечивающие взаимодействие с базой данных SAP HANA, опосредованно или напрямую (серверы перехода, серверы RDP, SAP HANA Studio, SAP Data Services для сценариев бизнес-аналитики SAP или решения для мониторинга сети).
 - Как и в Azure, крупные экземпляры HANA предлагают дополнительные возможности для создания решения для высокой доступности и аварийного восстановления.
 
-**Следующие шаги**
+**Дальнейшие действия**
 - См. раздел [Available SKUs for HLI](hana-available-skus.md) (Доступные номера SKU для HLI) 

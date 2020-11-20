@@ -3,16 +3,17 @@ title: Эталонные архитектуры для баз данных Orac
 description: Ссылается на архитектуры для запуска Oracle Database Enterprise Edition баз данных на Виртуальные машины Microsoft Azure.
 author: dbakevlar
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 12/13/2019
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: d2a6954ffdb9f992ada7fc24dbcc161658b21d23
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 86f3ef8ccac83cdc939cff5572dd81e78137d396
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480434"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968729"
 ---
 # <a name="reference-architectures-for-oracle-database-enterprise-edition-on-azure"></a>Эталонные архитектуры для Oracle Database Enterprise Edition в Azure
 
@@ -221,7 +222,7 @@ Oracle Data Guard можно использовать для сегментир�
 - Используйте [Azure pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines) для управления исправлениями и обновлениями базы данных без простоев.
 - Настройте код приложения, чтобы добавить собственные шаблоны для облака, такие как [шаблон повтора](/azure/architecture/patterns/retry), [шаблон](/azure/architecture/patterns/circuit-breaker)автоматического выключения и другие шаблоны, определенные в статье [руководство по шаблонам проектирования в облаке](/azure/architecture/patterns/) , которое может помочь в обеспечении гибкости приложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь со следующими справочными статьями Oracle, которые относятся к вашему сценарию.
 
