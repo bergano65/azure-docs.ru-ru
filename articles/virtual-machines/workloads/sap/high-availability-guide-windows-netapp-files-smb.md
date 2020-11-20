@@ -10,17 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 5e514964-c907-4324-b659-16dd825f6f87
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
-ms.openlocfilehash: cd974377637f535383c4e099ac408bea88f887a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90b0ab4fdabd40e803d1f85a640e4cb387e40c44
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88853112"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958954"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP
 
@@ -146,7 +147,7 @@ ms.locfileid: "88853112"
 1. Установите экземпляр SAP ASCS/SCS на первом узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к разделу: **продукт**  >  **СУБД** > установка > сервер приложений ABAP (или Java) > High-Availability System > ASCS/SCS экземпляр > первый узел кластера.  
 
 2. Выберите **кластер общих** папок в качестве конфигурации общего ресурса кластера в SWPM.  
-3. При появлении запроса на шаге **Параметры кластера системы SAP**введите имя узла для Azure NetApp Files общего ресурса SMB, который вы уже создали как **имя узла общего файлового ресурса**.  В этом примере имя узла общего ресурса SMB — **анфсмб-9562**. 
+3. При появлении запроса на шаге **Параметры кластера системы SAP** введите имя узла для Azure NetApp Files общего ресурса SMB, который вы уже создали как **имя узла общего файлового ресурса**.  В этом примере имя узла общего ресурса SMB — **анфсмб-9562**. 
 
    > [!IMPORTANT]
    > Если средство проверки готовности к установке SWPM показывает, что условие функции непрерывной доступности не выполнено, его можно устранить, следуя инструкциям в разделе [отложенные сообщения об ошибках при попытке доступа к общей папке, которая больше не существует в Windows](https://support.microsoft.com/help/2820470/delayed-error-message-when-you-try-to-access-a-shared-folder-that-no-l).  

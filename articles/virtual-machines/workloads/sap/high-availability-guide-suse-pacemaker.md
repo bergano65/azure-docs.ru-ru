@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/04/2020
 ms.author: radeltch
-ms.openlocfilehash: 6d61bd2c45cc1ba9cd9494750b793d7321288224
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57c6caea2de9063b133d4d5d643629184e412dad
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87797752"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957696"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -442,7 +443,7 @@ o- / ...........................................................................
    >Вы можете проверить расширение, запустив Сусеконнект---List-Extensions.  
    >Чтобы ускорить отработку отказа с помощью агента ограждения Azure, сделайте следующее:
    > - в SLES 12 SP4 или SLES 12 SP5 установка версии **4.6.2** или более поздней версии пакет Python-Azure-управление-вычисление  
-   > - в SLES 15 Install версии **4.6.2** или более поздней версии пакет Python**3**— Azure-управление — вычисление 
+   > - в SLES 15 Install версии **4.6.2** или более поздней версии пакет Python **3**— Azure-управление — вычисление 
 
 1. **[A]** Установите разрешения имен.
 

@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 5d6273cbef1664984d466fb15c7f02ca505b18e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 802f732e8d62f5df861be525316b3c31ab4d0655
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88184551"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957934"
 ---
 # <a name="manage-the-storsimple-data-manager-service-in-azure-portal"></a>Управление службой диспетчера данных StorSimple на портале Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "88184551"
 
    2. Выберите **подписку** из раскрывающегося списка. Подписка привязана к учетной записи для выставления счетов. Это поле будет автоматически заполнено (без возможности выбора) при наличии только одной подписки.
 
-   3. Выберите имеющуюся группу ресурсов или создайте новую. Дополнительные сведения см. в статье [Рекомендации по группам ресурсов Azure](/azure/azure-resource-manager/management/manage-resource-groups-portal).
+   3. Выберите имеющуюся группу ресурсов или создайте новую. Дополнительные сведения см. в статье [Рекомендации по группам ресурсов Azure](../azure-resource-manager/management/manage-resource-groups-portal.md).
 
    4. Укажите для службы **расположение**, в котором находятся учетные записи хранения и служба диспетчера данных StorSimple. Служба диспетчера устройств StorSimple, служба диспетчера данных и связанная учетная запись хранения должны находиться в поддерживаемых регионах.
     
@@ -157,6 +157,6 @@ ms.locfileid: "88184551"
 В этой папке будет два набора CSV-файлов. Все файлы, начинающиеся с **копиедфилелист...** , будут содержать список успешно скопированных файлов. Все файлы, начинающиеся с **фаиледфилелист...** содержат файлы, которые не удалось скопировать, вместе с сообщением об ошибке.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Использование .NET SDK для запуска заданий диспетчера данных StorSimple](storsimple-data-manager-dotnet-jobs.md).

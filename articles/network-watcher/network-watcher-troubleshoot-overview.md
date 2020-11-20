@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: damendo
-ms.openlocfilehash: 95edcee32c1917d23e4808e805f947d18d2fa7f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f27cb217b60c23f3cf89f48effb933837269000e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90986243"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960331"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure
 
@@ -96,7 +96,7 @@ ms.locfileid: "90986243"
 |ExpressRoute| Не поддерживается|
 |VPNClient| Не поддерживается|
 
-## <a name="log-files"></a>Файлы журнала
+## <a name="log-files"></a>файлы журналов.
 
 После того, как устранение неполадок ресурсов завершено, файлы журнала устранения неполадок ресурсов сохраняются в учетной записи хранения. На следующем рисунке приведен пример содержимого вызова, который завершается ошибкой.
 
@@ -105,7 +105,7 @@ ms.locfileid: "90986243"
 > [!NOTE]
 > В некоторых случаях только подмножество файлов журналов записывается в хранилище.
 
-Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Начало работы с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения о Обозреватель службы хранилища можно найти по следующей ссылке: [Обозреватель службы хранилища](https://storageexplorer.com/)
+Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Начало работы с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-quickstart-blobs-dotnet.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения о Обозреватель службы хранилища можно найти по следующей ссылке: [Обозреватель службы хранилища](https://storageexplorer.com/)
 
 ### <a name="connectionstatstxt"></a>ConnectionStats.txt
 
@@ -208,7 +208,7 @@ Elapsed Time            330 sec
 |        12    ikeext               ike_sa_management_c3307  7857a320-42ee-6e90-d5d9-3f414e3ea2d3|
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о диагностике проблемы со шлюзом или подключением к нему см. в статье о [диагностике проблем обмена данными между сетями](diagnose-communication-problem-between-networks.md).
 <!--Image references-->

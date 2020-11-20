@@ -8,47 +8,53 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 11/11/2020
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: cabde27591159b5751435a97a909a5f6f8c3081b
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: ef06faa17739153b2a04e777498e1de6e97c0646
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94518232"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957101"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
-API анализа текста позволяет получить неструктурированный текст и возвращает список неоднозначного количества сущностей со ссылками на дополнительные сведения в Интернете. API поддерживает как распознавание сущностей (NER), так и связывание сущностей.
+API анализа текста позволяет получить неструктурированный текст и возвращает список неоднозначного количества сущностей со ссылками на дополнительные сведения в Интернете. API поддерживает как распознавание имен сущностей (NER) для нескольких категорий сущностей, так и связывание сущностей.
 
-### <a name="entity-linking"></a>Связывание сущностей
+## <a name="entity-linking"></a>Связывание сущностей
 
 Связывание сущностей — это возможность определить и устранить неоднозначность идентификации сущности, найденной в тексте (например, определить, относится ли вхождение слова «Mars» к планетам или Roman божественные War). Для этого процесса требуется наличие базы знаний на соответствующем языке, чтобы связать распознанные сущности в тексте. При связывании сущностей в качестве этой базы знаний используется [Википедии](https://www.wikipedia.org/) .
 
-
-### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
+## <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 
 Распознавание имен сущностей (NER) — это возможность определения различных сущностей в тексте и категоризация их по заранее определенным классам или типам, таким как "пользователь", "расположение", "событие", "продукт" и "Организация".  
 
-## <a name="named-entity-recognition-versions-and-features"></a>Версии и функции распознавания именованных сущностей
+## <a name="personally-identifiable-information-pii"></a>личные сведения (PII).
+
+Функция PII является частью NER и может находить и изменять конфиденциальные сущности в тексте, связанном с отдельным пользователем, например: номер телефона, адрес электронной почты, почтовый адрес, номер паспорта.  
+
+## <a name="named-entity-recognition-features-and-versions"></a>Функции и версии распознавания сущностей
 
 [!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
-| Компонент                                                         | NER версии 3.0 | NER версии 3.1-Preview. 2 |
+| Функция                                                         | NER версии 3.0 | NER версии 3.1 – Preview. 3 |
 |-----------------------------------------------------------------|--------|----------|
 | Методы для одиночных и пакетных запросов                          | X      | X        |
 | Расширенное распознавание сущностей в нескольких категориях           | X      | X        |
 | Отдельные конечные точки для отправки запросов на связывание сущностей и NER. | X      | X        |
 | Распознавание личных `PII` объектов () и сведений о работоспособности ( `PHI` )        |        | X        |
+| Исправление `PII`        |        | X        |
 
 Дополнительные сведения см. в разделе [Поддержка языков](../language-support.md) .
 
-## <a name="entity-types"></a>Типы сущностей
-
 Распознавание именованных сущностей v3 обеспечивает Расширенное обнаружение для нескольких типов. В настоящее время NER v 3.0 может распознавать сущности в [категории общих сущностей](../named-entity-types.md).
 
-Распознавание имен сущностей версии 3.1 – Preview. 2 включает возможности обнаружения версий 3.0 и возможность обнаружения персональных данных ( `PII` ) с помощью `v3.1-preview.2/entities/recognition/pii` конечной точки. Необязательный параметр можно использовать `domain=phi` для обнаружения конфиденциальных сведений о работоспособности ( `PHI` ). Дополнительные сведения см. в разделе статьи о [категориях сущностей](../named-entity-types.md) и [запрос конечных точек](#request-endpoints) ниже.
+Распознавание имен сущностей версии 3.1 – Preview. 3 включает возможности обнаружения версий 3.0 и: 
+* Возможность обнаружения персональных данных ( `PII` ) с помощью `v3.1-preview.3/entities/recognition/pii` конечной точки. 
+* Необязательный `domain=phi` параметр для обнаружения конфиденциальных сведений о работоспособности ( `PHI` ).
+* [Асинхронная операция](text-analytics-how-to-call-api.md) с использованием `/analyze` конечной точки.
 
+Дополнительные сведения см. в разделе статьи о [категориях сущностей](../named-entity-types.md) и [запрос конечных точек](#request-endpoints) ниже. 
 
 ## <a name="sending-a-rest-api-request"></a>Отправка запроса к REST API
 
@@ -68,41 +74,41 @@ API анализа текста позволяет получить нестру
 
 ### <a name="request-endpoints"></a>Конечные точки запроса
 
-#### <a name="version-31-preview2"></a>[Версия 3,1-Preview. 2](#tab/version-3-preview)
+#### <a name="version-31-preview3"></a>[Версия 3,1-Preview. 3](#tab/version-3-preview)
 
-При распознавании именованных сущностей `v3.1-preview.2` используются отдельные конечные точки для NER, PII и запросов на связывание сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса:
+При распознавании именованных сущностей `v3.1-preview.3` используются отдельные конечные точки для NER, PII и запросов на связывание сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса.
 
-Связывание сущностей
-* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/entities/linking`
+**Связывание сущностей**
+* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/linking`
 
-[Распознавание именованных сущностей версии 3,1 — Предварительная версия справочника для `Linking`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesLinking)
+[Распознавание именованных сущностей версии 3,1 — Предварительная версия справочника для `Linking`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-3/operations/EntitiesLinking)
 
-NER
-* Общие сущности — `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/entities/recognition/general`
+**Распознавание именованных сущностей**
+* Общие сущности — `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/recognition/general`
 
-[Распознавание именованных сущностей версии 3,1 — Предварительная версия справочника для `General`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesRecognitionGeneral)
+[Распознавание именованных сущностей версии 3,1 — Предварительная версия справочника для `General`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-3/operations/EntitiesRecognitionGeneral)
 
-личные сведения (PII).
-* Личные `PII` сведения () — `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/entities/recognition/pii`
+**личные сведения (PII).**
+* Личные `PII` сведения () — `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/recognition/pii`
 
 Кроме того, можно использовать необязательный `domain=phi` параметр для обнаружения `PHI` сведений о работоспособности () в тексте. 
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/entities/recognition/pii?domain=phi`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/recognition/pii?domain=phi`
 
-Обратите внимание на добавление `redactedText` свойства в JSON ответа, содержащего измененный входной текст, в котором обнаруженные персональные сущности заменяются символом * для каждого символа сущностей.
+Начиная с `v3.1-preview.3` , в ответе JSON содержится `redactedText` свойство, содержащее измененный входной текст, в котором обнаруженные персональные сущности заменяются на `*` для каждого символа в сущностях.
 
-[Распознавание именованных сущностей версии 3,1 — Предварительная версия справочника для `PII`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesRecognitionPii)
+[Распознавание именованных сущностей версии 3,1 — Предварительная версия справочника для `PII`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-3/operations/EntitiesRecognitionPii)
 
 #### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 В примере распознавания сущностей v3 используются отдельные конечные точки для запросов NER и связывания сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса:
 
-Связывание сущностей
+**Связывание сущностей**
 * `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/entities/linking`
 
 [Справочник по именованным сущностям версии 3,0 для `Linking`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesRecognitionGeneral)
 
-NER
+**Распознавание именованных сущностей**
 * `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/entities/recognition/general`
 
 [Справочник по именованным сущностям версии 3,0 для `General`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesRecognitionGeneral)
@@ -113,7 +119,7 @@ NER
 
 ### <a name="example-ner-request"></a>Пример запроса NER 
 
-Ниже приведен пример содержимого, которое можно отправить в API. Формат запроса одинаков для обеих версий API.
+Следующий код JSON является примером содержимого, которое можно отправить в API. Формат запроса одинаков для обеих версий API.
 
 ```json
 {
@@ -138,7 +144,7 @@ API Анализа текста не учитывает состояние. Ни
 
 Все запросы POST возвращают отформатированный ответ JSON с идентификаторами и обнаруженными свойствами сущности.
 
-Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON, или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска данных и управления ими. В связи с поддержкой многоязычности и эмодзи, ответ может содержать смещения текста. Дополнительные сведения см. [в разделе Обработка смещения текста](../concepts/text-offsets.md) .
+Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON, или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска данных и управления ими. В связи с поддержкой многоязычности и эмодзи, ответ может содержать смещения текста. Дополнительные сведения см. [в разделе Обработка смещения текста](../concepts/text-offsets.md).
 
 ### <a name="example-responses"></a>Примеры ответов
 
@@ -292,7 +298,7 @@ API Анализа текста не учитывает состояние. Ни
 ---
 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. В разделе "Сводка" сделайте следующее.
 
@@ -300,7 +306,7 @@ API Анализа текста не учитывает состояние. Ни
 * Запросы POST отправляются на одну или несколько конечных точек, используя персонализированный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) , допустимую для вашей подписки.
 * Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Использование клиентской библиотеки Анализа текста](../quickstarts/text-analytics-sdk.md)

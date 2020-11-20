@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: cbf18abe-41cb-44f7-bdec-966f32c89325
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: df611e01fefacd22f4dc026a819d4c71ede6e7e3
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 43abdd1db2e8e24033332f99c583e30efbf64a00
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686095"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957407"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-azure-shared-disk"></a>Высокий уровень доступности экземпляра SAP ASCS/SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и общего диска Azure
 
@@ -61,7 +62,7 @@ ms.locfileid: "94686095"
 - Добавлена поддержка интеграции и поддержки обслуживания узла Azure и улучшена работа по планированию событий Azure.
 - Можно использовать имя распределенной сети (это параметр по умолчанию). Поэтому нет необходимости иметь выделенный IP-адрес для сетевого имени кластера. Кроме того, не нужно настраивать этот IP-адрес во внутренних Load Balancerах Azure. 
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 Сервер репликации с очередью 1 (ERS1) и сервер репликации очереди 2 (ERS2) поддерживаются в конфигурации с несколькими идентификаторами безопасности.  Сочетание ERS1 и ERS2 не поддерживается в одном кластере. 
 
@@ -478,7 +479,7 @@ SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное и
 3. Перезапустите узел A кластера с помощью портала Azure. Это инициирует автоматическую отработку отказа \<SID\> кластерной группы SAP с узла A на узел B.  
 4. Перезапустите узел A кластера с помощью Azure PowerShell. Это инициирует автоматическую отработку отказа \<SID\> кластерной группы SAP с узла A на узел B.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Узнайте, как подготовить инфраструктуру Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и общего диска для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
 * [Установите SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]

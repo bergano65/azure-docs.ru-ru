@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/22/2018
 ms.author: alkohli
-ms.openlocfilehash: 55103d6307614f8796c41c35d6345e1fc3aca261
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: df4722a4232686b0d981c190bdc154f0d1bec62e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "60789643"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960210"
 ---
 # <a name="storsimple-virtual-array-update-11-release-notes"></a>Заметки о выпуске обновления 1.1 для виртуального массива StorSimple
 
@@ -80,7 +80,7 @@ ms.locfileid: "60789643"
 | **стр.** |Обновления |Если вы хотите использовать локальный пользовательский интерфейс для установки обновления 1 на виртуальном массиве, у вас должно быть установлено обновление 0.6. Если вы используете версию ниже, чем обновление 0.6, необходимо сначала установить обновление 0.6, а затем применить обновление 1. В противном случае будут пропущены некоторые обновления и диаграммы мониторинга не будут работать.   | |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Установите обновление 1,1](storsimple-virtual-array-install-update-11.md) для виртуального массива StorSimple.
 
 ## <a name="references"></a>Ссылки
@@ -91,4 +91,4 @@ ms.locfileid: "60789643"
 * [Заметки о выпуске обновления 0,4 для виртуального массива StorSimple](storsimple-virtual-array-update-04-release-notes.md)
 * [Заметки о выпуске обновления 0,3 для виртуального массива StorSimple](storsimple-ova-update-03-release-notes.md)
 * [Заметки о выпуске обновлений 0.1 и 0.2 для виртуального массива StorSimple.](storsimple-ova-update-01-release-notes.md)
-* [Заметки о выпуске общедоступной версии виртуального массива StorSimple.](storsimple-ova-pp-release-notes.md)
+* [Заметки о выпуске общедоступной версии виртуального массива StorSimple.](./storsimple-virtual-array-update-06-release-notes.md)

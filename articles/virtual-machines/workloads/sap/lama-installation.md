@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/29/2019
 ms.author: sedusch
-ms.openlocfilehash: be7cfef5c7121d918c375dae216d293d9d56526b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: e3f541e28f47bb6456b441811d23baa9e020fde7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92890485"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959158"
 ---
 # <a name="sap-lama-connector-for-azure"></a>Соединитель SAP LaMa для Azure
 
@@ -274,7 +275,7 @@ SAP LaMa не может перемещать сам SQL Server, поэтому 
 C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h ah1-ascs -n 255.255.255.128
 ```
 
-Запустите SWPM и используйте *ah1-ascs* в качестве *имени узла экземпляра ASCS* .
+Запустите SWPM и используйте *ah1-ascs* в качестве *имени узла экземпляра ASCS*.
 
 ![Логотип Linux.][Logo_Linux] Linux  
 Добавьте следующий параметр профиля в профиль агента узла SAP, расположенный в /usr/sap/hostctrl/exe/host_profile. Дополнительные сведения см. в примечании к SAP [2628497].
@@ -319,7 +320,7 @@ acosprep/nfs_paths=/home/ah1adm,/usr/sap/trans,/sapmnt/AH1,/usr/sap/AH1
 
 ![Пул ресурсов SAP лама NetApp создан ](media/lama/sap-lama-capacitypool-list.png)
 
-Теперь тома NFS можно определить. Так как в одном пуле будут храниться тома для нескольких систем, следует выбрать схему именования с самообъяснением. Добавление идентификатора безопасности позволяет группировать связанные тома вместе. Для ASCS и экземпляра AS необходимы следующие подключения: */сапмнт/ \<SID\>* , */usr/SAP/ \<SID\>* и */Хоме/ \<sid\> ADM* . При необходимости */УСР/САП/транс* требуется для центрального каталога транспорта, который по крайней мере используется всеми системами в одной альбомной ориентации.
+Теперь тома NFS можно определить. Так как в одном пуле будут храниться тома для нескольких систем, следует выбрать схему именования с самообъяснением. Добавление идентификатора безопасности позволяет группировать связанные тома вместе. Для ASCS и экземпляра AS необходимы следующие подключения: */сапмнт/ \<SID\>*, */usr/SAP/ \<SID\>* и */Хоме/ \<sid\> ADM*. При необходимости */УСР/САП/транс* требуется для центрального каталога транспорта, который по крайней мере используется всеми системами в одной альбомной ориентации.
 
 > [!NOTE]
 > На этапе бета-тестирования имена томов должны быть уникальными в пределах подписки.
@@ -423,7 +424,7 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h ah1-di
 
 Обязательно создайте резервную копию SYSTEMDB и всех баз данных клиентов, прежде чем пытаться делать копию клиента, перемещать клиент или создавать репликацию системы.
 
-### <a name="microsoft-sql-server"></a>Microsoft SQL Server
+### <a name="microsoft-sql-server"></a>Microsoft SQL Server
 
 В приведенных ниже примерах предполагается, что вы устанавливаете систему SAP NetWeaver с системным ID AS1. Имена виртуальных узлов представляют собой as1-db для экземпляра SQL Server, используемого системой SAP NetWeaver, as1-ascs для SAP NetWeaver ASCS и as1-di-0 для первого сервера приложений SAP NetWeaver.
 
@@ -436,7 +437,7 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h ah1-di
 C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-ascs -n 255.255.255.128
 ```
 
-Запустите SWPM и используйте *as1-ascs* в качестве *имени узла экземпляра ASCS* .
+Запустите SWPM и используйте *as1-ascs* в качестве *имени узла экземпляра ASCS*.
 
 #### <a name="install-sql-server"></a>Установка SQL Server
 
@@ -447,9 +448,9 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-as
 C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-db -n 255.255.255.128
 ```
 
-Запустите установку экземпляра базы данных SWPM на виртуальной машине SQL Server. Используйте SAPINST_USE_HOSTNAME= *as1-db* , чтобы переопределить имя узла, используемое для подключения к SQL Server. Если вы развернули виртуальную машину с помощью шаблона Azure Resource Manager, не забудьте задать для каталога, используемого для файлов данных базы данных, значение *C:\sql\data* , а для файла журнала базы данных — *C:\sql\log* .
+Запустите установку экземпляра базы данных SWPM на виртуальной машине SQL Server. Используйте SAPINST_USE_HOSTNAME=*as1-db*, чтобы переопределить имя узла, используемое для подключения к SQL Server. Если вы развернули виртуальную машину с помощью шаблона Azure Resource Manager, не забудьте задать для каталога, используемого для файлов данных базы данных, значение *C:\sql\data*, а для файла журнала базы данных — *C:\sql\log*.
 
-Убедитесь, что пользователь *NT AUTHORITY\SYSTEM* имеет доступ к SQL Server и роль сервера *sysadmin* . Дополнительные сведения см. в примечаниях к SAP [1877727] и [2562184].
+Убедитесь, что пользователь *NT AUTHORITY\SYSTEM* имеет доступ к SQL Server и роль сервера *sysadmin*. Дополнительные сведения см. в примечаниях к SAP [1877727] и [2562184].
 
 #### <a name="install-sap-netweaver-application-server"></a>Установка сервера приложений SAP NetWeaver
 
@@ -501,7 +502,7 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-di
   * Решение  
    Убедитесь, что общий ресурс sapmnt в ASCS/SCS имеет полный доступ для SAP_AS1_GlobalAdmin.
 
-* Ошибка на шаге *включения защиты запуска клона* .
+* Ошибка на шаге *включения защиты запуска клона*.
   * Failed to open file '\\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0' Cause: No such file or directory (Не удалось открыть файл "\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0". Причина: нет такого файла или каталога).
   * Решение  
     Учетной записи компьютера сервера приложений требуется право на запись в профиль.
@@ -591,7 +592,7 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-di
   * Решение  
     Не забудьте добавить правило узла на шаге *изоляции* для подключения виртуальной машины к контроллеру домена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Руководство по использованию SAP HANA в Azure][hana-ops-guide]
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP NetWeaver][deployment-guide]

@@ -11,12 +11,12 @@ author: lobrien
 ms.date: 8/25/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
-ms.openlocfilehash: fd5c0905b4a5d050eaf35456353122fd26f8cbf7
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 75d013b863671246e6249f367676e4de86bc1de8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445274"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960026"
 ---
 # <a name="publish-and-track-machine-learning-pipelines"></a>Публикация и мониторинг конвейеров машинного обучения
 
@@ -74,7 +74,7 @@ ms.locfileid: "94445274"
 Все опубликованные конвейеры используют конечную точку REST. Конечная точка конвейера позволяет запускать конвейер из любых внешних систем, включая клиентов, не относящихся к Python. Эта конечная точка обеспечивает управляемую повторяемость для сценариев пакетной оценки и переобучения.
 
 > [!IMPORTANT]
-> Если вы используете управление доступом на основе ролей (RBAC) для управления доступом к конвейеру, [Задайте разрешения для сценария конвейера (обучение или оценка)](how-to-assign-roles.md#common-scenarios).
+> Если вы используете управление доступом на основе ролей Azure (Azure RBAC) для управления доступом к конвейеру, [Задайте разрешения для сценария конвейера (обучение или оценка)](how-to-assign-roles.md#common-scenarios).
 
 Чтобы вызвать выполнение предыдущего конвейера, необходим маркер заголовка проверки подлинности Azure Active Directory. Этот маркер описан в справочнике по [классам азуреклиаусентикатион](/python/api/azureml-core/azureml.core.authentication.azurecliauthentication?preserve-view=true&view=azure-ml-py) и в [проверке подлинности в машинное обучение Azure](https://aka.ms/pl-restep-auth) записной книжке.
 
@@ -362,7 +362,7 @@ p.disable()
 
 Его можно включить снова с помощью `p.enable()` . Дополнительные сведения см. в разделе Справочник по [классам публишедпипелине](/python/api/azureml-pipeline-core/azureml.pipeline.core.publishedpipeline?preserve-view=true&view=azure-ml-py) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Используйте [эти записные книжки Jupyter на сайте GitHub](https://aka.ms/aml-pipeline-readme), чтобы подробнее изучить конвейеры машинного обучения.
 - См. справочную справку по пакету [azureml-конвейеры-Core](/python/api/azureml-pipeline-core/?preserve-view=true&view=azure-ml-py) и пакету [azureml-конвейеры-этапов](/python/api/azureml-pipeline-steps/?preserve-view=true&view=azure-ml-py) .

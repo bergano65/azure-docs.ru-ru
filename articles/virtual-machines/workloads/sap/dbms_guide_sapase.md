@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/13/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4e90c78e8e7cb474756c1a5ea03fd90c33e14300
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: a3ef3fc2afa07590ff676d57c22f05ed723539f9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963590"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957730"
 ---
 # <a name="sap-ase-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на Виртуальных машинах Azure в SAP ASE для рабочей нагрузки SAP
 
@@ -309,5 +310,5 @@ SAP ASE записывает данные в устройства дисково
 Ежемесячный информационный бюллетень опубликован в [заметке о поддержке SAP #2381575](https://launchpad.support.sap.com/#/notes/2381575) 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со статьей [о рабочих нагрузках SAP в Azure: контрольный список для планирования и развертывания](./sap-deployment-checklist.md)

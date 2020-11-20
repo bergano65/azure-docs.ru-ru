@@ -10,17 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 5e514964-c907-4324-b659-16dd825f6f87
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: radeltch
-ms.openlocfilehash: 21d4af6985dbe246e60fe95f8f03de7f8aa0501b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1383db44922a044f5e51075b6e1feafa70c78009
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91314068"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958765"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-suse-linux-enterprise-server"></a>Развертывание горизонтально масштабируемой системы SAP HANA с резервным узлом на виртуальных машинах Azure с помощью Azure NetApp Files в SUSE Linux Enterprise Server 
 
@@ -149,7 +150,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
    
    В этом примере мы использовали отдельный том Azure NetApp Files для каждого тома HANA и данных журнала. Для более производительной конфигурации, оптимизированной для небольших или непродуктивных систем, можно разместить все подключения к данным и все журналы на одном томе.  
 
-### <a name="important-considerations"></a>Важные замечания
+### <a name="important-considerations"></a>Важные аспекты
 
 При создании Azure NetApp Files для SAP NetWeaver в архитектуре высокого уровня доступности SUSE учитывайте следующие важные моменты.
 
@@ -232,11 +233,11 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
    c. Выберите подсеть виртуальной сети Azure для клиента. Выберите [Ускоренная сеть](../../../virtual-network/create-vm-accelerated-networking-cli.md).  
 
-   При развертывании виртуальных машин имя сетевого интерфейса создается автоматически. В этих инструкциях мы будем называть автоматически создаваемые сетевые интерфейсы, подключенные к подсети виртуальной сети Azure клиента, как **hanadb1-Client**, **hanadb2-Client**и **hanadb3-Client**. 
+   При развертывании виртуальных машин имя сетевого интерфейса создается автоматически. В этих инструкциях мы будем называть автоматически создаваемые сетевые интерфейсы, подключенные к подсети виртуальной сети Azure клиента, как **hanadb1-Client**, **hanadb2-Client** и **hanadb3-Client**. 
 
-3. Создайте три сетевых интерфейса, по одному для каждой виртуальной машины, для `storage` подсети виртуальной сети (в этом примере — **hanadb1-Storage**, **hanadb2-Storage**и **hanadb3-Storage**).  
+3. Создайте три сетевых интерфейса, по одному для каждой виртуальной машины, для `storage` подсети виртуальной сети (в этом примере — **hanadb1-Storage**, **hanadb2-Storage** и **hanadb3-Storage**).  
 
-4. Создайте три сетевых интерфейса, по одному для каждой виртуальной машины, для `hana`  подсети виртуальной сети (в этом примере — **hanadb1-Hana**, **hanadb2-Hana**и **hanadb3-Hana**).  
+4. Создайте три сетевых интерфейса, по одному для каждой виртуальной машины, для `hana`  подсети виртуальной сети (в этом примере — **hanadb1-Hana**, **hanadb2-Hana** и **hanadb3-Hana**).  
 
 5. Подключите вновь созданные виртуальные сетевые интерфейсы к соответствующим виртуальным машинам, выполнив следующие действия.  
 
@@ -435,7 +436,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     echo "options nfs nfs4_disable_idmapping=Y" >> /etc/modprobe.d/nfs.conf
     </code></pre>
 
-5. **[A]** создайте группу SAP HANA и пользователя вручную. Для идентификаторов групп sapsys и User **HN1**ADM должны быть заданы одинаковые идентификаторы, которые предоставляются во время адаптации. (В этом примере идентификаторы имеют значение **1001**.) Если идентификаторы не заданы правильно, доступ к томам будет невозможен. Идентификаторы групп sapsys и учетных записей пользователей **HN1**ADM и sapadm должны быть одинаковыми на всех виртуальных машинах.  
+5. **[A]** создайте группу SAP HANA и пользователя вручную. Для идентификаторов групп sapsys и User **HN1** ADM должны быть заданы одинаковые идентификаторы, которые предоставляются во время адаптации. (В этом примере идентификаторы имеют значение **1001**.) Если идентификаторы не заданы правильно, доступ к томам будет невозможен. Идентификаторы групп sapsys и учетных записей пользователей **HN1** ADM и sapadm должны быть одинаковыми на всех виртуальных машинах.  
 
     <pre><code>
     # Create user group 
@@ -520,7 +521,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 1. **[A]** перед установкой Hana задайте корневой пароль. После завершения установки можно отключить корневой пароль. Выполните `root` команду AS `passwd` .  
 
-2. **[1]** убедитесь, что вы можете войти с помощью SSH в **hanadb2** и **hanadb3**без запроса пароля.  
+2. **[1]** убедитесь, что вы можете войти с помощью SSH в **hanadb2** и **hanadb3** без запроса пароля.  
 
     <pre><code>
     ssh root@<b>hanadb2</b>
@@ -533,7 +534,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     sudo zypper install libgcc_s1 libstdc++6 libatomic1 
     </code></pre>
 
-4. **[2], [3]** Измените владельца SAP HANA `data` и `log` каталогов на **HN1**ADM.   
+4. **[2], [3]** Измените владельца SAP HANA `data` и `log` каталогов на **HN1** ADM.   
 
     <pre><code>
     # Execute as root
@@ -635,8 +636,8 @@ Azure NetApp Files доступен в нескольких [регионах Az
 6. Чтобы оптимизировать SAP HANA для базового хранилища Azure NetApp Files, задайте следующие параметры SAP HANA.
 
    - `max_parallel_io_requests`**128**
-   - `async_read_submit`**на**
-   - `async_write_submit_active`**на**
+   - `async_read_submit` **on**
+   - `async_write_submit_active` **on**
    - `async_write_submit_blocks`**все**
 
    Дополнительные сведения см. [в статье NETAPP SAP Applications on Microsoft Azure using Azure NetApp Files][anf-sap-applications-azure]. 
@@ -657,7 +658,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 1. Имитация сбоя узла на рабочем узле SAP HANA. Выполните следующие действия. 
 
-   a. Прежде чем имитировать сбой узла, выполните следующие команды в качестве **HN1**ADM, чтобы записать состояние среды:  
+   a. Прежде чем имитировать сбой узла, выполните следующие команды в качестве **HN1** ADM, чтобы записать состояние среды:  
 
    <pre><code>
     # Check the landscape status
@@ -712,7 +713,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 2. Удалите сервер имен, выполнив следующие действия.
 
-   a. Перед тестированием Проверьте состояние среды, выполнив следующие команды в качестве **HN1**ADM:  
+   a. Перед тестированием Проверьте состояние среды, выполнив следующие команды в качестве **HN1** ADM:  
 
    <pre><code>
     #Landscape status 
@@ -734,7 +735,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     hanadb3, 3, 50313, 50314, 0.3, HDB|HDB_STANDBY, GRAY
    </code></pre>
 
-   b. Выполните следующие команды в качестве **HN1**ADM на активном главном узле, **hanadb1** в этом случае:  
+   b. Выполните следующие команды в качестве **HN1** ADM на активном главном узле, **hanadb1** в этом случае:  
 
     <pre><code>
         hn1adm@hanadb1:/usr/sap/HN1/HDB03> HDB kill
@@ -827,7 +828,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     hn1adm@hanadb3:/usr/sap/HN1/HDB03> HDB start
    </code></pre>
 
-   После запуска SAP HANA в **hanadb3**состояние выглядит следующим образом:  
+   После запуска SAP HANA в **hanadb3** состояние выглядит следующим образом:  
 
    <pre><code>
     # Check the instance status

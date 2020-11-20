@@ -3,16 +3,17 @@ title: Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure
 description: Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure
 author: hermanndms
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 09/16/2016
 ms.author: hermannd
 ms.reviewer: cynthn
-ms.openlocfilehash: 2e1c20ba5549a1d9660b6e30fafa040d545a6a37
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: dc0c1744c2943d33d516de4ed9d28893541773ad
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993445"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957883"
 ---
 # <a name="deploy-sap-ides-ehp7-sp3-for-sap-erp-60-on-azure"></a>Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure
 В этой статье описывается, как развернуть SAP IDES с SQL Server и Windows в Azure с помощью SAP Cloud Appliance Library (SAP CAL) 3.0. На снимках экрана наглядно показан пошаговый процесс. Для развертывания другого решения выполните те же действия.
@@ -31,7 +32,7 @@ ms.locfileid: "91993445"
 ### <a name="create-an-account-in-the-sap-cal"></a>Создание учетной записи в SAP CAL
 1. Для входа в SAP CAL впервые используйте пользователя S-User SAP или других пользователей, зарегистрированных в SAP. Затем определите учетную запись SAP CAL, которая используется SAP CAL для развертывания устройств в Azure. Вот что нужно сделать в определении учетной записи:
 
-    а. Выберите модель развертывания в Azure (Resource Manager или классическая).
+    a. Выберите модель развертывания в Azure (Resource Manager или классическая).
 
     b. Введите подписку Azure. Учетную запись SAP CAL можно назначить только одной подписке. Если вам требуется несколько подписок, необходимо создать еще одну учетную запись SAP CAL.
     
@@ -42,7 +43,7 @@ ms.locfileid: "91993445"
 
 1. При создании учетной записи SAP CAL на странице **Учетные записи** отображаются два варианта для Azure: 
 
-    а. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
+    a. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
 
     b. **Microsoft Azure** — это новая модель развертывания с помощью Resource Manager.
 
@@ -89,9 +90,9 @@ ms.locfileid: "91993445"
 
 1. На странице **Basic Mode: Create Instance** (Базовый режим: создание экземпляра) сделайте следующее:
 
-    а. Введите **имя** экземпляра.
+    a. Введите **имя** экземпляра.
 
-    b. Выберите **регион**Azure. Чтобы получить несколько регионов Azure на выбор, может потребоваться подписка SAP CAL.
+    b. Выберите **регион** Azure. Чтобы получить несколько регионов Azure на выбор, может потребоваться подписка SAP CAL.
 
     c.  Введите основной **пароль** для доступа к решению, как показано ниже:
 

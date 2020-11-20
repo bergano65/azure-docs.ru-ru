@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: article
 ms.date: 05/29/2019
 ms.author: alkohli
-ms.openlocfilehash: ea7e4801dfaad533403c0f927a03735ae409cc52
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1118dfcec67a49365f1f6e5e522e98b97694d052
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "66420608"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960200"
 ---
 # <a name="storsimple-virtual-array-update-12-release-notes"></a>Заметки о выпуске обновления 1,2 для виртуального массива StorSimple
 
@@ -55,7 +55,7 @@ ms.locfileid: "66420608"
 
 Новые проблемы не были выпущены в обновлении 1,2. Все проблемы, отмеченные в выпуске, переносятся из предыдущих выпусков. Чтобы просмотреть сводку известных проблем, связанных с предыдущими выпусками, перейдите к разделу [Известные проблемы в обновлении 1,1](storsimple-virtual-array-update-11-release-notes.md#known-issues-in-update-11).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Скачайте KB4502035 и [Примените обновление через локальный веб-интерфейс](storsimple-virtual-array-install-update-11.md#use-the-local-web-ui).
 
@@ -69,4 +69,4 @@ ms.locfileid: "66420608"
 * [Заметки о выпуске обновления 0,4 для виртуального массива StorSimple](storsimple-virtual-array-update-04-release-notes.md)
 * [Заметки о выпуске обновления 0,3 для виртуального массива StorSimple](storsimple-ova-update-03-release-notes.md)
 * [Заметки о выпуске обновлений 0.1 и 0.2 для виртуального массива StorSimple.](storsimple-ova-update-01-release-notes.md)
-* [Заметки о выпуске общедоступной версии виртуального массива StorSimple.](storsimple-ova-pp-release-notes.md)
+* [Заметки о выпуске общедоступной версии виртуального массива StorSimple.](./storsimple-virtual-array-update-06-release-notes.md)
