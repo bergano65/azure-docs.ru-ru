@@ -12,12 +12,12 @@ metadata:
   title: Документация по Распознаванию речи (LUIS)
   titleSuffix: Azure Cognitive Services
   description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей, исходя из их слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
-  ms.openlocfilehash: 3bae2e6e0a79dbc0106dc71a9510aa4dc318650c
-  ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+  ms.openlocfilehash: ff928f1879f8cfd356fa020ff6afaa68b72f63c5
+  ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/22/2020
-  ms.locfileid: "92364190"
+  ms.lasthandoff: 11/21/2020
+  ms.locfileid: "95019387"
 landingContent:
 - title: Сведения о Распознавании речи (LUIS)
   linkLists:
@@ -70,7 +70,7 @@ landingContent:
     - text: Добавление намерений с примерами речевых фрагментов
       url: luis-how-to-add-intents.md
     - text: Добавление сущностей
-      url: luis-how-to-add-example-utterances.md
+      url: ./luis-how-to-add-entities.md
     - text: Добавление признака списка фраз
       url: luis-how-to-add-features.md
 - title: Управление версиями, обучение, тестирование и публикация
@@ -78,7 +78,7 @@ landingContent:
   - linkListType: concept
     links:
     - text: Управление версиями
-      url: luis-concept-version.md
+      url: ./luis-concept-app-iteration.md
     - text: Интерактивное тестирование
       url: luis-concept-test.md
     - text: Пакетное тестирование
@@ -110,15 +110,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Использование REST API с C#
-      url: luis-get-started-cs-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
     - text: Использование REST API с Go
-      url: luis-get-started-go-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
     - text: Использование REST API с Java
-      url: luis-get-started-java-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
     - text: Использование REST API с Node.js
-      url: luis-get-started-node-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
     - text: Использование REST API с Python
-      url: luis-get-started-python-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
 - title: Справочник
   linkLists:
   - linkListType: reference

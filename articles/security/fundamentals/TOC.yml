@@ -78,7 +78,7 @@
     - name: Несвязанные DNS и перенаправление поддомена
       href: subdomain-takeover.md
     - name: Архитектура защищенной гибридной сети
-      href: /azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?bc=%252fazure%252fsecurity%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fsecurity%252ftoc.json
+      href: /azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?bc=%2fazure%2fsecurity%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsecurity%2ftoc.json
 - name: Безопасность IaaS
   items:
     - name: Microsoft Antimalware
@@ -118,7 +118,7 @@
         - name: Контрольный список по безопасности
           href: database-security-checklist.md
     - name: Руководство по обеспечению безопасности службы хранилища
-      href: ../../storage/blobs/security-recommendations.md?bc=%252fazure%252fsecurity%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fsecurity%252ftoc.json
+      href: ../../storage/blobs/security-recommendations.md?bc=%2fazure%2fsecurity%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsecurity%2ftoc.json
     - name: Защищенное хранилище клиента
       href: customer-lockbox-overview.md
     - name: Базовые показатели безопасности защищенного хранилища

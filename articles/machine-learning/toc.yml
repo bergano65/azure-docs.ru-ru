@@ -93,7 +93,7 @@
       displayName: 'example, examples, studio, pipelines, data sets, modules'
       href: samples-designer.md
     - name: Открытые наборы данных (общедоступные)
-      href: ../open-datasets/samples.md?context=azure%252fmachine-learning%252fcontext%252fml-context
+      href: ../open-datasets/samples.md?context=%2fazure%2fmachine-learning%2fcontext%2fml-context
 - name: Основные понятия
   items:
     - name: Планирование затрат и управление ими
@@ -449,7 +449,7 @@
             - name: Использование пользовательского образа Docker
               href: how-to-deploy-custom-docker-image.md
             - name: IoT Edge
-              href: ../iot-edge/tutorial-deploy-machine-learning.md?context=azure%252fmachine-learning%252fservice%252fcontext%252fml-context
+              href: ../iot-edge/tutorial-deploy-machine-learning.md?context=%2fazure%2fmachine-learning%2fservice%2fcontext%2fml-context
             - name: Вывод ППВМ
               href: how-to-deploy-fpga-web-service.md
         - name: Устранение неполадок и отладка
@@ -530,7 +530,7 @@
           href: how-to-debug-parallel-run-step.md
     - name: Azure Pipelines для CI/CD
       displayName: 'continuous, integration, delivery'
-      href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/context/ml-context
+      href: /azure/devops/pipelines/targets/azure-machine-learning?context=%2fazure/machine-learning/context/ml-context
     - name: GitHub Actions для CI/CD
       href: how-to-github-actions-machine-learning.md
     - name: Управление квотами ресурсов
@@ -595,7 +595,7 @@
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning-service'
     - name: Сравнить наши продукты Машинного обучения
-      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/context/ml-context
+      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=%2fazure/machine-learning/context/ml-context
     - name: Что произошло с Workbench
       displayName: 'desktop, ui, Workbench, upgrade, update, transfer'
       href: overview-what-happened-to-workbench.md

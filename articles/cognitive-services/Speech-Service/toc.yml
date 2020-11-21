@@ -259,7 +259,7 @@
         - name: Служба LUIS
           items:
             - name: Ресурсы для разработчиков LUIS
-              href: 'https://docs.microsoft.com/azure/cognitive-services/luis/developer-reference-resource'
+              href: ../luis/developer-reference-resource.md
     - name: Ресурсы
       items:
         - name: Поддержка языков
@@ -275,7 +275,7 @@
     - name: Справочник
       items:
         - name: REST API службы "Распознавание говорящего"
-          href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
+          href: /rest/api/speakerrecognition/
 - name: Пользовательское ключевое слово
   items:
     - name: Общие сведения о настраиваемых ключевых словах
@@ -493,7 +493,7 @@
         - name: Обзор Speech Studio
           href: 'https://speech.microsoft.com'
         - name: Создание приложения пользовательских команд с помощью Speech Studio
-          href: quickstart-custom-speech-commands-create-new.md
+          href: ./quickstart-custom-commands-application.md
 - name: Развертывание
   items:
     - name: Включение ведения журналов

@@ -1,5 +1,5 @@
 - name: Azure Synapse (предварительная версия рабочих областей)
-  href: sql-data-warehouse/index.yml
+  href: overview-what-is.md
 - name: "Переход на Azure Synapse (ранее\_— Хранилище данных SQL)"
   href: ./sql-data-warehouse/sql-data-warehouse-overview-what-is.md
 - name: Обзор
@@ -7,10 +7,8 @@
     - name: Что такое Azure Synapse?
       href: overview-what-is.md
       displayName: overview
-    - name: Краткий справочник
-      href: overview-cheat-sheet.md
-    - name: ВОПРОСЫ И ОТВЕТЫ
-      href: overview-faq.md
+    - name: Терминология
+      href: overview-terminology.md
     - name: Заметки о выпуске
       href: release-notes.md
 - name: Краткие руководства

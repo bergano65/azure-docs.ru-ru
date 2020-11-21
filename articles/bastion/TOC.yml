@@ -21,6 +21,10 @@
       href: work-remotely-support.md
     - name: Бастион и пиринг виртуальных сетей
       href: vnet-peering.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Создание узла

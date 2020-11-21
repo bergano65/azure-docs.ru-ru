@@ -49,7 +49,7 @@
         - name: Импорт и экспорт конфигурации
           href: export-import-provisioning-configuration.md
         - name: Отчеты о подготовке к работе
-          href: ../reports-monitoring/concept-provisioning-logs.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
+          href: ../reports-monitoring/concept-provisioning-logs.md?context=%2fazure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
     - name: Автоматизация настройки с помощью MS Graph
       href: 'https://docs.microsoft.com/graph/application-provisioning-configure-api'
     - name: Устранение неполадок при подготовке приложений
@@ -65,7 +65,7 @@
         - name: Отсутствует исходный атрибут
           href: user-provisioning-sync-attributes-for-mapping.md
         - name: Подготовка журналов
-          href: ../reports-monitoring/concept-provisioning-logs.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
+          href: ../reports-monitoring/concept-provisioning-logs.md?context=%2fazure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
 - name: Справочник
   items:
     - name: "Соответствие протоколу SCIM\_2.0"

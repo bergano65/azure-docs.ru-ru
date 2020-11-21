@@ -146,7 +146,7 @@
             - name: Пакет SDK для Java (Maven)
               href: 'https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar'
             - name: "Пакет SDK для Java\_— справочник"
-              href: /java/api/overview/azure/digitaltwins/management?view=azure-java-preview
+              href: /azure/developer/java/sdk/
             - name: "Пакет SDK для Java\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/mgmt-v2020_10_31'
             - name: Пакет SDK для JavaScript

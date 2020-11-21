@@ -23,7 +23,7 @@
     - name: Практические руководства
       items:
         - name: Регистрация для использования службы "Переводчик"
-          href: translator-text-how-to-signup.md
+          href: ./translator-how-to-signup.md
         - name: "Миграция в API Перевода текстов версии\_3"
           href: migrate-to-v3.md
         - name: Добавление фильтра ненормативной лексики
