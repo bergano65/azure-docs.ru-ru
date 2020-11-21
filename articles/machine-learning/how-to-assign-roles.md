@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 11/09/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperfq2
-ms.openlocfilehash: 6cd4bbec89e955c398f7cb6e37ba5c3dcc6427ea
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 90abd46e73ecb50b5e6de40218571d0ec899752e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961232"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95012961"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "94961232"
 >
 > * [Управление доступом к ресурсам кластера Azure Kubernetes](../aks/azure-ad-rbac.md)
 > * [Использование Azure RBAC для авторизации Kubernetes](../aks/manage-azure-rbac.md)
-> * [Использование Azure RBAC для доступа к данным BLOB-объектов](/storage/common/storage-auth-aad-rbac-portal.md)
+> * [Использование Azure RBAC для доступа к данным BLOB-объектов](/azure/storage/common/storage-auth-aad-rbac-portal)
 
 > [!WARNING]
 > Применение некоторых ролей может ограничить функциональность пользовательского интерфейса в Машинное обучение Azure Studio для других пользователей. Например, если роль пользователя не может создать вычислительный экземпляр, параметр создания вычислительного экземпляра будет недоступен в студии. Это ожидаемое поведение, которое предотвращает попытки пользователя выполнить операции, возвращающие ошибку отказа в доступе.
@@ -467,7 +467,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 
 - Иногда для того, чтобы новые назначения ролей вступили в силу с кэшированными разрешениями в стеке, может потребоваться до 1 часа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об обеспечении безопасности на уровне предприятия](concept-enterprise-security.md)
 - [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md)

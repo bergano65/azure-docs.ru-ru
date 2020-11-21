@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: aahi
-ms.openlocfilehash: 8154ef7a90011da8c15f52870eebb6c80ebaebca
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: dd1b6d216f6225a13d86aa2435b5b1c807547ec3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92496107"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014583"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Данные телеметрии и устранение неполадок
 
@@ -51,7 +51,7 @@ Telegraf — это образ с открытым исходным кодом, 
 Выходные данные:
 1. Azure Monitor
 
-Предоставленный модуль пространственного анализа Telegraf будет публиковать все данные телеметрии, порожденные контейнером пространственного анализа, в Azure Monitor. Сведения о добавлении Azure Monitor в подписку см. в [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) .
+Предоставленный модуль пространственного анализа Telegraf будет публиковать все данные телеметрии, порожденные контейнером пространственного анализа, в Azure Monitor. Сведения о добавлении Azure Monitor в подписку см. в [Azure Monitor](../../azure-monitor/overview.md) .
 
 После настройки Azure Monitor необходимо создать учетные данные, позволяющие модулю отсылать телеметрию. Можно использовать портал Azure для создания нового субъекта-службы или использовать команду Azure CLI ниже, чтобы создать ее.
 
@@ -103,7 +103,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 
 ### <a name="system-health-events"></a>События работоспособности системы
 
-| Имя события | Описание|
+| Название мероприятия | Описание|
 |------|---------|
 |archon_exit    |Посылается, когда пользователь изменяет состояние модуля пространственного анализа с " *работает* " на " *остановлено*".  |
 |archon_error   |Отправляется при сбое любого из процессов в контейнере. Это критическая ошибка.  |
@@ -121,7 +121,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 
 ##  <a name="troubleshooting-an-iot-edge-device"></a>Устранение неполадок устройства IoT Edge
 
-`iotedge`Для проверки состояния и журналов выполняющихся модулей можно использовать программу командной строки. Например:
+`iotedge`Для проверки состояния и журналов выполняющихся модулей можно использовать программу командной строки. Пример:
 * `iotedge list`: Сообщает список выполняющихся модулей. 
   Дополнительные сведения об ошибках можно проверить с помощью `iotedge logs edgeAgent` . Если `iotedge` он зависает, можно попробовать перезапустить его с помощью `iotedge restart edgeAgent`
 * `iotedge logs <module-name>`
@@ -216,7 +216,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 
 
 1. Перейдите на страницу портала центра Интернета вещей, выберите **пограничные устройства**, затем выберите устройство и модуль диагностики. 
-2. Перейдите на страницу сведений о модуле и щелкните вкладку **_прямой метод_*_.
+2. Перейдите на страницу сведений о модуле и щелкните вкладку **_прямой метод_* _.
 3. Введите `getRTCVLogs` имя метода и строку формата JSON в полезных данных. Можно ввести `{}` , что является пустой полезной нагрузкой. 
 4. Задайте соединение и время ожидания метода, а затем нажмите кнопку "_ * вызвать метод" * *.
 5. Выберите целевой контейнер и создайте строку JSON полезной нагрузки с помощью параметров, описанных в разделе о **синтаксисе ведения журнала** . Нажмите кнопку **вызвать метод** , чтобы выполнить запрос.
@@ -224,7 +224,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 >[!NOTE]
 > При вызове `getRTCVLogs` метода с пустыми полезными данными будет возвращен список всех контейнеров, развернутых на устройстве. Имя метода задается с учетом регистра. Если указано неправильное имя метода, будет выдана ошибка 501.
 
-:::image type="content" source="./media/spatial-analysis/direct-log-collection.png" alt-text="Отчет о телеметрии Azure Monitor":::
+:::image type="content" source="./media/spatial-analysis/direct-log-collection.png" alt-text="Вызов метода Жетртквлогс ":::
 ![страница прямого метода Жетртквлогс](./media/spatial-analysis/direct-log-collection.png)
 
  
@@ -245,7 +245,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 
 | Ключевое слово | Описание|
 |--|--|
-|допост| Либо *true* , либо *false*. Указывает, были ли отправлены журналы. Если вы решили не отправлять журналы, API возвращает информацию ***синхронно**_. При выборе отправки журналов API возвращает значение 200, если запрос допустим, и начинает _*_асинхронную_*_ отправку журналов.|
+|допост| Либо *true* , либо *false*. Указывает, были ли отправлены журналы. Если вы решили не отправлять журналы, API возвращает информацию ***синхронно** _. При выборе отправки журналов API возвращает значение 200, если запрос допустим, и начинает _*_асинхронную_*_ отправку журналов.|
 |тимефилтер| Фильтр времени, примененный к журналам.|
 |валуефилтерс| Фильтры ключевых слов применяются к журналам. |
 |TimeStamp| Время начала выполнения метода. |
@@ -316,8 +316,8 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 
 ### <a name="access-the-kubernetes-api-endpoint"></a>Доступ к конечной точке API Kubernetes. 
 
-1. В локальном пользовательском интерфейсе устройства перейдите на страницу _*Devices**. 
-2. В разделе **конечные точки устройства**скопируйте конечную точку службы API Kubernetes. Эта конечная точка представляет собой строку в следующем формате: `https://compute..[device-IP-address]`.
+1. В локальном пользовательском интерфейсе устройства перейдите на страницу _ *Devices**. 
+2. В разделе **конечные точки устройства** скопируйте конечную точку службы API Kubernetes. Эта конечная точка представляет собой строку в следующем формате: `https://compute..[device-IP-address]`.
 3. Сохраните строку конечной точки. Он будет использоваться позже при настройке `kubectl` для доступа к кластеру Kubernetes.
 
 ### <a name="connect-to-powershell-interface"></a>Подключение к интерфейсу PowerShell
@@ -326,7 +326,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 
 > [!TIP]
 > * Прежде чем начать, убедитесь, что клиент Windows работает под управлением Windows PowerShell 5,0 или более поздней версии.
-> * PowerShell также [доступен в Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux).
+> * PowerShell также [доступен в Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
 1. Запустите сеанс Windows PowerShell от имени администратора. 
     1. Убедитесь, что на вашем клиенте запущена служба служба удаленного управления Windows. В командной строке введите `winrm quickconfig`.

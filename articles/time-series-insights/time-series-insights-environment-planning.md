@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 546c53334b7700ab73c22edb2d82b324bfad61a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e0f1ea42aa2ba888b89dd652d3397a3a2163a3e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569434"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016213"
 ---
 # <a name="plan-your-azure-time-series-insights-gen1-environment"></a>Планирование среды Gen1 "аналитика временных рядов Azure"
 
@@ -92,7 +92,7 @@ ms.locfileid: "91569434"
 
 Например, при наличии одного SKU S1 данные повышаются в 720 событий в минуту, а скорость передачи данных составляет менее одного часа с частотой 1 440 событий или меньше, в среде нет заметной задержки. Однако если превышено 1 440 событий в минуту в течение более одного часа, то, скорее всего, будут возникать задержки в данных, отображаемых и доступных для запросов в вашей среде.
 
-Возможно, вы не заранее понимаете объем данных, которые предполагается отправить. В этом случае вы можете найти данные телеметрии для [центра Интернета вещей Azure](../iot-hub/iot-hub-metrics.md) и [концентраторов событий Azure](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/25/using-the-azure-rest-apis-to-retrieve-event-hub-metrics/) в портал Azure подписке. Данные телеметрии помогут вам определить, как подготавливать среду. Используйте панель **метрик** в портал Azure для соответствующего источника событий, чтобы просмотреть его данные телеметрии. Если вы понимаете метрики источника событий, вы можете более эффективно спланировать и подготавливать среду службы "аналитика временных рядов Azure".
+Возможно, вы не заранее понимаете объем данных, которые предполагается отправить. В этом случае вы можете найти данные телеметрии для [центра Интернета вещей Azure](../iot-hub/monitor-iot-hub.md) и [концентраторов событий Azure](/archive/blogs/cloud_solution_architect/using-the-azure-rest-apis-to-retrieve-event-hub-metrics) в портал Azure подписке. Данные телеметрии помогут вам определить, как подготавливать среду. Используйте панель **метрик** в портал Azure для соответствующего источника событий, чтобы просмотреть его данные телеметрии. Если вы понимаете метрики источника событий, вы можете более эффективно спланировать и подготавливать среду службы "аналитика временных рядов Azure".
 
 ### <a name="calculate-ingress-requirements"></a>Расчет требований к объему входящих данных
 
@@ -124,10 +124,10 @@ ms.locfileid: "91569434"
 
 [!INCLUDE [business-disaster-recover](../../includes/time-series-insights-business-recovery.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Начните с создания [новой среды службы "аналитика временных рядов Azure" в портал Azure](time-series-insights-get-started.md).
 
-- Узнайте, как [Добавить источник событий концентраторов событий](time-series-insights-how-to-add-an-event-source-eventhub.md) в службу "аналитика временных рядов Azure".
+- Узнайте, как [Добавить источник событий концентраторов событий](./how-to-ingest-data-event-hub.md) в службу "аналитика временных рядов Azure".
 
-- Узнайте, как [настроить источник событий центра Интернета вещей](time-series-insights-how-to-add-an-event-source-iothub.md).
+- Узнайте, как [настроить источник событий центра Интернета вещей](./how-to-ingest-data-iot-hub.md).

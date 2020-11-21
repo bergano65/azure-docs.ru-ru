@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: erhopf
-ms.openlocfilehash: eace63effdbd62d8f08395aa16683627b475a963
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 698a1d52af6c2472d6c025851ead1a0b6a6dff82
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86232531"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015347"
 ---
 # <a name="speech-devices-sdk-microphone-array-recommendations"></a>Рекомендации по использованию микрофона пакета SDK для речевых устройств
 
@@ -97,7 +97,7 @@ ms.locfileid: "86232531"
 | Часы выборки      | Звук устройства должен быть бесплатным, а удаление с низким смещением |
 | Возможность записи   | Устройство должно иметь возможность одновременно записывать необработанные потоки каналов |
 | USB                 | Все USB-устройства ввода должны устанавливать дескрипторы в соответствии со [спецификацией REV3 USB Audio Devices](https://www.usb.org/document-library/usb-audio-devices-rev-30-and-adopters-agreement) . |
-| Геометрия микрофона | Драйверы должны правильно реализовывать [дескрипторы геометрии массива микрофонов](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry) |
+| Геометрия микрофона | Драйверы должны правильно реализовывать [дескрипторы геометрии массива микрофонов](/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry) |
 | Возможность обнаружения     | Устройства не должны иметь необнаруженные или неконтролируемых оборудование, встроенное по или программное обеспечение сторонних производителей для обработки нелинейного звука на устройстве. |
 | Формат записи      | Форматы записи должны использовать минимальную частоту выборки, равную 16 кГц, и рекомендуемую 24-разрядную глубину. |
 

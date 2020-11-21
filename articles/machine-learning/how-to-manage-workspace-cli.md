@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 7de78a52482b2f07cb4e5e036509e0f9e402a3f4
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: aa85822b433e2d8128df9ae3664411ea3fcddec4
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576280"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95012937"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 
@@ -26,16 +26,20 @@ ms.locfileid: "94576280"
 
 * **Подписка Azure**. Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде** , вам потребуется [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде**, вам потребуется [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 
     Если вы используете [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/), интерфейс командной строки доступен через браузер и находится в облаке.
+
+## <a name="limitations"></a>Ограничения
+
+* При создании рабочей области можно либо разрешить этой рабочей области создавать службы Azure, которые требуются автоматически, либо предоставить существующие службы. При предоставлении существующих служб все эти службы должны находиться в той же подписке Azure, что и Рабочая область.
 
 ## <a name="connect-the-cli-to-your-azure-subscription"></a>Подключение интерфейса командной строки к своей подписке Azure
 
 > [!IMPORTANT]
 > Если вы используете Azure Cloud Shell, этот раздел можно пропустить. Cloud Shell автоматически выполняет аутентификацию, используя учетную запись, с помощью которой вы вошли в подписку Azure.
 
-Существует несколько способов аутентификации в подписке Azure с помощью CLI. Самый простой — выполнить интерактивную аутентификацию с помощью браузера. Чтобы выполнить аутентификацию в интерактивном режиме, откройте командную строку или терминал и выполните следующую команду:
+Существует несколько способов проверки подлинности в подписке Azure с помощью интерфейса командной строки. Самый простой — выполнить интерактивную аутентификацию с помощью браузера. Чтобы выполнить проверку подлинности в интерактивном режиме, откройте командную строку или терминал и используйте следующую команду:
 
 ```azurecli-interactive
 az login
@@ -107,7 +111,7 @@ az group create --name <resource-group-name> --location <location>
 
 ### <a name="automatically-create-required-resources"></a>Автоматическое создание необходимых ресурсов
 
-Чтобы создать новую рабочую область, в которой __службы создаются автоматически__ , используйте следующую команду:
+Чтобы создать новую рабочую область, в которой __службы создаются автоматически__, используйте следующую команду:
 
 ```azurecli-interactive
 az ml workspace create -w <workspace-name> -g <resource-group-name>
@@ -189,7 +193,7 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 > [!IMPORTANT]
 > Вам не нужно указывать все существующие ресурсы. Можно указать один или несколько. Например, можно указать существующую учетную запись хранения, и рабочая область создаст остальные ресурсы.
 
-+ **Учетная запись хранения Azure** : `az storage account show --name <storage-account-name> --query "id"`
++ **Учетная запись хранения Azure**: `az storage account show --name <storage-account-name> --query "id"`
 
     Ответ этой команды аналогичен следующему тексту и является идентификатором вашей учетной записи хранения:
 
@@ -216,13 +220,13 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
 
         `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/microsoft.insights/components/<application-insight-name>"`
 
-+ **Azure Key Vault** : `az keyvault show --name <key-vault-name> --query "ID"`
++ **Azure Key Vault**: `az keyvault show --name <key-vault-name> --query "ID"`
 
     Ответ этой команды аналогичен следующему тексту и является идентификатором вашего хранилища ключей:
 
     `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<key-vault-name>"`
 
-+ **Реестр контейнеров Azure** : `az acr show --name <acr-name> -g <resource-group-name> --query "id"`
++ **Реестр контейнеров Azure**: `az acr show --name <acr-name> -g <resource-group-name> --query "id"`
 
     Ответ этой команды аналогичен следующему тексту и является идентификатором вашего реестра контейнеров:
 

@@ -1,18 +1,18 @@
 ---
 title: Формат Common Data Model
 description: Преобразование данных с помощью общей системы метаданных модели данных
-author: djpmsft
+author: kromerm
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/13/2020
-ms.author: daperlov
-ms.openlocfilehash: 452aa3406ac09dd8342d8ade0b56b126067b7582
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.date: 11/20/2020
+ms.author: makromer
+ms.openlocfilehash: 7fc3a63f841a88451746d088a527a41d756e711f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636414"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015177"
 ---
 # <a name="common-data-model-format-in-azure-data-factory"></a>Формат общей модели данных в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -52,7 +52,11 @@ ms.locfileid: "92636414"
 | Сущность совокупности | Путь к ссылке на сущность | да | Строка | сущность |
 | Разрешить не найдены файлы | Если значение — true, ошибка не возникает, если файлы не найдены | Нет | `true` или `false` | игноренофилесфаунд |
 
-Если определение сущности, которое вы хотите использовать в преобразовании источника, находится в том же каталоге, что и папка данных, можно снять флажок "использовать сущность из совокупности" и просто ввести в сущности сущности, которую вы хотите использовать в качестве ссылки на сущность.
+При выборе "ссылка на сущность" в исходных и Приемниковых преобразованиях можно выбрать следующие три параметра расположения ссылки на сущность:
+
+* Local использует сущность, определенную в файле манифеста, который уже используется ADF
+* Настраиваемый запрос указывает на файл манифеста сущности, отличный от использования ADF-файла манифеста
+* Standard будет использовать ссылку на сущность из стандартной библиотеки сущностей CDM, поддерживаемых в ```Github``` .
 
 ### <a name="sink-settings"></a>Параметры приемника
 

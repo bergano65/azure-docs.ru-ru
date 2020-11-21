@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: troubleshooting
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.author: alkohli
-ms.openlocfilehash: 18e90bcfe7238ae998ac677a9d7eebef0ffa8939
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: a4848f5e8b542d80b382abe39f4882a26e0f534c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874259"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015686"
 ---
 # <a name="troubleshooting-certificate-errors"></a>Устранение ошибок сертификата
 
@@ -58,9 +58,8 @@ ms.locfileid: "94874259"
 | цертификатеимпортфаилуре | Сертификат с отпечатком {0} не был импортирован на узел {1} . Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт. |
 | цертификатеапплифаилуре | Сертификат с отпечатком {0} не был применен к {1} узлу. Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт.|
 | ноденотреачабле | Не удалось проверить сертификат в {0} . Проверьте работоспособность оборудования и программного обеспечения системы.|
-| ПОЛУЧИТЬ КОД ОШИБКИ | Закрытый ключ для этого сертификата недоступен. Убедитесь, что используется поддерживаемый сертификат. Поддерживается только поставщик служб шифрования Microsoft RSA/SChannel. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Требования к сертификатам](azure-stack-edge-j-series-certificate-requirements.md)

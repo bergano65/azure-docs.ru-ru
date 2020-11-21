@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 08/06/2020
 ms.author: swmachan
-ms.openlocfilehash: 59e064dc2b9d33bda966eb50544c8383b0394dd3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15f20bab91a4feab056a9f8cd6b012792f036be2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89566608"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016553"
 ---
 # <a name="translator-30-translate"></a>Переводчик 3,0: преобразование
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -55,7 +55,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   <th>Описание</th>
   <tr>
     <td>из</td>
-    <td><em>Необязательный параметр</em>.<br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/><code>from</code>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр, а не автообнаружение.</td>
+    <td><em>Необязательный параметр</em>.<br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/><code>from</code>При использовании функции <a href="/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр, а не автообнаружение.</td>
   </tr>  
   <tr>
     <td>textType</td>
@@ -63,7 +63,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>категория</td>
-    <td><em>Необязательный параметр</em>.<br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью <a href="../customization.md">Custom Translator</a>. Добавьте идентификатор категории из <a href="https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/how-to-create-project#view-project-details">сведений о проекте</a> пользовательского переводчика в этот параметр, чтобы использовать развернутую настроенную систему. Значение по умолчанию: <code>general</code>.</td>
+    <td><em>Необязательный параметр</em>.<br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью <a href="../customization.md">Custom Translator</a>. Добавьте идентификатор категории из <a href="/azure/cognitive-services/translator/custom-translator/how-to-create-project#view-project-details">сведений о проекте</a> пользовательского переводчика в этот параметр, чтобы использовать развернутую настроенную систему. Значение по умолчанию: <code>general</code>.</td>
   </tr>
   <tr>
     <td>profanityAction</td>
@@ -107,7 +107,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   <th>Описание</th>
   <tr>
     <td>Заголовки для проверки подлинности</td>
-    <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
+    <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -234,7 +234,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
 </table> 
 
-Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](./v3-0-reference.md#errors). 
 
 ## <a name="examples"></a>Примеры
 
@@ -367,7 +367,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
   <th>Действие</th>
   <tr>
     <td><code>NoAction</code></td>
-    <td>Это поведение по умолчанию. Ненормативная лексика оригинального текста сохранится в переводе.<br/><br/>
+    <td>Это поведение установлено по умолчанию. Ненормативная лексика оригинального текста сохранится в переводе.<br/><br/>
     <strong>Пример исходного текста (японский).</strong> 彼はジャッカスです。<br/>
     <strong>Пример перевода (на русский).</strong> Он — придурок.
     </td>

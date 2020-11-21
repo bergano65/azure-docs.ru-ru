@@ -8,19 +8,19 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.author: jhirono
 author: jhirono
-ms.date: 11/13/2020
+ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: e3d95be52215b03a30dc4b5c7f251357f163b24a
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: c67dcbbe2ca6dea533260f59831556c4338374ba
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616099"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95012993"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Использование рабочей области с пользовательским DNS-сервером
 
-При использовании Машинное обучение Azure с виртуальной сетью существует [несколько способов обработки разрешения имен DNS](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md). По умолчанию Azure автоматически обрабатывает разрешение имен для рабочей области и частной конечной точки. Если вместо этого _используется собственный настраиваемый DNS-сервер_ , необходимо вручную создать записи DNS для рабочей области.
+При использовании рабочей области Машинное обучение Azure с частной конечной точкой существует [несколько способов обработки разрешения имен DNS](../private-link/private-endpoint-dns.md). По умолчанию Azure автоматически обрабатывает разрешение имен для рабочей области и частной конечной точки. Если вместо этого _используется собственный настраиваемый DNS-сервер_, необходимо вручную создать записи DNS для рабочей области.
 
 > [!IMPORTANT]
 > В этой статье описывается, как найти полное доменное имя и IP-адреса для этих записей, которые не предоставляют сведений о настройке записей DNS для этих элементов. Сведения о добавлении записей см. в документации по программному обеспечению DNS.
@@ -33,6 +33,8 @@ ms.locfileid: "94616099"
 
 - Знакомство с использованием [сетевой изоляции во время обучения & вывода](./how-to-network-security-overview.md).
 
+- Знакомство с [конфигурацией зоны DNS в частной конечной точке Azure](../private-link/private-endpoint-dns.md)
+
 - При необходимости [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="find-the-ip-addresses"></a>Поиск IP-адресов
@@ -43,7 +45,7 @@ ms.locfileid: "94616099"
 * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
 * `<workspace-GUID>.workspace.<region>.modelmanagement.azureml.net`
 * `<workspace-GUID>.workspace.<region>.aether.ms`
-* `ml-<workspace-name>-<region>-<workspace-guid>.notebooks.azure.ml`
+* `ml-<workspace-name>-<region>-<workspace-guid>.notebooks.azure.net`
 * При создании вычислительного экземпляра необходимо также добавить запись для `<instance-name>.<region>.instances.azureml.ms` с частным IP-адресом частной конечной точки рабочей области.
 
     > [!NOTE]

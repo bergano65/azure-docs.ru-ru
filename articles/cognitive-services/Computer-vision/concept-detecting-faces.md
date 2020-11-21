@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 089c59c041110209e55cc3fb10b1c5adf54bd13e
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 6d85498b0e76997a1f0f989f4ea0f30acc0e8443
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94538280"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013729"
 ---
 # <a name="face-detection-with-computer-vision"></a>Определение лиц с помощью компьютерного зрения
 
 Компьютерное зрение обнаруживает на изображении лица людей и создает прямоугольник для каждого из них, а также указывает пол и возраст. 
 
 > [!NOTE]
-> Такую функцию также предлагает служба [Распознавание лиц](/azure/cognitive-services/face/). Дополнительные сведения об альтернативе для анализа лица, включая идентификацию лица и определение позы. 
+> Такую функцию также предлагает служба [Распознавание лиц](../face/index.yml). Дополнительные сведения об альтернативе для анализа лица, включая идентификацию лица и определение позы. 
 
 ## <a name="face-detection-examples"></a>Примеры определения лиц
 

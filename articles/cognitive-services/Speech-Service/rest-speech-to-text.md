@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2bb66d8a197a33d6d0ad46502b510662f43ea1ca
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 89e5fa180b011cbedebc25a5e5d555a2190805f8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94988567"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015364"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API преобразования речи в текст;
 
@@ -30,7 +30,7 @@ ms.locfileid: "94988567"
 Если отправка длинного звука является обязательным требованием для вашего приложения, рассмотрите возможность использования [речевого пакета SDK](speech-sdk.md) или файлового REST API, такого как [Пакетная](batch-transcription.md)запись.
 
 > [!TIP]
-> См. [документацию](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure) по Azure для государственных организаций для государственных облаков (FairFax).
+> См. [документацию](../../azure-government/compare-azure-government-global-azure.md) по Azure для государственных организаций для государственных облаков (FairFax).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
 
@@ -307,5 +307,5 @@ using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
-- [Настройка акустических моделей](how-to-customize-acoustic-models.md)
-- [Настройка языковых моделей](how-to-customize-language-model.md)
+- [Настройка акустических моделей](./how-to-custom-speech-train-model.md)
+- [Настройка языковых моделей](./how-to-custom-speech-train-model.md)

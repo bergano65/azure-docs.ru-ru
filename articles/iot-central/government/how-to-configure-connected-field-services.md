@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 2b3e006f717ed1c66c7db29dbd70c226d2d75ea8
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 702de11abc274d1f4001df5b28498928fde71109
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127222"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014464"
 ---
 # <a name="build-end-to-end-solution-with-azure-iot-central-and-dynamics-365-field-service"></a>Создание комплексного решения с помощью Azure IoT Central и службы Dynamics 365 Field Service 
 
@@ -21,7 +21,7 @@ ms.locfileid: "92127222"
 Создатель решения может включить интеграцию приложения IoT Central Azure с другими бизнес-системами. 
 
 
-Например, в подключенном решении для утилизации отходов можно оптимизировать отправку грузовиков для уборки мусора. Оптимизация может быть выполнена на основе данных датчиков IoT из подключенных ячеек отхода. В [IOT Central подключенном приложении управления отходами](./tutorial-connected-waste-management.md) можно настроить правила и действия и настроить их для активации создания предупреждений в службе полей Dynamics. Этот сценарий выполняется с помощью решения Microsoft Flow, которое будет настроено непосредственно в IoT Central для автоматизации рабочих процессов в приложениях и службах. Кроме того, на основе действий службы в Field Service данные можно отправить обратно в Azure IoT Central. 
+Например, в подключенном решении для утилизации отходов можно оптимизировать отправку грузовиков для уборки мусора. Оптимизация может быть выполнена на основе данных датчиков IoT из подключенных ячеек отхода. В [IOT Central подключенном приложении управления отходами](./tutorial-connected-waste-management.md) можно настроить правила и действия и настроить их для активации создания предупреждений в службе полей Dynamics. Этот сценарий выполняется с помощью Power автоматизиру, который будет настроен непосредственно в IoT Central для автоматизации рабочих процессов в приложениях и службах. Кроме того, на основе действий службы в Field Service данные можно отправить обратно в Azure IoT Central. 
 
 ## <a name="how-to-connect-your-azure-iot-central-application-with-dynamics-365-field-services"></a>Подключение приложения IoT Central Azure к службам Dynamics 365 Field Service 
 
@@ -32,7 +32,7 @@ ms.locfileid: "92127222"
 * Панель мониторинга устройств IoT Central Azure можно обновить с помощью соответствующей службы и сведений о расписании.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [шаблонах IoT Central для государственных организаций](./overview-iot-central-government.md).
 * Дополнительные сведения об [IoT Central](../core/overview-iot-central.md)
 * Дополнительные сведения о службах [Dynamics 365 Field Service](/dynamics365/field-service/cfs-iot-overview)

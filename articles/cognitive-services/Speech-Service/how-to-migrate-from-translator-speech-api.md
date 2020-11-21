@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: aahi
-ms.openlocfilehash: d6b1085d51d7345b233087986127cbc97c0597e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2fb03721baa80e77a5fd387600a272e6b1cfc7d3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362067"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013636"
 ---
 # <a name="migrate-from-the-translator-speech-api-to-the-speech-service"></a>Миграция из API перевода речи в службу речи
 
@@ -26,7 +26,7 @@ ms.locfileid: "91362067"
 
 ## <a name="comparison-of-features"></a>Сравнение функций
 
-| Компонент                                           | API Перевода речи                                  | Служба "Речь" | Подробнее                                                                                                                                                                                                                                                                            |
+| Компонент                                           | API Перевода речи                                  | Служба "Речь" | Сведения                                                                                                                                                                                                                                                                            |
 |---------------------------------------------------|-----------------------------------------------------------------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Преобразование в текст                               | :heavy_check_mark:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
 | Преобразование в речь                             | :heavy_check_mark:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
@@ -37,7 +37,7 @@ ms.locfileid: "91362067"
 | Перевод на несколько языков в одном запросе | :heavy_minus_sign:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
 | Доступные пакеты SDK                                    | :heavy_minus_sign:                                              | :heavy_check_mark:                 | Доступные пакеты SDK см. в [документации по службе распознавания речи](index.yml) .                                                                                                                                                    |
 | Подключение по протоколу WebSocket                            | :heavy_check_mark:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
-| API языков                                     | :heavy_check_mark:                                              | :heavy_minus_sign:                 | Служба распознавания речи поддерживает один и тот же диапазон языков, описанный в статье [Справочник по языкам переводчиков](../translator-speech/languages-reference.md) . |
+| API языков                                     | :heavy_check_mark:                                              | :heavy_minus_sign:                 | Служба распознавания речи поддерживает один и тот же диапазон языков, описанный в статье [Справочник по языкам переводчиков]() . |
 | Фильтр и пометка ненормативной лексики                       | :heavy_minus_sign:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
 | Входные данные в формате PCM / WAV                                 | :heavy_check_mark:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
 | Входные данные в виде файлов других типов                         | :heavy_minus_sign:                                              | :heavy_minus_sign:                 |                                                                                                                                                                                                                                                                                    |
@@ -59,12 +59,12 @@ ms.locfileid: "91362067"
 
 * В отличие от API перевода речи, служба распознавания речи может выполнять переводы на нескольких языках в одном запросе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Бесплатная пробная служба для речи](overview.md#try-the-speech-service-for-free)
-* [Краткое руководство. Распознавание речи в приложении UWP с помощью пакета SDK для службы "Речь"](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=uwp)
+* [Краткое руководство. Распознавание речи в приложении UWP с помощью пакета SDK для службы "Речь"](./get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=uwp)
 
 ## <a name="see-also"></a>См. также
 
 * [Что такое служба распознавания речи](overview.md)
-* [Документация по речевой службе и речевому пакету SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-qsg)
+* [Документация по речевой службе и речевому пакету SDK](./speech-devices-sdk-quickstart.md?pivots=platform-android)

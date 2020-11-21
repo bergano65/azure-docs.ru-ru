@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 1a32e485dfc9cd465f6dd6d50abdb166737dc3aa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 73eb1225ffc5fd01f9a27ca99ad2b059d45a36cf
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87387988"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015296"
 ---
 # <a name="device-roobo-smart-audio-dev-kit"></a>Устройство: Рубо Smart Audio Dev Kit
 
@@ -67,10 +67,10 @@ ms.locfileid: "87387988"
 
 Дополнительные сведения о разработке см. в разделе [Рубо Development Guide](http://dwn.roo.bo/server_upload/ddk/ROOBO%20Dev%20Kit-User%20Guide.pdf).
 
-## <a name="audio"></a>звук;
+## <a name="audio"></a>Аудио
 
 Рубо предоставляет средство, записывающее все аудио в флэш-память. Это может помочь в устранении проблем с аудио. Для каждой конфигурации набора разработки предусмотрена отдельная версия инструмента. На  [сайте Рубо](http://ddk.roobo.com/)выберите свое устройство, а затем щелкните ссылку **средства Рубо** в нижней части страницы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Запуск примера приложения Android](speech-devices-sdk-android-quickstart.md)
+* [Запуск примера приложения Android](./speech-devices-sdk-quickstart.md?pivots=platform-android%253fpivots%253dplatform-android)

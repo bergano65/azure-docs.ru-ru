@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 31219fda04095d48b55165f59c27f3dee85485a9
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8c6d26de62364b6aca671d1e4283a01c1b78c397
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843644"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014838"
 ---
 # <a name="tenant-and-host-pool-creation-in-windows-virtual-desktop-classic"></a>Создание пула клиентов и узлов в виртуальном рабочем столе Windows (классическая модель)
 
@@ -49,7 +49,7 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 
 **Причина:** Не предоставлено согласие на виртуальный рабочий стол Windows в экземпляре Azure Active Directory.
 
-**Исправление:** [Следуйте этому руководству](https://docs.microsoft.com/azure/virtual-desktop/virtual-desktop-fall-2019/tenant-setup-azure-active-directory#grant-permissions-to-windows-virtual-desktop) , чтобы предоставить согласие.
+**Исправление:** [Следуйте этому руководству](./tenant-setup-azure-active-directory.md#grant-permissions-to-windows-virtual-desktop) , чтобы предоставить согласие.
 
 ### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка. Пользователь не имеет прав для отправки запроса к службе управления.
 
@@ -140,9 +140,9 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 
 Выполните эти инструкции, чтобы устранить неудачные развертывания шаблонов Azure Resource Manager и PowerShell DSC.
 
-1. Просмотрите ошибки в развертывании, используя [Просмотр операций развертывания с Azure Resource Manager](../../azure-resource-manager/resource-manager-deployment-operations.md).
-2. Если в развертывании нет ошибок, просмотрите ошибки в журнале действий, используя [Просмотр журналов действий для аудита действий с ресурсами](../../azure-resource-manager/resource-group-audit.md).
-3. После определения ошибки используйте сообщение об ошибке и ресурсы в статье [Устранение распространенных ошибок развертывания Azure с Azure Resource Manager](../../azure-resource-manager/resource-manager-common-deployment-errors.md) для решения проблемы.
+1. Просмотрите ошибки в развертывании, используя [Просмотр операций развертывания с Azure Resource Manager](../../azure-resource-manager/templates/deployment-history.md).
+2. Если в развертывании нет ошибок, просмотрите ошибки в журнале действий, используя [Просмотр журналов действий для аудита действий с ресурсами](../../azure-resource-manager/management/view-activity-logs.md).
+3. После определения ошибки используйте сообщение об ошибке и ресурсы в статье [Устранение распространенных ошибок развертывания Azure с Azure Resource Manager](../../azure-resource-manager/templates/common-deployment-errors.md) для решения проблемы.
 4. Удалите все ресурсы, созданные во время предыдущего развертывания, и повторите попытку развертывания шаблона.
 
 ### <a name="error-your-deployment-failedhostnamejoindomain"></a>Ошибка: сбой развертывания... \<hostname> /жоиндомаин

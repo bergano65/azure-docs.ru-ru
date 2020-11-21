@@ -12,12 +12,12 @@ ms.date: 09/01/2020
 ms.author: erhopf
 ms.custom: devx-track-csharp, cog-serv-seo-aug-2020
 keywords: перевод речи
-ms.openlocfilehash: e54659b0d4504def272d3de40d5e953d98404a8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36c2943d7cd5ce2c5c7c4a8501dc0033aa8c9cbc
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91630076"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015211"
 ---
 # <a name="what-is-speech-translation"></a>Что такое перевод речи?
 
@@ -36,7 +36,7 @@ ms.locfileid: "91630076"
 * Поддержка перевода на несколько целевых языков.
 * Промежуточные результаты распознавания и перевода.
 
-## <a name="get-started"></a>Начало работы 
+## <a name="get-started"></a>Приступая к работе 
 
 Чтобы начать работу с переводом речи, ознакомьтесь с [кратким](get-started-speech-translation.md) руководством. Служба перевода речи доступна через [речевой пакет SDK](speech-sdk.md) и [РЕЧЕВОЙ интерфейс командной строки](spx-overview.md).
 
@@ -48,13 +48,13 @@ ms.locfileid: "91630076"
 
 ## <a name="migration-guides"></a>Руководства по переносу
 
-Если приложения, средства или продукты используют [API перевода речи](https://docs.microsoft.com/azure/cognitive-services/translator-speech/overview), мы создали руководства, которые помогут вам перейти на службу речи.
+Если приложения, средства или продукты используют [API перевода речи](./how-to-migrate-from-translator-speech-api.md), мы создали руководства, которые помогут вам перейти на службу речи.
 
 * [Миграция из API перевода речи в службу речи](how-to-migrate-from-translator-speech-api.md)
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
+* [пакет SDK для службы "Речь"](./speech-sdk.md);
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
 * [REST API: Преобразование речи в текст](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)

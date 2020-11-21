@@ -9,12 +9,12 @@ ms.date: 10/16/2020
 ms.author: euang
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: fbcc7ffbde49acfd9afc180418d618060eb923c1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 6f777b605c5050b7fa4b3b9e3671f3638ad67372
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313541"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016264"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Управление библиотеками для Apache Spark в Azure синапсе Analytics
 
@@ -92,9 +92,9 @@ alabaster==0.7.10
 Чтобы проверить, установлены ли правильные версии правильных библиотек, выполните приведенный ниже код.
 
 ```python
-import pip #needed to use the pip functions
-for i in pip.get_installed_distributions(local_only=True):
-    print(i)
+import pkg_resources
+for d in pkg_resources.working_set:
+     print(d)
 ```
 ### <a name="update-python-packages"></a>Обновление пакетов Python
 Пакеты можно добавлять или изменять в любое время между сеансами. При передаче нового файла конфигурации пакета будут перезаписаны существующие пакеты и версии.  
@@ -112,7 +112,7 @@ for i in pip.get_installed_distributions(local_only=True):
    
 
 > [!IMPORTANT]
-> Выбрав параметр для **принудительного создания новых параметров** , вы завершите все текущие сеансы для выбранного пула Spark. После завершения сеансов необходимо будет дождаться перезапуска пула. 
+> Выбрав параметр для **принудительного создания новых параметров**, вы завершите все текущие сеансы для выбранного пула Spark. После завершения сеансов необходимо будет дождаться перезапуска пула. 
 >
 > Если этот параметр не установлен, необходимо дождаться завершения текущего сеанса Spark или завершить его вручную. После завершения сеанса необходимо разрешить перезапуск пула. 
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 10/22/2020
 ms.author: bwren
-ms.openlocfilehash: 35ed275419cc4319e7edfed608340853c986a927
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: d00ffb1cb9b9fd6231322d4ef5bfebfbe242eac7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515631"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014243"
 ---
 # <a name="azure-monitor-logs-overview"></a>Обзор журналов Azure Monitor
 Журналы Azure Monitor — это функция Azure Monitor, которая собирает и упорядочивает данные журналов и производительности из [отслеживаемых ресурсов](../monitor-reference.md). Данные из различных источников, таких как [журналы платформы](platform-logs-overview.md) из служб Azure, журналов и данных о производительности от [агентов виртуальных машин](agents-overview.md), а также данные об использовании и производительности [приложений](../app/app-insights-overview.md) , можно консолидировать в одну рабочую область, чтобы их можно было проанализировать вместе с помощью сложного языка запросов, который способен быстро анализировать миллионы записей. Вы можете выполнить простой запрос, который просто извлекает конкретный набор записей или выполняет сложный анализ данных для обнаружения критически важных шаблонов в данных мониторинга. Работа с запросами журналов и их результатами в интерактивном режиме с помощью Log Analytics, использование их в правилах оповещений для того, чтобы BR заранее уведомлять о проблемах или визуализировать их результаты в книге или панели мониторинга.
@@ -35,7 +35,7 @@ ms.locfileid: "94515631"
 ![Обзор журналов](media/data-platform-logs/logs-overview.png)
 
 
-## <a name="data-collection"></a>Сбор данных
+## <a name="data-collection"></a>сбор данных
 После создания Log Analytics рабочей области необходимо настроить различные источники для отправки своих данных. Данные не собираются автоматически. Эта конфигурация будет отличаться в зависимости от источника данных. Например, [Создайте параметры диагностики](diagnostic-settings.md) для отправки журналов ресурсов из ресурсов Azure в рабочую область. [Включение Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md) для получения данных с виртуальных машин. Настройте [Источники данных в рабочей области](data-sources.md) , чтобы получать дополнительные события и данные о производительности.
 
 - Полный список источников данных, которые можно настроить для отправки данных в журналы Azure Monitor, см. в разделе [что отслеживается Azure Monitor?](../monitor-reference.md) .
@@ -75,8 +75,8 @@ ms.locfileid: "94515631"
 ## <a name="log-analytics"></a>Log Analytics
 Используйте Log Analytics, который является средством в портал Azure, для изменения и запуска запросов журнала и интерактивного анализа результатов. Затем можно использовать созданные запросы для поддержки других функций в Azure Monitor таких как оповещения и книги запросов журнала. Доступ к Log Analytics из параметра **журналы** в меню Azure Monitor или из большинства других служб в портал Azure.
 
-- Описание Log Analytics см. [в разделе обзор log Analytics в Azure Monitor](/log-query/log-analytics-overview.md) . 
-- Дополнительные сведения об использовании Log Analyticsных функций для создания простого запроса к журналу и анализа его результатов см. в [log Analytics руководстве](/log-query/log-analytics-tutorial.md) .
+- Описание Log Analytics см. [в разделе обзор log Analytics в Azure Monitor](/azure/azure-monitor/log-query/log-analytics-overview) . 
+- Дополнительные сведения об использовании Log Analyticsных функций для создания простого запроса к журналу и анализа его результатов см. в [log Analytics руководстве](/azure/azure-monitor/log-query/log-analytics-tutorial) .
 
 
 

@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vamahtan
 ms.author: vamahtan
-ms.date: 11/17/2020
-ms.openlocfilehash: 730178d974ba95db968332ac669f701486b513bd
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.date: 11/20/2020
+ms.openlocfilehash: 9d6970331024ea0cd08e890cc62507d9eb230678
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94738532"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016339"
 ---
 # <a name="co-sell-partner-engagement"></a>Участие партнеров в совместных продажах
 
@@ -85,6 +85,13 @@ ms.locfileid: "94738532"
         :::image type="content" source="media/co-sell/co-sell-request-review.png" alt-text="На этом рисунке показан раскрывающийся список ЦЕД для запроса на проверку совместной продажи.":::
 
     ЦЕД будет обращаться к вам для завершения процесса.
+
+## <a name="see-your-offers-co-sell-status"></a>Просмотр состояния сопутствующих продаж вашего предложения
+
+Для предложений с [возможностью совместной продажи в центре партнеров](./partner-center-portal/commercial-marketplace-co-sell.md)можно просмотреть текущее состояние совместной продажи вашего предложения на странице обзор предложения:
+
+ :::image type="content" source="media/co-sell/co-sell-status.png" alt-text="На этом рисунке показано текущее состояние совместных продаж предложений.":::
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

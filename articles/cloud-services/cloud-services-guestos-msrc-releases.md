@@ -10,14 +10,14 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.author: yohaddad
-ms.openlocfilehash: 5a5e448660583204d424358e571c4bfb74890e8d
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: e84342bff0d2bbc3b034afc1b3c5e8a7dc4a9eb1
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94737835"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015533"
 ---
 # <a name="azure-guest-os"></a>Гостевая ОС Azure
 В следующей таблице приведены обновления Microsoft Security Response Center (MSRC) для гостевой ОС Azure. Выполните поиск по этой статье, чтобы определить, применяется ли какое-либо конкретное обновление к используемой гостевой ОС. Обновления всегда переносятся для того [семейства][family-explain], в котором они были введены.
@@ -29,10 +29,10 @@ ms.locfileid: "94737835"
 
 | Категория продуктов | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
-|  Rel 20-11 |  [4586793]  |  Последнее накопительное обновление | 6,25 | 10 ноября 2020 г. |
+|  Rel 20-11 OOB |  [4594442]  |  Последнее накопительное обновление | 6,25 | 17 ноября, 2020 |
+|  Rel 20-11 OOB |  [4594441]  |  Последнее накопительное обновление | 5,49 | 19 ноября 2020 г. |
 |  Rel 20-11 |  [4580325]  |  Обновление флэш-памяти | 3,91, 4,84, 5,49, 6,25 | 13 октября, 2020 |
 |  Rel 20-11 |  [4586768]  |  Накопительное обновление IE | 2,104, 3,91, 4,84 | 10 ноября 2020 г. |
-|  Rel 20-11 |  [4586830]  |  Последнее накопительное обновление | 5,49 | 10 ноября 2020 г. |
 |  Rel 20-11 |  [4578952]  |  Сводный показатель безопасности .NET Framework 3,5 | 2,104 | 10 ноября 2020 г. |
 |  Rel 20-11 |  [4578955]  |  Сводный показатель безопасности .NET Framework 4.5.2 | 2,104 | 10 ноября 2020 г. |
 |  Rel 20-11 |  [4578953]  |  Сводный показатель безопасности .NET Framework 3,5 | 4,84 | 10 ноября 2020 г. |
@@ -52,10 +52,10 @@ ms.locfileid: "94737835"
 |  Rel 20-11 |  [4494175]  |  Поступил | 5,49 | Сен 1, 2020 |
 |  Rel 20-11 |  [4494174]  |  Поступил | 6,25 | Сен 3, 2020 |
 
-[4586793]: https://support.microsoft.com/kb/4586793
+[4594442]: https://support.microsoft.com/kb/4594442
+[4594441]: https://support.microsoft.com/kb/4594441
 [4580325]: https://support.microsoft.com/kb/4580325
 [4586768]: https://support.microsoft.com/kb/4586768
-[4586830]: https://support.microsoft.com/kb/4586830
 [4578952]: https://support.microsoft.com/kb/4578952
 [4578955]: https://support.microsoft.com/kb/4578955
 [4578953]: https://support.microsoft.com/kb/4578953

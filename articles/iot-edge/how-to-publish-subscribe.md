@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: ef92895374f07c79f8ba8d626a0aab3d89733f40
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 1ace40098e1d53c6199accea755ffb6969781663
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629654"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015669"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Публикация и подписка с Azure IoT Edge
 
@@ -31,7 +31,7 @@ ms.locfileid: "94629654"
 - **Центр Интернета вещей** с номером SKU: F1, S1, S2 или S3.
 - Наличие **IOT Edge устройства с версией 1,2 или более поздней**. Так как IoT Edge MQTT Broker в настоящее время находится в общедоступной предварительной версии, задайте для следующих переменных среды значение true в контейнере edgeHub, чтобы включить брокер MQTT:
 
-   | name | Значение |
+   | Имя | Значение |
    | - | - |
    | `experimentalFeatures__enabled` | `true` |
    | `experimentalFeatures__mqttBrokerEnabled` | `true` |
@@ -209,7 +209,7 @@ ms.locfileid: "94629654"
 
 ## <a name="publish-and-subscribe-on-user-defined-topics"></a>Публикация и подписка на пользовательские разделы
 
-В этой статье вы будете использовать один клиент с именем **sub_client** , который подписывается на раздел, и другой клиент с именем **pub_client** , который публикуется в разделе. Мы будем использовать [проверку подлинности с симметричным ключом](how-to-authenticate-downstream-device.md#symmetric-key-authentication) , но это можно сделать с помощью [самоподписанной проверки подлинности x. 509](how-to-authenticate-downstream-device.md#x509-self-signed-authentication) или с использованием [собственной подписанной проверки подлинности x. 509](./how-to-authenticate-downstream-device.md#x509-self-signed-authentication).
+В этой статье вы будете использовать один клиент с именем **sub_client** , который подписывается на раздел, и другой клиент с именем **pub_client** , который публикуется в разделе. Мы будем использовать [проверку подлинности с симметричным ключом](how-to-authenticate-downstream-device.md#symmetric-key-authentication) , но это можно сделать с помощью [самоподписанной аутентификации x. 509](how-to-authenticate-downstream-device.md#x509-self-signed-authentication) или [проверки подлинности, подписанной ЦС x. 509](./how-to-authenticate-downstream-device.md#x509-ca-signed-authentication).
 
 ### <a name="create-publisher-and-subscriber-clients"></a>Создание клиентов издателя и подписчика
 

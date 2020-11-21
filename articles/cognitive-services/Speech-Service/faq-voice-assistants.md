@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: travisw
-ms.openlocfilehash: 8480299c2c889a243150028ac9651f4b62656aec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d399507499a320116ff1c732a1ffc0ad84b5731
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74110339"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015448"
 ---
 # <a name="voice-assistants-frequently-asked-questions"></a>Часто задаваемые вопросы о голосовом помощнике
 
-Если вы не можете найти ответы на вопросы в этом документе, ознакомьтесь с [другими вариантами поддержки](support.md).
+Если вы не можете найти ответы на вопросы в этом документе, ознакомьтесь с [другими вариантами поддержки](../cognitive-services-support-options.md?context=%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext%253fcontext%253d%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext).
 
 ## <a name="general"></a>Общие сведения
 
@@ -35,9 +35,9 @@ ms.locfileid: "74110339"
 
 Ответ **.** Лучший способ начать с создания приложения настраиваемых команд (Предварительная версия) или основной ленты Bot.
 
-- [Создание приложения настраиваемых команд (Предварительная версия)](quickstart-custom-speech-commands-create-new.md)
-- [Создание базовой платформы Bot-Bot](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
-- [Подключение программы-робота к каналу прямого перевода строки](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+- [Создание приложения настраиваемых команд (Предварительная версия)](./quickstart-custom-commands-application.md)
+- [Создание базовой платформы Bot-Bot](/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
+- [Подключение программы-робота к каналу прямого перевода строки](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 
 ## <a name="debugging"></a>Отладка
 
@@ -62,7 +62,7 @@ ms.locfileid: "74110339"
 Ответ **.** Эта ошибка указывает на проблему связи между помощником и службой "помощник по голосовому обслуживанию".
 
 - Для настраиваемых команд (Предварительная версия) убедитесь, что приложение "пользовательские команды" (Предварительная версия) Опубликовано.
-- Для прямого перевода строки убедитесь, что вы [подключились к каналу голосовой речи с прямой линией](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech), [добавили поддержку протокола потоковой передачи](https://aka.ms/botframework/addstreamingprotocolsupport) в программу Bot (с поддержкой поддержки веб-сокетов), а затем убедитесь, что программа Bot отвечает на входящие запросы из канала.
+- Для прямого перевода строки убедитесь, что вы [подключились к каналу голосовой речи с прямой линией](/azure/bot-service/bot-service-channel-connect-directlinespeech), [добавили поддержку протокола потоковой передачи](/azure/bot-service/directline-speech-bot) в программу Bot (с поддержкой поддержки веб-сокетов), а затем убедитесь, что программа Bot отвечает на входящие запросы из канала.
 
 **Вопрос. Этот код по-прежнему не работает и (или) возникает другая ошибка при использовании `DialogServiceConnector` . Что мне делать?**
 

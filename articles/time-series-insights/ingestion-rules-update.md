@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/02/2020
 ms.custom: lyhughes
-ms.openlocfilehash: 320d92ef0ad6d02dbe7c31b883eb7f73472378ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56a1d5aab2f665f9c5bd8f6fa322f35e55483c7b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667815"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016723"
 ---
 # <a name="upcoming-changes-to-json-flattening-and-escaping-rules-for-new-environments"></a>Предстоящие изменения в правилах плоской обработки и экранирования JSON для новых сред
 
@@ -44,17 +44,17 @@ ms.locfileid: "91667815"
 
 Все новые развертывания должны соответствовать новым правилам приема. Например, если ИДЕНТИФИКАТОРом TS является `telemetry_tagId` , необходимо обновить все Azure Resource Manager шаблоны или скрипты автоматического развертывания, чтобы настроить в `telemetry.tagId` качестве идентификатора TS среды. Это изменение также требуется для меток времени источника события во вложенном JSON.
 
-### <a name="if-your-payload-contains-nested-json-or-special-characters-and-you-automate-authoring-time-series-model-variable-expressions"></a>Если полезные данные содержат вложенные знаки JSON или специальные символы и автоматизируют создание выражений переменных [модели временных рядов](.\time-series-insights-update-tsm.md)
+### <a name="if-your-payload-contains-nested-json-or-special-characters-and-you-automate-authoring-time-series-model-variable-expressions"></a>Если полезные данные содержат вложенные знаки JSON или специальные символы и автоматизируют создание выражений переменных [модели временных рядов](./concepts-model-overview.md)
 
-Обновите код клиента, который выполняет [типесбатчпут](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput) в соответствии с новыми правилами приема. Например, необходимо обновить предыдущее [выражение временного ряда](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) `"value": {"tsx": "$event.series_value.Double"}` одним из следующих вариантов:
+Обновите код клиента, который выполняет [типесбатчпут](/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput) в соответствии с новыми правилами приема. Например, необходимо обновить предыдущее [выражение временного ряда](/rest/api/time-series-insights/reference-time-series-expression-syntax) `"value": {"tsx": "$event.series_value.Double"}` одним из следующих вариантов:
 
 * `"value": {"tsx": "$event.series.value.Double"}`
 * `"value": {"tsx": "$event['series']['value'].Double"}`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о [хранилище Gen2 и входных данных службы "аналитика временных рядов Azure](./time-series-insights-update-storage-ingress.md)".
+* Сведения о [хранилище Gen2 и входных данных службы "аналитика временных рядов Azure](./concepts-ingestion-overview.md)".
 
 * Узнайте, как выполнять запросы к данным с помощью [API запросов временных рядов](./concepts-query-overview.md).
 
-* Дополнительные сведения о [новом синтаксисе выражений временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)см. в этой статье.
+* Дополнительные сведения о [новом синтаксисе выражений временных рядов](/rest/api/time-series-insights/reference-time-series-expression-syntax)см. в этой статье.

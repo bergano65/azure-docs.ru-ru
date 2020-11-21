@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 2c46bb2233fe38380dd5ba19804791c7c9f3da91
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 2f33369c013e2ff56b7fb745ddb0fc959793f12a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517348"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016162"
 ---
 # <a name="add-ipv6-to-an-ipv4-application-in-azure-virtual-network---azure-cli"></a>Добавление IPv6 в приложение IPv4 в виртуальной сети Azure Azure CLI
 
 В этой статье показано, как добавить IPv6-адреса в приложение, которое использует общедоступный IP-адрес IPv4 в виртуальной сети Azure для Load Balancer (цен. категория "Стандартный") с помощью Azure CLI. Обновление на месте включает виртуальную сеть и подсеть, Load Balancer (цен. категория "Стандартный") с многоадресными конфигурациями IPv4 и IPV6, виртуальные машины с сетевыми картами, которые имеют конфигурации IPv4 + IPv6, группу безопасности сети и общедоступные IP-адреса.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - В этой статье предполагается, что вы развернули Load Balancer (цен. категория "Стандартный"), как описано в разделе [Краткое руководство по созданию Load Balancer (цен. категория "Стандартный") Azure CLI](../load-balancer/quickstart-load-balancer-standard-public-cli.md).
 
@@ -93,13 +93,13 @@ az network lb rule create \
 az network vnet update \
 --name myVnet  \
 --resource-group MyResourceGroupSLB \
---address-prefixes  "10.0.0.0/16"  "ace:cab:deca::/48"
+--address-prefixes  "10.0.0.0/16"  "2001:db8:deca::/48"
 
 az network vnet subnet update \
 --vnet-name myVnet \
 --name mySubnet \
 --resource-group MyResourceGroupSLB \
---address-prefixes  "10.0.0.0/24"  "ace:cab:deca:deed::/64"  
+--address-prefixes  "10.0.0.0/24"  "2001:db8:deca:deed::/64"  
 ```
 
 ## <a name="add-ipv6-configuration-to-nics"></a>Добавление конфигурации IPv6 в сетевые карты

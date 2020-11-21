@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: 2c415fc92d2d338c568c422b1db2579563527839
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: f07efcc18f3eff7e40232941befb563cd236266b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442061"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013024"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -39,6 +39,10 @@ ms.locfileid: "94442061"
 
     Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
 
+## <a name="limitations"></a>Ограничения
+
+* При создании рабочей области можно либо разрешить этой рабочей области создавать службы Azure, которые требуются автоматически, либо предоставить существующие службы. При предоставлении существующих служб все эти службы должны находиться в той же подписке Azure, что и Рабочая область.
+
 ## <a name="workspace-resource-manager-template"></a>Шаблон диспетчер ресурсов рабочей области
 
 Шаблон Azure Resource Manager, используемый в этом документе, можно найти в каталоге [201-Machine-Learning-Advanced](https://github.com/Azure/azure-quickstart-templates/blob/master/201-machine-learning-advanced/azuredeploy.json) статьи шаблоны быстрого запуска Azure в репозитории GitHub.
@@ -59,7 +63,7 @@ ms.locfileid: "94442061"
 
     Этот шаблон будет использовать выбранное расположение для большинства ресурсов. Исключением является служба Application Insights, которая доступна не во всех тех расположениях, в которых доступны другие службы. Если вы выберете расположение, где эта служба не доступна, ее экземпляр будет создан в регионе "центрально-южная часть США".
 
-* **WorkspaceName** — понятное имя рабочей области машинное обучение Azure.
+* **WorkspaceName**— понятное имя рабочей области машинное обучение Azure.
 
     > [!NOTE]
     > В имени рабочей области не учитывается регистр.
@@ -549,7 +553,7 @@ New-AzResourceGroupDeployment `
    * Регион: Выберите регион Azure, в котором будут создаваться ресурсы.
    * Имя рабочей области: Это имя, которое будет присвоено созданному рабочему пространству Службы машинного обучения Azure. Для имени рабочего пространства допускается длина от 3 до 33 символов. Имя может содержать только буквы, цифры и дефис ("-").
    * Расположение. Выберите расположение, в котором будут созданы ресурсы.
-1. Выберите __Review + create__ (Просмотреть и создать).
+1. Выберите __Проверить и создать__.
 1. На экране " __Проверка и создание__ " примите указанные выше условия и нажмите кнопку __создать__.
 
 Дополнительные сведения см. в разделе [Развертывание ресурсов с помощью настраиваемого шаблона](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).

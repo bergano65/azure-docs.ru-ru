@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/02/2020
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: 7408e3fb279536f61dd2e5cf1858476da57219d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1bd3c5796658663b6111723829cbe620346002c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665822"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016247"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -73,7 +73,7 @@ ms.locfileid: "91665822"
 1. Сохраните политику, нажав кнопку **ОК**.
 
    > [!TIP]
-   > Сведения о дополнительных параметрах доступа к данным см. в разделе, посвященном [предоставлению доступа к данным](./time-series-insights-data-access.md).
+   > Сведения о дополнительных параметрах доступа к данным см. в разделе, посвященном [предоставлению доступа к данным](./concepts-access-policies.md).
 
 ### <a name="client-app-initialization"></a>Инициализация клиентского приложения
 
@@ -90,18 +90,18 @@ ms.locfileid: "91665822"
    1. После этого маркер можно передать в заголовок, `Authorization` когда приложение вызовет API службы "аналитика временных рядов Azure".
 
 > [!IMPORTANT]
-> Если вы используете [библиотеку Azure Active Directory для проверки подлинности (ADAL)](https://docs.microsoft.com/azure/active-directory/azuread-dev/active-directory-authentication-libraries) , см. статью о [миграции на MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration).
+> Если вы используете [библиотеку Azure Active Directory для проверки подлинности (ADAL)](../active-directory/azuread-dev/active-directory-authentication-libraries.md) , см. статью о [миграции на MSAL](../active-directory/develop/msal-net-migration.md).
 
 ## <a name="common-headers-and-parameters"></a>Общие заголовки и параметры
 
-В этом разделе описаны распространенные заголовки HTTP-запросов и параметры, используемые для выполнения запросов к API Gen1 и Gen2 службы "аналитика временных рядов Azure". Особые требования к API подробно описаны в [справочной документации Azure Time Series insights REST API](https://docs.microsoft.com/rest/api/time-series-insights/).
+В этом разделе описаны распространенные заголовки HTTP-запросов и параметры, используемые для выполнения запросов к API Gen1 и Gen2 службы "аналитика временных рядов Azure". Особые требования к API подробно описаны в [справочной документации Azure Time Series insights REST API](/rest/api/time-series-insights/).
 
 > [!TIP]
-> Дополнительные сведения об использовании интерфейсов REST API, а также о HTTP-запросах и обработке HTTP-ответов см. в [справочнике по Azure REST API](https://docs.microsoft.com/rest/api/azure/)
+> Дополнительные сведения об использовании интерфейсов REST API, а также о HTTP-запросах и обработке HTTP-ответов см. в [справочнике по Azure REST API](/rest/api/azure/)
 
 ### <a name="authentication"></a>Аутентификация
 
-Для выполнения запросов с проверкой подлинности к [API-интерфейсам службы "аналитика временных рядов Azure](https://docs.microsoft.com/rest/api/time-series-insights/)" допустимый токен носителя OAuth 2,0 должен быть передан в [заголовок авторизации](/rest/api/apimanagement/2019-12-01/authorizationserver/createorupdate) с помощью произвольного клиента (POST, JavaScript, C#).
+Для выполнения запросов с проверкой подлинности к [API-интерфейсам службы "аналитика временных рядов Azure](/rest/api/time-series-insights/)" допустимый токен носителя OAuth 2,0 должен быть передан в [заголовок авторизации](/rest/api/apimanagement/2019-12-01/authorizationserver/createorupdate) с помощью произвольного клиента (POST, JavaScript, C#).
 
 > [!TIP]
 > Ознакомьтесь с [примером визуализации клиентского пакета SDK](https://tsiclientsample.azurewebsites.net/) для службы "аналитика временных рядов Azure", чтобы узнать, как выполнять аутентификацию с помощью API-интерфейсов службы "аналитика временных рядов Azure" программным способом с помощью [клиентского пакета SDK для JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) и диаграмм и графиков.
@@ -140,7 +140,7 @@ ms.locfileid: "91665822"
 ### <a name="http-parameters"></a>Параметры HTTP
 
 > [!TIP]
-> Дополнительные сведения об обязательных и необязательных запросах см. в [справочной документации](https://docs.microsoft.com/rest/api/time-series-insights/).
+> Дополнительные сведения об обязательных и необязательных запросах см. в [справочной документации](/rest/api/time-series-insights/).
 
 Обязательные параметры строки запроса URL-адреса зависят от версии API.
 
@@ -157,15 +157,15 @@ ms.locfileid: "91665822"
 
 | Необязательный параметр запроса | Описание | Версия |
 | --- |  --- | --- |
-| `timeout=<timeout>` | Время ожидания на стороне сервера для выполнения HTTP-запроса. Применяется только к API [получения событий среды](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability) и [получения агрегатов среды](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-aggregates-api). Значение времени ожидания должно быть в формате длительности ISO 8601 (например, `"PT20S"`) и должно находиться в диапазоне `1-30 s`. Значение по умолчанию: `30 s`. | Поколение 1 |
+| `timeout=<timeout>` | Время ожидания на стороне сервера для выполнения HTTP-запроса. Применяется только к API [получения событий среды](/rest/api/time-series-insights/dataaccess(preview)/query/getavailability) и [получения агрегатов среды](/rest/api/time-series-insights/gen1-query-api#get-environment-aggregates-api). Значение времени ожидания должно быть в формате длительности ISO 8601 (например, `"PT20S"`) и должно находиться в диапазоне `1-30 s`. Значение по умолчанию: `30 s`. | Поколение 1 |
 | `storeType=<storeType>` | Для сред Gen2 с включенным горячим хранилищем запрос можно выполнить либо в, `WarmStore` либо в `ColdStore` . Этот параметр в запросе определяет, в каком хранилище должен выполняться запрос. Если этот параметр не определен, запрос будет выполнен в холодном хранилище. Чтобы запросить теплое хранилище, параметру **storeType** следует присвоить значение `WarmStore`. Если этот параметр не определен, запрос будет выполнен для холодного хранилища. | Поколение 2 |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Пример кода, который вызывает API Gen1 Azure Time Series Insights, считывает [данные Gen1 запросов с помощью C#](./time-series-insights-query-data-csharp.md).
 
 * Пример кода, который вызывает примеры кода API Gen2 для службы "аналитика временных рядов Azure", — чтение [данных запроса Gen2 с помощью C#](./time-series-insights-update-query-data-csharp.md).
 
-* Справочные сведения об API см. в [справочной документации по API запроса](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api).
+* Справочные сведения об API см. в [справочной документации по API запроса](/rest/api/time-series-insights/gen1-query-api).
 
 * Узнайте подробнее о [создании субъекта-службы](../active-directory/develop/howto-create-service-principal-portal.md).
