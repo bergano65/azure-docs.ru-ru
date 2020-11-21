@@ -82,9 +82,9 @@
     - name: Предоставление доступа к данным
       href: concepts-access-policies.md
     - name: Подключение к Центрам событий
-      href: time-series-insights-how-to-add-an-event-source-eventhub.md
+      href: ./how-to-ingest-data-event-hub.md
     - name: Подключение к Центру Интернета вещей
-      href: time-series-insights-how-to-add-an-event-source-iothub.md
+      href: ./how-to-ingest-data-iot-hub.md
     - name: Управление ресурсами с помощью шаблонов
       href: time-series-insights-manage-resources-using-azure-resource-manager-template.md
     - name: Служба "Аналитика временных рядов" 2-го поколения
@@ -138,45 +138,45 @@
     - name: Аналитика временных рядов
       items:
         - name: Общие сведения об интерфейсах REST API
-          href: 'https://docs.microsoft.com/rest/api/time-series-insights/'
+          href: /rest/api/time-series-insights/
         - name: Доступ к данным 2-го поколения
           items:
             - name: Обзор
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/reference-data-access-overview'
+              href: /rest/api/time-series-insights/reference-data-access-overview
             - name: Интерфейсы API для среды
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/reference-environments-apis'
+              href: /rest/api/time-series-insights/reference-environments-apis
             - name: Интерфейсы API для модели
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis'
+              href: /rest/api/time-series-insights/reference-model-apis
             - name: Интерфейсы API для запросов
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/reference-query-apis'
+              href: /rest/api/time-series-insights/reference-query-apis
             - name: Выражение временных рядов (TSX)
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax'
+              href: /rest/api/time-series-insights/reference-time-series-expression-syntax
             - name: Ограничения API
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/reference-api-limits'
+              href: /rest/api/time-series-insights/reference-api-limits
         - name: Доступ к данным 1-го поколения
           items:
             - name: Обзор
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/gen1'
+              href: /rest/api/time-series-insights/gen1
             - name: Запрос
               items:
                 - name: Запрос
-                  href: 'https://docs.microsoft.com/rest/api/time-series-insights/gen1-query'
+                  href: /rest/api/time-series-insights/gen1-query
                 - name: API
-                  href: 'https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api'
+                  href: /rest/api/time-series-insights/gen1-query-api
                 - name: Синтаксис
-                  href: 'https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-syntax'
+                  href: /rest/api/time-series-insights/gen1-query-syntax
             - name: API эталонных данных
-              href: 'https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api'
+              href: /rest/api/time-series-insights/gen1-reference-data-api
     - name: Клиентский пакет SDK
       items:
         - name: Пакет SDK для клиента JavaScript
           href: 'https://github.com/microsoft/tsiclient/blob/master/docs/API.md'
     - name: Azure CLI
-      href: 'https://docs.microsoft.com/cli/azure/ext/timeseriesinsights/timeseriesinsights?view=azure-cli-latest'
+      href: /cli/azure/ext/timeseriesinsights/timeseriesinsights?view=azure-cli-latest
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
-      href: 'https://docs.microsoft.com/azure/iot-fundamentals/iot-support-help'
+      href: ../iot-fundamentals/iot-support-help.md
     - name: Запросы данных клиентов
       href: time-series-insights-customer-data-requests.md
     - name: Ресурсы для разработчиков
@@ -188,7 +188,7 @@
         - name: Размещенные примеры клиентов
           href: 'https://tsiclientsample.azurewebsites.net/'
         - name: Примеры кода для Azure IoT
-          href: 'https://docs.microsoft.com/samples/browse/?term=iot'
+          href: /samples/browse/?term=iot
     - name: Цены и доступность
       items:
         - name: Цены
@@ -202,7 +202,7 @@
         - name: Варианты поддержки Azure
           href: 'https://azure.microsoft.com/support/options/'
         - name: Параметры справки и поддержки Azure IoT
-          href: 'https://docs.microsoft.com/azure/iot-fundamentals/iot-support-help'
+          href: ../iot-fundamentals/iot-support-help.md
         - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-timeseries-insights'
         - name: Форум MSDN
