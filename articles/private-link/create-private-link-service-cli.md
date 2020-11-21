@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 87fe02aed19ae7e5858715748a2b4c4da87a07b3
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e0b9ac3f16a170bb14925b555e8894cb10080488
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658576"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026188"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Создание службы частной связи с помощью Azure CLI
 В этой статье показано, как создать службу частной связи в Azure с помощью Azure CLI.
@@ -79,7 +79,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 ```
 ### <a name="create-backend-servers"></a>Создание внутренних серверов
 
-В этом примере мы не рассмотрим создание виртуальной машины. Вы можете выполнить действия, описанные в разделе [Краткое руководство. создание внутренней подсистемы балансировки нагрузки для балансировки нагрузки виртуальных машин с помощью Azure CLI](/load-balancer/quickstart-load-balancer-standard-internal-cli#create-backend-servers) , чтобы создать две виртуальные машины, которые будут использоваться в качестве внутренних серверов для балансировщика нагрузки. 
+В этом примере мы не рассмотрим создание виртуальной машины. Вы можете выполнить действия, описанные в разделе [Краткое руководство. создание внутренней подсистемы балансировки нагрузки для балансировки нагрузки виртуальных машин с помощью Azure CLI](/azure/load-balancer/quickstart-load-balancer-standard-internal-cli) , чтобы создать две виртуальные машины, которые будут использоваться в качестве внутренних серверов для балансировщика нагрузки. 
 
 
 ### <a name="disable-private-link-service-network-policies-on-subnet"></a>Отключить сетевые политики службы частной связи в подсети 

@@ -9,18 +9,18 @@ ms.date: 07/09/2019
 ms.topic: how-to
 manager: peterpr
 ms.custom: device-developer
-ms.openlocfilehash: fb6029a91714ed0229876bbaf6bb0790565be29c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: fc8ea41e804344735cfa2400d5d763622d8811c8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427834"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026256"
 ---
 # <a name="build-the-iot-central-device-bridge-to-connect-other-iot-clouds-to-iot-central"></a>Создание моста устройства IoT Central для подключения других облаков Интернета вещей к IoT Central
 
 *Эта статья предназначена для администраторов.*
 
-Мост устройства IoT Central — это решение с открытым кодом, которое подключает облака Sigfox, Particle, The Things Network и другие к вашему приложению IoT Central. Независимо от того, используете ли вы устройства отслеживания ресурсов, подключенные к сети с низким уровнем питания Сигфокс или используя устройства мониторинга качества воздуха в облаке устройств, или с помощью почвы влажность Monitoring Devices на ТТН, вы можете напрямую использовать возможности IoT Central с помощью моста устройств IoT Central. Мост устройства подключает другие облака Интернета вещей к IoT Central, переадресовывая данные, отправляемые устройствами другим облакам через приложение IoT Central. В своем приложении IoT Central вы можете создавать правила и запускать аналитику по этим данным, создавать рабочие процессы в приложениях Microsoft Flow и Azure Logic, экспортировать эти данные и т. д. Получение [моста устройств IOT Central](https://aka.ms/iotcentralgithubdevicebridge) из GitHub
+Мост устройства IoT Central — это решение с открытым кодом, которое подключает облака Sigfox, Particle, The Things Network и другие к вашему приложению IoT Central. Независимо от того, используете ли вы устройства отслеживания ресурсов, подключенные к сети с низким уровнем питания Сигфокс или используя устройства мониторинга качества воздуха в облаке устройств, или с помощью почвы влажность Monitoring Devices на ТТН, вы можете напрямую использовать возможности IoT Central с помощью моста устройств IoT Central. Мост устройства подключает другие облака Интернета вещей к IoT Central, переадресовывая данные, отправляемые устройствами другим облакам через приложение IoT Central. В приложении IoT Central можно создавать правила и выполнять аналитику для этих данных, создавать рабочие процессы в Power Analytics и Azure Logic Apps, экспортировать эти данные и многое другое. Получение [моста устройств IOT Central](https://aka.ms/iotcentralgithubdevicebridge) из GitHub
 
 ## <a name="what-is-it-and-how-does-it-work"></a>Общие сведения
 Мост устройства IoT Central — это решение с открытым кодом в GitHub. Она готова перейти на кнопку "развернуть в Azure", которая развертывает пользовательский шаблон Azure Resource Manager с несколькими ресурсами Azure в подписке Azure. К ресурсам относятся следующие компоненты:

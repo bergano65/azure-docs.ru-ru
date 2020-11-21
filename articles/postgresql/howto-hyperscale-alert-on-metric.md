@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 3/16/2020
-ms.openlocfilehash: 7e455565a0cd5e1fc96a6fe7d9e0502da3214fcf
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 73705434aef3ee438c02fbfd6502d30e7620b695
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909919"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026460"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---hyperscale-citus"></a>Использование портал Azure для настройки оповещений в метриках для базы данных Azure для PostgreSQL-Scale (Цитус)
 
@@ -33,21 +33,21 @@ ms.locfileid: "92909919"
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure
 1. На [портале Azure](https://portal.azure.com/) выберите сервер базы данных Azure для PostgreSQL, который нужно отследить.
 
-2. В разделе боковой панели **Мониторинг** выберите **Оповещения** , как показано ниже:
+2. В разделе боковой панели **Мониторинг** выберите **Оповещения**, как показано ниже:
 
    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/2-alert-rules.png" alt-text="Выбор правил оповещений":::
 
 3. Выберите **новое правило генерации оповещений** (+ значок).
 
-4. Откроется страница **Создание правила** , как показано ниже. Заполните необходимые сведения:
+4. Откроется страница **Создание правила**, как показано ниже. Заполните необходимые сведения:
 
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/4-add-rule-form.png" alt-text="Выбор правил оповещений":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/4-add-rule-form.png" alt-text="Форма добавления оповещения для метрики":::
 
-5. В разделе **условие** выберите **Добавить** .
+5. В разделе **условие** выберите **Добавить**.
 
 6. Выберите из списка сигналов метрику, для которой необходимо создать оповещение. В этом примере выберите Storage percent (Процент хранилища).
    
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/6-configure-signal-logic.png" alt-text="Выбор правил оповещений":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/6-configure-signal-logic.png" alt-text="На снимке экрана показана страница Настройка логики сигнала, на которой можно просмотреть несколько сигналов.":::
 
 7. Настройте логику оповещения.
 
@@ -56,29 +56,29 @@ ms.locfileid: "92909919"
     * Степень **детализации статистической обработки** , в течение которого правило метрики должно быть удовлетворено перед срабатыванием предупреждения (например, "За последние 30 минут")
     * и **частоту оценки** (например, "1 минута")
    
-   По завершении нажмите кнопку **Готово** .
+   По завершении нажмите кнопку **Готово**.
 
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/7-set-threshold-time.png" alt-text="Выбор правил оповещений":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/7-set-threshold-time.png" alt-text="На снимке экрана показана панель, на которой можно настроить логику оповещения.":::
 
-8. В разделе **Группы действий** выберите **Создать** , чтобы создать группу для получения уведомлений об оповещении.
+8. В разделе **Группы действий** выберите **Создать**, чтобы создать группу для получения уведомлений об оповещении.
 
 9. Заполните форму "Добавить группу действий", указав имя, короткое имя, подписку и группу ресурсов.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/9-add-action-group.png" alt-text="Выбор правил оповещений":::
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/9-add-action-group.png" alt-text="На снимке экрана показана форма добавления группы действий, в которой можно ввести описанные значения.":::
 
-10. Настройте тип действия **Электронная почта, SMS, push-уведомление, голосовой вызов** .
+10. Настройте тип действия **Электронная почта, SMS, push-уведомление, голосовой вызов**.
     
     Выберите "роль электронной почты Azure Resource Manager", чтобы отправлять уведомления владельцам, участникам и читателям подписки.
    
-    По завершении нажмите кнопку **ОК** .
+    По завершении нажмите кнопку **ОК**.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/10-action-group-type.png" alt-text="Выбор правил оповещений":::
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/10-action-group-type.png" alt-text="На снимке экрана показана панель адреса электронной почты/S/Push/Voice.":::
 
 11. Укажите имя правила генерации оповещений, описание и уровень серьезности.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/11-name-description-severity.png" alt-text="Выбор правил оповещений"::: 
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/11-name-description-severity.png" alt-text="На снимке экрана показана панель сведений о предупреждении."::: 
 
-12. Выберите **Создать правило генерации оповещений** , чтобы создать оповещение.
+12. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение.
 
     Через несколько минут оповещение включится и будет активироваться, как было описано выше.
 
@@ -101,8 +101,8 @@ ms.locfileid: "92909919"
 Так как диск приближается к максимальному объему пространства, попробуйте использовать эти методы, чтобы получить больше свободного места:
 
 * Проверьте политику хранения данных. Если возможно, переместите старые данные в холодное хранилище.
-* Рассмотрите возможность [добавления узлов](howto-hyperscale-scaling.md#add-worker-nodes) в группу серверов и перераспределения сегментов. При перераспределении данные распределяются между несколькими компьютерами.
-* Рекомендуется [увеличивать емкость](howto-hyperscale-scaling.md#increase-or-decrease-vcores-on-nodes) рабочих узлов. У каждого работника может быть до 2 Тиб хранилища. Однако следует попытаться добавить узлы перед изменением размеров узлов, так как Добавление узлов выполняется быстрее.
+* Рассмотрите возможность [добавления узлов](howto-hyperscale-scale-grow.md#add-worker-nodes) в группу серверов и перераспределения сегментов. При перераспределении данные распределяются между несколькими компьютерами.
+* Рекомендуется [увеличивать емкость](howto-hyperscale-scale-grow.md#increase-or-decrease-vcores-on-nodes) рабочих узлов. У каждого работника может быть до 2 Тиб хранилища. Однако следует попытаться добавить узлы перед изменением размеров узлов, так как Добавление узлов выполняется быстрее.
 
 ### <a name="cpu-usage"></a>Использование ЦП
 

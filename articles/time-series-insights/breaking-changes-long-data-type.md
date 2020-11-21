@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: dpalled
-ms.openlocfilehash: 2cf86ed4fd4305a37d27bf7a88e8493821ef085c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3460cd8a88733ede041f6c0635ba40797675ed03
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629103"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025333"
 ---
 # <a name="adding-support-for-long-data-type-in-azure-time-series-insights-gen2"></a>Добавление поддержки для типа данных Long в Azure Time Series Insights Gen2
 
@@ -42,11 +42,11 @@ ms.locfileid: "91629103"
 - Для всех числовых тегов можно использовать более приоритетные изменения.
 - Можно временно направить подмножество событий в хранилище, чтобы лучше понять и исследовать схему.
 
-Чтобы сохранить события, включите [запись событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview) для концентраторов событий Azure или [отправьте](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c#azure-storage) их из центра Интернета вещей в хранилище BLOB-объектов Azure.
+Чтобы сохранить события, включите [запись событий](../event-hubs/event-hubs-capture-overview.md) для концентраторов событий Azure или [отправьте](../iot-hub/iot-hub-devguide-messages-d2c.md#azure-storage-as-a-routing-endpoint) их из центра Интернета вещей в хранилище BLOB-объектов Azure.
 
-Данные также можно наблюдать в [обозревателе концентратора событий](https://marketplace.visualstudio.com/items?itemName=Summer.azure-event-hub-explorer)или с помощью [узла обработчика событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-send#receive-events).
+Данные также можно наблюдать в [обозревателе концентратора событий](https://marketplace.visualstudio.com/items?itemName=Summer.azure-event-hub-explorer)или с помощью [узла обработчика событий](../event-hubs/event-hubs-dotnet-standard-getstarted-send.md#receive-events).
 
-Если вы используете центр Интернета вещей, перейдите к разделу [Чтение сообщений, отправляемых с устройства в облако, из встроенной конечной точки,](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-read-builtin) чтобы получить доступ к встроенной конечной точке.
+Если вы используете центр Интернета вещей, перейдите к разделу [Чтение сообщений, отправляемых с устройства в облако, из встроенной конечной точки,](../iot-hub/iot-hub-devguide-messages-read-builtin.md) чтобы получить доступ к встроенной конечной точке.
 
 > [!NOTE]
 > Если вы не вносите Рекомендуемые изменения, вы можете столкнуться с перерывом. Например, затронутые переменные "аналитика временных рядов", доступные через API запросов или обозреватель аналитики временных рядов, будут возвращать **значение NULL** (т. е. не показывать данные в обозревателе).
@@ -66,7 +66,7 @@ ms.locfileid: "91629103"
 
 Целочисленные данные записываются в **propertyValue_long**. Ранее принятые (и будущие) числовые данные в **propertyValue_double** не копируются.
 
-Если необходимо запросить данные в этих двух столбцах для свойства **propertyvalue** , необходимо использовать скалярную функцию **объединения ()** в целевом серверном компьютере. Функция принимает аргументы одного и того же **типа данных** и возвращает первое значение, отличное от NULL, в списке аргументов. Дополнительные сведения см. в статье службы " [аналитика временных рядов Azure" Gen2 "Основные понятия доступа к данным](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#other-functions)".
+Если необходимо запросить данные в этих двух столбцах для свойства **propertyvalue** , необходимо использовать скалярную функцию **объединения ()** в целевом серверном компьютере. Функция принимает аргументы одного и того же **типа данных** и возвращает первое значение, отличное от NULL, в списке аргументов. Дополнительные сведения см. в статье службы " [аналитика временных рядов Azure" Gen2 "Основные понятия доступа к данным](/rest/api/time-series-insights/reference-time-series-expression-syntax#other-functions)".
 
 #### <a name="variable-definition-in-tsx---numeric"></a>Определение переменной в ЦЕЛЕВом числе
 
@@ -78,7 +78,7 @@ ms.locfileid: "91629103"
 
 [![На снимке экрана показано диалоговое окно Добавление новой переменной для переменной PropertyValue с пользовательским значением numeric.](media/time-series-insights-long-data-type/var-def.png)](media/time-series-insights-long-data-type/var-def.png#lightbox)
 
-В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
+В качестве пользовательского [выражения временных рядов](/rest/api/time-series-insights/reference-time-series-expression-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
 
 #### <a name="inline-variable-definition-using-tsx-query-apis---numeric"></a>Определение встроенных переменных с помощью API целевого запроса — числовые значения
 
@@ -126,7 +126,7 @@ ms.locfileid: "91629103"
 }
 ```
 
-В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
+В качестве пользовательского [выражения временных рядов](/rest/api/time-series-insights/reference-time-series-expression-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
 
 > [!NOTE]
 > Рекомендуется обновлять эти переменные во всех местах, где они могут использоваться. К таким местам относятся модель временных рядов, сохраненные запросы и Power BI запросы соединителей.
@@ -145,9 +145,9 @@ ms.locfileid: "91629103"
 
 [![На снимке экрана показано диалоговое окно Добавление новой переменной для переменной PropertyValue с пользовательским значением по категориям.](media/time-series-insights-long-data-type/var-def-cat.png)](media/time-series-insights-long-data-type/var-def-cat.png#lightbox)
 
-В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
+В качестве пользовательского [выражения временных рядов](/rest/api/time-series-insights/preview#time-series-expression-and-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
 
-Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип **данных** всех аргументов **объединения ()** должен быть типа **Long** в пользовательском [выражении временных рядов.](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)
+Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип **данных** всех аргументов **объединения ()** должен быть типа **Long** в пользовательском [выражении временных рядов.](/rest/api/time-series-insights/reference-time-series-expression-syntax)
 
 #### <a name="inline-variable-definition-using-tsx-query-apis---categorical"></a>Определение встроенных переменных с помощью API целевого запроса — Категория
 
@@ -227,7 +227,7 @@ ms.locfileid: "91629103"
 }
 ```
 
-Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип **данных** всех аргументов **объединения ()** должен быть типа **Long** в пользовательском [выражении временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
+Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип **данных** всех аргументов **объединения ()** должен быть типа **Long** в пользовательском [выражении временных рядов](/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 > [!NOTE]
 > Рекомендуется обновлять эти переменные во всех местах, где они могут использоваться. К таким местам относятся модель временных рядов, сохраненные запросы и Power BI запросы соединителей.
@@ -240,6 +240,6 @@ ms.locfileid: "91629103"
 
 Если вы являетесь пользователем горячего магазина с большим количеством свойств и считаете, что это изменение приведет к принудительной отправке среды через ограничение имени свойства "горячий магазин 1 000", отправьте запрос в службу поддержки через портал Azure и сообщите об этом взаимодействии.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите полный список [поддерживаемых типов данных](concepts-supported-data-types.md).

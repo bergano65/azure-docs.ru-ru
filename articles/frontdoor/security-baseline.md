@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9e9eca3bb230bbfc969a5a429f664e602ad0d78b
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 6d6a392d25aa96ab9b4dbb7763b37c1021db71aa
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888323"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026290"
 ---
 # <a name="azure-security-baseline-for-azure-front-door"></a>Базовый план безопасности Azure для передней дверцы Azure
 
@@ -202,7 +202,7 @@ ms.locfileid: "94888323"
 
 ## <a name="logging-and-threat-detection"></a>Ведение журналов и обнаружение угроз
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-protection).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
 
 ### <a name="lt-3-enable-logging-for-azure-network-activities"></a>LT-3: Включение ведения журнала для сетевых операций Azure
 
@@ -338,7 +338,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="posture-and-vulnerability-management"></a>Управление уровнями и уязвимостью
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: управление и устранение уязвимостей](/azure/security/benchmarks/security-controls-v2-vulnerability-management).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: управление и устранение уязвимостей](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
 
 ### <a name="pv-3-establish-secure-configurations-for-compute-resources"></a>ПС-3. Установка безопасных конфигураций для ресурсов вычислений
 
@@ -409,7 +409,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Основы безопасности Azure. безопасность, шифрование и хранение данных в Azure](../security/fundamentals/encryption-overview.md)
 
-- [Тестирование безопасности Azure — защита данных](/azure/security/benchmarks/security-benchmark-v2-data-protection)
+- [Тестирование безопасности Azure — защита данных](/azure/security/benchmarks/security-controls-v2-data-protection)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -437,7 +437,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Рекомендации**: непрерывная оценка и устранение рисков для отдельных активов и среды, в которой они размещены. Определение приоритетов для ресурсов с высоким уровнем стоимости и высокодоступных областей атаки, таких как опубликованные приложения, входные и исходящие точки входа, конечные точки пользователей и администраторов и т. д.
 
-- [Контроль производительности и управление уязвимостью системы безопасности Azure](/azure/security/benchmarks/security-benchmark-v2-posture-vulnerability-management)
+- [Контроль производительности и управление уязвимостью системы безопасности Azure](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -479,7 +479,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Рекомендации по обеспечению безопасности в Azure — 11-архитектура. Единая единая стратегия безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Тестирование безопасности Azure — Сетевая безопасность](/azure/security/benchmarks/security-benchmark-v2-network-security)
+- [Тестирование безопасности Azure — Сетевая безопасность](/azure/security/benchmarks/security-controls-v2-network-security)
 
 - [Обзор сетевой безопасности Azure](../security/fundamentals/network-overview.md)
 
@@ -505,9 +505,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Тестирование безопасности Azure — управление удостоверениями](/azure/security/benchmarks/security-benchmark-v2-identity-management)
+- [Тестирование безопасности Azure — управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management)
 
-- [Тестирование безопасности Azure — привилегированный доступ](/azure/security/benchmarks/security-benchmark-v2-privileged-access)
+- [Тестирование безопасности Azure — привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access)
 
 - [Рекомендации по обеспечению безопасности в Azure — 11-архитектура. Единая единая стратегия безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -539,9 +539,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения можно найти по ссылкам, на которые имеются ссылки.
 
-- [Тестирование безопасности Azure — ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-benchmark-v2-logging-threat-detection)
+- [Тестирование безопасности Azure — ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
 
-- [Тестирование безопасности Azure — реагирование на инциденты](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Тестирование безопасности Azure — реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response)
 
 - [Рекомендации по обеспечению безопасности в Azure 4. процесс. Обновление процессов реагирования на инциденты для облака](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 

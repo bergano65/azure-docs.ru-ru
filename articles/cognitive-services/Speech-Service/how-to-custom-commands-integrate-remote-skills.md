@@ -10,22 +10,22 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: sausin
-ms.openlocfilehash: 8c7cb1e9f39b1de7897da29467a607953b42bb24
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 77ade17803a35491712ec6df70aed9eb7b4883eb
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565744"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025880"
 ---
 # <a name="export-custom-commands-application-as-a-remote-skill"></a>Экспорт приложения настраиваемых команд в качестве удаленного навыка
 
 В этой статье вы узнаете, как экспортировать приложение настраиваемых команд в качестве удаленного навыка.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 > [!div class="checklist"]
-> * [Основные сведения о навыках платформы Bot](https://aka.ms/speech/cc-skill-overview)
+> * [Основные сведения о навыках платформы Bot](/azure/bot-service/skills-conceptual)
 > * [Основные сведения о манифесте навыков](https://aka.ms/speech/cc-skill-manifest)
-> * [Как вызвать навык из ленты Bot](https://aka.ms/speech/cc-skill-consumer)
+> * [Как вызвать навык из ленты Bot](/azure/bot-service/skills-about-skill-consumers)
 > * Существующее приложение пользовательских команд. Если у вас нет приложения с пользовательскими командами, воспользуйтесь руководством- [QuickStart: создание речевого помощника с помощью пользовательских команд](quickstart-custom-commands-application.md)
 
 ## <a name="custom-commands-as-remote-skills"></a>Пользовательские команды в качестве удаленных навыков
@@ -53,7 +53,7 @@ ms.locfileid: "94565744"
 
 1. Чтобы сделать команду более предпочтительной, выберите параметр **включить новую команду** в разделе **команды включения для навыков**.
 1. В раскрывающемся списке выберите команду, которую нужно добавить.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ### <a name="configure-triggering-utterances-for-commands"></a>Настройка триггера фразы продолжительностью для команд
 Пользовательские команды используют примеры предложений, которые настроены для команд, чтобы создать навыки, вызывающие срабатывание фразы продолжительностью. Эти **триггеры фразы продолжительностью** будут использоваться для создания [**манифеста навыков**](https://microsoft.github.io/botframework-solutions/skills/handbook/manifest/)раздела **Dispatcher** .
@@ -68,7 +68,7 @@ ms.locfileid: "94565744"
     > [!div class="mx-imgBorder"]
     > ![Отключить примеры](media/custom-commands/skill-disable-example-sentences.png)
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 1. Вы заметите, что в этом окне нельзя добавить новый пример. Если это необходимо, перейдите к разделу выход из раздела "Параметры" и выберите соответствующую команду в разделе "гармошка **команд** ". На этом этапе можно добавить новую запись в раздел " **примеры предложений** ". Это изменение будет автоматически отражено в значении параметров удаленных навыков для команды.
 
 > [!IMPORTANT]

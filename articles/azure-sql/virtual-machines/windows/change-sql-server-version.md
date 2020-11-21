@@ -14,12 +14,12 @@ ms.date: 06/08/2020
 ms.author: RamaKoni
 ms.reviewer: sqlblt, daleche
 ms.custom: seo-lt-2019
-ms.openlocfilehash: a0ecc36d78ffde002dac971a749889104ff10073
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: b9223ffc564620804b36f6f0e71602b3888a9f42
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556460"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025384"
 ---
 # <a name="in-place-change-of-sql-server-version-on-azure-vm"></a>Изменение версии SQL Server на месте на виртуальной машине Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "94556460"
 
 В этой статье описывается, как изменить версию Microsoft SQL Server на виртуальной машине Windows в Microsoft Azure.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить обновление на месте SQL Server, применяются следующие условия.
 
@@ -66,7 +66,7 @@ ms.locfileid: "94556460"
 
    :::image type="content" source="./media/change-sql-server-version/upgrade.png" alt-text="Выбор для обновления версии SQL Server":::
 
-1. На странице **ключ продукта** выберите параметр, чтобы указать, выполняется ли обновление до бесплатного выпуска SQL Server или имеется ключ PID для рабочей версии продукта. Дополнительные сведения см. в статьях [выпуски и поддерживаемые функции SQL Server 2019 (15. x)](/sql/sql-server/editions-and-components-of-sql-server-version-155) и [поддерживаемые обновления версий и выпусков (SQL Server 2016)](/sql/database-engine/install-windows/supported-version-and-edition-upgrades).
+1. На странице **ключ продукта** выберите параметр, чтобы указать, выполняется ли обновление до бесплатного выпуска SQL Server или имеется ключ PID для рабочей версии продукта. Дополнительные сведения см. в статьях [выпуски и поддерживаемые функции SQL Server 2019 (15. x)](/sql/sql-server/editions-and-components-of-sql-server-version-15) и [поддерживаемые обновления версий и выпусков (SQL Server 2016)](/sql/database-engine/install-windows/supported-version-and-edition-upgrades).
 1. Нажмите кнопку **Далее** , чтобы перейти на страницу **все готово к обновлению** , а затем выберите **Обновить**. В течение нескольких минут окно программы установки может перестать отвечать на запросы, пока изменения вступают в действие. На **полной** странице будет подтверждено, что обновление завершено. Пошаговые инструкции по обновлению см. [в полной процедуре](/sql/database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup#procedure).
 
    :::image type="content" source="./media/change-sql-server-version/complete-page.png" alt-text="Завершить страницу":::

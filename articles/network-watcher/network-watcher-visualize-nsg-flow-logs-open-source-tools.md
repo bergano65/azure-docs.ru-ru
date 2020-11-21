@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 18ffc5aa9c56451099afc4ddbe8b6ac5bd588974
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: aca8c75f262e472cbc770c052b86d6e760ee449a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948771"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026477"
 ---
 # <a name="visualize-azure-network-watcher-nsg-flow-logs-using-open-source-tools"></a>Визуализация журналов потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом
 
@@ -207,7 +207,7 @@ sudo /etc/init.d/logstash start
 
 На вкладке **Management** (Управление) в Kibana перейдите к элементу **Saved Objects** (Сохраненные объекты) и импортируйте все три файла. Затем откройте вкладку **Dashboard** (Панель мониторинга) и загрузите пример панели мониторинга.
 
-Вы можете также создать собственные визуализации и панели мониторинга, адаптированные к интересующим вас метрикам. Дополнительные сведения о визуализациях Kibana можно получить в [официальной документации по Kibana](https://www.elastic.co/guide/en/kibana/current/visualize.html).
+Вы можете также создать собственные визуализации и панели мониторинга, адаптированные к интересующим вас метрикам. Дополнительные сведения о визуализациях Kibana можно получить в [официальной документации по Kibana](https://www.tutorialspoint.com/kibana/kibana_create_visualization.htm).
 
 ### <a name="visualize-nsg-flow-logs"></a>Визуализация журналов потоков NSG
 
@@ -243,7 +243,7 @@ sudo /etc/init.d/logstash start
 
 Сочетая журналы потоков для групп безопасности сети с Elastic Stack, мы получили эффективный и настраиваемый способ визуализации сетевого трафика. Эти панели мониторинга позволяют быстро получить и предоставить информацию о сетевом трафике, а также отфильтровать ее и проверить на наличие каких-либо потенциальных нарушений. С помощью Kibana эти панели мониторинга можно адаптировать, чтобы создать определенные визуализации, соответствующие требованиям безопасности, аудита и соответствия.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со статьей [Visualizing Network Security Group flow logs with Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md) (Визуализация журналов потоков для групп безопасности сети с помощью Power BI).
 

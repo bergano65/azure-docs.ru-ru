@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/31/2020
-ms.openlocfilehash: 155f27b9f04db74955640aad8f582fdf05539368
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 678a6f0dc19d966f3d15e713008c19c8fbb96f5e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87511944"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024370"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Использование функций в запросах журнала Azure Monitor
 
@@ -56,10 +56,10 @@ security_updates_last_day | where Title contains "SQL"
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными уроками о написании запросов журнала Azure Monitor.
 
-- [Работа со строками](string-operations.md)
-- [Работа со значениями даты и времени](datetime-operations.md)
-- [Статистические функции в запросах Log Analytics](aggregations.md)
-- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
-- [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
-- [Joins](joins.md)
-- [Создание графиков](charts.md)
+- [Работа со строками](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#string-operations)
+- [Работа со значениями даты и времени](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#date-and-time-operations)
+- [Статистические функции в запросах Log Analytics](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#aggregations)
+- [Расширенные статистические функции в запросах Azure Log Analytics](/azure/data-explorer/write-queries#advanced-aggregations)
+- [Работа с JSON и структурами данных в запросах Log Analytics](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#json-and-data-structures)
+- [Joins](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#joins)
+- [Создание графиков](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#charts)

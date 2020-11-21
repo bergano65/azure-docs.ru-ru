@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a529875536c2feafe05695e5d20daed0873a95e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0503e0bf2fe152296ca6890e14503d05bd3bbeef
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934452"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024778"
 ---
 # <a name="implementing-voice-assistants-on-windows"></a>Реализация речевых помощников в Windows
 
@@ -30,15 +30,15 @@ ms.locfileid: "88934452"
 
 #### <a name="ensure-that-the-microphone-is-available-and-accessible-then-monitor-its-state"></a>Убедитесь, что микрофон доступен и доступен, а затем Отслеживайте его состояние.
 
-MVA требуется, чтобы микрофон присутствовал и был доступен для обнаружения активации голоса. Используйте классы [аппкапабилити](https://docs.microsoft.com/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability?view=winrt-18362), [девицеватчер](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher?view=winrt-18362)и [медиакаптуре](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture?view=winrt-18362) , чтобы проверить конфиденциальность микрофона, присутствие устройства и состояние устройства (например, громкость и отключение звука) соответственно.
+MVA требуется, чтобы микрофон присутствовал и был доступен для обнаружения активации голоса. Используйте классы [аппкапабилити](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability?view=winrt-18362), [девицеватчер](/uwp/api/windows.devices.enumeration.devicewatcher?view=winrt-18362)и [медиакаптуре](/uwp/api/windows.media.capture.mediacapture?view=winrt-18362) , чтобы проверить конфиденциальность микрофона, присутствие устройства и состояние устройства (например, громкость и отключение звука) соответственно.
 
 ### <a name="register-the-application-with-the-background-service"></a>Регистрация приложения в фоновой службе
 
-Чтобы служба MVA запускала приложение в фоновом режиме, приложение должно быть зарегистрировано в фоновой службе. Ознакомьтесь с полным руководством по регистрации фоновой службы [здесь](https://docs.microsoft.com/windows/uwp/launch-resume/register-a-background-task).
+Чтобы служба MVA запускала приложение в фоновом режиме, приложение должно быть зарегистрировано в фоновой службе. Ознакомьтесь с полным руководством по регистрации фоновой службы [здесь](/windows/uwp/launch-resume/register-a-background-task).
 
 ### <a name="unlock-the-limited-access-feature"></a>Разблокирование функции ограниченного доступа
 
-Используйте предоставленный корпорацией Майкрософт ключ ограниченного доступа, чтобы разблокировать функцию речевого помощника. Для этого используйте класс [лимитедакцессфеатуре](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures?view=winrt-18362) из Windows SDK.
+Используйте предоставленный корпорацией Майкрософт ключ ограниченного доступа, чтобы разблокировать функцию речевого помощника. Для этого используйте класс [лимитедакцессфеатуре](/uwp/api/windows.applicationmodel.limitedaccessfeatures?view=winrt-18362) из Windows SDK.
 
 ### <a name="register-the-keyword-for-the-application"></a>Зарегистрируйте ключевое слово для приложения
 
@@ -86,7 +86,7 @@ Windows подаст приложению сигнал при обнаружен
 
 ### <a name="retrieve-activation-audio"></a>Получение звука активации
 
-Создайте [аудиограф](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph) и передайте его в `CreateAudioDeviceInputNodeAsync` коллекцию `ConversationalAgentSession` . Это приведет к загрузке звукового буфера графа с аудио, который *начинается приблизительно 3 секунды, прежде чем было обнаружено ключевое слово*. Этот дополнительный ведущий звук включает в себя широкий спектр ключевых слов и частот для динамиков. Затем обработайте событие [куантумстартед](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.quantumstarted?view=winrt-18362) из аудио графа для получения звуковых данных.
+Создайте [аудиограф](/uwp/api/windows.media.audio.audiograph) и передайте его в `CreateAudioDeviceInputNodeAsync` коллекцию `ConversationalAgentSession` . Это приведет к загрузке звукового буфера графа с аудио, который *начинается приблизительно 3 секунды, прежде чем было обнаружено ключевое слово*. Этот дополнительный ведущий звук включает в себя широкий спектр ключевых слов и частот для динамиков. Затем обработайте событие [куантумстартед](/uwp/api/windows.media.audio.audiograph.quantumstarted?view=winrt-18362) из аудио графа для получения звуковых данных.
 
 ```csharp
 var inputNode = await agentSession.CreateAudioDeviceInputNodeAsync(audioGraph);
@@ -118,7 +118,7 @@ await appView.TryEnterViewModeAsync(ApplicationViewMode.Default);
 
 Рекомендации по проектированию приведенных выше функций блокировки см. в [руководстве по использованию](windows-voice-assistants-best-practices.md).
 
-Когда приложение отображает представление блокировки выше, оно считается в режиме киоска. Дополнительные сведения о реализации приложения, использующего полноэкранный режим, см. в [документации по режиму киоска](https://docs.microsoft.com/windows-hardware/drivers/partnerapps/create-a-kiosk-app-for-assigned-access).
+Когда приложение отображает представление блокировки выше, оно считается в режиме киоска. Дополнительные сведения о реализации приложения, использующего полноэкранный режим, см. в [документации по режиму киоска](/windows-hardware/drivers/partnerapps/create-a-kiosk-app-for-assigned-access).
 
 ### <a name="transitioning-above-lock"></a>Переход над блокировкой
 
@@ -149,7 +149,7 @@ conversationalAgentSession.SystemStateChanged += (s, e) =>
 Чтобы правильно закрыть приложение программным способом при блокировке выше или ниже, используйте `WindowService.CloseWindow()` API. Это активирует все методы жизненного цикла UWP, в том числе onsuspend, позволяя приложению удалить его `ConversationalAgentSession` экземпляр перед закрытием.
 
 > [!NOTE]
-> Приложение может закрыться, не закрывая [приведенный ниже экземпляр блокировки](https://docs.microsoft.com/windows-hardware/drivers/partnerapps/create-a-kiosk-app-for-assigned-access#add-a-way-out-of-assigned-access-). В этом случае в приведенном выше представлении блокировок необходимо выполнить очистку, гарантируя, что после того, как экран будет разблокирован, обработчики событий или задачи, которые попытаются управлять указанным выше представлением блокировки, не будут.
+> Приложение может закрыться, не закрывая [приведенный ниже экземпляр блокировки](/windows-hardware/drivers/partnerapps/create-a-kiosk-app-for-assigned-access#add-a-way-out-of-assigned-access-). В этом случае в приведенном выше представлении блокировок необходимо выполнить очистку, гарантируя, что после того, как экран будет разблокирован, обработчики событий или задачи, которые попытаются управлять указанным выше представлением блокировки, не будут.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

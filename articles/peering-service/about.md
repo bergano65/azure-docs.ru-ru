@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
 ms.date: 05/18/2020
 ms.author: derekol
-ms.openlocfilehash: 03ece391b6f33b47f34705cec1c5907602ac7b23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 198ba23920179e71e095e498ee2173d7f0111d42
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400185"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026735"
 ---
 # <a name="azure-peering-service-overview"></a>Общие сведения о службе пиринга Azure
 
@@ -45,10 +45,10 @@ ms.locfileid: "91400185"
 Служба пиринга не является частным продуктом подключения, таким как Azure ExpressRoute или продукт VPN.
 
 > [!NOTE]
-> Дополнительные сведения об ExpressRoute см. в [документации по expressroute](https://docs.microsoft.com/azure/expressroute/).
+> Дополнительные сведения об ExpressRoute см. в [документации по expressroute](../expressroute/index.yml).
 >
 
-## <a name="background"></a>История
+## <a name="background"></a>Фон
 
 Microsoft 365, Dynamics 365 и другие службы Microsoft SaaS размещаются в нескольких центрах обработки данных Майкрософт, и к ним можно получить доступ из любого географического расположения. В глобальной сети Майкрософт есть места расположения точек присутствия (PoP) Microsoft ребра по всему миру, где можно подключиться к конечному пользователю через своих поставщиков услуг. 
 
@@ -57,7 +57,7 @@ Microsoft 365, Dynamics 365 и другие службы Microsoft SaaS разм
 ![Сетевое и общедоступное подключение Майкрософт](./media/peering-service-about/peering-service-background-final.png)
 
 > [!NOTE]
-> Дополнительные сведения о глобальной сети Майкрософт см. в [статье Глобальная сеть](https://docs.microsoft.com/azure/networking/microsoft-global-network)Майкрософт.
+> Дополнительные сведения о глобальной сети Майкрософт см. в [статье Глобальная сеть](../networking/microsoft-global-network.md)Майкрософт.
 >
 
 ## <a name="why-use-peering-service"></a>Зачем использовать службу пиринга?
@@ -126,7 +126,7 @@ Microsoft 365, Dynamics 365 и другие службы Microsoft SaaS разм
 
 Аномалии маршрутов BGP выводятся в портал Azure, если таковые имеются.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о подключениях службы пиринга см. в разделе [соединения службы пиринга](connection.md).
 - Дополнительные сведения о телеметрии см. в статье [Телеметрия для подключения Службы пиринга](connection-telemetry.md).

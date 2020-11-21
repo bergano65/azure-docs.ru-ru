@@ -5,18 +5,18 @@ author: cynthn
 ms.service: virtual-machines
 ms.topic: how-to
 ms.workload: infrastructure-services
-ms.date: 04/20/2020
+ms.date: 11/20/2020
 ms.author: cynthn
-ms.openlocfilehash: 67e33732574d2a6c173675d5adf0a7d1c2050688
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d94cd649df9da6b36ac484d4fc1e6acef7a21bb7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90528182"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026171"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-cli"></a>Управление обновлениями с помощью управления обслуживанием и Azure CLI
 
-Управление обслуживанием позволяет решить, когда следует применять обновления к изолированным виртуальным машинам и выделенным узлам Azure. В этом разделе рассматриваются параметры Azure CLI для управления обслуживанием. Дополнительные сведения о преимуществах использования управления обслуживанием, его ограничений и других параметров управления см. [в разделе Управление обновлениями платформы с помощью управления обслуживанием](maintenance-control.md).
+Управление обслуживанием позволяет решить, когда следует применять обновления платформы к инфраструктуре узлов изолированных виртуальных машин и выделенных узлов Azure. В этом разделе рассматриваются параметры Azure CLI для управления обслуживанием. Дополнительные сведения о преимуществах использования управления обслуживанием, его ограничений и других параметров управления см. [в разделе Управление обновлениями платформы с помощью управления обслуживанием](maintenance-control.md).
 
 ## <a name="create-a-maintenance-configuration"></a>Создайте конфигурацию обслуживания.
 
@@ -28,14 +28,14 @@ az group create \
    --name myMaintenanceRG
 az maintenance configuration create \
    -g myMaintenanceRG \
-   --name myConfig \
-   --maintenanceScope host\
+   --resource-name myConfig \
+   --maintenance-scope host\
    --location eastus
 ```
 
 Скопируйте идентификатор конфигурации из выходных данных для последующего использования.
 
-Использование `--maintenanceScope host` гарантирует, что конфигурация обслуживания будет использоваться для управления обновлениями узла.
+Использование `--maintenance-scope host` гарантирует, что конфигурация обслуживания будет использоваться для управления обновлениями инфраструктуры узла.
 
 При попытке создать конфигурацию с тем же именем, но в другом расположении возникнет ошибка. Имена конфигураций должны быть уникальными для группы ресурсов.
 
@@ -44,6 +44,30 @@ az maintenance configuration create \
 ```azurecli-interactive
 az maintenance configuration list --query "[].{Name:name, ID:id}" -o table 
 ```
+
+### <a name="create-a-maintenance-configuration-with-scheduled-window"></a>Создание конфигурации обслуживания с запланированным окном
+Вы также можете объявить запланированное окно, когда Azure будет применять обновления к ресурсам. В этом примере создается конфигурация обслуживания с именем myConfig с запланированным периодом 5 часов в четвертом понедельнике каждого месяца. После создания запланированного окна вам больше не нужно применять обновления вручную.
+
+```azurecli-interactive
+az maintenance configuration create \
+   -g myMaintenanceRG \
+   --resource-name myConfig \
+   --maintenance-scope host \
+   --location eastus \
+   --maintenance-window-duration "05:00" \
+   --maintenance-window-recur-every "Month Fourth Monday" \
+   --maintenance-window-start-date-time "2020-12-30 08:00" \
+   --maintenance-window-time-zone "Pacific Standard Time"
+```
+
+> [!IMPORTANT]
+> **Длительность** обслуживания должна составлять *2 часа* или больше. Для **периодичности** обслуживания должно быть задано значение по крайней мере один раз в 35 дней.
+
+Повторение обслуживания может быть выражено ежедневно, еженедельно или ежемесячно. Некоторые примеры.
+- **ежедневное** обслуживание — Window-повторять — каждые: "Day" **или** "3Days"
+- **еженедельное** обслуживание — Window-повторять — каждые: "3Weeks" **или** "Суббота субботы, воскресенье"
+- **ежемесячное** обслуживание — Window-повторять — каждые: "month day23, day24" **или** "month прошлого воскресенье" **или** "четвертый понедельник".
+
 
 ## <a name="assign-the-configuration"></a>Назначение конфигурации
 
@@ -251,8 +275,8 @@ az maintenance applyupdate get \
 az maintenance configuration delete \
    --subscription 1111abcd-1a11-1a2b-1a12-123456789abc \
    -g myResourceGroup \
-   --name myConfig
+   --resource-name myConfig
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

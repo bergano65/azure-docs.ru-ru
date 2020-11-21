@@ -4,13 +4,13 @@ description: Рекомендации и рабочие процессы в ре
 author: dlepow
 ms.topic: article
 ms.author: danlep
-ms.date: 10/29/2020
-ms.openlocfilehash: def1c3a9b8a1086f453c7e71d766ab0dd89b0c2d
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.date: 11/20/2020
+ms.openlocfilehash: 0c92899528d417f9c91f8f8930ca4932dc74e850
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347528"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024744"
 ---
 # <a name="manage-public-content-with-azure-container-registry"></a>Управление общедоступным содержимым с помощью реестра контейнеров Azure
 
@@ -26,6 +26,8 @@ ms.locfileid: "93347528"
 ## <a name="authenticate-with-docker-hub"></a>Проверка подлинности с помощью DOCKER HUB
 
 В качестве первого шага, если сейчас вы извлекаете открытые образы из DOCKER Hub как часть рабочего процесса сборки или развертывания, рекомендуется выполнить [проверку подлинности с помощью учетной записи DOCKER Hub](https://docs.docker.com/docker-hub/download-rate-limit/#how-do-i-authenticate-pull-requests) вместо анонимного запроса на включение внесенных изменений.
+
+При частом анонимных запросах на включение внесенных изменений могут возникнуть ошибки DOCKER, аналогичные `ERROR: toomanyrequests: Too Many Requests.` или `You have reached your pull rate limit.` прошедшие проверку подлинности в концентраторе DOCKER, чтобы предотвратить эти ошибки.
 
 > [!NOTE]
 > Начиная с 2 ноября 2020 г. [ограничения скорости загрузки](https://docs.docker.com/docker-hub/download-rate-limit) применяются к анонимным и прошедшим проверку подлинности запросам к концентратору DOCKER из учетных записей бесплатных планов DOCKER и применяются соответственно IP-адресу и идентификатору DOCKER. 
@@ -46,21 +48,21 @@ ms.locfileid: "93347528"
 
 **Служба приложений**
 
-* **Источник образа** : DOCKER HUB
-* **Доступ к репозиторию** : частный
-* **Имя входа** : \<Docker Hub username>
-* **Пароль** : \<Docker Hub token>
+* **Источник образа**: DOCKER HUB
+* **Доступ к репозиторию**: частный
+* **Имя входа**: \<Docker Hub username>
+* **Пароль**: \<Docker Hub token>
 
 Дополнительные сведения см. [в статье опрашивающие концентраторы DOCKER с проверкой подлинности в службе приложений](https://azure.github.io/AppService/2020/10/15/Docker-Hub-authenticated-pulls-on-App-Service.html).
 
-**Экземпляры контейнеров Azure** ;
+**Экземпляры контейнеров Azure**;
 
-* **Источник образа** : DOCKER HUB или другой реестр
-* **Тип изображения** : частный
-* **Сервер входа в реестр изображений** : DOCKER.IO
-* **Имя пользователя реестра образа** : \<Docker Hub username>
-* **Пароль реестра образа** : \<Docker Hub token>
-* **Изображение** : DOCKER.IO/ \<repo name\> :\<tag>
+* **Источник образа**: DOCKER HUB или другой реестр
+* **Тип изображения**: частный
+* **Сервер входа в реестр изображений**: DOCKER.IO
+* **Имя пользователя реестра образа**: \<Docker Hub username>
+* **Пароль реестра образа**: \<Docker Hub token>
+* **Изображение**: DOCKER.IO/ \<repo name\> :\<tag>
 
 ## <a name="import-images-to-an-azure-container-registry"></a>Импорт изображений в реестр контейнеров Azure
  
@@ -70,7 +72,7 @@ ms.locfileid: "93347528"
 
 `az acr import` не требуется локальная установка DOCKER. Его можно запустить с помощью локальной установки Azure CLI или непосредственно в Azure Cloud Shell. Он поддерживает образы любых типов ОС, образов с несколькими архитектурами и артефактов OCI, таких как диаграммы Helm.
 
-Пример
+Пример:
 
 ```azurecli-interactive
 az acr import \

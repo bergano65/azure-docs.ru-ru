@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
-ms.openlocfilehash: fbcb262fee6a2cc62bfe64e8a8589c92b4fe2b17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e8b009ecc2181edfaad5da3d8d05ad0c1909051
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82997450"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024761"
 ---
 # <a name="voice-assistants-on-windows"></a>Речевые помощники в Windows
 
@@ -37,7 +37,7 @@ ms.locfileid: "82997450"
 
 ### <a name="registration"></a>Регистрация
 
-При первом запуске приложения, активированного с помощью голоса, он регистрирует идентификатор приложения и сведения о ключевом слове через API-интерфейсы Конверсатионалажент. AAR регистрирует все конфигурации в глобальном сопоставлении с ключевым словом Hardware или Software корректировщик в системе, позволяя им обнаруживать ключевое слово приложения. Приложение также [регистрируется в фоновой службе](https://docs.microsoft.com/windows/uwp/launch-resume/register-a-background-task).
+При первом запуске приложения, активированного с помощью голоса, он регистрирует идентификатор приложения и сведения о ключевом слове через API-интерфейсы Конверсатионалажент. AAR регистрирует все конфигурации в глобальном сопоставлении с ключевым словом Hardware или Software корректировщик в системе, позволяя им обнаруживать ключевое слово приложения. Приложение также [регистрируется в фоновой службе](/windows/uwp/launch-resume/register-a-background-task).
 
 Обратите внимание, что это означает, что приложение нельзя активировать с помощью голоса, пока оно не будет запущено и регистрация не будет завершена.
 

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/10/2019
-ms.openlocfilehash: cf138248e878b21531df2035dfeda1b90162ea99
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf5ab7361c84fb787366c7c361829e52362fe427
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91536109"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025914"
 ---
 # <a name="intents-in-your-luis-app"></a>Целей в приложении LUIS
 
@@ -32,7 +32,7 @@ ms.locfileid: "91536109"
 Все приложения поставляются с предопределенной намерением «None» ([нет](#none-intent)), что является резервным условием.
 
 ## <a name="prebuilt-domains-provide-intents"></a>Намерения от предварительно созданных доменов
-Помимо определенных целей можно использовать готовые способы из одного из предварительно [созданных доменов](luis-how-to-use-prebuilt-domains.md).
+Помимо определенных целей можно использовать готовые способы из одного из предварительно [созданных доменов](./howto-add-prebuilt-models.md).
 
 ## <a name="return-all-intents-scores"></a>Получение оценок для всех намерений
 Высказывание назначается одному намерению. Когда LUIS получает utterance на конечной точке, по умолчанию он возвращает самое верхнее назначение для этого utterance.
@@ -59,7 +59,7 @@ ms.locfileid: "91536109"
 
 ## <a name="prebuilt-domain-intents"></a>Намерения в предварительно созданных доменах
 
-Предварительно [созданные домены](luis-how-to-use-prebuilt-domains.md) предоставляют свои намерения с помощью фразы продолжительностью.
+Предварительно [созданные домены](./howto-add-prebuilt-models.md) предоставляют свои намерения с помощью фразы продолжительностью.
 
 ## <a name="none-intent"></a>Намерение None
 
@@ -98,7 +98,7 @@ ms.locfileid: "91536109"
 ### <a name="request-help-for-apps-with-significant-number-of-intents"></a>Если намерений слишком много, обратитесь в службу поддержки
 Если уменьшение числа намерений или разделение намерений на несколько приложений не помогает добиться цели, обратитесь в службу поддержки. Если ваша подписка Azure включает службы поддержки, обратитесь в службу [технической поддержки Azure](https://azure.microsoft.com/support/options/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с дополнительными сведениями о [сущностях](luis-concept-entity-types.md), важных словах, относящихся к намерениям
 * Узнайте, как [добавить намерения в приложение LUIS и управлять ими](luis-how-to-add-intents.md).

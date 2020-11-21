@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e4c5000adb2339d3fd0f828781a60f75c75894b5
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 87e33940d927fc9116c03345011e21398384d484
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168602"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024421"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -25,7 +25,7 @@ ms.locfileid: "92168602"
 * Выборка с фиксированной частотой доступна в последних версиях Application Insights пакетов SDK для ASP.NET, ASP.NET Core, Java (агент и пакет SDK) и Python.
 * Выборка приема работает на конечной точке службы Application Insights. Он применяется только в том случае, если никакая другая выборка не действует. Если пакет SDK производит выборку данных телеметрии, выборка приема отключена.
 * Для веб-приложений, если вы зарегистрируете пользовательские события и хотите убедиться, что набор событий сохраняется или удаляется вместе, события должны иметь одно и то же `OperationId` значение.
-* При написании запросов аналитики необходимо [учитывать выборку](../log-query/aggregations.md). В частности, вместо простого подсчета записей следует использовать функцию `summarize sum(itemCount)`.
+* При написании запросов аналитики необходимо [учитывать выборку](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#aggregations). В частности, вместо простого подсчета записей следует использовать функцию `summarize sum(itemCount)`.
 * Некоторые типы телеметрии, включая метрики производительности и пользовательские метрики, всегда сохраняются независимо от того, включена ли выборка.
 
 В следующей таблице перечислены типы выборок, доступные для каждого пакета SDK и типа приложения.
@@ -34,11 +34,11 @@ ms.locfileid: "92168602"
 |-|-|-|-|
 | ASP.NET | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-applications) | Только если не действует ни одна другая выборка |
 | ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
-| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | Нет | Только если не действует ни одна другая выборка |
-| Java | Нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
-| Node.JS | Нет | [Да](./nodejs.md#sampling) | Только если не действует ни одна другая выборка
-| Python | Нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
-| Все остальные | Нет | Нет | [Да](#ingestion-sampling) |
+| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | нет | Только если не действует ни одна другая выборка |
+| Java | нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
+| Node.JS | нет | [Да](./nodejs.md#sampling) | Только если не действует ни одна другая выборка
+| Python | нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
+| Все остальные | нет | нет | [Да](#ingestion-sampling) |
 
 > [!NOTE]
 > Сведения, приведенные на этой странице, относятся к текущим версиям пакетов SDK для Application Insights. Сведения о более ранних версиях пакетов SDK [см. в разделе ниже](#older-sdk-versions).
@@ -507,7 +507,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 Точность приблизительного значения в значительной степени зависит от заданного процента выборки. Кроме того, точность возрастает для приложений, обрабатывающих большой объем сходных запросов от большого количества пользователей. С другой стороны, для приложений, которые не работают с существенной нагрузкой, выборка не требуется, так как такие приложения обычно могут отправлять все данные телеметрии, не выходя за пределы квоты и не вызывая потерю данных в результате регулирования. 
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 *Что такое поведение выборки по умолчанию в пакетах SDK для ASP.NET и ASP.NET Core?*
 

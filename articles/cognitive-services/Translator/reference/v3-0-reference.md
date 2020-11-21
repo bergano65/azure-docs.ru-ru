@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 8/11/2020
 ms.author: swmachan
-ms.openlocfilehash: 6b211dd8ca735ea9ee4a5209aa6030398cca472e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8175cbd469c8a3933526d01f433e1def714783b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88121023"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024506"
 ---
 # <a name="translator-v30"></a>Переводчик версии 3.0
 
@@ -124,7 +124,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 | Тип ресурса     | Служба проверки подлинности URL-адреса                                |
 |-----------------|-----------------------------------------------------------|
-| Global          | `https://api.cognitive.microsoft.com/sts/v1.0/issueToken` |
+| Глобальный          | `https://api.cognitive.microsoft.com/sts/v1.0/issueToken` |
 | Региональный или Multi-Service | `https://<your-region>.api.cognitive.microsoft.com/sts/v1.0/issueToken` |
 
 Вот пример запросов для получения токена с секретным ключом.
@@ -147,7 +147,7 @@ Authorization: Bearer <Base64-access_token>
 
 ## <a name="virtual-network-support"></a>Поддержка виртуальной сети
 
-Теперь служба переводчика доступна с возможностями виртуальной сети (VNET) во всех регионах общедоступного облака Azure. Сведения о включении виртуальной сети см. в статье [Настройка виртуальных сетей Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal). 
+Теперь служба переводчика доступна с возможностями виртуальной сети (VNET) во всех регионах общедоступного облака Azure. Сведения о включении виртуальной сети см. в статье [Настройка виртуальных сетей Azure Cognitive Services](../../cognitive-services-virtual-networks.md?tabs=portal). 
 
 После включения этой возможности необходимо использовать пользовательскую конечную точку для вызова транслятора. Нельзя использовать глобальную конечную точку транслятора ("api.cognitive.microsofttranslator.com"), и вы не можете пройти проверку подлинности с помощью маркера доступа.
 
@@ -230,7 +230,7 @@ curl -X POST "https://<your-custom-domain>.cognitiveservices.azure.com/translato
 | 503000| Служба временно недоступна. Повторите попытку. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время ошибки, идентификатор запроса из заголовка ответа X-RequestId и идентификатор клиента из заголовка запроса X-ClientTraceId.|
 
 ## <a name="metrics"></a>Метрики 
-Метрики позволяют просматривать сведения об использовании и доступности транслятора в портал Azure в разделе метрики, как показано на снимке экрана ниже. Дополнительные сведения см. в статье [метрики данных и платформы](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics).
+Метрики позволяют просматривать сведения об использовании и доступности транслятора в портал Azure в разделе метрики, как показано на снимке экрана ниже. Дополнительные сведения см. в статье [метрики данных и платформы](../../../azure-monitor/platform/data-platform-metrics.md).
 
 ![Метрики переводчиков](../media/translatormetrics.png)
 

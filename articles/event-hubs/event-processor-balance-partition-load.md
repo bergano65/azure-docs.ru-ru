@@ -3,12 +3,12 @@ title: Балансировка нагрузки секций между нес�
 description: Описывает, как сбалансировать нагрузку секций между несколькими экземплярами приложения с помощью обработчика событий и пакета SDK концентраторов событий Azure.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 03aeebb376c74e62a1bd935ac1fec4f178b63f4f
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: af307058d0eda6b96c0811bccc245c09e2bdd27d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685143"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025050"
 ---
 # <a name="balance-partition-load-across-multiple-instances-of-your-application"></a>Балансировка нагрузки секций между несколькими экземплярами приложения
 Чтобы масштабировать приложение обработки событий, можно запустить несколько экземпляров приложения и распределить нагрузку между ними. В более ранних версиях [EventProcessorHost](event-hubs-event-processor-host.md) позволили сбалансировать нагрузку между несколькими экземплярами программы и событиями контрольной точки при получении. В более новых версиях (5,0 и выше) **евентпроцессорклиент** (.NET и Java) или **евенсубконсумерклиент** (Python и JavaScript) позволяют делать то же самое. Модель разработки упрощается с помощью событий. Подпишитесь на интересующие вас события, зарегистрировав обработчик событий. Если вы используете старую версию клиентской библиотеки, см. следующие руководства по миграции: [.NET](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md), [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/migration-guide.md), [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/servicebus/azure-servicebus/migration_guide.md)и [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/migrationguide.md).
@@ -76,7 +76,7 @@ ms.locfileid: "94685143"
 
 > [!NOTE]
 > Если вы используете хранилище BLOB-объектов Azure в качестве хранилища контрольных точек в среде, которая поддерживает другую версию пакета SDK для большого двоичного объекта хранилища, чем обычно доступно в Azure, необходимо использовать код, чтобы изменить версию API службы хранилища до определенной версии, поддерживаемой этой средой. Например, если вы используете [концентраторы событий в Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), самая высокая доступная версия для службы хранилища — версия 2017-11-09. В этом случае необходимо использовать код для настройки API службы хранилища до версии 2017-11-09. Пример назначения конкретной версии API хранилища см. в следующих примерах на сайте GitHub: 
-> - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). 
+> - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/). 
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/)
 > - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) или  [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/)

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 8/10/2020
-ms.openlocfilehash: 628944f9763dc79148e0b64c97158064208412bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf9f9ca5b8690a38c6e5aa6f519378c0a2e3a4f2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88137055"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026443"
 ---
 # <a name="distribute-and-modify-tables"></a>Распространение и изменение таблиц
 
@@ -140,7 +140,7 @@ SELECT create_distributed_table('B', 'other_int_col');
 SELECT create_distributed_table('A', 'foo', colocate_with => 'none');
 ```
 
-Разделение несвязанных таблиц на их собственные группы совместного размещения повысит производительность повторного [распределения сегментов](howto-hyperscale-scaling.md#rebalance-shards) , так как сегменты в одной группе должны перемещаться вместе.
+Разделение несвязанных таблиц на их собственные группы совместного размещения повысит производительность повторного [распределения сегментов](howto-hyperscale-scale-rebalance.md) , так как сегменты в одной группе должны перемещаться вместе.
 
 Если таблицы действительно связаны (например, когда они будут присоединены), может быть целесообразно их явное размещение. Увеличение соответствующего совместного местоположения является более важным, чем затраты на перераспределение.
 

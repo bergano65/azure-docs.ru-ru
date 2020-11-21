@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: travisw
-ms.openlocfilehash: c9f7168bc0524b483413ade9792af18ff9cfebfa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40736764cf9cec6f652e0147eb25d83f15c5bee2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91358548"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024948"
 ---
 # <a name="what-is-custom-commands"></a>Что собой представляют пользовательские команды?
 
@@ -28,7 +28,7 @@ ms.locfileid: "91358548"
 > [!TIP]
 > Просмотрите наши примеры демонстраций на нашей целевой странице по адресу [https://speech.microsoft.com/customcommands](https://speech.microsoft.com/customcommands) .
 
-Если вы заинтересованы в создании сложных приложений для общения, то вам рекомендуется опробовать эту платформу с помощью [решения Virtual Assistant](https://docs.microsoft.com/azure/bot-service/bot-builder-enterprise-template-overview). Голосовую программу можно добавить в любой Bot-робот, используя прямую голосовую речь.
+Если вы заинтересованы в создании сложных приложений для общения, то вам рекомендуется опробовать эту платформу с помощью [решения Virtual Assistant](/azure/bot-service/bot-builder-enterprise-template-overview). Голосовую программу можно добавить в любой Bot-робот, используя прямую голосовую речь.
 
 Хорошие кандидаты для пользовательских команд имеют фиксированный словарь с четко определенными наборами переменных. Например, главные задачи автоматизации, например Управление термостата, являются идеальными.
 

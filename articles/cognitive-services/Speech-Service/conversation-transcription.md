@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: trbye
-ms.openlocfilehash: 5d95525c7dfecd44758c86903ca4a96c2290df52
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c27493748381a3aced92aab41745f352f228c50e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487791"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024999"
 ---
 # <a name="what-is-conversation-transcription-in-meetings-preview"></a>Что такое запись разговора в собраниях (Предварительная версия)?
 
@@ -34,7 +34,7 @@ ms.locfileid: "92487791"
 > [!NOTE]
 > Хотя запись беседы не ограничивает число докладчиков в комнате, она оптимизирована для 2-10 динамиков за сеанс.
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Приступая к работе
 
 Чтобы приступить к работе, ознакомьтесь с [кратким](how-to-use-conversation-transcription.md) руководством по разговору в режиме реального времени.
 
@@ -54,7 +54,7 @@ ms.locfileid: "92487791"
 
 ## <a name="expected-inputs"></a>Ожидаемые входные данные
 
-- **Многоканальный аудио-поток** . Дополнительные сведения о спецификации и проектировании см. на веб-канале [пакета SDK для устройств Microsoft Speech](https://aka.ms/cts/microphone). Дополнительные сведения о приобретении комплекта разработки см. в статье [Получение пакета SDK для устройств Microsoft Speech](https://aka.ms/cts/getsdk).
+- **Многоканальный аудио-поток** . Дополнительные сведения о спецификации и проектировании см. на веб-канале [пакета SDK для устройств Microsoft Speech](./speech-devices-sdk-microphone.md). Дополнительные сведения о приобретении комплекта разработки см. в статье [Получение пакета SDK для устройств Microsoft Speech](./get-speech-devices-sdk.md).
 - **Пользовательские примеры голоса** . для записи сообщений в речь нужны профили пользователей. Необходимо будет составлять звуковые записи от каждого пользователя, а затем отправить записи в [службу формирования подписей](https://aka.ms/cts/signaturegenservice) для проверки звука и создания профилей пользователей.
 
 > [!NOTE]

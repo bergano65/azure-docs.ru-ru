@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 0aba809fd18dfd74a344a32b2335aba9426c9845
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 5c20fbbe25b51160f42f233d30c39ccaec0f5cac
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94496992"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026067"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Руководство по миграции: SQL Server в SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -99,7 +99,7 @@ ms.locfileid: "94496992"
 
 ### <a name="create-sql-managed-instance"></a>Создание Управляемого экземпляра 
 
-На основе информации на этапе обнаружения и оценки создайте соответствующий Целевой Управляемый экземпляр SQL. Это можно сделать с помощью шаблона [портал Azure](../../managed-instance/instance-create-quickstart.md), [PowerShell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)или [Azure Resource Manager (ARM)](/../../managed-instance/create-template-quickstart.md). 
+На основе информации на этапе обнаружения и оценки создайте соответствующий Целевой Управляемый экземпляр SQL. Это можно сделать с помощью шаблона [портал Azure](../../managed-instance/instance-create-quickstart.md), [PowerShell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)или [Azure Resource Manager (ARM)](/azure/azure-sql/managed-instance/create-template-quickstart). 
 
 
 ## <a name="migrate"></a>Миграция
@@ -121,7 +121,7 @@ ms.locfileid: "94496992"
 1. Выберите базу данных, которую требуется перенести. 
 1. Укажите параметры конфигурации, чтобы указать **общую сетевую папку SMB** , содержащую файлы резервной копии базы данных. Используйте учетные данные пользователя Windows с DMS, который может получить доступ к сетевой папке. Укажите **сведения об учетной записи хранения Azure**. 
 1. Ознакомьтесь со сводкой о миграции и выберите команду **запустить миграцию**. Затем можно отслеживать действие миграции и проверять ход выполнения миграции базы данных.
-1. После восстановления базы данных нажмите кнопку **Start прямую миграцию (запустить** ). Процесс миграции копирует резервную копию заключительного фрагмента журнала после того, как она стала доступной в сетевой общей папке SMB, и восстанавливает ее на целевом объекте. 
+1. После восстановления базы данных нажмите кнопку **Start прямую миграцию (запустить**). Процесс миграции копирует резервную копию заключительного фрагмента журнала после того, как она стала доступной в сетевой общей папке SMB, и восстанавливает ее на целевом объекте. 
 1. Завершите весь входящий трафик к базе данных источника и обновите строку подключения до новой базы данных SQL Azure Управляемый экземпляр. 
 
 Подробное пошаговое руководство по этому варианту миграции см. в статье [перенос SQL Server в Azure SQL управляемый экземпляр Online с помощью DMS](/azure/dms/tutorial-sql-server-managed-instance-online). 
@@ -142,7 +142,7 @@ ms.locfileid: "94496992"
 
 Чтобы выполнить миграцию с помощью резервного копирования и восстановления, выполните следующие действия. 
 
-1. Создайте резервную копию базы данных в хранилище BLOB-объектов Azure. Например, используйте [резервное копирование в URL-адрес](/sql/relational-databases/backup-restore/sql-server-backup-to-url) в [SQL Server Management Studio](/ssms/download-sql-server-management-studio-ssms). Используйте [средство Microsoft Azure](https://go.microsoft.com/fwlink/?LinkID=324399) для поддержки баз данных, предшествующих SQL Server 2012 с пакетом обновления 1 (SP1) Cu2. 
+1. Создайте резервную копию базы данных в хранилище BLOB-объектов Azure. Например, используйте [резервное копирование в URL-адрес](/sql/relational-databases/backup-restore/sql-server-backup-to-url) в [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms). Используйте [средство Microsoft Azure](https://go.microsoft.com/fwlink/?LinkID=324399) для поддержки баз данных, предшествующих SQL Server 2012 с пакетом обновления 1 (SP1) Cu2. 
 1. Подключитесь к Управляемый экземпляр Azure SQL с помощью SQL Server Management Studio. 
 1. Создайте учетные данные, используя подписанный URL-доступ для доступа к учетной записи хранилища BLOB-объектов Azure с резервными копиями базы данных. Пример:
 
@@ -210,7 +210,7 @@ ms.locfileid: "94496992"
 Некоторые SQL Server функции доступны только после изменения [уровня совместимости базы данных](/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) на последний уровень совместимости (150). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о службах и средствах Майкрософт и сторонних поставщиков, которые помогут вам в использовании различных сценариев переноса баз данных и данных, а также специальных задач см. в разделе [служба и средства для переноса данных](../../../dms/dms-tools-matrix.md).
 

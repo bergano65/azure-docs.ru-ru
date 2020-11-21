@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: erhopf
-ms.openlocfilehash: 87832057e955f8408b369e2f55096a713780e965
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 5c4f02eff06c08f1829f9f1c74d1dcb09ee57905
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410782"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024795"
 ---
 # <a name="speech-service-whats-new-in-docs"></a>Служба речи: новые возможности в документах
 
@@ -28,7 +28,7 @@ ms.locfileid: "94410782"
 * [Заметки о выпуске пакета SDK для речевых устройств](devices-sdk-release-notes.md)
 * [Заметки о выпуске контейнера Cognitive Services](../containers/container-image-tags.md)
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="new-articles"></a>Новые статьи
 
@@ -38,17 +38,17 @@ ms.locfileid: "94410782"
 
 * [Сведения об API потока входных данных речевого пакета SDK](how-to-use-audio-input-streams.md) — обновлены разрешенные образцы в секунду.
 * [Автоматическое определение языка для](how-to-automatic-language-detection.md) инструкций на языке C, добавленных к тексту документации.
-* [Выберите режим распознавания речи](how-to-choose-recognition-mode.md) . в документацию добавлены инструкции JavaScript.
+* [Выберите режим распознавания речи](./get-started-speech-to-text.md) . в документацию добавлены инструкции JavaScript.
 * [Настройка RHEL/CentOS 7 для речевого пакета SDK](how-to-configure-rhel-centos-7.md) . Улучшенные инструкции по установке.
-* [Списки фраз для](how-to-phrase-lists.md) инструкций JavaScript, добавленных к тексту документации.
-* [Краткое руководство. асинхронное синтез для аудиофайлов в длинном формате в Python (Предварительная версия)](quickstarts/text-to-speech/async-synthesis-long-form-audio.md) — Обновлено с поддержкой общедоступных нейронных голосов и связанных параметров.
-* [Краткое руководство. Распознавание речи из звукового файла](quickstarts/speech-to-text-from-file.md) — инструкции JavaScript, добавленные в документацию.
-* [Краткое руководство. Распознавание речи из добавленных микрофона](quickstarts/speech-to-text-from-microphone.md ) инструкций Go и JavaScript в документацию.
+* [Списки фраз для](./get-started-speech-to-text.md) инструкций JavaScript, добавленных к тексту документации.
+* [Краткое руководство. асинхронное синтез для аудиофайлов в длинном формате в Python (Предварительная версия)](./long-audio-api.md) — Обновлено с поддержкой общедоступных нейронных голосов и связанных параметров.
+* [Краткое руководство. Распознавание речи из звукового файла](./get-started-speech-to-text.md) — инструкции JavaScript, добавленные в документацию.
+* [Краткое руководство. Распознавание речи из добавленных микрофона](./get-started-speech-to-text.md) инструкций Go и JavaScript в документацию.
 * [Краткое руководство. Распознавание речи, хранящихся в хранилище BLOB-объектов](quickstarts/from-blob.md) — инструкции JavaScript, добавленные в документацию.
 * [Краткое руководство. Распознавание речи, целей и сущностей с помощью Language Understanding (LUIS)](quickstarts/intent-recognition.md)
 * [Краткое руководство. Настройка среды разработки](quickstarts/setup-platform.md) — инструкции JavaScript добавлены в документацию.
-* [Краткое руководство. Синтезирование речи в аудио-файл](quickstarts/text-to-speech-audio-file.md) — инструкции JavaScript, добавленные в документацию.
-* [Краткое руководство. Синтезирование речи в](quickstarts/text-to-speech.md) документации, добавленной докладчиком.
+* [Краткое руководство. Синтезирование речи в аудио-файл](./get-started-text-to-speech.md) — инструкции JavaScript, добавленные в документацию.
+* [Краткое руководство. Синтезирование речи в](./get-started-text-to-speech.md) документации, добавленной докладчиком.
 * [Что такое ключевое слово?](custom-keyword-overview.md) — Обновленное содержимое и ссылки для начала работы.
 * [Укажите исходный язык для добавления речи в текст](how-to-specify-source-language.md) и инструкции на языке C в документацию.
 
@@ -58,7 +58,7 @@ ms.locfileid: "94410782"
 
 Эта таблица обновляется ежемесячно и отражает только проблемы, открытые в мае.  
 
-|ID|Пользователь|Описание|Opened (Открыто)|Область|Тип|
+|ID|Пользователь|Описание|Opened (Открыто)|Состояние|Type|
 | :--- | :--- | :--- | :--- | :--- | :--- |
 |[56045](https://github.com/MicrosoftDocs/azure-docs/issues/56045)|рхалали|Действие удалено, так как отсутствует конечная точка Bot|2020-05-31|Закрыто|Проблема|
 |[56038](https://github.com/MicrosoftDocs/azure-docs/issues/56038)|рхалали|Неправильные шаги программы-робота публикации|2020-05-31|Открыть|Проблема|
