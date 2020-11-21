@@ -12,12 +12,12 @@ ms.date: 11/03/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
 zone_pivot_groups: keyword-quickstart
-ms.openlocfilehash: 2d15da55c0bab42571d2a9660156a780c5d27881
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 49ac70b6881085f48c8bc3a12e31e4a1aa220c6a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305896"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021955"
 ---
 # <a name="get-started-with-custom-keyword"></a>Начало работы с Пользовательскими ключевыми словами
 
@@ -39,7 +39,7 @@ ms.locfileid: "93305896"
 
 1. На странице [настраиваемое ключевое слово](https://aka.ms/sdsdk-wakewordportal) создайте **Новый проект**. 
 
-1. Введите **имя** , необязательное **Описание** и выберите язык. Требуется один проект для каждого языка, а поддержка в настоящее время ограничена `en-US` языком.
+1. Введите **имя**, необязательное **Описание** и выберите язык. Требуется один проект для каждого языка, а поддержка в настоящее время ограничена `en-US` языком.
 
     ![Описание проекта ключевого слова](media/custom-keyword/custom-kws-portal-new-project.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "93305896"
 
 1. Чтобы создать новую модель ключевых слов, нажмите кнопку **обучение модели**.
 
-1. Введите **имя** модели, необязательное **Описание** и **ключевое слово** , а затем нажмите кнопку **Далее**. Ознакомьтесь с [рекомендациями](speech-devices-sdk-kws-guidelines.md#choose-an-effective-keyword) по выбору эффективного ключевого слова.
+1. Введите **имя** модели, необязательное **Описание** и **ключевое слово** , а затем нажмите кнопку **Далее**. Ознакомьтесь с [рекомендациями](./custom-keyword-overview.md#choose-an-effective-keyword) по выбору эффективного ключевого слова.
 
     ![Введите ключевое слово](media/custom-keyword/custom-kws-portal-new-model.png)
 
@@ -79,4 +79,4 @@ ms.locfileid: "93305896"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Протестируйте пользовательское ключевое слово в [кратком руководстве по пакету SDK для речевых устройств](https://aka.ms/sdsdk-quickstart).
+Протестируйте пользовательское ключевое слово в [кратком руководстве по пакету SDK для речевых устройств](./speech-devices-sdk-quickstart.md?pivots=platform-android).

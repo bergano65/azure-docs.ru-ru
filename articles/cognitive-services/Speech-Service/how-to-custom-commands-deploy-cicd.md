@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: bd1ab5110313380c90e71ed161935c7274a845b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dda50a443babca88a0a650fde60df0744d0a1d2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839254"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021836"
 ---
 # <a name="continuous-deployment-with-azure-devops"></a>Непрерывное развертывание с помощью Azure DevOps
 
@@ -25,7 +25,7 @@ ms.locfileid: "91839254"
 > [!div class = "checklist"]
 > * Приложение настраиваемых команд для разработки (DEV)
 > * Приложение пользовательских команд для рабочей среды (Production)
-> * Регистрация в [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops)
+> * Регистрация в [Azure pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops)
 
 ## <a name="exportimportpublish"></a>Экспорт, импорт и публикация
 
@@ -99,7 +99,7 @@ ms.locfileid: "91839254"
 
 ## <a name="deploy-from-source-code"></a>Развертывание из исходного кода
 
-Если вы хотите оставить определение приложения в репозитории, мы предоставляем скрипты для развертывания из исходного кода. Так как скрипты находятся в bash, при использовании Windows необходимо установить [подсистему Linux](https://docs.microsoft.com/windows/wsl/install-win10).
+Если вы хотите оставить определение приложения в репозитории, мы предоставляем скрипты для развертывания из исходного кода. Так как скрипты находятся в bash, при использовании Windows необходимо установить [подсистему Linux](/windows/wsl/install-win10).
 
 Скрипты размещаются в [Cognitive Services голосовым помощником — пользовательских командах](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/tree/master/custom-commands). Клонировать скрипты из каталога Bash в репозиторий. Убедитесь, что вы сохраняете тот же путь.
 
@@ -168,7 +168,7 @@ ms.locfileid: "91839254"
 1. Щелкните "выполнить" и выберите "задание" выполняется.
     Вы увидите список задач, которые выполняются с: "Импорт приложения" & "обучение и публикация приложения".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [См. примеры на GitHub](https://aka.ms/speech/cc-samples)

@@ -13,38 +13,38 @@ author: blazem-msft
 ms.author: blazem
 ms.reviewer: jroth
 manager: jroth
-ms.openlocfilehash: f4dcec5e58cb10850e22d3006b0ecd41f6d013fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15b4a90a4e082cbe8fc0f2da1a87b6860cfb66a4
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86202278"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024217"
 ---
 # <a name="all-topics-for-azure-sql-server-stretch-database-service"></a>Все статьи о службе SQL Server Stretch Database в Azure
-На этой странице перечислены все статьи, касающиеся непосредственно службы **SQL Server Stretch Database** в Azure. На этой веб-странице с помощью клавиш **Ctrl+F**можно искать интересующие вас разделы по ключевым словам.
+На этой странице перечислены все статьи, касающиеся непосредственно службы **SQL Server Stretch Database** в Azure. На этой веб-странице с помощью клавиш **Ctrl+F** можно искать интересующие вас разделы по ключевым словам.
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Приступая к работе
 | Заголовок | Описание |
 |:--- |:--- |
-|[Определение баз данных и таблиц для Stretch Database с использованием помощника Stretch Database](sql-server-stretch-database-identify-databases.md) |Узнайте, как определить базы данных и таблицы, которые подходят для Stretch Database. |
-|[Ограничения для Stretch Database](sql-server-stretch-database-limitations.md) |Дополнительные сведения об ограничениях для Stretch Database. |
-|[Обзор Stretch Database](sql-server-stretch-database-overview.md) |В этой статье содержатся сведения о том, как служба Stretch Database позволяет прозрачно и безопасно переносить "холодные" данные в облако Microsoft Azure. |
-|[Запуск мастера включения растяжения для базы данных](sql-server-stretch-database-wizard.md) |Узнайте, как настроить базу данных для Stretch Database с помощью мастера включения растяжения базы данных. |
+|[Определение баз данных и таблиц для Stretch Database с использованием помощника Stretch Database](/sql/sql-server/stretch-database/stretch-database-databases-and-tables-stretch-database-advisor) |Узнайте, как определить базы данных и таблицы, которые подходят для Stretch Database. |
+|[Ограничения для Stretch Database](/sql/sql-server/stretch-database/limitations-for-stretch-database) |Дополнительные сведения об ограничениях для Stretch Database. |
+|[Обзор Stretch Database](/sql/sql-server/stretch-database/stretch-database) |В этой статье содержатся сведения о том, как служба Stretch Database позволяет прозрачно и безопасно переносить "холодные" данные в облако Microsoft Azure. |
+|[Запуск мастера включения растяжения для базы данных](/sql/sql-server/stretch-database/get-started-by-running-the-enable-database-for-stretch-wizard) |Узнайте, как настроить базу данных для Stretch Database с помощью мастера включения растяжения базы данных. |
 
 ## <a name="enable"></a>Включить
 | Заголовок | Описание |
 |:--- |:--- |
-|[Включение базы данных Stretch для базы данных](sql-server-stretch-database-enable-database.md) |Узнайте, как настроить базу данных для использования со Stretch Database. |
-|[Настройка базы данных Stretch для таблицы](sql-server-stretch-database-enable-table.md) |Узнайте, как настроить таблицу для использования со службой Stretch Database. |
-|[Выбор строк для миграции с использованием функции фильтров (Stretch Database)](sql-server-stretch-database-predicate-function.md) |Узнайте, как выбрать строки для переноса с помощью функции фильтра. |
+|[Включение базы данных Stretch для базы данных](/sql/sql-server/stretch-database/enable-stretch-database-for-a-database) |Узнайте, как настроить базу данных для использования со Stretch Database. |
+|[Настройка базы данных Stretch для таблицы](/sql/sql-server/stretch-database/enable-stretch-database-for-a-table) |Узнайте, как настроить таблицу для использования со службой Stretch Database. |
+|[Выбор строк для миграции с использованием функции фильтров (Stretch Database)](/sql/sql-server/stretch-database/select-rows-to-migrate-by-using-a-filter-function-stretch-database) |Узнайте, как выбрать строки для переноса с помощью функции фильтра. |
 
 ## <a name="manage"></a>Управление
 | Заголовок | Описание |
 |:--- |:--- |
-|[Отключение Stretch Database и возвращение удаленных данных](sql-server-stretch-database-disable.md) |Узнайте, как отключить Stretch Database для таблицы и при необходимости вернуть удаленные данные. |
-|[Управление службой Stretch Database и устранение неполадок, связанных с ее использованием](sql-server-stretch-database-manage.md) |Узнайте, как управлять службой Stretch Database и устранять неполадки, связанные с ее использованием. |
-|[Мониторинг переноса данных и устранение неполадок при этой операции (Stretch Database)](sql-server-stretch-database-monitor.md) |Узнайте, как отслеживать состояние переноса данных. |
-|[Приостановка и возобновление переноса данных (Stretch Database)](sql-server-stretch-database-pause.md) |Узнайте, как приостановить или возобновить перенос данных в Azure. |
+|[Отключение Stretch Database и возвращение удаленных данных](/sql/sql-server/stretch-database/disable-stretch-database-and-bring-back-remote-data) |Узнайте, как отключить Stretch Database для таблицы и при необходимости вернуть удаленные данные. |
+|[Управление службой Stretch Database и устранение неполадок, связанных с ее использованием](/sql/sql-server/stretch-database/manage-and-troubleshoot-stretch-database) |Узнайте, как управлять службой Stretch Database и устранять неполадки, связанные с ее использованием. |
+|[Мониторинг переноса данных и устранение неполадок при этой операции (Stretch Database)](/sql/sql-server/stretch-database/monitor-and-troubleshoot-data-migration-stretch-database) |Узнайте, как отслеживать состояние переноса данных. |
+|[Приостановка и возобновление переноса данных (Stretch Database)](/sql/sql-server/stretch-database/pause-and-resume-data-migration-stretch-database) |Узнайте, как приостановить или возобновить перенос данных в Azure. |
 
 ## <a name="security"></a>Безопасность
 | Заголовок | Описание |
@@ -55,6 +55,5 @@ ms.locfileid: "86202278"
 ## <a name="backup-and-recovery"></a>Резервное копирование и восстановление
 | Заголовок | Описание |
 |:--- |:--- |
-|[Резервное копирование баз данных с поддержкой Stretch](sql-server-stretch-database-backup.md) |Узнайте, как создавать резервные копии баз данных, поддерживающих перенос. |
-|[Восстановление баз данных с поддержкой Stretch](sql-server-stretch-database-restore.md) |Узнайте, как восстанавливать базы данных с поддержкой переноса. |
-
+|[Резервное копирование баз данных с поддержкой Stretch](/sql/sql-server/stretch-database/backup-stretch-enabled-databases-stretch-database) |Узнайте, как создавать резервные копии баз данных, поддерживающих перенос. |
+|[Восстановление баз данных с поддержкой Stretch](/sql/sql-server/stretch-database/restore-stretch-enabled-databases-stretch-database) |Узнайте, как восстанавливать базы данных с поддержкой переноса. |

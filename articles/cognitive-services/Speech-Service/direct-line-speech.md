@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: trbye
-ms.openlocfilehash: 2b0bb997ecea55d25748152bab7bb6963d67657f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8c7e21b0784aacc85bd02e3c1702e1a710e76ab
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91357647"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021887"
 ---
 # <a name="what-is-direct-line-speech"></a>Что такое Direct Line Speech?
 
@@ -37,9 +37,9 @@ ms.locfileid: "91357647"
 
 | Краткое руководство | Платформа | Справочник по интерфейсам API |
 |------------|----------|---------------|
-| C#, UWP | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| Java | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
-| Java | Android | [Обзор](https://aka.ms/csspeech/javaref) |
+| C#, UWP | Windows | [Обзор](/dotnet/api/microsoft.cognitiveservices.speech) |
+| Java | Windows, macOS, Linux | [Обзор](/java/api/com.microsoft.cognitiveservices.speech) |
+| Java | Android | [Обзор](/java/api/com.microsoft.cognitiveservices.speech) |
 
 ## <a name="sample-code"></a>Образец кода
 
@@ -50,21 +50,21 @@ ms.locfileid: "91357647"
 
 ## <a name="customization"></a>Настройка
 
-Речевые помощники, созданные с помощью речевой службы, могут использовать полный спектр вариантов настройки, доступных для преобразования [речи в текст](speech-to-text.md), преобразования [текста в речь](text-to-speech.md)и [выбора настраиваемых ключевых слов](speech-devices-sdk-create-kws.md).
+Речевые помощники, созданные с помощью речевой службы, могут использовать полный спектр вариантов настройки, доступных для преобразования [речи в текст](speech-to-text.md), преобразования [текста в речь](text-to-speech.md)и [выбора настраиваемых ключевых слов](./custom-keyword-basics.md).
 
 > [!NOTE]
-> Параметры настройки зависят от языка и языкового стандарта (см. раздел [Поддерживаемые языки](supported-languages.md)).
+> Параметры настройки зависят от языка и языкового стандарта (см. раздел [Поддерживаемые языки](./language-support.md)).
 
-Прямой голос и связанные с ним функции для голосовых помощников являются идеальным дополнением к [решению виртуального помощника и шаблону Enterprise](https://docs.microsoft.com/azure/bot-service/bot-builder-enterprise-template-overview). Несмотря на то, что прямое распознавание речи может работать с любым совместимым роботом, эти ресурсы предоставляют возможность повторного использования для высококачественных диалоговых возможностей, а также общие вспомогательные навыки и модели для быстрого начала работы.
+Прямой голос и связанные с ним функции для голосовых помощников являются идеальным дополнением к [решению виртуального помощника и шаблону Enterprise](/azure/bot-service/bot-builder-enterprise-template-overview). Несмотря на то, что прямое распознавание речи может работать с любым совместимым роботом, эти ресурсы предоставляют возможность повторного использования для высококачественных диалоговых возможностей, а также общие вспомогательные навыки и модели для быстрого начала работы.
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
-* [Служба Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
+* [пакет SDK для службы "Речь"](./speech-sdk.md);
+* [Служба Azure Bot](/azure/bot-service/?view=azure-bot-service-4.0)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Try the Speech service for free](overview.md#try-the-speech-service-for-free) (Бесплатное использование службы "Речь")
 * [Получение пакета SDK для службы "Речь"](speech-sdk.md)
-* [Создание и развертывание простого бота](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
+* [Создание и развертывание простого бота](/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
 * [Получение решения виртуального помощника и корпоративного шаблона](https://github.com/Microsoft/AI)

@@ -6,12 +6,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.date: 08/07/2020
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 2586bf2d31ef28c662ad88bde3718541bb21a31c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 39f73dd002091451ae832516d525499eae98564d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327210"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021377"
 ---
 # <a name="artificial-intelligence-in-language-understanding-luis"></a>Искусственный интеллект в Language Understanding (LUIS)
 
@@ -38,7 +38,7 @@ LUIS использует искусственный интеллект (ии) �
 * Настраиваемые аспекты NLP в LUIS:
     * [Разметки](luis-language-support.md#tokenization)
     * Морфологи с помощью диакритических знаков, пунктуации и [параметров API](luis-reference-application-settings.md) словоформ
-* Перед или после обработки запроса utterance, предоставляемого другими [Cognitive Services](../Welcome.md) например:
+* Перед или после обработки запроса utterance, предоставляемого другими [Cognitive Services](../what-are-cognitive-services.md) например:
     * [Перевод](../translator/translator-info-overview.md)
 
 ## <a name="natural-language-understanding-nlu"></a>Распознавание естественного языка (NLU)
@@ -55,6 +55,6 @@ LUIS не имеет значительных знаний о более шир�
 * Купа
 * приобрели
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о [жизненном цикле разработки](luis-concept-app-iteration.md) для приложения Luis

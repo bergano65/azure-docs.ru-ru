@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 01/21/2020
 ms.author: swmachan
-ms.openlocfilehash: a1d86ac354524cb4d7bf9f9776b8605f244d92f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1fe5a5669173733e3d0cf1b56b9997d15a3ff138
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83592514"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021309"
 ---
 # <a name="translator-30-dictionary-examples"></a>Переводчик 3,0: примеры словарей
 
 Этот метод предоставляет контекстные примеры использования термина, включенного в словарь. Эта операция используется в сочетании с [поиском по словарю](./v3-0-dictionary-lookup.md).
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -43,7 +43,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
 
 | Заголовки  | Описание |
 | ------ | ----------- |
-| Заголовки для проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
+| Заголовки для проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
 | Content-Type | **Обязательный заголовок запроса**.<br/>Указывает тип содержимого для полезных данных. Возможные значения: `application/json`. |
 | Content-Length   | **Обязательный заголовок запроса**.<br/>Длина текста запроса. |
 | X-ClientTraceId   | **Необязательно**.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем `ClientTraceId`. |

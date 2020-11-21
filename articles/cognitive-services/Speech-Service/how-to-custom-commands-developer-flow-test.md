@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ec8e40c0908855cd06d647bdd9121106e3553c11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c0bd21f55fee4d8487826deae23093ede293c8c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88918916"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021819"
 ---
 # <a name="test-your-custom-commands-application"></a>Тестирование приложения пользовательских команд
 
@@ -49,11 +49,10 @@ ms.locfileid: "88918916"
 - [Как настроить конечные точки веб-сайта](./how-to-custom-commands-setup-web-endpoints.md)
 
 Для других языков программирования и платформ:
-- [Языки программирования Speech SDK, платформы, производственные мощности сценариев](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk)
+- [Языки программирования Speech SDK, платформы, производственные мощности сценариев](./speech-sdk.md)
 - [Примеры кодов для речевого помощника](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [См. примеры на GitHub](https://aka.ms/speech/cc-samples)
-

@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 1f4dfc4b80aff01e4b7fe7ebae4850b28cd6a498
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9abd1f305e47eca743dc9274e0ec1f0a950dd6a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83588604"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021275"
 ---
 # <a name="translator-30-languages"></a>Переводчик 3,0: языки
 
 Возвращает набор языков, которые в настоящее время поддерживаются другими операциями транслятора. 
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `GET` на следующий адрес.
 ```HTTP
@@ -40,7 +40,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
     <td><em>Обязательный параметр</em>.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
-    <td>scope</td>
+    <td>область</td>
     <td>*Необязательный параметр*.<br/>Список имен, разделенных запятыми, определяющий возвращаемую группу языков. Допустимые имена групп: `translation`, `transliteration` и `dictionary`. Если область не задана, то возвращаются все группы, которые эквивалентны передаче `scope=translation,transliteration,dictionary`. Чтобы решить, какой набор поддерживаемых языков подходит для сценария, см. описание [объекта ответа](#response-body).</td>
   </tr>
 </table> 
@@ -275,7 +275,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   </tr>
 </table> 
 
-Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](./v3-0-reference.md#errors). 
 
 ## <a name="examples"></a>Примеры
 

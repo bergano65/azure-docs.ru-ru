@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
-ms.openlocfilehash: 6bc238389ac470e6127a582eb174ec7bc438e36b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e83cca79a4dc99533ab17cca7e96e1ac802d598
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91650874"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020799"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Источники событий Gen2 для службы "аналитика временных рядов Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "91650874"
 
 ## <a name="create-or-edit-event-sources"></a>Создание или изменение источников событий
 
-Ресурсы источника событий могут находиться в той же подписке Azure, что и среда Gen2 для аналитики временных рядов Azure, или другую подписку. Для создания, изменения и удаления источников событий среды можно использовать [портал Azure](time-series-insights-update-create-environment.md#create-a-preview-payg-environment), [Azure CLI](https://github.com/Azure/azure-cli-extensions/tree/master/src/timeseriesinsights), [шаблоны ARM](time-series-insights-manage-resources-using-azure-resource-manager-template.md)и [REST API](/rest/api/time-series-insights/management(gen1/gen2)/eventsources) .
+Ресурсы источника событий могут находиться в той же подписке Azure, что и среда Gen2 для аналитики временных рядов Azure, или другую подписку. Для создания, изменения и удаления источников событий среды можно использовать [портал Azure](./tutorials-set-up-tsi-environment.md#create-an-azure-time-series-insights-gen2-environment), [Azure CLI](https://github.com/Azure/azure-cli-extensions/tree/master/src/timeseriesinsights), [шаблоны ARM](time-series-insights-manage-resources-using-azure-resource-manager-template.md)и [REST API](/rest/api/time-series-insights/management(gen1/gen2)/eventsources) .
 
 При подключении источника событий среда Gen2 "аналитика временных рядов Azure" будет считывать все события, которые в настоящее время хранятся в вашем центре Интернета вещей или концентраторе событий, начиная с самого раннего события.
 
@@ -45,7 +45,7 @@ ms.locfileid: "91650874"
 
 - Не выйдите за [пределы пропускной способности](./concepts-streaming-ingress-throughput-limits.md) вашей среды или ограничения на количество секций.
 
-- Настройте [оповещение](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency#monitor-latency-and-throttling-with-alerts) о задержке, чтобы получать уведомления, если в среде возникают проблемы при обработке данных.
+- Настройте [оповещение](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) о задержке, чтобы получать уведомления, если в среде возникают проблемы при обработке данных.
 
 - Используйте потоковый прием только для последних данных и данных практически в реальном времени. Потоковая передача исторических данных не поддерживается.
 
@@ -64,7 +64,7 @@ ms.locfileid: "91650874"
 
 ## <a name="event-source-timestamp"></a>Метка времени источника события
 
-При настройке источника событий вам будет предложено указать свойство timestamp ID. Свойство timestamp используется для отслеживания событий с течением времени. это время, которое будет использоваться в качестве $event. $ts в [API-интерфейсах запросов](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute) и для отображения рядов в обозревателе службы "аналитика временных рядов Azure". Если свойство не предоставлено во время создания или если в событии отсутствует свойство timestamp, то в качестве значения по умолчанию будет использоваться центр Интернета вещей или зарегистрированное время для концентраторов событий. Значения свойств метки времени хранятся в формате UTC.
+При настройке источника событий вам будет предложено указать свойство timestamp ID. Свойство timestamp используется для отслеживания событий с течением времени. это время, которое будет использоваться в качестве $event. $ts в [API-интерфейсах запросов](/rest/api/time-series-insights/dataaccessgen2/query/execute) и для отображения рядов в обозревателе службы "аналитика временных рядов Azure". Если свойство не предоставлено во время создания или если в событии отсутствует свойство timestamp, то в качестве значения по умолчанию будет использоваться центр Интернета вещей или зарегистрированное время для концентраторов событий. Значения свойств метки времени хранятся в формате UTC.
 
 Как правило, пользователи могут настроить свойство метки времени и использовать время, когда датчик или тег создавали чтение, а не использовать стандартное время в очереди. Это особенно необходимо, когда устройства постоянно теряют связь, а пакет отложенных сообщений перенаправляется в Gen2 службы "аналитика временных рядов Azure".
 
@@ -80,7 +80,7 @@ ms.locfileid: "91650874"
 ± ЧЧ: ММ</br>
 ± ЧЧ: ММЗ</br>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [правилами преобразования и экранирования JSON](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как будут храниться события.
 

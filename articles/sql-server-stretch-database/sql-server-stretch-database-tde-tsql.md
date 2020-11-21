@@ -14,12 +14,12 @@ ms.author: blazem
 ms.reviewer: jroth
 manager: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 6f1f5f55348069dbfe11b4d5857d93f8ba8c9b19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 772341d046186e46b79ad7b11170e1bad23a3a6f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74033951"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024200"
 ---
 # <a name="enable-transparent-data-encryption-tde-for-stretch-database-on-azure-transact-sql"></a>Включение прозрачного шифрования данных (TDE) для Stretch Database в Azure (Transact-SQL)
 > [!div class="op_single_selector"]
@@ -69,7 +69,7 @@ FROM
 Результат ```1``` означает зашифрованную, а ```0``` — незашифрованную базу данных.
 
 <!--Anchors-->
-[Прозрачное шифрование данных (TDE)]: https://msdn.microsoft.com/library/bb934049.aspx
+[Прозрачное шифрование данных (TDE)]: /sql/relational-databases/security/encryption/transparent-data-encryption
 
 
 <!--Image references-->

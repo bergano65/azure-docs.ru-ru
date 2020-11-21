@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 01/21/2020
 ms.author: swmachan
-ms.openlocfilehash: b2d111f22b8ef36b20b93b65ff1ea6f7b52ea8f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ada9c06f0befbea4b9aa85f95651e96dec595b7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83584745"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021292"
 ---
 # <a name="translator-30-dictionary-lookup"></a>Переводчик 3,0: Поиск по словарю
 
 Предоставляет альтернативные переводы слова и небольших идиоматических выражений. Каждый перевод содержит части речи и список обратных переводов. Обратные переводы позволяют пользователю понять перевод в контексте. Операция [Dictionary Example](./v3-0-dictionary-examples.md) позволяет продолжить детализацию, чтобы увидеть пример использования каждой пары переводов.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -44,7 +44,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 | Заголовки  | Описание |
 | ------ | ----------- |
-| Заголовки для проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
+| Заголовки для проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
 | Content-Type | **Обязательный заголовок запроса**.<br/>Указывает тип содержимого для полезных данных. Возможные значения: `application/json`. |
 | Content-Length   | **Обязательный заголовок запроса**.<br/>Длина текста запроса. |
 | X-ClientTraceId   | **Необязательно**.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем `ClientTraceId`. |
@@ -82,12 +82,12 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
         | Имя тега | Описание  |
         |----------|--------------|
-        | ADJ      | Прилагательные   |
+        | ADJ      | прилагательные.   |
         | ADV      | Наречия      |
         | CONJ     | Союзы |
         | DET      | Определители  |
         | MODAL    | Команды        |
-        | NOUN     | Существительные        |
+        | NOUN     | существительные;        |
         | PREP     | Предлоги |
         | PRON     | Местоимения     |
         | VERB     | Команды        |

@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 05/01/2020
 ms.author: mamccrea
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9fbf4eab55ec2cf8e4f0e27969ca4a22eb1f27ad
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 753c7ff48960711cbedbf6b5d8644a26502dd413
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578623"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023748"
 ---
 # <a name="use-net-for-apache-spark-with-azure-synapse-analytics"></a>Использование .NET для Apache Spark с помощью Azure Synapse Analytics
 
@@ -74,9 +74,11 @@ ms.locfileid: "94578623"
 
 ### <a name="install-nuget-packages-in-notebooks"></a>Установка пакетов NuGet в записные книжки
 
-Вы можете установить выбранные вами пакеты NuGet в записную книжку, используя `#r` символ перед именем пакета NuGet. На следующей схеме показан пример.
+Вы можете установить выбранные вами пакеты NuGet в записную книжку, используя `#r nuget` команду Magic перед именем пакета NuGet. На следующей схеме показан пример.
 
 ![Снимок экрана, показывающий использование #r для установки пакета NuGet записной книжки .NET для Spark](./media/apache-spark-development-using-notebooks/synapse-spark-dotnet-notebook-nuget.png)
+
+Дополнительные сведения о работе с пакетами NuGet в записных книжках см. в [интерактивной документации по .NET](https://github.com/dotnet/interactive/blob/main/docs/nuget-overview.md).
 
 ### <a name="net-for-apache-spark-c-kernel-features"></a>.NET для функций ядра C# в Apache Spark
 

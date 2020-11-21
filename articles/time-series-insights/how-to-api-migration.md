@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: shresha
-ms.openlocfilehash: 1effb62619f9767cc90c99e037445e7a95981460
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 3aedbef079ba62f42ea79afdcd9995d7ee23d9fa
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078244"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020731"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Переход на новые версии API службы "аналитика временных рядов Azure Gen2"
 
@@ -24,9 +24,9 @@ ms.locfileid: "92078244"
 Если вы создали среду Gen2 "аналитика временных рядов Azure" в общедоступной предварительной версии (до 16 июля, 2020), обновите среду TSI, чтобы использовать новые общедоступные версии API, выполнив действия, описанные в этой статье. Это изменение не влияет на пользователей, которые используют Gen1 версию службы "аналитика временных рядов Azure".
 
 > [!IMPORTANT]
-> Обновления, описанные в этой статье, будут обновлять только версии API, используемые средой TSI. Это изменение не связано с новыми [правилами плоской обработки и экранирования JSON,](https://docs.microsoft.com/azure/time-series-insights/concepts-json-flattening-escaping-rules) появившимися в средах Gen2.
+> Обновления, описанные в этой статье, будут обновлять только версии API, используемые средой TSI. Это изменение не связано с новыми [правилами плоской обработки и экранирования JSON,](./concepts-json-flattening-escaping-rules.md) появившимися в средах Gen2.
 
-Новая версия API — `2020-07-31` и использует обновленный [синтаксис выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
+Новая версия API — `2020-07-31` и использует обновленный [синтаксис выражения временных рядов](/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 Пользователи должны переносить [переменные модели временных рядов](./concepts-variables.md), сохраненные запросы, Power BI запросы, а также любые пользовательские инструменты, осуществляющие вызовы к конечным точкам API. Если у вас возникнут вопросы или проблемы, связанные с процессом миграции, отправьте запрос в службу поддержки через портал Azure и сослаться на этот документ.
 
@@ -63,7 +63,7 @@ ms.locfileid: "92078244"
 
     [![Обновление сохраненных запросов](media/api-migration/ux-migration-tool-updated-variables.png)](media/v2-update-overview/overview-one.png#lightbox)
 
-1. Нажмите кнопку **Готово**.
+1. Нажмите кнопку **Done**(Готово).
 
     [![Завершенная миграция](media/api-migration/ux-migration-tool-updated-saved-queries.png)](media/v2-update-overview/overview-one.png#lightbox)
 
@@ -84,28 +84,28 @@ ms.locfileid: "92078244"
 
 - API модели временных рядов
   - API параметров модели
-    - [Получить](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
-    - [Обновление](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/modelsettings/update)
+    - [Получить](/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
+    - [Обновление](/rest/api/time-series-insights/dataaccessgen2/modelsettings/update)
   - API экземпляра
-    - [Все операции пакетной обработки](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)
-    - [Список](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/list)
-    - [Поиск](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/search)
-    - [Рекомендация](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/suggest)
+    - [Все операции пакетной обработки](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)
+    - [Список](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/list)
+    - [Поиск](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/search)
+    - [Рекомендация](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/suggest)
   - Интерфейсы API иерархии
-    - [Все операции пакетной обработки](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/executebatch)
-    - [Список](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/list)
+    - [Все операции пакетной обработки](/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/executebatch)
+    - [Список](/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/list)
   - Интерфейсы API типов
-    - [Удаление, получение операций](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
-    - [Список](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/list)
+    - [Удаление, получение операций](/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
+    - [Список](/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/list)
 
-Для следующих конечных точек RESTFUL необходимо обновить версию API до `2020-07-31` в URI и убедиться, что все экземпляры `tsx` свойства используют обновленный [синтаксис выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
+Для следующих конечных точек RESTFUL необходимо обновить версию API до `2020-07-31` в URI и убедиться, что все экземпляры `tsx` свойства используют обновленный [синтаксис выражения временных рядов](/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 - Интерфейсы API типов
-  - [Операция размещения](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput)
+  - [Операция размещения](/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput)
 - Интерфейсы API для запросов
-  - [События](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)
-  - [Серия](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries)
-  - [жетаггрегатесериес](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
+  - [События](/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)
+  - [Серия](/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries)
+  - [жетаггрегатесериес](/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
 
 ### <a name="examples"></a>Примеры
 
@@ -358,7 +358,7 @@ ms.locfileid: "92078244"
 
 #### <a name="invalidinput"></a>InvalidInput
 
-Если отображается следующая ошибка, используется новая версия API ( `2020-07-31` ), но синтаксис целевого сервера не был обновлен. Ознакомьтесь с [синтаксисом выражений временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) и примерами миграции, приведенными выше. Перед повторной `tsx` отправкой запроса API убедитесь, что все свойства правильно обновлены.
+Если отображается следующая ошибка, используется новая версия API ( `2020-07-31` ), но синтаксис целевого сервера не был обновлен. Ознакомьтесь с [синтаксисом выражений временных рядов](/rest/api/time-series-insights/reference-time-series-expression-syntax) и примерами миграции, приведенными выше. Перед повторной `tsx` отправкой запроса API убедитесь, что все свойства правильно обновлены.
 
 ```JSON
 {

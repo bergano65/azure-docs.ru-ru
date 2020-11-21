@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: troubleshooting
 ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 231f2e4df1445c60378ac06aab0d0e56f410c1c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15f2ff5aaa1d731c13125d0a3ab4ac32acb9276c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91530142"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023281"
 ---
 # <a name="diagnose-and-solve-issues-in-your-azure-time-series-insights-gen1-environment"></a>Диагностика и устранение проблем в среде Gen1 "аналитика временных рядов Azure"
 
@@ -37,7 +37,7 @@ ms.locfileid: "91530142"
 
 ### <a name="cause-a-event-source-data-isnt-in-json-format"></a>Причина: данные источника события не находятся в формате JSON
 
-Среда службы "Аналитика временных рядов Azure" поддерживает только данные в формате JSON. Примеры JSON см. в разделе [Поддерживаемые формы JSON](./how-to-shape-query-json.md).
+Среда службы "Аналитика временных рядов Azure" поддерживает только данные в формате JSON. Примеры JSON см. в разделе [Поддерживаемые формы JSON](./concepts-json-flattening-escaping-rules.md).
 
 ### <a name="cause-b-the-event-source-key-is-missing-a-required-permission"></a>Причина б. у ключа источника события отсутствует требуемое разрешение
 
@@ -85,7 +85,7 @@ ms.locfileid: "91530142"
 
 Среда с номером SKU S1 и емкостью 3 может принимать только 2100 событий в минуту (1 миллион событий в день = 700 событий в минуту на 3 единицы = 2100 событий в минуту).
 
-Чтобы получить общее представление о принципах работы логики обработки, см. раздел [поддерживаемые фигуры JSON](./how-to-shape-query-json.md).
+Чтобы получить общее представление о принципах работы логики обработки, см. раздел [поддерживаемые фигуры JSON](./concepts-json-flattening-escaping-rules.md).
 
 #### <a name="recommended-resolutions-for-excessive-throttling"></a>Рекомендуемые действия по устранению проблемы чрезмерного регулирования
 
@@ -135,7 +135,7 @@ ms.locfileid: "91530142"
 * *Значок календаря*: указывает, что служба "аналитика временных рядов Azure" считывает значения данных в виде значений DateTime.
 * *#*: Указывает, что служба "аналитика временных рядов Azure" считывает значения данных как целые числа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как устранить задержку в службе "аналитика временных рядов Azure](time-series-insights-environment-mitigate-latency.md)".
 

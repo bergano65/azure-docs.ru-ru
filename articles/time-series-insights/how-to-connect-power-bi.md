@@ -8,12 +8,12 @@ services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
-ms.openlocfilehash: 105faf796583eb0f272eea7a316648993fdafd0d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 680b3c5a9548fa06d0139bd441b5583c27427a77
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653780"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020782"
 ---
 # <a name="visualize-data-from-azure-time-series-insights-in-power-bi"></a>Визуализация данных из службы "аналитика временных рядов Azure" в Power BI
 
@@ -32,7 +32,7 @@ ms.locfileid: "91653780"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Скачайте и установите последнюю версию [Power BI Desktop](https://powerbi.microsoft.com/downloads/)
-* Или создайте [среду Gen2 "аналитика временных рядов Azure](time-series-insights-update-how-to-manage.md) ".
+* Или создайте [среду Gen2 "аналитика временных рядов Azure](./how-to-provision-manage.md) ".
 
 > [!IMPORTANT]
 >
@@ -94,7 +94,7 @@ ms.locfileid: "91653780"
 
     [![Выбор создания настраиваемого запроса](media/how-to-connect-power-bi/confirm-the-connection.png)](media/how-to-connect-power-bi/confirm-the-connection.png#lightbox)
 
-1. В раскрывающемся меню в разделе **источник данных**выберите **создать настраиваемый запрос**. Вставьте из буфера обмена в поле необязательный **настраиваемый запрос (необязательно)** ниже, а затем нажмите кнопку **ОК**.
+1. В раскрывающемся меню в разделе **источник данных** выберите **создать настраиваемый запрос**. Вставьте из буфера обмена в поле необязательный **настраиваемый запрос (необязательно)** ниже, а затем нажмите кнопку **ОК**.
 
     [![Передайте пользовательский запрос и нажмите кнопку ОК.](media/how-to-connect-power-bi/custom-query-load.png)](media/how-to-connect-power-bi/custom-query-load.png#lightbox)  
 
@@ -130,7 +130,7 @@ ms.locfileid: "91653780"
 
 ## <a name="advanced-editing"></a>Расширенное редактирование
 
-Если вы уже загрузили набор данных в Power BI, но хотите изменить запрос (например, параметры даты и времени или идентификатора среды), это можно сделать с помощью функций Расширенный редактор Power BI. Дополнительные сведения см. в [документации по Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) .
+Если вы уже загрузили набор данных в Power BI, но хотите изменить запрос (например, параметры даты и времени или идентификатора среды), это можно сделать с помощью функций Расширенный редактор Power BI. Дополнительные сведения см. в [документации по Power BI](/power-bi/desktop-query-overview) .
 
 Общие сведения:
 
@@ -146,6 +146,6 @@ ms.locfileid: "91653780"
 
 ## <a name="next-steps"></a>Next Steps
 
-* Узнайте о [концепциях соединителей Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) для Azure Time Series Insights.
+* Узнайте о [концепциях соединителей Power BI](/power-bi/desktop-query-overview) для Azure Time Series Insights.
 
-* Дополнительные сведения о [Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-query-overview).
+* Дополнительные сведения о [Power BI Desktop](/power-bi/desktop-query-overview).

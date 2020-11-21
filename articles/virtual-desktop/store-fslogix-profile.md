@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0b1a5e36232e74caa34037efbbb0da0c39051998
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 189ff3bbfdb3b8533defcedb77e15fef433598b5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89568699"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023094"
 ---
 # <a name="storage-options-for-fslogix-profile-containers-in-windows-virtual-desktop"></a>Варианты хранения для контейнеров профилей Фслогикс в виртуальном рабочем столе Windows
 
@@ -23,7 +23,7 @@ Azure предлагает несколько решений для хранен
 
 ## <a name="azure-platform-details"></a>Сведения о платформе Azure
 
-|Компоненты|Файлы Azure|Azure NetApp Files|Локальные дисковые пространства|
+|Возможности|Файлы Azure|Azure NetApp Files|Локальные дисковые пространства|
 |--------|-----------|------------------|---------------------|
 |Вариант использования|Общего назначения|Ultra Performance или миграция из локальной среды NetApp|Поддержка разных платформ|
 |Служба платформы|Да, решение Azure Native|Да, решение Azure Native|Нет, самостоятельное управление|
@@ -36,16 +36,16 @@ Azure предлагает несколько решений для хранен
 
 ## <a name="azure-management-details"></a>Сведения об управлении Azure
 
-|Компоненты|Файлы Azure|Azure NetApp Files|Локальные дисковые пространства|
+|Возможности|Файлы Azure|Azure NetApp Files|Локальные дисковые пространства|
 |--------|-----------|------------------|---------------------|
 |Доступ|Облако, локальное и гибридное развертывание (служба синхронизации файлов Azure)|Локальное облако (через ExpressRoute)|Локальное облако|
 |Резервное копирование|Интеграция моментальных снимков Azure Backup|Моментальные снимки Azure NetApp Files|Интеграция моментальных снимков Azure Backup|
 |Безопасность и соответствие требованиям|[Все поддерживаемые сертификаты Azure](https://www.microsoft.com/trustcenter/compliance/complianceofferings)|ISO-файл завершен|[Все поддерживаемые сертификаты Azure](https://www.microsoft.com/trustcenter/compliance/complianceofferings)|
-|Интеграция Azure Active Directory|[Собственные Active Directory и доменные службы Azure Active Directory](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-overview)|[Azure Active Directory доменных служб и собственных Active Directory](../azure-netapp-files/azure-netapp-files-faqs.md#does-azure-netapp-files-support-azure-active-directory)|Поддержка только доменных служб собственного Active Directory или Azure Active Directory|
+|Интеграция Azure Active Directory|[Собственные Active Directory и доменные службы Azure Active Directory](../storage/files/storage-files-active-directory-overview.md)|[Azure Active Directory доменных служб и собственных Active Directory](../azure-netapp-files/azure-netapp-files-faqs.md#does-azure-netapp-files-support-azure-active-directory)|Поддержка только доменных служб собственного Active Directory или Azure Active Directory|
 
 После выбора метода хранения ознакомьтесь с [ценами на виртуальные рабочие столы Windows](https://azure.microsoft.com/pricing/details/virtual-desktop/) , чтобы получить сведения о наших тарифных планах.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о контейнерах профилей Фслогикс, дисках профилей пользователей и других технологиях профилей пользователей см. в таблице в [контейнерах профилей фслогикс и файлах Azure](fslogix-containers-azure-files.md).
 

@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 211ad590ab01d0be26d799064e1227accc619585
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 2c143c299cec1d48dd5438d5350c818d5cc93800
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94497368"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023724"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Общие сведения о миграции: SQL Server в SQL Управляемый экземпляр
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -63,7 +63,7 @@ ms.locfileid: "94497368"
 Вы можете выбрать ресурсы для вычислений и хранения во время развертывания, а затем изменить их после использования [портал Azure](../../database/scale-resources.md) без простоя приложения. 
 
 > [!IMPORTANT]
-> Любое расхождение в [требованиях к виртуальной сети для управляемого экземпляра](/../../managed-instance/connectivity-architecture-overview.md#network-requirements) может препятствовать созданию новых экземпляров или использованию существующих. Узнайте больше о [создании новых](/../../managed-instance/virtual-network-subnet-create-arm-template?branch=release-ignite-arc-data)   и [настройке существующих](/../../managed-instance/vnet-existing-add-subnet?branch=release-ignite-arc-data)   сетей. 
+> Любое расхождение в [требованиях к виртуальной сети для управляемого экземпляра](/azure/azure-sql/managed-instance/connectivity-architecture-overview#network-requirements) может препятствовать созданию новых экземпляров или использованию существующих. Узнайте больше о [создании новых](/azure/azure-sql/managed-instance/virtual-network-subnet-create-arm-template?branch=release-ignite-arc-data)   и [настройке существующих](/azure/azure-sql/managed-instance/vnet-existing-add-subnet?branch=release-ignite-arc-data)   сетей. 
 
 ### <a name="sql-server-vm-alternative"></a>Альтернативная SQL Server ВМ
 
@@ -172,7 +172,7 @@ SQL Server функции высокого уровня доступности A
 
 По умолчанию Azure Database Migration Service поддерживает перенос имен входа только для SQL. Но вы можете включить поддержку переноса имен входа Windows.Для этого сделайте следующее:
 
-Убедитесь, что целевой SQL-Управляемый экземпляр имеет доступ на чтение Azure AD, который можно настроить с помощью портал Azure пользователем с ролью " **администратор компании** " или " **глобальный администратор** ".
+Убедитесь, что целевой SQL-Управляемый экземпляр имеет доступ на чтение Azure AD, который можно настроить с помощью портал Azure пользователем с ролью " **администратор компании** " или " **глобальный администратор**".
 Настройте в экземпляре Azure Database Migration Service поддержку переноса имени входа пользователей и групп Windows, которую можно выполнить на странице "Конфигурация" портала Azure. После включения этого параметра перезапустите службу, чтобы изменения вступили в силу.
 
 Когда завершится перезапуск службы, в списке доступных для миграции имен входа отобразятся имена входа пользователей и групп Windows. Для всех переносимых имен входа пользователей и групп Windows вам будет предложено указать соответствующее доменное имя. Учетные записи пользователей службы (с именем домена NT AUTHORITY) и виртуальные учетные записи пользователей (с именем домена NT SERVICE) не поддерживаются.
@@ -214,7 +214,7 @@ SQL Server функции высокого уровня доступности A
 Эти ресурсы были разработаны в рамках программы Data SQL Ninja, которая спонсируется группой разработчиков Azure Data Group. Основная часть программы Data SQL Ninja заключается в разрешении и ускорении сложной модернизации и реализация перехода на платформу данных Microsoft Azure. Если вы считаете, что ваша организация заинтересована в участии в программе Data SQL Ninja, обратитесь в службу поддержки своей учетной записи и попросите отправить заявку.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к переносу SQL Server в Azure SQL Управляемый экземпляр, ознакомьтесь с [руководством по миграции SQL Server в sql управляемый экземпляр](sql-server-to-managed-instance-guide.md).
 

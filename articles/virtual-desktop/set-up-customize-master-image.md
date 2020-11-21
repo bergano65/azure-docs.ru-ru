@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/14/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 175b2268727364040640b319c24019bdf9b48df9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e4cb4fe8a701600290d24c055e2be5187a711c5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89433710"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023400"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
@@ -189,7 +189,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
 
 1. Преобразуйте образ виртуальной машины (VHD) в исправленный, если он еще не создан. Если вы не преобразуете образ в Fixed, вы не сможете успешно создать образ.
 
-2. Отправьте виртуальный жесткий диск в контейнер больших двоичных объектов в вашей учетной записи хранения. Можно быстро отправить с помощью [средства Обозреватель службы хранилища](https://azure.microsoft.com/features/storage-explorer/). Дополнительные сведения о средстве Обозреватель службы хранилища см. в [этой статье](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows).
+2. Отправьте виртуальный жесткий диск в контейнер больших двоичных объектов в вашей учетной записи хранения. Можно быстро отправить с помощью [средства Обозреватель службы хранилища](https://azure.microsoft.com/features/storage-explorer/). Дополнительные сведения о средстве Обозреватель службы хранилища см. в [этой статье](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows).
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана окна поиска Обозреватель службы хранилища Microsoft Azure инструмента. Установлен флажок "отправлять файлы VHD или VHDX как страничные BLOB-объекты (рекомендуется)".](media/897aa9a9b6acc0aa775c31e7fd82df02.png)
@@ -204,7 +204,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана уведомления об успешно созданном образе.](media/1f41b7192824a2950718a2b7bb9e9d69.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о создании и обновлении пулов узлов см. в следующих статьях:
 

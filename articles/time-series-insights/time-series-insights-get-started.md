@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 401d22ee68ba0652eb684b03b06fddf0b0fe3d72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61af7922318514a7b86a349d1970c59d4d168d85
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569463"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023332"
 ---
 # <a name="create-a-new-azure-time-series-insights-gen1-environment-in-the-azure-portal"></a>Создайте новую среду Gen1 "аналитика временных рядов Azure" в портал Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "91569463"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-1. Нажмите кнопку **+ создать ресурс** .
+1. Нажмите кнопку **+ Создать ресурс**.
 
 1. Выберите категорию **Интернет вещей**, а затем — **Аналитика временных рядов**.
 
@@ -60,17 +60,17 @@ ms.locfileid: "91569463"
 
    [![Просмотр уведомлений](media/time-series-insights-get-started/tsi-deploy-notifications.png)](media/time-series-insights-get-started/tsi-deploy-notifications.png#lightbox)
 
-1. В разделе **Общие сведения о**ресурсе проверьте параметры конфигурации развертывания.
+1. В разделе **Общие сведения о** ресурсе проверьте параметры конфигурации развертывания.
 
    [![Создание ПИН-кода службы "аналитика временных рядов Azure" на панели мониторинга](media/time-series-insights-get-started/tsi-verify-deployment.png)](media/time-series-insights-get-started/tsi-verify-deployment.png#lightbox)
 
 1. **(Необязательно)** Щелкните **значок закрепления** в правом верхнем углу, чтобы легко получить доступ к среде службы "аналитика временных рядов Azure" в будущем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Определите политики доступа к данным](time-series-insights-data-access.md) для защиты среды.
+* [Определите политики доступа к данным](./concepts-access-policies.md) для защиты среды.
 
-* [Добавьте источник событий концентратора событий](time-series-insights-how-to-add-an-event-source-eventhub.md) в среду "Аналитика временных рядов Azure".
+* [Добавьте источник событий концентратора событий](./how-to-ingest-data-event-hub.md) в среду "Аналитика временных рядов Azure".
 
 * [Отправка событий](time-series-insights-send-events.md) в источник событий.
 

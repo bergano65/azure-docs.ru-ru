@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
-ms.openlocfilehash: 1681217c9e55b67ee2a6737aeece5303256bc1e6
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 654d7b4ddb332906aba330da20d42a0e16ec79e6
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461810"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021445"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживает Azure Monitor?
 В этой статье описаны различные приложения и службы, которые отслеживаются с помощью Azure Monitor. 
@@ -120,13 +120,12 @@ ms.locfileid: "92461810"
 |Центр Интернета вещей | Да | Да | нет |  |
 |Key Vault | Да | Да | [Да](./insights/key-vault-insights-overview.md) |  |
 |Служба Kubernetes (AKS) | нет | нет | [Да](insights/container-insights-overview.md)  |  |
-|Load Balancer | Да | Нет | нет |  |
+|Load Balancer | Да | нет | нет |  |
 |Logic Apps | Да | Да | нет |  |
 |Служба машинного обучения | нет | нет | нет |  |
 |Управляемые приложения  | нет | нет | нет |  |
 |Maps  | нет | нет | нет |  |
 |Службы мультимедиа | Да | Да | нет |  |
-|Microsoft Flow | нет | нет | нет |  |
 |Компьютеры, управляемые Майкрософт | нет | нет | нет |  |
 |Microsoft PowerApps | нет | нет | нет |  |
 |Microsoft Social Engagement | нет | нет | нет |  |
@@ -137,12 +136,13 @@ ms.locfileid: "92461810"
 |Центры уведомлений | Да | нет | нет |  |
 |Открытые наборы данных | нет | нет | нет |  |
 |Политика | нет | нет | нет |  |
+|Power Automate | нет | нет | нет |  |
 |Power BI Embedded | Да | Да | нет |  |
 |Приватный канал | нет | нет | нет |  |
 |Project Spool Communication Platform | нет | нет | нет |  |
 |Red Hat OpenShift. | нет | нет | нет |  |
 |кэш Redis; | Да | Да | [Да](insights/redis-cache-insights-overview.md) | |
-|Resource Graph | нет | Нет | нет |  |
+|Resource Graph | нет | нет | нет |  |
 |Resource Manager | нет | нет | нет |  |
 |Microsoft Bing для электронной коммерции | нет | нет | нет |  |
 |Поиск | Да | Да | нет |  |
@@ -150,25 +150,25 @@ ms.locfileid: "92461810"
 |Service Fabric | нет | Да | нет | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами.  |
 |Портал регистрации | нет | нет | нет |  |
 |Site Recovery | нет | Да | нет |  |
-|Служба Spring Cloud | нет | Нет | нет |  |
+|Служба Spring Cloud | нет | нет | нет |  |
 |Azure Synapse Analytics | Да | Да | нет |  |
 |База данных SQL | Да | Да | нет |  |
 |SQL Server Stretch Database | Да | Да | нет |  |
-|Стек | нет | Нет | нет |  |
+|Стек | нет | нет | нет |  |
 |Память | Да | нет | [Да](insights/storage-insights-overview.md) |  |
 |Кэш хранилища | нет | нет | нет |  |
 |Службы синхронизации хранилища | нет | нет | нет |  |
 |Stream Analytics | Да | Да | нет |  |
 |Аналитика временных рядов | Да | Да | нет |  |
-|TINA | нет | Нет | нет |  |
+|TINA | нет | нет | нет |  |
 |Диспетчер трафика | Да | Да | нет |  |
-|Универсальная печать | нет | Нет | нет |  |
+|Универсальная печать | нет | нет | нет |  |
 |Масштабируемые наборы виртуальных машин Microsoft Azure | нет | Да | [Да](insights/vminsights-overview.md) | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами. |
 |Виртуальные машины | Да | Да | [Да](insights/vminsights-overview.md) | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами. |
 |Виртуальная сеть | Да | Да | [Да](insights/network-insights-overview.md) |  |
 |Виртуальная сеть — журналы потоков NSG | нет | Да | нет |  |
 |VPN-шлюз | Да | Да | нет |  |
-|Виртуальный рабочий стол Windows | нет | Нет | нет |  |
+|Виртуальный рабочий стол Windows | нет | нет | нет |  |
 
 ## <a name="virtual-machine-agents"></a>Агенты виртуальных машин
 В следующей таблице перечислены агенты, которые могут получать данные из гостевой операционной системы виртуальных машин и передавать данные для наблюдения. Каждый агент может составлять различные данные и передавать их метрикам или журналам в Azure Monitor. 
@@ -178,10 +178,10 @@ ms.locfileid: "92461810"
 | Агент |  Метрики | Журналы |
 |:---|:---|:---|:---|
 | [Агент Azure Monitor (Предварительная версия)](platform/azure-monitor-agent-overview.md) | Да | Да |
-| [Агент Log Analytics](platform/log-analytics-agent.md) | Нет | Да|
-| [Диагностическое расширение](platform/diagnostics-extension-overview.md) | Да | Нет |
-| [Агент Telegraf](platform/collect-custom-metrics-linux-telegraf.md) | Да | Нет |
-| [Агент зависимостей](insights/vminsights-enable-overview.md) | Нет | Да |
+| [Агент Log Analytics](platform/log-analytics-agent.md) | нет | Да|
+| [Диагностическое расширение](platform/diagnostics-extension-overview.md) | Да | нет |
+| [Агент Telegraf](platform/collect-custom-metrics-linux-telegraf.md) | Да | нет |
+| [Агент зависимостей](insights/vminsights-enable-overview.md) | нет | Да |
 
 
 ## <a name="product-integrations"></a>Интеграция продуктов

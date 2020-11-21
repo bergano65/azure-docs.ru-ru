@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 09/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6dcd2005971927de30ca96173cb2bdb063e46663
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8578f8aef779ff80f3965fc21b24b785f11226d0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89397442"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024149"
 ---
 # <a name="forward-azure-automation-job-data-to-azure-monitor-logs"></a>Пересылка данных задания службы автоматизации Azure в журналы Azure Monitor
 
@@ -177,7 +177,7 @@ AzureDiagnostics
 
 ### <a name="filter-job-status-output-converted-into-a-json-object"></a>Выходные данные состояния задания фильтрации, преобразованные в объект JSON
 
-Недавно мы изменили поведение записи данных журнала автоматизации в `AzureDiagnostics` таблицу в службе log Analytics, где они больше не разбивают свойства JSON на отдельные поля. Если вы настроили модуль Runbook для форматирования объектов в выходном потоке в формате JSON в виде отдельных столбцов, необходимо перенастроить запросы для анализа этого поля в объект JSON, чтобы получить доступ к этим свойствам. Это достигается с помощью [parseJSON](../azure-monitor/log-query/json-data-structures.md#parsejson) для доступа к определенному элементу JSON в известном пути.
+Недавно мы изменили поведение записи данных журнала автоматизации в `AzureDiagnostics` таблицу в службе log Analytics, где они больше не разбивают свойства JSON на отдельные поля. Если вы настроили модуль Runbook для форматирования объектов в выходном потоке в формате JSON в виде отдельных столбцов, необходимо перенастроить запросы для анализа этого поля в объект JSON, чтобы получить доступ к этим свойствам. Это достигается с помощью [parseJSON](https://docs.microsoft.com/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#parsejson) для доступа к определенному элементу JSON в известном пути.
 
 Например, модуль Runbook форматирует свойство *ресултдескриптион* в выходном потоке в формате JSON с несколькими полями. Чтобы найти состояние заданий, которые находятся в состоянии сбоя, как указано в поле **Status (состояние**), используйте следующий пример запроса для поиска *ресултдескриптион* с состоянием **Failed**:
 
