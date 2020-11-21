@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 06/04/2020
-ms.openlocfilehash: 5ef681e335cf49a1759a096766b5ccd70545e60a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c855be6d31a1ee46434ecadbeae7a36dd6a3ff95
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324711"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018809"
 ---
 # <a name="limits-for-your-luis-model-and-keys"></a>Ограничения для модели и ключей LUIS
 LUIS имеет несколько ограничивающих областей. Первый — это [ограничение модели](#model-limits), которое управляет особенностями, сущностями и ФУНКЦИЯМИ в Luis. Вторая область — [пределы квот](#key-limits) на основе типа ключа. Третья область ограничений — [сочетание клавиш](#keyboard-controls) для управления веб-сайтом Luis. Четвертая область — [сопоставление региона мира](luis-reference-regions.md) между веб-сайтом разработки LUIS и API-интерфейсами [конечной точки](luis-glossary.md#endpoint) LUIS.
@@ -32,16 +32,16 @@ LUIS имеет несколько ограничивающих областей
 | [Список сущностей](./luis-concept-entity-types.md) | Родитель: 50, потомок: 20 000 элементов. Каноническое имя — *макс. кол-во символов по умолчанию. Значения синонимов не имеют ограничений по длине. |
 | [сущности и роли машинного обучения](./luis-concept-entity-types.md):<br> составного<br>простого<br>роль сущности|Ограничение в 100 родительских сущностей или 330 сущностей, в зависимости от того, какое ограничение будет достигнуто первым. Роль считается сущностью с целью этого ограничения. Примером является составной объект с простой сущностью, имеющий 2 роли: 1 составная + 1 простая + 2 роли = 4 из сущностей 330.<br>Вложенные сущности можно вкладывать до 5 уровней.|
 |Модель как функция| Максимальное количество моделей, которое можно использовать в качестве функции для конкретной модели, чтобы иметь 10 моделей. Максимальное число списков фраз, используемых в качестве компонента для конкретной модели, в 10 списков фраз.|
-| [Предварительный просмотр — сущности динамического списка](https://aka.ms/luis-api-v3-doc#dynamic-lists-passed-in-at-prediction-time)|2 списка запросов к конечной точке прогноза ~ 1000 на запрос|
+| [Предварительный просмотр — сущности динамического списка](./luis-migration-api-v3.md)|2 списка запросов к конечной точке прогноза ~ 1000 на запрос|
 | [Шаблоны](luis-concept-patterns.md)|500 шаблонов для каждого приложения.<br>Максимальная длина шаблона — 400 символов.<br>3 сущности Pattern.any для каждого шаблона<br>Максимум 2 вложенных необязательных текста в шаблоне|
 | [Pattern.Any](./luis-concept-entity-types.md)|100 для каждого приложения, 3 сущности pattern.any для каждого шаблона |
 | [Список фраз][phrase-list]|500. списки фраз. 10 списков глобальных фраз из-за модели в качестве ограничения возможностей. Список неизменяемых фраз содержит максимум 5 000 фраз. Список взаимозаменяемых фраз содержит максимум 50 000 фраз. Максимальное число фраз для каждого приложения 500 000 словосочетаний.|
-| [Предварительно созданные сущности](./luis-prebuilt-entities.md) | без ограничений|
+| [Предварительно созданные сущности](./howto-add-prebuilt-models.md) | без ограничений|
 | [Сущности регулярного выражения](./luis-concept-entity-types.md)|20 сущностей<br>макс. 500 символов для каждого шаблона сущности регулярного выражения|
-| [Роли](luis-concept-roles.md)|300 ролей для каждого приложения, 10 ролей для каждой сущности|
+| [Роли](./luis-concept-entity-types.md)|300 ролей для каждого приложения, 10 ролей для каждой сущности|
 | [Фраза][utterances] | 500 символов<br><br>Если текст длиннее, чем это ограничение, необходимо сегментировать utterance до ввода в LUIS, и вы получите отдельные ответы с намерением на сегмент. Есть очевидные перерывы, с которыми можно работать, например знаки пунктуации и длинные паузы в речи.|
 | [Примеры utterance][utterances] | 15 000 на приложение-нет ограничений на количество фразы продолжительностью на каждую цель<br><br>Если вам нужно обучить приложение с дополнительными примерами, используйте модель [диспетчеризации](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch) . Вы научитесь обучать отдельные приложения LUIS (которые называются дочерними приложениями в родительском приложении диспетчеризации) с одним или несколькими решениями, а затем обучить приложение диспетчеризации, которое выполняет выборку из каждого дочернего приложения LUIS фразы продолжительностью для направления прогнозирующего запроса в правильное дочернее приложение. |
-| [Версии](luis-concept-version.md)| 100 версий на приложение |
+| [Версии](./luis-concept-app-iteration.md)| 100 версий на приложение |
 | [Имя версии][luis-how-to-manage-versions] | 128 символов |
 
 * Макс. кол-во символов по умолчанию — 50.
@@ -56,7 +56,7 @@ LUIS имеет несколько ограничивающих областей
 |--|--|
 |Намерение, сущность|Все имена намерений и сущностей должны быть уникальными в версии приложения.|
 |Компоненты сущности ML|Все компоненты сущности для машинного обучения (дочерние сущности) должны быть уникальными в пределах этой сущности для компонентов на одном уровне.|
-|Компоненты | Все именованные функции, такие как списки фраз, должны быть уникальными в пределах версии приложения.|
+|Возможности | Все именованные функции, такие как списки фраз, должны быть уникальными в пределах версии приложения.|
 |Роли сущности|Все роли сущности или компонента сущности должны быть уникальными, если они находятся на одном уровне сущности (родительский, дочерний, внучатый и т. д.).|
 
 ## <a name="object-naming"></a>Именование объектов
@@ -116,12 +116,12 @@ _kind_ `LUIS` При фильтрации ресурсов в портал Azure
 
 Выполнять вход можно в течение **60 минут**. По истечении этого времени возникнет ошибка. Необходимо снова выполнить вход.
 
-[luis-get-started-create-app]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app
-[batch-testing]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-test#batch-testing
-[intents]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-intent
-[phrase-list]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-feature
-[utterances]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-utterance
-[luis-how-to-manage-versions]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions
+[luis-get-started-create-app]: ./luis-get-started-create-app.md
+[batch-testing]: ./luis-concept-test.md#batch-testing
+[intents]: ./luis-concept-intent.md
+[phrase-list]: ./luis-concept-feature.md
+[utterances]: ./luis-concept-utterance.md
+[luis-how-to-manage-versions]: ./luis-how-to-manage-versions.md
 [pricing]: https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/
 <!-- TBD: fix this link -->
 [speech-to-intent-pricing]: https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/28/2020
-ms.openlocfilehash: e49b713aca23c0373fa71d772ef7567372abe456
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 9e322ac89d8ecad93c2002aa302c155f895911f4
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990573"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019200"
 ---
 # <a name="devops-practices-for-luis"></a>Рекомендации по использованию DevOps с LUIS
 
@@ -18,7 +18,7 @@ ms.locfileid: "94990573"
 
 ## <a name="source-control-and-branch-strategies-for-luis"></a>Управление исходным кодом и стратегии создания ветвей для LUIS
 
-Одним из ключевых факторов успешности DevOps зависит от [системы управления версиями](https://docs.microsoft.com/azure/devops/user-guide/source-control?view=azure-devops). Система управления версиями позволяет разработчикам совместно работать над кодом и отслеживанию изменений. Использование ветвей позволяет разработчикам переключаться между различными версиями базы кода и работать независимо от других членов группы. Когда разработчики создают [запрос на вытягивание](https://help.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) для предложения обновлений из одной ветви в другую или при слиянии изменений, они могут быть триггерами для [автоматизированных сборок](luis-concept-devops-automation.md) для создания и непрерывного тестирования кода.
+Одним из ключевых факторов успешности DevOps зависит от [системы управления версиями](/azure/devops/user-guide/source-control?view=azure-devops). Система управления версиями позволяет разработчикам совместно работать над кодом и отслеживанию изменений. Использование ветвей позволяет разработчикам переключаться между различными версиями базы кода и работать независимо от других членов группы. Когда разработчики создают [запрос на вытягивание](https://help.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) для предложения обновлений из одной ветви в другую или при слиянии изменений, они могут быть триггерами для [автоматизированных сборок](luis-concept-devops-automation.md) для создания и непрерывного тестирования кода.
 
 Используя основные понятия и рекомендации, описанные в этом документе, можно разработать приложение LUIS при отслеживании изменений в системе управления версиями и следовать рекомендациям по проектированию программного обеспечения:
 
@@ -42,13 +42,13 @@ ms.locfileid: "94990573"
 
 ## <a name="source-control"></a>Система управления версиями
 
-Чтобы сохранить [Определение схемы приложения](https://docs.microsoft.com/azure/cognitive-services/luis/app-schema-definition) Luis в системе управления исходным кодом, используйте представление приложения в [формате лудовн ( `.lu` )](https://docs.microsoft.com/azure/bot-service/file-format/bot-builder-lu-file-format?view=azure-bot-service-4.0)  . `.lu` формат является предпочтительным для `.json` форматирования, так как он удобен для чтения, что упрощает внесение и проверку изменений в вытягивание.
+Чтобы сохранить [Определение схемы приложения](./app-schema-definition.md) Luis в системе управления исходным кодом, используйте представление приложения в [формате лудовн ( `.lu` )](/azure/bot-service/file-format/bot-builder-lu-file-format?view=azure-bot-service-4.0)  . `.lu` формат является предпочтительным для `.json` форматирования, так как он удобен для чтения, что упрощает внесение и проверку изменений в вытягивание.
 
 ### <a name="save-a-luis-app-using-the-ludown-format"></a>Сохранение приложения LUIS в формате Лудовн
 
 Чтобы сохранить приложение LUIS в `.lu` формате и поместить его в систему управления версиями, выполните следующие действия.
 
-- ЛИБО [экспортируйте версию приложения](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#other-actions) `.lu` с [портала Luis](https://www.luis.ai/) , и добавьте ее в репозиторий системы управления версиями.
+- ЛИБО [экспортируйте версию приложения](./luis-how-to-manage-versions.md#other-actions) `.lu` с [портала Luis](https://www.luis.ai/) , и добавьте ее в репозиторий системы управления версиями.
 
 - ИЛИ используйте текстовый редактор, чтобы создать `.lu` файл для приложения Luis и добавить его в репозиторий системы управления версиями.
 
@@ -58,9 +58,9 @@ ms.locfileid: "94990573"
 
 ### <a name="build-the-luis-app-from-source"></a>Создание приложения LUIS из источника
 
-Для приложения *Luis для* [создания новой версии приложения Luis путем импорта `.lu` источника](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) , [обучения версии](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [ее публикации](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app). Это можно сделать на портале LUIS или в командной строке:
+Для приложения *Luis для* [создания новой версии приложения Luis путем импорта `.lu` источника](./luis-how-to-manage-versions.md#import-version) , [обучения версии](./luis-how-to-train.md) и [ее публикации](./luis-how-to-publish-app.md). Это можно сделать на портале LUIS или в командной строке:
 
-- Используйте портал LUIS для [импорта `.lu` версии](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) приложения из системы управления версиями, [обучения](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [публикации](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app) приложения.
+- Используйте портал LUIS для [импорта `.lu` версии](./luis-how-to-manage-versions.md#import-version) приложения из системы управления версиями, [обучения](./luis-how-to-train.md) и [публикации](./luis-how-to-publish-app.md) приложения.
 
 - Используйте [интерфейс командной строки Bot Framework для Luis](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS) в командной строке или в рабочем процессе CI/CD для [импорта](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisversionimport) `.lu` версии приложения из системы управления версиями в приложение Luis, а также для [обучения](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luistrainrun) и [публикации](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisapplicationpublish) приложения.
 
@@ -72,7 +72,7 @@ ms.locfileid: "94990573"
 
 - [Файлы определения модульных тестов](luis-concept-devops-testing.md#writing-tests) (фразы продолжительностью и ожидаемые результаты)
 
-- [Файлы пакетного теста](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-batch-test#batch-file-format) (фразы продолжительностью и ожидаемые результаты), используемые для тестирования производительности
+- [Файлы пакетного теста](./luis-concept-batch-test.md#batch-file-format) (фразы продолжительностью и ожидаемые результаты), используемые для тестирования производительности
 
 ### <a name="credentials-and-keys-are-not-checked-in"></a>Учетные данные и ключи не возвращены
 
@@ -81,7 +81,7 @@ ms.locfileid: "94990573"
 - LUIS создание и прогнозирование ключей
 - LUIS создания и прогнозирования конечных точек
 - Ключи подписки Azure
-- Маркеры доступа, например маркер для [субъекта-службы](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest) Azure, используемый для проверки подлинности с помощью автоматизации.
+- Маркеры доступа, например маркер для [субъекта-службы](/cli/azure/ad/sp?view=azure-cli-latest) Azure, используемый для проверки подлинности с помощью автоматизации.
 
 #### <a name="strategies-for-securely-managing-secrets"></a>Стратегии безопасного управления секретами
 
@@ -92,7 +92,7 @@ ms.locfileid: "94990573"
 
 ## <a name="branching-and-merging"></a>Ветвление и объединение
 
-Распределенные системы управления версиями, такие как Git, обеспечивают гибкость при публикации, совместном использовании, просмотре и переборе изменений кода с помощью ветвей разработки, совместно используемых другими пользователями. Принятие [стратегии ветвления Git](https://docs.microsoft.com/azure/devops/repos/git/git-branching-guidance) , подходящей для вашей команды.
+Распределенные системы управления версиями, такие как Git, обеспечивают гибкость при публикации, совместном использовании, просмотре и переборе изменений кода с помощью ветвей разработки, совместно используемых другими пользователями. Принятие [стратегии ветвления Git](/azure/devops/repos/git/git-branching-guidance) , подходящей для вашей команды.
 
 Какая бы стратегия ветвления была принята, ключевым принципом всех из них является то, что члены группы могут работать над решением в *ветви компонентов* независимо от работы, которая выполняется в других ветвях.
 
@@ -110,7 +110,7 @@ ms.locfileid: "94990573"
 
 1. Создание ветви компонентов из основной ветви (в зависимости от стратегии ветвления, обычно главной или разработки).
 
-1. [Создайте новое приложение Luis на портале Luis](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-start-new-app) ("*приложение ветви dev*") только для поддержки работы в ветви компонентов.
+1. [Создайте новое приложение Luis на портале Luis](./luis-how-to-start-new-app.md) ("*приложение ветви dev*") только для поддержки работы в ветви компонентов.
 
    * Если `.lu` источник решения уже существует в ветви, так как он был сохранен после работы в другой ветви ранее в проекте, создайте приложение Luis Branch для разработки, импортировав `.lu` файл.
 
@@ -120,11 +120,11 @@ ms.locfileid: "94990573"
 
 1. Тестирование обновлений. Дополнительные сведения о тестировании приложения филиала см. в разделе [тестирование для Luis DevOps](luis-concept-devops-testing.md) .
 
-1. Экспортируйте активную версию приложения ветви разработки, как `.lu` в [списке версий](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions).
+1. Экспортируйте активную версию приложения ветви разработки, как `.lu` в [списке версий](./luis-how-to-manage-versions.md).
 
 1. Проверьте обновления и пригласите одноранговые проверки обновлений. Если вы используете GitHub, то порождается [запрос на вытягивание](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).
 
-1. После утверждения изменений объедините обновления в главную ветвь. На этом этапе вы создадите новую версию *главного* приложения Luis с помощью обновленной [версии](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions) в базе данных `.lu` master. Сведения о настройке имени версии см. в разделе [Управление версиями](#versioning) .
+1. После утверждения изменений объедините обновления в главную ветвь. На этом этапе вы создадите новую версию *главного* приложения Luis с помощью обновленной [версии](./luis-how-to-manage-versions.md) в базе данных `.lu` master. Сведения о настройке имени версии см. в разделе [Управление версиями](#versioning) .
 
 1. При удалении ветви компонентов рекомендуется удалить приложение dev Branch LUIS, созданное для работы с ветвью компонентов.
 
@@ -144,9 +144,9 @@ ms.locfileid: "94990573"
 
 - Если следовать описанному выше шаблону в разделе " [разработчики" могут работать из независимых ветвей](#developers-can-work-from-independent-branches), то эта ветвь будет использовать уникальное приложение Luis для поддержки разработки. Приложение LUIS "dev Branch" будет создано первым участником группы разработчиков, который начинает работать в ветви компонентов.
 
-- [Добавляйте членов команды в качестве участников](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-collaborate) в приложение Luis ветвей dev.
+- [Добавляйте членов команды в качестве участников](./luis-how-to-collaborate.md) в приложение Luis ветвей dev.
 
-- После завершения работы с ветвью компонентов экспортируйте активную версию приложения LUIS Branch dev, как `.lu` в [списке версии](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions), сохраните обновленный `.lu` файл в репозитории, а затем верните его и отметьте изменения.
+- После завершения работы с ветвью компонентов экспортируйте активную версию приложения LUIS Branch dev, как `.lu` в [списке версии](./luis-how-to-manage-versions.md), сохраните обновленный `.lu` файл в репозитории, а затем верните его и отметьте изменения.
 
 ### <a name="incorporating-changes-from-one-branch-to-another-with-rebase-or-merge"></a>Включение изменений из одной ветви в другую с переоснованием или слиянием
 
@@ -183,7 +183,7 @@ ms.locfileid: "94990573"
 
 ## <a name="versioning"></a>Управление версиями
 
-Приложение состоит из нескольких компонентов, которые могут включать в себя программы-роботы, работающие в [службе Azure Bot](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0), [QnA Maker](https://www.qnamaker.ai/), [службу распознавания речи Azure](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview)и многое другое. Чтобы достичь цели слабо связанных приложений, используйте [систему управления версиями](https://docs.microsoft.com/azure/devops/learn/git/what-is-version-control) , чтобы управлять версиями каждого компонента приложения независимо, позволяя разработчикам обнаруживать критические изменения или обновления только путем просмотра номера версии. Вы можете использовать версию приложения LUIS независимо от других компонентов, если оно поддерживается в собственном репозитории.
+Приложение состоит из нескольких компонентов, которые могут включать в себя программы-роботы, работающие в [службе Azure Bot](/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0), [QnA Maker](https://www.qnamaker.ai/), [службу распознавания речи Azure](../speech-service/overview.md)и многое другое. Чтобы достичь цели слабо связанных приложений, используйте [систему управления версиями](/azure/devops/learn/git/what-is-version-control) , чтобы управлять версиями каждого компонента приложения независимо, позволяя разработчикам обнаруживать критические изменения или обновления только путем просмотра номера версии. Вы можете использовать версию приложения LUIS независимо от других компонентов, если оно поддерживается в собственном репозитории.
 
 К приложению LUIS для главной ветви должна быть применена схема управления версиями. При слиянии обновлений для `.lu` приложения Luis в базу данных Master вы импортируете обновленный источник в новую версию в приложении Luis для главной ветви.
 
@@ -195,7 +195,7 @@ ms.locfileid: "94990573"
 
 Основную или дополнительную версию можно использовать для указания области изменений в функциях приложения LUIS:
 
-* Основной номер версии: значительное изменение, например поддержка новой [цели](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-intent) или [сущности](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-entity-types) .
+* Основной номер версии: значительное изменение, например поддержка новой [цели](./luis-concept-intent.md) или [сущности](./luis-concept-entity-types.md) .
 * Дополнительный номер версии: обратно совместимое незначительное изменение, например после существенных новых обучающих курсов
 * Сборка: изменения функциональности не меняются, а только другая сборка.
 

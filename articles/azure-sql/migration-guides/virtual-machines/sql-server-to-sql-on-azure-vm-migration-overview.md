@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: d47abaade13958b4e28d3ad5f62b88e8a53e89a9
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: a910edfbbe1ad07dca806026396c506f7e90e6e7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917847"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019438"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Обзор миграции: SQL Server для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -75,7 +75,7 @@ ms.locfileid: "94917847"
 
 |**Метод** | **Минимальная версия источника** | **Минимальная Целевая версия** | **Ограничение на размер исходного резервного копирования** |  **Примечания** |
 | --- | --- | --- | --- | --- |
-| [Миграция Azure](../../../migrate/index.yml) | SQL Server 2008 SP4| SQL Server 2008 SP4| [Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |  Существующие SQL Server будут перемещены "как есть" в экземпляр SQL Server на виртуальной машине Azure. Позволяет масштабировать рабочие нагрузки миграции до 35 000 виртуальных машин. <br /><br /> Исходные серверы остаются в сети и обслуживают запросы во время синхронизации данных сервера, минимизируя время простоя. <br /><br /> **Автоматизация & скриптов**: [Azure Site Recovery сценарии](../../../migrate/how-to-migrate-at-scale.md) и [Пример масштабируемой миграции и планирования для Azure](/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-scale)|
+| [Миграция Azure](../../../migrate/index.yml) | SQL Server 2008 SP4| SQL Server 2008 SP4| [Ограничение на размер хранилища виртуальной машины Azure](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |  Существующие SQL Server будут перемещены "как есть" в экземпляр SQL Server на виртуальной машине Azure. Позволяет масштабировать рабочие нагрузки миграции до 35 000 виртуальных машин. <br /><br /> Исходные серверы остаются в сети и обслуживают запросы во время синхронизации данных сервера, минимизируя время простоя. <br /><br /> **Автоматизация & скриптов**: [Azure Site Recovery сценарии](../../../migrate/how-to-migrate-at-scale.md) и [Пример масштабируемой миграции и планирования для Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-scale)|
 
 ## <a name="migrate"></a>Миграция  
 
@@ -128,7 +128,7 @@ ms.locfileid: "94917847"
 При подготовке к переносу баз данных SQL Server в SQL Server на виртуальных машинах Azure следует учитывать поддерживаемые версии SQL Server. Список текущих поддерживаемых версий SQL Server на виртуальных машинах Azure см. на [SQL Server на виртуальных машинах Azure](../../virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-server-vms).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к переносу баз данных SQL Server в SQL Server на виртуальных машинах Azure, ознакомьтесь с [руководством по миграции отдельных баз данных](sql-server-to-sql-on-azure-vm-individual-databases-guide.md). 
 

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.openlocfilehash: 4c3b5674fe039a89eb97b915d13b5d472a6a0568
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96b9754908f437ccf81e002e9e9dd17af0bab4e3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316398"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019081"
 ---
 # <a name="understand-what-good-utterances-are-for-your-luis-app"></a>Выясните, какие фразы лучше подходят для вашего приложения LUIS
 
@@ -29,7 +29,7 @@ ms.locfileid: "91316398"
 
 ## <a name="how-to-choose-varied-utterances"></a>Правильный подход к выбору высказываний
 
-Когда вы начинаете [добавлять примеры высказываний](luis-how-to-add-example-utterances.md) в модель LUIS, учитывайте следующие принципы.
+Когда вы начинаете [добавлять примеры высказываний](./luis-how-to-add-entities.md) в модель LUIS, учитывайте следующие принципы.
 
 ### <a name="utterances-arent-always-well-formed"></a>Высказывания не всегда оформляются правильно
 
@@ -146,6 +146,5 @@ LUIS создает эффективные модели, если высказы
 Если требуется, чтобы сущность события находила все данные события, пометьте слово `fair` в первом высказывании, а не во втором.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Сведения о том, как обучить приложение LUIS пониманию высказываний пользователя, см. в статье [Добавление примеров высказываний и меток с сущностями](luis-how-to-add-example-utterances.md).
-
+## <a name="next-steps"></a>Дальнейшие действия
+Сведения о том, как обучить приложение LUIS пониманию высказываний пользователя, см. в статье [Добавление примеров высказываний и меток с сущностями](./luis-how-to-add-entities.md).

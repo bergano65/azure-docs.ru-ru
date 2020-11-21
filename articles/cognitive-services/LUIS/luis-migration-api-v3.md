@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: a5760db2d6e453d631680d6154e6d9a03ce55cd6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59cf250a9db5a1f6759495c1b5a3c48cb07cde15
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541345"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018792"
 ---
 # <a name="prediction-endpoint-changes-for-v3"></a>Изменения конечной точки прогнозирования для v3
 
@@ -60,7 +60,7 @@ API V3 предоставляет следующие новые возможно
 
 ### <a name="bing-spell-check"></a>API Проверки орфографии Bing
 
-Этот API не поддерживается в конечной точке прогнозирования v3. Продолжайте использовать конечную точку прогнозирования API v2 для исправления орфографии. Если при использовании API V3 требуется исправление орфографических ошибок, то клиентское приложение вызывает [Проверка орфографии Bing](https://docs.microsoft.com/azure/cognitive-services/bing-spell-check/overview) API и изменяет текст на правильное написание перед отправкой текста в API Luis.
+Этот API не поддерживается в конечной точке прогнозирования v3. Продолжайте использовать конечную точку прогнозирования API v2 для исправления орфографии. Если при использовании API V3 требуется исправление орфографических ошибок, то клиентское приложение вызывает [Проверка орфографии Bing](../bing-spell-check/overview.md) API и изменяет текст на правильное написание перед отправкой текста в API Luis.
 
 ## <a name="bot-framework-and-azure-bot-service-client-applications"></a>Платформа Bot и клиентские приложения службы Azure Bot
 
@@ -103,13 +103,13 @@ API-интерфейс прогнозирования версии 2 не буд
 }
 ```
 
-|Свойство|Тип|Версия|По умолчанию|Назначение|
+|Свойство|Type|Версия|По умолчанию|Назначение|
 |--|--|--|--|--|
 |`dynamicLists`|массиве|Только версия 3|Не требуется.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
 |`externalEntities`|массиве|Только версия 3|Не требуется.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |
 |`options.datetimeReference`|строка|Только версия 3|Нет значения по умолчанию|Используется для определения [смещения datetimeV2](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity). Формат для Датетимереференце — [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).|
 |`options.preferExternalEntities`|Логическое|Только версия 3|false|Указывает, используется ли [внешняя сущность пользователя (с тем же именем, что и существующая сущность)](schema-change-prediction-runtime.md#override-existing-model-predictions) , или существующая сущность в модели используется для прогнозирования. |
-|`query`|строка|Только версия 3|Обязательный элемент.|**В версии 2**utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3**функции передаются в `query` параметре.|
+|`query`|строка|Только версия 3|Обязательный.|**В версии 2** utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3** функции передаются в `query` параметре.|
 
 ## <a name="response-changes"></a>Изменения ответа
 
@@ -162,9 +162,9 @@ const score = intents[topIntentName];
 
 #### <a name="marking-placement-of-entities-in-utterances"></a>Маркировка размещения сущностей в фразы продолжительностью
 
-**В версии 2**сущность была помечена в utterance с помощью `startIndex` и `endIndex` .
+**В версии 2** сущность была помечена в utterance с помощью `startIndex` и `endIndex` .
 
-**В версии 3**сущность помечена `startIndex` и `entityLength` .
+**В версии 3** сущность помечена `startIndex` и `entityLength` .
 
 #### <a name="access-instance-for-entity-metadata"></a>Доступ `$instance` для метаданных сущности
 
@@ -272,6 +272,6 @@ const associatedMetadata = entities.$instance.my_list_entity[item];
 
 API v2 не будет считаться устаревшим по меньшей мере через 9 месяцев после предварительной версии v3.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте документацию по API V3 для обновления существующих вызовов RESTFUL к API-интерфейсам [конечной точки](https://westcentralus.dev.cognitive.microsoft.com/docs/services/luis-endpoint-api-v3-0/operations/5cb0a9459a1fe8fa44c28dd8) Luis.

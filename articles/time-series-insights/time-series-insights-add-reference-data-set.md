@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: dc759bb9af852fab5313686ebaffefda9220f45a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d80d97a609aa3a464b9b114439fe7f4058e287c3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91614246"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020152"
 ---
 # <a name="create-a-reference-data-set-for-your-azure-time-series-insights-gen1-environment-using-the-azure-portal"></a>Создайте эталонный набор данных для среды Gen1 "аналитика временных рядов Azure" с помощью портал Azure
 
@@ -107,7 +107,7 @@ ms.locfileid: "91614246"
     > [!WARNING]
     > Столбцы или свойства, совместно используемые эталонными наборами данных, будут отображать **дублирующуюся ошибку передачи имени свойства** . Ошибка не помешает успешной передаче эталонных наборов данных. Его можно удалить, объединив строки, совместно использующие повторяющееся имя свойства.
 
-1. Выберите **Добавить строку**, выполнить **групповое импорт строк**или **Добавить столбец** для добавления дополнительных значений ссылочных данных по мере необходимости.
+1. Выберите **Добавить строку**, выполнить **групповое импорт строк** или **Добавить столбец** для добавления дополнительных значений ссылочных данных по мере необходимости.
 
     [![Добавление строки, строки с массовым импортом или добавление столбца.](media/add-reference-data-set/add-row-or-bulk-upload.png)](media/add-reference-data-set/add-row-or-bulk-upload.png#lightbox)
 
@@ -117,8 +117,8 @@ ms.locfileid: "91614246"
    > [!NOTE]
    > Добавленные строки **не** обязательно должны быть *прямоугольными* — они могут содержать меньшее, большее или изменяющееся число столбцов из других записей в эталонном наборе данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление эталонными данными](time-series-insights-manage-reference-data-csharp.md) программными средствами.
 
-- Полный справочник по API см. в документе [API эталонных данных](https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api) .
+- Полный справочник по API см. в документе [API эталонных данных](/rest/api/time-series-insights/gen1-reference-data-api) .

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: v-demjoh
 keywords: Распознавание намерений
-ms.openlocfilehash: 0d718459e0fd0ea410232d3a165b560aa8c59cd1
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 215b25e440b8cad76e0656e47d32b184edf4ac66
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92174644"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018707"
 ---
 # <a name="what-is-intent-recognition"></a>Что такое распознавание намерения?
 
@@ -29,9 +29,9 @@ ms.locfileid: "92174644"
 
 * Чтобы распознать намерения в речи LUIS интегрируется в службу "Речь". Подписка на службу "Речь" не требуется.
 * Распознавание речи интегрировано с пакетом SDK. Вы можете использовать ключ LUIS со службой распознавания речи.
-* Распознавание намерений с помощью речевого пакета SDK [предлагается в подмножестве регионов, ПОДДЕРЖИВАЕМЫХ Luis](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#intent-recognition).
+* Распознавание намерений с помощью речевого пакета SDK [предлагается в подмножестве регионов, ПОДДЕРЖИВАЕМЫХ Luis](./regions.md#intent-recognition).
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Приступая к работе
 
 Чтобы приступить к распознаванию намерения, ознакомьтесь с [кратким](quickstarts/intent-recognition.md) руководством.
 
@@ -39,8 +39,8 @@ ms.locfileid: "92174644"
 
 Пример кода для распознавания намерений:
 
-* [Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app)
-* [Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp)
+* [Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики](../luis/luis-get-started-create-app.md)
+* [Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#](./how-to-recognize-intents-from-speech-csharp.md)
 * [Распознавание намерения и другие речевые службы с использованием Unity в C #](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/unity/speechrecognizer)
 * [Распознавание целей с помощью речевого пакета SDK для Python](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/python/console)
 * [Распознавание намерений и другие речевые службы с использованием речевого пакета SDK для C++ в Windows](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/cpp/windows/console)
@@ -49,7 +49,7 @@ ms.locfileid: "92174644"
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
+* [пакет SDK для службы "Речь"](./speech-sdk.md);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

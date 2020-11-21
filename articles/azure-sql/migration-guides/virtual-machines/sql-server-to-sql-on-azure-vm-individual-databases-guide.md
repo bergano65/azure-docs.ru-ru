@@ -10,17 +10,17 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: c7a62bb3ed07ffbd8cfef520e5d504c810d11e5a
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 1558c396566b2fcfc098a749407d5e7a28316b6f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94497301"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019455"
 ---
 # <a name="migration-guide-sql-server-to-sql-server-on-azure-vms"></a>Руководство по миграции: SQL Server для SQL Server на виртуальных машинах Azure 
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
 
-В этом руководстве по миграции рассматривается **Обнаружение** , **Оценка** и **Миграция** пользовательских баз данных из SQL Server в экземпляр SQL Server на виртуальных машинах Azure с помощью резервного копирования и восстановления, а также доставки журналов с использованием [Помощник по миграции базы данных (DMA)](/sql/dma/dma-overview) для оценки. 
+В этом руководстве по миграции рассматривается **Обнаружение**, **Оценка** и **Миграция** пользовательских баз данных из SQL Server в экземпляр SQL Server на виртуальных машинах Azure с помощью резервного копирования и восстановления, а также доставки журналов с использованием [Помощник по миграции базы данных (DMA)](/sql/dma/dma-overview) для оценки. 
 
 Вы можете выполнить миграцию SQL Server, выполняемого локально или в:
 
@@ -40,7 +40,7 @@ ms.locfileid: "94497301"
 - [Помощник по миграции базы данных (DMA)](https://www.microsoft.com/download/details.aspx?id=53595).
 - Проект службы " [Миграция Azure](/azure/migrate/create-manage-projects)".
 - Подготовленная Целевая [SQL Server на виртуальной машине Azure](/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal) , которая имеет ту же или более позднюю версию, что и исходная SQL Server.
-- [Подключение между Azure и локальной](/architecture/reference-architectures/hybrid-networking)средой.
+- [Подключение между Azure и локальной](/azure/architecture/reference-architectures/hybrid-networking)средой.
 - [Выбор соответствующей стратегии миграции](sql-server-to-sql-on-azure-vm-migration-overview.md#migrate).
 
 ## <a name="pre-migration"></a>Подготовка к миграции
@@ -59,7 +59,7 @@ ms.locfileid: "94497301"
 
 ### <a name="assess"></a>Оценка
 
-После обнаружения всех источников данных используйте [Помощник по миграции данных (DMA)](/dma/dma-overview) , чтобы оценить миграцию локальных экземпляров SQL Server в экземпляр SQL Server на виртуальной машине Azure, чтобы определить зазоры между исходным и целевым экземплярами. 
+После обнаружения всех источников данных используйте [Помощник по миграции данных (DMA)](/sql/dma/dma-overview) , чтобы оценить миграцию локальных экземпляров SQL Server в экземпляр SQL Server на виртуальной машине Azure, чтобы определить зазоры между исходным и целевым экземплярами. 
 
 
 > [!NOTE]
@@ -123,7 +123,7 @@ ms.locfileid: "94497301"
 1. Приостановка и остановка всех приложений, использующих базы данных, предназначенные для миграции. 
 1. Убедитесь, что пользовательские базы данных неактивны в [режиме одного пользователя](/sql/relational-databases/databases/set-a-database-to-single-user-mode). 
 1. Создайте полную резервную копию базы данных в локальном расположении.
-1. Скопируйте локальные файлы резервных копий на виртуальную машину с помощью удаленного рабочего стола, [Azure обозреватель данных](/data-explorer/data-explorer-overview)или [служебной программы командной строки AZCopy](../../../storage/common/storage-use-azcopy-v10.md) (рекомендуется > 2 ТБ резервных копий).
+1. Скопируйте локальные файлы резервных копий на виртуальную машину с помощью удаленного рабочего стола, [Azure обозреватель данных](/azure/data-explorer/data-explorer-overview)или [служебной программы командной строки AZCopy](../../../storage/common/storage-use-azcopy-v10.md) (рекомендуется > 2 ТБ резервных копий).
 1. Восстановите полные резервные копии базы данных в SQL Server на виртуальной машине Azure.
 
 ### <a name="log-shipping--minimize-downtime"></a>Доставка журналов (сокращение времени простоя)
@@ -133,7 +133,7 @@ ms.locfileid: "94497301"
 1. Настройте подключение к целевой SQL Server на виртуальной машине Azure в соответствии с вашими требованиями. Ознакомьтесь с разделом [Подключение к виртуальной машине SQL Server в Azure (диспетчер ресурсов)](../../virtual-machines/windows/ways-to-connect-to-sql.md).
 1. Убедитесь, что локальные базы данных пользователей, подлежат миграции, находятся в модели полного восстановления или с неполным протоколированием.
 1. Выполните полное резервное копирование базы данных в локальное расположение и измените любые существующие задания полного резервного копирования базы данных, чтобы использовать ключевое слово [COPY_ONLY](/sql/relational-databases/backup-restore/copy-only-backups-sql-server) для сохранения цепочки журналов.
-1. Скопируйте локальные файлы резервных копий на виртуальную машину с помощью удаленного рабочего стола, [Azure обозреватель данных](/data-explorer/data-explorer-overview)или [служебной программы командной строки AZCopy](../../../storage/common/storage-use-azcopy-v10.md) (рекомендуется >1 ТБ резервных копий).
+1. Скопируйте локальные файлы резервных копий на виртуальную машину с помощью удаленного рабочего стола, [Azure обозреватель данных](/azure/data-explorer/data-explorer-overview)или [служебной программы командной строки AZCopy](../../../storage/common/storage-use-azcopy-v10.md) (рекомендуется >1 ТБ резервных копий).
 1. Восстановите полные резервные копии базы данных на SQL Server виртуальной машине Azure.
 1. Настройте [доставку журналов](/sql/database-engine/log-shipping/configure-log-shipping-sql-server) между локальной базой данных и целевым SQL Server на виртуальной машине Azure. Не следует повторно инициализировать базы данных, так как она уже была выполнена на предыдущих шагах.
 1. **Вырежьте** на целевой сервер. 
@@ -166,7 +166,7 @@ ms.locfileid: "94497301"
 | **Polybase** | PolyBase | Скрипт с SQL Server Management Studio. |
 | **Управление** | Database Mail | Скрипт с SQL Server Management Studio. |
 | **Агент SQL Server** | Задания | Скрипт с SQL Server Management Studio. |
-|| Предупреждения | Скрипт с SQL Server Management Studio. |
+|| видны узлы | Скрипт с SQL Server Management Studio. |
 || Операторы | Скрипт с SQL Server Management Studio. |
 || прокси-серверы; | Скрипт с SQL Server Management Studio. |
 | **Операционная система** | Файлы, общие файловые ресурсы | Запишите все дополнительные файлы или общие файловые ресурсы, используемые серверами SQL Server, и выполните репликацию на целевом объекте виртуальной машины Azure. |
@@ -205,7 +205,7 @@ ms.locfileid: "94497301"
 - [Настройка производительности виртуальных машин SQL Azure](../../virtual-machines/windows/performance-guidelines-best-practices.md).
 - [Центр оптимизации затрат Azure](https://azure.microsoft.com/overview/cost-optimization/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы проверить доступность служб, применимых к SQL Server, см. [Глобальный центр инфраструктуры Azure](https://azure.microsoft.com/global-infrastructure/services/?regions=all&amp;products=synapse-analytics,virtual-machines,sql-database) .
 

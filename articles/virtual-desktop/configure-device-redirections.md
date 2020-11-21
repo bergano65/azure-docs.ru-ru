@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 00a3c1d0a2a905e6435b811d5f2611c16a5de502
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: b60a6e53e8fecd71885204690231776ff69fc08f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92328885"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018381"
 ---
 # <a name="configure-device-redirections"></a>Настройка перенаправления устройств
 
@@ -19,11 +19,11 @@ ms.locfileid: "92328885"
 
 ## <a name="supported-device-redirections"></a>Поддерживаемые перенаправления устройств
 
-Каждый клиент поддерживает различные перенаправления устройств. Чтобы получить полный список поддерживаемых перенаправлений устройств для каждого клиента, ознакомьтесь [со списком сравнение клиентов](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-app-compare) .
+Каждый клиент поддерживает различные перенаправления устройств. Чтобы получить полный список поддерживаемых перенаправлений устройств для каждого клиента, ознакомьтесь [со списком сравнение клиентов](/windows-server/remote/remote-desktop-services/clients/remote-desktop-app-compare) .
 
 ## <a name="customizing-rdp-properties-for-a-host-pool"></a>Настройка свойств RDP для пула узлов
 
-Дополнительные сведения о настройке свойств протокола удаленного рабочего стола для пула узлов с помощью PowerShell или портал Azure см. в статье [Свойства протокола удаленного рабочего](customize-rdp-properties.md)стола. Полный список поддерживаемых свойств протокола удаленного рабочего стола см. в разделе [Поддерживаемые параметры RDP-файла](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context).
+Дополнительные сведения о настройке свойств протокола удаленного рабочего стола для пула узлов с помощью PowerShell или портал Azure см. в статье [Свойства протокола удаленного рабочего](customize-rdp-properties.md)стола. Полный список поддерживаемых свойств протокола удаленного рабочего стола см. в разделе [Поддерживаемые параметры RDP-файла](/windows-server/remote/remote-desktop-services/clients/rdp-files?context=%2fazure%2fvirtual-desktop%2fcontext%2fcontext).
 
 ## <a name="setup-device-redirections"></a>Настройка перенаправлений устройств
 
@@ -81,7 +81,7 @@ ms.locfileid: "92328885"
 - Перейдите к разделу политики **конфигурации компьютера**  >  **Policies** >  **Административные шаблоны**  >  **компоненты Windows**  >  **службы удаленных рабочих столов**  >  **Подключение к удаленному рабочему столу**  >  **перенаправление клиентских USB-устройств RemoteFX**.
 - SELECT **разрешает перенаправление RDP других поддерживаемых USB-устройств RemoteFX с этого компьютера**.
 - Выберите параметр **включено** , а затем **в поле права доступа к ПЕРЕНАПРАВЛЕНию USB-перенаправления выберите Администраторы и пользователи** .
-- Щелкните **ОК**.
+- Нажмите кнопку **ОК**.
 
 ### <a name="plug-and-play-device-redirection"></a>Перенаправление устройств Plug and Play
 

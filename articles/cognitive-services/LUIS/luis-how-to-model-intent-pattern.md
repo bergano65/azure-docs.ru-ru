@@ -9,15 +9,15 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
-ms.openlocfilehash: 914ca77b18d0469c3ea926848be4c60aab04c9c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c5e1cc5cdda921e63315c2904d560b7ad3939776
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91539110"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018860"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Добавление шаблонов для повышения точности прогнозов
-После того как приложение LUIS получит конечную точку фразы продолжительностью, используйте [шаблон](luis-concept-patterns.md) , чтобы улучшить точность прогнозов для фразы продолжительностью, чтобы показать шаблон в порядке слов и выбрать слово. В шаблонах используется специальный [синтаксис](luis-concept-patterns.md#pattern-syntax) для указания расположения [сущностей](luis-concept-entity-types.md), [ролей](luis-concept-roles.md)сущностей и необязательного текста.
+После того как приложение LUIS получит конечную точку фразы продолжительностью, используйте [шаблон](luis-concept-patterns.md) , чтобы улучшить точность прогнозов для фразы продолжительностью, чтобы показать шаблон в порядке слов и выбрать слово. В шаблонах используется специальный [синтаксис](luis-concept-patterns.md#pattern-syntax) для указания расположения [сущностей](luis-concept-entity-types.md), [ролей](./luis-concept-entity-types.md)сущностей и необязательного текста.
 
 > [!CAUTION]
 > Шаблоны включают только родительские объекты машинного обучения, а не подсущности.
@@ -35,7 +35,7 @@ ms.locfileid: "91539110"
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана сущности для шаблона](./media/luis-how-to-model-intent-pattern/patterns-3.png)
 
-    Если сущность содержит [роль](luis-concept-roles.md), укажите ее с одним двоеточием, `:` после имени сущности, например `{Location:Origin}` . Список ролей для сущностей появится в списке. Выберите роль и нажмите клавишу ВВОД.
+    Если сущность содержит [роль](./luis-concept-entity-types.md), укажите ее с одним двоеточием, `:` после имени сущности, например `{Location:Origin}` . Список ролей для сущностей появится в списке. Выберите роль и нажмите клавишу ВВОД.
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана сущности с ролью](./media/luis-how-to-model-intent-pattern/patterns-4.png)
@@ -109,7 +109,7 @@ ms.locfileid: "91539110"
 * Удаление фильтра сущности или намерения
 * Добавление шаблона на основе существующего фрагмента речи на странице сущности или намерения
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [создать шаблон](luis-tutorial-pattern.md) с помощью шаблона. любые роли и с учебником.
 * Сведения об [обучении](luis-how-to-train.md) приложений.

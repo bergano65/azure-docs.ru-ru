@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 11/19/2019
-ms.openlocfilehash: 30b4256b37dc3329801a730192e25f7c24a45594
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60b100e1100b8a4925a967f8b7265f1612e5beb7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540917"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018911"
 ---
 # <a name="add-contributors-to-your-app"></a>Добавление участников в приложение
 
@@ -66,7 +66,7 @@ ms.locfileid: "91540917"
 
 ### <a name="azure-active-directory-resources"></a>Ресурсы Azure Active Directory
 
-Если вы используете [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) (Azure AD) в вашей организации, для Распознавания речи (LUIS) необходимо разрешение на доступ к информации о ваших пользователях, когда они хотят использовать LUIS. Для LUIS требуются минимальные ресурсы.
+Если вы используете [Azure Active Directory](../../active-directory/index.yml) (Azure AD) в вашей организации, для Распознавания речи (LUIS) необходимо разрешение на доступ к информации о ваших пользователях, когда они хотят использовать LUIS. Для LUIS требуются минимальные ресурсы.
 
 При попытке входа в учетную запись с согласием администратора, или для которой данное согласие не требуется, появится подробное описание.
 
@@ -87,12 +87,12 @@ ms.locfileid: "91540917"
 
 Если администратору клиента требуется, чтобы только определенные пользователи могли применять LUIS, для этого есть несколько возможных решений.
 * Предоставить "согласие администратора" (согласия для всех пользователей Azure AD), а затем установить значение "Да" для параметра "Требуется назначение пользователей" в свойствах приложения уровня "Корпоративный" и наконец назначить или добавить только нужных пользователей к приложению. При использовании этого метода администратор по-прежнему предоставляет "согласие администратора", имея при этом возможность контролировать доступ пользователей к приложению.
-* Второе решение — использование [API удостоверений и управления доступом Azure AD в Microsoft Graph](https://docs.microsoft.com/graph/azuread-identity-access-management-concept-overview) для предоставления согласия каждому конкретному пользователю.
+* Второе решение — использование [API удостоверений и управления доступом Azure AD в Microsoft Graph](/graph/azuread-identity-access-management-concept-overview) для предоставления согласия каждому конкретному пользователю.
 
 Узнайте больше о пользователях и согласии Azure Active Directory.
 * [Ограничить приложение](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) набором пользователей
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
 * Изучите основные понятия, в том числе [ресурсы для разработки](luis-how-to-azure-subscription.md#authoring-key) и [участников](luis-how-to-azure-subscription.md#contributions-from-other-authors) этого ресурса.

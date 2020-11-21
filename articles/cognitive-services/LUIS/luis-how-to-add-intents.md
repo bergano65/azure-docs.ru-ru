@@ -9,18 +9,18 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
 ms.service: cognitive-services
-ms.openlocfilehash: c2802f1b41ed2842e12c808a8c380ebd646ffa03
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2401c032f0fc90024e0049fad5f696b8a184544
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540937"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018945"
 ---
 # <a name="add-intents-to-determine-user-intention-of-utterances"></a>Добавление намерений для определения намерения пользователя для фраз
 
 Добавьте [намерения](luis-concept-intent.md) в приложение LUIS для определения групп вопросов или команд, которые имеют одинаковые намерения.
 
-На портале LUIS Управление местами осуществляется из раздела **сборки** в верхней панели навигации, а затем с **целей**на левой панели.
+На портале LUIS Управление местами осуществляется из раздела **сборки** в верхней панели навигации, а затем с **целей** на левой панели.
 
 ## <a name="add-an-intent-to-your-app"></a>Добавление цели в приложение
 
@@ -79,6 +79,6 @@ ms.locfileid: "91540937"
 
 После добавления, изменения или удаления намерений выполните [обучение](luis-how-to-train.md) и [публикацию](luis-how-to-publish-app.md) приложения, чтобы применить изменения к запросам конечной точки. Не обучить после каждого отдельного изменения. Обучить после группы изменений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о добавлении [примеров высказываний](luis-how-to-add-example-utterances.md) с сущностями.
+Дополнительные сведения о добавлении [примеров высказываний](./luis-how-to-add-entities.md) с сущностями.

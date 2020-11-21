@@ -4,19 +4,19 @@ titleSuffix: Azure Kubernetes Service
 description: Ознакомьтесь с рекомендациями по управлению безопасностью и обновлениями для кластеров в службе Azure Kubernetes (AKS) для операторов кластеров.
 services: container-service
 ms.topic: conceptual
-ms.date: 12/06/2018
-ms.openlocfilehash: 9ef019e682511e13af46194d26aec48c1555f70e
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.date: 11/12/2020
+ms.openlocfilehash: ad1f14fc92433e8d9cb31de165645e4a5731f01a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683307"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019472"
 ---
 # <a name="best-practices-for-cluster-security-and-upgrades-in-azure-kubernetes-service-aks"></a>Рекомендации по безопасности и обновлениям кластера в службах Azure Kubernetes (AKS)
 
 При управлении кластерами в Azure Kubernetes Service (AKS) безопасность ваших рабочих нагрузок и данных является ключевым фактором. Необходимо обеспечить безопасный доступ к ресурсам и рабочим нагрузкам, особенно при запуске мультитенантных кластеров с использованием логической изоляции. Чтобы свести к минимуму риск атаки, вы также должны убедиться, что применяете последние обновления безопасности Kubernetes и ОС узла.
 
-Эта статья посвящается вопросам, связанным с безопасностью кластера AKS. Вы научитесь:
+Эта статья посвящается вопросам, связанным с безопасностью кластера AKS. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Использование Azure Active Directory и Kubernetes управления доступом на основе ролей (Kubernetes RBAC) для безопасного доступа к серверу API

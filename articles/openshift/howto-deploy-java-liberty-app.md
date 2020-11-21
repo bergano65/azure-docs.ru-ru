@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/30/2020
 keywords: Java, жакартаи, Java, Микропрофиль, Open-Liberty, WebSphere-Liberty, АТО, openshift, Red Hat
-ms.openlocfilehash: ee4baf8eed26a43728fa52289bce86108c9e8c4a
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 41891b58942efbfd705747cc16219185f2a2daa2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94414873"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018398"
 ---
 # <a name="deploy-a-java-application-with-open-libertywebsphere-liberty-on-an-azure-red-hat-openshift-4-cluster"></a>Развертывание приложения Java с помощью Open Liberty/WebSphere Liberty в кластере Azure Red Hat OpenShift 4
 
@@ -20,7 +20,7 @@ ms.locfileid: "94414873"
 
 [!INCLUDE [aro-support](includes/aro-support.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы успешно пройти это руководство, выполните следующие предварительные требования.
 
@@ -65,7 +65,7 @@ ms.locfileid: "94414873"
 
 1. Войдите в веб-консоль OpenShift из браузера, используя `kubeadmin` учетные данные.
 2. Перейдите к разделу **Администрирование**  >  **пространства имен**  >  **создать пространство имен**.
-3. Заполните поля `open-liberty-demo` **имя** и выберите **создать** , как показано далее.
+3. Заполните поля `open-liberty-demo` **имя** и выберите **создать**, как показано далее.
 
    ![создать пространство имен](./media/howto-deploy-java-liberty-app/create-namespace.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "94414873"
 2. Перейдите к **операторам**  >  **операторхуб** и найдите **оператор Open Liberty**.
 3. В результатах поиска выберите **Открыть оператор Liberty** .
 4. Выберите пункт **Установить**.
-5. В меню **создать подписку на оператор** просмотрите **все пространства имен в кластере (по умолчанию)** для **режима установки** , **бета-версия** **канала обновления** и **Автоматическое** **утверждение для стратегии утверждения** :
+5. В меню **создать подписку на оператор** просмотрите **все пространства имен в кластере (по умолчанию)** для **режима установки**, **бета-версия** **канала обновления** и **Автоматическое** **утверждение для стратегии утверждения**:
 
    ![создать подписку оператора для открытого оператора Liberty](./media/howto-deploy-java-liberty-app/install-operator.png)
 6. Выберите **подписываться** и подождите одну минуту, пока не отобразится оператор Open Liberty.
@@ -126,7 +126,7 @@ ms.locfileid: "94414873"
    [INFO] Source compilation was successful.
    ```
 
-1. Откройте [http://localhost:9080/](http://localhost:9080/) в браузере, чтобы перейти на домашнюю страницу приложения. Приложение будет выглядеть примерно так, как показано на следующем рисунке:
+1. Откройте `http://localhost:9080/` в браузере, чтобы перейти на домашнюю страницу приложения. Приложение будет выглядеть примерно так, как показано на следующем рисунке:
 
    ![Веб-интерфейс Java кафе](./media/howto-deploy-java-liberty-app/javaee-cafe-web-ui.png)
 1. Нажмите **Control-C** , чтобы прерывать работу приложения и открыть Liberty Server.
@@ -164,7 +164,7 @@ ms.locfileid: "94414873"
 
 1. Запустите `docker run -it --rm -p 9080:9080 javaee-cafe-simple:1.0.0` в консоли.
 2. Дождитесь запуска сервера Liberty и разверните приложение для успешного развертывания.
-3. Откройте [http://localhost:9080/](http://localhost:9080/) в браузере, чтобы перейти на домашнюю страницу приложения.
+3. Откройте `http://localhost:9080/` в браузере, чтобы перейти на домашнюю страницу приложения.
 4. Нажмите **Control-C** , чтобы прерывать работу приложения и сервера Liberty.
 
 ### <a name="push-the-image-to-the-container-image-registry"></a>Отправка образа в реестр образов контейнеров
@@ -234,9 +234,9 @@ docker push ${Container_Registry_URL}/open-liberty-demo/javaee-cafe-simple:1.0.0
 
 1. Войдите в веб-консоль OpenShift из браузера, используя учетные данные пользователя Azure AD.
 1. Разверните узел **Главная** и выберите **проекты**  >  **Open-Liberty-Demo**.
-1. Перейдите к **операторам** ,  >  **установленным** операторами.
-1. В середине страницы выберите **Open Liberty operator (открыть оператор** ).
-1. В середине страницы выберите **Open Liberty Application (открыть приложение приложения** ).  Навигация по элементам в пользовательском интерфейсе отражает реальную иерархию вложений используемых технологий.
+1. Перейдите к **операторам**,  >  **установленным** операторами.
+1. В середине страницы выберите **Open Liberty operator (открыть оператор**).
+1. В середине страницы выберите **Open Liberty Application (открыть приложение приложения**).  Навигация по элементам в пользовательском интерфейсе отражает реальную иерархию вложений используемых технологий.
    <!-- Diagram source https://github.com/Azure-Samples/open-liberty-on-aro/blob/master/diagrams/aro-java-containment.vsdx -->
    ![Включение АТО Java](./media/howto-deploy-java-liberty-app/aro-java-containment.png)
 1. Выберите **создать опенлибертяппликатион**
@@ -255,8 +255,8 @@ docker push ${Container_Registry_URL}/open-liberty-demo/javaee-cafe-simple:1.0.0
 
 1. В области навигации слева разверните элемент **Операторы**.
 1. Выберите **установленные операторы**.
-1. Выберите **Open Liberty operator (открыть оператор** ).
-1. В середине страницы выберите **Open Liberty Application (открыть приложение** ).
+1. Выберите **Open Liberty operator (открыть оператор**).
+1. В середине страницы выберите **Open Liberty Application (открыть приложение**).
 1. Щелкните вертикальное многоточие (три вертикальные точки) и выберите **удалить приложение опенлиберти**.
 
 ### <a name="deploy-the-application-from-cli"></a>Развертывание приложения из интерфейса командной строки
