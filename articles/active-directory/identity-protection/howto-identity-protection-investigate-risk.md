@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3610fa5ea442e5ccb15255d8a1ddcee211871aeb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be72c2152bdb8e1155d2dd29547f93ba3605d462
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84463949"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95251099"
 ---
 # <a name="how-to-investigate-risk"></a>Практическое руководство. Анализ риска
 
@@ -90,6 +90,10 @@ ms.locfileid: "84463949"
 - Ссылка на дополнительные сведения из Microsoft Cloud App Security (МКАС).
 
 Затем администраторы могут вернуться к отчету о рисках или о входах пользователей для выполнения действий на основе собранных данных.
+
+> [!NOTE] 
+> Наша система может обнаружить, что событие риска, которое участвовало в оценке риска для пользователей риска, было ложным положительным числом, или риск для пользователя был исправлен с помощью принудительного применения политики, например для выполнения запроса MFA или безопасного изменения пароля. Поэтому наша система откроет состояние риска и сведения о риске "AI подтвердил вход в систему" будут отображаться, и он больше не будет участвовать в риске пользователя. 
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

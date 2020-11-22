@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 11/17/2020
+ms.date: 11/18/2020
 ms.author: b-juche
-ms.openlocfilehash: 6fbb9b054433905d41d0171ab08b4647618be466
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: b30ed0cca680013b85efe064d59fb7cb73d753d2
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94745689"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95239556"
 ---
 # <a name="troubleshoot-cross-region-replication"></a>Устранение неполадок с репликацией между регионами
 
@@ -50,6 +50,12 @@ ms.locfileid: "94745689"
 |-|-|
 |     `Replication   cannot be deleted, mirror state needs to be in status: Broken before deleting`    |     Проверьте, что какая-либо репликация была разорвана или не была инициализирована и неактивна (сбой инициализации).    |
 |     `Cannot delete   source replication`    |     Удаление репликации с исходной стороны не допускается. Убедитесь, что вы удаляете репликацию с конечной стороны.    |
+
+## <a name="errors-deleting-volume"></a>Ошибки при удалении тома
+
+|     Сообщение об ошибке    |     Разрешение    |
+|-|-|
+| `Volume is a member of an active volume replication relationship`  |  Удалите репликацию перед удалением тома. См. раздел [Удаление репликации](cross-region-replication-delete.md). Для этой операции необходимо разорвать пиринг перед удалением репликации для тома. |
 | `Volume with replication cannot be deleted`  |  Удалите репликацию перед удалением тома. См. раздел [Удаление репликации](cross-region-replication-delete.md). Для этой операции необходимо разорвать пиринг перед удалением репликации для тома. 
 
 ## <a name="errors-resyncing-volume"></a>Ошибки при повторной синхронизации тома
@@ -69,7 +75,7 @@ ms.locfileid: "94745689"
 
 * [Репликация между регионами](cross-region-replication-introduction.md)
 * [Требования и рекомендации по использованию репликации между регионами](cross-region-replication-requirements-considerations.md)
-* [Создание пиринга репликации](cross-region-replication-create-peering.md)
+* [Создание репликации тома](cross-region-replication-create-peering.md)
 * [Отображение состояния работоспособности отношения репликации](cross-region-replication-display-health-status.md)
 * [Управление аварийным восстановлением](cross-region-replication-manage-disaster-recovery.md)
 * [Устранение неполадок с репликацией между регионами](troubleshoot-cross-region-replication.md)

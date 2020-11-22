@@ -3,12 +3,12 @@ title: Обратимое удаление для Azure Backup
 description: Узнайте, как использовать функции безопасности в Azure Backup, чтобы сделать резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: d7998c7f9def6ce9965ded3b6ec700f7975891eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da473b1d886ec2fe95a7baae76b09aff38fb3cd7
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91271551"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95254055"
 ---
 # <a name="soft-delete-for-azure-backup"></a>Обратимое удаление для Azure Backup
 
@@ -37,7 +37,7 @@ ms.locfileid: "91271551"
 
 1. В портал Azure перейдите в хранилище, а затем выберите **Параметры**  ->  **Свойства**.
 2. На панели Свойства выберите **Параметры безопасности**  ->  **Обновить**.  
-3. В области Параметры безопасности в разделе **обратимое удаление**выберите **Отключить**.
+3. В области Параметры безопасности в разделе **обратимое удаление** выберите **Отключить**.
 
 ![Отключение обратимого удаления](./media/backup-azure-security-feature-cloud/disable-soft-delete.png)
 
@@ -69,11 +69,11 @@ SoftDeleteFeatureState : Disabled
 
 ### <a name="using-azure-portal"></a>Использование портала Azure
 
-Выполните следующие действия.
+Выполните следующие действия:
 
 1. Выполните действия по [отключению обратимого удаления](#enabling-and-disabling-soft-delete).
 
-2. В портал Azure перейдите в хранилище, перейдите к **элементу Архивация**и выберите Обратимо удаленный элемент.
+2. В портал Azure перейдите в хранилище, перейдите к **элементу Архивация** и выберите Обратимо удаленный элемент.
 
    ![Выбор обратимо удаленного элемента](./media/backup-azure-security-feature-cloud/vm-soft-delete.png)
 
@@ -87,11 +87,11 @@ SoftDeleteFeatureState : Disabled
 
 5. Выберите **удалить резервные копии данных** , чтобы окончательно удалить данные резервной копии.
 
-   ![Выберите Удалить данные архивации](/azure/backup/media/backup-azure-manage-vms/delete-backup-buttom.png)
+   ![Выберите Удалить данные архивации](./media/backup-azure-manage-vms/delete-backup-button.png)
 
 6. Введите имя элемента резервного копирования, чтобы подтвердить, что необходимо удалить точки восстановления.
 
-   ![Введите имя элемента архивации](/azure/backup/media/backup-azure-manage-vms/delete-backup-data1.png)
+   ![Введите имя элемента архивации](./media/backup-azure-manage-vms/delete-backup-data.png)
 
 7. Чтобы удалить данные архивации для элемента, выберите **Удалить**. Сообщение уведомления позволяет убедиться, что данные резервного копирования удалены.
 
@@ -140,7 +140,7 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 2. Затем отключите функцию обратимого удаления с помощью REST API, выполнив описанные [здесь](use-restapi-update-vault-properties.md#update-soft-delete-state-using-rest-api)действия.
 3. Затем удалите резервные копии с помощью REST API, как описано [здесь](backup-azure-arm-userestapi-backupazurevms.md#stop-protection-and-delete-data).
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="do-i-need-to-enable-the-soft-delete-feature-on-every-vault"></a>Нужно ли включать функцию обратимого удаления в каждом хранилище?
 
@@ -178,6 +178,6 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 Операции обратимого удаления можно выполнить с помощью PowerShell. В настоящее время CLI не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о средствах безопасности в Azure Backup](security-overview.md)

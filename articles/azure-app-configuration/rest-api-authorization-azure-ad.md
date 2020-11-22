@@ -6,20 +6,20 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: bebab7c06062726f7b5c7868f984cadda3b4c98e
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 89c51e69a4274affcecb4d967deb96dcebcfd70f
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424410"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95253376"
 ---
 # <a name="azure-active-directory-authorization---rest-api-reference"></a>Ссылка на REST API Azure Active Directory авторизации
 
-При использовании проверки подлинности Azure Active Directory (Azure AD) авторизация обрабатывается с помощью управления доступом на основе ролей (RBAC) Azure. Для предоставления доступа к ресурсам Azure RBAC необходимо назначить пользователям роли. Каждая роль содержит набор действий, которые могут выполнять пользователи, назначенные роли.
+При использовании проверки подлинности Azure Active Directory (Azure AD) авторизация обрабатывается с помощью управления доступом на основе ролей (RBAC). RBAC требует, чтобы пользователи были назначены ролям для предоставления доступа к ресурсам. Каждая роль содержит набор действий, которые могут выполнять пользователи, назначенные роли.
 
 ## <a name="roles"></a>Роли
 
-Следующие роли являются встроенными ролями, которые по умолчанию доступны в подписках Azure:
+По умолчанию в подписках Azure доступны следующие роли:
 
 - **Владелец данных конфигурации приложения Azure**. Эта роль обеспечивает полный доступ ко всем операциям.
 - **Модуль чтения данных конфигурации приложений Azure**. Эта роль включает операции чтения.
@@ -32,7 +32,7 @@ ms.locfileid: "93424410"
 - `Microsoft.AppConfiguration/configurationStores/keyValues/write`: Это действие разрешает доступ на запись к ресурсам "ключ — значение" конфигурации приложения.
 - `Microsoft.AppConfiguration/configurationStores/keyValues/delete`: Это действие позволяет удалять ресурсы "ключ — значение" конфигурации приложения. Обратите внимание, что удаление ресурса Возвращает ключ-значение, которое было удалено.
 
-## <a name="errors"></a>ошибки
+## <a name="error"></a>Error
 
 ```http
 HTTP/1.1 403 Forbidden
@@ -43,4 +43,4 @@ HTTP/1.1 403 Forbidden
 
 ## <a name="managing-role-assignments"></a>Управление назначениями ролей
 
-Управление назначениями ролей выполняется с помощью процедур [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) , которые являются стандартными для всех служб Azure. Это можно сделать с помощью Azure CLI, PowerShell, портал Azure и других средств. Официальная документация о том, как создавать назначения ролей, можно найти [здесь](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
+Вы можете управлять назначениями ролей с помощью [процедур RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) , которые являются стандартными для всех служб Azure. Это можно сделать с помощью Azure CLI, PowerShell и портал Azure. Дополнительные сведения см. [в статье Добавление и удаление назначений ролей Azure с помощью портал Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).

@@ -6,32 +6,30 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 4949db646c54d75f60d29d3c631d0f4ee8d7c26e
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 7e63b48f2119c48cd43717acee7b13b1701e0032
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424512"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241273"
 ---
 # <a name="locks"></a>Блокировки
 
-версия API: 1,0
-
-Этот API обеспечивает семантику блокировки и разблокировки для ресурса «ключ-значение». Она поддерживает следующие операции:
+Этот API (версия 1,0) предоставляет семантику блокировки и разблокировки для ресурса «ключ-значение». Она поддерживает следующие операции:
 
 - Блокировка на месте
 - Снять блокировку
 
-Если параметр указан, `label` должен быть явным значением метки ( **не** является подстановочным). Для всех операций это необязательный параметр. Если этот параметр опущен, метка не подразумевается.
+Если параметр указан, `label` должен быть явным значением метки (не является подстановочным). Для всех операций это необязательный параметр. Если этот параметр опущен, метка не подразумевается.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-rest-api-prereqs.md)]
 
-## <a name="lock-key-value"></a>Key-Value блокировки
+## <a name="lock-key-value"></a>Заблокировать ключ — значение
 
-- **Обязательный:** ``{key}`` , ``{api-version}``  
-- *Необязательно:*``label``
+- Обязательный: ``{key}`` , ``{api-version}``  
+- Необязательно. ``label``
 
 ```http
 PUT /locks/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -63,10 +61,10 @@ Content-Type: application/vnd.microsoft.appconfig.kv+json; charset=utf-8"
 HTTP/1.1 404 Not Found
 ```
 
-## <a name="unlock-key-value"></a>Разблокировать Key-Value
+## <a name="unlock-key-value"></a>Разблокировать ключ — значение
 
-- **Обязательный:** ``{key}`` , ``{api-version}``  
-- *Необязательно:*``label``
+- Обязательный: ``{key}`` , ``{api-version}``  
+- Необязательно. ``label``
 
 ```http
 DELETE /locks/{key}?label={label}?api-version={api-version} HTTP/1.1
@@ -98,9 +96,9 @@ Content-Type: application/vnd.microsoft.appconfig.kv+json; charset=utf-8"
 HTTP/1.1 404 Not Found
 ```
 
-## <a name="conditional-lockunlock"></a>Условная блокировка и разблокировка
+## <a name="conditional-lock-and-unlock"></a>Условная блокировка и разблокировка
 
-Чтобы избежать конкуренции, используйте `If-Match` или `If-None-Match` заголовков запроса. `etag`Аргумент является частью представления ключа. Если `If-Match` `If-None-Match` аргумент или опущен, операция будет безусловной.
+Чтобы избежать конкуренции, используйте `If-Match` или `If-None-Match` заголовков запроса. `etag`Аргумент является частью представления ключа. Если `If-Match` `If-None-Match` аргумент или опущен, операция является безусловной.
 
 Следующий запрос применяет операцию только в том случае, если текущее представление "ключ-значение" соответствует указанному `etag` :
 

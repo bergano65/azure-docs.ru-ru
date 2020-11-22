@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 94cf1f34db590abeb084c5e95367781e50c85efc
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: fa7292d423d8b716ffd75a1a20431fb5a79bbf96
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650103"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95237346"
 ---
 # <a name="cloud-provisioning-troubleshooting"></a>Устранение неполадок подготовки облака
 
@@ -22,7 +22,7 @@ ms.locfileid: "94650103"
 
 ## <a name="common-troubleshooting-areas"></a>Распространенные области устранения неполадок
 
-|Название|Описание|
+|Имя|Описание|
 |-----|-----|
 |[Проблемы с агентом](#agent-problems)|Убедитесь, что агент установлен правильно и взаимодействует с Azure Active Directory (Azure AD).|
 |[Проблемы синхронизации объектов](#object-synchronization-problems)|Используйте журналы подготовки для устранения неполадок синхронизации объектов.|
@@ -124,40 +124,17 @@ ms.locfileid: "94650103"
 
 ### <a name="log-files"></a>файлы журналов.
 
-По умолчанию агент выдает минимальные сообщения об ошибках и сведения о трассировке стека. Эти журналы трассировки можно найти в папке *К:\ПРОГРАМДАТА\МИКРОСОФТ\АЗУРЕ AD Connect подготовка Agent\Trace*.
+По умолчанию агент выдает минимальные сообщения об ошибках и сведения о трассировке стека. Эти журналы трассировки можно найти в папке **К:\ПРОГРАМДАТА\МИКРОСОФТ\АЗУРЕ AD Connect подготовка Agent\Trace**.
 
 Чтобы собрать дополнительные сведения для устранения неполадок, связанных с агентом, выполните следующие действия.
 
-1. Закройте службу **Microsoft Azure AD подключить агент подготовки**.
-1. Создайте копию исходного файла конфигурации: *C:\Program Files\Microsoft Azure AD Connect Agent\AADConnectProvisioningAgent.exe.configподготовки*.
-1. Замените существующий `<system.diagnostics>` раздел следующим, и все сообщения трассировки будут отправлены в файл *проваженттраце. log*.
+1.  Установите модуль PowerShell Аадклаудсинктулс, как описано [здесь](reference-powershell.md#install-the-aadcloudsynctools-powershell-module).
+2. Используйте `Export-AADCloudSyncToolsLogs` командлет PowerShell для сбора данных.  Для точной настройки сбора данных можно использовать следующие параметры.
+      - Скипвербосетраце экспортировать только текущие журналы без записи подробного журнала (значение по умолчанию — false)
+      - ТраЦингдуратионминс, чтобы указать другую длительность записи (по умолчанию — 3 минуты)
+      - OutputPath для указания другого выходного пути (по умолчанию — документы пользователя)
 
-   ```xml
-     <system.diagnostics>
-         <sources>
-         <source name="AAD Connect Provisioning Agent">
-             <listeners>
-             <add name="console"/>
-             <add name="etw"/>
-             <add name="textWriterListener"/>
-             </listeners>
-         </source>
-         </sources>
-         <sharedListeners>
-         <add name="console" type="System.Diagnostics.ConsoleTraceListener" initializeData="false"/>
-         <add name="etw" type="System.Diagnostics.EventLogTraceListener" initializeData="Azure AD Connect Provisioning Agent">
-             <filter type="System.Diagnostics.EventTypeFilter" initializeData="All"/>
-         </add>
-         <add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:/ProgramData/Microsoft/Azure AD Connect Provisioning Agent/Trace/ProvAgentTrace.log"/>
-         </sharedListeners>
-     </system.diagnostics>
-    
-   ```
-1. Запустите службу **Microsoft Azure AD подключить агент подготовки**.
-1. Используйте следующую команду, чтобы зафрагментировать файл и отладить проблемы. 
-    ```
-    Get-Content “C:/ProgramData/Microsoft/Azure AD Connect Provisioning Agent/Trace/ProvAgentTrace.log” -Wait
-    ```
+
 ## <a name="object-synchronization-problems"></a>Проблемы синхронизации объектов
 
 В следующем разделе содержатся сведения об устранении неполадок синхронизации объектов.
@@ -203,6 +180,22 @@ ms.locfileid: "94650103"
   Используйте следующий запрос:
  
   `POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart`
+
+## <a name="repairing-the-the-cloud-sync-service-account"></a>Восстановление учетной записи облачной службы синхронизации
+Если вам нужно восстановить учетную запись облачной службы синхронизации, можно использовать `Repair-AADCloudSyncToolsAccount` .  
+
+
+   1.  Выполните действия по установке, описанные [здесь](reference-powershell.md#install-the-aadcloudsynctools-powershell-module) , чтобы начать и продолжить выполнение оставшихся действий.
+   2.  В сеансе Windows PowerShell с правами администратора введите или скопируйте и вставьте следующий текст: 
+    ```
+    Connect-AADCloudSyncTools
+    ```  
+   3. Введите учетные данные глобального администратора Azure AD
+   4. Введите или скопируйте и вставьте следующий текст: 
+    ```
+    Repair-AADCloudSyncToolsAccount
+    ```  
+   5. После завершения этого процесса должно быть указано, что учетная запись успешно исправлена.
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 

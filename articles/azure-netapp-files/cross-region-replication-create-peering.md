@@ -1,5 +1,5 @@
 ---
-title: Создание пиринга репликации для Azure NetApp Files | Документация Майкрософт
+title: Создание репликации тома для Azure NetApp Files | Документация Майкрософт
 description: Описание создания пиринга репликации томов для Azure NetApp Files для настройки репликации между регионами.
 services: azure-netapp-files
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: b-juche
-ms.openlocfilehash: df70f8a37a7223119068afd323583ea6126ca542
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 412724a072bfc03a67bf1005173702f757c6fdf4
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90709059"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95249943"
 ---
-# <a name="create-replication-peering-for-azure-netapp-files"></a>Создание пиринга репликации для Azure NetApp Files
+# <a name="create-volume-replication-for-azure-netapp-files"></a>Создание репликации тома для Azure NetApp Files
 
 > [!IMPORTANT]
 > Функция репликации между регионами в настоящее время доступна в общедоступной предварительной версии. Чтобы получить доступ к этой Azure NetApp Files функции, необходимо отправить запрос ваитлист на [странице отправки ваитлист репликации между регионами](https://aka.ms/anfcrrpreviewsignup). Перед использованием функции репликации между регионами дождитесь официального сообщения электронной почты от команды Azure NetApp Files.
@@ -106,12 +106,13 @@ Azure NetApp Files репликация в настоящее время не п
 
 6. В поле авторизовать вставьте идентификатор ресурса целевого тома репликации, полученный на шаге 3, и нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 * [Репликация между регионами](cross-region-replication-introduction.md)
 * [Требования и рекомендации по использованию репликации между регионами](cross-region-replication-requirements-considerations.md)
 * [Отображение состояния работоспособности отношения репликации](cross-region-replication-display-health-status.md)
 * [Метрики репликации томов](azure-netapp-files-metrics.md#replication)
 * [Управление аварийным восстановлением](cross-region-replication-manage-disaster-recovery.md)
+* [Удаление репликации томов или томов](cross-region-replication-delete.md)
 * [Устранение неполадок при репликации между регионами](troubleshoot-cross-region-replication.md)
 

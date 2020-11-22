@@ -5,12 +5,12 @@ ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 08/30/2019
-ms.openlocfilehash: 83384dd24141cfeb7b03f388e6e3505fea8f496e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: d3812cb27d2d9ea7a49038f566f8b4cc5d779172
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92221083"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241698"
 ---
 # <a name="develop-u-sql-scripts-by-using-data-lake-tools-for-visual-studio"></a>Разработка скриптов U-SQL с помощью средств Data Lake для Visual Studio
 
@@ -31,7 +31,7 @@ ms.locfileid: "92221083"
 >    - [Для Visual Studio 2017 и 2019](https://marketplace.visualstudio.com/items?itemName=ADLTools.AzureDataLakeandStreamAnalyticsTools)
 >    - [для Visual Studio 2013 и 2015.](https://www.microsoft.com/en-us/download/details.aspx?id=49504)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Visual Studio**: поддерживаются все выпуски, кроме Express.
 
@@ -51,11 +51,11 @@ ms.locfileid: "92221083"
 
 1. Запустите Visual Studio.
 
-1. Откройте **Обозреватель сервера** , выбрав **представление**  >  **Обозреватель сервера**.
+1. Откройте **Обозреватель Data Lake Analytics** , выбрав **вид**  >  **Data Lake Analytics Explorer**.
 
-1. Щелкните правой кнопкой мыши **Azure**, а затем выберите **подключиться к Microsoft Azure подписке**. В поле **Вход в учетную запись**выполните инструкции.
+1. Щелкните правой кнопкой мыши **Azure**, а затем выберите **подключиться к Microsoft Azure подписке**. В поле **Вход в учетную запись** выполните инструкции.
 
-1. В **Обозреватель сервера**выберите Data Lake Analytics **Azure**  >  **Data Lake Analytics**. Отобразится список учетных записей Data Lake Analytics.
+1. В **Обозреватель сервера** выберите Data Lake Analytics **Azure**  >  **Data Lake Analytics**. Отобразится список учетных записей Data Lake Analytics.
 
 ## <a name="write-your-first-u-sql-script"></a>Создание первого скрипта U-SQL
 
@@ -80,15 +80,15 @@ OUTPUT @a
 
 1. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
 
-1. Выберите тип **проекта U-SQL** и нажмите кнопку **Далее**. В окне **Настройка нового проекта**выберите **создать**.
+1. Выберите тип **проекта U-SQL** и нажмите кнопку **Далее**. В окне **Настройка нового проекта** выберите **создать**.
 
    Visual Studio создает решение, содержащее файл **script. usql** .
 
 1. Вставьте скрипт из [записи первого скрипта U-SQL](#write-your-first-u-sql-script) в окно **script. usql** .
 
-1. В **Обозреватель решений**щелкните правой кнопкой мыши **script. Usql**и выберите **отправить сценарий**.
+1. В **Обозреватель решений** щелкните правой кнопкой мыши **script. Usql** и выберите **отправить сценарий**.
 
-1. В списке **Отправить задание**выберите учетную запись Data Lake Analytics и нажмите кнопку **Отправить**.
+1. В списке **Отправить задание** выберите учетную запись Data Lake Analytics и нажмите кнопку **Отправить**.
 
    ![Отправка проекта U-SQL в Visual Studio](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-submit-job-vs2019.png)
 
@@ -108,7 +108,7 @@ OUTPUT @a
 
 ## <a name="check-job-status"></a>Проверка состояния задания
 
-1. В **Обозреватель сервера**выберите Data Lake Analytics **Azure**  >  **Data Lake Analytics**.
+1. В **Обозреватель сервера** выберите Data Lake Analytics **Azure**  >  **Data Lake Analytics**.
 
 1. Разверните окно имени учетной записи Data Lake Analytics.
 
@@ -118,7 +118,7 @@ OUTPUT @a
 
 ## <a name="see-the-job-output"></a>Просмотр выходных данных задания
 
-1. В **Обозреватель сервера**перейдите к отправленному заданию.
+1. В **Обозреватель сервера** перейдите к отправленному заданию.
 
 1. Перейдите на вкладку **Данные**.
 

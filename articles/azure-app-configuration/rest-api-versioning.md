@@ -1,33 +1,31 @@
 ---
 title: Конфигурация приложений Azure REST API — управление версиями
-description: Справочные страницы для управления версиями с помощью REST API конфигурации приложений Azure
+description: Справочные страницы по управлением версиями с помощью REST API конфигурации приложений Azure
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 90d131cdc7c496853f2520951c95b9903d69f8fb
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 3a7f50b26d59501d2be3a0147fe89919819b50e6
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424472"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95246373"
 ---
 # <a name="versioning"></a>Управление версиями
 
-версия API: 1,0
-
-Каждый клиентский запрос должен предоставлять явную версию API в качестве параметра строки запроса. Пример: `https://{myconfig}.azconfig.io/kv?api-version=1.0`
+Каждый клиентский запрос должен предоставлять явную версию API в качестве параметра строки запроса. Например, так: `https://{myconfig}.azconfig.io/kv?api-version=1.0`.
 
 `api-version` выражается в формате SemVer (основной. дополнительный). Согласование диапазона или версии не поддерживается.
 
-## <a name="error-response"></a>Сообщение об ошибке
+Эта статья относится к API версии 1,0.
 
 Ниже приведена сводка возможных сообщений об ошибках, возвращаемых сервером, если запрашиваемая версия API не может быть сопоставлена.
 
-### <a name="api-version-unspecified"></a>Версия API не указана
+## <a name="api-version-unspecified"></a>Версия API не указана
 
-Происходит, когда клиент выполняет запрос без предоставления версии API.
+Эта ошибка возникает, когда клиент выполняет запрос без предоставления версии API.
 
 ```http
 HTTP/1.1 400 Bad Request
@@ -41,9 +39,9 @@ Content-Type: application/problem+json; charset=utf-8
 }
 ```
 
-### <a name="unsupported-api-version"></a>Неподдерживаемая версия API
+## <a name="unsupported-api-version"></a>Неподдерживаемая версия API
 
-Происходит, когда запрошенная версия API клиента не соответствует ни одной из поддерживаемых версий API на сервере.
+Эта ошибка возникает, когда запрошенная версия API клиента не соответствует ни одной из поддерживаемых версий API на сервере.
 
 ```http
 HTTP/1.1 400 Bad Request
@@ -57,9 +55,9 @@ Content-Type: application/problem+json; charset=utf-8
 }
 ```
 
-### <a name="invalid-api-version"></a>Недопустимая версия API
+## <a name="invalid-api-version"></a>Недопустимая версия API
 
-Происходит, когда клиент выполняет запрос с версией API, но значение имеет неправильный формат или не может быть проанализировано сервером.
+Эта ошибка возникает, когда клиент выполняет запрос с версией API, но значение имеет неправильный формат или не может быть проанализировано сервером.
 
 ```http
 HTTP/1.1 400 Bad Request
@@ -73,9 +71,9 @@ Content-Type: application/problem+json; charset=utf-8
 }
 ```
 
-### <a name="ambiguous-api-version"></a>Неоднозначная версия API
+## <a name="ambiguous-api-version"></a>Неоднозначная версия API
 
-Происходит, когда клиент запрашивает версию API, неоднозначность для сервера. Например, несколько различных значений.
+Эта ошибка возникает, когда клиент запрашивает версию API, неоднозначность для сервера (например, несколько различных значений).
 
 ```http
 HTTP/1.1 400 Bad Request

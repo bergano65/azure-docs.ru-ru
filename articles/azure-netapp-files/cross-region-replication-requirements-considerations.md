@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/16/2020
 ms.author: b-juche
-ms.openlocfilehash: f2a50872fdb71419a0c3f068712ec67523a098e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b664dcd1cb12808960ffacf91c6d02d58632c4e
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90709035"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95243143"
 ---
 # <a name="requirements-and-considerations-for-using-cross-region-replication"></a>Требования и рекомендации по использованию репликации между регионами 
 
@@ -38,12 +38,14 @@ ms.locfileid: "90709035"
 * Настройка репликации томов для исходных томов, созданных из моментального снимка, в настоящее время не поддерживается.
 * После настройки репликации между регионами процесс репликации создает *моментальные снимки snapmirror* для предоставления ссылок между исходным Томом и целевым томом. Моментальные снимки snapmirror автоматически запускаются, когда создается новый для каждого добавочного перемещения. Нельзя удалить моментальные снимки snapmirror, пока не будут удалены отношение репликации и том. 
 * Вы можете удалить моментальные снимки вручную на исходном томе отношения репликации, если отношение репликации активно или разорвано, а также после удаления отношения репликации. Нельзя удалить моментальные снимки вручную для целевого тома, пока не будет нарушена связь репликации.
+* Нельзя вернуться к моментальному снимку, сделанному до создания тома назначения репликации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* [Создание пиринга репликации](cross-region-replication-create-peering.md)
+## <a name="next-steps"></a>Дальнейшие действия
+* [Создание репликации тома](cross-region-replication-create-peering.md)
 * [Отображение состояния работоспособности отношения репликации](cross-region-replication-display-health-status.md)
 * [Управление аварийным восстановлением](cross-region-replication-manage-disaster-recovery.md)
 * [Метрики репликации томов](azure-netapp-files-metrics.md#replication)
+* [Удаление репликации томов или томов](cross-region-replication-delete.md)
 * [Устранение неполадок с репликацией между регионами](troubleshoot-cross-region-replication.md)
 
 

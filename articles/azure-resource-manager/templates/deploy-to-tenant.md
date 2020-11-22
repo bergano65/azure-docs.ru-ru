@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в клиенте
 description: В этой статье объясняется, как развертывать ресурсы в клиенте в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 10/22/2020
-ms.openlocfilehash: 854ccbd43509b6c0b5a04357844c78c32b7e6396
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 11/20/2020
+ms.openlocfilehash: 65a5e90616f8883b338d22fa31eee6932452b5fd
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92668695"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95242667"
 ---
 # <a name="tenant-deployments-with-arm-templates"></a>Развертывание клиентов с помощью шаблонов ARM
 
@@ -36,11 +36,19 @@ ms.locfileid: "92668695"
 
 * [managementGroups](/azure/templates/microsoft.management/managementgroups)
 
+Для создания подписок используйте:
+
+* [псевдоним](/azure/templates/microsoft.subscription/aliases)
+
 Для управления затратами используйте:
 
 * [биллингпрофилес](/azure/templates/microsoft.billing/billingaccounts/billingprofiles)
 * [водим](/azure/templates/microsoft.billing/billingaccounts/billingprofiles/instructions)
 * [инвоицесектионс](/azure/templates/microsoft.billing/billingaccounts/billingprofiles/invoicesections)
+
+Для настройки портала используйте:
+
+* [тенантконфигуратионс](/azure/templates/microsoft.portal/tenantconfigurations)
 
 ## <a name="schema"></a>схема
 
@@ -123,12 +131,12 @@ New-AzTenantDeployment `
 
 ## <a name="deployment-scopes"></a>Области развертывания
 
-При развертывании в группе управления можно развернуть ресурсы в:
+При развертывании в клиенте можно развернуть ресурсы в:
 
 * Клиент
 * группы управления в клиенте
 * subscriptions
-* группы ресурсов (с помощью двух вложенных развертываний)
+* группы ресурсов
 * [ресурсы расширения](scope-extension-resources.md) можно применять к ресурсам
 
 Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
@@ -155,81 +163,33 @@ New-AzTenantDeployment `
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-subscription.json" highlight="10,18":::
 
+### <a name="scope-to-resource-group"></a>Область действия для группы ресурсов
+
+Вы также можете ориентироваться на группы ресурсов в клиенте. Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
+
+Чтобы назначить группу ресурсов в клиенте, используйте вложенное развертывание. Укажите свойства `subscriptionId` и `resourceGroup`. Не задавайте расположение для вложенного развертывания, так как оно развертывается в расположении группы ресурсов.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-rg.json" highlight="9,10,18":::
+
 ## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
 
 Для развертываний на уровне клиента необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
 
-Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy** .
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
 
 Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
 ## <a name="create-management-group"></a>Создание группы управления
 
-В [следующем примере](https://github.com/Azure/azure-quickstart-templates/tree/master/tenant-deployments/new-mg) создается группа управления:
+В следующем примере создается группа управления:
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "mgName": {
-      "type": "string",
-      "defaultValue": "[concat('mg-', uniqueString(newGuid()))]"
-    }
-  },
-  "resources": [
-    {
-      "type": "Microsoft.Management/managementGroups",
-      "apiVersion": "2019-11-01",
-      "name": "[parameters('mgName')]",
-      "properties": {
-      }
-    }
-  ]
-}
-```
+:::code language="json" source="~/quickstart-templates/tenant-deployments/new-mg/azuredeploy.json":::
 
 ## <a name="assign-role"></a>Назначение роли
 
-В [следующем шаблоне](https://github.com/Azure/azure-quickstart-templates/tree/master/tenant-deployments/tenant-role-assignment) назначается роль в области клиента:
+В следующем шаблоне назначается роль в области клиента:
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "principalId": {
-      "type": "string",
-      "metadata": {
-        "description": "principalId if the user that will be given contributor access to the resourceGroup"
-      }
-    },
-    "roleDefinitionId": {
-      "type": "string",
-      "defaultValue": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
-      "metadata": {
-        "description": "roleDefinition for the assignment - default is owner"
-      }
-    }
-  },
-  "variables": {
-    // This creates an idempotent guid for the role assignment
-    "roleAssignmentName": "[guid('/', parameters('principalId'), parameters('roleDefinitionId'))]"
-  },
-  "resources": [
-    {
-      "name": "[variables('roleAssignmentName')]",
-      "type": "Microsoft.Authorization/roleAssignments",
-      "apiVersion": "2019-04-01-preview",
-      "properties": {
-        "roleDefinitionId": "[tenantResourceId('Microsoft.Authorization/roleDefinitions', parameters('roleDefinitionId'))]",
-        "principalId": "[parameters('principalId')]",
-        "scope": "/"
-      }
-    }
-  ]
-}
-```
+:::code language="json" source="~/quickstart-templates/tenant-deployments/tenant-role-assignment/azuredeploy.json":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

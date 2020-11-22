@@ -1,23 +1,23 @@
 ---
-title: REST API конфигурации приложений Azure — Key-Value
-description: Справочные страницы по работе с ключевыми значениями с использованием конфигурации приложений Azure REST API
+title: Конфигурация приложения Azure REST API — значение ключа
+description: Справочные страницы по работе с ключевыми значениями с помощью конфигурации приложений Azure REST API
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 50d97a330507e9361674776acf29d1007ee5bf58
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: f89b3f2fa4805eeb2fd9f9d511c8f228b98139ac
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424385"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241035"
 ---
-# <a name="key-values"></a>Key-Values
-
-версия API: 1,0
+# <a name="key-values"></a>Значения ключей
 
 Значение ключа — это ресурс, определяемый уникальным сочетанием `key`  +  `label` . Аргумент `label` является необязательным. Чтобы явно ссылаться на ключевое значение без метки, используйте "\ 0" (URL-адрес в кодировке ``%00`` ). См. подробные сведения для каждой операции.
+
+Эта статья относится к API версии 1,0.
 
 ## <a name="operations"></a>Операции
 
@@ -26,7 +26,7 @@ ms.locfileid: "93424385"
 - Присвойте параметру
 - Удалить
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-rest-api-prereqs.md)]
 
@@ -45,10 +45,10 @@ ms.locfileid: "93424385"
 }
 ```
 
-## <a name="get-key-value"></a>Получить Key-Value
+## <a name="get-key-value"></a>Получение значения ключа
 
-**Обязательный:** ``{key}`` , ``{api-version}``  
-*Необязательно:* ``label`` — Если не указано, подразумевается значение ключа без метки.
+Обязательный: ``{key}`` , ``{api-version}``  
+Необязательно. ``label`` (если не указано, подразумевается ключевое значение без метки.)
 
 ```http
 GET /kv/{key}?label={label}&api-version={api-version}
@@ -87,7 +87,7 @@ HTTP/1.1 404 Not Found
 
 ## <a name="get-conditionally"></a>Get (условно)
 
-Чтобы улучшить кэширование клиента, используйте `If-Match` или `If-None-Match` запросите заголовки. `etag`Аргумент является частью представления ключа. См. [раздел 14,24 и 14,26](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+Чтобы улучшить кэширование клиента, используйте `If-Match` или `If-None-Match` запросите заголовки. `etag`Аргумент является частью представления ключа. Дополнительные сведения см. в [разделах 14,24 и 14,26](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
 
 Следующий запрос получает значение ключа, только если текущее представление не соответствует указанному `etag` :
 
@@ -103,18 +103,15 @@ If-None-Match: "{etag}"
 HTTP/1.1 304 NotModified
 ```
 
-or
+или
 
 ```http
 HTTP/1.1 200 OK
 ```
 
-## <a name="list-key-values"></a>Key-Values списка
+## <a name="list-key-values"></a>Список значений ключа
 
-Дополнительные параметры см. в разделе **Фильтрация** .
-
-*Необязательно:* ``key`` — Если не указано, подразумевается **любой** ключ.
-*Необязательно:* ``label`` — Если не указано, подразумевается **любая** метка.
+Необязательно: ``key`` (если не указано, подразумевается любой ключ.) Необязательно: ``label`` (если не указано, подразумевается любая метка.)
 
 ```http
 GET /kv?label=*&api-version={api-version} HTTP/1.1
@@ -126,6 +123,8 @@ GET /kv?label=*&api-version={api-version} HTTP/1.1
 HTTP/1.1 200 OK
 Content-Type: application/vnd.microsoft.appconfig.kvset+json; charset=utf-8
 ```
+
+Дополнительные параметры см. в подразделе «Фильтрация» далее в этой статье.
 
 ## <a name="pagination"></a>Разбиение на страницы
 
@@ -226,15 +225,15 @@ _ *Примеры**
 
 ## <a name="request-specific-fields"></a>Запрашивать определенные поля
 
-Используйте необязательный `$select` параметр строки запроса и укажите список запрошенных полей, разделенных запятыми. Если `$select` параметр пропущен, ответ содержит набор по умолчанию.
+Используйте необязательный `$select` параметр строки запроса и укажите список запрошенных полей с разделителями-запятыми. Если `$select` параметр пропущен, ответ содержит набор по умолчанию.
 
 ```http
 GET /kv?$select=key,value&api-version={api-version} HTTP/1.1
 ```
 
-## <a name="time-based-access"></a>Доступ к Time-Based
+## <a name="time-based-access"></a>Доступ на основе времени
 
-Получить представление результата, которое было в прошлый раз. См. [раздел](https://tools.ietf.org/html/rfc7089#section-2.1)"в разделе". Разбивка на страницы по-прежнему поддерживается, как указано выше.
+Получить представление результата, которое было в прошлый раз. Дополнительные сведения [см. в](https://tools.ietf.org/html/rfc7089#section-2.1)разделе г. Разбивка на страницы по-прежнему поддерживается, как определено ранее в этой статье.
 
 ```http
 GET /kv?api-version={api-version} HTTP/1.1
@@ -258,10 +257,10 @@ Link: <{relative uri}>; rel="original"
 }
 ```
 
-## <a name="set-key"></a>Ключ набора
+## <a name="set-key"></a>Задать ключ
 
-- **Требуется:**``{key}``
-- *Необязательно:* ``label`` — Если не указано или метка = %00, это подразумевает KV без метки.
+- Обязательно: ``{key}``
+- Необязательно: ``label`` (если не указано или Label = %00, это подразумевает ключевое значение без метки.)
 
 ```http
 PUT /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -323,9 +322,9 @@ Content-Type: application/problem+json; charset="utf-8"
 ## <a name="set-key-conditionally"></a>Задать ключ (условно)
 
 Чтобы избежать конкуренции, используйте `If-Match` или `If-None-Match` заголовков запроса. `etag`Аргумент является частью представления ключа.
-Если `If-Match` `If-None-Match` аргумент или опущен, операция будет безусловной.
+Если `If-Match` `If-None-Match` аргумент или опущен, операция является безусловной.
 
-Следующий ответ обновляет значение только в том случае, если текущее представление соответствует указанному `etag`
+Следующий ответ обновляет значение только в том случае, если текущее представление соответствует указанному `etag` :
 
 ```http
 PUT /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -333,7 +332,7 @@ Content-Type: application/vnd.microsoft.appconfig.kv+json
 If-Match: "4f6dd610dd5e4deebc7fbaef685fb903"
 ```
 
-Следующий ответ обновляет значение только в том случае, если текущее представление *не* соответствует указанному `etag`
+Следующий ответ обновляет значение только в том случае, если текущее представление не соответствует указанному `etag` :
 
 ```http
 PUT /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -349,7 +348,7 @@ Content-Type: application/vnd.microsoft.appconfig.kv+json;
 If-Match: "*"
 ```
 
-Следующий запрос добавляет значение только в том случае, если представление еще *не* существует:
+Следующий запрос добавляет значение только в том случае, если представление еще не существует:
 
 ```http
 PUT /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -365,7 +364,7 @@ Content-Type: application/vnd.microsoft.appconfig.kv+json; charset=utf-8
 ...
 ```
 
-or
+или
 
 ```http
 HTTP/1.1 412 PreconditionFailed
@@ -373,8 +372,8 @@ HTTP/1.1 412 PreconditionFailed
 
 ## <a name="delete"></a>Удалить
 
-- **Обязательный:** `{key}` , `{api-version}`
-- *Необязательно:* `{label}` — Если не указано или метка = %00, это подразумевает KV без метки.
+- Обязательный: `{key}` , `{api-version}`
+- Необязательно: `{label}` (если не указано или Label = %00, это подразумевает ключевое значение без метки.)
 
 ```http
 DELETE /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -388,7 +387,7 @@ Content-Type: application/vnd.microsoft.appconfig.kv+json; charset=utf-8
 ...
 ```
 
-or
+или
 
 ```http
 HTTP/1.1 204 No Content
@@ -396,4 +395,4 @@ HTTP/1.1 204 No Content
 
 ## <a name="delete-key-conditionally"></a>Удалить ключ (условно)
 
-Аналогично **Set Key (условно)**
+Это похоже на раздел «Set Key (условно)» выше в этой статье.
