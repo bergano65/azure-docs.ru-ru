@@ -81,6 +81,8 @@
       href: /azure/data-explorer/security-baseline
     - name: Базовые средства безопасности Фабрики данных Azure
       href: ../../data-factory/security-baseline.md
+    - name: Базовые средства безопасности Azure Data Share
+      href: ../../data-share/security-baseline.md
     - name: Базовые средства безопасности Базы данных Azure для MySQL
       href: ../../mysql/security-baseline.md
     - name: Базовые средства безопасности Базы данных Azure для MariaDB
@@ -91,6 +93,8 @@
       href: ../../postgresql/postgresql-hyperscale-security-baseline.md
     - name: Базовые средства безопасности Azure Databricks
       href: /azure/databricks/scenarios/security-baseline
+    - name: Базовые средства безопасности Azure Defender для Интернета вещей
+      href: ../../defender-for-iot/security-baseline.md
     - name: Базовая защита Azure DNS
       href: ../../dns/security-baseline.md
     - name: Базовые показатели безопасности Azure DevTest Labs
@@ -101,18 +105,24 @@
       href: ../../frontdoor/security-baseline.md
     - name: Базовые средства безопасности Функций Azure
       href: ../../azure-functions/security-baseline.md
+    - name: Базовые средства безопасности Azure HPC Cache
+      href: ../../hpc-cache/security-baseline.md
     - name: Базовые показатели безопасности Azure Information Protection
       href: /azure/information-protection/security-baseline
     - name: Базовые средства безопасности Центра Интернета вещей Azure
       href: ../../iot-hub/security-baseline.md
     - name: Базовые средства безопасности Службы Azure Kubernetes
       href: ../../aks/security-baseline.md
+    - name: Базовые средства безопасности Azure Lighthouse
+      href: ../../lighthouse/security-baseline.md
     - name: Базовые средства безопасности Azure Load Balancer
       href: ../../load-balancer/security-baseline.md
     - name: Базовые показатели безопасности Azure Monitor
       href: ../../azure-monitor/security-baseline.md
     - name: Базовые средства безопасности Машинного обучения Azure
       href: ../../machine-learning/security-baseline.md
+    - name: Базовые средства безопасности Миграции Azure
+      href: ../../migrate/security-baseline.md
     - name: Базовые показатели безопасности Политики Azure
       href: ../../governance/policy/concepts/azure-security-benchmark-baseline.md
     - name: Базовые показатели безопасности Приватного канала Azure

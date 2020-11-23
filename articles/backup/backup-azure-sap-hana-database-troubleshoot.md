@@ -3,12 +3,12 @@ title: Устранение ошибок резервного копирован
 description: Здесь описано, как устранить распространенные ошибки, которые могут возникнуть при использовании Azure Backup для резервного копирования баз данных SAP HANA.
 ms.topic: troubleshooting
 ms.date: 11/7/2019
-ms.openlocfilehash: 5cdad55ef849b9ced31646466e2c2c170ebf0827
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b9fa73ee38e337a547816432212bc68d419f40bb
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89377690"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95411331"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Устранение ошибок резервного копирования баз данных SAP HANA в Azure
 
@@ -153,7 +153,7 @@ ms.locfileid: "89377690"
 - Убедитесь, что новая версия ОС, SDC или MDC в настоящее время [поддерживается Azure Backup](sap-hana-backup-support-matrix.md#scenario-support).
 - [Остановите защиту с сохранением данных для](sap-hana-db-manage.md#stop-protection-for-an-sap-hana-database) базы данных.
 - Выполните обновление.
-- Запустите скрипт предварительной регистрации повторно. Как правило, в процессе обновления удаляются необходимые роли. Выполнение скрипта предварительной регистрации поможет проверить все необходимые роли.
+- Запустите скрипт предварительной регистрации повторно. Часто процесс обновления может удалить [необходимые роли](tutorial-backup-sap-hana-db.md#what-the-pre-registration-script-does). Выполнение скрипта предварительной регистрации поможет проверить все необходимые роли.
 - Снова возобновите защиту базы данных.
 
 ## <a name="sdc-to-mdc-upgrade-with-no-change-in-sid"></a>Обновление с SDC до MDC без изменений идентификатора безопасности

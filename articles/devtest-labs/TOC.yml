@@ -191,6 +191,8 @@
           href: use-managed-identities-environments.md
         - name: Оповещения безопасности для сред
           href: environment-security-alerts.md
+        - name: 'Создание среды, ориентированной на приложения'
+          href: create-application-centric-environment.md
     - name: Управление шаблонами для повторного использования
       items:
         - name: Пользовательские образы и формулы
