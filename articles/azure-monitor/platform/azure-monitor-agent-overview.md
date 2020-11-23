@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
-ms.openlocfilehash: 76f541a45c56669d17103f16997f3d036955b773
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: cf64deb17bea508637debb5612231d355d523fbb
+ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94919694"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95315589"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Общие сведения об агенте Azure Monitor (Предварительная версия)
 Агент Azure Monitor (АМА) собирает данные мониторинга из гостевой операционной системы виртуальных машин и доставляет их в Azure Monitor. В этой статье содержатся общие сведения об агенте Azure Monitor, включая инструкции по его установке и настройке сбора данных.
@@ -54,7 +54,7 @@ Azure Monitor агент сосуществовать с [общедоступн
 
 - Агент Azure Monitor не поддерживает решения и аналитические сведения, такие как Azure Monitor для виртуальных машин и центр безопасности Azure. В настоящее время единственным поддерживаемым сценарием является сбор данных с помощью настраиваемых правил сбора данных. 
 - Правила сбора данных должны создаваться в том же регионе, что и любая Log Analytics Рабочая область, используемая в качестве назначения.
-- В настоящее время поддерживаются только виртуальные машины Azure. Локальные виртуальные машины, масштабируемые наборы виртуальных машин, ARC для серверов, служба Azure Kubernetes и другие типы ресурсов вычислений в настоящее время не поддерживаются.
+- В настоящее время поддерживаются виртуальные машины Azure и серверы с поддержкой ARC в Azure. Масштабируемые наборы виртуальных машин, служба Kubernetes Azure и другие типы ресурсов вычислений в настоящее время не поддерживаются.
 - Виртуальная машина должна иметь доступ к следующим конечным точкам HTTPS:
   - *.ods.opinsights.azure.com
   - *. ingest.monitor.azure.com
@@ -94,50 +94,8 @@ Azure Monitor агент сосуществовать с [общедоступн
 ## <a name="networking"></a>Сеть
 Агент Azure Monitor поддерживает теги служб Azure (Теги Азуремонитор и AzureResourceManager являются обязательными), но еще не работает с Azure Monitor областями частных ссылок или прямыми прокси.
 
-## <a name="install-the-azure-monitor-agent"></a>Установка агента Azure Monitor
-Агент Azure Monitor реализуется как [расширение виртуальной машины Azure](../../virtual-machines/extensions/overview.md) и содержит сведения, приведенные в следующей таблице. 
-
-| Свойство | Windows | Linux |
-|:---|:---|:---|
-| Publisher | Microsoft. Azure. Monitor  | Microsoft. Azure. Monitor |
-| Type      | азуремониторвиндовсажент | азуремониторлинуксажент  |
-| TypeHandlerVersion  | 1.0 | 1.5 |
-
-Установите агент Azure Monitor с помощью любого из методов установки агентов виртуальной машины, включая следующие с помощью PowerShell или CLI. Кроме того, можно установить агент и настроить сбор данных на виртуальных машинах в подписке Azure с помощью портала, как описано в разделе [Настройка сбора данных для агента Azure Monitor (Предварительная версия)](data-collection-rule-azure-monitor-agent.md#create-using-the-azure-portal).
-
-### <a name="windows"></a>Windows
-
-# <a name="cli"></a>[CLI](#tab/CLI1)
-
-```azurecli
-az vm extension set --name AzureMonitorWindowsAgent --publisher Microsoft.Azure.Monitor --ids {resource ID of the VM}
-
-```
-
-# <a name="powershell"></a>[PowerShell](#tab/PowerShell1)
-
-```powershell
-Set-AzVMExtension -Name AMAWindows -ExtensionType AzureMonitorWindowsAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName {Resource Group Name} -VMName {VM name} -Location eastus
-```
----
-
-
-### <a name="linux"></a>Linux
-
-# <a name="cli"></a>[CLI](#tab/CLI2)
-
-```azurecli
-az vm extension set --name AzureMonitorLinuxAgent --publisher Microsoft.Azure.Monitor --ids {resource ID of the VM}
-
-```
-
-# <a name="powershell"></a>[PowerShell](#tab/PowerShell2)
-
-```powershell
-Set-AzVMExtension -Name AMALinux -ExtensionType AzureMonitorLinuxAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName {Resource Group Name} -VMName {VM name} -Location eastus -TypeHandlerVersion 1.5
-```
----
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- [Установите агент Azure Monitor](azure-monitor-agent-install.md) на виртуальных машинах Windows и Linux.
 - [Создайте правило сбора данных](data-collection-rule-azure-monitor-agent.md) для сбора данных от агента и их отправки в Azure Monitor.
