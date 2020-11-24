@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/01/2018
 ms.author: lizross
 ms.custom: include file
-ms.openlocfilehash: 968ebe89de65de5fa49e56a90a1bc92109a16861
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 5bcc770c730b53a9523415a4978b439ac0079410
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75613773"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95554698"
 ---
 >[!Note]
->Если вы заинтересованы в просмотре или удалении персональных данных, ознакомьтесь с рекомендациями Майкрософт по [запросам на тему данных для сайта GDPR](https://docs.microsoft.com/microsoft-365/compliance/gdpr-data-subject-requests) . Если вы ищете общие сведения о GDPR, см. [раздел GDPR на портале доверия службы](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+>Если вы хотите просмотреть или удалить персональные данные, ознакомьтесь с правилами Майкрософт на сайте [Запросы субъектов данных, определенные в GDPR, в отношении Windows](/microsoft-365/compliance/gdpr-data-subject-requests). Если вам требуются общие сведения о GDPR, см. [раздел, посвященный GDPR, на портале Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
