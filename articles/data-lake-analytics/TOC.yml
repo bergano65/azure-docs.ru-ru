@@ -139,7 +139,7 @@
           href: understand-spark-code-concepts.md
     - name: Устранение неполадок с заданиями U-SQL
       items:
-        - name: Устранение неполадок со средой выполнения U-SQL
+        - name: Устранение неполадок со средой выполнения U-SQL и других известных проблем
           href: runtime-troubleshoot.md
         - name: Устранение неполадок с обновлением .NET
           href: dotnet-upgrade-troubleshoot.md

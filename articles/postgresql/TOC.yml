@@ -603,8 +603,14 @@
           href: reference-hyperscale-metadata.md
     - name: Практические руководства
       items:
-        - name: Масштабирование группы серверов
-          href: howto-hyperscale-scaling.md
+        - name: Размер группы серверов
+          items:
+            - name: Выбор начального размера
+              href: howto-hyperscale-scale-initial.md
+            - name: Масштабирование группы серверов
+              href: howto-hyperscale-scale-grow.md
+            - name: Повторная балансировка сегментов
+              href: howto-hyperscale-scale-rebalance.md
         - name: Правила брандмауэра
           items:
             - name: Портал Azure

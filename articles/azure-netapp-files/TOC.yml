@@ -97,13 +97,13 @@
       href: dynamic-change-volume-service-level.md
     - name: Управление репликацией между регионами
       items:
-        - name: Создание пиринга репликации
+        - name: Создание репликации тома
           href: cross-region-replication-create-peering.md
         - name: Отображение состояния работоспособности отношения репликации
           href: cross-region-replication-display-health-status.md
         - name: Управление аварийным восстановлением
           href: cross-region-replication-manage-disaster-recovery.md
-        - name: Удаление репликации
+        - name: Удаление репликаций томов или томов
           href: cross-region-replication-delete.md
     - name: Разработка
       items:

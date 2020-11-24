@@ -51,6 +51,8 @@
       href: /samples/azure-samples/mxchip-iot-devkit-pnp-get-started/sample/
     - name: Подключение модуля устройства
       href: tutorial-migrate-device-to-module.md
+    - name: "Предварительная версия\_— подключение и анализ данных с помощью Аналитики временных рядов 2-го поколения"
+      href: tutorial-configure-tsi.md
 - name: Основные понятия
   items:
     - name: Architecture

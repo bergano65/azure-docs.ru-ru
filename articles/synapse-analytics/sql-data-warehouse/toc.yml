@@ -1,4 +1,4 @@
-- name: Azure Synapse (Хранилище данных SQL)
+- name: "Azure Synapse (ранее\_— Хранилище данных SQL)"
   href: index.yml
 - name: Переключение на Azure Synapse (предварительная версия рабочих областей)
   href: ../overview-what-is.md

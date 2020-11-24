@@ -95,8 +95,10 @@
           href: public-ip-security-baseline.md
     - name: Безопасность
       items:
-        - name: Базовые средства безопасности
+        - name: Базовые средства безопасности виртуальной сети
           href: security-baseline.md
+        - name: Базовые средства безопасности NAT виртуальных сетей
+          href: nat-security-baseline.md
         - name: Группы безопасности сети
           items:
             - name: Обзор
