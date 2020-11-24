@@ -11,15 +11,15 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/16/2020
+ms.date: 11/22/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: b66d0f20959d196fddeb8356d8171573f1243b58
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 940955c8ace956354a2747f5ad21430620c2a9d1
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842283"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95744574"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor    
 
@@ -415,17 +415,16 @@ find where TimeGenerated > ago(24h) project _ResourceId, _BilledSize, _IsBillabl
 | summarize BillableDataBytes = sum(_BilledSize) by _ResourceId | sort by BillableDataBytes nulls last
 ```
 
-Для данных из узлов, размещенных в Azure, можно получить **Размер** принимаемых данных для __каждой подписки Azure__, получить идентификатор подписки `_ResourceId` свойство как:
+Для данных из узлов, размещенных в Azure, можно получить **Размер** принимаемых данных для __каждой подписки Azure__. для этого используйте `_SubscriptionId` свойство следующим образом:
 
 ```kusto
 find where TimeGenerated > ago(24h) project _ResourceId, _BilledSize, _IsBillable
 | where _IsBillable == true 
 | summarize BillableDataBytes = sum(_BilledSize) by _ResourceId
-| extend subscriptionId = tostring(split(_ResourceId, "/")[2]) 
-| summarize BillableDataBytes = sum(BillableDataBytes) by subscriptionId | sort by BillableDataBytes nulls last
+| summarize BillableDataBytes = sum(BillableDataBytes) by _SubscriptionId | sort by BillableDataBytes nulls last
 ```
 
-Аналогично, чтобы получить объем данных по группе ресурсов, это будет так:
+Чтобы получить объем данных по группе ресурсов, можно выполнить синтаксический анализ `_ResourceId` :
 
 ```kusto
 find where TimeGenerated > ago(24h) project _ResourceId, _BilledSize, _IsBillable
@@ -482,7 +481,7 @@ find where TimeGenerated > ago(24h) project _ResourceId, _BilledSize, _IsBillabl
 | Счетчики производительности       | Измените [конфигурацию счетчика производительности](data-sources-performance-counters.md), чтобы <br> уменьшить частоту сбора или <br> сократить число счетчиков производительности. |
 | Журналы событий                 | Измените [конфигурацию журнала событий](data-sources-windows-events.md), чтобы <br> сократить число собранных журналов событий или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений*. |
 | Системный журнал                     | Измените [конфигурацию системного журнала](data-sources-syslog.md), чтобы <br> сократить число собранных объектов или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений* и *отладки*. |
-| AzureDiagnostics           | Измените коллекцию журнала ресурсов, чтобы: <br> Уменьшить число ресурсов, отправляющих журналы в Log Analytics. <br> Выполнять сбор только необходимых журналов. |
+| AzureDiagnostics           | Изменить [коллекцию журналов ресурсов](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings#create-in-azure-portal) на: <br> Уменьшить число ресурсов, отправляющих журналы в Log Analytics. <br> Выполнять сбор только необходимых журналов. |
 | Данные решений с компьютеров, которым не требуется решение | Используйте [нацеливание решений](../insights/solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров. |
 
 ### <a name="getting-nodes-as-billed-in-the-per-node-pricing-tier"></a>Получение узлов с выставленным счетом в ценовой категории "За узел"

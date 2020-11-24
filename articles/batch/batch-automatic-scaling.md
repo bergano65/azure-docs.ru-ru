@@ -2,14 +2,14 @@
 title: Автоматическое масштабирование вычислительных узлов в пуле пакетной службы Azure
 description: Включение автоматического масштабирования в облачном пуле для динамического изменения количества вычислительных узлов в пуле.
 ms.topic: how-to
-ms.date: 10/08/2020
+ms.date: 11/23/2020
 ms.custom: H1Hack27Feb2017, fasttrack-edit, devx-track-csharp
-ms.openlocfilehash: 5774acbfc035ab61267dddb31b01b0e82689f690
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 033272f22b98b27c67e9a551bce952368d35a043
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849798"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95737298"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание формулы для автоматизации масштабирования вычислительных узлов в пуле пакетной службы
 
@@ -135,6 +135,9 @@ $NodeDeallocationOption = taskcompletion;
 > [!TIP]
 > Эти переменные, доступные только для чтения, являются *объектами* , которые предоставляют различные методы для доступа к данным, связанным с каждым из них. Дополнительные сведения см. в разделе [Получение выборки данных](#obtain-sample-data) далее в этой статье.
 
+> [!NOTE]
+> Используется `$RunningTasks` при масштабировании на основе числа задач, выполняемых в момент времени, а также `$ActiveTasks` при масштабировании в зависимости от количества задач, которые были поставлены в очередь для выполнения.
+
 ## <a name="types"></a>Типы
 
 Формулы автомасштабирования поддерживают следующие типы:
@@ -226,7 +229,7 @@ $NodeDeallocationOption = taskcompletion;
 
 <table>
   <tr>
-    <th>Метрика</th>
+    <th>Metric</th>
     <th>Описание</th>
   </tr>
   <tr>
@@ -381,7 +384,7 @@ $NodeDeallocationOption = taskcompletion;
 ```
 
 > [!NOTE]
-> Если выбрано значение, в строки формулы можно включить комментарии и разрывы строк.
+> Если выбрано значение, в строки формулы можно включить комментарии и разрывы строк. Также имейте в виду, что отсутствие точек с запятой может привести к ошибкам оценки.
 
 ## <a name="automatic-scaling-interval"></a>Интервал автоматического масштабирования
 

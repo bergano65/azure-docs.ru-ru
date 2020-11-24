@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 366826e591ed131ca63dc94eae994773217438d1
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: af3935bab5cd4d6a2aa4a9e3250f6beec19a8ea4
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95511567"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95736685"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Встроенная модель накладных форм распознавателя
 
@@ -107,7 +107,8 @@ API-интерфейс накладных извлекает ключевые п
 ## <a name="next-steps"></a>Следующие шаги
 
 - Попробуйте свои счета и примеры в [пользовательском интерфейсе примера распознавателя форм](https://fott-preview.azurewebsites.net/).
-- Или воспользуйтесь кратким руководством по [извлечению данных счета](./QuickStarts/python-invoices.md) , чтобы реализовать извлечение данных из счета с помощью Python и REST API.
+- Заполните [Краткое руководство по клиентской библиотеке распознавателя форм](quickstarts/client-library.md) , чтобы приступить к написанию приложения обработки накладных с помощью распознавателя форм на любом языке.
+- Или воспользуйтесь кратким руководством по [извлечению данных счета](./quickstarts/python-invoices.md) , чтобы реализовать извлечение данных из счета с помощью Python и REST API.
 ## <a name="see-also"></a>См. также
 
 * [Что такое Распознаватель документов?](./overview.md)

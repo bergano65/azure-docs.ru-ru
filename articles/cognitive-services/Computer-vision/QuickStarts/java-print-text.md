@@ -8,31 +8,31 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-java
-ms.openlocfilehash: ad14eec6bcebcb144d73581ebc15479a489ad333
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4e000d87d1f61120f05dc147d2183899c36ef69d
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542853"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95746291"
 ---
 # <a name="quickstart-extract-printed-text-ocr-using-the-computer-vision-rest-api-and-java"></a>Краткое руководство. Извлечение печатного текста (OCR) с помощью REST API "Компьютерное зрение" и Java
 
 > [!NOTE]
-> При извлечении текста на английском языке попробуйте применить новую [операцию чтения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text). Доступно [краткое руководство для Java](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts/java-hand-text). 
+> При извлечении текста на английском языке попробуйте применить новую [операцию чтения](../concept-recognizing-text.md). Доступно [краткое руководство для Java](./java-hand-text.md). 
 
 Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения путем оптического распознавания текста (OCR) с помощью REST API Компьютерного зрения. С помощью метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20d) можно определить печатный текст на изображении и извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
-* Платформа [Java&trade;, комплект SDK, выпуск "Стандартный" версии 7 или 8](https://aka.ms/azure-jdks) (JDK 7 или 8).
+* Платформа [Java&trade;, комплект SDK, выпуск "Стандартный" версии 7 или 8](/azure/developer/java/fundamentals/java-jdk-long-term-support) (JDK 7 или 8).
 * Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="создайте ресурс Компьютерного зрения"  target="_blank">create a Computer Vision resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Компьютерного зрения потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
-* [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
+* [Создайте переменные среды](../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
@@ -215,6 +215,6 @@ REST Response:
 Ознакомьтесь с приложением Java Swing, которое использует Компьютерное зрение для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения.
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию API компьютерного зрения для Java](../Tutorials/java-tutorial.md)
+> [Руководство по использованию API компьютерного зрения для Java](https://github.com/Azure-Samples/cognitive-services-java-computer-vision-tutorial)
 
 * Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b/console).

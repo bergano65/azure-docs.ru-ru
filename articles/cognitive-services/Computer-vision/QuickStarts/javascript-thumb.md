@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-js
-ms.openlocfilehash: 64ec7bfa400edceb0f638b1862b9057d104c7904
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 59168f9259de05f152b9444f4605337bd86af86e
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542751"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95746087"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-computer-vision-rest-api-and-javascript"></a>Краткое руководство. Создание эскиза с помощью REST API "Компьютерное зрение" и JavaScript
 
@@ -166,4 +166,4 @@ Image for thumbnail:
 Ознакомьтесь с приложением JavaScript, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b/console).
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию API компьютерного зрения для JavaScript](../Tutorials/javascript-tutorial.md)
+> [Руководство по использованию API компьютерного зрения для JavaScript](https://github.com/Azure-Samples/cognitive-services-javascript-computer-vision-tutorial)

@@ -7,12 +7,12 @@ ms.topic: article
 author: trkeya
 ms.author: trkeya
 ms.date: 11/06/2020
-ms.openlocfilehash: 0765c05e08dda782c084775fb83b22a52558fa0d
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 9e8aecfe8b16d8af755d3f4c3c71b875d4e8ec40
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491619"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95751255"
 ---
 # <a name="detailed-configuration-for-hosted-test-drives"></a>Подробная конфигурация для размещенных тестовых дисков
 
@@ -29,7 +29,7 @@ ms.locfileid: "94491619"
 
     - **Тип тестового диска** — выберите **Microsoft Hosted (Dynamics 365 для участия клиентов & PowerApps)**. Это означает, что корпорация Майкрософт будет размещать и обслуживать службу, которая выполняет подготовку и отмену подготовки пользователей тестового диска.
 
-5. Предоставьте Microsoft AppSource разрешение на предоставление и отмену подготовки пользователей тестовых дисков в клиенте с помощью [этих инструкций](https://github.com/Microsoft/AppSource/blob/master/Microsoft%20Hosted%20Test%20Drive/Setup-your-Azure-subscription-for-Dynamics365-Microsoft-Hosted-Test-Drives.md). На этом шаге вы создадите **идентификатор Azure AD App** и **Azure AD App ключевые** значения, указанные ниже.
+5. Предоставьте Microsoft AppSource разрешение на предоставление и отмену подготовки пользователей тестовых дисков в клиенте с помощью [этих инструкций](https://docs.microsoft.com/azure/marketplace/test-drive-azure-subscription-setup). На этом шаге вы создадите **идентификатор Azure AD App** и **Azure AD App ключевые** значения, указанные ниже.
 6. Заполните эти поля на странице **технической конфигурации тестового диска** .
 
     [![Страница Техническая конфигурация тестового диска.](media/test-drive/technical-config-details.png)](media/test-drive/technical-config-details.png#lightbox)

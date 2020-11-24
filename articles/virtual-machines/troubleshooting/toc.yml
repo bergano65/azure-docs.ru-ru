@@ -260,6 +260,8 @@
       href: install-vm-agent-offline.md
     - name: Устранение неполадок с агентом виртуальной машины Windows
       href: windows-azure-guest-agent.md
+    - name: Устранение неполадок с агентом виртуальных машин Linux
+      href: linux-azure-guest-agent.md
 - name: Резервное копирование и восстановление
   items:
     - name: Устранение сбоев резервного копирования на виртуальной машине Azure

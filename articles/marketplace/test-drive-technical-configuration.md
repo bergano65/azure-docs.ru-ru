@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/13/2019
 author: trkeya
 ms.author: trkeya
-ms.openlocfilehash: f628c2a4c2f8eb474bbc34ef2d3fd2f03f668992
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: de85e4eb553f623790b472e79f8f97487ba96b48
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629909"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95751119"
 ---
 # <a name="test-drive-technical-configuration"></a>Техническая конфигурация тестового выпуска
 
@@ -34,11 +34,13 @@ ms.locfileid: "94629909"
 
 - **URL-адрес экземпляра** (обязательно) — URL-адрес, по которому клиент начнет работу с тестовым выпуском. Как правило, это URL-адрес экземпляра Dynamics 365, в котором установлено приложение и содержатся демонстрационные данные (например, `https://testdrive.crm.dynamics.com`).
 
-- **URL-адрес Web API экземпляра** (обязательно). Извлеките URL-адрес для экземпляра Dynamics 365, войдя в учетную запись Microsoft 365 и перейдя к **параметрам**  >  **Настройка** настройки  >  **ресурсов разработчика**  >  **веб-API (корневой URL-адрес службы)** , скопируйте URL-адрес, найденный здесь (например, `https://testdrive.crm.dynamics.com/api/data/v9.0` ).
+- **URL-адрес Web API экземпляра** (обязательно). Извлеките URL-адрес для экземпляра Dynamics 365, войдя в учетную запись Microsoft 365 и перейдя к **параметрам**  >  **Настройка** настройки  >  **ресурсов разработчика**  >  **веб-API (корневой URL-адрес службы)**, скопируйте URL-адрес, найденный здесь (например, `https://testdrive.crm.dynamics.com/api/data/v9.0` ).
 
 - **Имя роли** (обязательно) — укажите имя роли безопасности, которую вы определили в пользовательском тестовом выпуске Dynamics 365 и которая будет назначаться пользователю во время работы с тестовым выпуском (например, test-drive-role).
 
-Чтобы получить справку по настройке среды Dynamics 365 для тестового диска и предоставлении разрешения AppSource для подготовки и отмены подготовки пользователей тестовых дисков в клиенте, следуйте [этим инструкциям](https://github.com/Microsoft/AppSource/blob/patch-1/Microsoft%20Hosted%20Test%20Drive/Setup-your-Azure-subscription-for-Dynamics365-Microsoft-Hosted-Test-Drives.md).
+Чтобы получить справку по настройке среды Dynamics 365 для тестового диска и предоставлении разрешения AppSource для подготовки и отмены подготовки пользователей тестовых дисков в клиенте, следуйте [этим инструкциям](https://docs.microsoft.com/azure/marketplace/test-drive-azure-subscription-setup).
+
+Пошаговые инструкции по переписи и настройке размещенного тестового диска см. на странице [подробное описание конфигурации для размещенного](https://docs.microsoft.com/azure/marketplace/test-drive-hosted-detailed-config) тестового диска.
 
 ## <a name="logic-app-test-drive"></a>Тестовый накопитель приложения логики
 
@@ -68,13 +70,13 @@ ms.locfileid: "94629909"
 
 - **Идентификатор подписки Azure** (требуется для Azure Resource Manager и Logic Apps) — введите идентификатор подписки, чтобы предоставить доступ к службам учетных записей Azure для отчетов об использовании ресурсов и выставления счетов. Рекомендуется [создать отдельную подписку Azure](../cost-management-billing/manage/create-subscription.md), которая будет использоваться для тестовых выпусков, если у вас ее еще нет. Чтобы найти идентификаторы подписок Azure, войдите на [портал Azure](https://portal.azure.com/), а затем перейдите на вкладку **Подписки** в меню слева. При выборе вкладки отобразится идентификатор подписки (например, a83645ac-1234-5ab6-6789-1h234g764ghty).
 
-- **Идентификатор клиента Azure AD** (обязательно) — введите [идентификатор клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)Azure Active Directory (AD). Чтобы найти этот идентификатор, войдите на [портал Azure](https://portal.azure.com/), выберите вкладку Azure Active Directory на панели слева, выберите **Свойства** , а затем найдите номер **Идентификатор каталога** (например, 50c464d3-4930-494c-963c-1e951d15360e). Вы также можете найти идентификатор клиента своей организации, используя адрес доменного имени: [https://www.whatismytenantid.com](https://www.whatismytenantid.com).
+- **Идентификатор клиента Azure AD** (обязательно) — введите [идентификатор клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)Azure Active Directory (AD). Чтобы найти этот идентификатор, войдите на [портал Azure](https://portal.azure.com/), выберите вкладку Azure Active Directory на панели слева, выберите **Свойства**, а затем найдите номер **Идентификатор каталога** (например, 50c464d3-4930-494c-963c-1e951d15360e). Вы также можете найти идентификатор клиента своей организации, используя адрес доменного имени: [https://www.whatismytenantid.com](https://www.whatismytenantid.com).
 
 - **Имя клиента Azure AD** (обязательно для Dynamic 365) — введите имя Azure Active Directory (AD). Чтобы найти это имя, войдите на [портал Azure](https://portal.azure.com/), в правом верхнем углу имя клиента будет указано под именем учетной записи.
 
-- **Идентификатор приложения Azure AD** (обязательно) — введите [идентификатор приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)Azure Active Directory (AD). Чтобы найти этот идентификатор, войдите в [портал Azure](https://portal.azure.com/), выберите вкладку Active Directory в меню слева, выберите **Регистрация приложений** , а затем найдите **идентификатор приложения** в списке (например, `50c464d3-4930-494c-963c-1e951d15360e` ).
+- **Идентификатор приложения Azure AD** (обязательно) — введите [идентификатор приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)Azure Active Directory (AD). Чтобы найти этот идентификатор, войдите в [портал Azure](https://portal.azure.com/), выберите вкладку Active Directory в меню слева, выберите **Регистрация приложений**, а затем найдите **идентификатор приложения** в списке (например, `50c464d3-4930-494c-963c-1e951d15360e` ).
 
-- **Секрет клиента приложения Azure AD** (обязательно) — введите [секрет клиента](../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)приложения Azure AD. Чтобы найти это значение, войдите на [портал Azure](https://portal.azure.com/). Выберите вкладку **Azure Active Directory** в меню слева, выберите **Регистрация приложений** и выберите приложение тестового диска. Затем выберите **Сертификаты и секреты** , затем **новый секрет клиента** , введите описание, выберите **никогда** в поле **срок действия** и нажмите кнопку **Добавить**. Обязательно скопируйте значение. Не выйдите из страницы перед копированием значения.
+- **Секрет клиента приложения Azure AD** (обязательно) — введите [секрет клиента](../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)приложения Azure AD. Чтобы найти это значение, войдите на [портал Azure](https://portal.azure.com/). Выберите вкладку **Azure Active Directory** в меню слева, выберите **Регистрация приложений** и выберите приложение тестового диска. Затем выберите **Сертификаты и секреты**, затем **новый секрет клиента**, введите описание, выберите **никогда** в поле **срок действия** и нажмите кнопку **Добавить**. Обязательно скопируйте значение. Не выйдите из страницы перед копированием значения.
 
 ## <a name="test-drive-listings"></a>Списки тестовых дисков
 
@@ -93,9 +95,11 @@ ms.locfileid: "94629909"
 
 Если в данный момент вы создаете тестовый диск в центре партнеров, выберите **Сохранить черновик** , прежде чем продолжить.
 
+Пошаговые инструкции по переписи и настройке размещенного тестового диска см. на странице [подробное описание конфигурации для размещенного](https://docs.microsoft.com/azure/marketplace/test-drive-hosted-detailed-config) тестового диска.
+
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Рекомендации по тестированию](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
 - [Обзор](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf) (PDF; убедитесь, что блокирование всплывающих окон отключено)

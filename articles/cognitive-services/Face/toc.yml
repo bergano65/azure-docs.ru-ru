@@ -71,6 +71,16 @@
           href: Face-API-How-to-Topics/deploy-face-container-on-container-instances.md
         - name: Документация по контейнерам Cognitive Services
           href: ../containers/index.yml
+- name: Подробный анализ сценария
+  items:
+    - name: Регистрация Распознавания лиц
+      items:
+        - name: Обзор
+          href: enrollment-overview.md
+        - name: Практические руководства
+          items:
+            - name: Создание приложения регистрации с использованием React
+              href: build-enrollment-app.md
 - name: Справочник
   items:
     - name: API Распознавания лиц

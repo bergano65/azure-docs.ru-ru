@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/11/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-dotnet
-ms.openlocfilehash: ce75b5465d18f988d9dfd2b329c4157bab41ded9
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 8755a600a1e6afaae4ebe7451e16f6632073587f
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534523"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95746597"
 ---
 # <a name="quickstart-extract-text-using-the-computer-vision-20-rest-api-ocr-operation-and-c"></a>Краткое руководство. Извлечение текста с помощью операции распознавания текста в REST API Компьютерного зрения 2.0 и C#
 
 > [!IMPORTANT]
-> Если вы извлекаете текст на английском, нидерландском, французском, немецком, итальянском, португальском, испанском или упрощенном китайском языках (предварительная версия), рекомендуется использовать более новую [операцию чтения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text). Доступно [краткое руководство для C#](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts/csharp-hand-text). 
+> Если вы извлекаете текст на английском, нидерландском, французском, немецком, итальянском, португальском, испанском или упрощенном китайском языках (предварительная версия), рекомендуется использовать более новую [операцию чтения](../concept-recognizing-text.md). Доступно [краткое руководство для C#](./csharp-hand-text.md). 
 
 Из этого краткого руководства вы узнаете, как извлечь из изображения печатный текст с помощью функции [распознавания текста](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20d) в REST API Компьютерного зрения. С помощью этой операции можно определить печатный текст на изображении и извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
 
@@ -32,7 +32,7 @@ ms.locfileid: "94534523"
 * Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="создайте ресурс Компьютерного зрения"  target="_blank">create a Computer Vision resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Компьютерного зрения потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
-* [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
+* [Создайте переменные среды](../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 

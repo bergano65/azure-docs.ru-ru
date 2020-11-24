@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 12/05/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 754a47b3692847957de7f3d666f4dc09dc309d25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6684c4269f14b91ded651dadff3f0a2e0878a4f2
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91025287"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95563212"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
 Пользовательская политика IPsec/IKE поддерживается во всех SKU Azure, за исключением SKU "Базовый".
 
 ### <a name="how-many-policies-can-i-specify-on-a-connection"></a>Сколько политик можно указать для подключения?
-Можно указать только ***одну*** комбинацию политик для каждого подключения.
+Можно указать только ***одну** _ комбинацию политик для каждого подключения.
 
 ### <a name="can-i-specify-a-partial-policy-on-a-connection-for-example-only-ike-algorithms-but-not-ipsec"></a>Можно ли указать частичную политику для подключения (например, только алгоритмы IKE без IPsec)?
 Нет, следует указать все алгоритмы и параметры для IKE (основной режим) и IPsec (быстрый режим). Указать частичную политику нельзя.
@@ -27,7 +27,7 @@ ms.locfileid: "91025287"
 ### <a name="what-are-the-algorithms-and-key-strengths-supported-in-the-custom-policy"></a>Какие алгоритмы и уровни стойкости ключей поддерживает настраиваемая политика?
 В таблице ниже перечислены поддерживаемые алгоритмы шифрования и уровни стойкости ключей, которые могут настроить клиенты. Необходимо выбрать один вариант для каждого поля.
 
-| **IPsec/IKEv2**  | **Параметры**                                                                   |
+| _ *IPsec/IKEv2**  | **Параметры**                                                                   |
 | ---              | ---                                                                           |
 | Шифрование IKEv2 | AES256, AES192, AES128, DES3, DES                                             |
 | Проверка целостности IKEv2  | SHA384, SHA256, SHA1, MD5                                                     |
@@ -107,7 +107,7 @@ ms.locfileid: "91025287"
 Нет. Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
 
 ### <a name="how-do-i-create-connections-with-ikev1-or-ikev2-protocol-type"></a>Как создавать подключения с типом протокола IKEv1 или IKEv2?
-Подключения IKEv1 можно создавать во всех SKU с VPN типа RouteBased, кроме SKU уровня "Базовый" и "Стандартный" и других [устаревших SKU](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-skus-legacy#gwsku). При создании подключения можно указать тип протокола IKEv1 или IKEv2. Если тип протокола не указан, по умолчанию используется тип IKEv2 (там, где это применимо). Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?). Сведения о типах SKU и поддержке протоколов IKEv1 и IKEv2 см. в статье о [подключении шлюзов к VPN-устройствам на базе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
+Подключения IKEv1 можно создавать во всех SKU с VPN типа RouteBased, кроме SKU уровня "Базовый" и "Стандартный" и других [устаревших SKU](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md#gwsku). При создании подключения можно указать тип протокола IKEv1 или IKEv2. Если тип протокола не указан, по умолчанию используется тип IKEv2 (там, где это применимо). Дополнительные сведения см. в документации по [командлетам PowerShell](/powershell/module/az.network/new-azvirtualnetworkgatewayconnection). Сведения о типах SKU и поддержке протоколов IKEv1 и IKEv2 см. в статье о [подключении шлюзов к VPN-устройствам на базе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
 
 ### <a name="is-transit-between-between-ikev1-and-ikev2-connections-allowed"></a>Можно ли перейти с подключения типа IKEv1 на IKEv2 и обратно?
 Да. Переход между типами подключений IKEv1 и IKEv2 поддерживается.

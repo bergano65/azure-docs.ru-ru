@@ -7,12 +7,12 @@ ms.custom: references_regions
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: d3bedfae88544d0b0ebd07868438559305279fed
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: a4380ae7fdb523f8b2f5bc14fefa094b6d96e547
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95530120"
+ms.locfileid: "95750540"
 ---
 # <a name="configure-log-analytics-workspace-for-azure-monitor-for-vms"></a>Настройка рабочей области Log Analytics для Azure Monitor для виртуальных машин
 Azure Monitor для виртуальных машин собирает данные из одной или нескольких Log Analytics рабочих областей в Azure Monitor. Перед подключением агентов необходимо создать и настроить рабочую область. В этой статье описываются требования к рабочей области и ее настройка для Azure Monitor для виртуальных машин.
@@ -80,7 +80,7 @@ Azure Monitor для виртуальных машин поддерживает 
 ### <a name="azure-portal"></a>Портал Azure
 Существует три варианта настройки существующей рабочей области с помощью портал Azure. Каждый из них описан ниже.
 
-Чтобы настроить одну рабочую область, выберите **другие параметры адаптации** , а затем **Настройте рабочую область**. Выберите подписку и рабочую область и нажмите кнопку **настроить**.
+Чтобы настроить одну рабочую область, перейдите к параметру **виртуальные машины** в меню **Azure Monitor** , выберите **другие параметры адаптации**, а затем **Настройте рабочую область**. Выберите подписку и рабочую область и нажмите кнопку **настроить**.
 
 [![Настройка рабочей области](media/vminsights-enable-at-scale-policy/configure-workspace.png)](media/vminsights-enable-at-scale-policy/configure-workspace.png#lightbox)
 

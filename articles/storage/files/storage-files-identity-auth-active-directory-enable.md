@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: 9dc6433170144635ad05033d110f448cf314179b
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 2214dbc9dcbd4ba7728065ee45471e9f94b9e513
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628855"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95740001"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Обзор: локальная проверка подлинности домен Active Directory служб по протоколу SMB для файловых ресурсов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "94628855"
 
 - AD DS удостоверения, используемые для локальных AD DS проверки подлинности в службе файлов Azure, должны быть синхронизированы с Azure AD. Синхронизация хэша паролей является необязательной. 
 - Поддерживает общие файловые ресурсы Azure, управляемые Синхронизация файлов Azure.
-- Поддерживает проверку подлинности Kerberos с помощью службы AD с шифрованием RC4-HMAC и [AES 256](./storage-troubleshoot-windows-file-connection-problems.md#azure-files-on-premises-ad-ds-authentication-support-for-aes-256-kerberos-encryption). Шифрование AES 128 Kerberos пока не поддерживается.
+- Поддерживает проверку подлинности Kerberos с помощью службы AD с шифрованием RC4-HMAC и [AES 256](./storage-troubleshoot-windows-file-connection-problems.md#azure-files-on-premises-ad-ds-authentication-support-for-aes-256-kerberos-encryption). В настоящее время поддержка шифрования AES 256 ограничена учетными записями хранения с именами <= 15 символов. Шифрование AES 128 Kerberos пока не поддерживается.
 - Поддерживает единый вход.
 - Поддерживается только на клиентах, работающих в версиях ОС более поздних, чем Windows 7 или Windows Server 2008 R2.
 - Поддерживается только для леса AD, на который зарегистрирована учетная запись хранения. Вы можете получить доступ к общим файловым ресурсам Azure только с помощью AD DS учетных данных из одного леса по умолчанию. Если вам нужно получить доступ к файловому ресурсу Azure из другого леса, убедитесь, что настроено правильное доверие леса. Дополнительные сведения см. в разделе " [вопросы и ответы](storage-files-faq.md#ad-ds--azure-ad-ds-authentication) ".
@@ -88,7 +88,7 @@ ms.locfileid: "94628855"
 
 Удостоверения, используемые для доступа к файловым ресурсам Azure, должны быть синхронизированы с Azure AD для применения разрешений файла общего уровня через модель [управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) . [Списки DACL в стиле Windows](/previous-versions/technet-magazine/cc161041(v=msdn.10)) для файлов и каталогов, перенесенных из существующих файловых серверов, будут сохранены и применены. Это обеспечивает беспроблемную интеграцию с корпоративной AD DSной средой. При замене локальных файловых серверов на файловые ресурсы Azure существующие пользователи могут получить доступ к общим файловым ресурсам Azure с их текущих клиентов с помощью единого входа, не внося изменения в используемые учетные данные.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы включить локальную проверку подлинности AD DS для файлового ресурса Azure, перейдите к следующей статье:
 
