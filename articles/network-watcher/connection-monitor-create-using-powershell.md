@@ -1,5 +1,5 @@
 ---
-title: Создание монитора подключения (Предварительная версия) — PowerShell
+title: Создание монитора подключения с использованием PowerShell
 titleSuffix: Azure Network Watcher
 description: Узнайте, как создать монитор подключений с помощью PowerShell.
 services: network-watcher
@@ -10,24 +10,21 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/30/2020
+ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: b1ffce75d5c38177c70db3ec1fc024a01821d3ab
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 1a554177bf7084b9a7f4c413dbe82271b3ab6b3a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984249"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545539"
 ---
-# <a name="create-a-connection-monitor-preview-using-powershell"></a>Создание монитора подключения (Предварительная версия) с помощью PowerShell
+# <a name="create-a-connection-monitor-using-powershell"></a>Создание монитора подключения с помощью PowerShell
 
 Узнайте, как создать монитор подключения для отслеживания взаимодействия между ресурсами с помощью PowerShell.
 
-> [!IMPORTANT]
-> Сейчас монитор подключения находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="before-you-begin"></a>Подготовка 
+## <a name="before-you-begin"></a>Подготовка к работе 
 
 В мониторах подключений, создаваемых в мониторе подключения, можно добавить локальные компьютеры и виртуальные машины Azure в качестве источников. Эти мониторы соединений также могут отслеживать подключение к конечным точкам. Конечные точки могут находиться в Azure или на любом другом URL-адресе или IP.
 
@@ -121,7 +118,7 @@ New-AzNetworkWatcherConnectionMonitor -NetworkWatcherName $nw -ResourceGroupName
 * Максимальное число источников и назначений на монитор подключения: 100
 * Максимальное число конфигураций тестов на монитор каждого подключения: 20
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте, [как анализировать данные мониторинга и настраивать оповещения](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts) .
 * Узнайте [, как диагностировать проблемы в сети](./connection-monitor-overview.md#diagnose-issues-in-your-network)

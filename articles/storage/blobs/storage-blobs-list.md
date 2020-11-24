@@ -9,12 +9,12 @@ ms.date: 11/16/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 906df01587201561fbbfea0661d0885864042925
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: ddd19c90c8c47016497e2c3b00e04595a94e7715
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701319"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95543074"
 ---
 # <a name="list-blobs-with-net"></a>Получение списка больших двоичных объектов с помощью .NET
 
@@ -61,7 +61,7 @@ ms.locfileid: "94701319"
 
 Метаданные большого двоичного объекта можно вернуть с результатами.
 
-- Если вы используете пакет SDK для .NET версии 12, укажите значение **метаданных** для перечисления [блобтраитс](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.models.blobtraits) .
+- Если вы используете пакет SDK для .NET версии 12, укажите значение **метаданных** для перечисления [блобтраитс](/dotnet/api/azure.storage.blobs.models.blobtraits) .
 
 - Если вы используете пакет SDK для .NET версии 11, укажите значение **метаданных** для перечисления [блоблистингдетаилс](/dotnet/api/microsoft.azure.storage.blob.bloblistingdetails) . Служба хранилища Azure включает метаданные для каждого возвращенного большого двоичного объекта, поэтому вам не нужно вызывать один из методов **FetchAttributes** в этом контексте, чтобы получить метаданные большого двоичного объекта.
 

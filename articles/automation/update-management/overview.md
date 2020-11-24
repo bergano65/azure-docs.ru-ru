@@ -3,14 +3,14 @@ title: Обзор функции "Управление обновлениями"
 description: В этой статье представлен обзор функции "Управление обновлениями", которая реализует обновления для компьютеров на платформе Windows и Linux.
 services: automation
 ms.subservice: update-management
-ms.date: 10/26/2020
+ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: abcc2b60fd796a80342fe48c3c9027388660476a
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: eadceb17d01b40deab656bdd6223cb8f0844f54f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95488153"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95528250"
 ---
 # <a name="update-management-overview"></a>Общие сведения о службе "Управление обновлениями"
 
@@ -76,10 +76,10 @@ ms.locfileid: "95488153"
 |---------|---------|
 |Windows Server 2019 (Datacenter, Datacenter Core или Standard)<br><br>Windows Server 2016 (Datacenter, Datacenter Core или Standard)<br><br>Windows Server 2012 R2 (Datacenter или Standard)<br><br>Windows Server 2012 ||
 |Windows Server 2008 R2 (RTM и Standard с пакетом обновления 1, SP1)| Управление обновлениями поддерживает оценки и исправления для этой операционной системы. [Гибридная Рабочая роль Runbook](../automation-windows-hrw-install.md) поддерживается для Windows Server 2008 R2. |
-|CentOS 6 (x86 или x64) и 7 (x64).      | Агентам Linux требуется доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа `yum` вернула данные безопасности, которых нет в выпусках RTM CentOS. Дополнительные сведения об исправлениях на основе классификации в CentOS см. в разделе о [классификации обновлений в Linux](view-update-assessments.md#linux).          |
-|Red Hat Enterprise 6 (x86 или x64) и 7 (x64).     | Агентам Linux требуется доступ к репозиторию обновлений.        |
+|CentOS 6 и 7 (x64)      | Агентам Linux требуется доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа `yum` вернула данные безопасности, которых нет в выпусках RTM CentOS. Дополнительные сведения об исправлениях на основе классификации в CentOS см. в разделе о [классификации обновлений в Linux](view-update-assessments.md#linux).          |
+|Red Hat Enterprise 6 и 7 (x64)     | Агентам Linux требуется доступ к репозиторию обновлений.        |
 |SUSE Linux Enterprise Server 12 (x64)     | Агентам Linux требуется доступ к репозиторию обновлений.        |
-|Ubuntu 14.04 LTS, 16.04 LTS и 18.04 LTS (x86/x64)      |Агентам Linux требуется доступ к репозиторию обновлений.         |
+|Ubuntu 14,04 LTS, 16,04 LTS и 18,04 (x64)      |Агентам Linux требуется доступ к репозиторию обновлений.         |
 
 > [!NOTE]
 > С помощью Управления обновлениями можно управлять масштабируемыми наборами виртуальных машин Azure. Управление обновлениями работает с самими экземплярами, а не с базовым образом. Чтобы избежать одновременного обновления всех экземпляров, необходимо запланировать последовательное обновление. Чтобы добавить узлы для масштабируемых наборов виртуальных машин, выполните действия, описанные в разделе [Добавление компьютера, не связанного с Azure, для Отслеживания изменений и инвентаризации](../automation-tutorial-installed-software.md#add-a-non-azure-machine-to-change-tracking-and-inventory).

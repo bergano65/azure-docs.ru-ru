@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
-ms.openlocfilehash: 297595c6c4a9c82c3d0293f2cea2db66ea9ca54a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0de8d8d5ff0f14d0268dbcca743f4d06ed877903
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89180411"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544400"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
@@ -23,12 +23,12 @@ ms.locfileid: "89180411"
 В этом руководстве показано, как использовать blobfuse, подключить контейнер хранилища BLOB-объектов в Linux, а также получить доступ к данным. Дополнительные сведения о blobfuse см. в [репозитории blobfuse](https://github.com/Azure/azure-storage-fuse).
 
 > [!WARNING]
-> blobfuse не гарантирует полную совместимость с POSIX, он просто преобразовывает запросы в [REST API больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api). Например, операции переименования в POSIX являются атомарными, а в blobfuse — нет.
+> blobfuse не гарантирует полную совместимость с POSIX, он просто преобразовывает запросы в [REST API больших двоичных объектов](/rest/api/storageservices/blob-service-rest-api). Например, операции переименования в POSIX являются атомарными, а в blobfuse — нет.
 > Полный список различий между собственной файловой системой и blobfuse см. в [репозитории исходного кода blobfuse](https://github.com/azure/azure-storage-fuse).
 > 
 
 ## <a name="install-blobfuse-on-linux"></a>Установка blobfuse в Linux
-Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
+Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
 
 Blobfuse поддерживает установку на Ubuntu 14,04, 16,04 и 18,04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
 ```
@@ -36,7 +36,7 @@ lsb_release -a
 ```
 
 ### <a name="configure-the-microsoft-package-repository"></a>Настройка репозитория пакетов Майкрософт
-Настройте [репозиторий пакетов Linux для продуктов Майкрософт](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software).
+Настройте [репозиторий пакетов Linux для продуктов Майкрософт](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software).
 
 Например, в дистрибутиве Enterprise Linux 6:
 ```bash
@@ -141,8 +141,7 @@ mkdir test
 echo "hello world" > test/blob.txt
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Домашняя страница blobfuse](https://github.com/Azure/azure-storage-fuse#blobfuse)
-* [Сообщить о проблемах с blobfuse](https://github.com/Azure/azure-storage-fuse/issues) 
-
+* [Сообщить о проблемах с blobfuse](https://github.com/Azure/azure-storage-fuse/issues)

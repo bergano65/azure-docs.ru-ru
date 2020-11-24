@@ -3,12 +3,12 @@ title: Развертывание горизонта в решении VMware д
 description: Узнайте, как развернуть горизонт VMware в решении VMware для Azure.
 ms.topic: how-to
 ms.date: 09/29/2020
-ms.openlocfilehash: fb5e5b4c5f5da4c140f8d3575b963545f3a57db8
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 6d5d8e12e358e2289128af9840660be18f5f217a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93423124"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95537447"
 ---
 # <a name="deploy-horizon-on-azure-vmware-solution"></a>Развертывание горизонта в решении VMware для Azure 
 
@@ -140,22 +140,6 @@ ms.locfileid: "93423124"
 
 :::image type="content" source="media/horizon/common-vdi-profiles-vsi-workloads-power.png" alt-text="Таблица общих профилей VDI для горизонта управления рабочими нагрузками для входа в систему VSI" lightbox="media/horizon/common-vdi-profiles-vsi-workloads-power.png" border="false":::
 
-### <a name="azure-vmware-solution-host-instance"></a>Экземпляр узла решения VMware Azure
-
-* Сервер PowerEdge R640 Server-DSS с ОГРАНИЧЕНным доступом
-
-* 36 ядер \@ 2.3 ГГц
-
-* 576 ГБ ОЗУ
-
-* Контроллер HBA SAS HBA330 12 Гбит/с (не RAID)
-
-* 1,92-SSD-твердотельный накопитель SATA с 6 Гбит/с 512 2.5 в горячей подключаемой накопителе AG, 3 ДВПД, 10512 ТБВ
-
-* Intel 1,6 ТБ, NVMe, смешанное использование Express Flash, 2,5 СФФ Drive, U. 2, P4600 с перевозчиком
-
-* 2 vSAN группы дисков: 1,6 x 4 (1.92 ТБ)
-
 ### <a name="horizon-sizing-inputs"></a>Входные данные изменения размера горизонта
 
 Вот что необходимо для запланированной рабочей нагрузки:
@@ -224,5 +208,5 @@ ms.locfileid: "93423124"
 
 Стоимость виртуальной машины инфраструктуры составляет \$ 0,36 на пользователя в месяц для развертывания 2 000-Desktop в примере выше. В этом примере используется по цене за использование экземпляра Azure восточной части США за июнь 2020. Цены могут отличаться в зависимости от региона, выбранных параметров и времени.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о горизонте VMware в решении VMware для Azure см. в [разделе часто задаваемые вопросы о горизонте VMware](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/products/horizon/vmw-horizon-on-microsoft-azure-vmware-solution-faq.pdf).

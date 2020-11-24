@@ -9,12 +9,12 @@ ms.subservice: blobs
 ms.topic: how-to
 ms.reviewer: klaasl
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2e3e16b71d52edd9ab4eaf55651567b95e334b84
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 411815ca2f947c47b8dfb0d2e5d61f8ea18f3545
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961793"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95541255"
 ---
 # <a name="use-blob-index-tags-preview-to-manage-and-find-data-on-azure-blob-storage"></a>Использование тегов индекса больших двоичных объектов (Предварительная версия) для управления и поиска данных в хранилище BLOB-объектов Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "94961793"
 
 2. В диспетчере пакетов NuGet найдите пакет **Azure. Storage. BLOB** и установите в проекте версию **12.7.0-Preview. 1** или более позднюю. Вы также можете выполнить команду PowerShell: `Install-Package Azure.Storage.Blobs -Version 12.7.0-preview.1`
 
-   Инструкции см. в разделе [Поиск и установка пакета](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package).
+   Инструкции см. в разделе [Поиск и установка пакета](/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package).
 
 3. Добавьте в начало файла кода приведенные ниже операторы using.
 
@@ -56,7 +56,7 @@ ms.locfileid: "94961793"
 
 ## <a name="upload-a-new-blob-with-index-tags"></a>Отправка нового большого двоичного объекта с тегами индекса
 
-Эта задача может выполняться [владельцем данных большого двоичного объекта хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) или субъектом безопасности, которому предоставлено разрешение на `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [операцию поставщика ресурсов Azure](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) с помощью настраиваемой роли Azure.
+Эта задача может выполняться [владельцем данных большого двоичного объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) или субъектом безопасности, которому предоставлено разрешение на `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [операцию поставщика ресурсов Azure](../../role-based-access-control/resource-provider-operations.md#microsoftstorage) с помощью настраиваемой роли Azure.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -114,9 +114,9 @@ static async Task BlobIndexTagsOnCreate()
 
 ## <a name="get-set-and-update-blob-index-tags"></a>Получение, задание и обновление тегов индекса больших двоичных объектов
 
-Получение тегов индекса больших двоичных объектов может осуществляться [владельцем данных большого двоичного объекта хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) или субъектом безопасности, которому предоставлено разрешение на `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read` [операцию поставщика ресурсов Azure](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) с помощью настраиваемой роли Azure.
+Получение тегов индекса больших двоичных объектов может осуществляться [владельцем данных большого двоичного объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) или субъектом безопасности, которому предоставлено разрешение на `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read` [операцию поставщика ресурсов Azure](../../role-based-access-control/resource-provider-operations.md#microsoftstorage) с помощью настраиваемой роли Azure.
 
-Установка и обновление тегов индекса BLOB-объектов может осуществляться [владельцем данных большого двоичного объекта хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) или субъектом безопасности, которому предоставлено разрешение на `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [операцию поставщика ресурсов Azure](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) с помощью настраиваемой роли Azure.
+Установка и обновление тегов индекса BLOB-объектов может осуществляться [владельцем данных большого двоичного объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) или субъектом безопасности, которому предоставлено разрешение на `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [операцию поставщика ресурсов Azure](../../role-based-access-control/resource-provider-operations.md#microsoftstorage) с помощью настраиваемой роли Azure.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -193,7 +193,7 @@ static async Task BlobIndexTagsExample()
 
 ## <a name="filter-and-find-data-with-blob-index-tags"></a>Фильтрация и поиск данных с помощью тегов индекса больших двоичных объектов
 
-Эта задача может выполняться [владельцем данных большого двоичного объекта хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) или субъектом безопасности, которому предоставлено разрешение на `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action` [операцию поставщика ресурсов Azure](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) с помощью настраиваемой роли Azure.
+Эта задача может выполняться [владельцем данных большого двоичного объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) или субъектом безопасности, которому предоставлено разрешение на `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action` [операцию поставщика ресурсов Azure](../../role-based-access-control/resource-provider-operations.md#microsoftstorage) с помощью настраиваемой роли Azure.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 

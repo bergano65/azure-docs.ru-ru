@@ -10,12 +10,12 @@ ms.date: 08/27/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 44ea49d7ed0cec6fc56cb2462a25d38866ce9a76
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: ae1d72c30fb7c45c92f24ec5132859a45c6ae953
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093690"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95543380"
 ---
 # <a name="create-and-manage-a-blob-snapshot-in-net"></a>Создание моментальных снимков больших двоичных объектов и управление ими в .NET
 
@@ -159,8 +159,8 @@ await blockBlob.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Моментальные снимки BLOB-объектов](snapshots-overview.md)
 - [Версии BLOB-объектов](versioning-overview.md)
-- [Обратимое удаление для больших двоичных объектов](storage-blob-soft-delete.md)
+- [Обратимое удаление для больших двоичных объектов](./soft-delete-blob-overview.md)

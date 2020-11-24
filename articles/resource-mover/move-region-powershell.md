@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
-ms.openlocfilehash: 3236e0a95c6a4b4f57ac38ed067011c3d6848b5a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 176f12a0a06a5bcae601463e30189bc139d3531f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89670799"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95543856"
 ---
 # <a name="move-resources-across-regions-in-powershell"></a>Перемещение ресурсов между регионами в PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "89670799"
 
 ## <a name="before-you-start"></a>Перед началом работы
 
-- Ваша подписка Azure должна иметь доступ к переписке ресурсов, и у вас должны быть разрешения [владельца](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) или [администратора доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) для подписки.
+- Ваша подписка Azure должна иметь доступ к переписке ресурсов, и у вас должны быть разрешения [владельца](../role-based-access-control/built-in-roles.md#owner) или [администратора доступа пользователей](../role-based-access-control/built-in-roles.md#user-access-administrator) для подписки.
 - Средство перемещения ресурсов не следит за изменениями и обновлениями, поэтому перед перемещением необходимо внести необходимые изменения в ресурсы.
 - При перемещении ресурсов с помощью PowerShell невозможно изменить параметры целевой области. Измените эти параметры непосредственно на портале.
 - При добавлении ресурсов в коллекцию перемещения при подготовке к перемещению в другой регион метаданные о перемещении сохраняются в группе ресурсов, созданной для этой цели. В настоящее время эта группа ресурсов может находиться в восточной части США 2 или Северной Европе. Ресурсы Azure можно перемещать между любыми общедоступными регионами с помощью метаданных, имеющихся в любом из этих регионов.
@@ -136,7 +136,7 @@ New-AzRoleAssignment -ObjectId $identityPrincipalId -RoleDefinitionName "User Ac
 Get-AzResource -Name PSDemoVM -ResourceGroupName PSDemoRM
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Выходной текст после получения идентификатора ресурса](./media/move-region-powershell/output-retrieve-resource.png)
 
@@ -172,7 +172,7 @@ Resolve-AzResourceMoverMoveCollectionDependency -SubscriptionId “<subscription
 Get-AzResourceMoverUnresolvedDependency -MoveCollectionName “MoveCollection-centralus-westcentralus ” -ResourceGroupName “RegionMoveRG-centralus-westcentralus ” -SubscriptionId  “<subscription-id>”
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Вывод текста после получения зависимостей](./media/move-region-powershell/missing-dependencies.png)
 
@@ -196,7 +196,7 @@ Get-AzResource -ResourceId “/subscriptions/ <subscription-id> /resourcegroups/
 
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Вывод текста после получения сетевого адаптера](./media/move-region-powershell/output-retrieve-nic.png)
 
@@ -207,7 +207,7 @@ Get-AzResource -ResourceId “/subscriptions/ <subscription-id> /resourcegroups/
 New-AzResourceMoverMoveResource -SubscriptionId “<subscription-id>” -ResourceGroupName “RegionMoveRG-centralus-westcentralus” -MoveCollectionName “MoveCollection-centralus-westcentralus ” -SourceId “/subscriptions/<subscription-id>/resourceGroups/PSDemoRM/providers/Microsoft.Network/networkInterfaces/psdemovm62” -Name “psdemovm62” -ResourceSettingResourceType “Microsoft.Network/networkInterfaces” -ResourceSettingTargetResourceName “psdemovm62”
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Выходной текст после добавления сетевого адаптера в коллекцию](./media/move-region-powershell/add-nic.png)
 
@@ -221,7 +221,7 @@ Get-AzResource -ResourceId “/subscriptions/<subscription-id>/resourcegroups/ps
 New-AzResourceMoverMoveResource -SubscriptionId “<subscription-id>” -ResourceGroupName “RegionMoveRG-centralus-westcentralus” -MoveCollectionName “MoveCollection-centralus-westcentralus” -SourceId “/subscriptions/<subscription-id>/resourcegroups/psdemorm” -Name “psdemorm” -ResourceSettingResourceType “resourcegroups” -ResourceSettingTargetResourceName “psdemorm”
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Выходной текст после добавления группы ресурсов в коллекцию](./media/move-region-powershell/add-source-resource-group.png)
 
@@ -246,7 +246,7 @@ Get-AzResourceMoverUnresolvedDependency -MoveCollectionName “MoveCollection-ce
 Get-AzResourceMoverUnresolvedDependency -MoveCollectionName “MoveCollection-centralus-westcentralus ” -ResourceGroupName “RegionMoveRG-centralus-westcentralus” -SubscriptionId  “<subscription-id>”
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 
 ![Вывод текста после получения дополнительных зависимостей](./media/move-region-powershell/additional-missing-dependencies.png)
@@ -269,14 +269,14 @@ Get-AzResourceMoverUnresolvedDependency -MoveCollectionName “MoveCollection-ce
 
 Прежде чем можно будет подготовить исходные ресурсы, необходимо подготовить и переместить исходную группу ресурсов.
 
-### <a name="prepare"></a>Подготовка.
+### <a name="prepare"></a>Подготовка
 
 ```azurepowershell-interactive
 # Prepare the source resource group
 Invoke-AzResourceMoverPrepare -SubscriptionId “<subscription-id>” -ResourceGroupName “RegionMoveRG-centralus-westcentralus ” -MoveCollectionName “MoveCollection-centralus-westcentralus ” -MoveResource “PSDemoRM”
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Выходной текст после подготовки исходной группы ресурсов](./media/move-region-powershell/prepare-source-resource-group.png)
 
@@ -297,7 +297,7 @@ Invoke-AzResourceMoverCommit -SubscriptionId “<subscription-id” -ResourceGro
 westcentralus-demoRM” -MoveResource “PSDemoRM”
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Выходной текст после фиксации исходной группы ресурсов](./media/move-region-powershell/commit-move-resource-group.png)
 
@@ -310,7 +310,7 @@ westcentralus-demoRM” -MoveResource “PSDemoRM”
 # Retrieve resources in the collection
 Get-AzResourceMoverMoveResource  -SubscriptionId “ <subscription-id> “ -ResourceGroupName “RegionMoveRG-centralus-westcentralus ” -MoveCollectionName “MoveCollection-centralus-westcentralus ”   | Where-Object {  $_.MoveStatusMoveState -eq “PreparePending” } | Select Name
 ```
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Вывод текста после получения ресурсов в коллекции](./media/move-region-powershell/collection-resources.png)
 
@@ -327,7 +327,7 @@ Invoke-AzResourceMoverPrepare -SubscriptionId  <subscription-id> -ResourceGroupN
 Invoke-AzResourceMoverPrepare -SubscriptionId  <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus  -MoveCollectionName MoveCollection-centralus-westcentralus  -MoveResourceInputType MoveResourceSourceId  -MoveResource $('/subscriptions/<subscription-id>/resourceGroups/PSDemoRM/providers/Microsoft.Network/networkSecurityGroups/PSDemoVM-nsg')
 ```
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Вывод текста после подготовки ресурсов в коллекции](./media/move-region-powershell/collection-prepare.png)
 
@@ -369,7 +369,7 @@ Invoke-AzResourceMoverDiscard -SubscriptionId  <subscription-id> `-ResourceGroup
 # Commit the move 
 Invoke-AzResourceMoverCommit -SubscriptionId  <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus  -MoveCollectionName MoveCollection-centralus-westcentralus   -MoveResource $('psdemovm62', 'PSDemoVM-ip', 'PSDemoRM-vnet','PSDemoVM-nsg', ‘PSDemoVM’)
 ```
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![Вывод текста после фиксации перемещения](./media/move-region-powershell/commit-move.png)
 
@@ -377,6 +377,6 @@ Invoke-AzResourceMoverCommit -SubscriptionId  <subscription-id> -ResourceGroupNa
 
 После фиксации перемещения и проверки правильности работы ресурсов в целевом регионе можно удалить исходные ресурсы в [портал Azure](../azure-resource-manager/management/manage-resources-portal.md#delete-resources), [с помощью PowerShell](../azure-resource-manager/management/manage-resources-powershell.md#delete-resources)или [Azure CLI](../azure-resource-manager/management/manage-resources-cli.md#delete-resources).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Узнайте, как](remove-move-resources.md) удалить ресурсы из коллекции перемещения.

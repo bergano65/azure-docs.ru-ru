@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: rdhillon
-ms.openlocfilehash: fcc482e6231bbd925fd500a37989052765dede58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f861f9efa6ecc1886647ed6c460b6718ff97e8a1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77538540"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522334"
 ---
 # <a name="troubleshoot-azure-private-endpoint-connectivity-problems"></a>Устранение проблем с подключением к частной конечной точке Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "77538540"
     
        ![Конфигурация виртуальной сети и DNS](./media/private-endpoint-tsg/vnet-dns-configuration.png)
     
-1. Используйте [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) , чтобы узнать, передаются ли данные.
+1. Используйте [Azure Monitor](../azure-monitor/overview.md) , чтобы узнать, передаются ли данные.
 
     a. В ресурсе частная конечная точка выберите **монитор**.
      - Выберите **данные в** или **исходящие данные**. 
@@ -68,7 +68,7 @@ ms.locfileid: "77538540"
 
     a. Выберите виртуальную машину клиента.
 
-    b. Выберите **Устранение неполадок подключения**и перейдите на вкладку **Исходящие подключения** .
+    b. Выберите **Устранение неполадок подключения** и перейдите на вкладку **Исходящие подключения** .
     
       ![Наблюдатель за сетями — проверка исходящих подключений](./media/private-endpoint-tsg/network-watcher-outbound-connection.png)
     
@@ -80,7 +80,7 @@ ms.locfileid: "77538540"
      - Вставьте полное доменное имя из ресурса частной конечной точки.
      - Укажите порт. Как правило, используйте 443 для службы хранилища Azure или Azure Cosmos DB и 1336 для SQL.
 
-    д) Выберите **тест**и проверьте результаты теста.
+    д) Выберите **тест** и проверьте результаты теста.
     
       ![Наблюдатель за сетями — результаты теста](./media/private-endpoint-tsg/network-watcher-test-results.png)
     
@@ -93,7 +93,7 @@ ms.locfileid: "77538540"
        - Проверьте, существует ли частная запись зоны DNS. Если он не существует, создайте его.
      - При использовании настраиваемого DNS:
        - Проверьте пользовательские параметры DNS и проверьте правильность конфигурации DNS.
-       Инструкции см. в разделе [Общие сведения о частных конечных точках: конфигурация DNS](https://docs.microsoft.com/azure/private-link/private-endpoint-overview#dns-configuration).
+       Инструкции см. в разделе [Общие сведения о частных конечных точках: конфигурация DNS](./private-endpoint-overview.md#dns-configuration).
 
     b. Если подключение завершается неудачей из-за групп безопасности сети (группы безопасности сети) или определяемых пользователем маршрутов:
      - Проверьте правила исходящего трафика NSG и создайте соответствующие правила для исходящего трафика, чтобы разрешить трафик.
@@ -105,7 +105,7 @@ ms.locfileid: "77538540"
 
 1. Обратитесь в службу [поддержки Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) , если проблема не устранена, а проблема с подключением все еще существует.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
- * [Создание частной конечной точки в обновленной подсети (портал Azure)](https://docs.microsoft.com/azure/private-link/create-private-endpoint-portal)
+ * [Создание частной конечной точки в обновленной подсети (портал Azure)](./create-private-endpoint-portal.md)
  * [Руководство по устранению неполадок в частной связи Azure](troubleshoot-private-link-connectivity.md)

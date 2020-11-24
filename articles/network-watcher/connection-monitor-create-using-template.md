@@ -1,5 +1,5 @@
 ---
-title: Создание монитора подключений (Предварительная версия) — шаблон ARM
+title: Создание монитора подключения — шаблон ARM
 titleSuffix: Azure Network Watcher
 description: Узнайте, как создать монитор подключений с помощью ARMClient.
 services: network-watcher
@@ -10,24 +10,21 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/30/2020
+ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: e1a0ecd85d07aa4fdf5482c5104c17eb4a068688
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: c3b228d2652d5f7dcf7c6596ee5425b3f5f9a4d8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984232"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544009"
 ---
 # <a name="create-a-connection-monitor-using-the-arm-template"></a>Создание монитора подключения с помощью шаблона ARM
 
 Узнайте, как создать монитор подключения для отслеживания взаимодействия между ресурсами с помощью ARMClient. Он поддерживает Гибридные развертывания в облаке Azure.
 
-> [!IMPORTANT]
-> Сейчас монитор подключения находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="before-you-begin"></a>Подготовка 
+## <a name="before-you-begin"></a>Подготовка к работе 
 
 В мониторах подключений, создаваемых в мониторе подключения, можно добавить локальные компьютеры и виртуальные машины Azure в качестве источников. Эти мониторы соединений также могут отслеживать подключение к конечным точкам. Конечные точки могут находиться в Azure или на любом другом URL-адресе или IP.
 
@@ -402,7 +399,7 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
 * Максимальное число источников и назначений на монитор подключения: 100
 * Максимальное число конфигураций тестов на монитор подключений: 20 через ARMClient
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте, [как анализировать данные мониторинга и настраивать оповещения](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts) .
 * Узнайте [, как диагностировать проблемы в сети](./connection-monitor-overview.md#diagnose-issues-in-your-network)

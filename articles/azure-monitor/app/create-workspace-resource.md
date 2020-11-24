@@ -3,18 +3,18 @@ title: Создание ресурса рабочей области Azure Monit
 description: Узнайте, что нужно сделать, чтобы использовать новые ресурсы на основе рабочих областей Azure Monitor Application Insights.
 ms.topic: conceptual
 ms.date: 10/06/2020
-ms.openlocfilehash: 9b91e5065729bee6af3f8018c36930e132eb1a15
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: ecbac02bcb4d9b4f0db36eab854a91366c774d6c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945419"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536920"
 ---
 # <a name="workspace-based-application-insights-resources"></a>Ресурсы рабочей области Application Insights.
 
 Ресурсы рабочей области поддерживают полную интеграцию Application Insights и Log Analytics. Теперь вы можете отправлять данные телеметрии Application Insights в общую рабочую область Log Analytics, которая обеспечивает полный доступ ко всем функциям Log Analytics, сохраняя журналы приложений, инфраструктуры и платформы в централизованном расположении.
 
-Это также позволяет использовать общее управление доступом на основе ролей (RBAC) для ресурсов и устраняет необходимость в перекрестных запросах между приложениями и рабочими областями.
+Это также обеспечивает общий контроль доступа на основе ролей Azure (Azure RBAC) между ресурсами и устраняет необходимость в перекрестных запросах между приложениями и рабочими областями.
 
 > [!NOTE]
 > Прием и хранение данных ресурсов рабочей области Application Insights оплачиваются по тарифам рабочей области Log Analytics, в которой находятся данные. [Узнайте больше]( ./pricing.md#workspace-based-application-insights) о выставлении счетов за ресурсы рабочей области Application Insights.
@@ -207,7 +207,7 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 
 > [!NOTE]
 > В настоящее время дополнительная плата за экспорт телеметрии отсутствует. Сведения о ценах на этот компонент будут доступны на [странице цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).  До начала выставления счетов уведомления будут отправляться. Если вы решили продолжить использование <feature name> после периода уведомления, плата будет взиматься по соответствующей ставке. 
- 
+ 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
