@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/17/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: ca4bd3d3b40934323bab8036f3ce72e9281f1de4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4b93685160250a5abe7c050db89978ae8ceb1a9
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185723"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564206"
 ---
 > [!div class="op_single_selector"]
 > * [C в Windows](../articles/iot-accelerators/iot-accelerators-connecting-devices.md)
@@ -21,7 +21,7 @@ ms.locfileid: "67185723"
 > * [Использование C с Raspberry Pi](../articles/iot-accelerators/iot-accelerators-connecting-pi-c.md)
 > * [Node.js (универсальная версия)](../articles/iot-accelerators/iot-accelerators-connecting-devices-node.md)
 > * [Использование Node.js с Raspberry Pi](../articles/iot-accelerators/iot-accelerators-connecting-pi-node.md)
-> * [MXChip IoT DevKit](../articles/iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringV2.md)
+> * [MXChip IoT DevKit](../articles/iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2.md)
 
 В этом руководстве вы реализуете устройство **Chiller**, которое отправляет следующие данные телеметрии в [акселератор решений](../articles/iot-accelerators/about-iot-accelerators.md) для удаленного мониторинга:
 
@@ -54,7 +54,7 @@ ms.locfileid: "67185723"
 ### <a name="add-your-device-to-the-remote-monitoring-solution"></a>Добавление устройства в решение для удаленного мониторинга
 
 > [!NOTE]
-> Если вы уже добавили устройство в решение, пропустите этот шаг. Однако для следующего шага требуется строка подключения вашего устройства. Вы можете получить строку подключения устройства на [портале Azure](https://portal.azure.com) или с помощью средства CLI [az iot](https://docs.microsoft.com/cli/azure/iot?view=azure-cli-latest).
+> Если вы уже добавили устройство в решение, пропустите этот шаг. Однако для следующего шага требуется строка подключения вашего устройства. Вы можете получить строку подключения устройства на [портале Azure](https://portal.azure.com) или с помощью средства CLI [az iot](/cli/azure/iot?view=azure-cli-latest).
 
 Чтобы устройство смогло подключиться к акселератору решений, оно должно пройти идентификацию в Центре Интернета вещей с использованием допустимых учетных данных. При добавлении устройства в решение есть возможность сохранить строку подключения устройства, содержащую эти учетные данные. Вы добавите эту строку подключения в клиентское приложение далее в этом руководстве.
 

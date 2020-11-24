@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/13/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 70ac106995324c758bde942d12191a01e3457e6e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0c05eb88df27ba9e71c0f61bad75457d893a7ce
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185021"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95562830"
 ---
 > [!NOTE]
 > Эти примеры не применяются при одновременном использовании конфигураций S2S и ExpressRoute.
@@ -25,7 +25,7 @@ ms.locfileid: "67185021"
 
 ### <a name="download-the-network-configuration-file"></a>Загрузка файла конфигурации сети
 
-1. Скачайте файл конфигурации сети, используя шаги, описанные в статье о [файле конфигурации сети](../articles/virtual-network/virtual-networks-using-network-configuration-file.md). Откройте файл в текстовом редакторе.
+1. Скачайте файл конфигурации сети, используя шаги, описанные в статье о [файле конфигурации сети](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Откройте файл в текстовом редакторе.
 2. Добавьте в файл локальный сетевой сайт. Можно использовать любой допустимый префикс адреса. Можно добавить любой допустимый IP-адрес для VPN-шлюза. Значения адресов в этом разделе не используются для операций с ExpressRoute, но необходимы для проверки файла. В примере "branch1" – это имя узла. Вы можете использовать другое имя, но обязательно укажите то же значение в разделе файла Gateway (Шлюз).
 
    ```

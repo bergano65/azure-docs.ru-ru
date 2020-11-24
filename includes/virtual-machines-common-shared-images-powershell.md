@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 03/18/2020
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 10c2b447a3f174afe93f56084827756d24d982cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 807cbd283cf7971bf4256451028ffa16a0911266
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82792196"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95563009"
 ---
 ## <a name="create-an-image-gallery"></a>Создание коллекции образов 
 
 Коллекция образов является основным ресурсом, который позволяет обмен изображениями. Допустимыми знаками для имени коллекции являются прописные или строчные буквы, цифры и точки. Имя коллекции не должно содержать дефисы. Имена коллекций должны быть уникальным в пределах вашей подписки. 
 
-Создайте коллекцию образов, используя команду [New-AzGallery](https://docs.microsoft.com/powershell/module/az.compute/new-azgallery). В следующем примере показано, как создать коллекцию с именем *myGallery* в группе ресурсов *myGalleryRG*.
+Создайте коллекцию образов, используя команду [New-AzGallery](/powershell/module/az.compute/new-azgallery). В следующем примере показано, как создать коллекцию с именем *myGallery* в группе ресурсов *myGalleryRG*.
 
 ```azurepowershell-interactive
 $resourceGroup = New-AzResourceGroup `
@@ -49,4 +49,3 @@ New-AzRoleAssignment `
    -ResourceGroupName $resourceGroup.ResourceGroupName
 
 ```
-

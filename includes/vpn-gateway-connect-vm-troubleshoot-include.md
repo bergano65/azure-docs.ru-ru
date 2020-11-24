@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: b050d0cd5f6a21757685f9bc0991f8ce0a971e3c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7a28757a0a5fabcd2aeac4e772cb39287fff3580
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185109"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564381"
 ---
 Если возникают проблемы при подключении к виртуальной машине через VPN-подключение, проверьте следующее.
 
@@ -26,4 +26,4 @@ ms.locfileid: "67185109"
 - Используйте ipconfig, чтобы проверить IPv4-адрес, назначенный Ethernet-адаптеру на компьютере, с которого выполняется подключение. Если IP-адрес находится в диапазоне адресов виртуальной сети, к которой выполняется подключение, или в диапазоне адресов VPNClientAddressPool, адресное пространство перекрывается. В таком случае сетевой трафик не достигает Azure и остается в локальной сети.
 - Убедитесь, что пакет конфигурации VPN-клиента был создан после IP-адресов DNS-сервера, заданных для виртуальной сети. Если вы обновили IP-адреса DNS-сервера, создайте и установите новый пакет конфигурации VPN-клиента.
 
-Дополнительные сведения об устранении неполадок при подключении RDP см. в статье [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](../articles/virtual-machines/windows/troubleshoot-rdp-connection.md).
+Дополнительные сведения об устранении неполадок при подключении RDP см. в статье [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](../articles/virtual-machines/troubleshooting/troubleshoot-rdp-connection.md).

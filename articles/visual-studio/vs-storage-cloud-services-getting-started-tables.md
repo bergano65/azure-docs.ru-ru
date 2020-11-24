@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 8579efcee45e08fec3331df8f55b61618edb4f4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5e687b172b49fec5f77615e332d0a2204162c43
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89000419"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545795"
 ---
 # <a name="getting-started-with-azure-table-storage-and-visual-studio-connected-services-cloud-services-projects"></a>Начало работы с табличным хранилищем Azure и подключенными службами Visual Studio (проектами облачных служб)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -28,11 +28,11 @@ ms.locfileid: "89000419"
 
 В службе хранилища таблиц Azure можно хранить большие объемы структурированных данных. Эта служба — хранилище данных NoSQL, которое принимает вызовы внутри и снаружи облака Azure с проверкой подлинности. Таблицы Azure идеально подходят для хранения нереляционных структурированных данных.
 
-Чтобы начать работу, сначала необходимо создать таблицу в учетной записи хранения. Мы покажем, как создать таблицу Azure в коде, и как выполнять базовые операции с таблицами и сущностями, например добавлять, изменять и читать сущности таблицы. Примеры написаны на языке C \# и используют [клиентскую библиотеку служба хранилища Microsoft Azure для .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+Чтобы начать работу, сначала необходимо создать таблицу в учетной записи хранения. Мы покажем, как создать таблицу Azure в коде, и как выполнять базовые операции с таблицами и сущностями, например добавлять, изменять и читать сущности таблицы. Примеры написаны на языке C \# и используют [клиентскую библиотеку служба хранилища Microsoft Azure для .NET](/previous-versions/azure/dn261237(v=azure.100)).
 
-**Примечание**. Некоторые интерфейсы API, которые выполняют вызовы к службе хранилища Azure, являются асинхронными. Дополнительные сведения см. в статье [Asynchronous Programming with async and await (C#)](https://msdn.microsoft.com/library/hh191443.aspx) (Асинхронное программирование с использованием ключевых слов Async и Await (C#)). В следующем примере кода предполагается, что используются асинхронные методы программирования.
+**Примечание**. Некоторые интерфейсы API, которые выполняют вызовы к службе хранилища Azure, являются асинхронными. Дополнительные сведения см. в статье [Asynchronous Programming with async and await (C#)](/previous-versions/hh191443(v=vs.140)) (Асинхронное программирование с использованием ключевых слов Async и Await (C#)). В следующем примере кода предполагается, что используются асинхронные методы программирования.
 
-* Дополнительные сведения о выполнении программных операций с таблицами см. в статье [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../storage/storage-dotnet-how-to-use-tables.md).
+* Дополнительные сведения о выполнении программных операций с таблицами см. в статье [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../cosmos-db/tutorial-develop-table-dotnet.md).
 * Общие сведения о службе хранилища Azure см. в [документации по хранилищу](https://azure.microsoft.com/documentation/services/storage/) .
 * Общие сведения об облачных службах Azure см. в [документации по облачным службам](https://azure.microsoft.com/documentation/services/cloud-services/).
 * Дополнительную информацию о программировании для ASP.NET см. в разделе [ASP.NET](https://www.asp.net).
@@ -213,6 +213,5 @@ else
     Console.WriteLine("Couldn't delete the entity.");
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [!INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
-

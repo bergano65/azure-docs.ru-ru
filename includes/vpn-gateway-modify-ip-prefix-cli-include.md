@@ -1,6 +1,6 @@
 ---
-title: Включить файл
-description: Включить файл
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 2b2c2a8f471aba36592f76caf46b7d26d7e3bb31
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: f222d4a7f4724506112a47eff61ccc48354dd622
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755908"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564032"
 ---
 ### <a name="to-modify-local-network-gateway-ip-address-prefixes---no-gateway-connection"></a><a name="noconnection"></a>Изменение префиксов IP-адресов для шлюза локальной сети при отсутствии подключения шлюза
 
-Если нет подключения шлюза и нужно добавить или удалить префиксы IP-адресов, выполните ту же команду, что и для создания шлюза локальной сети ([az network local-gateway create](https://docs.microsoft.com/cli/azure/network/local-gateway)). Эта команда также используется для обновления IP-адреса шлюза VPN-устройства. Чтобы перезаписать текущие параметры, укажите существующее имя шлюза локальной сети. Если используется другое имя, необходимо создать новый шлюз локальной сети вместо перезаписи существующего.
+Если нет подключения шлюза и нужно добавить или удалить префиксы IP-адресов, выполните ту же команду, что и для создания шлюза локальной сети ([az network local-gateway create](/cli/azure/network/local-gateway)). Эта команда также используется для обновления IP-адреса шлюза VPN-устройства. Чтобы перезаписать текущие параметры, укажите существующее имя шлюза локальной сети. Если используется другое имя, необходимо создать новый шлюз локальной сети вместо перезаписи существующего.
 
 При каждом изменении нужно указать полный список префиксов, а не только те префиксы, которые вы хотите изменить. Укажите только те префиксы, которые нужно сохранить. В этом случае это 10.0.0.0/24 и 20.0.0.0/24.
 
@@ -27,7 +27,7 @@ az network local-gateway create --gateway-ip-address 23.99.221.164 --name Site2 
 
 ### <a name="to-modify-local-network-gateway-ip-address-prefixes---existing-gateway-connection"></a><a name="withconnection"></a>Изменение префиксов IP-адресов для шлюза локальной сети при наличии подключения шлюза
 
-Если подключение шлюза существует и требуется добавить или удалить префиксы IP-адресов, обновите их с помощью команды [az network local-gateway update](https://docs.microsoft.com/cli/azure/network/local-gateway). После этого VPN-подключение будет некоторое время недоступно. При изменении префиксов IP-адресов не нужно удалять VPN-шлюз.
+Если подключение шлюза существует и требуется добавить или удалить префиксы IP-адресов, обновите их с помощью команды [az network local-gateway update](/cli/azure/network/local-gateway). После этого VPN-подключение будет некоторое время недоступно. При изменении префиксов IP-адресов не нужно удалять VPN-шлюз.
 
 При каждом изменении нужно указать полный список префиксов, а не только те префиксы, которые вы хотите изменить. В этом примере 10.0.0.0/24 и 20.0.0.0/24 уже существуют. Добавьте префиксы 30.0.0.0/24 и 40.0.0.0/24 и укажите все 4 при обновлении.
 

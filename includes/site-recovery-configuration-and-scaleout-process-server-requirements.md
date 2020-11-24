@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 07/08/2020
 ms.author: raynew
 ms.custom: include file
-ms.openlocfilehash: e3106b52ede95fe63a8df691a82acdd4937c8cce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d09cb92055c69b6585fa3b55609144c0e680964a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91672275"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564372"
 ---
 **Требования к серверам конфигурации и обработки**
 
@@ -37,8 +37,8 @@ ms.locfileid: "91672275"
 Операционная система | Windows Server 2012 R2 <br> Windows Server 2016
 Язык операционной системы | Английский (en-*)
 Роли Windows Server | Не включайте эти роли: <br> — доменные службы Active Directory; <br>— службы IIS; <br> — Hyper-V. 
-Групповые политики | Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения скриптов. <br> [Подробнее](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)
-IIS | — Должен отсутствовать предварительно созданный веб-сайт по умолчанию. <br> — Должен отсутствовать предварительно созданный веб-сайт или приложение, ожидающее передачи данных на порте 443. <br>— включите [анонимную аутентификацию](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx); <br> — включите параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx); 
+Групповые политики | Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения скриптов. <br> [Подробнее](/previous-versions/windows/it-pro/windows-7/gg176671(v=ws.10))
+IIS | — Должен отсутствовать предварительно созданный веб-сайт по умолчанию. <br> — Должен отсутствовать предварительно созданный веб-сайт или приложение, ожидающее передачи данных на порте 443. <br>— включите [анонимную аутентификацию](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731244(v=ws.10)); <br> — включите параметр [FastCGI](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753077(v=ws.10)); 
 FIPS (федеральные стандарты обработки информации) | Не включать режим FIPS
 |
 

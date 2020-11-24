@@ -8,20 +8,19 @@ ms.technology: azure-cli
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 923eee619fdff7b128d9429f38cf713803cc6a13
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 01e1f956270ebbc9b9d5d0ebdfdff52875cafedf
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347400"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564174"
 ---
 ### <a name="prepare-your-environment-for-the-azure-cli"></a>Подготовка среды к работе с Azure CLI
 
-- [Azure Cloud Shell](/azure/cloud-shell/quickstart) можно использовать в среде Bash.
+- [Azure Cloud Shell](../articles/cloud-shell/quickstart.md) можно использовать в среде Bash.
 
    [![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)   
 - При необходимости [установите](/cli/azure/install-azure-cli) Azure CLI, чтобы выполнять справочные команды CLI.
    - Если вы используете локальную установку, выполните вход с помощью команды Azure CLI [az login](/cli/azure/reference-index#az-login).  Чтобы выполнить аутентификацию, следуйте инструкциям в окне терминала.  Сведения о дополнительных возможностях входа см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
   - Если появится запрос, установите расширения Azure CLI при первом использовании.  Дополнительные сведения о расширениях см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
   - Выполните команду [az version](/cli/azure/reference-index?#az_version), чтобы узнать установленную версию и зависимые библиотеки. Чтобы обновиться до последней версии, выполните команду [az upgrade](/cli/azure/reference-index?#az_upgrade).
-

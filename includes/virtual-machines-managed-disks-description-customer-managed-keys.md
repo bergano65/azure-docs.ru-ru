@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/05/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: c301ed2b612c2f3a7aca40ed5ed733800323adcc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf79fe8766d36fe59595be43250341d49b5460c8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86231044"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564031"
 ---
 Вы можете управлять шифрованием на уровне каждого управляемого диска с помощью собственных ключей. Шифрование на стороне сервера для управляемых дисков с ключами, управляемыми клиентом, предлагает интегрированную работу с Azure Key Vault. Вы можете либо импортировать [свои ключи RSA](../articles/key-vault/keys/hsm-protected-keys.md) в Key Vault, либо создать новые ключи RSA в Azure Key Vault. 
 
@@ -44,4 +44,4 @@ ms.locfileid: "86231044"
 1. Управляемые диски используют управляемое удостоверение для отправки запросов в Azure Key Vault.
 1. Для чтения или записи данных управляемые диски отправляют запросы в Azure Key Vault для шифрования (упаковки) и расшифровки (распаковки) ключа шифрования данных для выполнения шифрования и расшифровки данных. 
 
-Сведения об отзыве доступа к ключам, управляемым клиентом, см. в разделах [Azure Key Vault PowerShell](https://docs.microsoft.com/powershell/module/azurerm.keyvault/) и [Azure Key Vault CLI](https://docs.microsoft.com/cli/azure/keyvault). Отмена доступа фактически блокирует доступ ко всем данным в учетной записи хранения, так как ключ шифрования станет недоступен службе хранилища Azure.
+Сведения об отзыве доступа к ключам, управляемым клиентом, см. в разделах [Azure Key Vault PowerShell](/powershell/module/azurerm.keyvault/) и [Azure Key Vault CLI](/cli/azure/keyvault). Отмена доступа фактически блокирует доступ ко всем данным в учетной записи хранения, так как ключ шифрования станет недоступен службе хранилища Azure.
