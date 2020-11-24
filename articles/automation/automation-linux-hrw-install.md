@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9b06024b7dc25f37f75c71b822f6aeea32c3e26a
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 07c04274829530942bab0e3267200f6524c4ddc7
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95509065"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95793405"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -20,7 +20,7 @@ ms.locfileid: "95509065"
 
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, убедитесь, что у вас есть следующее.
 
@@ -40,15 +40,15 @@ ms.locfileid: "95509065"
 
 ### <a name="supported-linux-operating-systems"></a>Поддерживаемые операционные системы Linux
 
-Дистрибутивы, поддерживаемые функцией гибридной рабочей роли Runbook:
+Гибридная функция Runbook Worker поддерживает следующие дистрибутивы. Предполагается, что все операционные системы имеют версию x64. Архитектура x86 не поддерживается для любой операционной системы.
 
-* Amazon Linux 2012,09 – 2015,09 (x64)
-* CentOS Linux 5, 6 и 7 (x64)
-* Oracle Linux 5, 6 и 7 (x64)
-* Red Hat Enterprise Linux Server 5, 6 и 7 (x64)
-* Debian GNU/Linux 6, 7 и 8 (x64)
-* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS и 18,04 (x64)
-* SUSE Linux Enterprise Server 12 (x64)
+* Amazon Linux 2012,09 – 2015,09
+* CentOS Linux 5, 6 и 7;
+* Oracle Linux 5, 6 и 7;
+* Red Hat Enterprise Linux Server 5, 6 и 7
+* Debian GNU/Linux 6, 7 и 8;
+* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS и 18,04 LTS
+* SUSE Linux Enterprise Server 12
 
 ### <a name="minimum-requirements"></a>Минимальные требования
 
@@ -89,9 +89,9 @@ ms.locfileid: "95509065"
 |-------------|-----------|
 |Python 2; |Да |
 |PowerShell |Да<sup>1</sup> |
-|Рабочий процесс PowerShell |Нет |
-|Графический |Нет |
-|графический модуль рабочего процесса PowerShell. |Нет |
+|Рабочий процесс PowerShell |нет |
+|Графический |нет |
+|графический модуль рабочего процесса PowerShell. |нет |
 
 <sup>1</sup> Для модулей Runbook PowerShell необходимо установить PowerShell Core на компьютере Linux. Подробные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: reference
 ms.date: 11/17/2020
 ms.author: aahi
-ms.openlocfilehash: 90ac4891dbca34ff2d9bdb9653e27ad2a495b317
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 09a83c28d07540b8ecd813e7ab2f10ceee891d7a
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021258"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95792991"
 ---
 # <a name="azure-cognitive-services-container-image-tags-and-release-notes"></a>Теги образа контейнера Cognitive Services Azure и заметки о выпуске
 
@@ -52,6 +52,17 @@ Azure Cognitive Services предлагает множество образов 
 
 # <a name="latest-version"></a>[Последняя версия](#tab/current)
 
+Заметки о выпуске для `3.2-preview.1` :
+
+* Новый контейнер версии 3.2
+
+| Теги изображений                    | Примечания |
+|-------------------------------|:------|
+| `latest`                      |       |
+| `3.2-preview.1` |  |
+
+# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+
 Заметки о выпуске для `v2.0.013250001-amd64-preview` :
 
 * Дальнейшее уменьшение использования памяти для контейнера.
@@ -59,13 +70,6 @@ Azure Cognitive Services предлагает множество образов 
 * Исправлены недостающие результаты, если кэш Redis настроен и `ResultExpirationPeriod` для него задано значение 0.
 * Удалите ограничение на размер текста запроса для 26MB. Теперь контейнер может принимать >файлы 26MB.
 * Добавьте отметку времени и версию сборки в журнал консоли.
-
-| Теги изображений                    | Примечания |
-|-------------------------------|:------|
-| `latest`                      |       |
-| `2.0.013250001-amd64-preview` |  |
-
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
 
 Заметки о выпуске `1.1.013050001-amd64-preview`
 
@@ -88,6 +92,7 @@ Azure Cognitive Services предлагает множество образов 
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
+| `2.0.013250001-amd64-preview` |       |
 | `1.1.013050001-amd64-preview` |       |
 | `1.1.011580001-amd64-preview` |       |
 | `1.1.009920003-amd64-preview` |       |

@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в клиенте
 description: В этой статье объясняется, как развертывать ресурсы в клиенте в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 11/20/2020
-ms.openlocfilehash: 65a5e90616f8883b338d22fa31eee6932452b5fd
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.date: 11/24/2020
+ms.openlocfilehash: 5733c5d6eb6cbd86207589244c22badc17fe7073
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95242667"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95807633"
 ---
 # <a name="tenant-deployments-with-arm-templates"></a>Развертывание клиентов с помощью шаблонов ARM
 
@@ -96,7 +96,7 @@ ms.locfileid: "95242667"
 
 Команды, используемые для развертываний клиентов, отличаются от команд для развертываний группы ресурсов.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Для Azure CLI используйте [az deployment tenant create](/cli/azure/deployment/tenant#az-deployment-tenant-create):
 
@@ -129,6 +129,14 @@ New-AzTenantDeployment `
 * [Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub](deploy-to-azure-button.md)
 * [Развертывание шаблонов ARM из Cloud Shell](deploy-cloud-shell.md)
 
+## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
+
+Для развертываний на уровне клиента необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания. Для развертываний [подписок](deploy-to-subscription.md) и [групп управления](deploy-to-management-group.md) также требуется расположение. Для развертываний [группы](deploy-to-resource-group.md) ресурсов расположение группы ресурсов используется для хранения данных развертывания.
+
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+
+Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Например, если вы создадите развертывание клиента с именем **deployment1** в **centralus**, вы не сможете позднее создать другое развертывание с именем **deployment1** , а расположение **westus**. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
+
 ## <a name="deployment-scopes"></a>Области развертывания
 
 При развертывании в клиенте можно развернуть ресурсы в:
@@ -153,7 +161,7 @@ New-AzTenantDeployment `
 
 Чтобы выбрать целевую группу управления в клиенте, добавьте вложенное развертывание и укажите `scope` свойство.
 
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-mg.json" highlight="10,17,22":::
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-mg.json" highlight="10,17,18,22":::
 
 ### <a name="scope-to-subscription"></a>Область действия для подписки
 
@@ -161,7 +169,7 @@ New-AzTenantDeployment `
 
 Чтобы назначить подписку в клиенте, используйте вложенное развертывание и `subscriptionId` свойство.
 
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-subscription.json" highlight="10,18":::
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-subscription.json" highlight="9,10,18":::
 
 ### <a name="scope-to-resource-group"></a>Область действия для группы ресурсов
 
@@ -170,14 +178,6 @@ New-AzTenantDeployment `
 Чтобы назначить группу ресурсов в клиенте, используйте вложенное развертывание. Укажите свойства `subscriptionId` и `resourceGroup`. Не задавайте расположение для вложенного развертывания, так как оно развертывается в расположении группы ресурсов.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-rg.json" highlight="9,10,18":::
-
-## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
-
-Для развертываний на уровне клиента необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
-
-Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
-
-Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
 ## <a name="create-management-group"></a>Создание группы управления
 

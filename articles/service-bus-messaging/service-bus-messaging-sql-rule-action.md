@@ -1,20 +1,19 @@
 ---
-title: Справочник по синтаксису SQLRuleAction в служебной шине Azure
-description: В этой статье содержится справочник по синтаксису SQLRuleAction. Действия записываются в синтаксисе на основе языка SQL, который выполняется для сообщения, переданного через посредника.
+title: Синтаксис действия SQL правила подписки служебной шины Azure | Документация Майкрософт
+description: В этой статье содержится ссылка на синтаксис действия правила SQL. Действия записываются в синтаксисе на основе языка SQL, который выполняется для сообщения.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 61fa6e046b4d4a0ba91bf8608c846755026d07ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/24/2020
+ms.openlocfilehash: a156a9d8f18a7763f03c63b56681fa25ce6de289
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85341576"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95808847"
 ---
-# <a name="sqlruleaction-syntax-reference-for-azure-service-bus"></a>Справочник по синтаксису SQLRuleAction для служебной шины Azure
+# <a name="subscription-rule-sql-action-syntax"></a>Синтаксис действия правила подписки SQL
 
-*SqlRuleAction* — это экземпляр класса [SqlRuleAction](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction). Он представляет набор действий, написанных по правилам синтаксиса на основе языка SQL, выполняемых с [BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage).   
+*Действие SQL* используется для работы с метаданными сообщений после того, как сообщение было выбрано фильтром правила подписки. Это текстовое выражение, которое используется в качестве основы для подмножества стандарта SQL-92. Выражения действий используются с `sqlExpression` элементом свойства Action служебной шины `Rule` в [шаблоне Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)или в Azure CLI `az servicebus topic subscription rule create` [`--action-sql-expression`](https://docs.microsoft.com/cli/azure/servicebus/topic/subscription/rule?view=azure-cli-latest&preserve-view=true#az_servicebus_topic_subscription_rule_create) аргументе команды и нескольких функциях пакета SDK, которые позволяют управлять правилами подписки.
   
-В этой статье приведены сведения о грамматике действия правила SQL.  
   
 ```  
 <statements> ::=
@@ -211,5 +210,9 @@ ms.locfileid: "85341576"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [SQLRuleAction class](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction) (Класс SQLRuleAction)
-- [SQLFilter class](/dotnet/api/microsoft.servicebus.messaging.sqlfilter) (Класс SQLFilter)
+- [Класс SQLRuleAction (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction)
+- [Класс SQLRuleAction (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlruleaction)
+- [Класс SqlRuleAction (Java)](/java/api/com.microsoft.azure.servicebus.rules.sqlruleaction)
+- [SqlRuleAction (JavaScript)](/javascript/api/@azure/service-bus/sqlruleaction)
+- [AZ servicebus раздел правило подписки](/cli/azure/servicebus/topic/subscription/rule)
+- [New-Азсервицебусруле](/powershell/module/az.servicebus/new-azservicebusrule)

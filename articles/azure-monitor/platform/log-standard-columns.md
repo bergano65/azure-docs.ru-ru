@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/09/2020
-ms.openlocfilehash: dc3d119479d2dce45b286463f3d6a76410220dd0
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2370f76bacb8645f1b343da4f056c8bcf06a26dd
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014226"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95796722"
 ---
 # <a name="standard-columns-in-azure-monitor-logs"></a>Стандартные столбцы в журналах Azure Monitor
 Данные в журналах Azure Monitor [хранятся в виде набора записей в log Analytics рабочей области или в Application Insights приложении](./data-platform-logs.md), каждый из которых имеет определенный тип данных, имеющий уникальный набор столбцов. Многие типы данных будут иметь стандартные столбцы, которые являются общими для нескольких типов. В этой статье описываются эти столбцы и приводятся примеры их использования в запросах.
@@ -80,7 +80,7 @@ search *
 ## <a name="_resourceid"></a>\_ResourceId
 Столбец **\_ ResourceId** содержит уникальный идентификатор ресурса, с которым связана запись. Это позволяет использовать стандартный столбец для определения области запроса только для записей из определенного ресурса или для объединения связанных данных между несколькими таблицами.
 
-Для ресурсов Azure значением параметра **_ResourceId** будет [URL-адрес идентификатора ресурса Azure](../../azure-resource-manager/templates/template-functions-resource.md). В настоящее время столбец ограничен ресурсами Azure, но он будет расширен для ресурсов, находящихся за пределами Azure, например с локальных компьютеров.
+Для ресурсов Azure значением параметра **_ResourceId** будет [URL-адрес идентификатора ресурса Azure](../../azure-resource-manager/templates/template-functions-resource.md). Этот столбец ограничен ресурсами Azure, включая ресурсы [ARC в Azure](../../azure-arc/overview.md) , или пользовательскими журналами, которые указали идентификатор ресурса во время приема.
 
 > [!NOTE]
 > Некоторые типы данных уже содержат поля с идентификатором ресурса Azure или его частями, например идентификатором подписки. Хотя эти поля нужны для обеспечения обратной совместимости, рекомендуем использовать свойство _ResourceId для перекрестной корреляции, так как в этом случае она будет более согласованной.
@@ -111,17 +111,47 @@ AzureActivity
 ) on _ResourceId  
 ```
 
-Следующий запрос анализирует **_ResourceId** и суммирует объемы данных, выставленных в подписке Azure.
+Следующий запрос анализирует **_ResourceId** и суммирует объемы данных, выставленных в группе ресурсов Azure.
 
 ```Kusto
 union withsource = tt * 
 | where _IsBillable == true 
 | parse tolower(_ResourceId) with "/subscriptions/" subscriptionId "/resourcegroups/" 
     resourceGroup "/providers/" provider "/" resourceType "/" resourceName   
-| summarize Bytes=sum(_BilledSize) by subscriptionId | sort by Bytes nulls last 
+| summarize Bytes=sum(_BilledSize) by resourceGroup | sort by Bytes nulls last 
 ```
 
 Используйте эти запросы `union withsource = tt *` только в случае необходимости, так как сканирование по типам данных требует больших затрат на выполнение.
+
+Всегда более эффективно использовать \_ столбец SubscriptionId, чем извлекать его путем синтаксического анализа \_ столбца ResourceId.
+
+## <a name="_substriptionid"></a>\_субстриптионид
+Столбец **\_ SUBSCRIPTIONID** содержит идентификатор подписки ресурса, с которым связана запись. Это предоставляет стандартный столбец для использования в качестве области запроса только для записей из конкретной подписки или для сравнения разных подписок.
+
+Для ресурсов Azure значение **__SubscriptionId** является частью подписки [URL-адреса Azure Resource id](../../azure-resource-manager/templates/template-functions-resource.md). Этот столбец ограничен ресурсами Azure, включая ресурсы [ARC в Azure](../../azure-arc/overview.md) , или пользовательскими журналами, которые указали идентификатор ресурса во время приема.
+
+> [!NOTE]
+> У некоторых типов данных уже есть поля, содержащие идентификатор подписки Azure. Хотя эти поля хранятся для обеспечения обратной совместимости, рекомендуется использовать \_ столбец SubscriptionId для выполнения перекрестной корреляции, так как он будет более последовательным.
+### <a name="examples"></a>Примеры
+Следующий запрос проверяет данные производительности для компьютеров определенной подписки. 
+
+```Kusto
+Perf 
+| where TimeGenerated > ago(24h) and CounterName == "memoryAllocatableBytes"
+| where _SubscriptionId == "57366bcb3-7fde-4caf-8629-41dc15e3b352"
+| summarize avgMemoryAllocatableBytes = avg(CounterValue) by Computer
+```
+
+Следующий запрос анализирует **_ResourceId** и суммирует объемы данных, выставленных в подписке Azure.
+
+```Kusto
+union withsource = tt * 
+| where _IsBillable == true 
+| summarize Bytes=sum(_BilledSize) by _SubscriptionId | sort by Bytes nulls last 
+```
+
+Используйте эти запросы `union withsource = tt *` только в случае необходимости, так как сканирование по типам данных требует больших затрат на выполнение.
+
 
 ## <a name="_isbillable"></a>\_IsBillable
 Столбец «ведомость» указывает, **\_ оплачивается** ли прием данных. Данные со **\_ счетами** , равными `false` , собираются бесплатно и не выставляются в учетную запись Azure.
@@ -168,8 +198,7 @@ union withsource = tt *
 ```Kusto
 union withsource=table * 
 | where _IsBillable == true 
-| parse _ResourceId with "/subscriptions/" SubscriptionId "/" *
-| summarize Bytes=sum(_BilledSize) by  SubscriptionId | sort by Bytes nulls last 
+| summarize Bytes=sum(_BilledSize) by  _SubscriptionId | sort by Bytes nulls last 
 ```
 
 Чтобы просмотреть размер оплачиваемых событий, принимаемых на группу ресурсов, используйте следующий запрос:
@@ -178,7 +207,7 @@ union withsource=table *
 union withsource=table * 
 | where _IsBillable == true 
 | parse _ResourceId with "/subscriptions/" SubscriptionId "/resourcegroups/" ResourceGroupName "/" *
-| summarize Bytes=sum(_BilledSize) by  SubscriptionId, ResourceGroupName | sort by Bytes nulls last 
+| summarize Bytes=sum(_BilledSize) by  _SubscriptionId, ResourceGroupName | sort by Bytes nulls last 
 
 ```
 

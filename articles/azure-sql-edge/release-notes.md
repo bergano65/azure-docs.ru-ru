@@ -9,17 +9,32 @@ ms.subservice: ''
 author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
-ms.date: 09/22/2020
-ms.openlocfilehash: 543a71bc2a77f0a31f8ddaa0de13135b93db48ec
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.date: 11/24/2020
+ms.openlocfilehash: bb0c176ee8c145e1268827d79b453628e6f1bc28
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93395042"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95808624"
 ---
 # <a name="azure-sql-edge-release-notes"></a>Заметки о выпуске Azure SQL ребра 
 
 В этой статье описывается, что нового и что изменилось при каждой новой сборке Azure SQL Server.
+
+## <a name="azure-sql-edge---101"></a>Azure SQL ребро — 1.0.1
+
+### <a name="sql-engine-build-number---15020001553"></a>Номер сборки для ядра SQL — 15.0.2000.1553
+
+### <a name="whats-new"></a>Новые возможности
+
+- Разрешить выражение Датебуккет, определенное в вычисленных столбцах
+
+### <a name="fixes"></a>Исправления
+
+- Исправление политики хранения для удаления таблицы с включенной политикой хранения с бесконечным временем ожидания
+- Поддержка в развертывании DacFx для потоковой передачи и функций политики хранения 
+- Исправление развертывания DacFx для включения развертывания из вложенной папки в URL-адресе SAS 
+- ПРОГНОЗИРОВАНИе исправлений для поддержки длинных имен столбцов в сообщениях об ошибках
 
 ## <a name="azure-sql-edge---100-rtm"></a>Azure SQL ребро — 1.0.0 (RTM)
 

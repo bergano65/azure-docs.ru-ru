@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в группах ресурсов
 description: Описывает развертывание ресурсов в шаблоне Azure Resource Manager. В нем показано, как ориентироваться на несколько групп ресурсов.
 ms.topic: conceptual
-ms.date: 11/18/2020
-ms.openlocfilehash: 5e33f0d505759944ccaf2233aa122b6ab701c91f
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.date: 11/24/2020
+ms.openlocfilehash: 9d0bec51fa55ee377eb647a11fb554ec3b81e9eb
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917432"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95807725"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Развертывание группы ресурсов с помощью шаблонов ARM
 
@@ -42,7 +42,7 @@ ms.locfileid: "94917432"
 
 Для развертывания в группе ресурсов используйте команды развертывания группы ресурсов.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Для Azure CLI используйте команду [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
@@ -312,6 +312,6 @@ az deployment group create \
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).

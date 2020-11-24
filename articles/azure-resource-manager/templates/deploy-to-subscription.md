@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 11/23/2020
-ms.openlocfilehash: c87f6fa590e1f769816fb0ee3cba3aad1997de15
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.date: 11/24/2020
+ms.openlocfilehash: 2d4bd0db32a4bf0224b9da3af6e03ca86d7b496e
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95519869"
+ms.locfileid: "95807713"
 ---
 # <a name="subscription-deployments-with-arm-templates"></a>Развертывание подписок с помощью шаблонов ARM
 
@@ -90,7 +90,7 @@ ms.locfileid: "95519869"
 
 Для развертывания в подписке используйте команды развертывания на уровне подписки.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Для Azure CLI используйте [az deployment sub create](/cli/azure/deployment/sub#az-deployment-sub-create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
@@ -125,6 +125,14 @@ New-AzSubscriptionDeployment `
 * [Развертывание ресурсов с помощью шаблонов ARM и Azure Resource Manager REST API](deploy-rest.md)
 * [Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub](deploy-to-azure-button.md)
 * [Развертывание шаблонов ARM из Cloud Shell](deploy-cloud-shell.md)
+
+## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
+
+Для развертываний на уровне подписки необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания. Для развертывания [группы управления](deploy-to-management-group.md) и [клиента](deploy-to-tenant.md) также требуется расположение. Для развертываний [группы](deploy-to-resource-group.md) ресурсов расположение группы ресурсов используется для хранения данных развертывания.
+
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+
+Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Например, если вы создаете развертывание подписки с именем **deployment1** в **centralus**, вы не сможете позднее создать другое развертывание с именем **deployment1** , а расположение **westus**. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
 ## <a name="deployment-scopes"></a>Области развертывания
 
@@ -173,14 +181,6 @@ New-AzSubscriptionDeployment `
 Или можно задать область `/` для некоторых типов ресурсов, например для групп управления.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/subscription-create-mg.json" highlight="12,15":::
-
-## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
-
-Для развертываний на уровне подписки необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
-
-Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
-
-Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
 ## <a name="resource-groups"></a>Группы ресурсов
 
@@ -487,7 +487,7 @@ New-AzSubscriptionDeployment `
 
 :::code language="json" source="~/quickstart-templates/subscription-deployments/create-rg-lock-role-assignment/azuredeploy.json":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
 * Примеры шаблонов можно найти на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-deployments).

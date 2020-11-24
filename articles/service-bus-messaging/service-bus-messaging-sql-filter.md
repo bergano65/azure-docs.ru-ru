@@ -1,22 +1,23 @@
 ---
-title: Справочник по синтаксису SQLFilter для служебной шины Azure | Документация Майкрософт
-description: В этой статье содержатся сведения о грамматике SQLFilter. SqlFilter поддерживает подмножество стандарта SQL-92.
+title: Синтаксис фильтра SQL для правила подписки служебной шины Azure | Документация Майкрософт
+description: В этой статье содержатся сведения о грамматике фильтра SQL. Фильтр SQL поддерживает подмножество стандарта SQL-92.
 ms.topic: article
-ms.date: 11/17/2020
-ms.openlocfilehash: 7f3c744b691e678ef18c8fa721ccfaecaee9c1e2
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.date: 11/24/2020
+ms.openlocfilehash: bd263e8177652165376d4f6fe9e231af71ebdcbe
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888476"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95805635"
 ---
-# <a name="sqlfilter-syntax"></a>Синтаксис SQLFilter
+# <a name="subscription-rule-sql-filter-syntax"></a>Синтаксис фильтра SQL правила подписки
 
-Объект *SqlFilter* является экземпляром [класса SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)и представляет критерий фильтра на основе языка SQL, который вычисляется для [`BrokeredMessage`](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) . SqlFilter поддерживает подмножество стандарта SQL-92.  
+*Фильтр SQL* — это один из доступных типов фильтров для подписок на разделы служебной шины. Это текстовое выражение, которое используется в качестве основы для подмножества стандарта SQL-92. Выражения фильтра используются с `sqlExpression` элементом свойства "sqlFilter" служебной шины `Rule` в [шаблоне Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)или в Azure CLI `az servicebus topic subscription rule create` [`--filter-sql-expression`](https://docs.microsoft.com/cli/azure/servicebus/topic/subscription/rule?view=azure-cli-latest&preserve-view=true#az_servicebus_topic_subscription_rule_create) аргументе команды и нескольких функциях пакета SDK, которые позволяют управлять правилами подписки.
+
+Служебная шина уровня "Премиум" также поддерживает [синтаксис селектора сообщений SQL JMS](https://docs.oracle.com/javaee/7/api/javax/jms/Message.html) через API JMS 2,0.
+
   
- В этом разделе приведены сведения о грамматике SqlFilter.  
-  
-```  
+``` 
 <predicate ::=  
       { NOT <predicate> }  
       | <predicate> AND <predicate>  
@@ -324,4 +325,7 @@ sys.To NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','S
 
 - [Класс SQLFilter (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)
 - [Класс SQLFilter (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlfilter)
-- [SQLRuleAction class](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction) (Класс SQLRuleAction)
+- [Класс SqlFilter (Java)](/java/api/com.microsoft.azure.servicebus.rules.SqlFilter)
+- [Склрулефилтер (JavaScript)](/javascript/api/@azure/service-bus/sqlrulefilter)
+- [AZ servicebus раздел правило подписки](/cli/azure/servicebus/topic/subscription/rule)
+- [New-Азсервицебусруле](/powershell/module/az.servicebus/new-azservicebusrule)
