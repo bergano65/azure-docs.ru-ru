@@ -4,18 +4,18 @@ ms.author: erhopf
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/11/2020
-ms.openlocfilehash: 235b7946fbcfc2322878428cce72e77ecceb9cfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1085daca153431a28fdcc2583d0e31308214bf91
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88010973"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95557135"
 ---
 ## <a name="authenticate-with-azure-active-directory"></a>Проверка подлинности с помощью Azure Active Directory
 
 > [!IMPORTANT]
 > 1. В настоящее время **только** API компьютерного зрения, API распознавания лиц, API анализа текста, иммерсивное средство чтения, распознаватель форм, детектор аномалий и все службы Bing, кроме пользовательский поиск Bing, поддерживают проверку подлинности с помощью Azure Active Directory (AAD).
-> 2. Проверку подлинности AAD необходимо всегда использовать вместе с именем пользовательского поддомена ресурса Azure. [Региональные конечные точки](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains#is-there-a-list-of-regional-endpoints) не поддерживают проверку подлинности AAD.
+> 2. Проверку подлинности AAD необходимо всегда использовать вместе с именем пользовательского поддомена ресурса Azure. [Региональные конечные точки](../articles/cognitive-services/cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) не поддерживают проверку подлинности AAD.
 
 В предыдущих разделах мы показали, как выполнять аутентификацию в Azure Cognitive Services с помощью ключа подписки с одной или несколькими службами. Хотя эти ключи предоставляют быстрый и простой путь для начала разработки, они немного сложны в более сложных сценариях, требующих управления доступом на основе ролей Azure (Azure RBAC). Давайте посмотрим, что требуется для проверки подлинности с помощью Azure Active Directory (AAD).
 
@@ -23,15 +23,15 @@ ms.locfileid: "88010973"
 
 ### <a name="create-a-resource-with-a-custom-subdomain"></a>Создание ресурса с пользовательским поддоменом
 
-Первым шагом является создание пользовательского поддомена. Если вы хотите использовать существующий ресурс Cognitive Services без имени пользовательского поддомена, следуйте инструкциям в разделе [Cognitive Services пользовательские](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains#how-does-this-impact-existing-resources) поддомены, чтобы включить пользовательский поддомен для ресурса.
+Первым шагом является создание пользовательского поддомена. Если вы хотите использовать существующий ресурс Cognitive Services без имени пользовательского поддомена, следуйте инструкциям в разделе [Cognitive Services пользовательские](../articles/cognitive-services/cognitive-services-custom-subdomains.md#how-does-this-impact-existing-resources) поддомены, чтобы включить пользовательский поддомен для ресурса.
 
-1. Для начала откройте Azure Cloud Shell. Затем [выберите подписку](https://docs.microsoft.com/powershell/module/az.accounts/set-azcontext?view=azps-3.3.0):
+1. Для начала откройте Azure Cloud Shell. Затем [выберите подписку](/powershell/module/az.accounts/set-azcontext?view=azps-3.3.0):
 
    ```powershell-interactive
    Set-AzContext -SubscriptionName <SubscriptionName>
    ```
 
-2. Затем [создайте Cognitive Services ресурс](https://docs.microsoft.com/powershell/module/az.cognitiveservices/new-azcognitiveservicesaccount?view=azps-1.8.0) с пользовательским поддоменом. Имя поддомена должно быть глобально уникальным и не может содержать специальные символы, например: ".", "!", ",".
+2. Затем [создайте Cognitive Services ресурс](/powershell/module/az.cognitiveservices/new-azcognitiveservicesaccount?view=azps-1.8.0) с пользовательским поддоменом. Имя поддомена должно быть глобально уникальным и не может содержать специальные символы, например: ".", "!", ",".
 
    ```powershell-interactive
    $account = New-AzCognitiveServicesAccount -ResourceGroupName <RESOURCE_GROUP_NAME> -name <ACCOUNT_NAME> -Type <ACCOUNT_TYPE> -SkuName <SUBSCRIPTION_TYPE> -Location <REGION> -CustomSubdomainName <UNIQUE_SUBDOMAIN>
@@ -47,7 +47,7 @@ ms.locfileid: "88010973"
 > [!NOTE]
 > Помните, что для распространения назначений ролей Azure может потребоваться до пяти минут.
 
-1. Сначала выполним регистрацию [приложения AAD](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzADApplication?view=azps-1.8.0).
+1. Сначала выполним регистрацию [приложения AAD](/powershell/module/Az.Resources/New-AzADApplication?view=azps-1.8.0).
 
    ```powershell-interactive
    $SecureStringPassword = ConvertTo-SecureString -String <YOUR_PASSWORD> -AsPlainText -Force
@@ -57,7 +57,7 @@ ms.locfileid: "88010973"
 
    Вам потребуется идентификатор **приложения на следующем** шаге.
 
-2. Далее необходимо [создать субъект-службу](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal?view=azps-1.8.0) для приложения AAD.
+2. Далее необходимо [создать субъект-службу](/powershell/module/az.resources/new-azadserviceprincipal?view=azps-1.8.0) для приложения AAD.
 
    ```powershell-interactive
    New-AzADServicePrincipal -ApplicationId <APPLICATION_ID>
@@ -66,7 +66,7 @@ ms.locfileid: "88010973"
    >[!NOTE]
    > При регистрации приложения в портал Azure этот шаг завершается.
 
-3. Последним шагом является [назначение роли "Cognitive Services пользователя"](https://docs.microsoft.com/powershell/module/az.Resources/New-azRoleAssignment?view=azps-1.8.0) субъекту-службе (областью действия ресурса). Назначая роль, вы предоставляете субъекту-службе доступ к этому ресурсу. Вы можете предоставить одному субъекту-службе доступ к нескольким ресурсам в подписке.
+3. Последним шагом является [назначение роли "Cognitive Services пользователя"](/powershell/module/az.Resources/New-azRoleAssignment?view=azps-1.8.0) субъекту-службе (областью действия ресурса). Назначая роль, вы предоставляете субъекту-службе доступ к этому ресурсу. Вы можете предоставить одному субъекту-службе доступ к нескольким ресурсам в подписке.
    >[!NOTE]
    > Используется ObjectId субъекта-службы, а не ObjectId для приложения.
    > ACCOUNT_ID будет идентификатором ресурса Azure созданной учетной записи Cognitive Services. Идентификатор ресурса Azure можно найти в "свойствах" ресурса в портал Azure.
@@ -79,7 +79,7 @@ ms.locfileid: "88010973"
 
 В этом примере для проверки подлинности субъекта-службы используется пароль. Затем предоставленный токен используется для вызова API компьютерного зрения.
 
-1. Получите **ИД**клиента:
+1. Получите **ИД** клиента:
    ```powershell-interactive
    $context=Get-AzContext
    $context.Tenant.Id
@@ -119,16 +119,16 @@ ms.locfileid: "88010973"
 
 ## <a name="authorize-access-to-managed-identities"></a>Авторизация доступа к управляемым удостоверениям
  
-Cognitive Services поддерживает проверку подлинности Azure Active Directory (Azure AD) с помощью [управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к ресурсам Cognitive Services с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
+Cognitive Services поддерживает проверку подлинности Azure Active Directory (Azure AD) с помощью [управляемых удостоверений для ресурсов Azure](../articles/active-directory/managed-identities-azure-resources/overview.md). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к ресурсам Cognitive Services с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
 
 ### <a name="enable-managed-identities-on-a-vm"></a>Включение управляемых удостоверений на виртуальной машине
 
 Прежде чем использовать управляемые удостоверения для ресурсов Azure для авторизации доступа к ресурсам Cognitive Services из виртуальной машины, необходимо включить управляемые удостоверения для ресурсов Azure на виртуальной машине. Сведения о том, как включить управляемые удостоверения для ресурсов Azure, см. в следующих статьях:
 
-- [Портал Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm)
-- [Azure PowerShell](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm)
-- [Azure CLI](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm)
-- [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm)
-- [Клиентские библиотеки Azure Resource Manager](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm)
+- [Портал Azure](../articles/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
+- [Azure PowerShell](../articles/active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
+- [Azure CLI](../articles/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
+- [Шаблон Azure Resource Manager](../articles/active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
+- [Клиентские библиотеки Azure Resource Manager](../articles/active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
-Дополнительные сведения об управляемых удостоверениях см. в статье [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+Дополнительные сведения об управляемых удостоверениях см. в статье [управляемые удостоверения для ресурсов Azure](../articles/active-directory/managed-identities-azure-resources/overview.md).

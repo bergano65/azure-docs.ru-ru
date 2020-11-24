@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/05/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 5d14068f6be4717f74e4917d6fccf1082cd0efd3
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 48a7912b1a6375111b6f9af1496cbbd41966202c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331764"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95554315"
 ---
 ### <a name="which-regions-are-available"></a><a name="regions"></a>Какие регионы доступны?
 
@@ -89,7 +89,7 @@ RDP и SSH — протоколы на основе использования.
 
 ### <a name="how-do-i-handle-deployment-failures"></a><a name="udr"></a>Как устранить сбои развертывания?
 
-Изучите все сообщения об ошибках и при необходимости [подайте запрос на поддержку на портале Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Сбои развертывания могут возникать из-за [лимитов, квот и ограничений подписки Azure](../articles/azure-resource-manager/management/azure-subscription-service-limits.md). В частности, к сбою развертывания Бастиона Azure может привести ограничение количества общедоступных IP-адресов, которые разрешено использовать для подписки.
+Изучите все сообщения об ошибках и при необходимости [подайте запрос на поддержку на портале Azure](../articles/azure-portal/supportability/how-to-create-azure-support-request.md). Сбои развертывания могут возникать из-за [лимитов, квот и ограничений подписки Azure](../articles/azure-resource-manager/management/azure-subscription-service-limits.md). В частности, к сбою развертывания Бастиона Azure может привести ограничение количества общедоступных IP-адресов, которые разрешено использовать для подписки.
 
 ### <a name="how-do-i-incorporate-azure-bastion-in-my-disaster-recovery-plan"></a><a name="dr"></a>Как включить службу "Бастион Azure" в план аварийного восстановления?
 

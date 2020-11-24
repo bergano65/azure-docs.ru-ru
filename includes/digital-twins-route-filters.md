@@ -3,32 +3,44 @@ author: baanders
 description: включить файл для параметров фильтра маршрутов Azure Digital двойников
 ms.service: digital-twins
 ms.topic: include
-ms.date: 8/3/2020
+ms.date: 11/18/2020
 ms.author: baanders
-ms.openlocfilehash: a1098088a38b23ec1074434e5424e261e60bcd55
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 261c5fa47cddcc527e7c0a18fbd18aad9320ed4b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "91779541"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95553403"
 ---
 | Имя фильтра | Описание | Фильтрация текста схемы | Поддерживаемые значения | 
 | --- | --- | --- | --- |
 | True/false | Позволяет создать маршрут без фильтрации или отключить маршрут, чтобы события не отправлялись | `<true/false>` | `true` = маршрут включен без фильтрации <br> `false` = маршрут отключен |
 | Тип | [Тип события](../articles/digital-twins/concepts-route-events.md#types-of-event-messages) , переданного через ваш экземпляр Digital двойника | `type = '<eventType>'` | Возможные значения типа события: <br>`Microsoft.DigitalTwins.Twin.Create` <br> `Microsoft.DigitalTwins.Twin.Delete` <br> `Microsoft.DigitalTwins.Twin.Update`<br>`Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br> `Microsoft.DigitalTwins.Relationship.Delete` <br> `microsoft.iot.telemetry`  |
-| Источник | Имя экземпляра Digital двойников для Azure | `source = '<hostname>'`| Возможные значения имени узла: <br> **Для уведомлений**: `<yourDigitalTwinInstance>.<yourRegion>.azuredigitaltwins.net` <br> **Для телеметрии**: `<yourDigitalTwinInstance>.<yourRegion>.azuredigitaltwins.net/digitaltwins/<twinId>`|
-| Тема | Описание события в контексте источника событий выше | `subject = '<subject>'` | Возможные значения субъекта: <br>**Для уведомлений**: Тема `<twinid>` <br> или формат URI для субъектов, которые уникально идентифицируются несколькими частями или идентификаторами:<br>`<twinid>/relationships/<relationshipid>`<br> **Для телеметрии**: субъект — это путь к компоненту (если данные телеметрии создаются из компонента двойника), например `comp1.comp2` . Если данные телеметрии не выдаются из компонента, то его поле subject будет пустым. |
+| Источник | Имя экземпляра Digital двойников для Azure | `source = '<hostname>'`| Возможные значения имени узла: <br> **Для уведомлений**: `<yourDigitalTwinInstance>.api.<yourRegion>.digitaltwins.azure.net` <br> **Для телеметрии**: `<yourDigitalTwinInstance>.api.<yourRegion>.digitaltwins.azure.net/<twinId>`|
+| Субъект | Описание события в контексте источника событий выше | `subject = '<subject>'` | Возможные значения субъекта: <br>**Для уведомлений**: Тема `<twinid>` <br> или формат URI для субъектов, которые уникально идентифицируются несколькими частями или идентификаторами:<br>`<twinid>/relationships/<relationshipid>`<br> **Для телеметрии**: субъект — это путь к компоненту (если данные телеметрии создаются из компонента двойника), например `comp1.comp2` . Если данные телеметрии не выдаются из компонента, то его поле subject будет пустым. |
 | Схема данных | Идентификатор модели ДТДЛ | `dataschema = '<model-dtmi-ID>'` | **Для телеметрии**: Схема данных — это идентификатор модели двойника или компонента, который создает данные телеметрии. Например, `dtmi:example:com:floor4;2` <br>**Для уведомлений**: доступ к схеме данных можно получить в тексте уведомления по адресу `$body.$metadata.$model`|
 | Тип содержимого | Тип содержимого значения данных | `datacontenttype = '<contentType>'` | Тип содержимого — `application/json` |
 | Версия спецификации | Используемая версия схемы событий | `specversion = '<version>'` | Версия должна быть `1.0` . Это означает, что схема Клаудевентс версии 1,0 |
-| Текст уведомления | Ссылка на любое свойство в `data` поле уведомления | `$body.<property>` | Примеры уведомлений см. [*в разделе практические*](https://docs.microsoft.com/azure/digital-twins/how-to-interpret-event-data) сведения. На любое свойство в `data` поле можно ссылаться с помощью `$body`
+| Текст уведомления | Ссылка на любое свойство в `data` поле уведомления | `$body.<property>` | Примеры уведомлений см. [*в разделе практические*](../articles/digital-twins/how-to-interpret-event-data.md) сведения. На любое свойство в `data` поле можно ссылаться с помощью `$body`
+
+Обратите внимание, что можно добавить несколько фильтров к запросу следующим образом: 
+
+```json  
+{
+    "endpointName": "dt-endpoint", 
+    "filter": "true", 
+    "filter": "source = 'ADT-resource.api.wus2.digitaltwins.azure.net/myFloorID'", 
+    "filter": "type = 'Microsoft.DigitalTwins.Twin.Delete'", 
+    "filter": "specversion = '1.0'"
+}
+```
 
 Следующие типы данных поддерживаются в качестве значений, возвращаемых ссылками на приведенные выше данные:
 
 | Тип данных | Пример |
 |-|-|-|
 |**String**| `STARTS_WITH($body.$metadate.$model, 'dtmi:example:com:floor')` <br> `CONTAINS(subject, '<twinID>')`|
-|**Целое число**|`$body.errorCode > 200`|
+|**Integer**|`$body.errorCode > 200`|
 |**Double**|`$body.temperature <= 5.5`|
 |**Логическом**|`$body.poweredOn = true`|
 |**Null**|`$body.prop != null`|
@@ -37,7 +49,7 @@ ms.locfileid: "91779541"
 
 |Семейство|Операторы|Пример|
 |-|-|-|
-|Логический|AND, OR, ()|`(type != 'microsoft.iot.telemetry' OR datacontenttype = 'application/json') OR (specversion != '1.0')`|
+|Логические|AND, OR, ()|`(type != 'microsoft.iot.telemetry' OR datacontenttype = 'application/json') OR (specversion != '1.0')`|
 |Сравнение|<, <=, >, >=, =,! =|`$body.temperature <= 5.5`
 
 При определении фильтров маршрутов поддерживаются следующие функции:

@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 89ad3dfffa82f062ef8bc808da19440adfa32f05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc42c22579346c272ee5a6f41147e6b5b09643ba
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86050505"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95560991"
 ---
 #### <a name="to-download-hotfixes"></a>Загрузка исправления
 
@@ -101,7 +101,7 @@ ms.locfileid: "86050505"
    * `FriendlySoftwareVersion: StorSimple 8000 Series Update 4.0`
    * `HcsSoftwareVersion: 6.3.9600.17820`
    
-     Если после установки обновления номер версии не изменился, значит исправление установить не удалось. В этом случае обратитесь за дополнительной помощью в [службу поддержки Майкрософт](../articles/storsimple/storsimple-contact-microsoft-support.md).
+     Если после установки обновления номер версии не изменился, значит исправление установить не удалось. В этом случае обратитесь за дополнительной помощью в [службу поддержки Майкрософт](../articles/storsimple/storsimple-8000-contact-microsoft-support.md).
      
      > [!IMPORTANT]
      > Прежде чем применять следующее обновление, необходимо перезапустить активный контроллер с помощью командлета `Restart-HcsController`.
@@ -267,4 +267,3 @@ ms.locfileid: "86050505"
    `Exit-HcsMaintenanceMode`
 
 5. При выходе из режима обслуживания контроллеры перезапускаются. Когда обновления встроенного ПО диска будут успешно установлены, а устройство будет выведено из режима обслуживания, вернитесь в классический портал Azure. Обратите внимание, что для отображения установленных обновлений режима обслуживания на портале может потребоваться до 24 часов.
-

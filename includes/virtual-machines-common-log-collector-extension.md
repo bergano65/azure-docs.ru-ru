@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 09c4420647043fccc408631fec75854667923721
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a442b5de7a256dd8bcf47da741bd41894709c3a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74085273"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95561159"
 ---
 При диагностике неполадок в облачной службе Microsoft Azure файлы журналов служб на виртуальных машинах собираются по мере возникновения проблем. Вы можете использовать запускаемое по запросу расширение AzureVMLogCollector для однократного сбора журналов из одной или нескольких виртуальных машин облачной службы (из веб-ролей или рабочих ролей) и передачи собранных файлов в учетную запись хранения Azure. Все эти действия выполняются без удаленного входа на виртуальные машины.
 
@@ -36,7 +36,7 @@ ms.locfileid: "74085273"
 * **SearchPattern**: шаблон имен файлов, которые будут собраны. Значение по умолчанию — \*.
 * **Recursive.** Применяется, если собираемые файлы рекурсивно размещаются в указанном расположении.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [updated-for-az](./updated-for-az.md)]
 
@@ -44,7 +44,7 @@ ms.locfileid: "74085273"
 * Установите Azure PowerShell. Инструкции по установке см. в разделе [install Azure PowerShell](/powershell/azure/install-az-ps)].
 
 ## <a name="add-the-extension"></a>Добавление расширения
-Добавить расширение AzureLogCollector можно с помощью командлетов [Microsoft Azure PowerShell](https://msdn.microsoft.com/library/dn495240.aspx) или [интерфейсов REST API управления службой](https://msdn.microsoft.com/library/ee460799.aspx).
+Добавить расширение AzureLogCollector можно с помощью командлетов [Microsoft Azure PowerShell](/previous-versions/azure/dn495240(v=azure.100)) или [интерфейсов REST API управления службой](/previous-versions/azure/ee460799(v=azure.100)).
 
 Для облачных служб существует командлет Azure Powershell с именем **Set-AzureServiceExtension**. Его можно использовать для включения расширения в экземплярах роли облачной службы. При каждом включении расширения с помощью этого командлета запускается операция сбора журналов на указанных экземплярах выбранных ролей.
 
@@ -528,4 +528,3 @@ else
 
 ## <a name="next-steps"></a>Next Steps
 Теперь вы можете анализировать или копировать журналы, собранные в одном расположении.
-

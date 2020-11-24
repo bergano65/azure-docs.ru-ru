@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 489ee630deb56aef6c004067f29779053fbcd3e7
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 3fe622d2ff4f6f8aff546452db0f475cfd44eb1b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755349"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95558597"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -64,7 +64,7 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 Вы также можете создать хранилище ключей с помощью [шаблона Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
 
 1. На странице шаблона быстрого запуска Azure нажмите кнопку **Deploy to Azure** (Развернуть в Azure).
-2. Выберите подписку, группу ресурсов, расположение группы ресурсов, имя хранилища ключей, идентификатор объекта, юридические условия и соглашение, а затем щелкните **Приобрести** . 
+2. Выберите подписку, группу ресурсов, расположение группы ресурсов, имя хранилища ключей, идентификатор объекта, юридические условия и соглашение, а затем щелкните **Приобрести**. 
 
 
 ##  <a name="set-key-vault-advanced-access-policies"></a>установить политики расширенного доступа к хранилищу ключей.
@@ -117,10 +117,10 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. Выберите хранилище ключей, перейдите на вкладку **Политики доступа** и выберите **Щелкните, чтобы показать политики расширенного доступа** .
-2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов** .
-3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов** , если это необходимо. 
-4. Нажмите кнопку **Сохранить** .
+1. Выберите хранилище ключей, перейдите на вкладку **Политики доступа** и выберите **Щелкните, чтобы показать политики расширенного доступа**.
+2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
+3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
+4. Нажмите кнопку **Сохранить**.
 
     ![Установка политики расширенного доступа к хранилищу Azure Key Vault](../articles/virtual-machines/media/disk-encryption/keyvault-portal-fig4.png)
 
@@ -131,7 +131,7 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 
 Вы можете создать новый KEK с помощью команды [az keyvault key create](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create) в Azure CLI, команды [Add-AzKeyVaultKey](/powershell/module/az.keyvault/add-azkeyvaultkey) в Azure PowerShell или на [портале Azure](https://portal.azure.com/). Вам нужно создать тип ключа RSA. Служба "Шифрование дисков Azure" пока не поддерживает использование ключей на основе эллиптической кривой.
 
-Вместо этого KEK можно импортировать из своего локального устройства HSM управления ключами. Дополнительные сведения см. в документации по [Key Vault](/azure/key-vault/key-vault-hsm-protected-keys).
+Вместо этого KEK можно импортировать из своего локального устройства HSM управления ключами. Дополнительные сведения см. в документации по [Key Vault](../articles/key-vault/keys/hsm-protected-keys.md).
 
 Для URL-адресов KEK хранилища ключей необходимо включить управление версиями. Это требование Azure. Ниже приведены примеры действительных URL-адресов секрета и ключа шифрования ключей.
 

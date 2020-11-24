@@ -1,6 +1,6 @@
 ---
-title: Включить файл
-description: Включить файл
+title: включить файл
+description: включить файл
 services: virtual-machines
 author: cynthn
 ms.service: virtual-machines
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/24/2020
 ms.author: cynthn
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 58f38f5fe5544f01636d5fd2b2393025e5cb01ab
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 9556b20ba0ceac2d4c1ad92897e6f9d46293387f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755531"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95554344"
 ---
 ## <a name="create-an-image-gallery"></a>Создание коллекции образов 
 
@@ -21,7 +21,7 @@ ms.locfileid: "92755531"
 
 Допустимыми знаками для имени коллекции являются прописные или строчные буквы, цифры и точки. Имя коллекции не должно содержать дефисы.   Имена коллекций должны быть уникальным в пределах вашей подписки. 
 
-Создайте коллекцию образов, используя команду [az sig create](/cli/azure/sig#az-sig-create). В следующем примере показано, как создать группу ресурсов с именем *myGalleryRG* в регионе *восточная часть США* и коллекцию с именем *myGallery* .
+Создайте коллекцию образов, используя команду [az sig create](/cli/azure/sig#az-sig-create). В следующем примере показано, как создать группу ресурсов с именем *myGalleryRG* в регионе *восточная часть США* и коллекцию с именем *myGallery*.
 
 ```azurecli-interactive
 az group create --name myGalleryRG --location eastus
@@ -50,4 +50,4 @@ az role assignment create \
    --scope <gallery ID>
 ```
 
-Дополнительные сведения о предоставлении общего доступа к ресурсам с помощью RBAC см. в статье [Управление доступом с помощью RBAC и Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli).
+Дополнительные сведения о предоставлении общего доступа к ресурсам с помощью RBAC см. в статье [Управление доступом с помощью RBAC и Azure CLI](../articles/role-based-access-control/role-assignments-cli.md).

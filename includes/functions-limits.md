@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 05/04/2020
 ms.author: glenga
-ms.openlocfilehash: 37a61e270f95ffdc420536046e0ce1eda1e489b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 826fccad043b067ce86d5f56eaebc6ee48b532d1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85391500"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95560573"
 ---
 | Ресурс |[План потребления](../articles/azure-functions/functions-scale.md#consumption-plan)|[План категории "Премиум"](../articles/azure-functions/functions-scale.md#premium-plan)|[План ценовой категории "Выделенный"](../articles/azure-functions/functions-scale.md#app-service-plan)|[ASE](../articles/app-service/environment/intro.md)| [Kubernetes](../articles/aks/quotas-skus-regions.md) |
 | --- | --- | --- | --- | --- | --- |
@@ -19,7 +19,7 @@ ms.locfileid: "85391500"
 | Максимальный размер запроса (МБ)<sup>3</sup> | 100 | 100 | 100 | 100 | Зависит от кластера |
 | Максимальная длина строки запроса<sup>3</sup> | 4096 | 4096 | 4096 | 4096 | Зависит от кластера |
 | Максимальная длина URL-адреса запроса<sup>3</sup> | 8192 | 8192 | 8192 | 8192 | Зависит от кластера |
-|[ACU](../articles/virtual-machines/windows/acu.md) на экземпляр | 100 | 210–840 | 100–840 | 210–250<sup>8</sup> | [Цены на AKS](https://azure.microsoft.com/pricing/details/container-service/) |
+|[ACU](../articles/virtual-machines/acu.md) на экземпляр | 100 | 210–840 | 100–840 | 210–250<sup>8</sup> | [Цены на AKS](https://azure.microsoft.com/pricing/details/container-service/) |
 | Максимальный объем памяти (ГБ на экземпляр) | 1.5 | 3,5–14 | 1,75–14 | 3,5–14 | Поддерживается любой узел |
 | Количество приложений-функций на план |100 |100 |не ограничено<sup>4</sup> | unbounded | unbounded |
 | [Планы службы приложений](../articles/app-service/overview-hosting-plans.md) | 100 на [регион](https://azure.microsoft.com/global-infrastructure/regions/) |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов | - | - |

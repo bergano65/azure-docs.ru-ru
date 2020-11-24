@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/05/2020
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 726fc9cc0e4eb5a8f9bed5cca8dd4d3df588ac7c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b8a72640ebe8daffedb196456df7d40bc41b7b1b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79371564"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95562193"
 ---
 В службе хранилища Azure предлагается три типа учетных записей хранения. Каждый тип поддерживает различные возможности, и у каждого из них своя модель ценообразования. Прежде чем создавать учетную запись хранения, рассмотрите эти различия, чтобы определить подходящий для ваших приложений тип учетной записи. Типы учетных записей хранения:
 
@@ -33,14 +33,14 @@ ms.locfileid: "79371564"
 | FileStorage   | Только файл | Premium                       | Недоступно                            | LRS, ZRS<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div>                               | Resource Manager             | С шифрованием              |
 | BlobStorage         | Большой двоичный объект (блочные и добавочные BLOB-объекты) | Стандартный                      | Горячий, холодный или архивный<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS                  | Resource Manager             | С шифрованием              |
 
-<div id="deployment-model"><sup>1</sup> Рекомендуется использовать модель развертывания с помощью Azure Resource Manager. Учетные записи хранения, в которых используется классическая модель развертывания, по-прежнему можно создавать в некоторых расположениях, а имеющиеся классические учетные записи по-прежнему поддерживаются. Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model">Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов</a>.</div><br/>
+<div id="deployment-model"><sup>1</sup> Рекомендуется использовать модель развертывания с помощью Azure Resource Manager. Учетные записи хранения, в которых используется классическая модель развертывания, по-прежнему можно создавать в некоторых расположениях, а имеющиеся классические учетные записи по-прежнему поддерживаются. Дополнительные сведения см. в статье <a href="/azure/azure-resource-manager/resource-manager-deployment-model">Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов</a>.</div><br/>
 
-<div id="encryption"><sup>2</sup> Все учетные записи хранения шифруются с помощью Шифрования службы хранилища (SSE) для неактивных данных. Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/azure/storage/common/storage-service-encryption">Шифрование службы хранилища Azure для неактивных данных (предварительная версия)</a>.</div><br/>
+<div id="encryption"><sup>2</sup> Все учетные записи хранения шифруются с помощью Шифрования службы хранилища (SSE) для неактивных данных. Дополнительные сведения см. в статье <a href="/azure/storage/common/storage-service-encryption">Шифрование службы хранилища Azure для неактивных данных (предварительная версия)</a>.</div><br/>
 
-<div id="archive"><sup>3</sup> Архивное хранилище и распределение BLOB-объектов по уровням поддерживают только блочные BLOB-объекты. Архивный уровень доступен только на уровне отдельного большого двоичного объекта, а не на уровне учетной записи хранения. Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers">Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни</a>.</div><br/>
+<div id="archive"><sup>3</sup> Архивное хранилище и распределение BLOB-объектов по уровням поддерживают только блочные BLOB-объекты. Архивный уровень доступен только на уровне отдельного большого двоичного объекта, а не на уровне учетной записи хранения. Дополнительные сведения см. в статье <a href="/azure/storage/blobs/storage-blob-storage-tiers">Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни</a>.</div><br/>
 
-<div id="zone-redundant-storage"><sup>4</sup> Хранилище, избыточное в пределах зоны, (ZRS) и хранилище, геоизбыточное между зонами, (GZRS и RA-GZRS) в предварительной версии доступно только для учетных записей общего назначения версии 2 в ценовой категории "Стандартный", BlockBlobStorage и FileStorage в отдельных регионах. Дополнительные сведения о вариантах обеспечения избыточности в службе хранилища Azure см. в <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy">этой статье</a>.</div><br/>
+<div id="zone-redundant-storage"><sup>4</sup> Хранилище, избыточное в пределах зоны, (ZRS) и хранилище, геоизбыточное между зонами, (GZRS и RA-GZRS) в предварительной версии доступно только для учетных записей общего назначения версии 2 в ценовой категории "Стандартный", BlockBlobStorage и FileStorage в отдельных регионах. Дополнительные сведения о вариантах обеспечения избыточности в службе хранилища Azure см. в <a href="/azure/storage/common/storage-redundancy">этой статье</a>.</div><br/>
 
 <div id="premium-performance"><sup>5</sup> Производительность уровня "Премиум" в учетных записях общего назначения версии 2 и версии 1 доступна только для дисков и страничных BLOB-объектов. Производительность уровня "Премиум" для блочных и добавочных BLOB-объектов доступна только в учетных записях BlockBlobStorage. Производительность уровня "Премиум" для файлов доступна только в учетных записях FileStorage.</div><br/>
 
-<div id="data-lake-gen2"><sup>6</sup>Azure Data Lake Storage 2-го поколения — это набор возможностей аналитики больших данных, созданных на основе хранилища BLOB-объектов Azure. Data Lake Storage 2-го поколения поддерживается только для учетных записей хранения общего назначения версии 2 с включенным иерархическим пространством имен. Дополнительные сведения о Data Lake Storage 2-го поколения см. в <a href="https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction">этой статье</a>.</div>
+<div id="data-lake-gen2"><sup>6</sup>Azure Data Lake Storage 2-го поколения — это набор возможностей аналитики больших данных, созданных на основе хранилища BLOB-объектов Azure. Data Lake Storage 2-го поколения поддерживается только для учетных записей хранения общего назначения версии 2 с включенным иерархическим пространством имен. Дополнительные сведения о Data Lake Storage 2-го поколения см. в <a href="/azure/storage/blobs/data-lake-storage-introduction">этой статье</a>.</div>

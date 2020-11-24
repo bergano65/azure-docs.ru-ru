@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: b2dec95e0258933b50d4437f1cb317639b62883d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3467a5d5daa300f82c7b81641ab7e262259d9285
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185330"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95559137"
 ---
 ### <a name="upgrade-sharepoint-2010-to-sharepoint-2013-and-then-install-the-storsomple-adapter-for-sharepoint"></a>Обновление SharePoint 2010 до SharePoint 2013 с последующей установкой адаптера StorSimple для SharePoint
 > [!IMPORTANT]
@@ -20,7 +20,7 @@ ms.locfileid: "67185330"
 #### <a name="to-upgrade-sharepoint-2010-to-sharepoint-2013-and-then-install-the-adapter"></a>Обновление SharePoint 2010 до SharePoint 2013 с последующей установкой адаптера
 1. В ферме SharePoint 2010 запишите путь к хранилищу извлеченных больших двоичных объектов и базам данных содержимого, для которых включена RBS. 
 2. Установите и настройте новую ферму SharePoint 2013. 
-3. Переместите базы данных, приложения и коллекции веб-сайтов из фермы SharePoint 2010 в новую ферму SharePoint 2013. Инструкции см. в статье [Обзор процесса обновления до SharePoint 2013](https://technet.microsoft.com/library/cc262483.aspx).
+3. Переместите базы данных, приложения и коллекции веб-сайтов из фермы SharePoint 2010 в новую ферму SharePoint 2013. Инструкции см. в статье [Обзор процесса обновления до SharePoint 2013](/SharePoint/upgrade-and-update/overview-of-the-upgrade-process).
 4. Установите адаптер StorSimple для SharePoint на новой ферме. Процедуру см. в разделе [Установка адаптера StorSimple для SharePoint](#install-the-storsimple-adapter-for-sharepoint).
 5. С помощью сведений, записанных в шаге 1, включите RBS для того же набора баз данных содержимого и укажите тот же путь хранилища больших двоичных объектов, который использовался в SharePoint 2010. Процедуры см. в разделе [Настройка RBS](#configure-rbs). После завершения этого шага ранее извлеченные файлы должны быть доступны с новой фермы. 
 
@@ -29,7 +29,7 @@ ms.locfileid: "67185330"
 > Следует запланировать это обновление на время обслуживания по расписанию по следующим причинам.
 > 
 > * Ранее извлеченное содержимое будет недоступно, пока не будет переустановлен адаптер.
-> * Любое содержимое, отправляемое на сайт после удаления предыдущей версии адаптера StorSimple для SharePoint, но перед установкой новой версии, будет храниться в базе данных содержимого. Необходимо будет переместить содержимое на устройство StorSimple после установки нового адаптера. `RBS Migrate()`Для переноса содержимого можно использовать командлет Microsoft PowerShell, входящий в состав SharePoint. Дополнительные сведения см. в статье о [переносе содержимого в RBS и из RBS](https://technet.microsoft.com/library/ff628255.aspx). 
+> * Любое содержимое, отправляемое на сайт после удаления предыдущей версии адаптера StorSimple для SharePoint, но перед установкой новой версии, будет храниться в базе данных содержимого. Необходимо будет переместить содержимое на устройство StorSimple после установки нового адаптера. `RBS Migrate()`Для переноса содержимого можно использовать командлет Microsoft PowerShell, входящий в состав SharePoint. Дополнительные сведения см. в статье о [переносе содержимого в RBS и из RBS](/previous-versions/office/sharepoint-foundation-2010/ff628255(v=office.14)). 
 > 
 > 
 
@@ -41,4 +41,3 @@ ms.locfileid: "67185330"
    > 
    > 
 2. Установите новый адаптер StorSimple для SharePoint Новый адаптер автоматически распознает базы данных содержимого, которые ранее были включены или отключены для RBS, и будет использовать прежние параметры.
-

@@ -4,12 +4,12 @@ ms.service: key-vault
 ms.topic: include
 ms.date: 04/21/2020
 ms.author: jroth
-ms.openlocfilehash: 01b3c9584f3ecddbcdcc6938f5eb469510a47a4e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4abbeadb0d30911d99fff57c0e99a3e427a6d8d
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85838988"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95558286"
 ---
 ### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Транзакции с ключами (максимальное количество транзакций, разрешенных в течение 10 секунд, на хранилище для одного региона<sup>1</sup>):
 
@@ -40,7 +40,7 @@ ms.locfileid: "85838988"
 | --- | --- |
 | Все транзакции |2 000 |
 
-Дополнительные сведения о регулировании при превышении этих ограничений см. в [руководстве по регулированию Azure Key Vault](../articles/key-vault/key-vault-ovw-throttling.md).
+Дополнительные сведения о регулировании при превышении этих ограничений см. в [руководстве по регулированию Azure Key Vault](../articles/key-vault/general/overview-throttling.md).
 
 <sup>1</sup> Ограничение для всех типов транзакций на уровне подписки в пять раз превышает ограничение на уровне хранилища ключей. Например, для других транзакций HSM на каждую подписку предусмотрено максимум 5000 транзакций в течение 10 секунд.
 

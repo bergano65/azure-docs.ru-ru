@@ -1,6 +1,6 @@
 ---
-title: Включить файл
-description: Включить файл
+title: включить файл
+description: включить файл
 services: virtual-machines
 author: msmbaldwin
 ms.service: virtual-machines
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: f2e95a53f7dd188e1103a47cba097716cfad9484
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 1c1d438f0322942a1e68c0af74de8d5e2d77c77a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746226"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95553780"
 ---
 Шифрованием дисков Azure можно управлять с помощью [Azure CLI](/cli/azure) и [Azure PowerShell](/powershell/azure/new-azureps-module-az). Для этого необходимо установить средства локально и подключиться к подписке Azure.
 
@@ -43,7 +43,7 @@ az account set --subscription "<subscription name or ID>"
 Дополнительные сведения можно найти в документации по [началу работы с Azure CLI 2.0](/cli/azure/get-started-with-azure-cli). 
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-В [Azure PowerShell az module](/powershell/azure/new-azureps-module-az) доступен набор командлетов, которые используют модель [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. Его можно использовать в браузере с [Azure Cloud Shell](/azure/cloud-shell/overview), а также установить на локальном компьютере, следуя инструкциям в статье [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps). 
+В [Azure PowerShell az module](/powershell/azure/new-azureps-module-az) доступен набор командлетов, которые используют модель [Azure Resource Manager](../articles/azure-resource-manager/management/overview.md) для управления ресурсами Azure. Его можно использовать в браузере с [Azure Cloud Shell](../articles/cloud-shell/overview.md), а также установить на локальном компьютере, следуя инструкциям в статье [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps). 
 
 Если вы уже установили его локально, убедитесь, что вы используете последнюю версию версии пакета SDK для Azure PowerShell для настройки шифрования дисков Azure. Скачайте последнюю версию [Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
@@ -66,4 +66,4 @@ Set-AzContext -Subscription -Subscription <SubscriptionId>
 ```powershell
 Get-command *diskencryption*
 ```
-Дополнительные сведения см. в разделе [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/get-started-azureps). 
+Дополнительные сведения см. в разделе [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/get-started-azureps).

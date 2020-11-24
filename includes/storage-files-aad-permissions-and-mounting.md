@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/26/2020
 ms.author: rogara
 ms.custom: include file
-ms.openlocfilehash: a168b9f721cd9c3d4ab0e8b6a56b764fec3b1fe3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4773446ec0007ffbed99bc01939d1f92f5823d99
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91779230"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95557331"
 ---
 ## <a name="assign-access-permissions-to-an-identity"></a>Назначение разрешений на доступ для удостоверения
 
@@ -77,7 +77,7 @@ az role assignment create --role "<role-name>" --assignee <user-principal-name> 
 
 После назначения разрешений на уровне общего ресурса с помощью RBAC необходимо назначить соответствующие разрешения NTFS на уровне корневой папки, каталога или на уровне файла. Разрешения уровня общего доступа можно рассматривать как привратник высокого уровня, который определяет, может ли пользователь получить доступ к общей папке. В то время как разрешения NTFS работают на более детализированном уровне, чтобы определить, какие операции пользователь может выполнять на уровне каталога или файла.
 
-Служба файлов Azure поддерживает полный набор основных и дополнительных разрешений NTFS. Вы можете просматривать и настраивать разрешения NTFS для каталогов и файлов в файловом ресурсе Azure, подключив общую папку, а затем используя проводник Windows или выполнив команду Windows [icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) или [Set-ACL](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl) . 
+Служба файлов Azure поддерживает полный набор основных и дополнительных разрешений NTFS. Вы можете просматривать и настраивать разрешения NTFS для каталогов и файлов в файловом ресурсе Azure, подключив общую папку, а затем используя проводник Windows или выполнив команду Windows [icacls](/windows-server/administration/windows-commands/icacls) или [Set-ACL](/powershell/module/microsoft.powershell.security/set-acl) . 
 
 Чтобы настроить NTFS с разрешениями суперпользователя, необходимо подключить общий ресурс с помощью ключа учетной записи хранения на виртуальной машине, присоединенной к домену. Следуйте инструкциям в следующем разделе, чтобы подключить файловый ресурс Azure из командной строки и соответствующим образом настроить разрешения NTFS.
 
@@ -108,7 +108,7 @@ else
 
 ```
 
-Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://azure.microsoft.com/blog/new-troubleshooting-diagnostics-for-azure-files-mounting-errors-on-windows/). Мы также предоставляем [рекомендации](https://docs.microsoft.com/azure/storage/files/storage-files-faq#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
+Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://azure.microsoft.com/blog/new-troubleshooting-diagnostics-for-azure-files-mounting-errors-on-windows/). Мы также предоставляем [рекомендации](../articles/storage/files/storage-files-faq.md#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
 
 
 ### <a name="configure-ntfs-permissions-with-windows-file-explorer"></a>Настройка разрешений NTFS с помощью проводника файлов Windows
@@ -132,7 +132,7 @@ else
 icacls <mounted-drive-letter>: /grant <user-email>:(f)
 ```
 
-Дополнительные сведения об использовании icacls для установки разрешений NTFS и о различных типах поддерживаемых разрешений см. [в справочнике по командной строке для icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls).
+Дополнительные сведения об использовании icacls для установки разрешений NTFS и о различных типах поддерживаемых разрешений см. [в справочнике по командной строке для icacls](/windows-server/administration/windows-commands/icacls).
 
 ## <a name="mount-a-file-share-from-a-domain-joined-vm"></a>Подключение файлового ресурса с виртуальной машины, присоединенной к домену
 
@@ -142,7 +142,7 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 
 ![Снимок экрана с окном входа в Azure AD для выполнения аутентификации пользователя](media/storage-files-aad-permissions-and-mounting/azure-active-directory-authentication-dialog.png)
 
-Используйте следующую команду, чтобы подключить файловый ресурс Azure. Не забудьте заменить значения заполнителей собственными значениями. Так как вы прошли проверку подлинности, вам не нужно указывать ключ учетной записи хранения, локальный AD DS учетные данные или учетные данные AD DS Azure. Возможности единого входа поддерживаются для проверки подлинности с помощью локального AD DS или Azure AD DS. Если у вас возникли проблемы при подключении с учетными данными AD DS, см. инструкции по [устранению неполадок с файлами Azure в Windows](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems) .
+Используйте следующую команду, чтобы подключить файловый ресурс Azure. Не забудьте заменить значения заполнителей собственными значениями. Так как вы прошли проверку подлинности, вам не нужно указывать ключ учетной записи хранения, локальный AD DS учетные данные или учетные данные AD DS Azure. Возможности единого входа поддерживаются для проверки подлинности с помощью локального AD DS или Azure AD DS. Если у вас возникли проблемы при подключении с учетными данными AD DS, см. инструкции по [устранению неполадок с файлами Azure в Windows](../articles/storage/files/storage-troubleshoot-windows-file-connection-problems.md) .
 
 ```
 $connectTestResult = Test-NetConnection -ComputerName <storage-account-name>.file.core.windows.net -Port 445

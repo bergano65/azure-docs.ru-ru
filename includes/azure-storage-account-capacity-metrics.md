@@ -4,15 +4,15 @@ ms.service: storage
 ms.topic: include
 ms.date: 09/28/2020
 ms.author: normesta
-ms.openlocfilehash: 2a8f27c0df2224aed5c69c8c38f463a97e3cf294
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48e2d798a3dcf7354e68d07785c2762ba03f39f8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91711395"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95560883"
 ---
-В этой таблице показаны [метрики уровня учетной записи](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccounts).
+В этой таблице показаны [метрики уровня учетной записи](../articles/azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccounts).
 
-| Метрика | Описание |
+| Metric | Описание |
 | ------------------- | ----------------- |
 | UsedCapacity | Объем хранилища, используемый учетной записью хранения. Для стандартных учетных записей хранения это общая емкость, используемая большим двоичным объектом, таблицей, файлом или очередью. Для учетных записей хранения уровня "Премиум" и учетных записей хранения больших двоичных объектов эта емкость сопоставима с емкостью метрики BlobCapacity. <br/><br/> Единица измерения: Байты <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |

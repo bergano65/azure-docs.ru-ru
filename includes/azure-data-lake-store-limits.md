@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: twooley
 ms.custom: include file
-ms.openlocfilehash: 358de5761f3535b5f1e75d82539ee8e3ecdbd289
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 297641bbaccb44739d67fdd26f0c1f64062bba46
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665633"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95556112"
 ---
 **Azure Data Lake Storage 2-го поколения** не является выделенной службой или типом учетной записи хранения. Это последний выпуск со специализированными возможностями для аналитики больших данных.  Такие возможности доступны в учетных записях общего назначения версии 2 или BlockBlobStorage. Чтобы воспользоваться ими, включите функцию **Иерархическое пространство имен** в учетной записи. Сведения о целевых показателях масштабируемости см. в следующих статьях: 
 
-- [Целевые показатели масштабируемости хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/scalability-targets#scale-targets-for-blob-storage).
-- [Целевые показатели масштабируемости для стандартных учетных записей хранения](https://docs.microsoft.com/azure/storage/common/scalability-targets-standard-account?toc=/azure/storage/blobs/toc.json#scale-targets-for-standard-storage-accounts).
+- [Целевые показатели масштабируемости хранилища BLOB-объектов](../articles/storage/blobs/scalability-targets.md#scale-targets-for-blob-storage).
+- [Целевые показатели масштабируемости для стандартных учетных записей хранения](../articles/storage/common/scalability-targets-standard-account.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#scale-targets-for-standard-storage-accounts).
 
 **Azure Data Lake Storage 1-го поколения** является выделенной службой. Это крупномасштабный репозиторий корпоративного уровня для рабочих нагрузок анализа больших данных. Вы можете использовать Data Lake Storage 1-го поколения для хранения данных любого размера и типа, а также с любой скоростью приема в одном месте для эксплуатационной и исследовательской аналитики. Объем данных, которые можно хранить в учетной записи Data Lake Storage 1-го поколения, не ограничен.
 

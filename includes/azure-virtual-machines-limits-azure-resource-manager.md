@@ -4,20 +4,20 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: cynthn
-ms.openlocfilehash: 651027ffd63a376ff0b8595636ece4c8f39c86e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a9c830025b9ce6c93bf106a8348b0f9dc6521582
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82615927"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95558260"
 ---
 | Ресурс | Ограничение |
 | --- | --- |
-| Число ВМ на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |25 000<sup>1</sup> на регион. |
-| Общее количество ядер виртуальных машин на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. Чтобы увеличить значение ограничения, обратитесь в службу поддержки. |
-| Общее количество ядер точечных виртуальных машин Azure на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. Чтобы увеличить значение ограничения, обратитесь в службу поддержки. |
-| Количество виртуальных машин на ядра серий, таких как Dv2 и F, на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. Чтобы увеличить значение ограничения, обратитесь в службу поддержки. |
-| Количество [наборов доступности](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) на подписку |2500 на регион. |
+| Число ВМ на [подписку](https://azure.microsoft.com/pricing/) |25 000<sup>1</sup> на регион. |
+| Общее количество ядер виртуальных машин на [подписку](https://azure.microsoft.com/pricing/) |20<sup>1</sup> на регион. Чтобы увеличить значение ограничения, обратитесь в службу поддержки. |
+| Общее количество ядер точечных виртуальных машин Azure на [подписку](https://azure.microsoft.com/pricing/) |20<sup>1</sup> на регион. Чтобы увеличить значение ограничения, обратитесь в службу поддержки. |
+| Количество виртуальных машин на ядра серий, таких как Dv2 и F, на [подписку](https://azure.microsoft.com/pricing/) |20<sup>1</sup> на регион. Чтобы увеличить значение ограничения, обратитесь в службу поддержки. |
+| Количество [наборов доступности](../articles/virtual-machines/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) на подписку |2500 на регион. |
 | Количество виртуальных машин на одну группу доступности | 200 |
 | Сертификатов на подписку |Без ограничений<sup>2</sup> |
 
@@ -28,4 +28,4 @@ ms.locfileid: "82615927"
 > [!NOTE]
 > Общее количество ядер виртуальных машин ограничено региональными требованиями. Кроме того, ядра отдельных серий (например, Dv2 и F) ограничиваются в зависимости от размера и региона. Эти ограничения применяются отдельно. Например, рассмотрим подписку с ограничением до 30 ядер виртуальных машин с восточной части США, 30 ядер серии A и 30 ядер серии D. В этой подписке можно развертывать 30 виртуальных машин A1 или 30 виртуальных машин D1 либо сочетания виртуальных машин обоих типов, при котором должно быть не более 30 ядер. Пример сочетания: 10 виртуальных машин A1 и 20 виртуальных машин D1.  
 > <!-- -->
-> 
+>

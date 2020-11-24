@@ -8,19 +8,19 @@ ms.topic: include
 ms.date: 10/29/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: e8e3df77df53b887c4367e46b05d8a7ea4eed2f6
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 946ff043828034340ae3273fc0629e32de755540
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93061650"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95553985"
 ---
 ## <a name="create-a-self-signed-root-certificate"></a><a name="rootcert"></a>Создание самозаверяющего корневого сертификата
 
-Используйте командлет New-SelfSignedCertificate для создания самозаверяющего корневого сертификата. Дополнительные сведения о параметре см. в разделе [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
+Используйте командлет New-SelfSignedCertificate для создания самозаверяющего корневого сертификата. Дополнительные сведения о параметре см. в разделе [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 1. На компьютере под управлением Windows 10 или Windows Server 2016 откройте консоль Windows PowerShell с повышенными привилегиями. Эти примеры не запускаются через кнопку "Попробовать" в Azure Cloud Shell. Их нужно запустить локально.
-1. Используйте следующий пример для создания самозаверяющего корневого сертификата. Следующий пример создает самозаверяющий корневой сертификат P2SRootCert, который автоматически устанавливается в папку Certificates-Current User\Personal\Certificates. Этот сертификат можно просмотреть, открыв файл *certmgr.msc* или раздел *Управление сертификатами пользователей* .
+1. Используйте следующий пример для создания самозаверяющего корневого сертификата. Следующий пример создает самозаверяющий корневой сертификат P2SRootCert, который автоматически устанавливается в папку Certificates-Current User\Personal\Certificates. Этот сертификат можно просмотреть, открыв файл *certmgr.msc* или раздел *Управление сертификатами пользователей*.
 
    Выполните вход с помощью `Connect-AzAccount` командлета. Затем выполните следующий пример с любыми необходимыми изменениями.
 
@@ -39,7 +39,7 @@ ms.locfileid: "93061650"
 
 Ниже описан способ создания сертификата клиента из самозаверяющего корневого сертификата. Из одного корневого сертификата можно создать несколько сертификатов клиента. При создании сертификатов клиента с помощью приведенных ниже инструкций сертификат клиента автоматически устанавливается на компьютер, который использовался для его создания. Если вы хотите установить сертификат клиента на другой клиентский компьютер, его можно экспортировать.
 
-В примерах используется командлет New-SelfSignedCertificate для создания сертификата клиента, срок действия которого истекает через год. Дополнительные сведения о параметре, например о задании другого значения срока действия сертификата клиента, см. в разделе [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
+В примерах используется командлет New-SelfSignedCertificate для создания сертификата клиента, срок действия которого истекает через год. Дополнительные сведения о параметре, например о задании другого значения срока действия сертификата клиента, см. в разделе [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 ### <a name="example-1---powershell-console-session-still-open"></a>Пример 1. сеанс консоли PowerShell по-прежнему открыт
 

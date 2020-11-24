@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 8c908b7f72e5581122427a7d711ae9cf61d2d90f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef9efe389894af7c792e980922ca422e9d05929b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665625"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95562208"
 ---
 В следующей таблице приведены стандартные ограничения таких учетных записей хранения Azure: общего назначения версии 1 и версии 2, хранилища BLOB-объектов и хранилища блочных BLOB-объектов. Под ограничением на *входящий трафик* подразумеваются все данные, отправляемые в учетную запись хранения. Под ограничением на *исходящий трафик* подразумеваются все данные, получаемые из учетной записи хранения.
 
@@ -41,5 +41,4 @@ ms.locfileid: "91665625"
 > [!NOTE]
 > Корпорация Майкрософт рекомендует для большинства сценариев использовать учетные записи хранения общего назначения версии 2. Учетную запись хранения общего назначения версии 1 или хранилища BLOB-объектов Azure можно легко обновить до учетной записи общего назначения версии 2 без простоев или копирования данных. Дополнительные сведения см. в статье [Обновление до учетной записи хранения общего назначения версии 2](../articles/storage/common/storage-account-upgrade.md).
 
-Все учетные записи хранения работают в плоской топологии сети независимо от того, когда они были созданы. Дополнительные сведения о неструктурированной сетевой архитектуре службы хранилища Azure и масштабируемости см. в статье [SOSP Paper – Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](https://docs.microsoft.com/archive/blogs/hanuk/windows-azures-flat-network-storage-to-enable-higher-scalability-targets) (Хранилище Microsoft Azure: высокодоступная служба облачного хранения со строгой согласованностью). 
-
+Все учетные записи хранения работают в плоской топологии сети независимо от того, когда они были созданы. Дополнительные сведения о неструктурированной сетевой архитектуре службы хранилища Azure и масштабируемости см. в статье [SOSP Paper – Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](/archive/blogs/hanuk/windows-azures-flat-network-storage-to-enable-higher-scalability-targets) (Хранилище Microsoft Azure: высокодоступная служба облачного хранения со строгой согласованностью).

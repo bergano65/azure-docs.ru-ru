@@ -5,12 +5,12 @@ author: deepakpalled
 ms.author: dpalled
 manager: diviso
 ms.date: 07/09/2020
-ms.openlocfilehash: de5d3f8f32e928c77ffd6028ec764793ab7229ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f25c335c568c112c05f81df51d69e83aeff423e2
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86495349"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95555573"
 ---
 ## <a name="business-disaster-recovery"></a>Непрерывность бизнес-процессов и аварийное восстановление
 
@@ -22,10 +22,10 @@ ms.locfileid: "86495349"
 
 Дополнительные функции высокого уровня доступности, предоставляемые в Azure (а также доступные любому экземпляру службы "аналитика временных рядов Azure"), включают:
 
-- **Отработка отказа**. Azure обеспечивает [георепликацию и балансировку нагрузки](https://docs.microsoft.com/azure/architecture/resiliency/recovery-loss-azure-region).
-- Восстановление **данных** и **восстановление хранилища**. Azure предоставляет [несколько вариантов для сохранения и восстановления данных](https://docs.microsoft.com/azure/architecture/resiliency/recovery-data-corruption).
-- **Azure Site Recovery**. Azure предоставляет функции Site Recovery с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/).
-- **Azure Backup**: [Azure Backup](https://docs.microsoft.com/azure/backup/backup-architecture) поддерживает локальное и облачное резервное копирование виртуальных машин Azure.
+- **Отработка отказа**. Azure обеспечивает [георепликацию и балансировку нагрузки](/azure/architecture/resiliency/recovery-loss-azure-region).
+- Восстановление **данных** и **восстановление хранилища**. Azure предоставляет [несколько вариантов для сохранения и восстановления данных](/azure/architecture/resiliency/recovery-data-corruption).
+- **Azure Site Recovery**. Azure предоставляет функции Site Recovery с помощью [Azure Site Recovery](../articles/site-recovery/index.yml).
+- **Azure Backup**: [Azure Backup](../articles/backup/backup-architecture.md) поддерживает локальное и облачное резервное копирование виртуальных машин Azure.
 
 Убедитесь, что вы включили соответствующие функции Azure, чтобы обеспечить высокий уровень доступности для устройств и пользователей в разных регионах.
 
@@ -36,9 +36,9 @@ ms.locfileid: "86495349"
 
 Некоторые службы Azure IoT также включают встроенные функции аварийного восстановления.
 
-- [Аварийное восстановление высокого уровня доступности центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/iot-hub-ha-dr), включающее избыточность внутри региона
-- [Политики концентраторов событий Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr)
-- [Репликация службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy)
+- [Аварийное восстановление высокого уровня доступности центра Интернета вещей Azure](../articles/iot-hub/iot-hub-ha-dr.md), включающее избыточность внутри региона
+- [Политики концентраторов событий Azure](../articles/event-hubs/event-hubs-geo-dr.md)
+- [Репликация службы хранилища Azure](../articles/storage/common/storage-redundancy.md)
 
 Интеграция службы "аналитика временных рядов Azure" с другими службами предоставляет дополнительные возможности аварийного восстановления. Например, данные телеметрии, отправляемые в концентратор событий, могут быть сохранены в резервной копии базы данных хранилища BLOB-объектов Azure.
 
@@ -55,10 +55,10 @@ ms.locfileid: "86495349"
 
 Чтобы создать дубликат среды, сделайте следующее:
 
-1. Создайте среду во втором регионе. Дополнительные сведения см. [в статье Создание среды службы "аналитика временных рядов Azure" в портал Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started).
+1. Создайте среду во втором регионе. Дополнительные сведения см. [в статье Создание среды службы "аналитика временных рядов Azure" в портал Azure](../articles/time-series-insights/time-series-insights-get-started.md).
 1. Создайте для вашего источника событий вторую выделенную группу потребителей.
 1. Подключите этот источник событий к новой среде. Убедитесь, что назначена вторая выделенная группа потребителей.
-1. Ознакомьтесь с документацией центра [Интернета вещей](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-iothub) Azure Time Series Insights и концентраторами [событий](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-data-access) .
+1. Ознакомьтесь с документацией центра [Интернета вещей](../articles/time-series-insights/how-to-ingest-data-iot-hub.md) Azure Time Series Insights и концентраторами [событий](../articles/time-series-insights/concepts-access-policies.md) .
 
 При возникновении события:
 
@@ -71,5 +71,4 @@ ms.locfileid: "86495349"
 > * Также может возникать задержка.
 > * При перенаправлении операций может произойти Посекундный пик обработки сообщений.
 > 
-> Дополнительные сведения см. [в статье снижение задержки в службе "аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency)".
-
+> Дополнительные сведения см. [в статье снижение задержки в службе "аналитика временных рядов Azure](../articles/time-series-insights/time-series-insights-environment-mitigate-latency.md)".

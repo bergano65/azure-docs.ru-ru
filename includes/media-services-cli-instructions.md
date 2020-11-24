@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 01/28/2019
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: 5ebbac39c8850737ea6f9ef333e45d305a520655
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1327ac49920af353d6adbbe592ab4189417e60e8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79461220"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95557409"
 ---
 ## <a name="use-cli-shell"></a>Использование оболочки CLI
 
-Для выполнения команд CLI мы рекомендуем использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest). **Cloud Shell** — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. В Cloud Shell предварительно установлены и настроены общие инструменты Azure для использования с вашей учетной записью. Она предоставляет гибкие возможности при выборе оболочки, соответствующей вашим методам работы. Пользователи Linux могут использовать Bash, а пользователи Windows — PowerShell.
+Для выполнения команд CLI мы рекомендуем использовать [Azure Cloud Shell](../articles/cloud-shell/overview.md?view=azure-cli-latest). **Cloud Shell** — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. В Cloud Shell предварительно установлены и настроены общие инструменты Azure для использования с вашей учетной записью. Она предоставляет гибкие возможности при выборе оболочки, соответствующей вашим методам работы. Пользователи Linux могут использовать Bash, а пользователи Windows — PowerShell.
 
-Установить CLI также можно локально. Инструкции для своей платформы см. в статье [Установка Azure CLII](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Установить CLI также можно локально. Инструкции для своей платформы см. в статье [Установка Azure CLII](/cli/azure/install-azure-cli).
 
 ### <a name="sign-in"></a>Вход
 

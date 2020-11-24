@@ -4,12 +4,12 @@ ms.service: virtual-machines-sql
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
-ms.openlocfilehash: 4e79fef08af8ff73ce63ab4732c9efd77e3a5d3f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51dc04fbef8d09878f33d7fda6f15039d3afba3e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185242"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95554203"
 ---
 ### <a name="configure-a-dns-label-for-the-public-ip-address"></a>Настройка имени DNS для общедоступного IP-адреса
 
@@ -34,7 +34,7 @@ ms.locfileid: "67185242"
 
 ### <a name="connect-to-the-database-engine-from-another-computer"></a>Подключение к ядру СУБД с другого компьютера
 
-1. На компьютере, подключенном к сети Интернет, откройте SQL Server Management Studio (SSMS). Если у вас нет SQL Server Management Studio, его можно скачать [здесь](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
+1. На компьютере, подключенном к сети Интернет, откройте SQL Server Management Studio (SSMS). Если у вас нет SQL Server Management Studio, его можно скачать [здесь](/sql/ssms/download-sql-server-management-studio-ssms).
 
 1. В диалоговом окне **Подключение к серверу** или **Подключение к ядру СУБД** измените значение **Имя сервера**. Введите IP-адрес или полное DNS-имя виртуальной машины (определено в предыдущей задаче). Кроме того, можно также после запятой указать TCP-порт SQL Server. Например, `mysqlvmlabel.eastus.cloudapp.azure.com,1433`.
 
