@@ -1,20 +1,20 @@
 ---
 title: Ведение журнала и диагностика
 description: Подробное описание способов создания и получения журналов и диагностики в пространственных привязках Azure.
-author: ramonarguelles
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: rgarcia
-ms.date: 02/22/2019
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 45d345e8d8dbe45ecb4873904f31141111827647
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: da8ffd7ff0b8473ce558943bb420b36f26c3fc32
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097360"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95494647"
 ---
 # <a name="logging-and-diagnostics-in-azure-spatial-anchors"></a>Ведение журналов и диагностика в пространственных привязках Azure
 

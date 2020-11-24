@@ -9,18 +9,17 @@ manager: daveba
 ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
-ms.subservice: enterprise-users
 ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4f298cf7487e00f6ee6a8aa8913fd32f8c6beee
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: ba21230f99b9f185335dfce4652a461a0a41ab3c
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647109"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95503147"
 ---
 # <a name="scenarios-limitations-and-known-issues-using-groups-to-manage-licensing-in-azure-active-directory"></a>Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory
 
@@ -219,7 +218,7 @@ ms.locfileid: "94647109"
 
   Чтобы обойти эту проблему, связанную с такого рода ограничениями, перейдите в колонку **Группа** в Azure AD и нажмите кнопку **Повторно обработать**. После этого все пользователи в этой группе будут обработаны, и состояние ошибки будет устранено, если это возможно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о других сценариях управления лицензиями на основе группы см. в следующих статьях:
 

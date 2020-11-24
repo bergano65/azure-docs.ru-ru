@@ -7,19 +7,18 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: enterprise-users
 ms.topic: how-to
 ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c30dea57310fb040d8fa5f52e1d8576c2dd08504
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 08abd6938990f5300639a56fb487d910bf8000b3
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650841"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95488867"
 ---
 # <a name="assign-sensitivity-labels-to-microsoft-365-groups-in-azure-active-directory"></a>Назначение меток чувствительности группам Microsoft 365 в Azure Active Directory
 
@@ -144,7 +143,7 @@ Azure Active Directory (Azure AD) поддерживает применение 
 
 Если необходимо внести изменения, используйте [Скрипт Azure AD PowerShell](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) , чтобы вручную применить обновления к затронутым группам. Этот метод гарантирует, что все существующие группы применяют новый параметр.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Использование меток чувствительности для Microsoft Teams, групп Microsoft 365 и сайтов SharePoint](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites)
 - [Обновление групп после изменения политики меток вручную с помощью скрипта Azure AD PowerShell](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)

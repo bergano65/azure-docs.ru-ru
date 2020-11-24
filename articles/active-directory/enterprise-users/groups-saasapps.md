@@ -7,19 +7,18 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: enterprise-users
 ms.topic: how-to
 ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58d5cc64b21207efbdefdafe020248212eed7efe
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 73e30765a3a05f9ebae1d9fb4a57cdc198da1974
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650569"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95488594"
 ---
 # <a name="using-a-group-to-manage-access-to-saas-applications"></a>Использование группы для управления доступом к приложениям SaaS
 
@@ -39,7 +38,7 @@ ms.locfileid: "94650569"
 6. Выберите любое количество групп или пользователей, затем щелкните или коснитесь **Выбрать**, чтобы добавить их в список **Добавление назначения**. На этом этапе можно также назначить роль пользователю.
 7. Щелкните **Назначить**, чтобы назначить пользователей или группы для выбранного корпоративного приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)

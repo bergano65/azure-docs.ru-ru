@@ -7,12 +7,12 @@ ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 5f1c52b764634f8086763aca67dfc32b507d2edd
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 51bd073b6f84f3378b91091e04f2f278ea2f49b6
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042853"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95495275"
 ---
 # <a name="manage-iot-plug-and-play-digital-twins"></a>Управление Plug and Play Интернета вещей Digital двойников
 
@@ -189,10 +189,10 @@ API Digital двойника создает следующее общее соо
 
 Обновление может завершиться неудачей, если сообщаемые значения устройства не соответствуют [соглашениям об отсоединениях и игре IOT](./concepts-convention.md#writable-properties).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали о цифровом двойников, вот несколько дополнительных ресурсов:
 
-- [Взаимодействие с устройством из вашего решения](quickstart-service-node.md)
+- [Взаимодействие с устройством из вашего решения](quickstart-service.md)
 - [REST API IoT Digital двойника](/rest/api/iothub/service/digitaltwin)
 - [Обозреватель Интернета вещей Azure](howto-use-iot-explorer.md)

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 61bff59114d25b2f3167a34100ec2f742036bb90
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: d39d72a79d4b273918986d0d350df4706592c77d
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663711"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95503178"
 ---
 # <a name="header-based-single-sign-on-for-on-premises-apps-with-azure-ad-app-proxy-preview"></a>Единый вход на основе заголовка для локальных приложений с помощью прокси-сервера Azure AD App (Предварительная версия)
 
@@ -85,11 +85,11 @@ Azure Active Directory прокси приложения (Azure AD) изнача
 ## <a name="test-your-app"></a>Тестирование приложения 
 
 После выполнения всех этих действий приложение должно работать и быть доступным. Чтобы протестировать приложение, сделайте следующее: 
-1. Откройте браузер и перейдите по **внешнему URL-адресу**   из параметров прокси приложения. 
+1. Откройте новый браузер или частное окно браузера, чтобы убедиться, что ранее кэшированные заголовки удалены. Затем перейдите по **внешнему URL-адресу**   из параметров прокси приложения.
 2. Войдите с помощью тестовой учетной записи, назначенной приложению. Если вы можете загрузить приложение и войти в него с помощью единого входа, то это хорошо! 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сведения о едином входе](what-is-single-sign-on.md)
 - [Что такое прокси приложения?](what-is-application-proxy.md)

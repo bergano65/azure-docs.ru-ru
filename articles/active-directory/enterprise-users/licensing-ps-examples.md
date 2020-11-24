@@ -7,19 +7,18 @@ documentationcenter: ''
 author: curtand
 manager: daveba
 ms.service: active-directory
-ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
 ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 046a19d41364f7e4db3edcb011c8c65519924b3c
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: ea8905051d06e4f8787d80abf5cc33dbc21692e0
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650331"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95488442"
 ---
 # <a name="powershell-and-graph-examples-for-group-based-licensing-in-azure-ad"></a>Примеры PowerShell и Graph для группового лицензирования в Azure AD
 
@@ -657,7 +656,7 @@ aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipp
 > [!NOTE]
 > Обновите значения переменных `$skuId` , `$groupId` которые нацелены на удаление прямых лицензий, в соответствии с тестовой средой перед выполнением приведенного выше скрипта. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. в следующих статьях:
 

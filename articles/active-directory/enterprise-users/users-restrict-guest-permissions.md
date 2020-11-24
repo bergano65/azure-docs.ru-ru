@@ -8,17 +8,16 @@ manager: daveba
 ms.date: 11/17/2020
 ms.topic: how-to
 ms.service: active-directory
-ms.subservice: enterprise-users
 ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e89793ed8404bf36f2857f228d94fdf2a8828d43
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: e51dc4ff61069bffadc4f95caee9e0f3c76d88ec
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984266"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95488476"
 ---
 # <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Ограничение разрешений гостевого доступа (Предварительная версия) в Azure Active Directory
 
@@ -105,7 +104,7 @@ GET https://graph.microsoft.com/beta/policies/authorizationPolicy/authorizationP
 
 ### <a name="get-command-get-azureadmsauthorizationpolicy"></a>Get, команда: Get-AzureADMSAuthorizationPolicy
 
-Пример:
+Пример.
 
 ````PowerShell
 PS C:\WINDOWS\system32> Get-AzureADMSAuthorizationPolicy
@@ -121,7 +120,7 @@ PermissionGrantPolicyIdsAssignedToDefaultUserRole : {user-default-legacy}
 
 ### <a name="set-command-set-azureadmsauthorizationpolicy"></a>Команда Set: Set-AzureADMSAuthorizationPolicy
 
-Пример:
+Пример.
 
 ````PowerShell
 PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'
@@ -163,7 +162,7 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 Будут ли эти разрешения установлены по умолчанию? | Нет. Существующие разрешения по умолчанию остаются без изменений. При необходимости можно задать более ограниченные разрешения.
 Существуют ли требования к лицензиям для этой функции? | Нет, новые требования к лицензированию с этой функцией отсутствуют.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о существующих разрешениях гостя в Azure AD см [. в разделе что такое разрешения пользователя по умолчанию в Azure Active Directory?](../fundamentals/users-default-permissions.md)
 - Дополнительные сведения о методах API Microsoft Graph, позволяющих ограничивать гостевой доступ, см. в разделе [тип ресурса authorizationPolicy](/graph/api/resources/authorizationpolicy) .

@@ -7,12 +7,12 @@ ms.date: 07/17/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ea523045875e0abc9e14924c7bb388ea2cfcc2db
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: f13230c7bd88a9c3cf043fc1881a34f6b7ce6fe7
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046474"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95495327"
 ---
 # <a name="understand-iot-plug-and-play-digital-twins"></a>Сведения о цифровых двойниках IoT Plug and Play
 
@@ -230,7 +230,7 @@ API-интерфейсы Digital двойника работают с высок
 
 В этом примере `3.0` — это текущее значение `fanSpeed` свойства, сообщаемое устройством. `2.0` требуемое значение задается решением. Требуемое значение и состояние синхронизации свойства корневого уровня устанавливаются в корневом уровне `$metadata` для цифрового двойника. Когда устройство переходит в режим «в сети», оно может применить это обновление и сообщить о обновленном значении.
 
-### <a name="components"></a>Компоненты
+### <a name="components"></a>Components
 
 Компоненты позволяют строить интерфейс модели в виде сборки других интерфейсов.
 Рассмотрим интерфейс [термостата](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) , который определен как модель.
@@ -377,11 +377,11 @@ content-encoding:utf-8
 > [!NOTE]
 > Двойника сообщения об изменении уведомлений при включении в уведомлениях об изменениях устройства и цифрового двойника удваивается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали о цифровом двойников, вот несколько дополнительных ресурсов:
 
 - [Как использовать центры Интернета вещей Plug and Play Digital двойника API](howto-manage-digital-twin.md)
-- [Взаимодействие с устройством из вашего решения](quickstart-service-node.md)
+- [Взаимодействие с устройством из вашего решения](quickstart-service.md)
 - [REST API IoT Digital двойника](/rest/api/iothub/service/digitaltwin)
 - [Обозреватель Интернета вещей Azure](howto-use-iot-explorer.md)

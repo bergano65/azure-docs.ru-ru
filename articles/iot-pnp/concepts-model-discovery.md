@@ -7,12 +7,12 @@ ms.date: 07/23/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: dda0e3d6739e94df4ce5910938c164e3db336bce
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 5f82206a7c86c5ae1e6477419faee0dca88ef883
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445580"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95495293"
 ---
 # <a name="use-iot-plug-and-play-models-in-an-iot-solution"></a>Использование моделей Plug and Play IoT в решении IoT
 
@@ -125,7 +125,7 @@ content-encoding:utf-8
 
 1. Используя определение модели подключенного устройства, можно перечислить возможности устройства.
 
-1. Используя перечисленные возможности устройства, можно разрешить пользователям [взаимодействовать с устройством](quickstart-service-node.md).
+1. Используя перечисленные возможности устройства, можно разрешить пользователям [взаимодействовать с устройством](quickstart-service.md).
 
 ### <a name="custom-store"></a>Настраиваемое хранилище
 
@@ -137,12 +137,12 @@ content-encoding:utf-8
 
 1. Используя определение модели подключенного устройства, можно перечислить возможности устройства. 
 
-1. Используя перечисленные возможности устройства, можно разрешить пользователям [взаимодействовать с устройством](quickstart-service-node.md).  
+1. Используя перечисленные возможности устройства, можно разрешить пользователям [взаимодействовать с устройством](quickstart-service.md).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как интегрировать модели Интернета вещей Plug and Play в решение IoT, вот некоторые из предлагаемых дальнейших действий:
 
-- [Взаимодействие с устройством из вашего решения](quickstart-service-node.md)
+- [Взаимодействие с устройством из вашего решения](quickstart-service.md)
 - [REST API IoT Digital двойника](/rest/api/iothub/service/digitaltwin)
 - [Обозреватель Интернета вещей Azure](howto-use-iot-explorer.md)

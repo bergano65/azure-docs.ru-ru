@@ -1,19 +1,19 @@
 ---
 title: Варианты поддержки
 description: Сведения о том, как открыть запрос в группе поддержки пространственных привязок Azure.
-author: ramonarguelles
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: rgarcia
-ms.date: 02/24/2019
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: troubleshooting
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 371cb9ade54da42af1ed75c3e9857b6d1a7a0f4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f47f07fee70d2fc0ee445c6788a8ccb522b7774e
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74276975"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95494715"
 ---
 # <a name="azure-spatial-anchors-support-options"></a>Варианты поддержки пространственных привязок Azure
 
@@ -48,6 +48,6 @@ ms.locfileid: "74276975"
 
 Чтобы отправить отзыв, поделиться идеями или предложением для службы пространственных привязок Azure или проголосовать за идеи, которые были отправлены другими пользователями, посетите [Форум обратной связи по пространственной привязке Azure](https://feedback.azure.com/forums/919252-azure-spatial-anchors).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Часто задаваемые вопросы о пространственных привязках Azure см. на странице [часто задаваемых вопросов](spatial-anchor-faq.md) .

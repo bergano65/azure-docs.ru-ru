@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
-ms.openlocfilehash: 0704f076ef7c5d1a39af67d3ec6ec2baece1fda5
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 9c100ca82b751a050e74cce85e1794701a789288
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517307"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95498475"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
 
@@ -54,11 +54,11 @@ Azure Sentinel использует [Управление доступом на 
 
 - Работа с модули PlayBook для автоматизации реагирования на угрозы
 
-    Для автоматического реагирования на угрозу Azure Sentinel использует **модули PlayBook** . Модули PlayBook построены на **Azure Logic Apps**и являются отдельным ресурсом Azure. Вам может потребоваться назначить определенные члены группы операций безопасности возможность использовать Logic Apps для операций оркестрации, автоматизации и реагирования (ВЗЛЕТЕЛ). Вы можете использовать роль [участника приложения логики](../role-based-access-control/built-in-roles.md#logic-app-contributor) или роль [оператора приложения логики](../role-based-access-control/built-in-roles.md#logic-app-operator) , чтобы назначить явное разрешение для использования модули PlayBook.
+    Для автоматического реагирования на угрозу Azure Sentinel использует **модули PlayBook** . Модули PlayBook построены на **Azure Logic Apps** и являются отдельным ресурсом Azure. Вам может потребоваться назначить определенные члены группы операций безопасности возможность использовать Logic Apps для операций оркестрации, автоматизации и реагирования (ВЗЛЕТЕЛ). Вы можете использовать роль [участника приложения логики](../role-based-access-control/built-in-roles.md#logic-app-contributor) или роль [оператора приложения логики](../role-based-access-control/built-in-roles.md#logic-app-operator) , чтобы назначить явное разрешение для использования модули PlayBook.
 
 - Подключение источников данных к Sentinel Azure
 
-    Чтобы добавить **соединители данных**для пользователя, необходимо назначить пользователю разрешения на запись в рабочей области "Sentinel" Azure. Кроме того, обратите внимание на необходимые дополнительные разрешения для каждого соединителя, перечисленные на соответствующей странице соединителя.
+    Чтобы добавить **соединители данных** для пользователя, необходимо назначить пользователю разрешения на запись в рабочей области "Sentinel" Azure. Кроме того, обратите внимание на необходимые дополнительные разрешения для каждого соединителя, перечисленные на соответствующей странице соединителя.
 
 - Гостевые пользователи, назначающий инциденты
 
@@ -80,7 +80,7 @@ Azure Sentinel использует [Управление доступом на 
 
 В следующей таблице перечислены роли и разрешенные действия в Azure Sentinel. 
 
-| Role | Создание и запуск сборников схем| Создание и изменение книг, правил аналитики и других ресурсов Azure Sentinel | Управление инцидентами (отклонение, назначение и т. д.) | Просмотр данных, инцидентов, книг и других ресурсов Sentinel Azure |
+| Роль | Создание и запуск сборников схем| Создание и изменение книг, правил аналитики и других ресурсов Azure Sentinel | Управление инцидентами (отклонение, назначение и т. д.) | Просмотр данных, инцидентов, книг и других ресурсов Sentinel Azure |
 |---|---|---|---|---|
 | Читатель Azure Sentinel | -- | -- | -- | &#10003; |
 | Респондент Azure Sentinel | -- | -- | &#10003; | &#10003; |
@@ -91,9 +91,9 @@ Azure Sentinel использует [Управление доступом на 
 
 - В дополнение к или вместо использования встроенных ролей Azure можно создать пользовательские роли Azure для Azure Sentinel. Пользовательские роли Azure для Sentinel создаются так же, как и другие [пользовательские роли Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role), на основе [конкретных разрешений для Azure Sentinel](../role-based-access-control/resource-provider-operations.md#microsoftsecurityinsights) и [ресурсов Azure log Analytics](../role-based-access-control/resource-provider-operations.md#microsoftoperationalinsights).
 
-- Вы можете использовать Log Analytics расширенный контроль доступа на основе ролей для данных в рабочей области Sentinel Azure. Сюда входят как Azure RBAC на основе типов данных, так и Azure RBAC, ориентированный на ресурсы. Дополнительные сведения о ролях Log Analytics см. [в статье Управление данными и рабочими областями в Azure Monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions).
+- Вы можете использовать Log Analytics расширенный контроль доступа на основе ролей Azure для данных в рабочей области Sentinel Azure. Сюда входят как Azure RBAC на основе типов данных, так и Azure RBAC, ориентированный на ресурсы. Дополнительные сведения о ролях Log Analytics см. [в статье Управление данными и рабочими областями в Azure Monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе вы узнали, как работать с ролями в Azure Sentinel Users и какую роль разрешает выполнять пользователи.
 

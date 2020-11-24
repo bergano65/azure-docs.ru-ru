@@ -7,7 +7,6 @@ documentationcenter: ''
 author: curtand
 manager: daveba
 ms.service: active-directory
-ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
 ms.date: 11/15/2020
@@ -15,12 +14,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd61a33bdcc0d18dee7dba651f097f7cd49e7149
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: de91ffe721cbaf2061c0ded70a150fbc410af955
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647041"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95503093"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -173,7 +172,7 @@ Microsoft Workplace Analytics является надстройкой. Она с
 
 К примеру, устранив для пользователя проблему продублированного адреса прокси-сервера, необходимо активировать обработку пользователя. Для повторной обработки пользователя перейдите в область пользователя, откройте **Лицензии**, а потом нажмите кнопку **Повторная обработка** на панели инструментов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы получить дополнительные сведения о сценариях управления лицензиями с помощью групп, см. ссылки ниже.
 

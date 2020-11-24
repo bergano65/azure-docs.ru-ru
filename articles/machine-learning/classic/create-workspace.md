@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/07/2017
-ms.openlocfilehash: 3fc7fd1f3f7615c0622b684e3da4020c7da601f5
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 0e2a67141970d1f5091457066db9b18a00ffecf8
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322873"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95486166"
 ---
 # <a name="create-and-share-an-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Studio (классическая модель)
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**применимо к:** ![ Это галочка, которая означает, что эта статья относится к Машинное обучение Studio (классическая модель). ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ это X, что означает, что эта статья применима к машинное обучение Azure.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
 Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 
@@ -129,6 +129,6 @@ ms.locfileid: "93322873"
 После удаления файлов cookie перезапустите браузер и перейдите на страницу [студия машинного обучения Microsoft Azure (классическая модель)](https://studio.azureml.net) . Введите данные той же учетной записи Майкрософт, использованной для создания рабочей области.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об управлении рабочей областью см. в статье [Управление рабочей областью машинное обучение Azure Studio (классическая модель)](manage-workspace.md).

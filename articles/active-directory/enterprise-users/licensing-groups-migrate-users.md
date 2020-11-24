@@ -10,18 +10,17 @@ editor: ''
 ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
-ms.subservice: enterprise-users
 ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: seohack1;it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f202bebd2c9ab6147d8a37fc6109b915065068aa
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6cc58a1d9592b46d48e4538957e4d4535b74031a
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650348"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95488493"
 ---
 # <a name="how-to-migrate-users-with-individual-licenses-to-groups-for-licensing"></a>Как перенести пользователей с отдельными лицензиями в группы для лицензирования
 
@@ -77,7 +76,7 @@ ms.locfileid: "94650348"
 
    ![подтверждение удаления прямых лицензий](./media/licensing-groups-migrate-users/direct-licenses-removed.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о других сценариях управления лицензиями групп.
 

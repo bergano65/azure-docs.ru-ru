@@ -1,19 +1,19 @@
 ---
 title: Установка пространственных привязок Azure для Unity
 description: Настройка проекта Unity для использования пространственных привязок Azure
-author: craigktreasure
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: crtreasu
-ms.date: 09/29/2020
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: how-to
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: da983719dc66656aa28cab4aea0bae558c2a7162
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2330310b0bf4e165af71208477db128650a787cf
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91530428"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95496955"
 ---
 # <a name="configuring-azure-spatial-anchors-in-a-unity-project"></a>Настройка пространственных привязок Azure в проекте Unity
 
@@ -55,7 +55,7 @@ ms.locfileid: "91530428"
 #### <a name="android-only-configure-the-maintemplategradle-file"></a>Только для Android: Настройка файла mainTemplate. gradle
 
 1. Выберите **Изменить** > **Параметры проекта** > **Проигрыватель**.
-2. На **панели инспектора** для **параметров проигрывателя**выберите значок **Android** .
+2. На **панели инспектора** для **параметров проигрывателя** выберите значок **Android** .
 3. В разделе **Сборка** установите флажок **настраиваемый основной шаблон Gradle** , чтобы создать пользовательский шаблон Gradle по адресу `Assets\Plugins\Android\mainTemplate.gradle` .
 4. Откройте файл `mainTemplate.gradle` в текстовом редакторе.
 5. В `dependencies` разделе вставьте следующие зависимости:
@@ -79,7 +79,7 @@ ms.locfileid: "91530428"
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Как создавать и размещать привязки в Unity](./create-locate-anchors-unity.md)

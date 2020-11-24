@@ -1,19 +1,19 @@
 ---
 title: Общие сведения об Unity для пространственных привязок Azure
 description: Узнайте, как можно использовать пространственные привязки Azure в приложениях Unity. Ознакомьтесь с краткими руководствами по Unity для HoloLens, Unity для Android и Unity для iOS.
-author: rgarcia
-ms.author: rgarcia
-manager: vriveras
+author: msftradford
+ms.author: parkerra
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
 ms.service: azure-spatial-anchors
-ms.date: 02/26/2020
+ms.date: 11/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: d55890fc97ff24bd4b77628791bdda60c5f54347
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 51df8ff31c6f86608b7cae53ca779a2a03068e57
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096153"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95487271"
 ---
 # <a name="building-in-unity-with-azure-spatial-anchors"></a>Создание в Unity с помощью пространственных привязок Azure
 
