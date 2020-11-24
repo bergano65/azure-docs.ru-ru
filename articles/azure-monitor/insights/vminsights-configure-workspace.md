@@ -7,12 +7,12 @@ ms.custom: references_regions
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: a7bdc1ee22d3672160122cad65b18de99f743cc7
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: d3bedfae88544d0b0ebd07868438559305279fed
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94747695"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95530120"
 ---
 # <a name="configure-log-analytics-workspace-for-azure-monitor-for-vms"></a>Настройка рабочей области Log Analytics для Azure Monitor для виртуальных машин
 Azure Monitor для виртуальных машин собирает данные из одной или нескольких Log Analytics рабочих областей в Azure Monitor. Перед подключением агентов необходимо создать и настроить рабочую область. В этой статье описываются требования к рабочей области и ее настройка для Azure Monitor для виртуальных машин.
@@ -53,7 +53,7 @@ Azure Monitor для виртуальных машин поддерживает 
 - Центрально-южная часть США
 - Восточная часть США
 - восточная часть США 2
-- Центральная часть США
+- Центральная часть США
 - Центрально-северная часть США
 - US Gov AZ
 - US Gov ва
@@ -68,7 +68,7 @@ Azure Monitor для виртуальных машин поддерживает 
 - Восточная Австралия
 - Юго-Восточная часть Австралии
 
-## <a name="role-based-access-control"></a>Управление доступом на основе ролей
+## <a name="azure-role-based-access-control"></a>Управление доступом на основе ролей в Azure
 Чтобы включить функции и получить доступ к ним в Azure Monitor для виртуальных машин, необходимо иметь [роль участника log Analytics](../platform/manage-access.md#manage-access-using-azure-permissions) в рабочей области. Для просмотра данных о производительности, работоспособности и сопоставлении необходимо иметь [роль "читатель мониторинга](../platform/roles-permissions-security.md#built-in-monitoring-roles) " для виртуальной машины Azure. Дополнительные сведения о том, как управлять доступом к рабочей области Log Analytics, см. в статье [Управление рабочими областями](../platform/manage-access.md).
 
 ## <a name="add-vminsights-solution-to-workspace"></a>Добавление решения Вминсигхтс в рабочую область

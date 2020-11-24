@@ -7,18 +7,20 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 989115224489ff8fff360a34b27c338ea3e33058
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: d587c4dbdd8f46d6e098ff96f464d456fffc9ccf
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145826"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95529994"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Общие сведения об Azure Defender для реестров контейнеров
 
 Реестр контейнеров Azure (ACR) — это управляемая служба частного реестра контейнеров Docker, которая сохраняет образы контейнеров для развертываний Azure в центральном реестре и управляет ими. Она основана на решении Docker Registry 2.0 с открытым кодом.
 
 Для защиты всех реестров на основе Azure Resource Manager в своей подписке включите **Azure Defender для реестров контейнеров** на уровне подписки. После этого Центр безопасности начнет проверять образы, отправляемые в реестр, импортируемые в реестр или извлеченные за последние 30 дней. Плата за использование этой функции взимается за каждый образ.
+
+[!INCLUDE [Defender for container registries availability info](../../includes/security-center-availability-defender-for-container-registries.md)]
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-container-registries"></a>Каковы преимущества Azure Defender для реестров контейнеров?
 

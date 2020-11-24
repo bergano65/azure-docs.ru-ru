@@ -9,12 +9,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: how-to
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 19d20a208672667e5a4354fd1b7d185d0c00f8d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 984fb00e163a090534da1fb41850dcfef6c5d516
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399131"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95521535"
 ---
 # <a name="manage-blob-properties-and-metadata-with-net"></a>Управление свойствами и метаданными больших двоичных объектов с помощью .NET
 
@@ -126,7 +126,7 @@ private static async Task GetBlobPropertiesAsync(CloudBlob blob)
 - [сетметадатаасинк](/dotnet/api/microsoft.azure.storage.blob.cloudblob.setmetadataasync)
 ---
 
-Пары "имя-значение" метаданных являются допустимыми заголовками HTTP и должны соответствовать всем ограничениям, регулирующим заголовки HTTP. Имена метаданных должны представлять собой допустимые имена HTTP-заголовков и допустимые идентификаторы C#, могут содержать только символы ASCII и должны обрабатываться без учета регистра. Кодировка [Base64](https://docs.microsoft.com/dotnet/api/system.convert.tobase64string) или [URL-кодирование](https://docs.microsoft.com/dotnet/api/system.web.httputility.urlencode) значений метаданных, содержащих символы, не входящие в набор ASCII.
+Пары "имя-значение" метаданных являются допустимыми заголовками HTTP и должны соответствовать всем ограничениям, регулирующим заголовки HTTP. Имена метаданных должны представлять собой допустимые имена HTTP-заголовков и допустимые идентификаторы C#, могут содержать только символы ASCII и должны обрабатываться без учета регистра. Кодировка [Base64](/dotnet/api/system.convert.tobase64string) или [URL-кодирование](/dotnet/api/system.web.httputility.urlencode) значений метаданных, содержащих символы, не входящие в набор ASCII.
 
 Имя метаданных должно соответствовать соглашениям об именовании идентификаторов C#. Имена метаданных поддерживают регистр, используемый при создании, но не учитывают регистр при установке или чтении. Если для ресурса отправляется несколько заголовков метаданных с одним и тем же именем, хранилище BLOB-объектов Azure возвращает код ошибки HTTP 400 (недопустимый запрос).
 

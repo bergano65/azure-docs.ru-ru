@@ -11,12 +11,12 @@ ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
 ms.date: 03/05/2020
-ms.openlocfilehash: 05d810928a71aec0e3314c32051e5f3565413564
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 17b2d717ac6f244cb3ddddfdbc2f29581aa1f59f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444611"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95527315"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Развертывание модели для Машинное обучение Azureных экземпляров вычислений
 
@@ -30,7 +30,7 @@ ms.locfileid: "94444611"
 > [!TIP]
 > Развертывание модели из Jupyter Notebook на вычислительном экземпляре в веб-службу на той же виртуальной машине является _локальным развертыванием_. В этом случае "локальный" компьютер является вычислительным экземпляром. Дополнительные сведения о развертываниях см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Рабочая область Машинное обучение Azure с выполняющимся вычислительным экземпляром. Дополнительные сведения см. в статье [Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md).
 
@@ -40,7 +40,7 @@ ms.locfileid: "94444611"
 
 1. В [машинное обучение Azure Studio](https://ml.azure.com)выберите машинное обучение Azureные экземпляры вычислений.
 
-1. Откройте `samples-*` подкаталог, а затем откройте `how-to-use-azureml/deploy-to-local/register-model-deploy-local.ipynb` . После открытия запустите записную книжку.
+1. Откройте `samples-*` подкаталог, а затем откройте `how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb` . После открытия запустите записную книжку.
 
     ![Снимок экрана: выполняемая локальная служба в записной книжке](./media/how-to-deploy-local-container-notebook-vm/deploy-local-service.png)
 
@@ -93,7 +93,7 @@ resp = requests.post(service_url, test_sample, headers=headers)
 print("prediction:", resp.text)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

@@ -1,17 +1,17 @@
 ---
 title: Политика поддержки кластеров Azure Red Hat OpenShift 4
-description: Общие сведения о требованиях политики поддержки для Red Hat OpenShift 4.
+description: Общие сведения о требованиях политики поддержки для Red Hat OpenShift 4
 author: sakthi-vetrivel
 ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 04/24/2020
-ms.openlocfilehash: e396cfa032a3030467b2e2318d61393713894cd4
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.date: 11/23/2020
+ms.openlocfilehash: c8d52609043f173e896668eadeb8c59493739859
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628226"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95521144"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Политика поддержки Azure Red Hat OpenShift
 
@@ -23,7 +23,7 @@ ms.locfileid: "94628226"
 ## <a name="cluster-configuration-requirements"></a>Требования к настройке кластеров
 
 * Все операторы кластеров OpenShift должны оставаться в управляемом состоянии. Список операторов кластеров можно получить, выполнив команду `oc get clusteroperators`.
-* Кластер должен иметь минимум один рабочий узел. Не масштабировать рабочие процессы кластера в ноль.
+* Кластер должен содержать не менее двух рабочих узлов. Не масштабировать рабочие роли кластера в ноль или попытаться корректно завершить работу кластера.
 * Не удаляйте и не изменяйте службы кластеров Prometheus и Alertmanager.
 * Не удаляйте правила службы Alertmanager.
 * Не удаляйте и не изменяйте журналы службы OpenShift Azure Red Hat (pod-объекты mdsd).

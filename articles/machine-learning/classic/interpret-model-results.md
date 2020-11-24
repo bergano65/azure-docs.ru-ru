@@ -8,17 +8,16 @@ ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 11/29/2017
-ms.openlocfilehash: 3cfdeaee863c8e11a76ac5842ae6c35d370e2ae2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 74210475cc8c0efd274d6e80c3f1c89b5206a97d
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322550"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95509505"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>Интерпретация результатов модели в Студии машинного обучения Azure (классическая версия)
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
-
+**применимо к:** ![ Это галочка, которая означает, что эта статья относится к Машинное обучение Studio (классическая модель). ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ это X, что означает, что эта статья применима к машинное обучение Azure.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
 В этом разделе объясняется, как визуализировать и интерпретировать результаты прогноза в Машинное обучение Azure Studio (классическая модель). Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.
 
@@ -267,7 +266,7 @@ ms.locfileid: "93322550"
 
 **искать пользователей, связанных с данным пользователем;**
 
-Выбрав пункт **Related Users** (Связанные пользователи) в меню **Recommender prediction kind** (Тип прогноза системы рекомендаций), мы запросим систему рекомендаций найти пользователей, связанных с указанным пользователем. Связанными пользователями являются пользователи с аналогичными параметрами. В этом сценарии нужно выбрать значение еще одного параметра: *Related user selection* (Выбор связанных пользователей). Параметр **From Users That Rated Items (for model evaluation)** (Из пользователей, которые оценили объекты — для оценки модели) используется преимущественно для оценки модели при обучении. На этом этапе прогнозирования мы выбираем **From All Users** (Из всех пользователей). Визуализация результатов модуля [Score Matchbox Recommender][score-matchbox-recommender] (Оценка модели рекомендаций Matchbox) показана на рис. 23.
+Выбрав пункт **Related Users** (Связанные пользователи) в меню **Recommender prediction kind** (Тип прогноза системы рекомендаций), мы запросим систему рекомендаций найти пользователей, связанных с указанным пользователем. Связанными пользователями являются пользователи с аналогичными параметрами. В этом сценарии нужно выбрать значение еще одного параметра: *Related user selection* (Выбор связанных пользователей). Параметр **From Users That Rated Items (for model evaluation)**(Из пользователей, которые оценили объекты — для оценки модели) используется преимущественно для оценки модели при обучении. На этом этапе прогнозирования мы выбираем **From All Users** (Из всех пользователей). Визуализация результатов модуля [Score Matchbox Recommender][score-matchbox-recommender] (Оценка модели рекомендаций Matchbox) показана на рис. 23.
 
 ![Результат оценки системы рекомендаций — связанные пользователи](./media/interpret-model-results/23.png)
 

@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1f9e4fd2f7f55f916743074b57f89788c0d32f7d
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 636bc3c64dcd15ead36a9a4e969e802d49895dca
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427499"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522249"
 ---
 # <a name="azure-security-baseline-for-azure-private-link"></a>Базовый канал безопасности Azure для частной связи Azure
 
-Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../security/benchmarks/overview.md) к частной ссылке Azure. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, применимым к частной ссылке Azure. **Элементы управления** , неприменимые к закрытой ссылке Azure, были исключены. Сведения о том, как частная связь Azure полностью сопоставляется с тестовым уровнем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности виртуальной сети Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../security/benchmarks/overview.md) к частной ссылке Azure. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, применимым к частной ссылке Azure. **Элементы управления** , неприменимые к закрытой ссылке Azure, были исключены. Сведения о том, как частная связь Azure полностью сопоставляется с тестовым уровнем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности виртуальной сети Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 ## <a name="network-security"></a>Безопасность сети
 
@@ -28,7 +28,7 @@ ms.locfileid: "92427499"
 
 Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](/azure/azure-monitor/platform/activity-log-view)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 - [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
@@ -68,7 +68,7 @@ ms.locfileid: "92427499"
 
 - [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
 
-- [Просмотр и извлечение событий из журнала действий Azure](/azure/azure-monitor/platform/activity-log-view)
+- [Просмотр и извлечение событий из журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 - [Ведение журнала и мониторинг для закрытой ссылки](private-link-overview.md#logging-and-monitoring)
 
@@ -96,7 +96,7 @@ ms.locfileid: "92427499"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
+- [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 - [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
@@ -142,7 +142,7 @@ ms.locfileid: "92427499"
 
 Кроме того, включите JIT-доступ или достаточно просто, используя Azure Active Directory (Azure AD) управление привилегированными пользователями привилегированные роли для служб Майкрософт и Azure Resource Manager.
 
-- [Дополнительные сведения о управление привилегированными пользователями](/azure/active-directory/privileged-identity-management/)
+- [Дополнительные сведения о управление привилегированными пользователями](../active-directory/privileged-identity-management/index.yml)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -188,7 +188,7 @@ ms.locfileid: "92427499"
 
 **Руководство**. Использование функции обнаружения рисков Azure Active Directory (Azure AD) для просмотра предупреждений и отчетов о небезопасном поведении пользователей. Получение оповещений центра безопасности об обнаружении рисков в Azure Monitor и настройка пользовательских оповещений и уведомлений с помощью групп действий.
 
-- [Основные сведения об обнаружении рисков в центре безопасности Azure (подозрительные действия)](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Основные сведения об обнаружении рисков в центре безопасности Azure (подозрительные действия)](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
@@ -222,7 +222,7 @@ ms.locfileid: "92427499"
 
 **Руководство**. Azure Active Directory предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
 
-- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring/)
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
 - [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
@@ -248,7 +248,7 @@ ms.locfileid: "92427499"
 
 Прием данных в Azure Sentinel для дальнейшего изучения.
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -270,11 +270,11 @@ ms.locfileid: "92427499"
 
 Управление доступом к ресурсам Azure с помощью управления доступом на основе ролей Azure (Azure RBAC).
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -348,7 +348,7 @@ ms.locfileid: "92427499"
 
 **Руководство**. применение тегов к ресурсам Azure с помощью метаданных для логической организации их в таксономию.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -360,11 +360,11 @@ ms.locfileid: "92427499"
 
 Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -418,7 +418,7 @@ ms.locfileid: "92427499"
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 - [Пример политики Azure "встроенные" для закрытой ссылки](../governance/policy/samples/built-in-policies.md)
 
@@ -634,7 +634,7 @@ Azure Resource Manager шаблоны — это файлы на основе н
 
 - [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -706,5 +706,5 @@ Azure Resource Manager шаблоны — это файлы на основе н
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

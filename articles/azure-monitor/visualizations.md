@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/17/2020
-ms.openlocfilehash: 4c9f74f5a9950a299b34e22c1e86dd91f8c82364
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9f95a5e85ec4eebf82cca707476750595331d73
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90983602"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522674"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -49,7 +49,7 @@ ms.locfileid: "90983602"
 - Глубокая интеграция в Azure. Визуализации можно закрепить на панелях мониторинга на нескольких страницах Azure, включая обозреватель метрик, Log Analytics и Application Insights.
 - Поддержка метрик и журналов.
 - Объединение данных из нескольких источников, включая выходные данные [обозревателя метрик](platform/metrics-charts.md), [запросы Log Analytics](log-query/log-query-overview.md) и данные о [сопоставлениях](app/app-map.md) и доступности в Application Insights.
-- Возможность использования личных или общих панелей мониторинга. Интеграция с [проверкой подлинности на основе ролей (RBAC)](../role-based-access-control/overview.md) Azure.
+- Возможность использования личных или общих панелей мониторинга. Интеграция с управлением [доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md).
 - Автоматическое обновление. Обновление метрик зависит от диапазона времени (минимум пять минут). Журналы обновляются каждый час с возможностью ручного обновления по запросу. Для этого щелкните значок "Обновить" в данной визуализации или обновите полную панель мониторинга.
 - Панели мониторинга параметризованных метрик с отметкой времени и пользовательскими параметрами.
 - Гибкие варианты выбора макета.

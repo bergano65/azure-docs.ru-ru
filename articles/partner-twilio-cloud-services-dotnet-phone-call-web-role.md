@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/04/2016
 ms.author: mimckitt
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 536a28801193cdbb4204ca1432892abdc7fb297e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22e0a19c0e2f5b29b35ebf43a3f250959c9b636d
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91268491"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95521127"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-web-role-on-azure"></a>Осуществление телефонных звонков с использованием Twilio в веб-роли Azure
 В этом руководстве описывается, как выполнять телефонные звонки с веб-страницы, размещенной в Azure, с помощью службы Twilio. Полученное приложение предлагает пользователю осуществить звонок, указав номер и сообщение, как показано на следующем снимке экрана.
@@ -30,7 +30,7 @@ ms.locfileid: "91268491"
 Чтобы использовать код, представленный в этом разделе, выполните следующие действия:
 
 1. Получите учетную запись Twilio и маркер проверки подлинности из [консоли Twilio][twilio_console]. Чтобы приступить к работе с Twilio, зарегистрируйтесь по адресу [https://www.twilio.com/try-twilio][try_twilio] . Вы можете оценить цены по адресу [https://www.twilio.com/pricing][twilio_pricing] . Дополнительные сведения об API, предоставляемом Twilio, см [https://www.twilio.com/voice/api][twilio_api] . в разделе.
-2. Добавьте *библиотеку Twilio .NET* в свою веб-роль. См. раздел **Добавление библиотек Twilio в проект веб-роли**далее в этом разделе.
+2. Добавьте *библиотеку Twilio .NET* в свою веб-роль. См. раздел **Добавление библиотек Twilio в проект веб-роли** далее в этом разделе.
 
 Для этого вам потребуется знание процесса, позволяющего создать базовую [веб-роль в Azure][azure_webroles_get_started].
 
@@ -186,5 +186,5 @@ namespace WebRole1
 [twilio_say]: https://www.twilio.com/docs/api/twiml/say
 
 
-[azure_runtime_ref_dotnet]: https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
-[azure_webroles_get_started]: https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-get-started
+[azure_runtime_ref_dotnet]: /previous-versions/azure/reference/ee741722(v=azure.100)
+[azure_webroles_get_started]: ./cloud-services/cloud-services-dotnet-get-started.md

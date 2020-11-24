@@ -12,12 +12,12 @@ ms.date: 10/27/2016
 ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: references_regions
-ms.openlocfilehash: ced4e920936ad94c3d4140d51d5e7d4e867ee848
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cecb3a150de8c19d390cafbd163f287520c3a91d
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84196071"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519043"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 Ответы на часто задаваемые вопросы об использовании и покупке баз данных ClearDB MySql для службы веб-приложений Azure.
@@ -33,7 +33,7 @@ ms.locfileid: "84196071"
 У вас есть несколько вариантов размещения MySQL в Azure.
 * [База данных Azure для MySQL](https://azure.microsoft.com/services/mysql/)
 * [Кластер MySQL на виртуальной машине Azure](https://github.com/azure/azure-quickstart-templates/tree/master/mysql-replication)
-* [Отдельный экземпляр MySQL на виртуальной машине Azure](virtual-machines/windows/classic/mysql-2008r2.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json)
+* [Отдельный экземпляр MySQL на виртуальной машине Azure](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%252fazure%252fvirtual-machines%252fwindows%252fclassic%252ftoc.json)
 
 
 ## <a name="do-i-need-a-credit-card-for-the-web-app--mysql-template-in-the-azure-marketplace"></a>Нужна ли кредитная карта для загрузки шаблона "Веб-приложение + MySQL" из Azure Marketplace?
@@ -48,7 +48,7 @@ ms.locfileid: "84196071"
 По умолчанию используется база данных Titan, которая стоит 3,50 доллара. Эта сумма не отображается при создании базы данных, поэтому вы могли приобрести ее по ошибке. Мы пытаемся найти способ решения этой проблемы, а до тех пор рекомендуем проверять выбранные ценовые категории веб-приложения и базы данных, прежде чем щелкнуть **Готово** и развернуть ресурсы.
 
 ## <a name="i-am-running-mysql-on-my-own-azure-virtual-machine-can-i-connect-my-azure-web-app-to-my-database"></a>Я использую MySQL на собственной виртуальной машине Azure. Могу ли я подключить к этой базе данных веб-приложение Azure?
-Да. Веб-приложение можно подключить к базе данных, если у виртуальной машины Azure есть удаленный доступ к этому веб-приложению. Дополнительные сведения см. в статье об [установке MySQL на виртуальной машине](virtual-machines/windows/classic/mysql-2008r2.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
+Да. Веб-приложение можно подключить к базе данных, если у виртуальной машины Azure есть удаленный доступ к этому веб-приложению. Дополнительные сведения см. в статье об [установке MySQL на виртуальной машине](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%252fazure%252fvirtual-machines%252fwindows%252fclassic%252ftoc.json).
 
 ## <a name="in-which-countriesregions-are-cleardb-premium-mysql-clusters-supported"></a>В каких странах или регионах поддерживаются кластеры ClearDB Premium MySQL?
 Кластеры ClearDB MySQL Premium доступны во всех регионах Azure, кроме Индии, Австралии, Южной Бразилии и Китая.
@@ -108,4 +108,3 @@ Azure Marketplace недоступен для клиентов из Азерба
 
 ## <a name="more-information"></a>Дополнительные сведения
 [Часто задаваемые вопросы об Azure Marketplace](https://azure.microsoft.com/marketplace/faq/)
-

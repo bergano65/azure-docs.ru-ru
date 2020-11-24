@@ -3,24 +3,26 @@ title: Развертывание гибридной рабочей роли Run
 description: В этой статье рассказывается, как установить гибридную рабочую роль Runbook службы автоматизации Azure для запуска модулей Runbook на компьютерах под управлением Linux в локальном центре обработки данных или в облачной среде.
 services: automation
 ms.subservice: process-automation
-ms.date: 10/06/2020
+ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: c84f168104be4ba4cb8af2e31be82eed0e2ae83a
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 9b06024b7dc25f37f75c71b822f6aeea32c3e26a
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205190"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95509065"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
-Вы можете использовать функцию гибридной рабочей роли Runbook в службе автоматизации Azure для запуска модулей Runbook непосредственно на компьютере, на котором размещается роль, и для ресурсов в среде, чтобы управлять этими локальными ресурсами. Гибридная рабочая роль Runbook Linux запускает модули runbook от имени особого пользователя, для которого можно повысить разрешения, чтобы выполнить команды, требующие повышения разрешений. Служба автоматизации Azure хранит и управляет модулями Runbook, а затем доставляет их на один или несколько определенных компьютеров. В этой статье описывается, как установить гибридную рабочую роль Runbook на компьютере Linux, как удалить отдельную рабочую роль и их группу.
+Вы можете использовать функцию гибридной рабочей роли Runbook пользователя в службе автоматизации Azure для запуска модулей Runbook непосредственно на компьютере с Azure или без Azure, включая серверы, зарегистрированные на [серверах с поддержкой Arc Azure](../azure-arc/servers/overview.md). С компьютера или сервера, на котором размещается роль, можно запускать модули Runbook напрямую и для ресурсов в среде, чтобы управлять этими локальными ресурсами.
+
+Гибридная рабочая роль Runbook Linux запускает модули runbook от имени особого пользователя, для которого можно повысить разрешения, чтобы выполнить команды, требующие повышения разрешений. Служба автоматизации Azure хранит и управляет модулями Runbook, а затем доставляет их на один или несколько определенных компьютеров. В этой статье описывается, как установить гибридную рабочую роль Runbook на компьютере Linux, как удалить отдельную рабочую роль и их группу.
 
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-Чтобы начать, у вас должны быть следующие компоненты:
+Прежде чем начать, убедитесь, что у вас есть следующее.
 
 ### <a name="a-log-analytics-workspace"></a>Рабочая область Log Analytics
 
@@ -28,23 +30,9 @@ ms.locfileid: "92205190"
 
 Если у вас нет рабочей области Log Analytics Azure Monitor, ознакомьтесь с [руководством по проектированию журналов Azure Monitor](../azure-monitor/platform/design-logs-deployment.md) перед созданием рабочей области.
 
-Если у вас есть рабочая область, но она не связана с учетной записью службы автоматизации, включение функции автоматизации расширяет возможности службы автоматизации Azure, включая поддержку гибридной рабочей роли Runbook. При включении одной из функций службы автоматизации Azure в рабочей области Log Analytics, в частности [Управление обновлениями](update-management/update-mgmt-overview.md) или [Отслеживание изменений и инвентаризации](change-tracking/overview.md), рабочие компоненты автоматически отправляются на компьютер агента.
-
-Чтобы добавить компонент Управление обновлениями в рабочую область, выполните следующий командлет PowerShell:
-
-```powershell-interactive
-    Set-AzOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <logAnalyticsWorkspaceName> -IntelligencePackName "Updates" -Enabled $true
-```
-
-Чтобы добавить функцию Отслеживание изменений и инвентаризации в рабочую область, выполните следующий командлет PowerShell:
-
-```powershell-interactive
-    Set-AzOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <logAnalyticsWorkspaceName> -IntelligencePackName "ChangeTracking" -Enabled $true
-```
-
 ### <a name="log-analytics-agent"></a>Агент Log Analytics
 
-Для работы гибридной рабочей роли Runbook требуется [агент log Analytics](../azure-monitor/platform/log-analytics-agent.md) для поддерживаемой операционной системы Linux.
+Для работы гибридной рабочей роли Runbook требуется [агент log Analytics](../azure-monitor/platform/log-analytics-agent.md) для поддерживаемой операционной системы Linux. Для серверов или компьютеров, размещенных за пределами Azure, можно установить агент Log Analytics с помощью [серверов с поддержкой Arc Azure](../azure-arc/servers/overview.md).
 
 >[!NOTE]
 >После установки агента Log Analytics для Linux не следует изменять разрешения `sudoers.d` папки или ее владельца. Для учетной записи **нксаутоматион** требуется разрешение sudo, то есть пользовательский контекст, в котором выполняется Гибридная Рабочая роль Runbook. Не следует удалять разрешения. Это может привести к критическим изменениям в определенных папках или командах.
@@ -54,17 +42,17 @@ ms.locfileid: "92205190"
 
 Дистрибутивы, поддерживаемые функцией гибридной рабочей роли Runbook:
 
-* Amazon Linux 2012.09–2015.09 (x86/x64)
-* CentOS Linux 5, 6 и 7 (x86/x64)
-* Oracle Linux 5, 6 и 7 (x86/x64)
-* Red Hat Enterprise Linux Server 5, 6 и 7 (x86/x64)
-* Debian GNU/Linux 6, 7 и 8 (x86/x64)
-* Ubuntu 12.04 LTS, 14.04 LTS, 16.04 LTS и 18.04 (x86/x64)
-* SUSE Linux Enterprise Server 12 (x86 и x64)
+* Amazon Linux 2012,09 – 2015,09 (x64)
+* CentOS Linux 5, 6 и 7 (x64)
+* Oracle Linux 5, 6 и 7 (x64)
+* Red Hat Enterprise Linux Server 5, 6 и 7 (x64)
+* Debian GNU/Linux 6, 7 и 8 (x64)
+* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS и 18,04 (x64)
+* SUSE Linux Enterprise Server 12 (x64)
 
 ### <a name="minimum-requirements"></a>Минимальные требования
 
-Минимальные требования для гибридной рабочей роли Runbook Linux:
+Ниже приведены минимальные требования к системе гибридной рабочей роли Runbook системы и пользователя Linux.
 
 * два ядра;
 * 4 ГБ ОЗУ;
@@ -79,6 +67,13 @@ ms.locfileid: "92205190"
 |PAM | Подключаемые модули аутентификации|
 | **Дополнительный пакет** | **Описание** | **Минимальная версия**|
 | PowerShell Core | Для запуска модулей Runbook PowerShell необходимо установить PowerShell Core. Подробные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux). | 6.0.0 |
+
+### <a name="adding-a-machine-to-a-hybrid-runbook-worker-group"></a>Добавление компьютера в группу гибридных рабочих ролей Runbook
+
+Рабочий компьютер можно добавить в группу гибридных рабочих ролей Runbook в одной из учетных записей службы автоматизации. Для компьютеров, на которых размещена система гибридной рабочей роли Runbook, управляемая Управление обновлениями, их можно добавить в группу гибридных рабочих ролей Runbook. Но вы должны использовать одну и ту же учетную запись службы автоматизации как для Управление обновлениями, так и для членства в группе гибридной рабочей роли Runbook.
+
+>[!NOTE]
+>Служба автоматизации Azure [Управление обновлениями](update-management/update-mgmt-overview.md) автоматически устанавливает гибридную рабочую роль Runbook системы на компьютере Azure или не на Azure, для которого включена Управление обновлениями. Однако этот рабочий процесс не зарегистрирован ни в одной из гибридных групп рабочих ролей Runbook в учетной записи службы автоматизации. Чтобы запустить модули Runbook на этих компьютерах, необходимо добавить их в группу гибридных рабочих ролей Runbook. Выполните шаг 4 в разделе [Установка гибридной рабочей роли Runbook Linux](#install-a-linux-hybrid-runbook-worker) , чтобы добавить ее в группу.
 
 ## <a name="supported-linux-hardening"></a>Поддерживаемые усиление защиты Linux
 
@@ -100,15 +95,40 @@ ms.locfileid: "92205190"
 
 <sup>1</sup> Для модулей Runbook PowerShell необходимо установить PowerShell Core на компьютере Linux. Подробные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
+### <a name="network-configuration"></a>Сетевая конфигурация
+
+Требования к сети для гибридной рабочей роли Runbook см. в разделе [Настройка сети](automation-hybrid-runbook-worker.md#network-planning).
+
 ## <a name="install-a-linux-hybrid-runbook-worker"></a>Установка гибридной рабочей роли Runbook для Linux
 
 Чтобы установить и настроить гибридную рабочую роль Runbook Linux, выполните следующие действия.
 
-1. Разверните агент Log Analytics на целевом компьютере.
+1. Включите решение службы автоматизации Azure в рабочей области Log Analytics, выполнив следующую команду в командной строке PowerShell с повышенными привилегиями или в Cloud Shell в [портал Azure](https://portal.azure.com):
 
-    * Для виртуальных машин Azure установите агент Log Analytics для Linux с помощью [расширения виртуальной машины для Linux](../virtual-machines/extensions/oms-linux.md). Расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует виртуальные машины в существующей Log Analytics рабочей области с помощью шаблона Azure Resource Manager или Azure CLI. После установки агента виртуальную машину можно добавить в группу гибридных рабочих ролей Runbook в учетной записи службы автоматизации.
+    ```powershell
+    Set-AzOperationalInsightsIntelligencePack -ResourceGroupName <resourceGroupName> -WorkspaceName <workspaceName> -IntelligencePackName "AzureAutomation" -Enabled $true
+    ```
 
-    * Для виртуальных машин, не относящихся к Azure, установите агент Log Analytics для Linux с помощью параметров развертывания, описанных в статье [Подключение компьютеров Linux к Azure Monitor](../azure-monitor/platform/agent-linux.md) . Этот процесс можно повторить для нескольких компьютеров, чтобы добавить в среду несколько рабочих ролей. После установки агента виртуальные машины можно добавить в группу гибридных рабочих ролей Runbook в учетной записи службы автоматизации.
+2. Разверните агент Log Analytics на целевом компьютере.
+
+    * Для виртуальных машин Azure установите агент Log Analytics для Linux с помощью [расширения виртуальной машины для Linux](../virtual-machines/extensions/oms-linux.md). Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует виртуальные машины в существующей рабочей области Log Analytics. Вы можете использовать шаблон Azure Resource Manager, Azure CLI или политику Azure, чтобы назначить встроенную политику [развертывания агента log Analytics для *Linux* или виртуальных машин *Windows*](../governance/policy/samples/built-in-policies.md#monitoring) . После установки агента можно добавить компьютер в группу гибридных рабочих ролей Runbook в учетной записи службы автоматизации.
+
+    * Для компьютеров, не относящихся к Azure, можно установить агент Log Analytics с помощью [серверов с поддержкой Arc Azure](../azure-arc/servers/overview.md). Серверы с поддержкой Arc поддерживают развертывание агента Log Analytics с помощью следующих методов.
+
+        - Использование платформы расширений виртуальных машин.
+
+            Эта функция на серверах с поддержкой Arc Azure позволяет развернуть расширение виртуальной машины агента Log Analytics на сервере Windows и (или) Linux, отличном от Azure. Для управления расширениями виртуальной машины можно использовать следующие методы на гибридных компьютерах или серверах, управляемых с помощью серверов с поддержкой ARC:
+
+            - [портал Azure](../azure-arc/servers/manage-vm-extensions-portal.md).
+            - [Интерфейс командной строки Azure](../azure-arc/servers/manage-vm-extensions-cli.md)
+            - [Azure PowerShell](../azure-arc/servers/manage-vm-extensions-powershell.md)
+            - [Шаблоны диспетчер ресурсов](../azure-arc/servers/manage-vm-extensions-template.md) Azure
+
+        - Использование политики Azure.
+
+            При таком подходе вы используете политику Azure [Deploy log Analytics Agent на компьютерах Linux или Windows Azure Arc](../governance/policy/samples/built-in-policies.md#monitoring) , чтобы выполнять аудит, если на сервере с поддержкой Arc установлен агент log Analytics. Если агент не установлен, он автоматически развертывает его с помощью задачи исправления. Кроме того, если планируется отслеживать компьютеры с Azure Monitor для виртуальных машин, используйте инициативу [Enable Azure Monitor для виртуальных машин](../governance/policy/samples/built-in-initiatives.md#monitoring) для установки и настройки агента log Analytics.
+
+        Мы рекомендуем установить агент Log Analytics для Windows или Linux с помощью политики Azure.
 
     > [!NOTE]
     > Для управления конфигурацией компьютеров, поддерживающих гибридную рабочую роль Runbook с настройкой требуемого состояния (DSC), необходимо добавить компьютеры в качестве узлов DSC.
@@ -116,21 +136,21 @@ ms.locfileid: "92205190"
     > [!NOTE]
     > Во время установки гибридной рабочей роли Linux должна присутствовать учетная запись [nxautomation](automation-runbook-execution.md#log-analytics-agent-for-linux) с соответствующими разрешениями для работы команды sudo. Если вы попытаетесь установить рабочую роль, а учетная запись отсутствует или не имеет соответствующих разрешений, установка завершится сбоем.
 
-2. Убедитесь, что агент сообщает о рабочей области.
+3. Убедитесь, что агент сообщает о рабочей области.
 
     Агент Log Analytics для Linux подключает компьютеры к рабочей области Log Analytics Azure Monitor. При установке агента на компьютере и подключении его к рабочей области автоматически загружаются компоненты, необходимые для работы гибридного рабочего процесса Runbook.
 
     Подключение агента к рабочей области Log Analytics занимает несколько минут, и после этого вы можете выполнить следующий запрос и убедиться, что он отправляет данные пульса в рабочую область.
 
     ```kusto
-    Heartbeat 
+    Heartbeat
     | where Category == "Direct Agent"
     | where TimeGenerated > ago(30m)
     ```
 
     В результатах поиска должны отобразиться записи пульса для компьютера, указывающие, что он подключен и сообщает службе. По умолчанию каждый агент перенаправляет запись пульса в назначенную ему рабочую область.
 
-3. Выполните следующую команду, чтобы добавить компьютер в группу гибридной рабочей роли Runbook, указав значения параметров `-w` ,, `-k` `-g` и `-e` .
+4. Выполните следующую команду, чтобы добавить компьютер в группу гибридной рабочей роли Runbook, указав значения параметров `-w` ,, `-k` `-g` и `-e` .
 
     Сведения, необходимые для параметров, можно получить `-k` на `-e` странице **ключи** в учетной записи службы автоматизации. Выберите **ключи** в разделе **Параметры учетной записи** в левой части страницы.
 
@@ -148,7 +168,7 @@ ms.locfileid: "92205190"
    sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/onboarding.py --register -w <logAnalyticsworkspaceId> -k <automationSharedKey> -g <hybridGroupName> -e <automationEndpoint>
    ```
 
-4. После выполнения команды на странице группы гибридных рабочих ролей в учетной записи службы автоматизации отобразится новая группа и число членов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице "Группы гибридных рабочих ролей", а затем выбрать плитку **Гибридные рабочие роли**. На странице "Гибридные рабочие роли" отображается список элементов группы.
+5. Проверьте развертывание после завершения скрипта. На странице **гибридные группы рабочих ролей Runbook** в учетной записи службы автоматизации на вкладке **Гибридная группа рабочих ролей Runbook пользователя** отображается новая или существующая группа и число членов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице, в меню слева выберите **гибридные рабочие роли**. На странице **гибридные рабочие роли** можно увидеть каждый член группы в списке.
 
     > [!NOTE]
     > Если вы используете Log Analytics расширение виртуальной машины для Linux для виртуальной машины Azure, мы рекомендуем установить `autoUpgradeMinorVersion` в `false` качестве версий автоматического обновления, которые могут вызвать проблемы с гибридной рабочей ролью Runbook. Сведения об обновлении расширения вручную см. в разделе [Развертывание с помощью Azure CLI](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
@@ -161,7 +181,7 @@ ms.locfileid: "92205190"
  sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --false <logAnalyticsworkspaceId>
  ```
 
-## <a name="remove-the-hybrid-runbook-worker-from-an-on-premises-linux-machine"></a><a name="remove-linux-hybrid-runbook-worker"></a>Удаление гибридной рабочей роли Runbook с локального компьютера Linux
+## <a name="remove-the-hybrid-runbook-worker"></a><a name="remove-linux-hybrid-runbook-worker"></a>Удаление гибридной рабочей роли Runbook
 
 Вы можете использовать команду `ls /var/opt/microsoft/omsagent` в гибридной рабочей роли Runbook, чтобы получить идентификатор рабочей области. При этом создается папка с именем, соответствующим идентификатору рабочей области.
 

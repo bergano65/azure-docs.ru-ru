@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: 31d833d1a6e9c7715ca13582c09f5f72564d683a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: bccbfed96dd6cd87bdfe986baf4b52817a160ac0
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016145"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95533367"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking-using-azure-cli"></a>Создание виртуальной машины Linux с ускоренной сетью с помощью Azure CLI
 
@@ -48,7 +48,7 @@ ms.locfileid: "95016145"
 * **RHEL 7,4 или более поздней версии**
 * **CentOS 7,4 или более поздней версии**
 * **CoreOS Linux**
-* **Debian "Stretch" с бэкпортированным ядром**
+* **Debian "Stretch" с поддержкой однопортовых ядер, Debian "бустер" или более поздней версии**
 * **Oracle Linux 7,4 и более поздних версий с ядром, совместимым с Red Hat (RHCK)**
 * **Oracle Linux 7,5 и более поздних версий с UEK версии 5**
 * **FreeBSD 10,4, 11,1 & 12,0 или более поздней версии**
