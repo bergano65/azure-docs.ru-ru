@@ -7,12 +7,12 @@ ms.author: bwren
 ms.reviewer: bwren
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 8710e0cdd6c930338009fb2b7f3bd98fafcfad3e
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: 18ece47187e3f83277d7d925ad958d2ede7cb337
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95411569"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030022"
 ---
 # <a name="query-exported-data-from-azure-monitor-using-azure-data-explorer-preview"></a>Запрос экспортированных данных из Azure Monitor с помощью обозреватель данных Azure (Предварительная версия)
 Экспорт данных из Azure Monitor в учетную запись хранения Azure обеспечивает недорогое хранение и возможность перераспределения журналов в разные регионы. Используйте обозреватель данных Azure для запроса данных, экспортированных из рабочих областей Log Analytics. После настройки поддерживаемые таблицы, отправленные из рабочих областей в учетную запись хранения Azure, будут доступны в качестве источника данных для Azure обозреватель данных.
@@ -122,7 +122,7 @@ Write-Host -ForegroundColor Green $createMapping
 
 >[!TIP]
 >* Скопируйте, вставьте и запустите выходные данные скрипта в клиентском средстве Azure обозреватель данных, чтобы создать таблицу и сопоставление.
->* Если вы хотите использовать все данные внутри контейнера, можно изменить скрипт и изменить URL-адрес на " https://your.blob.core.windows.net/containername ; Секкэй "
+>* Для использования всех данных в контейнере измените скрипт и измените URL-адрес на " https://your.blob.core.windows.net/containername ; Секкэй "
 
 ## <a name="query-the-exported-data-from-azure-data-explorer"></a>Запрос экспортированных данных из Azure обозреватель данных 
 
@@ -134,6 +134,6 @@ external_table("HBTest","map") | take 10000
 
 [![Запрос Log Analytics экспортированных данных](media/azure-data-explorer-query-storage/external-table-query.png)](media/azure-data-explorer-query-storage/external-table-query.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о [написании запросов в Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/write-queries)

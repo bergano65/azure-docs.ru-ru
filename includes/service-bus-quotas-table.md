@@ -9,11 +9,11 @@ ms.date: 07/15/2020
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: 764d75872eb1bad0647235cd70f9984ebd7789bd
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95564068"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026775"
 ---
 В таблице ниже содержатся сведения о квотах, применяемых при обмене сообщениями через Служебную шину Azure. Сведения о ценах и других квотах для Служебной шины см. на странице [цен на Служебную шину](https://azure.microsoft.com/pricing/details/service-bus/).
 

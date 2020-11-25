@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 51e1fd18b52d7e215ba43be540156199fb41778e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f08a6b3f7abfc79bff6baff2a339053905612535
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185321"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027502"
 ---
 #### <a name="to-attach-the-sas-cables"></a>Чтобы присоединить кабели SAS:
 1. Определите, какой корпус основной, а какой EBOD. Корпуса можно идентифицировать, изучив их задние панели. Руководствуйтесь следующим рисунком. 
@@ -22,7 +22,7 @@ ms.locfileid: "67185321"
    |:--- |:--- |
    | 1 |Основной корпус |
    | 2 |Корпус EBOD |
-2. Найдите серийные номера на основном корпусе и корпусе EBOD. Наклейка с серийным номером расположена на задней консоли каждого корпуса. Серийные номера должны быть одинаковыми на обоих корпусах. [обратитесь в службу поддержки Майкрософт](../articles/storsimple/storsimple-contact-microsoft-support.md) , если серийные номера не совпадают. Расположение наклейки с серийным номером показано на следующем рисунке.
+2. Найдите серийные номера на основном корпусе и корпусе EBOD. Наклейка с серийным номером расположена на задней консоли каждого корпуса. Серийные номера должны быть одинаковыми на обоих корпусах. [обратитесь в службу поддержки Майкрософт](../articles/storsimple/storsimple-8000-contact-microsoft-support.md) , если серийные номера не совпадают. Расположение наклейки с серийным номером показано на следующем рисунке.
    
     ![Вид корпуса сзади (показан серийный номер)](./media/storsimple-sas-cable-8600/HCSRearviewofenclosureindicatinglocationofserialnumbersticker.png)
    
@@ -51,4 +51,3 @@ ms.locfileid: "67185321"
       | 4 |Контроллер EBOD 1 |
       | 5, 6 |Порты SAS на основном корпусе (с меткой EBOD) |
       | 7, 8 |Порты SAS на корпусе EBOD (порт A) |
-

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9020e364a5c8d7a59dad5549e88036dc9edaad7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c30ad26f079e6353dc4763b9ae968c33882d8ab6
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90089672"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029353"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Удостоверение устройств и виртуализация настольных систем
 
@@ -52,16 +52,15 @@ ms.locfileid: "90089672"
 |   |   | Текущие окна | Не постоянный | Да<sup>5</sup> |
 |   |   | Устройства Windows нижнего уровня | Не постоянный | Да<sup>6</sup> |
 |   | Управляемые<sup>4</sup> | Windows Current и Windows нижнего уровня | Постоянный | Да |
-|   |   | Текущие окна | Не постоянный | Нет |
+|   |   | Текущие окна | Не постоянный | нет |
 |   |   | Устройства Windows нижнего уровня | Не постоянный | Да<sup>6</sup> |
-| присоединение к Azure AD; | Федеративные | Текущие окна | Постоянный | Нет |
-|   |   |   | Не постоянный | Нет |
-|   | Управляемые | Текущие окна | Постоянный | Нет |
-|   |   |   | Не постоянный | Нет |
-| регистрация в Azure AD; | Федеративные и управляемые | Windows: текущая или Windows-уровень вниз | Постоянный/не постоянный | Не применимо |
+| присоединение к Azure AD; | Федеративные | Текущие окна | Постоянный | нет |
+|   |   |   | Не постоянный | нет |
+|   | Управляемые | Текущие окна | Постоянный | нет |
+|   |   |   | Не постоянный | нет |
+| Зарегистрировано в Azure AD | Федеративные и управляемые | Windows: текущая или Windows-уровень вниз | Постоянный/не постоянный | Не применимо |
 
-<sup>1</sup> **текущие устройства Windows** представляют собой Windows 10, Windows Server 2016 и Windows Server 2019.
-
+<sup>1</sup> **текущие устройства Windows** представляют собой Windows 10, Windows Server 2016 v1803 или более поздней версии и Windows Server 2019.
 <sup>2</sup> устройства **Windows нижнего уровня** представляют Windows 7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012 и Windows Server 2012 R2. Сведения о поддержке в Windows 7 см. в статье [Поддержка Windows 7 в конце концов](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support). Сведения о поддержке Windows Server 2008 R2 см. в разделе [Подготовка к завершению поддержки Windows server 2008](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
 <sup>3</sup> среда **Федеративной** инфраструктуры удостоверений представляет среду с поставщиком удостоверений, например AD FS или другим сторонним IDP.
@@ -94,6 +93,6 @@ ms.locfileid: "90089672"
    - Получив стратегию для определения непостоянных гибридных устройств, присоединенных к Azure AD (например, с помощью префикса "отображаемое имя компьютера"), вы должны быть более агрессивными для очистки этих устройств, чтобы гарантировать, что ваш каталог не будет использоваться с большим числом устаревших устройств.
    - Для неустойчивых развертываний VDI в Windows на текущий и более ранних уровнях следует удалить устройства с **аппроксимателастлогонтиместамп** старше 15 дней.
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка гибридного Azure Active Directory Join для Федеративной среды](hybrid-azuread-join-federated-domains.md)

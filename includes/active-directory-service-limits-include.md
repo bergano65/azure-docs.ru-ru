@@ -9,11 +9,11 @@ ms.date: 09/10/2020
 ms.author: curtand
 ms.custom: include file
 ms.openlocfilehash: 42dfa499e0a44d0b468d3a234e9dc88904c361b0
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95563856"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027638"
 ---
 Ниже перечислены ограничения на использование и другие ограничения для службы Azure Active Directory (Azure AD).
 

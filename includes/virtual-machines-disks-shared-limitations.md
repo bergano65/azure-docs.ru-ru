@@ -9,11 +9,11 @@ ms.date: 09/30/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 76e52758bf88dde9cdc68dad974f0b65fd55140f
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95561899"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027096"
 ---
 Включение общих дисков доступно только для подмножества типов дисков. В настоящее время общие диски разрешены только для Ultra дисков и твердотельных накопителей уровня "Премиум". Для каждого управляемого диска с включенными общими дисками действуют следующие ограничения, упорядоченные по типу диска:
 

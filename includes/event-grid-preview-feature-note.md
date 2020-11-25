@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/06/2018
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: d32beb2d799a60cb9c5be061c39e4ec834da8dcf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 644669ea27938e385e11f3b1911a23ab30829a95
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "66814722"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028426"
 ---
 Эта функция предоставляется в предварительной версии. Для этого нужно установить расширение предварительной версии или модуль.
 
@@ -21,7 +21,7 @@ ms.locfileid: "66814722"
 
 Для Azure CLI вам потребуется [расширение Сетки событий](/cli/azure/azure-cli-extensions-list).
 
-В [CloudShell](/azure/cloud-shell/quickstart):
+В [CloudShell](../articles/cloud-shell/quickstart.md):
 
 * Если вы установили расширение ранее, обновите его `az extension update -n eventgrid`.
 * Если расширение еще не установлено, установите его `az extension add -n eventgrid`.
@@ -36,7 +36,7 @@ ms.locfileid: "66814722"
 
 Для PowerShell вам потребуется [модуль AzureRM.EventGrid](https://www.powershellgallery.com/packages/AzureRM.EventGrid/0.4.1-preview).
 
-В [CloudShell](/azure/cloud-shell/quickstart-powershell):
+В [CloudShell](../articles/cloud-shell/quickstart-powershell.md):
 
 * Установите модуль `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`.
 

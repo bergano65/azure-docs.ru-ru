@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/23/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: a8d1b27fc040e6aed0bdeeb86b2e6c4df13f87c3
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 6986651d2b48d82382aa26a0a3947104c7e09981
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "92540909"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028395"
 ---
 Вы можете подключиться к виртуальной машине, которая развернута в вашей виртуальной сети, создав подключение к удаленному рабочему столу. Лучший способ проверить, можете ли вы подключиться к своей виртуальной машине, — подключиться, используя частный IP-адрес, а не имя компьютера. Таким образом, вы проверяете, можете ли вы подключиться, а не правильно ли настроено разрешение имен.
 
@@ -50,4 +50,4 @@ ms.locfileid: "92540909"
 
 * Если вы можете подключиться к виртуальной машине с помощью частного IP-адреса, но не имени компьютера, проверьте, правильно ли настроено имя DNS. Дополнительные сведения о том, как работает разрешение имен для виртуальных машин, см. в статье [Разрешение имен для ВМ и экземпляров ролей](../articles/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
-* Дополнительные сведения о подключениях RDP см. в статье [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](../articles/virtual-machines/windows/troubleshoot-rdp-connection.md).
+* Дополнительные сведения о подключениях RDP см. в статье [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](../articles/virtual-machines/troubleshooting/troubleshoot-rdp-connection.md).

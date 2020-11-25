@@ -1,14 +1,14 @@
 ---
 title: Включение расширения виртуальной машины с помощью Azure PowerShell
 description: В этой статье описывается, как развернуть расширения виртуальной машины на серверах с поддержкой дуги Azure, работающих в гибридных облачных средах, с помощью Azure PowerShell.
-ms.date: 11/06/2020
+ms.date: 11/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5ed9db23cd19814ff05c2f142f51cea869f2c2d4
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 40f3d6ab98411d5b8e42f4f79817c66f56fdaaef
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359074"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029036"
 ---
 # <a name="enable-azure-vm-extensions-using-azure-powershell"></a>Включение расширений виртуальной машины Azure с помощью Azure PowerShell
 
@@ -56,14 +56,14 @@ PS C:\> New-AzConnectedMachineExtension -Name custom -ResourceGroupName myResour
 # Build settings
     $settings = @{
       secretsManagementSettings = @{
-       observedCertificates = @{
+       observedCertificates = @(
         "observedCert1"
-       }
+       )
       certificateStoreLocation = "myMachineName" # For Linux use "/var/lib/waagent/Microsoft.Azure.KeyVault.Store/"
       certificateStore = "myCertificateStoreName"
       pollingIntervalInS = "pollingInterval"
       }
-    authenticationLocationSettings = @{
+    authenticationSettings = @{
      msiEndpoint = "http://localhost:40342/metadata/identity"
      }
     }
@@ -80,7 +80,7 @@ PS C:\> New-AzConnectedMachineExtension -Name custom -ResourceGroupName myResour
 
 Чтобы получить список расширений виртуальной машины на сервере с поддержкой Arc, используйте [Get-азконнектедмачиникстенсион](/powershell/module/az.connectedmachine/get-azconnectedmachineextension) с `-MachineName` `-ResourceGroupName` параметрами и.
 
-Пример
+Пример.
 
 ```powershell
 Get-AzConnectedMachineExtension -ResourceGroupName myResourceGroup -MachineName myMachineName
@@ -100,7 +100,7 @@ custom  westus2   CustomScriptExtension Succeeded
 Remove-AzConnectedMachineExtension -MachineName myMachineName -ResourceGroupName myResourceGroup -Name OmsAgentforLinux
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Расширения виртуальных машин можно развертывать, администрировать и удалять с помощью [Azure CLI](manage-vm-extensions-cli.md), из [портал Azure](manage-vm-extensions-portal.md)или [шаблонов Azure Resource Manager](manage-vm-extensions-template.md).
 

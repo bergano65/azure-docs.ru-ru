@@ -2,15 +2,15 @@
 title: Руководство по планированию задачи записи контроля доступа
 description: В этом руководстве описано, как запустить задачу реестра контейнеров Azure по заданному расписанию, задав один или несколько триггеров таймера.
 ms.topic: article
-ms.date: 06/27/2019
-ms.openlocfilehash: 3202b5d8c426165d81129f1affa69b3a3d515ce9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/24/2020
+ms.openlocfilehash: 13a4ccac4ea97538583c1c063a6dc61e4d25686a
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78402880"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030617"
 ---
-# <a name="run-an-acr-task-on-a-defined-schedule"></a>Выполнение задачи записи контроля доступа по определенному расписанию
+# <a name="tutorial-run-an-acr-task-on-a-defined-schedule"></a>Учебник. Запуск задачи записи контроля доступа по определенному расписанию
 
 В этом учебнике показано, как выполнить [задачу записи контроля](container-registry-tasks-overview.md) доступа по расписанию. Запланируйте задачу, настроив один или несколько *триггеров таймера*. Триггеры таймера можно использовать отдельно или в сочетании с другими триггерами задач.
 
@@ -25,8 +25,7 @@ ms.locfileid: "78402880"
 * Запустите рабочую нагрузку контейнера для запланированных операций обслуживания. Например, запустите контейнерное приложение, чтобы удалить ненужные образы из реестра.
 * Выполнение набора тестов на рабочем образе во время рабочего дня в рамках мониторинга активного сайта.
 
-Для выполнения примеров, описанных в этой статье, можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вы хотите использовать его локально, требуется версия 2.0.68 или более поздняя. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
-
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 ## <a name="about-scheduling-a-task"></a>О планировании задачи
 
@@ -37,19 +36,29 @@ ms.locfileid: "78402880"
     * Укажите несколько триггеров таймера при создании задачи или добавьте их позже.
     * При необходимости задайте имя триггеров для упрощения управления, или задачи записи контроля доступа будут предоставлять имена триггеров по умолчанию.
     * Если расписания таймера перекрываются одновременно, задачи записи контроля доступа запускают задачу в запланированное время для каждого таймера.
-* **Другие триггеры задач** . в задаче, активируемом с помощью таймера, можно также включить триггеры на основе изменений [исходного кода](container-registry-tutorial-build-task.md) или [базовых образов](container-registry-tutorial-base-image-update.md). Как и другие задачи контроля учетных записей, вы также можете запустить запланированную задачу [вручную][az-acr-task-run] .
+* **Другие триггеры задач** . в задаче, активируемом с помощью таймера, можно также включить триггеры на основе изменений [исходного кода](container-registry-tutorial-build-task.md) или [базовых образов](container-registry-tutorial-base-image-update.md). Как и другие задачи контроля учетных записей, можно также [вручную запустить][az-acr-task-run] запланированную задачу.
 
 ## <a name="create-a-task-with-a-timer-trigger"></a>Создание задачи с триггером таймера
 
+### <a name="task-command"></a>Командная строка задачи
+
+Сначала заполните следующую переменную среды оболочки значением, подходящим для вашей среды. Этот шаг не является обязательным, но он упрощает выполнение многолинейных команд Azure CLI в этом руководстве. Если вы не заполните переменную среды, необходимо вручную заменить каждое значение в любом месте в примерах команд.
+
+[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+
+```console
+ACR_NAME=<registry-name>        # The name of your Azure container registry
+```
+
 При создании задачи с помощью команды [AZ контроля доступа Task Create][az-acr-task-create] можно дополнительно добавить триггер таймера. Добавьте `--schedule` параметр и передайте выражение cron для таймера.
 
-В качестве простого примера приведенная ниже команда вызывает запуск `hello-world` образа из DOCKER Hub каждый день в 21:00 UTC. Задача выполняется без контекста исходного кода.
+В качестве простого примера Следующая задача запускает запуск `hello-world` образа из реестра контейнеров Майкрософт каждый день в 21:00 UTC. Задача выполняется без контекста исходного кода.
 
 ```azurecli
 az acr task create \
-  --name mytask \
-  --registry myregistry \
-  --cmd hello-world \
+  --name timertask \
+  --registry $ACR_NAME \
+  --cmd mcr.microsoft.com/hello-world \
   --schedule "0 21 * * *" \
   --context /dev/null
 ```
@@ -57,30 +66,32 @@ az acr task create \
 Выполните команду [az acr task show][az-acr-task-show], чтобы убедиться, что триггер таймера настроен. По умолчанию также включен базовый триггер обновления образа.
 
 ```azurecli
-az acr task show --name mytask --registry registry --output table
+az acr task show --name timertask --registry $ACR_NAME --output table
 ```
 
 ```output
 NAME      PLATFORM    STATUS    SOURCE REPOSITORY       TRIGGERS
 --------  ----------  --------  -------------------     -----------------
-mytask    linux       Enabled                           BASE_IMAGE, TIMER
+timertask linux       Enabled                           BASE_IMAGE, TIMER
 ```
+
+## <a name="trigger-the-task"></a>Активация задачи
 
 Запустите задачу вручную с помощью команды [AZ запись контроля][az-acr-task-run] доступа, чтобы убедиться, что она правильно настроена:
 
 ```azurecli
-az acr task run --name mytask --registry myregistry
+az acr task run --name timertask --registry $ACR_NAME
 ```
 
-Если контейнер выполняется успешно, выходные данные похожи на следующие:
+Если контейнер выполняется успешно, выходные данные похожи на приведенные ниже. В сокращенном примере выходных данных показаны только основные шаги.
 
 ```output
 Queued a run with ID: cf2a
 Waiting for an agent...
-2019/06/28 21:03:36 Using acb_vol_2ca23c46-a9ac-4224-b0c6-9fde44eb42d2 as the home volume
-2019/06/28 21:03:36 Creating Docker network: acb_default_network, driver: 'bridge'
+2020/11/20 21:03:36 Using acb_vol_2ca23c46-a9ac-4224-b0c6-9fde44eb42d2 as the home volume
+2020/11/20 21:03:36 Creating Docker network: acb_default_network, driver: 'bridge'
 [...]
-2019/06/28 21:03:38 Launching container with name: acb_step_0
+2020/11/20 21:03:38 Launching container with name: acb_step_0
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -90,17 +101,16 @@ This message shows that your installation appears to be working correctly.
 По истечении запланированного времени выполните команду [AZ контроля доступа Task List-runs][az-acr-task-list-runs] , чтобы убедиться, что таймер активировал задачу ожидаемым образом:
 
 ```azurecli
-az acr task list-runs --name mytask --registry myregistry --output table
+az acr task list-runs --name timertask --registry $ACR_NAME --output table
 ```
 
 При успешном выполнении таймера выходные данные должны выглядеть следующим образом:
 
 ```output
-RUN ID    TASK     PLATFORM    STATUS     TRIGGER    STARTED               DURATION
---------  -------- ----------  ---------  ---------  --------------------  ----------
-[...]
-cf2b      mytask   linux       Succeeded  Timer      2019-06-28T21:00:23Z  00:00:06
-cf2a      mytask   linux       Succeeded  Manual     2019-06-28T20:53:23Z  00:00:06
+RUN ID    TASK       PLATFORM    STATUS     TRIGGER    STARTED               DURATION
+--------  ---------  ----------  ---------  ---------  --------------------  ----------
+ca15      timertask  linux       Succeeded  Timer      2020-11-20T21:00:23Z  00:00:06
+ca14      timertask  linux       Succeeded  Manual     2020-11-20T20:53:35Z  00:00:06
 ```
 
 ## <a name="manage-timer-triggers"></a>Управление триггерами таймера
@@ -109,12 +119,12 @@ cf2a      mytask   linux       Succeeded  Manual     2019-06-28T20:53:23Z  00:00
 
 ### <a name="add-or-update-a-timer-trigger"></a>Добавление или обновление триггера таймера
 
-После создания задачи можно добавить триггер таймера с помощью команды AZ контроля доступа к [таймеру добавления][az-acr-task-timer-add] . В следующем примере добавляется имя триггера таймера *timer2* в *MyTask* , созданное ранее. Этот таймер активирует задачу каждый день в 10:30 UTC.
+После создания задачи можно добавить триггер таймера с помощью команды AZ контроля доступа к [таймеру добавления][az-acr-task-timer-add] . В следующем примере добавляется имя триггера таймера *timer2* в *тимертаск* , созданное ранее. Этот таймер активирует задачу каждый день в 10:30 UTC.
 
 ```azurecli
 az acr task timer add \
-  --name mytask \
-  --registry myregistry \
+  --name timertask \
+  --registry $ACR_NAME \
   --timer-name timer2 \
   --schedule "30 10 * * *"
 ```
@@ -123,8 +133,8 @@ az acr task timer add \
 
 ```azurecli
 az acr task timer update \
-  --name mytask \
-  --registry myregistry \
+  --name timertask \
+  --registry $ACR_NAME \
   --timer-name timer2 \
   --schedule "30 11 * * *"
 ```
@@ -134,7 +144,7 @@ az acr task timer update \
 Команда [AZ запись контроля доступа Task List][az-acr-task-timer-list] показывает триггеры таймера, настроенные для задачи:
 
 ```azurecli
-az acr task timer list --name mytask --registry myregistry
+az acr task timer list --name timertask --registry $ACR_NAME
 ```
 
 Выходные данные примера:
@@ -156,12 +166,12 @@ az acr task timer list --name mytask --registry myregistry
 
 ### <a name="remove-a-timer-trigger"></a>Удаление триггера таймера
 
-Используйте команду [AZ запись контроля][az-acr-task-timer-remove] доступа для удаления триггера таймера из задачи. В следующем примере удаляется триггер *timer2* из *MyTask*:
+Используйте команду [AZ запись контроля][az-acr-task-timer-remove] доступа для удаления триггера таймера из задачи. В следующем примере удаляется триггер *timer2* из *тимертаск*:
 
 ```azurecli
 az acr task timer remove \
-  --name mytask \
-  --registry myregistry \
+  --name timertask \
+  --registry $ACR_NAME \
   --timer-name timer2
 ```
 
@@ -209,7 +219,7 @@ az group delete --resource-group $RES_GROUP
 az ad sp delete --id http://$ACR_NAME-pull
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как создавать задачи реестра контейнеров Azure, которые автоматически активируются таймером. 
 

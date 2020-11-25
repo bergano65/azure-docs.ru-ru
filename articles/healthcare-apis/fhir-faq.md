@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 08/03/2020
 ms.author: matjazl
-ms.openlocfilehash: 744bcfe196629f76c5505f36ef9c8c224fefe601
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d013af82a862f1bc6b5324e7523aeea5593a4f94
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95909073"
+ms.locfileid: "96030668"
 ---
 # <a name="frequently-asked-questions-about-the-azure-api-for-fhir"></a>Часто задаваемые вопросы об API Azure для FHIR
 
@@ -122,7 +122,7 @@ $export является частью спецификации FHIR: https://hl7
 
 ### <a name="where-can-i-see-an-example-of-connecting-a-web-application-to-azure-api-for-fhir"></a>Где можно увидеть пример подключения веб-приложения к API Azure для FHIR?
 
-У нас есть [страница GitHub с архитектурой работоспособности](https://github.com/microsoft/health-architectures) , которая содержит примеры приложений и сценариев. Здесь показано, как подключить веб-приложение к Azure API для FHIR.  
+У нас есть [страница GitHub с архитектурой работоспособности](https://aka.ms/health-architectures) , которая содержит примеры приложений и сценариев. Здесь показано, как подключить веб-приложение к Azure API для FHIR.  
 
 ## <a name="azure-api-for-fhir-features-and-services"></a>API Azure для функций и служб FHIR 
 

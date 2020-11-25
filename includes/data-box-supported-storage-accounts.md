@@ -6,11 +6,11 @@ ms.topic: include
 ms.date: 09/git14/2020
 ms.author: alkohli
 ms.openlocfilehash: 25c2ea04cd062554a975c63aae9b97846e646d68
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95556117"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028434"
 ---
 Ниже приведен список поддерживаемых учетных записей хранения и типов хранилищ для устройства Data Box. Полный список всех типов учетных записей хранения и все их возможности см. в [этом разделе](../articles/storage/common/storage-account-overview.md#types-of-storage-accounts).
 

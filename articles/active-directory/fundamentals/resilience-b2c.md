@@ -13,12 +13,12 @@ ms.reviewer: ''
 ms.date: 11/30/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fda9378a41e0d98276957a6fad75db2c20e6e4e9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ba7b8ff2555fd7014cf16f66745721c6425ff868
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95920048"
+ms.locfileid: "96029529"
 ---
 # <a name="build-resilience-in-your-customer-identity-and-access-management-with-azure-active-directory-b2c"></a>Отказоустойчивость сборок в управлении удостоверениями и доступом клиентов с помощью Azure Active Directory B2C
 
@@ -46,10 +46,6 @@ ms.locfileid: "95920048"
 
 - [Мониторинг и анализ](resilience-with-monitoring-alerting.md). Оценка работоспособности службы за счет мониторинга ключевых показателей и обнаружения сбоев и нарушений производительности с помощью предупреждений.
 
-- Ресурсы устойчивости для разработчиков Azure AD B2C
-  - [Устойчивая работа конечного пользователя](resilient-end-user-experience.md)
-  - [Устойчивые интерфейсы с внешними процессами](resilient-external-processes.md)
-  - [Обеспечение устойчивости с помощью рекомендаций для разработчиков](resilience-b2c-developer-best-practices.md)
-  - [Устойчивость с помощью мониторинга и аналитики](resilience-with-monitoring-alerting.md)
 - [Устойчивость к сборке в инфраструктуре проверки подлинности](resilience-in-infrastructure.md)
+
 - [Повышение устойчивости проверки подлинности и авторизации в приложениях](resilience-app-development-overview.md)

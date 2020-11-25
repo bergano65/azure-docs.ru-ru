@@ -9,11 +9,11 @@ ms.date: 10/30/2019
 ms.author: zivr
 ms.custom: include file
 ms.openlocfilehash: daed8dc62fdfd86ecf785a0bfd83b2b6c0b4cc03
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95561080"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026514"
 ---
 Размещение виртуальных машин в одном регионе сокращает физическое расстояние между экземплярами. Поместив их в одну зону доступности, вы также объедините их физически ближе друг к другу. Тем не менее, по мере роста объема Azure одна зона доступности может охватывать несколько физических центров обработки данных, что может привести к задержке в сети, влияющей на приложение. 
 

@@ -11,18 +11,16 @@ author: knicholasa
 ms.author: nichola
 manager: martinco
 ms.date: 11/23/2020
-ms.openlocfilehash: f6078ed96106d6a53b55195ee950e2165334221d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c2c2f9d0ad7bfa50f543b57326b9fc8dab0069c6
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95920079"
+ms.locfileid: "96029308"
 ---
 # <a name="increase-resilience-of-authentication-and-authorization-applications-you-develop"></a>Повышение устойчивости разрабатываемых приложений проверки подлинности и авторизации
 
 Microsoft Identity использует современные проверки подлинности и авторизации на основе маркеров. Это означает, что приложение получает маркеры от поставщика удостоверений для проверки подлинности пользователя и авторизации приложения для вызова защищенных интерфейсов API.
-
-![Изображение вызова Microsoft Identity в приложении](media/resilience-app-development-overview/app-overview.png)
 
 Токен действителен в течение определенного промежутка времени, по истечении которого приложение должно получить новое. В редких случаях вызов для получения маркера может завершиться сбоем из-за проблемы, например сбоя сети или инфраструктуры или сбоя службы проверки подлинности. В этом документе описаны шаги, которые разработчик может предпринять для повышения устойчивости в своих приложениях, если происходит сбой при получении маркера.
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/30/2020
 ms.author: sharadag
 ms.custom: include file
-ms.openlocfilehash: 931d9d6da8ac0f8400aa0ec8918901e5e337439f
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: eb3cc6a37e9116b2a28b72fc7a3779aafb2a1e21
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94482797"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026896"
 ---
 При создании собственного сертификата разрешены следующие ЦС:
 
@@ -55,6 +55,7 @@ ms.locfileid: "94482797"
 - Корневой ЦС Go Daddy — G2
 - Защищенный ЦС Go Daddy — G2
 - Давайте шифровать центр X3
+- МС e-Сзигно root ЦС 2009
 - QuoVadis Root CA2 G3
 - ЦС RSA RapidSSL 2018
 - RootCA1 Communication Security

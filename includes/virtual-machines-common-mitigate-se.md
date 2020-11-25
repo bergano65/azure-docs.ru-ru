@@ -9,11 +9,11 @@ ms.date: 11/12/2019
 ms.author: cynthn;kareni
 ms.custom: include file
 ms.openlocfilehash: 8594ce713a8675505e0ee3051018b05992b160a9
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95554668"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027831"
 ---
 **Последнее обновление документа**: 12 ноября 2019 10:00 по тихоокеанскому времени.
 
