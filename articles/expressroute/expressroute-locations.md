@@ -6,14 +6,14 @@ author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 10/26/2020
+ms.date: 11/25/2020
 ms.author: duau
-ms.openlocfilehash: 30d1fb62b661d898ba06548e5e3a2c7d31b97794
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8b344f38dd5effb34adec7943a444ce51ed513a9
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95906489"
+ms.locfileid: "96122547"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -108,10 +108,11 @@ ms.locfileid: "95906489"
 | **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживается |Поддерживается |Амстердам, Атланта, Берлин, Canberra2, Чикаго, Далласе, Dubai2, Дублин, Франкфурт, Geneva, Гонконг, САР, Лондон, London2, Лос-Анджелес, Лос Angeles2, Мельбурн, Майами, Милан, Нью-Йорк, Осака, Париж, Сан--Паулу, Сиэтл, Токио, Торонто, Вашингтон, округ Колумбия, Сеул |
 | **Etisalat UAE** |Поддерживается |Поддерживается |Дубаи|
 | **[euNetworks](https://eunetworks.com/services/solutions/cloud-connect/microsoft-azure-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Лондон |
-| **FarEasTone** |Поддерживается |Поддерживается |Тайбэй|
+| **[FarEasTone](https://www.fetnet.net/corporate/en/Enterprise.html)** |Поддерживается |Поддерживается |Тайбэй|
 | **[фаствеб](https://www.fastweb.it/grandi-aziende/cloud/scheda-prodotto/fastcloud-interconnect/)** | Поддерживается |Поддерживается |Milan|
-| **Fibrenoire** |Поддерживается |Поддерживается |Монреаль|
-| **GÉANT** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Марселе |
+| **[Fibrenoire](https://fibrenoire.ca/en/services/cloudextn-2/)** |Поддерживается |Поддерживается |Монреаль|
+| **[GÉANT](https://www.geant.org/Networks)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Марселе |
+| **[глобалконнект]()** | Поддерживается |Поддерживается | Oslo, Ставанжер | 
 | **гтт** |Поддерживается |Поддерживается |Лондон 2 |
 | **[Global Cloud Xchange (GCX)](https://globalcloudxchange.com/cloud-platform/cloud-x-fusion/)** | Поддерживается| Поддерживается | Ченнаи, Мумбаи |
 | **Intelsat** | Поддерживается | Поддерживается | Вашингтон (округ Колумбия) 2 |
@@ -167,6 +168,7 @@ ms.locfileid: "95906489"
 | **[Telus](https://www.telus.com)** |Поддерживается |Поддерживается |Монреаль, Сиэтл, Торонто, Vancouver |
 | **[Teraco](https://www.teraco.co.za/services/africa-cloud-exchange/)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург |
 | **[TIME dotCom](https://www.time.com.my/enterprise/connectivity/direct-cloud)** | Поддерживается | Поддерживается | Куала-Лумпур |
+| **[Токаи связь](https://www.tokai-com.co.jp/en/)** | Поддерживается | Поддерживается | Осака, Tokyo2 |
 | **[Transtelco](https://transtelco.net/enterprise-services/)** |Поддерживается |Поддерживается |Далласе, Куеретаро (Мексика)|
 | **T-Systems** |Поддерживается |Поддерживается |Франкфурт|
 | **[UOLDIVEO](https://www.uoldiveo.com.br/)** |Поддерживается |Поддерживается |Сан-Паулу |

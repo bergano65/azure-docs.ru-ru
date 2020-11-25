@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: aeb1e5ee00bd52ebb4bd93dec2f4a1eacb002fb9
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 992fb4422974dad7a48e5fea953ac4530bb52d5c
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94986537"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122588"
 ---
 # <a name="use-properties-in-an-azure-iot-central-solution"></a>Использование свойств в решении Azure IoT Central
 
@@ -160,11 +160,7 @@ hubClient.getTwin((err, twin) => {
 });
 ```
 
-В этой статье для простоты используется Node.js. Полные сведения о примерах приложений для устройств см. в следующих учебниках:
-
-* [Создание клиентского приложения и подключение его к приложению IoT Central Azure (Node.js)](tutorial-connect-device-nodejs.md)
-* [Создание клиентского приложения и подключение его к приложению IoT Central Azure (Python)](tutorial-connect-device-python.md)
-* [Создание клиентского приложения и подключение его к приложению IoT Central Azure (Java)](tutorial-connect-device-java.md)
+В этой статье для простоты используется Node.js. Полные сведения о примерах приложений для устройств см. в руководстве по [созданию и подключению клиентского приложения к IOT Centralному приложению Azure](tutorial-connect-device.md) .
 
 В следующем представлении в приложении IoT Central Azure отображаются свойства, которые вы видите. Представление автоматически делает свойство **модели устройства** _свойством устройства только для чтения_.
 
@@ -218,8 +214,8 @@ hubClient.getTwin((err, twin) => {
 | ----- | ----- | ----------- |
 | `'ac': 200` | Завершено | Операция изменения свойства успешно завершена. |
 | `'ac': 202` или `'ac': 201` | Ожидает | Операция изменения свойства находится в состоянии ожидания или выполняется. |
-| `'ac': 4xx` | Error | Запрошенное изменение свойства недопустимо или содержит ошибку. |
-| `'ac': 5xx` | Error | Произошла непредвиденная ошибка устройства при обработке запрошенного изменения. |
+| `'ac': 4xx` | Ошибка | Запрошенное изменение свойства недопустимо или содержит ошибку. |
+| `'ac': 5xx` | Ошибка | Произошла непредвиденная ошибка устройства при обработке запрошенного изменения. |
 
 Дополнительные сведения о двойниковах устройств см. в статье [Настройка устройств из серверной службы](../../iot-hub/tutorial-device-twins.md).
 
@@ -236,4 +232,4 @@ hubClient.getTwin((err, twin) => {
 Теперь, когда вы узнали, как использовать свойства в приложении IoT Central Azure, см. следующие статьи:
 
 * [Полезных данных](concepts-telemetry-properties-commands.md)
-* [Создание клиентского приложения и подключение его к приложению IoT Central Azure (Node.js)](tutorial-connect-device-nodejs.md)
+* [Создание клиентского приложения и его подключение к приложению Azure IoT Central](tutorial-connect-device.md)

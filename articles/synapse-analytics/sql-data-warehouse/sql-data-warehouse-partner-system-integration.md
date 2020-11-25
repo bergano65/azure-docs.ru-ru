@@ -9,18 +9,18 @@ ms.subservice: ''
 ms.date: 11/24/2020
 ms.author: procha
 ms.reviewer: jrasnick
-ms.openlocfilehash: 94872d3765a992fd025f30feaab95248ce6831ec
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 19941963b5200b3ffdb9f2360301d30fe9df4823
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95920156"
+ms.locfileid: "96121847"
 ---
 # <a name="azure-synapse-analytics-system-integration-partners"></a>Партнеры по интеграции системы Azure синапсе Analytics
 
 В этой статье описываются партнеры по интеграции системы Майкрософт, создающие решения с помощью Azure синапсе.
 
-## <a name="our-public-preview-launch-partners"></a>Наши партнеры по запуску общедоступной предварительной версии
+## <a name="system-integration-partners"></a>Партнеры по интеграции системы
 | Партнер | Описание | Ссылка на веб-сайт или продукт |
 | ------- | ----------- | -------------------- |
 | ![Accenture](./media/sql-data-warehouse-partner-public-preview/accenture-logo.png) |**Accenture**<br>Благодаря объединению 45000 и специализированных специалистов, Accenture Microsoft Business Group — на платформе Avanade — помогает предприятиям развиваться в эпоху цифрового перерыва.|[Страница партнера](https://www.accenture.com/us-en/services/microsoft-index)<br>|

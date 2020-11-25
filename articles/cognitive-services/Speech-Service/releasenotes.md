@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 18d228af5c162159d52b5583613d4449d1195af2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e786c4caae13ffaa541697d083158e17d42383fb
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95894241"
+ms.locfileid: "96122564"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
 
@@ -47,7 +47,7 @@ ms.locfileid: "95894241"
 https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
 -  **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлен `stopSpeakingAsync()` метод для отмены синтеза текста в речь. Прочитайте справочную документацию [здесь (C++](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace)), здесь ( [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), здесь ( [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech)), здесь (на языке [Python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python)и [здесь (цель-C/SWIFT)](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
 - **C#, C++, Java**: в `FromDialogServiceConnector()` класс добавлена функция `Connection` , которая может использоваться для наблюдения за подключениями и событиями отключения `DialogServiceConnector` . Ознакомьтесь с справочной документацией [здесь (C#)](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/connection)и [здесь (Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection).
-<!-- - **C++/C#/Java/Python/Objective-C/Swift**: Added support for Pronunciation Assessment, which evaluates speech pronunciation and gives speakers feedback on the accuracy and fluency of spoken audio. Read the documentation [here](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-pronunciation-assessment). -->
+- **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлена поддержка оценки произношения, которая оценивает произношение речи и дает отзыв о точности и владениее речевого звука. Ознакомьтесь с документацией [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-pronunciation-assessment).
 
 **Критическое изменение**
 - **JavaScript**: пуллаудиуутпутстреам. Read () имеет тип возврата из внутреннего обещания в собственное обещание JavaScript.
@@ -73,7 +73,7 @@ https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audioda
 **Примеры**
 - **ObjectiveC**: Добавлен пример для распознавания ключевого слова [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/objective-c/ios/speech-samples).
 - **C#/жаваскрипт**: Добавлено краткое руководство по транскрипции беседы [(c#)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/dotnet/conversation-transcription) и [здесь (JavaScript)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/conversation-transcription).
-<!-- - **C++/C#/Java/Python/Swift/ObjectiveC**: Added sample for pronunciation assessment [here](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples) -->
+- **C++/c #/Жава/Писон/Свифт/обжективек**: Добавлен пример для оценки произношения [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples)
 - **Xamarin**: обновлен краткий руководства по последнему [шаблону](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/xamarin)Visual Studio.
 
 **Известная проблема**
@@ -144,7 +144,7 @@ SPX — это интерфейс командной строки для исп�
     | `ja-JP` | нанами |
     | `ko-KR` | Sun-Hi |
 
-### <a name="bug-fixes"></a>Исправленные ошибки
+### <a name="bug-fixes"></a>Исправления ошибок
 
 * Исправлен ряд ошибок с помощью средства создания звукового содержимого. 
     * Исправлена проблема с автоматическое обновлением. 
@@ -257,7 +257,7 @@ SPX — это интерфейс командной строки для исп�
     | `pt-PT` | 77 % |
     | `id-ID` | 46 % |
 
-### <a name="bug-fixes"></a>Исправленные ошибки
+### <a name="bug-fixes"></a>Исправления ошибок
 
 * Чтение валюты
     * Исправлена проблема с чтением валюты для `es-ES` и `es-MX`
