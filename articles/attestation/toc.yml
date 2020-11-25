@@ -35,6 +35,8 @@
           href: claim-sets.md
     - name: Рабочий процесс
       href: workflow.md
+    - name: Просмотр журналов аудита
+      href: audit-logs.md
 - name: Ссылки
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ

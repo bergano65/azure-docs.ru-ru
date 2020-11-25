@@ -208,6 +208,10 @@
       items:
         - name: Устранение неполадок с репликацией при переносе VMware без агента
           href: troubleshoot-changed-block-tracking-replication.md
+- name: Справочник
+  items:
+    - name: Azure PowerShell
+      href: /powershell/module/az.migrate/
 - name: Ресурсы
   items:
     - name: Миграция с помощью Cloud Adoption Framework

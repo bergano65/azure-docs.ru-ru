@@ -251,6 +251,8 @@
               href: /azure/data-explorer/kusto/query/samples?&pivots=azuremonitor
             - name: Стандартные столбцы
               href: platform/log-standard-columns.md
+            - name: Аудит запросов
+              href: log-query/query-audit.md
             - name: Оптимизация запросов
               href: log-query/query-optimization.md
             - name: Функции

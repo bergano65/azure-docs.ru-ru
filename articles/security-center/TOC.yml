@@ -278,8 +278,6 @@
       items:
         - name: Общие вопросы
           href: faq-general.md
-        - name: Вопросы по выставлению счетов
-          href: faq-billing.md
         - name: Вопросы о разрешениях
           href: faq-permissions.md
         - name: Вопросы о сборе и хранении данных

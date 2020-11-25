@@ -752,6 +752,8 @@
           href: connector-troubleshoot-guide.md
         - name: Потоки данных
           href: data-flow-troubleshoot-guide.md
+        - name: Безопасность и управление доступом
+          href: security-and-access-control-troubleshoot-guide.md
         - name: Локальные среды выполнения интеграции
           href: self-hosted-integration-runtime-troubleshoot-guide.md
         - name: Среда выполнения интеграции Azure SSIS

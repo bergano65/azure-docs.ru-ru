@@ -125,12 +125,12 @@
       items:
         - name: Планирование предложения контейнера Azure
           href: marketplace-containers.md
+        - name: Подготовка технических ресурсов
+          href: create-azure-container-technical-assets.md
         - name: Создание и публикация предложения контейнера Azure
           items:
-            - name: Подготовка технических ресурсов
-              href: partner-center-portal/create-azure-container-technical-assets.md
             - name: Создание предложения по контейнерам Azure
-              href: partner-center-portal/create-azure-container-offer.md
+              href: create-azure-container-offer.md
     - name: Предложения виртуальных машин Azure
       items:
         - name: Планирование предложения виртуальной машины
