@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 11/09/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 702836e0dc98b06ccf6e0eeb0d0f373374c4e783
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426465"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95972544"
 ---
 # <a name="azure-resource-providers-and-types"></a>Поставщики и типы ресурсов Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "94426465"
 
 Вы не можете отменить регистрацию поставщика ресурсов, если у вас по-прежнему есть типы ресурсов от этого поставщика ресурсов в вашей подписке.
 
-## <a name="azure-portal"></a>портал Azure;
+## <a name="azure-portal"></a>Портал Azure
 
 Чтобы просмотреть всех поставщиков ресурсов, а также состояние регистрации для подписки, сделайте следующее:
 
@@ -49,9 +49,9 @@ ms.locfileid: "94426465"
 
     ![выбор подписок](./media/resource-providers-and-types/select-all-services.png)
 
-3. В поле **Все службы** введите **подписка** , а затем выберите **Подписки**.
+3. В поле **Все службы** введите **подписка**, а затем выберите **Подписки**.
 4. Выберите подписку из списка подписок для просмотра.
-5. Выберите **Поставщики ресурсов** , а затем просмотрите список доступных поставщиков ресурсов.
+5. Выберите **Поставщики ресурсов**, а затем просмотрите список доступных поставщиков ресурсов.
 
     ![отображение поставщиков ресурсов](./media/resource-providers-and-types/show-resource-providers.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "94426465"
 
     ![Пункт "Все службы"](./media/resource-providers-and-types/select-resource-explorer.png)
 
-4. Разверните список **Поставщики** , щелкнув стрелку вправо.
+4. Разверните список **Поставщики**, щелкнув стрелку вправо.
 
     ![выбор поставщиков](./media/resource-providers-and-types/select-providers.png)
 
@@ -190,7 +190,7 @@ West US
 ...
 ```
 
-## <a name="azure-cli"></a>Azure CLI;
+## <a name="azure-cli"></a>Azure CLI
 
 Чтобы просмотреть всех поставщиков ресурсов в Azure, а также состояние регистрации для подписки, используйте команду ниже:
 
@@ -300,7 +300,7 @@ West US
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о создании шаблонов диспетчер ресурсов см. в разделе [Создание шаблонов Azure Resource Manager](../templates/template-syntax.md). 
 * Схемы шаблонов поставщиков ресурсов см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).

@@ -2,14 +2,14 @@
 title: Разметка ресурсов, групп ресурсов и подписок для логической организации
 description: Здесь описано, как применить теги, чтобы организовать ресурсы Azure для выставления счетов и управления.
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 11/20/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3ffcb4a0f2f5dc64b165fcdec03f7c3ced258cc1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e9ef96a712e5ac2ba483170fb8ef9c89115b4f8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90086765"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95972574"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Использование тегов для Организации ресурсов Azure и иерархии управления
 
@@ -240,107 +240,200 @@ Remove-AzTag -ResourceId "/subscriptions/$subscription"
 
 ### <a name="apply-tags"></a>Применить Теги
 
-При добавлении тегов в группу ресурсов или ресурс можно либо перезаписать существующие теги, либо добавить новые теги в существующие теги.
+Azure CLI предлагает две команды для применения тегов — [AZ Tag Create](/cli/azure/tag#az_tag_create) и [AZ Tag Update](/cli/azure/tag#az_tag_update). Необходимо иметь Azure CLI 2.10.0 или более поздней версии. Версию можно проверить с помощью `az version` . Сведения об обновлении или установке см. [в разделе установка Azure CLI](/cli/azure/install-azure-cli).
 
-Чтобы перезаписать теги для ресурса, используйте:
+**Тег AZ Create** заменяет все теги в ресурсе, группе ресурсов или подписке. При вызове команды передайте идентификатор ресурса сущности, которую вы хотите пометить.
 
-```azurecli-interactive
-az resource tag --tags 'Dept=IT' 'Environment=Test' -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
-```
-
-Чтобы добавить тег к существующим тегам для ресурса, используйте:
+В следующем примере набор тегов применяется к учетной записи хранения.
 
 ```azurecli-interactive
-az resource update --set tags.'Status'='Approved' -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
+resource=$(az resource show -g demoGroup -n demoStorage --resource-type Microsoft.Storage/storageAccounts --query "id" --output tsv)
+az tag create --resource-id $resource --tags Dept=Finance Status=Normal
 ```
 
-Чтобы перезаписать существующие теги в группе ресурсов, используйте:
+После выполнения команды Обратите внимание, что ресурс имеет два тега.
+
+```output
+"properties": {
+  "tags": {
+    "Dept": "Finance",
+    "Status": "Normal"
+  }
+},
+```
+
+Если выполнить команду еще раз, но на этот раз с другими тегами, обратите внимание, что предыдущие Теги удалены.
 
 ```azurecli-interactive
-az group update -n examplegroup --tags 'Environment=Test' 'Dept=IT'
+az tag create --resource-id $resource --tags Team=Compliance Environment=Production
 ```
 
-Чтобы добавить тег к существующим тегам в группе ресурсов, используйте:
+```output
+"properties": {
+  "tags": {
+    "Environment": "Production",
+    "Team": "Compliance"
+  }
+},
+```
+
+Чтобы добавить теги к ресурсу, который уже содержит теги, используйте команду **AZ Tag Update**. Задайте для параметра **--Operation** значение **Merge**.
 
 ```azurecli-interactive
-az group update -n examplegroup --set tags.'Status'='Approved'
+az tag update --resource-id $resource --operation Merge --tags Dept=Finance Status=Normal
 ```
 
-В настоящее время Azure CLI не имеет команды для применения тегов к подпискам. Однако можно использовать интерфейс командной строки для развертывания шаблона ARM, который применяет теги к подписке. См. раздел [применение тегов к группам ресурсов или подпискам](#apply-tags-to-resource-groups-or-subscriptions).
+Обратите внимание, что два новых тега были добавлены к двум существующим тегам.
+
+```output
+"properties": {
+  "tags": {
+    "Dept": "Finance",
+    "Environment": "Production",
+    "Status": "Normal",
+    "Team": "Compliance"
+  }
+},
+```
+
+Каждое имя тега может иметь только одно значение. Если указать новое значение для тега, старое значение будет заменено даже при использовании операции MERGE. В следующем примере тег Status изменяется с нормального на зеленый.
+
+```azurecli-interactive
+az tag update --resource-id $resource --operation Merge --tags Status=Green
+```
+
+```output
+"properties": {
+  "tags": {
+    "Dept": "Finance",
+    "Environment": "Production",
+    "Status": "Green",
+    "Team": "Compliance"
+  }
+},
+```
+
+Если задается параметр **--Operation** для **замены**, существующие теги заменяются новым набором тегов.
+
+```azurecli-interactive
+az tag update --resource-id $resource --operation Replace --tags Project=ECommerce CostCenter=00123 Team=Web
+```
+
+В ресурсе остаются только новые теги.
+
+```output
+"properties": {
+  "tags": {
+    "CostCenter": "00123",
+    "Project": "ECommerce",
+    "Team": "Web"
+  }
+},
+```
+
+Одни и те же команды также работают с группами ресурсов или подписками. Вы передаете идентификатор для группы ресурсов или подписки, которые необходимо пометить.
+
+Чтобы добавить новый набор тегов в группу ресурсов, используйте:
+
+```azurecli-interactive
+group=$(az group show -n demoGroup --query id --output tsv)
+az tag create --resource-id $group --tags Dept=Finance Status=Normal
+```
+
+Чтобы обновить теги для группы ресурсов, используйте:
+
+```azurecli-interactive
+az tag update --resource-id $group --operation Merge --tags CostCenter=00123 Environment=Production
+```
+
+Чтобы добавить новый набор тегов к подписке, используйте:
+
+```azurecli-interactive
+sub=$(az account show --subscription "Demo Subscription" --query id --output tsv)
+az tag create --resource-id /subscriptions/$sub --tags CostCenter=00123 Environment=Dev
+```
+
+Чтобы обновить теги для подписки, используйте:
+
+```azurecli-interactive
+az tag update --resource-id /subscriptions/$sub --operation Merge --tags Team="Web Apps"
+```
 
 ### <a name="list-tags"></a>Вывод списка тегов
 
-Чтобы просмотреть существующие теги для ресурса, используйте:
+Чтобы получить теги для ресурса, группы ресурсов или подписки, используйте команду [AZ Tag List](/cli/azure/tag#az_tag_list) и передайте идентификатор ресурса для сущности.
+
+Чтобы просмотреть теги для ресурса, используйте:
 
 ```azurecli-interactive
-az resource show -n examplevnet -g examplegroup --resource-type "Microsoft.Network/virtualNetworks" --query tags
+resource=$(az resource show -g demoGroup -n demoStorage --resource-type Microsoft.Storage/storageAccounts --query "id" --output tsv)
+az tag list --resource-id $resource
 ```
 
-Чтобы просмотреть существующие теги для группы ресурсов, используйте этот командлет:
+Чтобы просмотреть теги для группы ресурсов, используйте:
 
 ```azurecli-interactive
-az group show -n examplegroup --query tags
+group=$(az group show -n demoGroup --query id --output tsv)
+az tag list --resource-id $group
 ```
 
-Этот скрипт вернет ответ в следующем формате:
+Чтобы просмотреть теги для подписки, используйте:
 
-```json
-{
-  "Dept"        : "IT",
-  "Environment" : "Test"
-}
+```azurecli-interactive
+sub=$(az account show --subscription "Demo Subscription" --query id --output tsv)
+az tag list --resource-id /subscriptions/$sub
 ```
 
 ### <a name="list-by-tag"></a>Список по тегу
 
-Чтобы получить все ресурсы с определенным тегом и значением, используйте команду `az resource list`:
+Чтобы получить ресурсы с указанными именем и значением тега, используйте:
 
 ```azurecli-interactive
-az resource list --tag Dept=Finance
+az resource list --tag CostCenter=00123 --query [].name
 ```
 
-Чтобы получить группы ресурсов с определенным тегом, используйте команду `az group list`:
+Чтобы получить ресурсы с заданным именем тега и любым значением тега, используйте:
 
 ```azurecli-interactive
-az group list --tag Dept=IT
+az resource list --tag Team --query [].name
+```
+
+Чтобы получить группы ресурсов с указанными именем и значением тега, используйте:
+
+```azurecli-interactive
+az group list --tag Dept=Finance
+```
+
+### <a name="remove-tags"></a>Удалить теги
+
+Чтобы удалить определенные теги, используйте команду **AZ Tag Update** и Set **--Operation** для **удаления**. Передайте теги, которые нужно удалить.
+
+```azurecli-interactive
+az tag update --resource-id $resource --operation Delete --tags Project=ECommerce Team=Web
+```
+
+Указанные теги удаляются.
+
+```output
+"properties": {
+  "tags": {
+    "CostCenter": "00123"
+  }
+},
+```
+
+Чтобы удалить все теги, используйте команду [AZ Tag Delete](/cli/azure/tag#az_tag_delete) .
+
+```azurecli-interactive
+az tag delete --resource-id $resource
 ```
 
 ### <a name="handling-spaces"></a>Обработка пробелов
 
-Если имена или значения тегов содержат пробелы, необходимо выполнить несколько дополнительных действий. 
-
-`--tags`Параметры в Azure CLI могут принимать строку, состоящую из массива строк. В следующем примере выполняется перезапись тегов в группе ресурсов, в которой теги содержат пробелы и дефисы: 
+Если имена или значения тегов содержат пробелы, заключите их в двойные кавычки.
 
 ```azurecli-interactive
-TAGS=("Cost Center=Finance-1222" "Location=West US")
-az group update --name examplegroup --tags "${TAGS[@]}"
-```
-
-Такой же синтаксис можно использовать при создании или обновлении группы ресурсов или ресурсов с помощью `--tags` параметра.
-
-Чтобы обновить теги с помощью `--set` параметра, необходимо передать ключ и значение в виде строки. В следующем примере один тег добавляется в группу ресурсов:
-
-```azurecli-interactive
-TAG="Cost Center='Account-56'"
-az group update --name examplegroup --set tags."$TAG"
-```
-
-В этом случае значение тега помечается одинарными кавычками, поскольку оно имеет дефис.
-
-Также может потребоваться применить теги ко многим ресурсам. В следующем примере все теги из группы ресурсов применяются к своим ресурсам, если теги могут содержать пробелы:
-
-```azurecli-interactive
-jsontags=$(az group show --name examplegroup --query tags -o json)
-tags=$(echo $jsontags | tr -d '{}"' | sed 's/: /=/g' | sed "s/\"/'/g" | sed 's/, /,/g' | sed 's/ *$//g' | sed 's/^ *//g')
-origIFS=$IFS
-IFS=','
-read -a tagarr <<< "$tags"
-resourceids=$(az resource list -g examplegroup --query [].id --output tsv)
-for id in $resourceids
-do
-  az resource tag --tags "${tagarr[@]}" --id $id
-done
-IFS=$origIFS
+az tag update --resource-id $group --operation Merge --tags "Cost Center"=Finance-1222 Location="West US"
 ```
 
 ## <a name="templates"></a>Шаблоны
@@ -620,7 +713,7 @@ az deployment sub create --name tagresourcegroup --location westus2 --template-u
    >
    > Служба автоматизации Azure и Azure CDN поддерживают только 15 тегов для ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
 * Рекомендации по реализации стратегии тегов см. в разделе [руководство по именованию ресурсов и созданию тегов](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json).

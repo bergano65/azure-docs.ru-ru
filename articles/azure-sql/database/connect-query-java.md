@@ -11,11 +11,11 @@ ms.devlang: java
 ms.date: 06/26/2020
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: badf6b8887c356c2a7fc7308f6aa15f551e4bb67
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746731"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95972680"
 ---
 # <a name="use-java-and-jdbc-with--azure-sql-database"></a>Использование Java и JDBC с Базой данных SQL Azure
 
@@ -225,12 +225,12 @@ public class DemoApplication {
 }
 ```
 
-Этот код Java, используя ранее созданные файлы *application.properties* и *schema.sql* , подключится к базе данных SQL Server и создаст схему для хранения данных.
+Этот код Java, используя ранее созданные файлы *application.properties* и *schema.sql*, подключится к базе данных SQL Server и создаст схему для хранения данных.
 
 Как видите, в этом файле мы закомментировали методы вставки, чтения, обновления и удаления данных. Эти методы мы создадим позже, и вы просто последовательно раскомментируете их.
 
 > [!NOTE]
-> Учетные данные для базы данных хранятся в свойствах *user* и *password* в файле *application.properties* . Эти учетные данные используются при выполнении `DriverManager.getConnection(properties.getProperty("url"), properties);`, так как файл свойств передается в качестве аргумента.
+> Учетные данные для базы данных хранятся в свойствах *user* и *password* в файле *application.properties*. Эти учетные данные используются при выполнении `DriverManager.getConnection(properties.getProperty("url"), properties);`, так как файл свойств передается в качестве аргумента.
 
 Теперь вы можете выполнить класс main в любом удобном инструменте.
 
@@ -315,7 +315,7 @@ public class Todo {
 }
 ```
 
-Этот класс является доменной моделью, сопоставленной с таблицей `todo`, которую вы создали при выполнении скрипта *schema.sql* .
+Этот класс является доменной моделью, сопоставленной с таблицей `todo`, которую вы создали при выполнении скрипта *schema.sql*.
 
 ### <a name="insert-data-into-azure-sql-database"></a>Вставка данных в базу данных SQL Azure
 

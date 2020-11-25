@@ -2,24 +2,22 @@
 title: Создание учетной записи служб мультимедиа Azure
 description: В этом руководстве описано, как создать учетную запись служб мультимедиа Azure.
 services: media-services
-documentationcenter: ''
 author: IngridAtMicrosoft
 manager: femila
-editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 11/4/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 49cac230363750e481e165712bf4f619e5cba7ae
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: b9234b27e2f08e65f569393bde342cba3f37adee
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92017851"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "95971328"
 ---
 # <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
@@ -27,77 +25,42 @@ ms.locfileid: "92017851"
 
 Чтобы начать шифрование, кодирование, анализ, потоковую передачу мультимедийного содержимого и управление им в Azure, необходимо создать учетную запись Служб мультимедиа. Учетную запись Служб мультимедиа необходимо связать с одной или несколькими учетными записями хранения. В этой статье описываются действия по созданию новой учетной записи служб мультимедиа Azure.
 
-> [!NOTE]
-> Учетная запись Служб мультимедиа и все связанные учетные записи хранения должны размещаться в одной подписке Azure. Настоятельно рекомендуется использовать учетные записи хранения в том же расположении, в котором находится учетная запись Служб мультимедиа, чтобы уменьшить задержку передачи данных и избежать дополнительных затрат на исходящий трафик.
+[!INCLUDE [note 2020-05-01 API](./includes/note-2020-05-01-account-creation.md)]
 
  Для создания учетной записи служб мультимедиа можно использовать либо портал Azure, либо интерфейс командной строки. Выберите вкладку для метода, который вы хотите использовать.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
+<!-- NOTE: The following are in the includes folder and are reused in other How To articles. All task based content should be in the includes folder with the task- prefix prepended to the file name. -->
+
 ## <a name="portal"></a>[Портал](#tab/portal/)
 
-## <a name="use-the-azure-portal"></a>Использование портала Azure
+[!INCLUDE [the media services account and storage account must be in the same subscription](./includes/note-account-storage-same-subscription.md)]
 
-<!-- Move this section. This section should be moved to conceptual.  It doesn't belong in task based -->
-Портал Azure предоставляет способ быстрого создания учетной записи служб мультимедиа Azure. Эту учетную запись можно использовать для доступа к службам мультимедиа, которые позволяют хранить, шифровать, кодировать мультимедийный контент, управлять им и обеспечивать его потоковую передачу в Azure.
-
-В настоящее время [портал Azure](https://portal.azure.com/) можно использовать для:
-
-* Управление службами мультимедиа v3, [динамические события](live-events-outputs-concept.md) 
-* Просмотр [ресурсов](assets-concept.md)(не управляемых) v3, 
-* [Получение сведений о доступе к API](./access-api-howto.md). 
-
-Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](/rest/api/media/accountfilters), [CLI](/cli/azure/ams)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
-<!-- Move this section. This section should be moved to conceptual.  It doesn't belong in task based -->
-
-### <a name="use-the-azure-portal-to-create-a-media-services-account"></a>Создание учетной записи служб мультимедиа с помощью портал Azure
-
-1. Войдите на [портал Azure](https://portal.azure.com/).
-1. Щелкните **+ создать ресурс**  >  **Media**  >  **службы**мультимедиа мультимедиа.
-1. В разделе **Создание учетной записи служб мультимедиа** введите необходимые значения.
-
-    | Имя | Описание |
-    | ---|---|
-    |**Account Name** (Имя учетной записи)|Введите имя новой учетной записи служб мультимедиа. Имя учетной записи служб мультимедиа может состоять из цифр или букв в нижнем регистре без пробелов и должно иметь длину от 3 до 24 символов.|
-    |**Подписка**|Если у вас есть несколько подписок, выберите одну из них в списке подписок Azure, к которым у вас есть доступ.|
-    |**Группа ресурсов**|Выберите новый или существующий ресурс. Группа ресурсов — это коллекция ресурсов с одинаковым жизненным циклом, разрешениями и политиками. Дополнительные сведения см. [здесь](../../azure-resource-manager/management/overview.md#resource-groups).|
-    |**Расположение**|Выберите географический регион, который будет использоваться для хранения записей мультимедиа и метаданных для учетной записи служб мультимедиа. Этот регион будет использоваться для обработки и потоковой передачи мультимедиа. В раскрывающемся списке отображаются только доступные регионы служб мультимедиа. |
-    |**Учетная запись хранения**|Выберите учетную запись хранения, чтобы предоставить хранилище BLOB-объектов для мультимедийного содержимого из учетной записи служб мультимедиа. Можно выбрать существующую учетную запись хранения в географическом регионе, где находится учетная запись служб носителей, или создать новую учетную запись хранения. Новая учетная запись хранения будет создана в том же регионе. В отношении учетных записей хранения действуют те же правила, что и для учетных записей служб носителей.<br/><br/>Необходимо иметь **основную** учетную запись хранения. У вас может быть любое количество **вторичных** учетных записей хранения, связанных с учетной записью Служб мультимедиа. Для добавления дополнительных учетных записей хранения можно использовать портал Azure. Дополнительные сведения см. [в статье учетные записи хранения Azure с учетными записями служб мультимедиа Azure](storage-account-concept.md).<br/><br/>Учетная запись Служб мультимедиа и все связанные учетные записи хранения должны размещаться в одной подписке Azure. Настоятельно рекомендуется использовать учетные записи хранения в том же расположении, в котором находится учетная запись Служб мультимедиа, чтобы уменьшить задержку передачи данных и избежать дополнительных затрат на исходящий трафик.|
-
-1. Установите флажок **Закрепить на панели мониторинга** , чтобы отслеживать развертывание учетной записи.
-1. Нажмите кнопку **Создать** в нижней части формы.
-
-    При создании учетной записи служб мультимедиа конечная точка потоковой передачи **по умолчанию** добавляется в учетную запись в **остановленном** состоянии. Чтобы начать потоковую передачу содержимого и воспользоваться [динамической упаковкой](dynamic-packaging-overview.md) и [динамическим шифрованием](content-protection-overview.md), конечная точка потоковой передачи, из которой требуется потоковая передача содержимого, должна находиться в состоянии **выполняется** . 
+[!INCLUDE [create a media services account in the portal](./includes/task-create-media-services-account-portal.md)]
 
 ## <a name="cli"></a>[CLI](#tab/cli/)
 
-## <a name="use-the-azure-cli"></a>Использование командной строки Azure CLI
+[!INCLUDE [the media services account and storage account must be in the same subscription](./includes/note-account-storage-same-subscription.md)]
 
-<!-- NOTE: The following are in the includes file and are reused in other How To articles. All task based content should be in the includes folder with the task- prefix prepended to the file name. -->
-
-### <a name="set-the-azure-subscription"></a>Настройка подписки Azure
+## <a name="set-the-azure-subscription"></a>Настройка подписки Azure
 
 [!INCLUDE [Set the Azure subscription with CLI](./includes/task-set-azure-subscription-cli.md)]
 
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 [!INCLUDE [Create a resource group with CLI](./includes/task-create-resource-group-cli.md)]
 
-### <a name="create-a-storage-account"></a>Создание учетной записи хранения
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 [!INCLUDE [Create a storage account with CLI](./includes/task-create-storage-account-cli.md)]
 
-### <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
+## <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
 [!INCLUDE [Create a Media Services account with CLI](./includes/task-create-media-services-account-cli.md)]
 
-### <a name="see-also"></a>См. также статью
-
-* [Azure CLI](/cli/azure/ams?view=azure-cli-latest)
-* [Подключение дополнительного хранилища к учетной записи служб мультимедиа](/cli/azure/ams/account/storage?view=azure-cli-latest#az-ams-account-storage-add)
-
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
