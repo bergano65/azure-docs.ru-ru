@@ -9,17 +9,17 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: c618e8193bed1f35cbbe884d5725c4ecfb25dd75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311127"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013094"
 ---
 # <a name="manage-your-azure-maps-account"></a>Управление учетной записью Azure Maps
 
 Вы можете управлять учетной записью Azure Maps с помощью портала Azure. Если у вас есть учетная запись, вы можете реализовать API-интерфейсы на своем веб-сайте или в мобильном приложении.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас нет подписки Azure, перед началом работы [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="create-a-new-account"></a>Создание учетной записи
 
@@ -41,7 +41,7 @@ ms.locfileid: "91311127"
 
 Откроется страница подтверждения. Вы можете подтвердить удаление вашей учетной записи, введя ее имя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Настройте проверку подлинности с помощью Azure Maps и Узнайте, как получить ключ подписки Azure Maps.
 > [!div class="nextstepaction"]

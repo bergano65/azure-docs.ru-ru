@@ -10,11 +10,11 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/13/2020
 ms.openlocfilehash: 83522de9c00056a3808b002b3103f45c72553399
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91534188"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013077"
 ---
 # <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность datetimeV2 для приложения LUIS
 
@@ -114,7 +114,7 @@ ms.locfileid: "91534188"
 |Имя свойства |Тип и описание свойства|
 |---|---|
 |Сущность|**Строка.** Текст, извлеченный из фразы, с типом даты, времени, диапазоном дат или времени.|
-|type|**Строка.** Один из [подтипов сущности datetimeV2](#subtypes-of-datetimev2).
+|тип|**Строка.** Один из [подтипов сущности datetimeV2](#subtypes-of-datetimev2).
 |startIndex|**Целое число.** Индекс во фразе, в которой начинается сущность.|
 |endIndex|**Целое число.** Индекс во фразе, в которой заканчивается сущность.|
 |разрешение|Имеет массив `values` с одним, двумя или четырьмя [значениями разрешения](#values-of-resolution).|
@@ -145,8 +145,8 @@ ms.locfileid: "91534188"
 |--|--|
 |timex|Время, дата или диапазон дат, выраженные в формате TIMEX, который соответствует [стандарту ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), и в атрибутах TIMEX3 заметки с помощью языка TimeML.|
 |mod|термин, используемый для описания использования значения `before` , например, `after` .|
-|type|Подтип может иметь один из следующих элементов: `datetime` , `date` ,,,, `time` `daterange` `timerange` `datetimerange` , `duration` , `set` .|
-|значение|**Необязательный параметр.** Объект DateTime в формате гггг-мм-дд (дата), чч: мм: СС (Time) гггг-мм-дд чч: мм: СС (DateTime). Если свойство `type` имеет значение `duration`, в качестве значения указывается количество секунд (длительность). <br/> Используется, только если свойство `type` имеет значение `datetime` или `date`, `time` или `duration.|
+|тип|Подтип может иметь один из следующих элементов: `datetime` , `date` ,,,, `time` `daterange` `timerange` `datetimerange` , `duration` , `set` .|
+|value|**Используемых.** Объект DateTime в формате гггг-мм-дд (дата), чч: мм: СС (Time) гггг-мм-дд чч: мм: СС (DateTime). Если свойство `type` имеет значение `duration`, в качестве значения указывается количество секунд (длительность). <br/> Используется, только если свойство `type` имеет значение `datetime` или `date`, `time` или `duration.|
 
 ## <a name="valid-date-values"></a>Допустимые значения даты
 
@@ -678,7 +678,7 @@ ms.locfileid: "91534188"
 3. Щелкните **Add prebuilt entity** (Добавить предварительно созданную сущность).
 4. Выберите **datetimeV2** и нажмите кнопку **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

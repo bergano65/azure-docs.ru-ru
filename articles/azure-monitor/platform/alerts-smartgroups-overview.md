@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 05/15/2018
 ms.openlocfilehash: dff59ac207e6078a264d1350d24c9e6f4a461d78
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108785"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012890"
 ---
 # <a name="smart-groups"></a>Смарт-группы
 
@@ -56,7 +56,7 @@ ms.locfileid: "92108785"
 
 Имя смарт-группы — это имя ее первого оповещения. Создать или переименовать смарт-группу невозможно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Управление смарт-группами](./alerts-managing-smart-groups.md?toc=%252fazure%252fazure-monitor%252ftoc.json)
 - [Изменение состояния оповещений и смарт-групп](./alerts-managing-alert-states.md?toc=%252fazure%252fazure-monitor%252ftoc.json)

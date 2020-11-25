@@ -6,11 +6,11 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/18/2018
 ms.openlocfilehash: 613620ddf4889efb7cf3df95150be97f79724a98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87852146"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013111"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -132,7 +132,7 @@ az monitor alert delete --name <alert name> --resource-group <group name>
 
 8. Классические правила генерации оповещений больше не могут создаваться с помощью PowerShell. Чтобы создать правило генерации оповещений, необходимо использовать новую команду [Add-азметрикалертруле](/powershell/module/az.monitor/add-azmetricalertrule) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание классического оповещения метрики с помощью шаблона Resource Manager](./alerts-enable-template.md).
 - [Уведомление с помощью веб-перехватчика и классического оповещения метрики для системы за пределами Azure](./alerts-webhooks.md).
