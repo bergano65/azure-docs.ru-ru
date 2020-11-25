@@ -8,13 +8,13 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.devlang: rest-api
 ms.topic: tutorial
-ms.date: 08/21/2020
-ms.openlocfilehash: fd74bfca73323209012dfd1fda61bbaada84092f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/17/2020
+ms.openlocfilehash: e8c16f02cf6b77fa54d2a19abac48e9914aa99bd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90530698"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008571"
 ---
 # <a name="tutorial-query-a-cognitive-search-index-from-power-apps"></a>Руководство по Создание запроса к индексу Когнитивного поиска из Power Apps
 
@@ -33,7 +33,7 @@ ms.locfileid: "90530698"
 
 * [Учетная запись Power Apps](https://make.powerapps.com)
 
-* [Индекс Hotels-sample](search-get-started-portal.md)
+* [Индекс hotels-sample](search-get-started-portal.md), размещенный в службе поиска
 
 * [Ключ API запроса](search-security-api-keys.md#find-existing-keys)
 
@@ -49,7 +49,7 @@ ms.locfileid: "90530698"
 
 1. Щелкните **+ Создать настраиваемый соединитель** и выберите **Создать с нуля**.
 
-    :::image type="content" source="./media/search-howto-powerapps/1-3-create-blank.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-3-create-blank.png" alt-text="Пункт меню для создания с нуля" border="true":::
 
 1. Присвойте имя настраиваемому соединителю (например, *AzureSearchQuery*) и щелкните **Продолжить**.
 
@@ -60,15 +60,15 @@ ms.locfileid: "90530698"
    * В качестве узла укажите URL-адрес службы поиска (например, `<yourservicename>.search.windows.net`).
    * В качестве базового URL-адреса просто укажите /.
 
-    :::image type="content" source="./media/search-howto-powerapps/1-5-general-info.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-5-general-info.png" alt-text="Диалоговое окно для ввода общей информации" border="true":::
 
 1. На странице "Безопасность" укажите *Ключ API* для параметра **Тип проверки подлинности**, а затем введите *api-key* в качестве метки и имени параметра. В поле **Расположение параметра** выберите *Заголовок*, как показано ниже.
 
-    :::image type="content" source="./media/search-howto-powerapps/1-6-authentication-type.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-6-authentication-type.png" alt-text="Параметр Тип проверки подлинности" border="true":::
 
 1. На странице "Определения" выберите **+ Новое действие**, чтобы создать действие для обращения к индексу. Введите значение "Запрос" в качестве описания и имени для идентификатора операции. Введите описание, например *Запросы к индексу поиска*.
 
-    :::image type="content" source="./media/search-howto-powerapps/1-7-new-action.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-7-new-action.png" alt-text="Параметры для нового действия" border="true":::
 
 1. Прокрутите страницу вниз. В окне "Запросы" нажмите кнопку **+ Импорт из примера**, чтобы настроить запрос к службе поиска.
 
@@ -76,27 +76,27 @@ ms.locfileid: "90530698"
 
    * В качестве URL-адреса введите пример запроса к индексу поиска (например, `search=*` возвращает все документы, а `$select=` позволяет выбрать поля). Версию API нужно обязательно указать. Полный URL-адрес может выглядеть так: `https://mydemo.search.windows.net/indexes/hotels-sample-index/docs?search=*&$select=HotelName,Description,Address/City&api-version=2020-06-30`.
 
-   * В разделе "Заголовки" введите `Content-Type`. 
+   * В разделе "Заголовки" введите `Content-Type`. Значение `application/json` будет задано на следующем шаге.
 
-     **Power Apps** будет использовать этот синтаксис для извлечения параметров из запроса. Обратите внимание, что мы явным образом определили поле поиска. 
+     **Power Apps** использует синтаксис в URL-адресе для извлечения параметров из запроса: параметры поиска, выбора и версии API можно настроить с помощью мастера.
 
-       :::image type="content" source="./media/search-howto-powerapps/1-8-1-import-from-sample.png" alt-text="Меню настраиваемых соединителей" border="true":::
+       :::image type="content" source="./media/search-howto-powerapps/1-8-1-import-from-sample.png" alt-text="Импорт из примера" border="true":::
 
 1. Щелкните **Импорт**, чтобы автоматически заполнить страницу "Запрос". Завершите настройку метаданных параметров, щелкнув символ **...** рядом с каждым параметром. После обновления каждого параметра щелкайте **Назад**, чтобы вернуться на страницу "Запрос".
 
-   :::image type="content" source="./media/search-howto-powerapps/1-8-2-import-from-sample.png" alt-text="Меню настраиваемых соединителей" border="true":::
+   :::image type="content" source="./media/search-howto-powerapps/1-8-2-import-from-sample.png" alt-text="Диалоговое окно импорта из примера" border="true":::
 
 1. Для параметра *search* сделайте следующее. Задайте `*` в качестве **значения по умолчанию**, для параметра **Обязательно** укажите *false* и для параметра **Видимость** — *Нет*. 
 
-    :::image type="content" source="./media/search-howto-powerapps/1-10-1-parameter-metadata-search.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-10-1-parameter-metadata-search.png" alt-text="Метаданные параметра search" border="true":::
 
 1. Для параметра *select* сделайте следующее. Задайте `HotelName,Description,Address/City` в качестве **значения по умолчанию**, для параметра **Обязательно** укажите *false* и для параметра **Видимость** — *Нет*.  
 
-    :::image type="content" source="./media/search-howto-powerapps/1-10-4-parameter-metadata-select.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-10-4-parameter-metadata-select.png" alt-text="Метаданные параметра select" border="true":::
 
 1. В разделе *api-version* выполните следующее. Задайте `2020-06-30` в качестве **значения по умолчанию**, для параметра **Обязательно** укажите *true* и для параметра **Видимость** — *Внутренняя*.  
 
-    :::image type="content" source="./media/search-howto-powerapps/1-10-2-parameter-metadata-version.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-10-2-parameter-metadata-version.png" alt-text="Метаданные параметра version" border="true":::
 
 1. Для параметра *Content-Type* сделайте следующее. Задайте значение `application/json`.
 
@@ -111,11 +111,11 @@ ms.locfileid: "90530698"
       - {name: Content-Type, in: header, required: false, type: string}
     ```
 
-1. Вернитесь в раздел **3. Запрос** и прокрутите вниз до раздела "Ответ". Щелкните **Добавить ответ по умолчанию**. Это важно, так как Power Apps нужно распознать схему ответа. 
+1. Вернитесь к мастеру и перейдите на шаг **3. Запрос**. Прокрутите вниз до раздела с ответом. Щелкните **Добавить ответ по умолчанию**. Это важно, так как Power Apps нужно распознать схему ответа. 
 
 1. Вставьте пример ответа. Пример ответа проще всего записать с помощью проводника поиска на портале Azure. Введите в проводнике поиска те же сведения, что и для основного запроса, но добавьте параметр **$top=2**, чтобы ограничить результаты двумя документами: `search=*&$select=HotelName,Description,Address/City&$top=2`. 
 
-   Для обнаружения схемы Power Apps требуется несколько результатов.
+   Для обнаружения схемы Power Apps требуется несколько результатов. Вы можете скопировать следующий ответ в мастер, если вы используете индекс hotels-sample.
 
     ```JSON
     {
@@ -144,7 +144,11 @@ ms.locfileid: "90530698"
     > [!TIP] 
     > При этом есть ограничение на количество символов в ответе JSON, поэтому перед вставкой JSON иногда нужно сокращать. Схема и формат ответа важнее, чем сами значения. Например, в поле Description можно оставить только первое предложение.
 
-1. Щелкните **Создать соединитель** вверху справа.
+1. Щелкните **Импорт**, чтобы добавить ответ по умолчанию.
+
+1. Щелкните **Создать соединитель** вверху справа, чтобы сохранить определение.
+
+1. Щелкните **Закрыть**, чтобы закрыть соединитель.
 
 ## <a name="2---test-the-connection"></a>2\. Проверка подключения
 
@@ -154,11 +158,11 @@ ms.locfileid: "90530698"
 
 1. В области слева щелкните **Настраиваемые соединители**.
 
-1. Выполните поиск по имени соединителя (в нашем руководстве это AzureSearchQuery).
+1. Найдите соединитель в списке (в нашем примере — AzureSearchQuery).
 
 1. Выберите нужный соединитель, разверните список действий и выберите **Просмотреть параметры**.
 
-    :::image type="content" source="./media/search-howto-powerapps/1-11-1-test-connector.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-11-1-test-connector.png" alt-text="Просмотр свойств" border="true":::
 
 1. Вверху справа щелкните **Изменить**.
 
@@ -170,7 +174,7 @@ ms.locfileid: "90530698"
 
 1. В разделе "Операции" нажмите кнопку **Проверить операцию**. Если проверка пройдет успешно, вы увидите состояние ответа 200, а в самом тексте ответа будет содержаться код JSON с результатами поиска.
 
-    :::image type="content" source="./media/search-howto-powerapps/1-11-2-test-connector.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-11-2-test-connector.png" alt-text="Ответ в формате JSON" border="true":::
 
 ## <a name="3---visualize-results"></a>3\. Визуализация результатов
 
@@ -178,7 +182,7 @@ ms.locfileid: "90530698"
 
 1. В области слева щелкните **Приложения** >  **+ Создать приложение** > **Холст**.
 
-    :::image type="content" source="./media/search-howto-powerapps/2-1-create-canvas.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/2-1-create-canvas.png" alt-text="Создание приложения на основе холста" border="true":::
 
 1. Выберите тип приложения. Для работы с этим руководством выберите **Пустое приложение** с макетом **Макет для телефона**. Откроется окно **Power Apps Studio**.
 
@@ -186,13 +190,13 @@ ms.locfileid: "90530698"
 
    Введите ключ API запроса.
 
-    :::image type="content" source="./media/search-howto-powerapps/2-3-connect-connector.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/2-3-connect-connector.png" alt-text="Подключение соединителя" border="true":::
 
     Теперь *AzureSearchQuery* будет считаться источником данных, доступным для использования из приложения.
 
 1. На вкладке **Вставка** добавьте на холст несколько элементов управления.
 
-    :::image type="content" source="./media/search-howto-powerapps/2-4-add-controls.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/2-4-add-controls.png" alt-text="Добавление элементов управления" border="true":::
 
 1. Добавьте следующие элементы.
 
@@ -203,7 +207,7 @@ ms.locfileid: "90530698"
 
     Теперь холст будет выглядеть так:
 
-    :::image type="content" source="./media/search-howto-powerapps/2-5-controls-layout.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/2-5-controls-layout.png" alt-text="Макет с элементами управления" border="true":::
 
 1. Чтобы кнопка **Поиск** отправляла запрос, вставьте следующее действие в поле **OnSelect**.
 
@@ -214,7 +218,7 @@ ms.locfileid: "90530698"
 
    На следующем снимке экрана показана панель ввода формулы для действия **OnSelect**.
 
-    :::image type="content" source="./media/search-howto-powerapps/2-6-search-button-event.png" alt-text="Меню настраиваемых соединителей" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/2-6-search-button-event.png" alt-text="Действие OnSelect" border="true":::
 
    Это действие будет по нажатию кнопки обновлять новую коллекцию *azResult*, записывая в нее результат выполнения поискового запроса, используя текст в поле *txtQuery* в качестве условия поиска.
 
@@ -236,17 +240,17 @@ ms.locfileid: "90530698"
 
     Так как мы уже предоставили пример результата при определении соединителя, приложение учитывает поля в вашем индексе.
     
-    :::image type="content" source="./media/search-howto-powerapps/2-7-gallery-select-fields.png" alt-text="Меню настраиваемых соединителей" border="true":::   
+    :::image type="content" source="./media/search-howto-powerapps/2-7-gallery-select-fields.png" alt-text="Поля коллекции" border="true":::   
  
 1. Нажмите клавишу **F5** для предварительного просмотра приложения.  
 
-    :::image type="content" source="./media/search-howto-powerapps/2-8-3-final.png" alt-text="Меню настраиваемых соединителей" border="true":::    
+    :::image type="content" source="./media/search-howto-powerapps/2-8-3-final.png" alt-text="Окончательная версия приложения" border="true":::    
 
 <!--     Remember that the fields can be set to calculated values.
 
     For the example, setting using the *"Image, Title and Subtitle"* layout and specifying the *Image* function as the concatenation of the root path for the data and the file name (for instance, `"https://mystore.blob.core.windows.net/multilang/" & ThisItem.metadata_storage_name`) will produce the result below.
 
-    :::image type="content" source="./media/search-howto-powerapps/2-8-2-final.png" alt-text="Меню настраиваемых соединителей" border="true":::         -->
+    :::image type="content" source="./media/search-howto-powerapps/2-8-2-final.png" alt-text="Final app" border="true":::         -->
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

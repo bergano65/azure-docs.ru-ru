@@ -1,6 +1,6 @@
 ---
 title: Копирование данных из хранилища BLOB-объектов Azure в SQL с помощью Копирования данных
-description: Создание фабрики данных Azure и применение средства копирования данных для копирования данных из хранилища BLOB-объектов Azure в базу данных SQL.
+description: Создание фабрики данных Azure и применение средства копирования данных для копирования данных из Хранилища BLOB-объектов Azure в Базу данных SQL.
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 06/08/2020
-ms.openlocfilehash: 2165efd6b522d3809dba285cf2c3050fc50b2d28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/09/2020
+ms.openlocfilehash: de01a8a8522f93684ed428fd4ef19963b1af2059
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84660954"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008350"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-the-copy-data-tool"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью средства копирования данных
 
@@ -80,7 +80,7 @@ ms.locfileid: "84660954"
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
-1. В меню слева выберите **Создать ресурс** > **Аналитика** > **Фабрика данных**:
+1. В меню слева выберите **Создать ресурс** > **Интеграция** > **Фабрика данных**:
 
     ![Создание фабрики данных](./media/doc-common-process/new-azure-data-factory-menu.png)
 1. На странице **Новая фабрика данных** в поле **Имя** введите **ADFTutorialDataFactory**.
@@ -93,9 +93,9 @@ ms.locfileid: "84660954"
 1. Выберите **подписку** Azure, в которой нужно создать фабрику данных.
 1. Для **группы ресурсов** выполните одно из следующих действий:
 
-    а. Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке.
+    а. Выберите **Использовать существующую** и укажите существующую группу ресурсов в раскрывающемся списке.
 
-    b. Выберите **Создать новую**и укажите имя группы ресурсов.
+    b. Выберите **Создать новую** и укажите имя группы ресурсов.
     
     Сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/management/overview.md).
 

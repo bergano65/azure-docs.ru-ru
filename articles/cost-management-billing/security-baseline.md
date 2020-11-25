@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 40baab2a4c577ee96bcebeb4880235a81810b2b4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 3270dae1fd37913ba51ca1da63bbb44d715e7d31
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660327"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021785"
 ---
 # <a name="azure-security-baseline-for-cost-management"></a>Базовый план безопасности Azure для Управления затратами
 
@@ -288,7 +288,7 @@ Azure Information Protection (AIP) предоставляет возможнос
 
 ## <a name="logging-and-threat-detection"></a>Ведение журнала и обнаружение угроз
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-protection).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
 
 ### <a name="lt-2-enable-threat-detection-for-azure-identity-and-access-management"></a>LT-2. Включение функции обнаружения угроз для управления удостоверениями и доступом в Azure
 
@@ -424,7 +424,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="posture-and-vulnerability-management"></a>Управление состоянием безопасности и уязвимостями
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление состоянием безопасности и уязвимостями](/azure/security/benchmarks/security-controls-v2-vulnerability-management).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление состоянием безопасности и уязвимостями](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
 
 ### <a name="pv-7-rapidly-and-automatically-remediate-software-vulnerabilities"></a>PV-7. Быстрое и автоматическое устранение уязвимости программного обеспечения
 
@@ -484,9 +484,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Cloud Adoption Framework. Рекомендации по защите и шифрованию данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
 
-- [Azure Security Benchmark. Управление ресурсами](/azure/security/benchmarks/security-benchmark-v2-asset-management)
+- [Azure Security Benchmark. Управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management)
 
-- [Тестирование безопасности Azure. Защита данных](/azure/security/benchmarks/security-benchmark-v2-data-protection)
+- [Тестирование безопасности Azure. Защита данных](/azure/security/benchmarks/security-controls-v2-data-protection)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -514,7 +514,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Руководство**. Непрерывно измеряйте и снижайте риски для отдельных ресурсов и среды, в которой они размещены. Определите приоритет высокоценных ресурсов и критически важных областей, уязвимых для атак, таких как опубликованные приложения, точки входящего и исходящего сетевого трафика, конечные точки пользователя, администратора и т. д.
 
-- [Тестирование безопасности Azure. Управление состоянием безопасности и уязвимостями](/azure/security/benchmarks/security-benchmark-v2-posture-vulnerability-management)
+- [Тестирование безопасности Azure. Управление состоянием безопасности и уязвимостями](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -555,7 +555,7 @@ Azure Sentinel предоставляет широкие возможности 
 Дополнительные сведения см. в следующих ресурсах.
 - [Рекомендация 11 по обеспечению безопасности в Azure. Архитектура. Единая унифицированная стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Тестирование безопасности Azure. Безопасность сети](/azure/security/benchmarks/security-benchmark-v2-network-security)
+- [Тестирование безопасности Azure. Безопасность сети](/azure/security/benchmarks/security-controls-v2-network-security)
 
 - [Обзор сетевой безопасности Azure](../security/fundamentals/network-overview.md)
 
@@ -583,9 +583,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Тестирование безопасности Azure. Управление удостоверениями](/azure/security/benchmarks/security-benchmark-v2-identity-management)
+- [Тестирование безопасности Azure. Управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management)
 
-- [Тестирование безопасности Azure. Привилегированный доступ](/azure/security/benchmarks/security-benchmark-v2-privileged-access)
+- [Тестирование безопасности Azure. Привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access)
 
 - [Рекомендация 11 по обеспечению безопасности в Azure. Архитектура. Единая унифицированная стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -617,9 +617,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Тестирование безопасности Azure. Ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-benchmark-v2-logging-threat-detection)
+- [Тестирование безопасности Azure. Ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
 
-- [Тестирование безопасности Azure. Реагирование на инциденты](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Тестирование безопасности Azure. Реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response)
 
 - [Рекомендация 4 по обеспечению безопасности в Azure. Процесс. Процессы реагирования на обновление инцидента в облаке](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
