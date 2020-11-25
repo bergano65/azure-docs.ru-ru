@@ -5,18 +5,18 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: trbye
-ms.openlocfilehash: 0fae0172467bb4499c2710c49553d9134a32fa9b
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: c9ed54f11cade20af67a1c9bfe948b03e9d7b0d3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135768"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098072"
 ---
-В этом кратком руководстве вы узнаете, как использовать пакет Speech Devices SDK для Windows для создания устройства с поддержкой речевых функций или его использования в качестве устройства [Транскрипция диалога](../conversation-transcription-service.md) (Conversation Transcription). Для транскрибирования бесед поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/). Для других речевых функций используются линейные микрофонные решетки, обеспечивающие геометрию микрофонной решетки.
+В этом кратком руководстве вы узнаете, как использовать пакет Speech Devices SDK для Windows для создания устройства с поддержкой речевых функций или его использования в качестве устройства [Транскрипция диалога](../conversation-transcription.md) (Conversation Transcription). Для транскрибирования бесед поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/). Для других речевых функций используются линейные микрофонные решетки, обеспечивающие геометрию микрофонной решетки.
 
 Приложение создается с использованием пакета SDK для распознавания речи и интегрированной среды разработки Eclipse Java (версия 4) в 64-разрядной версии Windows. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
-Для этого руководства требуется [учетная запись Azure Cognitive Services](../get-started.md) и ресурс службы "Речь".
+Для этого руководства требуется [учетная запись Azure Cognitive Services](../overview.md#try-the-speech-service-for-free) и ресурс службы "Речь".
 
 Исходный код [примера приложения](https://aka.ms/sdsdk-download-JRE) входит в состав пакета SDK для речевых устройств. Он также [доступен на веб-сайте GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 
@@ -29,14 +29,14 @@ ms.locfileid: "93135768"
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * Только [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * [распространяемые компоненты Microsoft Visual C++.](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
-* Ключ подписки Azure для службы "Речь". [Получить бесплатно](../get-started.md).
+* Ключ подписки Azure для службы "Речь". [Получить бесплатно](../overview.md#try-the-speech-service-for-free).
 * Скачайте последнюю версию [пакета SDK для речевых устройств](https://aka.ms/sdsdk-download-JRE) для Java и извлеките ZIP-файл в рабочую папку.
    > [!NOTE]
    > В этом кратком руководстве предполагается, что приложение извлечено в папку C:\SDSDK\JRE-Sample-Release.
 
 Сейчас транскрибирование бесед доступно для американского английского и китайского языков в регионах "центральная часть США" и "Восточная Азия". Для использования транскрибирования бесед вам понадобится речевой ключ в одном из упомянутых регионов.
 
-Если вы планируете использовать намерения, вам понадобится подписка на [службу "Распознавания речи" (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription). Дополнительные сведения о службе распознавания речи и распознавании намерений см. в статье [Распознавание намерений в речи с помощью пакета SDK службы распознавания речи для C#](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp). [Модель примера LUIS](https://aka.ms/sdsdk-luis) доступна для этого приложения.
+Если вы планируете использовать намерения, вам понадобится подписка на [службу "Распознавания речи" (LUIS)](../../luis/luis-how-to-azure-subscription.md). Дополнительные сведения о службе распознавания речи и распознавании намерений см. в статье [Распознавание намерений в речи с помощью пакета SDK службы распознавания речи для C#](../how-to-recognize-intents-from-speech-csharp.md). [Модель примера LUIS](https://aka.ms/sdsdk-luis) доступна для этого приложения.
 
 ## <a name="create-and-configure-the-project"></a>Создание и настройка проекта
 
@@ -108,7 +108,7 @@ ms.locfileid: "93135768"
 1. Ключевое слово по умолчанию — "Компьютер". Можно также попробовать одно из других предоставленных ключевых слов — "Машина" или "Помощник". Файлы ресурсов для этих альтернативных ключевых слов находятся в пакете SDK для речевых устройств в папке keyword. Например, `C:\SDSDK\JRE-Sample-Release\keyword\Computer` содержит файлы, используемые для ключевого слова "Компьютер".
 
     > [!TIP]
-    > Кроме того, вы можете [создать пользовательское ключевое слово](../speech-devices-sdk-create-kws.md).
+    > Кроме того, вы можете [создать пользовательское ключевое слово](../custom-keyword-basics.md).
 
     Для использования нового ключевого слова обновите следующую строку в файле `FunctionsList.java` и скопируйте ключевое слово в приложение. Например, чтобы использовать ключевое слово "Машина" из файла `machine.zip` пакета ключевых слов, сделайте следующее.
 
@@ -129,7 +129,7 @@ ms.locfileid: "93135768"
 
    ![Снимок экрана: пример приложения пакета SDK для речевых устройств и параметры.](../media/speech-devices-sdk/java-sample-app-windows.png)
 
-1. Попробуйте новую демоверсию **транскрибирования бесед**. Запустите транскрибирование, выбрав **Session** (Сеанс) > **Start** (Запустить). По умолчанию все являются гостями. Тем не менее, если у вас есть голосовые подписи участников, вы можете добавить их в файл `participants.properties` в папке проекта **target/classes**. Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](../how-to-use-conversation-transcription-service.md).
+1. Попробуйте новую демоверсию **транскрибирования бесед**. Запустите транскрибирование, выбрав **Session** (Сеанс) > **Start** (Запустить). По умолчанию все являются гостями. Тем не менее, если у вас есть голосовые подписи участников, вы можете добавить их в файл `participants.properties` в папке проекта **target/classes**. Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](../how-to-use-conversation-transcription.md).
 
    ![Снимок экрана: демоверсия приложения транскрибирования бесед.](../media/speech-devices-sdk/cts-sample-app-windows.png)
 

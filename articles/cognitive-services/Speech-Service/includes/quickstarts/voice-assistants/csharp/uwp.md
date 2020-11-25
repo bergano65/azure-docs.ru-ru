@@ -5,21 +5,21 @@ ms.topic: include
 ms.date: 04/04/2020
 ms.author: travisw
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e2d43290946969643b10d2ecad2f076df208a5d0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ea7ea08fc07a895bc038b27701d7038a5f76c26f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88925444"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95096633"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure.](~/articles/cognitive-services/speech-service/get-started.md)
+> * [Создать ресурс службы "Речь" Azure.](../../../../overview.md#try-the-speech-service-for-free)
 > * [Настройка среды разработки и создание пустого проекта](~/articles/cognitive-services/speech-service/quickstarts/setup-platform.md?tabs=uwp&pivots=programming-language-csharp)
-> * Создание программы-робота, подключенной к [Каналу Direct Line Speech](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+> * Создание программы-робота, подключенной к [Каналу Direct Line Speech](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 > 
   > [!NOTE]
@@ -277,7 +277,7 @@ ms.locfileid: "88925444"
    > Ознакомьтесь со [списком поддерживаемых регионов для голосовых помощников](~/articles/cognitive-services/speech-service/regions.md#voice-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
    > [!NOTE]
-   > Для получения сведений о настройке бота см. документацию по Bot Framework для [канала Direct Line Speech](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
+   > Для получения сведений о настройке бота см. документацию по Bot Framework для [канала Direct Line Speech](/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
 1. Замените строки `YourSpeechSubscriptionKey`, и `YourServiceRegion` на собственные значения для вашей подписки на службу "Речь" и [региона](~/articles/cognitive-services/speech-service/regions.md).
 

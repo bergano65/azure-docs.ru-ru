@@ -10,21 +10,21 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: travisw
-ms.openlocfilehash: fbfc6bf9c50257c2683522913503bf9b29450d94
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bc27c73fbf9e827ce9a95c8aaaddc82ffb0aec53
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86226400"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098038"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure.](~/articles/cognitive-services/speech-service/get-started.md)
+> * [Создать ресурс службы "Речь" Azure.](../../../../overview.md#try-the-speech-service-for-free)
 > * [Настройка среды разработки и создание пустого проекта](~/articles/cognitive-services/speech-service/quickstarts/setup-platform.md?tabs=android&pivots=programming-language-java)
-> * Создание программы-робота, подключенной к [Каналу Direct Line Speech](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+> * Создание программы-робота, подключенной к [Каналу Direct Line Speech](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
   > [!NOTE]
@@ -259,7 +259,7 @@ ms.locfileid: "86226400"
 
 1. Чтобы выполнить сборку приложения, нажмите комбинацию клавиш Ctrl + F9 или выберите в строке меню **Сборка** > **Make Project** (Создать проект).
 
-1. Чтобы запустить приложение, нажмите комбинацию клавиш Shift+F10 или выберите**Запуск** > **Run 'app'** (Запустить "приложение").
+1. Чтобы запустить приложение, нажмите комбинацию клавиш Shift+F10 или выберите **Запуск** > **Run 'app'** (Запустить "приложение").
 
 1. В отобразившемся окне целей развертывания выберите свое устройство Android.
 
@@ -272,4 +272,3 @@ ms.locfileid: "86226400"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
-

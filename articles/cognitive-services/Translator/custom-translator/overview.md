@@ -9,16 +9,16 @@ ms.subservice: translator-text
 ms.date: 12/09/2019
 ms.author: swmachan
 ms.topic: overview
-ms.openlocfilehash: 55555d81eb531ae5a4d946fa3f661796b3294897
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 6a7301fd878eb65e4c1dd540275611bcf9348afc
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94365505"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241749"
 ---
 # <a name="what-is-custom-translator"></a>Что такое Пользовательский переводчик?
 
-[Custom Translator](https://portal.customtranslator.azure.ai) — компонент службы Microsoft Translator, который позволяет переводческим компаниям, разработчикам приложений и поставщикам языковой службы создавать настраиваемую систему нейронного машинного перевода (NMT). Настраиваемые системы перевода легко интегрируются с существующими приложениями, рабочими процессами и веб-сайтами. [Custom Translator](https://portal.customtranslator.azure.ai/) предоставляет те же возможности, что и [Microsoft Translator Hub](https://hub.microsofttranslator.com/) для систем статистического машинного перевода (SMT), но только для систем нейронного машинного перевода (NMT).
+[Custom Translator](https://portal.customtranslator.azure.ai) — компонент службы Microsoft Translator, который позволяет переводческим компаниям, разработчикам приложений и поставщикам языковой службы создавать настраиваемую систему нейронного машинного перевода (NMT). Настраиваемые системы перевода легко интегрируются с существующими приложениями, рабочими процессами и веб-сайтами.
 
 Системы перевода, созданные с использованием [Custom Translator](https://portal.customtranslator.azure.ai), доступны через один облачный [безопасный](https://cognitive.uservoice.com/knowledgebase/articles/1147537-api-and-customization-confidentiality) высокопроизводительный и высокомасштабируемый [API перевода текстов Майкрософт версии 3](../reference/v3-0-translate.md?tabs=curl), который выполняет миллиарды переводов каждый день.
 

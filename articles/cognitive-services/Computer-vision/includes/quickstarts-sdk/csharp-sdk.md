@@ -10,16 +10,16 @@ ms.topic: include
 ms.date: 12/05/2019
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d48d0cbac4e0e8b366170d979be3bbc5dd3064ca
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: f4f922ccf4cd33c5e72c3ebd9182eb9868008d0f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886721"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098392"
 ---
 <a name="HOLTop"></a>
 
-[Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.ComputerVision) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
+[Справочная документация](/dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.ComputerVision) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -39,7 +39,7 @@ ms.locfileid: "92886721"
 
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки 
 
-После создания проекта установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение проекта в **Обозревателе решений** и выбрав пункт **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр** , установите флажок **Включить предварительные версии** и выполните поиск по запросу `Microsoft.Azure.CognitiveServices.Vision.ComputerVision`. Выберите версию `6.0.0-preview.1`, а затем **Установить**. 
+После создания проекта установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение проекта в **Обозревателе решений** и выбрав пункт **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Microsoft.Azure.CognitiveServices.Vision.ComputerVision`. Выберите версию `6.0.0-preview.1`, а затем **Установить**. 
 
 #### <a name="cli"></a>[CLI](#tab/cli)
 
@@ -87,9 +87,9 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --ver
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_vars)]
 
 > [!IMPORTANT]
-> Перейдите на портал Azure. Если ресурс Компьютерного зрения, созданный с учетом **предварительных требований** , успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
+> Перейдите на портал Azure. Если ресурс Компьютерного зрения, созданный с учетом **предварительных требований**, успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
 >
-> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security).
+> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](../../../cognitive-services-security.md).
 
 В методе `Main` приложения добавьте вызовы методов, используемых в этом кратком руководстве. Они будут созданы позже.
 
@@ -106,9 +106,9 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --ver
 
 |Имя|Описание|
 |---|---|
-| [ComputerVisionClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-dotnet) | Этот класс требуется для всех функций Компьютерного зрения. Вы создаете его экземпляр с информацией о подписке и используете его для выполнения большинства операций с образами.|
-|[ComputerVisionClientExtensions](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclientextensions?view=azure-dotnet)| Этот класс содержит дополнительные методы для **ComputerVisionClient**.|
-|[VisualFeatureTypes](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-dotnet)| Это перечисление определяет различные типы анализа изображений, которые можно выполнить в стандартной операции анализа. Набор значений VisualFeatureTypes указывается в зависимости от потребностей. |
+| [ComputerVisionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-dotnet) | Этот класс требуется для всех функций Компьютерного зрения. Вы создаете его экземпляр с информацией о подписке и используете его для выполнения большинства операций с образами.|
+|[ComputerVisionClientExtensions](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclientextensions?view=azure-dotnet)| Этот класс содержит дополнительные методы для **ComputerVisionClient**.|
+|[VisualFeatureTypes](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-dotnet)| Это перечисление определяет различные типы анализа изображений, которые можно выполнить в стандартной операции анализа. Набор значений VisualFeatureTypes указывается в зависимости от потребностей. |
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -121,9 +121,9 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --ver
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 > [!NOTE]
-> В этом кратком руководстве предполагается, что вы уже [создали переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа API и конечной точки Компьютерного зрения с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и соответственно `COMPUTER_VISION_ENDPOINT`.
+> В этом кратком руководстве предполагается, что вы уже [создали переменные среды](../../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа API и конечной точки Компьютерного зрения с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и соответственно `COMPUTER_VISION_ENDPOINT`.
 
-В новом методе создайте экземпляр клиента с использованием конечной точки и ключа. Создайте объект **[ApiKeyServiceClientCredentials](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.apikeyserviceclientcredentials?view=azure-dotnet)** с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект **[ComputerVisionClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-dotnet)** .
+В новом методе создайте экземпляр клиента с использованием конечной точки и ключа. Создайте объект **[ApiKeyServiceClientCredentials](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.apikeyserviceclientcredentials?view=azure-dotnet)** с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект **[ComputerVisionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-dotnet)** .
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_auth)]
 
@@ -134,7 +134,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --ver
 В следующем коде определен метод `AnalyzeImageUrl`, который использует клиентский объект для анализа удаленного образа и печати результатов. Метод возвращает текстовое описание, категоризацию, список тегов, обнаруженные лица, флажки содержимого для взрослых, основные цвета и тип изображения.
 
 > [!TIP]
-> Можно также проанализировать локальный образ. Изучите информацию о методах класса [ComputerVisionClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-dotnet), например об **AnalyzeImageInStreamAsync**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/ComputerVisionQuickstart.cs) для сценариев, включающих использование локальных изображений.
+> Можно также проанализировать локальный образ. Изучите информацию о методах класса [ComputerVisionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-dotnet), например об **AnalyzeImageInStreamAsync**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/ComputerVisionQuickstart.cs) для сценариев, включающих использование локальных изображений.
 
 ### <a name="set-up-test-image"></a>Настройка тестового изображения
 
@@ -144,11 +144,11 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --ver
 
 ### <a name="specify-visual-features"></a>Указание визуальных компонентов
 
-Определите новый метод для анализа образов. Добавьте приведенный ниже код, в котором задаются визуальные компоненты, которые вы хотите извлечь при анализе. Полный список компонентов см. в описании перечисления **[VisualFeatureTypes](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-dotnet)** .
+Определите новый метод для анализа образов. Добавьте приведенный ниже код, в котором задаются визуальные компоненты, которые вы хотите извлечь при анализе. Полный список компонентов см. в описании перечисления **[VisualFeatureTypes](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-dotnet)** .
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_visualfeatures)]
 
-Вставьте любой из приведенных ниже блоков кода в метод **AnalyzeImageUrl** , чтобы реализовать их функции. Не забудьте добавить закрывающую скобку в конце.
+Вставьте любой из приведенных ниже блоков кода в метод **AnalyzeImageUrl**, чтобы реализовать их функции. Не забудьте добавить закрывающую скобку в конце.
 
 ```csharp
 }
@@ -156,7 +156,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --ver
 
 ### <a name="analyze"></a>Анализ
 
-Метод **AnalyzeImageAsync** возвращает объект **ImageAnalysis** , содержащий всю извлеченную информацию.
+Метод **AnalyzeImageAsync** возвращает объект **ImageAnalysis**, содержащий всю извлеченную информацию.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_analyze_call)]
 
@@ -233,7 +233,7 @@ API "Компьютерное зрение" может использовать 
 Компьютерное зрение может считывать видимый текст в образе и преобразовывать его в поток символов. Дополнительные сведения о распознавании текста см. в основном документе [Оптическое распознавание текста (OCR)](../../concept-recognizing-text.md#read-api). Здесь в коде используется [пакет SDK Компьютерного зрения для чтения последней версии 3.0](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/6.0.0-preview.1) и определяется метод `BatchReadFileUrl`, который использует клиентский объект для обнаружения и извлечения текста на изображении.
 
 > [!TIP]
-> Кроме того, можно извлечь текст из локального образа. Изучите информацию о методах класса [ComputerVisionClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-dotnet), например о **ReadInStreamAsync**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/ComputerVisionQuickstart.cs) для сценариев, включающих использование локальных изображений.
+> Кроме того, можно извлечь текст из локального образа. Изучите информацию о методах класса [ComputerVisionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-dotnet), например о **ReadInStreamAsync**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/ComputerVisionQuickstart.cs) для сценариев, включающих использование локальных изображений.
 
 ### <a name="set-up-test-image"></a>Настройка тестового изображения
 
@@ -249,7 +249,7 @@ API "Компьютерное зрение" может использовать 
 
 ### <a name="get-read-results"></a>Получение результатов чтения
 
-Затем получите идентификатор операции, возвращенный из вызова **ReadAsync** , и получите от службы результаты операции по этому идентификатору. Следующий код проверяет операцию, пока не будут возвращены результаты. После этого извлеченные текстовые данные выводятся на консоль.
+Затем получите идентификатор операции, возвращенный из вызова **ReadAsync**, и получите от службы результаты операции по этому идентификатору. Следующий код проверяет операцию, пока не будут возвращены результаты. После этого извлеченные текстовые данные выводятся на консоль.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_read_response)]
 
@@ -285,7 +285,7 @@ dotnet run
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
->[Справочник по API службы "Компьютерное зрение" (.NET)](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet)
+>[Справочник по API службы "Компьютерное зрение" (.NET)](/dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet)
 
 * [Что собой представляет Компьютерное зрение](../../overview.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/ComputerVisionQuickstart.cs).

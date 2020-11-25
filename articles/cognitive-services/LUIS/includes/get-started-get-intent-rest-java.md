@@ -7,18 +7,18 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: include
 ms.date: 06/03/2020
-ms.openlocfilehash: 0212ad8aad4d9eb9603869e6a83302534509752b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 785d0afa666534c0b6dc0a8d93efbef4a6d1d9f5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91545173"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098307"
 ---
 [Справочная документация](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c08) | [Пример](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/LUIS/java-predict-with-rest/Predict.java)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
+* [JDK SE](/azure/developer/java/fundamentals/java-jdk-long-term-support) (комплект разработчика Java, выпуск "Стандартный");
 * [Visual Studio Code](https://code.visualstudio.com/) или привычный вам редактор кода;
 
 ## <a name="create-pizza-app"></a>Создание приложения Pizza

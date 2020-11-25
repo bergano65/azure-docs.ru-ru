@@ -10,16 +10,16 @@ ms.topic: include
 ms.date: 10/13/2019
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: ac0d09ea1641688dc59df1bbdbe19712d0cebe4f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 4a82b5550c9105a81bdee9b0f0a5846f93938ab0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886717"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098219"
 ---
 <a name="HOLTop"></a>
 
-[Справочная документация](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/ms-azure-cs-computervision) |[Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-computervision) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
+[Справочная документация](/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/ms-azure-cs-computervision) |[Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-computervision) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,13 +40,13 @@ ms.locfileid: "92886717"
 mkdir myapp && cd myapp
 ```
 
-Выполните команду `gradle init` из рабочей папки. Эта команда создает необходимые файлы сборки для Gradle, включая *build.gradle.kts* , который используется во время выполнения для создания и настройки приложения.
+Выполните команду `gradle init` из рабочей папки. Эта команда создает необходимые файлы сборки для Gradle, включая *build.gradle.kts*, который используется во время выполнения для создания и настройки приложения.
 
 ```console
 gradle init --type basic
 ```
 
-Когда появится запрос на выбор **предметно-ориентированного языка** , выберите **Kotlin**.
+Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
 
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
@@ -91,9 +91,9 @@ mkdir -p src/main/java
 
 
 > [!IMPORTANT]
-> Перейдите на портал Azure. Если ресурс [название продукта], созданный в соответствии с указаниями в разделе **Предварительные требования** , успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
+> Перейдите на портал Azure. Если ресурс [название продукта], созданный в соответствии с указаниями в разделе **Предварительные требования**, успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
 >
-> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security).
+> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](../../../cognitive-services-security.md).
 
 В методе **main** приложения добавьте вызовы методов, используемых в этом кратком руководстве. Они будут определены позже.
 
@@ -106,9 +106,9 @@ mkdir -p src/main/java
 
 |Имя|Описание|
 |---|---|
-| [ComputerVisionClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-java-stable) | Этот класс требуется для всех функций Компьютерного зрения. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
-|[ComputerVision](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervision?view=azure-java-stable)| Этот класс поступает из клиентского объекта и напрямую обрабатывает все операции с изображениями, такие как анализ изображений, обнаружение текста и создание эскизов.|
-|[VisualFeatureTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-java-stable)| Это перечисление определяет различные типы анализа изображений, которые можно выполнить в стандартной операции анализа. Набор значений VisualFeatureTypes указывается в зависимости от потребностей. |
+| [ComputerVisionClient](/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-java-stable) | Этот класс требуется для всех функций Компьютерного зрения. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
+|[ComputerVision](/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervision?view=azure-java-stable)| Этот класс поступает из клиентского объекта и напрямую обрабатывает все операции с изображениями, такие как анализ изображений, обнаружение текста и создание эскизов.|
+|[VisualFeatureTypes](/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-java-stable)| Это перечисление определяет различные типы анализа изображений, которые можно выполнить в стандартной операции анализа. Набор значений VisualFeatureTypes указывается в зависимости от потребностей. |
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -121,7 +121,7 @@ mkdir -p src/main/java
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 
-В новом методе создайте экземпляр объекта [ComputerVisionClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-java-stable) с использованием конечной точки и ключа.
+В новом методе создайте экземпляр объекта [ComputerVisionClient](/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-java-stable) с использованием конечной точки и ключа.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_auth)]
 
@@ -131,7 +131,7 @@ mkdir -p src/main/java
 В следующем коде определен метод `AnalyzeLocalImage`, который использует клиентский объект для анализа локального изображения и вывода результатов. Метод возвращает текстовое описание, категоризацию, список тегов, обнаруженные лица, флажки содержимого для взрослых, основные цвета и тип изображения.
 
 > [!TIP]
-> Кроме того, можно проанализировать удаленное изображение, используя его URL-адрес. См. подробные сведения о методах [ComputerVision](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervision?view=azure-java-stable), например **AnalyzeImage**. Пример кода для сценариев, в которых используются удаленные изображения, см. на [сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).
+> Кроме того, можно проанализировать удаленное изображение, используя его URL-адрес. См. подробные сведения о методах [ComputerVision](/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervision?view=azure-java-stable), например **AnalyzeImage**. Пример кода для сценариев, в которых используются удаленные изображения, см. на [сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).
 
 ### <a name="set-up-test-image"></a>Настройка тестового изображения
 
@@ -141,12 +141,12 @@ mkdir -p src/main/java
 
 ### <a name="specify-visual-features"></a>Указание визуальных компонентов
 
-Затем укажите, какие визуальные компоненты вы хотите извлечь при анализе. Полный список компонентов см. в описании перечисления [VisualFeatureTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-java-stable).
+Затем укажите, какие визуальные компоненты вы хотите извлечь при анализе. Полный список компонентов см. в описании перечисления [VisualFeatureTypes](/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-java-stable).
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_features)]
 
 ### <a name="analyze"></a>Анализ
-Этот метод выводит на консоль подробные результаты для каждой области анализа изображения. Мы рекомендуем заключить этот вызов метода в блок Try/Catch. Метод **analyzeImageInStream** возвращает объект **ImageAnalysis** , который содержит всю извлеченную информацию.
+Этот метод выводит на консоль подробные результаты для каждой области анализа изображения. Мы рекомендуем заключить этот вызов метода в блок Try/Catch. Метод **analyzeImageInStream** возвращает объект **ImageAnalysis**, который содержит всю извлеченную информацию.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_analyze)]
 
@@ -211,7 +211,7 @@ mkdir -p src/main/java
 Компьютерное зрение может считывать видимый текст в образе и преобразовывать его в поток символов. В этом разделе определяется метод `ReadFromFile`, который получает путь к локальному файлу и выводит текст c изображения на консоль.
 
 > [!TIP]
-> Кроме того, вы можете считать текст на удаленном изображении, на которое ссылается URL-адрес. См. подробные сведения о методах [ComputerVision](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervision?view=azure-java-stable), например **read**. Пример кода для сценариев, в которых используются удаленные изображения, см. на [сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).
+> Кроме того, вы можете считать текст на удаленном изображении, на которое ссылается URL-адрес. См. подробные сведения о методах [ComputerVision](/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervision?view=azure-java-stable), например **read**. Пример кода для сценариев, в которых используются удаленные изображения, см. на [сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).
 
 ### <a name="set-up-test-image"></a>Настройка тестового изображения
 
@@ -276,7 +276,7 @@ gradle run
 Изучив это краткое руководство, вы узнали, как с помощью библиотеки службы "Компьютерное зрение" для Java выполнять базовые задачи. Далее ознакомьтесь со справочной документацией, чтобы узнать больше о библиотеке.
 
 > [!div class="nextstepaction"]
->[Справочник по службе "Компьютерное зрение" для Java](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable)
+>[Справочник по службе "Компьютерное зрение" для Java](/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable)
 
 * [Что собой представляет Компьютерное зрение](../../overview.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).

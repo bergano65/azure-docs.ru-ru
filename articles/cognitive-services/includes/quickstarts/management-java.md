@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/01/2020
 ms.author: pafarley
-ms.openlocfilehash: 346854d5990ac6861bd4eb93914bb1745b90bfa5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a7fc96127d4449cfe0333ba81532d3c5c4ec19fe
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89321605"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95097538"
 ---
-[Справочная документация](https://docs.microsoft.com/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/mgmt-v2017_04_18/src/main/java/com/microsoft/azure/management/cognitiveservices/v2017_04_18) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-mgmt-cognitiveservices).
+[Справочная документация](/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/mgmt-v2017_04_18/src/main/java/com/microsoft/azure/management/cognitiveservices/v2017_04_18) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-mgmt-cognitiveservices).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -126,7 +126,7 @@ dependencies {
 
 ## <a name="see-also"></a>См. также
 
-* [Справочная документация по пакету SDK для управления Azure](https://docs.microsoft.com/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable)
-* [Общие сведения об Azure Cognitive Services](../../Welcome.md)
+* [Справочная документация по пакету SDK для управления Azure](/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable)
+* [Общие сведения об Azure Cognitive Services](../../what-are-cognitive-services.md)
 * [Проверка подлинности запросов к Azure Cognitive Services](../../authentication.md)
 * [Создание ресурса с помощью портала Azure](../../cognitive-services-apis-create-account.md)

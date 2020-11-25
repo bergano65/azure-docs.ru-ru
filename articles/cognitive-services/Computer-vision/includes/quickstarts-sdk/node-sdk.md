@@ -10,16 +10,16 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.custom: devx-track-js
-ms.openlocfilehash: b6c879d126b0c16f2dc6ceb41a1dfcc3ecf6a2d5
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: 4f82665afbf3cd83041e59a8b10ef2a731566fc0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639624"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95097833"
 ---
 <a name="HOLTop"></a>
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-computervision) | [Пакет (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-computervision) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
+[Справочная документация](/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-computervision) | [Пакет (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-computervision) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -28,7 +28,6 @@ ms.locfileid: "94639624"
 * Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="создайте ресурс Компьютерного зрения"  target="_blank">create a Computer Vision resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Компьютерного зрения потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
-
 
 ## <a name="setting-up"></a>Настройка
 
@@ -70,7 +69,7 @@ npm install @azure/cognitiveservices-computervision
 > [!IMPORTANT]
 > Перейдите на портал Azure. Если ресурс [название продукта], созданный в соответствии с указаниями в разделе **Предварительные требования**, успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
 >
-> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security).
+> Не забудьте удалить ключ из кода, когда закончите, и никогда не публикуйте его в открытом доступе. Для рабочей среды рекомендуется использовать безопасный способ хранения и доступа к учетным данным. Дополнительные сведения см. в статье о [безопасности в Cognitive Services](../../../cognitive-services-security.md).
 
 ## <a name="object-model"></a>Объектная модель
 
@@ -78,8 +77,8 @@ npm install @azure/cognitiveservices-computervision
 
 |Имя|Описание|
 |---|---|
-| [ComputerVisionClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/computervisionclient?view=azure-node-latest) | Этот класс требуется для всех функций Компьютерного зрения. Вы создаете его экземпляр с информацией о подписке и используете его для выполнения большинства операций с образами.|
-|[VisualFeatureTypes](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/visualfeaturetypes?view=azure-node-latest)| Это перечисление определяет различные типы анализа изображений, которые можно выполнить в стандартной операции анализа. Набор значений **VisualFeatureTypes** указывается в зависимости от потребностей. |
+| [ComputerVisionClient](/javascript/api/@azure/cognitiveservices-computervision/computervisionclient?view=azure-node-latest) | Этот класс требуется для всех функций Компьютерного зрения. Вы создаете его экземпляр с информацией о подписке и используете его для выполнения большинства операций с образами.|
+|[VisualFeatureTypes](/javascript/api/@azure/cognitiveservices-computervision/visualfeaturetypes?view=azure-node-latest)| Это перечисление определяет различные типы анализа изображений, которые можно выполнить в стандартной операции анализа. Набор значений **VisualFeatureTypes** указывается в зависимости от потребностей. |
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -92,7 +91,7 @@ npm install @azure/cognitiveservices-computervision
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 
-Создайте экземпляр клиента с конечной точкой и ключом. Создайте объект [ApiKeyCredentials](https://docs.microsoft.com/python/api/msrest/msrest.authentication.apikeycredentials?view=azure-python) с помощью своего ключа и конечной точкой для создания объекта [ComputerVisionClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/computervisionclient?view=azure-node-latest).
+Создайте экземпляр клиента с конечной точкой и ключом. Создайте объект [ApiKeyCredentials](/python/api/msrest/msrest.authentication.apikeycredentials?view=azure-python) с помощью своего ключа и конечной точкой для создания объекта [ComputerVisionClient](/javascript/api/@azure/cognitiveservices-computervision/computervisionclient?view=azure-node-latest).
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_client)]
 
@@ -104,10 +103,10 @@ npm install @azure/cognitiveservices-computervision
 
 ## <a name="analyze-an-image"></a>Анализ изображения
 
-Код в этом разделе анализирует удаленные образы для извлечения различных визуальных компонентов. Эти операции можно выполнить как часть метода **analyzeImage** клиентского объекта, или же их можно вызвать с помощью отдельных методов. Дополнительные сведения см. в [справочной документации](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest).
+Код в этом разделе анализирует удаленные образы для извлечения различных визуальных компонентов. Эти операции можно выполнить как часть метода **analyzeImage** клиентского объекта, или же их можно вызвать с помощью отдельных методов. Дополнительные сведения см. в [справочной документации](/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest).
 
 > [!NOTE]
-> Можно также проанализировать локальный образ. См. подробные сведения о методах [ComputerVisionClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/computervisionclient?view=azure-node-latest), например **analyzeImageInStream**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js) ля сценариев, включающих использование локальных изображений.
+> Можно также проанализировать локальный образ. См. подробные сведения о методах [ComputerVisionClient](/javascript/api/@azure/cognitiveservices-computervision/computervisionclient?view=azure-node-latest), например **analyzeImageInStream**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js) ля сценариев, включающих использование локальных изображений.
 
 ### <a name="get-image-description"></a>Получение описания изображения
 
@@ -226,7 +225,7 @@ npm install @azure/cognitiveservices-computervision
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_images)]
 
 > [!NOTE]
-> Кроме того, вы можете прочитать текст из локального образа. См. подробные сведения о методах [ComputerVisionClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/computervisionclient?view=azure-node-latest), например **readInStream**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js) ля сценариев, включающих использование локальных изображений.
+> Кроме того, вы можете прочитать текст из локального образа. См. подробные сведения о методах [ComputerVisionClient](/javascript/api/@azure/cognitiveservices-computervision/computervisionclient?view=azure-node-latest), например **readInStream**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js) ля сценариев, включающих использование локальных изображений.
 
 ### <a name="call-the-read-api"></a>Вызов API чтения
 
@@ -265,7 +264,7 @@ node index.js
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
->[Справочник по API службы "Компьютерное зрение" (Node.js)](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest)
+>[Справочник по API службы "Компьютерное зрение" (Node.js)](/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest)
 
 * [Что собой представляет Компьютерное зрение](../../overview.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js).

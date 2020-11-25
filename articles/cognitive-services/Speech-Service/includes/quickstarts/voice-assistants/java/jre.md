@@ -4,21 +4,21 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: travisw
-ms.openlocfilehash: 38e6bae69710dc9e1dbc8789ee9ccb636193c7f7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8ee14b94977b3152e0aab853fa3919a739d0dfdd
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "80671292"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098305"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure.](~/articles/cognitive-services/speech-service/get-started.md)
+> * [Создать ресурс службы "Речь" Azure.](../../../../overview.md#try-the-speech-service-for-free)
 > * [Настройка среды разработки и создание пустого проекта](~/articles/cognitive-services/speech-service/quickstarts/setup-platform.md?tabs=jre&pivots=programming-language-java)
-> * Создание программы-робота, подключенной к [Каналу Direct Line Speech](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+> * Создание программы-робота, подключенной к [Каналу Direct Line Speech](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
   > [!NOTE]
@@ -115,7 +115,7 @@ ms.locfileid: "80671292"
 
 1. В методе `main` сначала настройте `DialogServiceConfig` и используйте его для создания экземпляра `DialogServiceConnector`. Этот экземпляр подключается к каналу "Речь Direct Line" для взаимодействия с ботом. Экземпляр `AudioConfig` также используется для указания источника звуковых входных данных. В этом примере микрофон по умолчанию используется с `AudioConfig.fromDefaultMicrophoneInput()`.
 
-   - Замените строку `YourSubscriptionKey` своим ключом подписки, который вы можете получить на [этом веб-сайте](~/articles/cognitive-services/speech-service/get-started.md).
+   - Замените строку `YourSubscriptionKey` своим ключом подписки, который вы можете получить на [этом веб-сайте](../../../../overview.md#try-the-speech-service-for-free).
    - Замените строку `YourServiceRegion` на [регион](~/articles/cognitive-services/speech-service/regions.md), связанный с вашей подпиской.
 
    > [!NOTE]
@@ -185,7 +185,7 @@ ms.locfileid: "80671292"
 
 1. Сохраните изменения в файле `Main`.
 
-1. Чтобы поддержать воспроизведение ответа, добавьте дополнительный класс, который преобразовывает объект PullAudioOutputStream, возвращенный из API getAudio(), в InputStream для Java, чтобы упростить обработку. `ActivityAudioStream` — это специализированный класс, который обрабатывает аудиоотклик из канала "Речь Direct Line". Он предоставляет методы доступа для получения сведений о звуковом формате для обработки воспроизведения. Для этого выберите**File** (Файл) > **New** (Создать) > **Class** (Класс).
+1. Чтобы поддержать воспроизведение ответа, добавьте дополнительный класс, который преобразовывает объект PullAudioOutputStream, возвращенный из API getAudio(), в InputStream для Java, чтобы упростить обработку. `ActivityAudioStream` — это специализированный класс, который обрабатывает аудиоотклик из канала "Речь Direct Line". Он предоставляет методы доступа для получения сведений о звуковом формате для обработки воспроизведения. Для этого выберите **File** (Файл) > **New** (Создать) > **Class** (Класс).
 
 1. В окне **New Java Class** (Новый класс Java) введите _speechsdk.quickstart_ в поле **Пакет** и _ActivityAudioStream_ — в поле **Имя**.
 

@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-js
-ms.openlocfilehash: 844252d5ae86ccdd853c4c65889f7233f69215ff
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: c3551156c2745e8904cf9f795a69e0e9c2c3c418
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535985"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95746053"
 ---
 # <a name="quickstart-extract-printed-text-ocr-using-the-computer-vision-rest-api-and-nodejs"></a>Краткое руководство. Извлечение печатного текста (OCR) с помощью REST API "Компьютерное зрение" и Node.js
 
 > [!NOTE]
-> При извлечении текста на английском языке попробуйте применить новую [операцию чтения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text).
+> При извлечении текста на английском языке попробуйте применить новую [операцию чтения](../concept-recognizing-text.md).
 
 Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения путем оптического распознавания текста (OCR) с помощью REST API Компьютерного зрения. С помощью метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20d) можно определить печатный текст на изображении и извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
 
@@ -33,7 +33,7 @@ ms.locfileid: "94535985"
 * Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="создайте ресурс Компьютерного зрения"  target="_blank">create a Computer Vision resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Компьютерного зрения потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
-* [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
+* [Создайте переменные среды](../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 

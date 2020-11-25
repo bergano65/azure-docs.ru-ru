@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: fcfefb2b6cd5c23e9b77d7d27413d1ff6d775bfe
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7b691dc408c65b2152c60276dbea826042ecb0d8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89321625"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95095326"
 ---
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/arm-cognitiveservices/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/arm-cognitiveservices) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices#sample-code)
+[Справочная документация](/javascript/api/@azure/arm-cognitiveservices/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/arm-cognitiveservices) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices#sample-code)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -118,7 +118,7 @@ node index.js
 
 ## <a name="see-also"></a>См. также
 
-* [Справочная документация по пакету SDK для управления Azure](https://docs.microsoft.com/javascript/api/@azure/arm-cognitiveservices/?view=azure-node-latest)
-* [Общие сведения об Azure Cognitive Services](../../Welcome.md)
+* [Справочная документация по пакету SDK для управления Azure](/javascript/api/@azure/arm-cognitiveservices/?view=azure-node-latest)
+* [Общие сведения об Azure Cognitive Services](../../what-are-cognitive-services.md)
 * [Проверка подлинности запросов к Azure Cognitive Services](../../authentication.md)
 * [Создание ресурса с помощью портала Azure](../../cognitive-services-apis-create-account.md)

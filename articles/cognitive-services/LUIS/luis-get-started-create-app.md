@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 10/13/2020
-ms.openlocfilehash: 60151e97c64a3d61044e4b82299573ee59951d46
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2048079a9b1eb5234d03c6fe57073228bd892d53
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128208"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019166"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики
 
@@ -64,7 +64,7 @@ ms.locfileid: "93128208"
     > [!div class="mx-imgBorder"]
     > [![Снимок экрана с намерением HomeAutomation.TurnOff](media/luis-quickstart-new-app/home-automation-turnoff.png "Снимок экрана с намерением HomeAutomation.TurnOff")](media/luis-quickstart-new-app/home-automation-turnoff.png)
 
-1. Если вы хотите просмотреть сущности в приложении, выберите **Entities** (Сущности). Если щелкнуть одну из сущностей, например **HomeAutomation.DeviceName** , отобразится список связанных с ней значений. 
+1. Если вы хотите просмотреть сущности в приложении, выберите **Entities** (Сущности). Если щелкнуть одну из сущностей, например **HomeAutomation.DeviceName**, отобразится список связанных с ней значений. 
  
     :::image type="content" source="media/luis-quickstart-new-app/entities-page.png" alt-text="Замещающий текст изображения" lightbox="media/luis-quickstart-new-app/entities-page.png":::
 
@@ -83,7 +83,7 @@ ms.locfileid: "93128208"
 
     ![Снимок экрана с панелью тестирования, на которой выделено намерение](media/luis-quickstart-new-app/review-test-inspection-pane-in-portal.png)
 
-1. Выберите **Проверить** , чтобы просмотреть дополнительные сведения о прогнозировании.
+1. Выберите **Проверить**, чтобы просмотреть дополнительные сведения о прогнозировании.
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана: панель тестирования со сведениями о проверке](media/luis-quickstart-new-app/test.png)
@@ -120,7 +120,7 @@ ms.locfileid: "93128208"
     |`verbose=true`|
     |`show-all-intents=true`|
 
-3. В адресной строке браузера перейдите в конец URL-адреса и введите `turn off the living room light` для значения _запроса_ , а затем нажмите клавишу ВВОД.
+3. В адресной строке браузера перейдите в конец URL-адреса и введите `turn off the living room light` для значения _запроса_, а затем нажмите клавишу ВВОД.
 
     ```json
     {
@@ -223,4 +223,4 @@ ms.locfileid: "93128208"
 Эту конечную точку можно вызвать из кода:
 
 > [!div class="nextstepaction"]
-> [Руководство по вызову конечной точки LUIS с помощью кода](luis-get-started-cs-get-intent.md).
+> [Руководство по вызову конечной точки LUIS с помощью кода](./luis-get-started-get-intent-from-rest.md).

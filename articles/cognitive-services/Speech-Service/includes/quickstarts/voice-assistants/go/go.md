@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/25/2020
 ms.author: trrwilson
-ms.openlocfilehash: b05e63dc549fdf1fec4485e27086bb32251b41d8
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: c37637ba1cb5154bbd56f7fd22bbbca62b8c3438
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93136004"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95097742"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -18,7 +18,7 @@ ms.locfileid: "93136004"
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../overview.md#try-the-speech-service-for-free)
 > * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md).
-> * Создание программы-робота, подключенной к [Каналу Direct Line Speech](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+> * Создание программы-робота, подключенной к [Каналу Direct Line Speech](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 >
   > [!NOTE]
@@ -101,14 +101,14 @@ func main() {
 - Перейдите на портал Azure и откройте раздел своего ресурса службы "Речь".
 - Выберите слева раздел **Keys and Endpoint** (Ключи и конечная точка). В нем вы увидите два ключа подписки.
     - Используйте один из них в качестве замены значения `YOUR_SUBSCRIPTION_KEY`.
-- Откройте слева раздел **Обзор** , запишите имя региона и сопоставьте его с идентификатором региона.
+- Откройте слева раздел **Обзор**, запишите имя региона и сопоставьте его с идентификатором региона.
     - Используйте идентификатор региона для замены значения `YOUR_BOT_REGION`, например: `"westus"` для **Западная часть США**.
 
    > [!NOTE]
    > Ознакомьтесь со [списком поддерживаемых регионов для голосовых помощников](~/articles/cognitive-services/speech-service/regions.md#voice-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
    > [!NOTE]
-   > Для получения сведений о настройке бота см. документацию по Bot Framework для [канала Direct Line Speech](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
+   > Для получения сведений о настройке бота см. документацию по Bot Framework для [канала Direct Line Speech](/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
 ## <a name="code-explanation"></a>Пояснение к коду
 Для создания объекта конфигурации службы "Речь" нужно указать регион и ключ подписки службы "Речь". Объект конфигурации нужен для создания экземпляра объекта распознавателя речи.

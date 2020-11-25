@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: d8da5fcffa6ff02bed76973021b8a69c6c250821
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1b50fbfa0ec4116f7d0b5988e5be70d0db086732
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89321632"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95095078"
 ---
-[Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Management.CognitiveServices/) | [Примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices/tests)
+[Справочная документация](/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Management.CognitiveServices/) | [Примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices/tests)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -124,7 +124,7 @@ dotnet run
 
 ## <a name="see-also"></a>См. также
 
-* [Справочная документация по пакету SDK для управления Azure](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet)
-* [Общие сведения об Azure Cognitive Services](../../Welcome.md)
+* [Справочная документация по пакету SDK для управления Azure](/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet)
+* [Общие сведения об Azure Cognitive Services](../../what-are-cognitive-services.md)
 * [Проверка подлинности запросов к Azure Cognitive Services](../../authentication.md)
 * [Создание ресурса с помощью портала Azure](../../cognitive-services-apis-create-account.md)
