@@ -3,12 +3,12 @@ title: Обзор функций Центров событий Azure | Доку
 description: В этой статье приводится терминология и сведения о функциях Центров событий Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 43ebf4e928cadfc87f52fc10b27f9c8419d11a8f
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: db7c0244fd4e9e04f9cfbcbba8748ec8190fc5c5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369647"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96007445"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Функции и терминология в Центрах событий Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "92369647"
 
 ## <a name="sas-tokens"></a>Маркеры SAS
 
-Концентраторы событий используют *подписанные*URL-адрес, которые доступны на уровне пространства имен и концентратора событий. Маркер SAS создается на основе ключа SAS и хэша SHA URL-адреса, закодированного в определенном формате. С помощью имени ключа (политики) и маркера Центры событий могут повторно создать хэш, чтобы аутентифицировать отправителя. Как правило, маркеры SAS для издателей событий создаются только с привилегиями **отправки** в определенном концентраторе событий. Этот механизм URL-адреса маркера SAS является основой для идентификации издателя, представленной в политике издателя. Дополнительные сведения о работе с SAS см. в статье [Проверка подлинности подписи при общем доступе с помощью служебной шины](../service-bus-messaging/service-bus-sas.md).
+Концентраторы событий используют *подписанные* URL-адрес, которые доступны на уровне пространства имен и концентратора событий. Маркер SAS создается на основе ключа SAS и хэша SHA URL-адреса, закодированного в определенном формате. С помощью имени ключа (политики) и маркера Центры событий могут повторно создать хэш, чтобы аутентифицировать отправителя. Как правило, маркеры SAS для издателей событий создаются только с привилегиями **отправки** в определенном концентраторе событий. Этот механизм URL-адреса маркера SAS является основой для идентификации издателя, представленной в политике издателя. Дополнительные сведения о работе с SAS см. в статье [Проверка подлинности подписи при общем доступе с помощью служебной шины](../service-bus-messaging/service-bus-sas.md).
 
 ## <a name="event-consumers"></a>Получатели событий
 
@@ -104,7 +104,7 @@ ms.locfileid: "92369647"
 
 > [!NOTE]
 > Если вы используете хранилище BLOB-объектов Azure в качестве хранилища контрольных точек в среде, которая поддерживает другую версию пакета SDK для большого двоичного объекта хранилища, чем обычно доступно в Azure, необходимо использовать код, чтобы изменить версию API службы хранилища до определенной версии, поддерживаемой этой средой. Например, если вы используете [концентраторы событий в Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), самая высокая доступная версия для службы хранилища — версия 2017-11-09. В этом случае необходимо использовать код для настройки API службы хранилища до версии 2017-11-09. Пример назначения конкретной версии API хранилища см. в следующих примерах на сайте GitHub: 
-> - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). 
+> - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/). 
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/)
 > - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) или  [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/)
@@ -135,7 +135,7 @@ ms.locfileid: "92369647"
 
 Пользователь управляет смещением самостоятельно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Центрах событий см. по следующим ссылкам:
 

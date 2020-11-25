@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 08/26/2019
 ms.author: allensu
 ms.openlocfilehash: e13164c3ec6049a8ae3954528a02d20e313dd883
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84711465"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008129"
 ---
 # <a name="move-an-azure-virtual-network-to-another-region-by-using-azure-powershell"></a>Перемещение виртуальной сети Azure в другой регион с помощью Azure PowerShell
 
@@ -60,7 +60,7 @@ ms.locfileid: "84711465"
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceVNETID -IncludeParameterDefaultValue
    ```
 
-1. Имя скачанного файла совпадает с именем группы ресурсов, из которой был экспортирован ресурс. Найдите * \<resource-group-name> JSON* файл, экспортированный с помощью команды, и откройте его в редакторе:
+1. Имя скачанного файла совпадает с именем группы ресурсов, из которой был экспортирован ресурс. Найдите *\<resource-group-name> JSON* файл, экспортированный с помощью команды, и откройте его в редакторе:
    
    ```azurepowershell
    notepad <source-resource-group-name>.json
@@ -105,7 +105,7 @@ ms.locfileid: "84711465"
     Get-AzLocation | format-table
     ```
 
-1. Используемых В зависимости от требований можно также изменить другие параметры в файле * \<resource-group-name> JSON* .
+1. Используемых В зависимости от требований можно также изменить другие параметры в файле *\<resource-group-name> JSON* .
 
     * **Адресное пространство**. перед сохранением файла можно изменить адресное пространство виртуальной сети, изменив раздел **Resources**  >  **аддрессспаце** и изменив свойство **аддресспрефиксес** :
 
@@ -201,7 +201,7 @@ ms.locfileid: "84711465"
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
     
-1. Разверните отредактированный * \<resource-group-name> JSON* -файл в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+1. Разверните отредактированный *\<resource-group-name> JSON* -файл в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 
@@ -248,7 +248,7 @@ Remove-AzResourceGroup -Name <target-resource-group-name>
     Remove-AzVirtualNetwork -Name <source-virtual-network-name> -ResourceGroupName <source-resource-group-name>
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы переместили виртуальную сеть из одного региона в другой с помощью PowerShell, а затем очистили ненужные исходные ресурсы. Дополнительные сведения о перемещении ресурсов между регионами и аварийным восстановлением в Azure см. в следующих статьях:
 
