@@ -14,11 +14,11 @@ ms.topic: quickstart
 ms.date: 01/22/2018
 ms.custom: seo-python-october2019, devx-track-python
 ms.openlocfilehash: e511b8b5505f1fa8713d81d0ce959df32ef28503
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89439118"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013332"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-python"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью Python
 
@@ -58,7 +58,7 @@ ms.locfileid: "89439118"
 
 ## <a name="install-the-python-package"></a>Установка пакета Python
 
-1. Откройте терминал или командную строку с правами администратора. 
+1. Откройте терминал или командную строку с правами администратора. 
 2. Сначала установите пакет Python для ресурсов управления Azure:
 
     ```python

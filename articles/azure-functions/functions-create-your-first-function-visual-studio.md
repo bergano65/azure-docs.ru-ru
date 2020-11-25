@@ -3,14 +3,14 @@ title: Краткое руководство. Создание первой фу
 description: Из этого краткого руководства вы узнаете, как создать и опубликовать Функцию Azure, активируемую HTTP-запросом, с помощью Visual Studio.
 ms.assetid: 82db1177-2295-4e39-bd42-763f6082e796
 ms.topic: quickstart
-ms.date: 03/06/2020
+ms.date: 09/30/2020
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, 23113853-34f2-4f
-ms.openlocfilehash: d7cfcd02c5e6c9ff57241288bd79efb45d4ac7ab
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c9ddd6e74e25d8de415e24038e99da9d21dab867
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88213989"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "96014484"
 ---
 # <a name="quickstart-create-your-first-function-in-azure-using-visual-studio"></a>Краткое руководство. Создание первой функции в Azure с помощью Visual Studio
 
@@ -74,7 +74,7 @@ Visual Studio интегрируется с Azure Functions Core Tools. Поэт
 
 2. Перейдите по этому URL-адресу и увидите в браузере ответ на удаленный запрос GET, возвращаемый функцией. Он выглядит аналогично следующему примеру:
 
-    :::image type="content" source="media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-azure.png" alt-text="Приложение-функция работает":::
+    :::image type="content" source="media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-azure.png" alt-text="Ответ функции в браузере":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -88,7 +88,7 @@ Visual Studio интегрируется с Azure Functions Core Tools. Поэт
 
 1. На странице приложения-функции выберите вкладку **Обзор**, а затем щелкните ссылку в разделе **Группа ресурсов**.
 
-   :::image type="content" source="media/functions-create-your-first-function-visual-studio/functions-app-delete-resource-group.png" alt-text="Приложение-функция работает":::
+   :::image type="content" source="media/functions-create-your-first-function-visual-studio/functions-app-delete-resource-group.png" alt-text="Выбор группы ресурсов, которую требуется удалить со страницы приложения-функции":::
 
 2. На странице **Группа ресурсов** просмотрите список включенных ресурсов и убедитесь, что именно их нужно удалить.
  

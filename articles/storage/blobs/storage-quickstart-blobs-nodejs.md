@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 54bf6265a5b440e5c450d21b192acc2f7024f938
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: ed3a88dbca1788a5c5a265fe91bdd5e88ae1fe36
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91307540"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012771"
 ---
 # <a name="quickstart-manage-blobs-with-javascript-v12-sdk-in-nodejs"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js
 
@@ -24,7 +24,7 @@ ms.locfileid: "91307540"
 * [Справочная документация по API](/javascript/api/@azure/storage-blob)
 * [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob)
 * [Пакет (диспетчер пакетов узла)](https://www.npmjs.com/package/@azure/storage-blob)
-* [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-javascript?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
+* [Примеры](../common/storage-samples-javascript.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -314,6 +314,6 @@ Done
 > [!div class="nextstepaction"]
 > [Azure для разработчиков JavaScript](/azure/developer/javascript/)
 
-* Чтобы узнать, как развернуть веб-приложение, использующее хранилище больших двоичных объектов Azure, см. [Руководство по передаче данных изображений в облако с помощью службы хранилища Azure](/azure/storage/blobs/storage-upload-process-images?tabs=javascript&preserve-view=true).
+* Чтобы узнать, как развернуть веб-приложение, использующее хранилище больших двоичных объектов Azure, см. [Руководство по передаче данных изображений в облако с помощью службы хранилища Azure](./storage-upload-process-images.md?preserve-view=true&tabs=javascript).
 * Дополнительные примеры приложений для хранилища Blob-объектов Azure версии 12 для JavaScript собраны [здесь](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples).
 * Дополнительные сведения см в документации по [клиентской библиотеке Хранилища Blob-объектов Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob).

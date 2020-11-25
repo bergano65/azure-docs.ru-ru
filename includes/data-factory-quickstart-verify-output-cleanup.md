@@ -5,17 +5,17 @@ ms.date: 11/09/2018
 author: linda33wj
 ms.author: jingwang
 ms.openlocfilehash: 34848b638ff0c7f7b9d1a2f3e5894339f8310ccc
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135642"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013376"
 ---
 ## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
 
 Конвейер автоматически создает выходную папку в контейнере больших двоичных объектов adftutorial. Затем он копирует файл emp.txt из входной папки в выходную. 
 
-1. На странице контейнера **adftutorial** на портале Azure нажмите кнопку **Обновить** , чтобы появилась папка output. 
+1. На странице контейнера **adftutorial** на портале Azure нажмите кнопку **Обновить**, чтобы появилась папка output. 
     
     ![Снимок экрана: страница контейнера, которую можно обновить.](media/data-factory-quickstart-verify-output-cleanup/output-refresh.png)
 

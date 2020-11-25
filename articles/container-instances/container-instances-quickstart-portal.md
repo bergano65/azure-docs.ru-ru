@@ -5,11 +5,11 @@ ms.topic: quickstart
 ms.date: 08/24/2020
 ms.custom: seodec18, mvc, devx-track-js
 ms.openlocfilehash: c8477bd91c3a02a2cd02d341c38c16da251902ae
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91324541"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004812"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-the-azure-portal"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью портала Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "91324541"
 
 Последовательно выберите **Создать ресурс** > **Контейнеры** > **Экземпляры контейнеров**.
 
-:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-01.png" alt-text="Приложение, развернутое с помощью службы &quot;Экземпляры контейнеров Azure&quot; (просмотр в браузере)":::
+:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-01.png" alt-text="Начало создания экземпляра контейнера на портале Azure":::
 
 На странице **Основные сведения** введите следующие значения в текстовые поля **Группа ресурсов**, **Имя контейнера** и **Образ контейнера**: Сохраните значения по умолчанию для остальных параметров и щелкните **ОК**.
 
@@ -38,21 +38,25 @@ ms.locfileid: "91324541"
 * Источник образа: **Образы для быстрого начала работы**
 * Образ контейнера: `mcr.microsoft.com/azuredocs/aci-helloworld` (Linux)
 
-:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-03.png" alt-text="Приложение, развернутое с помощью службы &quot;Экземпляры контейнеров Azure&quot; (просмотр в браузере)":::
+:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-03.png" alt-text="Настройка основных параметров для нового экземпляра контейнера на портале Azure":::
 
 Для выполнения задач этого краткого руководства используйте значения по умолчанию, чтобы развернуть общедоступный образ Майкрософт `aci-helloworld`. Этот пример образа Linux содержит небольшое веб-приложение Node.js, которое обслуживает статические HTML-страницы. Кроме того, вы можете использовать собственные образы контейнеров, хранящиеся в Реестре контейнеров Azure, Docker Hub или других реестрах.
 
 На странице **Сеть** укажите **метку DNS-имени** для контейнера. Это имя должно быть уникальным в пределах региона Azure, в котором создается экземпляр контейнера. Контейнер будет доступен для всех по адресу `<dns-name-label>.<region>.azurecontainer.io`. Если появится сообщение об ошибке "Метка имени DNS недоступна", попробуйте другую метку имени DNS.
 
-:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-04.png" alt-text="Приложение, развернутое с помощью службы &quot;Экземпляры контейнеров Azure&quot; (просмотр в браузере)":::
+:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-04.png" alt-text="Настройка параметров сети для нового экземпляра контейнера на портале Azure":::
 
 Сохраните значения по умолчанию для остальных параметров и щелкните **Просмотреть и создать**.
 
 Когда проверка завершится, вы увидите сводную информацию о параметрах контейнера. Щелкните **Создать**, чтобы отправить запрос на развертывание контейнера.
 
-:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-05.png" alt-text="Приложение, развернутое с помощью службы &quot;Экземпляры контейнеров Azure&quot; (просмотр в браузере)" для группы контейнеров, выбрав **Группы ресурсов** > **myresourcegroup** > **mycontainer**. Запишите **Полное доменное имя** этого экземпляра контейнера и проверьте его **Состояние**.
+:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-05.png" alt-text="Сводка параметров для нового экземпляра контейнера на портале Azure":::
 
-:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-06.png" alt-text="Приложение, развернутое с помощью службы &quot;Экземпляры контейнеров Azure&quot; (просмотр в браузере)":::
+Когда начнется развертывание, появится уведомление со сведениями о его выполнении. После развертывания группы контейнеров появится еще одно уведомление.
+
+Откройте страницу "Обзор" для группы контейнеров, выбрав **Группы ресурсов** > **myresourcegroup** > **mycontainer**. Запишите **Полное доменное имя** этого экземпляра контейнера и проверьте его **Состояние**.
+
+:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-06.png" alt-text="Обзор группы контейнеров на портале Azure":::
 
 Если параметр **Состояние** примет значение *Выполняется*, перейдите в браузере по полному доменному имени контейнера.
 
@@ -66,18 +70,18 @@ ms.locfileid: "91324541"
 
 Чтобы просмотреть журналы контейнера, в разделе **Параметры** выберите **Контейнеры**, а затем — **Журналы**. Вы увидите запрос HTTP GET, созданный при просмотре приложения в браузере.
 
-:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-11.png" alt-text="Приложение, развернутое с помощью службы &quot;Экземпляры контейнеров Azure&quot; (просмотр в браузере)":::
+:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-11.png" alt-text="Журналы контейнера на портале Azure":::
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Завершив работу с контейнером, выберите действие **Обзор** для экземпляра контейнера *mycontainer*, а затем щелкните **Удалить**.
 
-:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-09.png" alt-text="Приложение, развернутое с помощью службы &quot;Экземпляры контейнеров Azure&quot; (просмотр в браузере)":::
+:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-09.png" alt-text="Удаление экземпляра контейнера на портале Azure":::
 
 Щелкните **Да**, когда появится диалоговое окно подтверждения.
 
-:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-10.png" alt-text="Приложение, развернутое с помощью службы &quot;Экземпляры контейнеров Azure&quot; (просмотр в браузере)":::
+:::image type="content" source="media/container-instances-quickstart-portal/qs-portal-10.png" alt-text="Подтверждение удаления экземпляра контейнера на портале Azure":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

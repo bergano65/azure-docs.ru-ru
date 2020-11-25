@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: a01b6e644ce3afda451d94d3e00eda278a645adf
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 34205caf03d2f2d7255f75ea6203c5572c4c429b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87851330"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95523313"
 ---
 # <a name="quickstart-manage-blobs-with-python-v21-sdk"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 2.1
 
@@ -137,7 +137,7 @@ block_blob_service.set_container_acl(
 Теперь у вас есть облачный контейнер BLOB-объектов. Вы можете создать объект **CloudBlockBlob**, который указывает на конкретный интересующий вас BLOB-объект, и выполнять с ним различные операции: отправку, скачивание или копирование.
 
 > [!IMPORTANT]
-> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
 ### <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
 
@@ -216,7 +216,7 @@ os.remove(full_path_to_file2)
 
 ### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
 
-- Дополнительные сведения о клиентской библиотеке Python см. в разделе [Библиотеки службы хранилища Azure для Python](https://docs.microsoft.com/python/api/overview/azure/storage).
+- Дополнительные сведения о клиентской библиотеке Python см. в разделе [Библиотеки службы хранилища Azure для Python](/python/api/overview/azure/storage).
 - Изучите [примеры для хранилища BLOB-объектов](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=python&term=blob), написанные с использованием клиентской библиотеки Python.
 
 ## <a name="next-steps"></a>Дальнейшие действия

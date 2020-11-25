@@ -5,21 +5,21 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: quickstart
-ms.custom: mvc, devx-track-azurecli
-ms.date: 10/28/2020
-ms.openlocfilehash: 0d7f455e748a52595839cc509720bf7ad5b9b617
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.custom: mvc, devx-track-azurecli, contperfq2
+ms.date: 11/23/2020
+ms.openlocfilehash: f5b8497772a14e9613977c9cdc22025e8e58b92c
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099068"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95509465"
 ---
 # <a name="quickstart-create-and-manage-logic-apps-using-the-azure-cli"></a>Краткое руководство. Создание приложений логики и управление ими с помощью Azure CLI
 
 В этом кратком руководстве показано, как создавать приложения логики и управлять ими с помощью [расширений Azure CLI Logic Apps](/cli/azure/ext/logic/logic) (`az logic`). В командной строке можно создать приложение логики, определив его рабочий процесс с помощью JSON-файла. Затем вы можете управлять приложением логики, выполняя из командной строки такие операции, как `list`, `show` (`get`), `update` и `delete`.
 
 > [!WARNING]
-> Расширение Azure CLI Logic Apps в настоящее время *экспериментальное* , на него не предоставляется *клиентская поддержка*. Используйте это расширение CLI с осторожностью, особенно в рабочих средах.
+> Расширение Azure CLI Logic Apps в настоящее время *экспериментальное*, на него не предоставляется *клиентская поддержка*. Используйте это расширение CLI с осторожностью, особенно в рабочих средах.
 
 Если вы не работали с Logic Apps, вы также можете узнать, как создать первые приложения логики с помощью [портала Azure](quickstart-create-first-logic-app-workflow.md), [Visual Studio](quickstart-create-logic-apps-with-visual-studio.md) и [Visual Studio Code](quickstart-create-logic-apps-visual-studio-code.md).
 

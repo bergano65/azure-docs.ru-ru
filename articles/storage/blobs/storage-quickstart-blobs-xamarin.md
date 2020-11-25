@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 434f112e78938c94d887423316fccea270059b6b
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 641117414c855a044d3ed55004b6e6ea15b259ac
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109023"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96004744"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-with-xamarin"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для Xamarin
 
@@ -39,8 +39,8 @@ ms.locfileid: "92109023"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
-* Visual Studio с установленной рабочей нагрузкой [Mobile Development for .NET](https://docs.microsoft.com/xamarin/get-started/installation/?pivots=windows) (Разработка мобильных приложений для .NET) или [Visual Studio для Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019).
+* Учетная запись хранения Azure — [создайте такую учетную запись](../common/storage-account-create.md).
+* Visual Studio с установленной рабочей нагрузкой [Mobile Development for .NET](/xamarin/get-started/installation/?pivots=windows) (Разработка мобильных приложений для .NET) или [Visual Studio для Mac](/visualstudio/mac/installation?view=vsmac-2019).
 
 ## <a name="setting-up"></a>Настройка
     

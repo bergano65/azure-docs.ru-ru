@@ -4,14 +4,14 @@ ms.service: key-vault
 ms.topic: include
 ms.date: 07/20/2020
 ms.author: msmbaldwin
-ms.openlocfilehash: 2917854da679816796a7f7748c3877c062995168
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ccb69b4f0dc6090cc96849b09f7830c05aa77b73
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87512820"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026756"
 ---
-В этом кратком руководстве используется предварительно созданное хранилище ключей Azure. Хранилище ключей можно создать, выполнив действия, описанные в кратких руководствах по [Azure CLI](/azure/key-vault/general/quick-create-cli), [Azure PowerShell](/azure/key-vault/general/quick-create-powershell) или [порталу Azure](/azure/key-vault/general/quick-create-portal). 
+В этом кратком руководстве используется предварительно созданное хранилище ключей Azure. Хранилище ключей можно создать, выполнив действия, описанные в кратких руководствах по [Azure CLI](../articles/key-vault/general/quick-create-cli.md), [Azure PowerShell](../articles/key-vault/general/quick-create-powershell.md) или [порталу Azure](../articles/key-vault/general/quick-create-portal.md). 
 
 Можно также выполнить команды Azure CLI или Azure PowerShell, приведенные ниже.
 

@@ -9,11 +9,11 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 10/28/2020
 ms.openlocfilehash: db94a82112f2670facd4d89178f11653c5316c36
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93331783"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998946"
 ---
 # <a name="quickstart-use-python-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Python
 
@@ -45,7 +45,7 @@ ms.locfileid: "93331783"
 Чтобы подключиться к базе данных службы "База данных Azure для PostgreSQL", требуется полное имя сервера и учетные данные для входа. Эти сведения можно получить на портале Azure.
 
 1. На [портале Azure](https://portal.azure.com/) выполните поиск по имени сервера и выберите сервер службы "База данных Azure для PostgreSQL".
-1. На странице **Обзор** сервера скопируйте **полное имя сервера** и **имя администратора**. Полное **имя сервера** всегда имеет формат *\<my-server-name>.postgres.database.azure.com* , а **имя администратора**  — формат *\<my-admin-username>@\<my-server-name>* .
+1. На странице **Обзор** сервера скопируйте **полное имя сервера** и **имя администратора**. Полное **имя сервера** всегда имеет формат *\<my-server-name>.postgres.database.azure.com*, а **имя администратора** — формат *\<my-admin-username>@\<my-server-name>* .
 
    Кроме того, потребуется пароль администратора. Если вы не помните этот пароль, вы можете сбросить его на этой странице.
 
@@ -138,7 +138,7 @@ print("Updated 1 row of data")
 [Возникли проблемы? Сообщите нам об этом](https://aka.ms/postgres-doc-feedback)
 
 ## <a name="step-5-delete-data"></a>Шаг 5. Удаление данных
-В следующем примере кода [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) выполняется с инструкцией SQL **DELETE** , чтобы удалить ранее вставленный элемент inventory.
+В следующем примере кода [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) выполняется с инструкцией SQL **DELETE**, чтобы удалить ранее вставленный элемент inventory.
 
 ```Python
 
