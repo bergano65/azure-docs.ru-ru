@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: dbb7e835d110bcb6cb81fd5425a2aafbb578e692
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90054856"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022978"
 ---
 # <a name="use-storsimple-snapshot-manager-to-connect-and-manage-storsimple-devices"></a>Использование диспетчера моментальных снимков StorSimple для подключения устройств StorSimple и управления ими
 ## <a name="overview"></a>Обзор
@@ -169,7 +169,7 @@ ms.locfileid: "90054856"
 2. Щелкните **устройства**  >  **настроить** для устройства.
 3. Прокрутите экран вниз, к разделу "Диспетчер моментальных снимков StorSimple". Введите пароль длиной 14–15 символов. Убедитесь, что пароль включает в себя буквы в верхнем и нижнем регистре, цифры и специальные символы.
 4. Повторно введите пароль для подтверждения.
-5. Нажмите кнопку **Сохранить** в нижней части страницы.
+5. В нижней части страницы нажмите кнопку **Сохранить** .
 
 #### <a name="to-re-authenticate-the-device"></a>Повторная проверка подлинности устройства
 1. Запустите диспетчер моментальных снимков StorSimple.

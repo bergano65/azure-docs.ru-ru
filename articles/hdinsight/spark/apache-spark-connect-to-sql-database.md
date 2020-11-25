@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/20/2020
 ms.openlocfilehash: d979a68f4e3aa0071fb7654647610af1fbf95e90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86078822"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023982"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Использование кластера HDInsight Spark для чтения и записи данных в базе данных SQL Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "86078822"
 Начните с создания Jupyter Notebook, связанного с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье.
 
 1. Откройте кластер на [портале Azure](https://portal.azure.com/).
-1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если **панели мониторинга кластера**не отображаются, выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
+1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если **панели мониторинга кластера** не отображаются, выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
 
     ![Записная книжка Jupyter на Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Записная книжка Jupyter в Spark")
 
@@ -172,7 +172,7 @@ ms.locfileid: "86078822"
 
     ![Подключение к базе данных SQL с помощью SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Подключение к базе данных SQL с помощью SSMS1")
 
-    b. В **обозревателе объектов**разверните базу данных и узел таблицы, чтобы увидеть созданную таблицу **dbo. таблицу hvactable** .
+    b. В **обозревателе объектов** разверните базу данных и узел таблицы, чтобы увидеть созданную таблицу **dbo. таблицу hvactable** .
 
     ![Подключение к базе данных SQL с помощью SSMS2](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Подключение к базе данных SQL с помощью SSMS2")
 
@@ -263,7 +263,7 @@ ms.locfileid: "86078822"
     SELECT COUNT(*) FROM hvactable
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage](apache-spark-use-with-data-lake-store.md)
 * [Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](apache-spark-load-data-run-query.md)

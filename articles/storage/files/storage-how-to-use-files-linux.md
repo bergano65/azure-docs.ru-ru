@@ -8,11 +8,11 @@ ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: c271107b85e4903153c29b58aadadd37fb051b76
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94626747"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022570"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -47,7 +47,7 @@ uname -r
     sudo apt install cifs-utils
     ```
 
-    В **Fedora** , **Red Hat Enterprise Linux 8 +** и **CentOS 8 +** , используйте `dnf` Диспетчер пакетов:
+    В **Fedora**, **Red Hat Enterprise Linux 8 +** и **CentOS 8 +**, используйте `dnf` Диспетчер пакетов:
 
     ```bash
     sudo dnf install cifs-utils
@@ -99,7 +99,7 @@ uname -r
 При необходимости можно подключить одну общую папку Azure к нескольким точкам подключения.
 
 ### <a name="mount-the-azure-file-share-on-demand-with-mount"></a>Подключение файлового ресурса Azure по запросу с помощью `mount`
-1. **Создайте папку для точки подключения** : Replace `<your-resource-group>` , `<your-storage-account>` и `<your-file-share>` с соответствующей информацией о вашей среде:
+1. **Создайте папку для точки подключения**: Replace `<your-resource-group>` , `<your-storage-account>` и `<your-file-share>` с соответствующей информацией о вашей среде:
 
     ```bash
     resourceGroupName="<your-resource-group>"
@@ -174,7 +174,7 @@ uname -r
     sudo chmod 600 $smbCredentialFile
     ```
 
-1. **Используйте следующую команду, чтобы `/etc/fstab` Добавить следующую строку в** : в примере ниже локальные разрешения для файлов и папок Linux по умолчанию 0755, что означает чтение, запись и выполнение для владельца (на основе владельца файлов и каталогов Linux), чтение и выполнение для пользователей в группе владелец, а также чтение и выполнение для других компонентов в системе. Можно использовать `uid` `gid` Параметры подключения и, чтобы задать идентификатор пользователя и группу для подключения. Кроме того, можно использовать `dir_mode` и `file_mode` для задания пользовательских разрешений. Дополнительные сведения о настройке разрешений см. в разделе [Цифровая нотация UNIX](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) в Википедии.
+1. **Используйте следующую команду, чтобы `/etc/fstab` Добавить следующую строку в**: в примере ниже локальные разрешения для файлов и папок Linux по умолчанию 0755, что означает чтение, запись и выполнение для владельца (на основе владельца файлов и каталогов Linux), чтение и выполнение для пользователей в группе владелец, а также чтение и выполнение для других компонентов в системе. Можно использовать `uid` `gid` Параметры подключения и, чтобы задать идентификатор пользователя и группу для подключения. Кроме того, можно использовать `dir_mode` и `file_mode` для задания пользовательских разрешений. Дополнительные сведения о настройке разрешений см. в разделе [Цифровая нотация UNIX](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) в Википедии.
 
     ```bash
     # This command assumes you have logged in with az login
@@ -207,7 +207,7 @@ uname -r
     sudo apt update
     sudo apt install autofs
     ```
-    В **Fedora** , **Red Hat Enterprise Linux 8 +** и **CentOS 8 +** , используйте `dnf` Диспетчер пакетов:
+    В **Fedora**, **Red Hat Enterprise Linux 8 +** и **CentOS 8 +**, используйте `dnf` Диспетчер пакетов:
     ```bash
     sudo dnf install autofs
     ```
@@ -219,7 +219,7 @@ uname -r
     ```bash
     sudo zypper install autofs
     ```
-2. **Создайте точку подключения для общих папок** :
+2. **Создайте точку подключения для общих папок**:
    ```bash
     sudo mkdir /fileshares
     ```

@@ -2,14 +2,14 @@
 title: Получение событий из Сетки событий Azure в конечную точку HTTP
 description: Описано, как проверить конечную точку HTTP, затем проверить и десериализировать события из Сетки событий Azure
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 11/19/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 42cf237f0c2fbe091307625fde70613ab9173b0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75c80fb85d39298f1130537971bc700897c039d0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326479"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96023735"
 ---
 # <a name="receive-events-to-an-http-endpoint"></a>Получение событий через конечную точку HTTP
 
@@ -140,9 +140,11 @@ module.exports = function (context, req) {
 }]
 ```
 
-При нажатии кнопки запуска выходные данные должны иметь значение "200 — OK" и `{"ValidationResponse":"512d38b6-c7b8-40c8-89fe-f46f9e9622b6"}` в теле:
+При нажатии кнопки запуска выходные данные должны иметь значение "200 — OK" и `{"validationResponse":"512d38b6-c7b8-40c8-89fe-f46f9e9622b6"}` в теле:
 
-![ответ проверки](./media/receive-events/validation-response.png)
+:::image type="content" source="./media/receive-events/validation-request.png" alt-text="Запрос на проверку":::
+
+:::image type="content" source="./media/receive-events/validation-output.png" alt-text="Выходные данные проверки":::
 
 ## <a name="handle-blob-storage-events"></a>Обработка событий хранилища BLOB-объектов
 
@@ -395,7 +397,9 @@ module.exports = function (context, req) {
 
 Кроме того, эту функцию можно протестировать в реальном времени, [отправив пользовательское событие с помощью CURL с портала](./custom-event-quickstart-portal.md) или [опубликовав в пользовательском разделе](./post-to-custom-topic.md), используя любую службу или приложение, которое может выполнять оператор POST в конечной точке, например [Postman](https://www.getpostman.com/). Создайте пользовательский раздел и подписку событий с помощью конечной точки, заданной в качестве URL-адреса функции.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+[!INCLUDE [event-grid-message-headers](../../includes/event-grid-message-headers.md)]
+
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь со статьей [Пакеты SDK для управления службой "Сетка событий Azure" и публикации в ней](./sdk-overview.md).
 * Дополнительные сведения см. в статье [Публикация в пользовательском разделе для службы "Сетка событий Azure"](./post-to-custom-topic.md).

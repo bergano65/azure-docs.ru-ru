@@ -9,11 +9,11 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/30/2017
 ms.openlocfilehash: 6c07ab4b18c017bd29723d2640129b8e67374e3c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87837386"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023658"
 ---
 # <a name="migrate-your-apps-and-solutions-from-biztalk-services-to-azure-logic-apps"></a>Перенос приложений и решений из служб BizTalk в Azure Logic Apps
 
@@ -133,7 +133,7 @@ ms.locfileid: "87837386"
 
 Для аварийного восстановления за пределами региона для обработки B2B в службах BizTalk необходимо реализовать процесс резервного копирования и восстановления. Для обеспечения непрерывности бизнес-процессов в службе Logic Apps предоставляется [возможность активного или пассивного аварийного восстановления](../logic-apps/logic-apps-enterprise-integration-b2b-business-continuity.md) в разных регионах. Это позволяет выполнять синхронизацию данных B2B в учетных записях интеграции в разных регионах.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Logic Apps?](../logic-apps/logic-apps-overview.md)
 * [Создайте свое первое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) или приступите к работе, используя [готовый шаблон](../logic-apps/logic-apps-create-logic-apps-from-templates.md).  

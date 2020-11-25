@@ -6,11 +6,11 @@ ms.author: jakras
 ms.date: 02/11/2020
 ms.topic: reference
 ms.openlocfilehash: 8313243bf680ea1a1d63f2719b647149a04935a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88893106"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024050"
 ---
 # <a name="material-mapping-for-model-formats"></a>Сопоставление материалов для форматов модели
 
@@ -47,7 +47,7 @@ ms.locfileid: "88893106"
 
 ### <a name="embedded-textures"></a>Внедренные текстуры
 
-Поддерживаются текстуры, внедренные в файлы * \* . bin* или * \* . GLBA* .
+Поддерживаются текстуры, внедренные в файлы *\* . bin* или *\* . GLBA* .
 
 ### <a name="supported-gltf-extension"></a>Поддерживаемое расширение Глтф
 

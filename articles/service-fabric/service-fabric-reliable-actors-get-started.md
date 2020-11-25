@@ -7,11 +7,11 @@ ms.date: 07/10/2019
 ms.author: vturecek
 ms.custom: devx-track-csharp
 ms.openlocfilehash: f775608c6c349c93a43ef4aef26ad50707cd39b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743766"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023624"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Приступая к работе с Reliable Actors
 > [!div class="op_single_selector"]
@@ -100,7 +100,7 @@ internal class HelloWorld : Actor, IHelloWorld
     
     ![Свойства сборки][8]
 
-4. Для проекта клиента требуется пакет NuGet для Reliable Actors.  Щелкните **Сервис**диспетчер  >  **пакетов NuGet**  >  **консоль диспетчера пакетов**.  В консоли диспетчера пакетов введите следующую команду.
+4. Для проекта клиента требуется пакет NuGet для Reliable Actors.  Щелкните **Сервис** диспетчер  >  **пакетов NuGet**  >  **консоль диспетчера пакетов**.  В консоли диспетчера пакетов введите следующую команду.
     
     ```powershell
     Install-Package Microsoft.ServiceFabric.Actors -IncludePrerelease -ProjectName ActorClient
@@ -149,7 +149,7 @@ internal class HelloWorld : Actor, IHelloWorld
 > [!TIP]
 > В среде выполнения субъектов Service Fabric предусмотрены некоторые [события и счетчики производительности, связанные с методами субъекта](service-fabric-reliable-actors-diagnostics.md#actor-method-events-and-performance-counters). Они полезны при диагностике и мониторинге производительности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Узнайте больше о том, [как Reliable Actors использует платформу Service Fabric](service-fabric-reliable-actors-platform.md).
 
 

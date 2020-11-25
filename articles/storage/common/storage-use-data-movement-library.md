@@ -12,11 +12,11 @@ ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 8ec35a651d4d3ef9e0877463329a654bc7491f4c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89001882"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023420"
 ---
 # <a name="transfer-data-with-the-data-movement-library"></a>Перенос данных с помощью библиотеки перемещения данных
 
@@ -38,7 +38,7 @@ ms.locfileid: "89001882"
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Учетная запись хранения Azure](storage-account-create.md) ;
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 1. Ознакомьтесь с [руководством по установке .NET Core](https://www.microsoft.com/net/core), чтобы установить .NET Core. При выборе среды щелкните параметр командной строки.
 2. В командной строке создайте каталог для проекта. Перейдите в этот каталог и введите `dotnet new console -o <sample-project-name>` для создания проекта консольного приложения C#.
@@ -565,7 +565,7 @@ public static async Task TransferAzureBlobToAzureBlob(CloudStorageAccount accoun
 
 Теперь приложение перемещения данных завершено. [Полный пример кода можно найти на сайте GitHub](https://github.com/azure-samples/storage-dotnet-data-movement-library-app).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Справочная документация по библиотеке перемещения данных службы хранилища Azure](https://azure.github.io/azure-storage-net-data-movement).
 

@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.openlocfilehash: b8dc63030c6791779ad90500747e4e2f5c4ffeef
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288982"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022672"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop YARN с помощью Azure HDInsight
 
@@ -24,15 +24,15 @@ ms.locfileid: "93288982"
 
 Чтобы создать очередь YARN и выполнить балансировку выделения емкости для всех очередей, выполните следующие шаги с помощью Ambari.
 
-В этом примере емкость двух имеющихся очередей ( **default** и **thriftsvr** ) изменяется с 50 % на 25 %, что позволяет обеспечить для новой очереди (spark) емкость 50 %.
+В этом примере емкость двух имеющихся очередей (**default** и **thriftsvr**) изменяется с 50 % на 25 %, что позволяет обеспечить для новой очереди (spark) емкость 50 %.
 
 | Очередь | Capacity | Максимальная емкость |
 | --- | --- | --- |
-| значение по умолчанию | 25 % | 50 % |
+| default | 25 % | 50 % |
 | thrftsvr | 25 % | 50 % |
-| spark; | 50 % | 50 % |
+| spark; | 50% | 50% |
 
-1. Выберите значок **просмотров Ambari** , а затем выберите шаблон сетки. После этого выберите **диспетчер очереди YARN**.
+1. Выберите значок **просмотров Ambari**, а затем выберите шаблон сетки. После этого выберите **диспетчер очереди YARN**.
 
     ![Диспетчер очереди YARN панели мониторинга Apache Ambari](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-1.png)
 2. Выберите очередь **по умолчанию**.
@@ -134,6 +134,6 @@ ms.locfileid: "93288982"
 - [Подключение к HDInsight (Hadoop) с помощью SSH](./hdinsight-hadoop-linux-use-ssh-unix.md)
 - [Apache Hadoop концепции и приложения YARN](https://hadoop.apache.org/docs/r2.7.4/hadoop-yarn/hadoop-yarn-site/WritingYarnApplications.html#Concepts_and_Flow)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [troubleshooting next steps](../../includes/hdinsight-troubleshooting-next-steps.md)]

@@ -18,11 +18,11 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 09/11/2019
 ms.openlocfilehash: 870842074bb4a0012a48115586a8ad571275d470
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91281037"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022417"
 ---
 # <a name="tutorial-send-push-notifications-to-specific-android-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в определенные приложения Android с помощью Центров уведомлений Azure
 
@@ -151,7 +151,7 @@ ms.locfileid: "91281037"
 
     Графическая структура файла `main_activity.xml` должна выглядеть следующим образом:
 
-    ![Снимок экрана: эмулятор, в котором показана графическая структура файла XML основного действия][A1]
+    ![Снимок экрана: эмулятор с графической структурой файла XML основного действия][A1]
 3. Создайте класс `RegisterClient` в том же пакете, в котором создан класс `MainActivity`. Используйте приведенный ниже код для файла нового класса.
 
     ```java

@@ -7,12 +7,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.custom: include file
 ms.date: 04/16/2020
-ms.openlocfilehash: ac0192da3afa76c3c21056f218f2b249c44d1c36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78b93c05621754ae499e4ae8ca6b66c5bbfaad1b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87133906"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96025502"
 ---
 Cognitive Services предоставляет две службы обработки естественных языков, [Language Understanding](../luis/what-is-luis.md) и [QnA Maker](../qnamaker/overview/overview.md), каждая из которых имеет разные цели. Узнайте, когда следует использовать каждую службу и как они дополняют друг друга.
 
@@ -71,7 +71,7 @@ Language Understanding (LUIS) и QnA Maker решают различные пр�
 
 Если программе-роботу для разговора требуется больше информации, чем любая служба, то для продолжения работы с деревом принятия решений используйте обе службы и обрабатывайте оба ответа в клиентском приложении.
 
-Используйте средство CLI для **[диспетчеризации](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)** инфраструктуры, чтобы создать процесс для работы с обеими службами. Это средство создает наиболее LUISное приложение для целей, которые переправляются между LUIS и QnA Maker как дочерние приложения. Дополнительные [сведения](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=cs) об интеграции с LUIS, QnA Maker и Bot Framework.
+Используйте средство CLI для **[диспетчеризации](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)** инфраструктуры, чтобы создать процесс для работы с обеими службами. Это средство создает наиболее LUISное приложение для целей, которые переправляются между LUIS и QnA Maker как дочерние приложения. Дополнительные [сведения](/azure/bot-service/bot-builder-tutorial-dispatch?tabs=cs&view=azure-bot-service-4.0) об интеграции с LUIS, QnA Maker и Bot Framework.
 
 Используйте образец программы Bot Builder, **NLP с Dispatch**, в [C#](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/14.nlp-with-dispatch) или [Node.js](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/14.nlp-with-dispatch), чтобы реализовать этот тип робота Chat.
 
@@ -88,6 +88,6 @@ Language Understanding (LUIS) и QnA Maker решают различные пр�
 * [QnA Maker](../qnamaker/overview/overview.md)
 * [Диспетчер CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
 * [Примеры для платформы Bot](https://github.com/Microsoft/BotBuilder-Samples)
-* [Служба Azure Bot](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0)
+* [Служба Azure Bot](/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0)
 * [Эмулятор Azure Bot](https://github.com/Microsoft/BotFramework-Emulator)
 * [Веб-чат для платформы Bot](https://github.com/microsoft/BotFramework-WebChat)

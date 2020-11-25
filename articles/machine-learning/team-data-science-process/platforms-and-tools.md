@@ -11,11 +11,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: d3f6a48815519499ddc39dcc12cafe0fe95e70e0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320236"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023811"
 ---
 # <a name="platforms-and-tools-for-data-science-projects"></a>Платформы и средства для проектов обработки и анализа данных
 
@@ -45,7 +45,7 @@ ms.locfileid: "93320236"
 - Power BI Desktop для Windows;
 - SQL Server 2016 Developer Edition для Windows (или Postgres для Linux).
 
-Он также включает **средства машинного обучения и искусственного интеллекта** , такие как xgboost, mxnet и Vowpal Wabbit.
+Он также включает **средства машинного обучения и искусственного интеллекта**, такие как xgboost, mxnet и Vowpal Wabbit.
 
 Сейчас виртуальная машина для обработки и анализа данных доступна для операционных систем **Windows** и **Linux CentOS**. Выберите нужный размер виртуальной машины для обработки и анализа данных (число ядер и размер памяти), исходя из потребностей проектов обработки и анализа данных, которые вы будете на ней выполнять. 
 
@@ -108,7 +108,7 @@ Hive позволяет включать пользовательские фун
 
 ### <a name="install-git-credential-manager-on-windows"></a>Установка диспетчера учетных данных Git в Windows
 
-Если вы организуете процесс TDSP на **Windows** , вам потребуется **диспетчер учетных данных Git (GCM)** для обмена данными с репозиториями Git. Перед установкой GCM необходимо сначала установить **Chocolaty**. Чтобы установить Chocolaty и GCM, выполните следующие команды в Windows PowerShell **с правами администратора**.  
+Если вы организуете процесс TDSP на **Windows**, вам потребуется **диспетчер учетных данных Git (GCM)** для обмена данными с репозиториями Git. Перед установкой GCM необходимо сначала установить **Chocolaty**. Чтобы установить Chocolaty и GCM, выполните следующие команды в Windows PowerShell **с правами администратора**.  
 
 ```powershell
 iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex

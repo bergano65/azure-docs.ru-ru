@@ -6,11 +6,11 @@ ms.topic: include
 ms.date: 5/25/2020
 ms.author: baanders
 ms.openlocfilehash: 1a14c6d5d96726033694d8fc88cc4b6eead87221
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135825"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023277"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -20,7 +20,7 @@ ms.locfileid: "93135825"
 
 Этот учебник создан на основе примера проекта, написанного на C#. Пример находится здесь: [Комплексные примеры для Azure Digital Twins](/samples/azure-samples/digital-twins-samples/digital-twins-samples) **Получите пример проекта** на компьютер, перейдя по соответствующей ссылке и нажав кнопку *Download ZIP* (Скачать ZIP-файл) под заголовком.
 
-Это действие скачивает на локальный компьютер *ZIP* -папку с именем **Azure_Digital_Twins_end_to_end_samples.zip**. Распакуйте папку и извлеките файлы.
+Это действие скачивает на локальный компьютер *ZIP*-папку с именем **Azure_Digital_Twins_end_to_end_samples.zip**. Распакуйте папку и извлеките файлы.
 
 ### <a name="prepare-an-azure-digital-twins-instance"></a>Подготовка экземпляра Azure Digital Twins
 

@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 961ba457136d20fbb63ae3315fe8143cffb56be2
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: c4cbbc437b633232ea65dd202b7531a1a5ac2c58
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629314"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "96022600"
 ---
 # <a name="azure-file-share-protocols"></a>Протоколы файловых ресурсов Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "94629314"
 |Протоколы доступа     |NFS 4,1         |SMB 2,1, SMB 3,0         |
 |Поддерживаемая ОС     |Ядро Linux версии 4.3 +         |Windows 2008 R2 +, ядро Linux версии 4.11 +         |
 |[Доступные уровни](storage-files-planning.md#storage-tiers)     |Хранилище уровня "Премиум"         |Хранилище класса Premium, оптимизированное, неактивное, холодное         |
-|[Избыточность](storage-files-planning.md#redundancy)     |LRS         |LRS, ZRS, GRS         |
+|[Избыточность](storage-files-planning.md#redundancy)     |LRS, ZRS         |LRS, ZRS, GRS         |
 |Аутентификация     |Только проверка подлинности на основе узла        |Аутентификация на основе удостоверений, проверка подлинности на основе пользователей         |
 |Разрешения     |Разрешения в стиле UNIX         |Разрешения в стиле NTFS         |
 |Семантика файловой системы     |Совместимо с POSIX         |Не совместимо с POSIX         |
@@ -74,7 +74,7 @@ ms.locfileid: "94629314"
 
 Файловые ресурсы Azure, подключенные с помощью SMB, предлагают дополнительные функции службы файлов Azure и не имеют ограничений на функции файлов Azure, так как они общедоступны.
 
-### <a name="features"></a>Возможности
+### <a name="features"></a>Компоненты
 
 - Служба синхронизации файлов Azure
 - Проверка подлинности на основе удостоверений
@@ -90,7 +90,7 @@ ms.locfileid: "94629314"
 - Рабочие среды
 - Клиенты, которым требуются функции, перечисленные в [компоненте](#features)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание общей папки NFS](storage-files-how-to-create-nfs-shares.md)
 - [Создание файлового ресурса SMB](storage-how-to-create-file-share.md)

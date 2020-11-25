@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 11/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive, devx-track-python
 ms.openlocfilehash: 0179fd10e75af0ced55b4bb41f9525dc26b3efe5
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540386"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023080"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight
 
@@ -27,8 +27,8 @@ ms.locfileid: "92540386"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Кластер Hadoop в HDInsight** . Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md).
-* **Клиент SSH** . Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Кластер Hadoop в HDInsight**. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md).
+* **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 * [Схема универсального кода ресурса (URI)](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это может быть `wasb://` для службы хранилища Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет wasbs://.  См. также сведения о [безопасной передаче](../../storage/common/storage-require-secure-transfer.md).
 * **Возможное изменение конфигурации хранилища.**  Если используется тип учетной записи хранения, см. раздел [Конфигурация хранилища](#storage-configuration) `BlobStorage` .
 * Необязательный элемент.  Если планируется использовать PowerShell, необходимо установить [модуль AZ](/powershell/azure/new-azureps-module-az) .
@@ -301,7 +301,7 @@ Get-AzHDInsightJobOutput `
 Чтобы указать интерпретатор Python, используйте `register` при указании ссылки на скрипт Python. Следующие примеры регистрируют скрипты с Pig в качестве `myfuncs`:
 
 * **Чтобы использовать Jython,** сделайте следующее: `register '/path/to/pigudf.py' using jython as myfuncs;`
-* **Чтобы использовать язык C Python** : `register '/path/to/pigudf.py' using streaming_python as myfuncs;`
+* **Чтобы использовать язык C Python**: `register '/path/to/pigudf.py' using streaming_python as myfuncs;`
 
 > [!IMPORTANT]  
 > При использовании Jython путь к файлу pig_jython может быть локальным путем или WASBS://. Но при использовании CPython необходимо указать ссылку на файл в локальной файловой системе узла, который используется для отправки задания Pig.
@@ -343,7 +343,7 @@ def create_structure(input):
 
 В примере Pig Latin `LINE` входные данные определяются как массив символов CharArray, так как для входных данных не существует соответствующей схемы. Скрипт Python выполняет преобразование данных в согласованную схему на выходе.
 
-1. Инструкция `@outputSchema` задает формат данных, в котором они возвращаются в Pig. В данном случае это **data bag** , являющийся типом данных Pig. Корзина содержит следующие поля, все они имеют тип "Массив строк" (строки):
+1. Инструкция `@outputSchema` задает формат данных, в котором они возвращаются в Pig. В данном случае это **data bag**, являющийся типом данных Pig. Корзина содержит следующие поля, все они имеют тип "Массив строк" (строки):
 
    * date — дата создания записи журнала;
    * date — время создания записи журнала;
@@ -423,7 +423,7 @@ def create_structure(input):
     #from pig_util import outputSchema
     ```
 
-    Эта строка изменяет сценарий Python для работы с C Python вместо Jython. Закончив вносить изменения, нажмите клавиши **CTRL+X** , чтобы выйти из редактора. Выберите **Y** , а затем **введите** , чтобы сохранить изменения.
+    Эта строка изменяет сценарий Python для работы с C Python вместо Jython. Закончив вносить изменения, нажмите клавиши **CTRL+X**, чтобы выйти из редактора. Выберите **Y**, а затем **введите** , чтобы сохранить изменения.
 
 6. Используйте команду `pig` , чтобы снова запустить оболочку. При появлении запроса `grunt>` введите следующие инструкции, чтобы запустить сценарий Python с помощью интерпретатора CPython.
 
@@ -563,7 +563,7 @@ Get-AzHDInsightJobOutput `
 ((2012-02-03,20:11:56,SampleClass3,[INFO],everything normal for id 530537821))
 ```
 
-## <a name="troubleshooting"></a><a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a><a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="errors-when-running-jobs"></a>Ошибки при выполнении заданий
 

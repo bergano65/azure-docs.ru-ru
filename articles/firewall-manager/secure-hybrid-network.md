@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.date: 06/30/2020
 ms.author: victorh
 ms.openlocfilehash: 3d4d1e65c2200aee178abefb46d3e330acbd3108
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85563635"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023692"
 ---
 # <a name="tutorial-secure-your-hub-virtual-network-using-azure-firewall-manager"></a>Руководство по защите центральной виртуальной сети с помощью Диспетчера брандмауэра Azure
 
@@ -150,7 +150,7 @@ ms.locfileid: "85563635"
 
 1. На странице **VNet-OnPrem** выберите **Подсети**.
 2. Выберите **+Subnet** (+Подсеть).
-3. В поле **Имя**введите**GatewaySubnet**.
+3. В поле **Имя **введите** GatewaySubnet**.
 4. В поле **Диапазон адресов (блок CIDR)** введите **192.168.2.0/24**.
 5. Щелкните **ОК**.
 

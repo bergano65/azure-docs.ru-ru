@@ -12,11 +12,11 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: bc615322c11a456699d2364cf44cad40e086e851
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517892"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022485"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Использование функций Azure для управления ресурсами вычислений в пуле SQL Azure синапсе Analytics
 
@@ -99,7 +99,7 @@ ms.locfileid: "94517892"
 
    ![Снимок экрана, показывающий меню "приложения функций" с значком "плюс" рядом с выбранными функциями "функции".](./media/manage-compute-with-azure-functions/create-new-function.png)
 
-2. На языке выберите *JavaScript* , а затем выберите *TimerTrigger*.
+2. На языке выберите *JavaScript*, а затем выберите *TimerTrigger*.
 
    ![Создание функции](./media/manage-compute-with-azure-functions/timertrigger-js.png)
 
@@ -165,7 +165,7 @@ ms.locfileid: "94517892"
 | Функция 3 | 0 0 23 * * 5   | `var operation = {"operationType": "PauseDw"}` |
 | Функция 4 | 0 0 7 * * 1    | `var operation = {"operationType": "ResumeDw"}` |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о функциях [таймера](../../azure-functions/functions-create-scheduled-function.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) Azure.
 

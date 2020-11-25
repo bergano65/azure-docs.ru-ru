@@ -7,11 +7,11 @@ author: mayurigupta13
 ms.topic: conceptual
 ms.author: mayg
 ms.openlocfilehash: 650fb7f0877a98ef53ed3868550f9c084ecb5885
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84710207"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023556"
 ---
 # <a name="retain-ip-addresses-during-failover"></a>Сохранение IP-адресов во время отработки отказа
 
@@ -161,6 +161,6 @@ ms.locfileid: "84710207"
  - Для обеспечения устойчивости приложений компания Б должна будет поместить каждое приложение в собственную выделенную виртуальную сеть Azure.
  - Когда каждое приложение будет находиться в отдельной виртуальной сети, компания Б может выполнять отработку отказа и направлять исходные подключения в целевой регион.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте о [планах восстановления](site-recovery-create-recovery-plans.md).
