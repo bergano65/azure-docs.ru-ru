@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: jingwang
 ms.openlocfilehash: c7a99e7e5f27f8c3503c7fa6124d27cfc4e7f4a4
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636771"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012839"
 ---
 # <a name="invoke-an-ssis-package-using-stored-procedure-activity-in-azure-data-factory"></a>Вызов пакета SSIS с помощью действия хранимой процедуры в фабрике данных Azure
 В этой статье описывается, как вызвать пакет SSIS из конвейера фабрики данных Azure, используя действие хранимой процедуры. 
@@ -79,7 +79,7 @@ ms.locfileid: "92636771"
     ```
     The specified Data Factory name 'ADFTutorialFactory' is already in use. Data Factory names must be globally unique.
     ```
-* Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника** , **владельца** либо **администратора** подписки Azure.
+* Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника**, **владельца** либо **администратора** подписки Azure.
 
 ### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 Создайте связанную службу, чтобы связать базу данных в базе данных SQL Azure, в которой размещен каталог служб SSIS, в фабрике данных. Фабрика данных использует информацию связанной службы для подключения к базе данных SSISDB и выполняет хранимую процедуру для запуска пакета SSIS. 
@@ -100,8 +100,8 @@ ms.locfileid: "92636771"
         }
         }
     ```
-2. В **Azure PowerShell** перейдите в папку **C:\ADF\RunSSISPackage** .
-3. Выполните командлет **New-аздатафакторилинкедсервице** , чтобы создать связанную службу: **AzureSqlDatabaseLinkedService** . 
+2. В **Azure PowerShell** перейдите в папку **C:\ADF\RunSSISPackage**.
+3. Выполните командлет **New-аздатафакторилинкедсервице** , чтобы создать связанную службу: **AzureSqlDatabaseLinkedService**. 
 
     ```powershell
     New-AzDataFactoryLinkedService $df -File ".\AzureSqlDatabaseLinkedService.json"
@@ -168,7 +168,7 @@ ms.locfileid: "92636771"
     }    
     ```
 
-2. Чтобы создать конвейер: **RunSSISPackagePipeline** , выполните командлет **New-аздатафакторипипелине** .
+2. Чтобы создать конвейер: **RunSSISPackagePipeline**, выполните командлет **New-аздатафакторипипелине** .
 
     ```powershell
     $DFPipeLine = New-AzDataFactoryPipeline -DataFactoryName $DataFactory.DataFactoryName -ResourceGroupName $ResGrp.ResourceGroupName -Name "RunSSISPackagePipeline" -DefinitionFile ".\RunSSISPackagePipeline.json"
@@ -182,13 +182,13 @@ ms.locfileid: "92636771"
     Get-AzDataFactorySlice $df -DatasetName sprocsampleout -StartDateTime 2017-10-01T00:00:00Z
     ```
     Обратите внимание, здесь указывается то же значение StartDateTime, что и в JSON конвейера. 
-1. Выполните командлет **Get-AzDataFactoryRun** , чтобы получить сведения о действиях, выполняемых для конкретного среза.
+1. Выполните командлет **Get-AzDataFactoryRun**, чтобы получить сведения о действиях, выполняемых для конкретного среза.
 
     ```powershell
     Get-AzDataFactoryRun $df -DatasetName sprocsampleout -StartDateTime 2017-10-01T00:00:00Z
     ```
 
-    Вы можете выполнять этот командлет до тех пор, пока не увидите срез с состоянием **Готово** или **Сбой** . 
+    Вы можете выполнять этот командлет до тех пор, пока не увидите срез с состоянием **Готово** или **Сбой**. 
 
     Можно выполнить следующий запрос к базе данных SSISDB на сервере, чтобы убедиться, что пакет выполнен. 
 
@@ -196,5 +196,5 @@ ms.locfileid: "92636771"
     select * from catalog.executions
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См дополнительные сведения о [действии хранимой процедуры](data-factory-stored-proc-activity.md).
