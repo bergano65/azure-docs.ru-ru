@@ -7,11 +7,11 @@ ms.topic: tutorial
 ms.date: 09/30/2020
 ms.author: apimpm
 ms.openlocfilehash: 2f298f240d8aa7a38b42a8c78ee3c90fe3423d10
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91630602"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993556"
 ---
 # <a name="tutorial-create-and-publish-a-product"></a>Руководство по создавать и публиковать продукт;  
 
@@ -38,7 +38,7 @@ ms.locfileid: "91630602"
 1. На панели навигации слева выберите **Продукты** >  **+ Добавить**.
 1.  В окне **Добавить продукт** введите значения, описанные в следующей таблице, чтобы создать продукт.
 
-    :::image type="content" source="media/api-management-howto-add-products/02-create-publish-product-01.png" alt-text="Продукты управления API на портале":::
+    :::image type="content" source="media/api-management-howto-add-products/02-create-publish-product-01.png" alt-text="Добавление продукта на портале":::
 
     | Имя                     | Описание                                                                                                                                                                                                                                                                                                             |
     |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -80,7 +80,7 @@ ms.locfileid: "91630602"
 1. Щелкните **+ Добавить**.
 1. Выберите один или несколько API, а затем нажмите **Выбрать**.
 
-:::image type="content" source="media/api-management-howto-add-products/02-create-publish-product-02.png" alt-text="Продукты управления API на портале":::
+:::image type="content" source="media/api-management-howto-add-products/02-create-publish-product-02.png" alt-text="Добавление API к существующему продукту":::
 
 > [!TIP]
 > Подписку пользователя на продукт с индивидуальными ключами подписки можно создать или обновить с помощью [REST API](/rest/api/apimanagement/2019-12-01/subscription/createorupdate) или команды PowerShell.

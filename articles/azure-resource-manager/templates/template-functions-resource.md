@@ -2,13 +2,13 @@
 title: Функции шаблонов — ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
-ms.date: 09/03/2020
-ms.openlocfilehash: dd040715cc8fb1339c6054c53007dbcd08e2cbdb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/18/2020
+ms.openlocfilehash: 0d118b80439579b0c8be45fdf1180b9a03b54c1d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91816796"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95994147"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Функции ресурсов для шаблонов ARM
 
@@ -26,6 +26,8 @@ Resource Manager предоставляет следующие функции д
 * [tenantResourceId](#tenantresourceid)
 
 Получение значений параметров, переменных или текущего развертывания описано в разделе [Функции для параметров развертывания](template-functions-deployment.md).
+
+[!INCLUDE [Bicep preview](../../../includes/resource-manager-bicep-preview.md)]
 
 ## <a name="extensionresourceid"></a>extensionResourceId
 
@@ -82,29 +84,87 @@ Resource Manager предоставляет следующие функции д
 
 В следующем примере возвращается идентификатор ресурса для блокировки группы ресурсов.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "lockName":{
-            "type": "string"
-        }
-    },
-    "variables": {},
-    "resources": [],
-    "outputs": {
-        "lockResourceId": {
-            "type": "string",
-            "value": "[extensionResourceId(resourceGroup().Id , 'Microsoft.Authorization/locks', parameters('lockName'))]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "lockName": {
+      "type": "string"
     }
+  },
+  "variables": {},
+  "resources": [],
+  "outputs": {
+    "lockResourceId": {
+      "type": "string",
+      "value": "[extensionResourceId(resourceGroup().Id , 'Microsoft.Authorization/locks', parameters('lockName'))]"
+    }
+  }
 }
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param lockName string
+
+output lockResourceId string = extensionResourceId(resourceGroup().Id, 'Microsoft.Authorization/locks', lockName)
+```
+
+---
+
 Определение пользовательской политики, развернутое в группе управления, реализуется как ресурс расширения. Чтобы создать и назначить политику, разверните следующий шаблон в группе управления.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 :::code language="json" source="~/quickstart-templates/managementgroup-deployments/mg-policy/azuredeploy.json":::
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param targetMG string
+param allowedLocations array = [
+  'australiaeast'
+  'australiasoutheast'
+  'australiacentral'
+]
+
+var mgScope = tenantResourceId('Microsoft.Management/managementGroups', targetMG)
+var policyDefinition = 'LocationRestriction'
+
+resource myDefinition 'Microsoft.Authorization/policyDefinitions@2019-09-01' = {
+  name: policyDefinition
+  properties: {
+    policyType: 'Custom'
+    mode: 'All'
+    parameters: {}
+    policyRule: {
+      'if': {
+        'not': {
+          'field': 'location'
+          'in': allowedLocations
+        }
+      }
+      'then': {
+        'effect': 'deny'
+      }
+    }
+  }
+}
+
+resource myAssignment 'Microsoft.Authorization/policyAssignments@2019-09-01' = {
+  name: 'location-lock'
+  properties: {
+    scope: mgScope
+    policyDefinitionId: extensionResourceId(mgScope, 'Microsoft.Authorization/policyDefinitions', policyDefinition)
+  }
+}
+```
+
+---
 
 Встроенные определения политик — это ресурсы уровня клиента. Пример развертывания встроенного определения политики см. в разделе [тенантресаурцеид](#tenantresourceid).
 
@@ -272,6 +332,7 @@ Resource Manager предоставляет следующие функции д
   ```powershell
   Get-AzProviderOperation -OperationSearchString "Microsoft.Storage/*" | where {$_.Operation -like "*list*"} | FT Operation
   ```
+
 * Используйте следующую команду Azure CLI, чтобы отфильтровать только операции list:
 
   ```azurecli
@@ -311,30 +372,63 @@ Resource Manager предоставляет следующие функции д
 
 В следующем примере используется listKeys при задании значения для [скриптов развертывания](deployment-script-template.md).
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "storageAccountSettings": {
-    "storageAccountName": "[variables('storageAccountName')]",
-    "storageAccountKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value]"
+  "storageAccountName": "[variables('storageAccountName')]",
+  "storageAccountKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value]"
 }
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+storageAccountSettings: {
+  storageAccountName: storageAccountName
+  storageAccountKey: listKeys(resourceId('Microsoft.Storage/storageAccounts', storageAccountName), '2019-06-01').keys[0].value
+}
+
+```
+
+---
+
 В следующем примере показана функция List, которая принимает параметр. В этом случае функция — **листаккаунтсас**. Передайте объект для времени окончания срока действия. Время окончания срока действия должно быть в будущем.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "parameters": {
-    "accountSasProperties": {
-        "type": "object",
-        "defaultValue": {
-            "signedServices": "b",
-            "signedPermission": "r",
-            "signedExpiry": "2020-08-20T11:00:00Z",
-            "signedResourceTypes": "s"
-        }
+  "accountSasProperties": {
+    "type": "object",
+    "defaultValue": {
+      "signedServices": "b",
+      "signedPermission": "r",
+      "signedExpiry": "2020-08-20T11:00:00Z",
+      "signedResourceTypes": "s"
     }
+  }
 },
 ...
 "sasToken": "[listAccountSas(parameters('storagename'), '2018-02-01', parameters('accountSasProperties')).accountSasToken]"
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param accountSasProperties object {
+  default: {
+    signedServices: 'b'
+    signedPermission: 'r'
+    signedExpiry: '2020-08-20T11:00:00Z'
+    signedResourceTypes: 's'
+  }
+}
+...
+sasToken: listAccountSas(storagename, '2018-02-01', accountSasProperties).accountSasToken
+```
+
+---
 
 ## <a name="pickzones"></a>пиккзонес
 
@@ -349,8 +443,8 @@ Resource Manager предоставляет следующие функции д
 | пространство_имен_поставщика | Да | строка | Пространство имен поставщика ресурсов для типа ресурса, для которого проверяется поддержка зоны. |
 | тип_ресурса | Да | строка | Тип ресурса для проверки поддержки зоны. |
 | location | Да | строка | Регион, в котором проверяется поддержка зоны. |
-| нумберофзонес | Нет | Целое число | Число возвращаемых логических зон. Значение по умолчанию — 1. Число должно быть целым положительным числом от 1 до 3.  Используйте 1 для ресурсов с одной зоной. Для ресурсов с несколькими зонами значение должно быть меньше или равно числу поддерживаемых зон. |
-| offset | Нет | Целое число | Смещение от начальной логической зоны. Функция возвращает ошибку, если смещение плюс Нумберофзонес превышает число поддерживаемых зон. |
+| нумберофзонес | нет | Целое число | Число возвращаемых логических зон. Значение по умолчанию — 1. Число должно быть целым положительным числом от 1 до 3.  Используйте 1 для ресурсов с одной зоной. Для ресурсов с несколькими зонами значение должно быть меньше или равно числу поддерживаемых зон. |
+| offset | нет | Целое число | Смещение от начальной логической зоны. Функция возвращает ошибку, если смещение плюс Нумберофзонес превышает число поддерживаемых зон. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -383,30 +477,42 @@ Resource Manager предоставляет следующие функции д
 
 В следующем шаблоне показаны три результата использования функции Пиккзонес.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {},
-    "functions": [],
-    "variables": {},
-    "resources": [],
-    "outputs": {
-        "supported": {
-            "type": "array",
-            "value": "[pickZones('Microsoft.Compute', 'virtualMachines', 'westus2')]"
-        },
-        "notSupportedRegion": {
-            "type": "array",
-            "value": "[pickZones('Microsoft.Compute', 'virtualMachines', 'northcentralus')]"
-        },
-        "notSupportedType": {
-            "type": "array",
-            "value": "[pickZones('Microsoft.Cdn', 'profiles', 'westus2')]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "functions": [],
+  "variables": {},
+  "resources": [],
+  "outputs": {
+    "supported": {
+      "type": "array",
+      "value": "[pickZones('Microsoft.Compute', 'virtualMachines', 'westus2')]"
+    },
+    "notSupportedRegion": {
+      "type": "array",
+      "value": "[pickZones('Microsoft.Compute', 'virtualMachines', 'northcentralus')]"
+    },
+    "notSupportedType": {
+      "type": "array",
+      "value": "[pickZones('Microsoft.Cdn', 'profiles', 'westus2')]"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output supported array = pickZones('Microsoft.Compute', 'virtualMachines', 'westus2')
+output notSupportedRegion array = pickZones('Microsoft.Compute', 'virtualMachines', 'northcentralus')
+output notSupportedType array = pickZones('Microsoft.Cdn', 'profiles', 'westus2')
+```
+
+---
 
 Выходные данные из предыдущих примеров возвращают три массива.
 
@@ -418,11 +524,20 @@ Resource Manager предоставляет следующие функции д
 
 Вы можете использовать ответ от Пиккзонес, чтобы определить, следует ли предоставить значение NULL для зон или назначить виртуальные машины разным зонам. В следующем примере задается значение для зоны на основе доступности зон.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "zones": {
-    "value": "[if(not(empty(pickZones('Microsoft.Compute', 'virtualMachines', 'westus2'))), string(add(mod(copyIndex(),3),1)), json('null'))]"
+  "value": "[if(not(empty(pickZones('Microsoft.Compute', 'virtualMachines', 'westus2'))), string(add(mod(copyIndex(),3),1)), json('null'))]"
 },
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+> [!NOTE]
+> Циклы и copyIndex () еще не реализованы.  См. раздел [Loops](https://github.com/Azure/bicep/blob/main/docs/spec/loops.md).
+
+---
 
 ## <a name="providers"></a>providers
 
@@ -443,9 +558,9 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "resourceType": "{name of resource type}",
-    "locations": [ all supported locations ],
-    "apiVersions": [ all supported API versions ]
+  "resourceType": "{name of resource type}",
+  "locations": [ all supported locations ],
+  "apiVersions": [ all supported API versions ]
 }
 ```
 
@@ -455,27 +570,40 @@ Resource Manager предоставляет следующие функции д
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/providers.json) показано, как использовать функцию provider:
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "providerNamespace": {
-            "type": "string"
-        },
-        "resourceType": {
-            "type": "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "providerNamespace": {
+      "type": "string"
     },
-    "resources": [],
-    "outputs": {
-        "providerOutput": {
-            "value": "[providers(parameters('providerNamespace'), parameters('resourceType'))]",
-            "type" : "object"
-        }
+    "resourceType": {
+      "type": "string"
     }
+  },
+  "resources": [],
+  "outputs": {
+    "providerOutput": {
+      "type": "object",
+      "value": "[providers(parameters('providerNamespace'), parameters('resourceType'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param providerNamespace string
+param resourceType string
+
+output providerOutput array = providers(providerNamespace, resourceType)
+```
+
+---
 
 Для поставщика ресурсов **Microsoft.Web** и типа ресурса **sites** приведенный выше пример возвращает объект в таком формате:
 
@@ -523,24 +651,39 @@ Resource Manager предоставляет следующие функции д
 
 Обычно функция **reference** используется, чтобы получить определенное значение из объекта, например универсальный код ресурса (URI) конечной точки большого двоичного объекта или полное доменное имя.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "outputs": {
-    "BlobUri": {
-        "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))).primaryEndpoints.blob]",
-        "type" : "string"
-    },
-    "FQDN": {
-        "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('ipAddressName'))).dnsSettings.fqdn]",
-        "type" : "string"
-    }
+  "BlobUri": {
+    "type": "string",
+    "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))).primaryEndpoints.blob]"
+  },
+  "FQDN": {
+    "type": "string",
+    "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('ipAddressName'))).dnsSettings.fqdn]"
+  }
 }
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output BlobUri string = reference(resourceId('Microsoft.Storage/storageAccounts', storageAccountName)).primaryEndpoints.blob
+output FQDN string = reference(resourceId('Microsoft.Network/publicIPAddresses', ipAddressName)).dnsSettings.fqdn
+```
+
+---
+
 Используйте `'Full'`, если вам нужны значения ресурсов, которые не являются частью схемы свойств. Например, чтобы задать политику доступа к хранилищу ключей, получите свойства идентификатора для виртуальной машины.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 {
   "type": "Microsoft.KeyVault/vaults",
+  "apiVersion": "2019-09-01",
+  "name": "vaultName",
   "properties": {
     "tenantId": "[subscription().tenantId]",
     "accessPolicies": [
@@ -560,6 +703,33 @@ Resource Manager предоставляет следующие функции д
     ...
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+resource myVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
+  name: 'vaultName'
+  properties: {
+    tenantId: subscription().tenantId
+    accessPolicies: [
+      {
+        'tenantId': reference(resourceId('Microsoft.Compute/virtualMachines', vmName), '2019-03-01', 'Full').identity.tenantId
+        'objectId': reference(resourceId('Microsoft.Compute/virtualMachines', vmName), '2019-03-01', 'Full').identity.principalId
+        'permissions': {
+          'keys': [
+            'all'
+          ]
+          'secrets': [
+            'all'
+          ]
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
 ### <a name="valid-uses"></a>Допустимые варианты использования
 
 Эталонную функцию можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании с [итерацией свойства](copy-properties.md) можно использовать функцию reference для `input`, так как выражение назначается свойству ресурса.
@@ -578,21 +748,51 @@ Resource Manager предоставляет следующие функции д
 
 При ссылке на ресурс, развернутый в том же шаблоне, укажите имя ресурса.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "value": "[reference(parameters('storageAccountName'))]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+value: reference(storageAccountName)
+```
+
+---
+
 При ссылке на ресурс, который не развернут в том же шаблоне, укажите идентификатор ресурса и `apiVersion`.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "value": "[reference(resourceId(parameters('storageResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2018-07-01')]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+value: reference(resourceId(storageResourceGroup, 'Microsoft.Storage/storageAccounts', storageAccountName), '2018-07-01')]"
+```
+
+---
+
 Чтобы избежать неоднозначности в отношении ресурса, на который вы ссылаетесь, можно указать полный идентификатор ресурса.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('ipAddressName')))]"
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+value: reference(resourceId('Microsoft.Network/publicIPAddresses', ipAddressName))
+```
+
+---
 
 При создании полной ссылки на ресурс порядок объединения сегментов из типа и имени представляет собой не только использование этих двух вариантов. Вместо этого после пространства имен используйте пары *типа и имени*, начиная от наименее подходящей к наиболее подходящей.
 
@@ -614,39 +814,61 @@ Resource Manager предоставляет следующие функции д
 
 Например, чтобы получить идентификатор субъекта для управляемого удостоверения, применяемого к виртуальной машине, используйте:
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "[reference(resourceId('Microsoft.Compute/virtualMachines', variables('vmName')),'2019-12-01', 'Full').identity.principalId]",
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+reference(resourceId('Microsoft.Compute/virtualMachines', vmName),'2019-12-01', 'Full').identity.principalId
+```
+
+---
+
 Чтобы получить идентификатор клиента для управляемого удостоверения, применяемого к масштабируемому набору виртуальных машин, используйте:
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "[reference(resourceId('Microsoft.Compute/virtualMachineScaleSets',  variables('vmNodeType0Name')), 2019-12-01, 'Full').Identity.tenantId]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+reference(resourceId('Microsoft.Compute/virtualMachineScaleSets',  vmNodeType0Name), 2019-12-01, 'Full').Identity.tenantId
+```
+
+---
+
 ### <a name="reference-example"></a>Пример ссылки
 
 Следующий [пример шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/referencewithstorage.json) развертывает ресурс и ссылается на этот ресурс.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-      "storageAccountName": {
-          "type": "string"
-      }
+    "storageAccountName": {
+      "type": "string"
+    }
   },
   "resources": [
     {
-      "name": "[parameters('storageAccountName')]",
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2016-12-01",
+      "name": "[parameters('storageAccountName')]",
+      "location": "[resourceGroup().location]",
       "sku": {
         "name": "Standard_LRS"
       },
       "kind": "Storage",
-      "location": "[resourceGroup().location]",
       "tags": {},
       "properties": {
       }
@@ -654,8 +876,8 @@ Resource Manager предоставляет следующие функции д
   ],
   "outputs": {
       "referenceOutput": {
-          "type": "object",
-          "value": "[reference(parameters('storageAccountName'))]"
+        "type": "object",
+        "value": "[reference(parameters('storageAccountName'))]"
       },
       "fullReferenceOutput": {
         "type": "object",
@@ -664,6 +886,28 @@ Resource Manager предоставляет следующие функции д
     }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param storageAccountName string
+
+resource myStorage 'Microsoft.Storage/storageAccounts@2016-12-01' = {
+  name: storageAccountName
+  location: resourceGroup().location
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'Storage'
+  tags: {}
+  properties: {}
+}
+
+output referenceOutput object = reference(storageAccountName)
+output fullReferenceOutput object = reference(storageAccountName, '2016-12-01', 'Full')
+```
+
+---
 
 В предыдущем примере возвращаются два объекта. Объект свойств имеет следующий формат:
 
@@ -722,27 +966,40 @@ Resource Manager предоставляет следующие функции д
 
 Следующий [пример шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/reference.json) ссылается на учетную запись хранения, которая не развертывается в этом шаблоне. Учетная запись хранения уже имеется в той же подписке.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "storageResourceGroup": {
-            "type": "string"
-        },
-        "storageAccountName": {
-            "type": "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageResourceGroup": {
+      "type": "string"
     },
-    "resources": [],
-    "outputs": {
-        "ExistingStorage": {
-            "value": "[reference(resourceId(parameters('storageResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2018-07-01')]",
-            "type": "object"
-        }
+    "storageAccountName": {
+      "type": "string"
     }
+  },
+  "resources": [],
+  "outputs": {
+    "ExistingStorage": {
+      "type": "object",
+      "value": "[reference(resourceId(parameters('storageResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2018-07-01')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param storageResourceGroup string
+param storageAccountName string
+
+output ExistingStorage object = reference(resourceId(storageAccountName), 'Microsoft.Storage/storageAccounts', storageAccountName), '2018-07-01')
+```
+
+---
 
 ## <a name="resourcegroup"></a>resourceGroup
 
@@ -777,14 +1034,24 @@ Resource Manager предоставляет следующие функции д
 
 Как правило, функция resourceGroup используется для создания ресурсов в одном расположении с группой ресурсов. В следующем примере расположение группы ресурсов используется в качестве значения параметра по умолчанию.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "parameters": {
-    "location": {
-      "type": "string",
-      "defaultValue": "[resourceGroup().location]"
-    }
+  "location": {
+    "type": "string",
+    "defaultValue": "[resourceGroup().location]"
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param location string = resourceGroup().location
+```
+
+---
 
 Кроме того, функцию resourceGroup можно использовать для применения к ресурсу тегов из группы ресурсов. Дополнительные сведения см. в разделе [Применение тегов из группы ресурсов](../management/tag-resources.md#apply-tags-from-resource-group).
 
@@ -794,19 +1061,29 @@ Resource Manager предоставляет следующие функции д
 
 Следующий [пример шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/resourcegroup.json) возвращает свойства группы ресурсов.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [],
-    "outputs": {
-        "resourceGroupOutput": {
-            "value": "[resourceGroup()]",
-            "type" : "object"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [],
+  "outputs": {
+    "resourceGroupOutput": {
+      "type" : "object",
+      "value": "[resourceGroup()]"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output resourceGroupOutput object = resourceGroup()
+```
+
+---
 
 В предыдущем примере возвращается объект в следующем формате:
 
@@ -876,101 +1153,194 @@ Resource Manager предоставляет следующие функции д
 
 Чтобы получить идентификатор ресурса для родительского ресурса в той же подписке и группе ресурсов, укажите тип и имя ресурса.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "[resourceId('Microsoft.ServiceBus/namespaces', 'namespace1')]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+resourceId('Microsoft.ServiceBus/namespaces', 'namespace1')
+```
+
+---
+
 При получении идентификатора ресурса для дочернего ресурса обратите внимание на количество сегментов в типе ресурса. Укажите имя ресурса для каждого сегмента типа ресурса. Имя сегмента соответствует ресурсу, который существует для этой части иерархии.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "[resourceId('Microsoft.ServiceBus/namespaces/queues/authorizationRules', 'namespace1', 'queue1', 'auth1')]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+resourceId('Microsoft.ServiceBus/namespaces/queues/authorizationRules', 'namespace1', 'queue1', 'auth1')
+```
+
+---
+
 Чтобы получить идентификатор ресурса в той же подписке, но в другой группе ресурсов, укажите имя группы ресурсов.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "[resourceId('otherResourceGroup', 'Microsoft.Storage/storageAccounts', 'examplestorage')]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+resourceId('otherResourceGroup', 'Microsoft.Storage/storageAccounts', 'examplestorage')
+```
+
+---
+
 Чтобы получить идентификатор ресурса в другой подписке и группе ресурсов, укажите идентификатор подписки и имя группы ресурсов.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "[resourceId('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 'otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+resourceId('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 'otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')
+```
+
+---
+
 Эта функция часто необходима при использовании учетной записи хранения или виртуальной сети в альтернативной группе ресурсов. В следующем примере показано, как ресурс из внешней группы ресурсов можно легко использовать:
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-      "virtualNetworkName": {
-          "type": "string"
-      },
-      "virtualNetworkResourceGroup": {
-          "type": "string"
-      },
-      "subnet1Name": {
-          "type": "string"
-      },
-      "nicName": {
-          "type": "string"
-      }
+    "location": {
+      "type": "string"
+    },
+    "virtualNetworkName": {
+      "type": "string"
+    },
+    "virtualNetworkResourceGroup": {
+      "type": "string"
+    },
+    "subnet1Name": {
+      "type": "string"
+    },
+    "nicName": {
+      "type": "string"
+    }
   },
   "variables": {
-      "subnet1Ref": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnet1Name'))]"
+    "subnet1Ref": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnet1Name'))]"
   },
   "resources": [
-  {
-      "apiVersion": "2015-05-01-preview",
+    {
       "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2015-05-01-preview",
       "name": "[parameters('nicName')]",
       "location": "[parameters('location')]",
       "properties": {
-          "ipConfigurations": [{
-              "name": "ipconfig1",
-              "properties": {
-                  "privateIPAllocationMethod": "Dynamic",
-                  "subnet": {
-                      "id": "[variables('subnet1Ref')]"
-                  }
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "subnet": {
+                "id": "[variables('subnet1Ref')]"
               }
-          }]
-       }
-  }]
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param location string
+param virtualNetworkName string
+param virtualNetworkResourceGroup string
+param subnet1Name string
+param nicName string
+
+var subnet1Ref = resourceId('virtualNetworkResourceGroup', 'Microsoft.Network/virtualNetworks/subnets', 'virtualNetworkName', 'subnet1Name')
+
+resource myInterface 'Microsoft.Network/networkInterfaces@2015-05-01-preview' = {
+  name: nicName
+  location: location
+  properties: {
+    ipConfigurations: [
+      {
+        name: 'ipconfig1'
+        properties: {
+          privateIPAllocationMethod: 'Dynamic'
+          subnet: {
+            id: subnet1Ref
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
 
 ### <a name="resource-id-example"></a>Пример идентификатора ресурса
 
 Следующий [пример шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/resourceid.json) возвращает идентификатор ресурса для учетной записи хранения в группе ресурсов:
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [],
-    "outputs": {
-        "sameRGOutput": {
-            "value": "[resourceId('Microsoft.Storage/storageAccounts','examplestorage')]",
-            "type" : "string"
-        },
-        "differentRGOutput": {
-            "value": "[resourceId('otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')]",
-            "type" : "string"
-        },
-        "differentSubOutput": {
-            "value": "[resourceId('11111111-1111-1111-1111-111111111111', 'otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')]",
-            "type" : "string"
-        },
-        "nestedResourceOutput": {
-            "value": "[resourceId('Microsoft.SQL/servers/databases', 'serverName', 'databaseName')]",
-            "type" : "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [],
+  "outputs": {
+    "sameRGOutput": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Storage/storageAccounts','examplestorage')]"
+    },
+    "differentRGOutput": {
+      "type": "string",
+      "value": "[resourceId('otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')]"
+    },
+    "differentSubOutput": {
+      "type": "string",
+      "value": "[resourceId('11111111-1111-1111-1111-111111111111', 'otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')]"
+    },
+    "nestedResourceOutput": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.SQL/servers/databases', 'serverName', 'databaseName')]"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output sameRGOutput string = resourceId('Microsoft.Storage/storageAccounts','examplestorage')
+output differentRGOutput string = resourceId('otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')
+output differentSubOutput string = resourceId('11111111-1111-1111-1111-111111111111', 'otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')
+output nestedResourceOutput string = resourceId('Microsoft.SQL/servers/databases', 'serverName', 'databaseName')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -993,10 +1363,10 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "id": "/subscriptions/{subscription-id}",
-    "subscriptionId": "{subscription-id}",
-    "tenantId": "{tenant-id}",
-    "displayName": "{name-of-subscription}"
+  "id": "/subscriptions/{subscription-id}",
+  "subscriptionId": "{subscription-id}",
+  "tenantId": "{tenant-id}",
+  "displayName": "{name-of-subscription}"
 }
 ```
 
@@ -1008,19 +1378,29 @@ Resource Manager предоставляет следующие функции д
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/subscription.json) показана функция subscription, вызываемая в разделе выходных данных.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [],
-    "outputs": {
-        "subscriptionOutput": {
-            "value": "[subscription()]",
-            "type" : "object"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [],
+  "outputs": {
+    "subscriptionOutput": {
+      "value": "[subscription()]",
+      "type" : "object"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output subscriptionOutput object = subscription()
+```
+
+---
 
 ## <a name="subscriptionresourceid"></a>subscriptionResourceId
 
@@ -1055,54 +1435,104 @@ Resource Manager предоставляет следующие функции д
 
 Следующий шаблон назначает встроенную роль. Его можно развернуть либо в группе ресурсов, либо в подписке. Для получения идентификатора ресурса для встроенных ролей в нем используется функция subscriptionResourceId.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "principalId": {
-            "type": "string",
-            "metadata": {
-                "description": "The principal to assign the role to"
-            }
-        },
-        "builtInRoleType": {
-            "type": "string",
-            "allowedValues": [
-                "Owner",
-                "Contributor",
-                "Reader"
-            ],
-            "metadata": {
-                "description": "Built-in role to assign"
-            }
-        },
-        "roleNameGuid": {
-            "type": "string",
-            "defaultValue": "[newGuid()]",
-            "metadata": {
-                "description": "A new GUID used to identify the role assignment"
-            }
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "principalId": {
+      "type": "string",
+      "metadata": {
+        "description": "The principal to assign the role to"
+      }
     },
-    "variables": {
-        "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-        "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
-        "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]"
+    "builtInRoleType": {
+      "type": "string",
+      "allowedValues": [
+        "Owner",
+        "Contributor",
+        "Reader"
+      ],
+      "metadata": {
+        "description": "Built-in role to assign"
+      }
     },
-    "resources": [
-        {
-            "type": "Microsoft.Authorization/roleAssignments",
-            "apiVersion": "2018-09-01-preview",
-            "name": "[parameters('roleNameGuid')]",
-            "properties": {
-                "roleDefinitionId": "[variables(parameters('builtInRoleType'))]",
-                "principalId": "[parameters('principalId')]"
-            }
-        }
-    ]
+    "roleNameGuid": {
+      "type": "string",
+      "defaultValue": "[newGuid()]",
+      "metadata": {
+        "description": "A new GUID used to identify the role assignment"
+      }
+    }
+  },
+  "variables": {
+    "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
+    "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
+    "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "apiVersion": "2018-09-01-preview",
+      "name": "[parameters('roleNameGuid')]",
+      "properties": {
+        "roleDefinitionId": "[variables(parameters('builtInRoleType'))]",
+        "principalId": "[parameters('principalId')]"
+      }
+    }
+  ]
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param principalId string {
+  metadata: {
+    'description': 'principalId'
+  }
+}
+param builtInRoleType string {
+  'allowed': [
+    'Owner'
+    'Contributor'
+    'Reader'
+  ]
+  'metadata': {
+      'description': 'Built-in role to assign'
+  }
+}
+param roleNameGuid string {
+  default: newGuid()
+  metadata: {
+    'description': 'A new GUID used to identify the role assignment'
+  }
+}
+
+var roleDefinitionId = {
+  Owner: {
+    id: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')
+  }
+  Contributor: {
+    id: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')
+  }
+  Reader: {
+    id: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')
+  }
+}
+
+resource myRoleAssignment 'Microsoft.Authorization/roleAssignments@2018-09-01-preview' = {
+  name: roleNameGuid
+  properties: {
+    roleDefinitionId: roleDefinitionId[builtInRoleType].id
+    principalId: principalId
+  }
+}
+```
+
+---
 
 ## <a name="tenantresourceid"></a>tenantResourceId
 
@@ -1136,23 +1566,25 @@ Resource Manager предоставляет следующие функции д
 
 Встроенные определения политик — это ресурсы уровня клиента. Чтобы развернуть назначение политики, ссылающееся на определение встроенной политики, используйте функцию Тенантресаурцеид.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "policyAssignmentName": {
-      "type": "string",
-      "defaultValue": "[guid(parameters('policyDefinitionID'), resourceGroup().name)]",
-      "metadata": {
-        "description": "Specifies the name of the policy assignment, can be used defined or an idempotent name as the defaultValue provides."
-      }
-    },
     "policyDefinitionID": {
       "type": "string",
       "defaultValue": "0a914e76-4921-4c19-b460-a2d36003525a",
       "metadata": {
         "description": "Specifies the ID of the policy definition or policy set definition being assigned."
+      }
+    },
+    "policyAssignmentName": {
+      "type": "string",
+      "defaultValue": "[guid(parameters('policyDefinitionID'), resourceGroup().name)]",
+      "metadata": {
+        "description": "Specifies the name of the policy assignment, can be used defined or an idempotent name as the defaultValue provides."
       }
     }
   },
@@ -1170,10 +1602,37 @@ Resource Manager предоставляет следующие функции д
 }
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param policyDefinitionID string{
+  default: '0a914e76-4921-4c19-b460-a2d36003525a'
+  metadata: {
+    'description': 'Specifies the ID of the policy definition or policy set definition being assigned.'
+  }
+}
+
+param policyAssignmentName string {
+  default: guid(policyDefinitionID, resourceGroup().name)
+  metadata: {
+    'description': 'Specifies the name of the policy assignment, can be used defined or an idempotent name as the defaultValue provides.'
+  }
+}
+
+resource myPolicyAssignment 'Microsoft.Authorization/policyAssignments@2019-09-01' = {
+  name: policyAssignmentName
+  properties: {
+    scope: subscriptionResourceId('Microsoft.Resources/resourceGroups', resourceGroup().name)
+    policyDefinitionId: tenantResourceId('Microsoft.Authorization/policyDefinitions', policyDefinitionID)
+  }
+}
+```
+
+---
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
 * Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
-

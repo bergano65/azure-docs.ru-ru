@@ -4,11 +4,11 @@ description: Добавление маркеров развертывания и
 ms.topic: conceptual
 ms.date: 08/14/2020
 ms.openlocfilehash: 58f6603687838713fafbf4cd5cc3f100e22b7401
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91758189"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993726"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
 
@@ -57,13 +57,13 @@ ms.locfileid: "91758189"
    
    ![На вкладке доступ через API выберите Создать ключ API.](./media/annotations/5-create-api-key.png)
    
-1. В окне **Создание ключа API** введите описание, выберите **записать заметки**и нажмите кнопку **создать ключ**. Скопируйте новый ключ.
+1. В окне **Создание ключа API** введите описание, выберите **записать заметки** и нажмите кнопку **создать ключ**. Скопируйте новый ключ.
    
    ![В окне Создание ключа API введите описание, выберите записать заметки и нажмите кнопку Создать ключ.](./media/annotations/6-create-api-key.png)
    
 1. В окне шаблон выпуска на вкладке **переменные** выберите **Добавить** , чтобы создать определение переменной для нового ключа API.
 
-1. В разделе **имя**введите `ApiKey` и в поле **значение**вставьте ключ API, скопированный на вкладке **доступ к API** .
+1. В разделе **имя** введите `ApiKey` и в поле **значение** вставьте ключ API, скопированный на вкладке **доступ к API** .
    
    ![На вкладке DevOps переменные Azure выберите Добавить, назовите переменную ApiKey и вставьте ключ API в поле значение.](./media/annotations/7-paste-api-key.png)
    
@@ -117,7 +117,7 @@ ms.locfileid: "91758189"
 
 Можно изменить скрипт, например, чтобы создать заметки в прошлом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание рабочих элементов](./diagnostic-search.md#create-work-item)
 * [Автоматизация с помощью PowerShell](./powershell.md)

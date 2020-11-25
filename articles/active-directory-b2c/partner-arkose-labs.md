@@ -12,11 +12,11 @@ ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 333bb42643539cedec04d37680749c749a003536
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953888"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994066"
 ---
 # <a name="tutorial-for-configuring-arkose-labs-with-azure-active-directory-b2c"></a>Руководство по настройке Аркосе Labs с помощью Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "94953888"
 
 Чтобы приступить к работе, вам потребуется:
 
-* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Клиент Azure AD B2C](tutorial-create-tenant.md) , связанный с вашей подпиской Azure.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,7 +100,7 @@ ms.locfileid: "94953888"
 
    ![Регистрация и вход в Аркосе Labs](media/partner-arkose-labs/signup-signin-arkose.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 ### <a name="part-2--set-up-a-back-end-server"></a>Часть 2. Настройка фонового сервера
 

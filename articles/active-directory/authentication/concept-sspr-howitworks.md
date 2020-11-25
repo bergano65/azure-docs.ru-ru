@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8fa1c2627917bfe386c488470f6a78db4c51f2ec
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363680"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994270"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>Как это работает: самостоятельный сброс пароля в Azure AD
 
@@ -106,7 +106,7 @@ ms.locfileid: "92363680"
 
 * Уведомление от мобильного приложения
 * Код мобильного приложения
-* Email
+* Адрес электронной почты
 * Мобильный телефон
 * Рабочий телефон
 * Контрольные вопросы
@@ -182,7 +182,7 @@ ms.locfileid: "92363680"
 
 * В среде есть 4 администратора.
 * Администратор *а* сбрасывает пароль с помощью SSPR.
-* Администраторы *B*, *C*и *D* получают по электронной почте уведомления о сбросе пароля.
+* Администраторы *B*, *C* и *D* получают по электронной почте уведомления о сбросе пароля.
 
 ## <a name="on-premises-integration"></a>Интеграция с локальной средой
 
@@ -235,7 +235,7 @@ SSPR выполняет эквивалент сброса пароля, иниц
 > [!NOTE]
 > Учетные записи Майкрософт, которым предоставлен гостевой доступ к вашему клиенту Azure AD, такие как Hotmail.com, Outlook.com или другие личные адреса электронной почты, не могут использовать Azure AD SSPR. Им потребуется сбросить свой пароль, как описано в статье [Не удается войти в учетную запись Майкрософт](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приступить к работе с SSPR, выполните инструкции из следующего руководства.
 

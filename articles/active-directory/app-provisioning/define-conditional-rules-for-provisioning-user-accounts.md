@@ -11,11 +11,11 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: kenwith
 ms.openlocfilehash: 1765c6a7d19a11730567acd5e41deebc0a20cec2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88235830"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993998"
 ---
 # <a name="attribute-based-application-provisioning-with-scoping-filters"></a>Подготовка приложений на основе атрибутов с использованием фильтров области
 В этой статье объясняется, как с помощью фильтров области задать правила на основе атрибутов, которые управляют подготовкой пользователей для работы с приложением.
@@ -123,7 +123,7 @@ ms.locfileid: "88235830"
 |department|EQUALS|sales|Все пользователи из отдела продаж находятся в области подготовки|
 |воркерид|СООТВЕТСТВИЕ РЕГУЛЯРНОГО ВЫРАЖЕНИЯ|(1[0–9][0–9][0–9][0–9][0–9][0–9]).| Все сотрудники с Воркеридс между 1000000 и 2000000 находятся в области подготовки.|
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 * [Автоматизация подготовки пользователей и ее отмены в приложениях SaaS](../app-provisioning/user-provisioning.md)
 * [Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](../app-provisioning/customize-application-attributes.md)
 * [Написание выражений для сопоставления атрибутов](functions-for-customizing-application-data.md)

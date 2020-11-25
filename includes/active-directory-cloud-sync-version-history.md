@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 46c27fa2073ea1178fdf01ea3cbf96fe86954a6a
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 3fc2475569765116d46a175629f25d9d49634942
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95255153"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993961"
 ---
 В этой статье перечислены версии и возможности выпущенного агента подготовки Azure Active Directory Connect. Команда Azure AD регулярно обновляет агент подготовки с помощью новых функций и функций. Агент подготовки обновляется автоматически при выпуске новой версии. 
 
@@ -14,12 +14,12 @@ ms.locfileid: "95255153"
 
 ### <a name="release-status"></a>Состояние выпуска
 
-Ноябрь XX, 2020: выпущено для скачивания
+23 ноября 2020: выпущено для скачивания
 
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
 
 * Поддержка [gMSA](../articles/active-directory/cloud-provisioning/how-to-prerequisites.md#group-managed-service-accounts)
-* Поддержка групп размером до 1500 элементов (во время синхронизации Дельта)
+* Поддержка групп до размера менее 1500 членов во время добавочного или разностного цикла синхронизации. Это применимо при использовании фильтра области групп
 * Поддержка больших групп с размером членов до 15 000
 * Улучшения начальной синхронизации
 * Расширенное подробное ведение журнала

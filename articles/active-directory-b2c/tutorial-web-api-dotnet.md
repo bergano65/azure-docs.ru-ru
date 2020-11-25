@@ -11,12 +11,12 @@ ms.custom: devx-track-csharp, mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: bfa8943af16fe62015a4736f561875235e205fc1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ada4226500437e7733605a29988ee7cacae40761
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88163889"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994332"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET с помощью Azure Active Directory B2C
 
@@ -40,7 +40,7 @@ ms.locfileid: "88163889"
 
 Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать запросы защищенных ресурсов от клиентских приложений, которые представляют маркер доступа, и отвечать на них.
 
-Чтобы зарегистрировать приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **регистрации приложений** или устаревший интерфейс **приложений (прежняя версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregtraining).
+Чтобы зарегистрировать приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **регистрации приложений** или устаревший интерфейс **приложений (прежняя версия)** . [См. дополнительные сведения о новом интерфейсе](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[Регистрация приложений](#tab/app-reg-ga/)
 

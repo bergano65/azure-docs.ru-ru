@@ -9,11 +9,11 @@ ms.date: 03/05/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: f4af8a150b062526f08c1d15581ec26e2fe12d8c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87102949"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95992886"
 ---
 - В настоящее время добавочные моментальные снимки нельзя перемещать между подписками.
 - В настоящее время вы можете создавать URI SAS только для пяти моментальных снимков определенного семейства моментальных снимков в любой конкретный момент времени.

@@ -15,11 +15,11 @@ ms.topic: how-to
 ms.date: 02/28/2018
 ms.author: allensu
 ms.openlocfilehash: ceed62d466627d6a23554229bd6f4b96c674c7e9
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148750"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993675"
 ---
 # <a name="improve-performance-by-compressing-files-in-azure-cdn"></a>Повышение производительности за счет сжатия файлов в Azure CDN
 Сжатие файлов — это простой и эффективный способ, который позволяет повысить скорость передачи файлов и увеличить производительность загрузки страницы за счет уменьшения размера файлов перед их отправкой с сервера. Этот способ позволяет снизить потребление пропускной способности и обеспечивает более высокую скорость работы для пользователей.

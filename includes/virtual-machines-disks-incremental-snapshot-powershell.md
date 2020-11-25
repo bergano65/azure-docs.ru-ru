@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/05/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 9e7386e21442b5a76aae656a36e2858b52ecef65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 895a81df858e51a266cd87c96a161695a4bf2cc1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87102957"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95992868"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
 
@@ -34,7 +34,7 @@ Install-Module -Name Az -AllowClobber -Scope CurrentUser
 
 После установки войдите в сеанс PowerShell с помощью `Connect-AzAccount` .
 
-Чтобы создать добавочный моментальный снимок с Azure PowerShell, настройте конфигурацию с помощью командлета [New-азснапшотконфиг](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) с `-Incremental` параметром, а затем передайте эту переменную в командлет [New-азснапшот](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) с помощью `-Snapshot` параметра.
+Чтобы создать добавочный моментальный снимок с Azure PowerShell, настройте конфигурацию с помощью командлета [New-азснапшотконфиг](/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) с `-Incremental` параметром, а затем передайте эту переменную в командлет [New-азснапшот](/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) с помощью `-Snapshot` параметра.
 
 ```PowerShell
 $diskName = "yourDiskNameHere>"
@@ -105,6 +105,6 @@ $incrementalSnapshots
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите просмотреть пример кода, демонстрирующий возможность создания добавочных моментальных снимков с помощью .NET, см. статью [копирование резервных копий управляемых дисков Azure в другой регион с помощью разностных моментальных снимков](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots).

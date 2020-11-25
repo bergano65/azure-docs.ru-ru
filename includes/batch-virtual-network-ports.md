@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.date: 06/16/2020
 ms.author: jenhayes
 ms.custom: include file
-ms.openlocfilehash: 3e4bca058f554f60dfa5c237633d1fecf06dfea7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4f17fbfad1e7e550b3a1e95c93e4b061d0f1c3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87507394"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993434"
 ---
 ### <a name="general-requirements"></a>Общие требования
 
@@ -69,7 +69,7 @@ ms.locfileid: "87507394"
 
 | Исходные IP-адреса | Тег службы источника | Исходные порты | Назначение | Конечные порты | Протокол | Действие |
 | --- | --- | --- | --- | --- | --- | --- |
-| Недоступно | [Тег службы](../articles/virtual-network/security-overview.md#service-tags) `BatchNodeManagement` (если используется региональный вариант, в том же регионе, что и учетная запись пакетной службы). | * | Любой | 29876–29877 | TCP | Allow |
+| Недоступно | [Тег службы](../articles/virtual-network/network-security-groups-overview.md#service-tags) `BatchNodeManagement` (если используется региональный вариант, в том же регионе, что и учетная запись пакетной службы). | * | Любой | 29876–29877 | TCP | Allow |
 | Исходные IP-адреса пользователя для удаленного доступа к вычислительным узлам и (или) подсети вычислительных узлов для задач с несколькими экземплярами Linux, если это необходимо. | Недоступно | * | Любой | 3389 (Windows), 22 (Linux) | TCP | Allow |
 
 > [!WARNING]
@@ -79,7 +79,7 @@ ms.locfileid: "87507394"
 
 | Источник | Исходные порты | Назначение | Тег целевой службы | Конечные порты | Протокол | Действие |
 | --- | --- | --- | --- | --- | --- | --- |
-| Любой | * | [Тег службы](../articles/virtual-network/security-overview.md#service-tags) | `Storage` (если используется региональный вариант, в том же регионе, что и учетная запись пакетной службы). | 443 | TCP | Allow |
+| Любой | * | [Тег службы](../articles/virtual-network/network-security-groups-overview.md#service-tags) | `Storage` (если используется региональный вариант, в том же регионе, что и учетная запись пакетной службы). | 443 | TCP | Allow |
 
 ### <a name="pools-in-the-cloud-services-configuration"></a>Пулы в конфигурации облачных служб
 

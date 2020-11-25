@@ -12,11 +12,11 @@ ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 953653a758577ed3d48ca2d81403b4cb363ea294
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259074"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994049"
 ---
 # <a name="integrating-twilio-verify-app-with-azure-active-directory-b2c"></a>Интеграция Twilio проверка приложения с Azure Active Directory B2C
 
@@ -90,7 +90,7 @@ ms.locfileid: "91259074"
 
 6. Найдите Twilio REST API технический профиль **Custom-SMS-регистрация**. Обновите  `ServiceURL`   с помощью Twilio AccountSID и номера отсчета на приобретенный номер телефона.
 
-7. Найдите Twilio REST API технические профили, **твилиорестапи-Verify-шаг 1**   и **Твилиорестапи-Verify-шаг 2**и обновите  `ServiceURL`   с помощью Twilio AccountSID.
+7. Найдите Twilio REST API технические профили, **твилиорестапи-Verify-шаг 1**   и **Твилиорестапи-Verify-шаг 2** и обновите  `ServiceURL`   с помощью Twilio AccountSID.
 
 ## <a name="integrate-with-azure-ad-b2c"></a>Интеграция с Azure AD B2C
 
@@ -102,11 +102,11 @@ ms.locfileid: "91259074"
 
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 
-4. Перейдите в раздел **Azure AD B2C**  >  **Идентификация**  >  .**ключи политики**инфраструктуры.
+4. Перейдите в раздел **Azure AD B2C**  >  **Идентификация**  >  .**ключи политики** инфраструктуры.
 
-5. Добавьте новый раздел с именем **B2cRestTwilioClientId**. Выберите **вручную**и укажите значение параметра Twilio AccountSID.
+5. Добавьте новый раздел с именем **B2cRestTwilioClientId**. Выберите **вручную** и укажите значение параметра Twilio AccountSID.
 
-6. Добавьте новый раздел с именем **B2cRestTwilioClientSecret**. Выберите **вручную**и укажите значение маркера проверки подлинности Twilio.
+6. Добавьте новый раздел с именем **B2cRestTwilioClientSecret**. Выберите **вручную** и укажите значение маркера проверки подлинности Twilio.
 
 7. Отправьте все файлы политики в клиент.
 
@@ -116,7 +116,7 @@ ms.locfileid: "91259074"
 
 * Перейдите к приложению и протестируйте действия входа, регистрации и отправки денег.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 

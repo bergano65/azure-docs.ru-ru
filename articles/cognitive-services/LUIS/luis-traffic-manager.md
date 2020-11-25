@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 08/20/2019
-ms.openlocfilehash: e37b35e3473b2da397904d01be5e65cf8cafbbe5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6fc5bea71909d0e17b4ef0256ab0cad644dacbb3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541124"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95993828"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
 Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**.
@@ -30,12 +30,12 @@ ms.locfileid: "91541124"
 
 ![Снимок экрана портала Azure с открытым окном PowerShell](./media/traffic-manager/azure-portal-powershell.png)
 
-В следующих разделах используйте [командлеты PowerShell диспетчера трафика](https://docs.microsoft.com/powershell/module/az.trafficmanager/#traffic_manager).
+В следующих разделах используйте [командлеты PowerShell диспетчера трафика](/powershell/module/az.trafficmanager/#traffic_manager).
 
 ## <a name="create-azure-resource-group-with-powershell"></a>Создание группы ресурсов Azure с помощью PowerShell
 Прежде чем создавать ресурсы Azure, создайте группу ресурсов, в которую будут входить все ресурсы. Укажите имя группы ресурсов `luis-traffic-manager` и регион `West US`. В регионе группы ресурсов хранятся метаданные о группе. Если ваши ресурсы находятся в другом регионе, это не скажется на скорости их работы.
 
-Создайте группу ресурсов с помощью командлета **[New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup)** :
+Создайте группу ресурсов с помощью командлета **[New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup)** :
 
 ```powerShell
 New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
@@ -56,7 +56,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 ### <a name="polling-uses-luis-endpoint"></a>Опрос с использованием конечной точки LUIS
 Диспетчер трафика периодически опрашивает конечные точки, чтобы проверить, что конечная точка по-прежнему доступна. URL-адрес, опрашиваемый диспетчером трафика, должен быть доступен с помощью запроса GET и должен возвращать ответ 200. Этим условиям отвечает URL-адрес конечной точки на странице **Публикация**. Поскольку у каждого ключа конечной точки есть свой маршрут и параметры строки запроса, для каждого ключа конечной точки требуется использовать собственный путь опроса. Каждый раз, когда диспетчер трафика выполняет опрос, он использует запрос стоимости квоты. Параметр строки запроса **q** конечной точки LUIS представляет собой высказывание, отправляемое в LUIS. Этот параметр используется не для отправки высказывания, а для добавления опроса диспетчера трафика в журнал конечной точки LUIS с целью отладки при настройке диспетчера трафика.
 
-Так как у каждой конечной точки LUIS есть собственный путь, ей требуется собственный профиль Traffic Manager. Чтобы управлять профилями, создайте [_вложенную_ архитектуру диспетчера трафика](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-nested-profiles). Один родительский профиль указывает на дочерние профили и управляет трафиком между ними.
+Так как у каждой конечной точки LUIS есть собственный путь, ей требуется собственный профиль Traffic Manager. Чтобы управлять профилями, создайте [_вложенную_ архитектуру диспетчера трафика](../../traffic-manager/traffic-manager-nested-profiles.md). Один родительский профиль указывает на дочерние профили и управляет трафиком между ними.
 
 После настройки диспетчера трафика не забудьте изменить путь, указав параметр строки запроса logging=false, чтобы в журнал не записывались сведения об опросе.
 
@@ -66,7 +66,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 ### <a name="create-the-east-us-traffic-manager-profile-with-powershell"></a>Создание профиля диспетчера трафика для региона "Восточная часть США" с помощью PowerShell
 Чтобы создать профиль для региона "Восточная часть США", необходимо выполнить несколько действий: создать профиль, добавить конечную точку и настроить конечную точку. Профиль диспетчера трафика может включать несколько конечных точек, но у каждой конечной точки один и тот же путь проверки. Поскольку URL-адреса конечных точек LUIS подписок для регионов "Западная часть США" и "Восточная часть США" различаются по региону и ключу конечной точки, то каждая конечная точка LUIS должна быть единственной конечной точкой в профиле.
 
-1. Создание профиля с помощью командлета **[New-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.trafficmanager/new-aztrafficmanagerprofile)**
+1. Создание профиля с помощью командлета **[New-азтраффикманажерпрофиле](/powershell/module/az.trafficmanager/new-aztrafficmanagerprofile)**
 
     Для создания профиля воспользуйтесь указанным ниже командлетом. Не забудьте изменить значения параметров `appIdLuis` и `subscriptionKeyLuis`. Ключ подписки указан для региона LUIS "Восточная часть США". Если путь, включая идентификатор приложения и ключ конечной точки, является неправильным, то результат опроса диспетчера трафика получает состояние `degraded`, так как диспетчер трафика не может успешно опросить конечную точку LUIS. Убедитесь, что параметр `q` имеет значение `traffic-manager-east`, которое можно будет найти в журналах конечной точки LUIS.
 
@@ -88,7 +88,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Для успешного запроса ответ не возвращается.
 
-2. Добавление конечной точки восточной части США с помощью командлета **[Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.trafficmanager/add-aztrafficmanagerendpointconfig)**
+2. Добавление конечной точки восточной части США с помощью командлета **[Add-азтраффикманажерендпоинтконфиг](/powershell/module/az.trafficmanager/add-aztrafficmanagerendpointconfig)**
 
     ```powerShell
     Add-AzTrafficManagerEndpointConfig -EndpointName luis-east-endpoint -TrafficManagerProfile $eastprofile -Type ExternalEndpoints -Target eastus.api.cognitive.microsoft.com -EndpointLocation "eastus" -EndpointStatus Enabled
@@ -102,7 +102,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-Type|ExternalEndpoints|Дополнительные сведения см. в статье [Конечная точка диспетчера трафика][traffic-manager-endpoints]. |
     |-Target|eastus.api.cognitive.microsoft.com|Домен LUIS конечной точки.|
     |-EndpointLocation|"eastus"|Регион конечной точки.|
-    |-EndpointStatus|Включен|Включить конечную точку при ее создании.|
+    |-EndpointStatus|Активировано|Включить конечную точку при ее создании.|
 
     Успешный ответ выглядит следующим образом:
 
@@ -123,7 +123,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     Endpoints                        : {luis-east-endpoint}
     ```
 
-3. Задание конечной точки восточной части США с помощью командлета **[Set-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.trafficmanager/set-aztrafficmanagerprofile)**
+3. Задание конечной точки восточной части США с помощью командлета **[Set-азтраффикманажерпрофиле](/powershell/module/az.trafficmanager/set-aztrafficmanagerprofile)**
 
     ```powerShell
     Set-AzTrafficManagerProfile -TrafficManagerProfile $eastprofile
@@ -134,7 +134,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 ### <a name="create-the-west-us-traffic-manager-profile-with-powershell"></a>Создание профиля диспетчера трафика для региона "Западная часть США" с помощью PowerShell
 Чтобы создать профиль для региона "Западная часть США", необходимо выполнить те же действия: создать профиль, добавить конечную точку и настроить конечную точку.
 
-1. Создание профиля с помощью командлета **[New-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/New-azTrafficManagerProfile)**
+1. Создание профиля с помощью командлета **[New-азтраффикманажерпрофиле](/powershell/module/az.TrafficManager/New-azTrafficManagerProfile)**
 
     Для создания профиля воспользуйтесь указанным ниже командлетом. Не забудьте изменить значения параметров `appIdLuis` и `subscriptionKeyLuis`. Ключ подписки указан для региона LUIS "Восточная часть США". Если путь, включая идентификатор приложения и ключ конечной точки, является неправильным, то результат опроса диспетчера трафика получает состояние `degraded`, так как диспетчер трафика не может успешно опросить конечную точку LUIS. Убедитесь, что параметр `q` имеет значение `traffic-manager-west`, которое можно будет найти в журналах конечной точки LUIS.
 
@@ -156,7 +156,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Для успешного запроса ответ не возвращается.
 
-2. Добавление конечной точки "Западная часть США" с помощью командлета **[Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)**
+2. Добавление конечной точки "Западная часть США" с помощью командлета **[Add-азтраффикманажерендпоинтконфиг](/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)**
 
     ```powerShell
     Add-AzTrafficManagerEndpointConfig -EndpointName luis-west-endpoint -TrafficManagerProfile $westprofile -Type ExternalEndpoints -Target westus.api.cognitive.microsoft.com -EndpointLocation "westus" -EndpointStatus Enabled
@@ -171,7 +171,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-Type|ExternalEndpoints|Дополнительные сведения см. в статье [Конечная точка диспетчера трафика][traffic-manager-endpoints]. |
     |-Target|westus.api.cognitive.microsoft.com|Домен LUIS конечной точки.|
     |-EndpointLocation|"westus"|Регион конечной точки.|
-    |-EndpointStatus|Включен|Включить конечную точку при ее создании.|
+    |-EndpointStatus|Активировано|Включить конечную точку при ее создании.|
 
     Успешный ответ выглядит следующим образом:
 
@@ -192,7 +192,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     Endpoints                        : {luis-west-endpoint}
     ```
 
-3. Настройка конечной точки западной части США с помощью командлета **[Set-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)**
+3. Настройка конечной точки западной части США с помощью командлета **[Set-азтраффикманажерпрофиле](/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)**
 
     ```powerShell
     Set-AzTrafficManagerProfile -TrafficManagerProfile $westprofile
@@ -203,7 +203,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 ### <a name="create-parent-traffic-manager-profile"></a>Создание родительского профиля диспетчера трафика
 Создайте родительский профиль диспетчера трафика и свяжите два дочерних профиля диспетчера трафика с родительским.
 
-1. Создание родительского профиля с помощью командлета **[New-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/New-azTrafficManagerProfile)**
+1. Создание родительского профиля с помощью командлета **[New-азтраффикманажерпрофиле](/powershell/module/az.TrafficManager/New-azTrafficManagerProfile)**
 
     ```powerShell
     $parentprofile = New-AzTrafficManagerProfile -Name luis-profile-parent -ResourceGroupName luis-traffic-manager -TrafficRoutingMethod Performance -RelativeDnsName luis-dns-parent -Ttl 30 -MonitorProtocol HTTPS -MonitorPort 443 -MonitorPath "/"
@@ -223,7 +223,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Для успешного запроса ответ не возвращается.
 
-2. Добавление дочернего профиля восточной части США в родительский профиль с помощью **[Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)** и типа **нестедендпоинтс**
+2. Добавление дочернего профиля восточной части США в родительский профиль с помощью **[Add-азтраффикманажерендпоинтконфиг](/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)** и типа **нестедендпоинтс**
 
     ```powerShell
     Add-AzTrafficManagerEndpointConfig -EndpointName child-endpoint-useast -TrafficManagerProfile $parentprofile -Type NestedEndpoints -TargetResourceId $eastprofile.Id -EndpointStatus Enabled -EndpointLocation "eastus" -MinChildEndpoints 1
@@ -235,9 +235,9 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |--|--|--|
     |-EndpointName|child-endpoint-useast|Профиль для региона "Восточная часть США"|
     |-TrafficManagerProfile|$parentprofile|Профиль, которому будет назначена эта конечная точка|
-    |-Type|NestedEndpoints|Дополнительные сведения см. в разделе [Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
+    |-Type|NestedEndpoints|Дополнительные сведения см. в разделе [Add-азтраффикманажерендпоинтконфиг](/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
     |-TargetResourceId|$eastprofile.Id|Идентификатор дочернего профиля|
-    |-EndpointStatus|Включен|Состояние конечной точки после добавления в родительский профиль|
+    |-EndpointStatus|Активировано|Состояние конечной точки после добавления в родительский профиль|
     |-EndpointLocation|"eastus"|[Имя региона Azure](https://azure.microsoft.com/global-infrastructure/regions/) ресурса.|
     |-MinChildEndpoints|1|Минимальное число дочерних конечных точек|
 
@@ -260,7 +260,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     Endpoints                        : {child-endpoint-useast}
     ```
 
-3. Добавление дочернего профиля "Западная часть США" в родительский с помощью командлета **[Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)** и типа **нестедендпоинтс**
+3. Добавление дочернего профиля "Западная часть США" в родительский с помощью командлета **[Add-азтраффикманажерендпоинтконфиг](/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)** и типа **нестедендпоинтс**
 
     ```powerShell
     Add-AzTrafficManagerEndpointConfig -EndpointName child-endpoint-uswest -TrafficManagerProfile $parentprofile -Type NestedEndpoints -TargetResourceId $westprofile.Id -EndpointStatus Enabled -EndpointLocation "westus" -MinChildEndpoints 1
@@ -272,9 +272,9 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |--|--|--|
     |-EndpointName|child-endpoint-uswest|Профиль для региона "Западная часть США"|
     |-TrafficManagerProfile|$parentprofile|Профиль, которому будет назначена эта конечная точка|
-    |-Type|NestedEndpoints|Дополнительные сведения см. в разделе [Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
+    |-Type|NestedEndpoints|Дополнительные сведения см. в разделе [Add-азтраффикманажерендпоинтконфиг](/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
     |-TargetResourceId|$westprofile.Id|Идентификатор дочернего профиля|
-    |-EndpointStatus|Включен|Состояние конечной точки после добавления в родительский профиль|
+    |-EndpointStatus|Активировано|Состояние конечной точки после добавления в родительский профиль|
     |-EndpointLocation|"westus"|[Имя региона Azure](https://azure.microsoft.com/global-infrastructure/regions/) ресурса.|
     |-MinChildEndpoints|1|Минимальное число дочерних конечных точек|
 
@@ -297,7 +297,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     Endpoints                        : {child-endpoint-useast, child-endpoint-uswest}
     ```
 
-4. Установка конечных точек с помощью командлета **[Set-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)**
+4. Установка конечных точек с помощью командлета **[Set-азтраффикманажерпрофиле](/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)**
 
     ```powerShell
     Set-AzTrafficManagerProfile -TrafficManagerProfile $parentprofile
@@ -306,7 +306,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     Успешный ответ аналогичен успешному ответу на шаге 3.
 
 ### <a name="powershell-variables"></a>Переменные PowerShell
-В предыдущих разделах были созданы три переменные PowerShell: `$eastprofile`, `$westprofile`, `$parentprofile`. Эти переменные используются на конечном этапе настройки диспетчера трафика. Если вы решили не создавать переменные или забыли, или окно PowerShell истечет, можно использовать командлет PowerShell **[Get-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/Get-azTrafficManagerProfile)**, чтобы снова получить профиль и назначить его переменной.
+В предыдущих разделах были созданы три переменные PowerShell: `$eastprofile`, `$westprofile`, `$parentprofile`. Эти переменные используются на конечном этапе настройки диспетчера трафика. Если вы решили не создавать переменные или забыли, или окно PowerShell истечет, можно использовать командлет PowerShell **[Get-азтраффикманажерпрофиле](/powershell/module/az.TrafficManager/Get-azTrafficManagerProfile)**, чтобы снова получить профиль и назначить его переменной.
 
 Замените элементы в угловых скобках (`<>`) на соответствующие значения для каждого из трех профилей.
 
@@ -369,14 +369,14 @@ dns.resolveAny('luis-dns-parent.trafficmanager.net', (err, ret) => {
 ## <a name="clean-up"></a>Очистка
 Удалите два ключа конечной точки LUIS, три профиля диспетчера трафика и группу ресурсов, содержащую эти пять ресурсов. Это необходимо сделать на портале Azure. Удалите пять ресурсов из списка ресурсов. Затем удалите группу ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-Чтобы узнать, как добавить код управления трафиком в бот BotFramework, ознакомьтесь с вариантами [ПО промежуточного слоя](https://docs.microsoft.com/azure/bot-service/bot-builder-create-middleware?view=azure-bot-service-4.0&tabs=csaddmiddleware%2Ccsetagoverwrite%2Ccsmiddlewareshortcircuit%2Ccsfallback%2Ccsactivityhandler) в BotFramework версии 4.
+Чтобы узнать, как добавить код управления трафиком в бот BotFramework, ознакомьтесь с вариантами [ПО промежуточного слоя](/azure/bot-service/bot-builder-create-middleware?tabs=csaddmiddleware%252ccsetagoverwrite%252ccsmiddlewareshortcircuit%252ccsfallback%252ccsactivityhandler&view=azure-bot-service-4.0) в BotFramework версии 4.
 
 [traffic-manager-marketing]: https://azure.microsoft.com/services/traffic-manager/
-[traffic-manager-docs]: https://docs.microsoft.com/azure/traffic-manager/
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website
+[traffic-manager-docs]: ../../traffic-manager/index.yml
+[LUIS]: ./luis-reference-regions.md#luis-website
 [azure-portal]: https://portal.azure.com/
 [azure-storage]: https://azure.microsoft.com/services/storage/
-[routing-methods]: https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods
-[traffic-manager-endpoints]: https://docs.microsoft.com/azure/traffic-manager/traffic-manager-endpoint-types
+[routing-methods]: ../../traffic-manager/traffic-manager-routing-methods.md
+[traffic-manager-endpoints]: ../../traffic-manager/traffic-manager-endpoint-types.md

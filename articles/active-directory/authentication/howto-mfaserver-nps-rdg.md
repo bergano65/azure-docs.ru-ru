@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9959ce1c88fb595dedd4174a9185f801168ecb0d
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838337"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994185"
 ---
 # <a name="remote-desktop-gateway-and-azure-multi-factor-authentication-server-using-radius"></a>Шлюз удаленных рабочих столов и сервер Многофакторной идентификации, использующие проверку подлинности RADIUS
 
@@ -90,7 +90,7 @@ ms.locfileid: "94838337"
 
 ![Проверка подлинности RADIUS на сервере MFA](./media/howto-mfaserver-nps-rdg/radius.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Интеграция Многофакторной идентификации Azure и [веб-приложений IIS](howto-mfaserver-iis.md)
 
