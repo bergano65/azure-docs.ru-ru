@@ -6,11 +6,11 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/20/2020
 ms.openlocfilehash: ffbaa2e40d5924ba61e548398e63295cf7dba2b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91303732"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019741"
 ---
 # <a name="label-machine-learning-entity-in-an-example-utterance"></a>Пометка сущности машинного обучения в примере utterance
 
@@ -39,7 +39,7 @@ ms.locfileid: "91303732"
 
 После [планирования схемы с сущностями](luis-how-plan-your-app.md)следует отображать **палитру сущностей** во время добавления меток. **Палитра сущностей** — это напоминание о том, какие объекты планируется извлечь.
 
-Для доступа к **палитре сущностей**выберите **@** символ на контекстной панели инструментов выше примера utterance List.
+Для доступа к **палитре сущностей** выберите **@** символ на контекстной панели инструментов выше примера utterance List.
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана: палитра сущностей на странице сведений о намерениях.](media/label-utterances/entity-palette-from-tool-bar.png)
@@ -136,6 +136,6 @@ ms.locfileid: "91303732"
 > [!div class="mx-imgBorder"]
 > ![Палитра сущностей для сущности машинного обучения](media/label-utterances/example-utterance-indicates-prediction-error.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы повысить качество прогнозирования в приложении, используйте [панель мониторинга](luis-how-to-use-dashboard.md) и [просматривайте речевые фрагменты конечной точки](luis-how-to-review-endpoint-utterances.md).

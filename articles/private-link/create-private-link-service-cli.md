@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: e0b9ac3f16a170bb14925b555e8894cb10080488
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: cfffafaab2e2d4ef6b165ef03beb827342c94608
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026188"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96018058"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Создание службы частной связи с помощью Azure CLI
 В этой статье показано, как создать службу частной связи в Azure с помощью Azure CLI.
@@ -50,7 +50,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 
 ### <a name="create-a-load-balancer-health-probe"></a>Создание пробы работоспособности балансировщика нагрузки
 
-Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
+Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
 
 ```azurecli-interactive
   az network lb probe create \
@@ -63,7 +63,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 
 ### <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
 
-Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) создайте правило LB с именем *myHTTPRule* для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80. 
+Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](/cli/azure/network/lb/rule?view=azure-cli-latest) создайте правило LB с именем *myHTTPRule* для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80. 
 
 ```azurecli-interactive
   az network lb rule create \
@@ -79,7 +79,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 ```
 ### <a name="create-backend-servers"></a>Создание внутренних серверов
 
-В этом примере мы не рассмотрим создание виртуальной машины. Вы можете выполнить действия, описанные в разделе [Краткое руководство. создание внутренней подсистемы балансировки нагрузки для балансировки нагрузки виртуальных машин с помощью Azure CLI](/azure/load-balancer/quickstart-load-balancer-standard-internal-cli) , чтобы создать две виртуальные машины, которые будут использоваться в качестве внутренних серверов для балансировщика нагрузки. 
+В этом примере мы не рассмотрим создание виртуальной машины. Вы можете выполнить действия, описанные в разделе [Краткое руководство. создание внутренней подсистемы балансировки нагрузки для балансировки нагрузки виртуальных машин с помощью Azure CLI](../load-balancer/quickstart-load-balancer-standard-internal-cli.md) , чтобы создать две виртуальные машины, которые будут использоваться в качестве внутренних серверов для балансировщика нагрузки. 
 
 
 ### <a name="disable-private-link-service-network-policies-on-subnet"></a>Отключить сетевые политики службы частной связи в подсети 
@@ -161,6 +161,5 @@ az network private-endpoint create \
 ```azurecli-interactive 
 az network private-link-service show --resource-group myResourceGroup --name myPLS 
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о [службе частной связи Azure](private-link-service-overview.md)
- 

@@ -9,11 +9,11 @@ ms.service: iot-dps
 services: iot-dps
 manager: eliotga
 ms.openlocfilehash: b9fc37c6589cdd0bc6a5cdce7b7ebebe2c6e9a85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531616"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019452"
 ---
 # <a name="iot-hub-device-provisioning-service-dps-terminology"></a>Терминология службы подготовки устройств к добавлению в центр Интернета вещей (DPS)
 
@@ -123,6 +123,6 @@ ms.locfileid: "90531616"
 
 
 
-## <a name="operations"></a>Операции
+## <a name="operations"></a>Operations
 
 Операции представляют собой единицы выставления счетов Службы подготовки устройств. Операцией является успешное выполнение одной инструкции в службе. К операциям относятся регистрация и повторная регистрация устройств, а также изменения на стороне службы, например добавление записей в список регистрации и их обновление.

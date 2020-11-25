@@ -9,11 +9,11 @@ ms.topic: tutorial
 ms.date: 06/08/2020
 ms.custom: mvc, devx-track-azurepowershell
 ms.openlocfilehash: 70edf224494fdf1395d59d1c591d0369b9b20557
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93333024"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018092"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-powershell"></a>Руководство по Разработка экземпляра Базы данных Azure для PostgreSQL — Отдельный сервер с помощью Azure PowerShell
 
@@ -76,7 +76,7 @@ $Password = Read-Host -Prompt 'Please enter your password' -AsSecureString
 New-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup -Sku GP_Gen5_2 -GeoRedundantBackup Enabled -Location westus -AdministratorUsername myadmin -AdministratorLoginPassword $Password
 ```
 
-Значение параметра **SKU** соответствует формату **ценовая-категория\_поколение-вычислительных-ресурсов\_количество-виртуальных-ядер** , как показано в примерах ниже.
+Значение параметра **SKU** соответствует формату **ценовая-категория\_поколение-вычислительных-ресурсов\_количество-виртуальных-ядер**, как показано в примерах ниже.
 
 - `-Sku B_Gen5_1` — "Базовый", поколение 5, 1 виртуальное ядро; Это номер SKU наименьший по размеру из доступных.
 - `-Sku GP_Gen5_32` — "Общего назначения", поколение 5, 32 виртуальных ядра;
@@ -93,7 +93,7 @@ New-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup -Sk
 
 Создайте правило брандмауэра для сервера Базы данных Azure для PostgreSQL, используя командлет `New-AzPostgreSqlFirewallRule`. Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как средство командной строки `psql` или PostgreSQL Workbench, подключаться к серверу через брандмауэр Базы данных Azure для PostgreSQL.
 
-В приведенном ниже примере создается правило брандмауэра с именем **AllowMyIP** , которое разрешает подключения с определенного IP-адреса (192.168.0.1). Замените его IP-адресом или диапазоном IP-адресов, которые применяются для того расположения, из которого вы подключаетесь.
+В приведенном ниже примере создается правило брандмауэра с именем **AllowMyIP**, которое разрешает подключения с определенного IP-адреса (192.168.0.1). Замените его IP-адресом или диапазоном IP-адресов, которые применяются для того расположения, из которого вы подключаетесь.
 
 ```azurepowershell-interactive
 New-AzPostgreSqlFirewallRule -Name AllowMyIP -ResourceGroupName myresourcegroup -ServerName mydemoserver -StartIPAddress 192.168.0.1 -EndIPAddress 192.168.0.1
@@ -142,7 +142,7 @@ mydemoserver.postgresql.database.azure.com       myadmin
    CREATE DATABASE mypgsqldb;
    ```
 
-1. Чтобы подключиться к созданной базе данных **mypgsqldb** , выполните следующую команду в командной строке:
+1. Чтобы подключиться к созданной базе данных **mypgsqldb**, выполните следующую команду в командной строке:
 
    ```sql
    \c mypgsqldb
@@ -219,7 +219,7 @@ Get-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-На предыдущих шагах вы создали ресурсы Azure в группе серверов. Если эти ресурсы вам больше не нужны, удалите группу серверов. Нажмите кнопку *Удалить* на странице *Обзор* , чтобы удалить группу серверов. При появлении запроса на всплывающей странице проверьте имя группы серверов и нажмите кнопку *Удалить*.
+На предыдущих шагах вы создали ресурсы Azure в группе серверов. Если эти ресурсы вам больше не нужны, удалите группу серверов. Нажмите кнопку *Удалить* на странице *Обзор*, чтобы удалить группу серверов. При появлении запроса на всплывающей странице проверьте имя группы серверов и нажмите кнопку *Удалить*.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,17 +6,17 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 08/30/2019
 ms.openlocfilehash: cb0183ae229c328588a31c2c0549e7e93fd19b78
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92221049"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019010"
 ---
 # <a name="install-data-lake-tools-for-visual-studio"></a>Установка инструментов Data Lake для Visual Studio
 
 Узнайте, как использовать Visual Studio для создания учетных записей Azure Data Lake Analytics. Задания можно определять в [U-SQL](data-lake-analytics-u-sql-get-started.md) и отправлять задания в службу Data Lake Analytics. Дополнительные сведения о Data Lake Analytics см. в [обзоре Azure Data Lake Analytics](data-lake-analytics-overview.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Visual Studio**: поддерживаются все выпуски, кроме Express.
 
@@ -47,7 +47,7 @@ ms.locfileid: "92221049"
 * Узел **Обозреватель сервера**  >  **Azure** содержит узел **Data Lake Analytics** .
 * в меню **Средства** появился пункт **Data Lake**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о том, как записывать диагностические данные в журнал, см. в статье [Доступ к журналам диагностики для Azure Data Lake Analytics](data-lake-analytics-diagnostic-logs.md).
 * Более сложный запрос можно посмотреть в статье [Анализ журналов веб-сайта с помощью аналитики озера данных Azure](data-lake-analytics-analyze-weblogs.md).

@@ -12,11 +12,11 @@ ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1, devx-track-azurecli
 ms.openlocfilehash: 03d10f71b585090157eff164cc98246f50608fe1
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695373"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018789"
 ---
 # <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Настройка среды разработки Python для Машинное обучение Azure
 
@@ -104,7 +104,7 @@ ms.locfileid: "94695373"
 
 Теперь, когда локальная среда настроена, можно приступить к работе с Машинное обучение Azure. Чтобы приступить к работе, ознакомьтесь с [руководством по началу работы с машинное обучение Azure Python](tutorial-1st-experiment-sdk-setup-local.md) .
 
-### <a name="jupyter-notebooks"></a><a id="jupyter"></a>Jupyter Notebook
+### <a name="jupyter-notebooks"></a><a id="jupyter"></a>Записные книжки Jupyter
 
 При запуске локального Jupyter Notebook сервера рекомендуется создать ядро IPython Notebook для виртуальной среды Python. Это помогает обеспечить ожидаемое поведение при импорте ядра и пакета.
 

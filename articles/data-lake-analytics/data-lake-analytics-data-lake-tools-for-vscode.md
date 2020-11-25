@@ -6,11 +6,11 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 02/09/2018
 ms.openlocfilehash: e7da5454581e0e414dc832d4fcec50277f3b7f40
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92221253"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019061"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Использование средств Azure Data Lake для Visual Studio Code
 
@@ -18,9 +18,9 @@ ms.locfileid: "92221253"
 
 [![Проигрыватель видео: средства Azure Data Lake для VS Code](media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-video.png)](https://channel9.msdn.com/Series/AzureDataLake/Azure-Data-Lake-Tools-for-VSCode?term=ADL%20Tools%20for%20VSCode")
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS.Локальные запуск и отладка U-SQL работают только в Windows.
+Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS. Локальные запуск и отладка U-SQL работают только в Windows.
 
 - [Visual Studio Code](https://www.visualstudio.com/products/code-vs.aspx)
 
@@ -65,18 +65,18 @@ ms.locfileid: "92221253"
 4. Введите следующий код в файле Untitled-1:
 
    ```usql
-   @departments  =
-       SELECT * FROM
-           (VALUES
-               (31,    "Sales"),
-               (33,    "Engineering"),
-               (34,    "Clerical"),
-               (35,    "Marketing")
-           ) AS
-                 D( DepID, DepName );
+   @departments  =
+       SELECT * FROM
+           (VALUES
+               (31,    "Sales"),
+               (33,    "Engineering"),
+               (34,    "Clerical"),
+               (35,    "Marketing")
+           ) AS
+                 D( DepID, DepName );
    ```
 
-   ВЫВОД @departments      в "/Output/departments.csv" с помощью Outputters.Csv ();
+   ВЫВОД @departments     в "/Output/departments.csv" с помощью Outputters.Csv ();
 
     Этот скрипт создает в папке/output файл departments.csv с некоторыми данными.
 
@@ -493,7 +493,7 @@ OUTPUT @d1
 > [!NOTE]
 > Рекомендуем обновить средства Azure Data Lake для Visual Studio до версии 2.3.3000.4 или выше. Предыдущие версии являются устаревшими и недоступными для скачивания.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Разработка U-SQL с помощью Python, R, и C Sharp для Azure Data Lake Analytics в VS Code](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md)
 - [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)

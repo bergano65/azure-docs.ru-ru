@@ -10,11 +10,11 @@ ms.service: genomics
 ms.topic: troubleshooting
 ms.date: 12/07/2017
 ms.openlocfilehash: e8806bc4f761214e6740a22093b7e18030fdf881
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76986042"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018330"
 ---
 # <a name="microsoft-genomics-common-questions"></a>Microsoft Genomics: часто задаваемые вопросы
 
@@ -84,7 +84,7 @@ msgen распознает файлы конфигурации в следующ
   |`-k/--access-key KEY`            | *access_key:KEY*              |      
   |`-pa/--process-args R=B37m1`     | *process_args:R-b37m1*        |  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте следующие ресурсы, чтобы приступить к работе с Microsoft Genomics:
 - Приступить к работе, запустив первый рабочий процесс с помощью службы Microsoft Genomics. [Запуск рабочего процесса в службе Microsoft Genomics](quickstart-run-genomics-workflow-portal.md)

@@ -16,11 +16,11 @@ ms.reviewer: thsomasu
 ms.lastreviewed: 01/04/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 98e587103e63cd5cc26eab5b00864d00e0b9007f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90089958"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019432"
 ---
 # <a name="send-secure-push-notifications-from-azure-notification-hubs"></a>Отправка безопасных push-уведомлений из центров уведомлений Azure
 
@@ -163,7 +163,7 @@ ms.locfileid: "90089958"
     using Windows.Data.Xml.Dom;
     ```
 
-11. В обозреватель решений в проекте **проекте notifyuserwindowsphone (Windows Phone 8,1)** щелкните правой кнопкой мыши элемент **ссылки**и выберите команду **Добавить ссылку...**. В диалоговом окне Диспетчер ссылок установите флажок **PushBackgroundComponent**и нажмите кнопку **ОК**.
+11. В обозреватель решений в проекте **проекте notifyuserwindowsphone (Windows Phone 8,1)** щелкните правой кнопкой мыши элемент **ссылки** и выберите команду **Добавить ссылку...**. В диалоговом окне Диспетчер ссылок установите флажок **PushBackgroundComponent** и нажмите кнопку **ОК**.
 12. В обозревателе решений дважды щелкните **Package.appxmanifest** в проекте **NotifyUserWindowsPhone (Windows Phone 8.1)**. В поле **Уведомления** установите для параметра **Всплывающие уведомления** значение **Да**.
 
     ![Снимок экрана обозреватель решений окна, в котором основное внимание уделяется свойству Package. appxmanifest с параметром, имеющим значение "Да", выделенным красным цветом.][3]

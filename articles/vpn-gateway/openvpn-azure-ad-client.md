@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 10/15/2020
 ms.author: alzam
 ms.openlocfilehash: 7c2c1930b8f801db7f70baa5b713a641606be644
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661177"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019789"
 ---
 # <a name="azure-active-directory-authentication-configure-a-vpn-client-for-p2s-openvpn-protocol-connections"></a>Azure Active Directory проверка подлинности: Настройка VPN-клиента для подключений по протоколу P2S Опенвпн
 
@@ -243,6 +243,6 @@ azurevpn -i azurevpnconfig.xml
 чтобы принудительно выполнить импорт, используйте параметр **-f** .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в статье [Создание клиента Azure Active Directory для P2S открытых VPN-подключений, использующих проверку подлинности Azure AD](openvpn-azure-ad-tenant.md).

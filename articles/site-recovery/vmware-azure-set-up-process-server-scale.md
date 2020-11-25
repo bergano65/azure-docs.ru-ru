@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 4/23/2019
 ms.author: ramamill
 ms.openlocfilehash: 40f912122e6ffb9cccbd32a747f6f0d46fd6c330
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292804"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019156"
 ---
 # <a name="scale-with-additional-process-servers"></a>Масштабирование с помощью дополнительных серверов обработки
 
@@ -101,5 +101,5 @@ UNIFIEDSETUP.EXE /AcceptThirdpartyEULA /servermode "PS" /InstallLocation "D:\" /
 * ProxyPassword="Password"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об [управлении параметрами сервера обработки](vmware-azure-manage-process-server.md)

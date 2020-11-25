@@ -6,11 +6,11 @@ documentationcenter: .net
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.openlocfilehash: 25e6854491f35dd0aa46b5de218d312f57854760
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685823"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018925"
 ---
 # <a name="overview-of-service-fabric-clusters-on-azure"></a>Общие сведения о кластерах Service Fabric в Azure
 Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Узлом кластера называется компьютер или виртуальная машина, которая входит в состав кластера. Кластеры можно масштабировать до нескольких тысяч узлов. Если вы добавите новые узлы в кластер, реплики раздела службы подвергнутся повторной балансировке Service Fabric с учетом этих узлов. Общая производительность приложения улучшится, а конфликт доступа к памяти уменьшится. При неэффективном использовании узлов в кластере вы можете уменьшить их количество. Service Fabric снова перераспределит реплики и экземпляры секции по меньшему количеству узлов, чтобы эффективно использовать оборудование на каждом узле.
@@ -112,7 +112,7 @@ Service Fabric также поддерживает управление дост
 >
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со статьями о [защите](service-fabric-cluster-security.md), [масштабировании](service-fabric-cluster-scaling.md) и [обновлении](service-fabric-cluster-upgrade.md) кластеров Azure.
 
 Узнайте о [вариантах поддержки Service Fabric](service-fabric-support.md).

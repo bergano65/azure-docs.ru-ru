@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 08/31/2019
 ms.author: allensu
 ms.openlocfilehash: 04abc051cec8a6fb38ce6aa8f5347ae06cb8bd1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84688455"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019758"
 ---
 # <a name="move-azure-network-security-group-nsg-to-another-region-using-azure-powershell"></a>Перемещение группы безопасности сети Azure (NSG) в другой регион с помощью Azure PowerShell
 
@@ -106,9 +106,9 @@ ms.locfileid: "84688455"
     Get-AzLocation | format-table
     
     ```
-8. Кроме того, можно изменить другие параметры в ** \<resource-group-name> JSON** , если выбрать, и они необязательны в зависимости от требований:
+8. Кроме того, можно изменить другие параметры в **\<resource-group-name> JSON** , если выбрать, и они необязательны в зависимости от требований:
 
-    * **Правила безопасности** . правила, которые развертываются в целевом NSG, можно изменить путем добавления или удаления правил в раздел **securityRules** в ** \<resource-group-name> JSON** -файле:
+    * **Правила безопасности** . правила, которые развертываются в целевом NSG, можно изменить путем добавления или удаления правил в раздел **securityRules** в **\<resource-group-name> JSON** -файле:
 
         ```json
            "resources": [
@@ -144,7 +144,7 @@ ms.locfileid: "84688455"
             
         ```
 
-        Чтобы завершить добавление или удаление правил в целевом NSG, необходимо также изменить типы настраиваемых правил в конце ** \<resource-group-name> JSON** – файла в формате, приведенном ниже.
+        Чтобы завершить добавление или удаление правил в целевом NSG, необходимо также изменить типы настраиваемых правил в конце **\<resource-group-name> JSON** – файла в формате, приведенном ниже.
 
         ```json
            {
@@ -227,7 +227,7 @@ Remove-AzNetworkSecurityGroup -Name <source-nsg-name> -ResourceGroupName <source
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы переместили группу безопасности сети Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийном восстановлении в Azure см. по следующей ссылке:
 

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 10/22/2020
 tags: connectors
 ms.openlocfilehash: b6276ff940d8b156a671cb5386ce53ede30dd879
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426650"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019721"
 ---
 # <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Обмен сообщениями в облаке с помощью Azure Logic Apps и служебной шины Azure
 
@@ -163,7 +163,7 @@ ms.locfileid: "92426650"
 
 ## <a name="send-correlated-messages-in-order"></a>Отправка коррелированных сообщений по порядку
 
-При необходимости отправки связанных сообщений в определенном порядке можно использовать [ *последовательный шаблон сопровождение* ](/azure/architecture/patterns/sequential-convoy) с помощью [соединителя служебной шины Azure](../connectors/connectors-create-api-servicebus.md). Коррелированные сообщения имеют свойство, определяющее связь между этими сообщениями, например идентификатор [сеанса](../service-bus-messaging/message-sessions.md) в служебной шине.
+При необходимости отправки связанных сообщений в определенном порядке можно использовать [ *последовательный шаблон сопровождение*](/azure/architecture/patterns/sequential-convoy) с помощью [соединителя служебной шины Azure](../connectors/connectors-create-api-servicebus.md). Коррелированные сообщения имеют свойство, определяющее связь между этими сообщениями, например идентификатор [сеанса](../service-bus-messaging/message-sessions.md) в служебной шине.
 
 При создании приложения логики можно выбрать **коррелированную поочередную доставку с помощью шаблона сеансов служебной шины** , который реализует последовательный шаблон сопровождение. Дополнительные сведения см. [в разделе Отправка связанных сообщений по порядку](../logic-apps/send-related-messages-sequential-convoy.md).
 

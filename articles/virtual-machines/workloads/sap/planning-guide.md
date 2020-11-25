@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 08/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: c186e7beeed3a1729560d7deb002d573e0014508
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bd45b0e1070efae7ae69a74ad96e1fa94a136006
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950981"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96019401"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 
@@ -1951,7 +1951,7 @@ SAProuter позволяет осуществлять взаимодействи
 
 
 Восстановление предыдущего состояния заключается в удалении базовой виртуальной машины, ее исходных дисков и подключенных дисков с последующим копированием сохраненных дисков в исходную учетную запись хранения или группу ресурсов для управляемых дисков и повторным развертыванием системы.
-В этой статье приводится пример создания сценария для этого процесса в PowerShell: <http://www.westerndevs.com/azure-snapshots/>.
+В этой статье приводится пример создания сценария для этого процесса в PowerShell: <https://www.westerndevs.com/_/azure-snapshots/>.
 
 Обязательно установите новую лицензию SAP с момента восстановления резервной копии виртуальной машины, как описано выше. создает новый ключ оборудования.
 

@@ -5,18 +5,18 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 08/02/2017
 ms.openlocfilehash: a1e9a9df4c2ec57dfeec8cf5ddd5348228b9cc3e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92218686"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018568"
 ---
 # <a name="use-job-browser-and-job-view-for-azure-data-lake-analytics"></a>Использование обозревателя и представления заданий Azure Data Lake Analytics
 Служба Azure Data Lake Analytics архивирует отправленные задания в хранилище запросов. В этой статье вы узнаете, как использовать браузер и представление заданий в средствах Azure Data Lake для Visual Studio, чтобы находить исторические сведения о заданиях. 
 
 По умолчанию служба Data Lake Analytics архивирует задания на 30 дней. Срок хранения можно настроить на портале Azure в настраиваемой политике окончания срока действия. Доступ к данным задания по истечении этого срока невозможен. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 См. раздел о [предварительных требованиях в отношении средств Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md#prerequisites).
 
 ## <a name="open-the-job-browser"></a>Доступ к браузеру заданий

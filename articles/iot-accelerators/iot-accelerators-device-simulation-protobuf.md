@@ -10,11 +10,11 @@ ms.custom: mvc, amqp, devx-track-csharp
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: 12aa18c966745b450b3c9aa55e87e576b0c3f99b
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075966"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018534"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
 
@@ -63,7 +63,7 @@ ms.locfileid: "92075966"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, нажмите кнопку **Восстановить**.
 
-Откройте файл **. vscode/launch.jsв** файле и назначьте строку подключения Cosmos DB для переменной среды ** \_ сторажеадаптер \_ DOCUMENTDB \_ CONNSTRING** .
+Откройте файл **. vscode/launch.jsв** файле и назначьте строку подключения Cosmos DB для переменной среды **\_ сторажеадаптер \_ DOCUMENTDB \_ CONNSTRING** .
 
 > [!NOTE]
 > При запуске микрослужбы локально на компьютере ей по прежнему требуется экземпляр Cosmos DB в Azure для правильной работы.
@@ -174,7 +174,7 @@ ms.locfileid: "92075966"
 
 1. [Компилятор Protobuf можно скачать с GitHub](https://github.com/protocolbuffers/protobuf/releases/download/v3.4.0/protoc-3.4.0-win32.zip)
 
-1. Запустите компилятор, указав исходный каталог, целевой каталог и имя файла **proto**. Например.
+1. Запустите компилятор, указав исходный каталог, целевой каталог и имя файла **proto**. Пример:
 
     ```cmd
     protoc -I c:\temp\device-simulation-dotnet-master\Services\Models\Protobuf\proto --csharp_out=C:\temp\device-simulation-dotnet-master\Services\Models\Protobuf assettracker.proto
@@ -206,7 +206,7 @@ ms.locfileid: "92075966"
 
 По умолчанию новые файлы JSON и JS модели устройства не копируются в созданное решение. Необходимо явно включить их.
 
-Добавьте запись в файл **services\services.csproj** для каждого файла, который требуется включить. Например.
+Добавьте запись в файл **services\services.csproj** для каждого файла, который требуется включить. Пример:
 
 ```xml
 <None Update="data\devicemodels\assettracker-01.json">
@@ -249,7 +249,7 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 1. Выберите **Файл \> Импорт**. Затем нажмите **Выбор файлов**.
 
-1. Выберите **решение "моделирование устройств Интернета вещей Azure". Опубликуйте \_ коллекцию** и **решение "моделирование устройств Azure IOT \_ ** ". После этого выполните команду " **Открыть**".
+1. Выберите **решение "моделирование устройств Интернета вещей Azure". Опубликуйте \_ коллекцию** и **решение "моделирование устройств Azure IOT \_** ". После этого выполните команду " **Открыть**".
 
 1. Разверните **Акселератор решений имитации устройств Azure loT** для просмотра запросов, которые вы можете отправить.
 
@@ -275,6 +275,6 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 Многие функции Центра Интернета вещей изначально не поддерживают Protobuf или другие двоичные форматы. Например, нельзя настроить маршрутизацию в зависимости от полезных данных сообщения, так как Центр Интернета вещей не может обработать их. Однако данные можно маршрутизировать на основе заголовков сообщений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь вы узнали, как настроить имитацию устройства для использования Protobuf и отправки данных телеметрии. Теперь ознакомьтесь с тем, как [развернуть пользовательский образ в облако](iot-accelerators-device-simulation-deploy-image.md).

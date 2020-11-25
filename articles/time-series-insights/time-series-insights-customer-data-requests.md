@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.date: 10/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5565dd43689d0420fbb9b73f088f24a38a2d54db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5ecbabe4a5c3458c77d145fbce1281550470e00
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665911"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96019078"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 
@@ -34,7 +34,7 @@ ms.locfileid: "91665911"
 
 [!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
 
-Однако перед этим необходимо удалить клиентские политики доступа из среды "Аналитика временных рядов" в рамках портала Azure. Дополнительные сведения см. в статье [предоставление доступа к данным в среде "аналитика временных рядов" с помощью портал Azure](time-series-insights-data-access.md).
+Однако перед этим необходимо удалить клиентские политики доступа из среды "Аналитика временных рядов" в рамках портала Azure. Дополнительные сведения см. в статье [предоставление доступа к данным в среде "аналитика временных рядов" с помощью портал Azure](./concepts-access-policies.md).
 
 Вы также можете выполнять операции удаления в политиках доступа с помощью REST API. Дополнительные сведения см. в статье [политики доступа для чтения — удаление](/rest/api/time-series-insights/management(gen1/gen2)/accesspolicies/delete).
 
@@ -46,7 +46,7 @@ ms.locfileid: "91665911"
 
 [!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
 
-Администратор клиента может просматривать политики доступа к данным в среде "Аналитика временных рядов" на портале Azure. Дополнительные сведения см. в статье [предоставление доступа к данным в среде "аналитика временных рядов" с помощью портал Azure](time-series-insights-data-access.md).
+Администратор клиента может просматривать политики доступа к данным в среде "Аналитика временных рядов" на портале Azure. Дополнительные сведения см. в статье [предоставление доступа к данным в среде "аналитика временных рядов" с помощью портал Azure](./concepts-access-policies.md).
 
 Кроме того, операции экспорта в политиках доступа можно выполнять, используя операцию перечисления по средах в предоставленном REST API. Дополнительные сведения см. [в статье политики доступа для чтения — список сред](/rest/api/time-series-insights/management(gen1/gen2)/accesspolicies/listbyenvironment).
 
@@ -66,9 +66,9 @@ ms.locfileid: "91665911"
 
 Дополнительные сведения см. [в статье Настройка хранения в аналитике временных рядов](time-series-insights-how-to-configure-retention.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте больше о [предоставлении доступа к данным в среду службы "аналитика временных рядов Azure](./time-series-insights-data-access.md)".
+* Узнайте больше о [предоставлении доступа к данным в среду службы "аналитика временных рядов Azure](./concepts-access-policies.md)".
 
 * Просмотр обозревателя службы " [аналитика временных рядов Azure](time-series-insights-explorer.md)".
 

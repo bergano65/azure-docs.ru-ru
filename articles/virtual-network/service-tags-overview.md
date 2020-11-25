@@ -14,11 +14,11 @@ ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
 ms.openlocfilehash: d99ed9304612d5c1d3cbdc56a76cee751f2a4d3f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966740"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017939"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -63,7 +63,7 @@ ms.locfileid: "94966740"
 | **AzureDatabricks** | Azure Databricks. | both | Нет | Нет |
 | **AzureDataExplorerManagement** | Управление обозревателем Azure Data Explorer. | Входящий трафик | Нет | Нет |
 | **AzureDataLake** | Azure Data Lake Storage 1-го поколения. | Исходящие | Нет | Да |
-| **AzureDevSpaces** | Azure Dev Spaces. | Исходящие | Нет | Нет |
+| **AzureDevSpaces** | Azure Dev Spaces. | Исходящие | Нет | нет |
 | **азуредевопс** | Операции разработки Azure.<br/><br/>*Примечание. Сейчас этот тег нельзя настроить с помощью портала Azure.*| Входящий трафик | Нет | Да |
 | **азуредигиталтвинс** | Azure Digital двойников.<br/><br/>*Примечание.* Этот тег или IP-адреса, охваченные этим тегом, можно использовать для ограничения доступа к конечным точкам, настроенным для маршрутов событий. *Сейчас этот тег нельзя настроить с помощью портала Azure.* | Входящий трафик | Нет | Да |
 | **AzureEventGrid** | Сетка событий Azure. | both | Нет | Нет |

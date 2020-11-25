@@ -12,11 +12,11 @@ ms.date: 04/06/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to learn the options available to monitor the health of my vaults
 ms.openlocfilehash: 9195bb59264731914740e1cca902707603e3502d
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427017"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018126"
 ---
 # <a name="monitoring-and-alerting-for-azure-key-vault"></a>Мониторинг и оповещения для Azure Key Vault
 
@@ -204,7 +204,7 @@ ms.locfileid: "92427017"
 7. Создание оповещения 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Поздравляем! теперь вы успешно создали панель мониторинга и настроили оповещения для хранилища ключей! После выполнения всех описанных выше действий вы должны получать оповещения по электронной почте, когда хранилище ключей соответствует настроенным условиям оповещения. Ниже приведен пример такого файла. Используйте средства, настроенные в этой статье, чтобы активно отслеживать работоспособность хранилища ключей. 
 
