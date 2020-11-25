@@ -8,11 +8,11 @@ ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: f75f0d1ae12db11590f8ce62f3c7b4c0f3e12817
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541498"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013944"
 ---
 # <a name="addremove-an-azure-file-sync-server-endpoint"></a>Добавление и удаление конечных точек сервера службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
@@ -71,7 +71,7 @@ Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint> -Order Clou
 
     ![Удаление конечной точки сервера из группы синхронизации](media/storage-sync-files-server-endpoint/remove-server-endpoint-1.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 - [Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" (предварительная версия)](storage-sync-files-server-registration.md)
 - [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

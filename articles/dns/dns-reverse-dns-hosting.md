@@ -8,11 +8,11 @@ ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
 ms.openlocfilehash: 6a0aebc727233cdd838f3e1bf8eeb5cd247b9836
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489682"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014029"
 ---
 # <a name="host-reverse-dns-lookup-zones-in-azure-dns"></a>Размещение зон обратного просмотра DNS в Azure DNS
 
@@ -262,7 +262,7 @@ az network dns record-set list -g MyResourceGroup -z 0.0.0.0.c.d.b.a.8.b.d.0.1.0
 
 Дополнительные сведения см. в статье [Импорт и экспорт файла зоны DNS с помощью Azure CLI 1.0](dns-import-export.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. [в статье Википедии об обратном просмотре DNS](https://en.wikipedia.org/wiki/Reverse_DNS_lookup).
 <br>

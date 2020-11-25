@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 6/27/2019
 ms.author: sutalasi
 ms.openlocfilehash: 08e971e52f994ec5fa5663708fa9f173daf33d80
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86135405"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013757"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sharepoint-application-for-disaster-recovery-using-azure-site-recovery"></a>Настройка аварийного восстановления с помощью Azure Site Recovery для многоуровневого приложения SharePoint | Документация Майкрософт
 
@@ -102,7 +102,7 @@ Site Recovery не зависит от приложения и должна ра
 Для сайтов, работающих с Интернетом, [создайте профиль диспетчера трафика типа "Приоритет"](../traffic-manager/quickstart-create-traffic-manager-profile.md) в подписке Azure. Затем настройте профиль DNS и диспетчера трафика следующим образом.
 
 
-| **Where** | **Source** | **Цель**|
+| **Where** | **Source** | **Целевой объект**|
 | --- | --- | --- |
 | Общедоступное имя DNS | Общедоступное имя DNS для сайтов SharePoint <br/><br/> Например: sharepoint.contoso.com | Диспетчер трафика <br/><br/> contososharepoint.trafficmanager.net |
 | Локальное имя DNS | sharepointonprem.contoso.com | Общедоступный IP-адрес в локальной ферме |
@@ -199,5 +199,5 @@ Site Recovery не зависит от приложения и должна ра
 3.  Щелкните "Отработка отказа".
 4.  Выберите точку восстановления, чтобы запустить отработку отказа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы можете больше узнать о [репликации других приложений](site-recovery-workload.md) с помощью Site Recovery.

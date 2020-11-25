@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: apimpm
 ms.openlocfilehash: 44de30438d59252a431bf37ac6919a9bc186c8ed
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92315735"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013556"
 ---
 > [!NOTE]
 > Эта документация касается нерекомендуемого портала разработчика. Вы по-прежнему можете использовать его в обычном режиме до прекращения его поддержки в октябре 2023 года, когда он будет удален изо всех служб Управления API. Нерекомендуемый портал будет получать только критические обновления системы безопасности. Дополнительные сведения см. в следующих статьях:

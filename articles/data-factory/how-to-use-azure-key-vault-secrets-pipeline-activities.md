@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
 ms.openlocfilehash: 1766705e73afab5d15cdb5aa2c5bb1487ad3d7c5
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92634289"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013893"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Использование секретов Azure Key Vault в действиях конвейера
 
@@ -39,7 +39,7 @@ ms.locfileid: "92634289"
 
     ![Политики доступа Key Vault](media/how-to-use-azure-key-vault-secrets-pipeline-activities/akvaccesspolicies-2.png)
 
-    Нажмите кнопку **Добавить** , а затем — **сохранить** .
+    Нажмите кнопку **Добавить**, а затем — **сохранить**.
 
 3. Перейдите к Key Vault секрету и скопируйте идентификатор секрета.
 
@@ -65,10 +65,10 @@ ms.locfileid: "92634289"
     > [!CAUTION]
     > Задайте для параметра безопасный вывод значение true, чтобы предотвратить запись секретного значения в обычный текст.  Для всех дальнейших действий, которые используют это значение, параметр "Защищенный ввод" должен иметь значение true.
 
-5. Чтобы использовать значение в другом действии, используйте следующее выражение кода **@activity ("web1"). Output. Value** .
+5. Чтобы использовать значение в другом действии, используйте следующее выражение кода **@activity ("web1"). Output. Value**.
 
     ![Выражение кода](media/how-to-use-azure-key-vault-secrets-pipeline-activities/usewebactivity.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об использовании Azure Key Vault для хранения учетных данных для хранилищ данных и вычислений см. [в разделе Хранение учетных данных в Azure Key Vault](./store-credentials-in-key-vault.md)

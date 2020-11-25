@@ -4,12 +4,12 @@ description: Возможность мгновенного восстановл�
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 95de22d8493181f098e480afc4f319c44c633e42
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 147fadc92429157ed2f9ba3eb68297a3e1d08d24
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173920"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96014454"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Улучшенное резервное копирование и восстановление с помощью функции мгновенного восстановления Azure Backup
 
@@ -117,3 +117,8 @@ Set-AzureRmRecoveryServicesBackupProtectionPolicy -policy $bkpPol
 ### <a name="i-dont-need-instant-restore-functionality-can-it-be-disabled"></a>Мне не нужна функция мгновенного восстановления. Можно ли отключить?
 
 Функция мгновенного восстановления включена для всех и не может быть отключена. Можно уменьшить срок хранения моментального снимка до одного дня.
+
+### <a name="is-it-safe-to-restart-the-vm-during-the-transfer-process-which-can-take-many-hours-will-restarting-the-vm-interrupt-or-slow-down-the-transfer"></a>Можно ли перезапускать виртуальную машину во время процесса перемещения (что может занять несколько часов)? Перезапускает прерывание виртуальной машины или замедляет перенос?
+
+Да, и это совершенно не влияет на скорость передачи данных.
+

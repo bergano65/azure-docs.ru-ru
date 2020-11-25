@@ -9,11 +9,11 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: ee3029de9826aee17dc76d0e69f08b3c1068423b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85847168"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014507"
 ---
 # <a name="create-a-virtual-machine-in-azure-using-vm-templates-on-the-vmware-infrastructure"></a>Создание виртуальной машины в Azure с помощью шаблонов виртуальных машин в инфраструктуре VMware
 
@@ -25,7 +25,7 @@ ms.locfileid: "85847168"
 
 ## <a name="create-cloudsimple-virtual-machine"></a>Создание виртуальной машины Клаудсимпле
 
-1. Выберите элемент **Все службы**.
+1. Выбор пункта **Все службы**.
 
 2. Выполните поиск **CloudSimple Virtual Machines**.
 
@@ -62,7 +62,7 @@ ms.locfileid: "85847168"
 
     Для параметра сетевые интерфейсы щелкните **Добавить сетевой интерфейс** и настройте следующие параметры.
 
-    | Элемент | Описание |
+    | Control | Описание |
     | ------------ | ------------- |
     | Имя | Введите имя для идентификации интерфейса.  |
     | Сеть | Выберите из списка настроенной распределенной группы портов в vSphere частного облака.  |
@@ -84,7 +84,7 @@ ms.locfileid: "85847168"
 
 ## <a name="view-list-of-cloudsimple-virtual-machines"></a>Просмотр списка виртуальных машин CloudSimple
 
-1. Выберите элемент **Все службы**.
+1. Выбор пункта **Все службы**.
 
 2. Выполните поиск **CloudSimple Virtual Machines**.
 

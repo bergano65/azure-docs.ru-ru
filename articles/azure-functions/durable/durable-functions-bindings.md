@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 899bc3fdc94b8232acd3edf3e0cbab3c481ff8f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081854"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013737"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -533,7 +533,7 @@ module.exports = df.entity(function(context) {
 
 В функциях .NET обычно выполняется привязка к `IDurableEntityClient` , которая предоставляет полный доступ ко всем клиентским API, поддерживаемым устойчивыми сущностями. Также можно выполнить привязку к `IDurableOrchestrationClient` интерфейсу, который предоставляет доступ к клиентским API как для сущностей, так и для оркестрации. API-интерфейсы в клиентском объекте включают в себя:
 
-* **Реадентитистатеасинк \<T> **: считывает состояние сущности. Он возвращает ответ, указывающий, существует ли целевая сущность, и, если да, то что ее состояние —.
+* **Реадентитистатеасинк \<T>**: считывает состояние сущности. Он возвращает ответ, указывающий, существует ли целевая сущность, и, если да, то что ее состояние —.
 * **Сигналентитясинк**: отправляет одностороннее сообщение в сущность и ожидает его постановки в очередь.
 * **Листентитиесасинк**: запросы состояния нескольких сущностей. К сущностям можно обращаться по *имени* и *времени последней операции*.
 
@@ -641,7 +641,7 @@ module.exports = async function (context) {
 
 [!INCLUDE [durabletask](../../../includes/functions-host-json-durabletask.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Встроенная Справочник по HTTP API для управления экземплярами](durable-functions-http-api.md)

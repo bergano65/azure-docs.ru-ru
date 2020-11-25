@@ -11,11 +11,11 @@ ms.topic: how-to
 ms.date: 11/11/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 9c522d870a25b3df34ab6a0cf1c1e944a6462685
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93284483"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013995"
 ---
 # <a name="use-logic-apps-to-receive-email-about-status-changes-of-key-vault-secrets"></a>Настройка отправки сообщений об изменении состояния секретов в хранилище ключей с помощью Logic Apps
 

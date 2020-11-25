@@ -6,11 +6,11 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 04/30/2018
 ms.openlocfilehash: ba69098f32e131714a15923aef64c3f6ba17e18f
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219502"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013315"
 ---
 # <a name="manage-azure-data-lake-analytics-using-account-policies"></a>Управление Azure Data Lake Analytics с помощью политик учетных записей
 
@@ -88,7 +88,7 @@ ms.locfileid: "92219502"
 
    4. **Set the Priority Limit** (Задайте предел приоритета): установите предел приоритета, который будет применяться для выбранного пользователя или группы.
 
-4. Нажмите кнопку **Ок**.
+4. Нажмите кнопку **ОК**.
 
 5. Новая политика отобразится в таблице политик **По умолчанию** в разделе **Пределы отправки заданий**.
 
@@ -106,7 +106,7 @@ ms.locfileid: "92219502"
 - [Запись блога о политиках на уровне учетной записи](/archive/blogs/azuredatalake/managing-your-azure-data-lake-analytics-compute-resources-account-level-policy)
 - [Запись блога о политиках на уровне задания](/archive/blogs/azuredatalake/managing-your-azure-data-lake-analytics-compute-resources-job-level-policy)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Обзор Azure Data Lake Analytics](data-lake-analytics-overview.md)
 - [Начало работы с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)

@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 7b586edd7adce8bcea61419005a3ce8cfc814fb3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86254951"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013570"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
@@ -60,7 +60,7 @@ Azure Active Directory B2C — это облачное решение, позв
 
    ![Регистрация нового приложения 3][api-management-howto-aad-b2c-app-details]
 
-1. Если вы используете новый портал разработчика (не устаревший портал разработчика), включите в утверждения приложения **заданное имя**, **фамилию**и **идентификатор объекта пользователя** .
+1. Если вы используете новый портал разработчика (не устаревший портал разработчика), включите в утверждения приложения **заданное имя**, **фамилию** и **идентификатор объекта пользователя** .
 
     ![Утверждения приложения](./media/api-management-howto-aad-b2c/api-management-application-claims.png)
 
@@ -124,7 +124,7 @@ Azure Active Directory B2C — это облачное решение, позв
 
     ![Регистрация завершена][api-management-registration-complete]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 *  [Azure Active Directory B2C: регистрация и вход пользователей в приложения]
 *  [Azure Active Directory B2C: расширяемая инфраструктура политик]

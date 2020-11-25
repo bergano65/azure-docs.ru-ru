@@ -9,11 +9,11 @@ ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
 ms.openlocfilehash: 54612bee5715cdb78141a8aacfa5d24c814269d1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312404"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014726"
 ---
 # <a name="grant-permissions-to-workspace-managed-identity-preview"></a>Предоставление разрешений управляемому удостоверению рабочей области (Предварительная версия)
 
@@ -80,7 +80,7 @@ Azure синапсе будет пытаться предоставить упр
 
 #### <a name="step-4-add-a-new-role-assignment"></a>Шаг 4. Добавление нового назначения роли
 
-Нажмите кнопку **+ Добавить**.
+Щелкните **+ Добавить**.
 
 ![Добавить новое назначение роли](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-9.png)
 
@@ -117,6 +117,6 @@ Azure синапсе будет пытаться предоставить упр
 Управляемое удостоверение должно отображаться в разделе **участник данных BLOB-объекта хранилища** с назначенной ему ролью *участника данных BLOB-объекта хранилища* . 
 ![ADLS 2-го поколения выбор контейнера учетной записи хранения](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-15.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об [управляемом удостоверении рабочей области](./synapse-workspace-managed-identity.md)

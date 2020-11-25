@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/19/2020
 ms.openlocfilehash: 043020abd44bc1f8e671cf386149d6a818136de9
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700160"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014369"
 ---
 # <a name="create-a-private-endpoint-for-a-secure-connection-to-azure-cognitive-search"></a>Создание частной конечной точки для безопасного подключения к Azure Когнитивный поиск
 
@@ -47,7 +47,7 @@ ms.locfileid: "94700160"
     | Подписка | Выберите свою подписку.|
     | Группа ресурсов | Выберите **создать**, введите *myResourceGroup*, а затем нажмите кнопку **ОК** . |
     | Имя | Введите *MyVirtualNetwork* |
-    | Регион | Выберите нужный регион |
+    | Region | Выберите нужный регион |
     |||
 
 1. Оставьте значения по умолчанию для остальных параметров. Щелкните **Проверка + создать** , а затем — **создать** .

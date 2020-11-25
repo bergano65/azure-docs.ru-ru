@@ -9,15 +9,15 @@ ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/21/2020
 ms.openlocfilehash: fe9ccc50d6196997863fbf228fbb76913a0d0330
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534385"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013876"
 ---
 # <a name="open-source-software-support-in-azure-hdinsight"></a>Поддержка программного обеспечения с открытым кодом в Azure HDInsight
 
-Служба Microsoft Azure HDInsight использует сформированную вокруг Apache Hadoop среду технологий с открытым кодом. Microsoft Azure предоставляет общий уровень поддержки для технологий с открытым исходным кодом. Дополнительные сведения см. в разделе, посвященном **области действия поддержки** , на [веб-сайте с часто задаваемыми вопросами о поддержке Azure](https://azure.microsoft.com/support/faq/). Служба HDInsight предоставляет дополнительный уровень поддержки для встроенных компонентов.
+Служба Microsoft Azure HDInsight использует сформированную вокруг Apache Hadoop среду технологий с открытым кодом. Microsoft Azure предоставляет общий уровень поддержки для технологий с открытым исходным кодом. Дополнительные сведения см. в разделе, посвященном **области действия поддержки**, на [веб-сайте с часто задаваемыми вопросами о поддержке Azure](https://azure.microsoft.com/support/faq/). Служба HDInsight предоставляет дополнительный уровень поддержки для встроенных компонентов.
 
 ## <a name="components"></a>Components
 

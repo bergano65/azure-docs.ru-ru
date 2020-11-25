@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 11/04/2020
 ms.author: memildin
 ms.openlocfilehash: 0a487f778693e87e680033edd0d80c55d1a85f66
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348633"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013791"
 ---
 # <a name="sql-information-protection-policy-in-azure-security-center"></a>Политика SQL Information Protection в центре безопасности Azure
  
@@ -141,7 +141,7 @@ ms.locfileid: "93348633"
 - [Set-азсклинформатионпротектионполици](/powershell/module/az.security/set-azsqlinformationprotectionpolicy): задает действующую политику защиты данных SQL клиента.
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
  
 В этой статье вы узнали, как определить политику защиты информации в центре безопасности Azure. Дополнительные сведения об использовании SQL Information Protection для классификации и защиты конфиденциальных данных в базах данных SQL см. в разделе [Обнаружение и классификация данных в службе "База данных SQL Azure"](../azure-sql/database/data-discovery-and-classification-overview.md).
 
