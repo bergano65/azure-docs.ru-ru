@@ -16,11 +16,11 @@ ms.date: 03/14/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 9b616b03698e83d256a7b81e4548edbf21dba058
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89264646"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021135"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей
 
@@ -97,7 +97,7 @@ ms.locfileid: "89264646"
 ### <a name="to-design-the-player-user-interface"></a>Создание пользовательского интерфейса проигрывателя
 
 1. В обозревателе решений дважды щелкните **MainPage.xaml** , чтобы открыть его в режиме конструктора.
-2. Выделите ** &lt; сетку &gt; ** и ** &lt; /Grid &gt; ** теги в файле XAML и вставьте следующий код между двумя тегами:
+2. Выделите **&lt; сетку &gt;** и **&lt; /Grid &gt;** теги в файле XAML и вставьте следующий код между двумя тегами:
 
    ```xml
          <Grid.RowDefinitions>

@@ -15,11 +15,11 @@ ms.date: 06/12/2018
 ms.author: allensu
 ms.custom: mvc
 ms.openlocfilehash: 43718f8ebc851f27035f2999bfb4ff3ec12ca5b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84887723"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021968"
 ---
 # <a name="create-an-azure-cdn-endpoint"></a>Создание конечной точки сети CDN Azure
 В этой статье описываются все параметры для создания конечной точки [сети доставки содержимого Azure](cdn-overview.md) в существующем профиле CDN. Когда профиль и конечная точка будут созданы, можете приступить к доставке содержимого своим клиентам. Сведения о создании профиля и конечной точки см. в разделе [Краткое руководство по созданию профиля и конечной точки Azure CDN](cdn-create-new-endpoint.md).
@@ -104,7 +104,7 @@ ms.locfileid: "84887723"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Чтобы удалить конечную точку когда она больше не нужна, щелкните ее, а затем выберите команду **Удалить**. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о пользовательских доменах см. в руководстве "Добавление личного домена к конечной точке CDN Azure".
 
 > [!div class="nextstepaction"]

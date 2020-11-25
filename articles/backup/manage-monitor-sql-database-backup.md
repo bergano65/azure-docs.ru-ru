@@ -4,11 +4,11 @@ description: В этой статье описывается, как управ�
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.openlocfilehash: b0df22002521c8148cac1200e79aeb0ae5a60546
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89146527"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021509"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Мониторинг резервных копий баз данных SQL Server и управление ими
 
@@ -61,7 +61,7 @@ ms.locfileid: "89146527"
 
 1. На панели мониторинга хранилища выберите **Элементы архивации**.
 
-2. В разделе **тип управления архивацией**выберите **SQL на виртуальной машине Azure**.
+2. В разделе **тип управления архивацией** выберите **SQL на виртуальной машине Azure**.
 
     ![Выбор "SQL in Azure VM" (SQL на виртуальной машине Azure)](./media/backup-azure-sql-database/sql-restore-backup-items.png)
 

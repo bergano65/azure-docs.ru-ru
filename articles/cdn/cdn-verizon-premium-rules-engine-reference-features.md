@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 06/02/2020
 ms.author: allensu
 ms.openlocfilehash: 0ea4f167b992ccfbc4156ac06c8f636d2ef4a355
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84343206"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020421"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-features"></a>Функции обработчика правил Azure CDN от Verizon Premium
 
@@ -35,7 +35,7 @@ ms.locfileid: "84343206"
 * [URL-адрес](#url)
 * [Брандмауэр веб-приложения](#waf)
 
-### <a name="access"></a><a name="access"></a>Доступ
+### <a name="access"></a><a name="access"></a>Access
 
 Эти функции предназначены для управления доступом к содержимому.
 
@@ -49,7 +49,7 @@ ms.locfileid: "84343206"
 
 **[К началу](#top)**
 
-### <a name="caching"></a><a name="caching"></a>Кэширование
+### <a name="caching"></a><a name="caching"></a>Caching
 
 Эти функции предназначены для настройки времени и способа кэширования содержимого.
 
@@ -59,7 +59,7 @@ ms.locfileid: "84343206"
 | [Регулирование пропускной способности](https://docs.vdms.com/cdn/Content/HRE/F/Bandwidth-Throttling.htm) | Регулирует пропускную способность для ответов, предоставляемую пограничными серверами. |
 | [Отключение кэша](https://docs.vdms.com/cdn/Content/HRE/F/Bypass-Cache.htm) | Определяет, может ли запрос использовать технологию кэширования. |
 | [Обработка заголовка Cache-Control](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Control-Header-Treatment.htm) |  Контролирует создание заголовков Cache-Control пограничным сервером при включенной функции External Max-Age. |
-| [Строка запроса ключа кэша](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Key-Query-String.htm) | Определяет, будет ли **ключ кэша*** включать или исключать параметры строки запроса, связанные с запросом. <br> _* Относительный путь, который однозначно определяет ресурс с целью кэширования.  Наши пограничные серверы используют этот относительный путь при проверке кэшированного содержимого.  По умолчанию ключ кэша не будет содержать параметры строки запроса._ |
+| [Строка запроса ключа кэша](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Key-Query-String.htm) | Определяет, будет ли **ключ кэша** _ включать или исключать параметры строки запроса, связанные с запросом. <br> __ — Относительный путь, который однозначно определяет ресурс для назначения кэширования.  Наши пограничные серверы используют этот относительный путь при проверке кэшированного содержимого.  По умолчанию ключ кэша не будет содержать строку запроса parameters._ |
 | [Перезапись ключа кэша](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Key-Rewrite.htm) | Перезаписывает ключ кэша, связанный с запросом. |
 | [Завершение заполнения кэша](https://docs.vdms.com/cdn/Content/HRE/F/Complete-Cache-Fill.htm) | Определяет, что происходит, когда результаты запроса в частичном кэше отсутствуют на пограничном сервере. |
 | [Сжатие типов файлов](https://docs.vdms.com/cdn/Content/HRE/F/Compress-File-Types.htm) | Определяет форматы файлов, которые будут сжаты на сервере. | 
@@ -82,7 +82,7 @@ ms.locfileid: "84343206"
 
 **[К началу](#top)**
 
-### <a name="comment"></a><a name="comment"></a>Комментарий
+### <a name="comment"></a><a name="comment"></a>Комментировать
 
 Функция "Комментарий" позволяет добавлять примечания в правила.
 

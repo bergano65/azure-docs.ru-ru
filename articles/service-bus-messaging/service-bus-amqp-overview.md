@@ -3,12 +3,12 @@ title: Обзор AMQP 1,0 в служебной шине Azure
 description: Узнайте, как служебная шина Azure поддерживает Расширенный протокол управления очередью сообщений (AMQP) — открытый стандартный протокол.
 ms.topic: article
 ms.date: 11/20/2020
-ms.openlocfilehash: a643869d7d89b287e899b1eab89c5b9ec11856e5
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: 85943344fd8f20cf3a73af5d637b65676584f93f
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95396813"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96022186"
 ---
 # <a name="amqp-10-support-in-service-bus"></a>Поддержка AMQP 1.0 в служебной шине
 Облачная служба служебной шины Azure использует [протокол расширенных очередей сообщений (AMQP) 1,0](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html) в качестве основного средства связи. Корпорация Майкрософт сотрудничает с партнерами по отрасли, а также клиентам и поставщикам конкурирующих брокеров обмена сообщениями, чтобы разрабатывать и развивать AMQP за последние десять лет. новые расширения разрабатываются в [техническом комитете Oasis AMQP](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp). AMQP 1,0 — это стандарт ISO и IEC ([iso 19464:20149](https://www.iso.org/standard/64955.html)). 
@@ -70,25 +70,16 @@ AMQP 1.0 разрабатывался с 2008 г. активной группо�
 - [Модули служебной шины Azure для JavaScript и TypeScript](https://docs.microsoft.com/javascript/api/overview/azure/service-bus?view=azure-node-latest&preserve-view=true)
 - [Библиотеки служебной шины Azure для Python](https://docs.microsoft.com/python/api/overview/azure/servicebus?view=azure-python&preserve-view=true)
 
+[!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
+
 Кроме того, служебную шину можно использовать из любого стека протокола, совместимого с AMQP 1,0:
 
-| Язык | Библиотека |
-| --- | --- |
-| Java | [Apache Qpid Proton-J](https://qpid.apache.org/proton/index.html) |
-| C/C++ |[Azure UAMQP C](https://github.com/azure/azure-uamqp-c/), [Apache Qpid Proton-C](https://qpid.apache.org/proton/index.html) |
-| Python |[Azure uAMQP для Python](https://github.com/azure/azure-uamqp-python/), [Apache Qpid Proton Python](https://qpid.apache.org/releases/qpid-proton-0.32.0/proton/python/docs/overview.html) |
-| PHP | [Azure uAMQP для PHP](https://github.com/vsouz4/azure-uamqp-php/) |
-| Ruby | [Apache Qpid Proton Ruby](https://github.com/apache/qpid-proton/tree/master/ruby) |
-| Go | [Azure Go AMQP](https://github.com/Azure/go-amqp), [Apache Qpid Proton Go](https://github.com/apache/qpid-proton/tree/master/go/examples)
-| C#/F #/VB | [AMQP .NET Lite](https://github.com/Azure/amqpnetlite), [Apache узлов AMQP](https://github.com/apache/activemq-nms-amqp)|
-| JavaScript или узел | [рхеа](https://github.com/grs/rhea) |
+[!INCLUDE [messaging-oss-amqp-stacks.md](../../includes/messaging-oss-amqp-stacks.md)]
 
-**Рисунок 2. Таблица клиентских библиотек AMQP 1.0**
-
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 * AMQP 1.0 — это открытый и надежный протокол обмена сообщениями, который можно использовать для создания кроссплатформенных гибридных приложений. AMQP 1.0 является стандартом OASIS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Хотите узнать больше? Перейдите по следующим ссылкам:
 
 * [Использование служебной шины на платформе .NET с протоколом AMQP]

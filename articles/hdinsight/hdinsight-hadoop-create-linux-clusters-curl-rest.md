@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 12/10/2019
 ms.openlocfilehash: 3ce104e9340c3e93d64b68dcab6f5bd6d2f62493
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748743"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020639"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Apache Hadoop с помощью REST API Azure
 
@@ -227,7 +227,7 @@ Azure Resource Manager шаблоны — это документы JSON, опи
    az account list --query '[].{Subscription_ID:id,Tenant_ID:tenantId,Name:name}'  --output table
    ```
 
-    Из списка выберите подписку, которую нужно использовать, и обратите внимание на столбцы **Subscription_ID** и __Tenant_ID__ . Сохраните эти значения.
+    Из списка выберите подписку, которую нужно использовать, и обратите внимание на столбцы **Subscription_ID** и __Tenant_ID__. Сохраните эти значения.
 
 2. Используйте следующую команду, чтобы создать приложение в Azure Active Directory.
 
@@ -242,15 +242,15 @@ Azure Resource Manager шаблоны — это документы JSON, опи
 
    Эта команда возвращает значение __App ID__ для нового приложения. Сохраните его.
 
-3. Используйте следующую команду, чтобы создать субъект-службу с помощью **App ID** :
+3. Используйте следующую команду, чтобы создать субъект-службу с помощью **App ID**:
 
    ```azurecli
    az ad sp create --id <App ID> --query 'objectId'
    ```
 
-     Эта команда возвращает значение __Object ID__ . Сохраните его.
+     Эта команда возвращает значение __Object ID__. Сохраните его.
 
-4. Назначьте роль **Владелец** субъекту-службе, используя значение **Object ID** . Используйте **идентификатор подписки** , полученный ранее.
+4. Назначьте роль **Владелец** субъекту-службе, используя значение **Object ID**. Используйте **идентификатор подписки**, полученный ранее.
 
    ```azurecli
    az role assignment create --assignee <Object ID> --role Owner --scope /subscriptions/<Subscription ID>/
@@ -274,7 +274,7 @@ curl -X "POST" "https://login.microsoftonline.com/$TENANTID/oauth2/token" \
 
 Если этот запрос завершится успешно, будет получен ответ серии 200, и тело ответа будет содержать документ JSON.
 
-Документ JSON, возвращаемый этим запросом, содержит элемент **access_token** . Значение **access_token** используется для проверки подлинности запросов API REST.
+Документ JSON, возвращаемый этим запросом, содержит элемент **access_token**. Значение **access_token** используется для проверки подлинности запросов API REST.
 
 ```json
 {
@@ -345,7 +345,7 @@ curl -X "GET" "https://management.azure.com/subscriptions/$SUBSCRIPTIONID/resour
 
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](./hdinsight-hadoop-customize-cluster-linux.md#access-control).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы успешно создали кластер HDInsight, используйте следующую информацию, чтобы узнать, как работать с кластером.
 

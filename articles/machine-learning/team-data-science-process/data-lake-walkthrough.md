@@ -12,11 +12,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: e6eb0be4d9946907dc5bb2f22b27530a27a37aec
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321262"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021458"
 ---
 # <a name="scalable-data-science-with-azure-data-lake-an-end-to-end-walkthrough"></a>Полное пошаговое руководство по масштабируемому анализу данных с помощью Azure Data Lake
 В этом пошаговом руководстве на примере набора данных о поездках и тарифах такси в Нью-Йорке показано, как использовать Azure Data Lake для выполнения задач по исследованию и двоичной классификации данных, чтобы спрогнозировать вероятность получения чаевых за поездку. Здесь подробно описаны шаги [процесса обработки и анализа данных группы](./index.yml)— от получения данных для обучения модели и до развертывания веб-службы, которая публикует модель.
@@ -48,7 +48,7 @@ Data Lake Analytics является также ключевой частью К
 Машинное обучение Azure Studio (классическая модель) используется для создания и развертывания прогнозных моделей с помощью двух подходов: сначала с скриптами Python, а затем с таблицами Hive в кластере HDInsight (Hadoop).
 
 ### <a name="scripts"></a>Сценарии
-В этом пошаговом руководстве описаны только основные шаги. Вы можете скачать полный **скрипт U-SQL** , а также **записную книжку Jupyter** из [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough).
+В этом пошаговом руководстве описаны только основные шаги. Вы можете скачать полный **скрипт U-SQL**, а также **записную книжку Jupyter** из [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Прежде чем начать работу по этим разделам, необходимо обеспечить наличие следующего:
@@ -82,7 +82,7 @@ Data Lake Analytics является также ключевой частью К
 ### <a name="create-an-azure-data-lake-storage"></a>Создание Azure Data Lake Storage
 
 
-Создайте ADLS на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md). Обязательно настройте удостоверение кластера AAD в колонке **Источник данных** колонки **Необязательная конфигурация** , показанной здесь.
+Создайте ADLS на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md). Обязательно настройте удостоверение кластера AAD в колонке **Источник данных** колонки **Необязательная конфигурация**, показанной здесь.
 
  ![3](./media/data-lake-walkthrough/3-create-ADLS.PNG)
 
@@ -143,7 +143,7 @@ CSV-файл trip_fare содержит подробную информацию 
 
 Сценарии U-SQL, описанные в документе, приводятся в отдельном файле. Можно скачать полные **сценарии U-SQL** из [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough).
 
-Чтобы выполнить сценарий U-SQL, откройте Visual Studio, выберите **Файл --> Создать --> Проект** , щелкните **U-SQL Project** (Проект U-SQL), укажите имя и сохраните проект в папке.
+Чтобы выполнить сценарий U-SQL, откройте Visual Studio, выберите **Файл --> Создать --> Проект**, щелкните **U-SQL Project** (Проект U-SQL), укажите имя и сохраните проект в папке.
 
 ![8](./media/data-lake-walkthrough/8-create-USQL-project.PNG)
 
@@ -461,7 +461,7 @@ USING Outputters.Csv();
 ```
 
 ### <a name="run-u-sql-jobs"></a><a name="run"></a>Выполнение заданий U-SQL
-После редактирования скриптов U-SQL их можно отправить на сервер с помощью учетной записи Azure Data Lake Analytics. Выберите вкладку **Data Lake** , щелкните **Отправить задание** , а затем выберите свою учетную запись в поле **Analytics Account** (Учетная запись Аналитики), значение параметра **Параллелизм** и нажмите кнопку **Отправить**.
+После редактирования скриптов U-SQL их можно отправить на сервер с помощью учетной записи Azure Data Lake Analytics. Выберите вкладку **Data Lake**, щелкните **Отправить задание**, а затем выберите свою учетную запись в поле **Analytics Account** (Учетная запись Аналитики), значение параметра **Параллелизм** и нажмите кнопку **Отправить**.
 
  ![12](./media/data-lake-walkthrough/12-submit-USQL.PNG)
 
@@ -671,7 +671,7 @@ from azureml import services
  ![18](./media/data-lake-walkthrough/18-create_HDI_cluster.PNG)
 
 ### <a name="create-hive-table-in-hdinsight"></a>Создание таблицы Hive в HDInsight
-Теперь вы создадите таблицы Hive, которые будут использоваться в Машинное обучение Azure Studio (классическая модель) в кластере HDInsight, используя данные, хранящиеся в Azure Data Lake Storage на предыдущем шаге. Перейдите к новому кластеру HDInsight. Щелкните **Параметры**  -->  **Свойства**  -->  **кластер AAD удостоверение**  -->  **ADLS доступ** , убедитесь, что ваша учетная запись Azure Data Lake Storage добавлена в список с правами на чтение, запись и выполнение.
+Теперь вы создадите таблицы Hive, которые будут использоваться в Машинное обучение Azure Studio (классическая модель) в кластере HDInsight, используя данные, хранящиеся в Azure Data Lake Storage на предыдущем шаге. Перейдите к новому кластеру HDInsight. Щелкните **Параметры**  -->  **Свойства**  -->  **кластер AAD удостоверение**  -->  **ADLS доступ**, убедитесь, что ваша учетная запись Azure Data Lake Storage добавлена в список с правами на чтение, запись и выполнение.
 
  ![19](./media/data-lake-walkthrough/19-HDI-cluster-add-ADLS.PNG)
 

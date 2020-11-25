@@ -9,11 +9,11 @@ ms.date: 09/15/2016
 ms.author: hermannd
 ms.reviewer: cynthn
 ms.openlocfilehash: 6492e770479042a5a1b4da6f61917832adad4873
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959294"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021424"
 ---
 # <a name="deploy-sap-s4hana-or-bw4hana-on-azure"></a>Развертывание SAP S/4HANA или BW/4HANA в Azure
 В этой статье описывается, как развернуть платформу S/4HANA в Azure с помощью SAP Cloud Appliance Library (SAP CAL) 3.0. Чтобы развернуть другие решения на основе SAP HANA, например BW/4HANA, выполните те же действия.

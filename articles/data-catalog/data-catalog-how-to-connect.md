@@ -7,11 +7,11 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 5c8c545f01eb0df53ce9677b7db6f931b4d21af9
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151895"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021934"
 ---
 # <a name="how-to-connect-to-data-sources"></a>Подключение к источникам данных
 ## <a name="introduction"></a>Введение
@@ -56,7 +56,7 @@ ms.locfileid: "92151895"
 
  ![Сведения о подключении с предоставленными инструкциям по получению запроса на доступ](./media/data-catalog-how-to-connect/data-catalog-how-to-connect4.png)
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 Регистрация источников данных в **каталоге данных Azure** позволяет быстрее обнаруживать эти данные благодаря тому, что из источника в службу каталога копируются структурные и описательные метаданные. После регистрации и обнаружения источника данных пользователи могут подключаться к источнику данных на портале **каталога данных Azure** с помощью меню Open in… (Открыть в...) или выбранных инструментов для работы с данными.
 
 ## <a name="see-also"></a>См. также

@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: devx-track-csharp, 80e4ff38-5174-43
 ms.openlocfilehash: 3cf495ca0687e6fa37f619615fb1529659a462dc
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920225"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020378"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -543,7 +543,7 @@ func azure functionapp publish <FunctionAppName>
 | **`--nozip`** | Выключает режим по умолчанию `Run-From-Package`. |
 | **`--build-native-deps`** | Пропускает создание папки. Wheels при публикации приложений функции Python. |
 | **`--build`**, **`-b`** | Выполняет действие сборки при развертывании в приложении-функции Linux. Принимает: `remote` и `local` . |
-| **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например: `python3-dev libevent-dev`. |
+| **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например, так: `python3-dev libevent-dev`. |
 | **`--force`** | Пропускает проверку, выполняемую до публикации, в определенных сценариях. |
 | **`--csx`** | Публикует проект скрипта C# (CSX). |
 | **`--no-build`** | Проект не создан во время публикации. Для Python `pip install` не выполняется. |

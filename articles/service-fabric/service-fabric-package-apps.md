@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 2/23/2018
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 11a3fdd5dbaef53af321342952f786ed8119689c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89012404"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021067"
 ---
 # <a name="package-an-application"></a>Создание пакета приложения
 
@@ -49,7 +49,7 @@ D:\TEMP\MYAPPLICATIONTYPE
 * Настройка и инициализация переменных среды, необходимых исполняемому файлу службы. Это касается не только исполняемых файлов, написанных с использованием моделей программирования Service Fabric. Например, npm.exe нужны определенные переменные среды, настроенные для развертывания приложения node.js.
 * Настройка контроля доступа посредством установки сертификатов безопасности.
 
-Дополнительные сведения о настройке **SetupEntryPoint**см. в статье [Настройка политики для точки входа настройки службы](service-fabric-application-runas-security.md) .
+Дополнительные сведения о настройке **SetupEntryPoint** см. в статье [Настройка политики для точки входа настройки службы](service-fabric-application-runas-security.md) .
 
 <a id="Package-App"></a>
 
@@ -225,7 +225,7 @@ ZipFile.CreateFromDirectory(appPackageDirectoryPath, sfpkgFilePath);
 >[!NOTE]
 > Сейчас подготовка на основе относительного пути в хранилище образов не поддерживает файлы `sfpkg`. Таким образом, `sfpkg` не следует копировать в хранилище образов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Развертывание и удаление приложений][10] описание использования PowerShell для управления экземплярами приложения
 

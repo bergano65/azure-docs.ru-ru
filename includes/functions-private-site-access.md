@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 05/06/2020
 ms.author: glenga
 ms.openlocfilehash: 2d66e7f497f85141de172c59b67676e1bb93955e
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578835"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021008"
 ---
 [Частная конечная точка Azure](../articles/private-link/private-endpoint-overview.md) — это сетевой интерфейс, который обеспечивает безопасное подключение к службе с помощью Приватного канала Azure.  Частная конечная точка использует частный IP-адрес из виртуальной сети, эффективно предоставляя доступ к службе из виртуальной сети.
 

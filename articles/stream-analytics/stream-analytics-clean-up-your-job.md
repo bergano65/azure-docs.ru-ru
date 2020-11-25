@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 06/21/2019
 ms.custom: seodec18
 ms.openlocfilehash: 2652b97c9392d3016bbc52209d4b2bda81c31706
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348973"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022087"
 ---
 # <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Завершение или удаление задания Azure Stream Analytics
 
@@ -30,7 +30,7 @@ Azure Stream Analytics задания можно легко остановить
 
 2. Найдите выполняющееся задание Stream Analytics и выберите его.
 
-3. На странице задания Stream Analytics щелкните **Остановить** , чтобы остановить задание. 
+3. На странице задания Stream Analytics щелкните **Остановить**, чтобы остановить задание. 
 
    ![Остановка задания Azure Stream Analytics](./media/stream-analytics-clean-up-your-job/stop-stream-analytics-job.png)
 
@@ -44,7 +44,7 @@ Azure Stream Analytics задания можно легко остановить
 
 2. Найдите имеющееся задание Stream Analytics и выберите его.
 
-3. На странице задания Stream Analytics щелкните **Удалить** , чтобы удалить задание. 
+3. На странице задания Stream Analytics щелкните **Удалить**, чтобы удалить задание. 
 
    ![Удаление задания Azure Stream Analytics](./media/stream-analytics-clean-up-your-job/delete-stream-analytics-job.png)
 

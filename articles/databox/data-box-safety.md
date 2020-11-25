@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.author: alkohli
 ms.openlocfilehash: f4a0739eb1ab14155a98b17e2427c5b08c9db788
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90564429"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020676"
 ---
 # <a name="safely-install-and-operate-your-azure-data-box"></a>Безопасная установка и эксплуатация устройства Azure Data Box
 ![Значок "Внимание!"](./media/data-box-safety/warning_icon.png)
@@ -170,7 +170,7 @@ Microsoft Ireland Sandyford Ind Est Dublin D18 KX32 IRL (Ирландия)
 
 Ознакомившись с этими рекомендациями по безопасности, установите устройство и подключите все необходимые кабели.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Присоединение кабелей и подключение Azure Data Box](data-box-deploy-set-up.md)
 

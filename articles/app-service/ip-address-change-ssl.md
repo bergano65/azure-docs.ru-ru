@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 06/28/2018
 ms.custom: seodec18
 ms.openlocfilehash: dcfe11bcab25f6267a557de5faf7befab467bc29
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81535729"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020965"
 ---
 # <a name="how-to-prepare-for-an-ssl-ip-address-change"></a>Подготовка к изменению IP-адреса SSL
 
@@ -43,6 +43,6 @@ ms.locfileid: "81535729"
 
 5. Скопируйте IP-адрес и измените конфигурацию записи домена или механизм IP-адресации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано, как подготовиться к изменению IP-адреса, которое инициировано в Azure. См. дополнительные сведения о [входящих и исходящих IP-адресах в Службе приложений Azure](overview-inbound-outbound-ips.md).

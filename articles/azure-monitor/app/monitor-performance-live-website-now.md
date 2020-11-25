@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: 6c27c78bf8e3f3b8af342a14a38c9be3821d781a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91758669"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020931"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
@@ -44,10 +44,10 @@ ms.locfileid: "91758669"
 | **[Более подробные исключения](./asp-net-exceptions.md)** | |Да |
 | **[Диагностика зависимостей](./asp-net-dependencies.md)** |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
 | **[Счетчики производительности системы](./performance-counters.md)** |Да |Да |
-| **[API для пользовательской телеметрии][api]** |Да |Нет |
-| **[Интеграция журнала трассировки](./asp-net-trace-logs.md)** |Да |Нет |
-| **[Просмотр страницы & данных пользователя](./javascript.md)** |Да |Нет |
-| **Требуется повторная сборка кода** |Да | Нет |
+| **[API для пользовательской телеметрии][api]** |Да |нет |
+| **[Интеграция журнала трассировки](./asp-net-trace-logs.md)** |Да |нет |
+| **[Просмотр страницы & данных пользователя](./javascript.md)** |Да |нет |
+| **Требуется повторная сборка кода** |Да | нет |
 
 
 
@@ -178,7 +178,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
 * Windows Server 2008
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 * Windows Server 2012
 * Windows Server 2012 R2.
 * Windows Server 2016

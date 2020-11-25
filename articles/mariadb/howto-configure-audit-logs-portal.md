@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/24/2020
 ms.openlocfilehash: f1f3cda4ed9cdac6f6e03e88601b0a35d5c53faf
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533452"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021169"
 ---
 # <a name="configure-and-access-audit-logs-in-the-azure-portal"></a>Настройка и доступ к журналам аудита в портал Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "94533452"
 
 Включение и Настройка ведения журнала аудита.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Выберите сервер Базы данных Azure для MariaDB.
 
@@ -46,7 +46,7 @@ ms.locfileid: "94533452"
 1. Добавьте всех пользователей MariaDB, которые будут исключены из ведения журнала, путем обновления параметра **audit_log_exclude_users** . Укажите пользователей, указав имя пользователя MariaDB.
     ![Исключить пользователей из журнала аудита](./media/howto-configure-audit-logs-portal/audit-log-exclude-users.png)
 
-1. После изменения параметров нажмите кнопку **Сохранить**. Также вы можете нажать кнопку **Отменить** , чтобы отменить изменения.
+1. После изменения параметров нажмите кнопку **Сохранить**. Также вы можете нажать кнопку **Отменить**, чтобы отменить изменения.
     ![Сохранить](./media/howto-configure-audit-logs-portal/save-parameters.png)
 
 ## <a name="set-up-diagnostic-logs"></a>Настройка журналов диагностики
@@ -67,7 +67,7 @@ ms.locfileid: "94533452"
 
 1. Получите доступ к журналам аудита, просмотрев их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MariaDB
 - Узнайте, как настроить журналы аудита в [Azure CLI](howto-configure-audit-logs-cli.md)

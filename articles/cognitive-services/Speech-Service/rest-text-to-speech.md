@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
-ms.openlocfilehash: c7c43e02e6bdf75c9551ccdbb9dd8f75bf37a806
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77a8321ba8bac0ecaf577bce6c3c05d10508128e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91534987"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96020166"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API преобразования текста в речь.
 
@@ -34,7 +34,7 @@ REST API преобразования текста в речь поддержи�
 * Для вызова REST API преобразования текста в речь требуется заголовок авторизации. Это означает, что для доступа к службе необходимо выполнить обмен маркерами. Дополнительные сведения см. в разделе [Authenticate to the Speech API](#authentication) (Аутентификация в API речи).
 
 > [!TIP]
-> См. [документацию](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure) по Azure для государственных организаций для государственных облаков (FairFax).
+> См. [документацию](../../azure-government/compare-azure-government-global-azure.md) по Azure для государственных организаций для государственных облаков (FairFax).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
 
@@ -44,7 +44,7 @@ REST API преобразования текста в речь поддержи�
 
 ### <a name="regions-and-endpoints"></a>Регионы и конечные точки
 
-| Регион | Конечная точка |
+| Region | Конечная точка |
 |--------|----------|
 | Восточная Австралия | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Южная Бразилия | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
@@ -222,9 +222,9 @@ Authorization: Bearer [Base64 access_token]
 
 Примеры для конкретного языка см. в наших кратких руководствах.
 
-* [.NET Core, C #](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-csharp&tabs=dotnetcore)
-* [Python](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-python)
-* [Node.js](quickstart-nodejs-text-to-speech.md)
+* [.NET Core, C #](./get-started-text-to-speech.md?pivots=programming-language-csharp&tabs=dotnetcore)
+* [Python](./get-started-text-to-speech.md?pivots=programming-language-python)
+* [Node.js](./get-started-text-to-speech.md)
 
 ### <a name="http-status-codes"></a>Коды состояния HTTP
 
@@ -242,8 +242,8 @@ Authorization: Bearer [Base64 access_token]
 
 Если состояние HTTP — `200 OK`, текст ответа содержит звуковой файл в затребованном формате. Этот файл можно воспроизводить при передаче, сохранении в буфер или сохранении в файл.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
-- [Асинхронное синтез для больших аудио-форм](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
+- [Асинхронное синтез для больших аудио-форм](./long-audio-api.md)
 - [Начало работы с набором средств "Пользовательский голос"](how-to-custom-voice.md)

@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о служебной ши
 description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: 38745d1cc2b1961da10a0c9e9f2c90c3b7dc48a7
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: acd741101928f5a2dfd72eab1598af6e4556a3d1
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899527"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96022151"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Служебная шина Azure — часто задаваемые вопросы
 
@@ -26,7 +26,7 @@ ms.locfileid: "92899527"
 [Очередь служебной шины](service-bus-queues-topics-subscriptions.md) — это сущность, в которой сохраняются сообщения. Очереди целесообразно использовать при наличии нескольких приложений или нескольких частей распределенного приложения, которые должны взаимодействовать друг с другом. Очередь подобна центру распределения, куда поступают несколько продуктов (сообщений), которые затем отправляются из этого расположения.
 
 ### <a name="what-are-azure-service-bus-topics-and-subscriptions"></a>Что такое разделы и подписки служебной шины Azure?
-Раздел можно представить в виде очереди. При использовании нескольких подписок он становится расширенной моделью обмена сообщениями. По сути, это инструмент связи по принципу "один ко многим". В рамках этой модели публикации и подписки ( *pub/sub* ) сообщение может быть отправлено из приложения в раздел с несколькими подписками, а затем получено несколькими приложениями.
+Раздел можно представить в виде очереди. При использовании нескольких подписок он становится расширенной моделью обмена сообщениями. По сути, это инструмент связи по принципу "один ко многим". В рамках этой модели публикации и подписки (*pub/sub*) сообщение может быть отправлено из приложения в раздел с несколькими подписками, а затем получено несколькими приложениями.
 
 ### <a name="what-is-a-partitioned-entity"></a>Что такое секционированная сущность?
 Обычная очередь или раздел обрабатываются одним брокером сообщений и сохраняются в одном хранилище сообщений. Поддерживается только в уровнях обмена сообщениями "базовый" и "Стандартный", [секционированной очереди или разделе](service-bus-partitioning.md) обрабатывается несколькими брокерами сообщений и хранится в нескольких хранилищах сообщений. Это означает, что общая пропускная способность секционированной очереди или раздела больше не ограничивается производительностью одного брокера сообщений или хранилища сообщений. Кроме того, временный сбой хранилища сообщений не приводит к недоступности секционированной очереди или раздела.
@@ -53,14 +53,9 @@ ms.locfileid: "92899527"
 
 Порт HTTPS обычно требуется для исходящей связи, если AMQP используется через порт 5671, поскольку несколько операций управления, выполняемых клиентскими пакетами SDK, и получение маркеров из Azure Active Directory (при использовании) выполняются по протоколу HTTPS. 
 
-Официальный пакет SDK для Azure обычно использует протокол AMQP для отправки и получения сообщений из служебной шины. Параметр протокола AMQP-over-WebSockets выполняется через порт TCP 443, как и API HTTP, но в противном случае он функционально идентичен обычному AMQP. Этот параметр имеет более низкую задержку при подключении из-за дополнительных обращений к подтверждению и немного больше ресурсов, чем компромисс для совместного использования HTTPS-порта. Если выбран этот режим, для обмена данными достаточно TCP-порта 443. Следующие параметры позволяют выбрать режим AMQP или AMQP WebSockets.
+Официальный пакет SDK для Azure обычно использует протокол AMQP для отправки и получения сообщений из служебной шины. 
 
-| Язык | Параметр   |
-| -------- | ----- |
-| .NET     | Свойство [сервицебусконнектион. TransportType](/dotnet/api/microsoft.azure.servicebus.servicebusconnection.transporttype?view=azure-dotnet) с [TransportType. AMQP](/dotnet/api/microsoft.azure.servicebus.transporttype?view=azure-dotnet) или [TransportType. амкпвебсоккетс](/dotnet/api/microsoft.azure.servicebus.transporttype?view=azure-dotnet) |
-| Java     | [com. Microsoft. Azure. servicebus. ClientSettings](/java/api/com.microsoft.azure.servicebus.clientsettings.clientsettings?view=azure-java-stable) с [com. Microsoft. Azure. servicebus. примитивы. TransportType. AMQP](/java/api/com.microsoft.azure.servicebus.primitives.transporttype?view=azure-java-stable) или [com.Microsoft.Azure.servicebus.Primitives.TransportType.AMQP_WEB_SOCKETS](/java/api/com.microsoft.azure.servicebus.primitives.transporttype?view=azure-java-stable) |
-| Узел  | [Сервицебусклиентоптионс](/javascript/api/@azure/service-bus/servicebusclientoptions?view=azure-node-latest) имеет `webSocket` аргумент конструктора. |
-| Python | [ServiceBusClient.transport_type](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.ServiceBusClient) с [TransportType. AMQP](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.TransportType) или [TransportType. амкповервебсоккет](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.TransportType) |
+[!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
 
 Старый пакет WindowsAzure. ServiceBus для .NET Framework имеет возможность использовать устаревший протокол обмена сообщениями служебной шины (SBMP), также называемый "NetMessaging". Этот протокол использует TCP-порты 9350-9354. Режим по умолчанию для этого пакета — автоматическое определение доступности этих портов для связи и переключение на WebSockets с TLS через порт 443, если это не так. Вы можете переопределить этот параметр и принудительно включить этот режим, задав для `Https` параметра [задать ConnectivityMode](/dotnet/api/microsoft.servicebus.connectivitymode?view=azure-dotnet) значение [`ServiceBusEnvironment.SystemConnectivity`](/dotnet/api/microsoft.servicebus.servicebusenvironment.systemconnectivity?view=azure-dotnet) , которое применяется глобально к приложению.
 
@@ -81,7 +76,7 @@ ms.locfileid: "92899527"
     ```
     nslookup <yournamespace>.servicebus.windows.net
     ```
-2. Запишите имя в разделе **не заслуживающий доверия ответ** , который имеет один из следующих форматов: 
+2. Запишите имя в разделе **не заслуживающий доверия ответ**, который имеет один из следующих форматов: 
 
     ```
     <name>-s1.cloudapp.net
@@ -174,7 +169,7 @@ $res = Find-AzResource -ResourceNameContains mynamespace -ResourceType 'Microsof
 Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о служебной шине см. в следующих статьях:
 
 * [Introducing Azure Service Bus Premium Messaging](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (запись блога)

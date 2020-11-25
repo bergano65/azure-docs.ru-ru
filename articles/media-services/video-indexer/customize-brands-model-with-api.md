@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 01/14/2020
 ms.author: kumud
 ms.openlocfilehash: 5fc565ecc1b501f52e934784695594dcfef2a83a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87047285"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020472"
 ---
 # <a name="customize-a-brands-model-with-the-video-indexer-api"></a>Настройка модели торговых марок с помощью API Индексатора видео
 
@@ -190,6 +190,6 @@ API [обновления торговых марок](https://api-portal.videoi
 
 При успешном обновлении параметра модели торговых марок возвращенное содержимое отсутствует.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка модели торговых марок с помощью веб-сайта Индексатора видео](customize-brands-model-with-website.md)

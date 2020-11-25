@@ -10,12 +10,12 @@ ms.date: 03/23/2020
 ms.author: ramkris
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7b97d702fffa7e65e24b8367892599b7bde5b669
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6f6994717ff4c730fb27bd26c40d199fb198e528
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93092625"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96019962"
 ---
 # <a name="use-the-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>Используйте библиотеку .NET для NET выполнителя, чтобы выполнять групповые операции в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "93092625"
 
 * Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать [Visual studio 2019 Community Edition](https://www.visualstudio.com/downloads/). Убедитесь, что во время установки Visual Studio включен параметр "Разработка Azure".
 
-* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+* Если у вас нет подписки Azure, перед началом работы [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
 * [Бесплатную пробную версию Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) можно использовать без подписки Azure, без оплаты и каких-либо обязательств. Также можно использовать [эмулятор Azure Cosmos DB](./local-emulator.md) с `https://localhost:8081` конечной точкой. Первичный ключ предоставляется в разделе [Выполнение проверки подлинности запросов](local-emulator.md#authenticate-requests).
 
@@ -115,7 +115,7 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
    |maxInMemorySortingBatchSize     |  Максимальное число документов, извлеченных из перечислителя документов, которые передаются в вызов API на каждом этапе. Для фазы сортировки в памяти, которая происходит перед массовым импортом, установка этого параметра в значение null приведет к тому, что библиотека будет использовать минимальное значение по умолчанию (Documents. Count, 1000000).       |
    |cancellationToken    |    Токен отмены для корректного выхода из операции полного импорта.     |
 
-   **Определение объекта ответа массового импорта** . Результат вызова API массового импорта содержит следующие атрибуты:
+   **Определение объекта ответа массового импорта**. Результат вызова API массового импорта содержит следующие атрибуты:
 
    |**Параметр**  |**Описание**  |
    |---------|---------|
@@ -164,7 +164,7 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
    |maxInMemorySortingBatchSize    |    Максимальное число элементов обновления, извлеченных из перечислителя элементов обновления, переданного в вызов API на каждом этапе. Для фазы сортировки в памяти, которая происходит перед выполнением обновления, установка этого параметра в значение null приведет к тому, что библиотека будет использовать минимальное значение по умолчанию (Упдатеитемс. Count, 1000000).     |
    | cancellationToken|Токен отмены для корректного выхода из операции полного обновления. |
 
-   **Определение объекта ответа массового обновления** . Результат вызова API массового обновления содержит следующие атрибуты:
+   **Определение объекта ответа массового обновления**. Результат вызова API массового обновления содержит следующие атрибуты:
 
    |**Параметр**  |**Описание** |
    |---------|---------|
@@ -203,6 +203,6 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
   </system.diagnostics>
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о пакете NuGet и заметках о выпуске [см. в](sql-api-sdk-bulk-executor-dot-net.md)этой статье.

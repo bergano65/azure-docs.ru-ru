@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
 ms.openlocfilehash: 32b47d9d6d45ff471961f55f8159dbe85eae2dce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73888833"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020261"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---docker"></a>Локальное развертывание акселератора решения для удаленного мониторинга Docker
 
@@ -104,6 +104,6 @@ docker rmi <list_of_images>
 
 Воспользуйтесь командой `docker-compose down --rmi all`, чтобы удалить образы Docker и освободить место на локальном компьютере. Также можно удалить локальную копию репозитория удаленного мониторинга, созданную при клонировании исходного кода из GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы развернули решение для удаленного мониторинга, ознакомьтесь со статьей [Краткое руководство. Использование облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md).

@@ -4,11 +4,11 @@ description: Из этой статьи вы узнаете, как восста
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.openlocfilehash: 60c9848e12de80bcafe4553a9e8f3e27e8876d41
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88826503"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021390"
 ---
 # <a name="restore-azure-files-with-powershell"></a>Восстановление файлов Azure с помощью PowerShell
 
@@ -169,6 +169,6 @@ azurefiles           Restore           InProgress      4/5/2020 8:01:24 AM      
 
 Если вы хотите восстановить несколько файлов или папок в альтернативное расположение, используйте приведенные выше сценарии, указав значения параметров, связанные с целевым расположением, как описано выше в примере [восстановления файла Azure в альтернативное расположение](#restore-an-azure-file-to-an-alternate-location).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Дополнительные сведения о](restore-afs.md) восстановлении файлов Azure в портал Azure.
