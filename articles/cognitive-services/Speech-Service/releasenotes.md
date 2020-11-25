@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 29f7e8bbf9a1b8d48940287a4845c2b55804b247
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 18d228af5c162159d52b5583613d4449d1195af2
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015381"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95894241"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
 
@@ -45,8 +45,8 @@ ms.locfileid: "95015381"
 - **JavaScript**: добавлена поддержка `ConversationTranscriber` API. Ознакомьтесь с документацией [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-conversation-transcription?pivots=programming-language-javascript). 
 - **C++/c #**: добавлен новый `AudioDataStream FromWavFileInput` метод (для чтения. Файлы WAV) [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/audiodatastream) и [здесь (C#)](
 https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
--  **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлен `stopSpeakingAsync()` метод для отмены синтеза текста в речь. Прочитайте справочную документацию [здесь (C++](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace)), здесь ( [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), здесь ( [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech?view=azure-java-stable)), здесь (на языке [Python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python)и [здесь (цель-C/SWIFT)](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
-- **C#, C++, Java**: в `FromDialogServiceConnector()` класс добавлена функция `Connection` , которая может использоваться для наблюдения за подключениями и событиями отключения `DialogServiceConnector` . Ознакомьтесь с справочной документацией [здесь (C#)](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/connection)и [здесь (Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection?view=azure-java-stable).
+-  **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлен `stopSpeakingAsync()` метод для отмены синтеза текста в речь. Прочитайте справочную документацию [здесь (C++](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace)), здесь ( [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), здесь ( [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech)), здесь (на языке [Python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python)и [здесь (цель-C/SWIFT)](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
+- **C#, C++, Java**: в `FromDialogServiceConnector()` класс добавлена функция `Connection` , которая может использоваться для наблюдения за подключениями и событиями отключения `DialogServiceConnector` . Ознакомьтесь с справочной документацией [здесь (C#)](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/connection)и [здесь (Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection).
 <!-- - **C++/C#/Java/Python/Objective-C/Swift**: Added support for Pronunciation Assessment, which evaluates speech pronunciation and gives speakers feedback on the accuracy and fluency of spoken audio. Read the documentation [here](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-pronunciation-assessment). -->
 
 **Критическое изменение**

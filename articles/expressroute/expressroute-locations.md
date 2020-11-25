@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 10/26/2020
 ms.author: duau
-ms.openlocfilehash: 8eb4fd4cf0645248804ca31e310933167ba9a39b
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 30d1fb62b661d898ba06548e5e3a2c7d31b97794
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94987836"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95906489"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -105,7 +105,7 @@ ms.locfileid: "94987836"
 | **du datamena** |Поддерживается |Поддерживается | Дубаи 2 |
 | **eir** |Поддерживается |Поддерживается |Дублин|
 | **[Epsilon Global Communications](https://www.epsilontel.com/solutions/direct-cloud-connect)** |Поддерживается |Поддерживается |Сингапур, Сингапур 2 |
-| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживается |Поддерживается |Амстердам, Атланта, Берлин, Чикаго, Далласе, Дублин, Франкфурт, Geneva, САР Гонконг, Лондон, London2, Лос-Анджелес, Лос-Angeles2, Мельбурн, Майами, Милан, Нью-Йорк, Осака, Париж, Сан-Паулу, Сиэтл,, Сингапур, Стокгольм, Сидней, |
+| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживается |Поддерживается |Амстердам, Атланта, Берлин, Canberra2, Чикаго, Далласе, Dubai2, Дублин, Франкфурт, Geneva, Гонконг, САР, Лондон, London2, Лос-Анджелес, Лос Angeles2, Мельбурн, Майами, Милан, Нью-Йорк, Осака, Париж, Сан--Паулу, Сиэтл, Токио, Торонто, Вашингтон, округ Колумбия, Сеул |
 | **Etisalat UAE** |Поддерживается |Поддерживается |Дубаи|
 | **[euNetworks](https://eunetworks.com/services/solutions/cloud-connect/microsoft-azure-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Лондон |
 | **FarEasTone** |Поддерживается |Поддерживается |Тайбэй|

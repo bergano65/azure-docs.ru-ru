@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 09206b8189f03a37f8bd7d073238609a3f1bd3ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7419e8667f07eec03e860634c7b3fddcac0e186b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816105"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95901559"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов с помощью протокола NFS 3,0 (Предварительная версия)
 
@@ -71,7 +71,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 
 ## <a name="step-3-create-an-azure-virtual-network-vnet"></a>Шаг 3. Создание виртуальной сети Azure (VNet)
 
-Ваша учетная запись хранения должна содержаться в виртуальной сети. Виртуальная сеть позволяет клиентам безопасно подключаться к учетной записи хранения. Дополнительные сведения о виртуальной сети и о том, как ее создать, см. в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/).
+Ваша учетная запись хранения должна содержаться в виртуальной сети. Виртуальная сеть позволяет клиентам безопасно подключаться к учетной записи хранения. Дополнительные сведения о виртуальной сети и о том, как ее создать, см. в [документации по виртуальным сетям](../../virtual-network/index.yml).
 
 > [!NOTE]
 > Клиенты в одной виртуальной сети могут подключать контейнеры в своей учетной записи. Вы также можете подключить контейнер из клиента, работающего в локальной сети, но сначала необходимо подключить локальную сеть к виртуальной сети. См. раздел [Поддерживаемые сетевые подключения](network-file-system-protocol-support.md#supported-network-connections).
@@ -94,12 +94,12 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |----|---|
 |Расположение|Одна из следующих областей: Восток США, Центральная часть США, Центральная часть США, Юго-Восточная Австралия, Северная Европа, западная часть Соединенного Королевства, Центральная Корея, Южная Корея и Центральная Канада |
 |Производительность|Premium|
-|Тип учетной записи|блоккблобстораже|
+|Тип учетной записи|BlockBlobStorage|
 |Репликация|Локально избыточное хранилище (LRS)|
 |Метод подключения|Общедоступная конечная точка (выбранные сети) или частная конечная точка|
 |Требуется безопасная передача данных|Выключено|
-|Иерархическое пространство имен|Включен|
-|NFS V3|Включен|
+|Иерархическое пространство имен|Активировано|
+|NFS V3|Активировано|
 
 Можно принять значения по умолчанию для всех остальных параметров. 
 
@@ -112,8 +112,8 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |[Портал Azure](https://portal.azure.com)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
 |[AzCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
-|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
-||[REST](https://docs.microsoft.com/rest/api/storageservices/create-container)|
+|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container);|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
+||[REST](/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>Шаг 7. Подключение контейнера
 
@@ -144,7 +144,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 
    ![Клиент для сетевой файловой системы](media/network-file-system-protocol-how-to/client-for-network-files-system-feature.png)
 
-2. Подключите контейнер с помощью команды [Mount](https://docs.microsoft.com/windows-server/administration/windows-commands/mount) .
+2. Подключите контейнер с помощью команды [Mount](/windows-server/administration/windows-commands/mount) .
 
    ```
    mount -o nolock <storage-account-name>.blob.core.windows.net:/<storage-account-name>/<container-name> *
@@ -167,7 +167,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 
 ## <a name="resolve-common-issues"></a>Устранение распространенных проблем
 
-|Вопрос или ошибка | Решение|
+|Вопрос или ошибка | Разрешение|
 |---|---|
 |`Access denied by server while mounting`|Убедитесь, что клиент работает в поддерживаемой подсети. См. раздел [Поддерживаемые сетевые расположения](network-file-system-protocol-support.md#supported-network-connections).|
 |`No such file or directory`| Убедитесь, что подключенный контейнер был создан после того, как подтвердилась регистрация этой возможности. См. [Шаг 2. Убедитесь, что компонент зарегистрирован](#step-2-verify-that-the-feature-is-registered). Кроме того, обязательно введите команду mount и ее параметры непосредственно в терминале. Если вы скопируете любую часть этой команды в терминал из другого приложения, скрытые символы в скопированных данных могут вызвать ошибку.|
@@ -175,10 +175,3 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 ## <a name="see-also"></a>См. также раздел
 
 [Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure (Предварительная версия)](network-file-system-protocol-support.md)
-
-
-
-
-
-
-

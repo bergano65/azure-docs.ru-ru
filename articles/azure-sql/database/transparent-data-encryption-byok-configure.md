@@ -12,17 +12,20 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: 38be8b97b3255e4e63301e693d2a5f295e8d801b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8881dc3f67ac1c9f699bd2bf7bcf1dbbcd5e9c0c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92779974"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95905333"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>PowerShell и Azure CLI: включение прозрачное шифрование данных с управляемым клиентом ключом из Azure Key Vault
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 В этой статье объясняется, как использовать ключ из Azure Key Vault для прозрачное шифрование данных (TDE) в базе данных SQL Azure или Azure синапсе Analytics (ранее — хранилище данных SQL). Чтобы получить дополнительные сведения об интеграции Azure Key Vault и поддержке при создании собственных ключей для TDE, см. статью [Прозрачное шифрование данных в Azure SQL. Поддержка создания собственных ключей](transparent-data-encryption-byok-overview.md).
+
+> [!NOTE] 
+> Теперь SQL Azure поддерживает использование ключа RSA, хранящегося в управляемом HSM, как средство защиты TDE. Эта функция доступна в **общедоступной предварительной версии**. Azure Key Vault управляемым HSM — это полностью управляемая высокодоступная облачная служба с одним клиентом, которая позволяет защищать криптографические ключи для облачных приложений, используя проверенный HSM уровня 2 FIPS 140-2. Дополнительные сведения об [управляемых HSM](../../key-vault/managed-hsm/index.yml).
 
 ## <a name="prerequisites-for-powershell"></a>Предварительные требования для PowerShell
 
@@ -36,7 +39,8 @@ ms.locfileid: "92779974"
 - Чтобы использовать ключ для TDE, обязательно настройте для него следующие атрибуты:
   - без даты окончания срока действия;
   - не отключено;
-  - возможность выполнять операции *получения* , *упаковки ключа* и *распаковки ключа* .
+  - возможность выполнять операции *получения*, *упаковки ключа* и *распаковки ключа*.
+- **(Предварительная версия)** Чтобы использовать управляемый ключ HSM, следуйте инструкциям по [созданию и активации управляемого модуля HSM с помощью Azure CLI](../../key-vault/managed-hsm/quick-create-cli.md)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -70,6 +74,8 @@ ms.locfileid: "92779974"
    Set-AzKeyVaultAccessPolicy -VaultName <KeyVaultName> `
        -ObjectId $server.Identity.PrincipalId -PermissionsToKeys get, wrapKey, unwrapKey
    ```
+Чтобы добавить разрешения для сервера на управляемый модуль HSM, добавьте на сервер локальную роль RBAC "шифрование криптографической службы HSM". Это позволит серверу выполнять операции получения, переноса ключей и распаковки ключей в управляемых HSM.
+[Инструкции по подготовке доступа сервера к управляемому HSM](../../key-vault/managed-hsm/role-management.md)
 
 ## <a name="add-the-key-vault-key-to-the-server-and-set-the-tde-protector"></a>Добавление на сервер ключа из Key Vault и настройка предохранителя TDE
 
@@ -79,10 +85,15 @@ ms.locfileid: "92779974"
 - Используйте командлет [Get-азсклсервертранспарентдатаенкриптионпротектор](/powershell/module/az.sql/get-azsqlservertransparentdataencryptionprotector) , чтобы убедиться, что средство защиты TDE настроено как предназначенное.
 
 > [!NOTE]
+> **(Предварительная версия)** Для управляемых ключей HSM используйте команду AZ. SQL 2.11.1 версии PowerShell.
+
+> [!NOTE]
 > Общая длина имени хранилища ключей и имени ключа не может превышать 94 символа.
 
 > [!TIP]
-> Пример идентификатора KeyId из Key Vault: https://contosokeyvault.vault.azure.net/keys/Key1/1a1a2b2b3c3c4d4d5e5e6f6f7g7g8h8h
+> Пример идентификатора KeyId из Key Vault: <br/>https://contosokeyvault.vault.azure.net/keys/Key1/1a1a2b2b3c3c4d4d5e5e6f6f7g7g8h8h
+>
+> Пример KeyId из управляемого модуля HSM:<br/>https://contosoMHSM.managedhsm.azure.net/keys/myrsakey
 
 ```powershell
 # add the key from Key Vault to the server
@@ -217,7 +228,7 @@ az sql db tde show --database <dbname> --server <servername> --resource-group <r
 
 * * *
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 При возникновении ошибок выполните следующие проверки.
 
@@ -239,7 +250,7 @@ az sql db tde show --database <dbname> --server <servername> --resource-group <r
 
 - Если не удается добавить на сервер новый ключ или указать новый в качестве предохранителя TDE, проверьте следующее:
    - ключ не должен иметь дату окончания срока действия;
-   - для ключа должны быть включены операции *получения* , *упаковки ключа* и *распаковки ключа* .
+   - для ключа должны быть включены операции *получения*, *упаковки ключа* и *распаковки ключа*.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

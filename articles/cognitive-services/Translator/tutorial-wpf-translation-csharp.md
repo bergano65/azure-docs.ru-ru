@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 05/26/2020
 ms.author: swmachan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ef5384abd63dcd9aeb4789dc4955f4b80068d330
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d239b89aaf0bc140916d38583f4263f7bf660f1a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88921245"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023622"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
-В рамках этого руководства вы создадите приложение [Windows Presentation Foundation (WPF)](https://docs.microsoft.com/visualstudio/designers/getting-started-with-wpf?view=vs-2019), в котором службы Azure Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В частности, приложение будет вызывать API-интерфейсы из Переводчика и средства [Проверка орфографии Bing](https://azure.microsoft.com/services/cognitive-services/spell-check/).
+В рамках этого руководства вы создадите приложение [Windows Presentation Foundation (WPF)](/visualstudio/designers/getting-started-with-wpf?view=vs-2019), в котором службы Azure Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В частности, приложение будет вызывать API-интерфейсы из Переводчика и средства [Проверка орфографии Bing](https://azure.microsoft.com/services/cognitive-services/spell-check/).
 
 Что такое WPF? Это инфраструктура пользовательского интерфейса, позволяющая создавать классические клиентские приложения. Платформа разработки WPF поддерживает широкий набор функций для разработки приложений, включая модель приложения, ресурсы, элементы управления, графику, макет, привязку данных, документы и безопасность. Это подмножество платформы .NET. Поэтому, если вы ранее создавали приложения на платформе .NET с помощью ASP.NET или Windows Forms, у вас не возникнет трудностей в процессе программирования. Для реализации декларативной модели программирования приложений, которая рассматривается в следующих разделах, в WPF используется расширяемый язык разметки приложений (XAML).
 
@@ -40,16 +40,16 @@ ms.locfileid: "88921245"
 
 | Служба | Компонент | Описание |
 |---------|---------|-------------|
-| API перевода | [Get Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | Получение полного списка поддерживаемых языков для перевода текста. |
-| API перевода | [Translate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Перевод текста более чем на 70 языков. |
-| API перевода | [Detect](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect) | Определение языка исходного текста. Для определения используется показатель достоверности. |
-| API Проверки орфографии Bing | [Spell Check](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Исправление орфографических ошибок для повышения точности перевода. |
+| API перевода | [Get Languages](./reference/v3-0-languages.md) | Получение полного списка поддерживаемых языков для перевода текста. |
+| API перевода | [Translate](./reference/v3-0-translate.md) | Перевод текста более чем на 70 языков. |
+| API перевода | [Detect](./reference/v3-0-detect.md) | Определение языка исходного текста. Для определения используется показатель достоверности. |
+| API Проверки орфографии Bing | [Spell Check](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Исправление орфографических ошибок для повышения точности перевода. |
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для этого вам потребуются следующие компоненты:
 
-* подписка Azure Cognitive Services; [ключ Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#create-a-new-azure-cognitive-services-resource);
+* подписка Azure Cognitive Services; [ключ Cognitive Services](../cognitive-services-apis-create-account.md#create-a-new-azure-cognitive-services-resource);
 * компьютер с Windows;
 * [Visual Studio 2019](https://www.visualstudio.com/downloads/) — Community или Enterprise
 
@@ -83,14 +83,14 @@ ms.locfileid: "88921245"
 1. На вкладке **Сборки** перечислены все сборки платформы .NET, для которых можно указать ссылки. Используйте панель поиска в правом верхнем углу для поиска ссылок.
    ![Добавление ссылок для сборки](media/add-assemblies-2019.png)
 1. Выберите следующие ссылки для своего проекта:
-   * [System.Runtime.Serialization](https://docs.microsoft.com/dotnet/api/system.runtime.serialization)
-   * [System.Web](https://docs.microsoft.com/dotnet/api/system.web);
+   * [System.Runtime.Serialization](/dotnet/api/system.runtime.serialization)
+   * [System.Web](/dotnet/api/system.web);
    * System.Web.Extensions
-   * [System.Windows](https://docs.microsoft.com/dotnet/api/system.windows)
+   * [System.Windows](/dotnet/api/system.windows)
 1. После добавления этих ссылок в проект вы можете нажать кнопку **ОК**, чтобы закрыть **диспетчер ссылок**.
 
 > [!NOTE]
-> Дополнительные сведения о ссылках на сборки см. в [руководстве по добавлению или удалению ссылок с помощью диспетчера ссылок](https://docs.microsoft.com/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019).
+> Дополнительные сведения о ссылках на сборки см. в [руководстве по добавлению или удалению ссылок с помощью диспетчера ссылок](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019).
 
 ### <a name="install-newtonsoftjson"></a>Установка Newtonsoft.Json
 
@@ -269,7 +269,7 @@ ms.locfileid: "88921245"
 В рамках этого раздела мы создадим запрос `GET` к ресурсу языков на получение списка языков, доступных для перевода.
 
 > [!NOTE]
-> Ресурс языков позволяет отфильтровать поддерживаемые языки с помощью параметров запроса, таких как транслитерация, словарь и перевод. См. дополнительные сведения в [справочнике по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
+> Ресурс языков позволяет отфильтровать поддерживаемые языки с помощью параметров запроса, таких как транслитерация, словарь и перевод. См. дополнительные сведения в [справочнике по API](./reference/v3-0-languages.md).
 
 Прежде чем продолжить, рассмотрим пример ответа на вызов ресурса языков:
 
@@ -581,4 +581,4 @@ private string CorrectSpelling(string text)
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Справочник по Переводчику Майкрософт](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)
+> [Справочник по Переводчику Майкрософт](./reference/v3-0-reference.md)

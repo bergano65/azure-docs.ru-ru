@@ -10,12 +10,12 @@ ms.date: 09/22/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: aed3116976d57df81da399495fd9da3722ba770a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ca09e41e6d5b83f14d2dfee4107135585b7e945a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91960683"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95908801"
 ---
 # <a name="point-in-time-restore-for-block-blobs"></a>Восстановление до точки во времени для блочных BLOB-объектов
 
@@ -49,8 +49,8 @@ ms.locfileid: "91960683"
 
 Для восстановления до точки во времени необходимо включить следующие функции службы хранилища Azure, прежде чем можно будет включить восстановление на момент времени.
 
-- [Обратимое удаление](soft-delete-overview.md)
-- [Веб-канал изменений](storage-blob-change-feed.md)
+- [Обратимое удаление](./soft-delete-blob-overview.md)
+- [Канал изменений](storage-blob-change-feed.md)
 - [Управление версиями BLOB-объектов](versioning-overview.md)
 
 ### <a name="retention-period-for-point-in-time-restore"></a>Срок хранения для восстановления до точки во времени
@@ -92,5 +92,5 @@ ms.locfileid: "91960683"
 
 - [Выполнение восстановления на момент времени в данных блочного BLOB-объекта](point-in-time-restore-manage.md)
 - [Поддержка веб-канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md)
-- [Включение обратимого удаления для больших двоичных объектов](soft-delete-enable.md)
+- [Включение обратимого удаления для больших двоичных объектов](./soft-delete-blob-enable.md)
 - [Включение управления версиями BLOB-объектов и работа с ним](versioning-enable.md)

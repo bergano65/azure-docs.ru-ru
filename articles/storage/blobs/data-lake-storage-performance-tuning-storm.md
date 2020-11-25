@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 85499839992f872896153e360507d7d1ba7fea38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4db85357ee970d13d6b4fcce195cae66932bed18
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88037207"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912796"
 ---
 # <a name="tune-performance-storm-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: & Azure Data Lake Storage 2-го поколения HDInsight
 
@@ -22,9 +22,9 @@ ms.locfileid: "88037207"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе [Краткое руководство. Создание учетной записи хранения для аналитики](data-lake-storage-quickstart-create-account.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-* **Запущенный кластер Storm в Data Lake Storage 2-го поколения**. Дополнительные сведения см. в разделе о чем больше [в HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-overview).
+* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе [Краткое руководство. Создание учетной записи хранения для аналитики](../common/storage-account-create.md).
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Запущенный кластер Storm в Data Lake Storage 2-го поколения**. Дополнительные сведения см. в разделе о чем больше [в HDInsight](../../hdinsight/storm/apache-storm-overview.md).
 * **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие понятия производительности см. в разделе [Data Lake Storage 2-го поколения рекомендации по настройке производительности](data-lake-storage-performance-tuning-guidance.md).   
 
 ## <a name="tune-the-parallelism-of-the-topology"></a>Настройка параллелизма топологии
@@ -110,10 +110,10 @@ ms.locfileid: "88037207"
 
 Чтобы проверить, применяется ли для вас регулирование, включите ведение журнала отладки на стороне клиента.
 
-1. В **Ambari**  >  **Storm**  >  **файле config**Ambari  >  **с расширенным набором данных-Worker-log4j**измените значение ** &lt; корневого &gt; уровня = "info"** на ** &lt; root &gt; Level = "Отладка"**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
+1. В **Ambari**  >  **Storm**  >  **файле config** Ambari  >  **с расширенным набором данных-Worker-log4j** измените значение **&lt; корневого &gt; уровня = "info"** на **&lt; root &gt; Level = "Отладка"**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 2-го поколения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-В [этом блоге](https://blogs.msdn.microsoft.com/shanyu/2015/05/14/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs/)можно ссылаться на дополнительную настройку производительности для работы с ними.
+## <a name="next-steps"></a>Дальнейшие действия
+В [этом блоге](/archive/blogs/shanyu/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs)можно ссылаться на дополнительную настройку производительности для работы с ними.
 
 Дополнительный пример для запуска есть [в этом разделе GitHub](https://github.com/hdinsight/storm-performance-automation).

@@ -3,14 +3,14 @@ title: Развертывание гибридной рабочей роли Run
 description: В этой статье рассказывается, как развернуть гибридную рабочую роль Runbook, которую можно использовать для запуска модулей Runbook на компьютерах под управлением Windows в локальном центре обработки данных или в облачной среде.
 services: automation
 ms.subservice: process-automation
-ms.date: 11/23/2020
+ms.date: 11/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: cb501b954897beb73ae05bfdc7b5ded2221dc114
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 31bb0fac302a81c2523a2d2855ca1930cb266ac4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95493933"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95906625"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -20,7 +20,7 @@ ms.locfileid: "95493933"
 
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, убедитесь, что у вас есть следующее.
 
@@ -50,7 +50,7 @@ ms.locfileid: "95493933"
 
 Ниже приведены минимальные требования для гибридной рабочей роли системы Windows и пользователя.
 
-* Windows PowerShell версии 5.1 или более поздней ([скачать WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616));
+* Windows PowerShell 5,1 ([Загрузка WMF 5,1](https://www.microsoft.com/download/details.aspx?id=54616)). PowerShell Core не поддерживается.
 * .NET Framework 4.6.2 или более поздней версии.
 * два ядра;
 * 4 ГБ ОЗУ;

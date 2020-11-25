@@ -2,19 +2,21 @@
 title: Параметры в шаблонах
 description: Описывает, как определить параметры в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 09/05/2019
-ms.openlocfilehash: 89c6984c587e8dae59c1825a99d4f8da1c06dafb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/24/2020
+ms.openlocfilehash: 8cdc95037967a32c2d8464f4dc39b1e7369102bb
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76122429"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95911419"
 ---
 # <a name="parameters-in-azure-resource-manager-templates"></a>Параметры в шаблонах Azure Resource Manager
 
 В этой статье описывается определение и использование параметров в шаблоне Azure Resource Manager. Предоставляя различные значения параметров, можно повторно использовать шаблон для разных сред.
 
 Диспетчер ресурсов разрешает значения параметров перед началом операций развертывания. Везде, где в шаблоне используется параметр, диспетчер ресурсов заменяет его разрешенным значением.
+
+Для каждого параметра необходимо задать один из [типов данных](template-syntax.md#data-types).
 
 ## <a name="define-parameter"></a>Определить параметр
 

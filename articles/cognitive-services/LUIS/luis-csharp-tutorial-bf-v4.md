@@ -6,16 +6,16 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a8d6481bdf3476f8f91c437138f4b6f1ebd1f1de
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 931fa2c10a47e5d00f8e83b31b16618b06da8a46
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92058205"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019115"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-c"></a>Руководство по совместному использованию бота веб-приложения и службы распознавания речи в C#
 
-Использование C# для создания чат-бота для интеграции со службой распознавания речи (LUIS). Бот создается с помощью ресурса [Бот веб-приложения](https://docs.microsoft.com/azure/bot-service/) Azure и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-dotnet).
+Использование C# для создания чат-бота для интеграции со службой распознавания речи (LUIS). Бот создается с помощью ресурса [Бот веб-приложения](/azure/bot-service/) Azure и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-dotnet).
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -336,4 +336,4 @@ ms.locfileid: "92058205"
 См. дополнительные [примеры](https://github.com/microsoft/botframework-solutions) чат-ботов.
 
 > [!div class="nextstepaction"]
-> [Tutorial: Build LUIS app to determine user intentions](luis-quickstart-intents-only.md) (Учебник: создание приложения LUIS для определения намерений пользователя)
+> [Tutorial: Build LUIS app to determine user intentions](./tutorial-intents-only.md) (Учебник: создание приложения LUIS для определения намерений пользователя)

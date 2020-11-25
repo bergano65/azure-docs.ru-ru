@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: e9d638a7ed17d08b585c71b1dac4a0177f4a2939
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b95d37e1725940799750dbd3c29174d9855390d6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88030526"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912932"
 ---
 # <a name="tune-performance-mapreduce-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: MapReduce, HDInsight & Azure Data Lake Storage 2-го поколения
 
@@ -22,9 +22,9 @@ ms.locfileid: "88030526"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе Краткое руководство. [Создание учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. статью [использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) .
-* **Использование MapReduce в HDInsight**.  См. дополнительные сведения об [использовании MapReduce в Hadoop и HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-mapreduce)
+* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе Краткое руководство. [Создание учетной записи хранения Azure Data Lake Storage 2-го поколения](../common/storage-account-create.md).
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. статью [использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) .
+* **Использование MapReduce в HDInsight**.  См. дополнительные сведения об [использовании MapReduce в Hadoop и HDInsight](../../hdinsight/hadoop/hdinsight-use-mapreduce.md)
 * **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие вопросы, связанные с производительностью, см. в [рекомендациях по настройке производительности Data Lake Storage 2-го поколения](data-lake-storage-performance-tuning-guidance.md)
 
 ## <a name="parameters"></a>Параметры

@@ -9,12 +9,12 @@ ms.date: 09/09/2020
 ms.author: normesta
 ms.reviewer: jamsbak
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: b7f566f85ebdb6b481797823cba78aa968747e9f
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b02f5a7c390c5594a7c5692798a0691c8d9a42d0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746429"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912779"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration"></a>Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage
 
@@ -26,7 +26,7 @@ ms.locfileid: "92746429"
 
 - Для доступа к службе хранилища Azure требуется подписка Azure. Если у вас еще нет подписки, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-- Учетная запись хранения **общего назначения версии 2** . см. раздел [Создание учетной записи хранения](../common/storage-quickstart-create-account.md).
+- Учетная запись хранения **общего назначения версии 2** . см. раздел [Создание учетной записи хранения](../common/storage-account-create.md).
 
 - Выберите вкладку, чтобы просмотреть все предварительные требования, относящиеся к пакету SDK.
 
@@ -90,9 +90,9 @@ ms.locfileid: "92746429"
    Register-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName BlobQuery
    ```
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
-1. Откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) или, если вы [установили](https://docs.microsoft.com/cli/azure/install-azure-cli) Azure CLI локально, командное консольное приложение (например, Windows PowerShell).
+1. Откройте [Azure Cloud Shell](../../cloud-shell/overview.md) или, если вы [установили](/cli/azure/install-azure-cli) Azure CLI локально, командное консольное приложение (например, Windows PowerShell).
 
 2. Если ваше удостоверение связано с более чем одной подпиской, установите активную подписку на подписку учетной записи хранения.
 
@@ -120,7 +120,7 @@ ms.locfileid: "92746429"
 Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName BlobQuery
 ```
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы убедиться, что регистрация завершена, используйте команду [AZ Feature](/cli/azure/feature#az-feature-show) .
 
@@ -142,7 +142,7 @@ az feature show --namespace Microsoft.Storage --name BlobQuery
 Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
 ```
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы зарегистрировать поставщик ресурсов, используйте команду [AZ Provider Register](/cli/azure/provider#az-provider-register) .
 
@@ -328,7 +328,7 @@ Get-QueryCsv $ctx $container $blob "SELECT * FROM BlobStorage WHERE _3 = 'Heming
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
-Асинхронный метод `BlobQuickQueryClient.QueryAsync` отправляет запрос в API ускорения запросов, а затем отправляет результаты обратно в приложение в виде объекта [потока](https://docs.microsoft.com/dotnet/api/system.io.stream) .
+Асинхронный метод `BlobQuickQueryClient.QueryAsync` отправляет запрос в API ускорения запросов, а затем отправляет результаты обратно в приложение в виде объекта [потока](/dotnet/api/system.io.stream) .
 
 ```cs
 static async Task QueryHemingway(BlockBlobClient blob)

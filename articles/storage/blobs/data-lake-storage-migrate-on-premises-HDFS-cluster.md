@@ -8,12 +8,12 @@ ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: jamesbak
-ms.openlocfilehash: a50f85e76f16f1e5ba8823adb1ea1aa02157fcee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e58137dd680ff9a2be2bd657f0969304b526873f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88032566"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95913119"
 ---
 # <a name="migrate-from-on-prem-hdfs-store-to-azure-storage-with-azure-data-box"></a>Перенос из локального хранилища HDFS в службу хранилища Azure с помощью Azure Data Box
 
@@ -37,9 +37,9 @@ ms.locfileid: "88032566"
 
 * [Устройство Azure Data Box](https://azure.microsoft.com/services/storage/databox/).
 
-  * [Закажите Data Box](https://docs.microsoft.com/azure/databox/data-box-deploy-ordered) или [Data Box Heavy](https://docs.microsoft.com/azure/databox/data-box-heavy-deploy-ordered). 
+  * [Закажите Data Box](../../databox/data-box-deploy-ordered.md) или [Data Box Heavy](../../databox/data-box-heavy-deploy-ordered.md). 
 
-  * Кабель и подключите [Data Box](https://docs.microsoft.com/azure/databox/data-box-deploy-set-up) или [Data Box Heavy](https://docs.microsoft.com/azure/databox/data-box-heavy-deploy-set-up) к локальной сети.
+  * Кабель и подключите [Data Box](../../databox/data-box-deploy-set-up.md) или [Data Box Heavy](../../databox/data-box-heavy-deploy-set-up.md) к локальной сети.
 
 Если все готово, начнем.
 
@@ -53,13 +53,13 @@ ms.locfileid: "88032566"
 
 Выполните следующие действия, чтобы скопировать данные с помощью интерфейсов API для хранилища BLOB-объектов или объекта на устройство Data Box. Интерфейс REST API сделает устройство отображаемым в кластере в качестве хранилища HDFS.
 
-1. Прежде чем копировать данные через остальное, укажите примитивы безопасности и подключения для подключения к интерфейсу RESTFUL на Data Box или Data Box Heavy. Войдите в локальный веб-интерфейс Data Box и перейдите на страницу **подключение и копирование** . В учетной записи хранения Azure для устройства в разделе **параметры доступа**выберите, а затем — **остальные**.
+1. Прежде чем копировать данные через остальное, укажите примитивы безопасности и подключения для подключения к интерфейсу RESTFUL на Data Box или Data Box Heavy. Войдите в локальный веб-интерфейс Data Box и перейдите на страницу **подключение и копирование** . В учетной записи хранения Azure для устройства в разделе **параметры доступа** выберите, а затем — **остальные**.
 
     ![Страница "подключение и копирование"](media/data-lake-storage-migrate-on-premises-HDFS-cluster/data-box-connect-rest.png)
 
 2. В диалоговом окне доступ к учетной записи хранения и отправка данных скопируйте **конечную точку службы BLOB-объектов** и **ключ учетной записи хранения**. В конечной точке службы BLOB-объектов опустите `https://` и замыкающую косую черту.
 
-    В этом случае конечной точкой является: `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/` . Часть URI, которую вы будете использовать, имеет следующие узлы: `mystorageaccount.blob.mydataboxno.microsoftdatabox.com` . Пример см. в разделе [Подключение к оставшимся по протоколу HTTP](/azure/databox/data-box-deploy-copy-data-via-rest). 
+    В этом случае конечной точкой является: `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/` . Часть URI, которую вы будете использовать, имеет следующие узлы: `mystorageaccount.blob.mydataboxno.microsoftdatabox.com` . Пример см. в разделе [Подключение к оставшимся по протоколу HTTP](../../databox/data-box-deploy-copy-data-via-rest.md). 
 
      ![Диалоговое окно "доступ к учетной записи хранения и передача данных"](media/data-lake-storage-migrate-on-premises-HDFS-cluster/data-box-connection-string-http.png)
 
@@ -161,7 +161,7 @@ ms.locfileid: "88032566"
 
 Выполните следующие действия, чтобы подготовить и доставить устройство Data Box в корпорацию Майкрософт.
 
-1. Сначала  [Подготовка к отправке на Data Box или Data Box Heavy](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest).
+1. Сначала  [Подготовка к отправке на Data Box или Data Box Heavy](../../databox/data-box-deploy-copy-data-via-rest.md).
 
 2. После завершения подготовки устройства Скачайте файлы спецификации. Эти файлы BOM или manifest будут использоваться позже для проверки данных, передаваемых в Azure.
 
@@ -169,9 +169,9 @@ ms.locfileid: "88032566"
 
 4. Вызовите курьера для отправки посылки службой доставки UPS.
 
-    * Сведения об устройствах Data Box см. [в разделе доставка Data Box](https://docs.microsoft.com/azure/databox/data-box-deploy-picked-up).
+    * Сведения об устройствах Data Box см. [в разделе доставка Data Box](../../databox/data-box-deploy-picked-up.md).
 
-    * Сведения об устройствах Data Box Heavy см. [в разделе доставка Data Box Heavy](https://docs.microsoft.com/azure/databox/data-box-heavy-deploy-picked-up).
+    * Сведения об устройствах Data Box Heavy см. [в разделе доставка Data Box Heavy](../../databox/data-box-heavy-deploy-picked-up.md).
 
 5. После получения устройства Корпорация Майкрософт подключается к сети центра обработки данных, и данные передаются в учетную запись хранения, указанную при помещении заказа устройства. Проверьте соответствие файлов спецификации с файлами спецификаций, которые передаются в Azure. 
 
@@ -184,11 +184,11 @@ ms.locfileid: "88032566"
 
 ### <a name="create-a-service-principal-for-your-azure-data-lake-storage-gen2-account"></a>Создание субъекта-службы для учетной записи Azure Data Lake Storage 2-го поколения
 
-Сведения о создании субъекта-службы см. в статье [как использовать портал для создания приложения Azure AD и субъекта-службы, которые могут получать доступ к ресурсам](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+Сведения о создании субъекта-службы см. в статье [как использовать портал для создания приложения Azure AD и субъекта-службы, которые могут получать доступ к ресурсам](../../active-directory/develop/howto-create-service-principal-portal.md).
 
-* При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
+* При выполнении действий, описанных в разделе [Назначение приложению роли](../../active-directory/develop/howto-create-service-principal-portal.md#assign-a-role-to-the-application) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
 
-* При выполнении действий, описанных в разделе [Получение значений для входа в](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) статье, сохраните идентификатор приложения и значения секрета клиента в текстовом файле. Они вам скоро понадобятся.
+* При выполнении действий, описанных в разделе [Получение значений для входа в](../../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in) статье, сохраните идентификатор приложения и значения секрета клиента в текстовом файле. Они вам скоро понадобятся.
 
 ### <a name="generate-a-list-of-copied-files-with-their-permissions"></a>Создать список скопированных файлов с разрешениями
 

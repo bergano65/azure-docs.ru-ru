@@ -6,16 +6,16 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4d399dc9298c51906d62dabbc36650bf21f94af8
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: d070a03a81f70cdbf2c721cc67a3bc40c5d731fc
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542836"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018741"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-nodejs"></a>Руководство по совместному использованию бота веб-приложения и службы "Распознавание речи" в Node.js
 
-Создавайте чат-боты, интегрированные со службой "Распознавание речи" (LUIS), используя Node.js. Бот создается с помощью ресурса [Бот веб-приложения](https://docs.microsoft.com/azure/bot-service/) Azure и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-dotnet).
+Создавайте чат-боты, интегрированные со службой "Распознавание речи" (LUIS), используя Node.js. Бот создается с помощью ресурса [Бот веб-приложения](/azure/bot-service/) Azure и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-dotnet).
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -395,4 +395,4 @@ ms.locfileid: "94542836"
 См. дополнительные [примеры](https://github.com/microsoft/botframework-solutions) чат-ботов.
 
 > [!div class="nextstepaction"]
-> [Tutorial: Build LUIS app to determine user intentions](luis-quickstart-intents-only.md) (Учебник: создание приложения LUIS для определения намерений пользователя)
+> [Tutorial: Build LUIS app to determine user intentions](./tutorial-intents-only.md) (Учебник: создание приложения LUIS для определения намерений пользователя)

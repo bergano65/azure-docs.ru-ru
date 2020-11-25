@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 07/02/2020
+ms.date: 11/24/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a779fee89d52442207358cf90c8cf87e7ef221c2
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5ef2d233024ab3e9cd086e8285e681dc9f42f3f7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837657"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95904024"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -70,7 +70,7 @@ ms.locfileid: "94837657"
 
 Организации могут потребовать, чтобы попытка доступа к выбранным облачным приложениям выполнялась из утвержденного клиентского приложения. Эти утвержденные клиентские приложения поддерживают [политики защиты приложений Intune](/intune/app-protection-policy) независимо от любого решения по управлению мобильными устройствами (MDM).
 
-Чтобы использовать этот элемент управления предоставлением, условный доступ требует, чтобы устройство было зарегистрировано в Azure Active Directory, которое требует использования приложения брокера. Приложение брокера может быть Microsoft Authenticatorом для iOS либо Microsoft Authenticator или корпоративного портала Майкрософт для устройств Android. Если приложение брокера не установлено на устройстве, когда пользователь пытается пройти проверку подлинности, он перенаправляется в соответствующее хранилище приложений или игр для установки необходимого приложения брокера.
+Чтобы использовать этот элемент управления предоставлением, условный доступ требует, чтобы устройство было зарегистрировано в Azure Active Directory, которое требует использования приложения брокера. Приложение брокера может быть Microsoft Authenticatorом для iOS либо Microsoft Authenticator или корпоративного портала Майкрософт для устройств Android. Если приложение брокера не установлено на устройстве, когда пользователь пытается пройти проверку подлинности, он перенаправляется в соответствующее хранилище приложений для установки необходимого приложения брокера.
 
 Этот параметр применяется к следующим приложениям iOS и Android:
 

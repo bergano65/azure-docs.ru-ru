@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 734ad2d45dbb27894e5da4fbeb11c0e8b60df8bd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e69a97a86a357fb36dde572f292b5cac7963d14a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88035677"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912490"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2"></a>Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения
 
@@ -27,7 +27,7 @@ DistCp предоставляет различные параметры кома
 * Существующая учетная запись хранения Azure без включенных возможностей Data Lake Storage 2-го поколения (иерархическое пространство имен).
 * Учетная запись хранения Azure с включенными возможностями Data Lake Storage 2-го поколения (иерархическое пространство имен). Инструкции по созданию базы данных см. в статье [Создание учетной записи хранения Azure](../common/storage-account-create.md).
 * Контейнер, созданный в учетной записи хранения с включенным иерархическим пространством имен.
-* Кластер Azure HDInsight с доступом к учетной записи хранения с включенной функцией иерархического пространства имен. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* Кластер Azure HDInsight с доступом к учетной записи хранения с включенной функцией иерархического пространства имен. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 
 ## <a name="use-distcp-from-an-hdinsight-linux-cluster"></a>Использование Distcp из кластера HDInsight на платформе Linux
 

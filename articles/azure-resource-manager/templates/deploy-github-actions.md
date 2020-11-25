@@ -4,12 +4,12 @@ description: Описывает развертывание шаблонов Azur
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: adb0b9d9a7da19c45904a5d222573e1880915b12
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 3dcb246956aae274f17cf938ee3d406562b22941
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841688"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95905265"
 ---
 # <a name="deploy-azure-resource-manager-templates-by-using-github-actions"></a>Развертывание шаблонов Resource Manager с помощью действий GitHub
 
@@ -112,7 +112,7 @@ https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-st
         steps:
 
           # Checkout code
-        - uses: actions/checkout@master
+        - uses: actions/checkout@main
 
           # Log into Azure
         - uses: azure/login@v1
@@ -137,10 +137,10 @@ https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-st
     Первый раздел файла рабочего процесса включает в себя:
 
     - **name**. Имя рабочего процесса.
-    - **on**. Имя событий GitHub, которые инициируют рабочий процесс. Рабочий процесс инициируется при наличии события отправки в главной ветви, которое изменяет по крайней мере один из двух указанных файлов. Два файла — это файл рабочего процесса и файл шаблона.
+    - **on**. Имя событий GitHub, которые инициируют рабочий процесс. Рабочий процесс активируется при наличии события push в основной ветви, которая изменяет по крайней мере один из двух указанных файлов. Два файла — это файл рабочего процесса и файл шаблона.
 
 1. Выберите **Начать фиксацию**.
-1. Выберите **Зафиксировать непосредственно в главной ветви**.
+1. Выберите параметр **зафиксировать непосредственно в главной ветви**.
 1. Выберите **Зафиксировать новый файл** (или **Зафиксировать изменения**).
 
 Так как рабочий процесс настроен на активацию файлом рабочего процесса или обновлением файла шаблона, рабочий процесс запускается сразу после фиксации изменений.
@@ -152,7 +152,6 @@ https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-st
 1. Выберите **выполнить развертывание ARM** в меню, чтобы проверить развертывание.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-
 Если группа ресурсов и репозиторий больше не требуются, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub. 
 
 ## <a name="next-steps"></a>Дальнейшие действия

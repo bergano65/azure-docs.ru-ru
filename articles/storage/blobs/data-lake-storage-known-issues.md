@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/28/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 909d64d3d32e8b9a314f7afb06b9c0121f624cec
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 32f8ab3f7e222108bec4ec81b14c113705370096
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358490"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95913068"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -41,21 +41,21 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 В этом разделе описываются проблемы и ограничения, возникающие при использования API больших двоичных объектов и API Data Lake Storage 2-го поколения для обработки одних и тех же данных.
 
-* Вы не можете использовать API BLOB и Data Lake Storage для записи в один и тот же экземпляр файла. Когда выполняется запись в файл с помощью API Data Lake Storage 2-го поколения, информация о блокировках этого файла не возвращается вызовом [Get Block List](https://docs.microsoft.com/rest/api/storageservices/get-block-list) из API больших двоичных объектов. Единственным исключением является перезапись при использовании. Вы можете перезаписать файл или большой двоичный объект с помощью любого API.
+* Вы не можете использовать API BLOB и Data Lake Storage для записи в один и тот же экземпляр файла. Когда выполняется запись в файл с помощью API Data Lake Storage 2-го поколения, информация о блокировках этого файла не возвращается вызовом [Get Block List](/rest/api/storageservices/get-block-list) из API больших двоичных объектов. Единственным исключением является перезапись при использовании. Вы можете перезаписать файл или большой двоичный объект с помощью любого API.
 
-* Если вы выполняете операцию [List Blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) без указания разделителя, результаты будут содержать не только большие двоичные объекты, но и каталоги. Если вы хотите указать разделитель, используйте только прямую косую черту (`/`). Это единственный поддерживаемый разделитель.
+* Если вы выполняете операцию [List Blobs](/rest/api/storageservices/list-blobs) без указания разделителя, результаты будут содержать не только большие двоичные объекты, но и каталоги. Если вы хотите указать разделитель, используйте только прямую косую черту (`/`). Это единственный поддерживаемый разделитель.
 
-* Если вы используете API [Delete BLOB](https://docs.microsoft.com/rest/api/storageservices/delete-blob) для удаления каталога, удаляется только пустой каталог. Это означает, что API больших двоичных объектов невозможно использовать для рекурсивного удаления каталогов.
+* Если вы используете API [Delete BLOB](/rest/api/storageservices/delete-blob) для удаления каталога, удаляется только пустой каталог. Это означает, что API больших двоичных объектов невозможно использовать для рекурсивного удаления каталогов.
 
 Следующие REST API больших двоичных объектов не поддерживаются:
 
-* [Put BLOB](https://docs.microsoft.com/rest/api/storageservices/put-blob) (вставка BLOB-объекта);
-* [Put Page](https://docs.microsoft.com/rest/api/storageservices/put-page)
-* [Get Page Ranges](https://docs.microsoft.com/rest/api/storageservices/get-page-ranges) (получение диапазона страницы);
-* [Incremental Copy Blob](https://docs.microsoft.com/rest/api/storageservices/incremental-copy-blob) (инкрементная копия Blob);
-* [Put Page from URL](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url) (размещение страницы по URL-адресу);
-* [Append Block](https://docs.microsoft.com/rest/api/storageservices/append-block)
-* [Append Block from URL](https://docs.microsoft.com/rest/api/storageservices/append-block-from-url) (добавление блока по URL-адресу).
+* [Put BLOB](/rest/api/storageservices/put-blob) (вставка BLOB-объекта);
+* [Put Page](/rest/api/storageservices/put-page)
+* [Get Page Ranges](/rest/api/storageservices/get-page-ranges) (получение диапазона страницы);
+* [Incremental Copy Blob](/rest/api/storageservices/incremental-copy-blob) (инкрементная копия Blob);
+* [Put Page from URL](/rest/api/storageservices/put-page-from-url) (размещение страницы по URL-адресу);
+* [Append Block](/rest/api/storageservices/append-block)
+* [Append Block from URL](/rest/api/storageservices/append-block-from-url) (добавление блока по URL-адресу).
 
 
 Неуправляемые диски виртуальной машины не поддерживаются в учетных записях с иерархическим пространством имен. Если вы хотите использовать в учетной записи хранения иерархические пространства имен, разместите неуправляемые диски виртуальных машин в другой учетной записи хранения, для которой не включена функция иерархического пространства имен.
@@ -70,7 +70,7 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 ## <a name="azcopy"></a>AzCopy
 
-Всегда используйте только последнюю версию AzCopy ([AzCopy 10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)).  Более старые версии AzCopy, например AzCopy 8.1, не поддерживаются.
+Всегда используйте только последнюю версию AzCopy ([AzCopy 10](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json)).  Более старые версии AzCopy, например AzCopy 8.1, не поддерживаются.
 
 <a id="storage-explorer"></a>
 
@@ -92,7 +92,7 @@ API больших двоичных объектов и API Data Lake Storage 2-
 
 ## <a name="access-control-lists-acl-and-anonymous-read-access"></a>Списки управления доступом (ACL) и анонимный доступ на чтение
 
-Если для контейнера предоставлен [анонимный доступ на чтение](storage-manage-access-to-resources.md), то списки управления доступом не влияют на этот контейнер и (или) файлы в нем.
+Если для контейнера предоставлен [анонимный доступ на чтение](./anonymous-read-access-configure.md), то списки управления доступом не влияют на этот контейнер и (или) файлы в нем.
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
 

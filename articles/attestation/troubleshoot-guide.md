@@ -1,5 +1,5 @@
 ---
-title: Руководство по устранению неполадок аттестации Azure
+title: Руководство по устранению неполадок Аттестации Azure
 description: Пошаговое решение проблем с типичными замеченными проблемами
 services: attestation
 author: msmbaldwin
@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 46e3521a54f6bfdfbfb25634a09b8c8e0cfdcac0
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: fe347983e2143c7a4bdf00ca0207356c881c66ac
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93343237"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95891288"
 ---
 # <a name="microsoft-azure-attestation-troubleshooting-guide"></a>Руководство по устранению неполадок аттестации Microsoft Azure
 
@@ -62,9 +62,9 @@ At line:1 char:1
 
 Чтобы проверить роли в PowerShell, выполните следующую команду:
 
-а. Запустите PowerShell и войдите в Azure с помощью командлета Connect-Азаккаунт.
+a. Запустите PowerShell и войдите в Azure с помощью командлета Connect-Азаккаунт.
 
-b. Проверка параметров назначения ролей RBAC
+b. Проверка параметров назначения ролей Azure
 
 
   ```powershell
@@ -261,7 +261,7 @@ At line:1 char:1
 
 Не удалось установить модули az или AZ. аттестации в PowerShell
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 ВНИМАНИЕ! не удалось разрешить источник пакета " https://www.powershellgallery.com/api/v2 паккажеманажемент\инсталл-паккаже: не найдено совпадений для указанных условий поиска и имени модуля
 
@@ -279,7 +279,7 @@ At line:1 char:1
 
 Пользователь назначен с соответствующими ролями. Но при управлении политиками аттестации с помощью PowerShell возникают проблемы с авторизацией.
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 Клиент с идентификатором объекта <object Id>  не имеет авторизации для выполнения действия Microsoft. Authorization/roleassignments/overwrite Scope ' подписками/ <subscriptionId> resourcegroups/secure_enclave_poc/провидерс/Микрософт.аусоризатион/ролеассигнментс/ <role assignmentId> ' или Недопустимая область. Если доступ был недавно предоставлен, обновите учетные данные.
 
 ### <a name="troubleshooting-steps"></a>Действия по устранению неполадок

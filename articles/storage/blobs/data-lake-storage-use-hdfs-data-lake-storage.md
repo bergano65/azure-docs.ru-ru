@@ -9,12 +9,12 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: artek
-ms.openlocfilehash: 1d720aed44358dd314bc4226adb9ad517139cd18
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2b36dd600efa864913e0087c49bffd556e8330d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87836315"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912405"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
@@ -29,7 +29,7 @@ HDInsight предоставляет доступ к распределенно�
 
 ## <a name="use-the-hdfs-cli-with-an-hdinsight-hadoop-cluster-on-linux"></a>Использование HDFS CLI с кластером HDInsight Hadoop в Linux
 
-Сначала установите [удаленный доступ к службам](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-information#remote-access-to-services). Если выбрать параметр [SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix), образец кода PowerShell будет выглядеть следующим образом.
+Сначала установите [удаленный доступ к службам](../../hdinsight/hdinsight-hadoop-linux-information.md#remote-access-to-services). Если выбрать параметр [SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md), образец кода PowerShell будет выглядеть следующим образом.
 
 ```powershell
 #Connect to the cluster via SSH.
@@ -58,7 +58,7 @@ hdfs dfs -mkdir /samplefolder
 
 Замените `<path>` заполнитель URI контейнера или папки контейнера.
 
-Например: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
+Пример: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
 
 ## <a name="create-a-directory"></a>Создание каталога
 
@@ -66,7 +66,7 @@ hdfs dfs -mkdir /samplefolder
 
 Замените `<path>` заполнитель именем корневого контейнера или папкой в контейнере.
 
-Например: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
+Пример: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
 
 ## <a name="delete-a-file-or-directory"></a>Удаление файла или каталога
 
@@ -74,7 +74,7 @@ hdfs dfs -mkdir /samplefolder
 
 Замените заполнитель `<path>` на URI файла или папки, которые нужно удалить.
 
-Например: `hdfs dfs -rmdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name/my-file-name`
+Пример: `hdfs dfs -rmdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name/my-file-name`
 
 ## <a name="display-the-access-control-lists-acls-of-files-and-directories"></a>Отображение списков управления доступом (ACL) файлов и каталогов
 
@@ -116,8 +116,8 @@ hdfs dfs -mkdir /samplefolder
 
 Полный список команд можно просмотреть на веб-сайте [Apache Hadoop 2.4.1 File System Guide](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](./data-lake-storage-quickstart-create-databricks-account.md)
 
-* [Сведения о списках управления доступом к файлам и каталогам](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
+* [Сведения о списках управления доступом к файлам и каталогам](./data-lake-storage-access-control.md)

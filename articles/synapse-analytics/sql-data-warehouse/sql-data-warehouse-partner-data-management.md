@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e029de19e6bdb635dfc4797367de29dfb87e32ce
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: da6387c55200bad3458705cf570f60ca40db1be0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325403"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95900620"
 ---
 # <a name="azure-synapse-analytics-data-management-partners"></a>Партнеры по управлению данными в Azure Synapse Analytics
 
@@ -34,6 +34,7 @@ ms.locfileid: "93325403"
 | ![Redpoint Global](./media/sql-data-warehouse-partner-data-management/redpoint-global-logo.png) |**RedPoint Data Management**<br>RedPoint Управление данными позволяет рынкам применять все свои данные для работы с межканальным взаимодействием клиентов при выполнении структурированного и неструктурированного управления данными. С помощью RedPoint можно максимально увеличить значение структурированных и неструктурированных данных, чтобы обеспечить персонализированные контекстные взаимодействия, необходимые для привлечения современных клиентов. Интерфейс обеспечивает перетаскивание данных и упрощает процесс управления данными. |[Страница продукта](https://www.redpointglobal.com/customer-data-management)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/redpoint-global.redpoint-rpdm)<br> |
 | ![Sentry One](./media/sql-data-warehouse-partner-data-management/sql-sentry-logo.png) |**SentryOne (DW Sentry)**<br>Благодаря интеллектуальной панели мониторинга перемещения данных и календарю событий вы всегда будете знать, что влияет на вашу рабочую нагрузку. Они предназначены для просмотра запросов и заданий, выполняющихся для загрузки, резервного копирования или восстановления данных, никогда не беспокойтесь о максимальном использовании ресурсов Azure. |[Страница продукта](https://sentryone.com/platform/azure-sql-dw-performance-monitoring/)<br>[Azure Marketplace](https://sentryone.com/platform/azure-sql-dw-performance-monitoring/)<br> |
 | ![SqlDBM](./media/sql-data-warehouse-partner-data-management/sqldbm-logo.png) |**SqlDBM**<br>SqlDBM — это облачное средство моделирования данных, которое предоставляет простой и удобный способ разработки базы данных в любом месте в любом браузере. Кроме того, оно содержит все необходимые правила и объекты базы данных, например ключи базы данных, схемы, индексы, ограничения столбцов и отношения. |[Страница продукта](http://sqldbm.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/sqldbm1583438206845.sqldbm-data-modeling-tool?tab=Overview)<br>|
+| ![тамр](./media/sql-data-warehouse-partner-data-management/tamr-logo.png) |**тамр**<br>С помощью Тамр организации могут предоставлять Azure синапсе с главными данными, что позволяет им получить максимальную отдело от аналитических возможностей Azure синапсе. Облачные решения для работы с данными в облаке Тамр используют машинное обучение, чтобы выполнить тяжелую работу по объединению, очистке и категоризации данных с интуитивными рабочими процессами для сбора отзывов, чтобы преодолеть разрыв между данными и результатами бизнеса. Тамр интегрируется со службами данных Azure, включая Azure синапсе Analytics, Azure Databricks, Azure HDInsight, каталог данных Azure, Azure Data Lake Storage и фабрику данных Azure. Она обеспечивает возможность масштабирования данных в масштабе с более низкой совокупной стоимостью владения, используя преимущества гибкости и масштабирования Azure. |[Страница продукта](https://www.tamr.com/tamr-partners/microsoft-azure/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/tamrinc.unify_v_2019?tab=Overview) |
 | ![телеран](./media/sql-data-warehouse-partner-data-management/teleran-logo.jpg) |**телеран**<br>Элемент управления "запрос телеран" предотвращает достижение недопустимых и плохо сформированных запросов на синапсе и расход ресурсов вычислений. Он отправляет Интеллектуальные сообщения пользователям аналитики для более эффективного взаимодействия с данными. Цель состоит в том, чтобы обеспечить хорошие результаты бизнеса, не тратя затраты на Azure. Анализ использования телеран обеспечивает анализ действий пользователя, приложения, запроса и использования данных. Она позволяет всегда иметь всю картину того, что происходит. Она позволяет улучшить обслуживание, повысить продуктивность бизнеса и оптимизировать затраты на использование синапсе. |[Страница продукта](https://teleran.com/azure-synapse-optimization-cost-control/)<br>|
 
 ## <a name="next-steps"></a>Дальнейшие действия

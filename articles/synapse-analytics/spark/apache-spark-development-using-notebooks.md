@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: dcf34d896deafad77d16619f3883ddd103fc55d4
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: c35ee7bcdefa5091d9c887430182638f066cb9fa
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95790698"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95900913"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-preview-notebooks-in-azure-synapse-analytics"></a>Создание, разработка и обслуживание записных книжек синапсе Studio (Предварительная версия) в Azure синапсе Analytics
 
@@ -399,68 +399,6 @@ df = spark.read.option("header", "true") \
 
 ![data-to-cell](./media/apache-spark-development-using-notebooks/synapse-data-to-cell.png)
 
-## <a name="visualize-data-in-a-notebook"></a>Визуализация данных в записной книжке
-
-### <a name="produce-rendered-table-view"></a>Создать представление таблицы, подготовленной к просмотру
-
-Представление табличных результатов предоставляется с возможностью создания линейчатой диаграммы, графика, круговой диаграммы, точечной диаграммы и диаграммы с областями. Визуализировать данные можно без написания кода. Диаграммы можно настроить в области **Параметры диаграммы**. 
-
-Выходные данные магических команд **%%sql** отображаются в представлении отображаемой таблицы по умолчанию. Вы можете вызывать <code>display(df)</code> в таблицах данных Spark, Pandas данных DataTables, List или отказоустойчивых распределенных наборах (RDD) для создания представления таблицы, подготовленного к просмотру.
-
-   [![builtin-charts](./media/apache-spark-development-using-notebooks/synapse-builtin-charts.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts.png#lightbox)
-
-### <a name="visualize-built-in-charts-from-large-scale-dataset"></a>Визуализация встроенных диаграмм из большого набора данных 
-
-По умолчанию <code>display(df)</code> функция принимает только первые 1000 строк данных для отрисовки диаграмм. Проверьте **агрегирование всех результатов** и нажмите кнопку **Применить** . вы примените создание диаграммы из всего набора данных. Задание Spark будет активировано при изменении параметра диаграммы, выполнение вычисления и отрисовка диаграммы займет некоторое время. 
-    [![Встроенные диаграммы — агрегирование-все](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-aggregation-all.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-aggregation-all.png#lightbox)
-
-
-
-### <a name="visualize-data-statistic-information"></a>Визуализация статистических данных
-Можно использовать <code>display(df, summary = True)</code> для проверки сводки статистики по заданному кадру данных Spark, включающего в себя имя столбца, тип столбца, уникальные значения и отсутствующие значения для каждого столбца. Можно также выбрать конкретный столбец, чтобы увидеть его минимальное значение, максимальное значение, среднее значение и стандартное отклонение.
-    [![встроенные диаграммы — сводка ](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-summary.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-summary.png#lightbox)
-
-### <a name="render-html-or-interactive-libraries"></a>Прорисовка библиотек HTML или интерактивной библиотеки
-
-Вы можете визуализировать код HTML, включая JavaScript, CSS, D3 или интерактивные библиотеки, например **Боке**, с помощью **дисплайхтмл ()**.
-
-Ниже приведен пример построения глифов на карте с использованием **bokeh**.
-
-   ![bokeh-example](./media/apache-spark-development-using-notebooks/synapse-bokeh-image.png)
-   
-
-Выполните следующий пример кода, чтобы нарисовать изображение выше.
-
-```python
-from bokeh.plotting import figure, output_file
-from bokeh.tile_providers import get_provider, Vendors
-from bokeh.embed import file_html
-from bokeh.resources import CDN
-from bokeh.models import ColumnDataSource
-
-tile_provider = get_provider(Vendors.CARTODBPOSITRON)
-
-# range bounds supplied in web mercator coordinates
-p = figure(x_range=(-9000000,-8000000), y_range=(4000000,5000000),
-           x_axis_type="mercator", y_axis_type="mercator")
-p.add_tile(tile_provider)
-
-# plot datapoints on the map
-source = ColumnDataSource(
-    data=dict(x=[ -8800000, -8500000 , -8800000],
-              y=[4200000, 4500000, 4900000])
-)
-
-p.circle(x="x", y="y", size=15, fill_color="blue", fill_alpha=0.8, source=source)
-
-# create an html document that embeds the Bokeh plot
-html = file_html(p, CDN, "my plot1")
-
-# display this html
-displayHTML(html)
-
-```
-
 ## <a name="save-notebooks"></a>Сохранение записных книжек
 
 Вы можете сохранить одну или все записные книжки в рабочей области.
@@ -539,11 +477,11 @@ displayHTML(html)
 
 1. Ячейка находится в режиме команд, когда нет текстового курсора для ввода текста. Когда ячейка находится в режиме команд, вы можете редактировать записную книжку целиком, но не вводить ее в отдельные ячейки. Введите режим команд, нажав `ESC` или выполнив команду мыши вне области редактора ячейки.
 
-   ![command-mode](./media/apache-spark-development-using-notebooks/synapse-command-mode2.png)
+   ![command-mode](./media/apache-spark-development-using-notebooks/synapse-command-mode-2.png)
 
 2. Режим правки обозначается текстовым курсором для ввода текста в области редактора. Если ячейка находится в режиме редактирования, ее можно ввести в ячейку. Войдите в режим редактирования, нажав `Enter` или выполнив команду мыши в области редактора ячейки.
    
-   ![edit-mode](./media/apache-spark-development-using-notebooks/synapse-edit-mode2.png)
+   ![edit-mode](./media/apache-spark-development-using-notebooks/synapse-edit-mode-2.png)
 
 ### <a name="shortcut-keys-under-command-mode"></a>Сочетания клавиш в режиме команд
 

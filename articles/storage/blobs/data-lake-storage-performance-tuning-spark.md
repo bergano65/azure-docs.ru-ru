@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 8ae9f96b42c0eb36a9380589780d141711c7ae4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c99d57ddd86ecff71c35ad6c0f2c2561e279b4b0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88034739"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912813"
 ---
 # <a name="tune-performance-spark-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: Spark, HDInsight & Azure Data Lake Storage 2-го поколения
 
@@ -23,9 +23,9 @@ ms.locfileid: "88034739"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе Краткое руководство. [Создание учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-* **Работающий кластер Spark в Data Lake Storage 2-го поколения.**  Дополнительные сведения см. в статье [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-spark-use-with-data-lake-store).
+* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе Краткое руководство. [Создание учетной записи хранения Azure Data Lake Storage 2-го поколения](../common/storage-account-create.md).
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Работающий кластер Spark в Data Lake Storage 2-го поколения.**  Дополнительные сведения см. в статье [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 2-го поколения](../../hdinsight/spark/apache-spark-use-with-data-lake-store.md).
 * **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие вопросы, связанные с производительностью, см. в [рекомендациях по настройке производительности Data Lake Storage 2-го поколения](data-lake-storage-performance-tuning-guidance.md) 
 
 ## <a name="parameters"></a>Параметры
@@ -124,4 +124,3 @@ ms.locfileid: "88034739"
 - Num-исполнителя = min (ограничение памяти, ограничение ЦП)
 - число исполнителей = min (16, 16)
 - число исполнителей = 16
-

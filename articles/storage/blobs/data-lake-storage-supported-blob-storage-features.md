@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: b670ec3cee2ebd1cc98ea2e04fb2b0dfd90e4e1a
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 900021e258bb96c0d0c83ef182262515449ad5df
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594221"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912592"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -31,7 +31,7 @@ ms.locfileid: "94594221"
 |"Холодный" уровень доступа|Общедоступная версия|Не поддерживается|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
 |События|Общедоступная версия|Общедоступная версия|[Reacting to Blob storage events (preview)](storage-blob-event-overview.md) (Реагирование на события хранилища BLOB-объектов)|
 |Метрики (классические)|Общедоступная версия|Общедоступная версия|[Метрики Аналитики Службы хранилища Azure (классические)](../common/storage-analytics-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Метрики в Azure Monitor|Общедоступная версия|Preview (Предварительный просмотр)|[Метрики службы хранилища Azure в Azure Monitor](../common/storage-metrics-in-azure-monitor.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Метрики в Azure Monitor|Общедоступная версия|Preview (Предварительный просмотр)|[Метрики службы хранилища Azure в Azure Monitor](./monitor-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Команды PowerShell для хранилища BLOB-объектов|Общедоступная версия|Общедоступная версия|[Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью PowerShell](storage-quickstart-blobs-powershell.md)|
 |Команды Azure CLI для хранилища BLOB-объектов|Общедоступная версия|Общедоступная версия|[Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI](storage-quickstart-blobs-cli.md)|
 |API хранилища BLOB-объектов|Общедоступная версия|Общедоступная версия|[Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET](storage-quickstart-blobs-dotnet.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 12](storage-quickstart-blobs-java.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12](storage-quickstart-blobs-python.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js](storage-quickstart-blobs-nodejs.md)|
@@ -39,12 +39,12 @@ ms.locfileid: "94594221"
 |Архивный уровень доступа|Общедоступная версия|Не поддерживается|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
 |Политики управления жизненным циклом (многоуровневое управление)|Общедоступная версия|Еще не поддерживается|[Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](storage-lifecycle-management-concepts.md)|
 |Политики управления жизненным циклом (удаление большого двоичного объекта)|Общедоступная версия|Общедоступная версия|[Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](storage-lifecycle-management-concepts.md)|
-|Вход в Azure Monitor|Preview (Предварительный просмотр) |Preview (Предварительный просмотр)|[Мониторинг службы хранилища Azure](../common/monitor-storage.md)|
+|Вход в Azure Monitor|Preview (Предварительный просмотр) |Preview (Предварительный просмотр)|[Мониторинг службы хранилища Azure](./monitor-blob-storage.md)|
 |Моментальные снимки|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Моментальные снимки BLOB-объектов](snapshots-overview.md)|
 |Статические веб-сайты|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)|
 |Неизменяемое хранилище|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)|
 |Обратимое удаление контейнера|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Обратимое удаление для контейнеров (Предварительная версия)](soft-delete-container-overview.md)|
-|Обратимое удаление BLOB-объекта|Еще не поддерживается|Еще не поддерживается|[Обратимое удаление для больших двоичных объектов](storage-blob-soft-delete.md)|
+|Обратимое удаление BLOB-объекта|Еще не поддерживается|Еще не поддерживается|[Обратимое удаление для больших двоичных объектов](./soft-delete-blob-overview.md)|
 |Blobfuse|Общедоступная версия|Общедоступная версия|[Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md)|
 |Отработка отказа учетной записи|Еще не поддерживается|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Список управления доступом для контейнера больших двоичных объектов|Не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>1</sup></div>|Не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|См. Примечание ниже этой таблицы.|

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/30/2020
+ms.date: 11/24/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fba2610b3343744c448e390bc2d713b38da481d
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 25c6ccb4661fde1efb088cd8535bf2759f2057b3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839477"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95902766"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Включение входа с использованием ключа безопасности без пароля для устройств Windows 10 с Azure Active Directory (Предварительная версия)
 
@@ -134,7 +134,7 @@ ms.locfileid: "94839477"
 - **Включение** этой политики позволяет пользователям входить с помощью ключей безопасности.
 - Если задать для этой политики значение " **отключено** " или " **не настроено** ", пользователи не смогут войти с помощью ключей безопасности.
 
-Для этого параметра групповая политика требуется обновленная версия `credentialprovider.admx` шаблона групповая политика. Этот новый шаблон доступен в следующей версии Windows Server и Windows 10 20H1. Этот параметр можно управлять с помощью устройства, работающего под управлением одной из этих новых версий Windows, или централизованно, следуя указаниям в разделе "поддержка", [а также о создании центрального хранилища для групповая политика административные шаблоны в Windows и управлении им](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
+Для этого параметра групповая политика требуется обновленная версия `CredentialProviders.admx` шаблона групповая политика. Этот новый шаблон доступен в следующей версии Windows Server и Windows 10 20H1. Этот параметр можно управлять с помощью устройства, работающего под управлением одной из этих новых версий Windows, или централизованно, следуя указаниям в разделе "поддержка", [а также о создании центрального хранилища для групповая политика административные шаблоны в Windows и управлении им](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
 
 ## <a name="sign-in-with-fido2-security-key"></a>Вход с помощью ключа безопасности FIDO2
 

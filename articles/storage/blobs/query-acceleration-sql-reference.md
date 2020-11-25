@@ -10,12 +10,12 @@ ms.date: 09/09/2020
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: ereilebr
-ms.openlocfilehash: affddf7367f58107106ae07a07b8baedac73e251
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2eda67e377a3b61e696e732b916d788c00a18eae
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89659567"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95908784"
 ---
 # <a name="query-acceleration-sql-language-reference"></a>Справочник по языку SQL для ускорения запросов
 
@@ -63,7 +63,7 @@ SELECT sys.split(split_size)FROM BlobStorage
 |timestamp|Момент времени.                           |
 |BOOLEAN  |True или False.                             |
 
-При чтении значений из данных в формате CSV все значения считываются как строки.  Строковые значения могут быть преобразованы в другие типы с помощью выражений ПРИВЕДЕНия.  Значения могут быть неявно приведены к другим типам в зависимости от контекста. Дополнительные сведения см. в разделе [приоритет типов данных (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-precedence-transact-sql).
+При чтении значений из данных в формате CSV все значения считываются как строки.  Строковые значения могут быть преобразованы в другие типы с помощью выражений ПРИВЕДЕНия.  Значения могут быть неявно приведены к другим типам в зависимости от контекста. Дополнительные сведения см. в разделе [приоритет типов данных (Transact-SQL)](/sql/t-sql/data-types/data-type-precedence-transact-sql).
 
 ## <a name="expressions"></a>Выражения
 
@@ -79,34 +79,34 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 |Оператор|Описание|
 |--|--|
-|[=](https://docs.microsoft.com/sql/t-sql/language-elements/equals-transact-sql)    |Проверяет равенство двух выражений (оператор сравнения).|
-|[!=](https://docs.microsoft.com/sql/t-sql/language-elements/not-equal-to-transact-sql-exclamation)    |Проверяет неравенство одного выражения другому (оператор сравнения).|
-|[<>](https://docs.microsoft.com/sql/t-sql/language-elements/not-equal-to-transact-sql-traditional)    |Сравнивает два выражения для неравенства (оператор сравнения).|
-|[<](https://docs.microsoft.com/sql/t-sql/language-elements/less-than-transact-sql)    |Сравнивает два выражения для меньшего (оператора сравнения).|
-|[<=](https://docs.microsoft.com/sql/t-sql/language-elements/less-than-or-equal-to-transact-sql)    |Сравнивает два выражения на наличие меньшего или равного (оператора сравнения).|
-|[>](https://docs.microsoft.com/sql/t-sql/language-elements/greater-than-transact-sql)    |Сравнивает два выражения для оператора "больше" (оператор сравнения). |
-|[>=](https://docs.microsoft.com/sql/t-sql/language-elements/greater-than-or-equal-to-transact-sql)    |Сравнивает два выражения на верность того, больше или равно одно выражение другому (оператор сравнения).|
-|[+](https://docs.microsoft.com/sql/t-sql/language-elements/add-transact-sql)    |складывает два числа. С помощью этого арифметического оператора сложения можно также прибавлять число дней к дате.|
-|[-](https://docs.microsoft.com/sql/t-sql/language-elements/subtract-transact-sql)    |Вычитает одно число из другого (оператор арифметического вычитания). |
-|[/](https://docs.microsoft.com/sql/t-sql/language-elements/divide-transact-sql)    |Выполняет деление одного числа на другое (арифметический оператор деления).|
-|[*](https://docs.microsoft.com/sql/t-sql/language-elements/multiply-transact-sql)    |Умножает два выражения (арифметический оператор умножения).|
-|[%](https://docs.microsoft.com/sql/t-sql/language-elements/modulo-transact-sql)    |Возвращает остаток от деления одного числа на другое.|
-|[AND](https://docs.microsoft.com/sql/t-sql/language-elements/bitwise-and-transact-sql)    |Выполняет побитовую логическую операцию «И» между двумя целочисленными значениями.|
-|[OR](https://docs.microsoft.com/sql/t-sql/language-elements/bitwise-or-transact-sql)    |Выполняет побитовую логическую операцию или между двумя указанными целочисленными значениями, преобразованными в двоичные выражения в инструкциях Transact-SQL.|
-|[NOT](https://docs.microsoft.com/sql/t-sql/language-elements/not-transact-sql)    |Инвертирует входное логическое значение.|
-|[CAST](https://docs.microsoft.com/sql/t-sql/functions/cast-and-convert-transact-sql)    |Преобразует выражение из одного типа данных в другой.|
-|[BETWEEN](https://docs.microsoft.com/sql/t-sql/language-elements/between-transact-sql)    |Определяет диапазон для проверки.|
-|[IN](https://docs.microsoft.com/sql/t-sql/language-elements/in-transact-sql)    |Определяет, совпадает ли указанное значение с одним из значений, содержащихся во вложенном запросе или списке.|
-|[NULLIF](https://docs.microsoft.com/sql/t-sql/language-elements/nullif-transact-sql)    |Возвращает значение NULL, если два указанных выражения равны.|
-|[COALESCE](https://docs.microsoft.com/sql/t-sql/language-elements/coalesce-transact-sql)    |Вычисляет аргументы по порядку и возвращает текущее значение первого выражения, которое изначально не имеет значения NULL.|
+|[=](/sql/t-sql/language-elements/equals-transact-sql)    |Проверяет равенство двух выражений (оператор сравнения).|
+|[!=](/sql/t-sql/language-elements/not-equal-to-transact-sql-exclamation)    |Проверяет неравенство одного выражения другому (оператор сравнения).|
+|[<>](/sql/t-sql/language-elements/not-equal-to-transact-sql-traditional)    |Сравнивает два выражения для неравенства (оператор сравнения).|
+|[<](/sql/t-sql/language-elements/less-than-transact-sql)    |Сравнивает два выражения для меньшего (оператора сравнения).|
+|[<=](/sql/t-sql/language-elements/less-than-or-equal-to-transact-sql)    |Сравнивает два выражения на наличие меньшего или равного (оператора сравнения).|
+|[>](/sql/t-sql/language-elements/greater-than-transact-sql)    |Сравнивает два выражения для оператора "больше" (оператор сравнения). |
+|[>=](/sql/t-sql/language-elements/greater-than-or-equal-to-transact-sql)    |Сравнивает два выражения на верность того, больше или равно одно выражение другому (оператор сравнения).|
+|[+](/sql/t-sql/language-elements/add-transact-sql)    |складывает два числа. С помощью этого арифметического оператора сложения можно также прибавлять число дней к дате.|
+|[-](/sql/t-sql/language-elements/subtract-transact-sql)    |Вычитает одно число из другого (оператор арифметического вычитания). |
+|[/](/sql/t-sql/language-elements/divide-transact-sql)    |Выполняет деление одного числа на другое (арифметический оператор деления).|
+|[*](/sql/t-sql/language-elements/multiply-transact-sql)    |Умножает два выражения (арифметический оператор умножения).|
+|[%](/sql/t-sql/language-elements/modulo-transact-sql)    |Возвращает остаток от деления одного числа на другое.|
+|[AND](/sql/t-sql/language-elements/bitwise-and-transact-sql)    |Выполняет побитовую логическую операцию «И» между двумя целочисленными значениями.|
+|[OR](/sql/t-sql/language-elements/bitwise-or-transact-sql)    |Выполняет побитовую логическую операцию или между двумя указанными целочисленными значениями, преобразованными в двоичные выражения в инструкциях Transact-SQL.|
+|[NOT](/sql/t-sql/language-elements/not-transact-sql)    |Инвертирует входное логическое значение.|
+|[CAST](/sql/t-sql/functions/cast-and-convert-transact-sql)    |Преобразует выражение из одного типа данных в другой.|
+|[BETWEEN](/sql/t-sql/language-elements/between-transact-sql)    |Определяет диапазон для проверки.|
+|[IN](/sql/t-sql/language-elements/in-transact-sql)    |Определяет, совпадает ли указанное значение с одним из значений, содержащихся во вложенном запросе или списке.|
+|[NULLIF](/sql/t-sql/language-elements/nullif-transact-sql)    |Возвращает значение NULL, если два указанных выражения равны.|
+|[COALESCE](/sql/t-sql/language-elements/coalesce-transact-sql)    |Вычисляет аргументы по порядку и возвращает текущее значение первого выражения, которое изначально не имеет значения NULL.|
 
-Если типы данных слева и справа от оператора различаются, автоматическое преобразование будет выполняться в соответствии с указанными здесь правилами: [приоритет типов данных (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-precedence-transact-sql).
+Если типы данных слева и справа от оператора различаются, автоматическое преобразование будет выполняться в соответствии с указанными здесь правилами: [приоритет типов данных (Transact-SQL)](/sql/t-sql/data-types/data-type-precedence-transact-sql).
 
 Язык SQL с ускорением запросов поддерживает только небольшое подмножество типов данных, обсуждаемых в этой статье.  См. раздел [типы данных](#data-types) этой статьи.
 
 ### <a name="casts"></a>Приведения
 
-Язык SQL с ускорением запросов поддерживает оператор CAST в соответствии с правилами, приведенными здесь: [Преобразование типов данных (ядро СУБД)](https://docs.microsoft.com/sql/t-sql/data-types/data-type-conversion-database-engine).  
+Язык SQL с ускорением запросов поддерживает оператор CAST в соответствии с правилами, приведенными здесь: [Преобразование типов данных (ядро СУБД)](/sql/t-sql/data-types/data-type-conversion-database-engine).  
 
 Язык SQL с ускорением запросов поддерживает только неограниченное подмножество типов данных, обсуждаемых в этой статье.  См. раздел [типы данных](#data-types) этой статьи.
 
@@ -114,14 +114,14 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 Язык SQL для ускорения запросов поддерживает следующие стандартные строковые функции SQL:
 
-|Компонент|Описание|
+|Функция|Описание|
 |--|--|
 |CHAR_LENGTH    | Возвращает длину в символах строкового выражения, если строковое выражение имеет символьный тип данных; в противном случае возвращает длину строкового выражения в байтах (наименьшее целое число не меньше числа бит, деленного на 8). (Эта функция аналогична функции CHARACTER_LENGTH.)|
 |CHARACTER_LENGTH    |Возвращает длину в символах строкового выражения, если строковое выражение имеет символьный тип данных; в противном случае возвращает длину строкового выражения в байтах (наименьшее целое число не меньше числа бит, деленного на 8). (Эта функция аналогична функции CHAR_LENGTH|
-|[LOWER](https://docs.microsoft.com/sql/t-sql/functions/lower-transact-sql)    |Возвращает символьное выражение после преобразования символов верхнего регистра в символы нижнего регистра.|
-|[UPPER](https://docs.microsoft.com/sql/t-sql/functions/upper-transact-sql)    |Возвращает символьное выражение, в котором символы нижнего регистра преобразованы в символы верхнего регистра.|
-|[SUBSTRING](https://docs.microsoft.com/sql/t-sql/functions/substring-transact-sql)    |Возвращает часть символьного, двоичного, текстового или графического выражения в SQL Server.|
-|[TRIM](https://docs.microsoft.com/sql/t-sql/functions/trim-transact-sql)    |Удаляет символ пробела (32) или другие указанные символы из начала и конца строки.|
+|[LOWER](/sql/t-sql/functions/lower-transact-sql)    |Возвращает символьное выражение после преобразования символов верхнего регистра в символы нижнего регистра.|
+|[UPPER](/sql/t-sql/functions/upper-transact-sql)    |Возвращает символьное выражение, в котором символы нижнего регистра преобразованы в символы верхнего регистра.|
+|[SUBSTRING](/sql/t-sql/functions/substring-transact-sql)    |Возвращает часть символьного, двоичного, текстового или графического выражения в SQL Server.|
+|[TRIM](/sql/t-sql/functions/trim-transact-sql)    |Удаляет символ пробела (32) или другие указанные символы из начала и конца строки.|
 |LEADING    |Описание|
 |TRAILING    |Описание|
 
@@ -194,16 +194,16 @@ TO_STRING(CAST('1969-07-20T20:18Z' AS TIMESTAMP),  'MMMM d, y')
 |MMM              |Abbr. месяц года-Янв            |
 |ММММ:             |Полный месяц — Май                      |
 |d                |День месяца (1-31)                  |
-|дд               |Нулевой день месяца (01-31)     |
+|dd               |Нулевой день месяца (01-31)     |
 |а                |AM или PM                             |
 |h                |Час дня (1-12)                   |
 |hh               |Нулевые нули в днях OD (01-12)     |
 |H                |Час дня (0-23)                   |
 |HH               |Нулевой заполняющий час дня (00-23)      |
 |m                |Минута часа (0-59)                |
-|ММ               |Нулевая заданная минута (00-59)           |
+|mm               |Нулевая заданная минута (00-59)           |
 |s                |Секунд (0-59)             |
-|сс               |Обнуленные секунды (00-59)          |
+|ss               |Обнуленные секунды (00-59)          |
 |S                |Доля секунд (0,1-0.9)        |
 |SS               |Доля секунд (0,01-0,99)      |
 |SSS              |Доля секунд (0,001-0,999)    |
@@ -340,4 +340,3 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 - [Ускорение запросов Azure Data Lake Storage](data-lake-storage-query-acceleration.md)
 - [Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage](data-lake-storage-query-acceleration-how-to.md)
-

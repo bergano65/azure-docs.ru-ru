@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 49a89ee90d28c9c7a3f59424b773ee0f221381e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: add763b713b93604e089d7aec586876fecd2887c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89303534"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95895644"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-the-azure-portal"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью портал Azure
 
@@ -47,32 +47,7 @@ ms.locfileid: "89303534"
 
 Обратите внимание, что эти варианты допустимы только в регионах с [зоны доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).  (Можно также выбрать конкретную зону в этих регионах, хотя она не будет устойчивой к зональные сбоям.)
 
-# <a name="standard-sku---no-zones"></a>[**SKU "Стандартный" — без зон**](#tab/option-create-public-ip-standard)
-
-Чтобы создать стандартный общедоступный IP-адрес в качестве ресурса, отличного от зональные, с именем **мистандардпублиЦип**, выполните следующие действия.
-
-1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Выберите **Создать ресурс**. 
-3. В поле поиска введите *общедоступный IP-адрес*.
-4. В результатах поиска выберите **Общедоступный IP-адрес**. Затем на странице **Общедоступный IP-адрес** щелкните **Создать**.
-5. На странице **Создание общедоступного IP-адреса** введите или выберите следующие сведения. 
-
-    | Параметр                 | Значение                       |
-    | ---                     | ---                         |
-    | Версия IP-адреса              | Выберите IPv4                 |    
-    | номер SKU                     | Выберите **Стандартный**         |
-    | Имя                    | Введите *мистандардпублиЦип*          |
-    | Назначение IP-адресов   | Обратите внимание, что он будет заблокирован как "статический"                                        |
-    | Время ожидания простоя (в минутах)  | Оставьте значение 4        |
-    | Метка DNS-имени          | Оставьте значение пустым.    |
-    | Подписка            | Выберите свою подписку.   |
-    | Группа ресурсов          | Выберите **создать** , введите myResourceGroup, а затем нажмите кнопку **ОК** . |
-    | Расположение                | Выберите **Восточная часть США 2**      |
-    | Зона доступности       | Выберите **нет зоны** (см. Примечание ниже). |
-
-Этот выбор допустим во всех регионах и является выбором по умолчанию для стандартных общедоступных IP-адресов в регионах без [зоны доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).
-
-# <a name="basic-sku"></a>[**SKU "Базовый"** ](#tab/option-create-public-ip-basic)
+# <a name="basic-sku"></a>[**SKU "Базовый"**](#tab/option-create-public-ip-basic)
 
 Чтобы создать базовый статический общедоступный IP-адрес с именем **мибасикпублиЦип**, выполните следующие действия.  Основные общедоступные IP-адреса не имеют концепции зон доступности.
 
@@ -102,7 +77,7 @@ ms.locfileid: "89303534"
 
 Дополнительные сведения об отдельных указанных выше полях см. в разделе [Управление общедоступными IP-адресами](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Связывание [общедоступного IP-адреса с виртуальной машиной](https://docs.microsoft.com/azure/virtual-network/associate-public-ip-address-vm#azure-portal)
 - См. дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
 - См. сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address).
