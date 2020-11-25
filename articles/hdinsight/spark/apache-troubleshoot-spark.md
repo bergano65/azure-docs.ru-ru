@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.date: 08/22/2019
 ms.custom: seodec18
 ms.openlocfilehash: 9e60903aaa61cae63d406d459937d33317eee394
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545639"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022257"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
 
@@ -25,23 +25,23 @@ ms.locfileid: "92545639"
 
 1. Войдите в Ambari `https://CLUSTERNAME.azurehdidnsight.net` с учетными данными кластера. На начальном экране отображается панель мониторинга обзора. Между HDInsight 3,6 и 4,0 существуют небольшие косметические различия.
 
-1. Перейдите к **Spark2**  >  **configs** .
+1. Перейдите к **Spark2**  >  **configs**.
 
     ![Выбор вкладки "Конфигурации"](./media/apache-troubleshoot-spark/apache-spark-ambari-config2.png)
 
-1. В списке конфигураций выберите и разверните пользовательский параметр **-spark2 — значения по умолчанию** .
+1. В списке конфигураций выберите и разверните пользовательский параметр **-spark2 — значения по умолчанию**.
 
-1. Найдите параметр значения, который необходимо настроить, например **spark.executor.memory** . В этом случае значение **9728m** слишком велико.
+1. Найдите параметр значения, который необходимо настроить, например **spark.executor.memory**. В этом случае значение **9728m** слишком велико.
 
     ![Выбор конфигурации custom-spark-defaults](./media/apache-troubleshoot-spark/apache-spark-ambari-config4.png)
 
-1. Задайте для этого параметра рекомендуемое значение. Рекомендуется использовать значение **2048m** .
+1. Задайте для этого параметра рекомендуемое значение. Рекомендуется использовать значение **2048m**.
 
-1. Сохраните это значение, а затем сохраните конфигурацию. Нажмите кнопку **Сохранить** .
+1. Сохраните это значение, а затем сохраните конфигурацию. Нажмите кнопку **Сохранить**.
 
     ![Изменение значения на 2048m](./media/apache-troubleshoot-spark/apache-spark-ambari-config6a.png)
 
-    Запишите примечание об изменениях конфигурации, а затем нажмите кнопку **Сохранить** .
+    Запишите примечание об изменениях конфигурации, а затем нажмите кнопку **Сохранить**.
 
     ![Примечание об изменениях](./media/apache-troubleshoot-spark/apache-spark-ambari-config6c.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "92545639"
 
     ![Нажатие кнопки "Proceed Anyway" (Продолжить)](./media/apache-troubleshoot-spark/apache-spark-ambari-config6b.png)
 
-1. При каждом сохранении конфигурации вам будет предложено перезапустить службу. Нажмите кнопку **Перезапустить** .
+1. При каждом сохранении конфигурации вам будет предложено перезапустить службу. Нажмите кнопку **Перезапустить**.
 
     ![Нажатие кнопки "Перезапустить"](./media/apache-troubleshoot-spark/apache-spark-ambari-config7a.png)
 
@@ -61,13 +61,13 @@ ms.locfileid: "92545639"
 
     ![Просмотр запущенных процессов](./media/apache-troubleshoot-spark/apache-spark-ambari-config7c.png)
 
-1. Вы можете добавить конфигурации. В списке конфигураций выберите **Custom-spark2-defaults** , а затем щелкните **Добавить свойство** .
+1. Вы можете добавить конфигурации. В списке конфигураций выберите **Custom-spark2-defaults**, а затем щелкните **Добавить свойство**.
 
     ![Выбор "Добавить свойство"](./media/apache-troubleshoot-spark/apache-spark-ambari-config8.png)
 
 1. Определите новое свойство. Вы можете определить отдельное свойство с помощью диалогового окна для определенных параметров, например тип данных. Или вы можете определить несколько свойств с одним определением на строку.
 
-    В этом примере свойство **spark.driver.memory** определяется со значением **4 ГБ** .
+    В этом примере свойство **spark.driver.memory** определяется со значением **4 ГБ**.
 
     ![Определение нового свойства](./media/apache-troubleshoot-spark/apache-spark-ambari-config9.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "92545639"
 
 ## <a name="how-do-i-configure-an-apache-spark-application-by-using-a-jupyter-notebook-on-clusters"></a>Как настроить приложение Apache Spark с помощью Jupyter Notebook в кластерах?
 
-Укажите конфигурации Spark в допустимом формате JSON в первой ячейке Jupyter Notebook после директивы **%%configure** . При необходимости измените фактические значения:
+Укажите конфигурации Spark в допустимом формате JSON в первой ячейке Jupyter Notebook после директивы **%%configure**. При необходимости измените фактические значения:
 
 ![Добавление конфигурации](./media/apache-troubleshoot-spark/add-configuration-cell.png)
 
@@ -113,4 +113,4 @@ spark-submit --master yarn-cluster --class com.microsoft.spark.application --num
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

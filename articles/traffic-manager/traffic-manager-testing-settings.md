@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: duau
 ms.openlocfilehash: 4bb7458d4258dffb074d663e5cf712c7a0245cc7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401526"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022332"
 ---
 # <a name="verify-traffic-manager-settings"></a>Проверка параметров диспетчера трафика
 
@@ -68,7 +68,7 @@ ms.locfileid: "89401526"
 
 Кроме того, есть бесплатные веб-службы поиска и проверки DNS. Некоторые из этих инструментов предоставляют возможность проверить разрешение DNS-имен из различных расположений по всему миру. Например, выполните поиск по запросу "поиск DNS". Сторонние службы типа Gomez или Keynote можно использовать, чтобы убедиться в том, что ваши профили распределяют трафик надлежащим образом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 * [Рекомендации по безопасности для диспетчера трафика](traffic-manager-performance-considerations.md)
