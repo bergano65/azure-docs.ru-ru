@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 05/15/2018
 ms.topic: conceptual
 ms.openlocfilehash: 21d84bea808ba5832b81d415001a3fc25a7e1630
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91323963"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006769"
 ---
 # <a name="integrate-sim-data-in-the-remote-monitoring-solution"></a>Интеграция данных SIM-карты в решении для удаленного мониторинга
 
@@ -21,7 +21,7 @@ ms.locfileid: "91323963"
 
 Решение удаленного мониторинга обеспечивает готовую интеграцию с подключением Интернета вещей Telefónica, позволяя клиентам, использующим платформу подключения Интернета вещей, синхронизировать данные о подключении SIM-карт устройств с решениями. Это решение можно расширить для поддержки других поставщиков подключения Интернета вещей через [репозиторий](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet) GitHub.
 
-В этом руководстве описано следующее:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 * интегрирование данных SIM-карты Интернета вещей Telefónica в решение для удаленного мониторинга;
 * просмотр телеметрии в реальном времени;
@@ -63,7 +63,7 @@ ms.locfileid: "91323963"
 
 ![Снимок экрана: окно Device Explorer на панели мониторинга удаленного мониторинга Интернета вещей Azure. Выделена строка, показывающая сведения об устройстве Weatherstation —.](./media/iot-accelerators-remote-monitoring-telefonica-sim/dashboard.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда у вас есть представление об интеграции данных SIM-карты в решение удаленного мониторинга Интернета вещей Azure, для ускорителей решений можно выполнить следующие шаги, описанные в руководствах ниже:
 

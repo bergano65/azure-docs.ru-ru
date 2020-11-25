@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 10/09/2018
 ms.author: mikhegn
 ms.openlocfilehash: 4e96a732cffd70b0a5c24e7ebafe214297a72720
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75644636"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006053"
 ---
 # <a name="how-to-parameterize-configuration-files-in-service-fabric"></a>Как параметризовать файлы конфигурации в Service Fabric
 
@@ -20,7 +20,7 @@ ms.locfileid: "75644636"
 
 В этом примере с помощью параметров в развертывании приложения переопределяется значение конфигурации.
 
-1. Откройте файл * \<MyService>\PackageRoot\Config\Settings.xml* в проекте службы.
+1. Откройте файл *\<MyService>\PackageRoot\Config\Settings.xml* в проекте службы.
 1. Задайте имя и значение параметра конфигурации, например кэш размером 25, добавив следующий XML:
 
    ```xml
@@ -30,7 +30,7 @@ ms.locfileid: "75644636"
    ```
 
 1. Сохраните файл и закройте его.
-1. Откройте файл * \<MyApplication>\ApplicationPackageRoot\ApplicationManifest.xml* .
+1. Откройте файл *\<MyApplication>\ApplicationPackageRoot\ApplicationManifest.xml* .
 1. В файле ApplicationManifest.xml объявите параметр и значение по умолчанию в элементе `Parameters`.  Рекомендуется задавать имя параметра с содержанием имени службы (например, "MyService").
 
    ```xml
@@ -57,5 +57,5 @@ ms.locfileid: "75644636"
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения о других возможностях управления приложениями, доступными в Visual Studio, см. в статье [Использование Visual Studio для упрощения создания приложений Service Fabric и управления ими](service-fabric-manage-application-in-visual-studio.md).

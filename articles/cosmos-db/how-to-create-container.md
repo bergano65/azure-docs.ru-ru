@@ -9,11 +9,11 @@ ms.date: 10/16/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: 302c5d6e8e523a11b8773f10bb6089e3bea09bdd
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101567"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006854"
 ---
 # <a name="create-a-container-in-azure-cosmos-db-sql-api"></a>Создание контейнера в Azure Cosmos DB API SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -31,13 +31,13 @@ ms.locfileid: "93101567"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
-1. Откройте панель **Обозреватель данных** и выберите **создать контейнер** . После этого предоставьте следующие сведения.
+1. Откройте панель **Обозреватель данных** и выберите **создать контейнер**. После этого предоставьте следующие сведения.
 
    * Укажите, создаете ли вы новую базу данных или используете существующую.
    * Введите идентификатор контейнера.
    * Введите ключ секции.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
-   * Щелкните **ОК** .
+   * Щелкните **ОК**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-sql.png" alt-text="Снимок экрана панели обозреватель данных с выделенным новым контейнером":::
 
@@ -65,7 +65,7 @@ await client.CreateDocumentCollectionAsync(
     new RequestOptions { OfferThroughput = 1000 });
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)

@@ -4,64 +4,64 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: e64db93347794ccfc85252205c6d92a68e904635
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 3129bbe171329ecf37f8712394cedf9b70188220
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376142"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96005828"
 ---
 #### <a name="to-install-updates-via-the-azure-portal"></a>Установка обновлений с помощью портала Azure
 
 1. Откройте диспетчер устройств StorSimple и выберите **Устройства**. Из списка устройств, подключенных к службе, выберите то, которое требуется обновить.
 
-    ![обновление устройства](../includes/media/storsimple-virtual-array-install-update-via-portal-04/azupdate1m.png) 
+    ![В последней версии Device Manager Миссдевманажер выделены и выбраны, устройства выделяются и выбираются, а устройство MYSSIS1103 выделяется и выбирается.](../includes/media/storsimple-virtual-array-install-update-via-portal-04/azupdate1m.png) 
 
 2. В колонке **Параметры** щелкните **Обновления устройства**.
 
-    ![Обновление устройства 2](../includes/media/storsimple-virtual-array-install-update-via-portal-04/azupdate2m.png)  
+    ![Отображается информация для MYSSIS1103. В меню Параметры обновления устройства выделены.](../includes/media/storsimple-virtual-array-install-update-via-portal-04/azupdate2m.png)  
 
 3. При наличии доступных обновлений вы увидите сообщение об этом. Чтобы проверить наличие обновлений, можно щелкнуть элемент **Проверить**. Запишите версию программного обеспечения, которое выполняется в вашей системе. 
 
-    ![Обновление устройства 3](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate3m1.png)
+    ![На панели "обновления устройства" отображается надпись "новые обновления доступны" и "последний сканированный/11/01/2017 10:56 AM/10.0.10289.0". Версия выделена.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate3m1.png)
 
     Вы получите уведомление о начале и успешном завершении проверки.
 
-    ![Обновление устройства 4](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate5m.png)
+    ![В уведомлении отображается сообщение "Проверка обновлений для MySVAFS110а устройства..." 10:57 AM/операция выполняется. "](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate5m.png)
 
 4. После проверки наличия обновлений щелкните **Скачать обновления**.
 
-    ![Обновление устройства 5](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate6m.png)
+    ![В области обновления устройства отображается сообщение "новые обновления доступны". Будет выделена кнопка Загрузить обновления.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate6m.png)
 
 5. В колонке **новых обновлений** просмотрите заметки о выпуске. Обратите внимание, что после скачивания обновлений необходимо подтвердить установку. Нажмите кнопку **ОК**.
 
-    ![Обновление устройства 6](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate7m.png)
+    ![В области новые обновления появится сообщение "после загрузки обновлений необходимо подтвердить установку". Кнопка ОК выделяется.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate7m.png)
 
 6. Вы получите уведомления о начале и успешном завершении загрузки.
 
-     ![Обновление устройства 7](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate8m.png)
+     ![В уведомлении указано "скачивание обновлений для Мисвафсов устройств... 11:07 AM.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate8m.png)
 
 5. В колонке **Обновления устройства** щелкните **Установить**.
 
-     ![Обновление устройства 8](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate11m1.png)
+     ![В обновлениях устройства указано "подтверждение установки обновлений". Кнопка "установить" выделена.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate11m1.png)
 
-6. В колонке **Свежие обновления** вы увидите предупреждение о том, что обновление нарушит работу. Так как виртуальный массив является устройством с одним узлом, после обновления он будет перезагружен. Все текущие операции ввода-вывода будут прерваны. Щелкните **ОК** , чтобы установить обновления.
+6. В колонке **Свежие обновления** вы увидите предупреждение о том, что обновление нарушит работу. Так как виртуальный массив является устройством с одним узлом, после обновления он будет перезагружен. Все текущие операции ввода-вывода будут прерваны. Щелкните **ОК**, чтобы установить обновления.
 
-    ![Обновление устройства 9](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate12m.png)
+    ![Сообщение в области "новые обновления": "устройство будет иметь время простоя при установке этих обновлений". Кнопка ОК выделяется.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate12m.png)
 
 7. Вы получите уведомление о запуске задания установки.
 
-    ![Обновление устройства 10](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate13m.png)
+    ![Уведомление говорит об установке обновлений для MySVAFS110ов устройств... 11:09 AM.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate13m.png)
 
-8.  Когда задание установки успешно завершится, выберите ссылку **Просмотреть задание** в колонке **Обновление устройства** , чтобы проверить выполнение установки. 
+8.  Когда задание установки успешно завершится, выберите ссылку **Просмотреть задание** в колонке **Обновление устройства**, чтобы проверить выполнение установки. 
 
-    ![Обновление устройства 11](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate15m1.png)
+    ![В области "обновления устройства" есть ссылка "Установка обновлений". Просмотр задания ". Кнопка "установить" выделена.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate15m1.png)
 
     Вы перейдете к колонке **Install Updates** (Установка обновлений). Здесь вы увидите подробные сведения о выполненном задании.
 
-    ![Обновление устройства 12](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate16m1.png)
+    ![На панели "Установка обновлений" находятся сведения об установке, включая устройство, состояние, длительность, время начала и время окончания.](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate16m1.png)
 
 9. Если в начале у вас был виртуальный массив с установленным обновлением 0.6 (10.0.10293.0) для программного обеспечения, сейчас у вас установлено обновление 1. Оставшиеся действия можно пропустить. Если же у вас был виртуальный массив с более ранней версией программного обеспечения, чем 0.6 (10.0.10293.0), то теперь у вас установлена версия 0.6. Появится еще одно сообщение о том, что обновления доступны. Повторите шаги 4–8, чтобы установить обновление 1.
 
-    ![Обновление устройства 13](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate17.png)
+    ![На панели "обновления устройства" отображается надпись "новые обновления доступны" и "последний сканированный/11/1/2017 10:56 AM/10.0.10293.0".](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate17.png)
 

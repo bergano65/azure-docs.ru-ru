@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 11/18/2020
 ms.author: alzam
 ms.openlocfilehash: 1f10799ab32b6cb26a8b3b5b343f65b960d71357
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94889105"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007007"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Настройка оповещений о событиях журнала ресурсов из VPN-шлюза
 
@@ -195,6 +195,6 @@ ms.locfileid: "94889105"
        -Name 'The Azure to Redmond tunnel is disconnected'
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о настройке оповещений в метриках туннеля см. в разделе [Настройка оповещений в метриках VPN-шлюза](vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric.md).

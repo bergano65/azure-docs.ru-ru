@@ -10,11 +10,11 @@ ms.date: 10/05/2018
 ms.topic: conceptual
 ms.custom: devx-track-js
 ms.openlocfilehash: 1dcca8409022ba4cf1f988b7c777e3a1fa511060
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318370"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006070"
 ---
 # <a name="add-a-custom-panel-to-the-dashboard-in-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской панели на панель мониторинга в веб-интерфейсе акселератора решения для удаленного мониторинга
 
@@ -93,7 +93,7 @@ npm start
 
 Предыдущая команда запускает пользовательский интерфейс локально по адресу `http://localhost:3000/dashboard`. Чтобы просмотреть новую панель, перейдите на страницу **панели мониторинга**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении панелей мониторинга в пользовательском веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 

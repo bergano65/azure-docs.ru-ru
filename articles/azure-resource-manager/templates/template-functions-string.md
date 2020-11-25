@@ -2,13 +2,13 @@
 title: Функции шаблона — строка
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы со строками.
 ms.topic: conceptual
-ms.date: 04/08/2020
-ms.openlocfilehash: a0733ffc790854c60dca46da3f763738b7820215
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.date: 11/18/2020
+ms.openlocfilehash: e94037b40f4937a40e00215aa7a3f99fd3280b49
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91874719"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96006002"
 ---
 # <a name="string-functions-for-arm-templates"></a>Строковые функции для шаблонов ARM
 
@@ -37,7 +37,7 @@ ms.locfileid: "91874719"
 * [skip](#skip)
 * [split](#split)
 * [startsWith](#startswith)
-* [string](#string)
+* [строка](#string)
 * [substring](#substring)
 * [take](#take)
 * [toLower](#tolower)
@@ -47,6 +47,8 @@ ms.locfileid: "91874719"
 * [uri](#uri)
 * [uriComponent](#uricomponent)
 * [uriComponentToString](#uricomponenttostring)
+
+[!INCLUDE [Bicep preview](../../../includes/resource-manager-bicep-preview.md)]
 
 ## <a name="base64"></a>base64
 
@@ -68,49 +70,67 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/base64.json) показано, как использовать функцию base64.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "stringData": {
-            "type": "string",
-            "defaultValue": "one, two, three"
-        },
-        "jsonFormattedData": {
-            "type": "string",
-            "defaultValue": "{'one': 'a', 'two': 'b'}"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "stringData": {
+      "type": "string",
+      "defaultValue": "one, two, three"
     },
-    "variables": {
-        "base64String": "[base64(parameters('stringData'))]",
-        "base64Object": "[base64(parameters('jsonFormattedData'))]"
-    },
-    "resources": [
-    ],
-    "outputs": {
-        "base64Output": {
-            "type": "string",
-            "value": "[variables('base64String')]"
-        },
-        "toStringOutput": {
-            "type": "string",
-            "value": "[base64ToString(variables('base64String'))]"
-        },
-        "toJsonOutput": {
-            "type": "object",
-            "value": "[base64ToJson(variables('base64Object'))]"
-        }
+    "jsonFormattedData": {
+      "type": "string",
+      "defaultValue": "{'one': 'a', 'two': 'b'}"
     }
+  },
+  "variables": {
+    "base64String": "[base64(parameters('stringData'))]",
+    "base64Object": "[base64(parameters('jsonFormattedData'))]"
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "base64Output": {
+      "type": "string",
+      "value": "[variables('base64String')]"
+    },
+    "toStringOutput": {
+      "type": "string",
+      "value": "[base64ToString(variables('base64String'))]"
+    },
+    "toJsonOutput": {
+      "type": "object",
+      "value": "[base64ToJson(variables('base64Object'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param stringData string = 'one, two, three'
+param jsonFormattedData string = '{\'one\': \'a\', \'two\': \'b\'}'
+
+var base64String = base64(stringData)
+var base64Object = base64(jsonFormattedData)
+
+output base64Output string = base64String
+output toStringOutput string = base64ToString(base64String)
+output toJsonOutput object = base64ToJson(base64Object)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строковый тип | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строковый тип | one, two, three |
+| base64Output | Строка | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="base64tojson"></a>base64ToJson
@@ -133,49 +153,68 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/base64.json) функция base64ToJson используется для преобразования значения в кодировке base64.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "stringData": {
-            "type": "string",
-            "defaultValue": "one, two, three"
-        },
-        "jsonFormattedData": {
-            "type": "string",
-            "defaultValue": "{'one': 'a', 'two': 'b'}"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "stringData": {
+      "type": "string",
+      "defaultValue": "one, two, three"
     },
-    "variables": {
-        "base64String": "[base64(parameters('stringData'))]",
-        "base64Object": "[base64(parameters('jsonFormattedData'))]"
-    },
-    "resources": [
-    ],
-    "outputs": {
-        "base64Output": {
-            "type": "string",
-            "value": "[variables('base64String')]"
-        },
-        "toStringOutput": {
-            "type": "string",
-            "value": "[base64ToString(variables('base64String'))]"
-        },
-        "toJsonOutput": {
-            "type": "object",
-            "value": "[base64ToJson(variables('base64Object'))]"
-        }
+    "jsonFormattedData": {
+      "type": "string",
+      "defaultValue": "{'one': 'a', 'two': 'b'}"
     }
+  },
+  "variables": {
+    "base64String": "[base64(parameters('stringData'))]",
+    "base64Object": "[base64(parameters('jsonFormattedData'))]"
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "base64Output": {
+      "type": "string",
+      "value": "[variables('base64String')]"
+    },
+    "toStringOutput": {
+      "type": "string",
+      "value": "[base64ToString(variables('base64String'))]"
+    },
+    "toJsonOutput": {
+      "type": "object",
+      "value": "[base64ToJson(variables('base64Object'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param stringData string = 'one, two, three'
+param jsonFormattedData string = '{\'one\': \'a\', \'two\': \'b\'}'
+
+var base64String = base64(stringData)
+var base64Object = base64(jsonFormattedData)
+
+output base64Output string = base64String
+output toStringOutput string = base64ToString(base64String)
+output toJsonOutput object = base64ToJson(base64Object)
+
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строковый тип | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строковый тип | one, two, three |
+| base64Output | Строка | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="base64tostring"></a>base64ToString
@@ -198,49 +237,67 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/base64.json) функция base64ToString используется для преобразования значения в кодировке base64.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "stringData": {
-            "type": "string",
-            "defaultValue": "one, two, three"
-        },
-        "jsonFormattedData": {
-            "type": "string",
-            "defaultValue": "{'one': 'a', 'two': 'b'}"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "stringData": {
+      "type": "string",
+      "defaultValue": "one, two, three"
     },
-    "variables": {
-        "base64String": "[base64(parameters('stringData'))]",
-        "base64Object": "[base64(parameters('jsonFormattedData'))]"
-    },
-    "resources": [
-    ],
-    "outputs": {
-        "base64Output": {
-            "type": "string",
-            "value": "[variables('base64String')]"
-        },
-        "toStringOutput": {
-            "type": "string",
-            "value": "[base64ToString(variables('base64String'))]"
-        },
-        "toJsonOutput": {
-            "type": "object",
-            "value": "[base64ToJson(variables('base64Object'))]"
-        }
+    "jsonFormattedData": {
+      "type": "string",
+      "defaultValue": "{'one': 'a', 'two': 'b'}"
     }
+  },
+  "variables": {
+    "base64String": "[base64(parameters('stringData'))]",
+    "base64Object": "[base64(parameters('jsonFormattedData'))]"
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "base64Output": {
+      "type": "string",
+      "value": "[variables('base64String')]"
+    },
+    "toStringOutput": {
+      "type": "string",
+      "value": "[base64ToString(variables('base64String'))]"
+    },
+    "toJsonOutput": {
+      "type": "object",
+      "value": "[base64ToJson(variables('base64Object'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param stringData string = 'one, two, three'
+param jsonFormattedData string = '{\'one\': \'a\', \'two\': \'b\'}'
+
+var base64String = base64(stringData)
+var base64Object = base64(jsonFormattedData)
+
+output base64Output string = base64String
+output toStringOutput string = base64ToString(base64String)
+output toJsonOutput object = base64ToJson(base64Object)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | Строковый тип | b25lLCB0d28sIHRocmVl |
-| toStringOutput | Строковый тип | one, two, three |
+| base64Output | Строка | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="concat"></a>concat
@@ -266,66 +323,99 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/concat-string.json) показано, как объединить два строковых значения и получить сцепленную строку.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "prefix": {
-            "type": "string",
-            "defaultValue": "prefix"
-        }
-    },
-    "resources": [],
-    "outputs": {
-        "concatOutput": {
-            "value": "[concat(parameters('prefix'), '-', uniqueString(resourceGroup().id))]",
-            "type" : "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "prefix": {
+      "type": "string",
+      "defaultValue": "prefix"
     }
+  },
+  "resources": [],
+  "outputs": {
+    "concatOutput": {
+      "type": "string",
+      "value": "[concat(parameters('prefix'), '-', uniqueString(resourceGroup().id))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param prefix string = 'prefix'
+
+output concatOutput string = concat(prefix, '-', uniqueString(resourceGroup().id))
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| concatOutput | Строковый тип | prefix-5yj4yjf5mbg72 |
+| concatOutput | Строка | prefix-5yj4yjf5mbg72 |
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/concat-array.json) показано, как объединить два массива.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "firstArray": {
-            "type": "array",
-            "defaultValue": [
-                "1-1",
-                "1-2",
-                "1-3"
-            ]
-        },
-        "secondArray": {
-            "type": "array",
-            "defaultValue": [
-                "2-1",
-                "2-2",
-                "2-3"
-            ]
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "firstArray": {
+      "type": "array",
+      "defaultValue": [
+        "1-1",
+        "1-2",
+        "1-3"
+      ]
     },
-    "resources": [
-    ],
-    "outputs": {
-        "return": {
-            "type": "array",
-            "value": "[concat(parameters('firstArray'), parameters('secondArray'))]"
-        }
+    "secondArray": {
+      "type": "array",
+      "defaultValue": [
+        "2-1",
+        "2-2",
+        "2-3"
+      ]
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "return": {
+      "type": "array",
+      "value": "[concat(parameters('firstArray'), parameters('secondArray'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param firstArray array = [
+  '1-1'
+  '1-2'
+  '1-3'
+]
+param secondArray array = [
+  '2-1'
+  '2-2'
+  '2-3'
+]
+
+output return array = concat(firstArray, secondArray)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -333,7 +423,7 @@ ms.locfileid: "91874719"
 | ---- | ---- | ----- |
 | return | Массив | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
 
-## <a name="contains"></a>содержит
+## <a name="contains"></a>contains
 
 `contains (container, itemToFind)`
 
@@ -354,54 +444,85 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/contains.json) показано, как использовать функцию contains с различными типами.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "stringToTest": {
-            "type": "string",
-            "defaultValue": "OneTwoThree"
-        },
-        "objectToTest": {
-            "type": "object",
-            "defaultValue": {"one": "a", "two": "b", "three": "c"}
-        },
-        "arrayToTest": {
-            "type": "array",
-            "defaultValue": ["one", "two", "three"]
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "stringToTest": {
+      "type": "string",
+      "defaultValue": "OneTwoThree"
     },
-    "resources": [
-    ],
-    "outputs": {
-        "stringTrue": {
-            "type": "bool",
-            "value": "[contains(parameters('stringToTest'), 'e')]"
-        },
-        "stringFalse": {
-            "type": "bool",
-            "value": "[contains(parameters('stringToTest'), 'z')]"
-        },
-        "objectTrue": {
-            "type": "bool",
-            "value": "[contains(parameters('objectToTest'), 'one')]"
-        },
-        "objectFalse": {
-            "type": "bool",
-            "value": "[contains(parameters('objectToTest'), 'a')]"
-        },
-        "arrayTrue": {
-            "type": "bool",
-            "value": "[contains(parameters('arrayToTest'), 'three')]"
-        },
-        "arrayFalse": {
-            "type": "bool",
-            "value": "[contains(parameters('arrayToTest'), 'four')]"
-        }
+    "objectToTest": {
+      "type": "object",
+      "defaultValue": {
+        "one": "a",
+        "two": "b",
+        "three": "c"
+      }
+    },
+    "arrayToTest": {
+      "type": "array",
+      "defaultValue": [ "one", "two", "three" ]
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "stringTrue": {
+      "type": "bool",
+      "value": "[contains(parameters('stringToTest'), 'e')]"
+    },
+    "stringFalse": {
+      "type": "bool",
+      "value": "[contains(parameters('stringToTest'), 'z')]"
+    },
+    "objectTrue": {
+      "type": "bool",
+      "value": "[contains(parameters('objectToTest'), 'one')]"
+    },
+    "objectFalse": {
+      "type": "bool",
+      "value": "[contains(parameters('objectToTest'), 'a')]"
+    },
+    "arrayTrue": {
+      "type": "bool",
+      "value": "[contains(parameters('arrayToTest'), 'three')]"
+    },
+    "arrayFalse": {
+      "type": "bool",
+      "value": "[contains(parameters('arrayToTest'), 'four')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param stringToTest string = 'OneTwoThree'
+param objectToTest object = {
+  'one': 'a'
+  'two': 'b'
+  'three': 'c'
+}
+param arrayToTest array = [
+  'one'
+  'two'
+  'three'
+]
+
+output stringTrue bool = contains(stringToTest, 'e')
+output stringFalse bool = contains(stringToTest, 'z')
+output objectTrue bool = contains(objectToTest, 'one')
+output objectFalse bool = contains(objectToTest, 'a')
+output arrayTrue bool = contains(arrayToTest, 'three')
+output arrayFalse bool = contains(arrayToTest, 'four')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -434,40 +555,54 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/datauri.json) значение преобразуется в универсальный код ресурса (URI) данных, а URI данных преобразуется в строку.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "stringToTest": {
-            "type": "string",
-            "defaultValue": "Hello"
-        },
-        "dataFormattedString": {
-            "type": "string",
-            "defaultValue": "data:;base64,SGVsbG8sIFdvcmxkIQ=="
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "stringToTest": {
+      "type": "string",
+      "defaultValue": "Hello"
     },
-    "resources": [],
-    "outputs": {
-        "dataUriOutput": {
-            "value": "[dataUri(parameters('stringToTest'))]",
-            "type" : "string"
-        },
-        "toStringOutput": {
-            "type": "string",
-            "value": "[dataUriToString(parameters('dataFormattedString'))]"
-        }
+    "dataFormattedString": {
+      "type": "string",
+      "defaultValue": "data:;base64,SGVsbG8sIFdvcmxkIQ=="
     }
+  },
+  "resources": [],
+  "outputs": {
+    "dataUriOutput": {
+      "value": "[dataUri(parameters('stringToTest'))]",
+      "type": "string"
+    },
+    "toStringOutput": {
+      "type": "string",
+      "value": "[dataUriToString(parameters('dataFormattedString'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param stringToTest string = 'Hello'
+param dataFormattedString string = 'data:;base64,SGVsbG8sIFdvcmxkIQ=='
+
+output dataUriOutput string = dataUri(stringToTest)
+output toStringOutput string = dataUriToString(dataFormattedString)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| dataUriOutput | Строковый тип | data:text/plain;charset=utf8;base64,SGVsbG8= |
-| toStringOutput | Строковый тип | Привет, мир! |
+| dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
+| toStringOutput | Строка | Привет, мир! |
 
 ## <a name="datauritostring"></a>dataUriToString
 
@@ -489,40 +624,54 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/datauri.json) значение преобразуется в универсальный код ресурса (URI) данных, а URI данных преобразуется в строку.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "stringToTest": {
-            "type": "string",
-            "defaultValue": "Hello"
-        },
-        "dataFormattedString": {
-            "type": "string",
-            "defaultValue": "data:;base64,SGVsbG8sIFdvcmxkIQ=="
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "stringToTest": {
+      "type": "string",
+      "defaultValue": "Hello"
     },
-    "resources": [],
-    "outputs": {
-        "dataUriOutput": {
-            "value": "[dataUri(parameters('stringToTest'))]",
-            "type" : "string"
-        },
-        "toStringOutput": {
-            "type": "string",
-            "value": "[dataUriToString(parameters('dataFormattedString'))]"
-        }
+    "dataFormattedString": {
+      "type": "string",
+      "defaultValue": "data:;base64,SGVsbG8sIFdvcmxkIQ=="
     }
+  },
+  "resources": [],
+  "outputs": {
+    "dataUriOutput": {
+      "value": "[dataUri(parameters('stringToTest'))]",
+      "type": "string"
+    },
+    "toStringOutput": {
+      "type": "string",
+      "value": "[dataUriToString(parameters('dataFormattedString'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param stringToTest string = 'Hello'
+param dataFormattedString string = 'data:;base64,SGVsbG8sIFdvcmxkIQ=='
+
+output dataUriOutput string = dataUri(stringToTest)
+output toStringOutput string = dataUriToString(dataFormattedString)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| dataUriOutput | Строковый тип | data:text/plain;charset=utf8;base64,SGVsbG8= |
-| toStringOutput | Строковый тип | Привет, мир! |
+| dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
+| toStringOutput | Строка | Привет, мир! |
 
 ## <a name="empty"></a>пустых
 
@@ -544,42 +693,58 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/empty.json) проверяется, являются ли пустыми массив, объект и строка.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testArray": {
-            "type": "array",
-            "defaultValue": []
-        },
-        "testObject": {
-            "type": "object",
-            "defaultValue": {}
-        },
-        "testString": {
-            "type": "string",
-            "defaultValue": ""
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testArray": {
+      "type": "array",
+      "defaultValue": []
     },
-    "resources": [
-    ],
-    "outputs": {
-        "arrayEmpty": {
-            "type": "bool",
-            "value": "[empty(parameters('testArray'))]"
-        },
-        "objectEmpty": {
-            "type": "bool",
-            "value": "[empty(parameters('testObject'))]"
-        },
-        "stringEmpty": {
-            "type": "bool",
-            "value": "[empty(parameters('testString'))]"
-        }
+    "testObject": {
+      "type": "object",
+      "defaultValue": {}
+    },
+    "testString": {
+      "type": "string",
+      "defaultValue": ""
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "arrayEmpty": {
+      "type": "bool",
+      "value": "[empty(parameters('testArray'))]"
+    },
+    "objectEmpty": {
+      "type": "bool",
+      "value": "[empty(parameters('testObject'))]"
+    },
+    "stringEmpty": {
+      "type": "bool",
+      "value": "[empty(parameters('testString'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testArray array = []
+param testObject object = {}
+param testString string = ''
+
+output arrayEmpty bool = empty(testArray)
+output objectEmpty bool = empty(testObject)
+output stringEmpty bool = empty(testString)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -593,7 +758,7 @@ ms.locfileid: "91874719"
 
 `endsWith(stringToSearch, stringToFind)`
 
-Определяет, заканчивается ли строка определенным значением. При сравнении учитывается регистр букв.
+Определяет, заканчивается ли строка определенным значением. При сравнении регистр не учитывается.
 
 ### <a name="parameters"></a>Параметры
 
@@ -610,39 +775,54 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/startsendswith.json) показано, как использовать функции startsWith и endsWith.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [],
-    "outputs": {
-        "startsTrue": {
-            "value": "[startsWith('abcdef', 'ab')]",
-            "type" : "bool"
-        },
-        "startsCapTrue": {
-            "value": "[startsWith('abcdef', 'A')]",
-            "type" : "bool"
-        },
-        "startsFalse": {
-            "value": "[startsWith('abcdef', 'e')]",
-            "type" : "bool"
-        },
-        "endsTrue": {
-            "value": "[endsWith('abcdef', 'ef')]",
-            "type" : "bool"
-        },
-        "endsCapTrue": {
-            "value": "[endsWith('abcdef', 'F')]",
-            "type" : "bool"
-        },
-        "endsFalse": {
-            "value": "[endsWith('abcdef', 'e')]",
-            "type" : "bool"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [],
+  "outputs": {
+    "startsTrue": {
+      "value": "[startsWith('abcdef', 'ab')]",
+      "type": "bool"
+    },
+    "startsCapTrue": {
+      "value": "[startsWith('abcdef', 'A')]",
+      "type": "bool"
+    },
+    "startsFalse": {
+      "value": "[startsWith('abcdef', 'e')]",
+      "type": "bool"
+    },
+    "endsTrue": {
+      "value": "[endsWith('abcdef', 'ef')]",
+      "type": "bool"
+    },
+    "endsCapTrue": {
+      "value": "[endsWith('abcdef', 'F')]",
+      "type": "bool"
+    },
+    "endsFalse": {
+      "value": "[endsWith('abcdef', 'e')]",
+      "type": "bool"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output startsTrue bool = startsWith('abcdef', 'ab')
+output startsCapTrue bool = startsWith('abcdef', 'A')
+output startsFalse bool = startsWith('abcdef', 'e')
+output endsTrue bool = endsWith('abcdef', 'ef')
+output endsCapTrue bool = endsWith('abcdef', 'F')
+output endsFalse bool = endsWith('abcdef', 'e')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -675,37 +855,54 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/first.json) показано, как использовать функцию first с массивом и строкой.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "arrayToTest": {
-            "type": "array",
-            "defaultValue": ["one", "two", "three"]
-        }
-    },
-    "resources": [
-    ],
-    "outputs": {
-        "arrayOutput": {
-            "type": "string",
-            "value": "[first(parameters('arrayToTest'))]"
-        },
-        "stringOutput": {
-            "type": "string",
-            "value": "[first('One Two Three')]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "arrayToTest": {
+      "type": "array",
+      "defaultValue": [ "one", "two", "three" ]
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "arrayOutput": {
+      "type": "string",
+      "value": "[first(parameters('arrayToTest'))]"
+    },
+    "stringOutput": {
+      "type": "string",
+      "value": "[first('One Two Three')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param arrayToTest array = [
+  'one'
+  'two'
+  'three'
+]
+
+output arrayOutput string = first(arrayToTest)
+output stringOutput string = first('One Two Three')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Строковый тип | one |
-| stringOutput | Строковый тип | O |
+| arrayOutput | Строка | one |
+| stringOutput | Строка | O |
 
 ## <a name="format"></a>format
 
@@ -721,7 +918,7 @@ ms.locfileid: "91874719"
 | arg1 | Да | Строка, целое число или логическое значение | Значение, включаемое в отформатированную строку. |
 | дополнительные аргументы | нет | Строка, целое число или логическое значение | Дополнительные значения для включения в отформатированную строку. |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эта функция используется для форматирования строки в шаблоне. В нем используются те же параметры форматирования, что и в методе [System. String. Format](/dotnet/api/system.string.format) в .NET.
 
@@ -729,40 +926,54 @@ ms.locfileid: "91874719"
 
 В следующем примере шаблона показано, как использовать функцию Format.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "greeting": {
-            "type": "string",
-            "defaultValue": "Hello"
-        },
-        "name": {
-            "type": "string",
-            "defaultValue": "User"
-        },
-        "numberToFormat": {
-            "type": "int",
-            "defaultValue": 8175133
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "greeting": {
+      "type": "string",
+      "defaultValue": "Hello"
     },
-    "resources": [
-    ],
-    "outputs": {
-        "formatTest": {
-            "type": "string",
-            "value": "[format('{0}, {1}. Formatted number: {2:N0}', parameters('greeting'), parameters('name'), parameters('numberToFormat'))]"
-        }
+    "name": {
+      "type": "string",
+      "defaultValue": "User"
+    },
+    "numberToFormat": {
+      "type": "int",
+      "defaultValue": 8175133
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "formatTest": {
+      "type": "string",
+      "value": "[format('{0}, {1}. Formatted number: {2:N0}', parameters('greeting'), parameters('name'), parameters('numberToFormat'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param greeting string = 'Hello'
+param name string = 'User'
+param numberToFormat int = 8175133
+
+output formatTest string = format('{0}, {1}. Formatted number: {2:N0}', greeting, name, numberToFormat)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| форматтест | Строковый тип | Привет, пользователь. Форматированное число: 8 175 133 |
+| форматтест | Строка | Привет, пользователь. Форматированное число: 8 175 133 |
 
 ## <a name="guid"></a>guid
 
@@ -775,9 +986,9 @@ ms.locfileid: "91874719"
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | baseString |Да |строка |Значение, используемое в хэш-функции для создания GUID. |
-| Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
+| Дополнительные параметры (если необходимы) |нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эта функция полезна, если нужно создать значение в формате глобального уникального идентификатора. Указываются значения параметров, которые ограничивают область уникальности результата. Можно указать, является ли уникальным имя в подписке, группе ресурсов или развертывании.
 
@@ -787,21 +998,51 @@ ms.locfileid: "91874719"
 
 Уникальное в пределах подписки.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "[guid(subscription().subscriptionId)]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+guid(subscription().subscriptionId)
+```
+
+---
+
 Уникальное в пределах группы ресурсов.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "[guid(resourceGroup().id)]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+guid(resourceGroup().id)
+```
+
+---
+
 Уникальное в пределах развертывания для группы ресурсов.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "[guid(resourceGroup().id, deployment().name)]"
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+guid(resourceGroup().id, deployment().name)
+```
+
+---
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -811,35 +1052,47 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/guid.json) возвращаются результаты выполнения GUID.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {},
-    "variables": {},
-    "resources": [],
-    "outputs": {
-        "guidPerSubscription": {
-            "value": "[guid(subscription().subscriptionId)]",
-            "type": "string"
-        },
-        "guidPerResourceGroup": {
-            "value": "[guid(resourceGroup().id)]",
-            "type": "string"
-        },
-        "guidPerDeployment": {
-            "value": "[guid(resourceGroup().id, deployment().name)]",
-            "type": "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": [],
+  "outputs": {
+    "guidPerSubscription": {
+      "value": "[guid(subscription().subscriptionId)]",
+      "type": "string"
+    },
+    "guidPerResourceGroup": {
+      "value": "[guid(resourceGroup().id)]",
+      "type": "string"
+    },
+    "guidPerDeployment": {
+      "value": "[guid(resourceGroup().id, deployment().name)]",
+      "type": "string"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output guidPerSubscription string = guid(subscription().subscriptionId)
+output guidPerResourceGroup string = guid(resourceGroup().id)
+output guidPerDeployment string = guid(resourceGroup().id, deployment().name)
+```
+
+---
 
 ## <a name="indexof"></a>indexOf
 
 `indexOf(stringToSearch, stringToFind)`
 
-Возвращает первую позицию значения в строке. При сравнении учитывается регистр букв.
+Возвращает первую позицию значения в строке. При сравнении регистр не учитывается.
 
 ### <a name="parameters"></a>Параметры
 
@@ -856,35 +1109,49 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/indexof.json) показано, как использовать функции indexOf и lastIndexOf.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [],
-    "outputs": {
-        "firstT": {
-            "value": "[indexOf('test', 't')]",
-            "type" : "int"
-        },
-        "lastT": {
-            "value": "[lastIndexOf('test', 't')]",
-            "type" : "int"
-        },
-        "firstString": {
-            "value": "[indexOf('abcdef', 'CD')]",
-            "type" : "int"
-        },
-        "lastString": {
-            "value": "[lastIndexOf('abcdef', 'AB')]",
-            "type" : "int"
-        },
-        "notFound": {
-            "value": "[indexOf('abcdef', 'z')]",
-            "type" : "int"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [],
+  "outputs": {
+    "firstT": {
+      "value": "[indexOf('test', 't')]",
+      "type": "int"
+    },
+    "lastT": {
+      "value": "[lastIndexOf('test', 't')]",
+      "type": "int"
+    },
+    "firstString": {
+      "value": "[indexOf('abcdef', 'CD')]",
+      "type": "int"
+    },
+    "lastString": {
+      "value": "[lastIndexOf('abcdef', 'AB')]",
+      "type": "int"
+    },
+    "notFound": {
+      "value": "[indexOf('abcdef', 'z')]",
+      "type": "int"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output firstT int = indexOf('test', 't')
+output lastT int = lastIndexOf('test', 't')
+output firstString int = indexOf('abcdef', 'CD')
+output lastString int = lastIndexOf('abcdef', 'AB')
+output notFound int = indexOf('abcdef', 'z')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -895,6 +1162,8 @@ ms.locfileid: "91874719"
 | firstString | Int | 2 |
 | lastString | Int | 0 |
 | notFound | Int | -1 |
+
+<a id="json"></a>
 
 ## <a name="json"></a>json
 
@@ -922,43 +1191,60 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/last.json) показано, как использовать функцию last с массивом и строкой.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "arrayToTest": {
-            "type": "array",
-            "defaultValue": ["one", "two", "three"]
-        }
-    },
-    "resources": [
-    ],
-    "outputs": {
-        "arrayOutput": {
-            "type": "string",
-            "value": "[last(parameters('arrayToTest'))]"
-        },
-        "stringOutput": {
-            "type": "string",
-            "value": "[last('One Two Three')]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "arrayToTest": {
+      "type": "array",
+      "defaultValue": [ "one", "two", "three" ]
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "arrayOutput": {
+      "type": "string",
+      "value": "[last(parameters('arrayToTest'))]"
+    },
+    "stringOutput": {
+      "type": "string",
+      "value": "[last('One Two Three')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param arrayToTest array = [
+  'one'
+  'two'
+  'three'
+]
+
+output arrayOutput string = last(arrayToTest)
+output stringOutput string = last('One Two Three')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Строковый тип | three |
-| stringOutput | Строковый тип | й |
+| arrayOutput | Строка | three |
+| stringOutput | Строка | й |
 
 ## <a name="lastindexof"></a>lastIndexOf
 
 `lastIndexOf(stringToSearch, stringToFind)`
 
-Возвращает последнюю позицию значения в строке. При сравнении учитывается регистр букв.
+Возвращает последнюю позицию значения в строке. При сравнении регистр не учитывается.
 
 ### <a name="parameters"></a>Параметры
 
@@ -975,35 +1261,49 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/indexof.json) показано, как использовать функции indexOf и lastIndexOf.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [],
-    "outputs": {
-        "firstT": {
-            "value": "[indexOf('test', 't')]",
-            "type" : "int"
-        },
-        "lastT": {
-            "value": "[lastIndexOf('test', 't')]",
-            "type" : "int"
-        },
-        "firstString": {
-            "value": "[indexOf('abcdef', 'CD')]",
-            "type" : "int"
-        },
-        "lastString": {
-            "value": "[lastIndexOf('abcdef', 'AB')]",
-            "type" : "int"
-        },
-        "notFound": {
-            "value": "[indexOf('abcdef', 'z')]",
-            "type" : "int"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [],
+  "outputs": {
+    "firstT": {
+      "value": "[indexOf('test', 't')]",
+      "type": "int"
+    },
+    "lastT": {
+      "value": "[lastIndexOf('test', 't')]",
+      "type": "int"
+    },
+    "firstString": {
+      "value": "[indexOf('abcdef', 'CD')]",
+      "type": "int"
+    },
+    "lastString": {
+      "value": "[lastIndexOf('abcdef', 'AB')]",
+      "type": "int"
+    },
+    "notFound": {
+      "value": "[indexOf('abcdef', 'z')]",
+      "type": "int"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output firstT int = indexOf('test', 't')
+output lastT int = lastIndexOf('test', 't')
+output firstString int = indexOf('abcdef', 'CD')
+output lastString int = lastIndexOf('abcdef', 'AB')
+output notFound int = indexOf('abcdef', 'z')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -1035,53 +1335,81 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/length.json) показано, как использовать функцию length с массивом и строкой.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "arrayToTest": {
-            "type": "array",
-            "defaultValue": [
-                "one",
-                "two",
-                "three"
-            ]
-        },
-        "stringToTest": {
-            "type": "string",
-            "defaultValue": "One Two Three"
-        },
-        "objectToTest": {
-            "type": "object",
-            "defaultValue": {
-                "propA": "one",
-                "propB": "two",
-                "propC": "three",
-                "propD": {
-                    "propD-1": "sub",
-                    "propD-2": "sub"
-                }
-            }
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "arrayToTest": {
+      "type": "array",
+      "defaultValue": [
+        "one",
+        "two",
+        "three"
+      ]
     },
-    "resources": [],
-    "outputs": {
-        "arrayLength": {
-            "type": "int",
-            "value": "[length(parameters('arrayToTest'))]"
-        },
-        "stringLength": {
-            "type": "int",
-            "value": "[length(parameters('stringToTest'))]"
-        },
-        "objectLength": {
-            "type": "int",
-            "value": "[length(parameters('objectToTest'))]"
+    "stringToTest": {
+      "type": "string",
+      "defaultValue": "One Two Three"
+    },
+    "objectToTest": {
+      "type": "object",
+      "defaultValue": {
+        "propA": "one",
+        "propB": "two",
+        "propC": "three",
+        "propD": {
+          "propD-1": "sub",
+          "propD-2": "sub"
         }
+      }
     }
+  },
+  "resources": [],
+  "outputs": {
+    "arrayLength": {
+      "type": "int",
+      "value": "[length(parameters('arrayToTest'))]"
+    },
+    "stringLength": {
+      "type": "int",
+      "value": "[length(parameters('stringToTest'))]"
+    },
+    "objectLength": {
+      "type": "int",
+      "value": "[length(parameters('objectToTest'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param arrayToTest array = [
+  'one'
+  'two'
+  'three'
+]
+param stringToTest string = 'One Two Three'
+param objectToTest object = {
+  'propA': 'one'
+  'propB': 'two'
+  'propC': 'three'
+  'propD': {
+    'propD-1': 'sub'
+    'propD-2': 'sub'
+  }
+}
+
+output arrayLength int = length(arrayToTest)
+output stringLength int = length(stringToTest)
+output objectLength int = length(objectToTest)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -1097,7 +1425,7 @@ ms.locfileid: "91874719"
 
 Возвращает значение в формате глобального уникального идентификатора. **Эта функция может использоваться только в значении по умолчанию для параметра.**
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эту функцию можно использовать только в выражении для значения по умолчанию для параметра. Использование этой функции в любом месте шаблона возвращает ошибку. Функция не разрешена в других частях шаблона, поскольку она возвращает другое значение при каждом вызове. Развертывание одного и того же шаблона с теми же параметрами не будет уверенно давать одинаковые результаты.
 
@@ -1119,26 +1447,38 @@ ms.locfileid: "91874719"
 
 В следующем примере шаблона показан параметр с новым идентификатором.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "guidValue": {
-            "type": "string",
-            "defaultValue": "[newGuid()]"
-        }
-    },
-    "resources": [
-    ],
-    "outputs": {
-        "guidOutput": {
-            "type": "string",
-            "value": "[parameters('guidValue')]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "guidValue": {
+      "type": "string",
+      "defaultValue": "[newGuid()]"
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "guidOutput": {
+      "type": "string",
+      "value": "[parameters('guidValue')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param guidValue string = newGuid()
+
+output guidOutput string = guidValue
+```
+
+---
 
 Выходные данные предыдущего примера зависят от каждого развертывания, но будут выглядеть примерно так:
 
@@ -1148,47 +1488,70 @@ ms.locfileid: "91874719"
 
 В следующем примере функция newGuid используется для создания уникального имени для учетной записи хранения. Этот шаблон может работать для тестовой среды, где учетная запись хранения существует в течение короткого времени и не развертывается повторно.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "guidValue": {
-            "type": "string",
-            "defaultValue": "[newGuid()]"
-        }
-    },
-    "variables": {
-        "storageName": "[concat('storage', uniqueString(parameters('guidValue')))]"
-    },
-    "resources": [
-        {
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[variables('storageName')]",
-            "location": "West US",
-            "apiVersion": "2018-07-01",
-            "sku":{
-                "name": "Standard_LRS"
-            },
-            "kind": "StorageV2",
-            "properties": {}
-        }
-    ],
-    "outputs": {
-        "nameOutput": {
-            "type": "string",
-            "value": "[variables('storageName')]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "guidValue": {
+      "type": "string",
+      "defaultValue": "[newGuid()]"
     }
+  },
+  "variables": {
+    "storageName": "[concat('storage', uniqueString(parameters('guidValue')))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('storageName')]",
+      "location": "West US",
+      "apiVersion": "2018-07-01",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2",
+      "properties": {}
+    }
+  ],
+  "outputs": {
+    "nameOutput": {
+      "type": "string",
+      "value": "[variables('storageName')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param guidValue string = newGuid()
+
+var storageName = concat('storage', uniqueString(guidValue))
+
+resource myStorage 'Microsoft.Storage/storageAccounts@2018-07-01' = {
+  name: storageName
+  location: 'West US'
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+  properties: {}
+}
+
+output nameOutput string = storageName
+```
+
+---
 
 Выходные данные предыдущего примера зависят от каждого развертывания, но будут выглядеть примерно так:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | намеаутпут | строка | storagenziwvyru7uxie |
-
 
 ## <a name="padleft"></a>padLeft
 
@@ -1202,7 +1565,7 @@ ms.locfileid: "91874719"
 |:--- |:--- |:--- |:--- |
 | значение_для_заполнения  |Да |строка или целое число |Значение, выравниваемое по правому краю. |
 | общая_длина |Да |INT |Общее число символов в возвращаемой строке. |
-| символ_заполнения |Нет |одиночный символ |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
+| символ_заполнения |нет |одиночный символ |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
 
 Если длина исходной строки превышает число знаков для заполнения, то знаки не добавляются.
 
@@ -1214,31 +1577,43 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/padleft.json) показано, как заполнить указанное пользователем значение параметра, добавляя знак нуля до достижения общего числа знаков.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testString": {
-            "type": "string",
-            "defaultValue": "123"
-        }
-    },
-    "resources": [],
-    "outputs": {
-        "stringOutput": {
-            "type": "string",
-            "value": "[padLeft(parameters('testString'),10,'0')]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testString": {
+      "type": "string",
+      "defaultValue": "123"
     }
+  },
+  "resources": [],
+  "outputs": {
+    "stringOutput": {
+      "type": "string",
+      "value": "[padLeft(parameters('testString'),10,'0')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testString string = '123'
+
+output stringOutput string = padLeft(testString, 10, '0')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| stringOutput | Строковый тип | 0000000123 |
+| stringOutput | Строка | 0000000123 |
 
 ## <a name="replace"></a>replace
 
@@ -1262,36 +1637,49 @@ ms.locfileid: "91874719"
 
 В приведенном ниже [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/replace.json) показано, как удалить все тире из предоставленной пользователем строки и как заменить часть строки другой строкой.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testString": {
-            "type": "string",
-            "defaultValue": "123-123-1234"
-        }
-    },
-    "resources": [],
-    "outputs": {
-        "firstOutput": {
-            "type": "string",
-            "value": "[replace(parameters('testString'),'-', '')]"
-        },
-        "secondOutput": {
-            "type": "string",
-            "value": "[replace(parameters('testString'),'1234', 'xxxx')]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testString": {
+      "type": "string",
+      "defaultValue": "123-123-1234"
     }
+  },
+  "resources": [],
+  "outputs": {
+    "firstOutput": {
+      "type": "string",
+      "value": "[replace(parameters('testString'),'-', '')]"
+    },
+    "secondOutput": {
+      "type": "string",
+      "value": "[replace(parameters('testString'),'1234', 'xxxx')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testString string = '123-123-1234'
+
+output firstOutput string = replace(testString, '-', '')
+output secondOutput string = replace(testString, '1234', 'xxxx')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| firstOutput | Строковый тип | 1231231234 |
-| secondOutput | Строковый тип | 123-123-xxxx |
+| firstOutput | Строка | 1231231234 |
+| secondOutput | Строка | 123-123-xxxx |
 
 ## <a name="skip"></a>skip
 
@@ -1314,52 +1702,72 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/skip.json) пропускается заданное число элементов в массиве и заданное число знаков в строке.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testArray": {
-            "type": "array",
-            "defaultValue": [
-                "one",
-                "two",
-                "three"
-            ]
-        },
-        "elementsToSkip": {
-            "type": "int",
-            "defaultValue": 2
-        },
-        "testString": {
-            "type": "string",
-            "defaultValue": "one two three"
-        },
-        "charactersToSkip": {
-            "type": "int",
-            "defaultValue": 4
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testArray": {
+      "type": "array",
+      "defaultValue": [
+        "one",
+        "two",
+        "three"
+      ]
     },
-    "resources": [],
-    "outputs": {
-        "arrayOutput": {
-            "type": "array",
-            "value": "[skip(parameters('testArray'),parameters('elementsToSkip'))]"
-        },
-        "stringOutput": {
-            "type": "string",
-            "value": "[skip(parameters('testString'),parameters('charactersToSkip'))]"
-        }
+    "elementsToSkip": {
+      "type": "int",
+      "defaultValue": 2
+    },
+    "testString": {
+      "type": "string",
+      "defaultValue": "one two three"
+    },
+    "charactersToSkip": {
+      "type": "int",
+      "defaultValue": 4
     }
+  },
+  "resources": [],
+  "outputs": {
+    "arrayOutput": {
+      "type": "array",
+      "value": "[skip(parameters('testArray'),parameters('elementsToSkip'))]"
+    },
+    "stringOutput": {
+      "type": "string",
+      "value": "[skip(parameters('testString'),parameters('charactersToSkip'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testArray array = [
+  'one'
+  'two'
+  'three'
+]
+param elementsToSkip int = 2
+param testString string = 'one two three'
+param charactersToSkip int = 4
+
+output arrayOutput array = skip(testArray, elementsToSkip)
+output stringOutput string = skip(testString, charactersToSkip)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив | ["three"] |
-| stringOutput | Строковый тип | two three |
+| stringOutput | Строка | two three |
 
 ## <a name="split"></a>разделение
 
@@ -1382,36 +1790,55 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/split.json) входная строка разбивается с помощью запятой или точки с запятой.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "firstString": {
-            "type": "string",
-            "defaultValue": "one,two,three"
-        },
-        "secondString": {
-            "type": "string",
-            "defaultValue": "one;two,three"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "firstString": {
+      "type": "string",
+      "defaultValue": "one,two,three"
     },
-    "variables": {
-        "delimiters": [ ",", ";" ]
-    },
-    "resources": [],
-    "outputs": {
-        "firstOutput": {
-            "type": "array",
-            "value": "[split(parameters('firstString'),',')]"
-        },
-        "secondOutput": {
-            "type": "array",
-            "value": "[split(parameters('secondString'),variables('delimiters'))]"
-        }
+    "secondString": {
+      "type": "string",
+      "defaultValue": "one;two,three"
     }
+  },
+  "variables": {
+    "delimiters": [ ",", ";" ]
+  },
+  "resources": [],
+  "outputs": {
+    "firstOutput": {
+      "type": "array",
+      "value": "[split(parameters('firstString'),',')]"
+    },
+    "secondOutput": {
+      "type": "array",
+      "value": "[split(parameters('secondString'),variables('delimiters'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param firstString string = 'one,two,three'
+param secondString string = 'one;two,three'
+
+var delimiters = [
+  ','
+  ';'
+]
+
+output firstOutput array = split(firstString, ',')
+output secondOutput array = split(secondString, delimiters)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -1424,7 +1851,7 @@ ms.locfileid: "91874719"
 
 `startsWith(stringToSearch, stringToFind)`
 
-Определяет, начинается ли строка с определенного значения. При сравнении учитывается регистр букв.
+Определяет, начинается ли строка с определенного значения. При сравнении регистр не учитывается.
 
 ### <a name="parameters"></a>Параметры
 
@@ -1441,39 +1868,54 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/startsendswith.json) показано, как использовать функции startsWith и endsWith.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [],
-    "outputs": {
-        "startsTrue": {
-            "value": "[startsWith('abcdef', 'ab')]",
-            "type" : "bool"
-        },
-        "startsCapTrue": {
-            "value": "[startsWith('abcdef', 'A')]",
-            "type" : "bool"
-        },
-        "startsFalse": {
-            "value": "[startsWith('abcdef', 'e')]",
-            "type" : "bool"
-        },
-        "endsTrue": {
-            "value": "[endsWith('abcdef', 'ef')]",
-            "type" : "bool"
-        },
-        "endsCapTrue": {
-            "value": "[endsWith('abcdef', 'F')]",
-            "type" : "bool"
-        },
-        "endsFalse": {
-            "value": "[endsWith('abcdef', 'e')]",
-            "type" : "bool"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [],
+  "outputs": {
+    "startsTrue": {
+      "value": "[startsWith('abcdef', 'ab')]",
+      "type": "bool"
+    },
+    "startsCapTrue": {
+      "value": "[startsWith('abcdef', 'A')]",
+      "type": "bool"
+    },
+    "startsFalse": {
+      "value": "[startsWith('abcdef', 'e')]",
+      "type": "bool"
+    },
+    "endsTrue": {
+      "value": "[endsWith('abcdef', 'ef')]",
+      "type": "bool"
+    },
+    "endsCapTrue": {
+      "value": "[endsWith('abcdef', 'F')]",
+      "type": "bool"
+    },
+    "endsFalse": {
+      "value": "[endsWith('abcdef', 'e')]",
+      "type": "bool"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output startsTrue bool = startsWith('abcdef', 'ab')
+output startsCapTrue bool = startsWith('abcdef', 'A')
+output startsFalse bool = startsWith('abcdef', 'e')
+output endsTrue bool = endsWith('abcdef', 'ef')
+output endsCapTrue bool = endsWith('abcdef', 'F')
+output endsFalse bool = endsWith('abcdef', 'e')
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
@@ -1506,56 +1948,79 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/string.json) показано, как преобразовать различные типы значений в строки.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testObject": {
-            "type": "object",
-            "defaultValue": {
-                "valueA": 10,
-                "valueB": "Example Text"
-            }
-        },
-        "testArray": {
-            "type": "array",
-            "defaultValue": [
-                "a",
-                "b",
-                "c"
-            ]
-        },
-        "testInt": {
-            "type": "int",
-            "defaultValue": 5
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testObject": {
+      "type": "object",
+      "defaultValue": {
+        "valueA": 10,
+        "valueB": "Example Text"
+      }
     },
-    "resources": [],
-    "outputs": {
-        "objectOutput": {
-            "type": "string",
-            "value": "[string(parameters('testObject'))]"
-        },
-        "arrayOutput": {
-            "type": "string",
-            "value": "[string(parameters('testArray'))]"
-        },
-        "intOutput": {
-            "type": "string",
-            "value": "[string(parameters('testInt'))]"
-        }
+    "testArray": {
+      "type": "array",
+      "defaultValue": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    "testInt": {
+      "type": "int",
+      "defaultValue": 5
     }
+  },
+  "resources": [],
+  "outputs": {
+    "objectOutput": {
+      "type": "string",
+      "value": "[string(parameters('testObject'))]"
+    },
+    "arrayOutput": {
+      "type": "string",
+      "value": "[string(parameters('testArray'))]"
+    },
+    "intOutput": {
+      "type": "string",
+      "value": "[string(parameters('testInt'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testObject object = {
+  'valueA': 10
+  'valueB': 'Example Text'
+}
+param testArray array = [
+  'a'
+  'b'
+  'c'
+]
+param testInt int = 5
+
+output objectOutput string = string(testObject)
+output arrayOutput string = string(testArray)
+output intOutput string = string(testInt)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| objectOutput | Строковый тип | {"valueA":10,"valueB":"Example Text"} |
-| arrayOutput | Строковый тип | ["a","b","c"] |
-| intOutput | Строковый тип | 5 |
+| objectOutput | Строка | {"valueA":10,"valueB":"Example Text"} |
+| arrayOutput | Строка | ["a","b","c"] |
+| intOutput | Строка | 5 |
 
 ## <a name="substring"></a>substring
 
@@ -1568,55 +2033,80 @@ ms.locfileid: "91874719"
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToParse |Да |строка |Исходная строка, из которой извлекается подстрока. |
-| startIndex |Нет |INT |Отсчитываемая от нуля позиция первого знака для подстроки. |
-| length |Нет |INT |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
+| startIndex |нет |INT |Отсчитываемая от нуля позиция первого знака для подстроки. |
+| length |нет |INT |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
 Подстрока. Также может принимать значение пустой строки, когда длина равна нулю.
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Если substring выходит за пределы строки или когда длина меньше нуля, происходит ошибка выполнения функции. Следующий пример завершается ошибкой "Параметры индекса и длины должны относиться к расположению в строке. Параметр индекса: 0, параметр длины: 11, параметр длины строкового параметра: 10".
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "parameters": {
-    "inputString": { "type": "string", "value": "1234567890" }
-},
-"variables": {
-    "prefix": "[substring(parameters('inputString'), 0, 11)]"
+  "inputString": {
+    "type": "string",
+    "value": "1234567890"
+  }
+}, "variables": {
+  "prefix": "[substring(parameters('inputString'), 0, 11)]"
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param inputString string = '1234567890'
+
+var prefix = substring(inputString, 0, 11)
+```
+
+---
 
 ### <a name="examples"></a>Примеры
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/substring.json) из параметра извлекается подстрока.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testString": {
-            "type": "string",
-            "defaultValue": "one two three"
-        }
-    },
-    "resources": [],
-    "outputs": {
-        "substringOutput": {
-            "value": "[substring(parameters('testString'), 4, 3)]",
-            "type": "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testString": {
+      "type": "string",
+      "defaultValue": "one two three"
     }
+  },
+  "resources": [],
+  "outputs": {
+    "substringOutput": {
+      "value": "[substring(parameters('testString'), 4, 3)]",
+      "type": "string"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testString string = 'one two three'
+output substringOutput string = substring(testString, 4, 3)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| substringOutput | Строковый тип | two |
+| substringOutput | Строка | two |
 
 ## <a name="take"></a>take
 
@@ -1639,52 +2129,72 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/take.json) из массива извлекается заданное число элементов, а из строки — заданное число знаков.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testArray": {
-            "type": "array",
-            "defaultValue": [
-                "one",
-                "two",
-                "three"
-            ]
-        },
-        "elementsToTake": {
-            "type": "int",
-            "defaultValue": 2
-        },
-        "testString": {
-            "type": "string",
-            "defaultValue": "one two three"
-        },
-        "charactersToTake": {
-            "type": "int",
-            "defaultValue": 2
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testArray": {
+      "type": "array",
+      "defaultValue": [
+        "one",
+        "two",
+        "three"
+      ]
     },
-    "resources": [],
-    "outputs": {
-        "arrayOutput": {
-            "type": "array",
-            "value": "[take(parameters('testArray'),parameters('elementsToTake'))]"
-        },
-        "stringOutput": {
-            "type": "string",
-            "value": "[take(parameters('testString'),parameters('charactersToTake'))]"
-        }
+    "elementsToTake": {
+      "type": "int",
+      "defaultValue": 2
+    },
+    "testString": {
+      "type": "string",
+      "defaultValue": "one two three"
+    },
+    "charactersToTake": {
+      "type": "int",
+      "defaultValue": 2
     }
+  },
+  "resources": [],
+  "outputs": {
+    "arrayOutput": {
+      "type": "array",
+      "value": "[take(parameters('testArray'),parameters('elementsToTake'))]"
+    },
+    "stringOutput": {
+      "type": "string",
+      "value": "[take(parameters('testString'),parameters('charactersToTake'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testArray array = [
+  'one'
+  'two'
+  'three'
+]
+param elementsToSkip int = 2
+param testString string = 'one two three'
+param charactersToSkip int = 2
+
+output arrayOutput array = take(testArray, elementsToSkip)
+output stringOutput string = take(testString, charactersToSkip)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив | ["one", "two"] |
-| stringOutput | Строковый тип | on |
+| stringOutput | Строка | on |
 
 ## <a name="tolower"></a>toLower
 
@@ -1706,36 +2216,49 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/tolower.json) значение параметра преобразуется в нижний и в верхний регистр.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testString": {
-            "type": "string",
-            "defaultValue": "One Two Three"
-        }
-    },
-    "resources": [],
-    "outputs": {
-        "toLowerOutput": {
-            "value": "[toLower(parameters('testString'))]",
-            "type": "string"
-        },
-        "toUpperOutput": {
-            "type": "string",
-            "value": "[toUpper(parameters('testString'))]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testString": {
+      "type": "string",
+      "defaultValue": "One Two Three"
     }
+  },
+  "resources": [],
+  "outputs": {
+    "toLowerOutput": {
+      "value": "[toLower(parameters('testString'))]",
+      "type": "string"
+    },
+    "toUpperOutput": {
+      "type": "string",
+      "value": "[toUpper(parameters('testString'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testString string = 'One Two Three'
+
+output toLowerOutput string = toLower(testString)
+output toUpperOutput string = toUpper(testString)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| toLowerOutput | Строковый тип | one two three |
-| toUpperOutput | Строковый тип | ONE TWO THREE |
+| toLowerOutput | Строка | one two three |
+| toUpperOutput | Строка | ONE TWO THREE |
 
 ## <a name="toupper"></a>toUpper
 
@@ -1757,36 +2280,49 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/tolower.json) значение параметра преобразуется в нижний и в верхний регистр.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testString": {
-            "type": "string",
-            "defaultValue": "One Two Three"
-        }
-    },
-    "resources": [],
-    "outputs": {
-        "toLowerOutput": {
-            "value": "[toLower(parameters('testString'))]",
-            "type": "string"
-        },
-        "toUpperOutput": {
-            "type": "string",
-            "value": "[toUpper(parameters('testString'))]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testString": {
+      "type": "string",
+      "defaultValue": "One Two Three"
     }
+  },
+  "resources": [],
+  "outputs": {
+    "toLowerOutput": {
+      "value": "[toLower(parameters('testString'))]",
+      "type": "string"
+    },
+    "toUpperOutput": {
+      "type": "string",
+      "value": "[toUpper(parameters('testString'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testString string = 'One Two Three'
+
+output toLowerOutput string = toLower(testString)
+output toUpperOutput string = toUpper(testString)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| toLowerOutput | Строковый тип | one two three |
-| toUpperOutput | Строковый тип | ONE TWO THREE |
+| toLowerOutput | Строка | one two three |
+| toUpperOutput | Строка | ONE TWO THREE |
 
 ## <a name="trim"></a>trim
 
@@ -1808,31 +2344,43 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/trim.json) из параметра удаляются пробелы.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "testString": {
-            "type": "string",
-            "defaultValue": "    one two three   "
-        }
-    },
-    "resources": [],
-    "outputs": {
-        "return": {
-            "type": "string",
-            "value": "[trim(parameters('testString'))]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "testString": {
+      "type": "string",
+      "defaultValue": "    one two three   "
     }
+  },
+  "resources": [],
+  "outputs": {
+    "return": {
+      "type": "string",
+      "value": "[trim(parameters('testString'))]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param testString string = '    one two three   '
+
+output return string = trim(testString)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| return | Строковый тип | one two three |
+| return | Строка | one two three |
 
 ## <a name="uniquestring"></a>uniqueString
 
@@ -1845,9 +2393,9 @@ ms.locfileid: "91874719"
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | baseString |Да |строка |Значение, используемое в хэш-функции для создания уникальной строки. |
-| Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
+| Дополнительные параметры (если необходимы) |нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эта функция полезна в тех случаях, когда необходимо создать уникальное имя ресурса. Указываются значения параметров, которые ограничивают область уникальности результата. Можно указать, является ли уникальным имя в подписке, группе ресурсов или развертывании.
 
@@ -1859,30 +2407,73 @@ ms.locfileid: "91874719"
 
 Уникальное в пределах подписки.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "[uniqueString(subscription().subscriptionId)]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+uniqueString(subscription().subscriptionId)
+```
+
+---
+
 Уникальное в пределах группы ресурсов.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "[uniqueString(resourceGroup().id)]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+uniqueString(resourceGroup().id)
+```
+
+---
+
 Уникальное в пределах развертывания для группы ресурсов.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "[uniqueString(resourceGroup().id, deployment().name)]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+uniqueString(resourceGroup().id, deployment().name)
+```
+
+---
+
 В следующем примере показано, как создать уникальное имя учетной записи хранения на основе вашей группы ресурсов. Внутри группы ресурсов имя не является уникальным, если оно создано аналогичным образом.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "resources": [{
-    "name": "[concat('storage', uniqueString(resourceGroup().id))]",
-    "type": "Microsoft.Storage/storageAccounts",
-    ...
+  "name": "[concat('storage', uniqueString(resourceGroup().id))]",
+  "type": "Microsoft.Storage/storageAccounts",
+  ...
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+resource mystorage 'Microsoft.Storage/storageAccounts@@2018-07-01' = {
+  name: concat('storage, uniqueString(resourceGroup().id)')
+  ...
+}
+```
+
+---
 
 Если необходимо создать новое уникальное имя каждый раз при развертывании шаблона и не обновлять ресурс, можно использовать функцию [UtcNow](template-functions-date.md#utcnow) с uniqueString. Этот подход можно использовать в тестовой среде. Пример см. в разделе [UtcNow](template-functions-date.md#utcnow).
 
@@ -1894,23 +2485,34 @@ ms.locfileid: "91874719"
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/uniquestring.json) возвращаются результаты выполнения uniquestring.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [],
-    "outputs": {
-        "uniqueRG": {
-            "value": "[uniqueString(resourceGroup().id)]",
-            "type" : "string"
-        },
-        "uniqueDeploy": {
-            "value": "[uniqueString(resourceGroup().id, deployment().name)]",
-            "type" : "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [],
+  "outputs": {
+    "uniqueRG": {
+      "value": "[uniqueString(resourceGroup().id)]",
+      "type": "string"
+    },
+    "uniqueDeploy": {
+      "value": "[uniqueString(resourceGroup().id, deployment().name)]",
+      "type": "string"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+output uniqueRG string = uniqueString(resourceGroup().id)
+output uniqueDeploy string = uniqueString(resourceGroup().id, deployment().name)
+```
+
+---
 
 ## <a name="uri"></a>uri
 
@@ -1951,46 +2553,71 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 В следующем примере показано создание ссылки на вложенный шаблон в зависимости от значения параметра родительского шаблона.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 "templateLink": "[uri(deployment().properties.templateLink.uri, 'nested/azuredeploy.json')]"
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+templateLink: uri(deployment().properties.templateLink.uri, 'nested/azuredeploy.json')
+```
+
+---
+
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/uri.json) показано, как использовать функции uri, uriComponent и uriComponentToString.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "variables": {
-        "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
-        "uriEncoded": "[uriComponent(variables('uriFormat'))]"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "variables": {
+    "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
+    "uriEncoded": "[uriComponent(variables('uriFormat'))]"
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "uriOutput": {
+      "type": "string",
+      "value": "[variables('uriFormat')]"
     },
-    "resources": [
-    ],
-    "outputs": {
-        "uriOutput": {
-            "type": "string",
-            "value": "[variables('uriFormat')]"
-        },
-        "componentOutput": {
-            "type": "string",
-            "value": "[variables('uriEncoded')]"
-        },
-        "toStringOutput": {
-            "type": "string",
-            "value": "[uriComponentToString(variables('uriEncoded'))]"
-        }
+    "componentOutput": {
+      "type": "string",
+      "value": "[variables('uriEncoded')]"
+    },
+    "toStringOutput": {
+      "type": "string",
+      "value": "[uriComponentToString(variables('uriEncoded'))]"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+var uriFormat = uri('http://contoso.com/resources/', 'nested/azuredeploy.json')
+var uriEncoded = uriComponent(uriFormat)
+
+output uriOutput string = uriFormat
+output componentOutput string = uriEncoded
+output toStringOutput string = uriComponentToString(uriEncoded)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | Строковый тип | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="uricomponent"></a>uriComponent
 
@@ -2012,40 +2639,55 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/uri.json) показано, как использовать функции uri, uriComponent и uriComponentToString.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "variables": {
-        "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
-        "uriEncoded": "[uriComponent(variables('uriFormat'))]"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "variables": {
+    "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
+    "uriEncoded": "[uriComponent(variables('uriFormat'))]"
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "uriOutput": {
+      "type": "string",
+      "value": "[variables('uriFormat')]"
     },
-    "resources": [
-    ],
-    "outputs": {
-        "uriOutput": {
-            "type": "string",
-            "value": "[variables('uriFormat')]"
-        },
-        "componentOutput": {
-            "type": "string",
-            "value": "[variables('uriEncoded')]"
-        },
-        "toStringOutput": {
-            "type": "string",
-            "value": "[uriComponentToString(variables('uriEncoded'))]"
-        }
+    "componentOutput": {
+      "type": "string",
+      "value": "[variables('uriEncoded')]"
+    },
+    "toStringOutput": {
+      "type": "string",
+      "value": "[uriComponentToString(variables('uriEncoded'))]"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+var uriFormat = uri('http://contoso.com/resources/', 'nested/azuredeploy.json')
+var uriEncoded = uriComponent(uriFormat)
+
+output uriOutput string = uriFormat
+output componentOutput string = uriEncoded
+output toStringOutput string = uriComponentToString(uriEncoded)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | Строковый тип | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="uricomponenttostring"></a>uriComponentToString
 
@@ -2067,44 +2709,59 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/uri.json) показано, как использовать функции uri, uriComponent и uriComponentToString.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "variables": {
-        "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
-        "uriEncoded": "[uriComponent(variables('uriFormat'))]"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "variables": {
+    "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
+    "uriEncoded": "[uriComponent(variables('uriFormat'))]"
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "uriOutput": {
+      "type": "string",
+      "value": "[variables('uriFormat')]"
     },
-    "resources": [
-    ],
-    "outputs": {
-        "uriOutput": {
-            "type": "string",
-            "value": "[variables('uriFormat')]"
-        },
-        "componentOutput": {
-            "type": "string",
-            "value": "[variables('uriEncoded')]"
-        },
-        "toStringOutput": {
-            "type": "string",
-            "value": "[uriComponentToString(variables('uriEncoded'))]"
-        }
+    "componentOutput": {
+      "type": "string",
+      "value": "[variables('uriEncoded')]"
+    },
+    "toStringOutput": {
+      "type": "string",
+      "value": "[uriComponentToString(variables('uriEncoded'))]"
     }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+var uriFormat = uri('http://contoso.com/resources/', 'nested/azuredeploy.json')
+var uriEncoded = uriComponent(uriFormat)
+
+output uriOutput string = uriFormat
+output componentOutput string = uriEncoded
+output toStringOutput string = uriComponentToString(uriEncoded)
+```
+
+---
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | Строковый тип | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | Строковый тип | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
 * Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
-

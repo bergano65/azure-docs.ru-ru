@@ -7,11 +7,11 @@ ms.date: 11/03/2017
 ms.author: bharatn
 ms.custom: devx-track-csharp
 ms.openlocfilehash: fd8e6dd712801de49971c1ef27cea664d73a4cb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89012778"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005917"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Обратный прокси-сервер в Azure Service Fabric
 Обратный прокси-сервер, встроенный в Azure Service Fabric, помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и взаимодействовать с этими службами.
@@ -150,7 +150,7 @@ http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/
 
 Службам Service Fabric, выполняющимся в контейнерах Docker Compose, требуется особая конфигурация http: или https: в *разделе Ports* файла docker-compose.yml. Дополнительные сведения см. в разделе [Поддержка развертывания Docker Compose в Azure Service Fabric (предварительная версия)](service-fabric-docker-compose.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Установка и настройка обратного прокси-сервера в кластере](service-fabric-reverseproxy-setup.md)
 * [Подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)
 * [Диагностика событий обратного прокси-сервера](service-fabric-reverse-proxy-diagnostics.md)

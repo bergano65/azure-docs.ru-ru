@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
 ms.openlocfilehash: 9d5d572c3e32e3645e65ba8d6fc28b567b3c1e9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "65827212"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005968"
 ---
 # <a name="configure-access-controls-for-the-time-series-insights-telemetry-explorer"></a>Настройка управления доступом для обозревателя телеметрии Аналитики временных рядов
 
@@ -54,7 +54,7 @@ ms.locfileid: "65827212"
 
     ![Управление источником Time Series Insights — результаты](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access5.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как обеспечивается управление доступом для обозревателя Аналитики временных рядов в акселераторе решения для удаленного мониторинга.
 

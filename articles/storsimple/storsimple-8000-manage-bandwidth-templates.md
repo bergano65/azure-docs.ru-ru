@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: 56170ffbbfe14248bcfd1f94549a3565873f8646
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514020"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005900"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-storsimple-bandwidth-templates"></a>Использование службы диспетчера устройств StorSimple для управления шаблонами пропускной способности StorSimple
 
@@ -169,7 +169,7 @@ ms.locfileid: "85514020"
 * Настройте шаблоны пропускной способности на устройстве, чтобы включить регулирование переменных для пропускной способности сети на устройстве в разное время дня. При использовании этих шаблонов пропускной способности с резервными расписаниями можно эффективно использовать дополнительную пропускную способность сети для облачных операций в часы наименьшей нагрузки.
 * Вычислите фактическую пропускную способность, необходимую для конкретной развернутой службы, на основе размера развернутой службы и целевого времени восстановления (RTO).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

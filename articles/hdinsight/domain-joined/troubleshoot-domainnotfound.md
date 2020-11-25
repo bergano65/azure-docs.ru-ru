@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/23/2020
 ms.openlocfilehash: 79cd3b687dc8a2eb838146a6dc8a40b184a55fe6
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285565"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005951"
 ---
 # <a name="scenario-cluster-creation-fails-with-domainnotfound-error-in-azure-hdinsight"></a>Сценарий: сбой создания кластера с ошибкой Домаиннотфаунд в Azure HDInsight
 
@@ -22,11 +22,11 @@ ms.locfileid: "93285565"
 
 При создании кластера HDI Secure (Корпоративный пакет безопасности) происходит сбой с `DomainNotFound` сообщением об ошибке.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Неверные параметры DNS.
 
-## <a name="resolution"></a>Решение
+## <a name="resolution"></a>Разрешение
 
 При развертывании кластеров, присоединенных к домену, HDI создает внутреннее имя пользователя и пароль в AAD DS (для каждого кластера) и присоединяет все узлы кластера к этому домену. Присоединение к домену выполняется с помощью средств Samba. Выполните указанные ниже предварительные требования.
 
@@ -46,6 +46,6 @@ ms.locfileid: "93285565"
   * Запуск скрипта с именем пользователя и паролем
   * Сценарий выполнит проверку связи, создаст необходимые файлы конфигурации, а затем — домен. В случае удачного завершения настройки DNS будут хорошими.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [troubleshooting next steps](../../../includes/hdinsight-troubleshooting-next-steps.md)]

@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.date: 05/14/2018
 ms.author: hrasheed
 ms.openlocfilehash: ca84cb6cdd6b47976eadbc5298701a46fe677426
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547832"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007143"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Публикация приложения HDInsight в Azure Marketplace
 Вы можете установить приложения Azure HDInsight в кластере HDInsight под управлением Linux. В этой статье описано, как опубликовать приложение HDInsight в Azure Marketplace. Общие сведения о публикации в Azure Marketplace см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/overview.md).
 
-В приложениях HDInsight используется модель *с использованием собственной лицензии (BYOL)* . В сценарии BYOL поставщик приложения отвечает за предоставление лицензии пользователям приложения. С пользователей приложения плата взимается только за созданные ресурсы Azure, например кластер HDInsight, виртуальные машины и узлы кластера. Сейчас счета за само приложение не выставляются в Azure.
+В приложениях HDInsight используется модель *с использованием собственной лицензии (BYOL)*. В сценарии BYOL поставщик приложения отвечает за предоставление лицензии пользователям приложения. С пользователей приложения плата взимается только за созданные ресурсы Azure, например кластер HDInsight, виртуальные машины и узлы кластера. Сейчас счета за само приложение не выставляются в Azure.
 
 Дополнительные сведения см. в этих статьях о приложении HDInsight:
 
@@ -31,7 +31,7 @@ ms.locfileid: "92547832"
 Также вы должны зарегистрировать учетную запись разработчика. Дополнительные сведения см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/overview.md) и [Создание учетной записи разработчика Майкрософт](../marketplace/overview.md).
 
 ## <a name="define-the-application"></a>Определение приложения
-Публикация приложений в Marketplace осуществляется в два этапа. Сначала определите файл *createUiDef.json* . Файл createUiDef.json указывает, с какими кластерами совместимо ваше приложение. Затем опубликуйте шаблон с помощью портала Azure. Вот пример файла createUiDef.json:
+Публикация приложений в Marketplace осуществляется в два этапа. Сначала определите файл *createUiDef.json*. Файл createUiDef.json указывает, с какими кластерами совместимо ваше приложение. Затем опубликуйте шаблон с помощью портала Azure. Вот пример файла createUiDef.json:
 
 ```json
 {
@@ -63,7 +63,7 @@ ms.locfileid: "92547832"
   > * Дефис (-) для удобочитаемости.
   > * Уникальная строковая функция с именем приложения в качестве параметра.
   > 
-  > В предыдущем примере в сохраненном списке действий сценария имя будет выглядеть так: **hue-install-v0-4wkahss55hlas** . Для дополнительной информации см. [пример полезных данных JSON](https://raw.githubusercontent.com/hdinsight/Iaas-Applications/master/Hue/azuredeploy.json).
+  > В предыдущем примере в сохраненном списке действий сценария имя будет выглядеть так: **hue-install-v0-4wkahss55hlas**. Для дополнительной информации см. [пример полезных данных JSON](https://raw.githubusercontent.com/hdinsight/Iaas-Applications/master/Hue/azuredeploy.json).
   > 
 
 Сценарий установки должен иметь следующие характеристики:
@@ -96,7 +96,7 @@ ms.locfileid: "92547832"
 8. Отправьте ZIP-файл, созданный при создании пакета приложения.  
 9. Выберите **Request Certification** (Запросить сертификацию). Команда сертификации Майкрософт проверяет файлы и выполняет сертификацию топологии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Инструкции по [установке приложений HDInsight](hdinsight-apps-install-applications.md) в кластерах.
 * Инструкции по [установке пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md) и развертывании в HDInsight неопубликованного приложения HDInsight.
 * Инструкции по [настройке кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md) и добавлению других приложений. 

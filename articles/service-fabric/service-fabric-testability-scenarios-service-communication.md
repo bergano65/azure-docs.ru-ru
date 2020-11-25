@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 87b922cb9655588a22c739d26c9ce9e49d35781a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75465548"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007126"
 ---
 # <a name="service-fabric-testability-scenarios-service-communication"></a>Сценарии тестирования платформы Service Fabric: обмен данными между службами
 Микрослужбы и стили сервисноориентированной архитектуры естественным образом развертываются на платформе Azure Service Fabric. В распределенных архитектурах этих типов компонентные приложения микрослужб обычно состоят из нескольких служб, которые должны взаимодействовать друг с другом. Даже в простейших случаях у вас обычно есть как минимум веб-служба без отслеживания состояния и служба хранилища данных с отслеживанием состояния, которые должны взаимодействовать друг с другом.
@@ -81,7 +81,7 @@ PS > Invoke-ServiceFabricPartitionQuorumLoss -ServiceName fabric:/Myapplication/
 
 В этом примере мы задаем для параметра `QuorumLossMode` значение `QuorumReplicas`, чтобы указать, что нам нужно вызвать потерю кворума без отключения всех реплик. Таким образом выполнение операций чтения по-прежнему возможно. Чтобы протестировать сценарий, при котором недоступен весь раздел, для этого параметра можно задать значение `AllReplicas`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Дополнительные сведения о действиях, доступных благодаря подсистеме тестирования](service-fabric-testability-actions.md)
 
 [Дополнительные сведения о сценариях подсистемы тестирования](service-fabric-testability-scenarios.md)
